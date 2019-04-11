@@ -4,13 +4,11 @@ description: Understand what is where in the platform to get oriented quickly.
 
 # The Modyo Interface
 
-
-
 ## What is where?
 
 Below we'll give you a sense of what is where in [Modyo](https://www.modyo.com/). 
 
-![](https://support.modyo.com/hc/article_attachments/360007149471/mceclip0.png)
+![The Modyo interface](.gitbook/assets/screenshot-from-2019-04-11-14-27-50.png)
 
 ### Account
 
@@ -54,4 +52,3 @@ When entering Modyo you'll see the following menu within your account.
 
 [Go to settings](https://support.modyo.com/hc/en-us/articles/360002805792-Account-Settings)
 
-* 
