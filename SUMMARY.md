@@ -4,6 +4,10 @@
 * [The Modyo Interface](the-modyo-interface.md)
 * [Key Concepts](key-concepts.md)
 
+## Fast Track Videos
+
+* [Untitled](fast-track-videos/untitled.md)
+
 ## Modyo Channels
 
 * [Untitled](modyo-channels/untitled.md)
