@@ -10,7 +10,8 @@
 
 ## Modyo Channels
 
-* [Untitled](modyo-channels/untitled.md)
+* [Understanding Channels](modyo-channels/untitled.md)
+* [Sites](modyo-channels/sites.md)
 
 ## Modyo Content
 
