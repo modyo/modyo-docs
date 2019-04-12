@@ -1,0 +1,10 @@
+{
+  "docs": {
+    "Modyo": ["modyo"],
+    "Modyo Channels": ["modyo-channels/sites"],
+    "Second Category": ["doc3"]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}
