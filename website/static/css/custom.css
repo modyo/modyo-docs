@@ -14,3 +14,23 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+.fixedHeaderContainer {
+    background-color: #fff;
+}
+
+.fixedHeaderContainer a {
+    color: #333;
+}
+
+.fixedHeaderContainer .navigationSlider .slidingNav ul li a {
+    color: #333;
+}
+
+.nav-footer {
+    background-color: #f4f4f4;
+}
+
+.nav-footer .copyright {
+    color: #999;
+}

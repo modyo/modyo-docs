@@ -60,13 +60,9 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/modyo.png`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -92,49 +88,31 @@ class Index extends React.Component {
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
-        {[
-          {
-            content: 'Talk about trying this out',
-            image: `${baseUrl}img/modyo.png`,
-            imageAlign: 'left',
-            title: 'Try it Out',
-          },
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/modyo.png`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
     const LearnHow = () => (
       <Block background="light">
         {[
           {
             content: 'Talk about learning how to use this',
-            image: `${baseUrl}img/modyo.png`,
-            imageAlign: 'right',
+            title: 'Learn How',
+          },
+          {
+            content: 'Talk about learning how to use this',
+            title: 'Learn How',
+          },
+          {
+            content: 'Talk about learning how to use this',
+            title: 'Learn How',
+          },
+          {
+            content: 'Talk about learning how to use this',
+            title: 'Learn How',
+          },
+          {
+            content: 'Talk about learning how to use this',
+            title: 'Learn How',
+          },
+          {
+            content: 'Talk about learning how to use this',
             title: 'Learn How',
           },
         ]}
@@ -145,60 +123,35 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
+            content: 'Modyo helps large companies and financial institutions accelerate digital transformation.',
             image: `${baseUrl}img/49a9f9815617854e67a6f78c4b5fc557c4cf0d0d.png`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Welcome to Modyo',
           },
           {
-            content: 'The content of my second feature',
+            content: 'Understand what is where in the platform to get oriented quickly.',
+            image: `${baseUrl}img/80ce04ff3a1de9ede1d4c2446012329d4d5a074e.png`,
+            imageAlign: 'top',
+            title: 'The Modyo Interface',
+          },
+          {
+            content: 'What are some of the key concepts to quickly understand?',
             image: `${baseUrl}img/28a97f8e9161d0747749c1f2701fd909b9b0be61.png`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Key Concepts',
           },
         ]}
       </Block>
     );
 
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
+    
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <FeatureCallout />
           <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
         </div>
       </div>
     );
