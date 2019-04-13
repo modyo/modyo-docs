@@ -34,9 +34,6 @@ my-docusaurus/
     doc-2.md
     doc-3.md
   website/
-    blog/
-      2016-3-11-oldest-post.md
-      2017-10-24-newest-post.md
     core/
     node_modules/
     pages/
@@ -67,21 +64,6 @@ Edit me...
 
 For more information about docs, click [here](https://docusaurus.io/docs/en/navigation)
 
-## Editing an existing blog post
-
-Edit blog posts by navigating to `website/blog` and editing the corresponding post:
-
-`website/blog/post-to-be-edited.md`
-```markdown
----
-id: post-needs-edit
-title: This Blog Post Needs To Be Edited
----
-
-Edit me...
-```
-
-For more information about blog posts, click [here](https://docusaurus.io/docs/en/adding-blog)
 
 # Adding Content
 

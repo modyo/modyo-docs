@@ -13,16 +13,16 @@ const users = [
   {
     caption: "User1",
     // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: "/img/docusaurus.svg",
-    infoLink: "https://www.facebook.com",
+    // if it is not '/', like: '/test-site/img/modyo.png'.
+    image: "/img/modyo.png",
+    infoLink: "https://www.modyo.com",
     pinned: true
   }
 ];
 
 const siteConfig = {
-  title: "Modyo documentation", // Title for your website.
-  tagline: "A website for the modyo documentation",
+  title: "Modyo Docs", // Title for your website.
+  tagline: "A website for the Modyo documentation",
   url: "https://docs.modyo.com", // Your website URL
   baseUrl: "/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -40,22 +40,21 @@ const siteConfig = {
   headerLinks: [
     { doc: "modyo", label: "Docs" },
     { doc: "doc4", label: "API" },
-    { page: "help", label: "Help" },
-    { blog: true, label: "Blog" }
+    { page: "help", label: "Help" }
   ],
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: "img/docusaurus.svg",
-  footerIcon: "img/docusaurus.svg",
-  favicon: "img/favicon.png",
+  headerIcon: "img/modyo.png",
+  footerIcon: "img/modyo.png",
+  favicon: "img/favicon/favicon.ico",
 
   /* Colors for website */
   colors: {
-    primaryColor: "#2E8555",
-    secondaryColor: "#205C3B"
+    primaryColor: "#336699",
+    secondaryColor: "#333"
   },
 
   /* Custom fonts for website */
@@ -73,7 +72,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Modyo`,
+  copyright: `Copyright © 2008-${new Date().getFullYear()} Modyo SpA`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

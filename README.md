@@ -1,4 +1,4 @@
-# Modyo documentation site
+# Modyo Docs
 
 ## Usage
 
