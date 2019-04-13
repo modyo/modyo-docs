@@ -146,13 +146,13 @@ class Index extends React.Component {
         {[
           {
             content: 'This is the content of my feature',
-            image: `${baseUrl}img/modyo.png`,
+            image: `${baseUrl}img/49a9f9815617854e67a6f78c4b5fc557c4cf0d0d.png`,
             imageAlign: 'top',
             title: 'Feature One',
           },
           {
             content: 'The content of my second feature',
-            image: `${baseUrl}img/modyo.png`,
+            image: `${baseUrl}img/28a97f8e9161d0747749c1f2701fd909b9b0be61.png`,
             imageAlign: 'top',
             title: 'Feature Two',
           },
