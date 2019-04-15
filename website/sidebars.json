@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Introduction": ["introduction/welcome-to-modyo"],
-    "Channels": ["channels/sites"]
+    "Introduction": ["en/introduction/welcome-to-modyo"],
+    "Channels": ["en/channels/sites"]
   }
 }

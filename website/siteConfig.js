@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: "introduction/welcome-to-modyo", label: "Docs"},
+    { doc: "en/introduction/welcome-to-modyo", label: "Docs" },
     { page: "help", label: "Help" },
     { search: true },
     { languages: true }
@@ -60,17 +60,9 @@ const siteConfig = {
 
   /* Custom fonts for website */
   fonts: {
-    myFont: [
-      "Avenir",
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
+    myFont: ["Avenir", "Times New Roman", "Serif"],
+    myOtherFont: ["-apple-system", "system-ui"]
   },
-  
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © 2008-${new Date().getFullYear()} Modyo SpA`,
