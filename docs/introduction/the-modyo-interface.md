@@ -1,5 +1,6 @@
 ---
-description: Understand what is where in the platform to get oriented quickly.
+id: the-modyo-interface
+title: The Modyo Interface
 ---
 
 # The Modyo Interface

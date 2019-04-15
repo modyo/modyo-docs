@@ -1,5 +1,6 @@
 ---
-description: What are some of the key concepts to quickly understand?
+id: key-concepts
+title: Key Concepts
 ---
 
 # Key Concepts

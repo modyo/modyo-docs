@@ -1,10 +1,6 @@
 {
   "docs": {
-    "Modyo": ["modyo"],
-    "Modyo Channels": ["modyo-channels/sites"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Introduction": ["introduction/welcome-to-modyo"],
+    "Channels": ["channels/sites"]
   }
 }
