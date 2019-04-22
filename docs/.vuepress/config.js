@@ -18,7 +18,7 @@ module.exports = {
   themeConfig: {
     logo: "/assets/img/modyo.png",
     repo: "modyo/modyo-docs",
-    docsDir: 'docs',
+    docsDir: "docs",
     editLinks: true,
     locales: {
       "/": {
