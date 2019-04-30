@@ -40,7 +40,8 @@ module.exports = {
             children: [
               "/guides/",
               ["/guides/key-concepts", "Key Concepts"],
-              ["/guides/the-modyo-interface", "The modyo interface"]
+              ["/guides/the-modyo-interface", "The modyo interface"],
+              ["/guides/navigating-through-modyo", "Navigating Through Modyo"]
             ]
           },
           {
@@ -70,7 +71,8 @@ module.exports = {
             children: [
               "/es/guides/",
               ["/es/guides/key-concepts", "Conceptos claves"],
-              ["/es/guides/the-modyo-interface", "La interfaz Modyo"]
+              ["/es/guides/the-modyo-interface", "La interfaz Modyo"],
+              ["/es/guides/navigating-through-modyo", "Navegando por Modyo"]
             ]
           },
           {
