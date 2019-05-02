@@ -18,8 +18,8 @@ module.exports = {
   themeConfig: {
     logo: "/assets/img/modyo.png",
     repo: "modyo/modyo-docs",
-    docsDir: "docs",
-    editLinks: true,
+    docsDir: 'docs',
+    editLinks: false,
     locales: {
       "/": {
         // text for the language dropdown
@@ -29,23 +29,60 @@ module.exports = {
         // text for the edit-on-github link
         editLinkText: "Edit this page on GitHub",
         nav: [
-          { text: "Guides", link: "/guides/" },
-          { text: "Help", link: "https://www.modyo.com" }
+          { text: "Guides", link: "/guides/" }
         ],
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         sidebar: [
           {
             title: "Introduction",
-            collapsable: false,
             children: [
-              "/guides/",
+              ["/guides/", "Welcome to Modyo"],
               ["/guides/key-concepts", "Key Concepts"],
               ["/guides/the-modyo-interface", "The modyo interface"],
               ["/guides/navigating-through-modyo", "Navigating Through Modyo"]
+
             ]
           },
           {
-            title: "Group 2",
+            title: "Content",
+            children: [
+              ["/guides/content/", "Content"],
+              ["/guides/content/promotions", "Promotions"],
+              ["/guides/content/places", "Places"]
+            ]
+          },
+          {
+            title: "Channels",
+            children: [
+              /* ... */
+            ]
+          },
+          {
+            title: "Customers",
+            children: [
+              /* ... */
+            ]
+          },
+          {
+            title: "Commerce",
+            children: [
+              /* ... */
+            ]
+          },
+          {
+            title: "Insights",
+            children: [
+              /* ... */
+            ]
+          },
+          {
+            title: "Advanced Topics",
+            children: [
+              /* ... */
+            ]
+          },
+          {
+            title: "API Reference",
             children: [
               /* ... */
             ]
@@ -60,10 +97,9 @@ module.exports = {
         // text for the edit-on-github link
         editLinkText: "Edita esta página en GitHub",
         nav: [
-          { text: "Guías", link: "/es/guides/" },
-          { text: "Ayuda", link: "https://www.modyo.com" }
+          { text: "Guías", link: "/es/guides/" }
         ],
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         sidebar: [
           {
             title: "Introducción",

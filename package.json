@@ -1,9 +1,9 @@
 {
   "name": "modyo-docs",
   "version": "0.0.1",
-  "description": "Modyo documentation",
+  "description": "Modyo Documentation",
   "main": "index.js",
-  "license": "MIT",
+  "license": "Modyo Copyright",
   "private": true,
   "scripts": {
     "docs:dev": "vuepress dev docs",
