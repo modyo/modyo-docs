@@ -1,20 +1,21 @@
 ---
-title: Welcome to Modyo
-lang: en-US
-in: welcome-to-modyo
+id: welcome-to-modyo
+title: Bienvenido a Modyo
 ---
+# Bienvenido a Modyo
 
-## Why use Modyo?
-* Use Modyo to build integrated digital customer experiences across public and private channels.
-* Use Modyo to create agility and governance in your digital factory.
-* Use Modyo to build digital experiences through flexible widgets.
-## Who is Modyo for?
-* Digital Channel Managers that are responsible for driving sales and customer experiences in web and mobile channels. 
-* Software Architects looking to create a clean architecture from Microservices and APIs to Microfrontends for web and mobile channels.
-* Digital Marketers that require a content management system for creating digital experiences to target customers.
-* Content Managers that want to easily manage content in one place across for all digital channels.
-* Front End Developers that want to build amazing digital experiences through easy to create widgets.
-* Back End Developers that require a powerful front end development environment to connect to APIs & Microservices.
-## What is Modyo?
-Modyo is our platform for all of the above. Modyo is our digital experience platform that powers solutions for digital customer interactions, secure, rapid web & hybrid mobile development, as well as bringing native and third-party applications into one cohesive area for managing your digital channels.
-Modyo provides a secure development environment in the cloud or on premise, for building intelligent interactions with customers. Public and private sites are easy to create, manage and measure. Large digital teams can streamline content creation and secure front end development that is encompassed in a library of intelligent widgets connected to business systems.
+## ¿Por qué usar Modyo?
+* Utiliza Modyo para crear experiencias digitales integradas para tus consumidores a través de canales públicos y privados.
+* Utiliza Modyo para crear agilidad y gobernabilidad en tu fábrica digital.
+* Utiliza Modyo para crear experiencias digitales a través de widgets inteligentes.
+## ¿Para quién es Modyo?
+* Líderes de Canales Digitales que son responsables de guiar interacciones, ventas y experiencias de clientes en canales web y móvil.
+* Arquitectos de Software buscando crear una arquitectura limpia desde los Microservicios y APIs hasta Microfrontends para canales web y móvil.
+* Expertos en Marketing Digital que requieren un sistema de administración de contenido para crear experiencias digitales para grupos objetivos.
+* Administradores de Contenido que quieren administrar contenido de manera fácil en un sólo lugar para todos sus canales digitales.
+* Desarrolladores de Front End que quieren construir experiencias digitales a través de widgets fáciles de crear.
+* Desarrolladores de Back End que requieren un ambiente de desarrollo de front end poderoso para conectar APIs y Microservicios.
+## ¿Qué es Modyo?
+Modyo es nuestra plataforma para todo lo mencionado anteriormente. Modyo es una plataforma de experiencia digital que potencia soluciones para interacciones con clientes digitales, desarrollo web y móvil rápido y seguro, además de unificar aplicaciones nativas y de terceros en una sola área cohesiva para administrar tus canales digitales.
+
+Modyo provee un ambiente de desarrollo seguro ya sea en la nube o “On Premise” (local), para construir interacciones inteligentes con tus clientes. Sitios públicos tanto como privados, son fáciles de crear, manejar y medir. Grandes equipos digitales pueden agilizar la creación de contenido y desarrollo seguro de Front End, el cual se encuentra rodeado de una librería de widgets inteligentes conectados a sistemas de la empresa.
