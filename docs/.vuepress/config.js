@@ -19,7 +19,6 @@ module.exports = {
     logo: "/assets/img/modyo.png",
     repo: "modyo/modyo-docs",
     docsDir: "docs",
-    editLinks: true,
     locales: {
       "/": {
         // text for the language dropdown
@@ -29,10 +28,9 @@ module.exports = {
         // text for the edit-on-github link
         editLinkText: "Edita esta página en GitHub",
         nav: [
-          { text: "Guías", link: "/guides/" },
-          { text: "Ayuda", link: "https://www.modyo.com" }
+          { text: "Guías", link: "/guides/" }
         ],
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         sidebar: [
           {
             title: "Introducción",
@@ -90,16 +88,15 @@ module.exports = {
         // text for the edit-on-github link
         editLinkText: "Edit this page on GitHub",
         nav: [
-          { text: "Guides", link: "/en/guides/" },
-          { text: "Help", link: "https://www.modyo.com" }
+          { text: "Guides", link: "/en/guides/" }
         ],
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         sidebar: [
           {
             title: "Introduction",
             collapsable: false,
             children: [
-              "/en/guides/",
+              "/guides/",
               ["/en/guides/key-concepts", "Key Concepts"],
               ["/en/guides/the-modyo-interface", "The modyo interface"],
               ["/en/guides/navigating-through-modyo", "Navigating Through Modyo"]

@@ -1,19 +1,25 @@
 ---
-title: Welcome to Modyo
-lang: en
+home: true
+heroImage: /assets/img/hero.jpg
+actionText: Begin
+actionLink: /en/guides/
+footer: Copyright © 2008-2019 Modyo SpA
 ---
 
-## Why use Modyo?
-* Use Modyo to build integrated digital customer experiences across public and private channels.
-* Use Modyo to create agility and governance in your digital factory.
-* Use Modyo to build digital experiences through flexible widgets.
-## Who is Modyo for?
-* Digital Channel Managers that are responsible for driving sales and customer experiences in web and mobile channels. 
-* Software Architects looking to create a clean architecture from Microservices and APIs to Microfrontends for web and mobile channels.
-* Digital Marketers that require a content management system for creating digital experiences to target customers.
-* Content Managers that want to easily manage content in one place across for all digital channels.
-* Front End Developers that want to build amazing digital experiences through easy to create widgets.
-* Back End Developers that require a powerful front end development environment to connect to APIs & Microservices.
-## What is Modyo?
-Modyo is our platform for all of the above. Modyo is our digital experience platform that powers solutions for digital customer interactions, secure, rapid web & hybrid mobile development, as well as bringing native and third-party applications into one cohesive area for managing your digital channels.
-Modyo provides a secure development environment in the cloud or on premise, for building intelligent interactions with customers. Public and private sites are easy to create, manage and measure. Large digital teams can streamline content creation and secure front end development that is encompassed in a library of intelligent widgets connected to business systems.
+<div class="features">
+  <div class="feature" style='text-align: center;'>
+    <img src='/assets/img/m.png' style='max-width: 80px;' />
+    <h2>Welcome to Modyo</h2>
+    <p>Modyo helps large companies and financial institutions accelerate digital transformation</p>
+  </div>
+  <div class="feature" style='text-align: center;'>
+    <img src='/assets/img/layout.png' style='max-width: 80px;' />
+    <h2>La interfaz de Modyo</h2>
+    <p>Understand what is where in the platform to get oriented quickly.</p>
+  </div>
+  <div class="feature" style='text-align: center;'>
+    <img src='/assets/img/i.png' style='max-width: 80px;' />
+    <h2>Key Concepts</h2>
+    <p>What are some of the key concepts to quickly understand?.</p>
+  </div>
+</div>

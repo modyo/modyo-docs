@@ -1,6 +1,7 @@
 ---
-id: welcome-to-modyo
 title: Bienvenido a Modyo
+lang: es
+in: welcome-to-modyo
 ---
 
 # Bienvenido a Modyo
