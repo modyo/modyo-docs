@@ -2,6 +2,7 @@
 id: welcome-to-modyo
 title: Bienvenido a Modyo
 ---
+
 # Bienvenido a Modyo
 
 ## ¿Por qué usar Modyo?
