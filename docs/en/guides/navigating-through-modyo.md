@@ -1,9 +1,9 @@
 ---
-lang: es
-title: Navegando por Modyo
+title: Navigating Through Modyo
+lang: en
 ---
 
-# Cuenta
+# Account
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -13,47 +13,47 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
 
-## Mis tareas
+## My tasks
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
 
-## Contenido
+## Content
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
 
-### Espacios
+### Spaces
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Entradas
-#### Tipos
-Campos: 
-- Texto de una linea
-- Texto de múltiples lineas
-- Texto enriquecido
+#### Entries
+#### Types
+Fields: 
+- Single line text
+- Multy line text
+- Rich text
 - Dropdown
 - Radio
 - Checkbox
-- Opciones múltiples
-- Buleano
-- Entero
+- Multiple options
+- Boolean
+- Integer
 - Decimal
-- Fecha
-- Lugares
-- Archivo
-- Listado de archivos
-- Contenido
-- Listado de contenido
+- Date
+- Locations
+- Asset
+- Asset list
+- Content type
+- Content type list
 
-#### Categorías
-#### Configuración del espacio
+#### Categories
+#### Space settings
 - General
 - Team review
 - CORS
 
-### Gestor de archivos
+### Asset Manager
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -61,7 +61,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Sitios
+### Sites
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -95,7 +95,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 - JS Theme
 - CSS Style
 
-#### Configuración del sitio
+#### Site Settings
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -107,11 +107,11 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-##### Restricciones
+##### Restrictions
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-##### Dominios
+##### Domains
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -119,116 +119,116 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Usuarios
+### Users
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- Actividad
-- Formularios
-- Órdenes
-- Credenciales
-- Notas
+- Activity
+- Forms
+- Orders
+- Credentials
+- Notes
 - Edit
 
 ### Targets
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Filtros
+#### Filters
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- Activo / Inactivo
-- Edad
-- Nacido en
-- Valor de custom field
-- Dispositivo
-- Correo entregado
-- Correo no leido
-- Correo no abierto
-- Correo reportado como spam
-- Conteo de correos abiertos
-- Conteo de respuestas a formularios
-- Género
-- Último inicio de sesión
-- Conteo de registros
-- Inicio de sesión
-- Notificación leída
-- Notificación no leída
-- Fecha de registro
-- Tags de usuario
-- Respuestas de formulario
-- Orden confirmando
-- Orden confirmada
-- Orden completa
-- Orden pagando
-- Orden pagada
-- Orden rechazada
+- Active /Inactive
+- Age
+- Birth at
+- Custom field value
+- Device
+- Email delivered
+- Email not read
+- Email not opened
+- Email spam reported
+- Email opened count
+- Form responses count
+- Gender
+- Last login
+- Log count
+- Logged in at
+- Notification read
+- Notification not read
+- Register date
+- User tag filter
+- Form answer filter
+- Order confirming
+- Order confirmated
+- Order completed
+- Order paying
+- Order paid
+- Order rejected
 
-### Formularios
-
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-
-
-#### Análisis
+### Forms
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Respuestas
+
+#### Analysis
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Editar
+#### Submissions
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-##### Campos
+#### Edit
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- Texto simple
-- Párrafo
-- Número
+##### Fields
+
+Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+
+- Single line text
+- Paragraph text
+- Number
 - Dropdown
 - Checkboxes
-- Elección
-- Fecha
-- Preguntas anidadas
-- Archivo
+- Choice
+- Date
+- Nested questions
+- FIle input
 
-##### Propiedades
+##### Properties
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
 - General
-- Snippet
-- Opciones
-- Notificaciones
+- Form snippet
+- Form options
+- Email notifications
 
 ### Messaging
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Campañas
+#### Campaigns
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- Correo
-- Notificaciones
+- Email
+- Notifications
 
-#### Mensajes
-
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-
-#### Plantillas
+#### Messages
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Desuscripciones
+#### Templates
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Configuración de usuarios
+#### Unsubscriptions
+
+Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+
+### Customer Settings
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -236,20 +236,20 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Correos
+#### Emails
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- Correo de activación
-- Usuario importado
-- Correo de bienvenida
-- Añadido por admin
-- Recuperación de contraseña
-- Confirmación
-- Esperando aprobación
-- Footer personalizado
+- Activation email
+- Imported user
+- Welcome email
+- Added by admin
+- Password recovery
+- Confirmation
+- Awaiting approval
+- Custom email footer
 
-#### Integraciones
+#### Integrations
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -260,30 +260,30 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 - Oauth2
 - OpenID Connect
 
-#### Registros
+#### Signups
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Campos personalizados
+#### Custom fields
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
 - Checkbox
-- Fecha
+- Date
 - Dropdown
-- Párrafo
-- Número
-- Elección
-- Texto simple
+- Paragraph
+- Number
+- Choice
+- Single line text
 
 ## Commerce
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- Órdenes
-- Configuración de commerce
+- Orders
+- Commerce settings
   - General 
-  - Formas de pago
+  - Payment methods
     - Oneclick
     - Webpay
     - PayU
@@ -297,7 +297,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-## Configuración
+## Settings
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -305,7 +305,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Integraciones
+### Integrations
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -320,15 +320,15 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Acceso a la API
+### API Access
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Registros de actividad
+### Actvity Logs
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Equipo
+### Team
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -336,28 +336,28 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Seguridad
+### Security
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
 
 # Locks
-- ¿Qué usa locks?
-- Tomar el control de un recurso
+- What uses locks
+- Take control of resource
 
-# Versionado
-- Editable
-- Publicado
-- Respaldos
-- Resetear
+# Versioning framework
+- Editing
+- Published
+- Backups
+- Reset
 - Rollback
 
 # Team review
-- Borrador
-- En revisión
-- Aprobado
-- Publicar ahora
-- Programar publicación
-- Actividad
-- Revisores
-- Comentarios
+- Draft
+- On review
+- Approved
+- Publish now
+- Schedule publish
+- Activity
+- Reviewers
+- Comments

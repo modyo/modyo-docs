@@ -1,25 +1,25 @@
 ---
-lang: es
-title: La interfaz Modyo
+title: The Modyo Interface
+lang: en
 ---
 
-# La interfaz Modyo
+# The Modyo Interface
 
-## ¿Qués es dónde?
+## What is where?
 
 Below we'll give you a sense of what is where in [Modyo](https://www.modyo.com/).
 
 ![The Modyo interface](./modyo-screenshot.png)
 
-### Cuenta
+### Account
 
 When entering Modyo you'll see the following menu within your account.
 
-#### Inicio
+#### Home
 
 - The latest activity across the platform.
 
-#### Canales
+#### Channels
 
 - Build and manage your sites.
 - See your tasks associated with sites.
@@ -42,7 +42,7 @@ When entering Modyo you'll see the following menu within your account.
 
 [Go to insights](https://support.modyo.com/hc/en-us/articles/360005114872-Insights)
 
-#### Configuraciones
+#### Settings
 
 - Configure your account and base domain across all channels.
 - Set up authentication mechanisms. \(OpenID Connect, OAuth2 etc...\)
