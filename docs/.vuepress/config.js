@@ -71,10 +71,13 @@ module.exports = {
             ]
           },
           {
-            title: "Advance Topics",
-            collapsable: faltruese,
+            title: "Temas Avanzados",
+            collapsable: false,
             children: [
-              "/guides/advance-topics/"
+              "/guides/advance-topics/",
+              ["/guides/advance-topics/locks","Bloqueos"],
+              ["/guides/advance-topics/versioning","Versionado"],
+              ["/guides/advance-topics/team-review","Team Review"]
             ]
           },
           {
@@ -140,7 +143,10 @@ module.exports = {
             title: "Advance Topics",
             collapsable: true,
             children: [
-              "/guides/advance-topics/"
+              "/guides/advance-topics/",
+              ["/guides/advance-topics/locks","Locks"],
+              ["/guides/advance-topics/versioning","Versionning"],
+              ["/guides/advance-topics/team-review","Team Review"]
             ]
           },
           {
