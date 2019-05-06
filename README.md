@@ -11,12 +11,12 @@
 
 All the site it's inside the `/docs` folder, and the main configuration it's in `/docs/.vuepress`, including the public folder (`/docs/.vuepress/public`)
 
-The default language is english:
+The default language is spanish:
 
 ```
 - docs/
 	- .vuepress/
-	- guides/ # All docs in english
+	- guides/ # All docs in spanish
 	- README.md # It's like an index. In this case is the home page
 ```
 
@@ -44,6 +44,6 @@ Any file (markdown files) follow the same structure of the file system plus the 
 		- README.md
 ```
 
-The route should be `/guides/foo/`. If we add the same folder `foo` to the spanish language, should be `/es/guides/foo/`.
+The route should be `/guides/foo/`. If we add the same folder `foo` to the english language, should be `/en/guides/foo/`.
 
 The main navigation and the sidebar are controlled by the configuration file (`/docs/.vuepress/config.js`)

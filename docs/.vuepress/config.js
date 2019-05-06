@@ -34,7 +34,7 @@ module.exports = {
         sidebar: [
           {
             title: "Introducción",
-            collapsable: false,
+            collapsable: true,
             children: [
               "/guides/",
               ["/guides/key-concepts", "Conceptos claves"],
@@ -44,32 +44,40 @@ module.exports = {
           },
           {
             title: "Channels",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/channels/"
             ]
           },
           {
             title: "Customers",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/customers/"
             ]
           },
           {
             title: "Commerce",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/commerce/"
             ]
           },
           {
             title: "Insights",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/insights/"
             ]
           },
           {
             title: "Temas Avanzados",
+            collapsable: false,
             children: [
-              /* ... */
+              "/guides/advance-topics/",
+              ["/guides/advance-topics/locks","Bloqueos"],
+              ["/guides/advance-topics/versioning","Versionado"],
+              ["/guides/advance-topics/team-review","Team Review"]
             ]
           },
           {
@@ -94,7 +102,7 @@ module.exports = {
         sidebar: [
           {
             title: "Introduction",
-            collapsable: false,
+            collapsable: true,
             children: [
               "/guides/",
               ["/en/guides/key-concepts", "Key Concepts"],
@@ -105,32 +113,40 @@ module.exports = {
           },
           {
             title: "Channels",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/channels/"
             ]
           },
           {
             title: "Customers",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/customers/"
             ]
           },
           {
             title: "Commerce",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/commerce/"
             ]
           },
           {
             title: "Insights",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/insights/"
             ]
           },
           {
-            title: "Advanced Topics",
+            title: "Advance Topics",
+            collapsable: true,
             children: [
-              /* ... */
+              "/guides/advance-topics/",
+              ["/guides/advance-topics/locks","Locks"],
+              ["/guides/advance-topics/versioning","Versionning"],
+              ["/guides/advance-topics/team-review","Team Review"]
             ]
           },
           {
