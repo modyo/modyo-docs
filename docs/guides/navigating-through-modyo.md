@@ -15,17 +15,16 @@ Al ingresar al home, te podrás encontrar con distintas opciones en el Sidebar, 
 
 ## Mis tareas
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-
+En este apartado podrás ver las tareas que has realizado. En ellas podrás ver el estado en que se encuentran, además de que si ya han pasado a revisión por otro usuario. Ese usuario podrá decidir si tu recurso está aprobado o necesita una revisión extra. En cualquiera de los casos, podrás acceder al contenido de este y revisar los cambios solicitados.
 
 ## Contenido
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+El contenido es una de las partes más fundamentales de nuestro sitio, ya que en él se encuentra toda la información que impulsa al usuario a realizar una acción dentro o fuera de nuestro sitio web, por lo que cada uno de los datos que incluyamos debe ser revisado de manera precisa antes de ser publicado.
 
 
 ### Espacios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En espacios podrás encontrar cada uno del material de los sitios y subsitios en los que te encuentras trabajando. Así podrás crear contenido para una página o promociones temporales, que podrás configurar en la sección de canales. 
 
 #### Entradas
 #### Tipos
@@ -55,19 +54,22 @@ Campos:
 
 ### Gestor de archivos
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En este lugar podrás encontrar todos los archivos que has subido para incluír en tu contenido. En los cuales puedes encontrar imágenes, audios, fotos, videos, documentos, etc.
+Para acceder a cada uno de ellos, solo debes hacer clic en el nombre del archivo para abrirlo. 
+Además, podrás encontrar la URL pública en la que se encuentra y etiquetarlo por si necesitas que quede ordenado.
+
 
 ## Channels
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección podrás encontrar tus sitios en general, y podrás modificar su estructura, para que cualquier diseñador o desarrollador pueda trabajar en este espacio, sin tener que interferir directamente en el contenido.
 
 ### Sitios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección, los sitios para diseñadores y diagramadores son sumamente vitales, ya que podrás modificar no solo cada una de las páginas en particular sino también una estructura entera, en paralelo a lo que se esté trabajando con contenido.
 
 #### Pages
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Esta sección te permite organizar las páginas de tu sitio, con tal de ver un mapa de navegación estructurado y que te permita visualmente tener un diagrama de flujo ideal para quienes necesiten una vista de un usuario.
 
 - Home
 - Internal
