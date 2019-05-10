@@ -5,12 +5,12 @@ title: Navegando por Modyo
 
 # Cuenta
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Modyo es una plataforma que te permite manejar tus sitios y páginas fácilmente, además de ordenar y organizar los datos que ingresas y las tareas que se deben realizar. Por lo mismo, aprender las funciones de la plataforma es fundamental para que cada negocio funcione a toda marcha. Aquí revisaremos qué es lo que puedes realizar como un usuario.
 
 
 ## Home
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Al ingresar al home, te podrás encontrar con distintas opciones en el Sidebar, mientras que en el sector principal, podrás ver la actividad del equipo que actualmente trabaja contigo en la página, además del registro de los movimientos que has realizado.
 
 
 ## Mis tareas
