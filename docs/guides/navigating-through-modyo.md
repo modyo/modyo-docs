@@ -83,15 +83,15 @@ Esta sección te permite organizar las páginas de tu sitio, con tal de ver un m
 
 #### Navigation
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En este lugar podrás asociar el contenido o página en el que estés trabajando con la sección de la página a la que quieres que pertenezca. Es fundamental hacer bien esta asociación ya que permite que el mapa de navegación de sitio sea completo, tomando en cuenta de que se parte en el formato de arbol, partiendo por el home y después siguiendo las demás secciones.
 
 #### Widgets
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección podrás agregar cualquier widget o aplicación web que necesites en tu página. Solo tendrás que hacer clic en el botón de la barra superior para nombrarlo y después pegar el código. Posteriormente podrás ver una lista que podrás usar indistintamente en cualquier página que te sea conveniente.
 
 #### Templates
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+El Template es escencial para cada sitio, por lo que es lo que te permite afinar visualmente como quieres el estilo de tu página y a su vez, los elementos comunes que tienes y su código preciso:
 
 - Template
 - Snippet
@@ -100,23 +100,24 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 #### Configuración del sitio
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En la Configuración del Sitio, podrás encontrar distintas opciones que permitan optimizar las búsquedas de tu sitio, cambiar imágenes que no estén en el homepage y además de modificar los dominios si es necesario.
 
 ##### General
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Una de las secciones más fundamentales para cualquier sitio es definir su título y descripción, que serán las que aparecerán en los buscadores y por las cuales, los potenciales usuarios llegarán. Además, se puede modificar el favicon, el logo y el idioma del sitio, la zona horaria, entre otras opciones que pueden decidir incluso la operatividad de este.
 
 ##### SEO
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+"Search Engine Optimization" es el elemento más vital si es que quieres que tu producto sea encontrado en Google, por lo que agregar información acá es de alta importancia. En esta sección debes agregar una "metadescripción" que encontrarán los buscadores y las palabras claves por las que quieres que tu sitio sea encontrado.
+A su vez, puedes configurar el archivo para que los buscadores solo encuentren páginas en particular de tu sitio y no todas.
 
 ##### Restricciones
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+La seguridad y privacidad de nuestras páginas debe ser uno de los pilares más fundamentales al construir un sitio web. Por esto, es que debemos tener regulados a qué usuarios les ofrecemos una información determinada. Acá se puede segmentar el público y elevar la privacidad de los datos ingresados.
 
 ##### Dominios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+El corazón de todo nuestro sitio está acá, ya que es donde debemos poner las direcciones de nuestros dominios web para redirigirlos a nuestras páginas. Asegúrate de que cada número esté bien ingresado, ya que cualquier detalle o caracter mal puesto, puede significar la nula llegada de visitantes.
 
 ## Customers
 
