@@ -121,7 +121,7 @@ El corazón de todo nuestro sitio está acá, ya que es donde debemos poner las 
 
 ## Customers
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección podrás encontrar toda la información en relación a tus clientes, sus datos, formas de contacto y operaciones dentro del sitio web. Es fundamental que quienes manejen esta sección estén capacitados plenamente en la plataforma, ya que la seguridad de estos datos personales es vital para un negocio financiero.
 
 ### Usuarios
 
