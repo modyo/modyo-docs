@@ -3,15 +3,13 @@ id: navigating-through-modyo
 title: Navegando por Modyo
 ---
 
-# Cuenta
+## Cuenta
 
 Modyo es una plataforma que te permite manejar tus sitios y páginas fácilmente, además de ordenar y organizar los datos que ingresas y las tareas que se deben realizar. Por lo mismo, aprender las funciones de la plataforma es fundamental para que cada negocio funcione a toda marcha. Aquí revisaremos qué es lo que puedes realizar como un usuario.
-
 
 ## Home
 
 Al ingresar al home, te podrás encontrar con distintas opciones en el Sidebar, mientras que en el sector principal, podrás ver la actividad del equipo que actualmente trabaja contigo en la página, además del registro de los movimientos que has realizado.
-
 
 ## Mis tareas
 
@@ -21,14 +19,16 @@ En este apartado podrás ver las tareas que has realizado. En ellas podrás ver 
 
 El contenido es una de las partes más fundamentales de nuestro sitio, ya que en él se encuentra toda la información que impulsa al usuario a realizar una acción dentro o fuera de nuestro sitio web, por lo que cada uno de los datos que incluyamos debe ser revisado de manera precisa antes de ser publicado.
 
-
 ### Espacios
 
-En espacios podrás encontrar cada uno del material de los sitios y subsitios en los que te encuentras trabajando. Así podrás crear contenido para una página o promociones temporales, que podrás configurar en la sección de canales. 
+En espacios podrás encontrar cada uno del material de los sitios y subsitios en los que te encuentras trabajando. Así podrás crear contenido para una página o promociones temporales, que podrás configurar en la sección de canales.
 
 #### Entradas
+
 #### Tipos
-Campos: 
+
+Campos:
+
 - Texto de una linea
 - Texto de múltiples lineas
 - Texto enriquecido
@@ -47,7 +47,9 @@ Campos:
 - Listado de contenido
 
 #### Categorías
+
 #### Configuración del espacio
+
 - General
 - Team review
 - CORS
@@ -55,9 +57,8 @@ Campos:
 ### Gestor de archivos
 
 En este lugar podrás encontrar todos los archivos que has subido para incluír en tu contenido. En los cuales puedes encontrar imágenes, audios, fotos, videos, documentos, etc.
-Para acceder a cada uno de ellos, solo debes hacer clic en el nombre del archivo para abrirlo. 
+Para acceder a cada uno de ellos, solo debes hacer clic en el nombre del archivo para abrirlo.
 Además, podrás encontrar la URL pública en la que se encuentra y etiquetarlo por si necesitas que quede ordenado.
-
 
 ## Channels
 
@@ -76,9 +77,9 @@ Esta sección te permite organizar las páginas de tu sitio, con tal de ver un m
 - Me
 
 ---
+
 - Widgets
 - Properties
-
 
 #### Navigation
 
@@ -171,7 +172,6 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-
 #### Análisis
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
@@ -202,7 +202,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-- General
+- Propiedades
 - Snippet
 - Opciones
 - Notificaciones
@@ -234,7 +234,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### General
+#### Configuració general
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -251,7 +251,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 - Esperando aprobación
 - Footer personalizado
 
-#### Integraciones
+#### Integraciones de usuarios
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -284,7 +284,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 - Órdenes
 - Configuración de commerce
-  - General 
+  - General
   - Formas de pago
     - Oneclick
     - Webpay
@@ -303,11 +303,11 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### General
+### Configuración general de la cuenta
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-### Integraciones
+### Integraciones del equipo
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
@@ -342,19 +342,21 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
+## Locks
 
-# Locks
 - ¿Qué usa locks?
 - Tomar el control de un recurso
 
-# Versionado
+## Versionado
+
 - Editable
 - Publicado
 - Respaldos
 - Resetear
 - Rollback
 
-# Team review
+## Team review
+
 - Borrador
 - En revisión
 - Aprobado
