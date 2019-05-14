@@ -203,7 +203,7 @@ Las opciones para cambiar o agregar a cada una de estas son ellas. Recuerda grab
 
 ##### Propiedades
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Para cada formulario, debes configurar sus prodiedades que te permitan modificar según lo que necesites. Además, acá podrás encontrar las propiedades de los distintos widgets si quieres instalar alguno. Las opciones son:
 
 - Propiedades
 - Snippet
@@ -212,38 +212,38 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 ### Messaging
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Si es necesario contactar a algún usuario o cliente, esta herramienta te permitirá hacerlo de manera fácil, además de hacer un seguimiento del contenido que ha recibido y su comportamiento frente a los mails enviados.
 
 #### Campañas
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En este lugar podrás encontrar todas las campañas que has enviado a los usuarios y prospectos, además de sus estadisticas de efectividad. En este caso, puedes filtrarlas según la forma en que se realizaron.
 
 - Correo
 - Notificaciones
 
 #### Mensajes
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En el caso de envío de mensajes, acá podrás encontrar la lista de los envíos y si estos fueron leídos.
 
 #### Plantillas
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Si quieres elaborar rápidamente una campaña, lo más fácil que puedes hacer es tomar una plantilla y cambiar los datos. En esta sección podrás encontrar 3 plantillas por defecto, además de la opción de elaboración de una plantilla propia.
 
 #### Desuscripciones
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección podrás ver los usuarios que se han desuscribido de la lista de mailing y tener la opción de reinscribirlos solo si es estrictamente necesario.
 
 ### Configuración de usuarios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Quienes posean una sesión de Administrador, podrán tener esta opción de configuración, que servirá para modificar aspectos técnicos y estéticos de la plataforma en general.
 
 #### Configuración general
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección es posible modificar aspectos estéticos de la plataforma, para la visión de los usuarios, como los colores y el logo. Además, podrás agregar un CSS personalizado para modificar el estilo.
 
 #### Correos
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Los datos necesarios para el envío de correos se deben agregar acá, partiendo por la dirección de la cual serán enviados, y después la configuración de los correos que se enviarán a los usuarios.
 
 - Correo de activación
 - Usuario importado
@@ -256,7 +256,8 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 #### Integraciones de usuarios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En Modyo, es posible hacer integración de usuarios, en el cual la administración y el login se puede hacer más facil.
+Los servicios con los que se puede integrar son:
 
 - Facebook
 - Google
@@ -267,11 +268,12 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 #### Registros
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En aspectos técnicos, aquí se puede modificar la forma de ingreso a la plataforma (dirección, SSO, etc) además de la forma de suscribirse y su customización.
 
 #### Campos personalizados
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En este caso, la plataforma te permite agregar un campo personalizado para agregar dentro de la plataforma y mejorar la forma de registro de datos de los usuarios. 
+Los tipos de datos de ingreso que se pueden agregar son:
 
 - Checkbox
 - Fecha
