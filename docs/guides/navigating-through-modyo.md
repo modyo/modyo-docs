@@ -125,7 +125,8 @@ En esta sección podrás encontrar toda la información en relación a tus clien
 
 ### Usuarios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección podremos ver quienes son los usuarios de nuestro sitio, obtener sus datos y tener un registro de sus acciones dentro del sitio, por lo que si es necesario obtener una información de ellos, se puede recurrir a esta sección. 
+Las informaciones que se pueden obtener actualmente son:
 
 - Actividad
 - Formularios
@@ -136,11 +137,11 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 ### Targets
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Los Targets permiten segmentar la información que queremos entregar a cada uno de los usuarios. Por lo mismo, es fundamental saber usar los filtros que agrupan a cada uno de ellos.
 
 #### Filtros
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Los filtros nos permiten identificar los patrones de actividad de los usuarios, sus caracteristicas, su patrón de comportamiento, entre otros, como:
 
 - Activo / Inactivo
 - Edad
@@ -171,23 +172,24 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 ### Formularios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Si necesitas que alguno de tus usuarios entreguen información, lo ideal es hacer un formulario. Acá podrás encontrar la forma de realizarlo, además de analizarlo. Te permitirá filtrar clientes y encontrar datos precisos.
 
 #### Análisis
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Mediante la herramienta de análisis, podrás ver estadisticas numéricas de quienes respondieron a tus formularios (si tuvieron preguntas que se apliquen a ello), que te permitan resegmentar la base de usuarios.
+También podrás ver la estadística de los correos y ver cuáles fueron los más efectivos.
 
 #### Respuestas
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Si necesitas ver una respuesta de un usuario en específico, la sección te permitirá ingresar al formulario y leer la respuesta que sea entregada.
 
 #### Editar
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Si necesitas hacer un cambio en el formulario, puedes ingresar a esta sección donde podrás reordenar las secciones y cambiar el contenido rápidamente.
 
 ##### Campos
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Las opciones para cambiar o agregar a cada una de estas son ellas. Recuerda grabar al hacer el cambio y moverlas hacia el template.
 
 - Texto simple
 - Párrafo
@@ -235,7 +237,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
-#### Configuració general
+#### Configuración general
 
 Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
 
