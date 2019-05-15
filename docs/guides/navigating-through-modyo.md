@@ -285,7 +285,9 @@ Los tipos de datos de ingreso que se pueden agregar son:
 
 ## Commerce
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección, se pueden ver las órdenes de compra, precio y su estado actual por parte del usuario. Se pueden filtrar por fecha y métodos de pago.
+También es posible hacer una configuración de la emisión de la orden que le llega al cliente a través de su correo electrónico además del cambio de formato de moneda.
+
 
 - Órdenes
 - Configuración de commerce
@@ -302,19 +304,22 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 ## Insights
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Acá podrás ver las estadísticas de cada una de las operaciones que se realicen en la web, separada por cada uno de los sitios.
+En el caso de Digital Factory, se puede observar la cantidad de recursos por día, su actividad por usuario y por tipo de contenido.
+Para Customers, la idea es ver su cantidad de usuarios, efectividad de campañas y compromiso con los sitios, dividido por cada uno de los targets definidos.
+En Payments, también se puede ver un resumen de los órdenes, su estado y su medio de pago.
 
 ## Configuración
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En la sección de Configuración, puedes encontrar todas las opciones de cambios en la cuenta y de los sitios en global, si tienes la función de Administración de la plataforma.
 
 ### Configuración general de la cuenta
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Para esta sección, puedes encontrar cambios generales como el nombre, el sitio principal y la URL. Tienes que tener en cuenta que cada uno de los cambios se verán reflejados en las cuentas de los demás usuarios.
 
 ### Integraciones del equipo
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Para hacer más fácil el ingreso de los administradores a la plataforma, es posible hacer una integración con IDs de otros proveedores. Para ello, se deben las APIs correspondientes aquí.
 
 - Facebook
 - Google
@@ -325,27 +330,27 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 ### Webhooks
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Se pueden habilitar webhooks para el sitio, para habilitar que quienes no sean usuarios de la plataforma, puedan hacer acciones externas. En esta sección, además de la habilitación, se puede ver el registro de la actividad.
 
 ### Acceso a la API
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Si es necesario, se pueden crear APIs de la plataforma para utilizar información de ella en otros sitios. En este caso, se puede generar un token con los datos correspondientes que se quieren entregar desde acá.
 
 ### Registros de actividad
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Los registros de actividad de cada uno de los usuarios registrados y administradores pueden ser visualizados aquí. Además, pueden ser filtrados según tipo de usuario, descripción, fecha, entre otros.
 
 ### Equipo
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Para ver la lista de quienes son miembros del equipo de usuarios se puede ingresar acá. Además, es posible activar o desactivar sus funciones, además de ver sus fechas de actividad.
 
 ### Roles
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Acá se pueden ver los roles de los usuarios del sitio, además de gestionar los permisos y las vistas que tienen de la plataforma, para optimizar su gestión.
 
 ### Seguridad
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En el caso de necesitar recursos desde otro sitio que no esté en el servidor de la plataforma, es posible habilitar CORS desde esta sección, tomando en cuenta que puede representar una debilidad en la seguridad en la web.
 
 ## Locks
 
