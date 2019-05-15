@@ -1,4 +1,3 @@
----
 id: navigating-through-modyo
 title: Navegando por Modyo
 ---
@@ -21,7 +20,7 @@ El contenido es una de las partes más fundamentales de nuestro sitio, ya que en
 
 ### Espacios
 
-En espacios podrás encontrar cada uno del material de los sitios y subsitios en los que te encuentras trabajando. Así podrás crear contenido para una página o promociones temporales, que podrás configurar en la sección de canales.
+En Espacios podrás encontrar cada uno del material de los sitios y subsitios en los que te encuentras trabajando. Así podrás crear contenido para una página o promociones temporales, que podrás configurar en la sección de canales.
 
 #### Entradas
 
