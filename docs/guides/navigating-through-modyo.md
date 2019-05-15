@@ -319,7 +319,7 @@ Para esta sección, puedes encontrar cambios generales como el nombre, el sitio 
 
 ### Integraciones del equipo
 
-Para hacer más fácil el ingreso de los administradores a la plataforma, es posible hacer una integración con IDs de otros proveedores. Para ello, se deben las APIs correspondientes aquí.
+Para hacer más fácil el ingreso de los administradores a la plataforma, es posible hacer una integración con IDs de otros proveedores. Para ello, se deben escribir los tokens de APIs correspondientes aquí.
 
 - Facebook
 - Google
