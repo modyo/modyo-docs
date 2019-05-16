@@ -83,6 +83,7 @@ Esta sección te permite organizar las páginas de tu sitio, con tal de ver un m
 
 #### Navigation
 
+[//]: <> (La navegación permite modificar el menú de los sitios, dejando que los links apunten a una página o a una url personalizada.)
 En este lugar podrás asociar el contenido o página en el que estés trabajando con la sección de la página a la que quieres que pertenezca. Es fundamental hacer bien esta asociación ya que permite que el mapa de navegación de sitio sea completo, tomando en cuenta de que se parte en el formato de arbol, partiendo por el home y después siguiendo las demás secciones.
 
 #### Widgets
@@ -108,7 +109,7 @@ Una de las secciones más fundamentales para cualquier sitio es definir su títu
 
 ##### SEO
 
-"Search Engine Optimization" es el elemento más vital si es que quieres que tu producto sea encontrado en Google, por lo que agregar información acá es de alta importancia. En esta sección debes agregar una "metadescripción" que encontrarán los buscadores y las palabras claves por las que quieres que tu sitio sea encontrado.
+"Search Engine Optimization" es el elemento más vital si es que quieres que tu producto sea encontrado en Google u otros motores de búsqueda, por lo que agregar información acá es de alta importancia. En esta sección debes agregar una "metadescripción" que encontrarán los buscadores y las palabras claves por las que quieres que tu sitio sea encontrado.
 A su vez, puedes configurar el archivo para que los buscadores solo encuentren páginas en particular de tu sitio y no todas.
 
 ##### Restricciones
