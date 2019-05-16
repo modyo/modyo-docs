@@ -1,3 +1,4 @@
+---
 id: navigating-through-modyo
 title: Navegando por Modyo
 ---
@@ -124,7 +125,7 @@ En esta sección podrás encontrar toda la información en relación a tus clien
 
 ### Usuarios
 
-En esta sección podremos ver quienes son los usuarios de nuestro sitio, obtener sus datos y tener un registro de sus acciones dentro del sitio, por lo que si es necesario obtener una información de ellos, se puede recurrir a esta sección. 
+En esta sección podremos ver quienes son los usuarios de nuestro sitio, obtener sus datos y tener un registro de sus acciones dentro del sitio, por lo que si es necesario obtener una información de ellos, se puede recurrir a esta sección.
 Las informaciones que se pueden obtener actualmente son:
 
 - Actividad
@@ -271,7 +272,7 @@ En aspectos técnicos, aquí se puede modificar la forma de ingreso a la platafo
 
 #### Campos personalizados
 
-En este caso, la plataforma te permite agregar un campo personalizado para agregar dentro de la plataforma y mejorar la forma de registro de datos de los usuarios. 
+En este caso, la plataforma te permite agregar un campo personalizado para agregar dentro de la plataforma y mejorar la forma de registro de datos de los usuarios.
 Los tipos de datos de ingreso que se pueden agregar son:
 
 - Checkbox
@@ -286,7 +287,6 @@ Los tipos de datos de ingreso que se pueden agregar son:
 
 En esta sección, se pueden ver las órdenes de compra, precio y su estado actual por parte del usuario. Se pueden filtrar por fecha y métodos de pago.
 También es posible hacer una configuración de la emisión de la orden que le llega al cliente a través de su correo electrónico además del cambio de formato de moneda.
-
 
 - Órdenes
 - Configuración de commerce
