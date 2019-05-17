@@ -13,11 +13,13 @@ Al ingresar al home, te podrás encontrar con distintas opciones en el Sidebar, 
 
 ## Mis tareas
 
-En este apartado podrás ver las tareas que has realizado. En ellas podrás ver el estado en que se encuentran, además de que si ya han pasado a revisión por otro usuario. Ese usuario podrá decidir si tu recurso está aprobado o necesita una revisión extra. En cualquiera de los casos, podrás acceder al contenido de este y revisar los cambios solicitados.
+En este apartado podrás ver las tareas de los usuarios que trabajan en la plataforma. En ellas podrás ver el estado en que se encuentran todas las tareas.
+Un usuario de rango igual o mayor podrá asignarte una tarea que puede significar la elaboración de un contenido o la revisión de este.
+Al ser revisado tu contenido y dada la aprobación a través de la misma plataforma, recién estará en condiciones de ser usado o publicado. Si este es rechazado, puede ser asignado al mismo usuario que lo elaboró o reasignado a otro.
 
 ## Contenido
 
-El contenido es una de las partes más fundamentales de nuestro sitio, ya que en él se encuentra toda la información que impulsa al usuario a realizar una acción dentro o fuera de nuestro sitio web, por lo que cada uno de los datos que incluyamos debe ser revisado de manera precisa antes de ser publicado.
+El contenido es una de las partes más fundamentales de nuestro sitio, ya que en él se encuentra toda la información que impulsa a nuestro prospecto a realizar una acción dentro o fuera de nuestro sitio web, por lo que cada uno de los datos que incluyamos debe ser revisado prolijamente para evitar informaciones erróneas o ambiguas, que puedan inducir a una acción equivocada.
 
 ### Espacios
 
@@ -355,9 +357,15 @@ En el caso de necesitar recursos desde otro sitio que no esté en el servidor de
 ## Locks
 
 - ¿Qué usa locks?
+
+Locks es una función de Modyo que implica si algún usuario Administrador está usando un recurso para modificar su función o apariencia, esta quedará automáticamente bloqueada para otros Administradores, para no interferir el trabajo que se está realizando.
+
 - Tomar el control de un recurso
+En el caso de que se necesite intervenir el recurso, es posible hacerlo mediante el botón de Tomar el Control. Al hacer esto, el primer administrador quedará automáticamente bloqueado de hacer más cambios.
 
 ## Versionado
+
+El versionado es una función de seguridad de las plataformas de Modyo, que sirve para revisar sitios publicados y versiones anteriores, además de revisar los respaldos realizados y realizar finalmente un reset completo. 
 
 - Editable
 - Publicado
