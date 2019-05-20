@@ -28,7 +28,9 @@ Al crear un sitio, este aparecerá inmediatamente como habilitado para realizar 
 
 ## Navigation
 
-Si quieres armar una navegación fácil dentro de tu sitio, esta es la sección que debes usar
+Si quieres armar una navegación fácil dentro de tu sitio, esta es la sección que debes usar, ya que te permite esquematizar visualmente la navegación de un usuario por las diferentes páginas que crearemos.
+
+Lo más importante es que cada página "anide" a sus subsitios o páginas que la contengan. Así tendremos la visualización de cómo se organiza nuestro sitio y a la vez, la navegación que debería tener el usuario final.
 
 ## Widgets
 
