@@ -21,6 +21,6 @@ Modyo es una plataforma de experiencia digital que potencia soluciones para inte
 * Líderes de Canales Digitales que son responsables de guiar interacciones, ventas y experiencias de clientes en canales web y móvil.
 * Arquitectos de Software buscando crear una arquitectura limpia desde los Microservicios y APIs hasta Microfrontends para canales web y móvil.
 * Expertos en Marketing Digital que requieren un sistema de administración de contenido para crear experiencias digitales para grupos objetivos.
-* Administradores de Contenido que quieren administrar contenido de manera fácil en un sólo lugar para todos sus canales digitales.
+* Administradores de Contenido que quieren manejar sus publicaciones de manera fácil en un sólo lugar para todos sus canales digitales.
 * Desarrolladores de Front End que quieren construir experiencias digitales a través de widgets fáciles de crear.
 * Desarrolladores de Back End que requieren un ambiente de desarrollo de front end poderoso para conectar APIs y Microservicios.
