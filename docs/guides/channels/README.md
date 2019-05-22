@@ -12,14 +12,29 @@ Channels te permite manejar cada uno de los sitios hechos en Modyo, incluyendo t
 
 Es aquí donde debes operar para crear sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
 
+Al entrar, podrás ver que existen 4 estados:
+
+- Habilitado (Estado por defecto en el que quedan los sitios recién creados y los que están online)
+- Ocultos (Sitios creados que solo puede ver el usuario en linea)
+- Desarrollo (Sitios traspasados a otros usuarios que se encuentren trabajando en ellos)
+- Deshabilitado (Sitios que han sido desechados)
+
+Para crear un sitio, solo debes hacer clic en la pestaña "Nuevo", el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
+
+Después de ello, podrás verlo en modo "Habilitado", lo que significa que está online para trabajar.
+
 ## Pages
 
-Todos los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá. 
+Todas las páginas de los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá. 
 
-Desde la pestaña "Nuevo", podemos crear el tema que deseamos, si es que se manejan muchas plataformas a la vez. 
-Una buena práctica es agruparlas por sitios principales y desde dentro, crear subsitios que hablen de temas relacionados.
+Desde la pestaña "Nuevo", podemos crear la página que deseamos, con el nómbre y la ruta que tendrá como dirección. Además, se le puede asignar un layout predeterminado como estructura de nuestro contenido.
 
-Al crear un sitio, este aparecerá inmediatamente como habilitado para realizar cambios, elegir templates y armarlo según nuestra decisión. De todas maneras, si quieres que otro desarrollador haga un trabajo más complejo de armado, deberás ponerlo "En Desarrollo", y así asignar esta tarea a otra persona.
+Al hacer clic en el lapiz, podremos acceder a nuestra página y su layout, el cual es posible adaptarla según los widgets que tengamos a la mano.
+
+Modyo provee de una serie de widgets predeterminados para cada página. Sin embargo, en la sección Widgets (ver más adelante), es posible agregar más, si es que es necesario.
+
+Cuando ya tengamos lista nuestra página, con el contenido armado y el layout listo, se puede publicar desde acá, para que sea accedida por todos los usuarios públicos.
+
 
 - Home
 - Internal
@@ -34,7 +49,9 @@ Al crear un sitio, este aparecerá inmediatamente como habilitado para realizar 
 
 Si quieres armar una navegación fácil dentro de tu sitio, esta es la sección que debes usar, ya que te permite esquematizar visualmente la navegación de un usuario por las diferentes páginas que crearemos.
 
-Lo más importante es que cada página "anide" a sus subsitios o páginas que la contengan. Así tendremos la visualización de cómo se organiza nuestro sitio y a la vez, la navegación que debería tener el usuario final.
+Lo más importante es que cada página "anide" las páginas que contengan y que no deriven a otros sitios. 
+
+Así tendremos la visualización de cómo se organiza nuesta web y a la vez, la navegación que debería tener el usuario final.
 
 ## Widgets
 
