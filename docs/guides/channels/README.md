@@ -4,15 +4,19 @@ lang: es
 id: channels
 ---
 
-#Channels
+# Channels
 
 Channels te permite manejar cada uno de los sitios hechos en Modyo, incluyendo templates, widgets, páginas y la navegación. Está enfocado principalmente para ser manejado por diseñadores, desarrolladores y administradores de contenido.
 
 # Sitios
 
+Es aquí donde debes operar para crear sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
+
 ## Pages
 
-Todos los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá. Desde la pestaña "Nuevo", podemos crear el tema que deseamos, si es que se manejan muchas plataformas a la vez. 
+Todos los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá. 
+
+Desde la pestaña "Nuevo", podemos crear el tema que deseamos, si es que se manejan muchas plataformas a la vez. 
 Una buena práctica es agruparlas por sitios principales y desde dentro, crear subsitios que hablen de temas relacionados.
 
 Al crear un sitio, este aparecerá inmediatamente como habilitado para realizar cambios, elegir templates y armarlo según nuestra decisión. De todas maneras, si quieres que otro desarrollador haga un trabajo más complejo de armado, deberás ponerlo "En Desarrollo", y así asignar esta tarea a otra persona.
@@ -34,33 +38,86 @@ Lo más importante es que cada página "anide" a sus subsitios o páginas que la
 
 ## Widgets
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En la sección Widgets podrás crear y adjuntar aplicaciones externas a Modyo, con tal de que funcionen directamente en tu página.
+
+Los Widgets se pueden hacer a través de código Javascript, HTML5 y CSS, según se necesite. Además, se podrán usar archivos internos para su implementación, a través de nuestro Gestor de Archivos al que se puede acceder a través de la misma sección.
+
+Lo más importante es que estén correctamente vinculados y sean dinámicos para adaptarse a los distintos sitios que tengamos en nuestra plataforma.
 
 ## Templates
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Uno de los aspectos más importantes al crear nuestro sitio es la apariencia de este. En esta sección, podrás armar un template para ocupar en tus páginas y cambiar su estructura según lo deseas. 
+
+Una vez seleccionado el template que se usará dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
+
+Los tipos de archivos que puedes cambiar desde esta sección son:
 
 - Template
 - Snippet
 - JS Theme
 - CSS Style
 
+Además de los archivos predeterminados, también se pueden agregar nuevos snippets para agregar dentro de nuestro sitio. Para ello, la herramienta Template Builder tiene la opción de "Añadir un snippet", donde se le podrá dar el nombre y el código que se quiere agregar.
+
+Tras los cambios que realicemos, podemos Enviar a revisión nuestro template, asignándolo a otro usuario de la plataforma, o Publicar directamente, según se deseee.
+
 ## Configuración del sitio
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+La Configuración del sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
 
 ### General
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Dentro de esta sección, podemos configurar los siguientes datos:
+
+- Nombre del sitio
+- Descripción
+- Logo del sitio 
+- Idioma
+- Team Review (Habilitar el trabajo en equipo y revisión de los cambios que se estén realizando internamente)
+- Zona Horaria
+- Barra de Ingreso (Mostrarla públicamente para el ingreso de usuarios a la plataforma)
+- Favicon (Imagen que aparece al costado de la barra de dirección)
+- Icono de Apple (Imagen que aparece en dispositivos móviles al ser marcado)
 
 ### SEO
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+El SEO (Search Engine Optimization) es nuestra llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan a nuestro sitio a través de ellos.
+
+Las opciones a configurar son:
+
+- Tagline (Descripción que aparecerá en los motores de búsqueda, bajo el nombre del sitio)
+- Palabras claves (palabras que buscarán los usuarios y que queremos que nuestro sitio aparezca)
+- Sitemap (Archivo que permite a los motores de búsqueda indexar mejor el contenido de nuestro sitio. Podemos dejar que Modyo haga automáticamente esta opción o la podemos modificar para que se enfoque sólo en un contenido en especial)
+- Robots.txt (En este archivo le damos las instrucciones al motor de búsqueda para que categorice nuestro sitio. También podemos configurar este archivo para que la página no sea indexada directamente)
 
 ### Restricciones
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Restricciones nos permite habilitar el sitio para usuarios públicos o dejarlo en privado para usuarios registrados y desarrolladores.
+
+También podemos habilitar que solo nuestro Home sea visto por nuestros usuarios públicos mientras sus páginas derivadas estén deshabilitadas.
+
+Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en su home o dentro de todas las páginas que navegue en el sitio.
 
 ### Dominios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Dominios es lo que permitirá saber dónde está publicamente ubicado nuestro sitio, por lo que esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen acá.
+
+Las variables que puedes cambiar aquí son:
+
+- Host (donde se encuentra nuestro sitio dentro del servidor
+- Activar dominios personalizados (Si es que queremos que dentro de nuestro dominio, existan sitios personalizados con dirección propia)
+- Habilitar SSL en nuestro sitio (Es necesario tener un certificado dentro de nuestro servidor para habilitarlo)
+- Dominio primario (dirección de nuestro sitio)
+- Dominio alternativo (dirección secundaria para redireccionar en caso de que falle la primera)
+
+### Team members
+
+Para la administración de un sitio, que es manejado por múltiples usuarios, es necesario designar roles definidos con tal de hacer más eficientes sus tareas.
+
+Modyo permite categorizar en tres roles a los usuarios internos del sitio:
+
+- Developers (Tienen a cargo el desarrollo estructural del sitio y sus contenidos
+- Reviewers (Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicarlo)
+- Site admin (Administrado del sitio, tiene acceso a los dos roles anteriores)
+
+En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tengan roles anteriores.
