@@ -33,7 +33,7 @@ Al hacer clic en el lapiz, podremos acceder a nuestra página y su layout, el cu
 
 Modyo provee de una serie de widgets predeterminados para cada página. Sin embargo, en la sección Widgets (ver más adelante), es posible agregar más, si es que es necesario.
 
-Cuando ya tengamos lista nuestra página, con el contenido armado y el layout listo, se puede publicar desde acá, para que sea accedida por todos los usuarios públicos.
+Cuando ya tengamos lista nuestra página, con el contenido y el layout armados, se puede publicar desde acá, para que sea accedida por todos los usuarios públicos.
 
 
 - Home
