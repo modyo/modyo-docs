@@ -66,9 +66,9 @@ Los filtros son los que nos permiten crear los targets, que tal como decíamos a
 
 ## Formularios
 
-Una de las funciones más importantes de Modyo es la centralización de elabroación, envío y análisis de formularios que llenan nuestros clientes dentro de nuestros sitios. Así podemos generar campañas más efectivas y mensajes más exactos hacia un target más preciso.
+Una de las funciones más importantes de Modyo es la centralización de elaboración, envío y análisis de formularios que llenan nuestros clientes dentro de nuestros sitios. Así podemos generar campañas más efectivas y mensajes más exactos hacia un target más preciso.
 
-Para crear cualquier formulario debes hacer clic en "Nuevo", donde debes agregar el nombre de este, su descripción, el límite de personas a ser enviadas, el sitio en que debe ser enviada, además de especificar donde serán enviadas las notificaciones de cada formulario respondido.
+Para crear cualquier formulario debes hacer clic en "Nuevo", donde debes agregar el nombre de este, su descripción, el número límite de personas, el sitio en que debe ser enviada, además de especificar donde serán enviadas las notificaciones de cada formulario respondido.
 
 Posterior a eso, podrás pasar a elaborar tu formulario, con los objetos por defecto que veremos más adelante. (Ver Editar)
 
@@ -137,27 +137,39 @@ Cuando nuestra campaña esté lista y designada al target que queremos, podemos 
 
 ### Mensajes
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En la sección Mensajes o "Entregas de Mensajes", podemos hacer un rastreo del estado de la información que hemos envíado por Correo o Notificación.
+
+En este caso, se puede ver el nombre del usuario al que se le envió la información, la campaña a la que está asignada, la hora despachada y su estado de lectura. 
 
 ### Plantillas
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Las plantillas son una de las mejores formas de ahorrarnos tiempo para hacer una campaña uniforme. Es por esto que en esta sección, se pueden crear formatos especiales para correos, haciendo campos customizables.
+
+Para crear una plantilla, solo hay que entrar a esta sección y hacer clic en "Nuevo", que te llevará a un editor visual que puede ser traspasado a código sin problemas.
+
+Al guardar, podremos ver una lista de las plantillas ya usadas dentro de nuestros mensajes. Si queremos corregir el formato de estas, solo hay que hacer clic en ellas, en el boton "Editar".
 
 ### Desuscripciones
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Modyo también provee una lista de quienes se han desuscrito de nuestras campañas, ya sea por considerarlas spam o no ser de su interés.
+
+Es una mala práctica volver a suscribir a estos usuarios a una lista de correos o notificaciones sin su autorización personal. Sin embargo, es importante tener en cuenta su nombre y su correo para impedir futuros envíos no deseados y provocar más rechazos.
 
 ## Configuración de usuarios
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+En esta sección podemos configurar todo lo que tiene que ver con la apariencia de la plataforma hacia nuestros clientes, sus funciones y las acciones en que ellos pueden interactuar dentro de la web. 
+
+Por lo mismo, es escencial que esto sea verificado constantemente, para evitar problemas con los ingresos o transacciones que se realicen en línea.
 
 ### General
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Aquí podremos personalizar la visión estética de la plataforma que tiene el usuario, empezando por los colores predeterminados. Además, se puede incluir una plantilla CSS que le dé un estilo único adaptado a la empresa o campaña que esté interactuando.
 
 ### Correos
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Modyo permite configurar la apariencia de los correos que se enviarán a los usuarios. Para ello, podemos ingresar a esta función para detallar ciertos requisitos que se necesitan para enviar un mail, como la dirección por defecto.
+
+Otros correos que se pueden habilitar y modificar desde la plataforma son:
 
 - Correo de activación
 - Usuario importado
@@ -170,7 +182,9 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 ### Integraciones
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Para simplificar el ingreso a la plataforma, es posible configurar su entrada a través de las APIs de ciertos servicios que permiten entradas universales.
+
+Los servicios compatibles con el ingreso a Modyo son:
 
 - Facebook
 - Google
@@ -179,39 +193,34 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 - Oauth2
 - OpenID Connect
 
+Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos.
+
 ### Registros
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debemos tener en cuenta las credenciales y la habilitación de redirección, en el inicio de sesión.
+
+Además, se puede regular la forma de registro de clientes, ya sea a través de estos servicios:
+
+- Directa (sin moderación ni confirmación por email)
+- Email de activación
+- Moderada (un administrador decide si aprueba el registro)
+- Deshabilitada (Solo el administrador envía el registro)
+
+Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren en tu sitio. Te recomendamos el registro con verificación por correo electrónico para proteger tu cuenta contra este riesgo potencial.
+
+También es posible configurar el avatar por defecto y las condiciones del formulario de registro, para que este sea lo más completo posible.
 
 ### Campos personalizados
 
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
+
+Los estilos de campos personalizados que puedes agregar son:
 
 - Checkbox
 - Fecha
-- Dropdown
+- Dropdown (Lista desplegable)
 - Párrafo
 - Número
 - Elección
 - Texto simple
 
-# Commerce
-
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-
-- Órdenes
-- Configuración de commerce
-  - General 
-  - Formas de pago
-    - Oneclick
-    - Webpay
-    - PayU
-    - PayU PSE
-    - TigoMoney
-    - PayMe
-    - Credomatic
-    - Bancard
-
-# Insights
-
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.

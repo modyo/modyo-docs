@@ -35,12 +35,14 @@ Modyo provee de una serie de widgets predeterminados para cada página. Sin emba
 
 Cuando ya tengamos lista nuestra página, con el contenido y el layout armados, se puede publicar desde acá, para que sea accedida por todos los usuarios públicos.
 
+Predeterminadamente, las páginas son tres:
 
 - Home
 - Internal
 - Me
 
----
+Además, dentro de ellas, existen dos secciones que podrás editar si es que deseas agregar contenido extra:
+
 - Widgets
 - Properties
 
