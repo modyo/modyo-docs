@@ -5,6 +5,7 @@ in: versioning
 ---
 
 # Versionado
+
 - Editable
 - Publicado
 - Respaldos

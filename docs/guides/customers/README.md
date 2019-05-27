@@ -6,7 +6,7 @@ in: customers
 
 # Customers
 
-Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos permitan incentivarlos a tomar decisiones. 
+Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos permitan incentivarlos a tomar decisiones.
 
 ## Usuarios
 
@@ -72,14 +72,13 @@ Para crear cualquier formulario debes hacer clic en "Nuevo", donde debes agregar
 
 Posterior a eso, podrás pasar a elaborar tu formulario, con los objetos por defecto que veremos más adelante. (Ver Editar)
 
-
 ### Análisis
 
 Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar cualquier pregunta que se haya hecho y así podremos ver una métrica ajustada a los formularios que hayan completado los clientes.
 
 ### Respuestas
 
-Asimismo, podemos ver las respuestas de cada cliente. Acceder a cada uno de los formularios llenados por alguien en específico y ver o que contestó. 
+Asimismo, podemos ver las respuestas de cada cliente. Acceder a cada uno de los formularios llenados por alguien en específico y ver o que contestó.
 
 ### Editar
 
