@@ -10,7 +10,7 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 
 - Órdenes
 - Configuración de commerce
-  - General 
+  - General
   - Formas de pago
     - Oneclick
     - Webpay

@@ -6,7 +6,7 @@ in: customers
 
 # Customers
 
-Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos permitan incentivarlos a tomar decisiones. 
+Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos permitan incentivarlos a tomar decisiones.
 
 ## Usuarios
 
@@ -72,14 +72,13 @@ Para crear cualquier formulario debes hacer clic en "Nuevo", donde debes agregar
 
 Posterior a eso, podrás pasar a elaborar tu formulario, con los objetos por defecto que veremos más adelante. (Ver Editar)
 
-
 ### Análisis
 
 Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar cualquier pregunta que se haya hecho y así podremos ver una métrica ajustada a los formularios que hayan completado los clientes.
 
 ### Respuestas
 
-Asimismo, podemos ver las respuestas de cada cliente. Acceder a cada uno de los formularios llenados por alguien en específico y ver o que contestó. 
+Asimismo, podemos ver las respuestas de cada cliente. Acceder a cada uno de los formularios llenados por alguien en específico y ver o que contestó.
 
 ### Editar
 
@@ -194,24 +193,3 @@ Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut
 - Número
 - Elección
 - Texto simple
-
-# Commerce
-
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-
-- Órdenes
-- Configuración de commerce
-  - General 
-  - Formas de pago
-    - Oneclick
-    - Webpay
-    - PayU
-    - PayU PSE
-    - TigoMoney
-    - PayMe
-    - Credomatic
-    - Bancard
-
-# Insights
-
-Laboris nisi ut aliquip ex ea commodo consequat. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.

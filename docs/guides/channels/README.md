@@ -8,7 +8,7 @@ id: channels
 
 Channels te permite manejar cada uno de los sitios hechos en Modyo, incluyendo templates, widgets, páginas y la navegación. Está enfocado principalmente para ser manejado por diseñadores, desarrolladores y administradores de contenido.
 
-# Sitios
+## Sitios
 
 Es aquí donde debes operar para crear sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
 
@@ -23,9 +23,9 @@ Para crear un sitio, solo debes hacer clic en la pestaña "Nuevo", el cual te pe
 
 Después de ello, podrás verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
-## Pages
+### Pages
 
-Todas las páginas de los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá. 
+Todas las páginas de los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá.
 
 Desde la pestaña "Nuevo", podemos crear la página que deseamos, con el nómbre y la ruta que tendrá como dirección. Además, se le puede asignar un layout predeterminado como estructura de nuestro contenido.
 
@@ -35,21 +35,20 @@ Modyo provee de una serie de widgets predeterminados para cada página. Sin emba
 
 Cuando ya tengamos lista nuestra página, con el contenido y el layout armados, se puede publicar desde acá, para que sea accedida por todos los usuarios públicos.
 
-
 - Home
 - Internal
 - Me
 
 ---
+
 - Widgets
 - Properties
-
 
 ## Navigation
 
 Si quieres armar una navegación fácil dentro de tu sitio, esta es la sección que debes usar, ya que te permite esquematizar visualmente la navegación de un usuario por las diferentes páginas que crearemos.
 
-Lo más importante es que cada página "anide" las páginas que contengan y que no deriven a otros sitios. 
+Lo más importante es que cada página "anide" las páginas que contengan y que no deriven a otros sitios.
 
 Así tendremos la visualización de cómo se organiza nuesta web y a la vez, la navegación que debería tener el usuario final.
 
@@ -63,7 +62,7 @@ Lo más importante es que estén correctamente vinculados y sean dinámicos para
 
 ## Templates
 
-Uno de los aspectos más importantes al crear nuestro sitio es la apariencia de este. En esta sección, podrás armar un template para ocupar en tus páginas y cambiar su estructura según lo deseas. 
+Uno de los aspectos más importantes al crear nuestro sitio es la apariencia de este. En esta sección, podrás armar un template para ocupar en tus páginas y cambiar su estructura según lo deseas.
 
 Una vez seleccionado el template que se usará dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
@@ -88,7 +87,7 @@ Dentro de esta sección, podemos configurar los siguientes datos:
 
 - Nombre del sitio
 - Descripción
-- Logo del sitio 
+- Logo del sitio
 - Idioma
 - Team Review (Habilitar el trabajo en equipo y revisión de los cambios que se estén realizando internamente)
 - Zona Horaria
