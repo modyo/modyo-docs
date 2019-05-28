@@ -85,7 +85,6 @@ Esta sección te permite organizar las páginas de tu sitio, con tal de ver un m
 
 #### Navigation
 
-[//]: <> (La navegación permite modificar el menú de los sitios, dejando que los links apunten a una página o a una url personalizada.)
 En este lugar podrás asociar el contenido o página en el que estés trabajando con la sección de la página a la que quieres que pertenezca. Es fundamental hacer bien esta asociación ya que permite que el mapa de navegación de sitio sea completo, tomando en cuenta de que se parte en el formato de arbol, partiendo por el home y después siguiendo las demás secciones.
 
 #### Widgets
@@ -365,7 +364,7 @@ En el caso de que se necesite intervenir el recurso, es posible hacerlo mediante
 
 ## Versionado
 
-El versionado es una función de seguridad de las plataformas de Modyo, que sirve para revisar sitios publicados y versiones anteriores, además de revisar los respaldos realizados y realizar finalmente un reset completo. 
+El versionado es una función de seguridad de las plataformas de Modyo, que sirve para revisar sitios publicados y versiones anteriores, además de revisar los respaldos realizados y realizar finalmente un reset completo.
 
 - Editable
 - Publicado
