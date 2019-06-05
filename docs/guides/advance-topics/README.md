@@ -14,7 +14,7 @@ Esta sección nos muestra los aspectos más básicos de la plataforma que debemo
 
 También permite subir los logos y el favicon para usar dentro de los sitios y plataforma de manera uniforme.
 
-Otro de los temas más importantes a configurar son el Idioma y la Zona Horaria. Recuerda que estos son aspectos escenciales a configurar si quieres que un determinado grupo de clientes geolocalizados ingrese a la página a través de buscadores.
+Otro de los temas más importantes a configurar son el Idioma y la Zona Horaria. Recuerda que estos son aspectos esenciales a configurar si quieres que un determinado grupo de clientes geolocalizados ingrese a la página a través de buscadores.
 
 ## Integraciones
 
@@ -63,7 +63,7 @@ Esto te puede servir en el caso de tener muchos usuarios internos de la platafor
 
 Desde aquí podrás hacer un control de todos los usuarios internos de la plataforma.
 
-Para crear un usuario, debes hacer clic en el botón superior y completar los campos, con tal de enviar la invitación de ingreso por email.
+Para crear un usuario, debes hacer clic en el botón superior y completar los campos, para poder enviar la invitación de ingreso por email.
 
 Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
 

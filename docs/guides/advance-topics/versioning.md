@@ -28,7 +28,7 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 ## Respaldos
 
-Los respaldos son los archivos más importantes en los que se ha trabajado anteriormente. Modyo no permite borrar archivos, sino que siempre quedarán con respaldo dentro de la plataforma. 
+Los respaldos son los archivos en los que se ha trabajado anteriormente. Modyo no permite borrar archivos, sino que siempre quedarán con respaldo dentro de la plataforma. 
 
 Por lo mismo, cada vez que quieras acceder a alguno de ellos, puedes ir a las "Diferencias entre versiones" de cada archivo, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
