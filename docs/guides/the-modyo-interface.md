@@ -22,6 +22,7 @@ Cuando ingreses a Modyo con tu cuenta podrás ver los siguientes elementos en el
 #### Mis tareas
 
 - Revisa tus tareas asignadas por los otros miembros del equipo.
+- Aprueba y comenta contenidos creados por el equipo.
 
 #### Content
 
