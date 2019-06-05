@@ -24,7 +24,7 @@ Los filtros que se pueden aplicar son:
 
 La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
 
-### General 
+### General
 
 En esta sección podremos configurar los datos más generales que dan vida al commerce, como es el caso del formato de la moneda.
 
@@ -38,14 +38,14 @@ Modyo permite insertar varias formas de pago, que pueden hacer más cómoda la o
 
 Actualmente, los métodos de pago compatibles con Modyo son:
 
-    - Oneclick
-    - Webpay
-    - Khipu
-    - PayU
-    - PayU PSE
-    - TigoMoney
-    - PayMe
-    - Credomatic
-    - Bancard
+- Oneclick
+- Webpay
+- Khipu
+- PayU
+- PayU PSE
+- TigoMoney
+- PayMe
+- Credomatic
+- Bancard
 
 Recuerda que para cada una de estas formas de pago, necesitas permisos y credenciales para operar. Contacta a los representantes de cada empresa para obtenerlas.
