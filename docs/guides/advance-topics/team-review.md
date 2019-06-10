@@ -52,7 +52,7 @@ Además, se pueden agregar más revisores al recurso que no hayan sido designado
 
 Para aprobar el recurso, solo se debe hacer clic en el botón "Aprobar". Así desaparecerá de tus tareas si eres Revisor. En el caso de ser Administrador, aparecerá en tus tareas hasta que decidas publicarlo.
 
-
+El Administrador, en caso de que sienta que el archivo no cumple las expectativas o se encuentra en errores que fueron corregidos en versiones anteriores, puede recurrir al Versionado, con el que puede retroceder a copias anteriores del recurso.
 
 
 
