@@ -27,7 +27,7 @@ A primera vista, podrás ver 4 botones de filtro y una barra de búsqueda:
 
 A continuación, verás la lista de recursos que se encuentran en la plataforma, que están en el proceso de Team Review.
 
-- Estado: Para estar acá, deberá estar En Revisión, que quiere decir que aún se encuentra pendiente de corrección por parte de algún usuario asignado. Si el recurso se encuentra rechazado o publicado, podrá verse en la sección "Entradas". 
+- Estado: Para estar acá, deberá estar En Revisión, que quiere decir que aún se encuentra pendiente de corrección por parte de algún usuario asignado. Si el recurso se encuentra rechazado o publicado, podrá verse en la sección "Entradas".
 - Título: Nombre del recurso.
 - Tipo: Características del recurso.
 - Contexto: Sitio o Espacio donde está el recurso.
@@ -53,15 +53,3 @@ Además, se pueden agregar más revisores al recurso que no hayan sido designado
 Para aprobar el recurso, solo se debe hacer clic en el botón "Aprobar". Así desaparecerá de tus tareas si eres Revisor. En el caso de ser Administrador, aparecerá en tus tareas hasta que decidas publicarlo.
 
 El Administrador, en caso de que sienta que el archivo no cumple las expectativas o se encuentra en errores que fueron corregidos en versiones anteriores, puede recurrir al Versionado, con el que puede retroceder a copias anteriores del recurso.
-
-
-
-
-
-
-
-
-
-
-
-

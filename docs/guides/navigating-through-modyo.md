@@ -392,10 +392,9 @@ Los Revisores de cada contenido pueden variar, ya que pueden ser designados seg�
 
 Una vez aprobado el contenido, el Administrador es el único quien tiene la facultad de publicar el contenido. Este lo puede hacer de dos formas:
 
-- Publicar ahora 
-- Programar publicación 
+- Publicar ahora
+- Programar publicación
 
 En caso de que ser necesario una corrección después de ser aprobado, al momento de ser intervenido, el contenido pasará a Borrador y deberá pasar nuevamente por la aprobación de los usuarios designados.
 
 Para chequear los comentarios y cambios de cada contenido, uno puede hacer clic en la sección Actividad y poder ver quién hizo los cambios o los comentarios sobre lo creado, para ser corregido.
-
