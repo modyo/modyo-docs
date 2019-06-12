@@ -4,7 +4,7 @@ lang: es
 in: advance-topics
 ---
 
-# Configuración 
+# Configuración
 
 Modyo permite una libre configuración y personalización de la plataforma, con la posibilidad de hacer cambios generales a los sitios desde un solo lugar centralizado.
 
@@ -89,7 +89,7 @@ Modyo permite asignar a los usuarios un rol dentro de la plataforma, con tal de 
 
 El usuario más importante tendrá el rol de Administrador, quien asignará otros roles a los usuarios que se vayan sumando a esta.
 
-Para crear un Rol en específico, solo debes hacer clic en el botón superior. 
+Para crear un Rol en específico, solo debes hacer clic en el botón superior.
 
 Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar:
 
@@ -129,8 +129,6 @@ En esta sección podremos activar el Cross Origin Resourse Sharing (CORS), para 
 
 Al habilitarlo, deberás especificar los dominios que quieres que se habiliten para que estén compartiendo recursos con tu sitio.
 
-Tras esto, la plataforma te dará un token de tiempo limitado vía JSON, para que puedas enlazar los sitios. 
+Tras esto, la plataforma te dará un token de tiempo limitado vía JSON, para que puedas enlazar los sitios.
 
 Recuerda siempre que esto también puede significar una falla de seguridad, por lo que debes asegurarte que los datos que se compartan, estén libres de malware u otros archivos peligrosos para nuestra plataforma y clientes.
-
-

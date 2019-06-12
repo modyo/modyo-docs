@@ -28,7 +28,7 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 ## Respaldos
 
-Los respaldos son los archivos en los que se ha trabajado anteriormente. Modyo no permite borrar archivos, sino que siempre quedarán con respaldo dentro de la plataforma. 
+Los respaldos son los archivos en los que se ha trabajado anteriormente. Modyo no permite borrar archivos, sino que siempre quedarán con respaldo dentro de la plataforma.
 
 Por lo mismo, cada vez que quieras acceder a alguno de ellos, puedes ir a las "Diferencias entre versiones" de cada archivo, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
@@ -38,14 +38,14 @@ Para hacer el versionado, uno consta de dos posibilidades que nos permiten deter
 
 ### Reestablecer
 
-En este caso, el recurso volverá a la versión editable, por lo que perderemos todos los cambios que se hicieron posteriormente. 
+En este caso, el recurso volverá a la versión editable, por lo que perderemos todos los cambios que se hicieron posteriormente.
 
 Además, esto implica que podremos volver a hacer cambios, ya que el código estará liberado para cualquier edición.
 
 ### Rollback
 
-El Rollback es muy útil cuando se quiere utilizar para hacer un cambio rápidamente a recursos que ya se encuentran publicados. 
+El Rollback es muy útil cuando se quiere utilizar para hacer un cambio rápidamente a recursos que ya se encuentran publicados.
 
-Por lo mismo, solo debemos ir a las "Diferencias entre versiones" y volver a la versión que teníamos seleccionada. 
+Por lo mismo, solo debemos ir a las "Diferencias entre versiones" y volver a la versión que teníamos seleccionada.
 
 Así se evita volver a tener que pasar por una versión editable. Esto implica que no se podrán hacer cambios breves y pasará directamente a estar disponible por otros usuarios.

@@ -138,7 +138,7 @@ Cuando nuestra campaña esté lista y designada al target que queremos, podemos 
 
 En la sección Mensajes o "Entregas de Mensajes", podemos hacer un rastreo del estado de la información que hemos envíado por Correo o Notificación.
 
-En este caso, se puede ver el nombre del usuario al que se le envió la información, la campaña a la que está asignada, la hora despachada y su estado de lectura. 
+En este caso, se puede ver el nombre del usuario al que se le envió la información, la campaña a la que está asignada, la hora despachada y su estado de lectura.
 
 ### Plantillas
 
@@ -156,7 +156,7 @@ Es una mala práctica volver a suscribir a estos usuarios a una lista de correos
 
 ## Configuración de usuarios
 
-En esta sección podemos configurar todo lo que tiene que ver con la apariencia de la plataforma hacia nuestros clientes, sus funciones y las acciones en que ellos pueden interactuar dentro de la web. 
+En esta sección podemos configurar todo lo que tiene que ver con la apariencia de la plataforma hacia nuestros clientes, sus funciones y las acciones en que ellos pueden interactuar dentro de la web.
 
 Por lo mismo, es escencial que esto sea verificado constantemente, para evitar problemas con los ingresos o transacciones que se realicen en línea.
 
@@ -222,4 +222,3 @@ Los estilos de campos personalizados que puedes agregar son:
 - Número
 - Elección
 - Texto simple
-
