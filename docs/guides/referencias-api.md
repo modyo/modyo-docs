@@ -14,40 +14,42 @@ Una API es una herramienta que pone a disposición información a programas en u
 
 Esa misma API, presenta su información de una manera que es conveniente para programas. Entrega la información directamente. 
 
-Más abajo hay tres ejemplos de como puedes utilizar APIs para jalar la información para un custom widget y así utilizarlo como quieras.
+Más abajo hay tres ejemplos de como puedes utilizar APIs para traer información para un custom widget y así utilizarlo como quieras.
 
 Todos los ejemplos deben ser incluidos en la pestaña de JavaScript de tu custom widget. 
 
-## jQuery
+### jQuery
 
-Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite jalar fácilmente datos de no solo contenido dentro de tu sitio, pero de también otros sitios y servicios. 
+La biblioteca JavaScript de jQuery nos hacen facil poder implementarlas dentro de Modyo, en torno a las APIs.
+
+Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de no solo contenido dentro de tu sitio, pero de también otros sitios y servicios. 
 
 En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid {{ site.url }}) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
 
 
 ### API Fetch con JavaScript nativo 
 
-La API Fetch provee una interface JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de jalar recursos asincrónicamente a través de una red. 
+La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red. 
 
 Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código: 
 
-Estamos jalando un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid {{ site.url }}. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres jalar— y devuelve un "promise" que contiene la respuesta (Response object).
+Estamos trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid {{ site.url }}. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
 
 Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utilizamos el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).
 
 Para información más detallada, te recomendamos visitar los webdocs de MDN.
 
-## Axios
+### Axios
 
-Axios es una librería de JavaScript muy popular que los desarrolladores utilizan para realizar solicitudes HTTP que funcionan en todos los navegadores modernos, incluyendo IE8 en adelante. 
+Axios es una biblioteca JavaScript muy popular que los desarrolladores utilizan para realizar solicitudes HTTP que funcionan en todos los navegadores modernos, incluyendo IE8 en adelante. 
 
-Está basada en el objeto "promise" y te permite escribir asincrónicamente código para realizar solicitudes XHR fácilmente. 
+Está basada en el objeto Promise y te permite escribir asincrónicamente código para realizar solicitudes XHR fácilmente. 
 
 Utilizar Axios tiene algunas ventajas sobre la API Fetch nativa:
 
 - Soporta navegadores más antiguos (Fetch necesita un polyfill)
-- Tiene una manera de abortar una solicitud
-- Tiene una manera de establecer un timeout para la respuesta
+- Tiene una manera de cancelar una solicitud
+- Tiene una manera de establecer un timeout para una respuesta
 - Viene con protección CSRF incluida
 - Soporta progreso de carga
 - Realiza transformación de datos JSON automáticamente
@@ -58,4 +60,4 @@ La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSO
 
 Para crear un nueva aplicación de acceso a la API, dirígete a Cuenta > Configuración > Acceso a la API. y haz click en + Nuevo en la esquina superior derecha.
 
-Aquí dale un Nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo http://ejemplo.com/logout.
+Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo http://ejemplo.com/logout.
