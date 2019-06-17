@@ -6,11 +6,11 @@ in: team-review
 
 # Team review
 
-Modyo permite que los integrantes de un equipo, puedan revisar el trabajo de otro integrante, con tal de evitar fallas en la calidad o errores en el contenido que se publica en nuestro sitio web.
+Para minimizar la posibilidad de errores y asegurar que se cumplan los estándares de calidad fijados por el equipo para la publicación de contenidos, Modyo permite que los integrantes de un equipo, puedan revisar el trabajo de otro integrante.
 
 Cualquier contenido o recurso que esté gestionandose a través de Modyo, debe pasar por una revisión obligatoriamente. Por lo mismo, asigna tareas a usuarios que deben revisarla, hacer correcciones y publicarla cuando estimen conveniente.
 
-Para ello, asigna tres tipos de roles generales a través de la plataforma de Configuración::
+Si se habilita este sistema de revisión, todo el contenido gestionado por Modyo deberá pasar por la aprobación de miembros del equipo a los que se les asignará diferentes roles para revisar, hacer correcciones o publicar dicho contenido:
 
 - Writers: Elaboran el contenido o código.
 - Revisores: Pueden elaborar recursos y revisar trabajos de los demás integrantes.
@@ -28,6 +28,7 @@ A primera vista, podrás ver 4 botones de filtro y una barra de búsqueda:
 A continuación, verás la lista de recursos que se encuentran en la plataforma, que están en el proceso de Team Review.
 
 - Estado: Para estar acá, deberá estar En Revisión, que quiere decir que aún se encuentra pendiente de corrección por parte de algún usuario asignado. Si el recurso se encuentra rechazado o publicado, podrá verse en la sección "Entradas".
+
 - Título: Nombre del recurso.
 - Tipo: Características del recurso.
 - Contexto: Sitio o Espacio donde está el recurso.

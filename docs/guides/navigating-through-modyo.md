@@ -374,9 +374,9 @@ El versionado es una función de seguridad de las plataformas de Modyo, que sirv
 
 ## Team review
 
-Para asegurar la calidad de los contenidos publicados, Modyo tiene por defecto una revision colaborativa de documentos, que puede ser usado para la producción y edición de material del sitio.
+Para asegurar la calidad de los contenidos publicados, Modyo tiene una revision colaborativa de documentos, que puede ser usado para la producción y edición de material del sitio.
 
-En el proceso de elaboración de contenido, pueden intervenir los tres roles de usuarios internos: Writers, Revisores y Administradores.
+En el proceso de elaboración de contenido, pueden intervenir tres roles de usuarios internos: Writers, Revisores y Administradores.
 
 El contenido podrá estar en los siguientes estados:
 
