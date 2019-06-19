@@ -44,8 +44,8 @@ Además, esto implica que podremos volver a hacer cambios, ya que el código est
 
 ### Rollback
 
-El Rollback es muy útil cuando se quiere utilizar para hacer un cambio rápidamente a recursos que ya se encuentran publicados.
+El Rollback es muy útil para hacer un cambio rápidamente a recursos que ya se encuentran publicados.
 
 Por lo mismo, solo debemos ir a las "Diferencias entre versiones" y volver a la versión que teníamos seleccionada.
 
-Así se evita volver a tener que pasar por una versión editable. Esto implica que no se podrán hacer cambios breves y pasará directamente a estar disponible por otros usuarios.
+Así se evita tener que pasar por una versión editable y sin publicar aún. Esto implica que no se podrán hacer cambios breves y pasará directamente a estar disponible por otros usuarios.

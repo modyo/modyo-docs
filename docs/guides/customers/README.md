@@ -6,7 +6,7 @@ in: customers
 
 # Customers
 
-Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos permitan incentivarlos a tomar decisiones.
+Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos ayuden a incentivarlos a tomar decisiones.
 
 ## Usuarios
 
