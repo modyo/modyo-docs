@@ -4,7 +4,6 @@ lang: es
 in: locks
 ---
 
-
 # Locks
 
 Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener fallas de que otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.

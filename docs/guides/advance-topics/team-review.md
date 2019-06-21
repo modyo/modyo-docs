@@ -6,32 +6,51 @@ in: team-review
 
 # Team review
 
-Para asegurar la calidad de los contenidos publicados, Modyo tiene por defecto una revision colaborativa de documentos, que puede ser usado para la producción y edición de material del sitio.
+Para minimizar la posibilidad de errores y asegurar que se cumplan los estándares de calidad fijados por el equipo para la publicación de contenidos, Modyo permite que los integrantes de un equipo, puedan revisar el trabajo de otro integrante.
 
-En el proceso de elaboración de contenido, pueden intervenir los tres roles de usuarios internos: Writers, Revisores y Administradores.
+Cualquier contenido o recurso que esté gestionandose a través de Modyo, debe pasar por una revisión obligatoriamente. Por lo mismo, asigna tareas a usuarios que deben revisarla, hacer correcciones y publicarla cuando estimen conveniente.
 
-El contenido podrá estar en los siguientes estados:
+Si se habilita este sistema de revisión, todo el contenido gestionado por Modyo deberá pasar por la aprobación de miembros del equipo a los que se les asignará diferentes roles para revisar, hacer correcciones o publicar dicho contenido:
 
-- Borrador
-- En revisión (para Revisores o Administradores)
-- Aprobado (para Administradores)
+- Writers: Elaboran el contenido o código.
+- Revisores: Pueden elaborar recursos y revisar trabajos de los demás integrantes.
+- Administradores: Elaboran, revisan recursos y pueden publicar en el sitio.
 
-Todos los usuarios internos pueden crear contenido para la plataforma. Sin embargo, estos tienen que pasar por la aprobación de un equipo designado para ser publicados.
+Para llegar a la sección, se debe hacer clic en "Mis Tareas", ubicado en el sidebar.
 
-Cualquier contenido que haya pasado de En revisión a Borrador, quiere decir que tiene comentarios de los revisores o administradores que deben ser corregidos. Una vez hechos los cambios, se debe hacer el proceso nuevamente de envío de contenido al Team Review.
+A primera vista, podrás ver 4 botones de filtro y una barra de búsqueda:
 
-Los Revisores de cada contenido pueden variar, ya que pueden ser designados según sitio o espacio de trabajo. Además, se debe designar un mínimo de revisiones de cada usuario para que este pueda ser pasado a estado de "Aprobado".
+- Asignado a: Recursos que deben ser revisados por un integrante.
+- Tipo: Características del recurso que debe ser revisado.
+- Autor: Creador del recurso.
+- Contexto: Sitio o Espacio donde está el recurso.
 
-Una vez aprobado el contenido, el Administrador es el único quien tiene la facultad de publicar el contenido. Este lo puede hacer de dos formas:
+A continuación, verás la lista de recursos que se encuentran en la plataforma, que están en el proceso de Team Review.
 
-- Publicar ahora 
-- Programar publicación 
+- Estado: Para estar acá, deberá estar En Revisión, que quiere decir que aún se encuentra pendiente de corrección por parte de algún usuario asignado. Si el recurso se encuentra rechazado o publicado, podrá verse en la sección "Entradas".
 
-En caso de que ser necesario una corrección después de ser aprobado, al momento de ser intervenido, el contenido pasará a Borrador y deberá pasar nuevamente por la aprobación de los usuarios designados.
+- Título: Nombre del recurso.
+- Tipo: Características del recurso.
+- Contexto: Sitio o Espacio donde está el recurso.
+- Última actualización: fecha donde algún usuario ha realizado un cambio.
+- Autor: usuario que creó el recurso.
 
-Para chequear los comentarios y cambios de cada contenido, uno puede hacer clic en la sección Actividad y poder ver quién hizo los cambios o los comentarios sobre lo creado, para ser corregido.
+Para corregir el recurso, se debe hacer clic en el nombre de este, dentro de la sección "Mis tareas". Solo dos roles de usuarios podrán ver esto: Administradores y Revisores.
 
+En el caso de los Administradores, podrán ver todos los recursos, siempre y cuando se encuentren listos para su publicación o les sean asignados para su revisión.
 
+Para los Revisores, solo podrán ver el recurso que tienen pendiente de revisión. Si estos aprueban el recurso, este ya no se verá dentro de Mis Tareas.
 
+Al entrar al recurso, se podrá ver la pantalla con las opciones tradicionales con las que se puede ver la elaboración de recursos, como códigos y texto, además de un botón de Vista Previa.
 
+Para hacer comentarios, en la parte superior de la pantalla existe un botón de "Ver Actividad", donde cada uno de los Revisores y Administradores, podrá dejar sus comentarios sobre el recurso.
 
+A su lado, existe el botón Publicar, donde también existe la opción de Rechazar el recurso (Recuerda escribir comentarios antes de hacerlo).
+
+En un costado de la pantalla, se podrá ver la lista de Revisores y Administradores asignados, con un color de aprobación (verde), en revisión (amarillo), o rechazo (rojo), según la opinión de los demás usuarios.
+
+Además, se pueden agregar más revisores al recurso que no hayan sido designados por defecto, a través del botón "Solicitar una revisión".
+
+Para aprobar el recurso, solo se debe hacer clic en el botón "Aprobar". Así desaparecerá de tus tareas si eres Revisor. En el caso de ser Administrador, aparecerá en tus tareas hasta que decidas publicarlo.
+
+El Administrador, en caso de que sienta que el archivo no cumple las expectativas o se encuentra en errores que fueron corregidos en versiones anteriores, puede recurrir al Versionado, con el que puede retroceder a copias anteriores del recurso.

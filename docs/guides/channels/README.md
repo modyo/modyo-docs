@@ -112,7 +112,7 @@ Las opciones a configurar son:
 
 Restricciones nos permite habilitar el sitio para usuarios públicos o dejarlo en privado para usuarios registrados y desarrolladores.
 
-También podemos habilitar que solo nuestro Home sea visto por nuestros usuarios públicos mientras sus páginas derivadas estén deshabilitadas.
+También podemos restringir para que solo nuestro Home sea visto por nuestros usuarios públicos mientras sus páginas derivadas estén deshabilitadas.
 
 Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en su home o dentro de todas las páginas que navegue en el sitio.
 
@@ -128,14 +128,28 @@ Las variables que puedes cambiar aquí son:
 - Dominio primario (dirección de nuestro sitio)
 - Dominio alternativo (dirección secundaria para redireccionar en caso de que falle la primera)
 
-### Team members
+### Miembros del Equipo
 
 Para la administración de un sitio, que es manejado por múltiples usuarios, es necesario designar roles definidos con tal de hacer más eficientes sus tareas.
 
 Modyo permite categorizar en tres roles a los usuarios internos del sitio:
 
-- Developers (Tienen a cargo el desarrollo estructural del sitio y sus contenidos
-- Reviewers (Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicarlo)
-- Site admin (Administrado del sitio, tiene acceso a los dos roles anteriores)
+#### Site Developer
 
-En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tengan roles anteriores.
+Es el usuario que está a cargo del desarrollo estructural de los recursos, la creación y edición de contenido. Todo lo que haga, tiene que pasar a revisión.
+
+Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback) ni cambiar la configuración.
+
+#### Site Reviewer 
+
+Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicar.
+
+No puede editar la configuración del sitio.
+
+#### Site Admin 
+
+Administrador del sitio, tiene acceso a los dos roles anteriores, además de poder configurar todo el sitio.
+
+Este usuario es distinto al Default Admin. El Site Admin solo puede configurar el sitio externo, pero no puede cambiar nada de la plataforma.
+
+En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tengan roles anteriores. Para ello, solo se debe hacer clic en el usuario y la acción de Borrar.

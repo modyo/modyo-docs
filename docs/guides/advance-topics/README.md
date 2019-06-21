@@ -4,7 +4,7 @@ lang: es
 in: advance-topics
 ---
 
-# Configuración 
+# Configuración
 
 Modyo permite una libre configuración y personalización de la plataforma, con la posibilidad de hacer cambios generales a los sitios desde un solo lugar centralizado.
 
@@ -55,7 +55,7 @@ La plataforma te permite ver todos los movimientos que se han hecho durante todo
 
 En esta sección, podrás filtrar por fecha, tipo de movimiento o usuario que te permitirán hacer un seguimiento correcto.
 
-Además, tendrás de ver el detalle de lo que se hizo y desde qué sección se hizo.
+Además, tendrás la posibilidad de ver el detalle de lo que se hizo y desde qué sección se hizo.
 
 Esto te puede servir en el caso de tener muchos usuarios internos de la plataforma o para detectar errores y cambios en la cadena de producción y desarrollo.
 
@@ -85,13 +85,40 @@ Dentro de las funciones editables que puedes manejar de un usuario están:
 
 Esta es una característica esencial para cada uno de los usuarios internos de la plataforma, ya que te permite optimizar el flujo de trabajo que tiene cada uno de ellos.
 
-Modyo permite asignar a los usuarios un rol dentro de la plataforma, con tal de que puedan hacer ciertas acciones predeterminadas y de otras queden excluídos.
+Modyo tiene 7 roles predeterminados con distintas funciones por secciones. Además permite crear más roles personalizados, dependiendo de la función o sitio que se necesite trabajar.
 
-El usuario más importante tendrá el rol de Administrador, quien asignará otros roles a los usuarios que se vayan sumando a esta.
+### Roles predeterminados
 
-Para crear un Rol en específico, solo debes hacer clic en el botón superior. 
+Modyo asigna por defecto roles predeterminados, ordenados según el contexto o sección en la que se ocupan.
 
-Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar:
+Los roles predeterminados que existen son, según contexto:
+
+#### Roles por cuenta:
+
+- Default admin: Tiene todos los permisos existentes.
+- Default user: Tiene todos los permisos existentes. menos la edición de la configuración de la cuenta.
+
+#### Roles por sitio:
+
+- Site admin: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
+- Site reviewer: Es un site admin pero sin edición de la configuración del sitio.
+- Site developer: Sólo puede editar recursos (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+
+#### Roles por espacio:
+
+- Space admin: Tiene todos los permisos a nivel de un space, pero no puede crear nuevos spaces, puede crear y eliminar assets.
+- Space editor: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
+- Space writer: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+
+El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma, los sitios y las cuentas.
+
+### Roles personalizados
+
+Para crear un rol en específico, solo debes hacer clic en el botón superior.
+
+Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar.
+
+Las funciones que se pueden modificar son:
 
 - Gestión de la cuenta
 - Registros de actividad de la cuenta
@@ -106,7 +133,7 @@ Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podr
 - Bloqueos
 - Plantillas de correo
 - API de correo
-- Desuscripciones
+- Dar de baja suscripciones
 - Notificaciones
 - Órdenes de compra
 - Medios de pago
@@ -121,7 +148,9 @@ Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podr
 - Webhooks
 - Revisión en equipo
 
-Posteriormente de crear el rol, podrás asignarlo a algun usuario en la sección Equipo.
+### Asignar un rol por cuenta
+
+Para asignar un rol en el contexto de cuenta, debes ir a la sección de Equipo y hacer clic en el perfil del usuario que se quiere cambiar. Después ingresar a la pestaña Rol y asignar la categoría que se desee.
 
 ## Seguridad
 
@@ -129,8 +158,6 @@ En esta sección podremos activar el Cross Origin Resourse Sharing (CORS), para 
 
 Al habilitarlo, deberás especificar los dominios que quieres que se habiliten para que estén compartiendo recursos con tu sitio.
 
-Tras esto, la plataforma te dará un token de tiempo limitado vía JSON, para que puedas enlazar los sitios. 
+Tras esto, la plataforma te dará un token de tiempo limitado vía JSON, para que puedas enlazar los sitios.
 
 Recuerda siempre que esto también puede significar una falla de seguridad, por lo que debes asegurarte que los datos que se compartan, estén libres de malware u otros archivos peligrosos para nuestra plataforma y clientes.
-
-

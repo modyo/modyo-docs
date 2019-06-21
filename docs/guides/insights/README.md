@@ -30,7 +30,6 @@ La gráfica nos permite comparar cuáles son los usuarios internos más activos 
 
 Uno de los mayores beneficios de Modyo es que nos permite también mantener un registro de qué es lo que se está creando en nuestro sitio. Por lo mismo, también se puede ver una gráfica de actividad por tipo de contenido, como Widgets, Layouts, Templates, etc.
 
-
 ## Customers
 
 Así como en Digital Factory podemos ver una estadística directa de los usuarios internos de la plataforma, Customers permite obtener una panorámica global de lo que hacen nuestros clientes dentro de ella y del comportamiento del contenido que ha llegado a ellos, segmentado en Fecha, Target y Sitio.
