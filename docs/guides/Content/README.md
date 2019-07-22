@@ -80,9 +80,13 @@ Para ello, también es necesario especificar el dominio desde dónde será impor
 
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
-En este caso, se pueden determinar cuántos miembros del equipo deben aprobar un contenido antes de ser puestos a disposición del Administrador, quien deberá publicarlos.
+En este caso, se pueden determinar cuántos miembros del equipo deben aprobar un contenido antes de ser puestos a disposición del Administrador, quien deberá publicarlos. Predeterminadamente, deben ser al menos 3 revisores, pero la cantidad puede cambiar.
 
-Además, es posible diferenciar quiénes deben revisar cada contenido, según el espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
+El equipo puede ser predeterminado por el administrador o elegido por quien envía a revisión. Así solo ellos pueden corregir y aprobar.
+
+Además, se puede forzar la revisión por un usuario en específico, para que este sea aprobado y seleccionar a quienes se les asignará la tarea.
+
+Por último, es posible diferenciar quiénes deben revisar cada contenido, según el espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
 
 ##### Miembros del Equipo
 
@@ -102,7 +106,23 @@ Los archivos pueden tener distintas extensiones, según su tipo. Al hacer clic e
 
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del mismo formulario y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
 
-### Buscar un archivo
+### Buscar
+
+Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
+
+La primera de ellas se hace para buscar archivos y puede ser (XXXX)
+
+Sin embargo, en el caso de la API de Content, también se puede hacer una búsqueda de un contenido a través de la URL.
+
+#### Buscando contenido de la API
+
+Cualquier usuario puede buscar contenido que se mueva a través de la API a través de distintos comandos escritos a través de la URL.
+
+Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de manera ordenada. Lo más recomendable es usar alguna extensión de navegador, que permita ver los contenidos adecuados e interpretados para nuestra pantalla.
+
+La ruta a ingresar a través de la URL debe estar escrita de la siguiente manera:
+
+
 
 
 
