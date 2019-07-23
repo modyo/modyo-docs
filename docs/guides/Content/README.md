@@ -2,11 +2,388 @@
 
 Content es la sección especial de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
 
-Esta sección está especialmente diseñada para trabajar con contenido de la mano del desarrollo, ya que todo lo que se creará, será enviado a través de la API a otro servicio fácilmente adaptable.
+Esta sección está especialmente diseñada para trabajar con contenido de la mano del desarrollo, ya que todo lo que se creará, será enviado a través de la API a otro servicio fácilmente adaptable. 
+
+Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de manera ordenada. Lo más recomendable es usar alguna extensión de navegador, que permita ver los contenidos adecuados e interpretados para nuestra pantalla.
+
+## Estructura de Rutas de la API
+
+Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
+
+```
+[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/schema
+
+[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
+
+[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
+```
+
+Aquí, space_uid y type_uid corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
+
+## Estructura JSON Entries
+
+Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
+
+- Entries JSON:
+
+```javascript
+{
+  "meta": {
+    "total_entries": 2,
+    "per_page": 15,
+    "current_page": 1,
+    "total_pages": 1
+  },
+  "entries": [
+    {
+      "meta": {
+        "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
+        "space": "myspace",
+        "name": "Lorem Ipsum dolor",
+        "type_name": "Post",
+        "category": null,
+        "updated_at": "2019-03-18T14:06:59.000-03:00",
+        "created_at": "2019-03-18T14:06:59.000-03:00",
+        "tags": [],
+        "locale": "en",
+        "available_locales": [
+          "en"
+        ]
+      },
+      "fields": {
+        "excerpt": "Lorem Ipsum dolor",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    },
+    {
+      "meta": {
+        "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
+        "space": "myspace",
+        "name": "Lorem Ipsum dolor",
+        "type_name": "Post",
+        "category": null,
+        "updated_at": "2019-03-18T14:06:59.000-03:00",
+        "created_at": "2019-03-18T14:06:59.000-03:00",
+        "tags": [],
+        "locale": "en",
+        "available_locales": [
+          "en"
+        ]
+      },
+      "fields": {
+        "excerpt": "Lorem Ipsum dolor",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    }
+  ]
+```
+
+- Entries JSON Schema:
+
+```javascript
+{
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "uuid",
+            "space",
+            "name",
+            "type_name",
+            "category",
+            "updated_at",
+            "created_at",
+            "tags",
+            "locale",
+            "available_locales"
+          ],
+          "properties": {
+            "uuid": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "9b0a24a6-d84f-4851-8750-a86244947510"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "space": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "myspace"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "name": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Lorem Ipsum dolor"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "type_name": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Post"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "category": {
+              "type": "null",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "updated_at": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "tags": {
+              "type": "array"
+            },
+            "locale": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "en"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "available_locales": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "",
+                "examples": [
+                  "en"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "fields": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "meta",
+    "entries"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "total_entries",
+        "per_page",
+        "current_page",
+        "total_pages"
+      ],
+      "properties": {
+        "total_entries": {
+          "type": "integer"
+        },
+        "per_page": {
+          "type": "integer"
+        },
+        "current_page": {
+          "type": "integer"
+        },
+        "total_pages": {
+          "type": "integer"
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/entry"
+      }
+    }
+  }
+}
+```
+
+- Entry JSON:
+
+```javascript
+{
+   "meta":{
+      "uuid":"9b0a24a6-d84f-4851-8750-a86244947510",
+      "space":"myspace",
+      "name":"Lorem Ipsum dolor",
+      "type_name":"Post",
+      "category":null,
+      "updated_at":"2019-03-18T14:06:59.000-03:00",
+      "created_at": "2019-03-18T14:06:59.000-03:00",
+      "tags":[
+
+      ],
+      "locale":"en",
+      "available_locales":[
+         "en"
+      ]
+   },
+   "fields":{
+      "excerpt":"Lorem Ipsum dolor",
+      "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+   }
+```
+
+- Entry JSON Schema:
+
+```javascript
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "meta",
+    "fields"
+  ],
+  "properties": {
+    "meta": {
+      "$id": "#/properties/meta",
+      "type": "object",
+      "required": [
+        "uuid",
+        "space",
+        "name",
+        "type_name",
+        "category",
+        "updated_at",
+        "created_at",
+        "tags",
+        "locale",
+        "available_locales"
+      ],
+      "properties": {
+        "uuid": {
+          "$id": "#/properties/meta/properties/uuid",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "9b0a24a6-d84f-4851-8750-a86244947510"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "space": {
+          "$id": "#/properties/meta/properties/space",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "myspace"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/meta/properties/name",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "type_name": {
+          "$id": "#/properties/meta/properties/type_name",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Post"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "category": {
+          "$id": "#/properties/meta/properties/category",
+          "type": "null",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "updated_at": {
+          "$id": "#/properties/meta/properties/updated_at",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "tags": {
+          "$id": "#/properties/meta/properties/tags",
+          "type": "array"
+        },
+        "locale": {
+          "$id": "#/properties/meta/properties/locale",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "en"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "available_locales": {
+          "$id": "#/properties/meta/properties/available_locales",
+          "type": "array",
+          "items": {
+            "$id": "#/properties/meta/properties/available_locales/items",
+            "type": "string",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "fields": {
+      "$id": "#/properties/fields",
+      "type": "object"
+    }
+  }
+}
+```
+## Paginación
+
+Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
+
+Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries. 
+
+Por ejemplo, con page = 3, per_page = 20 se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+
+Junto con la respuesta se entrega un meta de paginación como por ejemplo:
+
+```javascript
+ "meta": {
+    "total_entries": 2,
+    "per_page": 15,
+    "current_page": 1,
+    "total_pages": 1
+    }
+```
+
 
 ## Espacios
 
-En el caso de espacios, desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+En el caso de Espacios, desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
 
 Espacios nos permite separar los sitios en los que se está trabajando, para tener una mejor distribución y orden del contenido que se añade.
 
@@ -66,6 +443,17 @@ Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
 
+###### Buscando entries en otros idiomas
+
+La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
+
+Por ejemplo, para obtener entries en el idioma Español-Chile (es_CL):
+
+```
+Query string: GET .../posts/entries?locale=es_CL
+Header: Setear Accept-Language es_CL
+```
+
 ##### Caché
 
 Si se quiere habilitar el caché y dejar tiempo a algunas acciones, es posible hacerlo desde esta sección. Además, regular el tiempo de vida del mismo, medido en segundos.
@@ -94,6 +482,7 @@ Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que traba
 
 Para ello, el SuperAdministrador puede asignar manualmente a los usuarios los roles predeterminados que habilitan cada una de las funciones.
 
+
 ## Gestor de Archivos
 
 En esta sección, podremos ver todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
@@ -106,21 +495,21 @@ Los archivos pueden tener distintas extensiones, según su tipo. Al hacer clic e
 
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del mismo formulario y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
 
-### Buscar
+### Buscar un archivo
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 
-La primera de ellas se hace para buscar archivos y puede ser (XXXX)
+La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos.
 
 Sin embargo, en el caso de la API de Content, también se puede hacer una búsqueda de un contenido a través de la URL.
 
-#### Buscando contenido de la API
 
-Cualquier usuario puede buscar contenido que se mueva a través de la API a través de distintos comandos escritos a través de la URL.
 
-Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de manera ordenada. Lo más recomendable es usar alguna extensión de navegador, que permita ver los contenidos adecuados e interpretados para nuestra pantalla.
 
-La ruta a ingresar a través de la URL debe estar escrita de la siguiente manera:
+
+
+
+
 
 
 
@@ -184,13 +573,5 @@ Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza u
 
 La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.
 
-### Estructura de Rutas
 
-Para hacer una ruta hacia el contenido, se debe estructurar de la siguiente manera:
-
-api/content/spaces/:space_uid/types/:type_uid/schema
-api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
-api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
-
-Donde space_uid y content_type_uid corresponden al nombre slugificado del space y al nombre del content_type respectivamente.
 
