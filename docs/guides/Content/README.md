@@ -503,6 +503,38 @@ La primera de ellas se hace para buscar archivos y puede ser utilizada a través
 
 Sin embargo, en el caso de la API de Content, también se puede hacer una búsqueda de un contenido a través de la URL.
 
+## Contenido Privado 
+
+Para cualquier usuario de Modyo, es importante el contenido privado targetizado a cualquier cliente. Sin embargo, es muy facil de buscar a través de la API para cualquier usuario que tenga los permisos habilitados.
+
+Quien quiera buscarlo, debe contar con un Content Delivery Token. Cada Espacio tiene su propio Content Delivery Token y es compartido por todos los usuarios que tienen sesión. El Content Delivery Token se obtiene a través de la API de Profile. 
+
+El Content Delivery Token es un JWT con los siguientes claims:
+
+- iss: URL base de la API de profile
+- aud: URL base de la API de contenido
+- sub: Nombre del Espacio
+- exp: Tiempo de expiración del token
+- access_type: delivery,
+- targets: Array de targets
+
+Si lo llevamos a código, se verá de la siguiente manera:
+
+```javascript
+{
+  "iss": "[dominio de la plataforma]/api/profile",
+  "aud": "[dominio de la plataforma]/api/content",
+  "sub": "account_uuid",
+  "exp": [tiempo de expiración en segundos],
+  "access_type": "delivery",
+  "targets": ["target1", "target2"]
+}
+
+```
+
+Para establecer un token, es necesario hacerlo a través del parámetro de query string delivery_token o el header delivery_token.
+
+
 
 
 
