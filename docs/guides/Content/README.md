@@ -464,6 +464,27 @@ Modyo, como forma de transmisión segura de datos, permite habilitar CORS para q
 
 Para ello, también es necesario especificar el dominio desde dónde será importada la información, para dar un mejor acceso.
 
+###### CORS
+
+Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
+
+- La configuración de URLs permitidas para acceder al contenido a nivel de Espacios, permitiendo automáticamente custom domains de sites.
+- Cuando se realiza un request al API, se agrega el header ```Access-Control-Allow-Origin``` con valor request.origin a la respuesta y    ```Access-Control-Allow-Credentials' = true```, sólo si el origen pertenece a las urls/domains previamente mencionadas. En caso caso contrario no quedan configurados.
+- URLS permitidas son cacheadas a nivel de aplicación.
+- En caso de usar caché intermedio se debe considerar el origen en la clave de caché para que se maneje el caché por separado en cada origen:
+```javascript
+Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
+Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
+```
+
+###### CORS y SSL
+
+Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo siguiente:
+
+- SSL: Wildcards no son permitidos.
+- NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default
+
+
 ##### Revisión en Equipo
 
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
