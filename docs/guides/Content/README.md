@@ -10,7 +10,7 @@ Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
-```
+```javascript
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/schema
 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
@@ -18,7 +18,7 @@ Para realizar cualquier acción, es necesario conocer la estructura de rutas de 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
-Aquí, space_uid y type_uid corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
+Aquí, ```space_uid``` y ```type_uid``` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
 ## Estructura JSON Entries
 
@@ -365,9 +365,9 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 
 Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
 
-Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries. 
+Para ello, se usa una paginación tipo offset con los parámetros ```page``` y ```per_page``` en la query string de la URL de entries. 
 
-Por ejemplo, con page = 3, per_page = 20 se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, ```con page = 3```, ```per_page = 20``` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -503,7 +503,6 @@ Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que traba
 
 Para ello, el SuperAdministrador puede asignar manualmente a los usuarios los roles predeterminados que habilitan cada una de las funciones.
 
-
 ## Gestor de Archivos
 
 En esta sección, podremos ver todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
@@ -523,6 +522,27 @@ Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del 
 La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos.
 
 Sin embargo, en el caso de la API de Content, también se puede hacer una búsqueda de un contenido a través de la URL.
+
+Para ello, existen distintos filtros que se pueden aplicar para buscar datos en este modo:
+
+- Metadata (ej: tags, categorías, fechas): Las búsuqedas pueden ser consultables mediante parámetros ```meta.param_name```.
+- Tags: consultables de dos maneras
+```meta.tag=tag_name```
+```meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name```
+- Categorías: ```meta.category=category_full_path ``` considerará categorías hijas de la consultada.
+- Fechas de creación/actualización/publicación/despublicación: son consultables si se usa la especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
+
+```.../entries?meta.created_at=1987-11-19T13:13:13
+.../entries?meta.updated_at[lt]=1987-11-19
+.../entries?meta.published_at[gt]=1987-11-19
+```
+- Lugares: la búsqueda puede darse de la siguiente manera (match a ```street_name```, ```country```, ```admin_area_levels```), 
+Ej: ```fields.location_name=Chile```
+
+```[dominio de la plataforma]/entries?fields.color=black```
+
+
+
 
 ## Contenido Privado 
 
@@ -553,7 +573,7 @@ Si lo llevamos a código, se verá de la siguiente manera:
 
 ```
 
-Para establecer un token, es necesario hacerlo a través del parámetro de query string delivery_token o el header delivery_token.
+Para establecer un token, es necesario hacerlo a través del parámetro de query string ```delivery_token``` o el header ```delivery_token```.
 
 
 
