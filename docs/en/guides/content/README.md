@@ -1,8 +1,9 @@
 ---
 title: Content
-lang: es
-in: content
+lang: en
 ---
+
+# Content
 
 Content es la sección especial de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
 
@@ -14,7 +15,7 @@ Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
-```javascript
+```
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/schema
 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
@@ -22,7 +23,7 @@ Para realizar cualquier acción, es necesario conocer la estructura de rutas de 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
-Aquí, ```space_uid``` y ```type_uid``` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
+Aquí, space_uid y type_uid corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
 ## Estructura JSON Entries
 
@@ -372,7 +373,7 @@ Para cualquier recurso de contenido a través de la API, es necesaria hacer una 
 
 Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
 
-Por ejemplo, ```con page = 3```, ```per_page = 20``` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, con page = 3, per_page = 20 se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -556,7 +557,7 @@ Si lo llevamos a código, se verá de la siguiente manera:
 
 ```
 
-Para establecer un token, es necesario hacerlo a través del parámetro de query string ```delivery_token``` o el header ```delivery_token```.
+Para establecer un token, es necesario hacerlo a través del parámetro de query string delivery_token o el header delivery_token.
 
 ----
 
@@ -574,7 +575,7 @@ La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro 
 
 Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de no solo contenido dentro de tu sitio, pero de también otros sitios y servicios.
 
-En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
+En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid {{ site.url }}) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
 
 ### API Fetch con JavaScript nativo
 
@@ -582,7 +583,7 @@ La API Fetch provee una interfaz JavaScript simple, para acceder y manipular par
 
 Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código:
 
-Estamos trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
+Estamos trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid {{ site.url }}. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
 
 Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utilizamos el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).
 

@@ -5,7 +5,7 @@ title: La interfaz Modyo
 
 # La interfaz Modyo
 
-## ¿Qués es dónde?
+## ¿Dónde está todo?
 
 En los siguientes pasos te mostraremos lo que puedes ver y hacer dentro de [Modyo](https://www.modyo.com/).
 
