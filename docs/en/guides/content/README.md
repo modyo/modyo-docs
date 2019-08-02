@@ -1,8 +1,9 @@
 ---
 title: Content
 lang: es
-in: content
 ---
+
+# Content
 
 Content es la sección especial de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
 

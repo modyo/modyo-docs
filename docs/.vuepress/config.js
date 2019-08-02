@@ -43,6 +43,13 @@ module.exports = {
             ]
           },
           {
+            title: "Content",
+            collapsable: true,
+            children: [
+              "/guides/content/"
+            ]
+          },
+          {
             title: "Channels",
             collapsable: true,
             children: [
@@ -109,6 +116,13 @@ module.exports = {
               ["/en/guides/the-modyo-interface", "The modyo interface"],
               ["/en/guides/navigating-through-modyo", "Navigating Through Modyo"]
 
+            ]
+          },
+          {
+            title: "Content",
+            collapsable: true,
+            children: [
+              "/guides/content/"
             ]
           },
           {
