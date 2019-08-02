@@ -14,7 +14,7 @@ Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
-```
+```javascript
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/schema
 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
@@ -22,7 +22,7 @@ Para realizar cualquier acción, es necesario conocer la estructura de rutas de 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
-Aquí, space_uid y type_uid corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
+Aquí, ```space_uid``` y ```type_uid``` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
 ## Estructura JSON Entries
 
@@ -372,7 +372,7 @@ Para cualquier recurso de contenido a través de la API, es necesaria hacer una 
 
 Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
 
-Por ejemplo, con page = 3, per_page = 20 se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, ```con page = 3```, ```per_page = 20``` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -556,7 +556,7 @@ Si lo llevamos a código, se verá de la siguiente manera:
 
 ```
 
-Para establecer un token, es necesario hacerlo a través del parámetro de query string delivery_token o el header delivery_token.
+Para establecer un token, es necesario hacerlo a través del parámetro de query string ```delivery_token``` o el header ```delivery_token```.
 
 ----
 
