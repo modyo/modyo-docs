@@ -79,7 +79,7 @@ module.exports = {
           },
           {
             title: "Temas Avanzados",
-            collapsable: false,
+            collapsable: true,
             children: [
               "/guides/advance-topics/",
               ["/guides/advance-topics/locks","Bloqueos"],
