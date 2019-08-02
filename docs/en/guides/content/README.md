@@ -1,6 +1,6 @@
 ---
 title: Content
-lang: es
+lang: en
 ---
 
 # Content
@@ -610,7 +610,7 @@ La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSO
 
 Para crear un nueva aplicación de acceso a la API, dirígete a Cuenta > Configuración > Acceso a la API. y haz click en + Nuevo en la esquina superior derecha.
 
-Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo <http://ejemplo.com/logout.>
+Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo [http://ejemplo.com/logout](http://ejemplo.com/logout)
 
 ## Content Delivery API
 
