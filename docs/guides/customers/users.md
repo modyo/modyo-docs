@@ -2,11 +2,7 @@
 search: true
 ---
 
-# Customers
-
-Esta sección nos permite revisar todo lo que tiene que ver con los clientes y usuarios externos a la plataforma. En ese sentido, podemos revisar sus datos, movimientos, además de administrar la información que nos entregan, para a su vez, enviarles avisos relevantes que nos ayuden a incentivarlos a tomar decisiones.
-
-## Usuarios
+# Usuarios
 
 Acá podrás ver la lista de usuarios externos y clientes que están actualmente en la plataforma, pudiendo ser filtrados como Activos e Inactivos.
 
@@ -31,11 +27,11 @@ En esta sección podemos configurar todo lo que tiene que ver con la apariencia 
 
 Por lo mismo, es escencial que esto sea verificado constantemente, para evitar problemas con los ingresos o transacciones que se realicen en línea.
 
-### General
+## General
 
 Aquí podremos personalizar la visión estética de la plataforma que tiene el usuario, empezando por los colores predeterminados. Además, se puede incluir una plantilla CSS que le dé un estilo único adaptado a la empresa o campaña que esté interactuando.
 
-### Correos
+## Correos
 
 Modyo permite configurar la apariencia de los correos que se enviarán a los usuarios. Para ello, podemos ingresar a esta función para detallar ciertos requisitos que se necesitan para enviar un mail, como la dirección por defecto.
 
@@ -50,7 +46,7 @@ Otros correos que se pueden habilitar y modificar desde la plataforma son:
 - Esperando aprobación
 - Footer personalizado
 
-### Integraciones
+## Integraciones
 
 Para simplificar el ingreso a la plataforma, es posible configurar su entrada a través de las APIs de ciertos servicios que permiten entradas universales.
 
@@ -65,7 +61,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 
 Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos.
 
-### Registros
+## Registros
 
 El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debemos tener en cuenta las credenciales y la habilitación de redirección, en el inicio de sesión.
 
@@ -80,7 +76,7 @@ Recuerda que el registro directo de usuarios podría permitir que robots malicio
 
 También es posible configurar el avatar por defecto y las condiciones del formulario de registro, para que este sea lo más completo posible.
 
-### Campos personalizados
+## Campos personalizados
 
 Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
 

@@ -8,25 +8,25 @@ En el caso de Espacios, desde Modyo se puede configurar el envío de informació
 
 Espacios nos permite separar los sitios en los que se está trabajando, para tener una mejor distribución y orden del contenido que se añade.
 
-### Crear un Espacio
+## Crear un Espacio
 
 Para crear un espacio, se debe hacer clic en el botón verde en la parte superior de la pantalla, y asignar el nombre y la UID que usaremos.
 
 Además, deberemos asignar el idioma sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
 
-#### Configuración
+### Configuración
 
 En este caso, la Configuración de Espacios nos sirve para cambiar las características generales de la manera en qué se está enviando información a través de la API.
 
-##### General
+#### General
 
 Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
 
-##### Localización
+#### Localización
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
 
-###### Buscando entries en otros idiomas
+##### Buscando entries en otros idiomas
 
 La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
 
@@ -37,17 +37,17 @@ Query string: GET .../posts/entries?locale=es_CL
 Header: Setear Accept-Language es_CL
 ```
 
-##### Caché
+#### Caché
 
 Si se quiere habilitar el caché y dejar tiempo a algunas acciones, es posible hacerlo desde esta sección. Además, regular el tiempo de vida del mismo, medido en segundos.
 
-##### Seguridad
+#### Seguridad
 
 Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser interpretada mejor por cualquier microservicio.
 
 Para ello, también es necesario especificar el dominio desde dónde será importada la información, para dar un mejor acceso.
 
-###### CORS
+##### CORS
 
 Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
 
@@ -61,14 +61,14 @@ Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
 Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
 ```
 
-###### CORS y SSL
+##### CORS y SSL
 
 Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo siguiente:
 
 - SSL: Wildcards no son permitidos.
 - NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default
 
-##### Revisión en Equipo
+#### Revisión en Equipo
 
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
@@ -80,7 +80,7 @@ Además, se puede forzar la revisión por un usuario en específico, para que es
 
 Por último, es posible diferenciar quiénes deben revisar cada contenido, según el espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
 
-##### Miembros del Equipo
+#### Miembros del Equipo
 
 Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que trabajarán en cada espacio y así tendrán acceso a la escritura, revisión o publicación.
 
