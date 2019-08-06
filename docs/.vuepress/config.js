@@ -61,7 +61,7 @@ module.exports = {
                   ] 
                 },
                 {
-                  title: "Custommerce",
+                  title: "Customers",
                   collapsable: true,
                   children: [
                     ["/guides/customers/","Introducción"],
