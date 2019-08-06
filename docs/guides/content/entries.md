@@ -45,7 +45,7 @@ Para establecer un token, es necesario hacerlo a través del parámetro de query
 
 ----
 
-Una API es una herramienta que pone a disposición información a programas en un formato más conveniente. Por ejemplo, puedes ir al sitio en un navegador y ver la información en un formato ordenado y atractivo.
+Una API es una herramienta que pone a disposición información a programas en un formato más conveniente. Por ejemplo, puedes ir a un sitio en un navegador y ver la información en un formato ordenado y atractivo.
 
 Esa misma API, presenta su información de una manera que es conveniente para programas. Entrega la información directamente.
 
