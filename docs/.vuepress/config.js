@@ -17,7 +17,6 @@ module.exports = {
   },
   themeConfig: {
       logo: "/assets/img/modyo.png",
-      repo: "modyo/modyo-docs",
       docsDir: "docs",
       sidebarDepth: 0,
       activeHeaderLinks: true,
@@ -28,7 +27,6 @@ module.exports = {
               // label for this locale in the language dropdown
               label: "Español",
               // text for the edit-on-github link
-              editLinkText: "Edita esta página en GitHub",
               nav: [
                   { text: "Guías", link: "/guides/" }
               ],
@@ -36,7 +34,7 @@ module.exports = {
                 "/guides/",
                 {
                   title: "Introducción",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     "/guides/key-concepts",
                     "/guides/the-modyo-interface",
@@ -45,7 +43,7 @@ module.exports = {
                 },
                 {
                   title: "Contenido",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     ["/guides/content/","Introducción"],
                     "/guides/content/spaces",
@@ -57,14 +55,14 @@ module.exports = {
                 },
                 {
                   title: "Channels",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     ["/guides/channels/","Introducción"]
                   ] 
                 },
                 {
                   title: "Custommerce",
-                  collapsable: false,
+                  collapsable: true,
                   children: [
                     ["/guides/customers/","Introducción"],
                     "/guides/customers/users",
@@ -76,14 +74,14 @@ module.exports = {
                 },
                 {
                   title: "Commerce",
-                  collapsable: false,
+                  collapsable: true,
                   children: [
                     ["/guides/commerce/","Introducción"],
                   ]
                 },
                 {
                   title: "Insights",
-                  collapsable: false,
+                  collapsable: true,
                   children: [
                     ["/guides/insights/","Introducción"],
                     "/guides/insights/digital-factory",
@@ -94,7 +92,7 @@ module.exports = {
                 
                 {
                   title: "Temas avanzados",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     "/guides/advance-topics/",
                     "/guides/advance-topics/locks",
@@ -112,7 +110,6 @@ module.exports = {
               // label for this locale in the language dropdown
               label: "English",
               // text for the edit-on-github link
-              editLinkText: "Edit this page on GitHub",
               nav: [
                   { text: "Guides", link: "/en/guides/" }
               ],
@@ -120,7 +117,7 @@ module.exports = {
                 "/en/guides/",
                 {
                   title: "Introduction",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     "/en/guides/key-concepts",
                     "/en/guides/the-modyo-interface",
@@ -129,7 +126,7 @@ module.exports = {
                 },
                 {
                   title: "Content",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     ["/en/guides/content/","Introduction"],
                     "/en/guides/content/spaces",
@@ -141,14 +138,14 @@ module.exports = {
                 },
                 {
                   title: "Channels",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     ["/en/guides/channels/","Introduction"]
                   ] 
                 },
                 {
                   title: "Custommerce",
-                  collapsable: false,
+                  collapsable: true,
                   children: [
                     ["/en/guides/customers/","Introduction"],
                     "/en/guides/customers/users",
@@ -159,14 +156,14 @@ module.exports = {
                 },
                 {
                   title: "Commerce",
-                  collapsable: false,
+                  collapsable: true,
                   children: [
                     ["/en/guides/commerce/","Introduction"],
                   ]
                 },
                 {
                   title: "Insights",
-                  collapsable: false,
+                  collapsable: true,
                   children: [
                     ["/en/guides/insights/","Introduction"],
                     "/en/guides/insights/digital-factory",
@@ -177,7 +174,7 @@ module.exports = {
                 
                 {
                   title: "Advanced topics",
-                  collapsable: false,
+                  collapsable: true,
                   children:[
                     "/en/guides/advance-topics/",
                     "/en/guides/advance-topics/locks",
