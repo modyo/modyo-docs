@@ -78,8 +78,7 @@ Esta sección te permite organizar las páginas de tu sitio, con tal de ver un m
 - Internal
 - Me
 
----
-
+Elementos
 - Widgets
 - Properties
 

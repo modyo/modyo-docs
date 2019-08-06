@@ -67,6 +67,11 @@ module.exports = {
                   collapsable: false,
                   children: [
                     ["/guides/customers/","Introducción"],
+                    "/guides/customers/users",
+                    "/guides/customers/targets",
+                    "/guides/customers/forms",
+                    "/guides/customers/messaging",
+                    
                   ]
                 },
                 {
@@ -81,6 +86,9 @@ module.exports = {
                   collapsable: false,
                   children: [
                     ["/guides/insights/","Introducción"],
+                    "/guides/insights/digital-factory",
+                    "/guides/insights/customers",
+                    "/guides/insights/payments"
                   ]
                 },
                 
@@ -143,6 +151,10 @@ module.exports = {
                   collapsable: false,
                   children: [
                     ["/en/guides/customers/","Introduction"],
+                    "/en/guides/customers/users",
+                    "/en/guides/customers/targets",
+                    "/en/guides/customers/forms",
+                    "/en/guides/customers/messaging",
                   ]
                 },
                 {
@@ -157,6 +169,9 @@ module.exports = {
                   collapsable: false,
                   children: [
                     ["/en/guides/insights/","Introduction"],
+                    "/en/guides/insights/digital-factory",
+                    "/en/guides/insights/customers",
+                    "/en/guides/insights/payments"
                   ]
                 },
                 
