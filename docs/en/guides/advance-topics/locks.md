@@ -1,5 +1,4 @@
 ---
-title: Locks
 lang: en
 ---
 

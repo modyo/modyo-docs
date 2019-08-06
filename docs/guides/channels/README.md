@@ -21,61 +21,12 @@ Para crear un sitio, solo debes hacer clic en la pestaña "Nuevo", el cual te pe
 
 Después de ello, podrás verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
-### Pages
 
-Todas las páginas de los sitios deben ser elaborados desde esta sección. Para empezar cualquiera de ellos, se debe crear uno desde acá.
 
-Desde la pestaña "Nuevo", podemos crear la página que deseamos, con el nómbre y la ruta que tendrá como dirección. Además, se le puede asignar un layout predeterminado como estructura de nuestro contenido.
 
-Al hacer clic en el lapiz, podremos acceder a nuestra página y su layout, el cual es posible adaptarla según los widgets que tengamos a la mano.
 
-Modyo provee de una serie de widgets predeterminados para cada página. Sin embargo, en la sección Widgets (ver más adelante), es posible agregar más, si es que es necesario.
 
-Cuando ya tengamos lista nuestra página, con el contenido y el layout armados, se puede publicar desde acá, para que sea accedida por todos los usuarios públicos.
 
-Predeterminadamente, las páginas son tres:
-
-- Home
-- Internal
-- Me
-
-Además, dentro de ellas, existen dos secciones que podrás editar si es que deseas agregar contenido extra:
-
-- Widgets
-- Properties
-
-## Navigation
-
-Si quieres armar una navegación fácil dentro de tu sitio, esta es la sección que debes usar, ya que te permite esquematizar visualmente la navegación de un usuario por las diferentes páginas que crearemos.
-
-Lo más importante es que cada página "anide" las páginas que contengan y que no deriven a otros sitios.
-
-Así tendremos la visualización de cómo se organiza nuesta web y a la vez, la navegación que debería tener el usuario final.
-
-## Widgets
-
-En la sección Widgets podrás crear y adjuntar aplicaciones externas a Modyo, con tal de que funcionen directamente en tu página.
-
-Los Widgets se pueden hacer a través de código Javascript, HTML5 y CSS, según se necesite. Además, se podrán usar archivos internos para su implementación, a través de nuestro Gestor de Archivos al que se puede acceder a través de la misma sección.
-
-Lo más importante es que estén correctamente vinculados y sean dinámicos para adaptarse a los distintos sitios que tengamos en nuestra plataforma.
-
-## Templates
-
-Uno de los aspectos más importantes al crear nuestro sitio es la apariencia de este. En esta sección, podrás armar un template para ocupar en tus páginas y cambiar su estructura según lo deseas.
-
-Una vez seleccionado el template que se usará dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
-
-Los tipos de archivos que puedes cambiar desde esta sección son:
-
-- Template
-- Snippet
-- JS Theme
-- CSS Style
-
-Además de los archivos predeterminados, también se pueden agregar nuevos snippets para agregar dentro de nuestro sitio. Para ello, la herramienta Template Builder tiene la opción de "Añadir un snippet", donde se le podrá dar el nombre y el código que se quiere agregar.
-
-Tras los cambios que realicemos, podemos Enviar a revisión nuestro template, asignándolo a otro usuario de la plataforma, o Publicar directamente, según se deseee.
 
 ## Configuración del sitio
 
