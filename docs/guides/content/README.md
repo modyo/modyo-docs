@@ -4,7 +4,7 @@ search: true
 
 # Contenido
 
-Content es la sección especial de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
+Content es la función especial de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
 
 Esta sección está especialmente diseñada para trabajar con contenido de la mano del desarrollo, ya que todo lo que se creará, será enviado a través de la API a otro servicio fácilmente adaptable.
 

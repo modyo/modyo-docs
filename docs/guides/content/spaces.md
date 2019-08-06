@@ -6,7 +6,7 @@ search: true
 
 En el caso de Espacios, desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
 
-Espacios nos permite separar los sitios en los que se está trabajando, para tener una mejor distribución y orden del contenido que se añade.
+Espacios nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
 ## Crear un Espacio
 

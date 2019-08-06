@@ -16,7 +16,7 @@ De ahí, podremos ver en nuestro botón de Vista Previa el código que se enviar
 
 Para cualquier usuario de Modyo, es importante el contenido privado targetizado a cualquier cliente. Sin embargo, es muy facil de buscar a través de la API para cualquier usuario que tenga los permisos habilitados.
 
-Quien quiera buscarlo, debe contar con un Content Delivery Token. Cada Espacio tiene su propio Content Delivery Token y es compartido por todos los usuarios que tienen sesión. El Content Delivery Token se obtiene a través de la API de Profile.
+Quien quiera buscarlo, debe contar con un Content Delivery Token. El Content Delivery Token se obtiene a través de la API de Profile.
 
 El Content Delivery Token es un JWT con los siguientes claims:
 
@@ -45,7 +45,7 @@ Para establecer un token, es necesario hacerlo a través del parámetro de query
 
 ----
 
-Una API es una herramienta que pone a disposición información a programas en un formato más conveniente. Por ejemplo, puedes ir al sitio de una empresa en tu navegador y ver la información en un formato ordenado y atractivo.
+Una API es una herramienta que pone a disposición información a programas en un formato más conveniente. Por ejemplo, puedes ir al sitio en un navegador y ver la información en un formato ordenado y atractivo.
 
 Esa misma API, presenta su información de una manera que es conveniente para programas. Entrega la información directamente.
 
