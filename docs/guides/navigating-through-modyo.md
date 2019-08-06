@@ -1,7 +1,7 @@
 ---
-id: navigating-through-modyo
-title: Navegando por Modyo
+search: true
 ---
+# Navegando por Modyo
 
 ## Cuenta
 

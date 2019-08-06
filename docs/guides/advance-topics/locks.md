@@ -1,7 +1,5 @@
 ---
-title: Locks
-lang: es
-in: locks
+search: true
 ---
 
 # Locks

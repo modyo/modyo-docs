@@ -1,7 +1,5 @@
 ---
-title: Channels
-lang: es
-id: channels
+search: true
 ---
 
 # Channels

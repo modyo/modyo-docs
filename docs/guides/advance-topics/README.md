@@ -1,7 +1,5 @@
 ---
-title: Temas Avanzados
-lang: es
-in: advance-topics
+search: true
 ---
 
 # Configuración

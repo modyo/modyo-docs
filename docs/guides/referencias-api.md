@@ -1,7 +1,5 @@
 ---
-title: Referencias a la API
-lang: es
-in: Referencias a la API
+search: true
 ---
 
 # Referencias a la API

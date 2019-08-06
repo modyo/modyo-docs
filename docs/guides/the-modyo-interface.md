@@ -1,6 +1,5 @@
 ---
-id: the-modyo-interface
-title: La interfaz Modyo
+search: true
 ---
 
 # La interfaz Modyo
@@ -9,7 +8,7 @@ title: La interfaz Modyo
 
 En los siguientes pasos te mostraremos lo que puedes ver y hacer dentro de [Modyo](https://www.modyo.com/).
 
-![The Modyo interface](./modyo-screenshot.png)
+![The Modyo interface](/assets/img/modyo-screenshot.png)
 
 ### Cuenta
 
