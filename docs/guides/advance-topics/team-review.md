@@ -1,7 +1,5 @@
 ---
-title: Team Review
-lang: es
-in: team-review
+search: true
 ---
 
 # Team review

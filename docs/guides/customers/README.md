@@ -1,7 +1,5 @@
 ---
-title: Customers
-lang: es
-in: customers
+search: true
 ---
 
 # Customers

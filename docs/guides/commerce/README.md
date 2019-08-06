@@ -1,7 +1,5 @@
 ---
-title: Commerce
-lang: es
-in: commerce
+search: true
 ---
 
 # Commerce

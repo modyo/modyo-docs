@@ -1,7 +1,5 @@
 ---
-title: Versionado
-lang: es
-in: versioning
+search: true
 ---
 
 # Versionado

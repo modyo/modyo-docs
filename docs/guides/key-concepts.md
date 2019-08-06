@@ -1,9 +1,8 @@
 ---
-id: key-concepts
-title: Conceptos clave
+search: true
 ---
 
-## Conceptos claves de Modyo
+# Conceptos claves de Modyo
 
 A continuación te daremos una breve explicación de algunos de los conceptos clave relacionados con Modyo.
 

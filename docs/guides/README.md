@@ -1,9 +1,3 @@
----
-title: Bienvenido a Modyo
-lang: es
-id: welcome-to-modyo
----
-
 # Bienvenido a Modyo
 
 ## ¿Qué es Modyo?

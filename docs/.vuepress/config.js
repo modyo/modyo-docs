@@ -2,175 +2,178 @@ module.exports = {
   title: "Modyo Docs",
   description: "Welcome to the Modyo Support Center",
   locales: {
-    // The key is the path for the locale to be nested under.
-    // As a special case, the default locale can use '/' as its path.
-    "/": {
-      lang: "es", // this will be set as the lang attribute on <html>
-      title: "Modyo Docs",
-      description: "Bienvenido al centro de soporte Modyo"
-    },
-    "/en/": {
-      lang: "en",
-      title: "Modyo Docs",
-      description: "Welcome to the Modyo Support Center"
-    } 
-  },
-  themeConfig: {
-    logo: "/assets/img/modyo.png",
-    repo: "modyo/modyo-docs",
-    docsDir: "docs",
-    locales: {
+      // The key is the path for the locale to be nested under.
+      // As a special case, the default locale can use '/' as its path.
       "/": {
-        // text for the language dropdown
-        selectText: "Lenguaje",
-        // label for this locale in the language dropdown
-        label: "Español",
-        // text for the edit-on-github link
-        editLinkText: "Edita esta página en GitHub",
-        nav: [
-          { text: "Guías", link: "/guides/" }
-        ],
-        sidebarDepth: 1,
-        sidebar: [
-          {
-            title: "Introducción",
-            collapsable: true,
-            children: [
-              "/guides/",
-              ["/guides/key-concepts", "Conceptos claves"],
-              ["/guides/the-modyo-interface", "La interfaz Modyo"],
-              ["/guides/navigating-through-modyo", "Navegando por Modyo"]
-            ]
-          },
-          {
-            title: "Content",
-            collapsable: true,
-            children: [
-              "/guides/content/"
-            ]
-          },
-          {
-            title: "Channels",
-            collapsable: true,
-            children: [
-              "/guides/channels/"
-            ]
-          },
-          {
-            title: "Customers",
-            collapsable: true,
-            children: [
-              "/guides/customers/"
-            ]
-          },
-          {
-            title: "Commerce",
-            collapsable: true,
-            children: [
-              "/guides/commerce/"
-            ]
-          },
-          {
-            title: "Insights",
-            collapsable: true,
-            children: [
-              "/guides/insights/"
-            ]
-          },
-          {
-            title: "Temas Avanzados",
-            collapsable: true,
-            children: [
-              "/guides/advance-topics/",
-              ["/guides/advance-topics/locks","Bloqueos"],
-              ["/guides/advance-topics/versioning","Versionado"],
-              ["/guides/advance-topics/team-review","Team Review"]
-            ]
-          },
-          {
-            title: "Referencias a la API",
-            children: [
-              /* ... */
-            ]
-          }
-        ]
+          lang: "es", // this will be set as the lang attribute on <html>
+          title: "Documentación de Modyo",
+          description: "Bienvenido al centro de referencia de Modyo"
       },
       "/en/": {
-        // text for the language dropdown
-        selectText: "Languages",
-        // label for this locale in the language dropdown
-        label: "English",
-        // text for the edit-on-github link
-        editLinkText: "Edit this page on GitHub",
-        nav: [
-          { text: "Guides", link: "/en/guides/" }
-        ],
-        sidebarDepth: 1,
-        sidebar: [
-          {
-            title: "Introduction",
-            collapsable: true,
-            children: [
-              "/guides/",
-              ["/en/guides/key-concepts", "Key Concepts"],
-              ["/en/guides/the-modyo-interface", "The modyo interface"],
-              ["/en/guides/navigating-through-modyo", "Navigating Through Modyo"]
-
-            ]
-          },
-          {
-            title: "Content",
-            collapsable: true,
-            children: [
-              "/guides/content/"
-            ]
-          },
-          {
-            title: "Channels",
-            collapsable: true,
-            children: [
-              "/guides/channels/"
-            ]
-          },
-          {
-            title: "Customers",
-            collapsable: true,
-            children: [
-              "/guides/customers/"
-            ]
-          },
-          {
-            title: "Commerce",
-            collapsable: true,
-            children: [
-              "/guides/commerce/"
-            ]
-          },
-          {
-            title: "Insights",
-            collapsable: true,
-            children: [
-              "/guides/insights/"
-            ]
-          },
-          {
-            title: "Advance Topics",
-            collapsable: true,
-            children: [
-              "/guides/advance-topics/",
-              ["/guides/advance-topics/locks","Locks"],
-              ["/guides/advance-topics/versioning","Versionning"],
-              ["/guides/advance-topics/team-review","Team Review"]
-            ]
-          },
-          {
-            title: "API Reference",
-            children: [
-              /* ... */
-            ]
-          }
-        ]
+          lang: "en",
+          title: "Modyo Docs",
+          description: "Welcome to the Modyo reference center"
       }
-    }
+  },
+  themeConfig: {
+      logo: "/assets/img/modyo.png",
+      repo: "modyo/modyo-docs",
+      docsDir: "docs",
+      sidebarDepth: 0,
+      activeHeaderLinks: true,
+      locales: {
+          "/": {
+              // text for the language dropdown
+              selectText: "Lenguaje",
+              // label for this locale in the language dropdown
+              label: "Español",
+              // text for the edit-on-github link
+              editLinkText: "Edita esta página en GitHub",
+              nav: [
+                  { text: "Guías", link: "/guides/" }
+              ],
+              sidebar: [
+                "/guides/",
+                {
+                  title: "Introducción",
+                  collapsable: false,
+                  children:[
+                    "/guides/key-concepts",
+                    "/guides/the-modyo-interface",
+                    "/guides/navigating-through-modyo"
+                  ]
+                },
+                {
+                  title: "Contenido",
+                  collapsable: false,
+                  children:[
+                    ["/guides/content/","Introducción"],
+                    "/guides/content/spaces",
+                    "/guides/content/entries",
+                    "/guides/content/types",
+                    "/guides/content/asset-manager",
+                    "/guides/content/public-api-reference",
+                    ]
+                },
+                {
+                  title: "Channels",
+                  collapsable: false,
+                  children:[
+                    ["/guides/channels/","Introducción"]
+                  ] 
+                },
+                {
+                  title: "Custommerce",
+                  collapsable: false,
+                  children: [
+                    ["/guides/customers/","Introducción"],
+                  ]
+                },
+                {
+                  title: "Commerce",
+                  collapsable: false,
+                  children: [
+                    ["/guides/commerce/","Introducción"],
+                  ]
+                },
+                {
+                  title: "Insights",
+                  collapsable: false,
+                  children: [
+                    ["/guides/insights/","Introducción"],
+                  ]
+                },
+                
+                {
+                  title: "Temas avanzados",
+                  collapsable: false,
+                  children:[
+                    "/guides/advance-topics/",
+                    "/guides/advance-topics/locks",
+                    "/guides/advance-topics/versioning",
+                    "/guides/advance-topics/team-review",
+                  ]
+                }
+                
+                
+              ]
+          },
+          "/en/": {
+              // text for the language dropdown
+              selectText: "Languages",
+              // label for this locale in the language dropdown
+              label: "English",
+              // text for the edit-on-github link
+              editLinkText: "Edit this page on GitHub",
+              nav: [
+                  { text: "Guides", link: "/en/guides/" }
+              ],
+              sidebar: [
+                "/en/guides/",
+                {
+                  title: "Introduction",
+                  collapsable: false,
+                  children:[
+                    "/en/guides/key-concepts",
+                    "/en/guides/the-modyo-interface",
+                    "/en/guides/navigating-through-modyo"
+                  ]
+                },
+                {
+                  title: "Content",
+                  collapsable: false,
+                  children:[
+                    ["/en/guides/content/","Introduction"],
+                    "/en/guides/content/spaces",
+                    "/en/guides/content/entries",
+                    "/en/guides/content/types",
+                    "/en/guides/content/asset-manager",
+                    "/en/guides/content/public-api-reference",
+                    ]
+                },
+                {
+                  title: "Channels",
+                  collapsable: false,
+                  children:[
+                    ["/en/guides/channels/","Introduction"]
+                  ] 
+                },
+                {
+                  title: "Custommerce",
+                  collapsable: false,
+                  children: [
+                    ["/en/guides/customers/","Introduction"],
+                  ]
+                },
+                {
+                  title: "Commerce",
+                  collapsable: false,
+                  children: [
+                    ["/en/guides/commerce/","Introduction"],
+                  ]
+                },
+                {
+                  title: "Insights",
+                  collapsable: false,
+                  children: [
+                    ["/en/guides/insights/","Introduction"],
+                  ]
+                },
+                
+                {
+                  title: "Advanced topics",
+                  collapsable: false,
+                  children:[
+                    "/en/guides/advance-topics/",
+                    "/en/guides/advance-topics/locks",
+                    "/en/guides/advance-topics/versioning",
+                    "/en/guides/advance-topics/team-review",
+                  ]
+                }
+                
+                
+              ]
+          }
+      }
   }
 };

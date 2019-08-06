@@ -1,7 +1,5 @@
 ---
-title: Insights
-lang: es
-in: insights
+search: true
 ---
 
 # Insights
