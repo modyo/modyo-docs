@@ -21,13 +21,6 @@ Para crear un sitio, solo debes hacer clic en la pestaña "Nuevo", el cual te pe
 
 Después de ello, podrás verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
-
-
-
-
-
-
-
 ## Configuración del sitio
 
 La Configuración del sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
