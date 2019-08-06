@@ -57,7 +57,12 @@ module.exports = {
                   title: "Channels",
                   collapsable: true,
                   children:[
-                    ["/guides/channels/","Introducción"]
+                    ["/guides/channels/","Introducción"],
+                    "/guides/channels/pages",
+                    "/guides/channels/navigation",
+                    "/guides/channels/widgets",
+                    "/guides/channels/templates",
+
                   ] 
                 },
                 {
@@ -140,7 +145,11 @@ module.exports = {
                   title: "Channels",
                   collapsable: true,
                   children:[
-                    ["/en/guides/channels/","Introduction"]
+                    ["/en/guides/channels/","Introduction"],
+                    "/en/guides/channels/pages",
+                    "/en/guides/channels/navigation",
+                    "/en/guides/channels/widgets",
+                    "/en/guides/channels/templates",
                   ] 
                 },
                 {
