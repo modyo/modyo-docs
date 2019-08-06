@@ -1,5 +1,4 @@
 ---
-title: Advance Topics
 lang: en
 ---
 
