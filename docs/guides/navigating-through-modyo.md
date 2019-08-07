@@ -305,7 +305,9 @@ También es posible hacer una configuración de la emisión de la orden que le l
 ## Insights
 
 Acá podrás ver las estadísticas de cada una de las operaciones que se realicen en la web, separada por cada uno de los sitios.
+
 En el caso de Digital Factory, se puede observar la cantidad de recursos por día, su actividad por usuario y por tipo de contenido.
+
 Para Customers, la idea es ver su cantidad de usuarios, efectividad de campañas y compromiso con los sitios, dividido por cada uno de los targets definidos.
 En Payments, también se puede ver un resumen de los órdenes, su estado y su medio de pago.
 

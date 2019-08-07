@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Acerca de Customers
+# Customers
 
 Modyo enfoca sus servicios en ofrecer una experiencia digital distinta a todos los clientes que tenga una empresa, por lo que Customers es una función elemental para quien quiera entregar un servicio de excelencia.
 

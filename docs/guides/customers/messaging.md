@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Messaging
+# Mensajería
 
-Messaging es una herramienta fundamental para quienes quieran hacer campañas hacia el sitio, ya que nos permite enviar la información hacia nuestros clientes de una manera masiva, hacia nuestros targets determinados.
+Mensajería es una herramienta fundamental para quienes quieran hacer campañas hacia el sitio, ya que nos permite enviar la información hacia nuestros clientes de una manera masiva, hacia nuestros targets determinados.
 
 ## Campañas
 
