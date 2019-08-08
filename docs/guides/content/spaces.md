@@ -4,9 +4,11 @@ search: true
 
 # Espacios
 
-En el caso de Espacios, desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido y crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de la API pública.
 
-Espacios nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
+Desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+
+Espacios tambiém nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
 ## Crear un Espacio
 
@@ -70,7 +72,9 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 - SSL: Wildcards no son permitidos.
 - NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default
 
-#### Revisión en Equipo
+#### Revisión en Equipo (Team Review)
+
+
 
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
