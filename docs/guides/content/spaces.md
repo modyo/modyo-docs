@@ -41,6 +41,8 @@ Header: Setear Accept-Language es_CL
 
 Si se quiere habilitar el caché y dejar tiempo a algunas acciones, es posible hacerlo desde esta sección. Además, regular el tiempo de vida del mismo, medido en segundos.
 
+Si se está trabajando en modo Desarrollo, se recomienda deshabilitar esta opción, con tal de que los cambios en la API sean visibles automáticamente y no esperar la renovación.
+
 #### Seguridad
 
 Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser interpretada mejor por cualquier microservicio.
@@ -79,6 +81,8 @@ El equipo puede ser predeterminado por el administrador o elegido por quien env�
 Además, se puede forzar la revisión por un usuario en específico, para que este sea aprobado y seleccionar a quienes se les asignará la tarea.
 
 Por último, es posible diferenciar quiénes deben revisar cada contenido, según el espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
+
+[Ir a Team Review](https://docs.modyo.com/guides/advance-topics/team-review.html)
 
 #### Miembros del Equipo
 
