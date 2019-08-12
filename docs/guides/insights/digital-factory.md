@@ -10,11 +10,11 @@ En Digital Factory podemos ver un análisis global de los sitios y del flujo de 
 
 En primer lugar, existe una estadística de los contenidos creados, aprobados y publicados en los sitios.
 
-## Created vs. Published Resources
+## Recursos Creados vs. Publicados
 
 Después, se encuentra un gráfico que muestra una comparación entre los contenidos creados y los publicados, por día.
 
-## Activity by User
+## Actividad por Usuario
 
 La gráfica nos permite comparar cuáles son los usuarios internos más activos y ver si su contenido creado se ha publicado o está aún en proceso de revisión.
 

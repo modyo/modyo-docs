@@ -15,13 +15,16 @@ Ve más allá, utilizando la plataforma y obteniendo mayor conocimiento sobre tu
 ### Los clientes interactúan en los sitios dependiendo del contexto
 
 Tenemos diferentes mecanismos de autenticación construidos dentro de la plataforma. Desde OpenID Connect hasta OAuth2 y Google, puedes autenticar clientes fácilmente.
+
 Los clientes pueden interactuar en distintos sitios y en diferentes contextos con el mismo perfil central.
 
 ### Tanto CMS como Headless CMS
 
 Channels te permite crear y publicar contenido. Puedes crear custom fields para el contenido fácilmente.
+
 Todo el contenido estructurado que es publicado, genera un archivo JSON equivalente que puede alimentar a cualquier otro sitio o aplicación. Estos son servidos a través de nuestra API.
-Una plataforma de integración
+
+### Una plataforma de integración
 
 Construimos Modyo pensando en facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente mantenemos nuestros foco en facilitar el desarrollo de widgets y su conexión con APIs.
 
@@ -55,4 +58,4 @@ Las APIs potencian nuestra plataforma y hacen más fácil construir soluciones. 
 
 Modyo tiene una arquitectura donde todo el código publicado genera versiones. Antes de publicar una versión de un widget o un layout, puedes revisar fácilmente los cambios en el código entre una versión y otra.
 
-La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu equipo, siguiendo un modelo que balancea gobernabilidad y agilidad. Cuando se activa Workflows en la plataforma dentro de Channels, dos personas (Revisor y Aprobador) pueden cambiar el estado de los recursos digitales al de "Publicado" a través de un proceso formal fácil de manejar. La capacidad de tu equipo es medida más tarde dentro de Insights. Aprende más sobre Workflows aquí.
+La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu equipo, siguiendo un modelo que balancea gobernabilidad y agilidad. Cuando se activa Workflows en la plataforma dentro de Channels, dos personas (Revisor y Aprobador) pueden cambiar el estado de los recursos digitales al de "Publicado" a través de un proceso formal fácil de manejar. La capacidad de tu equipo es medida más tarde dentro de Insights.

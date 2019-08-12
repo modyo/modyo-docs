@@ -4,9 +4,11 @@ search: true
 
 # Espacios
 
-En el caso de Espacios, desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido y crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de la API pública.
 
-Espacios nos permite separar los sitios en los que se está trabajando, para tener una mejor distribución y orden del contenido que se añade.
+Desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+
+Espacios tambiém nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
 ## Crear un Espacio
 
@@ -41,6 +43,8 @@ Header: Setear Accept-Language es_CL
 
 Si se quiere habilitar el caché y dejar tiempo a algunas acciones, es posible hacerlo desde esta sección. Además, regular el tiempo de vida del mismo, medido en segundos.
 
+Si se está trabajando en modo Desarrollo, se recomienda deshabilitar esta opción, con tal de que los cambios en la API sean visibles automáticamente y no esperar la renovación.
+
 #### Seguridad
 
 Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser interpretada mejor por cualquier microservicio.
@@ -68,7 +72,9 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 - SSL: Wildcards no son permitidos.
 - NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default
 
-#### Revisión en Equipo
+#### Revisión en Equipo (Team Review)
+
+
 
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
@@ -79,6 +85,8 @@ El equipo puede ser predeterminado por el administrador o elegido por quien env�
 Además, se puede forzar la revisión por un usuario en específico, para que este sea aprobado y seleccionar a quienes se les asignará la tarea.
 
 Por último, es posible diferenciar quiénes deben revisar cada contenido, según el espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
+
+[Ir a Team Review](https://docs.modyo.com/guides/advance-topics/team-review.html)
 
 #### Miembros del Equipo
 

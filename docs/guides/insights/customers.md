@@ -12,11 +12,11 @@ En este gráfico podemos ver la cantidad de usuarios activos, sus movimientos de
 
 Además, se encuentra un gráfico dinámico que nos muestra cruces de datos como actividad de los usuarios y estadísticas de los correos enviados con campañas.
 
-## Recent campaigns
+## Campañas Recientes
 
 También se puede hacer una evaluación de las últimas cinco campañas enviadas por email hacia los clientes, tomando como factor de evaluación la tasa de aperturas vs. el alcance de estas.
 
-## Recent forms
+## Formularios Recientes
 
 La cantidad de respuestas de los últimos cinco formularios puestos a disposición de los clientes también pueden ser revisados para una evaluación de estos.
 
