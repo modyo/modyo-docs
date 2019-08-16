@@ -51,7 +51,7 @@ For standard use you can just pass it the content of a file and call render with
 
 Setting the error mode of Liquid lets you specify how strictly you want your templates to be interpreted.
 Normally the parser is very lax and will accept almost anything without error. Unfortunately this can make
-it very hard to debug and can lead to unexpected behaviour. 
+it very hard to debug and can lead to unexpected behaviour.
 
 Liquid also comes with a stricter parser that can be used when editing templates to give better error messages
 when templates are invalid. You can enable this new parser like this:
@@ -63,9 +63,11 @@ Liquid::Template.error_mode = :lax # The default mode, accepts almost anything.
 ```
 
 If you want to set the error mode only on specific templates you can pass `:error_mode` as an option to `parse`:
+
 ```ruby
 Liquid::Template.parse(source, :error_mode => :strict)
 ```
+
 This is useful for doing things like enabling strict mode only in the theme editor.
 
 It is recommended that you enable `:strict` or `:warn` mode on new apps to stop invalid templates from being created.
@@ -128,8 +130,6 @@ Hello {{user.name}}
 Hello {{ 'tobi' }}
 ```
 
-<a id="expressions"></a>
-
 ### Expressions and Variables
 
 Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output statements, but also as arguments to some tags or filters.
@@ -151,8 +151,6 @@ Liquid accepts the following kinds of expressions:
 * **Booleans and nil.** The literal values `true`, `false`, and `nil`.
 
 Note that there is no way to write a literal array or hash as an expression; arrays and hashes must be passed into the template, or constructed obliquely with a tag or output statement.
-
-<a name="filters"></a>
 
 ### Advanced output: Filters
 
@@ -412,7 +410,7 @@ has built-in support for such operations, using the `cycle` tag.
 
 will result in
 
-```
+```text
 one
 two
 three
@@ -463,7 +461,7 @@ When iterating a hash, `item[0]` contains the key, and `item[1]` contains the va
 {% endfor %}
 ```
 
-Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` — parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers. 
+Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` — parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers.
 
 ```liquid
 # if item.quantity is 4...
@@ -480,7 +478,7 @@ You can exit a loop early with the following tags:
 * `{% continue %}` — immediately end the current iteration, and continue the "for" loop with the next value.
 * `{% break %}` — immediately end the current iteration, then completely end the "for" loop.
 
-Both of these are only useful when combined with something like an "if" statement. 
+Both of these are only useful when combined with something like an "if" statement.
 
 ``` liquid
 {% for page in pages %}
