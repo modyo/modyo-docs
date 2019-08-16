@@ -46,6 +46,7 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/guides/content/","Introducción"],
+                    "/guides/content/liquid-markup",
                     "/guides/content/spaces",
                     "/guides/content/entries",
                     "/guides/content/types",
@@ -134,6 +135,7 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/en/guides/content/","Introduction"],
+                    "/en/guides/content/liquid-markup",
                     "/en/guides/content/spaces",
                     "/en/guides/content/entries",
                     "/en/guides/content/types",
