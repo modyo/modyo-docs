@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Insights
+# Modyo Insights
 
 Modyo permite hacer un análisis de las tendencias que están pasando en la plataforma, tomando en cuenta las acciones de los usuarios en cada uno de los sitios.
 
