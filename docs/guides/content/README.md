@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Contenido
+# Modyo Content
 
 Content es un producto de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
 
