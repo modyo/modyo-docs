@@ -46,7 +46,6 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/guides/content/","Introducción"],
-                    "/guides/content/liquid-markup",
                     "/guides/content/spaces",
                     "/guides/content/entries",
                     "/guides/content/types",
@@ -59,6 +58,7 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/guides/channels/","Introducción"],
+                    "/guides/channels/liquid-markup",
                     "/guides/channels/pages",
                     "/guides/channels/navigation",
                     "/guides/channels/widgets",
@@ -135,7 +135,6 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/en/guides/content/","Introduction"],
-                    "/en/guides/content/liquid-markup",
                     "/en/guides/content/spaces",
                     "/en/guides/content/entries",
                     "/en/guides/content/types",
@@ -148,6 +147,7 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/en/guides/channels/","Introduction"],
+                    "/en/guides/channels/liquid-markup",
                     "/en/guides/channels/pages",
                     "/en/guides/channels/navigation",
                     "/en/guides/channels/widgets",
