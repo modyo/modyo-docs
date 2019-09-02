@@ -20,7 +20,7 @@ Los clientes pueden interactuar en distintos sitios y en diferentes contextos co
 
 ### Tanto CMS como Headless CMS
 
-Channels te permite crear y publicar contenido. Puedes crear custom fields para el contenido fácilmente.
+Modyo Content te permite crear y publicar contenido. Puedes crear _custom fields_ para diseñar estructuras de contenido fácilmente. Modyo Channels te permite trabajar con plantillas de HTML y componentes de _frontend_ llamados Widgets.
 
 Todo el contenido estructurado que es publicado, genera un archivo JSON equivalente que puede alimentar a cualquier otro sitio o aplicación. Estos son servidos a través de nuestra API.
 
@@ -53,6 +53,11 @@ Un modelo separado de licencia se aplica a Modyo Banking.
 Modyo utiliza Liquid Markup dentro de la plataforma para darle a los desarrolladores de Front y Back End un lenguaje enriquecido para poder agregar más funcionalidad al construir experiencias digitales. Liquid Markup es utilizado por compañías líderes para agregar fácilmente más lógica en el código del Front End.
 
 Las APIs potencian nuestra plataforma y hacen más fácil construir soluciones. Revisa este artículo acerca de nuestra API
+
+
+### Preparados para el futuro: PWAs
+Las aplicaciones Web progresivas serán el futuro de la Web ya que permiten mejorar la forma cómo éstas se distribuyen a los usuarios finales y le dan más protagonismo al _browser_ Web como una plataforma de ejecución. Con Modyo puedes controlar en cada sitio las definiciones de _manifest.json_ y de los _Service Workers_, habilitadores técnicos fundamentales a la hora de implementar PWAs.
+
 
 ### Seguridad, Gobernabilidad y Agilidad
 

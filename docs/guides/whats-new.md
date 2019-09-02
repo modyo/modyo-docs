@@ -3,9 +3,7 @@ search: true
 ---
 
 # ¿Qué hay de nuevo en Modyo?
-En la nueva versión de Modyo incluímos las siguientes nuevas funcionalidades.
-
-## Nuevas funcionalidades en Modyo 9
+En la nueva versión de Modyo (novena generación) incluímos las siguientes funcionalidades.
 
 ### Nueva interfaz simplificada
 Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de cambiar el logo de Modyo para personalizarla según por el cliente.
