@@ -30,19 +30,20 @@ module.exports = {
               nav: [
                   { text: "Guías", link: "/guides/" }
               ],
-              sidebar: [
-                "/guides/",
+              sidebar: [                
                 {
                   title: "Introducción",
                   collapsable: true,
                   children:[
+                    "/guides/",
+                    "/guides/whats-new",                    
                     "/guides/key-concepts",
                     "/guides/the-modyo-interface",
                     "/guides/navigating-through-modyo"
                   ]
                 },
                 {
-                  title: "Contenido",
+                  title: "Content",
                   collapsable: true,
                   children:[
                     ["/guides/content/","Introducción"],
@@ -119,12 +120,13 @@ module.exports = {
               nav: [
                   { text: "Guides", link: "/en/guides/" }
               ],
-              sidebar: [
-                "/en/guides/",
+              sidebar: [                
                 {
                   title: "Introduction",
                   collapsable: true,
                   children:[
+                    "/en/guides/",
+                    "/en/guides/whats-new", 
                     "/en/guides/key-concepts",
                     "/en/guides/the-modyo-interface",
                     "/en/guides/navigating-through-modyo"

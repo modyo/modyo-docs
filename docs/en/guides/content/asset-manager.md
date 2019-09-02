@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Gestor de Archivos
+# Gestor de archivos
 
 En esta sección, podremos ver todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
 

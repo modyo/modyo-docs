@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Liquid template engine
+# Liquid markup
 
 ## Introduction
 
