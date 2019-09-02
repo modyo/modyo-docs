@@ -6,7 +6,7 @@ search: true
 
 A continuación te daremos una breve explicación de algunos de los conceptos clave relacionados con Modyo.
 
-## Arquitectura Multi-Sitio
+### Arquitectura Multi-Sitio
 
 Utilizamos una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, puedes crear múltiples sitios, públicos o privados.
 

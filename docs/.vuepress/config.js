@@ -38,8 +38,7 @@ module.exports = {
                     "/guides/",
                     "/guides/whats-new",                    
                     "/guides/key-concepts",
-                    "/guides/the-modyo-interface",
-                    "/guides/navigating-through-modyo"
+                    "/guides/the-modyo-interface"
                   ]
                 },
                 {
@@ -128,8 +127,7 @@ module.exports = {
                     "/en/guides/",
                     "/en/guides/whats-new", 
                     "/en/guides/key-concepts",
-                    "/en/guides/the-modyo-interface",
-                    "/en/guides/navigating-through-modyo"
+                    "/en/guides/the-modyo-interface"
                   ]
                 },
                 {
