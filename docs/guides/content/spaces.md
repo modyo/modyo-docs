@@ -74,8 +74,6 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 
 #### Revisión en Equipo (Team Review)
 
-
-
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
 En este caso, se pueden determinar cuántos miembros del equipo deben aprobar un contenido antes de ser puestos a disposición del Administrador, quien deberá publicarlos. Predeterminadamente, deben ser al menos 3 revisores, pero la cantidad puede cambiar.

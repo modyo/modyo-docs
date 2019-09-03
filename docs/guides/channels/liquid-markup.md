@@ -2,25 +2,25 @@
 search: true
 ---
 
-# Motor de marcado liquid
+# Motor de marcado Liquid
 
-## Introduction
+## Introducción
 
-Liquid is a template engine which was written with very specific requirements:
+Liquid es un motor de plantillas que está escrito con requerimientos muy específicos:
 
-* It has to have beautiful and simple markup. Template engines which don't produce good looking markup are no fun to use.
-* It needs to be non evaling and secure. Liquid templates are made so that users can edit them. You don't want to run code on your server which your users wrote.
-* It has to be stateless. Compile and render steps have to be separate so that the expensive parsing and compiling can be done once and later on you can just render it passing in a hash with local variables and objects.
+* Tiene que tener un marcado bonito y sencillo. Los motores de plantillas que no producen un marcado atractivo no son divertidos de usar.
+* Tiene que ser no evaluable y seguro. Las plantillas Liquid están hechas para que los usuarios puedan editarlas. No quieres ejecutar código en tu servidor que tus usuarios escribieron.
+* No tiene que tener estado. Los pasos de compilación y renderizado tienen que estar separados para que el análisis sintáctico y su compilación se pueda hacer solo una vez, y más tarde se pueda renderizar pasando un hash con objetos locales y variables.
 
-## Why you should use Liquid
+## ¿Por qué deberías usar Liquid?
 
-* You want to allow your users to edit the appearance of your application but don't want them to run **insecure code on your server**.
-* You want to render templates directly from the database.
-* You like smarty (PHP) style template engines.
-* You need a template engine which does HTML just as well as emails.
-* You don't like the markup of your current templating engine.
+* Deseas permitir que sus usuarios editen la apariencia de su aplicación pero no quieres que ejecuten **código inseguro en tu servidor**.
+* Quieres renderizar tus plantillas directamente desde la base de datos.
+* Te gustan los motores inteligentes de plantillas de estilo (PHP).
+* Necesitas un motor de plantillas que funcione bien tanto en HTML como en emails.
+* No te gusta el marcado (markup) de tu actual motor de plantillas.
 
-## What does it look like?
+## ¿Cómo se ve Liquid?
 
 ```html
 <ul id="products">
@@ -35,26 +35,24 @@ Liquid is a template engine which was written with very specific requirements:
 </ul>
 ```
 
-## How to use Liquid
+## ¿Cómo usar Liquid?
 
-Install Liquid by adding `gem 'liquid'` to your gemfile.
+Instala Liquid añadiendo `gem 'liquid'` a tu gemfile.
 
-Liquid supports a very simple API based around the Liquid::Template class.
-For standard use you can just pass it the content of a file and call render with a parameters hash.
+Liquid soporta una API muy simple basada en Liquid::Template class.
+Para uso estándar puede pasarle el contenido de un archivo y hacer un call render con parámetros hash.
 
 ```ruby
 @template = Liquid::Template.parse("hi {{name}}") # Parses and compiles the template
 @template.render('name' => 'tobi')                # => "hi tobi"
 ```
 
-### Error Modes
+### Modo de Error
 
-Setting the error mode of Liquid lets you specify how strictly you want your templates to be interpreted.
-Normally the parser is very lax and will accept almost anything without error. Unfortunately this can make
-it very hard to debug and can lead to unexpected behaviour.
+Configurar el Modo de Error de Liquid te permite especificar qué tan estrictamente deseas que se interpreten tus plantillas.
+Normalmente el analizador es muy laxo y acepta casi cualquier cosa sin errores. Desafortunadamente, esto puede hacer que sea muy difícil de hacer debug y puede llevar a comportamiento inesperado. 
 
-Liquid also comes with a stricter parser that can be used when editing templates to give better error messages
-when templates are invalid. You can enable this new parser like this:
+Liquid también viene con un analizador más estricto que se puede utilizar al editar plantillas para dar mejores mensajes de error cuando estas no son válidas. Se puede habilitar este nuevo analizador de esta manera:
 
 ```ruby
 Liquid::Template.error_mode = :strict # Raises a SyntaxError when invalid syntax is used
@@ -62,23 +60,21 @@ Liquid::Template.error_mode = :warn # Adds errors to template.errors but continu
 Liquid::Template.error_mode = :lax # The default mode, accepts almost anything.
 ```
 
-If you want to set the error mode only on specific templates you can pass `:error_mode` as an option to `parse`:
-
+Si desea configurar el modo de error sólo en plantillas específicas, puedes pasar el parámetro `:error_mode` como una opción a `parse`:
 ```ruby
 Liquid::Template.parse(source, :error_mode => :strict)
 ```
+Esto es útil para hacer cosas como habilitar el modo estricto sólo en el editor de temas.
 
-This is useful for doing things like enabling strict mode only in the theme editor.
+Es recomendable que se habilite el modo `:strict` or `:warn` en las nuevas apps para impedir la creación de plantillas inválidas.
+También se recomienda utilizarlo en los editores de plantillas de las aplicaciones existentes para dar mejores mensajes de error a sus usuarios.
 
-It is recommended that you enable `:strict` or `:warn` mode on new apps to stop invalid templates from being created.
-It is also recommended that you use it in the template editors of existing apps to give editors better error messages.
+### Filtros y variables no definidas.
 
-### Undefined variables and filters
-
-By default, the renderer doesn't raise or in any other way notify you if some variables or filters are missing, i.e. not passed to the `render` method.
-You can improve this situation by passing `strict_variables: true` and/or `strict_filters: true` options to the `render` method.
-When one of these options is set to true, all errors about undefined variables and undefined filters will be stored in `errors` array of a `Liquid::Template` instance.
-Here are some examples:
+Por defecto, el renderizador no sube o de cualquier otra manera te notifica si faltan algunas variables o filtros, en otras palabras, no han sido pasadas al método `render`.
+Puedes mejorar esta situación pasando las opciones `strict_variables: true` y/o `strict_filters: true` al método `render`.
+Cuando una de estas opciones se establece en true, todos los errores sobre variables y filtros no definidos se guardarán en el array `errors` de la instancia `Liquid::Template`.
+Por ejemplo:
 
 ```ruby
 template = Liquid::Template.parse("{{x}} {{y}} {{z.a}} {{z.b}}")
@@ -91,12 +87,13 @@ template.errors
 ```ruby
 template = Liquid::Template.parse("{{x | filter1 | upcase}}")
 template.render({ 'x' => 'foo' }, { strict_filters: true })
-#=> '' # when at least one filter in the filter chain is undefined, a whole expression is rendered as nil
+#=> '' # cuando al menos un filtro en la string de filtros no está definido, una expresión completa se renderiza como
+nil
 template.errors
 #=> [#<Liquid::UndefinedFilter: Liquid error: undefined filter filter1>]
 ```
 
-If you want to raise on a first exception instead of pushing all of them in `errors`, you can use `render!` method:
+Si quieres subirlos en una primera excepción en lugar de colocar todos ellos en `errors`, puedes usar el método `render!`:
 
 ```ruby
 template = Liquid::Template.parse("{{x}} {{y}}")
@@ -104,15 +101,15 @@ template.render!({ 'x' => 1}, { strict_variables: true })
 #=> Liquid::UndefinedVariable: Liquid error: undefined variable y
 ```
 
-There are two types of markup in Liquid: Output and Tag.
+Existen dos tipos de marcado (markup) en Liquid: Output y Tag.
 
-* Output markup (which may resolve to text) is surrounded by
+* El marcado Output (que se puede traducir a texto) está insertado entre
 
 ```liquid
 {{ matched pairs of curly brackets (ie, braces) }}
 ```
 
-* Tag markup (which cannot resolve to text) is surrounded by
+* Marcado tag (que no se puede traducir a texto) está insertado entre
 
 ```liquid
 {% matched pairs of curly brackets and percent signs %}
@@ -120,9 +117,9 @@ There are two types of markup in Liquid: Output and Tag.
 
 ## Output
 
-An output statement is a set of double curly braces containing an expression; when the template is rendered, it gets replaced with the value of that expression.
+Una sentencia Output es un conjunto de llaves dobles que contienen una expresión; cuando la plantilla es renderizada, es reemplazada por el valor de esa expresión.
 
-Here is a simple example of output:
+Aquí tenemos un ejemplo simple de output:
 
 ```liquid
 Hello {{name}}
@@ -130,37 +127,41 @@ Hello {{user.name}}
 Hello {{ 'tobi' }}
 ```
 
-### Expressions and Variables
+<a id="expressions"></a>
 
-Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output statements, but also as arguments to some tags or filters.
+### Expresiones y variables
 
-Liquid accepts the following kinds of expressions:
+Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pueden usar expresiones en muchos lugares; muy frecuentemente en sentencias output, pero también como argumentos para tags o filtros.
 
-* **Variables.** The most basic kind of expression is just the name of a variable. Liquid variables are named like Ruby variables: they should consist of alphanumeric characters and underscores, should always start with a letter, and do not have any kind of leading sigil (that is, they look like `var_name`, not `$var_name`).
-* **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
-    * `my_variable[<KEY EXPRESSION>]` — The name of the variable, followed immediately by square brackets containing a key expression. 
-        * For arrays, the key must be a literal integer or an expression that resolves to an integer. 
-        * For hashes, the key must be a literal quoted string or an expression that resolves to a string. 
-    * `my_hash.key` — Hashes also allow a shorter "dot" notation, where the name of the variable is followed by a period and the name of a key. This only works with keys that don't contain spaces, and (unlike the square bracket notation) does not allow the use of a key name stored in a variable.
-    * Note: if the value of an access expression is also an array or hash, you can access values from it in the same way, and can even combine the two methods. (For example, `site.posts[34].title`.)
-* **Array first and last.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve to its first or last element.
-* **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
-    * If you know of any other special "methods" like this in Liquid, please update this section.
-* **Strings.** Literal strings must be surrounded by double quotes or single quotes (`"my string"` or `'my string'`). There is no difference; neither style allows variable interpolation.
-* **Integers.** Integers must not be quoted.
-* **Booleans and nil.** The literal values `true`, `false`, and `nil`.
+Liquid acepta los siguientes tipos de expresiones:
 
-Note that there is no way to write a literal array or hash as an expression; arrays and hashes must be passed into the template, or constructed obliquely with a tag or output statement.
+* **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres  alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no tener ningún tipo de sigla distintiva (es decir, deben verse como `var_name`, y no `$var_name`).
+* **Acceso de arreglo/hashes.** Si tienes una expresión (normalmente una variable) cuyo valor es un arreglo o hash, puede usar un único valor de ese arreglo/hash de la siguiente manera:
+    * `my_variable[<KEY EXPRESSION>]` — El nombre de la variable, seguido inmediatamente de corchetes que contienen una expresión clave.
+        * Para arreglos, la clave debe ser un entero literal o una expresión que se resuelva a un entero. 
+        * Para hashes, la clave debe ser una string de comillas literal o una expresión que se resuelva en una string. 
+    * `my_hash.key` — Los hashes también permiten una notación de "punto" más corta, donde el nombre de la variable es seguido por un punto y el nombre de una clave. Esto sólo funciona con claves que no contienen espacios, y (a diferencia de la notación entre corchetes) no permite el uso de un nombre de clave almacenado en una variable.
+    * Nota: si el valor de una expresión de acceso es también un arreglo o hash, puedes acceder a los valores desde ella de la misma manera, e incluso puedes combinar los dos métodos. (Por ejemplo, `site.posts[34].title`.)
+* **Primer y último arreglo.** Si tienes una expresión cuyo valor es un arreglo, puedes seguirla con `.first` or `.last` para resolver su primer o último elemento.
+* **Tamaño de arreglo o hash** Si tienes una expresión cuyo valor es un arreglo o hash, puedes seguirla con `.size` para resolver el número de elementos de la expresión original, como un entero.
+    * Si conoces otros "métodos" especiales como este en Liquid, por favor, actualiza esta sección.
+* **Strings.** Las strings literales (strings) deben estar rodeadas de comillas dobles o simples (``"mi cuerda"`` o `'mi cuerda'`). No hay diferencia; ningún estilo permite interpolación variable.
+* **Enteros.** Los números enteros no pueden ser citados.
+* **Booleanos y cero.** Los valores literales `true`, `false`, and `nil`.
 
-### Advanced output: Filters
+Tenga en cuenta que no hay manera de escribir un arreglo literal o hash como expresión; los arreglos y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
 
-Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
+<a name="filters"></a>
 
-* A pipe character (`|`)
-* The name of the filter
-* Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
+### Output avanzado: Filtros
 
-Filters can also be chained together by adding additional filter statements (starting with another pipe character). The output of the previous filter will be the input for the next one.
+El marcado Output puede aceptar filtros, que modifican el resultado de la sentencia Output. Puede invocar filtros siguiendo la expresión principal de la sentencia Output con:
+
+* Un caracter de barra vertical (`|`)
+* El nombre del filtro
+* Opcionalmente, dos puntos (`:`) y una lista separada por comas de parámetros adicionales al filtro. Cada parámetro adicional debe ser una expresión válida, y cada filtro predefine los parámetros que acepta y el orden en que deben ser pasados.
+
+Los filtros también se pueden enstringr entre sí añadiendo sentencias de filtro adicionales (comenzando con otro carácter de barra vertical). El Output del filtro anterior será el Input para el siguiente.
 
 ```liquid
 Hello {{ 'tobi' | upcase }}
@@ -169,75 +170,73 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-Under the hood, a filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above. For more on implementing filters, see [Liquid for Programmers.](./Liquid-for-Programmers)
+Bajo la campana, un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor. Los parámetros se pasan a los filtros por posición: el primer parámetro es la expresión que precede al carácter de barra vertical, y se pueden pasar parámetros adicionales usando la sintaxis `name: arg1, arg2`.
 
-### Standard Filters
+### Filtros estándar
 
-* `append` - append a string *e.g.* <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
-* `capitalize` - capitalize words in the input sentence
-* `ceil` - rounds a number up to the nearest integer, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
-* `date` - reformat a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
-* `default` - returns the given variable unless it is null or the empty string, when it will return the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
-* `divided_by` - integer division *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
-* `downcase` - convert an input string to lowercase
-* `escape_once` - returns an escaped version of html without affecting existing escaped entities
-* `escape` - html escape a string
-* `first` - get the first element of the passed in array
-* `floor` - rounds a number down to the nearest integer, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
-* `join` - join elements of the array with certain character between them
-* `last` - get the last element of the passed in array
-* `lstrip` - strips all whitespace from the beginning of a string
-* `map` - map/collect an array on a given property
-* `minus` - subtraction *e.g.*  <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
-* `modulo` - remainder, *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
-* `newline_to_br` - replace each newline (\n) with html break
-* `plus` - addition *e.g.*  <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
-* `prepend` - prepend a string *e.g.* <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
-* `remove_first` - remove the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
-* `remove` - remove each occurrence *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
-* `replace_first` - replace the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
-* `replace` - replace each occurrence *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
-* `reverse` - reverses the passed in array
-* `round` - rounds input to the nearest integer or specified number of decimals *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
-* `rstrip` - strips all whitespace from the end of a string
-* `size` - return the size of an array or string
-* `slice` - slice a string. Takes an offset and length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
-* `sort` - sort elements of the array
-* `split` - split a string on a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
-* `strip_html` - strip html from string
-* `strip_newlines` - strip all newlines (\n) from string
-* `strip` - strips all whitespace from both ends of the string
-* `times` - multiplication  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
-* `truncate` - truncate a string down to x characters. It also accepts a second parameter that will append to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
-* `truncatewords` - truncate a string down to x words
-* `uniq` - removed duplicate elements from an array, optionally using a given property to test for uniqueness
-* `upcase` - convert an input string to uppercase
-* `url_encode` - url encode a string
+* `append` - Añadir una string *e.g.* <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
+* `capitalize` - Poner palabra en mayúscula en la frase de entrada
+* `ceil` - Redondea hacia adelante un número decimal al próximo entero, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
+* `date` - Da formato a una fecha ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
+* `default` - Devuelve la variable dada a menos que sea nula o la string vacía, cuando devuelve el valor dado, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
+* `divided_by` - División de enteros *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
+* `downcase` - Convierte una string de input en minúsculas
+* `escape_once` - Devuelve una versión escape de html sin afectar a las entidades escape existentes
+* `escape` - Escape html a una string
+* `first` - Obtener el primer elemento del arreglo pasado
+* `floor` - Redondea un número decimal hacia atrás al anterior entero, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
+* `join` - Une elementos del arreglo con cierto carácter entre ellos.
+* `last` - Obtener el último elemento del arreglo pasado
+* `lstrip` - Elimina todos los espacios en blanco desde el principio de una string
+* `map` - Mapear/coleccionar un arreglo en una propiedad dada.
+* `minus` - Resta *e.g.*  <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
+* `modulo` - Resto *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
+* `newline_to_br` - Reemplaza cada linea nueva (\n) con espacio html
+* `plus` - Suma *e.g.*  <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
+* `prepend` - Precede una string *e.g.* <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
+* `remove_first` - Elimina la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
+* `remove` - Elimina todas las incidencias *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
+* `replace_first` - Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
+* `replace` - Reemplaza todas las incidencias *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
+* `reverse` - Invierte el paso en el arreglo.
+* `round` - Redondea al número entero más cercano o al número especificado de decimales *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
+* `rstrip` - Elimina todos los espacios en blanco del final de una string
+* `size` - Devolver el tamaño de un arreglo o string
+* `slice` - Divide una string. Toma un desplazamiento y una longitud, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
+* `sort` - Ordena elementos del arreglo
+* `split` - Dividir una string en un patrón coincidente *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
+* `strip_html` - Elimina html de la string
+* `strip_newlines` - Elimina todas las lineas nuevas (\n) de la string
+* `strip` - Elimina todos los espacios en blanco de ambos extremos de la string.
+* `times` - Multiplica  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
+* `truncate` - Restringe una string a x caracteres. También acepta un segundo parámetro que se añadirá a la string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
+* `truncatewords` - Restringe una string a x palabras
+* `uniq` - Elimina elementos duplicados de un arreglo, utilizando opcionalmente una propiedad determinada para comprobar su unicidad.
+* `upcase` - Convierte una string input a mayúsculas
+* `url_encode` - Codifica una string a URL
 
 ## Tags
 
-Tags are used for the logic in your template. New tags are very easy to code,
-so I hope to get many contributions to the standard tag library after releasing
-this code.
+Las tags (etiquetas) se utilizan para la lógica de la plantilla. Las nuevas tags son muy fáciles de codificar, así que esperamos recibir muchas contribuciones a la biblioteca estándar después de publicar este código.
 
-Here is a list of currently supported tags:
+Aquí hay una lista de las tags actualmente soportadas:
 
-* **assign** - Assigns some value to a variable
-* **capture** - Block tag that captures text into a variable
+* **assign** - Asigna un valor a una variable
+* **capture** - Bloquea la etiqueta que captura texto a una variable.
 * **case** - Block tag, its the standard case...when block
 * **comment** - Block tag, comments out the text in the block
-* **cycle** - Cycle is usually used within a loop to alternate between values, like colors or DOM classes.
-* **for** - For loop
-* **break** - Exits a for loop
-* **continue** Skips the remaining code in the current for loop and continues with the next loop
-* **if** - Standard if/else block
-* **include** - Includes another template; useful for partials
-* **raw** - temporarily disable tag processing to avoid syntax conflicts.
-* **unless** - Mirror of if statement
+* **cycle** - Cycle se utiliza generalmente dentro de un bucle para alternar entre valores, como colores o clases DOM.
+* **for** - Para un bucle
+* **break** - Sale para un bucle
+* **continue** Salta el código restante en el bucle actual y continúa con el siguiente bucle.
+* **if** - Bloque if/else estándar.
+* **include** - Incluye otra plantilla; útil para parciales
+* **raw** - Desactiva temporalmente el procesamiento de tags para evitar conflictos de sintaxis.
+* **unless** - Copia la sentencia of if.
 
-### Comments
+### Comentarios
 
-Any content that you put between `{% comment %}` and `{% endcomment %}` tags is turned into a comment. 
+Cualquier contenido que se escriba entre los tags `{% comment %}` y `{% endcomment %}` será convertido en un comentario.
 
 ```liquid
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
@@ -245,8 +244,8 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 ### Raw
 
-Raw temporarily disables tag processing.
-This is useful for generating content (eg, Mustache, Handlebars) which uses conflicting syntax.
+Raw sirve para deshabilitar temporalmente el proceso de tags..
+Esto es útil para generar contenido (eg, Mustache, Handlebars) que puede usar una sintaxis conflictiva con otros elementos.
 
 ```liquid
 {% raw %}
@@ -256,37 +255,36 @@ This is useful for generating content (eg, Mustache, Handlebars) which uses conf
 
 ### If / Else
 
-`if / else` statements should be familiar from other programming languages. Liquid implements them with the following tags:
+Las sentencias `if / else` deberían ser familiares para otros lenguajes de programación. Liquid los implementa con las siguientes tags:
 
-* `{% if <CONDITION> %} ... {% endif %}` — Encloses a section of template which will only be run if the condition is true.
-* `{% elsif <CONDITION> %}` — Can optionally be used within an `if ... endif` block. Specifies another condition; if the initial "if" fails, Liquid tries the "elsif", and runs the following section of template if it succeeds. You can use any number of elsifs in an `if` block.
-* `{% else %}` — Can optionally be used within an `if ... endif` block, _after_ any "elsif" tags. If all preceding conditions fail, Liquid will run the section of template following the "else" tag.
-* `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Don't use "elsif" or "else" with an unless statement.
+* `{% if <CONDITION> %} ... {% endif %}` — Adjunta una sección de la plantilla que sólo se ejecutará si la condición es true.
+* `{% elsif <CONDITION> %}` — Puede utilizarse opcionalmente dentro de un bloque `if .... endif`. Especifica otra condición; si el "if" inicial falla, Liquid prueba el "elsif", y ejecuta la siguiente sección de la plantilla si tiene éxito. Se puede usar cualquier número de elsif en un bloque `if` * `{% else %}` - Opcionalmente se puede usar dentro de un bloque ``if... endif`, _después_ de cualquier etiqueta "elsif". Si todas las condiciones anteriores fallan, Liquid ejecutará la sección de la plantilla siguiendo la etiqueta "else".
+* `{% unless <CONDITION> %} ... {% endunless %}` — El reverso de una sentencia "if". No uses "elsif" o "else" con una sentencia de no ser así.
 
-The condition of an `if`, `elsif` or `unless` tag should be either a normal Liquid expression or a _comparison_ using Liquid expressions. Note that the comparison operators are implemented by the "if"-like tags; they don't work anywhere else in Liquid.
+La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liquid normal o una _comparación_ usando expresiones de Liquid. Tenga en cuenta que los operadores de comparación se implementan mediante etiquetas similares a "if"; no funcionan en ningún otro lugar en Liquid.
 
-The available comparison operators are:
+Los operadores relacionales disponibles son: 
 
-* `==, !=,` and `<>` — equality and inequality (the latter two are synonyms)
-    * There's a secret special value `empty` (unquoted) that you can compare arrays to; the comparison is true if the array has no members.
+* `==, !=,` and `<>` — igual y desigual (los dos últimos son sinónimos)
+    * Hay un valor especial secreto "empty" (sin comillas) con el que se pueden comparar los arreglos; la comparación es verdadera si el arreglo no tiene miembros.
 * `<, <=, >, >=` — less/greater-than
-* `contains` — a wrapper around Ruby's `include?` method, which is implemented on strings, arrays, and hashes. If the left argument is a string and the right isn't, it stringifies the right.
+* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arreglos y hashes. Si el argumento izquierdo es una cadena y el derecho no, encadena el derecho.
 
-The available Boolean operators are:
+Los operadores booleanos disponibles son:
 
 * `and`
 * `or`
 
-Note that there is NO "not" operator. Also note that you CANNOT use parentheses to control order of operations, and the precedence of the operators appears to be unspecified. So when in doubt, use nested "if" statements instead of risking it.
+Ten en cuenta que NO hay ningún operador "no", y también que NO PUEDE utilizar paréntesis para controlar el orden de las operaciones, ya que la precedencia de los operadores parece no estar especificada. Así que cuando tengas dudas, usa sentencias "if" anidadas.
 
-Liquid expressions are tested for "truthiness" in what looks like a Ruby-like way:
+Las expresiones de Liquid son probadas para determinar su "veracidad" en lo que parece ser una forma de Ruby:
 
-* `true` is true.
-* `false` is false.
-* Any string is true, including the empty string.
-* Any array is true.
-* Any hash is true.
-* Any nonexistent/nil value (like a missing member of a hash) is false.
+* `true` is verdadero
+* `false` is falso.
+* Cualquier string es verdadera, incluyendo una string vacía
+* Cualquier arreglo es verdadero.
+* Cualquier hash es verdadero.
+* Cualquier valor inexistente/nulo (como una parte faltante de un hash) es falso.
 
 ```liquid
 {% if user %}
@@ -367,9 +365,9 @@ Liquid expressions are tested for "truthiness" in what looks like a Ruby-like wa
 {% endif %}
 ```
 
-### Case Statement
+### Sentencia Case
 
-If you need more conditions, you can use the `case` statement:
+Si necesita más condiciones, puede usar la sentencia "case":
 
 ```liquid
 {% case condition %}
@@ -398,8 +396,7 @@ hit 2 or 3
 
 ### Cycle
 
-Often you have to alternate between different colors or similar tasks.  Liquid
-has built-in support for such operations, using the `cycle` tag.
+A menudo hay que alternar entre diferentes colores o tareas similares.  Líquid tiene soporte incorporado para tales operaciones, usando el tag `cycle`.
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}
@@ -408,20 +405,21 @@ has built-in support for such operations, using the `cycle` tag.
 {% cycle 'one', 'two', 'three' %}
 ```
 
-will result in
+resultará en
 
-```text
+```
 one
 two
 three
 one
 ```
 
-If no name is supplied for the cycle group, then it's assumed that multiple
-calls with the same parameters are one group.
+Si no se proporciona ningún nombre para el grupo cycle, entonces se asume que múltiples
+llamadas con los mismos parámetros son un grupo.
 
-If you want to have total control over cycle groups, you can optionally specify
-the name of the group.  This can even be a variable.
+Si desea tener un control total sobre los grupos cycle, puede especificar opcionalmente
+el nombre del grupo.  Esto puede incluso ser una variable.
+
 
 ```liquid
 {% cycle 'group 1': 'one', 'two', 'three' %}
@@ -430,7 +428,7 @@ the name of the group.  This can even be a variable.
 {% cycle 'group 2': 'one', 'two', 'three' %}
 ```
 
-will result in
+resultará en
 
 ```text
 one
@@ -439,9 +437,9 @@ one
 two
 ```
 
-### For loops
+### Para bucles
 
-Liquid allows `for` loops over collections:
+Liquid permite `for` en bucles sobre colecciones:
 
 ```liquid
 {% for item in array %}
@@ -449,11 +447,11 @@ Liquid allows `for` loops over collections:
 {% endfor %}
 ```
 
-#### Allowed collection types
+#### Tipos de colecciones permitidas
 
-For loops can iterate over **arrays, hashes, and ranges of integers.**
+Para bucles puede iterar sobre **arreglos, hashes y rangos de números enteros.**
 
-When iterating a hash, `item[0]` contains the key, and `item[1]` contains the value:
+Al iterar un hash, `el elemento[0]` contiene la clave, y `el elemento[1]` contiene el valor:
 
 ```liquid
 {% for item in hash %}
@@ -461,7 +459,7 @@ When iterating a hash, `item[0]` contains the key, and `item[1]` contains the va
 {% endfor %}
 ```
 
-Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` — parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers.
+En lugar de hacer un bucle sobre una colección existente, también puede hacer un bucle a través de un rango de números. Los rangos se parecen a `(1..10)` - paréntesis que contienen un valor inicial, dos puntos y un valor final. Los valores inicial y final deben ser enteros o expresiones que se resuelven con números enteros. 
 
 ```liquid
 # if item.quantity is 4...
@@ -471,14 +469,14 @@ Instead of looping over an existing collection, you can also loop through a rang
 # results in 1,2,3,4
 ```
 
-#### Breaking and continuing
+#### Romper y continuar
 
-You can exit a loop early with the following tags:
+Puede salir tempranamente de un bucle con los siguientes tags:
 
-* `{% continue %}` — immediately end the current iteration, and continue the "for" loop with the next value.
-* `{% break %}` — immediately end the current iteration, then completely end the "for" loop.
+* `{% continue %}` - finaliza inmediatamente la iteración actual, y continúa el bucle "for" con el siguiente valor.
+* ``{% break %}` - finaliza inmediatamente la iteración actual, luego finaliza completamente el bucle "for".
 
-Both of these are only useful when combined with something like an "if" statement.
+Ambas sólo son útiles cuando se combinan con algo como una sentencia "if". 
 
 ``` liquid
 {% for page in pages %}
@@ -501,10 +499,9 @@ Both of these are only useful when combined with something like an "if" statemen
 {% endfor %}
 ```
 
-#### Helper variables
+#### Variables de ayuda
 
-During every `for` loop, the following helper variables are available for extra
-styling needs:
+Durante cada bucle `for`, las siguientes variables de ayuda están disponibles para necesidades adicionales de estilo:
 
 ```liquid
 forloop.length      # => length of the entire for loop
@@ -516,16 +513,15 @@ forloop.first       # => is this the first iteration?
 forloop.last        # => is this the last iteration?
 ```
 
-#### Optional arguments
+#### Argumentos opcionales
 
-There are several optional arguments to the `for` tag that can influence which items you receive in
-your loop and what order they appear in:
+Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los elementos que recibe en su bucle y en el orden en que aparecen:
 
-* `limit:<INTEGER>` lets you restrict how many items you get.
-* `offset:<INTEGER>` lets you start the collection with the nth item.
-* `reversed` iterates over the collection from last to first.
+* `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
+* `offset:<INTEGER>` permite empezar la colección con el item nth .
+* `reversed` itera sobre la colección desde el último hasta el primero.
 
-Restricting elements:
+Elementos de restricción:
 
 ```liquid
 # array = [1,2,3,4,5,6]
@@ -535,13 +531,13 @@ Restricting elements:
 # results in 3,4
 ```
 
-Reversing the loop:
+Inversión del bucle:
 
 ```liquid
 {% for item in collection reversed %} {{item}} {% endfor %}
 ```
 
-A for loop can take an optional `else` clause to display a block of text when there are no items in the collection:
+Un bucle for puede tomar una cláusula opcional `else` para mostrar un bloque de texto cuando no hay elementos en la colección:
 
 ```liquid
 # items => []
@@ -552,11 +548,9 @@ A for loop can take an optional `else` clause to display a block of text when th
 {% endfor %}
 ```
 
-### Variable Assignment
+### Asignación de variables
 
-You can store data in your own variables, to be used in output or other tags as
-desired.  The simplest way to create a variable is with the `assign` tag, which
-has a pretty straightforward syntax:
+Puede almacenar datos en sus propias variables, para utilizarlos en los tags de salida u otros tags como desee. La forma más sencilla de crear una variable es con el tag`assign`, que tiene una sintaxis muy fácil:
 
 ```liquid
 {% assign name = 'freestyle' %}
@@ -566,8 +560,7 @@ has a pretty straightforward syntax:
 {% endif %}{% endfor %}
 ```
 
-Another way of doing this would be to assign `true / false` values to the
-variable:
+Otra forma de hacer esto sería asignar valores `true/false` a la variable:
 
 ```liquid
 {% assign freestyle = false %}
@@ -581,10 +574,7 @@ variable:
 {% endif %}
 ```
 
-If you want to combine a number of strings into a single string and save it to
-a variable, you can do that with the `capture` tag. This tag is a block which
-"captures" whatever is rendered inside it, then assigns the captured value to
-the given variable instead of rendering it to the screen.
+Si quieres combinar varios strings en una sola y guardarla en una variable, puedes hacerlo con el tag `capture`, que "captura" lo que sea que se muestre en su interior, y luego asigna el valor capturado a la variable dada en lugar de mostrarlo en la pantalla.
 
 ```liquid
   {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
@@ -596,3 +586,4 @@ the given variable instead of rendering it to the screen.
     <option value="blue">Blue</option>
   </select>
 ```
+
