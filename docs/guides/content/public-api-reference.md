@@ -1,10 +1,13 @@
 ---
 search: true
+sidebarDepth: 1
 ---
 
-# Referencia a la API pública
+# API de Content
 
-## Estructura de Rutas de la API
+## Referencia de la API de contenido
+
+### Estructura de Rutas de la API
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
@@ -18,7 +21,7 @@ Para realizar cualquier acción, es necesario conocer la estructura de rutas de 
 
 Aquí, ```space_uid``` y ```type_uid``` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
-## Estructura JSON Entries
+### Estructura JSON Entries
 
 Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 
@@ -360,7 +363,7 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 }
 ```
 
-## Paginación
+### Paginación
 
 Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
 
@@ -379,7 +382,7 @@ Junto con la respuesta se entrega un meta de paginación como por ejemplo:
     }
 ```
 
-### Entradas
+#### Entradas
 
 Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
 
@@ -389,7 +392,7 @@ Las entradas que podrás ver en sección, corresponden a todo el contenido envia
 - Tags
 - Autor
 
-### jQuery
+#### jQuery
 
 La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
 
@@ -397,7 +400,7 @@ Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entend
 
 En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
 
-### API Fetch con JavaScript nativo
+#### API Fetch con JavaScript nativo
 
 La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.
 
@@ -408,7 +411,7 @@ Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSO
 
 Para información más detallada, te recomendamos visitar los webdocs de MDN.
 
-### Axios
+#### Axios
 
 Axios es una biblioteca JavaScript muy popular que los desarrolladores utilizan para realizar solicitudes HTTP que funcionan en todos los navegadores modernos, incluyendo IE8 en adelante.
 
@@ -431,6 +434,17 @@ Para crear un nueva aplicación de acceso a la API, dirígete a Cuenta > Configu
 
 Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo [http://ejemplo.com/logout](http://ejemplo.com/logout)
 
-## Content Delivery API
+### Content Delivery API
 
 La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.
+
+## SDK de Javascript
+
+## SDK de Liquid
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+    entry: {{ entry.uuid }} -- {{ entry.title }}<br>
+{% endfor %}
+```
