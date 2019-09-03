@@ -3,9 +3,9 @@ search: true
 sidebarDepth: 1
 ---
 
-# API de Content
+# API & SDKs
 
-## Referencia de la API de contenido
+## Referencia del API de Modyo Content
 
 ### Estructura de Rutas de la API
 
