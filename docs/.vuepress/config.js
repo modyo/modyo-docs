@@ -50,7 +50,7 @@ module.exports = {
                     "/guides/content/entries",
                     "/guides/content/types",
                     "/guides/content/asset-manager",
-                    "/guides/content/public-api-reference",
+                    "/guides/content/public-api-reference"
                     ]
                 },
                 {
