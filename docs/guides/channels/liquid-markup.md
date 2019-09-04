@@ -518,7 +518,7 @@ forloop.last        # => is this the last iteration?
 Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los elementos que recibe en su bucle y en el orden en que aparecen:
 
 * `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
-* `offset:<INTEGER>` permite empezar la colección con el item nth .
+* `offset:<INTEGER>` permite empezar la colección con el item nth.
 * `reversed` itera sobre la colección desde el último hasta el primero.
 
 Elementos de restricción:
