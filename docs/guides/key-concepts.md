@@ -52,7 +52,7 @@ Un modelo separado de licencia se aplica a Modyo Banking.
 
 Modyo utiliza Liquid Markup dentro de la plataforma para darle a los desarrolladores de Front y Back End un lenguaje enriquecido para poder agregar más funcionalidad al construir experiencias digitales. Liquid Markup es utilizado por compañías líderes para agregar fácilmente más lógica en el código del Front End.
 
-Las APIs potencian nuestra plataforma y hacen más fácil construir soluciones. Revisa este artículo acerca de nuestra API
+Las APIs potencian nuestra plataforma y hacen más fácil construir soluciones.
 
 
 ### Preparados para el futuro: PWAs

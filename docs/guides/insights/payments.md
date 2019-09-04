@@ -8,7 +8,7 @@ Modyo también muestra una estadistica de transacciones dentro del sitio, que ha
 
 Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de pago.
 
-## Actividad de usuarios
+## Actividad de usuarios
 
 En esta sección se puede ver la cantidad de órdenes ingresadas, los items vendidos y los ingresos recibidos durante ese tiempo, junto con una comparación al periodo anterior.
 

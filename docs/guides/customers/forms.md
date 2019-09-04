@@ -8,7 +8,9 @@ Una de las funciones más importantes de Modyo es la centralización de elaborac
 
 Para crear cualquier formulario debes hacer clic en "Nuevo", donde debes agregar el nombre de este, su descripción, el número límite de personas, el sitio en que debe ser enviada, además de especificar donde serán enviadas las notificaciones de cada formulario respondido.
 
-Posterior a eso, podrás pasar a elaborar tu formulario, con los objetos por defecto que veremos más adelante. (Ver Editar)
+Posterior a eso, podrás pasar a elaborar tu formulario, con los objetos por defecto que veremos más adelante. 
+
+(Ver Editar)
 
 ## Análisis
 
