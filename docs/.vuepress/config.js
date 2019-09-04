@@ -30,19 +30,19 @@ module.exports = {
               nav: [
                   { text: "Guías", link: "/guides/" }
               ],
-              sidebar: [
-                "/guides/",
+              sidebar: [                
                 {
                   title: "Introducción",
                   collapsable: true,
                   children:[
+                    "/guides/",
+                    "/guides/whats-new",                    
                     "/guides/key-concepts",
-                    "/guides/the-modyo-interface",
-                    "/guides/navigating-through-modyo"
+                    "/guides/the-modyo-interface"
                   ]
                 },
                 {
-                  title: "Contenido",
+                  title: "Content",
                   collapsable: true,
                   children:[
                     ["/guides/content/","Introducción"],
@@ -50,7 +50,7 @@ module.exports = {
                     "/guides/content/entries",
                     "/guides/content/types",
                     "/guides/content/asset-manager",
-                    "/guides/content/public-api-reference",
+                    "/guides/content/public-api-reference"
                     ]
                 },
                 {
@@ -119,15 +119,15 @@ module.exports = {
               nav: [
                   { text: "Guides", link: "/en/guides/" }
               ],
-              sidebar: [
-                "/en/guides/",
+              sidebar: [                
                 {
                   title: "Introduction",
                   collapsable: true,
                   children:[
+                    "/en/guides/",
+                    "/en/guides/whats-new", 
                     "/en/guides/key-concepts",
-                    "/en/guides/the-modyo-interface",
-                    "/en/guides/navigating-through-modyo"
+                    "/en/guides/the-modyo-interface"
                   ]
                 },
                 {

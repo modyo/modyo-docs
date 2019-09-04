@@ -73,7 +73,7 @@ También se recomienda utilizarlo en los editores de plantillas de las aplicacio
 
 Por defecto, el renderizador no sube o de cualquier otra manera te notifica si faltan algunas variables o filtros, en otras palabras, no han sido pasadas al método `render`.
 Puedes mejorar esta situación pasando las opciones `strict_variables: true` y/o `strict_filters: true` al método `render`.
-Cuando una de estas opciones se establece en true, todos los errores sobre variables y filtros no definidos se guardarán en el array `errors` de la instancia `Liquid::Template`.
+Cuando una de estas opciones se establece en true, todos los errores sobre variables y filtros no definidos se guardarán en el arreglo `errors` de la instancia `Liquid::Template`.
 Por ejemplo:
 
 ```ruby
@@ -170,7 +170,7 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-Bajo la campana, un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor. Los parámetros se pasan a los filtros por posición: el primer parámetro es la expresión que precede al carácter de barra vertical, y se pueden pasar parámetros adicionales usando la sintaxis `name: arg1, arg2`.
+Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor. Los parámetros se pasan a los filtros por posición: el primer parámetro es la expresión que precede al carácter de barra vertical, y se pueden pasar parámetros adicionales usando la sintaxis `name: arg1, arg2`.
 
 ### Filtros estándar
 
@@ -267,8 +267,8 @@ Los operadores relacionales disponibles son:
 
 * `==, !=,` and `<>` — igual y desigual (los dos últimos son sinónimos)
     * Hay un valor especial secreto "empty" (sin comillas) con el que se pueden comparar los arreglos; la comparación es verdadera si el arreglo no tiene miembros.
-* `<, <=, >, >=` — less/greater-than
-* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arreglos y hashes. Si el argumento izquierdo es una cadena y el derecho no, encadena el derecho.
+* `<, <=, >, >=` — menos/más grande que
+* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arreglos y hashes. Si el argumento izquierdo es un string y el derecho no, encadena el derecho.
 
 Los operadores booleanos disponibles son:
 
@@ -380,7 +380,7 @@ hit 2 or 3
 {% endcase %}
 ```
 
-*Example:*
+*Ejemplo:*
 
 ```liquid
 {% case template %}

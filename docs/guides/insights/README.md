@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Insights
+# Modyo Insights
 
 Para cualquier empresa o institución, es importante saber qué es lo que está pasando globalmente con sus clientes, por lo que tener a la mano todos los datos de las actividades y movimientos es fundamental para cualquier estrategia de negocio.
 
