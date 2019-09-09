@@ -442,9 +442,27 @@ La API de Content Delivery de Modyo, es muy fácil de operar con distintos coman
 
 ## SDK de Liquid
 
+Para acceder al listado de entradas de un tipo de uid `type_uid` del un space de uid `space_uid` usamos:
+
 ```html
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 {% for entry in entries %}
     entry: {{ entry.uuid }} -- {{ entry.title }}<br>
 {% endfor %}
+```
+
+Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios,  y la forma de usarlo es como sigue:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category = 'news' | by_tag = 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+    entry: {{ entry.uuid }} -- {{ entry.title }}<br>
+{% endfor %}
+```
+
+La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
+{% assign entry = entries.first %}
 ```
