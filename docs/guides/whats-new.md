@@ -22,7 +22,7 @@ Permite la gestión de activos digitales, incluyendo la gestión de _tags_ y el 
 
 Evolución de la antigua funcionalidad de _workflows_.
 
-## Nuevos y simplificados roles y pernmisos
+## Nuevos y simplificados roles y permisos
 
 Se simplificó la gestión de roles y permisos de los usuarios
 
@@ -33,7 +33,3 @@ Ahora los usuarios de tus sitios son entidades completamente distintas de los ad
 ## Soporte para PWA
 
 Modyo ahora tiene soporte para Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen itermitencia o pierden la conexión
-
-## Variables globales
-
-Añadimos la funcionalidad de variables globales que te permite reutilizar variables en toda la cuenta, gestionandolas de manera centralizada en un solo lugar.
