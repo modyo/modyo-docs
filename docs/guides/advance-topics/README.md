@@ -38,14 +38,14 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 1. Accede a la consola administrativa, p.e. [https://keycloak.modyo.me:8443/auth/](https://keycloak.modyo.me:8443/auth/) y agrega un nuevo realm.
 2. Agrega una aplicación cliente usando `openid-connect` como **Client Protocol** para la integración con Modyo.
 3. Configura **Acces Type** `confidential` y deja habilitado solo el **Standard Flow**.
-4. Configura las **Valid Redirect URIs** con las urls de callback y logout de la cuenta Modyo, usando las urls relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
+4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
 
 #### Configuración de la integración
 
 La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
 
 1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
-2. En Issuer, completar con la url del realm, por ejemplo, para el realm my-realm la url es `https://keycloak.modyo.me:8443/auth/realms/my-realm`.
+2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.modyo.me:8443/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**, esto completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
    |                                        |                                                                                                                                                                                                                        |
@@ -57,16 +57,16 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 
 ### Usando Azure Active Directory
 
-Azure Active directory es un servicio de identidad cloud de Microsoft Azure que permite implementar un esquema híbrido de identidad basado en directorios on-premise con SSO en la nube.
+Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que permite implementar un esquema híbrido de identidad basado en directorios on-premise con SSO en la nube.
 
 #### Registrar nueva aplicación cliente
 
-1. Inicia sesión en [Azure portal](https://portal.azure.com/).
+1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
 2. En la barra de búsqueda, busca por **Azure Active Directory**, y luego selecciona **App registrations > New registration**.
 3. Completa la siguiente información
    * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
    * **Supported account types**: Usa **"Accounts in any organizational directory and personal Microsoft accounts"** para incluir cuentas personales de Microsoft. Puedes encontrar más información al respecto [aquí](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
-   * **Redirect URI**: Usa la url relativa a la cuenta `/auth/openidc/callback`.
+   * **Redirect URI**: Usa la URL relativa a la cuenta `/auth/openidc/callback`.
 4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtene el **Application ID** y **Directory ID**.
 5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**.
 
@@ -75,9 +75,9 @@ Azure Active directory es un servicio de identidad cloud de Microsoft Azure que 
 La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
 
 1. Accede a **Configuración/Configuración de customers > Integrations > OpenID Connect**, y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
-2. En la consola de Azure ir a **App registrations > Endpoints** y obtener urls para **Authorization endpoint** y **Token endpoint**. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
+2. En la consola de Azure ir a **App registrations > Endpoints** y obtener URLs para **Authorization endpoint** y **Token endpoint**. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
 3. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no contar con scopes personalizados.
-4. Habilitar características opcionales de la integración.
+4. Habilita características opcionales de la integración.
    |                                        |                                                                                                                                                                                                                        |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
