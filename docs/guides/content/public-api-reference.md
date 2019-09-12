@@ -466,3 +466,15 @@ La selección de entradas siempre retorna un arreglo, por lo que es necesario it
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
 {% assign entry = entries.first %}
 ```
+
+Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
+
+```
+{{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
+
+```
+{{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
