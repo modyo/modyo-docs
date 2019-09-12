@@ -19,7 +19,7 @@ Para realizar cualquier acción, es necesario conocer la estructura de rutas de 
 [Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
-Aquí, ```space_uid``` y ```type_uid``` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
+Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
 ### Estructura JSON Entries
 
@@ -369,7 +369,7 @@ Para cualquier recurso de contenido a través de la API, es necesaria hacer una 
 
 Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
 
-Por ejemplo, ```con page = 3```, ```per_page = 20``` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, `con page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -440,29 +440,80 @@ La API de Content Delivery de Modyo, es muy fácil de operar con distintos coman
 
 ## SDK de Javascript
 
+### Instalación
+
+Con `npm`:
+
+```shell
+npm install @modyo/sdk
+```
+
+Si eres usuario de `yarn`:
+
+```shell
+yarn add @modyo/sdk
+```
+
+### Uso: haciendo un `request`
+
+Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.
+
+El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:
+
+```javascript
+import { Client } from "@modyo/sdk";
+
+// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request
+export default function getClient(spaceUID) {
+  // La clase `Client` del SDK requiere dos argumentos:
+  // El primer argumento es la `url` de la API,
+  // el segundo argumento es el `UID` del espacio que quieres acceder.
+  // En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica
+  const client = new Client("https://dynamicbank.modyo.build/api", {
+    spaceUID
+  });
+  return client;
+}
+
+// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
+// `getEntries()`
+getClient("static-data") // accedemos al espacio
+  .getEntries("menu-item") // Obtenemos todas las enbtradas del tipo `menu-item`
+  .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
+  .catch(err => console.log(err)); // o retornamos un error si algo falla
+```
+
+Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamanete usando el método `getEntry(typeUID, entryUID)`:
+
+```js
+getClient("static-data")
+  .getEntry("menu-item", "a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8")
+  .then(entry => console.log(entry))
+  .catch(err => console.log(err));
+```
+
 ## SDK de Liquid
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` del un space de uid `space_uid` usamos:
 
 ```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-{% for entry in entries %}
-    entry: {{ entry.uuid }} -- {{ entry.title }}<br>
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
+entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
-Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios,  y la forma de usarlo es como sigue:
+Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category = 'news' | by_tag = 'tag1, tag2, tag3' %}
-{% for entry in entries %}
-    entry: {{ entry.uuid }} -- {{ entry.title }}<br>
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
+= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
+entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
 La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
 ```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
-{% assign entry = entries.first %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
+'entry_uuid' %} {% assign entry = entries.first %}
 ```
