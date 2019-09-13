@@ -363,13 +363,13 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 }
 ```
 
-### Paginación
+### Paginación API
 
 Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
 
 Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
 
-Por ejemplo, `con page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, con `page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -497,35 +497,89 @@ getClient("static-data")
 Para acceder al listado de entradas de un tipo de uid `type_uid` del un space de uid `space_uid` usamos:
 
 ```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
-entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+  <div>entry: {{ entry.uuid }} -- {{ entry.title }}</div>
 {% endfor %}
 ```
 
-Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+### Filtros
+
+Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: `by_uuid`, `by_category`, `by_type`, `by_tag` y `by_lang`:
+Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
-= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
-entry.uuid }} -- {{ entry.title }}<br />
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  <div>entry: {{entry.uuid }} -- {{ entry.title }}</div>
 {% endfor %}
 ```
 
 La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
 ```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
-'entry_uuid' %} {% assign entry = entries.first %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
+{% assign entry = entries.first %}
+<div>{{ entry.title}}</div>
 ```
+
+También puedes limitar la cantidad de elementos que se retornan en el arreglo, usando el parámetro `limit` en los filtros:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_tag: 'tag1' | limit: 3 %}
+{% for entry in entries %}
+  <div>entry: {{entry.uuid }} -- {{ entry.title }}</div>
+{% endfor %}
+```
+
+También puedes obtener las entradas publicadas en un rango de fechas específico, usando los parámetros `from_published_date`y `to_published_date`:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | from_published_date: '2019-3-25' | to_published_date: '2019-12-30'%}
+{% for entry in entries %}
+  <div>entry: {{ entry.uuid }} -- {{ entry.title }}</div>
+{% endfor %}
+```
+
+En el ejemplo, se toman las entradas publicadas desde el comienzo del día 25 de Marzo del 2019, hasta las entradas publicadas hasta el final del día 30 de Diciemte del 2019.
+
+#### Ordenamiento
+
+Puedes ordenar el contenido por la fecha de publicación de manera ascendiente o descendiente usando el parámetro `published_sorted_by` como filtro, que puede tomar los valores `ASC` o `DESC`:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries |published_sorted_by: 'ASC' %}
+{% for entry in entries %}
+  <div>entry: {{ entry.uuid }} -- {{ entry.title }}</div>
+{% endfor %}
+```
+
+#### Paginación Liquid
+
+Para hacer uso de la paginación de los elementos que estás filtrando, puedes usar el filtro `{{ entries | pagination_links }}`, que arrojará un HTML con los links cada página, dependiendo de los parámetros GET (`per_page=3&page=2`)presentes en la URL
+
+```html
+<div class="pagination">
+    <a class="previous_page" rel="prev" href="https://account.url/site_slug/page_slug?page=1">«</a>
+    <a rel="prev" href="https://account.url/site_slug/page_slug?page=1">1</a>
+    <em class="current">2</em> <a rel="next" href="https://account.url/site_slug/page_slug?page=3">3</a>
+    <a href="https://account.url/site_slug/page_slug?page=4">4</a>
+    <a class="next_page" rel="next" href="https://account.url/site_slug/page_slug?page=3">»</a>
+</div>
+```
+
+En el caso anterior, la paginación retornó 4 páginas y actualmente se encuentra activa la página 2 (`<em class="current">`). Puedes cambiar fácilmente de página modificando el parámetro GET `page`.
+
+#### Mapas
 
 Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
 
-```
+```html
 {{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
 ```
 
 El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
 
-```
+```html
 {{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
