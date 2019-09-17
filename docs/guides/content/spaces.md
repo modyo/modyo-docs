@@ -23,10 +23,19 @@ En este caso, la Configuración de Espacios nos sirve para cambiar las caracter�
 #### General
 
 Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
+::: danger
+Missing description
+UID es importante porque se usa para acceder a la URL de la API pública de content mediante los SDK de liquid y javascript
+:::
 
 #### Localización
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
+::: danger
+Missing description
+Cuando se crea, se elige el idioma por defecto
+Se puden añadir otros idiomas disponibles a medida que sea necesario
+:::
 
 ##### Buscando entries en otros idiomas
 
@@ -47,7 +56,7 @@ Si se está trabajando en modo Desarrollo, se recomienda deshabilitar esta opci�
 
 #### Seguridad
 
-Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser interpretada mejor por cualquier microservicio.
+Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser accedida por cualquier microservicio en un dominio externo
 
 Para ello, también es necesario especificar el dominio desde dónde será importada la información, para dar un mejor acceso.
 
@@ -91,3 +100,9 @@ Por último, es posible diferenciar quiénes deben revisar cada contenido, segú
 Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que trabajarán en cada espacio y así tendrán acceso a la escritura, revisión o publicación.
 
 Para ello, el SuperAdministrador puede asignar manualmente a los usuarios los roles predeterminados que habilitan cada una de las funciones.
+
+::: danger
+Missing description
+Añadir usuarios
+Describir cada rol: Writter, Editor, Admin
+:::

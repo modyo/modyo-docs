@@ -4,13 +4,37 @@ search: true
 
 # Entradas
 
+## Sobre la intefaz
+
+::: danger
+Missing description
+Filtros: tipo, estado, categoría, idioma, traducción, tags, autor, búsqueda
+Columnas de la tabla
+:::
+
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer clic en el botón de la parte superior de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección Tipos.
+Para crear una entrada, se debe hacer clic en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección Tipos.
 
 Al hacer clic en ella, podremos ver el formulario que podremos rellenar con el contenido que queremos enviar, que estará personalizado según lo que armamos.
 
 De ahí, podremos ver en nuestro botón de Vista Previa el código que se enviará a través de la API, el cual el microservicio deberá interpretar.
+
+::: danger
+Missing description
+Publicar una entry (ahora/publicar en)
+Despublicar una entry (ahora/despublicar en)
+Enviar a revisión - Link a team review
+:::
+
+## Metainformación/Propiedades
+
+::: danger
+Missing description
+Catregorías
+Tags
+Privacidad/Targets
+:::
 
 ## Contenido Privado
 

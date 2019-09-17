@@ -18,3 +18,15 @@ Los tipos de archivos que puedes cambiar desde esta sección son:
 Además de los archivos predeterminados, también se pueden agregar nuevos snippets para agregar dentro de nuestro sitio. Para ello, la herramienta Template Builder tiene la opción de "Añadir un snippet", donde se le podrá dar el nombre y el código que se quiere agregar.
 
 Tras los cambios que realicemos, podemos Enviar a revisión nuestro template, asignándolo a otro usuario de la plataforma, o Publicar directamente, según se deseee.
+
+::: danger
+Missing description
+Temas
+Restaurar temas
+Recargar templates que faltan
+Creación de snippets
+Referencia a snippets/vistas
+Uso/Carga de assets (modal asset manager)
+Javascript global
+CSS global
+:::
