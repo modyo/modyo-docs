@@ -39,6 +39,15 @@ Dentro de esta sección, podemos configurar los siguientes datos:
 - Favicon (Imagen que aparece al costado de la barra de dirección)
 - Icono de Apple (Imagen que aparece en dispositivos móviles al ser marcado)
 
+### PWA
+
+::: danger
+Missing description
+Mannifers.json
+Serviceworker.js
+Variables disponibles
+:::
+
 ### SEO
 
 El SEO (Search Engine Optimization) es nuestra llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan a nuestro sitio a través de ellos.
@@ -82,13 +91,13 @@ Es el usuario que está a cargo del desarrollo estructural de los recursos, la c
 
 Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback) ni cambiar la configuración.
 
-#### Site Reviewer 
+#### Site Reviewer
 
 Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicar.
 
 No puede editar la configuración del sitio.
 
-#### Site Admin 
+#### Site Admin
 
 Administrador del sitio, tiene acceso a los dos roles anteriores, además de poder configurar todo el sitio.
 

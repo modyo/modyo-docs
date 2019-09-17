@@ -23,4 +23,18 @@ Predeterminadamente, las páginas son tres:
 Además, dentro de ellas, existen dos secciones que podrás editar si es que deseas agregar contenido extra:
 
 - Widgets
+::: danger
+Missing description
+Uso de liquid en widgets html
+:::
 - Properties
+
+::: danger
+Missing description
+Propiedades (excerpt, privado, targetizado, parent)
+Publicar page en una fecha determinada
+Despublicar un page (no se puede si tiene hijos publicados)
+Publicar un page (no se puede publicar si su padre está despublicado)
+Archivar un page (no se puede si tiene hijos no archivados)
+Restaurar un page
+:::
