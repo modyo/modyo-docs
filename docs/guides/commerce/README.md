@@ -12,9 +12,6 @@ Actualmente Modyo Commerce sólo permite la integración con medios de pago de l
 
 ## Estructura
 
-
-
-
 Modyo también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
 
 Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
