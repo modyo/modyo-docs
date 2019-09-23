@@ -556,7 +556,7 @@ Puedes ordenar el contenido por la fecha de publicación de manera ascendiente o
 
 #### Paginación Liquid
 
-Para hacer uso de la paginación de los elementos que estás filtrando, puedes usar el filtro `{{ entries | pagination_links }}`, que arrojará un HTML con los links cada página, dependiendo de los parámetros GET (`per_page=3&page=2`)presentes en la URL
+Para hacer uso de la paginación de los elementos que estás filtrando, puedes usar el filtro <span v-pre>`{{ entries | pagination_links }}`</span>, que arrojará un HTML con los links cada página, dependiendo de los parámetros GET (`per_page=3&page=2`)presentes en la URL
 
 ```html
 <div class="pagination">
