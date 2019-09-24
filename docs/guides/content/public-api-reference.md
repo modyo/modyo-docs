@@ -392,6 +392,67 @@ Las entradas que podrás ver en sección, corresponden a todo el contenido envia
 - Tags
 - Autor
 
+#### Filtros
+
+En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
+
+Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
+
+- Tags: consultables de dos maneras
+  - `meta.tag=tag_name`
+  - `meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name`
+- Categories, consultable de una sola manera: `category=category_full_path` considerará categorías hijas de la consultada
+- Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
+  - `.../entries?meta.created_at=1987-11-19T13:13:13`
+  - `.../entries?meta.updated_at[lt]=1987-11-19`
+  - `.../entries?meta.published_at[gt]=1987-11-19`
+- Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
+  - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: `fields.location_name=Chile`
+    - `.../entries?fields.color=black`
+
+##### Operadores
+
+Las principales operaciones sobre campos son:
+
+- [gt],[lt] = greater/less than, aplicable en enteros y fechas
+- [in] = permite incluir varios valores que entran en una consulta tipo OR
+- [all] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
+- [nin] = permite incluir varios valores, que entran en una consulta NOT IN
+- [geohash] = permite busquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
+
+Ejemplo:
+
+- `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
+
+##### Campos Retornados
+
+Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
+
+Los campos de metadata se referencian como: meta.attr_name (ej meta.tag)
+Los campos de las entries como: field.attr_name
+Se usa una expresiónJsonPath por ejemplo:
+
+`.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
+`.../entries?fields=$..description` para obtener todos los campos description en los entries.
+
+##### Igualdades/Desigualdades en arreglos
+
+Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
+
+- ALL: equivalente a un sql AND
+`.../entries?fields.color[all][]=red&fields.color[has][]=black`
+- IN: equivalente a un sql OR
+`.../entries?fields.color[in][]=red&fields.color[in][]=blue`
+- NIN: equivalente a un slq NOT IN
+`.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
+
+##### Orden
+
+El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
+
+- `sort_by`: indicando el nombre del atributo (ej: meta.tag, o fields.name)
+- `order`: ['asc','desc'] (opcional, asc por default)
+
 #### jQuery
 
 La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
