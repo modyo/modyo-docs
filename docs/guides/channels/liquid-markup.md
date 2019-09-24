@@ -37,70 +37,6 @@ Liquid es un motor de plantillas que está escrito con requerimientos muy espec�
 
 ## ¿Cómo usar Liquid?
 
-Instala Liquid añadiendo `gem 'liquid'` a tu gemfile.
-
-Liquid soporta una API muy simple basada en Liquid::Template class.
-Para uso estándar puede pasarle el contenido de un archivo y hacer un call render con parámetros hash.
-
-```ruby
-@template = Liquid::Template.parse("hi {{name}}") # Parses and compiles the template
-@template.render('name' => 'tobi')                # => "hi tobi"
-```
-
-### Modo de Error
-
-Configurar el Modo de Error de Liquid te permite especificar qué tan estrictamente deseas que se interpreten tus plantillas.
-Normalmente el analizador es muy laxo y acepta casi cualquier cosa sin errores. Desafortunadamente, esto puede hacer que sea muy difícil de hacer debug y puede llevar a comportamiento inesperado. 
-
-Liquid también viene con un analizador más estricto que se puede utilizar al editar plantillas para dar mejores mensajes de error cuando estas no son válidas. Se puede habilitar este nuevo analizador de esta manera:
-
-```ruby
-Liquid::Template.error_mode = :strict # Raises a SyntaxError when invalid syntax is used
-Liquid::Template.error_mode = :warn # Adds errors to template.errors but continues as normal
-Liquid::Template.error_mode = :lax # The default mode, accepts almost anything.
-```
-
-Si desea configurar el modo de error sólo en plantillas específicas, puedes pasar el parámetro `:error_mode` como una opción a `parse`:
-```ruby
-Liquid::Template.parse(source, :error_mode => :strict)
-```
-Esto es útil para hacer cosas como habilitar el modo estricto sólo en el editor de temas.
-
-Es recomendable que se habilite el modo `:strict` or `:warn` en las nuevas apps para impedir la creación de plantillas inválidas.
-También se recomienda utilizarlo en los editores de plantillas de las aplicaciones existentes para dar mejores mensajes de error a sus usuarios.
-
-### Filtros y variables no definidas.
-
-Por defecto, el renderizador no sube o de cualquier otra manera te notifica si faltan algunas variables o filtros, en otras palabras, no han sido pasadas al método `render`.
-Puedes mejorar esta situación pasando las opciones `strict_variables: true` y/o `strict_filters: true` al método `render`.
-Cuando una de estas opciones se establece en true, todos los errores sobre variables y filtros no definidos se guardarán en el arreglo `errors` de la instancia `Liquid::Template`.
-Por ejemplo:
-
-```ruby
-template = Liquid::Template.parse("{{x}} {{y}} {{z.a}} {{z.b}}")
-template.render({ 'x' => 1, 'z' => { 'a' => 2 } }, { strict_variables: true })
-#=> '1  2 ' # when a variable is undefined, it's rendered as nil
-template.errors
-#=> [#<Liquid::UndefinedVariable: Liquid error: undefined variable y>, #<Liquid::UndefinedVariable: Liquid error: undefined variable b>]
-```
-
-```ruby
-template = Liquid::Template.parse("{{x | filter1 | upcase}}")
-template.render({ 'x' => 'foo' }, { strict_filters: true })
-#=> '' # cuando al menos un filtro en la string de filtros no está definido, una expresión completa se renderiza como
-nil
-template.errors
-#=> [#<Liquid::UndefinedFilter: Liquid error: undefined filter filter1>]
-```
-
-Si quieres subirlos en una primera excepción en lugar de colocar todos ellos en `errors`, puedes usar el método `render!`:
-
-```ruby
-template = Liquid::Template.parse("{{x}} {{y}}")
-template.render!({ 'x' => 1}, { strict_variables: true })
-#=> Liquid::UndefinedVariable: Liquid error: undefined variable y
-```
-
 Existen dos tipos de marcado (markup) en Liquid: Output y Tag.
 
 * El marcado Output (que se puede traducir a texto) está insertado entre
@@ -127,8 +63,6 @@ Hello {{user.name}}
 Hello {{ 'tobi' }}
 ```
 
-<a id="expressions"></a>
-
 ### Expresiones y variables
 
 Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pueden usar expresiones en muchos lugares; muy frecuentemente en sentencias output, pero también como argumentos para tags o filtros.
@@ -138,8 +72,8 @@ Liquid acepta los siguientes tipos de expresiones:
 * **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres  alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no tener ningún tipo de sigla distintiva (es decir, deben verse como `var_name`, y no `$var_name`).
 * **Acceso de arreglo/hashes.** Si tienes una expresión (normalmente una variable) cuyo valor es un arreglo o hash, puede usar un único valor de ese arreglo/hash de la siguiente manera:
     * `my_variable[<KEY EXPRESSION>]` — El nombre de la variable, seguido inmediatamente de corchetes que contienen una expresión clave.
-        * Para arreglos, la clave debe ser un entero literal o una expresión que se resuelva a un entero. 
-        * Para hashes, la clave debe ser una string de comillas literal o una expresión que se resuelva en una string. 
+        * Para arreglos, la clave debe ser un entero literal o una expresión que se resuelva a un entero.
+        * Para hashes, la clave debe ser una string de comillas literal o una expresión que se resuelva en una string.
     * `my_hash.key` — Los hashes también permiten una notación de "punto" más corta, donde el nombre de la variable es seguido por un punto y el nombre de una clave. Esto sólo funciona con claves que no contienen espacios, y (a diferencia de la notación entre corchetes) no permite el uso de un nombre de clave almacenado en una variable.
     * Nota: si el valor de una expresión de acceso es también un arreglo o hash, puedes acceder a los valores desde ella de la misma manera, e incluso puedes combinar los dos métodos. (Por ejemplo, `site.posts[34].title`.)
 * **Primer y último arreglo.** Si tienes una expresión cuyo valor es un arreglo, puedes seguirla con `.first` or `.last` para resolver su primer o último elemento.
@@ -150,8 +84,6 @@ Liquid acepta los siguientes tipos de expresiones:
 * **Booleanos y cero.** Los valores literales `true`, `false`, and `nil`.
 
 Tenga en cuenta que no hay manera de escribir un arreglo literal o hash como expresión; los arreglos y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
-
-<a name="filters"></a>
 
 ### Output avanzado: Filtros
 
@@ -400,14 +332,11 @@ A menudo hay que alternar entre diferentes colores o tareas similares.  Líquid 
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}
-{% cycle 'one', 'two', 'three' %}
-{% cycle 'one', 'two', 'three' %}
-{% cycle 'one', 'two', 'three' %}
 ```
 
 resultará en
 
-```
+```plain
 one
 two
 three
@@ -420,12 +349,8 @@ llamadas con los mismos parámetros son un grupo.
 Si desea tener un control total sobre los grupos cycle, puede especificar opcionalmente
 el nombre del grupo.  Esto puede incluso ser una variable.
 
-
 ```liquid
 {% cycle 'group 1': 'one', 'two', 'three' %}
-{% cycle 'group 1': 'one', 'two', 'three' %}
-{% cycle 'group 2': 'one', 'two', 'three' %}
-{% cycle 'group 2': 'one', 'two', 'three' %}
 ```
 
 resultará en
@@ -433,8 +358,7 @@ resultará en
 ```text
 one
 two
-one
-two
+three
 ```
 
 ### Para bucles
@@ -474,7 +398,7 @@ En lugar de hacer un bucle sobre una colección existente, también puede hacer 
 Puede salir tempranamente de un bucle con los siguientes tags:
 
 * `{% continue %}` - finaliza inmediatamente la iteración actual, y continúa el bucle "for" con el siguiente valor.
-* ``{% break %}` - finaliza inmediatamente la iteración actual, luego finaliza completamente el bucle "for".
+* `{% break %}` - finaliza inmediatamente la iteración actual, luego finaliza completamente el bucle "for".
 
 Ambas sólo son útiles cuando se combinan con algo como una sentencia "if". 
 
@@ -586,4 +510,3 @@ Si quieres combinar varios strings en una sola y guardarla en una variable, pued
     <option value="blue">Blue</option>
   </select>
 ```
-
