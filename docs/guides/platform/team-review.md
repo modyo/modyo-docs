@@ -57,7 +57,7 @@ El Administrador, en caso de que sienta que el archivo no cumple las expectativa
 
 La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso. 
 
-Para activar la herramienta, debes dirigirte a la configuraición del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
+Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
 
 Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán rechazar, aprobar y hacer comentarios en el elemento. 
 
@@ -70,7 +70,7 @@ Una vez que se cumplen los requisitos para que el elemento sea publicado, autom�
 Dentro de la configuración de la revisión en equipo, encontrarás distintas opciones:
 
 - **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
-- **Número de aprobaciones**: Determina cuantos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
+- **Número de aprobaciones**: Determina cuántos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
 :::tip
  Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
 :::
@@ -82,14 +82,14 @@ Aunque la selección de revisores esté limitada a quien envía a revisión, tod
 :::tip
 Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "aprobado", por lo que no podrá ser publicado.
 :::
-- **Requerir todos**: Esta opcción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
+- **Requerir todos**: Esta opción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
 
 :::warning
 Recuerda hacer click en el botón "Guardar" arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
 :::
 
 :::warning
-Cuando haces cambios en la configuración de la revisión en equipo, los elementos que ya estaban esperando revisión seguiran rigiendose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración de la revisión en equipo, es necesario que sean rechazados y se vuelvan a enviar a revisión.
+Cuando haces cambios en la configuración de la revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración de la revisión en equipo, es necesario que sean rechazados y se vuelvan a enviar a revisión.
 :::
 
 ### Roles y permisos
@@ -100,7 +100,7 @@ Existen tres niveles de permisos en los contextos en que se puede habilitar la r
 - Medio (Revisor en sitios y Editor en espacio)
 - Bajo (Developer en sitios y Escritor en espacios)
 
-Los usuarios con el rol mas bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión.
+Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión.
 
 Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
 
@@ -114,9 +114,9 @@ Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse
 
 Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde "Enviar a revisión". Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
-A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un circulo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
+A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el bótón deshabilitado.
+Todos quienes puedan acceder a la vista de edición del elemento, verán un botón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el botón deshabilitado.
 
 Al aprobar el elemento, quedará registrada la aprobación por ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
 
@@ -151,7 +151,7 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 Los respaldos son los archivos en los que se ha trabajado anteriormente. Cada vez que guardamos un archivo que hemos modificado, Modyo guarda esta versión modificada del archivo sin borrar la anterior.
 
-Si desear revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada archivo, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
+Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada archivo, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
 ### Acciones para el versionado
 
