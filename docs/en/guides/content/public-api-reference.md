@@ -3,23 +3,133 @@ search: true
 sidebarDepth: 1
 ---
 
-# Content API
+# API & SDKs
 
-## Referencia a la API pública
+Modyo Content cuenta con una completa API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/guides/content/) con [Modyo Channels](/guides/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
 
-### Estructura de Rutas de la API
+::: tip SDKs para otros lenguajes
+Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.
+:::
+
+## SDK de Liquid
+
+El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channels](/guides/channels/) en cualquiera de las secciones que utilicen el lenguaje de marcado de [Liquid](/guides/channels/liquid-markup.html), como [Widgets](/guides/channels/widgets.html) y [Plantillas](/guides/channels/templates.html) del sitio.
+
+### Acceder a entradas de un espacio
+
+Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
+entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+{% endfor %}
+```
+
+### Filtrar entradas
+
+Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
+= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
+entry.uuid }} -- {{ entry.title }}<br />
+{% endfor %}
+```
+
+La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
+'entry_uuid' %} {% assign entry = entries.first %}
+```
+
+### Entradas con ubicación
+
+Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
+
+```
+{{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
+
+```
+{{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
+
+## SDK de Javascript
+
+El SDK de Javascript permite el acceso a los espacios y entradas de contenidos de forma simple desde cualquier ambiente que soporte Javascript (sitios Web dinámicos y estáticos, páginas SPA, aplicaciones móviles híbridas, etc).
+
+### Instalación
+
+::: tip Uso desde Modyo Channels
+En el caso de Modyo Channels, la plantilla base con la cual se crean los sitios ya incluye instalada una versión reciente de este SDK, por lo que se puede utilizar de forma directa.
+:::
+
+La instalación del SDK de Javascript se puede relizar con `npm` o `yarn`.
+
+```shell
+# Para npm:
+npm install @modyo/sdk
+
+# Para yarn:
+yarn add @modyo/sdk
+```
+
+### Uso: haciendo un `request`
+
+Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.
+
+El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:
+
+```javascript
+import { Client } from "@modyo/sdk";
+
+// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request
+export default function getClient(spaceUID) {
+  // La clase `Client` del SDK requiere dos argumentos:
+  // El primer argumento es la `url` de la API,
+  // el segundo argumento es el `UID` del espacio que quieres acceder.
+  // En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica
+  const client = new Client("https://dynamicbank.modyo.build/api", {
+    spaceUID
+  });
+  return client;
+}
+
+// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
+// `getEntries()`
+getClient("static-data") // accedemos al espacio
+  .getEntries("menu-item") // Obtenemos todas las enbtradas del tipo `menu-item`
+  .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
+  .catch(err => console.log(err)); // o retornamos un error si algo falla
+```
+
+Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamanete usando el método `getEntry(typeUID, entryUID)`:
+
+```js
+getClient("static-data")
+  .getEntry("menu-item", "a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8")
+  .then(entry => console.log(entry))
+  .catch(err => console.log(err));
+```
+
+## Referencia del API
+
+### Estructura derRutas del API
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
 ```javascript
-[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/schema
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
-[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
 
-[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
-Aquí, ```space_uid``` y ```type_uid``` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
+Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
 ### Estructura JSON Entries
 
@@ -363,13 +473,13 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 }
 ```
 
-### Paginación
+### Paginación API
 
 Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
 
 Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
 
-Por ejemplo, ```con page = 3```, ```per_page = 20``` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, con `page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -391,6 +501,67 @@ Las entradas que podrás ver en sección, corresponden a todo el contenido envia
 - Categoría
 - Tags
 - Autor
+
+#### Filtros
+
+En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
+
+Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
+
+- Tags: consultables de dos maneras
+  - `meta.tag=tag_name`
+  - `meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name`
+- Categories, consultable de una sola manera: `category=category_full_path` considerará categorías hijas de la consultada
+- Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
+  - `.../entries?meta.created_at=1987-11-19T13:13:13`
+  - `.../entries?meta.updated_at[lt]=1987-11-19`
+  - `.../entries?meta.published_at[gt]=1987-11-19`
+- Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
+  - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: `fields.location_name=Chile`
+    - `.../entries?fields.color=black`
+
+##### Operadores
+
+Las principales operaciones sobre campos son:
+
+- [gt],[lt] = greater/less than, aplicable en enteros y fechas
+- [in] = permite incluir varios valores que entran en una consulta tipo OR
+- [all] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
+- [nin] = permite incluir varios valores, que entran en una consulta NOT IN
+- [geohash] = permite busquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
+
+Ejemplo:
+
+- `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
+
+##### Campos Retornados
+
+Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
+
+Los campos de metadata se referencian como: meta.attr_name (ej meta.tag)
+Los campos de las entries como: field.attr_name
+Se usa una expresiónJsonPath por ejemplo:
+
+`.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
+`.../entries?fields=$..description` para obtener todos los campos description en los entries.
+
+##### Igualdades/Desigualdades en arreglos
+
+Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
+
+- ALL: equivalente a un sql AND
+`.../entries?fields.color[all][]=red&fields.color[has][]=black`
+- IN: equivalente a un sql OR
+`.../entries?fields.color[in][]=red&fields.color[in][]=blue`
+- NIN: equivalente a un slq NOT IN
+`.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
+
+##### Orden
+
+El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
+
+- `sort_by`: indicando el nombre del atributo (ej: meta.tag, o fields.name)
+- `order`: ['asc','desc'] (opcional, asc por default)
 
 #### jQuery
 
@@ -437,14 +608,3 @@ Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza u
 ### Content Delivery API
 
 La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.
-
-## Javascript SDK
-
-## Liquid SDK
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-{% for entry in entries %}
-    entry: {{ entry.uuid }} -- {{ entry.title }}<br>
-{% endfor %}
-```

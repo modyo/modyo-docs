@@ -18,7 +18,7 @@ module.exports = {
   themeConfig: {
       logo: "/assets/img/modyo.png",
       docsDir: "docs",
-      sidebarDepth: 0,
+      sidebarDepth: 1,
       activeHeaderLinks: true,
       locales: {
           "/": {
@@ -37,9 +37,22 @@ module.exports = {
                   children:[
                     "/guides/",
                     "/guides/whats-new",                    
-                    "/guides/key-concepts",
-                    "/guides/the-modyo-interface"
+                    "/guides/key-concepts",                    
+                    "/guides/versions"
                   ]
+                },
+                {
+                  title: "Plataforma",
+                  collapsable: true,
+                  children:[
+                    ["/guides/platform/","Introducción"],
+                    "/guides/platform/the-modyo-interface",
+                    "/guides/platform/team-review",
+                    "/guides/platform/integration",
+                    "/guides/platform/roles",
+                    "/guides/platform/security",
+                    "/guides/platform/api"                                        
+                    ]
                 },
                 {
                   title: "Content",
@@ -47,8 +60,8 @@ module.exports = {
                   children:[
                     ["/guides/content/","Introducción"],
                     "/guides/content/spaces",
-                    "/guides/content/entries",
                     "/guides/content/types",
+                    "/guides/content/entries",
                     "/guides/content/asset-manager",
                     "/guides/content/public-api-reference"
                     ]
@@ -62,8 +75,7 @@ module.exports = {
                     "/guides/channels/pages",
                     "/guides/channels/navigation",
                     "/guides/channels/widgets",
-                    "/guides/channels/templates",
-
+                    "/guides/channels/templates"
                   ] 
                 },
                 {
@@ -74,8 +86,7 @@ module.exports = {
                     "/guides/customers/users",
                     "/guides/customers/targets",
                     "/guides/customers/forms",
-                    "/guides/customers/messaging",
-                    
+                    "/guides/customers/messaging"
                   ]
                 },
                 {
@@ -94,20 +105,7 @@ module.exports = {
                     "/guides/insights/customers",
                     "/guides/insights/payments"
                   ]
-                },
-                
-                {
-                  title: "Temas avanzados",
-                  collapsable: true,
-                  children:[
-                    "/guides/advance-topics/",
-                    "/guides/advance-topics/locks",
-                    "/guides/advance-topics/versioning",
-                    "/guides/advance-topics/team-review",
-                  ]
                 }
-                
-                
               ]
           },
           "/en/": {
@@ -125,10 +123,23 @@ module.exports = {
                   collapsable: true,
                   children:[
                     "/en/guides/",
-                    "/en/guides/whats-new", 
-                    "/en/guides/key-concepts",
-                    "/en/guides/the-modyo-interface"
+                    "/en/guides/whats-new",                    
+                    "/en/guides/key-concepts",                    
+                    "/en/guides/versions"
                   ]
+                },
+                {
+                  title: "Platform",
+                  collapsable: true,
+                  children:[
+                    ["/en/guides/platform/","Introduction"],
+                    "/en/guides/platform/the-modyo-interface",
+                    "/en/guides/platform/team-review",
+                    "/en/guides/platform/integration",
+                    "/en/guides/platform/roles",
+                    "/en/guides/platform/security",
+                    "/en/guides/platform/api"                                        
+                    ]
                 },
                 {
                   title: "Content",
@@ -136,10 +147,10 @@ module.exports = {
                   children:[
                     ["/en/guides/content/","Introduction"],
                     "/en/guides/content/spaces",
-                    "/en/guides/content/entries",
                     "/en/guides/content/types",
+                    "/en/guides/content/entries",
                     "/en/guides/content/asset-manager",
-                    "/en/guides/content/public-api-reference",
+                    "/en/guides/content/public-api-reference"
                     ]
                 },
                 {
@@ -151,7 +162,7 @@ module.exports = {
                     "/en/guides/channels/pages",
                     "/en/guides/channels/navigation",
                     "/en/guides/channels/widgets",
-                    "/en/guides/channels/templates",
+                    "/en/guides/channels/templates"
                   ] 
                 },
                 {
@@ -162,7 +173,7 @@ module.exports = {
                     "/en/guides/customers/users",
                     "/en/guides/customers/targets",
                     "/en/guides/customers/forms",
-                    "/en/guides/customers/messaging",
+                    "/en/guides/customers/messaging"
                   ]
                 },
                 {
@@ -181,20 +192,7 @@ module.exports = {
                     "/en/guides/insights/customers",
                     "/en/guides/insights/payments"
                   ]
-                },
-                
-                {
-                  title: "Advanced topics",
-                  collapsable: true,
-                  children:[
-                    "/en/guides/advance-topics/",
-                    "/en/guides/advance-topics/locks",
-                    "/en/guides/advance-topics/versioning",
-                    "/en/guides/advance-topics/team-review",
-                  ]
                 }
-                
-                
               ]
           }
       }

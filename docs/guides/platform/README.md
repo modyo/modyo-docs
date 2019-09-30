@@ -1,0 +1,10 @@
+---
+search: true
+---
+
+# Plataforma
+
+
+
+
+
