@@ -9,11 +9,7 @@ Modyo Commerce es una aplicación de Modyo que posibilita a los equipos de desar
 Actualmente Modyo Commerce sólo permite la integración con medios de pago de latinoamérica. 
 :::
 
-
 ## Estructura
-
-
-
 
 Modyo también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
 

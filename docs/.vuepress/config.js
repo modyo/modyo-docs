@@ -123,9 +123,9 @@ module.exports = {
                   collapsable: true,
                   children:[
                     "/en/guides/",
-                    "/en/guides/whats-new", 
-                    "/en/guides/key-concepts",
-                    "/en/guides/the-modyo-interface"
+                    "/en/guides/whats-new",                    
+                    "/en/guides/key-concepts",                    
+                    "/en/guides/versions"
                   ]
                 },
                 {
@@ -134,9 +134,11 @@ module.exports = {
                   children:[
                     ["/en/guides/platform/","Introduction"],
                     "/en/guides/platform/the-modyo-interface",
-                    "/en/guides/platform/locks",
-                    "/en/guides/platform/versioning",
                     "/en/guides/platform/team-review",
+                    "/en/guides/platform/integration",
+                    "/en/guides/platform/roles",
+                    "/en/guides/platform/security",
+                    "/en/guides/platform/api"                                        
                     ]
                 },
                 {
@@ -145,10 +147,10 @@ module.exports = {
                   children:[
                     ["/en/guides/content/","Introduction"],
                     "/en/guides/content/spaces",
-                    "/en/guides/content/entries",
                     "/en/guides/content/types",
+                    "/en/guides/content/entries",
                     "/en/guides/content/asset-manager",
-                    "/en/guides/content/public-api-reference",
+                    "/en/guides/content/public-api-reference"
                     ]
                 },
                 {
@@ -160,7 +162,7 @@ module.exports = {
                     "/en/guides/channels/pages",
                     "/en/guides/channels/navigation",
                     "/en/guides/channels/widgets",
-                    "/en/guides/channels/templates",
+                    "/en/guides/channels/templates"
                   ] 
                 },
                 {
@@ -171,7 +173,7 @@ module.exports = {
                     "/en/guides/customers/users",
                     "/en/guides/customers/targets",
                     "/en/guides/customers/forms",
-                    "/en/guides/customers/messaging",
+                    "/en/guides/customers/messaging"
                   ]
                 },
                 {
