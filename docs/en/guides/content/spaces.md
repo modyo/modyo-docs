@@ -81,7 +81,7 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 - SSL: Wildcards no son permitidos.
 - NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default
 
-#### Revisión en Equipo (Team Review)
+#### Team Review
 
 La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
@@ -95,7 +95,7 @@ Por último, es posible diferenciar quiénes deben revisar cada contenido, segú
 
 [Ir a Team Review](https://docs.modyo.com/guides/advance-topics/team-review.html)
 
-#### Miembros del Equipo
+#### Team members
 
 Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que trabajarán en cada espacio y así tendrán acceso a la escritura, revisión o publicación.
 

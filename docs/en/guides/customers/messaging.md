@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Mensajería
+# Messaging
 
 Mensajería es una herramienta fundamental para quienes quieran hacer campañas hacia el sitio, ya que nos permite enviar la información hacia nuestros clientes de una manera masiva, hacia nuestros targets determinados.
 
-## Campañas
+## Campaigns
 
 En Campañas podremos ver todos los mensajes e informaciones que hemos enviado a nuestros clientes, a través de correo electrónico o notificaciones. Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuaros, tengan presente esta herramienta.
 
@@ -25,13 +25,13 @@ En el caso de hacerse a través de una notificación, por ser mucho más breve, 
 
 Cuando nuestra campaña esté lista y designada al target que queremos, podemos proceder a enviarla o hacer una prueba hacia la dirección que queramos. Para ello, se debe hacer clic nuevamente en el archivo y asignar la acción en el botón superior.
 
-## Mensajes
+## Messages
 
 En la sección Mensajes o "Entregas de Mensajes", podemos hacer un rastreo del estado de la información que hemos envíado por Correo o Notificación.
 
 En este caso, se puede ver el nombre del usuario al que se le envió la información, la campaña a la que está asignada, la hora despachada y su estado de lectura.
 
-## Plantillas
+## Templates
 
 Las plantillas son una de las mejores formas de ahorrarnos tiempo para hacer una campaña uniforme. Es por esto que en esta sección, se pueden crear formatos especiales para correos, haciendo campos customizables.
 
@@ -39,7 +39,7 @@ Para crear una plantilla, solo hay que entrar a esta sección y hacer clic en "N
 
 Al guardar, podremos ver una lista de las plantillas ya usadas dentro de nuestros mensajes. Si queremos corregir el formato de estas, solo hay que hacer clic en ellas, en el boton "Editar".
 
-## Desuscripciones
+## Unsubscriptions
 
 Modyo también provee una lista de quienes se han desuscrito de nuestras campañas, ya sea por considerarlas spam o no ser de su interés.
 

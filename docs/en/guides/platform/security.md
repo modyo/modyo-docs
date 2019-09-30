@@ -4,7 +4,7 @@ search: true
 
 # Security
 
-## Registros de actividad
+## Activity logs
 
 La plataforma te permite ver todos los movimientos que se han hecho durante todo el tiempo que la tengas activa.
 
@@ -14,9 +14,7 @@ Además, tendrás la posibilidad de ver el detalle de lo que se hizo y desde qu�
 
 Esto te puede servir en el caso de tener muchos usuarios internos de la plataforma o para detectar errores y cambios en la cadena de producción y desarrollo.
 
-
-
-## Seguridad
+## Security
 
 En esta sección podremos activar el Cross Origin Resourse Sharing (CORS), para obtener datos provenientes de otras web que no necesariamente sean seguras.
 

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Gestor de Archivos
+# Asset manager
 
 En el gestor de archivos de Modyo Content podremos ver y organizar todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
 ::: danger
@@ -13,7 +13,7 @@ Texto alternativo
 Tags
 :::
 
-## Acerca de la interfaz
+## About the interface
 
 ::: danger
 Missing description
@@ -24,15 +24,15 @@ Acciones bulk
 Paginación
 :::
 
-## Características de los archivos
+## About the file
 
 Los archivos pueden tener distintas extensiones, según su tipo. Al hacer clic en cada uno de ellos, se desplegará una ventana que
 
-## Subir un archivo
+## Upload a file
 
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del mismo formulario y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
 
-## Editar un archivo
+## Edit a file
 
 ::: danger
 Missing description:
@@ -43,7 +43,7 @@ Restaurar original
 Eliminar archivo
 :::
 
-## Buscar un archivo
+## Search a file
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 

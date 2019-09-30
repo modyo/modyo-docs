@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Categorías
+# Categories
 
 Las categorías te permiten ordenar las entradas que publicas según el contenido que se encuentre dentro, por lo que es útil si necesitamos hacer directorios de áreas de conocimiento determinadas.
 
-## Crear una Categoría
+## Create a category
 
 Para crear una categoría, se hace clic en el botón superior de la pantalla. Ahí se le debe asignar un Título y una Ruta a la categoría.
 
