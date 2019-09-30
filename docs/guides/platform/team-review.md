@@ -70,7 +70,7 @@ Una vez que se cumplen los requisitos para que el elemento sea publicado, autom�
 Dentro de la configuración de la revisión en equipo, encontrarás distintas opciones:
 
 - **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
-- Número de aprobaciones: Determina cuantos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
+- **Número de aprobaciones**: Determina cuantos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
 :::tip
  Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
 :::
@@ -112,11 +112,11 @@ Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse
 
 ### Sobre la interfaz
 
-Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde "Enviar a revisión". Al hacerle click, verás que sobre la seeción lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde "Enviar a revisión". Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
 A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un circulo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botoón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el bótón deshabilitado.
+Todos quienes puedan acceder a la vista de edición del elemento, verán un botón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el bótón deshabilitado.
 
 Al aprobar el elemento, quedará registrada la aprobación por ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
 
