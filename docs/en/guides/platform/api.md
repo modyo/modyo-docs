@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Administration API
+# Admin API
 
 Modyo te permite crear APIs de los sitios para usarlas en elementos externos de manera segura.
 

@@ -5,9 +5,9 @@ lang: en
 
 # Key Concepts
 
-## What are some of the key concepts to quickly understand?
-
 Below we'll give you a very brief understanding of some of the key concepts related to [Modyo](https://www.modyo.com/).
+
+![Modyo Robots](/assets/img/automate.png)
 
 ### Multi-Site Architecture
 

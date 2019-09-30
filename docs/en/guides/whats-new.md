@@ -1,39 +1,38 @@
 ---
 search: true
 ---
-
-# What's new in Modyo?
+# What's new in Modyo
 
 ::: tip Modyo 9.0
-La versión actual de Modyo corresponde a la 9.0, lanzada a mediados del 2019 contará con importantes mejoras en todas sus aplicaciones y su ciclo de vida de desarrollo se extenderá hasta el 2020.
+The current version of Modyo corresponds to 9.0, launched in mid 2019 will have major improvements in all its applications and its development life cycle will extend until 2020.
 :::
 
-En la nueva versión de Modyo (novena generación) destacamos las siguientes funcionalidades.
+In the new version of Modyo (ninth generation) we highlight the following features.
 
-### New and simplified interface
+### New simplified interface
 
-Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de cambiar el logo de Modyo para personalizarla según por el cliente.
+New user interface simplified, cleaner and with the ability to change the Modyo logo to customize by the client.
 
-### New aplication Modyo Content
+### New Modyo Content application
 
-Permite su uso tanto en modalidad _headless_ como desacoplada por medio de plantillas Liquid.
+It can be used both in _headless_ mode and decoupled by means of Liquid templates.
 
 ### Asset Manager
 
-Permite la gestión de activos digitales, incluyendo la gestión de _tags_ y el redimensionado de imágenes.
+It allows the management of digital assets, including the management of _tags_ and the resizing of images.
 
 ### Team Review
 
-Evolución de la antigua funcionalidad de _workflows_.
+Evolution of the old functionality of _workflows_.
 
 ### New and simplified roles and permissions
 
-Se simplificó la gestión de roles y permisos de los usuarios
+Simplified management of user roles and permissions
 
-### Split between users and aministrators
+### Separation of users and administrators
 
-Ahora los usuarios de tus sitios son entidades completamente distintas de los administradores, aumentando la seguridad.
+Now the users of your sites are completely different entities from the administrators, increasing security.
 
 ### PWA support
 
-Modyo ahora tiene soporte para Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen itermitencia o pierden la conexión
+Modyo now has support for Progressive Web Application, allowing you to improve your users' experience when they have intermitences or lose the connection.

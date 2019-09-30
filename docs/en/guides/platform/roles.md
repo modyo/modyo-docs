@@ -2,7 +2,7 @@
 search: true
 ---
 
-# User and roles
+# Users and Roles
 
 ## Teams
 
