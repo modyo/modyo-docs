@@ -5,18 +5,128 @@ sidebarDepth: 1
 
 # API & SDKs
 
-## Referencia del API de Modyo Content
+Modyo Content cuenta con una completa API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/guides/content/) con [Modyo Channels](/guides/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
 
-### Estructura de Rutas de la API
+::: tip SDKs para otros lenguajes
+Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.
+:::
+
+## SDK de Liquid
+
+El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channels](/guides/channels/) en cualquiera de las secciones que utilicen el lenguaje de marcado de [Liquid](/guides/channels/liquid-markup.html), como [Widgets](/guides/channels/widgets.html) y [Plantillas](/guides/channels/templates.html) del sitio.
+
+### Acceder a entradas de un espacio
+
+Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
+entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+{% endfor %}
+```
+
+### Filtrar entradas
+
+Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
+= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
+entry.uuid }} -- {{ entry.title }}<br />
+{% endfor %}
+```
+
+La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
+'entry_uuid' %} {% assign entry = entries.first %}
+```
+
+### Entradas con ubicación
+
+Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
+
+```
+{{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
+
+```
+{{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
+
+## SDK de Javascript
+
+El SDK de Javascript permite el acceso a los espacios y entradas de contenidos de forma simple desde cualquier ambiente que soporte Javascript (sitios Web dinámicos y estáticos, páginas SPA, aplicaciones móviles híbridas, etc).
+
+### Instalación
+
+::: tip Uso desde Modyo Channels
+En el caso de Modyo Channels, la plantilla base con la cual se crean los sitios ya incluye instalada una versión reciente de este SDK, por lo que se puede utilizar de forma directa.
+:::
+
+La instalación del SDK de Javascript se puede relizar con `npm` o `yarn`.
+
+```shell
+# Para npm:
+npm install @modyo/sdk
+
+# Para yarn:
+yarn add @modyo/sdk
+```
+
+### Uso: haciendo un `request`
+
+Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.
+
+El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:
+
+```javascript
+import { Client } from "@modyo/sdk";
+
+// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request
+export default function getClient(spaceUID) {
+  // La clase `Client` del SDK requiere dos argumentos:
+  // El primer argumento es la `url` de la API,
+  // el segundo argumento es el `UID` del espacio que quieres acceder.
+  // En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica
+  const client = new Client("https://dynamicbank.modyo.build/api", {
+    spaceUID
+  });
+  return client;
+}
+
+// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
+// `getEntries()`
+getClient("static-data") // accedemos al espacio
+  .getEntries("menu-item") // Obtenemos todas las enbtradas del tipo `menu-item`
+  .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
+  .catch(err => console.log(err)); // o retornamos un error si algo falla
+```
+
+Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamanete usando el método `getEntry(typeUID, entryUID)`:
+
+```js
+getClient("static-data")
+  .getEntry("menu-item", "a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8")
+  .then(entry => console.log(entry))
+  .catch(err => console.log(err));
+```
+
+## Referencia del API
+
+### Estructura derRutas del API
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
 ```javascript
-[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/schema
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
-[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
 
-[Dominio de la plataforma]/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
 Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
@@ -498,149 +608,3 @@ Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza u
 ### Content Delivery API
 
 La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.
-
-## SDK de Javascript
-
-### Instalación
-
-Con `npm`:
-
-```shell
-npm install @modyo/sdk
-```
-
-Si eres usuario de `yarn`:
-
-```shell
-yarn add @modyo/sdk
-```
-
-### Uso: haciendo un `request`
-
-Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.
-
-El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:
-
-```javascript
-import { Client } from "@modyo/sdk";
-
-// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request
-export default function getClient(spaceUID) {
-  // La clase `Client` del SDK requiere dos argumentos:
-  // El primer argumento es la `url` de la API,
-  // el segundo argumento es el `UID` del espacio que quieres acceder.
-  // En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica
-  const client = new Client("https://dynamicbank.modyo.build/api", {
-    spaceUID
-  });
-  return client;
-}
-
-// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
-// `getEntries()`
-getClient("static-data") // accedemos al espacio
-  .getEntries("menu-item") // Obtenemos todas las enbtradas del tipo `menu-item`
-  .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
-  .catch(err => console.log(err)); // o retornamos un error si algo falla
-```
-
-Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamanete usando el método `getEntry(typeUID, entryUID)`:
-
-```js
-getClient("static-data")
-  .getEntry("menu-item", "a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8")
-  .then(entry => console.log(entry))
-  .catch(err => console.log(err));
-```
-
-## SDK de Liquid
-
-Para acceder al listado de entradas de un tipo de uid `type_uid` del un space de uid `space_uid` usamos:
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-{% for entry in entries %}
-  <div>entry: {{ entry.uuid }} -- {{ entry.title }}</div>
-{% endfor %}
-```
-
-### Filtros
-
-Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: `by_uuid`, `by_category`, `by_type`, `by_tag` y `by_lang`:
-Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
-{% for entry in entries %}
-  <div>entry: {{entry.uuid }} -- {{ entry.title }}</div>
-{% endfor %}
-```
-
-La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
-{% assign entry = entries.first %}
-<div>{{ entry.title}}</div>
-```
-
-También puedes limitar la cantidad de elementos que se retornan en el arreglo, usando el parámetro `limit` en los filtros:
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_tag: 'tag1' | limit: 3 %}
-{% for entry in entries %}
-  <div>entry: {{entry.uuid }} -- {{ entry.title }}</div>
-{% endfor %}
-```
-
-También puedes obtener las entradas publicadas en un rango de fechas específico, usando los parámetros `from_published_date`y `to_published_date`:
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | from_published_date: '2019-3-25' | to_published_date: '2019-12-30'%}
-{% for entry in entries %}
-  <div>entry: {{ entry.uuid }} -- {{ entry.title }}</div>
-{% endfor %}
-```
-
-En el ejemplo, se toman las entradas publicadas desde el comienzo del día 25 de Marzo del 2019, hasta las entradas publicadas hasta el final del día 30 de Diciemte del 2019.
-
-#### Ordenamiento
-
-Puedes ordenar el contenido por la fecha de publicación de manera ascendiente o descendiente usando el parámetro `published_sorted_by` como filtro, que puede tomar los valores `ASC` o `DESC`:
-
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries |published_sorted_by: 'ASC' %}
-{% for entry in entries %}
-  <div>entry: {{ entry.uuid }} -- {{ entry.title }}</div>
-{% endfor %}
-```
-
-#### Paginación Liquid
-
-Para hacer uso de la paginación de los elementos que estás filtrando, puedes usar el filtro <span v-pre>`{{ entries | pagination_links }}`</span>, que arrojará un HTML con los links cada página, dependiendo de los parámetros GET (`per_page=3&page=2`)presentes en la URL
-
-```html
-<div class="pagination">
-    <a class="previous_page" rel="prev" href="https://account.url/site_slug/page_slug?page=1">«</a>
-    <a rel="prev" href="https://account.url/site_slug/page_slug?page=1">1</a>
-    <em class="current">2</em> <a rel="next" href="https://account.url/site_slug/page_slug?page=3">3</a>
-    <a href="https://account.url/site_slug/page_slug?page=4">4</a>
-    <a class="next_page" rel="next" href="https://account.url/site_slug/page_slug?page=3">»</a>
-</div>
-```
-
-En el caso anterior, la paginación retornó 4 páginas y actualmente se encuentra activa la página 2 (`<em class="current">`). Puedes cambiar fácilmente de página modificando el parámetro GET `page`.
-
-#### Mapas
-
-Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
-
-```html
-{{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
-```
-
-El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
-
-```html
-{{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
-```

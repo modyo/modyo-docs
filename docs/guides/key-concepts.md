@@ -4,7 +4,10 @@ search: true
 
 # Conceptos claves de Modyo
 
-A continuación te daremos una breve explicación de algunos de los conceptos clave relacionados con Modyo.
+A continuación te daremos una breve explicación de algunos de los conceptos clave relacionados con la Plataforma Modyo.
+
+![Modyo Robots](/assets/img/automate.png)
+
 
 ### Arquitectura Multi-Sitio
 

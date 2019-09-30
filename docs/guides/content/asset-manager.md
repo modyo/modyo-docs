@@ -4,7 +4,7 @@ search: true
 
 # Gestor de Archivos
 
-En esta sección, podremos ver todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
+En el gestor de archivos de Modyo Content podremos ver y organizar todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
 ::: danger
 Missing description:
 Titulo

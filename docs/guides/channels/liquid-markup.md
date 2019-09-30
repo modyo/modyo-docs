@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Motor de marcado Liquid
+# Liquid Markup
 
 ## Introducción
 
