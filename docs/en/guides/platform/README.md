@@ -2,9 +2,4 @@
 search: true
 ---
 
-# Plataforma
-
-
-
-
-
+# Platform

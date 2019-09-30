@@ -9,13 +9,13 @@ Modyo Commerce es una aplicación de Modyo que posibilita a los equipos de desar
 Actualmente Modyo Commerce sólo permite la integración con medios de pago de latinoamérica. 
 :::
 
-## Estructura
+## Structure
 
 Modyo también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
 
 Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
 
-## Órdenes
+## Orders
 
 Aquí podrás ver el listado completo de todas las órdenes hechas a través del sitio. Así, podrás organizar los pedidos y ver si está trabajando correctamente.
 
@@ -25,7 +25,7 @@ Los filtros que se pueden aplicar son:
 - Estado del pedido
 - Medio de pago
 
-## Configuración de commerce
+## Commerce settings
 
 La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
 
@@ -37,7 +37,7 @@ Además, se permite activar el envío de un correo electrónico automático cuan
 
 Para este recibo, es fundamental adaptarlo hacia nuestro commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automaticamente.
 
-### Formas de pago
+### Payment methods
 
 Modyo permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
 

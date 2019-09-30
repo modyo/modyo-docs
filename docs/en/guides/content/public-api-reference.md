@@ -11,11 +11,11 @@ Modyo Content cuenta con una completa API para poder acceder a los espacios que 
 Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.
 :::
 
-## SDK de Liquid
+## Liquid SDK
 
 El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channels](/guides/channels/) en cualquiera de las secciones que utilicen el lenguaje de marcado de [Liquid](/guides/channels/liquid-markup.html), como [Widgets](/guides/channels/widgets.html) y [Plantillas](/guides/channels/templates.html) del sitio.
 
-### Acceder a entradas de un espacio
+### Accessing space entries
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
 
@@ -25,7 +25,7 @@ entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
-### Filtrar entradas
+### Filter entries
 
 Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
@@ -43,7 +43,7 @@ La selección de entradas siempre retorna un arreglo, por lo que es necesario it
 'entry_uuid' %} {% assign entry = entries.first %}
 ```
 
-### Entradas con ubicación
+### Entries with locations
 
 Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
 
@@ -57,11 +57,11 @@ El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilid
 {{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
 
-## SDK de Javascript
+## Javascript SDK
 
 El SDK de Javascript permite el acceso a los espacios y entradas de contenidos de forma simple desde cualquier ambiente que soporte Javascript (sitios Web dinámicos y estáticos, páginas SPA, aplicaciones móviles híbridas, etc).
 
-### Instalación
+### Instalation
 
 ::: tip Uso desde Modyo Channels
 En el caso de Modyo Channels, la plantilla base con la cual se crean los sitios ya incluye instalada una versión reciente de este SDK, por lo que se puede utilizar de forma directa.
@@ -77,7 +77,7 @@ npm install @modyo/sdk
 yarn add @modyo/sdk
 ```
 
-### Uso: haciendo un `request`
+### Use: making a `request`
 
 Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.
 
@@ -115,9 +115,9 @@ getClient("static-data")
   .catch(err => console.log(err));
 ```
 
-## Referencia del API
+## API refference
 
-### Estructura derRutas del API
+### Routes API structure
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
@@ -131,7 +131,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
-### Estructura JSON Entries
+### Entries JSON structure
 
 Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 
@@ -473,7 +473,7 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 }
 ```
 
-### Paginación API
+### API pagination
 
 Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
 
@@ -492,7 +492,7 @@ Junto con la respuesta se entrega un meta de paginación como por ejemplo:
     }
 ```
 
-#### Entradas
+#### Entries
 
 Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
 
@@ -502,7 +502,7 @@ Las entradas que podrás ver en sección, corresponden a todo el contenido envia
 - Tags
 - Autor
 
-#### Filtros
+#### Filters
 
 En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
 
@@ -520,7 +520,7 @@ Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables me
   - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: `fields.location_name=Chile`
     - `.../entries?fields.color=black`
 
-##### Operadores
+##### Operators
 
 Las principales operaciones sobre campos son:
 
@@ -534,7 +534,7 @@ Ejemplo:
 
 - `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
 
-##### Campos Retornados
+##### Returned fields
 
 Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
 
@@ -545,7 +545,7 @@ Se usa una expresiónJsonPath por ejemplo:
 `.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
 `.../entries?fields=$..description` para obtener todos los campos description en los entries.
 
-##### Igualdades/Desigualdades en arreglos
+##### Equiality/Inequality in arryas
 
 Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
 
@@ -556,7 +556,7 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 - NIN: equivalente a un slq NOT IN
 `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
-##### Orden
+##### Sort by
 
 El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
 
@@ -571,7 +571,7 @@ Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entend
 
 En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
 
-#### API Fetch con JavaScript nativo
+#### API Fetch with native JavaScript
 
 La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.
 

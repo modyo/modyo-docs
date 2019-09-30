@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Formularios
+# Forms
 
 Una de las funciones más importantes de Modyo es la centralización de elaboración, envío y análisis de formularios que llenan nuestros clientes dentro de nuestros sitios. Así podemos generar campañas más efectivas y mensajes más exactos hacia un target más preciso.
 
@@ -12,19 +12,19 @@ Posterior a eso, podrás pasar a elaborar tu formulario, con los objetos por def
 
 (Ver Editar)
 
-## Análisis
+## Analisys
 
 Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar cualquier pregunta que se haya hecho y así podremos ver una métrica ajustada a los formularios que hayan completado los clientes.
 
-## Respuestas
+## Responses
 
 Asimismo, podemos ver las respuestas de cada cliente. Acceder a cada uno de los formularios llenados por alguien en específico y ver o que contestó.
 
-## Editar
+## Edit
 
 En caso de ser requerido un cambio en un formulario ya publicado, se puede hacer directamente desde la opción editar. En él podemos alterar la estructura y los campos ya dispuestos, sin tener que dar de baja o publicar otro formulario.
 
-### Campos
+### Fields
 
 Los campos son una de las cosas más importantes en la estructura de un formulario. Por lo mismo, de ellos depende el contenido de lo publicado.
 
@@ -42,7 +42,7 @@ Los campos posibles a editar dentro de un formulario son:
 - Preguntas anidadas
 - Archivo
 
-### Propiedades
+### Properties
 
 En las propiedades podemos editar lo que se ha enviado, la forma en que se está presentando el formulario, la configuración del mail (si es que se quiere mandar una confirmación), etc.
 

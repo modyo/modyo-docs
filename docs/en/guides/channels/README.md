@@ -6,7 +6,7 @@ search: true
 
 Channels te permite manejar cada uno de los sitios hechos en Modyo, incluyendo templates, widgets, páginas y la navegación. Está enfocado principalmente para ser manejado por diseñadores, desarrolladores y administradores de contenido.
 
-## Sitios
+## Sites
 
 Es aquí donde debes operar para crear sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
 
@@ -21,7 +21,7 @@ Para crear un sitio, solo debes hacer clic en la pestaña "Nuevo", el cual te pe
 
 Después de ello, podrás verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
-## Configuración del sitio
+## Site settings
 
 La Configuración del sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
 
@@ -59,7 +59,7 @@ Las opciones a configurar son:
 - Sitemap (Archivo que permite a los motores de búsqueda indexar mejor el contenido de nuestro sitio. Podemos dejar que Modyo haga automáticamente esta opción o la podemos modificar para que se enfoque sólo en un contenido en especial)
 - Robots.txt (En este archivo le damos las instrucciones al motor de búsqueda para que categorice nuestro sitio. También podemos configurar este archivo para que la página no sea indexada directamente)
 
-### Restricciones
+### Restrictions
 
 Restricciones nos permite habilitar el sitio para usuarios públicos o dejarlo en privado para usuarios registrados y desarrolladores.
 
@@ -67,7 +67,7 @@ También podemos restringir para que solo nuestro Home sea visto por nuestros us
 
 Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en su home o dentro de todas las páginas que navegue en el sitio.
 
-### Dominios
+### Domains
 
 Dominios es lo que permitirá saber dónde está publicamente ubicado nuestro sitio, por lo que esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen acá.
 
@@ -79,7 +79,7 @@ Las variables que puedes cambiar aquí son:
 - Dominio primario (dirección de nuestro sitio)
 - Dominio alternativo (dirección secundaria para redireccionar en caso de que falle la primera)
 
-### Miembros del Equipo
+### Team members
 
 Para la administración de un sitio, que es manejado por múltiples usuarios, es necesario designar roles definidos con tal de hacer más eficientes sus tareas.
 

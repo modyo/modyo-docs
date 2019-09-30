@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Entradas
+# Entries
 
-## Sobre la intefaz
+## About the interface
 
 ::: danger
 Missing description
@@ -12,7 +12,7 @@ Filtros: tipo, estado, categoría, idioma, traducción, tags, autor, búsqueda
 Columnas de la tabla
 :::
 
-## Crear una Entrada
+## Create an entry
 
 Para crear una entrada, se debe hacer clic en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección Tipos.
 
@@ -27,7 +27,7 @@ Despublicar una entry (ahora/despublicar en)
 Enviar a revisión - Link a team review
 :::
 
-## Metainformación/Propiedades
+## Metadata/Properties
 
 ::: danger
 Missing description
@@ -36,7 +36,7 @@ Tags
 Privacidad/Targets
 :::
 
-## Contenido Privado
+## Private content
 
 Para cualquier usuario de Modyo, es importante el contenido privado targetizado a cualquier cliente. Sin embargo, es muy facil de buscar a través de la API para cualquier usuario que tenga los permisos habilitados.
 
