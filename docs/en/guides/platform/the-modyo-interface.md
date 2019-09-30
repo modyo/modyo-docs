@@ -2,7 +2,7 @@
 search: true
 ---
 
-# La interfaz de Modyo
+# The Modyo Interface
 
 En los siguientes pasos te mostraremos lo que puedes ver y hacer dentro de la plataforma.
 
