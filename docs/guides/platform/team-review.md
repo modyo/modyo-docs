@@ -59,7 +59,7 @@ La revisión en equipo (o Team Review) es una herramienta que te permite control
 
 Para activar la herramienta, debes dirigirte a la configuraición del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publiar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán rechazar, aprobar y hacer comentarios en el elemento. 
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán rechazar, aprobar y hacer comentarios en el elemento. 
 
 Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
 
@@ -80,7 +80,7 @@ Aunque la selección de revisores esté limitada a quien envía a revisión, tod
 :::
 - **Forzar revisión**: Esta opción habilita un selector de usuarios que permite forzar la adición de ciertos revisores a los elementos del contexto, de tal forma que en cada revisión, todos los usuarios asociados a la fuerza serán notificados de los comentarios y cambios del elemento.
 :::tip
-Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "arpbodado", por lo que no podrá ser publicado.
+Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "aprobado", por lo que no podrá ser publicado.
 :::
 - **Requerir todos**: Esta opcción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
 
@@ -100,21 +100,21 @@ Existen tres niveles de permisos en los contextos en que se puede habilitar la r
 - Medio (Revisor en sitios y Editor en espacio)
 - Bajo (Developer en sitios y Escritor en espacios)
 
-Los usuarios con el rol mas bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión
+Los usuarios con el rol mas bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión.
 
 Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
 
 Los usuarios con el nivel de permisos alto, además de poder hacer el resto de las acciones, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
 
 :::warning
-Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo. Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación". Esta opción existe porque hay ocaciones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
+Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo. Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación". Esta opción existe porque hay ocasiones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
 :::
 
 ### Sobre la interfaz
 
 Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde "Enviar a revisión". Al hacerle click, verás que sobre la seeción lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
-A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un circulo amarillo si no ha hecho su revisió, y un check verde en caso de haber aprobado el elemento.
+A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un circulo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
 Todos quienes puedan acceder a la vista de edición del elemento, verán un botoón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el bótón deshabilitado.
 
