@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Usuarios y Roles
+# Users and Roles
 
-## Equipos
+## Teams
 
 Desde aquí podrás hacer un control de todos los usuarios internos de la plataforma.
 

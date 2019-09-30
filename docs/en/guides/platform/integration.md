@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Integraciones
+# Integrations
 
 Una de las funciones más importantes para facilitar el ingreso de clientes a Modyo es su integración con distintos servicios de protocolos de autenticación.
 

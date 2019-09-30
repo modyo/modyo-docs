@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Seguridad
+# Security
 
 ## Registros de actividad
 
