@@ -17,6 +17,8 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen, antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
+## OpenID Connect
+
 ### Usando Keycloak
 
 Keycloak es un identity provider certificado de OpenID Connect que implementa la mayoría de las funcionalidades de la integración OpenID connect de Modyo.
