@@ -71,11 +71,12 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/guides/channels/","Introducción"],
-                    "/guides/channels/liquid-markup",
+                    "/guides/channels/sites",
                     "/guides/channels/pages",
                     "/guides/channels/navigation",
                     "/guides/channels/widgets",
-                    "/guides/channels/templates"
+                    "/guides/channels/templates",
+                    "/guides/channels/liquid-markup"
                   ] 
                 },
                 {
@@ -158,11 +159,12 @@ module.exports = {
                   collapsable: true,
                   children:[
                     ["/en/guides/channels/","Introduction"],
-                    "/en/guides/channels/liquid-markup",
+                    "/en/guides/channels/sites",
                     "/en/guides/channels/pages",
                     "/en/guides/channels/navigation",
                     "/en/guides/channels/widgets",
-                    "/en/guides/channels/templates"
+                    "/en/guides/channels/templates",
+                    "/en/guides/channels/liquid-markup"
                   ] 
                 },
                 {
