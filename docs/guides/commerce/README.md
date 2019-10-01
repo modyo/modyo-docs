@@ -15,16 +15,6 @@ Modyo también permite manejar un ecommerce fácilmente, organizando y centraliz
 
 Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
 
-## Órdenes
-
-Aquí podrás ver el listado completo de todas las órdenes hechas a través del sitio. Así, podrás organizar los pedidos y ver si está trabajando correctamente.
-
-Los filtros que se pueden aplicar son:
-
-- Fecha
-- Estado del pedido
-- Medio de pago
-
 ## Configuración de commerce
 
 La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio

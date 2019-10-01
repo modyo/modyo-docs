@@ -1,15 +1,27 @@
 #!/usr/bin/env ruby
 #
 # Use AWS Translator to keep all the English definitions up to date.
+# Requires Ruby > 2.3 
+#
+# Install instructions:
+# - gem install google-cloud-translate
+# - gem install redcarpet
+#
+# TODO:
+# - Setup the Google Key for translation
+# - Save the translated files
+#
 
-#require 'redcarpet'
+require 'redcarpet'
 require 'fileutils'
-
+require "google/cloud/translate"
 
 locales = ['en']
 
-
-#markdown = File.read('markup.md')
+Google::Cloud::Translate.configure do |config|
+    config.project_id  = ""
+    config.credentials = ""
+end
 
 source_files = Dir.glob("docs/guides/**/*.md").map {|file| file.gsub("docs/","")}
 
@@ -34,20 +46,23 @@ locales.each do |locale|
 
     puts "No orphan files found!" if orphan_files.size == 0
     orphan_files.each do |orphan_file|
-
         puts "Orphan file found! #{orphan_file}"
         puts "Deleting orphan file #{orphan_file}"
         File.delete("docs/#{locale}/#{orphan_file}") if File.exist?("docs/#{locale}/#{orphan_file}")
-
     end
 
-    
+    puts "Reviewing translation status ..."
     files.each do |file|
+        unless File.open("docs/#{locale}/#{file}") =~ /translated: true/
+            puts "#{file} requires auto translation!"
 
-        #puts file
-        #puts "---"
+            text = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new).render(File.open("docs/#{locale}/#{file}", "r").read)
+
+            puts text
+            #translate = Google::Cloud::Translate.new
+            #translation = translate.translate File.open("docs/#{locale}/#{file}"), to: "en"
+            
+            #puts translation
+        end
     end
 end
-
-
-#Redcarpet::Markdown.new(Redcarpet::Render::HTML.new).render(markdown)
