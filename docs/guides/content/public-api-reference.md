@@ -135,7 +135,7 @@ Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y
 
 Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 
-- Entries JSON:
+Entries JSON:
 
 ```javascript
 {
@@ -189,7 +189,7 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
   ]
 ```
 
-- Entries JSON Schema:
+Entries JSON Schema:
 
 ```javascript
 {
@@ -329,7 +329,7 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 }
 ```
 
-- Entry JSON:
+Entry JSON:
 
 ```javascript
 {
@@ -355,7 +355,7 @@ Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
    }
 ```
 
-- Entry JSON Schema:
+Entry JSON Schema:
 
 ```javascript
 {

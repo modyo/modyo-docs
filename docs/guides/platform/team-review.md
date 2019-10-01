@@ -175,7 +175,7 @@ Así se evita tener que pasar por una versión editable y sin publicar aún. Est
 
 Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener fallas de que otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
 
-### ¿Qué usa Locks?
+### ¿Qué usa Locks?
 
 Locks se usa mayoritariamente en Contenidos y en Channels. También puede ser usado en la edición de código de Sitios y Widgets.
 

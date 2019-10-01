@@ -32,7 +32,7 @@ module.exports = {
               ],
               sidebar: [                
                 {
-                  title: "Introducción",
+                  title: "Primeros Pasos",
                   collapsable: true,
                   children:[
                     "/guides/",
@@ -121,7 +121,7 @@ module.exports = {
               ],
               sidebar: [                
                 {
-                  title: "Introduction",
+                  title: "First Steps",
                   collapsable: true,
                   children:[
                     "/en/guides/",
