@@ -4,6 +4,18 @@ search: true
 
 # Modyo Channels
 
-Channels te permite manejar cada uno de los sitios hechos en Modyo, incluyendo templates, widgets, páginas y la navegación. Está enfocado principalmente para ser manejado por diseñadores, desarrolladores y administradores de contenido.
+Modyo Channels es una aplicación que permite la gestión de contenido y aplicaciones Web para múltiples sitios y lenguajes de forma central.
+
+Modyo Channels provee un extenso acceso al código HTML de las plantillas, entregando control absoluto a los desarrolladores de los detalles acerca de cómo se implementan las experiencias digitales de los usuarios y mediante un sistema integrado de versionamiento .
+
+Modyo Channels cuenta con plantillas de diseño, editables por HTML que facilitan el reuso de código.
+
+Modyo Channels, cuenta además, con un sistema de plantillas basado en [Liquid Markup](/guides/channels/liquid-markup.html) que permite la interpolación dinámica de información la cual se procesa de forma eficiente desde el lado del servidor.
+
+### Funcionalidades principales
+- [Gestión de sitios](/guides/channels/sites.html) para organizar los canales digitales.
+- [Páginas dinámicas](/guides/channels/pages.html) para definir la estructura de cada sitio y agregar contenido en el.
+- [Widgets](/guides/channels/widgets.html) para crear componentes reutilizables usando tecnologías como Javascript, HTML y CSS.
+- [Plantillas](/guides/channels/templates.html) para organizar las estructuras globales del sitio y el sistema de diseño.
 
 

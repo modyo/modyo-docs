@@ -4,14 +4,14 @@ search: true
 
 # Modyo Customers
 
-Modyo enfoca sus servicios en ofrecer una experiencia digital distinta a todos los clientes que tenga una empresa, por lo que Customers es una función elemental para quien quiera entregar un servicio de excelencia.
+Modyo Customers es una aplicación que permite habilitar a los sitios en Modyo de autenticación de usuarios, ya sea por medio de su sistema interno de registro de cuentas como de sus integraciones empresariales a sistemas de Single Sign On (SSO). Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Targets la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
 
-Desde esta sección puedes revisar todos los perfiles de los clientes que visitan la plataforma, extraer datos en común y administrar información que queremos entregarles.
+Modyo Customers representa un importante elemento a la hora de desarrollar productos digitales sobre la plataforma.
 
-Dentro de la función Targets que permite agrupar los perfiles de clientes según sus datos y el objetivo que necesitemos lograr.
+Modyo Customers además posee un sistema integrado de mensajería al usuario autenticado.
 
-Por otro lado, también podremos crear Formularios para que nuestros clientes ingresen la información y enviarlos desde este mismo lugar a un Target determinado. Además, se podrá ver cada úna de sus respuestas y hacer un análisis global de los datos.
-
-La función Mensajería nos muestra cada uno de los mensajes que hemos creado a través de mailings o notificaciones, las respuestas de cada uno de los clientes y su desempeño global.
-
-Con toda esta información podremos sacar conclusiones para optimizar el desarrollo de nuestra estrategia digital.
+### Funcionalidades principales
+- [Gestión de usuarios](/guides/customers/users.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
+- [Targets](/guides/customers/targets.html) para definir segmentos dinámicos de usuarios.
+- [Formularios dinámicos](/guides/customers/forms.html) para capturar información asociada a los usuarios.
+- [Mensajería](/guides/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.
