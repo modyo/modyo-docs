@@ -95,7 +95,7 @@ module.exports = {
                   collapsable: true,
                   children: [
                     ["/guides/commerce/","Introducción"],
-                    "/guides/customers/orders"
+                    "/guides/commerce/orders"
                   ]
                 },
                 {
@@ -184,7 +184,7 @@ module.exports = {
                   collapsable: true,
                   children: [
                     ["/en/guides/commerce/","Introduction"],
-                    "/en/guides/customers/orders"
+                    "/en/guides/commerce/orders"
                   ]
                 },
                 {
