@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Ordenes
+# Órdenes
 
 Aquí podrás ver el listado completo de todas las órdenes hechas a través del sitio. Así, podrás organizar los pedidos y ver si está trabajando correctamente.
 

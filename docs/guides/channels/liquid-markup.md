@@ -4,15 +4,13 @@ search: true
 
 # Liquid Markup
 
-## Introducción
-
 Liquid es un motor de plantillas que está escrito con requerimientos muy específicos:
 
 * Tiene que tener un marcado bonito y sencillo. Los motores de plantillas que no producen un marcado atractivo no son divertidos de usar.
 * Tiene que ser no evaluable y seguro. Las plantillas Liquid están hechas para que los usuarios puedan editarlas. No quieres ejecutar código en tu servidor que tus usuarios escribieron.
 * No tiene que tener estado. Los pasos de compilación y renderizado tienen que estar separados para que el análisis sintáctico y su compilación se pueda hacer solo una vez, y más tarde se pueda renderizar pasando un hash con objetos locales y variables.
 
-## ¿Por qué deberías usar Liquid?
+### ¿Por qué usamos Liquid?
 
 * Deseas permitir que sus usuarios editen la apariencia de su aplicación pero no quieres que ejecuten **código inseguro en tu servidor**.
 * Quieres renderizar tus plantillas directamente desde la base de datos.
@@ -20,7 +18,7 @@ Liquid es un motor de plantillas que está escrito con requerimientos muy espec�
 * Necesitas un motor de plantillas que funcione bien tanto en HTML como en emails.
 * No te gusta el marcado (markup) de tu actual motor de plantillas.
 
-## ¿Cómo se ve Liquid?
+### ¿Cómo se ve Liquid?
 
 ```html
 <ul id="products">
@@ -35,7 +33,7 @@ Liquid es un motor de plantillas que está escrito con requerimientos muy espec�
 </ul>
 ```
 
-## ¿Cómo usar Liquid?
+### ¿Cómo usar Liquid?
 
 Existen dos tipos de marcado (markup) en Liquid: Output y Tag.
 
@@ -51,7 +49,7 @@ Existen dos tipos de marcado (markup) en Liquid: Output y Tag.
 {% matched pairs of curly brackets and percent signs %}
 ```
 
-## Output
+### Output
 
 Una sentencia Output es un conjunto de llaves dobles que contienen una expresión; cuando la plantilla es renderizada, es reemplazada por el valor de esa expresión.
 
@@ -63,7 +61,7 @@ Hello {{user.name}}
 Hello {{ 'tobi' }}
 ```
 
-### Expresiones y variables
+## Expresiones y variables
 
 Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pueden usar expresiones en muchos lugares; muy frecuentemente en sentencias output, pero también como argumentos para tags o filtros.
 
@@ -85,7 +83,7 @@ Liquid acepta los siguientes tipos de expresiones:
 
 Tenga en cuenta que no hay manera de escribir un arreglo literal o hash como expresión; los arreglos y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
 
-### Output avanzado: Filtros
+## Filtros
 
 El marcado Output puede aceptar filtros, que modifican el resultado de la sentencia Output. Puede invocar filtros siguiendo la expresión principal de la sentencia Output con:
 
