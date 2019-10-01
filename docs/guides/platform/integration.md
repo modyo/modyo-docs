@@ -25,7 +25,7 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 
 #### Registrar una nueva aplicación cliente
 
-1. Accede a la consola administrativa, p.e. [https://keycloak.modyo.me:8443/auth/](https://keycloak.modyo.me:8443/auth/) y agrega un nuevo realm.
+1. Accede a la consola administrativa, por ejemplo [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) y agrega un nuevo realm.
 2. Agrega una aplicación cliente usando `openid-connect` como **Client Protocol** para la integración con Modyo.
 3. Configura **Acces Type** `confidential` y deja habilitado solo el **Standard Flow**.
 4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
@@ -35,7 +35,7 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
 
 1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
-2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.modyo.me:8443/auth/realms/my-realm`.
+2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**, esto completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
    |                                        |                                                                                                                                                                                                                        |
