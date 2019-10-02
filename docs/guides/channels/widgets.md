@@ -22,7 +22,7 @@ Vista previa del widget
 
 ## Modyo CLI
 
-Modyo CLI is a command line tool to generate an environment to work with Modyo's widgets locally.
+Modyo CLI es una herramienta de líneas de comando, que sirve para generar un ambiente que permita trabajar localmente con widgets de Modyo. 
 
 ### Introducción
 
