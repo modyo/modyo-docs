@@ -42,7 +42,7 @@ Para cualquier usuario de Modyo, es importante el contenido privado targetizado 
 
 Quien quiera buscarlo, debe contar con un Content Delivery Token. El Content Delivery Token se obtiene a través de la API de Profile.
 
-El Content Delivery Token es un JWT con los siguientes claims:
+El Content Delivery Token es un JWT con los siguientes _claims_:
 
 - iss: URL base de la API de profile
 - aud: URL base de la API de contenido

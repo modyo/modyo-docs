@@ -4,10 +4,6 @@ search: true
 
 # ¿Qué hay de nuevo en Modyo?
 
-::: tip Modyo 9.0
-La versión actual de Modyo corresponde a la 9.0, lanzada a mediados del 2019 contará con importantes mejoras en todas sus aplicaciones y su ciclo de vida de desarrollo se extenderá hasta el 2020.
-:::
-
 En la nueva versión de Modyo (novena generación) destacamos las siguientes funcionalidades.
 
 ### Nueva interfaz simplificada
