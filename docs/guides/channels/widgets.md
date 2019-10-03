@@ -107,7 +107,7 @@ Debes forxar la versión `14.2.2` del paquete `vue-loader`
 
 Cuando inicias `modyo-cli demo <widget_name>` un error como este pude ocurrir `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
 
-Para arreglar este error, modifica en el archivo `node_modules\vue-loader\lib\template-compiler/index.jx` y reemplaza
+Para arreglar este error, modifica en el archivo `node_modules\vue-loader\lib\template-compiler/index.jx` y reemplaza:
 
 ```javascript
 // prettify render fn
@@ -116,7 +116,7 @@ Para arreglar este error, modifica en el archivo `node_modules\vue-loader\lib\te
     }
 ```
 
-por
+por:
 
 ```javascript
 // prettify render fn
@@ -127,4 +127,4 @@ if (!isProduction) {
 
 [Según este arreglo en StackOverflow](https://stackoverflow.com/questions/50561649/module-build-failed-error-no-parser-and-no-file-path-given-couldnt-infer-a-p)
 
-Este error ya fue arreglado en `vue-loader`, pero aun no ha sido depslegado [Pull Request](https://github.com/vuejs/vue-loader/pull/1323/files)
+Este error ya fue arreglado en `vue-loader`, pero aun no ha sido desplegado ([Pull Request](https://github.com/vuejs/vue-loader/pull/1323/files)).
