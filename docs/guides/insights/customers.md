@@ -2,7 +2,7 @@
 search: true
 ---
 
-### Introducción
+### Customers
 
 Así como en Digital Factory podemos ver una estadística directa de los miembros del equipo, Customers permite obtener una panorámica global de lo que hacen nuestros clientes dentro de ella y del comportamiento del contenido que ha llegado a ellos.
 
