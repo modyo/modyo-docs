@@ -2,7 +2,7 @@
 search: true
 ---
 
-### Introducción
+### Digital Factory
 
 Digital factory te permite visualizar las estadísticas relacionadas con el flujo de creación y publicación de contenido y de tus canales digitales. Puedes usar los filtros de la parte superior derecha para visualizar distintos aspectos de la data.
 
