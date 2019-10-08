@@ -2,24 +2,51 @@
 search: true
 ---
 
-# Customers
+### Introducción
 
-Así como en Digital Factory podemos ver una estadística directa de los usuarios internos de la plataforma, Customers permite obtener una panorámica global de lo que hacen nuestros clientes dentro de ella y del comportamiento del contenido que ha llegado a ellos, segmentado en Fecha, Target y Sitio.
+Así como en Digital Factory podemos ver una estadística directa de los miembros del equipo, Customers permite obtener una panorámica global de lo que hacen nuestros clientes dentro de ella y del comportamiento del contenido que ha llegado a ellos.
+
+Los filtros disponibles son:
+
+- Rango de fecha
+- Target
+- Sitio
+
+**Usuarios activos**: Conteo de todos los usuarios con dos o mas registros de actividad en el periodo seleccionado.
+
+**Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertes.
+
+**Inicios de sesión**: Correpsonde al conteo de todos los inicios de sesión de usuarios.
+
+**Registros**: Corresponde al conteo de todos los registros de usuarios.
+
+![Customers](/assets/img/platform/customers.png)
 
 ### Actividad de usuarios
 
-En este gráfico podemos ver la cantidad de usuarios activos, sus movimientos dentro del sitio, logins, e inscripciones (si es que estas se encuentran habilitadas).
+En este gráfico podemos ver una comparativa entre dos valores que representan acciones de usuarios en los sitios.
 
-Además, se encuentra un gráfico dinámico que nos muestra cruces de datos como actividad de los usuarios y estadísticas de los correos enviados con campañas.
+Puedes seleccionar cualquiera de estos conteos de valores para comparar:
+
+- **Actividad**: Reúne todas las acciones a continuación.
+- **Usuarios activos**: Contempla a todos los usuarios que han realizado dos o mas acciones en el periodo de tiempo especificado.
+- **Correo entregado**: Contempla el conteo de todos los correos de campañas que fueron exitósamente enviados.
+- **Correo abierto**: Corresponde al conteo de todos los correos de campañas abiertos por los usuarios.
+- **Correo notificado como spam**: Corresponde al conteo de todos los correos de campañas que fueron notificados como spam por los usuarios.
+- **Respuesta a formularios**: Corresponde al conteo de todas las respuesta a formularios de Modyo.
+- **Inicio de sesión**: Corresponde al conteo de todos los inicio de sesión de usuarios.
+- **Notificación abierta**: Corresponde al conteo de todas las aperturas de mensajes de notificación de usuario.
 
 ### Campañas Recientes
 
-También se puede hacer una evaluación de las últimas cinco campañas enviadas por email hacia los clientes, tomando como factor de evaluación la tasa de aperturas vs. el alcance de estas.
+Muestra un listado de las últimas 5 campañas de mensajería enviadas, con una razón de los mensajes abiertos versus el alcance de ese envío.
+
+En este listado, puedes encontrar tanto como campañas de correo como campañas de notificación.
 
 ### Formularios Recientes
 
-La cantidad de respuestas de los últimos cinco formularios puestos a disposición de los clientes también pueden ser revisados para una evaluación de estos.
+Verás un listado de los últimos formularios creados, junto al conteo de respuestas a estos.
 
 ### Engagement
 
-Finalmente, también podemos analizar a través de un gráfico el porcentaje de usuarios activos en el sitio, que hayan realizado dos o más acciones dentro de este.
+Finalmente, también puedes visualizar a través de un gráfico de dona, el porcentaje de usuarios activos en el sitio (en el periodo seleccionado), comparado con el total de usuarios.
