@@ -77,15 +77,15 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
    | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, deshabilitando la experiencia SSO. |
    | **Habilitar revocación de token**                | No soportado por Azure AD|
-   | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo.                                                                                         |
+   | **Habilitar sincronización de _claims_ al momento de iniciar sesión** | Habilita la sincronización de _claims_ OpenID Connect con custom fields en Modyo.                                                                                         |
 
-### Sincronización de claims
+### Sincronización de _claims_
 
-Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de claims estándar y adicionales de OpenID Connect.
+Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
 
 1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
 2. En **Customers >  Configuración de customers > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
-3. En **Customers > Configuración de customers > Integrations > OpenID Connect** habilita **Enable claims synchronization on login** y agrega claims mappings para cada uno de tus claims.
+3. En **Customers > Configuración de customers > Integrations > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
 
 ## Webhooks
 

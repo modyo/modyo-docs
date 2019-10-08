@@ -22,13 +22,12 @@ module.exports = {
       activeHeaderLinks: true,
       locales: {
           "/": {
-              // text for the language dropdown
               selectText: "Lenguaje",
-              // label for this locale in the language dropdown
               label: "Español",
-              // text for the edit-on-github link
               nav: [
-                  { text: "Guías", link: "/guides/" }
+                { text: "Guías", link: "/guides/" },
+                { text: "Modyo", link: "https://es.modyo.com" },
+                { text: "Soporte", link: "https://support.modyo.com/hc/es" }                               
               ],
               sidebar: [                
                 {
@@ -111,13 +110,12 @@ module.exports = {
               ]
           },
           "/en/": {
-              // text for the language dropdown
               selectText: "Languages",
-              // label for this locale in the language dropdown
               label: "English",
-              // text for the edit-on-github link
               nav: [
-                  { text: "Guides", link: "/en/guides/" }
+                { text: "Guides", link: "/en/guides/" },
+                { text: "Modyo", link: "https://www.modyo.com" },
+                { text: "Support", link: "https://support.modyo.com/hc/en-us" }                
               ],
               sidebar: [                
                 {

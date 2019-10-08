@@ -11,13 +11,13 @@ A continuación te daremos una breve explicación de algunos de los conceptos cl
 
 ### Arquitectura Multi-Sitio
 
-Utilizamos una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, puedes crear múltiples sitios, públicos o privados.
+Modyo implementa una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, puedes crear múltiples sitios, públicos o privados.
 
 Ve más allá, utilizando la plataforma y obteniendo mayor conocimiento sobre tus clientes digitales.
 
 ### Los clientes interactúan en los sitios dependiendo del contexto
 
-Tenemos diferentes mecanismos de autenticación construidos dentro de la plataforma. Desde OpenID Connect hasta OAuth2 y Google, puedes autenticar clientes fácilmente.
+Modyo posee diferentes mecanismos de autenticación construidos dentro de la plataforma. Desde OpenID Connect hasta OAuth2 y Google, puedes autenticar clientes fácilmente.
 
 Los clientes pueden interactuar en distintos sitios y en diferentes contextos con el mismo perfil central.
 
@@ -29,7 +29,7 @@ Todo el contenido estructurado que es publicado, genera un archivo JSON equivale
 
 ### Una plataforma de integración
 
-Construimos Modyo pensando en facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente mantenemos nuestros foco en facilitar el desarrollo de widgets y su conexión con APIs.
+Modyo está pensando en facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente mantenemos nuestros foco en facilitar el desarrollo de widgets y su conexión con APIs.
 
 El generador de widgets le ayuda a los desarrolladores de Back y Front End a trabajar juntos para crear experiencias digitales conectadas a APIs. Nuestro modelo de gobernabilidad le permite a equipos digitales previsualizar fácilmente y publicar su trabajo a clientes en tiempo récord.
 

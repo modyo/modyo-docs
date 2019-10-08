@@ -4,7 +4,7 @@ search: true
 
 # Team review
 
-### Introducción
+## Introducción
 
 La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso. 
 
