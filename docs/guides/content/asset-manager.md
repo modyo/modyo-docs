@@ -47,11 +47,15 @@ Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo a
 
 **Barra de búsqueda**: Con la barra de búsqueda, el Gestor te mostrará todos los archivos que tengan una palabra o contenido que se encuentre dentro de la metadata de este. En este caso, también incluye la búsqueda de su extensión específica, etiqueta, nombre o usuario que lo haya subido.
 
-Un poco más abajo, podrás ver un administrador muy similar a los que se usan dentro de cualquier sistema operativo, con columnas que ordenan los archivos de manera ascendente o descendente. En este caso, las columnas son:
+Un poco más abajo, podrás ver un administrador muy similar a los que se usan dentro de cualquier sistema operativo, con columnas que ordenan los archivos de manera ascendente o descendente. 
+
+Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predeterminada y no es posible cambiarlo.
+
+Para esta vista, las columnas son:
 
 **Previsualizar**: Si la plataforma identifica que el archivo es una imagen, podrás ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
 
-**Nombre**: Ordena los archivos por nombre.
+**Nombre**: Ordena los archivos por nombre. Predeterminadamente, aparecerá de esta manera cuando entres a la sección.
 
 **Tipo**: Ordena los archivos por tipo y nombre de la extensión, mostrando cada uno de estos de manera alfabética, primero por tipo y después por la letra del nombre de la extensión.
 
@@ -61,6 +65,7 @@ Un poco más abajo, podrás ver un administrador muy similar a los que se usan d
 
 **Autor**: Ordena los archivos por autor, siempre y cuando tengan un nombre de usuario asignado que trabaje dentro de la plataforma.
 
+Finalmente, podrás encontrar la paginación de todos los archivos, según cuantos archivos tengas dentro de la plataforma.
 
 
 
