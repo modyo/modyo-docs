@@ -4,7 +4,16 @@ search: true
 
 # Gestor de Archivos
 
-En el gestor de archivos de Modyo Content podremos ver y organizar todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
+Una organización necesita tener una plataforma que les permita saber dónde quedan los archivos y documentos de contenido que se usan dentro de la plataforma.
+
+Para no tener que ir que revisar en servicios externos, Modyo permite una revisión segura de cada archivo que esté subido dentro de la plataforma, como una manera de facilitar su uso u respaldo, a través de la herramienta Gestor de Archivos.
+
+Para acceder a la herramienta, es posible hacerlo de dos maneras. Dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios, o a través de la herramienta directa que se encuentra directamente en la sección Content.
+
+::: danger 
+Desde aquí no se pueden editar ni manejar archivos que se estén ocupando como páginas dentro de la plataforma ni archivos que estén ligados a algún elemento pero que se encuentren en plataformas o servidores externos. 
+::::
+
 ::: danger
 Missing description:
 Titulo
@@ -14,6 +23,23 @@ Tags
 :::
 
 ## Acerca de la interfaz
+
+La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido. 
+
+En la parte superior de la pantalla podrás ver el porcentaje de espacio que estén usando los archivos dentro de la plataforma.
+
+::: danger
+Si los archivos que tienes ya han completado el disco de la cuenta, no podrás seguir usando el Gestor de Archivos para subir o editar elementos. 
+Contáctate con tu proveedor de la plataforma para solicitar un aumento de espacio.
+:::
+
+
+
+
+
+
+
+
 
 ::: danger
 Missing description
