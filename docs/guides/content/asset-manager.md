@@ -33,9 +33,33 @@ Si los archivos que tienes ya han completado el disco de la cuenta, no podrás s
 Contáctate con tu proveedor de la plataforma para solicitar un aumento de espacio.
 :::
 
+Posteriormente, podrás ver tres tipos de filtros que te serán útiles para encontrar un archivo.
 
+**Extensiones**: Con este filtro podrás ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma.
 
+**Tags**: Este filtro permite mostrar todos los archivos de una sola etiqueta que se encuentren dentro de la plataforma, independiente de su archivo. Así se puede filtrar según el uso customizado que se le esté dando, siempre y cuando se le haya asignado una etiqueta al subirlo u editarlo.
 
+::: tip
+Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, en la parte inferior aparecerá una columna con un checkbox al lado de Previsualizar. 
+Si seleccionas la primera, abajo aparecerá un botón verde, que permite seleccionar todos los archivos de la pantalla a la vez para asignar una o más etiquetas.
+Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
+:::
+
+**Barra de búsqueda**: Con la barra de búsqueda, el Gestor te mostrará todos los archivos que tengan una palabra o contenido que se encuentre dentro de la metadata de este. En este caso, también incluye la búsqueda de su extensión específica, etiqueta, nombre o usuario que lo haya subido.
+
+Un poco más abajo, podrás ver un administrador muy similar a los que se usan dentro de cualquier sistema operativo, con columnas que ordenan los archivos de manera ascendente o descendente. En este caso, las columnas son:
+
+**Previsualizar**: Si la plataforma identifica que el archivo es una imagen, podrás ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
+
+**Nombre**: Ordena los archivos por nombre.
+
+**Tipo**: Ordena los archivos por tipo y nombre de la extensión, mostrando cada uno de estos de manera alfabética, primero por tipo y después por la letra del nombre de la extensión.
+
+**Tamaño**: Ordena los archivos por tamaño.
+
+**Creado el**: Ordena los archivos por fecha de subida o creación dentro de la plataforma, independiente si el archivo fue creado una fecha distinta en otro servicio.
+
+**Autor**: Ordena los archivos por autor, siempre y cuando tengan un nombre de usuario asignado que trabaje dentro de la plataforma.
 
 
 
