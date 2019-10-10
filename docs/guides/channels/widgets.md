@@ -22,7 +22,7 @@ Vista previa del widget
 
 ## Modyo CLI
 
-Modyo CLI is a command line tool to generate an environment to work with Modyo's widgets locally.
+Modyo CLI es una herramienta de líneas de comando, que sirve para generar un ambiente que permita trabajar localmente con widgets de Modyo. 
 
 ### Introducción
 
@@ -83,14 +83,14 @@ modyo-cli widget start <name>
 
 | Comando                 | Descripción                                         |
 |-------------------------|-----------------------------------------------------|
-| `project`               | Muestra ayuda para el comando proyect               |
+| `project`               | Muestra ayuda para el comando project               |
 | `project create <name>` | Crea un proyecto                                    |
-| `project start`         | Inicia el servidor dedesarrollo con todos los widgets creados |
-| `project login`         | Obtiene la cookie de sesión desde la plataforma Mpodyo      |
+| `project start`         | Inicia el servidor dedesarrollo con todos los widgets creados|
+| `project login`         | Obtiene la cookie de sesión desde la plataforma Modyo|
 | `project logout`        | Revoca el token de sesión de Modyo|
 | `widget`                | Muestra la ayuda para el comando widget|
 | `widget add <name>`     | Añade un widget al proyecto|
-| `widget start <name>`   | Inicia el servidor de desarrollo en el modo estandalone|
+| `widget start <name>`   | Inicia el servidor de desarrollo en el modo standalone|
 | `widget delete <name>`  | Elimina un widget existente|                |
 | `widget push <name>`    | Envía un widget a la plataforma Modyo|
 | `widget push --all`     | Envía todos los widgets a la plataforma Modyo|
@@ -101,7 +101,7 @@ modyo-cli widget start <name>
 
 #### `TypeError: Cannot read property 'vue' of undefined`
 
-Debes forxar la versión `14.2.2` del paquete `vue-loader`
+Debes forzar la versión `14.2.2` del paquete `vue-loader`
 
 #### `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
 
@@ -127,4 +127,4 @@ if (!isProduction) {
 
 [Según este arreglo en StackOverflow](https://stackoverflow.com/questions/50561649/module-build-failed-error-no-parser-and-no-file-path-given-couldnt-infer-a-p)
 
-Este error ya fue arreglado en `vue-loader`, pero aun no ha sido desplegado ([Pull Request](https://github.com/vuejs/vue-loader/pull/1323/files)).
+Este error ya fue arreglado en `vue-loader`, pero aún no ha sido desplegado [Pull Request](https://github.com/vuejs/vue-loader/pull/1323/files)
