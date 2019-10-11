@@ -95,7 +95,7 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un tipo. Dirígete a [Espacios](/guides/content/spaces.html) y [Tipos](/guides/content/types.html) para aprender cómo.
 1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/guides/content/entries.html) y [Localización](/guides/content/spaces.html#localizacion) para aprender más.
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
-1. Crear una vista personalizada y nombrarla igual que el UID del espacio que quieres mostrar. Dirígete a [crear un espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
+1. Crear una vista personalizada en los templates y nombrarla igual que el UID del espacio que quieres mostrar. Dirígete a [crear un espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
 Para crear una vista personalizada, debes entrar al template builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón "+ Añadir vista personalizada". Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
