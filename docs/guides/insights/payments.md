@@ -6,7 +6,7 @@ search: true
 
 Modyo también muestra una estadistica de transacciones dentro del sitio, que han realizado los clientes durante el último tiempo.
 
-Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de pago.
+Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de Pago.
 
 ### Actividad de usuarios
 

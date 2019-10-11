@@ -4,7 +4,7 @@ search: true
 
 ### Digital Factory
 
-Digital factory te permite visualizar las estadísticas relacionadas con el flujo de creación y publicación de contenido y de tus canales digitales. Puedes usar los filtros de la parte superior derecha para visualizar distintos aspectos de la data.
+Digital Factory te permite visualizar las estadísticas relacionadas con el flujo de creación y publicación de contenido y de tus canales digitales. Puedes usar los filtros de la parte superior derecha para visualizar distintos aspectos de la data.
 
 Los filtros disponibles son:
 
@@ -26,7 +26,7 @@ Verás cinco cajas que representarán la cantidad de elementos creados, modifica
 
 **Editados**: Cuenta cada vez que se usa la acción "guardar" en entradas, páginas, navegación, widgets y templates.
 
-**Enviados a revisión**: Cuenta cCada vez que en un sitio o espacio con la revisión en equipo activada, se envíe un elemento a revisión.
+**Enviados a revisión**: Cuenta cada vez que en un sitio o espacio con la revisión en equipo activada, se envíe un elemento a revisión.
 
 **Aprobados**: Cuenta cada vez que se cumplan las restricciones de la revisión en equipo y un elemento quede listo para ser publicado.
 
@@ -54,4 +54,4 @@ Este mapa de calor te permite visualizar la actividad detallada de los administr
 
 ### Actividad por contenido
 
-Esta gráfica te permite comparar la actividad de cada elemento de modyo, tanto de tus sitios como de tus espacios. Podrás ver barras horizontales que corresponden a la cantidad de elementos de ese tipo, en cualquier estado.
+Esta gráfica te permite comparar la actividad de cada elemento de Modyo, tanto de tus sitios como de tus espacios. Podrás ver barras horizontales que corresponden a la cantidad de elementos de ese tipo, en cualquier estado.

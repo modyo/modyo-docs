@@ -29,13 +29,13 @@ En este gráfico podemos ver una comparativa entre dos valores que representan a
 Puedes seleccionar cualquiera de estos conteos de valores para comparar:
 
 - **Actividad**: Reúne todas las acciones a continuación.
-- **Usuarios activos**: Contempla a todos los usuarios que han realizado dos o mas acciones en el periodo de tiempo especificado.
+- **Usuarios activos**: Contempla a todos los usuarios que han realizado dos o más acciones en el periodo de tiempo especificado.
 - **Correo entregado**: Contempla el conteo de todos los correos de campañas que fueron exitósamente enviados.
 - **Correo abierto**: Corresponde al conteo de todos los correos de campañas abiertos por los usuarios.
 - **Correo notificado como spam**: Corresponde al conteo de todos los correos de campañas que fueron notificados como spam por los usuarios.
-- **Respuesta a formularios**: Corresponde al conteo de todas las respuesta a formularios de Modyo.
-- **Inicio de sesión**: Corresponde al conteo de todos los inicio de sesión de usuarios.
-- **Notificación abierta**: Corresponde al conteo de todas las aperturas de mensajes de notificación de usuario.
+- **Respuesta a formularios**: Corresponde al conteo de todas las respuestas a formularios de Modyo.
+- **Inicio de sesión**: Corresponde al conteo de todos los inicios de sesión de usuarios.
+- **Notificación abierta**: Corresponde al conteo de todas las aperturas de mensajes de notificación de usuarios.
 
 ### Campañas Recientes
 
