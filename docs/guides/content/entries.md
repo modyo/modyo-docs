@@ -4,7 +4,11 @@ search: true
 
 # Entradas
 
-## Sobre la intefaz
+## Sobre la interfaz
+
+A primera vista, podrás ver todas las entradas que ya están publicadas. 
+
+
 
 ::: danger
 Missing description
@@ -14,7 +18,7 @@ Columnas de la tabla
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer clic en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección Tipos.
+Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección Tipos.
 
 Al hacer clic en ella, podremos ver el formulario que podremos rellenar con el contenido que queremos enviar, que estará personalizado según lo que armamos.
 
