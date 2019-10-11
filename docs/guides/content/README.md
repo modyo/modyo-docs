@@ -11,6 +11,7 @@ Modyo Content posee una arquitectura Headless que permite que los contenidos sea
 Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.
 
 ### Funcionalidades principales
+
 - [Espacios](/guides/content/spaces.html) para la organización de contenidos y equipos que los administran.
 - [Tipos de contenido](/guides/content/types.html) para definir estructuras personalizadas.
 - [Gestor de archivos](/guides/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
