@@ -125,7 +125,7 @@ Con esta vista creada y publicada, si la URL a la que se está accediendo es del
 
 ## SEO
 
-El SEO es uno de los temas mas importantes del sitio y del contenido. En Modyo tenemos una forma de controlar la forma en que los moteres de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
+El SEO es uno de los temas más importantes del sitio y del contenido. En Modyo tenemos una forma de controlar la forma en que los moteres de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
 Te recomendamos añadir este snippet de código al template builder, y luego llamar a este snippet desde el head de tu sitio:
 
@@ -172,9 +172,7 @@ Este snippet diferencia cuando se está usando una página personalizada, alguna
 Si es que lo requieres, puedes personalizar aún más este snippet, definiendo que metas quieres que aparezcan para URLs específicas o para tipos específicos, por ejemplo, en la sección de contenido, puedes usar:
 
 ```html
-.
-.
-.
+...
 {% if entry %}
 <!-- Content SEO -->
     <meta name="description" content="{{ entry.excerpt }}"/>
@@ -192,12 +190,10 @@ Si es que lo requieres, puedes personalizar aún más este snippet, definiendo q
         <meta property="place:longitude" content="{{ entry.location.first.longitude }}"/>
     {% endif %}
 {% endif %}
-.
-.
-.
+...
 ```
 
-En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, definimos un tipo de documento diferente para cada uno. 
+En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, definimos un tipo de documento diferente para cada uno.
 
 
 ::: danger
