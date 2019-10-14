@@ -6,7 +6,26 @@ search: true
 
 ## Sobre la interfaz
 
-A primera vista, podrás ver todas las entradas que ya están publicadas. 
+A primera vista, podrás ver una lista que contendrá todos los contenidos que están dentro de la plataforma, generados por todos los usuarios.
+
+La lista está ordenada por fecha de actualización del contenido. En este caso, hace referencia a cada vez que guardas el contenido dentro de la plataforma.
+
+Las columnas por las cuales se pueden ordenar los posts son:
+
+- **Estado**: Refiere al estado en el proceso de Revisión en Equipo del contenido, si es que este se encuentra activo. En este caso, los estados son cuatro: Borrador, Publicado, Cambios Pendientes y Rechazado. (Ver [Team Review](/guides/platform/team-review.html))
+- **Nombre**: Nombre del contenido.
+- **Tipo**: Tipo del Contenido (Ver [Tipos](/guides/content/types.html)).
+- **Actualizado**: Fecha de la última actualización guardada del contenido.
+- **Autor**: Nombre del autor del contenido.
+
+En el administrador también podrás filtrar la vista según varios contextos predeterminados que podrás ir ajustando según tu necesidad, independiente de cómo ordenes la lista de tus contenidos.
+
+En este caso, los filtros son cinco:
+
+- **Tipo**: Tipo del Contenido que se ha creado (Ver [Tipos](/guides/content/types.html))
+- **Etapa**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, las etapas son cuatro: Borrador, Publicado, Programado y Archivado. 
+
+
 
 
 
