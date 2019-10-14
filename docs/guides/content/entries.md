@@ -12,7 +12,7 @@ La lista está ordenada por fecha de actualización del contenido. En este caso,
 
 Las columnas por las cuales se pueden ordenar los posts son:
 
-- **Estado**: Refiere al estado en el proceso de Revisión en Equipo del contenido, si es que este se encuentra activo. En este caso, los estados son cuatro: Borrador, Publicado, Cambios Pendientes y Rechazado. (Ver [Team Review](/guides/platform/team-review.html))
+- **Etapa**: Refiere a la etapa en el proceso de Revisión en Equipo del contenido, si es que este se encuentra activo. En este caso, los estados son cuatro: Borrador, Publicado, Cambios Pendientes y Rechazado. (Ver [Team Review](/guides/platform/team-review.html))
 - **Nombre**: Nombre del contenido.
 - **Tipo**: Tipo del Contenido (Ver [Tipos](/guides/content/types.html)).
 - **Actualizado**: Fecha de la última actualización guardada del contenido.
@@ -23,17 +23,15 @@ En el administrador también podrás filtrar la vista según varios contextos pr
 En este caso, los filtros son cinco:
 
 - **Tipo**: Tipo del Contenido que se ha creado (Ver [Tipos](/guides/content/types.html))
-- **Etapa**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, las etapas son cuatro: Borrador, Publicado, Programado y Archivado. 
+- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
+- **Categoría**: Categoría a la que se encuentra asignada el contenido.
+- **Idioma**: Idioma en que se encuentra escrito el contenido.
+- **Traducción**: Si estás trabajando en una plataforma que necesite producir iguales contenidos en distintos idiomas, puedes revisar si estos se encuentran  traducidos. En este caso, los usuarios podrán asignar si el contenido ya se encuentra trauducido o no.
+- **Tags**: Tags a los que se encuentra asignado el contenido. En este caso, puedes encontrar en orden alfabético las etiquetas asignadas o puedes ocupar la barra de búsqueda interior para encontrarlas.
+- **Barra de búsqueda**: Si es necesario, puedes buscar el contenido según lo que esté dentro del este, como una palabra o código que tengan.
 
-
-
-
-
-::: danger
-Missing description
-Filtros: tipo, estado, categoría, idioma, traducción, tags, autor, búsqueda
-Columnas de la tabla
-:::
+::: warning
+La barra de búsqueda exterior no incluye los resultados que se encuentren en los tags. Si buscas una palabra que esté dentro de un tag, debes usar la barra interior que se encuentra bajo el botón.:::
 
 ## Crear una Entrada
 
@@ -58,6 +56,10 @@ Catregorías
 Tags
 Privacidad/Targets
 :::
+
+### Categorías
+
+### Targets
 
 ## Contenido Privado
 
