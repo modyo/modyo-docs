@@ -101,11 +101,104 @@ Para crear una vista personalizada, debes entrar al template builder y asegurart
 
 Al modificar esta vista, puedes hacer uso de liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
+Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
+
+```html
+<div>
+    <h1 class="title">{{ entry.title }}</h1>
+    <time>{{ entry.published_at | format_date }}</time>
+    <span class="url"><a href="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}">{{site.url}}/{{entry.type_uid}}/{{entry.slug}}</a></span>
+</div>
+
+<div>
+    <div class="description">
+        {{ entry.description }}
+    </div>
+</div>
+```
+
 :::tip
-Para aprender mas sobre cómo usar liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
+Para aprender más sobre cómo usar liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 
 Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`, donde `space_uid` es el UID del espacio que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
+
+## SEO
+
+El SEO es uno de los temas mas importantes del sitio y del contenido. En Modyo tenemos una forma de controlar la forma en que los moteres de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
+
+Te recomendamos añadir este snippet de código al template builder, y luego llamar a este snippet desde el head de tu sitio:
+
+```html
+<!-- Site SEO -->
+<meta name="keywords" content="{{ site.keywords }}"/>
+<meta name="author" content="{{ site.name }}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{% if current_layout_page %}
+<!--Layouts SEO -->
+<meta name="description" content="{{ current_layout_page.excerpt }}"/>
+<meta property="og:title" content="{{ current_layout_page.title }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ current_layout_page.url }}"/>
+<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:description" content="{{ current_layout_page.excerpt }}"/>
+{% endif %}
+{% if entry %}
+<!-- Content SEO -->
+<meta name="description" content="{{ entry.excerpt }}"/>
+<meta property="og:title" content="{{ entry.title }}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"/>
+<meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }}"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:description" content="{{ entry.excerpt }}"/>
+{% endif %}
+{% unless current_layout_page or entry %}
+<!-- Default SEO -->
+<meta name="description" content="{{ site.description }}"/>
+<meta property="og:title" content="{{ site.name }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ request.url }}"/>
+<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:description" content="{{ site.description }}"/>
+{% endunless %}
+<!-- END SEO <-->
+```
+
+Este snippet diferencia cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, alguna de las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
+
+Si es que lo requieres, puedes personalizar aún más este snippet, definiendo que metas quieres que aparezcan para URLs específicas o para tipos específicos, por ejemplo, en la sección de contenido, puedes usar:
+
+```html
+.
+.
+.
+{% if entry %}
+<!-- Content SEO -->
+    <meta name="description" content="{{ entry.excerpt }}"/>
+    <meta property="og:title" content="{{ entry.title }}"/>
+    <meta property="og:url" content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"/>
+    <meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }}"/>
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <meta property="og:description" content="{{ entry.excerpt }}"/>
+    {% if entry.type_uid = 'posts'%}
+        <meta property="og:type" content="article"/>
+    {endif}
+    {% if entry.type_uid = 'place'%}
+        <meta property="og:type" content="place"/>
+        <meta property="place:latitude" content="{{ entry.location.first.latitude }}"/>
+        <meta property="place:longitude" content="{{ entry.location.first.longitude }}"/>
+    {% endif %}
+{% endif %}
+.
+.
+.
+```
+
+En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, definimos un tipo de documento diferente para cada uno. 
+
 
 ::: danger
 Missing description
