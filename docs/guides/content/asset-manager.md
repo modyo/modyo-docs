@@ -14,14 +14,6 @@ Para acceder a la herramienta, es posible hacerlo de dos maneras. Dentro de los 
 Desde aquí no se pueden editar ni manejar archivos que se estén ocupando como páginas dentro de la plataforma ni archivos que estén ligados a algún elemento pero que se encuentren en plataformas o servidores externos. 
 ::::
 
-::: danger
-Missing description:
-Titulo
-Descripción
-Texto alternativo
-Tags
-:::
-
 ## Acerca de la interfaz
 
 La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido. 
@@ -68,17 +60,6 @@ Para esta vista, las columnas son:
 Finalmente, podrás encontrar la paginación de todos los archivos, según cuantos archivos tengas dentro de la plataforma.
 
 
-
-
-::: danger
-Missing description
-Espacio disponible usado de la cuenta
-Filtros disponibles
-Columnas de la tabla
-Acciones bulk
-Paginación
-:::
-
 ## Propiedades de los archivos
 
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin límite de extensiones o 
@@ -100,7 +81,7 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 **Título**: Muestra el título del archivo. Esta sección es distinta al nombre del archivo, el cual no se puede cambiar.
 
-**Texto alternativo**: Muestra el alt text del elemento, que se encuentra aplicado en las páginas en las cuales se usa. (Solo aplica a imágenes y videos).
+**Texto alternativo**: Muestra el ```alt text``` del elemento, que se encuentra aplicado en las páginas en las cuales se usa. (Solo aplica a imágenes y videos).
 
 **Descripción**: Muestra una pequeña descripción del elemento. Esta sección es posible cambiarla desde acá y es una buena práctica escribir un pequeño texto que diga dónde se está usando y con qué fin se subió a la plataforma.
 
@@ -119,33 +100,57 @@ Para subir el archivo, se debe hacer click en el botón + Nuevo, ubicado en la p
 Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras: Drag & Drop o la manera tradicional a través del navegador.
 
 ::: warning
-
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
 
+Como una manera de resguardar la seguridad de los archivos que se suben, Modyo establece un límite de tamaño de los archivos que puedes transferir a la plataforma. Estos son los siguientes:
 
+- Imágenes: 30 MB
+- Videos: 200 MB
+- Audios: 100 MB
+- CSV: 2 MB
+- Otros: 100 MB
 
-## Editar un archivo
+Si quieres resubir el archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana Actualizar Información. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
 
-::: danger
-Missing description:
-Crop (16/9, cuadrado, libre)
-Tamaño original/final
-Dimensiones
-Restaurar original
-Eliminar archivo
+## Editar una imagen
+
+Para facilitar el manejo de imagenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños online.
+
+Uno de los cambios que se puede hacer es editar el tamaño del archivo. Para ello, haz click en el ícono del lapiz que se encuentra en la ventana de Actualizar Información. 
+
+Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
+
+Posteriormente, podrás ver las tres opciones que puedes elegir para editar el tamaño:
+
+- **16:9**: Edita la imagen en una proporción de 16:9.
+- **Cuadrado**: Edita la imagen al tamaño de un cuadrado.
+- **Libre**: Edita la imagen a un tamaño libre en pixeles que puedes cambiar en la parte inferior de la pantalla.
+
+A un costado, podrás observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
+
+::: tip
+Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
+
+- Zoom: Usa el scroll del mouse para acercar la imagen.
+- Mover fondo: Haz doble click fuera de la zona de recorte y arrastra el fondo.
 :::
+
+Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón Restaurar Original, lo cual provocará que la imagen vuelva a su tamaño.
 
 ## Buscar un archivo
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 
-La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos.
+La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo clic en la barra de búsqueda que se encuentra en la interfaz del gestor. 
 
-Sin embargo, en el caso de la API de Content, también se puede hacer una búsqueda de un contenido a través de la URL.
 
 ## Borrar un archivo   
 
-Como método de seguridad, Modyo no permite el borrado de archivos dentro de la plataforma, con tal de evitar problemas dentro de los contenidos que se ocupen dentro de esta.
+Para borrar un archivo en específico, se debe ir a la ventana de Actualizar Información y hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
+
+:::warning
+Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
+:::
 
 

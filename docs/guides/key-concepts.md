@@ -43,7 +43,7 @@ Modyo está basado en widgets y un generador de widgets que rastrea cada cambio 
 
 El generador de widgets es donde puedes desarrollar cualquier tipo de widget compuesto de HTML, CSS y Javascript que se conecta con APIs y forman parte de tu librería de widgets.
 
-El generador de widgets potencia la experiencia digital al hacer el desarrollo del front end fácil de manejar, rápido de enviar a producción y fácil de auditar para más seguridad y cumplimiento.
+El generador de widgets potencia la experiencia digital al hacer el desarrollo del Front End fácil de manejar, rápido de enviar a producción y fácil de auditar para más seguridad y cumplimiento.
 
 Widgets prefabricados para servicios financieros
 
@@ -66,4 +66,4 @@ Las aplicaciones Web progresivas serán el futuro de la Web ya que permiten mejo
 
 Modyo tiene una arquitectura donde todo el código publicado genera versiones. Antes de publicar una versión de un widget o un layout, puedes revisar fácilmente los cambios en el código entre una versión y otra.
 
-La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu equipo, siguiendo un modelo que balancea gobernabilidad y agilidad. Cuando se activa Workflows en la plataforma dentro de Channels, dos personas (Revisor y Aprobador) pueden cambiar el estado de los recursos digitales al de "Publicado" a través de un proceso formal fácil de manejar. La capacidad de tu equipo es medida más tarde dentro de Insights.
+La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu equipo, siguiendo un modelo que balancea gobernabilidad y agilidad. Cuando se activa Team Review en la plataforma dentro de Channels, dos personas (Revisor y Aprobador) pueden cambiar el estado de los recursos digitales al de "Publicado" a través de un proceso formal fácil de manejar. La capacidad de tu equipo es medida más tarde dentro de Insights.
