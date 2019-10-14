@@ -31,7 +31,7 @@ En este caso, los filtros son cinco:
 - **Barra de búsqueda**: Si es necesario, puedes buscar el contenido según lo que esté dentro del este, como una palabra o código que tengan.
 
 ::: warning
-La barra de búsqueda exterior no incluye los resultados que se encuentren en los tags. Si buscas una palabra que esté dentro de un tag, debes usar la barra interior que se encuentra bajo el botón.:::
+La barra de búsqueda exterior no incluye los resultados que se encuentren en los tags. Si buscas una palabra que esté dentro de un tag, debes usar la barra interior que se encuentra bajo el botón. :::
 
 ## Crear una Entrada
 
