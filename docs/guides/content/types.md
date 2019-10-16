@@ -4,11 +4,24 @@ search: true
 
 # Tipos de contenido
 
-Los formatos que publicaremos en nuestro sitio web siempre deben ser segmentados, para que cualquier programa o microservicio que quiera filtrar la información a través de la API, pueda interpretar más rápido el contenido para su uso final.
+Los tipos dentro de Modyo, son un objeto fundamental a la hora de crear contenido, ya que en palabras simples, son plantillas que nos permitirán elaborar contenidos para insertar dentro del servicio que estemos otorgando.
+
+Con los Tipos, podrás evitar tener que estar muchas veces escrbiendo contenido de igual formato, sino que podrás dar un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
+
+## Sobre la Interfaz
+
+
 
 ## Crear un Tipo
 
-Para crear un Tipo, es necesario hacer clic en el botón superior de la pantalla y poner el nombre y el UID correspondiente. Es una buena práctica poner el nombre del formato de qué se publicará, con tal de que cualquier usuario de la plataforma sepa de qué contenido se trata.
+Para crear un Tipo, es necesario hacer click en el botón superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
+
+::: tip Es una buena práctica poner dentro dl UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar uno nuevo.
+:::
+
+
+
+
 
 ## Campos
 
