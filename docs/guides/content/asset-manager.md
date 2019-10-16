@@ -73,7 +73,7 @@ En la interfaz de edición de las propiedades del archivo, podrás ver ciertos c
 
 **URL del Archivo**: Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo click en el ícono lateral.
 
-**Tag de liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
+**Tag de Liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
 
 ::: warning
 Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.

@@ -99,7 +99,7 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 
 Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón "+ Añadir vista personalizada". Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
-Al modificar esta vista, puedes hacer uso de liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
+Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
 Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
 
@@ -118,7 +118,7 @@ Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
 ```
 
 :::tip
-Para aprender más sobre cómo usar liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 
 Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`, donde `space_uid` es el UID del espacio que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
