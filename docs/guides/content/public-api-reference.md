@@ -520,6 +520,17 @@ Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables me
   - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: `fields.location_name=Chile`
     - `.../entries?fields.color=black`
 
+###### Filtro de idiomas
+
+La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
+
+Por ejemplo, para obtener entries en el idioma Español-Chile (es_CL):
+
+```plain
+Query string: GET .../posts/entries?locale=es_CL
+Header: Setear Accept-Language es_CL
+```
+
 ##### Operadores
 
 Las principales operaciones sobre campos son:

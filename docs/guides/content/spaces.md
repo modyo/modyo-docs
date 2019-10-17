@@ -6,53 +6,51 @@ search: true
 
 Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido y crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de la API pública.
 
-Desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+Desde Modyo se puede configurar el acceso desde distintos origenes para que el servicio que reciba la API, pueda interpretarla fácilmente.
 
 Espacios tambiém nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
 ## Crear un Espacio
 
-Para crear un espacio, se debe hacer clic en el botón verde en la parte superior de la pantalla, y asignar el nombre y la UID que usaremos.
+Para crear un espacio, se debe hacer clic en el botón verde en la parte superior derecha de la vista índice de espacios, y asignar el nombre y el UID que usaremos.
 
-Además, deberemos asignar el idioma sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
+Además, deberemos asignar el idioma por defecto sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
+
+:::tip
+Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del espacio.
+:::
 
 ## Configurar un Espacio
 
-En este caso, la Configuración de Espacios nos sirve para cambiar las características generales de la manera en qué se está enviando información a través de la API.
+En este caso, la configuración de Espacios nos sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
 
 ### General
 
 Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
-::: danger
-Missing description
-UID es importante porque se usa para acceder a la URL de la API pública de content mediante los SDK de Liquid y javascript
-:::
+
+El UID del espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). Ten en consideración que este aributo aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, dado que será usado en las URL para acceder al contenido.
 
 ### Localización
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
-::: danger
-Missing description
-Cuando se crea, se elige el idioma por defecto
-Se puden añadir otros idiomas disponibles a medida que sea necesario
+
+El idioma por defecto de un espacio se define al momento de crear el espacio, pero en esta sección puedes añadir cuantos idiomas secundariosn como quieras. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
+
+:::tip
+Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/guides/content/public-api-reference.html#filtros), [SDK de javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/guides/content/public-api-reference.html#filtrar-entradas)
 :::
-
-#### Buscando entries en otros idiomas
-
-La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
-
-Por ejemplo, para obtener entries en el idioma Español-Chile (es_CL):
-
-```plain
-Query string: GET .../posts/entries?locale=es_CL
-Header: Setear Accept-Language es_CL
-```
 
 ### Caché
 
-Si se quiere habilitar el caché y dejar tiempo a algunas acciones, es posible hacerlo desde esta sección. Además, regular el tiempo de vida del mismo, medido en segundos.
+El caché es una herramienta que nos permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos). 
 
-Si se está trabajando en modo Desarrollo, se recomienda deshabilitar esta opción, con tal de que los cambios en la API sean visibles automáticamente y no esperar la renovación.
+:::warning
+Debes tener en consideración que al habilitar esta opción, los cambios en tu contenido serán visibles en intervalos del tiempo que elijas en esta opción, por ejemplo, si usas 5 minutos, al publicar el contenido con título "A", y luego publicas el mismo contenido con título "A+1", por 5 minutos verás el contenido con el título "A" hasta que el caché inicial quede invalidado.
+:::
+
+:::tip
+Para trabajar en modo desarrollo, es altamente recomendable tener esta opción deshabilitada, y solo habilitarla cuando hay que enfrentar algún escenario de alta demanda o concurrencia.
+:::
 
 ### Seguridad
 
@@ -97,12 +95,12 @@ Por último, es posible diferenciar quiénes deben revisar cada contenido, segú
 
 ### Miembros del Equipo
 
-Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que trabajarán en cada espacio y así tendrán acceso a la escritura, revisión o publicación.
+Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada espacio y así tendrán acceso a la escritura, revisión y/o publicación.
 
-Para ello, el SuperAdministrador puede asignar manualmente a los usuarios los roles predeterminados que habilitan cada una de las funciones.
+Para ello, el administrador que creó el espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-::: danger
-Missing description
-Añadir usuarios
-Describir cada rol: Writter, Editor, Admin
-:::
+Para añadir un usuario al espacio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un administrador y asignale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del espacio.
+
+Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
+
+Para eliminar administradores de un espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
