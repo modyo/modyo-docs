@@ -54,7 +54,7 @@ Las vistas son elementos base y requeridos por Modyo, y usualmente se traducen e
 
 Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cada snippet, encontrarás un icono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón "+ Añadir un sinppet".
+Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón "+ Añadir un snippet".
 
 Todos los elementos del Template Builder usan _Liquid_ como motor de plantillas.
 
@@ -67,7 +67,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 **Gestor de archivos**: Se levantará un modal donde podrás acceder a todos los archivos de la cuenta y copiar su URL, si accedes a la segunda pestaña, podrás subir nuevos archivos.
 
 :::tip
-Para mas información sobre los beneficios y prestaciones del asset manager, dirígete a [Asset manager](/docs/content/asset-manager.html)
+Para mas información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset manager](/docs/content/asset-manager.html)
 :::
 
 **Atajos de teclado**: Se mostrará un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el template builder.
