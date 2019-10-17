@@ -19,21 +19,21 @@ Después de ello, podrás verlo en modo "Habilitado", lo que significa que está
 
 ## Configuración un Sitio
 
-La Configuración del sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
+La configuración del sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
 
 ### General
 
 Dentro de esta sección, podemos configurar los siguientes datos:
 
-- Nombre del sitio
-- Descripción
-- Logo del sitio
-- Idioma
-- Team Review (Habilitar el trabajo en equipo y revisión de los cambios que se estén realizando internamente)
-- Zona Horaria
-- Barra de Ingreso (Mostrarla públicamente para el ingreso de usuarios a la plataforma)
-- Favicon (Imagen que aparece al costado de la barra de dirección)
-- Icono de Apple (Imagen que aparece en dispositivos móviles al ser marcado)
+- **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio. 
+- **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
+- **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
+- **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/guides/channels/templates.html#vistas-para-contenido).
+- **[Team Review](/guides/platform/team-review.html)**
+- **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
+- **Favicon**: Imagen que aparece al costado de la barra de dirección
+- **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar él sitio como aplicación
+- **Espacios asociados**: Espacios relacionados que podrán mostrar sus entradas en este sitio.
 
 ### PWA
 
@@ -50,50 +50,67 @@ El SEO (Search Engine Optimization) es nuestra llave para aparecer en los distin
 
 Las opciones a configurar son:
 
-- Tagline (Descripción que aparecerá en los motores de búsqueda, bajo el nombre del sitio)
-- Palabras claves (palabras que buscarán los usuarios y que queremos que nuestro sitio aparezca)
-- Sitemap (Archivo que permite a los motores de búsqueda indexar mejor el contenido de nuestro sitio. Podemos dejar que Modyo haga automáticamente esta opción o la podemos modificar para que se enfoque sólo en un contenido en especial)
-- Robots.txt (En este archivo le damos las instrucciones al motor de búsqueda para que categorice nuestro sitio. También podemos configurar este archivo para que la página no sea indexada directamente)
+- **Tagline**: Descripción que aparecerá en los motores de búsqueda, bajo el nombre del sitio
+- **Palabras claves**: Palabras que buscarán los usuarios y que queremos que nuestro sitio aparezca.
+- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido de nuestro sitio. Podemos dejar que Modyo maneje automáticamente esta opción o la podemos modificar manualmente para que se enfoque sólo en un contenido en especial.
+- **Robots.txt**: En este archivo le damos las instrucciones al motor de búsqueda para que categorice nuestro sitio. También podemos configurar este archivo para que la página no sea indexada directamente.
 
 ### Restricciones
 
-Restricciones nos permite habilitar el sitio para usuarios públicos o dejarlo en privado para usuarios registrados y desarrolladores.
+Restricciones nos permite configurar la privacidad del sitio.
 
-También podemos restringir para que solo nuestro Home sea visto por nuestros usuarios públicos mientras sus páginas derivadas estén deshabilitadas.
+- Si el sitio es público, entonces todos podrán ver el sitio.
+- Si el sitio es privado, solo usuarios con una sesión de modyo podrán ver el sitio
+- Si el sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen a nuestro home, pero al navegar a cualquier otra página del sitio, se les solicitará que se registren o que inicien sesión.
 
-Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en su home o dentro de todas las páginas que navegue en el sitio.
+Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el sitio.
 
 ### Dominios
 
-Dominios es lo que permitirá saber dónde está publicamente ubicado nuestro sitio, por lo que esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen acá.
+La sección Dominios te permitirá saber dónde está publicamente ubicado nuestro sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
 
 Las variables que puedes cambiar aquí son:
 
-- Host (donde se encuentra nuestro sitio dentro del servidor
-- Activar dominios personalizados (Si es que queremos que dentro de nuestro dominio, existan sitios personalizados con dirección propia)
-- Habilitar SSL en nuestro sitio (Es necesario tener un certificado dentro de nuestro servidor para habilitarlo)
-- Dominio primario (dirección de nuestro sitio)
-- Dominio alternativo (dirección secundaria para redireccionar en caso de que falle la primera)
+- **Host**: Donde se encuentra nuestro sitio dentro del servidor.
+- **Activar dominios personalizados**: Si es que queremos que dentro de nuestro dominio, existan sitios cn una URL personalizada o "custom host.
+- **Habilitar SSL en nuestro sitio**: Es necesario tener un certificado dentro de nuestro servidor para habilitarlo.
+- **Dominio primario**: Dirección de nuestro sitio.
+- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
 
 ### Miembros del Equipo
 
-Para la administración de un sitio, que es manejado por múltiples usuarios, es necesario designar roles definidos con tal de hacer más eficientes sus tareas.
+Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada sitio y así tendrán acceso a la escritura, revisión y/o publicación.
 
-Modyo permite categorizar en tres roles a los usuarios internos del sitio:
+Para ello, el administrador que creó el sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-#### Site Developer
+Para añadir un usuario al sitio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un administrador y asignale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del sitio.
+
+Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
+
+Para eliminar administradores de un sitio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
+
+Los roles disponibles son:
+
+- **Developer**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates.
+- **Developer CLI**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Además puede empujar widgets desde aplicaciones externas.
+- **Reviewer**: Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, el menú y los templates, además de publicarlos cuando se cumplen las condiciones de revisión.
+- **Admin**: Puede crear, modificar, enviar a revisión y aprobar páginas, widget, el menú, y los templates. Puede publicar sin pasar por las validaciones de la revisión en equipo. Además puede modificar la configuración del sitio.
+
+#### Developer
 
 Es el usuario que está a cargo del desarrollo estructural de los recursos, la creación y edición de contenido. Todo lo que haga, tiene que pasar a revisión.
 
 Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback) ni cambiar la configuración.
 
-#### Site Reviewer
+Existe una variación de este rol con el nombre "CLI" que además de los permisos de desarrollador, les permite hacer push de widgets desde aplicaciones externas, como el [modyo-cli](/guides/channels/widgets.html#modyo-cli).
+
+#### Reviewer
 
 Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicar.
 
 No puede editar la configuración del sitio.
 
-#### Site Admin
+#### Admin
 
 Administrador del sitio, tiene acceso a los dos roles anteriores, además de poder configurar todo el sitio.
 
