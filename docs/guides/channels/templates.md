@@ -4,11 +4,11 @@ search: true
 
 # Templates
 
-Uno de los aspectos más importantes al crear nuestro sitio es la arquitectura base y apariencia de este. En template builder, podrás modificar los templates base para usar en tus páginas y cambiar su estructura según lo requieras.
+Uno de los aspectos más importantes al crear nuestro sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar los templates base para usar en tus páginas y cambiar su estructura según lo requieras.
 
 Una vez seleccionado el tema que se usará dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
-Una vez dentro del template builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado actual:
+Una vez dentro del Template Builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado actual:
 
 - **Publicado**: Este estado lo verás luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado lo verás si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
@@ -52,11 +52,11 @@ La barra de templates a la derecha tiene dos pestañas: vistas y snippets.
 
 Las vistas son elementos base y requeridos por Modyo, y usualmente se traducen en la estructura directa de alguna de las URL de tu sitio.
 
-Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cadsa snippet, encontrarás un icono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
+Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cada snippet, encontrarás un icono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 
 Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón "+ Añadir un sinppet".
 
-Todos los elementos del template builder usan _Liquid_ como motor de plantillas.
+Todos los elementos del Template Builder usan _Liquid_ como motor de plantillas.
 
 :::tip
 Para mas información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid markup](/docs/channels/liquid-markup.html)
@@ -97,9 +97,9 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
 1. Crear una vista personalizada en los templates y nombrarla igual que el UID del espacio que quieres mostrar. Dirígete a [crear un espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
-Para crear una vista personalizada, debes entrar al template builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón "+ Añadir vista personalizada". Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
+Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón "+ Añadir vista personalizada". Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
-Al modificar esta vista, puedes hacer uso de liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
+Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
 Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
 
@@ -118,16 +118,16 @@ Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
 ```
 
 :::tip
-Para aprender más sobre cómo usar liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 
 Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`, donde `space_uid` es el UID del espacio que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
 
 ## SEO
 
-El SEO es uno de los temas más importantes del sitio y del contenido. En Modyo tenemos una forma de controlar la forma en que los moteres de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
+El SEO es uno de los temas más importantes del sitio y del contenido. En Modyo tenemos una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
-Te recomendamos añadir este snippet de código al template builder, y luego llamar a este snippet desde el head de tu sitio:
+Te recomendamos añadir este snippet de código al Template Builder, y luego llamar a este snippet desde el head de tu sitio:
 
 ```html
 <!-- Site SEO -->

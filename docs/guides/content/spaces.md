@@ -25,7 +25,7 @@ En este caso, la Configuración de Espacios nos sirve para cambiar las caracter�
 Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
 ::: danger
 Missing description
-UID es importante porque se usa para acceder a la URL de la API pública de content mediante los SDK de liquid y javascript
+UID es importante porque se usa para acceder a la URL de la API pública de content mediante los SDK de Liquid y javascript
 :::
 
 ### Localización

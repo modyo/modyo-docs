@@ -105,7 +105,7 @@ Debes forzar la versión `14.2.2` del paquete `vue-loader`
 
 #### `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
 
-Cuando inicias `modyo-cli demo <widget_name>` un error como este pude ocurrir `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
+Cuando inicias `modyo-cli demo <widget_name>` un error como este puede ocurrir `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
 
 Para arreglar este error, modifica en el archivo `node_modules\vue-loader\lib\template-compiler/index.jx` y reemplaza:
 

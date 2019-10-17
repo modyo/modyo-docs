@@ -12,7 +12,7 @@ La lista está ordenada por fecha de actualización del contenido. En este caso,
 
 Las columnas por las cuales se pueden ordenar los posts son:
 
-- **Etapa**: Refiere a la etapa en el proceso de Revisión en Equipo del contenido, si es que este se encuentra activo. En este caso, los estados son cuatro: Borrador, Publicado, Cambios Pendientes y Rechazado. (Ver [Team Review](/guides/platform/team-review.html))
+- **Etapa**: Refiere a la etapa en el proceso de Revisión en Equipo del contenido, si es que este se encuentra activo. En este caso, las etapas son cuatro: Borrador, Publicado, Cambios Pendientes y Rechazado. (Ver [Team Review](/guides/platform/team-review.html))
 - **Nombre**: Nombre del contenido.
 - **Tipo**: Tipo del Contenido (Ver [Tipos](/guides/content/types.html)).
 - **Actualizado**: Fecha de la última actualización guardada del contenido.
@@ -36,12 +36,15 @@ La barra de búsqueda exterior no incluye los resultados que se encuentren en lo
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección Tipos.
+Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deberá crear, para organizar el formato a presentar, el cuál se puede crear en la sección [Tipos](/guides/content/types.html).
 
-Al hacer click en ella, podremos ver el formulario que podremos rellenar con el contenido que queremos enviar, que estará personalizado según lo que armamos.
+Al hacer click en ella, podremos ver el formulario que podremos rellenar con el contenido que queremos enviar, que estará personalizado según lo que armamos a través de Tipos.
 
-De ahí, podremos ver en nuestro botón de Vista Previa el código que se enviará a través de la API, el cual el microservicio deberá interpretar.
+Arriba, podrás ver el Tipo de contenido que estás creando, junto con el nombre del idioma en el que se está creando.
 
+::: tip
+Para crear o editar una entrada en el mismo idioma, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
+:::
 ::: danger
 Missing description
 Publicar una entry (ahora/publicar en)
