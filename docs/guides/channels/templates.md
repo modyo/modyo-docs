@@ -54,12 +54,12 @@ Las vistas son elementos base y requeridos por Modyo, y usualmente se traducen e
 
 Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cada snippet, encontrarás un icono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón "+ Añadir un sinppet".
+Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón "+ Añadir un snippet".
 
 Todos los elementos del Template Builder usan _Liquid_ como motor de plantillas.
 
 :::tip
-Para mas información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid markup](/docs/channels/liquid-markup.html)
+Para mas información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/docs/channels/liquid-markup.html)
 :::
 
 En el área de trabajo, debajo de las pestañas, encontrarás una barra con elementos útiles:
@@ -67,7 +67,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 **Gestor de archivos**: Se levantará un modal donde podrás acceder a todos los archivos de la cuenta y copiar su URL, si accedes a la segunda pestaña, podrás subir nuevos archivos.
 
 :::tip
-Para mas información sobre los beneficios y prestaciones del asset manager, dirígete a [Asset manager](/docs/content/asset-manager.html)
+Para mas información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/docs/content/asset-manager.html)
 :::
 
 **Atajos de teclado**: Se mostrará un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el template builder.
@@ -92,10 +92,10 @@ Si se reestablece una versión anterior a la versión editable, podrás acceder 
 
 Para poder mostrar [contenido](/guides/content/) de forma automática en un sitio, debes cumplir con ciertas condiciones:
 
-1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un tipo. Dirígete a [Espacios](/guides/content/spaces.html) y [Tipos](/guides/content/types.html) para aprender cómo.
+1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un Tipo. Dirígete a [Espacios](/guides/content/spaces.html) y [Tipos](/guides/content/types.html) para aprender cómo.
 1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/guides/content/entries.html) y [Localización](/guides/content/spaces.html#localizacion) para aprender más.
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
-1. Crear una vista personalizada en los templates y nombrarla igual que el UID del espacio que quieres mostrar. Dirígete a [crear un espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
+1. Crear una vista personalizada en los templates y nombrarla igual que el UID del Espacio que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
 Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón "+ Añadir vista personalizada". Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 

@@ -65,7 +65,7 @@ Finalmente, podrás encontrar la paginación de todos los archivos, según cuant
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin límite de extensiones o 
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
-Para acceder a las propiedades de los archivos, se debe hacer clic en el nombre de este. Así, se desplegará una ventana en la que podrás editar cada una de las propiedades.
+Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se desplegará una ventana en la que podrás editar cada una de las propiedades.
 
 ## Editar un archivo
 
@@ -142,7 +142,7 @@ Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actu
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 
-La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo clic en la barra de búsqueda que se encuentra en la interfaz del gestor. 
+La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo click en la barra de búsqueda que se encuentra en la interfaz del gestor. 
 
 
 ## Borrar un archivo   
