@@ -99,9 +99,9 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 ### Respaldos
 
-Los respaldos son los elementos que se han publicado anteriormente. Cada vez que publicamos un elemento Modyo guarda la versión publicada anteriormente como un respaldo.
+Los respaldos son los elementos que se han publicado anteriormente. Cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
 
-Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada archivo, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
+Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada elemento, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
 :::warning
 Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigésimaprimera publicación, estarás borrando el respaldo de la primera publicación del elemento. Este valor se puede modificar mediante variables de entorno y es común para todas la cuentas de ese entorno.
