@@ -115,7 +115,7 @@ Dentro del versionado cuentas con dos acciones que te permiten interactuar con l
 
 Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha. Puedes cambiar que versiones comparar, cambiando los valores seleccionados en los selectores de versiones en la parte superior del modal. 
 
-Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izqueirda a la versión editable, ysi se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
+Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izqueirda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
 
 #### Reestablecer
 
