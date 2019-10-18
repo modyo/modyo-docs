@@ -91,7 +91,7 @@ Además, se puede forzar la revisión por un usuario en específico, para que es
 
 Por último, es posible diferenciar quiénes deben revisar cada contenido, según el Espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
 
-[Ir a Team Review](https://docs.modyo.com/guides/advance-topics/team-review.html)
+[Ir a Team Review](/guides/platform/team-review.html)
 
 ### Miembros del Equipo
 
