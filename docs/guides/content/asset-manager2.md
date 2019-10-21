@@ -33,7 +33,7 @@ O a través de la herramienta directa que se encuentra directamente en la secci�
 
 <img src="/assets/img/content/asset-manager/1.jpg" width="600" style="margin: 20px 0">
 
-La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido. 
+La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido.
 
 En la parte superior de la pantalla podrás ver el porcentaje de espacio que estén usando los archivos dentro de la plataforma.
 
@@ -170,10 +170,10 @@ Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actu
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 
-La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo click en la barra de búsqueda que se encuentra en la interfaz del gestor. 
+La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo click en la barra de búsqueda que se encuentra en la interfaz del gestor.
 
 
-## Borrar un archivo   
+## Borrar un archivo
 
 Para borrar un archivo en específico, se debe ir a la ventana de Actualizar Información y hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
 
