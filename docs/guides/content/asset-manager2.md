@@ -31,7 +31,7 @@ O a través de la herramienta directa que se encuentra directamente en la secci�
 
 ## Acerca de la interfaz
 
-<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
 La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido.
 
@@ -49,6 +49,9 @@ Posteriormente, podrás ver tres tipos de filtros que te serán útiles para enc
 Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, en la parte inferior aparecerá una columna con un checkbox al lado de Previsualizar. 
 Si seleccionas la primera, abajo aparecerá un botón verde, que permite seleccionar todos los archivos de la pantalla a la vez para asignar una o más etiquetas.
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
+
+<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
+
 :::
 
 **Barra de búsqueda**: Con la barra de búsqueda, el Gestor te mostrará todos los archivos que tengan una palabra o contenido que se encuentre dentro de la metadata de este. En este caso, también incluye la búsqueda de su extensión específica, etiqueta, nombre o usuario que lo haya subido.
