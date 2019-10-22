@@ -110,7 +110,9 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 **Etiquetas**: Muestra las etiquetas del producto, las cuales también se pueden cambiar desde la interfaz del administrador.
 
-Para guardar los datos, es necesario hacer click en el botón Actualizar Información que se encuentra en la parte inferior de la ventana. Si se cambian los datos sin guardar la información, esta no quedará grabada en la plataforma.
+<hr style="margin: 40px 0;" />
+
+Para guardar los datos, es necesario hacer click en el botón **Actualizar Información** que se encuentra en la parte inferior de la ventana. Si se cambian los datos sin guardar la información, esta no quedará grabada en la plataforma.
 
 Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón Cerrar, ubicado en la parte inferior de la pantalla.
 
@@ -120,9 +122,12 @@ Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer 
 
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
 
-Para subir el archivo, se debe hacer click en el botón + Nuevo, ubicado en la parte superior de la pantalla.
+Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
 
-Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras: Drag & Drop o la manera tradicional a través del navegador.
+Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras:
+
+- **Drag & Drop**: arrastrar desde el navegador de archivos de tu computador hacia la ventana)
+- **Manera tradicional**: a través del navegador, pinchando y seleccionado los archivos
 
 ::: warning
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
@@ -136,7 +141,7 @@ Como una manera de resguardar la seguridad de los archivos que se suben, Modyo e
 - CSV: 2 MB
 - Otros: 100 MB
 
-Si quieres resubir el archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana Actualizar Información. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
+Si quieres resubir el archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
 
 
 <img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
@@ -146,9 +151,9 @@ Si quieres resubir el archivo, manteniendo el nombre y el link original, haz cli
 
 <img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Para facilitar el manejo de imagenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños online.
+Para facilitar el manejo de imagenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños online.
 
-Uno de los cambios que se puede hacer es editar el tamaño del archivo. Para ello, haz click en el ícono del lapiz que se encuentra en la ventana de Actualizar Información.
+Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lapiz** que se encuentra en la ventana de Actualizar Información.
 
 Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
@@ -163,8 +168,8 @@ A un costado, podrás observar el tamaño original de la imagen y el tamaño en 
 ::: tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
-- Zoom: Usa el scroll del mouse para acercar la imagen.
-- Mover fondo: Haz doble click fuera de la zona de recorte y arrastra el fondo.
+- **Zoom:** Usa el scroll del mouse para acercar la imagen.
+- **Mover fondo:** Haz doble click fuera de la zona de recorte y arrastra el fondo.
 :::
 
 Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón Restaurar Original, lo cual provocará que la imagen vuelva a su tamaño.
