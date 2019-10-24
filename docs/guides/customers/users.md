@@ -94,11 +94,11 @@ Puedes arrastrar los campos personalizados para ordenarlos. Ten en cuenta que es
 
 Todos los campos personalziados tienen ciertas propiedades estándar:
 
-- *Respuesta única*: Implica que el valor del custom field debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
-- *Requerido*: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
-- *Visible para usuarios*: Implica que el custom field será visible en la vista profile.
-- *Editable por usuarios*: Implica que si es visible, además, el usuario podrá modificar el valor del custom field.
-- *Buscable por admins*: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al buscar usuarios por el valor de ese campo.
+- **Respuesta única**: Implica que el valor del custom field debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
+- **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
+- **Visible para usuarios**: Implica que el custom field será visible en la vista profile.
+- **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar el valor del custom field.
+- **Buscable por admins**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al buscar usuarios por el valor de ese campo.
 
 Además de lo anterior, los campos personalizados pueden estar habilitados o deshabilitados. Si un campo personalizado está hablitado, entonces se podrá usar por admins y dependiendo de su configuración, estará disponible para los usuarios. Si un custom field está deshabilitado, entonces no aparecerá en ningún formulario.
 
