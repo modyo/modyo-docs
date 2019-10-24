@@ -4,7 +4,7 @@ search: true
 
 # Espacios
 
-Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido y crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de la API pública.
+Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de la API pública.
 
 Desde Modyo se puede configurar el acceso desde distintos origenes para que el servicio que reciba la API, pueda interpretarla fácilmente.
 
@@ -23,6 +23,8 @@ Más adelante, en la configuración podrás definir otros idiomas secundarios pa
 ## Configurar un Espacio
 
 En este caso, la configuración de Espacios nos sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
+
+<img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300">
 
 ### General
 
@@ -99,8 +101,11 @@ Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que t
 
 Para ello, el Administrador que creó el Espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
+#### Agregar usuario ####
 Para añadir un usuario al Espacio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un Administrador y asignale un rol, luego presiona "Añadir" para que ese Administrador sea parte del equipo de trabajo del Espacio.
 
+#### Modificar Rol ####
 Puedes modificar el rol de alguno de los Administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "Guardar" para confirmar el cambio.
 
+#### Eliminar Administradores ####
 Para eliminar Administradores de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
