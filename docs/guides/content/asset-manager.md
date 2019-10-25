@@ -14,7 +14,7 @@ Para acceder a la herramienta, es posible hacerlo de dos maneras. Dentro de los 
 Desde aquí no se pueden editar ni manejar archivos que se estén ocupando como páginas dentro de la plataforma ni archivos que estén ligados a algún elemento pero que se encuentren en plataformas o servidores externos. 
 ::::
 
-## Acerca de la interfaz
+### Acerca de la interfaz
 
 La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido. 
 
@@ -60,14 +60,14 @@ Para esta vista, las columnas son:
 Finalmente, podrás encontrar la paginación de todos los archivos, según cuantos archivos tengas dentro de la plataforma.
 
 
-## Propiedades de los archivos
+### Propiedades de los archivos
 
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin límite de extensiones o 
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
 Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se desplegará una ventana en la que podrás editar cada una de las propiedades.
 
-## Editar un archivo
+### Editar un archivo
 
 En la interfaz de edición de las propiedades del archivo, podrás ver ciertos campos para usarse y cambiarse dentro de la plataforma, como son:
 
@@ -91,7 +91,7 @@ Para guardar los datos, es necesario hacer click en el botón Actualizar Informa
 
 Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón Cerrar, ubicado en la parte inferior de la pantalla.
 
-## Subir un archivo
+### Subir un archivo
 
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
 
@@ -113,7 +113,7 @@ Como una manera de resguardar la seguridad de los archivos que se suben, Modyo e
 
 Si quieres resubir el archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana Actualizar Información. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
 
-## Editar una imagen
+### Editar una imagen
 
 Para facilitar el manejo de imagenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños online.
 
@@ -138,14 +138,14 @@ Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
 Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón Restaurar Original, lo cual provocará que la imagen vuelva a su tamaño.
 
-## Buscar un archivo
+### Buscar un archivo
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 
 La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo click en la barra de búsqueda que se encuentra en la interfaz del gestor. 
 
 
-## Borrar un archivo   
+### Borrar un archivo   
 
 Para borrar un archivo en específico, se debe ir a la ventana de Actualizar Información y hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
 

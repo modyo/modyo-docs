@@ -164,7 +164,7 @@ Modyo permite sincronizar atributos y otras propiedades de los usuarios de Custo
 
 La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, se deben habilitar y configurar desde la sección webhooks en la configuración de la cuenta.
 
-Un webhooks es una acción _POST_ automática a una URL determinada con información determinada.
+Un webhook es una acción _POST_ automática a una URL determinada con información determinada.
 
 Para habilitarlos, debes checkear la parte superior de la página y después proceder a crear todos los webhooks que quieras.
 
