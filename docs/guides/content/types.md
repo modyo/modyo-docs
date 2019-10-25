@@ -35,34 +35,43 @@ Para crear un Tipo, es necesario hacer click en el botón verde superior de la p
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
+En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
+
+- Añadir campos
+- Configuración del campo
+- Configuración
+
+Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el formato que nos sea requerido.
+
 ## Campos
 
+Los campos son el corazón de los Tipos, ya que cada uno de estos elementos son los que forman el recurso que quieres obtener. Para ello, la plataforma te entrega múltiples variables que puedes usar de la forma que necesites.
+
+Para ello, todos los campos tienen tres configuraciones en común que permiten orientar a quien va a ocupar el formato para crear un recurso.
+
+- Nombre: A cualquier campo debes darle un nombre que aparecerá en la parte superior del campo. 
+
 ::: danger
-Missing description
-El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS
+El Nombre del campo es de suma importancia porque con ello mediante lo que se podrá acceder a su valor en los SDK de liquid y JS.
 :::
 
-- Texto de una línea: Solo para agregar textos de una sola linea.
-::: danger
-Missing description
-Restricciones (largo min/max)
-Validación mediante expresión regular
-Requerido
-:::
+- Indicación: Sirve para agregar información al usuario sobre cómo rellenar el campo.
 
-- Texto de múltiples líneas: Se agrega texto de una línea.
-::: danger
-Missing description
-Restricciones largo min/max
-Validación por expresión regular
-Requerido
-:::
+- Validación: Configura si el campo es obligatorio para rellenar o puede ser dejado en blanco.
 
-- Texto enriquecido: Editor WYSIWYG de texto de múltiples líneas.
-::: danger
-Missing description
-Restricción largo min/max
-:::
+- Expresión Regular: Si quieres asegurarte de que el campo sea rellenado correctamente, en algunas de las configuraciones puedes agregar que este se escriba en un formato en específico. Por lo mismo, puedes hacer clic en el símbolo derecho donde podrás seleccionar la expresión que necesites.
+A su vez, puedes probar la expresión en la siguiente opción. Si está correcta, después de escribirla aparecerá en verde. En caso contrario, aparecerá en rojo.
+
+- Largo mínimo/máximo: Puedes restringir la cantidad de caracteres que se deben agregar al completar un campo, incluyendo espacios.
+
+Los campos que puedes agregar son:
+
+- Texto de una línea: Agrega un campo de texto de una sola línea.
+En este caso, para asegurarte que el campo sea rellenado correctamente, puedes configurar que se adapte a un formato prederminado, que debe ser validado a través de un sistema.
+
+- Texto de múltiples líneas: Se agrega campo de texto de múltiples líneas. 
+
+- Texto enriquecido: Se agrega un Editor WYSIWYG simple de texto de múltiples líneas.
 
 - Dropdown: Agregas una lista desplegable para seleccionar sólo una opción.
 ::: danger
