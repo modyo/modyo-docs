@@ -45,117 +45,105 @@ Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el f
 
 ## Campos
 
-Los campos son el corazón de los Tipos, ya que cada uno de estos elementos son los que forman el recurso que quieres obtener. Para ello, la plataforma te entrega múltiples variables que puedes usar de la forma que necesites.
-
-Para ello, todos los campos tienen tres configuraciones en común que permiten orientar a quien va a ocupar el formato para crear un recurso.
-
-- Nombre: A cualquier campo debes darle un nombre que aparecerá en la parte superior del campo. 
-
-::: danger
-El Nombre del campo es de suma importancia porque con ello mediante lo que se podrá acceder a su valor en los SDK de liquid y JS.
+::: tip
+El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. Para mas información ve a la [referencia de la API](/guides/content/public-api-reference.html)
 :::
 
-- Indicación: Sirve para agregar información al usuario sobre cómo rellenar el campo.
+Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos. Cuando un campo es requerido, al momento de crear o modificar unaentrada, debe haber un valor asociado para ese campo, de lo contrario, no se podrán guardar los cambios.
 
-- Validación: Configura si el campo es obligatorio para rellenar o puede ser dejado en blanco.
+### Texto de una línea
 
-- Expresión Regular: Si quieres asegurarte de que el campo sea rellenado correctamente, en algunas de las configuraciones puedes agregar que este se escriba en un formato en específico. Por lo mismo, puedes hacer clic en el símbolo derecho donde podrás seleccionar la expresión que necesites.
-A su vez, puedes probar la expresión en la siguiente opción. Si está correcta, después de escribirla aparecerá en verde. En caso contrario, aparecerá en rojo.
+Este campo te permite ingresar textos de una sola linea. y cuenta con las siguientes restricciones:
 
-- Largo mínimo/máximo: Puedes restringir la cantidad de caracteres que se deben agregar al completar un campo, incluyendo espacios.
+- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
+- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto que se ingresa al momento de crear/modificar una entrada coincida con un formato determinado. 
 
-Los campos que puedes agregar son:
 
-- Texto de una línea: Agrega un campo de texto de una sola línea.
-En este caso, para asegurarte que el campo sea rellenado correctamente, puedes configurar que se adapte a un formato prederminado, que debe ser validado a través de un sistema.
+### Texto enriquecido
 
-- Texto de múltiples líneas: Se agrega campo de texto de múltiples líneas. 
+Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que también te permite modificar el código HTML del mismo. Este campo cuenta con las siguientes restricciones:
 
-- Texto enriquecido: Se agrega un Editor WYSIWYG simple de texto de múltiples líneas.
+- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
+- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
 
-- Dropdown: Agregas una lista desplegable para seleccionar sólo una opción.
-::: danger
-Missing description
-Requerido
-:::
+### Dropdown
 
-- Radio: Agregas una lista fija para seleccionar sólo una opción.
-::: danger
-Missing description
-Requerido
-:::
+Este campo te permite agregar una lista desplegable para seleccionar sólo una opción.
 
-- Checkbox: Agregas una lista que te permite seleccionar más de una opción o dejar en blanco.
-::: danger
-Missing description
-Requerido
-:::
+### Radio
 
-- Opciones Múltiples: Agregas un campo que permite escribir una opción que puede ser predeterminada o propuesta.
-::: danger
-Missing description
-Requerido
-:::
+Este campo te permite agregar una lista fija de elementos para seleccionar sólo una opción.
 
-- Booleano: Agregas una pregunta o afirmación en que obligatoriamente debe ser seleccionada. (True or False)
-::: danger
-Missing description
-Requerido
-:::
+### Checkbox
 
-- Entero: Puedes agregar un número entero que debe ser de manera predeterminada entre los números -65325 y +65325. Sin embargo, se puede acotar este lapso de cifras.
-::: danger
-Missing description
-Requerido
-Restricción min/max
-:::
+Este campo te permite agregar una lista de la cual puedes seleccionar más de una opción o dejar en blanco.
 
-- Decimal: Puedes agregar un número decimal que debe estar de manera predeterminada entre los números -65325 y +65325. Sin embargo, se puede acotar este lapso de cifras.
-::: danger
-Missing description
-Requerido
-Restriccion min/max
-:::
+### Opciones Múltiples
 
-- Fecha: Agregas una fecha.
-::: danger
-Missing description
-Restricción fecha desde/hasta
-:::
+Este campo te permite agregar un campo en el cual puedes escribir para seleccionar una opción que puede ser predeterminada o propuesta.
 
-- Ubicación: Agregas un capo que permite agregar una dirección geográfica, según los campos de Google Maps.
-::: danger
-Missing description
-Requerido
-:::
+### Booleano
 
-- Archivo: Puedes adjuntar un sólo archivo. Para ello, este debe estar en el directorio interno y visualizarse en el Gestor de Archivos.
-::: danger
-Missing description
-Requerido
-:::
+Este campo te permite agregar una pregunta o afirmación (Verdadero/True oo Falso/False).
 
-- Listado de Archivos: Puedes adjuntar más de un archivo. Para ello, estos deben estar en el directorio interno y visualizarse en el Gestor de Archivos.
-::: danger
-Missing description
-requerido
-:::
+### Entero
 
-- Contenido (link a una): Puedes vincular a una Entrada que ya se encuentre creada dentro del Espacio.
-::: danger
-Missing description
-Restringir tipo
-:::
+Este campo te permite agregar un número entero que debe ser de manera predeterminada entre los números `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
 
-- Listado de Contenido (link a muchas): Puedes vincular a más de un Contenido o Entrada que ya se encuentren creadas dentro del Espacio.
-::: danger
-Missing description
-Restringir tipo
-:::
+- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
+- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+
+### Decimal
+
+Este campo te permite agregar un número decimal que debe estar de manera predeterminada entre los números `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+
+- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
+- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+
+### Fecha
+
+Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que sepueden elegir, haciendo uso de las restricciones:
+
+- **Desde**: Permite limitar la menor seleccionable.
+- **Hasta**: Permite limitar la mayor fecha seleccionable.
+
+### Ubicación
+
+Te permite agregar un campo que en el que puedesseleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones geopolíticas de la ubicación
+
+
+### Archivo
+
+Este campo te permite adjuntar un sólo archivo a la entrada haciendo uso del gestor de archivos.
+
+### Listado de Archivos
+
+Este campo te permite adjuntar múltiples archivos a la entrada haciendo uso del gestor de archivos.
+
+### Contenido (link a una)
+
+Este campo te permite vincular una Entrada a otra Entrada que ya se encuentre creada y publicada dentro del Espacio. Este campo cuenta con las siguientes restricciones:
+
+- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que las entradas que se puedan seleccionar como enlace, solo sean del tipo seleccionado.
+
+### Listado de Contenido (link a muchas)
+
+Este campo te permite vincular muchas Entradas que ya se encuentren creadas dentro del Espacio a otra Entrada. Este campo cuenta con las siguientes restricciones:
+
+- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que las entradas que se puedan seleccionar como enlace, solo sean del tipo seleccionado.
 
 ## Propiedades
 
-::: danger
-Missing description
-Si tienes algún problema con la API pública de tu contenido, puedes reindexar ese type en la sección de propiedades del type
+En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es mportante ya que será como se llame al tipo desde los SDK de liquid, javascripy y API. A continuación verás un botón que puede estar en 2 estados:
+
+- **Reindexar**: Te permite reindexar el modelo si es que te encontraste con alún problem con tu API pública.
+- **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
+
+:::warning
+Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente queará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
+:::
+
+:::warning
+Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/guides/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::
