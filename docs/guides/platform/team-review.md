@@ -10,7 +10,7 @@ La revisión en equipo (o Team Review) es una herramienta que te permite control
 
 Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán rechazar, aprobar y hacer comentarios en el elemento. 
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento. 
 
 Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
 
