@@ -162,10 +162,45 @@ Modyo permite sincronizar atributos y otras propiedades de los usuarios de Custo
 
 ## Webhooks
 
-La plataforma también permite la instalación de Webhooks en sitios específicos. Para ello, se deben habilitar y configurar desde aquí.
+La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, se deben habilitar y configurar desde la sección webhooks en la configuración de la cuenta.
 
-Para habilitarlos, hay que hacer check en la parte superior de la página y después proceder a crearlo.
+Un webhook es una acción _POST_ automática a una URL determinada con información determinada.
 
-Al crearlo, se debe tener la URL del Webhook, seleccionar un tipo de log para aplicarlo y después el sitio en que se insertará.
+Para habilitarlos, debes checkear la parte superior de la página y después proceder a crear todos los webhooks que quieras.
 
-Tras esto, se podrá ver en la lista de todos los webhooks que estén activos y su registro de movimientos.
+Las acciones que puedes configurar para que gatillen los webhooks son:
+
+- Categoría creada
+- Categoría borrada
+- Categoría actualizada
+- Idioma actualizado
+- Inicio de sesión
+- Cerrar sesión
+- Membresía creada
+- Membresía borrada
+- Perfil actualizado
+- Registro
+- Sitio creado
+- Sitio borrado
+- Sitio deshabilitado
+- Sitio habilitado
+- Sitio escondido
+- Sitio puesto en modo staging
+- Sitio visible
+- Sitio actualizado
+- Usuario creado
+- Usuario borrado
+- Usuario deshabilitado
+- Usuario habilitado
+- Importados
+- Usuario no verificado
+- Usuario actualizado
+- Usuario verficado
+- Respuesta de formulario creada
+- Respuesta de formulario actualizada
+
+Al crear un webhook, debes tener la URL a la que quieres enviar la información, seleccionar el tipo de log y sitio (en caso de ser necesario) que gatillará el webhook y luego guardar los cambios.
+
+Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
+
+Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.

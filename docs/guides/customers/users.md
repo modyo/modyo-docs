@@ -10,7 +10,7 @@ Además, podemos saber si están verificados como tales o solamente tenemos sus 
 
 Para agregar un nuevo contacto, se debe hacer clic en el boton "Nuevo" en la parte superior de la pantalla.
 
-Esta función te permite añadir de dos formas: haciendolo individualmente o a través de un archivo *.CSV, que nos permite importar íntegramente una base de datos.
+Esta función te permite añadir de dos formas: haciendolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
 Al hacer clic en cada uno de los usuarios, podrás ver una ficha con sus datos que incluyen:
 
@@ -80,7 +80,7 @@ También es posible configurar el avatar por defecto y las condiciones del formu
 
 Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
 
-Los estilos de campos personalizados que puedes agregar son:
+Los tipos de campos personalizados que puedes agregar son:
 
 - Checkbox
 - Fecha
@@ -89,3 +89,25 @@ Los estilos de campos personalizados que puedes agregar son:
 - Número
 - Elección
 - Texto simple
+
+Puedes arrastrar los campos personalizados para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios. 
+
+Todos los campos personalziados tienen ciertas propiedades estándar:
+
+- **Respuesta única**: Implica que el valor del custom field debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
+- **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
+- **Visible para usuarios**: Implica que el custom field será visible en la vista profile.
+- **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar el valor del custom field.
+- **Buscable por admins**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al buscar usuarios por el valor de ese campo.
+
+Además de lo anterior, los campos personalizados pueden estar habilitados o deshabilitados. Si un campo personalizado está hablitado, entonces se podrá usar por admins y dependiendo de su configuración, estará disponible para los usuarios. Si un custom field está deshabilitado, entonces no aparecerá en ningún formulario.
+
+:::tip
+Al deshabilitar un campo personalizado, este dejará de aparecer de todos los formularios de edición de usuario, registro y perfil, sin embargo, los datos que estaban guardados para los usuarios que ya tenian un valor, se mantendrán guardados.
+:::
+
+:::danger
+Cuando un campo personalizado está deshabilitado, puede ser eliminado. Al eliminar un campo personalizado, estarás eliminando todos los valores que los usuarios tenían para ese campo personalizado.
+:::
+
+Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/guides/customers/targets.html) usando los valores de los campos personalizados, permitiendo segmentar a los usuarios por valores no estándares de Modyo.

@@ -18,7 +18,7 @@ Esto te puede servir en el caso de tener muchos usuarios internos de la platafor
 
 ## Seguridad
 
-En esta sección podremos activar el Cross Origin Resourse Sharing (CORS), para obtener datos provenientes de otras web que no necesariamente sean seguras.
+En esta sección podremos activar el Cross Origin Resourse Sharing (CORS), para poder acceder a la data de modyo desde otras web que no necesariamente sean seguras.
 
 Al habilitarlo, deberás especificar los dominios que quieres que se habiliten para que estén compartiendo recursos con tu sitio.
 

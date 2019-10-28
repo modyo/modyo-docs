@@ -45,6 +45,7 @@ Arriba, podrás ver el Tipo de contenido que estás creando, junto con el nombre
 ::: tip
 Para crear o editar una entrada en el mismo idioma, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
 :::
+
 ::: danger
 Missing description
 Publicar una entry (ahora/publicar en)
