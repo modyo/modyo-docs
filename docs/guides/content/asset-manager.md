@@ -6,26 +6,40 @@ search: true
 
 Una organización necesita tener una plataforma que les permita saber dónde quedan los archivos y documentos de contenido que se usan dentro de la plataforma.
 
-Para no tener que ir que revisar en servicios externos, Modyo permite una revisión segura de cada archivo que esté subido dentro de la plataforma, como una manera de facilitar su uso u respaldo, a través de la herramienta Gestor de Archivos.
+Para no tener que ir que revisar en servicios externos, Modyo permite una revisión segura de cada archivo que esté subido dentro de la plataforma, como una manera de facilitar su uso o respaldo, a través de la herramienta Gestor de Archivos.
 
-Para acceder a la herramienta, es posible hacerlo de dos maneras. Dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios, o a través de la herramienta directa que se encuentra directamente en la sección Content.
+Para acceder a la herramienta, es posible hacerlo de dos maneras. Dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios
 
-::: warning 
-Desde aquí no se pueden editar ni manejar archivos que se estén ocupando como páginas dentro de la plataforma ni archivos que estén ligados a algún elemento pero que se encuentren en plataformas o servidores externos. 
-::::
+
+#### Rich Text
+
+<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0">
+
+#### Multiline
+
+<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0">
+
+#### Selector de Assets
+
+<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
+
+
+O a través de la herramienta directa que se encuentra directamente en la sección Content.
+
+<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
+
 
 ## Acerca de la interfaz
 
-La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido. 
+<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
+
+La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma, que se estén ocupando dentro de algún elemento u contenido.
 
 En la parte superior de la pantalla podrás ver el porcentaje de espacio que estén usando los archivos dentro de la plataforma.
 
-::: danger
-Si los archivos que tienes ya han completado el disco de la cuenta, no podrás seguir usando el Gestor de Archivos para subir o editar elementos. 
-Contáctate con tu proveedor de la plataforma para solicitar un aumento de espacio.
-:::
-
 Posteriormente, podrás ver tres tipos de filtros que te serán útiles para encontrar un archivo.
+
+<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
 
 **Extensiones**: Con este filtro podrás ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma.
 
@@ -35,6 +49,9 @@ Posteriormente, podrás ver tres tipos de filtros que te serán útiles para enc
 Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, en la parte inferior aparecerá una columna con un checkbox al lado de Previsualizar. 
 Si seleccionas la primera, abajo aparecerá un botón verde, que permite seleccionar todos los archivos de la pantalla a la vez para asignar una o más etiquetas.
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
+
+<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
+
 :::
 
 **Barra de búsqueda**: Con la barra de búsqueda, el Gestor te mostrará todos los archivos que tengan una palabra o contenido que se encuentre dentro de la metadata de este. En este caso, también incluye la búsqueda de su extensión específica, etiqueta, nombre o usuario que lo haya subido.
@@ -44,6 +61,8 @@ Un poco más abajo, podrás ver un administrador muy similar a los que se usan d
 Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predeterminada y no es posible cambiarlo.
 
 Para esta vista, las columnas son:
+
+<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
 
 **Previsualizar**: Si la plataforma identifica que el archivo es una imagen, podrás ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
 
@@ -62,12 +81,16 @@ Finalmente, podrás encontrar la paginación de todos los archivos, según cuant
 
 ## Propiedades de los archivos
 
-La plataforma permite el manejo y subida de archivos de todos los tipos, sin límite de extensiones o 
+<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+
+La plataforma permite el manejo y subida de archivos de todos los tipos, sin límite de extensiones.
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
 Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se desplegará una ventana en la que podrás editar cada una de las propiedades.
 
 ## Editar un archivo
+
+<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
 
 En la interfaz de edición de las propiedades del archivo, podrás ver ciertos campos para usarse y cambiarse dentro de la plataforma, como son:
 
@@ -87,17 +110,24 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 **Etiquetas**: Muestra las etiquetas del producto, las cuales también se pueden cambiar desde la interfaz del administrador.
 
-Para guardar los datos, es necesario hacer click en el botón Actualizar Información que se encuentra en la parte inferior de la ventana. Si se cambian los datos sin guardar la información, esta no quedará grabada en la plataforma.
+<hr style="margin: 40px 0;" />
+
+Para guardar los datos, es necesario hacer click en el botón **Actualizar Información** que se encuentra en la parte inferior de la ventana. Si se cambian los datos sin guardar la información, esta no quedará grabada en la plataforma.
 
 Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón Cerrar, ubicado en la parte inferior de la pantalla.
 
 ## Subir un archivo
 
+<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
 
-Para subir el archivo, se debe hacer click en el botón + Nuevo, ubicado en la parte superior de la pantalla.
+Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
 
-Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras: Drag & Drop o la manera tradicional a través del navegador.
+Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras:
+
+- **Drag & Drop**: arrastrar desde el navegador de archivos de tu computador hacia la ventana)
+- **Manera tradicional**: a través del navegador, pinchando y seleccionado los archivos
 
 ::: warning
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
@@ -111,13 +141,19 @@ Como una manera de resguardar la seguridad de los archivos que se suben, Modyo e
 - CSV: 2 MB
 - Otros: 100 MB
 
-Si quieres resubir el archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana Actualizar Información. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
+Si quieres resubir el archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
+
+
+<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
+
 
 ## Editar una imagen
 
-Para facilitar el manejo de imagenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños online.
+<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Uno de los cambios que se puede hacer es editar el tamaño del archivo. Para ello, haz click en el ícono del lapiz que se encuentra en la ventana de Actualizar Información. 
+Para facilitar el manejo de imagenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños online.
+
+Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lapiz** que se encuentra en la ventana de Actualizar Información.
 
 Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
@@ -132,8 +168,8 @@ A un costado, podrás observar el tamaño original de la imagen y el tamaño en 
 ::: tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
-- Zoom: Usa el scroll del mouse para acercar la imagen.
-- Mover fondo: Haz doble click fuera de la zona de recorte y arrastra el fondo.
+- **Zoom:** Usa el scroll del mouse para acercar la imagen.
+- **Mover fondo:** Haz doble click fuera de la zona de recorte y arrastra el fondo.
 :::
 
 Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón Restaurar Original, lo cual provocará que la imagen vuelva a su tamaño.
@@ -142,10 +178,10 @@ Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actu
 
 Modyo permite dos tipos de búsqueda que pueden ser muy útiles dependiendo del usuario que esté trabajando o usando la plataforma.
 
-La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo click en la barra de búsqueda que se encuentra en la interfaz del gestor. 
+La primera de ellas se hace para buscar archivos y puede ser utilizada a través del Gestor de Archivos, haciendo click en la barra de búsqueda que se encuentra en la interfaz del gestor.
 
 
-## Borrar un archivo   
+## Borrar un archivo
 
 Para borrar un archivo en específico, se debe ir a la ventana de Actualizar Información y hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
 
