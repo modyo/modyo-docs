@@ -4,13 +4,15 @@ search: true
 
 # Tipos de contenido
 
-Los tipos dentro de Modyo, son un objeto fundamental a la hora de crear contenido, ya que en palabras simples, son plantillas que nos permitirán elaborar contenidos para insertar dentro del servicio que estemos otorgando.
+![Types](/assets/img/content/types/types.jpg)
+
+Los Tipos dentro de Modyo, una herramienta que nos permitirá estructurar plantillas de contenido para insertar dentro del servicio que estemos otorgando con más de 15 tipos de campos.
 
 Con los Tipos, podrás evitar tener que estar muchas veces escrbiendo contenido de igual formato, sino que podrás dar un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
 
 ## Sobre la Interfaz
 
-A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer click ahí, te permitirá crear un Tipo. 
+A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer click ahí, te permitirá crear un Tipo.
 
 Más abajo, podrás encontrar la barra de búsqueda de Tipos, que te permitirá encontrar cualquier palabra que busques que se encuentre dentro del campo Nombre.
 
@@ -29,9 +31,11 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 ## Crear un Tipo
 
+<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
+
 Para crear un Tipo, es necesario hacer click en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
 
-::: tip 
+::: tip
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
