@@ -39,6 +39,14 @@ Para crear un Tipo, es necesario hacer click en el botón verde superior de la p
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
+En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
+
+- Añadir campos
+- Configuración del campo
+- Configuración
+
+Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el formato que nos sea requerido.
+
 ## Campos
 
 ::: tip

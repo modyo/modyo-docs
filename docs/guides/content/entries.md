@@ -40,11 +40,31 @@ Para crear una entrada, se debe hacer click en el botón de la parte superior de
 
 Al hacer click en ella, podremos ver el formulario que podremos rellenar con el contenido que queremos enviar, que estará personalizado según lo que armamos a través de Tipos.
 
-Arriba, podrás ver el Tipo de contenido que estás creando, junto con el nombre del idioma en el que se está creando.
+Arriba, podrás ver el Tipo que estás creando. Además, si tu espacio está configurado para escribirse en más de un idioma, aparecerá la lista en los lenguajes que se está escribiendo, empezando por el que está por defecto.
+
 
 ::: tip
-Para crear o editar una entrada en el mismo idioma, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
+Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a un nuevo post en blanco, donde solo tendrás que pulsar el botón "Copiar desde idioma" para traer la información a tu entrada y poder traducirla de manera más fácil.
 :::
+
+### Publicar una Entrada
+
+Para publicar una entrada, Modyo te asegura un proceso de chequeo paulatino con tal de certificar que el contenido que vayas a ofrecer se encuentre correcto.
+
+Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón Guardar, que grabará todo tu contenido. 
+
+Si haces click en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, podrás publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
+
+Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde podrás asignar a revisores en específico quienes podrán publicar. 
+
+Ver [Revisión en Equipo](/guides/platform/team-review.html)
+
+
+### Despublicar una entrada
+
+
+
+
 
 ::: danger
 Missing description
@@ -65,6 +85,8 @@ Privacidad/Targets
 ### Categorías
 
 ### Targets
+
+
 
 ## Contenido Privado
 
