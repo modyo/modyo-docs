@@ -30,7 +30,7 @@ Puedes seleccionar cualquiera de estos conteos de valores para comparar:
 
 - **Actividad**: Reúne todas las acciones a continuación.
 - **Usuarios activos**: Contempla a todos los usuarios que han realizado dos o más acciones en el periodo de tiempo especificado.
-- **Correo entregado**: Contempla el conteo de todos los correos de campañas que fueron exitósamente enviados.
+- **Correo entregado**: Contempla el conteo de todos los correos de campañas que fueron exitosamente enviados.
 - **Correo abierto**: Corresponde al conteo de todos los correos de campañas abiertos por los usuarios.
 - **Correo notificado como spam**: Corresponde al conteo de todos los correos de campañas que fueron notificados como spam por los usuarios.
 - **Respuesta a formularios**: Corresponde al conteo de todas las respuestas a formularios de Modyo.

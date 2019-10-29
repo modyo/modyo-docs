@@ -10,7 +10,7 @@ Además, podemos saber si están verificados como tales o solamente tenemos sus 
 
 Para agregar un nuevo contacto, se debe hacer clic en el boton "Nuevo" en la parte superior de la pantalla.
 
-Esta función te permite añadir de dos formas: haciendolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
+Esta función te permite añadir de dos formas: haciéndolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
 Al hacer clic en cada uno de los usuarios, podrás ver una ficha con sus datos que incluyen:
 
