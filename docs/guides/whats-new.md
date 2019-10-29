@@ -12,19 +12,19 @@ Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de camb
 
 ### Nueva aplicación Modyo Content
 
-Permite su uso tanto en modalidad _headless_ por medio de sus [API y SDKs](/guides/content/public-api-reference.html), como desacoplada dentro de las plantillas [Liquid](/guides/channels/liquid-markup.html).
+Permite su uso tanto en modalidad _headless_ por medio de sus [API y SDKs](/guides/content/public-api-reference.html), como desacoplada dentro de plantillas desarrolladas en [Liquid](/guides/channels/liquid-markup.html).
 
 ### Asset Manager
 
-Permite la gestión de activos digitales, incluyendo la gestión de _tags_ y el redimensionado de imágenes.
+Permite la gestión de activos digitales, incluyendo diversas funcionalidades como la gestión de _tags_, el redimensionado de imágenes, entre otros.
 
 ### Team Review
 
-Evolución de la antigua funcionalidad de _workflows_ permite mejorar la experiencia de revisión y aprobación de cambios.
+Evolución de la antigua funcionalidad de _workflows_, la que permite mejorar la experiencia de colaboración con herramientas de revisión y aprobación de cambios.
 
 ### Nuevos y simplificados roles y permisos
 
-Gestión de roles y permisos simplificada para sitios y espacios de contenido.
+La gestión de roles y permisos para sitios y espacios de contenido ha sido simplificada, permitiéndole agilizar sus desarrollos.
 
 ### Separación de usuarios y administradores
 
