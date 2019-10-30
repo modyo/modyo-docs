@@ -105,10 +105,19 @@ Si se quiere eliminar una categoría, simplemente basta con hacer click en el í
 Si se borra la Categoría Padre, se borrarán también todas las subcategorías asignadas a esta. Sin embargo, todas las Entradas que estén ligadas a esta Categoría, no tendrán ninguna asignación, por lo que es importante volver a asignarlas una por una.
 :::
 
+### Slug
+
+Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más facil el trabajo en la URL.
+
+Cuando crees una entrada, la plataforma te asignará un slug de manera aleatoria. Sin embargo, para cambiarla solo tienes que cambiar el campo en la ventana de propiedades.
 
 ### Targets
 
+El contenido targetizado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
 
+Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de Contenido Targetizado y después seleccionar a qué target nos dirigimos.
+
+Para crear un target en específico, revisa la sección Targets.
 
 
 ## Contenido Privado
