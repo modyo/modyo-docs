@@ -79,20 +79,35 @@ Las propiedades que se pueden customizar a través de la interfaz de Entrada son
 - Tags
 - Contenido privado
 
-
-
-
-
-::: danger
-Missing description
-Catregorías
-Tags
-Privacidad/Targets
-:::
-
 ### Categorías
 
+Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que nos permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
+
+Es importante que las Categorías siempre tengan una característica uniforme que permita agrupar a los elementos de manera directa, en forma de verse como vista de árbol o directorios.
+
+Para ver las Categorías, es necesario que hagamos click en la sección Categorías, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podremos ver todas las categorías que se encuentran ya hechas. 
+
+#### Crear una Categoría
+
+Si queremos crear una, solo debemos hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podremos ver una ventana que nos pedirá ingresar el nombre de la Categoría, la Ruta y si esta pertenece a una Categoría Padre)
+
+::: tip
+Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminadamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
+
+Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
+:::
+
+::: warning
+Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borrarán sino que no estarán a asignadas a ninguna otra. Para volver a asignarlas, es necesario entrar nuevamente a las Propiedades de la entrada.
+:::
+
+::: danger
+Si se borra la Categoría Padre, se borrarán también todas las subcategorías asignadas a esta. Sin embargo, todas las Entradas que estén ligadas a esta Categoría, no tendrán ninguna asignación, por lo que es importante volver a asignarlas una por una.
+:::
+
+
 ### Targets
+
 
 
 
