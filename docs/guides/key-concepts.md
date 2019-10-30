@@ -23,7 +23,7 @@ Los clientes pueden interactuar en distintos sitios y en diferentes contextos, m
 
 ### Tanto CMS como Headless CMS
 
-Modyo Content te permite crear y publicar contenido. Puedes crear _custom fields_ para diseñar estructuras personalizadas de contenido fácilmente. Modyo Channels te permite trabajar con plantillas de HTML y componentes reutilizables de _frontend_ llamados Widgets.
+Modyo Content te permite crear y publicar contenido. Puedes añadir campos para definir estructuras personalizadas de contenido fácilmente. Modyo Channels te permite trabajar con plantillas de HTML y componentes reutilizables de _frontend_ llamados Widgets.
 
 Todo el contenido estructurado que es publicado genera un archivo JSON equivalente que puede alimentar a cualquier otro sitio o aplicación. Estos son servidos a través de nuestra API.
 
