@@ -62,18 +62,26 @@ Ver [Revisión en Equipo](/guides/platform/team-review.html)
 
 ### Despublicar una entrada
 
+Para despublicar una entrada, debes entrar al recurso y hacer click en el boton Despublicar que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
 
-
-
-
-::: danger
-Missing description
-Publicar una entry (ahora/publicar en)
-Despublicar una entry (ahora/despublicar en)
-Enviar a revisión - Link a team review
-:::
+Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
 ## Metainformación/Propiedades
+
+La metainformación es fundamental para la optimización de la indexación en buscadores, por lo que rellenar cuidadosamente de ella nos puede asegurar un buen desempeño en cuanto al flujo de visitantes externos, si así lo deseamos.
+
+Por lo mismo, la mayoría de la metainformación se puede manejar a través de la sección de Propiedades de cada entrada.
+
+Las propiedades que se pueden customizar a través de la interfaz de Entrada son:
+
+- Categorías
+- Slug
+- Tags
+- Contenido privado
+
+
+
+
 
 ::: danger
 Missing description
@@ -121,10 +129,3 @@ Para establecer un token, es necesario hacerlo a través del parámetro de query
 
 ----
 
-Una API es una herramienta que pone a disposición información a programas en un formato más conveniente. Por ejemplo, puedes ir a un sitio en un navegador y ver la información en un formato ordenado y atractivo.
-
-Esa misma API, presenta su información de una manera que es conveniente para programas. Entrega la información directamente.
-
-Más abajo hay tres ejemplos de como puedes utilizar APIs para traer información para un custom widget y así utilizarlo como quieras.
-
-Todos los ejemplos deben ser incluidos en la pestaña de JavaScript de tu custom widget.
