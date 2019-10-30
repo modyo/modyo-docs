@@ -22,7 +22,7 @@ En la barra superior, encontrarás distintas acciones e información:
 
 **Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Este icono te permitirá abrir una pestaña nueva con el modo vista previa para poder visualizar los cambios que se han hecho en la página sin necesidad de publicarla.
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: AL hacer click en el icono de diferencia, se levantará un modal que te permitirá seleccionar 2 versiones a comparar y te indicará los cambios entre esas dos versiones.
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en el icono de diferencia, se levantará un modal que te permitirá seleccionar dos versiones a comparar y te indicará los cambios entre esas dos versiones.
 
 :::tip
 Si tu página está en estado "borrador" no aparecerá el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender mas sobre las diferencias y respaldos, revisa la sección de [versionado](/guides/platform/team-review.html#versionado)
@@ -36,10 +36,10 @@ Si tu página está en estado "borrador" no aparecerá el icono de diferencias, 
 - Duplicar <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Esta acción te permite copiar la versión editable de la página en la que estás. La versión copiada quedara en esado borrador.
 
 :::warning
-Una vez temrinada la acción de copiado, serás dirigido a la nueva página, por lo que recuerda guardar todos los cambios antes deusar esta acción, de lo contrario podrías perder información valiosa.
+Una vez terminada la acción de copiado, serás dirigido a la nueva página, por lo que recuerda guardar todos los cambios antes de usar esta acción, de lo contrario podrías perder información valiosa.
 :::
 
-**Acción principal**: Es el botó verde en la parte superior derecha. Este botón puede tomar tener distintas formas:
+**Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
 - Guardar: Te permite guardar los cambios que has hecho en la página.
 - Enviar a revisión: Si está habilitada la revisión en equipo, entonces si no hay cambios que guardar, esta acción te permitirá enviar a revisión la página y asignar revisores.
@@ -47,7 +47,13 @@ Una vez temrinada la acción de copiado, serás dirigido a la nueva página, por
 
 :::tip
 Si una página tiene un padre, solo la podrás publicar si es que su padre está publicado.
+:::
+
+:::tip
 Si una pagina tiene hijos, solo podrás despublicarla si todos sus hijos están despublicados.
+:::
+
+:::tip
 Si una página tiene hijos, solo podrás archivarla si todos sus hijos están archivados.
 :::
 
@@ -69,7 +75,7 @@ En la sección lateral derecha encontrarás tres pestañas:
 
 ### Privacidad
 
-Si habilitas la prvacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la provacidad, también podrás asociar [Targets](/guides/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio. 
+Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también podrás asociar [Targets](/guides/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio. 
 
 ### Widgets
 
