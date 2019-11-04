@@ -99,7 +99,7 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 ### Respaldos
 
-Los respaldos son los elementos que se han publicado anteriormente. Cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
+Los respaldos son las versiones de los elementos que se han guardado anteriormente. Es decir, cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
 
 Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada elemento, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
@@ -131,21 +131,23 @@ Dado que esta es una acción peligrosa, solo los administradores de Sitios o Esp
 
 ## Locks
 
-Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener fallas de que otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener problemas que pueden ocurrir cuando otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
 
 ### ¿Qué usa Locks?
 
-Locks se usa mayoritariamente en Contenidos y en Channels. También puede ser usado en la edición de código de Sitios y Widgets.
+Locks se usa mayoritariamente en Contenidos y en Channels, pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y Customers.
 
 ### ¿Cómo usar Locks?
 
-Locks es una función reservada solo para quienes tienen permiso de Administración. Otro tipo de usuario no podrá tomar control del recurso hasta que el usuario creador grabe y lo desocupe.
+Locks se usa de distintas maneras dentro de la plataforma. En Contenidos y Channels, múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo podrán estar viendo lo que se encuentre grabado anteriormente en la plataforma. Si intentan hacer un cambio, aparecerá un mensaje que les indica que el elemento ya tiene cambios y que lo que están viendo está obsoleto. 
 
-Al intentar entrar al recurso en uso, cualquier usuario que no sea Administrador, recibirá un mensaje que le impedirá acceder al contenido.
+En otras secciones como Customers y Configuraciones, Locks no permitirá la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
+
+En este caso, la vista del recurso se encontrará bloqueada y solo un Administrador podrá tomar el control, inhabilitando al usuario que se encuentre trabajando en él.
 
 ### Tomar el control de un recurso
 
-Si un Administrador quiere tomar el control del contenido, deberá hacer clic en el archivo en uso y en la pantalla siguiente, hacer clic en el botón de Tomar Control.
+Si un Administrador quiere tomar el control del contenido, deberá hacer click en el archivo en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
 
 Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo más cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 

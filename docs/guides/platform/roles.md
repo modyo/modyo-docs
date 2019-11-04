@@ -55,7 +55,7 @@ Los roles predeterminados que existen son, según contexto:
 - Space editor: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
 - Space writer: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback ni editar la configuración).
 
-El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma, los sitios y las cuentas.
+El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
 
 ### Roles personalizados
 
