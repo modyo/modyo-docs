@@ -59,7 +59,7 @@ El usuario más importante tendrá el rol de Default Admin o Administrador, quie
 
 ### Roles personalizados
 
-Para crear un rol en específico, solo debes hacer clic en el botón superior.
+Para crear un rol en específico, solo debes hacer click en el botón superior.
 
 Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar.
 
