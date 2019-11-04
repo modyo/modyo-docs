@@ -6,9 +6,9 @@ search: true
 
 ![Types](/assets/img/content/types/types.jpg)
 
-Los Tipos dentro de Modyo, una herramienta que nos permitirá estructurar plantillas de contenido para insertar dentro del servicio que estemos otorgando con más de 15 tipos de campos.
+Los Tipos dentro de Modyo, son herramientas que nos permitirán estructurar plantillas de contenido para insertar dentro del servicio que estemos otorgando, con más de 15 tipos de campos.
 
-Con los Tipos, podrás evitar tener que estar muchas veces escrbiendo contenido de igual formato, sino que podrás dar un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
+Con los Tipos, podrás evitar tener que estar muchas veces elaborando contenido de igual formato, estableciendo un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
 
 ## Sobre la Interfaz
 
