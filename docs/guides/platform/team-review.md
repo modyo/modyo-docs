@@ -10,11 +10,11 @@ La revisión en equipo (o Team Review) es una herramienta que te permite control
 
 Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento. 
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón "Publicar", cambiará al botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento. 
 
 Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
 
-Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "aprobado", estado en el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
+Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "Aprobado", el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
 
 ### Configuración
 
@@ -51,7 +51,7 @@ Existen tres niveles de permisos en los contextos en que se puede habilitar la r
 - Medio (Revisor en sitios y Editor en espacio)
 - Bajo (Developer en sitios y Escritor en espacios)
 
-Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión.
+Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión y comentar los elementos que se encuentran en este estado.
 
 Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
 
@@ -123,7 +123,7 @@ En este caso, el respaldo se copiará a la versión editable, por lo que perdere
 
 #### Rollback
 
-En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores puo haber tenido.
+En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
 
 :::danger
 Dado que esta es una acción peligrosa, solo los administradores de Sitios o Espacios tienen el permiso para poder ejecutar esta acción.
