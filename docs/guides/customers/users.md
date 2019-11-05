@@ -4,11 +4,31 @@ search: true
 
 # Usuarios
 
-Acá podrás ver la lista de usuarios externos y clientes que están actualmente en la plataforma, pudiendo ser filtrados como Activos e Inactivos.
+Modyo te permite hacer un seguimiento detallado de lo que está pasando dentro de la plataforma, a través de la sección Usuarios. Acá podrás ver la lista de usuarios internos y externos que están actualmente dentro de la base de datos de la plataforma.
 
-Además, podemos saber si están verificados como tales o solamente tenemos sus datos sin confirmación.
+En este caso, vemos no solo a los integrantes de nuestro grupo de trabajo. También podemos ver la actividad que realizan nuestros usuarios externos que interactúan dentro de la plataforma, como pueden ser los clientes.
 
-Para agregar un nuevo contacto, se debe hacer clic en el boton "Nuevo" en la parte superior de la pantalla.
+## Sobre la interfaz
+
+A primera vista, podremos ver una tabla con los usuarios internos y externos que se encuentren registrados dentro de la plataforma. En este caso, solo podremos ver los primeros 30 registros para después pasar a las siguientes páginas. 
+
+El administrador te permite ordenar los usuarios por cuatro columnas:
+- Nombre: Nombre del usuario
+- Fecha de registro: Fecha de inscripción en la base de datos de usuarios
+- Ultimo ingreso: Fecha de último ingreso a la plataforma
+- Sesiones: Cantidad de logins hechos dentro de la plataforma
+
+En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera.
+
+- Estado: Ver los usuarios activos e inactivos.
+- Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
+- Targets: Usuarios que se encuentran dentro de un determinado [Target](/guides/customers/users.html)
+- Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
+
+
+### Añadir un usuario
+
+Para agregar un nuevo contacto de usuario, se debe hacer click en el boton "+ Nuevo" en la parte superior de la pantalla.
 
 Esta función te permite añadir de dos formas: haciéndolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
