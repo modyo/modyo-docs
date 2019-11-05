@@ -131,19 +131,19 @@ Dado que esta es una acción peligrosa, solo los administradores de Sitios o Esp
 
 ## Locks
 
-Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener problemas que pueden ocurrir cuando otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
 
 ### ¿Qué usa Locks?
 
-Locks se usa mayoritariamente en Contenidos y en Channels, pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y Customers.
+Locks se usan mayoritariamente en Contenidos y en Channels, pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y Customers.
 
 ### ¿Cómo usar Locks?
 
-Locks se usa de distintas maneras dentro de la plataforma. En Contenidos y Channels, múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo podrán estar viendo lo que se encuentre grabado anteriormente en la plataforma. Si intentan hacer un cambio, aparecerá un mensaje que les indica que el elemento ya tiene cambios y que lo que están viendo está obsoleto. 
+Locks se implementa de distintas maneras dentro de la plataforma. En Contenidos y Channels, múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
 
-En otras secciones como Customers y Configuraciones, Locks no permitirá la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
+En otras secciones como Customers y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
 
-En este caso, la vista del recurso se encontrará bloqueada y solo un Administrador podrá tomar el control, inhabilitando al usuario que se encuentre trabajando en él.
+En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentraba trabajando en él.
 
 ### Tomar el control de un recurso
 
@@ -151,4 +151,4 @@ Si un Administrador quiere tomar el control del contenido, deberá hacer click e
 
 Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo más cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 
-El Administrador solo tendrá dos horas para hacer cambios sin guardar, tras tomar el control. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+Tras tomar el control, el Administrador solo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
