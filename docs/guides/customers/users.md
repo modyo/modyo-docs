@@ -4,15 +4,39 @@ search: true
 
 # Usuarios
 
-Acá podrás ver la lista de usuarios externos y clientes que están actualmente en la plataforma, pudiendo ser filtrados como Activos e Inactivos.
+Modyo te permite hacer un seguimiento detallado de lo que está pasando dentro de la plataforma, a través de la sección Usuarios. Acá podrás ver la lista de usuarios internos y externos que están actualmente dentro de la base de datos de la plataforma.
 
-Además, podemos saber si están verificados como tales o solamente tenemos sus datos sin confirmación.
+En este caso, vemos no solo a los integrantes de nuestro grupo de trabajo. También podemos ver la actividad que realizan nuestros usuarios externos que interactúan dentro de la plataforma, como pueden ser los clientes.
 
-Para agregar un nuevo contacto, se debe hacer clic en el boton "Nuevo" en la parte superior de la pantalla.
+## Sobre la interfaz
+
+A primera vista, podremos ver una tabla con los usuarios internos y externos que se encuentren registrados dentro de la plataforma. En este caso, solo podremos ver los primeros 30 registros para después pasar a las siguientes páginas. 
+
+El administrador te permite ordenar los usuarios por cuatro columnas:
+- Nombre: Nombre del usuario
+- Fecha de registro: Fecha de inscripción en la base de datos de usuarios
+- Ultimo ingreso: Fecha de último ingreso a la plataforma
+- Sesiones: Cantidad de logins hechos dentro de la plataforma
+
+En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera.
+
+- Estado: Ver los usuarios activos e inactivos.
+- Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
+- Targets: Usuarios que se encuentran dentro de un determinado [Target](/guides/customers/targets.html)
+- Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
+
+:::tip
+Si necesitas hacer un Target con cierto tipo de características de algún campo personalizado, puedes hacerlo a través de Filtros Avanzados. Al seleccionar los filtros, aparecerá automáticamente el número de coincidencias. 
+En la parte inferior, este filtro combinado lo puedes separar para un Target haciendo un click en el botón "Guardar como Target". Deberás darle un título y una descripción y posteriormente lo podrás encontrar en la sección [Targets](/guides/customers/targets.html)
+:::
+
+### Añadir un usuario
+
+Para agregar un nuevo contacto de usuario, se debe hacer click en el boton "+ Nuevo" en la parte superior de la pantalla.
 
 Esta función te permite añadir de dos formas: haciéndolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
-Al hacer clic en cada uno de los usuarios, podrás ver una ficha con sus datos que incluyen:
+Al hacer click en cada uno de los usuarios, podrás ver una ficha con sus datos que incluyen:
 
 - Actividad (dentro del sitio)
 - Formularios (que han sido enviados por el usuario)
@@ -21,17 +45,20 @@ Al hacer clic en cada uno de los usuarios, podrás ver una ficha con sus datos q
 - Notas (por si se quiere tomar en cuenta algo especial de él)
 - Edit (para cambiar datos personales del cliente)
 
-## Configuración de usuarios
+
+----
+
+## Configuración de Customers
 
 En esta sección podemos configurar todo lo que tiene que ver con la apariencia de la plataforma hacia nuestros clientes, sus funciones y las acciones en que ellos pueden interactuar dentro de la web.
 
 Por lo mismo, es escencial que esto sea verificado constantemente, para evitar problemas con los ingresos o transacciones que se realicen en línea.
 
-## General
+### General
 
 Aquí podremos personalizar la visión estética de la plataforma que tiene el usuario, empezando por los colores predeterminados. Además, se puede incluir una plantilla CSS que le dé un estilo único adaptado a la empresa o campaña que esté interactuando.
 
-## Correos
+### Correos
 
 Modyo permite configurar la apariencia de los correos que se enviarán a los usuarios. Para ello, podemos ingresar a esta función para detallar ciertos requisitos que se necesitan para enviar un mail, como la dirección por defecto.
 
@@ -46,7 +73,7 @@ Otros correos que se pueden habilitar y modificar desde la plataforma son:
 - Esperando aprobación
 - Footer personalizado
 
-## Integraciones
+### Integraciones
 
 Para simplificar el ingreso a la plataforma, es posible configurar su entrada a través de las APIs de ciertos servicios que permiten entradas universales.
 
@@ -61,7 +88,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 
 Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos.
 
-## Registros
+### Registros
 
 El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debemos tener en cuenta las credenciales y la habilitación de redirección, en el inicio de sesión.
 
@@ -76,7 +103,7 @@ Recuerda que el registro directo de usuarios podría permitir que robots malicio
 
 También es posible configurar el avatar por defecto y las condiciones del formulario de registro, para que este sea lo más completo posible.
 
-## Campos personalizados
+### Campos personalizados
 
 Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
 
