@@ -4,7 +4,7 @@ search: true
 
 # Templates
 
-Uno de los aspectos más importantes al crear nuestro sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar los templates base para usar en tus páginas y cambiar su estructura según lo requieras.
+Uno de los aspectos más importantes al crear nuestro sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar los templates base, junto con el JavaScript y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
 
 Una vez seleccionado el tema que se usará dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
@@ -31,7 +31,7 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 
 **Más acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
-- **Temas**: Irás directo al indice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta.
+- **Temas**: Irás directo al indice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/guides/channels/templates.html#temas)
 - **Restaurar todo**: Restaurarás todos los templates al valor original del tema.
 
 **Acción principal**
@@ -86,6 +86,26 @@ Las sub-versiones son por cada template, por lo que para algunos verás que hay 
 
 :::tip
 Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. Puedes aprender mas sobre el [versionado aquí](/guides/platform/team-review.html#versionado)
+:::
+
+Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barr superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
+
+### Temas
+
+En esta vista podrás ver cual es el tema que tienes instalado, y luego el istado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón "Instalar" de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del tempalte builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
+
+En la parte superior encontrarás distintas acciones:
+- **Personalizar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te lleva a la edición (template builder) del tema actualmente instalado.
+- **Copiar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Crea una copia del tema instalado. Te permitirá elegir un nuevo nombre para el tema copia del instalado.
+- **Reestablecer** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al igual que la acción reestablecer del template builder, esta acción restaura todos los templates editables a la versión original del tema.
+- **Cargar templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: En algunos casos, luego de migraciones complejas, hay algunos templates no modificado que se pueden perder y podrías no verlos en el listado de templates en el template builder. Esta acción recupera esos templates desde el tema original y te permite volver a ocuparlos.
+
+:::tip
+La acción cargar templates no modifica ni toca los templates editables que ya están visibles en el template builder, solo restaura aquellos que no son visibles.
+:::
+
+:::tip
+Cuando creas o copias un tema en un sitio, ese tema queda disponible para todos los otros sitios de la cuenta, de tal forma que puedes crear un tema base, y partir desde esa base cuando necesites crear nuevos sitios de forma rápida.
 :::
 
 ## Vistas para contenido
@@ -194,13 +214,3 @@ Si es que lo requieres, puedes personalizar aún más este snippet, definiendo q
 ```
 
 En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, definimos un tipo de documento diferente para cada uno.
-
-
-::: danger
-Missing description
-Temas
-Restaurar temas
-Recargar templates que faltan
-Javascript global
-CSS global
-:::
