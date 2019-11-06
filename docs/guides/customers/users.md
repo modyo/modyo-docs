@@ -36,14 +36,74 @@ Para agregar un nuevo contacto de usuario, se debe hacer click en el boton "+ Nu
 
 Esta función te permite añadir de dos formas: haciéndolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
-Al hacer click en cada uno de los usuarios, podrás ver una ficha con sus datos que incluyen:
+Para añadir un usuario, la plataforma te pedirá completar los siguientes campos:
+
+- Nombre: Nombre legal del usuario. **Requerido**
+- Apellido: Apellido del usuario.
+- Apellido materno: Apellido materno del usuario.
+- Nombre del usuario: Nombre dentro de la plataforma **Requerido**
+- Email: Correo electrónico del usuario **Requerido**
+- Contraseña: Password para que el usuario ingrese a la plataforma. El password no puede tener menos de 8 caracteres. **Requerido**
+- Confirmación de la contraseña: Repetición de la contraseña dada por el administrador.
+- Tags: Etiquetas que sirvan para identificar al usuario.
+
+:::tip
+Para enviar la contraseña al mail del usuario, solo es necesario asignar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo a la casilla con la contraseña al usuario, que podrá cambiar al ingresar a la plataforma.
+:::
+
+Además, podrás completar una serie de campos personalizados que podrián ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la sección [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
+
+### Ficha de Usuarios
+
+Al hacer click en cada uno de los usuarios, podrás ver en el sidebar una minificha con datos que incluyen:
+
+- Avatar del usuario (Si es que se ha subido)
+- Estado dentro de la plataforma: Si es que se encuentra activo o inactivo.
+- Fecha de registro en la plataforma
+- Último ingreso a la plataforma
+- Cantidad de sesiones hechas en la plataforma
+- Estado de verificación de usuario
+- Targets en los que se encuentra incluído
+
+Además, podrás ver en una serie de botones a un costado que te redirigen a:
 
 - Actividad (dentro del sitio)
 - Formularios (que han sido enviados por el usuario)
 - Órdenes (compras)
 - Credenciales
 - Notas (por si se quiere tomar en cuenta algo especial de él)
-- Edit (para cambiar datos personales del cliente)
+- Editar (para cambiar datos personales del cliente)
+
+#### Actividad
+
+En esta sección podrás ver un registro de todas las acciones de un usuario en específico que se han hecho dentro de la plataforma, desde que se inició. 
+
+Este registro no implica un seguimiento a la navegación de un usuario dentro de la plataforma sino solo a las acciones que se hacen dentro de ella.
+
+Este registro no puede ser borrado ni editado por administradores.
+
+#### Formularios
+
+Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma, a lo largo de todo el tiempo que ha estado registrado dentro de ella.
+
+Cada uno de estos links te lleva a ver sus respuestas en específico. Si quieres saber más, entra a la sección [Formularios](/guides/customers/forms.html). 
+
+### Órdenes
+
+En esta sección podrás ver todas las órdenes y transacciones que ha realizado el usuario a través de la plataforma, si es que se encuentra habilitada una tienda eCommerce.
+
+Si quieres saber más sobre cómo funciona la tienda, entra a la sección [Órdenes](/guides/commerce/orders.html).
+
+### Credenciales
+
+Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado el usuario para ingresar a la plataforma. 
+
+Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía.
+
+Si quieres habilitar los ingresos a través de integraciones, revisa la sección [Integraciones](/guides/platform/integration.html).
+
+
+
 
 
 ----
