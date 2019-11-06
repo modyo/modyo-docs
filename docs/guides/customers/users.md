@@ -102,8 +102,15 @@ Si el usuario ingresa solo a través de su username y password predeterminado de
 
 Si quieres habilitar los ingresos a través de integraciones, revisa la sección [Integraciones](/guides/platform/integration.html).
 
+### Notas
 
+En esta sección se pueden agregar notas personalizadas sobre los usuarios, que pueden servir para redefinir un usuario y agregar un dato que no se encuentre dentro de los campos personalizados.
 
+### Editar
+
+Si es necesario añadir o cambiar datos del usuario, es posible hacerlos desde acá. Además, esto sirve para redefinir un usuario que se encuentre dentro de un Target y añadir información a los campos personalizados.
+
+Para más información, ir a [Campos Personalizados](/guides/customers/users.html#campos-personalizados).
 
 
 ----
