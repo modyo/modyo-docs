@@ -4,11 +4,32 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta fundamental para quienes quieran hacer campañas hacia el sitio, ya que nos permite enviar la información hacia nuestros clientes de una manera masiva, hacia nuestros targets determinados.
+Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que nos permite enviar la información hacia nuestros clientes de una manera masiva, dirigida a targets determinados.
+
+Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos canales:
+
+- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para verlo.
+- **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
 
 ## Campañas
 
-En Campañas podremos ver todos los mensajes e informaciones que hemos enviado a nuestros clientes, a través de correo electrónico o notificaciones. Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuaros, tengan presente esta herramienta.
+A primera vista, estaremos en la sección Campañas, donde podremos ver a través de un administrador todos los mensajes e informaciones que hemos enviado a nuestros clientes.
+
+En la parte superior de la pantalla, existe un botón que nos indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer click para cambiar la vista.
+
+En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
+
+- Nombre: Nombre que se le dio a la campaña. También puede contener el Target específico al que se le envió.
+- Tipo: Tipo de mensaje en que se envió la campaña.
+- Enviados: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
+- Último envío: Fecha y hora en que se envió por última vez la campaña.
+- Creado el: Fecha de creación de la campaña.
+
+A un costado de cada campaña, se encuentra un botón en el que podremos efectuar dos acciones. 
+
+
+
+Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuaros, tengan presente esta herramienta.
 
 Por esto mismo, podemos filtrar las campañas en dos modos:
 
