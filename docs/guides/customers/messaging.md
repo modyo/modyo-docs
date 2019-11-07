@@ -27,6 +27,34 @@ En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
 
 A un costado de cada campaña, se encuentra un botón en el que podremos efectuar dos acciones. 
 
+- Editar la campaña
+- Borrar la campaña
+
+:::danger
+Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
+:::
+
+### Hacer una campaña
+
+Para hacer una campaña, debemos hacer click en el botón +Nuevo, ubicado en la parte superior de la vista del Administrador.
+
+Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
+
+- Nombre: Nombre que tendrá la campaña.
+- Tipo: Formato que tendrá la campaña (Correo o Notificación).
+- Asunto: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
+- Responder a: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
+- Plantilla: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
+- Habilitar targetización: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
+
+Después de rellenar estos datos, deberás hacer click en el botón "Guardar y Continuar", ubicado en la parte superior de la pantalla.
+
+Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. 
+
+Finalmen
+
+
+
 
 
 Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuaros, tengan presente esta herramienta.
