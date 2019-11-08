@@ -57,7 +57,7 @@ PAra modificar un formulario, deberás ir a la sección "Análisis" y usar la ac
 Una vez que entres en la sección de edición de un formulario, podrás ver 2 secciones: una sección central, donde podrás reorganizar las preguntas arrastrándoles en el orden requerido, y la sección lateral derecha, que cuenta con tres pestañas:
 
 ### Añadir campo
-Estasección te permitirá añadir cuantos campos sean necesarios para completar el formulario o eliminar los que no sean necesarios:
+Esta sección te permitirá añadir cuantos campos sean necesarios para completar el formulario o eliminar los que no sean necesarios:
 
 - Texto simple: Permite al usuario ingresar un texto hasta 256 caracteres.
 - Párrafo: Permite al usuario ingresar un texto de múltiples líneas hasta 65535 caracteres.
