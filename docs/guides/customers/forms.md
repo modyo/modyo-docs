@@ -118,6 +118,7 @@ En caso de ser un formulario público, los usuarios que no tienen una sesión ac
 
 :::warning 
 Si un usuario no tiene una sesión activa, y rellena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
+:::
 
 La sección **Snippet** solo aparecerá si el formulario es público, y te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de modyo. 
 
@@ -143,7 +144,7 @@ El correo de agradecimiento te permite personalizar un correo que será enviado 
 
 A continuación, tienes un ejemplo de código que podrás usar como base para personalizar el correo de agradecimiento.
 
-```
+```html
 Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
 <table width="600px">
     <tr>
