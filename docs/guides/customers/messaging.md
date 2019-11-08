@@ -49,9 +49,11 @@ Posteriormente, mostrará un formulario que deberás rellenar con los siguientes
 
 Después de rellenar estos datos, deberás hacer click en el botón "Guardar y Continuar", ubicado en la parte superior de la pantalla.
 
-Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. 
+Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
 
-Finalmen
+
+
+
 
 
 
