@@ -4,11 +4,117 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta fundamental para quienes quieran hacer campañas hacia el sitio, ya que nos permite enviar la información hacia nuestros clientes de una manera masiva, hacia nuestros targets determinados.
+Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que nos permite enviar la información hacia nuestros clientes de una manera masiva, dirigida a targets determinados.
+
+Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos canales:
+
+- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para verlo.
+- **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
 
 ## Campañas
 
-En Campañas podremos ver todos los mensajes e informaciones que hemos enviado a nuestros clientes, a través de correo electrónico o notificaciones. Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuaros, tengan presente esta herramienta.
+A primera vista, estaremos en la sección Campañas, donde podremos ver a través de un administrador todos los mensajes e informaciones que hemos enviado a nuestros clientes.
+
+En la parte superior de la pantalla, existe un botón que nos indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer click para cambiar la vista.
+
+En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
+
+- Nombre: Nombre que se le dio a la campaña. También puede contener el Target específico al que se le envió.
+- Tipo: Tipo de mensaje en que se envió la campaña.
+- Enviados: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
+- Último envío: Fecha y hora en que se envió por última vez la campaña.
+- Creado el: Fecha de creación de la campaña.
+
+A un costado de cada campaña, se encuentra un botón en el que podremos efectuar dos acciones. 
+
+- Editar la campaña
+- Borrar la campaña
+
+:::danger
+Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
+:::
+
+### Hacer una campaña
+
+Para hacer una campaña, debemos hacer click en el botón +Nuevo, ubicado en la parte superior de la vista del Administrador.
+
+Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
+
+- Nombre: Nombre que tendrá la campaña.
+- Tipo: Formato que tendrá la campaña (Correo o Notificación).
+- Asunto: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
+- Responder a: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
+- Plantilla: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
+- Habilitar targetización: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
+
+Después de rellenar estos datos, deberás hacer click en el botón "Guardar y Continuar", ubicado en la parte superior de la pantalla.
+
+Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
+
+Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de Envío, donde podrás enviarla.
+
+### Estado de envío
+
+El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadisticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+
+A primera vista, encontrarás en la parte superior de la pantalla el botón de Vista Previa, que te permite ver el correo que enviarás.
+
+Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
+
+- Editor de Mensajes: Te permite editar el mensaje antes de enviarlo.
+- Enviar prueba: Envía un correo de prueba con la campaña a una dirección determinada.
+- Editor: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
+- Borrar: Borra toda la campaña.
+
+En la vista superior, podrás encontrar las estadísticas de la campaña. 
+
+::: warning
+Si no has envíado aún la campaña, los valores aparecerán en cero.
+:::
+
+Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
+
+- Alcance: Personas a las que les llega la campaña.
+- Envíos: Nº de veces que se ha enviado la campaña
+- Envíados: Nº total de correos enviados.
+- Abiertos: Nº total de correos abiertos. 
+- Abiertos únicos: Nº total de usuarios los cuales abrieron alguna vez la campaña.
+- Clicks: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
+- Clicks únicos: Nº de usuarios que han hecho click alguna vez en la campaña.
+- Spam: Nº de usuarios a los que su corrreo llegó a la casilla de Spam.
+
+En cambio, si enviaste la campaña por Notificiación, podrás encontrar estas cifras:
+
+- Alcance: Personas a las que les llegó la campaña.
+- Envíos: Nº de veces que se envió la campaña.
+- Enviados: Nº de notificaciones enviadas.
+- Abiertos: Nº de notificaciones abiertas.
+
+
+Más abajo podrás ver los [Targets](/guides/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
+
+Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
+
+
+- Fecha: Día y hora en que se hizo el envío.
+- Targets: Targets a los cuales se hizo el envío en específico.
+- Alcance: Nº de personas que recibieron el envío.
+- Enviados: Nº de correos/notificaciones enviadas.
+- Estado: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
+
+Después, podrás encontrar un botón que te permitirá borras el envío del registro.
+
+::: danger
+Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
+Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
+:::
+
+
+
+
+
+
+Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuarios, tengan presente esta herramienta.
 
 Por esto mismo, podemos filtrar las campañas en dos modos:
 
