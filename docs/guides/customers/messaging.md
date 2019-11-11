@@ -66,7 +66,48 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 - Editor: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
 - Borrar: Borra toda la campaña.
 
+En la vista superior, podrás encontrar las estadísticas de la campaña. 
 
+::: warning
+Si no has envíado aún la campaña, los valores aparecerán en cero.
+:::
+
+Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
+
+- Alcance: Personas a las que les llega la campaña.
+- Envíos: Nº de veces que se ha enviado la campaña
+- Envíados: Nº total de correos enviados.
+- Abiertos: Nº total de correos abiertos. 
+- Abiertos únicos: Nº total de usuarios los cuales abrieron alguna vez la campaña.
+- Clicks: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
+- Clicks únicos: Nº de usuarios que han hecho click alguna vez en la campaña.
+- Spam: Nº de usuarios a los que su corrreo llegó a la casilla de Spam.
+
+En cambio, si enviaste la campaña por Notificiación, podrás encontrar estas cifras:
+
+- Alcance: Personas a las que les llegó la campaña.
+- Envíos: Nº de veces que se envió la campaña.
+- Enviados: Nº de notificaciones enviadas.
+- Abiertos: Nº de notificaciones abiertas.
+
+
+Más abajo podrás ver los [Targets](/guides/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
+
+Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
+
+
+- Fecha: Día y hora en que se hizo el envío.
+- Targets: Targets a los cuales se hizo el envío en específico.
+- Alcance: Nº de personas que recibieron el envío.
+- Enviados: Nº de correos/notificaciones enviadas.
+- Estado: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
+
+Después, podrás encontrar un botón que te permitirá borras el envío del registro.
+
+::: danger
+Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
+Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
+:::
 
 
 
