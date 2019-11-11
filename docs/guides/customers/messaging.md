@@ -51,6 +51,20 @@ Después de rellenar estos datos, deberás hacer click en el botón "Guardar y C
 
 Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
 
+Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de Envío, donde podrás enviarla.
+
+### Estado de envío
+
+El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadisticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+
+A primera vista, encontrarás en la parte superior de la pantalla el botón de Vista Previa, que te permite ver el correo que enviarás.
+
+Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
+
+- Editor de Mensajes: Te permite editar el mensaje antes de enviarlo.
+- Enviar prueba: Envía un correo de prueba con la campaña a una dirección determinada.
+- Editor: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
+- Borrar: Borra toda la campaña.
 
 
 
@@ -59,7 +73,7 @@ Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual 
 
 
 
-Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuaros, tengan presente esta herramienta.
+Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuarios, tengan presente esta herramienta.
 
 Por esto mismo, podemos filtrar las campañas en dos modos:
 
