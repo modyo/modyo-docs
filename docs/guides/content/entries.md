@@ -40,31 +40,85 @@ Para crear una entrada, se debe hacer click en el botón de la parte superior de
 
 Al hacer click en ella, podremos ver el formulario que podremos rellenar con el contenido que queremos enviar, que estará personalizado según lo que armamos a través de Tipos.
 
-Arriba, podrás ver el Tipo de contenido que estás creando, junto con el nombre del idioma en el que se está creando.
+Arriba, podrás ver el Tipo que estás creando. Además, si tu espacio está configurado para escribirse en más de un idioma, aparecerá la lista en los lenguajes que se está escribiendo, empezando por el que está por defecto.
+
 
 ::: tip
-Para crear o editar una entrada en el mismo idioma, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
+Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a un nuevo post en blanco, donde solo tendrás que pulsar el botón "Copiar desde idioma" para traer la información a tu entrada y poder traducirla de manera más fácil.
 :::
 
-::: danger
-Missing description
-Publicar una entry (ahora/publicar en)
-Despublicar una entry (ahora/despublicar en)
-Enviar a revisión - Link a team review
-:::
+### Publicar una Entrada
+
+Para publicar una entrada, Modyo te asegura un proceso de chequeo paulatino con tal de certificar que el contenido que vayas a ofrecer se encuentre correcto.
+
+Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón Guardar, que grabará todo tu contenido. 
+
+Si haces click en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, podrás publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
+
+Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde podrás asignar a revisores en específico quienes podrán publicar. 
+
+Ver [Revisión en Equipo](/guides/platform/team-review.html)
+
+
+### Despublicar una entrada
+
+Para despublicar una entrada, debes entrar al recurso y hacer click en el boton Despublicar que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
+
+Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
 ## Metainformación/Propiedades
 
-::: danger
-Missing description
-Catregorías
-Tags
-Privacidad/Targets
-:::
+La metainformación es fundamental para la optimización de la indexación en buscadores, por lo que rellenar cuidadosamente de ella nos puede asegurar un buen desempeño en cuanto al flujo de visitantes externos, si así lo deseamos.
+
+Por lo mismo, la mayoría de la metainformación se puede manejar a través de la sección de Propiedades de cada entrada.
+
+Las propiedades que se pueden customizar a través de la interfaz de Entrada son:
+
+- Categorías
+- Slug
+- Tags
+- Contenido privado
 
 ### Categorías
 
+Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que nos permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
+
+Es importante que las Categorías siempre tengan una característica uniforme que permita agrupar a los elementos de manera directa, en forma de verse como vista de árbol o directorios.
+
+Para ver las Categorías, es necesario que hagamos click en la sección Categorías, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podremos ver todas las categorías que se encuentran ya hechas. 
+
+#### Crear una Categoría
+
+Si queremos crear una, solo debemos hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podremos ver una ventana que nos pedirá ingresar el nombre de la Categoría, la Ruta y si esta pertenece a una Categoría Padre)
+
+::: tip
+Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminadamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
+
+Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
+:::
+
+::: warning
+Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borrarán sino que no estarán a asignadas a ninguna otra. Para volver a asignarlas, es necesario entrar nuevamente a las Propiedades de la entrada.
+:::
+
+::: danger
+Si se borra la Categoría Padre, se borrarán también todas las subcategorías asignadas a esta. Sin embargo, todas las Entradas que estén ligadas a esta Categoría, no tendrán ninguna asignación, por lo que es importante volver a asignarlas una por una.
+:::
+
+### Slug
+
+Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más facil el trabajo en la URL.
+
+Cuando crees una entrada, la plataforma te asignará un slug de manera aleatoria. Sin embargo, para cambiarla solo tienes que cambiar el campo en la ventana de propiedades.
+
 ### Targets
+
+El contenido targetizado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
+
+Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de Contenido Targetizado y después seleccionar a qué target nos dirigimos.
+
+Para crear un target en específico, revisa la sección Targets.
+
 
 ## Contenido Privado
 
@@ -99,10 +153,3 @@ Para establecer un token, es necesario hacerlo a través del parámetro de query
 
 ----
 
-Una API es una herramienta que pone a disposición información a programas en un formato más conveniente. Por ejemplo, puedes ir a un sitio en un navegador y ver la información en un formato ordenado y atractivo.
-
-Esa misma API, presenta su información de una manera que es conveniente para programas. Entrega la información directamente.
-
-Más abajo hay tres ejemplos de como puedes utilizar APIs para traer información para un custom widget y así utilizarlo como quieras.
-
-Todos los ejemplos deben ser incluidos en la pestaña de JavaScript de tu custom widget.

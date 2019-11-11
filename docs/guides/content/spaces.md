@@ -89,32 +89,24 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 
 ### Revisión en Equipo (Team Review)
 
-La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad. Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
-
-En este caso, se pueden determinar cuántos miembros del equipo deben aprobar un contenido antes de ser puestos a disposición del Administrador, quien deberá publicarlos. Predeterminadamente, deben ser al menos 3 revisores, pero la cantidad puede cambiar.
-
-El equipo puede ser predeterminado por el Administrador o elegido por quien envía a revisión. Así solo ellos pueden corregir y aprobar.
-
-Además, se puede forzar la revisión por un usuario en específico, para que este sea aprobado y seleccionar a quienes se les asignará la tarea.
+El contenido que se publica en cada una de las plataformas debe ser de buena calidad y como forma de certificar esta, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
 <img src="/assets/img/content/enforced.jpg" style="margin: 40px 0" width="600">
 
 
-Por último, es posible diferenciar quiénes deben revisar cada contenido, según el Espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
-
-[Ir a Team Review](/guides/platform/team-review.html)
+Para más información sobre cómo configurar esta opción, ir a [Team Review](/guides/platform/team-review.html)
 
 ### Miembros del Equipo
 
-Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada Espacio y así tendrán acceso a la escritura, revisión y/o publicación.
+Para conformar el grupo de trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en este Espacio y así tendrán acceso a la escritura, revisión y/o publicación.
 
 Para ello, el Administrador que creó el Espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
 #### Agregar usuario ####
-Para añadir un usuario al Espacio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un Administrador y asignale un rol, luego presiona "Añadir" para que ese Administrador sea parte del equipo de trabajo del Espacio.
+Para añadir un usuario al Espacio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un usuario y asignale un rol, luego presiona "Añadir" para que este sea parte del equipo de trabajo del Espacio.
 
 #### Modificar Rol ####
-Puedes modificar el rol de alguno de los Administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "Guardar" para confirmar el cambio.
+Puedes modificar el rol de alguno de los usuarios asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "Guardar" para confirmar el cambio.
 
-#### Eliminar Administradores ####
-Para eliminar Administradores de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
+#### Eliminar Miembros del Equipo ####
+Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".

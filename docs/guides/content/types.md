@@ -6,9 +6,9 @@ search: true
 
 ![Types](/assets/img/content/types/types.jpg)
 
-Los Tipos dentro de Modyo, una herramienta que nos permitirá estructurar plantillas de contenido para insertar dentro del servicio que estemos otorgando con más de 15 tipos de campos.
+Los Tipos dentro de Modyo, son herramientas que nos permitirán estructurar plantillas de contenido para insertar dentro del servicio que estemos otorgando, con más de 15 tipos de campos.
 
-Con los Tipos, podrás evitar tener que estar muchas veces escrbiendo contenido de igual formato, sino que podrás dar un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
+Con los Tipos, podrás evitar tener que estar muchas veces elaborando contenido de igual formato, estableciendo un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
 
 ## Sobre la Interfaz
 
@@ -39,13 +39,21 @@ Para crear un Tipo, es necesario hacer click en el botón verde superior de la p
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
+En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
+
+- Añadir campos
+- Configuración del campo
+- Configuración
+
+Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el formato que nos sea requerido.
+
 ## Campos
 
 ::: tip
 El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. Para mas información ve a la [referencia de la API](/guides/content/public-api-reference.html)
 :::
 
-Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos. Cuando un campo es requerido, al momento de crear o modificar unaentrada, debe haber un valor asociado para ese campo, de lo contrario, no se podrán guardar los cambios.
+Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos. Cuando un campo es requerido, al momento de crear o modificar una entrada, debe haber un valor asociado para ese campo, de lo contrario, no se podrán guardar los cambios.
 
 ### Texto de una línea
 
@@ -131,13 +139,13 @@ Este campo te permite vincular muchas Entradas que ya se encuentren creadas dent
 
 ## Propiedades
 
-En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es mportante ya que será como se llame al tipo desde los SDK de liquid, javascripy y API. A continuación verás un botón que puede estar en 2 estados:
+En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es mportante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
 
 - **Reindexar**: Te permite reindexar el modelo si es que te encontraste con alún problem con tu API pública.
 - **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
 
 :::warning
-Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente queará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
+Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
 :::
 
 :::warning

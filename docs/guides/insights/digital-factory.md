@@ -20,7 +20,7 @@ Cuando filtras por sitio, los elementos que usan datos de espacios, no aportará
 
 ### Actividad por tipo
 
-Verás cinco cajas que representarán la cantidad de elementos creados, modificados,enviados a revisión, aprobados y publicados. Los elementos que se agrupan en estas cajas son entradas, página, navegación, widgets y templates.
+Verás cinco cajas que representarán la cantidad de elementos creados, modificados, enviados a revisión, aprobados y publicados. Los elementos que se agrupan en estas cajas son entradas, página, navegación, widgets y templates.
 
 **Creados**: Cuenta cada vez que se crea una entrada, página o widget.
 

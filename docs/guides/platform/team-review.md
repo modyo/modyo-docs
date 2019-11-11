@@ -10,11 +10,11 @@ La revisión en equipo (o Team Review) es una herramienta que te permite control
 
 Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán rechazar, aprobar y hacer comentarios en el elemento. 
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón "Publicar", cambiará al botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento. 
 
 Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
 
-Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "aprobado", estado en el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
+Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "Aprobado", el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
 
 ### Configuración
 
@@ -51,7 +51,7 @@ Existen tres niveles de permisos en los contextos en que se puede habilitar la r
 - Medio (Revisor en sitios y Editor en espacio)
 - Bajo (Developer en sitios y Escritor en espacios)
 
-Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión.
+Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión y comentar los elementos que se encuentran en este estado.
 
 Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
 
@@ -99,7 +99,7 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 ### Respaldos
 
-Los respaldos son los elementos que se han publicado anteriormente. Cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
+Los respaldos son las versiones de los elementos que se han guardado anteriormente. Es decir, cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
 
 Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada elemento, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
@@ -123,7 +123,7 @@ En este caso, el respaldo se copiará a la versión editable, por lo que perdere
 
 #### Rollback
 
-En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores puo haber tenido.
+En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
 
 :::danger
 Dado que esta es una acción peligrosa, solo los administradores de Sitios o Espacios tienen el permiso para poder ejecutar esta acción.
@@ -131,22 +131,24 @@ Dado que esta es una acción peligrosa, solo los administradores de Sitios o Esp
 
 ## Locks
 
-Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener fallas de que otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
 
 ### ¿Qué usa Locks?
 
-Locks se usa mayoritariamente en Contenidos y en Channels. También puede ser usado en la edición de código de Sitios y Widgets.
+Locks se usan mayoritariamente en Contenidos y en Channels, pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y Customers.
 
 ### ¿Cómo usar Locks?
 
-Locks es una función reservada solo para quienes tienen permiso de Administración. Otro tipo de usuario no podrá tomar control del recurso hasta que el usuario creador grabe y lo desocupe.
+Locks se implementa de distintas maneras dentro de la plataforma. En Contenidos y Channels, múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
 
-Al intentar entrar al recurso en uso, cualquier usuario que no sea Administrador, recibirá un mensaje que le impedirá acceder al contenido.
+En otras secciones como Customers y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
+
+En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentraba trabajando en él.
 
 ### Tomar el control de un recurso
 
-Si un Administrador quiere tomar el control del contenido, deberá hacer clic en el archivo en uso y en la pantalla siguiente, hacer clic en el botón de Tomar Control.
+Si un Administrador quiere tomar el control del contenido, deberá hacer click en el archivo en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
 
 Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo más cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 
-El Administrador solo tendrá dos horas para hacer cambios sin guardar, tras tomar el control. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+Tras tomar el control, el Administrador solo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.

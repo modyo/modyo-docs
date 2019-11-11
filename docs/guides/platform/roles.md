@@ -4,21 +4,21 @@ search: true
 
 # Usuarios y Roles
 
-## Equipos
+## Equipo
 
-Desde aquí podrás hacer un control de todos los usuarios internos de la plataforma.
+Todos los usuarios internos de la plataforma conforman el equipo, y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema.
 
-Para crear un usuario, debes hacer clic en el botón superior y completar los campos, para poder enviar la invitación de ingreso por email.
+Para crear un usuario interno, debes hacer click en el botón superior y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
 
 Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
 
-Si quieres editar o desactivar un usuario interno, debes hacer clic en el boton de acciones.
+Si quieres desactivar un usuario interno, debes hacer click en el boton de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer click sobre el nombre del mismo.
 
 ### Editar usuario
 
-Al editar el usuario, podrás ver el perfil de todo lo que ha hecho durante el tiempo que está ingresado en la plataforma.
+Al entrar a la vista de edición de un usuario interno, podrás ver en la pestaña principal un listado de todas sus acciones desde que se registró e ingresó por primera vez a la plataforma.
 
-Dentro de las funciones editables que puedes manejar de un usuario están:
+El resto de las pestañas pueden incluír información visible o modificable de un usuario, entre ellas están:
 
 - Sitios (a los que tiene acceso)
 - Rol
@@ -28,7 +28,7 @@ Dentro de las funciones editables que puedes manejar de un usuario están:
 
 ## Roles
 
-Esta es una característica esencial para cada uno de los usuarios internos de la plataforma, ya que te permite optimizar el flujo de trabajo que tiene cada uno de ellos.
+Los roles son una característica esencial de cada uno de los usuarios internos de la plataforma, ya que te permiten optimizar el flujo de trabajo que tiene cada uno de ellos.
 
 Modyo tiene 7 roles predeterminados con distintas funciones por secciones. Además permite crear más roles personalizados, dependiendo de la función o sitio que se necesite trabajar.
 
@@ -55,11 +55,11 @@ Los roles predeterminados que existen son, según contexto:
 - Space editor: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
 - Space writer: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback ni editar la configuración).
 
-El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma, los sitios y las cuentas.
+El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
 
 ### Roles personalizados
 
-Para crear un rol en específico, solo debes hacer clic en el botón superior.
+Para crear un rol en específico, solo debes hacer click en el botón superior.
 
 Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar.
 
@@ -95,4 +95,4 @@ Las funciones que se pueden modificar son:
 
 ### Asignar un rol por cuenta
 
-Para asignar un rol en el contexto de cuenta, debes ir a la sección de Equipo y hacer clic en el perfil del usuario que se quiere cambiar. Después ingresar a la pestaña Rol y asignar la categoría que se desee.
+Para asignar un rol en el contexto de cuenta, debes ir a la sección de Equipo y hacer clic en el perfil del usuario que se quiere cambiar. Después ingresar a la pestaña Rol y seleccionar el rol que se desee asignar al usuario.
