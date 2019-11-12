@@ -109,10 +109,39 @@ Recuerda que si borras el envío, no podrás recuperar el registro si hiciste al
 Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
 :::
 
+Si haces clic en los nombres de las campañas, pasarás a la sección Entregas de Mensajes.
+
+### Entregas de Mensajes
+
+En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. 
+
+A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
+
+"Sin Campaña" refiere a un correo o notificación que ha 
+sido envíado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la sección [API de Administración](/guides/platform/api.html). 
+
+En la primera vista, el administrador se ordena bajo las siguientes categorías.
+
+- Nombre: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
+- Campaña: Campaña bajo la cual se envío el mensaje.
+- Tipo: Vía por la cual se envío el mensaje. Correo o notificación.
+- Envío: Fecha en la cual se inició la campaña.
+- Enviado: Fecha en la que se envió el mensaje.
+- Leído: Alerta si el usuario leyó o vio el mensaje.
+
+Además, podrás filtrar los datos bajo los siguientes filtros:
+
+- Tipo de Campaña: Todos, correo o notificación.
+- Nombre de la Campaña: Nombre que se le dio a la campaña en general.
+- Envío: Fecha en la cual se envió la campaña.
+
+Por último, puedes ver una barra de búsqueda que te permitirá encontrar por algún término en específico.
+
+### Plantillas
 
 
 
-
+--------
 
 Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuarios, tengan presente esta herramienta.
 
