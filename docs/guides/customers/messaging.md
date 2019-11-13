@@ -111,7 +111,7 @@ Además, si borras cuando la campaña se encuentre en proceso de envío, no quie
 
 Si haces clic en los nombres de las campañas, pasarás a la sección Entregas de Mensajes.
 
-### Entregas de Mensajes
+## Entregas de Mensajes
 
 En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. 
 
@@ -137,7 +137,7 @@ Además, podrás filtrar los datos bajo los siguientes filtros:
 
 Por último, puedes ver una barra de búsqueda que te permitirá encontrar por algún término en específico.
 
-### Plantillas
+## Plantillas
 
 Para hacer tu mensaje en forma de correo, necesitarás una plantilla para poder añadir los contenidos que desees.
 
@@ -163,7 +163,7 @@ A un costado, se encuentra un botón que despliega un menú con las siguientes o
 Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
 :::
 
-#### Editar plantillas
+### Editar plantillas
 
 Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que se encuentra en la parte superior de la página.
 
@@ -185,7 +185,7 @@ Para grabar la plantilla, debes hacer click en el botón Guardar, que se encuent
 
 Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
 
-### Desinscripciones
+## Desinscripciones
 
 En esta sección, encontrarás una lista con todos los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
 
