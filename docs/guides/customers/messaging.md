@@ -151,57 +151,51 @@ Cada una de las plantillas estarán ordenadas según su nombre, además de poder
 Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
 :::
 
-#### Hacer plantillas
+Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces click en él, llegarás al editor donde hiciste tu plantilla.
+
+A un costado, se encuentra un botón que despliega un menú con las siguientes opciones:
+
+- Vista previa: Muestra el modelo de plantilla de correo que se encuentra guardada.
+- Copiar: Puedes hacer una copia de la plantilla.
+- Borrar: Se borra la plantilla
+
+::: tip
+Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
+:::
+
+#### Editar plantillas
 
 Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que se encuentra en la parte superior de la página.
+
+Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
+
+::: tip
+Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
+:::
+
+Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
 
 ::: warning
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
-Para automatizar la inserción de Footer, lee [Configuración de Customers]
+Para automatizar la inserción del Footer, lee [Configuración de Customers]
 :::
 
+Para grabar la plantilla, debes hacer click en el botón Guardar, que se encuentra en la parte superior de la página.
 
+Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
 
+### Desinscripciones
 
+En esta sección, encontrarás una lista con todos los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
 
+Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
 
+Si se hace click en el nombre del usuario, puedes encontrar el [perfil](/guides/customers/users.html#ficha-de-usuarios) del usuario con todas las actividades que ha hecho en la plataforma.
 
---------
+Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 
-Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuarios, tengan presente esta herramienta.
-
-Por esto mismo, podemos filtrar las campañas en dos modos:
-
-- Correo
-- Notificaciones
-
-Haciendo clic en cada una de ellas, podemos ver una estadística que muestra su estado, alcance y envíos.
-
-Para crear una campaña, se hace clic en el botón "Nuevo", donde uno debe seleccionar la forma de envío de esta. En base a ello, los datos serán requerídos.
-
-Posterior a esto, se procede a diseñar la campaña. En el caso de ser un correo, uno puede acceder a una plantilla predeterminada o crear una nueva.
-
-En el caso de hacerse a través de una notificación, por ser mucho más breve, se puede asignar el código preciso y Guardar.
-
-Cuando nuestra campaña esté lista y designada al target que queremos, podemos proceder a enviarla o hacer una prueba hacia la dirección que queramos. Para ello, se debe hacer clic nuevamente en el archivo y asignar la acción en el botón superior.
-
-## Mensajes
-
-En la sección Mensajes o "Entregas de Mensajes", podemos hacer un rastreo del estado de la información que hemos envíado por Correo o Notificación.
-
-En este caso, se puede ver el nombre del usuario al que se le envió la información, la campaña a la que está asignada, la hora despachada y su estado de lectura.
-
-## Plantillas
-
-Las plantillas son una de las mejores formas de ahorrarnos tiempo para hacer una campaña uniforme. Es por esto que en esta sección, se pueden crear formatos especiales para correos, haciendo campos customizables.
-
-Para crear una plantilla, solo hay que entrar a esta sección y hacer clic en "Nuevo", que te llevará a un editor visual que puede ser traspasado a código sin problemas.
-
-Al guardar, podremos ver una lista de las plantillas ya usadas dentro de nuestros mensajes. Si queremos corregir el formato de estas, solo hay que hacer clic en ellas, en el boton "Editar".
-
-## Desuscripciones
-
-Modyo también provee una lista de quienes se han desuscrito de nuestras campañas, ya sea por considerarlas spam o no ser de su interés.
-
-Es una mala práctica volver a suscribir a estos usuarios a una lista de correos o notificaciones sin su autorización personal. Sin embargo, es importante tener en cuenta su nombre y su correo para impedir futuros envíos no deseados y provocar más rechazos.
+::: danger
+Hacer una reinscripción sin una autorización expresa del usuario, puede causar problemas legales.
+Revisa la regulación sobre correos masivos en cada país.
+:::
