@@ -22,6 +22,8 @@ Para habilitar un formulario deshabilitado, desde le índice de formularios debe
 
 ## Análisis
 
+<img src="/assets/img/customers/forms/analysis.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
 Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar alguna de las preguntas del formulario y podrás ver una representación gráfica de las respuestas que los usuarios han enviado.
 
 - Texto simple: Verás un conteo de cuantas personas rellenaron este campo.
@@ -50,9 +52,13 @@ Puedes eliminar respuestas una a una usando la acción a la derecha de cada resp
 
 Para ver en detalle la respuesta de un usuario, basta con hacer click en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
 
+<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">
+
 ## Editar
 
-PAra modificar un formulario, deberás ir a la sección "Análisis" y usar la acción "Editar" en el menú de opciones arriba a la derecha.
+<img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
+Para modificar un formulario, deberás ir a la sección **"Análisis"** y usar la acción **"Editar"** en el menú de opciones arriba a la derecha.
 
 Una vez que entres en la sección de edición de un formulario, podrás ver 2 secciones: una sección central, donde podrás reorganizar las preguntas arrastrándoles en el orden requerido, y la sección lateral derecha, que cuenta con tres pestañas:
 
@@ -120,7 +126,10 @@ En caso de ser un formulario público, los usuarios que no tienen una sesión ac
 Si un usuario no tiene una sesión activa, y rellena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
 :::
 
-La sección **Snippet** solo aparecerá si el formulario es público, y te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de modyo. 
+La sección **Snippet** solo aparecerá si el formulario es público, y te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de modyo.
+
+<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
+
 
 :::warning
 Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en modyo y los _headers_ de seguridad de donde estés insertando el snippet.
