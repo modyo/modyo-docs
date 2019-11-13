@@ -139,6 +139,32 @@ Por último, puedes ver una barra de búsqueda que te permitirá encontrar por a
 
 ### Plantillas
 
+Para hacer tu mensaje en forma de correo, necesitarás una plantilla para poder añadir los contenidos que desees.
+
+Desde esta sección, podrás hacer maquetas de correos de manera fácil para después enviarlas a los usuarios.
+
+A primera vista, puedes encontrar todas las plantillas de correos que se han hecho.
+
+Cada una de las plantillas estarán ordenadas según su nombre, además de poder ver la última vez que se les hizo alguna modificación.
+
+::: tip
+Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
+:::
+
+#### Hacer plantillas
+
+Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que se encuentra en la parte superior de la página.
+
+::: warning
+Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
+
+Para automatizar la inserción de Footer, lee [Configuración de Customers]
+:::
+
+
+
+
+
 
 
 --------
