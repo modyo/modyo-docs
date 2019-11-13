@@ -4,9 +4,36 @@ search: true
 
 # Targets
 
-Los targets nos permiten agrupar a nuestros clientes en distintos segmentos y así facilitar el envío de información u ofrecimiento de productos.
+Targets es la función de Modyo ideal para manejar a los usuarios en masa si necesitamos que reciban determinada información.
 
-Para crear un target, es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar mejor. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al target.
+Estos nos permiten agrupar a nuestros clientes en distintos segmentos y así facilitar el envío de correos o notificaciones.
+
+## Interfaz
+
+En la interfaz, podrás ver una lista con todos los targets creados hasta ahora, con el nombre y las distintas especificaciones que permiten filtrarlos.
+
+La lista está ordenada de la siguiente manera.
+
+- Nombre: Nombre particular que tiene la lista. (bajo esta se encuentran los filtros que la componen).
+- Creado el: Fecha de creación del target
+- Personas: Cantidad de usuarios que pertenecen al target.
+
+Además, en el extremo izquierdo encontrarás un botón con un menú desplegable que te permite ejecutar las siguientes opciones:
+
+- Editar: Editar el nombre y los filtros del target
+- Borrar: Borrar el target
+
+::: warning
+Si borras el target, tendrás que elaborarlo de nuevo. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.
+:::
+
+Si necesitas buscar un target por nombre en específico, puedes hacerlo a través de la barra de búsqueda que se encuentra en la parte superior de la pantalla.
+
+## Crear un Target
+
+Para crear un target, tienes que hacer click en el botón "Nuevo Target" que se encuentra en la parte superior de la pantalla.
+
+ es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar mejor. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al target.
 
 ### Filtros
 
