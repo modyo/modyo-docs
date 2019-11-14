@@ -43,6 +43,20 @@ La selección de entradas siempre retorna un arreglo, por lo que es necesario it
 'entry_uuid' %} {% assign entry = entries.first %}
 ```
 
+Puedes paginar las entradas haciendo uso del filtro `paignated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
+
+```html
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
+<ul>
+{% for entry in entries %}
+  <li> {{ entry.slug }} </li>
+{% endfor %}
+</ul>
+{{ entries | pagination_links }}
+```
+
+En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
+
 ### Entradas con ubicación
 
 Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
