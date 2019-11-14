@@ -1,3 +1,41 @@
+
+@font-face{
+	font-family: 'Jost';
+	font-weight: 400;
+	font-style: normal;
+    src: url(https://cloud.modyocdn.com/uploads/76a0afe0-8f3a-4674-ac51-9996bcf49334/original/Jost-400-Book.otf)
+}
+
+@font-face{
+	font-family: 'Jost';
+	font-weight: 400;
+	font-style: italic;
+    src: url(https://cloud.modyocdn.com/uploads/27fec775-f81a-4c3f-a927-9843a845f321/original/Jost-400-BookItalic.otf)
+}
+
+@font-face{
+	font-family: 'Jost';
+	font-weight: 600;
+	font-style: normal;
+    src: url(https://cloud.modyocdn.com/uploads/efd220dd-0973-42ad-90b8-07b274e6d3a2/original/Jost-600-Semi.otf)
+}
+
+@font-face{
+	font-family: 'Jost';
+	font-weight: 600;
+	font-style: italic;
+    src: url(https://cloud.modyocdn.com/uploads/45712e90-4270-4508-a0b6-22925f16180b/original/Jost-600-SemiItalic.otf)
+}
+
+html,
+body {
+  font-family: 'Jost', 'Helvetica', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  color: #333;
+}
+
 .home {
 	background: #f8fdf4 no-repeat bottom url('/assets/img/hero.jpg');
 	background-size: 1470px;
@@ -10,6 +48,48 @@
 
 .home .hero {
 	padding-top: 160px;
+}
+
+.home .hero .action-button {
+	background: #61a60e;
+	border: 0;
+}
+
+.home .feature h2 {
+	color: #333;
+}
+
+.home .hero .action-button:hover {
+	background: #61a60e
+}
+
+a {
+	color: #61a60e;
+}
+
+a.sidebar-link.active {
+	color: #61a60e;
+    border-left-color: #61a60e;
+}
+
+.nav-item > a:not(.external):hover, .nav-item > a:not(.external).router-link-active {
+	border-color: #61a60e
+}
+
+.custom-block.tip {
+	border-color: #1784d8
+}
+
+a.sidebar-link:hover {
+	color: #61a60e;
+}
+
+.home .description {
+	margin-top: 10px !important
+}
+
+.home .hero h1 {
+	margin-bottom: 0;
 }
 
 .home .hero img {
