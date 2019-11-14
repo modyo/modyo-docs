@@ -109,44 +109,93 @@ Recuerda que si borras el envío, no podrás recuperar el registro si hiciste al
 Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
 :::
 
+Si haces clic en los nombres de las campañas, pasarás a la sección Entregas de Mensajes.
 
+## Entregas de Mensajes
 
+En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. 
 
+A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
 
+"Sin Campaña" refiere a un correo o notificación que ha 
+sido envíado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la sección [API de Administración](/guides/platform/api.html). 
 
-Por lo mismo, dentro de la plataforma es muy importante  que quienes hagan monitoreos o estén atentos a las preguntas de los usuarios, tengan presente esta herramienta.
+En la primera vista, el administrador se ordena bajo las siguientes categorías.
 
-Por esto mismo, podemos filtrar las campañas en dos modos:
+- Nombre: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
+- Campaña: Campaña bajo la cual se envío el mensaje.
+- Tipo: Vía por la cual se envío el mensaje. Correo o notificación.
+- Envío: Fecha en la cual se inició la campaña.
+- Enviado: Fecha en la que se envió el mensaje.
+- Leído: Alerta si el usuario leyó o vio el mensaje.
 
-- Correo
-- Notificaciones
+Además, podrás filtrar los datos bajo los siguientes filtros:
 
-Haciendo clic en cada una de ellas, podemos ver una estadística que muestra su estado, alcance y envíos.
+- Tipo de Campaña: Todos, correo o notificación.
+- Nombre de la Campaña: Nombre que se le dio a la campaña en general.
+- Envío: Fecha en la cual se envió la campaña.
 
-Para crear una campaña, se hace clic en el botón "Nuevo", donde uno debe seleccionar la forma de envío de esta. En base a ello, los datos serán requerídos.
-
-Posterior a esto, se procede a diseñar la campaña. En el caso de ser un correo, uno puede acceder a una plantilla predeterminada o crear una nueva.
-
-En el caso de hacerse a través de una notificación, por ser mucho más breve, se puede asignar el código preciso y Guardar.
-
-Cuando nuestra campaña esté lista y designada al target que queremos, podemos proceder a enviarla o hacer una prueba hacia la dirección que queramos. Para ello, se debe hacer clic nuevamente en el archivo y asignar la acción en el botón superior.
-
-## Mensajes
-
-En la sección Mensajes o "Entregas de Mensajes", podemos hacer un rastreo del estado de la información que hemos envíado por Correo o Notificación.
-
-En este caso, se puede ver el nombre del usuario al que se le envió la información, la campaña a la que está asignada, la hora despachada y su estado de lectura.
+Por último, puedes ver una barra de búsqueda que te permitirá encontrar por algún término en específico.
 
 ## Plantillas
 
-Las plantillas son una de las mejores formas de ahorrarnos tiempo para hacer una campaña uniforme. Es por esto que en esta sección, se pueden crear formatos especiales para correos, haciendo campos customizables.
+Para hacer tu mensaje en forma de correo, necesitarás una plantilla para poder añadir los contenidos que desees.
 
-Para crear una plantilla, solo hay que entrar a esta sección y hacer clic en "Nuevo", que te llevará a un editor visual que puede ser traspasado a código sin problemas.
+Desde esta sección, podrás hacer maquetas de correos de manera fácil para después enviarlas a los usuarios.
 
-Al guardar, podremos ver una lista de las plantillas ya usadas dentro de nuestros mensajes. Si queremos corregir el formato de estas, solo hay que hacer clic en ellas, en el boton "Editar".
+A primera vista, puedes encontrar todas las plantillas de correos que se han hecho.
 
-## Desuscripciones
+Cada una de las plantillas estarán ordenadas según su nombre, además de poder ver la última vez que se les hizo alguna modificación.
 
-Modyo también provee una lista de quienes se han desuscrito de nuestras campañas, ya sea por considerarlas spam o no ser de su interés.
+::: tip
+Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
+:::
 
-Es una mala práctica volver a suscribir a estos usuarios a una lista de correos o notificaciones sin su autorización personal. Sin embargo, es importante tener en cuenta su nombre y su correo para impedir futuros envíos no deseados y provocar más rechazos.
+Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces click en él, llegarás al editor donde hiciste tu plantilla.
+
+A un costado, se encuentra un botón que despliega un menú con las siguientes opciones:
+
+- Vista previa: Muestra el modelo de plantilla de correo que se encuentra guardada.
+- Copiar: Puedes hacer una copia de la plantilla.
+- Borrar: Se borra la plantilla
+
+::: tip
+Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
+:::
+
+### Editar plantillas
+
+Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que se encuentra en la parte superior de la página.
+
+Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
+
+::: tip
+Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
+:::
+
+Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
+
+::: warning
+Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
+
+Para automatizar la inserción del Footer, lee [Configuración de Customers]
+:::
+
+Para grabar la plantilla, debes hacer click en el botón Guardar, que se encuentra en la parte superior de la página.
+
+Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
+
+## Desinscripciones
+
+En esta sección, encontrarás una lista con todos los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
+
+Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
+
+Si se hace click en el nombre del usuario, puedes encontrar el [perfil](/guides/customers/users.html#ficha-de-usuarios) del usuario con todas las actividades que ha hecho en la plataforma.
+
+Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
+
+::: danger
+Hacer una reinscripción sin una autorización expresa del usuario, puede causar problemas legales.
+Revisa la regulación sobre correos masivos en cada país.
+:::
