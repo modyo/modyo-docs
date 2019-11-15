@@ -125,11 +125,27 @@ Por lo mismo, es escencial que esto sea verificado constantemente, para evitar p
 
 Aquí podremos personalizar la visión estética de la plataforma que tiene el usuario, empezando por los colores predeterminados. Además, se puede incluir una plantilla CSS que le dé un estilo único adaptado a la empresa o campaña que esté interactuando.
 
+Para personalizar la sesión, primero tenemos que definir cuál va a ser nuestro color primario que regirá dentro de nuestra plataforma. Para esto solo debemos ingresar el Código HEX del color que queremos y hacer click en el botón "Guardar" que se encuentra en la parte superior de la pantalla.
+
+#### Personalizar con CSS
+
+Si se quiere tener un CSS personalizado que se ajuste a nuestras necesidades en el perfil, inicio de sesión y registro, solo debemos pegar el código en el editor que se encuentra en la ventana y hacer click en el botón "Guardar".
+
+Es común tener vinculados archivos en el código CSS. Si queremos agregar alguno, solo tenemos en el botón que está sobre el editor, y que nos llevará al Gestor de Archivos, que nos permitirá subir sin problemas algún archivo que necesitemos.
+
+Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuanod lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
+
+::: tip 
+Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar facilmente la edición.
+:::
+
 ### Correos
 
-Modyo permite configurar la apariencia de los correos que se enviarán a los usuarios. Para ello, podemos ingresar a esta función para detallar ciertos requisitos que se necesitan para enviar un mail, como la dirección por defecto.
+Modyo permite configurar la dirección y la apariencia de los correos que se enviarán a los usuarios. 
 
-Otros correos que se pueden habilitar y modificar desde la plataforma son:
+Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón Guardar.
+
+Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envio de correos para funciones en específico que solicitan los usuarios, y que no dependen de los correos en masa, tales como son:
 
 - Correo de activación
 - Usuario importado
@@ -139,6 +155,22 @@ Otros correos que se pueden habilitar y modificar desde la plataforma son:
 - Confirmación
 - Esperando aprobación
 - Footer personalizado
+
+Para habilitar o deshabilitar el envío de estos correos, solo debemos hacer click en el botón Habilitado/Deshabilitado que se encuentra al costado de cada función y hacer click en el botón Guardar.
+
+#### Personalizar correos 
+
+Los estilos de los correos de la plataforma que enviamos también pueden ser personalizados. Para ello, debemos tener el código HTML que queremos incluir en ellos. 
+
+Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual podemos pegar nuestro código.
+
+::: danger
+Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
+
+Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar facilmente para ubicarlos en la parte que necesitemos.
+:::
+
+Cada vez que se haga un cambio en el código, se debe hacer click en el botón Guardar que se encuentra en la parte superior de la pantalla.
 
 ### Integraciones
 
@@ -159,6 +191,18 @@ Es necesario tener la API logueada y configurada en los servicios para que se pe
 
 El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debemos tener en cuenta las credenciales y la habilitación de redirección, en el inicio de sesión.
 
+Lo primero que podemos regular es si queremos habilitar o deshabilitar las credenciales de la plataforma. 
+
+::: warning
+Si deshabilitamos las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de Integraciones
+:::
+
+También podemos habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.
+
+Las búsquedas en la página de perfil también se pueden habilitar o deshabilitar, si es que algún usuario necesita buscar algún dato. Si está habilitada, una caja de búsqueda aparecerá en la sección de perfil. Esta búsqueda encuentra resultados en todos los sitios que tenemos.
+
+#### Activación de la cuenta
+
 Además, se puede regular la forma de registro de clientes, ya sea a través de estos servicios:
 
 - Directa (sin moderación ni confirmación por email)
@@ -166,7 +210,12 @@ Además, se puede regular la forma de registro de clientes, ya sea a través de 
 - Moderada (un administrador decide si aprueba el registro)
 - Deshabilitada (Solo el administrador envía el registro)
 
+::: danger
+
 Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren en tu sitio. Te recomendamos el registro con verificación por correo electrónico para proteger tu cuenta contra este riesgo potencial.
+:::
+
+
 
 También es posible configurar el avatar por defecto y las condiciones del formulario de registro, para que este sea lo más completo posible.
 
