@@ -211,13 +211,25 @@ Además, se puede regular la forma de registro de clientes, ya sea a través de 
 - Deshabilitada (Solo el administrador envía el registro)
 
 ::: danger
-
 Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren en tu sitio. Te recomendamos el registro con verificación por correo electrónico para proteger tu cuenta contra este riesgo potencial.
 :::
 
+#### Avatar
 
+Si queremos que nuestros usuarios tengan un Avatar, tenemos que subir uno que se muestre por defecto. En esta opción, podemos subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
 
-También es posible configurar el avatar por defecto y las condiciones del formulario de registro, para que este sea lo más completo posible.
+#### Formulario de registro
+
+Desde acá, también podemos configurar el formulario de registro que ingresan cada uno de nuestros usuarios. Aquí podemos configurar los distintos campos que son imprescindibles y que queremos que aparezcan en nuestro formulario, como son:
+
+- Habilitar segundo apellido
+- Segundo apellido es requerido
+- Habilitar confirmación de correo electrónico
+- Signup avatar enabled
+- Habilitar fecha de nacimiento
+- Habilitar género
+
+Para habilitar o deshabilitar alguno, solo debemos hacer click en el checkbox que se encuentra al costado de cada uno y hacer click en el botón "Guardar".
 
 ### Campos personalizados
 
