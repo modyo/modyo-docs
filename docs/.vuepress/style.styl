@@ -35,6 +35,18 @@ body {
   text-rendering: geometricPrecision;
   color: #333;
   background: #f4f4f4;
+  height: 100%;
+}
+
+.theme-container.no-sidebar {
+	height: 100%;
+	background: #FFF;
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: auto;
 }
 
 .page {
@@ -85,7 +97,7 @@ a {
 	box-shadow: 0 0 4px rgba(0,0,0,.1);
 }
 
-a.sidebar-link.active {
+.sidebar-group a.sidebar-link.active {
 	color: #61a60e;
     border-left-color: #61a60e;
 }
@@ -98,8 +110,13 @@ a.sidebar-link.active {
 	border-color: #1784d8
 }
 
-a.sidebar-link:hover {
+.sidebar-group a.sidebar-link:hover {
 	color: #61a60e;
+}
+
+.home .features {
+	border-top: 0;
+	padding-top: 100px;
 }
 
 .home .description {
