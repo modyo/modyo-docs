@@ -32,7 +32,7 @@ En la parte inferior, este filtro combinado lo puedes separar para un Target hac
 
 ### Añadir un usuario
 
-Para agregar un nuevo contacto de usuario, se debe hacer click en el boton "+ Nuevo" en la parte superior de la pantalla.
+Para agregar un nuevo contacto de usuario, se debe hacer click en el botón "+ Nuevo" en la parte superior de la pantalla.
 
 Esta función te permite añadir de dos formas: haciéndolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
@@ -51,7 +51,7 @@ Para añadir un usuario, la plataforma te pedirá completar los siguientes campo
 Para enviar la contraseña al mail del usuario, solo es necesario asignar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo a la casilla con la contraseña al usuario, que podrá cambiar al ingresar a la plataforma.
 :::
 
-Además, podrás completar una serie de campos personalizados que podrián ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la sección [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la sección [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
 
 ### Ficha de Usuarios
 
@@ -119,7 +119,7 @@ Para más información, ir a [Campos Personalizados](/guides/customers/users.htm
 
 En esta sección podemos configurar todo lo que tiene que ver con la apariencia de la plataforma hacia nuestros clientes, sus funciones y las acciones en que ellos pueden interactuar dentro de la web.
 
-Por lo mismo, es escencial que esto sea verificado constantemente, para evitar problemas con los ingresos o transacciones que se realicen en línea.
+Por lo mismo, es esencial que esto sea verificado constantemente, para evitar problemas con los ingresos o transacciones que se realicen en línea.
 
 ### General
 
@@ -153,7 +153,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos.
+Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la sección [Integraciones de la plataforma](/guides/platform/integration.html)
 
 ### Registros
 
@@ -186,7 +186,7 @@ Los tipos de campos personalizados que puedes agregar son:
 
 Puedes arrastrar los campos personalizados para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios. 
 
-Todos los campos personalziados tienen ciertas propiedades estándar:
+Todos los campos personalizados tienen ciertas propiedades estándar:
 
 - **Respuesta única**: Implica que el valor del custom field debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
 - **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
@@ -194,10 +194,10 @@ Todos los campos personalziados tienen ciertas propiedades estándar:
 - **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar el valor del custom field.
 - **Buscable por admins**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al buscar usuarios por el valor de ese campo.
 
-Además de lo anterior, los campos personalizados pueden estar habilitados o deshabilitados. Si un campo personalizado está hablitado, entonces se podrá usar por admins y dependiendo de su configuración, estará disponible para los usuarios. Si un custom field está deshabilitado, entonces no aparecerá en ningún formulario.
+Además de lo anterior, los campos personalizados pueden estar habilitados o deshabilitados. Si un campo personalizado está habilitado, entonces se podrá usar por admins y dependiendo de su configuración, estará disponible para los usuarios. Si un custom field está deshabilitado, entonces no aparecerá en ningún formulario.
 
 :::tip
-Al deshabilitar un campo personalizado, este dejará de aparecer de todos los formularios de edición de usuario, registro y perfil, sin embargo, los datos que estaban guardados para los usuarios que ya tenian un valor, se mantendrán guardados.
+Al deshabilitar un campo personalizado, este dejará de aparecer de todos los formularios de edición de usuario, registro y perfil, sin embargo, los datos que estaban guardados para los usuarios que ya tenían un valor, se mantendrán guardados.
 :::
 
 :::danger
