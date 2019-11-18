@@ -36,7 +36,7 @@ Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el si
 
 ### Hacer una campaña
 
-Para hacer una campaña, debemos hacer click en el botón +Nuevo, ubicado en la parte superior de la vista del Administrador.
+Para hacer una campaña, debemos hacer click en el botón "+Nuevo", ubicado en la parte superior de la vista del Administrador.
 
 Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
 
@@ -181,7 +181,7 @@ Si haces una campaña, recuerda agregar en el footer toda la información legal 
 Para automatizar la inserción del Footer, lee [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers)
 :::
 
-Para grabar la plantilla, debes hacer click en el botón Guardar, que se encuentra en la parte superior de la página.
+Para grabar la plantilla, debes hacer click en el botón "Guardar", que se encuentra en la parte superior de la página.
 
 Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
 
