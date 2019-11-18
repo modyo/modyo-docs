@@ -174,7 +174,7 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 ### Raw
 
-Raw sirve para deshabilitar temporalmente el proceso de tags..
+Raw sirve para deshabilitar temporalmente el proceso de tags.
 Esto es útil para generar contenido (eg, Mustache, Handlebars) que puede usar una sintaxis conflictiva con otros elementos.
 
 ```liquid
@@ -472,7 +472,7 @@ Un bucle for puede tomar una cláusula opcional `else` para mostrar un bloque de
 
 ### Asignación de variables
 
-Puede almacenar datos en sus propias variables, para utilizarlos en los tags de salida u otros tags como desee. La forma más sencilla de crear una variable es con el tag`assign`, que tiene una sintaxis muy fácil:
+Puede almacenar datos en sus propias variables, para utilizarlos en los tags de salida u otros tags como desee. La forma más sencilla de crear una variable es con el tag `assign`, que tiene una sintaxis muy fácil:
 
 ```liquid
 {% assign name = 'freestyle' %}
