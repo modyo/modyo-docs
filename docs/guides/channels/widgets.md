@@ -12,7 +12,7 @@ En la esquina superior derecha verás un botón principal "+ Nuevo" que te permi
 
 En la vista de edición del widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
-![Widget builder](/assets/img/channels/template_builder/widget-builder.jpg) 
+![Widget builder](/assets/img/channels/template_builder/widget-builder.png) 
 
 En la **barra superior** verás:
 
