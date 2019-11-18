@@ -35,7 +35,7 @@ Si tu página está en estado "borrador" no aparecerá el icono de diferencias, 
 - Archivar <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M5.12 5l.81-1h12l.94 1M12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5m8.54-12.27l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6 3 6.5V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.5c0-.5-.17-.93-.46-1.27z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Si una página no está publicada, esta acción te permite archivarla. Cuando una página está archivada, por defecto no aparece en el índice de página y permite mantener la esctructura del sitio limpia.
 - Duplicar <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Esta acción te permite copiar la versión editable de la página en la que estás. La versión copiada quedará en estado borrador.
 
-:::warning
+::: warning
 Una vez terminada la acción de copiado, serás dirigido a la nueva página, por lo que recuerda guardar todos los cambios antes de usar esta acción, de lo contrario podrías perder información valiosa.
 :::
 
@@ -84,5 +84,5 @@ Si habilitas la privacidad en una página, entonces se requerirá una sesión pa
 :::warning
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
-- **Contenido**: Son widgets por defecto que te permitirá mostrar listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags y categoría. Para modificar como se ven estos widgets, deberás hacerlo en el template builder, en la sección widgets.
+- **Contenido**: Son widgets por defecto que te permitirá mostrar listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags y categoría. Para modificar como se ven estos widgets, deberás hacerlo en el [template builder](/guides/channels/templates.html), en la sección widgets.
 - **Personalizado**: Encontrarás un listado de todos los widgets que haz creado y publicado en el widget builder.

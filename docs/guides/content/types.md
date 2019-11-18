@@ -141,7 +141,7 @@ Este campo te permite vincular muchas Entradas que ya se encuentren creadas dent
 
 En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es mportante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
 
-- **Reindexar**: Te permite reindexar el modelo si es que te encontraste con alún problem con tu API pública.
+- **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
 - **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
 
 :::warning
