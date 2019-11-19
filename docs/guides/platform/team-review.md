@@ -6,17 +6,19 @@ search: true
 
 ## Introducción
 
-La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso. 
+La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso.
 
-Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
+Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios.
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón "Publicar", cambiará al botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento. 
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón "Publicar", cambiará al botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento.
 
-Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
+Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento.
 
 Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "Aprobado", el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
 
 ### Configuración
+
+<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 Dentro de la configuración de la revisión en equipo, encontrarás distintas opciones:
 
@@ -133,6 +135,8 @@ Dado que esta es una acción peligrosa, solo los administradores de Sitios o Esp
 
 Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
 
+<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
+
 ### ¿Qué usa Locks?
 
 Locks se usan mayoritariamente en Contenidos y en Channels, pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y Customers.
@@ -145,10 +149,14 @@ En otras secciones como Customers y Configuraciones, Locks no permitirán la vis
 
 En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentraba trabajando en él.
 
-### Tomar el control de un recurso
 
-Si un Administrador quiere tomar el control del contenido, deberá hacer click en el archivo en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
+:::warning Tomar el control
+
+Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
+
+<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
 Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo más cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 
 Tras tomar el control, el Administrador solo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+:::
