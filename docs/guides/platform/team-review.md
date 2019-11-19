@@ -115,7 +115,7 @@ Dentro del versionado cuentas con dos acciones que te permiten interactuar con l
 
 Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha. Puedes cambiar que versiones comparar, cambiando los valores seleccionados en los selectores de versiones en la parte superior del modal. 
 
-Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izqueirda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
+Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izquierda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
 
 #### Reestablecer
 
@@ -135,13 +135,13 @@ Locks es una funcionalidad de Modyo que permite modificar un recurso de manera s
 
 ### ¿Qué usa Locks?
 
-Locks se usan mayoritariamente en Contenidos y en Channels, pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y Customers.
+Locks se usan mayoritariamente en [Contenidos](/guides/content/) y en [Channels](/guides/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/guides/customers/).
 
 ### ¿Cómo usar Locks?
 
-Locks se implementa de distintas maneras dentro de la plataforma. En Contenidos y Channels, múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
+Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/guides/content/) y [Channels](/guides/channels/), múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
 
-En otras secciones como Customers y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
+En otras secciones como [Customers](/guides/customers/) y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
 
 En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentraba trabajando en él.
 
