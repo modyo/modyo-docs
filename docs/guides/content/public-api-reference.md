@@ -58,11 +58,11 @@ Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los li
 En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
 
 :::warning
-Ten en cuenta que si tienes mas de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros
+Ten en cuenta que si tienes mas de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
 :::
 
 :::warning
-Para hacer uso de la paginación en un widget personalizado, deberás cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, debes asegurare de que _JQuery_ está disponible en tu sitio y recordar que al hacer uso de los links de paginación, solo se cambiará el HTMl del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
+Para hacer uso de la paginación en un widget personalizado, deberás cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, debes asegurare de que _JQuery_ está disponible en tu sitio y recordar que al hacer uso de los links de paginación, solo se cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
 :::
 
 ### Entradas con ubicación
