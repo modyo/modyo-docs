@@ -133,7 +133,7 @@ Dado que esta es una acción peligrosa, solo los administradores de Sitios o Esp
 
 ## Locks
 
-Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultáneamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
 
 <img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
 
@@ -147,7 +147,7 @@ Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos
 
 En otras secciones como [Customers](/guides/customers/) y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
 
-En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentraba trabajando en él.
+En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentra trabajando en él.
 
 
 :::warning Tomar el control
