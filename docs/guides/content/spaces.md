@@ -36,11 +36,11 @@ El UID del Espacio es muy importante ya que es el atributo con el cual accedes d
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
 
-<img src="/assets/img/content/locale-index.jpg" width="600">
+<img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
 
 El idioma por defecto de un Espacio se define al momento de crear el Espacio, pero en esta sección puedes añadir cuantos idiomas secundarios como quieras. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
 
-<img src="/assets/img/content/selector-language.jpg" style="margin-top: 40px" width="350">
+<img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 :::tip
 Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/guides/content/public-api-reference.html#filtros), [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/guides/content/public-api-reference.html#filtrar-entradas)
@@ -50,7 +50,7 @@ Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada e
 
 El caché es una herramienta que nos permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del Espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
 
-<img src="/assets/img/content/cache.jpg" style="margin: 40px 0" width="600">
+<img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
 :::warning
 Debes tener en consideración que al habilitar esta opción, los cambios en tu contenido serán visibles en intervalos del tiempo que elijas en esta opción, por ejemplo, si usas 5 minutos, al publicar el contenido con título "A", y luego publicas el mismo contenido con título "A+1", por 5 minutos verás el contenido con el título "A" hasta que el caché inicial quede invalidado.
@@ -66,7 +66,7 @@ Modyo, como forma de transmisión segura de datos, permite habilitar CORS para q
 
 Para ello, también es necesario especificar el dominio desde dónde será importada la información, para dar un mejor acceso.
 
-#### CORS
+<img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
 Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
 
@@ -91,12 +91,14 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 
 El contenido que se publica en cada una de las plataformas debe ser de buena calidad y como forma de certificar esta, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
-<img src="/assets/img/content/enforced.jpg" style="margin: 40px 0" width="600">
+<img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 
 Para más información sobre cómo configurar esta opción, ir a [Team Review](/guides/platform/team-review.html)
 
 ### Miembros del Equipo
+
+<img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 Para conformar el grupo de trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en este Espacio y así tendrán acceso a la escritura, revisión y/o publicación.
 
