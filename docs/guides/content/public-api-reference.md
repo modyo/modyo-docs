@@ -43,7 +43,7 @@ La selección de entradas siempre retorna un arreglo, por lo que es necesario it
 'entry_uuid' %} {% assign entry = entries.first %}
 ```
 
-Puedes paginar las entradas haciendo uso del filtro `paignated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
+Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
 
 ```html
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
@@ -56,6 +56,14 @@ Puedes paginar las entradas haciendo uso del filtro `paignated` y mostrar los li
 ```
 
 En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
+
+:::warning
+Ten en cuenta que si tienes mas de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros
+:::
+
+:::warning
+Para hacer uso de la paginación en un widget personalizado, deberás cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, debes asegurare de que _JQuery_ está disponible en tu sitio y recordar que al hacer uso de los links de paginación, solo se cambiará el HTMl del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
+:::
 
 ### Entradas con ubicación
 
@@ -81,7 +89,7 @@ El SDK de Javascript permite el acceso a los espacios y entradas de contenidos d
 En el caso de Modyo Channels, la plantilla base con la cual se crean los sitios ya incluye instalada una versión reciente de este SDK, por lo que se puede utilizar de forma directa.
 :::
 
-La instalación del SDK de Javascript se puede relizar con `npm` o `yarn`.
+La instalación del SDK de Javascript se puede realizar con `npm` o `yarn`.
 
 ```shell
 # Para npm:
@@ -93,7 +101,7 @@ yarn add @modyo/sdk
 
 ### Uso: haciendo un `request`
 
-Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.
+Una vez instalado el SDK en tu proyecto podrás empezar a usarlo para pedir contenido a Modyo.
 
 El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:
 
@@ -115,12 +123,12 @@ export default function getClient(spaceUID) {
 // Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
 // `getEntries()`
 getClient("static-data") // accedemos al espacio
-  .getEntries("menu-item") // Obtenemos todas las enbtradas del tipo `menu-item`
+  .getEntries("menu-item") // Obtenemos todas las entradas del tipo `menu-item`
   .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
   .catch(err => console.log(err)); // o retornamos un error si algo falla
 ```
 
-Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamanete usando el método `getEntry(typeUID, entryUID)`:
+Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamente usando el método `getEntry(typeUID, entryUID)`:
 
 ```js
 getClient("static-data")
