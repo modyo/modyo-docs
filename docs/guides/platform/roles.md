@@ -12,7 +12,7 @@ Para crear un usuario interno, debes hacer click en el botón superior y complet
 
 Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
 
-Si quieres desactivar un usuario interno, debes hacer click en el boton de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer click sobre el nombre del mismo.
+Si quieres desactivar un usuario interno, debes hacer click en el botón de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer click sobre el nombre del mismo.
 
 ### Editar usuario
 

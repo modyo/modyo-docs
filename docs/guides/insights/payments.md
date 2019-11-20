@@ -4,7 +4,7 @@ search: true
 
 # Payments
 
-Modyo también muestra una estadistica de transacciones dentro del sitio, que han realizado los clientes durante el último tiempo.
+Modyo también muestra una estadística de transacciones dentro del sitio, que han realizado los clientes durante el último tiempo.
 
 Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de Pago.
 

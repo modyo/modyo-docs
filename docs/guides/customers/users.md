@@ -133,10 +133,10 @@ Si se quiere tener un CSS personalizado que se ajuste a nuestras necesidades en 
 
 Es común tener vinculados archivos en el código CSS. Si queremos agregar alguno, solo tenemos en el botón que está sobre el editor, y que nos llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que nos permitirá subir sin problemas algún archivo que necesitemos.
 
-Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuanod lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
+Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
 
 ::: tip 
-Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar facilmente la edición.
+Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
 :::
 
 ### Correos
@@ -145,7 +145,7 @@ Modyo permite configurar la dirección y la apariencia de los correos que se env
 
 Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón "Guardar".
 
-Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envio de correos para funciones en específico que solicitan los usuarios, y que no dependen de los correos en masa, tales como son:
+Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envío de correos para funciones en específico que solicitan los usuarios, y que no dependen de los correos en masa, tales como son:
 
 - Correo de activación
 - Usuario importado
@@ -167,7 +167,7 @@ Al hacer click para habilitar cada uno de los correos, mostrará un editor por d
 ::: danger
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
 
-Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar facilmente para ubicarlos en la parte que necesitemos.
+Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar fácilmente para ubicarlos en la parte que necesitemos.
 :::
 
 Cada vez que se haga un cambio en el código, se debe hacer click en el botón "Guardar" que se encuentra en la parte superior de la pantalla.

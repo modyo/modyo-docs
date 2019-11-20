@@ -60,14 +60,14 @@ Las opciones a configurar son:
 Restricciones nos permite configurar la privacidad del Sitio.
 
 - Si el Sitio es público, entonces todos podrán ver el Sitio.
-- Si el Sitio es privado, solo usuarios con una sesión de modyo podrán ver el Sitio.
+- Si el Sitio es privado, solo usuarios con una sesión de Modyo podrán ver el Sitio.
 - Si el Sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen a nuestro home, pero al navegar a cualquier otra página del Sitio, se les solicitará que se registren o que inicien sesión.
 
 Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
 
 ### Dominios
 
-La sección Dominios te permitirá saber dónde está publicamente ubicado nuestro Sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
+La sección Dominios te permitirá saber dónde está públicamente ubicado nuestro Sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
 
 Las variables que puedes cambiar aquí son:
 

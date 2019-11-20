@@ -113,7 +113,7 @@ Al igual que cada template, puedes restaurar todos los templates a su versión o
 
 ### Temas
 
-En esta vista podrás ver cual es el tema que tienes instalado, y luego el istado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón "Instalar" de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
+En esta vista podrás ver cual es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón "Instalar" de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
 
 En la parte superior encontrarás distintas acciones:
 - **Personalizar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te lleva a la edición (template builder) del tema actualmente instalado.

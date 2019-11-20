@@ -81,9 +81,9 @@ Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
 - Abiertos únicos: Nº total de usuarios los cuales abrieron alguna vez la campaña.
 - Clicks: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
 - Clicks únicos: Nº de usuarios que han hecho click alguna vez en la campaña.
-- Spam: Nº de usuarios a los que su corrreo llegó a la casilla de Spam.
+- Spam: Nº de usuarios a los que su correo llegó a la casilla de Spam.
 
-En cambio, si enviaste la campaña por Notificiación, podrás encontrar estas cifras:
+En cambio, si enviaste la campaña por Notificación, podrás encontrar estas cifras:
 
 - Alcance: Personas a las que les llegó la campaña.
 - Envíos: Nº de veces que se envió la campaña.

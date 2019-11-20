@@ -87,11 +87,11 @@ Tenga en cuenta que no hay manera de escribir un arreglo literal o hash como exp
 
 El marcado Output puede aceptar filtros, que modifican el resultado de la sentencia Output. Puede invocar filtros siguiendo la expresión principal de la sentencia Output con:
 
-* Un caracter de barra vertical (`|`)
+* Un carácter de barra vertical (`|`)
 * El nombre del filtro
 * Opcionalmente, dos puntos (`:`) y una lista separada por comas de parámetros adicionales al filtro. Cada parámetro adicional debe ser una expresión válida, y cada filtro predefine los parámetros que acepta y el orden en que deben ser pasados.
 
-Los filtros también se pueden enstringr entre sí añadiendo sentencias de filtro adicionales (comenzando con otro carácter de barra vertical). El Output del filtro anterior será el Input para el siguiente.
+Los filtros también se pueden unir entre sí añadiendo sentencias de filtro adicionales (comenzando con otro carácter de barra vertical). El Output del filtro anterior será el Input para el siguiente.
 
 ```liquid
 Hello {{ 'tobi' | upcase }}

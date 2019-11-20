@@ -26,7 +26,7 @@ En este caso, los filtros son cinco:
 - **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
 - **Categoría**: Categoría a la que se encuentra asignada el contenido.
 - **Idioma**: Idioma en que se encuentra escrito el contenido.
-- **Traducción**: Si estás trabajando en una plataforma que necesite producir iguales contenidos en distintos idiomas, puedes revisar si estos se encuentran  traducidos. En este caso, los usuarios podrán asignar si el contenido ya se encuentra trauducido o no.
+- **Traducción**: Si estás trabajando en una plataforma que necesite producir iguales contenidos en distintos idiomas, puedes revisar si estos se encuentran  traducidos. En este caso, los usuarios podrán asignar si el contenido ya se encuentra traducido o no.
 - **Tags**: Tags a los que se encuentra asignado el contenido. En este caso, puedes encontrar en orden alfabético las etiquetas asignadas o puedes ocupar la barra de búsqueda interior para encontrarlas.
 - **Barra de búsqueda**: Si es necesario, puedes buscar el contenido según lo que esté dentro del este, como una palabra o código que tengan.
 
@@ -92,7 +92,7 @@ Para ver las Categorías, es necesario que hagamos click en la sección Categor�
 Si queremos crear una, solo debemos hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podremos ver una ventana que nos pedirá ingresar el nombre de la Categoría, la Ruta y si esta pertenece a una Categoría Padre)
 
 ::: tip
-Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminadamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
+Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
 
 Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
@@ -107,7 +107,7 @@ Si se borra la Categoría Padre, se borrarán también todas las subcategorías 
 
 ### Slug
 
-Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más facil el trabajo en la URL.
+Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más fácil el trabajo en la URL.
 
 Cuando crees una entrada, la plataforma te asignará un slug de manera aleatoria. Sin embargo, para cambiarla solo tienes que cambiar el campo en la ventana de propiedades.
 
@@ -122,7 +122,7 @@ Para crear un target en específico, revisa la sección Targets.
 
 ## Contenido Privado
 
-Para cualquier usuario de Modyo, es importante el contenido privado targetizado a cualquier cliente. Sin embargo, es muy facil de buscar a través de la API para cualquier usuario que tenga los permisos habilitados.
+Para cualquier usuario de Modyo, es importante el contenido privado targetizado a cualquier cliente. Sin embargo, es muy fácil de buscar a través de la API para cualquier usuario que tenga los permisos habilitados.
 
 Quien quiera buscarlo, debe contar con un Content Delivery Token. El Content Delivery Token se obtiene a través de la API de Profile.
 

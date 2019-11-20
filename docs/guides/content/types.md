@@ -107,14 +107,14 @@ Este campo te permite agregar un número decimal que debe estar de manera predet
 
 ### Fecha
 
-Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que sepueden elegir, haciendo uso de las restricciones:
+Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que se pueden elegir, haciendo uso de las restricciones:
 
 - **Desde**: Permite limitar la menor seleccionable.
 - **Hasta**: Permite limitar la mayor fecha seleccionable.
 
 ### Ubicación
 
-Te permite agregar un campo que en el que puedesseleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones geopolíticas de la ubicación
+Te permite agregar un campo que en el que puedes seleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones geopolíticas de la ubicación
 
 
 ### Archivo
@@ -139,7 +139,7 @@ Este campo te permite vincular muchas Entradas que ya se encuentren creadas dent
 
 ## Propiedades
 
-En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es mportante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
+En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es importante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
 
 - **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
 - **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
