@@ -14,9 +14,9 @@ Los filtros disponibles son:
 
 **Usuarios activos**: Conteo de todos los usuarios con dos o mas registros de actividad en el periodo seleccionado.
 
-**Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertes.
+**Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertas.
 
-**Inicios de sesión**: Correpsonde al conteo de todos los inicios de sesión de usuarios.
+**Inicios de sesión**: Corresponde al conteo de todos los inicios de sesión de usuarios.
 
 **Registros**: Corresponde al conteo de todos los registros de usuarios.
 

@@ -32,4 +32,4 @@ Ahora los usuarios de tus sitios son entidades completamente distintas de los ad
 
 ### Soporte para PWA
 
-Modyo ahora tiene soporte nativo para los habilitadores de Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen itermitencia o pierden la conexión.
+Modyo ahora tiene soporte nativo para los habilitadores de Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen intermitencia o pierden la conexión.

@@ -59,7 +59,7 @@ Los filtros que se encuentran de manera predeterminada en la plataforma son:
 - Valor de custom field
 - Dispositivo
 - Correo entregado
-- Correo no leido
+- Correo no leído
 - Correo no abierto
 - Correo reportado como spam
 - Conteo de correos abiertos

@@ -126,13 +126,13 @@ En caso de ser un formulario público, los usuarios que no tienen una sesión ac
 Si un usuario no tiene una sesión activa, y rellena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
 :::
 
-La sección **Snippet** solo aparecerá si el formulario es público, y te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de modyo.
+La sección **Snippet** solo aparecerá si el formulario es público, y te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
 
 <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 
 :::warning
-Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en modyo y los _headers_ de seguridad de donde estés insertando el snippet.
+Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
 :::
 
 :::warning

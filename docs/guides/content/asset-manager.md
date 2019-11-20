@@ -151,7 +151,7 @@ Si quieres resubir el archivo, manteniendo el nombre y el link original, haz cli
 
 <img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Para facilitar el manejo de imagenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños online.
+Para facilitar el manejo de imágenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños online.
 
 Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lapiz** que se encuentra en la ventana de Actualizar Información.
 

@@ -22,7 +22,7 @@ Esto te puede servir en el caso de tener muchos usuarios internos de la platafor
 
 <img src="/assets/img/platform/cors.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-En esta sección podremos activar el Cross Origin Resourse Sharing (CORS), para poder acceder a la data de modyo desde otras web que no necesariamente sean seguras.
+En esta sección podremos activar el Cross Origin Resource Sharing (CORS), para poder acceder a la data de Modyo desde otras web que no necesariamente sean seguras.
 
 Al habilitarlo, deberás especificar los dominios que quieres que se habiliten para que estén compartiendo recursos con tu sitio.
 
