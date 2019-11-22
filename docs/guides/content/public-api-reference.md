@@ -19,9 +19,10 @@ El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channel
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
 
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
-entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+  entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
@@ -29,39 +30,41 @@ entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 
 Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
-= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
-entry.uuid }} -- {{ entry.title }}<br />
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries
+  | by_category = 'news'
+  | by_tag = 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
 La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
-'entry_uuid' %} {% assign entry = entries.first %}
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
+{% assign entry = entries.first %}
 ```
 
 Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
 
-```html
+```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
 <ul>
-{% for entry in entries %}
-  <li> {{ entry.slug }} </li>
-{% endfor %}
+  {% for entry in entries %}
+  <li>{{ entry.slug }}</li>
+  {% endfor %}
 </ul>
 {{ entries | pagination_links }}
 ```
 
 En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
 
-:::warning
+::: warning Atención
 Ten en cuenta que si tienes mas de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
 :::
 
-:::warning
+::: warning Atención
 Para hacer uso de la paginación en un widget personalizado, deberás cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, debes asegurare de que _JQuery_ está disponible en tu sitio y recordar que al hacer uso de los links de paginación, solo se cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
 :::
 
@@ -143,7 +146,7 @@ getClient("static-data")
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
-```javascript
+```
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
@@ -540,7 +543,7 @@ Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables me
   - `.../entries?meta.published_at[gt]=1987-11-19`
 - Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
   - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: `fields.location_name=Chile`
-    - `.../entries?fields.color=black`
+  - `.../entries?fields.color=black`
 
 ###### Filtro de idiomas
 
@@ -583,11 +586,11 @@ Se usa una expresiónJsonPath por ejemplo:
 Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
 
 - ALL: equivalente a un sql AND
-`.../entries?fields.color[all][]=red&fields.color[has][]=black`
+  `.../entries?fields.color[all][]=red&fields.color[has][]=black`
 - IN: equivalente a un sql OR
-`.../entries?fields.color[in][]=red&fields.color[in][]=blue`
+  `.../entries?fields.color[in][]=red&fields.color[in][]=blue`
 - NIN: equivalente a un slq NOT IN
-`.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
+  `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
 ##### Orden
 

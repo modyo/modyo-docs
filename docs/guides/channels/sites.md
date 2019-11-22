@@ -37,7 +37,7 @@ Dentro de esta sección, podemos configurar los siguientes datos:
 
 ### PWA
 
-::: danger
+::: danger Peligro
 Missing description
 Mannifers.json
 Serviceworker.js
