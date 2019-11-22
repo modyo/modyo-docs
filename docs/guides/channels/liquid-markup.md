@@ -67,7 +67,7 @@ Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pued
 
 Liquid acepta los siguientes tipos de expresiones:
 
-* **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no tener ningún tipo de sigla distintiva (es decir, deben verse como `var_name`, y no `$var_name`).
+* **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no contener ningún tipo de símbolo (es decir, deben verse como `var_name`, y no `$var_name`).
 * **Acceso de arreglo/hashes.** Si tienes una expresión (normalmente una variable) cuyo valor es un arreglo o hash, puede usar un único valor de ese arreglo/hash de la siguiente manera:
     * `my_variable[<KEY EXPRESSION>]` — El nombre de la variable, seguido inmediatamente de corchetes que contienen una expresión clave.
         * Para arreglos, la clave debe ser un entero literal o una expresión que se resuelva a un entero.
