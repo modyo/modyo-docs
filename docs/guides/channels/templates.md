@@ -257,28 +257,28 @@ El método recomendado para interactuar con una API privada usando la sesión de
 
 #### Hacer el sitio privado
 
-1. Nos logueamos en la cuenta dónde se desea crear el sitio privado
-2. Hacemos click en crear un nuevo sitio
-3. Le damos un nombre a nuestro nuevo sitio y seleccionamos nuestro tema base.
-4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, seleccionamos **privado**. Además activamos **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión
+1. Inicia sesión en la cuenta dónde se desea crear el sitio privado
+2. Haz click en crear un nuevo sitio
+3. Asigna un nombre al nuevo sitio y selecciona el tema base.
+4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, seleccionamos **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión
 
 #### Habilitar la integración a nivel de cuenta (para todos los sitios)
 
-1. Vamos a la cuenta, y desde ahí vamos a la sección **Configuración** a la pestaña **Integración**
-2. Seleccionamos la integración OpenID Connect y activamos la casilla de **Habilitar OpenID Connect**
-3. Llenamos los datos de **Nombre del servicio, Client ID, Secret e Issuer** y hacemos click en **Lanzar servicio de descubrimiento**
-4. Chequeamos los campos que necesitemos (Habilitar refresh token, Habilitar cierre de sesión remoto, Habilitar revocación de token, Habilitar sincronización de claims)
-   TODO: 5. Mapeamos los campos del proveedor con los campos que tengamos en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
+1. Ve a la cuenta, **Customers** y desde ahí a la sección **Configuración** y luego la pestaña **Integración**
+2. Selecciona la integración OpenID Connect y activa la casilla de **Habilitar OpenID Connect**
+3. Llena los datos de **Nombre del servicio, Client ID, Secret e Issuer** y haz click en **Lanzar servicio de descubrimiento**
+4. Chequea los campos que necesites (Habilitar refresh token, Habilitar cierre de sesión remoto, Habilitar revocación de token, Habilitar sincronización de claims)
+5. Asocia los campos del proveedor con los campos personalizados que tengas en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
 ### Usando Axios para hacer la integración
 
-Si queremos usar una librería como `axios` para realizar nuestra intrgración desde Modyo, un patrón que resulta conveniente escrear 3 snippets que se hagan cargo de los aspectos más básicas de una integración.
+Si quieres usar una librería como `axios` para realizar una integración desde Modyo, un patrón que resulta conveniente es crear 3 snippets que se hagan cargo de los aspectos más básicas de una integración.
 
-Las tareas que debemos cubrir con los snippets son:
+Las tareas que debes cubrir con los snippets son:
 
-1. Un interceptor de requests para incluyan un token
-2. Un manejador de sesiones
-3. Una ventana modal que informe al usuario que su sesión va a expirar
+1. Un interceptor de requests para incluyan un token.
+2. Un controlador de sesiones.
+3. Una ventana modal que informe al usuario que su sesión va a expirar.
 
 ### Interceptar los request para que incluyan un token
 
@@ -318,7 +318,7 @@ axios_auth.interceptors.request.use(resetIdleTime);
 axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ```
 
-### Un manejador de sesiones
+### Un controlador de sesiones
 
 ```js
 // se encargará de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón mantener sesión y que lanzara una promesa reject en el caso de seleccionar el botón con la negativa de continuar
