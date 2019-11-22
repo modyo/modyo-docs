@@ -17,7 +17,7 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen, antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-:::tip
+:::tip Tip
 Desde Modyo 9 en adelante, los usuarios (Customers>Usuarios) y administradores (Settings>Equipo) están separados lógicamente, y ambos cuentan con las mismas integraciones, pero con inicios de sesión distintos, por lo que puedes configurar, por ejemplo, facebook para tus usuarios y Oauth2 para tus administradores.
 :::
 

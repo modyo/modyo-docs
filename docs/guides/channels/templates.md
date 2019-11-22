@@ -25,7 +25,7 @@ En la parte superior derecha, encontrarás la última fecha de publicación y la
 
 **Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este icono, abrirás el modal de diferencias, en el cual podrás comparar los cambios que hay entre múltiples versiones de tus templates. Por defecto partirás comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, podrás comparar además con las versiones de respaldo.
 
-:::tip
+:::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. Para mas información sobre el versionamiento, échale un vistazo a la sección de [versionado](/guides/platform/team-review.html#versionado).
 :::
 
@@ -64,11 +64,11 @@ Puedes añadir snippets personalizados al final del listado de snippets de la pl
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
-:::tip
+:::tip Tip
 Para que el sistema reconozca el tipo de lenguaje de programación al que pertenece el snippet, se debe agregar la terminación con underline + terminación, es decir **"front_css"** o **"library_js"** por defecto reconocerá el snippet como lenguaje HTML.
 :::
 
-:::tip
+:::tip Tip
 Todos los elementos del Template Builder usan _Liquid_ como motor de plantillas.
 
 Para mas información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/docs/channels/liquid-markup.html)
@@ -80,7 +80,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 
 **Gestor de archivos**: Se levantará un modal donde podrás acceder a todos los archivos de la cuenta y copiar su URL, si accedes a la segunda pestaña, podrás subir nuevos archivos.
 
-:::tip
+:::tip Tip
 Para mas información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/docs/content/asset-manager.html)
 :::
 
@@ -96,15 +96,15 @@ Para mas información sobre los beneficios y prestaciones de Gestor de Archivos,
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
 
-:::tip
+:::tip Tip
 Si publicas una versión, verás que el listado de cambios desaparece, esto es porque la nueva versión editable no ha tenido ningún cambio.
 :::
 
-:::tip
+:::tip Tip
 Las sub-versiones son por cada template, por lo que para algunos verás que hay cambios y para otros no verás el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectarás al resto de los templates.
 :::
 
-:::tip
+:::tip Tip
 Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. Puedes aprender mas sobre el [versionado aquí](/guides/platform/team-review.html#versionado)
 :::
 
@@ -121,11 +121,11 @@ En la parte superior encontrarás distintas acciones:
 - **Reestablecer** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al igual que la acción reestablecer del template builder, esta acción restaura todos los templates editables a la versión original del tema.
 - **Cargar templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: En algunos casos, luego de migraciones complejas, hay algunos templates no modificado que se pueden perder y podrías no verlos en el listado de templates en el template builder. Esta acción recupera esos templates desde el tema original y te permite volver a ocuparlos.
 
-:::tip
+:::tip Tip
 La acción cargar templates no modifica ni toca los templates editables que ya están visibles en el template builder, solo restaura aquellos que no son visibles.
 :::
 
-:::tip
+:::tip Tip
 Cuando creas o copias un tema en un sitio, ese tema queda disponible para todos los otros sitios de la cuenta, de tal forma que puedes crear un tema base, y partir desde esa base cuando necesites crear nuevos sitios de forma rápida.
 :::
 
@@ -162,7 +162,7 @@ Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
 </div>
 ```
 
-:::tip
+:::tip Tip
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 

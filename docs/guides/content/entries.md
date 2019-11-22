@@ -36,7 +36,7 @@ Para crear una entrada, se debe hacer click en el botón de la parte superior de
 
 Al hacer click en Crear, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
-::: tip
+::: tip Tip
 Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podras pulsar el botón "Copiar desde idioma" para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
 :::
 
@@ -69,17 +69,17 @@ Para ver las Categorías, es necesario que hagamos click en la sección Categor�
 
 Si queremos crear una, solo debemos hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podremos ver una ventana que nos pedirá ingresar el nombre de la Categoría, la Ruta y si esta poseé a una Categoría Padre.
 
-::: tip
+::: tip Tip
 Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
 
 Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
 
-::: warning
+::: warning Atención
 Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borrarán sino que no estarán a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
 :::
 
-::: danger
+::: danger Peligro
 Si se borra la Categoría Padre, se borrarán también todas las subcategorías asignadas a esta. Y las entradas asociadas a dichas categorías quedaran sin categoría asignada.
 :::
 
@@ -128,6 +128,6 @@ El contenido targetizado es fundamental para cualquier entidad o empresa que qui
 
 Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigira la entrada.
 
-Para crear un target en específico, revisa la sección Targets.
-----
+Para crear un target en específico, revisa la sección [Targets](/guides/customers/targets.html).
+
 

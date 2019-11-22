@@ -24,24 +24,24 @@ Dentro de la configuración de la revisión en equipo, encontrarás distintas op
 
 - **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
 - **Número de aprobaciones**: Determina cuántos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
-:::tip
+:::tip Tip
  Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
 :::
 - **Restringir la selección de revisores**: Esta opción evita que cualquier usuario con permisos pueda aprobar el elemento, limitando la selección y adición de revisores a quien envía el elemento a revisión.
-:::tip
+:::tip Tip
 Aunque la selección de revisores esté limitada a quien envía a revisión, todos los usuarios con permisos podrán seguir haciendo comentarios en el elemento que está en revisión, pero no podrán aprobar el elemento.
 :::
 - **Forzar revisión**: Esta opción habilita un selector de usuarios que permite forzar la adición de ciertos revisores a los elementos del contexto, de tal forma que en cada revisión, todos los usuarios asociados a la fuerza serán notificados de los comentarios y cambios del elemento.
-:::tip
+:::tip Tip
 Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "aprobado", por lo que no podrá ser publicado.
 :::
 - **Requerir todos**: Esta opción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
 
-:::warning
+::: warning Atención
 Recuerda hacer click en el botón "Guardar" arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
 :::
 
-:::warning
+::: warning Atención
 Cuando haces cambios en la configuración de la revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración de la revisión en equipo, es necesario que sean rechazados y se vuelvan a enviar a revisión.
 :::
 
@@ -59,7 +59,7 @@ Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los e
 
 Los usuarios con el nivel de permisos alto, además de poder hacer el resto de las acciones, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
 
-:::warning
+::: warning Atención
 Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo. Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación". Esta opción existe porque hay ocasiones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
 :::
 
@@ -105,8 +105,8 @@ Los respaldos son las versiones de los elementos que se han guardado anteriormen
 
 Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada elemento, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
-:::warning
-Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigesimoprimera publicación, estarás borrando el respaldo de la primera publicación del elemento. Este valor se puede modificar mediante variables de entorno y es común para todas la cuentas de ese entorno.
+::: warning Atención
+Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigésimoprimera publicación, estarás borrando el respaldo de la primera publicación del elemento. Este valor se puede modificar mediante variables de entorno y es común para todas la cuentas de ese entorno.
 :::
 
 ### Acciones para el versionado
@@ -127,7 +127,7 @@ En este caso, el respaldo se copiará a la versión editable, por lo que perdere
 
 En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
 
-:::danger
+::: danger Peligro
 Dado que esta es una acción peligrosa, solo los administradores de Sitios o Espacios tienen el permiso para poder ejecutar esta acción.
 :::
 
@@ -150,7 +150,7 @@ En otras secciones como [Customers](/guides/customers/) y Configuraciones, Locks
 En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentra trabajando en él.
 
 
-:::warning Tomar el control
+::: warning Tomar el control
 
 Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
 

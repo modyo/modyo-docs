@@ -28,6 +28,6 @@ Al habilitarlo, deberás especificar los dominios que quieres que se habiliten p
 
 Tras esto, la plataforma te dará un token de tiempo limitado vía JSON, para que puedas enlazar los sitios.
 
-::: danger
+::: danger Peligro
 Recuerda siempre que esto también puede significar una falla de seguridad, por lo que debes asegurarte que los datos que se compartan, estén libres de malware u otros archivos peligrosos para nuestra plataforma y clientes.
 :::

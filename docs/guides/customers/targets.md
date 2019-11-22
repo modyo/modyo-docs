@@ -23,7 +23,7 @@ Además, en el extremo izquierdo encontrarás un botón con un menú desplegable
 - Editar: Editar el nombre y los filtros del target
 - Borrar: Borrar el target
 
-::: warning
+::: warning Atención
 Si borras el target, tendrás que elaborarlo de nuevo. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.
 :::
 
@@ -43,7 +43,7 @@ Para grabar tu target, solo debes hacer clic en el botón "Guardar como Target",
 
 Por último, si quieres ver los usuarios que integran ese target, solo debes hacer clic en el botón "Aplicar". Con esto, llegarás a la vista de [Usuarios]/guides/customers/users.html) que te mostrará una lista con todos los contactos que se ajustan a tus filtros.
 
-::: tip
+::: tip Tip
  Es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar mejor. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al target.
  :::
 

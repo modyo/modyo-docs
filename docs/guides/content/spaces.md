@@ -16,7 +16,7 @@ Para crear un Espacio, se debe hacer click en el botón verde en la parte superi
 
 Además, deberemos seleccionar el idioma por defecto sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
 
-:::tip
+:::tip Tip
 Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del Espacio.
 :::
 
@@ -42,7 +42,7 @@ El idioma por defecto de un Espacio se define al momento de crear el Espacio, pe
 
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
-:::tip
+:::tip Tip
 Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/guides/content/public-api-reference.html#filtros), [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/guides/content/public-api-reference.html#filtrar-entradas)
 :::
 
@@ -52,11 +52,11 @@ El caché es una herramienta que nos permite reducir la cantidad de requests que
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
-:::warning
+::: warning Atención
 Debes tener en consideración que al habilitar esta opción, los cambios en tu contenido serán visibles en intervalos del tiempo que elijas en esta opción, por ejemplo, si usas 5 minutos, al publicar el contenido con título "A", y luego publicas el mismo contenido con título "A+1", por 5 minutos verás el contenido con el título "A" hasta que el caché inicial quede invalidado.
 :::
 
-:::tip
+:::tip Tip
 Para trabajar en modo desarrollo, es altamente recomendable tener esta opción deshabilitada, y solo habilitarla cuando hay que enfrentar algún escenario de alta demanda o concurrencia.
 :::
 
