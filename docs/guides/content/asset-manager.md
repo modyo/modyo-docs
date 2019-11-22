@@ -45,7 +45,7 @@ Posteriormente, podrás ver tres tipos de filtros que te serán útiles para enc
 
 **Tags**: Este filtro permite mostrar todos los archivos de una sola etiqueta que se encuentren dentro de la plataforma, independiente de su archivo. Así se puede filtrar según el uso customizado que se le esté dando, siempre y cuando se le haya asignado una etiqueta al subirlo u editarlo.
 
-::: tip
+::: tip Tip
 Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, en la parte inferior aparecerá una columna con un checkbox al lado de Previsualizar. 
 Si seleccionas la primera, abajo aparecerá un botón verde, que permite seleccionar todos los archivos de la pantalla a la vez para asignar una o más etiquetas.
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
@@ -165,7 +165,7 @@ Posteriormente, podrás ver las tres opciones que puedes elegir para editar el t
 
 A un costado, podrás observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
 
-::: tip
+::: tip Tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
 - **Zoom:** Usa el scroll del mouse para acercar la imagen.

@@ -36,7 +36,7 @@ Para crear una entrada, se debe hacer click en el botón de la parte superior de
 
 Al hacer click en Crear, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
-::: tip
+::: tip Tip
 Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podras pulsar el botón "Copiar desde idioma" para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
 :::
 
@@ -69,7 +69,7 @@ Para ver las Categorías, es necesario que hagamos click en la sección Categor�
 
 Si queremos crear una, solo debemos hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podremos ver una ventana que nos pedirá ingresar el nombre de la Categoría, la Ruta y si esta poseé a una Categoría Padre.
 
-::: tip
+::: tip Tip
 Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
 
 Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.

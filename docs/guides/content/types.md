@@ -35,7 +35,7 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 Para crear un Tipo, es necesario hacer click en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
 
-::: tip
+::: tip Tip
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
@@ -49,7 +49,7 @@ Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el f
 
 ## Campos
 
-::: tip
+::: tip Tip
 El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. Para mas información ve a la [referencia de la API](/guides/content/public-api-reference.html)
 :::
 
