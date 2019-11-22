@@ -135,7 +135,7 @@ Es común tener vinculados archivos en el código CSS. Si queremos agregar algun
 
 Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
 
-::: tip 
+::: tip Tip
 Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
 :::
 
