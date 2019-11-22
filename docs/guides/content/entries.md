@@ -26,7 +26,7 @@ En este caso, los filtros son cinco:
 - **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
 - **Categoría**: Categoría a la que se encuentra asignadas las entradas.
 - **Idioma**: Idioma en que se encuentra escrito el contenido.
-- **Traducción**: Este filtro está asociado al idioma seleccionado y filtra por el estado de traducción de las entradas para dicho idioma. EJ: Esto quiere decir que si una entrada no tiene una versión en el idioma seleccionado, está caera en "No traducida".
+- **Traducción**: Este filtro está asociado al idioma seleccionado y filtra por el estado de traducción de las entradas para dicho idioma. EJ: Esto quiere decir que si una entrada no tiene una versión en el idioma seleccionado, está caerá en "No traducida".
 - **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
 - **Barra de búsqueda**: Filtra por el contenido del titulo de las entradas.
 
@@ -37,7 +37,7 @@ Para crear una entrada, se debe hacer click en el botón de la parte superior de
 Al hacer click en Crear, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
 ::: tip
-Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podras pulsar el botón "Copiar desde idioma" para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
+Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podrás pulsar el botón "Copiar desde idioma" para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
 :::
 
 ### Publicar una Entrada
@@ -50,12 +50,12 @@ Si haces click en este, el botón experimentará dos cambios. Si es que tienes p
 
 Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde podrás asignar a revisores en específico quienes podrán publicar. 
 
-Ver [Revisión en Equipo](/guides/platform/team-review.html)
+Para saber más, puedes ver [Revisión en Equipo.](/guides/platform/team-review.html)
 
 
 ### Despublicar una entrada
 
-Para despublicar una entrada, debes acceder al ella y hacer click en el boton Despublicar que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
+Para despublicar una entrada, debes acceder al ella y hacer click en el botón Despublicar que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
 
 Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
@@ -124,10 +124,13 @@ Para establecer un token, es necesario hacerlo a través del parámetro de query
 
 
 ### Targets
+
 El contenido targetizado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
 
-Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigira la entrada.
+Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigirá la entrada.
 
-Para crear un target en específico, revisa la sección Targets.
+Para crear un target en específico, revisa la sección [Targets](/guides/customers/targets.html).
+
+
 ----
 
