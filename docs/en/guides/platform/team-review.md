@@ -71,24 +71,24 @@ Dentro de la configuración de la revisión en equipo, encontrarás distintas op
 
 - **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
 - Número de aprobaciones: Determina cuantos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
-:::tip
+:::tip Tip
  Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
 :::
 - **Restringir la selección de revisores**: Esta opción evita que cualquier usuario con permisos pueda aprobar el elemento, limitando la selección y adición de revisores a quien envía el elemento a revisión.
-:::tip
+:::tip Tip
 Aunque la selección de revisores esté limitada a quien envía a revisión, todos los usuarios con permisos podrán seguir haciendo comentarios en el elemento que está en revisión, pero no podrán aprobar el elemento.
 :::
 - **Forzar revisión**: Esta opción habilita un selector de usuarios que permite forzar la adición de ciertos revisores a los elementos del contexto, de tal forma que en cada revisión, todos los usuarios asociados a la fuerza serán notificados de los comentarios y cambios del elemento.
-:::tip
+:::tip Tip
 Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "arpbodado", por lo que no podrá ser publicado.
 :::
 - **Requerir todos**: Esta opcción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
 
-:::warning
+::: warning Atención
 Recuerda hacer click en el botón "Guardar" arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
 :::
 
-:::warning
+::: warning Atención
 Cuando haces cambios en la configuración de la revisión en equipo, los elementos que ya estaban esperando revisión seguiran rigiendose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración de la revisión en equipo, es necesario que sean rechazados y se vuelvan a enviar a revisión.
 :::
 
@@ -106,7 +106,7 @@ Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los e
 
 Los usuarios con el nivel de permisos alto, además de poder hacer el resto de las acciones, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
 
-:::warning
+::: warning Atención
 Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo. Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación". Esta opción existe porque hay ocaciones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
 :::
 

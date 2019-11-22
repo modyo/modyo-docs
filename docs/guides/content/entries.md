@@ -75,11 +75,11 @@ Cuando se ingrese el nombre de la categoría, la ruta se establecerá predetermi
 Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
 
-::: warning
+::: warning Atención
 Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borrarán sino que no estarán a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
 :::
 
-::: danger
+::: danger Peligro
 Si se borra la Categoría Padre, se borrarán también todas las subcategorías asignadas a esta. Y las entradas asociadas a dichas categorías quedaran sin categoría asignada.
 :::
 

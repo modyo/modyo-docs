@@ -98,7 +98,7 @@ En la interfaz de edición de las propiedades del archivo, podrás ver ciertos c
 
 **Tag de Liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
 
-::: warning
+::: warning Atención
 Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 :::
 
@@ -129,7 +129,7 @@ Esta acción abrirá una nueva ventana que permite subir los archivos de dos man
 - **Drag & Drop**: arrastrar desde el navegador de archivos de tu computador hacia la ventana)
 - **Manera tradicional**: a través del navegador, pinchando y seleccionado los archivos
 
-::: warning
+::: warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
 
@@ -185,7 +185,7 @@ La primera de ellas se hace para buscar archivos y puede ser utilizada a través
 
 Para borrar un archivo en específico, se debe ir a la ventana de Actualizar Información y hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
 
-:::warning
+::: warning Atención
 Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
 :::
 

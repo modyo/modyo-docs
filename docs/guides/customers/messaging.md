@@ -30,7 +30,7 @@ A un costado de cada campaña, se encuentra un botón en el que podremos efectua
 - Editar la campaña
 - Borrar la campaña
 
-:::danger
+::: danger Peligro
 Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
 :::
 
@@ -68,7 +68,7 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
 En la vista superior, podrás encontrar las estadísticas de la campaña. 
 
-::: warning
+::: warning Atención
 Si no has envíado aún la campaña, los valores aparecerán en cero.
 :::
 
@@ -104,7 +104,7 @@ Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la 
 
 Después, podrás encontrar un botón que te permitirá borras el envío del registro.
 
-::: danger
+::: danger Peligro
 Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
 Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
 :::
@@ -175,7 +175,7 @@ Recuerda que este nombre es el que después deberás buscar para hacer el envío
 
 Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
 
-::: warning
+::: warning Atención
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
 Para automatizar la inserción del Footer, lee [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers)
@@ -195,7 +195,7 @@ Si se hace click en el nombre del usuario, puedes encontrar el [perfil del usuar
 
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 
-::: danger
+::: danger Peligro
 Hacer una reinscripción sin una autorización expresa del usuario, puede causar problemas legales.
 Revisa la regulación sobre correos masivos en cada país.
 :::

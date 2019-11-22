@@ -144,10 +144,10 @@ En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es imp
 - **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
 - **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
 
-:::warning
+::: warning Atención
 Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
 :::
 
-:::warning
+::: warning Atención
 Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/guides/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::

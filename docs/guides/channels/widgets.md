@@ -44,17 +44,17 @@ A la derecha, encontrarás distintas acciones:
 - Despublicar: Si el widget está publicado, podrás sacarlo de producción usando esta opción
 - Forzar publicación: Si eres administrador del sitio, podrás hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está la revisión en equipo habilitada.
 
-:::tip
+:::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
 :::
 
-:::tip
+:::tip Tip
 Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Puedes restaurar un widget archivado, entrando a su vista de edición y usando la opción restaurar en la esquina superior derecha de la vista.
 :::
 
 Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [page builder.](/guides/channels/pages.html)
 
-:::tip
+:::tip Tip
 Para aprender más sobre el flujo de publicación, revisa la sección de [Versionado.](/guides/platform/team-review.html#versionado)
 :::
 
@@ -67,11 +67,11 @@ En el **área de trabajo** verás:
 - **Snippets**: Verás una lista de los snippets disponibles desde el [template builder](/guides/channels/templates.html#snippets) y podrás copiar su código para referenciarlos en tu widget.
 - **Cambios**: Si has guardado cambios y no has publicado, verás este listado de todas las veces que has guardado cada uno de los archivos (JS, CSS y HTML). Al hacer click en una sub-versión, cambiarás el contenido de la pestaña por el contenido de la sub-versión que clickeaste.
 
-:::tip
+:::tip Tip
 Para no perder los cambios que tienes actualmente, asegúrate de guardar antes de saltar entre sub-versiones, de tal forma que siempre puedas volver a la versión guardada mas recientemente en la lista de cambios.
 :::
 
-:::tip
+:::tip Tip
 Cuando publicas el widget, no verás cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si restauras el widget a una versión anterior, también restaurarás las sub-versiones, por lo que podrás acceder a todas las instancias en que se guardaron cambios en esa versión.
 :::
 

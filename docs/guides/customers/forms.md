@@ -36,7 +36,7 @@ Modyo permite hacer un análisis global de cada formulario. En la página de an�
 - Preguntas anidadas: Verás un gráfico de barras con todas las alternativas del primer nivel.
 - Archivo:  Verás un conteo de cuantas personas rellenaron este campo, junto con los últimos cinco archivos subidos.
 
-:::tip
+:::tip Tip
 En la barra derecha podrás ver un contador del total de veces que se ha respondido el formulario, pero en los conteos de respuestas para cada pregunta, verás el conteo de cuantas personas pusieron un valor a esa pregunta, por lo que es normal ver un número menor de respuestas en cada pregunta con respecto a las respuestas totales del formulario.
 :::
 
@@ -46,7 +46,7 @@ Al hacer click en el contador de respuestas de un formulario, llegarás a una vi
 
 Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionando las respuestas que quieras exportar y luego usando las acciones masivas al final del listado. 
 
-:::danger
+::: danger Peligro
 Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón "Borrar" al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
 :::
 
@@ -77,7 +77,7 @@ Esta sección te permitirá añadir cuantos campos sean necesarios para completa
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
-:::danger
+::: danger Peligro
 Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.
 :::
 
@@ -118,11 +118,11 @@ En la sección **general**, podrás modificar:
 - **Solicitar contestar automáticamente**: Si el formulario es privado (solo usuario registrados lo pueden contestar), aparecerá esta opción que te permitirá redireccionar automáticamente a los usuarios que inicien sesión en el sitio asociado al formulario para que lo contesten.
 - **Habilitar targetización**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), podrás seleccionar un conjunto de usuarios que puedan contestar el formulario haciendo uso de los targets. Para aprender más dirígete a [Targets](/guides/customers/targets.html)
 
-:::warning
+::: warning Atención
 En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo, verás tres campos obligatorios en la parte superior del formulario: Nombre, Apellido y Correo. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
 :::
 
-:::warning 
+::: warning Atención 
 Si un usuario no tiene una sesión activa, y rellena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
 :::
 
@@ -131,11 +131,11 @@ La sección **Snippet** solo aparecerá si el formulario es público, y te permi
 <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 
-:::warning
+::: warning Atención
 Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
 :::
 
-:::warning
+::: warning Atención
 Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/guides/platform/security.htm) en la configuración de la cuenta.
 :::
 

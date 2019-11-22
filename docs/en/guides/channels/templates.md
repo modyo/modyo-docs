@@ -19,7 +19,7 @@ Además de los archivos predeterminados, también se pueden agregar nuevos snipp
 
 Tras los cambios que realicemos, podemos Enviar a revisión nuestro template, asignándolo a otro usuario de la plataforma, o Publicar directamente, según se deseee.
 
-::: danger
+::: danger Peligro
 Missing description
 Temas
 Restaurar temas
