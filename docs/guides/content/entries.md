@@ -128,6 +128,6 @@ El contenido targetizado es fundamental para cualquier entidad o empresa que qui
 
 Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigira la entrada.
 
-Para crear un target en específico, revisa la sección Targets.
-----
+Para crear un target en específico, revisa la sección [Targets](/guides/customers/targets.html).
+
 
