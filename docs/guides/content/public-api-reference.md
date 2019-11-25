@@ -142,7 +142,7 @@ getClient("static-data")
 
 ## Referencia del API
 
-### Estructura derRutas del API
+### Estructura de Rutas del API
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 

@@ -37,7 +37,7 @@ Para crear una entrada, se debe hacer click en el botón de la parte superior de
 Al hacer click en Crear, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
 ::: tip Tip
-Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podras pulsar el botón "Copiar desde idioma" para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
+Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podrás pulsar el botón "Copiar desde idioma" para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
 :::
 
 ### Publicar una Entrada
