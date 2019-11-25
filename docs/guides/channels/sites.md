@@ -4,9 +4,13 @@ search: true
 
 # Sitios
 
+<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
+
 Es aquí donde debes operar para crear Sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
 
 Al entrar, podrás ver que existen 4 estados:
+
+<img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
 - Habilitado (Estado por defecto en el que quedan los Sitios recién creados y los que están online)
 - Ocultos (Sitios creados que solo puede ver el usuario en linea)
@@ -20,6 +24,8 @@ Después de ello, podrás verlo en modo "Habilitado", lo que significa que está
 ## Configuración de un Sitio
 
 La configuración del Sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del Sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
+
+<img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
 ### General
 
@@ -37,7 +43,9 @@ Dentro de esta sección, podemos configurar los siguientes datos:
 
 ### PWA
 
-::: danger Peligro
+<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+::: danger
 Missing description
 Mannifers.json
 Serviceworker.js
@@ -45,6 +53,8 @@ Variables disponibles
 :::
 
 ### SEO
+
+<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 El SEO (Search Engine Optimization) es nuestra llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan a nuestro Sitio a través de ellos.
 
@@ -57,17 +67,21 @@ Las opciones a configurar son:
 
 ### Restricciones
 
+<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+
 Restricciones nos permite configurar la privacidad del Sitio.
 
 - Si el Sitio es público, entonces todos podrán ver el Sitio.
-- Si el Sitio es privado, solo usuarios con una sesión de Modyo podrán ver el Sitio.
+- Si el Sitio es privado, solo usuarios con una sesión de modyo podrán ver el Sitio.
 - Si el Sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen a nuestro home, pero al navegar a cualquier otra página del Sitio, se les solicitará que se registren o que inicien sesión.
 
 Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
 
 ### Dominios
 
-La sección Dominios te permitirá saber dónde está públicamente ubicado nuestro Sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
+<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+La sección Dominios te permitirá saber dónde está publicamente ubicado nuestro Sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
 
 Las variables que puedes cambiar aquí son:
 
@@ -79,11 +93,13 @@ Las variables que puedes cambiar aquí son:
 
 ### Miembros del Equipo
 
+<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+
 Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada Sitio y así tendrán acceso a la escritura, revisión y/o publicación.
 
 Para ello, el administrador que creó el Sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-Para añadir un usuario al Sitio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
+Para añadir un usuario al Sitio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un administrador y asignale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
 
 Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
 
