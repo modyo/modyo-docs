@@ -564,7 +564,7 @@ Las principales operaciones sobre campos son:
 - [in] = permite incluir varios valores que entran en una consulta tipo OR
 - [all] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
 - [nin] = permite incluir varios valores, que entran en una consulta NOT IN
-- [geohash] = permite busquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
+- [geohash] = permite búsquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
 
 Ejemplo:
 
@@ -635,12 +635,47 @@ Utilizar Axios tiene algunas ventajas sobre la API Fetch nativa:
 
 Para poder usar Axios en Modyo, necesitas agregar el código base del axios.js como un custom snippet e incluirlo en algún lugar donde tus widgets puedan accederlo, como tu theme en JavaScript (localizado en Templates, bajo la pestaña de Archivos).
 
-La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSON ligero que puede ser utilizado en muchas funcionalidades de tu cuenta, incluyendo herramientas administrativas.
+La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSON ligero que puede ser utilizado en muchas funcionalidades de tu cuenta.
 
-Para crear un nueva aplicación de acceso a la API, dirígete a Cuenta > Configuración > Acceso a la API. y haz click en + Nuevo en la esquina superior derecha.
+## Contenido privado
 
-Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo [http://ejemplo.com/logout](http://ejemplo.com/logout)
+Siempre que uses la API de contenido, podrás acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
 
-### Content Delivery API
+La API de contenido puede recibir el parámetro delivery token de dos formas: 
 
-La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.
+- Como header: `Delivery-Token`
+- Como parámetro GET: `delivery_token`
+
+El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de target. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`. 
+
+El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
+
+- **iss**: URL base de la API de profile
+- **aud**: URL base de la API de contenido
+- **sub**: Nombre del space
+- **exp**: Tiempo de expiración del token
+- **access_type**: delivery,
+- **targets**: Array de targets
+
+
+Por ejemplo: 
+
+```javascript
+{
+  "iss": "http://my-account.modyo.me/api/profile",
+  "aud": "http://my-account.modyo.me/api/content",
+  "sub": "account_uuid",
+  "exp": 1516242622,
+  "access_type": "delivery",
+  "targets": ["target1", "target2"]
+}
+```
+
+
+Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
+
+:::warning Atención
+Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor. 
+:::
+
+La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin targets) como el contenido targetizado que esté restringido a los targets a los que pertenece el usuario que solicitó su delivery token.
