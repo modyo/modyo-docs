@@ -55,7 +55,7 @@ Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de 
 
 ### Estado de envío
 
-El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadisticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
 
 A primera vista, encontrarás en la parte superior de la pantalla el botón de Vista Previa, que te permite ver el correo que enviarás.
 
