@@ -25,7 +25,7 @@ En la parte superior de la tabla, encontrarás filtros que te permitirán encont
 - Targets: Usuarios que se encuentran dentro de un determinado [Target](/guides/customers/targets.html)
 - Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
 
-:::tip
+:::tip Tip
 Si necesitas hacer un Target con cierto tipo de características de algún campo personalizado, puedes hacerlo a través de Filtros Avanzados. Al seleccionar los filtros, aparecerá automáticamente el número de coincidencias. 
 En la parte inferior, este filtro combinado lo puedes separar para un Target haciendo un click en el botón "Guardar como Target". Deberás darle un título y una descripción y posteriormente lo podrás encontrar en la sección [Targets](/guides/customers/targets.html)
 :::
@@ -47,7 +47,7 @@ Para añadir un usuario, la plataforma te pedirá completar los siguientes campo
 - Confirmación de la contraseña: Repetición de la contraseña dada por el administrador.
 - Tags: Etiquetas que sirvan para identificar al usuario.
 
-:::tip
+:::tip Tip
 Para enviar la contraseña al mail del usuario, solo es necesario asignar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo a la casilla con la contraseña al usuario, que podrá cambiar al ingresar a la plataforma.
 :::
 
@@ -133,10 +133,10 @@ Si se quiere tener un CSS personalizado que se ajuste a nuestras necesidades en 
 
 Es común tener vinculados archivos en el código CSS. Si queremos agregar alguno, solo tenemos en el botón que está sobre el editor, y que nos llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que nos permitirá subir sin problemas algún archivo que necesitemos.
 
-Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuanod lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
+Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
 
-::: tip 
-Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar facilmente la edición.
+::: tip Tip
+Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
 :::
 
 ### Correos
@@ -145,7 +145,7 @@ Modyo permite configurar la dirección y la apariencia de los correos que se env
 
 Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón "Guardar".
 
-Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envio de correos para funciones en específico que solicitan los usuarios, y que no dependen de los correos en masa, tales como son:
+Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envío de correos para funciones en específico que solicitan los usuarios, y que no dependen de los correos en masa, tales como son:
 
 - Correo de activación
 - Usuario importado
@@ -164,10 +164,10 @@ Los estilos de los correos de la plataforma que enviamos también pueden ser per
 
 Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual podemos pegar nuestro código.
 
-::: danger
+::: danger Peligro
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
 
-Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar facilmente para ubicarlos en la parte que necesitemos.
+Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar fácilmente para ubicarlos en la parte que necesitemos.
 :::
 
 Cada vez que se haga un cambio en el código, se debe hacer click en el botón "Guardar" que se encuentra en la parte superior de la pantalla.
@@ -193,7 +193,7 @@ El registro de clientes dentro de la plataforma, también debe ser configurado d
 
 Lo primero que podemos regular es si queremos habilitar o deshabilitar las credenciales de la plataforma. 
 
-::: warning
+::: warning Atención
 Si deshabilitamos las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/guides/platform/integration.html)
 :::
 
@@ -210,7 +210,7 @@ Además, se puede regular la forma de registro de clientes, ya sea a través de 
 - Moderada (un administrador decide si aprueba el registro)
 - Deshabilitada (Solo el administrador envía el registro)
 
-::: danger
+::: danger Peligro
 Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren en tu sitio. Te recomendamos el registro con verificación por correo electrónico para proteger tu cuenta contra este riesgo potencial.
 :::
 
@@ -257,11 +257,11 @@ Todos los campos personalizados tienen ciertas propiedades estándar:
 
 Además de lo anterior, los campos personalizados pueden estar habilitados o deshabilitados. Si un campo personalizado está habilitado, entonces se podrá usar por admins y dependiendo de su configuración, estará disponible para los usuarios. Si un custom field está deshabilitado, entonces no aparecerá en ningún formulario.
 
-:::tip
+:::tip Tip
 Al deshabilitar un campo personalizado, este dejará de aparecer de todos los formularios de edición de usuario, registro y perfil, sin embargo, los datos que estaban guardados para los usuarios que ya tenían un valor, se mantendrán guardados.
 :::
 
-:::danger
+::: danger Peligro
 Cuando un campo personalizado está deshabilitado, puede ser eliminado. Al eliminar un campo personalizado, estarás eliminando todos los valores que los usuarios tenían para ese campo personalizado.
 :::
 

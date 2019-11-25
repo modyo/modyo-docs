@@ -45,7 +45,7 @@ Posteriormente, podrás ver tres tipos de filtros que te serán útiles para enc
 
 **Tags**: Este filtro permite mostrar todos los archivos de una sola etiqueta que se encuentren dentro de la plataforma, independiente de su archivo. Así se puede filtrar según el uso customizado que se le esté dando, siempre y cuando se le haya asignado una etiqueta al subirlo u editarlo.
 
-::: tip
+::: tip Tip
 Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, en la parte inferior aparecerá una columna con un checkbox al lado de Previsualizar. 
 Si seleccionas la primera, abajo aparecerá un botón verde, que permite seleccionar todos los archivos de la pantalla a la vez para asignar una o más etiquetas.
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
@@ -98,7 +98,7 @@ En la interfaz de edición de las propiedades del archivo, podrás ver ciertos c
 
 **Tag de Liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
 
-::: warning
+::: warning Atención
 Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 :::
 
@@ -129,7 +129,7 @@ Esta acción abrirá una nueva ventana que permite subir los archivos de dos man
 - **Drag & Drop**: arrastrar desde el navegador de archivos de tu computador hacia la ventana)
 - **Manera tradicional**: a través del navegador, pinchando y seleccionado los archivos
 
-::: warning
+::: warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
 
@@ -151,7 +151,7 @@ Si quieres resubir el archivo, manteniendo el nombre y el link original, haz cli
 
 <img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Para facilitar el manejo de imagenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños online.
+Para facilitar el manejo de imágenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños online.
 
 Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lapiz** que se encuentra en la ventana de Actualizar Información.
 
@@ -165,7 +165,7 @@ Posteriormente, podrás ver las tres opciones que puedes elegir para editar el t
 
 A un costado, podrás observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
 
-::: tip
+::: tip Tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
 - **Zoom:** Usa el scroll del mouse para acercar la imagen.
@@ -185,7 +185,7 @@ La primera de ellas se hace para buscar archivos y puede ser utilizada a través
 
 Para borrar un archivo en específico, se debe ir a la ventana de Actualizar Información y hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
 
-:::warning
+::: warning Atención
 Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
 :::
 

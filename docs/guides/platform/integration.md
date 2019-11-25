@@ -4,7 +4,7 @@ search: true
 
 # Integraciones
 
-Una de las funcionalidades de modyo para facilitar la interacción de otros sistemas de usuarios con Modyo son las integraciones con distintos servicios de autenticación.
+Una de las funcionalidades de Modyo para facilitar la interacción de otros sistemas de usuarios con Modyo son las integraciones con distintos servicios de autenticación.
 
 Actualmente la plataforma es compatible con:
 
@@ -17,7 +17,7 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen, antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-:::tip
+:::tip Tip
 Desde Modyo 9 en adelante, los usuarios (Customers>Usuarios) y administradores (Settings>Equipo) están separados lógicamente, y ambos cuentan con las mismas integraciones, pero con inicios de sesión distintos, por lo que puedes configurar, por ejemplo, facebook para tus usuarios y Oauth2 para tus administradores.
 :::
 
@@ -83,7 +83,7 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 - URL de autenticación: URL del servicio de autenticación OAuth2
 - ID de cliente
 - Clave (secret)
-- Scope: Si es que tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios, y quieres usar uno en específico en esta integracion, deberás definirlo en este campo.
+- Scope: Si es que tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios, y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
 - Campo para inicio de sesión: Podrás elegir entre usar el correo de los usuarios de Modyo, o su nombre de usuario. Esta opción es útil si es que en tu proveedor de autenticación OAuth2, usas un campo numérico y no un email como identificador.
 - Placeholder para el inicio de sesión: Texto que se mostrará en el campo de identificación como placeholder si es que el usuario no ha rellenado el campo
 - Usar SSL: Si es que tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)

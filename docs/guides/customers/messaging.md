@@ -30,7 +30,7 @@ A un costado de cada campaña, se encuentra un botón en el que podremos efectua
 - Editar la campaña
 - Borrar la campaña
 
-:::danger
+::: danger Peligro
 Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
 :::
 
@@ -55,7 +55,7 @@ Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de 
 
 ### Estado de envío
 
-El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadisticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
 
 A primera vista, encontrarás en la parte superior de la pantalla el botón de Vista Previa, que te permite ver el correo que enviarás.
 
@@ -68,7 +68,7 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
 En la vista superior, podrás encontrar las estadísticas de la campaña. 
 
-::: warning
+::: warning Atención
 Si no has envíado aún la campaña, los valores aparecerán en cero.
 :::
 
@@ -81,9 +81,9 @@ Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
 - Abiertos únicos: Nº total de usuarios los cuales abrieron alguna vez la campaña.
 - Clicks: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
 - Clicks únicos: Nº de usuarios que han hecho click alguna vez en la campaña.
-- Spam: Nº de usuarios a los que su corrreo llegó a la casilla de Spam.
+- Spam: Nº de usuarios a los que su correo llegó a la casilla de Spam.
 
-En cambio, si enviaste la campaña por Notificiación, podrás encontrar estas cifras:
+En cambio, si enviaste la campaña por Notificación, podrás encontrar estas cifras:
 
 - Alcance: Personas a las que les llegó la campaña.
 - Envíos: Nº de veces que se envió la campaña.
@@ -104,7 +104,7 @@ Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la 
 
 Después, podrás encontrar un botón que te permitirá borras el envío del registro.
 
-::: danger
+::: danger Peligro
 Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
 Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
 :::
@@ -147,7 +147,7 @@ A primera vista, puedes encontrar todas las plantillas de correos que se han hec
 
 Cada una de las plantillas estarán ordenadas según su nombre, además de poder ver la última vez que se les hizo alguna modificación.
 
-::: tip
+::: tip Tip
 Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
 :::
 
@@ -159,7 +159,7 @@ A un costado, se encuentra un botón que despliega un menú con las siguientes o
 - Copiar: Puedes hacer una copia de la plantilla.
 - Borrar: Se borra la plantilla
 
-::: tip
+::: tip Tip
 Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
 :::
 
@@ -169,13 +169,13 @@ Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que 
 
 Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
 
-::: tip
+::: tip Tip
 Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
 :::
 
 Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
 
-::: warning
+::: warning Atención
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
 Para automatizar la inserción del Footer, lee [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers)
@@ -195,7 +195,7 @@ Si se hace click en el nombre del usuario, puedes encontrar el [perfil del usuar
 
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 
-::: danger
+::: danger Peligro
 Hacer una reinscripción sin una autorización expresa del usuario, puede causar problemas legales.
 Revisa la regulación sobre correos masivos en cada país.
 :::

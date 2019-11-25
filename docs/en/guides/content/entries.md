@@ -6,7 +6,7 @@ search: true
 
 ## About the interface
 
-::: danger
+::: danger Peligro
 Missing description
 Filtros: tipo, estado, categoría, idioma, traducción, tags, autor, búsqueda
 Columnas de la tabla
@@ -20,7 +20,7 @@ Al hacer clic en ella, podremos ver el formulario que podremos rellenar con el c
 
 De ahí, podremos ver en nuestro botón de Vista Previa el código que se enviará a través de la API, el cual el microservicio deberá interpretar.
 
-::: danger
+::: danger Peligro
 Missing description
 Publicar una entry (ahora/publicar en)
 Despublicar una entry (ahora/despublicar en)
@@ -29,7 +29,7 @@ Enviar a revisión - Link a team review
 
 ## Metadata/Properties
 
-::: danger
+::: danger Peligro
 Missing description
 Catregorías
 Tags

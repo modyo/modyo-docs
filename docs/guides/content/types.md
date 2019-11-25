@@ -35,7 +35,7 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 Para crear un Tipo, es necesario hacer click en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
 
-::: tip
+::: tip Tip
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
@@ -49,7 +49,7 @@ Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el f
 
 ## Campos
 
-::: tip
+::: tip Tip
 El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. Para mas información ve a la [referencia de la API](/guides/content/public-api-reference.html)
 :::
 
@@ -107,14 +107,14 @@ Este campo te permite agregar un número decimal que debe estar de manera predet
 
 ### Fecha
 
-Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que sepueden elegir, haciendo uso de las restricciones:
+Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que se pueden elegir, haciendo uso de las restricciones:
 
 - **Desde**: Permite limitar la menor seleccionable.
 - **Hasta**: Permite limitar la mayor fecha seleccionable.
 
 ### Ubicación
 
-Te permite agregar un campo que en el que puedesseleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones geopolíticas de la ubicación
+Te permite agregar un campo que en el que puedes seleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones geopolíticas de la ubicación
 
 
 ### Archivo
@@ -139,15 +139,15 @@ Este campo te permite vincular muchas Entradas que ya se encuentren creadas dent
 
 ## Propiedades
 
-En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es mportante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
+En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es importante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
 
 - **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
 - **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
 
-:::warning
+::: warning Atención
 Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
 :::
 
-:::warning
+::: warning Atención
 Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/guides/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::

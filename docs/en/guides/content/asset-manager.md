@@ -5,7 +5,7 @@ search: true
 # Asset manager
 
 En el gestor de archivos de Modyo Content podremos ver y organizar todos los archivos que hemos subido en nuestra plataforma, los cuales pueden estar usándose o no en ella.
-::: danger
+::: danger Peligro
 Missing description:
 Titulo
 Descripción
@@ -15,7 +15,7 @@ Tags
 
 ## About the interface
 
-::: danger
+::: danger Peligro
 Missing description
 Espacio disponible usado de la cuenta
 Filtros disponibles
@@ -34,7 +34,7 @@ Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a trav�
 
 ## Edit a file
 
-::: danger
+::: danger Peligro
 Missing description:
 Crop (16/9, cuadrado, libre)
 Tamaño original/final

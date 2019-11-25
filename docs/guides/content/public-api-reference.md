@@ -19,9 +19,10 @@ El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channel
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
 
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
-entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+  entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
@@ -29,39 +30,41 @@ entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 
 Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
-= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
-entry.uuid }} -- {{ entry.title }}<br />
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries
+  | by_category = 'news'
+  | by_tag = 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
 La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
-```html
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
-'entry_uuid' %} {% assign entry = entries.first %}
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
+{% assign entry = entries.first %}
 ```
 
 Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
 
-```html
+```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
 <ul>
-{% for entry in entries %}
-  <li> {{ entry.slug }} </li>
-{% endfor %}
+  {% for entry in entries %}
+  <li>{{ entry.slug }}</li>
+  {% endfor %}
 </ul>
 {{ entries | pagination_links }}
 ```
 
 En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
 
-:::warning
+::: warning Atención
 Ten en cuenta que si tienes mas de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
 :::
 
-:::warning
+::: warning Atención
 Para hacer uso de la paginación en un widget personalizado, deberás cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, debes asegurare de que _JQuery_ está disponible en tu sitio y recordar que al hacer uso de los links de paginación, solo se cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
 :::
 
@@ -139,11 +142,11 @@ getClient("static-data")
 
 ## Referencia del API
 
-### Estructura derRutas del API
+### Estructura de Rutas del API
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
-```javascript
+```
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
@@ -540,7 +543,7 @@ Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables me
   - `.../entries?meta.published_at[gt]=1987-11-19`
 - Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
   - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: `fields.location_name=Chile`
-    - `.../entries?fields.color=black`
+  - `.../entries?fields.color=black`
 
 ###### Filtro de idiomas
 
@@ -561,7 +564,7 @@ Las principales operaciones sobre campos son:
 - [in] = permite incluir varios valores que entran en una consulta tipo OR
 - [all] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
 - [nin] = permite incluir varios valores, que entran en una consulta NOT IN
-- [geohash] = permite busquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
+- [geohash] = permite búsquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
 
 Ejemplo:
 
@@ -583,11 +586,11 @@ Se usa una expresiónJsonPath por ejemplo:
 Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
 
 - ALL: equivalente a un sql AND
-`.../entries?fields.color[all][]=red&fields.color[has][]=black`
+  `.../entries?fields.color[all][]=red&fields.color[has][]=black`
 - IN: equivalente a un sql OR
-`.../entries?fields.color[in][]=red&fields.color[in][]=blue`
+  `.../entries?fields.color[in][]=red&fields.color[in][]=blue`
 - NIN: equivalente a un slq NOT IN
-`.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
+  `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
 ##### Orden
 
@@ -632,12 +635,49 @@ Utilizar Axios tiene algunas ventajas sobre la API Fetch nativa:
 
 Para poder usar Axios en Modyo, necesitas agregar el código base del axios.js como un custom snippet e incluirlo en algún lugar donde tus widgets puedan accederlo, como tu theme en JavaScript (localizado en Templates, bajo la pestaña de Archivos).
 
-La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSON ligero que puede ser utilizado en muchas funcionalidades de tu cuenta, incluyendo herramientas administrativas.
+La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSON ligero que puede ser utilizado en muchas funcionalidades de tu cuenta.
 
-Para crear un nueva aplicación de acceso a la API, dirígete a Cuenta > Configuración > Acceso a la API. y haz click en + Nuevo en la esquina superior derecha.
+## Contenido privado
 
-Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo [http://ejemplo.com/logout](http://ejemplo.com/logout)
+Siempre que uses la API de contenido, podrás acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
 
-### Content Delivery API
+La API de contenido puede recibir el parámetro delivery token de dos formas: 
 
-La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.
+- Como header: `Delivery-Token`
+- Como parámetro GET: `delivery_token`
+
+El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de targets. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`. 
+
+El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
+
+- **iss**: URL base de la API de profile
+- **aud**: URL base de la API de contenido
+- **sub**: Nombre del space
+- **exp**: Tiempo de expiración del token
+- **access_type**: delivery,
+- **targets**: Array de targets
+
+
+Por ejemplo: 
+
+```javascript
+{
+  "iss": "http://my-account.modyo.me/api/profile",
+  "aud": "http://my-account.modyo.me/api/content",
+  "sub": "account_uuid",
+  "exp": 1516242622,
+  "access_type": "delivery",
+  "targets": ["target1", "target2"]
+}
+```
+
+
+:::waring Atención
+Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
+:::
+
+:::warning Atención
+Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor. 
+:::
+
+La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin targets) como el contenido targetizado que esté restringido a los targets a los que pertenece el usuario que solicitó su delivery token.

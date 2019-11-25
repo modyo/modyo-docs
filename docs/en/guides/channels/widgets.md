@@ -10,7 +10,7 @@ Los Widgets se pueden hacer a través de código Javascript, HTML5 y CSS, según
 
 Lo más importante es que estén correctamente vinculados y sean dinámicos para adaptarse a los distintos sitios que tengamos en nuestra plataforma.
 
-::: danger
+::: danger Peligro
 Missing description
 Templates (JS, CSS, HTML)
 Uso de liquid
