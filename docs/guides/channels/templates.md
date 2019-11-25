@@ -71,7 +71,7 @@ Para que el sistema reconozca el tipo de lenguaje de programación al que perten
 :::tip Tip
 Todos los elementos del Template Builder usan _Liquid_ como motor de plantillas.
 
-Para mas información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/docs/channels/liquid-markup.html)
+Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/docs/channels/liquid-markup.html)
 :::
 
 En el área de trabajo, debajo de las pestañas, encontrarás una barra con elementos útiles:
@@ -105,14 +105,14 @@ Las sub-versiones son por cada template, por lo que para algunos verás que hay 
 :::
 
 :::tip Tip
-Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. Puedes aprender mas sobre el [versionado aquí](/guides/platform/team-review.html#versionado)
+Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre el [versionado aquí](/guides/platform/team-review.html#versionado)
 :::
 
-Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barr superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
+Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
 
 ### Temas
 
-En esta vista podrás ver cual es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón "Instalar" de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
+En esta vista podrás ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón "Instalar" de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
 
 En la parte superior encontrarás distintas acciones:
 
@@ -257,10 +257,10 @@ El método recomendado para interactuar con una API privada usando la sesión de
 
 #### Hacer el sitio privado
 
-1. Inicia sesión en la cuenta dónde se desea crear el sitio privado
-2. Haz click en crear un nuevo sitio
+1. Inicia sesión en la cuenta dónde se desea crear el sitio privado.
+2. Haz click en crear un nuevo sitio.
 3. Asigna un nombre al nuevo sitio y selecciona el tema base.
-4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, seleccionamos **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión
+4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, seleccionamos **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
 
 #### Habilitar la integración a nivel de cuenta (para todos los sitios)
 
