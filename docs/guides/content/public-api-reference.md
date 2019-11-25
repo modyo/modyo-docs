@@ -671,8 +671,7 @@ Por ejemplo:
 }
 ```
 
-
-:::waring Atención
+:::warning Atención
 Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
 :::
 
