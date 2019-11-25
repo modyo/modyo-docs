@@ -672,7 +672,9 @@ Por ejemplo:
 ```
 
 
+:::waring Atención
 Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
+:::
 
 :::warning Atención
 Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor. 
