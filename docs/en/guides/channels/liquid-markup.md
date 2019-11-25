@@ -151,11 +151,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 
 ## Tags
 
-Tags are used for the logic in your template. New tags are very easy to code,
-so I hope to get many contributions to the standard tag library after releasing
-this code.
-
-Here is a list of currently supported tags:
+Tags are used for the logic in your template. Here is a list of currently supported tags:
 
 * **assign** - Assigns some value to a variable
 * **capture** - Block tag that captures text into a variable
