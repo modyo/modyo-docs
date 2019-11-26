@@ -12,7 +12,7 @@ Los filtros disponibles son:
 - Sitio
 - Espacio
 
-:::warning
+::: warning Atención
 Cuando filtras por sitio, los elementos que usan datos de espacios, no aportarán su data en el conteo, y a la vez, si filtras por espacio, los elementos que usen data de sitios, no aportarán al conteo de datos.
 :::
 
@@ -34,7 +34,7 @@ Verás cinco cajas que representarán la cantidad de elementos creados, modifica
 
 Junto a cada contador principal, verás un indicador hacia arriba (verde) o hacia abajo (rojo) que representa si la razón entre el periodo actual y el anterior aumentó o disminuyó. Si el contador no está presente, indica que no hay datos en el periodo anterior.
 
-:::tip
+:::tip Tip
 Los rangos de tiempo que se comparan en cada una de las cajas, dependen del rango de fecha seleccionado en la parte superior derecha de la vista, de tal manera que, si tienes seleccionado los últimos siete días, estarás comparando, por ejemplo, la cantidad de elementos creados dentro de los últimos siete días, con la cantidad de elementos creados dentro de la semana antepasada.
 :::
 
@@ -44,7 +44,7 @@ Un gráfico de línea que representa una comparativa a través del tiempo entre 
 
 Con este gráfico podrás evidenciar cuanto del contenido que se crea es publicado, y visualizar, por ejemplo, si todo el contenido creado es publicado, o si el contenido creado se publica múltiples veces.
 
-:::tip
+:::tip Tip
 El rango total de fechas de este gráfico depende del rango total de fechas seleccionado en el filtro de arriba a la derecha de la página.
 :::
 

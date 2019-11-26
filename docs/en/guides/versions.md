@@ -15,6 +15,6 @@ Modyo Cloud corresponds to continuous releases in cloud environments managed by 
 ### Modyo Enterprise
 Modyo Enterprise corresponds to the stable releases of the platform which are previously tested in cloud environments. Every two years Modyo releases an LTS (Long Term Support) version which has extended support.
 
-::: warning Versions
+::: warning Atención Versions
 Customers opting for Modyo Private Cloud licensing can choose between the Cloud or Enterprise version.
 :::

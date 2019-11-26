@@ -4,9 +4,13 @@ search: true
 
 # Sitios
 
+<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
+
 Es aquí donde debes operar para crear Sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
 
 Al entrar, podrás ver que existen 4 estados:
+
+<img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
 - Habilitado (Estado por defecto en el que quedan los Sitios recién creados y los que están online)
 - Ocultos (Sitios creados que solo puede ver el usuario en linea)
@@ -20,6 +24,8 @@ Después de ello, podrás verlo en modo "Habilitado", lo que significa que está
 ## Configuración de un Sitio
 
 La configuración del Sitio nos permitirá abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del Sitio. Además, podemos modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
+
+<img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
 ### General
 
@@ -37,6 +43,8 @@ Dentro de esta sección, podemos configurar los siguientes datos:
 
 ### PWA
 
+<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+
 ::: danger
 Missing description
 Mannifers.json
@@ -45,6 +53,8 @@ Variables disponibles
 :::
 
 ### SEO
+
+<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 El SEO (Search Engine Optimization) es nuestra llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan a nuestro Sitio a través de ellos.
 
@@ -57,6 +67,8 @@ Las opciones a configurar son:
 
 ### Restricciones
 
+<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+
 Restricciones nos permite configurar la privacidad del Sitio.
 
 - Si el Sitio es público, entonces todos podrán ver el Sitio.
@@ -66,6 +78,8 @@ Restricciones nos permite configurar la privacidad del Sitio.
 Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
 
 ### Dominios
+
+<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 La sección Dominios te permitirá saber dónde está publicamente ubicado nuestro Sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
 
@@ -78,6 +92,8 @@ Las variables que puedes cambiar aquí son:
 - **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
 
 ### Miembros del Equipo
+
+<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada Sitio y así tendrán acceso a la escritura, revisión y/o publicación.
 

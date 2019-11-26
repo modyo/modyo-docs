@@ -11,7 +11,6 @@ campañas de correo, entre otros. De esta forma, es posible realizar labores adm
 consumiendo el API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de
 trabajar con en Modyo.  
 
-
 ## Explorando el API
 
 Para comenzar a sacar provecho del API de Modyo, primero es importante conocer los servicios de 
@@ -593,4 +592,3 @@ Lo que nos entrega un response como el siguiente:
 ```
 Finalmente, recuerda que el API de manera predeterminada, siempre retornará la primera página (`current_page: 1`) de
 recursos agrupados en páginas de 10 elementos (`per_page: 10`). 
-

@@ -67,19 +67,18 @@ Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pued
 
 Liquid acepta los siguientes tipos de expresiones:
 
-* **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no tener ningún tipo de sigla distintiva (es decir, deben verse como `var_name`, y no `$var_name`).
+* **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no contener ningún tipo de símbolo (es decir, deben verse como `var_name`, y no `$var_name`).
 * **Acceso de arreglo/hashes.** Si tienes una expresión (normalmente una variable) cuyo valor es un arreglo o hash, puede usar un único valor de ese arreglo/hash de la siguiente manera:
     * `my_variable[<KEY EXPRESSION>]` — El nombre de la variable, seguido inmediatamente de corchetes que contienen una expresión clave.
         * Para arreglos, la clave debe ser un entero literal o una expresión que se resuelva a un entero.
-        * Para hashes, la clave debe ser una string de comillas literal o una expresión que se resuelva en una string.
+        * Para hashes, la clave debe ser un string de comillas literal o una expresión que se resuelva a un string.
     * `my_hash.key` — Los hashes también permiten una notación de "punto" más corta, donde el nombre de la variable es seguido por un punto y el nombre de una clave. Esto sólo funciona con claves que no contienen espacios, y (a diferencia de la notación entre corchetes) no permite el uso de un nombre de clave almacenado en una variable.
     * Nota: si el valor de una expresión de acceso es también un arreglo o hash, puedes acceder a los valores desde ella de la misma manera, e incluso puedes combinar los dos métodos. (Por ejemplo, `site.posts[34].title`.)
-* **Primer y último arreglo.** Si tienes una expresión cuyo valor es un arreglo, puedes seguirla con `.first` or `.last` para resolver su primer o último elemento.
+* **Primer y último arreglo.** Si tienes una expresión cuyo valor es un arreglo, puedes seguirla con `.first` o `.last` para resolver su primer o último elemento.
 * **Tamaño de arreglo o hash** Si tienes una expresión cuyo valor es un arreglo o hash, puedes seguirla con `.size` para resolver el número de elementos de la expresión original, como un entero.
-    * Si conoces otros "métodos" especiales como este en Liquid, por favor, actualiza esta sección.
-* **Strings.** Las strings literales (strings) deben estar rodeadas de comillas dobles o simples (``"mi cuerda"`` o `'mi cuerda'`). No hay diferencia; ningún estilo permite interpolación variable.
+* **Strings.** Los strings literales deben estar rodeados de comillas dobles o simples (``"mi cuerda"`` o `'mi cuerda'`). No hay diferencia; ningún estilo permite interpolación variable.
 * **Enteros.** Los números enteros no pueden ser citados.
-* **Booleanos y cero.** Los valores literales `true`, `false`, and `nil`.
+* **Booleanos y nil.** Los valores literales `true`, `false`, and `nil`.
 
 Tenga en cuenta que no hay manera de escribir un arreglo literal o hash como expresión; los arreglos y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
 
@@ -91,7 +90,7 @@ El marcado Output puede aceptar filtros, que modifican el resultado de la senten
 * El nombre del filtro
 * Opcionalmente, dos puntos (`:`) y una lista separada por comas de parámetros adicionales al filtro. Cada parámetro adicional debe ser una expresión válida, y cada filtro predefine los parámetros que acepta y el orden en que deben ser pasados.
 
-Los filtros también se pueden enstringr entre sí añadiendo sentencias de filtro adicionales (comenzando con otro carácter de barra vertical). El Output del filtro anterior será el Input para el siguiente.
+Los filtros también se pueden unir entre sí añadiendo sentencias de filtro adicionales (comenzando con otro carácter de barra vertical). El Output del filtro anterior será el Input para el siguiente.
 
 ```liquid
 Hello {{ 'tobi' | upcase }}
@@ -106,18 +105,18 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 
 * `append` - Añadir una string *e.g.* <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 * `capitalize` - Poner palabra en mayúscula en la frase de entrada
-* `ceil` - Redondea hacia adelante un número decimal al próximo entero, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
+* `ceil` - Redondea hacia arriba un número decimal al próximo entero, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 * `date` - Da formato a una fecha ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
-* `default` - Devuelve la variable dada a menos que sea nula o la string vacía, cuando devuelve el valor dado, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
+* `default` - Devuelve la variable dada a menos que sea nula o string vacío, entonces devuelve el valor dado, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 * `divided_by` - División de enteros *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
-* `downcase` - Convierte una string de input en minúsculas
+* `downcase` - Convierte un string de entrada en minúsculas
 * `escape_once` - Devuelve una versión escape de html sin afectar a las entidades escape existentes
-* `escape` - Escape html a una string
+* `escape` - Escape html a un string
 * `first` - Obtener el primer elemento del arreglo pasado
-* `floor` - Redondea un número decimal hacia atrás al anterior entero, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
-* `join` - Une elementos del arreglo con cierto carácter entre ellos.
+* `floor` - Redondea un número decimal hacia abajo al entero más cercano, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
+* `join` - Une elementos del arreglo con cierto caracter entre ellos.
 * `last` - Obtener el último elemento del arreglo pasado
-* `lstrip` - Elimina todos los espacios en blanco desde el principio de una string
+* `lstrip` - Elimina todos los espacios en blanco desde el principio de un string
 * `map` - Mapear/coleccionar un arreglo en una propiedad dada.
 * `minus` - Resta *e.g.*  <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
 * `modulo` - Resto *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
@@ -128,41 +127,39 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `remove` - Elimina todas las incidencias *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
 * `replace_first` - Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 * `replace` - Reemplaza todas las incidencias *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
-* `reverse` - Invierte el paso en el arreglo.
+* `reverse` - Invierte el arreglo dado.
 * `round` - Redondea al número entero más cercano o al número especificado de decimales *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
-* `rstrip` - Elimina todos los espacios en blanco del final de una string
+* `rstrip` - Elimina todos los espacios en blanco del final de un string
 * `size` - Devolver el tamaño de un arreglo o string
-* `slice` - Divide una string. Toma un desplazamiento y una longitud, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
+* `slice` - Divide un string. Toma un desplazamiento y una longitud, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
 * `sort` - Ordena elementos del arreglo
-* `split` - Dividir una string en un patrón coincidente *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
-* `strip_html` - Elimina html de la string
-* `strip_newlines` - Elimina todas las lineas nuevas (\n) de la string
-* `strip` - Elimina todos los espacios en blanco de ambos extremos de la string.
+* `split` - Dividir un string en un patrón coincidente *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
+* `strip_html` - Elimina html del string
+* `strip_newlines` - Elimina todas las lineas nuevas (\n) del string
+* `strip` - Elimina todos los espacios en blanco de ambos extremos del string.
 * `times` - Multiplica  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
-* `truncate` - Restringe una string a x caracteres. También acepta un segundo parámetro que se añadirá a la string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
+* `truncate` - Restringe un string a x caracteres. También acepta un segundo parámetro que se añadirá al string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
 * `truncatewords` - Restringe una string a x palabras
 * `uniq` - Elimina elementos duplicados de un arreglo, utilizando opcionalmente una propiedad determinada para comprobar su unicidad.
-* `upcase` - Convierte una string input a mayúsculas
-* `url_encode` - Codifica una string a URL
+* `upcase` - Convierte un string de entrada a mayúsculas
+* `url_encode` - Codifica un string a URL
 
 ## Tags
 
-Las tags (etiquetas) se utilizan para la lógica de la plantilla. Las nuevas tags son muy fáciles de codificar, así que esperamos recibir muchas contribuciones a la biblioteca estándar después de publicar este código.
-
-Aquí hay una lista de las tags actualmente soportadas:
+Los tags (etiquetas) se utilizan para la lógica de la plantilla. Aquí hay una lista de los tags actualmente soportadas:
 
 * **assign** - Asigna un valor a una variable
-* **capture** - Bloquea la etiqueta que captura texto a una variable.
-* **case** - Block tag, its the standard case...when block
-* **comment** - Block tag, comments out the text in the block
+* **capture** - Bloque tag que captura texto a una variable.
+* **case** - Bloque tag, sentencia case standard.
+* **comment** - Bloque tag, comenta el texto en el bloque.
 * **cycle** - Cycle se utiliza generalmente dentro de un bucle para alternar entre valores, como colores o clases DOM.
-* **for** - Para un bucle
-* **break** - Sale para un bucle
+* **for** - Bucle for
+* **break** - Sale de un bucle
 * **continue** Salta el código restante en el bucle actual y continúa con el siguiente bucle.
 * **if** - Bloque if/else estándar.
 * **include** - Incluye otra plantilla; útil para parciales
 * **raw** - Desactiva temporalmente el procesamiento de tags para evitar conflictos de sintaxis.
-* **unless** - Copia la sentencia of if.
+* **unless** - Copia de la sentencia if.
 
 ### Comentarios
 
@@ -174,7 +171,7 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 ### Raw
 
-Raw sirve para deshabilitar temporalmente el proceso de tags..
+Raw sirve para deshabilitar temporalmente el proceso de tags.
 Esto es útil para generar contenido (eg, Mustache, Handlebars) que puede usar una sintaxis conflictiva con otros elementos.
 
 ```liquid
@@ -185,11 +182,11 @@ Esto es útil para generar contenido (eg, Mustache, Handlebars) que puede usar u
 
 ### If / Else
 
-Las sentencias `if / else` deberían ser familiares para otros lenguajes de programación. Liquid los implementa con las siguientes tags:
+Las sentencias `if / else` deberían ser conocidas de otros lenguajes de programación. Liquid los implementa con los siguientes tags:
 
 * `{% if <CONDITION> %} ... {% endif %}` — Adjunta una sección de la plantilla que sólo se ejecutará si la condición es true.
-* `{% elsif <CONDITION> %}` — Puede utilizarse opcionalmente dentro de un bloque `if .... endif`. Especifica otra condición; si el "if" inicial falla, Liquid prueba el "elsif", y ejecuta la siguiente sección de la plantilla si tiene éxito. Se puede usar cualquier número de elsif en un bloque `if` * `{% else %}` - Opcionalmente se puede usar dentro de un bloque ``if... endif`, _después_ de cualquier etiqueta "elsif". Si todas las condiciones anteriores fallan, Liquid ejecutará la sección de la plantilla siguiendo la etiqueta "else".
-* `{% unless <CONDITION> %} ... {% endunless %}` — El reverso de una sentencia "if". No uses "elsif" o "else" con una sentencia de no ser así.
+* `{% elsif <CONDITION> %}` — Puede utilizarse opcionalmente dentro de un bloque `if .... endif`. Especifica otra condición; si el "if" inicial falla, Liquid prueba el "elsif", y ejecuta la siguiente sección de la plantilla si tiene éxito. Se puede usar cualquier número de elsif en un bloque `if` * `{% else %}` - Opcionalmente se puede usar dentro de un bloque `if... endif`, _después_ de cualquier etiqueta "elsif". Si todas las condiciones anteriores fallan, Liquid ejecutará la sección de la plantilla siguiendo la etiqueta "else".
+* `{% unless <CONDITION> %} ... {% endunless %}` — El reverso de una sentencia "if". No uses "elsif" o "else" con una sentencia unless.
 
 La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liquid normal o una _comparación_ usando expresiones de Liquid. Tenga en cuenta que los operadores de comparación se implementan mediante etiquetas similares a "if"; no funcionan en ningún otro lugar en Liquid.
 
@@ -197,8 +194,8 @@ Los operadores relacionales disponibles son:
 
 * `==, !=,` and `<>` — igual y desigual (los dos últimos son sinónimos)
     * Hay un valor especial secreto "empty" (sin comillas) con el que se pueden comparar los arreglos; la comparación es verdadera si el arreglo no tiene miembros.
-* `<, <=, >, >=` — menos/más grande que
-* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arreglos y hashes. Si el argumento izquierdo es un string y el derecho no, encadena el derecho.
+* `<, <=, >, >=` — menor/mayor que
+* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arreglos y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
 
 Los operadores booleanos disponibles son:
 
@@ -211,9 +208,9 @@ Las expresiones de Liquid son probadas para determinar su "veracidad" en lo que 
 
 * `true` is verdadero
 * `false` is falso.
-* Cualquier string es verdadera, incluyendo una string vacía
-* Cualquier arreglo es verdadero.
-* Cualquier hash es verdadero.
+* Cualquier string es true, incluyendo un string vacío.
+* Cualquier arreglo es true.
+* Cualquier hash es true.
 * Cualquier valor inexistente/nulo (como una parte faltante de un hash) es falso.
 
 ```liquid
@@ -330,6 +327,9 @@ A menudo hay que alternar entre diferentes colores o tareas similares.  Líquid 
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}
+{% cycle 'one', 'two', 'three' %}
+{% cycle 'one', 'two', 'three' %}
+{% cycle 'one', 'two', 'three' %}
 ```
 
 resultará en
@@ -349,6 +349,9 @@ el nombre del grupo. Esto puede incluso ser una variable.
 
 ```liquid
 {% cycle 'group 1': 'one', 'two', 'three' %}
+{% cycle 'group 1': 'one', 'two', 'three' %}
+{% cycle 'group 2': 'one', 'two', 'three' %}
+{% cycle 'group 2': 'one', 'two', 'three' %}
 ```
 
 resultará en
@@ -356,12 +359,13 @@ resultará en
 ```text
 one
 two
-three
+one
+two
 ```
 
-### Para bucles
+### Bucle For
 
-Liquid permite `for` en bucles sobre colecciones:
+Liquid permite bucles `for` sobre colecciones:
 
 ```liquid
 {% for item in array %}
@@ -371,7 +375,7 @@ Liquid permite `for` en bucles sobre colecciones:
 
 #### Tipos de colecciones permitidas
 
-Para bucles puede iterar sobre **arreglos, hashes y rangos de números enteros.**
+Los bucles for pueden iterar sobre **arreglos, hashes y rangos de números enteros.**
 
 Al iterar un hash, `el elemento[0]` contiene la clave, y `el elemento[1]` contiene el valor:
 
@@ -381,7 +385,7 @@ Al iterar un hash, `el elemento[0]` contiene la clave, y `el elemento[1]` contie
 {% endfor %}
 ```
 
-En lugar de hacer un bucle sobre una colección existente, también puede hacer un bucle a través de un rango de números. Los rangos se parecen a `(1..10)` - paréntesis que contienen un valor inicial, dos puntos y un valor final. Los valores inicial y final deben ser enteros o expresiones que se resuelven con números enteros. 
+En lugar de hacer un bucle sobre una colección existente, también puede hacer un bucle a través de un rango de números. Los rangos se parecen a `(1..10)` - paréntesis que contienen un valor inicial, dos puntos y un valor final. Los valores inicial y final deben ser enteros o expresiones que se resuelven a números enteros. 
 
 ```liquid
 # if item.quantity is 4...
@@ -391,7 +395,7 @@ En lugar de hacer un bucle sobre una colección existente, también puede hacer 
 # results in 1,2,3,4
 ```
 
-#### Romper y continuar
+#### Break y continue
 
 Puede salir tempranamente de un bucle con los siguientes tags:
 
@@ -440,7 +444,7 @@ forloop.last        # => is this the last iteration?
 Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los elementos que recibe en su bucle y en el orden en que aparecen:
 
 * `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
-* `offset:<INTEGER>` permite empezar la colección con el item nth.
+* `offset:<INTEGER>` permite empezar la colección con el enésimo item.
 * `reversed` itera sobre la colección desde el último hasta el primero.
 
 Elementos de restricción:
@@ -472,7 +476,7 @@ Un bucle for puede tomar una cláusula opcional `else` para mostrar un bloque de
 
 ### Asignación de variables
 
-Puede almacenar datos en sus propias variables, para utilizarlos en los tags de salida u otros tags como desee. La forma más sencilla de crear una variable es con el tag`assign`, que tiene una sintaxis muy fácil:
+Puede almacenar datos en sus propias variables, para utilizarlos en los tags de salida u otros tags como desee. La forma más sencilla de crear una variable es con el tag `assign`, que tiene una sintaxis muy fácil:
 
 ```liquid
 {% assign name = 'freestyle' %}
@@ -496,7 +500,7 @@ Otra forma de hacer esto sería asignar valores `true/false` a la variable:
 {% endif %}
 ```
 
-Si quieres combinar varios strings en una sola y guardarla en una variable, puedes hacerlo con el tag `capture`, que "captura" lo que sea que se muestre en su interior, y luego asigna el valor capturado a la variable dada en lugar de mostrarlo en la pantalla.
+Si quieres combinar varios strings en uno solo y guardarlo en una variable, puedes hacerlo con el tag `capture`, que "captura" lo que sea que se muestre en su interior, y luego asigna el valor capturado a la variable dada en lugar de mostrarlo en la pantalla.
 
 ```liquid
   {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}

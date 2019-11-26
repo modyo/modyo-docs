@@ -6,40 +6,42 @@ search: true
 
 ## Introducción
 
-La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso. 
+La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso.
 
-Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
+Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios.
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publicar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento. 
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón "Publicar", cambiará al botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento.
 
-Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
+Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento.
 
-Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "aprobado", estado en el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
+Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "Aprobado", el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
 
 ### Configuración
+
+<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 Dentro de la configuración de la revisión en equipo, encontrarás distintas opciones:
 
 - **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
 - **Número de aprobaciones**: Determina cuántos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
-:::tip
+:::tip Tip
  Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
 :::
 - **Restringir la selección de revisores**: Esta opción evita que cualquier usuario con permisos pueda aprobar el elemento, limitando la selección y adición de revisores a quien envía el elemento a revisión.
-:::tip
+:::tip Tip
 Aunque la selección de revisores esté limitada a quien envía a revisión, todos los usuarios con permisos podrán seguir haciendo comentarios en el elemento que está en revisión, pero no podrán aprobar el elemento.
 :::
 - **Forzar revisión**: Esta opción habilita un selector de usuarios que permite forzar la adición de ciertos revisores a los elementos del contexto, de tal forma que en cada revisión, todos los usuarios asociados a la fuerza serán notificados de los comentarios y cambios del elemento.
-:::tip
+:::tip Tip
 Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "aprobado", por lo que no podrá ser publicado.
 :::
 - **Requerir todos**: Esta opción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
 
-:::warning
+::: warning Atención
 Recuerda hacer click en el botón "Guardar" arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
 :::
 
-:::warning
+::: warning Atención
 Cuando haces cambios en la configuración de la revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración de la revisión en equipo, es necesario que sean rechazados y se vuelvan a enviar a revisión.
 :::
 
@@ -51,13 +53,13 @@ Existen tres niveles de permisos en los contextos en que se puede habilitar la r
 - Medio (Revisor en sitios y Editor en espacio)
 - Bajo (Developer en sitios y Escritor en espacios)
 
-Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión.
+Los usuarios con el rol más bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión y comentar los elementos que se encuentran en este estado.
 
 Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
 
 Los usuarios con el nivel de permisos alto, además de poder hacer el resto de las acciones, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
 
-:::warning
+::: warning Atención
 Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo. Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación". Esta opción existe porque hay ocasiones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
 :::
 
@@ -99,12 +101,12 @@ Los recursos publicados no necesariamente tienen el mismo código que los editab
 
 ### Respaldos
 
-Los respaldos son los elementos que se han publicado anteriormente. Cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
+Los respaldos son las versiones de los elementos que se han guardado anteriormente. Es decir, cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
 
 Si deseas revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada elemento, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
-:::warning
-Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigésimaprimera publicación, estarás borrando el respaldo de la primera publicación del elemento. Este valor se puede modificar mediante variables de entorno y es común para todas la cuentas de ese entorno.
+::: warning Atención
+Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigésimoprimera publicación, estarás borrando el respaldo de la primera publicación del elemento. Este valor se puede modificar mediante variables de entorno y es común para todas la cuentas de ese entorno.
 :::
 
 ### Acciones para el versionado
@@ -115,7 +117,7 @@ Dentro del versionado cuentas con dos acciones que te permiten interactuar con l
 
 Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha. Puedes cambiar que versiones comparar, cambiando los valores seleccionados en los selectores de versiones en la parte superior del modal. 
 
-Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izqueirda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
+Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izquierda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
 
 #### Reestablecer
 
@@ -123,30 +125,38 @@ En este caso, el respaldo se copiará a la versión editable, por lo que perdere
 
 #### Rollback
 
-En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores puo haber tenido.
+En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
 
-:::danger
+::: danger Peligro
 Dado que esta es una acción peligrosa, solo los administradores de Sitios o Espacios tienen el permiso para poder ejecutar esta acción.
 :::
 
 ## Locks
 
-Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener fallas de que otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultáneamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+
+<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
 
 ### ¿Qué usa Locks?
 
-Locks se usa mayoritariamente en Contenidos y en Channels. También puede ser usado en la edición de código de Sitios y Widgets.
+Locks se usan mayoritariamente en [Contenidos](/guides/content/) y en [Channels](/guides/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/guides/customers/).
 
 ### ¿Cómo usar Locks?
 
-Locks es una función reservada solo para quienes tienen permiso de Administración. Otro tipo de usuario no podrá tomar control del recurso hasta que el usuario creador grabe y lo desocupe.
+Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/guides/content/) y [Channels](/guides/channels/), múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
 
-Al intentar entrar al recurso en uso, cualquier usuario que no sea Administrador, recibirá un mensaje que le impedirá acceder al contenido.
+En otras secciones como [Customers](/guides/customers/) y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
 
-### Tomar el control de un recurso
+En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentra trabajando en él.
 
-Si un Administrador quiere tomar el control del contenido, deberá hacer clic en el archivo en uso y en la pantalla siguiente, hacer clic en el botón de Tomar Control.
+
+::: warning Tomar el control
+
+Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
+
+<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
 Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo más cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 
-El Administrador solo tendrá dos horas para hacer cambios sin guardar, tras tomar el control. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+Tras tomar el control, el Administrador solo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+:::
