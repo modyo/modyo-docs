@@ -20,6 +20,10 @@ module.exports = {
       docsDir: "docs",
       sidebarDepth: 1,
       activeHeaderLinks: true,
+      algolia: {
+        apiKey: 'd6d3315d4f9b9a8a5f7870a8bd10d187',
+        indexName: 'modyo'
+      },
       locales: {
           "/": {
               selectText: "Lenguaje",
