@@ -6,10 +6,14 @@ search: true
 
 Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que nos permite enviar la información hacia nuestros clientes de una manera masiva, dirigida a targets determinados.
 
+<img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
 Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos canales:
 
 - **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para verlo.
 - **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
+
+<img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## Campañas
 
@@ -55,18 +59,22 @@ Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de 
 
 ### Estado de envío
 
+<img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
 El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
 
 A primera vista, encontrarás en la parte superior de la pantalla el botón de Vista Previa, que te permite ver el correo que enviarás.
 
 Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
+<img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
 - Editor de Mensajes: Te permite editar el mensaje antes de enviarlo.
 - Enviar prueba: Envía un correo de prueba con la campaña a una dirección determinada.
 - Editor: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
 - Borrar: Borra toda la campaña.
 
-En la vista superior, podrás encontrar las estadísticas de la campaña. 
+En la vista superior, podrás encontrar las estadísticas de la campaña.
 
 ::: warning Atención
 Si no has envíado aún la campaña, los valores aparecerán en cero.
@@ -139,6 +147,8 @@ Por último, puedes ver una barra de búsqueda que te permitirá encontrar por a
 
 ## Plantillas
 
+<img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
 Para hacer tu mensaje en forma de correo, necesitarás una plantilla para poder añadir los contenidos que desees.
 
 Desde esta sección, podrás hacer maquetas de correos de manera fácil para después enviarlas a los usuarios.
@@ -164,6 +174,8 @@ Si quieres intervenir la plantilla temporalmente y después volver a una nueva, 
 :::
 
 ### Editar plantillas
+
+<img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que se encuentra en la parte superior de la página.
 
