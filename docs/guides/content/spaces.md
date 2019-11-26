@@ -6,9 +6,11 @@ search: true
 
 Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de su API pública o en la creación de un sitio a través de Channels.
 
-Desde Modyo se puede configurar el acceso desde distintos origenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
+Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
 
 Espacios también nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
+
+Al acceder a la sección de espacios se  listaran todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo   y filtrar a través de un buscador que buscara coincidencias con los nombres de los espacios existentes.
 
 ## Crear un Espacio
 
@@ -38,7 +40,7 @@ Modyo permite el cambio de idiomas y léxicos según el país en que se necesite
 
 <img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
 
-El idioma por defecto de un Espacio se define al momento de crear el Espacio, pero en esta sección puedes añadir cuantos idiomas secundarios como quieras. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
+El idioma por defecto de un Espacio se define al momento de crear el Espacio y no puede ser modificado, pero en esta sección puedes añadir cuantos idiomas secundarios necesites. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
 
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
@@ -64,7 +66,7 @@ Para trabajar en modo desarrollo, es altamente recomendable tener esta opción d
 
 Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser accedida por cualquier microservicio en un dominio externo.
 
-Para ello, también es necesario especificar el dominio desde dónde será importada la información, para dar un mejor acceso.
+Para ello, también es necesario especificar el dominio desde dónde será accedida la información. Existe la posibilidad de permitir todos los orígenes pero no es la opción más recomendable.
 
 <img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
@@ -110,5 +112,13 @@ Para añadir un usuario al Espacio, selecciona el botón primario "+ Nuevo" en l
 #### Modificar Rol ####
 Puedes modificar el rol de alguno de los usuarios asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "Guardar" para confirmar el cambio.
 
+::: warning Atención
+Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
+:::
+
 #### Eliminar Miembros del Equipo ####
 Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
+
+::: warning Atención
+Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador este no podrá ser borrado.
+:::
