@@ -65,7 +65,17 @@ Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse
 
 ### Sobre la interfaz
 
-Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde **Enviar a revisión**. Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde **Enviar a revisión**.
+
+<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
+
+Al momento de enviar a revisión la barra cambiará de estado:
+
+<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
+
+Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+
+<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
