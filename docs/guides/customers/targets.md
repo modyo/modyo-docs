@@ -15,13 +15,13 @@ En la interfaz, podrás ver una lista con todos los targets creados hasta ahora,
 La lista está ordenada de la siguiente manera.
 
 - Nombre: Nombre particular que tiene la lista. (bajo esta se encuentran los filtros que la componen).
-- Creado el: Fecha de creación del target
+- Creado el: Fecha de creación del target.
 - Personas: Cantidad de usuarios que pertenecen al target.
 
 Además, en el extremo izquierdo encontrarás un botón con un menú desplegable que te permite ejecutar las siguientes opciones:
 
-- Editar: Editar el nombre y los filtros del target
-- Borrar: Borrar el target
+- Editar: Editar el nombre y los filtros del target.
+- Borrar: Borrar el target.
 
 ::: warning Atención
 Si borras el target, tendrás que elaborarlo de nuevo. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.

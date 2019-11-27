@@ -8,7 +8,7 @@ Una organización necesita tener una plataforma que les permita organizar los ar
 
 Para que no sea necesario utilizar servicios externos, Modyo permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
 
-Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios
+Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios.
 
 
 #### Rich Text
@@ -41,7 +41,7 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 
 <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
 
-**Extensiones**: Con este filtro podrás ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma)
+**Extensiones**: Con este filtro podrás ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma).
 
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 

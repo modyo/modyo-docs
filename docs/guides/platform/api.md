@@ -4,12 +4,7 @@ search: true
 
 # API de Administración
 
-Además de la funcionalidad que es proveída por el backend de Modyo, la plataforma cuenta con un API administrativa
-que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar
-elementos como formularios, layouts, contenido, etc, crear campos personalizados, menus de navegación, enviar 
-campañas de correo, entre otros. De esta forma, es posible realizar labores administrativas
-consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de
-trabajar con en Modyo.  
+Además de la funcionalidad que es proveída por el backend de Modyo, la plataforma cuenta con un API administrativa que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, etc, crear campos personalizados, menus de navegación, enviar campañas de correo, entre otros. De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de trabajar con en Modyo.  
 
 ## Explorando la API
 
@@ -152,8 +147,7 @@ Por ejemplo, si intentamos buscar un recurso que no existe:
 ``` 
 
 Finalmente, en cada uno de los tres catálogos (admin, content y profile), encontrarás una sección
-llamada "Models", la que contiene los modelos involucrados en los servicios, y te permitirá comprender de mejor
-manera los recursos disponibles y sus atributos. 
+llamada "Models", la que contiene los modelos involucrados en los servicios, y te permitirá comprender de mejor manera los recursos disponibles y sus atributos. 
 
 
 ## Utilizando la API
@@ -175,8 +169,7 @@ A continuación, se explica como utilizar cada uno de estos métodos
 
 Lo primero que debemos realizar, es registrar nuestra aplicación para consumir la API. Para esto,
 en el menú administrativo accederemos a la opción _Settings_/_API access_ y clickearemos el botón `+New`.
-En la vista siguiente, daremos a nuestra aplicación un nombre (en nuestro ejemplo "My application") y una descripción
-que la distingan, y además debemos ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
+En la vista siguiente, daremos a nuestra aplicación un nombre (en nuestro ejemplo "My application") y una descripción que la distingan, y además debemos ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
 la sesión de un usuario.
 
 ![New API Access](/assets/img/platform/new-API-access.png)
@@ -208,8 +201,7 @@ en nuestro ejemplo "My application", y luego `Create Token`
 Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
 :::
 
-Finalmente, ahora veremos que en la sección "Manage Access Tokens" aparecerá nuestra aplicación ("My application"),
-junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que
+Finalmente, ahora veremos que en la sección "Manage Access Tokens" aparecerá nuestra aplicación ("My application"), junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que
 utilizaremos a continuación para realizar _requests_ autenticados sobre la API de Modyo. 
 
 ![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
@@ -257,8 +249,7 @@ en su _response_ en formato JSON:
 }
 ``` 
 
-¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido?
-Si intentáramos realizar una llamada sin autenticar o con un token inválido, el sistema responderá
+¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido? Si intentáramos realizar una llamada sin autenticar o con un token inválido, el sistema responderá
 con un error `HTTP 401 Unauthorized`:
 
 ```shell
@@ -360,8 +351,7 @@ nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`) 
 targetizada o no (`targets_enabled`). Aparte de la colección, vemos un objeto llamado `meta`, el que contiene
 información acerca de la paginación de este recurso.
 
-Siguiendo con el ejercicio, podemos utilizar los datos obtenidos en la consulta anterior para obtener más información,
-por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
+Siguiendo con el ejercicio, podemos utilizar los datos obtenidos en la consulta anterior para obtener más información, por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
 en este caso con el ID de una campaña en particular. Par esto, volvemos a revisar nuestro "catálogo"
 de servicios, y encontramos el siguiente _endpoint_:
 
@@ -416,9 +406,7 @@ que se obtienen para una consulta es tal, que deben ser entregados de forma parc
 poder ser utilizados de forma eficiente y ordenada. A esta entrega organizada y acotada de resultados
 le llamamos **paginación**. 
 
-Imaginemos que ahora queremos revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de 
-una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`).
-Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
+Imaginemos que ahora queremos revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
 lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
 
 ```shell script
@@ -537,9 +525,7 @@ Analicemos a continuación el correspondiente _response_ de esta llamada:
 	}
 }
 ```
-Como bien podrás observar, el objeto ``message_deliveries`` dentro del JSON contiene una lista de 10
-elementos, donde cada uno representa un _message delivery_ o entrega concreta de un correo de campaña
-a un usuario determinado, y cada objeto tiene atributos relevantes a este concepto, como el nombre y
+Como bien podrás observar, el objeto ``message_deliveries`` dentro del JSON contiene una lista de 10 elementos, donde cada uno representa un _message delivery_ o entrega concreta de un correo de campaña a un usuario determinado, y cada objeto tiene atributos relevantes a este concepto, como el nombre y
 correo del cliente o la fecha en donde se envió. Pero, ¿donde están los demás registros? Acá es donde juega un papel muy importante la paginación de los recursos, y para esto debemos prestar
 atención al objeto `meta` dentro del JSON.
 
@@ -597,5 +583,4 @@ Lo que nos entrega un response como el siguiente:
 	}
 }
 ```
-Finalmente, recuerda que la API de manera predeterminada, siempre retornará la primera página (`current_page: 1`) de
-recursos agrupados en páginas de 10 elementos (`per_page: 10`). 
+Finalmente, recuerda que la API de manera predeterminada, siempre retornará la primera página (`current_page: 1`) de recursos agrupados en páginas de 10 elementos (`per_page: 10`). 
