@@ -27,12 +27,12 @@ En la parte superior de la tabla, encontrarás filtros que te permitirán encont
 
 :::tip Tip
 Si necesitas hacer un Target con cierto tipo de características de algún campo personalizado, puedes hacerlo a través de Filtros Avanzados. Al seleccionar los filtros, aparecerá automáticamente el número de coincidencias. 
-En la parte inferior, este filtro combinado lo puedes separar para un Target haciendo un click en el botón "Guardar como Target". Deberás darle un título y una descripción y posteriormente lo podrás encontrar en la sección [Targets](/guides/customers/targets.html)
+En la parte inferior, este filtro combinado lo puedes separar para un Target haciendo un click en el botón **Guardar como Target**. Deberás darle un título y una descripción y posteriormente lo podrás encontrar en la sección [Targets](/guides/customers/targets.html)
 :::
 
 ### Añadir un usuario
 
-Para agregar un nuevo contacto de usuario, se debe hacer click en el botón "+ Nuevo" en la parte superior de la pantalla.
+Para agregar un nuevo contacto de usuario, se debe hacer click en el botón **+ Nuevo** en la parte superior de la pantalla.
 
 Esta función te permite añadir de dos formas: haciéndolo individualmente o a través de un archivo \*.CSV, que nos permite importar íntegramente una base de datos.
 
@@ -125,11 +125,11 @@ Por lo mismo, es esencial que esto sea verificado constantemente, para evitar pr
 
 Aquí podremos personalizar la visión estética de la plataforma que tiene el usuario, empezando por los colores predeterminados. Además, se puede incluir una plantilla CSS que le dé un estilo único adaptado a la empresa o campaña que esté interactuando.
 
-Para personalizar la sesión, primero tenemos que definir cuál va a ser nuestro color primario que regirá dentro de nuestra plataforma. Para esto solo debemos ingresar el Código HEX del color que queremos y hacer click en el botón "Guardar" que se encuentra en la parte superior de la pantalla.
+Para personalizar la sesión, primero tenemos que definir cuál va a ser nuestro color primario que regirá dentro de nuestra plataforma. Para esto solo debemos ingresar el Código HEX del color que queremos y hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
 
 #### Personalizar con CSS
 
-Si se quiere tener un CSS personalizado que se ajuste a nuestras necesidades en el perfil, inicio de sesión y registro, solo debemos pegar el código en el editor que se encuentra en la ventana y hacer click en el botón "Guardar".
+Si se quiere tener un CSS personalizado que se ajuste a nuestras necesidades en el perfil, inicio de sesión y registro, solo debemos pegar el código en el editor que se encuentra en la ventana y hacer click en el botón **Guardar**.
 
 Es común tener vinculados archivos en el código CSS. Si queremos agregar alguno, solo tenemos en el botón que está sobre el editor, y que nos llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que nos permitirá subir sin problemas algún archivo que necesitemos.
 
@@ -143,7 +143,7 @@ Si tienes problemas con los códigos de teclado cuando estés editando el CSS, p
 
 Modyo permite configurar la dirección y la apariencia de los correos que se enviarán a los usuarios. 
 
-Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón "Guardar".
+Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón **Guardar**.
 
 Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envío de correos para funciones en específico que solicitan los usuarios, y que no dependen de los correos en masa, tales como son:
 
@@ -156,7 +156,7 @@ Lo que necesitaremos en nuestra plataforma es habilitar y deshabilitar el envío
 - Esperando aprobación
 - Footer personalizado
 
-Para habilitar o deshabilitar el envío de estos correos, solo debemos hacer click en el botón "Habilitado/Deshabilitado" que se encuentra al costado de cada función y hacer click en el botón "Guardar".
+Para habilitar o deshabilitar el envío de estos correos, solo debemos hacer click en el botón **Habilitado/Deshabilitado** que se encuentra al costado de cada función y hacer click en el botón **Guardar**.
 
 #### Personalizar correos 
 
@@ -170,7 +170,7 @@ Es fundamental que cada correo incluya los códigos personalizables que permiten
 Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar fácilmente para ubicarlos en la parte que necesitemos.
 :::
 
-Cada vez que se haga un cambio en el código, se debe hacer click en el botón "Guardar" que se encuentra en la parte superior de la pantalla.
+Cada vez que se haga un cambio en el código, se debe hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
 
 ### Integraciones
 
@@ -229,7 +229,7 @@ Desde acá, también podemos configurar el formulario de registro que ingresan c
 - Habilitar fecha de nacimiento
 - Habilitar género
 
-Para habilitar o deshabilitar alguno, solo debemos hacer click en el checkbox que se encuentra al costado de cada uno y hacer click en el botón "Guardar".
+Para habilitar o deshabilitar alguno, solo debemos hacer click en el checkbox que se encuentra al costado de cada uno y hacer click en el botón **Guardar**.
 
 ### Campos personalizados
 

@@ -47,7 +47,7 @@ Al hacer click en el contador de respuestas de un formulario, llegarás a una vi
 Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionando las respuestas que quieras exportar y luego usando las acciones masivas al final del listado. 
 
 ::: danger Peligro
-Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón "Borrar" al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
+Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón **Borrar** al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
 :::
 
 Para ver en detalle la respuesta de un usuario, basta con hacer click en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
@@ -110,7 +110,7 @@ En la sección **general**, podrás modificar:
 - **Nombre**: Nombre asociado al formulario. Este valor aparecerá tanto en el índice de formularios en el administrador de Modyo, y también como título cuando un usuario lo vaya a responder.
 - **Descripción**: Este texto aparecerá como texto debajo del título cuando los usuarios lo vayan a responder.
 - **Límite de personas**: Permite determinar el número máximo de respuestas son permitidas.
-- **Texto del botón enviar**: Te permite personalizar el texto asociado al botón "Enviar" del formulario.
+- **Texto del botón enviar**: Te permite personalizar el texto asociado al botón **Enviar** del formulario.
 - **Sitio**: Te permite seleccionar en que sitio se mostrará este formulario. Ten en consideración que esto provoca que el formulario cambie su aspecto de acuerdo a las clases definidas en el CSS global del sitio. Para más información, dirígete a [Template builder](/guides/channels/templates.html)
 - **Habilitado**: Te permite determinar si los usuarios podrán o no responder el formulario. Si la opción estás marcada, entonces se podrá acceder y responder el formulario, si no está habilitada, entonces los usuarios no lo verán ni podrán responderlo.
 - **Aceptar múltiples respuestas**: Si esta opción está habilitada, cada vez que un usuario responda el formulario, se registrará como una nueva respuesta. Si esta opción está deshabilitada, cada vez que un mismo usuario responda el formulario, estará sobrescribiendo su respuesta anterior. 

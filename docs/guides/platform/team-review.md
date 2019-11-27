@@ -10,7 +10,7 @@ La revisión en equipo (o Team Review) es una herramienta que te permite control
 
 Para activar la herramienta, debes dirigirte a la configuración del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios.
 
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón "Publicar", cambiará al botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento.
+Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón **Publicar**, cambiará al botón **Enviar a revisión**. Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento.
 
 Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento.
 
@@ -38,7 +38,7 @@ Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si nin
 - **Requerir todos**: Esta opción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
 
 ::: warning Atención
-Recuerda hacer click en el botón "Guardar" arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
+Recuerda hacer click en el botón **Guardar** arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
 :::
 
 ::: warning Atención
@@ -65,11 +65,11 @@ Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse
 
 ### Sobre la interfaz
 
-Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde "Enviar a revisión". Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde **Enviar a revisión**. Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
 A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el botón deshabilitado.
+Todos quienes puedan acceder a la vista de edición del elemento, verán un botón **Aprobar** bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el botón deshabilitado.
 
 Al aprobar el elemento, quedará registrada la aprobación por ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
 
@@ -152,7 +152,7 @@ En este caso, solo un Administrador podrá tomar el control, activando para sí 
 
 ::: warning Tomar el control
 
-Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón de Tomar Control.
+Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón de **Tomar Control**.
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 

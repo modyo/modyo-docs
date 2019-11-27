@@ -17,7 +17,7 @@ Al entrar, podrás ver que existen 4 estados:
 - Desarrollo (Sitios traspasados a otros usuarios que se encuentren trabajando en ellos)
 - Deshabilitado (Sitios que han sido desechados)
 
-Para crear un Sitio, solo debes hacer clic en la pestaña "Nuevo", el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
+Para crear un Sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
 
 Después de ello, podrás verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
@@ -72,7 +72,7 @@ Las opciones a configurar son:
 Restricciones nos permite configurar la privacidad del Sitio.
 
 - Si el Sitio es público, entonces todos podrán ver el Sitio.
-- Si el Sitio es privado, solo usuarios con una sesión de modyo podrán ver el Sitio.
+- Si el Sitio es privado, solo usuarios con una sesión de Modyo podrán ver el Sitio.
 - Si el Sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen a nuestro home, pero al navegar a cualquier otra página del Sitio, se les solicitará que se registren o que inicien sesión.
 
 Además, nos permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
@@ -99,11 +99,11 @@ Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que t
 
 Para ello, el administrador que creó el Sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-Para añadir un usuario al Sitio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un administrador y asignale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
+Para añadir un usuario al Sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asignale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
 
 Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
 
-Para eliminar administradores de un Sitio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
+Para eliminar administradores de un Sitio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
 
 Los roles disponibles son:
 

@@ -112,7 +112,7 @@ Al igual que cada template, puedes restaurar todos los templates a su versión o
 
 ### Temas
 
-En esta vista podrás ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón "Instalar" de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
+En esta vista podrás ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón **Instalar** de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
 
 En la parte superior encontrarás distintas acciones:
 
@@ -138,7 +138,7 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
 1. Crear una vista personalizada en los templates y nombrarla igual que el UID del Espacio que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
-Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón "+ Añadir vista personalizada". Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
+Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
 Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
@@ -321,7 +321,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ### Un controlador de sesiones
 
 ```js
-// se encargará de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón mantener sesión y que lanzara una promesa reject en el caso de seleccionar el botón con la negativa de continuar
+// se encargará de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón Mantener Sesión y que lanzara una promesa reject en el caso de seleccionar el botón con la negativa de continuar
 var modalConfirm = function() {
   return new Promise(function(resolve, reject) {
     $("#session-modal").modal({

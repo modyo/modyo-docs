@@ -107,17 +107,17 @@ Para conformar el grupo de trabajo, Modyo permite seleccionar los miembros del e
 Para ello, el Administrador que creó el Espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
 #### Agregar usuario ####
-Para añadir un usuario al Espacio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona "Añadir" para que este sea parte del equipo de trabajo del Espacio.
+Para añadir un usuario al Espacio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona "Añadir" para que este sea parte del equipo de trabajo del Espacio.
 
 #### Modificar Rol ####
-Puedes modificar el rol de alguno de los usuarios asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "Guardar" para confirmar el cambio.
+Puedes modificar el rol de alguno de los usuarios asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
 ::: warning Atención
 Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
 :::
 
 #### Eliminar Miembros del Equipo ####
-Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
+Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
 
 ::: warning Atención
 Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador este no podrá ser borrado.
