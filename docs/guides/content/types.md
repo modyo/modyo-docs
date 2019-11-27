@@ -50,7 +50,7 @@ Esta interfaz nos servirá para crear cada uno de nuestros tipos, dándoles el f
 ## Campos
 
 ::: tip Tip
-El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. Para mas información ve a la [referencia de la API](/guides/content/public-api-reference.html)
+El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. Para mas información ve a la [referencia de la API](/guides/content/public-api-reference.html)
 :::
 
 Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos. Cuando un campo es requerido, al momento de crear o modificar una entrada, debe haber un valor asociado para ese campo, de lo contrario, no se podrán guardar los cambios.
