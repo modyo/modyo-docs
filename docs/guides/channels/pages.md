@@ -8,7 +8,7 @@ Las páginas son lo que te permite crear una estructura para tu sitio, donde pue
 
 ![Indice de páginas](/assets/img/platform/page-index.png)
 
-Puedes añadir nuevas Páginas haciendo click en el botón "+ Nuevo" arriba a la derecha de la vista. Deberás elegir un nombre, path y si es que la nueva página tendrá un padre.
+Puedes añadir nuevas Páginas haciendo click en el botón **+ Nuevo** arriba a la derecha de la vista. Deberás elegir un nombre, path y si es que la nueva página tendrá un padre.
 
 Para editar una página, deberás hacer click en el ícono de edición (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) o en el nombre de la página para ir a la vista de edición. 
 

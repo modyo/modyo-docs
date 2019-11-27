@@ -115,7 +115,7 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 Para guardar la modificación de los datos, es necesario hacer click en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. Si se modifican los datos pero no se hace click en el botón para que queden guardados, estas modificaciones se perderán.
 
-Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón Cerrar, ubicado en la parte inferior de la pantalla.
+Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón **Cerrar**, ubicado en la parte inferior de la pantalla.
 
 ## Resubir una imagen
 
@@ -148,7 +148,7 @@ Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 - **Mover fondo:** Haz doble click fuera de la zona de recorte y arrastra el fondo.
 :::
 
-Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón Restaurar Original, lo cual provocará que la imagen vuelva a su estado original pero la modificada se perderá permanentemente.
+Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón **Restaurar Original**, lo cual provocará que la imagen vuelva a su estado original pero la modificada se perderá permanentemente.
 
 ## Borrar un archivo
 

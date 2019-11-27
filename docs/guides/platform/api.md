@@ -168,7 +168,7 @@ A continuación, se explica como utilizar cada uno de estos métodos
 #### Bearer Token
 
 Lo primero que debemos realizar, es registrar nuestra aplicación para consumir la API. Para esto,
-en el menú administrativo accederemos a la opción _Settings_/_API access_ y clickearemos el botón `+New`.
+en el menú administrativo accederemos a la opción _Settings_/_API access_ y clickearemos el botón **+ Nuevo**.
 En la vista siguiente, daremos a nuestra aplicación un nombre (en nuestro ejemplo "My application") y una descripción que la distingan, y además debemos ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
 la sesión de un usuario.
 

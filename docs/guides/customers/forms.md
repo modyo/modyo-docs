@@ -127,7 +127,7 @@ Al hacer click en el contador de respuestas de un formulario, llegarás a una vi
 Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionándolas en el listado y luego usando las acciones masivas al final del mismo.
 
 ::: danger Peligro
-Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón "Borrar" al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
+Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón **Borrar** al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
 :::
 
 Para ver en detalle la respuesta de un usuario, basta con hacer click en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
@@ -187,7 +187,7 @@ Esta sección te permitirá cambiar el comportamiento general del formulario. Co
 - Notificaciones
 
 La sección **General** agrega dos opciones:
-- **Texto del botón enviar**: Te permite personalizar el texto asociado al botón "Enviar" del formulario.
+- **Texto del botón enviar**: Te permite personalizar el texto asociado al botón **Enviar** del formulario.
 - **Habilitado**: Te permite determinar si los usuarios podrán o no responder el formulario. Si la opción estás marcada, entonces se podrá acceder y responder el formulario, si no está habilitada, entonces los usuarios no lo verán ni podrán responderlo.
 
 La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.

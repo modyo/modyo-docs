@@ -40,7 +40,7 @@ Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el si
 
 ### Hacer una campaña
 
-Para hacer una campaña, debemos hacer click en el botón "+Nuevo", ubicado en la parte superior de la vista del Administrador.
+Para hacer una campaña, debemos hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la vista del Administrador.
 
 Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
 
@@ -51,7 +51,7 @@ Posteriormente, mostrará un formulario que deberás rellenar con los siguientes
 - Plantilla: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
 - Habilitar targetización: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
 
-Después de rellenar estos datos, deberás hacer click en el botón "Guardar y Continuar", ubicado en la parte superior de la pantalla.
+Después de rellenar estos datos, deberás hacer click en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
 
 Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
 
@@ -63,7 +63,7 @@ Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de 
 
 El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
 
-A primera vista, encontrarás en la parte superior de la pantalla el botón de Vista Previa, que te permite ver el correo que enviarás.
+A primera vista, encontrarás en la parte superior de la pantalla el botón de **Vista Previa**, que te permite ver el correo que enviarás.
 
 Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
@@ -177,7 +177,7 @@ Si quieres intervenir la plantilla temporalmente y después volver a una nueva, 
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer una plantilla, primero debes hacer click en el botón "+ Nuevo", que se encuentra en la parte superior de la página.
+Para hacer una plantilla, primero debes hacer click en el botón **+ Nuevo**, que se encuentra en la parte superior de la página.
 
 Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
 
@@ -193,7 +193,7 @@ Si haces una campaña, recuerda agregar en el footer toda la información legal 
 Para automatizar la inserción del Footer, lee [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers)
 :::
 
-Para grabar la plantilla, debes hacer click en el botón "Guardar", que se encuentra en la parte superior de la página.
+Para grabar la plantilla, debes hacer click en el botón **Guardar**, que se encuentra en la parte superior de la página.
 
 Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
 
