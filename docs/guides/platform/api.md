@@ -4,30 +4,30 @@ search: true
 
 # API de Administración
 
-Además de la funcionalidad que es proveida por el backend de Modyo, la plataforma cuenta con un API administrativa
+Además de la funcionalidad que es proveída por el backend de Modyo, la plataforma cuenta con un API administrativa
 que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar
-elementos como formularios, layouts, contenido, etc, crear campos personalizados, menus de navegacion, enviar 
+elementos como formularios, layouts, contenido, etc, crear campos personalizados, menus de navegación, enviar 
 campañas de correo, entre otros. De esta forma, es posible realizar labores administrativas
-consumiendo el API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de
+consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de
 trabajar con en Modyo.  
 
-## Explorando el API
+## Explorando la API
 
-Para comenzar a sacar provecho del API de Modyo, primero es importante conocer los servicios de 
+Para comenzar a sacar provecho de la API de Modyo, primero es importante conocer los servicios de 
 los que dispone, las operaciones que es posible invocar y la manera de utilizarlas. Modyo facilita
 esta tarea, disponibilizando la descripción de su API headless mediante el uso de Swagger (la que a su vez
 implementa la especificación de OpenAPI) en listas de servicios agrupadas según su funcionalidad: 
 funciones administrativas, contenido público y perfil de usuario.
 
 Cada lista de servicios es desplegada de forma automática en tu cuenta de Modyo, a la que puedes 
-acceder en tu navegador visitando la URL correspondiente. Por ejemplo, el detalle del API pública 
+acceder en tu navegador visitando la URL correspondiente. Por ejemplo, el detalle de la API pública 
 de contenido la encontrarás en la siguiente ruta:
 
 ```http
-https://[account_host]/api/content/doc
+https://[account_host]/api/content/docs
 ```
-De esta forma, la documentación Swagger del API pública de la cuenta https://un.modyo.be se encuentra
- en https://un.modyo.be/api/admin/docs. Asi mismo, la documentación de las funciones administrativas 
+De esta forma, la documentación Swagger pública de la API de contenido de la cuenta https://un.modyo.be se encuentra
+ en https://un.modyo.be/api/content/docs. Asi mismo, la documentación de las funciones administrativas 
  y el perfil de usuario la encontrarás respectivamente en:
  
 ```http
@@ -36,7 +36,7 @@ https://[account_host]/api/profile/docs
 ``` 
 
 En cada vista de documentación encontrarás el detalle de los distintos recursos que Modyo te provee y
-las distintas operaciones que puedes realizar sobre ellos. Por ejemplo, en el API Administrativa (/api/admin/docs)
+las distintas operaciones que puedes realizar sobre ellos. Por ejemplo, en la API Administrativa (/api/admin/docs)
 se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Targets". Si nos
 centramos en esta última, podremos ver que esta sección cuenta con un listado de operaciones que podemos
 realizar sobre los targets de la aplicación:
@@ -55,7 +55,7 @@ El listado nos muestra para cada operación, el método HTTP, la ruta y la descr
 realiza. Si hacemos click a alguno de estos métodos, por ejemplo a "Targets List", nos muestra
 una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y
 `order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro. Adicionalmente
-podremos consultar el API directamente desde la vista en Swagger completando los parámetros antes
+podremos consultar la API directamente desde la vista en Swagger completando los parámetros antes
 descritos y luego clickeando en "Execute", el que invocará al API y nos entregará el resultado en la
 misma vista. En el ejemplo, la vista invocará a la URL `https://[account_host]/api/admin/targets` con 
 GET y nos mostrará la respuesta en JSON a este _request_:
@@ -142,8 +142,7 @@ la respuesta es 200:
 Lo anterior corresponde a lo que llamamos `Example Value`, y muestra precisamente un ejemplo de lo 
 que podemos esperar obtener, pero también podemos consultar el modelo correspondiente clickeando en
 `model`, donde veremos la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, 
-valores de ejemplo, conjunto de posibles valores cuando corresponda y formato de los textos (`date-time`, `ipv4
-`, `email`, etc ). 
+valores de ejemplo, conjunto de posibles valores cuando corresponda y formato de los textos (`date-time`, `ipv4`, `email`, etc ). 
 
 Adicionalmente se muestran posibles casos de fallo que pueden ocurrir, de forma de controlarlos adecuadamente.
 Por ejemplo, si intentamos buscar un recurso que no existe:
@@ -157,15 +156,15 @@ llamada "Models", la que contiene los modelos involucrados en los servicios, y t
 manera los recursos disponibles y sus atributos. 
 
 
-## Utilizando el API
+## Utilizando la API
 
 
 ### Autenticación
 
-Para utilizar el API de Modyo, es necesario primero poder autenticar a un usuario determinado
+Para utilizar la API de Modyo, es necesario primero poder autenticar a un usuario determinado
 que será quien realize la invocación a los distintos servicios.
 
-Modyo provee 2 posibles métodos de autenticación para invocar el API:
+Modyo provee 2 posibles métodos de autenticación para invocar la API:
 
 * Bearer Token
 * Cookie de session del admin
@@ -174,22 +173,26 @@ A continuación, se explica como utilizar cada uno de estos métodos
 
 #### Bearer Token
 
-Lo primero que debemos realizar, es registrar nuestra aplicación para consumir el API. Para esto,
+Lo primero que debemos realizar, es registrar nuestra aplicación para consumir la API. Para esto,
 en el menú administrativo accederemos a la opción _Settings_/_API access_ y clickearemos el botón `+New`.
 En la vista siguiente, daremos a nuestra aplicación un nombre (en nuestro ejemplo "My application") y una descripción
 que la distingan, y además debemos ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
 la sesión de un usuario.
 
-![New API Access](/assets/img/platform/new-API-access.png) 
+![New API Access](/assets/img/platform/new-API-access.png)
 
 Al guardar la información de nuestra aplicación, Modyo nos mostrará una vista donde veremos el
 _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además
 los campos _Application ID_ y _Secret_ que podremos utilizar posteriormente.
 
-![New API Access](/assets/img/platform/save-API-access.png) 
+![New API Access](/assets/img/platform/save-API-access.png)
+
+:::warning Atención
+Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se hará un _GET_ a todas las URL de cierre de sesión de tus aplicaciones de acceso a la API, lo que podría generar algunas redirecciones no deseadas si es que se usa una URL sin cuidado en ese campo.
+:::
 
 Con nuestra aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios 
-que harán uso del API. Para esto, debemos acceder en el menú a la opción _Settings_/_Team_ y seleccionar
+que harán uso de la API. Para esto, debemos acceder en el menú a la opción _Settings_/_Team_ y seleccionar
 un usuario ya existente o bien crear uno nuevo, el que debe contar con un rol administrativo dentro de la aplicación
 (para más detalles referirse a sección [Usuarios y Roles](/guides/platform/roles.html)  ). En la vista de edición del
 usuario administrador, accederemos al tab _API Access_ y seleccionaremos la opción `+New Access Token`
@@ -201,20 +204,24 @@ en nuestro ejemplo "My application", y luego `Create Token`
 
 ![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
 
+:::warning Atención
+Debes tener en cuenta los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
+:::
+
 Finalmente, ahora veremos que en la sección "Manage Access Tokens" aparecerá nuestra aplicación ("My application"),
 junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que
-utilizaremos a continuación para realizar _requests_ autenticados sobre el API de Modyo. 
+utilizaremos a continuación para realizar _requests_ autenticados sobre la API de Modyo. 
 
 ![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
 
 ¡Listo! Con nuestro token ya creado, podemos comenzar a sacar provecho a todas las opciones que nos 
-da el API Administrativa de Modyo. Por ejemplo, si deseamos ver una lista de los roles para usuarios
-administradorese disponibles, podemos realizar un _request_ al _endpoint_ `/api/admin/roles`, incluyendo en el
+da la API Administrativa de Modyo. Por ejemplo, si deseamos ver una lista de los roles para usuarios
+administradores disponibles, podemos realizar un _request_ al _endpoint_ `/api/admin/roles`, incluyendo en el
 _header_ HTTP _"Authorization: Bearer"_ el valor del _access token_ obtenido previamente: 
 
 ```shell
 curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
- 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+ 8c280dcc1fcff361aa1120836841b4b82faab23e912148c91766bbf5e452ab56'
 ```
 
 La respuesta obtenida desde el servicio es un `HTTP 200 OK`, y contiene la información de los roles
@@ -273,10 +280,10 @@ curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
 ### Invocando servicios
 
 Una vez que conocemos el servicio que necesitamos consultar, de acuerdo a lo que vimos en la sección
-[Explorando el API](/guides/platform/api.html#explorando-el-api), y que contamos con un método de autenticación
+[Explorando la API](/guides/platform/api.html#explorando-el-api), y que contamos con un método de autenticación
 válido (referirse a sección [Autenticación](/guides/platform/api.html#autenticacion)), ya podemos
 realizar un _request_ a la URL del recurso requerido. Por ejemplo, imaginemos que necesitamos obtener
-una lista de todas las campañas de correo que hemos creado. De acuerdo a la documentación en Swaggere
+una lista de todas las campañas de correo que hemos creado. De acuerdo a la documentación en Swagger
 disponible, sabemos que necesitamos llamar a la siguiente URL:
 
 ```http request
@@ -367,7 +374,7 @@ campaña llamada "Test campaign 01", pasando en el parámetro `campaign_id` el I
 correspondiente, en este caso, el `15` :
 
 ```shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
 ``` 
 
 Similar al ejemplo anterior, la _response_ se verá de la siguiente forma
@@ -410,7 +417,7 @@ poder ser utilizados de forma eficiente y ordenada. A esta entrega organizada y 
 le llamamos **paginación**. 
 
 Imaginemos que ahora queremos revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de 
-una campaña de correo determinada (`campaign`) y una ejecución de envio de campaña determinada (`campaign delivery`).
+una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`).
 Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
 lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
 
@@ -546,7 +553,7 @@ mediante pequeños grupos de registros o páginas. Los 4 atributos con los que c
 * `total_pages`: El total de páginas, o grupos de elementos que podemos consultar.
 
 En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya sabemos
-para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quisieramos
+para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quisiéramos
 obtener, por ejemplo, la segunda página de estos datos, sólo necesitamos agregar el parámetro `page` con valor
 igual a 2, invocando nuevamente a la URL ya conocida. Para modificar la cantidad de registros por 
 página, basta con agregar el parámetro `per_page` con el valor deseado.
@@ -590,5 +597,5 @@ Lo que nos entrega un response como el siguiente:
 	}
 }
 ```
-Finalmente, recuerda que el API de manera predeterminada, siempre retornará la primera página (`current_page: 1`) de
+Finalmente, recuerda que la API de manera predeterminada, siempre retornará la primera página (`current_page: 1`) de
 recursos agrupados en páginas de 10 elementos (`per_page: 10`). 
