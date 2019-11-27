@@ -95,7 +95,7 @@ Este valor debe ser único para las entradas del mismo tipo. En caso de que se g
 
 Si deseas que el contenido sea exclusivo para usuarios que tengan una sesión en la plataforma se debe habilitar está opción.
 
-Dependiendo de como estés consumiendo el contenido, necesitarás realizar unos pasos extras para acceder a este. Si estás usando la API pública, dirígete a la sección sobre [contenido privado en la API](/guides/content/public-api-reference.html#contenido-privado). Si estás consumiendo el contenido a través de _Liquid_, basta con que los usuarios inicien sesión en el sitio para poder visualizar el contenido privado.
+Dependiendo de como estés consumiendo el contenido, necesitarás realizar unos pasos extras para acceder a este. Si estás usando la API pública, dirígete a la sección sobre [contenido privado en la API](/guides/content/public-api-reference.html#contenido-privado). Si estás consumiendo el contenido a través de Liquid, basta con que los usuarios inicien sesión en el sitio para poder visualizar el contenido privado.
 
 ### Targets
 

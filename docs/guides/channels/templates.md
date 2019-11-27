@@ -69,7 +69,7 @@ Para que el sistema reconozca el tipo de lenguaje de programación al que perten
 :::
 
 :::tip Tip
-Todos los elementos del Template Builder usan _Liquid_ como motor de plantillas.
+Todos los elementos del Template Builder usan Liquid como motor de plantillas.
 
 Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/docs/channels/liquid-markup.html)
 :::
@@ -142,7 +142,7 @@ Para crear una vista personalizada, debes entrar al Template Builder y asegurart
 
 Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
-Un ejemplo básico de código _Liquid+HTML_ que puedes usar en estas vistas es:
+Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
 
 ```html
 <div>

@@ -75,7 +75,7 @@ Para no perder los cambios que tienes actualmente, asegúrate de guardar antes d
 Cuando publicas el widget, no verás cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si restauras el widget a una versión anterior, también restaurarás las sub-versiones, por lo que podrás acceder a todas las instancias en que se guardaron cambios en esa versión.
 :::
 
-En las tres pestañas del widget puedes hacer uso de _Liquid_. Para más información revisa [la documentación asociada a liquid.](/guides/channels/liquid-markup.html)
+En las tres pestañas del widget puedes hacer uso de Liquid. Para más información revisa [la documentación asociada a Liquid.](/guides/channels/liquid-markup.html)
 
 En la **columna de propiedades** verás: 
 
