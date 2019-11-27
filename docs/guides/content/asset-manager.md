@@ -63,7 +63,7 @@ Para esta vista, las columnas son:
 
 <img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
 
-Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. La opción de ordenamiento  **predeterminada** es la fecha actualización de los archivos.
+Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. La opción de ordenamiento  **predeterminada** es la fecha de actualización de los archivos.
 
 **Previsualizar**: Si la plataforma identifica que el archivo es una imagen, podrás ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
 
@@ -77,17 +77,17 @@ Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. 
 
 **Autor**: Nombre del usuario que subió el archivo, siempre y cuando el usuario tenga asignado un nombre.
 
-Finalmente en la esquina inferior derecha, podrás encontrar la paginación de todos los archivos del sistema.
+Finalmente, en la esquina inferior derecha, podrás encontrar la paginación de todos los archivos del sistema.
 
 
 ## Propiedades de los archivos
 
 <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-La plataforma permite el manejo y subida de archivos de todos los tipos, sin una limitante por de extensión.
+La plataforma permite el manejo y subida de archivos de todos los tipos, sin una límite de extensión.
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
-Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se levantara un modal en el que podrás editar cada una de las propiedades.
+Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se levantará un modal en el que podrás editar cada una de las propiedades.
 
 ## Editar un archivo
 
@@ -118,6 +118,7 @@ Para guardar la modificación de los datos, es necesario hacer click en el botó
 Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón Cerrar, ubicado en la parte inferior de la pantalla.
 
 ## Resubir una imagen
+
 Si quieres resubir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
 
 <img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
@@ -151,7 +152,7 @@ Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actu
 
 ## Borrar un archivo
 
-Para borrar un archivo en específico se debe hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
+Para borrar un archivo en específico se debe hacer click en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
 
 ::: warning Atención
 Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
@@ -167,8 +168,8 @@ Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en 
 
 Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras:
 
-- **Drag & Drop**: arrastrar desde el navegador de archivos de tu computador hacia la ventana)
-- **Manera tradicional**: a través del navegador, pinchando y seleccionado los archivos
+- **Drag & Drop**: Arrastrar desde el navegador de archivos de tu computador hacia la ventana)
+- **Manera tradicional**: A través del navegador, pinchando y seleccionado los archivos
 
 ::: warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
