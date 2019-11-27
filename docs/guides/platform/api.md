@@ -275,7 +275,7 @@ curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
 
 #### Cookie session de admin
 
-**TO DO**
+Si estás usando Modyo desde un navegador web, y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API, y hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma. Recuerda que solo podrás acceder a las secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
 
 ### Invocando servicios
 
