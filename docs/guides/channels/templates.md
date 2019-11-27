@@ -339,7 +339,7 @@ var modalConfirm = function() {
     });
   });
 };
-// será la que se encargara de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado front la sesión a continuación explicaremos cada uno de las propiedades y métodos de este objeto que maneja la sesión
+// será la que se encargara de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación explicaremos cada uno de las propiedades y métodos de este objeto que maneja la sesión
 var sessionManager = {
   // propiedad que define el tiempo desde la ultima actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
   timeToEndSessionInSeconds: 900,

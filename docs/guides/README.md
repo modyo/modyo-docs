@@ -30,7 +30,7 @@ Modyo provee un ambiente de desarrollo seguro ya sea en la nube u “On Premise�
 
 * **Desarrolladores de Front End** que quieren construir experiencias digitales a través de widgets fáciles de crear y administrar.
 
-* **Desarrolladores de Back End** que requieren un ambiente de desarrollo de front end poderoso para conectar APIs y Microservicios.
+* **Desarrolladores de Back End** que requieren un ambiente de desarrollo de Front End poderoso para conectar APIs y Microservicios.
 
 ### ¿Dónde puedo obtener soporte?
 
