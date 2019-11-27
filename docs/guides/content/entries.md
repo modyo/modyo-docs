@@ -26,7 +26,7 @@ En este caso, los filtros son cinco:
 - **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
 - **Categoría**: Categoría a la que se encuentra asignadas las entradas.
 - **Idioma**: Idioma en que se encuentra escrito el contenido.
-- **Traducción**: Este filtro está asociado al idioma seleccionado y filtra por el estado de traducción de las entradas para dicho idioma. EJ: Esto quiere decir que si una entrada no tiene una versión en el idioma seleccionado, está caerá en "No traducida".
+- **Traducción**: Este filtro está asociado al idioma seleccionado y filtra por el estado de traducción de las entradas para dicho idioma. Ej: Esto quiere decir que si una entrada no tiene una versión en el idioma seleccionado, está caerá en "No traducida".
 - **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
 - **Barra de búsqueda**: Filtra por el contenido del titulo de las entradas.
 
