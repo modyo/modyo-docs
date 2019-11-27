@@ -205,7 +205,7 @@ en nuestro ejemplo "My application", y luego `Create Token`
 ![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
 
 :::warning Atención
-Debes tener en cuenta los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
+Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
 :::
 
 Finalmente, ahora veremos que en la sección "Manage Access Tokens" aparecerá nuestra aplicación ("My application"),
