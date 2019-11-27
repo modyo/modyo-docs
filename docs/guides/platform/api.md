@@ -258,7 +258,7 @@ en su _response_ en formato JSON:
 ``` 
 
 ¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido?
-Si intentaramos realizar una llamada sin autenticar o con un token inválido, el sistema responderá
+Si intentáramos realizar una llamada sin autenticar o con un token inválido, el sistema responderá
 con un error `HTTP 401 Unauthorized`:
 
 ```shell
