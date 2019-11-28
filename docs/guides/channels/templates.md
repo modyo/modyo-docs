@@ -289,11 +289,11 @@ var axios_api = axios.create();
 }
 // variable global que representara una instancia de axios que se encargará de hacer las peticiones de la api de modyo
 var axios_modyo=axios.create({
-  baseURL: window.baseUrl + '/api/v1',
+  baseURL: window.baseUrl + '/api/admin',
 });
 // variable global que representara una instancia de axios que se encargará de hacer las peticiones los json de contenido del sitio
 var axios_modyo_json=axios.create({
-  baseURL: window.baseUrl + '/privado',
+  baseURL: {{site.url}},
 });
 // variable global que representara una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
 var axios_auth = axios.create();
@@ -351,6 +351,8 @@ var sessionManager = {
   secondsToMilisecs: function(minutes) {
     return minutes * 1000;
   },
+  // propiedad para almacenar el interval id de revision de eventos de sesion
+  intevalId:null,
   // función que determina si se esta accediendo a la aplicación desde el modyoShell o no
   isModyoAppShell: function() {
     return /; Modyo_App_Shell/.test(navigator.userAgent);
@@ -358,7 +360,7 @@ var sessionManager = {
   // método que debe ser ejecutado en cada carga de pagina para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se definirá que los developers no lancen esta invocación en ese caso la api de prueba a conectarnos debe tener también este if y así lograremos que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
   init: function() {
     this.resetIdleTime();
-    this.interval();
+    this.intevalId=this.interval();
   },
   // reinicia el tiempo de espera o crea una nueva actividad en el sitio
   resetIdleTime: function() {
@@ -385,6 +387,7 @@ var sessionManager = {
   logout: function() {
     localStorage.clear();
     sessionStorage.clear();
+    clearInterval(this.intevalId);
     var withRedirect =
       arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (withRedirect) {
