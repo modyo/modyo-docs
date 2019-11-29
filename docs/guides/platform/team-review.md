@@ -12,9 +12,9 @@ Para activar la herramienta, debes dirigirte a la configuración del sitio o esp
 
 Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en un elemento, en vez de aparecer el botón **Publicar**, cambiará al botón **Enviar a revisión**. Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán aprobar, rechazar y hacer comentarios en el elemento.
 
-Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento.
+Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener a tu equipo al tanto sobre los cambios y comentarios del elemento.
 
-Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "Aprobado", el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
+Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "Aprobado", y quienes tengan los permisos necesarios, podrán publicar el elemento.
 
 ### Configuración
 
@@ -23,7 +23,7 @@ Una vez que se cumplen los requisitos para que el elemento sea publicado, autom�
 Dentro de la configuración de la revisión en equipo, encontrarás distintas opciones:
 
 - **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
-- **Número de aprobaciones**: Determina cuántos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
+- **Número de aprobaciones**: Determina cuántas son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado". De esta forma, si seleccionas 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
 :::tip Tip
  Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
 :::
@@ -33,9 +33,9 @@ Aunque la selección de revisores esté limitada a quien envía a revisión, tod
 :::
 - **Forzar revisión**: Esta opción habilita un selector de usuarios que permite forzar la adición de ciertos revisores a los elementos del contexto, de tal forma que en cada revisión, todos los usuarios asociados a la fuerza serán notificados de los comentarios y cambios del elemento.
 :::tip Tip
-Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "aprobado", por lo que no podrá ser publicado.
+Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "Aprobado", por lo que no podrá ser publicado.
 :::
-- **Requerir todos**: Esta opción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
+- **Requerir todos**: Esta opción obliga a que, como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "Aprobado" y luego pueda ser publicado.
 
 ::: warning Atención
 Recuerda hacer click en el botón **Guardar** arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
@@ -65,7 +65,7 @@ Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse
 
 ### Sobre la interfaz
 
-Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde **Enviar a revisión**.
+Cuando está activada la opción de revisión en equipo, y luego de guardar los cambios, verás como acción principal el botón verde **Enviar a revisión**.
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
 
@@ -73,13 +73,13 @@ Al momento de enviar a revisión la barra cambiará de estado:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
 
-Al hacerle click, verás que sobre la sección lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+Al hacer click, verás que sobre la sección lateral derecha del builder aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botón **Aprobar** bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el botón deshabilitado.
+Todos quienes puedan acceder a la vista de edición del elemento, verán un botón **Aprobar** bajo el listado de revisores, y quienes tengan permiso para hacerlo lo verán activo y podrán hacer click para aprobar el elemento. Además, los usuarios que no cuenten con dicho permiso verán el botón deshabilitado.
 
 Al aprobar el elemento, quedará registrada la aprobación por ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
 
@@ -99,9 +99,9 @@ Este sistema está disponible para ser usado en Widgets, Pages, Navegación, Tem
 
 #### Editable
 
-Cuando un recurso está en proceso de creación, queda en estado de "Editable", con tal de poder hacer modificaciones y confirmar que aún no se encuentra listo para su revisión y publicación.
+Cuando un recurso está en proceso de creación queda en estado de "Editable", y es posible realizar en él modificaciones hasta que no se confirme que se encuentra listo para su revisión y publicación.
 
-Además, se le pueden hacer cambios que permitan hacer vistas previas antes de ser publicado.
+Además, es posible revisar vistas previas de los cambios realizados antes de ser publicado.
 
 #### Publicado
 
@@ -121,29 +121,29 @@ Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas d
 
 ### Acciones para el versionado
 
-Dentro del versionado cuentas con dos acciones que te permiten interactuar con los respaldos. Ambas acciones estarán disponibles en el modal de diferencias.
+Dentro del versionado cuentas con dos acciones que te permiten interactuar con los respaldos. Ambas acciones están disponibles en el modal de diferencias.
 
 ![Modal de diferencias](/assets/img/platform/differences.png)
 
 Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha. Puedes cambiar que versiones comparar, cambiando los valores seleccionados en los selectores de versiones en la parte superior del modal. 
 
-Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izquierda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda a a versión publicada.
+Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión seleccionada a la izquierda a la versión editable, y si se hace rollback, se llevará la versión seleccionada a la izquierda de la versión publicada.
 
 #### Reestablecer
 
-En este caso, el respaldo se copiará a la versión editable, por lo que perderemos todos los cambios que se hicieron posteriormente, y así poder seguir trabajando en potenciales cambios a esa versión para volverla a publicar.
+En este caso, el respaldo se copiará a la versión editable, por lo que perderemos todos los cambios que se hicieron posteriormente, y así podremos seguir trabajando en potenciales cambios a esa versión para volverla a publicar.
 
 #### Rollback
 
 En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable. Esto es especialmente útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
 
 ::: danger Peligro
-Dado que esta es una acción peligrosa, solo los administradores de Sitios o Espacios tienen el permiso para poder ejecutar esta acción.
+Dado que esta es una acción potencialmente peligrosa, solo los administradores de Sitios o Espacios tienen el permiso para poder ejecutar esta acción.
 :::
 
 ## Locks
 
-Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia, que pueden ocurrir cuando otro usuario esté trabajando en él simultáneamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia que puedan ocurrir cuando otro usuario esté trabajando en él simultáneamente, evitando de esta forma la pérdida de trabajo o la sobreescritura de documentos.
 
 <img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
 
@@ -153,11 +153,11 @@ Locks se usan mayoritariamente en [Contenidos](/guides/content/) y en [Channels]
 
 ### ¿Cómo usar Locks?
 
-Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/guides/content/) y [Channels](/guides/channels/), múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás, solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
+Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/guides/content/) y [Channels](/guides/channels/), múltiples usuarios pueden entrar a un recurso, siendo solo uno el que podrá editar y guardar esos cambios, mientras que los demás solo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
 
 En otras secciones como [Customers](/guides/customers/) y Configuraciones, Locks no permitirán la visión simultánea del recurso, por lo que si este se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
 
-En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición, descartándose los avances no guardados del usuario que se encuentra trabajando en él.
+En este caso, solo un Administrador podrá tomar el control, activando para sí mismo la edición y descartándose los avances no guardados del usuario que se encuentra trabajando en él.
 
 
 ::: warning Tomar el control
