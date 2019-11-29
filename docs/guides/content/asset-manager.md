@@ -24,7 +24,7 @@ Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera con
 <img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
 
 
-La segunda es directamente a traves de herramienta del gestor de archivos que se encuentra en la sección Contenido.
+La segunda es directamente a traves de la herramienta del gestor de archivos que se encuentra en la sección Content.
 
 <img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
 
@@ -46,7 +46,7 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
 ::: tip Tip
-Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, puede hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna)
+Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puede hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna)
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
@@ -84,7 +84,7 @@ Finalmente, en la esquina inferior derecha, podrás encontrar la paginación de 
 
 <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-La plataforma permite el manejo y subida de archivos de todos los tipos, sin una límite de extensión.
+La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
 Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se levantará un modal en el que podrás editar cada una de las propiedades.
@@ -119,7 +119,7 @@ Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer 
 
 ## Resubir una imagen
 
-Si quieres resubir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
+Si quieres volver a subir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
 
 <img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
 
@@ -129,7 +129,7 @@ Si quieres resubir un archivo, manteniendo el nombre y el link original, haz cli
 
 Para facilitar el manejo de imágenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños de manera online.
 
-Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lapiz** que se encuentra en la ventana de Actualizar Información.
+Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
 
 Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
