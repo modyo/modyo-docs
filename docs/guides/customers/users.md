@@ -27,7 +27,7 @@ En la parte superior de la tabla, encontrarás filtros que te permitirán encont
 
 :::tip Tip
 Si necesitas hacer un Target con cierto tipo de características de algún campo personalizado, puedes hacerlo a través de Filtros Avanzados. Al seleccionar los filtros, aparecerá automáticamente el número de coincidencias. 
-En la parte inferior, este filtro combinado lo puedes separar para un Target haciendo un click en el botón **Guardar como Target**. Deberás darle un título y una descripción y posteriormente lo podrás encontrar en la sección [Targets](/guides/customers/targets.html)
+En la parte inferior, este filtro combinado lo puedes separar para un Target haciendo un click en el botón **Guardar como Target**. Deberás darle un título y una descripción y posteriormente lo podrás encontrar en la [sección Targets](/guides/customers/targets.html)
 :::
 
 ### Añadir un usuario
@@ -51,7 +51,7 @@ Para añadir un usuario, la plataforma te pedirá completar los siguientes campo
 Para enviar la contraseña al mail del usuario, solo es necesario asignar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo a la casilla con la contraseña al usuario, que podrá cambiar al ingresar a la plataforma.
 :::
 
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la sección [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
 
 ### Ficha de Usuarios
 
@@ -86,13 +86,13 @@ Este registro no puede ser borrado ni editado por administradores.
 
 Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma, a lo largo de todo el tiempo que ha estado registrado dentro de ella.
 
-Cada uno de estos links te lleva a ver sus respuestas en específico. Si quieres saber más, entra a la sección [Formularios](/guides/customers/forms.html). 
+Cada uno de estos links te lleva a ver sus respuestas en específico. Si quieres saber más, entra a la [sección Formularios](/guides/customers/forms.html). 
 
 ### Órdenes
 
 En esta sección podrás ver todas las órdenes y transacciones que ha realizado el usuario a través de la plataforma, si es que se encuentra habilitada una tienda eCommerce.
 
-Si quieres saber más sobre cómo funciona la tienda, entra a la sección [Órdenes](/guides/commerce/orders.html).
+Si quieres saber más sobre cómo funciona la tienda, entra a la [sección Órdenes](/guides/commerce/orders.html).
 
 ### Credenciales
 
@@ -100,7 +100,7 @@ Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado 
 
 Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía.
 
-Si quieres habilitar los ingresos a través de integraciones, revisa la sección [Integraciones](/guides/platform/integration.html).
+Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/guides/platform/integration.html).
 
 ### Notas
 
@@ -185,7 +185,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la sección [Integraciones de la plataforma](/guides/platform/integration.html)
+Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/guides/platform/integration.html)
 
 ### Registros
 

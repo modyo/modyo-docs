@@ -4,8 +4,17 @@ search: true
 
 # Modyo Content
 
-Content es un producto de Modyo donde quienes trabajan a través de APIs, pueden enviar información y gestionar archivos de contenido para exportar a cualquier sitio o microservicio.
+Modyo Content is an application that allows the creation of dynamic content repositories called spaces. Within a space, both the types of content to be managed and the access rules and roles that the different team members will have are defined.
 
-Esta sección está especialmente diseñada para trabajar con contenido de la mano del desarrollo, ya que todo lo que se creará, será enviado a través de la API a otro servicio fácilmente adaptable.
+![Headless](/assets/img/content/header.jpg)
 
-Primero que todo, se necesita un lector JSON que nos pueda mostrar el código de manera ordenada. Lo más recomendable es usar alguna extensión de navegador, que permita ver los contenidos adecuados e interpretados para nuestra pantalla.
+Modyo Content has a Headless architecture that allows content to be consumed via an HTTP API both from channels defined in Modyo Channels and from external systems or applications.
+
+Thanks to its integrated HTTP Headers cache and management system, the contents can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
+
+### Main functionalities
+
+- [Spaces](/guides/content/spaces.html) for the organization of contents and teams that manage them.
+- [Content types](/guides/content/types.html) to define custom structures.
+- [File manager](/guides/content/asset-manager.html) for organizing files such as images or videos that are used within the contents.
+- [API and SDKs](/guides/content/public-api-reference.html) for access to content repositories, both on and off the platform.

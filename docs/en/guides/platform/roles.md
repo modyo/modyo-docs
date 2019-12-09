@@ -4,95 +4,95 @@ search: true
 
 # Users and Roles
 
-## Teams
+## Equipment
 
-Desde aquí podrás hacer un control de todos los usuarios internos de la plataforma.
+All internal users of the platform make up the team, and each member of the platform can have a specific role to play to take advantage of the full potential of the system.
 
-Para crear un usuario, debes hacer clic en el botón superior y completar los campos, para poder enviar la invitación de ingreso por email.
+To create an internal user, you must click on the top button and complete the fields. Once the registration invitation is sent to you by email, you can choose whether to send your login password in the same message.
 
-Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
+To check all users, you can filter by their status and by the roles they have assigned to occupy on the platform.
 
-Si quieres editar o desactivar un usuario interno, debes hacer clic en el boton de acciones.
+If you want to deactivate an internal user, you must click on the action button to the right of it. In case you want to edit your data, you can use the same button, or click on its name.
 
-### User edit
+### Edit User
 
-Al editar el usuario, podrás ver el perfil de todo lo que ha hecho durante el tiempo que está ingresado en la plataforma.
+When you enter the editing view of an internal user, you can see in the main tab a list of all your actions since you registered and entered the platform for the first time.
 
-Dentro de las funciones editables que puedes manejar de un usuario están:
+The rest of the tabs can include visible or modifiable information of a user, among them are:
 
-- Sitios (a los que tiene acceso)
-- Rol
-- Credenciales
-- Accesos personalizados a la API
-- Datos generales
+- Sites (to which you have access)
+- Role
+- Credentials
+- Custom API access
+- General data
 
 ## Roles
 
-Esta es una característica esencial para cada uno de los usuarios internos de la plataforma, ya que te permite optimizar el flujo de trabajo que tiene cada uno de ellos.
+Roles are an essential characteristic of each of the internal users of the platform, since they allow you to optimize the workflow that each of them has.
 
-Modyo tiene 7 roles predeterminados con distintas funciones por secciones. Además permite crear más roles personalizados, dependiendo de la función o sitio que se necesite trabajar.
+Modyo has 7 default roles with different functions by sections. It also allows you to create more custom roles, depending on the function or site you need to work.
 
-### Default roles
+### Default Roles
 
-Modyo asigna por defecto roles predeterminados, ordenados según el contexto o sección en la que se ocupan.
+Modyo assigns default roles by default, sorted according to the context or section in which they are occupied.
 
-Los roles predeterminados que existen son, según contexto:
+The default roles that exist are, depending on context:
 
-#### Account roles:
+#### Roles per account:
 
-- Default admin: Tiene todos los permisos existentes.
-- Default user: Tiene todos los permisos existentes. menos la edición de la configuración de la cuenta.
+- Default admin: You have all existing permissions.
+- Default user: You have all existing permissions. minus editing account settings.
 
-#### Site roles:
+#### Roles per site:
 
-- Site admin: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
-- Site reviewer: Es un site admin pero sin edición de la configuración del sitio.
-- Site developer: Sólo puede editar recursos (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+- Site admin: You have all the permissions at the level of a site, but you cannot create new sites.
+- Site reviewer: It is a site admin but without editing the site configuration.
+- Site developer: You can only edit resources (you cannot publish, delete, rollback or edit the configuration).
 
-#### Space roles:
+#### Roles per space:
 
-- Space admin: Tiene todos los permisos a nivel de un space, pero no puede crear nuevos spaces, puede crear y eliminar assets.
-- Space editor: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
-- Space writer: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+- Space admin: You have all the permissions at the level of a space, but you cannot create new spaces, you can create and delete assets.
+- Space editor: It is a space admin but without editing the space configuration, it does not have permissions on the assets nor can it create types.
+- Space writer: You can only edit content (you cannot publish, delete, rollback or edit the configuration).
 
-El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma, los sitios y las cuentas.
+The most important user will have the role of Default Admin or Administrator, who will have all the functions enabled to manage the platform and sites.
 
-### Custom roles
+### Custom Roles
 
-Para crear un rol en específico, solo debes hacer clic en el botón superior.
+To create a specific role, just click on the top button.
 
-Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar.
+There you can give it a name and select what kind of internal content you can see and manage.
 
-Las funciones que se pueden modificar son:
+The functions that can be modified are:
 
-- Gestión de la cuenta
-- Registros de actividad de la cuenta
-- Equipo
-- Aplicaciones de API de la cuenta
-- Gestor de archivos
-- Campañas
-- Configuración de commerce
-- Formularios
+- Account management
+- Account activity logs
+- Equipment
+- Account API applications
+- File manager
+- Bells
+- Commerce settings
+- Forms
 - Insights
-- Credenciales
-- Bloqueos
-- Plantillas de correo
-- API de correo
-- Dar de baja suscripciones
-- Notificaciones
-- Órdenes de compra
-- Medios de pago
-- Roles y permisos
-- Seguridad
-- Registros de la cuenta
-- Sitios
-- Espacios
+- Credentials
+- Locks
+- Mail templates
+- Mail API
+- Unsubscribe
+- Notifications
+- Purchase orders
+- Payment methods
+- Roles and permits
+- Security
+- Account records
+- Sites
+- Spaces
 - Targets
-- Custom fields de usuarios
-- Usuarios de la cuenta
+- Custom user fields
+- Account users
 - Webhooks
-- Revisión en equipo
+- Team review
 
-### Assign a role at the account level
+### Assign one role per account
 
-Para asignar un rol en el contexto de cuenta, debes ir a la sección de Equipo y hacer clic en el perfil del usuario que se quiere cambiar. Después ingresar a la pestaña Rol y asignar la categoría que se desee.
+To assign a role in the account context, you must go to the Team section and click on the profile of the user you want to change. Then enter the Role tab and select the role you want to assign to the user.

@@ -4,10 +4,10 @@ search: true
 
 # Categories
 
-Las categorías te permiten ordenar las entradas que publicas según el contenido que se encuentre dentro, por lo que es útil si necesitamos hacer directorios de áreas de conocimiento determinadas.
+The categories allow you to sort the posts you publish according to the content that is inside, so it is useful if we need to make directories of specific areas of knowledge.
 
-## Create a category
+## Create a Category
 
-Para crear una categoría, se hace clic en el botón superior de la pantalla. Ahí se le debe asignar un Título y una Ruta a la categoría.
+To create a category, click on the top button on the screen. There you must assign a Title and a Route to the category.
 
-Este paso también sirve para crear subcategorías. Para hacerlas, se deben hacer los mismos pasos pero asignar la Categoría Padre correspondiente.
+This step also serves to create subcategories. To do them, the same steps must be done but the corresponding Parent Category assigned.

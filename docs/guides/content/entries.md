@@ -32,7 +32,7 @@ En este caso, los filtros son cinco:
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la sección [Tipos](/guides/content/types.html).
+Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
 
 Al hacer click en Crear, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
@@ -103,7 +103,7 @@ El contenido targetizado es fundamental para cualquier entidad o empresa que qui
 
 Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigirá la entrada.
 
-Para crear un target en específico, revisa la sección [Targets](/guides/customers/targets.html).
+Para crear un target en específico, revisa la [sección Targets](/guides/customers/targets.html).
 
 
 

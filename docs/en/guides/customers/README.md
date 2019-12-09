@@ -4,14 +4,18 @@ search: true
 
 # Modyo Customers
 
-Modyo enfoca sus servicios en ofrecer una experiencia digital distinta a todos los clientes que tenga una empresa, por lo que Customers es una función elemental para quien quiera entregar un servicio de excelencia.
+Modyo Customers is an application that allows users to enable Modyo sites to authenticate users, either through their internal account registration system or through their business integrations to Single Sign On (SSO) systems.
 
-Desde esta sección puedes revisar todos los perfiles de los clientes que visitan la plataforma, extraer datos en común y administrar información que queremos entregarles.
+<img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
 
-Dentro de la función Targets que permite agrupar los perfiles de clientes según sus datos y el objetivo que necesitemos lograr.
+Once the user has been identified, the platform will internally manage the business events that the user performs during their session and through the functionality of Targets the Platform will be able to customize the content and experience in its navigation.
 
-Por otro lado, también podremos crear Formularios para que nuestros clientes ingresen la información y enviarlos desde este mismo lugar a un Target determinado. Además, se podrá ver cada úna de sus respuestas y hacer un análisis global de los datos.
+Modyo Customers represents an important element when developing digital products on the platform.
 
-La función Mensajería nos muestra cada uno de los mensajes que hemos creado a través de mailings o notificaciones, las respuestas de cada uno de los clientes y su desempeño global.
+Modyo Customers also has an integrated authenticated user messaging system.
 
-Con toda esta información podremos sacar conclusiones para optimizar el desarrollo de nuestra estrategia digital.
+### Main functionalities
+- [User management](/guides/customers/users.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
+- [Targets](/guides/customers/targets.html) to define dynamic user segments.
+- [Dynamic forms](/guides/customers/forms.html) to capture information associated with users.
+- [Messaging](/guides/customers/messaging.html) to send Web notifications or email campaigns to users.

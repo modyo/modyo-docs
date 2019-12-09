@@ -8,7 +8,7 @@ La navegación es la forma más rápida de armar un listado de elementos para en
 
 ![Navigation builder](/assets/img/platform/navigation-builder.png)
 
-En esta sección encontrarás un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en la sección [template builder](/guides/channels/templates.html).
+En esta sección encontrarás un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en la [sección template builder](/guides/channels/templates.html).
 
 El menú builder solo permite dos niveles de profundidad, por lo que podrás tener un listado principal, y sub elementos en cada uno de los items principales. No podrás anidar otros elementos dentro de los elementos anidados. 
 
