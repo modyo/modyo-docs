@@ -293,5 +293,5 @@ Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar
 :::
 
 ::: tip Tip
-Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/guides/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables!.
+Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/guides/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
 :::

@@ -4,19 +4,20 @@ search: true
 
 # API de Administración
 
-Además de la funcionalidad que es proveída por el Back End de Modyo, la plataforma cuenta con un API administrativa que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, etc, crear campos personalizados, menus de navegación, enviar campañas de correo, entre otros. De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de trabajar con en Modyo.  
+Además de la funcionalidad que provee el Back End de Modyo, la plataforma cuenta con un API administrativa que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, crear campos personalizados, menús de navegación, enviar campañas de correo, entre otros. 
+
+De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu trabajo.  
 
 ## Explorando la API
 
 Para comenzar a sacar provecho de la API de Modyo, primero es importante conocer los servicios de 
-los que dispone, las operaciones que es posible invocar y la manera de utilizarlas. Modyo facilita
-esta tarea, disponibilizando la descripción de su API headless mediante el uso de Swagger (la que a su vez
-implementa la especificación de OpenAPI) en listas de servicios agrupadas según su funcionalidad: 
-funciones administrativas, contenido público y perfil de usuario.
+los que dispone, las operaciones que es posible invocar y la manera de utilizarlas. 
 
-Cada lista de servicios es desplegada de forma automática en tu cuenta de Modyo, a la que puedes 
-acceder en tu navegador visitando la URL correspondiente. Por ejemplo, el detalle de la API pública 
-de contenido la encontrarás en la siguiente ruta:
+Modyo facilita esta tarea, disponiendo la descripción de su API headless mediante el uso de Swagger (la que a su vez implementa la especificación de OpenAPI) en listas de servicios agrupadas según su función: administrativa, contenido público y perfil de usuario.
+
+Cada lista de servicios se despliega de forma automática en tu cuenta de Modyo, accediendo en tu navegador al visitar la URL correspondiente. 
+
+Por ejemplo, el detalle de la API pública de contenido la encontrarás en la siguiente ruta:
 
 ```http
 https://[account_host]/api/content/docs
@@ -30,11 +31,12 @@ https://[account_host]/api/admin/docs
 https://[account_host]/api/profile/docs
 ``` 
 
-En cada vista de documentación encontrarás el detalle de los distintos recursos que Modyo te provee y
-las distintas operaciones que puedes realizar sobre ellos. Por ejemplo, en la API Administrativa (/api/admin/docs)
+En cada vista de documentación encuentras el detalle de los distintos recursos que Modyo te provee y
+las operaciones que puedes realizar sobre ellos. 
+
+Por ejemplo, en la API Administrativa (/api/admin/docs)
 se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Targets". Si nos
-centramos en esta última, podremos ver que esta sección cuenta con un listado de operaciones que podemos
-realizar sobre los targets de la aplicación:
+centramos en esta última, vemos que cuenta con un listado de operaciones que realiza sobre los targets de la aplicación:
 
 ```http
 Targets
@@ -46,14 +48,19 @@ DELETE   /targets/{id}           Delete a Target
 POST     /targets/apply_filters  Create a temporary target
 POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
 ```
-El listado nos muestra para cada operación, el método HTTP, la ruta y la descripción de lo que 
-realiza. Si hacemos click a alguno de estos métodos, por ejemplo a "Targets List", nos muestra
+El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que 
+realiza. 
+
+Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra
 una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y
-`order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro. Adicionalmente
-podremos consultar la API directamente desde la vista en Swagger completando los parámetros antes
-descritos y luego clickeando en "Execute", el que invocará al API y nos entregará el resultado en la
-misma vista. En el ejemplo, la vista invocará a la URL `https://[account_host]/api/admin/targets` con 
-GET y nos mostrará la respuesta en JSON a este _request_:
+`order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro. 
+
+Adicionalmente podrás consultar la API directamente desde la vista en Swagger completando los parámetros antes
+descritos y luego clickeando en "Execute", el que invocará al API y te entrega el resultado en la
+misma vista. 
+
+En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/targets` con 
+GET y muestra la respuesta en JSON a este _request_:
 
 ```json
 {
@@ -104,18 +111,23 @@ GET y nos mostrará la respuesta en JSON a este _request_:
 }
 ```
 
-Como podrás notar, el `body` de este `response` es un objeto JSON contiene un elemento llamado "targets", 
-el que corresponde a una lista (`array`) de elementos de este tipo, y adicionalmente contiene metadata
+Como puedes notar, el `body` de este `response` es un objeto JSON que contiene un elemento llamado "targets", 
+el que corresponde a una lista (`array`) de elementos de este tipo. 
+
+Además, contiene metadata
 referente a la `response`, donde se incluyen datos como el total de entradas que satisfacen esta
 consulta (`total_entries`), la cantidad máxima de entradas o elementos devueltos por cada
 `request` (`per_page`), la "ventana" actual de datos o página actual (`current_page`) y el total de páginas
- (`total_pages`). Con estos datos podrás recorrer fácilmente los datos de un servicio determinado
+ (`total_pages`). 
+ 
+ Con estos datos puedes recorrer fácilmente los datos de un servicio determinado,
  solo con pasar los parámetros requeridos.
 
 
-También cada una de las secciones cuenta con un listado de posibles _responses_ que obtendrás al 
+También cada una de las secciones cuenta con un listado de posibles _responses_ que obtienes al 
 invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
-En el ejemplo anterior, podemos revisar el _response_ que se obtiene del listado de targets cuando
+
+En el ejemplo anterior, verás el _response_ que se obtiene del listado de targets cuando
 la respuesta es 200:     
 
 ```json
@@ -134,13 +146,16 @@ la respuesta es 200:
 }
 ``` 
 
-Lo anterior corresponde a lo que llamamos `Example Value`, y muestra precisamente un ejemplo de lo 
-que podemos esperar obtener, pero también podemos consultar el modelo correspondiente clickeando en
-`model`, donde veremos la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, 
+Lo anterior corresponde a lo que llamas `Example Value`, mostrando un ejemplo de lo 
+que puedes obtener, pero también al consultar el modelo correspondiente clickeando en
+`model`.
+
+ Ahí verás la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, 
 valores de ejemplo, conjunto de posibles valores cuando corresponda y formato de los textos (`date-time`, `ipv4`, `email`, etc ). 
 
 Adicionalmente se muestran posibles casos de fallo que pueden ocurrir, de forma de controlarlos adecuadamente.
-Por ejemplo, si intentamos buscar un recurso que no existe:
+
+Por ejemplo, si se intenta buscar un recurso que no existe:
 
 ```http
 404	           Not found
