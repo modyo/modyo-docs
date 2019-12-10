@@ -2,107 +2,123 @@
 search: true
 ---
 
-# Espacios
+# Spaces
 
-Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido y crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de la API pública.
+A Space is a limited place where team members can define different structures (types) of content, create and publish entries to use both inside or outside Modyo through their public API or in the creation of a site through Channels .
 
-Desde Modyo se puede configurar el envío de información desde distintos formatos para que el servicio que reciba la API, pueda interpretarla fácilmente.
+From Modyo you can configure access from different sources so that the service that consumes the API can easily interpret it.
 
-Espacios tambiém nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
+Spaces also allows us to organize the content in the areas in which it is working, to have a better distribution and order.
 
-## Crear un Espacio
+When accessing the spaces section, all the existing ones will be listed indicating their name and the accounting of how many types of content and entries are created. This list can be sorted alphabetically by the name of the space or by the date it was created and filtered through a search engine that will match the names of the existing spaces.
 
-Para crear un espacio, se debe hacer clic en el botón verde en la parte superior de la pantalla, y asignar el nombre y la UID que usaremos.
+## Create a Space
 
-Además, deberemos asignar el idioma sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
+To create a Space, you must click on the green button in the upper right of the Index view of Spaces, and assign the name and the UID that we will use.
 
-### Configuración
+In addition, we must select the default language on which the content we will publish will be written, for a better configuration of the characters.
 
-En este caso, la Configuración de Espacios nos sirve para cambiar las características generales de la manera en qué se está enviando información a través de la API.
-
-#### General
-
-Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
-::: danger Peligro
-Missing description
-UID es importante porque se usa para acceder a la URL de la API pública de content mediante los SDK de liquid y javascript
+::: tip Tip
+Later, in the configuration you can define other secondary languages for the Space entries.
 :::
 
-#### Localización
+## Configure a Space
 
-Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
-::: danger Peligro
-Missing description
-Cuando se crea, se elige el idioma por defecto
-Se puden añadir otros idiomas disponibles a medida que sea necesario
+In this case, the Spaces configuration helps us to change the general characteristics, language, security, members of the work team and the rules of revision and publication.
+
+<img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300">
+
+### General
+
+To change the name of the Space or its UID, it is possible to do it from here.
+
+The UID of the Space is very important since it is the attribute with which you access from the [public API](/guides/content/public-api-reference.html # reference-del-api) of content, the [Javascript SDK ](/guides/content/public-api-reference.html # sdk-de-javascript) and the [Liquid SDK](/guides/content/public-api-reference.html # sdk-de-liquid). Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in the URLs to access the content.
+
+### Location
+
+Modyo allows the change of languages and vocabulary according to the country in which it is needed. The change is useful if you need to work with personalized content and users with different languages.
+
+<img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
+
+The default language of a Space is defined at the time of creating the Space and cannot be modified, but in this section you can add as many secondary languages as you need. You just have to select one from the list, add it and save the changes. After adding a secondary language, when you modify an entry, you will notice that a language selector will appear next to the page title.
+
+<img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
+
+::: tip Tip
+You can learn how to select one of the available languages of an entry in its corresponding sections: [Public API](/guides/content/public-api-reference.html # filters), [Javascript SDK](/guides/content/public -api-reference.html # sdk-de-javascript) and in [Liquid SDK](/guides/content/public-api-reference.html # filter-entries)
 :::
 
-##### Buscando entries en otros idiomas
+### Cache
 
-La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
+The cache is a tool that allows us to reduce the number of requests that reach the application servers, improving performance and reducing response times. In this section, you can enable the cache for the Public Content API of the Space, allowing the content to be cached for up to 5 minutes (300 seconds).
 
-Por ejemplo, para obtener entries en el idioma Español-Chile (es_CL):
+<img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
-```plain
-Query string: GET .../posts/entries?locale=es_CL
-Header: Setear Accept-Language es_CL
+::: warning Warning
+You should take into account that when you enable this option, the changes in your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing the content with title "A", and then publish the same content with title "A + 1", for 5 minutes you will see the content with title "A" until the initial cache is invalidated.
+:::
+
+::: tip Tip
+To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have to face a scenario of high demand or concurrence.
+:::
+
+### Security
+
+Modyo, as a form of secure data transmission, allows CORS to be enabled so that the API can be accessed by any microservice in an external domain.
+
+For this, it is also necessary to specify the domain from where the information will be accessed. There is the possibility of allowing all origins but it is not the most recommended option.
+
+<img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
+
+When CORS is enabled, the following changes occur within the API:
+
+- The configuration of URLs allowed to access the content at the Spaces level, automatically allowing custom domains of sites.
+- When a request is made to the API, the header ``` Access-Control-Allow-Origin``` with value request.origin is added to the response and ``` Access-Control-Allow-Credentials'=true``` `, only if the origin belongs to the urls/domains previously mentioned. Otherwise, they are not configured.
+- Allowed URLs are cached at the application level.
+- In case of using intermediate cache, the origin in the cache key must be considered so that the cache is handled separately in each source:
+
+``` javascript
+Varnish: sub vcl_hash {if (req.http.Origin) {hash_data (req.http.Origin); }}
+Nginx: set $ cache_key "$ http_x_forwarded_proto://$ host $ request_uri- $ http_accept- $ http_x_requested_with";
 ```
 
-#### Caché
+#### CORS and SSL
 
-Si se quiere habilitar el caché y dejar tiempo a algunas acciones, es posible hacerlo desde esta sección. Además, regular el tiempo de vida del mismo, medido en segundos.
+When deciding whether to use SSL within the platform, the following should also be considered:
 
-Si se está trabajando en modo Desarrollo, se recomienda deshabilitar esta opción, con tal de que los cambios en la API sean visibles automáticamente y no esperar la renovación.
+- SSL: Wildcards are not allowed.
+- NO SSL: Wildcards are allowed, but Modyo must now be secure by default.
 
-#### Seguridad
+### Team Review
 
-Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser accedida por cualquier microservicio en un dominio externo
+The content published on each of the platforms must be of good quality and as a way to certify this, Modyo uses the Team Review to confirm and correct the contents that are sent through the API.
 
-Para ello, también es necesario especificar el dominio desde dónde será importada la información, para dar un mejor acceso.
+<img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-##### CORS
 
-Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
+For more information on how to configure this option, go to [Team Review](/guides/platform/team-review.html)
 
-- La configuración de URLs permitidas para acceder al contenido a nivel de Espacios, permitiendo automáticamente custom domains de sites.
-- Cuando se realiza un request al API, se agrega el header ```Access-Control-Allow-Origin``` con valor request.origin a la respuesta y    ```Access-Control-Allow-Credentials' = true```, sólo si el origen pertenece a las urls/domains previamente mencionadas. En caso caso contrario no quedan configurados.
-- URLS permitidas son cacheadas a nivel de aplicación.
-- En caso de usar caché intermedio se debe considerar el origen en la clave de caché para que se maneje el caché por separado en cada origen:
+### Team members
 
-```javascript
-Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
-Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
-```
+<img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-##### CORS y SSL
+To form the working group, Modyo allows to select the team members who will work in this Space and thus have access to writing, review and/or publication.
 
-Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo siguiente:
+To do this, the Administrator who created the Space can manually assign the users and the default roles that enable each of the functions.
 
-- SSL: Wildcards no son permitidos.
-- NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default
+#### Add user ####
+To add a user to the Space, select the primary button **+ New** in the upper right of the view, in the modal select a user and assign a role, then press "Add" to make it part of the team of space work.
 
-#### Team Review
+#### Modify Role ####
+You can modify the role of any of the associated users by clicking on its name. A modal will be raised, where you can select the new role. Press **Save** to confirm the change.
 
-La calidad del contenido que se publica en cada una de las plataformas debe ser certificada y como forma de mantener la calidad y seguridad, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
+::: warning Warning
+It must be taken into account that the system will validate that there is always an administrator within the Space, so if there is only one administrator, the role cannot be modified.
+:::
 
-En este caso, se pueden determinar cuántos miembros del equipo deben aprobar un contenido antes de ser puestos a disposición del Administrador, quien deberá publicarlos. Predeterminadamente, deben ser al menos 3 revisores, pero la cantidad puede cambiar.
+#### Remove Team Members ####
+To remove a member of the Team from a Space, you can select them using the checks to the left of their name, and then clicking on the button at the bottom of the list **Delete**.
 
-El equipo puede ser predeterminado por el administrador o elegido por quien envía a revisión. Así solo ellos pueden corregir y aprobar.
-
-Además, se puede forzar la revisión por un usuario en específico, para que este sea aprobado y seleccionar a quienes se les asignará la tarea.
-
-Por último, es posible diferenciar quiénes deben revisar cada contenido, según el espacio en que se esté trabajando. Para ello, se puede asignar un filtro desde este lugar y determinar los miembros del equipo que chequearán la información, harán comentarios y darán su aprobación.
-
-[Ir a Team Review](https://docs.modyo.com/guides/advance-topics/team-review.html)
-
-#### Team members
-
-Para ordenar el trabajo, Modyo permite filtrar los miembros del equipo que trabajarán en cada espacio y así tendrán acceso a la escritura, revisión o publicación.
-
-Para ello, el SuperAdministrador puede asignar manualmente a los usuarios los roles predeterminados que habilitan cada una de las funciones.
-
-::: danger Peligro
-Missing description
-Añadir usuarios
-Describir cada rol: Writter, Editor, Admin
+::: warning Warning
+It must be taken into account that the system will validate that there is always an administrator within the Space, so if there is only one administrator, it cannot be deleted.
 :::

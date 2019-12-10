@@ -2,24 +2,51 @@
 search: true
 ---
 
-# Customers
+### Customers
 
-Así como en Digital Factory podemos ver una estadística directa de los usuarios internos de la plataforma, Customers permite obtener una panorámica global de lo que hacen nuestros clientes dentro de ella y del comportamiento del contenido que ha llegado a ellos, segmentado en Fecha, Target y Sitio.
+Just as in Digital Factory we can see a direct statistic of the team members, Customers can obtain a global overview of what our customers do within it and the behavior of the content that has reached them.
 
-## User activity
+The available filters are:
 
-En este gráfico podemos ver la cantidad de usuarios activos, sus movimientos dentro del sitio, logins, e inscripciones (si es que estas se encuentran habilitadas).
+- Date range
+- Target
+- Site
 
-Además, se encuentra un gráfico dinámico que nos muestra cruces de datos como actividad de los usuarios y estadísticas de los correos enviados con campañas.
+**Active users**: Counting of all users with two or more activity records in the selected period.
 
-## Recent campaigns
+**Activity**: Corresponds to the logon count, form responses, open emails, emails notified as spam, open notifications.
 
-También se puede hacer una evaluación de las últimas cinco campañas enviadas por email hacia los clientes, tomando como factor de evaluación la tasa de aperturas vs. el alcance de estas.
+**Logins**: Corresponds to the count of all user logins.
 
-## Recent forms
+**Records**: Corresponds to the count of all user records.
 
-La cantidad de respuestas de los últimos cinco formularios puestos a disposición de los clientes también pueden ser revisados para una evaluación de estos.
+![Customers](/assets/img/platform/customers.png)
 
-## Engagement
+### User activity
 
-Finalmente, también podemos analizar a través de un gráfico el porcentaje de usuarios activos en el sitio, que hayan realizado dos o más acciones dentro de este.
+In this graph we can see a comparison between two values that represent user actions on the sites.
+
+You can select any of these value counts to compare:
+
+- **Activity**: Gather all the actions below.
+- **Active users**: Includes all users who have performed two or more actions in the specified period of time.
+- **Mail delivered**: Contemplate all emails from campaigns that were successfully sent.
+- **Open mail**: Corresponds to the counting of all emails from campaigns opened by users.
+- **Email notified as spam**: Corresponds to the counting of all emails from campaigns that were notified as spam by users.
+- **Form response**: Corresponds to the counting of all Modyo form responses.
+- **Login**: Corresponds to the count of all user logins.
+- **Open notification**: Corresponds to the count of all user notification message openings.
+
+### Recent Campaigns
+
+Displays a list of the last 5 messaging campaigns sent, with a reason for the open messages versus the scope of that shipment.
+
+In this list, you can find both email campaigns and notification campaigns.
+
+### Recent Forms
+
+You will see a list of the latest forms created, along with the counting of responses to these.
+
+### Engagement
+
+Finally, you can also visualize through a donut chart, the percentage of active users on the site (in the selected period), compared to the total number of users.

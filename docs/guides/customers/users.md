@@ -77,6 +77,9 @@ A la derecha, en una barra lateral, podrás ver configuraciones principales de l
 
 Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
 
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
+
+
 ### Ficha de Usuarios
 
 Al hacer click, desde el listado principal, en cada uno de los usuarios, se abrirá la ficha del usuario seleccionado. En ella podrás ver una barra lateral que incluye los siguientes datos:
@@ -112,7 +115,7 @@ Esta sección te muestra todos los formularios que ha rellenado el usuario dentr
 
 En esta sección podrás ver todas las órdenes de compra y transacciones que ha realizado el usuario a través de la plataforma, si es que se encuentra habilitada una tienda eCommerce.
 
-Si quieres saber más sobre cómo funciona la tienda, entra a la sección [Órdenes](/guides/commerce/orders.html).
+Si quieres saber más sobre cómo funciona la tienda, entra a la [sección Órdenes](/guides/commerce/orders.html).
 
 ### Credenciales
 
@@ -120,7 +123,7 @@ Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado 
 
 Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía. Caso contrario, si el usuario utiliza alguna integración como LDAP, o Google, dicha información se desplegará en este panel.
 
-Si quieres habilitar los ingresos a través de integraciones, revisa la sección [Integraciones](/guides/platform/integration.html).
+Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/guides/platform/integration.html).
 
 ### Notas
 
@@ -213,7 +216,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la sección [Integraciones de la plataforma](/guides/platform/integration.html)
+Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/guides/platform/integration.html)
 
 ### Registros
 

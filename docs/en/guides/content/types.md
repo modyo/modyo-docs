@@ -4,124 +4,150 @@ search: true
 
 # Content types
 
-Los formatos que publicaremos en nuestro sitio web siempre deben ser segmentados, para que cualquier programa o microservicio que quiera filtrar la información a través de la API, pueda interpretar más rápido el contenido para su uso final.
+![Types](/assets/img/content/types/types.jpg)
 
-## Create a type
+The Types within Modyo, are tools that will allow us to structure content templates to insert into the service we are providing, with more than 15 types of fields.
 
-Para crear un Tipo, es necesario hacer clic en el botón superior de la pantalla y poner el nombre y el UID correspondiente. Es una buena práctica poner el nombre del formato de qué se publicará, con tal de que cualquier usuario de la plataforma sepa de qué contenido se trata.
+With the Types, you can avoid having to elaborate content of the same format many times, establishing a predetermined style that will allow you to optimize time and quality when creating it.
+
+## About the Interface
+
+At first glance, you can find a green button at the top that, by clicking there, will allow you to create a Type.
+
+Below, you can find the Type search bar, which will allow you to find any word you are looking for in the Name field.
+
+Then, you can see the table with the Types already created, which will be sorted by default according to the updated date and time, starting from the most recent element backwards.
+
+To reorder it, you just have to click on the symbols that are next to each category.
+
+The categories by which you can reorder are four:
+
+- First name
+- UID
+- Creation date
+- Update date
+
+If you want to enter any type, you must click on its name to open the corresponding editor.
+
+## Create a Type
+
+<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
+
+To create a Type, it is necessary to click on the top green button on the screen and enter the name and the corresponding User Identifier (UID).
+
+::: tip Tip
+It is a good practice to put inside the UID, the format of what will be published as they are, for example, videos, posts, etc. Thus, any user of the platform will know what type of content it is and can use it as a template without having to generate a new one.
+:::
+
+In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
+
+- Add fields
+- Field configuration
+- Configuration
+
+This interface will help us to create each of our types, giving them the format that is required.
 
 ## Fields
 
-::: danger Peligro
-Missing description
-El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de liquid y JS
+::: tip Tip
+The name of the field is of the utmost importance because it will be through what its value can be accessed in the Liquid and JS SDKs. To access the value of a field in an entry you can use for example <span v-pre> `{{entry [" field name "]}}` </span>. For more information go to the [API reference](/guides/content/public-api-reference.html)
 :::
 
-- Texto de una línea: Solo para agregar textos de una sola linea.
-::: danger Peligro
-Missing description
-Restricciones (largo min/max)
-Validación mediante expresión regular
-Requerido
-:::
+All fields that can be added in a type, have a name, and the possibility of being required. When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, changes cannot be saved.
 
-- Texto de múltiples líneas: Se agrega texto de una línea.
-::: danger Peligro
-Missing description
-Restricciones largo min/max
-Validación por expresión regular
-Requerido
-:::
+### Text of a line
 
-- Texto enriquecido: Editor WYSIWYG de texto de múltiples líneas.
-::: danger Peligro
-Missing description
-Restricción largo min/max
-:::
+This field allows you to enter single line texts. and has the following restrictions:
 
-- Dropdown: Agregas una lista desplegable para seleccionar sólo una opción.
-::: danger Peligro
-Missing description
-Requerido
-:::
+- **Minimum length**: Allows you to require a minimum length of the text entered.
+- **Maximum length**: Limit the maximum length to the text entered.
+- **Validation by regular expression**: Allows you to add a regular expression to validate that the text that is entered at the time of creating/modifying an entry matches a certain format.
 
-- Radio: Agregas una lista fija para seleccionar sólo una opción.
-::: danger Peligro
-Missing description
-Requerido
-:::
 
-- Checkbox: Agregas una lista que te permite seleccionar más de una opción o dejar en blanco.
-::: danger Peligro
-Missing description
-Requerido
-:::
+### Rich text
 
-- Opciones Múltiples: Agregas un campo que permite escribir una opción que puede ser predeterminada o propuesta.
-::: danger Peligro
-Missing description
-Requerido
-:::
+This field translates into a multi-line text WYSIWYG editor that also allows you to modify its HTML code. This field has the following restrictions:
 
-- Booleano: Agregas una pregunta o afirmación en que obligatoriamente debe ser seleccionada. (True or False)
-::: danger Peligro
-Missing description
-Requerido
-:::
+- **Minimum length**: Allows you to require a minimum length of the text entered.
+- **Maximum length**: Limit the maximum length to the text entered.
 
-- Entero: Puedes agregar un número entero que debe ser de manera predeterminada entre los números -65325 y +65325. Sin embargo, se puede acotar este lapso de cifras.
-::: danger Peligro
-Missing description
-Requerido
-Restricción min/max
-:::
+### Dropdown
 
-- Decimal: Puedes agregar un número decimal que debe estar de manera predeterminada entre los números -65325 y +65325. Sin embargo, se puede acotar este lapso de cifras.
-::: danger Peligro
-Missing description
-Requerido
-Restriccion min/max
-:::
+This field allows you to add a drop-down list to select only one option.
 
-- Fecha: Agregas una fecha.
-::: danger Peligro
-Missing description
-Restricción fecha desde/hasta
-:::
+### Radio
 
-- Ubicación: Agregas un capo que permite agregar una dirección geográfica, según los campos de Google Maps.
-::: danger Peligro
-Missing description
-Requerido
-:::
+This field allows you to add a fixed list of items to select only one option.
 
-- Archivo: Puedes adjuntar un sólo archivo. Para ello, este debe estar en el directorio interno y visualizarse en el Gestor de Archivos.
-::: danger Peligro
-Missing description
-Requerido
-:::
+### Check box
 
-- Listado de Archivos: Puedes adjuntar más de un archivo. Para ello, estos deben estar en el directorio interno y visualizarse en el Gestor de Archivos.
-::: danger Peligro
-Missing description
-requerido
-:::
+This field allows you to add a list from which you can select more than one option or leave blank.
 
-- Contenido (link a una): Puedes vincular a una Entrada que ya se encuentre creada dentro del Espacio.
-::: danger Peligro
-Missing description
-Restringir tipo
-:::
+### Multiple choices
 
-- Listado de Contenido (link a muchas): Puedes vincular a más de un Contenido o Entrada que ya se encuentren creadas dentro del Espacio.
-::: danger Peligro
-Missing description
-Restringir tipo
-:::
+This field allows you to add a field in which you can type to select an option that can be predetermined or proposed.
+
+### Boolean
+
+This field allows you to add a question or statement (True/True or False/False).
+
+### Whole
+
+This field allows you to add an integer that must be by default between the numbers `-65325` and` + 65325`. However, it can be bounded using the restrictions:
+
+- **Minimum length**: Allows you to require a minimum length of the text entered.
+- **Maximum length**: Limit the maximum length to the text entered.
+
+### Decimal
+
+This field allows you to add a decimal number that must be by default between the numbers `-65325` and` + 65325`. However, it can be bounded using the restrictions:
+
+- **Minimum length**: Allows you to require a minimum length of the text entered.
+- **Maximum length**: Limit the maximum length to the text entered.
+
+### Date
+
+It allows you to add a date picker. You can restrict the values of dates that can be chosen, using the restrictions:
+
+- **From**: Limit the lowest selectable.
+- **Until**: Limit the highest selectable date.
+
+### Location
+
+It allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter by hand the name, latitude, longitude and five geopolitical location limitations
+
+
+### Archive
+
+This field allows you to attach a single file to the entry using the file manager.
+
+### File List
+
+This field allows you to attach multiple files to the entry using the file manager.
+
+### Content (link to one)
+
+This field allows you to link an Entry to another Entry that is already created and published within the Space. This field has the following restrictions:
+
+- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
+
+### Content List (link to many)
+
+This field allows you to link many Entries that are already created within the Space to another Entry. This field has the following restrictions:
+
+- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
 ## Properties
 
-::: danger Peligro
-Missing description
-Si tienes algún problema con la API pública de tu contenido, puedes reindexar ese type en la sección de propiedades del type
+In this tab, you can see the name of the type, along with its UID. The UID is important as it will be what the type is called from the Liquid SDK, Javascript and API. Below you will see a button that can be in 2 states:
+
+- **Reindexar**: Allows you to reindex the model if you encountered a problem with your public API.
+- **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
+
+::: warning Warning
+When you reindex any of your types, the model that was previously reindexed will remain available until the new index is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
+:::
+
+::: warning Warning
+Note that depending on the [cache settings you have in your space](/guides/content/spaces.html # cache), you may not see the changes immediately after you have finished re-indexing.
 :::

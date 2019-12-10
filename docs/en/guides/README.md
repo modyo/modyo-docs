@@ -1,24 +1,39 @@
----
-title: Welcome to Modyo
-lang: en
----
 # Welcome to Modyo
 
-Welcome to the official Modyo Documentation site. We hope here to cover all the relevant aspects of the Modyo Platform including a comprensive product description, best practices, examples and API references.
+Welcome to the official Modyo documentation site. We hope to cover here all the relevant points of the platform, such as the description of the interfaces, publicize good practices when interacting with the platform, provide examples of use, among other topics.
 
 ![Modyo People](/assets/img/people.png)
 
-### Why use Modyo?
-* Use Modyo to build integrated digital customer experiences across public and private channels.
-* Use Modyo to create agility and governance in your digital factory.
-* Use Modyo to build digital experiences through flexible widgets.
-### Who is Modyo for?
-* Digital Channel Managers that are responsible for driving sales and customer experiences in web and mobile channels. 
-* Software Architects looking to create a clean architecture from Microservices and APIs to Microfrontends for web and mobile channels.
-* Digital Marketers that require a content management system for creating digital experiences to target customers.
-* Content Managers that want to easily manage content in one place across for all digital channels.
-* Front End Developers that want to build amazing digital experiences through easy to create widgets.
-* Back End Developers that require a powerful front end development environment to connect to APIs & Microservices.
 ### What is Modyo?
-Modyo is our platform for all of the above. Modyo is our digital experience platform that powers solutions for digital customer interactions, secure, rapid web & hybrid mobile development, as well as bringing native and third-party applications into one cohesive area for managing your digital channels.
-Modyo provides a secure development environment in the cloud or on premise, for building intelligent interactions with customers. Public and private sites are easy to create, manage and measure. Large digital teams can streamline content creation and secure front end development that is encompassed in a library of intelligent widgets connected to business systems.
+
+Modyo is a digital experience platform that enhances solutions for interaction with digital clients, accelerating web and mobile development in a secure way and also allowing to unify native and third-party applications in a single area to manage your digital channels.
+
+### Why use Modyo?
+
+* Use Modyo to create **integrated digital experiences** for your consumers through public and private channels.
+* Use Modyo to create **agility and governance** in your digital factory.
+* Use Modyo to create digital experiences through **smart widgets**.
+
+### Why use Modyo?
+
+Modyo provides a secure development environment either in the cloud or “On Premise” (local) to build intelligent interactions with your customers. It allows you to easily create, manage and measure both public and private sites. Large digital equipment can expedite the creation of content and components developed for Front End in a secure way, in an environment that provides a large library of smart widgets that can be connected to various systems of your company.
+
+### Who is Modyo for?
+
+* **Leaders of Digital Channels** who are responsible for guiding interactions, sales and customer experiences on web and mobile channels.
+
+* **Software Architects** seeking to create a clean architecture, ranging from Microservices and APIs to Microfrontends for web and mobile channels.
+
+* **Experts in Digital Marketing** that require a content management system to create digital experiences for target groups.
+
+* **Content Administrators** who want to manage their publications easily in one place for all their digital channels.
+
+* **Front End Developers** who want to build digital experiences through easy to create and manage widgets.
+
+* **Back End Developers** that require a powerful Front End development environment to connect APIs and Microservices.
+
+### Where can I get support?
+
+To obtain support from the Modyo Platform, visit our [official support site](https://support.modyo.com/hc/en).
+
+

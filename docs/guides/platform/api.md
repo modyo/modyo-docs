@@ -187,7 +187,7 @@ Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se h
 Con nuestra aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios 
 que harán uso de la API. Para esto, debemos acceder en el menú a la opción _Settings_/_Team_ y seleccionar
 un usuario ya existente o bien crear uno nuevo, el que debe contar con un rol administrativo dentro de la aplicación
-(para más detalles referirse a sección [Usuarios y Roles](/guides/platform/roles.html)  ). En la vista de edición del
+(para más detalles referirse a [sección Usuarios y Roles](/guides/platform/roles.html)  ). En la vista de edición del
 usuario administrador, accederemos al tab _API Access_ y seleccionaremos la opción `+New Access Token`
 
 ![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
@@ -272,7 +272,7 @@ Si estás usando Modyo desde un navegador web, y tienes una sesión iniciada com
 
 Una vez que conocemos el servicio que necesitamos consultar, de acuerdo a lo que vimos en la sección
 [Explorando la API](/guides/platform/api.html#explorando-el-api), y que contamos con un método de autenticación
-válido (referirse a sección [Autenticación](/guides/platform/api.html#autenticacion)), ya podemos
+válido (referirse a [sección Autenticación](/guides/platform/api.html#autenticacion)), ya podemos
 realizar un _request_ a la URL del recurso requerido. Por ejemplo, imaginemos que necesitamos obtener
 una lista de todas las campañas de correo que hemos creado. De acuerdo a la documentación en Swagger
 disponible, sabemos que necesitamos llamar a la siguiente URL:
