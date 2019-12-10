@@ -33,7 +33,7 @@ Si bien la aprobación se encuentra limitada, cualquier usuario con permisos pue
 - **Forzar revisión**: Esta opción permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda pasar al estado "Aprobado". Esto es independiente del número de aprobaciones configurado anteriormente, es decir, aunque un elemento tenga la cantidad de aprobaciones necesarias, seguirá en estado "Esperando aprobación" si ningún usuario de la lista lo ha aprobado.
 - **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados.
 
-:::warning
+:::warning Atención
 Cuando haces cambios en la configuración de revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
 :::
 
