@@ -5,10 +5,8 @@
 #
 # Install instructions:
 # - gem install google-cloud-translate
-# - gem install kramdown
 #
 
-# require 'kramdown'
 require 'fileutils'
 require "google/cloud/translate"
 
@@ -46,20 +44,16 @@ locales.each do |locale|
     end
 
     puts "Reviewing translation status ..."
-    translate = Google::Cloud::Translate.new version: :v2
+    client = Google::Cloud::Translate.new
+    parent = client.class.location_path ENV["TRANSLATE_PROJECT"], "global"
     files.each do |file|
         unless File.readlines("docs/#{locale}/#{file}", encoding: 'utf-8').grep(/translated: true/).any?
             puts "#{file} requires auto translation!"
             input_file = File.read("docs/#{file}", encoding: 'utf-8')
 
             ## directly from Google Cloud Translate
-            translated = translate.translate input_file, to: "en", format: 'text'
-            output = translated.text
-
-            ## Parsing with Kramdown
-            # input = Kramdown::Document.new(input_file).to_html
-            # translated = translate.translate input, to: "en", format: "html"
-            # output = Kramdown::Document.new(translated.text, input: 'html').to_kramdown
+            response = client.translate_text input_file.split(/\n(?=[^\n])/), locale, parent, source_language_code: "es", mime_type:"text/plain"
+            output = response.translations.reduce('') { |acc, t| acc.concat(t.translated_text).concat("\n") }.chomp
 
             ## Writing to translated file
             file = File.open("docs/#{locale}/#{file}", "w")
@@ -69,8 +63,9 @@ locales.each do |locale|
             output.scan(/\*\*[^\*]+\*\*/).each { |bold| output.gsub!(bold, bold.gsub(/ *\*\* */,'**')) }
             # Links
             output.gsub!(/(?<=[\!]) (?=[\[])|(?<=[\]]) (?=[\(])|(?<=[\/]) (?=.)| (?=[\/])/,'')
-            # code snippets wrongly translated (```)
-            output.gsub!('``', '```')
+            # code snippets wrongly translated (tips, ``)
+            output.gsub!('::: type Type', '::: tip Tip')
+            output.gsub!(/(?<=^|[^`])``(?=[^`]|$)/, '```')
             # html attrs
             output.gsub!(/(?<=src|width|style|) = /, '=')
             # svgs
@@ -87,7 +82,7 @@ locales.each do |locale|
                 'M14.06 9l.94': '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>',
                 'M19 21H8V7h11m0-2H8a2 2': '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>',
                 'M19 3h-5v2h5v13l-5': '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>',
-                'M20 16V4H8v1' : '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>'
+                'M20 16V4H8v1': '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>'
             }
             svgs.keys.each do |svg|
                 output.gsub!(Regexp.new('<svg.*' + Regexp.quote(svg) + '.*\/svg>'), svgs[svg])
