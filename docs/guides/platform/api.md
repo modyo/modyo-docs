@@ -4,19 +4,20 @@ search: true
 
 # API de Administración
 
-Además de la funcionalidad que es proveída por el Back End de Modyo, la plataforma cuenta con un API administrativa que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, etc, crear campos personalizados, menus de navegación, enviar campañas de correo, entre otros. De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu forma de trabajar con en Modyo.  
+Además de la funcionalidad que provee el Back End de Modyo, la plataforma cuenta con un API administrativa que permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, crear campos personalizados, menús de navegación, enviar campañas de correo, entre otros. 
+
+De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu trabajo.  
 
 ## Explorando la API
 
 Para comenzar a sacar provecho de la API de Modyo, primero es importante conocer los servicios de 
-los que dispone, las operaciones que es posible invocar y la manera de utilizarlas. Modyo facilita
-esta tarea, disponibilizando la descripción de su API headless mediante el uso de Swagger (la que a su vez
-implementa la especificación de OpenAPI) en listas de servicios agrupadas según su funcionalidad: 
-funciones administrativas, contenido público y perfil de usuario.
+los que dispone, las operaciones que es posible invocar y la manera de utilizarlas. 
 
-Cada lista de servicios es desplegada de forma automática en tu cuenta de Modyo, a la que puedes 
-acceder en tu navegador visitando la URL correspondiente. Por ejemplo, el detalle de la API pública 
-de contenido la encontrarás en la siguiente ruta:
+Modyo facilita esta tarea, disponiendo la descripción de su API headless mediante el uso de Swagger (la que a su vez implementa la especificación de OpenAPI) en listas de servicios agrupadas según su función: administrativa, contenido público y perfil de usuario.
+
+Cada lista de servicios se despliega de forma automática en tu cuenta de Modyo, accediendo en tu navegador al visitar la URL correspondiente. 
+
+Por ejemplo, el detalle de la API pública de contenido la encontrarás en la siguiente ruta:
 
 ```http
 https://[account_host]/api/content/docs
@@ -30,11 +31,12 @@ https://[account_host]/api/admin/docs
 https://[account_host]/api/profile/docs
 ``` 
 
-En cada vista de documentación encontrarás el detalle de los distintos recursos que Modyo te provee y
-las distintas operaciones que puedes realizar sobre ellos. Por ejemplo, en la API Administrativa (/api/admin/docs)
+En cada vista de documentación encuentras el detalle de los distintos recursos que Modyo te provee y
+las operaciones que puedes realizar sobre ellos. 
+
+Por ejemplo, en la API Administrativa (/api/admin/docs)
 se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Targets". Si nos
-centramos en esta última, podremos ver que esta sección cuenta con un listado de operaciones que podemos
-realizar sobre los targets de la aplicación:
+centramos en esta última, vemos que cuenta con un listado de operaciones que realiza sobre los targets de la aplicación:
 
 ```http
 Targets
@@ -46,14 +48,19 @@ DELETE   /targets/{id}           Delete a Target
 POST     /targets/apply_filters  Create a temporary target
 POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
 ```
-El listado nos muestra para cada operación, el método HTTP, la ruta y la descripción de lo que 
-realiza. Si hacemos click a alguno de estos métodos, por ejemplo a "Targets List", nos muestra
+El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que 
+realiza. 
+
+Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra
 una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y
-`order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro. Adicionalmente
-podremos consultar la API directamente desde la vista en Swagger completando los parámetros antes
-descritos y luego clickeando en "Execute", el que invocará al API y nos entregará el resultado en la
-misma vista. En el ejemplo, la vista invocará a la URL `https://[account_host]/api/admin/targets` con 
-GET y nos mostrará la respuesta en JSON a este _request_:
+`order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro. 
+
+Adicionalmente podrás consultar la API directamente desde la vista en Swagger completando los parámetros antes
+descritos y luego clickeando en "Execute", el que invocará al API y te entrega el resultado en la
+misma vista. 
+
+En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/targets` con 
+GET y muestra la respuesta en JSON a este _request_:
 
 ```json
 {
@@ -104,18 +111,23 @@ GET y nos mostrará la respuesta en JSON a este _request_:
 }
 ```
 
-Como podrás notar, el `body` de este `response` es un objeto JSON contiene un elemento llamado "targets", 
-el que corresponde a una lista (`array`) de elementos de este tipo, y adicionalmente contiene metadata
+Como puedes notar, el `body` de este `response` es un objeto JSON que contiene un elemento llamado "targets", 
+el que corresponde a una lista (`array`) de elementos de este tipo. 
+
+Además, contiene metadata
 referente a la `response`, donde se incluyen datos como el total de entradas que satisfacen esta
 consulta (`total_entries`), la cantidad máxima de entradas o elementos devueltos por cada
 `request` (`per_page`), la "ventana" actual de datos o página actual (`current_page`) y el total de páginas
- (`total_pages`). Con estos datos podrás recorrer fácilmente los datos de un servicio determinado
+ (`total_pages`). 
+ 
+ Con estos datos puedes recorrer fácilmente los datos de un servicio determinado,
  solo con pasar los parámetros requeridos.
 
 
-También cada una de las secciones cuenta con un listado de posibles _responses_ que obtendrás al 
+También cada una de las secciones cuenta con un listado de posibles _responses_ que obtienes al 
 invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
-En el ejemplo anterior, podemos revisar el _response_ que se obtiene del listado de targets cuando
+
+En el ejemplo anterior, verás el _response_ que se obtiene del listado de targets cuando
 la respuesta es 200:     
 
 ```json
@@ -134,13 +146,16 @@ la respuesta es 200:
 }
 ``` 
 
-Lo anterior corresponde a lo que llamamos `Example Value`, y muestra precisamente un ejemplo de lo 
-que podemos esperar obtener, pero también podemos consultar el modelo correspondiente clickeando en
-`model`, donde veremos la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, 
+Lo anterior corresponde a lo que llamas `Example Value`, mostrando un ejemplo de lo 
+que puedes obtener, pero también al consultar el modelo correspondiente clickeando en
+`model`.
+
+ Ahí verás la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, 
 valores de ejemplo, conjunto de posibles valores cuando corresponda y formato de los textos (`date-time`, `ipv4`, `email`, etc ). 
 
 Adicionalmente se muestran posibles casos de fallo que pueden ocurrir, de forma de controlarlos adecuadamente.
-Por ejemplo, si intentamos buscar un recurso que no existe:
+
+Por ejemplo, si se intenta buscar un recurso que no existe:
 
 ```http
 404	           Not found
@@ -266,31 +281,37 @@ curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
 
 #### Cookie session de admin
 
-Si estás usando Modyo desde un navegador web, y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API, y hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma. Recuerda que solo podrás acceder a las secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
+Si estás usando Modyo desde un navegador web, y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API, y hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma. 
+
+Recuerda que solo podrás acceder a las secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
 
 ### Invocando servicios
 
-Una vez que conocemos el servicio que necesitamos consultar, de acuerdo a lo que vimos en la sección
-[Explorando la API](/guides/platform/api.html#explorando-el-api), y que contamos con un método de autenticación
-válido (referirse a [sección Autenticación](/guides/platform/api.html#autenticacion)), ya podemos
-realizar un _request_ a la URL del recurso requerido. Por ejemplo, imaginemos que necesitamos obtener
-una lista de todas las campañas de correo que hemos creado. De acuerdo a la documentación en Swagger
-disponible, sabemos que necesitamos llamar a la siguiente URL:
+Una vez que conoces el servicio que consultarás, de acuerdo a lo que viste en la sección
+[Explorando la API](/guides/platform/api.html#explorando-el-api), y que se cuenta con un método de autenticación
+válido (referirse a [sección Autenticación](/guides/platform/api.html#autenticacion)), ya se puede
+realizar un _request_ a la URL del recurso requerido. 
+
+Por ejemplo, si necesitas obtener
+una lista de todas las campañas de correo que se crearon. De acuerdo a la documentación en Swagger
+disponible, sabrás que se necesita llamar a la siguiente URL:
 
 ```http request
 GET https://[account_host]/api/admin/messaging/campaigns
 ``` 
 Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `notification`) mediante el parámetro 
 `type`, permite incluir solo campañas que cuentan con _deliveries_ (parámetro `filtered`) o bien requerir sólo una lista
-reducida de atributos para ser incluídos en la _response_ (parámetro `only`). Para nuestro ejemplo
-sólo deseamos incluir las campañas de tipo `mailing` (`type=mailing`), de forma que nuestra _request_, después de
-incluir los headers de autenticación necesarios, quedaría de la siguiente forma:
+reducida de atributos para ser incluídos en la _response_ (parámetro `only`). 
+
+Para nuestro ejemplo
+solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que nuestra _request_, después de
+sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ``` 
 
-Al invocar el servicio, obtendremos un `HTTP 200 OK`, y el _response_ contendrá un objeto JSON que 
+Al invocar el servicio, se obtiene un `HTTP 200 OK`, y el _response_ que contiene un objeto JSON que 
 se ve de la siguiente forma:
 
 ```json
@@ -348,18 +369,18 @@ se ve de la siguiente forma:
 Esta respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos
 de cada objeto de la colección contienen información relevante para el recurso consultado, en nuestro ejemplo el
 nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`) o si esta campaña fue
-targetizada o no (`targets_enabled`). Aparte de la colección, vemos un objeto llamado `meta`, el que contiene
+targetizada o no (`targets_enabled`). Aparte de la colección, se puede ver un objeto llamado `meta`, el que contiene
 información acerca de la paginación de este recurso.
 
-Siguiendo con el ejercicio, podemos utilizar los datos obtenidos en la consulta anterior para obtener más información, por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
-en este caso con el ID de una campaña en particular. Par esto, volvemos a revisar nuestro "catálogo"
-de servicios, y encontramos el siguiente _endpoint_:
+Siguiendo con el ejercicio, es posible utilizar los datos obtenidos en la consulta anterior para obtener más información, por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
+en este caso con el ID de una campaña en particular. Par esto, se vuelve a revisar nuestro "catálogo"
+de servicios, y encontrarás el siguiente _endpoint_:
 
 ```http request
 GET /messaging/campaigns/{campaign_id}/deliveries Campaign deliveries list
 ```
 
-De esta forma, podemos realizar una _request_ para ver la información específica de los _campaign deliveries_ de la
+De esta forma, se puede realizar una _request_ para ver la información específica de los _campaign deliveries_ de la
 campaña llamada "Test campaign 01", pasando en el parámetro `campaign_id` el ID de la campaña
 correspondiente, en este caso, el `15` :
 
@@ -391,28 +412,28 @@ Similar al ejemplo anterior, la _response_ se verá de la siguiente forma
 }
 ```
 
-Y como podremos observar, la _response_ no es más que un objeto JSON que contiene una lista de _deliveries_
-de campañas de correo (`deliveries`). En el ejemplo, verificamos que la campaña con ID `15` se ha ejecutado
-sólo en una oportunidad, esa ejecución ya terminó con éxito (su `status` es `completed`) y fue recibida
+Como puedes observar, la _response_ no es más que un objeto JSON que contiene una lista de _deliveries_
+de campañas de correo (`deliveries`). En el ejemplo, se verifica que la campaña con ID `15` se ejecutó
+solo en una oportunidad, esta ya terminó con éxito (su `status` es `completed`) y fue recibida
 por 1078 personas (atributo `sent_count`).
 
-Siguiente este ejemplo, puedes utilizar el amplio catálogo de servicios de Modyo y construir tu
+Siguiendo este ejemplo, puedes utilizar el amplio catálogo de servicios de Modyo y construir tu
 aplicación de la forma que más se acomode a tus necesidades.
 
 ### Trabajando con colecciones de datos: Paginación
 
-En los ejemplos de la sección previa, pudimos ver que en muchas ocasiones la cantidad de resultados
-que se obtienen para una consulta es tal, que deben ser entregados de forma parcelada de manera de
+En los ejemplos de la sección previa, mostró que en muchas ocasiones la cantidad de resultados
+que se obtienen para una consulta es tal, que se entregan de forma parcelada de manera de
 poder ser utilizados de forma eficiente y ordenada. A esta entrega organizada y acotada de resultados
 le llamamos **paginación**. 
 
-Imaginemos que ahora queremos revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
+Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
 lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ``` 
-Analicemos a continuación el correspondiente _response_ de esta llamada:
+Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 
 ```json
 {
@@ -538,19 +559,19 @@ mediante pequeños grupos de registros o páginas. Los 4 atributos con los que c
 * `current_page`: La ventana actual de datos
 * `total_pages`: El total de páginas, o grupos de elementos que podemos consultar.
 
-En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya sabemos
-para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quisiéramos
-obtener, por ejemplo, la segunda página de estos datos, sólo necesitamos agregar el parámetro `page` con valor
+En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya se sabe
+para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres
+obtener, por ejemplo, la segunda página de estos datos, sólo necesitas agregar el parámetro `page` con valor
 igual a 2, invocando nuevamente a la URL ya conocida. Para modificar la cantidad de registros por 
 página, basta con agregar el parámetro `per_page` con el valor deseado.
 
-Por ejemplo, obtengamos la página 30, pero esta vez con los _message deliveries_ agrupados en páginas de 5 elementos:
+Por ejemplo, si quieres obtener la página 30, pero esta vez con los _message deliveries_ agrupados en páginas de 5 elementos:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-Lo que nos entrega un response como el siguiente:
+Lo que entrega un response como el siguiente:
 
 ```json
 {
