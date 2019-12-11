@@ -23,8 +23,7 @@ Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera con
 
 <img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
 
-
-La segunda es directamente a traves de la herramienta del gestor de archivos que se encuentra en la sección Content.
+La segunda es directamente a través de la herramienta del gestor de archivos que se encuentra en la sección Content.
 
 <img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
 
@@ -33,7 +32,7 @@ La segunda es directamente a traves de la herramienta del gestor de archivos que
 
 <img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
-La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma.
+La primera interfaz que verás es una lista de todos los archivos que existen dentro de la plataforma.
 
 En la parte superior derecha de la pantalla podrás ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
 
@@ -46,7 +45,7 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
 ::: tip Tip
-Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puede hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna)
+Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna)
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
