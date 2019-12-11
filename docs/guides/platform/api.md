@@ -427,13 +427,13 @@ que se obtienen para una consulta es tal, que se entregan de forma parcelada de 
 poder ser utilizados de forma eficiente y ordenada. A esta entrega organizada y acotada de resultados
 le llamamos **paginación**. 
 
-Imaginemos que ahora queremos revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
+Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
 lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ``` 
-Analicemos a continuación el correspondiente _response_ de esta llamada:
+Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 
 ```json
 {
@@ -559,19 +559,19 @@ mediante pequeños grupos de registros o páginas. Los 4 atributos con los que c
 * `current_page`: La ventana actual de datos
 * `total_pages`: El total de páginas, o grupos de elementos que podemos consultar.
 
-En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya sabemos
-para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quisiéramos
-obtener, por ejemplo, la segunda página de estos datos, sólo necesitamos agregar el parámetro `page` con valor
+En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya se sabe
+para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres
+obtener, por ejemplo, la segunda página de estos datos, sólo necesitas agregar el parámetro `page` con valor
 igual a 2, invocando nuevamente a la URL ya conocida. Para modificar la cantidad de registros por 
 página, basta con agregar el parámetro `per_page` con el valor deseado.
 
-Por ejemplo, obtengamos la página 30, pero esta vez con los _message deliveries_ agrupados en páginas de 5 elementos:
+Por ejemplo, si quieres obtener la página 30, pero esta vez con los _message deliveries_ agrupados en páginas de 5 elementos:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-Lo que nos entrega un response como el siguiente:
+Lo que entrega un response como el siguiente:
 
 ```json
 {
