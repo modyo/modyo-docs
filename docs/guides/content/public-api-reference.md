@@ -17,7 +17,7 @@ El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channel
 
 ### Acceder a entradas de un espacio
 
-Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
+Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usa:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
@@ -28,7 +28,7 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio 
 
 ### Filtrar entradas
 
-Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries
@@ -111,27 +111,27 @@ El siguiente ejemplo muestra la forma más básica en que puedes obtener conteni
 ```javascript
 import { Client } from "@modyo/sdk";
 
-// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request
+// Crea una función genérica que puedas instanciar cada vez que se desea hacer un request
 export default function getClient(spaceUID) {
   // La clase `Client` del SDK requiere dos argumentos:
   // El primer argumento es la `url` de la API,
   // el segundo argumento es el `UID` del espacio que quieres acceder.
-  // En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica
+  // En este ejemplo, el `UID` del espacio lo pasarás como argumento de esta función genérica
   const client = new Client("https://dynamicbank.modyo.build/api", {
     spaceUID
   });
   return client;
 }
 
-// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
+// Una vez instanciada la clase `Client`, tienes distintos métodos a nuestra disposición, como
 // `getEntries()`
-getClient("static-data") // accedemos al espacio
-  .getEntries("menu-item") // Obtenemos todas las entradas del tipo `menu-item`
-  .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
-  .catch(err => console.log(err)); // o retornamos un error si algo falla
+getClient("static-data") // accede al espacio
+  .getEntries("menu-item") // Obtiene todas las entradas del tipo `menu-item`
+  .then(entries => console.log(entries)) // Imprimes en un log las entradas recibidas
+  .catch(err => console.log(err)); // o retorna un error si algo falla
 ```
 
-Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamente usando el método `getEntry(typeUID, entryUID)`:
+Además del método `getEntries(typeUID)` que ocupas en el ejemplo, si conoces el `id` de nuestra entrada, puedes requerirla inmediatamente usando el método `getEntry(typeUID, entryUID)`:
 
 ```js
 getClient("static-data")
@@ -605,18 +605,18 @@ La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro 
 
 Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de contenido dentro de tu sitio, y también desde otros sitios y servicios.
 
-En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
+En esta solicitud AJAX, se está especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlaza el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
 
 #### API Fetch con JavaScript nativo
 
 La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.
 
 Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código:
-Estamos trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
+Se está trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
 
-Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utilizamos el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).
+Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utiliza el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).
 
-Para información más detallada, te recomendamos visitar los webdocs de MDN.
+Para información más detallada, visita los webdocs de MDN.
 
 #### Axios
 

@@ -8,15 +8,15 @@ Un Espacio es un lugar acotado donde los miembros del equipo pueden definir dist
 
 Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
 
-Espacios también nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
+Espacios también te permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
-Al acceder a la sección de espacios se  listaran todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo   y filtrar a través de un buscador que buscara coincidencias con los nombres de los espacios existentes.
+Al acceder a la sección de espacios se listaran todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo  y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
 
 ## Crear un Espacio
 
-Para crear un Espacio, se debe hacer click en el botón verde en la parte superior derecha de la vista índice de Espacios, y asignar el nombre y el UID que usaremos.
+Para crear un Espacio, se debe hacer click en el botón verde en la parte superior derecha de la vista índice de Espacios, y asignar el nombre y el UID que usarás.
 
-Además, deberemos seleccionar el idioma por defecto sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
+Además, deberás seleccionar el idioma por defecto sobre el cual se escribirá el contenido que quieres publicar, para una mejor configuración de los caracteres.
 
 :::tip Tip
 Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del Espacio.
@@ -24,7 +24,7 @@ Más adelante, en la configuración podrás definir otros idiomas secundarios pa
 
 ## Configurar un Espacio
 
-En este caso, la configuración de Espacios nos sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
+En este caso, la configuración de Espacios sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
 
 <img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300">
 
