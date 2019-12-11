@@ -281,31 +281,37 @@ curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
 
 #### Cookie session de admin
 
-Si estás usando Modyo desde un navegador web, y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API, y hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma. Recuerda que solo podrás acceder a las secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
+Si estás usando Modyo desde un navegador web, y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API, y hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma. 
+
+Recuerda que solo podrás acceder a las secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
 
 ### Invocando servicios
 
-Una vez que conocemos el servicio que necesitamos consultar, de acuerdo a lo que vimos en la sección
-[Explorando la API](/guides/platform/api.html#explorando-el-api), y que contamos con un método de autenticación
-válido (referirse a [sección Autenticación](/guides/platform/api.html#autenticacion)), ya podemos
-realizar un _request_ a la URL del recurso requerido. Por ejemplo, imaginemos que necesitamos obtener
-una lista de todas las campañas de correo que hemos creado. De acuerdo a la documentación en Swagger
-disponible, sabemos que necesitamos llamar a la siguiente URL:
+Una vez que conoces el servicio que consultarás, de acuerdo a lo que viste en la sección
+[Explorando la API](/guides/platform/api.html#explorando-el-api), y que se cuenta con un método de autenticación
+válido (referirse a [sección Autenticación](/guides/platform/api.html#autenticacion)), ya se puede
+realizar un _request_ a la URL del recurso requerido. 
+
+Por ejemplo, si necesitas obtener
+una lista de todas las campañas de correo que se crearon. De acuerdo a la documentación en Swagger
+disponible, sabrás que se necesita llamar a la siguiente URL:
 
 ```http request
 GET https://[account_host]/api/admin/messaging/campaigns
 ``` 
 Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `notification`) mediante el parámetro 
 `type`, permite incluir solo campañas que cuentan con _deliveries_ (parámetro `filtered`) o bien requerir sólo una lista
-reducida de atributos para ser incluídos en la _response_ (parámetro `only`). Para nuestro ejemplo
-sólo deseamos incluir las campañas de tipo `mailing` (`type=mailing`), de forma que nuestra _request_, después de
-incluir los headers de autenticación necesarios, quedaría de la siguiente forma:
+reducida de atributos para ser incluídos en la _response_ (parámetro `only`). 
+
+Para nuestro ejemplo
+solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que nuestra _request_, después de
+sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ``` 
 
-Al invocar el servicio, obtendremos un `HTTP 200 OK`, y el _response_ contendrá un objeto JSON que 
+Al invocar el servicio, se obtiene un `HTTP 200 OK`, y el _response_ que contiene un objeto JSON que 
 se ve de la siguiente forma:
 
 ```json
@@ -363,18 +369,18 @@ se ve de la siguiente forma:
 Esta respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos
 de cada objeto de la colección contienen información relevante para el recurso consultado, en nuestro ejemplo el
 nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`) o si esta campaña fue
-targetizada o no (`targets_enabled`). Aparte de la colección, vemos un objeto llamado `meta`, el que contiene
+targetizada o no (`targets_enabled`). Aparte de la colección, se puede ver un objeto llamado `meta`, el que contiene
 información acerca de la paginación de este recurso.
 
-Siguiendo con el ejercicio, podemos utilizar los datos obtenidos en la consulta anterior para obtener más información, por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
-en este caso con el ID de una campaña en particular. Par esto, volvemos a revisar nuestro "catálogo"
-de servicios, y encontramos el siguiente _endpoint_:
+Siguiendo con el ejercicio, es posible utilizar los datos obtenidos en la consulta anterior para obtener más información, por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
+en este caso con el ID de una campaña en particular. Par esto, se vuelve a revisar nuestro "catálogo"
+de servicios, y encontrarás el siguiente _endpoint_:
 
 ```http request
 GET /messaging/campaigns/{campaign_id}/deliveries Campaign deliveries list
 ```
 
-De esta forma, podemos realizar una _request_ para ver la información específica de los _campaign deliveries_ de la
+De esta forma, se puede realizar una _request_ para ver la información específica de los _campaign deliveries_ de la
 campaña llamada "Test campaign 01", pasando en el parámetro `campaign_id` el ID de la campaña
 correspondiente, en este caso, el `15` :
 
@@ -406,18 +412,18 @@ Similar al ejemplo anterior, la _response_ se verá de la siguiente forma
 }
 ```
 
-Y como podremos observar, la _response_ no es más que un objeto JSON que contiene una lista de _deliveries_
-de campañas de correo (`deliveries`). En el ejemplo, verificamos que la campaña con ID `15` se ha ejecutado
-sólo en una oportunidad, esa ejecución ya terminó con éxito (su `status` es `completed`) y fue recibida
+Como puedes observar, la _response_ no es más que un objeto JSON que contiene una lista de _deliveries_
+de campañas de correo (`deliveries`). En el ejemplo, se verifica que la campaña con ID `15` se ejecutó
+solo en una oportunidad, esta ya terminó con éxito (su `status` es `completed`) y fue recibida
 por 1078 personas (atributo `sent_count`).
 
-Siguiente este ejemplo, puedes utilizar el amplio catálogo de servicios de Modyo y construir tu
+Siguiendo este ejemplo, puedes utilizar el amplio catálogo de servicios de Modyo y construir tu
 aplicación de la forma que más se acomode a tus necesidades.
 
 ### Trabajando con colecciones de datos: Paginación
 
-En los ejemplos de la sección previa, pudimos ver que en muchas ocasiones la cantidad de resultados
-que se obtienen para una consulta es tal, que deben ser entregados de forma parcelada de manera de
+En los ejemplos de la sección previa, mostró que en muchas ocasiones la cantidad de resultados
+que se obtienen para una consulta es tal, que se entregan de forma parcelada de manera de
 poder ser utilizados de forma eficiente y ordenada. A esta entrega organizada y acotada de resultados
 le llamamos **paginación**. 
 
