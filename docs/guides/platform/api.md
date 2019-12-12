@@ -35,8 +35,8 @@ En cada vista de documentación encuentras el detalle de los distintos recursos 
 las operaciones que puedes realizar sobre ellos. 
 
 Por ejemplo, en la API Administrativa (/api/admin/docs)
-se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Targets". Si nos
-centramos en esta última, vemos que cuenta con un listado de operaciones que realiza sobre los targets de la aplicación:
+se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Targets". Si te
+centras en esta última, ves que cuenta con un listado de operaciones que realiza sobre los targets de la aplicación:
 
 ```http
 Targets
@@ -182,16 +182,16 @@ A continuación, se explica como utilizar cada uno de estos métodos
 
 #### Bearer Token
 
-Lo primero que debemos realizar, es registrar nuestra aplicación para consumir la API. Para esto,
-en el menú administrativo accederemos a la opción _Settings_/_API access_ y clickearemos el botón **+ Nuevo**.
-En la vista siguiente, daremos a nuestra aplicación un nombre (en nuestro ejemplo "My application") y una descripción que la distingan, y además debemos ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
+Lo primero que debes realizar, es registrar la aplicación para consumir la API. Para esto,
+en el menú administrativo accederás a la opción _Settings_/_API access_ y clickearás el botón **+ Nuevo**.
+En la vista siguiente, puedes dar a la aplicación un nombre (en el ejemplo "My application") y una descripción que la distingan, y además debes ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
 la sesión de un usuario.
 
 ![New API Access](/assets/img/platform/new-API-access.png)
 
-Al guardar la información de nuestra aplicación, Modyo nos mostrará una vista donde veremos el
+Al guardar la información de la aplicación, Modyo mostrará una vista donde verás el
 _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además
-los campos _Application ID_ y _Secret_ que podremos utilizar posteriormente.
+los campos _Application ID_ y _Secret_ que puedes utilizar posteriormente.
 
 ![New API Access](/assets/img/platform/save-API-access.png)
 
@@ -199,16 +199,16 @@ los campos _Application ID_ y _Secret_ que podremos utilizar posteriormente.
 Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se hará un _GET_ a todas las URL de cierre de sesión de tus aplicaciones de acceso a la API, lo que podría generar algunas redirecciones no deseadas si es que se usa una URL sin cuidado en ese campo.
 :::
 
-Con nuestra aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios 
-que harán uso de la API. Para esto, debemos acceder en el menú a la opción _Settings_/_Team_ y seleccionar
+Con la aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios 
+que harán uso de la API. Para esto, debes acceder en el menú a la opción _Settings_/_Team_ y seleccionar
 un usuario ya existente o bien crear uno nuevo, el que debe contar con un rol administrativo dentro de la aplicación
 (para más detalles referirse a [sección Usuarios y Roles](/guides/platform/roles.html)  ). En la vista de edición del
-usuario administrador, accederemos al tab _API Access_ y seleccionaremos la opción `+New Access Token`
+usuario administrador, accederás al tab _API Access_ y selecciona la opción `+New Access Token`
 
 ![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
 
-En el _popup_ que se muestra a continuación, seleccionar el nombre de la aplicación que acabamos de crear,
-en nuestro ejemplo "My application", y luego `Create Token`
+En el _popup_ que se muestra a continuación, seleccionar el nombre de la aplicación que acabas de crear,
+en el ejemplo "My application", y luego `Create Token`
 
 ![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
 
@@ -216,14 +216,13 @@ en nuestro ejemplo "My application", y luego `Create Token`
 Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
 :::
 
-Finalmente, ahora veremos que en la sección "Manage Access Tokens" aparecerá nuestra aplicación ("My application"), junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que
-utilizaremos a continuación para realizar _requests_ autenticados sobre la API de Modyo. 
+Finalmente, ahora verás que en la sección "Manage Access Tokens" aparecerá la aplicación ("My application"), junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que
+utilizarás a continuación para realizar _requests_ autenticados sobre la API de Modyo. 
 
 ![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
 
-¡Listo! Con nuestro token ya creado, podemos comenzar a sacar provecho a todas las opciones que nos 
-da la API Administrativa de Modyo. Por ejemplo, si deseamos ver una lista de los roles para usuarios
-administradores disponibles, podemos realizar un _request_ al _endpoint_ `/api/admin/roles`, incluyendo en el
+¡Listo! Con el token ya creado, puedes comenzar a sacar provecho a todas las opciones que da la API Administrativa de Modyo. Por ejemplo, si deseas ver una lista de los roles para usuarios
+administradores disponibles, puedes realizar un _request_ al _endpoint_ `/api/admin/roles`, incluyendo en el
 _header_ HTTP _"Authorization: Bearer"_ el valor del _access token_ obtenido previamente: 
 
 ```shell
@@ -264,7 +263,7 @@ en su _response_ en formato JSON:
 }
 ``` 
 
-¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido? Si intentáramos realizar una llamada sin autenticar o con un token inválido, el sistema responderá
+¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido? Si intentas realizar una llamada sin autenticar o con un token inválido, el sistema responderá
 con un error `HTTP 401 Unauthorized`:
 
 ```shell
@@ -303,7 +302,7 @@ Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `n
 `type`, permite incluir solo campañas que cuentan con _deliveries_ (parámetro `filtered`) o bien requerir sólo una lista
 reducida de atributos para ser incluídos en la _response_ (parámetro `only`). 
 
-Para nuestro ejemplo
+Para el ejemplo
 solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que nuestra _request_, después de
 sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
 
@@ -367,13 +366,13 @@ se ve de la siguiente forma:
 ```
 
 Esta respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos
-de cada objeto de la colección contienen información relevante para el recurso consultado, en nuestro ejemplo el
+de cada objeto de la colección contienen información relevante para el recurso consultado, en el ejemplo, el
 nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`) o si esta campaña fue
 targetizada o no (`targets_enabled`). Aparte de la colección, se puede ver un objeto llamado `meta`, el que contiene
 información acerca de la paginación de este recurso.
 
 Siguiendo con el ejercicio, es posible utilizar los datos obtenidos en la consulta anterior para obtener más información, por ejemplo, acerca de las veces que se ejecutó una campaña en particular (Campaign Deliveries),
-en este caso con el ID de una campaña en particular. Par esto, se vuelve a revisar nuestro "catálogo"
+en este caso con el ID de una campaña en particular. Par esto, se vuelve a revisar el catálogo
 de servicios, y encontrarás el siguiente _endpoint_:
 
 ```http request
@@ -425,9 +424,9 @@ aplicación de la forma que más se acomode a tus necesidades.
 En los ejemplos de la sección previa, mostró que en muchas ocasiones la cantidad de resultados
 que se obtienen para una consulta es tal, que se entregan de forma parcelada de manera de
 poder ser utilizados de forma eficiente y ordenada. A esta entrega organizada y acotada de resultados
-le llamamos **paginación**. 
+llamada **paginación**. 
 
-Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, podemos utilizar el _endpoint_ que
+Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, puedes utilizar el _endpoint_ que
 lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
 
 ```shell script
@@ -547,17 +546,19 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 }
 ```
 Como bien podrás observar, el objeto ``message_deliveries`` dentro del JSON contiene una lista de 10 elementos, donde cada uno representa un _message delivery_ o entrega concreta de un correo de campaña a un usuario determinado, y cada objeto tiene atributos relevantes a este concepto, como el nombre y
-correo del cliente o la fecha en donde se envió. Pero, ¿donde están los demás registros? Acá es donde juega un papel muy importante la paginación de los recursos, y para esto debemos prestar
+correo del cliente o la fecha en donde se envió. Pero, ¿donde están los demás registros? Acá es donde juega un papel muy importante la paginación de los recursos, y para esto debes prestar
 atención al objeto `meta` dentro del JSON.
 
 El objeto `meta` contiene la información relevante para poder recorrer una gran cantidad de registros,
-mediante pequeños grupos de registros o páginas. Los 4 atributos con los que contamos son los siguientes:
+mediante pequeños grupos de registros o páginas. 
+
+Los 4 atributos son:
 
 
 * `total_entries`: El número total de items del recurso consultado
 * `per_page`: La cantidad de items que se entregarán por cada página
 * `current_page`: La ventana actual de datos
-* `total_pages`: El total de páginas, o grupos de elementos que podemos consultar.
+* `total_pages`: El total de páginas, o grupos de elementos que puedes consultar.
 
 En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya se sabe
 para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres
