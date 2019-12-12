@@ -109,7 +109,7 @@ La CLI de Modyo está diseñada para trabajar con uno o mas widgets de un proyec
 Para crear un proyecto:
 
 ```plain
-# Te recomendamos nombrar tus proyectos en formato `PascalCase`
+# Lo ideal es que nombres tus proyectos en formato `PascalCase`
 modyo-cli project create <projectName>
 cd projectName
 modyo-cli project start
@@ -130,7 +130,7 @@ modyo-cli project login
 Para añadir un nuevo widget al proyecto, usa el siguiente comando:
 
 ```plain
-# Te recomendamos nombrar tus widgets con formato `PascalCase`
+# Lo ideal es que puedas nombrar tus widgets con formato `PascalCase`
 modyo-cli widget add <widgetName>
 ```
 

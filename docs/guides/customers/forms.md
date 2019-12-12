@@ -166,7 +166,7 @@ Esta sección te permitirá modificar las opciones para cada una de las pregunta
 
 Todos los campos que puedes añadir cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones.
 
-Algunos campos cuentan con validaciones, para asegurarnos de el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
+Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
 
 - Largo mínimo: Largo requerido para que el texto sea válido
 - Largo máximo: largo máximo permitido para que el texto sea permitido
@@ -179,7 +179,10 @@ Algunos campos cuentan con validaciones, para asegurarnos de el usuario cumpla c
 De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas y los archivos.
 
 ### Propiedades del formulario
-Esta sección te permitirá cambiar el comportamiento general del formulario. Contiene lo mismo que la vista de creación de un formulario nuevo, pero a su vez agrega un par de opciones nuevas las que detallaremos a continuación. Sus cuatro principales secciones son:
+
+Esta sección te permitirá cambiar el comportamiento general del formulario. Contiene lo mismo que la vista de creación de un formulario nuevo, pero a su vez agrega un par de opciones nuevas las que se detalla a continuación. 
+
+Sus cuatro principales secciones son:
 
 - General
 - Snippet

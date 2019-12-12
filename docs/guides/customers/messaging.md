@@ -4,7 +4,7 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que nos permite enviar la información hacia nuestros clientes de una manera masiva, dirigida a targets determinados.
+Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que permite enviar la información hacia nuestros clientes de una manera masiva, dirigida a targets determinados.
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
@@ -19,7 +19,7 @@ Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos c
 
 A primera vista, estaremos en la sección Campañas, donde podremos ver a través de un administrador todos los mensajes e informaciones que hemos enviado a nuestros clientes.
 
-En la parte superior de la pantalla, existe un botón que nos indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer click para cambiar la vista.
+En la parte superior de la pantalla, existe un botón que indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer click para cambiar la vista.
 
 En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
 

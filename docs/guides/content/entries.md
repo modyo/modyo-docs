@@ -67,7 +67,7 @@ Para ver las Categorías, es necesario que hagas click en la sección Categoría
 
 #### Crear una Categoría
 
-Si quieres crear una categoría, solo debes hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podras ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
+Si quieres crear una categoría, solo debes hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podrás ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
 ::: tip Tip
 Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si quieres cambiarla, solo basta con hacer click en ella.
