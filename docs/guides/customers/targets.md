@@ -4,7 +4,7 @@ search: true
 
 # Targets
 
-Targets es la función de Modyo ideal para manejar a los usuarios en masa si necesitamos que reciban determinada información.
+Targets es la función de Modyo ideal para manejar a los usuarios en masa si necesitas que reciban determinada información.
 
 Estos nos permiten agrupar a nuestros clientes en distintos segmentos y así facilitar el envío de correos o notificaciones.
 
@@ -49,7 +49,7 @@ Por último, si quieres ver los usuarios que integran ese target, solo debes hac
 
 ### Filtros
 
-Los filtros son los que nos permiten crear los targets, que tal como decíamos antes, se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. 
+Los filtros son los que permiten crear los targets que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. 
 
 Los filtros que se encuentran de manera predeterminada en la plataforma son:
 

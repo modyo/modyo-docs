@@ -4,7 +4,7 @@ search: true
 
 # Modyo Insights
 
-Para cualquier empresa o institución, es importante saber qué es lo que está pasando en su ecosistema, por lo que tener a la mano una visión generalizada tanto de la actividad de sus propios clientes, como del equipo de trabajo, es fundamental para implementar cualquier estrategia.
+Para cualquier empresa o institución, es importante saber qué es lo que está pasando en su ecosistema, por lo que tener a la mano una visión generalizada tanto de la actividad de sus propios usuarios finales, como del equipo de trabajo, es fundamental para implementar cualquier estrategia.
 
 ![Modyo People](/assets/img/insights/header.jpg)
 

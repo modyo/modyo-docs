@@ -8,7 +8,7 @@ A través de la sección Usuarios, podrás ver y modificar a los usuarios extern
 
 ## Sobre la interfaz
 
-En la vista principal, podremos ver una tabla con todos los usuarios registrados dentro de la plataforma, paginada en caso de tener más de 30 registros.
+En la vista principal, podrás ver una tabla con todos los usuarios registrados dentro de la plataforma, paginada en caso de tener más de 30 registros.
 
 En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera. Los filtros disponibles son los que siguen:
 - Estado: Ver los usuarios activos e inactivos.
@@ -34,7 +34,7 @@ En la tabla misma, es posible ordenar los usuarios por sus valores respectivos h
 
 Para agregar un nuevo usuario, se debe hacer click en el botón **+ Nuevo** en la parte superior derecha de la pantalla.
 
-Se abrirá un selector que muestra las dos formas posibles para crear usuarios en el sistema: manualmente o importándolos desde un archivo \*.CSV. La segunda opción nos permite importar múltiples usuarios simultáneamente.
+Se abrirá un selector que muestra las dos formas posibles para crear usuarios en el sistema: manualmente o importándolos desde un archivo \*.CSV. La segunda opción permite importar múltiples usuarios simultáneamente.
 
 Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguientes campos:
 
@@ -58,11 +58,11 @@ Esta vista de creación de usuarios puede contener más campos dependiendo de la
 
 La segunda opción del selector para agregar nuevos usuarios es la importación desde un archivo CSV. Al hacer click, se abrirá una vista que lista un registro histórico de importaciones previas, en caso de existir. Este listado se puede ordenar por nombre del archivo \*.CSV o por estado de la importación, asimismo a través de la barra de búsqueda sobre la tabla se puede filtrar por el nombre del archivo.
 
-Para realizar una nueva importación, debemos hacer click en el botón superior derecho **Importar**. Este abrirá un modal el que nos permitirá seleccionar y subir el archivo \*.CSV que tiene nuestro listado de usuarios y sus atributo. Es importante dejar seleccionada la caja que indica que el archivo contiene encabezados o nombres de columnas en caso de que así sea, o las cabeceras intentarán ser incluídas como un nuevo usuario. Luego procedemos a hacer click en el botón **Aceptar**.
+Para realizar una nueva importación, debes hacer click en el botón superior derecho **Importar**. Este abrirá un modal el que permitirá seleccionar y subir el archivo \*.CSV que tiene nuestro listado de usuarios y sus atributo. Es importante dejar seleccionada la caja que indica que el archivo contiene encabezados o nombres de columnas en caso de que así sea, o las cabeceras intentarán ser incluídas como un nuevo usuario. Luego procedes a hacer click en el botón **Aceptar**.
 
-A continuación veremos la vista principal de importación. A la izquierda, aparecerá una tabla con tres columnas principales, la primera contiene el nombre de la cabecera de la columna importada (en caso de que exista), la segunda algunos ejemplos de los datos que contiene esa columna, y la tercera un selector. Este selector realiza la asignación respectiva del valor importado al atributo del usuario en la plataforma.
+A continuación verás la vista principal de importación. A la izquierda, aparecerá una tabla con tres columnas principales, la primera contiene el nombre de la cabecera de la columna importada (en caso de que exista), la segunda algunos ejemplos de los datos que contiene esa columna, y la tercera un selector. Este selector realiza la asignación respectiva del valor importado al atributo del usuario en la plataforma.
 
-En esta vista procederemos a asignar cada columna del archivo \*.CSV a un atributo respectivo disponible en la plataforma.
+En esta vista procederás a asignar cada columna del archivo \*.CSV a un atributo respectivo disponible en la plataforma.
 
 :::tip Tip
 Los atributos mínimos requeridos para la importación son el nombre real del usuario (no confundir con nombre de usuario) y su correo electrónico.
@@ -144,15 +144,15 @@ Para más información, ir a [Campos Personalizados](/guides/customers/users.htm
 
 ## Configuración de Customers
 
-En esta sección podemos configurar en gran parte la interacción entre usuarios y la plataforma de Modyo. Algunas configuraciones son enfocadas en la experiencia visual para el usuario, como selección colores o plantillas de correos, mientras que otras son enfocadas al registro, control de acceso, y personalización de los mismos. En particular esta segunda parte es esencial para el correcto funcionamiento de la plataforma, por lo que es importante ser precavido al momento de modificar configuraciones en esta sección.
+En esta sección puedes configurar en gran parte la interacción entre usuarios y la plataforma de Modyo. Algunas configuraciones son enfocadas en la experiencia visual para el usuario, como selección colores o plantillas de correos, mientras que otras son enfocadas al registro, control de acceso, y personalización de los mismos. En particular esta segunda parte es esencial para el correcto funcionamiento de la plataforma, por lo que es importante ser precavido al momento de modificar configuraciones en esta sección.
 
 ### General
 
-Aquí podremos personalizar parte estética de la plataforma con la cual interacciona el usuario, en particular las vistas de inicio de sesión, registro de nuevo usuario y perfil, en general todo lo que tiene que ver con la sesión del mismo en la plataforma.
+Aquí puedes personalizar parte estética de la plataforma con la cual interacciona el usuario, en particular las vistas de inicio de sesión, registro de nuevo usuario y perfil, en general todo lo que tiene que ver con la sesión del mismo en la plataforma.
 
 #### Color primario
 
-El color primario es el que se muestra en los principales botones del manejo de la sesión, tales como el ingreso, registro, modificaciones de contraseña u otros atributos. Para Modificarlo solo debemos ingresar el Código HEX del color que queremos y hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
+El color primario es el que se muestra en los principales botones del manejo de la sesión, tales como el ingreso, registro, modificaciones de contraseña u otros atributos. Para Modificarlo solo debes ingresar el Código HEX del color que quieras y hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
 
 #### Mostrar el logo
 
@@ -160,11 +160,11 @@ Esta opción permite mostrar el logo configurado para la cuenta en las vistas de
 
 #### Personalizar con CSS
 
-Si queremos tener un CSS personalizado que se ajuste a nuestras necesidades en las vistas de sesión, solo debemos pegar el código en el editor que se encuentra en la ventana y hacer click en el botón **Guardar**.
+Si quieres tener un CSS personalizado que se ajuste a nuestras necesidades en las vistas de sesión, solo debes pegar el código en el editor que se encuentra en la ventana y hacer click en el botón **Guardar**.
 
-Es común tener vinculados archivos en el código CSS. Si queremos agregar alguno, solo tenemos en el botón que está sobre el editor, y que nos llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que nos permitirá subir sin problemas algún archivo que necesitemos.
+Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno, solo tienes en el botón que está sobre el editor, y que llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que permitirá subir sin problemas algún archivo que necesites.
 
-Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subamos, tendremos que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que nos dará el vínculo a este dentro de la página. Con esta dirección, podemos pegarla en nuestro código CSS para poder usarla.
+Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subas, tienes que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en nuestro código CSS para poder usarla.
 
 ::: tip Tip
 Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
@@ -187,18 +187,18 @@ Lo que permite esta sección es habilitar, deshabilitar y personalizar el envío
 - Esperando aprobación: Enviado una vez que se confirmó el usuario, pero debe esperar activación manual de parte de un administrador.
 - Footer personalizado: Footer personalizado para todos los correos anteriormente descritos.
 
-Para habilitar o deshabilitar el envío de estos correos, solo debemos hacer click en el botón **Habilitado/Deshabilitado** que se encuentra al costado de cada función y hacer click en el botón **Guardar**.
+Para habilitar o deshabilitar el envío de estos correos, solo debes hacer click en el botón **Habilitado/Deshabilitado** que se encuentra al costado de cada función y hacer click en el botón **Guardar**.
 
 #### Personalizar correos
 
-Los estilos de los correos de la plataforma que enviamos también pueden ser personalizados. Para ello, debemos tener el código HTML que queremos incluir en ellos.
+Los estilos de los correos de la plataforma que envía también pueden ser personalizados. Para ello, debes tener el código HTML que quieres incluir en ellos.
 
-Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual podemos pegar nuestro código.
+Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual puedes pegar nuestro código.
 
 ::: danger Peligro
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
 
-Para ello, debemos insertar en el código los atributos que se encuentran bajo el editor, y que podemos copiar y pegar fácilmente para ubicarlos en la parte que necesitemos.
+Para ello, debes insertar en el código los atributos que se encuentran bajo el editor, y que puedes copiar y pegar fácilmente para ubicarlos en la parte que necesites.
 :::
 
 Cada vez que se haga un cambio en el código, se debe hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
@@ -220,15 +220,15 @@ Es necesario tener la API logueada y configurada en los servicios para que se pe
 
 ### Registros
 
-El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debemos tener en cuenta las credenciales y la habilitación de redirección en el inicio de sesión.
+El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debes tener en cuenta las credenciales y la habilitación de redirección en el inicio de sesión.
 
-Lo primero que podemos configurar es si queremos habilitar o deshabilitar las credenciales de la plataforma.
+Lo primero que puedes configurar es si quieres habilitar o deshabilitar las credenciales de la plataforma.
 
 ::: warning Atención
-Si deshabilitamos las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/guides/platform/integration.html)
+Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/guides/platform/integration.html)
 :::
 
-También podemos habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.
+También puedes habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.
 
 Las búsquedas en la página de perfil también se pueden habilitar o deshabilitar. Si está habilitada, una caja de búsqueda aparecerá en la sección de perfil, esta búsqueda encuentra resultados en todos los sitios a los que puede acceder el usuario.
 
@@ -242,16 +242,16 @@ En esta sección puedes configurar la forma de control en el registro de cliente
 - Deshabilitada (Solo el administrador envía el registro)
 
 ::: danger Peligro
-Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren con correos personales que no les pertenecen en la plataforma. Te recomendamos el registro con verificación por correo electrónico para proteger las cuentas contra este riesgo potencial.
+Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren con correos personales que no les pertenecen en la plataforma. Recuerda el registro con verificación por correo electrónico para proteger las cuentas contra este riesgo potencial.
 :::
 
 #### Avatar
 
-Si queremos que nuestros usuarios tengan un Avatar, podemos subir uno que se muestre por defecto. En esta opción, podemos subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
+Si quieres que nuestros usuarios tengan un Avatar, puedes subir uno que se muestre por defecto. En esta opción, puedes subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
 
 #### Formulario de registro
 
-Desde acá, también podemos configurar el formulario de registro que ingresan cada uno de nuestros usuarios. Aquí podemos configurar los distintos campos que son imprescindibles y que queremos que aparezcan en nuestro formulario, como son:
+Desde acá, también puedes configurar el formulario de registro que ingresan cada uno de nuestros usuarios. Aquí puedes configurar los distintos campos que son imprescindibles y que quieres que aparezcan en el formulario, como son:
 
 - Habilitar segundo apellido
 - Segundo apellido es requerido
@@ -260,7 +260,7 @@ Desde acá, también podemos configurar el formulario de registro que ingresan c
 - Habilitar fecha de nacimiento
 - Habilitar género
 
-Para habilitar o deshabilitar alguno, solo debemos hacer click en el checkbox que se encuentra al costado de cada uno y hacer click en el botón **Guardar**.
+Para habilitar o deshabilitar alguno, solo debes hacer click en el checkbox que se encuentra al costado de cada uno y hacer click en el botón **Guardar**.
 
 ### Custom Fields
 

@@ -50,7 +50,7 @@ Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada e
 
 ### Caché
 
-El caché es una herramienta que nos permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del Espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
+El caché es una herramienta que permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del Espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 

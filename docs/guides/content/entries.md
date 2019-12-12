@@ -61,18 +61,18 @@ Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisi
 
 ### Categorías
 
-Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que nos permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
+Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
 
-Para ver las Categorías, es necesario que hagamos click en la sección Categorías, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podremos ver todas las categorías que se encuentran ya hechas. 
+Para ver las Categorías, es necesario que hagas click en la sección Categorías, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podrás ver todas las categorías que se encuentran ya hechas. 
 
 #### Crear una Categoría
 
-Si queremos crear una, solo debemos hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podremos ver una ventana que nos pedirá ingresar el nombre de la Categoría, la Ruta y si esta poseé a una Categoría Padre.
+Si quieres crear una categoría, solo debes hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podrás ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
 ::: tip Tip
-Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si queremos cambiarla, solo basta con hacer click en ella.
+Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si quieres cambiarla, solo basta con hacer click en ella.
 
-Si cambiamos la ruta, recuerda cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
+Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
 
 ::: warning Atención
@@ -101,7 +101,7 @@ Dependiendo de como estés consumiendo el contenido, necesitarás realizar unos 
 
 El contenido targetizado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
 
-Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que nosotros elijamos. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigirá la entrada.
+Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirigirá la entrada.
 
 Para crear un target en específico, revisa la [sección Targets](/guides/customers/targets.html).
 

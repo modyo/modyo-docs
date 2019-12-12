@@ -601,7 +601,7 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 
 #### jQuery
 
-La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
+La biblioteca JavaScript de jQuery hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
 
 Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de contenido dentro de tu sitio, y también desde otros sitios y servicios.
 

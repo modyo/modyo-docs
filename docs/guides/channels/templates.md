@@ -15,7 +15,7 @@ Una vez dentro del Template Builder, verás que el menú principal se esconde pa
 - **En revisión**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
 - **Aprobado**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
 
-![Template builder](/assets/img/channels/template_builder/template-builder.jpg)
+![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
 En la parte superior derecha, encontrarás la última fecha de publicación y las acciones disponibles:
 
@@ -84,7 +84,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 Para mas información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/docs/content/asset-manager.html)
 :::
 
-**Atajos de teclado**: Se mostrará un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el template builder.
+**Atajos de teclado**: Se mostrará un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el Template Builder.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
 
@@ -112,17 +112,17 @@ Al igual que cada template, puedes restaurar todos los templates a su versión o
 
 ### Temas
 
-En esta vista podrás ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón **Instalar** de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del template builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
+En esta vista podrás ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. Haciendo _click_ en el botón **Instalar** de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del Template Builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
 
 En la parte superior encontrarás distintas acciones:
 
-- **Personalizar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te lleva a la edición (template builder) del tema actualmente instalado.
+- **Personalizar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te lleva a la edición (Template Builder) del tema actualmente instalado.
 - **Copiar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Crea una copia del tema instalado. Te permitirá elegir un nuevo nombre para el tema copia del instalado.
-- **Reestablecer** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al igual que la acción reestablecer del template builder, esta acción restaura todos los templates editables a la versión original del tema.
-- **Cargar templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: En algunos casos, luego de migraciones complejas, hay algunos templates no modificado que se pueden perder y podrías no verlos en el listado de templates en el template builder. Esta acción recupera esos templates desde el tema original y te permite volver a ocuparlos.
+- **Reestablecer** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al igual que la acción reestablecer del Template Builder, esta acción restaura todos los templates editables a la versión original del tema.
+- **Cargar templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: En unos casos, luego de migraciones complejas, existen templates no modificados que se pueden perder y podrías no verlos en el listado que se encuentra en el Template Builder. Esta acción recupera esos templates desde el tema original y permite volver a ocuparlos.
 
 :::tip Tip
-La acción cargar templates no modifica ni toca los templates editables que ya están visibles en el template builder, solo restaura aquellos que no son visibles.
+La acción cargar templates no modifica ni toca los templates editables que ya están visibles en el Template Builder, solo restaura aquellos que no son visibles.
 :::
 
 :::tip Tip
@@ -170,9 +170,9 @@ Con esta vista creada y publicada, si la URL a la que se está accediendo es del
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/guides/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. En Modyo tenemos una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
+El SEO [(Search Engine Optimization)](/guides/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
-Te recomendamos añadir este snippet de código al Template Builder, y luego llamar a este snippet desde el head de tu sitio:
+Puedes añadir este snippet de código al Template Builder, y luego llamar a este snippet desde el head de tu sitio:
 
 ```html
 <!-- Site SEO -->
@@ -247,7 +247,7 @@ Si es que lo requieres, puedes personalizar aún más este snippet, definiendo q
 {% endif %} {% endif %} ...
 ```
 
-En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, definimos un tipo de documento diferente para cada uno.
+En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, define un tipo de documento diferente para cada uno.
 
 ## Integraciones
 
@@ -260,7 +260,7 @@ El método recomendado para interactuar con una API privada usando la sesión de
 1. Inicia sesión en la cuenta dónde se desea crear el sitio privado.
 2. Haz click en crear un nuevo sitio.
 3. Asigna un nombre al nuevo sitio y selecciona el tema base.
-4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, seleccionamos **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
+4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, selecciona **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
 
 #### Habilitar la integración a nivel de cuenta (para todos los sitios)
 
@@ -339,7 +339,7 @@ var modalConfirm = function() {
     });
   });
 };
-// será la que se encargara de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación explicaremos cada uno de las propiedades y métodos de este objeto que maneja la sesión
+// será la que se encargara de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
 var sessionManager = {
   // propiedad que define el tiempo desde la ultima actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
   timeToEndSessionInSeconds: 900,
@@ -357,7 +357,7 @@ var sessionManager = {
   isModyoAppShell: function() {
     return /; Modyo_App_Shell/.test(navigator.userAgent);
   },
-  // método que debe ser ejecutado en cada carga de pagina para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se definirá que los developers no lancen esta invocación en ese caso la api de prueba a conectarnos debe tener también este if y así lograremos que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
+  // método que debe ser ejecutado en cada carga de pagina para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se definirá que los developers no lancen esta invocación en ese caso la API de prueba a conectar debe tener también este if y así lograrás que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
   init: function() {
     this.resetIdleTime();
     this.intevalId=this.interval();
