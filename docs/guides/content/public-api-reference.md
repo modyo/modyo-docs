@@ -123,7 +123,7 @@ export default function getClient(spaceUID) {
   return client;
 }
 
-// Una vez instanciada la clase `Client`, tienes distintos métodos a nuestra disposición, como
+// Una vez instanciada la clase `Client`, tienes distintos métodos a disposición, como
 // `getEntries()`
 getClient("static-data") // accede al espacio
   .getEntries("menu-item") // Obtiene todas las entradas del tipo `menu-item`
@@ -131,7 +131,7 @@ getClient("static-data") // accede al espacio
   .catch(err => console.log(err)); // o retorna un error si algo falla
 ```
 
-Además del método `getEntries(typeUID)` que ocupas en el ejemplo, si conoces el `id` de nuestra entrada, puedes requerirla inmediatamente usando el método `getEntry(typeUID, entryUID)`:
+Además del método `getEntries(typeUID)` que ocupas en el ejemplo, si conoces el `id` de la entrada, puedes requerirla inmediatamente usando el método `getEntry(typeUID, entryUID)`:
 
 ```js
 getClient("static-data")
@@ -605,16 +605,16 @@ La biblioteca JavaScript de jQuery hacen fácil poder implementarlas dentro de M
 
 Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de contenido dentro de tu sitio, y también desde otros sitios y servicios.
 
-En esta solicitud AJAX, se está especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlaza el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
+En esta solicitud AJAX, se está especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlaza el "data.promotions" a "vm.promos" para usarlo en la aplicación.
 
 #### API Fetch con JavaScript nativo
 
 La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.
 
 Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código:
-Se está trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
+Se está trayendo un archivo JSON desde dentro del sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
 
-Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utiliza el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).
+Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utiliza el método json() al final de esta, para luego enlazar los datos a las promociones (este fetch() es para esta aplicación).
 
 Para información más detallada, visita los webdocs de MDN.
 

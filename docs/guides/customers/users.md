@@ -58,7 +58,7 @@ Esta vista de creación de usuarios puede contener más campos dependiendo de la
 
 La segunda opción del selector para agregar nuevos usuarios es la importación desde un archivo CSV. Al hacer click, se abrirá una vista que lista un registro histórico de importaciones previas, en caso de existir. Este listado se puede ordenar por nombre del archivo \*.CSV o por estado de la importación, asimismo a través de la barra de búsqueda sobre la tabla se puede filtrar por el nombre del archivo.
 
-Para realizar una nueva importación, debes hacer click en el botón superior derecho **Importar**. Este abrirá un modal el que permitirá seleccionar y subir el archivo \*.CSV que tiene nuestro listado de usuarios y sus atributo. Es importante dejar seleccionada la caja que indica que el archivo contiene encabezados o nombres de columnas en caso de que así sea, o las cabeceras intentarán ser incluídas como un nuevo usuario. Luego procedes a hacer click en el botón **Aceptar**.
+Para realizar una nueva importación, debes hacer click en el botón superior derecho **Importar**. Este abrirá un modal el que permitirá seleccionar y subir el archivo \*.CSV que tiene el listado de usuarios y sus atributo. Es importante dejar seleccionada la caja que indica que el archivo contiene encabezados o nombres de columnas en caso de que así sea, o las cabeceras intentarán ser incluídas como un nuevo usuario. Luego procedes a hacer click en el botón **Aceptar**.
 
 A continuación verás la vista principal de importación. A la izquierda, aparecerá una tabla con tres columnas principales, la primera contiene el nombre de la cabecera de la columna importada (en caso de que exista), la segunda algunos ejemplos de los datos que contiene esa columna, y la tercera un selector. Este selector realiza la asignación respectiva del valor importado al atributo del usuario en la plataforma.
 
@@ -160,11 +160,11 @@ Esta opción permite mostrar el logo configurado para la cuenta en las vistas de
 
 #### Personalizar con CSS
 
-Si quieres tener un CSS personalizado que se ajuste a nuestras necesidades en las vistas de sesión, solo debes pegar el código en el editor que se encuentra en la ventana y hacer click en el botón **Guardar**.
+Si quieres tener un CSS personalizado que se ajuste a las necesidades en las vistas de sesión, solo debes pegar el código en el editor que se encuentra en la ventana y hacer click en el botón **Guardar**.
 
 Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno, solo tienes en el botón que está sobre el editor, y que llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que permitirá subir sin problemas algún archivo que necesites.
 
-Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subas, tienes que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en nuestro código CSS para poder usarla.
+Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subas, tienes que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en el código CSS para poder usarla.
 
 ::: tip Tip
 Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
@@ -193,7 +193,7 @@ Para habilitar o deshabilitar el envío de estos correos, solo debes hacer click
 
 Los estilos de los correos de la plataforma que envía también pueden ser personalizados. Para ello, debes tener el código HTML que quieres incluir en ellos.
 
-Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual puedes pegar nuestro código.
+Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual puedes pegar el código.
 
 ::: danger Peligro
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
@@ -247,11 +247,11 @@ Recuerda que el registro directo de usuarios podría permitir que robots malicio
 
 #### Avatar
 
-Si quieres que nuestros usuarios tengan un Avatar, puedes subir uno que se muestre por defecto. En esta opción, puedes subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
+Si quieres que los usuarios tengan un Avatar, puedes subir uno que se muestre por defecto. En esta opción, puedes subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
 
 #### Formulario de registro
 
-Desde acá, también puedes configurar el formulario de registro que ingresan cada uno de nuestros usuarios. Aquí puedes configurar los distintos campos que son imprescindibles y que quieres que aparezcan en el formulario, como son:
+Desde acá, también puedes configurar el formulario de registro que ingresan cada uno de los usuarios. Aquí puedes configurar los distintos campos que son imprescindibles y que quieres que aparezcan en el formulario, como son:
 
 - Habilitar segundo apellido
 - Segundo apellido es requerido

@@ -27,7 +27,7 @@ En esta sección podremos configurar los datos más generales que dan vida al co
 
 Además, se permite activar el envío de un correo electrónico automático cuando el usuario pague su orden, en forma de recibo.
 
-Para este recibo, es fundamental adaptarlo hacia nuestro commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
+Para este recibo, es fundamental adaptarlo hacia el commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
 
 ### Formas de pago
 
