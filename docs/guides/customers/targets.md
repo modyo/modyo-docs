@@ -6,7 +6,7 @@ search: true
 
 Targets es la función de Modyo ideal para manejar a los usuarios en masa si necesitas que reciban determinada información.
 
-Estos nos permiten agrupar a nuestros clientes en distintos segmentos y así facilitar el envío de correos o notificaciones.
+Estos nos permiten agrupar a los usuarios finales en distintos segmentos y así facilitar el envío de correos o notificaciones.
 
 ## Interfaz
 

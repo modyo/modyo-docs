@@ -34,6 +34,6 @@ Modyo provee un ambiente de desarrollo seguro ya sea en la nube u “On Premise�
 
 ### ¿Dónde puedo obtener soporte?
 
-Para obtener soporte de la Plataforma Modyo visita nuestro [sitio oficial de soporte](https://support.modyo.com/hc/es).
+Para obtener soporte de la Plataforma Modyo visita el [sitio oficial de soporte](https://support.modyo.com/hc/es).
 
 

@@ -16,8 +16,8 @@ También se grafica dinámicamente los estados de las órdenes, con tal de hacer
 
 ### Órdenes por Medio de Pago
 
-Este gráfico nos permite comparar el uso de los distintos tipos de medios de pago que tenemos instalados dentro de nuestro e-commerce, a través de la cantidad de transacciones que se han hecho mediante ellos.
+Este gráfico nos permite comparar el uso de los distintos tipos de medios de pago que hay instalados dentro del e-commerce, a través de la cantidad de transacciones que se han hecho mediante ellos.
 
 ### Órdenes por Estado Actual
 
-Por último, puedes ver la efectividad de los movimientos de nuestro e-commerce, con el estado de las órdenes del último tiempo, mostrando la cantidad de movimientos en estado de pago pendiente, pagados, rechazados, cancelados, en espera de confirmación, fallidos y completados.
+Por último, puedes ver la efectividad de los movimientos de un e-commerce, con el estado de las órdenes del último tiempo, mostrando la cantidad de movimientos en estado de pago pendiente, pagados, rechazados, cancelados, en espera de confirmación, fallidos y completados.

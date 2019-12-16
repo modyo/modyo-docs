@@ -23,7 +23,7 @@ Después de ello, podrás verlo en modo "Habilitado", lo que significa que está
 
 ## Configuración de un Sitio
 
-La configuración del Sitio te permite abrir las opciones de nuestra plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del Sitio. Además, puedes modificar opciones que permitan mejorar nuestra aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a nuestras páginas.
+La configuración del Sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del Sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
@@ -56,14 +56,14 @@ Variables disponibles
 
 <img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan a nuestro Sitio a través de ellos.
+El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan al Sitio a través de ellos.
 
 Las opciones a configurar son:
 
 - **Tagline**: Descripción que aparecerá en los motores de búsqueda, bajo el nombre del Sitio
-- **Palabras claves**: Palabras que buscarán los usuarios y que quieres que nuestro Sitio aparezca.
-- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido de nuestro Sitio. Pouedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
-- **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice nuestro Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
+- **Palabras claves**: Palabras que buscarán los usuarios y que quieres que el Sitio aparezca.
+- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del Sitio. Pouedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
+- **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
 
 ### Restricciones
 
@@ -73,22 +73,22 @@ Restricciones permite configurar la privacidad del Sitio.
 
 - Si el Sitio es público, entonces todos podrán ver el Sitio.
 - Si el Sitio es privado, solo usuarios con una sesión de Modyo podrán ver el Sitio.
-- Si el Sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen a nuestro home, pero al navegar a cualquier otra página del Sitio, se les solicitará que se registren o que inicien sesión.
+- Si el Sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen al Home, pero al navegar a cualquier otra página del Sitio, se les solicitará que se registren o que inicien sesión.
 
-Además, permite configurar la visualización del contenido targetizado de nuestros usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
+Además, permite configurar la visualización del contenido targetizado de los usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
 
 ### Dominios
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-La sección Dominios te permitirá saber dónde está publicamente ubicado nuestro Sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
+La sección Dominios te permitirá saber dónde está publicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
 
 Las variables que puedes cambiar aquí son:
 
-- **Host**: Donde se encuentra nuestro Sitio dentro del servidor.
-- **Activar dominios personalizados**: Si es que quieres que dentro de nuestro dominio, existan Sitios cn una URL personalizada o "custom host.
-- **Habilitar SSL en nuestro Sitio**: Es necesario tener un certificado dentro de nuestro servidor para habilitarlo.
-- **Dominio primario**: Dirección de nuestro Sitio.
+- **Host**: Donde se encuentra el sitio dentro del servidor.
+- **Activar dominios personalizados**: Si es que quieres que dentro del dominio, existan Sitios cn una URL personalizada o "custom host.
+- **Habilitar SSL en el sitio**: Es necesario tener un certificado dentro del servidor para habilitarlo.
+- **Dominio primario**: Dirección del Sitio.
 - **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
 
 ### Miembros del Equipo

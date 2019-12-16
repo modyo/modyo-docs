@@ -45,7 +45,7 @@ En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla 
 - Configuración del campo
 - Configuración
 
-Esta interfaz sirve para crear cada uno de nuestros tipos, dándoles el formato que sea requerido.
+Esta interfaz sirve para crear cada uno de los tipos, dándoles el formato que sea requerido.
 
 ## Campos
 

@@ -303,7 +303,7 @@ Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `n
 reducida de atributos para ser incluídos en la _response_ (parámetro `only`). 
 
 Para el ejemplo
-solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que nuestra _request_, después de
+solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que la _request_, después de
 sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
 
 ```shell script
