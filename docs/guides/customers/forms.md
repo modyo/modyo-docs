@@ -106,15 +106,15 @@ Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
 
 Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar alguna de las preguntas del formulario y podrás ver una representación de las respuestas que los usuarios han enviado. La representación desplegada dependerá del tipo de respuesta, a continuación se muestran los diferentes tipos de respuesta y su visualización respectiva:
 
-- Texto simple: Verás un conteo de cuantas personas rellenaron este campo.
-- Número: Verás el mínimo, máximo y el promedio de las respuestas.
-- Checkbox: Verás un gráfico de barras con todas las alternativas.
-- Fecha: Verás el conteo de respuestas totales, y la fecha mínima y máxima que se han enviado como respuestas.
-- Párrafo: Verás un conteo de cuantas personas rellenaron este campo.
-- Dropdown: Verás un gráfico de barras con todas las alternativas.
-- Elección: Verás un gráfico de barras con todas las alternativas.
-- Preguntas anidadas: Verás un gráfico de barras con todas las alternativas del primer nivel.
-- Archivo:  Verás un conteo de cuantas personas rellenaron este campo, junto con los últimos cinco archivos subidos.
+- **Texto simple**: Verás un conteo de cuantas personas rellenaron este campo.
+- **Número**: Verás el mínimo, máximo y el promedio de las respuestas.
+- **Checkbox**: Verás un gráfico de barras con todas las alternativas.
+- **Fecha**: Verás el conteo de respuestas totales, y la fecha mínima y máxima que se han enviado como respuestas.
+- **Párrafo**: Verás un conteo de cuantas personas rellenaron este campo.
+- **Dropdown**: Verás un gráfico de barras con todas las alternativas.
+- **Elección**: Verás un gráfico de barras con todas las alternativas.
+- **Preguntas anidadas**: Verás un gráfico de barras con todas las alternativas del primer nivel.
+- **Archivo**:  Verás un conteo de cuantas personas rellenaron este campo, junto con los últimos cinco archivos subidos.
 
 :::tip Tip
 En la barra derecha podrás ver un contador del total de veces que se ha respondido el formulario, pero en los conteos de respuestas para cada pregunta, verás el conteo de cuantas personas pusieron un valor a esa pregunta. En el caso de que no se haya solicitado la respuesta como obligatoria, será normal ver un número menor de respuestas con respecto a las respuestas totales del formulario.
@@ -145,15 +145,15 @@ Una vez que entres en la sección de edición de un formulario, podrás ver 2 se
 ### Añadir campo
 Esta sección te permitirá añadir cuantos campos sean necesarios para completar el formulario o eliminar los que no sean necesarios:
 
-- Texto simple: Permite al usuario ingresar un texto hasta 256 caracteres.
-- Párrafo: Permite al usuario ingresar un texto de múltiples líneas hasta 65535 caracteres.
-- Número: Le permite al usuario ingresar números.
-- Dropdown: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato dropdown.
-- Checkbox: Te permite añadir opciones de las cuales el usuario podrá que elegir múltiples en formato checkbox.
-- Elección: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato _radio button_.
-- Fecha: Te permite añadir un campo de fecha en el que el usuario podrá seleccionar una dentro del rango permitido.
-- Preguntas anidadas: Te permite añadir una serie de alternativas que pueden ser anidadas, de tal forma que al usuario se le solicita que seleccione una de las posibles opciones anidadas dentro de la opción que seleccionó.
-- Archivo: Te permite añadir un campo para solicitar que el usuario suba un archivo que quede registrado como respuesta del formulario.
+- **Texto simple**: Permite al usuario ingresar un texto hasta 256 caracteres.
+- **Párrafo**: Permite al usuario ingresar un texto de múltiples líneas hasta 65535 caracteres.
+- **Número**: Le permite al usuario ingresar números.
+- **Dropdown**: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato dropdown.
+- **Checkbox**: Te permite añadir opciones de las cuales el usuario podrá que elegir múltiples en formato checkbox.
+- **Elección**: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato _radio button_.
+- **Fecha**: Te permite añadir un campo de fecha en el que el usuario podrá seleccionar una dentro del rango permitido.
+- **Preguntas anidadas**: Te permite añadir una serie de alternativas que pueden ser anidadas, de tal forma que al usuario se le solicita que seleccione una de las posibles opciones anidadas dentro de la opción que seleccionó.
+- **Archivo**: Te permite añadir un campo para solicitar que el usuario suba un archivo que quede registrado como respuesta del formulario.
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
@@ -168,13 +168,13 @@ Todos los campos que puedes añadir cuentan con un título, que será la pregunt
 
 Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
 
-- Largo mínimo: Largo requerido para que el texto sea válido
-- Largo máximo: largo máximo permitido para que el texto sea permitido
-- Expresión regular: Formato del texto ingresado debe coincidir con la expresión regular asociada para ser válido.
-- Número mínimo: El número ingresado no puede ser menor que este valor.
-- Número máximo: El número ingresado no puede ser mayor que este valor.
-- Fecha mínima: La fecha ingresada no puede ser anterior a este valor
-- Fecha máxima: La fecha ingresada no puede ser posterior a este valor.
+- **Largo mínimo**: Largo requerido para que el texto sea válido
+- **Largo máximo**: largo máximo permitido para que el texto sea permitido
+- **Expresión regular**: Formato del texto ingresado debe coincidir con la expresión regular asociada para ser válido.
+- **Número mínimo**: El número ingresado no puede ser menor que este valor.
+- **Número máximo**: El número ingresado no puede ser mayor que este valor.
+- **Fecha mínima**: La fecha ingresada no puede ser anterior a este valor
+- **Fecha máxima**: La fecha ingresada no puede ser posterior a este valor.
 
 De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas y los archivos.
 
@@ -184,10 +184,10 @@ Esta sección te permitirá cambiar el comportamiento general del formulario. Co
 
 Sus cuatro principales secciones son:
 
-- General
-- Snippet
-- Opciones
-- Notificaciones
+- **General**
+- **Snippet**
+- **Opciones**
+- **Notificaciones**
 
 La sección **General** agrega dos opciones:
 - **Texto del botón enviar**: Te permite personalizar el texto asociado al botón **Enviar** del formulario.

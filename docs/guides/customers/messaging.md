@@ -23,16 +23,16 @@ En la parte superior de la pantalla, existe un botón que indica que vemos todos
 
 En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
 
-- Nombre: Nombre que se le dio a la campaña. También puede contener el Target específico al que se le envió.
-- Tipo: Tipo de mensaje en que se envió la campaña.
-- Enviados: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
-- Último envío: Fecha y hora en que se envió por última vez la campaña.
-- Creado el: Fecha de creación de la campaña.
+- **Nombre**: Nombre que se le dio a la campaña. También puede contener el Target específico al que se le envió.
+- **Tipo**: Tipo de mensaje en que se envió la campaña.
+- **Enviados**: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
+- **Último envío**: Fecha y hora en que se envió por última vez la campaña.
+- **Creado el**: Fecha de creación de la campaña.
 
 A un costado de cada campaña, se encuentra un botón en el que podremos efectuar dos acciones. 
 
-- Editar la campaña
-- Borrar la campaña
+- **Editar la campaña**
+- **Borrar la campaña**
 
 ::: danger Peligro
 Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
@@ -44,14 +44,14 @@ Para hacer una campaña, debemos hacer click en el botón **+ Nuevo**, ubicado e
 
 Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
 
-- Nombre: Nombre que tendrá la campaña.
-- Tipo: Formato que tendrá la campaña (Correo o Notificación).
-- Asunto: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
-- Responder a: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
-- Plantilla: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
-- Habilitar targetización: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
+- **Nombre**: Nombre que tendrá la campaña.
+- **Tipo**: Formato que tendrá la campaña (Correo o Notificación).
+- **Asunto**: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
+- **Responder a**: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
+- **Plantilla**: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
+- **Habilitar targetización**: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
 
-Después de rellenar estos datos, deberás hacer click en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
+Después de rellenar estos datos, deberás hacer click en el botón **"Guardar y Continuar"**, ubicado en la parte superior de la pantalla.
 
 Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
 
@@ -69,10 +69,10 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
 <img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-- Editor de Mensajes: Te permite editar el mensaje antes de enviarlo.
-- Enviar prueba: Envía un correo de prueba con la campaña a una dirección determinada.
-- Editor: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
-- Borrar: Borra toda la campaña.
+- **Editor de Mensajes**: Te permite editar el mensaje antes de enviarlo.
+- **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada.
+- **Editor**: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
+- **Borrar**: Borra toda la campaña.
 
 En la vista superior, podrás encontrar las estadísticas de la campaña.
 
@@ -82,21 +82,21 @@ Si no has envíado aún la campaña, los valores aparecerán en cero.
 
 Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
 
-- Alcance: Personas a las que les llega la campaña.
-- Envíos: Nº de veces que se ha enviado la campaña
-- Envíados: Nº total de correos enviados.
-- Abiertos: Nº total de correos abiertos. 
-- Abiertos únicos: Nº total de usuarios los cuales abrieron alguna vez la campaña.
-- Clicks: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
-- Clicks únicos: Nº de usuarios que han hecho click alguna vez en la campaña.
-- Spam: Nº de usuarios a los que su correo llegó a la casilla de Spam.
+- **Alcance**: Personas a las que les llega la campaña.
+- **Envíos**: Nº de veces que se ha enviado la campaña
+- **Envíados**: Nº total de correos enviados.
+- **Abiertos**: Nº total de correos abiertos. 
+- **Abiertos únicos**: Nº total de usuarios los cuales abrieron alguna vez la campaña.
+- **Clicks**: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
+- **Clicks únicos**: Nº de usuarios que han hecho click alguna vez en la campaña.
+- **Spam**: Nº de usuarios a los que su correo llegó a la casilla de Spam.
 
 En cambio, si enviaste la campaña por Notificación, podrás encontrar estas cifras:
 
-- Alcance: Personas a las que les llegó la campaña.
-- Envíos: Nº de veces que se envió la campaña.
-- Enviados: Nº de notificaciones enviadas.
-- Abiertos: Nº de notificaciones abiertas.
+- **Alcance**: Personas a las que les llegó la campaña.
+- **Envíos**: Nº de veces que se envió la campaña.
+- **Enviados**: Nº de notificaciones enviadas.
+- **Abiertos**: Nº de notificaciones abiertas.
 
 
 Más abajo podrás ver los [Targets](/guides/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
@@ -104,11 +104,11 @@ Más abajo podrás ver los [Targets](/guides/customers/targets.html) a los cuale
 Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
 
 
-- Fecha: Día y hora en que se hizo el envío.
-- Targets: Targets a los cuales se hizo el envío en específico.
-- Alcance: Nº de personas que recibieron el envío.
-- Enviados: Nº de correos/notificaciones enviadas.
-- Estado: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
+- **Fecha**: Día y hora en que se hizo el envío.
+- **Targets**: Targets a los cuales se hizo el envío en específico.
+- **Alcance**: Nº de personas que recibieron el envío.
+- **Enviados**: Nº de correos/notificaciones enviadas.
+- **Estado**: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
 
 Después, podrás encontrar un botón que te permitirá borras el envío del registro.
 
@@ -130,18 +130,18 @@ sido envíado en específico a un usuario, en una fecha determinada. No caen en 
 
 En la primera vista, el administrador se ordena bajo las siguientes categorías.
 
-- Nombre: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
-- Campaña: Campaña bajo la cual se envío el mensaje.
-- Tipo: Vía por la cual se envío el mensaje. Correo o notificación.
-- Envío: Fecha en la cual se inició la campaña.
-- Enviado: Fecha en la que se envió el mensaje.
-- Leído: Alerta si el usuario leyó o vio el mensaje.
+- **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
+- **Campaña**: Campaña bajo la cual se envío el mensaje.
+- **Tipo**: Vía por la cual se envío el mensaje. Correo o notificación.
+- **Envío**: Fecha en la cual se inició la campaña.
+- **Enviado**: Fecha en la que se envió el mensaje.
+- **Leído**: Alerta si el usuario leyó o vio el mensaje.
 
 Además, podrás filtrar los datos bajo los siguientes filtros:
 
-- Tipo de Campaña: Todos, correo o notificación.
-- Nombre de la Campaña: Nombre que se le dio a la campaña en general.
-- Envío: Fecha en la cual se envió la campaña.
+- **Tipo de Campaña**: Todos, correo o notificación.
+- **Nombre de la Campaña**: Nombre que se le dio a la campaña en general.
+- **Envío**: Fecha en la cual se envió la campaña.
 
 Por último, puedes ver una barra de búsqueda que te permitirá encontrar por algún término en específico.
 
@@ -165,9 +165,9 @@ Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces clic
 
 A un costado, se encuentra un botón que despliega un menú con las siguientes opciones:
 
-- Vista previa: Muestra el modelo de plantilla de correo que se encuentra guardada.
-- Copiar: Puedes hacer una copia de la plantilla.
-- Borrar: Se borra la plantilla
+- **Vista previa**: Muestra el modelo de plantilla de correo que se encuentra guardada.
+- **Copiar**: Puedes hacer una copia de la plantilla.
+- **Borrar**: Se borra la plantilla
 
 ::: tip Tip
 Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.

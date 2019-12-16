@@ -22,10 +22,10 @@ Para reordenarla, solo debes hacer click en los símbolos que se encuentran a un
 
 Las categorías por las cuales puedes reordenar son cuatro:
 
-- Nombre
-- UID
-- Fecha de Creación
-- Fecha de Actualización
+- **Nombre**
+- **UID**
+- **Fecha de Creación**
+- **Fecha de Actualización**
 
 Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para que se abra el editor correspondiente.
 
@@ -41,9 +41,9 @@ Es una buena práctica poner dentro del UID, el formato de qué se publicará co
 
 En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
 
-- Añadir campos
-- Configuración del campo
-- Configuración
+- **Añadir campos**
+- **Configuración del campo**
+- **Configuración**
 
 Esta interfaz sirve para crear cada uno de los tipos, dándoles el formato que sea requerido.
 
