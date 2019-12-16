@@ -72,7 +72,7 @@ Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los sig
 - Firma del certificado del proveedor de identidad
 - Formato del identificados de nombre
 - URL de callback del servicio: Por defecto esta URL es `account_url/admin/auth/saml/callback`
-- Logo: AL igual que en LDAP, esta imágen se mostrará como logo del servicio junto al nombre del servicio en el formulario de inicio de sesión.
+- Logo: AL igual que en LDAP, esta imagen se mostrará como logo del servicio junto al nombre del servicio en el formulario de inicio de sesión.
 
 ## OAuth2
 
