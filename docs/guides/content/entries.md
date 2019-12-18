@@ -32,12 +32,12 @@ En este caso, los filtros son cinco:
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
+Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
 
-Al hacer click en Crear, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
+Al hacer _click_ en **Crear**, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
 ::: tip Tip
-Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podrás pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
+Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podrás pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
 :::
 
 ### Publicar una Entrada
@@ -46,7 +46,7 @@ Para publicar una entrada, Modyo te asegura un proceso de chequeo paulatino con 
 
 Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón **Guardar**, que grabará todo tu contenido. 
 
-Si haces click en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, podrás publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
+Si haces _click_ en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, podrás publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
 
 Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde podrás asignar a revisores en específico quienes podrán publicar. 
 
@@ -55,7 +55,7 @@ Para saber más, puedes ver [Revisión en Equipo.](/guides/platform/team-review.
 
 ### Despublicar una entrada
 
-Para despublicar una entrada, debes acceder al ella y hacer click en el botón Despublicar que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
+Para despublicar una entrada, debes acceder al ella y hacer _click_ en el botón **Despublicar** que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
 
 Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
@@ -63,20 +63,20 @@ Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisi
 
 Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
 
-Para ver las Categorías, es necesario que hagas click en la sección Categorías, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podrás ver todas las categorías que se encuentran ya hechas. 
+Para ver las Categorías, es necesario que hagas click en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podrás ver todas las categorías que se encuentran ya hechas. 
 
 #### Crear una Categoría
 
-Si quieres crear una categoría, solo debes hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, podrás ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
+Si quieres crear una categoría, solo debes hacer _click_ en el botón verde que se encuentra en la parte superior de la pantalla. Después, podrás ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
 ::: tip Tip
-Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si quieres cambiarla, solo basta con hacer click en ella.
+Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
 
 Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
 
 ::: warning Atención
-Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borrarán sino que no estarán a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
+Si se quiere eliminar una categoría, simplemente basta con hacer _click_ en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borrarán sino que no estarán a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
 :::
 
 ::: danger Peligro

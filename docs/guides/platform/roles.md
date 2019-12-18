@@ -8,11 +8,11 @@ search: true
 
 Todos los usuarios internos de la plataforma conforman el equipo, y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema.
 
-Para crear un usuario interno, debes hacer click en el botón superior y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
+Para crear un usuario interno, debes hacer _click_ en el botón superior y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
 
 Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
 
-Si quieres desactivar un usuario interno, debes hacer click en el botón de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer click sobre el nombre del mismo.
+Si quieres desactivar un usuario interno, debes hacer _click_ en el botón de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer _click_ sobre el nombre del mismo.
 
 ### Editar usuario
 
@@ -59,7 +59,7 @@ El usuario más importante tendrá el rol de Default Admin o Administrador, quie
 
 ### Roles personalizados
 
-Para crear un rol en específico, solo debes hacer click en el botón superior.
+Para crear un rol en específico, solo debes hacer _click_ en el botón superior.
 
 Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar.
 

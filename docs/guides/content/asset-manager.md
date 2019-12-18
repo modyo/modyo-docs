@@ -45,7 +45,7 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
 ::: tip Tip
-Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna)
+Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo _click_ en el checkbox de la primera columna)
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
@@ -86,7 +86,7 @@ Finalmente, en la esquina inferior derecha, podrás encontrar la paginación de 
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
-Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se levantará un modal en el que podrás editar cada una de las propiedades.
+Para acceder a las propiedades de los archivos, se debe hacer _click_ en el nombre de este. Así, se levantará un modal en el que podrás editar cada una de las propiedades.
 
 ## Editar un archivo
 
@@ -94,7 +94,7 @@ Para acceder a las propiedades de los archivos, se debe hacer click en el nombre
 
 En la interfaz de edición de las propiedades del archivo, podrás ver ciertos campos:
 
-**URL del Archivo**: Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo click en el ícono lateral.
+**URL del Archivo**: Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo _click_ en el ícono lateral.
 
 **Tag de Liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
 
@@ -108,13 +108,13 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 **Descripción**: Descripción del elemento. Es una buena práctica escribir un pequeño texto que haga referencia a la imagen.
 
-**Etiquetas**: Muestra las etiquetas asociadas al archivo, haciendo click en la caja se pueden buscar y agregar más etiquetas. A su vez que se puede hacer click en la X de las etiquetas existentes para eliminar la asociación con el archivo.
+**Etiquetas**: Muestra las etiquetas asociadas al archivo, haciendo _click_ en la caja se pueden buscar y agregar más etiquetas. A su vez que se puede hacer _click_ en la X de las etiquetas existentes para eliminar la asociación con el archivo.
 
 <hr style="margin: 40px 0;" />
 
-Para guardar la modificación de los datos, es necesario hacer click en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. Si se modifican los datos pero no se hace click en el botón para que queden guardados, estas modificaciones se perderán.
+Para guardar la modificación de los datos, es necesario hacer _click_ en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. Si se modifican los datos pero no se hace _click_ en el botón para que queden guardados, estas modificaciones se perderán.
 
-Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón **Cerrar**, ubicado en la parte inferior de la pantalla.
+Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer _click_ en el botón **Cerrar**, ubicado en la parte inferior de la pantalla.
 
 ## Resubir una imagen
 
@@ -128,7 +128,7 @@ Si quieres volver a subir un archivo, manteniendo el nombre y el link original, 
 
 Para facilitar el manejo de imágenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños de manera online.
 
-Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
+Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz _click_ en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
 
 Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
@@ -144,14 +144,14 @@ A un costado, podrás observar el tamaño original de la imagen y el tamaño en 
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
 - **Zoom:** Usa el scroll del mouse para acercar la imagen.
-- **Mover fondo:** Haz doble click fuera de la zona de recorte y arrastra el fondo.
+- **Mover fondo:** Haz doble _click_ fuera de la zona de recorte y arrastra el fondo.
 :::
 
 Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón **Restaurar Original**, lo cual provocará que la imagen vuelva a su estado original pero la modificada se perderá permanentemente.
 
 ## Borrar un archivo
 
-Para borrar un archivo en específico se debe hacer click en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
+Para borrar un archivo en específico se debe hacer _click_ en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
 
 ::: warning Atención
 Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
@@ -163,7 +163,7 @@ Esta acción es irreversible. Si este archivo se encuentra vinculado a un conten
 
 Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
-Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
+Para subir el archivo, se debe hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
 
 Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras:
 
