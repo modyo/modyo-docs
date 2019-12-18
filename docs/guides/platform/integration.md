@@ -107,7 +107,7 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 
 1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
-3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
+3. Haz _click_ en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
 #### Configuraciones opcionales de la integración

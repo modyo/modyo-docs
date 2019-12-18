@@ -51,7 +51,7 @@ POST     /targets/count_matches  Create a temporary target, and return the total
 El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que 
 realiza. 
 
-Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra
+Si haces _click_ a alguno de estos métodos, por ejemplo a "Targets List", muestra
 una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y
 `order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro. 
 

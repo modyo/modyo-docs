@@ -19,7 +19,7 @@ Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos c
 
 A primera vista, estaremos en la sección Campañas, donde podremos ver a través de un administrador todos los mensajes e informaciones que hemos enviado a los usuarios finales.
 
-En la parte superior de la pantalla, existe un botón que indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer click para cambiar la vista.
+En la parte superior de la pantalla, existe un botón que indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer _click_ para cambiar la vista.
 
 En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
 
@@ -40,7 +40,7 @@ Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el si
 
 ### Hacer una campaña
 
-Para hacer una campaña, debemos hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la vista del Administrador.
+Para hacer una campaña, debemos hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la vista del Administrador.
 
 Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
 
@@ -51,9 +51,9 @@ Posteriormente, mostrará un formulario que deberás rellenar con los siguientes
 - **Plantilla**: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
 - **Habilitar targetización**: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
 
-Después de rellenar estos datos, deberás hacer click en el botón **"Guardar y Continuar"**, ubicado en la parte superior de la pantalla.
+Después de rellenar estos datos, deberás hacer _click_ en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
 
-Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
+Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer _click_ en el botón en la parte superior de la pantalla.
 
 Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de Envío, donde podrás enviarla.
 
@@ -87,8 +87,8 @@ Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
 - **Envíados**: Nº total de correos enviados.
 - **Abiertos**: Nº total de correos abiertos. 
 - **Abiertos únicos**: Nº total de usuarios los cuales abrieron alguna vez la campaña.
-- **Clicks**: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
-- **Clicks únicos**: Nº de usuarios que han hecho click alguna vez en la campaña.
+- **Clicks**: Nº de veces en los cuales se ha hecho _click_ en algún vínculo de la campaña.
+- **Clicks únicos**: Nº de usuarios que han hecho _click_ alguna vez en la campaña.
 - **Spam**: Nº de usuarios a los que su correo llegó a la casilla de Spam.
 
 En cambio, si enviaste la campaña por Notificación, podrás encontrar estas cifras:
@@ -161,7 +161,7 @@ Cada una de las plantillas estarán ordenadas según su nombre, además de poder
 Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
 :::
 
-Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces click en él, llegarás al editor donde hiciste tu plantilla.
+Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces _click_ en él, llegarás al editor donde hiciste tu plantilla.
 
 A un costado, se encuentra un botón que despliega un menú con las siguientes opciones:
 
@@ -177,9 +177,9 @@ Si quieres intervenir la plantilla temporalmente y después volver a una nueva, 
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer una plantilla, primero debes hacer click en el botón **+ Nuevo**, que se encuentra en la parte superior de la página.
+Para hacer una plantilla, primero debes hacer _click_ en el botón **+ Nuevo**, que se encuentra en la parte superior de la página.
 
-Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
+Al hacer _click_, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
 
 ::: tip Tip
 Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
@@ -193,7 +193,7 @@ Si haces una campaña, recuerda agregar en el footer toda la información legal 
 Para automatizar la inserción del Footer, lee [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers)
 :::
 
-Para grabar la plantilla, debes hacer click en el botón **Guardar**, que se encuentra en la parte superior de la página.
+Para grabar la plantilla, debes hacer _click_ en el botón **Guardar**, que se encuentra en la parte superior de la página.
 
 Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
 
@@ -203,7 +203,7 @@ En esta sección, encontrarás una lista con todos los usuarios que se han dado 
 
 Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
 
-Si se hace click en el nombre del usuario, puedes encontrar el [perfil del usuario](/guides/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Si se hace _click_ en el nombre del usuario, puedes encontrar el [perfil del usuario](/guides/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
 
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 

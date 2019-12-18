@@ -67,13 +67,13 @@ Al momento de enviar a revisión la barra cambiará de estado:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
 
-Al hacer click, verás que en la sección lateral derecha se indicarán los requerimientos para publicar el elemento. En caso de existir algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+Al hacer _click_, verás que en la sección lateral derecha se indicarán los requerimientos para publicar el elemento. En caso de existir algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botón "Aprobar" bajo el listado de revisores. Quienes tengan el permiso necesario, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el botón deshabilitado.
+Todos quienes puedan acceder a la vista de edición del elemento, verán un botón "Aprobar" bajo el listado de revisores. Quienes tengan el permiso necesario, lo verán activo y podrán hacerle _click_ para aprobar el elemento, quienes no tengan permiso, verán el botón deshabilitado.
 
 Al aprobar el elemento, quedará registrada la aprobación de ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
 
@@ -154,7 +154,7 @@ En este caso, sólo un Administrador podrá tomar el control, activando para sí
 
 ::: warning Tomar el control
 
-Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón **Tomar Control**.
+Si un Administrador quiere tomar el control de una vista, deberá hacer _click_ en el elemento en uso y en la pantalla siguiente, hacer _click_ en el botón **Tomar Control**.
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
