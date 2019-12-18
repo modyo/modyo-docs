@@ -522,7 +522,6 @@ Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
 
 - Tipo
-- Estado de Revisión
 - Categoría
 - Tags
 - Autor
