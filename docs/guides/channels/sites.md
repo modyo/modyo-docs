@@ -6,7 +6,7 @@ search: true
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
-Es aquí donde debes operar para crear Sitios y minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
+Es aquí donde debes operar para crear Sitios y Minisitios dentro de la plataforma. En este caso, la operación de Sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
 
 Al entrar, podrás ver que existen 4 estados:
 
@@ -99,11 +99,11 @@ Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que t
 
 Para ello, el administrador que creó el Sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-Para añadir un usuario al Sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asignale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
+Para añadir un usuario al Sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
 
-Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
+Puedes modificar el rol de alguno de los administradores asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
 
-Para eliminar administradores de un Sitio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
+Para eliminar administradores de un Sitio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
 Los roles disponibles son:
 
@@ -128,7 +128,7 @@ No puede editar la configuración del Sitio.
 
 #### Admin
 
-Administrador del Sitio, tiene acceso a los dos roles anteriores, además de poder configurar todo el Sitio.
+El Administrador del Sitio, tiene acceso a los dos roles anteriores, además de poder configurar todo el Sitio.
 
 Este usuario es distinto al Default Admin. El Site Admin solo puede configurar el Sitio externo, pero no puede cambiar nada de la plataforma.
 
