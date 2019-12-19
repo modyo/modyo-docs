@@ -144,7 +144,7 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
 1. Crear una vista personalizada en los templates y nombrarla igual que el UID del Espacio que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
-Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
+Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
 Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
@@ -172,7 +172,26 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 
-Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`, donde `space_uid` es el UID del espacio que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
+Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
+
+1.-  La vista debe estar creada y publicada. 
+
+2.-  La URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`.
+
+3.-  El `space_uid` es el UID del espacio que quieres mostrar.
+
+4.-  La URL coincide con el nombre de la vista que acabas de crear. 
+
+5.-  Ya existe una entrada publicada en el idioma del sitio. 
+
+6.- El slug de la entrada es `entry_slug`.
+
+:::tip Tip
+
+Para encontrar la forma de la URL, en el caso de que el custom domain esté habilitado, debes ir a ``Configuración del Sitio > Dominios``.
+
+En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
+:::
 
 ## SEO
 
@@ -266,7 +285,7 @@ El método recomendado para interactuar con una API privada usando la sesión de
 1. Inicia sesión en la cuenta dónde se desea crear el sitio privado.
 2. Haz _click_ en crear un nuevo sitio.
 3. Asigna un nombre al nuevo sitio y selecciona el tema base.
-4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, selecciona **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
+4. En la sección `Configuración > Sitio`, bajo la pestaña **Restricciones**, selecciona **Privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
 
 #### Habilitar la integración a nivel de cuenta (para todos los sitios)
 

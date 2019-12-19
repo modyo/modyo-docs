@@ -11,6 +11,7 @@ A través de la sección Usuarios, podrás ver y modificar a los usuarios extern
 En la vista principal, podrás ver una tabla con todos los usuarios registrados dentro de la plataforma, paginada en caso de tener más de 30 registros.
 
 En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera. Los filtros disponibles son los que siguen:
+
 - Estado: Ver los usuarios activos e inactivos.
 - Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
 - Targets: Usuarios que se encuentran dentro de un determinado [Target](/guides/customers/targets.html)
@@ -152,7 +153,7 @@ Aquí puedes personalizar parte estética de la plataforma con la cual interacci
 
 #### Color primario
 
-El color primario es el que se muestra en los principales botones del manejo de la sesión, tales como el ingreso, registro, modificaciones de contraseña u otros atributos. Para Modificarlo solo debes ingresar el Código HEX del color que quieras y hacer _click_ en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
+El color primario es el que se muestra en los principales botones del manejo de la sesión, tales como el ingreso, registro, modificaciones de contraseña u otros atributos. Para modificarlo solo debes ingresar el Código HEX del color que quieras y hacer _click_ en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
 
 #### Mostrar el logo
 
