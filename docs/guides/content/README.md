@@ -4,11 +4,11 @@ search: true
 
 # Modyo Content
 
-Modyo Content es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+**Modyo Content** es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
 
 ![Headless](/assets/img/content/header.jpg)
 
-Modyo Content posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en Modyo Channels como de sistemas o aplicaciones externas.
+**Modyo Content** posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en **Modyo Channels** como de sistemas o aplicaciones externas.
 
 Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.
 

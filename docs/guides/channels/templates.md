@@ -8,12 +8,12 @@ Uno de los aspectos más importantes al crear el sitio es la arquitectura base y
 
 Cuando ya se ha seleccionado el tema que se usará dentro del sitio, puedes acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
-Una vez dentro del Template Builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado actual:
+Una vez dentro del Template Builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado de publicación actual:
 
-- **Publicado**: Este estado lo verás luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado lo verás si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
+- **Publicado**: Cuando ya existe una versión publicada y su version editable es igual.
+- **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
+- **En revisión**: Cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
@@ -25,10 +25,11 @@ En la parte superior derecha, encontrarás la última fecha de publicación y la
 
 **Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer _click_ en este icono, abrirás el modal de diferencias, en el cual podrás comparar los cambios que hay entre múltiples versiones de tus templates. 
 
-Por defecto partirás comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, podrás comparar además con las versiones de respaldo.
+Por defecto, partirás comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, podrás comparar además con las versiones de respaldo.
 
 :::tip Tip
-Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. Para mas información sobre el versionamiento, échale un vistazo a la sección de [versionado](/guides/platform/team-review.html#versionado).
+Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. 
+Para más información sobre el versionamiento, échale un vistazo a la sección de [versionado](/guides/platform/team-review.html#versionado).
 :::
 
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
@@ -45,8 +46,8 @@ Al final de la barra lateral, verás una caja de texto donde podrás escribir un
 **Acción principal**
 
 - **Guardar**: Guardará todos los cambios de todos los templates.
-- **Enviar a revisión**: Cambia el estado de los templates a "esperando revisión". En este estado podrás seguir haciendo cambios, pero cada cambio será notificado via correo a los revisores asignados.
-- **Rechazar**: Vuelve al estado "en edición", notificando a los revisores que el elemento fue rechazado.
+- **Enviar a revisión**: Cambia el estado de los templates a "Esperando revisión". En este estado podrás seguir haciendo cambios, pero cada cambio será notificado via correo a los revisores asignados.
+- **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
 - **Publicar**: Una vez que los templates fueron aprobados, se podrán pasar a la versión publicada.
 
 En el área de trabajo principal, podrás ver dos secciones:
@@ -64,7 +65,7 @@ Las vistas son elementos base y requeridos por Modyo, y usualmente se traducen e
 
 Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cada snippet personalizado, encontrarás un ícono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo _click_ en el botón **"+ Añadir un snippet"**.
+Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo _click_ en el botón **+ Añadir un snippet**.
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
@@ -85,7 +86,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 **Gestor de archivos**: Se levantará un modal donde podrás acceder a todos los archivos de la cuenta y copiar su URL, si accedes a la segunda pestaña, podrás subir nuevos archivos.
 
 :::tip Tip
-Para mas información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/docs/content/asset-manager.html)
+Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/docs/content/asset-manager.html)
 :::
 
 **Atajos de teclado**: Se mostrará un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el Template Builder.
@@ -109,7 +110,8 @@ Las sub-versiones son por cada template, por lo que para algunos verás que hay 
 :::
 
 :::tip Tip
-Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre el [versionado aquí](/guides/platform/team-review.html#versionado)
+Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. 
+Puedes aprender más sobre el [versionado aquí].(/guides/platform/team-review.html#versionado)
 :::
 
 Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo _click_ en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
@@ -144,7 +146,7 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
 1. Crear una vista personalizada en los templates y nombrarla igual que el UID del tipo que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
-Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
+Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
 Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
@@ -172,11 +174,33 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 
-Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/type_uid/entry_slug`, donde `type_uid` es el UID del tipo que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
+Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
+
+1.  La vista debe estar creada y publicada. 
+
+2.  La URL a la que se está accediendo es del tipo `site_url/type_uid/entry_slug`.
+
+3.  El `type_uid` es el UID del espacio que quieres mostrar.
+
+4.  La URL coincide con el nombre de la vista que acabas de crear. 
+
+5.  Ya existe una entrada publicada en el idioma del sitio. 
+
+6. El slug de la entrada es `entry_slug`.
+
+:::tip Tip
+
+Para encontrar la forma de la URL, en el caso de que el custom domain esté habilitado, debes ir a ``Configuración del Sitio > Dominios``.
+
+En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
+:::
+
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/guides/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
+El SEO [(Search Engine Optimization)](/guides/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. 
+
+En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
 Puedes añadir este snippet de código al Template Builder, y luego llamar a este snippet desde el head de tu sitio:
 
@@ -222,9 +246,11 @@ Puedes añadir este snippet de código al Template Builder, y luego llamar a est
 <!-- END SEO <-->
 ```
 
-Este snippet diferencia cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, alguna de las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
+Este snippet diferencia cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
 
-Si es que lo requieres, puedes personalizar aún más este snippet, definiendo que metas quieres que aparezcan para URLs específicas o para tipos específicos, por ejemplo, en la sección de contenido, puedes usar:
+Si es que lo requieres, puedes personalizar aún más este snippet, definiendo qué metas quieres que aparezcan para URLs o tipos específicos. 
+
+Por ejemplo, en la sección de contenido, puedes usar:
 
 ```html
 ... {% if entry %}
@@ -266,7 +292,7 @@ El método recomendado para interactuar con una API privada usando la sesión de
 1. Inicia sesión en la cuenta dónde se desea crear el sitio privado.
 2. Haz _click_ en crear un nuevo sitio.
 3. Asigna un nombre al nuevo sitio y selecciona el tema base.
-4. En la sección `configuración > sitio`, bajo la pestaña **Restricciones**, selecciona **privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
+4. En la sección `Configuración > Sitio`, bajo la pestaña **Restricciones**, selecciona **Privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
 
 #### Habilitar la integración a nivel de cuenta (para todos los sitios)
 
@@ -289,19 +315,19 @@ Las tareas que debes cubrir con los snippets son:
 ### Interceptar los request para que incluyan un token
 
 ```js
-// variable global que representara una instancia de axios que se encargará de hacer las peticiones de los servicios
+// variable global que representará una instancia de axios que se encargará de hacer las peticiones de los servicios
 var axios_api = axios.create();
   axios_api.defaults.baseURL = 'URL DE API';
 }
-// variable global que representara una instancia de axios que se encargará de hacer las peticiones de la api de modyo
+// variable global que representará una instancia de axios que se encargará de hacer las peticiones de la api de modyo
 var axios_modyo=axios.create({
   baseURL: window.baseUrl + '/api/admin',
 });
-// variable global que representara una instancia de axios que se encargará de hacer las peticiones los json de contenido del sitio
+// variable global que representará una instancia de axios que se encargará de hacer las peticiones los json de contenido del sitio
 var axios_modyo_json=axios.create({
   baseURL: {{site.url}},
 });
-// variable global que representara una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
+// variable global que representará una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
 var axios_auth = axios.create();
 axios_auth.defaults.baseURL = window.baseUrl + '/auth/openidc';
 // función que genera actividad en el sitio con cada petición de autenticación
@@ -345,7 +371,7 @@ var modalConfirm = function() {
     });
   });
 };
-// será la que se encargara de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
+// será la que se encargará de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
 var sessionManager = {
   // propiedad que define el tiempo desde la ultima actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
   timeToEndSessionInSeconds: 900,
@@ -380,7 +406,7 @@ var sessionManager = {
       this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
     localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
   },
-  // método que inicia la actividad cada segundo js que manejara los eventos de sesión
+  // método que inicia la actividad cada segundo js que manejará los eventos de sesión
   interval: function() {
     var self = this;
     return setInterval(this.checkSessionEvents, 1000, self);
@@ -436,7 +462,7 @@ var sessionManager = {
 
 ### Una ventana modal que informe al usuario que su sesión va a expirar
 
-Este seria el modal a activar en el paso anterior con bootstrap para el manejo del warning modal.
+Este sería el modal a activar en el paso anterior con bootstrap para el manejo del warning modal.
 
 ```html
 <div
