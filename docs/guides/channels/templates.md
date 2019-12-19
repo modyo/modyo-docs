@@ -8,12 +8,12 @@ Uno de los aspectos más importantes al crear el sitio es la arquitectura base y
 
 Cuando ya se ha seleccionado el tema que se usará dentro del sitio, puedes acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
-Una vez dentro del Template Builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado actual:
+Una vez dentro del Template Builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado de publicación actual:
 
-- **Publicado**: Este estado lo verás luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado lo verás si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
+- **Publicado**: Cuando ya existe una versión publicada y su version editable es igual.
+- **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
+- **En revisión**: Cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
@@ -109,7 +109,8 @@ Las sub-versiones son por cada template, por lo que para algunos verás que hay 
 :::
 
 :::tip Tip
-Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre el [versionado aquí](/guides/platform/team-review.html#versionado)
+Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. 
+Puedes aprender más sobre el [versionado aquí].(/guides/platform/team-review.html#versionado)
 :::
 
 Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo _click_ en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
@@ -174,17 +175,17 @@ Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/
 
 Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
 
-1.-  La vista debe estar creada y publicada. 
+1.  La vista debe estar creada y publicada. 
 
-2.-  La URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`.
+2.  La URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`.
 
-3.-  El `space_uid` es el UID del espacio que quieres mostrar.
+3.  El `space_uid` es el UID del espacio que quieres mostrar.
 
-4.-  La URL coincide con el nombre de la vista que acabas de crear. 
+4.  La URL coincide con el nombre de la vista que acabas de crear. 
 
-5.-  Ya existe una entrada publicada en el idioma del sitio. 
+5.  Ya existe una entrada publicada en el idioma del sitio. 
 
-6.- El slug de la entrada es `entry_slug`.
+6. El slug de la entrada es `entry_slug`.
 
 :::tip Tip
 
@@ -241,9 +242,9 @@ Puedes añadir este snippet de código al Template Builder, y luego llamar a est
 <!-- END SEO <-->
 ```
 
-Este snippet diferencia cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, alguna de las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
+Este snippet diferencia cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
 
-Si es que lo requieres, puedes personalizar aún más este snippet, definiendo que metas quieres que aparezcan para URLs específicas o para tipos específicos, por ejemplo, en la sección de contenido, puedes usar:
+Si es que lo requieres, puedes personalizar aún más este snippet, definiendo qué metas quieres que aparezcan para URLs o tipos específicos. Por ejemplo, en la sección de contenido, puedes usar:
 
 ```html
 ... {% if entry %}
