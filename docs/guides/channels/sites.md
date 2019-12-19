@@ -62,7 +62,7 @@ Las opciones a configurar son:
 
 - **Tagline**: Descripción que aparecerá en los motores de búsqueda, bajo el nombre del Sitio
 - **Palabras claves**: Palabras que buscarán los usuarios y que quieres que el Sitio aparezca.
-- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del Sitio. Pouedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
+- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del Sitio. Puedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
 - **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
 
 ### Restricciones
