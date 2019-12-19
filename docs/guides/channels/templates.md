@@ -142,7 +142,7 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un Tipo. Dirígete a [Espacios](/guides/content/spaces.html) y [Tipos](/guides/content/types.html) para aprender cómo.
 1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/guides/content/entries.html) y [Localización](/guides/content/spaces.html#localizacion) para aprender más.
 1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
-1. Crear una vista personalizada en los templates y nombrarla igual que el UID del Espacio que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
+1. Crear una vista personalizada en los templates y nombrarla igual que el UID del tipo que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
 
 Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada "Custom" y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
 
@@ -172,7 +172,7 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
 :::
 
-Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/space_uid/entry_slug`, donde `space_uid` es el UID del espacio que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
+Con esta vista creada y publicada, si la URL a la que se está accediendo es del tipo `site_url/type_uid/entry_slug`, donde `type_uid` es el UID del tipo que quieres mostrar y coincide con el nombre de la vista que acabas de crear, y existe una entrada publicada en el idioma del sitio y además, el slug de la entry es `entry_slug`, estarás mostrando la vista con los valores de esa entrada.
 
 ## SEO
 
