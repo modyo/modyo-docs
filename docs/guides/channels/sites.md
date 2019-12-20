@@ -62,7 +62,7 @@ Las opciones a configurar son:
 
 - **Tagline**: Descripción que aparecerá en los motores de búsqueda, bajo el nombre del Sitio
 - **Palabras claves**: Palabras que buscarán los usuarios y que quieres que el Sitio aparezca.
-- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del Sitio. Pouedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
+- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del Sitio. Puedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
 - **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
 
 ### Restricciones
@@ -99,11 +99,11 @@ Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que t
 
 Para ello, el administrador que creó el Sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-Para añadir un usuario al Sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona "Añadir" para que ese administrador sea parte del equipo de trabajo del Sitio.
+Para añadir un usuario al Sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del Sitio.
 
-Puedes modificar el rol de alguno de los administradores asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "guardar" para confirmar el cambio.
+Puedes modificar el rol de alguno de los administradores asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
-Para eliminar administradores de un Sitio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
+Si quieres eliminar a un administrador de un Sitio, selecciona usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
 Los roles disponibles son:
 

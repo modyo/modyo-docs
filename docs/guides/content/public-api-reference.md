@@ -28,7 +28,7 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio 
 
 ### Filtrar entradas
 
-Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries
@@ -39,7 +39,7 @@ Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by
 {% endfor %}
 ```
 
-La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+La selección de entradas siempre retorna un array, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
@@ -580,7 +580,7 @@ Se usa una expresiónJsonPath por ejemplo:
 `.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
 `.../entries?fields=$..description` para obtener todos los campos description en los entries.
 
-##### Igualdades/Desigualdades en arreglos
+##### Igualdades/Desigualdades en arrays
 
 Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
 

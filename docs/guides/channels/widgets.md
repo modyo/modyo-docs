@@ -188,6 +188,6 @@ if (!isProduction) {
 }
 ```
 
-[Según este arreglo en StackOverflow](https://stackoverflow.com/questions/50561649/module-build-failed-error-no-parser-and-no-file-path-given-couldnt-infer-a-p)
+[Según este array en StackOverflow](https://stackoverflow.com/questions/50561649/module-build-failed-error-no-parser-and-no-file-path-given-couldnt-infer-a-p)
 
 Este error ya fue arreglado en `vue-loader`, pero aún no ha sido desplegado un [Pull Request].(https://github.com/vuejs/vue-loader/pull/1323/files)

@@ -68,19 +68,19 @@ Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pued
 Liquid acepta los siguientes tipos de expresiones:
 
 * **Variables.** El tipo más básico de expresión es sólo el nombre de una variable. Las variables de Liquid son nombradas tal como las variables de Ruby: deben contener caracteres alfanuméricos y barras bajas, siempre deben comenzar con una letra, y no contener ningún tipo de símbolo (es decir, deben verse como `var_name`, y no `$var_name`).
-* **Acceso de arreglo/hashes.** Si tienes una expresión (normalmente una variable) cuyo valor es un arreglo o hash, puede usar un único valor de ese arreglo/hash de la siguiente manera:
+* **Acceso de array/hashes.** Si tienes una expresión (normalmente una variable) cuyo valor es un array o hash, puede usar un único valor de ese array/hash de la siguiente manera:
     * `my_variable[<KEY EXPRESSION>]` — El nombre de la variable, seguido inmediatamente de corchetes que contienen una expresión clave.
-        * Para arreglos, la clave debe ser un entero literal o una expresión que se resuelva a un entero.
+        * Para arrays, la clave debe ser un entero literal o una expresión que se resuelva a un entero.
         * Para hashes, la clave debe ser un string de comillas literal o una expresión que se resuelva a un string.
     * `my_hash.key` — Los hashes también permiten una notación de "punto" más corta, donde el nombre de la variable es seguido por un punto y el nombre de una clave. Esto sólo funciona con claves que no contienen espacios, y (a diferencia de la notación entre corchetes) no permite el uso de un nombre de clave almacenado en una variable.
-    * Nota: si el valor de una expresión de acceso es también un arreglo o hash, puedes acceder a los valores desde ella de la misma manera, e incluso puedes combinar los dos métodos. (Por ejemplo, `site.posts[34].title`.)
-* **Primer y último arreglo.** Si tienes una expresión cuyo valor es un arreglo, puedes seguirla con `.first` o `.last` para resolver su primer o último elemento.
-* **Tamaño de arreglo o hash** Si tienes una expresión cuyo valor es un arreglo o hash, puedes seguirla con `.size` para resolver el número de elementos de la expresión original, como un entero.
+    * Nota: si el valor de una expresión de acceso es también un array o hash, puedes acceder a los valores desde ella de la misma manera, e incluso puedes combinar los dos métodos. (Por ejemplo, `site.posts[34].title`.)
+* **Primer y último array.** Si tienes una expresión cuyo valor es un array, puedes seguirla con `.first` o `.last` para resolver su primer o último elemento.
+* **Tamaño de array o hash** Si tienes una expresión cuyo valor es un array o hash, puedes seguirla con `.size` para resolver el número de elementos de la expresión original, como un entero.
 * **Strings.** Los strings literales deben estar rodeados de comillas dobles o simples (``"mi cuerda"`` o `'mi cuerda'`). No hay diferencia; ningún estilo permite interpolación variable.
 * **Enteros.** Los números enteros no pueden ser citados.
 * **Booleanos y nil.** Los valores literales `true`, `false`, and `nil`.
 
-Tenga en cuenta que no hay manera de escribir un arreglo literal o hash como expresión; los arreglos y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
+Tenga en cuenta que no hay manera de escribir un array literal o hash como expresión; los arrays y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
 
 ## Filtros
 
@@ -112,12 +112,12 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `downcase` - Convierte un string de entrada en minúsculas
 * `escape_once` - Devuelve una versión escape de html sin afectar a las entidades escape existentes
 * `escape` - Escape html a un string
-* `first` - Obtener el primer elemento del arreglo pasado
+* `first` - Obtener el primer elemento del array pasado
 * `floor` - Redondea un número decimal hacia abajo al entero más cercano, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
-* `join` - Une elementos del arreglo con cierto caracter entre ellos.
-* `last` - Obtener el último elemento del arreglo pasado
+* `join` - Une elementos del array con cierto caracter entre ellos.
+* `last` - Obtener el último elemento del array pasado
 * `lstrip` - Elimina todos los espacios en blanco desde el principio de un string
-* `map` - Mapear/coleccionar un arreglo en una propiedad dada.
+* `map` - Mapear/coleccionar un array en una propiedad dada.
 * `minus` - Resta *e.g.*  <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
 * `modulo` - Resto *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 * `newline_to_br` - Reemplaza cada linea nueva (\n) con espacio html
@@ -127,12 +127,12 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `remove` - Elimina todas las incidencias *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
 * `replace_first` - Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 * `replace` - Reemplaza todas las incidencias *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
-* `reverse` - Invierte el arreglo dado.
+* `reverse` - Invierte el array dado.
 * `round` - Redondea al número entero más cercano o al número especificado de decimales *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
 * `rstrip` - Elimina todos los espacios en blanco del final de un string
-* `size` - Devolver el tamaño de un arreglo o string
+* `size` - Devolver el tamaño de un array o string
 * `slice` - Divide un string. Toma un desplazamiento y una longitud, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
-* `sort` - Ordena elementos del arreglo
+* `sort` - Ordena elementos del array
 * `split` - Dividir un string en un patrón coincidente *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 * `strip_html` - Elimina html del string
 * `strip_newlines` - Elimina todas las lineas nuevas (\n) del string
@@ -140,7 +140,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `times` - Multiplica  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
 * `truncate` - Restringe un string a x caracteres. También acepta un segundo parámetro que se añadirá al string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
 * `truncatewords` - Restringe una string a x palabras
-* `uniq` - Elimina elementos duplicados de un arreglo, utilizando opcionalmente una propiedad determinada para comprobar su unicidad.
+* `uniq` - Elimina elementos duplicados de un array, utilizando opcionalmente una propiedad determinada para comprobar su unicidad.
 * `upcase` - Convierte un string de entrada a mayúsculas
 * `url_encode` - Codifica un string a URL
 
@@ -193,9 +193,9 @@ La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liqu
 Los operadores relacionales disponibles son: 
 
 * `==, !=,` and `<>` — igual y desigual (los dos últimos son sinónimos)
-    * Hay un valor especial secreto "empty" (sin comillas) con el que se pueden comparar los arreglos; la comparación es verdadera si el arreglo no tiene miembros.
+    * Hay un valor especial secreto "empty" (sin comillas) con el que se pueden comparar los arrays; la comparación es verdadera si el array no tiene miembros.
 * `<, <=, >, >=` — menor/mayor que
-* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arreglos y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
+* `contains` — un wrapper alrededor del método `include?` de Ruby, que se implementa en strings, arrays y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
 
 Los operadores booleanos disponibles son:
 
@@ -209,7 +209,7 @@ Las expresiones de Liquid son probadas para determinar su "veracidad" en lo que 
 * `true` is verdadero
 * `false` is falso.
 * Cualquier string es true, incluyendo un string vacío.
-* Cualquier arreglo es true.
+* Cualquier array es true.
 * Cualquier hash es true.
 * Cualquier valor inexistente/nulo (como una parte faltante de un hash) es falso.
 
@@ -375,7 +375,7 @@ Liquid permite bucles `for` sobre colecciones:
 
 #### Tipos de colecciones permitidas
 
-Los bucles for pueden iterar sobre **arreglos, hashes y rangos de números enteros.**
+Los bucles for pueden iterar sobre **arrays, hashes y rangos de números enteros.**
 
 Al iterar un hash, `el elemento[0]` contiene la clave, y `el elemento[1]` contiene el valor:
 
