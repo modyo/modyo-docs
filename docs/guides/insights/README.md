@@ -8,9 +8,9 @@ Para cualquier empresa o institución, es importante saber qué es lo que está 
 
 ![Modyo People](/assets/img/insights/header.jpg)
 
-Modyo Insights es una sección especializada en la representación de datos estadísticos tanto de los usuarios de tus sitios, como del equipo de trabajo que crea el contenido y los canales digitales.
+**Modyo Insights** es una sección especializada en la representación de datos estadísticos tanto de los usuarios de tus sitios, como del equipo de trabajo que crea el contenido y los canales digitales.
 
-Cada vista de Modyo Insights cuenta con tres secciones principales:
+Cada vista de **Modyo Insights** cuenta con tres secciones principales:
 
 - Contadores generales
 - Gráfica comparativa

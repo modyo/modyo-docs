@@ -85,7 +85,7 @@ En la **columna de propiedades** verás:
 
 ## Modyo CLI
 
-Modyo CLI es una herramienta de líneas de comando, que sirve para generar un ambiente que permita trabajar localmente con widgets de Modyo. 
+**Modyo CLI** es una herramienta de líneas de comando, que sirve para generar un ambiente que permita trabajar localmente con widgets de Modyo. 
 
 ### Introducción
 
@@ -120,7 +120,7 @@ El proyecto debe tener por lo menos un widget para correr el servidor.
 
 ### La sesión de Modyo
 
-Para poder hacer `push` de tus widgets a la plataforma Modyo y obtener los archivos de dependencias del sitio, tienes que contar con una sesión en la cuenta en que planeas desplegar tus widgets. Para eso, debes usar el siguiente comando:
+Para poder hacer `push` de tus widgets a la plataforma **Modyo** y obtener los archivos de dependencias del sitio, tienes que contar con una sesión en la cuenta en que planeas desplegar tus widgets. Para eso, debes usar el siguiente comando:
 
 ```plain
 modyo-cli project login
