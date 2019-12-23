@@ -32,7 +32,7 @@ En este caso, los filtros son cinco:
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, Modyo pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
+Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, **Modyo** pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
 
 Al hacer _click_ en **Crear**, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 

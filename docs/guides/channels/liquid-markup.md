@@ -103,7 +103,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 
 ### Filtros estándar
 
-* `append` - Añadir una string *e.g.* <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
+* `append` - Añadir un string *e.g.* <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 * `capitalize` - Poner palabra en mayúscula en la frase de entrada
 * `ceil` - Redondea hacia arriba un número decimal al próximo entero, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 * `date` - Da formato a una fecha ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
@@ -122,7 +122,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `modulo` - Resto *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 * `newline_to_br` - Reemplaza cada linea nueva (\n) con espacio html
 * `plus` - Suma *e.g.*  <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
-* `prepend` - Precede una string *e.g.* <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
+* `prepend` - Precede un string *e.g.* <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
 * `remove_first` - Elimina la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
 * `remove` - Elimina todas las incidencias *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
 * `replace_first` - Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>

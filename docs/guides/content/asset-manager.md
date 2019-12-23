@@ -6,7 +6,7 @@ search: true
 
 Una organización necesita tener una plataforma que les permita organizar los archivos y documentos de contenido que se requieran dentro de la plataforma.
 
-Para que no sea necesario utilizar servicios externos, Modyo permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
+Para que no sea necesario utilizar servicios externos, **Modyo** permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
 
 Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios.
 
@@ -161,7 +161,7 @@ Esta acción es irreversible. Si este archivo se encuentra vinculado a un conten
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
+Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
 Para subir el archivo, se debe hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
 
