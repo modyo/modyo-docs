@@ -14,9 +14,9 @@ Con los Tipos, podrás evitar tener que estar muchas veces elaborando contenido 
 
 A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer _click_ ahí, te permitirá crear un Tipo.
 
-Más abajo, podrás encontrar la barra de búsqueda de Tipos, que te permitirá encontrar cualquier palabra que busques que se encuentre dentro del campo Nombre.
+Más abajo, podrás ver la barra de búsqueda de Tipos, que te permitirá encontrar cualquier palabra que busques que se encuentre dentro del campo Nombre.
 
-Después, podrás ver la tabla con los Tipos ya creados, que estarán ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, partiendo desde el elemento más reciente hacia atrás.
+Después, encontrarás la tabla con los Tipos ya creados, que estarán ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, partiendo desde el elemento más reciente hacia atrás.
 
 Para reordenarla, solo debes hacer _click_ en los símbolos que se encuentran a un costado de cada categoría.
 
@@ -36,7 +36,9 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 Para crear un Tipo, es necesario hacer _click_ en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
 
 ::: tip Tip
-Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
+Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. 
+
+Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
 :::
 
 En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 

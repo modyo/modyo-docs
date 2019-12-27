@@ -4,7 +4,7 @@ search: true
 
 # Espacios
 
-Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de su API pública o en la creación de un sitio a través de Channels.
+Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas para usar tanto dentro o fuera de **Modyo** a través de su API pública o en la creación de un sitio a través de Channels.
 
 Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
 
@@ -91,18 +91,18 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 
 ### Revisión en Equipo (Team Review)
 
-El contenido que se publica en cada una de las plataformas debe ser de buena calidad y como forma de certificar esta, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
+El contenido que se publica en cada una de las plataformas debe ser de buena calidad y para ello, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 
-Para más información sobre cómo configurar esta opción, ir a [Team Review](/guides/platform/team-review.html)
+Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/guides/platform/team-review.html)
 
 ### Miembros del Equipo
 
 <img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-Para conformar el grupo de trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en este Espacio y así tendrán acceso a la escritura, revisión y/o publicación.
+Para conformar el grupo de trabajo, en la plataforma puedes seleccionar los miembros que trabajarán en este Espacio y que tendrán acceso a la escritura, revisión y/o publicación.
 
 Para ello, el Administrador que creó el Espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
@@ -120,5 +120,5 @@ Se debe tener en cuenta que el sistema validará que siempre exista un administr
 Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
 ::: warning Atención
-Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador este no podrá ser borrado.
+Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si existe un solo administrador, este no podrá ser borrado.
 :::
