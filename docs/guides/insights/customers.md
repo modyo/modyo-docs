@@ -12,7 +12,7 @@ Los filtros disponibles son:
 - Target
 - Sitio
 
-**Usuarios activos**: Conteo de todos los usuarios con dos o mas registros de actividad en el periodo seleccionado.
+**Usuarios activos**: Conteo de todos los usuarios con dos o más registros de actividad en el periodo seleccionado.
 
 **Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertas.
 

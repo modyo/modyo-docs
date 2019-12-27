@@ -69,7 +69,7 @@ En el **área de trabajo** verás:
 - **Cambios**: Si has guardado cambios y no has publicado, verás este listado de todas las veces que has guardado cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, cambiarás el contenido de la pestaña por el contenido de la sub-versión que clickeaste.
 
 :::tip Tip
-Para no perder los cambios que tienes actualmente, asegúrate de guardar antes de saltar entre sub-versiones, de tal forma que siempre puedas volver a la versión guardada mas recientemente en la lista de cambios.
+Para no perder los cambios que tienes actualmente, asegúrate de guardar antes de saltar entre sub-versiones, de tal forma que siempre puedas volver a la última versión guardada en la lista de cambios.
 :::
 
 :::tip Tip
@@ -105,7 +105,7 @@ yarn global add @modyo/cli
 
 ### Crear un proyecto
 
-La CLI de Modyo está diseñada para trabajar con uno o mas widgets de un proyecto o estructuras que funcionan como un contenedor. Luego de crear un proyecto, tendrás la posibilidad de crear, editar y eliminar widgets localmente.
+La CLI de Modyo está diseñada para trabajar con uno o más widgets de un proyecto o estructuras que funcionan como un contenedor. Luego de crear un proyecto, tendrás la posibilidad de crear, editar y eliminar widgets localmente.
 
 Para crear un proyecto:
 
