@@ -180,9 +180,11 @@ Locks se usa mayoritariamente en [Contenidos](/guides/content/) y en [Channels](
 
 ### ¿Cómo usar Locks?
 
-Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/guides/content/) y [Channels](/guides/channels/), múltiples usuarios pueden entrar a un recurso, siendo sólo uno el que podrá editar y guardar esos cambios, mientras que los demás sólo verán la última versión guardada en la plataforma. Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
+Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/guides/content/) y [Channels](/guides/channels/), múltiples usuarios pueden entrar a un recurso, siendo sólo uno el que podrá editar y guardar esos cambios, mientras que los demás sólo verán la última versión guardada en la plataforma. 
 
-En otras secciones como [Customers](/guides/customers/) y Configuraciones, Locks no permitirá la visión simultánea del recurso, por lo que si éste se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
+Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
+
+En otras secciones como [Customers](/guides/customers/) y Configuración, Locks no permitirá la visión simultánea del recurso, por lo que si éste se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
 
 En este caso, sólo un Administrador podrá tomar el control, activando para sí mismo la edición y descartándose los avances no guardados del usuario que se encuentra trabajando en él.
 

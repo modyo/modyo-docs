@@ -45,7 +45,10 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
 ::: tip Tip
-Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo _click_ en el checkbox de la primera columna)
+Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado. 
+
+Así, aparecerá apenas selecciones el primer elemento (haciendo _click_ en el checkbox de la primera columna.
+
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
@@ -84,9 +87,10 @@ Finalmente, en la esquina inferior derecha, podrás encontrar la paginación de 
 <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
+
 Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
 
-Para acceder a las propiedades de los archivos, se debe hacer _click_ en el nombre de este. Así, se levantará un modal en el que podrás editar cada una de las propiedades.
+Para acceder a las propiedades de los archivos, se debe hacer _click_ en el nombre de este. De esta manera, se levantará un modal en el que podrás editar cada una de las propiedades.
 
 ## Editar un archivo
 
@@ -112,7 +116,9 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 <hr style="margin: 40px 0;" />
 
-Para guardar la modificación de los datos, es necesario hacer _click_ en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. Si se modifican los datos pero no se hace _click_ en el botón para que queden guardados, estas modificaciones se perderán.
+Para guardar la modificación de los datos, es necesario hacer _click_ en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. 
+
+Si se modifican los datos pero no se hace _click_ en el botón para que queden guardados, estas modificaciones se perderán.
 
 Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer _click_ en el botón **Cerrar**, ubicado en la parte inferior de la pantalla.
 
@@ -126,9 +132,9 @@ Si quieres volver a subir un archivo, manteniendo el nombre y el link original, 
 
 <img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Para facilitar el manejo de imágenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños de manera online.
+Para facilitar el manejo de imágenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños de manera online.
 
-Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz _click_ en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
+Uno de los cambios que se puede hacer es editar las medidas de la imagen. Para ello, haz _click_ en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
 
 Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
