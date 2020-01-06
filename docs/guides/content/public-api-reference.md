@@ -32,8 +32,8 @@ Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries
-  | by_category = 'news'
-  | by_tag = 'tag1, tag2, tag3' %}
+  | by_category: 'news'
+  | by_tag : 'tag1, tag2, tag3' %}
 {% for entry in entries %}
   entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
@@ -42,7 +42,7 @@ Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by
 La selección de entradas siempre retorna un array, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
 {% assign entry = entries.first %}
 ```
 
