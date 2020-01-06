@@ -10,6 +10,8 @@ La Revisión en Equipo (o Team Review) es una herramienta que permite controlar 
 
 De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores.
 
+### Función
+
 Cuando un editor o un desarrollador considera que el elemento en el que está trabajando se encuentra listo, puede enviarlo a revisión.
 
 La tarea que será realizada por usuarios habilitados para ello o por un equipo escogido por él mismo. 
