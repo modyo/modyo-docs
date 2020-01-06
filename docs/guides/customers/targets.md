@@ -49,7 +49,7 @@ Por último, si quieres ver los usuarios que integran ese target, solo debes hac
 
 ### Filtros
 
-Los filtros son los que permiten crear los targets que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. 
+Los filtros  permiten crear targets que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. 
 
 Los filtros que se encuentran de manera predeterminada en la plataforma son:
 

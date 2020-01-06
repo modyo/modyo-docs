@@ -59,6 +59,11 @@ Para despublicar una entrada, debes acceder al ella y hacer _click_ en el botón
 
 Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
+::: tip Tip
+La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
+:::
+
+
 ### Categorías
 
 Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
