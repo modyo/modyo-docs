@@ -12,7 +12,7 @@ En la esquina superior derecha verás un botón principal **+ Nuevo** que te per
 
 En la vista de edición del widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
-![Widget builder](/assets/img/platform/widget-builder.png) 
+![Widget Builder](/assets/img/platform/widget-builder.png) 
 
 En la **barra superior** verás:
 
@@ -34,13 +34,13 @@ _click_ en este icono, abrirás el modal de diferencias, en el cual podrás comp
 
 **Otras opciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te permite archivar y crear una copia del widget actual.
 
-**Botón principal**
+**Botón principal:**
 
 - Guardar: Guarda los cambios actuales.
 - Enviar a revisión: Si está la revisión en equipo habilitada, entonces podrás enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
 - Publicar: Pasa la versión editable o aprobada (si está habilitada la revisión en equipo) a la versión publicada.
 
-**Otras acciones principales** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
+**Otras acciones principales:**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
 
 - Despublicar: Si el widget está publicado, podrás sacarlo de producción usando esta opción.
 - Forzar publicación: Si eres administrador del sitio, podrás hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está la revisión en equipo habilitada.
@@ -66,9 +66,9 @@ Para aprender más sobre el flujo de publicación, revisa la sección de [Versio
 En el **área de trabajo** verás:
 
 - **Pestañas de código**: Tendrás a tu disposición una pestaña de JavaScript, CSS y HTML para construir tus widgets.
-- **Gestor de archivos**: Al hacerle _click_, levantarás el modal de gestión de archivos, onde podrás filtrar y buscar los archivos que has subido en el [Gestor de archivos](/guides/content/asset-manager.html) y copiar su URL para usarlos en tu widget. También podrás subir nuevos archivos desde este modal.
+- **Gestor de archivos**: Al hacerle _click_, levantarás el modal de gestión de archivos, onde podrás filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/guides/content/asset-manager.html) y copiar su URL para usarlos en tu widget. También podrás subir nuevos archivos desde este modal.
 - **Atajos de teclado**: Verás una pequeña ventana informativa con algunos atajos de teclado útiles.
-- **Snippets**: Verás una lista de los snippets disponibles desde el [template builder](/guides/channels/templates.html#snippets) y podrás copiar su código para referenciarlos en tu widget.
+- **Snippets**: Verás una lista de los snippets disponibles desde el [Template Builder](/guides/channels/templates.html#snippets) y podrás copiar su código para referenciarlos en tu widget.
 - **Cambios**: Si has guardado cambios y no has publicado, verás este listado de todas las veces que has guardado cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, cambiarás el contenido de la pestaña por el contenido de la sub-versión que clickeaste.
 
 :::tip Tip
