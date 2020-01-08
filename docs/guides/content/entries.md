@@ -67,7 +67,14 @@ La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. 
 
 Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios a la vez.
 
-En primera instancia, si haces click en el botón de Vista Previa, solo verás el código JSON del recurso. Sin embargo, si ya se encuentra asociado a un sitio asociado, podrás ver 
+Si ya se encuentra asociado a un sitio asociado, podrás ver el botón **Vista Previa en Sitio**, en el que podrás seleccionar dónde quieres ver cómo se está desarrollando tu recurso.
+
+Para asociar un Espacio a un Sitio, debes ir a [Configuración de Sitios](guides/channels/sites.html#configuracion-de-un-sitio).
+
+::: danger Atención
+
+Si el Espacio no se encuentra asociado a un sitio, sólo podrás ver el código JSON de la entrada que estás desarrollando.
+:::
 
 ### Categorías
 
