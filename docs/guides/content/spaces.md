@@ -4,7 +4,7 @@ search: true
 
 # Espacios
 
-Un Espacio es una función donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas. 
+Un Espacio es un formato de recursos donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas. 
 
 Todos los elementos se pueden usar dentro o fuera de **Modyo** a través de su API pública o en la creación de un sitio en Channels.
 
