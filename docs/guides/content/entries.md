@@ -63,6 +63,11 @@ Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisi
 La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
 :::
 
+### Vista Previa
+
+Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios a la vez.
+
+En primera instancia, si haces click en el botón de Vista Previa, solo verás el código JSON del recurso. Sin embargo, si ya se encuentra asociado a un sitio asociado, podrás ver 
 
 ### Categorías
 

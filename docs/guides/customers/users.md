@@ -136,9 +136,9 @@ Si es necesario añadir o cambiar datos del usuario, es posible hacerlo desde ac
 
 :::tip Tip
 Al modificar un usuario, puede que cambie el listado de Targets a los que pertenece.
-::
+:::
 
-Para más información, ir a [Campos Personalizados](/guides/customers/users.html#campos-personalizados).
+Para más información, puedes ir a [Campos Personalizados](/guides/customers/users.html#campos-personalizados).
 
 
 ----
