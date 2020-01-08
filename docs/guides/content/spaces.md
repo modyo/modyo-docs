@@ -4,13 +4,17 @@ search: true
 
 # Espacios
 
-Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas para usar tanto dentro o fuera de **Modyo** a través de su API pública o en la creación de un sitio a través de Channels.
+Un Espacio es una función donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas. 
+
+Todos los elementos se pueden usar dentro o fuera de **Modyo** a través de su API pública o en la creación de un sitio en Channels.
 
 Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
 
 Espacios también te permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
-Al acceder a la sección de espacios se listaran todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo  y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
+Al acceder a la sección de Espacios se listarán todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. 
+
+Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo, y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
 
 ## Crear un Espacio
 
