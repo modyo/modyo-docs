@@ -32,7 +32,14 @@ En este caso, los filtros son cinco:
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla. Así, antes de crearla, **Modyo** pedirá el tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
+Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla. 
+
+En primera instancia, **Modyo** pedirá el nombre, el slug y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/guides/content/types.html).
+
+:::warning Atención
+Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de la entrada como slug.
+:::
+
 
 Al hacer _click_ en **Crear**, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
@@ -63,7 +70,7 @@ Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisi
 La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
 :::
 
-### Vista Previa
+#### Vista Previa
 
 Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios a la vez.
 
@@ -76,18 +83,26 @@ Para asociar un Espacio a un Sitio, debes ir a [Configuración de Sitios](guides
 Si el Espacio no se encuentra asociado a un sitio, sólo podrás ver el código JSON de la entrada que estás desarrollando.
 :::
 
+#### Editar una entrada
+
+Si deseas editar una entrada, solo debes hacer _click_ en el nombre dentro del administrador.
+
+Después de esto, entrarás a la vista de edición en la que puedes cambiar el contenido y las propiedades de esta, como el nombre, el slug y los tags.
+
+En el caso de que la entrada se encuentre publicada, los cambios se harán automáticamente. Si esta se encuentra en proceso de Revisión en Equipo, los revisores deberán actualizar su vista para poder notar los cambios.
+
 ### Categorías
 
 Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
 
-Para ver las Categorías, es necesario que hagas click en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podrás ver todas las categorías que se encuentran ya hechas. 
+Para ver las Categorías, es necesario que hagas _click_ en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, podrás ver todas las categorías que se encuentran ya hechas. 
 
 #### Crear una Categoría
 
 Si quieres crear una categoría, solo debes hacer _click_ en el botón verde que se encuentra en la parte superior de la pantalla. Después, podrás ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
 ::: tip Tip
-Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
+Cuando se ingrese el nombre de la categoría, la ruta se establecerá predeterminádamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
 
 Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
