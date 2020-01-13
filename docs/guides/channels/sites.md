@@ -65,6 +65,12 @@ Las opciones a configurar son:
 - **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del Sitio. Puedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
 - **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
 
+:::tip Tip
+Los archivos robots.txt y el sitemap.xml solo serán visibles en el sitio, si es que este tiene el custom domain habilitado (dominio personalizado).
+
+ De lo contrario, robots.txt y sitemap.xml estarán solo a nivel de cuenta, tendrán sus valores por defecto y no se podrán personalizar.
+:::
+
 ### Restricciones
 
 <img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
