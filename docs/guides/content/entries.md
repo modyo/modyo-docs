@@ -40,11 +40,15 @@ En primera instancia, **Modyo** pedirá el nombre, el slug y tipo de entrada que
 Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de la entrada como slug.
 :::
 
-
-Al hacer _click_ en **Crear**, la entrada se creara y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
+Al hacer _click_ en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde podrás rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
 ::: tip Tip
-Para traducir una entrada ya escrita a un idioma distinto, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo. Así, llegarás a una versión de la entrada en blanco, donde podrás pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
+Para traducir una entrada ya escrita a un idioma distinto, deberás tener en cuenta que tu espacio debe estar configurado para los idiomas en los que quieres escribir. (Revisa [Configurar un Espacio](/guides/content/spaces.html#configurar-un-espacio))
+
+Después, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo. 
+
+Así, llegarás a una versión de la entrada en blanco, donde podrás pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
+
 :::
 
 ### Publicar una Entrada
@@ -62,7 +66,7 @@ Para saber más, puedes ver [Revisión en Equipo.](/guides/platform/team-review.
 
 ### Despublicar una entrada
 
-Para despublicar una entrada, debes acceder al ella y hacer _click_ en el botón **Despublicar** que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá a la categoría de Borrador y no se encontrará en la categoría de Publicados.
+Para despublicar una entrada, debes acceder al ella y hacer _click_ en el botón **Despublicar** que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá al estado de Borrador y no se encontrará en estado Publicado.
 
 Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
