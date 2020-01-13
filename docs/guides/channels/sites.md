@@ -12,10 +12,10 @@ Al entrar, podrás ver que existen 4 estados:
 
 <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
-- Habilitado (Estado por defecto en el que quedan los Sitios recién creados y los que están online)
-- Ocultos (Sitios creados que solo puede ver el usuario en linea)
-- Desarrollo (Sitios traspasados a otros usuarios que se encuentren trabajando en ellos)
-- Deshabilitado (Sitios que han sido desechados)
+- **Habilitado**: Estado por defecto en el que quedan los Sitios recién creados y los que están online.
+- **Oculto**: Sitios creados que solo puede ver el usuario en linea.
+- **Desarrollo**: Sitios traspasados a otros usuarios que se encuentren trabajando en ellos.
+- **Deshabilitado**: Sitios que han sido desechados.
 
 Para crear un Sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
 
@@ -74,8 +74,6 @@ Restricciones permite configurar la privacidad del Sitio.
 - Si el Sitio es público, entonces todos podrán ver el Sitio.
 - Si el Sitio es privado, solo usuarios con una sesión de Modyo podrán ver el Sitio.
 - Si el Sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen al Home, pero al navegar a cualquier otra página del Sitio, se les solicitará que se registren o que inicien sesión.
-
-Además, permite configurar la visualización del contenido targetizado de los usuarios registrados, para que solo se vea en la página "Mi" (página personal de cada usuario) o en cualquier página que navegue en el Sitio.
 
 ### Dominios
 
