@@ -80,7 +80,7 @@ Como plataforma headless, Modyo permite hacer una vista previa de un entrada en 
 
 Si ya se encuentra asociado a un sitio asociado, podrás ver el botón **Vista Previa en Sitio**, en el que podrás seleccionar dónde quieres ver cómo se está desarrollando tu recurso.
 
-Para asociar un Espacio a un Sitio, debes ir a [Configuración de Sitios](guides/channels/sites.html#configuracion-de-un-sitio).
+Para asociar un Espacio a un Sitio, debes ir a [Configuración de Sitios](/guides/channels/sites.html#configuracion-de-un-sitio).
 
 ::: danger Atención
 
