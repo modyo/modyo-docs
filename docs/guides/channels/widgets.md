@@ -6,7 +6,7 @@ search: true
 
 Los widgets son lo que te permite crear [microfrontends](/#) encapsulados para tus sitios y aplicaciones.
 
-Al entrar en la sección widgets de tu sitio, verás un listado de todos los widgets que se han creado. En la barra superior podrás filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
+Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los widgets que se han creado. En la barra superior podrás filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
 
 En la esquina superior derecha verás un botón principal **+ Nuevo** que te permitirá crear un nuevo widget. Deberás escribir un nombre para luego entrar a la vista de edición del widget.
 
@@ -64,7 +64,7 @@ Para aprender más sobre el flujo de publicación, revisa la sección de [Versio
 :::
 
 
-En el **área de trabajo** verás:
+En el área de trabajo verás:
 
 - **Pestañas de código**: Tendrás a tu disposición una pestaña de JavaScript, CSS y HTML para construir tus widgets.
 - **Gestor de archivos**: Al hacerle _click_, levantarás el modal de gestión de archivos, onde podrás filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/guides/content/asset-manager.html) y copiar su URL para usarlos en tu widget. También podrás subir nuevos archivos desde este modal.
@@ -82,7 +82,7 @@ Cuando publicas el widget, no verás cambios disponibles. Esto es porque cada ve
 
 En las tres pestañas del widget puedes hacer uso de Liquid. Para más información revisa [la documentación asociada a Liquid.](/guides/channels/liquid-markup.html)
 
-En la **columna de propiedades** verás: 
+En la columna de propiedades verás: 
 
 - **Nombre**: Te permitirá cambiar el nombre del widget
 - **Tags**: Te permitirá añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
