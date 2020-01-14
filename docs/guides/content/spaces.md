@@ -34,9 +34,11 @@ En este caso, la configuración de Espacios sirve para cambiar las característi
 
 ### General
 
-Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
+En esta sección, puedes cambiar el nombre del Espacio o su UID.
 
-El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, dado que será usado en las URL para acceder al contenido.
+El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). 
+
+Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
 
 ### Localización
 
