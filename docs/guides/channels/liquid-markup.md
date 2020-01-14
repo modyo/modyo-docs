@@ -6,9 +6,9 @@ search: true
 
 Liquid es un motor de plantillas que está escrito con requerimientos muy específicos:
 
-* Tiene que tener un marcado bonito y sencillo. Los motores de plantillas que no producen un marcado atractivo no son divertidos de usar.
+* Debe tener un marcado bonito y sencillo. Los motores de plantillas que no producen un marcado atractivo no son divertidos de usar.
 * Tiene que ser no evaluable y seguro. Las plantillas Liquid están hechas para que los usuarios puedan editarlas. No quieres ejecutar código en tu servidor que tus usuarios escribieron.
-* No tiene que tener estado. Los pasos de compilación y renderizado tienen que estar separados para que el análisis sintáctico y su compilación se pueda hacer solo una vez, y más tarde se pueda renderizar pasando un hash con objetos locales y variables.
+* No debe tener un estado. Los pasos de compilación y renderizado tienen que estar separados para que el análisis sintáctico y su compilación se pueda hacer solo una vez, y más tarde se pueda renderizar pasando un hash con objetos locales y variables.
 
 ### ¿Por qué usamos Liquid?
 
@@ -188,7 +188,7 @@ Las sentencias `if / else` deberían ser conocidas de otros lenguajes de program
 * `{% elsif <CONDITION> %}` — Puede utilizarse opcionalmente dentro de un bloque `if .... endif`. Especifica otra condición; si el "if" inicial falla, Liquid prueba el "elsif", y ejecuta la siguiente sección de la plantilla si tiene éxito. Se puede usar cualquier número de elsif en un bloque `if` * `{% else %}` - Opcionalmente se puede usar dentro de un bloque `if... endif`, _después_ de cualquier etiqueta "elsif". Si todas las condiciones anteriores fallan, Liquid ejecutará la sección de la plantilla siguiendo la etiqueta "else".
 * `{% unless <CONDITION> %} ... {% endunless %}` — El reverso de una sentencia "if". No uses "elsif" o "else" con una sentencia unless.
 
-La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liquid normal o una _comparación_ usando expresiones de Liquid. Tenga en cuenta que los operadores de comparación se implementan mediante etiquetas similares a "if"; no funcionan en ningún otro lugar en Liquid.
+La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liquid normal o una _comparación_ usando expresiones de Liquid. Ten en cuenta que los operadores de comparación se implementan mediante etiquetas similares a "if"; no funcionan en ningún otro lugar en Liquid.
 
 Los operadores relacionales disponibles son: 
 

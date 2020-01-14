@@ -14,7 +14,7 @@ De esta manera, se agrega un nivel de supervisión y colaboración entre el edit
 
 Cuando un editor o un desarrollador considera que el elemento en el que está trabajando se encuentra listo, puede enviarlo a revisión.
 
-La tarea que será realizada por usuarios habilitados para ello o por un equipo escogido por él mismo. 
+Esta tarea puede ser realizada por usuarios habilitados por defecto o por un equipo escogido por el editor.
 
 Ellos serán los responsables de aprobar o rechazar el elemento, y determinará finalmente si ya está en condiciones de ser publicado.
 
@@ -22,7 +22,7 @@ Cada paso de este proceso lleva al elemento por distintos estados, que quedan re
 
 [Imagen de etapas de revisión]
  
-Esta herramienta está disponible tanto para sitios (páginas, navegación, widgets y templates) como para espacios (entries). 
+Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios). 
 
 La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
 
@@ -53,8 +53,6 @@ Cuando haces cambios en la configuración de revisión en equipo, los elementos 
 
 Para que esos elementos tomen en cuenta la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
 :::
-
-### Uso (ejemplo)
 
 ### Roles y permisos
 

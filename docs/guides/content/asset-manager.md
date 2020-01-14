@@ -32,15 +32,15 @@ La segunda es directamente a través de la herramienta del gestor de archivos qu
 
 <img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
-La primera interfaz que verás es una lista de todos los archivos que existen dentro de la plataforma.
+La primera interfaz es una lista de todos los archivos que existen dentro de la plataforma.
 
-En la parte superior derecha de la pantalla podrás ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
+En la parte superior derecha de la pantalla puedes ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
 
 El listado cuenta con tres tipos de filtros que te serán útiles para encontrar un archivo.
 
 <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
 
-**Extensiones**: Con este filtro podrás ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma).
+**Extensiones**: Con este filtro puedes ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma).
 
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
@@ -67,7 +67,7 @@ Para esta vista, las columnas son:
 
 Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. La opción de ordenamiento  **predeterminada** es la fecha de actualización de los archivos.
 
-**Previsualizar**: Si la plataforma identifica que el archivo es una imagen, podrás ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
+**Previsualizar**: Si la plataforma identifica que el archivo es una imagen, puedes ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
 
 **Nombre**: Nombre del archivo con la extensión incluida. El ordenamiento es por orden alfabético.
 
@@ -79,7 +79,7 @@ Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. 
 
 **Autor**: Nombre del usuario que subió el archivo, siempre y cuando el usuario tenga asignado un nombre.
 
-Finalmente, en la esquina inferior derecha, podrás encontrar la paginación de todos los archivos del sistema.
+Finalmente, en la esquina inferior derecha, puedes encontrar la paginación de todos los archivos del sistema.
 
 
 ## Propiedades de los archivos
@@ -88,15 +88,15 @@ Finalmente, en la esquina inferior derecha, podrás encontrar la paginación de 
 
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
 
-Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
+Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconoce y clasifica el archivo según su uso y después su extensión.
 
-Para acceder a las propiedades de los archivos, se debe hacer _click_ en el nombre de este. De esta manera, se levantará un modal en el que podrás editar cada una de las propiedades.
+Para acceder a las propiedades de los archivos, se debe hacer _click_ en el nombre de este. De esta manera, se levanta un modal en el que puedes editar cada una de las propiedades.
 
 ## Editar un archivo
 
 <img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
 
-En la interfaz de edición de las propiedades del archivo, podrás ver ciertos campos:
+En la interfaz de edición de las propiedades del archivo, puedes ver ciertos campos:
 
 **URL del Archivo**: Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo _click_ en el ícono lateral.
 
@@ -124,7 +124,7 @@ Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer 
 
 ## Resubir una imagen
 
-Si quieres volver a subir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
+Si quieres volver a subir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, muestra una nueva ventana donde puedes seleccionar un archivo nuevo.
 
 <img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
 
@@ -136,15 +136,15 @@ Para facilitar el manejo de imágenes dentro de la plataforma, Modyo incluye un 
 
 Uno de los cambios que se puede hacer es editar las medidas de la imagen. Para ello, haz _click_ en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
 
-Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
+Tras ello, se despliega otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
-Posteriormente, podrás ver las tres opciones que puedes elegir para editar el tamaño:
+Posteriormente, puedes ver las tres opciones que puedes elegir para editar el tamaño:
 
 - **16:9**: Edita la imagen en una proporción de 16:9.
 - **Cuadrado**: Edita la imagen al tamaño de un cuadrado.
 - **Libre**: Edita la imagen a un tamaño libre en pixeles que puedes cambiar en la parte inferior de la pantalla.
 
-A un costado, podrás observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
+A un costado, puedes observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
 
 ::: tip Tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
@@ -153,25 +153,25 @@ Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 - **Mover fondo:** Haz doble _click_ fuera de la zona de recorte y arrastra el fondo.
 :::
 
-Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón **Restaurar Original**, lo cual provocará que la imagen vuelva a su estado original pero la modificada se perderá permanentemente.
+Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encuentras el botón **Restaurar Original**, lo cual provoca que la imagen vuelva a su estado original pero la modificada se pierde permanentemente.
 
 ## Borrar un archivo
 
 Para borrar un archivo en específico se debe hacer _click_ en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
 
 ::: warning Atención
-Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
+Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no puedes recuperarlo y aparece como un link roto.
 :::
 
 ## Subir un archivo
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
+Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
 Para subir el archivo, se debe hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
 
-Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras:
+Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
 
 - **Drag & Drop**: Arrastrar desde el navegador de archivos de tu computador hacia la ventana)
 - **Manera tradicional**: A través del navegador, pinchando y seleccionado los archivos

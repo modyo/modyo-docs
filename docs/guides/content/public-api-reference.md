@@ -638,7 +638,7 @@ La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSO
 
 ## Contenido privado
 
-Siempre que uses la API de contenido, podrás acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
+Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
 
 :::tip Tip
 Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los targets automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
