@@ -50,11 +50,11 @@ Sólo se pueden archivar los widgets que han sido despublicados previamente.
 :::
 
 :::warning Atención
-Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la plataforma. Si este se encuentra en uso, no se puede despublicar. 
+Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la plataforma. Si este se encuentra en uso, no estará habilitada la función. 
 :::
 
 :::tip Tip
-Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Puedes restaurar un widget archivado, entrando a su vista de edición y usando la opción restaurar en la esquina superior derecha de la vista.
+Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Puedes restaurar un widget archivado, entrando a su vista de edición y usando la opción ***Restaurar*** en la esquina superior derecha de la vista.
 :::
 
 Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/guides/channels/pages.html)
