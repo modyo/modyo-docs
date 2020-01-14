@@ -43,7 +43,7 @@ _click_ en este icono, abrirás el modal de diferencias, en el cual podrás comp
 **Otras acciones principales:**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
 
 - Despublicar: Si el widget está publicado, podrás sacarlo de producción usando esta opción.
-- Forzar publicación: Si eres administrador del sitio, podrás hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está la revisión en equipo habilitada.
+- Forzar publicación: Si eres administrador del sitio, podrás hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
 
 :::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
@@ -54,7 +54,7 @@ Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la 
 :::
 
 :::tip Tip
-Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Puedes restaurar un widget archivado, entrando a su vista de edición y usando la opción ***Restaurar*** en la esquina superior derecha de la vista.
+Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Puedes restaurar un widget archivado, entrando a su vista de edición y usando la opción **Restaurar** en la esquina superior derecha de la vista.
 :::
 
 Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/guides/channels/pages.html)
