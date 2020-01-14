@@ -47,6 +47,7 @@ _click_ en este icono, abrirás el modal de diferencias, en el cual podrás comp
 
 :::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
+:::
 
 :::warning Atención
 Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la plataforma. Si este se encuentra en uso, no se puede despublicar. 
