@@ -6,26 +6,26 @@ search: true
 
 Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar los templates base, junto con el JavaScript y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
 
-Cuando ya se ha seleccionado el tema que se usará dentro del sitio, puedes acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
+Cuando ya se selecciona el tema que se usa dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
-Una vez dentro del Template Builder, verás que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encontrarás el nombre de la sección y el estado de publicación actual:
+Una vez dentro del Template Builder, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual:
 
 - **Publicado**: Cuando ya existe una versión publicada y su version editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
+- **En revisión**: Cuando se habilita la [revisión en equipo](guides/platform/team-review.html) y se ha enviado a revisión la versión editable.
+- **Aprobado**: Cuando se habilita la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
-En la parte superior derecha, encontrarás la última fecha de publicación y las acciones disponibles:
+En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
-**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer _click_ en este icono se abrirá una nueva pestaña con el modo vista previa de los templates, en el cual podrás ver como si estuvieran publicados, todos los cambios que tienes en tus templates.
+**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer _click_ en este icono se abre una nueva pestaña con el modo vista previa de los templates, en el cual podrás ver como si estuvieran publicados, todos los cambios que tienes en tus templates.
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer _click_ en este icono, abrirás el modal de diferencias, en el cual podrás comparar los cambios que hay entre múltiples versiones de tus templates. 
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer _click_ en este icono, abres el modal de diferencias, en el cual podrás comparar los cambios que hay entre múltiples versiones de tus templates. 
 
-Por defecto, partirás comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, podrás comparar además con las versiones de respaldo.
+Por defecto, partes comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, puedes comparar además con las versiones de respaldo.
 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. 
@@ -36,26 +36,26 @@ Para más información sobre el versionamiento, échale un vistazo a la sección
 
 **Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con el historial de actividad y comentarios de los templates. 
 
-Al final de la barra lateral, verás una caja de texto donde podrás escribir un comentario. Junto a cada actividad, podrás hacer _click_ en **ver detalle** para mostrar la información completa de ese registro de actividad.
+Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer _click_ en **ver detalle** para mostrar la información completa de ese registro de actividad.
 
 **Más acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
-- **Temas**: Irás directo al indice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/guides/channels/templates.html#temas)
-- **Restaurar todo**: Restaurarás todos los templates al valor original del tema.
+- **Temas**: Se dirige directo al indice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/guides/channels/templates.html#temas)
+- **Restaurar todo**: Restauras todos los templates al valor original del tema.
 
 **Acción principal**
 
-- **Guardar**: Guardará todos los cambios de todos los templates.
-- **Enviar a revisión**: Cambia el estado de los templates a "Esperando revisión". En este estado podrás seguir haciendo cambios, pero cada cambio será notificado via correo a los revisores asignados.
+- **Guardar**: Guarda todos los cambios de todos los templates.
+- **Enviar a revisión**: Cambia el estado de los templates a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado via correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que los templates fueron aprobados, se podrán pasar a la versión publicada.
+- **Publicar**: Una vez que los templates fueron aprobados, se pueden pasar a la versión publicada.
 
-En el área de trabajo principal, podrás ver dos secciones:
+En el área de trabajo principal, puedes ver dos secciones:
 
 - El área de trabajo.
 - El area de selección de templates.
 
-Cada template al que le hagas _click_ en la barra lateral derecha, se abrirá en el área central, muy similar a un IDE. Si abres múltiples templates, estos quedarán abiertos como pestañas en el área de trabajo.
+Cada template al que le hagas _click_ en la barra lateral derecha, se abre en el área central, muy similar a un IDE. Si abres múltiples templates, estos quedan abiertos como pestañas en el área de trabajo.
 
 La barra de templates a la derecha tiene dos pestañas: vistas y snippets.
 
@@ -83,30 +83,30 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 
 <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Gestor de archivos**: Se levantará un modal donde podrás acceder a todos los archivos de la cuenta y copiar su URL, si accedes a la segunda pestaña, podrás subir nuevos archivos.
+**Gestor de archivos**: Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
 
 :::tip Tip
 Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/docs/content/asset-manager.html)
 :::
 
-**Atajos de teclado**: Se mostrará un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el Template Builder.
+**Atajos de teclado**: Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el Template Builder.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
 
-**Snippets**: Se desplegará un listado con todos los snippets, junto a la opción de copiar su código de referencia.
+**Snippets**: Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300">
 
-**Cambios**: Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer _click_ en alguna de las sub-versiones, cambiarás el contenido del template en el que estás trabajando a esa sub-versión.
+**Cambios**: Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer _click_ en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
 
 :::tip Tip
-Si publicas una versión, verás que el listado de cambios desaparece, esto es porque la nueva versión editable no ha tenido ningún cambio.
+Si publicas una versión, puedes ver que el listado de cambios desaparece, esto es porque la nueva versión editable no ha tenido ningún cambio.
 :::
 
 :::tip Tip
-Las sub-versiones son por cada template, por lo que para algunos verás que hay cambios y para otros no verás el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectarás al resto de los templates.
+Las sub-versiones son por cada template, por lo que para algunos puedes observar que hay cambios y para otros no verás el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectas al resto de los templates.
 :::
 
 :::tip Tip
@@ -118,11 +118,11 @@ Al igual que cada template, puedes restaurar todos los templates a su versión o
 
 ### Temas
 
-En esta vista podrás ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. 
+En esta vista puedes ver cuál es el tema que tienes instalado, y luego el listado de todos los temas disponibles para el sitio. 
 
-Haciendo _click_ en el botón **Instalar** de un tema, reemplazarás todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Podrás previsualizar los cambios usando el modo vista previa del Template Builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
+Haciendo _click_ en el botón **Instalar** de un tema, reemplazas todo el contenido de tus temas editables por el contenido de el tema que estás instalando. Puedes previsualizar los cambios usando el modo vista previa del Template Builder y luego publicarlos para llevar ese nuevo tema al sitio publicado.
 
-En la parte superior encontrarás distintas acciones:
+En la parte superior encuentras distintas acciones:
 
 - **Personalizar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te lleva a la edición (Template Builder) del tema actualmente instalado.
 - **Copiar** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Crea una copia del tema instalado. Te permitirá elegir un nuevo nombre para el tema copia del instalado.
@@ -348,7 +348,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ### Un controlador de sesiones
 
 ```js
-// se encargará de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace _click_ en el botón Mantener Sesión y que lanzara una promesa reject en el caso de seleccionar el botón con la negativa de continuar
+// se encarga de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace _click_ en el botón Mantener Sesión y que lanzara una promesa reject en el caso de seleccionar el botón con la negativa de continuar
 var modalConfirm = function() {
   return new Promise(function(resolve, reject) {
     $("#session-modal").modal({
@@ -366,7 +366,7 @@ var modalConfirm = function() {
     });
   });
 };
-// será la que se encargará de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
+// será la que se encarga de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
 var sessionManager = {
   // propiedad que define el tiempo desde la ultima actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
   timeToEndSessionInSeconds: 900,
@@ -384,7 +384,7 @@ var sessionManager = {
   isModyoAppShell: function() {
     return /; Modyo_App_Shell/.test(navigator.userAgent);
   },
-  // método que debe ser ejecutado en cada carga de pagina para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se definirá que los developers no lancen esta invocación en ese caso la API de prueba a conectar debe tener también este if y así lograrás que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
+  // método que debe ser ejecutado en cada carga de pagina para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se define que los developers no lancen esta invocación en ese caso la API de prueba a conectar debe tener también este if y así lograrás que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
   init: function() {
     this.resetIdleTime();
     this.intevalId=this.interval();
@@ -401,7 +401,7 @@ var sessionManager = {
       this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
     localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
   },
-  // método que inicia la actividad cada segundo js que manejará los eventos de sesión
+  // método que inicia la actividad cada segundo js que maneja los eventos de sesión
   interval: function() {
     var self = this;
     return setInterval(this.checkSessionEvents, 1000, self);
@@ -457,7 +457,7 @@ var sessionManager = {
 
 ### Una ventana modal que informe al usuario que su sesión va a expirar
 
-Este sería el modal a activar en el paso anterior con bootstrap para el manejo del warning modal.
+Este es el modal a activar en el paso anterior con bootstrap para el manejo del warning modal.
 
 ```html
 <div

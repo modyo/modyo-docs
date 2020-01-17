@@ -37,8 +37,8 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/guides/channels/templates.html#vistas-para-contenido).
 - **[Team Review](/guides/platform/team-review.html)**
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
-- **Favicon**: Imagen que aparece al costado de la barra de dirección
-- **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación
+- **Favicon**: Imagen que aparece al costado de la barra de dirección.
+- **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
 - **Espacios asociados**: Espacios relacionados que podrán mostrar sus entradas en este sitio.
 
 ### PWA
@@ -60,8 +60,8 @@ El SEO (Search Engine Optimization) es la llave para aparecer en los distintos m
 
 Las opciones a configurar son:
 
-- **Tagline**: Descripción que aparecerá en los motores de búsqueda, bajo el nombre del sitio
-- **Palabras claves**: Palabras que buscarán los usuarios y que quieres que el sitio aparezca.
+- **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
+- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca.
 - **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del sitio. Puedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
 - **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
 
@@ -77,15 +77,15 @@ Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es qu
 
 Restricciones permite configurar la privacidad del sitio.
 
-- Si el sitio es público, entonces todos podrán ver el sitio.
+- Si el sitio es público, entonces todos pueden ver el sitio.
 - Si el sitio es privado, solo usuarios con una sesión de Modyo podrán ver el sitio.
-- Si el sitio es privado, pero el home es público, el home se mostrará a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicitará que se registren o que inicien sesión.
+- Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
 
 ### Dominios
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-La sección Dominios te permitirá saber dónde está publicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma esté al tanto de los cambios que se realicen aquí.
+La sección Dominios te permite saber dónde está publicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma sean informados de los cambios que se realicen aquí.
 
 Las variables que puedes cambiar aquí son:
 
