@@ -4,7 +4,7 @@ search: true
 
 # Widgets
 
-Los widgets son lo que te permite crear _microfrontends_ encapsulados para tus sitios y aplicaciones.
+Los widgets son los que te permiten crear _microfrontends_ encapsulados para tus sitios y aplicaciones.
 
 Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los widgets que se han creado. En la barra superior podrás filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
 
@@ -36,9 +36,9 @@ _click_ en este icono, abrirás el modal de diferencias, en el cual podrás comp
 
 **Botón principal:**
 
-- Guardar: Guarda los cambios actuales.
-- Enviar a revisión: Si está la revisión en equipo habilitada, entonces podrás enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
-- Publicar: Pasa la versión editable o aprobada (si está habilitada la revisión en equipo) a la versión publicada.
+- **Guardar**: Guarda los cambios actuales.
+- **Enviar a revisión**: Si está la revisión en equipo habilitada, entonces podrás enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
+- **Publicar**: Pasa la versión editable o aprobada (si está habilitada la revisión en equipo) a la versión publicada.
 
 **Otras acciones principales:**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
 

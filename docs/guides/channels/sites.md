@@ -35,7 +35,7 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
 - **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
 - **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/guides/channels/templates.html#vistas-para-contenido).
-- **[Team Review](/guides/platform/team-review.html)**
+- **[Revisión en Equipo](/guides/platform/team-review.html)**
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
