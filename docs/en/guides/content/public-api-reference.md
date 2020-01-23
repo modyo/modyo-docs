@@ -46,7 +46,7 @@ The selection of entries always returns an arrangement, so it is necessary to it
 {% assign entry=entries.first%}
 ```
 
-You can paginate the entries using the `paginated` filter and display the pagination links with the` pagination_links` filter, for example:
+You can paginate the entries using the `paginated` filter and display the pagination links with the `pagination_links` filter, for example:
 
 ``` liquid
 {% assign entries=spaces ['space_uid']. types ['type_uid']. entries | paginated: 10%}
