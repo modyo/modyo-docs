@@ -84,55 +84,62 @@ El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilid
 
 ## SDK de Javascript
 
-El SDK de Modyo es una librería que facilita la interacción de aplicaciones basadas en JavaScript con la API pública de Modyo.
+El **SDK de Modyo** es una librería que facilita la interacción de aplicaciones basadas en JavaScript con la API pública de Modyo.
 
-Mediante el SDK podrás obtener, filtrar y ordenar tu contenido creado para así poder aprovechar al 100% las capacidades nuesta API Headless.
+Mediante el SDK se puede obtener, filtrar y ordenar tu contenido creado para poder aprovechar por completo las capacidades de la API Headless.
 
 Asimismo, el SDK de Modyo permite obtener información del usuario final que ya haya iniciado sesión en la plataforma, para personalizar aún más la interacción de este con tu sitio.
 
 Para comenzar a utilizar el SDK, sólo debes incluír su módulo en tu package.json `@modyo/sdk` y luego referenciarlo en tu código JavaScript:
 `import Client from '@modyo/sdk';`. 
 
-Una vez listo, puedes inicializar el cliente llamando a `const client = new Client('account_url')` siendo `account_url` la dirección web de la cuenta de Modyo.
+Una vez listo, se puede inicializar el cliente llamando a `const client = new Client('account_url')` siendo `account_url` la dirección web de la cuenta de Modyo.
 
 ### Contenido
+
 El SDK permite acceder tanto a contenido público como privado/targetizado, facilitando la interacción con nuestra API Headless.
 
 #### Contenido público
+
 Para obtener contenido público, es necesario instanciar el Tipo de Contenido, por lo que se debe llamar a la siguiente función: `ctype = client.getContentType('spaceUID', 'typeUID');` siendo `spaceUID` y `typeUID` los identificadores únicos del Content Space y Content Type requeridos.
 
 Una vez instanciado, se puede realizar consultas por todo el contenido (`ctype.getEntries().then(data => console.log(data))`), el contenido mediante filtros (ver sección a continuación), o el JSONSchema del Content Type. `ctype.getSchema().then(schema => console.log(schema));`.
-Una vez obtenido el JSONSchema del Tipo de contenido, es posible ver un objeto de sus atributos llamando a `ctype.getAttrs()` este listado puede ser útil para armar filtros en la consulta luego.
+
+Cuando ya se haya obtenido el JSONSchema del Tipo de contenido, es posible ver un objeto de sus atributos llamando a `ctype.getAttrs()` este listado puede ser útil para armar filtros en la consulta.
 
 #### Contenido privado
+
 Para obtener contenido privado, es necesario instanciar también el Tipo de Contenido, esta vez con una flag indicando que no se tratará de contenido público: `ctype = client.getContentType('spaceUID', 'typeUID', false);`
 
 :::warning Atención
-Es importante que trates esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
+Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
 :::
 
-#### Filtros de contenido.
-En ciertas ocasiones, no queremos obtener todo el contenido de un Tipo. Para dichas ocasiones, ModyoSDK provee de filtros aplicables a la consulta.
+#### Filtros de contenido
+
+En ciertas ocasiones, no se quiere obtener todo el contenido de un Tipo. Para dichas ocasiones, ModyoSDK provee de filtros aplicables a la consulta.
 
 Para crear un filtro, hay que inicializarlo con `ctype.Filter()`, y luego al mismo objeto se le pueden ir concatenando diferentes filtros:
 `const filters = ctype.Filter().Before('meta.created_at','2020-05-01').In('meta.tag',['tag1','tag2'])`
 
-:::tip Tip
-Filtros soportados:
-Before, After, LessThan, GreaterThan: reciben como parámetro el nombre del campo a comparar y el valor con el que se comparará.
+**Filtros soportados**:
 
-In, NotIn, Has: reciben como parámetro el nombre del campo a comparar y un arreglo de valores con los que se comparará. In es equivalente a un `AND` en SQL, Has es equivalente a un `OR`
-SortBy: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`)
+- **Before, After, LessThan, GreaterThan**: reciben como parámetro el nombre del campo a comparar y el valor con el que se comparará.
+
+- **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `AND` en SQL, Has es equivalente a un `OR`.
+
+- **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`)
+
+
+:::warning Atención
+Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
 :::
 
-:::warning Atención [warn]
-Si se pretende filtrar por fecha, es importante que el valor del filtro utilize el estándar ISO-8601.
-:::
-
-Una vez creados los filtros, se puede llamar a la consulta `getEntries` dando los filtros respectivos como parámtro:
+Una vez creados los filtros, se puede llamar a la consulta `getEntries` dando los filtros respectivos como parámetro:
 `ctype.getEntries(filters).then(data => console.log(data))`
 
 ### Información de Usuario Final
+
 :::warning Atención
 Es importante que trates esta información sensible con cuidado. Al igual que con Contenido privado, esta información sólo es obtenible si se trabaja desde un navegador que soporte cookies, y el usuario final haya iniciado sesión en la plataforma.
 
