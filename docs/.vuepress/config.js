@@ -94,21 +94,12 @@ module.exports = {
                   ]
                 },
                 {
-                  title: "Commerce",
-                  collapsable: true,
-                  children: [
-                    ["/guides/commerce/","Introducción"],
-                    "/guides/commerce/orders"
-                  ]
-                },
-                {
                   title: "Insights",
                   collapsable: true,
                   children: [
                     ["/guides/insights/","Introducción"],
                     "/guides/insights/digital-factory",
-                    "/guides/insights/customers",
-                    "/guides/insights/payments"
+                    "/guides/insights/customers"
                   ]
                 }
               ]
@@ -182,21 +173,12 @@ module.exports = {
                   ]
                 },
                 {
-                  title: "Commerce",
-                  collapsable: true,
-                  children: [
-                    ["/en/guides/commerce/","Introduction"],
-                    "/en/guides/commerce/orders"
-                  ]
-                },
-                {
                   title: "Insights",
                   collapsable: true,
                   children: [
                     ["/en/guides/insights/","Introduction"],
                     "/en/guides/insights/digital-factory",
-                    "/en/guides/insights/customers",
-                    "/en/guides/insights/payments"
+                    "/en/guides/insights/customers"
                   ]
                 }
               ]

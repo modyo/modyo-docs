@@ -4,7 +4,7 @@ search: true
 
 ### Customers
 
-Así como en Digital Factory podemos ver una estadística directa de los miembros del equipo, Customers permite obtener una panorámica global de lo que hacen nuestros clientes dentro de ella y del comportamiento del contenido que ha llegado a ellos.
+Así como en Digital Factory puedes ver una estadística directa de los miembros del equipo, Customers permite obtener una panorámica global de lo que hacen los usuarios finales dentro de ella y del comportamiento del contenido que ha llegado a ellos.
 
 Los filtros disponibles son:
 
@@ -12,7 +12,7 @@ Los filtros disponibles son:
 - Target
 - Sitio
 
-**Usuarios activos**: Conteo de todos los usuarios con dos o mas registros de actividad en el periodo seleccionado.
+**Usuarios activos**: Conteo de todos los usuarios con dos o más registros de actividad en el periodo seleccionado.
 
 **Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertas.
 
@@ -24,7 +24,7 @@ Los filtros disponibles son:
 
 ### Actividad de usuarios
 
-En este gráfico podemos ver una comparativa entre dos valores que representan acciones de usuarios en los sitios.
+En este gráfico verás una comparativa entre dos valores que representan acciones de usuarios en los sitios.
 
 Puedes seleccionar cualquiera de estos conteos de valores para comparar:
 

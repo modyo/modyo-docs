@@ -15,10 +15,10 @@ Actualmente la plataforma es compatible con:
 - OAuth2
 - OpenID Connect
 
-Recuerda tener a mano todos los datos y certificados que se te exigen, antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
+Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
 :::tip Tip
-Desde Modyo 9 en adelante, los usuarios (Customers>Usuarios) y administradores (Settings>Equipo) están separados lógicamente, y ambos cuentan con las mismas integraciones, pero con inicios de sesión distintos, por lo que puedes configurar, por ejemplo, facebook para tus usuarios y Oauth2 para tus administradores.
+Desde Modyo 9 en adelante, los usuarios (Customers>Usuarios) y administradores (Settings>Equipo) están separados lógicamente. Ambos cuentan con soporte para todas las integraciones compatibles con la plataforma, pero con inicios de sesión distintos, por lo que puedes configurar, por ejemplo, Facebook para tus usuarios y Oauth2 para tus administradores.
 :::
 
 ## Facebook
@@ -39,7 +39,7 @@ Para poder integrar el inicio de sesión de Google con Modyo, deberás contar co
 
 Estos valores los podrás obtener luego de crear una aplicación en Google con permisos para inicio de sesión. Puedes aprender más sobre como crear y configurar una aplicación de Google en su [Documentación oficial](https://developers.google.com/identity/sign-in/web/sign-in).
 
-Debes tener en cuenta que al final del formulario se encuentra disponible la URL de callback (_Callback  URI_). Es necesario usar esa URL en la aplicación o proyecto que crees en Google para poder completar el flujo de inicio de sesión correctamente
+Debes tener en cuenta que al final del formulario se encuentra disponible la URL de callback (_Callback  URI_). Es necesario usar esa URL en la aplicación o proyecto que crees en Google para poder completar el flujo de inicio de sesión correctamente.
 
 Además de los valores necesarios, puedes configurar algunos datos extra para controlar el comportamiento del inicio de sesión con Google. Si habilitas la opción _Restringir dominios_, podrás usar dos campos extra:
 
@@ -50,15 +50,15 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 
 Para poder integrar un inicio de sesión con LDAP en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
-- Nombre del servicio: Se mostrará bajo el ícono o logo de inicio de sesión del servicio.
-- Host: Dirección en la cual se encuentra disponible el servicio de inicio de sesión LDAP
-- Puerto: Puerto con que se debe comunicar Modyo y tu servicio de identificación LDAP.
-- Base
-- UID: Nombre del campo que usa el servicio LDAP para identificar a los usuarios como atributo único.
-- Bind DN: Credenciales por defecto.
-- Password
-- Método: Método de autenticación con el servicio de identidad LDAP
-- Logo: No es requerido, pero si quieres que junto al nombre del servicio, aparezca, por ejemplo, el logo de tu empresa, puedes subir una imagen en este campo.
+- **Nombre del servicio**: Se mostrará bajo el ícono o logo de inicio de sesión del servicio.
+- **Host**: Dirección en la cual se encuentra disponible el servicio de inicio de sesión LDAP
+- **Puerto**: Puerto con que se debe comunicar Modyo y tu servicio de identificación LDAP.
+- **Base**: Base de búsqueda, compuesta por múltiples objetos separados por comas.
+- **UID**: Nombre del campo que usa el servicio LDAP para identificar a los usuarios como atributo único.
+- **Bind DN**: Credenciales por defecto.
+- **Password**
+- **Método**: Método de autenticación con el servicio de identidad LDAP.
+- **Logo**: No es requerido, pero si quieres que aparezca junto al nombre del servicio, por ejemplo, el logo de tu empresa, puedes subir una imagen en este campo.
 
 ## SAML
 
@@ -72,7 +72,7 @@ Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los sig
 - Firma del certificado del proveedor de identidad
 - Formato del identificados de nombre
 - URL de callback del servicio: Por defecto esta URL es `account_url/admin/auth/saml/callback`
-- Logo: AL igual que en LDAP, esta imágen se mostrará como logo del servicio junto al nombre del servicio en el formulario de inicio de sesión.
+- Logo: AL igual que en LDAP, esta imagen se mostrará como logo del servicio junto al nombre del servicio en el formulario de inicio de sesión.
 
 ## OAuth2
 
@@ -83,10 +83,10 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 - URL de autenticación: URL del servicio de autenticación OAuth2
 - ID de cliente
 - Clave (secret)
-- Scope: Si es que tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios, y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
-- Campo para inicio de sesión: Podrás elegir entre usar el correo de los usuarios de Modyo, o su nombre de usuario. Esta opción es útil si es que en tu proveedor de autenticación OAuth2, usas un campo numérico y no un email como identificador.
-- Placeholder para el inicio de sesión: Texto que se mostrará en el campo de identificación como placeholder si es que el usuario no ha rellenado el campo
-- Usar SSL: Si es que tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
+- Scope: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
+- Campo para inicio de sesión: Podrás elegir entre usar el correo de los usuarios de Modyo, o su nombre de usuario. Esta opción es útil si tu proveedor de autenticación OAuth2 utiliza, por ejemplo, un campo numérico y no un email como identificador.
+- Placeholder para el inicio de sesión: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo
+- Usar SSL: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
 
 ## OpenID Connect
 
@@ -107,17 +107,17 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 
 1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
-3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
+3. Haz _click_ en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
 #### Configuraciones opcionales de la integración
 
-Para hacer una integración específica, puedes habilitar ciertas configuraciones para controlar ciertas características de la sesión, puedes hacerlo a través de Modyo.
+Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:  
 
 |                                                                     |                                                                                                                                                                                                                        |
 |---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak, deshabilitando la experiencia SSO. |
+| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak y deshabilitando la experiencia SSO. |
 | **Habilitar revocación de token**                                   | No soportado por Keycloak                                                                                                                                                                                              |
 | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                             |
 |                                                                     |                                                                                                                                                                                                                        |
@@ -148,7 +148,7 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    |                                        |                                                                                                                                                                                                                        |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, deshabilitando la experiencia SSO. |
+   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, y deshabilitando la experiencia SSO. |
    | **Habilitar revocación de token**                | No soportado por Azure AD|
    | **Habilitar sincronización de _claims_ al momento de iniciar sesión** | Habilita la sincronización de _claims_ OpenID Connect con custom fields en Modyo.                                                                                         |
 

@@ -4,19 +4,23 @@ search: true
 
 # Espacios
 
-Un Espacio es un lugar acotado donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas para usar tanto dentro o fuera de Modyo a través de su API pública o en la creación de un sitio a través de Channels.
+Un Espacio es un formato de recursos donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas. 
+
+Todos los elementos se pueden usar dentro o fuera de **Modyo** a través de su API pública o en la creación de un sitio en Channels.
 
 Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
 
-Espacios también nos permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
+Espacios también te permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
-Al acceder a la sección de espacios se  listaran todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo   y filtrar a través de un buscador que buscara coincidencias con los nombres de los espacios existentes.
+Al acceder a la sección de Espacios se listarán todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. 
+
+Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo, y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
 
 ## Crear un Espacio
 
-Para crear un Espacio, se debe hacer click en el botón verde en la parte superior derecha de la vista índice de Espacios, y asignar el nombre y el UID que usaremos.
+Para crear un Espacio, se debe hacer _click_ en el botón verde en la parte superior derecha de la vista índice de Espacios, y asignar el nombre y el UID que usarás.
 
-Además, deberemos seleccionar el idioma por defecto sobre el cual se escribirá el contenido que publicaremos, para una mejor configuración de los caracteres.
+Además, deberás seleccionar el idioma por defecto sobre el cual se escribirá el contenido que quieres publicar, para una mejor configuración de los caracteres.
 
 :::tip Tip
 Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del Espacio.
@@ -24,15 +28,17 @@ Más adelante, en la configuración podrás definir otros idiomas secundarios pa
 
 ## Configurar un Espacio
 
-En este caso, la configuración de Espacios nos sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
+En este caso, la configuración de Espacios sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
 
 <img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300">
 
 ### General
 
-Para cambiar el nombre del Espacio o su UID, es posible hacerlo desde acá.
+En esta sección, puedes cambiar el nombre del Espacio o su UID.
 
-El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, dado que será usado en las URL para acceder al contenido.
+El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). 
+
+Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
 
 ### Localización
 
@@ -50,7 +56,7 @@ Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada e
 
 ### Caché
 
-El caché es una herramienta que nos permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del Espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
+El caché es una herramienta que permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del Espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
@@ -86,39 +92,39 @@ Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-
 
 Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo siguiente:
 
-- SSL: Wildcards no son permitidos.
-- NO SSL: Wildcards son permitidos, pero Modyo ahora debe ser secure by default.
+- **SSL**: Wildcards no son permitidos.
+- **NO SSL**: Wildcards son permitidos, pero Modyo ahora debe ser secure by default.
 
 ### Revisión en Equipo (Team Review)
 
-El contenido que se publica en cada una de las plataformas debe ser de buena calidad y como forma de certificar esta, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
+El contenido que se publica en cada una de las plataformas debe ser de buena calidad y para ello, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 
-Para más información sobre cómo configurar esta opción, ir a [Team Review](/guides/platform/team-review.html)
+Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/guides/platform/team-review.html)
 
 ### Miembros del Equipo
 
 <img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-Para conformar el grupo de trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en este Espacio y así tendrán acceso a la escritura, revisión y/o publicación.
+Para conformar el grupo de trabajo, en la plataforma puedes seleccionar los miembros que trabajarán en este Espacio y que tendrán acceso a la escritura, revisión y/o publicación.
 
 Para ello, el Administrador que creó el Espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
 #### Agregar usuario ####
-Para añadir un usuario al Espacio, selecciona el botón primario "+ Nuevo" en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona "Añadir" para que este sea parte del equipo de trabajo del Espacio.
+Para añadir un usuario al Espacio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona "Añadir" para que este sea parte del equipo de trabajo del Espacio.
 
 #### Modificar Rol ####
-Puedes modificar el rol de alguno de los usuarios asociados haciendo click en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona "Guardar" para confirmar el cambio.
+Puedes modificar el rol de alguno de los usuarios asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
 ::: warning Atención
 Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
 :::
 
 #### Eliminar Miembros del Equipo ####
-Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista "Borrar".
+Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
 ::: warning Atención
-Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador este no podrá ser borrado.
+Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si existe un solo administrador, este no podrá ser borrado.
 :::

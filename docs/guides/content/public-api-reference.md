@@ -5,7 +5,7 @@ sidebarDepth: 1
 
 # API & SDKs
 
-Modyo Content cuenta con una completa API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/guides/content/) con [Modyo Channels](/guides/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
+Modyo Content cuenta con una API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/guides/content/) con [Modyo Channels](/guides/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
 
 ::: tip SDKs para otros lenguajes
 Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.
@@ -17,7 +17,7 @@ El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channel
 
 ### Acceder a entradas de un espacio
 
-Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usamos:
+Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio de uid `space_uid` usa:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
@@ -28,21 +28,21 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` del un espacio 
 
 ### Filtrar entradas
 
-Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+Si quieres filtrar las entradas, puedes hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries
-  | by_category = 'news'
-  | by_tag = 'tag1, tag2, tag3' %}
+  | by_category: 'news'
+  | by_tag : 'tag1, tag2, tag3' %}
 {% for entry in entries %}
   entry: {{ entry.uuid }} -- {{ entry.title }}<br />
 {% endfor %}
 ```
 
-La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+La selección de entradas siempre retorna un array, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid = 'entry_uuid' %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
 {% assign entry = entries.first %}
 ```
 
@@ -61,7 +61,7 @@ Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los li
 En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
 
 ::: warning Atención
-Ten en cuenta que si tienes mas de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
+Ten en cuenta que si tienes más de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
 :::
 
 ::: warning Atención
@@ -84,61 +84,68 @@ El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilid
 
 ## SDK de Javascript
 
-El SDK de Javascript permite el acceso a los espacios y entradas de contenidos de forma simple desde cualquier ambiente que soporte Javascript (sitios Web dinámicos y estáticos, páginas SPA, aplicaciones móviles híbridas, etc).
+El **SDK de Modyo** es una librería que facilita la interacción de aplicaciones basadas en JavaScript con la API pública de Modyo.
 
-### Instalación
+Mediante el SDK se puede obtener, filtrar y ordenar tu contenido creado para poder aprovechar por completo las capacidades de la API Headless.
 
-::: tip Uso desde Modyo Channels
-En el caso de Modyo Channels, la plantilla base con la cual se crean los sitios ya incluye instalada una versión reciente de este SDK, por lo que se puede utilizar de forma directa.
+Asimismo, el SDK de Modyo permite obtener información del usuario final que ya haya iniciado sesión en la plataforma, para personalizar aún más la interacción de este con tu sitio.
+
+Para comenzar a utilizar el SDK, sólo debes incluír su módulo en tu package.json `@modyo/sdk` y luego referenciarlo en tu código JavaScript:
+`import Client from '@modyo/sdk';`. 
+
+Una vez listo, se puede inicializar el cliente llamando a `const client = new Client('account_url')` siendo `account_url` la dirección web de la cuenta de Modyo.
+
+### Contenido
+
+El SDK permite acceder tanto a contenido público como privado/targetizado, facilitando la interacción con nuestra API Headless.
+
+#### Contenido público
+
+Para obtener contenido público, es necesario instanciar el Tipo de Contenido, por lo que se debe llamar a la siguiente función: `ctype = client.getContentType('spaceUID', 'typeUID');` siendo `spaceUID` y `typeUID` los identificadores únicos del Content Space y Content Type requeridos.
+
+Una vez instanciado, se puede realizar consultas por todo el contenido (`ctype.getEntries().then(data => console.log(data))`), el contenido mediante filtros (ver sección a continuación), o el JSONSchema del Content Type. `ctype.getSchema().then(schema => console.log(schema));`.
+
+Cuando ya se haya obtenido el JSONSchema del Tipo de contenido, es posible ver un objeto de sus atributos llamando a `ctype.getAttrs()` este listado puede ser útil para armar filtros en la consulta.
+
+#### Contenido privado
+
+Para obtener contenido privado, es necesario instanciar también el Tipo de Contenido, esta vez con una flag indicando que no se tratará de contenido público: `ctype = client.getContentType('spaceUID', 'typeUID', false);`
+
+:::warning Atención
+Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
 :::
 
-La instalación del SDK de Javascript se puede realizar con `npm` o `yarn`.
+#### Filtros de contenido
 
-```shell
-# Para npm:
-npm install @modyo/sdk
+En ciertas ocasiones, no se quiere obtener todo el contenido de un Tipo. Para dichas ocasiones, ModyoSDK provee de filtros aplicables a la consulta.
 
-# Para yarn:
-yarn add @modyo/sdk
-```
+Para crear un filtro, hay que inicializarlo con `ctype.Filter()`, y luego al mismo objeto se le pueden ir concatenando diferentes filtros:
+`const filters = ctype.Filter().Before('meta.created_at','2020-05-01').In('meta.tag',['tag1','tag2'])`
 
-### Uso: haciendo un `request`
+**Filtros soportados**:
 
-Una vez instalado el SDK en tu proyecto podrás empezar a usarlo para pedir contenido a Modyo.
+- **Before, After, LessThan, GreaterThan**: reciben como parámetro el nombre del campo a comparar y el valor con el que se comparará.
 
-El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:
+- **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `AND` en SQL, Has es equivalente a un `OR`.
 
-```javascript
-import { Client } from "@modyo/sdk";
+- **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`)
 
-// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request
-export default function getClient(spaceUID) {
-  // La clase `Client` del SDK requiere dos argumentos:
-  // El primer argumento es la `url` de la API,
-  // el segundo argumento es el `UID` del espacio que quieres acceder.
-  // En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica
-  const client = new Client("https://dynamicbank.modyo.build/api", {
-    spaceUID
-  });
-  return client;
-}
 
-// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como
-// `getEntries()`
-getClient("static-data") // accedemos al espacio
-  .getEntries("menu-item") // Obtenemos todas las entradas del tipo `menu-item`
-  .then(entries => console.log(entries)) // Imprimimos en un log las entradas recibidas
-  .catch(err => console.log(err)); // o retornamos un error si algo falla
-```
+:::warning Atención
+Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
+:::
 
-Además del método `getEntries(typeUID)` que ocupamos en el ejemplo, si conocemos el `id` de nuestra entrada, podemos requerirla inmediatamente usando el método `getEntry(typeUID, entryUID)`:
+Una vez creados los filtros, se puede llamar a la consulta `getEntries` dando los filtros respectivos como parámetro:
+`ctype.getEntries(filters).then(data => console.log(data))`
 
-```js
-getClient("static-data")
-  .getEntry("menu-item", "a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8")
-  .then(entry => console.log(entry))
-  .catch(err => console.log(err));
-```
+### Información de Usuario Final
+
+:::warning Atención
+Es importante que trates esta información sensible con cuidado. Al igual que con Contenido privado, esta información sólo es obtenible si se trabaja desde un navegador que soporte cookies, y el usuario final haya iniciado sesión en la plataforma.
+
+Para obtener información del usuario final, es necesario llamar a la función: `client.getUserInfo()` dicha función retornará un objeto con la información básica
+de dicho usuario.
+:::
 
 ## Referencia del API
 
@@ -522,7 +529,6 @@ Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
 
 - Tipo
-- Estado de Revisión
 - Categoría
 - Tags
 - Autor
@@ -581,7 +587,7 @@ Se usa una expresiónJsonPath por ejemplo:
 `.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
 `.../entries?fields=$..description` para obtener todos los campos description en los entries.
 
-##### Igualdades/Desigualdades en arreglos
+##### Igualdades/Desigualdades en arrays
 
 Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
 
@@ -601,22 +607,22 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 
 #### jQuery
 
-La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
+La biblioteca JavaScript de jQuery hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
 
-Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de no solo contenido dentro de tu sitio, pero de también otros sitios y servicios.
+Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de contenido dentro de tu sitio, y también desde otros sitios y servicios.
 
-En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlazamos el "data.promotions" a nuestro "vm.promos" para usarlo en la aplicación.
+En esta solicitud AJAX, se está especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlaza el "data.promotions" a "vm.promos" para usarlo en la aplicación.
 
 #### API Fetch con JavaScript nativo
 
 La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.
 
 Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código:
-Estamos trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
+Se está trayendo un archivo JSON desde dentro del sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
 
-Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utilizamos el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).
+Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utiliza el método json() al final de esta, para luego enlazar los datos a las promociones (este fetch() es para esta aplicación).
 
-Para información más detallada, te recomendamos visitar los webdocs de MDN.
+Para información más detallada, visita los webdocs de MDN.
 
 #### Axios
 
@@ -639,7 +645,11 @@ La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSO
 
 ## Contenido privado
 
-Siempre que uses la API de contenido, podrás acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
+Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
+
+:::tip Tip
+Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los targets automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
+:::
 
 La API de contenido puede recibir el parámetro delivery token de dos formas: 
 

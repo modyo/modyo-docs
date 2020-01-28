@@ -1,56 +1,69 @@
 ---
-title: Key Concepts
-lang: en
+search: true
 ---
 
-# Key Concepts
+# Modyo key concepts
 
-Below we'll give you a very brief understanding of some of the key concepts related to [Modyo](https://www.modyo.com/).
+Below you will find a brief explanation of some of the key concepts related to the Modyo Platform.
 
 ![Modyo Robots](/assets/img/automate.png)
 
+
 ### Multi-Site Architecture
 
-* We use an easy to manage Multi-Site Architecture. From one account you can create multiple public and private sites.
-* You can break down the barriers of your public and private sites using our platform gaining a greater understanding of your digital customers. 
+Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-### Customers Interact in Context within a Site
+Go further, and use Modyo to get more complete knowledge about your digital customers.
 
-* We have different authentication mechanisms built within the platform. From OpenID Connect to OAuth2 to Google, you can easily authenticate customers. 
-* Customer can interact in different sites and different contexts with their same central profile.
+### Customers interact on sites depending on context
 
-### Headless or Not Headless CMS
+Modyo provides you with different authentication mechanisms, from OpenID Connect to OAuth2 and Google, so you can easily authenticate your customers.
 
-* The CMS side of the platform allows you to create and publish content. You can create custom content fields easily. 
-* All the structured content that is published generates an equivalent JSON file that can feed any other sites or applications. 
+Clients can interact in different sites and in different contexts, maintaining the same central profile that will facilitate administration tasks.
 
-### An Integration Platform
+### Both CMS and Headless CMS
 
-* We built Modyo thinking that no CMS had made life easy to build integrated digital solutions with core business systems. With this in mind we kept our focus on making widgets easy to build and connect to APIs.
-* The widget builder helps Back End Developers and Front End Developers work together to build digital experiences connected to APIs. Our governance model allows digital teams to preview easily and push their work live to customers in record time with a new governance model. 
+Modyo Content allows you to create and publish content. You can add fields to define custom content structures easily. Modyo Channels allows you to work with HTML templates and reusable Front End components called Widgets.
 
-### Widgets vs. Portlets
+All structured content that is published generates an equivalent JSON file that can feed any other site or application. These are served through our API.
 
-* Most of our competitors chose an old Portlet \(server side development model\). This is slower and requires a deployment for every change making digital work more complex.
-* Modyo is based on widgets and a widget builder that tracks every change in a version control system. Digital work is easy to audit, push to the next phase and publish to customers. 
+### An integration platform
 
-### The Infamous Widget Builder
+Modyo is designed to facilitate the creation of digital solutions integrated with the central systems of the companies. With this in mind, we keep our focus on facilitating the development of widgets and the connection with APIs.
 
-* The Widget Builder is where you can develop any type of widget comprised of HTML, CSS and JAVASCRIPT that connects to APIs and forms part of your widget library.
-* The Widget Builder powers digital experiences by making front end development easy to manage, fast to deploy to customers and easy to audit for greater security & compliance. 
+The widget generator helps Back and Front End developers work together to create digital experiences connected to APIs. Our governance model allows digital teams to easily preview and publish their work to clients in record time.
 
-### Pre-Built Widgets for Financial Services
+### Widgets vs Portlets
 
-* Modyo Banking comes with prebuilt financial widgets to accelerate your development of customer retail and wealth management banking experiences.
-* A separate licensing model applies to Modyo Banking. 
+Most of our competitors chose the old _porlets_ model (server side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
 
-### Liquid Markup & API's 
+Modyo is based on widgets and a widget generator that tracks every change in a version control system. Digital work is easy to audit, move on to the next stage and publish so that it is quickly available to your customers.
 
-* Modyo uses Liquid Markup within the platform to give Front End & Back End Developers a rich language to add more functionality to building digital experiences. Liquid Markup is used by leading companies to easily add more logic in Front End code.
-* APIs power our platform and make it easier to build solutions. [Review this article about our API.](https://support.modyo.com/hc/en-us/articles/115003559611-Using-the-Modyo-API) 
+### Our widget generator
 
-### Security, Governance & Agility
+With the widget generator you can develop any type of widget you require, where you can include components in HTML, CSS and Javascript that connect to APIs, and become part of your widget library to reuse them when you need it.
 
-* Modyo has an architecture where all code published generates versions. Before publishing a version of a widget or a layout publicly to customers, you can easily review code changes between one version and another.
-* Agility happens when you have greater predictability in the cadence of your team following a model that balances governance and agility. When activating workflows in the platform within Channels, two people \(reviewers & approvers\) can move all digital resources to a state of "Published" through an easy to manage formal process whose cadence is then measured within Insights. [Review more about Workflows here. ](https://support.modyo.com/hc/en-us/articles/360006604412)
+The widget generator enhances the digital experience by making Front End development easy to handle, quick to send to production and easy to audit, providing greater security and fulfillment of your goals.
 
+### Prefabricated widgets for financial services
+
+Modyo Banking provides prefabricated financial widgets to accelerate the development of your banking experiences of _retail_ and _wealth management_.
+
+A separate license model applies to Modyo Banking.
+
+### Liquid Markup and APIs
+
+Modyo uses Liquid Markup within the platform to give Front and Back End developers rich language that allows you to add more functionality when building digital experiences. Liquid Markup is used by leading companies to easily add more logic to the Front End code.
+
+APIs enhance our platform and make it easier to build solutions.
+
+
+### Prepared for the future: PWAs
+Progressive Web applications will be the future of the Web, as they improve the way they are distributed to end users and give the Web _browser_ more prominence as an execution platform. With Modyo you can control in each site the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
+
+
+### Security, Governance and Agility
+
+Modyo has an architecture where all published code generates versions. Before publishing a version of a widget or layout, you can easily review the code changes between one version and another.
+
+Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated on the platform within Channels, two people (Reviewer and Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. Your team's capacity is measured later within Insights.

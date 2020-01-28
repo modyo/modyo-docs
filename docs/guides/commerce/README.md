@@ -3,7 +3,7 @@ search: true
 ---
 
 # Modyo Commerce
-Modyo Commerce es una aplicación de Modyo que posibilita a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign On).
+**Modyo Commerce** es una aplicación de Modyo que posibilita a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign On).
 
 <img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;">
 
@@ -13,7 +13,7 @@ Actualmente Modyo Commerce sólo permite la integración con medios de pago de l
 
 ## Estructura
 
-Modyo también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
+**Modyo** también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
 
 Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
 
@@ -27,11 +27,11 @@ En esta sección podremos configurar los datos más generales que dan vida al co
 
 Además, se permite activar el envío de un correo electrónico automático cuando el usuario pague su orden, en forma de recibo.
 
-Para este recibo, es fundamental adaptarlo hacia nuestro commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
+Para este recibo, es fundamental adaptarlo hacia el commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
 
 ### Formas de pago
 
-Modyo permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
+**Modyo** permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
 
 Actualmente, los métodos de pago compatibles con Modyo son:
 

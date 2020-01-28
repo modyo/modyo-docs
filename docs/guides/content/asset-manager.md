@@ -6,9 +6,9 @@ search: true
 
 Una organización necesita tener una plataforma que les permita organizar los archivos y documentos de contenido que se requieran dentro de la plataforma.
 
-Para que no sea necesario utilizar servicios externos, Modyo permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
+Para que no sea necesario utilizar servicios externos, **Modyo** permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
 
-Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios
+Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios.
 
 
 #### Rich Text
@@ -23,8 +23,7 @@ Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera con
 
 <img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
 
-
-La segunda es directamente a traves de herramienta del gestor de archivos que se encuentra en la sección Contenido.
+La segunda es directamente a través de la herramienta del gestor de archivos que se encuentra en la sección Content.
 
 <img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
 
@@ -33,20 +32,23 @@ La segunda es directamente a traves de herramienta del gestor de archivos que se
 
 <img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
-La primera interfaz que veremos es una lista de todos los archivos que tenemos dentro de la plataforma.
+La primera interfaz es una lista de todos los archivos que existen dentro de la plataforma.
 
-En la parte superior derecha de la pantalla podrás ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
+En la parte superior derecha de la pantalla puedes ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
 
 El listado cuenta con tres tipos de filtros que te serán útiles para encontrar un archivo.
 
 <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
 
-**Extensiones**: Con este filtro podrás ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma)
+**Extensiones**: Con este filtro puedes ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma).
 
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
 ::: tip Tip
-Si quieres agregar una etiqueta a un archivo o a un grupo de archivos, puede hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado, está aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna)
+Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado. 
+
+Así, aparecerá apenas selecciones el primer elemento (haciendo _click_ en el checkbox de la primera columna.
+
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
@@ -63,9 +65,9 @@ Para esta vista, las columnas son:
 
 <img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
 
-Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. La opción de ordenamiento  **predeterminada** es la fecha actualización de los archivos.
+Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. La opción de ordenamiento  **predeterminada** es la fecha de actualización de los archivos.
 
-**Previsualizar**: Si la plataforma identifica que el archivo es una imagen, podrás ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
+**Previsualizar**: Si la plataforma identifica que el archivo es una imagen, puedes ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
 
 **Nombre**: Nombre del archivo con la extensión incluida. El ordenamiento es por orden alfabético.
 
@@ -77,25 +79,26 @@ Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. 
 
 **Autor**: Nombre del usuario que subió el archivo, siempre y cuando el usuario tenga asignado un nombre.
 
-Finalmente en la esquina inferior derecha, podrás encontrar la paginación de todos los archivos del sistema.
+Finalmente, en la esquina inferior derecha, puedes encontrar la paginación de todos los archivos del sistema.
 
 
 ## Propiedades de los archivos
 
 <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-La plataforma permite el manejo y subida de archivos de todos los tipos, sin una limitante por de extensión.
-Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconocerá y clasificará el archivo según su uso y después su extensión.
+La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
 
-Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. Así, se levantara un modal en el que podrás editar cada una de las propiedades.
+Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconoce y clasifica el archivo según su uso y después su extensión.
+
+Para acceder a las propiedades de los archivos, se debe hacer _click_ en el nombre de este. De esta manera, se levanta un modal en el que puedes editar cada una de las propiedades.
 
 ## Editar un archivo
 
 <img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
 
-En la interfaz de edición de las propiedades del archivo, podrás ver ciertos campos:
+En la interfaz de edición de las propiedades del archivo, puedes ver ciertos campos:
 
-**URL del Archivo**: Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo click en el ícono lateral.
+**URL del Archivo**: Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo _click_ en el ícono lateral.
 
 **Tag de Liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
 
@@ -109,16 +112,19 @@ Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 
 **Descripción**: Descripción del elemento. Es una buena práctica escribir un pequeño texto que haga referencia a la imagen.
 
-**Etiquetas**: Muestra las etiquetas asociadas al archivo, haciendo click en la caja se pueden buscar y agregar más etiquetas. A su vez que se puede hacer click en la X de las etiquetas existentes para eliminar la asociación con el archivo.
+**Etiquetas**: Muestra las etiquetas asociadas al archivo, haciendo _click_ en la caja se pueden buscar y agregar más etiquetas. A su vez que se puede hacer _click_ en la X de las etiquetas existentes para eliminar la asociación con el archivo.
 
 <hr style="margin: 40px 0;" />
 
-Para guardar la modificación de los datos, es necesario hacer click en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. Si se modifican los datos pero no se hace click en el botón para que queden guardados, estas modificaciones se perderán.
+Para guardar la modificación de los datos, es necesario hacer _click_ en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. 
 
-Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón Cerrar, ubicado en la parte inferior de la pantalla.
+Si se modifican los datos pero no se hace _click_ en el botón para que queden guardados, estas modificaciones se perderán.
+
+Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer _click_ en el botón **Cerrar**, ubicado en la parte inferior de la pantalla.
 
 ## Resubir una imagen
-Si quieres resubir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, desplegará una nueva ventana donde podrás seleccionar un archivo nuevo.
+
+Si quieres volver a subir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, muestra una nueva ventana donde puedes seleccionar un archivo nuevo.
 
 <img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
 
@@ -126,49 +132,49 @@ Si quieres resubir un archivo, manteniendo el nombre y el link original, haz cli
 
 <img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Para facilitar el manejo de imágenes dentro de la plataforma, **Modyo incluye un editor de imágenes** que permite hacer cambios pequeños de manera online.
+Para facilitar el manejo de imágenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños de manera online.
 
-Uno de los cambios que se puede hacer es **editar las medidas de la imagen**. Para ello, haz click en el ícono del **lapiz** que se encuentra en la ventana de Actualizar Información.
+Uno de los cambios que se puede hacer es editar las medidas de la imagen. Para ello, haz _click_ en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
 
-Tras ello, se desplegará otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
+Tras ello, se despliega otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
-Posteriormente, podrás ver las tres opciones que puedes elegir para editar el tamaño:
+Posteriormente, puedes ver las tres opciones que puedes elegir para editar el tamaño:
 
 - **16:9**: Edita la imagen en una proporción de 16:9.
 - **Cuadrado**: Edita la imagen al tamaño de un cuadrado.
 - **Libre**: Edita la imagen a un tamaño libre en pixeles que puedes cambiar en la parte inferior de la pantalla.
 
-A un costado, podrás observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
+A un costado, puedes observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
 
 ::: tip Tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
 - **Zoom:** Usa el scroll del mouse para acercar la imagen.
-- **Mover fondo:** Haz doble click fuera de la zona de recorte y arrastra el fondo.
+- **Mover fondo:** Haz doble _click_ fuera de la zona de recorte y arrastra el fondo.
 :::
 
-Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encontrarás el botón Restaurar Original, lo cual provocará que la imagen vuelva a su estado original pero la modificada se perderá permanentemente.
+Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encuentras el botón **Restaurar Original**, lo cual provoca que la imagen vuelva a su estado original pero la modificada se pierde permanentemente.
 
 ## Borrar un archivo
 
-Para borrar un archivo en específico se debe hacer click en el ícono borrar, que se encuentra en un costado de la URL del archivo.
+Para borrar un archivo en específico se debe hacer _click_ en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
 
 ::: warning Atención
-Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no podrás recuperarlo y aparecerá como un link roto.
+Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no puedes recuperarlo y aparece como un link roto.
 :::
 
 ## Subir un archivo
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-Hay dos formas de subir un archivo para usarse en Modyo. Una de ellas es a través del misma sección desde la que se esté trabajando y otra es a través del Gestor de Archivos, que nos da la opción de tomar cualquier material de nuestro disco local para subirlo a la plataforma.
+Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
-Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
+Para subir el archivo, se debe hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
 
-Esta acción abrirá una nueva ventana que permite subir los archivos de dos maneras:
+Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
 
-- **Drag & Drop**: arrastrar desde el navegador de archivos de tu computador hacia la ventana)
-- **Manera tradicional**: a través del navegador, pinchando y seleccionado los archivos
+- **Drag & Drop**: Arrastrar desde el navegador de archivos de tu computador hacia la ventana)
+- **Manera tradicional**: A través del navegador, pinchando y seleccionado los archivos
 
 ::: warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.

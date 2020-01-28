@@ -4,190 +4,161 @@ search: true
 
 # Team review
 
-Para minimizar la posibilidad de errores y asegurar que se cumplan los estándares de calidad fijados por el equipo para la publicación de contenidos, Modyo permite que los integrantes de un equipo, puedan revisar el trabajo de otro integrante.
+## Introduction
 
-Cualquier contenido o recurso que esté gestionandose a través de Modyo, debe pasar por una revisión obligatoriamente. Por lo mismo, asigna tareas a usuarios que deben revisarla, hacer correcciones y publicarla cuando estimen conveniente.
+The team review (or Team review) is a tool that allows you to control the process of publishing elements in Modyo. When activated, each item must go through review stages before enabling its publication. In this way, a level of supervision and collaboration between the content editor and a team of reviewers is added.
 
-Si se habilita este sistema de revisión, todo el contenido gestionado por Modyo deberá pasar por la aprobación de miembros del equipo a los que se les asignará diferentes roles para revisar, hacer correcciones o publicar dicho contenido:
+When an editor or a developer considers that the item he is working on is ready, he can send it for review, a task that will be performed by users enabled for it or by a team chosen by him. They will be responsible for approving (or rejecting) the item, which will ultimately determine if the item is in a position to be published.
 
-- Writers: Elaboran el contenido o código.
-- Revisores: Pueden elaborar recursos y revisar trabajos de los demás integrantes.
-- Administradores: Elaboran, revisan recursos y pueden publicar en el sitio.
+Each step of this process takes the element through different states (image), which are recorded in a history for subsequent audit.
 
-Para llegar a la sección, se debe hacer clic en "Mis Tareas", ubicado en el sidebar.
+[Image review stages]
+ 
+This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries). The configuration of review rules is done independently for each site or space.
 
-A primera vista, podrás ver 4 botones de filtro y una barra de búsqueda:
+### Configuration
 
-- Asignado a: Recursos que deben ser revisados por un integrante.
-- Tipo: Características del recurso que debe ser revisado.
-- Autor: Creador del recurso.
-- Contexto: Sitio o Espacio donde está el recurso.
+To configure the tool, you must go to `Site/space configuration> Team review`.
 
-A continuación, verás la lista de recursos que se encuentran en la plataforma, que están en el proceso de Team Review.
+<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
-- Estado: Para estar acá, deberá estar En Revisión, que quiere decir que aún se encuentra pendiente de corrección por parte de algún usuario asignado. Si el recurso se encuentra rechazado o publicado, podrá verse en la sección "Entradas".
+The available options are:
 
-- Título: Nombre del recurso.
-- Tipo: Características del recurso.
-- Contexto: Sitio o Espacio donde está el recurso.
-- Última actualización: fecha donde algún usuario ha realizado un cambio.
-- Autor: usuario que creó el recurso.
-
-Para corregir el recurso, se debe hacer clic en el nombre de este, dentro de la sección "Mis tareas". Solo dos roles de usuarios podrán ver esto: Administradores y Revisores.
-
-En el caso de los Administradores, podrán ver todos los recursos, siempre y cuando se encuentren listos para su publicación o les sean asignados para su revisión.
-
-Para los Revisores, solo podrán ver el recurso que tienen pendiente de revisión. Si estos aprueban el recurso, este ya no se verá dentro de Mis Tareas.
-
-Al entrar al recurso, se podrá ver la pantalla con las opciones tradicionales con las que se puede ver la elaboración de recursos, como códigos y texto, además de un botón de Vista Previa.
-
-Para hacer comentarios, en la parte superior de la pantalla existe un botón de "Ver Actividad", donde cada uno de los Revisores y Administradores, podrá dejar sus comentarios sobre el recurso.
-
-A su lado, existe el botón Publicar, donde también existe la opción de Rechazar el recurso (Recuerda escribir comentarios antes de hacerlo).
-
-En un costado de la pantalla, se podrá ver la lista de Revisores y Administradores asignados, con un color de aprobación (verde), en revisión (amarillo), o rechazo (rojo), según la opinión de los demás usuarios.
-
-Además, se pueden agregar más revisores al recurso que no hayan sido designados por defecto, a través del botón "Solicitar una revisión".
-
-Para aprobar el recurso, solo se debe hacer clic en el botón "Aprobar". Así desaparecerá de tus tareas si eres Revisor. En el caso de ser Administrador, aparecerá en tus tareas hasta que decidas publicarlo.
-
-El Administrador, en caso de que sienta que el archivo no cumple las expectativas o se encuentra en errores que fueron corregidos en versiones anteriores, puede recurrir al Versionado, con el que puede retroceder a copias anteriores del recurso.
-
-### Introduction
-
-La revisión en equipo (o Team Review) es una herramienta que te permite controlar de forma colaborativa los elementos que son publicados en Modyo. Esta herramienta se puede activar tanto a nivel de sitio, como a nivel de espacio, permitiéndote usar distintas configuraciones y niveles de restricción, dependiendo de lo estricto que quieras ser en cada caso. 
-
-Para activar la herramienta, debes dirigirte a la configuraición del sitio o espacio, y hacer click en la opción "Revisión en equipo", seleccionar la primera opción "Habilitar revisión en equipo" y luego guardar los cambios. 
-
-Una vez activada la revisión en equipo, notarás que cuando guardas los cambios en los elementos que se pueden publicar en ese contexto, en vez de aparecer el botón "Publiar" aparecerá un botón "Enviar a revisión". Al enviar a revisión un elemento, quedará en un estado en el que se puede seguir modificando, pero además, podrás asignar revisores, quienes podrán rechazar, aprobar y hacer comentarios en el elemento. 
-
-Bajo el estado "En revisión", cada acción que se haga sobre el elemento, gatillará una notificación a todos los involucrados en el proceso de revisión (quién lo envió a revisión y todos los revisores asignados), de tal forma de mantener al tanto sobre los cambios y comentarios del elemento. 
-
-Una vez que se cumplen los requisitos para que el elemento sea publicado, automáticamente cambia al estado "aprobado", estado en el cual quienes tengan los permisos necesarios, podrán publicar el elemento.
-
-### Settings
-
-Dentro de la configuración de la revisión en equipo, encontrarás distintas opciones:
-
-- **Habilitar revisión en equipo**: Es la opción que habilita o deshabilita por completo la revisión en equipo en ese contexto (sitio o espacio)
-- Número de aprobaciones: Determina cuantos son las aprobaciones (checks) necesarias para que un elemento pase automáticamente de "Esperando revisión" a "Aprobado", de tal manera que seleccionando 3, se requerirá que 3 personas con permisos den su aprobación para que ese elemento pueda ser publicado.
-:::tip Tip
- Por defecto, cualquier usuario que tenga los permisos necesarios, podrá aprobar y comentar en los elementos que están esperando revisión. Cuando un usuario que no está asignado como revisor aprueba un elemento, automáticamente se convierte en revisor del elemento. 
+- **Enable team review**: Fully enable or disable team review in this context (site or space).
+- **Number of approvals**: Determines how many users must approve the item to be able to be published (it will change its status from "Waiting for revision" to "Approved").
+- **Restrict the selection of reviewers**: By default, any user with the necessary permissions may approve the items that are awaiting review. By enabling this option, only those chosen by the editor may do so.
+::: tip Tip
+While approval is limited, any user with permissions can comment on the item.
 :::
-- **Restringir la selección de revisores**: Esta opción evita que cualquier usuario con permisos pueda aprobar el elemento, limitando la selección y adición de revisores a quien envía el elemento a revisión.
-:::tip Tip
-Aunque la selección de revisores esté limitada a quien envía a revisión, todos los usuarios con permisos podrán seguir haciendo comentarios en el elemento que está en revisión, pero no podrán aprobar el elemento.
-:::
-- **Forzar revisión**: Esta opción habilita un selector de usuarios que permite forzar la adición de ciertos revisores a los elementos del contexto, de tal forma que en cada revisión, todos los usuarios asociados a la fuerza serán notificados de los comentarios y cambios del elemento.
-:::tip Tip
-Aunque se cumpla la primera restricción con la cantidad de aprobaciones, si ninguno de los usuarios forzados a revisar ha dado su aprobación, entonces el elemento no pasará a estado "arpbodado", por lo que no podrá ser publicado.
-:::
-- **Requerir todos**: Esta opcción obliga a que como mínimo, todos los usuarios que estén añadidos como revisores forzados tengan que dar su aprobación para que el elemento pase a estado "aprobado" para luego ser publicado.
+- **Force review**: This option allows you to select a list of users, of which at least one approval is required so that the item can go to the "Approved" state. This is independent of the number of approvals configured above, that is, even if an item has the necessary number of approvals, it will remain in the "Waiting for approval" status if no user on the list has approved it.
+- **Require all**: This option extends the previous restriction to all selected users.
 
-::: warning Atención
-Recuerda hacer click en el botón "Guardar" arriba a la derecha cada vez que hagas cambios en la configuración de la revisión en equipo, de lo contrario, los cambios no surtirán efecto.
+::: warning Warning
+When you make changes to the team review settings, the items that were already waiting for review will continue to be governed by the rules prior to the changes. For these elements to take into account the new configuration, it is necessary that they be rejected and sent for review again.
 :::
 
-::: warning Atención
-Cuando haces cambios en la configuración de la revisión en equipo, los elementos que ya estaban esperando revisión seguiran rigiendose por las reglas anteriores a los cambios. Para que esos elementos tomen en cuenta la nueva configuración de la revisión en equipo, es necesario que sean rechazados y se vuelvan a enviar a revisión.
-:::
+### Use (example)
 
 ### Roles and permissions
 
-Existen tres niveles de permisos en los contextos en que se puede habilitar la revisión en equipo:
+There are three levels of roles that allow users to perform different actions in the review process:
 
-- Alto (Administrador de sitio y espacio)
-- Medio (Revisor en sitios y Editor en espacio)
-- Bajo (Developer en sitios y Escritor en espacios)
+- High: Administrator (site or space)
+- Medium: Reviewer (site) or Editor (space)
+- Under: Developer (site) or Writer (space)
 
-Los usuarios con el rol mas bajo, aparte de los permisos asociados al contexto, pueden enviar a revisión, rechazar y comentas los elementos en revisión
+Users with the lowest role, can submit for review and comment on the elements that are in that state.
 
-Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
+Users with the intermediate role, in addition to the above, can approve the elements under review and once they are approved, they can publish them through the team review flow.
 
-Los usuarios con el nivel de permisos alto, además de poder hacer el resto de las acciones, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
+Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force post" action to immediately publish an item.
 
-::: warning Atención
-Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo. Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación". Esta opción existe porque hay ocaciones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
+::: warning Warning
+Site or space administrators always have the ability to skip the review flow as a team. For them, the "Submit for review" and "Review" buttons have an option within the dropdown for "Force post." This option exists because there are times when you need to publish quickly, so you must be cautious when assigning roles for your spaces or sites.
 :::
 
 ### About the interface
 
-Cuando está activada la opción de revisión en equipo, luego de guardar los cambios, verás como acción principal, el botón verde "Enviar a revisión". Al hacerle click, verás que sobre la seeción lateral derecha del builder, aparecerá una sección nueva, indicando los requerimientos necesarios para poder publicar el elemento. En caso de tener algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+When the team review option is activated, and after saving the changes, you will see the green button **Send to review** as the main action.
 
-A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un circulo amarillo si no ha hecho su revisió, y un check verde en caso de haber aprobado el elemento.
+<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botoón "Aprobar" bajo el listado de revisores, quienes tengan permiso para hacerlo, lo verán activo y podrán hacerle click para aprobar el elemento, quienes no tengan permiso, verán el bótón deshabilitado.
+At the time of sending for review the bar will change status:
 
-Al aprobar el elemento, quedará registrada la aprobación por ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
+<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-Cuando se habilita la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, aparecerá un ícono ( <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg> ) para abrir la pestaña de actividad del elemento. Al abrirla, se desplegará un listado cronológico de las acciones que se han efectuado sobre el elemento, con la opción para ver el detalle de la acción, y al fondo de la pestaña, estará la opción para dejar un mensaje.
+By clicking, you will see that the requirements to publish the element will be indicated in the right side section. If there is a required reviewer, `(required)` will appear next to your name in the list of reviewers.
 
-Cuando se deja un mensaje o comentario en un elemento, quien envió a revisión y todos los usuarios que están en el listado de revisores serán notificados sobre el comentario y/o modificación del elemento.
+<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;"/>
 
-## Versioning
+To the right of each reviewer, the status of your review will appear, showing a yellow circle if you have not done your review, and a green check if you have approved the item.
 
-El Versionado es una manera automática de Modyo de asegurarse el respaldo de los recursos ante cualquier cambio hecho desde la misma web.
+Everyone who can access the item edit view will see an "Approve" button under the list of reviewers. Those who have the necessary permission will see it active and can click to approve the item, those who do not have permission will see the button disabled.
 
-En palabras simples, si por error se llega a hacer un cambio indebido, es posible revertirlo a través de la plataforma.
+Upon approval of the item, the approval of that user will be registered, showing a green check to the right of his name in the list of reviewers.
 
-Este sistema está disponible para ser usado en Widgets, Sitios, Pages, Templates y Contenido.
+When team review is enabled, in the item's action bar, to the left of the green main button and to the right of the difference button, an icon will appear (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>) to open the element's activity tab. When opened, a chronological list of the actions that have been performed on the element will be displayed, with the option to see the detail of the action, and at the bottom of the tab, there will be the option to leave a comment.
 
-### Resource versioning
+When a comment is left or any action is taken on the item, a notification is sent to both the person who sent it for review and the users who are on the list of reviewers.
+
+## Versioned
+
+As a backup mechanism, when publishing an item, Modyo automatically generates and maintains a number of versions that can later be retrieved if necessary.
+
+This is useful when for some reason an undue change is made, there is the possibility of reversing it through the platform.
+
+This system is available for Widgets, Pages, Navigation, Templates and Content.
+
+### Resource Versions
 
 #### Editable
 
-Cuando un recurso está en proceso de creación, queda en estado de "Editable", con tal de poder hacer modificaciones y confirmar que aún no se encuentra listo para su revisión y publicación.
-
-Además, se le pueden hacer aún cambios que permitan hacer vistas previas antes de ser liberados a otros usuarios.
+This version keeps the changes made to the item since its last publication or since its creation if it has never been published. This is the version that goes through the team review process when activated, and just at the time of publication, the "Editable" and "Published" versions have the same content.
 
 #### Published
 
-El recurso publicado es aquel que ya se encuentra en uso y es de libre disponibilidad para cualquier usuario. En este caso, recursos internos como Widgets y Templates ya se pueden usar dentro de la creación de cualquier sitio o página.
+This version saves the content visible on the site and is freely available to any user. In this case, internal resources such as Widgets and Templates can already be used in the creation of any site or page.
 
-Los recursos publicados no necesariamente tienen el mismo código que los editables, ya que estos últimos pueden contener cambios que estén en proceso de prueba o de vista previa.
+The published version does not necessarily have the same content as the editable one (except at the right time of publication), since the latter may contain changes that are in the process of being tested or reviewed.
 
 ### Backups
 
-Los respaldos son los archivos en los que se ha trabajado anteriormente. Cada vez que guardamos un archivo que hemos modificado, Modyo guarda esta versión modificada del archivo sin borrar la anterior.
+Backups are previously published versions of the elements. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
-Si desear revisar alguna versión en particular de algún recurso, puedes ir a las "Diferencias entre versiones" de cada archivo, y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
+If you want to review a particular version of an item, you can go to the "Differences between versions", so you can see the changes that have been made and reverse them when necessary.
 
-### Version actions
+::: warning Warning
+By default, Modyo saves the last 20 versions (`MAX_BACKUPS`) published of each item, so by making the twenty-first publication, you will be deleting the backup of the first publication of the item. This value can be modified using environment variables and is common for all accounts in that environment.
+:::
 
-Para hacer el versionado, uno consta de dos posibilidades que nos permiten determinar si queremos hacer cambios posteriores a un recurso o subirlas inmediatamente.
+### Actions for versioning
+
+Within versioning, you have two actions that allow you to interact with backups. Both actions are available in the modality of differences.
+
+![Difference mode](/assets/img/platform/differences.png)
+
+By default the difference modal shows the version published on the left, and the editable version on the right. You can change which versions to compare by changing the values in the version selectors at the top of the modal.
+
+When any of the actions are applied, the selected version is always taken to the left, so that if it is restored, the left version will be taken to the editable version, and if rollback is done, the version of the left to the published version.
 
 #### Reset
 
-En este caso, el recurso volverá a la versión editable, por lo que perderemos todos los cambios que se hicieron posteriormente.
-
-Además, esto implica que podremos volver a hacer cambios, ya que el código estará liberado para cualquier edición.
+In this case, the backup will be copied to the editable version, so we will lose all the changes that were made later, and so we can continue working on potential changes to that version to publish it again.
 
 #### Rollback
 
-El Rollback es muy útil para hacer un cambio rápidamente a recursos que ya se encuentran publicados.
+In this case, the backup will be copied directly to the published version of the item, without touching the editable version. This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
 
-Por lo mismo, solo debemos ir a las "Diferencias entre versiones" y volver a la versión que teníamos seleccionada.
-
-Así se evita tener que pasar por una versión editable y sin publicar aún. Esto implica que no se podrán hacer cambios breves y pasará directamente a estar disponible por otros usuarios.
+::: danger Danger
+Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
+:::
 
 ## Locks
 
-Locks es una función de Modyo que permite la funcionalidad de revisar un recurso de manera segura, sin tener fallas de que otro usuario esté trabajando en él simultánteamente, evitando la pérdida de trabajo o la sobreescritura de documentos.
+Locks is a Modyo functionality that allows you to modify a resource safely, without having concurrence problems that may occur when another user is working on it simultaneously, thus avoiding job loss or overwriting of documents.
 
-### ¿What uses locks?
+<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;"/>
 
-Locks se usa mayoritariamente en Contenidos y en Channels. También puede ser usado en la edición de código de Sitios y Widgets.
+### What elements do Locks use?
 
-### ¿How to use locks?
+Locks are mostly used in [Contents](/guides/content/) and [Channels](/guides/channels/), but can also be used in other sections where items such as Settings and [Customers](/guides/customers/).
 
-Locks es una función reservada solo para quienes tienen permiso de Administración. Otro tipo de usuario no podrá tomar control del recurso hasta que el usuario creador grabe y lo desocupe.
+### How to use Locks?
 
-Al intentar entrar al recurso en uso, cualquier usuario que no sea Administrador, recibirá un mensaje que le impedirá acceder al contenido.
+Locks are implemented in different ways within the platform. In [Contents](/guides/content/) and [Channels](/guides/channels/), multiple users can enter a resource, being only one who can edit and save those changes, while others will only see the latest version saved on the platform. If a second person tries to make a change, a message will appear indicating that the item already has changes and that what you are trying to modify is obsolete.
 
-### Taking control of a locked resource
+In other sections such as [Customers](/guides/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if it is in edition, another user will not be able to enter the work view.
 
-Si un Administrador quiere tomar el control del contenido, deberá hacer clic en el archivo en uso y en la pantalla siguiente, hacer clic en el botón de Tomar Control.
+In this case, only an Administrator can take control, activating for himself the edition and discarding the unsaved advances of the user who is working on it.
 
-Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo más cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 
-El Administrador solo tendrá dos horas para hacer cambios sin guardar, tras tomar el control. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+::: warning Take control
+
+If an Administrator wants to take control of a view, he must click on the item in use and on the next screen, click on the **Take Control** button.
+
+<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;"/>
+
+When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from continuing to make changes, so any changes that are being made must be saved and backed up offline.
+
+After taking control, the Administrator will only have two hours to make changes without saving. After that time, the resource will be released again and can be taken by any other user.
+:::

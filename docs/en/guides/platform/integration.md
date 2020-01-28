@@ -4,89 +4,203 @@ search: true
 
 # Integrations
 
-Una de las funciones más importantes para facilitar el ingreso de clientes a Modyo es su integración con distintos servicios de protocolos de autenticación.
+One of the features of Modyo to facilitate the interaction of other user systems with Modyo is the integration with different authentication services.
 
-Actualmente la plataforma es compatible con:
+Currently the platform is compatible with:
 
 - Facebook
 - Google
 - LDAP
 - SAML
-- Oauth2
+- OAuth2
 - OpenID Connect
 
-Recuerda tener a mano todos los datos y certificados que se te exigen, antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
+Remember to have at hand all the data and certificates that are required before changing them or integrating a service, so that there are no problems with the general income of the users.
 
-### Using keycloak
+::: tip Tip
+From Modyo 9 onwards, users (Customers> Users) and administrators (Settings> Team) are logically separated. Both have support for all integrations compatible with the platform, but with different logins, so you can configure, for example, Facebook for your users and Oauth2 for your administrators.
+:::
 
-Keycloak es un identity provider certificado de OpenID Connect que implementa la mayoría de las funcionalidades de la integración OpenID connect de Modyo.
+## Facebook
 
-#### Register a new client aplication
+To be able to integrate with Facebook, you must have:
 
-1. Accede a la consola administrativa, por ejemplo [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) y agrega un nuevo realm.
-2. Agrega una aplicación cliente usando `openid-connect` como **Client Protocol** para la integración con Modyo.
-3. Configura **Acces Type** `confidential` y deja habilitado solo el **Standard Flow**.
-4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
+- API Key
+- Secret application code
 
-#### Integration settings
+You can obtain these values by creating a Facebook application with permissions to log in. You can learn more about how to create and configure a Facebook application in your [Official Documentation](https://developers.facebook.com/docs/facebook-login/).
 
-La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
+## Google
 
-1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
-2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
-3. Haz click en **Lanzar servicio de descubrimiento**, esto completará la mayoría de las configuraciones.
-4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
-   |                                        |                                                                                                                                                                                                                        |
-   |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak, deshabilitando la experiencia SSO. |
-   | **Habilitar revocación de token**                | No soportado por Keycloak                                                                                                                                                                                              |
-   | **Habilitar sincronización de _claims_ al momento de iniciar sesión** | Habilita la sincronización de _claims_ OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de _claims_](#sincronizacion-de-_claims_).                                                                                         |
+In order to integrate Google login with Modyo, you must have:
 
-### Using Azure active directory
+- Application ID
+- Key
 
-Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que permite implementar un esquema híbrido de identidad basado en directorios on-premise con SSO en la nube.
+These values can be obtained after creating an application on Google with permissions to login. You can learn more about how to create and configure a Google application in your [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
 
-#### Register a new client aplication
+You should keep in mind that the callback URL (_Callback URI_) is available at the end of the form. You need to use that URL in the application or project that you create in Google to be able to complete the login flow correctly.
 
-1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
-2. En la barra de búsqueda, busca por **Azure Active Directory**, y luego selecciona **App registrations > New registration**.
-3. Completa la siguiente información
-   * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
-   * **Supported account types**: Usa **"Accounts in any organizational directory and personal Microsoft accounts"** para incluir cuentas personales de Microsoft. Puedes encontrar más información al respecto [aquí](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
-   * **Redirect URI**: Usa la URL relativa a la cuenta `/auth/openidc/callback`.
-4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtene el **Application ID** y **Directory ID**.
-5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**.
+In addition to the necessary values, you can configure some extra data to control the behavior of the Google login. If you enable the _Restring domains_ option, you can use two extra fields:
 
-#### Integration settings
+- **Domain example**: These will be the domains that are shown as a suggestion when you are signing in to Google.
+- **Supported domains**: If the email domain that the user entered at the time of logging into Google is not within this list, then the login will not be valid and the user will be redirected to the login view of Modyo session without an active session.
 
-La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
+## LDAP
 
-1. Accede a **Configuración/Configuración de customers > Integrations > OpenID Connect**, y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
-2. En la consola de Azure ir a **App registrations > Endpoints** y obtener URLs para **Authorization endpoint** y **Token endpoint**. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
-3. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no contar con scopes personalizados.
-4. Habilita características opcionales de la integración.
-   |                                        |                                                                                                                                                                                                                        |
-   |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, deshabilitando la experiencia SSO. |
-   | **Habilitar revocación de token**                | No soportado por Azure AD|
-   | **Habilitar sincronización de _claims_ al momento de iniciar sesión** | Habilita la sincronización de _claims_ OpenID Connect con custom fields en Modyo.                                                                                         |
+In order to integrate a login with LDAP in Modyo, you will need the following information from your identity provider:
 
-### _claims_ syncronization
+- Service name: It will be displayed under the service logon icon or logo.
+- Host: Address in which the LDAP login service is available
+- Port: Port with which Modyo and your LDAP identification service should communicate.
+- Base: Search base, consisting of multiple objects separated by commas.
+- UID: Name of the field used by the LDAP service to identify users as a unique attribute.
+- Bind DN: Default credentials.
+- Password
+- Method: Authentication method with the LDAP identity service.
+- Logo: It is not required, but if you want it to appear next to the name of the service, for example, the logo of your company, you can upload an image in this field.
 
-Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
+## SAML
 
-1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
-2. En **Customers >  Configuración de customers > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
-3. En **Customers > Configuración de customers > Integrations > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
+In order to integrate a login with SAML in Modyo, you will need the following information from your identity provider:
+
+- Service name
+- Issuer
+- URL of the identity provider service
+- Parameters of the identity service provider URL
+- Identity provider certificate
+- Signature of the identity provider certificate
+- Name identification format
+- Service callback URL: By default this URL is `account_url/admin/auth/saml/callback`
+- Logo: As in LDAP, this image will be displayed as a service logo next to the service name on the login form.
+
+## OAuth2
+
+In order to integrate a login with OAuth2 in Modyo, you will need the following information from your identity provider:
+
+- Service name
+- Service description
+- Authentication URL: OAuth2 authentication service URL
+- Customer ID
+- Key (secret)
+- Scope: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
+- Field for login: You can choose between using Modyo's users' email, or their username. This option is useful if your OAuth2 authentication provider uses, for example, a numeric field and not an email as an identifier.
+- Placeholder for login: Text that will be displayed in the identification field as a placeholder if the user has not filled in the field
+- Use SSL: Enable this option if your OAuth2 authentication service uses a secure sockets layer (SSL: _Secure Sockets Layer_)
+
+## OpenID Connect
+
+### Using Keycloak
+
+Keycloak is a certified OpenID Connect identity provider that implements most of the features of Modyo OpenID Connect integration.
+
+#### Register a new client application
+
+1. Access the administrative console, for example [https://keycloak.example.com/auth/[(https://keycloak.example.com/auth/) and add a new realm.
+2. Add a client application using `openid-connect` as **Client Protocol** for integration with Modyo.
+3. Set **Access Type** `confidential` and leave only the **Standard Flow** enabled.
+4. Configure the **Valid Redirect URIs** with the callback and logout URLs of the Modyo account, using the URLs related to the `/auth/openidc/callback` and`/logout * `account.
+
+#### Integration Settings
+
+The following configuration is valid for both Team and Customer user integrations.
+
+1. Access **Configuration/Configuration of customers> Integrations> OpenID Connect** and complete **Client ID** and **Secret** with the name of the client and the credentials that appear in the tab **Credentials** of the client in Keycloak.
+2. In Issuer, fill in with the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
+3. Click **Launch discovery service**. This will complete most of the settings.
+4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+
+#### Optional integration settings
+
+When performing a specific integration, Modyo allows you to enable certain settings to control the following session features:
+
+| | |
+| ------------------------------------------------- -------------------- |: ---------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ------------------------------------- |
+| **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
+| **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again in Keycloak and disabling the SSO experience. |
+| **Enable token revocation** | Not supported by Keycloak |
+| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](# claims-synchronization). |
+| | |
+
+### Using Azure Active Directory
+
+Azure Active Directory is a Microsoft Azure cloud identity service that allows you to implement a hybrid identity scheme based on on-premise directories with SSO in the cloud.
+
+#### Register new client application
+
+1. Log in to [Azure Portal](https://portal.azure.com/).
+2. In the search bar, search for **Azure Active Directory**, and then select **App registrations> New registration**.
+3. Complete the following information
+   * **Name**: Use a meaningful name, for example, `modyo-production`.
+   * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include personal Microsoft accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
+   * **Redirect URI**: Use the URL related to the `/auth/openidc/callback` account.
+4. Once the application is created, go to **App registrations> modyo-production** and get the **Application ID** and **Directory ID**.
+5. Go to **App registrations> Certificates & secrets** and create a new secret with the **New client secret** button.
+
+#### Integration Settings
+
+The following configuration is valid for both Team and Customer user integrations.
+
+1. Access **Configuration/Configuration of customers> Integrations> OpenID Connect**, and complete **Client ID** and **Secret** with the credentials obtained from the Azure portal.
+2. In the Azure console go to **App registrations> Endpoints** and get URLs for **Authorization endpoint** and **Token endpoint**. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
+3. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+4. Enable optional integration features.
+   | | |
+   | ---------------------------------------- | -------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------- |
+   | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
+   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
+   | **Enable token revocation** | Not supported by Azure AD |
+   | **Enable sync of _claims_ at login** | Enable sync of _claims_ OpenID Connect with custom fields in Modyo. |
+
+### Synchronization of _claims_
+
+Modyo allows you to synchronize attributes and other properties of Customers users through standard and additional _claims_ of OpenID Connect.
+
+1. In **Clients> Mappers** create a new **Protocol Mapper** with the attribute or property of the user. Make sure **Add to userinfo** is enabled.
+2. In **Customers> Customer settings> Custom fields** add a new **Custom Field** with a data type equivalent to the claim.
+3. In **Customers> Customer settings> Integrations> OpenID Connect** enable **Enable _claims_ synchronization on login** and add _claims_ mappings for each of your _claims_.
 
 ## Webhooks
 
-La plataforma también permite la instalación de Webhooks en sitios específicos. Para ello, se deben habilitar y configurar desde aquí.
+The platform also allows the use of Webhooks for certain specific events within your account. To do this, they must be enabled and configured from the webhooks section in the account settings.
 
-Para habilitarlos, hay que hacer check en la parte superior de la página y después proceder a crearlo.
+A webhook is an automatic _POST_ action at a given URL with certain information.
 
-Al crearlo, se debe tener la URL del Webhook, seleccionar un tipo de log para aplicarlo y después el sitio en que se insertará.
+To enable them, you must check the top of the page and then proceed to create all the webhooks you want.
 
-Tras esto, se podrá ver en la lista de todos los webhooks que estén activos y su registro de movimientos.
+The actions you can configure to trigger webhooks are:
+
+- Category created
+- Deleted category
+- Updated category
+- Updated language
+- Login
+- Sign off
+- Membership created
+- Deleted membership
+- Updated profile
+- Registry
+- Site created
+- Site deleted
+- Site disabled
+- Site enabled
+- Hidden site
+- Site put in staging mode
+- Visible site
+- Updated site
+- User created
+- User deleted
+- User disabled
+- User enabled
+- Imported
+- User not verified
+- Updated user
+- Verified user
+- Form response created
+- Updated form response
+
+When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook and then save the changes.
+
+After this, you will see in the list all the webhooks that are active.
+
+Once the webhook is created, you can send a test notification with false information to prove that your URL is correctly receiving the POSTs from Modyo.
