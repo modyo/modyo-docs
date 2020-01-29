@@ -127,7 +127,7 @@ El proyecto debe tener por lo menos un widget para correr el servidor.
 Para poder hacer `push` de tus widgets a la plataforma **Modyo** y obtener los archivos de dependencias del sitio, tienes que contar con una sesión en la cuenta en que planeas desplegar tus widgets. Para eso, debes usar el siguiente comando:
 
 ```plain
-modyo-cli project login
+modyo-cli login
 ```
 
 ### Trabajando con widgets

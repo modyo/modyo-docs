@@ -15,7 +15,7 @@ Modyo allows messages to be sent to platform users through two channels:
 
 <img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
-## Bells
+## Campaigns
 
 At first glance, we will be in the Campaigns section, where we can see through an administrator all the messages and information that we have sent to our clients.
 
