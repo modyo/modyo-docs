@@ -125,6 +125,10 @@ Para obtener contenido privado, es necesario instanciar también el Tipo de Cont
 Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
 :::
 
+#### Paginación
+
+Todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
+
 #### Filtros de contenido
 
 En ciertas ocasiones, no se quiere obtener todo el contenido de un Tipo. Para dichas ocasiones, ModyoSDK provee de filtros aplicables a la consulta.
@@ -138,7 +142,11 @@ Para crear un filtro, hay que inicializarlo con `ctype.Filter()`, y luego al mis
 
 - **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `AND` en SQL, Has es equivalente a un `OR`.
 
-- **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`)
+- **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`).
+
+- **JSONPath**: recibe el JSONPath [ref](https://goessner.net/articles/JsonPath/) que modela una estructura de respuesta.
+
+- **Paginate**: recibe como parámetros el número de página y el total de entradas por página.
 
 
 :::warning Atención
