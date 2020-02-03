@@ -127,8 +127,7 @@ Es importante que se trate esta información potencialmente sensible con cuidado
 
 #### Paginación
 
-Todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados
-trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
+Todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
 
 #### Filtros de contenido
 
