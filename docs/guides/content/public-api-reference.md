@@ -128,7 +128,7 @@ Es importante que se trate esta información potencialmente sensible con cuidado
 #### Paginación
 
 Todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados
-trae hasta 20 entries por cada página. El máximo de entries por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
+trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
 
 #### Filtros de contenido
 
@@ -147,7 +147,7 @@ Para crear un filtro, hay que inicializarlo con `ctype.Filter()`, y luego al mis
 
 - **JSONPath**: recibe el JSONPath [ref](https://goessner.net/articles/JsonPath/) que modela una estructura de respuesta.
 
-- **Paginate**: recibe como parámetros el número de página y el total de entries por página.
+- **Paginate**: recibe como parámetros el número de página y el total de entradas por página.
 
 
 :::warning Atención
