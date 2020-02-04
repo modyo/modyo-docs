@@ -49,7 +49,7 @@ Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los can
 
 El manifiesto PWA sirve para indicar cómo quieres que un navegador muestre tu canal digital. En la plataforma, es posible activarlo a través de este checkbox. Con ello, se creará la siguiente ruta:
 
-´´´https://un.modyo.be/cristobal-prueba/manifest.json´´´
+´´´https://un.modyo.be/[site-name]/manifest.json´´´
 
 Esta ruta se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/guides/channels/templates.html).
 
