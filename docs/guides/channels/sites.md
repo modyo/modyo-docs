@@ -45,21 +45,31 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 
 Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén armando. Para ello, otorga dos opciones para implementarlos fácilmente.
 
-- **Manifiesto PWA**
+<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-El manifiesto PWA sirve para indicar cómo quieres que un navegador muestre tu canal digital. En la plataforma, es posible activarlo a través de este checkbox. Con ello, se creará la siguiente ruta:
+- **Manifiesto**
+
+El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. En la plataforma, es posible activarlo a través de este checkbox. Con ello, se creará la siguiente ruta:
 
 ´´´https://un.modyo.be/[site-name]/manifest.json´´´
 
 Esta ruta se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/guides/channels/templates.html).
 
-Para personalizar el manifiesto, podrás agregar el código en la siguiente sección.
+Para crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cada uno de los cambios sin tener que salir de la vista.
 
 :::warning Atención
-Si no personalizas el manifiesto pero agregas la ruta en el Template Builder, este quedará en blanco y no hará ninguna acción:::
+Si cambias el manifiesto, recuerda guardarlo con el botón **Guardar** que se encuentra en la parte superior de la pantalla para no perder los cambios.
+:::
+
+:::warning Atención
+Si no personalizas el manifiesto pero agregas la ruta en el Template Builder, este quedará en blanco y no hará ninguna acción :::
 
 - **Service Worker**
-<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+
+
+
+
 
 ::: danger
 Missing description
