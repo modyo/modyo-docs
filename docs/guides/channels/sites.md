@@ -51,9 +51,9 @@ Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los can
 
 El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. En la plataforma, es posible activarlo a través de este checkbox. Con ello, se creará la siguiente ruta:
 
-´´´plain
+```
 https://[domain]/[site-name]/manifest.json
-´´´
+```
 
 El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/guides/channels/templates.html), en el snippet ```head```.
 
@@ -71,9 +71,10 @@ Si no personalizas el manifiesto pero agregas la ruta en el Template Builder, es
 
 El Service Worker permite que el canal digital pueda realizar distintas acciones o mantenga ciertos datos conectados dentro del caché para ver una estructura en caso de tener una mala conexión. La plataforma otorga la posibilidad de que este se pueda habilitar a través del siguiente checkbox. Así, se creará la siguiente ruta:
 
-´´´plain
-https://[domain]]/[site-name]/serviceworker.js
-´´´
+
+```
+https://[domain]/[site-name]/serviceworker.js
+```
 
 Se puede modificar y programar el Service Worker en el siguiente campo, adaptándolo a tus rutas y con las variables disponibles de la siguiente manera.
 
