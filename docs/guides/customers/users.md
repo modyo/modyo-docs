@@ -16,7 +16,7 @@ En la parte superior de la tabla, encontrarás filtros que te permitirán encont
 - Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
 - Targets: Usuarios que se encuentran dentro de un determinado [Target](/guides/customers/targets.html)
 - Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
-- Búsqueda: Filtra usuarios por nombre, apellido, email, username y uuid.
+- Búsqueda: Filtra usuarios por nombre, apellido, email y username.
 
 La opción de Filtros Avanzados abrirá un modal el cual te permitirá filtrar a los usuarios por atributos más específicos, tales como su edad, o Custom Fields. Al agregar un nuevo filtro avanzado, aparecerá automáticamente el número de coincidencias en la parte inferior izquierda del modal, al lado del botón para limpiar los filtros. Si quieres visualizar el listado de estos usuarios filtrados, solo debes hacer _click_ en el botón **Aplicar**.
 
