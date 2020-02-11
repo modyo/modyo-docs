@@ -90,6 +90,12 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 
 ## OpenID Connect
 
+OpenID Connect (OIDC) es una capa de autenticación y framework que funiona sobre OAuth 2.0. Su estandar está controlado por la [https://openid.net/connect/](OpenID Foundation).
+
+:::warning Atención
+Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3 y OpenSSL Security Level 2 [https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html]((ref)).
+:::
+
 ### Usando Keycloak
 
 Keycloak es un identity provider certificado de OpenID Connect que implementa la mayoría de las funcionalidades de la integración OpenID Connect de Modyo.
