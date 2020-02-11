@@ -14,7 +14,7 @@ Con los Tipos, podrás evitar tener que estar muchas veces elaborando contenido 
 
 A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer _click_ ahí, te permitirá crear un Tipo.
 
-Más abajo, podrás ver la barra de búsqueda de Tipos, que te permitirá encontrar cualquier palabra que busques que se encuentre dentro del campo Nombre.
+Más abajo, podrás ver la barra de búsqueda de Tipos, que te permitirá filtrar por cualquier palabra que se encuentre dentro del campo Nombre.
 
 Después, encontrarás la tabla con los Tipos ya creados, que estarán ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, partiendo desde el elemento más reciente hacia atrás.
 

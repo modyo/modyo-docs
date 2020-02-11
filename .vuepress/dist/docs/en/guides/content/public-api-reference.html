@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>API &amp; SDKs</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.78f28ec0.css" as="style"><link rel="preload" href="/assets/js/app.8563f0d4.js" as="script"><link rel="preload" href="/assets/js/2.c1131df9.js" as="script"><link rel="preload" href="/assets/js/22.5ae4d8d8.js" as="script"><link rel="prefetch" href="/assets/js/10.a810df21.js"><link rel="prefetch" href="/assets/js/11.f8639887.js"><link rel="prefetch" href="/assets/js/12.4b650aee.js"><link rel="prefetch" href="/assets/js/13.f317c393.js"><link rel="prefetch" href="/assets/js/14.e5e995ec.js"><link rel="prefetch" href="/assets/js/15.845d56df.js"><link rel="prefetch" href="/assets/js/16.e33e356d.js"><link rel="prefetch" href="/assets/js/17.4ad6cfd0.js"><link rel="prefetch" href="/assets/js/18.f61cd7f4.js"><link rel="prefetch" href="/assets/js/19.4c852f14.js"><link rel="prefetch" href="/assets/js/20.8f6f3f4f.js"><link rel="prefetch" href="/assets/js/21.9c7f6ba2.js"><link rel="prefetch" href="/assets/js/23.0a26cb54.js"><link rel="prefetch" href="/assets/js/24.e185c325.js"><link rel="prefetch" href="/assets/js/25.4d38d9f8.js"><link rel="prefetch" href="/assets/js/26.7b038652.js"><link rel="prefetch" href="/assets/js/27.41a7bde5.js"><link rel="prefetch" href="/assets/js/28.ced056ad.js"><link rel="prefetch" href="/assets/js/29.028e9c1d.js"><link rel="prefetch" href="/assets/js/3.9e82b581.js"><link rel="prefetch" href="/assets/js/30.c5c8bc02.js"><link rel="prefetch" href="/assets/js/31.c82838ba.js"><link rel="prefetch" href="/assets/js/32.42d5a44e.js"><link rel="prefetch" href="/assets/js/33.05e0045f.js"><link rel="prefetch" href="/assets/js/34.8766f069.js"><link rel="prefetch" href="/assets/js/35.7286db9c.js"><link rel="prefetch" href="/assets/js/36.b603891c.js"><link rel="prefetch" href="/assets/js/37.0a7b1eaf.js"><link rel="prefetch" href="/assets/js/38.0385fa12.js"><link rel="prefetch" href="/assets/js/39.0b224e01.js"><link rel="prefetch" href="/assets/js/4.d571e7d1.js"><link rel="prefetch" href="/assets/js/40.19aedfb6.js"><link rel="prefetch" href="/assets/js/41.d3411ec6.js"><link rel="prefetch" href="/assets/js/42.b8d64c5b.js"><link rel="prefetch" href="/assets/js/43.df412f38.js"><link rel="prefetch" href="/assets/js/44.cb43ce49.js"><link rel="prefetch" href="/assets/js/45.755797f6.js"><link rel="prefetch" href="/assets/js/46.097387ee.js"><link rel="prefetch" href="/assets/js/47.960ac4ad.js"><link rel="prefetch" href="/assets/js/48.fc084645.js"><link rel="prefetch" href="/assets/js/49.bf8d0217.js"><link rel="prefetch" href="/assets/js/5.34a3e447.js"><link rel="prefetch" href="/assets/js/50.1630d97c.js"><link rel="prefetch" href="/assets/js/51.4dd7c568.js"><link rel="prefetch" href="/assets/js/52.bc8e2379.js"><link rel="prefetch" href="/assets/js/53.698a019f.js"><link rel="prefetch" href="/assets/js/54.4d5b5207.js"><link rel="prefetch" href="/assets/js/55.9c1d590e.js"><link rel="prefetch" href="/assets/js/56.e9d3f713.js"><link rel="prefetch" href="/assets/js/57.56eac4ac.js"><link rel="prefetch" href="/assets/js/58.4dcba9d1.js"><link rel="prefetch" href="/assets/js/59.47762aab.js"><link rel="prefetch" href="/assets/js/6.ee08fb41.js"><link rel="prefetch" href="/assets/js/60.1e9ff2f0.js"><link rel="prefetch" href="/assets/js/61.550714ab.js"><link rel="prefetch" href="/assets/js/62.2a717f53.js"><link rel="prefetch" href="/assets/js/63.d56f066e.js"><link rel="prefetch" href="/assets/js/64.7f033271.js"><link rel="prefetch" href="/assets/js/65.01f3c124.js"><link rel="prefetch" href="/assets/js/66.edce530c.js"><link rel="prefetch" href="/assets/js/67.4414497f.js"><link rel="prefetch" href="/assets/js/68.f51ace96.js"><link rel="prefetch" href="/assets/js/69.46f6a1a2.js"><link rel="prefetch" href="/assets/js/7.ebd8bc4a.js"><link rel="prefetch" href="/assets/js/70.229bf57c.js"><link rel="prefetch" href="/assets/js/71.ef3b813c.js"><link rel="prefetch" href="/assets/js/72.832e8266.js"><link rel="prefetch" href="/assets/js/73.00586a08.js"><link rel="prefetch" href="/assets/js/74.7bc8613e.js"><link rel="prefetch" href="/assets/js/75.89477fa7.js"><link rel="prefetch" href="/assets/js/76.100b6f23.js"><link rel="prefetch" href="/assets/js/77.a6be2e71.js"><link rel="prefetch" href="/assets/js/78.526199f2.js"><link rel="prefetch" href="/assets/js/79.27c1bffe.js"><link rel="prefetch" href="/assets/js/8.4b3dc1f6.js"><link rel="prefetch" href="/assets/js/80.e6f0d5d4.js"><link rel="prefetch" href="/assets/js/9.ec892f27.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.78f28ec0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="api-sdks"><a href="#api-sdks" class="header-anchor">#</a> API &amp; SDKs</h1> <p>Modyo Content cuenta con una completa API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a <a href="/guides/content/">Modyo Content</a> con <a href="/guides/channels/">Modyo Channels</a> desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.</p> <div class="custom-block tip"><p class="custom-block-title">SDKs para otros lenguajes</p> <p>Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.</p></div> <h2 id="liquid-sdk"><a href="#liquid-sdk" class="header-anchor">#</a> Liquid SDK</h2> <p>El SDK de Liquid permite consumir contenido de forma nativa desde <a href="/guides/channels/">Modyo Channels</a> en cualquiera de las secciones que utilicen el lenguaje de marcado de <a href="/guides/channels/liquid-markup.html">Liquid</a>, como <a href="/guides/channels/widgets.html">Widgets</a> y <a href="/guides/channels/templates.html">Plantillas</a> del sitio.</p> <h3 id="accessing-space-entries"><a href="#accessing-space-entries" class="header-anchor">#</a> Accessing space entries</h3> <p>Para acceder al listado de entradas de un tipo de uid <code>type_uid</code> del un espacio de uid <code>space_uid</code> usamos:</p> <div class="language-html extra-class"><pre class="language-html"><code>{% assign entries = spaces['space_uid'].types['type_uid'].entries %} {% for
+entry in entries %} entry: {{ entry.uuid }} -- {{ entry.title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+{% endfor %}
+</code></pre></div><h3 id="filter-entries"><a href="#filter-entries" class="header-anchor">#</a> Filter entries</h3> <p>Si queremos filtrar las entradas, podemos hacerlo por los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un arreglo de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:</p> <div class="language-html extra-class"><pre class="language-html"><code>{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category
+= 'news' | by_tag = 'tag1, tag2, tag3' %} {% for entry in entries %} entry: {{
+entry.uuid }} -- {{ entry.title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+{% endfor %}
+</code></pre></div><p>La selección de entradas siempre retorna un arreglo, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:</p> <div class="language-html extra-class"><pre class="language-html"><code>{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid =
+'entry_uuid' %} {% assign entry = entries.first %}
+</code></pre></div><h3 id="entries-with-locations"><a href="#entries-with-locations" class="header-anchor">#</a> Entries with locations</h3> <p>Para los entries con campos de Ubicación se pueden generar fácilmente mapas con los filtros <code>static_map</code> y <code>dynamic_map</code>, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field <code>Locations</code> con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.</p> <div class="language- extra-class"><pre class="language-text"><code>{{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+</code></pre></div><p>El filtro <code>dynamic_map</code> acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.</p> <div class="language- extra-class"><pre class="language-text"><code>{{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+</code></pre></div><h2 id="javascript-sdk"><a href="#javascript-sdk" class="header-anchor">#</a> Javascript SDK</h2> <p>El SDK de Javascript permite el acceso a los espacios y entradas de contenidos de forma simple desde cualquier ambiente que soporte Javascript (sitios Web dinámicos y estáticos, páginas SPA, aplicaciones móviles híbridas, etc).</p> <h3 id="instalation"><a href="#instalation" class="header-anchor">#</a> Instalation</h3> <div class="custom-block tip"><p class="custom-block-title">Uso desde Modyo Channels</p> <p>En el caso de Modyo Channels, la plantilla base con la cual se crean los sitios ya incluye instalada una versión reciente de este SDK, por lo que se puede utilizar de forma directa.</p></div> <p>La instalación del SDK de Javascript se puede relizar con <code>npm</code> o <code>yarn</code>.</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># Para npm:</span>
+<span class="token function">npm</span> <span class="token function">install</span> @modyo/sdk
+
+<span class="token comment"># Para yarn:</span>
+<span class="token function">yarn</span> <span class="token function">add</span> @modyo/sdk
+</code></pre></div><h3 id="use-making-a-request"><a href="#use-making-a-request" class="header-anchor">#</a> Use: making a <code>request</code></h3> <p>Una vez instalado el SDK en tu proyecto podrás empezar a ocuparlo para pedir contenido a Modyo.</p> <p>El siguiente ejemplo muestra la forma más básica en que puedes obtener contenido usando el SDK:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Client <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@modyo/sdk&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Creamos una función genérica que podamos instanciar cada vez que queramos hacer un request</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">getClient</span><span class="token punctuation">(</span><span class="token parameter">spaceUID</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// La clase `Client` del SDK requiere dos argumentos:</span>
+  <span class="token comment">// El primer argumento es la `url` de la API,</span>
+  <span class="token comment">// el segundo argumento es el `UID` del espacio que quieres acceder.</span>
+  <span class="token comment">// En este ejemplo, el `UID` del espacio lo pasaremos como argumento de esta función genérica</span>
+  <span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Client</span><span class="token punctuation">(</span><span class="token string">&quot;https://dynamicbank.modyo.build/api&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    spaceUID
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> client<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Una vez instanciada la clase `Client`, tenemos distintos métodos a nuestra disposición, como</span>
+<span class="token comment">// `getEntries()`</span>
+<span class="token function">getClient</span><span class="token punctuation">(</span><span class="token string">&quot;static-data&quot;</span><span class="token punctuation">)</span> <span class="token comment">// accedemos al espacio</span>
+  <span class="token punctuation">.</span><span class="token function">getEntries</span><span class="token punctuation">(</span><span class="token string">&quot;menu-item&quot;</span><span class="token punctuation">)</span> <span class="token comment">// Obtenemos todas las enbtradas del tipo `menu-item`</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">entries</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entries<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Imprimimos en un log las entradas recibidas</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// o retornamos un error si algo falla</span>
+</code></pre></div><p>Además del método <code>getEntries(typeUID)</code> que ocupamos en el ejemplo, si conocemos el <code>id</code> de nuestra entrada, podemos requerirla inmediatamanete usando el método <code>getEntry(typeUID, entryUID)</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">getClient</span><span class="token punctuation">(</span><span class="token string">&quot;static-data&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">getEntry</span><span class="token punctuation">(</span><span class="token string">&quot;menu-item&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">entry</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="api-refference"><a href="#api-refference" class="header-anchor">#</a> API refference</h2> <h3 id="routes-api-structure"><a href="#routes-api-structure" class="header-anchor">#</a> Routes API structure</h3> <p>Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>example<span class="token punctuation">.</span>com<span class="token operator">/</span>api<span class="token operator">/</span>content<span class="token operator">/</span>spaces<span class="token operator">/</span><span class="token operator">:</span>space_uid<span class="token operator">/</span>types<span class="token operator">/</span><span class="token operator">:</span>type_uid<span class="token operator">/</span>schema
+
+https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>example<span class="token punctuation">.</span>com<span class="token operator">/</span>api<span class="token operator">/</span>content<span class="token operator">/</span>spaces<span class="token operator">/</span><span class="token operator">:</span>space_uid<span class="token operator">/</span>types<span class="token operator">/</span><span class="token operator">:</span>type_uid<span class="token operator">/</span>entries<span class="token operator">?</span><span class="token punctuation">[</span>filters<span class="token punctuation">]</span>
+
+https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>example<span class="token punctuation">.</span>com<span class="token operator">/</span>api<span class="token operator">/</span>content<span class="token operator">/</span>spaces<span class="token operator">/</span><span class="token operator">:</span>space_uid<span class="token operator">/</span>types<span class="token operator">/</span><span class="token operator">:</span>type_uid<span class="token operator">/</span>entries<span class="token operator">/</span><span class="token operator">:</span>entry_uuid
+</code></pre></div><p>Aquí, <code>space_uid</code> y <code>type_uid</code> corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.</p> <h3 id="entries-json-structure"><a href="#entries-json-structure" class="header-anchor">#</a> Entries JSON structure</h3> <p>Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:</p> <p>Entries JSON:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total_entries&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;per_page&quot;</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;current_page&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;total_pages&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;entries&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;uuid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9b0a24a6-d84f-4851-8750-a86244947510&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;space&quot;</span><span class="token operator">:</span> <span class="token string">&quot;myspace&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem Ipsum dolor&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;type_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Post&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;category&quot;</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;tags&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;locale&quot;</span><span class="token operator">:</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;available_locales&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;en&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;excerpt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem Ipsum dolor&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;uuid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1c9b24a6-d84f-4851-8750-a86244963589&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;space&quot;</span><span class="token operator">:</span> <span class="token string">&quot;myspace&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem Ipsum dolor&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;type_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Post&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;category&quot;</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;tags&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;locale&quot;</span><span class="token operator">:</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;available_locales&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;en&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;excerpt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem Ipsum dolor&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+</code></pre></div><p>Entries JSON Schema:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;definitions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;entry&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;required&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;uuid&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;space&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;type_name&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;category&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;updated_at&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;created_at&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;tags&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;locale&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;available_locales&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;uuid&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;9b0a24a6-d84f-4851-8750-a86244947510&quot;</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;space&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;myspace&quot;</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;Lorem Ipsum dolor&quot;</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;type_name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;Post&quot;</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;category&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;null&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token keyword">null</span>
+              <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;tags&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;array&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;locale&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;en&quot;</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;available_locales&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;array&quot;</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token string">&quot;en&quot;</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;$schema&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://json-schema.org/draft-07/schema#&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;required&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;meta&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;entries&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;required&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;total_entries&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;per_page&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;current_page&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;total_pages&quot;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;total_entries&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;per_page&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;current_page&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;total_pages&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;entries&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;array&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;$ref&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/definitions/entry&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Entry JSON:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+   <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token string">&quot;uuid&quot;</span><span class="token operator">:</span><span class="token string">&quot;9b0a24a6-d84f-4851-8750-a86244947510&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;space&quot;</span><span class="token operator">:</span><span class="token string">&quot;myspace&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;name&quot;</span><span class="token operator">:</span><span class="token string">&quot;Lorem Ipsum dolor&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;type_name&quot;</span><span class="token operator">:</span><span class="token string">&quot;Post&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;category&quot;</span><span class="token operator">:</span><span class="token keyword">null</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;updated_at&quot;</span><span class="token operator">:</span><span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;tags&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;locale&quot;</span><span class="token operator">:</span><span class="token string">&quot;en&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;available_locales&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+         <span class="token string">&quot;en&quot;</span>
+      <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token string">&quot;fields&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token string">&quot;excerpt&quot;</span><span class="token operator">:</span><span class="token string">&quot;Lorem Ipsum dolor&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;body&quot;</span><span class="token operator">:</span><span class="token string">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</span>
+   <span class="token punctuation">}</span>
+</code></pre></div><p>Entry JSON Schema:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;definitions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;$schema&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://json-schema.org/draft-07/schema#&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://example.com/root.json&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;required&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;meta&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;fields&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;required&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;uuid&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;space&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;type_name&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;category&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;updated_at&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;created_at&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;tags&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;locale&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;available_locales&quot;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;properties&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;uuid&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/uuid&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;9b0a24a6-d84f-4851-8750-a86244947510&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;space&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/space&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;myspace&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/name&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;Lorem Ipsum dolor&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;type_name&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/type_name&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;Post&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;category&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/category&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;null&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token keyword">null</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;updated_at&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/updated_at&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;2019-03-18T14:06:59.000-03:00&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;tags&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/tags&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;array&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;locale&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/locale&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&quot;en&quot;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;available_locales&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/available_locales&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;array&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/meta/properties/available_locales/items&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;examples&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token string">&quot;en&quot;</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">&quot;pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^(.*)$&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;fields&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;$id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#/properties/fields&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;object&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="api-pagination"><a href="#api-pagination" class="header-anchor">#</a> API pagination</h3> <p>Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.</p> <p>Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.</p> <p>Por ejemplo, con <code>page = 3</code>, <code>per_page = 20</code> se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.</p> <p>Junto con la respuesta se entrega un meta de paginación como por ejemplo:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code> <span class="token string">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total_entries&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;per_page&quot;</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;current_page&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;total_pages&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h4 id="entries"><a href="#entries" class="header-anchor">#</a> Entries</h4> <p>Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:</p> <ul><li>Tipo</li> <li>Estado de Revisión</li> <li>Categoría</li> <li>Tags</li> <li>Autor</li></ul> <h4 id="filters"><a href="#filters" class="header-anchor">#</a> Filters</h4> <p>En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:</p> <p>Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros <code>meta.param_name</code>. Esto mientras sólo sea la Metadata lo que se esté consultando.</p> <ul><li>Tags: consultables de dos maneras
+<ul><li><code>meta.tag=tag_name</code></li> <li><code>meta.tag[in][]=tag1_name&amp;meta.tag[in][]=tag2_name</code></li></ul></li> <li>Categories, consultable de una sola manera: <code>category=category_full_path</code> considerará categorías hijas de la consultada</li> <li>Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
+<ul><li><code>.../entries?meta.created_at=1987-11-19T13:13:13</code></li> <li><code>.../entries?meta.updated_at[lt]=1987-11-19</code></li> <li><code>.../entries?meta.published_at[gt]=1987-11-19</code></li></ul></li> <li>Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
+<ul><li>Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels), ej: <code>fields.location_name=Chile</code> <ul><li><code>.../entries?fields.color=black</code></li></ul></li></ul></li></ul> <h5 id="operators"><a href="#operators" class="header-anchor">#</a> Operators</h5> <p>Las principales operaciones sobre campos son:</p> <ul><li>[gt],[lt] = greater/less than, aplicable en enteros y fechas</li> <li>[in] = permite incluir varios valores que entran en una consulta tipo OR</li> <li>[all] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.</li> <li>[nin] = permite incluir varios valores, que entran en una consulta NOT IN</li> <li>[geohash] = permite busquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .</li></ul> <p>Ejemplo:</p> <ul><li><code>../entries?meta.created_at[in][]=1987-11-19T13:13:13&amp;meta.created_at[in][]=1987-11-19T14:14:14</code> buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14</li></ul> <h5 id="returned-fields"><a href="#returned-fields" class="header-anchor">#</a> Returned fields</h5> <p>Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:</p> <p>Los campos de metadata se referencian como: meta.attr_name (ej meta.tag)
+Los campos de las entries como: field.attr_name
+Se usa una expresiónJsonPath por ejemplo:</p> <p><code>.../entries?fields=$.entries[*].meta.uuid</code> para obtener sólo los uuid de la meta-data de los entries.
+<code>.../entries?fields=$..description</code> para obtener todos los campos description en los entries.</p> <h5 id="equiality-inequality-in-arryas"><a href="#equiality-inequality-in-arryas" class="header-anchor">#</a> Equiality/Inequality in arryas</h5> <p>Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:</p> <ul><li>ALL: equivalente a un sql AND
+<code>.../entries?fields.color[all][]=red&amp;fields.color[has][]=black</code></li> <li>IN: equivalente a un sql OR
+<code>.../entries?fields.color[in][]=red&amp;fields.color[in][]=blue</code></li> <li>NIN: equivalente a un slq NOT IN
+<code>.../entries?fields.color[nin][]=red&amp;fields.color[nin][]=blue</code></li></ul> <h5 id="sort-by"><a href="#sort-by" class="header-anchor">#</a> Sort by</h5> <p>El orden de los resultados se debe especificar con los parámetros <code>sort_by</code> y <code>order</code>:</p> <ul><li><code>sort_by</code>: indicando el nombre del atributo (ej: meta.tag, o fields.name)</li> <li><code>order</code>: ['asc','desc'] (opcional, asc por default)</li></ul> <h4 id="jquery"><a href="#jquery" class="header-anchor">#</a> jQuery</h4> <p>La biblioteca JavaScript de jQuery nos hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.</p> <p>Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de no solo contenido dentro de tu sitio, pero de también otros sitios y servicios.</p> <p>En esta solicitud AJAX, estamos especificando un punto de salida (utilizando el objeto Liquid <span>{{ site.url }}</span>) e incluyendo opciones para especificar que es un &quot;GET&quot; del tipo 'json'. Finalmente enlazamos el &quot;data.promotions&quot; a nuestro &quot;vm.promos&quot; para usarlo en la aplicación.</p> <h4 id="api-fetch-with-native-javascript"><a href="#api-fetch-with-native-javascript" class="header-anchor">#</a> API Fetch with native JavaScript</h4> <p>La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.</p> <p>Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código:
+Estamos trayendo un archivo JSON desde dentro de nuestro sitio utilizando el objeto Liquid <span> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un &quot;promise&quot; que contiene la respuesta (Response object).</p> <p>Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utilizamos el método json() al final de esta, para luego enlazar los datos a nuestras promociones (este fetch() es para esta aplicación).</p> <p>Para información más detallada, te recomendamos visitar los webdocs de MDN.</p> <h4 id="axios"><a href="#axios" class="header-anchor">#</a> Axios</h4> <p>Axios es una biblioteca JavaScript muy popular que los desarrolladores utilizan para realizar solicitudes HTTP que funcionan en todos los navegadores modernos, incluyendo IE8 en adelante.</p> <p>Está basada en el objeto Promise y te permite escribir asincrónicamente código para realizar solicitudes XHR fácilmente.</p> <p>Utilizar Axios tiene algunas ventajas sobre la API Fetch nativa:</p> <ul><li>Soporta navegadores más antiguos (Fetch necesita un polyfill)</li> <li>Tiene una manera de cancelar una solicitud</li> <li>Tiene una manera de establecer un timeout para una respuesta</li> <li>Viene con protección CSRF incluida</li> <li>Soporta progreso de carga</li> <li>Realiza transformación de datos JSON automáticamente</li></ul> <p>Para poder usar Axios en Modyo, necesitas agregar el código base del axios.js como un custom snippet e incluirlo en algún lugar donde tus widgets puedan accederlo, como tu theme en JavaScript (localizado en Templates, bajo la pestaña de Archivos).</p> <p>La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSON ligero que puede ser utilizado en muchas funcionalidades de tu cuenta, incluyendo herramientas administrativas.</p> <p>Para crear un nueva aplicación de acceso a la API, dirígete a Cuenta &gt; Configuración &gt; Acceso a la API. y haz click en + Nuevo en la esquina superior derecha.</p> <p>Aquí debes darle un nombre, una descripción, un URI de redirección (Utiliza urn:ietf:wg:oauth:2.0:oob para pruebas locales) y una URL para cerrar sesión como por ejemplo <a href="http://ejemplo.com/logout" target="_blank" rel="noopener noreferrer">http://ejemplo.com/logout<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="content-delivery-api"><a href="#content-delivery-api" class="header-anchor">#</a> Content Delivery API</h3> <p>La API de Content Delivery de Modyo, es muy fácil de operar con distintos comandos, que permiten traer información de manera segura para cualquier microservicio.</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8563f0d4.js" defer></script><script src="/assets/js/2.c1131df9.js" defer></script><script src="/assets/js/22.5ae4d8d8.js" defer></script>
+  </body>
+</html>
