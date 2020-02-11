@@ -41,7 +41,8 @@ module.exports = {
                     "/guides/",
                     "/guides/whats-new",                    
                     "/guides/key-concepts",                    
-                    "/guides/versions"
+                    "/guides/versions",
+                    "/guides/release-notes"
                   ]
                 },
                 {
@@ -120,7 +121,8 @@ module.exports = {
                     "/en/guides/",
                     "/en/guides/whats-new",                    
                     "/en/guides/key-concepts",                    
-                    "/en/guides/versions"
+                    "/en/guides/versions",
+                    "/guides/release-notes"
                   ]
                 },
                 {
