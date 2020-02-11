@@ -12,18 +12,18 @@ Desde Modyo se puede configurar el acceso desde distintos orígenes para que el 
 
 Espacios también te permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
 
-Al acceder a la sección de Espacios se listarán todos los existentes indicando el Nombre del mismo y la contabilización de cuantos tipos de contenido y entradas hay creadas. 
+Al acceder a la sección de Espacios se mostrará una lista indicando el nombre del espacio y su cantidad de tipos de contenido y de entradas. 
 
 Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo, y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
 
 ## Crear un Espacio
 
-Para crear un Espacio, se debe hacer _click_ en el botón verde en la parte superior derecha de la vista índice de Espacios, y asignar el nombre y el UID que usarás.
+Para crear un espacio, se debe hacer _click_ en el botón verde en la parte superior derecha de la vista índice de espacios, y asignar el nombre y el UID que usarás.
 
 Además, deberás seleccionar el idioma por defecto sobre el cual se escribirá el contenido que quieres publicar, para una mejor configuración de los caracteres.
 
 :::tip Tip
-Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del Espacio.
+Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del espacio.
 :::
 
 ## Configurar un Espacio
@@ -34,7 +34,7 @@ En este caso, la configuración de Espacios sirve para cambiar las característi
 
 ### General
 
-En esta sección, puedes cambiar el nombre del Espacio o su UID.
+En esta sección, puedes cambiar el nombre del espacio o su UID.
 
 El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). 
 
@@ -46,7 +46,7 @@ Modyo permite el cambio de idiomas y léxicos según el país en que se necesite
 
 <img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
 
-El idioma por defecto de un Espacio se define al momento de crear el Espacio y no puede ser modificado, pero en esta sección puedes añadir cuantos idiomas secundarios necesites. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
+El idioma por defecto de un espacio se define al momento de crear el espacio y no puede ser modificado, pero en esta sección puedes añadir cuantos idiomas secundarios necesites. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
 
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
@@ -56,7 +56,7 @@ Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada e
 
 ### Caché
 
-El caché es una herramienta que permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del Espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
+El caché es una herramienta que permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
@@ -78,7 +78,7 @@ Para ello, también es necesario especificar el dominio desde dónde será acced
 
 Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
 
-- La configuración de URLs permitidas para acceder al contenido a nivel de Espacios, permitiendo automáticamente custom domains de sites.
+- La configuración de URLs permitidas para acceder al contenido a nivel de espacios, permitiendo automáticamente custom domains de sites.
 - Cuando se realiza un request al API, se agrega el header ```Access-Control-Allow-Origin``` con valor request.origin a la respuesta y    ```Access-Control-Allow-Credentials' = true```, sólo si el origen pertenece a las urls/domains previamente mencionadas. En caso caso contrario no quedan configurados.
 - URLs permitidas son cacheadas a nivel de aplicación.
 - En caso de usar caché intermedio se debe considerar el origen en la clave de caché para que se maneje el caché por separado en cada origen:
@@ -108,22 +108,22 @@ Para más información sobre cómo configurar esta opción, revisa la sección d
 
 <img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-Para conformar el grupo de trabajo, en la plataforma puedes seleccionar los miembros que trabajarán en este Espacio y que tendrán acceso a la escritura, revisión y/o publicación.
+Para conformar el grupo de trabajo, en la plataforma puedes seleccionar los miembros que trabajarán en este espacio y que tendrán acceso a la escritura, revisión y/o publicación.
 
-Para ello, el Administrador que creó el Espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
+Para ello, el Administrador que creó el espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
 #### Agregar usuario ####
-Para añadir un usuario al Espacio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona "Añadir" para que este sea parte del equipo de trabajo del Espacio.
+Para añadir un usuario al Espacio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona **Añadir** para que este sea parte del equipo de trabajo del espacio.
 
 #### Modificar Rol ####
 Puedes modificar el rol de alguno de los usuarios asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
 ::: warning Atención
-Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
+Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
 :::
 
 #### Eliminar Miembros del Equipo ####
-Para eliminar a algún miembro del Equipo de un Espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
+Para eliminar a algún miembro del equipo de un espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
 ::: warning Atención
 Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si existe un solo administrador, este no podrá ser borrado.
