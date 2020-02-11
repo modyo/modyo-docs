@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Notas del release
+# Release notes
 
 ## 9.0.2  (04 de Febrero del 2020)
 * MODYO-10594 — Actualizar Gemfile Lock
