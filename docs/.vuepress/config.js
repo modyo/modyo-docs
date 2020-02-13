@@ -113,7 +113,7 @@ module.exports = {
                           ["/widgets/","Acerca de los widgets"],
                         ]
                       },
-                      {
+                      /*{
                         title: "Seguros",
                         collapsable: true,
                         children:[
@@ -142,21 +142,22 @@ module.exports = {
                         children:[
                           "/widgets/onboarding/",
                         ]
-                      },
+                      },*/
                       {
                         title: "Personas",
                         collapsable: true,
                         children:[
                           "/widgets/retail/",
                           "/widgets/retail/accounts",
-                          "/widgets/retail/cash-advance",
-                          "/widgets/retail/consumer-loan",
+                          //"/widgets/retail/cash-advance",
+                          //"/widgets/retail/consumer-loan",
                           "/widgets/retail/credit-cards",
-                          "/widgets/retail/loans",
-                          "/widgets/retail/mortgage-loans",
+                          "/widgets/retail/credit-card-payment",
+                          //"/widgets/retail/loans",
+                          //"/widgets/retail/mortgage-loans",
                           "/widgets/retail/summary",
-                          "/widgets/retail/transfer",
-                          "/widgets/retail/transfers",
+                          //"/widgets/retail/transfer",
+                          //"/widgets/retail/transfers",
                         ]
                       },
                 ]
