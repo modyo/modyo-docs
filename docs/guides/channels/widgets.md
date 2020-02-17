@@ -4,46 +4,46 @@ search: true
 
 # Widgets
 
-Los widgets son los que te permiten crear _microfrontends_ encapsulados para tus sitios y aplicaciones.
+Los widgets son los que permiten crear _microfrontends_ encapsulados para sitios y aplicaciones.
 
-Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los widgets que se han creado. En la barra superior podrás filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
+Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
 
-En la esquina superior derecha verás un botón principal **+ Nuevo** que te permitirá crear un nuevo widget. Deberás escribir un nombre para luego entrar a la vista de edición del widget.
+En la esquina superior derecha se observa un botón principal **+ Nuevo** que permitecrear un nuevo widget. Para ello, se debe escribir un nombre para luego entrar a la vista de edición del widget.
 
-En la vista de edición del widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
+En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
 ![Widget Builder](/assets/img/platform/widget-builder.png) 
 
-En la barra superior verás:
+En la barra superior se encuentran las siguientes secciones:
 
-A la izquierda, encontrarás el nombre del widget y el estado actual:
+- **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
+- **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
+- **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
+- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se está en este estado, los templates están listos para ser publicados.
 
-- **Borrador**: Este estado lo verás cuando recién se haya creado un widget o cuando se haya despublicado.
-- **Publicado**: Este estado lo verás luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado lo verás si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado lo verás cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
-
-A la derecha, encontrarás distintas acciones:
-**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te permite abrir en una nueva pestaña la vista previa de la versión editable del widget.
+A la derecha, estas son las distintas acciones:
+**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Permite abrir en una nueva pestaña la vista previa de la versión editable del widget.
 
 **Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer 
-_click_ en este icono, abrirás el modal de diferencias, en el cual podrás comparar los cambios que hay entre múltiples versiones de tu widget. Por defecto partirás comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, podrás comparar además con las versiones de respaldo. Si este icono no aparece, entonces no hay ninguna versión publicada de este widget.
+_click_ en este icono, se abrirá el modal de diferencias, en el cual se puede comparar los cambios que hay entre múltiples versiones del widget. 
+
+Por defecto comienza comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, se puede además con las versiones de respaldo. Si este icono no aparece, entonces no hay ninguna versión publicada de este widget.
 
 **Actividad** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te permite desplegar una pestaña lateral que muestra la actividad y comentarios del widget.
 
-**Otras opciones**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te permite archivar y crear una copia del widget actual.
+**Otras opciones**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Permite archivar y crear una copia del widget actual.
 
 **Botón principal:**
 
 - **Guardar**: Guarda los cambios actuales.
-- **Enviar a revisión**: Si está la revisión en equipo habilitada, entonces podrás enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
+- **Enviar a revisión**: Si está la revisión en equipo habilitada, entonces se puede enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
 - **Publicar**: Pasa la versión editable o aprobada (si está habilitada la revisión en equipo) a la versión publicada.
 
 **Otras acciones principales:**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
 
-- **Despublicar**: Si el widget está publicado, podrás sacarlo de producción usando esta opción.
-- **Forzar publicación**: Si eres administrador del sitio, podrás hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
+- **Despublicar**: Si el widget está publicado, se puede sacar de producción usando esta opción.
+- **Forzar publicación**: Si eres administrador del sitio, se puede hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
 
 :::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
@@ -54,38 +54,38 @@ Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la 
 :::
 
 :::tip Tip
-Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Puedes restaurar un widget archivado, entrando a su vista de edición y usando la opción **Restaurar** en la esquina superior derecha de la vista.
+Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Para restaurar un widget archivado, se debe entrar a la vista de edición, usando la opción **Restaurar** en la esquina superior derecha de la vista.
 :::
 
 Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/guides/channels/pages.html)
 
 :::tip Tip
-Para aprender más sobre el flujo de publicación, revisa la sección de [Versionado.](/guides/platform/team-review.html#versionado)
+Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/guides/platform/team-review.html#versionado)
 :::
 
 
-En el área de trabajo verás:
+En el área de trabajo se puede ver:
 
-- **Pestañas de código**: Tendrás a tu disposición una pestaña de JavaScript, CSS y HTML para construir tus widgets.
-- **Gestor de archivos**: Al hacerle _click_, levantarás el modal de gestión de archivos, onde podrás filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/guides/content/asset-manager.html) y copiar su URL para usarlos en tu widget. También podrás subir nuevos archivos desde este modal.
-- **Atajos de teclado**: Verás una pequeña ventana informativa con algunos atajos de teclado útiles.
-- **Snippets**: Verás una lista de los snippets disponibles desde el [Template Builder](/guides/channels/templates.html#snippets) y podrás copiar su código para referenciarlos en tu widget.
-- **Cambios**: Si has guardado cambios y no has publicado, verás este listado de todas las veces que has guardado cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, cambiarás el contenido de la pestaña por el contenido de la sub-versión que clickeaste.
+- **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS y HTML para construir widgets.
+- **Gestor de archivos**: Al hacer _click_, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/guides/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
+- **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
+- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/guides/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
+- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo _click_.
 
 :::tip Tip
-Para no perder los cambios que tienes actualmente, asegúrate de guardar antes de saltar entre sub-versiones, de tal forma que siempre puedas volver a la última versión guardada en la lista de cambios.
+Para no perder los cambios que tienes actualmente, se debe guardar antes de saltar entre sub-versiones, de tal forma que siempre pueda volver a la última versión guardada en la lista de cambios.
 :::
 
 :::tip Tip
-Cuando publicas el widget, no verás cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si restauras el widget a una versión anterior, también restaurarás las sub-versiones, por lo que podrás acceder a todas las instancias en que se guardaron cambios en esa versión.
+Cuando se publica el widget, no se observarán cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si se restaura el widget a una versión anterior, también lo harán las sub-versiones, por lo que se puede acceder a todas las instancias en que se guardaron cambios en esa versión.
 :::
 
-En las tres pestañas del widget puedes hacer uso de Liquid. Para más información revisa [la documentación asociada a Liquid.](/guides/channels/liquid-markup.html)
+En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/guides/channels/liquid-markup.html)
 
-En la columna de propiedades verás: 
+En la columna de propiedades se pueden ver: 
 
-- **Nombre**: Te permitirá cambiar el nombre del widget
-- **Tags**: Te permitirá añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
+- **Nombre**: Permite cambiar el nombre del widget
+- **Tags**: Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
 
 ## Modyo CLI
 
@@ -93,7 +93,7 @@ En la columna de propiedades verás:
 
 ### Introducción
 
-Primero, debes instalar la CLI de Modyo globalmente para tener el comando `modyo-cli` disponible.
+Primero, se debe instalar la CLI de Modyo globalmente para tener el comando `modyo-cli` disponible.
 
 Si usas npm:
 
@@ -114,7 +114,7 @@ La CLI de Modyo está diseñada para trabajar con uno o más widgets de un proye
 Para crear un proyecto:
 
 ```plain
-# Lo ideal es que nombres tus proyectos en formato `PascalCase`
+# Lo ideal es que se nombren proyectos en formato `PascalCase`
 modyo-cli project create <projectName>
 cd projectName
 modyo-cli project start
@@ -124,7 +124,7 @@ El proyecto debe tener por lo menos un widget para correr el servidor.
 
 ### La sesión de Modyo
 
-Para poder hacer `push` de tus widgets a la plataforma **Modyo** y obtener los archivos de dependencias del sitio, tienes que contar con una sesión en la cuenta en que planeas desplegar tus widgets. Para eso, debes usar el siguiente comando:
+Para poder hacer `push` de los widgets a la plataforma **Modyo** y obtener los archivos de dependencias del sitio, tienes que contar con una sesión en la cuenta en que planeas desplegar widgets. Para eso, debes usar el siguiente comando:
 
 ```plain
 modyo-cli login
@@ -135,7 +135,7 @@ modyo-cli login
 Para añadir un nuevo widget al proyecto, usa el siguiente comando:
 
 ```plain
-# Lo ideal es que puedas nombrar tus widgets con formato `PascalCase`
+# Lo ideal es que puedas nombrar los widgets con formato `PascalCase`
 modyo-cli widget add <widgetName>
 ```
 
