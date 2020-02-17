@@ -4,8 +4,6 @@ search: true
 
 # Tarjetas de crédito
 
-## Pagos
-
 ## Avance
 
 |Funcionalidad|Descripción|
