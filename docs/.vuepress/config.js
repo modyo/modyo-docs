@@ -30,6 +30,7 @@ module.exports = {
               label: "Español",
               nav: [
                 { text: "Guías", link: "/guides/" },
+                { text: "Widgets", link: "/widgets/" },
                 { text: "Modyo", link: "https://es.modyo.com" },
                 { text: "Soporte", link: "https://support.modyo.com/hc/es" }                               
               ],
