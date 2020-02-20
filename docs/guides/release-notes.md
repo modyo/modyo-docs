@@ -4,7 +4,8 @@ search: true
 
 # Notas del release
 
-## 9.0.2  (04 de Febrero del 2020)
+## 9.0
+### 9.0.2 - 04 de Febrero del 2020
 * MODYO-10594 — Actualizar Gemfile Lock
 * MODYO-10496 — Cambiar dropdown de sitos por select2 con buscador
 * MODYO-10512 — Añadir configuración de API key de google a las settings de la cuenta
@@ -28,7 +29,7 @@ search: true
 * MODYO-10615 — Error al parsear atributos no-string en content
 * MODYO-10596 — Hacer consistente tabs vacíos de usuarios
  
-## 9.0.1  (17 de Enero del 2020)
+### 9.0.1 - 17 de Enero del 2020
 * MODYO-10497 — Implementar preview de contenido en sitios con vistas custom
 * MODYO-10517 — Manejo de error en asset manager
 * MODYO-10544 — Error en preview en sitios con custom domain
@@ -50,7 +51,7 @@ search: true
 * MODYO-10572 — Añadir name y slug como elementos diferenciables e las entries
 * MODYO-10576 — Error con flash en login required
 
-## 9.0.0 G.A (19 de Diciembre del 2019)
+### 9.0.0 - 19 de Diciembre del 2019
 * MODYO-10307 — Corregir y comprimir migración de contenido
 * MODYO-10369 — Error al añadir custom widgets en pages
 * MODYO-10424 — Overlay de Custom Widgets con error
@@ -844,3 +845,7 @@ search: true
 * MODYO-8844 — Actualizar after/before filters a after/before actions 
 * MODYO-8845 — Refactorizar argumentos de asociaciones class_name a strings 
 * MODYO-8846 — Normalizar rutas javascript_preview y stylesheet_preview 
+
+## 9.1
+
+Primer release planificado para el segundo trimestre del 2020.

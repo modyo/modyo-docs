@@ -47,6 +47,14 @@ module.exports = {
                     ]
                   },
                   {
+                    title: "Cloud",
+                    collapsable: true,
+                    children:[
+                      ["/guides/cloud/","Introducción"],
+                      "/guides/cloud/security"
+                    ]
+                  },
+                  {
                     title: "Plataforma",
                     collapsable: true,
                     children:[
