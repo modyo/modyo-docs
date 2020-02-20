@@ -6,7 +6,7 @@ search: true
 
 <iframe src="https://widgets.modyo.com/personas/retail-credit-cards" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
-## Avance
+### Propiedades
 
 |Funcionalidad|Descripción|
 |:------------|:----------|

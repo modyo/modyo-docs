@@ -156,15 +156,14 @@ module.exports = {
                         title: "Personas",
                         collapsable: true,
                         children:[
-                          "/widgets/retail/",
-                          "/widgets/retail/accounts",
+                          "/widgets/retail/summary",                          
+                          "/widgets/retail/accounts",                          
                           //"/widgets/retail/cash-advance",
                           //"/widgets/retail/consumer-loan",
                           "/widgets/retail/credit-cards",
                           "/widgets/retail/credit-card-payment",
                           //"/widgets/retail/loans",
-                          //"/widgets/retail/mortgage-loans",
-                          "/widgets/retail/summary",
+                          //"/widgets/retail/mortgage-loans",                          
                           //"/widgets/retail/transfer",
                           //"/widgets/retail/transfers",
                         ]
