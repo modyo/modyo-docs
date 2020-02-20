@@ -119,7 +119,23 @@ module.exports = {
                         title: "Catálogo",
                         collapsable: false,
                         children:[
-                          ["/widgets/","Acerca de los widgets"],
+                          ["/widgets/","Introducción"],
+                        ]
+                      },
+                      {
+                        title: "Personas",
+                        collapsable: true,
+                        children:[
+                          "/widgets/retail/summary",                          
+                          "/widgets/retail/accounts",    
+                          "/widgets/retail/credit-cards",
+                          "/widgets/retail/credit-card-payment",                      
+                          //"/widgets/retail/cash-advance",
+                          //"/widgets/retail/consumer-loan",                          
+                          //"/widgets/retail/loans",
+                          //"/widgets/retail/mortgage-loans",                          
+                          //"/widgets/retail/transfer",
+                          //"/widgets/retail/transfers",
                         ]
                       },
                       /*{
@@ -151,23 +167,7 @@ module.exports = {
                         children:[
                           "/widgets/onboarding/",
                         ]
-                      },*/
-                      {
-                        title: "Personas",
-                        collapsable: true,
-                        children:[
-                          "/widgets/retail/summary",                          
-                          "/widgets/retail/accounts",                          
-                          //"/widgets/retail/cash-advance",
-                          //"/widgets/retail/consumer-loan",
-                          "/widgets/retail/credit-cards",
-                          "/widgets/retail/credit-card-payment",
-                          //"/widgets/retail/loans",
-                          //"/widgets/retail/mortgage-loans",                          
-                          //"/widgets/retail/transfer",
-                          //"/widgets/retail/transfers",
-                        ]
-                      },
+                      },*/                      
                 ]
               }
           },

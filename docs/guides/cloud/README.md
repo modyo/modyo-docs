@@ -4,11 +4,13 @@ search: true
 
 # Modyo Cloud
 
-## Modyo Cloud 
+## Versiones
+
+### Modyo Cloud 
 
 La versión Modyo Cloud consiste en un despliegue.
 
-## Modyo Private Cloud
+### Modyo Private Cloud
 
 La versión Modyo Private Cloud consiste en un despleigue totalmente independiente.
 
@@ -18,13 +20,13 @@ Para más información acerca de las funcionalidades de Modyo y sus aplicaciones
 
 
 
-Equipo de Operaciones y Soporte
+## Operaciones y Soporte
 Modyo cuenta con un equipo dedicado de operaciones compuesto ingenieros en el rol de Site Reliability Engineers (SREs) los cuáles poseen conocimiento y experiencia en múltiples plataformas tecnológicas de redes, seguridad, nubes, sistemas operativos, automatización y monitoreo de sistemas. Los SREs trabajan en un sistema de turnos on call 24x7. En cada turno siempre existe un ingeniero primario y secundario de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
 
 El equipo de operaciones de Modyo brinda apoyo de forma transversal a todas las áreas de la empresa en los proyectos e iniciativas que impliquen la preparación, despliegue, monitoreo, seguridad, auditoría y mejoras de rendimiento de sus proyectos e iniciativas tanto en la nube como en los despliegues On Premise de los clientes que posean un contrato de servicios de soporte adicional al incluido como parte de la licencia de software de Modyo.
 
-Niveles de Soporte
-Nivel 1: Infraestructura
+## Niveles de Soporte
+### Nivel 1: Infraestructura
 El soporte Nivel 1 de Modyo se encarga primariamente de la infraestructura y seguridad de la nube y proveedores de servicios críticos de las implementaciones manejadas por el Área de Seguridad e Infraestructura.
 
 En el caso de los clientes On Premise con contrato de soporte, el soporte Nivel 1 podrá brindar soporte a las área operativas del cliente del producto y/o de los servicios configurados de los cuales dependa la plataforma Modyo (caché, balanceadores de carga, bases de datos, sistemas de indexación, etc).
@@ -33,16 +35,17 @@ La gran mayoría de los incidentes que se reportan al Nivel 1 son automáticamen
 
 Para todas las implementaciones de Modyo (Cloud, Enterprise Private Cloud y Enterprise On Premise),  el soporte Nivel 1 estará capacitado para ayudar a resolver temas básicos relacionados con el producto y sus funcionalidades. Cuando se detecta que la incidencia corresponde a un desarrollo o integración personalizada,  el soporte Nivel 1 se encargará internamente de escalar la situación con el equipo interno de Nivel 2 más adecuado, generando un ticket de soporte interno e indicando al cliente cómo proceder.
 
-Nivel 2: Especializado
+### Nivel 2: Especializado
 El soporte Nivel 2 de Modyo se encarga de brindar ayuda en el contexto específico de un cliente, su implementación de la plataforma y los desarrollos e integraciones realizados en ella. 
 
 El soporte Nivel 2 pone a disposición del cliente personas del equipo que han trabajado con él y que conocen y comprenden la complejidad interna de cada proyecto.
 
-Nivel 3: Experto
+### Nivel 3: Experto
 El equipo de soporte Nivel 3 de Modyo se encarga de brindar apoyo a los Niveles 1 y 2 en caso de que la complejidad de la incidencia exceda el conocimiento de la persona asignada en primera instancia. El soporte Nivel 3 opera involucrando a los expertos más adecuados que puedan colaborar en dar una solución, sean éstos jefes de proyecto, líderes técnicos, directores o ingenieros especializados.
 
 El equipo de soporte Nivel 3 será requerido sólo en casos extremos, como situaciones de alta complejidad técnica o de problemas al contactar al personal de Nivel 2.
-Arquitectura en la Nube
+
+## Arquitectura en la Nube
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 9 años de experiencia en esta plataforma, y en calidad de Technology Partner con ellos, Modyo cuenta con la experiencia necesaria para garantizar la continuidad, performance y seguridad de sus despliegues.
 
 
@@ -58,17 +61,17 @@ Arquitectura de Modyo Cloud y Enterprise Private Cloud
 
 
 
-Escalabilidad Elástica
+### Escalabilidad Elástica
 Los despliegues de Modyo Cloud y Private Cloud cuentan con grupos de auto escalabilidad para incrementar el número de recursos en la medida que el tráfico y la demanda se incremente. Dependiendo de la duración y naturaleza de los incrementos del uso de recursos el servicio de escalabilidad elástica podría estar sujeto a una tarifa adicional para los clientes.
 
-Alta Disponibilidad
+### Alta Disponibilidad
 El despliegue multi zona en Amazon AWS garantiza un excelente nivel de redundancia y disponibilidad para hacer frente a las fallas más comunes que usualmente afectan solo a una zona a la vez. En el caso poco probable que exista un fallo a nivel regional del cual Amazon AWS no entregue un tiempo de resolución aceptable se procederá a activar la región alternativa, ubicada en la costa oeste de Estados Unidos  (us-west-1).
 
 Todos los datos críticos contenidos en AWS RDS Aurora y repositorio de objetos AWS S3 son respaldados frecuentemente a la región alternativa, cada 24 horas para el caso de AWS Aurora y en tiempo real para el caso de AWS S3. 
 
 Modyo posee en la región alternativa copias de las configuraciones y recursos necesarios para restablecer la operación a partir de los archivos de respaldos.
 
-Seguridad
+### Seguridad
 El despliegue de nube de AWS asegura que cada cliente cuenta con su propia VPC por cada ambiente configurado (producción, certificación, etc...). Dentro de la VPC se despliega sub redes públicas (NAT) y privadas, en donde se despliega los recursos y bases de datos que no son directamente accesibles desde Internet. Adicionalmente, se hace uso de grupos de seguridad y roles AWS IAM para controlar perimetralmente el acceso a los recursos.
 
 
@@ -114,23 +117,23 @@ Servicio utilizado para la generación y mantención segura de certificados SSL 
 #### AWS GuardDuty
 Servicio utilizado para la inspección y detección en tiempo real de amenazas de seguridad en la red interna de Amazon AWS.
 
-## Servicios de Otros Proveedores
-### Sendgrid
+### Servicios de Otros Proveedores
+#### Sendgrid
 Servicio utilizado para el envío de correos transaccionales y masivos de la plataforma de forma confiable y escalable. En algunos casos este servicio es ofrecido por Modyo mediante Sendgrid y otros mediant SES.
 
-### NewRelic
+#### NewRelic
 Servicio de monitoreo en la nube encargado de las métricas aplicativas, SLAs y stack tecnológico. NewRelic posee un sistema interno de alertas y canales de notificación que permiten definir métricas generales y particulares según la necesidad de cada cliente.  NewRelic de Modyo está integrado a PagerDuty.
 
-### Pingdom
+#### Pingdom
 Servicio de monitoreo en la nube que revisa y controla el uptime de los sitios gestionados por Modyo. Pingdom revisa la salud y tiempos de respuesta de los sitios desde múltiples ubicaciones geográficas y está integrado a PagerDuty.
 
-### PagerDuty
+#### PagerDuty
 Servicio de alertas que gestiona los turnos on call de Modyo. PagerDuty es el servicio encargado de asegurar que la rotación de turnos y escalamiento se cumpla, además de gestionar casos especiales como ausencias o indisponibilidades de los ingenieros de operaciones.
 
 
 
-##Operación y Monitoreo en la Nube
-### Operación
+## Operación y Monitoreo en la Nube
+
 ### DevOps
 La Plataforma Modyo se encuentra bajo un ciclo de desarrollo muy activo por lo que recibe continuamente mejoras y nuevas funcionalidades. Todas las versiones incluyen un sistema de despliegue que permite realizar actualizaciones de forma relativamente sencilla, sin requerir de downtimes en la mayoría de los casos.
 

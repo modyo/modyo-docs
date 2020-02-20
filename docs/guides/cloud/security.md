@@ -4,6 +4,11 @@ search: true
 
 # Seguridad
 
+:::tip Reporte de Incidencias de Seguridad
+Modyo posee un canal seguro y confidencial de reporte de incidencias de seguridad por medio del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.
+:::
+
+
 El siguiente documento describe la arquitectura de seguridad, políticas y procedimientos que Modyo emplea en el desarrollo de su plataforma, ejecución de servicios profesionales y de la operación en la nube de las versiones Cloud y Private Cloud de la Plataforma Modyo.
 
 Para cumplir con estos objetivos, Modyo debe asegurar a sus clientes que sus datos están seguros y que protegerlos es una de sus responsabilidades más importantes. Modyo está comprometido con la transparencia acerca de sus prácticas de seguridad y también con ayudar a sus clientes a comprenderlas.
@@ -20,27 +25,30 @@ Antes de tener acceso a los sistemas, todos los colaboradores deben aceptar los 
 
 Al terminar su relación laboral con Modyo, todos los accesos y permisos son revocados inmediatamente.
 
-Entrenamientos en Seguridad y Privacidad
+#### Entrenamientos en Seguridad y Privacidad
 Durante la vigencia de su contrato, todos los colaboradores de Modyo deberán asistir a los entrenamientos de privacidad y seguridad al menos una vez por año. También será requerido de que lean y firmen las Políticas de Seguridad y Privacidad de Modyo. Todos los colaboradores que posean privilegios especiales (con mayor acceso a la información de clientes) recibirán además un entrenamiento especializado según su rol y función.
 
 Todos los colaboradores tienen el deber de reportar incidentes de seguridad a los equipos internos apropiados. Los colaboradores serán oportunamente informados si en algún momento violan alguno de los términos que puedan incurrir en consecuencias, incluyendo su desvinculación con la empresa.
 
-Profesionales Dedicados de Seguridad
+#### Profesionales Dedicados de Seguridad
 Por medio del Área de Seguridad e Infraestructura, Modyo dispone de un equipo dedicado el cual es responsable de la implementación y el cumplimiento de las Políticas de Seguridad. El Área de Seguridad e Infraestructura es liderada por el Chief Technology Officer (CTO) de Modyo con quién se definen y aprueban las políticas, procedimientos y planes de mejora a ser implementados.
 
 Se definen los siguientes aspectos críticos de seguridad:
-Seguridad del Producto
+
+## Seguridad del Producto
 Establecer estándares y prácticas seguras de desarrollo de software
 Asegurar que existan procesos de detección y documentación de riesgos a nivel de proyecto
 Proveer de revisiones de diseño y código fuente para la detección oportuna de posibles fallas de seguridad
 Entrenar a los desarrolladores en las mejores prácticas de codificación segura
-Seguridad Operacional
+
+## Seguridad Operacional
 Construye y opera toda la infraestructura crítica de seguridad, incluyendo los servicios de autenticación y monitoreo de eventos
 Mantiene un archivo de los logs relevantes para las inspecciones de seguridad
 Aseguramiento de las configuraciones seguras en los entornos de producción
 Responder a alertas en caso de eventos de seguridad
 Manejar incidentes de seguridad
-Riesgo y Cumplimiento
+
+## Riesgo y Cumplimiento
 Coordinar los test de penetración
 Manejar los escaneos de vulnerabilidades y sus remediaciones
 Coordinar las evaluaciones de riesgos regulares y darle seguimiento a los riesgos identificados
@@ -49,7 +57,7 @@ Revisar y calificar la seguridad de los proveedores
 
 Todos los miembros del Área de Seguridad e Infraestructura de Modyo se encuentran en un proceso continuo de aprendizaje y capacitación para asegurar su expertise en estos y otros temas. 
 
-Políticas y Estándares
+## Políticas y Estándares
 Modyo posee Políticas de Seguridad bien definidas que son aceptadas por la totalidad de sus empleados las cuales proveen las reglas básicas para la operación del negocio. Con ellas Modyo asegura que sus clientes puedan confiar en sus empleados en cuanto a su ética y comportamiento al operar los diferentes servicios ofrecidos. 
 
 Las Políticas de Seguridad de Modyo incluyen temas como:
