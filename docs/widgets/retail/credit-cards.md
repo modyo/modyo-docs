@@ -2,9 +2,11 @@
 search: true
 ---
 
-# Tarjetas de crédito
+# Tarjetas de Crédito
 
-## Avance
+<iframe src="https://widgets.modyo.com/personas/retail-credit-cards" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
+
+### Propiedades
 
 |Funcionalidad|Descripción|
 |:------------|:----------|
@@ -14,4 +16,5 @@ Estado de Cuenta|Muestra el estado de cuenta con los movimientos del último per
 |Últimos movimientos|Muestra todos los movimientos nacionales e internacionales que no están facturados.|
 |Pago de deuda nacional|Corresponde a la funcionalidad de pago de la deuda en pesos.<br><br> Este pago de deuda puede ser total o parcial.|
 |Pago de deuda internacional|Corresponde a la funcionalidad de pago de la deuda en dólares. <br><br> El pago de la deuda en dólares puede ser total o parcial, e incluye la conversión de los dólares que se quieren pagar a pesos chilenos.|
+
 

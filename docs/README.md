@@ -21,8 +21,8 @@ footer: Copyright © 2008-2020 Modyo SpA
   </div>
   <div class="feature" style='text-align: center;'>
     <img src='/assets/img/layout.png'/>
-    <h2>La interfaz de Modyo</h2>
-    <p>Entiende cada parte de la plataforma y oriéntate rápidamente</p>
-    <a href="/guides/platform/the-modyo-interface.html">Leer más</a>
+    <h2>Widgets Finacieros</h2>
+    <p>Explora el catálogo de Widgets Financieros de Modyo.</p>
+    <a href="/widgets/">Leer más</a>
   </div>  
 </div>
