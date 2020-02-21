@@ -48,14 +48,14 @@ El equipo de soporte Nivel 3 será requerido sólo en casos extremos, como situa
 ## Arquitectura en la Nube
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 9 años de experiencia en esta plataforma, y en calidad de Technology Partner con ellos, Modyo cuenta con la experiencia necesaria para garantizar la continuidad, performance y seguridad de sus despliegues.
 
-
+<img src="/assets/img/cloud/partner_badge.png" style="margin-top: 40px;" />
 
 El año 2019 Modyo fue reconocido por Amazon como el Technology Partner of the Year para Chile y Perú.
 
 Las versiones de Modyo Cloud y Enterprise Private Cloud operan en una configuración de alta disponibilidad haciendo uso de al menos dos zonas de disponibilidad en la región de Virginia del Norte (us-east-1). En el caso de la última versión, Modyo 9, el despliegue se realiza en una configuración de contenedores (compatibles con Docker) que corren sobre el Amazon EC2 Container Service (ECS).
 
 
-
+<img src="/assets/img/cloud/cloud_deployment.png" style="margin-top: 40px;" />
 
 Arquitectura de Modyo Cloud y Enterprise Private Cloud 
 
