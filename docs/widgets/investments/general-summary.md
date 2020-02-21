@@ -2,4 +2,4 @@
 search: true
 ---
 
-# Resumen general
+# Resumen General

@@ -2,4 +2,4 @@
 search: true
 ---
 
-# Resumen detallado
+# Resumen Detallado
