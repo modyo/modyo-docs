@@ -17,3 +17,5 @@ Modyo Platform presenta la interfaz principal de Modyo desde la cual se tienen a
 - [Usuarios y roles de administración](/guides/platform/roles.html)
 - [Seguridad](/guides/platform/security.html)
 - [API de administración](/guides/platform/api.html)
+
+Si buscas documentación relacionada con la versión 8.2, puedes descargar [este archivo PDF](/assets/pdf/Modyo82Docs.pdf).
