@@ -1,0 +1,6 @@
+---
+search: true
+---
+
+# Cuentas
+

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Notas del release
+# Release notes
 
 ## 9.0.2  (04 de Febrero del 2020)
 * MODYO-10594 — Actualizar Gemfile Lock
@@ -157,8 +157,6 @@ search: true
 * MODYO-10427 — Acción para "editar" el theme que actualmente está instalado
 * MODYO-10471 — Filtro de tipos en Activity logs muestra claves de traducción
 * MODYO-10487 — Mejorar interacción de búsqueda en asset manager
-
-## 9.0.0.rc3
 * MODYO-10289 — Añadir renderizado de entries en sitios
 * MODYO-10340 — Error al entrar a template y widget builder
 * MODYO-10267 — Error visual con calendarios en modal de publicación
@@ -242,8 +240,6 @@ search: true
 * MODYO-10359 — Error al ocultar sitios
 * MODYO-10360 — Error visual en vista de lock de types
 * MODYO-10020 — Revisar configuración de nginx de referencia
-
-## 9.0.0.rc2
 * MODYO-10184 — Revisar alertas de seguridad de Github
 * MODYO-10189 — Revisores y Editores no pueden publicar
 * MODYO-10227 — Error de JS al hacer rollback impide hacer la acción
@@ -291,8 +287,6 @@ search: true
 * MODYO-10229 — Arreglar detalles vista team members de space y sitio
 * MODYO-10233 — Error en formulario de creación de webhooks
 * MODYO-10237 — Error en avatar de usuarios en form responses
- 
-## 9.0.0.rc1
 * MODYO-9810 — Diseño de las mejoras
 * MODYO-9902 — Discutir y resolver dudas de concepto de archivado y soft delete
 * MODYO-9947 — Framework de publicación: Elementos aparecen despublicados pero se ven en el sitio público
@@ -568,8 +562,6 @@ search: true
 * MODYO-10164 — Envío de prueba de campaña de pruebas debe enviar a adminUser
 * MODYO-10179 — Arreglar problemas del populate
 * MODYO-10185 — Cambiar texto de botón publicar de admin a "forzar publicación"
- 
-## 9.0.0.pre7
 * MODYO-9707 — Implementar filtros y drops de liquid para acceder a spaces, content types y entries 
 * MODYO-9722 — Implementar filtros y drops de liquid para asset manager 
 * MODYO-9732 — Implementar API de profile 
@@ -607,8 +599,6 @@ search: true
 * MODYO-9840 — Último elemento de las tablas no abre sus acciones 
 * MODYO-9841 — En My Tasks mostrar sólo las cosas que están en estado On Review 
 * MODYO-9805 — En la tabla Entries hacer que el status y el tipo sean clickeables y me envíen a la edición de lo que toqué 
- 
-## 9.0.0.pre6
 * MODYO-9730 — Implementar configuración de cross domain para el uso de la API de content 
 * MODYO-9752 — Error de turbolinks en menu 
 * MODYO-9765 — Añadir validaciones de nombre de space 
@@ -642,8 +632,6 @@ search: true
 * MODYO-9788 — Error visual con paginación en modal de asset manager 
 * MODYO-9791 — Añadir traducciones faltantes 
 * MODYO-9236 — Mejoras al comportamiento con los timezones 
- 
-## 9.0.0.pre5
 * MODYO-9661 — Implementar nuevo flujo de team review 
 * MODYO-9662 — Implementar nueva interfaz de Team Review 
 * MODYO-9645 — Implementar modal de asset manager 
@@ -686,8 +674,6 @@ search: true
 * MODYO-9750 — Error al copiar entries 
 * MODYO-9751 — Migrar admin de modyo a bootstrap 4 
 * MODYO-9738 — Error visual en variables de correo de commerce 
- 
-## 9.0.0.pre4
 * MODYO-9683 — Definir estructura API pública de content 
 * MODYO-9649 — Refactor API Asset Manager 
 * MODYO-9675 — Refactor al Modelo de Assets 
@@ -731,8 +717,6 @@ search: true
 * MODYO-9692 — Títulos de páginas de settings nuevos 
 * MODYO-9734 — Documentación swagger controladores de API 
 * MODYO-9606 — Modal "save as a target" no se distingue en modal de filtros avanzados 
-
-## 9.0.0.pre3
 * MODYO-9595 — Widgets de contenido no guardan los valores de space y type 
 * MODYO-9596 — Error 500 al filtrar por medio de pago en order index 
 * MODYO-9602 — Targets en vista show de campañas 
@@ -816,8 +800,6 @@ search: true
 * MODYO-9638 — Arreglar responsive de vista de importación de usuarios 
 * MODYO-9639 — Arreglar espaciado en vista de temas en template builder 
 * MODYO-9656 — estandarizar vistas de inicio de sesión para administradores
- 
-## 9.0.0.pre2
 * MODYO-9520 — Error al duplicar recursos 
 * MODYO-9523 — Error de strong parameters en preguntas tipo fecha en form builder 
 * MODYO-9535 — Error de workflows con recursos targetizados 
@@ -827,8 +809,6 @@ search: true
 * MODYO-9353 — Analizar y resolver posible vulnerabilidad de parámetro redirect_to 
 * MODYO-9354 — Vulnerabilidad parámetro redirect_to en ordenes 
 * MODYO-9483 — Generar tag 9.0.0 y eliminar migraciones pasadas 
- 
-## 9.0.0.pre 
 * MODYO-9403 — Añadir custom fields en apps 
 * MODYO-9404 — New Pickup Location 
 * MODYO-9405 — Error de liquid en orders 
