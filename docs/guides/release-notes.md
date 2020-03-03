@@ -6,7 +6,8 @@ search: true
 
 ## 9.0
 
-### 9.0.3 - 02 de Enero del 2020
+### 9.0.3 - 02 de Marzo del 2020
+
 * MODYO-10616 — Sincronizar froala y code mirror en pantalla completa
 * MODYO-10649 — Error con widgets archivados y team review
 * MODYO-10141 — Obtener Entries Privadas a través de sdk
