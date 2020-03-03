@@ -135,37 +135,33 @@ module.exports = {
                 "/widgets/retail/transfer",
                 "/widgets/retail/transfers"
               ]
+            },
+            /*{
+              title: "Seguros",
+              collapsable: true,
+              children: ["/widgets/insurance/"]
+            },*/
+            {
+              title: "Inversiones",
+              collapsable: true,
+              children: [
+                "/widgets/investments/",
+                "/widgets/investments/accounts",
+                "/widgets/investments/deposits",
+                "/widgets/investments/detailed-summary",
+                "/widgets/investments/documents",
+                "/widgets/investments/general-summary",
+                "/widgets/investments/investments-transfer",
+                "/widgets/investments/investments-transfers",
+                "/widgets/investments/mutual-funds",
+                "/widgets/investments/stocks"
+              ]
             }
             /*{
-                        title: "Seguros",
-                        collapsable: true,
-                        children:[
-                          "/widgets/insurance/",
-                        ]
-                      },
-                      {
-                        title: "Inversiones",
-                        collapsable: true,
-                        children:[
-                          "/widgets/investments/",
-                          "/widgets/investments/accounts",
-                          "/widgets/investments/deposits",
-                          "/widgets/investments/detailed-summary",
-                          "/widgets/investments/documents",
-                          "/widgets/investments/general-summary",
-                          "/widgets/investments/investments-transfer",
-                          "/widgets/investments/investments-transfers",
-                          "/widgets/investments/mutual-funds",
-                          "/widgets/investments/stocks",
-                        ]
-                      },
-                      {
-                        title: "Onboarding",
-                        collapsable: true,
-                        children:[
-                          "/widgets/onboarding/",
-                        ]
-                      },*/
+              title: "Onboarding",
+              collapsable: true,
+              children: ["/widgets/onboarding/"]
+            }*/
           ]
         }
       },
