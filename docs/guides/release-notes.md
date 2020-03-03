@@ -72,7 +72,7 @@ search: true
 * MODYO-10572 — Añadir name y slug como elementos diferenciables e las entries
 * MODYO-10576 — Error con flash en login required
 
-## 9.0.0 G.A (19 de Diciembre del 2019)
+### 9.0.0 G.A (19 de Diciembre del 2019)
 * MODYO-10307 — Corregir y comprimir migración de contenido
 * MODYO-10369 — Error al añadir custom widgets en pages
 * MODYO-10424 — Overlay de Custom Widgets con error
