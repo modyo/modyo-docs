@@ -4,7 +4,29 @@ search: true
 
 # Notas del release
 
-## 9.0.2  (04 de Febrero del 2020)
+### 9.0.3 - 02 de Marzo del 2020
+* MODYO-10616 — Sincronizar froala y code mirror en pantalla completa
+* MODYO-10649 — Error con widgets archivados y team review
+* MODYO-10141 — Obtener Entries Privadas a través de sdk
+* MODYO-10142 — Crear método de cliente sdk para obtener Content Delivery Token
+* MODYO-10145 — Manejo de errores en sdk
+* MODYO-10361 — Plugin para Gatsby static site generator
+* MODYO-10414 — Soporte para multi lenguaje
+* MODYO-10419 — Banner de offline se pierde cuando no hay internet.
+* MODYO-10478 — Error de inclusión en cache_max_age en space settings
+* MODYO-10526 — Show de entries privadas debe redireccionar al login
+* MODYO-10577 — Corregir OPTIONS endpoints en API contenido
+* MODYO-10597 — Añadir configuración de redirección cuando no se encuentra una URL del sitio
+* MODYO-10628 — Error con selector de sitios/spaces en menu luego de volver de contexto inmersivo
+* MODYO-10630 — Error en editor de correo de formularios
+* MODYO-10636 — Error visual en widgets HTML. codemirror min-height
+* MODYO-10641 — Añadir script de mouseflow a heads del admin de modyo en certificación
+* MODYO-10647 — Añadir uid (slug o host) de space a tabla de index de spaces y sitios
+* MODYO-10652 — Mejorar usabilidad de selector múltiple
+* MODYO-10417 — Mejorar la página de error por defecto
+* MODYO-10558 — Páginas archivadas aparecen en modo vista previa
+
+### 9.0.2 - 04 de Febrero del 2020
 * MODYO-10594 — Actualizar Gemfile Lock
 * MODYO-10496 — Cambiar dropdown de sitos por select2 con buscador
 * MODYO-10512 — Añadir configuración de API key de google a las settings de la cuenta
@@ -28,7 +50,7 @@ search: true
 * MODYO-10615 — Error al parsear atributos no-string en content
 * MODYO-10596 — Hacer consistente tabs vacíos de usuarios
  
-## 9.0.1  (17 de Enero del 2020)
+### 9.0.1 - 17 de Enero del 2020
 * MODYO-10497 — Implementar preview de contenido en sitios con vistas custom
 * MODYO-10517 — Manejo de error en asset manager
 * MODYO-10544 — Error en preview en sitios con custom domain
