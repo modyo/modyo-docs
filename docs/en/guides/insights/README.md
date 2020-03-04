@@ -1,19 +1,20 @@
 ---
 search: true
+translated: true
 ---
 
 # Modyo Insights
 
-For any company or institution, it is important to know what is happening in their ecosystem, so having at hand a generalized vision of both the activity of their own clients and the work team is essential to implement any strategy .
+For any company or institution, it is important to know what is happening in their digital ecosystem, so having at hand a visual overview of both the activity of their own customers and the teams doing digital work team is essential to implementing any strategy.
 
 ![Modyo People](/assets/img/insights/header.jpg)
 
-Modyo Insights is a section specialized in the representation of statistical data of both the users of your sites, as well as the work team that creates the content and digital channels.
+Modyo Insights is a set of dashboards and visual tools specialized in the representation of statistical data of both the customers of your sites, as well as the teams that create content and elements in your digital channels.
 
-Each view of Modyo Insights has three main sections:
+Each area of Modyo Insights has three main sections:
 
-- General accountants
+- General summary
 - Comparative chart
 - Specific elements
 
-You can also filter the data associated with the view with the three filters in the upper right of the screen, where you can filter by date and 2 other values, depending on the context.
+You can also filter the data associated within each area with the three filters in the upper right of the screen, where you can filter by date range and two other values, depending on the context.
