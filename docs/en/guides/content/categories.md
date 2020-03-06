@@ -1,10 +1,11 @@
 ---
 search: true
+translated: true
 ---
 
 # Categories
 
-The categories allow you to sort the posts you publish according to the content that is inside, so it is useful if we need to make directories of specific areas of knowledge.
+Categories allow you to organize the content you publish by applying a structure based on the type of content they contain, so it is useful if we need to make directories of specific areas of knowledge.
 
 ## Create a Category
 

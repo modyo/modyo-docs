@@ -1,20 +1,21 @@
 ---
 search: true
+translated: true
 ---
 
 # Modyo Content
 
-Modyo Content is an application that allows the creation of dynamic content repositories called spaces. Within a space, both the types of content to be managed and the access rules and roles that the different team members will have are defined.
+Modyo Content is an application that allows the creation of dynamic content repositories called spaces. Within a space, you can create content entries based on types that you define, and administrators can entry publishing as well as space access configurations for team members.
 
 ![Headless](/assets/img/content/header.jpg)
 
-Modyo Content has a Headless architecture that allows content to be consumed via an HTTP API both from channels defined in Modyo Channels and from external systems or applications.
+Modyo Content has a "headless" architecture that allows access to content via an API available to both digital channels in Modyo and and to external systems and applications.
 
-Thanks to its integrated HTTP Headers cache and management system, the contents can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
+Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
 
 ### Main functionalities
 
 - [Spaces](/guides/content/spaces.html) for the organization of contents and teams that manage them.
 - [Content types](/guides/content/types.html) to define custom structures.
-- [File manager](/guides/content/asset-manager.html) for organizing files such as images or videos that are used within the contents.
+- [Asset manager](/guides/content/asset-manager.html) for organizing files such as images or videos that are used within the contents.
 - [API and SDKs](/guides/content/public-api-reference.html) for access to content repositories, both on and off the platform.

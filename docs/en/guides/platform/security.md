@@ -1,5 +1,6 @@
 ---
 search: true
+translated: true
 ---
 
 # Security
@@ -8,13 +9,13 @@ search: true
 
 <img src="/assets/img/platform/activity-logs.jpg" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
-The platform allows you to see all the movements that have been made for as long as you have it active.
+The platform allows you to see all activity and changes made for the entire duration of the platform's existence.
 
-In this section, you can filter by date, type of movement or user that will allow you to track correctly.
+In this section, you can filter by date, activity type, or platform team member.
 
-In addition, you will have the possibility to see the detail of what was done and from what section it was made.
+In addition, you can see the details of what activity was done, and from what area of the platform it originated.
 
-This can help you in the case of having many internal users of the platform or to detect errors and changes in the production and development chain.
+These activity logs help you monitor when you have many concurrent users making updates and changes within the platform, or to detect errors and changes in the production and development chain.
 
 
 
@@ -24,10 +25,10 @@ This can help you in the case of having many internal users of the platform or t
 
 In this section we can activate Cross Origin Resource Sharing (CORS), in order to access Modyo data from other websites that are not necessarily secure.
 
-When enabling it, you must specify the domains that you want to be enabled so that they are sharing resources with your site.
+When enabling it, you must specify the domains that you want to be enabled so that they can retrieve resources with your site.
 
-After this, the platform will give you a limited time token via JSON, so you can link the sites.
+After this, the platform will give you a time limited token via JSON, so you can link the sites.
 
 ::: danger Danger
-Always remember that this can also mean a security flaw, so make sure that the data that is shared is free of malware or other dangerous files for our platform and clients.
+Always remember that this can be a potential security flaw, so make sure that the data that is shared is free of malware or other dangerous files for your platform and clients.
 :::

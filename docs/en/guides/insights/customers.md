@@ -1,52 +1,53 @@
 ---
 search: true
+translated: true
 ---
 
 ### Customers
 
-Just as in Digital Factory we can see a direct statistic of the team members, Customers can obtain a global overview of what our customers do within it and the behavior of the content that has reached them.
+Similar to how the Digital Factory provides direct statistics of our team members' activities, Customers gives us a global overview of what our customers are doing in the platform, as well as the behavior of the content that reaches them.
 
 The available filters are:
 
 - Date range
-- Target
+- Targets
 - Site
 
-**Active users**: Counting of all users with two or more activity records in the selected period.
+**Active users**: Total users with two or more activity records in the selected period.
 
-**Activity**: Corresponds to the logon count, form responses, open emails, emails notified as spam, open notifications.
+**Activity**: Corresponds to the total login count, form responses, open emails, emails notified as spam, and open notifications.
 
-**Logins**: Corresponds to the count of all user logins.
+**Logins**: Total count of all user logins.
 
-**Records**: Corresponds to the count of all user records.
+**Signups**: Total count of all user signups.
 
 ![Customers](/assets/img/platform/customers.png)
 
 ### User activity
 
-In this graph we can see a comparison between two values that represent user actions on the sites.
+In this graph we can see a comparison between two values that represent user actions within Modyo Channels.
 
-You can select any of these value counts to compare:
+You can select any of these values to compare:
 
-- **Activity**: Gather all the actions below.
+- **Activity**: Total of all activity.
 - **Active users**: Includes all users who have performed two or more actions in the specified period of time.
-- **Mail delivered**: Contemplate all emails from campaigns that were successfully sent.
-- **Open mail**: Corresponds to the counting of all emails from campaigns opened by users.
-- **Email notified as spam**: Corresponds to the counting of all emails from campaigns that were notified as spam by users.
-- **Form response**: Corresponds to the counting of all Modyo form responses.
-- **Login**: Corresponds to the count of all user logins.
-- **Open notification**: Corresponds to the count of all user notification message openings.
+- **Email delivered**: Total emails from campaigns that were successfully sent.
+- **Email opened**: Total emails opened in campaigns.
+- **Email spam report**: Total spam notifications sent by users receiving emails from your campaigns.
+- **Form response created**: Total count of all Modyo form responses.
+- **Login**: Total count of all user logins.
+- **Notification opened**: Total number of times users opened notification messages.
 
 ### Recent Campaigns
 
-Displays a list of the last 5 messaging campaigns sent, with a reason for the open messages versus the scope of that shipment.
+Displays a list of the last 5 messaging campaigns sent, with total unique opens versus reach.
 
-In this list, you can find both email campaigns and notification campaigns.
+In this list, you can find both email and notification campaigns.
 
 ### Recent Forms
 
-You will see a list of the latest forms created, along with the counting of responses to these.
+You will see a list of the latest forms created, along with the total responses to each.
 
 ### Engagement
 
-Finally, you can also visualize through a donut chart, the percentage of active users on the site (in the selected period), compared to the total number of users.
+Finally, engagement shows the percentage of active users on the site (in the selected period), compared to the total number of users, vizualized through a donut chart.
