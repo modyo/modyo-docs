@@ -586,7 +586,7 @@ Las principales operaciones sobre campos son:
 
 - [gt],[lt] = greater/less than, aplicable en enteros y fechas
 - [in] = permite incluir varios valores que entran en una consulta tipo OR
-- [all] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
+- [has] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
 - [nin] = permite incluir varios valores, que entran en una consulta NOT IN
 - [geohash] = permite búsquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
 
@@ -609,8 +609,8 @@ Se usa una expresiónJsonPath por ejemplo:
 
 Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar la siguiente sintaxis:
 
-- ALL: equivalente a un sql AND
-  `.../entries?fields.color[all][]=red&fields.color[has][]=black`
+- HAS: equivalente a un sql AND
+  `.../entries?fields.color[has][]=red&fields.color[has][]=black`
 - IN: equivalente a un sql OR
   `.../entries?fields.color[in][]=red&fields.color[in][]=blue`
 - NIN: equivalente a un slq NOT IN

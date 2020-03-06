@@ -1,42 +1,32 @@
 ---
 search: true
+translated: true
 ---
 
 # Content types
 
 ![Types](/assets/img/content/types/types.jpg)
 
-The Types within Modyo, are tools that will allow us to structure content templates to insert into the service we are providing, with more than 15 types of fields.
+Types in Modyo are tools that allow us to structure content templates to build entries, with more than 15 types of fields.
 
-With the Types, you can avoid having to elaborate content of the same format many times, establishing a predetermined style that will allow you to optimize time and quality when creating it.
+With types, you can avoid having to build a piece of content in the same format many times. You can establish a predetermined style that will allow you to optimize time and promote consistency.
 
 ## About the Interface
 
-At first glance, you can find a green button at the top that, by clicking there, will allow you to create a Type.
+In the Types section of a space, you can find a green **+ New** button at the top you can click to create a new Type.
 
-Below, you can find the Type search bar, which will allow you to find any word you are looking for in the Name field.
+Just above the type list on the left, you can use the Type search bar to find any word you are looking for by name.
 
-Then, you can see the table with the Types already created, which will be sorted by default according to the updated date and time, starting from the most recent element backwards.
-
-To reorder it, you just have to click on the symbols that are next to each category.
-
-The categories by which you can reorder are four:
-
-- First name
-- UID
-- Creation date
-- Update date
-
-If you want to enter any type, you must click on its name to open the corresponding editor.
+The list is sorted by most recently updated by default. You can also reorder the types by their creation date, their UIDs or, their names.
 
 ## Create a Type
 
 <img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
 
-To create a Type, it is necessary to click on the top green button on the screen and enter the name and the corresponding User Identifier (UID).
+To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
 ::: tip Tip
-It is a good practice to put inside the UID, the format of what will be published as they are, for example, videos, posts, etc. Thus, any user of the platform will know what type of content it is and can use it as a template without having to generate a new one.
+The best practice for UID naming is to name them by their formats, e.g. videos, posts, promotions, etc. This makes it easier for users know what types of content they're working with, and avoid creating redundant types within a space.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
@@ -45,31 +35,31 @@ In the creation interface, you can see an empty template at the center of your s
 - Field configuration
 - Configuration
 
-This interface will help us to create each of our types, giving them the format that is required.
+This interface is where we populate our types with the correct fields we need based on our content requirements.
 
 ## Fields
 
 ::: tip Tip
-The name of the field is of the utmost importance because it will be through what its value can be accessed in the Liquid and JS SDKs. To access the value of a field in an entry you can use for example <span v-pre> `{{entry [" field name "]}}` </span>. For more information go to the [API reference](/guides/content/public-api-reference.html)
+The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/en/guides/content/public-api-reference.html)
 :::
 
-All fields that can be added in a type, have a name, and the possibility of being required. When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, changes cannot be saved.
+All fields require a name, and can optionally be set as required. When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, the entry cannot be saved.
 
-### Text of a line
+### Single-line text
 
-This field allows you to enter single line texts. and has the following restrictions:
+This field allows you to enter single-line texts. and has the following restrictions:
 
-- **Minimum length**: Allows you to require a minimum length of the text entered.
-- **Maximum length**: Limit the maximum length to the text entered.
-- **Validation by regular expression**: Allows you to add a regular expression to validate that the text that is entered at the time of creating/modifying an entry matches a certain format.
+- **Minimum length**: Allows you to require a minimum text length.
+- **Maximum length**: Limit the maximum length of the text entered.
+- **Regular expression validation**: Allows you to add a regular expression to validate that the text matches a certain format.
 
 
 ### Rich text
 
 This field translates into a multi-line text WYSIWYG editor that also allows you to modify its HTML code. This field has the following restrictions:
 
-- **Minimum length**: Allows you to require a minimum length of the text entered.
-- **Maximum length**: Limit the maximum length to the text entered.
+- **Minimum length**: Allows you to require a minimum text length.
+- **Maximum length**: Limit the maximum length of the text entered.
 
 ### Dropdown
 
@@ -81,73 +71,72 @@ This field allows you to add a fixed list of items to select only one option.
 
 ### Check box
 
-This field allows you to add a list from which you can select more than one option or leave blank.
+This field allows you to add a list from which you can select more than one option or leave it blank.
 
 ### Multiple choices
 
-This field allows you to add a field in which you can type to select an option that can be predetermined or proposed.
+This field allows you type and select an option that can be predetermined or proposed.
 
 ### Boolean
 
-This field allows you to add a question or statement (True/True or False/False).
+This field allows you to add a question or statement (True or False).
 
-### Whole
+### Integer
 
-This field allows you to add an integer that must be by default between the numbers `-65325` and` + 65325`. However, it can be bounded using the restrictions:
+This field allows you to add an integer that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
-- **Minimum length**: Allows you to require a minimum length of the text entered.
-- **Maximum length**: Limit the maximum length to the text entered.
+- **Minimum length**: Allows you to require a minimum integer value.
+- **Maximum length**: Limit a maximum integer value.
 
 ### Decimal
 
-This field allows you to add a decimal number that must be by default between the numbers `-65325` and` + 65325`. However, it can be bounded using the restrictions:
+This field allows you to add a decimal number that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
-- **Minimum length**: Allows you to require a minimum length of the text entered.
-- **Maximum length**: Limit the maximum length to the text entered.
+- **Minimum length**: Allows you to require a minimum decimal value.
+- **Maximum length**: Limit a maximum decimal value.
 
 ### Date
 
-It allows you to add a date picker. You can restrict the values of dates that can be chosen, using the restrictions:
+Allows you to add a date picker. You can restrict the values of dates that can be chosen, using the restrictions:
 
-- **From**: Limit the lowest selectable.
-- **Until**: Limit the highest selectable date.
+- **From**: Limit the oldest selectable date.
+- **Until**: Limit the newest selectable date.
 
 ### Location
 
-It allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter by hand the name, latitude, longitude and five geopolitical location limitations
+Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand.
 
-
-### Archive
+### Asset
 
 This field allows you to attach a single file to the entry using the file manager.
 
-### File List
+### Asset List
 
 This field allows you to attach multiple files to the entry using the file manager.
 
-### Content (link to one)
+### Content (links to one)
 
-This field allows you to link an Entry to another Entry that is already created and published within the Space. This field has the following restrictions:
-
-- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
-
-### Content List (link to many)
-
-This field allows you to link many Entries that are already created within the Space to another Entry. This field has the following restrictions:
+This field allows you to link an entry to another entry that is already created and published within the same space. This field has the following restrictions:
 
 - **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
-## Properties
+### Content List (links to many)
 
-In this tab, you can see the name of the type, along with its UID. The UID is important as it will be what the type is called from the Liquid SDK, Javascript and API. Below you will see a button that can be in 2 states:
+This field allows you to link many entries in the space to another entry. This field has the following restrictions:
 
-- **Reindexar**: Allows you to reindex the model if you encountered a problem with your public API.
+- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
+
+## Settings
+
+In this tab, you can see the name of the type, along with its UID. The UID is important as it will be what the type is called from through the Liquid SDK, Javascript and API. Below you will see a button that can be in 2 states:
+
+- **Reindex type**: Allows you to reindex the model if you encountered a problem with your public API.
 - **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
 
 ::: warning Warning
-When you reindex any of your types, the model that was previously reindexed will remain available until the new index is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
+When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
 :::
 
 ::: warning Warning
-Note that depending on the [cache settings you have in your space](/guides/content/spaces.html # cache), you may not see the changes immediately after you have finished re-indexing.
+Note that depending on the [cache settings you have in your space](/guides/content/spaces.html # cache), you may not see the changes immediately after you have finished reindexing.
 :::
