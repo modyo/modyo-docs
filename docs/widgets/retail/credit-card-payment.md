@@ -8,7 +8,7 @@ La plataforma ofrece un widget de pago de tarjeta de crédito, con tal de que el
 
 <iframe src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
-## Funciones
+### Propiedades
 
 Para realizar la transacción, el cliente verá predeterminadamente:
 
@@ -24,9 +24,3 @@ Deuda de pago internacional|Presenta el monto total que se ha utilizado en el cu
 |
 
 Tras seleccionar las variables, el cliente puede hacer click en el botón principal para realizar la transacción del pago.
-
-## Propiedades
-
-|Funcionalidad|Descripción|
-|:------------|:----------|
-|||

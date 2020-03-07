@@ -8,9 +8,9 @@ Modyo también ofrece un widget que permite hacer una simulación y solicitud de
 
 <iframe src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
-## Opciones
+### Propiedades
 
-Las opciones predeterminadas que el cliente puede modificar para su simulación y solicitud son:
+Las propiedades predeterminadas que el cliente puede modificar para su simulación y solicitud son:
 
 |Funcionalidad|Descripción|
 |:------------|:----------|

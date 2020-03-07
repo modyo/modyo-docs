@@ -9,7 +9,7 @@ El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera 
 <iframe src="https://widgets.modyo.com/personas/summary" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
 
-## Funciones Generales
+### Propiedades
 
 |Funcionalidad|Descripción|
 |:------------|:----------|
@@ -24,16 +24,13 @@ El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera 
 |Monto internacional|En el caso de las tarjetas, muestra el monto internacional utilizado, además de una gráfica que indica el primer número versus el total autorizado en dólares.|
 |Pagar|Deriva al widget de tarjetas, donde podrá pagar los montos facturados.||
 
-### Cuenta Corriente
+#### Cuenta Corriente
 
 La sección de Cuenta Corriente permite ver un resumen general de los montos disponibles, además de acceso a operaciones como transferencias y movimientos.
 
-### Cuenta Vista
+#### Cuenta Vista
 
 Esta sección tiene las mismas funciones que la de Cuenta Corriente. Sin embargo, sólo cambia en la sección Linea de Crédito, donde se reemplaza por los últimos movimientos y cargos realizados al producto.
-
-
-### Tarjetas de Crédito
 
 
 
