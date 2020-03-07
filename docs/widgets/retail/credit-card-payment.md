@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Pagos de tarjeta de crédito
+# Pagos de Tarjeta de Crédito
 
 La plataforma ofrece un widget de pago de tarjeta de crédito, con tal de que el cliente pueda realizar la transacción directamente desde su portal de pagos.
 

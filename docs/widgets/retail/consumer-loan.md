@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Crédito de consumo
+# Crédito de Consumo
 
 Modyo también ofrece un widget que permite hacer una simulación y solicitud de crédito de consumo con las variables que cada cliente necesite.
 
