@@ -1,57 +1,57 @@
 ---
 search: true
+translated: true
 ---
 
 # Forms
 
-One of the most required features by all platforms is the capture of user data to later analyze and segment. With this tool you can create as many forms as you need to collect data from the users of your sites.
+One of the most demanted features in any platforms is the ability to capture of user data, analyze it, and use it for segmentation. With this tool you can create as many forms as you need to collect data from the users of your sites.
 
 ![Digital factory](/assets/img/platform/form-index.png)
 
-Upon entering the tool, you will see a list of all the forms that are currently active in the account. You can filter by their status (enabled or disabled), by the site where they are deployed and search by the name of the form.
+Upon entering Forms, you can see a list of all the forms that are currently active in the account. You can filter by their status (enabled or disabled), by the site where they are deployed and search for them by name.
 
-In each row of the form table, you will see in the first column the name of the form, then the date of creation, and in the last column, the number of responses that have been sent for that form.
+In each row of the form table, you will see the name of the form in the first column, the date of creation, and in the last column, the number of responses that have been completed for that form.
 
 From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
 
-To enable or disable forms and allow users to send their answers or not, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
+To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
 ## New Form
 
-To create a new form, click on the main action at the top right "+ New". This will take you to the creation view of a new form, where you must fill in the main attributes of it:
+To create a new form, click on the main action at the top right "+ New". This will take you to the creation view of a new form, where you must fill in its main attributes:
 
-- **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title when a user will respond.
-- **Description**: This text will appear as text under the title when users will respond.
-- **Limit of people**: It allows to determine the maximum number of answers are allowed.
-- **Site**: Allows you to select on which site this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/guides/channels/templates.html)
+- **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title in the front end.
+- **Description**: This text will appear as text under the title in the front end.
+- **People limit**: Determines the maximum number of answers are allowed.
+- **Site**: Allows you to select which sites display the form. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/en/guides/channels/templates.html)
 - **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
-- **Only for registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
-- **Request to answer automatically**: If the form is private (only registered users can answer it), this option will appear that will allow you to automatically redirect users who log in to the site associated with the form to answer it.
+- **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
+- **Automatically ask the form to the audience?**: If the form is private (only registered users can answer it), this option appears and allows you to automatically redirect users who log in to the site associated with the form to answer it.
 
-After a division you will see the options to modify the redirection after a user answers the form.
+The next section of the form properties contains the Form Options for what happens after a customer completes a form.
 
 - **Default options**: After answering the form the user is redirected to the home of the site associated to the form
 - **Redirect URL**: Allows you to enter a URL to which the user will be redirected after the form has been answered
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
-
 - **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/guides/customers/targets.html)
 
 ::: warning Warning
-If it is a public form, users who do not have an active session in Modyo, you will see three mandatory fields at the top of the form: Name, Surname and Mail. Once they submit the form, a user with those values will be created and then the response will be associated with that user.
+If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
 ::: warning Warning
-If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new one will not be created.
+If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
 :::
 
-In the **Notifications** section you can configure the different emails that are sent after a user answers the form.
+In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
 
-The notification by mail sends an email of the "administrative" type in which it is notified via that channel that someone answered the form. You can assign a subject and a mailing list that you want to notify.
+The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/guides/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/guides/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
 
-Next, you have an example of code that you can use as a base to personalize the thank you mail.
+Here is a code sample that you can use as a base to personalize the thank you mail.
 
 ``` html
 You sent this answer on: {{'now' | date: "% b% d,% y"}}
@@ -104,33 +104,33 @@ You sent this answer on: {{'now' | date: "% b% d,% y"}}
 
 <img src="/assets/img/customers/forms/analysis.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Modyo allows you to make a global analysis of each form. On the analysis page you only have to select one of the questions on the form and you can see a representation of the answers that users have sent. The representation displayed will depend on the type of response, the different types of response and their respective visualization are shown below:
+Modyo allows you analyze each form. On the analysis page select one of the questions on the form to see a representation of the answers that users have sent. The representation displayed will depend on the response type, the different response types and their respective visualizations are shown below:
 
 - Simple text: You will see a count of how many people filled in this field.
-- Number: You will see the minimum, maximum and average of the answers.
-- Checkbox: You will see a bar chart with all the alternatives.
+- Number: You will see the minimum, maximum and average answer values.
+- Checkbox: You will see a bar chart of all response alternatives.
 - Date: You will see the total response count, and the minimum and maximum date that have been sent as responses.
 - Paragraph: You will see a count of how many people filled out this field.
-- Dropdown: You will see a bar chart with all the alternatives.
-- Choice: You will see a bar chart with all the alternatives.
-- Nested questions: You will see a bar chart with all the alternatives of the first level.
-- File: You will see a count of how many people filled in this field, along with the last five files uploaded.
+- Dropdown: You will see a bar chart with all response alternatives.
+- Choice: You will see a bar chart with all response alternatives.
+- Nested questions: You will see a bar chart with all first-level question response alternatives.
+- File: You will see a count of how many people filled in this field, along with the last five uploaded files.
 
 ::: tip Tip
-In the right bar you will see a counter of the total number of times the form has been answered, but in the answer counts for each question, you will see the count of how many people put a value on that question. In the event that the response has not been requested as mandatory, it will be normal to see a smaller number of responses with respect to the total responses of the form.
+In the right bar you will see a counter of the total number of times the form has been answered, but in the answer counts for each question, you will see the count of how many people put answered that particular question. In the event that the response has not been requested as mandatory, it is normal to see a smaller number of responses with respect to the total responses to the form.
 :::
 
 ## Answers
 
-By clicking on the answer counter of a form, you will arrive at a view listing all the answers that users have submitted and the date they responded.
+By clicking on the answer counter of a form, you will arrive at a view listing all the answers that users have submitted, and the date they responded.
 
-You can export the responses to a _XLS_ or _CSV_ file by selecting them in the list and then using the massive actions at the end of it.
+You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
 ::: danger Danger
-You can delete responses one by one using the action to the right of each answer, or by using massive actions, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that this action is irreversible and once a response has been deleted, it cannot be recovered.
+You can delete responses one by one using the action to the right of each answer, or by using the actions selection that appears at the bottom, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that deleting is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
-To see in detail the response of a user, just click on the name of the user, and you will access the list of questions next to the answers that user sent on that particular occasion.
+To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
 
 <img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">
 
@@ -143,34 +143,34 @@ To modify a form, you must go to the **"Analysis"** section and use the **"Edit"
 Once you enter the editing section of a form, you will see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
 
 ### Add field
-This section will allow you to add as many fields as necessary to complete the form or remove those that are not necessary:
+This section will allow you to add as many fields as necessary to complete the form or remove fields that are not necessary:
 
-- Simple text: Allows the user to enter a text up to 256 characters.
-- Paragraph: Allows the user to enter a multi-line text up to 65535 characters.
+- Simple text: Allows the user to enter a single-line text response up to 256 characters.
+- Paragraph: Allows the user to enter a multi-line text response up to 65535 characters.
 - Number: Allows the user to enter numbers.
-- Dropdown: Allows you to add options from which the user may choose one in dropdown format.
-- Checkbox: Allows you to add options from which the user can choose multiple in checkbox format.
-- Choice: Allows you to add options from which the user may choose one in _radio button_ format.
-- Date: Allows you to add a date field in which the user can select one within the allowed range.
-- Nested questions: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option he selected.
-- File: Allows you to add a field to request that the user upload a file that is registered as a response to the form.
+- Dropdown: Allows you to add a list of options from which the user may choose one in a dropdown format.
+- Checkbox: Allows you to add a list of options from which the user may choose one or more in a checkbox format.
+- Choice: Allows you to add a list of options from which the user may choose one in a _radio button_ format.
+- Date: Allows you to add a date field in which the user can select a date within the allowed range.
+- Nested questions: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
+- File: Allows you to add a field that a user can use to upload a file as a response to the form.
 
-You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
+You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
 
 ::: danger Danger
-If your form is already activated and you already have answers, be very careful when deleting questions from it, since in doing so, you will be deleting the values of those answers that the users have already sent. This action is irreversible.
+If your form is already activated and you already have answers, be very careful when deleting questions. Doing so deletes the values of those answers that the users have already sent. This action is irreversible.
 :::
 
 ### Field Properties
-This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section to use this section.
+This section allows you to modify the options for each of the questions on your form, you must select a field from the main section to use this section.
 
-All the fields that you can add have a title, which will be the question associated with the answer, the option of making that field required to submit the form, and a brief description in case instructions are required to answer the field.
+All the fields that you can add have a title, which are effectively the questions associated with each answer, they have the option of making that field required to submit the form, and each has a brief description in case instructions are required to answer the field.
 
 Some fields have validations, to ensure the user meets certain requirements to fill in the field, some of those restrictions are:
 
 - Minimum length: Length required for the text to be valid
-- Maximum length: maximum length allowed for text to be allowed
-- Regular expression: Format of the text entered must match the associated regular expression to be valid.
+- Maximum length: Maximum length allowed for text to be valid
+- Regular expression: Text format entered must match the associated regular expression to be valid.
 - Minimum number: The number entered cannot be less than this value.
 - Maximum number: The number entered cannot be greater than this value.
 - Minimum date: The date entered cannot be earlier than this value
@@ -179,18 +179,18 @@ Some fields have validations, to ensure the user meets certain requirements to f
 In the same way that some fields have validations, most have a default value that is preselected at the time of loading the form. The only ones that do not have a default value are nested questions and files.
 
 ### Form properties
-This section will allow you to change the general behavior of the form. It contains the same as the creation view of a new form, but in turn adds a couple of new options which we will detail below. Its four main sections are:
+This section will allow you to change the general behavior of the form. It contains the same options as when creating a new form, but in turn adds a couple of new options which we will detail below. Its four main sections are:
 
 - General
-- Snippet
-- Options
-- Notifications
+- Form Snippet
+- Form Options
+- Email Notifications
 
 The **General** section adds two options:
 - **Send button text**: Allows you to customize the text associated with the **Send** button on the form.
 - **Enabled**: Allows you to determine whether or not users can respond to the form. If the option is checked, then the form can be accessed and answered, if it is not enabled, then users will not see or answer it.
 
-The **Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
+The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
 <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
@@ -198,8 +198,8 @@ The **Snippet** section, which will only appear if the form is public, will allo
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
-The **Options** and **Notifications** sections do not add anything different from what is found in **New Form**
+The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
 ::: warning Warning
-If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/guides/platform/security.htm) in the account settings.
+If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/en/guides/platform/security.htm) in the account settings.
 :::

@@ -1,148 +1,150 @@
 ---
 search: true
+translated: true
 ---
 
 # Templates
 
-One of the most important aspects when creating our site is its base architecture and appearance. In Template Builder, you can modify the base templates, along with the global JavaScript and CSS to use on your pages and change their structure as required.
+One of the most important aspects of creating your site is its base architecture and appearance. In Template Builder, you can modify the base templates, along with the global JavaScript and CSS used in your pages. You can also update how they are structured as required.
 
-Once the theme to be used within the site has been selected, the different pages can be accessed from the Template Builder to change the codes as you need them.
+When creating a site, once you select a theme, the different templates can be accessed from the Template Builder where you can updated their code as needed.
 
-Once inside the Template Builder, you will see that the main menu is hidden to optimize the work area. In the top bar, on the left, you will find the section name and the current status:
+Once inside the Template Builder, in the top bar on the left, can see the section name and a badge indicating its current status:
 
-- **Published**: You will see this status after you have made a publication and when the editable and published versions are the same.
-- **Pending changes**: You will see this status if there is already a published version, but there are pending changes to be published in your editable version.
-- **In review**: You will see this status when [team review](guides/platform/team-review.html) is enabled and the editable version has been submitted for review.
-- **Approved**: You will see this status when [team review](guides/platform/team-review.html) is enabled and if the item review conditions were met. If you are in this state, your templates are ready to be published.
+- **Published**: This status means that there is an active, published version of the templates, and that the editable version you are working on now matches the state of the published version. The moment you save any changes to your templates, this status will also change.
+- **Pending changes**: This status indicates that if there is an active published version, then there are "pending changes" to be published from your editable version here in the Template Builder.
+- **In review**: This status appears when [Team review](/en/guides/platform/team-review.html) is enabled and the editable version of your templates has changes that have been submitted for review.
+- **Approved**: This status appears when [Team review](/en/guides/platform/team-review.html) is enabled and if the review conditions were met. If the templates have this status, they are ready to be published.
 
 ![Template builder](/assets/img/channels/template_builder/template-builder.jpg)
 
 In the upper right, you will find the latest publication date and the available actions:
 
-**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on this icon will open a new tab with the preview mode of the templates, in which you can see as if they were published, all the changes you have in your templates.
+**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on this icon will open a new tab with the Templates preview mode. This mode allows you to review your site or digital channel as if all current changes in your templates were currently live.
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: By clicking on this icon, you will open the mode of differences, in which you can compare the changes between multiple versions of your templates. By default you will start comparing the published version with the editable version, but by using the version selectors, you can also compare with the backup versions.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking this icon opens a modal to compare the differences between the active published version of your templates, and the editable version you are currently working on. You can use the version selectors to compare either the editable or active published versions to older back up versions as well.
 
 ::: tip Tip
-Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, so that the most recent twenty backups can be compared, restored and rollback. For more information on versioning, check out the [versioning] section (/guides/platform/team-review.html # versioning).
+Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved, so that the most recent twenty backups can be compared, restored and rollback. For more information on versioning, check out the [versioning](/en/guides/platform/team-review.html#versioning) section .
 :::
 
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: Displays a sidebar with activity history and template comments. At the end of the sidebar, you will see a text box where you can write a comment. Next to each activity, you can click on "see detail" to show the complete information of that activity log.
+**Show activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: Displays a sidebar with activity history and template comments. At the bottom of the sidebar, you can submit comments. Next to each activity, click on "see detail" to show the complete information of an activity log.
 
 **More actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
-- **Themes**: You will go directly to the subject index of the site, where you can create copies of the current theme to use in the other sites of your account. To learn more, check [Topics](/guides/channels/templates.html # topics)
-- **Restore all**: You will restore all templates to the original value of the theme.
+- **Themes**: Takes you to the Themes Gallery, where you can copy the current theme to use in the other sites or channels in your account. To learn more, check [Themes](/en/guides/channels/templates.html#themes).
+- **Reset all**: Resets all templates to their original states in the theme.
 
-**Main action**
+**Primary actions**
 
-- **Save**: Will save all changes of all templates.
-- **Send for review**: Change the status of the templates to "waiting for revision". In this state you can continue making changes, but each change will be notified via mail to the assigned reviewers.
-- **Reject**: Returns to the "in edition" state, notifying the reviewers that the item was rejected.
-- **Publish**: Once the templates were approved, they can be moved to the published version.
+- **Save**: Saves current changes to all templates.
+- **Send to review**: Changes the template status to "In review". You can continue making changes, but each change sends a notification to all assigned reviewers via email.
+- **Reject**: Returns the templates status to the "Pending changes", notifying reviewers that the item was rejected.
+- **Publish**: Once the templates are approved, they may be published.
+- **Force Publish**: Admin team members have the option to forcibly publish changes made in the templates, circumventing the established reviewal process.
 
-In the main work area, you will see two sections:
+In the main work area, there are two sections:
 
-- The work area.
+- The central work area.
 - The template selection area.
 
-Each template that you click on the right sidebar will open in the central area, very similar to an IDE. If you open multiple templates, they will remain open as tabs in the work area.
+Each template that you click on in the selection area opens in the central area, very similar to an IDE. If you open multiple templates, they will remain open as tabs in the central work area.
 
-The template bar on the right has two tabs: views and snippets.
+The template selection on the right has two tabs: Views and Snippets.
 
-Views are base elements and required by Modyo, and usually translate into the direct structure of one of your site's URLs.
+Views are base, full page templates and required for channels in Modyo to function. They help build the direct structure of your site's URLs.
 
 ### Snippets
 
-Snippets are pieces of code that can be used one or more times. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) to copy your reference path. The code will look similar to this: <span v-pre> `{% snippet" snippet-name "%}` </span>.
+Snippets are pieces of code that can be created, modified, and reused. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) to copy the snippet's reference path. The copied code looks like this: <span v-pre> `{% snippet "snippet-name" %}` </span>.
 
-You can add custom snippets at the end of the list of platform snippets, by clicking on the **"+ Add a snippet"** button.
+You can add custom snippets at the bottom of the snippets tab, by clicking on the **"+ Add a snippet"** button.
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
 ::: tip Tip
-In order for the system to recognize the type of programming language to which the snippet belongs, the underscore must be added under + termination, ie **"front_css"** or **"library_js"** by default it will recognize the snippet As HTML language.
+In order for the system to recognize the programming language type of the snippet, place an underscore "_" and language type at the end of the snippet name, ie **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
 :::
 
 ::: tip Tip
-All elements of the Template Builder use Liquid as a template engine.
+All elements of the Template Builder use Liquid as a templating engine.
 
-For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup] page (/docs/channels/liquid-markup.html)
+For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/guides/channels/liquid-markup.html) page.
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
 
 <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**File manager**: A modal will be raised where you can access all the files of the account and copy its URL, if you access the second tab, you can upload new files.
+**Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files.
 
 ::: tip Tip
-For more information on the benefits and benefits of File Manager, go to [Asset Manager](/docs/content/asset-manager.html)
+For more information on the functionality of the Asset Manager, go to the [Asset Manager](/en/docs/content/asset-manager.html).
 :::
 
-**Keyboard shortcuts**: A small pop-up will be displayed with some of the useful keyboard shortcuts to use in the template builder.
+**Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Template Builder.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
 
-**Snippets**: A list with all snippets will be displayed, along with the option to copy your reference code.
+**Snippets**: Displays a list of custom snippets, along with the option to copy reference code to insert them in a template.
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300">
 
-**Changes**: A list of all the times and states in which you have done the "Save" action in this version. By clicking on one of the sub-versions, you will change the content of the template you are working on to that sub-version.
+**Changes**: A list of every "Save" state of a template since it was last published. Click on any of these save states to change the content of the template you are working on to that particular save state. If doing so, all your current changes will be lost.
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
 
 ::: tip Tip
-If you publish a version, you will see that the list of changes disappears, this is because the new editable version has not had any changes.
+If you publish a new version of your templates, this list of changes resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
 :::
 
 ::: tip Tip
-The sub-versions are for each template, so for some you will see that there are changes and for others you will not see the change selector. In the same way, if you return to a previous sub-version of a template, you will not affect the rest of the templates.
+Save states exist for every template. This means that while some templates may have changes, others may not. So this means that selecting a previous save state of any individual template only affects that one, and does not affect any other template.
 :::
 
 ::: tip Tip
-If a version before the editable version is restored, you can access the sub-versions of each template of that version. You can learn more about [versioning here](/guides/platform/team-review.html # versioning)
+If an earlier version of your templates is restored, you can access the save states of each template of that restored version. You can learn more about [versioning here](/guides/platform/team-review.html#versioning)
 :::
 
-Like each template, you can restore all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>  Restore all ". For those changes to take effect, you must publish the templates.
+You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>  Reset all". If you want these reset changes to take effect in the front end, you must publish them.
 
 ### Themes
 
-In this view you can see what theme you have installed, and then the list of all the themes available for the site. By clicking on the **Install** button of a theme, you will replace all the content of your editable themes with the content of the theme you are installing. You can preview the changes using the preview mode of the template builder and then publish them to take that new theme to the published site.
+In this view you can see what theme you have installed, and then the list of all the themes available for the site. By clicking on the **Install** button of a theme, you replace all your editable themes with the new theme content you are installing. You can preview these changes using the Templates preview mode, and then publish them to take effect in the front end of your site.
 
-At the top you will find different actions:
+At the top of this view are a few actions:
 
-- **Customize** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: It takes you to the edition (template builder) of the currently installed theme.
-- **Copy** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Create a copy of the installed theme. It will allow you to choose a new name for the copy of the installed theme.
-- **Reset** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> : Like the reset action of the template builder, this action restores all editable templates to the original version of the theme.
-- **Load templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: In some cases, after complex migrations, there are some unmodified templates that can be lost and you may not see them in the template list in the template builder. This action retrieves those templates from the original theme and allows you to reoccupy them.
+- **Customize** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Takes you to the template builder of the currently installed theme.
+- **Copy** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Creates a copy of the currently installed theme. You need to provide a name for this new copy.
+- **Reset** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> : Like the reset action of the template builder, this action restores all editable templates to their original versions.
+- **Load templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: In some cases, after complex migrations, there may be some unmodified templates that could be lost and you may not see them in the template list in the template builder. This action retrieves those templates from the original theme and allows you to recover them.
 
 ::: tip Tip
-The upload templates action does not modify or touch the editable templates that are already visible in the template builder, it only restores those that are not visible.
+The "Load templates" action does not modify the editable templates that are already in the template builder. It only restores those in the Themes Gallery.
 :::
 
 ::: tip Tip
-When you create or copy a theme on one site, that theme is available to all other sites in the account, so you can create a base theme, and start from that base when you need to create new sites quickly.
+When you create or copy a theme within a site or channel, that theme becomes available on all other sites in your account. This means you can create a base theme, and then use that theme to rapidly build new sites.
 :::
 
-## Views for content
+## Automated Content Views
 
-In order to display [content](/guides/content/) automatically on a site, you must meet certain conditions:
+In order to automatically display [content](/en/guides/content/) on a site, you need to meet certain conditions:
 
-1. Have a space with at least one language (the same as the site) with at least one Type. Go to [Spaces](/guides/content/spaces.html) and [Types](/guides/content/types.html) to learn how.
-1. Have tickets published in the language of the site. Go to [Entries](/guides/content/entries.html) and [Location](/guides/content/spaces.html # location) to learn more.
-1. Associate the space with your site. Go to [general site settings](/guides/channels/sites.html # general) to learn more.
-1. Create a custom view in the templates and name it the same as the UID of the Space you want to display. Go to [create a Space](/guides/content/spaces.html # create-a-space.html) to learn more.
+1. Have a space with at least one language that matches the site where you want to automate content, and have at least one created Type within that space. Go to [Spaces](/en/guides/content/spaces.html) and [Types](/en/guides/content/types.html) to learn how.
+1. Have entries published in the language of the site. Go to [Entries](/en/guides/content/entries.html) and [Location](/en/guides/content/spaces.html#location) to learn more.
+1. Associate this space with your site. Go to [Site settings – General](/guides/channels/sites.html#general) to learn more.
+1. Create a custom view in the Template Builder and give it the same name as the UID of the Type you want to display. Go to [create a Space](/en/guides/content/spaces.html#create-a-space.html) to learn more.
 
-To create a custom view, you must enter the Template Builder and make sure you are in the first "Views" tab. When you scroll to the bottom of the list, you will see that there is a section called "Custom" and a button **+ Add custom view**. When you create the custom view, make sure its name matches the UID of the space you want to display in that view.
+To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called "Custom" and a button **+ Add a custom view**. Click this to create a new custom view, and make sure its name matches the UID of the type you want to display.
 
-By modifying this view, you can use Liquid, and the `entry` object, for example: <span v-pre>` {{entry.published_at | format_date}} `</span>
+When modifying this custom view, you can use Liquid, and the `entry` object, for example: <span v-pre>` {{entry.published_at | format_date}} `</span>
 
-A basic example of Liquid + HTML code that you can use in these views is:
+A basic example of Liquid + HTML code that you can use to get started in these views is:
 
 ``` html
 <div>
@@ -162,17 +164,19 @@ A basic example of Liquid + HTML code that you can use in these views is:
 </div>
 ```
 
+The example above assumes that a couple of field names, such as "title" and "description", exist in the type you created. Modify these as necessary.
+
 ::: tip Tip
-To learn more about how to use Liquid, go to [Liquid markup](/guides/channels/liquid-markup.html)
+To learn more about how to use Liquid, go to [Liquid markup](/guides/channels/liquid-markup.html).
 :::
 
-With this view created and published, if the URL that is being accessed is of the type `site_url/space_uid/entry_slug`, where` space_uid` is the UID of the space you want to display and matches the name of the view you just accessed create, and there is an entry published in the language of the site and also, the entry slug is `entry_slug`, you will be showing the view with the values of that entry.
+With this view created and published, the URL endpoint exists at `site_url/type_uid/entry_slug`, where `type_uid` is the UID of the type you want to display and matches the name of the view you just created. The `entry_slug`, matches the character string in the "Slug" field of the displayed entry. An example relative URL path would be `my-site/posts/my-first-post-in-Modyo`.
 
 ## SEO
 
-SEO [(Search Engine Optimization)](/guides/channels/sites.html # seo) is one of the most important topics of the site and content. In Modyo we have a way to control the way search engines read your site and content, adding meta tags dynamically depending on the attributes you add to your pages and content.
+SEO [(Search Engine Optimization)](/en/guides/channels/sites.html#seo) is one of the most important topics of your site and content. In Modyo, we have a way to control the way search engines read your site and content, dynamically adding meta tags depending on the attributes you add to your pages and content.
 
-We recommend adding this code snippet to the Template Builder, and then calling this snippet from the head of your site:
+We recommend adding this code snippet to the Template Builder, and then calling this snippet from the `<head>` of your site:
 
 ``` html
 <! - Site SEO ->
@@ -182,99 +186,100 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 {% if current_layout_page%}
 <! - SEO Layouts ->
 <meta name="description" content="{{current_layout_page.excerpt}}"/>
-<meta property="og: title" content="{{current_layout_page.title}}"/>
-<meta property="og: type" content="website"/>
-<meta property="og: url" content="{{current_layout_page.url}}"/>
-<meta property="og: image" content="{{site.logo | asset_url: 'original'}}"/>
-<meta property="og: site_name" content="{{site.name}}"/>
-<meta property="og: description" content="{{current_layout_page.excerpt}}"/>
+<meta property="og:title" content="{{current_layout_page.title}}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{current_layout_page.url}}"/>
+<meta property="og:image" content="{{site.logo | asset_url: 'original'}}"/>
+<meta property="og:site_name" content="{{site.name}}"/>
+<meta property="og:description" content="{{current_layout_page.excerpt}}"/>
 {% endif%} {% if entry%}
 <! - Content SEO ->
 <meta name="description" content="{{entry.excerpt}}"/>
-<meta property="og: title" content="{{entry.title}}"/>
-<meta property="og: type" content="article"/>
+<meta property="og:title" content="{{entry.title}}"/>
+<meta property="og:type" content="article"/>
 <goal
-  property="og: url"
+  property="og:url"
   content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
 />
 <goal
-  property="og: image"
+  property="og:image"
   content="{{entry.covers.first | asset_url: 'original'}}"
 />
-<meta property="og: site_name" content="{{site.name}}"/>
-<meta property="og: description" content="{{entry.excerpt}}"/>
+<meta property="og:site_name" content="{{site.name}}"/>
+<meta property="og:description" content="{{entry.excerpt}}"/>
 {% endif%} {% unless current_layout_page or entry%}
 <! - Default SEO ->
 <meta name="description" content="{{site.description}}"/>
-<meta property="og: title" content="{{site.name}}"/>
-<meta property="og: type" content="website"/>
-<meta property="og: url" content="{{request.url}}"/>
-<meta property="og: image" content="{{site.logo | asset_url: 'original'}}"/>
-<meta property="og: site_name" content="{{site.name}}"/>
-<meta property="og: description" content="{{site.description}}"/>
+<meta property="og:title" content="{{site.name}}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{request.url}}"/>
+<meta property="og:image" content="{{site.logo | asset_url: 'original'}}"/>
+<meta property="og:site_name" content="{{site.name}}"/>
+<meta property="og:description" content="{{site.description}}"/>
 {% endunless%}
 <! - END SEO <-->
 ```
 
-This snippet differs when you are using a custom page, some of the Modyo default pages, or some of the content views, so using the attributes of each element, you can define a good SEO base to All the URLs of your site.
+This snippet renders differently depending on whether the endpoint is a custom page, one of the Modyo default pages, or a custom content view. By taking advantage of the fields and attributes of each element in context, and using Liquid's control flow, you can define a robust base set of SEO automation across every URL of your site.
 
-If you require it, you can further customize this snippet, defining what goals you want to appear for specific URLs or for specific types, for example, in the content section, you can use:
+If you require, you can further customize this snippet, defining each goal or outcome based on specific URLs or for specific types. For example, in the content section, you can use:
 
 ``` html
 ... {% if entry%}
 <! - Content SEO ->
 <meta name="description" content="{{entry.excerpt}}"/>
-<meta property="og: title" content="{{entry.title}}"/>
+<meta property="og:title" content="{{entry.title}}"/>
 <goal
-  property="og: url"
+  property="og:url"
   content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
 />
 <goal
-  property="og: image"
+  property="og:image"
   content="{{entry.covers.first | asset_url: 'original'}}"
 />
-<meta property="og: site_name" content="{{site.name}}"/>
-<meta property="og: description" content="{{entry.excerpt}}"/>
+<meta property="og:site_name" content="{{site.name}}"/>
+<meta property="og:description" content="{{entry.excerpt}}"/>
 {% if entry.type_uid='posts'%}
-<meta property="og: type" content="article"/>
+<meta property="og:type" content="article"/>
 {endif} {% if entry.type_uid='place'%}
-<meta property="og: type" content="place"/>
-<meta property="place: latitude" content="{{entry.location.first.latitude}}"/>
+<meta property="og:type" content="place"/>
+<meta property="place:latitude" content="{{entry.location.first.latitude}}"/>
 <goal
-  property="place: longitude"
+  property="place:longitude"
   content="{{entry.location.first.longitude}}"
 />
 {% endif%} {% endif%} ...
 ```
 
-In this case, the `posts` and` place` types share the title, exerpt and covers attributes, and differ in the locations object. In addition, we define a different type of document for each one.
+In this example, the `posts` and `place` types share the "title", "exerpt" and "covers" attributes, but `place` types contain locations attributes. In addition, we would need to define a different custom view in our site for each of these separate types.
 
 ## Integrations
 
 ### Private session management using OpenID Connect (OIDC)
 
-The recommended method to interact with a private API using the Modyo session with an OIDC integration, basically consists of two steps: **make the site private** and **enable integration at the account level**.
+The recommended method to interact with a private API using the Modyo session with an OIDC integration basically consists of two steps: **make the site private** and **enable integration at the account level**.
 
 #### Make the site private
 
-1. Log in to the account where you want to create the private site.
+1. Log in to the account where you want to create a private site.
 2. Click on create a new site.
 3. Assign a name to the new site and select the base theme.
-4. In the `configuration> site` section, under the **Restrictions** tab, we select **private**. It also activates **Show home to public visits** in order to redirect users without a session.
+4. In the `Site settings` section, under the **Restrictions** tab, we select **private** under the Privacy level. This also activates **Show home page to public visitors** in order to redirect users without a session.
+5. Click Save.
 
 #### Enable account level integration (for all sites)
 
-1. Go to the account, **Customers** and from there to the **Settings** section and then the **Integration** tab
+1. In your account, go to **Customers** and from there to the **Customer settings** section and a the top of the view, click the drop down and select the **Integration** tab.
 2. Select the OpenID Connect integration and check the box for **Enable OpenID Connect**
-3. Fill in the data for **Service name, Client ID, Secret and Issuer** and click **Launch discovery service**
-4. Check the fields you need (Enable refresh token, Enable remote logout, Enable token revocation, Enable claims synchronization)
+3. Fill in the data for **Service name, Client ID, Issuer and Secret** and click **Run discovery service**
+4. Check the fields you need (Enable refresh token, Enable remote logout, Enable token revocation, Enable claims synchronization on login)
 5. Associate the provider fields with the custom fields you have in Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
 ### Using Axios to do the integration
 
-If you want to use a library as `axios` to perform an integration from Modyo, a convenient pattern is to create 3 snippets that take care of the most basic aspects of an integration.
+If you want to use a library such as `axios` to perform an integration from Modyo, a convenient pattern is to create 3 snippets that take care of the most basic aspects of an integration.
 
-The tasks you must cover with snippets are:
+The tasks you must cover with these snippets are:
 
 1. A request interceptor to include a token.
 2. A session controller.
@@ -430,7 +435,7 @@ var sessionManager={
 
 ### A modal window that informs the user that their session will expire
 
-This would be the modal to activate in the previous step with bootstrap for handling the warning modal.
+This should be the modal to activate in the previous step with bootstrap for handling the warning modal.
 
 ``` html
 <div

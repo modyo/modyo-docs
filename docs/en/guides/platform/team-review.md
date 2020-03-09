@@ -2,30 +2,30 @@
 search: true
 ---
 
-# Team review
+# Team Review
 
 ## Introduction
 
-The team review (or Team review) is a tool that allows you to control the process of publishing elements in Modyo. When activated, each item must go through review stages before enabling its publication. In this way, a level of supervision and collaboration between the content editor and a team of reviewers is added.
+Team Review is a tool that allows you to control the process of publishing elements in Modyo, such as entries, widgets, pages, templates, and more. When activated, each element must go through review stages with selected team members before publishing. This allows a level of supervision and collaboration between the content editor and a team of reviewers.
 
-When an editor or a developer considers that the item he is working on is ready, he can send it for review, a task that will be performed by users enabled for it or by a team chosen by him. They will be responsible for approving (or rejecting) the item, which will ultimately determine if the item is in a position to be published.
+When an editor or a developer considers that an element is ready, she can send it for review, which is a task performed by certain team members in a space or channel. These team members are responsible for approving (or rejecting) the element, which ultimately determines if the item can be published.
 
-Each step of this process takes the element through different states (image), which are recorded in a history for subsequent audit.
+Each step of this process takes the element through different states (image), which are recorded for subsequent auditing.
 
 [Image review stages]
  
-This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries). The configuration of review rules is done independently for each site or space.
+This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries). Configuration of the review rules is done independently for each site or space.
 
 ### Configuration
 
-To configure the tool, you must go to `Site/space configuration> Team review`.
+To configure Team Review, you must go to `Site/Space configuration > Team review`.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
 The available options are:
 
-- **Enable team review**: Fully enable or disable team review in this context (site or space).
-- **Number of approvals**: Determines how many users must approve the item to be able to be published (it will change its status from "Waiting for revision" to "Approved").
+- **Enable Team Review**: Enable or disable Team Review within the current site or space.
+- **Number of approvals**: Determines how many team members must approve the element before publishing (this changes the status from "In review" to "Approved").
 - **Restrict the selection of reviewers**: By default, any user with the necessary permissions may approve the items that are awaiting review. By enabling this option, only those chosen by the editor may do so.
 ::: tip Tip
 While approval is limited, any user with permissions can comment on the item.

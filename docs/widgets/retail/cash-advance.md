@@ -10,7 +10,7 @@ A través del widget, el cliente puede realizar distintas funciones de acuerdo a
 
 <iframe src="https://widgets.modyo.com/personas/retail-cash-advance" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
-## Funciones
+### Propiedades
 
 En primera vista, el cliente podrá seleccionar las características del Avance en Efectivo y su pago para realizar la simulación.
 
@@ -22,7 +22,7 @@ Monto del Avance|Esa sección permite añadir el monto que se solicita en efecti
 |Cuotas|El cliente puede seleccionar la cantidad de cuotas en las que se pagará el monto solicitado|
 
 
-## Simulación
+### Simulación
 
 Tras las características seleccionadas, el widget mostrará la simulación del avance y los detalles de los pagos que se realizarán.
 

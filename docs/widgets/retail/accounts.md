@@ -8,9 +8,9 @@ Con este widget puedes ver un resumen de tus cuentas bancarias, además de poder
 
 <iframe src="https://widgets.modyo.com/personas/retail-accounts" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
-## Propiedades
+### Propiedades
 
-### Cuenta Corriente
+#### Cuenta Corriente
 
 |Funcionalidad | Descripción|
 |:-------------|:-----------|
@@ -18,7 +18,7 @@ Con este widget puedes ver un resumen de tus cuentas bancarias, además de poder
 |Consulta de Movimientos|Presenta los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha.<br><br> Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados. |
 |Cartolas Históricas|Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha.<br><br> Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.|
 
-### Cuenta Vista
+#### Cuenta Vista
 
 |Funcionalidad|Descripción|
 |:------------|:----------|
@@ -26,7 +26,7 @@ Con este widget puedes ver un resumen de tus cuentas bancarias, además de poder
 |Consulta de Movimientos|Muestra los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha. <br><br>Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.|
 |Cartolas Históricas|Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha. <br><br>Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.|
 
-### Línea de Crédito
+#### Línea de Crédito
 
 |Funcionalidad|Descripción|
 |:------------|:----------|

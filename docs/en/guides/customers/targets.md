@@ -1,83 +1,85 @@
 ---
 search: true
+translated: true
 ---
 
 # Targets
 
-Targets is the ideal Modyo function to handle users in bulk if we need them to receive certain information.
+Targets are the ideal Modyo function to handle users in bulk if we need them to receive certain information.
 
-These allow us to group our customers into different segments and thus facilitate the sending of emails or notifications.
+These allow you to group your customers into different segments and facilitate communication through emails or notifications.
+
+Targets also allow you to use these segments to deliver specific content in your digital channels based on your customers' profiles. This allows you to personalize the digital experience for millions of people.
 
 ## Interface
 
-In the interface, you can see a list with all the targets created so far, with the name and the different specifications that allow them to be filtered.
+In the interface, you can see a list of all targets in your account, with the following details:
 
-The list is sorted as follows.
-
-- Name: Particular name that has the list. (Below this are the filters that compose it).
+- Name: The name of the target.
 - Created on: Target creation date.
-- People: Number of users that belong to the target.
+- People: Number of users that within the target.
 
-In addition, on the far left you will find a button with a drop-down menu that allows you to execute the following options:
+In addition, on the far right you will find an "Action" button with a drop-down menu that allows you to execute the following options:
 
-- Edit: Edit the name and filters of the target.
+- Edit: Edit the target name and filters.
 - Delete: Delete the target.
 
 ::: warning Warning
-If you delete the target, you will have to elaborate it again. However, this does not mean that you delete the users that belong to it.
+If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the targetx.
 :::
 
 If you need to search for a specific target by name, you can do so through the search bar at the top of the screen.
 
 ## Create a Target
 
-To create a target, you have to click on the **New Target** button at the top of the screen.
+To create a target, click on the **New Target** button at the top of the screen.
 
-A view will open immediately in which you can select the filters you want for each Target.
+In the window that appears, you can select the filters for your target.
 
-If you want to delete a filter of the target you are putting together, you just have to click on the icon on the right side of the screen.
+To remove a filter, click on the "trash" icon on the right side of the window.
 
-If you want to erase all filters, you can click on the **Clean** button all that is at the bottom of the screen.
+To erase all filters, click on the **Clear all** button at the bottom of the window.
 
-To record your target, you just have to click on the **Save as Target** button, which is at the bottom of the screen.
+To save a target, click on the **Save as a Target** button at the bottom of the window.
 
-Finally, if you want to see the users that integrate that target, you just have to click on the **Apply** button. With this, you will get to the view of [Users]/guides/customers/users.html) that will show you a list with all the contacts that fit your filters.
+To see the users that match your target filters, click on the **Apply** button. This opens a [User]/en/guides/customers/users.html) liast that displays all users that fit your filters.
 
 ::: tip Tip
- It is necessary that the file of each client is complete, since each of the data that appears in it, can be taken into account to better segment. If the file is not complete or there is no customer data to filter, it will not be added to the target.
+When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
  :::
 
 ### Filters
 
-The filters are the ones that allow us to create the targets, which, as we said before, are based on the information that appears on the client file and its activity within the site.
+Filters are what allows us to create targets by matching information that appears with a user's profile and their activity within the site.
 
-The filters found by default on the platform are:
+The list of default filters are as follows:
 
-- Active desactive
+- Activation status
 - Age
-- Born in
+- Birth date
 - Custom field value
-- Device
-- Mail delivered
-- Unread mail
-- Mail not open
-- Mail reported as spam
-- Open mail count
-- Counting responses to forms
+- Login Device
+- Email delivered
+- Spam Email reported
+- Form responses count
 - Gender
-- Last login
-- Record count
-- Login
-- Notification read
-- Unread notification
-- Registration date
-- User tags
-- Form responses
-- Order confirming
-- Order confirmed
-- Complete order
-- Order paying
-- Paid order
-- Order rejected
+- Last login date
+- Log count
+- Login at date
+- Emails not opened
+- Emails opened count
+- Emails opened
+- Notifications opened
+- Notifications opened count
+- Registered date
+- User tag
+- Answered
+- User field values
+- Completed orders
+- Confirmation failed orders
+- Confirming orders
+- Paid orders
+- Paying orders
+- Rejected orders
 
-To create an advanced filter, which fits your needs, you must go to the Custom Fields section, which is located in [Customers Settings](/guides/customers/users.html # customers-settings).
+To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/en/guides/customers/users.html#customers-settings) for more information.
