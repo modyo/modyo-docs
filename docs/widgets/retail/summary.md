@@ -24,6 +24,8 @@ El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera 
 |Monto internacional|En el caso de las tarjetas, muestra el monto internacional utilizado, además de una gráfica que indica el primer número versus el total autorizado en dólares.|
 |Pagar|Deriva al widget de tarjetas, donde podrá pagar los montos facturados.||
 
+## Productos
+
 ### Cuenta Corriente
 
 La sección de Cuenta Corriente permite ver un resumen general de los montos disponibles, además de acceso a operaciones como transferencias y movimientos.
@@ -34,6 +36,11 @@ Esta sección tiene las mismas funciones que la de Cuenta Corriente. Sin embargo
 
 
 ### Tarjetas de Crédito
+
+Cada una de las tarjetas de crédito tiene su propio módulo gráfico, que permite ver los detalles de cada una de ellas, su monto utilizado y disponible y los últimos movimientos.
+Además, separa el cupo nacional del internacional, incluyendo una gráfica que permite ver en proporción lo utilizado.
+
+
 
 
 
