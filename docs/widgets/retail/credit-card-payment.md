@@ -20,7 +20,4 @@ Deuda de pago internacional|Presenta el monto total que se ha utilizado en el cu
 |Selección de cuenta de origen del pago|El cliente puede seleccionar la cuenta de la cual se extraerá el monto de pago. |
 |Monto mínimo a pagar|Muestra el monto mínimo a pagar de la deuda, para que esta no quede morosa. |
 |Monto total a pagar|Muestra el monto total facturado de la deuda a pagar. |
-|Monto personalizado a pagar|Permite al cliente seleccionar un monto personalizado para pagar de la deuda. |
-|
-
-Tras seleccionar las variables, el cliente puede hacer click en el botón principal para realizar la transacción del pago.
+|Monto personalizado a pagar|Permite al cliente seleccionar un monto personalizado para pagar de la deuda.
