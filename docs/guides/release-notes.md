@@ -6,6 +6,13 @@ search: true
 
 ## 9.0
 
+### 9.0.4 - 12 de Marzo del 2020
+MODYO-10670 — Arreglar redirect automático OpenIDConnect
+MODYO-10498 — Buscador por texto en templates
+MODYO-10655 — Añadir force_publish a CLI
+MODYO-10656 — Botón de nuevo miembro del equipo usa un tooltip que no corresponde
+MODYO-10590 — Error al hacer acción de recuperar contraseña
+
 ### 9.0.3 - 02 de Marzo del 2020
 
 * MODYO-10616 — Sincronizar froala y code mirror en pantalla completa
