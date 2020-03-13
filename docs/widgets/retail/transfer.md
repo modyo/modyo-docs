@@ -6,7 +6,7 @@ search: true
 
 Transferencias es un wigdet que permite a un cliente mover dinero entre sus cuentas o transferir a terceros de manera simple y segura.
 
-<iframe src="https://widgets.modyo.com/personas/retail-transfer" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets-es.modyo.com/personas/retail-transfer" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
 ## Propiedades
 

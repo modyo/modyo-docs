@@ -6,7 +6,7 @@ search: true
 
 Con este widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y ver en detalle cada transacción realizada durante determinados períodos de tiempo.
 
-<iframe src="https://widgets.modyo.com/personas/retail-accounts" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets-es.modyo.com/personas/retail-accounts" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
 ### Propiedades
 

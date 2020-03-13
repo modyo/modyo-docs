@@ -6,7 +6,7 @@ search: true
 
 El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera de productos de un cliente, con la cual puede hacer operaciones básicas o dirigirse a widgets para realizar más movimientos.
 
-<iframe src="https://widgets.modyo.com/personas/summary" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets-es.modyo.com/personas/summary" width="100%" height="700px" frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
 
 ## Funciones 
