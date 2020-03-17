@@ -160,7 +160,7 @@ Puedes eliminar uno de los campos del formulario haciendo _click_ en el icono de
 ::: danger Peligro
 Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.
 :::
-
+ 
 ### Propiedades del campo
 Esta sección te permitirá modificar las opciones para cada una de las preguntas de tu formulario, deberás seleccionar un campo de la sección principal para poder hacer uso de esta sección.
 
