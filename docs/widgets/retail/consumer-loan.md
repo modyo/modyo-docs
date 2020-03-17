@@ -6,7 +6,7 @@ search: true
 
 Modyo también ofrece un widget que permite hacer una simulación y solicitud de crédito de consumo con las variables que cada cliente necesite.
 
-<iframe src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets-es.modyo.com/personas/retail-consumer-loan" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
 ### Propiedades
 

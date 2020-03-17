@@ -8,7 +8,7 @@ El widget de Avance en Efectivo permite a cualquier cliente usar la plataforma h
 
 A través del widget, el cliente puede realizar distintas funciones de acuerdo a las características que necesite para este producto.
 
-<iframe src="https://widgets.modyo.com/personas/retail-cash-advance" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets-es.modyo.com/personas/retail-cash-advance" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
 ### Propiedades
 
