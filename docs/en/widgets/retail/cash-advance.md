@@ -18,7 +18,7 @@ The customer can select the features of their cash advance and its payment to pe
 |Functionality|Description|
 |:------------|:----------|
 |From| Select the card from which the cash amount will be drawn.|
-|To| Displays the destination account of the cash requested.|
+|To| Displays the destination account of the cash requested. |
 Amount|This section allows you to add the amount requested in cash.|
 |Payments|The client can select the number of payments in which the requested amount will be paid.|
 
