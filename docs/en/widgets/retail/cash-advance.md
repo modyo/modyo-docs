@@ -3,7 +3,11 @@ search: true
 translated: true
 ---
 
-# Cash advance
+# Cash Advance
+
+The Cash Advance widget allows any customer to create a credit simulation to request a cash advance from a financial institution.
+
+Through this widget, the client can perform different functions according to the features required for the product.
 
 <iframe src="https://widgets.modyo.com/personas/retail-cash-advance" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
