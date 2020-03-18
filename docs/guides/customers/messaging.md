@@ -77,14 +77,14 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 En la vista superior, podrás encontrar las estadísticas de la campaña.
 
 ::: warning Atención
-Si no has envíado aún la campaña, los valores aparecerán en cero.
+Si no has enviado aún la campaña, los valores aparecerán en cero.
 :::
 
-Si envíaste la campaña por correo, podrás encontrar las siguientes cifras:
+Si enviaste la campaña por correo, podrás encontrar las siguientes cifras:
 
 - **Alcance**: Personas a las que les llega la campaña.
 - **Envíos**: Nº de veces que se ha enviado la campaña
-- **Envíados**: Nº total de correos enviados.
+- **Enviados**: Nº total de correos enviados.
 - **Abiertos**: Nº total de correos abiertos. 
 - **Abiertos únicos**: Nº total de usuarios los cuales abrieron alguna vez la campaña.
 - **Clicks**: Nº de veces en los cuales se ha hecho _click_ en algún vínculo de la campaña.
@@ -126,7 +126,7 @@ En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a lo
 A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
 
 "Sin Campaña" refiere a un correo o notificación que ha 
-sido envíado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/guides/platform/api.html). 
+sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/guides/platform/api.html). 
 
 En la primera vista, el administrador se ordena bajo las siguientes categorías.
 

@@ -119,7 +119,7 @@ Restricciones permite configurar la privacidad del sitio.
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-La sección Dominios te permite saber dónde está publicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma sean informados de los cambios que se realicen aquí.
+La sección Dominios te permite saber dónde está públicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma sean informados de los cambios que se realicen aquí.
 
 Las variables que puedes cambiar aquí son:
 

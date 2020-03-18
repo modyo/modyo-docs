@@ -10,7 +10,7 @@ La navegación es la forma más rápida de armar un listado de elementos para en
 
 En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en la [sección template builder](/guides/channels/templates.html).
 
-El menú builder solo permite dos niveles de profundidad, por lo que puedes tener un listado principal, y sub elementos en cada uno de los items principales. No puedes anidar otros elementos dentro de los elementos anidados. 
+El menú builder solo permite dos niveles de profundidad, por lo que puedes tener un listado principal, y sub elementos en cada uno de los ítems principales. No puedes anidar otros elementos dentro de los elementos anidados. 
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 
@@ -42,15 +42,15 @@ Al final de la barra lateral, ves una caja de texto donde puedes escribir un com
 **Acción principal**
 
 - **Guardar**: Guarda todos los cambios del menú.
-- **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado via correo a los revisores asignados.
+- **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "Rn edición", notificando a los revisores que el elemento fue rechazado.
 - **Publicar**: Una vez que el menú fue aprobado, se pasa la versión a estado "Publicada".
 
-En la sección lateral derecha puedes ver una barra que cambia de acuerdo al item seleccionado en el área principal. En esta sección puedes ver las opciones:
+En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección puedes ver las opciones:
 
 - **Nombre**: Nombre del elemento que aparecerá en el sitio.
 - **Page asociado**: Se puede asociar directamente a una página o a una URL personalizada.
-- **URL**: Si escogiste una URL personalizada en el elemento anterior, acá puedes escribir la URL a la que quieres que apunte este item del menú.
+- **URL**: Si escogiste una URL personalizada en el elemento anterior, acá puedes escribir la URL a la que quieres que apunte este ítem del menú.
 - **Abrir en pestaña nueva**: Le añade el atributo `target='blank'` al elemento HTML del item del menú, para que al hacerle _click_, se abra en una pestaña nueva.
 - **Privado**: Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
-- **Targets**: Si la opción anterior se habilita,también puedes targetizar este elemento, para que además de tener una sesión, los usuarios que se encuentran dentro de los targets seleccionados, ya pueden ver este item de menú.
+- **Targets**: Si la opción anterior se habilita,también puedes targetizar este elemento, para que además de tener una sesión, los usuarios que se encuentran dentro de los targets seleccionados, ya pueden ver este ítem de menú.

@@ -115,7 +115,7 @@ Cuando un colaborador ingresa a trabajar a Modyo sólo posee acceso a los sistem
 ### Autenticación
 Para reducir aún más los riesgos de acceso no autorizado a los datos, los empleados de Modyo con acceso a la información de clientes requieren contar con un dispositivo de “second factor” que será solicitado al momento de ingresar a los sistemas (panel de control de Amazon, DNS, sistemas de control de código fuente, etc).
 
-Todas las contraseñas utilizadas para acceder a recursos y datos sensibles de clientes deberán ser de al menos 12 caracteres. El uso obligatorio de un gestor contraseñas previene el reuso y predictibilidad de éstas. 
+Todas las contraseñas utilizadas para acceder a recursos y datos sensibles de clientes deberán ser de al menos 12 caracteres. El uso obligatorio de un gestor contraseñas previene el reúso y predictibilidad de éstas. 
 
 
 ### Monitoreo de Sistemas, Logs y Alertas

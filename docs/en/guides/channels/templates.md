@@ -30,6 +30,8 @@ In the upper right, you will find the latest publication date and the available 
 Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved, so that the most recent twenty backups can be compared, restored and rollback. For more information on versioning, check out the [versioning](/en/guides/platform/team-review.html#versioning) section .
 :::
 
+**Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Displays a sidebar with a searchbox. You can search any text inside the editable version of the templates.
+
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
 
 **Show activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: Displays a sidebar with activity history and template comments. At the bottom of the sidebar, you can submit comments. Next to each activity, click on "see detail" to show the complete information of an activity log.
@@ -137,10 +139,17 @@ In order to automatically display [content](/en/guides/content/) on a site, you 
 
 1. Have a space with at least one language that matches the site where you want to automate content, and have at least one created Type within that space. Go to [Spaces](/en/guides/content/spaces.html) and [Types](/en/guides/content/types.html) to learn how.
 1. Have entries published in the language of the site. Go to [Entries](/en/guides/content/entries.html) and [Location](/en/guides/content/spaces.html#location) to learn more.
-1. Associate this space with your site. Go to [Site settings – General](/guides/channels/sites.html#general) to learn more.
-1. Create a custom view in the Template Builder and give it the same name as the UID of the Type you want to display. Go to [create a Space](/en/guides/content/spaces.html#create-a-space.html) to learn more.
+1. Create a custom view in the Template Builder.
 
-To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called "Custom" and a button **+ Add a custom view**. Click this to create a new custom view, and make sure its name matches the UID of the type you want to display.
+To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called "Custom" and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to. 
+
+:::warning Warning
+The name of the view it is the site relative URL for the content type you chose.
+:::
+
+:::tip Tip
+You can use whatever name for this views that suits your site, regardless of the space and content type you choose. You need to have in mind that it is required to have an entry published in this site language in order to see the content in this view.
+:::
 
 When modifying this custom view, you can use Liquid, and the `entry` object, for example: <span v-pre>` {{entry.published_at | format_date}} `</span>
 

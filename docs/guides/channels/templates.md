@@ -10,7 +10,7 @@ Cuando ya se selecciona el tema que se usa dentro del sitio, se puede acceder de
 
 Una vez dentro del Template Builder, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual:
 
-- **Publicado**: Cuando ya existe una versión publicada y su version editable es igual.
+- **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
 - **En revisión**: Cuando se habilita la [revisión en equipo](guides/platform/team-review.html) y se ha enviado a revisión la versión editable.
 - **Aprobado**: Cuando se habilita la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
@@ -32,6 +32,8 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 Para más información sobre el versionamiento, échale un vistazo a la sección de [versionado](/guides/platform/team-review.html#versionado).
 :::
 
+**Buscar en templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con un buscador de texto que busca en todos los templates editables. 
+
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
 
 **Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con el historial de actividad y comentarios de los templates. 
@@ -40,20 +42,20 @@ Al final de la barra lateral, ves una caja de texto donde puedes escribir un com
 
 **Más acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
-- **Temas**: Se dirige directo al indice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/guides/channels/templates.html#temas)
+- **Temas**: Se dirige directo al índice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/guides/channels/templates.html#temas)
 - **Restaurar todo**: Restauras todos los templates al valor original del tema.
 
 **Acción principal**
 
 - **Guardar**: Guarda todos los cambios de todos los templates.
-- **Enviar a revisión**: Cambia el estado de los templates a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado via correo a los revisores asignados.
+- **Enviar a revisión**: Cambia el estado de los templates a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
 - **Publicar**: Una vez que los templates fueron aprobados, se pueden pasar a la versión publicada.
 
 En el área de trabajo principal, puedes ver dos secciones:
 
 - El área de trabajo.
-- El area de selección de templates.
+- El área de selección de templates.
 
 Cada template al que le hagas _click_ en la barra lateral derecha, se abre en el área central, muy similar a un IDE. Si abres múltiples templates, estos quedan abiertos como pestañas en el área de trabajo.
 
@@ -143,10 +145,17 @@ Para poder mostrar [contenido](/guides/content/) de forma automática en un siti
 
 1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un Tipo. Dirígete a [Espacios](/guides/content/spaces.html) y [Tipos](/guides/content/types.html) para aprender cómo.
 1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/guides/content/entries.html) y [Localización](/guides/content/spaces.html#localizacion) para aprender más.
-1. Asociar el espacio a tu sitio. Dirígete a [configuración general de sitios](/guides/channels/sites.html#general) para aprender más.
-1. Crear una vista personalizada en los templates y nombrarla igual que el UID del tipo que quieres mostrar. Dirígete a [crear un Espacio](/guides/content/spaces.html#crear-un-espacio.html) para aprender más.
+1. Crear una vista personalizada en el Templates Builder.
 
-Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Cuando crees la vista personalizada, asegúrate de que su nombre coincide con el UID del espacio que quieres mostrar en esa vista.
+Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Al crear la vista personalizada debes seleccionar un nombre, un espacio al que estará asociado y finalmente un tipo de contenido del espacio.
+
+:::warning Atención
+El nombre de la vista será la ruta (URL) relativa al sitio del contenido a mostrar, por lo que debes prestar atención al momento de nombrar estas vistas.
+:::
+
+:::tip Tip
+Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
+:::
 
 Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
@@ -274,7 +283,7 @@ Por ejemplo, en la sección de contenido, puedes usar:
 {% endif %} {% endif %} ...
 ```
 
-En este caso, los tipos `posts` y `place` comparten los atributos title, exerpt y covers, y difieren en el objeto locations. Además, define un tipo de documento diferente para cada uno.
+En este caso, los tipos `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_, y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
 
 ## Integraciones
 

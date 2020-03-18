@@ -100,7 +100,7 @@ Mediante el SDK se puede obtener, filtrar y ordenar tu contenido creado para pod
 
 Asimismo, el SDK de Modyo permite obtener información del usuario final que ya haya iniciado sesión en la plataforma, para personalizar aún más la interacción de este con tu sitio.
 
-Para comenzar a utilizar el SDK, sólo debes incluír su módulo en tu package.json `@modyo/sdk` y luego referenciarlo en tu código JavaScript:
+Para comenzar a utilizar el SDK, sólo debes incluir su módulo en tu package.json `@modyo/sdk` y luego referenciarlo en tu código JavaScript:
 `import Client from '@modyo/sdk';`. 
 
 Una vez listo, se puede inicializar el cliente llamando a `const client = new Client('account_url')` siendo `account_url` la dirección web de la cuenta de Modyo.
@@ -529,7 +529,7 @@ Para cualquier recurso de contenido a través de la API, es necesaria hacer una 
 
 Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
 
-Por ejemplo, con `page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 items saltándose los primeros 40.
+Por ejemplo, con `page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 ítems saltándose los primeros 40.
 
 Junto con la respuesta se entrega un meta de paginación como por ejemplo:
 
@@ -555,7 +555,7 @@ Las entradas que podrás ver en sección, corresponden a todo el contenido envia
 
 En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
 
-Metadata(ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
+Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
 
 - Tags: consultables de dos maneras
   - `meta.tag=tag_name`
@@ -603,7 +603,7 @@ Los campos de las entries como: field.attr_name
 Se usa una expresiónJsonPath por ejemplo:
 
 `.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
-`.../entries?fields=$..description` para obtener todos los campos description en los entries.
+`.../entries?fields=$..description` para obtener todos los campos _description_ en los entries.
 
 ##### Igualdades/Desigualdades en arrays
 
@@ -613,7 +613,7 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
   `.../entries?fields.color[has][]=red&fields.color[has][]=black`
 - IN: equivalente a un sql OR
   `.../entries?fields.color[in][]=red&fields.color[in][]=blue`
-- NIN: equivalente a un slq NOT IN
+- NIN: equivalente a un sql NOT IN
   `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
 ##### Orden

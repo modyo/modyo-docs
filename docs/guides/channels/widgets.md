@@ -8,7 +8,7 @@ Los widgets son los que permiten crear _microfrontends_ encapsulados para sitios
 
 Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
 
-En la esquina superior derecha se observa un botón principal **+ Nuevo** que permitecrear un nuevo widget. Para ello, se debe escribir un nombre para luego entrar a la vista de edición del widget.
+En la esquina superior derecha se observa un botón principal **+ Nuevo** que permite crear un nuevo widget. Para ello, se debe escribir un nombre para luego entrar a la vista de edición del widget.
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 

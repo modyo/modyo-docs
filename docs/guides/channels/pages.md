@@ -6,7 +6,7 @@ search: true
 
 Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido. 
 
-![Indice de páginas](/assets/img/platform/page-index.png)
+![Índice de páginas](/assets/img/platform/page-index.png)
 
 Puedes añadir nuevas páginas haciendo _click_ en el botón **+ Nuevo** arriba a la derecha de la vista. Debes elegir un nombre, path y si es que la nueva página tendrá un padre.
 

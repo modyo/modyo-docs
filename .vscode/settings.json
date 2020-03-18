@@ -1,7 +1,19 @@
 {
     "cSpell.words": [
+        "OIDC",
+        "Reestablecer",
+        "autenticación",
+        "indexación",
         "modyo",
-        "slugificado"
+        "monitoreando",
+        "openidc",
+        "perimetralmente",
+        "redireccionar",
+        "reestablece",
+        "rgba",
+        "sincronización",
+        "slugificado",
+        "xlink"
     ],
     "cSpell.enabledLanguageIds": [
         "asciidoc",
@@ -36,5 +48,13 @@
         "typescriptreact",
         "yaml",
         "yml"
+    ],
+    "cSpell.enableFiletypes": [
+        "markdown"
+    ],
+    "cSpell.ignoreWords": [
+        "desinscripciones",
+        "search",
+        "urls"
     ]
 }

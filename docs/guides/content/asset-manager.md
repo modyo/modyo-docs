@@ -180,7 +180,7 @@ Esta acción abre una nueva ventana que permite subir los archivos de dos manera
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
 
-Como una manera de resguardar la seguridad de la plataforma Modyo establece un límite de tamaño de los archivos que puedes subír a la plataforma dependiendo de su tipo. Estos son los limites:
+Como una manera de resguardar la seguridad de la plataforma Modyo establece un límite de tamaño de los archivos que puedes subir a la plataforma dependiendo de su tipo. Estos son los limites:
 
 - Imágenes: 30 MB
 - Videos: 200 MB

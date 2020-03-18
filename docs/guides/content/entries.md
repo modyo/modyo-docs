@@ -106,13 +106,13 @@ Para ver las Categorías, es necesario que hagas _click_ en la sección **Catego
 Si quieres crear una categoría, solo debes hacer _click_ en el botón verde que se encuentra en la parte superior de la pantalla. Después, puedes ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
 ::: tip Tip
-Cuando se ingrese el nombre de la categoría, la ruta se establece predeterminádamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
+Cuando se ingrese el nombre de la categoría, la ruta se establece predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
 
 Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
 
 ::: warning Atención
-Si se quiere eliminar una categoría, simplemente basta con hacer _click_ en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no estan a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
+Si se quiere eliminar una categoría, simplemente basta con hacer _click_ en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
 :::
 
 ::: danger Peligro

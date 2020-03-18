@@ -135,7 +135,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `sort` - Ordena elementos del array
 * `split` - Dividir un string en un patrón coincidente *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 * `strip_html` - Elimina html del string
-* `strip_newlines` - Elimina todas las lineas nuevas (\n) del string
+* `strip_newlines` - Elimina todas las líneas nuevas (\n) del string
 * `strip` - Elimina todos los espacios en blanco de ambos extremos del string.
 * `times` - Multiplica  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
 * `truncate` - Restringe un string a x caracteres. También acepta un segundo parámetro que se añadirá al string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
@@ -206,8 +206,8 @@ Ten en cuenta que NO hay ningún operador "no", y también que NO PUEDE utilizar
 
 Las expresiones de Liquid son probadas para determinar su "veracidad" en lo que parece ser una forma de Ruby:
 
-* `true` is verdadero
-* `false` is falso.
+* `true` es verdadero
+* `false` es falso.
 * Cualquier string es true, incluyendo un string vacío.
 * Cualquier array es true.
 * Cualquier hash es true.
@@ -323,7 +323,7 @@ hit 2 or 3
 
 ### Cycle
 
-A menudo hay que alternar entre diferentes colores o tareas similares.  Líquid tiene soporte incorporado para tales operaciones, usando el tag `cycle`.
+A menudo hay que alternar entre diferentes colores o tareas similares. Liquid tiene soporte incorporado para tales operaciones, usando el tag `cycle`.
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}
@@ -444,7 +444,7 @@ forloop.last        # => is this the last iteration?
 Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los elementos que recibe en su bucle y en el orden en que aparecen:
 
 * `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
-* `offset:<INTEGER>` permite empezar la colección con el enésimo item.
+* `offset:<INTEGER>` permite empezar la colección con el enésimo ítem.
 * `reversed` itera sobre la colección desde el último hasta el primero.
 
 Elementos de restricción:

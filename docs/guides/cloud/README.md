@@ -12,7 +12,7 @@ La versión Modyo Cloud consiste en un despliegue.
 
 ### Modyo Private Cloud
 
-La versión Modyo Private Cloud consiste en un despleigue totalmente independiente.
+La versión Modyo Private Cloud consiste en un despliegue totalmente independiente.
 
 El presente documento describe la operación en la nube que realiza Modyo para sus versiones de la plataforma Modyo Cloud y Enterprise Private Cloud,  detallando su modelo de soporte, escalamiento, performance y seguridad. 
 
@@ -119,7 +119,7 @@ Servicio utilizado para la inspección y detección en tiempo real de amenazas d
 
 ### Servicios de Otros Proveedores
 #### Sendgrid
-Servicio utilizado para el envío de correos transaccionales y masivos de la plataforma de forma confiable y escalable. En algunos casos este servicio es ofrecido por Modyo mediante Sendgrid y otros mediant SES.
+Servicio utilizado para el envío de correos transaccionales y masivos de la plataforma de forma confiable y escalable. En algunos casos este servicio es ofrecido por Modyo mediante Sendgrid y otros mediante SES.
 
 #### NewRelic
 Servicio de monitoreo en la nube encargado de las métricas aplicativas, SLAs y stack tecnológico. NewRelic posee un sistema interno de alertas y canales de notificación que permiten definir métricas generales y particulares según la necesidad de cada cliente.  NewRelic de Modyo está integrado a PagerDuty.
