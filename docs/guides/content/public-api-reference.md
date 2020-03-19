@@ -72,9 +72,10 @@ Para hacer uso de la paginación en un widget personalizado, se debe cambiar el 
 
 De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
-```liquid 
+```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
 ```
+
 Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
 Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at` y `slug`.
 
@@ -100,41 +101,111 @@ Mediante el SDK se puede obtener, filtrar y ordenar tu contenido creado para pod
 
 Asimismo, el SDK de Modyo permite obtener información del usuario final que ya haya iniciado sesión en la plataforma, para personalizar aún más la interacción de este con tu sitio.
 
-Para comenzar a utilizar el SDK, sólo debes incluir su módulo en tu package.json `@modyo/sdk` y luego referenciarlo en tu código JavaScript:
-`import Client from '@modyo/sdk';`. 
+### Instalación
 
-Una vez listo, se puede inicializar el cliente llamando a `const client = new Client('account_url')` siendo `account_url` la dirección web de la cuenta de Modyo.
+#### 1. Generar/proveer un token
+
+El paquete `@modyo/sdk` está disponible en el registro de Github, bajo la organización Modyo. Para consumir el paquete en un proyecto necesitamos, además de agregarlo al `package.json`, obtener un token con el scope `read:packages`([referencia en Github](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
+
+#### 2. Autenticarse en Github packages
+
+Una vez obtenido ese token, debemos ocuparlo para autenticarnos en Github packages. Para eso creamos un archivo `.npmrc` en el `home`, o sea, la ruta del archivo sería `~/.npmrc`
+El contenido de ese archivo (reemplazando `TOKEN` por nuestro token)
+
+```bash
+//npm.pkg.github.com/:_authToken=TOKEN
+```
+
+[Referencia en Github docs](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+
+#### 3. Agregar la organización a tu proyecto
+
+Ahora hay que informa al proyecto que ocupará `@modyo/sdk` que debe buscar ese paquete en el registro de Github y no en NPM. Para eso, en la misma carpeta dónde esté `package.json` del proyecto, creamos un `.npmrc` conteniendo lo siguiente:
+
+```bash
+registry=https://npm.pkg.github.com/OWNER
+```
+
+Donde `OWNER` es el nombre de la organización dueña del paquete, en este caso `modyo`
+
+[Referencia Github docs](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+
+### Uso
+
+Una vez instalado en nuestro proyecto podemos crear un cliente del que obtendremos los contenidos.
+Para eso instanciamos un nuevo cliente con la dirección web de la cuenta de Modyo como argumento.
+
+```js
+import { Client } from "@modyo/sdk";
+// Para obtener la cuenta correct, debemos usar la url de la cuenta
+const modyoAccount = new Client("https://my-account.modyo.com");
+```
 
 ### Contenido
 
 El SDK permite acceder tanto a contenido público como privado/targetizado, facilitando la interacción con nuestra API Headless.
 
-#### Contenido público
+#### Cómo obtener contenido público
 
-Para obtener contenido público, es necesario instanciar el Tipo de Contenido, por lo que se debe llamar a la siguiente función: `ctype = client.getContentType('spaceUID', 'typeUID');` siendo `spaceUID` y `typeUID` los identificadores únicos del Content Space y Content Type requeridos.
+Podemos consultar por un tipo de contenido en particular y así obtener su esquema
 
-Una vez instanciado, se puede realizar consultas por todo el contenido (`ctype.getEntries().then(data => console.log(data))`), el contenido mediante filtros (ver sección a continuación), o el JSONSchema del Content Type. `ctype.getSchema().then(schema => console.log(schema));`.
+```js
+// Para obtener el tipo `Post` de un espacio llamado `Blog`
+const typePost = modyoAccount.getContentType("blog", "post");
+// `typePost` retornará un objeto con diversa información del tipo, entre ellas, el esquema de ese tipo
+```
 
-Cuando ya se haya obtenido el JSONSchema del Tipo de contenido, es posible ver un objeto de sus atributos llamando a `ctype.getAttrs()` este listado puede ser útil para armar filtros en la consulta.
+Cuando tenemos el tipo que necesitamos podemos ver su esquema, sus atributos o consultar sus entradas:
 
-#### Contenido privado
-
-Para obtener contenido privado, es necesario instanciar también el Tipo de Contenido, esta vez con una flag indicando que no se tratará de contenido público: `ctype = client.getContentType('spaceUID', 'typeUID', false);`
-
-:::warning Atención
-Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
-:::
+```js
+// Si queremos ver ese esquema en detalle, podemos ocupar el método `getSchema()`
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
+/*
+Eso imprimirá algo como esto:
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
+*/
+// Para obtener las entradas de ese tipo
+const entries = typePost.getEntries();
+```
 
 #### Paginación
 
-Todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
+En general, todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
 
-#### Filtros de contenido
+El objeto retornado por `getEntries()` incluye un campo `meta` que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
 
-En ciertas ocasiones, no se quiere obtener todo el contenido de un Tipo. Para dichas ocasiones, ModyoSDK provee de filtros aplicables a la consulta.
+```json
 
-Para crear un filtro, hay que inicializarlo con `ctype.Filter()`, y luego al mismo objeto se le pueden ir concatenando diferentes filtros:
-`const filters = ctype.Filter().Before('meta.created_at','2020-05-01').In('meta.tag',['tag1','tag2'])`
+{
+  "meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+  "entries": [
+    {
+      "meta": {
+        "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
+        "tags": [],
+        "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
+        "..."
+      },
+      "fields": {
+        "title": "titulo",
+        "slug": "slug",
+        "excerpt": "Excerpt of the entry...",
+        "..."
+      }
+    }
+  ]
+}
+```
+
+#### Filtros
+
+El método `getEntries()` que ocupamos más arriba también puede recibir un objecto de filtros para consultar las entradas.
+Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, pudiendo consultar los campos `meta` de cada entrada (como la fecha de creación o tags asignados)
 
 **Filtros soportados**:
 
@@ -148,13 +219,56 @@ Para crear un filtro, hay que inicializarlo con `ctype.Filter()`, y luego al mis
 
 - **Paginate**: recibe como parámetros el número de página y el total de entradas por página.
 
-
 :::warning Atención
 Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
 :::
 
-Una vez creados los filtros, se puede llamar a la consulta `getEntries` dando los filtros respectivos como parámetro:
-`ctype.getEntries(filters).then(data => console.log(data))`
+```js
+// Si queremos obtener un listado de los atributos por los que podemos consultar
+typePost
+  .getSchema()
+  .then(() => console.log("List of attributes:", typePost.getAttrs()));
+```
+
+Para crear un filtro, usamos el método `Filter()`
+
+```js
+const filters = typePost
+  .Filter()
+  .Before("meta.created_at", "2020-05-01")
+  .In("meta.tag", ["tag1", "tag2"]);
+// Ahora lo ocupamos para obtener entradas con estos criterios
+const filteredEntries = typePost.getEntries(filters);
+// ahora resolvemos la promesa
+filteredEntries.then(res => console.log("Filtered entries response: ", res));
+```
+
+### Ordenar
+
+Los resultados de nuestra búsqueda también pueden ordenarse con el método `SortBy()`
+
+```js
+// JSONPath and Sorting are also supported as filters
+const filters = ctype
+  .Filter()
+  .SortBy("meta.created_at", "desc")
+  .JSONPath("$..uuid");
+```
+
+**Nota**: Como se puede ver en el ejemplo, es posible usar en nuestras consultas expresiones `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+
+#### Contenido privado
+
+Para obtener contenido privado, basta con que el usuario esté con sesión, pasando al método `getContentType()` un tercer argumento en `false` (que indica que no es público)
+
+```js
+// To acces private content (user must be logged in on account)
+const privateTypePost = modyoAccount.getContentType("blog", "post", false);
+```
+
+:::warning Atención
+Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
+:::
 
 ### Información de Usuario Final
 
@@ -663,18 +777,18 @@ La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSO
 
 ## Contenido privado
 
-Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido. 
+Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido.
 
 :::tip Tip
 Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los targets automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
 :::
 
-La API de contenido puede recibir el parámetro delivery token de dos formas: 
+La API de contenido puede recibir el parámetro delivery token de dos formas:
 
 - Como header: `Delivery-Token`
 - Como parámetro GET: `delivery_token`
 
-El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de targets. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`. 
+El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de targets. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`.
 
 El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
 
@@ -685,8 +799,7 @@ El token de acceso a contenido (content delivery token) contiene los siguientes 
 - **access_type**: delivery,
 - **targets**: Array de targets
 
-
-Por ejemplo: 
+Por ejemplo:
 
 ```javascript
 {
@@ -704,7 +817,7 @@ Para poder acceder a la URL de obtención del token, debes asegurarte de tener u
 :::
 
 :::warning Atención
-Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor. 
+Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor.
 :::
 
 La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin targets) como el contenido targetizado que esté restringido a los targets a los que pertenece el usuario que solicitó su delivery token.
