@@ -103,9 +103,9 @@ Asimismo, el SDK de Modyo permite obtener información del usuario final que ya 
 
 ### Instalación
 
-#### 1. Generar/proveer un token
+#### 1. Obtener un token de Modyo
 
-El paquete `@modyo/sdk` está disponible en el registro de Github, bajo la organización Modyo. Para consumir el paquete en un proyecto necesitamos, además de agregarlo al `package.json`, obtener un token con el scope `read:packages`([referencia en Github](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
+El paquete `@modyo/sdk` está disponible en el registro de Github, bajo la organización Modyo. Es por eso que para consumir el paquete en un proyecto necesitamos, además de agregarlo al `package.json`, **necesitas obtener un token con el scope `read:packages`**([referencia en Github](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
 
 #### 2. Autenticarse en Github packages
 
