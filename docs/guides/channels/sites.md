@@ -114,6 +114,7 @@ Restricciones permite configurar la privacidad del sitio.
 - Si el sitio es público, entonces todos pueden ver el sitio.
 - Si el sitio es privado, solo usuarios con una sesión de Modyo podrán ver el sitio.
 - Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
+- Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
 
 ### Dominios
 
