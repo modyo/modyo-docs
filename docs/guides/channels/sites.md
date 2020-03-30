@@ -181,7 +181,7 @@ En esta vista encontrarás una tabla con todas las redirecciones que existen act
 
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completando los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guardando los cambios, crearás una nueva entrada de redirección. 
 
-:::Warning Atención
+:::warning Atención
 La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](guides/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](guides/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
