@@ -175,7 +175,7 @@ En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tenga
 
 ### Redirecciones personalizadas
 
-Muchas veces se invierte tiempo en el SEO de una página que luego se encuentra en otra dirección dentro del sitio, o tal vez por un cambio de framework, algunas de las cosas importantes se encuentran en otro sector del sitio. Para estos casos, Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio. 
+Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio. 
 
 En esta vista encontrarás una tabla con todas las redirecciones que existen actualmente en el sitio, donde podrás buscar por path o descripción. 
 
