@@ -12,10 +12,10 @@ Al entrar, puedes ver que existen 4 estados:
 
 <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
-- **Habilitado**: Estado por defecto en el que quedan los sitios recién creados y los que están online.
-- **Oculto**: sitios creados que solo puede ver el usuario en linea.
-- **Desarrollo**: sitios traspasados a otros usuarios que se encuentren trabajando en ellos.
-- **Deshabilitado**: sitios que han sido desechados.
+- **Habilitado**: Estado por defecto en el que quedan los sitios recién creados y los que están habilitados para su uso.
+- **Oculto**: Sitios creados y habilitados que no aparecen en el listado de sitios del perfil de los usuarios. Sólo se pueden acceder si se cuenta con la URL del sitio.
+- **Desarrollo**: Sitios disponibles sólo para administradores de Modyo. Los usuarios que no tengan permisos de administrador no podrán ver estos sitios.
+- **Deshabilitado**: Sitios a los que no se puede acceder.
 
 Para crear un sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
 
