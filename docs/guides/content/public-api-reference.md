@@ -137,7 +137,7 @@ Para eso instanciamos un nuevo cliente con la dirección web de la cuenta de Mod
 
 ```js
 import { Client } from "@modyo/sdk";
-// Para obtener la cuenta correct, debemos usar la url de la cuenta
+// Para obtener la cuenta correcta, debemos usar la url de la cuenta
 const modyoAccount = new Client("https://my-account.modyo.com");
 ```
 
