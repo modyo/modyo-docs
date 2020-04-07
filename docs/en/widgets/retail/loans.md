@@ -17,5 +17,13 @@ Modyo also offers a widget that allows you to see an overview of the loans that 
 |Simulate your mortgage|Allows you to simulate the mortgage loan to be applied for. To do so, you will be referred to the mortgage loan widget where you will be able to see the different options that the financial institution can offer.|
 |Loan details|The client can see their loan details, in addition to the outstanding balance owed to the institution, the payment dates and the current fee to be paid.|
 |Mortgage details|Shows details of the mortgage loan applied for, a graph of what is owed and the value of the next installment to be paid.|
-|Pagar deuda|Corresponde a la funcionalidad de pago de la deuda.<br><br> Este pago de deuda puede ser total o parcial.<br><br> Hacer click en este botón llevará al widget de pagos, donde se podrá seleccionar la opción de pago de deuda nacional o internacional.|
+|Make a Payment|Corresponds to the payment functionality.<br><br> Both full and partial payments can be made.<br><br> Clicking this button will take you to the payment widget, where you can select your payment options.|
 |
+
+- Simulate your personal loan: Allows you to simulate personal loans. To do so, you can use the loan widget to create the simulation and then begin a loan application.
+
+- Simulate your mortgage: Allows you to simulate a mortgage that customers can apply for. To do this, use the mortgage widget to access the different mortgage options available from your financial institution.
+
+- Personal Loan: Customers can see their loan details, in addition to the outstanding balance owed to your institution, their payment dates, and the current installment to be paid. 
+
+- Mortgage Loan: Shows the details of the requested mortgage, a graph detailing what is owed, and the value of the next installment to be paid.
