@@ -170,6 +170,7 @@ module.exports = {
         label: "English",
         nav: [
           { text: "Guides", link: "/en/guides/" },
+          { text: "Widgets", link: "/en/widgets/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" }
         ],
