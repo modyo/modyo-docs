@@ -4,7 +4,7 @@ search: true
 
 # Transferencia
 
-<iframe id="widgetFrameTransferirtES" src="https://widgets-es.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
 
 <script>
@@ -33,9 +33,9 @@ search: true
               console.log('data:', data)
               // check data object
               if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrameTransferirtES', data['docHeight'] );
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
               } else {
-                  setIframeHeightCO( 'widgetFrameTransferirtES', 700 );
+                  setIframeHeightCO( 'widgetFrame', 700 );
               }
           }
       }

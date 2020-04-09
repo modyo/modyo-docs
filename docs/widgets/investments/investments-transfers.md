@@ -6,7 +6,7 @@ search: true
 
 Este widget existe para que los clientes puedan transferir fondos entre sus cuentas de inversión y su cuenta corriente inscrita.
 
-<iframe id="widgetFrameTransferenciasES" src="https://widgets-es.modyo.com/inversiones/transferencias" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencias" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción                                                                                                                                                      |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,9 +39,9 @@ Este widget existe para que los clientes puedan transferir fondos entre sus cuen
               console.log('data:', data)
               // check data object
               if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrameTransferenciasES', data['docHeight'] );
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
               } else {
-                  setIframeHeightCO( 'widgetFrameTransferenciasES', 700 );
+                  setIframeHeightCO( 'widgetFrame', 700 );
               }
           }
       }

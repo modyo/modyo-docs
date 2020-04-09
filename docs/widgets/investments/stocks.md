@@ -6,7 +6,7 @@ search: true
 
 En el widget de Acciones de Modyo el usuario podrá encontrar toda la información sobre las acciones disponibles, junto con Información de Mercado y un módulo para transar en línea de manera ágil y simple.
 
-<iframe id="widgetFrameAccionesES" src="https://widgets-es.modyo.com/inversiones/acciones" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/acciones" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad          | Descripción                                                                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,9 +41,9 @@ En el widget de Acciones de Modyo el usuario podrá encontrar toda la informaci�
               console.log('data:', data)
               // check data object
               if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrameAccionesES', data['docHeight'] );
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
               } else {
-                  setIframeHeightCO( 'widgetFrameAccionesES', 700 );
+                  setIframeHeightCO( 'widgetFrame', 700 );
               }
           }
       }
