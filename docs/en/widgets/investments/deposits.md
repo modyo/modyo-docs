@@ -6,7 +6,7 @@ search: true
 
 El widget de Abonos permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
 
-<iframe id="widgetFrameDepositsEN" src="https://widgets.modyo.com/inversiones/depositos" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/depositos" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
@@ -38,9 +38,9 @@ El widget de Abonos permite que el usuario pueda cargar fondos de manera fácil 
               console.log('data:', data)
               // check data object
               if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrameDepositsEN', data['docHeight'] );
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
               } else {
-                  setIframeHeightCO( 'widgetFrameAccountEN', 700 );
+                  setIframeHeightCO( 'widgetFrame', 700 );
               }
           }
       }

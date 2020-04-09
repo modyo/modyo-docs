@@ -6,7 +6,7 @@ search: true
 
 El widget de Cuentas muestra el detalle de todas las cuentas de inversión de un usuario, con información relevante en gráficos y números, además de presentar los movimientos realizados junto con las cartolas y extractos.
 
-<iframe id="widgetFrameAccountEN" src="https://widgets.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                    | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,9 +41,9 @@ El widget de Cuentas muestra el detalle de todas las cuentas de inversión de un
               console.log('data:', data)
               // check data object
               if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrameAccountEN', data['docHeight'] );
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
               } else {
-                  setIframeHeightCO( 'widgetFrameAccountEN', 700 );
+                  setIframeHeightCO( 'widgetFrame', 700 );
               }
           }
       }

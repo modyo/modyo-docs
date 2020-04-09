@@ -6,7 +6,7 @@ search: true
 
 Modyo ofrece un widget que muestra la información de los Fondos Mutuos disponibles y las operaciones realizadas por el usuario, además de entregar la posibilidad de realizar transacciones en línea a través de la plataforma.
 
-<iframe id="widgetFrameFundsEN" src="https://widgets.modyo.com/inversiones/fondos-mutuos" width="100%" frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/fondos-mutuos" width="100%" frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad           | Descripción                                                                                                                                                                                                                                                                                                 |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,9 +41,9 @@ Modyo ofrece un widget que muestra la información de los Fondos Mutuos disponib
               console.log('data:', data)
               // check data object
               if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrameFundsEN', data['docHeight'] );
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
               } else {
-                  setIframeHeightCO( 'widgetFrameAccountEN', 700 );
+                  setIframeHeightCO( 'widgetFrame', 700 );
               }
           }
       }
