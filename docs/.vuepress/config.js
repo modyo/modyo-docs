@@ -136,11 +136,6 @@ module.exports = {
                 "/widgets/retail/transfers"
               ]
             },
-            /*{
-              title: "Seguros",
-              collapsable: true,
-              children: ["/widgets/insurance/"]
-            },*/
             {
               title: "Inversiones",
               collapsable: true,
@@ -156,7 +151,12 @@ module.exports = {
                 "/widgets/investments/mutual-funds",
                 "/widgets/investments/stocks"
               ]
-            }
+            },
+            /*{
+              title: "Seguros",
+              collapsable: true,
+              children: ["/widgets/insurance/"]
+            },*/
             /*{
               title: "Onboarding",
               collapsable: true,
@@ -253,9 +253,20 @@ module.exports = {
               children: [["/en/widgets/", "About widgets"]]
             },
             {
-              title: "Insurance",
+              title: "Retail",
               collapsable: true,
-              children: ["/en/widgets/insurance/"]
+              children: [
+                "/en/widgets/retail/",
+                "/en/widgets/retail/accounts",
+                "/en/widgets/retail/cash-advance",
+                "/en/widgets/retail/consumer-loan",
+                "/en/widgets/retail/credit-cards",
+                "/en/widgets/retail/loans",
+                "/en/widgets/retail/mortgage-loans",
+                "/en/widgets/retail/summary",
+                "/en/widgets/retail/transfer",
+                "/en/widgets/retail/transfers"
+              ]
             },
             {
               title: "Investments",
@@ -273,27 +284,18 @@ module.exports = {
                 "/en/widgets/investments/stocks"
               ]
             },
-            {
+            /* {
+              title: "Insurance",
+              collapsable: true,
+              children: ["/en/widgets/insurance/"]
+            }, */
+
+           /*  {
               title: "Onboarding",
               collapsable: true,
               children: ["/en/widgets/onboarding/"]
-            },
-            {
-              title: "Retail",
-              collapsable: true,
-              children: [
-                "/en/widgets/retail/",
-                "/en/widgets/retail/accounts",
-                "/en/widgets/retail/cash-advance",
-                "/en/widgets/retail/consumer-loan",
-                "/en/widgets/retail/credit-cards",
-                "/en/widgets/retail/loans",
-                "/en/widgets/retail/mortgage-loans",
-                "/en/widgets/retail/summary",
-                "/en/widgets/retail/transfer",
-                "/en/widgets/retail/transfers"
-              ]
-            }
+            }, */
+
           ]
         }
       }
