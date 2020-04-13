@@ -1,15 +1,16 @@
 ---
 search: true
+translated: true
 ---
 
-# Puntos
+# Points
 
 
-<iframe src="https://widgets-es.modyo.com/personas/points" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets.modyo.com/personas/points" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad  | Descripción  |
+| Feature  | Description  |
 | -----| -----|
-| Resumen de los Puntos | Muestra el total de puntos disponibles para el cliente, junto con el próximo vencimiento.  Posee un botón que permite vincular un catálogo relevante de artículos canjeables.  |
-| Tarjetas Asociadas  | Muestra la información de las tarjetas del cliente vinculadas al sistema de puntos y beneficios.  Incluye el tipo de tarjeta, nombre del cliente y el total de puntos acumulados durante el período de tiempo. |
-| Puntos Canjeados  | Presenta los puntos canjeados por el cliente. Muestra en detalle la fecha del canje, producto, negocio y coste de los puntos.  |
-| Puntos Acumulados  | Presenta los puntos acumulados por el cliente.  Muestra el detalle de cada transacción y los puntos ganados.  Incluye el total de puntos canjeados por período.  |
+| Points Summary | Displays the total points available to the customer, along with the next due date. Has a button that enables you to link a relevant catalog of redeemable items. |
+| Associated Cards | Displays customer card information linked to your points and benefits system. It includes the card type, customer's name and the total points accumulated during a set period of time. |
+| Redeemed Points | Shows the points redeemed by the customer. Displays details such as the date of redemption, product, business and point cost. |
+| Accumulated Points | Presents the points accumulated by the customer. Displays details of each transaction and the points earned. Includes the total number of points redeemed per period. |
