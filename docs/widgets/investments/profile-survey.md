@@ -1,24 +1,16 @@
 ---
 search: true
-translated: true
 ---
 
-# Credit Card Payments
+# Encuesta perfil
 
-The platform offers a credit card payment widget, allowing customers to perform the transaction directly from your payment portal.
+En este widget, cada usuario podrá completar la encuesta de Perfil de Inversionista, para poder recibir las mejores recomendaciones en sus movimientos.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
-To complete a payment, the default options available to customers are:
-
-| Functionality | Description |
-|:-----|:-----|
-| Selection of payment source account | The customer can select the account from which the payment amount will be drawn. |
-| Credit card to be paid | The credit card to receive payment from a selected account. |
-| Minimum payment | Shows the minimum payment amount for the card, so that it does not fall into delinquency. |
-| Total amount to pay | Shows the total amount of debt to be paid. |
-| Other amount to be paid | Allows the client to select a customized amount to pay. |
-
+| Funcionalidad | Descripción |
+|-----|-----|
+| Encuesta Perfil de Inversionista | Permite completar la encuesta de Perfil del Inversionista, ya sea para clientes nuevos, si el cliente quiere volver a realizarla o porque la normativa lo exige. |
 
 <script>
 
@@ -39,7 +31,7 @@ To complete a payment, the default options available to customers are:
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

@@ -8,8 +8,6 @@ Con este widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-accounts" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-### Propiedades
-
 #### Cuenta Corriente
 
 | Funcionalidad               | Descripción                                                                                                                                                                                                                                          |

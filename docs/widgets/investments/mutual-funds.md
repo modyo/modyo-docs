@@ -8,12 +8,12 @@ Modyo ofrece un widget que muestra la información de los Fondos Mutuos disponib
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad           | Descripción                                                                                                                                                                                                                                                                                                 |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Funcionalidad | Descripción |
+|-----|-----|
 | Layout de Fondos Mutuos | Muestra el conjunto de los fondos mutuos disponibles. Presenta un listado con las operaciones en tránsito asociadas a los fondos mutuos. Muestra el conjunto de fondos mutuos en los que el cliente tiene sus inversiones y la información de mercado respectiva. Permite cancelar operaciones en tránsito. |
-| Información de Mercado  | Muestra la información esencial del fondo mutuo seleccionado. Permite Aportar o Rescatar desde el fondo/serie seleccionado.                                                                                                                                                                                 |
-| Aporte de Fondo Mutuo   | Permite realizar Aportes al fondo mutuo seleccionado, definiendo la cuenta de inversión y el monto que se desea aportar.                                                                                                                                                                                    |
-| Rescate de Fondo Mutuo  | Permite realizar Rescates de dinero desde el fondo mutuo seleccionado.                                                                                                                                                                                                                                      |
+| Información de Mercado | Muestra la información esencial del fondo mutuo seleccionado. Permite Aportar o Rescatar desde el fondo/serie seleccionado. |
+| Aporte de Fondo Mutuo | Permite realizar Aportes al fondo mutuo seleccionado, definiendo la cuenta de inversión y el monto que se desea aportar. |
+| Rescate de Fondo Mutuo | Permite realizar Rescates de dinero desde el fondo mutuo seleccionado. |
 
 
 <script>

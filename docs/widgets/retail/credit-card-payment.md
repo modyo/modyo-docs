@@ -8,8 +8,6 @@ La plataforma ofrece un widget de pago de tarjeta de crédito, con tal de que el
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
-### Propiedades
-
 Para realizar la transacción, el cliente verá predeterminadamente:
 
 | Funcionalidad                          | Descripción                                                                                                              |

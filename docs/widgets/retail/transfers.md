@@ -8,10 +8,10 @@ Este widget permite revisar en detalle todas las transferencias recibidas y envi
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                    | Descripción                                                                                                                                                                                        |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Historial de Transferencias      | Muestra el detalle de las transferencias recibidas y enviadas desde la cuenta del cliente.  Incluye el monto de la transferencia, el saldo disponible y el nombre del contacto, según corresponda. |
-| Transferencias a Terceros        | Define que el widget sólo muestre información referida a las transferencias a terceros realizadas por el usuario.                                                                                  |
-| Transferencias Entre mis cuentas | Define que el widget sólo muestre información referida a las transferencias realizadas entre las cuentas del usuario.                                                                              |
-| Contactos                        | Permite revisar y editar la infomación de los contactos ya ingresados en la cuenta del usuario.  Muestra información como nombre, banco, tipo de cuenta y número de cuenta.                        |
-| Agregar contacto                 | Permite agregar nuevas cuentas de destino a la sección de Contacto.  Incluye nombre, banco, tipo de cuenta, número de cuenta, RUT y correo electrónico del destinatario.                           |
+| Funcionalidad | Descripción |
+|-----|-----|
+| Historial de Transferencias | Muestra el detalle de las transferencias recibidas y enviadas desde la cuenta del cliente. Incluye el monto de la transferencia, el saldo disponible y el nombre del contacto, según corresponda. |
+| Transferencias a Terceros | Define que el widget sólo muestre información referida a las transferencias a terceros realizadas por el usuario. |
+| Transferencias Entre mis cuentas | Define que el widget sólo muestre información referida a las transferencias realizadas entre las cuentas del usuario. |
+| Contactos | Permite revisar y editar la infomación de los contactos ya ingresados en la cuenta del usuario. Muestra información como nombre, banco, tipo de cuenta y número de cuenta. | 
+| Agregar contacto	 | Permite agregar nuevas cuentas de destino a la sección de Contacto. Incluye nombre, banco, tipo de cuenta, número de cuenta, RUT y correo electrónico del destinatario. |

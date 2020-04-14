@@ -8,8 +8,6 @@ Modyo ofrece un widget que permite al cliente ver los datos y operaciones de sus
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-credit-cards" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/>
 
-### Propiedades
-
 | Funcionalidad                 | Descripción                                                                                                                                                                                                                                                        |
 |:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Resumen de Tarjeta de Crédito | Presenta un resumen del estado de la tarjeta de crédito. <br><br>La información específica asociada a los saldos (disponible, utilizado y cupo total) se presenta de manera numérica y gráfica.                                                                    |

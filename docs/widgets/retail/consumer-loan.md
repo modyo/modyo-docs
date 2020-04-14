@@ -4,23 +4,21 @@ search: true
 
 # Crédito de Consumo
 
-Este widget permite hacer una simulación de un crédito de consumo y comenzar la solicitud del mismo con las variables que cada cliente necesite
+Este widget permite hacer una simulación de un crédito de consumo y comenzar la solicitud del mismo con las variables que cada cliente necesite.
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
-### Propiedades
-
-| Funcionalidad         | Descripción                                                                                                                                                                  |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Monto del Crédito     | Permite ingresar el monto del crédito en pesos que el cliente quiere simular.                                                                                                |
-| Cuotas                | Permite elegir la cantidad de cuotas en las que el cliente quiere simular el crédito de consumo.                                                                             |
-| Meses de gracia       | Permite seleccionar la cantidad de meses de gracia que el cliente desea agregar en su simulación.                                                                            |
-| Fechas de no pago     | Entrega la posibilidad de elegir los meses en los que el cliente no realizará el pago del crédito, si lo permite                                                             |
-| Abono en cuenta       | Permite seleccionar la cuenta de destino a la cual se cargará el monto solicitado si el crédito es aprobado por la institución.                                              |
-| Seguros               | Entrega la posibilidad de elegir qué seguros se incluirán en la simulación del crédito.                                                                                      |
-| Resumen de simulación | Presenta información general sobre la simulación de créditro realizada.  Incluye costo total del crédito, cantidad de cuotas, valor de cuota y tasas de interés respectivas. |
-| Detalle de simulación | Muestra la información detallada de la simulación de crédito.  Incluye monto líquido, impuestos, seguros y gastos, entre otros.                                              |
-| Solicitud             | Permite confirmar la simulación y gestionar la solicitud del crédito de consumo con la institución.                                                                          |
+| Funcionalidad | Descripción |
+|-----|-----|
+| Monto del Crédito | Permite ingresar el monto del crédito en pesos que el cliente quiere simular. |
+| Cuotas | Permite elegir la cantidad de cuotas en las que el cliente quiere simular el crédito de consumo. |
+| Meses de gracia	 | Permite seleccionar la cantidad de meses de gracia que el cliente desea agregar en su simulación. |
+| Fechas de no pago	 | Entrega la posibilidad de elegir los meses en los que el cliente no realizará el pago del crédito, si lo permite |
+| Abono en cuenta	 | Permite seleccionar la cuenta de destino a la cual se cargará el monto solicitado si el crédito es aprobado por la institución. |
+| Seguros	 | Entrega la posibilidad de elegir qué seguros se incluirán en la simulación del crédito. |
+| Resumen de simulación | Presenta información general sobre la simulación de créditro realizada. Incluye costo total del crédito, cantidad de cuotas, valor de cuota y tasas de interés respectivas. |
+| Detalle de simulación	| Muestra la información detallada de la simulación de crédito. Incluye monto líquido, impuestos, seguros y gastos, entre otros. |
+| Solicitud	 | Permite confirmar la simulación y gestionar la solicitud del crédito de consumo con la institución. |
 
 <script>
 

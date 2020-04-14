@@ -9,9 +9,6 @@ This widget allows you to review, in detail, all the sent and received transacti
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-<<<<<<< HEAD
-### Properties
-
 | Feature  | Description  |
 | -----| -----|
 | Transfer History  | Displays the transaction details sent and received from the customer's account. Includes the amount of the transfer, the available balance, and the contact name, as appropriate. |
@@ -19,12 +16,3 @@ This widget allows you to review, in detail, all the sent and received transacti
 | Transfers between my Accounts | Filters the widget to only show information regarding transfers made between the customer's own accounts.  |
 | Contacts | Allows customers to review and edit contact information that are already entered in the customer's account. Displays information such as name, bank, account type and account number.  |  
 | Add Contact | Add new destination accounts to Contacts. Includes fields to define the name, bank, account type, account number, ID and recipient's email. |
-=======
-| Feature                       | Description                                                                                                                                                                           |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Transfer History              | Displays the transaction details sent and received from the customer's account. Includes the amount of the transfer, the available balance, and the contact name, as appropriate.     |
-| Third-party Transfers         | Filters the widget to only show information regarding transfers to third parties made by the customer.                                                                                |
-| Transfers between my Accounts | Filters the widget to only show information regarding transfers made between the customer's own accounts.                                                                             |
-| Contacts                      | Allows customers to review and edit contact information that are already entered in the customer's account. Displays information such as name, bank, account type and account number. |
-| Add Contact                   | Add new destination accounts to Contacts. Includes fields to define the name, bank, account type, account number, ID and recipient's email.                                           |
->>>>>>> a7ce833824f0a6e4ceb708d12f0fcbfea1b19e69

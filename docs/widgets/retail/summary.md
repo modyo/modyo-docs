@@ -8,14 +8,11 @@ El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera 
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/summary" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
-
-## Funciones
+### Funciones
 
 Presenta la posición del cliente en los distintos productos que tiene con la institución financiera. (Cuentas y Tarjetas).
 
 Los resúmenes individuales presentan la información del producto específico de manera numérica y gráfica.
-
-### Propiedades
 
 #### Cuenta Corriente
 

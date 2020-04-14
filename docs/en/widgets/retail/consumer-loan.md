@@ -9,8 +9,6 @@ Modyo also offers a widget that allows customers to simulate and apply for a per
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
-### Properties
-
 The default properties that the client can modify for its simulation and request are:
 
 | Functionality         | Description |

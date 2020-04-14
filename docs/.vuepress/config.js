@@ -140,7 +140,6 @@ module.exports = {
               title: "Inversiones",
               collapsable: true,
               children: [
-                "/widgets/investments/",
                 "/widgets/investments/accounts",
                 "/widgets/investments/general-summary",
                 "/widgets/investments/detailed-summary",
@@ -248,7 +247,7 @@ module.exports = {
           ],
           "/en/widgets/": [
             {
-              title: "Catálogo",
+              title: "Catalog",
               collapsable: false,
               children: [["/en/widgets/", "About widgets"]]
             },
@@ -256,7 +255,6 @@ module.exports = {
               title: "Retail",
               collapsable: true,
               children: [
-                "/en/widgets/retail/",
                 "/en/widgets/retail/summary",
                 "/en/widgets/retail/accounts",
                 "/en/widgets/retail/credit-cards",
@@ -273,7 +271,6 @@ module.exports = {
               title: "Investments",
               collapsable: true,
               children: [
-                "/en/widgets/investments/",
                 "/en/widgets/investments/accounts",
                 "/en/widgets/investments/general-summary",
                 "/en/widgets/investments/detailed-summary",
