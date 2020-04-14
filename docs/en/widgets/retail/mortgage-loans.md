@@ -9,6 +9,8 @@ This widget allows you to make a simulation of a mortgage loan and start the app
 
 <iframe src="https://widgets.modyo.com/personas/retail-mortgage-loan" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
+### Properties
+
 | Feature  | Description  |
 | -----| -----|
 | Loan Amount  | Enters the loan amount that they want to simulate and apply for.  |

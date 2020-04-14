@@ -9,6 +9,8 @@ This widget allows you to review, in detail, all the sent and received transacti
 
 <iframe src="https://widgets.modyo.com/personas/retail-transfers" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
+### Properties
+
 | Feature  | Description  |
 | -----| -----|
 | Transfer History  | Displays the transaction details sent and received from the customer's account. Includes the amount of the transfer, the available balance, and the contact name, as appropriate. |

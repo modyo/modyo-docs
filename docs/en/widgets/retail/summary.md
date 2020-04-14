@@ -11,7 +11,7 @@ The Account Summary widget allows you to review detailed information of your fin
 
 <iframe src="https://widgets.modyo.com/personas/summary" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
-## Function 
+### Purpose 
 
 The Account Summary presents a customer's financial state within the different products they have with the financial institution (Accounts and Credit Cards).
 

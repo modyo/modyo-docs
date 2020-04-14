@@ -8,6 +8,8 @@ translated: true
 
 <iframe src="https://widgets.modyo.com/personas/points" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
+### Properties
+
 | Feature  | Description  |
 | -----| -----|
 | Points Summary | Displays the total points available to the customer, along with the next due date. Has a button that enables you to link a relevant catalog of redeemable items. |

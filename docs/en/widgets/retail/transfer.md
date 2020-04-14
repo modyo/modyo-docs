@@ -9,7 +9,7 @@ Transfers is a wigdet that allows a customer to move money between their account
 
 <iframe src="https://widgets.modyo.com/personas/retail-transfer" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
-## Properties
+### Properties
 
 This widget is divided into features for two similar products: Transfer to Third Party and Transfer between Accounts.
 
@@ -21,7 +21,6 @@ This widget is divided into features for two similar products: Transfer to Third
 |Destination Account|Select the account to which the money will be transferred and deposited.|
 |Schedule Transfer|Allows you to select a time frequency (once, weekly, monthly, annually, etc.) between which transfers of a predetermined amount of money are made.|
 |Recent Activity|Displays all recent activity that has not yet been invoiced.|
-|Make a Payment|Corresponds to the primary payment functionality..<br><br> The payment may be either total or partial.<br><br> Clicking this button will take you to the Credit Card Payment widget.|
 
 ### Third-party Transfers
 

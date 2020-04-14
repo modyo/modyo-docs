@@ -20,7 +20,6 @@ Este widget se divide en funcionalidades para dos productos similares: Transfere
 |Destino de transferencia|Selecciona la cuenta a la cual se moverá el dinero|
 |Programar transferencia|Permite seleccionar na frecuencia de tiempo entre la cual se harán transferencias de un monto de dinero predeterminado.|
 |Últimos movimientos|Muestra todos los movimientos nacionales e internacionales que no están facturados.|
-|Pagar deuda|Corresponde a la funcionalidad de pago de la deuda.<br><br> Este pago de deuda puede ser total o parcial.<br><br> Hacer click en este botón llevará al widget de Pago de Tarjetas, donde se podrá seleccionar la opción de pago de deuda nacional o internacional.|
 
 ### Transferencia a Terceros
 
