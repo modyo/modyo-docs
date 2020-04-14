@@ -13,3 +13,4 @@ npm-debug.log
 docs/.vuepress/dist/
 google_cloud_credentials.json
 
+.vscode/

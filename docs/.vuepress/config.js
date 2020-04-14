@@ -128,12 +128,28 @@ module.exports = {
                 "/widgets/retail/accounts",
                 "/widgets/retail/credit-cards",
                 "/widgets/retail/credit-card-payment",
-                "/widgets/retail/cash-advance",
-                "/widgets/retail/consumer-loan",
                 "/widgets/retail/loans",
+                "/widgets/retail/consumer-loan",
                 "/widgets/retail/mortgage-loans",
+                "/widgets/retail/cash-advance",
                 "/widgets/retail/transfer",
                 "/widgets/retail/transfers"
+              ]
+            },
+            {
+              title: "Inversiones",
+              collapsable: true,
+              children: [
+                "/widgets/investments/",
+                "/widgets/investments/accounts",
+                "/widgets/investments/general-summary",
+                "/widgets/investments/detailed-summary",
+                "/widgets/investments/investments-transfers",
+                "/widgets/investments/investments-transfer",
+                "/widgets/investments/deposits",
+                "/widgets/investments/documents",
+                "/widgets/investments/mutual-funds",
+                "/widgets/investments/stocks"
               ]
             },
             /*{
@@ -141,22 +157,6 @@ module.exports = {
               collapsable: true,
               children: ["/widgets/insurance/"]
             },*/
-            {
-              title: "Inversiones",
-              collapsable: true,
-              children: [
-                "/widgets/investments/",
-                "/widgets/investments/accounts",
-                "/widgets/investments/deposits",
-                "/widgets/investments/detailed-summary",
-                "/widgets/investments/documents",
-                "/widgets/investments/general-summary",
-                "/widgets/investments/investments-transfer",
-                "/widgets/investments/investments-transfers",
-                "/widgets/investments/mutual-funds",
-                "/widgets/investments/stocks"
-              ]
-            }
             /*{
               title: "Onboarding",
               collapsable: true,
@@ -170,6 +170,7 @@ module.exports = {
         label: "English",
         nav: [
           { text: "Guides", link: "/en/guides/" },
+          { text: "Widgets", link: "/en/widgets/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" }
         ],
@@ -252,9 +253,21 @@ module.exports = {
               children: [["/en/widgets/", "About widgets"]]
             },
             {
-              title: "Insurance",
+              title: "Retail",
               collapsable: true,
-              children: ["/en/widgets/insurance/"]
+              children: [
+                "/en/widgets/retail/",
+                "/en/widgets/retail/summary",
+                "/en/widgets/retail/accounts",
+                "/en/widgets/retail/credit-cards",
+                "/en/widgets/retail/credit-card-payment",
+                "/en/widgets/retail/loans",
+                "/en/widgets/retail/consumer-loan",
+                "/en/widgets/retail/mortgage-loans",
+                "/en/widgets/retail/cash-advance",
+                "/en/widgets/retail/transfer",
+                "/en/widgets/retail/transfers"
+              ]
             },
             {
               title: "Investments",
@@ -262,37 +275,28 @@ module.exports = {
               children: [
                 "/en/widgets/investments/",
                 "/en/widgets/investments/accounts",
-                "/en/widgets/investments/deposits",
-                "/en/widgets/investments/detailed-summary",
-                "/en/widgets/investments/documents",
                 "/en/widgets/investments/general-summary",
-                "/en/widgets/investments/investments-transfer",
+                "/en/widgets/investments/detailed-summary",
                 "/en/widgets/investments/investments-transfers",
+                "/en/widgets/investments/investments-transfer",
+                "/en/widgets/investments/deposits",
+                "/en/widgets/investments/documents",
                 "/en/widgets/investments/mutual-funds",
                 "/en/widgets/investments/stocks"
               ]
             },
-            {
+            /* {
+              title: "Insurance",
+              collapsable: true,
+              children: ["/en/widgets/insurance/"]
+            }, */
+
+           /*  {
               title: "Onboarding",
               collapsable: true,
               children: ["/en/widgets/onboarding/"]
-            },
-            {
-              title: "Retail",
-              collapsable: true,
-              children: [
-                "/en/widgets/retail/",
-                "/en/widgets/retail/accounts",
-                "/en/widgets/retail/cash-advance",
-                "/en/widgets/retail/consumer-loan",
-                "/en/widgets/retail/credit-cards",
-                "/en/widgets/retail/loans",
-                "/en/widgets/retail/mortgage-loans",
-                "/en/widgets/retail/summary",
-                "/en/widgets/retail/transfer",
-                "/en/widgets/retail/transfers"
-              ]
-            }
+            }, */
+
           ]
         }
       }
