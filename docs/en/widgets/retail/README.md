@@ -1,13 +1,14 @@
 ---
 search: true
+translated: true
 ---
 
 # About retail
 
-Los widgets son los que te permiten crear _microfrontends_ encapsulados para tus sitios y aplicaciones.
+Widgets are what allow you to create self-contained _micro frontends_ for your sites and applications.
 
-Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los widgets que se han creado. En la barra superior podrás filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
+When you enter the **Widgets** section of your site, you will see a list of all the widgets that have been created. In the top bar, you can filter the list of widgets by status, author or tags, or do a text search by the widget name.
 
-En la esquina superior derecha verás un botón principal **+ Nuevo** que te permitirá crear un nuevo widget. Deberás escribir un nombre para luego entrar a la vista de edición del widget.
+In the top right corner you will see a main button **+ New** that will allow you to create a new widget. You will need to type in a name and then enter the edit view of the widget.
 
-En la vista de edición del widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
+In the edit view of the widget, you will see the top action bar, the workspace, and the properties column.

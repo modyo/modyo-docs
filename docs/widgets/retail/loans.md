@@ -4,28 +4,26 @@ search: true
 
 # Créditos
 
-Modyo también ofrece un widget que permite ver una vista general de los créditos que el cliente tenga con la institución financiera, de manera detallada y con sus datos actualizados.
+Modyo ofrece un widget que permite ver una vista general de los créditos que el cliente tiene con la institución financiera, de manera detallada y con sus datos actualizados.
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-loans" width="100%"  frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
 ### Propiedades
+| Functionality               | Description                                                                                                                                                                                                          |
+|:----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Simulate your personal loan | Allow each client to simulate a personal loan. To do this, use the loans widget to simulate and later being their loan application.                                                                                  |
+| Simulate your mortgage      | Allows you to simulate the mortgage loan to be applied for. To do so, you will be referred to the mortgage loan widget where you will be able to see the different options that the financial institution can offer. |
+| Loan details                | The client can see their loan details, in addition to the outstanding balance owed to the institution, the payment dates and the current fee to be paid.                                                             |
+| Mortgage details            | Shows details of the mortgage loan applied for, a graph of what is owed and the value of the next installment to be paid.                                                                                            |
+| Make a Payment              | Corresponds to the payment functionality.<br><br> Both full and partial payments can be made.<br><br> Clicking this button will take you to the payment widget, where you can select your payment options.           |
 
-| Funcionalidad       | Descripción |
-|:--------------------|:-|
-| Cotización          | Permite al cliente cotizar un crédito. Al hacer lick |
-| Consulta de Saldo   | Esta consulta muestra los cupos de la tarjeta específica por tipo de moneda, además de indicadores de gastos en comparación con el Cupo disponible. |
-| Estado de Cuenta    | Muestra el estado de cuenta con los movimientos del último periodo facturado para una tarjeta de crédito. |
-| Últimos movimientos | Muestra todos los movimientos nacionales e internacionales que no están facturados. |
-| Pagar deuda         | Corresponde a la funcionalidad de pago de la deuda.<br><br> Este pago de deuda puede ser total o parcial.<br><br> Hacer click en este botón llevará al widget de pagos, donde se podrá seleccionar la opción de pago de deuda nacional o internacional. |
-|                     |
+- Simulate your personal loan: Allows you to simulate personal loans. To do so, you can use the loan widget to create the simulation and then begin a loan application.
 
-- Simula tu crédito de consumo: Permite simular créditos de consumo a cada cliente. Para ello, deriva al widget de créditos para hacer la simulación y después la solicitud si es que este la desea.
+- Simulate your mortgage: Allows you to simulate a mortgage that customers can apply for. To do this, use the mortgage widget to access the different mortgage options available from your financial institution.
 
-- Simula tu crédito hipotecario: Permite simular el crédito hipotecario a solicitar. Para ello, deriva al widget de créditos hipotecarios donde podrá ver las distintas opciones que la institución financiera le puede ofrecer.
+- Personal Loan: Customers can see their loan details, in addition to the outstanding balance owed to your institution, their payment dates, and the current installment to be paid.
 
-- Consumo en pesos: El cliente puede ver su crédito detallado, además del saldo pendiente adeudado a la institución, las fechas de pago y la cuota actual a pagar.
-
-- Crédito de vivienda: Muestra los detalles del crédito hipotecario solicitado, una gráfica de lo que se adeuda y el valor de la siguiente cuota a pagar.
+- Mortgage Loan: Shows the details of the requested mortgage, a graph detailing what is owed, and the value of the next installment to be paid.
 
 <script>
 

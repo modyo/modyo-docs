@@ -24,6 +24,13 @@ Este widget se divide en funcionalidades para dos productos similares: Transfere
 
 ### Transferencia a Terceros
 
+| Funcionalidad      | Descripción                                                                                                                                                                                                     |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cuenta de Origen   | Entrega información sobre la cuenta de la cual se realizará la transferencia, como número de cuenta y saldo disponible.  Permite agendadar movimientos hacia uno de los destinatarios registrados.              |
+| Cuenta de Destino  | Permite seleccionar la cuenta que recibirá la transferencia realizada por el usuario.  El cliente puede seleccionar un contacto ya registrado o agregar nuevos contactos.                                       |
+| Mis Contactos      | Permite seleccionar la cuenta que recibirá la transferencia, entre las cuentas ya registradas por el cliente.  Entrega un buscados para encontrar de manera ágil y rápida al destinatarios de la transferencia. |
+| Nuevo Contacto     | Permite ingresar la información sobre un destinatario que no esté registrado en la cuenta del cliente.  Incluye nombre, banco, tipo de cuenta, número de cuenta, RUT y correo electrónico del destinatario.     |
+| Monto a transferir | Permite ingresar el monto que se transferirá hacia la cuenta del destinatario seleccionado.                                                                                                                     |
 
 <script>
 
