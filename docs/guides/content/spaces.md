@@ -40,6 +40,12 @@ El UID del Espacio es muy importante ya que es el atributo con el cual accedes d
 
 Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
 
+La última opción es para configurar si el autor del contenido estará visible tanto en la API pública como en el SDK de liquid. Si la opción está habilitada, entonces verás los datos del administrador que creó el contenido, y si la opción está deshabilitada, verá el autor en blanco. 
+
+:::warning Atención
+Ten en cuenta que al guardar esta opción, reindexarás todas las entradas del espacio, por lo que puede haber una ventana de tiempo en la que los cambios no se vean reflejados hasta que se terminen de reindexar las entradas del espacio.
+:::
+
 ### Localización
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.

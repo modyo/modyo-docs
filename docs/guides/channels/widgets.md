@@ -4,7 +4,7 @@ search: true
 
 # Widgets
 
-Los widgets son los que permiten crear _microfrontends_ encapsulados para sitios y aplicaciones.
+Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
 
 Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
 

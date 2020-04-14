@@ -22,7 +22,7 @@ Modyo provee un ambiente de desarrollo seguro ya sea en la nube u “On Premise�
 
 * **Líderes de Canales Digitales** que son responsables de guiar interacciones, ventas y experiencias de clientes en canales web y móvil.
 
-* **Arquitectos de Software** buscando crear una arquitectura limpia, que abarque desde los Microservicios y APIs hasta Microfrontends para canales web y móvil.
+* **Arquitectos de Software** buscando crear una arquitectura limpia, que abarque desde los Microservicios y APIs hasta Micro frontends para canales web y móvil.
 
 * **Expertos en Marketing Digital** que requieren un sistema de administración de contenido para crear experiencias digitales para grupos objetivos.
 
