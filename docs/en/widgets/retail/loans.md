@@ -7,7 +7,7 @@ translated: true
 
 Modyo also offers a widget that allows you to see an overview of the loans that a customer has with the financial institution, in detail and with their updated data.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-loans" width="100%"  frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-loans" width="100%"  frameBorder="0" style="visibility:hidden;min-height:630px;overflow:auto;margin-top:20px;"/>
 
 | Functionality | Description |
 |:-----|:-----|
