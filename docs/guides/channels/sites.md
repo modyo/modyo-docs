@@ -22,7 +22,7 @@ Para crear un sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te 
 Después de ello, puedes verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
 :::warning Atención
-En el índice de sitio, solo verás los sitio en los cuales eres parte del equipo de trabajo con algún rol.
+En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
 :::
 
 ## Configuración de un Sitio
