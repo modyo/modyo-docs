@@ -133,13 +133,17 @@ Donde `OWNER` es el nombre de la organización dueña del paquete, en este caso 
 ### Uso
 
 Una vez instalado en nuestro proyecto podemos crear un cliente del que obtendremos los contenidos.
-Para eso instanciamos un nuevo cliente con la dirección web de la cuenta de Modyo como argumento.
+Para eso instanciamos un nuevo cliente con la dirección web de la cuenta de Modyo como argumento junto con el idioma a solicitar.
 
 ```js
 import { Client } from "@modyo/sdk";
 // Para obtener la cuenta correcta, debemos usar la url de la cuenta
-const modyoAccount = new Client("https://my-account.modyo.com");
+const modyoAccount = new Client("https://my-account.modyo.com","es");
 ```
+
+:::tip Tip
+Al instanciar un nuevo cliente, el segundo parámetro _locale_ es opcional, de tal forma que se soliciten entradas solo en el idioma solicitado, de lo contrario, se usará el idioma por defecto del espacio.
+:::
 
 ### Contenido
 
