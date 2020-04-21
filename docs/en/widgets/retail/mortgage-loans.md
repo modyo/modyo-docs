@@ -7,7 +7,7 @@ translated: true
 
 This widget allows you to make a simulation of a mortgage loan and start the application process with the requirements needed from each applicant.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-mortgage-loan" width="100%"  frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-mortgage-loan" width="100%"  frameBorder="0" style="visibility:hidden;min-height:900px;overflow:auto;margin-top:20px;"/>
 
 | Feature | Description |
 |-----|-----|

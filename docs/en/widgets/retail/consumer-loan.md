@@ -7,7 +7,7 @@ translated: true
 
 Modyo also offers a widget that allows customers to simulate and apply for a personal loan with the information and terms they need.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="visibility:hidden;min-height:1010px;overflow:auto;margin-top:20px;"/>
 
 The default properties that the client can modify for its simulation and request are:
 

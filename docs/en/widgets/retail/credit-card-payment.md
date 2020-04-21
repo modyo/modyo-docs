@@ -7,7 +7,7 @@ translated: true
 
 The platform offers a credit card payment widget, allowing customers to perform the transaction directly from your payment portal.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:675px;overflow:auto;margin-top:20px;"/>
 
 To complete a payment, the default options available to customers are:
 
