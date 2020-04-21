@@ -6,7 +6,7 @@ search: true
 
 Este widget permite conocer la información consolidada y la evolución del patrimonio del cliente, ofreciendo la opción de filtrar los datos por cuentas, tipo de inversión o moneda invertida.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:972px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|

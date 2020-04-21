@@ -6,7 +6,7 @@ search: true
 
 Modyo ofrece un widget que entrega información en detalle de las inversiones existentes en cada cuenta de inversión, incluyendo las operaciones realizadas por el usuario y las que aún están en curso.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-detallado" width="100%" frameBorder="0" style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-detallado" width="100%" frameBorder="0" style="visibility:hidden;min-height:449px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                   | Descripción                                                                                                                                        |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
