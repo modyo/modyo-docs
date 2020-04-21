@@ -4,13 +4,13 @@ search: true
 
 # Deposits
 
-El widget de Abonos permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
+The Deposits widget allows the user to easily and quickly upload funds to their investment accounts.
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/depositos" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad | Descripción                                                                                                       |
+| Feature | Description                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
-| Abonar        | Permite abonar fondos a una cuenta de inversión utilizando botones de pago de diferentes instituciones bancarias. |
+| Deposit        | Allows funds to be deposited to an investment account using payment buttons from different banking institutions. |
 
 <script>
 

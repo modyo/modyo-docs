@@ -2,20 +2,20 @@
 search: true
 ---
 
-# Detailed summary
+# Detailed Summary
 
-Modyo ofrece un widget que entrega información en detalle de las inversiones existentes en cada cuenta de inversión, incluyendo las operaciones realizadas por el usuario y las que aún están en curso.
+Modyo offers a widget that delivers detailed information on existing investments in each investment account, including transactions made by the user and those still in progress.
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-detallado" width="100%" frameBorder="0" style="visibility:hidden;min-height:449px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                   | Descripción                                                                                                                                        |
+| Feature                   | Description                                                                                                                                        |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Detalle de Inversiones          | Entrega un conjunto de resúmenes individuales para todas las inversiones que están incluidas en el patrimonio.                                     |
-| Resumen por Cuenta de Inversión | Muestra los totales agrupados de las distintas inversiones que existen dentro de una cuenta de inversión específica.                               |
-| Operaciones en Tránsito         | Muestra las operaciones instruidas por el cliente y que aún están en estado pendiente.                                                             |
-| Últimos Movimientos             | Muestra los últimos movimientos realizados en la cuenta de inversión revisada.                                                                     |
-| Resumen por Producto            | Muestra los totales de las inversiones incluidas para cada tipo de inversión existente en el patrimonio.                                           |
-| Resumen por Moneda              | Muestra los totales agrupados de las distintas inversiones que existen dentro del patrimonio, considerando cada moneda disponible (CLP, USD, EUR). |
+| Investment Details          | Entrega un conjunto de resúmenes individuales para todas las inversiones que están incluidas en el patrimonio.                                     |
+| Investment Account Summary | Displays the grouped totals of the various investments that exist within a specific investment account.                               |
+| Pending Transactions         | Shows the operations instructed by the client still in a pending state.                                                             |
+| Latest Transactions             | Shows the latest completed transactions made in the investment account.                                                                     |
+| Product Summary            | Shows the investment totals for each existing investment type in the portfolio.                                           |
+| Currency Summary              | Shows the grouped totals of different investments that exist within the portfolio, considering each available currency (USD, EUR, etc.). |
 
 <script>
 

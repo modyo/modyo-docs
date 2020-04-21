@@ -4,16 +4,16 @@ search: true
 
 # Stocks
 
-En el widget de Acciones de Modyo el usuario podrá encontrar toda la información sobre las acciones disponibles, junto con Información de Mercado y un módulo para transar en línea de manera ágil y simple.
+In the Stock widget clients can find all the information about available stocks, along with market information and a module for quick and simple online trading.
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/acciones" width="100%" frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad          | Descripción                                                                                                                                                                                                                                                    |
+| Feature          | Description                                                                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Layout de Acciones     | Muestra el conjunto de acciones transables disponibles. Muestra un listado con las operaciones en tránsito asociadas a las acciones. Muestra la información de mercado para una Acción específica. Permite cancelar operaciones en tránsito, de ser necesario. |
-| Información de Mercado | Muestra la información disponible para la acción, como la evolución, las puntas de mercado, monto transado, último precio y posibles documentos específicos de la institución. Permite comprar o vender una acción seleccionada.                               |
+| Stock Layout     | Shows the set of tradable stocks available. Displays a list of transactions in transit associated with the stocks. Displays market information for a specific stock. Allows clients to cancel transactions in transit, if necessary. |
+| Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price and possible institution-specific documents. Allows you to buy or sell a selected stock.                              |
 | Compra de Acciones     | Permite realizar la compra de la acción seleccionada, definiendo la cuenta de inversión, la cantidad de acciones, el monto máximo al que se desea comprar, y el tiempo de duración de la orden.                                                                |
-| Venta de Acciones      | Permite realizar la venta de la acción seleccionada, definiendo la cuenta de inversión, la cantidad de acciones que se desean vender y el precio mínimo de venta.                                                                                              |
+| Purchase of Shares      | Allows the sale of the selected stock, defining of the investment account, the amount of shares to be sold and the minimum sale price.                                                                                              |
 
 <script>
 
