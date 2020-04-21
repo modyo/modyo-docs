@@ -4,12 +4,24 @@ search: true
 
 # Notas del release
 
+### 9.0.5 - 19 de Marzo del 2020
+* MODYO-10683 — Arreglar migración de contenido
+* MODYO-10516 — Implementar búsqueda de contenido en sitios
+* MODYO-10676 — Error al renderizar templates que no existen
+* MODYO-10664 — Deshabilitar botón crear nueva entry al clickearlo
+* MODYO-10672 — Añadir privacidad y targets a indice de custom layout pages
+* MODYO-10677 — Agregar indice por type y content type id a templates
+* MODYO-10681 — Modal de snippet usa el mismo formulario que nueva vista personalizada
+* MODYO-10678 — Mejorar selectores de space y tipo en vistas personalizadas
+* MODYO-10684 — Arreglar método tags de entry drop para sdk de liquid de contenido
+* MODYO-10691 — Truncar texto de filtros en indice de targets
+
 ### 9.0.4 - 12 de Marzo del 2020
-MODYO-10670 — Arreglar redirect automático OpenIDConnect
-MODYO-10498 — Buscador por texto en templates
-MODYO-10655 — Añadir force_publish a CLI
-MODYO-10656 — Botón de nuevo miembro del equipo usa un tooltip que no corresponde
-MODYO-10590 — Error al hacer acción de recuperar contraseña
+* MODYO-10670 — Arreglar redirect automático OpenIDConnect
+* MODYO-10498 — Buscador por texto en templates
+* MODYO-10655 — Añadir force_publish a CLI
+* MODYO-10656 — Botón de nuevo miembro del equipo usa un tooltip que no corresponde
+* MODYO-10590 — Error al hacer acción de recuperar contraseña
 
 ### 9.0.3 - 02 de Marzo del 2020
 * MODYO-10616 — Sincronizar froala y code mirror en pantalla completa
