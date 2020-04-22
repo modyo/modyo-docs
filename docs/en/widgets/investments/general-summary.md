@@ -6,7 +6,7 @@ search: true
 
 This widget allows clients see a consolidated overview of the growth of their assets, offering the option to filter the data by accounts, investment types, or invested currency.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%" frameBorder="0"  style="visibility:hidden;min-height:972px;overflow:auto;margin-top:20px;"/>
 
 | Feature          | Description                                                                                                                                                                                                                                |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

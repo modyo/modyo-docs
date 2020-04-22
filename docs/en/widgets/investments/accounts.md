@@ -6,7 +6,7 @@ search: true
 
 The Accounts widget shows the detail of all the investment accounts of a user, with relevant information in graphs and numbers, as well as presenting the movements made along with the cards and statements.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="visibility:hidden;min-height:948px;overflow:auto;margin-top:20px;"/>
 
 | Feature                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
