@@ -10,7 +10,7 @@ Modyo offers a widget that delivers detailed information on existing investments
 
 | Feature                   | Description                                                                                                                                        |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Investment Details          | Entrega un conjunto de resúmenes individuales para todas las inversiones que están incluidas en el patrimonio.                                     |
+| Investment Details          | Provides a set of individual summaries for all investments that in the portfolio.                                     |
 | Investment Account Summary | Displays the grouped totals of the various investments that exist within a specific investment account.                               |
 | Pending Transactions         | Shows the operations instructed by the client still in a pending state.                                                             |
 | Latest Transactions             | Shows the latest completed transactions made in the investment account.                                                                     |
