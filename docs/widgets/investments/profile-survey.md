@@ -6,7 +6,8 @@ search: true
 
 En este widget, cada usuario podrá completar la encuesta de Perfil de Inversionista, para poder recibir las mejores recomendaciones en sus movimientos.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets-es.modyo.com/inversiones/profile-survey)
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|
@@ -20,14 +21,9 @@ En este widget, cada usuario podrá completar la encuesta de Perfil de Inversion
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

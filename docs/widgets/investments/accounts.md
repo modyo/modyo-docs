@@ -6,7 +6,8 @@ search: true
 
 El widget de Cuentas muestra el detalle de todas las cuentas de inversión de un usuario, con información relevante en gráficos y números, además de presentar los movimientos realizados junto con las cartolas y extractos.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="visibility:hidden;min-height:948px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets-es.modyo.com/inversiones/cuentas)
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:948px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|
@@ -17,8 +18,6 @@ El widget de Cuentas muestra el detalle de todas las cuentas de inversión de un
 | Detalle de Cuenta | Presenta una lista con los tipos de instrumentos que existen en la cuenta de inversión. Incluye un resumen de todos los instrumentos específicos que corresponden al tipo de inversión seleccionado. Muestra información de custodia, precios y distribución de las inversiones. A través de los resúmenes, se puede revisar el detalle con el histórico de las operaciones. Permite ver los movimientos asociados a la caja de la cuenta de inversiones. |
 | Movimientos en Detalle de Cuenta | Entrega un conjunto de opciones que permite seleccionar período y tipos de movimientos, incluidos los movimientos en tránsito. Muestra los movimientos específicos y su detalle, además de todas las operaciones que están en vuelo y que aún no finalizan. |
 
-
-
 <script>
 
   export default {
@@ -27,14 +26,9 @@ El widget de Cuentas muestra el detalle de todas las cuentas de inversión de un
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

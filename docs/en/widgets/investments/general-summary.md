@@ -6,7 +6,8 @@ search: true
 
 This widget allows clients see a consolidated overview of the growth of their assets, offering the option to filter the data by accounts, investment types, or invested currency.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%" frameBorder="0"  style="visibility:hidden;min-height:972px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/inversiones/resumen-general)
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%" frameBorder="0"  style="min-height:972px;overflow:auto;margin-top:20px;"/>
 
 | Feature          | Description                                                                                                                                                                                                                                |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -22,14 +23,9 @@ This widget allows clients see a consolidated overview of the growth of their as
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

@@ -7,7 +7,9 @@ translated: true
 
 Modyo also offers a widget that allows customers to simulate and apply for a personal loan with the information and terms they need.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="visibility:hidden;min-height:1010px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/personas/retail-consumer-loan)
+
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
 
 The default properties that the client can modify for its simulation and request are:
 
@@ -25,7 +27,6 @@ By selecting each of these options, the widget will display the amount and simul
 
 Lastly, a button will appear that allows the client to apply directly for the loan.
 
-
 <script>
 
   export default {
@@ -34,14 +35,9 @@ Lastly, a button will appear that allows the client to apply directly for the lo
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

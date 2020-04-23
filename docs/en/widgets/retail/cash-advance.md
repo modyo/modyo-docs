@@ -9,7 +9,9 @@ The Cash Advance widget allows any customer to create a credit simulation to req
 
 Through this widget, the client can perform different functions according to the features required for the product.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-cash-advance" width="100%"  frameBorder="0" style="visibility:hidden;min-height:670px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/personas/retail-cash-advance)
+
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
 
 The customer can select the features of their cash advance and its payment to perform the simulation.
 
@@ -40,14 +42,9 @@ The client can select the number of payments in which the requested amount will 
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

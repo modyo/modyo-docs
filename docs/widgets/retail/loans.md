@@ -6,7 +6,8 @@ search: true
 
 Modyo ofrece un widget que permite ver una vista general de los créditos que el cliente tiene con la institución financiera, de manera detallada y con sus datos actualizados.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-loans" width="100%"  frameBorder="0" style="visibility:hidden;min-height:630px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets-es.modyo.com/personas/retail-loans)
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-loans" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|
@@ -22,14 +23,9 @@ Modyo ofrece un widget que permite ver una vista general de los créditos que el
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

@@ -6,7 +6,8 @@ search: true
 
 In this widget users can find all documents they need related to their investments, such as statements, electronic invoices, confirmation and execution of orders and contract signatures, as well as the respective certificates.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/documentos" width="100%" frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/inversiones/documentos)
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/documentos" width="100%" frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 | Feature                       | Description                                                                                                                                                                                                                                |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,14 +28,9 @@ In this widget users can find all documents they need related to their investmen
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

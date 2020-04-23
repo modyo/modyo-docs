@@ -7,7 +7,9 @@ translated: true
 
 Modyo offers a widget that allows customers to view their credit card details and operations, and to perform various transactions.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-cards" width="100%" frameBorder="0" style="min-height:800px;min-height:900px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/personas/retail-credit-cards)
+
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Functionality | Description |
 |:-----|:-----|
@@ -25,14 +27,9 @@ Modyo offers a widget that allows customers to view their credit card details an
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

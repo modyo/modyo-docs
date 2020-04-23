@@ -7,7 +7,9 @@ translated: true
 
 Transfers is a wigdet that allows a customer to move money between their accounts or transfer to third parties simply and securely.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-transfer" width="100%"  frameBorder="0" style="visibility:hidden;min-height:750px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/personas/retail-transfer)
+
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
 
 This widget is divided into features for two similar products: Transfer to Third Party and Transfer between Accounts.
 
@@ -38,13 +40,9 @@ This widget is divided into features for two similar products: Transfer to Third
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
 
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {

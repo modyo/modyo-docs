@@ -6,7 +6,8 @@ search: true
 
 Este widget permite revisar en detalle todas las transferencias recibidas y enviadas que se han realizado desde las distintas cuentas que pueda tener un cliente, además de revisar los datos de sus contactos registrados.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-transfers" width="100%"  frameBorder="0" style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets-es.modyo.com/personas/retail-transfers)
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|
@@ -24,14 +25,9 @@ Este widget permite revisar en detalle todas las transferencias recibidas y envi
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

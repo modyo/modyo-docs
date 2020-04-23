@@ -6,8 +6,8 @@ search: true
 
 Esta sección de la plataforma permite que el usuario pueda revisar y modificar sus datos personales, suscribirse al envío de información a su correo electrónico y conocer su Perfil de Inversionista.
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/personal-info)
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/personal-info" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/inversiones/personal-info)
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/personal-info" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|
@@ -31,7 +31,7 @@ Esta sección de la plataforma permite que el usuario pueda revisar y modificar 
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

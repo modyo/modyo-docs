@@ -7,7 +7,9 @@ translated: true
 
 The platform offers a credit card payment widget, allowing customers to perform the transaction directly from your payment portal.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:675px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/personas/retail-credit-card-payment)
+
+<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 To complete a payment, the default options available to customers are:
 
@@ -19,7 +21,6 @@ To complete a payment, the default options available to customers are:
 | Total amount to pay | Shows the total amount of debt to be paid. |
 | Other amount to be paid | Allows the client to select a customized amount to pay. |
 
-
 <script>
 
   export default {
@@ -28,14 +29,9 @@ To complete a payment, the default options available to customers are:
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

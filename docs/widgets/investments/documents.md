@@ -6,7 +6,8 @@ search: true
 
 En este widget el usuario podrá encontrar todos los documentos que necesite con relación a sus inversiones, como cartlas, facturas electrónicas, confirmación y ejecución de órdenes y firma de contratos, además de los certificados respectivos.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/documentos" width="100%"  frameBorder="0"  style="visibility:hidden;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets-es.modyo.com/inversiones/documentos)
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/documentos" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |
 |-----|-----|
@@ -27,14 +28,9 @@ En este widget el usuario podrá encontrar todos los documentos que necesite con
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

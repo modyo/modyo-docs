@@ -6,7 +6,8 @@ search: true
 
 El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera de productos de un cliente, con la cual puede hacer operaciones básicas o dirigirse a widgets para realizar más movimientos.
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/summary" width="100%"  frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets-es.modyo.com/personas/summary)
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/summary" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 ### Funciones
 
@@ -53,7 +54,6 @@ Además, separa el cupo nacional del internacional, incluyendo una gráfica que 
 | Pagar               | Deriva al widget de Pago de Tarjetas, donde podrá abonar los montos facturados.                                                                 |
 | Movimientos         | Deriva al widget de Movimientos de la tarjeta, para ver detalladamente cada uno de ellos.                                                       |
 
-
 <script>
 
   export default {
@@ -62,14 +62,9 @@ Además, separa el cupo nacional del internacional, incluyendo una gráfica que 
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin

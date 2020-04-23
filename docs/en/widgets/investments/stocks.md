@@ -6,7 +6,8 @@ search: true
 
 In the Stock widget clients can find all the information about available stocks, along with market information and a module for quick and simple online trading.
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/acciones" width="100%" frameBorder="0"  style="visibility:hidden;min-height:800px;overflow:auto;margin-top:20px;"/>
+[Open in new tab](https://widgets.modyo.com/inversiones/acciones)
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/acciones" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Feature          | Description                                                                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23,14 +24,9 @@ In the Stock widget clients can find all the information about available stocks,
       function setIframeHeightCO(id, ht) {
           var ifrm = document.getElementById(id);
           if(ifrm) {
-            ifrm.style.visibility = 'hidden';
-            // some IE versions need a bit added or scrollbar appears
             ifrm.style.height = ht + 4 + "px";
-            ifrm.style.visibility = 'visible';
           }
       }
-
-
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
