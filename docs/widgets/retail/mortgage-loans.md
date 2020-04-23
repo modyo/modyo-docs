@@ -6,7 +6,7 @@ search: true
 
 Este widget permite hacer una simulación de un crédito hipotecario y comenzar la solicitud del mismo con las variables que cada cliente necesite.
 
-[Open in new tab](https://widgets-es.modyo.com/personas/retail-mortgage-loan)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-mortgage-loan)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-mortgage-loan" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |

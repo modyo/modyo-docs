@@ -6,7 +6,7 @@ search: true
 
 Este widget permite revisar en detalle todas las transferencias recibidas y enviadas que se han realizado desde las distintas cuentas que pueda tener un cliente, además de revisar los datos de sus contactos registrados.
 
-[Open in new tab](https://widgets-es.modyo.com/personas/retail-transfers)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-transfers)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |

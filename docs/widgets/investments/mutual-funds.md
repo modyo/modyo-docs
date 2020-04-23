@@ -6,7 +6,7 @@ search: true
 
 Modyo ofrece un widget que muestra la información de los Fondos Mutuos disponibles y las operaciones realizadas por el usuario, además de entregar la posibilidad de realizar transacciones en línea a través de la plataforma.
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/fondos-mutuos)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/fondos-mutuos)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |

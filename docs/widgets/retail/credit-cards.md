@@ -6,7 +6,7 @@ search: true
 
 Modyo ofrece un widget que permite al cliente ver los datos y operaciones de sus tarjetas de crédito, para realizar transacciones en ella.
 
-[Open in new tab](https://widgets-es.modyo.com/personas/retail-credit-cards)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-credit-cards)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-credit-cards" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                 | Descripción                                                                                                                                                                                                                                                        |

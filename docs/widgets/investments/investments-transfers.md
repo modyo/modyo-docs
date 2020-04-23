@@ -7,7 +7,7 @@ search: true
 Modyo ofrece un widget que presenta todos los datos relevantes sobre las operaciones en tránsito asociadas a la compra y venta de acciones del usuario, para que encuentre rápidamente su información consolidada en la plataforma.
 
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/transferencias)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/transferencias)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |

@@ -4,7 +4,7 @@ search: true
 
 # Beneficios
 
-[Open in new tab](https://widgets-es.modyo.com/personas/benefits)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/benefits)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/benefits" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad  | Descripción  |

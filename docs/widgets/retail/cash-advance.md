@@ -8,7 +8,7 @@ El widget de Avance en Efectivo permite a cualquier cliente usar la plataforma h
 
 A través del widget, el cliente puede realizar distintas funciones de acuerdo a las características que necesite para este producto.
 
-[Open in new tab](https://widgets-es.modyo.com/personas/retail-cash-advance)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-cash-advance)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
 
 En primera vista, el cliente podrá seleccionar las características del Avance en Efectivo y su pago para realizar la simulación.

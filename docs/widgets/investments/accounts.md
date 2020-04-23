@@ -6,7 +6,7 @@ search: true
 
 El widget de Cuentas muestra el detalle de todas las cuentas de inversión de un usuario, con información relevante en gráficos y números, además de presentar los movimientos realizados junto con las cartolas y extractos.
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/cuentas)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/cuentas)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:948px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción |

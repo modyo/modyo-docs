@@ -6,7 +6,7 @@ search: true
 
 Con este widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y ver en detalle cada transacción realizada durante determinados períodos de tiempo.
 
-[Open in new tab](https://widgets-es.modyo.com/personas/retail-accounts)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-accounts)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-accounts" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 #### Cuenta Corriente
