@@ -21,6 +21,10 @@ Para crear un sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te 
 
 Después de ello, puedes verlo en modo "Habilitado", lo que significa que está online para trabajar.
 
+:::warning Atención
+En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
+:::
+
 ## Configuración de un Sitio
 
 La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.

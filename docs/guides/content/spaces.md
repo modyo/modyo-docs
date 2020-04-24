@@ -14,6 +14,10 @@ Espacios también te permite organizar el contenido en las áreas en las que se 
 
 Al acceder a la sección de Espacios se mostrará una lista indicando el nombre del espacio y su cantidad de tipos de contenido y de entradas. 
 
+:::warning Atención
+En el índice de espacios, solo verás los espacios en los cuales eres parte del equipo de trabajo con algún rol.
+:::
+
 Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo, y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
 
 ## Crear un Espacio
