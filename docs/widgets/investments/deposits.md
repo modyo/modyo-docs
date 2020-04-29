@@ -6,12 +6,19 @@ search: true
 
 El widget de Abonos permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
 
+#### Instalación:
+
+```bash
+modyo-cli get modyo-widgets-investments-deposits
+```
+
 [Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/depositos)
+
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/depositos" width="100%"  frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad | Descripción |
-|-----|-----|
-| Abonar | Permite abonar fondos a una cuenta de inversión utilizando botones de pago de diferentes instituciones bancarias. |
+| Funcionalidad | Descripción                                                                                                       |
+| ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Abonar        | Permite abonar fondos a una cuenta de inversión utilizando botones de pago de diferentes instituciones bancarias. |
 
 <script>
 

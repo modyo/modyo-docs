@@ -7,6 +7,12 @@ translated: true
 
 The Account Summary widget allows you to review detailed information of your financial products, with which you can make basic payments and transfers, or navigate to other widgets to complete more transactions.
 
+#### Installation:
+
+```bash
+modyo-cli get modyo-widgets-retail-summary
+```
+
 [Open in new tab](https://widgets.modyo.com/personas/summary)
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/summary" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
@@ -22,7 +28,7 @@ Each individual summary presents financial information within the specific produ
 The Checking Account section allows you to see an overview of the amounts available, as well as have access to transactions such as transfers and movements.
 
 | Feature           | Description                                                                             |
-|:------------------|:----------------------------------------------------------------------------------------|
+| :---------------- | :-------------------------------------------------------------------------------------- |
 | Available Balance | Shows the total available balance in the checking account.                              |
 | Withdrawals       | Allows you to see the total withdrawals within the account.                             |
 | Deposits          | Shows the total credits or deposits made to an account.                                 |
@@ -36,7 +42,7 @@ The Checking Account section allows you to see an overview of the amounts availa
 Savings Accounts have the same features as Checking Accounts. However, Savings Accounts are not associated with Lines of Credit, and instead display a list of recent activity.
 
 | Feature           | Description                                                                                              |
-|:------------------|:---------------------------------------------------------------------------------------------------------|
+| :---------------- | :------------------------------------------------------------------------------------------------------- |
 | Available Balance | Show the total available balance in the Savings Account.                                                 |
 | Withdrawals       | Allows you to see the total withdrawals within the account.                                              |
 | Deposits          | Shows the total credits or deposits made to an account.                                                  |
@@ -50,7 +56,7 @@ Each of the credit cards has its own section within the summary, which shows the
 In addition, it separates the national quota from the international one, including a graph that allows to see in proportion what has been used.
 
 | Feature          | Description                                                                                                                                     |
-|:-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Available Credit | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used verus the total credit limit. |
 | Pay              | Switches to the Card Payment widget, where you can pay invoiced amounts.                                                                        |
 | Transactions     | Switches to the Transactions widget of the card, where you can review the details of each transaction.                                          |
