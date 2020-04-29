@@ -110,7 +110,7 @@ module.exports = {
                     children: [
                       ["/guides/insights/","Introducción"],
                       "/guides/insights/digital-factory",
-                      "/guides/insights/data-studio"
+                      ["/guides/insights/data-studio","Data Studio"]
                     ]
                   }
                 ],
@@ -248,7 +248,7 @@ module.exports = {
                     children: [
                       ["/en/guides/insights/","Introduction"],
                       "/en/guides/insights/digital-factory",
-                      "/en/guides/insights/data-studio"
+                      ["/en/guides/insights/data-studio","Data Studio"]
                     ]
                   }
                 ],
