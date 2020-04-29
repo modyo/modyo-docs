@@ -6,11 +6,18 @@ search: true
 
 Modyo ofrece un widget que permite al cliente ver los datos y operaciones de sus tarjetas de crédito, para realizar transacciones en ella.
 
+### Instalación:
+
+```bash
+modyo-cli get modyo-widgets-retail-credit-cards
+```
+
 [Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-credit-cards)
+
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-credit-cards" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                 | Descripción                                                                                                                                                                                                                                                        |
-|:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Resumen de Tarjeta de Crédito | Presenta un resumen del estado de la tarjeta de crédito. <br><br>La información específica asociada a los saldos (disponible, utilizado y cupo total) se presenta de manera numérica y gráfica.                                                                    |
 | Consulta de Saldo             | Esta consulta muestra los cupos de la tarjeta específica por tipo de moneda, además de indicadores de gastos en comparación con el Cupo disponible.                                                                                                                |
 | Estado de Cuenta              | Muestra el estado de cuenta con los movimientos del último periodo facturado para una tarjeta de crédito.                                                                                                                                                          |
