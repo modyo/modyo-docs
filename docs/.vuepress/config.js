@@ -15,6 +15,15 @@ module.exports = {
       description: "Welcome to the Modyo reference center"
     }
   },
+  head: [
+    ['script', {}, `
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MW9VKMC');
+    `],
+  ],
   themeConfig: {
     logo: "/assets/img/modyo.png",
     docsDir: "docs",
@@ -108,9 +117,9 @@ module.exports = {
               title: "Insights",
               collapsable: true,
               children: [
-                ["/guides/insights/", "Introducción"],
+                ["/guides/insights/","Introducción"],
                 "/guides/insights/digital-factory",
-                "/guides/insights/customers"
+                ["/guides/insights/data-studio","Data Studio"]
               ]
             }
           ],
@@ -239,9 +248,9 @@ module.exports = {
               title: "Insights",
               collapsable: true,
               children: [
-                ["/en/guides/insights/", "Introduction"],
+                ["/en/guides/insights/","Introduction"],
                 "/en/guides/insights/digital-factory",
-                "/en/guides/insights/customers"
+                ["/en/guides/insights/data-studio","Data Studio"]
               ]
             }
           ],
@@ -293,10 +302,5 @@ module.exports = {
               collapsable: true,
               children: ["/en/widgets/onboarding/"]
             }, */
-
-          ]
-        }
-      }
-    }
   }
 };
