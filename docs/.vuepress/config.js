@@ -205,7 +205,7 @@ module.exports = {
                       "/en/guides/platform/roles",
                       "/en/guides/platform/security",
                       "/en/guides/platform/api",
-                      "/guides/platform/rfm"                                        
+                      "/en/guides/platform/rfm"                                        
                       ]
                   },
                   {
