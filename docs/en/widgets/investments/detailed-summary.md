@@ -6,17 +6,24 @@ search: true
 
 Modyo offers a widget that delivers detailed information on existing investments in each investment account, including transactions made by the user and those still in progress.
 
+#### Installation:
+
+```bash
+modyo-cli get modyo-widgets-investments-detailed-summary
+```
+
 [Open in new tab](https://widgets.modyo.com/inversiones/resumen-detallado)
+
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-detallado" width="100%" frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"/>
 
-| Feature                   | Description                                                                                                                                        |
-|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Investment Details          | Provides a set of individual summaries for all investments that in the portfolio.                                     |
-| Investment Account Summary | Displays the grouped totals of the various investments that exist within a specific investment account.                               |
-| Pending Transactions         | Shows the operations instructed by the client still in a pending state.                                                             |
-| Latest Transactions             | Shows the latest completed transactions made in the investment account.                                                                     |
-| Product Summary            | Shows the investment totals for each existing investment type in the portfolio.                                           |
-| Currency Summary              | Shows the grouped totals of different investments that exist within the portfolio, considering each available currency (USD, EUR, etc.). |
+| Feature                    | Description                                                                                                                              |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Investment Details         | Provides a set of individual summaries for all investments that in the portfolio.                                                        |
+| Investment Account Summary | Displays the grouped totals of the various investments that exist within a specific investment account.                                  |
+| Pending Transactions       | Shows the operations instructed by the client still in a pending state.                                                                  |
+| Latest Transactions        | Shows the latest completed transactions made in the investment account.                                                                  |
+| Product Summary            | Shows the investment totals for each existing investment type in the portfolio.                                                          |
+| Currency Summary           | Shows the grouped totals of different investments that exist within the portfolio, considering each available currency (USD, EUR, etc.). |
 
 <script>
 

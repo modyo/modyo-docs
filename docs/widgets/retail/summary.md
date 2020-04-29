@@ -6,7 +6,14 @@ search: true
 
 El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera de productos de un cliente, con la cual puede hacer operaciones básicas o dirigirse a widgets para realizar más movimientos.
 
+#### Instalación:
+
+```bash
+modyo-cli get modyo-widgets-retail-summary
+```
+
 [Abrir en otra pestaña](https://widgets-es.modyo.com/personas/summary)
+
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/summary" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 ### Funciones
@@ -20,7 +27,7 @@ Los resúmenes individuales presentan la información del producto específico d
 La sección de Cuenta Corriente permite ver un resumen general de los montos disponibles, además de acceso a operaciones como transferencias y movimientos.
 
 | Funcionalidad    | Descripción                                                                              |
-|:-----------------|:-----------------------------------------------------------------------------------------|
+| :--------------- | :--------------------------------------------------------------------------------------- |
 | Saldo disponible | Muestra el saldo total disponible en la cuenta corriente.                                |
 | Total Cargos     | Permite ver el total de cargos de cada cuenta.                                           |
 | Total Abonos     | Muestra el total de abonos o depósitos que se le han hecho a una cuenta.                 |
@@ -34,7 +41,7 @@ La sección de Cuenta Corriente permite ver un resumen general de los montos dis
 Esta sección tiene las mismas funciones que la de Cuenta Corriente. Sin embargo, sólo cambia en la sección Linea de Crédito, donde se reemplaza por los últimos movimientos y cargos realizados al producto.
 
 | Funcionalidad       | Descripción                                                                                            |
-|:--------------------|:-------------------------------------------------------------------------------------------------------|
+| :------------------ | :----------------------------------------------------------------------------------------------------- |
 | Saldo disponible    | Muestra el saldo total disponible en la cuenta corriente.                                              |
 | Total Cargos        | Permite ver el total de cargos de cada cuenta.                                                         |
 | Total Abonos        | Muestra el total de abonos o depósitos que se le han hecho a una cuenta.                               |
@@ -48,7 +55,7 @@ Cada una de las tarjetas de crédito tiene su propio módulo gráfico, que permi
 Además, separa el cupo nacional del internacional, incluyendo una gráfica que permite ver en proporción lo utilizado.
 
 | Funcionalidad       | Descripción                                                                                                                                     |
-|:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Monto nacional      | Muestra el monto nacional utilizado y autorizado, además de una gráfica que indica el primer número en pesos versus el total autorizado.        |
 | Monto internacional | Muestra el monto internacional utilizado y autorizado, además de una gráfica que indica el primer número versus el total autorizado en dólares. |
 | Pagar               | Deriva al widget de Pago de Tarjetas, donde podrá abonar los montos facturados.                                                                 |
