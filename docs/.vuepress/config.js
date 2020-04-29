@@ -38,88 +38,88 @@ module.exports = {
         selectText: "Lenguaje",
         label: "Español",
         nav: [
-          { text: "Guías", link: "/guides/" },
+          { text: "Plataforma", link: "/platform/" },
           { text: "Widgets", link: "/widgets/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" }
         ],
         sidebar: {
-          "/guides/": [
+          "/platform/": [
             {
               title: "Primeros Pasos",
               collapsable: true,
               children: [
-                "/guides/",
-                "/guides/whats-new",
-                "/guides/key-concepts",
-                "/guides/versions",
-                "/guides/release-notes"
+                "/platform/",
+                "/platform/whats-new",
+                "/platform/key-concepts",
+                "/platform/versions",
+                "/platform/release-notes"
               ]
             },
             {
               title: "Cloud",
               collapsable: true,
               children: [
-                ["/guides/cloud/", "Introducción"],
-                "/guides/cloud/security"
+                ["/platform/cloud/", "Introducción"],
+                "/platform/cloud/security"
               ]
             },
             {
               title: "Plataforma",
               collapsable: true,
               children: [
-                ["/guides/platform/", "Introducción"],
-                "/guides/platform/the-modyo-interface",
-                "/guides/platform/team-review",
-                "/guides/platform/integration",
-                "/guides/platform/roles",
-                "/guides/platform/security",
-                "/guides/platform/api"
+                ["/platform/platform/", "Introducción"],
+                "/platform/platform/the-modyo-interface",
+                "/platform/platform/team-review",
+                "/platform/platform/integration",
+                "/platform/platform/roles",
+                "/platform/platform/security",
+                "/platform/platform/api"
               ]
             },
             {
               title: "Content",
               collapsable: true,
               children: [
-                ["/guides/content/", "Introducción"],
-                "/guides/content/spaces",
-                "/guides/content/types",
-                "/guides/content/entries",
-                "/guides/content/asset-manager",
-                "/guides/content/public-api-reference"
+                ["/platform/content/", "Introducción"],
+                "/platform/content/spaces",
+                "/platform/content/types",
+                "/platform/content/entries",
+                "/platform/content/asset-manager",
+                "/platform/content/public-api-reference"
               ]
             },
             {
               title: "Channels",
               collapsable: true,
               children: [
-                ["/guides/channels/", "Introducción"],
-                "/guides/channels/sites",
-                "/guides/channels/pages",
-                "/guides/channels/navigation",
-                "/guides/channels/widgets",
-                "/guides/channels/templates",
-                "/guides/channels/liquid-markup"
+                ["/platform/channels/", "Introducción"],
+                "/platform/channels/sites",
+                "/platform/channels/pages",
+                "/platform/channels/navigation",
+                "/platform/channels/widgets",
+                "/platform/channels/templates",
+                "/platform/channels/liquid-markup"
               ]
             },
             {
               title: "Customers",
               collapsable: true,
               children: [
-                ["/guides/customers/", "Introducción"],
-                "/guides/customers/users",
-                "/guides/customers/targets",
-                "/guides/customers/forms",
-                "/guides/customers/messaging"
+                ["/platform/customers/", "Introducción"],
+                "/platform/customers/users",
+                "/platform/customers/targets",
+                "/platform/customers/forms",
+                "/platform/customers/messaging"
               ]
             },
             {
               title: "Insights",
               collapsable: true,
               children: [
-                ["/guides/insights/","Introducción"],
-                "/guides/insights/digital-factory",
-                ["/guides/insights/data-studio","Data Studio"]
+                ["/platform/insights/","Introducción"],
+                "/platform/insights/digital-factory",
+                ["/platform/insights/data-studio","Data Studio"]
               ]
             }
           ],
@@ -177,80 +177,80 @@ module.exports = {
         selectText: "Languages",
         label: "English",
         nav: [
-          { text: "Guides", link: "/en/guides/" },
+          { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" }
         ],
         sidebar: {
-          "/en/guides/": [
+          "/en/platform/": [
             {
               title: "First Steps",
               collapsable: true,
               children: [
-                "/en/guides/",
-                "/en/guides/whats-new",
-                "/en/guides/key-concepts",
-                "/en/guides/versions",
-                "/en/guides/release-notes"
+                "/en/platform/",
+                "/en/platform/whats-new",
+                "/en/platform/key-concepts",
+                "/en/platform/versions",
+                "/en/platform/release-notes"
               ]
             },
             {
               title: "Platform",
               collapsable: true,
               children: [
-                ["/en/guides/platform/", "Introduction"],
-                "/en/guides/platform/the-modyo-interface",
-                "/en/guides/platform/team-review",
-                "/en/guides/platform/integration",
-                "/en/guides/platform/roles",
-                "/en/guides/platform/security",
-                "/en/guides/platform/api"
+                ["/en/platform/platform/", "Introduction"],
+                "/en/platform/platform/the-modyo-interface",
+                "/en/platform/platform/team-review",
+                "/en/platform/platform/integration",
+                "/en/platform/platform/roles",
+                "/en/platform/platform/security",
+                "/en/platform/platform/api"
               ]
             },
             {
               title: "Content",
               collapsable: true,
               children: [
-                ["/en/guides/content/", "Introduction"],
-                "/en/guides/content/spaces",
-                "/en/guides/content/types",
-                "/en/guides/content/entries",
-                "/en/guides/content/asset-manager",
-                "/en/guides/content/public-api-reference"
+                ["/en/platform/content/", "Introduction"],
+                "/en/platform/content/spaces",
+                "/en/platform/content/types",
+                "/en/platform/content/entries",
+                "/en/platform/content/asset-manager",
+                "/en/platform/content/public-api-reference"
               ]
             },
             {
               title: "Channels",
               collapsable: true,
               children: [
-                ["/en/guides/channels/", "Introduction"],
-                "/en/guides/channels/sites",
-                "/en/guides/channels/pages",
-                "/en/guides/channels/navigation",
-                "/en/guides/channels/widgets",
-                "/en/guides/channels/templates",
-                "/en/guides/channels/liquid-markup"
+                ["/en/platform/channels/", "Introduction"],
+                "/en/platform/channels/sites",
+                "/en/platform/channels/pages",
+                "/en/platform/channels/navigation",
+                "/en/platform/channels/widgets",
+                "/en/platform/channels/templates",
+                "/en/platform/channels/liquid-markup"
               ]
             },
             {
               title: "Customers",
               collapsable: true,
               children: [
-                ["/en/guides/customers/", "Introduction"],
-                "/en/guides/customers/users",
-                "/en/guides/customers/targets",
-                "/en/guides/customers/forms",
-                "/en/guides/customers/messaging"
+                ["/en/platform/customers/", "Introduction"],
+                "/en/platform/customers/users",
+                "/en/platform/customers/targets",
+                "/en/platform/customers/forms",
+                "/en/platform/customers/messaging"
               ]
             },
             {
               title: "Insights",
               collapsable: true,
               children: [
-                ["/en/guides/insights/","Introduction"],
-                "/en/guides/insights/digital-factory",
-                ["/en/guides/insights/data-studio","Data Studio"]
+                ["/en/platform/insights/","Introduction"],
+                "/en/platform/insights/digital-factory",
+                ["/en/platform/insights/data-studio","Data Studio"]
               ]
             }
           ],
