@@ -20,8 +20,8 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft**: This status means a widget is new or is unpublished.
 - **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
 - **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
-- **In review**: This status means [team review](/en/platform/platform/team-review.html) is enabled and this widget is in review.
-- **Approved**: This status means [team review](/en/platform/platform/team-review.html) is enabled and a widget passed the review process. You can now publish this widget.
+- **In review**: This status means [team review](/en/platform/core/team-review.html) is enabled and this widget is in review.
+- **Approved**: This status means [team review](/en/platform/core/team-review.html) is enabled and a widget passed the review process. You can now publish this widget.
 
 ::: tip Tip
 You may notice that some widgets with **Pending changes** and **In review** statuses have a small green mark. This green mark indicates that there is an active, published version of this widget available.
@@ -70,7 +70,7 @@ Archived widgets do not appear in the main widget list or in the Custom widget s
 Once a widget is published, it is available as a custom widget in the [page builder.](/en/platform/channels/pages.html)
 
 ::: tip Tip
-To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/platform/team-review.html#versioning) section.
+To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/core/team-review.html#versioning) section.
 :::
 
 

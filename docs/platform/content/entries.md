@@ -61,7 +61,7 @@ Si haces _click_ en este, el botón experimentará dos cambios. Si es que tienes
 
 Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde puedes asignar a revisores en específico quienes pueden publicar. 
 
-Para saber más, puedes ver [Revisión en Equipo.](/platform/platform/team-review.html)
+Para saber más, puedes ver [Revisión en Equipo.](/platform/core/team-review.html)
 
 
 ### Despublicar una entrada

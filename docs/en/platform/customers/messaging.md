@@ -125,7 +125,7 @@ In the Message Deliveries section, you can find the list of users who have recei
 
 At first glance, you can find a list of all the users who have received a single email or notification, which is called "No Campaign".
 
-"No Campaign" refers to an email or notification that has been sent specifically to a user, on a specific date. They do not fall under the concept of Campaigns since these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/en/platform/platform/api.html).
+"No Campaign" refers to an email or notification that has been sent specifically to a user, on a specific date. They do not fall under the concept of Campaigns since these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/en/platform/core/api.html).
 
 The message deliveries list displays the following information:
 

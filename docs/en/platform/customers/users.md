@@ -114,7 +114,7 @@ Here you will see all the credentials the user has to enter the platform.
 
 If the user enters only through his username and default password of the platform, this section will be empty. Otherwise, if the user uses some integration such as LDAP, or Google, that information will be displayed in this panel.
 
-If you want to enable authentication through integrations, check the [Integrations section](/en/platform/platform/integration.html).
+If you want to enable authentication through integrations, check the [Integrations section](/en/platform/core/integration.html).
 
 ### Notes
 
@@ -144,7 +144,7 @@ The primary color is the one shown in the main buttons of the session management
 
 #### Show logo
 
-This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/en/platform/platform/the-modyo-interface.html).
+This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/en/platform/core/the-modyo-interface.html).
 
 #### Customize with CSS
 
@@ -202,7 +202,7 @@ The services compatible with logging into Modyo are:
 - Oauth2
 - OpenID Connect
 
-It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/en/platform/platform/integration.html)
+It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/en/platform/core/integration.html)
 
 ### Signups
 
@@ -211,7 +211,7 @@ Client registration within the platform must also be configured from here. To do
 The first thing we can configure is if we want to enable or disable platform credentials.
 
 ::: warning Warning
-If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/en/platform/platform/integration.html)
+If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/en/platform/core/integration.html)
 :::
 
 We can also enable or disable a redirect for login. Remember that if login redirection is enabled, the login method will be replaced by the URL that you must enter later.

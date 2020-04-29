@@ -202,7 +202,7 @@ Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se h
 Con la aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios 
 que harán uso de la API. Para esto, debes acceder en el menú a la opción _Settings_/_Team_ y seleccionar
 un usuario ya existente o bien crear uno nuevo, el que debe contar con un rol administrativo dentro de la aplicación
-(para más detalles referirse a [sección Usuarios y Roles](/platform/platform/roles.html)  ). En la vista de edición del
+(para más detalles referirse a [sección Usuarios y Roles](/platform/core/roles.html)  ). En la vista de edición del
 usuario administrador, accederás al tab _API Access_ y selecciona la opción `+New Access Token`
 
 ![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
@@ -287,8 +287,8 @@ Recuerda que solo podrás acceder a las secciones de la API a las que tengas per
 ### Invocando servicios
 
 Una vez que conoces el servicio que consultarás, de acuerdo a lo que viste en la sección
-[Explorando la API](/platform/platform/api.html#explorando-el-api), y que se cuenta con un método de autenticación
-válido (referirse a [sección Autenticación](/platform/platform/api.html#autenticacion)), ya se puede
+[Explorando la API](/platform/core/api.html#explorando-el-api), y que se cuenta con un método de autenticación
+válido (referirse a [sección Autenticación](/platform/core/api.html#autenticacion)), ya se puede
 realizar un _request_ a la URL del recurso requerido. 
 
 Por ejemplo, si necesitas obtener

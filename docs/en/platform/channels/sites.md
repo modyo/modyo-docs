@@ -36,7 +36,7 @@ Within this section, you can configure the following data:
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content. 
-- **Team Review**: This is an important review system with [its own separate explanation](/en/platform/platform/team-review.html).
+- **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/team-review.html).
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.

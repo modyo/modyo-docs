@@ -204,5 +204,5 @@ Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta 
 Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
 
 ::: warning Atención
-Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/platform/platform/security.htm) en la configuración de la cuenta.
+Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/platform/core/security.htm) en la configuración de la cuenta.
 :::

@@ -49,11 +49,11 @@ module.exports = {
               title: "Primeros Pasos",
               collapsable: true,
               children: [
-                "/platform/",
-                "/platform/whats-new",
-                "/platform/key-concepts",
-                "/platform/versions",
-                "/platform/release-notes"
+                "/core/",
+                "/core/whats-new",
+                "/core/key-concepts",
+                "/core/versions",
+                "/core/release-notes"
               ]
             },
             {
@@ -65,7 +65,7 @@ module.exports = {
               ]
             },
             {
-              title: "Plataforma",
+              title: "Core",
               collapsable: true,
               children: [
                 ["/platform/platform/", "Introducción"],
@@ -196,16 +196,16 @@ module.exports = {
               ]
             },
             {
-              title: "Platform",
+              title: "Core",
               collapsable: true,
               children: [
-                ["/en/platform/platform/", "Introduction"],
-                "/en/platform/platform/the-modyo-interface",
-                "/en/platform/platform/team-review",
-                "/en/platform/platform/integration",
-                "/en/platform/platform/roles",
-                "/en/platform/platform/security",
-                "/en/platform/platform/api"
+                ["/en/platform/core/", "Introduction"],
+                "/en/platform/core/the-modyo-interface",
+                "/en/platform/core/team-review",
+                "/en/platform/core/integration",
+                "/en/platform/core/roles",
+                "/en/platform/core/security",
+                "/en/platform/core/api"
               ]
             },
             {

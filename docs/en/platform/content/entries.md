@@ -47,7 +47,7 @@ After finishing your writing, editing, and then clicking the **Save** button, on
 
 If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
-To learn more, please go to [Team Review.](/en/platform/platform/team-review.html)
+To learn more, please go to [Team Review.](/en/platform/core/team-review.html)
 
 
 ### Unpublish an entry

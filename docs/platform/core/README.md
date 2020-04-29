@@ -12,11 +12,11 @@ Modyo Platform presenta la interfaz principal de Modyo desde la cual se tienen a
 
 ### Funcionalidades principales
 
-- [Revisión en Equipo](/platform/platform/team-review.html)
-- [Integraciones](/platform/platform/integration.html)
-- [Usuarios y roles de administración](/platform/platform/roles.html)
-- [Seguridad](/platform/platform/security.html)
-- [API de administración](/platform/platform/api.html)
+- [Revisión en Equipo](/platform/core/team-review.html)
+- [Integraciones](/platform/core/integration.html)
+- [Usuarios y roles de administración](/platform/core/roles.html)
+- [Seguridad](/platform/core/security.html)
+- [API de administración](/platform/core/api.html)
 
 
 # Documentación oficial versión 8.2

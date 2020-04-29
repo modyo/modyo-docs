@@ -124,7 +124,7 @@ Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado 
 
 Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía. Caso contrario, si el usuario utiliza alguna integración como LDAP, o Google, dicha información se desplegará en este panel.
 
-Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/platform/platform/integration.html).
+Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/platform/core/integration.html).
 
 ### Notas
 
@@ -157,7 +157,7 @@ El color primario es el que se muestra en los principales botones del manejo de 
 
 #### Mostrar el logo
 
-Esta opción permite mostrar el logo configurado para la cuenta en las vistas de sesión, el cual se desplegará sobre los formularios respectivos de dichas vistas. Para cambiar el logo, debes acceder la [Interfaz de Modyo](/platform/platform/the-modyo-interface.html).
+Esta opción permite mostrar el logo configurado para la cuenta en las vistas de sesión, el cual se desplegará sobre los formularios respectivos de dichas vistas. Para cambiar el logo, debes acceder la [Interfaz de Modyo](/platform/core/the-modyo-interface.html).
 
 #### Personalizar con CSS
 
@@ -217,7 +217,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/platform/platform/integration.html)
+Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/platform/core/integration.html)
 
 ### Registros
 
@@ -226,7 +226,7 @@ El registro de clientes dentro de la plataforma, también debe ser configurado d
 Lo primero que puedes configurar es si quieres habilitar o deshabilitar las credenciales de la plataforma.
 
 ::: warning Atención
-Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/platform/platform/integration.html)
+Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/platform/core/integration.html)
 :::
 
 También puedes habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.

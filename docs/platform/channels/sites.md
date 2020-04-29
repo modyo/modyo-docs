@@ -39,7 +39,7 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
 - **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
 - **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/platform/channels/templates.html#vistas-para-contenido).
-- **[Revisión en Equipo](/platform/platform/team-review.html)**
+- **[Revisión en Equipo](/platform/core/team-review.html)**
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
@@ -192,7 +192,7 @@ La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si 
 La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 
 1. [Vistas por defecto (Home, search)](/platform/channels/templates.html)
-1. [Páginas](platform/channels/pages.html)
+1. [Páginas]/platform/channels/pages.html)
 1. [Vistas personalizadas de contenido](/platform/channels/templates.html#vistas-para-contenido)
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/platform/channels/sites.html#restricciones)

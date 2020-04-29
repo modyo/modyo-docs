@@ -126,7 +126,7 @@ En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a lo
 A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
 
 "Sin Campaña" refiere a un correo o notificación que ha 
-sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/platform/platform/api.html). 
+sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/platform/core/api.html). 
 
 En la primera vista, el administrador se ordena bajo las siguientes categorías.
 

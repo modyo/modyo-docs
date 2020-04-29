@@ -112,7 +112,7 @@ El contenido que se publica en cada una de las plataformas debe ser de buena cal
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 
-Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/platform/platform/team-review.html)
+Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/platform/core/team-review.html)
 
 ### Miembros del Equipo
 
