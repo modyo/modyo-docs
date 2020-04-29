@@ -302,5 +302,9 @@ module.exports = {
               collapsable: true,
               children: ["/en/widgets/onboarding/"]
             }, */
+          ]
+        }
+      }
+    }
   }
 };
