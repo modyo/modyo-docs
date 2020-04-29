@@ -33,7 +33,7 @@ In this case, the space configuration helps us to change the general settings, l
 
 Here you can change the name of a space and its UID.
 
-The UID of the space is very important. It determines how you access the space through the [public API](/en/guides/content/public-api-reference.html#reference-del-api), the [Javascript SDK](/en/guides/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](/en/guides/content/public-api-reference.html#sdk-de-liquid). Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
+The UID of the space is very important. It determines how you access the space through the [public API](/en/platform/content/public-api-reference.html#reference-del-api), the [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](/en/platform/content/public-api-reference.html#sdk-de-liquid). Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
 
 ### Location
 
@@ -46,7 +46,7 @@ The default language of a space is defined when first creating a space and canno
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 ::: tip Tip
-You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/guides/content/public-api-reference.html#filters), [Javascript SDK](/en/guides/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/guides/content/public-api-reference.html#filter-entries)
+You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/platform/content/public-api-reference.html#filters), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries)
 :::
 
 ### Cache
@@ -96,7 +96,7 @@ Team Review is a system to review and approve changes made to content and elemen
 
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-For more information on how to configure this option, go to [Team Review](/en/guides/platform/team-review.html).
+For more information on how to configure this option, go to [Team Review](/en/platform/platform/team-review.html).
 
 ### Team members
 

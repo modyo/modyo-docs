@@ -15,13 +15,13 @@ The columns in the list display the following details:
 
 - **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
 - **Name**: Title of the entry.
-- **Type**: Entry Type (See [Types](en/guides/content/types.html)).
+- **Type**: Entry Type (See [Types](en/en/platform/content/types.html)).
 - **Updated on**: Date of the last saved update.
 - **Author**: Original creator of the entry.
 
 You can also filter the list by six different attributes:
 
-- **Types**: Filter the list by any single type. (See [Types](/guides/content/types.html)).
+- **Types**: Filter the list by any single type. (See [Types](/en/platform/content/types.html)).
 - **Status**: Filter the list by the following statuses: **Published, Not Published, Scheduled, Archived, and All**. Filtering by **All** does not show Archived entries. Filtering by **Not Published** displays entries in either the **Draft** or **Scheduled** status.
 - **Category**: Filter the list by a single category. Displays "All" by default.
 - **Locale**: Filter the list by a particular language. Entries without a translation in the filtered language display **Not translated** in the **Status** column.
@@ -31,7 +31,7 @@ You can also filter the list by six different attributes:
 
 ## Create an Entry
 
-To create an entry, click the "+ New" button in the upper right of the screen. In the New Entry modal that appears, give your entry a name. You can fill in the "Slug" field, or let it autocomplete based on the entry name. Lastly, select the content type of the entry. Types can be created in the [Types section](en/guides/content/types.html).
+To create an entry, click the "+ New" button in the upper right of the screen. In the New Entry modal that appears, give your entry a name. You can fill in the "Slug" field, or let it autocomplete based on the entry name. Lastly, select the content type of the entry. Types can be created in the [Types section](en/en/platform/content/types.html).
 
 When you click Create, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
 
@@ -47,7 +47,7 @@ After finishing your writing, editing, and then clicking the **Save** button, on
 
 If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
-To learn more, please go to [Team Review.](en/guides/platform/team-review.html)
+To learn more, please go to [Team Review.](en/en/platform/platform/team-review.html)
 
 
 ### Unpublish an entry
@@ -92,7 +92,7 @@ This value must be unique for entries of the same type. If two entries with the 
 
 If you want the content to be private or exclusive for users who have a current authenticated session within the platform, you must enable this option.
 
-Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](en/guides/content/public-api-reference.html#private-content). If you are consuming the content through [Liquid](/en/guides/channels/liquid-markup.html), it is enough for users to log in to the site in order to view private content.
+Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](en/en/platform/content/public-api-reference.html#private-content). If you are consuming the content through [Liquid](/en/platform/channels/liquid-markup.html), it is enough for users to log in to the site in order to view private content.
 
 ### Targets
 
@@ -100,7 +100,7 @@ Targeted content is essential for any organization that wants to send specific i
 
 With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the **Private** option in the entry's properties, then check the **Enable targeting** option, and select from the list of targets. You can select more than one target audience.
 
-To create a specific target, review the [Targets section](en/guides/customers/targets.html).
+To create a specific target, review the [Targets section](en/en/platform/customers/targets.html).
 
 
 

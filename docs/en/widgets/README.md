@@ -16,7 +16,7 @@ A **widget** is a self-contained component that packages its own markup (`html`)
 ​
 In other words, using **widgets** as independent pieces to build pages that appear as single, cohesive products is a technique called [micro frontends](https://martinfowler.com/articles/micro-frontends.html): an architectural style where independently deliverable frontend applications are composed into a greater whole.
 ​
-Modyo provides the ideal platform to deploy these types of applications and create your widget gallery through the [Widget Builder](https://develop.docs.modyo.com/guides/channels/widgets.html) and the necessary tools to develop them using the [modyo-cli](https://www.npmjs.com/package/@modyo/cli) or the Modyo [Javascript SDK](https://www.npmjs.com/package/@modyo/sdk).
+Modyo provides the ideal platform to deploy these types of applications and create your widget gallery through the [Widget Builder](https://develop.docs.modyo.com/en/platform/channels/widgets.html) and the necessary tools to develop them using the [modyo-cli](https://www.npmjs.com/package/@modyo/cli) or the Modyo [Javascript SDK](https://www.npmjs.com/package/@modyo/sdk).
 ​
 Modyo is an agnostic platform in which through use of Javascript frameworks, you can deploy applications made in **Vue**, **Angular**, or **React**. In the case of **financial widgets**, Modyo uses **Vue** (because we think the learning curve is small, it has a vibrant ecosystem that is gaining momentum, and more), but you and your team can just as well use Angular or React.
 ​

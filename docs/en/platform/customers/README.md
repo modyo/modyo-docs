@@ -15,7 +15,7 @@ Modyo Customers represents an important element when developing digital products
 Modyo Customers also has an integrated user messaging system.
 
 ### Main functionalities
-- [User management](/en/guides/customers/users.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
-- [Targets](/en/guides/customers/targets.html) to define dynamic user segments.
-- [Dynamic forms](/en/guides/customers/forms.html) to capture information associated with users.
-- [Messaging](/en/guides/customers/messaging.html) to send Web notifications or email campaigns to users.
+- [User management](/en/platform/customers/users.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
+- [Targets](/en/platform/customers/targets.html) to define dynamic user segments.
+- [Dynamic forms](/en/platform/customers/forms.html) to capture information associated with users.
+- [Messaging](/en/platform/customers/messaging.html) to send Web notifications or email campaigns to users.

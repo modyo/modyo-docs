@@ -12,12 +12,12 @@ search: true
 
 **Modyo Channels** cuenta con plantillas de diseño, editables por HTML que facilitan la reutilización de código.
 
-**Modyo Channels**, cuenta además, con un sistema de plantillas basado en [Liquid Markup](/guides/channels/liquid-markup.html) que permite la interpolación dinámica de información la cual se procesa de forma eficiente desde el lado del servidor.
+**Modyo Channels**, cuenta además, con un sistema de plantillas basado en [Liquid Markup](/platform/channels/liquid-markup.html) que permite la interpolación dinámica de información la cual se procesa de forma eficiente desde el lado del servidor.
 
 ### Funcionalidades principales
-- [Gestión de sitios](/guides/channels/sites.html) para organizar los canales digitales.
-- [Páginas dinámicas](/guides/channels/pages.html) para definir la estructura de cada sitio y agregar contenido en el.
-- [Widgets](/guides/channels/widgets.html) para crear componentes reutilizables usando tecnologías como Javascript, HTML y CSS.
-- [Plantillas](/guides/channels/templates.html) para organizar las estructuras globales del sitio y el sistema de diseño.
+- [Gestión de sitios](/platform/channels/sites.html) para organizar los canales digitales.
+- [Páginas dinámicas](/platform/channels/pages.html) para definir la estructura de cada sitio y agregar contenido en el.
+- [Widgets](/platform/channels/widgets.html) para crear componentes reutilizables usando tecnologías como Javascript, HTML y CSS.
+- [Plantillas](/platform/channels/templates.html) para organizar las estructuras globales del sitio y el sistema de diseño.
 
 

@@ -13,12 +13,12 @@ Modyo Channels provides extensive access to the base code of every channel throu
 
 Modyo Channels has editable design templates that facilitate reusing code.
 
-Modyo Channels also has a templating system based on [Liquid Markup](/guides/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
+Modyo Channels also has a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
 
 ### Main functionalities
-- [Site management](/guides/channels/sites.html) to organize digital channels.
-- [Dynamic pages](/guides/channels/pages.html) to define the structure of each site and add content to it.
-- [Widgets](/guides/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML and CSS.
-- [Templates](/guides/channels/templates.html) to organize the overall structure of site and design systems.
+- [Site management](/en/platform/channels/sites.html) to organize digital channels.
+- [Dynamic pages](/en/platform/channels/pages.html) to define the structure of each site and add content to it.
+- [Widgets](/en/platform/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML and CSS.
+- [Templates](/en/platform/channels/templates.html) to organize the overall structure of site and design systems.
 
 

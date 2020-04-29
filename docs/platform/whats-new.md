@@ -12,7 +12,7 @@ Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de camb
 
 ### Nueva aplicación Modyo Content
 
-Permite su uso tanto en modalidad _headless_ por medio de sus [API y SDKs](/guides/content/public-api-reference.html), como desacoplada dentro de plantillas desarrolladas en [Liquid](/guides/channels/liquid-markup.html).
+Permite su uso tanto en modalidad _headless_ por medio de sus [API y SDKs](/platform/content/public-api-reference.html), como desacoplada dentro de plantillas desarrolladas en [Liquid](/platform/channels/liquid-markup.html).
 
 ### Gestor de Archivos
 

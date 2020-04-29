@@ -13,8 +13,8 @@ Once inside the Template Builder, in the top bar on the left, can see the sectio
 
 - **Published**: This status means that there is an active, published version of the templates, and that the editable version you are working on now matches the state of the published version. The moment you save any changes to your templates, this status will also change.
 - **Pending changes**: This status indicates that if there is an active published version, then there are "pending changes" to be published from your editable version here in the Template Builder.
-- **In review**: This status appears when [Team review](/en/guides/platform/team-review.html) is enabled and the editable version of your templates has changes that have been submitted for review.
-- **Approved**: This status appears when [Team review](/en/guides/platform/team-review.html) is enabled and if the review conditions were met. If the templates have this status, they are ready to be published.
+- **In review**: This status appears when [Team review](/en/platform/platform/team-review.html) is enabled and the editable version of your templates has changes that have been submitted for review.
+- **Approved**: This status appears when [Team review](/en/platform/platform/team-review.html) is enabled and if the review conditions were met. If the templates have this status, they are ready to be published.
 
 ![Template builder](/assets/img/channels/template_builder/template-builder.jpg)
 
@@ -27,7 +27,7 @@ In the upper right, you will find the latest publication date and the available 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking this icon opens a modal to compare the differences between the active published version of your templates, and the editable version you are currently working on. You can use the version selectors to compare either the editable or active published versions to older back up versions as well.
 
 ::: tip Tip
-Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved, so that the most recent twenty backups can be compared, restored and rollback. For more information on versioning, check out the [versioning](/en/guides/platform/team-review.html#versioning) section .
+Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved, so that the most recent twenty backups can be compared, restored and rollback. For more information on versioning, check out the [versioning](/en/platform/platform/team-review.html#versioning) section .
 :::
 
 **Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Displays a sidebar with a searchbox. You can search any text inside the editable version of the templates.
@@ -38,7 +38,7 @@ Every time you publish a new version, the version that gets replaced now becomes
 
 **More actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
-- **Themes**: Takes you to the Themes Gallery, where you can copy the current theme to use in the other sites or channels in your account. To learn more, check [Themes](/en/guides/channels/templates.html#themes).
+- **Themes**: Takes you to the Themes Gallery, where you can copy the current theme to use in the other sites or channels in your account. To learn more, check [Themes](/en/platform/channels/templates.html#themes).
 - **Reset all**: Resets all templates to their original states in the theme.
 
 **Primary actions**
@@ -75,7 +75,7 @@ In order for the system to recognize the programming language type of the snippe
 ::: tip Tip
 All elements of the Template Builder use Liquid as a templating engine.
 
-For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/guides/channels/liquid-markup.html) page.
+For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
@@ -109,7 +109,7 @@ Save states exist for every template. This means that while some templates may h
 :::
 
 ::: tip Tip
-If an earlier version of your templates is restored, you can access the save states of each template of that restored version. You can learn more about [versioning here](/guides/platform/team-review.html#versioning)
+If an earlier version of your templates is restored, you can access the save states of each template of that restored version. You can learn more about [versioning here](/en/platform/platform/team-review.html#versioning)
 :::
 
 You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>  Reset all". If you want these reset changes to take effect in the front end, you must publish them.
@@ -135,10 +135,10 @@ When you create or copy a theme within a site or channel, that theme becomes ava
 
 ## Automated Content Views
 
-In order to automatically display [content](/en/guides/content/) on a site, you need to meet certain conditions:
+In order to automatically display [content](/en/platform/content/) on a site, you need to meet certain conditions:
 
-1. Have a space with at least one language that matches the site where you want to automate content, and have at least one created Type within that space. Go to [Spaces](/en/guides/content/spaces.html) and [Types](/en/guides/content/types.html) to learn how.
-1. Have entries published in the language of the site. Go to [Entries](/en/guides/content/entries.html) and [Location](/en/guides/content/spaces.html#location) to learn more.
+1. Have a space with at least one language that matches the site where you want to automate content, and have at least one created Type within that space. Go to [Spaces](/en/platform/content/spaces.html) and [Types](/en/platform/content/types.html) to learn how.
+1. Have entries published in the language of the site. Go to [Entries](/en/platform/content/entries.html) and [Location](/en/platform/content/spaces.html#location) to learn more.
 1. Create a custom view in the Template Builder.
 
 To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called "Custom" and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to. 
@@ -176,14 +176,14 @@ A basic example of Liquid + HTML code that you can use to get started in these v
 The example above assumes that a couple of field names, such as "title" and "description", exist in the type you created. Modify these as necessary.
 
 ::: tip Tip
-To learn more about how to use Liquid, go to [Liquid markup](/guides/channels/liquid-markup.html).
+To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup.html).
 :::
 
 With this view created and published, the URL endpoint exists at `site_url/type_uid/entry_slug`, where `type_uid` is the UID of the type you want to display and matches the name of the view you just created. The `entry_slug`, matches the character string in the "Slug" field of the displayed entry. An example relative URL path would be `my-site/posts/my-first-post-in-Modyo`.
 
 ## SEO
 
-SEO [(Search Engine Optimization)](/en/guides/channels/sites.html#seo) is one of the most important topics of your site and content. In Modyo, we have a way to control the way search engines read your site and content, dynamically adding meta tags depending on the attributes you add to your pages and content.
+SEO [(Search Engine Optimization)](/en/platform/channels/sites.html#seo) is one of the most important topics of your site and content. In Modyo, we have a way to control the way search engines read your site and content, dynamically adding meta tags depending on the attributes you add to your pages and content.
 
 We recommend adding this code snippet to the Template Builder, and then calling this snippet from the `<head>` of your site:
 

@@ -141,13 +141,13 @@ Locks is a Modyo functionality that allows you to modify a resource safely, with
 
 ### What elements do Locks use?
 
-Locks are mostly used in [Contents](/guides/content/) and [Channels](/guides/channels/), but can also be used in other sections where items such as Settings and [Customers](/guides/customers/).
+Locks are mostly used in [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items such as Settings and [Customers](/en/platform/customers/).
 
 ### How to use Locks?
 
-Locks are implemented in different ways within the platform. In [Contents](/guides/content/) and [Channels](/guides/channels/), multiple users can enter a resource, being only one who can edit and save those changes, while others will only see the latest version saved on the platform. If a second person tries to make a change, a message will appear indicating that the item already has changes and that what you are trying to modify is obsolete.
+Locks are implemented in different ways within the platform. In [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can enter a resource, being only one who can edit and save those changes, while others will only see the latest version saved on the platform. If a second person tries to make a change, a message will appear indicating that the item already has changes and that what you are trying to modify is obsolete.
 
-In other sections such as [Customers](/guides/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if it is in edition, another user will not be able to enter the work view.
+In other sections such as [Customers](/en/platform/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if it is in edition, another user will not be able to enter the work view.
 
 In this case, only an Administrator can take control, activating for himself the edition and discarding the unsaved advances of the user who is working on it.
 

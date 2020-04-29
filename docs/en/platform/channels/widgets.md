@@ -20,8 +20,8 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft**: This status means a widget is new or is unpublished.
 - **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
 - **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
-- **In review**: This status means [team review](/en/guides/platform/team-review.html) is enabled and this widget is in review.
-- **Approved**: This status means [team review](/en/guides/platform/team-review.html) is enabled and a widget passed the review process. You can now publish this widget.
+- **In review**: This status means [team review](/en/platform/platform/team-review.html) is enabled and this widget is in review.
+- **Approved**: This status means [team review](/en/platform/platform/team-review.html) is enabled and a widget passed the review process. You can now publish this widget.
 
 ::: tip Tip
 You may notice that some widgets with **Pending changes** and **In review** statuses have a small green mark. This green mark indicates that there is an active, published version of this widget available.
@@ -67,17 +67,17 @@ Widgets that are active in one or more pages of your site or channel cannot be u
 Archived widgets do not appear in the main widget list or in the Custom widget selection in Page Builder. You can restore an archived widget by editing it and using the restore option in the upper right corner of the editing view.
 :::
 
-Once a widget is published, it is available as a custom widget in the [page builder.](/en/guides/channels/pages.html)
+Once a widget is published, it is available as a custom widget in the [page builder.](/en/platform/channels/pages.html)
 
 ::: tip Tip
-To learn more about publication lifecycles in Modyo, review the [Versioning](/en/guides/platform/team-review.html#versioning) section.
+To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/platform/team-review.html#versioning) section.
 :::
 
 
 In the main **work area** you can see the following:
 
 - **Code tabs**: The Widget Builder has a JavaScript, CSS and HTML tab at your disposal to build your widgets.
-- **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/guides/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
+- **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
 - **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
 - **Snippets**: Displays a list of custom snippets where you can copy their reference code and insert them in your widget.
 - **Changes**: A list of every "Save" state of this widget since it was last published. Click on any of these save states to change the content of the widget to that particular save state. If doing so, all your current changes will be lost.
@@ -90,7 +90,7 @@ To avoid losing any changes you currently have, be sure to save before jumping b
 If you publish a new version of your widget, the **Changes** list resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
 :::
 
-You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation.](/en/guides/channels/liquid-markup.html)
+You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation.](/en/platform/channels/liquid-markup.html)
 
 The **Properties** on the right contains the following fields:
 

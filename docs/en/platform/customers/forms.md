@@ -24,7 +24,7 @@ To create a new form, click on the main action at the top right "+ New". This wi
 - **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title in the front end.
 - **Description**: This text will appear as text under the title in the front end.
 - **People limit**: Determines the maximum number of answers are allowed.
-- **Site**: Allows you to select which sites display the form. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/en/guides/channels/templates.html)
+- **Site**: Allows you to select which sites display the form. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/en/platform/channels/templates.html)
 - **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
 - **Automatically ask the form to the audience?**: If the form is private (only registered users can answer it), this option appears and allows you to automatically redirect users who log in to the site associated with the form to answer it.
@@ -35,7 +35,7 @@ The next section of the form properties contains the Form Options for what happe
 - **Redirect URL**: Allows you to enter a URL to which the user will be redirected after the form has been answered
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
-- **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/guides/customers/targets.html)
+- **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/en/platform/customers/targets.html)
 
 ::: warning Warning
 If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
@@ -49,7 +49,7 @@ In the **Email Notifications** section you can configure the different emails th
 
 The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/guides/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/platform/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
 
 Here is a code sample that you can use as a base to personalize the thank you mail.
 
@@ -201,5 +201,5 @@ In order to make proper use of the form snippet, you must take into account the 
 The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
 ::: warning Warning
-If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/en/guides/platform/security.htm) in the account settings.
+If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/en/platform/platform/security.htm) in the account settings.
 :::

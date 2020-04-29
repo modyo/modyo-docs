@@ -13,7 +13,7 @@ A new, simplified, cleaner user interface, and now allows you to change the Mody
 
 ### New Modyo Content application
 
-The Modyo Content application now serves content through its [API and SDKs](/guides/content/public-api-reference.html) as a _headless_ solution, and also serves _decoupled_ content within Modyo Channels through [Liquid](/guides/channels/liquid-markup.html).
+The Modyo Content application now serves content through its [API and SDKs](/en/platform/content/public-api-reference.html) as a _headless_ solution, and also serves _decoupled_ content within Modyo Channels through [Liquid](/en/platform/channels/liquid-markup.html).
 
 ### Asset Manager
 

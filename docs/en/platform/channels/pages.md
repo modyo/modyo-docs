@@ -17,7 +17,7 @@ In the edit view, you will see a bar across the top, a central grid in the middl
 
 In the top bar, you will find different actions and information:
 
-**Title**: Located in the upper left, and indicates the name of the page you are modifying. On the right side the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/guides/platform/team-review.html) section.
+**Title**: Located in the upper left, and indicates the name of the page you are modifying. On the right side the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/platform/team-review.html) section.
 
 **Publication date**: On the right side of the top bar, if the page has been published, the date of the last publication will be indicated.
 
@@ -26,7 +26,7 @@ In the top bar, you will find different actions and information:
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking on the Differences icon will open a modal that allows you to select and compare two versions of this page, indicating the changes between them.
 
 ::: tip Tip
-If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare the current editable version. To learn more about the differences and support, review the [versioning](/guides/platform/team-review.html # versioning) section. 
+If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare the current editable version. To learn more about the differences and support, review the [versioning](/en/platform/platform/team-review.html # versioning) section. 
 :::
 
 **Activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: Clicking on this icon displays a sidebar that shows page activity, such as modifications, publications and comments. At the bottom of this bar, you can write a comment. If the page is under review, all assigned reviewers will receive a notification of the comment.
@@ -76,14 +76,14 @@ In the right side section you will find three tabs:
 
 ### Privacy
 
-If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Targets](/guides/customers/targets.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page, or to the home page.
+If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Targets](/en/platform/customers/targets.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page, or to the home page.
 
 ### Widgets
 
-- **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/guides/channels/widgets.html).
+- **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/en/platform/channels/widgets.html).
 - **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
 ::: warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to disply. To modify what these widgets look like, you must do so in the [template builder](/guides/channels/templates.html), in the widgets section.
+- **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to disply. To modify what these widgets look like, you must do so in the [template builder](/en/platform/channels/templates.html), in the widgets section.
 - **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.

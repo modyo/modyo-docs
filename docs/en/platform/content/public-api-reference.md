@@ -6,7 +6,7 @@ translated: true
 
 # API & SDKs
 
-Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](en/guides/content/) with [Modyo Channels](en/guides/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
+Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](en/en/platform/content/) with [Modyo Channels](en/en/platform/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
 
 ::: tip SDKs for other languages
 At the moment there is only an SDK for Javascript. In the future, we plan to incorporate versions in other languages.
@@ -14,7 +14,7 @@ At the moment there is only an SDK for Javascript. In the future, we plan to inc
 
 ## Liquid SDK
 
-The Liquid SDK allows you to natively consume content from [Modyo Channels](en/guides/channels/) in any of the sections of the platform that use the [Liquid](en/guides/channels/liquid-markup.html) markup language, like [Widgets](en/guides/channels/widgets.html) and [Templates](en/guides/channels/templates.html) in your sites.
+The Liquid SDK allows you to natively consume content from [Modyo Channels](en/en/platform/channels/) in any of the sections of the platform that use the [Liquid](en/en/platform/channels/liquid-markup.html) markup language, like [Widgets](en/en/platform/channels/widgets.html) and [Templates](en/en/platform/channels/templates.html) in your sites.
 
 ### Access entries in a space
 

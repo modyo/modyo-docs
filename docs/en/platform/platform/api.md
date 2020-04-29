@@ -187,7 +187,7 @@ Keep in mind that when you log out of one of your sites, a _GET_ will be made to
 With our application already registered, just assign that application to the user or users
 that will make use of the API. For this, we must access the option _Settings _/_ Team_ in the menu and select
 an existing user or create a new one, which must have an administrative role within the application
-(for more details refer to [Users and Roles section](/guides/platform/roles.html)). In the edit view of the
+(for more details refer to [Users and Roles section](/en/platform/platform/roles.html)). In the edit view of the
 administrator user, we will access the _API Access_ tab and select the option `+ New Access Token`
 
 ![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
@@ -271,8 +271,8 @@ If you are using Modyo from a web browser, and you are logged in as an administr
 ### Invoking services
 
 Once we know the service we need to consult, according to what we saw in the section
-[Exploring the API](/guides/platform/api.html # exploring-el-api), and that we have an authentication method
-valid (refer to [Authentication section](/guides/platform/api.html # authentication)), we can now
+[Exploring the API](/en/platform/platform/api.html # exploring-el-api), and that we have an authentication method
+valid (refer to [Authentication section](/en/platform/platform/api.html # authentication)), we can now
 make a _request_ to the URL of the required resource. For example, let's imagine we need to get
 A list of all the email campaigns we have created. According to the documentation in Swagger
 available, we know we need to call the following URL:

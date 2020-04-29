@@ -19,8 +19,8 @@ En la barra superior se encuentran las siguientes secciones:
 - **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se está en este estado, los templates están listos para ser publicados.
+- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](platform/platform/team-review.html) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](platform/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se está en este estado, los templates están listos para ser publicados.
 
 A la derecha, estas son las distintas acciones:
 **Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Permite abrir en una nueva pestaña la vista previa de la versión editable del widget.
@@ -57,19 +57,19 @@ Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la 
 Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Para restaurar un widget archivado, se debe entrar a la vista de edición, usando la opción **Restaurar** en la esquina superior derecha de la vista.
 :::
 
-Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/guides/channels/pages.html)
+Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/platform/channels/pages.html)
 
 :::tip Tip
-Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/guides/platform/team-review.html#versionado)
+Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/platform/platform/team-review.html#versionado)
 :::
 
 
 En el área de trabajo se puede ver:
 
 - **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS y HTML para construir widgets.
-- **Gestor de archivos**: Al hacer _click_, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/guides/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
+- **Gestor de archivos**: Al hacer _click_, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
 - **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
-- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/guides/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
+- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
 - **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo _click_.
 
 :::tip Tip
@@ -80,7 +80,7 @@ Para no perder los cambios que tienes actualmente, se debe guardar antes de salt
 Cuando se publica el widget, no se observarán cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si se restaura el widget a una versión anterior, también lo harán las sub-versiones, por lo que se puede acceder a todas las instancias en que se guardaron cambios en esa versión.
 :::
 
-En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/guides/channels/liquid-markup.html)
+En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/platform/channels/liquid-markup.html)
 
 En la columna de propiedades se pueden ver: 
 

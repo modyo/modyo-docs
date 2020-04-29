@@ -14,14 +14,14 @@ In the main view, we can see a list of all registered users within the platform,
 Along the top of the list are filters that allow you to refine the list of users by the following attributes:
 - Status: Filter by active and inactive users.
 - Verification: Filter by users who have (or have not) confirmed their data within the platform.
-- Targets: Filter by users that match certain [Targets](/en/guides/customers/targets.html).
+- Targets: Filter by users that match certain [Targets](/en/platform/customers/targets.html).
 - Advanced filters: Filter by users who match specific filters based on data in their user profiles, e.g. birth date, or custom field value.
 - Search: Filter by user name, last name, email, or username.
 
 The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
 ::: tip Tip
-Next to the Apply button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/guides/customers/targets.html) section.
+Next to the Apply button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/platform/customers/targets.html) section.
 :::
 
 You can sort users by ascending or descending order by the following values:
@@ -52,7 +52,7 @@ When you select "Add User", the platform will ask you to complete the following 
 To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-The available fields may be more than those listed above, depending on the configuration on the platform and how many user custom fields are enabled in the account. You can learn more about this in the [Customers Configuration](/en/guides/customers/users.html#customers-configuration) section.
+The available fields may be more than those listed above, depending on the configuration on the platform and how many user custom fields are enabled in the account. You can learn more about this in the [Customers Configuration](/en/platform/customers/users.html#customers-configuration) section.
 
 ### Import users
 
@@ -69,13 +69,13 @@ The minimum attributes required to import a user are their first name (not to be
 On the right are the main import settings. Here you can set the file encoding and separator value (which by default is a comma). Below it is a box indicating if you've mapped the two required fields (name and email). The button for **Begin import** is enabled once you map these fields. Finally, there are four main import options:
 
 - Activate user account
-- Send notification email (customizable in [emails](/en/guides/customers/users.html#emails))
+- Send notification email (customizable in [emails](/en/platform/customers/users.html#emails))
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
 Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
 
-In addition, you can add any required custom fields. These can be configured in [Custom Fields](/en/guides/customers/users.html#custom-fields), which are found in the [Customer Configuration section](/en/guides/customers/users.html#customer-configuration).
+In addition, you can add any required custom fields. These can be configured in [Custom Fields](/en/platform/customers/users.html#custom-fields), which are found in the [Customer Configuration section](/en/platform/customers/users.html#customer-configuration).
 
 
 ### Users Tab
@@ -106,7 +106,7 @@ It should be noted that it is not a follow-up to the navigation of a user within
 
 #### Responses
 
-This section shows you all the forms that the user has filled out within the platform. When you click on any of them, it takes you to see the answers of the user in said form. If you want to know more about the forms, go to the [Forms](/en/guides/customers/forms.html) section.
+This section shows you all the forms that the user has filled out within the platform. When you click on any of them, it takes you to see the answers of the user in said form. If you want to know more about the forms, go to the [Forms](/en/platform/customers/forms.html) section.
 
 ### Credentials
 
@@ -114,7 +114,7 @@ Here you will see all the credentials the user has to enter the platform.
 
 If the user enters only through his username and default password of the platform, this section will be empty. Otherwise, if the user uses some integration such as LDAP, or Google, that information will be displayed in this panel.
 
-If you want to enable authentication through integrations, check the [Integrations section](/en/guides/platform/integration.html).
+If you want to enable authentication through integrations, check the [Integrations section](/en/platform/platform/integration.html).
 
 ### Notes
 
@@ -127,7 +127,7 @@ If you need to change or update user data, you can do so from here. The form is 
 ::: tip Tip
 When modifying a user, you may change the list of Targets to which they belong.
 
-For more information, go to [Custom Fields](/en/guides/customers/users.html#custom-fields).
+For more information, go to [Custom Fields](/en/platform/customers/users.html#custom-fields).
 :::
 
 ## Customer Settings
@@ -144,13 +144,13 @@ The primary color is the one shown in the main buttons of the session management
 
 #### Show logo
 
-This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/en/guides/platform/the-modyo-interface.html).
+This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/en/platform/platform/the-modyo-interface.html).
 
 #### Customize with CSS
 
 If you want to have custom CSS in the session views, add it to the editor and click on the **Save** button.
 
-It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/guides/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
+It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
 ::: tip Tip
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
@@ -202,7 +202,7 @@ The services compatible with logging into Modyo are:
 - Oauth2
 - OpenID Connect
 
-It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/en/guides/platform/integration.html)
+It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/en/platform/platform/integration.html)
 
 ### Signups
 
@@ -211,7 +211,7 @@ Client registration within the platform must also be configured from here. To do
 The first thing we can configure is if we want to enable or disable platform credentials.
 
 ::: warning Warning
-If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/en/guides/platform/integration.html)
+If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/en/platform/platform/integration.html)
 :::
 
 We can also enable or disable a redirect for login. Remember that if login redirection is enabled, the login method will be replaced by the URL that you must enter later.
@@ -279,5 +279,5 @@ When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom F
 :::
 
 ::: tip Tip
-Apart from being able to save specific data in user profiles, [Targets]filters(/en/guides/customers/targets.html) can be created using custom field data, allowing users to be segmented by customizable values.
+Apart from being able to save specific data in user profiles, [Targets]filters(/en/platform/customers/targets.html) can be created using custom field data, allowing users to be segmented by customizable values.
 :::

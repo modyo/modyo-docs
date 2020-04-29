@@ -14,7 +14,7 @@ Gracias a su sistema integrado de caché y gestión de Headers HTTP, los conteni
 
 ### Funcionalidades principales
 
-- [Espacios](/guides/content/spaces.html) para la organización de contenidos y equipos que los administran.
-- [Tipos de contenido](/guides/content/types.html) para definir estructuras personalizadas.
-- [Gestor de archivos](/guides/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
-- [API y SDKs](/guides/content/public-api-reference.html) para el acceso a los repositorios de contenidos, tanto dentro como fuera de la plataforma.
+- [Espacios](/platform/content/spaces.html) para la organización de contenidos y equipos que los administran.
+- [Tipos de contenido](/platform/content/types.html) para definir estructuras personalizadas.
+- [Gestor de archivos](/platform/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
+- [API y SDKs](/platform/content/public-api-reference.html) para el acceso a los repositorios de contenidos, tanto dentro como fuera de la plataforma.

@@ -38,8 +38,8 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio. 
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
 - **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
-- **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/guides/channels/templates.html#vistas-para-contenido).
-- **[Revisión en Equipo](/guides/platform/team-review.html)**
+- **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/platform/channels/templates.html#vistas-para-contenido).
+- **[Revisión en Equipo](/platform/platform/team-review.html)**
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
@@ -59,7 +59,7 @@ El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/guides/channels/templates.html), en el snippet ```head```.
+El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/platform/channels/templates.html), en el snippet ```head```.
 
 Se puede crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cada uno de los cambios sin tener que salir de la vista.
 
@@ -161,7 +161,7 @@ Es el usuario a cargo del desarrollo estructural de los recursos, la creación y
 
 Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback) ni cambiar la configuración.
 
-Existe una variación de este rol con el nombre "CLI" que además de los permisos de desarrollador, les permite hacer push de widgets desde aplicaciones externas, como el [modyo-cli](/guides/channels/widgets.html#modyo-cli).
+Existe una variación de este rol con el nombre "CLI" que además de los permisos de desarrollador, les permite hacer push de widgets desde aplicaciones externas, como el [modyo-cli](/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 
@@ -186,13 +186,13 @@ En esta vista encontrarás una tabla con todas las redirecciones que existen act
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completando los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guardando los cambios, crearás una nueva entrada de redirección. 
 
 :::warning Atención
-La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/guides/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/guides/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
+La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
 La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 
-1. [Vistas por defecto (Home, search)](/guides/channels/templates.html)
-1. [Páginas](guides/channels/pages.html)
-1. [Vistas personalizadas de contenido](/guides/channels/templates.html#vistas-para-contenido)
+1. [Vistas por defecto (Home, search)](/platform/channels/templates.html)
+1. [Páginas](platform/channels/pages.html)
+1. [Vistas personalizadas de contenido](/platform/channels/templates.html#vistas-para-contenido)
 1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/guides/channels/sites.html#restricciones)
+1. [Configuración de error 404 del sitio](/platform/channels/sites.html#restricciones)

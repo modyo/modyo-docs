@@ -13,8 +13,8 @@ When discussing the Modyo Platform as daily users or team members, we are also r
 
 ### Main functionalities
 
-- [Team review](/en/guides/platform/team-review.html)
-- [Integrations](/en/guides/platform/integration.html)
-- [Users and administrative roles](/en/guides/platform/roles.html)
-- [Security](/en/guides/platform/security.html)
-- [Administration API](/en/guides/platform/api.html)
+- [Team review](/en/platform/platform/team-review.html)
+- [Integrations](/en/platform/platform/integration.html)
+- [Users and administrative roles](/en/platform/platform/roles.html)
+- [Security](/en/platform/platform/security.html)
+- [Administration API](/en/platform/platform/api.html)

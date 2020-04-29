@@ -9,7 +9,7 @@ Navigation is the fastest way to put together a list of elements to give your us
 
 ![Navigation builder](/assets/img/platform/navigation-builder.png)
 
-In this section you will find a nested list of elements, which correspond to the elements that will appear on the site when using the <span v-pre> `{% menu%}` </span> tag in the [template builder section](/guides/channels/templates.html).
+In this section you will find a nested list of elements, which correspond to the elements that will appear on the site when using the <span v-pre> `{% menu%}` </span> tag in the [template builder section](/en/platform/channels/templates.html).
 
 The builder menu only allows two levels of depth, so you can have a main list, and sub elements in each of the main items. You will not be able to nest other elements within the nested elements.
 
@@ -17,8 +17,8 @@ At the top of the view, you will find the publication status of the menu:
 
 - **Published**: You will see this status after you have made a publication and when the editable and published versions are the same.
 - **Pending changes**: You will see this status if there is already a published version, but there are pending changes to be published in your editable version.
-- **In review**: You will see this status when [team review](guides/platform/team-review.html) is enabled and the editable version has been submitted for review.
-- **Approved**: You will see this status when [team review](guides/platform/team-review.html) is enabled and if the item review conditions were met. If you are in this state, your changes are ready to be published.
+- **In review**: You will see this status when [team review](/en/platform/platform/team-review.html) is enabled and the editable version has been submitted for review.
+- **Approved**: You will see this status when [team review](/en/platform/platform/team-review.html) is enabled and if the item review conditions were met. If you are in this state, your changes are ready to be published.
 
 In the upper right, you will find the latest publication date and the available actions:
 
@@ -27,10 +27,10 @@ In the upper right, you will find the latest publication date and the available 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: By clicking on this icon, you will open the mode of differences, in which you can compare the changes between multiple versions of your menu. By default you will start comparing the published version with the editable version, but by using the version selectors, you can also compare previous versions as well.
 
 ::: tip Tip
-Every time you publish and replace the current version, the replaced version becomes a "backup" or previous version. By default, up to 20 backups are saved, and can be compared and restored through the "rollback" feature. For more information on versioning, check out the [versioning](/guides/platform/team-review.html#versioning) section.
+Every time you publish and replace the current version, the replaced version becomes a "backup" or previous version. By default, up to 20 backups are saved, and can be compared and restored through the "rollback" feature. For more information on versioning, check out the [versioning](/en/platform/platform/team-review.html#versioning) section.
 :::
 
-**Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: If you have [team review](/guides/platform/team-review.html) enabled, this option displays a sidebar with activity history and menu comments when clicked. You can add comments by submitting them at the bottom of the sidebar. Next to each activity, you can click on "Show details" to show the complete information of that particular activity log.
+**Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: If you have [team review](/en/platform/platform/team-review.html) enabled, this option displays a sidebar with activity history and menu comments when clicked. You can add comments by submitting them at the bottom of the sidebar. Next to each activity, you can click on "Show details" to show the complete information of that particular activity log.
 
 **Main actions**
 

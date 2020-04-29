@@ -15,7 +15,7 @@ Una vez que el usuario ha sido identificado, la plataforma gestionará de forma 
 **Modyo Customers** además posee un sistema integrado de mensajería al usuario autenticado.
 
 ### Funcionalidades principales
-- [Gestión de usuarios](/guides/customers/users.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
-- [Targets](/guides/customers/targets.html) para definir segmentos dinámicos de usuarios.
-- [Formularios dinámicos](/guides/customers/forms.html) para capturar información asociada a los usuarios.
-- [Mensajería](/guides/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.
+- [Gestión de usuarios](/platform/customers/users.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
+- [Targets](/platform/customers/targets.html) para definir segmentos dinámicos de usuarios.
+- [Formularios dinámicos](/platform/customers/forms.html) para capturar información asociada a los usuarios.
+- [Mensajería](/platform/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.

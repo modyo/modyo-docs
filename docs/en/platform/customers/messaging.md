@@ -49,7 +49,7 @@ This opens a form that you must fill out with the following information:
 - Subject: Text that appears in the subject line that users receive.
 - From: The name that appears in the "From field".
 - Reply to email: Email address to which people can reply **(Only for mailing campaigns)**
-- Template: List of [templates](/en/guides/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
+- Template: List of [templates](/en/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
 - Enable targeting: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
 
 After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
@@ -100,7 +100,7 @@ If you sent the campaign as a Notification, these are your metrics:
 - Open: Number of open notifications.
 
 
-Below you can see the [Targets](/en/guides/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
+Below you can see the [Targets](/en/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
 
 At the bottom you can find a table with all the campaign deliveries, which you can sort in ascending or descending order according to the following columns:
 
@@ -125,7 +125,7 @@ In the Message Deliveries section, you can find the list of users who have recei
 
 At first glance, you can find a list of all the users who have received a single email or notification, which is called "No Campaign".
 
-"No Campaign" refers to an email or notification that has been sent specifically to a user, on a specific date. They do not fall under the concept of Campaigns since these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/en/guides/platform/api.html).
+"No Campaign" refers to an email or notification that has been sent specifically to a user, on a specific date. They do not fall under the concept of Campaigns since these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/en/platform/platform/api.html).
 
 The message deliveries list displays the following information:
 
@@ -188,7 +188,7 @@ Under the name is the Template content section, a WYSIWYG editor where you can v
 ::: warning Warning
 If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
-To automate the insertion of the Footer, read [Customers Settings](en/guides/customers/users.html#customers-settings)
+To automate the insertion of the Footer, read [Customers Settings](en/en/platform/customers/users.html#customers-settings)
 :::
 
 To save the template, you must click on the **Save** button, located at the top of the page.
@@ -201,7 +201,7 @@ In this section, you will find a list of all users who have unsubscribed from em
 
 To find a user, at the top of the screen there is a search bar where you can enter their name or email.
 
-If you click on the name of the user, you can find the [user profile](en/guides/customers/users.html#user-tab) with all their platform activities.
+If you click on the name of the user, you can find the [user profile](en/en/platform/customers/users.html#user-tab) with all their platform activities.
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 

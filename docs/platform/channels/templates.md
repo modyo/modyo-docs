@@ -12,8 +12,8 @@ Una vez dentro del Template Builder, puedes ver que el menú principal se escond
 
 - **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Cuando se habilita la [revisión en equipo](guides/platform/team-review.html) y se ha enviado a revisión la versión editable.
-- **Aprobado**: Cuando se habilita la [revisión en equipo](guides/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
+- **En revisión**: Cuando se habilita la [revisión en equipo](platform/platform/team-review.html) y se ha enviado a revisión la versión editable.
+- **Aprobado**: Cuando se habilita la [revisión en equipo](platform/platform/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
@@ -29,7 +29,7 @@ Por defecto, partes comparando la versión publicada con la versión editable, p
 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. 
-Para más información sobre el versionamiento, échale un vistazo a la sección de [versionado](/guides/platform/team-review.html#versionado).
+Para más información sobre el versionamiento, échale un vistazo a la sección de [versionado](/platform/platform/team-review.html#versionado).
 :::
 
 **Buscar en templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con un buscador de texto que busca en todos los templates editables. 
@@ -42,7 +42,7 @@ Al final de la barra lateral, ves una caja de texto donde puedes escribir un com
 
 **Más acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
-- **Temas**: Se dirige directo al índice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/guides/channels/templates.html#temas)
+- **Temas**: Se dirige directo al índice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/platform/channels/templates.html#temas)
 - **Restaurar todo**: Restauras todos los templates al valor original del tema.
 
 **Acción principal**
@@ -113,7 +113,7 @@ Las sub-versiones son por cada template, por lo que para algunos puedes observar
 
 :::tip Tip
 Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. 
-Puedes aprender más sobre el [versionado aquí].(/guides/platform/team-review.html#versionado)
+Puedes aprender más sobre el [versionado aquí].(/platform/platform/team-review.html#versionado)
 :::
 
 Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo _click_ en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
@@ -141,10 +141,10 @@ Cuando creas o copias un tema en un sitio, ese tema queda disponible para todos 
 
 ## Vistas para contenido
 
-Para poder mostrar [contenido](/guides/content/) de forma automática en un sitio, debes cumplir con ciertas condiciones:
+Para poder mostrar [contenido](/platform/content/) de forma automática en un sitio, debes cumplir con ciertas condiciones:
 
-1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un Tipo. Dirígete a [Espacios](/guides/content/spaces.html) y [Tipos](/guides/content/types.html) para aprender cómo.
-1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/guides/content/entries.html) y [Localización](/guides/content/spaces.html#localizacion) para aprender más.
+1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un Tipo. Dirígete a [Espacios](/platform/content/spaces.html) y [Tipos](/platform/content/types.html) para aprender cómo.
+1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/platform/content/entries.html) y [Localización](/platform/content/spaces.html#localizacion) para aprender más.
 1. Crear una vista personalizada en el Templates Builder.
 
 Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Al crear la vista personalizada debes seleccionar un nombre, un espacio al que estará asociado y finalmente un tipo de contenido del espacio.
@@ -180,7 +180,7 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
 ```
 
 :::tip Tip
-Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/guides/channels/liquid-markup.html)
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/platform/channels/liquid-markup.html)
 :::
 
 Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
@@ -202,7 +202,7 @@ En caso de que no se encuentre habilitado, la URL será de la forma `account_url
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/guides/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. 
+El SEO [(Search Engine Optimization)](/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. 
 
 En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 

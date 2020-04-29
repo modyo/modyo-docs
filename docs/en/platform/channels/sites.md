@@ -7,7 +7,7 @@ translated: true
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;"/>
 
-This is where you work to create sites and web-based applications within the platform. Building in Sites focuses on all the development, design and navigation flow and structure. If you want to add content to a site or web-based application, you must first create content in the [Content](/en/guides/content/) section.
+This is where you work to create sites and web-based applications within the platform. Building in Sites focuses on all the development, design and navigation flow and structure. If you want to add content to a site or web-based application, you must first create content in the [Content](/en/platform/content/) section.
 
 Upon entering, you will see that there are 4 statuses:
 
@@ -35,8 +35,8 @@ Within this section, you can configure the following data:
 - **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
-- **Language**: The language of your site. This value is important because it impacts [how content appears](/guides/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content. 
-- **Team Review**: This is an important review system with [its own separate explanation](/en/guides/platform/team-review.html).
+- **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content. 
+- **Team Review**: This is an important review system with [its own separate explanation](/en/platform/platform/team-review.html).
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
@@ -117,7 +117,7 @@ Developers are in charge of the structural development of resources, design and 
 
 Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
 
-There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/guides/channels/widgets.html#modyo-cli).
+There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 

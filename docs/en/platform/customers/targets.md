@@ -42,7 +42,7 @@ To erase all filters, click on the **Clear all** button at the bottom of the win
 
 To save a target, click on the **Save as a Target** button at the bottom of the window.
 
-To see the users that match your target filters, click on the **Apply** button. This opens a [User]/en/guides/customers/users.html) liast that displays all users that fit your filters.
+To see the users that match your target filters, click on the **Apply** button. This opens a [User]/en/platform/customers/users.html) liast that displays all users that fit your filters.
 
 ::: tip Tip
 When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
@@ -82,4 +82,4 @@ The list of default filters are as follows:
 - Paying orders
 - Rejected orders
 
-To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/en/guides/customers/users.html#customers-settings) for more information.
+To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.

@@ -40,7 +40,7 @@ En este caso, la configuración de Espacios sirve para cambiar las característi
 
 En esta sección, puedes cambiar el nombre del espacio o su UID.
 
-El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/guides/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/guides/content/public-api-reference.html#sdk-de-liquid). 
+El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/platform/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/platform/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/platform/content/public-api-reference.html#sdk-de-liquid). 
 
 Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
 
@@ -61,7 +61,7 @@ El idioma por defecto de un espacio se define al momento de crear el espacio y n
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 :::tip Tip
-Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/guides/content/public-api-reference.html#filtros), [SDK de Javascript](/guides/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/guides/content/public-api-reference.html#filtrar-entradas)
+Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/platform/content/public-api-reference.html#filtros), [SDK de Javascript](/platform/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/platform/content/public-api-reference.html#filtrar-entradas)
 :::
 
 ### Caché
@@ -112,7 +112,7 @@ El contenido que se publica en cada una de las plataformas debe ser de buena cal
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 
-Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/guides/platform/team-review.html)
+Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/platform/platform/team-review.html)
 
 ### Miembros del Equipo
 

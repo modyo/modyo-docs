@@ -48,7 +48,7 @@ Posteriormente, mostrará un formulario que deberás rellenar con los siguientes
 - **Tipo**: Formato que tendrá la campaña (Correo o Notificación).
 - **Asunto**: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
 - **Responder a**: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
-- **Plantilla**: Lista de [plantillas](/guides/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
+- **Plantilla**: Lista de [plantillas](/platform/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
 - **Habilitar targetización**: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
 
 Después de rellenar estos datos, deberás hacer _click_ en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
@@ -99,7 +99,7 @@ En cambio, si enviaste la campaña por Notificación, podrás encontrar estas ci
 - **Abiertos**: Nº de notificaciones abiertas.
 
 
-Más abajo podrás ver los [Targets](/guides/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
+Más abajo podrás ver los [Targets](/platform/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
 
 Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
 
@@ -126,7 +126,7 @@ En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a lo
 A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
 
 "Sin Campaña" refiere a un correo o notificación que ha 
-sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/guides/platform/api.html). 
+sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/platform/platform/api.html). 
 
 En la primera vista, el administrador se ordena bajo las siguientes categorías.
 
@@ -190,7 +190,7 @@ Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente 
 ::: warning Atención
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
-Para automatizar la inserción del Footer, lee [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers)
+Para automatizar la inserción del Footer, lee [Configuración de Customers](/platform/customers/users.html#configuracion-de-customers)
 :::
 
 Para grabar la plantilla, debes hacer _click_ en el botón **Guardar**, que se encuentra en la parte superior de la página.
@@ -203,7 +203,7 @@ En esta sección, encontrarás una lista con todos los usuarios que se han dado 
 
 Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
 
-Si se hace _click_ en el nombre del usuario, puedes encontrar el [perfil del usuario](/guides/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Si se hace _click_ en el nombre del usuario, puedes encontrar el [perfil del usuario](/platform/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
 
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 

@@ -40,7 +40,7 @@ This interface is where we populate our types with the correct fields we need ba
 ## Fields
 
 ::: tip Tip
-The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/en/guides/content/public-api-reference.html)
+The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/en/platform/content/public-api-reference.html)
 :::
 
 All fields require a name, and can optionally be set as required. When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, the entry cannot be saved.
@@ -138,5 +138,5 @@ When you reindex any of your types, the model that was previously reindexed will
 :::
 
 ::: warning Warning
-Note that depending on the [cache settings you have in your space](/guides/content/spaces.html # cache), you may not see the changes immediately after you have finished reindexing.
+Note that depending on the [cache settings you have in your space](/en/platform/content/spaces.html # cache), you may not see the changes immediately after you have finished reindexing.
 :::

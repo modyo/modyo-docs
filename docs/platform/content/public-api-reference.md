@@ -5,7 +5,7 @@ sidebarDepth: 1
 
 # API & SDKs
 
-Modyo Content cuenta con una API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/guides/content/) con [Modyo Channels](/guides/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
+Modyo Content cuenta con una API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/platform/content/) con [Modyo Channels](/platform/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
 
 ::: tip SDKs para otros lenguajes
 Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.
@@ -13,7 +13,7 @@ Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro 
 
 ## SDK de Liquid
 
-El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channels](/guides/channels/) en cualquiera de las secciones que utilicen el lenguaje de marcado de [Liquid](/guides/channels/liquid-markup.html), como [Widgets](/guides/channels/widgets.html) y [Plantillas](/guides/channels/templates.html) del sitio.
+El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channels](/platform/channels/) en cualquiera de las secciones que utilicen el lenguaje de marcado de [Liquid](/platform/channels/liquid-markup.html), como [Widgets](/platform/channels/widgets.html) y [Plantillas](/platform/channels/templates.html) del sitio.
 
 ### Acceder a entradas de un espacio
 

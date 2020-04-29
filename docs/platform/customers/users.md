@@ -14,14 +14,14 @@ En la parte superior de la tabla, encontrarás filtros que te permitirán encont
 
 - Estado: Ver los usuarios activos e inactivos.
 - Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
-- Targets: Usuarios que se encuentran dentro de un determinado [Target](/guides/customers/targets.html)
+- Targets: Usuarios que se encuentran dentro de un determinado [Target](/platform/customers/targets.html)
 - Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
 - Búsqueda: Filtra usuarios por nombre, apellido, email y username.
 
 La opción de Filtros Avanzados abrirá un modal el cual te permitirá filtrar a los usuarios por atributos más específicos, tales como su edad, o Custom Fields. Al agregar un nuevo filtro avanzado, aparecerá automáticamente el número de coincidencias en la parte inferior izquierda del modal, al lado del botón para limpiar los filtros. Si quieres visualizar el listado de estos usuarios filtrados, solo debes hacer _click_ en el botón **Aplicar**.
 
 :::tip Tip
-Junto al botón de **Aplicar**, está el botón **Guardar como Target**. Este guardará los filtros que aplicaste en un nuevo Target, al cual deberás darle un título y una descripción. Posteriormente lo podrás encontrar en la sección [Targets](/guides/customers/targets.html)
+Junto al botón de **Aplicar**, está el botón **Guardar como Target**. Este guardará los filtros que aplicaste en un nuevo Target, al cual deberás darle un título y una descripción. Posteriormente lo podrás encontrar en la sección [Targets](/platform/customers/targets.html)
 :::
 
 En la tabla misma, es posible ordenar los usuarios por sus valores respectivos haciendo _click_ en las cabeceras de cada una de las siguientes columnas:
@@ -52,7 +52,7 @@ Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguie
 Para enviar la contraseña al mail del usuario, solo es necesario marcar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo al usuario creado con su contraseña, que podrá cambiar al ingresar a la plataforma.
 :::
 
-Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/guides/customers/users.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/guides/customers/users.html#formulario-de-registro). Por otro lado, también existen **Campos Personalizados**, los que se pueden crear y modificar en la sección [Campos Personalizados](/guides/customers/users.html#campos-personalizados).
+Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/platform/customers/users.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/platform/customers/users.html#formulario-de-registro). Por otro lado, también existen **Campos Personalizados**, los que se pueden crear y modificar en la sección [Campos Personalizados](/platform/customers/users.html#campos-personalizados).
 
 
 ### Importar usuarios
@@ -72,13 +72,13 @@ Los atributos mínimos requeridos para la importación son el nombre real del us
 A la derecha, en una barra lateral, podrás ver configuraciones principales de la importación. Acá puedes definir si el archivo no sigue uno de los estándares comunes de los archivos \*.CSV, puedes fijar la codificación en la que se encuentra el archivo, y también definir separación de los atributos (el cual por defecto es una coma). Un poco más abajo hay un recuadro que indica si ya has seleccionado los atributos principales requeridos para la importación (nombre y correo electrónico). El botón para **Comenzar la importación** sólo se habilitará una vez que hayas incluído dichos campos para ser importados. Finalmente, cuatro opciones principales de la importación:
 
 - Activar cuenta de usuario
-- Activar cuenta y enviar correo electrónico (personalizable en [Correos](/guides/customers/users.html#correos))
+- Activar cuenta y enviar correo electrónico (personalizable en [Correos](/platform/customers/users.html#correos))
 - Agregar a usuarios a sitios
 - Actualizar usuarios (en caso de que ya estén registrados en la plataforma)
 
 Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
 
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/guides/customers/users.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/guides/customers/users.html#configuracion-de-customers).
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/platform/customers/users.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/platform/customers/users.html#configuracion-de-customers).
 
 
 ### Ficha de Usuarios
@@ -110,13 +110,13 @@ Cabe notar que no se trata de un seguimiento a la navegación de un usuario dent
 
 #### Formularios
 
-Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma. Al hacer _click_ sobre alguno de ellos, te lleva a ver las respuestas del usuario en dicho formulario. Si quieres saber más al respecto de los formularios, entra a la sección [Formularios](/guides/customers/forms.html).
+Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma. Al hacer _click_ sobre alguno de ellos, te lleva a ver las respuestas del usuario en dicho formulario. Si quieres saber más al respecto de los formularios, entra a la sección [Formularios](/platform/customers/forms.html).
 
 ### Órdenes
 
 En esta sección podrás ver todas las órdenes de compra y transacciones que ha realizado el usuario a través de la plataforma, si es que se encuentra habilitada una tienda eCommerce.
 
-Si quieres saber más sobre cómo funciona la tienda, entra a la [sección Órdenes](/guides/commerce/orders.html).
+Si quieres saber más sobre cómo funciona la tienda, entra a la [sección Órdenes](/platform/commerce/orders.html).
 
 ### Credenciales
 
@@ -124,7 +124,7 @@ Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado 
 
 Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía. Caso contrario, si el usuario utiliza alguna integración como LDAP, o Google, dicha información se desplegará en este panel.
 
-Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/guides/platform/integration.html).
+Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/platform/platform/integration.html).
 
 ### Notas
 
@@ -138,7 +138,7 @@ Si es necesario añadir o cambiar datos del usuario, es posible hacerlo desde ac
 Al modificar un usuario, puede que cambie el listado de Targets a los que pertenece.
 :::
 
-Para más información, puedes ir a [Campos Personalizados](/guides/customers/users.html#campos-personalizados).
+Para más información, puedes ir a [Campos Personalizados](/platform/customers/users.html#campos-personalizados).
 
 
 ----
@@ -157,13 +157,13 @@ El color primario es el que se muestra en los principales botones del manejo de 
 
 #### Mostrar el logo
 
-Esta opción permite mostrar el logo configurado para la cuenta en las vistas de sesión, el cual se desplegará sobre los formularios respectivos de dichas vistas. Para cambiar el logo, debes acceder la [Interfaz de Modyo](/guides/platform/the-modyo-interface.html).
+Esta opción permite mostrar el logo configurado para la cuenta en las vistas de sesión, el cual se desplegará sobre los formularios respectivos de dichas vistas. Para cambiar el logo, debes acceder la [Interfaz de Modyo](/platform/platform/the-modyo-interface.html).
 
 #### Personalizar con CSS
 
 Si quieres tener un CSS personalizado que se ajuste a las necesidades en las vistas de sesión, solo debes pegar el código en el editor que se encuentra en la ventana y hacer _click_ en el botón **Guardar**.
 
-Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno, solo tienes en el botón que está sobre el editor, y que llevará al [Gestor de Archivos](/guides/content/asset-manager.html), que permitirá subir sin problemas algún archivo que necesites.
+Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno, solo tienes en el botón que está sobre el editor, y que llevará al [Gestor de Archivos](/platform/content/asset-manager.html), que permitirá subir sin problemas algún archivo que necesites.
 
 Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subas, tienes que hacer _click_ en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en el código CSS para poder usarla.
 
@@ -217,7 +217,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/guides/platform/integration.html)
+Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/platform/platform/integration.html)
 
 ### Registros
 
@@ -226,7 +226,7 @@ El registro de clientes dentro de la plataforma, también debe ser configurado d
 Lo primero que puedes configurar es si quieres habilitar o deshabilitar las credenciales de la plataforma.
 
 ::: warning Atención
-Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/guides/platform/integration.html)
+Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/platform/platform/integration.html)
 :::
 
 También puedes habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.
@@ -294,5 +294,5 @@ Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar
 :::
 
 ::: tip Tip
-Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/guides/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
+Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/platform/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
 :::
