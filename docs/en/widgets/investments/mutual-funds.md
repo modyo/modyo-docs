@@ -6,15 +6,22 @@ search: true
 
 Modyo offers a widget that displays information on available mutual funds and transactions made by the client, in addition to providing the ability to trade online through the platform.
 
+#### Installation:
+
+```bash
+modyo-cli get modyo-widgets-investments-mutual-funds
+```
+
 [Open in new tab](https://widgets.modyo.com/inversiones/fondos-mutuos)
+
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/fondos-mutuos" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad           | Descripción                                                                                                                                                                                                                                                                                                 |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mutual Fund Layout | Shows all the available mutual funds. Lists the transactions currently in transit associated with each mutual fund. Shows the position, or set of mutual funds in which clients have their investments and the respective market information. Allows for the cancellation of operations in transit. |
-| Market Information  | Displays the essential information of the selected mutual fund. Allows clients to contribute or withdraw from the selected fund/series.                                                                                                                                                                              |
-| Mutual Fund Contribution   | Allows clients to make contributions to the selected mutual fund, defining the investment account and the amount they wish to contribute.                                                                                                                                                                                    |
-| Mutual Fund Withdrawal  | Allows clients to perform money withdrawals from the selected mutual fund.                                                                                                                                                                                                                                      |
+| Funcionalidad            | Descripción                                                                                                                                                                                                                                                                                         |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mutual Fund Layout       | Shows all the available mutual funds. Lists the transactions currently in transit associated with each mutual fund. Shows the position, or set of mutual funds in which clients have their investments and the respective market information. Allows for the cancellation of operations in transit. |
+| Market Information       | Displays the essential information of the selected mutual fund. Allows clients to contribute or withdraw from the selected fund/series.                                                                                                                                                             |
+| Mutual Fund Contribution | Allows clients to make contributions to the selected mutual fund, defining the investment account and the amount they wish to contribute.                                                                                                                                                           |
+| Mutual Fund Withdrawal   | Allows clients to perform money withdrawals from the selected mutual fund.                                                                                                                                                                                                                          |
 
 <script>
 

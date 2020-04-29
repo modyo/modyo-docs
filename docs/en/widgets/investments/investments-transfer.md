@@ -6,12 +6,19 @@ search: true
 
 This widget exists so that clients can transfer funds between their investment accounts and their current registered account.
 
+#### Installation:
+
+```bash
+modyo-cli get modyo-widgets-investments-transfer
+```
+
 [Open in new tab](https://widgets.modyo.com/inversiones/transferencia)
+
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/transferencia" width="100%" frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"/>
 
-| Feature | Description                                                                                                                                                      |
-|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Transfer    | Allows clients to transfer funds between investment accounts. Allows the request of a transfer of funds to the client's current accounts, previously registered. |
+| Feature  | Description                                                                                                                                                      |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Transfer | Allows clients to transfer funds between investment accounts. Allows the request of a transfer of funds to the client's current accounts, previously registered. |
 
 <script>
 
