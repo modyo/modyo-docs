@@ -65,7 +65,8 @@ module.exports = {
                       "/guides/platform/integration",
                       "/guides/platform/roles",
                       "/guides/platform/security",
-                      "/guides/platform/api"                                        
+                      "/guides/platform/api",
+                      "/guides/platform/rfm"                                        
                       ]
                   },
                   {
@@ -203,7 +204,8 @@ module.exports = {
                       "/en/guides/platform/integration",
                       "/en/guides/platform/roles",
                       "/en/guides/platform/security",
-                      "/en/guides/platform/api"                                        
+                      "/en/guides/platform/api",
+                      "/guides/platform/rfm"                                        
                       ]
                   },
                   {
