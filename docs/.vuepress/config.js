@@ -65,8 +65,7 @@ module.exports = {
                       "/guides/platform/integration",
                       "/guides/platform/roles",
                       "/guides/platform/security",
-                      "/guides/platform/api",
-                      "/guides/platform/rfm"                                        
+                      "/guides/platform/api"                                       
                       ]
                   },
                   {
@@ -111,7 +110,7 @@ module.exports = {
                     children: [
                       ["/guides/insights/","Introducción"],
                       "/guides/insights/digital-factory",
-                      "/guides/insights/customers"
+                      "/guides/insights/data-studio"
                     ]
                   }
                 ],
@@ -204,8 +203,7 @@ module.exports = {
                       "/en/guides/platform/integration",
                       "/en/guides/platform/roles",
                       "/en/guides/platform/security",
-                      "/en/guides/platform/api",
-                      "/en/guides/platform/rfm"                                        
+                      "/en/guides/platform/api"                                   
                       ]
                   },
                   {
@@ -250,7 +248,7 @@ module.exports = {
                     children: [
                       ["/en/guides/insights/","Introduction"],
                       "/en/guides/insights/digital-factory",
-                      "/en/guides/insights/customers"
+                      "/en/guides/insights/data-studio"
                     ]
                   }
                 ],
