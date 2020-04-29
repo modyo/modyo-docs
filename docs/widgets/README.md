@@ -12,21 +12,21 @@ Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás u
 
 Un **widget** es un componente aislado que empaqueta su propio marcado (`html`), estilo (`css`) y javascript de manera que pueda ser desplegado como parte de cualquier página web sin tener errores de runtime o conflictos con los estilos o el javascript de la página que lo aloja.
 
-En otras palabras, un **widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar multiples aplicaciones javascript en una página.
+En otras palabras, un **widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
 
 Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crear tu galería de widgets a través del [widget builder](https://develop.docs.modyo.com/guides/channels/widgets.html) y las herramientas necesarias para poder desarrollarlas usando el [modyo-cli](https://www.npmjs.com/package/@modyo/cli) o el [SDK de javascript](https://www.npmjs.com/package/@modyo/sdk).
 
-Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular** o **React**. En el caso de los **widgets financieros**, nosotros decidimos usar **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana momentum, entre otras cosas), pero tu y tu equipo pueden ocupar Angular o React.
+Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular** o **React**. En el caso de los **widgets financieros**, nosotros decidimos usar **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero tú y tu equipo pueden ocupar Angular o React.
 
 ### ¿Por qué usar un widget de este catálogo?
 
 El catálogo de widgets financieros están diseñados para acelerar el desarrollo de tus experiencias digitales porque te ofrecen componentes interactivos para que los personalices y los ensambles en flujos que se adapten a tu negocio.
 
-Los widgets financieros entregan de caja:
+Los widgets financieros entregan de la caja:
 
 - **UX** pensado para facilitar la interacción de usuarios
 - **Accesibilidad básica** (como contraste de colores adecuados, uso de tamaños tipográficos legibles, estructura semántica, etc)
-- **Internacionalización y localización de textos y monedas**. Por defecto cada widget vienen en inglés y español, pero tienen toda la infraestructura necesaria para personalizar los idiomas que trae o agregar más idiomas apara que se adapte a la necesidad de tu negocio. Si son desplegados en Modyo, los widgets detectan el idioma configurado para el sitio
+- **Internacionalización y localización de textos y monedas**. Por defecto cada widget viene en inglés y español, pero tiene toda la infraestructura necesaria para personalizar los idiomas que trae o agregar más idiomas para que se adapte a la necesidad de tu negocio. Si son desplegados en Modyo, los widgets detectan el idioma configurado para el sitio
 - **Validaciones para formularios, fechas**
 - **Estilos planos para una fácil personalización** con nuestro sistema de diseño descargabla en PDF [desde aquí](/assets/pdf/Widget_Modyo.pdf) que usa **Sass** y librerías populares como [bootstrap](https://getbootstrap.com/) o font awesome
 
@@ -49,10 +49,10 @@ $ modyo-cli --version
 
 Con el `modyo-cli` instalado ya puedes crear widgets y desplegarlos en un sitio Modyo.
 
-Sin embargo, para poder usar los widgets de este catálogo, necesitas tu, y tu organización, un paso extra que obtener un token que te permitirá tener acceso a todos los widgets.
+Sin embargo, para poder usar los widgets de este catálogo, necesitas tú, y tu organización, un paso extra que es obtener un token que te permitirá tener acceso a todos los widgets.
 
 :::tip Acceso a las Plantillas
-Para acceder a las plantillas de los Widgets Financieros se debe contar con un acceso válido al repositorio el cual se entrega como parte del acuerdo de licencia.
+Para acceder a las plantillas de los Widgets Financieros se debe contar con un acceso válido al repositorio que se entrega como parte del acuerdo de licencia.
 :::
 
 Ahora ya podemos descargarnos un widget del catálogo usando el `cli` de Modyo:
