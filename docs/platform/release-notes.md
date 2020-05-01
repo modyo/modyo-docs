@@ -4,6 +4,57 @@ search: true
 
 # Notas del release
 
+### 9.0.6 - 30 de Abril del 2020
+* MODYO-10692 — Error de mime-type con serviceworker de sitio
+* MODYO-10712 — Rol editor en spaces no puede abrir modo vista previa
+* MODYO-10749 — Problema de seguridad de posible javascript injection en componente UIFileUploader
+* MODYO-10763 — Indexación de entradas con autor explota cuando hay un avatar
+* MODYO-9754 — Añadir tabla de redirecciones/alias
+* MODYO-10154 — Activar soporte para FOG con Azure y Google Cloud
+* MODYO-10673 — Añadir código de autenticación en 2 pasos a login de admins
+* MODYO-10674 — Añadir password policies para usuarios administradores
+* MODYO-10675 — Añadir contenido de widgets RichText y HTML a búsquedas de páginas
+* MODYO-10679 — Error en búsqueda de templates al buscar "<a href"
+* MODYO-10694 — Error con caché en modo preview
+* MODYO-10703 — Error al reindexar custom layout pages desde el panel
+* MODYO-10761 — Error al ir a preview de una entrada por estado dirty
+* MODYO-10764 — Error en búsqueda de entries en sitios sin custom views
+* MODYO-10452 — Habilitar PWA en JS base cuando la propiedad está activada
+* MODYO-10548 — Integrar scheduler con publicación de widgets
+* MODYO-10550 — Integrar scheduler con publicación de navigation
+* MODYO-10666 — Crear servicio mock para probar webhooks en tests
+* MODYO-10680 — Error con el elemento seleccionado del menu
+* MODYO-10682 — Error con comportamiento de selectores de privacidad y targetización
+* MODYO-10693 — Titulo de página de entradas no cambia cuando se hace switch de idioma
+* MODYO-10696 — Eliminar servicio de geolocalización
+* MODYO-10699 — Vista de custom redirections no tiene tag title
+* MODYO-10704 — Usuario con rol "Site admin" no puede administrar redirecciones
+* MODYO-10713 — Controlar a nivel de frontend y API tamaño máximo de fields de entry
+* MODYO-10715 — Error con inicio de sesión pegado
+* MODYO-10716 — Mejorar JSON de entries
+* MODYO-10717 — Remove FFWithSuppression.js
+* MODYO-10719 — Añadir vista de reportes en insights
+* MODYO-10720 — Error con dropdown async
+* MODYO-10723 — Añadir google tag manager a sitios
+* MODYO-10724 — Mejorar link de correo de creación de admin
+* MODYO-10729 — Ocultar sitios y espacios en los que no tienes permisos
+* MODYO-10730 — Añadir posibilidad de eliminar sitios y espacios
+* MODYO-10731 — Arreglar selector de sitios en preview de entry builder
+* MODYO-10732 — Error de permisos en búsqueda de templates
+* MODYO-10733 — Eliminar drop de liquid de asset tipo picture
+* MODYO-10735 — Iniciar sesión en el sitio redirecciona al /me
+* MODYO-10742 — Mejoras insight data studio
+* MODYO-10746 — Corregir rutas de cambio de contraseña
+* MODYO-10747 — [GHSA-65cv-r6x7-79hv] Actualizar actionview a versión 5.2.4.2
+* MODYO-10751 — Mejoras a eliminación de sitios y spaces
+* MODYO-10752 — Añadir migración y botón para resetear roles por defecto
+* MODYO-10757 — Añadir video a insights/data
+* MODYO-10758 — Mejoras a custom views en template builder
+* MODYO-10762 — Error al publicar entries
+* MODYO-10769 — Mejoras a edit de custom views
+* MODYO-10554 — Añadir autor a serializer y liquid de entries
+* MODYO-10562 — Error con fetchs cancelados
+
 ### 9.0.5 - 19 de Marzo del 2020
 * MODYO-10683 — Arreglar migración de contenido
 * MODYO-10516 — Implementar búsqueda de contenido en sitios
