@@ -43,7 +43,11 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
-- **Espacios asociados**: Espacios relacionados que podrán mostrar sus entradas en este sitio.
+- **Borrar**: Esta opción te permite eliminar definitivamente un sitio y todo sus elementos.
+
+:::danger Peligro
+Esta opción es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del sitio. Deberás ingresar el nombre textual del sitio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al sitio ni a sus elementos.
+:::
 
 ### PWA
 

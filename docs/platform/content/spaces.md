@@ -44,10 +44,16 @@ El UID del Espacio es muy importante ya que es el atributo con el cual accedes d
 
 Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
 
-La última opción es para configurar si el autor del contenido estará visible tanto en la API pública como en el SDK de liquid. Si la opción está habilitada, entonces verás los datos del administrador que creó el contenido, y si la opción está deshabilitada, verá el autor en blanco. 
+La siguiente opción es para configurar si el autor del contenido estará visible tanto en la API pública como en el SDK de liquid. Si la opción está habilitada, entonces verás los datos del administrador que creó el contenido, y si la opción está deshabilitada, verá el autor en blanco. 
 
 :::warning Atención
 Ten en cuenta que al guardar esta opción, reindexarás todas las entradas del espacio, por lo que puede haber una ventana de tiempo en la que los cambios no se vean reflejados hasta que se terminen de reindexar las entradas del espacio.
+:::
+
+La última opción es para borrar el espacio. Esta opción te permite eliminar definitivamente un espacio y todo sus elementos.
+
+:::danger Peligro
+Esta opción es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del espacio. Deberás ingresar el nombre textual del espacio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al espacio ni a sus elementos.
 :::
 
 ### Localización
