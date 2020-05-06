@@ -59,7 +59,7 @@ La clave o _secret_ tiene un tiempo determinado de duración en segundos que se 
 
 ### Autenticación en dos pasos
 
-LA autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica proveída por la aplicación _Google Authenticator_ desde sus teléfonos.
+La autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica proveída por la aplicación _Google Authenticator_ desde sus teléfonos.
 
 Puedes descargar la aplicación para tu teléfono en los siguientes links:
 
