@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Seguridad
+# Seguridad de la plataforma
 
 ## Registros de actividad
 
