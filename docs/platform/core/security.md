@@ -27,7 +27,7 @@ En esta sección podemos configurar distintos aspectos para mejorar la seguridad
 * Token de entrega de contenido ([JWT](https://tools.ietf.org/html/rfc7519))
 * Autenticación en dos pasos
 
-<img src="/assets/img/platform/cors.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/cors.png" width="500" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Política de contraseña
 
