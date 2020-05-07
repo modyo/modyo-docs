@@ -41,14 +41,14 @@ export default {
     background-color darken(#ffe564, 35%)
   &.core
     background-color #393f4c
-  &.channels
-    background-color #1784d8
   &.content
-    background-color #ca242a
+    background-color #EC3E44
+  &.channels
+    background-color #2893E7
   &.customers
-    background-color #61a60e
+    background-color #3DC681
   &.insights
-    background-color #fd7e14
+    background-color #5A3B7E
   & + &
     margin-left 5px
 </style>
