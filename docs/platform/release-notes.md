@@ -29,9 +29,6 @@ Primer release planificado para el segundo trimestre del 2020.
 * Solo se verán los sitios en los que tienes permisos como miembro del equipo.
 * Se añade la posibilidad de [eliminar sitios](/platform/channels/sites.html#general).
 
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Se añade vista de [reportes en insights](/platform/insights/data-studio.html).
-
 <Badge text="Insights" type="insights" vertical="middle"/>
 * Se añade vista de [reportes en insights](/platform/insights/data-studio.html).
 
