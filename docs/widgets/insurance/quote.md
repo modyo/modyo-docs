@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Cotizador
+# Cotizador <Badge text="Beta" type="warn"/>
 
 #### Instalación:
 
