@@ -39,6 +39,16 @@ export default {
     background-color #DA5961 //#f66
   &.warning, &.warn, &.yellow
     background-color darken(#ffe564, 35%)
+  &.core
+    background-color #393f4c
+  &.channels
+    background-color #1784d8
+  &.content
+    background-color #ca242a
+  &.customers
+    background-color #61a60e
+  &.insights
+    background-color #fd7e14
   & + &
     margin-left 5px
 </style>
