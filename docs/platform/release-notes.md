@@ -9,7 +9,7 @@ search: true
 Primer release planificado para el segundo trimestre del 2020.
 
 ### 9.0.6 - 30 de Abril del 2020
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Se añade soporte para FOG con Azure y Google Cloud como base de instalación de Modyo.
 * Se añade integración con [Google Authenticator](/platform/core/security.html#autenticacion-en-dos-pasos) para segundo factor de autenticación de miembros del equipo.
@@ -33,7 +33,7 @@ Primer release planificado para el segundo trimestre del 2020.
 * Se añade vista de [reportes en insights](/platform/insights/data-studio.html).
 
 ### 9.0.5 - 19 de Marzo del 2020
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
@@ -42,7 +42,7 @@ Primer release planificado para el segundo trimestre del 2020.
 * Se añade el contenido a los resultados de búsqueda en sitios desde el front end.
 
 ### 9.0.4 - 12 de Marzo del 2020
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
@@ -52,7 +52,7 @@ Primer release planificado para el segundo trimestre del 2020.
 * Se añade función para forzar la publicación de widgets a través de [Modyo CLI](/platform/channels/widgets.html#comandos-disponibles).
 
 ### 9.0.3 - 02 de Marzo del 2020
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
@@ -64,7 +64,7 @@ Primer release planificado para el segundo trimestre del 2020.
 * Personalización de la reacción de un sitio cuando una url no existe, [mostrando un error 404 o redirigiendo al home](/platform/channels/sites.html#restricciones).
 
 ### 9.0.2 - 04 de Febrero del 2020
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
@@ -75,7 +75,7 @@ Primer release planificado para el segundo trimestre del 2020.
 * Mejoras de usabilidad al [asset manager](/platform/content/asset-manager.html).
  
 ### 9.0.1 - 17 de Enero del 2020
-
+&nbsp;
 <Badge text="Core" type="core"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
@@ -88,7 +88,7 @@ Primer release planificado para el segundo trimestre del 2020.
 * Se añade un listado de páginas que usan cada widget, para poder ver los efectos de un cambio en donde sea que se use.
 
 ### 9.0.0 - 19 de Diciembre del 2019
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Separación de usuarios y [miembros del equipo](/platform/core/roles.html#equipo), los que tienen acceso a la plataforma se encuentran segregados de los usuarios de la página en sí.
 * Nuevos [roles y permisos](/platform/core/roles.html).

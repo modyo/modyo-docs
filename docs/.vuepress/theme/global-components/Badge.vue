@@ -9,7 +9,7 @@ export default {
     text: String,
     vertical: {
       type: String,
-      default: 'top'
+      default: 'middle'
     }
   },
   render (h, { props, slots }) {
@@ -26,11 +26,11 @@ export default {
 <style lang="stylus" scoped>
 .badge
   display inline-block
-  font-size 14px
+  font-size 16px
   height 18px
-  line-height 18px
+  line-height 20px
   border-radius 3px
-  padding 0 6px
+  padding 2px 6px
   color white
   background-color #42b983
   &.tip, &.green
