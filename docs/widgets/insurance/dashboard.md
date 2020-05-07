@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Dashboard
+# Dashboard <Badge text="Beta" type="warn"/>
 
 #### Instalación:
 
