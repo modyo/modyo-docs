@@ -86,6 +86,13 @@ En la columna de propiedades se pueden ver:
 
 - **Nombre**: Permite cambiar el nombre del widget
 - **Tags**: Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
+- **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
+
+:::warning Atención
+Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Modyo por defecto guarda hasta 20 respaldos por cada elemento, por lo que si quieres despublicar y archivar un widget, deberás publicar 20 veces las páginas sin la referencia del widget para así poder eliminar todas las referencias del mismo. 
+
+Debido a que Modyo cuenta con las funcionalidades para [restaurar y restablecer](/platform/core/team-review.html#acciones-para-el-versionado) desde versiones pasadas, no se puede permitir eliminar un elemento que está siendo referenciado en los respaldos de otros elementos.
+:::
 
 ## Modyo CLI
 
