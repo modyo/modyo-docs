@@ -168,7 +168,6 @@ module.exports = {
               title: "Seguros",
               collapsable: true,
               children: [
-                "/widgets/insurance/",
                 "/widgets/insurance/dashboard",
                 "/widgets/insurance/quote",
               ],
@@ -303,7 +302,6 @@ module.exports = {
               title: "Insurance",
               collapsable: true,
               children: [
-                "/en/widgets/insurance/",
                 "/en/widgets/insurance/dashboard",
                 "/en/widgets/insurance/quote",
               ],
