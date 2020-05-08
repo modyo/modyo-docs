@@ -19,11 +19,8 @@ search: true
 * Variables globales: Reutiliza snippets entre sitios.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para un negocio, permitiendo luego segmentar a los clientes.
+* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
-
-<Badge text="Insights" type="insights" vertical="middle"/>
-* RFM: Segmenta usuarios de los canales digitales de manera automática y simple.
 
 ### 9.0.6 - 30 de Abril del 2020
 &nbsp;
