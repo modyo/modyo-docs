@@ -4,9 +4,26 @@ search: true
 
 # Notas del release
 
-### 9.1.0
+### 9.1.0 - Primer release planificado para el segundo trimestre del 2020.
+¿Qué esperar en esta versión?
 
-Primer release planificado para el segundo trimestre del 2020.
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Scheduler: Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
+* Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
+* Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Release manager: Agrupa y acumula publicaciones de Channels.
+* Site stages: Trabaja en un ambiente seguro pre-productivo de un sitio, sin comprometer la integridad de lo que ya está publicado en él.
+* Variables globales: Reutiliza snippets entre sitios.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para un negocio, permitiendo luego segmentar a los clientes.
+* Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+* RFM: Segmenta usuarios de los canales digitales de manera automática y simple.
 
 ### 9.0.6 - 30 de Abril del 2020
 &nbsp;
