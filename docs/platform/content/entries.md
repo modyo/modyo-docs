@@ -84,7 +84,7 @@ Si ya cuentas con [vistas de contenido en tus sitios](/platform/channels/templat
 Si el Espacio no se encuentra asociado a un sitio, sólo puedes ver el código JSON de la entrada que estás desarrollando.
 :::
 
-:::warninig Atención
+:::warning Atención
 Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
 :::
 
