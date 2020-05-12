@@ -76,15 +76,20 @@ La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. 
 
 #### Vista Previa
 
-Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios a la vez.
+Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios.
 
-Si ya se encuentra asociado a un sitio asociado, puedes ver el botón **Vista Previa en Sitio**, en el que seleccionas dónde quieres ver cómo se está desarrollando tu recurso.
-
-Para asociar un Espacio a un Sitio, debes ir a [Configuración de Sitios](/platform/channels/sites.html#configuracion-de-un-sitio).
+Si ya cuentas con [vistas de contenido en tus sitios](/platform/channels/templates.html#vistas-para-contenido), puedes ver el botón **Vista Previa en Sitio**, en el que seleccionas dónde quieres ver cómo se está desarrollando tu recurso.
 
 ::: danger Atención
-
 Si el Espacio no se encuentra asociado a un sitio, sólo puedes ver el código JSON de la entrada que estás desarrollando.
+:::
+
+:::warninig Atención
+Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
+:::
+
+:::warning Atención
+Puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-fame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
 :::
 
 #### Editar una entrada
