@@ -190,8 +190,8 @@ Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/platfor
 Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
 
 1. La vista debe estar creada y publicada. 
-2. La URL a la que se está accediendo es del tipo `site_url/type_uid/entry_slug`.
-3. El `type_uid` es el UID del tipo de contenido que quieres mostrar.
+2. La URL a la que se está accediendo es del tipo `site_url/custom_view_name/entry_slug`.
+3. El `custom_view_name` es el nombre de la vista de contenido creaste.
 4. La URL coincide con el nombre de la vista que acabas de crear. 
 5. Ya existe una entrada publicada en el idioma del sitio. 
 6. El slug de la entrada es `entry_slug`.
