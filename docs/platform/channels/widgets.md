@@ -96,109 +96,121 @@ Debido a que Modyo cuenta con las funcionalidades para [restaurar y restablecer]
 
 ## Modyo CLI
 
-**Modyo CLI** es una herramienta de líneas de comando, que sirve para generar un ambiente que permita trabajar localmente con widgets de Modyo. 
+La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
 
-### Introducción
+### Introduction
 
-Primero, se debe instalar la CLI de Modyo globalmente para tener el comando `modyo-cli` disponible.
+Primero, necesita instalar la CLI de Modyo globalmente en su máquina local para tener disponible el comando `modyo-cli`, esto le permitirá inicializar un proyecto con algunas decisiones arquitectónicas de front-end ya tomadas, o usar para inicializar un widget desde catálogo si tiene acceso.
 
-Si usas npm:
+Para instalar el modyo-cli globalmente, debe usar una de estas opciones
 
-```plain
-npm i -g @modyo/cli
+```bash
+$ npm i -g @modyo/cli #via npm
+$ yarn global add @modyo/cli #via yarn
 ```
 
-Usando yarn:
+> Este comando hará que el comando modyo-cli esté disponible en la sesión de terminal globalmente
 
-```plain
-yarn global add @modyo/cli
+Los comandos disponibles son get, push y help
+
+- [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
+- [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
+- [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
+- [`modyo-cli push NAME`](#modyo-cli-push-name)
+
+### `modyo-cli (-v|--version|version)`
+Imprima la versión `modyo-cli`
+
+```bash
+$ modyo-cli (-v|--version|version)
+modyo-cli/3.0.6 darwin-x64 node-v12.13.1
 ```
 
-### Crear un proyecto
+### `modyo-cli help [COMMAND]`
 
-La CLI de Modyo está diseñada para trabajar con uno o más widgets de un proyecto o estructuras que funcionan como un contenedor. Luego de crear un proyecto, tendrás la posibilidad de crear, editar y eliminar widgets localmente.
+```bash
+USAGE
+  $ modyo-cli help [COMMAND]
 
-Para crear un proyecto:
-
-```plain
-# Lo ideal es que se nombren proyectos en formato `PascalCase`
-modyo-cli project create <projectName>
-cd projectName
-modyo-cli project start
+ARGUMENTS
+  get   Pull a widget from our catalog into a new directory
+  help  Display help for modyo-cli
+  push  Push widget to Modyo platform
 ```
 
-El proyecto debe tener por lo menos un widget para correr el servidor.
+### Obtenga una plantilla para un proyecto
 
-### La sesión de Modyo
+La CLI de Modyo está diseñada para funcionar en base a una arquitectura de micro front-end y acelerará el proceso de inicialización de un widget, con decisiones modyo.
 
-Para poder hacer `push` de los widgets a la plataforma **Modyo** y obtener los archivos de dependencias del sitio, tienes que contar con una sesión en la cuenta en que planeas desplegar widgets. Para eso, debes usar el siguiente comando:
+### `modyo-cli get NAME [DIRECTORY]`
 
-```plain
-modyo-cli login
+En general, el comando `get` se usa para obtener una plantilla de widget.
+Si tiene un token proporcionado por Modyo, puede usar el mismo comando para extraer cualquiera de nuestros widgets premium de nuestra Biblioteca de widgets:
+
+```bash
+USAGE
+  $ modyo-cli get NAME [DIRECTORY]
+
+ARGUMENTS
+  NAME       The name of the widget
+  DIRECTORY  Name of directory to init
+
+OPTIONS
+  -f, --force       Override folder if exist
+  -h, --help        Output usage information
+  -x, --no-install  Don't install packages
+
+EXAMPLE
+  $ modyo-cli get name [directory]
 ```
 
-### Trabajando con widgets
+>Hay algunas plantillas de widgets públicos a los que se puede acceder a través de este comando
 
-Para añadir un nuevo widget al proyecto, usa el siguiente comando:
-
-```plain
-# Lo ideal es que puedas nombrar los widgets con formato `PascalCase`
-modyo-cli widget add <widgetName>
+```bash
+  EJEMPLOS
+    $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
+    $ modyo-cli get modyo-widgets-project-vue [DIRECTORY] #to initialize a base project library
 ```
 
-Para iniciar el servidor de desarrollo, usa el siguiente comando:
+>Desde este comando y en adelante, puede continuar utilizando el widget como cualquier otro widget vue-cli.
 
-```plain
-modyo-cli widget start <name>
-# También puedes usar este comando sin pasar el nombre, en ese caso, se desplegará una lista de widgets disponibles.
+### `modyo-cli push NAME`
+
+El comando `push` es el encargado del principio de integración, utilizado para enviar el widget al sitio seleccionado en la plataforma modyo.
+
+Utilizará un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token site_base id o host para identificar la plataforma ®Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
+
+```bash
+USAGE
+  $ modyo-cli push NAME
+
+ARGUMENTS
+  NAME  The name of the widget
+
+OPTIONS
+  -b, --build-command=build-command      [default: build] Build command in package.json
+  -d, --build-directory=build-directory  [default: dist] Build directory path
+  -h, --help                             Output usage information
+  -i, --site-id=site-id                  Id of the site where the widget will be push
+  -n, --site-host=site-host              Host of the site where the widget will be push
+  -p, --publish                          Force widget publication
+  -t, --token=token                      (required) Modyo Api token
+  -u, --account-url=account-url          (required) URL of your ®Modyo account ex("https://account.modyo.com")
+  -v, --version=8|9                      [default: 9] Version of Modyo platform
+
+EXAMPLE
+  $ modyo-cli push <NAME>
 ```
 
-### Comandos disponibles
+>Muchas de las opciones se pueden definir como variables de entorno o dentro de un archivo .env que se recomienda para evitar la publicación en el registro de github porque puede contener información delicada
 
-| Comando                 | Descripción                                         |
-|-------------------------|-----------------------------------------------------|
-| `project`               | Muestra ayuda para el comando project               |
-| `project create <name>` | Crea un proyecto                                    |
-| `project start`         | Inicia el servidor desarrollo con todos los widgets creados|
-| `project login`         | Obtiene la cookie de sesión desde la plataforma Modyo|
-| `project logout`        | Revoca el token de sesión de Modyo|
-| `widget`                | Muestra la ayuda para el comando widget|
-| `widget add <name>`     | Añade un widget al proyecto|
-| `widget start <name>`   | Inicia el servidor de desarrollo en el modo standalone|
-| `widget delete <name>`  | Elimina un widget existente|                |
-| `widget push <name>`    | Envía un widget a la plataforma Modyo|
-| `widget push --all`     | Envía todos los widgets a la plataforma Modyo|
-| `widget push --force`   | Fuerza el envío de widgets|
-| `help <command>`        | Muestra la ayuda para un comando en específico|
-
-### Problemas comunes
-
-#### `TypeError: Cannot read property 'vue' of undefined`
-
-Debes forzar la versión `14.2.2` del paquete `vue-loader`
-
-#### `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
-
-Cuando inicias `modyo-cli demo <widget_name>` un error como este puede ocurrir `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
-
-Para arreglar este error, modifica en el archivo `node_modules\vue-loader\lib\template-compiler/index.jx` y reemplaza:
-
-```javascript
-// prettify render fn
-    if (!isProduction) {
-      code = prettier.format(code, { semi: false})
-    }
+```bash
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_VERSION=version
+MODYO_TOKEN=token
+MODYO_ACCOUNT_URL=account-url
+MODYO_SITE_ID=siteId
+MODYO_SITE_HOST=siteHost
+MODYO_BUILD_COMMAND=buildCommand
+MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```
-
-por:
-
-```javascript
-// prettify render fn
-if (!isProduction) {
-  code = prettier.format(code, { semi: false, parser: 'babylon' })
-}
-```
-
-[Según este array en StackOverflow](https://stackoverflow.com/questions/50561649/module-build-failed-error-no-parser-and-no-file-path-given-couldnt-infer-a-p)
-
-Este error ya fue arreglado en `vue-loader`, pero aún no ha sido desplegado un [Pull Request].(https://github.com/vuejs/vue-loader/pull/1323/files)
