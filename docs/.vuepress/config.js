@@ -7,22 +7,26 @@ module.exports = {
     "/": {
       lang: "es", // this will be set as the lang attribute on <html>
       title: "Documentación de Modyo",
-      description: "Bienvenido al centro de referencia de Modyo"
+      description: "Bienvenido al centro de referencia de Modyo",
     },
     "/en/": {
       lang: "en",
       title: "Modyo Docs",
-      description: "Welcome to the Modyo reference center"
-    }
+      description: "Welcome to the Modyo reference center",
+    },
   },
   head: [
-    ['script', {}, `
+    [
+      "script",
+      {},
+      `
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MW9VKMC');
-    `],
+    `,
+    ],
   ],
   themeConfig: {
     logo: "/assets/img/modyo.png",
@@ -31,7 +35,7 @@ module.exports = {
     activeHeaderLinks: true,
     algolia: {
       apiKey: "d6d3315d4f9b9a8a5f7870a8bd10d187",
-      indexName: "modyo"
+      indexName: "modyo",
     },
     locales: {
       "/": {
@@ -41,7 +45,7 @@ module.exports = {
           { text: "Plataforma", link: "/platform/" },
           { text: "Widgets", link: "/widgets/" },
           { text: "Modyo", link: "https://es.modyo.com" },
-          { text: "Soporte", link: "https://support.modyo.com/hc/es" }
+          { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
         sidebar: {
           "/platform/": [
@@ -53,16 +57,16 @@ module.exports = {
                 "/platform/whats-new",
                 "/platform/key-concepts",
                 "/platform/versions",
-                "/platform/release-notes"
-              ]
+                "/platform/release-notes",
+              ],
             },
             {
               title: "Cloud",
               collapsable: true,
               children: [
                 ["/platform/cloud/", "Introducción"],
-                "/platform/cloud/security"
-              ]
+                "/platform/cloud/security",
+              ],
             },
             {
               title: "Core",
@@ -74,8 +78,8 @@ module.exports = {
                 "/platform/core/integration",
                 "/platform/core/roles",
                 "/platform/core/security",
-                "/platform/core/api"
-              ]
+                "/platform/core/api",
+              ],
             },
             {
               title: "Content",
@@ -86,8 +90,8 @@ module.exports = {
                 "/platform/content/types",
                 "/platform/content/entries",
                 "/platform/content/asset-manager",
-                "/platform/content/public-api-reference"
-              ]
+                "/platform/content/public-api-reference",
+              ],
             },
             {
               title: "Channels",
@@ -99,8 +103,8 @@ module.exports = {
                 "/platform/channels/navigation",
                 "/platform/channels/widgets",
                 "/platform/channels/templates",
-                "/platform/channels/liquid-markup"
-              ]
+                "/platform/channels/liquid-markup",
+              ],
             },
             {
               title: "Customers",
@@ -110,24 +114,24 @@ module.exports = {
                 "/platform/customers/users",
                 "/platform/customers/targets",
                 "/platform/customers/forms",
-                "/platform/customers/messaging"
-              ]
+                "/platform/customers/messaging",
+              ],
             },
             {
               title: "Insights",
               collapsable: true,
               children: [
-                ["/platform/insights/","Introducción"],
+                ["/platform/insights/", "Introducción"],
                 "/platform/insights/digital-factory",
-                ["/platform/insights/data-studio","Data Studio"]
-              ]
-            }
+                ["/platform/insights/data-studio", "Data Studio"],
+              ],
+            },
           ],
           "/widgets/": [
             {
               title: "Catálogo",
               collapsable: false,
-              children: [["/widgets/", "Introducción"]]
+              children: [["/widgets/", "Introducción"]],
             },
             {
               title: "Personas",
@@ -142,8 +146,8 @@ module.exports = {
                 "/widgets/retail/mortgage-loans",
                 "/widgets/retail/cash-advance",
                 "/widgets/retail/transfer",
-                "/widgets/retail/transfers"
-              ]
+                "/widgets/retail/transfers",
+              ],
             },
             {
               title: "Inversiones",
@@ -157,21 +161,24 @@ module.exports = {
                 "/widgets/investments/deposits",
                 "/widgets/investments/documents",
                 "/widgets/investments/mutual-funds",
-                "/widgets/investments/stocks"
-              ]
+                "/widgets/investments/stocks",
+              ],
             },
-            /*{
+            {
               title: "Seguros",
               collapsable: true,
-              children: ["/widgets/insurance/"]
-            },*/
+              children: [
+                "/widgets/insurance/dashboard",
+                "/widgets/insurance/quote",
+              ],
+            },
             /*{
               title: "Onboarding",
               collapsable: true,
               children: ["/widgets/onboarding/"]
             }*/
-          ]
-        }
+          ],
+        },
       },
       "/en/": {
         selectText: "Languages",
@@ -180,7 +187,7 @@ module.exports = {
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
           { text: "Modyo", link: "https://www.modyo.com" },
-          { text: "Support", link: "https://support.modyo.com/hc/en-us" }
+          { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],
         sidebar: {
           "/en/platform/": [
@@ -192,8 +199,8 @@ module.exports = {
                 "/en/platform/whats-new",
                 "/en/platform/key-concepts",
                 "/en/platform/versions",
-                "/en/platform/release-notes"
-              ]
+                "/en/platform/release-notes",
+              ],
             },
             {
               title: "Core",
@@ -205,8 +212,8 @@ module.exports = {
                 "/en/platform/core/integration",
                 "/en/platform/core/roles",
                 "/en/platform/core/security",
-                "/en/platform/core/api"
-              ]
+                "/en/platform/core/api",
+              ],
             },
             {
               title: "Content",
@@ -217,8 +224,8 @@ module.exports = {
                 "/en/platform/content/types",
                 "/en/platform/content/entries",
                 "/en/platform/content/asset-manager",
-                "/en/platform/content/public-api-reference"
-              ]
+                "/en/platform/content/public-api-reference",
+              ],
             },
             {
               title: "Channels",
@@ -230,8 +237,8 @@ module.exports = {
                 "/en/platform/channels/navigation",
                 "/en/platform/channels/widgets",
                 "/en/platform/channels/templates",
-                "/en/platform/channels/liquid-markup"
-              ]
+                "/en/platform/channels/liquid-markup",
+              ],
             },
             {
               title: "Customers",
@@ -241,24 +248,24 @@ module.exports = {
                 "/en/platform/customers/users",
                 "/en/platform/customers/targets",
                 "/en/platform/customers/forms",
-                "/en/platform/customers/messaging"
-              ]
+                "/en/platform/customers/messaging",
+              ],
             },
             {
               title: "Insights",
               collapsable: true,
               children: [
-                ["/en/platform/insights/","Introduction"],
+                ["/en/platform/insights/", "Introduction"],
                 "/en/platform/insights/digital-factory",
-                ["/en/platform/insights/data-studio","Data Studio"]
-              ]
-            }
+                ["/en/platform/insights/data-studio", "Data Studio"],
+              ],
+            },
           ],
           "/en/widgets/": [
             {
               title: "Catalog",
               collapsable: false,
-              children: [["/en/widgets/", "About widgets"]]
+              children: [["/en/widgets/", "About widgets"]],
             },
             {
               title: "Retail",
@@ -273,8 +280,8 @@ module.exports = {
                 "/en/widgets/retail/mortgage-loans",
                 "/en/widgets/retail/cash-advance",
                 "/en/widgets/retail/transfer",
-                "/en/widgets/retail/transfers"
-              ]
+                "/en/widgets/retail/transfers",
+              ],
             },
             {
               title: "Investments",
@@ -288,23 +295,26 @@ module.exports = {
                 "/en/widgets/investments/deposits",
                 "/en/widgets/investments/documents",
                 "/en/widgets/investments/mutual-funds",
-                "/en/widgets/investments/stocks"
-              ]
+                "/en/widgets/investments/stocks",
+              ],
             },
-            /* {
+            {
               title: "Insurance",
               collapsable: true,
-              children: ["/en/widgets/insurance/"]
-            }, */
+              children: [
+                "/en/widgets/insurance/dashboard",
+                "/en/widgets/insurance/quote",
+              ],
+            },
 
-           /*  {
+            /*  {
               title: "Onboarding",
               collapsable: true,
               children: ["/en/widgets/onboarding/"]
             }, */
-          ]
-        }
-      }
-    }
-  }
+          ],
+        },
+      },
+    },
+  },
 };
