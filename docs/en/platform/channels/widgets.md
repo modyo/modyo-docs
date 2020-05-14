@@ -99,109 +99,122 @@ The **Properties** on the right contains the following fields:
 
 ## Modyo CLI
 
-The Modyo Command Line Interface (CLI) is a command line tool developers use to generate local environments to work on and update Modyo widgets.
+The Modyo Command Line Interface (CLI) is a command line tool based in two principles acceleration and integration, and this principles has a command get and push respectively.
 
 ### Introduction
 
-First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available.
+First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some Front end architectural decisions already taken, or use to initialize a widget from the catalog if you have access.
 
-**NPM**:
+To install the modyo-cli globally you must use one of this options
 
-``` plain
-npm i -g @ modyo/cli
+```bash
+  $ npm i -g @modyo/cli #via npm
+  $ yarn global add @modyo/cli #via yarn
 ```
 
-**Yarn**:
+> This command will make the command modyo-cli available on the terminal session globally
 
-``` plain
-yarn global add @ modyo/cli
+The available commands are get, push and help
+
+- [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
+- [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
+- [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
+- [`modyo-cli push NAME`](#modyo-cli-push-name)
+
+### `modyo-cli (-v|--version|version)`
+
+Print the `modyo-cli` version
+
+```bash
+  $ modyo-cli (-v|--version|version)
+  modyo-cli/3.0.6 darwin-x64 node-v12.13.1
 ```
 
-### Create a project
+### `modyo-cli help [COMMAND]`
 
-The Modyo CLI is designed to work with one or more widgets in a project or in structures that function as a container. After creating a project, you can create, edit and delete widgets locally.
+```shell
+USAGE
+  $ modyo-cli help [COMMAND]
 
-To create a project:
-
-``` plain
-# We recommend you name your projects using `PascalCase` format
-modyo-cli project create <projectName>
-cd projectName
-modyo-cli project start
+ARGUMENTS
+  get   Pull a widget from our catalog into a new directory
+  help  Display help for modyo-cli
+  push  Push widget to Modyo platform
 ```
 
-The project must have at least one widget for the server to run.
+### Get a template for a project
 
-### The Modyo session
+The Modyo CLI is designed to work based on micro front-end architecture, and will accelerate the process of initialization of a widget, with modyo decisions.
 
-To be able to push your widgets to the Modyo platform and obtain the relevant site dependency files, you need to have a session in the account in which you plan to deploy your widgets. For that, you must use the following command:
+### `modyo-cli get NAME [DIRECTORY]`
 
-``` plain
-modyo-cli project login
+In general, the `get` command is used to obtain a boilerplate widget.
+If you have a token provided by Modyo, the same command can be used to pull any of our premium widgets from our Widget Library.:
+
+```bash
+USAGE
+  $ modyo-cli get NAME [DIRECTORY]
+
+ARGUMENTS
+  NAME       The name of the widget
+  DIRECTORY  Name of directory to init
+
+OPTIONS
+  -f, --force       Override folder if exist
+  -h, --help        Output usage information
+  -x, --no-install  Don't install packages
+
+EXAMPLE
+  $ modyo-cli get name [directory]
 ```
 
-### Working with widgets
+>there are some public widget names that can be accessed via this command
 
-To add a new widget to the project, use the following command:
-
-``` plain
-# We recommend you name your widgets using `PascalCase` format
-modyo-cli widget add <widgetName>
+```bash
+  EXAMPLE
+    $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
+    $ modyo-cli get modyo-widgets-project-vue [DIRECTORY] #to initialize a base project library
 ```
 
-To start the development server, use the following command:
+>From this command and on you can continue using the widget like any other vue-cli widget.
 
-``` plain
-modyo-cli widget start <name>
-# You can also use this command without passing the the widget name. This displays a list of available widgets.
+### `modyo-cli push NAME`
+
+The `push` command is the one in charge of the integration principle, used to send the widget to the selected site in the modyo platform.
+
+It will use an argument called name to upload the widget to the platform and some required flags like token site_base id or host to can identify the ®Modyo platform which host the widget and have an additional flag to avoid the manual process flow of widget publication.
+
+```bash
+USAGE
+  $ modyo-cli push NAME
+
+ARGUMENTS
+  NAME  The name of the widget
+
+OPTIONS
+  -b, --build-command=build-command      [default: build] Build command in package.json
+  -d, --build-directory=build-directory  [default: dist] Build directory path
+  -h, --help                             Output usage information
+  -i, --site-id=site-id                  Id of the site where the widget will be push
+  -n, --site-host=site-host              Host of the site where the widget will be push
+  -p, --publish                          Force widget publication
+  -t, --token=token                      (required) Modyo Api token
+  -u, --account-url=account-url          (required) URL of your ®Modyo account ex("https://account.modyo.com")
+  -v, --version=8|9                      [default: 9] Version of Modyo platform
+
+EXAMPLE
+  $ modyo-cli push <NAME>
 ```
 
-### Commands available
+>Many of the options can be defined as environment variables or inside of an .env file that is recommended to avoid the publication to the github registry because can contain some delicate information
 
-| Command | Description |
-|-------------------------|-----------------------------------------------------|
-| `project` | Show help for the project |
-| `project create <name>` | Create a project |
-| `project start` | Start the development server with all widgets created |
-| `project login` | Get the session cookie from the Modyo platform |
-| `project logout` | Revoke the Modyo session token |
-| `widget` | Show help for the widget command |
-| `widget add <name>` | Add a widget to the project |
-| `widget start <name>` | Start the development server in standalone mode |
-| `widget delete <name>` | Remove an existing widget | |
-| `push widget <name>` | Send a widget to the Modyo platform |
-| `push --all widget` | Send all widgets to the Modyo platform |
-| `push --force widget` | Force sending widgets |
-| `help <command>` | Show help for a specific command |
-
-### Common problems
-
-#### `TypeError: Cannot read property 'vue' of undefined`
-
-You must force the `14.2.2` version of the` vue-loader` package
-
-#### `No parser and no filepath given, using 'babylon' the parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
-
-When you start `modyo-cli demo <widget_name>` you may see the error `No parser and no filepath given, using the 'babylon' parser now but this will throw an error in the future. Please specify a parser or a filepath so one can be inferred.`
-
-To fix this error, modify the file `node_modules\vue-loader\lib\template-compiler/index.jx` and replace:
-
-``` javascript
-//prettify render fn
-    if (! isProduction) {
-      code=prettier.format (code, {semi: false})
-    }
+```bash
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_VERSION=version
+MODYO_TOKEN=token
+MODYO_ACCOUNT_URL=account-url
+MODYO_SITE_ID=siteId
+MODYO_SITE_HOST=siteHost
+MODYO_BUILD_COMMAND=buildCommand
+MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```
-
-with:
-
-``` javascript
-//prettify render fn
-if (! isProduction) {
-  code=prettier.format (code, {semi: false, parser: 'babylon'})
-}
-```
-
-[According to this fix on StackOverflow](https://stackoverflow.com/questions/50561649/module-build-failed-error-no-parser-and-no-file-path-given-couldnt-infer-a-p)
-
-This error has already been fixed in `vue-loader`, but has not yet been deployed—[Pull Request](https://github.com/vuejs/vue-loader/pull/1323/files)
