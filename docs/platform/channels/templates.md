@@ -167,13 +167,11 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
 
 ```html
 <div>
-  <h1 class="title">{{ entry.title }}</h1>
+  <h1 class="title">{{ entry.name }}</h1>
   <time>{{ entry.published_at | format_date }}</time>
-  <span class="url"
-    ><a href="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
-      >{{site.url}}/{{entry.type_uid}}/{{entry.slug}}</a
-    ></span
-  >
+  <span class="url">
+    <a href="{{request.url}}">{{request.url}}</a>
+    </span>
 </div>
 
 <div>
