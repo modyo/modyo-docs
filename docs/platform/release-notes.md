@@ -4,7 +4,7 @@ search: true
 
 # Notas del release
 
-### 9.1.0 - Primer release planificado para el segundo trimestre del 2020.
+### 9.1.X - Primer release planificado para el segundo trimestre del 2020.
 ¿Qué esperar en esta versión?
 
 &nbsp;
@@ -17,13 +17,11 @@ search: true
 * Release manager: Agrupa y acumula publicaciones de Channels.
 * Site stages: Trabaja en un ambiente seguro pre-productivo de un sitio, sin comprometer la integridad de lo que ya está publicado en él.
 * Variables globales: Reutiliza snippets entre sitios.
+* Mejoras a SEO: Personaliza los meta-tags para tus páginas desde una interfaz fácil de usar.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para un negocio, permitiendo luego segmentar a los clientes.
+* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
-
-<Badge text="Insights" type="insights" vertical="middle"/>
-* RFM: Segmenta usuarios de los canales digitales de manera automática y simple.
 
 ### 9.0.6 - 30 de Abril del 2020
 &nbsp;

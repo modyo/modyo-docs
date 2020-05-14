@@ -65,3 +65,7 @@ Puedes descargar la aplicación para tu teléfono en los siguientes links:
 
 * Android: [Google Authenticator en Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
 * iOS: [Google Authenticator en Apple App Store](https://apps.apple.com/us/app/google-authenticator/id388497605)
+
+Cada miembro del equipo podrá activar la autenticación en dos pasos desde su perfil, pero además, como administrador, puedes forzar la autenticación en dos pasos para todos los miembros del equipo. 
+
+Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
