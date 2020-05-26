@@ -170,6 +170,10 @@ module.exports = {
               children: [
                 "/widgets/insurance/dashboard",
                 "/widgets/insurance/quote",
+                "/widgets/insurance/detailed-view",
+                "/widgets/insurance/issue-policy",
+                "/widgets/insurance/products",
+                "/widgets/insurance/results",
               ],
             },
             /*{
@@ -304,6 +308,10 @@ module.exports = {
               children: [
                 "/en/widgets/insurance/dashboard",
                 "/en/widgets/insurance/quote",
+                "/en/widgets/insurance/detailed-view",
+                "/en/widgets/insurance/issue-policy",
+                "/en/widgets/insurance/products",
+                "/en/widgets/insurance/results",
               ],
             },
 
