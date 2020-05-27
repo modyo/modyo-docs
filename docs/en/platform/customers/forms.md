@@ -17,7 +17,7 @@ From this list you can also access the individual analysis view, by clicking on 
 
 To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
-## New Form
+## Create a Form
 
 To create a new form, click on the main action at the top right "+ New". This will take you to the creation view of a new form, where you must fill in its main attributes:
 
