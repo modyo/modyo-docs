@@ -16,7 +16,7 @@ Desde este listado también puedes acceder a la vista de análisis individual, h
 
 Para habilitar o deshabilitar los formularios y permitir que usuario puedan o no enviar sus respuestas, debes ir a la vista de análisis y seleccionar la acción respectiva entre las opciones desplegadas en la sección superior derecha.
 
-## Nuevo Formulario
+## Crear Formulario
 
 Para crear un nuevo formulario, haz _click_ en la botón principal arriba a la derecha **+ Nuevo**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
 
