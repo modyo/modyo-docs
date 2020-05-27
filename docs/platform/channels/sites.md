@@ -41,6 +41,7 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/platform/channels/templates.html#vistas-para-contenido).
 - **[Revisión en Equipo](/platform/core/team-review.html)**
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
+- **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de google. 
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
 - **Borrar**: Esta opción te permite eliminar definitivamente un sitio y todo sus elementos.
@@ -48,6 +49,48 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 :::danger Peligro
 Esta opción es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del sitio. Deberás ingresar el nombre textual del sitio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al sitio ni a sus elementos.
 :::
+
+#### Google Tag Manager
+
+Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ y en las vistas _home_ y _base_. 
+
+En caso de tener instalado un tema antiguo y no contar con estos snippets, acá podrás acceder al código para poder crearlos como snippets personalizados y poder incrustar fácilmente Google Tag Manager a tu sitio.
+
+1. Crea un snippet personalizado con el siguiente código y luego incrusta el snippet en el head del sitio usando `{% snippet "gtm-head" %}`, reemplazando "gtm-head" por el nombre que le diste al snippet.
+
+**Google Tag Manager para el _head_**
+```liquid
+{% if site.tag_manager_id != '' %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
+<!-- End Google Tag Manager -->
+
+{% endif %}
+```
+
+2. Crea un snippet personalizado con el siguiente código y luego insértalo dentro de los tags body de las vistas home y base usando `{% snippet "gtm-body" %}`, reemplazando "gtm-body" por el nombre que le diste al snippet.
+
+**Google Tag Manager para el _body_**
+```
+{% if site.tag_manager_id != '' %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
+style="display:none;visibility:hidden">
+</iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% endif %}
+```
+
+Con esto listo, cuando haya un valor asociado al campo **Identificador de Google Tag Manager** de la configuración General del sitio, los scripts se inyectarán de forma automática y podrás comenzar a crear eventos en Google Tag Manager para registrar acciones de tus usuarios.
 
 ### PWA
 
