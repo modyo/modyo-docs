@@ -52,7 +52,7 @@ Esta opción es irreversible, por lo que debes estar completamente seguro al eje
 
 #### Google Tag Manager
 
-Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ y en las vistas _home_ y _base_. 
+Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_. 
 
 En caso de tener instalado un tema antiguo y no contar con estos snippets, acá podrás acceder al código para poder crearlos como snippets personalizados y poder incrustar fácilmente Google Tag Manager a tu sitio.
 
