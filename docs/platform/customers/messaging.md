@@ -38,7 +38,7 @@ A un costado de cada campaña, se encuentra un botón en el que podremos efectua
 Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
 :::
 
-### Hacer una campaña
+### Crear una campaña
 
 Para hacer una campaña, debemos hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la vista del Administrador.
 
