@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Messenger service
+# Messaging
 
 Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific targets.
 
