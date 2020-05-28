@@ -12,12 +12,12 @@ Create new quotes in a custom stepper based on your business needs. Create restr
 modyo-cli get modyo-widgets-insurance-quote
 ```
 
-[Open in new tab](https://widgets.modyo.com/insurance/quote)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/quote)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/quote" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/quote" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Feature            | Description                                                                                                                                                            |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Stepper            | Personalize the desired steps in the quote in a fast and organized way. quote.                                                                                         |
 | Form customization | Configure the form fields and required data for the quote. Save information per product and facilitate the creation of new quotes.                                     |
 | Validations        | Integrate restrictive lists in the data validations, georeferencing the risks aligned with business interests.                                                         |
