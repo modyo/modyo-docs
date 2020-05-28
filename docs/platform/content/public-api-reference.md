@@ -684,9 +684,9 @@ Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables m
   - `.../entries?meta.updated_at[lt]=1987-11-19`
   - `.../entries?meta.published_at[gt]=1987-11-19`
 - Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
-  - Locations: la búsqueda será por queryString (match a street_name, country, admin_area_levels) o por geohash, ej: 
-    - `.../?fields.locations=Chile`
-    - `.../?fields.locations[geohash]=66j`
+  - Ubicación: la búsqueda será por queryString (y se buscará en los campos street_name, country, admin_area_levels) o por geohash. En ambos casos debes cambiar `{{field_name}}` por el nombre del campo de ubicación del tipo de contenido
+    - `.../?fields.{{field_name}}[search]=chile`. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` Ésta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero si toma en cuenta los espacio, tildes y carácteres especiales.
+    - `.../?fields.{{field_name}}[geohash]=66j`. Con el campo llamado `location` quedaría: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 
 ###### Filtro de idiomas
@@ -708,6 +708,7 @@ Las principales operaciones sobre campos son:
 - [in] = permite incluir varios valores que entran en una consulta tipo OR
 - [has] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
 - [nin] = permite incluir varios valores, que entran en una consulta NOT IN
+- [search] = permite búsquedas de texto dentro de todos los atributos de las ubicaciones de una entrada.
 - [geohash] = permite búsquedas usando un lat-long geohash en base 32, par más información consultar https://www.movable-type.co.uk/scripts/geohash.html .
 
 Ejemplo:
