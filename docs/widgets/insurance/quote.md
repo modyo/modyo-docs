@@ -12,12 +12,12 @@ Crea nuevas cotizaciones en un stepper personalizado según las necesidades de t
 modyo-cli get modyo-widgets-insurance-quote
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/cotizador)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/cotizador)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/cotizador" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/cotizador" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                  | Descripción                                                                                                                                                                              |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Stepper                        | Personaliza de forma rápida y organizada los pasos que quieres para tu cotizador.                                                                                                        |
 | Personalización de formularios | Configura los formularios y los datos que requieres según el cotizador. Guarda información según el producto y facilita la creación de nuevas cotizaciones.                              |
 | Validaciones                   | Integra en las validaciones de datos listas restrictivas, georeferenciación de los riesgos según el interés del negocio.                                                                 |

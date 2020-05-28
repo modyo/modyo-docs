@@ -172,8 +172,6 @@ module.exports = {
                 "/widgets/insurance/quote",
                 "/widgets/insurance/detailed-view",
                 "/widgets/insurance/issue-policy",
-                "/widgets/insurance/products",
-                "/widgets/insurance/results",
               ],
             },
             /*{
@@ -310,8 +308,6 @@ module.exports = {
                 "/en/widgets/insurance/quote",
                 "/en/widgets/insurance/detailed-view",
                 "/en/widgets/insurance/issue-policy",
-                "/en/widgets/insurance/products",
-                "/en/widgets/insurance/results",
               ],
             },
 

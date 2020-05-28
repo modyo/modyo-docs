@@ -12,12 +12,12 @@ Este widget de Modyo permitirá tener una vista general de las cotizaciones, pó
 modyo-cli get modyo-widgets-insurance-dashboard
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/dashboard)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/dashboard)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad       | Descripción                                                                                                                                                                                                              |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Buscador            | Facilita la búsqueda de información a través de datos claves de las cotizaciones y las pólizas. Personaliza las opciones o escoje búsquedas según el ID del producto, Nombre del tomador, o números de documento.        |
 | Filtro de fecha     | Personaliza el calendario de resultados y optimiza los llamados al servicio de consulta según el interés de consulta de los usuarios o según los periodos de tiempo establecidos por los equipos legales.                |
 | Tabla de resultados | Configura según el dispositivo y la necesidad del negocio los datos clave para mostrar un resumen de la información importante de las cotizaciones, pólizas y renovaciones.                                              |
