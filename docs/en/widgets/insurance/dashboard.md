@@ -12,12 +12,12 @@ This Modyo widget allows you to have an overview of the quotes, policies and pol
 modyo-cli get modyo-widgets-insurance-dashboard
 ```
 
-[Open in new tab](https://widgets.modyo.com/insurance/dashboard)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/dashboard)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Feature       | Description                                                                                                                                                                                |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Search tool   | Facilitates the search for information through key data from quotes and policies. Customize options or choose searches by product ID, policy holder name, or document numbers.             |
 | Date filter   | Personalizes the results and optimizes consultation service calls based on user interest in consultation or based on the time periods established by legal teams.                          |
 | Results table | Configure key data according to the device and business need to show a summary of important information on quotes, policies and renewals.                                                  |
