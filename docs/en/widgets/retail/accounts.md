@@ -13,9 +13,9 @@ With this widget you can see a summary of your bank accounts, pull out cards and
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Open in new tab](https://widgets.modyo.com/personas/retail-accounts)
+[Open in new tab](https://widgets.modyo.com/retail/retail-accounts)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-accounts" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/retail-accounts" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 #### Checking Account
 

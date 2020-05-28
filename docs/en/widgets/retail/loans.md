@@ -13,14 +13,14 @@ Modyo also offers a widget that allows you to see an overview of the loans that 
 modyo-cli get modyo-widgets-retail-loans
 ```
 
-[Open in new tab](https://widgets.modyo.com/personas/retail-loans)
+[Open in new tab](https://widgets.modyo.com/retail/retail-loans)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-loans" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/retail-loans" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/>
 
-| Functionality       | Description                                                                                                                                                                                                                 |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Loan Summary | Displays information on the loans that the customer has currently, such as type of loan, name and application number.                                                                                                       |
-| Loan Details | When you select view details, this displays detailed information about the loan, including outstanding balance, date awarded, end date, and loan type payment amount. Includes information on upcoming due dates. |
+| Functionality | Description                                                                                                                                                                                                       |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Loan Summary  | Displays information on the loans that the customer has currently, such as type of loan, name and application number.                                                                                             |
+| Loan Details  | When you select view details, this displays detailed information about the loan, including outstanding balance, date awarded, end date, and loan type payment amount. Includes information on upcoming due dates. |
 
 <script>
 
