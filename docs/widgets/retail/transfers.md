@@ -9,7 +9,7 @@ Este widget permite revisar en detalle todas las transferencias recibidas y envi
 #### Instalación:
 
 ```bash
-modyo-cli get modyo-widgets-retail-transfers-history
+modyo-cli get modyo-widgets-retail-transfer-history
 ```
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/personas/historial-de-transferencias)
