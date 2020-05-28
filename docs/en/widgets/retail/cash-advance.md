@@ -15,9 +15,9 @@ Through this widget, the client can perform different functions according to the
 modyo-cli get modyo-widgets-retail-cash-advance
 ```
 
-[Open in new tab](https://widgets.modyo.com/retail/retail-cash-advance)
+[Open in new tab](https://widgets.modyo.com/retail/cash-advance)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/retail-cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
 
 The customer can select the features of their cash advance and its payment to perform the simulation.
 

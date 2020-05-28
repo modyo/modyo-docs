@@ -13,9 +13,9 @@ This widget allows you to review, in detail, all the sent and received transacti
 modyo-cli get modyo-widgets-retail-transfers-history
 ```
 
-[Open in new tab](https://widgets.modyo.com/retail/retail-transfers)
+[Open in new tab](https://widgets.modyo.com/retail/transfers)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/retail-transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Feature                       | Description                                                                                                                                                                           |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -13,9 +13,9 @@ This widget allows you to make a simulation of a mortgage loan and start the app
 modyo-cli get modyo-widgets-retail-mortgage-loan
 ```
 
-[Open in new tab](https://widgets.modyo.com/retail/retail-mortgage-loan)
+[Open in new tab](https://widgets.modyo.com/retail/mortgage-loan)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/retail-mortgage-loan" width="100%"  frameBorder="0" style="min-height:860px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/mortgage-loan" width="100%"  frameBorder="0" style="min-height:860px;overflow:auto;margin-top:20px;"/>
 
 | Feature            | Description                                                                                                                                                                                                             |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
