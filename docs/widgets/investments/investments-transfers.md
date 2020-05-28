@@ -9,12 +9,12 @@ Modyo ofrece un widget que presenta todos los datos relevantes sobre las operaci
 #### Instalación:
 
 ```bash
-modyo-cli get modyo-widgets-investments-transfers-history
+modyo-cli get modyo-widgets-investments-transfer-history
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/transferencias)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/historico-de-transferencias)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/historico-de-transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad           | Descripción                                                                                                                           |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |

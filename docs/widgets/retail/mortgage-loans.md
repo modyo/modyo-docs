@@ -12,9 +12,9 @@ Este widget permite hacer una simulación de un crédito hipotecario y comenzar 
 modyo-cli get modyo-widgets-retail-mortgage-loan
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-mortgage-loan)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/creditos-hipotecarios)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-mortgage-loan" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad         | Descripción                                                                                                                                                                                                               |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
