@@ -12,9 +12,9 @@ Este widget permite hacer una simulación de un crédito de consumo y comenzar l
 modyo-cli get modyo-widgets-retail-consumer-loan
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-consumer-loan)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/credito-de-consumo)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/credito-de-consumo" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad         | Descripción                                                                                                                                                                 |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

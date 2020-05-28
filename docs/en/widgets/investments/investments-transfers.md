@@ -9,12 +9,12 @@ Modyo offers a widget that presents all the relevant data about the user's stock
 #### Installation:
 
 ```bash
-modyo-cli get modyo-widgets-investments-transfers-history
+modyo-cli get modyo-widgets-investments-transfer-history
 ```
 
-[Open in new tab](https://widgets.modyo.com/inversiones/transferencias)
+[Open in new tab](https://widgets.modyo.com/investments/transfer-history)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/transferencias" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/transfer-history" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Feature               | Description                                                                                                                             |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |

@@ -13,9 +13,9 @@ Transfers is a wigdet that allows a customer to move money between their account
 modyo-cli get modyo-widgets-retail-transfer
 ```
 
-[Open in new tab](https://widgets.modyo.com/personas/retail-transfer)
+[Open in new tab](https://widgets.modyo.com/retail/transfer)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
 
 This widget is divided into features for two similar products: Transfer to Third Party and Transfer between Accounts.
 

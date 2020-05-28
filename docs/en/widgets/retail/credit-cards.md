@@ -13,9 +13,9 @@ Modyo offers a widget that allows customers to view their credit card details an
 modyo-cli get modyo-widgets-retail-credit-cards
 ```
 
-[Open in new tab](https://widgets.modyo.com/personas/retail-credit-cards)
+[Open in new tab](https://widgets.modyo.com/retail/credit-cards)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Functionality       | Description                                                                                                                                                                                                          |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

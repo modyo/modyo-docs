@@ -13,9 +13,9 @@ The platform offers a credit card payment widget, allowing customers to perform 
 modyo-cli get modyo-widgets-retail-credit-card-payment
 ```
 
-[Open in new tab](https://widgets.modyo.com/personas/retail-credit-card-payment)
+[Open in new tab](https://widgets.modyo.com/retail/credit-card-payment)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-card-payment" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 To complete a payment, the default options available to customers are:
 

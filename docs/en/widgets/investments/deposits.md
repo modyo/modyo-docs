@@ -12,9 +12,9 @@ The Deposits widget allows the user to easily and quickly upload funds to their 
 modyo-cli get modyo-widgets-investments-deposits
 ```
 
-[Open in new tab](https://widgets.modyo.com/inversiones/depositos)
+[Open in new tab](https://widgets.modyo.com/investments/deposits)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/depositos" width="100%" frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/deposits" width="100%" frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/>
 
 | Feature | Description                                                                                                      |
 | ------- | ---------------------------------------------------------------------------------------------------------------- |

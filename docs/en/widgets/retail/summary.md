@@ -13,9 +13,9 @@ The Account Summary widget allows you to review detailed information of your fin
 modyo-cli get modyo-widgets-retail-summary
 ```
 
-[Open in new tab](https://widgets.modyo.com/personas/summary)
+[Open in new tab](https://widgets.modyo.com/retail/summary)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/personas/summary" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/summary" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 ### Purpose
 

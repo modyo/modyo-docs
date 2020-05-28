@@ -12,9 +12,9 @@ La plataforma ofrece un widget de pago de tarjeta de crédito, con tal de que el
 modyo-cli get modyo-widgets-retail-credit-card-payment
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-credit-card-payment)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/pagos-de-tarjeta-de-credito)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-credit-card-payment" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/pagos-de-tarjeta-de-credito" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 Para realizar la transacción, el cliente verá predeterminadamente:
 
