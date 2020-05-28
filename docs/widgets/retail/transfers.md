@@ -12,9 +12,9 @@ Este widget permite revisar en detalle todas las transferencias recibidas y envi
 modyo-cli get modyo-widgets-retail-transfers-history
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-transfers)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/historial-de-transferencias)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-transfers" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/historial-de-transferencias" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                    | Descripción                                                                                                                                                                                       |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

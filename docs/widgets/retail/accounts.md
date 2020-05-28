@@ -12,9 +12,9 @@ Con este widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-accounts)
+[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/cuentas)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-accounts" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 #### Cuenta Corriente
 
