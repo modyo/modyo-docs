@@ -22,7 +22,7 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio d
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 {% for entry in entries %}
-  entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
 ```
 
@@ -35,7 +35,7 @@ Si se quiere filtrar las entradas, se hace a través de los siguientes atributos
   | by_category: 'news'
   | by_tag : 'tag1, tag2, tag3' %}
 {% for entry in entries %}
-  entry: {{ entry.uuid }} -- {{ entry.title }}<br />
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
 ```
 
@@ -52,7 +52,7 @@ Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los li
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
 <ul>
   {% for entry in entries %}
-  <li>{{ entry.slug }}</li>
+  <li>{{ entry.meta.slug }}</li>
   {% endfor %}
 </ul>
 {{ entries | pagination_links }}
@@ -84,15 +84,27 @@ Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `
 Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
 
 ```
-{{ entry['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
 ```
 
 El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
 
 ```
-{{ entry['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
 
+:::tip Tip
+Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
+:::
+
+:::warning Atención
+Desde la versión 9.0.7 en adelante, la forma correcta de llamar a los atributos de las entradas es diferenciándolas a través de la meta información o de los fields personalizados de la entrada, de tal forma que:
+
+* Los campos pertenecientes a la meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora debe usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>
+* Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>
+
+Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
+:::
 ## SDK de Javascript
 
 El **SDK de Modyo** es una librería que facilita la interacción de aplicaciones basadas en JavaScript con la API pública de Modyo.
