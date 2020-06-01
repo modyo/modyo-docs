@@ -23,6 +23,26 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.0.7 - 01 de Junio del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Mejoras a gestión y cuotas de planes.
+* Se añade vista vacía de [mis tareas](/platform/core/the-modyo-interface.html).
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se cambia modo [vista previa](/platform/content/entries.html#vista-previa) para que por defecto siempre use los templates editables.
+* Se añaden nueva vistas cuando no hay elementos creados en [entradas](/platform/content/entries.html), [tipos](/platform/content/types.html), [categorías](/platform/content/entries.html#categorias) y [espacios](/platform/content/spaces.html).
+* Se añade [operador "search"](/platform/content/public-api-reference.html#filtros-2) para búsqueda en los campos de ubicación de las entradas.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade un ejemplo al crear [vistas de contenido](/platform/channels/templates.html#vistas-para-contenido).
+* Se deja públicos los archivos [manifest.json y serviceworker.js](/platform/channels/sites.html#pwa), mientras que se fuerza privacidad de archivos [robots.txt y sitemap.xml](/platform/channels/sites.html#seo).
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/platform/customers/users.html), [targets](/platform/customers/targets.html), [formularios](/platform/customers/forms.html) y [campañas](/platform/customers/messaging.html).
+
 ### 9.0.6 - 30 de Abril del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
