@@ -37,7 +37,7 @@ What to expect in this release?
 * The [search operator](/en/platform/content/public-api-reference.html#filters-2) is added to search the location fields of the entries.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* An example is added when creating [content views](/en/platform/channels/templates.html#content views).
+* An example is added when creating [content views](/en/platform/channels/templates.html#content-views).
 * The files [manifest.json and serviceworker.js](/en/platform/channels/sites.html#pwa) are left public, while privacy is forced on files [robots.txt and sitemap.xml](/en/platform/channels/sites.html#seo).
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -48,7 +48,7 @@ What to expect in this release?
 <Badge text="Core" type="core" vertical="middle"/>
 * FOG support is added with Azure and Google Cloud as a base for Modyo installation.
 * Added integration with [Google Authenticator](/en/platform/core/security.html) for second team member authentication factor.
-* Added [password policies](/en/platform/core/security.html#contrast policy) for team members.
+* Added [password policies](/en/platform/core/security.html#password-policy) for team members.
 * Multiple bugs solved.
 * Multiple navigation and usability improvements.
 
@@ -119,7 +119,7 @@ What to expect in this release?
 * Added functionality to [preview content](/en/platform/content/entries.html#preview) on sites, despite being headless, when using content on a Modyo site you can use the tool to preview that content.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Functionality is added to create [custom content views](/en/platform/channels/templates.html#content views) on sites.
+* Functionality is added to create [custom content views](/en/platform/channels/templates.html#content-views) on sites.
 * A list of pages using each widget is added, so you can see the effects of a change wherever it is used.
 
 ### 9.0.0 - December 19, 2019
