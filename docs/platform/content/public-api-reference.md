@@ -31,9 +31,7 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio d
 Si se quiere filtrar las entradas, se hace a través de los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries
-  | by_category: 'news'
-  | by_tag : 'tag1, tag2, tag3' %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag : 'tag1, tag2, tag3' %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
@@ -100,11 +98,12 @@ Para usar los atributos de las entradas, puedes usar la notación con punto o co
 :::warning Atención
 Desde la versión 9.0.7 en adelante, se llamarán a los atributos de las entradas según su meta información o sus fields personalizados, de tal forma que:
 
-* Los campos pertenecientes a la meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora debe usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>
-* Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>
+* Los campos pertenecientes a la meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora debe usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
+* Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
 
 Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
 :::
+
 ## SDK de Javascript
 
 El **SDK de Modyo** es una librería que facilita la interacción de aplicaciones basadas en JavaScript con la API pública de Modyo.

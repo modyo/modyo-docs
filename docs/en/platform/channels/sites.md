@@ -38,9 +38,59 @@ Within this section, you can configure the following data:
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content. 
 - **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/team-review.html).
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
+- **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily insert the scripts to make use of the google event logging tool. 
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
 - **Linked spaces**: Select spaces to link to this digital channel. Changes in any content from a linked space automatically update within your channel. By contrast, changes to content in non-linked spaces will only update within your channel after a given time. Depending on your session activity and account deployment type, the time to update is usually between 5 to 30 minutes.
+- **Delete**: This option allows you to permanently delete a site and all its elements.
+
+:::danger Danger
+This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the site. You will have to enter the textual name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its elements again.
+:::
+
+#### Google Tag Manager
+
+By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets can be found in the _snippets>general_ section of the [Template builder](/en/platform/channels/templates.html) and are embedded into both the _head_ snippet and the _home_ and _base_ views. 
+
+If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section on the top right and click on the "Load templates" option in the additional options on the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed. 
+
+In case you have an old theme installed and do not have these snippets, here you can access the code to create them as custom snippets and easily embed Google Tag Manager to your site.
+
+Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
+
+**Google Tag Manager for the _head_**
+```liquid
+{% if site.tag_manager_id != '' %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
+<!-- End Google Tag Manager -->
+
+{% endif %}
+```
+
+2. Create a custom snippet with the following code and then insert it into the body tags of the home and base views using `{% snippet "gtm-body" %}`, replacing "gtm-body" with the name you gave the snippet.
+
+**Google Tag Manager for the _body_**
+```
+{% if site.tag_manager_id != '' %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
+style="display:none;visibility:hidden">
+</iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% endif %}
+```
+
+With this ready, when there's a value associated with the **Google Tag Manager Identifier** field in the General site settings, the scripts will be automatically injected and you'll be able to start creating events in Google Tag Manager to record your users' actions.
 
 ### PWA
 

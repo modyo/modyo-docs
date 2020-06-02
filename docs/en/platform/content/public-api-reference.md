@@ -23,7 +23,7 @@ To access the list of entries of a type with the uid `type_uid` and of a space w
 ``` liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 {% for entry in entries %}
-  entry: {{ entry.uuid }} - {{ entry.title }} <br/>
+  entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
 {% endfor %}
 ```
 
@@ -32,19 +32,17 @@ To access the list of entries of a type with the uid `type_uid` and of a space w
 If we want to filter the entries, we can do so by the following attributes: by_uuid, by_category, by_type, by_tag, by_lang. Every response contains an array of values, so it is possible to filter by one value or several, as follows:
 
 ``` liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries
-  | by_category='news'
-  | by_tag='tag1, tag2, tag3' %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category='news' | by_tag='tag1, tag2, tag3' %}
 {% for entry in entries %}
-  entry: {{ entry.uuid }} - {{ entry.title }} <br/>
+  entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
 {% endfor %}
 ```
 
 The entries selection always returns an array. To access a particular entry in the array, you need to use the `first` attribute to access the first element, or filter by a single uuid:
 
 ``` liquid
-{% assign entries=spaces ['space_uid']. types ['type_uid']. entries | by_uuid='entry_uuid'%}
-{% assign entry=entries.first%}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid='entry_uuid'%}
+{% assign entry = entries.first %}
 ```
 
 You can use a `for` loop to iterate over the array, and you can paginate the entries using the `paginated` filter and display the pagination links with the `pagination_links` filter, for example:
@@ -53,7 +51,7 @@ You can use a `for` loop to iterate over the array, and you can paginate the ent
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10%}
 <ul>
   {% for entry in entries%}
-  <li> {{entry.slug}} </li>
+  <li> {{entry.meta.slug}} </li>
   {% endfor%}
 </ul>
 {{entries | pagination_links}}
@@ -74,14 +72,27 @@ To use pagination in a custom widget, you must change the filter associated with
 For entries with Location fields you can easily generate maps with the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the `Locations` field with a size of 600x300px, a level 5 zoom, with a map type 'roadmap' and with a custom icon.
 
 ```
-{{entry['Locations'] | static_map: '600x300', 5, 'roadmap', 'https://goo.gl/5y3S82'}}
+{{entry.fields['Locations'] | static_map: '600x300', 5, 'roadmap', 'https://goo.gl/5y3S82'}}
 ```
 
 The `dynamic_map` filter accepts an additional attribute to control the visibility of the zoom, drag and full screen controls.
 
 ```
-{{entry['Locations'] | dynamic_map: '600x300', 5, 'roadmap', 'https://goo.gl/5y3S82', true}}
+{{entry.fields['Locations'] | dynamic_map: '600x300', 5, 'roadmap', 'https://goo.gl/5y3S82', true}}
 ```
+
+:::tip Tip
+To use the attributes of the entries, you can use either dotted or bracketed notation, so <span v-pre>`{{ entry.meta.slug }}`</span>, returns the same value as <span v-pre>`{{ entry.meta['slug'] }}`</span>, and if you have a field called 'location', you can use it as much as <span v-pre>`{{ entry.fields.location' }}`</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span>
+:::
+
+:::warning Warning
+From version 9.0.7 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
+
+* Fields belonging to the meta-information of the entry that were previously used as <span v-pre>`{{ entry.slug }}`</span> must now be used as <span v-pre>`{{ entry.meta.slug }}`</span> or <span v-pre>`{{ entry.meta['slug'] }}`</span>
+* Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
+
+Both forms will be available until Modyo version 9.2.
+:::
 
 ## Javascript SDK
 
@@ -543,8 +554,10 @@ Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the for
   - `.../entries?meta.updated_at[lt]=1987-11-19`
   - `.../entries?meta.published_at[gt]=1987-11-19`
 - Fields: Searches through ElasticSearch, for example:
-  - Locations: searches by queryString (match a street_name, country, admin_area_levels), ex: `fields.location_name=Chile`
-  - `.../entries?fields.color=black`
+  - Location: the search will be by queryString (and will be searched in the fields street_name, country, admin_area_levels) or by geohash. In both cases you must change <span v-pre>`{{field_name}}`</span> to the name of the location field of the content type
+    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. With the field called `location` it would be: `.../?fields.location[search]=chile`. This search does not take into account capital letters or small letters, but it does take into account spaces, titles and special characters.
+    - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. With the field called `location` it would be: `.../?fields.location[geohash]=66j`
+  - `.../entries?fields.color=black`
 
 ###### Language filter
 
@@ -561,10 +574,11 @@ Header: Set Accept-Language en_CL
 
 The main operations on fields are:
 
-- [gt],[lt]=greater/less than, applicable in integers and dates
-- [in]=allows you to include several values that input an OR type query
+- [gt],[lt]=greater/less than, applicable in integers and dates.
+- [in]=allows you to include several values that input an OR type query.
 - [all]=allows you to include several values, which input an AND type query, only works in multiple fields and text.
-- [nin]=allows you to include several values, which input a NOT IN query
+- [nin]=allows you to include several values, which input a NOT IN query.
+- [search] = allows text searches within all attributes of the locations of an entry.
 - [geohash]=allows searches using a lat-long geohash in base 32, for more information consult https://www.movable-type.co.uk/scripts/geohash.html.
 
 Example:
