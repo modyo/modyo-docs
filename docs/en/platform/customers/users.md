@@ -270,7 +270,7 @@ All **Custom Fields** have certain standard properties:
 - **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In the event that the field is also visible and editable by users, this fields will appear on the registration form and will be required to create new users.
 - **Visible to front end users**: It implies that it will be visible in the profile view.
 - **Editable by front end users**: It implies that if it is visible, in addition, the user can modify its value.
-- **Searchable by admins**: It implies that this value will be indexed and users can be found when searched for the value of that field.
+- **Searchable by admins**: It implies that this value will be indexed and users can be found when searched in the users index for the value of that field.
 
 In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then they can be used by administrators and depending on their configuration, they will be available to users. If a **Custom Field** is disabled, then it will not appear on any form, but its values will remain saved.
 

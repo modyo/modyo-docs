@@ -285,7 +285,7 @@ Todos los **Custom Fields** tienen ciertas propiedades estándar:
 - **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
 - **Visible para usuarios**: Implica que será visible en la vista profile.
 - **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar su valor.
-- **Buscable por administradores**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al ser buscados por el valor de ese campo.
+- **Buscable por administradores**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al ser buscados desde el indice de usuarios del administrador de Modyo, por el valor de ese campo.
 
 Además de lo anterior, los **Custom Fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom Field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
 
