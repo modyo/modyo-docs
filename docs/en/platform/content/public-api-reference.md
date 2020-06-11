@@ -16,6 +16,15 @@ At the moment there is only an SDK for Javascript. In the future, we plan to inc
 
 The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/platform/channels/) in any of the sections of the platform that use the [Liquid](/en/platform/channels/liquid-markup.html) markup language, like [Widgets](/en/platform/channels/widgets.html) and [Templates](/en/platform/channels/templates.html) in your sites.
 
+:::warning Warning
+From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
+
+* Fields belonging to the meta-information of the entry that were previously used as <span v-pre>`{{ entry.slug }}`</span> must now be used as <span v-pre>`{{ entry.meta.slug }}`</span> or <span v-pre>`{{ entry.meta['slug'] }}`</span>
+* Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
+
+Both forms will be available until Modyo version 9.2.
+:::
+
 ### Access entries in a space
 
 To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
@@ -83,15 +92,6 @@ The `dynamic_map` filter accepts an additional attribute to control the visibili
 
 :::tip Tip
 To use the attributes of the entries, you can use either dotted or bracketed notation, so <span v-pre>`{{ entry.meta.slug }}`</span>, returns the same value as <span v-pre>`{{ entry.meta['slug'] }}`</span>, and if you have a field called 'location', you can use it as much as <span v-pre>`{{ entry.fields.location' }}`</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span>
-:::
-
-:::warning Warning
-From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
-
-* Fields belonging to the meta-information of the entry that were previously used as <span v-pre>`{{ entry.slug }}`</span> must now be used as <span v-pre>`{{ entry.meta.slug }}`</span> or <span v-pre>`{{ entry.meta['slug'] }}`</span>
-* Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
-
-Both forms will be available until Modyo version 9.2.
 :::
 
 ## Javascript SDK

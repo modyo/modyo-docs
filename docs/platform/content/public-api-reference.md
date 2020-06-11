@@ -15,6 +15,15 @@ Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro 
 
 El SDK de Liquid permite consumir contenido de forma nativa desde [Modyo Channels](/platform/channels/) en cualquiera de las secciones que utilicen el lenguaje de marcado de [Liquid](/platform/channels/liquid-markup.html), como [Widgets](/platform/channels/widgets.html) y [Plantillas](/platform/channels/templates.html) del sitio.
 
+:::warning Atención
+Desde la versión 9.0.8 en adelante, se llamarán a los atributos de las entradas según su meta información o sus fields personalizados, de tal forma que:
+
+* Los campos pertenecientes a la meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora debe usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
+* Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
+
+Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
+:::
+
 ### Acceder a entradas de un espacio
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:
@@ -93,15 +102,6 @@ El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilid
 
 :::tip Tip
 Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
-:::
-
-:::warning Atención
-Desde la versión 9.0.8 en adelante, se llamarán a los atributos de las entradas según su meta información o sus fields personalizados, de tal forma que:
-
-* Los campos pertenecientes a la meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora debe usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
-* Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
-
-Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
 :::
 
 ## SDK de Javascript
