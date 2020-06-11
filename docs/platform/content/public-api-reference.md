@@ -96,7 +96,7 @@ Para usar los atributos de las entradas, puedes usar la notación con punto o co
 :::
 
 :::warning Atención
-Desde la versión 9.0.7 en adelante, se llamarán a los atributos de las entradas según su meta información o sus fields personalizados, de tal forma que:
+Desde la versión 9.0.8 en adelante, se llamarán a los atributos de las entradas según su meta información o sus fields personalizados, de tal forma que:
 
 * Los campos pertenecientes a la meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora debe usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
 * Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.

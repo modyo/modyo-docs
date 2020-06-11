@@ -86,7 +86,7 @@ To use the attributes of the entries, you can use either dotted or bracketed not
 :::
 
 :::warning Warning
-From version 9.0.7 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
+From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
 
 * Fields belonging to the meta-information of the entry that were previously used as <span v-pre>`{{ entry.slug }}`</span> must now be used as <span v-pre>`{{ entry.meta.slug }}`</span> or <span v-pre>`{{ entry.meta['slug'] }}`</span>
 * Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
