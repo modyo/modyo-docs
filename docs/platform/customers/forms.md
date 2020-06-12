@@ -153,7 +153,10 @@ Esta sección te permitirá añadir cuantos campos sean necesarios para completa
 - **Elección**: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato _radio button_.
 - **Fecha**: Te permite añadir un campo de fecha en el que el usuario podrá seleccionar una dentro del rango permitido.
 - **Preguntas anidadas**: Te permite añadir una serie de alternativas que pueden ser anidadas, de tal forma que al usuario se le solicita que seleccione una de las posibles opciones anidadas dentro de la opción que seleccionó.
-- **Archivo**: Te permite añadir un campo para solicitar que el usuario suba un archivo que quede registrado como respuesta del formulario.
+
+:::warning Atención
+Desde la versión 9.0.8 en adelante, los formularios ya no cuentan con preguntas de tipo archivos, por lo que no podrás requerir que los usuarios suban archivos usando los formularios de Modyo.
+:::
 
 Puedes eliminar uno de los campos del formulario haciendo _click_ en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
