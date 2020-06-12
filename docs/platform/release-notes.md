@@ -37,6 +37,9 @@ search: true
 * Se añade ejemplo de código al crear nuevas [vistas de contenido](/platform/channels/templates.html#vistas-para-contenido).
 * Se añade un selector de atributos de la entrada a las vistas de contenido.
 
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se eliminan las preguntas de tipo archivo en los [formularios](/platform/customers/forms.html#anadir-campo)
+
 ### 9.0.7 - 01 de Junio del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

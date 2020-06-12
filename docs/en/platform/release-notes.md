@@ -37,6 +37,9 @@ What to expect in this release?
 * Example code added when creating new [content views](/en/platform/channels/templates.html#automated-content-views)
 * An input attribute selector is added to the content views.
 
+<Badge text="Customers" type="customers" vertical="middle"/>
+* File type questions on [forms](/en/platform/customers/forms.html#add-field) are removed
+
 ### 9.0.7 - June 01, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
