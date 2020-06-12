@@ -23,6 +23,20 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.0.8 - June 15, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Se añaden mejoras de seguridad a endpoints de subida de archivos.
+* Multiple bugs solved.
+* Multiple navigation and usability improvements.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se añaden distintos drops de liquid dependiendo del tipo de archivo en el [asset manager](/platform/content/asset-manager.html#propiedades-de-los-archivos).
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade ejemplo de código al crear nuevas [vistas de contenido](/platform/channels/templates.html#vistas-para-contenido).
+* Se añade un selector de atributos de la entrada a las vistas de contenido.
+
 ### 9.0.7 - 01 de Junio del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

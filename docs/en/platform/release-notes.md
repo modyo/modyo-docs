@@ -23,6 +23,20 @@ What to expect in this release?
 * Business Events: Add any event that is relevant to your business to Modyo, then allow for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.0.8 - June 15, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Security enhancements added to file upload endpoints.
+* Multiple bugs solved.
+* Multiple navigation and usability improvements.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Different drops of liquid are added depending on the type of file in the [asset manager](/en/platform/content/asset-manager.html#file-properties).
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Example code added when creating new [content views](/en/platform/channels/templates.html#automated-content-views)
+* An input attribute selector is added to the content views.
+
 ### 9.0.7 - June 01, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
