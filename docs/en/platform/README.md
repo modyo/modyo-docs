@@ -40,4 +40,7 @@ Modyo provides a secure development environment either in the cloud or "On Premi
 
 To obtain support from the Modyo Platform, visit our [official support site](https://support.modyo.com/hc/en).
 
+### Compatible browsers
 
+Modyo in its latest version supports Google Chrome, Firefox, Opera and Microsoft Edge in their most recent versions. 
+If you have pending updates, we recommend that you upgrade your browser
