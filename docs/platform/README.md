@@ -39,7 +39,7 @@ Para obtener soporte de la Plataforma Modyo visita el [sitio oficial de soporte]
 ### Navegadores compatibles
 
 Modyo en su versión más reciente es compatible con Google Chrome, Firefox, Opera y Microsoft Edge en sus versiones mas recientes. 
-Si tienes actualizaciones pendientes, recomendamos que actualices tu navegador
+Si tienes actualizaciones pendientes, recomendamos que actualices tu navegador.
 
 
 
