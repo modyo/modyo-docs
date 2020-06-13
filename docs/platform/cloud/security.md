@@ -9,7 +9,7 @@ Modyo posee un canal seguro y confidencial de reporte de incidencias de segurida
 :::
 
 
-El siguiente documento describe la arquitectura de seguridad, políticas y procedimientos que Modyo emplea en el desarrollo de su plataforma, ejecución de servicios profesionales y de la operación en la nube de las versiones Cloud y Private Cloud de la Plataforma Modyo.
+El siguiente documento describe la arquitectura de seguridad, políticas y procedimientos que Modyo emplea en el desarrollo de su plataforma, ejecución de servicios profesionales y de la operación en la nube de las versiones Cloud y Enterprise Cloud de la Plataforma Modyo.
 
 Para cumplir con estos objetivos, Modyo debe asegurar a sus clientes que sus datos están seguros y que protegerlos es una de sus responsabilidades más importantes. Modyo está comprometido con la transparencia acerca de sus prácticas de seguridad y también con ayudar a sus clientes a comprenderlas.
 

@@ -10,11 +10,11 @@ search: true
 
 La versión Modyo Cloud consiste en un despliegue.
 
-### Modyo Private Cloud
+### Modyo Enterprise Cloud
 
-La versión Modyo Private Cloud consiste en un despliegue totalmente independiente.
+La versión Modyo Enterprise Cloud consiste en un despliegue totalmente independiente.
 
-El presente documento describe la operación en la nube que realiza Modyo para sus versiones de la plataforma Modyo Cloud y Enterprise Private Cloud,  detallando su modelo de soporte, escalamiento, performance y seguridad. 
+El presente documento describe la operación en la nube que realiza Modyo para sus versiones de la plataforma Modyo Cloud y Enterprise Cloud,  detallando su modelo de soporte, escalamiento, performance y seguridad. 
 
 Para más información acerca de las funcionalidades de Modyo y sus aplicaciones favor referirse a la documentación de la plataforma en el sitio Web https://docs.modyo.com.
 
@@ -33,7 +33,7 @@ En el caso de los clientes On Premise con contrato de soporte, el soporte Nivel 
 
 La gran mayoría de los incidentes que se reportan al Nivel 1 son automáticamente generados por los sistemas de monitoreo de infraestructura y salud de la nube. En el caso de los clientes On Premise que posean contratado algún servicio de monitoreo,  será personal de Modyo el encargado de contactar a las áreas operativas del cliente para alertar de la situación.
 
-Para todas las implementaciones de Modyo (Cloud, Enterprise Private Cloud y Enterprise On Premise),  el soporte Nivel 1 estará capacitado para ayudar a resolver temas básicos relacionados con el producto y sus funcionalidades. Cuando se detecta que la incidencia corresponde a un desarrollo o integración personalizada,  el soporte Nivel 1 se encargará internamente de escalar la situación con el equipo interno de Nivel 2 más adecuado, generando un ticket de soporte interno e indicando al cliente cómo proceder.
+Para todas las implementaciones de Modyo (Cloud, Enterprise Cloud y Enterprise On Premise),  el soporte Nivel 1 estará capacitado para ayudar a resolver temas básicos relacionados con el producto y sus funcionalidades. Cuando se detecta que la incidencia corresponde a un desarrollo o integración personalizada,  el soporte Nivel 1 se encargará internamente de escalar la situación con el equipo interno de Nivel 2 más adecuado, generando un ticket de soporte interno e indicando al cliente cómo proceder.
 
 ### Nivel 2: Especializado
 El soporte Nivel 2 de Modyo se encarga de brindar ayuda en el contexto específico de un cliente, su implementación de la plataforma y los desarrollos e integraciones realizados en ella. 
@@ -52,17 +52,17 @@ Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. 
 
 El año 2019 Modyo fue reconocido por Amazon como el Technology Partner of the Year para Chile y Perú.
 
-Las versiones de Modyo Cloud y Enterprise Private Cloud operan en una configuración de alta disponibilidad haciendo uso de al menos dos zonas de disponibilidad en la región de Virginia del Norte (us-east-1). En el caso de la última versión, Modyo 9, el despliegue se realiza en una configuración de contenedores (compatibles con Docker) que corren sobre el Amazon EC2 Container Service (ECS).
+Las versiones de Modyo Cloud y Enterprise Cloud operan en una configuración de alta disponibilidad haciendo uso de al menos dos zonas de disponibilidad en la región de Virginia del Norte (us-east-1). En el caso de la última versión, Modyo 9, el despliegue se realiza en una configuración de contenedores (compatibles con Docker) que corren sobre el Amazon EC2 Container Service (ECS).
 
 
 <img src="/assets/img/cloud/cloud_deployment.png" style="margin-top: 40px;" />
 
-Arquitectura de Modyo Cloud y Enterprise Private Cloud 
+Arquitectura de Modyo Cloud y Enterprise Cloud 
 
 
 
 ### Escalabilidad Elástica
-Los despliegues de Modyo Cloud y Private Cloud cuentan con grupos de auto escalabilidad para incrementar el número de recursos en la medida que el tráfico y la demanda se incremente. Dependiendo de la duración y naturaleza de los incrementos del uso de recursos el servicio de escalabilidad elástica podría estar sujeto a una tarifa adicional para los clientes.
+Los despliegues de Modyo Cloud y Enterprise Cloud cuentan con grupos de auto escalabilidad para incrementar el número de recursos en la medida que el tráfico y la demanda se incremente. Dependiendo de la duración y naturaleza de los incrementos del uso de recursos el servicio de escalabilidad elástica podría estar sujeto a una tarifa adicional para los clientes.
 
 ### Alta Disponibilidad
 El despliegue multi zona en Amazon AWS garantiza un excelente nivel de redundancia y disponibilidad para hacer frente a las fallas más comunes que usualmente afectan solo a una zona a la vez. En el caso poco probable que exista un fallo a nivel regional del cual Amazon AWS no entregue un tiempo de resolución aceptable se procederá a activar la región alternativa, ubicada en la costa oeste de Estados Unidos  (us-west-1).
@@ -152,7 +152,7 @@ En el caso de la versión Modyo Enterprise On Premise, una configuración simila
 Las versiones Cloud de la plataforma se configuran de forma redundante entre, al menos, dos Zonas de Amazon AWS. Cada Zona posee servicios independientes de conectividad y poder, pero se encuentran cercanas entre sí para minimizar la latencia entre ellas.
 
 ### Respaldos y Recuperación
-Las versiones Modyo Cloud y Enterprise Private Cloud son configuradas con una política de respaldos diarios automáticos a nivel de base de datos y repositorios de objetos, los cuales son almacenados en un repositorio privado de Amazon S3. 
+Las versiones Modyo Cloud y Modyo Enterprise Cloud son configuradas con una política de respaldos diarios automáticos a nivel de base de datos y repositorios de objetos, los cuales son almacenados en un repositorio privado de Amazon S3. 
 
 Para el caso de las bases de datos configuradas con Amazon RDS, se utiliza el mecanismo interno de respaldo mediante snapshots los cuales son generados de forma diaria en horario de bajo tráfico y almacenados con una retención de 10 días. 
 

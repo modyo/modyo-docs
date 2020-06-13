@@ -5,7 +5,7 @@ translated: true
 
 # Versions
 
-The Modyo Platform is currently distributed in two versions: Modyo Cloud and Modyo Enterprise. Modyo Cloud is deployed in a _multitenant_ cloud in Amazon Web Services (AWS), in which resources are shared between different clients. Modyo Enterprise is available in either a _Private Cloud_ or _On Premise_ deployment. A Modyo Private Cloud client may also choose to use a less stable version, but benefits from the most recent improvements.
+The Modyo Platform is currently distributed in two versions: Modyo Cloud and Modyo Enterprise. Modyo Cloud is deployed in a _multitenant_ cloud in Amazon Web Services (AWS), in which resources are shared between different clients. Modyo Enterprise is available in either a _Enterprise Cloud_ or _On Premise_ deployment. A Modyo Enterprise Cloud client may also choose to use a less stable version, but benefits from the most recent improvements.
 
 ::: tip Current versions
 The current version of Modyo Cloud corresponds to version **9.0**. The current version of Modyo Enterprise corresponds to the **8.2 LTS** (Long Term Support).
@@ -18,7 +18,7 @@ The Modyo Cloud is a multitenant public cloud deployment, and receives continuou
 
 
 ## Modyo Enterprise Cloud
-The Modyo Enterprise Cloud is a single tenant, private cloud deployment, in an isolated environment guaranteeing greater security, availability and flexibility to make configurations that are tailored to your needs and are unavailable in the Cloud version.
+The Modyo Enterprise Cloud is a single tenant deployment in an isolated environment guaranteeing greater security, availability and flexibility to make configurations that are tailored to your needs and are unavailable in the Cloud version.
 
 
 ## Modyo Enterprise On Premise
