@@ -13,15 +13,15 @@ The current version of Modyo Cloud corresponds to version **9.0**. The current v
 
 In the case of both the Cloud and Enterprise Cloud versions, each license includes 24x7 infrastructure support services.
 
-## Modyo Cloud
+### Modyo Cloud
 The Modyo Cloud is a multitenant public cloud deployment, and receives continuous _releases_ which are managed and operated by Modyo in a _Software as a Service_ (SaaS) model.
 
 
-## Modyo Enterprise Cloud
+### Modyo Enterprise Cloud
 The Modyo Enterprise Cloud is a single tenant deployment in an isolated environment guaranteeing greater security, availability and flexibility to make configurations that are tailored to your needs and are unavailable in the Cloud version.
 
 
-## Modyo Enterprise On Premise
+### Modyo Enterprise On Premise
 Modyo Enterprise corresponds to the stable _releases_ of the platform, which are previously validated in the Cloud version.
 
 ::: tip LTS Versions
