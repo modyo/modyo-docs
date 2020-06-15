@@ -7,12 +7,12 @@ module.exports = {
     "/": {
       lang: "es", // this will be set as the lang attribute on <html>
       title: "Documentación de Modyo",
-      description: "Bienvenido al centro de referencia de Modyo",
+      description: "Bienvenido a la documentación oficial de Modyo",
     },
     "/en/": {
       lang: "en",
       title: "Modyo Docs",
-      description: "Welcome to the Modyo reference center",
+      description: "Welcome to the official Modyo documentation",
     },
   },
   head: [
