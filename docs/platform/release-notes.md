@@ -28,8 +28,8 @@ search: true
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Se añaden mejoras de seguridad a endpoints de subida de archivos.
-* Multiple bugs solved.
-* Multiple navigation and usability improvements.
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Se añaden distintos drops de liquid dependiendo del tipo de archivo en el [asset manager](/platform/content/asset-manager.html#propiedades-de-los-archivos).
