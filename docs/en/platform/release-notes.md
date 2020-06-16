@@ -12,6 +12,7 @@ What to expect in this release?
 * Scheduler: Schedule a change in the future without the need to unpublish what is already published.
 * Administrator groups: To easily add users together to different sites or spaces.
 * Modyo Lite: Access a version of Modyo that includes the Core, Content and Channels applications.
+* New preview mode: A preview mode that allows you to view content, pages, templates, widgets and navigation together
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Release manager: Groups and accumulates Channels publications.

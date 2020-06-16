@@ -12,6 +12,7 @@ search: true
 * Scheduler: Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
 * Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
 * Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
+* Nuevo modo vista previa: Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Release manager: Agrupa y acumula publicaciones de Channels.
