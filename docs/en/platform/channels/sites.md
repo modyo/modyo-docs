@@ -200,5 +200,3 @@ The precedence of locations on Modyo sites is as follows:
 1. [Custom content views](/en/platform/channels/templates.html#content-views)
 1. Customized redirections
 1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
-
-Translated with www.DeepL.com/Translator (free version)
