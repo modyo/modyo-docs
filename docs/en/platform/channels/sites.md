@@ -189,8 +189,8 @@ In this view you will find a table with all the redirections that currently exis
 
 To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ and Destination **_URL_ fields and redirection code and then saving the changes, you will create a new redirection entry. 
 
-:::warning Attention
-The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content views), you will see those views instead of being redirected via the custom redirect table.
+:::warning Warning
+The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/en/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
 :::
 
 The precedence of locations on Modyo sites is as follows:
