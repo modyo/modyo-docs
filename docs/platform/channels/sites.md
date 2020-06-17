@@ -242,7 +242,7 @@ La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si 
 La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 
 1. [Vistas por defecto (Home, search)](/platform/channels/templates.html)
-1. [Páginas]/platform/channels/pages.html)
+1. [Páginas](/platform/channels/pages.html)
 1. [Vistas personalizadas de contenido](/platform/channels/templates.html#vistas-para-contenido)
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/platform/channels/sites.html#restricciones)

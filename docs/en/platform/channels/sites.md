@@ -180,3 +180,25 @@ Reviewers cannot edit the Site settings.
 The Admins role has access to all the permissions of the two previous roles, and also has access to the Site settings.
 
 This team member is different from the account-level Default Admin. A site Admin can only configure a site, and cannot make any changes to the platform itself.
+
+### Custom redirects
+
+Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site. 
+
+In this view you will find a table with all the redirections that currently exist on the site, where you can search by path or description. 
+
+To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ and Destination **_URL_ fields and redirection code and then saving the changes, you will create a new redirection entry. 
+
+:::warning Attention
+The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content views), you will see those views instead of being redirected via the custom redirect table.
+:::
+
+The precedence of locations on Modyo sites is as follows:
+
+1. [Default views (Home, search)](/en/platform/channels/templates.html)
+1. [Pages](/en/platform/channels/pages.html)
+1. [Custom content views](/en/platform/channels/templates.html#content-views)
+1. Customized redirections
+1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
+
+Translated with www.DeepL.com/Translator (free version)
