@@ -1,34 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
 @font-face{
 	font-family: 'Jost';
 	font-weight: 400;
 	font-style: normal;
-	src: url(https://cloud.modyocdn.com/uploads/76a0afe0-8f3a-4674-ac51-9996bcf49334/original/Jost-400-Book.otf)
 }
 
 @font-face{
 	font-family: 'Jost';
 	font-weight: 400;
 	font-style: italic;
-	src: url(https://cloud.modyocdn.com/uploads/27fec775-f81a-4c3f-a927-9843a845f321/original/Jost-400-BookItalic.otf)
+}
+
+@font-face{
+	font-family: 'Jost';
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'Jost';
+	font-weight: 500;
+	font-style: italic;
 }
 
 @font-face{
 	font-family: 'Jost';
 	font-weight: 600;
 	font-style: normal;
-	src: url(https://cloud.modyocdn.com/uploads/efd220dd-0973-42ad-90b8-07b274e6d3a2/original/Jost-600-Semi.otf)
 }
 
 @font-face{
 	font-family: 'Jost';
 	font-weight: 600;
 	font-style: italic;
-	src: url(https://cloud.modyocdn.com/uploads/45712e90-4270-4508-a0b6-22925f16180b/original/Jost-600-SemiItalic.otf)
 }
 
 $nprogressColor = #1784D8
 $accentColor = #1784D8
-$textColor = #444
+$textColor = #343A40
 $navbarHeight = 4rem
 
 html,
@@ -37,7 +47,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: geometricPrecision;
-	color: #333;
+	color: #343A40;
 	background: #f4f4f4;
 	height: 100%;
 }
@@ -54,7 +64,6 @@ body {
 }
 
 .page {
-	background: #FFF;
 	min-height: calc(100vh - 35px);
 }
 
@@ -63,17 +72,16 @@ body {
 }
 
 .home {
-	background: #f8fdf4 no-repeat bottom url('/assets/img/hero.jpg');
-	background-size: 1470px;
-	height: 440px;
-	padding: 0 20px;
+	background: #ffffff;
+	height: 500px;
+	padding: 0 30px;
 	text-align: center;
 	max-width: none;
 	margin: 0 auto;
 }
 
 .home .hero {
-	padding-top: 160px;
+	padding-top: 20px;
 }
 
 .home .hero .action-button {
@@ -82,23 +90,27 @@ body {
 }
 
 .home .feature h2 {
-	color: #333;
+	color: #343A40;
 }
 
 .home .hero .action-button:hover {
-	background: #61a60e
+	background: #388b34;
 }
 
 .home .hero .description {
-    color: #555;
+    color: #737a96;
 }
 
 .home .footer {
-	color #333;
+	color #737a96;
 }
 
 .home .feature p {
-    color: #333;
+    color: #343A40;
+}
+
+.home .theme-default-content {
+	background: #f6f7f7;
 }
 
 a {
@@ -147,20 +159,13 @@ a.sidebar-link {
 
 .home .features {
 	border-top: 0;
-	padding-top: 100px;
+	padding-top: 30px;
 }
 
 .home .description {
 	margin-top: 10px !important
 }
 
-.home .hero h1 {
-	margin-bottom: 0;
-}
-
-.home .hero img {
-	display: none;
-}
 
 .features {
 	max-width: 960px;
@@ -216,3 +221,15 @@ a, p a code {
 	padding: 2rem 2.5rem;
 }
 
+.circle {
+    width: 130px;
+    height: 130px;
+    float: left;
+    background-color: #000000;
+    border-radius: 100px;
+    margin-right: 20px;
+}
+
+.cool-table table {
+	border: 0px;
+}

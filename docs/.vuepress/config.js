@@ -179,8 +179,37 @@ module.exports = {
               collapsable: true,
               children: ["/widgets/onboarding/"]
             }*/
+          ],        
+          "/brand/": [
+            {
+              title: "Guía de Marca",
+              collapsable: true,
+              children: [
+                ["/brand/", "Introducción"],
+                "/brand/logo",
+                "/brand/colors",
+                "/brand/icons",
+                "/brand/typography",
+              ],
+            },
+            {
+              title: "Ilustraciones",
+              collapsable: true,
+              children: [
+                ["/brand/illustrations/", "Introducción"],
+                "/brand/illustrations/structure",
+                "/brand/illustrations/applications",
+              ],
+            },
+            {
+              title: "Documentos",
+              collapsable: true,
+              children: [
+                ["/brand/documents/", "Introducción"],
+              ],
+            },
           ],
-        },
+          },
       },
       "/en/": {
         selectText: "Languages",

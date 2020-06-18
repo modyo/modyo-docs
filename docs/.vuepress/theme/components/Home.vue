@@ -76,60 +76,76 @@ export default {
   max-width 960px
   margin 0px auto
   display block
+  max-width none
+  text-align center
+  .theme-default-content
+    background #f6f7f7
   .hero
     text-align center
+    padding-top 20px
     img
       max-width: 100%
       max-height 280px
       display block
       margin 3rem auto 1.5rem
     h1
-      font-size 3rem
+      font-size 2.5rem
+      font-weight 500
     h1, .description, .action
       margin 1.8rem auto
     .description
+      color #737a96
       max-width 35rem
       font-size 1.6rem
       line-height 1.3
       color lighten($textColor, 40%)
+      margin-top 10px
     .action-button
       display inline-block
       font-size 1.2rem
       color #fff
-      background-color $accentColor
+      background #61a60e
       padding 0.8rem 1.6rem
       border-radius 4px
+      border 0
       transition background-color .1s ease
       box-sizing border-box
-      border-bottom 1px solid darken($accentColor, 10%)
       &:hover
-        background-color lighten($accentColor, 10%)
+        background-color lighten(#61a60e, 10%)
   .features
-    border-top 1px solid $borderColor
+    border-top 0
     padding 1.2rem 0
+    padding-top 30
     margin-top 2.5rem
     display flex
     flex-wrap wrap
     align-items flex-start
     align-content stretch
     justify-content space-between
+    max-width 960px
+	  margin 0 auto
+	  text-align center
+    p
+      height 90px
   .feature
     flex-grow 1
     flex-basis 30%
     max-width 30%
     h2
-      font-size 1.4rem
+      font-size 1.3rem
       font-weight 500
       border-bottom none
       padding-bottom 0
-      color lighten($textColor, 10%)
+      color #343A40
     p
-      color lighten($textColor, 25%)
+      color #343A40
+    img
+      width 40%
   .footer
     padding 2.5rem
     border-top 1px solid $borderColor
     text-align center
-    color lighten($textColor, 25%)
+    color #737a96
 
 @media (max-width: $MQMobile)
   .home

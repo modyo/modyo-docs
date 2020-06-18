@@ -27,5 +27,14 @@ export default {
 .page
   padding-bottom 2rem
   display block
+  h1
+    font-weight 500
+  h2
+    font-weight 500  
+  h3
+    font-weight 500
+  background #FFF
+  a
+    font-weight 400
 
 </style>

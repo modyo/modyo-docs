@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/img/hero.jpg
+heroImage: /assets/img/team_review_2x_reduced_2.gif
 actionText: Comenzar
 actionLink: /platform/
 footer: Copyright © 2008-2020 Modyo SpA
@@ -15,13 +15,13 @@ footer: Copyright © 2008-2020 Modyo SpA
   </div>
   <div class="feature" style='text-align: center;'>
     <img src='/assets/img/i.png'/>
-    <h2>Conceptos clave</h2>
+    <h2>Conceptos Clave</h2>
     <p>¿Qué conceptos claves que necesitas aprender rápidamente?</p>
     <a href="/platform/key-concepts.html">Leer más</a>
   </div>
   <div class="feature" style='text-align: center;'>
     <img src='/assets/img/layout.png'/>
-    <h2>Widgets Finacieros</h2>
+    <h2>Widgets Financieros</h2>
     <p>Explora el catálogo de Widgets Financieros de Modyo.</p>
     <a href="/widgets/">Leer más</a>
   </div>  
