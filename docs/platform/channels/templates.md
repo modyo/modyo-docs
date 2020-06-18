@@ -12,8 +12,8 @@ Una vez dentro del Template Builder, puedes ver que el menú principal se escond
 
 - **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Cuando se habilita la [revisión en equipo]/platform/core/team-review.html) y se ha enviado a revisión la versión editable.
-- **Aprobado**: Cuando se habilita la [revisión en equipo]/platform/core/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
+- **En revisión**: Cuando se habilita la [revisión en equipo](/platform/core/team-review.html) y se ha enviado a revisión la versión editable.
+- **Aprobado**: Cuando se habilita la [revisión en equipo](/platform/core/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 

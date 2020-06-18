@@ -16,8 +16,8 @@ En la parte superior de la vista, encontrarás el estado de publicación del men
 
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo]/platform/core/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo]/platform/core/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus templates ya pueden ser publicados.
+- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/platform/core/team-review.html) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/platform/core/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus templates ya pueden ser publicados.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 

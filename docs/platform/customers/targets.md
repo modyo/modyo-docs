@@ -41,7 +41,7 @@ Si deseas borrar todos los filtros, puedes hacer clic en el botón **Limpiar** t
 
 Para grabar tu target, solo debes hacer clic en el botón **Guardar como Target**, que está en la parte inferior de la pantalla.
 
-Por último, si quieres ver los usuarios que integran ese target, solo debes hacer clic en el botón **Aplicar**. Con esto, llegarás a la vista de [Usuarios]/platform/customers/users.html) que te mostrará una lista con todos los contactos que se ajustan a tus filtros.
+Por último, si quieres ver los usuarios que integran ese target, solo debes hacer clic en el botón **Aplicar**. Con esto, llegarás a la vista de [Usuarios](/platform/customers/users.html) que te mostrará una lista con todos los contactos que se ajustan a tus filtros.
 
 ::: tip Tip
  Es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar mejor. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al target.
