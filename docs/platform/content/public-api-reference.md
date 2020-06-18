@@ -704,11 +704,11 @@ Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables m
 
 La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
 
-Por ejemplo, para obtener entries en el idioma Español-Chile (es_CL):
+Por ejemplo, para obtener entries en el idioma Español-Chile (es-cl):
 
 ```plain
-Query string: GET .../posts/entries?locale=es_CL
-Header: Setear Accept-Language es_CL
+Query string: GET .../posts/entries?locale=es-cl
+Header: Setear Accept-Language es-cl
 ```
 
 ##### Operadores
