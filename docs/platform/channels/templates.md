@@ -143,6 +143,15 @@ La acción cargar templates no modifica ni toca los templates editables que ya e
 Cuando creas o copias un tema en un sitio, ese tema queda disponible para todos los otros sitios de la cuenta, de tal forma que puedes crear un tema base, y partir desde esa base cuando necesites crear nuevos sitios de forma rápida.
 :::
 
+## Vistas de error
+
+En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
+
+* **Disabled**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/platform/channels/sites.html).
+* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/platform/channels/sites.html#restricciones) decides mostrar el 404 y no redireccionar a la página home.
+* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/platform/channels/sites.html#restricciones) o a una de sus [páginas](/platform/channels/pages.html#privacidad).
+* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checkea la sintaxis de liquid antes de poder guardar y publicar cambios en el template builder.
+
 ## Vistas para contenido
 
 Para poder mostrar [contenido](/platform/content/) de forma automática en un sitio, debes cumplir con ciertas condiciones:

@@ -133,7 +133,16 @@ The "Load templates" action does not modify the editable templates that are alre
 When you create or copy a theme within a site or channel, that theme becomes available on all other sites in your account. This means you can create a base theme, and then use that theme to rapidly build new sites.
 :::
 
-## Automated Content Views
+## Error views
+
+In the views section, you will find 4 types of error available for customization:
+
+* **Disabled**: You will see this error view if the site you are trying to access has been [disabled](/en/platform/channels/sites.html).
+* **404**: You will see this view if you enter a site URL that is not defined and if in the [site restrictions](/en/platform/channels/sites.html#restrictions) you decide to show 404 and not redirect to the home page.
+* **Privacy**: You will see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#restrictions) or one of its [pages](/en/platform/channels/pages.html#privacy).
+* **Template**: You will see this error view when the site page you are loading has a liquid syntax error. It is unlikely that you will see this view, since from modyo 8.1 onwards we have a feature that checks the liquid syntax before you can save and publish changes in the template builder.
+
+## Content views
 
 In order to automatically display [content](/en/platform/content/) on a site, you need to meet certain conditions:
 
