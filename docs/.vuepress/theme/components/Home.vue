@@ -114,9 +114,8 @@ export default {
         background-color lighten(#61a60e, 10%)
   .features
     border-top 0
-    padding 1.2rem 0
-    padding-top 30
-    margin-top 2.5rem
+    padding 2.5rem 0
+    margin-top 3rem
     display flex
     flex-wrap wrap
     align-items flex-start
