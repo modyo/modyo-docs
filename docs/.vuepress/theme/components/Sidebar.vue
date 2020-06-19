@@ -24,7 +24,7 @@ export default {
 .sidebar
   background-color #FFFFFF
   border-right 2px solid #F4F4F4
-  font-size 18px
+  font-size 1.1em
   ul
     padding 0
     margin 0
@@ -44,9 +44,8 @@ export default {
       font-size 1.1em
       padding 0.5rem 0 0.5rem 1.5rem
   & > .sidebar-links
-    padding 1.5rem 0    
+    padding 1.5rem 0
     & > li > a.sidebar-link      
-      font-size 1.1em
       line-height 1.7
       font-weight bold
     & > li:not(:first-child)
