@@ -72,7 +72,7 @@ export default {
 
 <style lang="stylus">
 .home
-  padding $navbarHeight 2rem 0
+  padding $navbarHeight 0 0
   max-width 960px
   margin 0px auto
   display block
@@ -123,8 +123,8 @@ export default {
     align-content stretch
     justify-content space-between
     max-width 960px
-	  margin 0 auto
-	  text-align center
+    margin 0 auto
+    text-align center
     p
       height 90px
   .feature

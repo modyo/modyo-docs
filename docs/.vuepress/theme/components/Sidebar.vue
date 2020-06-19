@@ -31,6 +31,7 @@ export default {
     list-style-type none
   a
     display inline-block
+    height 50px
   .nav-links
     display none
     border-bottom 1px solid $borderColor
@@ -44,8 +45,7 @@ export default {
       padding 0.5rem 0 0.5rem 1.5rem
   & > .sidebar-links
     padding 1.5rem 0    
-    & > li > a.sidebar-link
-      height 50px
+    & > li > a.sidebar-link      
       font-size 1.1em
       line-height 1.7
       font-weight bold

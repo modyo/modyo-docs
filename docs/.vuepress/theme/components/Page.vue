@@ -36,5 +36,15 @@ export default {
   background #FFF
   a
     font-weight 400
+  .theme-default-content 
+    img
+      margin-top 30px
+      margin-bottom 30px
+      display block
+      margin-left auto
+      margin-right auto
+  .custom-block.tip .custom-block.warning .custom-block.danger
+    margin-top 35px
+    margin-bottom 35px
 
 </style>

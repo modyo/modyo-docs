@@ -40,6 +40,7 @@ $nprogressColor = #1784D8
 $accentColor = #1784D8
 $textColor = #343A40
 $navbarHeight = 4rem
+$contentWidth = 1024px
 
 html,
 body {
@@ -71,10 +72,6 @@ body {
 	height: 100%;
 }
 
-a {
-	color: #1784D8;
-}
-
 a.sidebar-link {
 	padding-top: 13px;
 }
@@ -89,23 +86,13 @@ a.sidebar-link {
 	background-color: #F3F8FA;
 }
 
-
 .sidebar-group ul.sidebar-sub-headers a.sidebar-link.active {
 	background-color: #FFFFFF;
-}
-
-.nav-item > a:not(.external):hover, .nav-item > a:not(.external).router-link-active {
-	border-color: #1784D8
-}
-
-.custom-block.tip {
-	border-color: #1784D8
 }
 
 .sidebar-group a.sidebar-link:hover {
 	color: #1784D8;
 }
-
 
 pre {
 	max-height: 400px;
@@ -114,33 +101,6 @@ pre {
 
 code {
 	white-space : pre-wrap !important;
-}
-
-.theme-default-content img {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.custom-block.tip, .custom-block.warning, .custom-block.danger {
-	margin-top: 35px;
-	margin-bottom: 35px;
-}
-
-a, p a code {
-	color: #1784D8;
-}
-
-.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active, .dropdown-wrapper .nav-dropdown .dropdown-item a:hover {
-	color: #1784D8;
-}
-
-.theme-default-content:not(.custom), .page-edit, .page-nav {
-	max-width: 1024px !important;
-	margin: 0 auto;
-	padding: 2rem 2.5rem;
 }
 
 .circle {
