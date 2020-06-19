@@ -80,6 +80,7 @@ export default {
   text-align center
   .theme-default-content
     background #f6f7f7
+    margin-top 40px
   .hero
     text-align center
     padding-top 20px
