@@ -27,34 +27,54 @@ Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la 
 ## Uso Indebido
 Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posible mantener los blancos en el interior de la figuras. Sobretodo en cara y manos.
 
-<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" alt="">
 
-No usar las ilustraciones transparentes sobre fondos de color.
-											
+<table>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" alt="">
+</td>
+<td>
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="transform: rotate(40deg); width:230px" alt="">
-
-Las ilustraciones no se deben girar ni ladear.
-
+</td>
+<td>
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="filter: hue-rotate(90deg);" alt="">
-
-No se deben modificar los colores
-	
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">No usar las ilustraciones transparentes sobre fondos de color.</p>
+</td>
+<td>
+<p class="dont">Las ilustraciones no se deben girar ni ladear.</p>
+</td>
+<td>
+<p class="dont">No se deben modificar los colores.</p>
+</td>
+</tr>
+<tr>
+<td>
 <img src="https://cloud.modyocdn.com/uploads/e58dee97-e758-4ab6-810a-170bb1988adb/original/lateral.jpg" style="max-height:305px">
-
-Las ilustraciones e iconos no se deben cortar, en caso de ser necesario, lo debe hacer la ilustradora.
-											
-
+</td>
+<td>
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="width:200px; height:305px" alt="">
-
-Nunca cambie la proporción de las ilustraciones. final.
-
-
+</td>
+<td>
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+</td>
+<td>
+<p class="dont">Nunca cambie la proporción de las ilustraciones.</p>
+</td>
+<td>
+<p class="dont">No use texto sobre la ilustración, debajo de ella o con un margen menor a 1 cm.</p>
+</td>
+</tr>
+</table>
 
-Digital experience Plataform
-Digital experience
-
-No use texto sobre la ilustración, debajo de ella o con un margen menor a 1 cm.
 
 
 
