@@ -4,60 +4,65 @@ search: false
 
 # Tipografía
 
-La tipografía oficial de modyo para usar en todos sus formatos y plataformas es Jost.
+La tipografía oficial de modyo para usar en todos sus formatos y plataformas es Jost. Jost es usada principalmente para títulos y frases destacadas. Para textos generales usamos la tipografía Open Sans.
 
+## Font Weight
+<div class="card">
+<img src="https://cloud.modyocdn.com/uploads/9c1dfc5d-ce19-450f-8e4d-4e02d5eb1ec1/original/specimen.svg" style="width:60%; height:auto;" alt="Specimen Font">
+</div>
 
-<h3>Font Weight</h3>
-<img src="https://cloud.modyocdn.com/uploads/9c1dfc5d-ce19-450f-8e4d-4e02d5eb1ec1/original/specimen.svg" style="width:100%; height:auto;" alt="Specimen Font">
+Pesos y estilos:
 
-<h4>Book</h4>
+<div class="card">
+<h3 style="font-weight:400">Book 400</h3>
 AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*
 
-<h4>Book Italic</h4>
+<h3 style="font-weight:400"><i>Book 400 Italic</i></h3>
 AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*
 	
-<h4>Medium</h4>
+<h3 style="font-weight:500">Medium 500</h3>
 AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*
 
-<h4>Medium Italic</h4>
+<h3 style="font-weight:500"><i>Medium 500 Italic</i></h3>
 AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*
 
-<h4 style="font-weight:600">Bold</h4>
+<h3 style="font-weight:600">Bold 600</h3>
 AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*
 
-<h4 style="font-weight:600">Bold Italic</h4>
+<h3 style="font-weight:600"><i>Bold 600 Italic</i></h3>
 AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*
+</div>
 
-<h3>Ejemplos de uso</h3>
-<h4>Hi, welcome to Modyo</h4>
-Build better digital products to unify your customer experience and accelerate growth.
-									
-<h4 class="minititle">Headline</h4>
 
-* Font size: 68px / 4.25em
-* Line height: 96px / 1.5em
+
+
+## Ejemplos de uso
+Ejemplos de uso en títulos combinado con una tipografía normal de texto.
+
+			
+
+#### Headline
+
+* Font size: 64px
 * Font Weight: Medium
 
-
-<h4 class="minititle">Subhead</h4>
-
-* Font size: 48px / 3em
-* Line height: 72px / 1.3 em
-* Font Weight: Book
-
-<h4>Hi, welcome to Modyo</h4>
+<div class="card">
+<span style="font-family:Jost, sans-serif;font-size:64px;font-weight:500;">Hi, welcome to Modyo</span>
+<p style="font-size:24px;">
 Build better digital products to unify your customer experience and accelerate growth.
+</p>
+</div>
 
-<h4 class="minititle">Headline</h4>
+#### Headline
 
-* Font size: 40px / 2.5em
-* Line height: 67px / 1.7em
+* Font size: 32px
 * Font Weight: Medium
 
+<div class="card">
+<span style="font-family:Jost, sans-serif;font-size:32px;font-weight:500;">Hi, welcome to Modyo</span>
+<p style="font-size:18px;">
+Build better digital products to unify your customer experience and accelerate growth.
+</p>
+</div>
 
-<h4 class="minititle">Subhead</h4>
-
-* Font size: 32px / 2em 
-* Line height: 56px / 1.75em
-* Font Weight: Book italic
 

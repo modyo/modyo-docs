@@ -9,20 +9,32 @@ El color en una marca es importante ya que permite darle personalidad a una empr
 ## Colores primarios
 Los colores primarios de marca son el negro y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
 
-<div class="cool-table">
-|   <div class="circle" style="background-color:#393F4C;"></div>      |            | ||
-| ------------- |:-------------:|:-------------:| -----:|
-|    <div class="circle" style="background-color:#61A60E;"></div>   |  | ||
-</div>
-
-
-* HEX #393F4C
-* RGB: 57 63 76
-* CMYK: 25 17 0 70|
-
-* HEX #61A60E
-* RGB: 97 166 14
-* CMYK: 42 0 92 35
+<table>
+<tr>
+<td>
+<div class="circle" style="background-color:#393F4C;"></div> 
+</td>
+<td>
+<div class="circle" style="background-color:#61A60E;"></div> 
+</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li>HEX #393F4C</li>
+<li>RGB: 57 63 76</li>
+<li>CMYK: 25 17 0 70</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>HEX #61A60E</li>
+<li>RGB: 97 166 14</li>
+<li>CMYK: 42 0 92 35</li>
+</ul>
+</td>
+</tr>
+</table>
 
 
 									
@@ -31,98 +43,197 @@ Los colores primarios de marca son el negro y el verde. Ambos van conectados y r
 ## Colores secundarios
 Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul.Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
 
-<div class="circle" style="background-color:#1784D8;"></div>
-* HEX #1784D8
-* RGB: 23 132 216
-* CMYK: 89 39 0 15
-
-<div class="circle" style="background-color:#FFFFFF; border: 2px solid #f4f4f4;"></div>
-* HEX #FFFFFF
-* RGB: 255 255 255
-* CMYK: 0 0 0 0
-
+<table>
+<tr>
+<td>
+<div class="circle" style="background-color:#1784D8;"></div> 
+</td>
+<td>
+<div class="circle" style="background-color:#FFFFFF; border: 2px solid #f4f4f4;"></div> 
+</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li>HEX #1784D8</li>
+<li>RGB: 23 132 216</li>
+<li>CMYK: 89 39 0 15</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>HEX #FFFFFF</li>
+<li>RGB: 255 255 255</li>
+<li>CMYK: 0 0 0 0</li>
+</ul>
+</td>
+</tr>
+</table>
 
 
 
 ## Background
 Nuestra marca se acompla bien a los siguiente background, como sugerencia les dejamos los siguientes colores.
 
-* HEX #F7FAF3
-* RGB: 247 250 243
-* CMYK: 1 0 3 2
 
-* HEX #F3F8FA
-* RGB: 243 248 250
-* CMYK: 3 1 0 2
-
-
-
-* HEX #F6F7F7
-* RGB: 246 247 247
-* CMYK: 0 0 0 3
-
-
-* HEX #393F4C
-* RGB: 57 63 76
-* CMYK: 25 17 0 70
+<table>
+<tr>
+<td>
+<div class="circle" style="background-color:#F7FAF3; border: 2px solid #f4f4f4;"></div> 
+</td>
+<td>
+<div class="circle" style="background-color:#F3F8FA; border: 2px solid #f4f4f4;"></div> 
+</td>
+<td>
+<div class="circle" style="background-color:#F6F7F7; border: 2px solid #f4f4f4;"></div> 
+</td>
+<td>
+<div class="circle" style="background-color:#393F4C;"></div> 
+</td>
+</tr>
+<tr>
+<td>
+<ul>
+<li>HEX #F7FAF3</li>
+<li>RGB: 247 250 243</li>
+<li>CMYK: 1 0 3 2</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>HEX #F3F8FA</li>
+<li>RGB: 243 248 250</li>
+<li>CMYK: 3 1 0 2</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>HEX #F6F7F7</li>
+<li>RGB: 246 247 247</li>
+<li>CMYK: 0 0 0 3</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>HEX #393F4C</li>
+<li>RGB: 57 63 76</li>
+<li>CMYK: 25 17 0 70</li>
+</ul>
+</td>
+</tr>
+</table>
 
 											
 ## Colores Especiales
 Los colores especiales se designan solo para ilustraciones y gráficos que requieran combinaciones.  Se deben usar con moderación y siempre complementando a las diversas piezas en contraste y color.
 
-* #2179BE
-* #2893E7
-* #62B0ED
-
-
-* #38B476
-* #3DC681
-* #71D5A3
-
-#299596
-<#31B6B7
-#7BD0D1
-
-#C23338
-#EC3E44
-#F17277									
-
-#AA2E5C
-#CF3770
-#DC6D97
-
-
-#442568
-#5A3B7E
-#7B6298
-
-											
-#DA702A
-#EF7B2E
-#F39F67
-
-										
-#E6B338
-#FCC43D
-#FCCE60
-
-									
-#8C8062
-#A39572
-#D1BF93
-
-										
-
-
-
+<table style="padding:0px;margin:0px;height:auto;overflow: visible;">
+<tr>
+<td style="padding:0px;margin:0px;width:150px;">
+    <table class="color-table">
+    <tr style="background-color:#2179BE;color:#FFFFFF;"><div class="color-box">#2179BE</div>
+    </tr>
+    <tr style="background-color:#2893E7;color:#FFFFFF;"><div class="color-box">#2893E7</div>
+    </tr>
+    <tr style="background-color:#62B0ED;color:#FFFFFF;"><div class="color-box">#62B0ED</div>
+    </tr>
+    </table>
+</td>
+<td style="padding:0px;margin:0px;width:150px;">
+    <table class="color-table">
+    <tr style="background-color:#38B476;color:#FFFFFF;"><div class="color-box">#38B476</div>
+    </tr>
+    <tr style="background-color:#3DC681;color:#FFFFFF;"><div class="color-box">#3DC681</div>
+    </tr>
+    <tr style="background-color:#71D5A3;color:#FFFFFF;"><div class="color-box">#71D5A3</div>
+    </tr>
+    </table>
+</td>
+<td style="padding:0px;margin:0px;width:150px;">
+    <table class="color-table">
+    <tr style="background-color:#299596;color:#FFFFFF;"><div class="color-box">#299596</div>
+    </tr>
+    <tr style="background-color:#31B6B7;color:#FFFFFF;"><div class="color-box">#31B6B7</div>
+    </tr>
+    <tr style="background-color:#7BD0D1;color:#FFFFFF;"><div class="color-box">#7BD0D1</div>
+    </tr>
+    </table>
+</td>
+</tr>
+<tr>
+<td style="padding:0px;margin:0px;">
+    <table class="color-table">
+    <tr style="background-color:#C23338;color:#FFFFFF;"><div class="color-box">#C23338</div>
+    </tr>
+    <tr style="background-color:#EC3E44;color:#FFFFFF;"><div class="color-box">#EC3E44</div>
+    </tr>
+    <tr style="background-color:#F17277;color:#FFFFFF;"><div class="color-box">#F17277</div>
+    </tr>
+    </table>
+</td>
+<td style="padding:0px;margin:0px;">
+    <table class="color-table">
+    <tr style="background-color:#AA2E5C;color:#FFFFFF;"><div class="color-box">#AA2E5C</div>
+    </tr>
+    <tr style="background-color:#CF3770;color:#FFFFFF;"><div class="color-box">#CF3770</div>
+    </tr>
+    <tr style="background-color:#DC6D97;color:#FFFFFF;"><div class="color-box">#DC6D97</div>
+    </tr>
+    </table>
+</td>
+<td style="padding:0px;margin:0px;">
+    <table class="color-table">
+    <tr style="background-color:#442568;color:#FFFFFF;"><div class="color-box">#442568</div>
+    </tr>
+    <tr style="background-color:#5A3B7E;color:#FFFFFF;"><div class="color-box">#5A3B7E</div>
+    </tr>
+    <tr style="background-color:#7B6298;color:#FFFFFF;"><div class="color-box">#7B6298</div>
+    </tr>
+    </table>
+</td>
+</tr>
+<tr>
+<td style="padding:0px;margin:0px;">
+    <table class="color-table">
+    <tr style="background-color:#DA702A;color:#FFFFFF;"><div class="color-box">#DA702A</div>
+    </tr>
+    <tr style="background-color:#EF7B2E;color:#FFFFFF;"><div class="color-box">#EF7B2E</div>
+    </tr>
+    <tr style="background-color:#F39F67;color:#FFFFFF;"><div class="color-box">#F39F67</div>
+    </tr>
+    </table>
+</td>
+<td style="padding:0px;margin:0px;">
+    <table class="color-table">
+    <tr style="background-color:#E6B338;color:#FFFFFF;"><div class="color-box">#E6B338</div>
+    </tr>
+    <tr style="background-color:#FCC43D;color:#FFFFFF;"><div class="color-box">#FCC43D</div>
+    </tr>
+    <tr style="background-color:#FCCE60;color:#FFFFFF;"><div class="color-box">#FCCE60</div>
+    </tr>
+    </table>
+</td>
+<td style="padding:0px;margin:0px;">
+    <table class="color-table">
+    <tr style="background-color:#8C8062;color:#FFFFFF;"><div class="color-box">#8C8062</div>
+    </tr>
+    <tr style="background-color:#A39572;color:#FFFFFF;"><div class="color-box">#A39572</div>
+    </tr>
+    <tr style="background-color:#D1BF93;color:#FFFFFF;"><div class="color-box">#D1BF93</div>
+    </tr>
+    </table>
+</td>
+</tr>
+</table>
+						
 
 
 
 
 ## Overlay en imágenes
-El overlay de las fotos es negro con una opacidad del 80% para que exista el mejor contraste posible entre figura y fondo
-<img src="https://cloud.modyocdn.com/uploads/1cc56f8f-b03d-4600-b7e0-908e5159b851/original/overlay1.png" alt="overlay example 1">
-<img src="https://cloud.modyocdn.com/uploads/e176b2ad-23d8-485b-a500-0c6a7c42fe6b/original/overlay2.png" alt="overlay example 2">
+El overlay de las fotos es negro con una opacidad del 80% para que exista el mejor contraste posible entre figura y fondo.
+<img src="https://cloud.modyocdn.com/uploads/1cc56f8f-b03d-4600-b7e0-908e5159b851/original/overlay1.png" style="width:80%;" alt="overlay example 1">
+<img src="https://cloud.modyocdn.com/uploads/e176b2ad-23d8-485b-a500-0c6a7c42fe6b/original/overlay2.png" style="width:80%;" alt="overlay example 2">
 
 
 
@@ -130,65 +241,49 @@ El overlay de las fotos es negro con una opacidad del 80% para que exista el mej
 Dado lo mencionado anteriormente, es importante entender que el uso del color para nosotros es relevante que se respete. En especial en los textos y fondos. Para eso acá algunos ejemplos de como no debiese usarse el color en piezas escritas.
 
 
-
-
-<span class="usage text-left p-all-12" style="background-color:#442568; color:#31B6B7">
-<img src="https://cloud.modyocdn.com/uploads/f0fcc796-f59d-4d9e-ae82-6ecd46b5c813/original/white.svg" class="mt-2 w150" alt="logo">
-<h4>Hi, welcome to modyo</h4>
-<h5>Hi, welcome to modyo</h5>
-</span>
-											
-Usar colores especiales, dejando de lado totalmente la identidad de la marca.
-
-
-
-<span class="usage text-left p-all-12" style="background-color:#FFFFFF; color:#31B6B7">
-<img src="https://cloud.modyocdn.com/uploads/a5566fc4-b14b-4dbc-b8d0-e278ea0cf085/original/black.svg" class="mt-2 w150" alt="logo">
-<h4>Hi, welcome to modyo</h4>
-<h5>Hi, welcome to modyo</h5>
-</span>
-	
-El texto nunca debe tener un color distinto a los colores primarios, en especial el párrafo.
-										
-
-
-<span class="usage text-left p-all-12" style="background-color:#299596; color:#FFFFFF">
-<img src="https://cloud.modyocdn.com/uploads/444daab8-e2d1-459a-a288-323197ef025b/original/normal.svg" class="mt-2 w150" alt="logo">
-<h4 style="color:#61A60E">Hi, welcome to modyo</h4>
-<h5>Hi, welcome to modyo</h5>
-</span>
-	
-Uso de algún color especial como background, perdiendo incluso el contraste.
-										
-
-
-<span class="usage text-left p-all-12" style="background-color:#2179BE; color:#ffffff">
-<img src="https://cloud.modyocdn.com/uploads/b2582764-7f19-48dc-89d8-31dfb182c2b5/original/logo.svg" class="mt-2 w150" alt="logo">
-<h4>Hi, welcome to modyo</h4>
-<h5>Hi, welcome to modyo</h5>
-<img src="https://cloud.modyocdn.com/uploads/9745383f-f15e-47e2-a1e4-0dc31b7c1e2f/original/img_bg_example.png" class="background_fx" alt="bg_fx">
-</span>
-
-El uso de un color especial o distinto al ya mencionado para un overlay.
-
-
-
-<span class="usage text-left p-all-12" style="background-color:#442568; color:#ffffff">
-<img src="https://cloud.modyocdn.com/uploads/b2582764-7f19-48dc-89d8-31dfb182c2b5/original/logo.svg" class="mt-2 w150" alt="logo">
-<h4>Hi, welcome to modyo</h4>
-<h5>Hi, welcome to modyo</h5>
-<img src="https://cloud.modyocdn.com/uploads/9745383f-f15e-47e2-a1e4-0dc31b7c1e2f/original/img_bg_example.png" class="background_fx" alt="bg_fx">
-</span>
-
-El uso de un color especial o distinto al ya mencionado para un overlay.
-
-
-
-<span class="usage text-left p-all-12" style="background-color:#E6B338; color:#ffffff">
-<img src="https://cloud.modyocdn.com/uploads/b2582764-7f19-48dc-89d8-31dfb182c2b5/original/logo.svg" class="mt-2 w150" alt="logo">
-<h4>Hi, welcome to modyo</h4>
-<h5>Hi, welcome to modyo</h5>
-<img src="https://cloud.modyocdn.com/uploads/9745383f-f15e-47e2-a1e4-0dc31b7c1e2f/original/img_bg_example.png" class="background_fx" alt="bg_fx">
-</span>
-	
-El uso de un color especial o distinto al ya mencionado para un overlay.
+<table>
+<tr>
+<td>
+<img src="/assets/img/brand/incorrect_color_1.png" alt="">
+</td>
+<td>
+<img src="/assets/img/brand/incorrect_color_2.png" alt="">
+</td>
+<td>
+<img src="/assets/img/brand/incorrect_color_3.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Usar colores especiales, dejando de lado totalmente la identidad de la marca.</p>
+</td>
+<td>
+<p class="dont">El texto nunca debe tener un color distinto a los colores primarios, en especial el párrafo.</p>
+</td>
+<td>
+<p class="dont">Uso de algún color especial como background, perdiendo incluso el contraste.</p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="/assets/img/brand/incorrect_color_4.png" alt="">
+</td>
+<td>
+<img src="/assets/img/brand/incorrect_color_5.png" alt="">
+</td>
+<td>
+<img src="/assets/img/brand/incorrect_color_6.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+</td>
+<td>
+<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+</td>
+<td>
+<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+</td>
+</tr>
+</table>
