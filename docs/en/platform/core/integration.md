@@ -168,36 +168,65 @@ A webhook is an automatic _POST_ action at a given URL with certain information.
 
 To enable them, you must check the top of the page and then proceed to create all the webhooks you want.
 
-The actions you can configure to trigger webhooks are:
+Webhooks can be created from actions of sites or spaces.
 
-- Category created
-- Deleted category
-- Updated category
-- Updated language
-- Login
-- Sign off
-- Membership created
-- Deleted membership
-- Updated profile
-- Registry
-- Site created
-- Site deleted
-- Site disabled
-- Site enabled
-- Hidden site
-- Site put in staging mode
-- Visible site
-- Updated site
-- User created
-- User deleted
-- User disabled
-- User enabled
-- Imported
-- User not verified
-- Updated user
-- Verified user
-- Form response created
-- Updated form response
+Site webhooks are: 
+
+* Response of the form created
+* Updated form response
+* Page created
+* Page deleted
+* Page published
+* Page unpublished
+* Page updated
+* Login
+* Logout
+* Navigation approved
+* Navigation published
+* Navigation sent for review
+* Navigation updated
+* Profile updated
+* Site created
+* Site removed
+* Site disabled
+* Site enabled
+* Site hidden
+* Site staged
+* Visible site
+* Site updated
+* Templates approved
+* Templates sent for review
+* Templates updated
+* Theme installed
+* Theme restored
+* Theme updated
+* Widget approved
+* Widget cloned
+* Widget created
+* Widget published
+* Widget restored
+* Widget sent to review
+* widget unpublished
+* Widget updated
+
+Space webhooks are:
+
+* Category created
+* Category deleted
+* Category updated
+* Entry approved
+* Entry created
+* Entry published
+* Entry sent for review
+* Entry unpublished
+* Entry updated
+* Space created
+* space updated
+* Type created
+* Type removed
+* Type updated
+
+Translated with www.DeepL.com/Translator (free version)
 
 When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook and then save the changes.
 
