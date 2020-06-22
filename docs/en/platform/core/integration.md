@@ -226,8 +226,6 @@ Space webhooks are:
 * Type removed
 * Type updated
 
-Translated with www.DeepL.com/Translator (free version)
-
 When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook and then save the changes.
 
 After this, you will see in the list all the webhooks that are active.
