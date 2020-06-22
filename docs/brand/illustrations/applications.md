@@ -8,12 +8,32 @@ Las ilustraciones hacen que las ideas sean más accesibles. Al igual que las pal
 Es muy importante que sean usadas de forma correcta y que nunca se transformen en un elemento distractor. En marketing se usan como respaldo y elemento de comunicación generalmente en sitios web, sitios de servicio, presentaciones, email, infografía, en medios de comunicación social y campañas.
 
 ## Uso Incorrecto
+A continuación algunos ejemplos de usos incorrectos de ilustraciones.
 
-<img src="https://cloud.modyocdn.com/uploads/1b318b96-1c8e-44e5-bc7d-8f02c6061f62/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_45_40-min.png" alt="Icon as Hero" style="max-width:500px; margin:24px">
-<img src="https://cloud.modyocdn.com/uploads/d791817d-2359-4cf5-9dae-4f2e25113ac0/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_43_02-min.png" alt="Hero as Icon" style="max-width:500px; margin:24px">
-<img src="https://cloud.modyocdn.com/uploads/653b021a-5acf-4133-ae60-cb55cc0528ef/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_45_24-min.png" alt="Overlay images and text" style="max-width:500px; margin:24px">										
-
-
+<table>
+<tr>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/1b318b96-1c8e-44e5-bc7d-8f02c6061f62/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_45_40-min.png" alt="Icon as Hero">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/d791817d-2359-4cf5-9dae-4f2e25113ac0/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_43_02-min.png" alt="Hero as Icon">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/653b021a-5acf-4133-ae60-cb55cc0528ef/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_45_24-min.png" alt="Overlay images and text">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">No colocar texto por sobre las ilustraciones.</p>
+</td>
+<td>
+<p class="dont">No usar un icono en lugar de un hero.</p>
+</td>
+<td>
+<p class="dont">No usar un hero en lugar de un icono.</p>
+</td>
+</tr>
+</table>
 
 
 ## Zona de Exclusión
@@ -30,13 +50,13 @@ Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posi
 
 <table>
 <tr>
-<td>
+<td style="width:30%;background-color:#336699;">
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" alt="">
 </td>
-<td>
+<td style="width:30%;">
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="transform: rotate(40deg); width:230px" alt="">
 </td>
-<td>
+<td style="width:30%;">
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="filter: hue-rotate(90deg);" alt="">
 </td>
 </tr>
@@ -59,7 +79,7 @@ Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posi
 <img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="width:200px; height:305px" alt="">
 </td>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" alt="">
+<img src="/assets/img/brand/incorrect_illustration_6.png" alt="">
 </td>
 </tr>
 <tr>
