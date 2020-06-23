@@ -35,7 +35,7 @@ Here you can change the name of a space and its UID.
 
 The UID of the space is very important. It determines how you access the space through the [public API](/en/platform/content/public-api-reference.html#reference-del-api), the [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](/en/platform/content/public-api-reference.html#sdk-de-liquid). Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
 
-### Location
+### Locales
 
 Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages.
 
