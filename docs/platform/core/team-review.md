@@ -142,6 +142,14 @@ Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas d
 Este valor se puede modificar mediante variables de entorno y es común para todas las cuentas de este.
 :::
 
+### Programado
+
+Cuando decides programar una publicación o despublicación, la versión editable pasa a un estado programado, y cuando llegue el momento de la publicación, esa versión programada tomará el lugar de la versión que esté publicada en ese momento. De esta forma, podrás programar un cambio en el futuro para los elementos, y seguir trabajando en la versión editable. 
+
+:::warning Atención
+Modyo solo permite tener una versión programada de cada elemento, por lo que si programas una segunda modificación al elemento, estarás sobreescribiendo la programación anterior.
+:::
+
 ### Acciones para el versionado
 
 Dentro del versionado tienes dos acciones que te permiten interactuar con los respaldos. Ambas acciones están disponibles en el modal de diferencias.
