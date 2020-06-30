@@ -101,7 +101,7 @@ This version saves the content visible on the site and is freely available to an
 
 The published version does not necessarily have the same content as the editable one (except at the right time of publication), since the latter may contain changes that are in the process of being tested or reviewed.
 
-### Backups
+#### Backups
 
 Backups are previously published versions of the elements. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
@@ -111,7 +111,7 @@ If you want to review a particular version of an item, you can go to the "Differ
 By default, Modyo saves the last 20 versions (`MAX_BACKUPS`) published of each item, so by making the twenty-first publication, you will be deleting the backup of the first publication of the item. This value can be modified using environment variables and is common for all accounts in that environment.
 :::
 
-### Scheduled
+#### Scheduled
 
 When you decide to schedule a publication or unpublication, the editable version goes into a scheduled state, and when the time comes for publication, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version. 
 

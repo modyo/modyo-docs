@@ -523,7 +523,7 @@ Modyo has drops available for different contexts within which you can find drops
 The drops available globally are: 
 
 ```
-- account:
+account:
   - url
   - host
   - disable_modyo_credentials
@@ -536,15 +536,15 @@ The drops available globally are:
 The drops available for content are:
 
 ```
-- space:
+space:
   - entries
   - types
   - name
-- type:
+type:
   - entries
   - fields
   - name
-- entry:
+entry:
   - space
   - category
   - type
@@ -555,14 +555,14 @@ The drops available for content are:
   - author
   - meta
   - fields
-- field:
+field:
   - name
   - type
-- location:
+location:
   - location_street
   - latitude
   - longitude
-- category:
+category:
   - id
   - slug
   - name
@@ -581,7 +581,7 @@ The drops available for content are:
   - files_url
   - audio_url
   - places_url
-- asset:
+asset:
   - url
   - thumbnail_url
   - uuid
@@ -592,9 +592,9 @@ The drops available for content are:
   - alt
   - size
   - description
-- audio_asset:
+audio_asset:
   - url
-- file_asset:
+file_asset:
   - url
   - thumbnail_url
   - image_thumbnail_url
@@ -605,7 +605,7 @@ The drops available for content are:
   - is_pdf
   - is_another
   - temp_url
-- video_asset:
+video_asset:
   - url
   - thumbnail_url
 ```
@@ -614,7 +614,7 @@ The drops available for content are:
 The drops available for channels are:
 
 ```
-- site:
+site:
   - theme
   - breadcrumb
   - categories
@@ -631,11 +631,11 @@ The drops available for channels are:
   - sw_url
   - sw_scope
   - add_parent_breadcrumb
-- site_search:
+site_search:
   - have_results
   - results
   - have_less_relevant_results
-- request:
+request:
   - user_agent
   - host
   - domain
@@ -646,7 +646,7 @@ The drops available for channels are:
   - refresh_url
   - comments_url
   - is_app_shell
-- user_agent:
+user_agent:
   - initialize
   - browser
   - browser_version
@@ -654,10 +654,10 @@ The drops available for channels are:
   - platform_version
   - agent
   - is_modyo_shell
-- layout_page:
+layout_page:
   - grid
   - name
-- custom_layout_page:
+custom_layout_page:
   - content
   - title
   - excerpt
@@ -666,9 +666,9 @@ The drops available for channels are:
   - count
   - parent
   - description
-- menu:
+menu:
   - items
-- menu_item:
+menu_item:
   - label
   - child_items
   - url
@@ -676,7 +676,7 @@ The drops available for channels are:
   - category
   - position
   - target
-- widget:
+widget:
   - id
   - cache_key
   - type
@@ -690,59 +690,59 @@ The drops available for channels are:
   - uuid
   - wid
   - permanent_cache
-- rich_text_widget:
+rich_text_widget:
   - html
-- custom_widget:
+custom_widget:
   - manager_uuid
   - version
-- text_widget:
+text_widget:
   - html
-- content_list_widget:
+content_list_widget:
   - show_caption
   - entries
   - context_params
   - space_id
   - type_uid
-- layout:
+layout:
   - name
   - me_page
   - home_page
-- grid:
+grid:
   - id
   - cache_key
   - resolve_type
-- full_three_cols_grid:
+full_three_cols_grid:
   - main_widgets
   - col1_widgets
   - col2_widgets
   - col3_widgets
-- side_right_three_cols_grid:
+side_right_three_cols_grid:
   - main_widgets
   - side_right_widgets
   - col1_widgets
   - col2_widgets
   - col3_widgets
-- side_left_grid:
+side_left_grid:
   - main_widgets
   - side_left_widgets
-- side_left_one_col_grid:
+side_left_one_col_grid:
   - main_widgets
   - side_left_widgets
   - full_widgets
-- side_right_one_col_grid:
+side_right_one_col_grid:
   - main_widgets
   - side_right_widgets
   - full_widgets
-- full_grid:
+full_grid:
   - main_widgets
-- full_two_cols_grid:
+full_two_cols_grid:
   - main_widgets
   - col1_widgets
   - col2_widgets
-- side_right_grid:
+side_right_grid:
   - main_widgets
   - side_right_widgets
-- side_left_three_cols_grid:
+side_left_three_cols_grid:
   - main_widgets
   - side_left_widgets
   - col1_widgets
@@ -754,7 +754,7 @@ The drops available for channels are:
 The drops available for customers are:
 
 ```
-- user:
+user:
   - generated_password
   - uuid
   - email
@@ -775,7 +775,7 @@ The drops available for customers are:
   - notifications
   - custom_fields
   - card
-- membership:
+membership:
   - member_name
   - member_first_name
   - member_last_name
@@ -799,27 +799,27 @@ The drops available for customers are:
   - user
   - external_user_id
   - external_access_token
-- target:
+target:
   - name
   - id
-- form:
+form:
   - slug
-- question:
+question:
   - allow_alternatives
   - alternatives
   - label
   - id
   - form
-- alternative:
+alternative:
   - question
   - id
-- form_response:
+form_response:
   - name
   - description
   - questions
   - parse_answers
   - parse_answer
-- answer:
+answer:
   - text_field
   - question
   - alternative

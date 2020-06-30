@@ -130,7 +130,7 @@ En este caso, recursos internos como Widgets y Templates ya se pueden usar en la
 
 La versión publicada no necesariamente tiene el mismo contenido que la editable (excepto en el momento justo de la publicación), ya que puede contener cambios que estén en proceso de prueba o revisión.
 
-### Respaldos
+#### Respaldos
 
 Los respaldos son versiones previamente publicadas de los elementos. Es decir, cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
 
@@ -142,7 +142,7 @@ Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas d
 Este valor se puede modificar mediante variables de entorno y es común para todas las cuentas de este.
 :::
 
-### Programado
+#### Programado
 
 Cuando decides programar una publicación o despublicación, la versión editable pasa a un estado programado, y cuando llegue el momento de la publicación, esa versión programada tomará el lugar de la versión que esté publicada en ese momento. De esta forma, podrás programar un cambio en el futuro para los elementos, y seguir trabajando en la versión editable. 
 
