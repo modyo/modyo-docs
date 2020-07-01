@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Team Review
+# Key concepts
 
-## Introduction
+## Team Review
 
 Team Review is a tool that allows you to control the process of publishing elements in Modyo, such as entries, widgets, pages, templates, and more. When activated, each element must go through review stages with selected team members before publishing. This allows a level of supervision and collaboration between the content editor and a team of reviewers.
 
@@ -81,7 +81,7 @@ When team review is enabled, in the item's action bar, to the left of the green 
 
 When a comment is left or any action is taken on the item, a notification is sent to both the person who sent it for review and the users who are on the list of reviewers.
 
-## Versioned
+## Versions
 
 As a backup mechanism, when publishing an item, Modyo automatically generates and maintains a number of versions that can later be retrieved if necessary.
 
@@ -171,4 +171,30 @@ If an Administrator wants to take control of a view, he must click on the item i
 When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from continuing to make changes, so any changes that are being made must be saved and backed up offline.
 
 After taking control, the Administrator will only have two hours to make changes without saving. After that time, the resource will be released again and can be taken by any other user.
+:::
+
+## Preview mode
+
+When you're working on the items that can be published (Posts, Pages, Navigation, Widgets, and Templates), you can use the eye icon
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> at the top right to open preview mode in a new browser tab. You can recognize that you are in preview mode when you see the bar at the top of the site.
+
+![Preview bar](/assets/img/platform/preview-bar.png)
+
+With the preview mode you can view the editable versions of all the elements as a whole, or you can choose to use the published versions of some elements, using the selectors in the bar. 
+
+The elements you can interact with in the preview bar are:
+
+* **Templates selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.
+* **Content selector**: Allows you to switch between the published and editable version of the elements belonging to the content application and that are being used on the site using the Liquid content SDK.
+* **Navigation selector**: Allows you to change between the published and editable version of the elements belonging to the navigation builder.
+* **Page selector**: Allows you to switch between the published and editable version of the elements belonging to the page builder.
+* **Content view selector**: When you are viewing the custom content views, this selector allows you to switch between the published and editable version of the content entry being previewed. Since this view does not directly use the Liquid Content SDK, it needs to be able to switch between the published and editable version of the particular entry.
+* **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button to take effect on your widget settings.
+* **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the bar from preview mode. 
+* **Edit element**: when you _click_ you will go to the edit page of the element you are looking at, be it an entry, a page, a widget or a default template of the site.
+* **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to the preview mode with the settings at the time of copying the link.
+* **Exit preview mode**: Closes the preview mode, removing the bar and leaving the tab in the current site url.
+
+:::warning Warning
+Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
 :::

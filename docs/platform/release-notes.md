@@ -145,7 +145,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Separación de usuarios y [miembros del equipo](/platform/core/roles.html#equipo), los que tienen acceso a la plataforma se encuentran segregados de los usuarios de la página en sí.
 * Nuevos [roles y permisos](/platform/core/roles.html).
-* [Team review](/platform/core/team-review.html), reemplazando la aplicación de workflow, permite la colaboración del equipo para la aprobación de publicación y paso a producción.
+* [Team review](/platform/core/key-concepts.html), reemplazando la aplicación de workflow, permite la colaboración del equipo para la aprobación de publicación y paso a producción.
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
 

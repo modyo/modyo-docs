@@ -96,7 +96,7 @@ Team Review is a system to review and approve changes made to content and elemen
 
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-For more information on how to configure this option, go to [Team Review](/en/platform/core/team-review.html).
+For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts.html).
 
 ### Team members
 

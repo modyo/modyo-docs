@@ -16,8 +16,8 @@ En la parte superior de la vista, encontrarás el estado de publicación del men
 
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/platform/core/team-review.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/platform/core/team-review.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus templates ya pueden ser publicados.
+- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus templates ya pueden ser publicados.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
@@ -36,10 +36,10 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 
 Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. 
 
-Para más información sobre el versionamiento, revisa la sección de [Versionado](/platform/core/team-review.html#versionado).
+Para más información sobre el versionamiento, revisa la sección de [Versionado](/platform/core/key-concepts.html#versionado).
 :::
 
-**Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Si es que tienes la [revisión en equipo](/platform/core/team-review.html) habilitada, ves esta opción que al hacerle _click_, despliega una barra lateral con el historial de actividad y comentarios del menú. 
+**Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Si es que tienes la [revisión en equipo](/platform/core/key-concepts.html) habilitada, ves esta opción que al hacerle _click_, despliega una barra lateral con el historial de actividad y comentarios del menú. 
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer _click_ en "ver detalle" para mostrar la información completa de ese registro de actividad.
 

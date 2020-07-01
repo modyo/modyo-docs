@@ -52,7 +52,7 @@
       <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/integration.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/integration.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/roles.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/roles.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/security.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/team-review.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/team-review.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/key-concepts.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/the-modyo-interface.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/the-modyo-interface.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/en/guides/versions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/versions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/en/guides/whats-new.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/whats-new.md" afterDir="false" />
@@ -86,7 +86,7 @@
       <change beforePath="$PROJECT_DIR$/docs/guides/platform/integration.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/integration.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/guides/platform/roles.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/roles.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/guides/platform/security.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/team-review.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/team-review.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guides/platform/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/key-concepts.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/guides/versions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/versions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/guides/whats-new.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/whats-new.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translator.rb" beforeDir="false" afterPath="$PROJECT_DIR$/translator.rb" afterDir="false" />

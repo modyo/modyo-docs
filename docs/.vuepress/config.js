@@ -74,7 +74,7 @@ module.exports = {
               children: [
                 ["/platform/core/", "Introducción"],
                 "/platform/core/the-modyo-interface",
-                "/platform/core/team-review",
+                "/platform/core/key-concepts",
                 "/platform/core/integration",
                 "/platform/core/roles",
                 "/platform/core/security",
@@ -239,7 +239,7 @@ module.exports = {
               children: [
                 ["/en/platform/core/", "Introduction"],
                 "/en/platform/core/the-modyo-interface",
-                "/en/platform/core/team-review",
+                "/en/platform/core/key-concepts",
                 "/en/platform/core/integration",
                 "/en/platform/core/roles",
                 "/en/platform/core/security",

@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Revisión en Equipo
+# Conceptos clave
 
-## Introducción
+## Revisión en Equipo
 
 La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de elementos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación. 
 
@@ -208,4 +208,29 @@ Si un Administrador quiere tomar el control de una vista, deberá hacer _click_ 
 Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
 
 Tras tomar el control, el Administrador sólo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+:::
+
+## Modo vista previa
+
+Cuando estás trabajando en los elementos que se pueden publicar (Entradas, Páginas, Navegación, Widgets y Templates), puedes usar el icono del ojo  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> en la parte superior derecha, para abrir el modo vista previa en una nueva pestaña del navegador. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
+
+![Barra de vista previa](/assets/img/platform/preview-bar.png)
+
+Con el modo vista previa puedes visualizar las versiones editables de todos los elementos en conjunto, o bien, puedes elegir usar las versiones publicadas de algunos elementos, usando los selectores de la barra. 
+
+Los elementos con los que puedes interactuar en la barra de vista previa son:
+
+* **Selector de templates**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
+* **Selector de contenido**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
+* **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
+* **Selector de páginas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al page builder.
+* **Selector de vista de contenido**: Cuando estás viendo las vistas personalizadas de contenido, este selector te permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando. Como esta vista no usa directamente el SDK de Liquid de contenido, es necesario que se pueda intercambiar entre la versión publicada y editable de la entrada en particular.
+* **Selector de widgets**: Si estás previsualizando páginas que contengan widgets personalizados, encontrarás una lista de los widgets que aparecen en la página, y podrás seleccionar si quieres visualizar la versión editable o publicada de cada uno de ellos. Una vez que completes la selección, haz click en el botón "refrescar" para que la configuración de los widgets tenga efecto.
+* **Pestaña para minimizar**: Te permite esconder la barra de previsualización para que no interfiera con los elementos que estén en la parte superior del sitio. Una vez minimizada, la pestaña se mantendrá visible para que puedas restaurar la barra del modo vista previa. 
+* **Editar elemento**: al hacer _click_ irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget o un template por defecto del sitio.
+* **Compartir link**: Te permite copiar un enlace que puedes compartir y quien lo abra, irá directamente al modo vista previa con la configuración al momento de copiar el link.
+* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejándo la pestaña en la url actual del sitio.
+
+:::warning Atención
+Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
 :::
