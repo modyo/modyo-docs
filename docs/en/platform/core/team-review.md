@@ -113,11 +113,13 @@ By default, Modyo saves the last 20 versions (`MAX_BACKUPS`) published of each i
 
 #### Scheduled
 
-When you decide to schedule a publication or unpublication, the editable version goes into a scheduled state, and when the time comes for publication, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version. 
+When you decide to schedule a publication, the editable version goes into a scheduled state, and when the time comes for publication, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version. 
 
 :::warning Warning
 Modyo only allows you to have one scheduled version of each element, so if you schedule a second modification to the element, you will be overwriting the previous scheduled version.
 :::
+
+Along with the publishing schedule, you can schedule to unpublish. When the time comes, the published version will become a backup, leaving the item in question without a published version.
 
 ### Actions for versioning
 
