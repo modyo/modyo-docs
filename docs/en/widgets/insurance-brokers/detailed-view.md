@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Broker Detailed View <Badge text="Beta" type="warn"/>
+# Detailed View <Badge text="Beta" type="warn"/>
 
 Keep track of the key details of your policy and follow the entire issuing process from start to finish. Easily access the information and customize every detail according to your product strategy.
 

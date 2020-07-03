@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Broker Dashboard <Badge text="Beta" type="warn"/>
+# Dashboard <Badge text="Beta" type="warn"/>
 
 This Modyo widget allows you to have an overview of the quotes, policies and policy renewals of your agents or clients according to the selected product. It offers an overview of the latest movements and facilitates the search for information based on user needs.
 

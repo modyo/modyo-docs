@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Intermediario Dashboard <Badge text="Beta" type="warn"/>
+# Dashboard <Badge text="Beta" type="warn"/>
 
 Este widget de Modyo permitirá tener una vista general de las cotizaciones, pólizas y renovaciones de tus intermediarios o clientes según el producto que elijas. Ofrece una vista general de los últimos movimientos y facilita la búsqueda de información según la necesidad del usuario.
 

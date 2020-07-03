@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Broker Issue Policy <Badge text="Beta" type="warn"/>
+# Issue Policy <Badge text="Beta" type="warn"/>
 
 Simplifies policy issuance processes by reducing the amount of data from integration with the Quotes module. Preloads information quickly and customizes issue controls to prevent fraud or deception in active co-ownerships.
 

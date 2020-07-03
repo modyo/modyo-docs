@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Intermediario Emitir póliza <Badge text="Beta" type="warn"/>
+# Emitir póliza <Badge text="Beta" type="warn"/>
 
 Simplifica los procesos de emisión de las pólizas reduciendo la cantidad de datos a partir de la integración con el módulo de cotizaciones. Precarga información de forma rápida y personaliza controles de emisión para prevenir fraudes o engaños en copropiedades activas.
 

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Broker Quote <Badge text="Beta" type="warn"/>
+# Quote <Badge text="Beta" type="warn"/>
 
 Create new quotes in a custom stepper based on your business needs. Create restrictive list validations, non-coverage rules by georeference, and obtain the necessary data to save time in issuing future policies.
 

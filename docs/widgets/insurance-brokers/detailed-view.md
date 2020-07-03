@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Intermediario Vista detallada <Badge text="Beta" type="warn"/>
+# Vista detallada <Badge text="Beta" type="warn"/>
 
 No pierdas de vista los detalles claves de tu pólizas y hazle seguimiento a todo el proceso de emisión de principio a fin. Facilita el acceso a la información y personaliza cada detalle de acuerdo a la estrategia de tus productos.
 
