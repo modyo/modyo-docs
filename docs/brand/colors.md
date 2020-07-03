@@ -232,8 +232,8 @@ Los colores especiales se designan solo para ilustraciones y gráficos que requi
 
 ## Overlay en imágenes
 El overlay de las fotos es negro con una opacidad del 80% para que exista el mejor contraste posible entre figura y fondo.
-<img src="https://cloud.modyocdn.com/uploads/1cc56f8f-b03d-4600-b7e0-908e5159b851/original/overlay1.png" style="width:80%;" alt="overlay example 1">
-<img src="https://cloud.modyocdn.com/uploads/e176b2ad-23d8-485b-a500-0c6a7c42fe6b/original/overlay2.png" style="width:80%;" alt="overlay example 2">
+<img src="/assets/img/brand/overlay1.png" style="width:80%;" alt="overlay example 1">
+<img src="/assets/img/brand/overlay2.png" style="width:80%;" alt="overlay example 2">
 
 
 

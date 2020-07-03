@@ -5,21 +5,36 @@ search: false
 # Aplicaciones
 
 Las ilustraciones hacen que las ideas sean más accesibles. Al igual que las palabras , las ilustraciones cuentan historias y representan nuestra marca de manera eficiente y clara. 
-Es muy importante que sean usadas de forma correcta y que nunca se transformen en un elemento distractor. En marketing se usan como respaldo y elemento de comunicación generalmente en sitios web, sitios de servicio, presentaciones, email, infografía, en medios de comunicación social y campañas.
+Es muy importante que sean usadas de forma correcta y que nunca se transformen en un elemento distractor.
+En marketing se usan como respaldo y elemento de comunicación generalmente en sitios web, sitios de servicio, presentaciones, email, infografía, en medios de comunicación social y campañas.
+
 
 ## Uso Incorrecto
-A continuación algunos ejemplos de usos incorrectos de ilustraciones.
+Los "Héroe" y "Héroe puntual" no pueden usarse como íconos y viceversa.
 
 <table>
 <tr>
-<td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/1b318b96-1c8e-44e5-bc7d-8f02c6061f62/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_45_40-min.png" alt="Icon as Hero">
+<td style="width:50%;">
+<img src="/assets/img/brand/incorrect_illustration_1.png" alt="Hero as Icon">
 </td>
-<td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/d791817d-2359-4cf5-9dae-4f2e25113ac0/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_43_02-min.png" alt="Hero as Icon">
+<td style="width:50%;">
+<img src="/assets/img/brand/incorrect_illustration_2.png" alt="Icon as Hero">
 </td>
-<td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/653b021a-5acf-4133-ae60-cb55cc0528ef/original/Captura_de_Pantalla_2020-06-15_a_la_s_09_45_24-min.png" alt="Overlay images and text">
+</tr>
+<tr>
+<td>
+<p class="dont">No usar un icono en lugar de un héroe.</p>
+</td>
+<td>
+<p class="dont">No usar héroe cómo ícono.</p>
+</td>
+</tr>
+<tr>
+<td style="width:50%;">
+<img src="/assets/img/brand/incorrect_illustration_3.png" alt="Icon as Hero">
+</td>
+<td style="width:50%;">
+<img src="/assets/img/brand/incorrect_illustration_4.png" alt="Hero as Icon">
 </td>
 </tr>
 <tr>
@@ -27,10 +42,7 @@ A continuación algunos ejemplos de usos incorrectos de ilustraciones.
 <p class="dont">No colocar texto por sobre las ilustraciones.</p>
 </td>
 <td>
-<p class="dont">No usar un icono en lugar de un hero.</p>
-</td>
-<td>
-<p class="dont">No usar un hero en lugar de un icono.</p>
+<p class="dont">Margen de menos de 1 cm.</p>
 </td>
 </tr>
 </table>
@@ -39,8 +51,8 @@ A continuación algunos ejemplos de usos incorrectos de ilustraciones.
 ## Zona de Exclusión
 Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la imagen tanto en la versión horizontal, cómo vertical.
 
-<img src="https://cloud.modyocdn.com/uploads/8cf0bcf5-9fc7-4f00-b0b2-a767386d46fb/original/distance_h.svg" alt="Horizontal">
-<img src="https://cloud.modyocdn.com/uploads/f64a84ae-5f0b-4c2f-b268-fc7d85ab2f2a/original/distance_v.svg" alt="Vertical">										
+<img src="/assets/img/brand/distance_h.svg" alt="Horizontal">
+<img src="/assets/img/brand/distance_v.svg" alt="Vertical">										
 
 
 
@@ -51,13 +63,13 @@ Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posi
 <table>
 <tr>
 <td style="width:30%;background-color:#336699;">
-<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" alt="">
+<img src="/assets/img/brand/clientes.png" alt="">
 </td>
 <td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="transform: rotate(40deg); width:230px" alt="">
+<img src="/assets/img/brand/clientes.png" style="transform: rotate(40deg); width:230px" alt="">
 </td>
 <td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="filter: hue-rotate(90deg);" alt="">
+<img src="/assets/img/brand/clientes.png" style="filter: hue-rotate(90deg);" alt="">
 </td>
 </tr>
 <tr>
@@ -73,10 +85,10 @@ Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posi
 </tr>
 <tr>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/e58dee97-e758-4ab6-810a-170bb1988adb/original/lateral.jpg" style="max-height:305px">
+<img src="/assets/img/brand/lateral.jpg" style="max-height:305px">
 </td>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/3e17be57-dc2d-4488-8d61-d0943197c7d5/original/clientes.png" style="width:200px; height:305px" alt="">
+<img src="/assets/img/brand/clientes.png" style="width:200px; height:305px" alt="">
 </td>
 <td>
 <img src="/assets/img/brand/incorrect_illustration_6.png" alt="">
