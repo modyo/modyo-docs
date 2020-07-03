@@ -179,7 +179,7 @@ module.exports = {
               collapsable: true,
               children: ["/widgets/onboarding/"]
             }*/
-          ],        
+          ],
           "/brand/": [
             {
               title: "Guía de Marca",
@@ -204,12 +204,10 @@ module.exports = {
             {
               title: "Documentos",
               collapsable: true,
-              children: [
-                ["/brand/documents/", "Introducción"],
-              ],
+              children: [["/brand/documents/", "Introducción"]],
             },
           ],
-          },
+        },
       },
       "/en/": {
         selectText: "Languages",
