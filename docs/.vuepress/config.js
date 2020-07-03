@@ -165,13 +165,21 @@ module.exports = {
               ],
             },
             {
-              title: "Seguros",
+              title: "Seguros Intermediarios",
               collapsable: true,
               children: [
-                "/widgets/insurance/dashboard",
-                "/widgets/insurance/quote",
-                "/widgets/insurance/detailed-view",
-                "/widgets/insurance/issue-policy",
+                "/widgets/insurance-brokers/dashboard",
+                "/widgets/insurance-brokers/quote",
+                "/widgets/insurance-brokers/detailed-view",
+                "/widgets/insurance-brokers/issue-policy",
+              ],
+            },
+            {
+              title: "Seguros Personas",
+              collapsable: true,
+              children: [
+                "/widgets/insurance-retail/quote",
+                "/widgets/insurance-retail/detailed-view",
               ],
             },
             /*{
@@ -179,7 +187,7 @@ module.exports = {
               collapsable: true,
               children: ["/widgets/onboarding/"]
             }*/
-          ],        
+          ],
           "/brand/": [
             {
               title: "Guía de Marca",
@@ -204,12 +212,10 @@ module.exports = {
             {
               title: "Documentos",
               collapsable: true,
-              children: [
-                ["/brand/documents/", "Introducción"],
-              ],
+              children: [["/brand/documents/", "Introducción"]],
             },
           ],
-          },
+        },
       },
       "/en/": {
         selectText: "Languages",
@@ -330,16 +336,23 @@ module.exports = {
               ],
             },
             {
-              title: "Insurance",
+              title: "Insurance Brokers",
               collapsable: true,
               children: [
-                "/en/widgets/insurance/dashboard",
-                "/en/widgets/insurance/quote",
-                "/en/widgets/insurance/detailed-view",
-                "/en/widgets/insurance/issue-policy",
+                "/en/widgets/insurance-brokers/dashboard",
+                "/en/widgets/insurance-brokers/quote",
+                "/en/widgets/insurance-brokers/detailed-view",
+                "/en/widgets/insurance-brokers/issue-policy",
               ],
             },
-
+            {
+              title: "Insurance Retail",
+              collapsable: true,
+              children: [
+                "/en/widgets/insurance-retail/quote",
+                "/en/widgets/insurance-retail/detailed-view",
+              ],
+            },
             /*  {
               title: "Onboarding",
               collapsable: true,
