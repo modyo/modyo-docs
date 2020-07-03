@@ -6,7 +6,7 @@ translated: true
 
 Welcome to the official Modyo documentation site. We hope to cover all relevant points of the platform here, such as descriptions of every interface, explain best practices when interacting with the platform, provide clear use cases, and more.
 
-![Modyo People](/assets/img/people.png)
+<img src="/assets/img/people.png" style="width:70%;" alt="Modyo people">
 
 ### What is Modyo?
 
