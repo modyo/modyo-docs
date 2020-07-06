@@ -234,3 +234,18 @@ Los elementos con los que puedes interactuar en la barra de vista previa son:
 :::warning Atención
 Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
 :::
+
+## Variables globales
+
+Modyo cuenta con la funcionalidad para definir variables globales que puedes usar en todos los sitios donde cuentes con Liquid, de esta manera puedes, por ejemplo, compartir un _snippet_ de código entre sitios. 
+
+Puedes crear variables globales en la configuración de la cuenta, y puedes añadir valores para distintos idiomas. Si lo requieres, también puedes sobrescribir los valores para determinados sitios en el menú variables del sitio, en la configuración del sitio.
+
+:::warning Atención
+Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el sitio y luego las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en el sitio con el mismo nombre que las variables de la cuenta.
+:::
+
+:::Danger Peligro
+Las variables globales no cuentan con un flujo de trabajo de publicación, versionado ni revisión en equipo, y solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer un cambio en el valor de estas, este se verá reflejado inmediatamente en donde sea que se estén usando.
+:::
+
