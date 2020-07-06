@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Issue Policy <Badge text="Beta" type="warn"/>
+# Issue Policy
 
 Simplifies policy issuance processes by reducing the amount of data from integration with the Quotes module. Preloads information quickly and customizes issue controls to prevent fraud or deception in active co-ownerships.
 

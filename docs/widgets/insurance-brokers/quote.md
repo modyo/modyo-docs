@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Cotizador <Badge text="Beta" type="warn"/>
+# Cotizador
 
 Crea nuevas cotizaciones en un stepper personalizado según las necesidades de tu negocio. Crea validaciones de listas restrictivas, reglas de no cobertura según georeferenciación, y obten los datos necesarios para ahorrar tiempo en las emisiones futuras de pólizas.
 
