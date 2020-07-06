@@ -198,3 +198,21 @@ The elements you can interact with in the preview bar are:
 :::warning Warning
 Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
 :::
+
+## Global variables
+
+Modyo has the functionality to define global variables that you can use in all the sites where you have Liquid, this way you can, for example, share a _snippet_ of code between sites. 
+
+:::tip Tip
+You can use plain text, HTML code, JavaScript and CSS within the global variables, however you cannot use Liquid code within them.
+:::
+
+You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings.
+
+:::warning Warning
+When using global variables, preference will always be given to variables defined on the site and then to variables defined at the account level, so be careful when defining variables on the site with the same name as the account variables.
+:::
+
+:::danger Danger
+The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them, so you should consider that when you make a change in the value of these, it will be reflected immediately wherever they are being used.
+:::
