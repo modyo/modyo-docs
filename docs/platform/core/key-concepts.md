@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Revisión en Equipo
+# Conceptos clave
 
-## Introducción
+## Revisión en Equipo
 
 La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de elementos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación. 
 
@@ -130,7 +130,7 @@ En este caso, recursos internos como Widgets y Templates ya se pueden usar en la
 
 La versión publicada no necesariamente tiene el mismo contenido que la editable (excepto en el momento justo de la publicación), ya que puede contener cambios que estén en proceso de prueba o revisión.
 
-### Respaldos
+#### Respaldos
 
 Los respaldos son versiones previamente publicadas de los elementos. Es decir, cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
 
@@ -141,6 +141,16 @@ Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas d
 
 Este valor se puede modificar mediante variables de entorno y es común para todas las cuentas de este.
 :::
+
+#### Programado
+
+Cuando decides programar una publicación, la versión editable pasa a un estado programado, y cuando llegue el momento de la publicación, esa versión programada tomará el lugar de la versión que esté publicada en ese momento. De esta forma, podrás programar un cambio en el futuro para los elementos, y seguir trabajando en la versión editable. 
+
+:::warning Atención
+Modyo solo permite tener una versión programada de cada elemento, por lo que si programas una segunda modificación al elemento, estarás sobreescribiendo la programación anterior.
+:::
+
+Junto con la programación de publicación, puedes programar una despublicación. Llegado el momento, la versión que esté publicada pasará a ser un respaldo, dejando el elemento en cuestión sin una versión  publicada.
 
 ### Acciones para el versionado
 
@@ -199,3 +209,45 @@ Cuando el Administrador tome el control, el usuario que esté usando el recurso 
 
 Tras tomar el control, el Administrador sólo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
 :::
+
+## Modo vista previa
+
+El modo vista previa te permite previsualizar el resultado de los cambios a elementos publicables como las Entradas, Páginas, Navegación, Widgets o Templates; accesible desde la parte superior derecha con el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
+
+![Barra de vista previa](/assets/img/platform/preview-bar.png)
+
+Los elementos con los que puedes interactuar en la barra de vista previa son:
+
+* **Selector de templates**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
+* **Selector de contenido**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
+* **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
+* **Selector de páginas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al page builder.
+* **Selector de vista de contenido**: Este selector te permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
+* **Selector de widgets**: Si estás previsualizando páginas que contengan widgets personalizados, encontrarás una lista de los widgets que aparecen en la página, y podrás seleccionar si quieres visualizar la versión editable o publicada de cada uno de ellos. Una vez que completes la selección, haz click en el botón "refrescar" para que la configuración de los widgets tenga efecto.
+* **Pestaña para minimizar**: Te permite esconder la barra de previsualización para que no interfiera con los elementos que estén en la parte superior del sitio. Una vez minimizada, la pestaña se mantendrá visible para que puedas restaurar la barra del modo vista previa. 
+* **Editar elemento**: al hacer _click_ irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget o un template por defecto del sitio.
+* **Compartir link**: Te permite copiar un enlace que puedes compartir y quien lo abra, irá directamente al modo vista previa con la configuración al momento de copiar el link. Para poder ver el modo vista previa, basta con tener una sesión iniciada en el admin de la cuenta.
+* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejándo la pestaña en la url actual del sitio.
+
+:::warning Atención
+Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
+:::
+
+## Variables globales
+
+Modyo cuenta con la funcionalidad para definir variables globales que puedes usar en todos los sitios donde cuentes con Liquid, de esta manera puedes, por ejemplo, compartir un _snippet_ de código entre sitios. 
+
+:::tip Tip
+Puedes usar texto plano, código HTML, JavaScript y CSS dentro de las variables globales, sin embargo no puedes usar código Liquid dentro de ellas.
+:::
+
+Puedes crear variables globales en la configuración de la cuenta, y puedes añadir valores para distintos idiomas. Si lo requieres, también puedes sobrescribir los valores para determinados sitios en el menú variables del sitio, en la configuración del sitio.
+
+:::warning Atención
+Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el sitio y luego las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en el sitio con el mismo nombre que las variables de la cuenta.
+:::
+
+:::danger Peligro
+Las variables globales no cuentan con un flujo de trabajo de publicación, versionado ni revisión en equipo, y solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer un cambio en el valor de estas, este se verá reflejado inmediatamente en donde sea que se estén usando.
+:::
+

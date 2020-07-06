@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Team Review
+# Key concepts
 
-## Introduction
+## Team Review
 
 Team Review is a tool that allows you to control the process of publishing elements in Modyo, such as entries, widgets, pages, templates, and more. When activated, each element must go through review stages with selected team members before publishing. This allows a level of supervision and collaboration between the content editor and a team of reviewers.
 
@@ -81,7 +81,7 @@ When team review is enabled, in the item's action bar, to the left of the green 
 
 When a comment is left or any action is taken on the item, a notification is sent to both the person who sent it for review and the users who are on the list of reviewers.
 
-## Versioned
+## Versions
 
 As a backup mechanism, when publishing an item, Modyo automatically generates and maintains a number of versions that can later be retrieved if necessary.
 
@@ -101,7 +101,7 @@ This version saves the content visible on the site and is freely available to an
 
 The published version does not necessarily have the same content as the editable one (except at the right time of publication), since the latter may contain changes that are in the process of being tested or reviewed.
 
-### Backups
+#### Backups
 
 Backups are previously published versions of the elements. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
@@ -110,6 +110,16 @@ If you want to review a particular version of an item, you can go to the "Differ
 ::: warning Warning
 By default, Modyo saves the last 20 versions (`MAX_BACKUPS`) published of each item, so by making the twenty-first publication, you will be deleting the backup of the first publication of the item. This value can be modified using environment variables and is common for all accounts in that environment.
 :::
+
+#### Scheduled
+
+When you decide to schedule a publication, the editable version goes into a scheduled state, and when the time comes for publication, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version. 
+
+:::warning Warning
+Modyo only allows you to have one scheduled version of each element, so if you schedule a second modification to the element, you will be overwriting the previous scheduled version.
+:::
+
+Along with the publishing schedule, you can schedule to unpublish. When the time comes, the published version will become a backup, leaving the item in question without a published version.
 
 ### Actions for versioning
 
@@ -161,4 +171,46 @@ If an Administrator wants to take control of a view, he must click on the item i
 When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from continuing to make changes, so any changes that are being made must be saved and backed up offline.
 
 After taking control, the Administrator will only have two hours to make changes without saving. After that time, the resource will be released again and can be taken by any other user.
+:::
+
+## Preview mode
+
+The preview mode allows you to preview the result of changes to publishable items such as Entries, Pages, Navigation, Widgets or Templates; accessible from the top right with the icon
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. You can recognize that you are in preview mode when you see the bar at the top of the site.
+
+![Preview bar](/assets/img/platform/preview-bar.png)
+
+The elements you can interact with in the preview bar are:
+
+* **Templates selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.
+* **Content selector**: Allows you to switch between the published and editable version of the elements belonging to the content application and that are being used on the site using the Liquid content SDK.
+* **Navigation selector**: Allows you to change between the published and editable version of the elements belonging to the navigation builder.
+* **Page selector**: Allows you to switch between the published and editable version of the elements belonging to the page builder.
+* **Content view selector**: This selector allows you to switch between the published and editable version of the content entry being previewed in the custom content views. This view does not directly use the Liquid Content SDK, so the content in these views will not be affected by the Content SDK selector.
+* **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button to take effect on your widget settings.
+* **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the bar from preview mode. 
+* **Edit element**: when you _click_ you will go to the edit page of the element you are looking at, be it an entry, a page, a widget or a default template of the site.
+* **Share link**: It allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
+* **Exit preview mode**: Closes the preview mode, removing the bar and leaving the tab in the current site url.
+
+:::warning Warning
+Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
+:::
+
+## Global variables
+
+Modyo has the functionality to define global variables that you can use in all the sites where you have Liquid, this way you can, for example, share a _snippet_ of code between sites. 
+
+:::tip Tip
+You can use plain text, HTML code, JavaScript and CSS within the global variables, however you cannot use Liquid code within them.
+:::
+
+You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings.
+
+:::warning Warning
+When using global variables, preference will always be given to variables defined on the site and then to variables defined at the account level, so be careful when defining variables on the site with the same name as the account variables.
+:::
+
+:::danger Danger
+The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them, so you should consider that when you make a change in the value of these, it will be reflected immediately wherever they are being used.
 :::

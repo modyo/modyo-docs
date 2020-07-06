@@ -145,7 +145,7 @@ What to expect in this release?
 <Badge text="Core" type="core" vertical="middle"/>
 * Separation of users and [team members](/en/platform/core/roles.html#team), those who have access to the platform are separated from the users of the page itself
 * New [roles and permissions](/en/platform/core/roles.html).
-* [Team review](/en/platform/core/team-review.html), replacing the workflow application, allows the team to collaborate for the approval of the publication and the transition to production.
+* [Team review](/en/platform/core/key-concepts.html), replacing the workflow application, allows the team to collaborate for the approval of the publication and the transition to production.
 * Multiple bugs solved.
 * Multiple navigation and usability improvements.
 

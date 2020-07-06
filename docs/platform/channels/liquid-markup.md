@@ -512,3 +512,318 @@ Si quieres combinar varios strings en uno solo y guardarlo en una variable, pued
     <option value="blue">Blue</option>
   </select>
 ```
+
+## Drops
+
+Modyo cuenta con drops disponibles para distintos contextos dentro de los cuales puedes encontrar drops para la cuenta, content, channels y customers.
+
+### Drops de cuenta
+Los drops disponibles a nivel global son: 
+
+```
+account:
+  - url
+  - host
+  - disable_modyo_credentials
+  - google_key
+  - oauth2_callback_url
+  - oidc_callback_url
+```
+
+### Drops de content
+Los drops disponibles para content son:
+
+```
+space:
+  - entries
+  - types
+  - name
+type:
+  - entries
+  - fields
+  - name
+entry:
+  - space
+  - category
+  - type
+  - type_uid
+  - tags
+  - account_url
+  - url
+  - author
+  - meta
+  - fields
+field:
+  - name
+  - type
+location:
+  - location_street
+  - latitude
+  - longitude
+category:
+  - id
+  - slug
+  - name
+  - url
+  - parent
+  - children
+  - siblings
+  - products_url
+  - support_url
+  - networks_url
+  - profiles_url
+  - posts_url
+  - promotions_url
+  - albums_url
+  - videos_url
+  - files_url
+  - audio_url
+  - places_url
+asset:
+  - url
+  - thumbnail_url
+  - uuid
+  - data_file_name
+  - name
+  - content_type
+  - title
+  - alt
+  - size
+  - description
+audio_asset:
+  - url
+file_asset:
+  - url
+  - thumbnail_url
+  - image_thumbnail_url
+  - pdf_thumbnail_url
+  - is_image
+  - is_video
+  - is_audio
+  - is_pdf
+  - is_another
+  - temp_url
+video_asset:
+  - url
+  - thumbnail_url
+```
+
+### Drops de channels
+Los drops disponibles para channels son:
+
+```
+site:
+  - theme
+  - breadcrumb
+  - categories
+  - csrf_meta_tag
+  - me_applications
+  - url
+  - memberships_count
+  - layout
+  - menu_items
+  - account_url
+  - current_year
+  - manifest_url
+  - sw_enabled
+  - sw_url
+  - sw_scope
+  - add_parent_breadcrumb
+site_search:
+  - have_results
+  - results
+  - have_less_relevant_results
+request:
+  - user_agent
+  - host
+  - domain
+  - protocol
+  - url
+  - path
+  - interact_url
+  - refresh_url
+  - comments_url
+  - is_app_shell
+user_agent:
+  - initialize
+  - browser
+  - browser_version
+  - platform
+  - platform_version
+  - agent
+  - is_modyo_shell
+layout_page:
+  - grid
+  - name
+custom_layout_page:
+  - content
+  - title
+  - excerpt
+  - name
+  - url
+  - count
+  - parent
+  - description
+menu:
+  - items
+menu_item:
+  - label
+  - child_items
+  - url
+  - parameterized_label
+  - category
+  - position
+  - target
+widget:
+  - id
+  - cache_key
+  - type
+  - created_at
+  - css_class
+  - width
+  - name
+  - use_default_title
+  - title
+  - resolve_type
+  - uuid
+  - wid
+  - permanent_cache
+rich_text_widget:
+  - html
+custom_widget:
+  - manager_uuid
+  - version
+text_widget:
+  - html
+content_list_widget:
+  - show_caption
+  - entries
+  - context_params
+  - space_id
+  - type_uid
+layout:
+  - name
+  - me_page
+  - home_page
+grid:
+  - id
+  - cache_key
+  - resolve_type
+full_three_cols_grid:
+  - main_widgets
+  - col1_widgets
+  - col2_widgets
+  - col3_widgets
+side_right_three_cols_grid:
+  - main_widgets
+  - side_right_widgets
+  - col1_widgets
+  - col2_widgets
+  - col3_widgets
+side_left_grid:
+  - main_widgets
+  - side_left_widgets
+side_left_one_col_grid:
+  - main_widgets
+  - side_left_widgets
+  - full_widgets
+side_right_one_col_grid:
+  - main_widgets
+  - side_right_widgets
+  - full_widgets
+full_grid:
+  - main_widgets
+full_two_cols_grid:
+  - main_widgets
+  - col1_widgets
+  - col2_widgets
+side_right_grid:
+  - main_widgets
+  - side_right_widgets
+side_left_three_cols_grid:
+  - main_widgets
+  - side_left_widgets
+  - col1_widgets
+  - col2_widgets
+  - col3_widgets
+```
+
+### Drops de customers
+Los drops disponibles para customers son:
+
+```
+user:
+  - generated_password
+  - uuid
+  - email
+  - username
+  - avatar
+  - name
+  - genders
+  - birth_at
+  - profile_url
+  - change_password_url
+  - first_name
+  - last_name
+  - initials
+  - addresses
+  - targets
+  - unread_notifications
+  - unread_notifications_count
+  - notifications
+  - custom_fields
+  - card
+membership:
+  - member_name
+  - member_first_name
+  - member_last_name
+  - age
+  - birth_at
+  - email
+  - male_sex_value
+  - female_sex_value
+  - undefined_sex_value
+  - invitation_key
+  - id
+  - name
+  - genders
+  - avatar
+  - url
+  - member_since
+  - site
+  - sex
+  - targets_names
+  - targets
+  - user
+  - external_user_id
+  - external_access_token
+target:
+  - name
+  - id
+form:
+  - slug
+question:
+  - allow_alternatives
+  - alternatives
+  - label
+  - id
+  - form
+alternative:
+  - question
+  - id
+form_response:
+  - name
+  - description
+  - questions
+  - parse_answers
+  - parse_answer
+answer:
+  - text_field
+  - question
+  - alternative
+  - id
+  - type
+  - response
+  - dynamic_target_url
+  - edit_url
+```
