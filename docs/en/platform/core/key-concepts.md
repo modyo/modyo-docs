@@ -180,8 +180,6 @@ The preview mode allows you to preview the result of changes to publishable item
 
 ![Preview bar](/assets/img/platform/preview-bar.png)
 
-With the preview mode you can view the editable versions of all the elements as a whole, or you can choose to use the published versions of some elements, using the selectors in the bar. 
-
 The elements you can interact with in the preview bar are:
 
 * **Templates selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.

@@ -216,8 +216,6 @@ El modo vista previa te permite previsualizar el resultado de los cambios a elem
 
 ![Barra de vista previa](/assets/img/platform/preview-bar.png)
 
-Con el modo vista previa puedes visualizar las versiones editables de todos los elementos en conjunto, o bien, puedes elegir usar las versiones publicadas de algunos elementos, usando los selectores de la barra. 
-
 Los elementos con los que puedes interactuar en la barra de vista previa son:
 
 * **Selector de templates**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
