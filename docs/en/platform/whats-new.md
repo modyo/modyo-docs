@@ -9,7 +9,7 @@ In the new version of the platform, Modyo 9.0, we highlight the following new fe
 
 ### New simplified interface
 
-A new, simplified, cleaner user interface, and now allows you to change the Modyo logo within your account to any logo you like.
+A new, simplified and cleaner user interface that now also allows you to change the Modyo logo within your account to any logo you like.
 
 ### New Modyo Content application
 

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Notas del release
+# Release notes
 
 ### 9.1.X - First release planned for the second quarter of 2020.
 What to expect in this release?
@@ -10,36 +10,36 @@ What to expect in this release?
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Scheduler: Schedule a change in the future without the need to unpublish what is already published.
-* Administrator groups: To easily add users together to different sites or spaces.
+* Administrator groups: Easily add users corresponding to different sites or spaces.
 * Modyo Lite: Access a version of Modyo that includes the Core, Content and Channels applications.
-* New preview mode: A preview mode that allows you to view content, pages, templates, widgets and navigation together
+* New preview mode: Allows you to preview content, pages, templates, widgets and navigation
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Release manager: Groups and accumulates Channels publications.
-* Site stages: Works in a safe pre-productive environment of a site, without compromising the integrity of what is already published in it.
+* Release manager: Group and accumulate publications in Channels.
+* Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
 * Global variables: Reuse snippets between sites.
-* Improvements to SEO: Customize meta-tags for your pages from an easy to use interface.
+* Improvements to SEO: Customize meta-tags for your pages from an easy-to-use interface.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Business Events: Add any event that is relevant to your business to Modyo, then allow for customer segmentation.
+* Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
 ### 9.0.8 - June 15, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
-* Security enhancements added to file upload endpoints.
-* Multiple bugs solved.
-* Multiple navigation and usability improvements.
+* Security enhancements to the file upload endpoints.
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Different drops of liquid are added depending on the type of file in the [asset manager](/en/platform/content/asset-manager.html#file-properties).
+* Different Liquid Drops were added according to the file types in the [asset manager](/en/platform/content/asset-manager.html#file-properties).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Example code added when creating new [content views](/en/platform/channels/templates.html#automated-content-views)
-* An input attribute selector is added to the content views.
+* Code samples were added when creating new [content views](/en/platform/channels/templates.html#automated-content-views)
+* An input attribute selector was added to the content views.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* File type questions on [forms](/en/platform/customers/forms.html#add-field) are removed
+* File type questions on [forms](/en/platform/customers/forms.html#add-field) were removed.
 
 ### 9.0.7 - June 01, 2020
 &nbsp;
@@ -126,7 +126,7 @@ What to expect in this release?
 * Use locations in content with maps or with a form, configuring a google api key in the account settings.
 * Improvements to the [liquid SDK](/en/platform/content/public-api-reference.html#liquid-sdk) content.
 * Usability improvements to the [asset manager](/en/platform/content/asset-manager.html).
- 
+
 ### 9.0.1 - January 17, 2020
 &nbsp;
 <Badge text="Core" type="core"/>
