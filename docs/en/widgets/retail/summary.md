@@ -21,11 +21,11 @@ modyo-cli get modyo-widgets-retail-summary
 
 The Account Summary presents a customer's financial state within the different products they have with the financial institution (Accounts and Credit Cards).
 
-Each individual summary presents financial information within the specific product both numerically and graphically.
+Each summary presents financial information for a specific product both numerically and graphically.
 
 #### Checking Account
 
-The Checking Account section allows you to see an overview of the amounts available, as well as have access to transactions such as transfers and movements.
+The Checking Account section allows you to see an overview of the available balance amounts and gives you access to transactions such as transfers and movements.
 
 | Feature           | Description                                                                             |
 | :---------------- | :-------------------------------------------------------------------------------------- |
@@ -35,11 +35,11 @@ The Checking Account section allows you to see an overview of the amounts availa
 | Line of Credit    | Displays the line of credit status of the account.                                      |
 | Available Balance | Displays the total available balance in the line of credit associated with the account. |
 | Transfer          | Switches to the Transfer widget associated with the account.                            |
-| Transactions      | Switches to the Tranfers History widget, to see each movement in detail.                |
+| Transactions      | Switches to the Transfers History widget, to see each movement in detail.                |
 
 #### Savings Account
 
-Savings Accounts have the same features as Checking Accounts. However, Savings Accounts are not associated with Lines of Credit, and instead display a list of recent activity.
+Savings Accounts have the same features as Checking Accounts. However, Savings Accounts are not associated with Lines of Credit, and display a list of recent activity instead.
 
 | Feature           | Description                                                                                              |
 | :---------------- | :------------------------------------------------------------------------------------------------------- |
@@ -48,16 +48,16 @@ Savings Accounts have the same features as Checking Accounts. However, Savings A
 | Deposits          | Shows the total credits or deposits made to an account.                                                  |
 | Recent activity   | Displays a list of the latest transactions made within the account, together with the amounts and dates. |
 | Transfer          | Switches to the Transfer widget associated with the account.                                             |
-| Transactions      | Switches to the Tranfers History widget, to see each movement in detail.                                 |
+| Transactions      | Switches to the Transfers History widget, to see each movement in detail.                                 |
 
 #### Credit Cards
 
 Each of the credit cards has its own section within the summary, which shows the details of each card, the total amount of credit used, the amount available, and the latest movements.
-In addition, it has the option to display credit cards that have both national and international lines of credit, including a graph that allows to see in proportion what has been used.
+The widget also allows you to separate national from international lines of credit, showing you graphically the usage of each one.
 
 | Feature          | Description                                                                                                                                     |
 | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Available Credit | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used verus the total credit limit. |
+| Available Credit | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used versus the total credit limit. |
 | Pay              | Switches to the Card Payment widget, where you can pay invoiced amounts.                                                                        |
 | Transactions     | Switches to the Transactions widget of the card, where you can review the details of each transaction.                                          |
 

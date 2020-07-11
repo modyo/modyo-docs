@@ -5,7 +5,7 @@ translated: true
 
 # Transfer
 
-Transfers is a wigdet that allows a customer to move money between their accounts or transfer to third parties simply and securely.
+The Transfer widget allows customers to move money between their accounts or transfer money to third parties with ease and security.
 
 #### Installation:
 
@@ -17,15 +17,15 @@ modyo-cli get modyo-widgets-retail-transfer
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
 
-This widget is divided into features for two similar products: Transfer to Third Party and Transfer between Accounts.
+This widget includes features for two similar products: Transfer to Third Party and Transfer between Accounts.
 
 ### Transfers between Accounts
 
 | Feature             | Description                                                                                                                                        |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Origin Account      | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred.      |
-| Destination Account | Select the account to which the money will be transferred and deposited.                                                                           |
-| Schedule Transfer   | Allows you to select a time frequency (once, weekly, monthly, annually, etc.) between which transfers of a predetermined amount of money are made. |
+| Destination Account | Select the recipient account to which the money will be transferred and deposited.                                                                           |
+| Schedule Transfer   | Allows the client to schedule periodic transfers by selecting the frequency (e.g. weekly, monthly, quarterly) of the transfers. |
 | Recent Activity     | Displays all recent activity that has not yet been invoiced.                                                                                       |
 
 ### Third-party Transfers

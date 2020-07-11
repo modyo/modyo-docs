@@ -5,7 +5,7 @@ translated: true
 
 # Loans
 
-Modyo also offers a widget that allows you to see an overview of the loans that a customer has with the financial institution, in detail and with their updated data.
+Modyo also offers a widget that allows you to see an overview of the loans that a customer has with the financial institution with updated and detailed data.
 
 #### Installation:
 
@@ -19,8 +19,8 @@ modyo-cli get modyo-widgets-retail-loans
 
 | Functionality | Description                                                                                                                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Loan Summary  | Displays information on the loans that the customer has currently, such as type of loan, name and application number.                                                                                             |
-| Loan Details  | When you select view details, this displays detailed information about the loan, including outstanding balance, date awarded, end date, and loan type payment amount. Includes information on upcoming due dates. |
+| Loan Summary  | Displays information on the customer's current loans, such as type of loan, name and application number.                                                                                             |
+| Loan Details  | When you select view details, the widget displays more detailed information about the loan including outstanding balance, date awarded, end date, loan type and payment amount. Includes information on upcoming due dates. |
 
 <script>
 
