@@ -58,7 +58,7 @@ Si quisieramos usar el logo en fondos oscuro, el ideal es usarlo sobre fondos gr
 </table>
 
 <table>
-<tr style="background-color: #252931; padding: 20px;">
+<tr style="background-color: #3A3A3A; padding: 20px;">
 <td>
 <img src="/assets/img/brand/modyo_logo_normal_white.svg" style="width:400px;" alt="logo">
 </td>
@@ -68,10 +68,10 @@ Si quisieramos usar el logo en fondos oscuro, el ideal es usarlo sobre fondos gr
 </tr>
 <tr>
 <td>
-<div class="center">#252931</div>
+<div class="center">#3A3A3A</div>
 </td>
 <td>
-<div class="center">#252931</div>
+<div class="center">#3A3A3A</div>
 </td>
 </tr>
 </table>
@@ -225,7 +225,7 @@ Si quisieramos usar el isotipo en fondos oscuros, el ideal es usarlo con los sig
 </table>
 
 <table>
-<tr style="background-color: #252931; padding: 20px;">
+<tr style="background-color: #3A3A3A; padding: 20px;">
 <td>
 <img src="/assets/img/brand/modyo_isotype_normal_white.svg" style="width:300px;" alt="logo">
 </td>
@@ -235,10 +235,10 @@ Si quisieramos usar el isotipo en fondos oscuros, el ideal es usarlo con los sig
 </tr>
 <tr>
 <td>
-<div class="center">#252931</div>
+<div class="center">#3A3A3A</div>
 </td>
 <td>
-<div class="center">#252931</div>
+<div class="center">#3A3A3A</div>
 </td>
 </tr>
 </table>
