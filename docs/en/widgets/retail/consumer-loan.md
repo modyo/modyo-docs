@@ -17,7 +17,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/consumer-loan" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
 
-The default properties that the client can modify for its simulation and request are:
+The default properties that the client can modify for the simulation and loan application are:
 
 | Functionality         | Description                                                                                                                |
 | :-------------------- | :------------------------------------------------------------------------------------------------------------------------- |
@@ -25,13 +25,13 @@ The default properties that the client can modify for its simulation and request
 | Payments              | Shows the total payment amounts for the requested personal loan.                                                           |
 | Months of non-payment | This section allows customers to select the months of their grace period.                                                  |
 | Grace period          | If necessary, customers can select non-payment dates for their personal loan.                                              |
-| Destination account   | Corresponds to the account to which the requested loan amount will be deposited.                                           |
-| Insurance             | Corresponds to the selection of insurances that the client will be able to request together with their loan, if necessary. |
+| Destination account   | Corresponds to the account in which the requested loan amount will be deposited.                                           |
+| Insurance             | Shows different types of insurance that clients can add to their loans if necessary. |
 |                       |
 
-By selecting each of these options, the widget will display the amount and simulate the payment, along with a report of the attached credit details.
+According to the selected options, the widget will display the credit amount and simulate the necessary payments, along with a report of the corresponding credit details.
 
-Lastly, a button will appear that allows the client to apply directly for the loan.
+Lastly, a button will appear that allows the client to directly apply for the loan.
 
 <script>
 

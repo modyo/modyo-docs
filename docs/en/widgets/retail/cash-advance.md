@@ -7,7 +7,7 @@ translated: true
 
 The Cash Advance widget allows any customer to create a credit simulation to request a cash advance from a financial institution.
 
-Through this widget, the client can perform different functions according to the features required for the product.
+Through this widget, customers can select different options according to their requirements of this product.
 
 ### Installation:
 
@@ -19,14 +19,14 @@ modyo-cli get modyo-widgets-retail-cash-advance
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
 
-The customer can select the features of their cash advance and its payment to perform the simulation.
+The customer can select the desired options for their cash advance and payment amount to run the simulation.
 
 | Functionality | Description                                                                              |
 | :------------ | :--------------------------------------------------------------------------------------- |
-| From          | Select the card from which the cash amount will be drawn.                                |
-| To            | Displays the destination account of the cash requested.                                  |
-| Amount        | This section allows you to add the amount requested in cash.                             |
-| Payments      | The client can select the number of payments in which the requested amount will be paid. |
+| From          | Selects the card from which the cash amount will be drawn.                                |
+| To            | Displays the destination account of the requested cash.                                  |
+| Amount        | This section allows you to add the requested amount in cash.                             |
+| Payments      | The customer can select the number of installments in which the requested amount will be paid |
 
 ### Simulation
 
@@ -35,7 +35,7 @@ The client can select the number of payments in which the requested amount will 
 | Functionality                | Description                                                               |
 | :--------------------------- | :------------------------------------------------------------------------ |
 | Total advance cost           | Shows the total amount that will be charged to the card.                  |
-| Monthly payment              | Shows the amount of each monthly payment according to the time requested. |
+| Monthly payment              | Shows the amount of each monthly payment according to the established time period. |
 | Monthly interest rate        | Shows the monthly interest rate of the cash advance.                      |
 | Annual Percentage Rate (APR) | Shows the annual interest rate of the cash advance.                       |
 

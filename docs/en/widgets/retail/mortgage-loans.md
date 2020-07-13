@@ -5,7 +5,7 @@ translated: true
 
 # Mortgage Loans
 
-This widget allows you to make a simulation of a mortgage loan and start the application process with the requirements needed from each applicant.
+This widget allows customers to simulate a mortgage loan and start the application process according to the applicant's requirements.
 
 ### Installation:
 
@@ -19,14 +19,14 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
 
 | Feature            | Description                                                                                                                                                                                                             |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Loan Amount        | Enters the loan amount that they want to simulate and apply for.                                                                                                                                                        |
-| Down payment       | Enters the down payment amount to be included in the application.                                                                                                                                                       |
-| Property type      | Chooses the property type that they wish to purchase with the loan.                                                                                                                                                     |
-| Loan Term          | Chooses the number of years over which loan payments will be made.                                                                                                                                                      |
-| Grace Period       | Selects a grace period of non-payment in months that the customer wishes to add into their simulation.                                                                                                                  |
-| Insurance          | Chooses which insurances to include in the mortgage loan simulation.                                                                                                                                                    |
-| Simulation Summary | Presents general information about the mortgage loan simulation carried out. Includes total cost of the loan, the term in number of years, monthly payment amount, respective interest rates and financing percentages. |
-| Simulation Details | Displays the details of the mortgage loan simulation. Includes the loan amount, term, down payment, monthly payment amount, property type, taxes, insurance and expenses, among others.                                 |
+| Loan Amount        | Clients can enter the loan amount they want to simulate and apply for.                                                                                                                                                        |
+| Down payment       | Clients can enter the desired down payment amount to be included in the application.                                                                                                                                                       |
+| Property type      | Allows the user to choose the property type they wish to purchase with the loan.                                                                                                                                                     |
+| Loan Term          | Allows the user to choose the length of the loan term during which payments will be made.                                                                                                                                                      |
+| Grace Period       | The customer can add a grace period in months of non-payment to the simulation.                                                                                                                  |
+| Insurance          | The customer can add different types of insurance to the mortgage loan simulation.                                                                                                                                                    |
+| Simulation Summary | Presents general information obtained from the mortgage loan simulation. It includes total cost of the loan, the loan term in years, the monthly payment amount, the corresponding interest rates, and financing percentage. |
+| Simulation Details | Displays the details of the mortgage loan simulation. Includes the loan amount, term, down payment, monthly payment amount, property type, taxes, insurances, expenses and more.                                 |
 | Apply for Loan     | Allows customers to confirm the simulation and begin their application for the mortgage loan with your institution.                                                                                                     |
 
 <script>
