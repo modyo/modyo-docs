@@ -58,11 +58,11 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
 
 <table>
 <tr>
-   <td>
+   <td style="width:25%;">
       <b>Proxy Caché Server</b>
    </td>
    <td>
-   Implementado con Varnish o Nginx el Proxy Caché Server permite acelerar la entrega de las páginas y recursos estáticos manteniendo una copia de éstas en la memoria del servidor y evitando que la request baje al servidor de aplicaciones.
+      Implementado con Varnish o Nginx el Proxy Caché Server permite acelerar la entrega de las páginas y recursos estáticos manteniendo una copia de éstas en la memoria del servidor y evitando que la request baje al servidor de aplicaciones.
    </td>
 </tr>
 <tr>
@@ -70,7 +70,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Web Server</b>
    </td>
    <td>
-   Implementado con Apache o Nginx el Web Server será el responsable en procesar todas las request entrantes para direccionarlas hacia la plataforma o hacia los sistemas de almacenamiento de archivos estáticos. El Web Server realiza además operaciones avanzadas de caché (Varnish o Nginx) y balanceo de carga en caso de ser requerido.
+      Implementado con Apache o Nginx el Web Server será el responsable en procesar todas las request entrantes para direccionarlas hacia la plataforma o hacia los sistemas de almacenamiento de archivos estáticos. El Web Server realiza además operaciones avanzadas de caché (Varnish o Nginx) y balanceo de carga en caso de ser requerido.
    </td>
 </tr>
 <tr>
@@ -78,7 +78,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Modyo App Server</b>
    </td>
    <td>
-   El Modyo App Server el responsable de la aplicación de Modyo, tanto para el front end de sitios como el back end de administración.
+      El Modyo App Server el responsable de la aplicación de Modyo, tanto para el front end de sitios como el back end de administración.
    </td>
 </tr>
 <tr>
@@ -86,7 +86,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Modyo Worker Process</b>
    </td>
    <td>
-   El Modyo Worker es el responsable de tomar y procesar los mensajes encolados en segundo plano.
+      El Modyo Worker es el responsable de tomar y procesar los mensajes encolados en segundo plano.
    </td>
 </tr>
 <tr>
@@ -94,9 +94,8 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>NoSQL Cluster</b>
    </td>
    <td>
-   Implementado con Redis Server el cual es una base de datos del tipo clave valor muy potente y versátil. En la arquitectura de despliegue de Modyo es utilizado para almacenar objetos en memoria para ser reusados sin tener que re-procesarlos, lo que en caso de tratarse de elementos con alta concurrencia, permite alivianar la carga general de procesamiento.
-
-   En escenarios de alta demanda, diferentes clusters de Redis para encolamiento de mensajes y caché pueden ser implementados.
+      Implementado con Redis Server el cual es una base de datos del tipo clave valor muy potente y versátil. En la arquitectura de despliegue de Modyo es utilizado para almacenar objetos en memoria para ser reusados sin tener que re-procesarlos, lo que en caso de tratarse de elementos con alta concurrencia, permite alivianar la carga general de procesamiento.
+      En escenarios de alta demanda, diferentes clusters de Redis para encolamiento de mensajes y caché pueden ser implementados.
    </td>
 </tr>
 <tr>
@@ -104,7 +103,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Index Cluster</b>
    </td>
    <td>
-   Implementado con Elasticsearch el cual es utilizado para la indexación completa de los documentos y layout pages que serán "buscables" o "georeferenciables", Elastic Search también brinda soporte a los dashboards y targets de usuarios que son procesados en tiempo real.
+      Implementado con Elasticsearch el cual es utilizado para la indexación completa de los documentos y layout pages que serán "buscables" o "georeferenciables", Elastic Search también brinda soporte a los dashboards y targets de usuarios que son procesados en tiempo real.
    </td>
 </tr>
 <tr>
@@ -112,7 +111,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Database Cluster</b>
    </td>
    <td>
-   Implementado con MySQL Server (o algún motor compatible como MariaDB o Percona XtraDB) la base de datos es un componente fundamental de almacenamiento de toda la información que gestiona la plataforma, incluida la información de perfiles de usuario y la estructura de los sitios. La información aquí almacenada debe ser cuidadosamente respaldada. En el caso de las configuraciones de misión crítica se recomienda considerar utilizar el Percona XtraDB Cluster.
+      Implementado con MySQL Server (o algún motor compatible como MariaDB o Percona XtraDB) la base de datos es un componente fundamental de almacenamiento de toda la información que gestiona la plataforma, incluida la información de perfiles de usuario y la estructura de los sitios. La información aquí almacenada debe ser cuidadosamente respaldada. En el caso de las configuraciones de misión crítica se recomienda considerar utilizar el Percona XtraDB Cluster.
    </td>
 </tr>
 <tr>
@@ -120,7 +119,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Shared File System / Object Storage</b>
    </td>
    <td>
-   Diseñado primariamente para operar con Amazon S3, en ambientes On Premise es habitualmente implementado sobre un filesystem compartido al cual tienen acceso los servidores de aplicación y worker. Se debe garantizar, en caso que el almacenamiento sea interno, que esté disponible para todos los servidores de aplicación, y que sea posible la lectura/escritura concurrente desde cualquiera de ellos. De igual manera se deberá considerar copias de seguridad, en base a políticas vigentes.
+      Diseñado primariamente para operar con Amazon S3, en ambientes On Premise es habitualmente implementado sobre un filesystem compartido al cual tienen acceso los servidores de aplicación y worker. Se debe garantizar, en caso que el almacenamiento sea interno, que esté disponible para todos los servidores de aplicación, y que sea posible la lectura/escritura concurrente desde cualquiera de ellos. De igual manera se deberá considerar copias de seguridad, en base a políticas vigentes.
    </td>
 </tr>
 </table>
