@@ -64,9 +64,8 @@ module.exports = {
               title: "Infraestructura",
               collapsable: true,
               children: [
-                ["/platform/infrastructure/", "Introducción"],
                 "/platform/infrastructure/cloud",
-                "/platform/infrastructure/onpremise",
+                /*"/platform/infrastructure/onpremise",*/
                 "/platform/infrastructure/security",
               ],
             },
