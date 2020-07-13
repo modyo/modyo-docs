@@ -2,7 +2,7 @@
 search: false
 ---
 
-# Brand Guideline
+# Brand Guidelines
 
 Bienvenido a la guía oficial de marca de Modyo. Acá se presentan los diferentes estándares que usamos para la construcción de sitios Web y documentos, indicando detalles específicos acerca del uso de logos, colores y tipografías, entre otras cosas más.
 

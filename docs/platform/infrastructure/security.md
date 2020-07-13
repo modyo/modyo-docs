@@ -148,9 +148,7 @@ Modyo opera siguiendo las mejores prácticas de Amazon AWS. Todos los sistemas o
 
 Los servicios que por motivos de costos y eficiencia no sean requeridos de operar en modalidad de alta disponibilidad deberán al menos contar con un respaldo verificado para poder ser recreados en caso de pérdida.
 
-Para más detalle acerca de la operación de alta disponibilidad y misión crítica en la nube favor referirse al documento Modyo: Cloud Operations.
-
-Para más detalle acerca de los planes y estrategias de continuidad operacional favor referirse al documento Modyo: Business Continuity Plan.
+Para más detalle acerca de los planes y estrategias de continuidad operacional favor referirse a los documentos Modyo Business Continuity Plan y Modyo Disaster Recovery Plan.
 
 ## Modelo de Responsabilidad Compartida
 En los casos con los cuales se mantengan integraciones a sistemas transaccionales vía API, REST, Servicios Web u otros (con o sin uso de VPNs), Modyo garantiza la seguridad perimetral de su infraestructura de nube, custodia de propiedad intelectual de códigos fuentes y datos sensibles de usuarios, siguiendo las mejores prácticas de seguridad de la industria. 

@@ -36,13 +36,13 @@ The widget generator helps Back and Front End developers work together to create
 
 ### Widgets vs Portlets
 
-Most of our competitors chose the old _portlets_ model (server side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
+Most of our competitors chose the old _portlets_ model (server-side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
 
 Modyo bases its development model on widgets and a widget generator that tracks every change in a version control system. Digital work is easy to audit, move on to the next stage and publish so that it is quickly available to your customers.
 
 ### Our widget generator
 
-With the widget generator you can develop any type of widget you require, and include all necessary HTML, CSS and Javascript. You can connect widgets to your APIs, and publish them to your widget library to reuse them when needed.
+With the widget generator you can develop any type of widget you require and include all necessary HTML, CSS and Javascript. You can connect widgets to your APIs, and publish them to your widget library to reuse them when needed.
 
 The widget generator enhances the digital experience by making Front End development easy to handle, quick to send to production and easy to audit, providing greater security and fulfillment of your key objectives.
 
@@ -66,4 +66,4 @@ Progressive Web Applications will be the future of the Web, as they improve the 
 
 Modyo has an architecture where all published code generates versions. Before publishing a version of a widget or layout, you can easily review the code changes between one version and another.
 
-Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated on the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. Your can monitor your team's capacity within Insights.
+Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated on the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.

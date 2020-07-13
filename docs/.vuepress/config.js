@@ -61,15 +61,16 @@ module.exports = {
               ],
             },
             {
-              title: "Cloud",
+              title: "Infraestructura",
               collapsable: true,
               children: [
-                ["/platform/cloud/", "Introducción"],
-                "/platform/cloud/security",
+                "/platform/infrastructure/cloud",
+                /*"/platform/infrastructure/onpremise",*/
+                "/platform/infrastructure/security",
               ],
             },
             {
-              title: "Core",
+              title: "Plataforma",
               collapsable: true,
               children: [
                 ["/platform/core/", "Introducción"],
@@ -209,11 +210,13 @@ module.exports = {
                 "/brand/illustrations/applications",
               ],
             },
-            {
+            /*{
               title: "Documentos",
               collapsable: true,
-              children: [["/brand/documents/", "Introducción"]],
-            },
+              children: [
+                ["/brand/documents/", "Introducción"],
+              ],
+            },*/
           ],
         },
       },
@@ -358,6 +361,35 @@ module.exports = {
               collapsable: true,
               children: ["/en/widgets/onboarding/"]
             }, */
+          ],
+          "/en/brand/": [
+            {
+              title: "Brand Guidelines",
+              collapsable: true,
+              children: [
+                ["/en/brand/", "Introduction"],
+                "/en/brand/logo",
+                "/en/brand/colors",
+                "/en/brand/icons",
+                "/en/brand/typography",
+              ],
+            },
+            {
+              title: "Illustrations",
+              collapsable: true,
+              children: [
+                ["/en/brand/illustrations/", "Introduction"],
+                "/en/brand/illustrations/structure",
+                "/en/brand/illustrations/applications",
+              ],
+            },
+            /*{
+              title: "Documents",
+              collapsable: true,
+              children: [
+                ["/en/brand/documents/", "Introduction"],
+              ],
+            },*/
           ],
         },
       },

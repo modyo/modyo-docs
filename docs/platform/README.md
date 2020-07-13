@@ -2,7 +2,7 @@
 
 Bienvenido al sitio oficial de documentación de Modyo. Esperamos cubrir aquí todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
 
-![Modyo People](/assets/img/people.png)
+<img src="/assets/img/people.png" style="width:70%;" alt="Modyo people">
 
 ### ¿Qué es Modyo?
 

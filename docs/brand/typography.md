@@ -8,7 +8,7 @@ La tipografía oficial de modyo para usar en todos sus formatos y plataformas es
 
 ## Font Weight
 <div class="card">
-<img src="https://cloud.modyocdn.com/uploads/9c1dfc5d-ce19-450f-8e4d-4e02d5eb1ec1/original/specimen.svg" style="width:60%; height:auto;" alt="Specimen Font">
+<img src="/assets/img/brand/specimen.svg" style="width:60%; height:auto;" alt="Specimen Font">
 </div>
 
 Pesos y estilos:

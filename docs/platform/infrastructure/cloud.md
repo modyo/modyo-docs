@@ -2,57 +2,23 @@
 search: true
 ---
 
-# Modyo Cloud
+# Cloud y Enterprise Cloud
 
-## Versiones
-
-### Modyo Cloud 
-
-La versión Modyo Cloud consiste en un despliegue.
-
-### Modyo Enterprise Cloud
-
-La versión Modyo Enterprise Cloud consiste en un despliegue totalmente independiente.
-
-El presente documento describe la operación en la nube que realiza Modyo para sus versiones de la plataforma Modyo Cloud y Enterprise Cloud,  detallando su modelo de soporte, escalamiento, performance y seguridad. 
-
-Para más información acerca de las funcionalidades de Modyo y sus aplicaciones favor referirse a la documentación de la plataforma en el sitio Web https://docs.modyo.com.
+## Modyo y la Nube de AWS
+Modyo posee una vasta experiencia en el despliegue en la nube de Amazon AWS.
 
 
+## Arquitectura del Modyo Cloud
+Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel Select con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
 
-## Operaciones y Soporte
-Modyo cuenta con un equipo dedicado de operaciones compuesto ingenieros en el rol de Site Reliability Engineers (SREs) los cuáles poseen conocimiento y experiencia en múltiples plataformas tecnológicas de redes, seguridad, nubes, sistemas operativos, automatización y monitoreo de sistemas. Los SREs trabajan en un sistema de turnos on call 24x7. En cada turno siempre existe un ingeniero primario y secundario de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
-
-El equipo de operaciones de Modyo brinda apoyo de forma transversal a todas las áreas de la empresa en los proyectos e iniciativas que impliquen la preparación, despliegue, monitoreo, seguridad, auditoría y mejoras de rendimiento de sus proyectos e iniciativas tanto en la nube como en los despliegues On Premise de los clientes que posean un contrato de servicios de soporte adicional al incluido como parte de la licencia de software de Modyo.
-
-## Niveles de Soporte
-### Nivel 1: Infraestructura
-El soporte Nivel 1 de Modyo se encarga primariamente de la infraestructura y seguridad de la nube y proveedores de servicios críticos de las implementaciones manejadas por el Área de Seguridad e Infraestructura.
-
-En el caso de los clientes On Premise con contrato de soporte, el soporte Nivel 1 podrá brindar soporte a las área operativas del cliente del producto y/o de los servicios configurados de los cuales dependa la plataforma Modyo (caché, balanceadores de carga, bases de datos, sistemas de indexación, etc).
-
-La gran mayoría de los incidentes que se reportan al Nivel 1 son automáticamente generados por los sistemas de monitoreo de infraestructura y salud de la nube. En el caso de los clientes On Premise que posean contratado algún servicio de monitoreo,  será personal de Modyo el encargado de contactar a las áreas operativas del cliente para alertar de la situación.
-
-Para todas las implementaciones de Modyo (Cloud, Enterprise Cloud y Enterprise On Premise),  el soporte Nivel 1 estará capacitado para ayudar a resolver temas básicos relacionados con el producto y sus funcionalidades. Cuando se detecta que la incidencia corresponde a un desarrollo o integración personalizada,  el soporte Nivel 1 se encargará internamente de escalar la situación con el equipo interno de Nivel 2 más adecuado, generando un ticket de soporte interno e indicando al cliente cómo proceder.
-
-### Nivel 2: Especializado
-El soporte Nivel 2 de Modyo se encarga de brindar ayuda en el contexto específico de un cliente, su implementación de la plataforma y los desarrollos e integraciones realizados en ella. 
-
-El soporte Nivel 2 pone a disposición del cliente personas del equipo que han trabajado con él y que conocen y comprenden la complejidad interna de cada proyecto.
-
-### Nivel 3: Experto
-El equipo de soporte Nivel 3 de Modyo se encarga de brindar apoyo a los Niveles 1 y 2 en caso de que la complejidad de la incidencia exceda el conocimiento de la persona asignada en primera instancia. El soporte Nivel 3 opera involucrando a los expertos más adecuados que puedan colaborar en dar una solución, sean éstos jefes de proyecto, líderes técnicos, directores o ingenieros especializados.
-
-El equipo de soporte Nivel 3 será requerido sólo en casos extremos, como situaciones de alta complejidad técnica o de problemas al contactar al personal de Nivel 2.
-
-## Arquitectura en la Nube
-Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 9 años de experiencia en esta plataforma, y en calidad de Technology Partner con ellos, Modyo cuenta con la experiencia necesaria para garantizar la continuidad, performance y seguridad de sus despliegues.
 
 <img src="/assets/img/cloud/partner_badge.png" style="margin-top: 40px;" />
 
 El año 2019 Modyo fue reconocido por Amazon como el Technology Partner of the Year para Chile y Perú.
 
-Las versiones de Modyo Cloud y Enterprise Cloud operan en una configuración de alta disponibilidad haciendo uso de al menos dos zonas de disponibilidad en la región de Virginia del Norte (us-east-1). En el caso de la última versión, Modyo 9, el despliegue se realiza en una configuración de contenedores (compatibles con Docker) que corren sobre el Amazon EC2 Container Service (ECS).
+Las versiones de Modyo Cloud y Enterprise Cloud operan en una configuración de alta disponibilidad, haciendo uso de al menos dos zonas de disponibilidad en la región de Virginia del Norte (us-east-1). Modyo cuenta además con una región de contingencia ubicada en California (us-west-1). El despliegue de la plataforma se realiza en una configuración de contenedores (compatibles con Docker) que corren sobre el sistema de Amazon EC2 Container Service (ECS).
+
+En el siguiente diagrama se pueden apreciar los componentes principales y su despliegue en modalidad de alta disponibilidad:
 
 
 <img src="/assets/img/cloud/cloud_deployment.png" style="margin-top: 40px;" />
@@ -170,3 +136,8 @@ En las versiones Cloud de la plataforma se monitorea el tiempo de carga las pág
 
 ### Uptime
 En las versiones Cloud de la plataforma se monitorea desde diversas ubicaciones alrededor del mundo la disponibilidad de esta realizando pings permanentes y periódicos. Un fallo en un chequeo de uptime para algún dominio monitoreado genera alertas de máxima prioridad.
+
+## Soporte
+Modyo cuenta con un equipo dedicado de operaciones compuesto ingenieros en el rol de Site Reliability Engineers (SREs) los cuáles poseen conocimiento y experiencia en múltiples plataformas tecnológicas de redes, seguridad, nubes, sistemas operativos, automatización y monitoreo de sistemas. Los SREs trabajan en un sistema de turnos on call 24x7. En cada turno siempre existe un ingeniero primario y secundario de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
+
+El equipo de operaciones de Modyo brinda apoyo de forma transversal a todas las áreas de la empresa en los proyectos e iniciativas que impliquen la preparación, despliegue, monitoreo, seguridad, auditoría y mejoras de rendimiento de sus proyectos e iniciativas tanto en la nube como en los despliegues On Premise de los clientes que posean un contrato de servicios de soporte adicional al incluido como parte de la licencia de software de Modyo.
