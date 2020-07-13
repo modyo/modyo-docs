@@ -4,7 +4,7 @@ search: true
 
 # Stocks
 
-In the Stock widget clients can find all the information about available stocks, along with market information and a module for quick and simple online trading.
+In the Stock widget, clients can find all the information about available stocks, along with market information and a module for quick and simple online trading.
 
 #### Installation:
 
@@ -18,10 +18,10 @@ modyo-cli get modyo-widgets-investments-stocks
 
 | Feature            | Description                                                                                                                                                                                                                          |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Stock Layout       | Shows the set of tradable stocks available. Displays a list of transactions in transit associated with the stocks. Displays market information for a specific stock. Allows clients to cancel transactions in transit, if necessary. |
-| Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price and possible institution-specific documents. Allows you to buy or sell a selected stock.                                  |
-| Compra de Acciones | Permite realizar la compra de la acción seleccionada, definiendo la cuenta de inversión, la cantidad de acciones, el monto máximo al que se desea comprar, y el tiempo de duración de la orden.                                      |
-| Purchase of Shares | Allows the sale of the selected stock, defining of the investment account, the amount of shares to be sold and the minimum sale price.                                                                                               |
+| Stock Layout       | Shows the set of available tradable stocks. Displays a list of transactions in transit associated with the stocks. Displays market information for specific stocks. Allows clients to cancel transactions in transit, if necessary. |
+| Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price, and possible institution-specific documents. Allows the user to buy or sell a selected stock.                                  |
+| Buy Shares | Allows the user to buy the selected stock, choosing the investment account, the number of shares to buy, the maximum buying price, and the duration of the buying order.                                      |
+| Sell Shares | Allows the user to sell the selected stock, choosing the investment account, the number of shares to be sold, and the minimum sale price.                                                                                               |
 
 <script>
 

@@ -4,7 +4,7 @@ search: true
 
 # Transfer History
 
-Modyo offers a widget that presents all the relevant data about the user's stock purchase and sale transactions in transit, so you can quickly find your consolidated information on the platform.
+Modyo offers a widget that presents all the relevant data about a user's stock purchases and sale transactions in transit, so they can quickly find their consolidated information on the platform.
 
 #### Installation:
 
@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-investments-transfer-history
 
 | Feature               | Description                                                                                                                             |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Operations in Transit | Displays the list of transactions in transit associated with the purchase/sale of shares. Allows you to cancel transactions in transit. |
+| Operations in Transit | Displays the list of transactions in transit associated with the purchase/sale of shares. Allows the user to cancel transactions in transit. |
 | Cancel Operation      | Displays information about the specific transaction to be cancelled, so that the customer can confirm the cancellation.                 |
 
 <script>

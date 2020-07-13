@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-investments-transfer
 
 | Feature  | Description                                                                                                                                                      |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transfer | Allows clients to transfer funds between investment accounts. Allows the request of a transfer of funds to the client's current accounts, previously registered. |
+| Transfer | Allows clients to transfer funds between investment accounts. It also makes it possible to request a transfer of funds to the client's previously registered accounts. |
 
 <script>
 

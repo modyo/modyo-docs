@@ -4,7 +4,7 @@ search: true
 
 # Documents
 
-In this widget users can find all documents they need related to their investments, such as statements, electronic invoices, confirmation and execution of orders and contract signatures, as well as the respective certificates.
+In this widget users can find all documents they need related to their investments, such as statements, electronic invoices, confirmation and execution of orders, and contract signatures, as well as the corresponding certificates.
 
 #### Installation:
 
@@ -19,12 +19,12 @@ modyo-cli get modyo-widgets-investments-documents
 | Feature                           | Description                                                                                                                                                                                                      |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Consolidated Financial Statements | Displays a list of available financial statements.                                                                                                                                                               |
-| Invoices                          | Displays the list of electronic invoices for all instructed transactions. Allows the retrieval of invoices in PDF format to review, print, and/or download.                                                      |
+| Invoices                          | Displays the list of electronic invoices for all the completed transactions. Allows the user to open invoices in PDF format to review, print, and/or download.                                                      |
 | Order Confirmations               | Displays a list of order documents available in PDF format.                                                                                                                                                      |
 | Order Executions (1.985)          | Provides information on the execution of the client's orders as indicated in the 1985 SVS notice.                                                                                                                |
-| Electronic Contract Signatures    | Shows the contracts to be signed, either because they are new or because there are new or updated versions of them. Allows contract reviewal on screen with the option to sign them directly with an online key. |
-| Product Risk Table                | Table with description of products and their risk classification.                                                                                                                                                |
-| Tax Certificates                  | Shows a list of tax certificates that are in PDF format, for viewing, printing and/or downloading.                                                                                                               |
+| Electronic Contract Signatures    | Shows the contracts to be signed, either because they are completely new or because there are new or updated versions of existing contracts. Allows the user to directly review the contracts with the option to sign them online with the user's key or passcode. |
+| Product Risk Table                | Table with a description of products and their risk classification.                                                                                                                                                |
+| Tax Certificates                  | Shows a list of tax certificates in PDF format for viewing, printing and/or downloading.                                                                                                               |
 
 <script>
 
