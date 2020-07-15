@@ -18,12 +18,12 @@ modyo-cli get modyo-widgets-investments-detailed-summary
 
 | Feature                    | Description                                                                                                                              |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Investment Details         | Provides a set of individual summaries for all investments that in the portfolio.                                                        |
-| Investment Account Summary | Displays the grouped totals of the various investments that exist within a specific investment account.                                  |
-| Pending Transactions       | Shows the operations instructed by the client still in a pending state.                                                                  |
+| Investment Details         | Provides a set of individual summaries for all investments in the portfolio.                                                        |
+| Investment Account Summary | Displays the grouped totals of the multiple investments that exist within a specific investment account.                                  |
+| Pending Transactions       | Shows the operations made by the client still in a pending status.                                                                  |
 | Latest Transactions        | Shows the latest completed transactions made in the investment account.                                                                  |
 | Product Summary            | Shows the investment totals for each existing investment type in the portfolio.                                                          |
-| Currency Summary           | Shows the grouped totals of different investments that exist within the portfolio, considering each available currency (USD, EUR, etc.). |
+| Currency Summary           | Shows the grouped totals of different investments that exist within the portfolio separated by each available currency (USD, EUR, etc.). |
 
 <script>
 
