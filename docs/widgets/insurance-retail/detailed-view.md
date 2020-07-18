@@ -4,10 +4,10 @@ search: true
 
 # Vista detallada <Badge text="Beta" type="warn"/>
 
-#### Instalación:
+#### Instalación
 
 ```bash
-modyo-cli get modyo-widgets-insurance-detailed-view
+modyo-cli get modyo-widgets-insurance-details
 ```
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/personas/vista-detallada)
@@ -16,4 +16,3 @@ modyo-cli get modyo-widgets-insurance-detailed-view
 
 | Funcionalidad | Descripción |
 | ------------- | ----------- |
-

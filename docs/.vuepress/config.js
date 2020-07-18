@@ -179,6 +179,7 @@ module.exports = {
               title: "Seguros Personas",
               collapsable: true,
               children: [
+                "/widgets/insurance-retail/summary",
                 "/widgets/insurance-retail/quote",
                 "/widgets/insurance-retail/detailed-view",
               ],
@@ -352,6 +353,7 @@ module.exports = {
               title: "Insurance Retail",
               collapsable: true,
               children: [
+                "/en/widgets/insurance-retail/summary",
                 "/en/widgets/insurance-retail/quote",
                 "/en/widgets/insurance-retail/detailed-view",
               ],

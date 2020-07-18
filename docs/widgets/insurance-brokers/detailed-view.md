@@ -6,10 +6,10 @@ search: true
 
 No pierdas de vista los detalles claves de tu pólizas y hazle seguimiento a todo el proceso de emisión de principio a fin. Facilita el acceso a la información y personaliza cada detalle de acuerdo a la estrategia de tus productos.
 
-#### Instalación:
+#### Instalación
 
 ```bash
-modyo-cli get modyo-widgets-insurance-detailed-view
+modyo-cli get modyo-widgets-brokers-detailed-view
 ```
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/vista-detallada)
@@ -17,7 +17,7 @@ modyo-cli get modyo-widgets-insurance-detailed-view
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/vista-detallada" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad   | Descripción                                                                                                                                                                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Resumen         | Facilita la consulta de las pólizas y presenta los datos relevantes a tus intermediarios independiente del estado de las pólizas. Usa esta sección para notificar sobre fechas importantes o cambios de estado en la póliza.               |
 | Condiciones     | Personaliza el módulo para presentar las coberturas y deducibles de la póliza en caso de siniestros. Facilita que los intermediarios identifiquen los datos mínimos de las coberturas o evoluciona este módulo para configurar activación. |
 | Tabla de primas | Configura según tu estrategia comercial las primas que se pagan en la póliza o facilita que tus intermediarios administren bajo tus reglas los incrementos de prima.                                                                       |
