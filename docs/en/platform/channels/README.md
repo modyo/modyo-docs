@@ -3,7 +3,7 @@ search: true
 translated: true
 ---
 
-# Modyo Channels
+# Modyo Channels 
 
 Modyo Channels is an application that allows the central management of content distribution and web applications for multiple sites and languages.
 
