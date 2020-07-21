@@ -150,13 +150,21 @@ Las opciones a configurar son:
 
 - **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
 - **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca.
-- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del sitio. Puedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
-- **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
+- **Sitemap**: Este archivo permite a los motores de búsqueda indexar mejor el contenido de su sitio. Modyo actualiza automáticamente su archivo de mapa de sitio por defecto, pero también puede modificarlo manualmente para que se centre sólo en una página y un contenido determinados.
+- **Robots.txt**: Este archivo forma parte del Protocolo de Exclusión de Robots (REP), un grupo de normas web que regulan la forma en que los robots rastrean la web, acceden e indexan el contenido y lo sirven a los usuarios. En la práctica, este archivo determina si ciertos agentes de usuario (software de rastreo web) pueden o no rastrear partes de un sitio web. Estas instrucciones de rastreo se especifican "permitiendo" o "prohibiendo" el comportamiento de ciertos (o todos) agentes de usuario. Puede modificar este archivo para proporcionar instrucciones personalizadas a los rastreadores de sitios.
 
 :::tip Tip
-Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado).
+Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado). De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
+:::
 
- De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
+- **Meta tags**: Te permite configurar los meta tags disponibles para luego usar en los pages. Además, te permite añadirlos a todos los pages, o simplemente disponiblizarlos para luego añadirlos a los pages que los requieran.
+
+:::tip Tip
+Al añadir un meta tag a todos los pages a través de la configuración de SEO del sitio, se añadirá a la versión editable de todas las páginas, de tal forma que tendrás que publicar cada página para que los nuevos meta tags tengan efecto en el sitio.
+:::
+
+:::warning Atención
+Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán habilitar los meta tags disponibles para usar en las páginas, sin embargo, los developers del sitio podrán añadir y eliminar los meta tags disponibles en las página y modificar sus valores.
 :::
 
 ### Restricciones

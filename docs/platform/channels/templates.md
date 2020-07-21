@@ -197,11 +197,11 @@ Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/platfor
 Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
 
 1. La vista debe estar creada y publicada. 
-2. La URL a la que se está accediendo es del tipo `site_url/custom_view_name/entry_slug`.
-3. El `custom_view_name` es el nombre de la vista de contenido creaste.
-4. La URL coincide con el nombre de la vista que acabas de crear. 
-5. Ya existe una entrada publicada en el idioma del sitio. 
-6. El slug de la entrada es `entry_slug`.
+1. La URL a la que se está accediendo es del tipo `site_url/custom_view_name/entry_slug`.
+1. El `custom_view_name` es el nombre de la vista de contenido creaste.
+1. La URL coincide con el nombre de la vista que acabas de crear. 
+1. Ya existe una entrada publicada en el idioma del sitio. 
+1. El slug de la entrada es `entry_slug`.
 
 :::tip Tip
 
@@ -226,6 +226,7 @@ Puedes añadir este snippet de código al Template Builder, y luego llamar a est
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {% if current_layout_page %}
 <!--Layouts SEO -->
+{{ current_layout_page.meta_tags }}
 <meta name="description" content="{{ current_layout_page.excerpt }}" />
 <meta property="og:title" content="{{ current_layout_page.title }}" />
 <meta property="og:type" content="website" />
@@ -233,22 +234,18 @@ Puedes añadir este snippet de código al Template Builder, y luego llamar a est
 <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ current_layout_page.excerpt }}" />
-{% endif %} {% if entry %}
+{% endif %} 
+{% if entry %}
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.excerpt }}" />
 <meta property="og:title" content="{{ entry.title }}" />
 <meta property="og:type" content="article" />
-<meta
-  property="og:url"
-  content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
-/>
-<meta
-  property="og:image"
-  content="{{ entry.covers.first | asset_url : 'original' }}"
-/>
+<meta property="og:url" content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}" />
+<meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }} "/>
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.excerpt }}" />
-{% endif %} {% unless current_layout_page or entry %}
+{% endif %} 
+{% unless current_layout_page or entry %}
 <!-- Default SEO -->
 <meta name="description" content="{{ site.description }}" />
 <meta property="og:title" content="{{ site.name }}" />
@@ -268,30 +265,25 @@ Si es que lo requieres, puedes personalizar aún más este snippet, definiendo q
 Por ejemplo, en la sección de contenido, puedes usar:
 
 ```html
-... {% if entry %}
+...
+{% if entry %}
 <!-- Content SEO -->
-<meta name="description" content="{{ entry.excerpt }}" />
-<meta property="og:title" content="{{ entry.title }}" />
-<meta
-  property="og:url"
-  content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
-/>
-<meta
-  property="og:image"
-  content="{{ entry.covers.first | asset_url : 'original' }}"
-/>
+<meta name="description" content="{{ entry.meta.excerpt }}" />
+<meta property="og:title" content="{{ entry.meta.title }}" />
+<meta property="og:url" content="{{site.url}}/{{entry.meta.type_uid}}/{{entry.meta.slug}}" />
+<meta property="og:image" content="{{ entry.fields.covers.first | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:description" content="{{ entry.excerpt }}" />
+<meta property="og:description" content="{{ entry.meta.excerpt }}" />
 {% if entry.type_uid = 'posts'%}
 <meta property="og:type" content="article" />
-{endif} {% if entry.type_uid = 'place'%}
+{endif} 
+{% if entry.type_uid = 'place'%}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
-<meta
-  property="place:longitude"
-  content="{{ entry.location.first.longitude }}"
-/>
-{% endif %} {% endif %} ...
+<meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
+{% endif %} 
+{% endif %} 
+...
 ```
 
 En este caso, los tipos `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_, y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
@@ -305,17 +297,17 @@ El método recomendado para interactuar con una API privada usando la sesión de
 #### Hacer el sitio privado
 
 1. Inicia sesión en la cuenta dónde se desea crear el sitio privado.
-2. Haz _click_ en crear un nuevo sitio.
-3. Asigna un nombre al nuevo sitio y selecciona el tema base.
-4. En la sección `Configuración > Sitio`, bajo la pestaña **Restricciones**, selecciona **Privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
+1. Haz _click_ en crear un nuevo sitio.
+1. Asigna un nombre al nuevo sitio y selecciona el tema base.
+1. En la sección `Configuración > Sitio`, bajo la pestaña **Restricciones**, selecciona **Privado**. Además activa **Mostrar home a visitas públicas** para poder redireccionar usuarios sin sesión.
 
 #### Habilitar la integración a nivel de cuenta (para todos los sitios)
 
 1. Ve a la cuenta, **Customers** y desde ahí a la sección **Configuración** y luego la pestaña **Integración**
-2. Selecciona la integración OpenID Connect y activa la casilla de **Habilitar OpenID Connect**
-3. Llena los datos de **Nombre del servicio, Client ID, Secret e Issuer** y haz _click_ en **Lanzar servicio de descubrimiento**
-4. Chequea los campos que necesites (Habilitar refresh token, Habilitar cierre de sesión remoto, Habilitar revocación de token, Habilitar sincronización de claims)
-5. Asocia los campos del proveedor con los campos personalizados que tengas en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
+1. Selecciona la integración OpenID Connect y activa la casilla de **Habilitar OpenID Connect**
+1. Llena los datos de **Nombre del servicio, Client ID, Secret e Issuer** y haz _click_ en **Lanzar servicio de descubrimiento**
+1. Chequea los campos que necesites (Habilitar refresh token, Habilitar cierre de sesión remoto, Habilitar revocación de token, Habilitar sincronización de claims)
+1. Asocia los campos del proveedor con los campos personalizados que tengas en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
 ### Usando Axios para hacer la integración
 
@@ -324,8 +316,8 @@ Si quieres usar una librería como `axios` para realizar una integración desde 
 Las tareas que debes cubrir con los snippets son:
 
 1. Un interceptor de requests para incluyan un token.
-2. Un controlador de sesiones.
-3. Una ventana modal que informe al usuario que su sesión va a expirar.
+1. Un controlador de sesiones.
+1. Una ventana modal que informe al usuario que su sesión va a expirar.
 
 ### Interceptar los request para que incluyan un token
 

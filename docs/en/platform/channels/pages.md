@@ -48,13 +48,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 
 ::: tip Tip
 If a page has a parent page, you can only publish it if the parent page is published.
-:::
-
-::: tip Tip
 If a page has children, you can only unpublish it if all its child pages are unpublished.
-:::
-
-::: tip Tip
 If a page has children, you can only archive it if all of its child pages are archived.
 :::
 
@@ -66,19 +60,15 @@ If a page has children, you can only archive it if all of its child pages are ar
 
 The central grid is the place where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality by dragging them from the <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7 19v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4V9h2v2H7m4 0V9h2v2h-2m4 0V9h2v2h-2M7 7V5h2v2H7m4 0V5h2v2h-2m4 0V5h2v2h-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> icon.
 
-In the right sidebar, in the third tab (Edit Layout) you can select different grids based on the structure you need.
-
 In the right side section you will find three tabs:
 
 - Add Widgets: allows you to select from a list of widgets and add them to the grid.
 - Edit Widget: allows you to change different properties and filters for each widget.
-- Edit Layout: allows you to modify the name, excerpt, path, parent, privacy and grid of the page.
-
-### Privacy
-
-If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Targets](/en/platform/customers/targets.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page, or to the home page.
+- Edit Layout: allows you to modify the name, excerpt, path, parent, privacy, grid of the page and meta tags.
 
 ### Widgets
+
+You can add them from the first tab of the Page builder. The available widgets are:
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/en/platform/channels/widgets.html).
 - **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
@@ -87,3 +77,33 @@ The rich text widget has an automatic formatter, so the code you write in the co
 :::
 - **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to disply. To modify what these widgets look like, you must do so in the [template builder](/en/platform/channels/templates.html), in the widgets section.
 - **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.
+
+Once a widget is selected in the central section, the focus will move to the central tab, where you can find different widget configuration options and if you select a custom widget, you will find a link to go directly to its edit view in the [widget builder](/en/platform/channels/widgets.html).
+
+In the right sidebar, in the third tab (Edit Layout) you can select different grids based on the structure you need.
+
+### Properties
+
+On this tab you will find common property options for all pages:
+
+* Name
+* Parent
+* Path
+* Excerpt
+* Grid
+* Privacy
+* Meta tags
+
+#### Privacy
+
+If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Targets](/en/platform/customers/targets.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page, or to the home page.
+
+#### Meta tags
+
+In this section you can add the tags that are available in the section [SEO of the site configuration](/en/platform/channels/sites.html#seo), to enrich the SEO of the page. With the tags added to the page, you can decide whether to use the default value, step on the available value for the tag or remove the tag from the page. 
+
+:::tip Tip
+Please note that for the meta tags to take effect on your page, you must publish the changes.
+:::
+
+To access the list of meta tags on the page, you must use the drop of Liquid <span v-pre>`{{ current_layout_page.meta_tags }}`</span>. We recommend that you see the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).

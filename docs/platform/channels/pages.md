@@ -50,15 +50,9 @@ Una vez terminada la acción de copiado, te dirige a la nueva página, por lo qu
 - Publicar: Si la página está aprobada, puedes publicar los cambios haciendo uso de esta acción.
 
 :::tip Tip
-Si una página tiene un padre, solo la puedes publicar si es que éste se encuentra publicado.
-:::
-
-:::tip Tip
-Si una pagina tiene hijos, solo puedes despublicarla si todos estos se encuentran despublicados.
-:::
-
-:::tip Tip
-Si una página tiene hijos, solo puedes archivarla si todos estos se encuentran archivados.
+* Si una página tiene un padre, solo la puedes publicar si es que éste se encuentra publicado.
+* Si una pagina tiene hijos, solo puedes despublicarla si todos estos se encuentran despublicados.
+* Si una página tiene hijos, solo puedes archivarla si todos estos se encuentran archivados.
 :::
 
 **Acciones secundarias**: 
@@ -69,19 +63,15 @@ Si una página tiene hijos, solo puedes archivarla si todos estos se encuentran 
 
 La grilla central es el lugar donde puedes posicionar tus widgets. Puedes mover los widgets de un lado a otro haciendo uso de la funcionalidad _drag-and-drop_ arrastrándolos desde el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7 19v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4V9h2v2H7m4 0V9h2v2h-2m4 0V9h2v2h-2M7 7V5h2v2H7m4 0V5h2v2h-2m4 0V5h2v2h-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>.
 
-En la barra lateral derecha, en la tercera pestaña (Editar layout) puedes seleccionar diferentes grillas que se acomoden a la estructura de la página que necesites.
-
 En la sección lateral derecha encontrarás tres pestañas:
 
 - Añadir widgets: Te permite seleccionar dentro de un listado de widgets para añadirlos a la grilla.
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
-- Editar layout: Te permite modificar el nombre, excerpt, ruta, padre, privacidad y grilla de la página.
-
-### Privacidad
-
-Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Targets](/platform/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio. 
+- Propiedades: Te permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
 
 ### Widgets
+
+Los puedes añadir desde la primera pestaña del Page builder. Los widgets disponibles son:
 
 - **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
 - **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido. 
@@ -90,3 +80,31 @@ El widget de texto enriquecido cuenta con un formateador automático, por lo que
 :::
 - **Contenido**: Son widgets por defecto que te permite mostrar listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags y categoría. Para modificar como se ven estos widgets, debes hacerlo en el [Template Builder](/platform/channels/templates.html), en la sección Widgets.
 - **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
+
+Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña central, donde podrás encontrar distintas opciones de configuración de los widgets y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en el [widget builder](/platform/channels/widgets.html).
+
+### Propiedades
+
+En esta pestaña encontrarás opciones propiedades comunes de todos los pages:
+
+* Nombre
+* Padre
+* Ruta
+* Extracto
+* Grilla
+* Privacidad
+* Meta tags
+
+#### Privacidad
+
+Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Targets](/platform/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio. 
+
+#### Meta tags
+
+En esta sección podrás añadir los tags que estén disponibilizados en la sección [SEO de la configuración del sitio](/platform/channels/sites.html#seo), para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, pisar el valor disponible para el tag o eliminar el tag de la página. 
+
+:::tip Tip
+Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.
+:::
+
+Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ current_layout_page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/platform/channels/templates.html#seo).

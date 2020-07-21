@@ -196,77 +196,69 @@ SEO [(Search Engine Optimization)](/en/platform/channels/sites.html#seo) is one 
 
 We recommend adding this code snippet to the Template Builder, and then calling this snippet from the `<head>` of your site:
 
-``` html
-<! - Site SEO ->
-<meta name="keywords" content="{{site.keywords}}"/>
-<meta name="author" content="{{site.name}}"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-{% if current_layout_page%}
-<! - SEO Layouts ->
-<meta name="description" content="{{current_layout_page.excerpt}}"/>
-<meta property="og:title" content="{{current_layout_page.title}}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="{{current_layout_page.url}}"/>
-<meta property="og:image" content="{{site.logo | asset_url: 'original'}}"/>
-<meta property="og:site_name" content="{{site.name}}"/>
-<meta property="og:description" content="{{current_layout_page.excerpt}}"/>
-{% endif%} {% if entry%}
-<! - Content SEO ->
-<meta name="description" content="{{entry.excerpt}}"/>
-<meta property="og:title" content="{{entry.title}}"/>
-<meta property="og:type" content="article"/>
-<goal
-  property="og:url"
-  content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
-/>
-<goal
-  property="og:image"
-  content="{{entry.covers.first | asset_url: 'original'}}"
-/>
-<meta property="og:site_name" content="{{site.name}}"/>
-<meta property="og:description" content="{{entry.excerpt}}"/>
-{% endif%} {% unless current_layout_page or entry%}
-<! - Default SEO ->
-<meta name="description" content="{{site.description}}"/>
-<meta property="og:title" content="{{site.name}}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="{{request.url}}"/>
-<meta property="og:image" content="{{site.logo | asset_url: 'original'}}"/>
-<meta property="og:site_name" content="{{site.name}}"/>
-<meta property="og:description" content="{{site.description}}"/>
-{% endunless%}
-<! - END SEO <-->
+```html
+<!-- Site SEO -->
+<meta name="keywords" content="{{ site.keywords }}" />
+<meta name="author" content="{{ site.name }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% if current_layout_page %}
+<!--Layouts SEO -->
+{{ current_layout_page.meta_tags }}
+<meta name="description" content="{{ current_layout_page.excerpt }}" />
+<meta property="og:title" content="{{ current_layout_page.title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ current_layout_page.url }}" />
+<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:description" content="{{ current_layout_page.excerpt }}" />
+{% endif %} 
+{% if entry %}
+<!-- Content SEO -->
+<meta name="description" content="{{ entry.excerpt }}" />
+<meta property="og:title" content="{{ entry.title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}" />
+<meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }} "/>
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:description" content="{{ entry.excerpt }}" />
+{% endif %} 
+{% unless current_layout_page or entry %}
+<!-- Default SEO -->
+<meta name="description" content="{{ site.description }}" />
+<meta property="og:title" content="{{ site.name }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ request.url }}" />
+<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:description" content="{{ site.description }}" />
+{% endunless %}
+<!-- END SEO <-->
 ```
 
 This snippet renders differently depending on whether the endpoint is a custom page, one of the Modyo default pages, or a custom content view. By taking advantage of the fields and attributes of each element in context, and using Liquid's control flow, you can define a robust base set of SEO automation across every URL of your site.
 
 If you require, you can further customize this snippet, defining each goal or outcome based on specific URLs or for specific types. For example, in the content section, you can use:
 
-``` html
-... {% if entry%}
-<! - Content SEO ->
-<meta name="description" content="{{entry.excerpt}}"/>
-<meta property="og:title" content="{{entry.title}}"/>
-<goal
-  property="og:url"
-  content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
-/>
-<goal
-  property="og:image"
-  content="{{entry.covers.first | asset_url: 'original'}}"
-/>
-<meta property="og:site_name" content="{{site.name}}"/>
-<meta property="og:description" content="{{entry.excerpt}}"/>
-{% if entry.type_uid='posts'%}
-<meta property="og:type" content="article"/>
-{endif} {% if entry.type_uid='place'%}
-<meta property="og:type" content="place"/>
-<meta property="place:latitude" content="{{entry.location.first.latitude}}"/>
-<goal
-  property="place:longitude"
-  content="{{entry.location.first.longitude}}"
-/>
-{% endif%} {% endif%} ...
+```html
+...
+{% if entry %}
+<!-- Content SEO -->
+<meta name="description" content="{{ entry.excerpt }}" />
+<meta property="og:title" content="{{ entry.title }}" />
+<meta property="og:url" content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}" />
+<meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:description" content="{{ entry.excerpt }}" />
+{% if entry.type_uid = 'posts'%}
+<meta property="og:type" content="article" />
+{endif} 
+{% if entry.type_uid = 'place'%}
+<meta property="og:type" content="place" />
+<meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
+<meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
+{% endif %} 
+{% endif %} 
+...
 ```
 
 In this example, the `posts` and `place` types share the "title", "exerpt" and "covers" attributes, but `place` types contain locations attributes. In addition, we would need to define a different custom view in our site for each of these separate types.

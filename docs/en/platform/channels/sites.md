@@ -116,6 +116,20 @@ The options listed in this section help improve your SEO across a particular cha
 - **Custom sitemap.xml file**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on a particular pages and content.
 - **Custom robots.txt file**: This file is part of the the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by “disallowing” or “allowing” the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
+:::tip Tip
+The robots.txt and sitemap.xml files are only visible on the site, if you have the custom domain enabled. Otherwise, robots.txt and sitemap.xml are only at the account level, have their default values and cannot be customized.
+:::
+
+- **Meta tags**: Allows you to set up the available meta tags to be used in the pages. In addition, it allows you to add them to all the pages, or simply to make them available to add them to the pages that require them.
+
+:::tip Tip
+By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages, so you will have to publish each page for the new meta tags to take effect on the site.
+:::
+
+:::warning Warning
+Since the listing of meta tags is part of the site's configuration, only the site's administrators will be able to enable the meta tags available for use on the pages, however, the site's developers will be able to add and remove the meta tags available on the pages and modify their values.
+:::
+
 ### Restrictions
 
 <img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
