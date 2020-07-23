@@ -17,11 +17,11 @@ The Modyo Content application now serves content through its [API and SDKs](/en/
 
 ### Asset Manager
 
-The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag_ management, image resizing, and more.
+The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as tag management, image resizing, and more.
 
 ### Team Review
 
-Modyo's new Team Review system is the evolution of the earlier _Workflows_ functionality, which improves team collaboration with tools for review and approval of changes to content and other elements within the platform. Team Review is also more detailed, allowing you to enable or disable review systems, assign specific team members to their respective roles, and customize separate rule sets in any content space or digital channel.
+Modyo's new Team Review system is the evolution of the earlier _Workflows_ functionality, which improves team collaboration with tools review and approve changes to content and other elements within the platform. Team Review also has more options, allowing you to enable or disable review systems, assign specific team members to their respective roles, and customize separate sets of rules in any content space or digital channel.
 
 ### New and simplified roles and permissions
 
@@ -33,4 +33,4 @@ Modyo 9.0 improves upon user management by completely separating users in the fr
 
 ### Support for PWA
 
-Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources to instantly load reliable experiences that load quickly regardless of intermittent or bad network connections, and are installable on user home screens without the need for an app store.
+Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittent or bad network connections, and can be installed by the user without the need of an app store.

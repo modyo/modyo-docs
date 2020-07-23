@@ -14,7 +14,7 @@ Below you will find a brief explanation of some of the key concepts related to t
 
 Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-Go further, and use Modyo to get more complete knowledge about your digital customers.
+You can even go further and use Modyo to develop a deeper understanding about your digital customers throughout your different sites.
 
 ### Customers interact on sites depending on context
 
@@ -48,7 +48,7 @@ The widget generator enhances the digital experience by making Front End develop
 
 ### Prefabricated widgets for financial services
 
-Modyo Banking provides prefabricated financial widgets to accelerate the development of your _retail_ and _wealth management_ banking experiences.
+Modyo Banking provides prefabricated financial widgets to accelerate the development of your retail and wealth management banking experiences.
 
 A separate license model applies to Modyo Banking.
 
@@ -60,10 +60,10 @@ APIs enhance our platform and make it easier to build solutions.
 
 ### Prepared for the future: PWAs
 
-Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web _browser_ more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
+Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
 
 ### Security, Governance and Agility
 
-Modyo has an architecture where all published code generates versions. Before publishing a version of a widget or layout, you can easily review the code changes between one version and another.
+Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
 
-Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated on the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.
+Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.

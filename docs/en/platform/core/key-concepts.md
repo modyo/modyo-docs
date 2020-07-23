@@ -6,38 +6,43 @@ search: true
 
 ## Team Review
 
-Team Review is a tool that allows you to control the process of publishing elements in Modyo, such as entries, widgets, pages, templates, and more. When activated, each element must go through review stages with selected team members before publishing. This allows a level of supervision and collaboration between the content editor and a team of reviewers.
+Team Review is a tool that allows you to control the process of publishing items in Modyo, such as entries, widgets, pages, templates, and more. When enabled, each item must go through the required review stages before it can be published.
 
-When an editor or a developer considers that an element is ready, she can send it for review, which is a task performed by certain team members in a space or channel. These team members are responsible for approving (or rejecting) the element, which ultimately determines if the item can be published.
+This adds a level of supervision and collaboration between the content editor and a team of reviewers.
 
-Each step of this process takes the element through different states (image), which are recorded for subsequent auditing.
+### Feature
+
+When an editor or developer feels that the item he is working on is ready, he can submit it for review.
+
+This task can be performed by users enabled by default or by a team chosen by the editor. They will be responsible for approving or rejecting the item, and will ultimately determine whether it is ready to be published.
+
+Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
 [Image review stages]
  
-This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries). Configuration of the review rules is done independently for each site or space.
+This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries). The configuration of review rules is done independently for each site or space.
 
 ### Configuration
 
-To configure Team Review, you must go to `Site/Space configuration > Team review`.
+To configure Team Review, go to `Site/Space configuration > Team review`.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
 The available options are:
 
-- **Enable Team Review**: Enable or disable Team Review within the current site or space.
-- **Number of approvals**: Determines how many team members must approve the element before publishing (this changes the status from "In review" to "Approved").
-- **Restrict the selection of reviewers**: By default, any user with the necessary permissions may approve the items that are awaiting review. By enabling this option, only those chosen by the editor may do so.
+- **Enable Team Review**: Enables or disables Team Review within the current site or space.
+- **Number of approvals**: Determines how many team members must approve the item before publishing (this changes the status from "In review" to "Approved").
+- **Restrict the selection of reviewers**: By default, any user with the necessary permissions will be able to approve the items that are waiting for revision.
+By enabling this option, only those chosen by the editor will be able to do so.
 ::: tip Tip
 While approval is limited, any user with permissions can comment on the item.
 :::
-- **Force review**: This option allows you to select a list of users, of which at least one approval is required so that the item can go to the "Approved" state. This is independent of the number of approvals configured above, that is, even if an item has the necessary number of approvals, it will remain in the "Waiting for approval" status if no user on the list has approved it.
+- **Force review**: This option allows you to select a list of users, from which at least one approval is required for the item to be moved to the "Approved" status. This is independent of the number of approvals previously configured, i.e. even if an item has the required number of approvals, it will still be in "Waiting for approval" status if no user in the list has approved it.
 - **Require all**: This option extends the previous restriction to all selected users.
 
 ::: warning Warning
-When you make changes to the team review settings, the items that were already waiting for review will continue to be governed by the rules prior to the changes. For these elements to take into account the new configuration, it is necessary that they be rejected and sent for review again.
+When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes. For these items to follow the new configuration, they need to be rejected and sent into revision again.
 :::
-
-### Use (example)
 
 ### Roles and permissions
 
@@ -47,45 +52,47 @@ There are three levels of roles that allow users to perform different actions in
 - Medium: Reviewer (site) or Editor (space)
 - Under: Developer (site) or Writer (space)
 
-Users with the lowest role, can submit for review and comment on the elements that are in that state.
+Users with the lowest role, can submit items for review and comment on items that are in that state.
 
-Users with the intermediate role, in addition to the above, can approve the elements under review and once they are approved, they can publish them through the team review flow.
+Users with the intermediate role, in addition to the above, can approve the items under review and, once they are approved, publish them through the team review flow.
 
 Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force post" action to immediately publish an item.
 
 ::: warning Warning
-Site or space administrators always have the ability to skip the review flow as a team. For them, the "Submit for review" and "Review" buttons have an option within the dropdown for "Force post." This option exists because there are times when you need to publish quickly, so you must be cautious when assigning roles for your spaces or sites.
+Site or space administrators always have the ability to skip the team review flow. For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force post." This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
 
 ### About the interface
 
-When the team review option is activated, and after saving the changes, you will see the green button **Send to review** as the main action.
+When the team review option is enabled, and after saving the changes, you will see the green **Send to review** button as the main action.
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-At the time of sending for review the bar will change status:
+When you send the item for revision, the bar will change status:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-By clicking, you will see that the requirements to publish the element will be indicated in the right side section. If there is a required reviewer, `(required)` will appear next to your name in the list of reviewers.
+When you click on it, you will be able to see that the requirements to publish the item in the right side section. If there is a required reviewer, `(required)` will appear next to his name in the list of reviewers.
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;"/>
 
-To the right of each reviewer, the status of your review will appear, showing a yellow circle if you have not done your review, and a green check if you have approved the item.
+To the right of each reviewer you can find the status of their revision, showing a yellow circle if they have not finished their review, and a green check if they have approved the item.
 
-Everyone who can access the item edit view will see an "Approve" button under the list of reviewers. Those who have the necessary permission will see it active and can click to approve the item, those who do not have permission will see the button disabled.
+Anyone who can access the edit view of the item will see an "Approve" button under the list of reviewers. Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission, will see the button disabled.
 
-Upon approval of the item, the approval of that user will be registered, showing a green check to the right of his name in the list of reviewers.
+When an item is approved, the approval of that user will be registered, showing a green check to the right of his name in the list of reviewers.
 
-When team review is enabled, in the item's action bar, to the left of the green main button and to the right of the difference button, an icon will appear (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>) to open the element's activity tab. When opened, a chronological list of the actions that have been performed on the element will be displayed, with the option to see the detail of the action, and at the bottom of the tab, there will be the option to leave a comment.
+When team review is enabled, you will be able to see an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>) in the item's action bar, to the left of the main green button and to the right of the differences button, which allows you to open the item's activity tab.
 
-When a comment is left or any action is taken on the item, a notification is sent to both the person who sent it for review and the users who are on the list of reviewers.
+When this tab is opened, a chronological list of all the actions that have been carried out on the item will be displayed, with the option to see the detail of each action. You can leave comments at the bottom of the tab.
+
+When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision and the users who are on the list of reviewers.
 
 ## Versions
 
-As a backup mechanism, when publishing an item, Modyo automatically generates and maintains a number of versions that can later be retrieved if necessary.
+As a backup mechanism, Modyo automatically generates and stores different versions of an item each time it is published, which can later be retrieved if necessary.
 
-This is useful when for some reason an undue change is made, there is the possibility of reversing it through the platform.
+This is useful when, for some reason, an undue change is made, there is the possibility of reverting it through the platform.
 
 This system is available for Widgets, Pages, Navigation, Templates and Content.
 
@@ -93,47 +100,47 @@ This system is available for Widgets, Pages, Navigation, Templates and Content.
 
 #### Editable
 
-This version keeps the changes made to the item since its last publication or since its creation if it has never been published. This is the version that goes through the team review process when activated, and just at the time of publication, the "Editable" and "Published" versions have the same content.
+This version stores changes made to the item since its last publication or its creation if it has never been published. This version is the one that goes through the team review process when enabled, and at the time of publication, the "Editable" and "Published" versions have the same content.
 
 #### Published
 
-This version saves the content visible on the site and is freely available to any user. In this case, internal resources such as Widgets and Templates can already be used in the creation of any site or page.
+This version stores the content visible on the site and is freely available to any user. In this state, internal resources such as Widgets and Templates can be used in the creation of any site or page.
 
-The published version does not necessarily have the same content as the editable one (except at the right time of publication), since the latter may contain changes that are in the process of being tested or reviewed.
+The published version does not necessarily have the same content as the editable version (except at the time of publication), as it may contain changes that are in the process of being tested or reviewed.
 
 #### Backups
 
-Backups are previously published versions of the elements. That is, every time we publish an item, Modyo saves the previously published version as a backup.
+Backups are previously published versions of the items. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
-If you want to review a particular version of an item, you can go to the "Differences between versions", so you can see the changes that have been made and reverse them when necessary.
+If you want to review a particular version of an item, you can go to the "Differences between versions" section, so you can see the changes that have been made and revert them when necessary.
 
 ::: warning Warning
-By default, Modyo saves the last 20 versions (`MAX_BACKUPS`) published of each item, so by making the twenty-first publication, you will be deleting the backup of the first publication of the item. This value can be modified using environment variables and is common for all accounts in that environment.
+By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item. This value can be modified using environment variables and is common for all accounts in that environment.
 :::
 
 #### Scheduled
 
-When you decide to schedule a publication, the editable version goes into a scheduled state, and when the time comes for publication, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version. 
+When you decide to schedule a publication, the editable version goes into a scheduled state, and and when it is time to publish, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version.
 
 :::warning Warning
-Modyo only allows you to have one scheduled version of each element, so if you schedule a second modification to the element, you will be overwriting the previous scheduled version.
+Modyo only allows you to have one scheduled version of each element, so if you schedule a second modification of the item, you will be overwriting the previous scheduled version.
 :::
 
-Along with the publishing schedule, you can schedule to unpublish. When the time comes, the published version will become a backup, leaving the item in question without a published version.
+In the same way you can schedule a publication, you can schedule to unpublish an item. When the time comes, the published version will become a backup, leaving the corresponding item without a published version.
 
 ### Actions for versioning
 
-Within versioning, you have two actions that allow you to interact with backups. Both actions are available in the modality of differences.
+Within versioning, you have two actions that allow you to interact with the backups of an item (reset & rollback). Both actions are available in the "differences" pop-up window.
 
 ![Difference mode](/assets/img/platform/differences.png)
 
-By default the difference modal shows the version published on the left, and the editable version on the right. You can change which versions to compare by changing the values in the version selectors at the top of the modal.
+By default, this pop-up shows you the published version on the left side, and the editable version on the right side. You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
-When any of the actions are applied, the selected version is always taken to the left, so that if it is restored, the left version will be taken to the editable version, and if rollback is done, the version of the left to the published version.
+When one of the actions is applied, it will always use the version to the left. This means that if you choose to reset an item to a previous version, the code to the left will become the new editable version, and if you choose to perform a rollback, the version to the left will become the new published version.
 
 #### Reset
 
-In this case, the backup will be copied to the editable version, so we will lose all the changes that were made later, and so we can continue working on potential changes to that version to publish it again.
+In this case, the backup will be copied to the editable version, losing all subsequent changes so that we can continue working on potential changes to this version before publishing again.
 
 #### Rollback
 
@@ -145,32 +152,34 @@ Since this is a potentially dangerous action, only site or space administrators 
 
 ## Locks
 
-Locks is a Modyo functionality that allows you to modify a resource safely, without having concurrence problems that may occur when another user is working on it simultaneously, thus avoiding job loss or overwriting of documents.
+Locks is a feature in Modyo that allows you to modify a resource safely, without having concurrency problems that can occur when another user is working on the same item simultaneously, thus avoiding job loss or document overwriting.
 
 <img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;"/>
 
 ### What elements do Locks use?
 
-Locks are mostly used in [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items such as Settings and [Customers](/en/platform/customers/).
+Locks are mostly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items can be edited, such as Settings and [Customers](/en/platform/customers/).
 
 ### How to use Locks?
 
-Locks are implemented in different ways within the platform. In [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can enter a resource, being only one who can edit and save those changes, while others will only see the latest version saved on the platform. If a second person tries to make a change, a message will appear indicating that the item already has changes and that what you are trying to modify is obsolete.
+Locks are implemented in different ways within the platform. In [Content](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can access a resource, with only one user being able to edit and save changes, while the others will only be able to see the latest saved version.
 
-In other sections such as [Customers](/en/platform/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if it is in edition, another user will not be able to enter the work view.
+If a second person tries to make a change, a message will appear indicating that the item already has changes and that what they are trying to modify is obsolete.
 
-In this case, only an Administrator can take control, activating for himself the edition and discarding the unsaved advances of the user who is working on it.
+In other sections, such as [Customers](/en/platform/customers/) and Settings, Locks will not allow users to view resources simultaneously. So, if an item is being edited, another user will not be able to access the work view.
+
+In this case, only an Administrator will be able to take control, activating for himself the edition and discarding the unsaved changes made by the user working on the item.
 
 
 ::: warning Take control
 
-If an Administrator wants to take control of a view, he must click on the item in use and on the next screen, click on the **Take Control** button.
+If an Administrator wants to take control of a view, he must click on the item in use and, in the next screen, click on the **Take Control** button.
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;"/>
 
-When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from continuing to make changes, so any changes that are being made must be saved and backed up offline.
+When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from making any further changes. Any changes that are being made must be saved and backed up offline.
 
-After taking control, the Administrator will only have two hours to make changes without saving. After that time, the resource will be released again and can be taken by any other user.
+After taking control, the Administrator will only have two hours to make unsaved changes. After that time, the resource will be released and can be taken over by any other user.
 :::
 
 ## Preview mode
@@ -182,16 +191,16 @@ The preview mode allows you to preview the result of changes to publishable item
 
 The elements you can interact with in the preview bar are:
 
-* **Templates selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.
-* **Content selector**: Allows you to switch between the published and editable version of the elements belonging to the content application and that are being used on the site using the Liquid content SDK.
-* **Navigation selector**: Allows you to change between the published and editable version of the elements belonging to the navigation builder.
-* **Page selector**: Allows you to switch between the published and editable version of the elements belonging to the page builder.
-* **Content view selector**: This selector allows you to switch between the published and editable version of the content entry being previewed in the custom content views. This view does not directly use the Liquid Content SDK, so the content in these views will not be affected by the Content SDK selector.
-* **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button to take effect on your widget settings.
-* **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the bar from preview mode. 
-* **Edit element**: when you _click_ you will go to the edit page of the element you are looking at, be it an entry, a page, a widget or a default template of the site.
-* **Share link**: It allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
-* **Exit preview mode**: Closes the preview mode, removing the bar and leaving the tab in the current site url.
+* **Template selector**: Allows you to switch between published and editable versions of items in the template builder.
+* **Content selector**: Allows you to switch between published and editable versions of items in the content application that are being used on the site through the Liquid Content SDK.
+* **Navigation selector**: Allows you to change between published and editable versions of items in the navigation builder.
+* **Page selector**: Allows you to switch between published and editable versions of items in the page builder.
+* **Content view selector**: This selector allows you to switch between the published and editable versions of the content entry being previewed in the custom content views. This view does not directly use the Liquid Content SDK, so the content in these views will not be affected by the Content SDK selector.
+* **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button for the widget settings to take effect.
+* **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
+* **Edit element**: Clicking this option will take you to the edit page of the item you are looking at, be it an entry, a page, a widget or a default template of the site.
+* **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
+* **Exit preview mode**: Closes the preview mode, removes the bar and leaves the tab in the current site url.
 
 :::warning Warning
 Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
@@ -199,18 +208,18 @@ Changing the content selector in the preview bar will have no effect on the cont
 
 ## Global variables
 
-Modyo has the functionality to define global variables that you can use in all the sites where you have Liquid, this way you can, for example, share a _snippet_ of code between sites. 
+Modyo allows you to define global variables that you can use in all the sites where you have Liquid. This way you can, for example, share a code snippet between sites.
 
 :::tip Tip
-You can use plain text, HTML code, JavaScript and CSS within the global variables, however you cannot use Liquid code within them.
+You can use plain text, HTML code, JavaScript and CSS within the global variables. However, you cannot use Liquid code in a global variable.
 :::
 
 You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings.
 
 :::warning Warning
-When using global variables, preference will always be given to variables defined on the site and then to variables defined at the account level, so be careful when defining variables on the site with the same name as the account variables.
+When using global variables, preference will always be given to variables defined for the site and then to variables defined at the account level. So be careful when defining variables for a specific site with the same name as an account variable.
 :::
 
 :::danger Danger
-The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them, so you should consider that when you make a change in the value of these, it will be reflected immediately wherever they are being used.
+The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them. So you should keep in mind that when you change the value of a global variable, it will immediately affect the resources where it is being used.
 :::
