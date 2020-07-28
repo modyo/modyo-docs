@@ -226,7 +226,7 @@ Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `Not
 
 - **Before, After, LessThan, GreaterThan**: reciben como parámetro el nombre del campo a comparar y el valor con el que se comparará.
 
-- **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `AND` en SQL, Has es equivalente a un `OR`.
+- **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `OR` en SQL, Has es equivalente a un `AND`.
 
 - **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`).
 
