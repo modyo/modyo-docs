@@ -69,7 +69,7 @@ You can add custom snippets at the bottom of the snippets tab, by clicking on th
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
 ::: tip Tip
-In order for the system to recognize the programming language type of the snippet, place an underscore "_" and language type at the end of the snippet name, ie **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
+In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name, ie **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
 :::
 
 ::: tip Tip
@@ -150,7 +150,7 @@ In order to automatically display [content](/en/platform/content/) on a site, yo
 1. Have entries published in the language of the site. Go to [Entries](/en/platform/content/entries.html) and [Location](/en/platform/content/spaces.html#location) to learn more.
 1. Create a custom view in the Template Builder.
 
-To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called "Custom" and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to. 
+To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called "Custom" and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to.
 
 :::warning Warning
 The name of the view it is the site relative URL for the content type you chose.
@@ -211,7 +211,7 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ current_layout_page.excerpt }}" />
-{% endif %} 
+{% endif %}
 {% if entry %}
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.excerpt }}" />
@@ -221,7 +221,7 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 <meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }} "/>
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.excerpt }}" />
-{% endif %} 
+{% endif %}
 {% unless current_layout_page or entry %}
 <!-- Default SEO -->
 <meta name="description" content="{{ site.description }}" />
@@ -235,9 +235,11 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 <!-- END SEO <-->
 ```
 
-This snippet renders differently depending on whether the endpoint is a custom page, one of the Modyo default pages, or a custom content view. By taking advantage of the fields and attributes of each element in context, and using Liquid's control flow, you can define a robust base set of SEO automation across every URL of your site.
+This snippet renders differently depending on whether the endpoint is a custom page, one of the Modyo default pages, or a custom content view. By taking advantage of the fields and attributes of each element in context, and using Liquid's control flow, you can define a robust SEO foundation across every URL of your site.
 
-If you require, you can further customize this snippet, defining each goal or outcome based on specific URLs or for specific types. For example, in the content section, you can use:
+If you need to, you can further customize this snippet, defining each goal or outcome based on specific URLs or for specific types.
+
+For example, in the content section, you can use:
 
 ```html
 ...
@@ -251,17 +253,17 @@ If you require, you can further customize this snippet, defining each goal or ou
 <meta property="og:description" content="{{ entry.excerpt }}" />
 {% if entry.type_uid = 'posts'%}
 <meta property="og:type" content="article" />
-{endif} 
+{endif}
 {% if entry.type_uid = 'place'%}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
-{% endif %} 
-{% endif %} 
+{% endif %}
+{% endif %}
 ...
 ```
 
-In this example, the `posts` and `place` types share the "title", "exerpt" and "covers" attributes, but `place` types contain locations attributes. In addition, we would need to define a different custom view in our site for each of these separate types.
+In this example, the `posts` and `place` types share the "title", "excerpt" and "covers" attributes, but the `place` types contain location attributes. In addition, we would need to define a different custom view in our site for each of these separate types.
 
 ## Integrations
 

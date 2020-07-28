@@ -22,9 +22,13 @@ To create a site, you just have to click on the **New** tab, which will allow yo
 
 After that, you can see it with the status "Enabled", which means that it is online to work.
 
+:::warning Warning
+In the site index, you will only be able to see sites where you are part of the team with a designated role.
+:::
+
 ## Site settings
 
-Site settings allow us to configure various options of your site, such as set up its visibility depending on whether the user is a visitor, customer with a session, a developer or an administrator. In addition, you can modify options that allow us to improve your site's appearance in search engines and the visibility of some of the content that the public has access to when they reach your pages.
+Site settings allow you to configure various options of your site, such as set up its visibility depending on whether the user is a visitor, customer with a session, a developer or an administrator. In addition, you can modify options that allow us to improve your site's appearance in search engines and the visibility of some of the content that the public has access to when they reach your pages.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250"/>
 
@@ -35,10 +39,10 @@ Within this section, you can configure the following data:
 - **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
-- **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content. 
+- **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
 - **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/key-concepts.html).
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
-- **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily insert the scripts to make use of the google event logging tool. 
+- **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
 - **Linked spaces**: Select spaces to link to this digital channel. Changes in any content from a linked space automatically update within your channel. By contrast, changes to content in non-linked spaces will only update within your channel after a given time. Depending on your session activity and account deployment type, the time to update is usually between 5 to 30 minutes.
@@ -50,13 +54,13 @@ This option is irreversible, so you must be completely sure when executing this 
 
 #### Google Tag Manager
 
-By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets can be found in the _snippets>general_ section of the [Template builder](/en/platform/channels/templates.html) and are embedded into both the _head_ snippet and the _home_ and _base_ views. 
+By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets can be found in the _snippets>general_ section of the [Template builder](/en/platform/channels/templates.html) and are embedded into both the _head_ snippet and the _home_ and _base_ views.
 
-If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section on the top right and click on the "Load templates" option in the additional options on the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed. 
+If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section on the top right and click on the "Load templates" option in the additional options on the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
 
-In case you have an old theme installed and do not have these snippets, here you can access the code to create them as custom snippets and easily embed Google Tag Manager to your site.
+In case you have an old theme installed and do not have these snippets, you can access the code here to add them as custom snippets and easily embed Google Tag Manager to your site.
 
-Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
+1. Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
 
 **Google Tag Manager for the _head_**
 ```liquid
@@ -94,13 +98,47 @@ With this ready, when there's a value associated with the **Google Tag Manager I
 
 ### PWA
 
+Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
+
 <img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;">
 
-::: danger
-Missing description
-Manifest.json
-Serviceworker.js
-Available variables
+#### **Manifest**
+
+The purpose of the manifest is to indicate how you want a browser to display your digital channel. On the platform, it is possible to activate it with the checkbox seen above. This will create the following route:
+
+```
+https://[domain]/[site-name]/manifest.json
+```
+
+he manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/platform/channels/templates.html), in the ```head``` snippet.
+
+The manifest can be created and modified in the next field, allowing you to add changes without having to leave the view.
+
+:::warning Warning
+If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
+:::
+
+:::warning Warning
+If you do not customize the manifest but add the route in the Template Builder, it will be blank and will not take any action.
+:::
+
+#### **Service Worker**
+
+The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to show some structure in case of a bad connection. The platform gives you the possibility to enable this through the second checkbox above. Thus, the following route will be created:
+
+
+```
+https://[domain]/[site-name]/serviceworker.js
+```
+
+You can modify and program the Service Worker in the next field, adapting it to your routes and with the available variables as shown above.
+
+:::warning Warning
+If the Service Worker is disabled, the page will continue to run only with its basic functions and not with the benefits that this option provides.
+:::
+
+:::warning Warning
+If the code is not customized or saved, the site will not have the features you are designing.
 :::
 
 ### SEO
@@ -112,22 +150,22 @@ SEO (Search Engine Optimization) is key to high-ranking pages in your channels a
 The options listed in this section help improve your SEO across a particular channel:
 
 - **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
-- **Keywords**: Associated words relevant to your site that users search for that appear in the *keywords* meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines. 
-- **Custom sitemap.xml file**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on a particular pages and content.
-- **Custom robots.txt file**: This file is part of the the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by “disallowing” or “allowing” the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
+- **Keywords**: Associated words relevant to your site that users search for that appear in the *keywords* meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines.
+- **Custom sitemap.xml file**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on particular pages and content.
+- **Custom robots.txt file**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by “disallowing” or “allowing” the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
 :::tip Tip
-The robots.txt and sitemap.xml files are only visible on the site, if you have the custom domain enabled. Otherwise, robots.txt and sitemap.xml are only at the account level, have their default values and cannot be customized.
+The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
 :::
 
-- **Meta tags**: Allows you to set up the available meta tags to be used in the pages. In addition, it allows you to add them to all the pages, or simply to make them available to add them to the pages that require them.
+- **Meta tags**: Allows you to set up the available meta tags to be used in the pages. In addition, you can decide to add them to all the pages, or simply to a subset of pages that require them.
 
 :::tip Tip
-By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages, so you will have to publish each page for the new meta tags to take effect on the site.
+By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
 :::
 
 :::warning Warning
-Since the listing of meta tags is part of the site's configuration, only the site's administrators will be able to enable the meta tags available for use on the pages, however, the site's developers will be able to add and remove the meta tags available on the pages and modify their values.
+Since the meta tags list is part of the site's configuration, only the site's administrators will be able to enable the meta tags available for use in the required pages. However, the site's developers will be able to add and remove the meta tags available on the pages and modify their values.
 :::
 
 ### Restrictions
@@ -197,11 +235,11 @@ This team member is different from the account-level Default Admin. A site Admin
 
 ### Custom redirects
 
-Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site. 
+Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
-In this view you will find a table with all the redirections that currently exist on the site, where you can search by path or description. 
+In this view you will find a table with all the redirections that currently exist on the site, where you can search by path or description.
 
-To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ and Destination **_URL_ fields and redirection code and then saving the changes, you will create a new redirection entry. 
+To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ and Destination **_URL_ fields and redirection code and then saving the changes, you will create a new redirection entry.
 
 :::warning Warning
 The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/en/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
