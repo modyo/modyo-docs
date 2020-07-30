@@ -192,6 +192,10 @@ The options you configure here are:
 - **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
 - **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
 
+### Site variables
+
+Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can create site-specific variables or overwrite the value of a global variable already created with a site-specific value.
+
 ### Team members
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >

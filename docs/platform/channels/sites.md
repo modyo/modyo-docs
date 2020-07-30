@@ -192,6 +192,10 @@ Las variables que puedes cambiar aquí son:
 - **Dominio primario**: Dirección del sitio.
 - **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
 
+### Variables del sitio
+
+Modyo cuenta con [variables globales](/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada, con un valor específico para el sitio en particular.
+
 ### Miembros del Equipo
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
