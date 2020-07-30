@@ -7,9 +7,9 @@ translated: true
 
 ## Team
 
-All internal users of the platform make up the team, and each member of the platform can have a specific role to play to take advantage of the full potential of the system.
+All internal users of the platform make up the team, and each member of the platform can be assigned a specific role to unlock the full potential of the system.
 
-To create and add a new team member to the platform, you must click on the top button and complete the fields. Once the registration invitation is sent to you by email, you can choose whether to send your login password in the same message.
+To create and add a new team member to the platform, you must click on the "New" button at the top of your interface and complete the fields. Once the registration is completed an invitation will be sent to the user by email, you can choose whether to send the login password in the same message.
 
 To check all users, you can filter by their status and by their roles within the platform.
 
@@ -17,7 +17,7 @@ If you want to deactivate an internal user, you must click on the action button 
 
 ### User Editing
 
-When you enter the editing view of an internal user, you can see in the main tab a list of all their actions since registering and entering the platform for the first time.
+When you enter the edit view of an internal user, you will see in the main tab a list of all his actions since he registered and logged in for the first time to the platform.
 
 The rest of the tabs include visible or modifiable user information:
 
@@ -35,30 +35,30 @@ Modyo has 8 default roles with different functions by area or application. The p
 
 ### Default Roles
 
-Modyo uses default roles that vary depending on the area of the platform and the context:
+Modyo uses default roles that vary according to each section of the platform and the context:
 
-#### Roles per account:
+#### Account-level roles:
 
 - Default admin: You have all existing permissions.
-- Default user: You have all existing permissions. minus editing account settings.
+- Default user: You have all existing permissions, except for the ability to edit account settings.
 
-#### Roles per site:
+#### Site-level roles:
 
 - Site admin: You have all the permissions at the level of a site, but you cannot create new sites.
-- Site reviewer: A site admin but without editing the site configuration.
+- Site reviewer: A site admin, but without the ability to edit the site configuration.
 - Site developer: Can only edit resources (cannot publish, delete, rollback or edit the configuration).
 
-#### Roles per space:
+#### Space-level roles:
 
 - Space admin: You have all the permissions at the level of a space, but you cannot create new spaces. Space admins can create and delete assets.
-- Space editor: A space admin but without editing the space configuration. This role does not have asset permission, nor can it create types.
+- Space editor: A space admin, but without the ability to edit the space configuration. This role does not have asset permissions, nor can it create types.
 - Space writer: Can only edit content (cannot publish, delete, rollback or edit the configuration).
 
-The most important user will have the role of Default Admin or Administrator, who will have all the functions enabled to manage the platform and sites.
+The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
 ### Custom Roles
 
-To create a specific role, click on the top "Create" button.
+To create a specific role, click on the "Create" button at the top of the interface.
 
 Then you can give it a name and select the role's permissions and the functions of the platform that this role can view and manage.
 
@@ -94,4 +94,4 @@ The functions that can be modified are:
 
 ### Assign one role per account
 
-To assign a role at the account level, you must go to the Team section and click on the profile of the user, then enter the Role tab and select the role you want to assign to the user.
+To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user.

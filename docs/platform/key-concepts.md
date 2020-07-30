@@ -41,7 +41,7 @@ Modyo está basado en widgets y un generador de widgets que rastrea cada cambio 
 
 ### Nuestro generador de widgets
 
-Con el generador de widgets puedes desarrollar cualquier tipo de widget que requieras, donde puedes incluir componentes en HTML, CSS y Javascript que se conectan con APIs, y que pasan a formar parte de tu librería de widgets para reutilizarlos cuando lo necesites.
+Con el generador de widgets puedes desarrollar cualquier tipo de widget que requieras, donde puedes incluir componentes en HTML, CSS y Javascript que se conectan con APIs, y que pasan a formar parte de tu librería de widgets para reutilizarlos cuando los necesites.
 
 El generador de widgets potencia la experiencia digital al hacer el desarrollo del Front End fácil de manejar, rápido de enviar a producción y fácil de auditar, otorgando mayor seguridad y cumplimiento de tus objetivos.
 
@@ -59,7 +59,7 @@ Las APIs potencian la plataforma y hacen más fácil construir soluciones.
 
 
 ### Preparados para el futuro: PWAs
-Las aplicaciones Web progresivas serán el futuro de la Web, ya que permiten mejorar la forma cómo éstas se distribuyen a los usuarios finales y le dan más protagonismo al _browser_ Web como una plataforma de ejecución. Con Modyo puedes controlar en cada sitio las definiciones de _manifest.json_ y de los _Service Workers_, habilitadores técnicos fundamentales a la hora de implementar PWAs.
+Las Aplicaciones Web Progresivas serán el futuro de la Web, ya que permiten mejorar la forma cómo éstas se distribuyen a los usuarios finales y le dan más protagonismo al navegador web como una plataforma de ejecución. Con Modyo puedes controlar en cada sitio las definiciones de _manifest.json_ y de los _Service Workers_, habilitadores técnicos fundamentales a la hora de implementar PWAs.
 
 
 ### Seguridad, Gobernabilidad y Agilidad

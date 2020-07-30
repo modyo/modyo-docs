@@ -20,7 +20,7 @@ Las columnas por las cuales se puede ordenar la lista de entradas son:
 
 En el administrador también puedes filtrar la vista según varios filtros predeterminados que puedes ir ajustando según tu necesidad, independiente de cómo ordenes la lista de tus contenidos.
 
-En este caso, los filtros son cinco:
+En este caso, los filtros son seis:
 
 - **Tipo**: Tipo del Contenido que se ha creado (Ver [Tipos](/platform/content/types.html))
 - **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
@@ -32,7 +32,7 @@ En este caso, los filtros son cinco:
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla. 
+Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla.
 
 En primera instancia, **Modyo** pide el nombre, el slug y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/platform/content/types.html).
 
@@ -45,7 +45,7 @@ Al hacer _click_ en **Crear**, la entrada se creará y serás redirigido a la ed
 ::: tip Tip
 Para traducir una entrada ya escrita a un idioma distinto, deberás tener en cuenta que tu espacio debe estar configurado para los idiomas en los que quieres escribir. (Revisa [Configurar un Espacio](/platform/content/spaces.html#configurar-un-espacio))
 
-Después, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo. 
+Después, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
 
 Así, llegarás a una versión de la entrada en blanco, donde puedes pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
 
@@ -55,11 +55,11 @@ Así, llegarás a una versión de la entrada en blanco, donde puedes pulsar el b
 
 Para publicar una entrada, Modyo te asegura un proceso de chequeo paulatino con tal de certificar que el contenido que vayas a ofrecer se encuentre correcto.
 
-Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón **Guardar**, que grabará todo tu contenido. 
+Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón **Guardar**, que grabará todo tu contenido.
 
 Si haces _click_ en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, puedes publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
 
-Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde puedes asignar a revisores en específico quienes pueden publicar. 
+Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde puedes asignar a revisores en específico quienes pueden publicar.
 
 Para saber más, puedes ver [Revisión en Equipo.](/platform/core/key-concepts.html)
 
@@ -104,7 +104,7 @@ En el caso de que la entrada se encuentre publicada, los cambios se harán autom
 
 Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
 
-Para ver las Categorías, es necesario que hagas _click_ en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, puedes ver todas las categorías que se encuentran ya hechas. 
+Para ver las Categorías, es necesario que hagas _click_ en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, puedes ver todas las categorías que se encuentran ya hechas.
 
 #### Crear una Categoría
 
@@ -145,8 +145,3 @@ El contenido targetizado es fundamental para cualquier entidad o empresa que qui
 Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirige la entrada.
 
 Para crear un target en específico, revisa la [sección Targets](/platform/customers/targets.html).
-
-
-
-
-

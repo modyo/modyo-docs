@@ -76,6 +76,19 @@ Note that if you have more than one widget that uses content pagination, the _GE
 To use pagination in a custom widget, you must change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}} `</span>. This is necessary since custom widgets are loaded asynchronously. You also need to ensure that _JQuery_ is available on your site and remember that when you use the pagination links, only the widget HTML will be changed and the widget's _JavaScript_ will not be executed again.
 :::
 
+### Order entries
+
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` attributes of the entries using the `sort_by` filters, in the following way:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
+```
+
+Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
+Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at` y `slug`.
+The available ordering options are `asc` and `desc`, by default. The available `sort_by` options are: `name`, `published_at`, `created_at`, `updated_at` and `slug`.
+
+
 ### Entries with location
 
 For entries with Location fields you can easily generate maps with the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the `Locations` field with a size of 600x300px, a level 5 zoom, with a map type 'roadmap' and with a custom icon.
@@ -97,6 +110,10 @@ To use the attributes of the entries, you can use either dotted or bracketed not
 ## Javascript SDK
 
 The Javascript SDK allows access to spaces and content entries in a simple way from any environment that supports Javascript (dynamic and static web sites, SPA pages, hybrid mobile applications, etc).
+
+Through the SDK you can get, filter and sort your created content in order to take full advantage of the capabilities of the Headless API.
+
+In addition, the Modyo SDK allows you to obtain information from end users that are already logged into the platform, to further customize their experience on your site.
 
 ### Installation
 

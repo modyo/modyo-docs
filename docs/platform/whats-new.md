@@ -28,8 +28,10 @@ La gestión de roles y permisos para sitios y espacios de contenido ha sido simp
 
 ### Separación de usuarios y administradores
 
-Ahora los usuarios de tus sitios son entidades completamente distintas de los administradores.
+Modyo 9.0 mejora la gestión de los usuarios separando completamente a los usuarios del front end (visitantes del sitio, personas que interactúan con tus canales) de los administradores (usuarios con roles asignados, gestores de contenidos, desarrolladores de canales, ingenieros, etc.). Los paneles de acceso de los usuarios y los administradores están ahora separados, lo que permite la integración de un servicio de gestión de identidades independiente y un aspecto personalizado.
 
 ### Soporte para PWA
 
 Modyo ahora tiene soporte nativo para los habilitadores de Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen intermitencia o pierden la conexión.
+
+Modyo ahora tiene soporte nativo para Aplicaciones Web Progresivas, que te permiten mejorar la experiencia de tus usuarios al proveer canales digitales que pre-cachéan recursos clave. Esto hace posible cargar instantáneamente experiencias confiables rápidamente sin importar las conexiones de red intermitentes o malas, y pueden ser instaladas por el usuario sin necesidad de una tienda de aplicaciones.

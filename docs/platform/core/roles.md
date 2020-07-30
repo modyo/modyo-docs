@@ -30,7 +30,7 @@ El resto de las pestañas pueden incluír información visible o modificable de 
 
 Los roles son una característica esencial de cada uno de los usuarios internos de la plataforma, ya que te permiten optimizar el flujo de trabajo que tiene cada uno de ellos.
 
-Modyo tiene 7 roles predeterminados con distintas funciones por secciones. Además permite crear más roles personalizados, dependiendo de la función o sitio que se necesite trabajar.
+Modyo tiene 8 roles predeterminados con distintas funciones por secciones. Además permite crear más roles personalizados, dependiendo de la función o sitio que se necesite trabajar.
 
 ### Roles predeterminados
 

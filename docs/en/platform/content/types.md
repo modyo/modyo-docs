@@ -17,7 +17,14 @@ In the Types section of a space, you can find a green **+ New** button at the to
 
 Just above the type list on the left, you can use the Type search bar to find any word you are looking for by name.
 
-The list is sorted by most recently updated by default. You can also reorder the types by their creation date, their UIDs or, their names.
+The list of existing types is sorted by "most recently updated" by default. You can also reorder the types by:
+
+- Name
+- UID
+- Creation Date
+- "Updated on" Date
+
+If you want to enter any Type, you must click on its Name to open the corresponding editor.
 
 ## Create a Type
 
@@ -108,7 +115,7 @@ Allows you to add a field in which you can select a geographic address, accordin
 
 :::warning Attention
 For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
- 
+
 * Maps JavaScript API
 * Places API
 * Geocoding API
@@ -146,5 +153,5 @@ When you reindex any of your types, the model that was previously reindexed will
 :::
 
 ::: warning Warning
-Note that depending on the [cache settings you have in your space](/en/platform/content/spaces.html # cache), you may not see the changes immediately after you have finished reindexing.
+Note that depending on the [cache settings you have in your space](/en/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::

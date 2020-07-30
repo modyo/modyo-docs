@@ -16,7 +16,7 @@ footer: Copyright © 2008-2020 Modyo SpA
   <div class="feature" style='text-align: center;'>
     <img src='/assets/img/i.png'/>
     <h2>Conceptos Clave</h2>
-    <p>¿Qué conceptos claves que necesitas aprender rápidamente?</p>
+    <p>¿Qué conceptos clave necesitas aprender para comenzar rápidamente?</p>
     <a href="/platform/key-concepts.html">Leer más</a>
   </div>
   <div class="feature" style='text-align: center;'>
