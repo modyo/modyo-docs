@@ -244,7 +244,7 @@ module.exports = {
               ],
             },
             {
-              title: "Core",
+              title: "Platform",
               collapsable: true,
               children: [
                 ["/en/platform/core/", "Introduction"],

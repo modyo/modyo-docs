@@ -17,7 +17,7 @@ footer: Copyright © 2008-2020 Modyo SpA
   <div class="feature">
     <img src='/assets/img/i.png'/>
     <h2>Key Concepts</h2>
-    <p>What are some of the key concepts to quickly understand?</p>
+    <p>What are some of the key concepts you need to get started fast?</p>
     <a href="/en/platform/key-concepts.html">Read more</a>
   </div>
   <div class="feature">

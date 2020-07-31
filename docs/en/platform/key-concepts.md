@@ -54,7 +54,7 @@ A separate license model applies to Modyo Banking.
 
 ### Liquid Markup and APIs
 
-Modyo uses Liquid Markup within the platform to give Front and Back End developers rich language that allows them to add more functionality when building digital experiences. Liquid Markup is used by leading companies to easily add more logic to the Front End code.
+Modyo uses Liquid Markup within the platform to give Front and Back End developers a rich language that allows them to add more functionality when building digital experiences. Liquid Markup is used by leading companies to easily add more logic to the Front End code.
 
 APIs enhance our platform and make it easier to build solutions.
 

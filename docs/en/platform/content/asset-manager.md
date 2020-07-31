@@ -47,7 +47,9 @@ The list has three different filters for useful file searching:
 **Tags**: This filter allows you to display all files that match all selected tags.
 
 ::: tip Tip
-If you want to add a tag to one or more files, you can either edit a file directly or by clicking the checkbox of at least one file in the main list and use the "Add tags" button that appears in the lower left. Click this button to add tags to all selected files.
+If you want to add a tag to one or more files, you can either edit a file directly or by clicking the checkbox of at least one file in the main list and use the "Add tags" button that appears in the lower left.
+
+Click this button to add tags to all selected files. If you select one or more checkboxes that are on your screen, the button will only tag those files that you have checked.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
 
@@ -85,6 +87,7 @@ The lower right corner lists the pagination of all your account files.
 <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
 You can upload any file type to the platform, without no filetype exclusions.
+
 However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
 
 To access the properties of a file, click on its name to open a modal where you can edit the file's properties.
@@ -152,7 +155,7 @@ After cropping an image, if you want to restore it to its original dimensions, y
 
 ## Delete a file
 
-To delete a file, click on the Delete icon, located in the top right corner of the image preview in the "Update information" window.
+To delete a file, click on the Delete icon, located in the upper right corner of the image preview in the "Update information" window.
 
 ::: warning Warning
 This action is irreversible, and any content using this file will display a broken link.
@@ -168,8 +171,8 @@ To upload a file, click on the **+ New** button, located at the top of the scree
 
 This action opens a new window that allows you to upload files in two ways:
 
--**Drag & Drop**: Drag the file to the window where it says "Drop files here".
--**Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
+- **Drag & Drop**: Drag the file to the window where it says "Drop files here".
+- **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
 ::: warning Warning
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.

@@ -11,16 +11,22 @@ From Modyo you can configure access to different sources so that services consum
 
 Spaces also allow us to organize content, for better order and easier distribution.
 
-When accessing the list of spaces in the Modyo Content section, each listed space indicates how many content types and total entries it contains. This list can be sorted alphabetically by space name or by the date the space was created, and you can also search for spaces by name.
+When accessing the list of spaces in the Modyo Content section, each listed space indicates how many content types and total entries it contains.
+
+:::warning Warning
+In the Space index, you will only see the spaces in which you are part of the work team with an assigned role
+:::
+
+This list can be sorted alphabetically by space name or by the date the space was created, and you can also search for spaces by name.
 
 ## Create a Space
 
-To create a Space, you must click on the green button in the upper right of the Spaces index view, and assign the name and the UID that we will use.
+To create a Space, you must click on the green button in the upper right of the Spaces index view, and assign the name and the UID that you will use.
 
-In addition, we must select the default language of our content.
+In addition, you must select the default language of your content which will result in a better character configuration.
 
 ::: tip Tip
-Later, in the configuration you can define other secondary languages for the space.
+Later, in the configuration, you can define other secondary languages for the space.
 :::
 
 ## Configure a Space
@@ -33,7 +39,21 @@ In this case, the space configuration helps us to change the general settings, l
 
 Here you can change the name of a space and its UID.
 
-The UID of the space is very important. It determines how you access the space through the [public API](/en/platform/content/public-api-reference.html#reference-del-api), the [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](/en/platform/content/public-api-reference.html#sdk-de-liquid). Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
+The UID of the space is very important. It determines how you access the space through the [public API](/en/platform/content/public-api-reference.html#reference-del-api), the [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](/en/platform/content/public-api-reference.html#sdk-de-liquid).
+
+Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
+
+The next option is to configure whether the author of the content will be visible in both the public API and the Liquid SDK. If the option is enabled, then you'll see the details of the administrator who created the content, and if the option is disabled, you'll see a blank author.
+
+:::warning Warning
+Note that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries have finished reindexing.
+:::
+
+The last option is to eliminate the space. This option allows you to permanently delete a space and all its elements.
+
+:::danger Peligro
+This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
+:::
 
 ### Locales
 

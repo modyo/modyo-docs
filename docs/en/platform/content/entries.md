@@ -56,6 +56,44 @@ To unpublish an entry, open it and click on the Unpublish button at the top of t
 
 If you want to republish the entry, it must go through the Team Review process again (if enabled).
 
+::: tip Tip
+La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
+The platform does not allow you to delete Entries. You can only publish and unpublish. All copies and their changes will be seen inside the Entries manager.
+:::
+
+#### Preview
+
+As a headless platform, Modyo allows you to preview an entry in multiple sites.
+
+If you already have [content views on your sites](/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
+
+::: danger Warning
+If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
+:::
+
+:::warning Warning
+Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
+You can only preview the contents on a site if the language corresponds to the language of the site. If the entry is in another language, you will receive a 404 error when you reach the preview.
+:::
+
+:::warning Warning
+You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-fame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
+:::
+
+#### Edit an entry
+
+Si deseas editar una entrada, solo debes hacer _click_ en el nombre dentro del administrador.
+
+Después de esto, entras a la vista de edición en la que puedes cambiar el contenido y las propiedades de esta, como el nombre, el slug y los tags.
+
+En el caso de que la entrada se encuentre publicada, los cambios se harán automáticamente. Si esta se encuentra en proceso de Revisión en Equipo, los revisores deberán actualizar su vista para poder notar los cambios.
+
+If you want to edit an entry, just click on the entry's name inside the entry manager.
+
+This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
+
+In case the post is published, the changes will be made automatically. If the entry is in the Team Review process, reviewers must update their view in order to see the changes.
+
 ### Categories
 
 Categories are one of the most useful ways to order your Entries. Applying a category to an entry establishes a relative path in its URL that allows us to access the entry without going through other pages.
@@ -73,7 +111,7 @@ If we change the path, remember to change all links in any channel using it.
 :::
 
 ::: warning Warning
-If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them another category.
+If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
 :::
 
 ::: danger Danger
@@ -101,8 +139,3 @@ Targeted content is essential for any organization that wants to send specific i
 With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the **Private** option in the entry's properties, then check the **Enable targeting** option, and select from the list of targets. You can select more than one target audience.
 
 To create a specific target, review the [Targets section](/en/platform/customers/targets.html).
-
-
-
-
-

@@ -19,8 +19,11 @@ This task can be performed by users enabled by default or by a team chosen by th
 Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
 [Image review stages]
+
  
-This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries). The configuration of review rules is done independently for each site or space.
+This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
+
+The configuration of review rules is done independently for each site or space.
 
 ### Configuration
 
@@ -41,7 +44,9 @@ While approval is limited, any user with permissions can comment on the item.
 - **Require all**: This option extends the previous restriction to all selected users.
 
 ::: warning Warning
-When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes. For these items to follow the new configuration, they need to be rejected and sent into revision again.
+When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
+
+For these items to follow the new configuration, they need to be rejected and sent into revision again.
 :::
 
 ### Roles and permissions
@@ -59,7 +64,11 @@ Users with the intermediate role, in addition to the above, can approve the item
 Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force post" action to immediately publish an item.
 
 ::: warning Warning
-Site or space administrators always have the ability to skip the team review flow. For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force post." This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
+Site or space administrators always have the ability to skip the team review flow.
+
+For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force post."
+
+This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
 
 ### About the interface
@@ -72,7 +81,7 @@ When you send the item for revision, the bar will change status:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-When you click on it, you will be able to see that the requirements to publish the item in the right side section. If there is a required reviewer, `(required)` will appear next to his name in the list of reviewers.
+When you click on it, you will be able to see the requirements to publish the item in the right side section. If there is a required reviewer, `(required)` will appear next to his name in the list of reviewers.
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;"/>
 
@@ -100,11 +109,11 @@ This system is available for Widgets, Pages, Navigation, Templates and Content.
 
 #### Editable
 
-This version stores changes made to the item since its last publication or its creation if it has never been published. This version is the one that goes through the team review process when enabled, and at the time of publication, the "Editable" and "Published" versions have the same content.
+The "Editable" version stores changes made to the item since its last publication or its creation if it has never been published. This version is the one that goes through the team review process when enabled, and at the time of publication, the "Editable" and "Published" versions have the same content.
 
 #### Published
 
-This version stores the content visible on the site and is freely available to any user. In this state, internal resources such as Widgets and Templates can be used in the creation of any site or page.
+This version stores the content that is visible on the site and is freely available to any user. In this state, internal resources such as Widgets and Templates can be used in the creation of any site or page.
 
 The published version does not necessarily have the same content as the editable version (except at the time of publication), as it may contain changes that are in the process of being tested or reviewed.
 
@@ -115,7 +124,9 @@ Backups are previously published versions of the items. That is, every time we p
 If you want to review a particular version of an item, you can go to the "Differences between versions" section, so you can see the changes that have been made and revert them when necessary.
 
 ::: warning Warning
-By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item. This value can be modified using environment variables and is common for all accounts in that environment.
+By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item.
+
+This value can be modified using environment variables and is common for all accounts in that environment.
 :::
 
 #### Scheduled
@@ -140,11 +151,13 @@ When one of the actions is applied, it will always use the version to the left. 
 
 #### Reset
 
-In this case, the backup will be copied to the editable version, losing all subsequent changes so that we can continue working on potential changes to this version before publishing again.
+In this case, the backup will be copied to the editable version, losing all subsequent changes so that you can continue working on potential changes to this version before publishing again.
 
 #### Rollback
 
-In this case, the backup will be copied directly to the published version of the item, without touching the editable version. This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
+In this case, the backup will be copied directly to the published version of the item, without touching the editable version.
+
+This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
 
 ::: danger Danger
 Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
@@ -184,8 +197,7 @@ After taking control, the Administrator will only have two hours to make unsaved
 
 ## Preview mode
 
-The preview mode allows you to preview the result of changes to publishable items such as Entries, Pages, Navigation, Widgets or Templates; accessible from the top right with the icon
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. You can recognize that you are in preview mode when you see the bar at the top of the site.
+The preview mode allows you to preview the result of changes to publishable items such as Entries, Pages, Navigation, Widgets or Templates; accessible in the upper right corner with the <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> icon. You can recognize that you are in preview mode when you see the bar at the top of the site.
 
 ![Preview bar](/assets/img/platform/preview-bar.png)
 
