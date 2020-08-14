@@ -2,24 +2,24 @@
 search: true
 ---
 
-# Histórico de transferencias
+# Transfer History
 
-Modyo ofrece un widget que presenta todos los datos relevantes sobre las operaciones en tránsito asociadas a la compra y venta de acciones del usuario, para que encuentre rápidamente su información consolidada en la plataforma.
+Modyo offers a widget that presents all the relevant data about a user's stock purchases and sale transactions in transit, so they can quickly find their consolidated information on the platform.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-investments-transfer-history
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/historico-de-transferencias)
+[Open in new tab](https://widgets.modyo.com/investments/transfer-history)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/historico-de-transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/transfer-history" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad           | Descripción                                                                                                                           |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Operaciones en Tránsito | Muestra el listado con las operaciones en tránsito asociadas a la compra/venta de acciones. Permite cancelar operaciones en tránsito. |
-| Cancelar Operación      | Despliega información de la operación específica a cancelar, para que el cliente confirme la opción.                                  |
+| Feature               | Description                                                                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Operations in Transit | Displays the list of transactions in transit associated with the purchase/sale of shares. Allows the user to cancel transactions in transit. |
+| Cancel Operation      | Displays information about the specific transaction to be cancelled, so that the customer can confirm the cancellation.                 |
 
 <script>
 
@@ -35,7 +35,7 @@ modyo-cli get modyo-widgets-investments-transfer-history
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

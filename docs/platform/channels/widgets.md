@@ -1,121 +1,120 @@
 ---
 search: true
+translated: true
 ---
 
 # Widgets
 
-Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
+Widgets are independently managed, small applications that perform specific tasks, which you can develop and deliver across your digital channels. Widgets are what allow you to create a [microfrontend](/#) architectural style for better maintainable codebases, more scalable, autonomous teamwork within your organization, and updates to your digital channels in a more consistent, incremental fashion.
 
-Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
+When you enter the Widgets section of any site or channel, you see a list of all the widgets in that channel. In the top bar, you can filter the list of widgets by status, author or tags, or search for any widget by either its name or tags.
 
-En la esquina superior derecha se observa un botón principal **+ Nuevo** que permite crear un nuevo widget. Para ello, se debe escribir un nombre para luego entrar a la vista de edición del widget.
+In the upper right corner you can select the **+ New** primary button to create a new widget. Give the widget a name, then click **Create** to begin building your widget.
 
-En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
+In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
-![Widget Builder](/assets/img/platform/widget-builder.png) 
+![Widget builder](/assets/img/platform/widget-builder.png)
 
-En la barra superior se encuentran las siguientes secciones:
+Along the **top bar**, on the left, you can see the widget name and current status:
 
-- **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
-- **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se está en este estado, los templates están listos para ser publicados.
+- **Draft**: This status means a widget is new or is unpublished.
+- **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
+- **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
+- **In review**: This status means [team review](/platform/core/key-concepts.html) is enabled and this widget is in review.
+- **Approved**: This status means [team review](/platform/core/key-concepts.html) is enabled and a widget passed the review process. You can now publish this widget.
 
-A la derecha, estas son las distintas acciones:
-**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Permite abrir en una nueva pestaña la vista previa de la versión editable del widget.
-
-:::warning Atención
-Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-fame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+::: tip Tip
+You may notice that some widgets with **Pending changes** and **In review** statuses have a small green mark. This green mark indicates that there is an active, published version of this widget available.
 :::
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer 
-_click_ en este ícono, se abrirá el modal de diferencias, en el cual se puede comparar los cambios que hay entre múltiples versiones del widget. 
+Here are the available actions on the right side of the top bar:
+**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Opens a preview of the widget in a new tab.
 
-Por defecto comienza comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, se puede además con las versiones de respaldo. Si este ícono no aparece, entonces no hay ninguna versión publicada de este widget.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking this icon opens a modal to compare the differences between the active published version of this widget, and the editable version you are currently working on. You can use the version selectors to compare either the editable or active published versions to older back up versions as well.
 
-**Actividad** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Te permite desplegar una pestaña lateral que muestra la actividad y comentarios del widget.
-
-**Otras opciones**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Permite archivar y crear una copia del widget actual.
-
-**Botón principal:**
-
-- **Guardar**: Guarda los cambios actuales.
-- **Enviar a revisión**: Si está la revisión en equipo habilitada, entonces se puede enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
-- **Publicar**: Pasa la versión editable o aprobada (si está habilitada la revisión en equipo) a la versión publicada.
-
-**Otras acciones principales:**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
-
-- **Despublicar**: Si el widget está publicado, se puede sacar de producción usando esta opción.
-- **Forzar publicación**: Si eres administrador del sitio, se puede hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
-
-:::tip Tip
-Sólo se pueden archivar los widgets que han sido despublicados previamente.
+::: tip Tip
+If you do not see the **Differences** icon, then there is no published version of this widget.
 :::
 
-:::warning Atención
-Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la plataforma. Si este se encuentra en uso, no estará habilitada la función. 
+**Show activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>: Displays a sidebar with activity history and comments. At the bottom of the sidebar, you can submit comments. Next to each activity, click on "see detail" to show the complete information of an activity log.
+
+**More actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: 
+
+- **Archive**: Archives the widget. You cannot archive published widgets.
+- **Copy**: Instantly creates a copy of the widget, prepending "Copy of " on the widget name.
+
+**Primary actions**
+
+- **Save**: Saves current changes.
+- **Send to review**: Changes the widget status to "In review". You can continue making changes, but each change sends a notification to all assigned reviewers via email.
+- **Publish**: Once reviewers approve the widget, it can be published.
+
+**Other primary actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
+
+- **Reject**: Returns the widget status to the "Pending changes", notifying reviewers that the changes were rejected.
+- **Force Publish**: Admin team members have the option to forcibly publish widgets, circumventing the established reviewal process.
+- **Unpublish**: If the widget is published, you can take it out of production using this option.
+
+::: tip Tip
+Only unpublished widgets can be archived.
 :::
 
-:::tip Tip
-Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Para restaurar un widget archivado, se debe entrar a la vista de edición, usando la opción **Restaurar** en la esquina superior derecha de la vista.
+::: tip Tip
+Widgets that are active in one or more pages of your site or channel cannot be unpublished. In order to unpublish a widget, you must first remove it from all pages.
 :::
 
-Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/platform/channels/pages.html)
+::: tip Tip
+Archived widgets do not appear in the main widget list or in the Custom widget selection in Page Builder. You can restore an archived widget by editing it and using the restore option in the upper right corner of the editing view.
+:::
 
-:::tip Tip
-Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/platform/core/key-concepts.html#versionado)
+Once a widget is published, it is available as a custom widget in the [page builder.](/platform/channels/pages.html)
+
+::: tip Tip
+To learn more about publication lifecycles in Modyo, review the [Versioning](/platform/core/key-concepts.html#versioning) section.
 :::
 
 
-En el área de trabajo se puede ver:
+In the main **work area** you can see the following:
 
-- **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS y HTML para construir widgets.
-- **Gestor de archivos**: Al hacer _click_, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
-- **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
-- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
-- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo _click_.
+- **Code tabs**: The Widget Builder has a JavaScript, CSS and HTML tab at your disposal to build your widgets.
+- **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
+- **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
+- **Snippets**: Displays a list of custom snippets where you can copy their reference code and insert them in your widget.
+- **Changes**: A list of every "Save" state of this widget since it was last published. Click on any of these save states to change the content of the widget to that particular save state. If doing so, all your current changes will be lost.
 
-:::tip Tip
-Para no perder los cambios que tienes actualmente, se debe guardar antes de saltar entre sub-versiones, de tal forma que siempre pueda volver a la última versión guardada en la lista de cambios.
+::: tip Tip
+To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
 :::
 
-:::tip Tip
-Cuando se publica el widget, no se observarán cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si se restaura el widget a una versión anterior, también lo harán las sub-versiones, por lo que se puede acceder a todas las instancias en que se guardaron cambios en esa versión.
+::: tip Tip
+If you publish a new version of your widget, the **Changes** list resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
 :::
 
-En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/platform/channels/liquid-markup.html)
+You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation.](/platform/channels/liquid-markup.html)
 
-En la columna de propiedades se pueden ver: 
+The **Properties** on the right contains the following fields:
 
-- **Nombre**: Permite cambiar el nombre del widget
-- **Tags**: Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
-- **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
-
-:::warning Atención
-Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Modyo por defecto guarda hasta 20 respaldos por cada elemento, por lo que si quieres despublicar y archivar un widget, deberás publicar 20 veces las páginas sin la referencia del widget para así poder eliminar todas las referencias del mismo. 
-
-Debido a que Modyo cuenta con las funcionalidades para [restaurar y restablecer](/platform/core/key-concepts.html#acciones-para-el-versionado) desde versiones pasadas, no se puede permitir eliminar un elemento que está siendo referenciado en los respaldos de otros elementos.
-:::
+- **Name**: Use this field to update the name of your widget.
+- **Tags**: Use this field to add tags to your widget. Tagging a widget makes it easier to search and filter. As your digital channels scale in size and complexity, good tagging helps keep your channel management well organized.
 
 ## Modyo CLI
 
-La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
+The Modyo Command Line Interface (CLI) is a command line tool based in two principles acceleration and integration, and this principles has a command get and push respectively.
 
 ### Introduction
 
-Primero, necesita instalar la CLI de Modyo globalmente en su máquina local para tener disponible el comando `modyo-cli`, esto le permitirá inicializar un proyecto con algunas decisiones arquitectónicas de front-end ya tomadas, o usar para inicializar un widget desde catálogo si tiene acceso.
+First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some Front end architectural decisions already taken, or use to initialize a widget from the catalog if you have access.
 
-Para instalar el modyo-cli globalmente, debe usar una de estas opciones
+To install the modyo-cli globally you must use one of these options
 
 ```bash
-$ npm i -g @modyo/cli #via npm
-$ yarn global add @modyo/cli #via yarn
+  $ npm i -g @modyo/cli #via npm
+  $ yarn global add @modyo/cli #via yarn
 ```
 
-> Este comando hará que el comando modyo-cli esté disponible en la sesión de terminal globalmente
+> This command will make the command modyo-cli available on the terminal session globally
 
-Los comandos disponibles son get, push y help
+The available commands are get, push and help
 
 - [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
 - [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
@@ -123,16 +122,17 @@ Los comandos disponibles son get, push y help
 - [`modyo-cli push NAME`](#modyo-cli-push-name)
 
 ### `modyo-cli (-v|--version|version)`
-Imprima la versión `modyo-cli`
+
+Print the `modyo-cli` version
 
 ```bash
-$ modyo-cli (-v|--version|version)
-modyo-cli/3.0.6 darwin-x64 node-v12.13.1
+  $ modyo-cli (-v|--version|version)
+  modyo-cli/3.0.6 darwin-x64 node-v12.13.1
 ```
 
 ### `modyo-cli help [COMMAND]`
 
-```bash
+```shell
 USAGE
   $ modyo-cli help [COMMAND]
 
@@ -142,14 +142,14 @@ ARGUMENTS
   push  Push widget to Modyo platform
 ```
 
-### Obtenga una plantilla para un proyecto
+### Get a template for a project
 
-La CLI de Modyo está diseñada para funcionar en base a una arquitectura de micro front-end y acelerará el proceso de inicialización de un widget, con decisiones modyo.
+The Modyo CLI is designed to work based on micro front-end architecture, and will accelerate the process of initialization of a widget, with modyo decisions.
 
 ### `modyo-cli get NAME [DIRECTORY]`
 
-En general, el comando `get` se usa para obtener una plantilla de widget.
-Si tiene un token proporcionado por Modyo, puede usar el mismo comando para extraer cualquiera de nuestros widgets premium de nuestra Biblioteca de widgets:
+In general, the `get` command is used to obtain a boilerplate widget.
+If you have a token provided by Modyo, the same command can be used to pull any of our premium widgets from our Widget Library.:
 
 ```bash
 USAGE
@@ -168,21 +168,21 @@ EXAMPLE
   $ modyo-cli get name [directory]
 ```
 
->Hay algunas plantillas de widgets públicos a los que se puede acceder a través de este comando
+>there are some public widget names that can be accessed via this command
 
 ```bash
-  EJEMPLOS
+  EXAMPLE
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
     $ modyo-cli get modyo-widgets-project-vue [DIRECTORY] #to initialize a base project library
 ```
 
->Desde este comando y en adelante, puede continuar utilizando el widget como cualquier otro widget vue-cli.
+>From this command and on you can continue using the widget like any other vue-cli widget.
 
 ### `modyo-cli push NAME`
 
-El comando `push` es el encargado del principio de integración, utilizado para enviar el widget al sitio seleccionado en la plataforma modyo.
+The `push` command is the one in charge of the integration principle, used to send the widget to the selected site in the modyo platform.
 
-Utilizará un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token site_base id o host para identificar la plataforma ®Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
+It will use an argument called name to upload the widget to the platform and some required flags like token site_base id or host to can identify the ®Modyo platform which host the widget and have an additional flag to avoid the manual process flow of widget publication.
 
 ```bash
 USAGE
@@ -206,7 +206,7 @@ EXAMPLE
   $ modyo-cli push <NAME>
 ```
 
->Muchas de las opciones se pueden definir como variables de entorno o dentro de un archivo .env que se recomienda para evitar la publicación en el registro de github porque puede contener información delicada
+>Many of the options can be defined as environment variables or inside of an .env file that is recommended to avoid the publication to the github registry because can contain some delicate information
 
 ```bash
 MODYO_BUILD_DIRECTORY=buildDirectoryPath

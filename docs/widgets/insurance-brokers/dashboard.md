@@ -4,23 +4,23 @@ search: true
 
 # Dashboard
 
-Este widget de Modyo permitirá tener una vista general de las cotizaciones, pólizas y renovaciones de tus intermediarios o clientes según el producto que elijas. Ofrece una vista general de los últimos movimientos y facilita la búsqueda de información según la necesidad del usuario.
+This Modyo widget allows you to have an overview of the quotes, policies, and policy renewals of your agents or clients according to the selected product. It shows you an overview of the latest movements and facilitates the search for information based on user needs.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-insurance-dashboard
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/dashboard)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/dashboard)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad       | Descripción                                                                                                                                                                                                              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Buscador            | Facilita la búsqueda de información a través de datos claves de las cotizaciones y las pólizas. Personaliza las opciones o escoje búsquedas según el ID del producto, Nombre del tomador, o números de documento.        |
-| Filtro de fecha     | Personaliza el calendario de resultados y optimiza los llamados al servicio de consulta según el interés de consulta de los usuarios o según los periodos de tiempo establecidos por los equipos legales.                |
-| Tabla de resultados | Configura según el dispositivo y la necesidad del negocio los datos clave para mostrar un resumen de la información importante de las cotizaciones, pólizas y renovaciones.                                              |
-| Organizador         | Optimiza espacio personalizando los paginadores de resultados y el filtro de orden para ofrecer una mejor experiencia según el interés del usuario.                                                                      |
-| Nueva cotización    | Genera un acceso a la creación de nuevas cotizaciones de forma rápida y directa desde el dashboard principal.                                                                                                            |
-| Nueva póliza        | Facilita la emisión de pólizas a través de la búsqueda de cotizaciones vigentes que tus intermediarios puedan emitir. Relaciona resultados de las últimas cotizaciones realizadas para aumentar la conversión (emisión). |
+| Feature       | Description                                                                                                                                                                                |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Search tool   | Makes it easy to search for information through key data from quotes and policies. You can customize the options or search by product ID, policyholder name, or document numbers.             |
+| Date filter   | Allows you to filter the results and optimizes the search process based on user needs or the time periods established by legal teams.                          |
+| Results table | Configure key data according to the user's device and business needs to show a summary of important information on quotes, policies and renewals.                                                  |
+| Organizer     | Optimize space by customizing the results showed in each page and use the order filter to provide a better experience based on the user's needs.                                                           |
+| New quote     | Quick access to the creation of new quotes quickly and directly from the main dashboard.                                                                                               |
+| New policy    | Makes it easy to issue policies by searching through current quotes that your agents can issue. Displays the results of the latest quotes made to increase the conversion rate (policy issuance). |

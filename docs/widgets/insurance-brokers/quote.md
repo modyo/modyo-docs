@@ -2,25 +2,25 @@
 search: true
 ---
 
-# Cotizador
+# Quote
 
-Crea nuevas cotizaciones en un stepper personalizado según las necesidades de tu negocio. Crea validaciones de listas restrictivas, reglas de no cobertura según georeferenciación, y obten los datos necesarios para ahorrar tiempo en las emisiones futuras de pólizas.
+Generate new quotes in a custom stepper based on your business needs. Create restrictive list validations, non-coverage georeferencing rules, and obtain the necessary data to save time issuing future policies.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-insurance-quote
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/cotizador)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/quote)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/cotizador" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/quote" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                  | Descripción                                                                                                                                                                              |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stepper                        | Personaliza de forma rápida y organizada los pasos que quieres para tu cotizador.                                                                                                        |
-| Personalización de formularios | Configura los formularios y los datos que requieres según el cotizador. Guarda información según el producto y facilita la creación de nuevas cotizaciones.                              |
-| Validaciones                   | Integra en las validaciones de datos listas restrictivas, georeferenciación de los riesgos según el interés del negocio.                                                                 |
-| Siniestralidad                 | Genera validaciones de siniestralidad y optimiza procesos de forma digital para tu cotizador reduce las complejidades manuales o de referidos.                                           |
-| Resumen                        | Presenta un resumen de la cotización antes de generarla para validar coberturas, deducibles y ofrece la opción de configurar porcentajes de incremento de prima para tus intermediarios. |
-| Descarga de documentos         | Permite la descarga de documentos de una cotización vigente, el envío a través de correo electrónico y configurar las opciones según las necesidades de los intermediarios.              |
+| Feature            | Description                                                                                                                                                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stepper            | Customize the desired steps in the quote process in a fast and organized way.                                                                                       |
+| Form customization | Configure the form fields and required data for the quote. Save information for each product and facilitate the creation of new quotes.                                     |
+| Validations        | Integrate restrictive lists and georeferencing in the data validation to limit risks according to business interests.                                                         |
+| Accident rate      | Generate claim validations and digitally optimize processes for your quotes, reducing manual input or additional complexities.                                          |
+| Summary            | Presents a summary of the quote before generating it to validate coverages, deductibles and allows you to modify commission percentages for your agents. |
+| Document downloads | Allows you to download current quote documents, send them via email and configure the options based on the needs of the agents.                                    |

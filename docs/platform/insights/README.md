@@ -1,19 +1,20 @@
 ---
 search: true
+translated: true
 ---
 
 # Modyo Insights
 
-Para cualquier empresa o institución, es importante saber qué es lo que está pasando en su ecosistema, por lo que tener a la mano una visión generalizada tanto de la actividad de sus propios usuarios finales, como del equipo de trabajo, es fundamental para implementar cualquier estrategia.
+For any company or institution, it is important to know what is happening in their digital ecosystem, so having at hand a visual overview of both the activity of their own customers and the teams doing digital work team is essential to implementing any strategy.
 
 ![Modyo People](/assets/img/insights/header.jpg)
 
-**Modyo Insights** es una sección especializada en la representación de datos estadísticos tanto de los usuarios de tus sitios, como del equipo de trabajo que crea el contenido y los canales digitales.
+Modyo Insights is a set of dashboards and visual tools specialized in the representation of statistical data of both the customers of your sites, as well as the teams that create content and elements in your digital channels.
 
-Cada vista de **Modyo Insights** cuenta con tres secciones principales:
+Each area of Modyo Insights has three main sections:
 
-- Contadores generales
-- Gráfica comparativa
-- Elementos específicos
+- General summary
+- Comparative chart
+- Specific elements
 
-También podrás filtrar los datos asociados a la vista con los tres filtros en la parte superior derecha de la pantalla, donde podrás filtrar por fecha y otros 2 valores, dependiendo del contexto.
+You can also filter the data associated within each area with the three filters in the upper right of the screen, where you can filter by date range and two other values, depending on the context.

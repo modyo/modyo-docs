@@ -3,37 +3,37 @@ search: true
 ---
 
 # Modyo Commerce
-**Modyo Commerce** es una aplicación de Modyo que posibilita a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign On).
+Modyo Commerce is an Modyo application that allows development teams to charge users registered on the site (or authenticated via one of the Single Sign On systems).
 
 <img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;">
 
-::: tip Medios de Pago
-Actualmente Modyo Commerce sólo permite la integración con medios de pago de latinoamérica.
+::: Payment Means tip
+Currently, Modyo Commerce only allows integration with payment methods in Latin America.
 :::
 
-## Estructura
+## Structure
 
-**Modyo** también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
+Modyo also allows you to easily manage an ecommerce, organizing and centralizing orders, as well as simplifying the insertion of payment methods.
 
-Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
+For this, there are two options that can be seen from the same sidebar:
 
-## Configuración de commerce
+## Commerce Settings
 
-La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
+The configuration will allow to shape the commerce in all technical aspects, allowing to adjust default values and standardize them throughout the site
 
 ### General
 
-En esta sección podremos configurar los datos más generales que dan vida al commerce, como es el caso del formato de la moneda.
+In this section we can configure the most general data that give life to commerce, as is the case with the currency format.
 
-Además, se permite activar el envío de un correo electrónico automático cuando el usuario pague su orden, en forma de recibo.
+In addition, it is allowed to activate the sending of an automatic email when the user pays his order, in the form of a receipt.
 
-Para este recibo, es fundamental adaptarlo hacia el commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
+For this receipt, it is essential to adapt it to our commerce, so it is essential that the code that is implemented as a template is correctly aligned with the user order data that the platform will write automatically.
 
-### Formas de pago
+### Payment Methods
 
-**Modyo** permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
+Modyo allows you to insert several forms of payment, which can make the operation of any company and customer more comfortable.
 
-Actualmente, los métodos de pago compatibles con Modyo son:
+Currently, the payment methods compatible with Modyo are:
 
 - Oneclick
 - Webpay
@@ -45,4 +45,4 @@ Actualmente, los métodos de pago compatibles con Modyo son:
 - Credomatic
 - Bancard
 
-Recuerda que para cada una de estas formas de pago, necesitas permisos y credenciales para operar. Contacta a los representantes de cada empresa para obtenerlas.
+Remember that for each of these forms of payment, you need permits and credentials to operate. Contact the representatives of each company to obtain them.

@@ -1,211 +1,208 @@
 ---
 search: true
+translated: true
 ---
 
-# Formularios
+# Forms
 
-Una de las funcionalidades más requeridas por todas las plataformas es la captura de datos de usuarios para posteriormente analizar y segmentar. Con esta herramienta podrás crear cuantos formularios necesites para recolectar datos provenientes de los usuarios de tus sitios.
+One of the most demanted features in any platforms is the ability to capture of user data, analyze it, and use it for segmentation. With this tool you can create as many forms as you need to collect data from the users of your sites.
 
 ![Digital factory](/assets/img/platform/form-index.png)
 
-Al entrar a la herramienta, podrás ver un listado de todos los formularios que hay activos actualmente en la cuenta. Podrás filtrar por su estado (habilitado o deshabilitado), por el sitio en el que se despliegan y buscar por el nombre del formulario.
+Upon entering Forms, you can see a list of all the forms that are currently active in the account. You can filter by their status (enabled or disabled), by the site where they are deployed and search for them by name.
 
-En cada fila de la tabla de formularios, verás en la primera columna el nombre del formulario, a continuación la fecha de creación, y en la última columna, la cantidad de respuestas que se han enviado para ese formulario.
+In each row of the form table, you will see the name of the form in the first column, the date of creation, and in the last column, the number of responses that have been completed for that form.
 
-Desde este listado también puedes acceder a la vista de análisis individual, haciendo _click_ en el título del formulario, asimismo al listado de respuestas del formulario, haciendo _click_ en el número de respuestas del formulario.
+From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
 
-Para habilitar o deshabilitar los formularios y permitir que usuario puedan o no enviar sus respuestas, debes ir a la vista de análisis y seleccionar la acción respectiva entre las opciones desplegadas en la sección superior derecha.
+To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
-## Crear Formulario
+## Create a Form
 
-Para crear un nuevo formulario, haz _click_ en la botón principal arriba a la derecha **+ Nuevo**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
+To create a new form, click on the main action at the top right "+ New". This will take you to the creation view of a new form, where you must fill in its main attributes:
 
-- **Nombre**: Nombre asociado al formulario. Este valor aparecerá tanto en el índice de formularios en el administrador de Modyo, y también como título cuando un usuario lo vaya a responder.
-- **Descripción**: Este texto aparecerá como texto debajo del título cuando los usuarios lo vayan a responder.
-- **Límite de personas**: Permite determinar el número máximo de respuestas son permitidas.
-- **Sitio**: Te permite seleccionar en que sitio se mostrará este formulario. Ten en consideración que esto provoca que el formulario cambie su aspecto de acuerdo a las clases definidas en el CSS global del sitio. Para más información, dirígete a [Template builder](/platform/channels/templates.html)
-- **Aceptar múltiples respuestas**: Si esta opción está habilitada, cada vez que un usuario responda el formulario, se registrará como una nueva respuesta. Si esta opción está deshabilitada, cada vez que un mismo usuario responda el formulario, estará sobrescribiendo su respuesta anterior.
-- **Solo para usuarios registrados**: Te permite determinar si el formulario solo será visible para usuario registrados en Modyo. Si esta opción está habilitada, un usuario sin sesión no podrá ver el formulario. Si esta opción está deshabilitada, cualquier usuario podrá responder el formulario.
-- **Solicitar contestar automáticamente**: Si el formulario es privado (solo usuario registrados lo pueden contestar), aparecerá esta opción que te permitirá redireccionar automáticamente a los usuarios que inicien sesión en el sitio asociado al formulario para que lo contesten.
+- **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title in the front end.
+- **Description**: This text will appear as text under the title in the front end.
+- **People limit**: Determines the maximum number of answers are allowed.
+- **Site**: Allows you to select which sites display the form. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/platform/channels/templates.html)
+- **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
+- **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
+- **Automatically ask the form to the audience?**: If the form is private (only registered users can answer it), this option appears and allows you to automatically redirect users who log in to the site associated with the form to answer it.
 
-Luego de una división podrás ver las opciones para modificar la redirección luego de que un usuario responda el formulario.
+The next section of the form properties contains the Form Options for what happens after a customer completes a form.
 
-- **Opciones por defecto**: Luego de responder el formulario el usuario es redireccionado al home del sitio asociado al formulario
-- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario
-- **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a una página del sitio. La URL del botón es una URL relativa del sitio asociado al formulario. También podrás determinar si quieres que el usuario sea redireccionado automáticamente a esa página luego de un tiempo determinado.
+- **Default options**: After answering the form the user is redirected to the home of the site associated to the form
+- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after the form has been answered
+- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
+- **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/platform/customers/targets.html)
 
-- **Habilitar targetización**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), podrás seleccionar un conjunto de usuarios que puedan contestar el formulario haciendo uso de los targets. Para aprender más dirígete a [Targets](/platform/customers/targets.html)
-
-::: warning Atención
-En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo, verás tres campos obligatorios en la parte superior del formulario: Nombre, Apellido y Correo. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
+::: warning Warning
+If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
-::: warning Atención
-Si un usuario no tiene una sesión activa, y rellena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
+::: warning Warning
+If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
 :::
 
-En la sección **Notificaciones** podrás configurar los distintos correos que se envían luego de que un usuario responde el formulario.
+In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
 
-La notificación por correo envía un correo del tipo "administrativo" en el cual se notifica vía ese canal de que alguien respondió el formulario. Puedes asignar un asunto y un listado de correos a los que quieras notificar.
+The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
 
-El correo de agradecimiento te permite personalizar un correo que será enviado al usuario que respondió el formulario. Puedes personalizar tanto el asunto como el cuerpo del mensaje haciendo uso de [Liquid](/platform/channels/liquid-markup.html). bajo el campo para personalizar el mensaje, podrás ver un listado de variables que puedes usar para personalizar el correo.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/platform/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
 
-A continuación, tienes un ejemplo de código que podrás usar como base para personalizar el correo de agradecimiento.
+Here is a code sample that you can use as a base to personalize the thank you mail.
 
-```html
-Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
+``` html
+You sent this answer on: {{'now' | date: "% b% d,% y"}}
 <table width="600px">
-    <tr>
-        <td><b>user name</b></td>
-        <td colspan="2"> {{user.name}}</td>
-    </tr>
-    <tr>
-        <td><b>user first name</b> </td>
-        <td colspan="2"> {{user.first_name}}</td>
-    </tr>
-    <tr>
-        <td><b>user last name</b></td>
-        <td colspan="2"> {{user.last_name}}</td>
-    </tr>
-    <tr>
-        <td><b>user email</b></td>
-        <td colspan="2"> {{user.email}}</td>
-    </tr>
-    <tr>
-        <td><b>form name</b></td>
-        <td colspan="2"> {{form.name}}</td>
-    </tr>
-    <tr>
-        <td><b>form description</b></td>
-        <td colspan="2"> {{form.description}}</td>
-    </tr>
-    <tr>
-        <td colspan="3" align="center" background-color="#f0f8ff"><b>Questions</b></td>
-    </tr>
-    <tr>
-        <td width="15%"><b>Question type</b></td>
-        <td width="15%"><b>Question</b></td>
-        <td width="70%"><b>Answer</b></td>
-    </tr>
-    {% for question in form.questions %}
-    <tr>
-        <td>{{ question.type }}</td>
-        <td>{{ question.title }}</td>
-        <td>{{ question.answer }}</td>
-    </tr>
-    {% endfor %}
+    <tr>
+        <td> <b> user name </b> </td>
+        <td colspan="2"> {{user.name}} </td>
+    </tr>
+    <tr>
+        <td> <b> user first name </b> </td>
+        <td colspan="2"> {{user.first_name}} </td>
+    </tr>
+    <tr>
+        <td> <b> user last name </b> </td>
+        <td colspan="2"> {{user.last_name}} </td>
+    </tr>
+    <tr>
+        <td> <b> user email </b> </td>
+        <td colspan="2"> {{user.email}} </td>
+    </tr>
+    <tr>
+        <td> <b> form name </b> </td>
+        <td colspan="2"> {{form.name}} </td>
+    </tr>
+    <tr>
+        <td> <b> form description </b> </td>
+        <td colspan="2"> {{form.description}} </td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center" background-color="# f0f8ff"> <b> Questions </b> </td>
+    </tr>
+    <tr>
+        <td width="15%"> <b> Question type </b> </td>
+        <td width="15%"> <b> Question </b> </td>
+        <td width="70%"> <b> Answer </b> </td>
+    </tr>
+    {% for question in form.questions%}
+    <tr>
+        <td> {{question.type}} </td>
+        <td> {{question.title}} </td>
+        <td> {{question.answer}} </td>
+    </tr>
+    {% endfor%}
 </table>
 ```
 
 
 
-## Análisis
+## Analysis
 
 <img src="/assets/img/customers/forms/analysis.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar alguna de las preguntas del formulario y podrás ver una representación de las respuestas que los usuarios han enviado. La representación desplegada dependerá del tipo de respuesta, a continuación se muestran los diferentes tipos de respuesta y su visualización respectiva:
+Modyo allows you analyze each form. On the analysis page select one of the questions on the form to see a representation of the answers that users have sent. The representation displayed will depend on the response type, the different response types and their respective visualizations are shown below:
 
-- **Texto simple**: Verás un conteo de cuantas personas rellenaron este campo.
-- **Número**: Verás el mínimo, máximo y el promedio de las respuestas.
-- **Checkbox**: Verás un gráfico de barras con todas las alternativas.
-- **Fecha**: Verás el conteo de respuestas totales, y la fecha mínima y máxima que se han enviado como respuestas.
-- **Párrafo**: Verás un conteo de cuantas personas rellenaron este campo.
-- **Dropdown**: Verás un gráfico de barras con todas las alternativas.
-- **Elección**: Verás un gráfico de barras con todas las alternativas.
-- **Preguntas anidadas**: Verás un gráfico de barras con todas las alternativas del primer nivel.
-- **Archivo**:  Verás un conteo de cuantas personas rellenaron este campo, junto con los últimos cinco archivos subidos.
+- Simple text: You will see a count of how many people filled in this field.
+- Number: You will see the minimum, maximum and average answer values.
+- Checkbox: You will see a bar chart of all response alternatives.
+- Date: You will see the total response count, and the minimum and maximum date that have been sent as responses.
+- Paragraph: You will see a count of how many people filled out this field.
+- Dropdown: You will see a bar chart with all response alternatives.
+- Choice: You will see a bar chart with all response alternatives.
+- Nested questions: You will see a bar chart with all first-level question response alternatives.
+- File: You will see a count of how many people filled in this field, along with the last five uploaded files.
 
-:::tip Tip
-En la barra derecha podrás ver un contador del total de veces que se ha respondido el formulario, pero en los conteos de respuestas para cada pregunta, verás el conteo de cuantas personas pusieron un valor a esa pregunta. En el caso de que no se haya solicitado la respuesta como obligatoria, será normal ver un número menor de respuestas con respecto a las respuestas totales del formulario.
+::: tip Tip
+In the right bar you will see a counter of the total number of times the form has been answered, but in the answer counts for each question, you will see the count of how many people put answered that particular question. In the event that the response has not been requested as mandatory, it is normal to see a smaller number of responses with respect to the total responses to the form.
 :::
 
-## Respuestas
+## Answers
 
-Al hacer _click_ en el contador de respuestas de un formulario, llegarás a una vista donde se listan todas las respuestas que los usuarios han enviado y la fecha en que respondieron.
+By clicking on the answer counter of a form, you will arrive at a view listing all the answers that users have submitted, and the date they responded.
 
-Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionándolas en el listado y luego usando las acciones masivas al final del mismo.
+You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
-::: danger Peligro
-Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón **Borrar** al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
+::: danger Danger
+You can delete responses one by one using the action to the right of each answer, or by using the actions selection that appears at the bottom, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that deleting is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
-Para ver en detalle la respuesta de un usuario, basta con hacer _click_ en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
+To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
 
 <img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">
 
-## Editar
+## Edit
 
 <img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para modificar un formulario, deberás ir a la sección **"Análisis"** y usar la acción **"Editar"** en el menú de opciones arriba a la derecha.
+To modify a form, you must go to the **"Analysis"** section and use the **"Edit"** action in the options menu at the top right.
 
-Una vez que entres en la sección de edición de un formulario, podrás ver 2 secciones: una sección central, donde podrás reorganizar las preguntas arrastrándoles en el orden requerido, y la sección lateral derecha, que cuenta con tres pestañas:
+Once you enter the editing section of a form, you will see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
 
-### Añadir campo
-Esta sección te permitirá añadir cuantos campos sean necesarios para completar el formulario o eliminar los que no sean necesarios:
+### Add field
+This section will allow you to add as many fields as necessary to complete the form or remove fields that are not necessary:
 
-- **Texto simple**: Permite al usuario ingresar un texto hasta 256 caracteres.
-- **Párrafo**: Permite al usuario ingresar un texto de múltiples líneas hasta 65535 caracteres.
-- **Número**: Le permite al usuario ingresar números.
-- **Dropdown**: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato dropdown.
-- **Checkbox**: Te permite añadir opciones de las cuales el usuario podrá que elegir múltiples en formato checkbox.
-- **Elección**: Te permite añadir opciones de las cuales el usuario podrá que elegir una en formato _radio button_.
-- **Fecha**: Te permite añadir un campo de fecha en el que el usuario podrá seleccionar una dentro del rango permitido.
-- **Preguntas anidadas**: Te permite añadir una serie de alternativas que pueden ser anidadas, de tal forma que al usuario se le solicita que seleccione una de las posibles opciones anidadas dentro de la opción que seleccionó.
+- Simple text: Allows the user to enter a single-line text response up to 256 characters.
+- Paragraph: Allows the user to enter a multi-line text response up to 65535 characters.
+- Number: Allows the user to enter numbers.
+- Dropdown: Allows you to add a list of options from which the user may choose one in a dropdown format.
+- Checkbox: Allows you to add a list of options from which the user may choose one or more in a checkbox format.
+- Choice: Allows you to add a list of options from which the user may choose one in a _radio button_ format.
+- Date: Allows you to add a date field in which the user can select a date within the allowed range.
+- Nested questions: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
 :::warning Atención
-Desde la versión 9.0.8 en adelante, los formularios ya no cuentan con preguntas de tipo archivos, por lo que no podrás requerir que los usuarios suban archivos usando los formularios de Modyo.
+From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
-Puedes eliminar uno de los campos del formulario haciendo _click_ en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
+You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
 
-::: danger Peligro
-Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.
+::: danger Danger
+If your form is already activated and you already have answers, be very careful when deleting questions. Doing so deletes the values of those answers that the users have already sent. This action is irreversible.
 :::
 
-### Propiedades del campo
-Esta sección te permitirá modificar las opciones para cada una de las preguntas de tu formulario, deberás seleccionar un campo de la sección principal para poder hacer uso de esta sección.
+### Field Properties
+This section allows you to modify the options for each of the questions on your form, you must select a field from the main section to use this section.
 
-Todos los campos que puedes añadir cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones.
+All the fields that you can add have a title, which are effectively the questions associated with each answer, they have the option of making that field required to submit the form, and each has a brief description in case instructions are required to answer the field.
 
-Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
+Some fields have validations, to ensure the user meets certain requirements to fill in the field, some of those restrictions are:
 
-- **Largo mínimo**: Largo requerido para que el texto sea válido
-- **Largo máximo**: largo máximo permitido para que el texto sea permitido
-- **Expresión regular**: Formato del texto ingresado debe coincidir con la expresión regular asociada para ser válido.
-- **Número mínimo**: El número ingresado no puede ser menor que este valor.
-- **Número máximo**: El número ingresado no puede ser mayor que este valor.
-- **Fecha mínima**: La fecha ingresada no puede ser anterior a este valor
-- **Fecha máxima**: La fecha ingresada no puede ser posterior a este valor.
+- Minimum length: Length required for the text to be valid
+- Maximum length: Maximum length allowed for text to be valid
+- Regular expression: Text format entered must match the associated regular expression to be valid.
+- Minimum number: The number entered cannot be less than this value.
+- Maximum number: The number entered cannot be greater than this value.
+- Minimum date: The date entered cannot be earlier than this value
+- Maximum date: The date entered cannot be later than this value.
 
-De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas y los archivos.
+In the same way that some fields have validations, most have a default value that is preselected at the time of loading the form. The only ones that do not have a default value are nested questions and files.
 
-### Propiedades del formulario
+### Form properties
+This section will allow you to change the general behavior of the form. It contains the same options as when creating a new form, but in turn adds a couple of new options which we will detail below. Its four main sections are:
 
-Esta sección te permitirá cambiar el comportamiento general del formulario. Contiene lo mismo que la vista de creación de un formulario nuevo, pero a su vez agrega un par de opciones nuevas las que se detalla a continuación. 
+- General
+- Form Snippet
+- Form Options
+- Email Notifications
 
-Sus cuatro principales secciones son:
+The **General** section adds two options:
+- **Send button text**: Allows you to customize the text associated with the **Send** button on the form.
+- **Enabled**: Allows you to determine whether or not users can respond to the form. If the option is checked, then the form can be accessed and answered, if it is not enabled, then users will not see or answer it.
 
-- **General**
-- **Snippet**
-- **Opciones**
-- **Notificaciones**
-
-La sección **General** agrega dos opciones:
-- **Texto del botón enviar**: Te permite personalizar el texto asociado al botón **Enviar** del formulario.
-- **Habilitado**: Te permite determinar si los usuarios podrán o no responder el formulario. Si la opción estás marcada, entonces se podrá acceder y responder el formulario, si no está habilitada, entonces los usuarios no lo verán ni podrán responderlo.
-
-La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
+The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
 <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
-::: warning Atención
-Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
+::: warning Warning
+In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
-Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
+The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
-::: warning Atención
-Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/platform/core/security.htm) en la configuración de la cuenta.
+::: warning Warning
+If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
 :::

@@ -2,22 +2,22 @@
 search: true
 ---
 
-# Emitir póliza
+# Issue Policy
 
-Simplifica los procesos de emisión de las pólizas reduciendo la cantidad de datos a partir de la integración con el módulo de cotizaciones. Precarga información de forma rápida y personaliza controles de emisión para prevenir fraudes o engaños en copropiedades activas.
+Simplify policy issuance processes by reducing the amount of data need by integrating with the Quotes widget. This widget preloads information quickly and allows you to customizes controls and verification checks to prevent fraud or deception in active properties.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-insurance-issue-policy
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/emitir-poliza)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/issue-policy)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/emitir-poliza" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/issue-policy" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad      | Descripción                                                                                                                                                                                                             |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Guardado           | No siempre los intermediarios tienen todos los datos a la mano, ayudarles con opciones que generen borradores de pólizas sin que pierdas esa emisión.                                                                   |
-| Fechas de vigencia | Permite que tus intermediarios seleccionen solamente la fecha de vigencia o el tipo de Copropiedad a asegurar. Ahorra tiempo en llenado de datos integrando estos pasos con la información recolectada en el cotizador. |
-| Resumen            | Presenta un resumen de la cotización antes de generarla para validar coberturas, deducibles y ofrece la opción de visualizar el porcentajes de incremento de prima seleccionado en la cotización.                       |
+| Feature        | Description                                                                                                                                                                                                  |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Save           | Brokers don't always have all the data at hand, this option helps generate draft policies without losing the current policy issuance process.                                                      |
+| Effective Date | Your broker can filter directly by Effective Date and Property type. This saves time by integrating this section with the information collected in the Quote widget. |
+| Summary        | This section presents a summary of the quote before generating it to validate coverage, deductibles, and offers the option of changing the premium percentage selected for the quote.                               |

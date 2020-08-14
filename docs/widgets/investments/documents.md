@@ -2,29 +2,29 @@
 search: true
 ---
 
-# Documentos
+# Documents
 
-En este widget el usuario podrá encontrar todos los documentos que necesite con relación a sus inversiones, como cartlas, facturas electrónicas, confirmación y ejecución de órdenes y firma de contratos, además de los certificados respectivos.
+In this widget users can find all documents they need related to their investments, such as statements, electronic invoices, confirmation and execution of orders, and contract signatures, as well as the corresponding certificates.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-investments-documents
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/documentos)
+[Open in new tab](https://widgets.modyo.com/investments/documents)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/documentos" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/documents" width="100%" frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                       | Descripción                                                                                                                                                                                                                                |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Cartolas Patrimoniales Consolidadas | Muestra un listado con las cartolas patrimoniales disponibles.                                                                                                                                                                             |
-| Facturas                            | Muestra el listado de facturas electrónicas por las operaciones instruidas. Permite la recuperación de la factura en formato PDF, para su visualización, impresión y/o descarga.                                                           |
-| Confirmación de Órdenes             | Muestra un listado con los documentos de órdenes realizadas, disponibles en formato PDF.                                                                                                                                                   |
-| Ejecución de Órdenes (1.985)        | Entrega la información de la ejecución de las órdenes del cliente y que está indicada en la circular 1985 de la SVS.                                                                                                                       |
-| Firma de Contratos Electrónicos     | Permite ver los contratos que se deben firmar, ya sea porque son nuevos o porque existen versiones nuevas o actualizadas de éstos. Permite revisar los contratos en pantalla y proceder a firmarlos directamente con la clave de internet. |
-| Tabla de riesgos por Producto       | Tabla con descripción de productos y su clasificación de riesgo.                                                                                                                                                                           |
-| Certificados Tributarios            | Muestra un listado de certificados tributarios que están en formato PDF, para su visualización, impresión y/o descarga.                                                                                                                    |
+| Feature                           | Description                                                                                                                                                                                                      |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Consolidated Financial Statements | Displays a list of available financial statements.                                                                                                                                                               |
+| Invoices                          | Displays the list of electronic invoices for all the completed transactions. Allows the user to open invoices in PDF format to review, print, and/or download.                                                      |
+| Order Confirmations               | Displays a list of order documents available in PDF format.                                                                                                                                                      |
+| Order Executions (1.985)          | Provides information on the execution of the client's orders as indicated in the 1985 SVS notice.                                                                                                                |
+| Electronic Contract Signatures    | Shows the contracts to be signed, either because they are completely new or because there are new or updated versions of existing contracts. Allows the user to directly review the contracts with the option to sign them online with the user's key or passcode. |
+| Product Risk Table                | Table with a description of products and their risk classification.                                                                                                                                                |
+| Tax Certificates                  | Shows a list of tax certificates in PDF format for viewing, printing and/or downloading.                                                                                                               |
 
 <script>
 
@@ -40,7 +40,7 @@ modyo-cli get modyo-widgets-investments-documents
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

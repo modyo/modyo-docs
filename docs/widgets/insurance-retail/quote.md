@@ -2,18 +2,18 @@
 search: true
 ---
 
-# Cotizador <Badge text="Beta" type="warn"/>
+# Quote <Badge text="Beta" type="warn"/>
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-insurance-quote
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/personas/cotizador)
+[Open in new tab](https://widgets.modyo.com/insurance/retail/quote)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/personas/cotizador" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/retail/quote" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad | Descripción |
-| ------------- | ----------- |
+| Feature | Description |
+| ------- | ----------- |
 

@@ -1,214 +1,199 @@
 ---
 search: true
+translated: true
 ---
 
-# Usuarios
+# Users
 
-A través de la sección Usuarios, podrás ver y modificar a los usuarios externos del sistema. Dichos usuarios son los registrados dentro de la plataforma quienes inician su sesión en los sitios de Modyo, responden formularios o pueden recibir campañas de correo.
+The Users section is where you can view and update users, or customers, that interact within your digital channels or receive messages through your campaigns through the Modyo platform. Users in the Customers section of your platform either registered through a site or application in Modyo Channels, responded to a form, or were imported directly into the platform manually or via the API.
 
-## Sobre la interfaz
+## About the interface
 
-En la vista principal, podrás ver una tabla con todos los usuarios registrados dentro de la plataforma, paginada en caso de tener más de 30 registros.
+In the main view, we can see a list of all registered users within the platform, paginated with 30 users per page.
 
-En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera. Los filtros disponibles son los que siguen:
+Along the top of the list are filters that allow you to refine the list of users by the following attributes:
+- Status: Filter by active and inactive users.
+- Verification: Filter by users who have (or have not) confirmed their data within the platform.
+- Targets: Filter by users that match certain [Targets](/platform/customers/targets.html).
+- Advanced filters: Filter by users who match specific filters based on data in their user profiles, e.g. birth date, or custom field value.
+- Search: Filter by user name, last name, email, or username.
 
-- Estado: Ver los usuarios activos e inactivos.
-- Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
-- Targets: Usuarios que se encuentran dentro de un determinado [Target](/platform/customers/targets.html)
-- Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
-- Búsqueda: Filtra usuarios por nombre, apellido, email y username.
+The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
-La opción de Filtros Avanzados abrirá un modal el cual te permitirá filtrar a los usuarios por atributos más específicos, tales como su edad, o Custom Fields. Al agregar un nuevo filtro avanzado, aparecerá automáticamente el número de coincidencias en la parte inferior izquierda del modal, al lado del botón para limpiar los filtros. Si quieres visualizar el listado de estos usuarios filtrados, solo debes hacer _click_ en el botón **Aplicar**.
-
-:::tip Tip
-Junto al botón de **Aplicar**, está el botón **Guardar como Target**. Este guardará los filtros que aplicaste en un nuevo Target, al cual deberás darle un título y una descripción. Posteriormente lo podrás encontrar en la sección [Targets](/platform/customers/targets.html)
+::: tip Tip
+Next to the Apply button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/platform/customers/targets.html) section.
 :::
 
-En la tabla misma, es posible ordenar los usuarios por sus valores respectivos haciendo _click_ en las cabeceras de cada una de las siguientes columnas:
-- Nombre: Nombre del usuario
-- Fecha de registro: Fecha de inscripción en la base de datos de usuarios
-- Ultimo ingreso: Fecha de último ingreso a la plataforma
-- Sesiones: Cantidad de logins hechos dentro de la plataforma
+You can sort users by ascending or descending order by the following values:
+- Name: User Name
+- Sign Up Date: Date and time of registration in the platform.
+- Last Login: Most recent date and time a user logged into the platform.
+- Logins Count: Number of times a user has logged into the platform.
 
 
-### Añadir un usuario
+### Add a user
 
-Para agregar un nuevo usuario, se debe hacer _click_ en el botón **+ Nuevo** en la parte superior derecha de la pantalla.
+To add a new user, you must click on the **+ New** button at the top right of the screen.
 
-Se abrirá un selector que muestra las dos formas posibles para crear usuarios en el sistema: manualmente o importándolos desde un archivo \*.CSV. La segunda opción permite importar múltiples usuarios simultáneamente.
+A selector will open that shows the two possible ways to create users in the system: manually or by importing them from a \*.CSV file. The second option allows us to import multiple users simultaneously.
 
-Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguientes campos:
+When you select "Add User", the platform will ask you to complete the following fields:
 
-- Nombre: Nombre legal del usuario. **Requerido**
-- Apellido: Apellido del usuario.
-- Apellido materno: Apellido materno del usuario.
-- Nombre del usuario: Nombre dentro de la plataforma **Requerido**
-- Email: Correo electrónico del usuario **Requerido**
-- Contraseña: Password para que el usuario ingrese a la plataforma. El password no puede tener menos de 8 caracteres. **Requerido**
-- Confirmación de la contraseña: Repetición de la contraseña dada por el administrador.
-- Tags: Etiquetas que sirvan para identificar al usuario.
+- First Name: Legal name of the user. **Required**
+- Last Name: Last name of the user.
+- Second Last Name: user's second last name (optional).
+- User Name: Name within the platform **Required**.
+- Email: User email **Required**.
+- Password: Password for the user to enter the platform. The password must be at least 8 characters. **Required**.
+- Password confirmation: Input the same password to confirm.
+- Tags: Tags that serve to identify the user.
 
-:::tip Tip
-Para enviar la contraseña al mail del usuario, solo es necesario marcar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo al usuario creado con su contraseña, que podrá cambiar al ingresar a la plataforma.
+::: tip Tip
+To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/platform/customers/users.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/platform/customers/users.html#formulario-de-registro). Por otro lado, también existen **Campos Personalizados**, los que se pueden crear y modificar en la sección [Campos Personalizados](/platform/customers/users.html#campos-personalizados).
+The available fields may be more than those listed above, depending on the configuration on the platform and how many user custom fields are enabled in the account. You can learn more about this in the [Customers Configuration](/platform/customers/users.html#customers-configuration) section.
 
+### Import users
 
-### Importar usuarios
+The second option to add new users is the "Import Users" option. Clicking this opens a User import view that lists all previous imports, if any. This list can be sorted by file name, import status, or date and time of import. You can search for import files by name in the search bar.
 
-La segunda opción del selector para agregar nuevos usuarios es la importación desde un archivo CSV. Al hacer _click_, se abrirá una vista que lista un registro histórico de importaciones previas, en caso de existir. Este listado se puede ordenar por nombre del archivo \*.CSV o por estado de la importación, asimismo a través de la barra de búsqueda sobre la tabla se puede filtrar por el nombre del archivo.
+To make a new import, click on the upper right **+ Import** button. This opens a window where we can select and upload a local \*.CSV file that has a list of users and their attributes. It is important to check the box that indicates whether the file contains column headers or names, otherwise the headers themselves will be registered as a new user. Click **Accept** when ready.
 
-Para realizar una nueva importación, debes hacer _click_ en el botón superior derecho **Importar**. Este abrirá un modal el que permitirá seleccionar y subir el archivo \*.CSV que tiene el listado de usuarios y sus atributo. Es importante dejar seleccionada la caja que indica que el archivo contiene encabezados o nombres de columnas en caso de que así sea, o las cabeceras intentarán ser incluídas como un nuevo usuario. Luego procedes a hacer _click_ en el botón **Aceptar**.
+From here, you can see the main import view. On the left, a list with three columns appears, with the first column containing the column name, the second containing some examples of the data, and allows for mapping options. Use these mapping options to assign imported values to user attributes such as first name, last name, email, etc.
 
-A continuación verás la vista principal de importación. A la izquierda, aparecerá una tabla con tres columnas principales, la primera contiene el nombre de la cabecera de la columna importada (en caso de que exista), la segunda algunos ejemplos de los datos que contiene esa columna, y la tercera un selector. Este selector realiza la asignación respectiva del valor importado al atributo del usuario en la plataforma.
-
-En esta vista procederás a asignar cada columna del archivo \*.CSV a un atributo respectivo disponible en la plataforma.
-
-:::tip Tip
-Los atributos mínimos requeridos para la importación son el nombre real del usuario (no confundir con nombre de usuario) y su correo electrónico.
+::: tip Tip
+The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
-A la derecha, en una barra lateral, podrás ver configuraciones principales de la importación. Acá puedes definir si el archivo no sigue uno de los estándares comunes de los archivos \*.CSV, puedes fijar la codificación en la que se encuentra el archivo, y también definir separación de los atributos (el cual por defecto es una coma). Un poco más abajo hay un recuadro que indica si ya has seleccionado los atributos principales requeridos para la importación (nombre y correo electrónico). El botón para **Comenzar la importación** sólo se habilitará una vez que hayas incluído dichos campos para ser importados. Finalmente, cuatro opciones principales de la importación:
+On the right are the main import settings. Here you can set the file encoding and separator value (which by default is a comma). Below it is a box indicating if you've mapped the two required fields (name and email). The button for **Begin import** is enabled once you map these fields. Finally, there are four main import options:
 
-- Activar cuenta de usuario
-- Activar cuenta y enviar correo electrónico (personalizable en [Correos](/platform/customers/users.html#correos))
-- Agregar a usuarios a sitios
-- Actualizar usuarios (en caso de que ya estén registrados en la plataforma)
+- Activate user account
+- Send notification email (customizable in [emails](/platform/customers/users.html#emails))
+- Add users to sites
+- Update existing users (in case they are already registered on the platform)
 
-Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
+Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
 
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/platform/customers/users.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/platform/customers/users.html#configuracion-de-customers).
+In addition, you can add any required custom fields. These can be configured in [Custom Fields](/platform/customers/users.html#custom-fields), which are found in the [Customer Configuration section](/platform/customers/users.html#customer-configuration).
 
 
-### Ficha de Usuarios
+### Users Tab
 
-Al hacer _click_, desde el listado principal, en cada uno de los usuarios, se abrirá la ficha del usuario seleccionado. En ella podrás ver una barra lateral que incluye los siguientes datos:
+Clicking any user from the main list opens their profile. In each profile is the following information:
 
-- Avatar del usuario (Si es que se ha subido)
-- Estado dentro de la plataforma: Si es que se encuentra activo o inactivo.
-- Fecha de registro en la plataforma
-- Último ingreso a la plataforma
-- Cantidad de sesiones hechas en la plataforma
-- Estado de verificación de usuario
-- Targets en los que se encuentra incluído (si hay disponibles)
+- User avatar (if one has been uploaded)
+- Status within the platform: active or inactive.
+- Signup Date
+- Last Login
+- Logins Count (number of sessions)
+- User verification status
+- Targets
 
-En la sección principal, podrás ver los siguientes separadores horizontales, que se describen a continuación:
+In the main section to the right are the following tabs:
 
-- Actividad (dentro del sitio)
-- Formularios (que han sido enviados por el usuario)
-- Órdenes (compras)
-- Credenciales
-- Notas (por si se quiere tomar en cuenta algo especial de él)
-- Editar (para cambiar datos personales del cliente)
+- Activity
+- Responses 
+- Credentials
+- Notes (to provide notes about this user in their profile, visible only to administrators)
+- Edit (to change/update user data)
 
-#### Actividad
+#### Activity
 
-En esta sección podrás ver un registro de todas las acciones que el usuario ha realizado dentro de la plataforma.
+In this section you will see a record of all the actions that the user has performed within the platform.
 
-Cabe notar que no se trata de un seguimiento a la navegación de un usuario dentro de la plataforma, sino que de las interacciones principales que este realiza dentro de la misma. Estos registros no puede ser borrados ni editados por administradores.
+It should be noted that it is not a follow-up to the navigation of a user within the platform, but rather of the main interactions that it carries out within it. These records cannot be deleted or edited by administrators.
 
-#### Formularios
+#### Responses
 
-Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma. Al hacer _click_ sobre alguno de ellos, te lleva a ver las respuestas del usuario en dicho formulario. Si quieres saber más al respecto de los formularios, entra a la sección [Formularios](/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out within the platform. When you click on any of them, it takes you to see the answers of the user in said form. If you want to know more about the forms, go to the [Forms](/platform/customers/forms.html) section.
 
-### Órdenes
+### Credentials
 
-En esta sección podrás ver todas las órdenes de compra y transacciones que ha realizado el usuario a través de la plataforma, si es que se encuentra habilitada una tienda eCommerce.
+Here you will see all the credentials the user has to enter the platform.
 
-Si quieres saber más sobre cómo funciona la tienda, entra a la [sección Órdenes](/platform/commerce/orders.html).
+If the user enters only through his username and default password of the platform, this section will be empty. Otherwise, if the user uses some integration such as LDAP, or Google, that information will be displayed in this panel.
 
-### Credenciales
+If you want to enable authentication through integrations, check the [Integrations section](/platform/core/integration.html).
 
-Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado el usuario para ingresar a la plataforma.
+### Notes
 
-Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía. Caso contrario, si el usuario utiliza alguna integración como LDAP, o Google, dicha información se desplegará en este panel.
+In this section you can add personalized notes about users, only administrators can add, view and delete them.
 
-Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/platform/core/integration.html).
+### Edit
 
-### Notas
+If you need to change or update user data, you can do so from here. The form is equivalent to that shown in the creation of a new user.
 
-En esta sección se pueden agregar notas personalizadas sobre los usuarios, sólo administradores pueden agregarlas, verlas y eliminarlas.
+::: tip Tip
+When modifying a user, you may change the list of Targets to which they belong.
 
-### Editar
-
-Si es necesario añadir o cambiar datos del usuario, es posible hacerlo desde acá. El formulario es equivalente al mostrado en la creación de un usuario nuevo.
-
-:::tip Tip
-Al modificar un usuario, puede que cambie el listado de Targets a los que pertenece.
+For more information, go to [Custom Fields](/platform/customers/users.html#custom-fields).
 :::
 
-Para más información, puedes ir a [Campos Personalizados](/platform/customers/users.html#campos-personalizados).
+## Customer Settings
 
-
-----
-
-## Configuración de Customers
-
-En esta sección puedes configurar en gran parte la interacción entre usuarios y la plataforma de Modyo. Algunas configuraciones son enfocadas en la experiencia visual para el usuario, como selección colores o plantillas de correos, mientras que otras son enfocadas al registro, control de acceso, y personalización de los mismos. En particular esta segunda parte es esencial para el correcto funcionamiento de la plataforma, por lo que es importante ser precavido al momento de modificar configuraciones en esta sección.
+In this section we can configure the interaction between users and the Modyo platform itself (outside of Channels). Some configurations are focused on the look and feel, such as color selection or email templates, while others are focused on registration, access control, and personalization. In particular, registration and access control are essential for the proper functioning of the platform, so it is important to be cautious when modifying configurations in this section.
 
 ### General
 
-Aquí puedes personalizar parte estética de la plataforma con la cual interacciona el usuario, en particular las vistas de inicio de sesión, registro de nuevo usuario y perfil, en general todo lo que tiene que ver con la sesión del mismo en la plataforma.
+Here we can customize the aesthetic aspect of the platform regarding the login views, new user registration and profile, in general everything that has to do with session interaction on the platform.
 
-#### Color primario
+#### Primary Color
 
-El color primario es el que se muestra en los principales botones del manejo de la sesión, tales como el ingreso, registro, modificaciones de contraseña u otros atributos. Para modificarlo solo debes ingresar el Código HEX del color que quieras y hacer _click_ en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
+The primary color is the one shown in the main buttons of the session management, such as entry, registration, password modifications or other attributes. To modify it, enter the HEX Code of the color you want and click on the **Save** button at the top of the screen.
 
-#### Mostrar el logo
+#### Show logo
 
-Esta opción permite mostrar el logo configurado para la cuenta en las vistas de sesión, el cual se desplegará sobre los formularios respectivos de dichas vistas. Para cambiar el logo, debes acceder la [Interfaz de Modyo](/platform/core/the-modyo-interface.html).
+This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/platform/core/the-modyo-interface.html).
 
-#### Personalizar con CSS
+#### Customize with CSS
 
-Si quieres tener un CSS personalizado que se ajuste a las necesidades en las vistas de sesión, solo debes pegar el código en el editor que se encuentra en la ventana y hacer _click_ en el botón **Guardar**.
+If you want to have custom CSS in the session views, add it to the editor and click on the **Save** button.
 
-Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno, solo tienes en el botón que está sobre el editor, y que llevará al [Gestor de Archivos](/platform/content/asset-manager.html), que permitirá subir sin problemas algún archivo que necesites.
-
-Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subas, tienes que hacer _click_ en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en el código CSS para poder usarla.
+It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
 ::: tip Tip
-Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer _click_ en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
+If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
 :::
 
-### Correos
+### Emails
 
-Modyo permite configurar la dirección de envío y apariencia de los correos que se enviarán a los usuarios.
+Modyo allows you to configure the sender and appearance of the emails that will be sent to users.
 
-Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer _click_ en el botón **Guardar**.
+To adjust the address that will appear as the sender that will send your mail, you just have to enter it in the "Default mail" field and click on the **Save** button.
 
-Lo que permite esta sección es habilitar, deshabilitar y personalizar el envío de los correos automáticos tras interacciones específicas que realizan los usuarios, los correos son los que siguen:
+What this section allows is to enable, disable and customize the sending of automatic emails after specific interactions made by users, the emails are as follows:
 
-- Correo de activación: Enviado una vez completado un registro de usuario, para que este confirme sus datos.
-- Usuario importado: Enviado una vez que se importó el usuario
-- Correo de bienvenida: Enviado una vez completado un registro de usuario en un sitio específico.
-- Añadido por administrador: Enviado una vez que el administrador creó el usuario manualmente.
-- Recuperación de contraseña: Enviado cuando el usuario solicitó recuperar su contraseña.
-- Confirmación: Enviado una vez que se confirmó y activó el usuario.
-- Esperando aprobación: Enviado una vez que se confirmó el usuario, pero debe esperar activación manual de parte de un administrador.
-- Footer personalizado: Footer personalizado para todos los correos anteriormente descritos.
+- Activation email: Sent once a user registration is completed, so that it confirms your data.
+- Imported user: Sent once the user was imported
+- Welcome email: Sent after completing a user registration at a specific site.
+- Added by administrator: Sent once the administrator created the user manually.
+- Password recovery: Sent when the user requested to recover their password.
+- Confirmation: Sent once the user was confirmed and activated.
+- Waiting for approval: Sent once the user has been confirmed, but you must wait for manual activation from an administrator.
+- Custom footer: Custom footer for all the emails described above.
 
-Para habilitar o deshabilitar el envío de estos correos, solo debes hacer _click_ en el botón **Habilitado/Deshabilitado** que se encuentra al costado de cada función y hacer _click_ en el botón **Guardar**.
+To enable or disable the sending of these emails, we just have to click on the **Enabled/Disabled** button next to each function and click on the **Save** button.
 
-#### Personalizar correos
+#### Custom emails
 
-Los estilos de los correos de la plataforma que envía también pueden ser personalizados. Para ello, debes tener el código HTML que quieres incluir en ellos.
+The styles of the platform emails that we send can also be customized. To do this, we must have the HTML code that we want to include in them.
 
-Al hacer _click_ para habilitar cada uno de los correos, mostrará un editor por defecto en el cual puedes pegar el código.
+When you click to enable each of the emails, it will show a default editor in which we can paste our code.
 
-::: danger Peligro
-Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
+::: danger Danger
+It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the mail.
 
-Para ello, debes insertar en el código los atributos que se encuentran bajo el editor, y que puedes copiar y pegar fácilmente para ubicarlos en la parte que necesites.
+To do this, we must insert attributes in the code under the editor, and we can easily copy and paste to locate them in the part we need.
 :::
 
-Cada vez que se haga un cambio en el código, se debe hacer _click_ en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
+Each time a code change is made, click on the **Save** button at the top of the screen.
 
-### Integraciones
+### Integrations
 
-Para simplificar el ingreso a la plataforma, es posible configurar su entrada a través de las APIs de ciertos servicios que permiten entradas universales.
+To simplify logging into the platform, it is possible to configure your login through the APIs of certain services that allow universal logins.
 
-Los servicios compatibles con el ingreso a Modyo son:
+The services compatible with logging into Modyo are:
 
 - Facebook
 - Google
@@ -217,82 +202,82 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/platform/core/integration.html)
+It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/platform/core/integration.html)
 
-### Registros
+### Signups
 
-El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debes tener en cuenta las credenciales y la habilitación de redirección en el inicio de sesión.
+Client registration within the platform must also be configured from here. To do this, we must take into account credentials and enable redirection during login.
 
-Lo primero que puedes configurar es si quieres habilitar o deshabilitar las credenciales de la plataforma.
+The first thing we can configure is if we want to enable or disable platform credentials.
 
-::: warning Atención
-Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/platform/core/integration.html)
+::: warning Warning
+If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/platform/core/integration.html)
 :::
 
-También puedes habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.
+We can also enable or disable a redirect for login. Remember that if login redirection is enabled, the login method will be replaced by the URL that you must enter later.
 
-Las búsquedas en la página de perfil también se pueden habilitar o deshabilitar. Si está habilitada, una caja de búsqueda aparecerá en la sección de perfil, esta búsqueda encuentra resultados en todos los sitios a los que puede acceder el usuario.
+Searches on the profile page can also be enabled or disabled. If enabled, a search box will appear in the profile section, this search finds results in all  sites that the user can access.
 
-#### Activación de la cuenta
+#### Account Activation
 
-En esta sección puedes configurar la forma de control en el registro de clientes. Las alternativas son las que siguen:
+In this section you can configure customer registration activation. The alternatives are as follows:
 
-- Directa (sin moderación ni confirmación por email)
-- Email de activación
-- Moderada (un administrador decide si aprueba el registro)
-- Deshabilitada (Solo el administrador envía el registro)
+- Direct (requires no moderation or email confirmation)
+- Email activation
+- Moderate (Manual activation. You decide who's ok.)
+- Disabled
 
-::: danger Peligro
-Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren con correos personales que no les pertenecen en la plataforma. Recuerda el registro con verificación por correo electrónico para proteger las cuentas contra este riesgo potencial.
+::: danger Danger
+Remember that direct user registration could allow malicious robots to register with personal emails. We recommend that you register through email verification to protect accounts against this potential risk.
 :::
 
-#### Avatar
+#### Default Avatar Image
 
-Si quieres que los usuarios tengan un Avatar, puedes subir uno que se muestre por defecto. En esta opción, puedes subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
+If we want our users to have an Avatar, we can upload a default image here. Registered users can change this avatar later.
 
-#### Formulario de registro
+#### Signup Form
 
-Desde acá, también puedes configurar el formulario de registro que ingresan cada uno de los usuarios. Aquí puedes configurar los distintos campos que son imprescindibles y que quieres que aparezcan en el formulario, como son:
+From here, we can also configure the registration form that each of our users enter. Here we can configure the different fields that are essential and that we want to appear on our form, such as:
 
-- Habilitar segundo apellido
-- Segundo apellido es requerido
-- Habilitar confirmación de correo electrónico
-- Habilitar avatar
-- Habilitar fecha de nacimiento
-- Habilitar género
+- Enable additional last name
+- Additional last name is required
+- Enable email confirmation
+- Signup avatar enabled
+- Enable birthday
+- Enable gender
 
-Para habilitar o deshabilitar alguno, solo debes hacer _click_ en el checkbox que se encuentra al costado de cada uno y hacer _click_ en el botón **Guardar**.
+To enable or disable any, just click on the checkbox next to each one and click on the **Save** button.
 
 ### Custom Fields
 
-Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
+From here you can create custom fields that help identify the user's profile. Therefore, it is essential that these are correctly identified for their best use.
 
-Los tipos de **Custom Fields** que puedes agregar son:
+The types of **Custom Fields** that you can add are:
 
 - Checkbox
-- Fecha
-- Dropdown (Lista desplegable)
-- Párrafo
-- Número
-- Elección
-- Texto simple
+- Date
+- Dropdown (drop-down list)
+- Paragraph
+- Number
+- Choice
+- Single Text Line
 
-Puedes arrastrar los **Custom Fields** para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios.
+You can drag the **Custom Fields** to order them. Note that this is the order in which the fields will appear in the editing views and in the users profile.
 
-Todos los **Custom Fields** tienen ciertas propiedades estándar:
+All **Custom Fields** have certain standard properties:
 
-- **Respuesta única**: Implica que el valor debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
-- **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
-- **Visible para usuarios**: Implica que será visible en la vista profile.
-- **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar su valor.
-- **Buscable por administradores**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al ser buscados desde el indice de usuarios del administrador de Modyo, por el valor de ese campo.
+- **Must be a unique response**: It implies that the value must be unique for each user, preventing another equal value from being saved.
+- **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In the event that the field is also visible and editable by users, this fields will appear on the registration form and will be required to create new users.
+- **Visible to front end users**: It implies that it will be visible in the profile view.
+- **Editable by front end users**: It implies that if it is visible, in addition, the user can modify its value.
+- **Searchable by admins**: It implies that this value will be indexed and users can be found when searched in the users index for the value of that field.
 
-Además de lo anterior, los **Custom Fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom Field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
+In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then they can be used by administrators and depending on their configuration, they will be available to users. If a **Custom Field** is disabled, then it will not appear on any form, but its values will remain saved.
 
-::: danger Peligro
-Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar un **Custom Field**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Custom Field**.
+::: danger Danger
+When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**.
 :::
 
 ::: tip Tip
-Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/platform/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
+Apart from being able to save specific data in user profiles, [Targets]filters(/platform/customers/targets.html) can be created using custom field data, allowing users to be segmented by customizable values.
 :::

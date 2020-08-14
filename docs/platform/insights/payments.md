@@ -4,20 +4,20 @@ search: true
 
 # Payments
 
-Modyo también muestra una estadística de transacciones dentro del sitio, que han realizado los usuarios finales durante el último tiempo.
+Modyo also shows a statistics of transactions within the site, which customers have made during the last time.
 
-Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de Pago.
+These numbers can be seen according to Date, Order Status and Payment Method.
 
-### Actividad de usuarios
+### User activity
 
-En esta sección se puede ver la cantidad de órdenes ingresadas, los items vendidos y los ingresos recibidos durante ese tiempo, junto con una comparación al periodo anterior.
+In this section you can see the number of orders entered, the items sold and the income received during that time, along with a comparison to the previous period.
 
-También se grafica dinámicamente los estados de las órdenes, con tal de hacer una comparativa a lo largo del tiempo.
+The states of the orders are also dynamically plotted, in order to make a comparison over time.
 
-### Órdenes por Medio de Pago
+### Orders by Payment
 
-Este gráfico nos permite comparar el uso de los distintos tipos de medios de pago que hay instalados dentro del e-commerce, a través de la cantidad de transacciones que se han hecho mediante ellos.
+This graphic allows us to compare the use of the different types of payment methods that we have installed within our e-commerce, through the amount of transactions that have been made through them.
 
-### Órdenes por Estado Actual
+### Orders by Current Status
 
-Por último, puedes ver la efectividad de los movimientos de un e-commerce, con el estado de las órdenes del último tiempo, mostrando la cantidad de movimientos en estado de pago pendiente, pagados, rechazados, cancelados, en espera de confirmación, fallidos y completados.
+Finally, we can see the effectiveness of the movements of our e-commerce, with the status of the orders of the last time, showing the amount of movements in pending payment status, paid, rejected, canceled, pending confirmation, failures and completed

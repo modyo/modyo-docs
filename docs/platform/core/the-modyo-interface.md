@@ -1,20 +1,21 @@
 ---
 search: true
+translated: true
 ---
 
-# La interfaz de Modyo
+# The Modyo interface
 
-En los siguientes pasos te mostraremos lo que puedes ver y hacer dentro de la plataforma.
+In the following sections we will show you what you can see and do within the platform.
 
 ![The Modyo interface](/assets/img/platform/modyo-screenshot.png)
 
-1. Menú principal
-2. Sesión
-3. Título principal de la sección
-4. Zona de acciones primarias
-5. Logo de la cuenta
+1. Main menu
+2. User session
+3. Main section title
+4. Primary action zone
+5. Account logo
 
-Cuando ingreses a Modyo, podrás ver los siguientes elementos en el menú principal:
+When you enter Modyo, you will see the following items in the main menu:
 
-- **Home:** La última actividad y movimiento dentro de la plataforma
-- **Mis tareas:** Revisa tus tareas asignadas por los otros miembros del equipo. Aprueba y comenta contenidos creados por el equipo.
+- **Home:** The most recent activity and changes within the platform
+- **My tasks:** Review tasks assigned to you by other team members. Approve and comment on content created by your teams.

@@ -1,98 +1,86 @@
 ---
 search: true
+translated: true
 ---
 
-# Entradas
+# Entries
 
-## Sobre la interfaz
+## About the interface
 
-A primera vista, puedes ver una lista que contendrá todos los contenidos que están dentro de la plataforma, generados por todos los usuarios.
+The entry list displays every type of non-archived entry within in that space.
 
-La lista está ordenada por fecha de actualización del contenido. En este caso, hace referencia a la fecha de creación o de la última vez que fue guardada la entrada respectiva.
+By default, this list displays entries by their "Updated on" date, meaning either by the date the entry was created, or last updated.
 
-Las columnas por las cuales se puede ordenar la lista de entradas son:
+The columns in the list display the following details:
 
-- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
-- **Nombre**: Nombre del contenido.
-- **Tipo**: Tipo del Contenido (Ver [Tipos](/platform/content/types.html)).
-- **Actualizado**: Fecha de la última actualización guardada del contenido.
-- **Autor**: Nombre del autor del contenido.
+- **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
+- **Name**: Title of the entry.
+- **Type**: Entry Type (See [Types](/platform/content/types.html)).
+- **Updated on**: Date of the last saved update.
+- **Author**: Original creator of the entry.
 
-En el administrador también puedes filtrar la vista según varios filtros predeterminados que puedes ir ajustando según tu necesidad, independiente de cómo ordenes la lista de tus contenidos.
+You can also filter the list by six different attributes:
 
-En este caso, los filtros son seis:
+- **Types**: Filter the list by any single type. (See [Types](/platform/content/types.html)).
+- **Status**: Filter the list by the following statuses: **Published, Not Published, Scheduled, Archived, and All**. Filtering by **All** does not show Archived entries. Filtering by **Not Published** displays entries in either the **Draft** or **Scheduled** status.
+- **Category**: Filter the list by a single category. Displays "All" by default.
+- **Locale**: Filter the list by a particular language. Entries without a translation in the filtered language display **Not translated** in the **Status** column.
+- **Translation**: This filter is associated with the **Locale** filter, and further filters the list by either **Translated** or **Not Translated**.
+- **Tags**: Filter by a selectable, searchable list of the current tags available in the account.
+- **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
-- **Tipo**: Tipo del Contenido que se ha creado (Ver [Tipos](/platform/content/types.html))
-- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
-- **Categoría**: Categoría a la que se encuentra asignadas las entradas.
-- **Idioma**: Idioma en que se encuentra escrito el contenido.
-- **Traducción**: Este filtro está asociado al idioma seleccionado y filtra por el estado de traducción de las entradas para dicho idioma. Ej: Esto quiere decir que si una entrada no tiene una versión en el idioma seleccionado, está caerá en "No traducida".
-- **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
-- **Barra de búsqueda**: Filtra por el contenido del titulo de las entradas.
+## Create an Entry
 
-## Crear una Entrada
+To create an entry, click the "+ New" button in the upper right of the screen. In the New Entry modal that appears, give your entry a name. You can fill in the "Slug" field, or let it autocomplete based on the entry name. Lastly, select the content type of the entry. Types can be created in the [Types section](/platform/content/types.html).
 
-Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla.
-
-En primera instancia, **Modyo** pide el nombre, el slug y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/platform/content/types.html).
-
-:::warning Atención
-Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de la entrada como slug.
-:::
-
-Al hacer _click_ en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde puedes rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
+When you click Create, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
 
 ::: tip Tip
-Para traducir una entrada ya escrita a un idioma distinto, deberás tener en cuenta que tu espacio debe estar configurado para los idiomas en los que quieres escribir. (Revisa [Configurar un Espacio](/platform/content/spaces.html#configurar-un-espacio))
-
-Después, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
-
-Así, llegarás a una versión de la entrada en blanco, donde puedes pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
-
+To translate an already written entry into a different language, click the language dropdown along the top and select the new language you want to translate. This opens a blank version of the entry, where you can press the **Copy from locale** button in the upper-right section of the editor to bring in the content of another locale of the entry and work to translate it directly.
 :::
 
-### Publicar una Entrada
+### Publish an Entry
 
-Para publicar una entrada, Modyo te asegura un proceso de chequeo paulatino con tal de certificar que el contenido que vayas a ofrecer se encuentre correcto.
+To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
 
-Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón **Guardar**, que grabará todo tu contenido.
+After finishing your writing, editing, and then clicking the **Save** button, one of two things happens: it will change into a **Publish** button if you have the correct role to publish. If you don't, then you are limited to only saving your changes.
 
-Si haces _click_ en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, puedes publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
+If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
-Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde puedes asignar a revisores en específico quienes pueden publicar.
-
-Para saber más, puedes ver [Revisión en Equipo.](/platform/core/key-concepts.html)
+To learn more, please go to [Team Review.](/platform/core/key-concepts.html)
 
 
-### Despublicar una entrada
+### Unpublish an entry
 
-Para despublicar una entrada, debes acceder al ella y hacer _click_ en el botón **Despublicar** que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá al estado de Borrador y no se encontrará en estado Publicado.
+To unpublish an entry, open it and click on the Unpublish button at the top of the screen. This changes the status of the entry to Draft, is no longer published.
 
-Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
+If you want to republish the entry, it must go through the Team Review process again (if enabled).
 
 ::: tip Tip
 La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
+The platform does not allow you to delete Entries. You can only publish and unpublish. All copies and their changes will be seen inside the Entries manager.
 :::
 
-#### Vista Previa
+#### Preview
 
-Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios.
+As a headless platform, Modyo allows you to preview an entry in multiple sites.
 
-Si ya cuentas con [vistas de contenido en tus sitios](/platform/channels/templates.html#vistas-para-contenido), puedes ver el botón **Vista Previa en Sitio**, en el que seleccionas dónde quieres ver cómo se está desarrollando tu recurso.
+If you already have [content views on your sites](/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
 
-::: danger Atención
-Si el Espacio no se encuentra asociado a un sitio, sólo puedes ver el código JSON de la entrada que estás desarrollando.
+::: danger Warning
+If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
 :::
 
-:::warning Atención
+:::warning Warning
 Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
+You can only preview the contents on a site if the language corresponds to the language of the site. If the entry is in another language, you will receive a 404 error when you reach the preview.
 :::
 
-:::warning Atención
-Puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-fame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+:::warning Warning
+You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-fame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
 :::
 
-#### Editar una entrada
+#### Edit an entry
 
 Si deseas editar una entrada, solo debes hacer _click_ en el nombre dentro del administrador.
 
@@ -100,48 +88,54 @@ Después de esto, entras a la vista de edición en la que puedes cambiar el cont
 
 En el caso de que la entrada se encuentre publicada, los cambios se harán automáticamente. Si esta se encuentra en proceso de Revisión en Equipo, los revisores deberán actualizar su vista para poder notar los cambios.
 
-### Categorías
+If you want to edit an entry, just click on the entry's name inside the entry manager.
 
-Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
+This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
 
-Para ver las Categorías, es necesario que hagas _click_ en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, puedes ver todas las categorías que se encuentran ya hechas.
+In case the post is published, the changes will be made automatically. If the entry is in the Team Review process, reviewers must update their view in order to see the changes.
 
-#### Crear una Categoría
+### Categories
 
-Si quieres crear una categoría, solo debes hacer _click_ en el botón verde que se encuentra en la parte superior de la pantalla. Después, puedes ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
+Categories are one of the most useful ways to order your Entries. Applying a category to an entry establishes a relative path in its URL that allows us to access the entry without going through other pages.
+
+To see the Categories, click on the Categories section in the main menu on the left. There, we can see all the categories that are already made.
+
+#### Create a Category
+
+To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
 
 ::: tip Tip
-Cuando se ingrese el nombre de la categoría, la ruta se establece predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
+When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
 
-Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
+If we change the path, remember to change all links in any channel using it.
 :::
 
-::: warning Atención
-Si se quiere eliminar una categoría, simplemente basta con hacer _click_ en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
+::: warning Warning
+If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
 :::
 
-::: danger Peligro
-Si se borra la Categoría Padre, se borran también todas las subcategorías asignadas a esta. Y las entradas asociadas a dichas categorías quedan sin categoría asignada.
+::: danger Danger
+If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments.
 :::
 
 ### Slug
 
-Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más fácil el trabajo en la URL.
+If you want to make a link easier to read with any microservice or endpoint that you want to connect, you can provide a custom slug.
 
-Cuando crees una entrada, la plataforma te asigna un slug de manera aleatoria. Sin embargo, para cambiarla solo tienes que cambiar el campo en la ventana de propiedades.
+When you create an entry, the platform will randomly assign you a slug. However, to change it you just have to change the field in the properties window.
 
-Este valor debe ser único para las entradas del mismo tipo. En caso de que se guarden dos entradas con el mismo slug, este será modificado al momento de publicar la entrada.
+This value must be unique for entries of the same type. If two entries with the same slug are saved, this will be modified at the time of posting the entry.
 
-## Contenido Privado
+## Private Content
 
-Si deseas que el contenido sea exclusivo para usuarios que tengan una sesión en la plataforma se debe habilitar está opción.
+If you want the content to be private or exclusive for users who have a current authenticated session within the platform, you must enable this option.
 
-Dependiendo de como estés consumiendo el contenido, necesitas realizar unos pasos extras para acceder a este. Si estás usando la API pública, dirígete a la sección sobre [contenido privado en la API](/platform/content/public-api-reference.html#contenido-privado). Si estás consumiendo el contenido a través de Liquid, basta con que los usuarios inicien sesión en el sitio para poder visualizar el contenido privado.
+Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](/platform/content/public-api-reference.html#private-content). If you are consuming the content through [Liquid](/platform/channels/liquid-markup.html), it is enough for users to log in to the site in order to view private content.
 
 ### Targets
 
-El contenido targetizado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
+Targeted content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
-Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirige la entrada.
+With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the **Private** option in the entry's properties, then check the **Enable targeting** option, and select from the list of targets. You can select more than one target audience.
 
-Para crear un target en específico, revisa la [sección Targets](/platform/customers/targets.html).
+To create a specific target, review the [Targets section](/platform/customers/targets.html).

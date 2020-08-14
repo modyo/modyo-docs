@@ -1,42 +1,43 @@
 ---
 search: true
+translated: true
 ---
 
-# Avance en Efectivo
+# Cash Advance
 
-El widget de Avance en Efectivo permite a cualquier cliente usar la plataforma hacer una simulación de crédito para solicitar un avance de dinero a la institución financiera.
+The Cash Advance widget allows any customer to create a credit simulation to request a cash advance from a financial institution.
 
-A través del widget, el cliente puede realizar distintas funciones de acuerdo a las características que necesite para este producto.
+Through this widget, customers can select different options according to their requirements of this product.
 
-### Instalación:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-cash-advance
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/avance-en-efectivo)
+[Open in new tab](https://widgets.modyo.com/retail/cash-advance)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/avance-en-efectivo" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
 
-En primera vista, el cliente podrá seleccionar las características del Avance en Efectivo y su pago para realizar la simulación.
+The customer can select the desired options for their cash advance and payment amount to run the simulation.
 
-| Funcionalidad    | Descripción                                                                                 |
-| :--------------- | :------------------------------------------------------------------------------------------ |
-| Origen           | Selecciona la tarjeta de la cual se extraerá el monto en efectiva.                          |
-| Destino          | Muestra la cuenta de destino del efectivo que se solicita.                                  |
-| Monto del Avance | Esa sección permite añadir el monto que se solicita en efectivo                             |
-| Cuotas           | El cliente puede seleccionar la cantidad de cuotas en las que se pagará el monto solicitado |
+| Functionality | Description                                                                              |
+| :------------ | :--------------------------------------------------------------------------------------- |
+| From          | Selects the card from which the cash amount will be drawn.                                |
+| To            | Displays the destination account of the requested cash.                                  |
+| Amount        | This section allows you to add the requested amount in cash.                             |
+| Payments      | The customer can select the number of installments in which the requested amount will be paid |
 
-### Simulación
+### Simulation
 
-Tras las características seleccionadas, el widget mostrará la simulación del avance y los detalles de los pagos que se realizarán.
+The client can select the number of payments in which the requested amount will be paid.
 
-| Funcionalidad           | Descripción                                                               |
-| :---------------------- | :------------------------------------------------------------------------ |
-| Costo total del avance  | Muestra el monto de deuda que se aplicará en la tarjeta.                  |
-| Valor de la cuota       | Muestra el valor de cada cuota que se cobrará según el tiempo solicitado. |
-| Tasa de interés mensual | Se muestra la tasa de interés mensual del avance solicitado.              |
-| Tasa de interés anual   | Se muestra la tasa de interés anual del avance solicitado.                |
+| Functionality                | Description                                                               |
+| :--------------------------- | :------------------------------------------------------------------------ |
+| Total advance cost           | Shows the total amount that will be charged to the card.                  |
+| Monthly payment              | Shows the amount of each monthly payment according to the established time period. |
+| Monthly interest rate        | Shows the monthly interest rate of the cash advance.                      |
+| Annual Percentage Rate (APR) | Shows the annual interest rate of the cash advance.                       |
 
 <script>
 
@@ -52,7 +53,7 @@ Tras las características seleccionadas, el widget mostrará la simulación del 
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

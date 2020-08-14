@@ -1,5 +1,0 @@
----
-search: false
----
-
-# Colors

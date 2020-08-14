@@ -2,28 +2,28 @@
 search: true
 ---
 
-# Resumen Detallado
+# Detailed Summary
 
-Modyo ofrece un widget que entrega información en detalle de las inversiones existentes en cada cuenta de inversión, incluyendo las operaciones realizadas por el usuario y las que aún están en curso.
+Modyo offers a widget that delivers detailed information on existing investments in each investment account, including transactions made by the user and those still in progress.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-investments-detailed-summary
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/resumen-detallado)
+[Open in new tab](https://widgets.modyo.com/investments/detailed-summary)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-detallado" width="100%"  frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/detailed-summary" width="100%" frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                   | Descripción                                                                                                                                        |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Detalle de Inversiones          | Entrega un conjunto de resúmenes individuales para todas las inversiones que están incluidas en el patrimonio.                                     |
-| Resumen por Cuenta de Inversión | Muestra los totales agrupados de las distintas inversiones que existen dentro de una cuenta de inversión específica.                               |
-| Operaciones en Tránsito         | Muestra las operaciones instruidas por el cliente y que aún están en estado pendiente.                                                             |
-| Últimos Movimientos             | Muestra los últimos movimientos realizados en la cuenta de inversión revisada.                                                                     |
-| Resumen por Producto            | Muestra los totales de las inversiones incluidas para cada tipo de inversión existente en el patrimonio.                                           |
-| Resumen por Moneda              | Muestra los totales agrupados de las distintas inversiones que existen dentro del patrimonio, considerando cada moneda disponible (CLP, USD, EUR). |
+| Feature                    | Description                                                                                                                              |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Investment Details         | Provides a set of individual summaries for all investments in the portfolio.                                                        |
+| Investment Account Summary | Displays the grouped totals of the multiple investments that exist within a specific investment account.                                  |
+| Pending Transactions       | Shows the operations made by the client still in a pending status.                                                                  |
+| Latest Transactions        | Shows the latest completed transactions made in the investment account.                                                                  |
+| Product Summary            | Shows the investment totals for each existing investment type in the portfolio.                                                          |
+| Currency Summary           | Shows the grouped totals of different investments that exist within the portfolio separated by each available currency (USD, EUR, etc.). |
 
 <script>
 
@@ -39,7 +39,7 @@ modyo-cli get modyo-widgets-investments-detailed-summary
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

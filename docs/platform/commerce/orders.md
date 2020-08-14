@@ -2,12 +2,12 @@
 search: true
 ---
 
-# Órdenes
+# Orders
 
-Aquí podrás ver el listado completo de todas las órdenes hechas a través del sitio. Así, podrás organizar los pedidos y ver si está trabajando correctamente.
+Here you will see the complete list of all orders made through the site. Thus, you can organize the orders and see if it is working correctly.
 
-Los filtros que se pueden aplicar son:
+The filters that can be applied are:
 
-- Fecha
-- Estado del pedido
-- Medio de pago
+- Date
+- Order status
+- Payment method

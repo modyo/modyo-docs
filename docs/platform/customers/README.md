@@ -4,18 +4,18 @@ search: true
 
 # Modyo Customers
 
-**Modyo Customers** es una aplicación que permite habilitar a los sitios en Modyo de autenticación de usuarios, ya sea por medio de su sistema interno de registro de cuentas como de sus integraciones empresariales a sistemas de Single Sign On (SSO).
+Modyo Customers is an application that allows account administrators with Modyo Channels to authenticate users, either through their internal account registration system or through their business integrations to Single Sign On (SSO) systems.
 
 <img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
 
-Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Targets la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
+Once a user is identified, the platform manages the business events that the user performs during their session and through the functionality of Targets, the Platform can customize the content and experience during their navigation of your digital channels.
 
-**Modyo Customers** representa un importante elemento a la hora de desarrollar productos digitales sobre la plataforma.
+Modyo Customers represents an important element when developing digital products on the platform.
 
-**Modyo Customers** además posee un sistema integrado de mensajería al usuario autenticado.
+Modyo Customers also has an integrated user messaging system.
 
-### Funcionalidades principales
-- [Gestión de usuarios](/platform/customers/users.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
-- [Targets](/platform/customers/targets.html) para definir segmentos dinámicos de usuarios.
-- [Formularios dinámicos](/platform/customers/forms.html) para capturar información asociada a los usuarios.
-- [Mensajería](/platform/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.
+### Main functionalities
+- [User management](/platform/customers/users.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
+- [Targets](/platform/customers/targets.html) to define dynamic user segments.
+- [Dynamic forms](/platform/customers/forms.html) to capture information associated with users.
+- [Messaging](/platform/customers/messaging.html) to send Web notifications or email campaigns to users.

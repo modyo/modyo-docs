@@ -1,32 +1,33 @@
 ---
 search: true
+translated: true
 ---
 
-# Créditos Hipotecarios
+# Mortgage Loans
 
-Este widget permite hacer una simulación de un crédito hipotecario y comenzar la solicitud del mismo con las variables que cada cliente necesite.
+This widget allows customers to simulate a mortgage loan and start the application process according to the applicant's requirements.
 
-### Instalación:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-mortgage-loan
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/creditos-hipotecarios)
+[Open in new tab](https://widgets.modyo.com/retail/mortgage-loan)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/mortgage-loan" width="100%"  frameBorder="0" style="min-height:860px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad         | Descripción                                                                                                                                                                                                               |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Monto del Crédito     | Permite ingresar el monto en UF del crédito que el cliente quiere simular.                                                                                                                                                |
-| Pie                   | Permite ingresar el monto en UF del pie que incluirá en la solicitud.                                                                                                                                                     |
-| Tipo de vivienda      | Permite escoger el tipo de inmueble que desea adquirir con el crédito.                                                                                                                                                    |
-| Plazo en Años         | Permite elegir la cantidad de años durante los cuales se realizará el pago del crédito.                                                                                                                                   |
-| Meses de gracia       | Permite seleccionar la cantidad de meses de gracia que el cliente desea agregar en su simulación.                                                                                                                         |
-| Seguros               | Entrega la posibilidad de elegir qué seguros se incluirán en la simulación del crédito.                                                                                                                                   |
-| Resumen de simulación | Presenta información general sobre la simulación de créditro realizada. Incluye costo total del crédito en pesos y UF, cantidad de años, valor de dividendo, tasas de interés respectivas y porcentaje de financiamiento. |
-| Detalle de simulación | Muestra la información detallada de la simulación de crédito. Incluye monto líquido, plazo, pie, valor de dividendo, tipo de propiedad, impuestos, seguros y gastos, entre otros.                                         |
-| Solicitud             | Permite confirmar la simulación y gestionar la solicitud del crédito hipotecario con la institución.                                                                                                                      |
+| Feature            | Description                                                                                                                                                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Loan Amount        | Clients can enter the loan amount they want to simulate and apply for.                                                                                                                                                        |
+| Down payment       | Clients can enter the desired down payment amount to be included in the application.                                                                                                                                                       |
+| Property type      | Allows the user to choose the property type they wish to purchase with the loan.                                                                                                                                                     |
+| Loan Term          | Allows the user to choose the length of the loan term during which payments will be made.                                                                                                                                                      |
+| Grace Period       | The customer can add a grace period in months of non-payment to the simulation.                                                                                                                  |
+| Insurance          | The customer can add different types of insurance to the mortgage loan simulation.                                                                                                                                                    |
+| Simulation Summary | Presents general information obtained from the mortgage loan simulation. It includes total cost of the loan, the loan term in years, the monthly payment amount, the corresponding interest rates, and financing percentage. |
+| Simulation Details | Displays the details of the mortgage loan simulation. Includes the loan amount, term, down payment, monthly payment amount, property type, taxes, insurances, expenses and more.                                 |
+| Apply for Loan     | Allows customers to confirm the simulation and begin their application for the mortgage loan with your institution.                                                                                                     |
 
 <script>
 
@@ -42,7 +43,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
