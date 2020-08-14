@@ -198,7 +198,7 @@ Si quieres mostrar la vista con los valores de la entrada en que estás trabajan
 
 1. La vista debe estar creada y publicada. 
 1. La URL a la que se está accediendo es del tipo `site_url/custom_view_name/entry_slug`.
-1. El `custom_view_name` es el nombre de la vista de contenido creaste.
+1. El `custom_view_name` es el nombre de la vista de contenido que creaste.
 1. La URL coincide con el nombre de la vista que acabas de crear. 
 1. Ya existe una entrada publicada en el idioma del sitio. 
 1. El slug de la entrada es `entry_slug`.
