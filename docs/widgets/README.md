@@ -2,13 +2,57 @@
 search: true
 ---
 
-# Catálogo de Widgets
+# Introducción
 
 Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás una completa referencia de todas las experiencias financieras que Modyo entrega como parte de este producto, desde la instalación y desarrollo en tu ambiente local, hasta la descripción de interfaces, parámetros disponibles y referencia de las principales funcionalidades de cada widget.
 
 <img src="/assets/img/widgets/widgets.png" style="margin-top: 40px;" />
 
-### ¿Qué es un widget?
+## Inicio rápido
+
+::: warning Recomendación
+ Si nunca has usado la plataforma Modyo y/o los widgets, te recomiendo empezar por [aquí](/platform/). Ademas esta guía asume conocimientos sobre el uso de [`modyo-cli`](/platform/channels/widgets.md#modyo-cli) y de la Terminal.
+:::
+
+::: danger TOKEN de acceso
+Para poder usar los widgets de este catálogo, necesitas tener un token de acceso que te permitirá descargarlos para su uso. Éste lo puedes conseguir con tu organización o directamente con Modyo.
+:::
+
+### Iniciar un widget
+
+La manera mas rápida de iniciar un widget, es utilizando una de las plantillas de este Catalogo como acelerador y modificarla para nuestras necesidades.
+Para utilizar una de nuestras plantillas usaremos el comando `GET` del `modyo-cli`:
+
+```bash
+modyo-cli get nombre-del-widget nombreCarpeta
+```
+
+Por ejemplo si queremos usar la plantilla de `Crédito de Consumo` de la banca de Personas el comando seria el siguiente:
+
+```shell
+modyo-cli get modyo-widgets-retail-consumer-loan ~/Desktop/MyLoanWidget
+```
+
+Y para iniciar el servidor en modo de desarrollo:
+
+```shell
+cd ~/Desktop/MyLoanWidget && yarn serve
+```
+
+### Publicar un widget
+
+Para cargar nuestro widget a la plataforma y publicarlo usaremos el comando `PUSH` del `modyo-cli`. Esto se puede hacer de manera local o usando integración continua (recomendado).
+
+Antes de poder cargar y publicar un nuestro widget de manera local, debemos crear un archivo de variables de entorno `.env` en la raíz del proyecto con las siguientes variables:
+
+```shell
+MODYO_TOKEN=[siteToken]
+MODYO_ACCOUNT_URL=[accountUrl]
+MODYO_SITE_HOST=[siteHost]
+MODYO_WIDGET_NAME=[widgetName]
+```
+
+## ¿Qué es un widget?
 
 Un **widget** es un componente aislado que empaqueta su propio marcado (`html`), estilo (`css`) y javascript de manera que pueda ser desplegado como parte de cualquier página web sin tener errores de runtime o conflictos con los estilos o el javascript de la página que lo aloja.
 
@@ -18,7 +62,7 @@ Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crea
 
 Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular** o **React**. En el caso de los **widgets financieros**, nosotros decidimos usar **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero tú y tu equipo pueden ocupar Angular o React.
 
-### ¿Por qué usar un widget de este catálogo?
+## ¿Por qué usar un widget de este catálogo?
 
 El catálogo de widgets financieros están diseñados para acelerar el desarrollo de tus experiencias digitales porque te ofrecen componentes interactivos para que los personalices y los ensambles en flujos que se adapten a tu negocio.
 
@@ -28,7 +72,7 @@ Los widgets financieros entregan de la caja:
 - **Accesibilidad básica** (como contraste de colores adecuados, uso de tamaños tipográficos legibles, estructura semántica, etc)
 - **Internacionalización y localización de textos y monedas**. Por defecto cada widget viene en inglés y español, pero tiene toda la infraestructura necesaria para personalizar los idiomas que trae o agregar más idiomas para que se adapte a la necesidad de tu negocio. Si son desplegados en Modyo, los widgets detectan el idioma configurado para el sitio
 - **Validaciones para formularios, fechas**
-- **Estilos planos para una fácil personalización** con nuestro sistema de diseño descargabla en PDF [desde aquí](/assets/pdf/Widget_Modyo.pdf) que usa **Sass** y librerías populares como [bootstrap](https://getbootstrap.com/) o font awesome
+- **Estilos planos para una fácil personalización** con nuestro sistema de diseño descargable en PDF [desde aquí](/assets/pdf/Widget_Modyo.pdf) que usa **Sass** y librerías populares como [Bootstrap](https://getbootstrap.com/) y [Font Awesome](https://github.com/FortAwesome/vue-fontawesome#using-brand-icons)
 
 ## Comenzando
 
@@ -44,7 +88,7 @@ $ yarn global add @modyo/cli #via yarn
 Eso debería instalar la última versión estable de la herramienta a nivel global. Puedes consultar la versión del `CLI` que quedó instalada:
 
 ```
-$ modyo-cli --version
+modyo-cli --version
 ```
 
 Con el `modyo-cli` instalado ya puedes crear widgets y desplegarlos en un sitio Modyo.
@@ -60,8 +104,8 @@ Ahora ya podemos descargarnos un widget del catálogo usando el `cli` de Modyo:
 ```
 # - El primer argumento (nombre del widget) es obligatorio
 # - El segundo argumento,
-# 	si necesitamos descargar el widget a una carpeta con otro nombre,
-# 	es opcional
+#  si necesitamos descargar el widget a una carpeta con otro nombre,
+#  es opcional
 $ modyo-cli get <nombre-del-widget-del-catalogo> <nombre-de-la-carpeta>
 ```
 
