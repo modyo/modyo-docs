@@ -2,13 +2,13 @@
 search: false
 ---
 
-# Estructura
+# Structure
 
 Las ilustraciones están hechas para usarlas sobre fondo blanco. Si es necesario usar un color se recomienda usar los 3 tonos de background especificados en la guía de marca.
 Dependiendo del nivel de detalle, tamaño y complejidad de lo que transmite cada ilustración, las podemos dividir en 3 tipos: Héroe, héroe puntual e iconos.  
 
 
-## Héroe
+## Hero
 Son ilustraciones que cuentan historias y conceptos complejos, los cuales generalmente son representados con metáforas o situaciones fantásticas e irreales. En ocasiones estas pueden ser un poco más literales o transformarse en ilustraciones compuestas donde existe una comparación o dos etapas de una misma escena, pero siempre estarán ligadas a ideas no tan sencillas.
 
 <table>
@@ -30,7 +30,7 @@ Representación de un concepto utilizando comparación.
 </tr>
 </table>
 
-## Héroe Puntual
+## Puntual Hero
 Son ilustraciones más simples visualmente que el Héroe y ligeramente más literales donde puede estar presente o no la metáfora. Los conceptos o ideas a representar son simples y directos.
 
 <table>

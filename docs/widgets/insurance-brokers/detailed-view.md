@@ -2,25 +2,25 @@
 search: true
 ---
 
-# Vista detallada
+# Detailed View
 
-No pierdas de vista los detalles claves de tu pólizas y hazle seguimiento a todo el proceso de emisión de principio a fin. Facilita el acceso a la información y personaliza cada detalle de acuerdo a la estrategia de tus productos.
+Keep track of the key details of your policy and follow the entire issuing process from start to finish. Easily access information and customize every detail according to your product strategy.
 
-#### Instalación
+#### Installation
 
 ```bash
 modyo-cli get modyo-widgets-brokers-detailed-view
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/seguros/broker/vista-detallada)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/detailed-view)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/vista-detallada" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/detailed-view" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad   | Descripción                                                                                                                                                                                                                                |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Resumen         | Facilita la consulta de las pólizas y presenta los datos relevantes a tus intermediarios independiente del estado de las pólizas. Usa esta sección para notificar sobre fechas importantes o cambios de estado en la póliza.               |
-| Condiciones     | Personaliza el módulo para presentar las coberturas y deducibles de la póliza en caso de siniestros. Facilita que los intermediarios identifiquen los datos mínimos de las coberturas o evoluciona este módulo para configurar activación. |
-| Tabla de primas | Configura según tu estrategia comercial las primas que se pagan en la póliza o facilita que tus intermediarios administren bajo tus reglas los incrementos de prima.                                                                       |
-| Histórico       | Genera una trazabilidad de los movimientos de las pólizas para que tanto los intermediarios como tu equipo de operación puedan visualizar o gestionar endosos, resignaciones o envíos de PDF de cada movimiento.                           |
-| Descarga        | Integra los clausulados de las pólizas en PDF y facilita el envío a través de correo electrónico. Complementa los documentos con información legal o de negocio según la necesidad.                                                        |
-| Envío de firma  | Agiliza el pago de las pólizas integrando esta opción de envío de firma para aprobación del pago. Ahorra tiempo y optimiza procesos para emitir de forma más eficiente.                                                                    |
+| Feature            | Description                                                                                                                                                                                                      |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Summary            | The summary makes it easy to review policies showing relevant data to your agents regardless of the status of the policies. Use this section to notify agents about important dates or changes in policy status. |
+| Conditions         | Customize this module to present the coverage and deductibles of the policy in case of claims. Make it easy for your agents to identify the minimum requirements or configure this module to set up activations. |
+| Premium table      | Configure the premiums paid in the policy according to your business strategy or make it easier for your agents to manage premium increases according to your own rules.                                         |
+| History            | This sections offers traceability of policy movements so that both agents and your operation team can view or manage endorsements, resignations or PDFs of each movement.                                        |
+| Download           | Group all the policy clauses in PDF format and download them or send them by email. You can add legal or business information as well according to your needs.                                                   |
+| Send for signature | Speed up the payment of policies by directly sending documents to be signed for payment approval. It saves time and optimizes processes for more efficient issuance.                                             |

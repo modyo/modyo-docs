@@ -1,57 +1,58 @@
 ---
 search: true
+translated: true
 ---
 
 ### Digital Factory
 
-Digital Factory te permite visualizar las estadísticas relacionadas con el flujo de creación y publicación de contenido y de tus canales digitales. Puedes usar los filtros de la parte superior derecha para visualizar distintos aspectos de la data.
+The Digital Factory allows you to monitor statistics related to the creation, editing, and publishing of content and other elements in your digital channels. You can use the filters in the upper right to visualize different aspects of the data.
 
-Los filtros disponibles son:
+The available filters are:
 
-- Rango de fecha
-- Sitio
-- Espacio
+- Date range
+- Site
+- Space
 
-::: warning Atención
-Cuando filtras por sitio, los elementos que usan datos de espacios, no aportarán su data en el conteo, y a la vez, si filtras por espacio, los elementos que usen data de sitios, no aportarán al conteo de datos.
+::: warning Warning
+When you filter by site, the elements that use space data will not display in the interface, and likewise, if you filter by space, elements from Modyo Channels that use data from sites will not display.
 :::
 
 ![Digital factory](/assets/img/platform/digital-factory.png)
 
-### Actividad por tipo
+### Activity by Type
 
-Verás cinco cajas que representarán la cantidad de elementos creados, modificados, enviados a revisión, aprobados y publicados. Los elementos que se agrupan en estas cajas son entradas, página, navegación, widgets y templates.
+You will see five boxes that will represent the number of items created, edited, sent to review, approved and published within a given date range. The elements that are grouped in these boxes are entries, pages, navigation, widgets and templates.
 
-**Creados**: Cuenta cada vez que se crea una entrada, página o widget.
+**Created**: Number of times an entry, page or widget is created.
 
-**Editados**: Cuenta cada vez que se usa la acción "guardar" en entradas, páginas, navegación, widgets y templates.
+**Edited**: Number of times the "save" action is used on entries, pages, navigation, widgets and templates.
 
-**Enviados a revisión**: Cuenta cada vez que en un sitio o espacio con la revisión en equipo activada, se envíe un elemento a revisión.
+**Sent to Review**: Number of times in a place or space with the team review activated, an item is sent for review.
 
-**Aprobados**: Cuenta cada vez que se cumplan las restricciones de la revisión en equipo y un elemento quede listo para ser publicado.
+**Approved**: Number of times the restrictions of the team review are met and an item is ready to be published.
 
-**Publicados**: Cuenta cada vez que un elemento es publicado, ya sea en un sitio o espacio sin revisión en equipo (publicación directa), o a través de la revisión en equipo, o también, a través de la acción "forzar publicación" de los administradores.
+**Published**: Number of times an item is published, either on a site or space without team review (direct publication), or through team review, or also, through the "force post" action of the administrators.
 
-Junto a cada contador principal, verás un indicador hacia arriba (verde) o hacia abajo (rojo) que representa si la razón entre el periodo actual y el anterior aumentó o disminuyó. Si el contador no está presente, indica que no hay datos en el periodo anterior.
+Next to each main counter, you will see an upward (green) or downward (red) indicator that represents whether the ratio between the current period and the previous one increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
-:::tip Tip
-Los rangos de tiempo que se comparan en cada una de las cajas, dependen del rango de fecha seleccionado en la parte superior derecha de la vista, de tal manera que, si tienes seleccionado los últimos siete días, estarás comparando, por ejemplo, la cantidad de elementos creados dentro de los últimos siete días, con la cantidad de elementos creados dentro de la semana antepasada.
+::: tip Tip
+The time ranges that are compared in each of the boxes, depend on the date range selected in the upper right part of the view, so that, if you have selected the last seven days, you will be comparing, for example, the amount of elements created within the last seven days, with the amount of elements created within the previous week.
 :::
 
-### Recursos Creados vs. Publicados
+### Created vs. Published Resources
 
-Un gráfico de línea que representa una comparativa a través del tiempo entre los recursos creados versus los publicados.
+A line chart that represents a comparison over time between created versus published resources.
 
-Con este gráfico podrás evidenciar cuanto del contenido que se crea es publicado, y visualizar, por ejemplo, si todo el contenido creado es publicado, o si el contenido creado se publica múltiples veces.
+With this graphic you can show how much created content gets published, and visualize, for example, if created content gets published multiple times.
 
-:::tip Tip
-El rango total de fechas de este gráfico depende del rango total de fechas seleccionado en el filtro de arriba a la derecha de la página.
+::: tip Tip
+The total date range on this chart depends on the total date range selected in the filter at the top right of the page.
 :::
 
-### Actividad por usuario
+### Activity by User
 
-Este mapa de calor te permite visualizar la actividad detallada de los administradores con más actividad de tu equipo, separando en columnas el conteo de elementos creados, modificados, enviados a revisión, aprobados y publicados.
+This heat map allows you to visualize the detailed activity of the most active administrators on your team, separating the count of elements created, modified, sent for review, approved and published into columns.
 
-### Actividad por contenido
+### Activity by Resource
 
-Esta gráfica te permite comparar la actividad de cada elemento de Modyo, tanto de tus sitios como de tus espacios. Podrás ver barras horizontales que corresponden a la cantidad de elementos de ese tipo, en cualquier estado.
+This graph allows you to compare the activity of each Modyo element, both of your sites and your spaces. You can see horizontal bars that correspond to the amount of elements of that type, in any state.

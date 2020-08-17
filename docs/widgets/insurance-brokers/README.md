@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Acerca de la banca de seguros
+# About insurance
 
 Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
 

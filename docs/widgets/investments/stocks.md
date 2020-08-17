@@ -2,26 +2,26 @@
 search: true
 ---
 
-# Acciones
+# Stocks
 
-En el widget de Acciones de Modyo el usuario podrá encontrar toda la información sobre las acciones disponibles, junto con Información de Mercado y un módulo para transar en línea de manera ágil y simple.
+In the Stock widget, clients can find all the information about available stocks, along with market information and a module for quick and simple online trading.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-investments-stocks
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/acciones)
+[Open in new tab](https://widgets.modyo.com/investments/stocks)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/acciones" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/stocks" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad          | Descripción                                                                                                                                                                                                                                                    |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Layout de Acciones     | Muestra el conjunto de acciones transables disponibles. Muestra un listado con las operaciones en tránsito asociadas a las acciones. Muestra la información de mercado para una Acción específica. Permite cancelar operaciones en tránsito, de ser necesario. |
-| Información de Mercado | Muestra la información disponible para la acción, como la evolución, las puntas de mercado, monto transado, último precio y posibles documentos específicos de la institución. Permite comprar o vender una acción seleccionada.                               |
-| Compra de Acciones     | Permite realizar la compra de la acción seleccionada, definiendo la cuenta de inversión, la cantidad de acciones, el monto máximo al que se desea comprar, y el tiempo de duración de la orden.                                                                |
-| Venta de Acciones      | Permite realizar la venta de la acción seleccionada, definiendo la cuenta de inversión, la cantidad de acciones que se desean vender y el precio mínimo de venta.                                                                                              |
+| Feature            | Description                                                                                                                                                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Stock Layout       | Shows the set of available tradable stocks. Displays a list of transactions in transit associated with the stocks. Displays market information for specific stocks. Allows clients to cancel transactions in transit, if necessary. |
+| Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price, and possible institution-specific documents. Allows the user to buy or sell a selected stock.                                  |
+| Buy Shares | Allows the user to buy the selected stock, choosing the investment account, the number of shares to buy, the maximum buying price, and the duration of the buying order.                                      |
+| Sell Shares | Allows the user to sell the selected stock, choosing the investment account, the number of shares to be sold, and the minimum sale price.                                                                                               |
 
 <script>
 
@@ -37,7 +37,7 @@ modyo-cli get modyo-widgets-investments-stocks
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

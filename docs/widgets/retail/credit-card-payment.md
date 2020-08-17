@@ -1,32 +1,31 @@
 ---
 search: true
+translated: true
 ---
 
-# Pagos de Tarjeta de Crédito
+# Credit Card Payments
 
-La plataforma ofrece un widget de pago de tarjeta de crédito, con tal de que el cliente pueda realizar la transacción directamente desde su portal de pagos.
+The platform offers a credit card payment widget, allowing customers to perform the transaction directly from your payment portal.
 
-### Instalación:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-credit-card-payment
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/pagos-de-tarjeta-de-credito)
+[Open in new tab](https://widgets.modyo.com/retail/credit-card-payment)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/pagos-de-tarjeta-de-credito" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-card-payment" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
-Para realizar la transacción, el cliente verá predeterminadamente:
+To complete a payment, the default options available to customers are:
 
-| Funcionalidad                          | Descripción                                                                                                              |
-| :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| Tarjeta de crédito a pagar             | Presenta la tarjeta de crédito en la cual se realizará la transacción                                                    |
-| Deuda de pago nacional                 | Presenta el monto total que se ha utilizado en el cupo nacional de la tarjeta, incluyendo lo que no está facturado.      |
-| Deuda de pago internacional            | Presenta el monto total que se ha utilizado en el cupo internacional de la tarjeta, incluyendo lo que no está facturado. |
-| Selección de cuenta de origen del pago | El cliente puede seleccionar la cuenta de la cual se extraerá el monto de pago.                                          |
-| Monto mínimo a pagar                   | Muestra el monto mínimo a pagar de la deuda, para que esta no quede morosa.                                              |
-| Monto total a pagar                    | Muestra el monto total facturado de la deuda a pagar.                                                                    |
-| Monto personalizado a pagar            | Permite al cliente seleccionar un monto personalizado para pagar de la deuda.                                            |
+| Functionality                       | Description                                                                               |
+| :---------------------------------- | :---------------------------------------------------------------------------------------- |
+| Selection of payment source account | The customer can select the account from which the payment amount will be drawn.          |
+| Credit card to be paid              | The credit card to receive payment from a selected account.                               |
+| Minimum payment                     | Shows the minimum payment amount for the card, so that it does not fall into delinquency. |
+| Total amount to pay                 | Shows the total amount of debt to be paid.                                                |
+| Other amount to be paid             | Allows the client to select a customized amount to pay.                                   |
 
 <script>
 
@@ -42,7 +41,7 @@ Para realizar la transacción, el cliente verá predeterminadamente:
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

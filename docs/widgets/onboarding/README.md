@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Acerca de Onboarding
+# About onboarding
 
 Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
 

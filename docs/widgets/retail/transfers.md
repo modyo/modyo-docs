@@ -1,28 +1,29 @@
 ---
 search: true
+translated: true
 ---
 
-# Historial de Transferencias
+# Transfer History
 
-Este widget permite revisar en detalle todas las transferencias recibidas y enviadas que se han realizado desde las distintas cuentas que pueda tener un cliente, además de revisar los datos de sus contactos registrados.
+This widget allows customers to review, in detail, all the sent and received transactions that have been made from their different accounts, in addition to reviewing the data of their registered contacts.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-transfer-history
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/historial-de-transferencias)
+[Open in new tab](https://widgets.modyo.com/retail/transfer-history)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/historial-de-transferencias" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer-history" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                    | Descripción                                                                                                                                                                                       |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Historial de Transferencias      | Muestra el detalle de las transferencias recibidas y enviadas desde la cuenta del cliente. Incluye el monto de la transferencia, el saldo disponible y el nombre del contacto, según corresponda. |
-| Transferencias a Terceros        | Define que el widget sólo muestre información referida a las transferencias a terceros realizadas por el usuario.                                                                                 |
-| Transferencias Entre mis cuentas | Define que el widget sólo muestre información referida a las transferencias realizadas entre las cuentas del usuario.                                                                             |
-| Contactos                        | Permite revisar y editar la infomación de los contactos ya ingresados en la cuenta del usuario. Muestra información como nombre, banco, tipo de cuenta y número de cuenta.                        |
-| Agregar contacto                 | Permite agregar nuevas cuentas de destino a la sección de Contacto. Incluye nombre, banco, tipo de cuenta, número de cuenta, RUT y correo electrónico del destinatario.                           |
+| Feature                       | Description                                                                                                                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Transfer History              | Displays the transaction details sent and received from the customer's account showing the corresponding transfer amount, the available balance, and the contact name.     |
+| Third-party Transfers         | Filters the widget to only show information regarding transfers to third parties made by the customer.                                                                                |
+| Transfers between my Accounts | Filters the widget to only show information regarding transfers made between the customer's own accounts.                                                                             |
+| Contacts                      | Allows customers to review and edit contact information that are already entered in the customer's account. Displays information such as name, bank, account type and account number. |
+| Add Contact                   | Add new destination accounts to Contacts. Includes fields to define the name, bank, account type, account number, ID and recipient's email.                                           |
 
 <script>
 
@@ -38,7 +39,7 @@ modyo-cli get modyo-widgets-retail-transfer-history
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

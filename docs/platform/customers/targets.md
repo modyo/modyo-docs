@@ -1,83 +1,85 @@
 ---
 search: true
+translated: true
 ---
 
 # Targets
 
-Targets es la función de Modyo ideal para manejar a los usuarios en masa si necesitas que reciban determinada información.
+Targets are the ideal Modyo function to handle users in bulk if we need them to receive certain information.
 
-Estos nos permiten agrupar a los usuarios finales en distintos segmentos y así facilitar el envío de correos o notificaciones.
+These allow you to group your customers into different segments and facilitate communication through emails or notifications.
 
-## Interfaz
+Targets also allow you to use these segments to deliver specific content in your digital channels based on your customers' profiles. This allows you to personalize the digital experience for millions of people.
 
-En la interfaz, podrás ver una lista con todos los targets creados hasta ahora, con el nombre y las distintas especificaciones que permiten filtrarlos.
+## Interface
 
-La lista está ordenada de la siguiente manera.
+In the interface, you can see a list of all targets in your account, with the following details:
 
-- Nombre: Nombre particular que tiene la lista. (bajo esta se encuentran los filtros que la componen).
-- Creado el: Fecha de creación del target.
-- Personas: Cantidad de usuarios que pertenecen al target.
+- Name: The name of the target.
+- Created on: Target creation date.
+- People: Number of users that within the target.
 
-Además, en el extremo izquierdo encontrarás un botón con un menú desplegable que te permite ejecutar las siguientes opciones:
+In addition, on the far right you will find an "Action" button with a drop-down menu that allows you to execute the following options:
 
-- Editar: Editar el nombre y los filtros del target.
-- Borrar: Borrar el target.
+- Edit: Edit the target name and filters.
+- Delete: Delete the target.
 
-::: warning Atención
-Si borras el target, tendrás que elaborarlo de nuevo. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.
+::: warning Warning
+If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the targetx.
 :::
 
-Si necesitas buscar un target por nombre en específico, puedes hacerlo a través de la barra de búsqueda que se encuentra en la parte superior de la pantalla.
+If you need to search for a specific target by name, you can do so through the search bar at the top of the screen.
 
-## Crear un Target
+## Create a Target
 
-Para crear un target, tienes que hacer _click_ en el botón **Nuevo Target** que se encuentra en la parte superior de la pantalla.
+To create a target, click on the **New Target** button at the top of the screen.
 
-Inmediatamente se abrirá una vista en la cual podrás seleccionar los filtros que desees para cada Target.
+In the window that appears, you can select the filters for your target.
 
-Si quieres borrar un filtro del target que estás armando, solo debes hacer clic en el ícono que está en el lado derecho de la pantalla.
+To remove a filter, click on the "trash" icon on the right side of the window.
 
-Si deseas borrar todos los filtros, puedes hacer clic en el botón **Limpiar** todo que está en la parte inferior de la pantalla.
+To erase all filters, click on the **Clear all** button at the bottom of the window.
 
-Para grabar tu target, solo debes hacer clic en el botón **Guardar como Target**, que está en la parte inferior de la pantalla.
+To save a target, click on the **Save as a Target** button at the bottom of the window.
 
-Por último, si quieres ver los usuarios que integran ese target, solo debes hacer clic en el botón **Aplicar**. Con esto, llegarás a la vista de [Usuarios](/platform/customers/users.html) que te mostrará una lista con todos los contactos que se ajustan a tus filtros.
+To see the users that match your target filters, click on the **Apply** button. This opens a [User]/platform/customers/users.html) liast that displays all users that fit your filters.
 
 ::: tip Tip
- Es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar mejor. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al target.
- :::
+When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
+ :::
 
-### Filtros
+### Filters
 
-Los filtros  permiten crear targets que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. 
+Filters are what allows us to create targets by matching information that appears with a user's profile and their activity within the site.
 
-Los filtros que se encuentran de manera predeterminada en la plataforma son:
+The list of default filters are as follows:
 
-- Activo / Inactivo
-- Edad
-- Nacido en
-- Valor de custom field
-- Dispositivo
-- Correo entregado
-- Correo no leído
-- Correo no abierto
-- Correo reportado como spam
-- Conteo de correos abiertos
-- Conteo de respuestas a formularios
-- Género
-- Último inicio de sesión
-- Conteo de registros
-- Inicio de sesión
-- Notificación leída
-- Notificación no leída
-- Fecha de registro
-- Tags de usuario
-- Respuestas de formulario
-- Orden confirmando
-- Orden confirmada
-- Orden completa
-- Orden pagando
-- Orden pagada
-- Orden rechazada
+- Activation status
+- Age
+- Birth date
+- Custom field value
+- Login Device
+- Email delivered
+- Spam Email reported
+- Form responses count
+- Gender
+- Last login date
+- Log count
+- Login at date
+- Emails not opened
+- Emails opened count
+- Emails opened
+- Notifications opened
+- Notifications opened count
+- Registered date
+- User tag
+- Answered
+- User field values
+- Completed orders
+- Confirmation failed orders
+- Confirming orders
+- Paid orders
+- Paying orders
+- Rejected orders
 
-Para crear un filtro avanzado, que se ajuste a tus necesidades, debes ir a la sección Custom Fields, que se encuentra en [Configuración de Customers](/platform/customers/users.html#configuracion-de-customers).
+To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/platform/customers/users.html#customers-settings) for more information.

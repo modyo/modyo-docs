@@ -1,69 +1,69 @@
 ---
 search: true
+translated: true
 ---
 
-# Conceptos claves de Modyo
+# Modyo key concepts
 
-A continuación encontrarás una breve explicación de algunos de los conceptos clave relacionados con la Plataforma Modyo.
+Below you will find a brief explanation of some of the key concepts related to the Modyo Platform.
 
 ![Modyo Robots](/assets/img/automate.png)
 
 
-### Arquitectura Multi-Sitio
+### Multi-Site Architecture
 
-Modyo implementa una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, puedes crear múltiples sitios públicos o privados.
+Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-Ve más allá, y utiliza Modyo para obtener un conocimiento más completo sobre tus clientes digitales.
+You can even go further and use Modyo to develop a deeper understanding about your digital customers throughout your different sites.
 
-### Los clientes interactúan en los sitios dependiendo del contexto
+### Customers interact on sites depending on context
 
-Modyo te provee de diferentes mecanismos de autenticación, desde OpenID Connect hasta OAuth2 y Google, para que puedas autenticar a tus clientes fácilmente.
+Modyo provides you with different authentication mechanisms, from OpenID Connect to OAuth2 and Google, so you can easily authenticate your customers.
 
-Los clientes pueden interactuar en distintos sitios y en diferentes contextos, manteniendo un mismo perfil central que te facilitará las tareas de administración.
+Clients can interact in different sites and in different contexts, maintaining the same central profile that facilitates administration tasks.
 
-### Tanto CMS como Headless CMS
+### Both CMS and Headless CMS
 
-Modyo Content te permite crear y publicar contenido. Puedes añadir campos para definir estructuras personalizadas de contenido fácilmente. Modyo Channels te permite trabajar con plantillas de HTML y componentes reutilizables de Front End llamados Widgets.
+Modyo Content allows you to create and publish content. You can add fields to define custom content structures easily. Modyo Channels allows you to work with HTML templates and reusable Front End components called widgets.
 
-Todo el contenido estructurado que es publicado genera un archivo JSON equivalente que puede alimentar a cualquier otro sitio o aplicación. Estos son servidos a través de la API.
+All structured content that you publish generates an equivalent JSON file that can feed any other site or application. These are served through the Content API.
 
-### Una plataforma de integración
+### An integration platform
 
-Modyo está pensado para facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente, mantenemos el foco en facilitar el desarrollo de widgets y la conexión con APIs.
+Modyo is designed to facilitate the creation of digital solutions integrated with the central systems of enterprises. With this in mind, we keep our focus on facilitating the development of widgets and their integration with APIs.
 
-El generador de widgets le ayuda a los desarrolladores de Back y Front End a trabajar juntos para crear experiencias digitales conectadas a APIs. El modelo de gobernabilidad le permite a equipos digitales previsualizar fácilmente y publicar su trabajo a clientes en tiempo récord.
+The widget generator helps Back and Front End developers work together to create digital experiences connected to APIs. Our governance model allows digital teams to easily preview and publish their work to their digital channels in record time.
 
 ### Widgets vs Portlets
 
-La mayoría de las empresas que están en el mercado eligieron el antiguo modelo de _porlets_ (modelo de desarrollo del lado del servidor). Este es más lento y requiere publicar a producción cada vez que se haga un cambio, haciendo el trabajo digital más complejo.
+Most of our competitors chose the old _portlets_ model (server-side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
 
-Modyo está basado en widgets y un generador de widgets que rastrea cada cambio en un sistema de control de versiones. El trabajo digital es fácil de auditar, de pasar a la próxima etapa y de publicar para que esté disponible rápidamente para tus clientes.
+Modyo bases its development model on widgets and a widget generator that tracks every change in a version control system. Digital work is easy to audit, move on to the next stage and publish so that it is quickly available to your customers.
 
-### Nuestro generador de widgets
+### Our widget generator
 
-Con el generador de widgets puedes desarrollar cualquier tipo de widget que requieras, donde puedes incluir componentes en HTML, CSS y Javascript que se conectan con APIs, y que pasan a formar parte de tu librería de widgets para reutilizarlos cuando los necesites.
+With the widget generator you can develop any type of widget you require and include all necessary HTML, CSS and Javascript. You can connect widgets to your APIs, and publish them to your widget library to reuse them when needed.
 
-El generador de widgets potencia la experiencia digital al hacer el desarrollo del Front End fácil de manejar, rápido de enviar a producción y fácil de auditar, otorgando mayor seguridad y cumplimiento de tus objetivos.
+The widget generator enhances the digital experience by making Front End development easy to handle, quick to send to production and easy to audit, providing greater security and fulfillment of your key objectives.
 
-### Widgets prefabricados para servicios financieros
+### Prefabricated widgets for financial services
 
-Modyo Banking proporciona widgets financieros prefabricados para acelerar el desarrollo de tus experiencias bancarias de _retail_ y _wealth management_.
+Modyo Banking provides prefabricated financial widgets to accelerate the development of your retail and wealth management banking experiences.
 
-Un modelo separado de licencia se aplica a Modyo Banking.
+A separate license model applies to Modyo Banking.
 
-### Liquid Markup y APIs
+### Liquid Markup and APIs
 
-Modyo utiliza Liquid Markup dentro de la plataforma para darle a los desarrolladores de Front y Back End un lenguaje enriquecido que permite agregar más funcionalidad al construir experiencias digitales. Liquid Markup es utilizado por compañías líderes para agregar fácilmente más lógica en el código del Front End.
+Modyo uses Liquid Markup within the platform to give Front and Back End developers a rich language that allows them to add more functionality when building digital experiences. Liquid Markup is used by leading companies to easily add more logic to the Front End code.
 
-Las APIs potencian la plataforma y hacen más fácil construir soluciones.
+APIs enhance our platform and make it easier to build solutions.
 
+### Prepared for the future: PWAs
 
-### Preparados para el futuro: PWAs
-Las Aplicaciones Web Progresivas serán el futuro de la Web, ya que permiten mejorar la forma cómo éstas se distribuyen a los usuarios finales y le dan más protagonismo al navegador web como una plataforma de ejecución. Con Modyo puedes controlar en cada sitio las definiciones de _manifest.json_ y de los _Service Workers_, habilitadores técnicos fundamentales a la hora de implementar PWAs.
+Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
 
+### Security, Governance and Agility
 
-### Seguridad, Gobernabilidad y Agilidad
+Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
 
-Modyo tiene una arquitectura donde todo el código publicado genera versiones. Antes de publicar una versión de un widget o un layout, puedes revisar fácilmente los cambios en el código entre una versión y otra.
-
-La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu equipo, siguiendo un modelo que balancea gobernabilidad y agilidad. Cuando se activa Team Review en la plataforma dentro de Channels, dos personas (Revisor y Aprobador) pueden cambiar el estado de los recursos digitales al de "Publicado" a través de un proceso formal fácil de manejar. La capacidad de tu equipo es medida más tarde dentro de Insights.
+Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.

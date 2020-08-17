@@ -2,212 +2,210 @@
 search: true
 ---
 
-# Mensajería
+# Messaging
 
-Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que permite enviar la información hacia los usuarios finales de una manera masiva, dirigida a targets determinados.
+Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific targets.
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos canales:
+Modyo sends messages to platform users through two channels:
 
-- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para verlo.
-- **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
+- **Emails**: Send campaigns to the emails registered in the user profiles.
+- **Notifications**: Send notifications through Modyo's internal messaging system. To see a notification, users must enter the platform.
 
 <img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
-## Campañas
+## Campaigns
 
-A primera vista, estaremos en la sección Campañas, donde podremos ver a través de un administrador todos los mensajes e informaciones que hemos enviado a los usuarios finales.
+In messaging campaigns, administrators can see and review all the messages that you have sent to your clients.
 
-En la parte superior de la pantalla, existe un botón que indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer _click_ para cambiar la vista.
+At the top of the screen, there is a button that lets us filter by message type (Mailing or Notification).
 
-En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
+In the table, campaigns are sorted by the following columns.
 
-- **Nombre**: Nombre que se le dio a la campaña. También puede contener el Target específico al que se le envió.
-- **Tipo**: Tipo de mensaje en que se envió la campaña.
-- **Enviados**: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
-- **Último envío**: Fecha y hora en que se envió por última vez la campaña.
-- **Creado el**: Fecha de creación de la campaña.
+- Name: Name given to the campaign. It can also contain the specific Target to which it was sent.
+- Type: Type of message in which the campaign was sent.
+- Sent: Total number of times you have launched this campaign.
+- Last sent: Date and time the campaign was last sent.
+- Created on: Campaign creation date.
 
-A un costado de cada campaña, se encuentra un botón en el que podremos efectuar dos acciones. 
+Next to each campaign, there is a button where we can perform two actions.
 
-- **Editar la campaña**
-- **Borrar la campaña**
+- Edit the campaign
+- Delete the campaign
 
-::: danger Peligro
-Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
+::: danger Danger
+If you delete a campaign, there is no way to recover it.
 :::
 
-### Crear una campaña
+### Create a Campaign
 
-Para hacer una campaña, debemos hacer _click_ en el botón **+ Nuevo**, ubicado en la parte superior de la vista del Administrador.
+To create a campaign, we must click the green **+ New** button, located at the top of the Administrator view.
 
-Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
+This opens a form that you must fill out with the following information:
 
-- **Nombre**: Nombre que tendrá la campaña.
-- **Tipo**: Formato que tendrá la campaña (Correo o Notificación).
-- **Asunto**: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
-- **Responder a**: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
-- **Plantilla**: Lista de [plantillas](/platform/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
-- **Habilitar targetización**: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
+- Name: Name that the campaign will have.
+- Type: Format that the campaign will have (Mailing or Notification).
+- Subject: Text that appears in the subject line that users receive.
+- From: The name that appears in the "From field".
+- Reply to email: Email address to which people can reply **(Only for mailing campaigns)**
+- Template: List of [templates](/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
+- Enable targeting: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
 
-Después de rellenar estos datos, deberás hacer _click_ en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
+After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
 
-Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer _click_ en el botón en la parte superior de la pantalla.
+Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, you just have to click on the button at the top of the screen.
 
-Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de Envío, donde podrás enviarla.
+When you do this, your campaign is saved and you will get to the Campaign Status view, where you can send it.
 
-### Estado de envío
+### Campaign Status
 
 <img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+The Campaign Status view allows you to not only send a campaign, but also review the campaign metrics that will allow you to see the performance of the content you sent.
 
-A primera vista, encontrarás en la parte superior de la pantalla el botón de **Vista Previa**, que te permite ver el correo que enviarás.
+You can use the **Preview** button at the top of the screen, to review the email messaging and layout of your campaign.
 
-Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
+In addition, you will find a drop-down menu that will take you to four sections:
 
 <img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-- **Editor de Mensajes**: Te permite editar el mensaje antes de enviarlo.
-- **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada.
-- **Editor**: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
-- **Borrar**: Borra toda la campaña.
+- Message Editor: Allows you to edit the message before sending it.
+- Send Test: Send a test email with the campaign to a specific address.
+- Edit: Allows you to edit the campaign properties.
+- Delete: Delete the entire campaign.
 
-En la vista superior, podrás encontrar las estadísticas de la campaña.
+In the Campaign Status view, you can find campaign statistics.
 
-::: warning Atención
-Si no has enviado aún la campaña, los valores aparecerán en cero.
+::: warning Warning
+If you haven't sent the campaign yet, the values will appear at zero.
 :::
 
-Si enviaste la campaña por correo, podrás encontrar las siguientes cifras:
+If you sent the campaign by mail, you can find the following metrics:
 
-- **Alcance**: Personas a las que les llega la campaña.
-- **Envíos**: Nº de veces que se ha enviado la campaña
-- **Enviados**: Nº total de correos enviados.
-- **Abiertos**: Nº total de correos abiertos. 
-- **Abiertos únicos**: Nº total de usuarios los cuales abrieron alguna vez la campaña.
-- **Clicks**: Nº de veces en los cuales se ha hecho _click_ en algún vínculo de la campaña.
-- **Clicks únicos**: Nº de usuarios que han hecho _click_ alguna vez en la campaña.
-- **Spam**: Nº de usuarios a los que su correo llegó a la casilla de Spam.
+- Reach: People who receive the campaign.
+- Deliveries: Number of times the campaign has been sent.
+- Sent: Total number of emails sent.
+- Open: Total number of open mails.
+- Unique openings: Total number of unique users who opened the campaign.
+- Clicks: Number of times in which a link in the campaign has been clicked.
+- Unique clicks: Number of unique users who have clicked on a link in the campaign.
+- Spam: Number of users whose mail reached the Spam box.
 
-En cambio, si enviaste la campaña por Notificación, podrás encontrar estas cifras:
+If you sent the campaign as a Notification, these are your metrics:
 
-- **Alcance**: Personas a las que les llegó la campaña.
-- **Envíos**: Nº de veces que se envió la campaña.
-- **Enviados**: Nº de notificaciones enviadas.
-- **Abiertos**: Nº de notificaciones abiertas.
-
-
-Más abajo podrás ver los [Targets](/platform/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
-
-Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
+- Reach: People who receive the campaign.
+- Deliveries: Number of times the campaign has been sent.
+- Sent: Number of notifications sent.
+- Open: Number of open notifications.
 
 
-- **Fecha**: Día y hora en que se hizo el envío.
-- **Targets**: Targets a los cuales se hizo el envío en específico.
-- **Alcance**: Nº de personas que recibieron el envío.
-- **Enviados**: Nº de correos/notificaciones enviadas.
-- **Estado**: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
+Below you can see the [Targets](/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
 
-Después, podrás encontrar un botón que te permitirá borras el envío del registro.
+At the bottom you can find a table with all the campaign deliveries, which you can sort in ascending or descending order according to the following columns:
 
-::: danger Peligro
-Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
-Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
+- Date: Day and time the delivery was made.
+- Targets: Targets to which the specific delivery was made.
+- Scope: Number of people who received the delivery.
+- Sent: Number of emails/notifications sent.
+- Status: There are four delivery statuses: Completed, Pending, Failed or Canceled.
+
+The last option is the Actions column where you can delete delete a delivery.
+
+::: danger Danger
+Remember that if you delete the delivery, it is unrecoverable.
+In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is.
 :::
 
-Si haces clic en los nombres de las campañas, pasarás a la sección Entregas de Mensajes.
+If you click on the campaign dates, this takes you to the Message Deliveries section.
 
-## Entregas de Mensajes
+## Message Deliveries
 
-En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. 
+In the Message Deliveries section, you can find the list of users who have received messages from the platform.
 
-A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
+At first glance, you can find a list of all the users who have received a single email or notification, which is called "No Campaign".
 
-"Sin Campaña" refiere a un correo o notificación que ha 
-sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/platform/core/api.html). 
+"No Campaign" refers to an email or notification that has been sent specifically to a user, on a specific date. They do not fall under the concept of Campaigns since these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/platform/core/api.html).
 
-En la primera vista, el administrador se ordena bajo las siguientes categorías.
+The message deliveries list displays the following information:
 
-- **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
-- **Campaña**: Campaña bajo la cual se envío el mensaje.
-- **Tipo**: Vía por la cual se envío el mensaje. Correo o notificación.
-- **Envío**: Fecha en la cual se inició la campaña.
-- **Enviado**: Fecha en la que se envió el mensaje.
-- **Leído**: Alerta si el usuario leyó o vio el mensaje.
+- User: Name of the user to whom the message is sent. The user's email is included, regardless of whether the message was via email or notification.
+- Campaign: Campaign under which the message was sent.
+- Type: Route through which the message was sent. Mail or notification.
+- Delivery: Date on which the campaign started.
+- Sent: Date the message was sent.
+- Read: Alert if the user read or saw the message.
 
-Además, podrás filtrar los datos bajo los siguientes filtros:
+In addition, you can filter the data under the following filters:
 
-- **Tipo de Campaña**: Todos, correo o notificación.
-- **Nombre de la Campaña**: Nombre que se le dio a la campaña en general.
-- **Envío**: Fecha en la cual se envió la campaña.
+- Campaign Name: Name given to the campaign in general.
+- Shipment: Date on which the campaign was sent.
 
-Por último, puedes ver una barra de búsqueda que te permitirá encontrar por algún término en específico.
+You also have access to a search bar that to find campaigns or users by name and email.
 
-## Plantillas
+## Templates
 
 <img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer tu mensaje en forma de correo, necesitarás una plantilla para poder añadir los contenidos que desees.
+To create your campaign as an email, you will need a template for your content.
 
-Desde esta sección, podrás hacer maquetas de correos de manera fácil para después enviarlas a los usuarios.
+From the Templates section, you can make templates for your emails to send to users.
 
-A primera vista, puedes encontrar todas las plantillas de correos que se han hecho.
+At first glance, you can find all the email templates available.
 
-Cada una de las plantillas estarán ordenadas según su nombre, además de poder ver la última vez que se les hizo alguna modificación.
-
-::: tip Tip
-Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
-:::
-
-Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces _click_ en él, llegarás al editor donde hiciste tu plantilla.
-
-A un costado, se encuentra un botón que despliega un menú con las siguientes opciones:
-
-- **Vista previa**: Muestra el modelo de plantilla de correo que se encuentra guardada.
-- **Copiar**: Puedes hacer una copia de la plantilla.
-- **Borrar**: Se borra la plantilla
+Each of the templates is ordered according to their name, in addition to being able to see the last time they were modified.
 
 ::: tip Tip
-Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
+If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
 :::
 
-### Editar plantillas
+Under each name, there is a button that allows you to edit. If you click on it, this opens the messaging template editor.
+
+On one side, there is a button that displays a menu with the following options:
+
+- Preview: Shows a preview of the email template.
+- Copy: Makes a copy of the template.
+- Delete: Deletes the template
+
+::: tip Tip
+If you want to temporarily change the template when sending a new campaign, it is better to make a copy of the template and work on it, leaving the original unchanged.
+:::
+
+### Edit templates
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer una plantilla, primero debes hacer _click_ en el botón **+ Nuevo**, que se encuentra en la parte superior de la página.
+To make a template, you must first click on the **+ New** button, located at the top of the page.
 
-Al hacer _click_, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
+This opens the edit view where you must give your template a name.
 
 ::: tip Tip
-Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
+Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for.
 :::
 
-Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
+Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
-::: warning Atención
-Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
+::: warning Warning
+If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
-Para automatizar la inserción del Footer, lee [Configuración de Customers](/platform/customers/users.html#configuracion-de-customers)
+To automate the insertion of the Footer, read [Customers Settings](/platform/customers/users.html#customers-settings)
 :::
 
-Para grabar la plantilla, debes hacer _click_ en el botón **Guardar**, que se encuentra en la parte superior de la página.
+To save the template, you must click on the **Save** button, located at the top of the page.
 
-Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
+If you want to use the template in an email, you only have to select the name of the template, when you are preparing the campaign.
 
-## Desinscripciones
+## Unsubscriptions
 
-En esta sección, encontrarás una lista con todos los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
+In this section, you will find a list of all users who have unsubscribed from email campaigns or notifications through their web profile.
 
-Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
+To find a user, at the top of the screen there is a search bar where you can enter their name or email.
 
-Si se hace _click_ en el nombre del usuario, puedes encontrar el [perfil del usuario](/platform/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+If you click on the name of the user, you can find the [user profile](/platform/customers/users.html#user-tab) with all their platform activities.
 
-Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
+Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
-::: danger Peligro
-Hacer una reinscripción sin una autorización expresa del usuario, puede causar problemas legales.
-Revisa la regulación sobre correos masivos en cada país.
+::: danger Danger
+Resubscription without the express authorization of the user can cause legal problems.
+Check the regulation on mass mailings in each country.
 :::

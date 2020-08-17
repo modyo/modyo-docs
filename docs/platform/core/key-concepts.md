@@ -2,249 +2,236 @@
 search: true
 ---
 
-# Conceptos clave
+# Key concepts
 
-## Revisión en Equipo
+## Team Review
 
-La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de elementos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación.
+Team Review is a tool that allows you to control the process of publishing items in Modyo, such as entries, widgets, pages, templates, and more. When enabled, each item must go through the required review stages before it can be published.
 
-De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores.
+This adds a level of supervision and collaboration between the content editor and a team of reviewers.
 
-### Función
+### Feature
 
-Cuando un editor o un desarrollador considera que el elemento en el que está trabajando se encuentra listo, puede enviarlo a revisión.
+When an editor or developer feels that the item he is working on is ready, he can submit it for review.
 
-Esta tarea puede ser realizada por usuarios habilitados por defecto o por un equipo escogido por el editor.
+This task can be performed by users enabled by default or by a team chosen by the editor. They will be responsible for approving or rejecting the item, and will ultimately determine whether it is ready to be published.
 
-Ellos serán los responsables de aprobar o rechazar el elemento, y determinará finalmente si ya está en condiciones de ser publicado.
+Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
-Cada paso de este proceso lleva al elemento por distintos estados, que quedan registrados en un historial para su posterior auditoría.
+[Image review stages]
 
-[Imagen de etapas de revisión]
+ 
+This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
 
-Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios).
+The configuration of review rules is done independently for each site or space.
 
-La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
+### Configuration
 
-### Configuración
+To configure Team Review, go to `Site/Space configuration > Team review`.
 
-Para configurar la herramienta, debes dirigirte a `Configuración del sitio/espacio > Revisión en equipo`.
+<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
-<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+The available options are:
 
-Las opciones disponibles son:
-
-- **Habilitar revisión en equipo**: Activa o desactiva por completo la revisión en equipo en este contexto (sitio o espacio).
-- **Número de aprobaciones**: Determina cuántos usuarios deben aprobar el elemento para que esté en condiciones de ser publicado (cambiará su estado de "Esperando revisión" a "Aprobado").
-- **Restringir la selección de revisores**: Por defecto, cualquier usuario con los permisos necesarios podrá aprobar los elementos que están esperando revisión. Habilitando esta opción, sólo aquellos escogidos por el editor podrán hacerlo.
-
-
-:::tip Tip
-Si bien la aprobación se encuentra limitada, cualquier usuario con permisos puede hacer comentarios sobre el elemento.
+- **Enable Team Review**: Enables or disables Team Review within the current site or space.
+- **Number of approvals**: Determines how many team members must approve the item before publishing (this changes the status from "In review" to "Approved").
+- **Restrict the selection of reviewers**: By default, any user with the necessary permissions will be able to approve the items that are waiting for revision.
+By enabling this option, only those chosen by the editor will be able to do so.
+::: tip Tip
+While approval is limited, any user with permissions can comment on the item.
 :::
-- **Forzar revisión**: Esta opción permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda pasar al estado "Aprobado". Esto es independiente del número de aprobaciones configurado anteriormente, es decir, aunque un elemento tenga la cantidad de aprobaciones necesarias, seguirá en estado "Esperando aprobación" si ningún usuario de la lista lo ha aprobado.
+- **Force review**: This option allows you to select a list of users, from which at least one approval is required for the item to be moved to the "Approved" status. This is independent of the number of approvals previously configured, i.e. even if an item has the required number of approvals, it will still be in "Waiting for approval" status if no user in the list has approved it.
+- **Require all**: This option extends the previous restriction to all selected users.
 
-- **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados.
+::: warning Warning
+When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
 
-:::warning Atención
-Cuando haces cambios en la configuración de revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios.
-
-Para que esos elementos tomen en cuenta la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
+For these items to follow the new configuration, they need to be rejected and sent into revision again.
 :::
 
-### Roles y permisos
+### Roles and permissions
 
-Existen tres niveles de roles que permiten a los usuarios realizar distintas acciones en el proceso de revisión:
+There are three levels of roles that allow users to perform different actions in the review process:
 
-- Alto: Administrador (sitio o espacio)
-- Medio: Revisor (sitio) o Editor (espacio)
-- Bajo: Desarrollador (sitio) o Escritor (espacio)
+- High: Administrator (site or space)
+- Medium: Reviewer (site) or Editor (space)
+- Under: Developer (site) or Writer (space)
 
-Los usuarios con el rol más bajo, pueden enviar a revisión y comentar los elementos que se encuentran en ese estado.
+Users with the lowest role, can submit items for review and comment on items that are in that state.
 
-Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
+Users with the intermediate role, in addition to the above, can approve the items under review and, once they are approved, publish them through the team review flow.
 
-Los usuarios con el nivel más alto, además de realizar todo lo anterior, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
+Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force post" action to immediately publish an item.
 
-::: warning Atención
-Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo.
+::: warning Warning
+Site or space administrators always have the ability to skip the team review flow.
 
-Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación".
+For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force post."
 
-Esta opción existe porque hay ocasiones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
+This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
 
-### Sobre la interfaz
+### About the interface
 
-Cuando está activada la opción de revisión en equipo, y luego de guardar los cambios, verás como acción principal el botón verde **Enviar a revisión**.
+When the team review option is enabled, and after saving the changes, you will see the green **Send to review** button as the main action.
 
-<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
+<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-Al momento de enviar a revisión la barra cambiará de estado:
+When you send the item for revision, the bar will change status:
 
-<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
+<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;"/>
 
-Al hacer _click_, verás que en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
+When you click on it, you will be able to see the requirements to publish the item in the right side section. If there is a required reviewer, `(required)` will appear next to his name in the list of reviewers.
 
-En caso de existir algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
+<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;"/>
 
-<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
+To the right of each reviewer you can find the status of their revision, showing a yellow circle if they have not finished their review, and a green check if they have approved the item.
 
-A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
+Anyone who can access the edit view of the item will see an "Approve" button under the list of reviewers. Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission, will see the button disabled.
 
-Todos quienes puedan acceder a la vista de edición del elemento, verán un botón **Aprobar** bajo el listado de revisores.
+When an item is approved, the approval of that user will be registered, showing a green check to the right of his name in the list of reviewers.
 
-Quienes tengan el permiso necesario, lo verán activo y podrán hacerle _click_ para aprobar el elemento. Los que no tengan permiso, verán el botón deshabilitado.
+When team review is enabled, you will be able to see an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 01-1-1v-3H7a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4.1l-3.7 3.71a1 1 0 01-.7.29H12zm1-6v3.08L16.08 17H21V7H7v10h6zM3 15H1V3a2 2 0 012-2h16v2H3v12zm6-6h10v2H9V9zm0 4h8v2H9v-2z" fill="#626262"/></svg>) in the item's action bar, to the left of the main green button and to the right of the differences button, which allows you to open the item's activity tab.
 
-Al aprobar el elemento, quedará registrada la aprobación de ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
+When this tab is opened, a chronological list of all the actions that have been carried out on the item will be displayed, with the option to see the detail of each action. You can leave comments at the bottom of the tab.
 
-Cuando se habilita la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, aparecerá un ícono ( <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> ) para abrir la pestaña de actividad del elemento.
+When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision and the users who are on the list of reviewers.
 
-Al abrirla, se desplegará un listado cronológico de las acciones que se han efectuado sobre el elemento, con la opción para ver el detalle de la acción, y al fondo de la pestaña, estará la opción para dejar un comentario.
+## Versions
 
-Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se envía una notificación tanto a quien envió a revisión como a los usuarios que están en la lista de revisores.
+As a backup mechanism, Modyo automatically generates and stores different versions of an item each time it is published, which can later be retrieved if necessary.
 
-## Versionado
+This is useful when, for some reason, an undue change is made, there is the possibility of reverting it through the platform.
 
-Como mecanismo de respaldo, al momento de publicar un elemento, Modyo genera y mantiene automáticamente un número de versiones que posteriormente pueden ser recuperadas en caso de ser necesario.
+This system is available for Widgets, Pages, Navigation, Templates and Content.
 
-Esto es útil cuando, por alguna razón, se realiza un cambio indebido, entonces existe la posibilidad de revertirlo a través de la plataforma.
-
-Este sistema está disponible para Widgets, Pages, Navegación, Templates y Contenido.
-
-### Versiones de los recursos
+### Resource Versions
 
 #### Editable
 
-La versión Editable mantiene los cambios hechos en el elemento desde su última publicación o su creación si nunca ha sido publicado.
+The "Editable" version stores changes made to the item since its last publication or its creation if it has never been published. This version is the one that goes through the team review process when enabled, and at the time of publication, the "Editable" and "Published" versions have the same content.
 
-Esta versión es la que pasa por el proceso de revisión en equipo cuando está activada, y justo en el momento de la publicación, las versiones "Editable" y "Publicada" poseen el mismo contenido.
+#### Published
 
-#### Publicado
+This version stores the content that is visible on the site and is freely available to any user. In this state, internal resources such as Widgets and Templates can be used in the creation of any site or page.
 
-Esta versión guarda el contenido visible en el sitio y es de libre disponibilidad para cualquier usuario.
+The published version does not necessarily have the same content as the editable version (except at the time of publication), as it may contain changes that are in the process of being tested or reviewed.
 
-En este caso, recursos internos como Widgets y Templates ya se pueden usar en la creación de cualquier sitio o página.
+#### Backups
 
-La versión publicada no necesariamente tiene el mismo contenido que la editable (excepto en el momento justo de la publicación), ya que puede contener cambios que estén en proceso de prueba o revisión.
+Backups are previously published versions of the items. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
-#### Respaldos
+If you want to review a particular version of an item, you can go to the "Differences between versions" section, so you can see the changes that have been made and revert them when necessary.
 
-Los respaldos son versiones previamente publicadas de los elementos. Es decir, cada vez que publicamos un elemento, Modyo guarda la versión publicada anteriormente como un respaldo.
+::: warning Warning
+By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item.
 
-Si deseas revisar alguna versión en particular de un elemento, puedes ir a las "Diferencias entre versiones", y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
-
-::: warning Atención
-Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigésimoprimera publicación, estarás borrando el respaldo de la primera publicación del elemento.
-
-Este valor se puede modificar mediante variables de entorno y es común para todas las cuentas de este.
+This value can be modified using environment variables and is common for all accounts in that environment.
 :::
 
-#### Programado
+#### Scheduled
 
-Cuando decides programar una publicación, la versión editable pasa a un estado programado, y cuando llegue el momento de la publicación, esa versión programada tomará el lugar de la versión que esté publicada en ese momento. De esta forma, podrás programar un cambio en el futuro para los elementos, y seguir trabajando en la versión editable.
+When you decide to schedule a publication, the editable version goes into a scheduled state, and and when it is time to publish, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version.
 
-:::warning Atención
-Modyo solo permite tener una versión programada de cada elemento, por lo que si programas una segunda modificación al elemento, estarás sobreescribiendo la programación anterior.
+:::warning Warning
+Modyo only allows you to have one scheduled version of each element, so if you schedule a second modification of the item, you will be overwriting the previous scheduled version.
 :::
 
-Junto con la programación de publicación, puedes programar una despublicación. Llegado el momento, la versión que esté publicada pasará a ser un respaldo, dejando el elemento en cuestión sin una versión  publicada.
+In the same way you can schedule a publication, you can schedule to unpublish an item. When the time comes, the published version will become a backup, leaving the corresponding item without a published version.
 
-### Acciones para el versionado
+### Actions for versioning
 
-Dentro del versionado tienes dos acciones que te permiten interactuar con los respaldos. Ambas acciones están disponibles en el modal de diferencias.
+Within versioning, you have two actions that allow you to interact with the backups of an item (reset & rollback). Both actions are available in the "differences" pop-up window.
 
-![Modal de diferencias](/assets/img/platform/differences.png)
+![Difference mode](/assets/img/platform/differences.png)
 
-Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha.
+By default, this pop-up shows you the published version on the left side, and the editable version on the right side. You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
-Puedes cambiar qué versiones comparar, cambiando los valores en los selectores de versiones en la parte superior del modal.
+When one of the actions is applied, it will always use the version to the left. This means that if you choose to reset an item to a previous version, the code to the left will become the new editable version, and if you choose to perform a rollback, the version to the left will become the new published version.
 
-Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión de la izquierda a la versión editable, y si se hace rollback, se llevará la versión de la izquierda a la versión publicada.
+#### Reset
 
-#### Reestablecer
-
-En este caso, el respaldo se copiará a la versión editable, por lo que se perderán todos los cambios que se hicieron posteriormente, y así podrás seguir trabajando en potenciales cambios a esa versión para volverla a publicar.
+In this case, the backup will be copied to the editable version, losing all subsequent changes so that you can continue working on potential changes to this version before publishing again.
 
 #### Rollback
 
-En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable.
+In this case, the backup will be copied directly to the published version of the item, without touching the editable version.
 
- Esto es útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
+This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
 
-::: danger Peligro
-Dado que esta es una acción potencialmente peligrosa, sólo los administradores de sitios o espacios tienen el permiso para poder ejecutar esta acción.
+::: danger Danger
+Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
 :::
 
 ## Locks
 
-Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, sin tener problemas de concurrencia que puedan ocurrir cuando otro usuario esté trabajando en él simultáneamente, evitando de esta forma la pérdida de trabajo o la sobreescritura de documentos.
+Locks is a feature in Modyo that allows you to modify a resource safely, without having concurrency problems that can occur when another user is working on the same item simultaneously, thus avoiding job loss or document overwriting.
 
-<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
+<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;"/>
 
-### ¿Qué elementos usan Locks?
+### What elements do Locks use?
 
-Locks se usa mayoritariamente en [Contenidos](/platform/content/) y en [Channels](/platform/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/platform/customers/).
+Locks are mostly used in [Content](/platform/content/) and [Channels](/platform/channels/), but can also be used in other sections where items can be edited, such as Settings and [Customers](/platform/customers/).
 
-### ¿Cómo usar Locks?
+### How to use Locks?
 
-Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/platform/content/) y [Channels](/platform/channels/), múltiples usuarios pueden entrar a un recurso, siendo sólo uno el que podrá editar y guardar esos cambios, mientras que los demás sólo verán la última versión guardada en la plataforma.
+Locks are implemented in different ways within the platform. In [Content](/platform/content/) and [Channels](/platform/channels/), multiple users can access a resource, with only one user being able to edit and save changes, while the others will only be able to see the latest saved version.
 
-Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
+If a second person tries to make a change, a message will appear indicating that the item already has changes and that what they are trying to modify is obsolete.
 
-En otras secciones como [Customers](/platform/customers/) y Configuración, Locks no permitirá la visión simultánea del recurso, por lo que si éste se encuentra en edición, otro usuario no podrá ingresar a la vista de trabajo.
+In other sections, such as [Customers](/platform/customers/) and Settings, Locks will not allow users to view resources simultaneously. So, if an item is being edited, another user will not be able to access the work view.
 
-En este caso, sólo un Administrador podrá tomar el control, activando para sí mismo la edición y descartándose los avances no guardados del usuario que se encuentra trabajando en él.
+In this case, only an Administrator will be able to take control, activating for himself the edition and discarding the unsaved changes made by the user working on the item.
 
 
-::: warning Tomar el control
+::: warning Take control
 
-Si un Administrador quiere tomar el control de una vista, deberá hacer _click_ en el elemento en uso y en la pantalla siguiente, hacer _click_ en el botón **Tomar Control**.
+If an Administrator wants to take control of a view, he must click on the item in use and, in the next screen, click on the **Take Control** button.
 
-<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
+<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;"/>
 
-Cuando el Administrador tome el control, el usuario que esté usando el recurso recibirá un mensaje en el que se le impedirá seguir haciendo cambios, por lo que cualquier cambio que se esté realizando, deberá ser guardado y respaldado offline.
+When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from making any further changes. Any changes that are being made must be saved and backed up offline.
 
-Tras tomar el control, el Administrador sólo tendrá dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso volverá a liberarse y podrá ser tomado por cualquier otro usuario.
+After taking control, the Administrator will only have two hours to make unsaved changes. After that time, the resource will be released and can be taken over by any other user.
 :::
 
-## Modo vista previa
+## Preview mode
 
-El modo vista previa te permite previsualizar el resultado de los cambios a elementos publicables como las Entradas, Páginas, Navegación, Widgets o Templates; accesible desde la parte superior derecha con el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
+The preview mode allows you to preview the result of changes to publishable items such as Entries, Pages, Navigation, Widgets or Templates; accessible in the upper right corner with the <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> icon. You can recognize that you are in preview mode when you see the bar at the top of the site.
 
-![Barra de vista previa](/assets/img/platform/preview-bar.png)
+![Preview bar](/assets/img/platform/preview-bar.png)
 
-Los elementos con los que puedes interactuar en la barra de vista previa son:
+The elements you can interact with in the preview bar are:
 
-* **Selector de templates**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
-* **Selector de contenido**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
-* **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
-* **Selector de páginas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al page builder.
-* **Selector de vista de contenido**: Este selector te permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
-* **Selector de widgets**: Si estás previsualizando páginas que contengan widgets personalizados, encontrarás una lista de los widgets que aparecen en la página, y podrás seleccionar si quieres visualizar la versión editable o publicada de cada uno de ellos. Una vez que completes la selección, haz click en el botón "refrescar" para que la configuración de los widgets tenga efecto.
-* **Pestaña para minimizar**: Te permite esconder la barra de previsualización para que no interfiera con los elementos que estén en la parte superior del sitio. Una vez minimizada, la pestaña se mantendrá visible para que puedas restaurar la barra del modo vista previa.
-* **Editar elemento**: al hacer _click_ irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget o un template por defecto del sitio.
-* **Compartir link**: Te permite copiar un enlace que puedes compartir y quien lo abra, irá directamente al modo vista previa con la configuración al momento de copiar el link. Para poder ver el modo vista previa, basta con tener una sesión iniciada en el admin de la cuenta.
-* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejándo la pestaña en la url actual del sitio.
+* **Template selector**: Allows you to switch between published and editable versions of items in the template builder.
+* **Content selector**: Allows you to switch between published and editable versions of items in the content application that are being used on the site through the Liquid Content SDK.
+* **Navigation selector**: Allows you to change between published and editable versions of items in the navigation builder.
+* **Page selector**: Allows you to switch between published and editable versions of items in the page builder.
+* **Content view selector**: This selector allows you to switch between the published and editable versions of the content entry being previewed in the custom content views. This view does not directly use the Liquid Content SDK, so the content in these views will not be affected by the Content SDK selector.
+* **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button for the widget settings to take effect.
+* **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
+* **Edit element**: Clicking this option will take you to the edit page of the item you are looking at, be it an entry, a page, a widget or a default template of the site.
+* **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
+* **Exit preview mode**: Closes the preview mode, removes the bar and leaves the tab in the current site url.
 
-:::warning Atención
-Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
+:::warning Warning
+Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
 :::
 
-## Variables globales
+## Global variables
 
-Modyo cuenta con la funcionalidad para definir variables globales que puedes usar en todos los sitios donde cuentes con Liquid, de esta manera puedes, por ejemplo, compartir un _snippet_ de código entre sitios.
+Modyo allows you to define global variables that you can use in all the sites where you have Liquid. This way you can, for example, share a code snippet between sites.
 
 :::tip Tip
-Puedes usar texto plano, código HTML, JavaScript y CSS dentro de las variables globales, sin embargo no puedes usar código Liquid dentro de ellas.
+You can use plain text, HTML code, JavaScript and CSS within the global variables. However, you cannot use Liquid code in a global variable.
 :::
 
-Puedes crear variables globales en la configuración de la cuenta, y puedes añadir valores para distintos idiomas. Si lo requieres, también puedes sobrescribir los valores para determinados sitios en el menú variables del sitio, en la configuración del sitio.
+You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings.
 
-:::warning Atención
-Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el sitio y luego las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en el sitio con el mismo nombre que las variables de la cuenta.
+:::warning Warning
+When using global variables, preference will always be given to variables defined for the site and then to variables defined at the account level. So be careful when defining variables for a specific site with the same name as an account variable.
 :::
 
-:::danger Peligro
-Las variables globales no cuentan con un flujo de trabajo de publicación, versionado ni revisión en equipo, y solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer un cambio en el valor de estas, este se verá reflejado inmediatamente en donde sea que se estén usando.
+:::danger Danger
+The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them. So you should keep in mind that when you change the value of a global variable, it will immediately affect the resources where it is being used.
 :::

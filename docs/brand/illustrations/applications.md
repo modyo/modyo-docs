@@ -2,7 +2,7 @@
 search: false
 ---
 
-# Aplicaciones
+# Applications
 
 Las ilustraciones hacen que las ideas sean más accesibles. Al igual que las palabras , las ilustraciones cuentan historias y representan nuestra marca de manera eficiente y clara. 
 Es muy importante que sean usadas de forma correcta y que nunca se transformen en un elemento distractor.

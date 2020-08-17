@@ -1,20 +1,21 @@
 ---
 search: true
+translated: true
 ---
 
 # Modyo Content
 
-**Modyo Content** es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+Modyo Content is an application that makes it possible to create dynamic content repositories called spaces. Within a space, you can create content entries based on types that you define and administrators can establish space access configurations and roles for team members.
 
 ![Headless](/assets/img/content/header.jpg)
 
-**Modyo Content** posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en **Modyo Channels** como de sistemas o aplicaciones externas.
+Modyo Content has a "headless" architecture which you can use to access content via an API available to both digital channels in Modyo and to external systems and applications.
 
-Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.
+Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
 
-### Funcionalidades principales
+### Main functionalities
 
-- [Espacios](/platform/content/spaces.html) para la organización de contenidos y equipos que los administran.
-- [Tipos de contenido](/platform/content/types.html) para definir estructuras personalizadas.
-- [Gestor de archivos](/platform/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
-- [API y SDKs](/platform/content/public-api-reference.html) para el acceso a los repositorios de contenidos, tanto dentro como fuera de la plataforma.
+- [Spaces](/platform/content/spaces.html) for the organization of contents and teams that manage them.
+- [Content types](/platform/content/types.html) to define custom structures.
+- [Asset manager](/platform/content/asset-manager.html) for organizing files such as images or videos that are used within the contents.
+- [API and SDKs](/platform/content/public-api-reference.html) for access to content repositories, both within and outside of the platform.

@@ -1,43 +1,44 @@
 ---
 search: true
+translated: true
 ---
 
-# Versiones
+# Versions
 
-La Plataforma Modyo es distribuida actualmente en dos versiones: Modyo Cloud y Modyo Enterprise. Modyo Cloud se despliega en una nube _multi-tenant_ en Amazon Web Services (AWS), en la cual los recursos son compartidos entre distintos clientes. Modyo Enterprise se puede desplegar en modalidad _Cloud_ u _On Premise_. Un cliente de Modyo Enterprise Cloud también puede escoger una versión menos estable, recibiendo a cambio como beneficio las mejoras más recientes.
+The Modyo Platform is currently distributed in two versions: Modyo Cloud and Modyo Enterprise. Modyo Cloud is deployed in a _multi-tenant_ cloud in Amazon Web Services (AWS), in which resources are shared between different clients. Modyo Enterprise is available in either an _Enterprise Cloud_ or _On-Premise_ deployment. A Modyo Enterprise Cloud client may also choose to use a less stable version, but benefits from the most recent improvements.
 
-::: tip Versiones actuales
-La versión actual de Modyo Cloud corresponde a la **9.0**. La versión actual de Modyo Enterprise corresponde a la [**8.2 LTS**](/assets/pdf/Modyo82Docs.pdf).
+::: tip Current versions
+The current version of Modyo Cloud corresponds to version **9.0**. The current version of Modyo Enterprise corresponds to the **8.2 LTS** (Long Term Support).
 :::
 
-En el caso de las versiones Cloud y Enterprise Cloud, el valor de suscripción incluye los servicios de soporte 24x7 a la infraestructura.
+In the case of both the Cloud and Enterprise Cloud versions, each license includes 24x7 infrastructure support services.
 
 ## Modyo Cloud
 
-La versión Cloud de Modyo representa la alternativa más económica y simple de suscripción a la plataforma. Desplegada en un ambiente _multi-tenant_, la infraestructura es compartida entre múltiples clientes de forma que los datos e información particular de cada uno se encuentran separados de forma lógica, pero desplegados en un repositorio común.
+Modyo Cloud represents the simplest and least expensive subscription alternative for the platform. Deployed in a multi-tenant environment, the infrastructure is shared among multiple clients so that the data and information belonging to each client is logically separated, but deployed in a common repository.
 
-La versión Cloud de Modyo recibe actualizaciones de forma periódica y la plataforma siempre se encuentra desplegada en su última versión. Los clientes no poseen la opción de elegir en qué versión de Modyo desean estar.
+Modyo Cloud receives regular updates and the platform is always deployed in its latest version. Customers do not have the option to choose which version of Modyo they wish to be on.
 
 
 ## Modyo Enterprise Cloud
 
-El despliegue Enterprise Cloud de Modyo ha sido diseñado pensando en el cumplimiento y conformidad de las más exigentes normativas de distintas industrias, con características únicas que la diferencian de la alternativa Cloud, entre las que podemos mencionar:
-- Accesos controlados por parte de los clientes a la infraestructura desplegada en la nube.
-- Acceso a auditar las configuraciones de AWS.
-- Plantilla de infraestructura como código (IoC) dedicada para cada cliente.
-- Personalización de las características del despliegue en AWS.
-- Posibilidad de despliegue en una cuenta de AWS totalmente aislada.
-- Acceso a los logs aplicativos y de seguridad.
-- Integración con firewalls aplicativos del cliente (Incapsula, Akamai, Cloudflare, entre otros).
-- Encriptación avanzada.
-- Panel de monitoreo personalizado de métricas del entorno en el Centro de Soporte de Modyo.
+The Modyo Enterprise Cloud has been designed for compliance and adherence to the most demanding standards in different industries, with unique features that differentiate it from the Cloud alternative, among which we can mention:
+
+- Controlled customer access to infrastructure deployed in the cloud.
+- Access to audit AWS configurations.
+- A dedicated Infrastructure as Code (IoC) template for each client.
+- Customization of the characteristics of the AWS deployment.
+- Possibility of deployment in a totally isolated AWS account.
+- Access to application and security logs.
+- Integration with client application firewalls (Incapsula, Akamai, Cloudflare, among others).
+- Advanced encryption.
+- Customized environment metrics monitoring panel in the Modyo Support Center
 
 
-## Modyo Enterprise On Premise
+## Modyo Enterprise On-Premise
 
-El despliegue Enterprise On Premise de Modyo permite desplegar la plataforma en un ambiente totalmente controlado por el cliente, ya sea en la nube o en un centro de datos tradicional. Modyo provee para este caso de un completo servicio de soporte de infraestructura que permite brindar un acompañamiento en todos los procesos de configuración y operación de la plataforma, el cual abarca tanto al software de Modyo, como a todos los componentes de su _stack_ tecnológico.
+Modyo's Enterprise On-Premise deployment allows the platform to be deployed in a fully customer-controlled environment, whether in the cloud or in a traditional data center. Modyo provides a complete infrastructure support service throughout all configuration and operation processes of the platform, including Modyo software and all components of the technology stack.
 
-
-::: tip Versiones LTS
-Algunos de los releases Enterprise de Modyo reciben la categoría de LTS (Long Term Support), los cuales poseen soporte extendido para parches de seguridad y actualizaciones críticas.
+::: tip LTS Versions
+Some of the Modyo Enterprise releases receive Long-Term Support, or LTS, which has extended support for security patches and critical updates.
 :::

@@ -1,166 +1,157 @@
 ---
 search: true
+translated: true
 ---
 
-# Tipos de contenido
+# Content types
 
 ![Types](/assets/img/content/types/types.jpg)
 
-Los Tipos dentro de Modyo, son herramientas que nos permitirán estructurar plantillas de contenido para insertar dentro del servicio que estés otorgando, con más de 15 tipos de campos.
+Types in Modyo are tools that allow us to structure content templates to build entries, with more than 15 types of fields.
 
-Con los Tipos, podrás evitar tener que estar muchas veces elaborando contenido de igual formato, estableciendo un estilo predeterminado que permitirá optimizar tiempos y calidad a la hora de crearlo.
+With types, you can avoid having to build a piece of content in the same format many times. You can establish a predetermined style that will allow you to optimize time and promote consistency.
 
-## Sobre la Interfaz
+## About the Interface
 
-A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer _click_ ahí, te permitirá crear un Tipo.
+In the Types section of a space, you can find a green **+ New** button at the top you can click to create a new Type.
 
-Más abajo, podrás ver la barra de búsqueda de Tipos, que te permitirá filtrar por cualquier palabra que se encuentre dentro del campo Nombre.
+Just above the type list on the left, you can use the Type search bar to find any word you are looking for by name.
 
-Después, encontrarás la tabla con los Tipos ya creados, que estarán ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, partiendo desde el elemento más reciente hacia atrás.
+The list of existing types is sorted by "most recently updated" by default. You can also reorder the types by:
 
-Para reordenarla, solo debes hacer _click_ en los símbolos que se encuentran a un costado de cada categoría.
+- Name
+- UID
+- Creation Date
+- "Updated on" Date
 
-Las categorías por las cuales puedes reordenar son cuatro:
+If you want to enter any Type, you must click on its Name to open the corresponding editor.
 
-- **Nombre**
-- **UID**
-- **Fecha de Creación**
-- **Fecha de Actualización**
-
-Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para que se abra el editor correspondiente.
-
-## Crear un Tipo
+## Create a Type
 
 <img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
 
-Para crear un Tipo, es necesario hacer _click_ en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
+To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
 ::: tip Tip
-Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. 
-
-Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
+The best practice for UID naming is to name them by their formats, e.g. videos, posts, promotions, etc. This makes it easier for users know what types of content they're working with, and avoid creating redundant types within a space.
 :::
 
-En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
+In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
 
-- **Añadir campos**
-- **Configuración del campo**
-- **Configuración**
+- Add fields
+- Field configuration
+- Configuration
 
-Esta interfaz sirve para crear cada uno de los tipos, dándoles el formato que sea requerido.
+This interface is where we populate our types with the correct fields we need based on our content requirements.
 
-## Campos
+## Fields
 
 ::: tip Tip
-El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
-
-Para más información ve a la [referencia de la API](/platform/content/public-api-reference.html)
+The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/platform/content/public-api-reference.html)
 :::
 
-Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos.
+All fields require a name, and can optionally be set as required. When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, the entry cannot be saved.
 
-Cuando un campo es requerido, al momento de crear o modificar una entrada, debe haber un valor asociado para ese campo, de lo contrario, no se podrán guardar los cambios.
+### Single-line text
 
-### Texto de una línea
+This field allows you to enter single-line texts. and has the following restrictions:
 
-Este campo te permite ingresar textos de una sola linea. y cuenta con las siguientes restricciones:
-
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
-- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto que se ingresa al momento de crear/modificar una entrada coincida con un formato determinado. 
+- **Minimum length**: Allows you to require a minimum text length.
+- **Maximum length**: Limit the maximum length of the text entered.
+- **Regular expression validation**: Allows you to add a regular expression to validate that the text matches a certain format.
 
 
-### Texto enriquecido
+### Rich text
 
-Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que también te permite modificar el código HTML del mismo. Este campo cuenta con las siguientes restricciones:
+This field translates into a multi-line text WYSIWYG editor that also allows you to modify its HTML code. This field has the following restrictions:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Minimum length**: Allows you to require a minimum text length.
+- **Maximum length**: Limit the maximum length of the text entered.
 
 ### Dropdown
 
-Este campo te permite agregar una lista desplegable para seleccionar sólo una opción.
+This field allows you to add a drop-down list to select only one option.
 
 ### Radio
 
-Este campo te permite agregar una lista fija de elementos para seleccionar sólo una opción.
+This field allows you to add a fixed list of items to select only one option.
 
-### Checkbox
+### Check box
 
-Este campo te permite agregar una lista de la cual puedes seleccionar más de una opción o dejar en blanco.
+This field allows you to add a list from which you can select more than one option or leave it blank.
 
-### Opciones Múltiples
+### Multiple choices
 
-Este campo te permite agregar un campo en el cual puedes escribir para seleccionar una opción que puede ser predeterminada o propuesta.
+This field allows you type and select an option that can be predetermined or proposed.
 
-### Booleano
+### Boolean
 
-Este campo te permite agregar una pregunta o afirmación (Verdadero/True oo Falso/False).
+This field allows you to add a question or statement (True or False).
 
-### Entero
+### Integer
 
-Este campo te permite agregar un número entero que debe ser de manera predeterminada entre los números `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+This field allows you to add an integer that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Minimum length**: Allows you to require a minimum integer value.
+- **Maximum length**: Limit a maximum integer value.
 
 ### Decimal
 
-Este campo te permite agregar un número decimal que debe estar de manera predeterminada entre los números `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+This field allows you to add a decimal number that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Minimum length**: Allows you to require a minimum decimal value.
+- **Maximum length**: Limit a maximum decimal value.
 
-### Fecha
+### Date
 
-Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que se pueden elegir, haciendo uso de las restricciones:
+Allows you to add a date picker. You can restrict the values of dates that can be chosen, using the restrictions:
 
-- **Desde**: Permite limitar la menor seleccionable.
-- **Hasta**: Permite limitar la mayor fecha seleccionable.
+- **From**: Limit the oldest selectable date.
+- **Until**: Limit the newest selectable date.
 
-### Ubicación
+### Location
 
-Te permite agregar un campo que en el que puedes seleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones políticas de la ubicación. Estas áreas de administración no son estándar y dependen de cada país. En el caso de Chile estas son: Región, Provincia, Comuna y Ciudad.
+Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand.
 
-:::warning Atención
-Para que los mapas de ubicación funcionen correctamente con la API key de Google configurada en la cuenta, la key debe tener permisos para acceder a:
+:::warning Attention
+For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
 
-* API de mapas a través de JavaScript
-* API de lugares
-* API de geocodificación
+* Maps JavaScript API
+* Places API
+* Geocoding API
 :::
 
-### Archivo
+### Asset
 
-Este campo te permite adjuntar un sólo archivo a la entrada haciendo uso del gestor de archivos.
+This field allows you to attach a single file to the entry using the file manager.
 
-### Listado de Archivos
+### Asset List
 
-Este campo te permite adjuntar múltiples archivos a la entrada haciendo uso del gestor de archivos.
+This field allows you to attach multiple files to the entry using the file manager.
 
-### Contenido (link a una)
+### Content (links to one)
 
-Este campo te permite vincular una Entrada a otra Entrada que ya se encuentre creada y publicada dentro del Espacio. Este campo cuenta con las siguientes restricciones:
+This field allows you to link an entry to another entry that is already created and published within the same space. This field has the following restrictions:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que las entradas que se puedan seleccionar como enlace, solo sean del tipo seleccionado.
+- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
-### Listado de Contenido (link a muchas)
+### Content List (links to many)
 
-Este campo te permite vincular muchas Entradas que ya se encuentren creadas dentro del Espacio a otra Entrada. Este campo cuenta con las siguientes restricciones:
+This field allows you to link many entries in the space to another entry. This field has the following restrictions:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que las entradas que se puedan seleccionar como enlace, solo sean del tipo seleccionado.
+- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
-## Propiedades
+## Settings
 
-En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es importante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
+In this tab, you can see the name of the type, along with its UID. The UID is important as it will be what the type is called from through the Liquid SDK, Javascript and API. Below you will see a button that can be in 2 states:
 
-- **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
-- **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo _click_ en este botón. 
+- **Reindex type**: Allows you to reindex the model if you encountered a problem with your public API.
+- **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
 
-::: warning Atención
-Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
+::: warning Warning
+When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
 :::
 
-::: warning Atención
-Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/platform/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+::: warning Warning
+Note that depending on the [cache settings you have in your space](/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::

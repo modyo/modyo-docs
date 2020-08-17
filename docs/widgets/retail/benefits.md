@@ -4,9 +4,9 @@ search: true
 
 # Beneficios
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/beneficios)
+[Open in new tab](https://widgets.modyo.com/retail/benefits)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/beneficios" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
+<iframe src="https://widgets.modyo.com/retail/benefits" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad             | Descripción                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -26,7 +26,7 @@ search: true
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

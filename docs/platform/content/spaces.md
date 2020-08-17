@@ -1,146 +1,144 @@
 ---
 search: true
+translate: true
 ---
 
-# Espacios
+# Spaces
 
-Un Espacio es un formato de recursos donde los miembros del equipo pueden definir distintas estructuras (tipos) de contenido, crear y publicar entradas. 
+A Space is a distinct area where team members can define different content structures (types), and create and publish content entries to use both inside or outside Modyo through their the public Modyo Content API or in the creation of a site through Modyo Channels.
 
-Todos los elementos se pueden usar dentro o fuera de **Modyo** a través de su API pública o en la creación de un sitio en Channels.
+From Modyo you can configure access to different sources so that services consuming the API can easily interpret them.
 
-Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla fácilmente.
+Spaces also allow us to organize content, for better order and easier distribution.
 
-Espacios también te permite organizar el contenido en las áreas en las que se está trabajando, para tener una mejor distribución y orden.
+When accessing the list of spaces in the Modyo Content section, each listed space indicates how many content types and total entries it contains.
 
-Al acceder a la sección de Espacios se mostrará una lista indicando el nombre del espacio y su cantidad de tipos de contenido y de entradas. 
-
-:::warning Atención
-En el índice de espacios, solo verás los espacios en los cuales eres parte del equipo de trabajo con algún rol.
+:::warning Warning
+In the Space index, you will only see the spaces in which you are part of the work team with an assigned role
 :::
 
-Esta lista se puede ordenar alfabéticamente por el nombre del espacío o por la fecha de creación del mismo, y filtrar a través de un buscador que buscará coincidencias con los nombres de los espacios existentes.
+This list can be sorted alphabetically by space name or by the date the space was created, and you can also search for spaces by name.
 
-## Crear un Espacio
+## Create a Space
 
-Para crear un espacio, se debe hacer _click_ en el botón verde en la parte superior derecha de la vista índice de espacios, y asignar el nombre y el UID que usarás.
+To create a Space, you must click on the green button in the upper right of the Spaces index view, and assign the name and the UID that you will use.
 
-Además, deberás seleccionar el idioma por defecto sobre el cual se escribirá el contenido que quieres publicar, para una mejor configuración de los caracteres.
+In addition, you must select the default language of your content which will result in a better character configuration.
 
-:::tip Tip
-Más adelante, en la configuración podrás definir otros idiomas secundarios para las entradas del espacio.
+::: tip Tip
+Later, in the configuration, you can define other secondary languages for the space.
 :::
 
-## Configurar un Espacio
+## Configure a Space
 
-En este caso, la configuración de Espacios sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
+In this case, the space configuration helps us to change the general settings, language, security, team members with access, and rules for revision and publication.
 
 <img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300">
 
 ### General
 
-En esta sección, puedes cambiar el nombre del espacio o su UID.
+Here you can change the name of a space and its UID.
 
-El UID del Espacio es muy importante ya que es el atributo con el cual accedes desde la [API pública](/platform/content/public-api-reference.html#referencia-del-api) de contenido, el [SDK de Javascript](/platform/content/public-api-reference.html#sdk-de-javascript) y el [SDK de Liquid](/platform/content/public-api-reference.html#sdk-de-liquid). 
+The UID of the space is very important. It determines how you access the space through the [public API](/platform/content/public-api-reference.html#reference-del-api), the [Javascript SDK](/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](/platform/content/public-api-reference.html#sdk-de-liquid).
 
-Ten en consideración que este atributo, aparte de ser único, no puede contener tildes, puntos ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
+Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
 
-La siguiente opción es para configurar si el autor del contenido estará visible tanto en la API pública como en el SDK de liquid. Si la opción está habilitada, entonces verás los datos del administrador que creó el contenido, y si la opción está deshabilitada, verá el autor en blanco. 
+The next option is to configure whether the author of the content will be visible in both the public API and the Liquid SDK. If the option is enabled, then you'll see the details of the administrator who created the content, and if the option is disabled, you'll see a blank author.
 
-:::warning Atención
-Ten en cuenta que al guardar esta opción, reindexarás todas las entradas del espacio, por lo que puede haber una ventana de tiempo en la que los cambios no se vean reflejados hasta que se terminen de reindexar las entradas del espacio.
+:::warning Warning
+Note that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries have finished reindexing.
 :::
 
-La última opción es para borrar el espacio. Esta opción te permite eliminar definitivamente un espacio y todo sus elementos.
+The last option is to eliminate the space. This option allows you to permanently delete a space and all its elements.
 
 :::danger Peligro
-Esta opción es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del espacio. Deberás ingresar el nombre textual del espacio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al espacio ni a sus elementos.
+This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
 :::
 
-### Localización
+### Locales
 
-Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
+Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages.
 
 <img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
 
-El idioma por defecto de un espacio se define al momento de crear el espacio y no puede ser modificado, pero en esta sección puedes añadir cuantos idiomas secundarios necesites. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
+The default language of a space is defined when first creating a space and cannot be modified, but in this section you can add as many secondary languages as needed. You just have to select one from the list, add it and save the changes. Adding a secondary language places a language selector next to the page title of any entries you edit in order to switch between entry languages.
 
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
-:::tip Tip
-Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/platform/content/public-api-reference.html#filtros), [SDK de Javascript](/platform/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/platform/content/public-api-reference.html#filtrar-entradas)
+::: tip Tip
+You can learn how to select one of the available languages of an entry in the following sections: [Public API](/platform/content/public-api-reference.html#filters), [Javascript SDK](/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/platform/content/public-api-reference.html#filter-entries)
 :::
 
-### Caché
+### Cache
 
-El caché es una herramienta que permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
+The cache is a tool that allows you to reduce the number of requests that reach the application servers, improving performance and reducing response times. In this section, you can enable the cache for the Content API of the Space, allowing the content to be cached for up to 5 minutes (300 seconds).
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
-::: warning Atención
-Debes tener en consideración que al habilitar esta opción, los cambios en tu contenido serán visibles en intervalos del tiempo que elijas en esta opción, por ejemplo, si usas 5 minutos, al publicar el contenido con título "A", y luego publicas el mismo contenido con título "A+1", por 5 minutos verás el contenido con el título "A" hasta que el caché inicial quede invalidado.
+::: warning Warning
+You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "Example", and then publishing the same content with the title "New Example", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
 :::
 
-:::tip Tip
-Para trabajar en modo desarrollo, es altamente recomendable tener esta opción deshabilitada, y solo habilitarla cuando hay que enfrentar algún escenario de alta demanda o concurrencia.
+::: tip Tip
+To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have a scenario of high demand or concurrence, with frequent, high-volume requests being made to your content in this space.
 :::
 
-### Seguridad
+### Security
 
-Modyo, como forma de transmisión segura de datos, permite habilitar CORS para que la API pueda ser accedida por cualquier microservicio en un dominio externo.
+Modyo allows CORS to be enabled as a form of secure data transmission so that the API can be accessed by any microservice in an external domain.
 
-Para ello, también es necesario especificar el dominio desde dónde será accedida la información. Existe la posibilidad de permitir todos los orígenes pero no es la opción más recomendable.
+You need to specify the domain from which the information will be accessed. It's possible to allow access to all origins but it is not usually recommended.
 
 <img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
-Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
+When CORS is enabled, the following changes occur within the API:
 
-- La configuración de URLs permitidas para acceder al contenido a nivel de espacios, permitiendo automáticamente custom domains de sites.
-- Cuando se realiza un request al API, se agrega el header ```Access-Control-Allow-Origin``` con valor request.origin a la respuesta y    ```Access-Control-Allow-Credentials' = true```, sólo si el origen pertenece a las urls/domains previamente mencionadas. En caso caso contrario no quedan configurados.
-- URLs permitidas son cacheadas a nivel de aplicación.
-- En caso de usar caché intermedio se debe considerar el origen en la clave de caché para que se maneje el caché por separado en cada origen:
+- The configuration of permitted URLs to access the content at the level of your Spaces, automatically allowing specified custom site domains.
+- When a request is made to the API, the header ```Access-Control-Allow-Origin``` with the value ```request.origin```  and ```Access-Control-Allow-Credentials'=true``` is added to the response, only if the origin belongs to the urls/domains previously mentioned. Otherwise, they are not configured.
+- Permitted URLs are cached at the application level.
+- When using an intermediate cache, the origin in the cache key must be considered so that the cache is handled separately in each source:
 
-```javascript
-Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
-Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
+``` javascript
+Varnish: sub vcl_hash {if (req.http.Origin) {hash_data (req.http.Origin); }}
+Nginx: set $ cache_key "$ http_x_forwarded_proto://$ host $ request_uri- $ http_accept- $ http_x_requested_with";
 ```
 
-#### CORS y SSL
+#### CORS and SSL
 
-Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo siguiente:
+When deciding whether to use SSL within the platform, the following should also be considered:
 
-- **SSL**: Wildcards no son permitidos.
-- **NO SSL**: Wildcards son permitidos, pero Modyo ahora debe ser secure by default.
+- SSL: Wildcards are not allowed.
+- NO SSL: Wildcards are allowed, but Modyo must be secure by default.
 
-### Revisión en Equipo (Team Review)
+### Team Review
 
-El contenido que se publica en cada una de las plataformas debe ser de buena calidad y para ello, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
+Team Review is a system to review and approve changes made to content and elements in the platform before making these changes publicly available. Modyo uses the Team Review to confirm and correct content sent through the API.
 
 <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
+For more information on how to configure this option, go to [Team Review](/platform/core/key-concepts.html).
 
-Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/platform/core/key-concepts.html)
-
-### Miembros del Equipo
+### Team members
 
 <img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
-Para conformar el grupo de trabajo, en la plataforma puedes seleccionar los miembros que trabajarán en este espacio y que tendrán acceso a la escritura, revisión y/o publicación.
+To allow access to a space, you must select the team members who will work in this Space and and have varying levels of access to writing, reviewing and/or publishing.
 
-Para ello, el Administrador que creó el espacio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
+To do this, the Content Administrator who created the space must manually assign users and their roles for each function.
 
-#### Agregar usuario ####
-Para añadir un usuario al Espacio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un usuario y asígnale un rol, luego presiona **Añadir** para que este sea parte del equipo de trabajo del espacio.
+#### Add user ####
+To add a user to the space, select the primary button **+ New** in the upper right of the view, in the modal that appears, select a user and assign a role, then press "Add" to add them to the space.
 
-#### Modificar Rol ####
-Puedes modificar el rol de alguno de los usuarios asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
+#### Modify Role ####
+You can modify the role of any of the associated users by clicking on their name. In the modal that appears, select a new role. Press **Save** to confirm the change.
 
-::: warning Atención
-Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
+::: warning Warning
+The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member's role cannot be deleted.
 :::
 
-#### Eliminar Miembros del Equipo ####
-Para eliminar a algún miembro del equipo de un espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
+#### Remove Team Members ####
+To remove a member of the team from a space, you can select them using the checkbox to the left of their name, and then clicking on the **Delete** button at the bottom of the list.
 
-::: warning Atención
-Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si existe un solo administrador, este no podrá ser borrado.
+::: warning Warning
+The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member cannot be deleted.
 :::

@@ -1,52 +1,53 @@
 ---
 search: true
+translated: true
 ---
 
 ### Customers
 
-Así como en Digital Factory puedes ver una estadística directa de los miembros del equipo, Customers permite obtener una panorámica global de lo que hacen los usuarios finales dentro de ella y del comportamiento del contenido que ha llegado a ellos.
+Similar to how the Digital Factory provides direct statistics of our team members' activities, Customers gives us a global overview of what our customers are doing in the platform, as well as the behavior of the content that reaches them.
 
-Los filtros disponibles son:
+The available filters are:
 
-- Rango de fecha
-- Target
-- Sitio
+- Date range
+- Targets
+- Site
 
-**Usuarios activos**: Conteo de todos los usuarios con dos o más registros de actividad en el periodo seleccionado.
+**Active users**: Total users with two or more activity records in the selected period.
 
-**Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertas.
+**Activity**: Corresponds to the total login count, form responses, open emails, emails notified as spam, and open notifications.
 
-**Inicios de sesión**: Corresponde al conteo de todos los inicios de sesión de usuarios.
+**Logins**: Total count of all user logins.
 
-**Registros**: Corresponde al conteo de todos los registros de usuarios.
+**Signups**: Total count of all user signups.
 
 ![Customers](/assets/img/platform/customers.png)
 
-### Actividad de usuarios
+### User activity
 
-En este gráfico verás una comparativa entre dos valores que representan acciones de usuarios en los sitios.
+In this graph we can see a comparison between two values that represent user actions within Modyo Channels.
 
-Puedes seleccionar cualquiera de estos conteos de valores para comparar:
+You can select any of these values to compare:
 
-- **Actividad**: Reúne todas las acciones a continuación.
-- **Usuarios activos**: Contempla a todos los usuarios que han realizado dos o más acciones en el periodo de tiempo especificado.
-- **Correo entregado**: Contempla el conteo de todos los correos de campañas que fueron exitosamente enviados.
-- **Correo abierto**: Corresponde al conteo de todos los correos de campañas abiertos por los usuarios.
-- **Correo notificado como spam**: Corresponde al conteo de todos los correos de campañas que fueron notificados como spam por los usuarios.
-- **Respuesta a formularios**: Corresponde al conteo de todas las respuestas a formularios de Modyo.
-- **Inicio de sesión**: Corresponde al conteo de todos los inicios de sesión de usuarios.
-- **Notificación abierta**: Corresponde al conteo de todas las aperturas de mensajes de notificación de usuarios.
+- **Activity**: Total of all activity.
+- **Active users**: Includes all users who have performed two or more actions in the specified period of time.
+- **Email delivered**: Total emails from campaigns that were successfully sent.
+- **Email opened**: Total emails opened in campaigns.
+- **Email spam report**: Total spam notifications sent by users receiving emails from your campaigns.
+- **Form response created**: Total count of all Modyo form responses.
+- **Login**: Total count of all user logins.
+- **Notification opened**: Total number of times users opened notification messages.
 
-### Campañas Recientes
+### Recent Campaigns
 
-Muestra un listado de las últimas 5 campañas de mensajería enviadas, con una razón de los mensajes abiertos versus el alcance de ese envío.
+Displays a list of the last 5 messaging campaigns sent, with total unique opens versus reach.
 
-En este listado, puedes encontrar tanto como campañas de correo como campañas de notificación.
+In this list, you can find both email and notification campaigns.
 
-### Formularios Recientes
+### Recent Forms
 
-Verás un listado de los últimos formularios creados, junto al conteo de respuestas a estos.
+You will see a list of the latest forms created, along with the total responses to each.
 
 ### Engagement
 
-Finalmente, también puedes visualizar a través de un gráfico de dona, el porcentaje de usuarios activos en el sitio (en el periodo seleccionado), comparado con el total de usuarios.
+Finally, engagement shows the percentage of active users on the site (in the selected period), compared to the total number of users, vizualized through a donut chart.

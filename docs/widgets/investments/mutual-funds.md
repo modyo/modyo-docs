@@ -2,26 +2,26 @@
 search: true
 ---
 
-# Fondos Mutuos
+# Mutual funds
 
-Modyo ofrece un widget que muestra la información de los Fondos Mutuos disponibles y las operaciones realizadas por el usuario, además de entregar la posibilidad de realizar transacciones en línea a través de la plataforma.
+Modyo offers a widget that displays information on available mutual funds and transactions made by the client, in addition to providing the ability to trade online through the platform.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-investments-mutual-funds
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/fondos-mutuos)
+[Open in new tab](https://widgets.modyo.com/investments/mutual-funds)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/mutual-funds" width="100%" frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad           | Descripción                                                                                                                                                                                                                                                                                                 |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Layout de Fondos Mutuos | Muestra el conjunto de los fondos mutuos disponibles. Presenta un listado con las operaciones en tránsito asociadas a los fondos mutuos. Muestra el conjunto de fondos mutuos en los que el cliente tiene sus inversiones y la información de mercado respectiva. Permite cancelar operaciones en tránsito. |
-| Información de Mercado  | Muestra la información esencial del fondo mutuo seleccionado. Permite Aportar o Rescatar desde el fondo/serie seleccionado.                                                                                                                                                                                 |
-| Aporte de Fondo Mutuo   | Permite realizar Aportes al fondo mutuo seleccionado, definiendo la cuenta de inversión y el monto que se desea aportar.                                                                                                                                                                                    |
-| Rescate de Fondo Mutuo  | Permite realizar Rescates de dinero desde el fondo mutuo seleccionado.                                                                                                                                                                                                                                      |
+| Feature            | Description                                                                                                                                                                                                                                                                                         |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mutual Fund Layout       | Shows all the available mutual funds. Lists the transactions currently in transit associated with each mutual fund. Shows the set of mutual funds in which clients have their investments and the respective market information. Allows the user to cancel transactions in transit. |
+| Market Information       | Displays the essential information of the selected mutual fund. Allows clients to contribute or withdraw from the selected fund/series.                                                                                                                                                             |
+| Mutual Fund Contribution | Allows clients to make contributions to the selected mutual fund, defining the investment account and the amount they wish to contribute.                                                                                                                                                           |
+| Mutual Fund Withdrawal   | Allows clients to perform money withdrawals from the selected mutual fund.                                                                                                                                                                                                                          |
 
 <script>
 
@@ -37,7 +37,7 @@ modyo-cli get modyo-widgets-investments-mutual-funds
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

@@ -2,23 +2,23 @@
 search: true
 ---
 
-# Depósitos
+# Deposits
 
-El widget de Abonos permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
+The Deposits widget allows the user to easily and quickly upload funds to their investment accounts.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-investments-deposits
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/depositos)
+[Open in new tab](https://widgets.modyo.com/investments/deposits)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/depositos" width="100%"  frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/deposits" width="100%" frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad | Descripción                                                                                                       |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Abonar        | Permite abonar fondos a una cuenta de inversión utilizando botones de pago de diferentes instituciones bancarias. |
+| Feature | Description                                                                                                      |
+| ------- | ---------------------------------------------------------------------------------------------------------------- |
+| Deposit | Allows funds to be deposited to an investment account using payment buttons from different banking institutions. |
 
 <script>
 
@@ -34,7 +34,7 @@ modyo-cli get modyo-widgets-investments-deposits
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
