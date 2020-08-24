@@ -95,7 +95,7 @@ export default {
       .ds-suggestion
         border-bottom 1px solid $borderColor
     .algolia-docsearch-suggestion--highlight
-      color #1784D8
+      color #4081E2
     .algolia-docsearch-suggestion
       border-color $borderColor
       padding 0

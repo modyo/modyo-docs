@@ -2,7 +2,7 @@
 home: true
 translated: true
 heroImage: /assets/img/team_review_2x_reduced_2.gif
-actionText: Begin
+actionText: Get started
 actionLink: /platform/
 footer: Copyright © 2008-2020 Modyo SpA
 ---
@@ -24,6 +24,6 @@ footer: Copyright © 2008-2020 Modyo SpA
     <img src='/assets/img/layout.png'/>
     <h2>Financial Widgets</h2>
     <p>Explore the Modyo Financial Widgets catalog.</p>
-    <a href="/platform/the-modyo-interface.html">Read more</a>
+    <a href="/widgets/">Read more</a>
   </div>
 </div>

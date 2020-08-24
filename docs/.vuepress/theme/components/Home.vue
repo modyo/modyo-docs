@@ -105,14 +105,14 @@ export default {
       display inline-block
       font-size 1.2rem
       color #fff
-      background #61a60e
+      background #3FB85A
       padding 0.8rem 1.6rem
       border-radius 4px
       border 0
       transition background-color .1s ease
       box-sizing border-box
       &:hover
-        background-color lighten(#61a60e, 10%)
+        background-color lighten(#3FB85A, 10%)
   .features
     border-top 0
     padding 2.5rem 0
