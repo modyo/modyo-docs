@@ -41,7 +41,7 @@ To access the list of entries of a type with the uid `type_uid` and of a space w
 If we want to filter the entries, we can do so by the following attributes: by_uuid, by_category, by_type, by_tag, by_lang. Every response contains an array of values, so it is possible to filter by one value or several, as follows:
 
 ``` liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category='news' | by_tag='tag1, tag2, tag3' %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
 {% endfor %}
