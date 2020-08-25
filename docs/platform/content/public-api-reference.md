@@ -50,7 +50,7 @@ If we want to filter the entries, we can do so by the following attributes: by_u
 The entries selection always returns an array. To access a particular entry in the array, you need to use the `first` attribute to access the first element, or filter by a single uuid:
 
 ``` liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid='entry_uuid'%}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid:'entry_uuid'%}
 {% assign entry = entries.first %}
 ```
 
