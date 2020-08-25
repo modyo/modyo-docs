@@ -251,7 +251,7 @@ Para crear un filtro, usamos el método `Filter()`
 const filters = typePost
   .Filter()
   .Before("meta.created_at", "2020-05-01")
-  .In("meta.tag", ["tag1", "tag2"]);
+  .In("meta.tags", ["tag1", "tag2"]);
 // Ahora lo ocupamos para obtener entradas con estos criterios
 const filteredEntries = typePost.getEntries(filters);
 // ahora resolvemos la promesa
@@ -687,8 +687,8 @@ En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de
 Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
 
 - Tags: consultables de dos maneras
-  - `meta.tag=tag_name`
-  - `meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name`
+  - `meta.tags=tag_name`
+  - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
 - Categories, consultable de una sola manera: `category=category_full_path` considerará categorías hijas de la consultada
 - Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
   - `.../entries?meta.created_at=1987-11-19T13:13:13`
@@ -730,7 +730,7 @@ Ejemplo:
 
 Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
 
-Los campos de metadata se referencian como: meta.attr_name (ej meta.tag)
+Los campos de metadata se referencian como: meta.attr_name (ej meta.tags)
 Los campos de las entries como: field.attr_name
 Se usa una expresiónJsonPath por ejemplo:
 
@@ -752,7 +752,7 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
 
-- `sort_by`: indicando el nombre del atributo (ej: meta.tag, o fields.name)
+- `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
 - `order`: ['asc','desc'] (opcional, asc por default)
 
 #### jQuery

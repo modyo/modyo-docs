@@ -563,8 +563,8 @@ There is a distinction at the application level between the filter types used to
 Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata.
 
 - Tags: available in two ways
-  - `meta.tag=tag_name`
-  - `meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name`
+  - `meta.tags=tag_name`
+  - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
 - Categories, which can only be specified with `category=category_full_path` also consider child categories in the response.
 - Dates of creation/update/publication/unpublishing: available using ISO-8601 specification and with the possibility of searching by ranges (lt, gt):
   - `.../entries?meta.created_at=1987-11-19T13:13:13`
@@ -606,7 +606,7 @@ Example:
 
 Using the fields parameter you can choose which parameters are returned in the document:
 
-The metadata fields are referenced as: meta.attr_name (ex meta.tag)
+The metadata fields are referenced as: meta.attr_name (ex meta.tags)
 The fields of the entries as: field.attr_name
 An example JsonPath expression:
 
@@ -628,7 +628,7 @@ Fields that search in multiple elements (checkboxes, multiple) can use the follo
 
 The order of the results must be specified with the parameters `sort_by` and `order`:
 
-- `sort_by`: indicating the name of the attribute (ex: meta.tag, or fields.name)
+- `sort_by`: indicating the name of the attribute (ex: meta.tags, or fields.name)
 - `order`: ['asc', 'desc'](optional, asc by default)
 
 #### jQuery
