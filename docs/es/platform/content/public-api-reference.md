@@ -40,7 +40,7 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio d
 Si se quiere filtrar las entradas, se hace a través de los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag : 'tag1, tag2, tag3' %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}

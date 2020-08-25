@@ -828,4 +828,10 @@ answer:
   - response
   - dynamic_target_url
   - edit_url
+notification:
+  - subject
+  - body
+  - sent_at
+  - url
+  - opened
 ```

@@ -46,7 +46,7 @@ Nuestros colores secundarios y que suelen acompañar a la marca en distintos sop
 <table>
 <tr>
 <td>
-<div class="circle" style="background-color:#1784D8;"></div> 
+<div class="circle" style="background-color:#4081E2;"></div> 
 </td>
 <td>
 <div class="circle" style="background-color:#FFFFFF; border: 2px solid #f4f4f4;"></div> 
@@ -55,7 +55,7 @@ Nuestros colores secundarios y que suelen acompañar a la marca en distintos sop
 <tr>
 <td>
 <ul>
-<li>HEX #1784D8</li>
+<li>HEX #4081E2</li>
 <li>RGB: 23 132 216</li>
 <li>CMYK: 89 39 0 15</li>
 </ul>
