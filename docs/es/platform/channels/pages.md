@@ -101,7 +101,7 @@ Si habilitas la privacidad en una página, entonces se requerirá una sesión pa
 
 #### Meta tags
 
-En esta sección podrás añadir los tags que estén disponibilizados en la sección [SEO de la configuración del sitio](/es/platform/channels/sites.html#seo), para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, pisar el valor disponible para el tag o eliminar el tag de la página. 
+En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag o eliminar el tag de la página. 
 
 :::tip Tip
 Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.

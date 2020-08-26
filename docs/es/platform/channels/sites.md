@@ -157,14 +157,14 @@ Las opciones a configurar son:
 Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado). De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags**: Te permite configurar los meta tags disponibles para luego usar en los pages. Además, te permite añadirlos a todos los pages, o simplemente disponiblizarlos para luego añadirlos a los pages que los requieran.
+- **Meta tags**: Te permite configurar meta tags para todos los pages y sus valores por defecto.
 
 :::tip Tip
 Al añadir un meta tag a todos los pages a través de la configuración de SEO del sitio, se añadirá a la versión editable de todas las páginas, de tal forma que tendrás que publicar cada página para que los nuevos meta tags tengan efecto en el sitio.
 :::
 
 :::warning Atención
-Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán habilitar los meta tags disponibles para usar en las páginas, sin embargo, los developers del sitio podrán añadir y eliminar los meta tags disponibles en las página y modificar sus valores.
+Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán añadir meta tags para todas las páginas, sin embargo, los developers del sitio podrán añadir y eliminar meta tags en las páginas y modificar sus valores página por página.
 :::
 
 ### Restricciones
