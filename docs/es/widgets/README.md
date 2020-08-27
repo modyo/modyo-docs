@@ -11,7 +11,7 @@ Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás u
 ## Inicio rápido
 
 ::: warning Recomendación
- Si nunca has usado la plataforma Modyo y/o los widgets, te recomiendo empezar por [aquí](/platform/). Ademas esta guía asume conocimientos sobre el uso de [`modyo-cli`](/platform/channels/widgets.md#modyo-cli) y de la Terminal.
+ Si nunca has usado la plataforma Modyo y/o los widgets, te recomiendo empezar por [aquí](/platform/). Ademas esta guía asume que tienes el [modyo-cli](/platform/channels/widgets.md#modyo-cli) instalado y que has leído su [documentación](/platform/channels/widgets.md#modyo-cli).
 :::
 
 ::: danger TOKEN de acceso
@@ -27,7 +27,7 @@ Para utilizar una de nuestras plantillas usaremos el comando `GET` del `modyo-cl
 modyo-cli get nombre-del-widget nombreCarpeta
 ```
 
-Por ejemplo si queremos usar la plantilla de `Crédito de Consumo` de la banca de Personas el comando seria el siguiente:
+Por ejemplo si queremos usar la plantilla de `Crédito de Consumo` de la Banca de Personas el comando seria el siguiente:
 
 ```shell
 modyo-cli get modyo-widgets-retail-consumer-loan ~/Desktop/MyLoanWidget
@@ -41,15 +41,27 @@ cd ~/Desktop/MyLoanWidget && yarn serve
 
 ### Publicar un widget
 
-Para cargar nuestro widget a la plataforma y publicarlo usaremos el comando `PUSH` del `modyo-cli`. Esto se puede hacer de manera local o usando integración continua (recomendado).
+Para cargar nuestro widget a la plataforma y publicarlo, usaremos el comando `PUSH` del `modyo-cli`. Esto se puede hacer de manera local o usando integración continua (recomendado).
 
-Antes de poder cargar y publicar un nuestro widget de manera local, debemos crear un archivo de variables de entorno `.env` en la raíz del proyecto con las siguientes variables:
+Antes de poder cargar y publicar nuestro widget de manera local, debemos crear un archivo de variables de entorno `.env` en la raíz del proyecto con las siguientes variables:
 
 ```shell
 MODYO_TOKEN=[siteToken]
 MODYO_ACCOUNT_URL=[accountUrl]
 MODYO_SITE_HOST=[siteHost]
 MODYO_WIDGET_NAME=[widgetName]
+```
+
+Con el archivo `.env` creado y los valores agregados podemos cargar el widget a nuestro sitio:
+
+```shell
+modyo-cli push
+```
+
+Una vez terminado el proceso de carga, el widget estará disponible en la sección **Widgets** de nuestro sitio esperando para ser revisado y publicado. Si queremos que el widget se publique automáticamente al terminar la carga, podemos usar la opción `--publish` del comando `PUSH`
+
+```shell
+modyo-cli push --publish
 ```
 
 ## ¿Qué es un widget?
@@ -73,51 +85,3 @@ Los widgets financieros entregan de la caja:
 - **Internacionalización y localización de textos y monedas**. Por defecto cada widget viene en inglés y español, pero tiene toda la infraestructura necesaria para personalizar los idiomas que trae o agregar más idiomas para que se adapte a la necesidad de tu negocio. Si son desplegados en Modyo, los widgets detectan el idioma configurado para el sitio
 - **Validaciones para formularios, fechas**
 - **Estilos planos para una fácil personalización** con nuestro sistema de diseño descargable en PDF [desde aquí](/assets/pdf/Widget_Modyo.pdf) que usa **Sass** y librerías populares como [Bootstrap](https://getbootstrap.com/) y [Font Awesome](https://github.com/FortAwesome/vue-fontawesome#using-brand-icons)
-
-## Comenzando
-
-Para poder comenzar a usar los widgets de este catálogo, lo primero que necesitas es tener instalado la herramienta de línea de comandos de Modyo: el `CLI`:
-
-```
-# si usas `npm`
-$ npm i -g @modyo/cli
-# si usas `yarn`
-$ yarn global add @modyo/cli #via yarn
-```
-
-Eso debería instalar la última versión estable de la herramienta a nivel global. Puedes consultar la versión del `CLI` que quedó instalada:
-
-```
-modyo-cli --version
-```
-
-Con el `modyo-cli` instalado ya puedes crear widgets y desplegarlos en un sitio Modyo.
-
-Sin embargo, para poder usar los widgets de este catálogo, necesitas tú, y tu organización, un paso extra que es obtener un token que te permitirá tener acceso a todos los widgets.
-
-:::tip Acceso a las Plantillas
-Para acceder a las plantillas de los Widgets Financieros se debe contar con un acceso válido al repositorio que se entrega como parte del acuerdo de licencia.
-:::
-
-Ahora ya podemos descargarnos un widget del catálogo usando el `cli` de Modyo:
-
-```
-# - El primer argumento (nombre del widget) es obligatorio
-# - El segundo argumento,
-#  si necesitamos descargar el widget a una carpeta con otro nombre,
-#  es opcional
-$ modyo-cli get <nombre-del-widget-del-catalogo> <nombre-de-la-carpeta>
-```
-
-Para tu conveniencia, cada widget de esta documentación incluye la línea de comando necesaria para instalarlo.
-
-Cada widget provee varios `scripts` que te serán útiles en el desarrollo:
-
-- `(yarn|npm) serve`: levanta el widget en el ambiente local usando `vue-cli-service`
-- `(yarn|npm) build`: compila y transpila el widget aplicando una serie de optimizaciones para ser desplegado en producción. _Siempre debe ejecutarse **antes**_ de enviar el widget a Modyo.
-- `(yarn|npm) lint`: ejecuta un linter para detectar errores en el javascript
-- `(yarn|npm) test:unit`: ejecuta los test unitarios del widget
-- `(yarn|npm) i18n:report`: genera un reporte con las llaves aún no traducidas
-- `(yarn|npm) lint:style`: ejecuta un linter de estilos
-- `(yarn|npm) modyo-push`: envía el widget compilado al sitio de Modyo que tengamos configurado
-- `(yarn|npm) modyo-serve`: levanta el widget en ambiente local pero agrega los estilos y librerías javascript que encontrará el widget cuando se despliegue en el sitio.

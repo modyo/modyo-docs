@@ -358,6 +358,14 @@ module.exports = {
                 "/es/widgets/insurance-retail/detailed-view",
               ],
             },
+            {
+              title: "Quick Tips",
+              collapsable: true,
+              children: [
+                "/es/widgets/quick-tips/look-and-feel",
+                "/es/widgets/quick-tips/i18n"
+              ]
+            },
             /*{
               title: "Onboarding",
               collapsable: true,
