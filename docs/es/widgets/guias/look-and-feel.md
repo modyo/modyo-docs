@@ -125,3 +125,25 @@ new Vue({
 ::: warning Importante
 El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los estilos!
 :::
+
+## Estilos de componentes
+
+Algunos de los componentes de los widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del widget.
+
+```html{5}
+<template>...</template>
+
+<script>...</script>
+
+<style lang="scss" scoped>
+.consumer-loan-months-selector {
+  .card {
+    border: 1px solid $primary-10;
+  }
+  .card-header {
+    padding: .75rem 1.25rem;
+  }
+}
+</style>
+
+```

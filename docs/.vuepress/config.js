@@ -359,11 +359,12 @@ module.exports = {
               ],
             },
             {
-              title: "Quick Tips",
+              title: "Guías",
               collapsable: true,
               children: [
-                "/es/widgets/quick-tips/look-and-feel",
-                "/es/widgets/quick-tips/i18n"
+                "/es/widgets/guias/look-and-feel",
+                "/es/widgets/guias/i18n",
+                "/es/widgets/guias/share-state"
               ]
             },
             /*{
