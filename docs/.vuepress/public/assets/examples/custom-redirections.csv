@@ -1,0 +1,4 @@
+source,destination,description,response code
+"test-url1","","redirect to home",301
+"some/old-path","my/new-path","new url for path",302
+"another/path?with=params","my-page",old pwa to new site",301

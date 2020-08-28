@@ -108,3 +108,7 @@ Debes tener en cuenta que para que los meta tags tengan efecto en tu página, de
 :::
 
 Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ current_layout_page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates.html#seo).
+
+:::tip Tip
+Si quieres añadir un meta tag común para todos los pages en una sola acción, dirígete a la [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
+:::

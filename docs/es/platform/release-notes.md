@@ -4,25 +4,43 @@ search: true
 
 # Notas del release
 
-### 9.1.X - Primer release planificado para el segundo trimestre del 2020.
-¿Qué esperar en esta versión?
-
-&nbsp;
+### 9.2.X - Primer release planificado para el cuarto trimestre del 2020.
 <Badge text="Core" type="core" vertical="middle"/>
-* Scheduler: Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
 * Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
-* Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
-* Nuevo modo vista previa: Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Release manager: Agrupa y acumula publicaciones de Channels.
 * Site stages: Trabaja en un ambiente seguro pre-productivo de un sitio, sin comprometer la integridad de lo que ya está publicado en él.
-* Variables globales: Reutiliza snippets entre sitios.
-* Mejoras a SEO: Personaliza los meta-tags para tus páginas desde una interfaz fácil de usar.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
+
+
+### 9.1.0 - 4 de Septiembre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* [Scheduler](es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
+* Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
+* [Nuevo modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa): Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación
+* Actualización de la versión de ElasticSearch a 7.4
+* Actualización de la versión de MySQL a la versión 5.7 (añade soporte para emojis)
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Mejoras de performance y escalabilidad en la API pública de contenidos.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* [Variables globales](/es/platform/core/key-concepts.html#variables-globales): Reutiliza snippets entre sitios.
+* [Mejoras a SEO](/es/platform/channels/pages.html#meta-tags): Personaliza los meta-tags para tus páginas desde una interfaz fácil de usar.
+* Se añade la posibilidad de importar [redirecciones personalizadas](/es/platform/channels/sites.html#redirecciones-personalizadas) del sitio.
+
+### 9.0.9 - 12 de Agosto del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Se mejora la compatibilidad con cookies de sesión para navegadores antiguos
 
 ### 9.0.8 - 15 de Junio del 2020
 &nbsp;
@@ -57,6 +75,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se añade un ejemplo al crear [vistas de contenido](/es/platform/channels/templates.html#vistas-para-contenido).
 * Se deja públicos los archivos [manifest.json y serviceworker.js](/es/platform/channels/sites.html#pwa), mientras que se fuerza privacidad de archivos [robots.txt y sitemap.xml](/es/platform/channels/sites.html#seo).
+* Mejoras a la usabilidad y conceptos de [temas](/es/platform/channels/templates.html#temas) en el template builder
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/es/platform/customers/users.html), [targets](/es/platform/customers/targets.html), [formularios](/es/platform/customers/forms.html) y [campañas](/es/platform/customers/messaging.html).

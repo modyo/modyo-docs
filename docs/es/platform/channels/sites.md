@@ -251,6 +251,16 @@ Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquin
 La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/es/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
+Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1000 redirecciones.
+
+:::warning Atención
+Las columnas requeridas para importar redirecciones son origen y destino.
+
+Puedes seleccionar un código de respuesta 301 o 302 para todos los elementos sin necesidad de tener una columna para ellos. 
+
+Junto con lo anterior, debes tener en consideración que si estás importando una redirección con un origen que ya tienes registrado, no podrás comenzar el proceso de importación y deberás modificar tu archivo CSV y eliminar la fila cuyo origen ya existe, o bien, eliminar el registro de redirecciones personalizadas del sitio cuyo origen estás intentando importar.
+:::
+
 La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 
 1. [Vistas por defecto (Home, search)](/es/platform/channels/templates.html)
