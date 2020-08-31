@@ -4,25 +4,43 @@ search: true
 
 # Release notes
 
-### 9.1.X - First release planned for the second quarter of 2020.
-What to expect in this release?
+### 9.1.X - First release planned for the fourth quarter of 2020.
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
-* Scheduler: Schedule a change in the future without the need to unpublish what is already published.
 * Administrator groups: Easily add users corresponding to different sites or spaces.
-* Modyo Lite: Access a version of Modyo that includes the Core, Content and Channels applications.
-* New preview mode: Allows you to preview content, pages, templates, widgets and navigation
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Release manager: Group and accumulate publications in Channels.
 * Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
-* Global variables: Reuse snippets between sites.
-* Improvements to SEO: Customize meta-tags for your pages from an easy-to-use interface.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
+
+### 9.1.0 - 4 de Septiembre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* [Scheduler](/platform/core/key-concepts.html#scheduled): Schedule a change in the future without the need to unpublish what is already published.
+* Modyo Lite: Access a version of Modyo that includes the Core with the Content and Channels applications.
+* [New preview mode](/platform/core/key-concepts.html#preview-mode): Allows you to preview content, pages, templates, widgets and navigation.
+* ElasticSearch version update to 7.4
+* MySQL version update to 5.7 (adds support for emojis)
+* Multiple bugs were fixed.
+* Multiple improvements to navegation and usability.
+* Multiple security improvements.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Improvements in performance and scalability of the public content API.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* [Global variables](/platform/core/key-concepts.html#global-variables): Reuse snippets between sites.
+* [Improvements to SEO](/platform/channels/pages.html#meta-tags):  Customize meta-tags for your pages from an easy-to-use interface.
+* The option to import [custom redirects](/platform/channels/sites.html#custom-redirects) for the site was added.
+
+### 9.0.9 - 12 de Agosto del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Improved support for session cookies for older browsers
 
 ### 9.0.8 - June 15, 2020
 &nbsp;
