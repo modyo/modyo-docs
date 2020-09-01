@@ -17,7 +17,7 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
-### 9.1.0 - 4 de Septiembre del 2020
+### 9.1.0 - September 4, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * [Scheduler](/platform/core/key-concepts.html#scheduled): Schedule a change in the future without the need to unpublish what is already published.
@@ -37,7 +37,7 @@ search: true
 * [Improvements to SEO](/platform/channels/pages.html#meta-tags):  Customize meta-tags for your pages from an easy-to-use interface.
 * The option to import [custom redirects](/platform/channels/sites.html#custom-redirects) for the site was added.
 
-### 9.0.9 - 12 de Agosto del 2020
+### 9.0.9 - August 12, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Improved support for session cookies for older browsers
