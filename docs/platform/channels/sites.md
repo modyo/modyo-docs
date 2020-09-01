@@ -158,14 +158,14 @@ The options listed in this section help improve your SEO across a particular cha
 The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
 :::
 
-- **Meta tags**: Allows you to set up the available meta tags to be used in the pages. In addition, you can decide to add them to all the pages, or simply to a subset of pages that require them.
+- **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
 
 :::tip Tip
 By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
 :::
 
 :::warning Warning
-Since the meta tags list is part of the site's configuration, only the site's administrators will be able to enable the meta tags available for use in the required pages. However, the site's developers will be able to add and remove the meta tags available on the pages and modify their values.
+Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
 :::
 
 ### Restrictions
@@ -241,7 +241,7 @@ This team member is different from the account-level Default Admin. A site Admin
 
 Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
-In this view you will find a table with all the redirections that currently exist on the site, where you can search by path or description.
+In this view you will find a table with all the redirects that currently exist on the site, where you can search by path or description.
 
 To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ and Destination **_URL_ fields and redirection code and then saving the changes, you will create a new redirection entry.
 
@@ -249,10 +249,20 @@ To create a new redirect, click on the **New** button in the upper right corner 
 The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
 :::
 
+In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
+
+:::warning Warning
+The required columns to import redirects are origin y destination.
+
+You can select a 301 or 302 response code for all elements without having to add an additional column.
+
+Along with the above, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
+:::
+
 The precedence of locations on Modyo sites is as follows:
 
 1. [Default views (Home, search)](/platform/channels/templates.html)
 1. [Pages](/platform/channels/pages.html)
 1. [Custom content views](/platform/channels/templates.html#content-views)
-1. Customized redirections
+1. Custom redirects
 1. [Site 404 error configuration](/platform/channels/sites.html#restrictions)
