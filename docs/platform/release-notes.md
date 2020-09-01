@@ -4,7 +4,7 @@ search: true
 
 # Release notes
 
-### 9.1.X - First release planned for the fourth quarter of 2020.
+### 9.2.X - First release planned for the fourth quarter of 2020.
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Administrator groups: Easily add users corresponding to different sites or spaces.
