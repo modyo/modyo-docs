@@ -362,9 +362,9 @@ module.exports = {
               title: "Guías",
               collapsable: true,
               children: [
-                "/es/widgets/guias/look-and-feel",
-                "/es/widgets/guias/i18n",
-                "/es/widgets/guias/share-state"
+                "/es/widgets/guides/look-and-feel",
+                "/es/widgets/guides/i18n",
+                "/es/widgets/guides/share-state"
               ]
             },
             /*{
