@@ -752,84 +752,79 @@ side_left_three_cols_grid:
 Los drops disponibles para customers son:
 
 ```
-user:
-  - generated_password
-  - uuid
-  - email
-  - username
+- user:
+  - age
   - avatar
-  - name
-  - genders
   - birth_at
-  - profile_url
   - change_password_url
+  - custom_fields
+  - email
+  - external_access_token
+  - external_user_id
+  - female_sex_value
   - first_name
-  - last_name
+  - genders
+  - generated_password
+  - id
   - initials
-  - addresses
+  - last_name
+  - male_sex_value
+  - member_since
+  - name
+  - notifications
+  - profile_url
+  - sex
+  - target_names
   - targets
+  - undefined_sex_value
   - unread_notifications
   - unread_notifications_count
-  - notifications
-  - custom_fields
-  - card
-membership:
-  - member_name
-  - member_first_name
-  - member_last_name
-  - age
-  - birth_at
-  - email
-  - male_sex_value
-  - female_sex_value
-  - undefined_sex_value
-  - invitation_key
-  - id
-  - name
-  - genders
-  - avatar
-  - url
-  - member_since
-  - site
-  - sex
-  - targets_names
-  - targets
-  - user
-  - external_user_id
-  - external_access_token
-target:
-  - name
-  - id
-form:
-  - slug
-question:
-  - allow_alternatives
-  - alternatives
-  - label
-  - id
-  - form
-alternative:
-  - question
-  - id
-form_response:
-  - name
-  - description
-  - questions
-  - parse_answers
-  - parse_answer
-answer:
-  - text_field
-  - question
-  - alternative
-  - id
-  - type
-  - response
-  - dynamic_target_url
-  - edit_url
+  - username
+  - uuid
 notification:
   - subject
   - body
   - sent_at
   - url
   - opened
+- user_agent:
+  - agent
+  - browser
+  - browser_version
+  - initialize
+  - is_modyo_shell
+  - platform
+  - platform_version
+- user_session:
+  - email
+  - password
+- target:
+  - id
+  - name
+- form:
+  - slug
+- form_response:
+  - description
+  - name
+  - parse_answer
+  - parse_answers
+  - questions
+- question:
+  - allow_alternatives
+  - alternatives
+  - form
+  - id
+  - label
+- alternative:
+  - id
+  - question
+- answer:
+  - alternative
+  - dynamic_target_url
+  - edit_url
+  - id
+  - question
+  - response
+  - text_field
+  - type
 ```
