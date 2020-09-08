@@ -4,7 +4,7 @@ search: true
 
 # Issue Policy
 
-Simplify policy issuance processes by reducing the amount of data need by integrating with the Quotes widget. This widget preloads information quickly and allows you to customizes controls and verification checks to prevent fraud or deception in active properties.
+Simplify policy issuance processes by reducing the amount of data needed by integrating with the Quotes widget. This widget preloads information quickly and allows you to customizes controls and verification checks to prevent fraud or deception in active properties.
 
 #### Installation:
 
@@ -18,6 +18,6 @@ modyo-cli get modyo-widgets-insurance-issue-policy
 
 | Feature        | Description                                                                                                                                                                                                  |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Save           | Brokers don't always have all the data at hand, this option helps generate draft policies without losing the current policy issuance process.                                                      |
+| Save           | Brokers don't always have all the data at hand. This option helps generate draft policies without losing the current policy issuance process.                                                      |
 | Effective Date | Your broker can filter directly by Effective Date and Property type. This saves time by integrating this section with the information collected in the Quote widget. |
 | Summary        | This section presents a summary of the quote before generating it to validate coverage, deductibles, and offers the option of changing the premium percentage selected for the quote.                               |
