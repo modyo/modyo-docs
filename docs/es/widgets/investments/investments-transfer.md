@@ -4,7 +4,7 @@ search: true
 
 # Transferencia
 
-Este widget existe para que los clientes puedan transferir fondos entre sus cuentas de inversión y su cuenta corriente inscrita.
+Este Widget existe para que los clientes puedan transferir fondos entre sus cuentas de inversión y su cuenta corriente inscrita.
 
 #### Instalación:
 
@@ -17,7 +17,7 @@ modyo-cli get modyo-widgets-investments-transfer
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad | Descripción                                                                                                                                                      |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Transferir    | Permite transferir fondos entre cuentas de inversión. Permite solicitar una transferencia de fondos hacia cuentas corrientes del cliente, previamente inscritas. |
 
 <script>

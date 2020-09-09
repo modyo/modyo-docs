@@ -4,7 +4,7 @@ search: true
 
 # Documentos
 
-En este widget el usuario podrá encontrar todos los documentos que necesite con relación a sus inversiones, como cartlas, facturas electrónicas, confirmación y ejecución de órdenes y firma de contratos, además de los certificados respectivos.
+En este Widget el usuario podrá encontrar todos los documentos que necesite con relación a sus inversiones, como cartlas, facturas electrónicas, confirmación y ejecución de órdenes y firma de contratos, además de los certificados respectivos.
 
 #### Instalación:
 
@@ -17,7 +17,7 @@ modyo-cli get modyo-widgets-investments-documents
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/documentos" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                       | Descripción                                                                                                                                                                                                                                |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cartolas Patrimoniales Consolidadas | Muestra un listado con las cartolas patrimoniales disponibles.                                                                                                                                                                             |
 | Facturas                            | Muestra el listado de facturas electrónicas por las operaciones instruidas. Permite la recuperación de la factura en formato PDF, para su visualización, impresión y/o descarga.                                                           |
 | Confirmación de Órdenes             | Muestra un listado con los documentos de órdenes realizadas, disponibles en formato PDF.                                                                                                                                                   |

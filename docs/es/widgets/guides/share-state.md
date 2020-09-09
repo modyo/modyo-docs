@@ -4,7 +4,7 @@ search: true
 
 # Share state
 
-Todos los widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gestión del estado de un widget y como un almacén centralizado para todos los componentes de éste, con reglas que garantizan que el estado se puede cambiar de manera predecible. En otras palabras **Vuex** nos ayuda a compartir datos entre distintos componentes de un mismo widget.
+Todos los Widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gestión del estado de un Widget y como un almacén centralizado para todos los componentes de éste, con reglas que garantizan que el estado se puede cambiar de manera predecible. En otras palabras **Vuex** nos ayuda a compartir datos entre distintos componentes de un mismo Widget.
 
 ## La estructura de Vuex
 
@@ -39,15 +39,15 @@ Todos los widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gest
 Para saber más acerca de la implementación y uso de Vuex, recomiendo leer la [documentación](https://vuex.vuejs.org/guide/) y ver este curso gratuito: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) de [VueSchool](https://vueschool.io/)
 :::
 
-## Persistir el estado entre dos o mas widgets widgets y recargas de pagina
+## Persistir el estado entre dos o mas Widgets y recargas de pagina
 
-Los widgets del catalogo, a diferencia de una SPA (Frontend Monolith), están construidos bajo el concepto de **Micro Frontends**.
+Los Widgets del catalogo, a diferencia de una SPA (Frontend Monolith), están construidos bajo el concepto de **Micro Frontends**.
 
-La idea detrás de nuestros widgets es separar un conjunto de características o funcionalidades en piezas diferentes que son propiedad de equipos independientes. Cada equipo tiene un área de negocio o misión distinta y desarrolla sus características de principio a fin, tiene su propio repositorio git, su propio archivo package.json, etc. Como resultado, cada widget tiene un proceso de construcción independiente y un despliegue independiente (**CI**). Esto generalmente significa que cada widget tiene tiempos de desarrollo rápidos y acotados.
+La idea detrás de nuestros Widgets es separar un conjunto de características o funcionalidades en piezas diferentes que son propiedad de equipos independientes. Cada equipo tiene un área de negocio o misión distinta y desarrolla sus características de principio a fin, tiene su propio repositorio git, su propio archivo package.json, etc. Como resultado, cada Widget tiene un proceso de construcción independiente y un despliegue independiente (**CI**). Esto generalmente significa que cada Widget tiene tiempos de desarrollo rápidos y acotados.
 
-Este enfoque no te da la capacidad de comunicarte directamente entre los widgets, pero esto es ampliamente visto como una característica, no un error. Emitir eventos y recibir datos es un paradigma de diseño de widgets escalables. Los widgets, cuando sea posible, deben ser un reflejo del estado.
+Este enfoque no te da la capacidad de comunicarte directamente entre los Widgets, pero esto es ampliamente visto como una característica, no un error. Emitir eventos y recibir datos es un paradigma de diseño de Widgets escalables. Los Widgets, cuando sea posible, deben ser un reflejo del estado.
 
-Cuando sea necesario persistir datos (estado) entre widgets podemos hacer uso de los **query params** pasados por la URL (Ej. <http://mi-sitio.com/formulario?step=2&username=Jorge>) y usar una función que nos permita obtener los valores fácilmente, como por ejemplo:
+Cuando sea necesario persistir datos (estado) entre Widgets podemos hacer uso de los **query params** pasados por la URL (Ej. <http://mi-sitio.com/formulario?step=2&username=Jorge>) y usar una función que nos permita obtener los valores fácilmente, como por ejemplo:
 
 ```js
 /**
@@ -70,7 +70,7 @@ export default function (sParam) {
 }
 ```
 
-Otra alternativa para persistir datos (estado) al recargar la pagina o al cambiar de widget es utilizar **Vuex** en conjunto con **localStorage**. Cuando usar esta alternativa? Por ejemplo, tenemos a un usuario que esta completando un proceso de onboarding que consta de varios pasos y preguntas y por error recarga la pagina. Todo el avance que el usuario llevaba hasta ese momento se pierde y tiene que volver a empezar, lo que puede significar perder ese posible cliente.
+Otra alternativa para persistir datos (estado) al recargar la pagina o al cambiar de Widget es utilizar **Vuex** en conjunto con **localStorage**. Cuando usar esta alternativa? Por ejemplo, tenemos a un usuario que esta completando un proceso de onboarding que consta de varios pasos y preguntas y por error recarga la pagina. Todo el avance que el usuario llevaba hasta ese momento se pierde y tiene que volver a empezar, lo que puede significar perder ese posible cliente.
 
 Por ejemplo
 

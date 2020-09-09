@@ -4,7 +4,7 @@ search: true
 
 # Créditos Hipotecarios
 
-Este widget permite hacer una simulación de un crédito hipotecario y comenzar la solicitud del mismo con las variables que cada cliente necesite.
+Este Widget permite hacer una simulación de un crédito hipotecario y comenzar la solicitud del mismo con las variables que cada cliente necesite.
 
 ### Instalación:
 
@@ -17,7 +17,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad         | Descripción                                                                                                                                                                                                               |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Monto del Crédito     | Permite ingresar el monto en UF del crédito que el cliente quiere simular.                                                                                                                                                |
 | Pie                   | Permite ingresar el monto en UF del pie que incluirá en la solicitud.                                                                                                                                                     |
 | Tipo de vivienda      | Permite escoger el tipo de inmueble que desea adquirir con el crédito.                                                                                                                                                    |

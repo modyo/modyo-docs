@@ -9,7 +9,7 @@ search: true
 Los Widgets al estar desacoplados de la plataforma tienen la desventaja de no poder usar liquid directamente y no tenemos acceso a esos drops (aunque estamos trabajando en una solución para eso), para poder trabajar con ellos los tendremos que disponibilizar mediante javascript desde la plataforma.
 
 1. Primero creamos un nuevo snippet: **Templates(1) --> Snippets(2) --> Add a Snippet(3)**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
-![template views](/assets/img/Widgets/template_snippets.png)
+![template views](/assets/img/widgets/template_snippets.png)
 
 2. En este snippet creamos un objecto en el scope de `window` que contenga todos los drops que queremos tener disponibles en nuestro Widget. En este ejemplo el objeto se llama liquid, pero le pueden poner cualquier nombre.
 

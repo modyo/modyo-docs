@@ -16,12 +16,12 @@ modyo-cli get modyo-widgets-retail-transfer
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/transferencia" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
 
-Este widget se divide en funcionalidades para dos productos similares: Transferencia a Terceros y Transferencia entre Cuentas.
+Este Widget se divide en funcionalidades para dos productos similares: Transferencia a Terceros y Transferencia entre Cuentas.
 
 ### Transferencia entre Cuentas
 
 | Funcionalidad            | Descripción                                                                                                                                          |
-| :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Origen de transferencia  | Selecciona la cuenta corriente o vista desde la cual saldrá el monto de dinero a mover. Además, muestra el saldo disponible que se puede transferir. |
 | Destino de transferencia | Selecciona la cuenta a la cual se moverá el dinero                                                                                                   |
 | Programar transferencia  | Permite seleccionar na frecuencia de tiempo entre la cual se harán transferencias de un monto de dinero predeterminado.                              |
@@ -30,7 +30,7 @@ Este widget se divide en funcionalidades para dos productos similares: Transfere
 ### Transferencia a Terceros
 
 | Funcionalidad      | Descripción                                                                                                                                                                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cuenta de Origen   | Entrega información sobre la cuenta de la cual se realizará la transferencia, como número de cuenta y saldo disponible. Permite agendar movimientos hacia uno de los destinatarios registrados.                |
 | Cuenta de Destino  | Permite seleccionar la cuenta que recibirá la transferencia realizada por el usuario. El cliente puede seleccionar un contacto ya registrado o agregar nuevos contactos.                                       |
 | Mis Contactos      | Permite seleccionar la cuenta que recibirá la transferencia, entre las cuentas ya registradas por el cliente. Entrega un buscados para encontrar de manera ágil y rápida al destinatarios de la transferencia. |

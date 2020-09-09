@@ -4,9 +4,9 @@ search: true
 
 # Look and Feel
 
-Todos los widgets de este catalogo tienen como base un diseño plano, basado en Bootstrap, esperando ser intervenido y modificado para adaptarse a los diseños y lineamientos del cliente. Recuerden que estos widgets están pensados para ser usados como base para el producto final y no como un producto en si mismo.
+Todos los Widgets de este catalogo tienen como base un diseño plano, basado en Bootstrap, esperando ser intervenido y modificado para adaptarse a los diseños y lineamientos del cliente. Recuerden que estos Widgets están pensados para ser usados como base para el producto final y no como un producto en si mismo.
 
-Tanto para la base de estilos, asi como la grilla utilizada en los widgets, se hace uso de [Bootstrap](https://getbootstrap.com/) en su version `4.5.x`, utilizando al máximo los helpers y clases que éste incluye. De esta manera la cantidad de estilos personalizados en nuestros widgets es muy baja lo que hace que su modificación sea simple y fácil.
+Tanto para la base de estilos, asi como la grilla utilizada en los Widgets, se hace uso de [Bootstrap](https://getbootstrap.com/) en su version `4.5.x`, utilizando al máximo los helpers y clases que éste incluye. De esta manera la cantidad de estilos personalizados en nuestros Widgets es muy baja lo que hace que su modificación sea simple y fácil.
 
 ::: tip
 Para aprovechar al máximo el potencial de bootstrap usamos **SCSS** como pre-procesador de **css** lo que nos permite modificar los valores por defecto de las variables utilizadas en la compilación de bootstrap.
@@ -38,7 +38,7 @@ En la carpeta `src` del proyecto encontraremos una carpeta llamada `scss` que ti
 
 El archivo `_theme.scss` es usado para:
 
-* Estilos globales del widget
+* Estilos globales del Widget
 * Extender bootstrap usando sus mixins
 
 ```scss{2,3,8,11}
@@ -118,7 +118,7 @@ new Vue({
   store,
   i18n,
   render: (h) => h(App),
-}).$mount('#my-widget');
+}).$mount('#my-Widget');
 
 ```
 
@@ -128,7 +128,7 @@ El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los
 
 ## Estilos de componentes
 
-Algunos de los componentes de los widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del widget.
+Algunos de los componentes de los Widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del Widget.
 
 ```html{5}
 <template>...</template>
