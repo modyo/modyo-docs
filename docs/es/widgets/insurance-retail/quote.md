@@ -16,4 +16,3 @@ modyo-cli get modyo-widgets-insurance-quote
 
 | Funcionalidad | Descripción |
 | ------------- | ----------- |
-

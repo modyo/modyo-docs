@@ -4,7 +4,7 @@ search: true
 
 # Crédito de Consumo
 
-Este widget permite hacer una simulación de un crédito de consumo y comenzar la solicitud del mismo con las variables que cada cliente necesite.
+Este Widget permite hacer una simulación de un crédito de consumo y comenzar la solicitud del mismo con las variables que cada cliente necesite.
 
 #### Instalación:
 
@@ -17,7 +17,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/credito-de-consumo" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad         | Descripción                                                                                                                                                                 |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Monto del Crédito     | Permite ingresar el monto del crédito en pesos que el cliente quiere simular.                                                                                               |
 | Cuotas                | Permite elegir la cantidad de cuotas en las que el cliente quiere simular el crédito de consumo.                                                                            |
 | Meses de gracia       | Permite seleccionar la cantidad de meses de gracia que el cliente desea agregar en su simulación.                                                                           |

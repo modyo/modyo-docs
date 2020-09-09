@@ -24,5 +24,5 @@ footer: Copyright © 2008-2020 Modyo SpA
     <h2>Widgets Financieros</h2>
     <p>Explora el catálogo de Widgets Financieros de Modyo.</p>
     <a href="/es/widgets/">Leer más</a>
-  </div>  
+  </div>
 </div>

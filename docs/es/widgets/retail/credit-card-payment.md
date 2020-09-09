@@ -4,7 +4,7 @@ search: true
 
 # Pagos de Tarjeta de Crédito
 
-La plataforma ofrece un widget de pago de tarjeta de crédito, con tal de que el cliente pueda realizar la transacción directamente desde su portal de pagos.
+La plataforma ofrece un Widget de pago de tarjeta de crédito, con tal de que el cliente pueda realizar la transacción directamente desde su portal de pagos.
 
 ### Instalación:
 
@@ -19,7 +19,7 @@ modyo-cli get modyo-widgets-retail-credit-card-payment
 Para realizar la transacción, el cliente verá predeterminadamente:
 
 | Funcionalidad                          | Descripción                                                                                                              |
-| :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
+|:---------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|
 | Tarjeta de crédito a pagar             | Presenta la tarjeta de crédito en la cual se realizará la transacción                                                    |
 | Deuda de pago nacional                 | Presenta el monto total que se ha utilizado en el cupo nacional de la tarjeta, incluyendo lo que no está facturado.      |
 | Deuda de pago internacional            | Presenta el monto total que se ha utilizado en el cupo internacional de la tarjeta, incluyendo lo que no está facturado. |

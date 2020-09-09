@@ -306,7 +306,13 @@ module.exports = {
             {
               title: "Catálogo",
               collapsable: false,
-              children: [["/es/widgets/", "Introducción"]],
+              children: [
+                ["/es/widgets/", "Introducción"],
+                "/es/widgets/guides/look-and-feel",
+                "/es/widgets/guides/i18n",
+                "/es/widgets/guides/share-state",
+                "/es/widgets/guides/liquid-variables"
+              ],
             },
             {
               title: "Personas",
@@ -358,6 +364,16 @@ module.exports = {
                 "/es/widgets/insurance-retail/detailed-view",
               ],
             },
+            /* {
+              title: "Guías",
+              collapsable: true,
+              children: [
+                "/es/widgets/guides/look-and-feel",
+                "/es/widgets/guides/i18n",
+                "/es/widgets/guides/share-state",
+                "/es/widgets/guides/liquid-variables"
+              ]
+            }, */
             /*{
               title: "Onboarding",
               collapsable: true,
