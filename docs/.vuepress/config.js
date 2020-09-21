@@ -311,7 +311,8 @@ module.exports = {
                 "/es/widgets/guides/look-and-feel",
                 "/es/widgets/guides/i18n",
                 "/es/widgets/guides/share-state",
-                "/es/widgets/guides/liquid-variables"
+                "/es/widgets/guides/liquid-variables",
+                "/es/widgets/guides/ci-cd"
               ],
             },
             {
