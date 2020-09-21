@@ -25,6 +25,20 @@ Después de ello, puedes verlo en modo "Habilitado", lo que significa que está 
 En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
 :::
 
+## Revisión y publicación conjunta
+
+Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista. 
+
+Si quieres publicar múltiples elementos en un solo paso, solo debes marcarlos en el listado y luego presionar el botón para publicar.
+
+:::warning Atención
+En el listado aparecerán todos los elementos que tienen cambios pendientes por publicar, por lo que si algún elemento no aparece en el listado, es muy probable que aún no tenga cambios por publicar. 
+
+Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados. 
+
+En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar aprobación" permitiendo que el elemento pase directamente a la vista de publicación.
+:::
+
 ## Configuración de un Sitio
 
 La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.

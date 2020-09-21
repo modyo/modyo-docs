@@ -38,10 +38,10 @@ Las opciones disponibles son:
 - **Número de aprobaciones**: Determina cuántos usuarios deben aprobar el elemento para que esté en condiciones de ser publicado (cambiará su estado de "Esperando revisión" a "Aprobado").
 - **Restringir la selección de revisores**: Por defecto, cualquier usuario con los permisos necesarios podrá aprobar los elementos que están esperando revisión. Habilitando esta opción, sólo aquellos escogidos por el editor podrán hacerlo.
 
-
 :::tip Tip
 Si bien la aprobación se encuentra limitada, cualquier usuario con permisos puede hacer comentarios sobre el elemento.
 :::
+
 - **Forzar revisión**: Esta opción permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda pasar al estado "Aprobado". Esto es independiente del número de aprobaciones configurado anteriormente, es decir, aunque un elemento tenga la cantidad de aprobaciones necesarias, seguirá en estado "Esperando aprobación" si ningún usuario de la lista lo ha aprobado.
 
 - **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados.
@@ -64,12 +64,12 @@ Los usuarios con el rol más bajo, pueden enviar a revisión y comentar los elem
 
 Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los elementos en revisión y una vez que estos estén aprobados, pueden publicarlos mediante el flujo de revisión en equipo.
 
-Los usuarios con el nivel más alto, además de realizar todo lo anterior, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar publicación" para publicar inmediatamente un elemento.
+Los usuarios con el nivel más alto, además de realizar todo lo anterior, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar aprobación" para publicar un elemento sin necesidad de cumplir con las restricciones de la revisión en equipo.
 
 ::: warning Atención
 Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo.
 
-Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar publicación".
+Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar aprobación" que les permitirá ver el elemento en la vista de publicación.
 
 Esta opción existe porque hay ocasiones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
 :::
@@ -149,6 +149,12 @@ Modyo solo permite tener una versión programada de cada elemento, por lo que si
 :::
 
 Junto con la programación de publicación, puedes programar una despublicación. Llegado el momento, la versión que esté publicada pasará a ser un respaldo, dejando el elemento en cuestión sin una versión  publicada.
+
+Hay elementos (home, navegación y templates) que no pueden ser despublicados, y al publicarlos y programar una despublicación en conjunto con otros elementos, esta última no tendrá efecto sobre estos elementos en específico.
+
+#### Aprobado
+
+Este estado aparece cuando se habilita la revisión en equipo y significa que un elemento en este estado está listo para ser publicado. Cualquier cambio que se le haga a un elemento en este estado, llevará al elemento a un estado editable y deberá pasar nuevamente por el proceso de revisión para poder ser publicado.
 
 ### Acciones para el versionado
 
