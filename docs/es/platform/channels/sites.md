@@ -16,6 +16,7 @@ Al entrar, puedes ver que existen 4 estados:
 - **Oculto**: Sitios creados y habilitados que no aparecen en el listado de sitios del perfil de los usuarios. Sólo se pueden acceder si se cuenta con la URL del sitio.
 - **Desarrollo**: Sitios disponibles sólo para administradores de Modyo. Los usuarios que no tengan permisos de administrador no podrán ver estos sitios.
 - **Deshabilitado**: Sitios a los que no se puede acceder.
+- **Copiar**: Crea una copia del sitio y todos los elementos publicados del mismo.
 
 Para crear un sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
 
