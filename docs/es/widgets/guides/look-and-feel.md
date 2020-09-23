@@ -128,7 +128,7 @@ El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los
 
 ## Estilos de componentes
 
-Algunos de los componentes de los Widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del Widget.
+Algunos de los componentes de los Widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del Widget utilizando el atributo `scoped`.
 
 ```html{5}
 <template>...</template>
@@ -145,5 +145,84 @@ Algunos de los componentes de los Widgets tienen estilos propios y estos se escr
   }
 }
 </style>
-
 ```
+
+## PurgeCSS
+
+Cuando estás construyendo un Widget con Bootstrap (u otro framework de estilos) sólo usarás un pequeño conjunto de éste, y se incluirán muchos estilos CSS no utilizados. Aquí es donde entra en juego **PurgeCSS**. PurgeCSS analiza tu contenido y tus archivos CSS. Luego hace coincidir los selectores utilizados en tus archivos con los de tus archivos de contenido y elimina los selectores no utilizados de tu CSS, lo que da como resultado archivos CSS más pequeños.
+
+Los Widgets utilizan [PurgeCSS](https://purgecss.com/) en conjunto con [PostCSS](https://postcss.org/) como parte del flujo de desarrollo. De esta manera logramos quitar esos **bytes** extra que no necesitamos y optimizamos nuestros Widgets. ¡Excelente!
+
+::: danger PROBLEMA!
+¿Qué pasa con los estilos **NO** declarados en el contenido, pero qué **SÍ** son usados en el Widget?
+:::
+
+A veces nos podemos encontrar con algunos problemas de estilos, por ejemplo  cuando usamos el componente modal de Bootstrap y no se carga el estilo del `modal-backdrop` ya que este elemento se crea de manera dinámica al abrir el modal; ó cuando usamos librerías de componentes externos en nuestros Widgets donde los estilos de ese componente no se han cargado y no están en el sitio. Esto pasa porque **PurgeCSS** no sabe donde leer el contenido de el componente externo.
+
+Para incluir los estilos que **PurgeCSS** ha eliminado pero que necesitamos en el sitio tenemos que declararlos en un archivo de configuración de **PostCSS**. Este archivo se encuentra en la raíz del Widget y se llama **postcss.config.js**
+
+```js
+const PURGE_CSS = require('@fullhuman/postcss-purgecss');
+
+const IN_PRODUCTION = process.env.NODE_ENV === 'production';
+const plugins = {};
+
+if (IN_PRODUCTION) {
+  plugins.purgecss = PURGE_CSS({
+    content: ['./public/**/*.html', './src/**/*.vue'],
+    defaultExtractor(content) {
+      const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '');
+      return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
+    },
+    whitelist: [],
+    whitelistPatterns: [
+      /-(leave|enter|appear)(|-(to|from|active))$/,
+      /^(?!(|.*?:)cursor-move).+-move$/,
+      /^router-link(|-exact)-active$/,
+      /data-v-.*/,
+      /svg.*/,
+      /fa.*/,
+      /^d-*/,
+    ],
+  });
+}
+// ...
+```
+
+En este archivo podemos obligar a **PurgeCSS** a incluir los estilos de 3 maneras distintas:
+
+* Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capas de leer el contenido y determinar que estilos debe incluir.
+
+    ```js{6}
+    // ...
+    plugins.purgecss = PURGE_CSS({
+      content: [
+        './public/**/*.html',
+        './src/**/*.vue',
+        'node_modules/@modyo/financial-commons/src/components/MStepper/**/*.vue'
+      ]
+      defaultExtractor(content) { // block code }
+    // ...
+    ```
+
+* Agregar palabras claves a la propiedad `whitelist`
+
+    ```js{2}
+    ...
+      defaultExtractor(content) { // block code }
+      whitelist: ['modal-backdrop', 'fade', 'show'],
+    ...
+    ```
+
+* Agregar patrones regex a la propiedad `whitelistPatterns`
+
+    ```js{6}
+    // ...
+      defaultExtractor(content) { // block code }
+      whitelist: ['fade', 'show'],
+      whitelistPatterns: [
+      // ...
+        /modal-.*/
+      ]
+    // ...
+    ```
