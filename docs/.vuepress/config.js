@@ -312,7 +312,8 @@ module.exports = {
                 "/es/widgets/guides/i18n",
                 "/es/widgets/guides/share-state",
                 "/es/widgets/guides/liquid-variables",
-                "/es/widgets/guides/ci-cd"
+                "/es/widgets/guides/ci-cd",
+                "/es/widgets/guides/repository-pattern"
               ],
             },
             {
