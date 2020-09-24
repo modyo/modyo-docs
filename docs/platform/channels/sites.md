@@ -17,6 +17,7 @@ Upon entering, you will see that there are 4 statuses:
 - Hidden (Sites created that only users with access can see)
 - Development (Sites only accessible by backend users who are working on them)
 - Disabled (Sites that have been disabled)
+- Copy: creates a copy of the site and all the published elements of it.
 
 To create a site, you just have to click on the **New** tab, which will allow you to designate the name and host, and then select a base template for the site's appearance and structure.
 

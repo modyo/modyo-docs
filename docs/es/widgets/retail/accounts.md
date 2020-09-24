@@ -4,7 +4,7 @@ search: true
 
 # Cuentas
 
-Con este widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y ver en detalle cada transacción realizada durante determinados períodos de tiempo.
+Con este Widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y ver en detalle cada transacción realizada durante determinados períodos de tiempo.
 
 #### Instalación:
 
@@ -19,7 +19,7 @@ modyo-cli get modyo-widgets-retail-accounts
 #### Cuenta Corriente
 
 | Funcionalidad               | Descripción                                                                                                                                                                                                                                          |
-| :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Resumen de Cuenta Corriente | Presenta el estado de la cuenta y si corresponde, el estado de la línea de crédito asociada.<br><br> La información específica se presenta de manera numérica y gráfica.                                                                             |
 | Consulta de Movimientos     | Presenta los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha.<br><br> Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.                                           |
 | Cartolas Históricas         | Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha.<br><br> Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados. |
@@ -27,7 +27,7 @@ modyo-cli get modyo-widgets-retail-accounts
 #### Cuenta Vista
 
 | Funcionalidad           | Descripción                                                                                                                                                                                                                                                     |
-| :---------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Resumen de Cuenta Vista | Muestra el estado de la cuenta similar a lo que se presenta para una cuenta corriente, con la diferencia que para una cuenta vista no existen cheques ni línea de crédito asociada. <br><br>La información específica se presenta de manera numérica y tabular. |
 | Consulta de Movimientos | Muestra los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha. <br><br>Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.                                                       |
 | Cartolas Históricas     | Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha. <br><br>Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.            |
@@ -35,7 +35,7 @@ modyo-cli get modyo-widgets-retail-accounts
 #### Línea de Crédito
 
 | Funcionalidad           | Descripción                                                                                                                                                                                                                                  |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consulta de Movimientos | Presenta los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha. Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.                                           |
 | Cartolas Históricas     | Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha. Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados. |
 | Pago Línea de Crédito   | Permite disponer la funcionalidad de pago de una línea de crédito, utilizando los fondos disponibles de una cuenta corriente. El cliente puede pagar su deuda de manera total o parcial.                                                     |

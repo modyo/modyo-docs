@@ -15,21 +15,21 @@ The default language is spanish:
 
 ```
 - docs/
-	- .vuepress/
-	- guides/ # All docs in spanish
-	- README.md # It's like an index. In this case is the home page
+ - .vuepress/
+ - guides/ # All docs in spanish
+ - README.md # It's like an index. In this case is the home page
 ```
 
 Any new language should imitate the same structure. Here we add the spanish version of the site:
 
 ```
 - docs/
-	- .vuepress/
-	- guides/
-	- README.md # It's like an index. In this case is the home page
-	- es/
-		- guides/ # all docs in spanish
-		- README.md # The home page in spanish
+ - .vuepress/
+ - guides/
+ - README.md # It's like an index. In this case is the home page
+ - es/
+  - guides/ # all docs in spanish
+  - README.md # The home page in spanish
 ```
 
 The main navigation and the sidebar are controlled by the configuration (`/docs/.vuepress/config.js`)
@@ -40,8 +40,8 @@ Any file (markdown files) follow the same structure of the file system plus the 
 
 ```
 - guides/
-	- foo/
-		- README.md
+ - foo/
+  - README.md
 ```
 
 The route should be `/guides/foo/`. If we add the same folder `foo` to the english language, should be `/en/guides/foo/`.
