@@ -6,11 +6,11 @@ search: true
 
 Una de las ventajas de trabajar con los Widgets de manera local usando el CLI de Modyo ([**modyo-cli**](/es/platform/channels/widgets.html#modyo-cli)) es que se puede hacer uso de herramientas para automatizar la revision de código (**CI**) y hacer entrega continua o despliegue continuo (**CD**)
 
-Los Widgets del catalogo, asi como los templates base para iniciar un nuevo proyecto, traen *"recetas"* de [**GitHub Actions**](https://GitHub.com/features/actions) que puedes utilizar para ejecutar algunas de las tareas mas comunes de CI/CD de manera rápida y sencilla.
+Los Widgets del catalogo, asi como los templates base para iniciar un nuevo proyecto, traen _"recetas"_ de [**GitHub Actions**](https://GitHub.com/features/actions) que puedes utilizar para ejecutar algunas de las tareas mas comunes de CI/CD de manera rápida y sencilla.
 
-Estas *"recetas"* están en el archivo **README.md** que se encuentra en la carpeta `.GitHub` del Widget.
+Estas _"recetas"_ están en el archivo **README.md** que se encuentra en la carpeta `.GitHub` del Widget.
 
-``` treeview{1,5}
+```treeview{1,5}
 ├── .GitHub/
 │   ├── pr-labeler.yml
 │   ├── release-drafter.yml
@@ -36,9 +36,9 @@ Las recetas que pueden encontrar son:
 Cada una de éstas esta documentada y explicada en el archivo **README.md**
 :::
 
-## Carga y publicación de un widget con GitHub Actions
+## Despliegue de un Widget con GitHub Actions
 
-Para poder cargar un Widget utilizando **GitHub Actions** necesitamos la *"receta"* **Build and Publish** que hace uso del comando [**PUSH**](/es/platform/channels/widgets.html#modyo-cli-push-name) del **Modyo CLI** y para eso necesitamos un **token** que de autorización para hacerlo.
+Para poder cargar un Widget utilizando **GitHub Actions** necesitamos la _"receta"_ **Build and Publish** que hace uso del comando [**PUSH**](/es/platform/channels/widgets.html#modyo-cli-push-name) del **Modyo CLI** y para eso necesitamos un **token** que de autorización para hacerlo.
 
 Para obtener un **token** primero tenemos que crear un **API Access** a nivel de la cuenta dueña del sitio. Vamos a **Settings (1) --> API access (2) --> Nuevo API access (3) --> Crear (4)**.
 
@@ -47,7 +47,7 @@ Para obtener un **token** primero tenemos que crear un **API Access** a nivel de
 Después de crear el API access tenemos que generar un token para el usuario que va a cargar el Widget.
 
 ::: tip
- Recomendamos crear un nuevo usuario que tenga permisos y el token para cargar y publicar Widgets desde un servicio de CI/CD.
+Recomendamos crear un nuevo usuario que tenga permisos y el token para cargar y publicar Widgets desde un servicio de CI/CD.
 :::
 
 **Nuevamente a nivel de cuenta:**

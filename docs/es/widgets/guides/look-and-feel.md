@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Look and Feel
+# Personalización de estilos
 
 Todos los Widgets de este catalogo tienen como base un diseño plano, basado en Bootstrap, esperando ser intervenido y modificado para adaptarse a los diseños y lineamientos del cliente. Recuerden que estos Widgets están pensados para ser usados como base para el producto final y no como un producto en si mismo.
 
@@ -20,11 +20,11 @@ Para aprovechar al máximo el potencial de bootstrap usamos **SCSS** como pre-pr
 </div>
 ```
 
-## Estructura de archivos y carga de los estilos
+## Estructura de archivos y carga de estilos
 
 En la carpeta `src` del proyecto encontraremos una carpeta llamada `scss` que tiene la siguiente estructura:
 
-``` treeview{4-6}
+```treeview{4-6}
 ├── src/
 │   ├── ...
 │   ├── scss/
@@ -38,8 +38,8 @@ En la carpeta `src` del proyecto encontraremos una carpeta llamada `scss` que ti
 
 El archivo `_theme.scss` es usado para:
 
-* Estilos globales del Widget
-* Extender bootstrap usando sus mixins
+- Estilos globales del Widget
+- Extender bootstrap usando sus mixins
 
 ```scss{2,3,8,11}
 // Ejemplo: usamos el mixin bg-variant para crear mas colores de fondo
@@ -51,7 +51,7 @@ El archivo `_theme.scss` es usado para:
   @include button-variant($tertiary, $tertiary);
 }
 .btn-outline-tertiary {
-  @include button-outline-variant($tertiary, $white, $primary-80, $primary-80 );
+  @include button-outline-variant($tertiary, $white, $primary-80, $primary-80);
   color: $secondary-100;
 }
 ```
@@ -70,9 +70,9 @@ Antes
 // ...
 $light: $secondary-10;
 // ...
-$border-width : 1px;
-$border-color : $primary-10;
-$border-radius: .35rem;
+$border-width: 1px;
+$border-color: $primary-10;
+$border-radius: 0.35rem;
 //...
 ```
 
@@ -84,8 +84,8 @@ Después
 // ...
 $light: lightblue;
 // ...
-$border-width : 2px;
-$border-color : $secondary;
+$border-width: 2px;
+$border-color: $secondary;
 $border-radius: 1.35rem;
 //...
 ```
@@ -109,17 +109,16 @@ El orden es importante, las **variables** siempre van antes de importar bootstra
 Éste archivo **scss** se importa en el archivo `main.js` del proyecto.
 
 ```js{4}
-import Vue from 'vue';
+import Vue from "vue";
 //...
-import 'bootstrap'; // solo importa el javascript, no los estilos
-import './scss/custom.scss';
+import "bootstrap"; // solo importa el javascript, no los estilos
+import "./scss/custom.scss";
 //...
 new Vue({
   store,
   i18n,
   render: (h) => h(App),
-}).$mount('#my-Widget');
-
+}).$mount("#my-Widget");
 ```
 
 ::: warning Importante
@@ -133,17 +132,19 @@ Algunos de los componentes de los Widgets tienen estilos propios y estos se escr
 ```html{5}
 <template>...</template>
 
-<script>...</script>
+<script>
+  ...
+</script>
 
 <style lang="scss" scoped>
-.consumer-loan-months-selector {
-  .card {
-    border: 1px solid $primary-10;
+  .consumer-loan-months-selector {
+    .card {
+      border: 1px solid $primary-10;
+    }
+    .card-header {
+      padding: 0.75rem 1.25rem;
+    }
   }
-  .card-header {
-    padding: .75rem 1.25rem;
-  }
-}
 </style>
 ```
 
@@ -157,22 +158,28 @@ Los Widgets utilizan [PurgeCSS](https://purgecss.com/) en conjunto con [PostCSS]
 ¿Qué pasa con los estilos **NO** declarados en el contenido, pero qué **SÍ** son usados en el Widget?
 :::
 
-A veces nos podemos encontrar con algunos problemas de estilos, por ejemplo  cuando usamos el componente modal de Bootstrap y no se carga el estilo del `modal-backdrop` ya que este elemento se crea de manera dinámica al abrir el modal; ó cuando usamos librerías de componentes externos en nuestros Widgets donde los estilos de ese componente no se han cargado y no están en el sitio. Esto pasa porque **PurgeCSS** no sabe donde leer el contenido de el componente externo.
+A veces nos podemos encontrar con algunos problemas de estilos, por ejemplo cuando usamos el componente modal de Bootstrap y no se carga el estilo del `modal-backdrop` ya que este elemento se crea de manera dinámica al abrir el modal; ó cuando usamos librerías de componentes externos en nuestros Widgets donde los estilos de ese componente no se han cargado y no están en el sitio. Esto pasa porque **PurgeCSS** no sabe donde leer el contenido de el componente externo.
 
 Para incluir los estilos que **PurgeCSS** ha eliminado pero que necesitamos en el sitio tenemos que declararlos en un archivo de configuración de **PostCSS**. Este archivo se encuentra en la raíz del Widget y se llama **postcss.config.js**
 
 ```js
-const PURGE_CSS = require('@fullhuman/postcss-purgecss');
+const PURGE_CSS = require("@fullhuman/postcss-purgecss");
 
-const IN_PRODUCTION = process.env.NODE_ENV === 'production';
+const IN_PRODUCTION = process.env.NODE_ENV === "production";
 const plugins = {};
 
 if (IN_PRODUCTION) {
   plugins.purgecss = PURGE_CSS({
-    content: ['./public/**/*.html', './src/**/*.vue'],
+    content: ["./public/**/*.html", "./src/**/*.vue"],
     defaultExtractor(content) {
-      const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '');
-      return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
+      const contentWithoutStyleBlocks = content.replace(
+        /<style[^]+?<\/style>/gi,
+        ""
+      );
+      return (
+        contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) ||
+        []
+      );
     },
     whitelist: [],
     whitelistPatterns: [
@@ -191,38 +198,38 @@ if (IN_PRODUCTION) {
 
 En este archivo podemos obligar a **PurgeCSS** a incluir los estilos de 3 maneras distintas:
 
-* Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capas de leer el contenido y determinar que estilos debe incluir.
+- Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capas de leer el contenido y determinar que estilos debe incluir.
 
-    ```js{6}
+  ```js{6}
+  // ...
+  plugins.purgecss = PURGE_CSS({
+    content: [
+      './public/**/*.html',
+      './src/**/*.vue',
+      'node_modules/@modyo/financial-commons/src/components/MStepper/**/*.vue'
+    ]
+    defaultExtractor(content) { // block code }
+  // ...
+  ```
+
+- Agregar palabras claves a la propiedad `whitelist`
+
+  ```js{2}
+  ...
+    defaultExtractor(content) { // block code }
+    whitelist: ['modal-backdrop', 'fade', 'show'],
+  ...
+  ```
+
+- Agregar patrones regex a la propiedad `whitelistPatterns`
+
+  ```js{6}
+  // ...
+    defaultExtractor(content) { // block code }
+    whitelist: ['fade', 'show'],
+    whitelistPatterns: [
     // ...
-    plugins.purgecss = PURGE_CSS({
-      content: [
-        './public/**/*.html',
-        './src/**/*.vue',
-        'node_modules/@modyo/financial-commons/src/components/MStepper/**/*.vue'
-      ]
-      defaultExtractor(content) { // block code }
-    // ...
-    ```
-
-* Agregar palabras claves a la propiedad `whitelist`
-
-    ```js{2}
-    ...
-      defaultExtractor(content) { // block code }
-      whitelist: ['modal-backdrop', 'fade', 'show'],
-    ...
-    ```
-
-* Agregar patrones regex a la propiedad `whitelistPatterns`
-
-    ```js{6}
-    // ...
-      defaultExtractor(content) { // block code }
-      whitelist: ['fade', 'show'],
-      whitelistPatterns: [
-      // ...
-        /modal-.*/
-      ]
-    // ...
-    ```
+      /modal-.*/
+    ]
+  // ...
+  ```
