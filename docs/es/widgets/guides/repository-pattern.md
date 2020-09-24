@@ -36,133 +36,133 @@ Para consumir datos con Vue.js usando el patrón de diseño de repositorio que n
 
 1. Crear una carpeta "repositories" dentro de la carpeta `src` del Widget.
 
-    ```sh
-    cd src && mkdir repositories
-    ```
+   ```sh
+   cd src && mkdir repositories
+   ```
 
-2. Crear una carpeta "clients" (Podría tener cualquier nombre, pero se recomienda y usa *clients*)
+2. Crear una carpeta "clients" (Podría tener cualquier nombre, pero se recomienda y usa _clients_)
 
-    Crearé una carpeta de "clients" dentro de la carpeta "repositories", básicamente lo que estará dentro de esta carpeta son los diferentes Clientes HTTP que podrías querer usar, por ejemplo, si quieres usar **ModyoSDK**, Axios, Vue-resource etc.
+   Crearé una carpeta de "clients" dentro de la carpeta "repositories", básicamente lo que estará dentro de esta carpeta son los diferentes Clientes HTTP que podrías querer usar, por ejemplo, si quieres usar **ModyoSDK**, Axios, Vue-resource etc.
 
-    ```sh
-    cd repositories && mkdir clients
-    ```
+   ```sh
+   cd repositories && mkdir clients
+   ```
 
 3. Crear una archivo `xxxClient.js`: Éste contiene toda la configuración de la API del cliente incluyendo todos los métodos CRUD, por ejemplo `ModyoClient.js`.
 
-    Podemos crear diferentes archivos para cada Cliente que utilicemos, por ejemplo, uno para Axios y otro para **ModyoSDK**
+   Podemos crear diferentes archivos para cada Cliente que utilicemos, por ejemplo, uno para Axios y otro para **ModyoSDK**
 
-    Si vas a usar varios Clientes HTTP que comparten información para la configuración de estos, puedes crear un archivo config.js
+   Si vas a usar varios Clientes HTTP que comparten información para la configuración de estos, puedes crear un archivo config.js
 
-    ```sh
-    touch ModyoClient.js && touch ApiClient.js
-    ```
+   ```sh
+   touch ModyoClient.js && touch ApiClient.js
+   ```
 
-    Para **ModyoClient** y utilizando [**ModyoSDK**](/platform/content/public-api-reference.html#sdk-de-liquid), la configuración es la siguiente:
+   Para **ModyoClient** y utilizando [**ModyoSDK**](/platform/content/public-api-reference.html#sdk-de-liquid), la configuración es la siguiente:
 
-    ```js
-    import { Client } from '@modyo/sdk';
-    import { accountUrl } from './config/modyo.config';
+   ```js
+   import { Client } from "@modyo/sdk";
+   import { accountUrl } from "./config/modyo.config";
 
-    // Get page language from modyo, change to your needs
-    const LANG = window?.liquid?.lang ?? 'es';
+   // Get page language from modyo, change to your needs
+   const LANG = window?.liquid?.lang ?? "es";
 
-    export default new Client(accountUrl, LANG);
-    ```
+   export default new Client(accountUrl, LANG);
+   ```
 
-    Para **ApiClient** y utilizando [**Axios**](https://github.com/axios/axios), la configuración es la siguiente:
+   Para **ApiClient** y utilizando [**Axios**](https://github.com/axios/axios), la configuración es la siguiente:
 
-    ```js
-    import axios from 'axios';
-    import ModyoAuth from './ModyoAuthClient';
-    import { externalApiBase } from './config/modyo.config';
+   ```js
+   import axios from "axios";
+   import ModyoAuth from "./ModyoAuthClient";
+   import { externalApiBase } from "./config/modyo.config";
 
-    const apiClient = axios.create({
-      baseURL: externalApiBase,
-    });
+   const apiClient = axios.create({
+     baseURL: externalApiBase,
+   });
 
-    const injectToken = async (config) => {
-      try {
-        const response = await ModyoAuth.get('access_token');
-        const newConfig = config;
-        newConfig.headers.authorization = `Bearer ${response.data.access_token}`;
-        return newConfig;
-      } catch (error) {
-        throw new Error('Unauthorized');
-      }
-    };
+   const injectToken = async (config) => {
+     try {
+       const response = await ModyoAuth.get("access_token");
+       const newConfig = config;
+       newConfig.headers.authorization = `Bearer ${response.data.access_token}`;
+       return newConfig;
+     } catch (error) {
+       throw new Error("Unauthorized");
+     }
+   };
 
-    apiClient.interceptors.request.use(injectToken);
+   apiClient.interceptors.request.use(injectToken);
 
-    export default apiClient;
-    ```
+   export default apiClient;
+   ```
 
 4. Crear los Repositorios
 
-      En estos archivos están las diferentes operaciones de la API que se harán dentro de una característica particular del Widget.
+   En estos archivos están las diferentes operaciones de la API que se harán dentro de una característica particular del Widget.
 
-      Por ejemplo, para consumir POSTS con el ModyoSDK creamos un archivo "PostRepository.js" dentro de la carpeta `repositories` y copiamos el siguientes código.
+   Por ejemplo, para consumir POSTS con el ModyoSDK creamos un archivo "PostRepository.js" dentro de la carpeta `repositories` y copiamos el siguientes código.
 
-      ```sh
-      touch PostRepository.js
-      ```
+   ```sh
+   touch PostRepository.js
+   ```
 
-      ```js
-      import ModyoSdk from './clients/ModyoClient';
+   ```js
+   import ModyoSdk from "./clients/ModyoClient";
 
-      import { space, type } from './clients/config/modyo.config';
+   import { space, type } from "./clients/config/modyo.config";
 
-      const content = ModyoSdk.getContentType(space, type);
-      const privateContent = ModyoSdk.getContentType(space, type, false);
+   const content = ModyoSdk.getContentType(space, type);
+   const privateContent = ModyoSdk.getContentType(space, type, false);
 
-      export default {
-        get() {
-          return content.getEntries();
-        },
-        getTop(number) {
-          const filter = content.Filter().Pagination(1, number);
-          return content.getEntries(filter);
-        },
-        getPrivate() {
-          return privateContent.getEntries();
-        },
-        getPrivateTop(number) {
-          const filter = content.Filter().Pagination(1, number);
-          return privateContent.getEntries(filter);
-        },
-        getEntry(id) {
-          return privateContent.getEntry(id);
-        },
-      };
-      ```
+   export default {
+     get() {
+       return content.getEntries();
+     },
+     getTop(number) {
+       const filter = content.Filter().Pagination(1, number);
+       return content.getEntries(filter);
+     },
+     getPrivate() {
+       return privateContent.getEntries();
+     },
+     getPrivateTop(number) {
+       const filter = content.Filter().Pagination(1, number);
+       return privateContent.getEntries(filter);
+     },
+     getEntry(id) {
+       return privateContent.getEntry(id);
+     },
+   };
+   ```
 
-      En el código de arriba definimos y exportamos todas nuestras peticiones API que necesitamos
+   En el código de arriba definimos y exportamos todas nuestras peticiones API que necesitamos
 
-      :::tip Importante
-      Debemos importar el archivo del Cliente HTTP correspondiente en todos Repositorios que lo necesiten. En este ejemplo "ModyoClient"
-      :::
+   :::tip Importante
+   Debemos importar el archivo del Cliente HTTP correspondiente en todos Repositorios que lo necesiten. En este ejemplo "ModyoClient"
+   :::
 
 5. Crear el archivo "RepositoryFactory.js"
-      Creamos un archivo dentro de la carpeta `repositories` llamado `RepositoryFactory` para exportar todos los diferentes repositorios que hemos creado, de esta manera es más fácil usarlos en cualquier parte de nuestro Widget.
+   Creamos un archivo dentro de la carpeta `repositories` llamado `RepositoryFactory` para exportar todos los diferentes repositorios que hemos creado, de esta manera es más fácil usarlos en cualquier parte de nuestro Widget.
 
-      ```sh
-      touch  RepositoryFactory.js
-      ```
+   ```sh
+   touch  RepositoryFactory.js
+   ```
 
-      En este archivo pegamos el siguiente código
+   En este archivo pegamos el siguiente código
 
-      ```js
-      import PostRepository from './PostRepository';
-      import ApiRepository from './ApiRepository';
+   ```js
+   import PostRepository from "./PostRepository";
+   import ApiRepository from "./ApiRepository";
 
-      const repositories = {
-        posts: PostRepository,
-        api: ApiRepository,
-      };
-      export default {
-        get: (name) => repositories[name],
-      };
-      ```
+   const repositories = {
+     posts: PostRepository,
+     api: ApiRepository,
+   };
+   export default {
+     get: (name) => repositories[name],
+   };
+   ```
 
 Hemos terminado de configurar nuestro Patrón de Repositorios. Si seguiste los pasos deberías tener una estructura de archivos similar a esta:
 
@@ -183,7 +183,7 @@ Hemos terminado de configurar nuestro Patrón de Repositorios. Si seguiste los p
 └── ...
 ```
 
-## ¿Cómo usamos nuestro Patron de Repositorios?
+## ¿Cómo usamos nuestro Patrón de Repositorios?
 
 Ya que estamos trabajando con Vue.js, les mostrare cómo usarlo en los componentes de Vue y en el store de Vuex.
 
@@ -211,11 +211,11 @@ import Post from "./Post";
 export default {
   name: "Posts",
   components: {
-    Post
+    Post,
   },
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
   created() {
@@ -225,8 +225,8 @@ export default {
     getPosts: async function() {
       const { data } = await PostRepository.getTop(3);
       this.posts = data;
-    }
-  }
+    },
+  },
 };
 </script>
 ```
@@ -236,22 +236,22 @@ export default {
 En el archivo "actions.js" que se encuentra en la carpeta "store" del Widget pegamos lo siguiente
 
 ```js
-import Repository from '../repositories/RepositoryFactory';
+import Repository from "../repositories/RepositoryFactory";
 
-const PostRepository = Repository.get('posts');
+const PostRepository = Repository.get("posts");
 
 export default {
   async getPosts({ commit }) {
-    commit('setLoading', true);
+    commit("setLoading", true);
     try {
       const response = await PostRepository.getTop(3);
       const posts = response;
-      commit('updatePosts', posts);
+      commit("updatePosts", posts);
       return response;
     } catch (error) {
       return error;
     } finally {
-      commit('setLoading', false);
+      commit("setLoading", false);
     }
   },
 };
