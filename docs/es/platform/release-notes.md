@@ -17,6 +17,13 @@ search: true
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
 
+### 9.1.1 - 25 de Septiembre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
 ### 9.1.0 - 4 de Septiembre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

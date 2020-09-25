@@ -17,6 +17,13 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.1 - September 25, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navegation and usability.
+* Multiple security improvements.
+
 ### 9.1.0 - September 4, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
@@ -26,7 +33,7 @@ search: true
 * ElasticSearch version update to 7.4
 * MySQL version update to 5.7 (adds support for emojis)
 * Multiple bugs were fixed.
-* Multiple improvements to navegation and usability.
+* Multiple improvements to navigation and usability.
 * Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
