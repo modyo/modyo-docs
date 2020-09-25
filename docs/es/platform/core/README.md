@@ -19,6 +19,56 @@ Modyo Platform presenta la interfaz principal de Modyo desde la cual se tienen a
 - [API de administración](/es/platform/core/api.html)
 
 
+:::warning Atención
+Modyo cuenta con host restringidos para la cuenta, por lo que no podrás usarlos como host de tu cuenta:
+* admin
+* advertisers
+* apps
+* cdn
+* cdn
+* clients
+* code
+* content
+* content
+* dev
+* docs
+* downloads
+* ftp
+* ftp
+* issues
+* mail
+* mysql
+* panel
+* payment
+* payments
+* platform
+* platform-access
+* register
+* requests
+* reviews
+* secure
+* signup
+* source
+* ssl
+* static0
+* static1
+* static2
+* static3
+* status
+* status
+* svn
+* test
+* try
+* try2
+* try3
+* w2
+* w3
+* webmail
+* welcome
+* www
+* wwww
+:::
+
 # Documentación oficial versión 8.2
 
 Si buscas documentación relacionada con la versión 8.2, puedes descargar [este archivo PDF](/assets/pdf/Modyo82Docs.pdf).

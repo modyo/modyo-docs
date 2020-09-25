@@ -95,6 +95,45 @@ En esta pestaña encontrarás opciones propiedades comunes de todos los pages:
 * Privacidad
 * Meta tags
 
+:::warning Atención
+Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>404</li>
+<li>422</li>
+<li>500</li>
+<li>admin</li>
+<li>auth</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>crossdomain</li>
+<li>dist</li>
+<li>forms</li>
+<li>javascript</li>
+<li>login</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>logout</li>
+<li>manifest</li>
+<li>ping</li>
+<li>preview</li>
+<li>profile</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>robots</li>
+<li>search</li>
+<li>serviceworker</li>
+<li>session</li>
+<li>site_logout</li>
+</ul></td>
+<td style="border: none; vertical-align: top;"><ul>
+<li>sitemap</li>
+<li>stylesheets</li>
+<li>uploads</li>
+<li>widget_manager</li>
+</ul></td>
+</tr></table>
+:::
 #### Privacidad
 
 Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Targets](/es/platform/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio. 
