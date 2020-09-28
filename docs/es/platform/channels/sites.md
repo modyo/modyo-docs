@@ -207,6 +207,74 @@ Las variables que puedes cambiar aquí son:
 - **Dominio primario**: Dirección del sitio.
 - **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
 
+:::warning Atención
+Modyo cuenta con dominios reservados que no se pueden usar como dominios personalizados de los sitios:
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>education.modyo.com</li>
+<li>elearning.modyo.com</li>
+<li>training.modyo.com</li>
+<li>capacitacion.modyo.com</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>support.modyo.com</li>
+<li>soporte.modyo.com</li>
+<li>developers.modyo.com</li>
+<li>desarrolladores.modyo.com</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>www.modyo.com</li>
+<li>es.modyo.com</li>
+<li>pt.modyo.com</li>
+<li>global.modyo.com</li>
+</ul></td>
+</tr></table>
+:::
+
+:::warning Atención
+Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás usarlos como host de tus sitios: 
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>404</li>
+<li>422</li>
+<li>500</li>
+<li>activate</li>
+<li>admin</li>
+<li>api</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>auth</li>
+<li>callback</li>
+<li>code_generators</li>
+<li>crossdomain</li>
+<li>dist</li>
+<li>login</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>logout</li>
+<li>mailing</li>
+<li>panel</li>
+<li>password</li>
+<li>profile</li>
+<li>rails</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>realms</li>
+<li>robots</li>
+<li>session</li>
+<li>signup</li>
+<li>sitemap</li>
+<li>status</li>
+</ul></td>
+<td style="border: none;  vertical-align: top;"><ul>
+<li>uploads</li>
+<li>users</li>
+<li>welcome</li>
+<li>widgets</li>
+</ul></td>
+</tr></table>
+:::
+
 ### Variables del sitio
 
 Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada, con un valor específico para el sitio en particular.
