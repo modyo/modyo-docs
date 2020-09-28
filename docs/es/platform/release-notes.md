@@ -24,6 +24,9 @@ search: true
 * Múltiples mejoras de navegación y usabilidad.
 * Múltiples mejoras de seguridad.
 
+<Badge text="Content" type="content" vertical="middle"/>
+* Se añade la posibilidad de eliminar entradas archivadas
+
 ### 9.1.0 - 4 de Septiembre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

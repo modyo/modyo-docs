@@ -24,6 +24,9 @@ search: true
 * Multiple improvements to navegation and usability.
 * Multiple security improvements.
 
+<Badge text="Content" type="content" vertical="middle"/>
+* The option to delete archived entries was added
+
 ### 9.1.0 - September 4, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
