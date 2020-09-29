@@ -27,6 +27,20 @@ After that, you can see it with the status "Enabled", which means that it is onl
 In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
+## Review and joint publication
+
+You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
+
+If you want to publish multiple elements in a single step, just mark them in the list and then press the publish button.
+
+:::warning Warning
+All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
+
+If you have team review enabled, only the items that are already approved will appear in the list.
+
+In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force approval" option, allowing the element to go directly to the published view.
+:::
+
 ## Site settings
 
 Site settings allow you to configure various options of your site, such as set up its visibility depending on whether the user is a visitor, customer with a session, a developer or an administrator. In addition, you can modify options that allow us to improve your site's appearance in search engines and the visibility of some of the content that the public has access to when they reach your pages.
@@ -192,6 +206,74 @@ The options you configure here are:
 - **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
 - **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
 - **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
+
+:::warning Warning
+Modyo has reserved domains that cannot be used as custom site domains:
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>education.modyo.com</li>
+<li>elearning.modyo.com</li>
+<li>training.modyo.com</li>
+<li>capacitacion.modyo.com</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>support.modyo.com</li>
+<li>soporte.modyo.com</li>
+<li>developers.modyo.com</li>
+<li>desarrolladores.modyo.com</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>www.modyo.com</li>
+<li>es.modyo.com</li>
+<li>pt.modyo.com</li>
+<li>global.modyo.com</li>
+</ul></td>
+</tr></table>
+:::
+
+:::warning Warning
+Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites: 
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>404</li>
+<li>422</li>
+<li>500</li>
+<li>activate</li>
+<li>admin</li>
+<li>api</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>auth</li>
+<li>callback</li>
+<li>code_generators</li>
+<li>crossdomain</li>
+<li>dist</li>
+<li>login</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>logout</li>
+<li>mailing</li>
+<li>panel</li>
+<li>password</li>
+<li>profile</li>
+<li>rails</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>realms</li>
+<li>robots</li>
+<li>session</li>
+<li>signup</li>
+<li>sitemap</li>
+<li>status</li>
+</ul></td>
+<td style="border: none;  vertical-align: top;"><ul>
+<li>uploads</li>
+<li>users</li>
+<li>welcome</li>
+<li>widgets</li>
+</ul></td>
+</tr></table>
+:::
 
 ### Site variables
 
