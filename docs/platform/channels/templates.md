@@ -218,16 +218,16 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 <meta name="keywords" content="{{ site.keywords }}" />
 <meta name="author" content="{{ site.name }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{% if current_layout_page %}
+{% if page %}
 <!--Layouts SEO -->
-{{ current_layout_page.meta_tags }}
-<meta name="description" content="{{ current_layout_page.excerpt }}" />
-<meta property="og:title" content="{{ current_layout_page.title }}" />
+{{ page.meta_tags }}
+<meta name="description" content="{{ page.excerpt }}" />
+<meta property="og:title" content="{{ page.title }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ current_layout_page.url }}" />
+<meta property="og:url" content="{{ page.url }}" />
 <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:description" content="{{ current_layout_page.excerpt }}" />
+<meta property="og:description" content="{{ page.excerpt }}" />
 {% endif %}
 {% if entry %}
 <!-- Content SEO -->
@@ -239,7 +239,7 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.excerpt }}" />
 {% endif %}
-{% unless current_layout_page or entry %}
+{% unless page or entry %}
 <!-- Default SEO -->
 <meta name="description" content="{{ site.description }}" />
 <meta property="og:title" content="{{ site.name }}" />
