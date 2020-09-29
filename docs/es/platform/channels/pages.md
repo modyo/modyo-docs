@@ -4,15 +4,15 @@ search: true
 
 # Pages
 
-Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido. 
+Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
 
 ![Índice de páginas](/assets/img/platform/page-index.png)
 
 Puedes añadir nuevas páginas haciendo _click_ en el botón **+ Nuevo** arriba a la derecha de la vista. Debes elegir un nombre, path y si es que la nueva página tendrá un padre.
 
-Para editar una página, debes hacer _click_ en el ícono de edición (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) o en el nombre de la página para ir a la vista de edición. 
+Para editar una página, debes hacer _click_ en el ícono de edición (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) o en el nombre de la página para ir a la vista de edición.
 
-En la vista de edición, encuentras una barra superior con acciones, una grilla central y una barra lateral con pestañas. 
+En la vista de edición, encuentras una barra superior con acciones, una grilla central y una barra lateral con pestañas.
 
 En la barra superior, encuentras distintas acciones e información:
 
@@ -32,7 +32,7 @@ Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión
 Si tu página está en estado "Borrador" no aparece el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
 :::
 
-**Actividad** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer _click_ en este ícono, se despliega una barra lateral que te muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos quienes esté asignados como revisores recibirán una notificación con el comentario. 
+**Actividad** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer _click_ en este ícono, se despliega una barra lateral que te muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos quienes esté asignados como revisores recibirán una notificación con el comentario.
 
 **Otras acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
@@ -55,7 +55,7 @@ Una vez terminada la acción de copiado, te dirige a la nueva página, por lo qu
 * Si una página tiene hijos, solo puedes archivarla si todos estos se encuentran archivados.
 :::
 
-**Acciones secundarias**: 
+**Acciones secundarias**:
 - Forzar publicación: Si es que eres administrador del sitio, entonces puedes ver y usar esta opción que te permite publicar la página en cualquier momento, incluso saltándote la revisión en equipo.
 - Despublicar: Si es que la página está publicada, entonces ves esta acción que te permite despublicar la página.
 
@@ -74,7 +74,7 @@ En la sección lateral derecha encontrarás tres pestañas:
 Los puedes añadir desde la primera pestaña del Page builder. Los widgets disponibles son:
 
 - **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
-- **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido. 
+- **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
 ::: warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
@@ -134,13 +134,14 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 </ul></td>
 </tr></table>
 :::
+
 #### Privacidad
 
-Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Targets](/es/platform/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio. 
+Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Targets](/es/platform/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio.
 
 #### Meta tags
 
-En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag o eliminar el tag de la página. 
+En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag o eliminar el tag de la página.
 
 :::tip Tip
 Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.

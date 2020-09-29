@@ -37,9 +37,11 @@ The available options are:
 - **Number of approvals**: Determines how many team members must approve the item before publishing (this changes the status from "In review" to "Approved").
 - **Restrict the selection of reviewers**: By default, any user with the necessary permissions will be able to approve the items that are waiting for revision.
 By enabling this option, only those chosen by the editor will be able to do so.
+
 ::: tip Tip
 While approval is limited, any user with permissions can comment on the item.
 :::
+
 - **Force review**: This option allows you to select a list of users, from which at least one approval is required for the item to be moved to the "Approved" status. This is independent of the number of approvals previously configured, i.e. even if an item has the required number of approvals, it will still be in "Waiting for approval" status if no user in the list has approved it.
 - **Require all**: This option extends the previous restriction to all selected users.
 
@@ -61,12 +63,12 @@ Users with the lowest role, can submit items for review and comment on items tha
 
 Users with the intermediate role, in addition to the above, can approve the items under review and, once they are approved, publish them through the team review flow.
 
-Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force post" action to immediately publish an item.
+Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force approve" to publish an item without the restrictions of team review.
 
 ::: warning Warning
 Site or space administrators always have the ability to skip the team review flow.
 
-For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force post."
+For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force approve" which allows you to see the element in the published view.
 
 This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
@@ -138,6 +140,10 @@ Modyo only allows you to have one scheduled version of each element, so if you s
 :::
 
 In the same way you can schedule a publication, you can schedule to unpublish an item. When the time comes, the published version will become a backup, leaving the corresponding item without a published version.
+
+#### Approved
+
+This status appears when team review is enabled and it means that an item in this status is ready to be published. Any changes made to an item in this state will bring the item to an editable state and must go through the review process again in order to be published.
 
 ### Actions for versioning
 

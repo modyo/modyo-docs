@@ -67,3 +67,54 @@ Progressive Web Applications will be the future of the Web, as they improve the 
 Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
 
 Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.
+
+## Glossary
+
+### Platform
+
+* [**CORS**](/platform/core/security.html#share-resources-across-different-domains): Cross Origin Resource Sharing - Allows sharing of resources across different domains.
+* **Account**: This is where you can access all the features that Modyo has to offer.
+* [**Team**](/platform/core/roles.html#team): All users who have access to the Modyo admin and can be assigned roles and permissions.
+* [**Integrations**](/platform/core/integration.html): This is where you can delegate or federate the authentication process of users or team members.
+* [**Password Policy**](/platform/core/security.html#password-policy): Allows you to define rules that team members must follow when creating or modifying their passwords.
+* [**Team review**](/platform/core/key-concepts.html#team-review): Revision flow of versioned items in which you can request approval from multiple team members.
+* [**Site**](/es/platform/channels/sites.html): This is the tool you can use to create digital channels within the platform. Site management includes development, design and navigation flow.
+* [**Editable version**](/platform/core/key-concepts.html#editable): It is the version that you can modify and use to preview versioned elements.
+* [**Global variables**](/platform/core/key-concepts.html#global-variables): These are elements that you can define globally and reuse in different sites.
+* [**Scheduled version**](/platform/core/key-concepts.html#scheduled): It is the version that is ready to be published at a predetermined date and time.
+* [**Published version**](/platform/core/key-concepts.html#published): It is the visible or productive version of the elements. This version can not be modified.
+* [**Backup version**](/es/platform/core/key-concepts.html#backups): It is a version that was previously published.
+* [**Webhook**](/platform/core/integration.html#webhooks): Sends information automatically to an external system when a certain event occurs.
+
+
+### Content
+
+* [**Assets**](/platform/content/asset-manager.html#about-the-interface): These are the various files that are uploaded to the platform to be used in content and sites.
+* [**Fields**](/platform/content/types.html#fields): These are the atomic units with which the different types of content are formed.
+* [**Categories**](/platform/content/entries.html#categories): They are a tree structure that allows you to order the content of your spaces.
+* [**Entry**](/platform/content/entries.html): It is a set of values associated with the different fields defined in the content type.
+* [**Space**](/platform/content/spaces.html): Resource repository where team members can define different content structures (types), create and publish entries.
+* **Tags**: Allow you to sort and filter the entries freely and without restrictions.
+* [**Content type**](/platform/content/types.html): It is a structure with fields that allows you to define the different types of content of your business.
+
+### Channels
+
+* [**Domains**](/platform/channels/sites.html#domains): Allows you to change the URL and security certificates of your site.
+* [**Meta tags**](/platform/channels/pages.html#meta-tags): Allows you to customize the meta tags for your pages and improve the way search engines index your pages.
+* [**Navigation**](/platform/channels/navigation.html): Allows you to modify the main menu of your site with an easy to use interface.
+* [**Page**](/platform/channels/pages.html): Pages are what allow you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
+* [**PWA**](/platform/channels/sites.html#pwa): Allows you to configure the serviceworker and manifest of your site to be able to use it offline.
+* [**SEO**](/platform/channels/sites.html#seo): Allows you to configure the way indexing robots see your site.
+* [**Templates**](/platform/channels/templates.html): They are the base of your site and define the basic structure of your site's pages.
+* [**Content views**](/platform/channels/templates.html#content-views): This is where your site and the content entries meet, allowing you to define a base page so that all the entries of the same type are seen under the same view.
+* [**Widget**](/platform/channels/widgets.html): A reusable feature package that contains HTML, JavaScript and CSS that can be used in different pages.
+
+### Customers
+
+* [**Campaigns**](/platform/customers/messaging.html#campaigns):  A defined communication channel with your users which allows you to reach them through emails and notifications.
+* [**Custom field**](/platform/customers/users.html#custom-fields): Allows you to add personalized attributes to the users' profile.
+* [**Filters**](/platform/customers/targets.html#filters): Basic units that allow you to build targets.
+* [**Form**](/platform/customers/forms.html): Allows you to capture data from your users on your sites.
+* [**Messaging**](/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
+* [**Target**](/platform/customers/targets.html): Allows you to add and group your users through filter groups with different conditions.
+* [**User**](/platform/customers/users.html): This is any person who accesses and registers on sites built with Modyo.

@@ -28,7 +28,9 @@ It is possible to enter the preview mode with or without a logged in user sessio
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking this icon opens a modal to compare the differences between the active published version of your templates and the editable version you are currently working on. You can also use the version selectors to compare either the editable or active published versions to older backed up versions.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking this icon takes you to the differences view in which you can compare the differences between multiple versions of your templates.
+
+By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
 ::: tip Tip
 Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved so that the most recent twenty backups can be compared, restored or used for a rollback. For more information on versioning, check out the [versioning](/platform/core/key-concepts.html#versioning) section .
@@ -50,7 +52,7 @@ Every time you publish a new version, the version that gets replaced now becomes
 - **Save**: Saves current changes in all templates.
 - **Send to review**: Changes the template status to "In review". You can continue making changes, but each change sends a notification to all assigned reviewers via email.
 - **Reject**: Returns the status to "Pending changes" and notifies reviewers that the item was rejected.
-- **Publish**: The templates can be published once the have been approved.
+- **Publish**: The templates can be published once they have been approved.
 - **Force Publish**: Admin team members have the option to forcibly publish changes made in the templates, circumventing the established reviewal process.
 
 In the main work area, there are two sections:
