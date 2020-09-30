@@ -565,7 +565,7 @@ Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the for
 - Tags: available in two ways
   - `meta.tags=tag_name`
   - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
-- Categories, which can only be specified with `category=category_full_path` also consider child categories in the response.
+- Categories, which can only be specified with `meta.category=category_full_path` also consider child categories in the response.
 - Dates of creation/update/publication/unpublishing: available using ISO-8601 specification and with the possibility of searching by ranges (lt, gt):
   - `.../entries?meta.created_at=1987-11-19T13:13:13`
   - `.../entries?meta.updated_at[lt]=1987-11-19`

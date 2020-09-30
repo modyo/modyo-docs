@@ -689,7 +689,7 @@ Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables m
 - Tags: consultables de dos maneras
   - `meta.tags=tag_name`
   - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
-- Categories, consultable de una sola manera: `category=category_full_path` considerará categorías hijas de la consultada
+- Categories, consultable de una sola manera: `meta.category=category_full_path` considerará categorías hijas de la consultada
 - Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
   - `.../entries?meta.created_at=1987-11-19T13:13:13`
   - `.../entries?meta.updated_at[lt]=1987-11-19`
