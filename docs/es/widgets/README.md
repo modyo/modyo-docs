@@ -52,13 +52,23 @@ MODYO_SITE_HOST=[siteHost]
 MODYO_WIDGET_NAME=[widgetName]
 ```
 
+Sigue [ésta](/es/widgets/guides/ci-cd.html#despliegue-de-un-widget-con-github-actions) guía para obtener un token que nos permita cargar y publicar el Widget.
+
+El **accountUrl** es el la URL de la cuenta dueña del sitio y el **siteHost** lo podemos buscar en la sección **Channels --> Sites** y revisar la columna host del listado de sitios.
+
+![Host](/assets/img/widgets/host.png)
+
 Con el archivo `.env` creado y los valores agregados podemos cargar el Widget a nuestro sitio:
 
 ```shell
 modyo-cli push
 ```
 
-Una vez terminado el proceso de carga, el Widget estará disponible en la sección **Widgets** de nuestro sitio esperando para ser revisado y publicado. Si queremos que el Widget se publique automáticamente al terminar la carga, podemos usar la opción `--publish` del comando `PUSH`
+Una vez terminado el proceso de carga, el Widget estará disponible en la sección **Widgets** de nuestro sitio esperando para ser revisado y publicado.
+
+![widgets-list](/assets/img/widgets/widgets_list.png)
+
+Si queremos que el Widget se publique automáticamente al terminar la carga, podemos usar la opción `--publish` del comando `PUSH`
 
 ```shell
 modyo-cli push --publish
