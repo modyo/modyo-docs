@@ -150,6 +150,10 @@ Modyo solo permite tener una versión programada de cada elemento, por lo que si
 
 Junto con la programación de publicación, puedes programar una despublicación. Llegado el momento, la versión que esté publicada pasará a ser un respaldo, dejando el elemento en cuestión sin una versión  publicada.
 
+:::warning Atención
+Cuando llega el momento de ejecutar las acciones programadas es posible que Modyo se demore un par de minutos en efectuar la acción. Te enviaremos un correo cuando la acción se haya completado.
+:::
+
 Hay elementos (home, navegación y templates) que no pueden ser despublicados, y al publicarlos y programar una despublicación en conjunto con otros elementos, esta última no tendrá efecto sobre estos elementos en específico.
 
 #### Aprobado
