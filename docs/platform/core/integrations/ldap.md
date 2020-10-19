@@ -12,6 +12,6 @@ In order to integrate a login with LDAP in Modyo, you will need the following in
 - **Base**: Search base, consisting of multiple objects separated by commas.
 - **UID**: Name of the field used by the LDAP service to identify users as a unique attribute.
 - **Bind DN**: Default credentials.
-- **Password
+- **Password**
 - **Method**: Authentication method with the LDAP identity service.
 - **Logo**: It is not required, but if you want it to appear next to the name of the service (for example, the logo of your company), you can upload an image in this field.

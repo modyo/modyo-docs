@@ -51,9 +51,9 @@ module.exports = {
           "/platform/": [
             {
               title: "First Steps",
+              path: "/platform/",
               collapsable: true,
               children: [
-                "/platform/",
                 "/platform/whats-new",
                 "/platform/key-concepts",
                 "/platform/versions",
@@ -62,9 +62,9 @@ module.exports = {
             },
             {
               title: "Platform",
+              path: "/platform/core/",
               collapsable: true,
               children: [
-                ["/platform/core/", "Introduction"],
                 "/platform/core/the-modyo-interface",
                 "/platform/core/key-concepts",
                 "/platform/core/roles",
@@ -72,8 +72,8 @@ module.exports = {
                 "/platform/core/api",
                 {
                   title: "Integrations",
-                  path: "/platform/core/integrations",
-                  collapsable: false,
+                  path: "/platform/core/integrations/",
+                  collapsable: true,
                   children: [
                     "/platform/core/integrations/facebook",
                     "/platform/core/integrations/google",
@@ -87,9 +87,9 @@ module.exports = {
             },
             {
               title: "Content",
+              path: "/platform/content/",
               collapsable: true,
               children: [
-                ["/platform/content/", "Introduction"],
                 "/platform/content/spaces",
                 "/platform/content/types",
                 "/platform/content/entries",
@@ -99,9 +99,9 @@ module.exports = {
             },
             {
               title: "Channels",
+              path: "/platform/channels/",
               collapsable: true,
               children: [
-                ["/platform/channels/", "Introduction"],
                 "/platform/channels/sites",
                 "/platform/channels/pages",
                 "/platform/channels/navigation",
@@ -112,9 +112,9 @@ module.exports = {
             },
             {
               title: "Customers",
+              path: "/platform/customers/",
               collapsable: true,
               children: [
-                ["/platform/customers/", "Introduction"],
                 "/platform/customers/users",
                 "/platform/customers/targets",
                 "/platform/customers/forms",
@@ -123,9 +123,9 @@ module.exports = {
             },
             {
               title: "Insights",
+              path: "/platform/insights/",
               collapsable: true,
               children: [
-                ["/platform/insights/", "Introduction"],
                 "/platform/insights/digital-factory",
                 ["/platform/insights/data-studio", "Data Studio"],
               ],
