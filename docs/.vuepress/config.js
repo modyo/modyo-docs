@@ -51,9 +51,9 @@ module.exports = {
           "/platform/": [
             {
               title: "First Steps",
+              path: "/platform/",
               collapsable: true,
               children: [
-                "/platform/",
                 "/platform/whats-new",
                 "/platform/key-concepts",
                 "/platform/versions",
@@ -62,22 +62,34 @@ module.exports = {
             },
             {
               title: "Platform",
+              path: "/platform/core/",
               collapsable: true,
               children: [
-                ["/platform/core/", "Introduction"],
                 "/platform/core/the-modyo-interface",
                 "/platform/core/key-concepts",
-                "/platform/core/integration",
                 "/platform/core/roles",
                 "/platform/core/security",
                 "/platform/core/api",
+                {
+                  title: "Integrations",
+                  path: "/platform/core/integrations/",
+                  collapsable: true,
+                  children: [
+                    "/platform/core/integrations/facebook",
+                    "/platform/core/integrations/google",
+                    "/platform/core/integrations/ldap",
+                    "/platform/core/integrations/saml",
+                    "/platform/core/integrations/oauth2",
+                    "/platform/core/integrations/oidc",
+                  ]
+                  },
               ],
             },
             {
               title: "Content",
+              path: "/platform/content/",
               collapsable: true,
               children: [
-                ["/platform/content/", "Introduction"],
                 "/platform/content/spaces",
                 "/platform/content/types",
                 "/platform/content/entries",
@@ -87,9 +99,9 @@ module.exports = {
             },
             {
               title: "Channels",
+              path: "/platform/channels/",
               collapsable: true,
               children: [
-                ["/platform/channels/", "Introduction"],
                 "/platform/channels/sites",
                 "/platform/channels/pages",
                 "/platform/channels/navigation",
@@ -100,9 +112,9 @@ module.exports = {
             },
             {
               title: "Customers",
+              path: "/platform/customers/",
               collapsable: true,
               children: [
-                ["/platform/customers/", "Introduction"],
                 "/platform/customers/users",
                 "/platform/customers/targets",
                 "/platform/customers/forms",
@@ -111,9 +123,9 @@ module.exports = {
             },
             {
               title: "Insights",
+              path: "/platform/insights/",
               collapsable: true,
               children: [
-                ["/platform/insights/", "Introduction"],
                 "/platform/insights/digital-factory",
                 ["/platform/insights/data-studio", "Data Studio"],
               ],
@@ -225,9 +237,9 @@ module.exports = {
           "/es/platform/": [
             {
               title: "Primeros Pasos",
+              path: "/es/platform/",
               collapsable: true,
               children: [
-                "/es/platform/",
                 "/es/platform/whats-new",
                 "/es/platform/key-concepts",
                 "/es/platform/versions",
@@ -244,23 +256,35 @@ module.exports = {
               ],
             },
             {
-              title: "Plataforma",
+              title: "Plataforma", 
+              path: "/es/platform/core/",
               collapsable: true,
               children: [
-                ["/es/platform/core/", "Introducción"],
                 "/es/platform/core/the-modyo-interface",
                 "/es/platform/core/key-concepts",
-                "/es/platform/core/integration",
                 "/es/platform/core/roles",
                 "/es/platform/core/security",
                 "/es/platform/core/api",
+                {
+                  title: "Integraciones",
+                  path: "/es/platform/core/integrations/",
+                  collapsable: true,
+                  children: [
+                    "/es/platform/core/integrations/facebook",
+                    "/es/platform/core/integrations/google",
+                    "/es/platform/core/integrations/ldap",
+                    "/es/platform/core/integrations/saml",
+                    "/es/platform/core/integrations/oauth2",
+                    "/es/platform/core/integrations/oidc",
+                  ]
+                  },
               ],
             },
             {
               title: "Content",
+              path: "/es/platform/content/",
               collapsable: true,
               children: [
-                ["/es/platform/content/", "Introducción"],
                 "/es/platform/content/spaces",
                 "/es/platform/content/types",
                 "/es/platform/content/entries",
@@ -270,9 +294,9 @@ module.exports = {
             },
             {
               title: "Channels",
+              path: "/es/platform/channels/",
               collapsable: true,
               children: [
-                ["/es/platform/channels/", "Introducción"],
                 "/es/platform/channels/sites",
                 "/es/platform/channels/pages",
                 "/es/platform/channels/navigation",
@@ -283,9 +307,9 @@ module.exports = {
             },
             {
               title: "Customers",
+              path: "/es/platform/customers/",
               collapsable: true,
               children: [
-                ["/es/platform/customers/", "Introducción"],
                 "/es/platform/customers/users",
                 "/es/platform/customers/targets",
                 "/es/platform/customers/forms",
@@ -294,9 +318,9 @@ module.exports = {
             },
             {
               title: "Insights",
+              path: "/es/platform/insights/",
               collapsable: true,
               children: [
-                ["/es/platform/insights/", "Introducción"],
                 "/es/platform/insights/digital-factory",
                 ["/es/platform/insights/data-studio", "Data Studio"],
               ],
