@@ -130,6 +130,13 @@ When modifying a user, you may change the list of Targets to which they belong.
 For more information, go to [Custom Fields](/platform/customers/users.html#custom-fields).
 :::
 
+### Additional options
+
+In the upper right section you will find additional options with which you can disable and delete users:
+
+* **Disable**: You can disable users and prevent them from logging in. 
+* **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
+
 ## Customer Settings
 
 In this section we can configure the interaction between users and the Modyo platform itself (outside of Channels). Some configurations are focused on the look and feel, such as color selection or email templates, while others are focused on registration, access control, and personalization. In particular, registration and access control are essential for the proper functioning of the platform, so it is important to be cautious when modifying configurations in this section.

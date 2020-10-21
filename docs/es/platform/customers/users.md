@@ -140,6 +140,13 @@ Al modificar un usuario, puede que cambie el listado de Targets a los que perten
 
 Para más información, puedes ir a [Campos Personalizados](/es/platform/customers/users.html#campos-personalizados).
 
+### Opciones adicionales
+
+En la sección superior derecha encontrarás opciones adicionales con las que podrás desactivar y eliminar usuarios:
+
+* Desactivar: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión. 
+* Eliminar: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
+
 
 ----
 
