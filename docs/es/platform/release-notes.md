@@ -16,6 +16,26 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.3 - 16 de octubre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+### 9.1.2 - 8 de octubre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade el drop `page` que considera tanto al home page como los pages personalizados
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se añade la posibilidad de utilizar plantillas en campañas de mensajería ya creadas 
+* Se añade la posibilidad de [eliminar usuarios](/es/platform/customers/users.html#opciones-adicionales)
 
 ### 9.1.1 - 25 de Septiembre del 2020
 &nbsp;
@@ -26,6 +46,9 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Se añade la posibilidad de eliminar entradas archivadas
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade la posibilidad de [copiar sitios](/es/platform/channels/sites.html) y todo su contenido publicado
 
 ### 9.1.0 - 4 de Septiembre del 2020
 &nbsp;

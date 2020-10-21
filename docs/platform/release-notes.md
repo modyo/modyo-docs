@@ -17,15 +17,40 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+
+### 9.1.3 - October 16, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+### 9.1.2 - October 8, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The drop `page` that includes the home page and custom pages was added
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* The option to use messaging tempates in already created campaigns was added
+* The option to [delete users](/platform/customers/users.html#additional-options) was added
+
 ### 9.1.1 - September 25, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs were fixed.
-* Multiple improvements to navegation and usability.
+* Multiple improvements to navigation and usability.
 * Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * The option to delete archived entries was added
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to [copy sites](/platform/channels/sites.html) and all its content was added
 
 ### 9.1.0 - September 4, 2020
 &nbsp;
