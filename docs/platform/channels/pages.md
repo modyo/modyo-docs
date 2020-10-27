@@ -134,6 +134,10 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 </tr></table>
 :::
 
+#### Child routes delegation
+
+Enable the child routes delegation to allow the full control of the page routes from the Javascript router.
+
 #### Privacy
 
 If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Targets](/platform/customers/targets.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page, or to the home page.
