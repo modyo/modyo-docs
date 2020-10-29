@@ -4,13 +4,13 @@ search: false
 
 # Applications
 
-Las ilustraciones hacen que las ideas sean más accesibles. Al igual que las palabras , las ilustraciones cuentan historias y representan nuestra marca de manera eficiente y clara. 
-Es muy importante que sean usadas de forma correcta y que nunca se transformen en un elemento distractor.
-En marketing se usan como respaldo y elemento de comunicación generalmente en sitios web, sitios de servicio, presentaciones, email, infografía, en medios de comunicación social y campañas.
+Illustrations make ideas more accessible. Like words, illustrations tell stories and represent our brand efficiently and clearly. 
+It is very important that illustrations are used correctly and never detract from communication.
+In marketing, illustrations are used as a support and communication element generally in websites, service sites, presentations, email, graphics, in social media and campaigns.
 
 
-## Uso Incorrecto
-Los "Héroe" y "Héroe puntual" no pueden usarse como íconos y viceversa.
+## Incorrect Usage
+"Hero" images cannot be used as icons and vice versa.
 
 <table>
 <tr>
@@ -23,10 +23,10 @@ Los "Héroe" y "Héroe puntual" no pueden usarse como íconos y viceversa.
 </tr>
 <tr>
 <td>
-<p class="dont">No usar un icono en lugar de un héroe.</p>
+<p class="dont">Do not use an icon as a hero.</p>
 </td>
 <td>
-<p class="dont">No usar héroe cómo ícono.</p>
+<p class="dont">Do not use a hero as an icon.</p>
 </td>
 </tr>
 <tr>
@@ -39,25 +39,25 @@ Los "Héroe" y "Héroe puntual" no pueden usarse como íconos y viceversa.
 </tr>
 <tr>
 <td>
-<p class="dont">No colocar texto por sobre las ilustraciones.</p>
+<p class="dont">Do not place text over the illustrations.</p>
 </td>
 <td>
-<p class="dont">Margen de menos de 1 cm.</p>
+<p class="dont">Margin of less than 1 cm.</p>
 </td>
 </tr>
 </table>
 
 
-## Zona de Exclusión
-Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la imagen tanto en la versión horizontal, cómo vertical.
+## Exclusion Zone
+An adequate margin of at least 28 px/1 cm should be respected around the entire image in both horizontal and vertical dimensions.
 
 <img src="/assets/img/brand/distance_h.svg" alt="Horizontal">
 <img src="/assets/img/brand/distance_v.svg" alt="Vertical">										
 
 
 
-## Uso Indebido
-Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posible mantener los blancos en el interior de la figuras. Sobretodo en cara y manos.
+## Improper Use
+Illustrations should preferably be used with a white background. If this is not possible, keep the white inside illustrated figures. Especially on faces and hands.
 
 
 <table>
@@ -74,13 +74,13 @@ Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posi
 </tr>
 <tr>
 <td>
-<p class="dont">No usar las ilustraciones transparentes sobre fondos de color.</p>
+<p class="dont">Do not use transparent illustrations on colored backgrounds.</p>
 </td>
 <td>
-<p class="dont">Las ilustraciones no se deben girar ni ladear.</p>
+<p class="dont">Illustrations should not be rotated or tilted.</p>
 </td>
 <td>
-<p class="dont">No se deben modificar los colores.</p>
+<p class="dont">Colors should not be changed.</p>
 </td>
 </tr>
 <tr>
@@ -96,13 +96,13 @@ Las ilustraciones se deben usar preferentemente con fondo blanco, de no ser posi
 </tr>
 <tr>
 <td>
-<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+<p class="dont">The use of a special or different color than one already mentioned for an overlay.</p>
 </td>
 <td>
-<p class="dont">Nunca cambie la proporción de las ilustraciones.</p>
+<p class="dont">Never change the proportions of an illustration.</p>
 </td>
 <td>
-<p class="dont">No use texto sobre la ilustración, debajo de ella o con un margen menor a 1 cm.</p>
+<p class="dont">Do not use text on an illustration, under an illustration or with a margin of less than 1 cm.</p>
 </td>
 </tr>
 </table>

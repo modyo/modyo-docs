@@ -4,16 +4,16 @@ search: false
 
 # Logos
 
-En la siguiente sección revisaremos diferentes usos de los logos de Modyo, respetando su aplicación y también sus limitantes.
+In the following section we will review different uses of Modyo logos, respecting their application and also their limitations.
 
-## Logotipo
+## The Modyo Logo
 
-El logotipo de modyo cuenta con la palabra escrita del nombre de la empresa, y un símbolo en color verde, ambos son reconocibles al instante. Por esto es tan importante usar el logotipo exactamente cómo se especifica en estas pautas. [Descargar.](https://cloud.modyocdn.com/uploads/59d4e3d2-4642-470e-b6c3-69c06d690920/original/normal.svg)
+The Modyo logo has the written word of the company name, and a symbol in green, both instantly recognizable. This is why it is important to use the logo exactly as specified in these guidelines. [Download.](https://cloud.modyocdn.com/uploads/59d4e3d2-4642-470e-b6c3-69c06d690920/original/normal.svg)
 
 <img src="https://cloud.modyocdn.com/uploads/59d4e3d2-4642-470e-b6c3-69c06d690920/original/normal.svg" style="width:70%; height:auto;">
 
-### Aplicación en positivo
-El uso inicial del logotipo es principalmente sobre fondos blancos, dandole prioridad de uso a la marca original, pero también esta permitido el uso de la marca en negro.
+### Positive application
+The de facto use of the logo is mainly on white backgrounds, giving priority of use to the original brand, but using it in black is also allowed.
 
 <table>
 <tr>
@@ -35,8 +35,8 @@ El uso inicial del logotipo es principalmente sobre fondos blancos, dandole prio
 </table>
 
     
-### Aplicación en negativo
-Si quisieramos usar el logo en fondos oscuro, el ideal es usarlo sobre fondos grises oscuros, en los cuales se produsca un alto contraste.
+### Negative application
+If we want to use the logo on dark backgrounds, it is ideal to use it on dark grey backgrounds, to provide high contrast.
 
 <table>
 <tr style="background-color: #000; padding: 20px;">
@@ -76,14 +76,14 @@ Si quisieramos usar el logo en fondos oscuro, el ideal es usarlo sobre fondos gr
 </tr>
 </table>
 
-### Zona de exclusión
-El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la "M" (marcado como × en el diagrama).
+### Exclusion Zone
+The free space around the logo is equal to the height of the "M" (marked as × in the diagram).
 
 <img src="https://cloud.modyocdn.com/uploads/eada6c63-af00-4fb5-8725-7ee9fefad8e7/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;">
 
 
-### Tamaño mínimo
-El tamaño mínimo en el que puede ser desplegado el logo.
+### Minimum size
+The minimum size in which the logo can be displayed.
 
 <table>
 <tr>
@@ -91,18 +91,18 @@ El tamaño mínimo en el que puede ser desplegado el logo.
 <img src="https://cloud.modyocdn.com/uploads/b2582764-7f19-48dc-89d8-31dfb182c2b5/original/logo.svg" style="width:100px;" alt="logo">
 </td>
 <td>
-Tamaños:
+Sizes:
 <ul>
 <li>Digital: 100px</li>
-<li>Impreso: 3cm</li>
+<li>Print: 3cm</li>
 </ul>
 </td>
 </tr>
 </table> 
 
 
-### Uso indebido del logotipo
-Es importante que la apariencia del logotipo se mantenga constante. No debe malinterpretarse, modificarse ni agregarse. Aquí los siguientes usos NO permitidos.
+### Misuse of the logo
+It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added to. The following are uses that are NOT allowed.
 
 
 <table>
@@ -119,13 +119,13 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<p class="dont">No quite el simbolo verde que acompaña la "O" al final.</p>
+<p class="dont">Do not remove the green symbol accompanying the "O" at the end.</p>
 </td>
 <td>
-<p class="dont">No gire el logotipo en ninguna dirección.</p>
+<p class="dont">Do not rotate the logo in any direction.</p>
 </td>
 <td>
-<p class="dont">No aplique un degradado ni al logotipo, ni al isotipo.</p>
+<p class="dont">Do not apply a gradient to the logo or isotype.</p>
 </td>
 </tr>
 <tr>
@@ -141,13 +141,13 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<p class="dont">No estire, ni achique, ni manipule el logotipo de manera desproporcional.</p>
+<p class="dont">Do not stretch, shrink or manipulate the logo in a disproportionate manner.</p>
 </td>
 <td>
-<p class="dont">No use el trazo alrededor del logotipo, el uso es solo con relleno.</p>
+<p class="dont">Do outline or draw a line around the logo, only use padding.</p>
 </td>
 <td>
-<p class="dont">No cambie la tipografía ni del logotipo, ni del isotipo.</p>
+<p class="dont">Do not change the typography of the logo or isotype.</p>
 </td>
 </tr>
 <tr>
@@ -162,25 +162,25 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<p class="dont">Restringir el uso a los colores corporativos, blanco o negro según manual.</p>
+<p class="dont">Restrict use to corporate colors, black or white according to the manual.</p>
 </td>
 <td>
-<p class="dont">No intercambie los colores corporativos.</p>
+<p class="dont">Do not interchange corporate colors.</p>
 </td>
 <td>
 </td>
 </tr>
 </table>
 
-## Isotipo
+## Isotype
 
-Cuando queremos reemplazar el uso de la marca, es cuando se utiliza el isotipo, es decir la "M" con el símbolo complementario, dejando de lado la palabra completa.
-Si bien el icono puede existir sin la marca de palabra, la marca de palabra nunca debe existir sin el icono. [Descargar.](https://cloud.modyocdn.com/uploads/81bf5953-772a-424a-8b59-a2a836cfe10e/original/normal.svg)
+When we want to replace the use of the brand, this is when we can use the isotype, that is the "M" with the complementary symbol, leaving aside the complete word.
+While the icon can exist without the mark, the mark should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/81bf5953-772a-424a-8b59-a2a836cfe10e/original/normal.svg)
 
 <img src="https://cloud.modyocdn.com/uploads/81bf5953-772a-424a-8b59-a2a836cfe10e/original/normal.svg" style="width:40%; height:auto; margin:auto" alt="isotype">
 
-### Aplicación en positivo
-El uso inicial del isotipo es sobre fondos blancos, dandole prioridad de uso al original, pero también esta permitido el uso del isotipo en negro.
+### Positive application
+The de facto use of the isotype is on a white background, giving priority to the original, but using the isotype in black is also allowed.
 
 <table>
 <tr>
@@ -201,8 +201,8 @@ El uso inicial del isotipo es sobre fondos blancos, dandole prioridad de uso al 
 </tr>
 </table>
 
-### Aplicación en negativo
-Si quisieramos usar el isotipo en fondos oscuros, el ideal es usarlo con los siguientes colores de background para su mejor contraste.
+### Negative application
+When using the isotype on dark backgrounds, it is ideal to use it with the following background colors for best contrast.
 
 
 <table>
@@ -243,14 +243,14 @@ Si quisieramos usar el isotipo en fondos oscuros, el ideal es usarlo con los sig
 </tr>
 </table>
 
-### Zona de exclusión
-El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la "M" (marcado como × en el diagrama).
-Para el uso del isotipo la referencia es la misma.
+### Exclusion Zone
+The free space around the logo is equal to the height of the "M" (marked as × in the diagram).
+For the use of the isotype the reference is the same.
 
 <img src="https://cloud.modyocdn.com/uploads/b3b867b4-1b6d-4a16-8e6c-db3ca84eb8ae/original/isotype_redzone.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;">
 
-### Tamaño mínimo
-Tamaño mínimo en el cual puede ser usado el isotipo.
+### Minimum size
+The minimum size in which the isotype can be used.
 
 
 <table>
@@ -259,10 +259,10 @@ Tamaño mínimo en el cual puede ser usado el isotipo.
 <img src="https://cloud.modyocdn.com/uploads/81bf5953-772a-424a-8b59-a2a836cfe10e/original/normal.svg" style="width:32px;" alt="logo">
 </td>
 <td>
-Tamaños:
+Sizes:
 <ul>
 <li>Digital: 32px</li>
-<li>Impreso: 2cm</li>
+<li>Print: 2cm</li>
 </ul>
 </td>
 </tr>

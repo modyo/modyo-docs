@@ -4,8 +4,8 @@ search: false
 
 # Brand Guidelines
 
-Bienvenido a la guía oficial de marca de Modyo. Acá se presentan los diferentes estándares que usamos para la construcción de sitios Web y documentos, indicando detalles específicos acerca del uso de logos, colores y tipografías, entre otras cosas más.
+Welcome to the official Modyo brand guide. Here we present the different standards we use for the construction of websites and documents, indicating specific details about the use of logos, colors and typographies, among other things.
 
-Si tienes dudas acerca de cómo usar apropiadamente la marca de Modyo, no dudes en [contactarnos](https://support.modyo.com/hc/es) para poder guiarte.
+If you have questions about how to properly use the Modyo brand, don't hesitate to [contact us](https://support.modyo.com/hc/en-us) for additional guidance.
 
 <img src='/assets/img/m.png' style="width:300px;" />
