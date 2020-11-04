@@ -30,14 +30,14 @@ En el índice de sitios, solo verás los sitios en los cuales eres parte del equ
 
 Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista. 
 
-Si quieres publicar múltiples elementos en un solo paso, solo debes marcarlos en el listado y luego presionar el botón para publicar.
+Si quieres publicar múltiples elementos en un solo paso, debes presionar el botón "Publicar" desde las páginas, navegación, widgets o templates y debes marcar en el listado todos los elementos que quieras publicar y luego presionar el botón para publicar nuevamente.
 
 :::warning Atención
 En el listado aparecerán todos los elementos que tienen cambios pendientes por publicar, por lo que si algún elemento no aparece en el listado, es muy probable que aún no tenga cambios por publicar. 
 
 Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados. 
 
-En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar aprobación" permitiendo que el elemento pase directamente a la vista de publicación.
+En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar publicación" permitiendo que el elemento pase directamente a la vista de publicación.
 :::
 
 ## Configuración de un Sitio
