@@ -27,6 +27,10 @@ search: true
 * Se añade la [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) a los sitios
 * Se añade la posibilidad de [delegar sub-rutas](/es/platform/channels/pages.html#delegacion-de-rutas) de páginas mediante JavaScript
 
+:::warning Atención
+Recomendamos cerrar sesión y luego volver a iniciar sesión para resetear las cookies y que no tengas problemas con el modo vista previa.
+:::
+
 ### 9.1.3 - 16 de octubre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

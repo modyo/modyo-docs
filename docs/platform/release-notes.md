@@ -28,6 +28,10 @@ search: true
 * The option to [publish multiple items](/platform/channels/sites.html#review-and-joint-publication) in one action was added.
 * The option to [delegate child routes](/platform/channels/pages.html#child-routes-delegation) in a page using JavaScript router was added.
 
+:::warning Warning
+We recommend that you log out and then log back in to reset your cookies so you don't have problems with the preview mode.
+:::
+
 ### 9.1.3 - October 16, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
