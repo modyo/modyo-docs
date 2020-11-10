@@ -93,7 +93,7 @@ Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisi
 
 ### Eliminar entradas
 
-Modyo solo permite eliminar entradas que están archivadas. Para realizar esta acción entra a la vista de edición de la entrada y en las opciones adicionales y usa la opción "Eliminar" del selector a la izquierda del botón principal de la vista.
+Modyo solo permite eliminar entradas que están archivadas. Para realizar esta acción entra a la vista de edición de la entrada y en las opciones adicionales usa la opción "Eliminar" del selector a la izquierda del botón principal de la vista.
 
 #### Vista Previa
 
