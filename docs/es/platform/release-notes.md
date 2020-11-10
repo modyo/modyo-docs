@@ -16,7 +16,7 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
-### 9.1.4 - En desarrollo
+### 9.1.4 - 10 de noviembre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
@@ -26,10 +26,6 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se añade la [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) a los sitios
 * Se añade la posibilidad de [delegar sub-rutas](/es/platform/channels/pages.html#delegacion-de-rutas) de páginas mediante JavaScript
-
-:::warning Atención
-Recomendamos cerrar sesión y luego volver a iniciar sesión para resetear las cookies y que no tengas problemas con el modo vista previa.
-:::
 
 ### 9.1.3 - 16 de octubre del 2020
 &nbsp;
