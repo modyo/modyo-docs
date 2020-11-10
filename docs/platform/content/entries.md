@@ -39,6 +39,28 @@ When you click Create, the entry edit view opens and you can fill in your conten
 To translate an already written entry into a different language, click the language dropdown along the top and select the new language you want to translate. This opens a blank version of the entry, where you can press the **Copy from locale** button in the upper-right section of the editor to bring in the content of another locale of the entry and work to translate it directly.
 :::
 
+## Bulk actions
+
+By selecting entries with the _checkbox_ to the left of each entry, you can use the bulk actions that appear at the bottom of the list.
+
+- **Publish**: The selected entries that have pending changes or are in a Draft status will be published.
+- **Force publish**: If team review is enabled, space admins can use this action to force publish entries that have pending changes or are in draft status without going through the review process.
+- **Unpublish**: Selected entries that are published will be unpublished.
+- **Archive**: Selected entries that are unpublished will be archived.
+
+:::warning Warning
+- Bulk publication will only be effective on selected entries that have pending changes.
+- Bulk unpublish will only take effect on selected entries that have a published version.
+- Bulk archiving will only take effect on selected entries that are not published.
+
+If you try to archive an entry that is published, this action will be omitted and will have no effect.
+:::
+
+:::tip Tip
+Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action.
+:::
+
+
 ### Publish an Entry
 
 To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
@@ -56,10 +78,9 @@ To unpublish an entry, open it and click on the Unpublish button at the top of t
 
 If you want to republish the entry, it must go through the Team Review process again (if enabled).
 
-::: tip Tip
-La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
-The platform does not allow you to delete Entries. You can only publish and unpublish. All copies and their changes will be seen inside the Entries manager.
-:::
+### Delete entries
+
+Modyo only allows you to delete entries that are archived. To do this get to the edit view of the entry and in the additional options and use the "Delete" option of the selector to the left of the main view button.
 
 #### Preview
 
