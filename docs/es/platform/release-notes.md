@@ -9,7 +9,6 @@ search: true
 * Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Release manager: Agrupa y acumula publicaciones de Channels.
 * Site stages: Trabaja en un ambiente seguro pre-productivo de un sitio, sin comprometer la integridad de lo que ya está publicado en él.
 
 <Badge text="Customers" type="customers" vertical="middle"/>

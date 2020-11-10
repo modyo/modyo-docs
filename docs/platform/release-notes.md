@@ -10,7 +10,6 @@ search: true
 * Administrator groups: Easily add users corresponding to different sites or spaces.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Release manager: Group and accumulate publications in Channels.
 * Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
