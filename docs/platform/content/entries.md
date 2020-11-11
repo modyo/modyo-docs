@@ -80,7 +80,7 @@ If you want to republish the entry, it must go through the Team Review process a
 
 ### Delete entries
 
-Modyo only allows you to delete entries that are archived. To do this get to the edit view of the entry and in the additional options and use the "Delete" option of the selector to the left of the main view button.
+Modyo only allows you to delete entries that are archived. To do this open the additional options in the edit view and use the "Delete" option of the selector to the left of the main view button.
 
 #### Preview
 
