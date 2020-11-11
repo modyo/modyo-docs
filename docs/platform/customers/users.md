@@ -94,9 +94,7 @@ In the main section to the right are the following tabs:
 
 - Activity
 - Responses 
-- Credentials
 - Notes (to provide notes about this user in their profile, visible only to administrators)
-- Edit (to change/update user data)
 
 #### Activity
 
@@ -104,38 +102,25 @@ In this section you will see a record of all the actions that the user has perfo
 
 It should be noted that it is not a follow-up to the navigation of a user within the platform, but rather of the main interactions that it carries out within it. These records cannot be deleted or edited by administrators.
 
-#### Responses
+#### Form responses
 
 This section shows you all the forms that the user has filled out within the platform. When you click on any of them, it takes you to see the answers of the user in said form. If you want to know more about the forms, go to the [Forms](/platform/customers/forms.html) section.
-
-### Credentials
-
-Here you will see all the credentials the user has to enter the platform.
-
-If the user enters only through his username and default password of the platform, this section will be empty. Otherwise, if the user uses some integration such as LDAP, or Google, that information will be displayed in this panel.
-
-If you want to enable authentication through integrations, check the [Integrations section](/platform/core/integration.html).
 
 ### Notes
 
 In this section you can add personalized notes about users, only administrators can add, view and delete them.
 
-### Edit
-
-If you need to change or update user data, you can do so from here. The form is equivalent to that shown in the creation of a new user.
-
-::: tip Tip
-When modifying a user, you may change the list of Targets to which they belong.
-
-For more information, go to [Custom Fields](/platform/customers/users.html#custom-fields).
-:::
-
 ### Additional options
 
 In the upper right section you will find additional options with which you can disable and delete users:
 
+* **Edit**: Opens the user edit modal. If you want to add more fileds to a user go to [Custom Fields](/platform/customers/users.html#custom-fields).
 * **Disable**: You can disable users and prevent them from logging in. 
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
+
+::: tip Tip
+When modifying a user, you may change the list of Targets to which they belong.
+:::
 
 ## Customer Settings
 

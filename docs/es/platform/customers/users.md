@@ -96,11 +96,8 @@ Al hacer _click_, desde el listado principal, en cada uno de los usuarios, se ab
 En la sección principal, podrás ver los siguientes separadores horizontales, que se describen a continuación:
 
 - Actividad (dentro del sitio)
-- Formularios (que han sido enviados por el usuario)
-- Órdenes (compras)
-- Credenciales
-- Notas (por si se quiere tomar en cuenta algo especial de él)
-- Editar (para cambiar datos personales del cliente)
+- Respuestas a formularios (que han sido enviados por el usuario)
+- Notas (por si se quiere tomar en cuenta algo especial del usuario)
 
 #### Actividad
 
@@ -108,44 +105,25 @@ En esta sección podrás ver un registro de todas las acciones que el usuario ha
 
 Cabe notar que no se trata de un seguimiento a la navegación de un usuario dentro de la plataforma, sino que de las interacciones principales que este realiza dentro de la misma. Estos registros no puede ser borrados ni editados por administradores.
 
-#### Formularios
+#### Respuestas a formularios
 
 Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma. Al hacer _click_ sobre alguno de ellos, te lleva a ver las respuestas del usuario en dicho formulario. Si quieres saber más al respecto de los formularios, entra a la sección [Formularios](/es/platform/customers/forms.html).
-
-### Órdenes
-
-En esta sección podrás ver todas las órdenes de compra y transacciones que ha realizado el usuario a través de la plataforma, si es que se encuentra habilitada una tienda eCommerce.
-
-Si quieres saber más sobre cómo funciona la tienda, entra a la [sección Órdenes](/es/platform/commerce/orders.html).
-
-### Credenciales
-
-Aquí podrás ver todas las credenciales por las cuales se encuentra habilitado el usuario para ingresar a la plataforma.
-
-Si el usuario ingresa solo a través de su username y password predeterminado de la plataforma, esta sección estará vacía. Caso contrario, si el usuario utiliza alguna integración como LDAP, o Google, dicha información se desplegará en este panel.
-
-Si quieres habilitar los ingresos a través de integraciones, revisa la [sección Integraciones](/es/platform/core/integration.html).
 
 ### Notas
 
 En esta sección se pueden agregar notas personalizadas sobre los usuarios, sólo administradores pueden agregarlas, verlas y eliminarlas.
 
-### Editar
-
-Si es necesario añadir o cambiar datos del usuario, es posible hacerlo desde acá. El formulario es equivalente al mostrado en la creación de un usuario nuevo.
-
-:::tip Tip
-Al modificar un usuario, puede que cambie el listado de Targets a los que pertenece.
-:::
-
-Para más información, puedes ir a [Campos Personalizados](/es/platform/customers/users.html#campos-personalizados).
-
 ### Opciones adicionales
 
 En la sección superior derecha encontrarás opciones adicionales con las que podrás desactivar y eliminar usuarios:
 
-* Desactivar: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión. 
-* Eliminar: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
+* **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Campos Personalizados](/es/platform/customers/users.html#campos-personalizados).
+* **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión. 
+* **Eliminar**: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
+
+:::tip Tip
+Al modificar un usuario, puede que cambie el listado de Targets a los que pertenece.
+:::
 
 
 ----
