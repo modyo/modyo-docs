@@ -2,8 +2,6 @@
 
 Bienvenido al sitio oficial de documentación de Modyo. Esperamos cubrir aquí todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
 
-<img src="/assets/img/people.png" style="width:70%;" alt="Modyo people">
-
 ### ¿Qué es Modyo?
 
 Modyo es una plataforma de experiencia digital que potencia soluciones para la interacción con clientes digitales, acelerando el desarrollo web y móvil de forma segura y permitiendo además unificar aplicaciones nativas y de terceros en una sola área para administrar tus canales digitales.

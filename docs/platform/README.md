@@ -6,8 +6,6 @@ translated: true
 
 Welcome to the official Modyo documentation site. We hope to cover all relevant topics related to the platform here. You will find descriptions of every user interface, best practices when interacting with the platform, clear use cases, and more.
 
-<img src="/assets/img/people.png" style="width:70%;" alt="Modyo people">
-
 ### What is Modyo?
 
 Modyo is a digital experience platform that enhances solutions for interacting with clients online, securely accelerating web and mobile development, while allowing you to manage all your digital channels, such as native and third-party applications, in one place.

@@ -28,11 +28,11 @@ export default {
   padding-bottom 2rem
   display block
   h1
-    font-weight 500
+    font-weight 600
   h2
-    font-weight 500  
+    font-weight 600  
   h3
-    font-weight 500
+    font-weight 600
   background #FFF
   a
     font-weight 400

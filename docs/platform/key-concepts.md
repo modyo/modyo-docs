@@ -7,9 +7,6 @@ translated: true
 
 Below you will find a brief explanation of some of the key concepts related to the Modyo Platform.
 
-![Modyo Robots](/assets/img/automate.png)
-
-
 ### Multi-Site Architecture
 
 Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.

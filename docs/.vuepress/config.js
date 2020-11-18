@@ -7,12 +7,12 @@ module.exports = {
     "/": {
       lang: "en",
       title: "Modyo Docs",
-      description: "Welcome to the official Modyo documentation",
+      description: "Welcome to the official Modyo documentation.",
     },
     "/es/": {
       lang: "es",
       title: "Documentación de Modyo",
-      description: "Bienvenido a la documentación oficial de Modyo",
+      description: "Bienvenido a la documentación oficial de Modyo.",
     },
   },
   head: [
