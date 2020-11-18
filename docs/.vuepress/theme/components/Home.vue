@@ -1,27 +1,27 @@
 <template>
   <main class="home" aria-labelledby="main-title">
     <header class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || 'hero'"
-      >
-
-      <h1 v-if="data.heroText !== null" id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
-
-      <p class="description">
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
-      </p>
-
-      <p
-        class="action"
-        v-if="data.actionText && data.actionLink"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
-      </p>
+      <div class="main">
+        <div class="main-l">
+          <h1 v-if="data.heroText !== null" id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
+          <p class="subtitle">
+            {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+          </p>
+          <p class="action" v-if="data.actionText && data.actionLink">
+            <NavLink
+              class="action-button"
+              :item="actionLink"
+            />
+          </p>
+        </div>
+        <div class="main-r">
+          <img
+            v-if="data.heroImage"
+            :src="$withBase(data.heroImage)"
+            :alt="data.heroAlt || 'hero'"
+          >
+        </div>
+      </div>
     </header>
 
     <div
@@ -77,42 +77,53 @@ export default {
   margin 0px auto
   display block
   max-width none
-  text-align center
+  text-align left
   .theme-default-content
-    background #f6f7f7
+    background #151f38
     margin-top 40px
   .hero
-    text-align center
+    text-align left
     padding-top 20px
     img
-      max-width: 100%
-      max-height 280px
+      max-width: 150%
       display block
       margin 3rem auto 1.5rem
     h1
       font-size 2.5rem
-      font-weight 500
+      font-weight 600
     h1, .description, .action
       margin 1.8rem auto
-    .description
+    .subtitle
       color #737a96
       max-width 35rem
-      font-size 1.6rem
+      font-size 1.5rem
       line-height 1.3
-      color lighten($textColor, 40%)
-      margin-top 10px
+      color #737988
+      text-align left
     .action-button
       display inline-block
       font-size 1.2rem
       color #fff
-      background #3FB85A
+      background #0ebd74
+      margin-top 20px
+      margin-right 8px
       padding 0.8rem 1.6rem
       border-radius 4px
       border 0
       transition background-color .1s ease
       box-sizing border-box
       &:hover
-        background-color lighten(#3FB85A, 10%)
+        background-color darken(#0ebd74, 30%)
+    .main
+      display flex 
+      margin-top 60px
+      margin-bottom 60px
+      align-items center
+      justify-content center
+      .main-l
+        width 700px
+      .main-r
+        width 200px
   .features
     border-top 0
     padding 2.5rem 0
@@ -124,7 +135,7 @@ export default {
     justify-content space-between
     max-width 960px
     margin 0 auto
-    text-align center
+    text-align left
     p
       height 90px
   .feature
@@ -136,11 +147,16 @@ export default {
       font-weight 500
       border-bottom none
       padding-bottom 0
-      color #343A40
+      color #ffffff
+      text-align left
     p
-      color #343A40
+      color #ffffff
+      text-align left
     img
       width 40%
+    a
+      color #0ebd74
+      text-align left
   .footer
     padding 2.5rem
     border-top 1px solid $borderColor
