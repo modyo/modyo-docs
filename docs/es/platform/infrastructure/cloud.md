@@ -20,7 +20,6 @@ En el siguiente diagrama se pueden apreciar los componentes principales y su des
 
 <img src="/assets/img/cloud/cloud_deployment.png" style="margin-top: 40px;" />
 
-Arquitectura de Modyo Cloud y Enterprise Cloud 
 
 
 
