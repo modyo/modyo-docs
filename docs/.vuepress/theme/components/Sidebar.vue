@@ -30,7 +30,7 @@ export default {
     list-style-type none
   a
     display inline-block
-    height 50px
+    height 45px
   .nav-links
     display none
     border-bottom 1px solid $borderColor
@@ -49,7 +49,7 @@ export default {
       line-height 1.7
       font-weight bold
     & > li:not(:first-child)
-      margin-top .75rem
+      margin-top .60rem
 
 @media (max-width: $MQMobile)
   .sidebar
