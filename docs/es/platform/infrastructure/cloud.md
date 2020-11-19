@@ -4,12 +4,9 @@ search: true
 
 # Cloud y Enterprise Cloud
 
-## Modyo y la Nube de AWS
-Modyo posee una vasta experiencia en el despliegue en la nube de Amazon AWS.
 
-
-## Arquitectura del Modyo Cloud
-Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel Select con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
+## Arquitectura de Modyo en AWS Cloud
+Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel advanced con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
 
 
 <img src="/assets/img/cloud/partner_badge.png" style="margin-top: 40px;" />
@@ -23,7 +20,6 @@ En el siguiente diagrama se pueden apreciar los componentes principales y su des
 
 <img src="/assets/img/cloud/cloud_deployment.png" style="margin-top: 40px;" />
 
-Arquitectura de Modyo Cloud y Enterprise Cloud 
 
 
 

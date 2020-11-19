@@ -23,7 +23,7 @@ In the top bar, you will find different actions and information:
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: This icon allows you to open a new tab in the Page Preview mode to be able to view the changes that have been made on the page without having to publish it. Keep in mind that this preview only displays changes made to your pages, and not to other areas of your digital channel, such as Navigation or Widgets.
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking on the Differences icon will take you to the differences view that allows you to select and compare two versions of the same page. This view also allows you to perform a [reset or rollback](/platform/core/key-concepts.html#actions-for-versioning) of your page.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking on the Differences icon will take you to the [differences view](/platform/channels/sites.html#review-and-joint-publication) that allows you to select and compare two versions of the same page. This view also allows you to perform a [reset or rollback](/platform/core/key-concepts.html#actions-for-versioning) of your page.
 
 ::: tip Tip
 If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare with the current editable version. To learn more about differences and backups, review the [versioning](/platform/core/key-concepts.html # versioning) section.
@@ -44,7 +44,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
-- Publish: If the page is approved, and if all the changes have been saved, you can publish a new version of this page with the latest changes using this action.
+- Publish: If the page is approved, and if all the changes have been saved, you can got to the [publish view](/platform/channels/sites.html#review-and-joint-publication) to review and publish changes in across the site.
 
 ::: tip Tip
 * If a page has a parent page, you can only publish it if the parent page is published.
@@ -133,6 +133,10 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 </ul></td>
 </tr></table>
 :::
+
+#### Child routes delegation
+
+Enable the child routes delegation to allow the full control of the page routes from the Javascript router.
 
 #### Privacy
 

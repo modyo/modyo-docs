@@ -10,13 +10,22 @@ search: true
 * Administrator groups: Easily add users corresponding to different sites or spaces.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Release manager: Group and accumulate publications in Channels.
 * Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.4 - November 10, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to [publish multiple items](/platform/channels/sites.html#review-and-joint-publication) in one action was added.
+* The option to [delegate child routes](/platform/channels/pages.html#child-routes-delegation) in a page using JavaScript router was added.
 
 ### 9.1.3 - October 16, 2020
 &nbsp;

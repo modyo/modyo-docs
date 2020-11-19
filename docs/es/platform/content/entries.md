@@ -30,6 +30,27 @@ En este caso, los filtros son seis:
 - **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
 - **Barra de búsqueda**: Filtra por el contenido del titulo de las entradas.
 
+## Acciones masivas
+
+Al seleccionar entradas con el _checkbox_ a la izquierda de cada entrada, podrás usar las acciones masivas que aparecen al final de la lista.
+
+- **Publicar**: Se publicarán las entradas seleccionadas que tengan cambios pendientes o estén en estado Borrador.
+- **Forzar publicación**: Si está la revisión en equipo habilitada, los administradores del espacio podrán usar esta acción para forzar la publicación de las entradas que tengan cambios pendientes o estén en estado Borrador sin necesidad de pasar por el proceso de revisión.
+- **Despublicar**: Se despublicarán las entradas seleccionadas que estén publicadas.
+- **Archivar**: Se archivarán las entradas seleccionadas que estén despublicadas.
+
+:::warning Atención
+- La publicación en masa solo será efectiva en las entradas seleccionadas que tengan cambios pendientes.
+- Despublicar en masa solo tendrá efecto en las entradas seleccionadas que tengan una versión publicada.
+- Archivar en masa solo tendrá efecto en las entradas seleccionadas que no estén publicadas.
+
+De tal forma que si intentas archivar una entrada que esté publicada, esta acción será omitida y no tendrá efecto.
+:::
+
+:::tip Tip
+Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que recomendamos esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
+:::
+
 ## Crear una Entrada
 
 Para crear una entrada, se debe hacer _click_ en el botón de la parte superior derecha de la pantalla.
@@ -70,9 +91,9 @@ Para despublicar una entrada, debes acceder al ella y hacer _click_ en el botón
 
 Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
 
-::: tip Tip
-La plataforma no permite eliminar Entradas. Solo puedes publicar y despublicar. Todas las copias y sus cambios se verán dentro del Administrador de Entradas.
-:::
+### Eliminar entradas
+
+Modyo solo permite eliminar entradas que están archivadas. Para realizar esta acción entra a la vista de edición de la entrada y en las opciones adicionales usa la opción "Borrar" del selector a la izquierda del botón principal de la vista.
 
 #### Vista Previa
 
