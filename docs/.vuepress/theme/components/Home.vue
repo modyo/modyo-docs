@@ -85,7 +85,7 @@ export default {
     padding-top 20px
     background-image url(https://cloud.modyocdn.com/uploads/9a04c95c-d501-470b-a2ca-66c9ba14e7a8/original/ellipse.png)
     background-repeat no-repeat
-    background-position right 100px   
+    background-position right 250px   
     img
       max-width: 100%
       display block
