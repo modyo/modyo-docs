@@ -613,14 +613,10 @@ Los drops disponibles para channels son:
 
 ```
 site:
-  - theme
   - breadcrumb
   - categories
   - csrf_meta_tag
-  - me_applications
   - url
-  - memberships_count
-  - layout
   - menu_items
   - account_url
   - current_year
@@ -652,16 +648,14 @@ user_agent:
   - platform_version
   - agent
   - is_modyo_shell
-layout_page:
+page:
   - grid
   - name
-custom_layout_page:
   - content
   - title
   - excerpt
   - name
   - url
-  - count
   - parent
   - description
 menu:
@@ -701,10 +695,6 @@ content_list_widget:
   - context_params
   - space_id
   - type_uid
-layout:
-  - name
-  - me_page
-  - home_page
 grid:
   - id
   - cache_key
