@@ -36,6 +36,13 @@ To access the list of entries of a type with the uid `type_uid` and of a space w
 {% endfor %}
 ```
 
+To access the total amount of entries returned by a content filter, you can use the liquid `total_entries` filter, for example:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+Total entries: {{ entries | total_entries }}
+```
+
 ### Filter entries
 
 If we want to filter the entries, we can do so by the following attributes: by_uuid, by_category, by_type, by_tag, by_lang. Every response contains an array of values, so it is possible to filter by one value or several, as follows:

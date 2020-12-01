@@ -16,6 +16,23 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.5 - December 1, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* The option to use [operators](/platform/content/public-api-reference.html#operators) [in], [has], and [nin] on fields slug, name, uuid and category was added.
+* The option to use [bulk actions](/platform/content/entries.html#bulk-actions) on entries was added.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to get the [total entries](/platform/content/public-api-reference.html#access-entries-in-a-space) after using a liquid content filter was added.
+* The option to use the same widget multiple times in the same page was added.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* A new and fresh interface to build [Targets](/platform/customers/targets.html) including the option to use `AND` & `OR` operators.
+
 ### 9.1.4 - November 10, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

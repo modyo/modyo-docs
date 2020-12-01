@@ -35,6 +35,13 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio d
 {% endfor %}
 ```
 
+Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+Total entries: {{ entries | total_entries }}
+```
+
 ### Filtrar entradas
 
 Si se quiere filtrar las entradas, se hace a través de los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
