@@ -192,7 +192,7 @@ const entries = typePost.getEntries();
 
 #### Paginación
 
-En general, todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Paginate` que se describe en la siguiente sección.
+En general, todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Pagination` que se describe en la siguiente sección, por ejemplo: `getEntries(f.Pagination(15,1))` que retornará la primera página del filtro `f` donde cada página contiene hasta 15 entradas.
 
 El objeto retornado por `getEntries()` incluye un campo `meta` que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
 
@@ -239,7 +239,7 @@ Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `Not
 
 - **JSONPath**: recibe el JSONPath [ref](https://goessner.net/articles/JsonPath/) que modela una estructura de respuesta.
 
-- **Paginate**: recibe como parámetros el número de página y el total de entradas por página.
+- **Pagination**: recibe como parámetros el número de página y el total de entradas por página.
 
 :::warning Atención
 Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
@@ -258,7 +258,8 @@ Para crear un filtro, usamos el método `Filter()`
 const filters = typePost
   .Filter()
   .Before("meta.created_at", "2020-05-01")
-  .In("meta.tags", ["tag1", "tag2"]);
+  .In("meta.tags", ["tag1", "tag2"])
+  .Pagination(15,1);
 // Ahora lo ocupamos para obtener entradas con estos criterios
 const filteredEntries = typePost.getEntries(filters);
 // ahora resolvemos la promesa
