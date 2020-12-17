@@ -206,6 +206,21 @@ To find the form of the URL, in case a custom domain is enabled, you must go to 
 In case it is not enabled, the URL will be in the form `account_url/site_host`.
 :::
 
+## CSS and JavaScript
+
+It is possible to create custom CSS and JavaScript templates by clicking the **+ Add Style Sheet** and **+ Add JavaScript** buttons, respectively, at the end of the Views tab.
+
+To include any of these templates, there are different Liquid filters available: `asset_url` which generates the template URL, and `stylesheet_tag` and `script_tag` which generate the corresponding HTML tags, e.g.
+
+```html
+<head>
+  {{ 'my-css' | asset_url: 'css' }}
+  {{ 'my-css' | asset_url: 'css' | stylesheet_tag }}
+  {{ 'my-js' | asset_url: 'js' | script_tag }}
+</head>
+```
+
+To learn more about these filters and their supported arguments, go to the [Liquid filters](/platform/channels/liquid-markup.html#filters) page.
 
 ## SEO
 
