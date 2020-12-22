@@ -109,65 +109,199 @@ To use the attributes of the entries, you can use either dotted or bracketed not
 
 ## Javascript SDK
 
-The Javascript SDK allows access to spaces and content entries in a simple way from any environment that supports Javascript (dynamic and static web sites, SPA pages, hybrid mobile applications, etc).
+The **Modyo SDK** is a library that facilitates the interaction between JavaScript-based applications and Modyo's public API.
 
-Through the SDK you can get, filter and sort your created content in order to take full advantage of the capabilities of the Headless API.
+Through the SDK you can get, filter and sort your created content to fully leverage the capabilities of the Headless API.
 
-In addition, the Modyo SDK allows you to obtain information from end users that are already logged into the platform, to further customize their experience on your site.
+In addition, the Modyo SDK allows you to obtain information about end users that have logged into the platform to further customize their experience with your site.
 
 ### Installation
 
-::: tip Use from Modyo Channels
-In Modyo Channels, sites come with a base template that includes a recent version of this SDK installed, so it can be used directly.
+#### 1. Obtain a Modyo token
+
+The `@modyo/sdk` package is available from the Github registry, under the Modyo organization. For this reason, besides including it in your `package.json`, **you need to get a token with the `read:packages` scope**([Github reference](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens)) to use this package in a project.
+
+
+#### 2. Authenticate to Github packages
+
+Once we have obtained this token, we must use it to authenticate ourselves to Github packages. To do this, we create a `.npmrc` file in the `home` so that the file path is `~/.npmrc`.
+The content of that file (replacing `TOKEN` with your token) should be:
+
+```bash
+//npm.pkg.github.com/:_authToken=TOKEN
+```
+
+[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+
+
+#### 3. Add the organization to your project
+
+Now you have to inform the project that will use `@modyo/sdk` that it must look for that package in the Github registry and not in NPM. To do this, we create a `.npmrc` in the same folder where `package.json` of the project is, containing the following:
+
+```bash
+registry=https://npm.pkg.github.com/OWNER
+```
+
+Where `OWNER` is the name of the organization that owns the package, in this case `modyo`.
+
+[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+
+
+### Usage
+
+Once the package has been installed in our project, we can create a client that we will use to fetch content.
+This can be done by creating a new client with the Modyo account's web address as the argument along with the language to be requested.
+
+```js
+import { Client } from "@modyo/sdk";
+// We must use the account url to get the correct account
+const modyoAccount = new Client("https://my-account.modyo.com", "en");
+```
+
+:::tip Tip
+When a new client is instantiated, the second parameter _locale_ is optional and used to request entries only in the specified language, otherwise the default language of the space will be used.
 :::
 
-You can install Javascript SDK with `npm` or` yarn`.
+### Content
 
-``` shell
-# For npm:
-npm install @modyo/sdk
+The SDK allows access to both public and private/targeted content, facilitating interaction with our Headless API.
 
-# For yarn:
-yarn add @modyo/sdk
+#### How to get public content
+
+We can ask for a particular type of content in order to get its schema.
+
+```js
+// To obtain the type `Post` from a space called `Blog`
+const typePost = modyoAccount.getContentType("blog", "post");
+// `typePost` will return an object with multiple information about the type, including the type schema.
 ```
 
-### Use: making a `request`
+Once we have the type we need, we can see its schema, its attributes or consult its entries:
 
-Once you install the SDK in your project you can start using it to request content from Modyo.
+```js
+// If we want to see that schema in more detail, we can use the `getSchema()` method
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
+/*
+That will print something like this:
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
+*/
+// To obtain the entries of that type
+const entries = typePost.getEntries();
+```
 
-The following example shows the most basic way you can get content using the SDK:
+#### Pagination
 
-``` javascript
-import {Client} from "@modyo/sdk";
+In general, all results delivered by the Modyo Headless API are paged. A `getEntries()` query with no associated filters brings up to 20 entries per page. The maximum number of entries per page is 100 and is configurable using the `Paginate` filter described in the next section.
 
-//We create a generic function that we can instantiate every time we want to make a request
-export default function getClient (spaceUID) {
-  //The `Client` class of the SDK requires two arguments:
-  //The first argument is the `url` of the API,
-  //the second argument is the `UID` of the space you want to access.
-  //In this example, the `UID` of the space will be passed as an argument of this generic function
-  const client=new Client ("https://dynamicbank.modyo.build/api", {
-    spaceUID
-  });
-  return client;
+The object returned by `getEntries()` includes a `meta` field to help you navigate it. The the returned object will look something like this:
+
+```json
+
+{
+  "meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+  "entries": [
+    {
+      "meta": {
+        "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
+        "tags": [],
+        "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
+        "..."
+      },
+      "fields": {
+        "title": "title",
+        "slug": "slug",
+        "excerpt": "Excerpt of the entry...",
+        "..."
+      }
+    }
+  ]
 }
-
-//Once the `Client` class is instantiated, we have different methods at our disposal, such as
-//`getEntries ()`
-getClient ("static-data")//we access the space
-  .getEntries ("menu-item")//We get all the entries of the `menu-item` type
-  .then (entries => console.log (entries))//We print in a log the entries received
-  .catch (err => console.log (err));//or we return an error if something fails
 ```
 
-In addition to the `getEntries (typeUID)` method that we use in the example, if we know the `id` of our entry, we can immediately request it using the `getEntry (typeUID, entryUID)` method:
+#### Filters
 
-``` js
-getClient ("static-data")
-  .getEntry ("menu-item", "a1eef093-1e2f-4c6f-a4c3-73a869d6e7c8")
-  .then (entry => console.log (entry))
-  .catch (err => console.log (err));
+The `getEntries()` method above can also receive a filter object to query the entries.
+The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has` and can be used to query the `meta` fields of each entry (such as the creation date or assigned tags)
+
+**Supported filters**:
+
+- **Before, After, LessThan, GreaterThan**: they receive the name of the desired field as a parameter and the value with which it will be compared.
+
+- **In, NotIn, Has**:  they receive the name of the desired field as a parameter and an array of values with which it will be compared. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
+
+- **SortBy**: receives as parameters the field to be ordered and the order (`asc` or `desc`).
+
+- **JSONPath**: receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
+
+- **Paginate**: receives as parameters the number of pages and the total number of entries per page.
+
+
+:::warning Warning
+If you intend to filter by date, it is important that the filter value uses the ISO-8601 standard.
+:::
+
+```js
+// How to obtain a list of attributes that we can use in our queries
+typePost
+  .getSchema()
+  .then(() => console.log("List of attributes:", typePost.getAttrs()));
 ```
+
+To create a filter, we use the `Filter()` method
+
+```js
+const filters = typePost
+  .Filter()
+  .Before("meta.created_at", "2020-05-01")
+  .In("meta.tags", ["tag1", "tag2"]);
+// Now we can use it to obtain entries with these criteria
+const filteredEntries = typePost.getEntries(filters);
+// Resolve the promise
+filteredEntries.then(res => console.log("Filtered entries response: ", res));
+```
+
+
+### Order
+
+The results of our search can also be sorted with the `SortBy()` method
+
+```js
+// JSONPath and Sorting are also supported as filters
+const filters = ctype
+  .Filter()
+  .SortBy("meta.created_at", "desc")
+  .JSONPath("$..uuid");
+```
+
+**Note**: As you can see in the example, it is possible to use `JSONPath` expressions  in our queries [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+
+
+#### Private content
+
+To obtain private content, the user only needs to be logged in and we can add a third argument with a `false` value to the `getContentType()` method (which indicates that it is not public),
+
+```js
+// To acces private content (user must have logged in to the account)
+const privateTypePost = modyoAccount.getContentType("blog", "post", false);
+```
+
+:::warning Warning
+It is important that this potentially sensitive information be treated with care. Private content requires cookies and an end user who is logged into Modyo.
+:::
+
+### End User Information
+
+:::warning Warning
+It is important that you treat this sensitive information with care. As with Private Content, this information is only obtainable if you work from a browser that supports cookies and the end user is logged into the platform.
+
+To obtain information from the end user, it is necessary to call the `client.getUserInfo()` function that will return an object with the basic information of that user.
+:::
+
 
 ## API Reference
 
