@@ -16,6 +16,21 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.6 - December 23, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to add [widget variables](/platform/channels/widgets.html#widget-variables) was added.
+* The option to define multiple custom [JavaScripts and CSS](/platform/channels/templates.html#css-and-javascript) to the site was added.
+* The option to create [custom layouts](/platform/channels/templates.html#custom-layouts) to the template builder to further use on pages was added.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* You can only delete forms that are disabled now.
+
 ### 9.1.5 - December 1, 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

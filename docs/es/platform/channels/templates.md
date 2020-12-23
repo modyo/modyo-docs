@@ -211,6 +211,40 @@ Para encontrar la forma de la URL, en el caso de que el custom domain esté habi
 En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
 :::
 
+## Layouts personalizados
+Modyo cuenta con tres layouts por defecto: 
+* **Home**: Se usa exclusivamente en la página home del sitio.
+* **Base**: Todas las páginas excepto el home usan este layout por defecto.
+* **Error**: Las vistas de error usan este layout limpio (404, 401)
+
+Puedes crear nuevos Layouts desde el template builder, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
+
+Puedes usar como base, este código que contiene todo lo necesario para que tus páginas usen todos los elementos necesarios del sitio, como el head, header, footer, service worker y la configuración de Google Tag Manager, pero ten en cuenta que puedes modifcarlo tanto como quieras:
+
+```liquid
+{% html5 %}
+<head>
+  {% snippet 'shared/general/head' %}
+</head>
+
+{% body %}
+{% snippet 'shared/general/body_tag_manager' %}
+{% snippet 'shared/general/header' %}
+
+{{ site.breadcrumb }}
+<div id="main-layout">
+{{ content_for_layout }}
+</div>
+
+<script>{% snippet "shared/serviceworker/register_js" %}</script>
+{% snippet 'shared/general/footer' %}
+
+{% endbody %}
+{% endhtml5 %}
+```
+
+Luego de haber creado tu nuevo layout, puedes ir a la vista de edición de las páginas y cambiar desde el tab de propiedades el layout que está usando.
+
 ## CSS y JavaScript
 
 Es posible crear templates personalizados de código CSS y JavaScript haciendo _click_ en los botones **+ Añadir hoja de estilo** y **+ Añadir JavaScript**, respectivamente, al final de la pestaña Vistas.

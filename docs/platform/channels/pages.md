@@ -78,7 +78,7 @@ The rich text widget has an automatic formatter, so the code you write in the co
 - **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to display. To modify how these widgets look, you must do so in the [template builder](/platform/channels/templates.html), in the widgets section.
 - **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.
 
-Once a widget is selected in the middle section, the focus will move to the central tab, where you can find different options to configure the widget. If you select a custom widget, you will find a link to go directly to its edit view in the [widget builder](/platform/channels/widgets.html).
+Once a widget is selected in the central section, the focus will move to the central tab, where you can find different configuration options for the widgets and if you select a custom widget, you will find a link to go directly to its edit view in the [widget builder](/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes. 
 
 In the right sidebar, you can select different grids based on the structure you need in the third tab (Edit Layout).
 

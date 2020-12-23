@@ -238,12 +238,12 @@ Modyo allows you to define global variables that you can use in all the sites wh
 You can use plain text, HTML code, JavaScript and CSS within the global variables. However, you cannot use Liquid code in a global variable.
 :::
 
-You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings.
+You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings, or in each of the custom widgets of the builder widget.
 
 :::warning Warning
-When using global variables, preference will always be given to variables defined for the site and then to variables defined at the account level. So be careful when defining variables for a specific site with the same name as an account variable.
+When using global variables, always take as preference the variables defined at the lowest level, being first the variables defined in the widget, then the ones defined in the site and then the variables defined at the account level, so you must be careful when defining variables in widgets or the site with the same name as the account variables.
 :::
 
 :::danger Danger
-The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them. So you should keep in mind that when you change the value of a global variable, it will immediately affect the resources where it is being used.
+The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them, so you should consider that when you make a change in the value of these, it will be reflected immediately wherever they are being used. This does not apply to the variables defined in the widgets, since the widgets and pages do have a publishing flow.
 :::

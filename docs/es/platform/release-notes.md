@@ -15,6 +15,21 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.6 - 23 de diciembre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade la opción de definir [variables en los widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget).
+* Se añade la opción de definir múltiples [JavaScripts y CSS](/es/platform/channels/templates.html#css-y-javascript) como assets del sitio.
+* Se añade la opción para crear [layouts personalizados](/es/platform/channels/templates.html#layouts-personalizados) y luego poder usarlos en las páginas.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Ahora solo se puede eliminar los formularios que están deshabilitados.
+
 ### 9.1.5 - 1 de diciembre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

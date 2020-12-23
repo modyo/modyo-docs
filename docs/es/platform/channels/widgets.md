@@ -97,6 +97,25 @@ Si eliminas un widget de una página y publicas, seguirás viendo esa página en
 Debido a que Modyo cuenta con las funcionalidades para [restaurar y restablecer](/es/platform/core/key-concepts.html#acciones-para-el-versionado) desde versiones pasadas, no se puede permitir eliminar un elemento que está siendo referenciado en los respaldos de otros elementos.
 :::
 
+## Variables del widget
+
+En la pestaña de variables puedes ver el listado de variables creadas en el widget, y sus respectivas acciones para:
+
+* **Copiar** el código liquid para usar esa variable.
+* **Modificar** la variable
+* **Eliminar** la variable.
+
+Junto al nombre de cada variable verás un indicador "sobreescrita" si es que la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts.html#variables-globales).
+
+Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores. 
+
+Cuando usas el listado de posibles valores, debes dejar cada valor en una linea nueva, y dejar un `*` delante del valor que quieres que sea tomado como valor por defecto.
+
+Al momento de instanciar el widget en una página, verás que ahora todas las variables que se están usando (ya sean de cuenta, sitio o de widget) se listarán como "deshabilitadas" con su valor por defecto. Si quieres sobreescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
+
+:::warning Atención
+Al instanciar el widget en una página se listarán todas las variables que ese widget está usando, por lo que si no ves alguna de las variables que están definidas en el widget, es muy probable que no se esté usando la variable en el código del widget.
+:::
 ## Modyo CLI
 
 La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
