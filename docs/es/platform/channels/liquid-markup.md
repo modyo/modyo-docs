@@ -193,7 +193,7 @@ Las sentencias `if / else` deberían ser conocidas de otros lenguajes de program
 
 La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liquid normal o una _comparación_ usando expresiones de Liquid. Ten en cuenta que los operadores de comparación se implementan mediante etiquetas similares a "if"; no funcionan en ningún otro lugar en Liquid.
 
-Los operadores relacionales disponibles son: 
+Los operadores relacionales disponibles son:
 
 * `==, !=,` and `<>` — igual y desigual (los dos últimos son sinónimos)
     * Hay un valor especial secreto "empty" (sin comillas) con el que se pueden comparar los arrays; la comparación es verdadera si el array no tiene miembros.
@@ -388,7 +388,7 @@ Al iterar un hash, `el elemento[0]` contiene la clave, y `el elemento[1]` contie
 {% endfor %}
 ```
 
-En lugar de hacer un bucle sobre una colección existente, también puede hacer un bucle a través de un rango de números. Los rangos se parecen a `(1..10)` - paréntesis que contienen un valor inicial, dos puntos y un valor final. Los valores inicial y final deben ser enteros o expresiones que se resuelven a números enteros. 
+En lugar de hacer un bucle sobre una colección existente, también puede hacer un bucle a través de un rango de números. Los rangos se parecen a `(1..10)` - paréntesis que contienen un valor inicial, dos puntos y un valor final. Los valores inicial y final deben ser enteros o expresiones que se resuelven a números enteros.
 
 ```liquid
 # if item.quantity is 4...
@@ -405,7 +405,7 @@ Puede salir tempranamente de un bucle con los siguientes tags:
 * `{% continue %}` - finaliza inmediatamente la iteración actual, y continúa el bucle "for" con el siguiente valor.
 * `{% break %}` - finaliza inmediatamente la iteración actual, luego finaliza completamente el bucle "for".
 
-Ambas sólo son útiles cuando se combinan con algo como una sentencia "if". 
+Ambas sólo son útiles cuando se combinan con algo como una sentencia "if".
 
 ``` liquid
 {% for page in pages %}
@@ -521,7 +521,7 @@ Si quieres combinar varios strings en uno solo y guardarlo en una variable, pued
 Modyo cuenta con drops disponibles para distintos contextos dentro de los cuales puedes encontrar drops para la cuenta, content, channels y customers.
 
 ### Drops de cuenta
-Los drops disponibles a nivel global son: 
+Los drops disponibles a nivel global son:
 
 ```
 account:
@@ -746,6 +746,7 @@ Los drops disponibles para customers son:
 
 ```
 - user:
+  - access_token
   - age
   - avatar
   - birth_at
