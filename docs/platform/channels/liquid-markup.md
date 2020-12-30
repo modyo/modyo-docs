@@ -523,7 +523,7 @@ If you want to combine several strings into one and save it in one variable, you
 Modyo has drops available for different contexts within which you can find drops for the account, content, channels and customers.
 
 ### Account Drops
-The drops available globally are: 
+The drops available globally are:
 
 ```
 account:
@@ -748,6 +748,7 @@ The drops available for customers are:
 
 ```
 - user:
+  - access_token
   - age
   - avatar
   - birth_at

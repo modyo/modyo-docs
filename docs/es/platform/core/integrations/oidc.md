@@ -9,6 +9,9 @@ OpenID Connect (OIDC) es una capa de autenticación y framework que funiona sobr
 :::warning Atención
 Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3 y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
+:::warning Atención
+La API para obtención de access tokens delegados vía  `/auth/openidc/access_token` está obsoleta y ha sido reemplazada por `/api/profile/me`.
+:::
 
 ## Usando Keycloak
 
@@ -32,7 +35,7 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 
 ### Configuraciones opcionales de la integración
 
-Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:  
+Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
 
 |                                                                     |                                                                                                                                                                                                                        |
 |---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
