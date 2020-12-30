@@ -26,6 +26,7 @@ search: true
 * Se añade la opción de definir [variables en los widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget).
 * Se añade la opción de definir múltiples [JavaScripts y CSS](/es/platform/channels/templates.html#css-y-javascript) como assets del sitio.
 * Se añade la opción para crear [layouts personalizados](/es/platform/channels/templates.html#layouts-personalizados) y luego poder usarlos en las páginas.
+* Se añade la posibilidad de consultar los resultados de la búsqueda del sitio en formato json
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Ahora solo se puede eliminar los formularios que están deshabilitados.

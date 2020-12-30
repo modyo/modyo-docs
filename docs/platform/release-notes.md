@@ -27,6 +27,7 @@ search: true
 * The option to add [widget variables](/platform/channels/widgets.html#widget-variables) was added.
 * The option to define multiple custom [JavaScripts and CSS](/platform/channels/templates.html#css-and-javascript) to the site was added.
 * The option to create [custom layouts](/platform/channels/templates.html#custom-layouts) to the template builder to further use on pages was added.
+* The option to get the results of the site search as Json object was added.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * You can only delete forms that are disabled now.
