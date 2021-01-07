@@ -121,7 +121,7 @@ Al instanciar el widget en una página se listarán todas las variables que ese 
 
 Puedes decidir si quieres cargar tus widgets de forma sincrónica, es decir, que el código HTML, CSS y JavaScript de tu widget se carguen junto con el resto de la página desde el servidor, o bien, que se carguen de forma asincrónica, de tal manera que se cargará todo el contenido estático de la página y una vez que el documento principal esté cargado, el contenido de tu widget se cargará mediante JavaScript. Por defecto, todos los widgets se cargan de forma asincróica.
 
-Para cambiar la forma ne que se carga cada widget, debes ir a la vista de edición de la página que contiene el widget, seleccionar el widget y marcar o desmarcar la opción "Carga síncrona".
+Para cambiar la forma en que se carga cada widget, debes ir a la vista de edición de la página que contiene el widget, seleccionar el widget y marcar o desmarcar la opción "Carga síncrona".
 
 :::warning Atención
 Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el performance de tu página, por lo que debes decidir con cuidado cuales widgets se cargarán de forma síncrona y cuales de forma asíncrona
