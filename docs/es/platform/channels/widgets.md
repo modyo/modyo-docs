@@ -117,7 +117,7 @@ Al momento de instanciar el widget en una página, verás que ahora todas las va
 Al instanciar el widget en una página se listarán todas las variables que ese widget está usando, por lo que si no ves alguna de las variables que están definidas en el widget, es muy probable que no se esté usando la variable en el código del widget.
 :::
 
-### Carga síncrona
+## Carga síncrona
 
 Puedes decidir si quieres cargar tus widgets de forma sincrónica, es decir, que el código HTML, CSS y JavaScript de tu widget se carguen junto con el resto de la página desde el servidor, o bien, que se carguen de forma asincrónica, de tal manera que se cargará todo el contenido estático de la página y una vez que el documento principal esté cargado, el contenido de tu widget se cargará mediante JavaScript. Por defecto, todos los widgets se cargan de forma asincróica.
 
