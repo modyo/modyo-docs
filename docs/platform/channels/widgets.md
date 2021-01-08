@@ -120,7 +120,11 @@ When you instantiate the widget on a page, you will see that now all variables b
 Adding the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, chances are that the variable in the widget code is not being used.
 :::
 
-## Synchronous and asynchronous loading (experimental)
+## Synchronous and asynchronous loading
+
+:::warning Warning
+This is an experimental feature and it may be subject to changes.
+:::
 
 You can choose to load your widgets synchronously, meaning that the HTML, CSS and JavaScript code of your widget will load along with the rest of the page from the server, or you can choose to load them asynchronously, so that all static content of the page will load and once the main document is loaded, the content of your widget will load via JavaScript. By default, all widgets load asynchronously.
 
