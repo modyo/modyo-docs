@@ -73,7 +73,7 @@ La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu
 * [**CORS**](/es/platform/core/security.html#compartir-recursos-en-distintos-dominios): Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
 * **Cuenta**: Es el punto de acceso a todas las funcionalidades de Modyo.
 * [**Equipo**](/es/platform/core/roles.html#equipo): Son todos los usuarios que tienen acceso al admin de Modyo y se les puede asignar roles y permisos.
-* [**Integraciones**](/es/platform/core/integration.html): Es la forma de delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.
+* [**Integraciones**](/es/platform/core/integrations): Es la forma de delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.
 * [**Política de contraseña**](/es/platform/core/security.html#politica-de-contrasena): Permite definir reglas que los miembros del equipo deben cumplir al momento de crear o modificar sus contraseñas.
 * [**Revisión en equipo**](/es/platform/core/key-concepts.html#revision-en-equipo): Flujo de revisión de los elementos versionados en el que se puede solicitar la aprobación de múltiples miembros del equipo.
 * [**Sitio**](/es/platform/channels/sites.html): Es la herramienta para crear canales digitales dentro de la plataforma. La operación de sitios abarca todo el desarrollo, diseño y flujo de navegación.
@@ -82,7 +82,7 @@ La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu
 * [**Versión programada**](/es/platform/core/key-concepts.html#programado): Es la versión que está lista para pasar ser publicada en una fecha y hora determinada.
 * [**Versión publicada**](/es/platform/core/key-concepts.html#publicado): Es la versión visible o productiva de los elementos versionados. Esta versión no se pude modificar.
 * [**Versión de respaldo**](/es/platform/core/key-concepts.html#respaldos): Son las versiones que han sido publicadas anteriormente.
-* [**Webhook**](/es/platform/core/integration.html#webhooks): Envía información de forma automática a un sistema externo cuando ocurre un evento determinado.
+* [**Webhook**](/es/platform/core/integrations#webhooks): Envía información de forma automática a un sistema externo cuando ocurre un evento determinado.
 
 
 ### Content

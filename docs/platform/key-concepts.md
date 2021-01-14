@@ -72,7 +72,7 @@ Agility occurs when you have a greater predictability of your team's capacity, f
 * [**CORS**](/platform/core/security.html#share-resources-across-different-domains): Cross Origin Resource Sharing - Allows sharing of resources across different domains.
 * **Account**: This is where you can access all the features that Modyo has to offer.
 * [**Team**](/platform/core/roles.html#team): All users who have access to the Modyo admin and can be assigned roles and permissions.
-* [**Integrations**](/platform/core/integration.html): This is where you can delegate or federate the authentication process of users or team members.
+* [**Integrations**](/platform/core/integrations): This is where you can delegate or federate the authentication process of users or team members.
 * [**Password Policy**](/platform/core/security.html#password-policy): Allows you to define rules that team members must follow when creating or modifying their passwords.
 * [**Team review**](/platform/core/key-concepts.html#team-review): Revision flow of versioned items in which you can request approval from multiple team members.
 * [**Site**](/es/platform/channels/sites.html): This is the tool you can use to create digital channels within the platform. Site management includes development, design and navigation flow.
@@ -81,7 +81,7 @@ Agility occurs when you have a greater predictability of your team's capacity, f
 * [**Scheduled version**](/platform/core/key-concepts.html#scheduled): It is the version that is ready to be published at a predetermined date and time.
 * [**Published version**](/platform/core/key-concepts.html#published): It is the visible or productive version of the elements. This version can not be modified.
 * [**Backup version**](/es/platform/core/key-concepts.html#backups): It is a version that was previously published.
-* [**Webhook**](/platform/core/integration.html#webhooks): Sends information automatically to an external system when a certain event occurs.
+* [**Webhook**](/platform/core/integrations#webhooks): Sends information automatically to an external system when a certain event occurs.
 
 
 ### Content
