@@ -14,7 +14,7 @@ When talking about the Modyo Platform as daily users or team members, we are  re
 ### Main functionalities
 
 - [Team review](/platform/core/key-concepts.html)
-- [Integrations](/platform/core/integrations.html)
+- [Integrations](/platform/core/integrations)
 - [Users and administrative roles](/platform/core/roles.html)
 - [Security](/platform/core/security.html)
 - [Administration API](/platform/core/api.html)
