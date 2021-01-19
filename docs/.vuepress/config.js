@@ -116,6 +116,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/platform/customers/users",
+                "/platform/customers/profile",
                 "/platform/customers/targets",
                 "/platform/customers/forms",
                 "/platform/customers/messaging",
@@ -311,6 +312,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/platform/customers/users",
+                "/es/platform/customers/profile",
                 "/es/platform/customers/targets",
                 "/es/platform/customers/forms",
                 "/es/platform/customers/messaging",
