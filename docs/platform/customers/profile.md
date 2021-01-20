@@ -11,7 +11,7 @@ The user profile is the central place where users can find the various sites in 
 Displays the list of enabled sites in the account, so that the user can easily find all the digital channels associated with the account
 
 :::tip Tip
-You can hide that section of the profile by using CSS in the customers configuration, appearance section
+You can hide that section of the profile by using CSS in the appearance section of the customers configuration.
 :::
 
 ### Notifications
