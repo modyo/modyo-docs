@@ -60,7 +60,6 @@ Within this section, you can configure the following data:
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
-- **Linked spaces**: Select spaces to link to this digital channel. Changes in any content from a linked space automatically update within your channel. By contrast, changes to content in non-linked spaces will only update within your channel after a given time. Depending on your session activity and account deployment type, the time to update is usually between 5 to 30 minutes.
 - **Delete**: This option allows you to permanently delete a site and all its elements.
 
 :::danger Danger
