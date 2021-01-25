@@ -70,7 +70,7 @@ Al usar la edición masiva de entradas estás sobreescribiendo los valores para 
 Si necesitas recuperar un valor específico de una entrada, puedes hacer uso de la opción "Diferencias" en la vista de edición de entradas para revisar los valores previos que tenía una entrada en particular.
 :::
 
-Una vez que Modyo haya terminado de de modificar los campos para las entradas seleccionadas, notarás que todas las entradas ahora están con cambios pendientes y debes publicarlas. Para esto, puedes hacer uso de la acción masiva "Publicar".
+Una vez que Modyo haya terminado de modificar los campos para las entradas seleccionadas, notarás que todas las entradas ahora están con cambios pendientes y debes publicarlas. Para esto, puedes hacer uso de la acción masiva "Publicar".
 
 ## Crear una Entrada
 
