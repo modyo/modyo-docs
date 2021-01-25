@@ -55,7 +55,7 @@ Las acciones masivas se ejecutan en segundo plano y es posible que no veas los c
 ## Editar masivamente
 
 :::warning Atención
-Esta opción solo está disponible si tienes el index de entradas filtradas por un tipo particular y además tienes entradas seleccionadas para las acciones masivas.
+Esta opción sólo está disponible si tienes el index de entradas filtradas por un tipo particular y además tienes entradas seleccionadas para las acciones masivas.
 
 Si seleccionas múltiples entradas, pero no estás usando el filtro por tipo de la tabla, no verás esta opción.
 :::
