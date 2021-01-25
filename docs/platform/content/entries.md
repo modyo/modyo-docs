@@ -60,6 +60,25 @@ If you try to archive an entry that is published, this action will be omitted an
 Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action.
 :::
 
+## Bulk edit
+
+:::warning Warning
+This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for bulk actions.
+
+If you select multiple entries, but are not using the filter by table type, you will not see this option.
+:::
+
+When selecting entries of the same type, you will see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you have checked the selector to the left of each field, you will be able to enter the value associated with the field.
+
+You can make changes to all fields of the type. Once you have finished adding values to the fields you need, press "Next" at the top of the screen to see a summary of your changes. If you agree with the changes, press "Save" to have Modyo start applying the changes to all selected entries.
+
+:::warning Caution
+By using bulk editing of entries you are overwriting the values for the selected fields in all selected entries, so the values that existed before the bulk edit will no longer be available in the editable version.
+
+If you need to restore a specific value from an entry, you can make use of the "Differences" option in the edit entries view to review the previous values that a particular entry had.
+:::
+
+Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now pending changes and you must publish them. For this, you can make use of the "Publish" mass action.
 
 ### Publish an Entry
 

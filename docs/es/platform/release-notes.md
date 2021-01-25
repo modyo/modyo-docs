@@ -4,7 +4,8 @@ search: true
 
 # Notas del release
 
-### 9.2.X - Primer release planificado para el cuarto trimestre del 2020.
+### 9.2.X - Primer release planificado para el primer trimestre del 2021.
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
 
@@ -14,6 +15,21 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
+
+
+### 9.1.7 - 25 de enero del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se añade la opción de [editar entradas de forma masiva](/es/platform/content/entries.html#editar-masivamente).
+* Se añaden filtros por autor y targets en el indice de entradas.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade la posibilidad de decidir si quieres que tus widgets del widget builder se [carguen de forma síncrona o asíncrona](/es/platform/channels/widgets.html#carga-sincrona).
 
 ### 9.1.6 - 23 de diciembre del 2020
 &nbsp;

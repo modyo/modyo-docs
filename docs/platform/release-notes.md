@@ -4,7 +4,7 @@ search: true
 
 # Release notes
 
-### 9.2.X - First release planned for the fourth quarter of 2020.
+### 9.2.X - First release planned for the first quarter of 2021.
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Administrator groups: Easily add users corresponding to different sites or spaces.
@@ -15,6 +15,20 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
+
+### 9.1.7 - January 25, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* The option to [edit entries in bulk](/platform/content/entries.html#bulk-edit) was added.
+* The option to filters by author and targets in the index of entries was added.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously](/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
 
 ### 9.1.6 - December 23, 2020
 &nbsp;
