@@ -7,7 +7,7 @@ translated: true
 
 Modyo Content is an application that makes it possible to create dynamic content repositories called spaces. Within a space, you can create content entries based on types that you define and administrators can establish space access configurations and roles for team members.
 
-![Headless](/assets/img/content/header.jpg)
+<img src="/assets/img/content/header.jpg" style="margin: 40px auto; width: 500px; display: block;">
 
 Modyo Content has a "headless" architecture which you can use to access content via an API available to both digital channels in Modyo and to external systems and applications.
 
