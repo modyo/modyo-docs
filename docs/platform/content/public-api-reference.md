@@ -84,10 +84,8 @@ In the same way that you can filter by category `by_category`, tags `by_tags` an
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
 ```
 
-Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
-Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at` y `slug`.
-The available ordering options are `asc` and `desc`, by default. The available `sort_by` options are: `name`, `published_at`, `created_at`, `updated_at` and `slug`.
-
+The available ordering options are `asc` and `desc`, and by default if this parameter is not specified, the values will be set to `desc`.
+The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at` and `slug`.
 
 ### Entries with location
 
