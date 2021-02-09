@@ -2,15 +2,10 @@
 search: false
 ---
 
-# Íconos
+# Icons
 
-## Íconos de Modyo
-Para el branding de Modyo y plataformas usamos los íconos de "Material Design Community". [Ir al sitio oficial.](https://materialdesignicons.com)
+For Modyo and Plataforma we use those of the Material Design Community.
 
-<img src="/assets/img/brand/icons_material.svg" class="mb-3 img-fluid" alt="Material icons">
+<img src="https://cloud.modyocdn.com/uploads/23b0533d-7127-4ccd-9b95-1c768428935d/original/icons.svg" style="margin-left: 0;">
 
-
-## Íconos de Widgest y Demos
-Para íconos de widgets y demos del producto usamos los íconos de "Fontawesome Pro". [Ir al sitio oficial.](https://fontawesome.com)
-
-<img src="/assets/img/brand/icons_fontawesome.svg" class="mb-3 img-fluid" alt="Fontawesome icons">
+[Visit site](https://materialdesignicons.com/)

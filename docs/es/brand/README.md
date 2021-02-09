@@ -4,9 +4,8 @@ search: false
 
 # Guía de Marca
 
-Bienvenido a la guía oficial de marca de Modyo. Acá se presentan los diferentes estándares que usamos para la construcción de sitios Web y documentos, indicando detalles específicos acerca del uso de logos, colores y tipografías, entre otras cosas más.
+Bienvenido a la guía oficial de la marca Modyo. A continuación presentamos los diferentes estándares que utilizamos para la construcción de sitios web y documentos, indicando detalles específicos sobre el uso de logotipos, colores y tipografías, entre otras cosas.
 
-Si tienes dudas acerca de cómo usar apropiadamente la marca de Modyo, no dudes en [contactarnos](https://support.modyo.com/hc/es) para poder guiarte.
+Si tiene preguntas sobre cómo usar correctamente la marca Modyo, no dude en [contactarnos](https://support.modyo.com/hc/es-cl)
 
-<img src='/assets/img/m.png' style="width:300px;" />
-
+<img src='/assets/img/m.png' style="width:300px;"/>
