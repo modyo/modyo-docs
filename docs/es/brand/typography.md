@@ -4,7 +4,7 @@ search: false
 
 # Tipografía
 
-La tipografía oficial de modyo para usar en todos sus formatos y plataformas es [DM Sans](https://fonts.google.com/specimen/DM+Sans).
+La tipografía oficial de Modyo para usar en todos sus formatos y plataformas es [DM Sans](https://fonts.google.com/specimen/DM+Sans).
 
 ### Font Styles
 
@@ -58,7 +58,7 @@ Letter-spacing: -1px
 
 ### Tipografías alternativas
 
-Para un uso alternativo cuando la DM SANS no está disponible, utilice siempre una tipografía SIN SERIF como Roboto, Open Sans, Poppins, Source Sans Pro para mantener la personalidad de marca además de la legibilidad visual.
+Para un uso alternativo cuando la DM SANS no está disponible, utiliza siempre una tipografía SANS SERIF como Roboto, Open Sans, Poppins o Source Sans Pro para mantener la personalidad de marca además de la legibilidad visual.
 
 ### Jerarquía
 

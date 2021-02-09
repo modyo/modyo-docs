@@ -4,7 +4,7 @@ search: false
 
 # Logos
 
-Hello, below we will review various content associated with the use of the brand, respecting its application and also its limitations.
+Hello, we will review various topics associated with the use of the brand below, respecting its applications and limiting factors.
 
 ## Logotype
 
@@ -34,7 +34,7 @@ The de facto use of the logo is mainly on white backgrounds, giving priority of 
 
 ### Negative application
 
-If we want to use the logo on dark backgrounds, it is ideal to use it on dark grey backgrounds, to provide high contrast.
+If you want to use the logo on dark backgrounds, it is ideal to use it on dark grey backgrounds, to provide high contrast.
 
 <table class="table-dark">
 <tr>
@@ -61,7 +61,7 @@ If we want to use the logo on dark backgrounds, it is ideal to use it on dark gr
 </tr>
 </table>
 
-### Exclusion Zone
+### Exclusion zone
 
 The free space and exclusion zone around the logo is equal to the height of the “M” (marked as × in the diagram).
 
@@ -71,7 +71,7 @@ For the use of the isotype the reference is the same.
 
 ### Minimum size
 
-The minimum size in which the logo can be displayed.
+This is the minimum size in which the logo can be displayed.
 
 <table>
 <tr>
@@ -90,11 +90,11 @@ Minimum digital size: 20px
 
 ### Alliances
 
-Separate free space rules are applied to align association logos. Use the width of an "M" as a guide for a gap between the Modyo logo and partner logos.
+Separate free space rules are applied align our logo with associated logos. Use the width of an "M" as a guide for a gap between the Modyo logo and partner logos.
 
 <img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
 
-You can change the color of the two logos together, just white. When you need to do that, put a simple, perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
+You can change the color of the two logos together to white. When you need to do that, put a simple, perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
 
 <img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
 
@@ -160,7 +160,7 @@ It is important that the appearance of the logo remains constant. It should not 
 </tr>
 <tr>
 <td>
-<p class="dont">Restrict use to corporate colors, black or white according to the manual.</p>
+<p class="dont">Only use corporate colors, black or white according to the manual.</p>
 </td>
 <td>
 <p class="dont">Do not interchange corporate colors.</p>
@@ -170,11 +170,11 @@ It is important that the appearance of the logo remains constant. It should not 
 </td>
 </tr>
 </table>
- 
+
 ## Isotype
 
-When we want to replace the use of the brand, this is when we can use the isotype, that is the "M" with the complementary symbol, leaving aside the complete word.
-While the icon can exist without the mark, the mark should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
+When you want to replace the use of the brand, then you can use the isotype. This is the "M" with the complementary symbol, leaving aside the complete word.
+While the icon can exist without the word brand, the word brand should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
 
 <img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype">
 
@@ -227,7 +227,7 @@ When using the isotype on dark backgrounds, it is ideal to use it with the follo
 </tr>
 </table>
 
-### Exclusion Zone
+### Exclusion zone
 
 The free space around the logo is equal to the height of the "M" (marked as × in the diagram).
 For the use of the isotype the reference is the same.
@@ -236,7 +236,7 @@ For the use of the isotype the reference is the same.
 
 ### Minimum size
 
-The minimum size in which the isotype can be used.
+This is the minimum size in which the isotype can be used.
 
 <table>
 <tr>

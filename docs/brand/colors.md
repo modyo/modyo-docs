@@ -4,17 +4,13 @@ search: false
 
 # Colors
 
-The color in a brand is important since it allows giving personality to a company, product or person, it is a distinctive factor, it gives identity and it allows the brand to be positioned. It takes on great power in people's minds.
+The color in a brand is important since it adds personality to a company, product or person. It is a distinctive factor, creates an identity and it allows the brand to be positioned. It takes on great power in people's minds.
 
-All brands have primary colors that identify them, these are the corporate colors.
+All brands have primary colors that identify them, these are our corporate colors.
 
 ## Primary colors
 
-The primary brand colors are petrol blue and green. The two are connected and represent the identity of Modyo. They are used to generate contrast, presence and accessibility in each of the formats where it is present.
-
-### Primary brand colors
-
-Our secondary colors, which usually accompany the brand on different media, are blue. They should be used sparingly throughout illustration, photography, and product to maintain meaning and potency.
+The primary colors of our brand are petrol blue and green. The two are connected and represent the identity of Modyo. They are used to generate contrast, presence and accessibility in each of the possible formats.
 
 <table class="no-border">
 <tr>
@@ -43,9 +39,9 @@ RGB: 14 189 116</p>
 </tr>
 </table>
 
-### Secondary brand color
+### Secondary brand colors
 
-Our secondary colors, which usually accompany the brand on different media, are blue. They should be used sparingly throughout illustration, photography, and product to maintain meaning and potency.
+Our secondary color, which usually accompanies the brand on different media formats, is blue. It should be used sparingly throughout illustration, photography, and product to maintain meaning and potency.
 
 <table class="no-border">
 <tr>
@@ -65,7 +61,7 @@ RGB: 32 104 216</p>
 
 ### Color palette
 
-Our brand is well suited to the following colors:
+Our brand works well with the following colors:
 
 <table class="no-border">
 <tr>
@@ -441,9 +437,9 @@ All brands have primary colors that identify them, these are the corporate color
 </tr>
 </table>
 
-### Associated Background Colors
+### Associated background colors
 
-All background colors are defined with the colors of the main palette and special colors with the following rule of use: <b>Apply 6% option up to 12%</b>
+All background colors are defined with the colors of the main palette and special colors with the following rule of use: <b>Apply 6% to 12% opacity</b>
 
 <table>
 <tr>
@@ -521,7 +517,7 @@ The overlay of the photos is black with an opacity of 80% so that there is the b
 
 ## Incorrect use of color
 
-Given the aforementioned, it is important to understand that the use of color for us is relevant that it is respected. Especially in the texts and backgrounds. For that, here are some examples of how color should not be used in written pieces.
+Given the aforementioned, it is important to understand that it is critical for us that the correct use of color is respected. Especially in texts and backgrounds. For that, here are some examples of how color should not be used in written pieces.
 
 <table>
 <tr>
@@ -537,13 +533,13 @@ Given the aforementioned, it is important to understand that the use of color fo
 </tr>
 <tr>
 <td>
-<p class="dont">Use special colors, completely leaving aside the identity of the brand.</p>
+<p class="dont">Do not use special colors, completely leaving aside the identity of the brand.</p>
 </td>
 <td>
-<p class="dont">The text should never have a color other than the primary colors, especially the paragraph. brand.</p>
+<p class="dont">The text should never have a color other than the primary colors, especially the paragraph.</p>
 </td>
 <td>
-<p class="dont">Use of a special color as a background, losing even the contrast.</p>
+<p class="dont">Do not use a special color as a background, losing the contrast of the image.</p>
 </td>
 </tr>
 <tr>
@@ -559,13 +555,13 @@ Given the aforementioned, it is important to understand that the use of color fo
 </tr>
 <tr>
 <td>
-<p class="dont">The use of a special or different color to the one already mentioned for an overlay.</p>
+<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
 </td>
 <td>
-<p class="dont">The use of a special or different color to the one already mentioned for an overlay.</p>
+<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
 </td>
 <td>
-<p class="dont">The use of a special or different color to the one already mentioned for an overlay.</p>
+<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
 </td>
 </tr>
 </table>

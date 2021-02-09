@@ -4,7 +4,7 @@ search: false
 
 # Illustrations
 
-Illustrations aim to communicate, convey ideas, feelings and feelings while creating an identity for the brand.
+Illustrations aim to communicate, convey ideas and feelings while creating an identity for the brand.
 
 They can have different objectives, either as support of a text, narrative of a situation or the symbolism of a concept.
 
@@ -17,7 +17,7 @@ They can be categorized into three types depending on the level of complexity an
 
 ## Hero
 
-They are illustrations that tell stories and complex concepts, which are generally represented with metaphors or fantastic and unreal situations. Sometimes these can be literal but they will always be linked to ideas with some complexity, more details and elements.
+These are illustrations that tell stories and complex concepts, which are generally represented with metaphors or fantastic and unreal situations. Sometimes these can be literal but they will always be linked to ideas with some complexity, more details and elements.
 
 <table>
 <tr>
@@ -30,7 +30,7 @@ They are illustrations that tell stories and complex concepts, which are general
 </tr>
 <tr>
 <td style="width: 50%;">
-Complex concept representation through metaphor.
+A complex concept represented through a metaphor.
 </td>
 <td style="width: 50%;">
 Representation of a concept using a fantastic scene.
@@ -40,7 +40,7 @@ Representation of a concept using a fantastic scene.
 
 ### Spot hero
 
-Spot Heroes are slightly simplified versions of Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space, generally the concepts or ideas represented are simple and direct.
+Spot Heroes are slightly simplified versions of a Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space. Generally, the concepts or ideas represented are simple and direct.
 
 <table>
 <tr>
@@ -56,14 +56,14 @@ Spot Heroes are slightly simplified versions of Hero, both visually and metaphor
 With the presence of metaphor.
 </td>
 <td style="width: 50%;">
-No presence of metaphor.
+No presence of a metaphor.
 </td>
 </tr>
 </table>
 
 ## Support element
 
-The supporting elements are generally characters or things that, just as their name says, support texts and graphics, providing humanity and reinforcing Modyo's identity.
+The supporting elements are generally characters or things that, just as their name implies, support texts and graphics, providing humanity and reinforcing Modyo's identity.
 
 In contrast to the hero and the point hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without taking away from what is being communicated.
 
@@ -71,9 +71,9 @@ In contrast to the hero and the point hero, these elements do not represent a sp
 
 ## Color
 
-Illustrations are made up of solid colored shapes with shadows and linear details in bector.
+Illustrations are made up of solid colored shapes with shadows and linear details in vector.
 
-The following colors are used giving priority to dark blue for shadows and leaving deep green for accents and details.White is a color that is always used on faces and hands.
+The following colors are used, giving priority to dark blue for shadows and leaving deep green for accents and details. White is a color that is always used on faces and hands.
 
 <table>
 <tr>
@@ -106,7 +106,7 @@ The following colors are used giving priority to dark blue for shadows and leavi
 
 <img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
 
-If necessary, color is used to reinforce ideas, direct the gaze to specific points, demonstrate difference in certain elements, and emphasize the idea of ​​overlap in one or more elements.
+If necessary, color is used to reinforce ideas, direct the gaze to specific points, demonstrate differences between certain elements, and emphasize the idea of ​​overlap in one or more elements.
 
 <table>
 <tr>
@@ -133,7 +133,7 @@ Illustrations make ideas more accessible. Like words, illustrations tell stories
 
 It is very important that they are used correctly and that they never become a distracting element.
 
-In marketing they are used as a back-up and communication element generally in websites, service sites, presentations, email, infographics, in social media and campaigns.
+In marketing they are used as supporting elements and for communication, generally in websites, service sites, presentations, email, infographics, in social media and campaigns.
 
 ### Exclusion zone
 
@@ -185,7 +185,7 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 </tr>
 <tr>
 <td>
-<p class="dont">Illustrations should not be cut, if necessary, it should be done by the illustrator.</p>
+<p class="dont">Illustrations should not be cut, but if necessary it should be done by the illustrator.</p>
 </td>
 <td>
 <p class="dont">Never change the proportion of illustrations.</p>
