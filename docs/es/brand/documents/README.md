@@ -2,17 +2,16 @@
 search: false
 ---
 
-# Documentos <Badge text="Beta" type="warn"/>
+# Documents <Badge text="Beta" type="warn"/>
 
-## Reglas de Texto
+## Text Rules
 
-El texto en Modyo no se justifica. Los títulos van sin puntos, salvo que estos sean frases completas.
-
+Text in Modyo is not justified. Titles do not use periods, unless they are full sentences.
 
 ## Google G Suite
 
-Para los documentos y presentaciones de Google G Suite.
+For Google G Suite documents and presentations.
 
 ## Microsoft 365
 
-Para los documentos y presentaciones de Microsoft 365.
+For Microsoft 365 documents and presentations.

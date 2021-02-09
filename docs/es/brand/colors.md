@@ -2,255 +2,533 @@
 search: false
 ---
 
-# Colores
+# Colors
 
-El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.<br>Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
+El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
 
-## Colores primarios
-Los colores primarios de marca son el negro y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
+Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
+
+## Colores Principales
+
+Los colores primarios de marca son el azul petroleo y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
+
+<table class="no-border">
+<tr>
+<td>
+<div style="display: flex;">
+<span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-left: 24px;">
+<p><b>Azul Petroleo</b></p>
+<p>HEX: #151F38 <br>
+RGB: 21 31 56</p>
+</div>
+</div>
+</td>
+<td>
+<div style="display: flex;">
+<span style="background: #3dc681;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-left: 24px;">
+<p><b>Verde</b></p>
+<p>HEX: #3dc681 <br>
+RGB: 14 189 116</p>
+</div>
+</div>
+</td>
+</tr>
+</table>
+
+### Color Secondarios
+
+Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul. Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
+
+<table class="no-border">
+<tr>
+<td>
+<div style="display: flex;">
+<span style="background: #2068D5;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-left: 24px;">
+<p><b>Azul</b></p>
+<p>HEX: #2068D5 <br>
+RGB: 32 104 216</p>
+</div>
+</div>
+</td>
+</tr>
+</table>
+
+### Paleta de colores
+
+Nuestra marca se acompla bien a los siguientes colores:
+
+<table class="no-border">
+<tr>
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #151F38;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Dark
+</span>
+<div>
+<p>HEX: #2068D5 <br>
+RGB: 32 104 216</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #444C60;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Normal
+</span>
+<div>
+<p>HEX: #444C60 <br>
+RGB: 68 76 96</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #737988;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Semilight
+</span>
+<div>
+<p>HEX: #737988 <br>
+RGB: 115 121 136</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #A1A5AF;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Light
+</span>
+<div>
+<p>HEX: #A1A5AF <br>
+RGB: 161 165 175</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #D0D2D7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Superlight
+</span>
+<div>
+<p>HEX: #D0D2D7 <br>
+RGB: 208 210 215</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #F3F4F7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Background
+</span>
+<div>
+<p>HEX: #F3F4F7 <br>
+RGB: 208 210 215</p>
+</div>
+</div>
+</td>
+<!-- -->
+</tr>
+
+<tr>
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #32AE70;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Dark
+</span>
+<div>
+<p>HEX: #32AE70 <br>
+RGB: 5 165 98</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #3dc681;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Normal
+</span>
+<div>
+<p>HEX: #3DC681 <br>
+RGB: 14 189 116</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #51CD8F;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Semilight
+</span>
+<div>
+<p>HEX: #51CD8F <br>
+RGB: 62 202 144</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #81DAAD;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Light
+</span>
+<div>
+<p>HEX: #81DAAD <br>
+RGB: 110 215 172</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #BFEDD7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Superlight
+</span>
+<div>
+<p>HEX: #BFEDD7 <br>
+RGB: 159 229 199</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #EFFBF5;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Background
+</span>
+<div>
+<p>HEX: #EFFBF5 <br>
+RGB: 159 229 199</p>
+</div>
+</div>
+</td>
+<!-- -->
+</tr>
+
+<tr>
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #1B57B2;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Dark
+</span>
+<div>
+<p>HEX: #1B57B2 <br>
+RGB: 27 87 178</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #2068D5;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Normal
+</span>
+<div>
+<p>HEX: #2068D5 <br>
+RGB: 32 104 213</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #5891E7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Semilight
+</span>
+<div>
+<p>HEX: #5891E7 <br>
+RGB: 88 145 231</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #A0C1F3;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Light
+</span>
+<div>
+<p>HEX: #A0C1F3 <br>
+RGB: 160 193 243</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #CDDFF9;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Superlight
+</span>
+<div>
+<p>HEX: #CDDFF9 <br>
+RGB: 205 223 249</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #EDF3FC;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Background
+</span>
+<div>
+<p>HEX: #EDF3FC <br>
+RGB: 205 223 249</p>
+</div>
+</div>
+</td>
+<!-- -->
+</tr>
+</table>
+
+### Gradientes
+
+El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
+
+Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
+
+<table class="no-border">
+<tr>
+<td style="padding: 20px 40px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #151F38</p>
+<span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A1A5AF</p>
+</div>
+</div>
+</td>
+
+<td style="padding: 20px 40px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #0EBD74</p>
+<span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #9FE5C7</p>
+</div>
+</div>
+</td>
+
+<td style="padding: 20px 40px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #2068D5</p>
+<span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A0C1F3</p>
+</div>
+</div>
+</td>
+
+<td style="padding: 20px 40px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #CDDFF9</p>
+<span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #F2F6FC</p>
+</div>
+</div>
+</td>
+
+</tr>
+</table>
+
+## Colores especiales
+
+El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
+
+Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
 
 <table>
 <tr>
 <td>
-<div class="circle" style="background-color:#393F4C;"></div> 
+<div style="display: flex;flex-direction: column;">
+<span style="background: #2179BE;display: flex;color: white;padding: 10px 20px;">#2179BE</span>
+<span style="background: #2893E7;display: flex;color: white;padding: 10px 20px;">#2893E7</span>
+<span style="background: #62B0ED;display: flex;color: white;padding: 10px 20px;">#62B0ED</span>
+</div>
 </td>
 <td>
-<div class="circle" style="background-color:#61A60E;"></div> 
+<div style="display: flex;flex-direction: column;">
+<span style="background: #299596;display: flex;color: white;padding: 10px 20px;">#299596</span>
+<span style="background: #31B6B7;display: flex;color: white;padding: 10px 20px;">#31B6B7</span>
+<span style="background: #7BD0D1;display: flex;color: white;padding: 10px 20px;">#7BD0D1</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #78B83D;display: flex;color: white;padding: 10px 20px;">#78B83D</span>
+<span style="background: #8DC756;display: flex;color: white;padding: 10px 20px;">#8DC756</span>
+<span style="background: #A2D175;display: flex;color: white;padding: 10px 20px;">#A2D175</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #2C4363;display: flex;color: white;padding: 10px 20px;">#2C4363</span>
+<span style="background: #39567F;display: flex;color: white;padding: 10px 20px;">#39567F</span>
+<span style="background: #567DB3;display: flex;color: white;padding: 10px 20px;">#567DB3</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #442568;display: flex;color: white;padding: 10px 20px;">#442568</span>
+<span style="background: #5A3B7E;display: flex;color: white;padding: 10px 20px;">#5A3B7E</span>
+<span style="background: #7B6298;display: flex;color: white;padding: 10px 20px;">#7B6298</span>
+</div>
 </td>
 </tr>
-<tr>
+
+<tr style="background: white;">
 <td>
-<ul>
-<li>HEX #393F4C</li>
-<li>RGB: 57 63 76</li>
-<li>CMYK: 25 17 0 70</li>
-</ul>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #AA2E5C;display: flex;color: white;padding: 10px 20px;">#AA2E5C</span>
+<span style="background: #CF3770;display: flex;color: white;padding: 10px 20px;">#CF3770</span>
+<span style="background: #DC6D97;display: flex;color: white;padding: 10px 20px;">#DC6D97</span>
+</div>
 </td>
 <td>
-<ul>
-<li>HEX #61A60E</li>
-<li>RGB: 97 166 14</li>
-<li>CMYK: 42 0 92 35</li>
-</ul>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #C23338;display: flex;color: white;padding: 10px 20px;">#C23338</span>
+<span style="background: #EC3E44;display: flex;color: white;padding: 10px 20px;">#EC3E44</span>
+<span style="background: #F17277;display: flex;color: white;padding: 10px 20px;">#F17277</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #DA702A;display: flex;color: white;padding: 10px 20px;">#DA702A</span>
+<span style="background: #EF7B2E;display: flex;color: white;padding: 10px 20px;">#EF7B2E</span>
+<span style="background: #F39F67;display: flex;color: white;padding: 10px 20px;">#F39F67</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #E6B338;display: flex;color: white;padding: 10px 20px;">#E6B338</span>
+<span style="background: #FCC43D;display: flex;color: white;padding: 10px 20px;">#FCC43D</span>
+<span style="background: #FCCE60;display: flex;color: white;padding: 10px 20px;">#FCCE60</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #8C8062;display: flex;color: white;padding: 10px 20px;">#8C8062</span>
+<span style="background: #A39572;display: flex;color: white;padding: 10px 20px;">#A39572</span>
+<span style="background: #D1BF93;display: flex;color: white;padding: 10px 20px;">#D1BF93</span>
+</div>
 </td>
 </tr>
 </table>
 
+### Colores de fondos asociados
 
-									
-
-
-## Colores secundarios
-Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul.Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
+Todos los colores de fondos se definen con los colores de la paleta principal y colores especiales con la regla de uso siguiente: <b>Aplicar 6% de opcidad hasta 12%</b>
 
 <table>
 <tr>
 <td>
-<div class="circle" style="background-color:#4081E2;"></div> 
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F2F6FC;display: flex;padding: 30px 20px;color:#737988">#F2F6FC</span>
+</div>
 </td>
 <td>
-<div class="circle" style="background-color:#FFFFFF; border: 2px solid #f4f4f4;"></div> 
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F3FBFB;display: flex;padding: 30px 20px;color:#737988">#F3FBFB</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F4F8FA;display: flex;padding: 30px 20px;color:#737988">#F4F8FA</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F3F5F8;display: flex;padding: 30px 20px;color:#737988">#F3F5F8</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F5F3F7;display: flex;padding: 30px 20px;color:#737988">#F5F3F7</span>
+</div>
 </td>
 </tr>
-<tr>
+
+<tr style="background: white;">
 <td>
-<ul>
-<li>HEX #4081E2</li>
-<li>RGB: 23 132 216</li>
-<li>CMYK: 89 39 0 15</li>
-</ul>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FCF3F6;display: flex;padding: 30px 20px;color:#737988">#FCF3F6</span>
+</div>
 </td>
 <td>
-<ul>
-<li>HEX #FFFFFF</li>
-<li>RGB: 255 255 255</li>
-<li>CMYK: 0 0 0 0</li>
-</ul>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FEF3F4;display: flex;padding: 30px 20px;color:#737988">#FEF3F4</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FEF7F2;display: flex;padding: 30px 20px;color:#737988">#FEF7F2</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FFFBF3;display: flex;padding: 30px 20px;color:#737988">#FFFBF3</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F9F9F7;display: flex;padding: 30px 20px;color:#737988">#F9F9F7</span>
+</div>
 </td>
 </tr>
+
 </table>
 
+### Overlay en imágenes
 
-
-## Background
-Nuestra marca se acompla bien a los siguiente background, como sugerencia les dejamos los siguientes colores.
-
-
-<table>
-<tr>
-<td>
-<div class="circle" style="background-color:#F7FAF3; border: 2px solid #f4f4f4;"></div> 
-</td>
-<td>
-<div class="circle" style="background-color:#F3F8FA; border: 2px solid #f4f4f4;"></div> 
-</td>
-<td>
-<div class="circle" style="background-color:#F6F7F7; border: 2px solid #f4f4f4;"></div> 
-</td>
-<td>
-<div class="circle" style="background-color:#393F4C;"></div> 
-</td>
-</tr>
-<tr>
-<td>
-<ul>
-<li>HEX #F7FAF3</li>
-<li>RGB: 247 250 243</li>
-<li>CMYK: 1 0 3 2</li>
-</ul>
-</td>
-<td>
-<ul>
-<li>HEX #F3F8FA</li>
-<li>RGB: 243 248 250</li>
-<li>CMYK: 3 1 0 2</li>
-</ul>
-</td>
-<td>
-<ul>
-<li>HEX #F6F7F7</li>
-<li>RGB: 246 247 247</li>
-<li>CMYK: 0 0 0 3</li>
-</ul>
-</td>
-<td>
-<ul>
-<li>HEX #393F4C</li>
-<li>RGB: 57 63 76</li>
-<li>CMYK: 25 17 0 70</li>
-</ul>
-</td>
-</tr>
-</table>
-
-											
-## Colores Especiales
-Los colores especiales se designan solo para ilustraciones y gráficos que requieran combinaciones.  Se deben usar con moderación y siempre complementando a las diversas piezas en contraste y color.
-
-<table style="padding:0px;margin:0px;height:auto;overflow: visible;">
-<tr>
-<td style="padding:0px;margin:0px;width:150px;">
-    <table class="color-table">
-    <tr style="background-color:#2179BE;color:#FFFFFF;"><div class="color-box">#2179BE</div>
-    </tr>
-    <tr style="background-color:#2893E7;color:#FFFFFF;"><div class="color-box">#2893E7</div>
-    </tr>
-    <tr style="background-color:#62B0ED;color:#FFFFFF;"><div class="color-box">#62B0ED</div>
-    </tr>
-    </table>
-</td>
-<td style="padding:0px;margin:0px;width:150px;">
-    <table class="color-table">
-    <tr style="background-color:#38B476;color:#FFFFFF;"><div class="color-box">#38B476</div>
-    </tr>
-    <tr style="background-color:#3DC681;color:#FFFFFF;"><div class="color-box">#3DC681</div>
-    </tr>
-    <tr style="background-color:#71D5A3;color:#FFFFFF;"><div class="color-box">#71D5A3</div>
-    </tr>
-    </table>
-</td>
-<td style="padding:0px;margin:0px;width:150px;">
-    <table class="color-table">
-    <tr style="background-color:#299596;color:#FFFFFF;"><div class="color-box">#299596</div>
-    </tr>
-    <tr style="background-color:#31B6B7;color:#FFFFFF;"><div class="color-box">#31B6B7</div>
-    </tr>
-    <tr style="background-color:#7BD0D1;color:#FFFFFF;"><div class="color-box">#7BD0D1</div>
-    </tr>
-    </table>
-</td>
-</tr>
-<tr>
-<td style="padding:0px;margin:0px;">
-    <table class="color-table">
-    <tr style="background-color:#C23338;color:#FFFFFF;"><div class="color-box">#C23338</div>
-    </tr>
-    <tr style="background-color:#EC3E44;color:#FFFFFF;"><div class="color-box">#EC3E44</div>
-    </tr>
-    <tr style="background-color:#F17277;color:#FFFFFF;"><div class="color-box">#F17277</div>
-    </tr>
-    </table>
-</td>
-<td style="padding:0px;margin:0px;">
-    <table class="color-table">
-    <tr style="background-color:#AA2E5C;color:#FFFFFF;"><div class="color-box">#AA2E5C</div>
-    </tr>
-    <tr style="background-color:#CF3770;color:#FFFFFF;"><div class="color-box">#CF3770</div>
-    </tr>
-    <tr style="background-color:#DC6D97;color:#FFFFFF;"><div class="color-box">#DC6D97</div>
-    </tr>
-    </table>
-</td>
-<td style="padding:0px;margin:0px;">
-    <table class="color-table">
-    <tr style="background-color:#442568;color:#FFFFFF;"><div class="color-box">#442568</div>
-    </tr>
-    <tr style="background-color:#5A3B7E;color:#FFFFFF;"><div class="color-box">#5A3B7E</div>
-    </tr>
-    <tr style="background-color:#7B6298;color:#FFFFFF;"><div class="color-box">#7B6298</div>
-    </tr>
-    </table>
-</td>
-</tr>
-<tr>
-<td style="padding:0px;margin:0px;">
-    <table class="color-table">
-    <tr style="background-color:#DA702A;color:#FFFFFF;"><div class="color-box">#DA702A</div>
-    </tr>
-    <tr style="background-color:#EF7B2E;color:#FFFFFF;"><div class="color-box">#EF7B2E</div>
-    </tr>
-    <tr style="background-color:#F39F67;color:#FFFFFF;"><div class="color-box">#F39F67</div>
-    </tr>
-    </table>
-</td>
-<td style="padding:0px;margin:0px;">
-    <table class="color-table">
-    <tr style="background-color:#E6B338;color:#FFFFFF;"><div class="color-box">#E6B338</div>
-    </tr>
-    <tr style="background-color:#FCC43D;color:#FFFFFF;"><div class="color-box">#FCC43D</div>
-    </tr>
-    <tr style="background-color:#FCCE60;color:#FFFFFF;"><div class="color-box">#FCCE60</div>
-    </tr>
-    </table>
-</td>
-<td style="padding:0px;margin:0px;">
-    <table class="color-table">
-    <tr style="background-color:#8C8062;color:#FFFFFF;"><div class="color-box">#8C8062</div>
-    </tr>
-    <tr style="background-color:#A39572;color:#FFFFFF;"><div class="color-box">#A39572</div>
-    </tr>
-    <tr style="background-color:#D1BF93;color:#FFFFFF;"><div class="color-box">#D1BF93</div>
-    </tr>
-    </table>
-</td>
-</tr>
-</table>
-						
-
-
-
-
-## Overlay en imágenes
 El overlay de las fotos es negro con una opacidad del 80% para que exista el mejor contraste posible entre figura y fondo.
-<img src="/assets/img/brand/overlay1.png" style="width:80%;" alt="overlay example 1">
-<img src="/assets/img/brand/overlay2.png" style="width:80%;" alt="overlay example 2">
 
-
+<table class="no-border">
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/67d44ef3-4b73-423b-8eab-1edc70258bbf/original/img.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/2ad43924-5665-431a-93f1-729f0922c830/original/img-1.png" alt="">
+</td>
+</tr>
+</table>
 
 ## Uso incorrecto del color
-Dado lo mencionado anteriormente, es importante entender que el uso del color para nosotros es relevante que se respete. En especial en los textos y fondos. Para eso acá algunos ejemplos de como no debiese usarse el color en piezas escritas.
 
+Dado lo mencionado anteriormente, es importante entender que el uso del color para nosotros es relevante que se respete. En especial en los textos y fondos. Para eso acá algunos ejemplos de como no debiese usarse el color en piezas escritas.
 
 <table>
 <tr>
-<td>
-<img src="/assets/img/brand/incorrect_color_1.png" alt="">
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/3e56754e-330d-4b81-a35d-3c2c632e710e/original/color-1.png" alt="">
 </td>
-<td>
-<img src="/assets/img/brand/incorrect_color_2.png" alt="">
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/965e7dd6-cee2-4772-9b12-c8869ec94d36/original/color-2.png" alt="">
 </td>
-<td>
-<img src="/assets/img/brand/incorrect_color_3.png" alt="">
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/caae2e80-9482-41c9-affc-58570363664e/original/color-3.png" alt="">
 </td>
 </tr>
 <tr>
@@ -266,13 +544,13 @@ Dado lo mencionado anteriormente, es importante entender que el uso del color pa
 </tr>
 <tr>
 <td>
-<img src="/assets/img/brand/incorrect_color_4.png" alt="">
+<img src="https://cloud.modyocdn.com/uploads/a9694ec4-629e-4135-828b-52a47533d79c/original/color-4.png" alt="">
 </td>
 <td>
-<img src="/assets/img/brand/incorrect_color_5.png" alt="">
+<img src="https://cloud.modyocdn.com/uploads/31598c0d-370f-47e3-9352-3fad7c02588e/original/color-5.png" alt="">
 </td>
 <td>
-<img src="/assets/img/brand/incorrect_color_6.png" alt="">
+<img src="https://cloud.modyocdn.com/uploads/003cebeb-9231-473d-807d-f4ac85075ea2/original/color-6.png" alt="">
 </td>
 </tr>
 <tr>

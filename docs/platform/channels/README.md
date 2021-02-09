@@ -7,7 +7,7 @@ translated: true
 
 Modyo Channels is an application that allows you to manage content distribution and web applications for multiple sites and languages in one place.
 
-<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
+<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
 Modyo Channels provides extensive access to the base code of every channel through a set of templates, giving developers complete control of every detail of a user's digital experiences, published through an integrated version control system.
 
@@ -16,6 +16,7 @@ Modyo Channels has editable design templates that make it easy to reuse code.
 Modyo Channels also has a templating system based on [Liquid Markup](/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information which is efficiently processed from the server side.
 
 ### Main functionalities
+
 - [Site management](/platform/channels/sites.html) to organize digital channels.
 - [Dynamic pages](/platform/channels/pages.html) to define the structure of each site and add content to it.
 - [Widgets](/platform/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML and CSS.

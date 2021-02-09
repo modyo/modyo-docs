@@ -4,125 +4,124 @@ search: false
 
 # Logos
 
-En la siguiente sección revisaremos diferentes usos de los logos de Modyo, respetando su aplicación y también sus limitantes.
+Hola, a continuación revisaremos diversos contenidos asociados al uso de la marca, respetando su aplicación y también sus limitantes.
 
-## Logotipo
+## Logotype
 
-El logotipo de modyo cuenta con la palabra escrita del nombre de la empresa, y un símbolo en color verde, ambos son reconocibles al instante. Por esto es tan importante usar el logotipo exactamente cómo se especifica en estas pautas. [Descargar.](/assets/img/brand/modyo_logo.svg)
+El logotipo de modyo cuenta con la palabra escrita del nombre de la empresa, y un símbolo en color verde, ambos son reconocibles al instante. Por esto es tan importante usar el logotipo exactamente cómo se especifica en estas pautas. [Descargar.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
 
-<img src="/assets/img/brand/modyo_logo.svg" style="width:70%; height:auto;">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
 
 ### Aplicación en positivo
-El uso inicial del logotipo es principalmente sobre fondos blancos, dandole prioridad de uso a la marca original, pero también esta permitido el uso de la marca en negro.
+
+El uso inicial del logotipo es sobre fondos blancos principalmente, dandole prioridad de uso a la marca original, pero también esta permitido el uso de la marca en negro.
 
 <table>
 <tr>
 <td>
-<img src="/assets/img/brand/modyo_logo.svg" style="width:400px;" alt="logo">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:200px;" alt="logo">
 </td>
 <td>
-<img src="/assets/img/brand/modyo_logo_black.svg" style="width:400px;" alt="logo black">
+<img src="https://cloud.modyocdn.com/uploads/792297b4-00d1-4e65-8a58-38409e6de3c1/original/black.svg" style="width:200px;" alt="logo black">
 </td>
 </tr>
 <tr>
-<td>
-<div class="center">#FFFFFF</div>
-</td>
-<td>
-<div class="center">#FFFFFF</div>
+<td colspan="2">
+<div class="center">HEX: #FFFFFF</div>
 </td>
 </tr>
 </table>
 
-    
 ### Aplicación en negativo
-Si quisieramos usar el logo en fondos oscuro, el ideal es usarlo sobre fondos grises oscuros, en los cuales se produsca un alto contraste.
 
-<table>
-<tr style="background-color: #000; padding: 20px;">
-<td>
-<img src="/assets/img/brand/modyo_logo_normal_white.svg" style="width:400px;" alt="logo">        
+Si quisieramos usar el logo en fondos oscuro, el ideal es usarlo en posLo ideal sería utilizar los siguientes colores de background para su mejor contraste.
+
+<table class="table-dark">
+<tr>
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/e1b4d73d-c058-4a1d-8886-ff3400305e13/original/normal.svg" style="width:200px;" alt="logo">        
 </td>
-<td>
-<img src="/assets/img/brand/modyo_logo_white.svg" style="width:400px;" alt="logo black">        
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/645364f9-94c6-425c-a868-3ac055a167d5/original/white.svg" style="width:200px;" alt="logo">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/e1b4d73d-c058-4a1d-8886-ff3400305e13/original/normal.svg" style="width:200px;" alt="logo">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/645364f9-94c6-425c-a868-3ac055a167d5/original/white.svg" style="width:200px;" alt="logo black">        
 </td>
 </tr>
 <tr>
-<td>
-<div class="center">#000000</div>
+<td colspan="2" style="background-color: #000; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #000000</div>
 </td>
-<td>
-<div class="center">#000000</div>
-</td>
-</tr>
-</table>
-
-<table>
-<tr style="background-color: #3A3A3A; padding: 20px;">
-<td>
-<img src="/assets/img/brand/modyo_logo_normal_white.svg" style="width:400px;" alt="logo">
-</td>
-<td>
-<img src="/assets/img/brand/modyo_logo_white.svg" style="width:400px;" alt="logo black">
-</td>
-</tr>
-<tr>
-<td>
-<div class="center">#3A3A3A</div>
-</td>
-<td>
-<div class="center">#3A3A3A</div>
+<td colspan="2" style="background-color: #151F38; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #151F38</div>
 </td>
 </tr>
 </table>
 
 ### Zona de exclusión
-El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la "M" (marcado como × en el diagrama).
 
-<img src="/assets/img/brand/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;">
+El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la “M” (marcado como × en el diagrama).
 
+Para el uso del isotipo la referencia es la misma.
 
-### Tamaño mínimo
-El tamaño mínimo en el que puede ser desplegado el logo.
+<img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
+
+### Tamaño minimo
+
+El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la “M” (marcado como × en el diagrama).
+
+Para el uso del isotipo la referencia es la misma.
 
 <table>
 <tr>
-<td>
-<img src="/assets/img/brand/modyo_logo.svg" style="width:100px;" alt="logo">
+<td style="border-right: 0;">
+<div style="display: flex;">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="height:20px;margin-right: 10px;" alt="logo">
+<img src="https://cloud.modyocdn.com/uploads/effce9f6-1c02-47a0-b9c8-434056aa250f/original/height.svg" style="height:20px;" alt="height">
+</div>
 </td>
-<td>
-Tamaños:
-<ul>
-<li>Digital: 100px</li>
-<li>Impreso: 3cm</li>
-</ul>
+<td style="border-left: 0;">
+<b>Logotipo:</b><br>
+Tamaño digital minimo: 20px
 </td>
 </tr>
-</table> 
+</table>
 
+### Alianzas
+
+Se aplican reglas de espacio libre separadas para alinear los logotipos de las asociaciones. Utilice el ancho de una "M" como guía para un espacio libre entre el logotipo de Modyo y los logotipos de los socios.
+
+<img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
+
+Puede cambiar el color de los dos logotipos en conjunto, solo en blanco. Cuando necesite hacerlo, coloque un cuadrado simple y perfecto en el medio para separar los dos logotipos. El tamaño del cuadrado debe proporcionar un equilibrio óptico entre los dos logotipos.
+
+<img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
 
 ### Uso indebido del logotipo
-Es importante que la apariencia del logotipo se mantenga constante. No debe malinterpretarse, modificarse ni agregarse. Aquí los siguientes usos NO permitidos.
 
+Es importante que la apariencia del logotipo se mantenga constante. No debe malinterpretarse, modificarse ni agregarse. Aquí los siguientes usos NO permitidos.
 
 <table>
 <tr>
 <td style="width:30%;">
-<img src="/assets/img/brand/incorrect_logo_1.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/e08b173b-b3eb-4144-a5f3-da55eec550df/original/incorrect_logo_1.svg" alt="">
 </td>
 <td style="width:30%;">
-<img src="/assets/img/brand/incorrect_logo_2.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/fd2e39bf-c82d-4a27-ad2b-57d21ece288c/original/incorrect_logo_2.svg" alt="">
 </td>
 <td style="width:30%;">
-<img src="/assets/img/brand/incorrect_logo_3.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/c8762be2-b85a-4eff-be55-f80e79274bbf/original/incorrect_logo_3.svg" alt="">
 </td>
 </tr>
 <tr>
 <td>
-<p class="dont">No quite el simbolo verde que acompaña la "O" al final.</p>
+<p class="dont">No quite el simbolo verde, característico del logo que acompaña la “O” al final.</p>
 </td>
 <td>
-<p class="dont">No gire el logotipo en ninguna dirección.</p>
+<p class="dont">No gire el logotipo.</p>
 </td>
 <td>
 <p class="dont">No aplique un degradado ni al logotipo, ni al isotipo.</p>
@@ -130,13 +129,13 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<img src="/assets/img/brand/incorrect_logo_4.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/b07a3a1d-ea57-4a60-93e1-7846c7819938/original/incorrect_logo_4.svg" alt="">
 </td>
 <td>
-<img src="/assets/img/brand/incorrect_logo_5.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/a397d677-b3c1-4a8e-bf7c-353e7c04d298/original/incorrect_logo_5.svg" alt="">
 </td>
 <td>
-<img src="/assets/img/brand/incorrect_logo_6.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/8003c329-6b87-4dbe-954e-ae68d0867443/original/incorrect_logo_6.svg" alt="">
 </td>
 </tr>
 <tr>
@@ -147,17 +146,18 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 <p class="dont">No use el trazo alrededor del logotipo, el uso es solo con relleno.</p>
 </td>
 <td>
-<p class="dont">No cambie la tipografía ni del logotipo, ni del isotipo.</p>
+<p class="dont">No cambie la tipografía del logotipo.</p>
 </td>
 </tr>
 <tr>
 <td>
-<img src="/assets/img/brand/incorrect_logo_7.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/e2c52d29-253e-423f-8f4e-f047adf16d36/original/incorrect_logo_7.svg" alt="">
 </td>
 <td>
-<img src="/assets/img/brand/incorrect_logo_8.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/29c773ca-ee01-4c67-89ff-c5f31fac39a0/original/incorrect_logo_8.svg" alt="">
 </td>
 <td>
+<img src="https://cloud.modyocdn.com/uploads/0952f110-6319-41a8-a24d-4f151bcda5af/original/incorrect_logo_9.svg" alt="">
 </td>
 </tr>
 <tr>
@@ -168,6 +168,7 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 <p class="dont">No intercambie los colores corporativos.</p>
 </td>
 <td>
+<p class="dont">No usar los colores antiguos.</p>
 </td>
 </tr>
 </table>
@@ -175,95 +176,83 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 ## Isotipo
 
 Cuando queremos reemplazar el uso de la marca, es cuando se utiliza el isotipo, es decir la "M" con el símbolo complementario, dejando de lado la palabra completa.
-Si bien el icono puede existir sin la marca de palabra, la marca de palabra nunca debe existir sin el icono. [Descargar.](/assets/img/brand/modyo_isotype.svg)
 
-<img src="/assets/img/brand/modyo_isotype.svg" style="width:40%; height:auto; margin:auto" alt="isotype">
+Si bien el icono puede existir sin la marca de palabra, la marca de palabra nunca debe existir sin el icono. [Descargar.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
+
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype">
 
 ### Aplicación en positivo
+
 El uso inicial del isotipo es sobre fondos blancos, dandole prioridad de uso al original, pero también esta permitido el uso del isotipo en negro.
 
 <table>
 <tr>
 <td>
-<img src="/assets/img/brand/modyo_isotype.svg" style="width:300px;" alt="logo">
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width:150px;" alt="isotype">
 </td>
 <td>
-<img src="/assets/img/brand/modyo_isotype_black.svg" style="width:300px;" alt="logo black">
+<img src="https://cloud.modyocdn.com/uploads/8c6ba79d-a80a-4290-97b8-99f7a80eafc9/original/black.svg" style="width:150px;" alt="isotype black">
 </td>
 </tr>
 <tr>
-<td>
-<div class="center">#FFFFFF</div>
-</td>
-<td>
-<div class="center">#FFFFFF</div>
+<td  colspan="2">
+<div class="center">HEX: #FFFFFF</div>
 </td>
 </tr>
 </table>
 
 ### Aplicación en negativo
+
 Si quisieramos usar el isotipo en fondos oscuros, el ideal es usarlo con los siguientes colores de background para su mejor contraste.
 
-
-<table>
-<tr style="background-color: #000; padding: 20px;">
-<td>
-<img src="/assets/img/brand/modyo_isotype_normal_white.svg" style="width:300px;" alt="logo">        
+<table class="table-dark">
+<tr>
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/5bfbdb4a-5d2c-4c0e-a0f1-8f6792ac0e99/original/normal_1_.svg" style="width:150px;" alt="isotype">        
 </td>
-<td>
-<img src="/assets/img/brand/modyo_isotype_white.svg" style="width:300px;" alt="logo black">        
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/95500ffc-0669-4d7b-9782-77b6a5f35241/original/white.svg" style="width:150px;" alt="isotype">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/5bfbdb4a-5d2c-4c0e-a0f1-8f6792ac0e99/original/normal_1_.svg" style="width:150px;" alt="isotype">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/95500ffc-0669-4d7b-9782-77b6a5f35241/original/white.svg" style="width:150px;" alt="isotype white">        
 </td>
 </tr>
 <tr>
-<td>
-<div class="center">#000000</div>
+<td colspan="2" style="background-color: #000; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #000000</div>
 </td>
-<td>
-<div class="center">#000000</div>
-</td>
-</tr>
-</table>
-
-<table>
-<tr style="background-color: #3A3A3A; padding: 20px;">
-<td>
-<img src="/assets/img/brand/modyo_isotype_normal_white.svg" style="width:300px;" alt="logo">
-</td>
-<td>
-<img src="/assets/img/brand/modyo_isotype_white.svg" style="width:300px;" alt="logo black">
-</td>
-</tr>
-<tr>
-<td>
-<div class="center">#3A3A3A</div>
-</td>
-<td>
-<div class="center">#3A3A3A</div>
+<td colspan="2" style="background-color: #151F38; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #151F38</div>
 </td>
 </tr>
 </table>
 
 ### Zona de exclusión
-El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la "M" (marcado como × en el diagrama).
+
+El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la “M” (marcado como × en el diagrama).
 Para el uso del isotipo la referencia es la misma.
 
-<img src="/assets/img/brand/isotype_redzone.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;">
+<img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
 
-### Tamaño mínimo
-Tamaño mínimo en el cual puede ser usado el isotipo.
+### Tamaño minimo
 
+El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la “M” (marcado como × en el diagrama).
+Para el uso del isotipo la referencia es la misma.
 
 <table>
 <tr>
-<td style="width:100px;">
-<img src="/assets/img/brand/modyo_isotype.svg" style="width:32px;" alt="logo">
+<td style="border-right: 0;">
+<div style="display: flex;">
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="height:24px;margin-right: 10px;" alt="logo">
+<img src="https://cloud.modyocdn.com/uploads/effce9f6-1c02-47a0-b9c8-434056aa250f/original/height.svg" style="height:24px;" alt="height">
+</div>
 </td>
-<td>
-Tamaños:
-<ul>
-<li>Digital: 32px</li>
-<li>Impreso: 2cm</li>
-</ul>
+<td style="border-left: 0;">
+<b>Isotype:</b><br>
+Tamaño digital minimo: 24px
 </td>
 </tr>
-</table> 
+</table>

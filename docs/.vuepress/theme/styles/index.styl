@@ -160,11 +160,23 @@ hr
   border 0
   border-top 1px solid $borderColor
 
+table.no-border tr
+  border none
+
+  &:nth-child(2n)
+    background-color #fff
+  
+table.no-border td
+  border none
+
 table
   border-collapse collapse
   margin 1rem 0
   display: block
   overflow-x: auto
+
+table.table-dark tr td
+  border-color #444C60 !important
 
 tr
   border-top 1px solid #dfe2e5

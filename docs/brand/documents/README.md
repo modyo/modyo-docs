@@ -8,7 +8,6 @@ search: false
 
 Text in Modyo is not justified. Titles do not use periods, unless they are full sentences.
 
-
 ## Google G Suite
 
 For Google G Suite documents and presentations.

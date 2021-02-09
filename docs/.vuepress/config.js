@@ -201,17 +201,9 @@ module.exports = {
                 ["/brand/", "Introduction"],
                 "/brand/logo",
                 "/brand/colors",
-                "/brand/icons",
+                //"/brand/icons",
                 "/brand/typography",
-              ],
-            },
-            {
-              title: "Illustrations",
-              collapsable: true,
-              children: [
-                ["/brand/illustrations/", "Introduction"],
-                "/brand/illustrations/structure",
-                "/brand/illustrations/applications",
+                "/brand/illustrations",
               ],
             },
             /*{
@@ -414,11 +406,11 @@ module.exports = {
                 ["/es/brand/", "Introducción"],
                 "/es/brand/logo",
                 "/es/brand/colors",
-                "/es/brand/icons",
                 "/es/brand/typography",
+                "/es/brand/illustrations",
               ],
             },
-            {
+            /*{
               title: "Ilustraciones",
               collapsable: true,
               children: [
@@ -427,7 +419,7 @@ module.exports = {
                 "/es/brand/illustrations/applications",
               ],
             },
-            /*{
+            {
               title: "Documentos",
               collapsable: true,
               children: [
