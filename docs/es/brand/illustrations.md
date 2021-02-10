@@ -17,8 +17,7 @@ Se pueden categorizar en tres tipos dependiendo del nivel de complejidad y el us
 
 ## Hero
 
-Son ilustraciones que cuentan historias y conceptos complejos, los cuales generalmente son representados con metáforas o situaciones fantásticas e irreales. En ocasiones estas pueden ser literales pero siempre estarán ligadas
-a ideas con cierta complejidad mayor cantidad de detalles y elementos.
+Son ilustraciones que cuentan historias y conceptos complejos, los cuales generalmente son representados con metáforas o situaciones fantásticas e irreales. En ocasiones estas pueden ser literales pero siempre estarán ligadas a ideas con cierta complejidad y mayor cantidad de detalles y elementos.
 
 <table>
 <tr>
@@ -31,7 +30,7 @@ a ideas con cierta complejidad mayor cantidad de detalles y elementos.
 </tr>
 <tr>
 <td style="width: 50%;">
-Representación concepto complejo a través de la metáfora.
+Representación de un concepto complejo a través de la metáfora.
 </td>
 <td style="width: 50%;">
 Representación de un concepto utilizando una escena fantástica.
@@ -41,7 +40,7 @@ Representación de un concepto utilizando una escena fantástica.
 
 ### Spot hero
 
-Los Spot Hero son versiones ligeramente simplificadas de Hero, tanto visual como metafóricamente. Estos assets son perfectos cuando se necesita impactar dentro de un espacio limitado, generalmente los conceptos o ideas representados son simples y directos.
+Los Spot Hero son versiones ligeramente simplificadas de un Hero, tanto visual como metafóricamente. Estos assets son perfectos cuando se necesita impactar dentro de un espacio limitado. Generalmente los conceptos o ideas representados son simples y directos.
 
 <table>
 <tr>
@@ -62,19 +61,19 @@ Sin presencia de metáfora
 </tr>
 </table>
 
-## Support element
+## Elemento de apoyo
 
 Los elementos de apoyo son generalmente personajes o cosas que, tal cómo dice su nombre, apoyan a textos y gráficos aportando humanidad y reforzando la identidad de Modyo.
 
-Por el contrario que el Hero y el spot Hero, estos elementos no representan una idea específica. Son utilizados generalmente para dirigir la mirada y resaltar el contenido sin quitar protagonismo a lo que se quiere comunicar.
+A diferencia del Hero y el spot Hero, estos elementos no representan una idea específica. Son utilizados generalmente para dirigir la mirada y resaltar el contenido sin quitar protagonismo a lo que se quiere comunicar.
 
 <img src="/assets/img/brand/support.png" style="margin-left: 0;">
 
 ## Color
 
-Las ilustraciones se componen de formas sólidas de color con sombras y detalles lineales en bector.
+Las ilustraciones se componen de formas sólidas de color con sombras y detalles lineales en vector.
 
-Los siguientes colores son los que se utilizan dando como prioridad al azul oscuro para las sombras y dejando el verde intenso para acentos y detalles.
+Los siguientes colores son los que se utilizamos, dando prioridad al azul oscuro para las sombras y dejando el verde intenso para acentos y detalles.
 
 El blanco es un color que siempre se utiliza en caras y manos.
 
@@ -122,10 +121,10 @@ De ser necesario, el color se utiliza para reforzar ideas, dirigir la mirada a p
 </tr>
 <tr>
 <td style="width: 50%;">
-Uso del color para diferenciar elementos. 
+Uso del color para diferenciar elementos.
 </td>
 <td style="width: 50%;">
-Uso del color para resaltar un elemento. 
+Uso del color para resaltar un elemento.
 </td>
 </tr>
 </table>
@@ -136,7 +135,7 @@ Las ilustraciones hacen que las ideas sean más accesibles. Al igual que las pal
 
 Es muy importante que sean usadas de forma correcta y que nunca se transformen en un elemento distractor.
 
-En marketing se usan como respaldo y elemento de comunicación generalmente en sitios web, sitios de servicio, presentaciones, email, infografía, en medios de comunicación social y campañas.
+En marketing se usan como respaldo y elemento de comunicación, generalmente en sitios web, sitios de servicio, presentaciones, email, infografía, en medios de comunicación social y campañas.
 
 ### Zona de exclusión
 
@@ -166,12 +165,12 @@ Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la 
 </tr>
 <tr>
 <td>
-<p class="dont">No usar las ilustraciones con opacidad menor al 100%.</p>
+<p class="dont">No uses las ilustraciones con opacidad menor al 100%.</p>
 </td>
-<td>Las ilustraciones no se deben girar ni ladear.</p>
+<td>Las ilustraciones no deben ser giradas ni ladeadas.</p>
 </td>
 <td>
-<p class="dont">No se deben modificar los colores.</p>
+<p class="dont">No modifiques los colores.</p>
 </td>
 </tr>
 <tr>
@@ -187,13 +186,13 @@ Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la 
 </tr>
 <tr>
 <td>
-<p class="dont">Las ilustraciones no se deben cortar, en caso de ser necesario,  lo debe hacer la ilustradora.</p>
+<p class="dont">No cortes las ilustraciones, pero en caso de ser necesario lo debe hacer la ilustradora.</p>
 </td>
 <td>
-<p class="dont">Nunca cambie la proporción de las ilustraciones.</p>
+<p class="dont">Nunca cambies la proporción de las ilustraciones.</p>
 </td>
 <td>
-<p class="dont">No use texto sobre la ilustración. Hagalo debajo de ella o con un margen menor a 1 cm.</p>
+<p class="dont">No uses texto sobre la ilustración. Hazlo debajo de ella o con un margen menor a 1 cm.</p>
 </td>
 </tr>
 </table>

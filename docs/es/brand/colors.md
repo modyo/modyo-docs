@@ -2,15 +2,15 @@
 search: false
 ---
 
-# Colors
+# Colores
 
-El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
+El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona. Es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
 
-Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
+Todas las marcas poseen colores primarios que las identifican, estos son nuestos colores corporativos.
 
-## Colores Principales
+## Colores principales
 
-Los colores primarios de marca son el azul petroleo y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
+Los colores primarios de marca son el azul petróleo y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
 
 <table class="no-border">
 <tr>
@@ -19,7 +19,7 @@ Los colores primarios de marca son el azul petroleo y el verde. Ambos van conect
 <span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Azul Petroleo</b></p>
+<p><b>Azul Petróleo</b></p>
 <p>HEX: #151F38 <br>
 RGB: 21 31 56</p>
 </div>
@@ -39,9 +39,9 @@ RGB: 14 189 116</p>
 </tr>
 </table>
 
-### Color Secondarios
+### Colores secundarios
 
-Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul. Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
+Nuestro color secundario, y que suele acompañar a la marca en distintos medios, es el azul. Debe usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
 
 <table class="no-border">
 <tr>
@@ -439,7 +439,7 @@ Todas las marcas poseen colores primarios que las identifican, estos son los col
 
 ### Colores de fondos asociados
 
-Todos los colores de fondos se definen con los colores de la paleta principal y colores especiales con la regla de uso siguiente: <b>Aplicar 6% de opcidad hasta 12%</b>
+Todos los colores de fondo se definen con los colores de la paleta principal y colores especiales con la regla de uso siguiente: <b>Aplicar 6% a 12% de opacidad</b>
 
 <table>
 <tr>
@@ -517,7 +517,7 @@ El overlay de las fotos es negro con una opacidad del 80% para que exista el mej
 
 ## Uso incorrecto del color
 
-Dado lo mencionado anteriormente, es importante entender que el uso del color para nosotros es relevante que se respete. En especial en los textos y fondos. Para eso acá algunos ejemplos de como no debiese usarse el color en piezas escritas.
+Dado lo mencionado anteriormente, es importante entender que el uso del color para nosotros es relevante que se respete. En especial en los textos y fondos. Para eso compartimos acá algunos ejemplos de cómo no se debería usar el color en piezas escritas.
 
 <table>
 <tr>
@@ -533,13 +533,13 @@ Dado lo mencionado anteriormente, es importante entender que el uso del color pa
 </tr>
 <tr>
 <td>
-<p class="dont">Usar colores especiales, dejando de lado totalmente la identidad de la marca.</p>
+<p class="dont">No usar colores especiales, dejando de lado totalmente la identidad de la marca.</p>
 </td>
 <td>
 <p class="dont">El texto nunca debe tener un color distinto a los colores primarios, en especial el párrafo.</p>
 </td>
 <td>
-<p class="dont">Uso de algún color especial como background, perdiendo incluso el contraste.</p>
+<p class="dont">No usar colores especiales de fondo, perdiendo incluso el contraste.</p>
 </td>
 </tr>
 <tr>
@@ -555,13 +555,13 @@ Dado lo mencionado anteriormente, es importante entender que el uso del color pa
 </tr>
 <tr>
 <td>
-<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+<p class="dont">No usar un color especial o distinto al ya mencionado para un overlay.</p>
 </td>
 <td>
-<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+<p class="dont">No usar un color especial o distinto al ya mencionado para un overlay.</p>
 </td>
 <td>
-<p class="dont">El uso de un color especial o distinto al ya mencionado para un overlay.</p>
+<p class="dont">No usar un color especial o distinto al ya mencionado para un overlay.</p>
 </td>
 </tr>
 </table>
