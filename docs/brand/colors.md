@@ -4,13 +4,11 @@ search: false
 
 # Colors
 
-The color in a brand is important since it adds personality to a company, product or person. It is a distinctive factor, creates an identity and it allows the brand to be positioned. It takes on great power in people's minds.
+The color in a brand is important since it allows giving personality to a company, product or person, it is a distinctive factor, it gives identity and it allows the brand to be positioned. It takes on great power in people's minds. All brands have primary colors that identify them, these are the corporate colors.
 
-All brands have primary colors that identify them, these are our corporate colors.
+## Primary Colors
 
-## Primary colors
-
-The primary colors of our brand are petrol blue and green. The two are connected and represent the identity of Modyo. They are used to generate contrast, presence and accessibility in each of the possible formats.
+The primary brand colors are petrol blue and green. The two are connected and represent the identity of Modyo. They are used to generate contrast, presence and accessibility in each of the formats where it is present.
 
 <table class="no-border">
 <tr>
@@ -19,7 +17,7 @@ The primary colors of our brand are petrol blue and green. The two are connected
 <span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Petroleum Blue</b></p>
+<p><b>Petrol Blue</b></p>
 <p>HEX: #151F38 <br>
 RGB: 21 31 56</p>
 </div>
@@ -39,9 +37,9 @@ RGB: 14 189 116</p>
 </tr>
 </table>
 
-### Secondary brand colors
+## Secondary color
 
-Our secondary color, which usually accompanies the brand on different media formats, is blue. It should be used sparingly throughout illustration, photography, and product to maintain meaning and potency.
+Our secondary colors, which often accompany the brand on different media, are blue and should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
 
 <table class="no-border">
 <tr>
@@ -59,9 +57,9 @@ RGB: 32 104 216</p>
 </tr>
 </table>
 
-### Color palette
+## Color palette
 
-Our brand works well with the following colors:
+Our brand is well suited to the following colors:
 
 <table class="no-border">
 <tr>
@@ -290,58 +288,23 @@ RGB: 205 223 249</p>
 </tr>
 </table>
 
-### Gradientes
+### Gradients
 
-The color in a brand is important since it allows giving personality to a company, product or person, it is a distinctive factor, it gives identity and it allows the brand to be positioned. It takes on great power in people's minds.
+Gradients are used as block backgrounds, always respecting and using white and spaces in most of the composition.
 
-All brands have primary colors that identify them, these are the corporate colors.
+Their most frequent use cases are:
+
+- As support for an icon or a group of icons
+- As an artwork background (only in the case of light blue)
 
 <table class="no-border">
 <tr>
-<td style="padding: 20px 40px;">
+<td style="padding: 20px 50px;border-right: 1px solid #dfe2e5;">
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+<span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
-<span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #151F38</p>
-<span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #A1A5AF</p>
-</div>
-</div>
-</td>
-
-<td style="padding: 20px 40px;">
-<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
-</span>
-<div style="margin-top: 20px;">
-<span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #0EBD74</p>
-<span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #9FE5C7</p>
-</div>
-</div>
-</td>
-
-<td style="padding: 20px 40px;">
-<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
-</span>
-<div style="margin-top: 20px;">
-<span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #2068D5</p>
-<span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #A0C1F3</p>
-</div>
-</div>
-</td>
-
-<td style="padding: 20px 40px;">
-<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
-</span>
-<div style="margin-top: 20px;">
+<p><b>Light Blue</b></p>
 <span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #CDDFF9</p>
 <span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -350,14 +313,53 @@ All brands have primary colors that identify them, these are the corporate color
 </div>
 </td>
 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Petrol Blue</b></p>
+<span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #151F38</p>
+<span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A1A5AF</p>
+</div>
+</div>
+</td>
+
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Green</b></p>
+<span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #0EBD74</p>
+<span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #9FE5C7</p>
+</div>
+</div>
+</td>
+
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Blue</b></p>
+<span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #2068D5</p>
+<span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A0C1F3</p>
+</div>
+</div>
+</td>
 </tr>
 </table>
 
 ## Special colors
 
-The color in a brand is important since it allows giving personality to a company, product or person, it is a distinctive factor, it gives identity and it allows the brand to be positioned. It takes on great power in people's minds.
-
-All brands have primary colors that identify them, these are the corporate colors.
+Spot colors are designated only for some internal illustrations (controlled by the branding team) and for graphics that require combinations. They should be used in moderation and always complementing the various pieces in contrast and color.
 
 <table>
 <tr>
@@ -437,9 +439,9 @@ All brands have primary colors that identify them, these are the corporate color
 </tr>
 </table>
 
-### Associated background colors
+### Associated Background Colors
 
-All background colors are defined with the colors of the main palette and special colors with the following rule of use: <b>Apply 6% to 12% opacity</b>
+All background colors are defined with the colors of the main palette and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b>
 
 <table>
 <tr>
@@ -502,7 +504,7 @@ All background colors are defined with the colors of the main palette and specia
 
 ### Overlay in images
 
-The overlay of the photos is black with an opacity of 80% so that there is the best possible contrast between the figure and the background
+The overlay of the photos is black with an opacity of 80% so that there is the best possible contrast between figure and background.
 
 <table class="no-border">
 <tr>
@@ -517,7 +519,7 @@ The overlay of the photos is black with an opacity of 80% so that there is the b
 
 ## Incorrect use of color
 
-Given the aforementioned, it is important to understand that it is critical for us that the correct use of color is respected. Especially in texts and backgrounds. For that, here are some examples of how color should not be used in written pieces.
+Given the aforementioned, it is important to respect the use of colors.
 
 <table>
 <tr>
@@ -539,7 +541,7 @@ Given the aforementioned, it is important to understand that it is critical for 
 <p class="dont">The text should never have a color other than the primary colors, especially the paragraph.</p>
 </td>
 <td>
-<p class="dont">Do not use a special color as a background, losing the contrast of the image.</p>
+<p class="dont">Do not use special background colors, losing even the contrast.</p>
 </td>
 </tr>
 <tr>

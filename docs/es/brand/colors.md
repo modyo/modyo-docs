@@ -4,13 +4,11 @@ search: false
 
 # Colores
 
-El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona. Es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
+El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas. Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
 
-Todas las marcas poseen colores primarios que las identifican, estos son nuestos colores corporativos.
+## Colores primarios
 
-## Colores principales
-
-Los colores primarios de marca son el azul petróleo y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
+Los colores primarios de marca son el azul petroleo y el verde. Ambos van conectados y representan la identidad de Modyo. Son utilizados para generar contraste, presencia y accesbilidad en cada uno de los formatos en donde este presente.
 
 <table class="no-border">
 <tr>
@@ -39,9 +37,9 @@ RGB: 14 189 116</p>
 </tr>
 </table>
 
-### Colores secundarios
+## Color secundario
 
-Nuestro color secundario, y que suele acompañar a la marca en distintos medios, es el azul. Debe usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
+Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul. Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
 
 <table class="no-border">
 <tr>
@@ -59,7 +57,7 @@ RGB: 32 104 216</p>
 </tr>
 </table>
 
-### Paleta de colores
+## Paleta de colores
 
 Nuestra marca se acompla bien a los siguientes colores:
 
@@ -292,17 +290,37 @@ RGB: 205 223 249</p>
 
 ### Gradientes
 
-El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
+Los gradientes se utilizan como fondos de bloques, siempre respetando y utilizando el blanco y espacios en la mayoría de la composición.
 
-Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
+Sus casos de uso son más frecuentes son:
 
-<table class="no-border">
-<tr>
-<td style="padding: 20px 40px;">
+<ul>
+<li> Como soporte de un icono o un grupo de iconos</li>
+<li> Como fondo de ilustraciones (solo en el caso del azul claro)</li>
+</ul>
+
+  <table class="no-border">
+  <tr>
+  <td style="padding: 20px 50px;border-right: 1px solid #dfe2e5;">
+  <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+  <span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+  </span>
+  <div style="margin-top: 20px;">
+  <p><b>Azul claro</b></p>
+  <span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+  <p>HEX: #CDDFF9</p>
+  <span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+  <p>HEX: #F2F6FC</p>
+  </div>
+  </div>
+  </td>
+
+<td style="padding: 20px 50px;">
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
+<p><b>Azul petroleo</b></p>
 <span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #151F38</p>
 <span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -311,11 +329,12 @@ Todas las marcas poseen colores primarios que las identifican, estos son los col
 </div>
 </td>
 
-<td style="padding: 20px 40px;">
+<td style="padding: 20px 50px;">
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
+<p><b>Verde</b></p>
 <span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #0EBD74</p>
 <span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -324,11 +343,12 @@ Todas las marcas poseen colores primarios que las identifican, estos son los col
 </div>
 </td>
 
-<td style="padding: 20px 40px;">
+<td style="padding: 20px 50px;">
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
+<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
+<p><b>Azul</b></p>
 <span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #2068D5</p>
 <span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -336,28 +356,12 @@ Todas las marcas poseen colores primarios que las identifican, estos son los col
 </div>
 </div>
 </td>
-
-<td style="padding: 20px 40px;">
-<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
-<span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 150px;height: 150px;display: block;border-radius: 100%;">
-</span>
-<div style="margin-top: 20px;">
-<span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #CDDFF9</p>
-<span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
-<p>HEX: #F2F6FC</p>
-</div>
-</div>
-</td>
-
 </tr>
 </table>
 
 ## Colores especiales
 
-El color en una marca es importante ya que permite darle personalidad a una empresa, producto o persona, es un factor distintivo, da identidad y permite posicionar la marca. Cobra gran poder en la mente de las personas.
-
-Todas las marcas poseen colores primarios que las identifican, estos son los colores corporativos.
+Los colores especiales se designan solo para algunas ilustraciones internas (controlada por el equipo de branding) y para gráficos que requieran combinaciones. Se deben usar con moderación y siempre complementando a las diversas piezas en contraste y color.
 
 <table>
 <tr>
@@ -517,7 +521,7 @@ El overlay de las fotos es negro con una opacidad del 80% para que exista el mej
 
 ## Uso incorrecto del color
 
-Dado lo mencionado anteriormente, es importante entender que el uso del color para nosotros es relevante que se respete. En especial en los textos y fondos. Para eso compartimos acá algunos ejemplos de cómo no se debería usar el color en piezas escritas.
+Dado lo mencionado anteriormente, es importante que se respete el uso del color.
 
 <table>
 <tr>
