@@ -99,6 +99,41 @@ The **Properties** on the right contains the following fields:
 - **Name**: Use this field to update the name of your widget.
 - **Tags**: Use this field to add tags to your widget. Tagging a widget makes it easier to search and filter. As your digital channels scale in size and complexity, good tagging helps keep your channel management well organized.
 
+## Widget variables
+
+In the variables tab you can see the list of variables created in the widget, and their respective actions for:
+
+* **Copy** the liquid code to use that variable.
+* **Edit** the variable
+* **Delete** the variable.
+
+Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/platform/core/key-concepts.html#global-variables).
+
+When modifying a variable, you can choose the name and default value that the variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when you instantiate the widget on a page, you can choose from these different values.
+
+When you use the list of possible values, you must leave each value on a new line, and leave a `*` in front of the value you want to be taken as the default.
+
+When you instantiate the widget on a page, you will see that now all variables being used (whether account, site, or widget) will be listed as "disabled" with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+
+
+:::warning Warning
+Adding the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, chances are that the variable in the widget code is not being used.
+:::
+
+## Synchronous and asynchronous loading
+
+:::warning Warning
+This is an experimental feature and it may be subject to changes.
+:::
+
+You can choose to load your widgets synchronously, meaning that the HTML, CSS and JavaScript code of your widget will load along with the rest of the page from the server, or you can choose to load them asynchronously, so that all static content of the page will load and once the main document is loaded, the content of your widget will load via JavaScript. By default, all widgets load asynchronously.
+
+To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
+
+:::warning Warning
+You must take into consideration that using very heavy widgets in a synchronous way can decrease the performance of your page, so you must decide carefully which widgets will be loaded in a synchronous way and which in an asynchronous way
+:::
+
 ## Modyo CLI
 
 The Modyo Command Line Interface (CLI) is a command line tool based in two principles acceleration and integration, and this principles has a command get and push respectively.

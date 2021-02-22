@@ -34,6 +34,7 @@ En este caso, los filtros son seis:
 
 Al seleccionar entradas con el _checkbox_ a la izquierda de cada entrada, podrás usar las acciones masivas que aparecen al final de la lista.
 
+- **Editar masivamente**: Entrarás en el la interfaz que te permite modificar múltiples entradas a la vez.
 - **Publicar**: Se publicarán las entradas seleccionadas que tengan cambios pendientes o estén en estado Borrador.
 - **Forzar publicación**: Si está la revisión en equipo habilitada, los administradores del espacio podrán usar esta acción para forzar la publicación de las entradas que tengan cambios pendientes o estén en estado Borrador sin necesidad de pasar por el proceso de revisión.
 - **Despublicar**: Se despublicarán las entradas seleccionadas que estén publicadas.
@@ -50,6 +51,26 @@ De tal forma que si intentas archivar una entrada que esté publicada, esta acci
 :::tip Tip
 Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que recomendamos esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
 :::
+
+## Editar masivamente
+
+:::warning Atención
+Esta opción sólo está disponible si tienes el index de entradas filtradas por un tipo particular y además tienes entradas seleccionadas para las acciones masivas.
+
+Si seleccionas múltiples entradas, pero no estás usando el filtro por tipo de la tabla, no verás esta opción.
+:::
+
+Al seleccionar entradas de un mismo tipo, verás esta opción en las acciones masivas abajo a la izquierda de la tabla. Al hacer click en ella, entrarás en una nueva vista que te permitirá seleccionar los campos que quieres sobreescribir de las entradas seleccionadas. Una vez checkeado el selector de la izquierda de cada campo, podrás ingresar el valor asociado al campo.
+
+Puedes hacer cambios en todos los campos del tipo. Una vez que hayas terminado de añadir valores en los campos que necesites, presiona "Siguiente" en la parte superior de la pantalla para ver el resumen de tus cambios. Si estás de acuerdo con los cambios, presiona "confirmar" para que Modyo comience a aplicar los cambios en todas las entradas seleccionadas
+
+:::warning Atención
+Al usar la edición masiva de entradas estás sobreescribiendo los valores para los campos seleccionados en todas las entradas seleccionadas, por lo que los valores que existían antes de la edición conjunta ya no estarán disponibles en la versión editable.
+
+Si necesitas recuperar un valor específico de una entrada, puedes hacer uso de la opción "Diferencias" en la vista de edición de entradas para revisar los valores previos que tenía una entrada en particular.
+:::
+
+Una vez que Modyo haya terminado de modificar los campos para las entradas seleccionadas, notarás que todas las entradas ahora están con cambios pendientes y debes publicarlas. Para esto, puedes hacer uso de la acción masiva "Publicar".
 
 ## Crear una Entrada
 

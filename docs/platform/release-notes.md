@@ -4,7 +4,7 @@ search: true
 
 # Release notes
 
-### 9.2.X - First release planned for the fourth quarter of 2020.
+### 9.2.X - First release planned for the first quarter of 2021.
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Administrator groups: Easily add users corresponding to different sites or spaces.
@@ -15,6 +15,66 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
+
+
+### 9.1.9 - February 10, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple performance improvements.
+
+### 9.1.8 - February 2, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+
+### 9.1.7 - January 25, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* The option to [edit entries in bulk](/platform/content/entries.html#bulk-edit) was added.
+* The option to filters by author and targets in the index of entries was added.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously](/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
+
+### 9.1.6 - December 23, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to add [widget variables](/platform/channels/widgets.html#widget-variables) was added.
+* The option to define multiple custom [JavaScripts and CSS](/platform/channels/templates.html#css-and-javascript) to the site was added.
+* The option to create [custom layouts](/platform/channels/templates.html#custom-layouts) to the template builder to further use on pages was added.
+* The option to get the results of the site search as Json object was added.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* You can only delete forms that are disabled now.
+
+### 9.1.5 - December 1, 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* The option to use [operators](/platform/content/public-api-reference.html#operators) [in], [has], and [nin] on fields slug, name, uuid and category was added.
+* The option to use [bulk actions](/platform/content/entries.html#bulk-actions) on entries was added.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* The option to get the [total entries](/platform/content/public-api-reference.html#access-entries-in-a-space) after using a liquid content filter was added.
+* The option to use the same widget multiple times in the same page was added.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* A new and fresh interface to build [Targets](/platform/customers/targets.html) including the option to use `AND` & `OR` operators.
 
 ### 9.1.4 - November 10, 2020
 &nbsp;

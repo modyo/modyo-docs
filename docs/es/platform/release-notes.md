@@ -4,7 +4,8 @@ search: true
 
 # Notas del release
 
-### 9.2.X - Primer release planificado para el cuarto trimestre del 2020.
+### 9.2.X - Primer release planificado para el primer trimestre del 2021.
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
 
@@ -15,6 +16,65 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.9 - 10 de febrero del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de performance.
+
+### 9.1.8 - 02 de febrero del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+
+### 9.1.7 - 25 de enero del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se añade la opción de [editar entradas de forma masiva](/es/platform/content/entries.html#editar-masivamente).
+* Se añaden filtros por autor y targets en el indice de entradas.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade la posibilidad de decidir si quieres que tus widgets del widget builder se [carguen de forma síncrona o asíncrona](/es/platform/channels/widgets.html#carga-sincrona).
+
+### 9.1.6 - 23 de diciembre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade la opción de definir [variables en los widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget).
+* Se añade la opción de definir múltiples [JavaScripts y CSS](/es/platform/channels/templates.html#css-y-javascript) como assets del sitio.
+* Se añade la opción para crear [layouts personalizados](/es/platform/channels/templates.html#layouts-personalizados) y luego poder usarlos en las páginas.
+* Se añade la posibilidad de consultar los resultados de la búsqueda del sitio en formato json
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Ahora solo se puede eliminar los formularios que están deshabilitados.
+
+### 9.1.5 - 1 de diciembre del 2020
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se añade la opción de usar [operadores](/es/platform/content/public-api-reference.html#operadores) [in], [has] y [nin] en campos slug, name, uuid y categorías.
+* Se añade la opción de usar [acciones masivas](/es/platform/content/entries.html#acciones-masivas) en entradas.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade filtro de [entries totales](/es/platform/content/public-api-reference.html#acceder-a-entradas-de-un-espacio) luego de usar un filtro de contenido.
+* Se añade la funcionalidad de distinguir un mismo widget instanciado múltiples veces en una misma página.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se añade una nueva y mejorada interfaz de creación de [Targets](/es/platform/customers/targets.html) incluyendo la opción de usar operadores `AND` y `OR`.
+
 ### 9.1.4 - 10 de noviembre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
@@ -23,8 +83,8 @@ search: true
 * Múltiples mejoras de seguridad.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Se añade la [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) a los sitios
-* Se añade la posibilidad de [delegar sub-rutas](/es/platform/channels/pages.html#delegacion-de-rutas) de páginas mediante JavaScript
+* Se añade la [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) a los sitios.
+* Se añade la posibilidad de [delegar sub-rutas](/es/platform/channels/pages.html#delegacion-de-rutas) de páginas mediante JavaScript.
 
 ### 9.1.3 - 16 de octubre del 2020
 &nbsp;
@@ -41,11 +101,11 @@ search: true
 * Múltiples mejoras de seguridad.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Se añade el drop `page` que considera tanto al home page como los pages personalizados
+* Se añade el drop `page` que considera tanto al home page como los pages personalizados.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Se añade la posibilidad de utilizar plantillas en campañas de mensajería ya creadas 
-* Se añade la posibilidad de [eliminar usuarios](/es/platform/customers/users.html#opciones-adicionales)
+* Se añade la posibilidad de utilizar plantillas en campañas de mensajería ya creadas .
+* Se añade la posibilidad de [eliminar usuarios](/es/platform/customers/users.html#opciones-adicionales).
 
 ### 9.1.1 - 25 de Septiembre del 2020
 &nbsp;
@@ -55,19 +115,19 @@ search: true
 * Múltiples mejoras de seguridad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Se añade la posibilidad de eliminar entradas archivadas
+* Se añade la posibilidad de eliminar entradas archivadas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Se añade la posibilidad de [copiar sitios](/es/platform/channels/sites.html) y todo su contenido publicado
+* Se añade la posibilidad de [copiar sitios](/es/platform/channels/sites.html) y todo su contenido publicado.
 
 ### 9.1.0 - 4 de Septiembre del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * [Scheduler](es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
 * Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
-* [Nuevo modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa): Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación
-* Actualización de la versión de ElasticSearch a 7.4
-* Actualización de la versión de MySQL a la versión 5.7 (añade soporte para emojis)
+* [Nuevo modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa): Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación.
+* Actualización de la versión de ElasticSearch a 7.4.
+* Actualización de la versión de MySQL a la versión 5.7 (añade soporte para emojis).
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
 * Múltiples mejoras de seguridad.
@@ -83,7 +143,7 @@ search: true
 ### 9.0.9 - 12 de Agosto del 2020
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
-* Se mejora la compatibilidad con cookies de sesión para navegadores antiguos
+* Se mejora la compatibilidad con cookies de sesión para navegadores antiguos.
 
 ### 9.0.8 - 15 de Junio del 2020
 &nbsp;
@@ -100,7 +160,7 @@ search: true
 * Se añade un selector de atributos de la entrada a las vistas de contenido.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Se eliminan las preguntas de tipo archivo en los [formularios](/es/platform/customers/forms.html#anadir-campo)
+* Se eliminan las preguntas de tipo archivo en los [formularios](/es/platform/customers/forms.html#anadir-campo).
 
 ### 9.0.7 - 01 de Junio del 2020
 &nbsp;

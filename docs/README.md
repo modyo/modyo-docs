@@ -4,7 +4,7 @@ translated: true
 heroImage: /assets/img/welcome.png
 actionText: Get started
 actionLink: /platform/
-footer: Copyright © 2008-2020 Modyo SpA
+footer: Copyright © 2008-2021 Modyo SpA
 ---
 
 <div class="features">

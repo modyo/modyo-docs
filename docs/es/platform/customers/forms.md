@@ -98,28 +98,6 @@ Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
 </table>
 ```
 
-
-
-## Análisis
-
-<img src="/assets/img/customers/forms/analysis.jpg" style="border: 1px solid #EEE; margin-top: 40px">
-
-Modyo permite hacer un análisis global de cada formulario. En la página de análisis solo habrá que seleccionar alguna de las preguntas del formulario y podrás ver una representación de las respuestas que los usuarios han enviado. La representación desplegada dependerá del tipo de respuesta, a continuación se muestran los diferentes tipos de respuesta y su visualización respectiva:
-
-- **Texto simple**: Verás un conteo de cuantas personas rellenaron este campo.
-- **Número**: Verás el mínimo, máximo y el promedio de las respuestas.
-- **Checkbox**: Verás un gráfico de barras con todas las alternativas.
-- **Fecha**: Verás el conteo de respuestas totales, y la fecha mínima y máxima que se han enviado como respuestas.
-- **Párrafo**: Verás un conteo de cuantas personas rellenaron este campo.
-- **Dropdown**: Verás un gráfico de barras con todas las alternativas.
-- **Elección**: Verás un gráfico de barras con todas las alternativas.
-- **Preguntas anidadas**: Verás un gráfico de barras con todas las alternativas del primer nivel.
-- **Archivo**:  Verás un conteo de cuantas personas rellenaron este campo, junto con los últimos cinco archivos subidos.
-
-:::tip Tip
-En la barra derecha podrás ver un contador del total de veces que se ha respondido el formulario, pero en los conteos de respuestas para cada pregunta, verás el conteo de cuantas personas pusieron un valor a esa pregunta. En el caso de que no se haya solicitado la respuesta como obligatoria, será normal ver un número menor de respuestas con respecto a las respuestas totales del formulario.
-:::
-
 ## Respuestas
 
 Al hacer _click_ en el contador de respuestas de un formulario, llegarás a una vista donde se listan todas las respuestas que los usuarios han enviado y la fecha en que respondieron.

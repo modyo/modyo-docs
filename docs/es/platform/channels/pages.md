@@ -81,7 +81,7 @@ El widget de texto enriquecido cuenta con un formateador automático, por lo que
 - **Contenido**: Son widgets por defecto que te permite mostrar listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags y categoría. Para modificar como se ven estos widgets, debes hacerlo en el [Template Builder](/es/platform/channels/templates.html), en la sección Widgets.
 - **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
 
-Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña central, donde podrás encontrar distintas opciones de configuración de los widgets y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en el [widget builder](/es/platform/channels/widgets.html).
+Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña central, donde podrás encontrar distintas opciones de configuración de los widgets y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en el [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobreescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma. 
 
 ### Propiedades
 

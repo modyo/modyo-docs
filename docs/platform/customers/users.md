@@ -194,7 +194,7 @@ The services compatible with logging into Modyo are:
 - Oauth2
 - OpenID Connect
 
-It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/platform/core/integration.html)
+It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/platform/core/integrations)
 
 ### Signups
 
@@ -203,7 +203,7 @@ Client registration within the platform must also be configured from here. To do
 The first thing we can configure is if we want to enable or disable platform credentials.
 
 ::: warning Warning
-If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/platform/core/integration.html)
+If we disable credentials, users can only enter through an SSO mechanism. Make sure you have it activated through [Integrations](/platform/core/integrations)
 :::
 
 We can also enable or disable a redirect for login. Remember that if login redirection is enabled, the login method will be replaced by the URL that you must enter later.

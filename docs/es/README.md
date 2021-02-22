@@ -3,7 +3,7 @@ home: true
 heroImage: /assets/img/welcome.png
 actionText: Comenzar
 actionLink: /es/platform/
-footer: Copyright © 2008-2020 Modyo SpA
+footer: Copyright © 2008-2021 Modyo SpA
 ---
 
 <div class="features">

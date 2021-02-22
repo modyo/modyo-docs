@@ -98,28 +98,6 @@ You sent this answer on: {{'now' | date: "% b% d,% y"}}
 </table>
 ```
 
-
-
-## Analysis
-
-<img src="/assets/img/customers/forms/analysis.jpg" style="border: 1px solid #EEE; margin-top: 40px">
-
-Modyo allows you analyze each form. On the analysis page select one of the questions on the form to see a representation of the answers that users have sent. The representation displayed will depend on the response type, the different response types and their respective visualizations are shown below:
-
-- Simple text: You will see a count of how many people filled in this field.
-- Number: You will see the minimum, maximum and average answer values.
-- Checkbox: You will see a bar chart of all response alternatives.
-- Date: You will see the total response count, and the minimum and maximum date that have been sent as responses.
-- Paragraph: You will see a count of how many people filled out this field.
-- Dropdown: You will see a bar chart with all response alternatives.
-- Choice: You will see a bar chart with all response alternatives.
-- Nested questions: You will see a bar chart with all first-level question response alternatives.
-- File: You will see a count of how many people filled in this field, along with the last five uploaded files.
-
-::: tip Tip
-In the right bar you will see a counter of the total number of times the form has been answered, but in the answer counts for each question, you will see the count of how many people put answered that particular question. In the event that the response has not been requested as mandatory, it is normal to see a smaller number of responses with respect to the total responses to the form.
-:::
-
 ## Answers
 
 By clicking on the answer counter of a form, you will arrive at a view listing all the answers that users have submitted, and the date they responded.

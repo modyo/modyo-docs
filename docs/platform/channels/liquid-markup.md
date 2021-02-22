@@ -105,6 +105,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 ### Standard filters
 
 * `append` - Add a string *e.g.* <span v-pre>` {{'foo' | append: 'bar'}} # => 'foobar'` </span>
+* `asset_url` - Generates the URL for an Asset object with a determined size, *e.g.* `{{ asset_obj | asset_url: '640x480' }}`. Also, can generate the URL of a CSS or JavaScript template, *e.g.* `{{ 'my-css' | asset_url: 'css' }}` or `{{ 'my-js' | asset_url: 'js' }}`.
 * `capitalize` - Capitalize the entry sentence
 * `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>` {{4.6 | ceil}} # => 5` </span>
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
@@ -131,6 +132,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `reverse` - Reverse the given arrangement.
 * `round` - Round to the nearest whole number or to the specified number of decimals *e.g.* <span v-pre>` {{4.5612 | round: 2}} # => 4.56` </span>
 * `rstrip` - Remove all blank spaces from the end of a string
+* `script_tag` - Generates a `<script>` HTML tag for a JavaScript template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* `{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }} => <script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 * `size` - Return the size of an array or string
 * `slice` - Divide a string. Take a offset and a length, *e.g.* <span v-pre> `{{" hello "| slice: -3, 3}} # => llo` </span>
 * `sort` - Sort array items
@@ -138,6 +140,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `strip_html` - Remove html from the string
 * `strip_newlines` - Remove all new lines (\ n) from the string
 * `strip` - Removes all blank spaces at both ends of the string.
+* `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* `{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }} => <link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiply *e.g.* <span v-pre>` {{5 | times: 4}} # => 20` </span>
 * `truncate` - Restrict a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre> `{{'foobarfoobar' | truncate: 5, '.' }} # => 'foob.'` </span>
 * `truncatewords` - Restrict a string to x words
@@ -520,7 +523,7 @@ If you want to combine several strings into one and save it in one variable, you
 Modyo has drops available for different contexts within which you can find drops for the account, content, channels and customers.
 
 ### Account Drops
-The drops available globally are: 
+The drops available globally are:
 
 ```
 account:
@@ -615,14 +618,10 @@ The drops available for channels are:
 
 ```
 site:
-  - theme
   - breadcrumb
   - categories
   - csrf_meta_tag
-  - me_applications
   - url
-  - memberships_count
-  - layout
   - menu_items
   - account_url
   - current_year
@@ -654,16 +653,14 @@ user_agent:
   - platform_version
   - agent
   - is_modyo_shell
-layout_page:
+page:
   - grid
   - name
-custom_layout_page:
   - content
   - title
   - excerpt
   - name
   - url
-  - count
   - parent
   - description
 menu:
@@ -703,10 +700,6 @@ content_list_widget:
   - context_params
   - space_id
   - type_uid
-layout:
-  - name
-  - me_page
-  - home_page
 grid:
   - id
   - cache_key
@@ -755,6 +748,7 @@ The drops available for customers are:
 
 ```
 - user:
+  - access_token
   - age
   - avatar
   - birth_at
