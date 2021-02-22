@@ -235,7 +235,7 @@ Changing the content selector in the preview bar will have no effect on the cont
 Modyo allows you to define global variables that you can use in all the sites where you have Liquid. This way you can, for example, share a code snippet between sites.
 
 :::tip Tip
-You can use plain text, HTML code, JavaScript and CSS within the global variables. However, you cannot use Liquid code in a global variable.
+You can use plain text, HTML code, JavaScript and CSS within the global variables. However, you cannot use Liquid code in a global variable. Keep in mind that the content of a global variable has a limit of 65535 characters.
 :::
 
 You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings, or in each of the custom widgets of the builder widget.
