@@ -52,10 +52,6 @@ Por defecto comienzas comparando la versión publicada con la versión editable,
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
 :::
 
-:::warning Atención
-Solo se pueden despublicar los widgets que se encuentran inactivos dentro de la plataforma. Si este se encuentra en uso, no estará habilitada la función. 
-:::
-
 :::tip Tip
 Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Para restaurar un widget archivado, se debe entrar a la vista de edición, usando la opción **Restaurar** en la esquina superior derecha de la vista.
 :::
