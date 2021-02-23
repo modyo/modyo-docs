@@ -16,6 +16,16 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.10 - 23 de febrero del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de performance.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añade la posibilidad de [filtrar por slug](/es/platform/content/public-api-reference.html#filtrar-entradas) de entradas en el SDK de liquid usando el filtro `by_slug`
+* Se añade la posibilidad de [despublicar widgets](/es/platform/channels/widgets.html) incluso si están siendo referenciados, y se pueden archivar todos los widgets no publicados (incluso si están referenciados en algunas páginas)
+
 ### 9.1.9 - 10 de febrero del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

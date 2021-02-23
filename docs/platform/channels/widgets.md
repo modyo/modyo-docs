@@ -99,6 +99,9 @@ The **Properties** on the right contains the following fields:
 - **Name**: Use this field to update the name of your widget.
 - **Tags**: Use this field to add tags to your widget. Tagging a widget makes it easier to search and filter. As your digital channels scale in size and complexity, good tagging helps keep your channel management well organized.
 
+:::warning Warning
+If you delete a widget from a page and publish, you will still see that page in this listing since the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can unpublish any published widget, even if it is in use. Active references on pages will become inactive, so you will not see the widget on the site if you unpublished it. Also, you will be able to archive any unpublished widget, so if there are still references on some pages of the widget you want to archive, they will be removed when you archive the widget.
+:::
 ## Widget variables
 
 In the variables tab you can see the list of variables created in the widget, and their respective actions for:

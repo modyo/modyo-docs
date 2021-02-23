@@ -44,7 +44,7 @@ Total entries: {{ entries | total_entries }}
 
 ### Filtrar entradas
 
-Si se quiere filtrar las entradas, se hace a través de los siguientes atributos: by_uuid, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+Si se quiere filtrar las entradas, se hace a través de los siguientes atributos: by_uuid, by_slug, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}

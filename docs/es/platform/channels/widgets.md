@@ -92,9 +92,7 @@ En la columna de propiedades se pueden ver:
 - **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
 
 :::warning Atención
-Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Modyo por defecto guarda hasta 20 respaldos por cada elemento, por lo que si quieres despublicar y archivar un widget, deberás publicar 20 veces las páginas sin la referencia del widget para así poder eliminar todas las referencias del mismo. 
-
-Debido a que Modyo cuenta con las funcionalidades para [restaurar y restablecer](/es/platform/core/key-concepts.html#acciones-para-el-versionado) desde versiones pasadas, no se puede permitir eliminar un elemento que está siendo referenciado en los respaldos de otros elementos.
+Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Desde la versión 9.1.10 en adelante, puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias activas en las páginas quedarán inactivas, por lo que no verás el widget en el sitio si lo despublicaste. Además, podrás archivar cualquier widget que no esté publicado, de tal forma que si aun existen referencias en algunas páginas del widget que quieres archivar, estas se eliminarán al momento de archivar el widget. 
 :::
 
 ## Variables del widget
