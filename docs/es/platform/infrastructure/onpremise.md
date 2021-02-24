@@ -26,7 +26,7 @@ El Despliegue de Misión Crítica considera tres o más ubicaciones físicas (da
 
 Este modelo permite ofrecer una alta disponibilidad en escenarios en donde tanto las lecturas como las escrituras sean consideradas críticas. Este esquema ofrece un alto grado de escalabilidad para operaciones de lectura y escritura.
 
-Al mantener un número impar de ubicaciones físicas, el cluster se protege de condiciones de “split brain” en la que no se logra detectar cuál es el nodo que falló.
+Al mantener un número impar de ubicaciones físicas, el cluster se protege de condiciones de "split brain" en la que no se logra detectar cuál es el nodo que falló.
 
 
 
@@ -207,7 +207,7 @@ export MAGICK_MEMORY_LIMIT=512MB
 export MODYO_HOME=/opt/modyo/current
 export JRUBY_HOME=$MODYO_HOME/jruby
 export PATH=$MODYO_HOME/bin:$JRUBY_HOME/bin:$PATH
-export JRUBY_OPTS=”-J-server -J-Xss1m -J-Xms3072m -J-Xmx3072m -J-XX:ReservedCodeCacheSize=128m -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC”
+export JRUBY_OPTS="-J-server -J-Xss1m -J-Xms3072m -J-Xmx3072m -J-XX:ReservedCodeCacheSize=128m -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC"
 export RAILS_ENV=production
 ```
 

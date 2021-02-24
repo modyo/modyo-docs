@@ -113,7 +113,7 @@ Modyo no entrega acceso a los datos de clientes a ningún colaborador que no req
 Cuando un colaborador ingresa a trabajar a Modyo sólo posee acceso a los sistemas básicos de correo y planificación de tareas. Cualquier acceso mayor debe ser explícitamente solicitado mediante un ticket de control al Área de Seguridad e Infraestructura quien realizará el seguimiento de estas credenciales extendidas.
 
 ### Autenticación
-Para reducir aún más los riesgos de acceso no autorizado a los datos, los empleados de Modyo con acceso a la información de clientes requieren contar con un dispositivo de “second factor” que será solicitado al momento de ingresar a los sistemas (panel de control de Amazon, DNS, sistemas de control de código fuente, etc).
+Para reducir aún más los riesgos de acceso no autorizado a los datos, los empleados de Modyo con acceso a la información de clientes requieren contar con un dispositivo de "second factor" que será solicitado al momento de ingresar a los sistemas (panel de control de Amazon, DNS, sistemas de control de código fuente, etc).
 
 Todas las contraseñas utilizadas para acceder a recursos y datos sensibles de clientes deberán ser de al menos 12 caracteres. El uso obligatorio de un gestor contraseñas previene el reúso y predictibilidad de éstas. 
 

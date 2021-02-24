@@ -63,7 +63,7 @@ Si quisieras usar el logo en fondos oscuros, lo ideal sería utilizar los siguie
 
 ### Zona de exclusión
 
-El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la “M” (marcado como × en el diagrama).
+El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la "M" (marcado como × en el diagrama).
 
 Para el uso del isotipo la referencia es la misma.
 
@@ -116,7 +116,7 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<p class="dont">No quites el símbolo verde característico del logo que acompaña la “O” al final.</p>
+<p class="dont">No quites el símbolo verde característico del logo que acompaña la "O" al final.</p>
 </td>
 <td>
 <p class="dont">No gires el logotipo.</p>
@@ -230,7 +230,7 @@ Si quisieras usar el isotipo en fondos oscuros, lo ideal es usarlo con los sigui
 
 ### Zona de exclusión
 
-El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la “M” (marcado como × en el diagrama).
+El espacio libre y zona de exclusión alrededor del logotipo es igual a la altura de la "M" (marcado como × en el diagrama).
 Para el uso del isotipo la referencia es la misma.
 
 <img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">

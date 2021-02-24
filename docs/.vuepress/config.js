@@ -215,6 +215,15 @@ module.exports = {
               ],
             },*/
           ],
+          "/legal/": [
+            {
+              title: "Legal",
+              collapsable: true,
+              children: [
+                ["/legal/", "Licence Agreement"],                
+              ],
+            },            
+          ],
         },
       },
       "/es/": {
@@ -428,6 +437,15 @@ module.exports = {
                 ["/brand/documents/", "Introducción"],
               ],
             },*/
+          ],
+          "/es/legal/": [
+            {
+              title: "Legal",
+              collapsable: true,
+              children: [
+                ["/es/legal/", "Acuerdo de Licenciamiento"],                
+              ],
+            },            
           ],
         },
       },
