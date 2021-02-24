@@ -2,9 +2,9 @@
 search: false
 ---
 
-# Acuerdo de Licenciamiento Modyo
+# Acuerdo de Modyo
 
-Para poder registrarse en una cuenta Modyo y utilizar el Software Modyo, debe revisar y aceptar los términos de este Acuerdo (el "Acuerdo de Licenciamiento Modyo") haciendo clic en el botón "Registrarse" o descargando el Software Modyo si se le concede acceso. POR FAVOR, REVISE ESTOS TÉRMINOS CUIDADOSAMENTE. AL ACEPTAR ESTOS TÉRMINOS PARA UTILIZAR EL SOFTWARE MODYO, USTED ACEPTA ESTOS TÉRMINOS Y CONDICIONES CON MODYO B.V. ("Modyo"). SI NO ESTÁ DE ACUERDO CON ESTOS TÉRMINOS, NO DEBE HACER CLIC EN EL BOTÓN "ACEPTO" O NO DEBE UTILIZAR EL SOFTWARE MODYO.
+Para poder registrarse en una cuenta Modyo y utilizar el Software Modyo, debe revisar y aceptar los términos de este Acuerdo (el "Acuerdo de Modyo") haciendo clic en el botón "Registrarse" o descargando el Software Modyo si se le concede acceso. POR FAVOR, REVISE ESTOS TÉRMINOS CUIDADOSAMENTE. AL ACEPTAR ESTOS TÉRMINOS PARA UTILIZAR EL SOFTWARE MODYO, USTED ACEPTA ESTOS TÉRMINOS Y CONDICIONES CON MODYO B.V. ("Modyo"). SI NO ESTÁ DE ACUERDO CON ESTOS TÉRMINOS, NO DEBE HACER CLIC EN EL BOTÓN "ACEPTO" O NO DEBE UTILIZAR EL SOFTWARE MODYO.
 
 En este Acuerdo, "usted", "su" y "licenciatario" se referirán a usted. Si usted está registrando una cuenta de Modyo o utilizando el software Modyo en nombre de una entidad u otra organización, usted está aceptando estos Términos para esa entidad u organización y representando a Modyo que usted tiene la autoridad para obligar a esa entidad u organización a estos Términos (y, en cuyo caso, los términos "usted", "su" y "Licenciatario" se referirá a esa entidad u organización). La excepción a esto es si esa organización tiene un acuerdo separado con Modyo que cubre una o más cuentas y el uso del Software Modyo, en cuyo caso ese acuerdo regirá el Software Modyo con respecto a esas cuentas solamente.
 
