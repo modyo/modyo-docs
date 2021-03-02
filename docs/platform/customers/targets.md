@@ -88,5 +88,6 @@ The targets to which each user belongs are updated in a background process:
 * Every 5 minutes.
 * Every time a user's profile is modified.
 * Every time a user answers a form.
+
 As the update is executed in a background process, the update is not immediate and depends on the system load, so it is possible that some users may not see the targetized content for a few minutes after having executed an action that includes or excludes them from a target.
 :::

@@ -87,5 +87,6 @@ Los targets a los que pertenece cada usuario se actualiza en un proceso en segun
 * Cada 5 minutos.
 * Cada vez que el perfil de un usuario es modificado.
 * Cada vez que un usuario responde un formulario.
+
 Como la actualización se ejecuta en un proceso en segundo plano, la actualización no es inmediata y depende de la carga del sistema, por lo que es posible que algunos usuarios no vean el contenido targetizado por algunos minutos luego de haber ejecutado una acción que los incluya o excluya de un target.
 :::
