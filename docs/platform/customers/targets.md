@@ -84,10 +84,11 @@ The filters found by default in the platform are:
 To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/platform/customers/users.html#customers-settings) for more information.
 
 :::warning Warning
-The targets to which each user belongs are updated in a background process:
+Updating targets occurs constantly in background in one of three ways:
+
 * Every 5 minutes.
 * Every time a user's profile is modified.
 * Every time a user answers a form.
 
-As the update is executed in a background process, the update is not immediate and depends on the system load, so it is possible that some users may not see the targetized content for a few minutes after having executed an action that includes or excludes them from a target.
+These updates are not immediate, and depend on the system load. It is possible that some users may not see targeted content right away after having executed an action that includes or excludes them from a particular target. Please give the system a few minutes to reflect target changes.
 :::
