@@ -46,7 +46,7 @@ To see the users that match your target filters, click on the **Apply** button. 
 
 ::: tip Tip
 When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
- :::
+:::
 
 ### Filters
 
