@@ -24,7 +24,7 @@ Además, en el extremo izquierdo encontrarás un botón con un menú desplegable
 - Borrar: Borrar el target.
 
 ::: warning Atención
-Si borras el target, tendrás que elaborarlo de nuevo. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.
+Si borras el target, tendrás que crearlo nuevamente. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.
 :::
 
 Si necesitas buscar un target por nombre en específico, puedes hacerlo a través de la barra de búsqueda que se encuentra en la parte superior de la pantalla.
@@ -49,35 +49,43 @@ Por último, si quieres ver los usuarios que integran ese target, solo debes hac
 
 ### Filtros
 
-Los filtros  permiten crear targets que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. 
+Los filtros permiten crear targets que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. Podrás crear targets incluyendo usuarios que coinciden con cierto criterio o usuarios que no coinciden con un determinado criterio.
 
 Los filtros que se encuentran de manera predeterminada en la plataforma son:
 
-- Activo / Inactivo
+- Estado de activación
 - Edad
-- Nacido en
+- Fecha de nacimiento
 - Valor de custom field
 - Dispositivo
 - Correo entregado
-- Correo no leído
-- Correo no abierto
 - Correo reportado como spam
-- Conteo de correos abiertos
 - Conteo de respuestas a formularios
 - Género
-- Último inicio de sesión
-- Conteo de registros
-- Inicio de sesión
+- Última fecha de inicio de sesión
+- Conteo de logs
+- Fecha de inicio de sesión
+- Correo no abiertos
+- Conteo de correos abiertos
 - Notificación leída
-- Notificación no leída
+- Conteo de notificaciones abiertas
 - Fecha de registro
 - Tags de usuario
+- Valores de campo de usuarios
 - Respuestas de formulario
+- Orden completada
+- Orden fallida
 - Orden confirmando
-- Orden confirmada
-- Orden completa
-- Orden pagando
 - Orden pagada
+- Orden pagando
 - Orden rechazada
 
 Para crear un filtro avanzado, que se ajuste a tus necesidades, debes ir a la sección Custom Fields, que se encuentra en [Configuración de Customers](/es/platform/customers/users.html#configuracion-de-customers).
+
+:::warning Atención
+Los targets a los que pertenece cada usuario se actualiza en un proceso en segundo plano:
+* Cada 5 minutos.
+* Cada vez que el perfil de un usuario es modificado.
+* Cada vez que un usuario responde un formulario.
+Como la actualización se ejecuta en un proceso en segundo plano, la actualización no es inmediata y depende de la carga del sistema, por lo que es posible que algunos usuarios no vean el contenido targetizado por algunos minutos luego de haber ejecutado una acción que los incluya o excluya de un target.
+:::

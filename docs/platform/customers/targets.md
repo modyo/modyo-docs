@@ -50,36 +50,43 @@ When using targets, it's important to make sure that each user profile is comple
 
 ### Filters
 
-Filters are what allows us to create targets by matching information that appears with a user's profile and their activity within the site.
+Filters allow you to create targets based on the information that appears in the customer's profile and their activity within the site. You can create targets including users that match certain criteria or users that do not match certain criteria.
 
-The list of default filters are as follows:
+The filters found by default in the platform are:
 
 - Activation status
 - Age
 - Birth date
 - Custom field value
-- Login Device
-- Email delivered
-- Spam Email reported
-- Form responses count
+- Device
+- Delivered mail
+- Mail reported as spam
+- Form response count
 - Gender
 - Last login date
 - Log count
-- Login at date
-- Emails not opened
-- Emails opened count
-- Emails opened
-- Notifications opened
-- Notifications opened count
-- Registered date
-- User tag
-- Answered
+- Login date
+- Mail not opened
+- Count of opened mails
+- Notification read
+- Count of opened notifications
+- Registration date
+- User tags
 - User field values
-- Completed orders
-- Confirmation failed orders
-- Confirming orders
-- Paid orders
-- Paying orders
-- Rejected orders
+- Form Responses
+- Order completed
+- Order failed
+- Order confirming
+- Order paid
+- Order paying
+- Order rejected
 
 To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/platform/customers/users.html#customers-settings) for more information.
+
+:::warning Warning
+The targets to which each user belongs are updated in a background process:
+* Every 5 minutes.
+* Every time a user's profile is modified.
+* Every time a user answers a form.
+As the update is executed in a background process, the update is not immediate and depends on the system load, so it is possible that some users may not see the targetized content for a few minutes after having executed an action that includes or excludes them from a target.
+:::
