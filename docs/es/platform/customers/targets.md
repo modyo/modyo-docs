@@ -43,9 +43,9 @@ Para grabar tu target, solo debes hacer clic en el botón **Guardar como Target*
 
 Por último, si quieres ver los usuarios que integran ese target, solo debes hacer clic en el botón **Aplicar**. Con esto, llegarás a la vista de [Usuarios](/es/platform/customers/users.html) que te mostrará una lista con todos los contactos que se ajustan a tus filtros.
 
-::: tip Tip
+:::tip Tip
  Es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar mejor. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al target.
- :::
+:::
 
 ### Filtros
 
