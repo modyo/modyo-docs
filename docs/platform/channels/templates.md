@@ -178,8 +178,8 @@ A basic example of Liquid + HTML code that you can use to get started in these v
   <h1 class="title"> {{entry.title}} </h1>
   <time> {{entry.published_at | format_date}} </time>
   <span class="url"
-    > <a href="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}"
-      > {{site.url}}/{{entry.type_uid}}/{{entry.slug}} </a
+    > <a href="{{site.url}}/content_view_name/{{entry.slug}}"
+      > {{site.url}}/content_view_name/{{entry.slug}} </a
     > </span
   >
 </div>
@@ -197,7 +197,7 @@ The example above assumes that a couple of field names, such as "title" and "des
 To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/liquid-markup.html).
 :::
 
-With this view created and published, the URL endpoint exists at `site_url/type_uid/entry_slug`, where `type_uid` is the UID of the type you want to display and matches the name of the view you just created. The `entry_slug`, matches the character string in the "Slug" field of the displayed entry. An example relative URL path would be `my-site/posts/my-first-post-in-Modyo`.
+With this view created and published, the URL endpoint exists at `site_url/content_view_name/entry_slug`, where `type_uid` is the UID of the type you want to display and matches the name of the view you just created. The `entry_slug`, matches the character string in the "Slug" field of the displayed entry. An example relative URL path would be `my-site/posts/my-first-post-in-Modyo`.
 
 :::tip Tip
 
