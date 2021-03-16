@@ -67,7 +67,7 @@ Los elementos de apoyo son generalmente personajes o cosas que, tal cómo dice s
 
 A diferencia del Hero y el spot Hero, estos elementos no representan una idea específica. Son utilizados generalmente para dirigir la mirada y resaltar el contenido sin quitar protagonismo a lo que se quiere comunicar.
 
-<img src="/assets/img/brand/support.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
 
 ## Color
 
