@@ -24,10 +24,10 @@ search: true
 * Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* New filters were added to the Liquid SDK for content that enables to [search](/platform/content/public-api-reference.html#filter-entries), filter and [sort](/platform/content/public-api-reference.html#order-entries) by custom fields of the content type
+* New filters were added to the Liquid SDK for content that enables users to [search](/platform/content/public-api-reference.html#filter-entries), filter and [sort](/platform/content/public-api-reference.html#order-entries) by custom fields of the content type
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Form language is now tied to the site associated instead of the account language.
+* Form language is now tied to the associated site instead of the account language.
 
 ### 9.1.11 - March 2, 2021
 &nbsp;

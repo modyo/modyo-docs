@@ -45,12 +45,30 @@ Total entries: {{ entries | total_entries }}
 
 ### Filter entries
 
-If we want to filter the entries, we can do so by the following attributes: by_uuid, by_slug, by_category, by_type, by_tag, by_lang. Every response contains an array of values, so it is possible to filter by one value or several, as follows:
+If you want to filter the entries, you can do so by the following attributes: by_uuid, by_slug, by_category, by_type, by_tag, by_lang. Every response contains an array of values, so it is possible to filter by one or several values, as follows:
 
 ``` liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
+{% endfor %}
+```
+
+In the case of `filter_by`, you can use meta attributes or personalized fields according to the type of content, for example:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', 'value_to_filter' | sort_by: field: 'fields.date' , order: 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+If you want to negate a value in the field filter, you can use `not` within the filter:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
 ```
 
@@ -92,7 +110,16 @@ In the same way that you can filter by category `by_category`, tags `by_tags` an
 ```
 
 The available ordering options are `asc` and `desc`, and by default if this parameter is not specified, the values will be set to `desc`.
-The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at` and `slug`.
+The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug` and `field`.
+
+To sort by a personalized field, you should use the field's `fields.uid` as the parameter:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', 'value_to_filter' | sort_by: field: 'fields.date' , order: 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
 
 ### Entries with location
 
