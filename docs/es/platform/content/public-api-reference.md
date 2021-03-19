@@ -56,7 +56,7 @@ Si quieres filtrar las entradas, lo puedes hace a través de los siguientes atri
 En el caso del filtro `filter_by`, puedes hacer uso tanto de atributos meta o campos personalizados del tipo de contenido, por ejemplo:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', 'value_to_filter' | sort_by: field: 'fields.date' , order: 'desc' | limit 8 %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
