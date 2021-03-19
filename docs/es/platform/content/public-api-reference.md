@@ -114,7 +114,7 @@ Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `
 Para ordenar por un campo personalizado, debes usar como parámetro el `fields.uid` del campo:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', 'value_to_filter' | sort_by: field: 'fields.date' , order: 'desc' | limit 8 %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
