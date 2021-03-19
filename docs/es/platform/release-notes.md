@@ -24,7 +24,7 @@ search: true
 * Múltiples mejoras de seguridad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Se añaden nuevos filtros al SDK de Liquid de contenido que permiten selccionar y filtrar por campos personalizados del tipo de contenido.
+* Se añaden [nuevos filtros al SDK de Liquid](/es/platform/content/public-api-reference.html#filtrar-entradas) de contenido que permiten selccionar, filtrar y [ordenar](/es/platform/content/public-api-reference.html#ordenar-entradas) por campos personalizados del tipo de contenido.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Se asocia el idioma en el que se despliegan los formularios de acuerdo al idioma del sitio asociado y no al idioma de la cuenta
