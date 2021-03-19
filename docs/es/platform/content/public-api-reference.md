@@ -44,10 +44,28 @@ Total entries: {{ entries | total_entries }}
 
 ### Filtrar entradas
 
-Si se quiere filtrar las entradas, se hace a través de los siguientes atributos: by_uuid, by_slug, by_category, by_type, by_tag, by_lang. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+Si quieres filtrar las entradas, lo puedes hace a través de los siguientes atributos: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+En el caso del filtro `filter_by`, puedes hacer uso tanto de atributos meta o campos personalizados del tipo de contenido, por ejemplo:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', 'value_to_filter' | sort_by: field: 'fields.date' , order: 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro del filtro:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
@@ -91,7 +109,16 @@ De la misma forma en que se puede filtrar por categoría `by_category`, tags `by
 ```
 
 Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
-Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at` y `slug`.
+Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at`, `slug` y `field`.
+
+Para ordenar por un campo personalizado, debes usar como parámetro el `fields.uid` del campo:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', 'value_to_filter' | sort_by: field: 'fields.date' , order: 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
 
 ### Entradas con ubicación
 
