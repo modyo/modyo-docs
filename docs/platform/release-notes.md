@@ -16,6 +16,19 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.12 - March 19, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs were fixed.
+* Multiple improvements to navigation and usability.
+* Multiple security improvements.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* New filters were added to the Liquid SDK for content that enables to [search](/platform/content/public-api-reference.html#filter-entries), filter and [sort](/platform/content/public-api-reference.html#order-entries) by custom fields of the content type
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Form language is now tied to the site associated instead of the account language.
+
 ### 9.1.11 - March 2, 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

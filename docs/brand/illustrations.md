@@ -67,7 +67,7 @@ The supporting elements are generally characters or things that, just as their n
 
 In contrast to the hero and the point hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without taking away from what is being communicated.
 
-<img src="/assets/img/brand/support.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
 
 ## Color
 
