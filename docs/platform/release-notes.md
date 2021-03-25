@@ -5,7 +5,7 @@ search: true
 # Release notes
 
 ### 9.2.X - First release planned for the first quarter of 2021.
-
+&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Administrator groups: Easily add users corresponding to different sites or spaces.
 
