@@ -27,10 +27,10 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Se añaden filtros dinámicos por valores de campos en el indice de entradas.
 
-<Badge text="Channels" type="core" vertical="middle"/>
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Se resuelve un bug en que el copiado de sitios no consideraba los templates.
 
-<Badge text="Customers" type="core" vertical="middle"/>
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Se resuelve un bug en que el flujo de integración con OIDC redirigía al perfil del usuario y no al sitio desde donde se inició el flujo.
 
 ### 9.1.12 - 19 de marzo del 2021

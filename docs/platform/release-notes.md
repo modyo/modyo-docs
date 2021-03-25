@@ -27,10 +27,10 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Added dynamic filters by field values in the entries index.
 
-<Badge text="Channels" type="core" vertical="middle"/>
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Fixed a bug where copying a site did not consider templates.
 
-<Badge text="Customers" type="core" vertical="middle"/>
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Fixed a bug where the integration with OIDC redirected to the user's profile and not to the site from where the flow was started.
 
 ### 9.1.12 - March 19, 2021
