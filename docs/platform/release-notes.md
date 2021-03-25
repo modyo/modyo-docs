@@ -16,6 +16,23 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.13 - March 25, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs resolved.
+* Multiple navigation and usability improvements.
+* Multiple security improvements.
+* Multiple JS libraries with vulnerabilities updated.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Added dynamic filters by field values in the entries index.
+
+<Badge text="Channels" type="core" vertical="middle"/>
+* Fixed a bug where copying a site did not consider templates.
+
+<Badge text="Customers" type="core" vertical="middle"/>
+* Fixed a bug where the integration with OIDC redirected to the user's profile and not to the site from where the flow was started.
+
 ### 9.1.12 - March 19, 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

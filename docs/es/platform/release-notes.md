@@ -16,6 +16,23 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.13 - 25 de marzo del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
+* Múltiples mejoras de seguridad.
+* Se actualizan múltiples bibliotecas JS con vulnerabilidades
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se añaden filtros dinámicos por valores de campos en el indice de entradas.
+
+<Badge text="Channels" type="core" vertical="middle"/>
+* Se resuelve un bug en que el copiado de sitios no consideraba los templates.
+
+<Badge text="Customers" type="core" vertical="middle"/>
+* Se resuelve un bug en que el flujo de integración con OIDC redirigía al perfil del usuario y no al sitio desde donde se inició el flujo.
+
 ### 9.1.12 - 19 de marzo del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
@@ -54,7 +71,6 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de performance.
-
 ### 9.1.8 - 02 de febrero del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
