@@ -365,9 +365,7 @@ Instructs the browser that your site should be accessed using HTTPS only.
 
 #### Referrer-Policy
 
-The `Referer` header contains information of the previous web page from which your
-are linked, with the `Referrer-Policy` header you can control how much information
-should be included in the Referer header.
+The `Referer` header contains information about the previous web page which is linked to the resource being requested, and you can control how much information should be included in the `Referer` header  with the `Referrer-Policy` header.
 
 * **no-referrer**: No referrer information is sent.
 * **no-referrer-when-downgrade**: Don't send referrer information to a less
@@ -389,20 +387,16 @@ requests. Send the origin only to same protocol security level and don't send
 Indicates if your site should be allowed to be rendered in a `frame`, `iframe`,
 `embed` or `object`.
 * **DENY**: The site cannot be displayed in a frame.
-* **SAMEORIGIN**: The site can be displayed on the same domain .
+* **SAMEORIGIN**: The site can be displayed in frames with the same domain.
 
 ### X-Content-Type-Options
 
-Indicates that advertised MIME types in the `Content-Type` header must be
-followed to prevent MIME type sniffing.
+Indicates that declared MIME types in the `Content-Type` header must be observed to prevent MIME type sniffing.
 
 ### Content-Security-Policy
 
-Control what resources the browser is allowed to load for the site to
-mitigate cross site scripting and data injection attacks. The default value
-**allows to load resources from anywhere**, so it's important to design the right
-content cecurity Policy for your site.
-Specify your content security policy freely in text area, for a complete guide on how to
+Control what resources the browser is allowed to load to the site to mitigate cross site scripting and data injection attacks. The default value **makes it possible to load resources from anywhere**, so it's important to design the right content security policy for your site.
+Specify your content security policy freely in text area. For a complete guide on how to
 write your policy see [Content Security Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
 
 :::warning Warning
@@ -413,24 +407,19 @@ A very strict value can interfere with some features like
 [Asset Manager](/platform/content/asset-manager.html).
 :::
 
-A ready for production policy must ensure that al the resources as
-images and stylesheets are loaded from trusted sources, and require that all scripts
-are safe an trusted by the application. For example, a strict policy for the
-minimal template would look like:
+A ready for production policy must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the minimal template would look like this:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
 Your policy should include a `default-src 'self'` directive, which is a fallback
-for any other resource type. Also needs to include a `script-src` and a
-`style-src` directives to prevent inline `script` and `style` tags evaluation.
+for any other resource type. It also needs to include `script-src` and `style-src` directives to prevent evaluation of the `script` and `style` inline tags.
 
-* **Nonce**: A CSP nonce will be automatically added by the server to the
+* **Nonce**: A CSP nonce will be added automatically by the server to the
   `script-src` and `style-src` directives if present.
 
-If you have the nonce present in your policy then you can allow list `script` and
-`style` tags in your templates using the `csp_nonce` variable.
+If you have the nonce present in your policy then you can add the `script` and `style` tagsto the allowed list in your templates using the `csp_nonce` variable.
 
 ```liquid
 <script nonce="{{csp_nonce}}">
@@ -445,17 +434,12 @@ There are several tools to assist you in designing a strong security policy:
 
 ### Permissions-Policy
 
-Allows or deny the use of browser features and APIs for the site,
-for example, you can restrict privacy sensitive APIs like camera o microphone
-and the autoplay of videos. For a complete list for the features supported by
-browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+Allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs like the camera or microphone and the autoplay of videos. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 ### X-XSS-Protection
 
-Prevents to pages loading when the browser detects a cross-site scripting attack.
-This protection is not necessary with modern browsers when you implement a strict
-[Content-Security-Policy](/platform/channels/sites.html#content-security-policy)
-, but some security inspectors will expect the presence of this header.
+Prevents pages from loading when the browser detects a cross-site scripting attack.
+This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this header to be present.
 
 * **0**: Disable XSS filtering.
 * **1**: Enable XSS filtering, removing the unsafe parts.

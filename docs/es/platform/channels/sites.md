@@ -377,7 +377,7 @@ información debe incluirse en el _header_ `Referer`.
 * **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino
   menos seguro.
 * **origin**: Envía solo el dominio de origen y elimina las rutas y _query string_ .
-* **origin-when-cross-origin**: Envíe información de _referrer_ para _requests_
+* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_
   del mismo origen y elimina las rutas y _query string_ para otros destinos.
 * **same-origin**: Envía información de _referrer_ solo para _requests_ del
   mismo origen.
