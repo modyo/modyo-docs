@@ -231,7 +231,7 @@ Modyo has reserved domains that cannot be used as custom site domains:
 :::
 
 :::warning Warning
-Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites: 
+Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -348,3 +348,115 @@ The precedence of locations on Modyo sites is as follows:
 1. [Custom content views](/platform/channels/templates.html#content-views)
 1. Custom redirects
 1. [Site 404 error configuration](/platform/channels/sites.html#restrictions)
+
+### Security headers
+
+Configure your HTTP security headers by enabling this module for your site.
+This action cannot be undone, but when enabled you have full control of which headers you want to use.
+
+#### HTTP Strict Transport Security (HSTS)
+
+Instructs the browser that your site should be accessed using HTTPS only.
+* **Duration**: Sets how long the browser should remember that your site is only
+  accessed using HTTPS.
+* **Preload**: Include the preload directive.
+  See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
+* **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
+
+#### Referrer-Policy
+
+The `Referer` header contains information of the previous web page from which your
+are linked, with the `Referrer-Policy` header you can control how much information
+should be included in the Referer header.
+
+* **no-referrer**: No referrer information is sent.
+* **no-referrer-when-downgrade**: Don't send referrer information to a less
+  secure destination.
+* **origin**: Send the origin domain only and strip out the paths and query
+  string.
+* **origin-when-cross-origin**: Send referrer information for same origin requests
+  and strip out the paths and query string to other destinations.
+* **same-origin**: Send referrer information for same origin requests only.
+* **strict-origin**: Send the origin domain only for same security level
+  requests, and don't send referrer information to less secure destinations.
+* **strict-origin-when-cross-origin**: Send referrer information to same-origin
+requests. Send the origin only to same protocol security level and don't send
+  referrer information to less secure destinations.
+* **unsafe-url**: Always send referrer information.
+
+### X-Frame-Options
+
+Indicates if your site should be allowed to be rendered in a `frame`, `iframe`,
+`embed` or `object`.
+* **DENY**: The site cannot be displayed in a frame.
+* **SAMEORIGIN**: The site can be displayed on the same domain .
+
+### X-Content-Type-Options
+
+Indicates that advertised MIME types in the `Content-Type` header must be
+followed to prevent MIME type sniffing.
+
+### Content-Security-Policy
+
+Control what resources the browser is allowed to load for the site to
+mitigate cross site scripting and data injection attacks. The default value
+**allows to load resources from anywhere**, so it's important to design the right
+content cecurity Policy for your site.
+Specify your content security policy freely in text area, for a complete guide on how to
+write your policy see [Content Security Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
+
+:::warning Warning
+A very strict value can interfere with some features like
+[Google tag manager](/platform/channels/sites.html#google-tag-manager),
+[PWA](/platform/channels/sites.html#pwa),
+[Widgets](/platform/channels/widgets.html) and
+[Asset Manager](/platform/content/asset-manager.html).
+:::
+
+A ready for production policy must ensure that al the resources as
+images and stylesheets are loaded from trusted sources, and require that all scripts
+are safe an trusted by the application. For example, a strict policy for the
+minimal template would look like:
+
+```
+default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
+```
+
+Your policy should include a `default-src 'self'` directive, which is a fallback
+for any other resource type. Also needs to include a `script-src` and a
+`style-src` directives to prevent inline `script` and `style` tags evaluation.
+
+* **Nonce**: A CSP nonce will be automatically added by the server to the
+  `script-src` and `style-src` directives if present.
+
+If you have the nonce present in your policy then you can allow list `script` and
+`style` tags in your templates using the `csp_nonce` variable.
+
+```liquid
+<script nonce="{{csp_nonce}}">
+  alert("everything's gonna be okay");
+</script>
+```
+
+There are several tools to assist you in designing a strong security policy:
+* [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
+* [ReportURI](https://report-uri.com/home/analyse)
+* [Salvation CSP validator](https://cspvalidator.org)
+
+### Permissions-Policy
+
+Allows or deny the use of browser features and APIs for the site,
+for example, you can restrict privacy sensitive APIs like camera o microphone
+and the autoplay of videos. For a complete list for the features supported by
+browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+
+### X-XSS-Protection
+
+Prevents to pages loading when the browser detects a cross-site scripting attack.
+This protection is not necessary with modern browsers when you implement a strict
+[Content-Security-Policy](/platform/channels/sites.html#content-security-policy)
+, but some security inspectors will expect the presence of this header.
+
+* **0**: Disable XSS filtering.
+* **1**: Enable XSS filtering, removing the unsafe parts.
+* **1; mode=block**: Enable XSS filtering, preventing the rendering of the page.

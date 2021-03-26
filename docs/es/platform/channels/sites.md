@@ -28,14 +28,14 @@ En el índice de sitios, solo verás los sitios en los cuales eres parte del equ
 
 ## Revisión y publicación conjunta
 
-Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista. 
+Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista.
 
 Si quieres publicar múltiples elementos en un solo paso, debes presionar el botón "Publicar" desde las páginas, navegación, widgets o templates y debes marcar en el listado todos los elementos que quieras publicar y luego presionar el botón para publicar nuevamente.
 
 :::warning Atención
-En el listado aparecerán todos los elementos que tienen cambios pendientes por publicar, por lo que si algún elemento no aparece en el listado, es muy probable que aún no tenga cambios por publicar. 
+En el listado aparecerán todos los elementos que tienen cambios pendientes por publicar, por lo que si algún elemento no aparece en el listado, es muy probable que aún no tenga cambios por publicar.
 
-Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados. 
+Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados.
 
 En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar publicación" permitiendo que el elemento pase directamente a la vista de publicación.
 :::
@@ -50,13 +50,13 @@ La configuración del sitio te permite abrir las opciones de la plataforma, para
 
 Dentro de esta sección, puedes configurar los siguientes datos:
 
-- **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio. 
+- **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
 - **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
 - **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/es/platform/channels/templates.html#vistas-para-contenido).
 - **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
 - **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
-- **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de google. 
+- **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de google.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
 - **Borrar**: Esta opción te permite eliminar definitivamente un sitio y todo sus elementos.
@@ -67,10 +67,10 @@ Esta opción es irreversible, por lo que debes estar completamente seguro al eje
 
 #### Google Tag Manager
 
-Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/es/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_. 
+Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/es/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
 
 
-Si tienes el último tema disponible y aún así no cuentas con estos snippets, puedes dirigirte a la sección "Temas" en la parte superior derecha y hacer click en la opción "Cargar templates" de las opciones adicionales arriba a la derecha. Esta opción cargará todos los templates que han sido añadidos al tema, pero no están presentes en la versión que tienes instalada. 
+Si tienes el último tema disponible y aún así no cuentas con estos snippets, puedes dirigirte a la sección "Temas" en la parte superior derecha y hacer click en la opción "Cargar templates" de las opciones adicionales arriba a la derecha. Esta opción cargará todos los templates que han sido añadidos al tema, pero no están presentes en la versión que tienes instalada.
 
 En caso de tener instalado un tema antiguo y no contar con estos snippets, acá podrás acceder al código para poder crearlos como snippets personalizados y poder incrustar fácilmente Google Tag Manager a tu sitio.
 
@@ -148,7 +148,7 @@ https://[domain]/[site-name]/serviceworker.js
 Se puede modificar y programar el Service Worker en el siguiente campo, adaptándolo a tus rutas y con las variables disponibles de la siguiente manera.
 
 :::warning Atención
-Si se desactiva el Service Worker, la página seguirá andando sólo en sus funciones básicas y no con los beneficios que tiene esta opción. 
+Si se desactiva el Service Worker, la página seguirá andando sólo en sus funciones básicas y no con los beneficios que tiene esta opción.
 :::
 
 :::warning Atención
@@ -232,7 +232,7 @@ Modyo cuenta con dominios reservados que no se pueden usar como dominios persona
 :::
 
 :::warning Atención
-Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás usarlos como host de tus sitios: 
+Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás usarlos como host de tus sitios:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -324,11 +324,11 @@ En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tenga
 
 ### Redirecciones personalizadas
 
-Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio. 
+Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio.
 
-En esta vista encontrarás una tabla con todas las redirecciones que existen actualmente en el sitio, donde podrás buscar por path o descripción. 
+En esta vista encontrarás una tabla con todas las redirecciones que existen actualmente en el sitio, donde podrás buscar por path o descripción.
 
-Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completando los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guardando los cambios, crearás una nueva entrada de redirección. 
+Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completando los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guardando los cambios, crearás una nueva entrada de redirección.
 
 :::warning Atención
 La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/es/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
@@ -339,7 +339,7 @@ Además de crear redirecciones una por una, puedes importar un [archivo CSV](/as
 :::warning Atención
 Las columnas requeridas para importar redirecciones son origen y destino.
 
-Puedes seleccionar un código de respuesta 301 o 302 para todos los elementos sin necesidad de tener una columna para ellos. 
+Puedes seleccionar un código de respuesta 301 o 302 para todos los elementos sin necesidad de tener una columna para ellos.
 
 Junto con lo anterior, debes tener en consideración que si estás importando una redirección con un origen que ya tienes registrado, no podrás comenzar el proceso de importación y deberás modificar tu archivo CSV y eliminar la fila cuyo origen ya existe, o bien, eliminar el registro de redirecciones personalizadas del sitio cuyo origen estás intentando importar.
 :::
@@ -351,3 +351,121 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. [Vistas personalizadas de contenido](/es/platform/channels/templates.html#vistas-para-contenido)
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
+
+### Security headers
+
+Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
+Esta acción no se puede deshacer, pero cuando está habilitada, tienes el control
+total de los encabezados que desea usar.
+
+#### HTTP Strict Transport Security (HSTS)
+
+Indica al navegador que el sitio se debe acceder usando solo HTTPS.
+* **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se
+  accede al sitio mediante HTTPS.
+* **Precarga**: Incluye la directiva de precarga. Para más información consulta
+   [HSTS Preload List Submission](https://hstspreload.org/).
+* **Incluir subdominios**: Utiliza la regla HSTS también para todos los subdominios del sitio.
+
+#### Referrer-Policy
+
+El _header_ `Referer` contiene información de la página web anterior desde al cual
+está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta
+información debe incluirse en el _header_ `Referer`.
+
+* **no-referrer**: No se envía información de _referrer_.
+* **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino
+  menos seguro.
+* **origin**: Envía solo el dominio de origen y elimina las rutas y _query string_ .
+* **origin-when-cross-origin**: Envíe información de _referrer_ para _requests_
+  del mismo origen y elimina las rutas y _query string_ para otros destinos.
+* **same-origin**: Envía información de _referrer_ solo para _requests_ del
+  mismo origen.
+* **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo
+  nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
+* **strict-origin-when-cross-origin**: Envía información de _referrer_ a
+  _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es
+  el mismo y no envía información de _referrer_ a destinos menos seguros .
+* **unsafe-url**: Envía siempre la información de _referrer_.
+
+### X-Frame-Options
+
+Indica si tu sitio puede ser incluido en un `frame`, `iframe`,
+`embed` or `object`.
+* **DENY**: El sitio no se puede mostrar en un _frame_.
+* **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
+
+### X-Content-Type-Options
+
+Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type`
+para evitar _MIME type sniffing_.
+
+### Content-Security-Policy
+
+Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques
+de inyección de datos y _cross site scripting_. El valor predeterminado *permite
+cargar recursos desde cualquier lugar*, por lo que es importante diseñar una
+política de seguridad de contenido adecuada para tu sitio.
+Especifica libremente tu política de seguridad de contenido en el área de texto;
+para obtener una guía completa sobre cómo escribir su política, consulta
+[Content Security Policy (CSP) de la MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+
+:::warning Atención
+Un valor muy estricto puede interferir con algunas características como
+[Google tag manager](/es/platform/channels/sites.html#google-tag-manager),
+[PWA](/es/platform/channels/sites.html#pwa),
+[Widgets](/es/platform/channels/widgets.html) y
+[Asset Manager](/es/platform/content/asset-manager.html).
+:::
+
+Una política apta para producción debe asegurar que todos los recursos, como
+imágenes y hojas de estilo se cargan de fuentes confiables y requiera que todos
+los scripts sean seguros y confiables para la aplicación. Por ejemplo, una
+política estricta para el _template minimal_ se vería así:
+
+```
+default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
+```
+
+La política debe incluir una directiva `default-src 'self'`, que es _fallback_
+para cualquier otro tipo de recurso. También debe incluir directivas
+`script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y
+`script`.
+
+* **Nonce**: El servidor agregará un CSP nonce a las directivas
+  `script-src` y `style-src` si están presentes.
+
+Si tienes el nonce presente en tu política, puedes agregar a la lista permitida
+los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
+
+```liquid
+<script nonce="{{csp_nonce}}">
+  alert("todo va a estar bien");
+</script>
+```
+
+Hay varias herramientas para ayudarte a diseñar una política de seguridad sólida:
+* [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
+* [ReportURI](https://report-uri.com/home/analyse)
+* [Salvation CSP validator](https://cspvalidator.org)
+
+### Permissions-Policy
+
+Permite o niega el uso de funciones y APIs del navegador para el sitio, por
+ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o
+el micrófono y la reproducción automática de videos. Para obtener una lista
+completa de las funciones compatibles con los navegadores, consulte
+[Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+
+### X-XSS-Protection
+
+Evita que las páginas se carguen cuando el navegador detecta un ataque de
+_cross-site scripting_. Esta protección no es necesaria con los navegadores
+modernos cuando se implementa una [Content-Security-Policy](/es/platform/channels/sites.html#content-security-policy)
+estricta, pero algunos inspectores de seguridad van a esperar la presencia de
+este _header_.
+
+* **0**: Deshabilita XSS _filtering_.
+* **1**: Habilita XSS _filtering_, quitando las partes inseguras.
+* **1; mode=block**: Habilita XSS _filtering_, impidiendo el _rendering_ de la
+  página.
