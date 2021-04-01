@@ -16,6 +16,14 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.14 - 1 de abril del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se resuelve un bug en que se perdía el control de los locks en el template builder.
+
 ### 9.1.13 - 25 de marzo del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
