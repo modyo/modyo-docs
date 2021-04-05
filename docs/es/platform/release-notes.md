@@ -3,7 +3,7 @@ search: true
 ---
 
 # Notas del release
-
+ 
 ### 9.2.X - Primer release planificado para el primer trimestre del 2021.
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
