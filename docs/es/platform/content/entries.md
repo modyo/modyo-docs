@@ -90,7 +90,6 @@ Para traducir una entrada ya escrita a un idioma distinto, deberás tener en cue
 Después, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
 
 Así, llegarás a una versión de la entrada en blanco, donde puedes pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
-
 :::
 
 ### Publicar una Entrada
