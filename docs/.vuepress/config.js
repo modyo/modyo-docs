@@ -242,18 +242,19 @@ module.exports = {
               path: "/es/platform/",
               collapsable: true,
               children: [
-                "/es/platform/whats-new",
-                "/es/platform/key-concepts",
-                "/es/platform/versions",
+                ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
+                ["/es/platform/key-concepts", "Conceptos claves"],    
                 "/es/platform/release-notes",
               ],
-            },
+            },            
             {
-              title: "Infraestructura",
+              title: "Arquitectura",
+              path: "/es/platform/infrastructure/",
               collapsable: true,
               children: [
+                "/es/platform/infrastructure/versions",
                 "/es/platform/infrastructure/cloud",
-                /*"/platform/infrastructure/onpremise",*/
+                "/es/platform/infrastructure/onpremise",
                 "/es/platform/infrastructure/security",
               ],
             },
@@ -328,6 +329,15 @@ module.exports = {
                 ["/es/platform/insights/data-studio", "Data Studio"],
               ],
             },
+            {
+              title: "Tutoriales",
+              path: "/es/platform/tutorials/",
+              collapsable: true,
+              children: [
+                "/es/platform/tutorials/how-to-publish-content",
+                "/es/platform/tutorials/how-to-create-a-widget",
+              ],
+            },
           ],
           "/es/widgets/": [
             {
@@ -336,8 +346,8 @@ module.exports = {
               children: [
                 ["/es/widgets/", "Introducción"],
                 "/es/widgets/guides/look-and-feel",
-                "/es/widgets/guides/i18n",
-                "/es/widgets/guides/share-state",
+                ["/es/widgets/guides/i18n", "Internacionalización"],
+                ["/es/widgets/guides/share-state", "Compartir estado"],
                 "/es/widgets/guides/liquid-variables",
                 "/es/widgets/guides/ci-cd",
                 "/es/widgets/guides/repository-pattern"

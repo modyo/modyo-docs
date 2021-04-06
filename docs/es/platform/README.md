@@ -1,6 +1,16 @@
-# Bienvenido a Modyo
+---
+search: true
+---
+
+# Bienvenido a la documentación de Modyo
 
 Bienvenido al sitio oficial de documentación de Modyo. Esperamos cubrir aquí todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
+
+La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o resolver una consulta específica. Los contenidos dentro de la documentación se encuentran linkeados entre sí para facilitar el entendimiento de éstos.
+
+::: tip Versiones pasadas
+La documentación en este sitio aplica a la última versión (9.1). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf).
+:::
 
 ### ¿Qué es Modyo?
 
@@ -10,7 +20,7 @@ Modyo es una plataforma de experiencia digital que potencia soluciones para la i
 
 * Utiliza Modyo para crear **experiencias digitales integradas** para tus consumidores a través de canales públicos y privados.
 * Utiliza Modyo para crear **agilidad y gobernabilidad** en tu fábrica digital.
-* Utiliza Modyo para crear experiencias digitales a través de **widgets inteligentes**.
+* Utiliza Modyo para crear experiencias digitales a través de **widgets**.
 
 ### ¿Por qué usar Modyo?
 
@@ -34,7 +44,11 @@ Modyo provee un ambiente de desarrollo seguro, ya sea en la nube u "On Premise" 
 
 Para obtener soporte de la Plataforma Modyo visita el [sitio oficial de soporte](https://support.modyo.com/hc/es).
 
-### Navegadores compatibles
+### Requisitos para usar Modyo
 
-Modyo en su versión más reciente es compatible con Google Chrome, Firefox, Opera y Microsoft Edge en sus versiones mas recientes.
+Para utilizar Modyo, sólo debes disponer de un navegador Web compatible. Toda la interfaz del producto puede ser accedida mediante su [consola Web](/es/platform/core/the-modyo-interface.html).
+
+::: tip Navegadores compatibles
+Modyo es compatible con las versiones más modernas de Google Chrome, Firefox y Microsoft Edge.
 Si tienes actualizaciones pendientes, recomendamos que actualices tu navegador.
+:::

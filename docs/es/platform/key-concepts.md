@@ -62,13 +62,14 @@ Las Aplicaciones Web Progresivas serán el futuro de la Web, ya que permiten mej
 
 ### Seguridad, Gobernabilidad y Agilidad
 
-Modyo tiene una arquitectura donde todo el código publicado genera versiones. Antes de publicar una versión de un widget o un layout, puedes revisar fácilmente los cambios en el código entre una versión y otra.
+Modyo posee una arquitectura donde todo el código publicado genera versiones. Antes de publicar una versión de un widget o un layout, puedes revisar fácilmente los cambios en el código entre una versión y otra.
 
 La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu equipo, siguiendo un modelo que balancea gobernabilidad y agilidad. Cuando se activa Team Review en la plataforma dentro de Channels, dos personas (Revisor y Aprobador) pueden cambiar el estado de los recursos digitales al de "Publicado" a través de un proceso formal fácil de manejar. La capacidad de tu equipo es medida más tarde dentro de Insights.
 
-## Glosario
+### Glosario
+Las siguientes definiciones corresponden a términos comunmente utulizados entre las diferentes aplicaciones de Modyo.
 
-### Plataforma
+#### Generales
 
 * [**CORS**](/es/platform/core/security.html#compartir-recursos-en-distintos-dominios): Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
 * **Cuenta**: Es el punto de acceso a todas las funcionalidades de Modyo.
@@ -85,7 +86,7 @@ La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu
 * [**Webhook**](/es/platform/core/integrations#webhooks): Envía información de forma automática a un sistema externo cuando ocurre un evento determinado.
 
 
-### Content
+#### Modyo Content
 
 * [**Assets**](/es/platform/content/asset-manager.html#acerca-de-la-interfaz): Son los distintos archivos que se suben a la plataforma para ser utilizados en contenido y sitios.
 * [**Campo**](/es/platform/content/types.html#campos): Es la unidad que atómica con la que se forman los distintos tipos de contenido.
@@ -96,7 +97,7 @@ La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu
 * [**Tipo de contenido**](/es/platform/content/types.html): Es una estructura con campos que te permite definir los distintos contenidos de tu negocio.
 
 
-### Channels
+#### Modyo Channels
 
 * [**Dominios**](/es/platform/channels/sites.html#dominios): Te permite cambiar la URL y certificados de seguridad de tu sitio.
 * [**Meta tags**](/es/platform/channels/pages.html#meta-tags): Te permite personalizar los tags meta para tus páginas y mejorar la forma en que los motores de búsqueda indexan tus páginas.
@@ -108,7 +109,7 @@ La agilidad ocurre cuando tienes una mayor predictibilidad de la capacidad de tu
 * [**Vistas de contenido**](/es/platform/channels/templates.html#vistas-para-contenido): Son el punto de encuentro entre tu sitio y las entradas de contenido, que te permiten definir una página base y que todas las entradas del mismo tipo se vean bajo una misma visualización.
 * [**Widget**](/es/platform/channels/widgets.html): Es un paquete de funcionalidad reutilizable que contiene HTML, JavaScript y CSS que se puede usar en distintas páginas.
 
-### Customers
+#### Modyo Customers
 
 * [**Campañas**](/es/platform/customers/messaging.html#campanas): Es la definición de un canal de comunicación con el usuario, que te permite llegar a ellos a través de correos y notificaciones.
 * [**Campo personalizado**](/es/platform/customers/users.html#custom-fields): Te permite añadir atributos personalizados al perfil de los usuarios.

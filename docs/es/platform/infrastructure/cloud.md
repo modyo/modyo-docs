@@ -5,7 +5,7 @@ search: true
 # Cloud y Enterprise Cloud
 
 
-## Arquitectura de Modyo en AWS Cloud
+## Arquitectura
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel advanced con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
 
 
@@ -118,7 +118,7 @@ Las versiones Modyo Cloud y Modyo Enterprise Cloud son configuradas con una pol�
 
 Para el caso de las bases de datos configuradas con Amazon RDS, se utiliza el mecanismo interno de respaldo mediante snapshots los cuales son generados de forma diaria en horario de bajo tráfico y almacenados con una retención de 10 días. 
 
-Amazon RDS además ofrece la funcionalidad de point in time restore para recuperar la base de datos en una hora en específico dentro del backup.
+Amazon RDS además ofrece la funcionalidad de _point in time recovery_ para recuperar la base de datos en una hora en específico dentro del backup.
 
 ## Monitoreo
 ### Alertas 24x7

@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Patrón de Repositorio
+# Estructura de repositorio
 
-## Qué es?
+## Patrón de diseño de repositorio
 
 El Patrón de Diseño de Repositorio es uno de los más populares para crear una aplicación de nivel empresarial. Nos restringe a trabajar directamente con los datos de la aplicación y crea nuevas capas para las operaciones de la base de datos, la lógica de negocio y la interfaz de usuario de la aplicación.
 
@@ -34,13 +34,13 @@ Este es un ejemplo de como implementar éste patron en un Widget.
 
 Para consumir datos con Vue.js usando el patrón de diseño de repositorio que nos ayuda a desacoplar, siga estos simples pasos.
 
-1. Crear una carpeta "repositories" dentro de la carpeta `src` del Widget.
+### 1. Crear una carpeta "repositories" dentro de la carpeta `src` del Widget.
 
    ```sh
    cd src && mkdir repositories
    ```
 
-2. Crear una carpeta "clients" (Podría tener cualquier nombre, pero se recomienda y usa _clients_)
+### 2. Crear una carpeta "clients" (Podría tener cualquier nombre, pero se recomienda y usa _clients_)
 
    Crearé una carpeta de "clients" dentro de la carpeta "repositories", básicamente lo que estará dentro de esta carpeta son los diferentes Clientes HTTP que podrías querer usar, por ejemplo, si quieres usar **ModyoSDK**, Axios, Vue-resource etc.
 
@@ -48,7 +48,7 @@ Para consumir datos con Vue.js usando el patrón de diseño de repositorio que n
    cd repositories && mkdir clients
    ```
 
-3. Crear una archivo `xxxClient.js`: Éste contiene toda la configuración de la API del cliente incluyendo todos los métodos CRUD, por ejemplo `ModyoClient.js`.
+### 3. Crear una archivo `xxxClient.js`: Éste contiene toda la configuración de la API del cliente incluyendo todos los métodos CRUD, por ejemplo `ModyoClient.js`.
 
    Podemos crear diferentes archivos para cada Cliente que utilicemos, por ejemplo, uno para Axios y otro para **ModyoSDK**
 
@@ -97,7 +97,7 @@ Para consumir datos con Vue.js usando el patrón de diseño de repositorio que n
    export default apiClient;
    ```
 
-4. Crear los Repositorios
+### 4. Crear los Repositorios
 
    En estos archivos están las diferentes operaciones de la API que se harán dentro de una característica particular del Widget.
 
@@ -142,7 +142,7 @@ Para consumir datos con Vue.js usando el patrón de diseño de repositorio que n
    Debemos importar el archivo del Cliente HTTP correspondiente en todos Repositorios que lo necesiten. En este ejemplo "ModyoClient"
    :::
 
-5. Crear el archivo "RepositoryFactory.js"
+### 5. Crear el archivo "RepositoryFactory.js"
    Creamos un archivo dentro de la carpeta `repositories` llamado `RepositoryFactory` para exportar todos los diferentes repositorios que hemos creado, de esta manera es más fácil usarlos en cualquier parte de nuestro Widget.
 
    ```sh

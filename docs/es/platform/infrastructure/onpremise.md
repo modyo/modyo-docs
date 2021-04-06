@@ -14,42 +14,25 @@ El Despliegue de Alta Disponibilidad considera dos ubicaciones físicas (datacen
 
 Este modelo permite ofrecer una alta disponibilidad en un escenario principalmente destinado a un consumo primario de lectura de los proyectos desarrollados sobre Modyo y permite un alto grado de escalabilidad para operaciones de lectura al poder usar simultáneamente las réplicas de la base de datos.
 
-
-#### Despliegue de Alta Disponibilidad
-
-
 Con esta forma de despliegue se debe considerar que las operaciones de failover son en un sentido, es decir, que una vez realizadas el sistema debe re configurarse manualmente.
 
 
-#### Despliegue de Misión Crítica
+### Despliegue de Misión Crítica
 El Despliegue de Misión Crítica considera tres o más ubicaciones físicas (datacenters en número impar) en las que el sistema se configura en modalidad activo-activo, con un esquema de clusterización de la capa de persistencia de datos.
 
 Este modelo permite ofrecer una alta disponibilidad en escenarios en donde tanto las lecturas como las escrituras sean consideradas críticas. Este esquema ofrece un alto grado de escalabilidad para operaciones de lectura y escritura.
 
 Al mantener un número impar de ubicaciones físicas, el cluster se protege de condiciones de "split brain" en la que no se logra detectar cuál es el nodo que falló.
 
-
-
-Despliegue de Misión Crítica
-
-
 Con esta forma de despliegue se debe considerar que las operaciones de failover son automáticas y una vez que los nodos vuelven al cluster son automáticamente adoptados y puestos en línea.
 
 Adicionalmente este tipo de configuración dependerá de la configuración de proxys de monitoreo y ruteo de comunicación, cómo ProxySQL y HAProxy.
-
-
-
 
 
 ## Componentes
 Modyo requiere de varios componentes para funcionar los cuales pueden estar juntos en un mismo servidor o estar separado en clusters diferentes, según sea el escenario de escalabilidad y alta disponibilidad requerido.
 
 En el caso de la nube la mayoría de estos componentes son configurados con servicios PaaS. En el caso de las configuraciones On Premise estos componentes serán configurados y operados por el cliente.
-
-
-
-Componentes de Modyo en Alto Nivel
-
 
 Modyo ofrece a sus clientes en modalidad On Premise un contrato de soporte extendido que abarca a todos los componentes de los cuales depende la plataforma.
 
@@ -128,17 +111,40 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
 ### Componentes Adicionales
 Adicionalmente, una instalación segura y escalable requerirá de los siguientes componentes adicionales los cuales deberán ser provistos por el cliente:
 
-#### Balanceador de Carga
-Habitualmente implementado sobre el Amazon ELB en el caso de la nube y en F5, Radware, o Barracuda para el caso On Premise el balanceador de carga será el responsable de dirigir el tráfico hacia los servidores Web que se reporten saludables a él. A su vez, el tráfico desde los servidores Web hacia la plataforma también se deberá balancear para asegurar que los servidores que posean alguna degradación o problema sean descartados.
-
-#### Firewall Aplicativo
-Si bien Modyo es continuamente revisado para eliminar cualquier posibilidad de inyección de código o comandos remotos, una instalación segura requerirá de la protección adicional de un firewall aplicativo. En el caso de la nube Modyo opera con el Amazon WAF de forma estándar y CloudFlare de forma opcional. En el caso de la modalidad On Premise dependerá del cliente.
-
-#### Sistemas Monitoreo
-Toda instalación de Modyo deberá ser monitoreada de forma apropiada. Para el caso de la plataforma, se ofrece una conexión directa con el APM de NewRelic. Para el caso de los componentes (Nginx, MySQL, Redis, Elasticsearch) existe un gran soporte en las plataformas de monitoreo más comunes, como Nagios, Munin, Zabbix, Dynatrace, entre otros.
-
-#### Servidor de Control
-Algunas formas de instalación de Modyo (paquete binario) se beneficiarán de contar con un servidor de control desde el cual se puedan lanzar los scripts de control del cluster de  Modyo con las tareas básicas de mantenimiento y actualizaciones. Modyo provee de scripts para la herramienta de control de configuración Ansible (Red Hat).
+<table>
+<tr>
+   <td style="width:25%;">
+      <b>Balanceador de Carga</b>
+   </td>
+   <td>
+      Habitualmente implementado sobre el Amazon ELB en el caso de la nube y en F5, Radware, o Barracuda para el caso On Premise el balanceador de carga será el responsable de dirigir el tráfico hacia los servidores Web que se reporten saludables a él. A su vez, el tráfico desde los servidores Web hacia la plataforma también se deberá balancear para asegurar que los servidores que posean alguna degradación o problema sean descartados.
+   </td>
+</tr>
+<tr>
+   <td>
+      <b>Firewall Aplicativo</b>
+   </td>
+   <td>
+      Si bien Modyo es continuamente revisado para eliminar cualquier posibilidad de inyección de código o comandos remotos, una instalación segura requerirá de la protección adicional de un firewall aplicativo. En el caso de la nube Modyo opera con el Amazon WAF de forma estándar y CloudFlare de forma opcional. En el caso de la modalidad On Premise dependerá del cliente.
+   </td>
+</tr>
+<tr>
+   <td>
+      <b>Sistemas Monitoreo</b>
+   </td>
+   <td>
+      Toda instalación de Modyo deberá ser monitoreada de forma apropiada. Para el caso de la plataforma, se ofrece una conexión directa con el APM de NewRelic. Para el caso de los componentes (Nginx, MySQL, Redis, Elasticsearch) existe un gran soporte en las plataformas de monitoreo más comunes, como Nagios, Munin, Zabbix, Dynatrace, entre otros.
+   </td>
+</tr>
+<tr>
+   <td>
+      <b>Servidor de Control</b>
+   </td>
+   <td>
+      Algunas formas de instalación de Modyo (paquete binario) se beneficiarán de contar con un servidor de control desde el cual se puedan lanzar los scripts de control del cluster de  Modyo con las tareas básicas de mantenimiento y actualizaciones. Modyo provee de scripts para la herramienta de control de configuración Ansible (Red Hat).
+   </td>
+</tr>
+</table>
 
 
 ## Hardware Requerido
@@ -266,8 +272,9 @@ NameVirtualHost *:80
 
 Para iniciar o detener Apache2 se recomienda utilizar el comando apache2ctl start|stop|restart
 
-Configuración Upstart para el App Server
-Los scripts de upstart del App Server son los encargados de ejecutar la plataforma como un servicio del sistema operativo y asegurar que ésta se inicie en la secuencia de arranque del sistema.
+### Configuración Upstart
+
+**App Server:** Los scripts de upstart del App Server son los encargados de ejecutar la plataforma como un servicio del sistema operativo y asegurar que ésta se inicie en la secuencia de arranque del sistema.
 
 ```sh
 # /etc/init/modyo-app.conf
@@ -294,8 +301,7 @@ Para iniciar o detener el servicio de Modyo App Server con la configuración de 
 service modyo-app start|stop|status|restart (Ubuntu)
 initctl start|stop|status|restart modyo-app (Red Hat)
 
-Configuración Upstart para el Worker Process
-Los scripts de upstart del Worker Process son los encargados de ejecutar los procesos en segundo plano de la plataforma como un servicio del sistema operativo y asegurar que ésta se inicie en la secuencia de arranque del sistema.
+**Worker Process:** Los scripts de upstart del Worker Process son los encargados de ejecutar los procesos en segundo plano de la plataforma como un servicio del sistema operativo y asegurar que ésta se inicie en la secuencia de arranque del sistema.
 
 ```sh
 # /etc/init/modyo-worker.conf
@@ -322,48 +328,21 @@ Para iniciar o detener el servicio de Modyo Worker Process con la configuración
 service modyo-worker start|stop|status|restart (Ubuntu)
 initctl start|stop|status|restart modyo-worker (Red Hat)
 
-Configuraciones Adicionales
-Monitoreo
+### Configuraciones de Monitoreo
+
 Se recomienda el monitoreo de las siguientes métricas en los servidores, independiente de su rol en la configuración:
-Espacio libre en el disco duro
-Memoria libre disponible
-Carga de CPU en 5, 10 y 15 minutos
+* Espacio libre en el disco duro
+* Memoria libre disponible
+* Carga de CPU en 5, 10 y 15 minutos
 
 Además, en el caso de los servidores de aplicaciones e índices se recomienda el uso de algún profiler de máquina virtual Java para mantener control sobre los procesos iniciados.
 
-Si alguna de estas métricas se encuentra fuera de los rangos considerados normales se deben tomar acciones, como las que se explican en el Apéndice C del presente documento.
 
+### Rotado de Logs
 
-Componente
-Métricas Relevantes
-Valores Normales
-Varnish
-
-
-
-
-Apache
-
-
-
-
-MySQL
-Latencia de replicación
-
-
-Redis
-Hit rate del caché
-
-
-
-
-
-
-
-Rotado de Logs
 Para maximizar el tiempo de operación se recomienda efectuar una política de rotado de logs que no requiera del reinicio de los procesos, como es el caso de la herramienta logrotate de Linux y su opción copytruncate.
 
-Logrotate: La siguiente configuración se recomienda para el rotado de logs con logrotate:
+**Logrotate:** La siguiente configuración se recomienda para el rotado de logs con logrotate:
 
 ```sh
 /var/log/modyo/log/*.log {
@@ -378,9 +357,9 @@ Logrotate: La siguiente configuración se recomienda para el rotado de logs con 
 ```
 
 
-Balanceador de Carga
-URL de Monitoreo
-Se recomienda utilizar la URL de monitoreo de la plataforma para configurar dentro del balanceador de carga una política que descarte o incluya a un servidor de aplicaciones en particular. Para ello se utiliza la siguiente URL:
+### Balanceador de Carga
+
+**URL de Monitoreo:** Se recomienda utilizar la URL de monitoreo de la plataforma para configurar dentro del balanceador de carga una política que descarte o incluya a un servidor de aplicaciones en particular. Para ello se utiliza la siguiente URL:
 
 ```sh
 curl MODYO_URL/status
@@ -389,53 +368,140 @@ curl MODYO_URL/status
 
 La respuesta de la plataforma debe ser con un código HTTP 200 OK.
 
-Certificados SSL
-Si desea configurar el acceso a la plataforma mediante un certificado SSL se recomienda que éste quede instalado en el balanceador de carga y que el tráfico hacia los servidores de aplicaciones se realice sin encriptación. Esto evita el procesamiento de algoritmos complejos de encriptación en los servidores de aplicaciones delegando esta tarea al balanceador de carga. En muchos casos los balanceadores de carga poseen componentes especializados para esta labor.
+**Certificados SSL:** Si desea configurar el acceso a la plataforma mediante un certificado SSL se recomienda que éste quede instalado en el balanceador de carga y que el tráfico hacia los servidores de aplicaciones se realice sin encriptación. Esto evita el procesamiento de algoritmos complejos de encriptación en los servidores de aplicaciones delegando esta tarea al balanceador de carga. En muchos casos los balanceadores de carga poseen componentes especializados para esta labor.
 
 
 El certificado SSL se encuentra configurado en el balanceador.
 
 
 
-Variables de Entorno
+## Variables de Entorno
 El siguiente listado de variables de entorno corresponden a los diferentes parámetros que en Modyo pueden ser configurados.
 
 Modyo recomienda configurar estos parámetros en el archivo /etc/profile.d/modyo.sh
 
 
-Parámetro
-Valores
-Valor por Defecto
-Descripción
-MULTI_ACCOUNT
-true, false
-true
+<style>
+table {display: table;}
+</style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Variable | Descripción | Valores | Default | Requerido |
+|----------|-------------|---------|---------|-----------|
+|BUNDLE_GEMFILE|Establece la ruta al archivo Gemfile|ruta absoluta|(Rails.root)/Gemfile|NO|
+|EXECJS_RUNTIME|Establece el runtime de execjs|disabled \| node||NO|
+|MODYO_AUTH<br>_TIMEOUT|HTTPClient timeout|Cantidad de segundos|10|NO|
+|MODYO_AWS<br>_KEY|AWS key|String válido||SI aws|
+|MODYO_AWS<br>_S3_BUCKET|URI del bucket S3|URI válida||SI aws|
+|MODYO_AWS<br>_SECRET|AWS secret|String válido||SI aws|
+|MODYO_BACKUPS<br>_LIMIT|Cantidad de versiones de tipo backup que se almacenan en la plataforma|0 (ilimitado) - Numero positivo|20|NO|
+|MODYO_BANCARD<br>_BASE_URL|Estable la URI de bancard|String tipo URI||NO|
+|MODYO_CREDOMATIC<br>_BASE_URL|Estable la URI de credomatic|String tipo URI||NO|
+|MODYO_CREDOMATIC<br>_CALLBACK_URL|Establece la URI de callback para la respuesta de Credomatic|String tipo URI||NO|
+|MODYO_ELASTICSEARCH<br>_HOSTS|Lista separada por coma de la URI de los servidores de elasticsearch|URIs (ej: http://elasticsearch.modyo.me:9200)||SI|
+|MODYO_GOOGLE<br>_TAG_MANAGER_ID|Habilita y especifica el identificador de google tag manager|String válido||NO|
+|MODYO_HTML<br>_ALLOWED_ATTRS|Atributos permitidos (de tags) para usar en froala. Sobreescribe los valores por defecto de froala|Lista de atributos separados por coma|Ver froala default en docs|NO|
+|MODYO_HTML<br>_ALLOWED_TAGS|Tags permitidos para usar en froala. Sobreescribe los valores por defecto de froala|Lista separada por coma de tags html|Ver froala conf|NO|
+|MODYO_KHIPU<br>_CALLBACK_URL|Establece la URI de callback para la respuesta de Khipu|String tipo URI||NO|
+|MODYO_LOCK<br>_TIMEOUT|Establece el tiempo máximo antes de desvincular al usuario de un recurso en edición bloqueado, para que esté libre de ser reasignado|Número de segundos|7200|NO|
+|MODYO_LOG_LEVEL|Nivel de incidencias reportadas en el registro log de la plataforma|Info \| warning \| error \| fatal \| debug|debug|NO|
+|MODYO_LOG<br>_OUTPUT|Especifica si el registro es a un archivo o a la salida estándar|stdout \| file|stdout|NO|
+|MODYO_MAILER<br>_DELIVERY_METHOD|Protocolo para el delivery|smtp \| sendmail \| file \| test|smtp|NO|
+|MODYO_MAILER<br>_FILE_LOCATION|ubicación del archivo mailer|Ruta absoluta|tmp/mails|NO|
+|MODYO_MAILER<br>_PERFORM_DELIVERIES|Realizar deliveries|true \| false|true|NO|
+|MODYO_MAILER<br>_RAISE_DELIVERY_ERRORS|Define si propaga los errores|true \| false|false|NO|
+|MODYO_MAILER<br>_SENDMAIL_ARGUMENTS|argumentos para sendmail app|argumentos de sendmail|-i|NO|
+|MODYO_MAILER<br>_SENDMAIL_LOCATION|ubicación de sendmail app|Ruta absoluta|/usr/sbin/sendmail|NO|
+|MODYO_MAILER<br>_SMTP_ADDRESS|Dirección del servicio smtp|URI del servicio|smtp.sendgrid.net|NO|
+|MODYO_MAILER<br>_SMTP_AUTHENTICATION|Tipo de autenticación del servicio smtp|String válido|plain|NO|
+|MODYO_MAILER<br>_SMTP_OPENSSL_VERIFY_MODE|Modo de verificación del certificado TLS|none \| peer||SI certificado tls|
+|MODYO_MAILER<br>_SMTP_PASSWORD|Password del servicio de smtp. Se usa MODYO_SENDGRID_PASSWORD como fallback|String válido||SI smtp|
+|MODYO_MAILER<br>_SMTP_PORT|Puerto del servicio smtp|Numero de puerto|587|NO|
+|MODYO_MAILER<br>_SMTP_STARTTLS_AUTO|Habilita starttls|true \| false|false|NO|
+|MODYO_MAILER<br>_SMTP_USER_NAME|Nombre de Usuario del servicio smtp. Se usa MODYO_SENDGRID_USERNAME como fallback|String válido||SI smtp|
+|MODYO_MULTI<br>_ACCOUNT_ENABLED|Habilita el modo multi-account|true \| false|false|NO|
+|MODYO_MULTI<br>_ACCOUNT_LIST|Lista de los nombre de host de los account|Lista de hosts separados por coma||SI multi-account list|
+|MODYO_MULTI<br>_ACCOUNT_MODE|Modo en que opera el multi-account|list \| subdomain||SI multi-account|
+|MODYO_MYSQL<br>_ADAPTER|Adaptador a utilizar para la conexión a base de datos|mysql2 \| jdbcmysql|mysql2|NO|
+|MODYO_MYSQL<br>_DATABASE|Nombre de la base de datos|String válido||SI|
+|MODYO_MYSQL_HOST|URI de la base de datos|URI válida||SI|
+|MODYO_MYSQL<br>_PASSWORD|Password de la base de datos|String válido||SI|
+|MODYO_MYSQL_POOL|Tamaño del pool de conexiones a la base de datos|Cantidad de conexiones|100|NO|
+|MODYO_MYSQL<br>_TIMEOUT|Tiempo máximo de espera por una consulta a la base de datos en ms|Tiempo en milisegundos|5000|NO|
+|MODYO_MYSQL<br>_USERNAME|Usuario de la base de datos|String válido||SI|
+|MODYO_NEWRELIC<br>_APP_NAME|Nombre de la aplicación en NewRelic|String válido||SI newrelic|
+|MODYO_NEWRELIC<br>_CA_BUNDLE_PATH||||NO|
+|MODYO_NEWRELIC<br>_ENABLED|Habilita el reporte a NewRelic|true \| false|false|NO|
+|MODYO_NEWRELIC<br>_KEY|Key de conexión a NewRelic|String válido||SI newrelic|
+|MODYO_ONECLICK<br>_BASE_URL|Establece la URI base para OneClick|String tipo URI||NO|
+|MODYO_ONECLICK<br>_PUBLIC_CERTIFICATE|Establece el certificado publico para OneClick|String tipo certificado||NO|
+|MODYO_ORDER<br>_CONFIRMATION<br>_OPEN_TIMEOUT|Tiempo de espera por la confirmación de una orden|Cantidad de segundos|2|NO|
+|MODYO_ORDER<br>_CONFIRMATION<br>_READ_TIMEOUT|Tiempo de espera por la lectura de la confirmación de una orden|Cantidad de segundos|5|NO|
+|MODYO_ORDER<br>_CONFIRMATION<br>_RETRIES|Número de intentos por la confirmación de una orden|Número de intentos|5|NO|
+|MODYO_ORDER<br>_CONFIRMATION<br>_RETRIES_TIMEOUT|Tiempo de espera entre reintentos para la confirmación de una orden|Cantidad de segundos|5|NO|
+|MODYO_ORDER<br>\_IMAGE_CODE_<br>SECRET|Secreto para la generación de códigos qr y de barras|String|48c7954272|NO|
+|MODYO_PANEL<br>_DEFAULT_SUBSCRIPTION<br>_PERIOD|Tiempo por defecto de subscripción al crear nuevos planes|Cantidad de días||NO|
+|MODYO_PANEL<br>_DEFAULT_TRIAL_PERIOD|Tiempo por defecto de modo de pruebas al crear nuevos planes|Cantidad de días||NO|
+|MODYO_PANEL<br>_PASSWORD|Password del usuario para el panel de la plataforma|String válido como password||SI|
+|MODYO_PANEL<br>_USER|Usuario para el panel de la plataforma|String válido como usuario||SI|
+|MODYO_PAPERCLIP<br>_COMMAND_PATH|Indica el path donde se encuentra instalado ImageMagick|Ruta absoluta|/usr/bin/|NO|
+|MODYO_PAPERCLIP<br>_FOG_CREDENTIALS|Es como se comunica con el servicio de storage, S3, Azure, Google o local|Hash con el provider y las credenciales|provider local|NO|
+|MODYO_PAPERCLIP<br>_FOG_DIRECTORY|Indica donde se guardarán los assets. Si es local, es un empty string, si es un s3, es la url del bucket, url del bucket si Google|String válido||NO|
+|MODYO_PAPERCLIP<br>_FOG_HOST|URL de la CDN (ex CDN_URL)|URI de la CDN||SI|
+|MODYO_PAPERCLIP<br>_PATH|Indica cómo se dividirá el path donde se guardarán los archivos ya procesados.|String válido|uploads/:uuid/:style/<br>:basename.:extension|NO|
+|MODYO_PAPERCLIP<br>_PRESERVE_FILES_ON_DESTROY|Indica si los archivos se deben conservar al destruir la instancia contenedora|true \| false|true|NO|
+|MODYO_PAPERCLIP<br>_STORAGE|Establece la librería con que se comnunicará con el provider. En nuestro caso siempre es FOG|fog|fog|NO|
+|MODYO_PAYME<br>_WALLET_BASE_URL|Establece la URI base para PayMe|String tipo URI||NO|
+|MODYO_PAYUAPI<br>_BASE_URL|Establece la URI base para PayuApi|String tipo URI||NO|
+|MODYO_PAYUAPI<br>_CALLBACK_URL|Establece la URI de callback para la respuesta de PayuApi|String tipo URI||NO|
+|MODYO_PLATFORM<br>_DOMAIN|Nombre del dominio de la plataforma|dominio de la plataforma (ej: modyo.cloud)||SI|
+|MODYO_PLATFORM<br>_EMAIL|Nombre de correo como remitente en los envíos de correo|String válido como correo electrónico||SI|
+|MODYO_PLATFORM<br>_EMAIL_DOMAIN|Dominio para correos autogenerados con la integración de oauth2|String con nombre de dominio válido||SI|
+|MODYO_PLATFORM<br>_MAX_ALLOWED_REVIEWS|Cantidad máxima de revisiones permitidas en el team review|Cantidad positiva|7|NO|
+|MODYO_PLATFORM<br>_MAX_CUSTOM_FIELDS|Establece la cantidad máxima de user custom fields que pueden ser creados en una cuenta|Cantidad de custom fields permitidos|20|NO|
+|MODYO_PLATFORM<br>_MAX_SITE_SEARCH<br>_RESULTS|Cantidad máxima de resultados en la búsqueda del sitio|Cantidad positiva|100|NO|
+|MODYO_PLATFORM<br>_MIN_ACCEPTED_AGE|Establece el mínimo de edad para el registro usuarios en la plataforma|Número de años|13|NO|
+|MODYO_PLATFORM_NAME|Nombre de la plataforma|String válido||SI|
+|MODYO_PLATFORM<br>_NAMESPACE|Identificador de la plataforma para crear los namespaces de los servicios utilizados: redis, elasticsearch,  SQS y Sidekiq|String representando un namespace (ej: modyo-cloud)||SI|
+|MODYO_PLATFORM_PORT|Puerto utilizado por la plataforma|: + Numero del puerto|no definido (:80)|NO|
+|MODYO_PLATFORM<br>_TARGET_EXPIRES_IN|Tiempo de expiración en minutos del cache utilizado para los targets|Cantidad de minutos|15|NO|
+|MODYO_PLATFORM_<br>USE_CUSTOM_HOST<br>_ON_NON_PRODUCTION|Permite el uso de custom hosts en ambientes no productivos|true \| false|false|NO|
+|MODYO_PLATFORM<br>_WIDGETS<br>_APPLICATION_NAME|Usado para identificar cuando un request viene desde una app al estilo de modyo-cli, se compara el user agent del request contra este valor|Aplication name|MODYO-CLI|NO|
+|MODYO_PUMA<br>_MAX_THREADS|Cantidad máxima de threads usados por puma|Cantidad de threads|16|NO|
+|MODYO_PUMA<br>_MIN_THREADS|Cantidad mínima de threads usados por puma|Cantidad de threads|16|NO|
+|MODYO_PUMA<br>_PROCESSES|Establece la cantidad de workers de puma|Cantidad de procesos|2|NO|
+|MODYO_PUMA<br>_WORKER_TIMEOUT|Tiempo máximo de ejecución de un worker de puma|Cantidad de segundos|60|NO|
+|MODYO_QUEUE<br>_PROVIDER|Tipo de cola de trabajo a utilizar por la aplicación|sidekiq \| shoryuken|sidekiq|NO|
+|MODYO_RAILS<br>_SERVE_STATIC_FILES|Permite a Rails servir archivos en / public /, incluidos los recursos precompilados|true \| false|false|NO|
+|MODYO_REDIS<br>_CACHE_SERVERS|Lista separada por coma de la URI de los servidores de cache|URIs (ej: redis://redis.modyo.me:6379)||SI|
+|MODYO_REDIS<br>_PASSWORD|Password para la conexión con redis|String válido||NO|
+|MODYO_REDIS<br>_SIDEKIQ_SERVER|URI del servidor redis para ser usado con sidekiq|URI (ej: redis://redis.modyo.me:6379)||SI|
+|MODYO_RUN<br>_IT_ANYWAY|Bypass de la protección de tareas rake destructivas de la base de datos|1 si se quiere realizar una tarea destructiva||NO|
+|MODYO_SEC<br>_USE_SSL|Habilita SSL en la plataforma|true \| false|true|NO|
+|MODYO_SEC<br>_USE_SSL_HSTS|Habilita el header HSTS en la plataforma|true \| false|false|NO|
+|MODYO_SEC<br>_USE_SSL_ON_LOGOUT|Habilita uso de SSL en el logout|true \| false|true|NO|
+|MODYO_SEC<br>_X_FRAME_OPTIONS|Establece el header X-Frame-Options|DENY \| SAMEORIGIN \| ALLOW-FROM uri|SAMEORIGIN|NO|
+|MODYO_SECRET_TOKEN|Secreto utilizado por la aplicación para cifrar datos sensibles (cookies)|String al menos 30 caracteres (random)||SI|
+|MODYO_SENDGRID<br>_CALLBACK_KEY|Establece una key para validar las notificaciones desde Sendgrid|String mínimo 30 caracteres random||SI sendgrid|
+|MODYO_SENDGRID<br>_PASSWORD|Pasword de usuario de Sendgrid|String válido||SI sendgrid|
+|MODYO_SENDGRID<br>_USERNAME|Nombre de usuario de Sendgrid|String válido||SI sendgrid|
+|MODYO_SESSION<br>_EXPIRE_AFTER|Establece el tiempo en que expirará la sesión|valor.unidad (unidades: second, seconds, minute, minutes, hour, hours, day, days, week, weeks, month, months)|1.week|NO|
+|MODYO_SESSION_KEY|Key utilizada para nombrar la cookie de sesión|String valido (ej: _modyo_cloud)||SI|
+|MODYO_SESSION_STORE|Establece la forma de persistir la sesión|cookie \| cache|cookie|NO|
+|MODYO_SESSION<br>_TRACKING_PERIOD|Periodo en minutos en que se registra el seguimiento de la sesión. El valor 0 corresponde a sin seguimiento|Cantidad de minutos|5|NO|
+|MODYO_TIGOMONEY<br>_BASE_URL|Establece la URI base para TigoMoney|String tipo URI||NO|
+|MODYO_TRIAL<br>_ACCOUNT_NEEDS<br>_AUTHORIZATION|Habilita la autorización del periodo de prueba|true \| false|false|NO|
+|MODYO_WEBPAY<br>_BASE_URL|Establece la URI base para WebPay|String tipo URI||NO|
+|MODYO_WEBPAY<br>_CALLBACK_URL|Establece la URI de callback para la respuesta de WebPay|String tipo URI||NO|
+|MODYO_WEBPAY<br>_LOGGING|Habilita la generación de logs de las respuestas de WebPay|true \| false|true|NO|
+|MODYO_WEBPAY<br>_PUBLIC_CERTIFICATE|Establece el certificado publico para WebPay|String tipo certificado||NO|
+|MODYO_WEBPAY<br>_REDIRECT<br>_CONFIRMATION_URL|Establece la URI de confirmación|String tipo URI||NO|
+|MODYO_WEBPAY<br>_REDIRECT_URL|Establece la URI de redirección para WebPay|String tipo URI||NO|
+|NODE_ENV|Establece el entorno de ejecución de Node|test \| development \| production|development|NO|
+|RACK_ENV|Establece el entorno de ejecución de Rack|test \| development \| production|development|NO|
+|RAILS_ENV|Establece el entorno de ejecución de Rails|test \| development \| production \| certification \| staging|development|NO|
+|RAILS_SERVE<br>_STATIC_FILES|Permite a Rails servir archivos en / public /, incluidos los recursos precompilados|true \| false||NO|
+|SECRET_KEY_BASE|Establece el secret_key_base para la aplicación|String de mas de 30 caracteres random||SI|
+|TEST_ENV_NUMBER|Cantidad de procesos utilizados para correr tests en paralelo, es manejado internamente por la gema parallel test|Número de proceso||NO|
 
 
 
@@ -445,9 +511,11 @@ La versión Modyo Enterprise On Premise está desarrollada en el lenguaje de pro
 
 Las siguientes configuraciones de la máquina virtual de Java corresponden a valores que han sido probados con éxito en producción en las versiones Cloud de Modyo, para alta disponibilidad y concurrencia.
 
-Heap Space: Se opta por utilizar 3/4 de la memoria RAM disponible, no superando los 4GB.
-Garbage Collection: Se opta por utilizar un recolector concurrente para minimizar las pausas en la aplicación durante la ejecución.
-NewRelic Agent: En caso de tener habilitada la integración con NewRelic, un parámetro adicional debe agregarse indicando la ubicación de la librería en la cual se encuentra el agente.
+**Heap Space:** Se opta por utilizar 3/4 de la memoria RAM disponible, no superando los 4GB.
+
+**Garbage Collection:** Se opta por utilizar un recolector concurrente para minimizar las pausas en la aplicación durante la ejecución.
+
+**NewRelic Agent:** En caso de tener habilitada la integración con NewRelic, un parámetro adicional debe agregarse indicando la ubicación de la librería en la cual se encuentra el agente.
 
 
 Ejemplo de configuración (servidor con 8GB RAM y NewRelic): instalado en /opt/newrelic

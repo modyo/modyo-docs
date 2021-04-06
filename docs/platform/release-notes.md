@@ -4,18 +4,6 @@ search: true
 
 # Release notes
 
-### 9.2.X - First release planned for the first quarter of 2021.
-&nbsp;
-<Badge text="Core" type="core" vertical="middle"/>
-* Administrator groups: Easily add users corresponding to different sites or spaces.
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
-* User Realms: Set up different user realms to access different sites or even different stages of the same site.
-
 ### 9.1.13 - March 25, 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

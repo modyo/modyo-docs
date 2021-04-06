@@ -4,7 +4,7 @@ search: true
 
 # ¿Qué hay de nuevo en Modyo?
 
-En la nueva versión de plataforma, Modyo 9.0, destacamos las siguientes nuevas funcionalidades:
+En la nueva versión de plataforma, Modyo 9, destacamos las siguientes mejoras y nuevas funcionalidades:
 
 ### Nueva interfaz simplificada
 
@@ -14,11 +14,11 @@ Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de camb
 
 Permite su uso tanto en modalidad _headless_ por medio de sus [API y SDKs](/es/platform/content/public-api-reference.html), como desacoplada dentro de plantillas desarrolladas en [Liquid](/es/platform/channels/liquid-markup.html).
 
-### Gestor de Archivos
+### Gestor de archivos
 
 Permite la gestión de activos digitales, incluyendo diversas funcionalidades como la gestión de _tags_, el redimensionado de imágenes, entre otros.
 
-### Revisión en Equipo
+### Revisión en equipo
 
 Evolución de la antigua funcionalidad de _workflows_, la que permite mejorar la experiencia de colaboración con herramientas de revisión y aprobación de cambios.
 

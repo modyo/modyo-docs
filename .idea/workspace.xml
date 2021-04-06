@@ -1,97 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd000864-c653-4673-aec5-4e91a4c76065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/customers/messaging/campaign-show.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/customers/messaging/messaging-index-options.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/customers/messaging/messaging-index.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/customers/messaging/messaging-template-show.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/customers/messaging/messaging-templates-index.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/customers/messaging/options-campaign.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/box-reviewers.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/missing-conditions-team-review.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/new-API-access.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/save-API-access.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/send-to-review-bar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/team-member-API-access-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/team-member-API-access-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/assets/img/platform/team-member-API-access-3.png" afterDir="false" />
+    <list default="true" id="dae34f2e-7ff5-408c-a32b-6efa7a8f32aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modyo-docs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modyo-docs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/liquid-markup.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/liquid-markup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/navigation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/pages.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/pages.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/sites.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/sites.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/templates.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/templates.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/channels/widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/channels/widgets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/commerce/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/commerce/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/commerce/orders.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/commerce/orders.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/asset-manager.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/asset-manager.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/categories.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/categories.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/entries.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/entries.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/public-api-reference.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/public-api-reference.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/spaces.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/spaces.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/content/types.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/content/types.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/customers/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/customers/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/customers/forms.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/customers/forms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/customers/messaging.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/customers/messaging.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/customers/targets.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/customers/targets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/customers/users.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/customers/users.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/insights/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/insights/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/insights/customers.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/insights/customers.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/insights/digital-factory.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/insights/digital-factory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/insights/payments.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/insights/payments.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/key-concepts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/api.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/api.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/integration.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/integration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/roles.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/roles.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/security.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/key-concepts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/platform/the-modyo-interface.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/platform/the-modyo-interface.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/versions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/versions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/en/guides/whats-new.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/en/guides/whats-new.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/liquid-markup.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/liquid-markup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/navigation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/pages.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/pages.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/sites.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/sites.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/templates.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/templates.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/channels/widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/channels/widgets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/commerce/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/commerce/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/asset-manager.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/asset-manager.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/categories.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/categories.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/entries.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/entries.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/public-api-reference.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/public-api-reference.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/spaces.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/spaces.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/content/types.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/content/types.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/customers/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/customers/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/customers/forms.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/customers/forms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/customers/messaging.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/customers/messaging.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/customers/targets.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/customers/targets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/customers/users.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/customers/users.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/insights/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/insights/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/insights/customers.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/insights/customers.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/insights/payments.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/insights/payments.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/key-concepts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/api.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/api.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/integration.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/integration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/roles.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/roles.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/security.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/platform/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/platform/key-concepts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/versions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/versions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guides/whats-new.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/whats-new.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translator.rb" beforeDir="false" afterPath="$PROJECT_DIR$/translator.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/core/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/core/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/infrastructure/cloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/infrastructure/cloud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/infrastructure/onpremise.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/infrastructure/onpremise.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/key-concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/key-concepts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/release-notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/versions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/platform/whats-new.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/platform/whats-new.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/widgets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/widgets/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/widgets/guides/ci-cd.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/widgets/guides/ci-cd.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/es/widgets/guides/repository-pattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/es/widgets/guides/repository-pattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/platform/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/platform/release-notes.md" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,47 +29,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1X1e3wFbOKWw8gwbEMUon05yZI0" />
+  <component name="ProjectId" id="1qZi4keFk1N0fRPtQPOap0V88L9" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs/.vuepress/styles" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dd000864-c653-4673-aec5-4e91a4c76065" name="Default Changelist" comment="" />
-      <created>1580217832492</created>
+      <changelist id="dae34f2e-7ff5-408c-a32b-6efa7a8f32aa" name="Default Changelist" comment="" />
+      <created>1617293327608</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1580217832492</updated>
-      <workItem from="1580217833891" duration="1532000" />
+      <updated>1617293327608</updated>
+      <workItem from="1617293333008" duration="4384000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
