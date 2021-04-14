@@ -106,6 +106,8 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 
 * `append` - Add a string *e.g.* <span v-pre>` {{'foo' | append: 'bar'}} # => 'foobar'` </span>
 * `asset_url` - Generates the URL for an Asset object with a determined size, *e.g.* <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>. Also, can generate the URL of a CSS or JavaScript template, *e.g.* <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> or <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>.
+* `base64_decode` - Returns the Base64-decoded value for a string *e.g.* <span v-pre>`{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>.
+* `base64_encode` - Returns the Base64-encoded value for a string *e.g.* <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 * `capitalize` - Capitalize the entry sentence
 * `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>` {{4.6 | ceil}} # => 5` </span>
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
@@ -116,10 +118,13 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `escape` - Escape html to a string
 * `first` - Get the first element of the last array
 * `floor` - Rounds a decimal number down to the nearest integer, *e.g.* <span v-pre>` {{4.6 | floor}} # => 4` </span>
+* `hmac_sha1` - Returns the SHA-1 hash using a message authentication code (HMAC) value for a string  *e.g.* <span v-pre>`{% 'Hello world' | hmac_sha1: 'key'  %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>.
+* `hmac_sha256` - Returns the SHA-256 hash using a message authentication code (HMAC) value for a string *e.g.* <span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>.
 * `join` - Join elements of the array with a certain character between them.
 * `last` - Get the last element of the last array
 * `lstrip` - Remove all blank spaces from the beginning of a string
 * `map` - Map/collect an array on a given property.
+* `md5` - Returns the MD5 hash for a string *e.g.* <span v-pre>`{% 'Hello world' | md5  %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>.
 * `minus` - Subtract *e.g.* <span v-pre>` {{4 | minus: 2}} # => 2` </span>
 * `module` - Rest *e.g.* <span v-pre>` {{3 | module: 2}} # => 1` </span>
 * `newline_to_br` - Replace each new line (\ n) with html space
@@ -133,6 +138,8 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `round` - Round to the nearest whole number or to the specified number of decimals *e.g.* <span v-pre>` {{4.5612 | round: 2}} # => 4.56` </span>
 * `rstrip` - Remove all blank spaces from the end of a string
 * `script_tag` - Generates a `<script>` HTML tag for a JavaScript template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
+* `sha1` - Returns the SHA-1 hash for a string *e.g.* <span v-pre>`{% 'Hello world' | sha1  %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>.
+* `sha256` - Returns the SHA-256 hash for a string *e.g.* <span v-pre>`{% 'Hello world' | sha256  %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>.
 * `size` - Return the size of an array or string
 * `slice` - Divide a string. Take a offset and a length, *e.g.* <span v-pre> `{{" hello "| slice: -3, 3}} # => llo` </span>
 * `sort` - Sort array items
