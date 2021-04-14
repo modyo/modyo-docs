@@ -16,6 +16,19 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.15 - 14 de abril del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Se añade al panel una herramienta para resolver inconsistencias en estructura secundaria para mantener el orden de las páginas del sitio.
+* Se resuelve un error al subir imágenes muy grandes al gestor de archivos.
+* Se resuelve un bug que provocaba que el editor de código se congelara ante sintaxis específicas de liquid.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añaden [nuevos filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar) que permiten usar algoritmos como md5, sha1, sha256, hmac_sha1, hmac_sha256 y base64_encod.
+* Se mejora el indexado de páginas de tal forma que ahora se puede encontrar resultados que contienen texto del contenido referenciado en las páginas.
+
+
 ### 9.1.14 - 1 de abril del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
