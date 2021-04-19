@@ -4,6 +4,10 @@ search: false
 
 # Ruby
 
+:::warning Sección en desarrollo
+La siguiente sección se encuentra en desarrollo y aún no ha sido revisada.
+:::
+
 Esta guía de estilo de Ruby recomienda las mejores prácticas a fin de que los programadores Ruby del mundo real pueden escribir código que pueda ser mantenido por otros programadores Ruby del mundo real. Una guía de estilo que refleje los usos del mundo real es utilizada, y una guía de estilo que se aferra a un ideal que ha sido rechazado por las personas supone que lo mejor es no utilizarla para nada – no importa lo bueno que sea.
 
 La guía está dividida en varias secciones de de reglas relacionadas. Intenté agregar la racionalización de las normas (si está omitido asumí que es bastante obvio).

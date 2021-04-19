@@ -4,6 +4,10 @@ search: false
 
 # Ruby on Rails
 
+:::warning Sección en desarrollo
+La siguiente sección se encuentra en desarrollo y aún no ha sido revisada.
+:::
+
 The goal of this guide is to present a set of best practices and style prescriptions for Ruby on Rails 4 development. It’s a complementary guide to the already existing community-driven [Ruby coding style guide](https://github.com/rubocop-hq/ruby-style-guide).
 
 This Rails style guide recommends best practices so that real-world Rails programmers can write code that can be maintained by other real-world Rails programmers. A style guide that reflects real-world usage gets used, and a style guide that holds to an ideal that has been rejected by the people it is supposed to help risks not getting used at all - no matter how good it is.
