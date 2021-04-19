@@ -35,13 +35,13 @@ Por medio del Área de Seguridad e Infraestructura, Modyo dispone de un equipo d
 
 Se definen los siguientes aspectos críticos de seguridad:
 
-## Seguridad del Producto
+### Seguridad del Producto
 Establecer estándares y prácticas seguras de desarrollo de software
 Asegurar que existan procesos de detección y documentación de riesgos a nivel de proyecto
 Proveer de revisiones de diseño y código fuente para la detección oportuna de posibles fallas de seguridad
 Entrenar a los desarrolladores en las mejores prácticas de codificación segura
 
-## Seguridad Operacional
+### Seguridad Operacional
 Construye y opera toda la infraestructura crítica de seguridad, incluyendo los servicios de autenticación y monitoreo de eventos
 Mantiene un archivo de los logs relevantes para las inspecciones de seguridad
 Aseguramiento de las configuraciones seguras en los entornos de producción

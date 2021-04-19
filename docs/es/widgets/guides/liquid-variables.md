@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Uso de Liquid en los Widgets
+# Variables de Liquid
 
 [**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma y de como construimos las vistas y accedemos al contenido en ella, así como también a [**drops**](/es/platform/channels/liquid-markup.html#drops) (variables) de contexto que nos permiten interactuar con nuestras vistas de manera mas dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el target al que pertenece, u ocultar un menu según la pagina que se este visitando, etc.
 

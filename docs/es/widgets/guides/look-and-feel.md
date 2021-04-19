@@ -20,7 +20,7 @@ Para aprovechar al máximo el potencial de bootstrap usamos **SCSS** como pre-pr
 </div>
 ```
 
-## Estructura de archivos y carga de estilos
+### Estructura de archivos y carga de estilos
 
 En la carpeta `src` del proyecto encontraremos una carpeta llamada `scss` que tiene la siguiente estructura:
 
@@ -34,7 +34,7 @@ En la carpeta `src` del proyecto encontraremos una carpeta llamada `scss` que ti
 │   ├── ...
 ```
 
-### Theme
+### Tema
 
 El archivo `_theme.scss` es usado para:
 
@@ -58,11 +58,11 @@ El archivo `_theme.scss` es usado para:
 
 Puedes encontrar un listado con los mixins disponibles [aqui](https://gist.github.com/jCrip/4d76a90a4a5c569d9300e633ea8b52c7) y una explicación detallada [aqui](https://luisramirez.dev/como-usar-los-mixins-de-bootstrap-4-con-scss/)
 
-### Variables
+#### Variables
 
 El archivo `_variables.scss` contiene todas las variables por defecto de bootstrap (colores, tamaños, botones, etc). Aquí podemos cambiar los valores que necesitemos para ajustar los estilos base de bootstrap a nuestro diseño, evitando asi tener que sobre escribir o añadir mas clases a nuestro proyecto (puedes leer mas sobre como modificar bootstrap [aqui](https://getbootstrap.com/docs/4.5/getting-started/theming/)).
 
-#### Ejemplo
+##### Ejemplo
 
 Antes
 
@@ -125,7 +125,7 @@ new Vue({
 El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los estilos!
 :::
 
-## Estilos de componentes
+### Estilos de componentes
 
 Algunos de los componentes de los Widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del Widget utilizando el atributo `scoped`.
 
@@ -148,7 +148,7 @@ Algunos de los componentes de los Widgets tienen estilos propios y estos se escr
 </style>
 ```
 
-## PurgeCSS
+### PurgeCSS
 
 Cuando estás construyendo un Widget con Bootstrap (u otro framework de estilos) sólo usarás un pequeño conjunto de éste, y se incluirán muchos estilos CSS no utilizados. Aquí es donde entra en juego **PurgeCSS**. PurgeCSS analiza tu contenido y tus archivos CSS. Luego hace coincidir los selectores utilizados en tus archivos con los de tus archivos de contenido y elimina los selectores no utilizados de tu CSS, lo que da como resultado archivos CSS más pequeños.
 

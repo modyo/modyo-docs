@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Bienvenido a la documentación de Modyo
+# Bienvenido a Modyo
 
-Bienvenido al sitio oficial de documentación de Modyo. Esperamos cubrir aquí todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
+Bienvenido a la documentación de la Modyo. Esperamos cubrir aquí todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
 
-La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o resolver una consulta específica. Los contenidos dentro de la documentación se encuentran linkeados entre sí para facilitar el entendimiento de éstos.
+La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
 
 ::: tip Versiones pasadas
 La documentación en este sitio aplica a la última versión (9.1). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf).

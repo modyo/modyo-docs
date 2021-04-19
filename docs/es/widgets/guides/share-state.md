@@ -6,7 +6,7 @@ search: true
 
 Todos los Widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gestión del estado de un Widget y como un almacén centralizado para todos los componentes de éste, con reglas que garantizan que el estado se puede cambiar de manera predecible. En otras palabras **Vuex** nos ayuda a compartir datos entre distintos componentes de un mismo Widget.
 
-## La estructura de Vuex
+### La estructura de Vuex
 
 ![vuex](/assets/img/widgets/vuex.png)
 
@@ -42,7 +42,7 @@ Todos los Widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gest
 Para saber más acerca de la implementación y uso de Vuex, recomiendo leer la [documentación](https://vuex.vuejs.org/guide/) y ver este curso gratuito: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) de [VueSchool](https://vueschool.io/)
 :::
 
-## Persistir estado entre Widgets y recargas de pagina
+### Persistir estado entre Widgets y recargas de página
 
 Los Widgets del catalogo, a diferencia de una SPA (Frontend Monolith), están construidos bajo el concepto de **Micro Frontends**.
 

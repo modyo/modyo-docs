@@ -342,9 +342,10 @@ module.exports = {
           "/es/widgets/": [
             {
               title: "Catálogo",
-              collapsable: false,
+              collapsable: true,
+              path: "/es/widgets/",
               children: [
-                ["/es/widgets/", "Introducción"],
+                "/es/widgets/guides/first-steps",
                 "/es/widgets/guides/look-and-feel",
                 ["/es/widgets/guides/i18n", "Internacionalización"],
                 ["/es/widgets/guides/share-state", "Compartir estado"],
@@ -451,11 +452,48 @@ module.exports = {
           "/es/legal/": [
             {
               title: "Legal",
-              collapsable: true,
+              collapsable: false,
               children: [
                 ["/es/legal/", "Acuerdo de Licenciamiento"],                
               ],
             },            
+          ],
+          "/es/coding/": [
+            {
+              title: "Estándares",
+              collapsable: true,
+              children: [
+                "/es/coding/",              
+              ],
+            },  
+            {
+              title: "Arquitectura",
+              collapsable: true,
+              children: [
+                "/es/coding/architecture/",                
+              ],
+            },
+            {
+              title: "Lenguajes",
+              collapsable: true,
+              path: "/es/coding/languages/",
+              children: [
+                "/es/coding/languages/java",
+                "/es/coding/languages/springboot",
+                "/es/coding/languages/javascript",
+                "/es/coding/languages/vuejs",
+                "/es/coding/languages/nodejs",
+                "/es/coding/languages/ruby",
+                "/es/coding/languages/rubyonrails",
+              ],
+            },
+            {
+              title: "DevOps",
+              collapsable: true,
+              children: [
+                "/es/coding/devops/",                
+              ],
+            },          
           ],
         },
       },
