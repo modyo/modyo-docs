@@ -63,13 +63,18 @@ Our brand is well suited to the following colors:
 
 <table class="no-border">
 <tr>
+<td colspan="6">
+<b>Petrol Blue</b>
+</td>
+</tr>
+<tr>
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #151F38;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
 Dark
 </span>
 <div>
-<p>HEX: #2068D5 <br>
+<p>HEX: #151F38 <br>
 RGB: 32 104 216</p>
 </div>
 </div>
@@ -135,6 +140,12 @@ RGB: 208 210 215</p>
 </div>
 </td>
 <!-- -->
+</tr>
+
+<tr>
+<td colspan="6">
+<b>Green</b>
+</td>
 </tr>
 
 <tr>
@@ -211,6 +222,11 @@ RGB: 159 229 199</p>
 </td>
 <!-- -->
 </tr>
+<tr>
+<td colspan="6">
+<b>Blue</b>
+</td>
+</tr>
 
 <tr>
 <td>
@@ -282,6 +298,80 @@ Background
 <p>HEX: #EDF3FC <br>
 RGB: 205 223 249</p>
 </div>
+</div>
+</td>
+<!-- -->
+</tr>
+<tr>
+<td colspan="6">
+<hr style="margin-bottom: 26px;">
+<b>Grey</b>
+</td>
+</tr>
+
+<tr>
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #252931;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Dark
+</span>
+<div>
+<p>HEX: #252931 <br>
+RGB: 27 87 178</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #4B4F57;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Normal
+</span>
+<div>
+<p>HEX: #4B4F57 <br>
+RGB: 32 104 213</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #5D616C;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Semilight
+</span>
+<div>
+<p>HEX: #5D616C <br>
+RGB: 88 145 231</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #DEDFE3;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
+Light
+</span>
+<div>
+<p>HEX: #DEDFE3 <br>
+RGB: 160 193 243</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: #F6F7F7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
+Superlight
+</span>
+<div>
+<p>HEX: #F6F7F7 <br>
+RGB: 205 223 249</p>
+</div>
+</div>
+</td>
+<!-- -->
+<td>
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 </div>
 </td>
 <!-- -->
