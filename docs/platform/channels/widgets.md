@@ -204,12 +204,11 @@ EXAMPLE
   $ modyo-cli get name [directory]
 ```
 
->there are some public widget names that can be accessed via this command
+>There are some public widget names that can be accessed via this command
 
 ```bash
   EXAMPLE
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
-    $ modyo-cli get modyo-widgets-project-vue [DIRECTORY] #to initialize a base project library
 ```
 
 >From this command and on you can continue using the widget like any other vue-cli widget.
