@@ -16,7 +16,17 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
-### 9.1.15 - April 14th, 2021
+### 9.1.16 - April 23, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs resolved.
+* Multiple security enhancements.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixed a bug that caused the "Save" button in the page builder to not work correctly.
+* Fixed a bug when creating new sites where the "About Us" page was left without a layout selected.
+
+### 9.1.15 - April 14, 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
@@ -27,7 +37,6 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Added [new Liquid filters](/platform/channels/liquid-markup.html#filters) that allow using algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256 and base64_encod.
 * Page indexing is improved so that you can now find results that contain text from the content referenced in the pages.
-
 
 ### 9.1.14 - Abril 1, 2021
 &nbsp;
