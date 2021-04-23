@@ -200,7 +200,6 @@ EXAMPLE
 ```bash
   EJEMPLOS
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
-    $ modyo-cli get modyo-widgets-project-vue [DIRECTORY] #to initialize a base project library
 ```
 
 >Desde este comando y en adelante, puede continuar utilizando el widget como cualquier otro widget vue-cli.
