@@ -337,6 +337,8 @@ module.exports = {
               children: [
                 "/es/platform/tutorials/how-to-publish-content",
                 "/es/platform/tutorials/how-to-create-a-widget",
+                "/es/platform/tutorials/how-to-create-dynamicbank-content",
+                "/es/platform/tutorials/how-to-create-dynamicbank-home",
               ],
             },
           ],
