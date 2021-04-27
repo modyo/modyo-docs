@@ -86,7 +86,7 @@ HTML Header
         <nav class="d-none d-md-flex align-items-center">
           <h2 class="sr-only">Main Menu</h2>
           {% snippet 'shared/general/menu' %}
-          <a href="#" class="ml-3 btn btn-primary btn-sm">Hazte Cliente</a>
+          <a href="#" class="ml-3 btn btn-primary btn-sm">Banco en línea</a>
         </nav>
         <button
           type="button"
