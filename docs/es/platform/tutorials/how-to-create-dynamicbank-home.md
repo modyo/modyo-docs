@@ -6212,7 +6212,7 @@ HTML
 <div class="bg-light px-3 py-5" id="testimonial">
   <div class="py-5">
     <div class="container d-block d-md-none">
-      <h3 class="h3 mb-4 text-dark">Our <b>clients say</b>...</h3>
+      <h3 class="h3 mb-4 text-dark">Nuestros clientes dicen...</h3>
     </div>
     <div class="container p-relative single-item">
       {% for entry in entries %}
@@ -6228,7 +6228,7 @@ HTML
           <div class="figcaption col-11 col-md-6">
             <figcaption class="p-0 p-md-5">
               <h3 class="d-none d-md-block h3 mb-4 text-dark">
-                Our <b>clients say</b>...
+                Nuestros clientes dicen...
               </h3>
               <p class="text-muted">{{ entry.Testimony }}</p>
               <p class="text-muted font-weight-bold">{{ entry.autor }}</p>
