@@ -5996,7 +5996,7 @@ HTML
         Mantente informado de todo lo que necesitas de tu banca
       </h3>
       <p class="text-muted">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        Enterate de todas las noticias que tenemos para tí
       </p>
     </div>
   </div>
@@ -6042,7 +6042,7 @@ Para generar nuestro Widget de Beneficios lo realizaremos de la misma forma pero
           Se parte de un mundo de beneficios pensados especialmete para ti
         </h3>
         <p class="text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          Para nosotros lo más importante es que disfrutes tu banca
         </p>
       </div>
     </div>
