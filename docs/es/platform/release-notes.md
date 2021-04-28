@@ -3,6 +3,48 @@ search: true
 ---
 
 # Notas del release
+ 
+### 9.2.X - Primer release planificado para el primer trimestre del 2021.
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Site stages: Trabaja en un ambiente seguro pre-productivo de un sitio, sin comprometer la integridad de lo que ya está publicado en él.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
+* Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
+
+### 9.1.16 - 23 de abril del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de seguridad.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se resuelve un error que producía que el botón "Guardar" del page builder no funcionara correctamente.
+* Se resuelve un error al crear nuevos sitios en que la página "About Us" quedaba sin un layout seleccionado.
+
+### 9.1.15 - 14 de abril del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Se añade al panel una herramienta para resolver inconsistencias en estructura secundaria para mantener el orden de las páginas del sitio.
+* Se resuelve un error al subir imágenes muy grandes al gestor de archivos.
+* Se resuelve un bug que provocaba que el editor de código se congelara ante sintaxis específicas de liquid.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se añaden [nuevos filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar) que permiten usar algoritmos como md5, sha1, sha256, hmac_sha1, hmac_sha256 y base64_encod.
+* Se mejora el indexado de páginas de tal forma que ahora se puede encontrar resultados que contienen texto del contenido referenciado en las páginas.
+
+### 9.1.14 - 1 de abril del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se resuelve un bug en que se perdía el control de los locks en el template builder.
 
 ### 9.1.13 - 25 de marzo del 2021
 &nbsp;
