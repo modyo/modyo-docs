@@ -4,9 +4,9 @@ search: true
 
 # Realms
 
-Los reinos son una agrupación de usuarios con características similares que están gobernados por una misma configuración. Los realms son especialmente útiles cuando cuentas con distintas agrupaciones para sitios de una misma cuenta que no están directamente relacionados, o también, para tener un sitio de pruebas con usuarios de prueba sin afectar la agrupación de usuarios productivos. 
+Los reinos son una agrupación de usuarios con características similares que están gobernados por una misma configuración. Los realms son especialmente útiles cuando cuentas con distintas agrupaciones para sitios de una misma cuenta que no están directamente relacionados, o también, para tener un sitio de pruebas con usuarios de prueba sin afectar la agrupación de usuarios productivos.
 
-Cada realm tiene su propia configuración de inicio de sesión, registro, integraciones, formularios, targets y mensajería, por lo que debes tener en consideración que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese realm y no tendrá efecto sobre usuarios de otro realm. 
+Cada realm tiene su propia configuración de inicio de sesión, registro, integraciones, formularios, targets y mensajería, por lo que debes tener en consideración que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese realm y no tendrá efecto sobre usuarios de otro realm.
 
 ## Usuarios
 
@@ -124,7 +124,7 @@ En esta sección se pueden agregar notas personalizadas sobre los usuarios, sól
 En la sección superior derecha encontrarás opciones adicionales con las que podrás desactivar y eliminar usuarios:
 
 * **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados).
-* **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión. 
+* **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión.
 * **Eliminar**: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
 
 :::tip Tip
@@ -147,17 +147,17 @@ Aquí puedes configurar aspectos generales del realm, como:
 - **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este realm.
 - **Modificar el tipo de activación de cuenta de usuarios**:
   - Directa: Los usuarios que se registren podrán iniciar sesión directamente
-  - Correo de activación: Los usuarios que se registren deberán activar suc uenta mediante un link que se les envía al correo electrónico para poder inciiar sesión.
-  - Moderada: Los usuarios que se registren deberán esperar a que un administrador de Modyo active su cuenta para poder iniicar sesión.
-  - Deshabilitada: No se pueden registrar nuevos usuarios en el reindo. Los usuarios ya registrados y activados, podrán iniciar sesión sin problemas.
+  - Correo de activación: Los usuarios que se registren deberán activar su cuenta mediante un link que se les envía al correo electrónico para poder iniciar sesión.
+  - Moderada: Los usuarios que se registren deberán esperar a que un administrador de Modyo active su cuenta para poder iniciar sesión.
+  - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados, podrán iniciar sesión sin problemas.
 - **Atributos extra del formulario de registro**:
   - Habilitar segundo apellido
   - Hacer que el segundo apellido sea requerido
   - Habilitar confirmación de correo electrónico: Habilita un campo extra de correo electrónico que el usuario debe rellenar y debe coincidir con el campo primario de correo electrónico para que el usuario se pueda registrar.
-  - Habilitar avatar de usaurio
+  - Habilitar avatar de usuario
   - Habilitar fecha de nacimiento
   - Habilitar genero
-- **Elminar realm**: Permite la eliminación completa del realm. Este es un proceso en segundo plano, por lo que es posible que no veas el realm desaparecer inmediatamente luego de ejecutar la acción. Param poder eliminar el reino, deberás escribir el nombre completo del reino para confirmar la acción.
+- **Eliminar realm**: Permite la eliminación completa del realm. Este es un proceso en segundo plano, por lo que es posible que no veas el realm desaparecer inmediatamente luego de ejecutar la acción. Param poder eliminar el reino, deberás escribir el nombre completo del reino para confirmar la acción.
 
 :::danger Peligro
 Al deshabilitar las credenciales de Modyo del reino, debes asegurarte de tener configurado un proveedor de identidad para este realm, de lo contrario, los usuarios no podrán iniciar sesión.
@@ -233,7 +233,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario contar con la correcta configuración del servicio asociado que Modyo pueda conectarsecon ellos. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/es/platform/core/integrations)
+Es necesario contar con la correcta configuración del servicio asociado que Modyo pueda conectarse con ellos. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/es/platform/core/integrations)
 
 ### Miembros del Equipo
 
@@ -247,7 +247,7 @@ Si quieres eliminar a un administrador del reino, selecciona usando los checks a
 
 Los roles disponibles son:
 
-- **Usuario**: Puede añadir usuarios, crear modificar y enviar a revisión campañas, formularios y targets.
+- **Usuario**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y targets.
 - **Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
 
 ### Custom Fields
