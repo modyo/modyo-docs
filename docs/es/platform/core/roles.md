@@ -28,9 +28,9 @@ El resto de las pestañas pueden incluír información visible o modificable de 
 
 ## Grupos
 
-Los grupos te permiten agilizar el control de acceso a los distintos contextos de Modyo, de tal manera que puedes asignar un rol predeterminado a un contexto (cuenta, espacios, realms o sitios) a múltiples usuarios a la vez y luego añadir ese grupo de usuario a distintos contextos, permitiendo que todos los usuarios obtengan el rol del grupo en el contexto asociado. 
+Los grupos te permiten agilizar el control de acceso a los distintos contextos de Modyo, de tal manera que puedes asignar un rol predeterminado a un contexto (cuenta, espacios, realms o sitios) a múltiples usuarios a la vez y luego añadir ese grupo de usuario a distintos contextos, permitiendo que todos los usuarios obtengan el rol del grupo en el contexto asociado.
 
-Para crear un grupo, dirígete a la sección "Grupos" de la configuración de la cuenta, asígnale un nombre, rol y comienza a añadir usuarios al grupo. Puedes modificar el nombre, rol y usuarios que pertenecen al grupo una vez que guardes los cambios. 
+Para crear un grupo, dirígete a la sección "Grupos" de la configuración de la cuenta, asígnale un nombre, rol y comienza a añadir usuarios al grupo. Puedes modificar el nombre, rol y usuarios que pertenecen al grupo una vez que guardes los cambios.
 
 Además, desde la sección de "Grupos" del perfil de cada miembro del equipo, puedes añadir o remover al usuario de los grupos existentes.
 
@@ -71,7 +71,7 @@ Los roles predeterminados que existen son, según contexto:
 El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
 
 ### Acceso a las aplicaciones:
-Dado que contamos con roles que periten acceder a todas las aplicaciones sin restricción alguna, Modyo permite restringir acceso a ciertas aplicaciones mediante la configuración del miembro del equipo, de esta forma, puedes darle a un usuario acceso total (Owner) pero solamente en la aplicación de channels. 
+Dado que contamos con roles que permiten acceder a todas las aplicaciones sin restricción alguna, Modyo permite restringir acceso a ciertas aplicaciones mediante la configuración del miembro del equipo, de esta forma, puedes darle a un usuario acceso total (Owner) pero solamente en la aplicación de channels.
 
 ### Asignar un rol por cuenta
 

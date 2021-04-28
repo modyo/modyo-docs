@@ -27,11 +27,23 @@ The rest of the tabs include visible or modifiable user information:
 - API access
 - General data
 
+## Groups
+
+Groups allow you to streamline access control to different Modyo contexts, so you can assign a default role for a context (account, spaces, realms or sites) to multiple users at once and then add that user group to different contexts, allowing all the selected users to get the role of the group in the associated context.
+
+To create a group, go to the "Groups" section of the account settings, assign a name and role, and then start adding users to the group. You can modify the name, role and users belonging to the group after it is saved.
+
+Also, from the "Groups" section of each team member's profile, you can add or remove the user from existing groups.
+
+:::tip Tip
+Keep in mind that if a user already has an associated role in a context (account, space, realm or site) and you add him/her to a group with a higher privilege level role, the user will get the higher privilege level role between his/her own role and the group's role.
+:::
+
 ## Roles
 
 Roles are an essential characteristic of each internal user of the platform, since roles allow you to optimize the workflow that each internal user has.
 
-Modyo has 8 default roles with different functions by area or application. The platform also allows you to create more custom roles, depending on the area of the platform.
+Modyo has 11 default roles with different features per context that will allow you to distribute and control who has access to which sections of each context of the platform.
 
 ### Default Roles
 
@@ -39,14 +51,15 @@ Modyo uses default roles that vary according to each section of the platform and
 
 #### Account-level roles:
 
-- Default admin: You have all existing permissions.
-- Default user: You have all existing permissions, except for the ability to edit account settings.
+- **Default user**: Has all the existing permissions, except for editing the configuration of each context. Must be invited to each context to be able to access its features.
+- **Default admin**: Has all existing permissions, but must be invited to each context in order to access its features.
+- **Owner**: Has all existing permissions and can access all contexts without having to be invited to them.
 
 #### Site-level roles:
 
-- Site admin: You have all the permissions at the level of a site, but you cannot create new sites.
-- Site reviewer: A site admin, but without the ability to edit the site configuration.
-- Site developer: Can only edit resources (cannot publish, delete, rollback or edit the configuration).
+- **Site developer**: Can only edit resources (cannot publish, delete, rollback or edit configuration).
+- **Site reviewer**: Is a site admin but cannot edit the site configuration.
+- **Site admin**: Has all site-level permissions, but cannot create new sites.
 
 #### Space-level roles:
 
@@ -54,43 +67,14 @@ Modyo uses default roles that vary according to each section of the platform and
 - Space editor: A space admin, but without the ability to edit the space configuration. This role does not have asset permissions, nor can it create types.
 - Space writer: Can only edit content (cannot publish, delete, rollback or edit the configuration).
 
+- **Space writer**: Can only edit content (cannot publish, delete, rollback or edit the configuration).
+- **Space editor**: This is a space admin but without editing rights of the space configuration, does not have creation/deletion permissions for the assets and cannot create types.
+- **Space admin**: Has all the permissions at space level, but cannot create new spaces. This role can create and delete assets.
+
 The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
-### Custom Roles
-
-To create a specific role, click on the "Create" button at the top of the interface.
-
-Then you can give it a name and select the role's permissions and the functions of the platform that this role can view and manage.
-
-The functions that can be modified are:
-
-- Account management
-- Account activity logs
-- Team
-- Account API applications
-- Asset manager
-- Campaigns
-- Commerce settings
-- Forms
-- Insights
-- Credentials
-- Locks
-- Email templates
-- Mailer API
-- Unsubscription
-- Notifications
-- Commerce orders
-- Payment methods
-- Roles and permissions
-- Security
-- Account signups
-- Sites
-- Spaces
-- Targets
-- User custom fields
-- Account users
-- Webhooks
-- Team review
+### Access to applications:
+Since we have roles that allow access to all applications without restriction, Modyo allows you to restrict access to certain applications through team member settings. This way, you can for example give a user full access (Owner) but only to the channels application.
 
 ### Assign one role per account
 
