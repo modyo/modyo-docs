@@ -185,7 +185,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * The option to use messaging tempates in already created campaigns was added
-* The option to [delete users](/platform/customers/users.html#additional-options) was added
+* The option to [delete users](/platform/customers/realms.html#additional-options) was added
 
 ### 9.1.1 - September 25, 2020
 &nbsp;
@@ -260,7 +260,7 @@ search: true
 * The files [manifest.json and serviceworker.js](/platform/channels/sites.html#pwa) are left public, while privacy is forced on files [robots.txt and sitemap.xml](/platform/channels/sites.html#seo).
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* New views are added when there are no items created in [users](/platform/customers/users.html), [targets](/platform/customers/targets.html), [forms](/platform/customers/forms.html) and [campaigns](/platform/customers/messaging.html).
+* New views are added when there are no items created in [users](/platform/customers/realms.html), [targets](/platform/customers/targets.html), [forms](/platform/customers/forms.html) and [campaigns](/platform/customers/messaging.html).
 
 ### 9.0.6 - April 30, 2020
 &nbsp;

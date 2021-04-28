@@ -2,11 +2,17 @@
 search: true
 ---
 
-# Usuarios
+# Realms
+
+Los reinos son una agrupación de usuarios con características similares que están gobernados por una misma configuración. Los realms son especialmente útiles cuando cuentas con distintas agrupaciones para sitios de una misma cuenta que no están directamente relacionados, o también, para tener un sitio de pruebas con usuarios de prueba sin afectar la agrupación de usuarios productivos.
+
+Cada realm tiene su propia configuración de inicio de sesión, registro, integraciones, formularios, targets y mensajería, por lo que debes tener en consideración que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese realm y no tendrá efecto sobre usuarios de otro realm.
+
+## Usuarios
 
 A través de la sección Usuarios, podrás ver y modificar a los usuarios externos del sistema. Dichos usuarios son los registrados dentro de la plataforma quienes inician su sesión en los sitios de Modyo, responden formularios o pueden recibir campañas de correo.
 
-## Sobre la interfaz
+### Sobre la interfaz
 
 En la vista principal, podrás ver una tabla con todos los usuarios registrados dentro de la plataforma, paginada en caso de tener más de 30 registros.
 
@@ -52,7 +58,7 @@ Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguie
 Para enviar la contraseña al mail del usuario, solo es necesario marcar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo al usuario creado con su contraseña, que podrá cambiar al ingresar a la plataforma.
 :::
 
-Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/es/platform/customers/users.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/users.html#formulario-de-registro). Por otro lado, también existen **Campos Personalizados**, los que se pueden crear y modificar en la sección [Campos Personalizados](/es/platform/customers/users.html#campos-personalizados).
+Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Campos Personalizados**, los que se pueden crear y modificar en la sección [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados).
 
 
 ### Importar usuarios
@@ -72,13 +78,13 @@ Los atributos mínimos requeridos para la importación son el nombre real del us
 A la derecha, en una barra lateral, podrás ver configuraciones principales de la importación. Acá puedes definir si el archivo no sigue uno de los estándares comunes de los archivos \*.CSV, puedes fijar la codificación en la que se encuentra el archivo, y también definir separación de los atributos (el cual por defecto es una coma). Un poco más abajo hay un recuadro que indica si ya has seleccionado los atributos principales requeridos para la importación (nombre y correo electrónico). El botón para **Comenzar la importación** sólo se habilitará una vez que hayas incluído dichos campos para ser importados. Finalmente, cuatro opciones principales de la importación:
 
 - Activar cuenta de usuario
-- Activar cuenta y enviar correo electrónico (personalizable en [Correos](/es/platform/customers/users.html#correos))
+- Activar cuenta y enviar correo electrónico (personalizable en [Correos](/es/platform/customers/realms.html#correos))
 - Agregar a usuarios a sitios
 - Actualizar usuarios (en caso de que ya estén registrados en la plataforma)
 
 Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
 
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/es/platform/customers/users.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/es/platform/customers/users.html#configuracion-de-customers).
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers).
 
 
 ### Ficha de Usuarios
@@ -109,16 +115,16 @@ Cabe notar que no se trata de un seguimiento a la navegación de un usuario dent
 
 Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma. Al hacer _click_ sobre alguno de ellos, te lleva a ver las respuestas del usuario en dicho formulario. Si quieres saber más al respecto de los formularios, entra a la sección [Formularios](/es/platform/customers/forms.html).
 
-### Notas
+#### Notas
 
 En esta sección se pueden agregar notas personalizadas sobre los usuarios, sólo administradores pueden agregarlas, verlas y eliminarlas.
 
-### Opciones adicionales
+#### Opciones adicionales
 
 En la sección superior derecha encontrarás opciones adicionales con las que podrás desactivar y eliminar usuarios:
 
-* **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Campos Personalizados](/es/platform/customers/users.html#campos-personalizados).
-* **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión. 
+* **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados).
+* **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión.
 * **Eliminar**: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
 
 :::tip Tip
@@ -128,13 +134,38 @@ Al modificar un usuario, puede que cambie el listado de Targets a los que perten
 
 ----
 
-## Configuración de Customers
+## Configuración del realm
 
 En esta sección puedes configurar en gran parte la interacción entre usuarios y la plataforma de Modyo. Algunas configuraciones son enfocadas en la experiencia visual para el usuario, como selección colores o plantillas de correos, mientras que otras son enfocadas al registro, control de acceso, y personalización de los mismos. En particular esta segunda parte es esencial para el correcto funcionamiento de la plataforma, por lo que es importante ser precavido al momento de modificar configuraciones en esta sección.
 
 ### General
 
-Aquí puedes personalizar parte estética de la plataforma con la cual interacciona el usuario, en particular las vistas de inicio de sesión, registro de nuevo usuario y perfil, en general todo lo que tiene que ver con la sesión del mismo en la plataforma.
+Aquí puedes configurar aspectos generales del realm, como:
+
+- **Nombre**.
+- **Identificador**: Permite modificar la url de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del realm.
+- **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este realm.
+- **Modificar el tipo de activación de cuenta de usuarios**:
+  - Directa: Los usuarios que se registren podrán iniciar sesión directamente
+  - Correo de activación: Los usuarios que se registren deberán activar su cuenta mediante un link que se les envía al correo electrónico para poder iniciar sesión.
+  - Moderada: Los usuarios que se registren deberán esperar a que un administrador de Modyo active su cuenta para poder iniciar sesión.
+  - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados, podrán iniciar sesión sin problemas.
+- **Atributos extra del formulario de registro**:
+  - Habilitar segundo apellido
+  - Hacer que el segundo apellido sea requerido
+  - Habilitar confirmación de correo electrónico: Habilita un campo extra de correo electrónico que el usuario debe rellenar y debe coincidir con el campo primario de correo electrónico para que el usuario se pueda registrar.
+  - Habilitar avatar de usuario
+  - Habilitar fecha de nacimiento
+  - Habilitar genero
+- **Eliminar realm**: Permite la eliminación completa del realm. Este es un proceso en segundo plano, por lo que es posible que no veas el realm desaparecer inmediatamente luego de ejecutar la acción. Param poder eliminar el reino, deberás escribir el nombre completo del reino para confirmar la acción.
+
+:::danger Peligro
+Al deshabilitar las credenciales de Modyo del reino, debes asegurarte de tener configurado un proveedor de identidad para este realm, de lo contrario, los usuarios no podrán iniciar sesión.
+:::
+
+### Apariencia
+
+Esta sección te permitirá modificar algunos aspectos visuales de las vistas de registro, inicio de sesión y perfil de los usuarios del reino.
 
 #### Color primario
 
@@ -158,7 +189,7 @@ Si tienes problemas con los códigos de teclado cuando estés editando el CSS, p
 
 ### Correos
 
-Modyo permite configurar la dirección de envío y apariencia de los correos que se enviarán a los usuarios.
+Modyo permite configurar la dirección de envío y apariencia de los correos que se enviarán a los usuarios del realm.
 
 Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer _click_ en el botón **Guardar**.
 
@@ -181,7 +212,7 @@ Los estilos de los correos de la plataforma que envía también pueden ser perso
 
 Al hacer _click_ para habilitar cada uno de los correos, mostrará un editor por defecto en el cual puedes pegar el código.
 
-::: danger Peligro
+:::danger Peligro
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
 
 Para ello, debes insertar en el código los atributos que se encuentran bajo el editor, y que puedes copiar y pegar fácilmente para ubicarlos en la parte que necesites.
@@ -189,9 +220,9 @@ Para ello, debes insertar en el código los atributos que se encuentran bajo el 
 
 Cada vez que se haga un cambio en el código, se debe hacer _click_ en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
 
-### Integraciones
+### Proveedores de identidad
 
-Para simplificar el ingreso a la plataforma, es posible configurar su entrada a través de las APIs de ciertos servicios que permiten entradas universales.
+Para simplificar el ingreso a la plataforma, es posible configurar su entrada y registro a través de ciertos servicios estándar.
 
 Los servicios compatibles con el ingreso a Modyo son:
 
@@ -202,51 +233,22 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 
-Es necesario tener la API logueada y configurada en los servicios para que se permita el uso. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/es/platform/core/integrations)
+Es necesario contar con la correcta configuración del servicio asociado que Modyo pueda conectarse con ellos. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a la [sección Integraciones de la plataforma](/es/platform/core/integrations)
 
-### Registros
+### Miembros del Equipo
 
-El registro de clientes dentro de la plataforma, también debe ser configurado desde este lugar. Para ello, debes tener en cuenta las credenciales y la habilitación de redirección en el inicio de sesión.
+Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada realm y así controlar el acceso a los distintos aspectos del reino.
 
-Lo primero que puedes configurar es si quieres habilitar o deshabilitar las credenciales de la plataforma.
+Para añadir un usuario al reino, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del reino.
 
-::: warning Atención
-Si deshabilitas las credenciales, los usuarios solo podrán ingresar a través de un mecanismo SSO. Asegúrate de tenerlo activado a través de [Integraciones](/es/platform/core/integrations)
-:::
+Puedes modificar el rol de alguno de los administradores asociados haciendo _click_ en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
-También puedes habilitar o deshabilitar una redirección para el inicio de sesión. Recuerda que si la redirección de inicio de sesión está habilitada, el modal de inicio de sesión será reemplazado por la URL que debes ingresar después.
+Si quieres eliminar a un administrador del reino, selecciona usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
-Las búsquedas en la página de perfil también se pueden habilitar o deshabilitar. Si está habilitada, una caja de búsqueda aparecerá en la sección de perfil, esta búsqueda encuentra resultados en todos los sitios a los que puede acceder el usuario.
+Los roles disponibles son:
 
-#### Activación de la cuenta
-
-En esta sección puedes configurar la forma de control en el registro de clientes. Las alternativas son las que siguen:
-
-- Directa (sin moderación ni confirmación por email)
-- Email de activación
-- Moderada (un administrador decide si aprueba el registro)
-- Deshabilitada (Solo el administrador envía el registro)
-
-::: danger Peligro
-Recuerda que el registro directo de usuarios podría permitir que robots maliciosos se registren con correos personales que no les pertenecen en la plataforma. Recuerda el registro con verificación por correo electrónico para proteger las cuentas contra este riesgo potencial.
-:::
-
-#### Avatar
-
-Si quieres que los usuarios tengan un Avatar, puedes subir uno que se muestre por defecto. En esta opción, puedes subir una imagen liviana que se mostrará de manera predeterminada en el sistema cuando el usuario ingrese, para que después pueda cambiarla.
-
-#### Formulario de registro
-
-Desde acá, también puedes configurar el formulario de registro que ingresan cada uno de los usuarios. Aquí puedes configurar los distintos campos que son imprescindibles y que quieres que aparezcan en el formulario, como son:
-
-- Habilitar segundo apellido
-- Segundo apellido es requerido
-- Habilitar confirmación de correo electrónico
-- Habilitar avatar
-- Habilitar fecha de nacimiento
-- Habilitar género
-
-Para habilitar o deshabilitar alguno, solo debes hacer _click_ en el checkbox que se encuentra al costado de cada uno y hacer _click_ en el botón **Guardar**.
+- **Usuario**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y targets.
+- **Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
 
 ### Custom Fields
 

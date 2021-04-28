@@ -209,7 +209,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Se añade la posibilidad de utilizar plantillas en campañas de mensajería ya creadas .
-* Se añade la posibilidad de [eliminar usuarios](/es/platform/customers/users.html#opciones-adicionales).
+* Se añade la posibilidad de [eliminar usuarios](/es/platform/customers/realms.html#opciones-adicionales).
 
 ### 9.1.1 - 25 de Septiembre del 2020
 
@@ -295,7 +295,7 @@ search: true
 * Mejoras a la usabilidad y conceptos de [temas](/es/platform/channels/templates.html#temas) en el template builder
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/es/platform/customers/users.html), [targets](/es/platform/customers/targets.html), [formularios](/es/platform/customers/forms.html) y [campañas](/es/platform/customers/messaging.html).
+* Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/es/platform/customers/realms.html), [targets](/es/platform/customers/targets.html), [formularios](/es/platform/customers/forms.html) y [campañas](/es/platform/customers/messaging.html).
 
 ### 9.0.6 - 30 de Abril del 2020
 

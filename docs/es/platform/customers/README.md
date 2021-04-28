@@ -16,7 +16,7 @@ Una vez que el usuario ha sido identificado, la plataforma gestionará de forma 
 
 ### Funcionalidades principales
 
-- [Gestión de usuarios](/es/platform/customers/users.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
+- [Gestión de usuarios](/es/platform/customers/realms.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
 - [Targets](/es/platform/customers/targets.html) para definir segmentos dinámicos de usuarios.
 - [Formularios dinámicos](/es/platform/customers/forms.html) para capturar información asociada a los usuarios.
 - [Mensajería](/es/platform/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.

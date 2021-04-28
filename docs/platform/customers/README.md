@@ -16,7 +16,7 @@ Modyo Customers also has an integrated user messaging system.
 
 ### Main functionalities
 
-- [User management](/platform/customers/users.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
+- [User management](/platform/customers/realms.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
 - [Targets](/platform/customers/targets.html) to define dynamic user segments.
 - [Dynamic forms](/platform/customers/forms.html) to capture information associated with users.
 - [Messaging](/platform/customers/messaging.html) to send Web notifications or email campaigns to users.
