@@ -115,7 +115,7 @@ module.exports = {
               path: "/platform/customers/",
               collapsable: true,
               children: [
-                "/platform/customers/users",
+                "/platform/customers/realms",
                 "/platform/customers/profile",
                 "/platform/customers/targets",
                 "/platform/customers/forms",
@@ -314,7 +314,7 @@ module.exports = {
               path: "/es/platform/customers/",
               collapsable: true,
               children: [
-                "/es/platform/customers/users",
+                "/es/platform/customers/realms",
                 "/es/platform/customers/profile",
                 "/es/platform/customers/targets",
                 "/es/platform/customers/forms",

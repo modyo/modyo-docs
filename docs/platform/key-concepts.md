@@ -109,9 +109,9 @@ Agility occurs when you have a greater predictability of your team's capacity, f
 ### Customers
 
 * [**Campaigns**](/platform/customers/messaging.html#campaigns):  A defined communication channel with your users which allows you to reach them through emails and notifications.
-* [**Custom field**](/platform/customers/users.html#custom-fields): Allows you to add personalized attributes to the users' profile.
+* [**Custom field**](/platform/customers/realms.html#custom-fields): Allows you to add personalized attributes to the users' profile.
 * [**Filters**](/platform/customers/targets.html#filters): Basic units that allow you to build targets.
 * [**Form**](/platform/customers/forms.html): Allows you to capture data from your users on your sites.
 * [**Messaging**](/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
 * [**Target**](/platform/customers/targets.html): Allows you to add and group your users through filter groups with different conditions.
-* [**User**](/platform/customers/users.html): This is any person who accesses and registers on sites built with Modyo.
+* [**User**](/platform/customers/realms.html): This is any person who accesses and registers on sites built with Modyo.

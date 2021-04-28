@@ -112,9 +112,9 @@ Las siguientes definiciones corresponden a términos comunmente utulizados entre
 #### Modyo Customers
 
 * [**Campañas**](/es/platform/customers/messaging.html#campanas): Es la definición de un canal de comunicación con el usuario, que te permite llegar a ellos a través de correos y notificaciones.
-* [**Campo personalizado**](/es/platform/customers/users.html#custom-fields): Te permite añadir atributos personalizados al perfil de los usuarios.
+* [**Campo personalizado**](/es/platform/customers/realms.html#custom-fields): Te permite añadir atributos personalizados al perfil de los usuarios.
 * [**Filtros**](/es/platform/customers/targets.html#filtros): Son la unidad que te permite construir targets.
 * [**Formulario**](/es/platform/customers/forms.html): Te permite capturar datos de tus usuarios en tus sitios.
 * [**Mensajería**](/es/platform/customers/messaging.html): Te permite controlas los canales de comunicación directa con tus usuarios-
 * [**Target**](/es/platform/customers/targets.html): Te permite agregar y agrupar tus usuarios mediante grupos de filtros con distintas condiciones.
-* [**Usuario**](/es/platform/customers/users.html): Es quien accede y se registra en los sitios de Modyo.
+* [**Usuario**](/es/platform/customers/realms.html): Es quien accede y se registra en los sitios de Modyo.

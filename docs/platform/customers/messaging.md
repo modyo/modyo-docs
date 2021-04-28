@@ -188,7 +188,7 @@ Under the name is the Template content section, a WYSIWYG editor where you can v
 ::: warning Warning
 If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
-To automate the insertion of the Footer, read [Customers Settings](/platform/customers/users.html#customers-settings)
+To automate the insertion of the Footer, read [Customers Settings](/platform/customers/realms.html#customers-settings)
 :::
 
 To save the template, you must click on the **Save** button, located at the top of the page.
@@ -201,7 +201,7 @@ In this section, you will find a list of all users who have unsubscribed from em
 
 To find a user, at the top of the screen there is a search bar where you can enter their name or email.
 
-If you click on the name of the user, you can find the [user profile](/platform/customers/users.html#user-tab) with all their platform activities.
+If you click on the name of the user, you can find the [user profile](/platform/customers/realms.html#user-tab) with all their platform activities.
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 

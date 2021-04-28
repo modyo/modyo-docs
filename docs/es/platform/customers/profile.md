@@ -22,7 +22,7 @@ Al hacer click en una notificación, se mostrará el contenido completo de esta 
 
 ### Editar de perfil
 
-En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de customers](/es/platform/customers/users.html#configuracion-de-customers), cada usuario podrá modificar:
+En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de customers](/es/platform/customers/realms.html#configuracion-de-customers), cada usuario podrá modificar:
 
 * Nombre
 * Apellido
@@ -30,7 +30,7 @@ En esta sección, cada usuario puede modificar los datos de su perfil, dependien
 * Correo electrónico
 * Fecha de nacimiento
 * Género
-* [Campos personalizados](/es/platform/customers/users.html#custom-fields)
+* [Campos personalizados](/es/platform/customers/realms.html#custom-fields)
 * Contraseña
 
 Además, cada usuario puede eliminar definitivamente su cuenta. 

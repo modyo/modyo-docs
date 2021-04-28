@@ -190,7 +190,7 @@ Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente 
 ::: warning Atención
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
-Para automatizar la inserción del Footer, lee [Configuración de Customers](/es/platform/customers/users.html#configuracion-de-customers)
+Para automatizar la inserción del Footer, lee [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers)
 :::
 
 Para grabar la plantilla, debes hacer _click_ en el botón **Guardar**, que se encuentra en la parte superior de la página.
@@ -203,7 +203,7 @@ En esta sección, encontrarás una lista con todos los usuarios que se han dado 
 
 Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
 
-Si se hace _click_ en el nombre del usuario, puedes encontrar el [perfil del usuario](/es/platform/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Si se hace _click_ en el nombre del usuario, puedes encontrar el [perfil del usuario](/es/platform/customers/realms.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
 
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 

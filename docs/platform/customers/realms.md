@@ -52,7 +52,7 @@ When you select "Add User", the platform will ask you to complete the following 
 To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-The available fields may be more than those listed above, depending on the configuration on the platform and how many user custom fields are enabled in the account. You can learn more about this in the [Customers Configuration](/platform/customers/users.html#customers-configuration) section.
+The available fields may be more than those listed above, depending on the configuration on the platform and how many user custom fields are enabled in the account. You can learn more about this in the [Customers Configuration](/platform/customers/realms.html#customers-configuration) section.
 
 ### Import users
 
@@ -69,13 +69,13 @@ The minimum attributes required to import a user are their first name (not to be
 On the right are the main import settings. Here you can set the file encoding and separator value (which by default is a comma). Below it is a box indicating if you've mapped the two required fields (name and email). The button for **Begin import** is enabled once you map these fields. Finally, there are four main import options:
 
 - Activate user account
-- Send notification email (customizable in [emails](/platform/customers/users.html#emails))
+- Send notification email (customizable in [emails](/platform/customers/realms.html#emails))
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
 Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
 
-In addition, you can add any required custom fields. These can be configured in [Custom Fields](/platform/customers/users.html#custom-fields), which are found in the [Customer Configuration section](/platform/customers/users.html#customer-configuration).
+In addition, you can add any required custom fields. These can be configured in [Custom Fields](/platform/customers/realms.html#custom-fields), which are found in the [Customer Configuration section](/platform/customers/realms.html#customer-configuration).
 
 
 ### Users Tab
@@ -114,7 +114,7 @@ In this section you can add personalized notes about users, only administrators 
 
 In the upper right section you will find additional options with which you can disable and delete users:
 
-* **Edit**: Opens the user edit modal. If you want to add more fileds to a user go to [Custom Fields](/platform/customers/users.html#custom-fields).
+* **Edit**: Opens the user edit modal. If you want to add more fileds to a user go to [Custom Fields](/platform/customers/realms.html#custom-fields).
 * **Disable**: You can disable users and prevent them from logging in. 
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 

@@ -22,7 +22,7 @@ When you click on a notification, its full content will be displayed and it will
 
 ### Profile edit
 
-In this section, each user can modify his own profile data, depending on the [customers configuration](/platform/customers/users.html#customer-settings), each user will be able to modify:
+In this section, each user can modify his own profile data, depending on the [customers configuration](/platform/customers/realms.html#customer-settings), each user will be able to modify:
 
 * Name
 * Last name
@@ -30,7 +30,7 @@ In this section, each user can modify his own profile data, depending on the [cu
 * Email
 * Birthdate
 * Gender
-* [Custom fields](/platform/customers/users.html#custom-fields)
+* [Custom fields](/platform/customers/realms.html#custom-fields)
 * Password
 
 In addition, each user can permanently delete their account. 
