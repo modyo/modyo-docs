@@ -6,11 +6,11 @@ search: true
 
 ## Introducción
 
-Crerar un nuevo sitio y ppublicar contenido de forma dinámica es una de las funcionalidades más importantes de Modyo. En el siguiente tutorial revisaremos los pasos requeridos para poder hacer esto y comentaremos algunas de las opciones más relevantes que debemos tener en cuenta.
+Crerar un nuevo sitio y publicar contenido de forma dinámica es una de las funcionalidades más importantes de Modyo. En el siguiente tutorial revisaremos los pasos requeridos para poder hacer esto y comentaremos algunas de las opciones más relevantes que debemos tener en cuenta.
 
 ## Requisitos Previos
 
-Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo, además de tener algunos conocimientos muy básicos de HTML. 
+Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo, además de tener algunos conocimientos muy básicos de HTML.
 
 ## Paso 1: Crear un espacio de contenidos
 
