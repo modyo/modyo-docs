@@ -253,6 +253,7 @@ module.exports = {
               path: "/es/platform/infrastructure/",
               collapsable: true,
               children: [
+                "/es/platform/infrastructure/integration",
                 "/es/platform/infrastructure/versions",
                 "/es/platform/infrastructure/cloud",
                 "/es/platform/infrastructure/onpremise",

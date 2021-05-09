@@ -3,154 +3,60 @@ search: true
 ---
 
 # Seguridad
+En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta guía que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que Modyo Cloud y Enterprise Cloud, nuestras soluciones hosteadas, provee un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
 
-:::tip Reporte de Incidencias de Seguridad
+:::tip Reporte de vulnerabilidades
 Modyo posee un canal seguro y confidencial de reporte de incidencias de seguridad por medio del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.
 :::
 
+### Conceptos Importantes
+**Limitar accesos:** Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
 
-El siguiente documento describe la arquitectura de seguridad, políticas y procedimientos que Modyo emplea en el desarrollo de su plataforma, ejecución de servicios profesionales y de la operación en la nube de las versiones Cloud y Enterprise Cloud de la Plataforma Modyo.
+**Contención:** El sistema debe estar configurado de tal forma que minimice la cantidad de daño que un mal actor pueda ocasionar en caso de que sea vulnerado.
 
-Para cumplir con estos objetivos, Modyo debe asegurar a sus clientes que sus datos están seguros y que protegerlos es una de sus responsabilidades más importantes. Modyo está comprometido con la transparencia acerca de sus prácticas de seguridad y también con ayudar a sus clientes a comprenderlas.
+**Preparación y conocimiento:** Mantener copias de seguridad y procedimientos para estar preparados en el caso de que una catástrofe ocurra.
 
+**Fuentes confiables:** Evitar implementar Widgets o códigos de fuentes poco confiables. Asegurar que todas las dependencias que se cargan en un sitio provengan de una fuente confiable.
 
+### Vulnerabilidades Locales
+Asegurar que el equipamiento computacional de todos los usuarios administradores de la plataforma se encuentre libre de spyware, malware e infecciones de virus. Incluso una instalación segura de Modyo podría ser vulnerada por un atacante que explote la sesión válida de un usuario desde un equipo local.
 
-### Seguridad Organizacional
-Modyo posee un excelente programa de seguridad dedicado a asegurar que cada cliente pueda tener el máximo nivel de confianza en la custodia de sus datos. El programa de seguridad de Modyo está alineado con los prácticas más relevantes del estándar ISO 27000 y es regularmente auditado por sus propios clientes.
-
-### Seguridad del Personal
-Las Políticas de Seguridad de la empresa son conocidas y aplicadas por todos los empleados (colaboradores) que posean acceso a la información de clientes. Todos los colaboradores deben aceptar y cumplir nuestras normas de seguridad. Todos los colaboradores tienen firmado en sus contratos laborales estrictas cláusulas de confidencialidad y seguridad de la información.
-
-Antes de tener acceso a los sistemas, todos los colaboradores deben aceptar los términos de confidencialidad y ser sometidos a un chequeo de sus antecedentes, además de acudir a un entrenamiento de seguridad. Este entrenamiento cubre temas de privacidad y seguridad, además del uso aceptable del equipamiento tecnológico de la empresa, prevención de malware, seguridad física, privacidad de los datos, gestión de cuentas, reporte de incidentes entre otros.
-
-Al terminar su relación laboral con Modyo, todos los accesos y permisos son revocados inmediatamente.
-
-#### Entrenamientos en Seguridad y Privacidad
-Durante la vigencia de su contrato, todos los colaboradores de Modyo deberán asistir a los entrenamientos de privacidad y seguridad al menos una vez por año. También será requerido de que lean y firmen las Políticas de Seguridad y Privacidad de Modyo. Todos los colaboradores que posean privilegios especiales (con mayor acceso a la información de clientes) recibirán además un entrenamiento especializado según su rol y función.
-
-Todos los colaboradores tienen el deber de reportar incidentes de seguridad a los equipos internos apropiados. Los colaboradores serán oportunamente informados si en algún momento violan alguno de los términos que puedan incurrir en consecuencias, incluyendo su desvinculación con la empresa.
-
-#### Profesionales Dedicados de Seguridad
-Por medio del Área de Seguridad e Infraestructura, Modyo dispone de un equipo dedicado el cual es responsable de la implementación y el cumplimiento de las Políticas de Seguridad. El Área de Seguridad e Infraestructura es liderada por el Chief Technology Officer (CTO) de Modyo con quién se definen y aprueban las políticas, procedimientos y planes de mejora a ser implementados.
-
-Se definen los siguientes aspectos críticos de seguridad:
-
-### Seguridad del Producto
-Establecer estándares y prácticas seguras de desarrollo de software
-Asegurar que existan procesos de detección y documentación de riesgos a nivel de proyecto
-Proveer de revisiones de diseño y código fuente para la detección oportuna de posibles fallas de seguridad
-Entrenar a los desarrolladores en las mejores prácticas de codificación segura
-
-### Seguridad Operacional
-Construye y opera toda la infraestructura crítica de seguridad, incluyendo los servicios de autenticación y monitoreo de eventos
-Mantiene un archivo de los logs relevantes para las inspecciones de seguridad
-Aseguramiento de las configuraciones seguras en los entornos de producción
-Responder a alertas en caso de eventos de seguridad
-Manejar incidentes de seguridad
-
-## Riesgo y Cumplimiento
-Coordinar los test de penetración
-Manejar los escaneos de vulnerabilidades y sus remediaciones
-Coordinar las evaluaciones de riesgos regulares y darle seguimiento a los riesgos identificados
-Coordinar la auditoría y mantención de las certificaciones de seguridad
-Revisar y calificar la seguridad de los proveedores
-
-Todos los miembros del Área de Seguridad e Infraestructura de Modyo se encuentran en un proceso continuo de aprendizaje y capacitación para asegurar su expertise en estos y otros temas. 
-
-## Políticas y Estándares
-Modyo posee Políticas de Seguridad bien definidas que son aceptadas por la totalidad de sus empleados las cuales proveen las reglas básicas para la operación del negocio. Con ellas Modyo asegura que sus clientes puedan confiar en sus empleados en cuanto a su ética y comportamiento al operar los diferentes servicios ofrecidos. 
-
-Las Políticas de Seguridad de Modyo incluyen temas como:
-Estándares éticos y legales en la conducción del negocio
-Uso aceptable de los sistemas de información
-Clasificación, etiquetado y manipulación de los activos de información
-Prácticas para la identificación, autenticación y autorización de acceso a los sistemas de información
-Seguridad en el desarrollo, configuración y mantenimiento de sistemas
-Uso de encriptación
-Planificación para la continuidad del negocio y recuperación de desastres
-Control de cambios
+Asegurar que los accesos provengan siempre desde un equipo actualizado, mediante navegadores de Internet confiables y actualizados.
 
 
-Estas políticas se encuentran en constante mejora, publicadas en un canal interno y son regularmente revisadas y actualizadas, según corresponda.
+### Configurar una Contraseña Segura en el Panel de Administración
+El Panel de Administración es la más poderosa herramienta de administración de Modyo. En él es posible tomar control de muchas de las configuraciones y acciones más relevantes en la operación de Modyo, además de brindar una puerta de acceso administrativa a todas las organizaciones definidas dentro de la plataforma. Recomendamos establecer una contraseña segura y rotarla con regularidad (ejemplo: después de cada actualización importante de la plataforma).
 
-### Auditorías
-Modyo es auditado regularmente de forma interna y por sus mismos clientes, quienes se encargan de realizar inspecciones de seguridad a los procesos y políticas internas, así como también a la infraestructura de producción. Los resultados de las auditorías son entregados a los gerentes de Modyo, quienes se encargan de dar resolución a todos los hallazgos encontrados.
+### Revisar Permisos de Administración
+Los administradores de una organización o sitio poseen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impresora a uno de estos administradores puede representar un gran riesgo de seguridad. Es por ello que recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
 
-### Tests de Penetración
-Modyo habitualmente realiza pruebas de penetración a nivel de infraestructura, plataforma y aplicaciones. El equipo de seguridad de Modyo revisa y cataloga los resultados para su oportuna resolución.
+Además los administradores pueden crear tokens para el acceso a las APIs de administración de la plataforma. Estos tokens en muchas ocasiones son usados para automatizar tareas comunes de administración, por lo que es importante asegurar que sólo se usen dentro de sistemas seguros que garanticen su protección.
 
-Los clientes que quieran realizar sus propias pruebas de penetración de seguridad podrán hacerlo. Modyo recomienda la coordinación de estos eventos dando aviso por medio del ejecutivo de atención designado.
+### Actualizar Modyo con Regularidad
+Recomendamos actualizar periódicamente Modyo para asegurar siempre estar en el último parche disponible. Esto asegurará que tu instalación posee todos los parches de seguridad al día. Los parches de seguridad se realizan de tal forma que pueden ser aplicados sin afectar mayormente a los equipos de trabajo (ejemplo: pasar de la versión 9.1.10 a la 9.1.12).
 
+Recomendamos realizar _upgrades_ de _releases_ mayores al menos dos veces al año (ejemplo: pasar de la versión 9.1.14 a la 9.2.2). Haciendo esto podrás garantizar que no sólo estás en la última versión con soporte, sino también que posees las últimas funcionalidades.
 
-## Diseño de Seguridad
-### Ciclo de Desarrollo
-Modyo revisa proactivamente la seguridad de sus productos en cada ciclo de desarrollo, asegurando que cada versión sigue un exhaustivo proceso de inspecciones manuales y automáticas. El cumplimiento de estas inspecciones será requerido para que el equipo pueda proceder con los releases de nuevas versiones del producto.
+### Habilitar el Segundo Factor de Autenticación
+Considera habilitar el segundo factor de autenticación siempre que tu servidor de identidad lo permita. En el caso que uses el sistema de credenciales de Modyo, te recomendamos activar esta protección. Recomendamos encarecidamente habilitar esta funcionalidad para una mejor postura de seguridad.
 
-Todo las fuentes de Modyo y aplicaciones de integración desarrolladas por la empresa se encuentran en un sistema de control empresarial de código fuente, el cual se encarga de que el trabajo producido por los ingenieros sea revisado y aprobado por al menos dos miembros del equipo (antes de que sea integrado al proyecto), además de la ejecución previa de los test de seguridad y de calidad del código.
+### Habilitar Transport Layer Security (TLS)
+Forzar las conexiones a que sean sólo TLS en tu instalación asegura que todo el tráfico entrante y saliente esté encriptado. Además, recomendamos utilizar sólo versiones modernas del protocolo, en particular las versiones 1.2 o 1.3.
 
-### Reporte de Incidencias
-Modyo posee de un canal especial para el reporte de incidencias de seguridad, el cual está a cargo del Área de Seguridad e Infraestructura de Modyo. Los clientes de Modyo también podrán reportar incidencias por medio de su ejecutivo de cuenta o partner, quienes tendrán la responsabilidad de notificar a equipo interno y dar seguimiento a la resolución de éstas.
+### Diferenciar Subdominios
+La diferenciación de subdominios es muy importante, ya que existen múltiples lugares en donde Modyo admite desarrollo mediante HTML. Si esto no se encuentra activo, el HTML de los sitios desarrollados sobre Modyo se puede volver un vector de ataque que podría impactar a otros componentes de Modyo vía cross-site _scripting_.
 
+### Revisar los Proceso de Respaldo
+Ejecutar procesos de respaldo de forma regular es muy importante en una implementación segura de Modyo. En el caso de Cloud y Enterprise Cloud esto se realiza de forma automática. En el caso de Enterprise On Premise es el equipo de operación de cada cliente responsable de esta actividad.
 
-### Protección de Datos de Clientes
-El objetivo del programa de seguridad de Modyo es el de prevenir el acceso no autorizado a los datos de clientes. Para ello el equipo de operaciones, en conjunto con las demás áreas, toman exhaustivos pasos para identificar y mitigar riesgos de seguridad, así como de implementar las mejores prácticas y evaluar constantemente nuevas formas para mejorar.
+Los respaldos de Modyo contemplan tanto a la base de datos como a los directorios compartidos de archivos, en donde se almacena el contenido estático.
 
-### Encriptación de Datos en Tránsito y en Descanso
-Modyo posee mecanismos robustos de encriptación para todos los datos que se encuentran en tránsito por la red y en descanso en los repositorios de datos. Modyo emplea para ello los diversos mecanismos que ofrece Amazon AWS para el manejo de llaves de encriptación y certificados SSL, revisando continuamente que las nuevas y mejoras prácticas sean incorporadas a los procesos.
+### Utilizar un Servidor Proxy de Salida
+Modyo puede efectuar comunicaciones hacia Internet, en lo que refiere a las funcionalidades de proveedores de identidad o Webhooks de integración. Para poder controlar la comunicación de salida se debe establecer un proxy de salida o esquema de NAT de red en donde las IPs de origen de la comunicación no queden expuestas.
 
-Modyo opera toda su infraestructura de producción y preproducción en Amazon AWS, quienes son líderes en la industria del cloud computing y ofrecen los mayores estándares y certificaciones de seguridad perimetral en sus data centers.
-
-### Seguridad de Redes
-Modyo divide a cada cliente en su propia red VPC (Virtual Private Cloud). Cada cliente puede poseer hasta 3 entornos VPC diferentes configurados (producción, integración y certificación), cada uno completamente aislado del otro y a su vez de los demás clientes.
-
-El acceso a los sistemas es realizado públicamente por los usuarios desde Internet por medio de un Web Application Firewall que posee reglas contra ataques comunes como inyecciones de SQL y XSS o filtros de IP. Sólo una pequeña parte de la infraestructura de producción y preproducción puede ser accedida directamente desde direcciones IPs autorizadas por personal calificado de Modyo para tareas de operación y mantenimiento.
-
-Modyo posee sistemas de detección de intrusos (IDS/IPS) a nivel de redes y hosts que permiten alertar de accesos no controlados de cualquier intruso a algún servidor.
-
-### Acceso Autorizados
-Modyo no entrega acceso a los datos de clientes a ningún colaborador que no requiera de él para efectuar sus responsabilidades contractuales. Para asegurarnos de ello, las credenciales y accesos de los colaboradores son auditados internamente cada tres meses. 
-
-Cuando un colaborador ingresa a trabajar a Modyo sólo posee acceso a los sistemas básicos de correo y planificación de tareas. Cualquier acceso mayor debe ser explícitamente solicitado mediante un ticket de control al Área de Seguridad e Infraestructura quien realizará el seguimiento de estas credenciales extendidas.
-
-### Autenticación
-Para reducir aún más los riesgos de acceso no autorizado a los datos, los empleados de Modyo con acceso a la información de clientes requieren contar con un dispositivo de "second factor" que será solicitado al momento de ingresar a los sistemas (panel de control de Amazon, DNS, sistemas de control de código fuente, etc).
-
-Todas las contraseñas utilizadas para acceder a recursos y datos sensibles de clientes deberán ser de al menos 12 caracteres. El uso obligatorio de un gestor contraseñas previene el reúso y predictibilidad de éstas. 
-
-
-### Monitoreo de Sistemas, Logs y Alertas
-Modyo almacena de forma centralizada todos los logs de producción, tanto de los servidores como de los servicios de Amazon configurados para cada cliente. La información de los logs es utilizada para configurar alertas y realizar investigaciones internas, con una retención de 1 año.
-
-Para todos los sistemas configurados en la nube de Amazon AWS existe una política permanente de monitoreo mediante las herramientas de AWS Cloudtrail para el control de eventos, AWS Guard Duty para redes y AWS Inspector para instancias.
-
-### Respuesta a Incidentes
-Modyo posee políticas y protocolos para dar respuesta a potenciales incidentes de seguridad. Todos los incidentes serán gestionados por el Área de Seguridad e Infraestructura. Modyo define y clasifica los tipos de eventos que deberán ser manejados por el proceso de respuesta según su severidad. Los protocolos de respuesta a incidentes son revisados y actualizados, según corresponda, de forma anual.
-
-### Destrucción de Datos 
-Modyo destruye toda la información de producción de los clientes que no posean contratos de licencia activos. Todos los respaldos de información en bases de datos no podrán ser almacenados por más de 30 días una vez que la relación con el cliente haya terminado.
-
-### Almacenamiento de Secretos
-Modyo posee mecanismos de encriptación para compartir información secreta de clientes y accesos de forma segura entre los miembros del equipo que posean los privilegios requeridos.
-
-
-### Seguridad de Equipos de Trabajo
-Modyo posee de Políticas de Seguridad que explican acerca del uso aceptable y seguro de los equipos de trabajo. Todos los equipos de trabajo deben estar encriptados y protegidos por una contraseña segura, la cual además deberá ser requerida cada vez que el equipo se encuentre en inactividad por un periodo corto de tiempo.
-
-### Control de Sistemas Operacionales
-Todos los cambios al código y configuraciones de los sistemas de Modyo son supervisados por procesos de aprobación de cambios y de revisión de código estático para prevenir la introducción de código malicioso a los repositorios. 
-
-Todos los servidores y sistemas utilizados en la operación de la plataforma y sus proceso de operación poseen los servicios que no son requeridos deshabilitados, removiendo las credenciales y cuentas por defecto.
+### Restringir los Puertos Públicos de Entrada
+Los usuarios de Modyo deberán acceder de forma exclusiva por el puerto 443, detrás de un balanceador de carga que reparta el tráfico a las diferentes instancias de la plataforma. Entre el balanceador de carga y las instancias de la plataforma el tráfico podrá ir por el puerto 443 o 80 dependiendo de la seguridad interna de la red (ejemplo: redes aisladas y protegidas como el caso de las VPC de Amazon AWS podrían no requerir de encriptación interna).
 
 
 
-## Recuperación ante Desastres y Continuidad Operacional
-Modyo opera siguiendo las mejores prácticas de Amazon AWS. Todos los sistemas operan de forma redundante en al menos dos zonas de disponibilidad y los respaldos de información en al menos dos regiones geográficas distantes entre sí.
 
-Los servicios que por motivos de costos y eficiencia no sean requeridos de operar en modalidad de alta disponibilidad deberán al menos contar con un respaldo verificado para poder ser recreados en caso de pérdida.
-
-Para más detalle acerca de los planes y estrategias de continuidad operacional favor referirse a los documentos Modyo Business Continuity Plan y Modyo Disaster Recovery Plan.
-
-## Modelo de Responsabilidad Compartida
-En los casos con los cuales se mantengan integraciones a sistemas transaccionales vía API, REST, Servicios Web u otros (con o sin uso de VPNs), Modyo garantiza la seguridad perimetral de su infraestructura de nube, custodia de propiedad intelectual de códigos fuentes y datos sensibles de usuarios, siguiendo las mejores prácticas de seguridad de la industria. 
-
-No obstante lo anterior, será responsabilidad de cada cliente realizar validaciones de seguridad e integridad en las transacciones y monitorear los posibles usos fraudulentos de sus servicios expuestos. Modyo no será responsable por el uso indebido de los servicios expuestos en los puntos de integración otorgados por los clientes ni por perjuicios ocasionados por vulnerabilidades en sistemas que escapan de su control.
