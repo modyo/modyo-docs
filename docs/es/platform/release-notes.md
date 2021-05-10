@@ -3,7 +3,7 @@ search: true
 ---
 
 # Notas del release
- 
+
 ### 9.2.X - Primer release planificado para el primer trimestre del 2021.
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
@@ -15,6 +15,11 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
+
+### 9.1.17 - 5 de mayo del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Mejoras de rendimiento
 
 ### 9.1.16 - 23 de abril del 2021
 &nbsp;
@@ -372,7 +377,7 @@ search: true
 * Usa locations en content con mapas o con un formulario, configurando una api key propia de google en las settings de la cuenta.
 * Mejoras al [SDK de liquid](/es/platform/content/public-api-reference.html#sdk-de-liquid) de contenido.
 * Mejoras de usabilidad al [asset manager](/es/platform/content/asset-manager.html).
- 
+
 ### 9.0.1 - 17 de Enero del 2020
 &nbsp;
 <Badge text="Core" type="core"/>
