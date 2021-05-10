@@ -252,11 +252,11 @@ module.exports = {
               title: "Arquitectura",
               path: "/es/platform/infrastructure/",
               collapsable: true,
-              children: [
-                "/es/platform/infrastructure/integration",
-                "/es/platform/infrastructure/versions",
+              children: [       
+                "/es/platform/infrastructure/integration",         
                 "/es/platform/infrastructure/cloud",
                 "/es/platform/infrastructure/onpremise",
+                "/es/platform/infrastructure/connect",
                 "/es/platform/infrastructure/security",
               ],
             },
@@ -336,10 +336,9 @@ module.exports = {
               path: "/es/platform/tutorials/",
               collapsable: true,
               children: [
-                "/es/platform/tutorials/how-to-publish-content",
-                "/es/platform/tutorials/how-to-create-a-widget",
-                "/es/platform/tutorials/how-to-create-dynamicbank-content",
-                "/es/platform/tutorials/how-to-create-dynamicbank-home",
+                "/es/platform/tutorials/how-to-create-content",
+                "/es/platform/tutorials/how-to-create-home",
+                "/es/platform/tutorials/how-to-create-a-widget",                
               ],
             },
           ],
@@ -407,22 +406,7 @@ module.exports = {
                 "/es/widgets/insurance-retail/quote",
                 "/es/widgets/insurance-retail/detailed-view",
               ],
-            },
-            /* {
-              title: "Guías",
-              collapsable: true,
-              children: [
-                "/es/widgets/guides/look-and-feel",
-                "/es/widgets/guides/i18n",
-                "/es/widgets/guides/share-state",
-                "/es/widgets/guides/liquid-variables"
-              ]
-            }, */
-            /*{
-              title: "Onboarding",
-              collapsable: true,
-              children: ["/widgets/onboarding/"]
-            }*/
+            },           
           ],
           "/es/brand/": [
             {
@@ -435,23 +419,7 @@ module.exports = {
                 "/es/brand/typography",
                 "/es/brand/illustrations",
               ],
-            },
-            /*{
-              title: "Ilustraciones",
-              collapsable: true,
-              children: [
-                ["/es/brand/illustrations/", "Introducción"],
-                "/es/brand/illustrations/structure",
-                "/es/brand/illustrations/applications",
-              ],
-            },
-            {
-              title: "Documentos",
-              collapsable: true,
-              children: [
-                ["/brand/documents/", "Introducción"],
-              ],
-            },*/
+            },           
           ],
           "/es/legal/": [
             {

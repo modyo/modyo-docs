@@ -17,9 +17,15 @@ unless File.file? ENV["TRANSLATE_CREDENTIALS"]
     raise LoadError, 'No Google Cloud Translate credentials file found, please include it as google_cloud_credentials.json'
 end
 
-locales = ['en']
+doc_modules = ['platform','widgets','legal','coding','brand']
+master_locale = ['es']
+locales = ['es']
+
 
 source_files = Dir.glob("docs/platform/**/*.md").map {|file| file.gsub("docs/","")}
+
+
+
 
 locales.each do |locale|
     source_files.each do |source_file|

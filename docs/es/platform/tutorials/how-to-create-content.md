@@ -2,36 +2,46 @@
 search: true
 ---
 
-# Creación contenido para el sitio de Dynamic Bank
+# Creación y Publicación de Contenidos
 
 ## Introducción
 
-Crear contenido es la funcionalidad más importante a la hora de tener sitios dinámicos y poder disponibilizar estos en diversos dispositivos.
+Bienvenido al primer tutorial de la serie de entrenamiento de Modyo. En este primer tutorial revisaremos todo lo que necesitas saber para crear y publicar contenido mediante usando [Modyo Content](/es/platform/content), el cual usaremos más adelante en los siguientes tutoriales para construir un completo sitio Web. 
+
+Crear contenido es la funcionalidad más importante a la hora de tener sitios dinámicos y poder disponibilizar estos en diversos dispositivos. A lo largo de este tutorial (y otros tutoriales también) usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
+
+### Dynamic Bank
+Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer uan experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez que completes la serie de tutoriales tu proyecto debería lucir así:
+
 
 ![Dynamic Bank](/assets/img/tutorials/how-to-create-dynamicbank-content/home.png)
 
+
 ## Requisitos Previos
 
-Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo, además de tener algunos conocimientos muy básicos de HTML.
+Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo, además de tener algunos conocimientos muy básicos de HTML. Como este es el primer tutorial de la serie, no necesitas haber completado ninguno antes de comenzar.
+
+¿No tienes una cuenta en Modyo? Contacta al administrador de sistemas a cargo de la plataforma en tu empresa, o puedes crear una cuenta de pruebas sólo para tí desde [aquí](https://platform.modyo.cloud/onboarding).
+
 
 ## Paso 1: Crear un espacio de contenidos
 
-Generamos nuestro espacio con el nombre Bank el identificador y el idioma
+Primero generamos nuestro espacio con el nombre "Bank" el identificador y el idioma
 
 ![Create space](/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png)
 
-## Paso 2: Crear tipo de Hero
+## Paso 2: Crear tipo de "Hero"
 
-Generamos nuestro primero Tipo para el contenido del Hero con los siguientes campos:
+Generamos nuestro primero Tipo para el contenido del "Hero" con los siguientes campos:
 
-Asset: Cover <br>
-Multiline text: Text <br>
-Single line text: Title Link <br>
-Single line text: Url <br>
-Dropdown: Button color<br>
-<small><b>Dropdown options</b><br>
-\*primary<br>
-secondary</small>
+* Asset: Cover <br>
+* Multiline text: Text <br>
+* Single line text: Title Link <br>
+* Single line text: Url <br>
+* Dropdown: Button color<br>
+* <small><b>Dropdown options</b><br>
+ \*primary<br>
+ secondary</small>
 
 ![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
 
@@ -68,8 +78,7 @@ Single line text: Url <br>
 ![Type](/assets/img/tutorials/how-to-create-dynamicbank-content/news.png)
 
 ## Paso 5: Crear y publicar entrada
-
-Crear tres entrada con los siguientes campos
+¡Muy bien! ya has conseguido crear tus primeros tipos de contenido. Ahora crearemos las primeras entradas de éstos. Para ello crea tres entrada con los siguientes campos:
 
 #### Entrada Uno
 
@@ -116,20 +125,19 @@ Luego de tener nuestras entradas no olvidemos de publicarlas.
 
 Generar nuevo tipo para Beneficios con los campos:
 
-Asset: Cover <br>
-Multiline text: Excerpt
+* Asset: Cover
+* Multiline text: Excerpt
 
 ![Type](/assets/img/tutorials/how-to-create-dynamicbank-content/benefits.png)
 
 ## Paso 7: Crear Categorías
+¡Muy bien! Ya has conseguido crear tipos de contenidos y entradas en ellos. Ahora pondremos un poco más de órden creando categorías para poder filtrar nuestros beneficios:
 
-Crear categorías para poder filtrar nuestros beneficios:
-
-Gourmet<br>
-Healthy<br>
-Panoramas<br>
-Shopping<br>
-Travel
+- Gourmet
+- Healthy
+- Panoramas
+- Shopping
+- Travel
 
 ![Type](/assets/img/tutorials/how-to-create-dynamicbank-content/categories.png)
 
@@ -251,6 +259,13 @@ Me acerqué a Dynamic Bank, obtuve mi crédito y ya estoy solicitando el tercero
 
 Publicar entradas
 
-## Conclusion
+
+## Conclusión
+
+Si llegaste hasta acá te felicitamos. Has conseguido utilizar Modyo Content como todo un experimentado profesional. 
 
 Ya tenemos todas nuestras entradas para poder entregarlas al Front-end y el pueda generar el Home de Dynamic Bank sin problemas mientras nosotros podemos cambiar los textos desde contenido.
+
+¿Qué sigue ahora? Obtener todo este contenido desde un sitio Web creado en [Modyo Channels](/es/platform/channels).
+
+

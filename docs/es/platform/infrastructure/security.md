@@ -5,18 +5,14 @@ search: true
 # Seguridad
 En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta guía que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que Modyo Cloud y Enterprise Cloud, nuestras soluciones hosteadas, provee un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
 
-:::tip Reporte de vulnerabilidades
-Modyo posee un canal seguro y confidencial de reporte de incidencias de seguridad por medio del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.
-:::
-
 ### Conceptos Importantes
-**Limitar accesos:** Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
+* **Limitar accesos:** Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
 
-**Contención:** El sistema debe estar configurado de tal forma que minimice la cantidad de daño que un mal actor pueda ocasionar en caso de que sea vulnerado.
+* **Contención:** El sistema debe estar configurado de tal forma que minimice la cantidad de daño que un mal actor pueda ocasionar en caso de que sea vulnerado.
 
-**Preparación y conocimiento:** Mantener copias de seguridad y procedimientos para estar preparados en el caso de que una catástrofe ocurra.
+* **Preparación y conocimiento:** Mantener copias de seguridad y procedimientos para estar preparados en el caso de que una catástrofe ocurra.
 
-**Fuentes confiables:** Evitar implementar Widgets o códigos de fuentes poco confiables. Asegurar que todas las dependencias que se cargan en un sitio provengan de una fuente confiable.
+* **Fuentes confiables:** Evitar implementar Widgets o códigos de fuentes poco confiables. Asegurar que todas las dependencias que se cargan en un sitio provengan de una fuente confiable.
 
 ### Vulnerabilidades Locales
 Asegurar que el equipamiento computacional de todos los usuarios administradores de la plataforma se encuentre libre de spyware, malware e infecciones de virus. Incluso una instalación segura de Modyo podría ser vulnerada por un atacante que explote la sesión válida de un usuario desde un equipo local.
@@ -57,6 +53,8 @@ Modyo puede efectuar comunicaciones hacia Internet, en lo que refiere a las func
 ### Restringir los Puertos Públicos de Entrada
 Los usuarios de Modyo deberán acceder de forma exclusiva por el puerto 443, detrás de un balanceador de carga que reparta el tráfico a las diferentes instancias de la plataforma. Entre el balanceador de carga y las instancias de la plataforma el tráfico podrá ir por el puerto 443 o 80 dependiendo de la seguridad interna de la red (ejemplo: redes aisladas y protegidas como el caso de las VPC de Amazon AWS podrían no requerir de encriptación interna).
 
+### Reporte de vulnerabilidades
+Si piensas que encontraste una vulnerabilidad de seguridad en Modyo, ayúdanos por favor reportando el problema. Modyo posee canales seguros y confidenciales de reporte de incidencias de seguridad por medio de nuestro [centro de soporte](https://support.modyo.com/hc/es) o del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.
 
 
 

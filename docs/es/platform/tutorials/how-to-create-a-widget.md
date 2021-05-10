@@ -2,7 +2,7 @@
 search: true
 ---
 
-# ¿Cómo Crear un Widget?
+# Creando el Primer Widget
 
 ## Introducción
 

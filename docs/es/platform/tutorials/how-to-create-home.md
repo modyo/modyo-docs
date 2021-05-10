@@ -6255,3 +6255,6 @@ y de este modo tendremos nuestros widgets ya en el Home:
 ## Paso 15: Publicar
 
 Una vez revisado en modo preview estamos listos para publicar nuestros cambios, para esto el botón publish arriba a la derecha y revisado los cambios publicamos.
+
+
+## Conclusiones
