@@ -16,7 +16,7 @@ Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ej
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
-<a href="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" target="blank">Ver imagen ampliada</a>
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
 ## Requisitos Previos
 
