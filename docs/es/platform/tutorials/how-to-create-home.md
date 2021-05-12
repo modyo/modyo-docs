@@ -6,9 +6,17 @@ search: true
 
 ## Introducción
 
-En este tutorial nos vamos a enfocar en Channels y como crear un sitio, modificar la base del template y conectar widgets con contenido ya creado en el tutorial anterior.
+Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo, en este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels), como crear un sitio, modificar la base del template y conectar widgets con contenido ya creado en el tutorial anterior.
 
-![Dynamic Bank](/assets/img/tutorials/how-to-create-dynamicbank-content/home.png)
+Hacer el enlace entre Content y Channels funcionalidad más importante a la hora de tener sitios dinámicos y faciles de administrar por cualquier persona. A lo largo de este tutorial (y otros tutoriales también) usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
+
+### Dynamic Bank
+
+Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer uan experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez que completes la serie de tutoriales tu proyecto debería lucir así:
+
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
 ## Requisitos Previos
 
@@ -6255,6 +6263,5 @@ y de este modo tendremos nuestros widgets ya en el Home:
 ## Paso 15: Publicar
 
 Una vez revisado en modo preview estamos listos para publicar nuestros cambios, para esto el botón publish arriba a la derecha y revisado los cambios publicamos.
-
 
 ## Conclusiones

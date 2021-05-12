@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creación y Publicación de Contenidos
+# Creación y Publicación de Contenidos para Dynamic Bank
 
 ## Introducción
 
