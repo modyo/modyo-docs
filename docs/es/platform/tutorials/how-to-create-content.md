@@ -8,7 +8,9 @@ search: true
 
 Bienvenido al primer tutorial de la serie de entrenamiento de Modyo. En este primer tutorial revisaremos todo lo que necesitas saber para crear y publicar contenido mediante usando [Modyo Content](/es/platform/content), el cual usaremos más adelante en los siguientes tutoriales para construir un completo sitio Web.
 
-Crear contenido es la funcionalidad más importante a la hora de tener sitios dinámicos y poder disponibilizar estos en diversos dispositivos. A lo largo de este tutorial (y otros tutoriales también) usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
+Crear contenido es la funcionalidad más importante a la hora de tener sitios dinámicos y poder disponibilizar estos en diversos dispositivos.
+
+A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
 
 ### Dynamic Bank
 
@@ -20,7 +22,7 @@ Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ej
 
 ## Requisitos Previos
 
-Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo, además de tener algunos conocimientos muy básicos de HTML. Como este es el primer tutorial de la serie, no necesitas haber completado ninguno antes de comenzar.
+Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo. Como este es el primer tutorial de la serie, no necesitas haber completado ninguno antes de comenzar.
 
 ¿No tienes una cuenta en Modyo? Contacta al administrador de sistemas a cargo de la plataforma en tu empresa, o puedes crear una cuenta de pruebas sólo para tí desde [aquí](https://platform.modyo.cloud/onboarding).
 
