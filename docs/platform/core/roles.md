@@ -1,98 +1,81 @@
 ---
 search: true
+translated: true
 ---
 
-# Usuarios y Roles
+# Users and Roles
 
-## Equipo
+## Team
 
-Todos los usuarios internos de la plataforma conforman el equipo, y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema.
+All internal users of the platform make up the team, and each member of the platform can be assigned a specific role to unlock the full potential of the system.
 
-Para crear un usuario interno, debes hacer _click_ en el botón superior y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
+To create and add a new team member to the platform, you must click on the "New" button at the top of your interface and complete the fields. Once the registration is completed an invitation will be sent to the user by email, you can choose whether to send the login password in the same message.
 
-Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
+To check all users, you can filter by their status and by their roles within the platform.
 
-Si quieres desactivar un usuario interno, debes hacer _click_ en el botón de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer _click_ sobre el nombre del mismo.
+If you want to deactivate an internal user, you must click on the action button to the right. If you want to edit their data, you can use the same button, or click on their name.
 
-### Editar usuario
+### User Editing
 
-Al entrar a la vista de edición de un usuario interno, podrás ver en la pestaña principal un listado de todas sus acciones desde que se registró e ingresó por primera vez a la plataforma.
+When you enter the edit view of an internal user, you will see in the main tab a list of all his actions since he registered and logged in for the first time to the platform.
 
-El resto de las pestañas pueden incluír información visible o modificable de un usuario, entre ellas están:
+The rest of the tabs include visible or modifiable user information:
 
-- Sitios (a los que tiene acceso)
-- Rol
-- Credenciales
-- Accesos personalizados a la API
-- Datos generales
+- Sites (to which they have access)
+- Role
+- Credentials
+- API access
+- General data
+
+## Groups
+
+Groups allow you to streamline access control to different Modyo contexts, so you can assign a default role for a context (account, spaces, realms or sites) to multiple users at once and then add that user group to different contexts, allowing all the selected users to get the role of the group in the associated context.
+
+To create a group, go to the "Groups" section of the account settings, assign a name and role, and then start adding users to the group. You can modify the name, role and users belonging to the group after it is saved.
+
+Also, from the "Groups" section of each team member's profile, you can add or remove the user from existing groups.
+
+:::tip Tip
+Keep in mind that if a user already has an associated role in a context (account, space, realm or site) and you add him/her to a group with a higher privilege level role, the user will get the higher privilege level role between his/her own role and the group's role.
+:::
 
 ## Roles
 
-Los roles son una característica esencial de cada uno de los usuarios internos de la plataforma, ya que te permiten optimizar el flujo de trabajo que tiene cada uno de ellos.
+Roles are an essential characteristic of each internal user of the platform, since roles allow you to optimize the workflow that each internal user has.
 
-Modyo tiene 7 roles predeterminados con distintas funciones por secciones. Además permite crear más roles personalizados, dependiendo de la función o sitio que se necesite trabajar.
+Modyo has 11 default roles with different features per context that will allow you to distribute and control who has access to which sections of each context of the platform.
 
-### Roles predeterminados
+### Default Roles
 
-Modyo asigna por defecto roles predeterminados, ordenados según el contexto o sección en la que se ocupan.
+Modyo uses default roles that vary according to each section of the platform and the context:
 
-Los roles predeterminados que existen son, según contexto:
+#### Account-level roles:
 
-#### Roles por cuenta:
+- **Default user**: Has all the existing permissions, except for editing the configuration of each context. Must be invited to each context to be able to access its features.
+- **Default admin**: Has all existing permissions, but must be invited to each context in order to access its features.
+- **Owner**: Has all existing permissions and can access all contexts without having to be invited to them.
 
-- Default admin: Tiene todos los permisos existentes.
-- Default user: Tiene todos los permisos existentes. menos la edición de la configuración de la cuenta.
+#### Site-level roles:
 
-#### Roles por sitio:
+- **Site developer**: Can only edit resources (cannot publish, delete, rollback or edit configuration).
+- **Site reviewer**: Is a site admin but cannot edit the site configuration.
+- **Site admin**: Has all site-level permissions, but cannot create new sites.
 
-- Site admin: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
-- Site reviewer: Es un site admin pero sin edición de la configuración del sitio.
-- Site developer: Sólo puede editar recursos (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+#### Space-level roles:
 
-#### Roles por espacio:
+- Space admin: You have all the permissions at the level of a space, but you cannot create new spaces. Space admins can create and delete assets.
+- Space editor: A space admin, but without the ability to edit the space configuration. This role does not have asset permissions, nor can it create types.
+- Space writer: Can only edit content (cannot publish, delete, rollback or edit the configuration).
 
-- Space admin: Tiene todos los permisos a nivel de un space, pero no puede crear nuevos spaces, puede crear y eliminar assets.
-- Space editor: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
-- Space writer: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+- **Space writer**: Can only edit content (cannot publish, delete, rollback or edit the configuration).
+- **Space editor**: This is a space admin but without editing rights of the space configuration, does not have creation/deletion permissions for the assets and cannot create types.
+- **Space admin**: Has all the permissions at space level, but cannot create new spaces. This role can create and delete assets.
 
-El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
+The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
-### Roles personalizados
+### Access to applications:
+Since we have roles that allow access to all applications without restriction, Modyo allows you to restrict access to certain applications through team member settings. This way, you can for example give a user full access (Owner) but only to the channels application.
 
-Para crear un rol en específico, solo debes hacer _click_ en el botón superior.
+### Assign one role per account
 
-Ahí podrás darle un nombre y seleccionar qué tipo de contenidos internos podrá ver y manejar.
-
-Las funciones que se pueden modificar son:
-
-- Gestión de la cuenta
-- Registros de actividad de la cuenta
-- Equipo
-- Aplicaciones de API de la cuenta
-- Gestor de archivos
-- Campañas
-- Configuración de commerce
-- Formularios
-- Insights
-- Credenciales
-- Bloqueos
-- Plantillas de correo
-- API de correo
-- Dar de baja suscripciones
-- Notificaciones
-- Órdenes de compra
-- Medios de pago
-- Roles y permisos
-- Seguridad
-- Registros de la cuenta
-- Sitios
-- Espacios
-- Targets
-- Custom fields de usuarios
-- Usuarios de la cuenta
-- Webhooks
-- Revisión en equipo
-
-### Asignar un rol por cuenta
-
-Para asignar un rol en el contexto de cuenta, debes ir a la sección de Equipo y hacer clic en el perfil del usuario que se quiere cambiar. Después ingresar a la pestaña Rol y seleccionar el rol que se desee asignar al usuario.
+To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user.

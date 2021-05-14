@@ -1,41 +1,23 @@
-@font-face{
-	font-family: 'Jost';
-	font-weight: 400;
-	font-style: normal;
-	src: url(https://cloud.modyocdn.com/uploads/76a0afe0-8f3a-4674-ac51-9996bcf49334/original/Jost-400-Book.otf)
-}
-
-@font-face{
-	font-family: 'Jost';
-	font-weight: 400;
-	font-style: italic;
-	src: url(https://cloud.modyocdn.com/uploads/27fec775-f81a-4c3f-a927-9843a845f321/original/Jost-400-BookItalic.otf)
-}
-
-@font-face{
-	font-family: 'Jost';
-	font-weight: 600;
-	font-style: normal;
-	src: url(https://cloud.modyocdn.com/uploads/efd220dd-0973-42ad-90b8-07b274e6d3a2/original/Jost-600-Semi.otf)
-}
-
-@font-face{
-	font-family: 'Jost';
-	font-weight: 600;
-	font-style: italic;
-	src: url(https://cloud.modyocdn.com/uploads/45712e90-4270-4508-a0b6-22925f16180b/original/Jost-600-SemiItalic.otf)
-}
+$nprogressColor = #4081E2
+$accentColor = #2068D5
+$textColor = #444C60
+$navbarHeight = 4rem
+$contentWidth = 1024px
 
 html,
 body {
-	font-family: 'Jost', 'Helvetica', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial';
+	font-family: 'DM Sans', sans-serif;
+	line-height: 1.5;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: geometricPrecision;
-	color: #333;
+	color: #444C60;
 	background: #f4f4f4;
 	height: 100%;
 }
+
+h1,h2,h3
+	color: #151F38;
 
 .theme-container.no-sidebar {
 	height: 100%;
@@ -49,7 +31,6 @@ body {
 }
 
 .page {
-	background: #FFF;
 	min-height: calc(100vh - 35px);
 }
 
@@ -57,94 +38,30 @@ body {
 	height: 100%;
 }
 
-.home {
-	background: #f8fdf4 no-repeat bottom url('/assets/img/hero.jpg');
-	background-size: 1470px;
-	height: 440px;
-	padding: 0 20px;
-	text-align: center;
-	max-width: none;
-	margin: 0 auto;
-}
-
-.home .hero {
-	padding-top: 160px;
-}
-
-.home .hero .action-button {
-	background: #61a60e;
-	border: 0;
-}
-
-.home .feature h2 {
-	color: #333;
-}
-
-.home .hero .action-button:hover {
-	background: #61a60e
-}
-
-a {
-	color: #61a60e;
-}
-
 .sidebar {
-	background: #f4f4f4;
-	border: 0;
 	font-size: 16px;
 }
 
-.navbar {
-	border-bottom: 0;
-	box-shadow: 0 0 4px rgba(0,0,0,.1);
+a.sidebar-link {
+	padding-top: 13px;
+}
+
+.sidebar-group ul.sidebar-sub-headers a.sidebar-link {
+	padding-top: 13px;
 }
 
 .sidebar-group a.sidebar-link.active {
-	color: #61a60e;
-	border-left-color: #61a60e;
+	color: #4081E2;
+	border-left-color: #4081E2;
+	background-color: #F3F8FA;
 }
 
-.nav-item > a:not(.external):hover, .nav-item > a:not(.external).router-link-active {
-	border-color: #61a60e
-}
-
-.custom-block.tip {
-	border-color: #1784d8
+.sidebar-group ul.sidebar-sub-headers a.sidebar-link.active {
+	background-color: #FFFFFF;
 }
 
 .sidebar-group a.sidebar-link:hover {
-	color: #61a60e;
-}
-
-.home .features {
-	border-top: 0;
-	padding-top: 100px;
-}
-
-.home .description {
-	margin-top: 10px !important
-}
-
-.home .hero h1 {
-	margin-bottom: 0;
-}
-
-.home .hero img {
-	display: none;
-}
-
-.features {
-	max-width: 960px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.features p {
-	height: 90px;
-}
-
-.content.custom .feature img {
-	max-width: 80px;
+	color: #4081E2;
 }
 
 pre {
@@ -156,34 +73,47 @@ code {
 	white-space : pre-wrap !important;
 }
 
-.theme-default-content img {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.circle {
+    width: 130px;
+    height: 130px;
+    float: left;
+    background-color: #000000;
+    border-radius: 100px;
+    margin-right: 20px;
 }
 
-.custom-block.tip, .custom-block.warning, .custom-block.danger {
-	margin-top: 35px;
-	margin-bottom: 35px;
+.cool-table table {
+	border: 0px;
 }
 
-.home .feature img {
-	width: 40%
+.center {
+	text-align: center;
 }
 
-a, p a code {
-	color: #61a60e;
+.dont {
+    padding-left: 40px;
+    background: url(https://cloud.modyocdn.com/uploads/ede84e61-77d1-46fd-919c-fc294a8746c6/original/cancel.svg) no-repeat 0px 0px;
+    min-height: 30px;
+    margin-top: 10px;
 }
 
-.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active, .dropdown-wrapper .nav-dropdown .dropdown-item a:hover {
-	color: #61a60e;
+.card {
+    display: block;
+    background-color: #F6F7F7;
+    margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px 20px 20px 20px;
 }
 
-.theme-default-content:not(.custom), .page-edit, .page-nav {
-	max-width: 1024px !important;
-	margin: 0 auto;
-	padding: 2rem 2.5rem;
+.color-box {
+	width:150px;
+	text-align:center;
+	padding:10px 30px 10px 30px;
 }
 
+.color-table {
+	padding:20px;
+	margin:0px;
+	height:auto;
+	overflow: visible;
+}

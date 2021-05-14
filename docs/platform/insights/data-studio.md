@@ -2,101 +2,103 @@
 search: true
 ---
 
-# Modyo Insights con Data Studio
+# Modyo Insights with Data Studio
 
-La visualización de datos es un paso crítico para que los datos y el análisis sean una parte central de decisiones, procesos y la cultura general de una organización. Nos permite identificar con mayor facilidad tendencias y pautas, además de mejorar la comunicación de datos para la toma de decisiones.
+Data visualization is important in making data and analysis a central part of business decisions, systems, processes and overall culture. It allows trends and patterns to be more easily seen and facilitates communication of data for decision-making.
 
-Data Studio es la solución de reportes de Google que permite crear fácilmente visualizaciones personalizadas de datos. Para facilitar aún más las cosas, hemos creado plantillas de Data Studio que puedes usar para conectar tus fuentes de datos en minutos.
+Data Studio is Google’s reporting solution that allows you to easily create custom visualizations of your data. To make things even easier, we’ve created Data Studio templates that you can connect to your data sources out of the box.
 
-Esta guía te guiará a través de los pasos para copiar una plantilla de Data Studio y conectar tus propias fuentes de datos para analizar el rendimiento de tus canales digitales y descubrir patrones en tus datos. 
+This guide will walk you through the simple steps to copy a Data Studio reporting template and connect your own data sources so you can analyze the performance of your digital channels and gain insights from your data. 
 
-Después de recorrer esta guía, puedes aplicar los mismos pasos para otras plantillas de Data Studio.
+After walking through this example, you’ll be able to apply the same steps for other Data Studio report templates.
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AMNY32HIO0g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Conecta tus datos a una plantilla de Data Studio
+### Connect your data to a Data Studio template
 
-La galería de plantillas se encuentra en la plataforma Modyo en Insights > Data studio.
+The templates gallery can be found in the Modyo platform under Insights > Data studio.
 
 ![Data studio](/assets/img/insights/0.png)
 
-Debes haber iniciado sesión a una cuenta de Google en tu navegador para copiar las plantillas. Para este ejemplo en específico, también deberías tener acceso a las cuentas de Google Analytics y/o Google Search Console de tu sitio.
+You should be signed into a Google account in your browser to copy the templates. For this example you should also have access to your site’s Google Analytics and/or Google Search Console accounts.
 
-Pasos para conectar sus datos a una plantilla de Google Data Studio:
+Steps to connect your data to a Google Data Studio template:
 
-1. Elige la plantilla de Data Studio que quieras utilizar
 
-    Para esta guía utilizaremos la plantilla de Google Analytics + Search Console. Esta plantilla está diseñada para ofrecerte una visión general de las métricas relacionadas con la adquisición, el comportamiento, las conversiones y el SEO de tus canales digitales.
+1. Choose the corresponding data studio template
 
-    Copia el informe haciendo clic en este icono en la esquina superior derecha:
+    For this guide we'll be using the Google Analytics + Search Console template. This template is designed to give you a general overview on metrics related to acquisition, behavior, conversions & SEO of your digital channels.
+
+    Copy the report by clicking on this icon in the upper right corner:
 
     ![Data studio](/assets/img/insights/1.png)
 
-2. Si es la primera vez que utilizas Data studio, verás una ventana emergente. Haz clic en el botón de "Empezar".
+2. If this is your first time using Data studio you will see a pop-up window. Click on the "Get started" button.
 
-    Si has usado Data studio antes puedes saltar al siguiente paso
+    If you have used Data studio before you can skip this step
 
-    En la siguiente página puede seleccionar su país, el idioma deseado y confirmar los Términos y Condiciones
+    In the next page you can select your country, desired language and confirm the Terms & Conditions.
 
     ![Data studio](/assets/img/insights/2.png)
 
-    Una vez que hayas terminado, intenta copiar el informe de nuevo.
+    Once you are done try copying the report again.
 
-3. Selecciona o crea las fuentes de datos necesarias
+3. Select or create the required data sources
 
-    Todas las fuentes de datos actuales son conjuntos de datos de muestra suministrados por Google.
+    All of the current data sources are sample data sets supplied by Google.
 
-    Primero haz clic en la lista desplegable correspondiente a los datos de Google Analytics en "Nueva fuente de datos".
+    First click on the dropdown list corresponding to Google Analytics Data under "New Data Source"
 
-    En la lista elige "Crear una nueva fuente de datos"
+    In the list choose "Create a New Data Source"
 
     ![Data studio](/assets/img/insights/3.png)
     
     ![Data studio](/assets/img/insights/4.png)
 
-4. Crear una fuente de datos de Google Analytics
+4. Create a Google Analytics Data Source
 
-    Selecciona el conector predeterminado de Google Analytics y selecciona la cuenta, la propiedad y la vista que deseas conectar.
+    Select the default Google Analytics Connector and select the desired Account, Property & View
 
     ![Data studio](/assets/img/insights/5.png)
 
     ![Data studio](/assets/img/insights/6.png)
 
-    Para terminar haz clic en "Conectar"
+    To finish click "Connect"
 
-    La siguiente página muestra las dimensiones y métricas disponibles. No hay necesidad de modificar nada, haz clic en "Añadir al informe" para continuar.
+    The next page shows the available dimensions & metrics. There is no need to modify anything, click "Add to report" to continue
     
     ![Data studio](/assets/img/insights/7.png)
 
-    Esto te llevará de vuelta a la ventana de "Copia este informe". 
+    This will take you back to the "Copy this report" window. 
 
-5. Crea las fuentes de  Google Search Console
+5. Create Google Search Console Sources
 
-    Al igual que en el paso anterior, haz clic en "Crear una nueva fuente de datos" en el menú desplegable de "Datos de la consola de búsqueda (URL)".
+    Just like we did in the previous step, click on "Create a new data source" in the dropdown for "Search Console Data (URL)".
 
     ![Data studio](/assets/img/insights/8.png)
 
-    En la siguiente ventana, busca y selecciona el conector de Google Search Console. 
+    In the next window find and select the Search Console Connector by Google.
 
     ![Data studio](/assets/img/insights/9.png)
 
-    Elige la cuenta deseada y en "Tablas" selecciona "Impresión de Url" 
+    Choose the desired account and under "Tables" select "Url Impression" 
 
     ![Data studio](/assets/img/insights/10.png)
 
-    Haz clic en "Conectar" para continuar y luego "Añadir al informe"
+    Click on "Connect" to continue and then "Add to report"
 
-    Repite este proceso para la siguiente fuente de datos y en "Tabla" selecciona "Impresión del sitio".
+    Repeat this process for the next data source and in "Table" select "Site impression"
 
-6. Copie el informe con sus datos
+6. Copy the report with your data
 
-    Una vez que hayas creado todas las fuentes de datos, comprueba que las nuevas fuentes se correspondan a la fuente de datos original del mismo tipo. 
+    Once all of the new data sources have been created double-check that the new sources are mapped to the corresponding original data source. 
 
-    Para terminar, haz clic en "Copiar informe"
+    To finish, click on "Copy Report".
 
-**¿Todavía tienes preguntas?**
+**Still have questions?**
 
-No dudes en comunicarte con nosotros para que te podamos ayudar.
+If you still have any questions, please feel free to send us a message so that we can help you out.
 
 
 

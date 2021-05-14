@@ -1,41 +1,42 @@
 ---
 search: true
+translated: true
 ---
 
-# Transferencias
+# Transfer
 
-Transferencias es un wigdet que permite a un cliente mover dinero entre sus cuentas o transferir a terceros de manera simple y segura.
+The Transfer widget allows customers to move money between their accounts or transfer money to third parties with ease and security.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-transfer
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-transfer)
+[Open in new tab](https://widgets.modyo.com/retail/transfer)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
 
-Este widget se divide en funcionalidades para dos productos similares: Transferencia a Terceros y Transferencia entre Cuentas.
+This widget includes features for two similar products: Transfer to Third Party and Transfer between Accounts.
 
-### Transferencia entre Cuentas
+### Transfers between Accounts
 
-| Funcionalidad            | Descripción                                                                                                                                          |
-| :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Origen de transferencia  | Selecciona la cuenta corriente o vista desde la cual saldrá el monto de dinero a mover. Además, muestra el saldo disponible que se puede transferir. |
-| Destino de transferencia | Selecciona la cuenta a la cual se moverá el dinero                                                                                                   |
-| Programar transferencia  | Permite seleccionar na frecuencia de tiempo entre la cual se harán transferencias de un monto de dinero predeterminado.                              |
-| Últimos movimientos      | Muestra todos los movimientos nacionales e internacionales que no están facturados.                                                                  |
+| Feature             | Description                                                                                                                                        |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Origin Account      | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred.      |
+| Destination Account | Select the recipient account to which the money will be transferred and deposited.                                                                           |
+| Schedule Transfer   | Allows the client to schedule periodic transfers by selecting the frequency (e.g. weekly, monthly, quarterly) of the transfers. |
+| Recent Activity     | Displays all recent activity that has not yet been invoiced.                                                                                       |
 
-### Transferencia a Terceros
+### Third-party Transfers
 
-| Funcionalidad      | Descripción                                                                                                                                                                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cuenta de Origen   | Entrega información sobre la cuenta de la cual se realizará la transferencia, como número de cuenta y saldo disponible. Permite agendar movimientos hacia uno de los destinatarios registrados.                |
-| Cuenta de Destino  | Permite seleccionar la cuenta que recibirá la transferencia realizada por el usuario. El cliente puede seleccionar un contacto ya registrado o agregar nuevos contactos.                                       |
-| Mis Contactos      | Permite seleccionar la cuenta que recibirá la transferencia, entre las cuentas ya registradas por el cliente. Entrega un buscados para encontrar de manera ágil y rápida al destinatarios de la transferencia. |
-| Nuevo Contacto     | Permite ingresar la información sobre un destinatario que no esté registrado en la cuenta del cliente. Incluye nombre, banco, tipo de cuenta, número de cuenta, RUT y correo electrónico del destinatario.     |
-| Monto a transferir | Permite ingresar el monto que se transferirá hacia la cuenta del destinatario seleccionado.                                                                                                                    |
+| Feature             | Description                                                                                                                                                                               |
+| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Origin Account      | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred.                                             |
+| Destination Account | Select the account to which the money will be transferred and deposited.                                                                                                                  |
+| My Contacts         | Allows you to select the account that will receive the transfer, among the accounts already registered by the client. Offers a search bar to find transfer recipients quickly and easily. |
+| New Contact         | Allows you to enter information about a recipient who is not registered on the customer's account. Includes name, bank, account type, account number, ID and recipient's email.           |
+| Transfer Amount     | Allows you to enter the amount to be transferred and deposited to the selected recipient's account.                                                                                       |
 
 <script>
 
@@ -48,10 +49,11 @@ Este widget se divide en funcionalidades para dos productos similares: Transfere
             ifrm.style.height = ht + 4 + "px";
           }
       }
+
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

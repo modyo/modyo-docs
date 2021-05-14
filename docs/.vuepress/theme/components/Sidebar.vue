@@ -22,12 +22,15 @@ export default {
 
 <style lang="stylus">
 .sidebar
+  background-color #FFFFFF
+  border-right 2px solid #F4F4F4
   ul
     padding 0
     margin 0
     list-style-type none
   a
     display inline-block
+    height 45px
   .nav-links
     display none
     border-bottom 1px solid $borderColor
@@ -37,16 +40,16 @@ export default {
     .nav-item, .repo-link
       display block
       line-height 1.25rem
-      font-size 1.1em
+      font-size 1.0em
       padding 0.5rem 0 0.5rem 1.5rem
   & > .sidebar-links
     padding 1.5rem 0
-    & > li > a.sidebar-link
-      font-size 1.1em
+    & > li > a.sidebar-link      
+      font-size 1.0em
       line-height 1.7
       font-weight bold
     & > li:not(:first-child)
-      margin-top .75rem
+      margin-top .60rem
 
 @media (max-width: $MQMobile)
   .sidebar

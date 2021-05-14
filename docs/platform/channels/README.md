@@ -1,23 +1,23 @@
 ---
 search: true
+translated: true
 ---
 
 # Modyo Channels
 
-**Modyo Channels** es una aplicación que permite la gestión de contenido y aplicaciones Web para múltiples sitios y lenguajes de forma central.
+Modyo Channels is an application that allows you to manage content distribution and web applications for multiple sites and languages in one place.
 
-<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
+<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
-**Modyo Channels** provee un extenso acceso al código HTML de las plantillas, entregando control absoluto a los desarrolladores de los detalles acerca de cómo se implementan las experiencias digitales de los usuarios y mediante un sistema integrado de versionamiento.
+Modyo Channels provides extensive access to the base code of every channel through a set of templates, giving developers complete control of every detail of a user's digital experiences, published through an integrated version control system.
 
-**Modyo Channels** cuenta con plantillas de diseño, editables por HTML que facilitan la reutilización de código.
+Modyo Channels has editable design templates that make it easy to reuse code.
 
-**Modyo Channels**, cuenta además, con un sistema de plantillas basado en [Liquid Markup](/platform/channels/liquid-markup.html) que permite la interpolación dinámica de información la cual se procesa de forma eficiente desde el lado del servidor.
+Modyo Channels also has a templating system based on [Liquid Markup](/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information which is efficiently processed from the server side.
 
-### Funcionalidades principales
-- [Gestión de sitios](/platform/channels/sites.html) para organizar los canales digitales.
-- [Páginas dinámicas](/platform/channels/pages.html) para definir la estructura de cada sitio y agregar contenido en el.
-- [Widgets](/platform/channels/widgets.html) para crear componentes reutilizables usando tecnologías como Javascript, HTML y CSS.
-- [Plantillas](/platform/channels/templates.html) para organizar las estructuras globales del sitio y el sistema de diseño.
+### Main functionalities
 
-
+- [Site management](/platform/channels/sites.html) to organize digital channels.
+- [Dynamic pages](/platform/channels/pages.html) to define the structure of each site and add content to it.
+- [Widgets](/platform/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML and CSS.
+- [Templates](/platform/channels/templates.html) to organize the overall structure of a site and its design system.

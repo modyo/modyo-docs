@@ -1,35 +1,36 @@
 ---
 search: true
+translated: true
 ---
 
-# ¿Qué hay de nuevo en Modyo?
+# What's new in Modyo?
 
-En la nueva versión de plataforma, Modyo 9.0, destacamos las siguientes nuevas funcionalidades:
+In the new version of the platform, Modyo 9.0, we highlight the following new features:
 
-### Nueva interfaz simplificada
+### New simplified interface
 
-Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de cambiar el logo de Modyo para personalizarla según el cliente.
+A new, simplified and cleaner user interface that now also allows you to change the Modyo logo within your account to any logo you like.
 
-### Nueva aplicación Modyo Content
+### New Modyo Content application
 
-Permite su uso tanto en modalidad _headless_ por medio de sus [API y SDKs](/platform/content/public-api-reference.html), como desacoplada dentro de plantillas desarrolladas en [Liquid](/platform/channels/liquid-markup.html).
+The Modyo Content application now serves content through its [API and SDKs](/platform/content/public-api-reference.html) as a _headless_ solution, and also serves _decoupled_ content within Modyo Channels through [Liquid](/platform/channels/liquid-markup.html).
 
-### Gestor de Archivos
+### Asset Manager
 
-Permite la gestión de activos digitales, incluyendo diversas funcionalidades como la gestión de _tags_, el redimensionado de imágenes, entre otros.
+The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as tag management, image resizing, and more.
 
-### Revisión en Equipo
+### Team Review
 
-Evolución de la antigua funcionalidad de _workflows_, la que permite mejorar la experiencia de colaboración con herramientas de revisión y aprobación de cambios.
+Modyo's new Team Review system is the evolution of the earlier _Workflows_ functionality, which improves team collaboration with tools to review and approve changes to content and other elements within the platform. Team Review also has more options, allowing you to enable or disable review systems, assign specific team members to their respective roles, and customize separate sets of rules in any content space or digital channel.
 
-### Nuevos y simplificados roles y permisos
+### New and simplified roles and permissions
 
-La gestión de roles y permisos para sitios y espacios de contenido ha sido simplificada, permitiéndole agilizar sus desarrollos.
+The management of roles and permissions for sites and content spaces has been simplified, allowing you to streamline your development and content production.
 
-### Separación de usuarios y administradores
+### Separation of users and administrators
 
-Ahora los usuarios de tus sitios son entidades completamente distintas de los administradores.
+Modyo 9.0 improves upon user management by completely separating users in the front end (site visitors, people interacting in your channels) from the administrators (users with assigned roles, content managers, channels developers, engineers, etc.). User and administrative login panels are now separate, allowing for independent identity management service integration, and a custom look-and-feel.
 
-### Soporte para PWA
+### Support for PWA
 
-Modyo ahora tiene soporte nativo para los habilitadores de Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen intermitencia o pierden la conexión.
+Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittent or bad network connections, and can be installed by the user without the need of an app store.

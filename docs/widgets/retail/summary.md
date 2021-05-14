@@ -1,65 +1,65 @@
 ---
 search: true
+translated: true
 ---
 
-# Resumen de Cuentas
+# Summary
 
-El Resumen de Cuentas permite mostrar una gráfica detallada de toda la cartera de productos de un cliente, con la cual puede hacer operaciones básicas o dirigirse a widgets para realizar más movimientos.
+The Account Summary widget allows you to review detailed information of your financial products, with which you can make basic payments and transfers, or navigate to other widgets to complete more transactions.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-summary
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/summary)
+[Open in new tab](https://widgets.modyo.com/retail/summary)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/summary" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/summary" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-### Funciones
+### Purpose
 
-Presenta la posición del cliente en los distintos productos que tiene con la institución financiera. (Cuentas y Tarjetas).
+The Account Summary presents a customer's financial state within the different products they have with the financial institution (Accounts and Credit Cards).
 
-Los resúmenes individuales presentan la información del producto específico de manera numérica y gráfica.
+Each summary presents financial information for a specific product both numerically and graphically.
 
-#### Cuenta Corriente
+#### Checking Account
 
-La sección de Cuenta Corriente permite ver un resumen general de los montos disponibles, además de acceso a operaciones como transferencias y movimientos.
+The Checking Account section allows you to see an overview of the available balance amounts and gives you access to transactions such as transfers and movements.
 
-| Funcionalidad    | Descripción                                                                              |
-| :--------------- | :--------------------------------------------------------------------------------------- |
-| Saldo disponible | Muestra el saldo total disponible en la cuenta corriente.                                |
-| Total Cargos     | Permite ver el total de cargos de cada cuenta.                                           |
-| Total Abonos     | Muestra el total de abonos o depósitos que se le han hecho a una cuenta.                 |
-| Linea de Crédito | Muestra el estado de la línea de crédito de la cuenta.                                   |
-| Monto disponible | Muestra el monto total disponible en la línea de crédito de la cuenta.                   |
-| Transferir       | Deriva al widget de Transferencias de cada cuenta.                                       |
-| Movimientos      | Deriva al widget de Movimientos de la cuenta, para ver detalladamente cada uno de ellos. |
+| Feature           | Description                                                                             |
+| :---------------- | :-------------------------------------------------------------------------------------- |
+| Available Balance | Shows the total available balance in the checking account.                              |
+| Withdrawals       | Allows you to see the total withdrawals within the account.                             |
+| Deposits          | Shows the total credits or deposits made to an account.                                 |
+| Line of Credit    | Displays the line of credit status of the account.                                      |
+| Available Balance | Displays the total available balance in the line of credit associated with the account. |
+| Transfer          | Switches to the Transfer widget associated with the account.                            |
+| Transactions      | Switches to the Transfers History widget, to see each movement in detail.                |
 
-#### Cuenta Vista
+#### Savings Account
 
-Esta sección tiene las mismas funciones que la de Cuenta Corriente. Sin embargo, sólo cambia en la sección Linea de Crédito, donde se reemplaza por los últimos movimientos y cargos realizados al producto.
+Savings Accounts have the same features as Checking Accounts. However, Savings Accounts are not associated with Lines of Credit, and display a list of recent activity instead.
 
-| Funcionalidad       | Descripción                                                                                            |
-| :------------------ | :----------------------------------------------------------------------------------------------------- |
-| Saldo disponible    | Muestra el saldo total disponible en la cuenta corriente.                                              |
-| Total Cargos        | Permite ver el total de cargos de cada cuenta.                                                         |
-| Total Abonos        | Muestra el total de abonos o depósitos que se le han hecho a una cuenta.                               |
-| Últimos movimientos | Muestra un listado de los últimos movimientos y cargos hechos a la cuenta, junto con su monto y fecha. |
-| Transferir          | Deriva al widget de Transferencias de cada cuenta.                                                     |
-| Movimientos         | Deriva al widget de Movimientos de la cuenta, para ver detalladamente cada uno de ellos.               |
+| Feature           | Description                                                                                              |
+| :---------------- | :------------------------------------------------------------------------------------------------------- |
+| Available Balance | Show the total available balance in the Savings Account.                                                 |
+| Withdrawals       | Allows you to see the total withdrawals within the account.                                              |
+| Deposits          | Shows the total credits or deposits made to an account.                                                  |
+| Recent activity   | Displays a list of the latest transactions made within the account, together with the amounts and dates. |
+| Transfer          | Switches to the Transfer widget associated with the account.                                             |
+| Transactions      | Switches to the Transfers History widget, to see each movement in detail.                                 |
 
-#### Tarjetas de Crédito
+#### Credit Cards
 
-Cada una de las tarjetas de crédito tiene su propio módulo gráfico, que permite ver los detalles de cada una de ellas, su monto utilizado y disponible y los últimos movimientos.
-Además, separa el cupo nacional del internacional, incluyendo una gráfica que permite ver en proporción lo utilizado.
+Each of the credit cards has its own section within the summary, which shows the details of each card, the total amount of credit used, the amount available, and the latest movements.
+The widget also allows you to separate national from international lines of credit, showing you graphically the usage of each one.
 
-| Funcionalidad       | Descripción                                                                                                                                     |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Monto nacional      | Muestra el monto nacional utilizado y autorizado, además de una gráfica que indica el primer número en pesos versus el total autorizado.        |
-| Monto internacional | Muestra el monto internacional utilizado y autorizado, además de una gráfica que indica el primer número versus el total autorizado en dólares. |
-| Pagar               | Deriva al widget de Pago de Tarjetas, donde podrá abonar los montos facturados.                                                                 |
-| Movimientos         | Deriva al widget de Movimientos de la tarjeta, para ver detalladamente cada uno de ellos.                                                       |
+| Feature          | Description                                                                                                                                     |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Available Credit | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used versus the total credit limit. |
+| Pay              | Switches to the Card Payment widget, where you can pay invoiced amounts.                                                                        |
+| Transactions     | Switches to the Transactions widget of the card, where you can review the details of each transaction.                                          |
 
 <script>
 
@@ -75,7 +75,7 @@ Además, separa el cupo nacional del internacional, incluyendo una gráfica que 
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

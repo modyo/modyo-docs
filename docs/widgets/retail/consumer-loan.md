@@ -1,32 +1,37 @@
 ---
 search: true
+translated: true
 ---
 
-# Crédito de Consumo
+# Personal Loan
 
-Este widget permite hacer una simulación de un crédito de consumo y comenzar la solicitud del mismo con las variables que cada cliente necesite.
+Modyo also offers a widget that allows customers to simulate and apply for a personal loan with the information and terms they need.
 
-#### Instalación:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-consumer-loan
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-consumer-loan)
+[Open in new tab](https://widgets.modyo.com/retail/consumer-loan)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-consumer-loan" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/consumer-loan" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad         | Descripción                                                                                                                                                                 |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Monto del Crédito     | Permite ingresar el monto del crédito en pesos que el cliente quiere simular.                                                                                               |
-| Cuotas                | Permite elegir la cantidad de cuotas en las que el cliente quiere simular el crédito de consumo.                                                                            |
-| Meses de gracia       | Permite seleccionar la cantidad de meses de gracia que el cliente desea agregar en su simulación.                                                                           |
-| Fechas de no pago     | Entrega la posibilidad de elegir los meses en los que el cliente no realizará el pago del crédito, si lo permite                                                            |
-| Abono en cuenta       | Permite seleccionar la cuenta de destino a la cual se cargará el monto solicitado si el crédito es aprobado por la institución.                                             |
-| Seguros               | Entrega la posibilidad de elegir qué seguros se incluirán en la simulación del crédito.                                                                                     |
-| Resumen de simulación | Presenta información general sobre la simulación de créditro realizada. Incluye costo total del crédito, cantidad de cuotas, valor de cuota y tasas de interés respectivas. |
-| Detalle de simulación | Muestra la información detallada de la simulación de crédito. Incluye monto líquido, impuestos, seguros y gastos, entre otros.                                              |
-| Solicitud             | Permite confirmar la simulación y gestionar la solicitud del crédito de consumo con la institución.                                                                         |
+The default properties that the client can modify for the simulation and loan application are:
+
+| Functionality         | Description                                                                                                                |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| Loan Amount           | The loan amount to be requested from to the institution.                                                                   |
+| Payments              | Shows the total payment amounts for the requested personal loan.                                                           |
+| Months of non-payment | This section allows customers to select the months of their grace period.                                                  |
+| Grace period          | If necessary, customers can select non-payment dates for their personal loan.                                              |
+| Destination account   | Corresponds to the account in which the requested loan amount will be deposited.                                           |
+| Insurance             | Shows different types of insurance that clients can add to their loans if necessary. |
+|                       |
+
+According to the selected options, the widget will display the credit amount and simulate the necessary payments, along with a report of the corresponding credit details.
+
+Lastly, a button will appear that allows the client to directly apply for the loan.
 
 <script>
 
@@ -42,7 +47,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

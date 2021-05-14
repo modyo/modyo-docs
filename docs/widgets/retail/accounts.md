@@ -1,44 +1,37 @@
 ---
 search: true
+translated: true
 ---
 
-# Cuentas
+# Accounts
 
-Con este widget puedes ver un resumen de las cuentas bancarias, sacar cartolas y ver en detalle cada transacción realizada durante determinados períodos de tiempo.
+With this widget you can see a summary of your bank accounts, download bank statements and see each transaction made in detail during certain periods of time.
 
-#### Instalación:
+#### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-accounts)
+[Open in new tab](https://widgets.modyo.com/retail/accounts)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-accounts" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/accounts" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-#### Cuenta Corriente
+#### Checking Account
 
-| Funcionalidad               | Descripción                                                                                                                                                                                                                                          |
-| :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resumen de Cuenta Corriente | Presenta el estado de la cuenta y si corresponde, el estado de la línea de crédito asociada.<br><br> La información específica se presenta de manera numérica y gráfica.                                                                             |
-| Consulta de Movimientos     | Presenta los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha.<br><br> Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.                                           |
-| Cartolas Históricas         | Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha.<br><br> Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados. |
+| Functionality            | Description                                                                                                                                                                                                           |
+| :----------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Checking Account Summary | Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.                                       |
+| View recent activity     | Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.                                               |
+| Account Statements       | Displays account statements from previous periods which can be expanded to show the transactions of each selected account statement, sorted by date.<br><br> Clients can also search within the displayed transactions. |
 
-#### Cuenta Vista
+#### Savings Account
 
-| Funcionalidad           | Descripción                                                                                                                                                                                                                                                     |
-| :---------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resumen de Cuenta Vista | Muestra el estado de la cuenta similar a lo que se presenta para una cuenta corriente, con la diferencia que para una cuenta vista no existen cheques ni línea de crédito asociada. <br><br>La información específica se presenta de manera numérica y tabular. |
-| Consulta de Movimientos | Muestra los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha. <br><br>Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.                                                       |
-| Cartolas Históricas     | Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha. <br><br>Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.            |
-
-#### Línea de Crédito
-
-| Funcionalidad           | Descripción                                                                                                                                                                                                                                  |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Consulta de Movimientos | Presenta los últimos movimientos que se han realizado sobre la cuenta, ordenados inicialmente por fecha. Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.                                           |
-| Cartolas Históricas     | Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha. Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados. |
-| Pago Línea de Crédito   | Permite disponer la funcionalidad de pago de una línea de crédito, utilizando los fondos disponibles de una cuenta corriente. El cliente puede pagar su deuda de manera total o parcial.                                                     |
+| Functionality           | Description                                                                                                                                                                                                                                       |
+| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Savings Account Summary | Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists. |
+| View recent activity    | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                                                |
+| Account Statements      | Displays account statements from previous periods, showing the transactions of each selected account statement, sorted by date.<br><br>Clients can also search within the displayed transactions.                              |
 
 <script>
 
@@ -54,7 +47,7 @@ modyo-cli get modyo-widgets-retail-accounts
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

@@ -1,28 +1,29 @@
 ---
 search: true
+translated: true
 ---
 
-# Tarjetas de Crédito
+# Credit Cards
 
-Modyo ofrece un widget que permite al cliente ver los datos y operaciones de sus tarjetas de crédito, para realizar transacciones en ella.
+Modyo offers a widget that allows customers to view their credit card details and operations, and to perform various transactions.
 
-### Instalación:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-credit-cards
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/retail-credit-cards)
+[Open in new tab](https://widgets.modyo.com/retail/credit-cards)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/retail-credit-cards" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Funcionalidad                 | Descripción                                                                                                                                                                                                                                                        |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resumen de Tarjeta de Crédito | Presenta un resumen del estado de la tarjeta de crédito. <br><br>La información específica asociada a los saldos (disponible, utilizado y cupo total) se presenta de manera numérica y gráfica.                                                                    |
-| Consulta de Saldo             | Esta consulta muestra los cupos de la tarjeta específica por tipo de moneda, además de indicadores de gastos en comparación con el Cupo disponible.                                                                                                                |
-| Estado de Cuenta              | Muestra el estado de cuenta con los movimientos del último periodo facturado para una tarjeta de crédito.                                                                                                                                                          |
-| Últimos movimientos           | Muestra todos los movimientos nacionales e internacionales que no están facturados.                                                                                                                                                                                |
-| Pagar deuda                   | Corresponde a la funcionalidad de pago de la deuda.<br><br> Este pago de deuda puede ser total o parcial.<br><br> Hacer click en este botón llevará al widget de Pago de Tarjetas, donde se podrá seleccionar la opción de pago de deuda nacional o internacional. |
+| Functionality       | Description                                                                                                                                                                                                          |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Credit card summary | Presents a summary of the credit card status with specific information associated with each card balance.                                                                                                            |
+| Credit balance      | Shows the payment options available for the specific card, in addition to indicators of expenditure compared to the amount available.                                                                                |
+| Account statements  | Shows statements with the movements of the last invoiced period for a credit card.                                                                                                                                   |
+| Recent activity     | Shows recent movements and activity that are not yet invoiced.                                                                                                                                                       |
+| Pay balance         | Corresponds to the balance payment functionality.<br><br> This payment can be either total or partial.<br><br> Clicking on the button will take you to the Credit Card Payment widget, where you can make a payment. |
 
 <script>
 
@@ -38,7 +39,7 @@ modyo-cli get modyo-widgets-retail-credit-cards
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

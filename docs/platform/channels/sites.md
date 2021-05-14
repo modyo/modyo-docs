@@ -1,202 +1,350 @@
 ---
 search: true
+translated: true
 ---
 
-# Sitios
+# Sites
 
-<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
+<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;"/>
 
-Es aquí donde debes operar para crear canales digitales dentro de la plataforma. En este caso, la operación de sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
+This is where you work to create sites and web-based applications within the platform. Building in Sites focuses on all the development, design and navigation flow and structure. If you want to add content to a site or web-based application, you must first create content in the [Content](/platform/content/) section.
 
-Al entrar, puedes ver que existen 4 estados:
+Upon entering, you will see that there are 4 statuses:
 
-<img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
+<img src="/assets/img/channels/sites/filters-sites.jpg" width="300"/>
 
-- **Habilitado**: Estado por defecto en el que quedan los sitios recién creados y los que están habilitados para su uso.
-- **Oculto**: Sitios creados y habilitados que no aparecen en el listado de sitios del perfil de los usuarios. Sólo se pueden acceder si se cuenta con la URL del sitio.
-- **Desarrollo**: Sitios disponibles sólo para administradores de Modyo. Los usuarios que no tengan permisos de administrador no podrán ver estos sitios.
-- **Deshabilitado**: Sitios a los que no se puede acceder.
+- Enabled (Default state of functioning online digital channels and newly created Sites)
+- Hidden (Sites created that only users with access can see)
+- Development (Sites only accessible by backend users who are working on them)
+- Disabled (Sites that have been disabled)
+- Copy: creates a copy of the site and all the published elements of it.
 
-Para crear un sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
+To create a site, you just have to click on the **New** tab, which will allow you to designate the name and host, and then select a base template for the site's appearance and structure.
 
-Después de ello, puedes verlo en modo "Habilitado", lo que significa que está online para trabajar.
+After that, you can see it with the status "Enabled", which means that it is online to work.
 
-:::warning Atención
-En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
+:::warning Warning
+In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
-## Configuración de un Sitio
+## Review and joint publication
 
-La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
+You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
 
-<img src="/assets/img/channels/sites/config-site.jpg" width="250" />
+If you want to publish multiple elements in a single step, click the "Publish" button on pages, navigation, widgets or templates and just mark all items you want to publish in the list and then press the publish button.
+
+:::warning Warning
+All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
+
+If you have team review enabled, only the items that are already approved will appear in the list.
+
+In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force publish" option, allowing the element to go directly to the published view.
+:::
+
+## Site settings
+
+Site settings allow you to configure various options of your site, such as set up its visibility depending on whether the user is a visitor, customer with a session, a developer or an administrator. In addition, you can modify options that allow us to improve your site's appearance in search engines and the visibility of some of the content that the public has access to when they reach your pages.
+
+<img src="/assets/img/channels/sites/config-site.jpg" width="250"/>
 
 ### General
 
-Dentro de esta sección, puedes configurar los siguientes datos:
+Within this section, you can configure the following data:
 
-- **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio. 
-- **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
-- **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
-- **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/platform/channels/templates.html#vistas-para-contenido).
-- **[Revisión en Equipo](/platform/core/team-review.html)**
-- **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
-- **Favicon**: Imagen que aparece al costado de la barra de dirección.
-- **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
-- **Borrar**: Esta opción te permite eliminar definitivamente un sitio y todo sus elementos.
+- **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
+- **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
+- **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
+- **Language**: The language of your site. This value is important because it impacts [how content appears](/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
+- **Team Review**: This is an important review system with [its own separate explanation](/platform/core/key-concepts.html).
+- **Time Zone**: Selects the time zone that your date and time fields use within your site.
+- **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
+- **Favicon**: Image that appears in the address bar.
+- **Apple icon**: Image that appears on mobile devices when using the site as an application.
+- **Delete**: This option allows you to permanently delete a site and all its elements.
 
-:::danger Peligro
-Esta opción es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del sitio. Deberás ingresar el nombre textual del sitio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al sitio ni a sus elementos.
+:::danger Danger
+This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the site. You will have to enter the textual name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its elements again.
 :::
+
+#### Google Tag Manager
+
+By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets can be found in the _snippets>general_ section of the [Template builder](/platform/channels/templates.html) and are embedded into both the _head_ snippet and the _home_ and _base_ views.
+
+If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section in the upper right and click on the "Load templates" option in the "additional options". This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
+
+In case you have an old theme installed and do not have these snippets, you can access the code here to add them as custom snippets and easily embed Google Tag Manager to your site.
+
+1. Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
+
+**Google Tag Manager for the _head_**
+```liquid
+{% if site.tag_manager_id != '' %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
+<!-- End Google Tag Manager -->
+
+{% endif %}
+```
+
+2. Create a custom snippet with the following code and then insert it into the body tags of the home and base views using `{% snippet "gtm-body" %}`, replacing "gtm-body" with the name you gave the snippet.
+
+**Google Tag Manager for the _body_**
+```
+{% if site.tag_manager_id != '' %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
+style="display:none;visibility:hidden">
+</iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% endif %}
+```
+
+With this ready, when there's a value associated with the **Google Tag Manager Identifier** field in the General site settings, the scripts will be automatically injected and you'll be able to start creating events in Google Tag Manager to record your users' actions.
 
 ### PWA
 
-Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén armando. Para ello, otorga dos opciones para implementarlos fácilmente.
+Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
 
-<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;">
 
-#### **Manifiesto**
+#### **Manifest**
 
-El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. En la plataforma, es posible activarlo a través de este checkbox. Con ello, se creará la siguiente ruta:
+The purpose of the manifest is to indicate how you want a browser to display your digital channel. On the platform, it is possible to activate it with the checkbox seen above. This will create the following route:
 
 ```
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/platform/channels/templates.html), en el snippet ```head```.
+he manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/platform/channels/templates.html), in the ```head``` snippet.
 
-Se puede crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cada uno de los cambios sin tener que salir de la vista.
+The manifest can be created and modified in the next field, allowing you to add changes without having to leave the view.
 
-:::warning Atención
-Si cambias el manifiesto, recuerda guardarlo con el botón **Guardar** que se encuentra en la parte superior de la pantalla para no perder los cambios.
+:::warning Warning
+If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
-:::warning Atención
-Si no personalizas el manifiesto pero agregas la ruta en el Template Builder, este quedará en blanco y no hará ninguna acción.
+:::warning Warning
+If you do not customize the manifest but add the route in the Template Builder, it will be blank and will not take any action.
 :::
 
 #### **Service Worker**
 
-El Service Worker permite que el canal digital pueda realizar distintas acciones o mantenga ciertos datos conectados dentro del caché para ver una estructura en caso de tener una mala conexión. La plataforma otorga la posibilidad de que este se pueda habilitar a través del siguiente checkbox. Así, se creará la siguiente ruta:
+The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to show some structure in case of a bad connection. The platform gives you the possibility to enable this through the second checkbox above. Thus, the following route will be created:
 
 
 ```
 https://[domain]/[site-name]/serviceworker.js
 ```
 
-Se puede modificar y programar el Service Worker en el siguiente campo, adaptándolo a tus rutas y con las variables disponibles de la siguiente manera.
+You can modify and program the Service Worker in the next field, adapting it to your routes and with the available variables as shown above.
 
-:::warning Atención
-Si se desactiva el Service Worker, la página seguirá andando sólo en sus funciones básicas y no con los beneficios que tiene esta opción. 
+:::warning Warning
+If the Service Worker is disabled, the page will continue to run only with its basic functions and not with the benefits that this option provides.
 :::
 
-:::warning Atención
-Si el código no se personaliza o no se guarda, el sitio no contará con las funciones que estás diseñando.
+:::warning Warning
+If the code is not customized or saved, the site will not have the features you are designing.
 :::
 
 ### SEO
 
 <img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan al sitio a través de ellos.
+SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Good SEO depends on whether users reach your site through these search engines. SEO is a large topic, but at a general site/digital channel level, there are a few important configurations to consider.
 
-Las opciones a configurar son:
+The options listed in this section help improve your SEO across a particular channel:
 
-- **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
-- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca.
-- **Sitemap**: Archivo que permite a los motores de búsqueda indexar mejor el contenido del sitio. Puedes dejar que Modyo maneje automáticamente esta opción o modificar manualmente para que se enfoque sólo en un contenido en especial.
-- **Robots.txt**: En este archivo das las instrucciones al motor de búsqueda para que categorice el Sitio. También puedes configurar este archivo para que la página no sea indexada directamente.
+- **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
+- **Keywords**: Associated words relevant to your site that users search for that appear in the *keywords* meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines.
+- **Custom sitemap.xml file**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on particular pages and content.
+- **Custom robots.txt file**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by "disallowing" or "allowing" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
 :::tip Tip
-Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado).
-
- De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
+The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
 :::
 
-### Restricciones
+- **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
+
+:::tip Tip
+By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
+:::
+
+:::warning Warning
+Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
+:::
+
+### Restrictions
 
 <img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-Restricciones permite configurar la privacidad del sitio.
+Restrictions allow you to configure the privacy of your site.
 
-- Si el sitio es público, entonces todos pueden ver el sitio.
-- Si el sitio es privado, solo usuarios con una sesión de Modyo podrán ver el sitio.
-- Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
-- Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
+- If the privacy level is set to public, then it is visible to everyone.
+- If the privacy level is set to private, then this site is only visible to users with an active session (authenticated login).
+- If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
 
-### Dominios
+### Domains
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-La sección Dominios te permite saber dónde está públicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma sean informados de los cambios que se realicen aquí.
+The Domains section is where you configure where and how your site is publicly located. It is essential that each member of the platform be aware of any changes made here.
 
-Las variables que puedes cambiar aquí son:
+The options you configure here are:
 
-- **Host**: Donde se encuentra el sitio dentro del servidor.
-- **Activar dominios personalizados**: Si es que quieres que dentro del dominio, existan sitios con una URL personalizada o "custom host.
-- **Habilitar SSL en el sitio**: Es necesario tener un certificado dentro del servidor para habilitarlo.
-- **Dominio primario**: Dirección del sitio.
-- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
+- **Host**: This name designates where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
+- **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
+- **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
+- **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
+- **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
 
-### Miembros del Equipo
+:::warning Warning
+Modyo has reserved domains that cannot be used as custom site domains:
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>education.modyo.com</li>
+<li>elearning.modyo.com</li>
+<li>training.modyo.com</li>
+<li>capacitacion.modyo.com</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>support.modyo.com</li>
+<li>soporte.modyo.com</li>
+<li>developers.modyo.com</li>
+<li>desarrolladores.modyo.com</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>www.modyo.com</li>
+<li>es.modyo.com</li>
+<li>pt.modyo.com</li>
+<li>global.modyo.com</li>
+</ul></td>
+</tr></table>
+:::
+
+:::warning Warning
+Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites: 
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>404</li>
+<li>422</li>
+<li>500</li>
+<li>activate</li>
+<li>admin</li>
+<li>api</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>auth</li>
+<li>callback</li>
+<li>code_generators</li>
+<li>crossdomain</li>
+<li>dist</li>
+<li>login</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>logout</li>
+<li>mailing</li>
+<li>panel</li>
+<li>password</li>
+<li>profile</li>
+<li>rails</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>realms</li>
+<li>robots</li>
+<li>session</li>
+<li>signup</li>
+<li>sitemap</li>
+<li>status</li>
+</ul></td>
+<td style="border: none;  vertical-align: top;"><ul>
+<li>uploads</li>
+<li>users</li>
+<li>welcome</li>
+<li>widgets</li>
+</ul></td>
+</tr></table>
+:::
+
+### Site variables
+
+Modyo has [global variables](/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can create site-specific variables or overwrite the value of a global variable already created with a site-specific value.
+
+### Team members
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada sitio y así tendrán acceso a la escritura, revisión y/o publicación.
+The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. These roles start with editing privileges, and can expand to include reviewing, publishing, and configuring site settings.
 
-Para ello, el administrador que creó el sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
+To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
-Para añadir un usuario al sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del sitio.
+To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press "Create".
 
-Puedes modificar el rol de alguno de los administradores asociados haciendo _click_ en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
+You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press "Update" to confirm the change.
 
-Si quieres eliminar a un administrador de un sitio, selecciona usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
+To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
-Los roles disponibles son:
+The available roles are:
 
-- **Developer**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates.
-- **Developer CLI**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Además puede empujar widgets desde aplicaciones externas.
-- **Reviewer**: Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, el menú y los templates, además de publicarlos cuando se cumplen las condiciones de revisión.
-- **Admin**: Puede crear, modificar, enviar a revisión y aprobar páginas, widget, el menú, y los templates. Puede publicar sin pasar por las validaciones de la revisión en equipo. Además puede modificar la configuración del sitio.
+- **Developer**: Can create, modify and submit pages, widgets, menu and templates for review.
+- **Developer CLI**: Can create, modify and submit pages, widgets, menu and templates for review. Can also push widgets to the platform from external applications.
+- **Reviewer**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them when the correct review conditions are met.
+- **Admin**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them without going through the validations of the team review if necessarty. Admins can also modify site configurations.
 
 #### Developer
 
-Es el usuario a cargo del desarrollo estructural de los recursos, la creación y edición de contenido. Todo lo que haga, tiene que pasar a revisión.
+Developers are in charge of the structural development of resources, design and the creation of or integration with content. Everything developers do has to go to review, or be directly published by a higher role.
 
-Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback) ni cambiar la configuración.
+Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
 
-Existe una variación de este rol con el nombre "CLI" que además de los permisos de desarrollador, les permite hacer push de widgets desde aplicaciones externas, como el [modyo-cli](/platform/channels/widgets.html#modyo-cli).
+There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 
-Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicar.
+Reviewers correct the work done by Developers, approving or rejecting their changes, and then publishing.
 
-No puede editar la configuración del sitio.
+Reviewers cannot edit the Site settings.
 
 #### Admin
 
-El Administrador del sitio, tiene acceso a los dos roles anteriores, además de poder configurar todo el sitio.
+The Admins role has access to all the permissions of the two previous roles, and also has access to the Site settings.
 
-Este usuario es distinto al Default Admin. El Site Admin solo puede configurar el sitio externo, pero no puede cambiar nada de la plataforma.
+This team member is different from the account-level Default Admin. A site Admin can only configure a site, and cannot make any changes to the platform itself.
 
-En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tengan roles anteriores. Para ello, solo se debe hacer clic en el usuario y la acción de Borrar.
+### Custom redirects
 
-### Redirecciones personalizadas
+Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
-Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio. 
+In this view you will find a table with all the redirects that currently exist on the site, where you can search by path or description.
 
-En esta vista encontrarás una tabla con todas las redirecciones que existen actualmente en el sitio, donde podrás buscar por path o descripción. 
+To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ and Destination **_URL_ fields and redirection code and then saving the changes, you will create a new redirection entry.
 
-Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completando los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guardando los cambios, crearás una nueva entrada de redirección. 
-
-:::warning Atención
-La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
+:::warning Warning
+The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
 :::
 
-La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
+In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
 
-1. [Vistas por defecto (Home, search)](/platform/channels/templates.html)
-1. [Páginas]/platform/channels/pages.html)
-1. [Vistas personalizadas de contenido](/platform/channels/templates.html#vistas-para-contenido)
-1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/platform/channels/sites.html#restricciones)
+:::warning Warning
+The required columns to import redirects are origin y destination.
+
+You can select a 301 or 302 response code for all elements without having to add an additional column.
+
+Along with the above, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
+:::
+
+The precedence of locations on Modyo sites is as follows:
+
+1. [Default views (Home, search)](/platform/channels/templates.html)
+1. [Pages](/platform/channels/pages.html)
+1. [Custom content views](/platform/channels/templates.html#content-views)
+1. Custom redirects
+1. [Site 404 error configuration](/platform/channels/sites.html#restrictions)

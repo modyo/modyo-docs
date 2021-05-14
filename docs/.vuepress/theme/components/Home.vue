@@ -1,27 +1,27 @@
 <template>
   <main class="home" aria-labelledby="main-title">
     <header class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || 'hero'"
-      >
-
-      <h1 v-if="data.heroText !== null" id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
-
-      <p class="description">
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
-      </p>
-
-      <p
-        class="action"
-        v-if="data.actionText && data.actionLink"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
-      </p>
+      <div class="main">
+        <div class="main-l">
+          <h1 v-if="data.heroText !== null" id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
+          <p class="subtitle">
+            {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+          </p>
+          <p class="action" v-if="data.actionText && data.actionLink">
+            <NavLink
+              class="action-button"
+              :item="actionLink"
+            />
+          </p>
+        </div>
+        <div class="main-r">
+          <img
+            v-if="data.heroImage"
+            :src="$withBase(data.heroImage)"
+            :alt="data.heroAlt || 'hero'"
+          >
+        </div>
+      </div>
     </header>
 
     <div
@@ -72,64 +72,104 @@ export default {
 
 <style lang="stylus">
 .home
-  padding $navbarHeight 2rem 0
+  padding $navbarHeight 0 0
   max-width 960px
   margin 0px auto
   display block
+  max-width none
+  text-align left
+  .theme-default-content
+    background #151f38
   .hero
-    text-align center
+    text-align left
+    padding-top 20px
+    background-image url(https://cloud.modyocdn.com/uploads/9a04c95c-d501-470b-a2ca-66c9ba14e7a8/original/ellipse.png)
+    background-repeat no-repeat
+    background-position right 250px   
     img
       max-width: 100%
-      max-height 280px
       display block
       margin 3rem auto 1.5rem
     h1
-      font-size 3rem
+      font-size 4.0rem
+      font-weight 700
+      line-height 0.9
+      letter-spacing -2.5px
     h1, .description, .action
-      margin 1.8rem auto
-    .description
+      margin 1.6rem auto
+    .subtitle
+      color #737a96
+      font-weight 400
       max-width 35rem
-      font-size 1.6rem
+      font-size 1.4rem
       line-height 1.3
-      color lighten($textColor, 40%)
+      color #737988
+      text-align left
     .action-button
       display inline-block
       font-size 1.2rem
       color #fff
-      background-color $accentColor
+      background #0ebd74
+      margin-top 20px
+      margin-right 8px
       padding 0.8rem 1.6rem
       border-radius 4px
+      border 0
       transition background-color .1s ease
       box-sizing border-box
-      border-bottom 1px solid darken($accentColor, 10%)
       &:hover
-        background-color lighten($accentColor, 10%)
+        background-color darken(#0ebd74, 30%)
+    .main
+      display flex
+      align-items center
+      justify-content center
+      padding-top 40px
+      padding-bottom 40px
+      .main-l
+        width 600px
+      .main-r
+        width 300px
   .features
-    border-top 1px solid $borderColor
-    padding 1.2rem 0
-    margin-top 2.5rem
+    border-top 0
+    padding 2.5rem 0
+    margin-top 3rem
     display flex
     flex-wrap wrap
     align-items flex-start
     align-content stretch
     justify-content space-between
+    max-width 960px
+    margin 0 auto
+    text-align left
+    p
+      height 90px
   .feature
+    margin-top 1rem
+    margin-bottom 1rem
     flex-grow 1
     flex-basis 30%
     max-width 30%
     h2
-      font-size 1.4rem
-      font-weight 500
+      font-size 1.3rem
+      font-weight 600
       border-bottom none
       padding-bottom 0
-      color lighten($textColor, 10%)
+      color #ffffff
+      text-align left
     p
-      color lighten($textColor, 25%)
+      color #ffffff
+      text-align left
+    img
+      width 40%
+    a
+      color #0ebd74
+      font-weight 600
+      text-align left
   .footer
     padding 2.5rem
     border-top 1px solid $borderColor
     text-align center
-    color lighten($textColor, 25%)
+    color #737a96
 
 @media (max-width: $MQMobile)
   .home
