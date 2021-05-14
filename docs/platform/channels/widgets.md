@@ -142,10 +142,6 @@ ARGUMENTS
   push  Push widget to Modyo platform
 ```
 
-### Obtenga una plantilla para un proyecto
-
-La CLI de Modyo está diseñada para funcionar en base a una arquitectura de micro front-end y acelerará el proceso de inicialización de un widget, con decisiones modyo.
-
 ### `modyo-cli get NAME [DIRECTORY]`
 
 En general, el comando `get` se usa para obtener una plantilla de widget.
@@ -169,6 +165,7 @@ EXAMPLE
 ```
 
 >Hay algunas plantillas de widgets públicos a los que se puede acceder a través de este comando
+>El CLI de Modyo está diseñado para funcionar en base a una arquitectura de micro front-end y acelerará el proceso de inicialización de un widget, con decisiones modyo.
 
 ```bash
   EJEMPLOS
@@ -217,4 +214,5 @@ MODYO_SITE_ID=siteId
 MODYO_SITE_HOST=siteHost
 MODYO_BUILD_COMMAND=buildCommand
 MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+MODYO_WIDGET_NAME=name of widget
 ```
