@@ -329,7 +329,7 @@ var axios_api = axios.create();
 }
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones de la api de modyo
 var axios_modyo=axios.create({
-  baseURL: window.baseUrl + '/api/admin',
+  baseURL: '{{site.account_url}}/api/admin',
 });
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones los json de contenido del sitio
 var axios_modyo_json=axios.create({
@@ -337,7 +337,7 @@ var axios_modyo_json=axios.create({
 });
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
 var axios_auth = axios.create();
-axios_auth.defaults.baseURL = window.baseUrl + '/auth/openidc';
+axios_auth.defaults.baseURL = '{{site.account_url}}/auth/openidc';
 // función que genera actividad en el sitio con cada petición de autenticación
 var resetIdleTime = function(request){
   sessionManager.resetIdleTime();
@@ -393,6 +393,8 @@ var sessionManager = {
   },
   // propiedad para almacenar el interval id de revision de eventos de sesion
   intevalId:null,
+  // url de redireccion si la funcion logout tiene argumentos
+  redirectURL:"https://modyo.com",
   // función que determina si se esta accediendo a la aplicación desde el modyoShell o no
   isModyoAppShell: function() {
     return /; Modyo_App_Shell/.test(navigator.userAgent);
@@ -432,7 +434,7 @@ var sessionManager = {
       arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (withRedirect) {
       window.location.href =
-        "{{site.account_url}}/logout?multi=true&redirect_to=https://chile.larrainvial.com";
+        "{{site.account_url}}/logout?multi=true&redirect_to="+this.redirectURL;
     } else {
       window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
     }

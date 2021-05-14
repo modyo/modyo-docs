@@ -367,6 +367,8 @@ var sessionManager={
   },
   //property to store the session id interval of session review
   intevalId: null,
+  // redirect url in logout function if has argument
+  redirectURL:"https://modyo.com",
   //function that determines if the application is being accessed from the modyoShell or not
   isModyoAppShell: function () {
     return/; Modyo_App_Shell/.test (navigator.userAgent);
@@ -406,7 +408,7 @@ var sessionManager={
       arguments.length> 0 && arguments [0]! == undefined? arguments [0]: false;
     if (withRedirect) {
       window.location.href =
-        "{{site.account_url}}/logout?multi=true&redirect_to=https://chile.larrainvial.com";
+        "{{site.account_url}}/logout?multi=true&redirect_to="+this.redirectURL;
     } else {
       window.location.href="{{site.account_url}}/logout? site={{site.uuid}}";
     }
