@@ -352,13 +352,13 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
 
-### Security headers
+## Security headers
 
 Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
 Esta acción no se puede deshacer, pero cuando está habilitada, tienes el control
 total de los encabezados que desea usar.
 
-#### HTTP Strict Transport Security (HSTS)
+### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que el sitio se debe acceder usando solo HTTPS.
 * **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se
@@ -367,7 +367,7 @@ Indica al navegador que el sitio se debe acceder usando solo HTTPS.
    [HSTS Preload List Submission](https://hstspreload.org/).
 * **Incluir subdominios**: Utiliza la regla HSTS también para todos los subdominios del sitio.
 
-#### Referrer-Policy
+### Referrer-Policy
 
 El _header_ `Referer` contiene información de la página web anterior desde al cual
 está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta
