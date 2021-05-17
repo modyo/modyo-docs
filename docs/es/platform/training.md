@@ -4,19 +4,11 @@ search: true
 
 # Entrenamiento
 
-El entrenamiento en la Plataforma Modyo es un aspecto clave para cualquier usuario que desempeñe un rol de administración dentro de la plataforma. En la siguiente sección se detallan las diferentes acciones de aprendizaje que los usuarios pueden seguir.
-
-### Entrenamiento
-Corresponden a las actividades de aprendizaje de corto plazo conducentes a generar las habilidades mínimas necesarias para poder utilizar de forma efectiva la plataforma. Las actividades de entrenamiento incluyen la revisión de [documentación de Modyo](/es/platform), [videos explicativos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [tutoriales de auto aprendizaje](/es/platform/tutorials), entre otras.
-
-### Capacitación
-Corresponden a las actividades de aprendizaje conducentes a generar un conocimiento más profundo de la plataforma y del ecosistema de tecnologías que la rodea. Un programa de capacitación efectivo debe considerar tanto material otorgado por Modyo, como cursos y herramientas externas sobre las tecnlogías específicas. Las actividades de capacitación incluyen el [programa de certificación de Modyo](https://training.modyo.com/catalog) y cursos sobre tecnologías relacionadas, como Javascript, VueJS, Angular, para el caso del desarrollo de _frontend_ y Java, Spring Boot, para el caso del desarrollo de _backend_.
-
-Actividades de aprendizaje conducentes a generar un profundo conocimiento de la plataforma y el ecosistema de tecnologías que la rodea. Un buen programa de capacitación efectiva debe considerar tanto material otorgado por Modyo como cursos y herramientas externas de aprendizaje. Las actividades de capacitación incluyen el programa de certificación de Modyo y cursos específicos sobre tecnologías relacionadas, como Javascript, VueJS, Angular, para el caso del desarrollo de _frontend_ y Java, Spring Boot, para el caso del desarrollo de _backend_.
+El entrenamiento en la Plataforma Modyo es un aspecto clave para cualquier usuario que desempeñe un rol de dentro de la plataforma y corresponden a las actividades de aprendizaje de conducentes a generar las habilidades mínimas necesarias para poder utilizar de forma efectiva el product. Las actividades de entrenamiento incluyen la revisión de [documentación de Modyo](/es/platform), [videos explicativos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [tutoriales de auto aprendizaje](/es/platform/tutorials), entre otras.
 
 ## Plataforma Modyo
 
-### Antes de iniciarte en la Plataforma Modyo
+### Recomendaciones antes de partir
 1. Entender qué es [Modyo y sus módulos principales](https://www.modyo.com/platform)
 2. Tener claro el rol que desempeñas, por ejemplo: desarrollo frontend, gestión de contenido, marketing digital, administración del sistema, etc.
 3. Configurar un [ambiente de pruebas](https://platform.modyo.cloud/onboarding) para poner en práctica los conocimientos adquiridos

@@ -25,7 +25,7 @@ Un mecanismo para interoperar a nivel de APIs con múltiples socios de negocio
 
 Modyo cuenta con servicios manejados para ambas partes del diagrama. En el caso de la Plataforma se ofrece una solución Software as a Service (SaaS) en versiones Cloud y Enterprise Cloud. En el caso de la capa de integración, Modyo ofrece un servicios manejado tipo Platform as a Service (PaaS) llamado Modyo Connect, el cual se hace cargo de la gestión del SSO, el API Gateway y todo lo requerido para manejar el ciclo de vida de desarrollo de microservicios y componentes de integración. La integración por Modyo Connect sólo está disponible para clientes en Enterprise Cloud.
 
-# Versiones
+## Versiones
 
 La Plataforma Modyo es distribuida actualmente en dos versiones: Modyo Cloud y Modyo Enterprise. Modyo Cloud se despliega en una nube _multi-tenant_ en Amazon Web Services (AWS), en la cual los recursos son compartidos entre distintos clientes. Modyo Enterprise se puede desplegar en modalidad _Cloud_ u _On Premise_. Un cliente de Modyo Enterprise Cloud también puede escoger una versión menos estable, recibiendo a cambio como beneficio las mejoras más recientes.
 
