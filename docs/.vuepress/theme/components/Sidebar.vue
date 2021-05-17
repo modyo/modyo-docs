@@ -1,9 +1,9 @@
 <template>
   <aside class="sidebar">
-    <NavLinks/>
-    <slot name="top"/>
-    <SidebarLinks :depth="0" :items="items"/>
-    <slot name="bottom"/>
+    <NavLinks />
+    <slot name="top" />
+    <SidebarLinks :depth="0" :items="items" />
+    <slot name="bottom" />
   </aside>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 
   components: { SidebarLinks, NavLinks },
 
-  props: ['items']
+  props: ['items'],
 }
 </script>
 
@@ -30,7 +30,7 @@ export default {
     list-style-type none
   a
     display inline-block
-    height 45px
+    min-height 45px
   .nav-links
     display none
     border-bottom 1px solid $borderColor
@@ -44,7 +44,7 @@ export default {
       padding 0.5rem 0 0.5rem 1.5rem
   & > .sidebar-links
     padding 1.5rem 0
-    & > li > a.sidebar-link      
+    & > li > a.sidebar-link
       font-size 1.0em
       line-height 1.7
       font-weight bold
