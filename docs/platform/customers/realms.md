@@ -26,7 +26,7 @@ Along the top of the list are filters that allow you to refine the list of users
 
 The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
-::: tip Tip
+:::tip Tip
 Next to the Apply button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/platform/customers/targets.html) section.
 :::
 
@@ -54,7 +54,7 @@ When you select "Add User", the platform will ask you to complete the following 
 - Password confirmation: Input the same password to confirm.
 - Tags: Tags that serve to identify the user.
 
-::: tip Tip
+:::tip Tip
 To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
@@ -68,7 +68,7 @@ To make a new import, click on the upper right **+ Import** button. This opens a
 
 From here, you can see the main import view. On the left, a list with three columns appears, with the first column containing the column name, the second containing some examples of the data, and allows for mapping options. Use these mapping options to assign imported values to user attributes such as first name, last name, email, etc.
 
-::: tip Tip
+:::tip Tip
 The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
@@ -124,7 +124,7 @@ In the upper right section you will find additional options with which you can d
 * **Disable**: You can disable users and prevent them from logging in.
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
-::: tip Tip
+:::tip Tip
 When modifying a user, you may change the list of Targets to which they belong.
 :::
 
@@ -175,7 +175,7 @@ If you want to have custom CSS in the session views, add it to the editor and cl
 
 It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
-::: tip Tip
+:::tip Tip
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
 :::
 
@@ -272,6 +272,6 @@ In addition to the above, **Custom Fields** may be enabled or disabled. If enabl
 When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**.
 :::
 
-::: tip Tip
+:::tip Tip
 Apart from being able to save specific data in user profiles, filters for the [Targets](/platform/customers/targets.html) can be created using custom field data, allowing users to be segmented by customizable values.
 :::

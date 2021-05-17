@@ -38,14 +38,14 @@ The available options are:
 - **Restrict the selection of reviewers**: By default, any user with the necessary permissions will be able to approve the items that are waiting for revision.
 By enabling this option, only those chosen by the editor will be able to do so.
 
-::: tip Tip
+:::tip Tip
 While approval is limited, any user with permissions can comment on the item.
 :::
 
 - **Force review**: This option allows you to select a list of users, from which at least one approval is required for the item to be moved to the "Approved" status. This is independent of the number of approvals previously configured, i.e. even if an item has the required number of approvals, it will still be in "Waiting for approval" status if no user in the list has approved it.
 - **Require all**: This option extends the previous restriction to all selected users.
 
-::: warning Warning
+:::warning Warning
 When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
 
 For these items to follow the new configuration, they need to be rejected and sent into revision again.
@@ -65,7 +65,7 @@ Users with the intermediate role, in addition to the above, can approve the item
 
 Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force approve" to publish an item without the restrictions of team review.
 
-::: warning Warning
+:::warning Warning
 Site or space administrators always have the ability to skip the team review flow.
 
 For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force approve" which allows you to see the element in the published view.
@@ -125,7 +125,7 @@ Backups are previously published versions of the items. That is, every time we p
 
 If you want to review a particular version of an item, you can go to the "Differences between versions" section, so you can see the changes that have been made and revert them when necessary.
 
-::: warning Warning
+:::warning Warning
 By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item.
 
 This value can be modified using environment variables and is common for all accounts in that environment.
@@ -196,7 +196,7 @@ In other sections, such as [Customers](/platform/customers/) and Settings, Locks
 In this case, only an Administrator will be able to take control, activating for himself the edition and discarding the unsaved changes made by the user working on the item.
 
 
-::: warning Take control
+:::warning Take control
 
 If an Administrator wants to take control of a view, he must click on the item in use and, in the next screen, click on the **Take Control** button.
 

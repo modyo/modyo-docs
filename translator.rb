@@ -70,7 +70,7 @@ locales.each do |locale|
             # Links
             output.gsub!(/(?<=[\!]) (?=[\[])|(?<=[\]]) (?=[\(])|(?<=[\/]) (?=.)| (?=[\/])/,'')
             # code snippets wrongly translated (tips, ``)
-            output.gsub!('::: type Type', '::: tip Tip')
+            output.gsub!('::: type Type', ':::tip Tip')
             output.gsub!(/(?<=^|[^`])``(?=[^`]|$)/, '```')
             # html attrs
             output.gsub!(/(?<=src|width|style|) = /, '=')

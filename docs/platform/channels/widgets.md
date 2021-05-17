@@ -23,7 +23,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **In review**: This status means [team review](/platform/core/key-concepts.html) is enabled and this widget is in review.
 - **Approved**: This status means [team review](/platform/core/key-concepts.html) is enabled and a widget passed the review process. You can now publish this widget.
 
-::: tip Tip
+:::tip Tip
 You may notice that some widgets with **Pending changes** and **In review** statuses have a small green mark. This green mark indicates that there is an active, published version of this widget available.
 :::
 
@@ -34,7 +34,7 @@ Here are the available actions on the right side of the top bar:
 
 By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
-::: tip Tip
+:::tip Tip
 If you do not see the **Differences** icon, then there is no published version of this widget.
 :::
 
@@ -57,17 +57,17 @@ If you do not see the **Differences** icon, then there is no published version o
 - **Force Publish**: Admin team members have the option to forcibly publish widgets, circumventing the established reviewal process.
 - **Unpublish**: If the widget is published, you can take it out of production using this option.
 
-::: tip Tip
+:::tip Tip
 Only unpublished widgets can be archived.
 :::
 
-::: tip Tip
+:::tip Tip
 Archived widgets do not appear in the main widget list or in the Custom widget selection in Page Builder. You can restore an archived widget by editing it and using the restore option in the upper right corner of the editing view.
 :::
 
 Once a widget is published, it is available as a custom widget in the [page builder.](/platform/channels/pages.html)
 
-::: tip Tip
+:::tip Tip
 To learn more about publication lifecycles in Modyo, review the [Versioning](/platform/core/key-concepts.html#versioning) section.
 :::
 
@@ -80,11 +80,11 @@ In the main **work area** you can see the following:
 - **Snippets**: Displays a list of custom snippets where you can copy their reference code and insert them in your widget.
 - **Changes**: A list of every "Save" state of this widget since it was last published. Click on any of these save states to change the content of the widget to that particular save state. If doing so, all your current changes will be lost.
 
-::: tip Tip
+:::tip Tip
 To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
 :::
 
-::: tip Tip
+:::tip Tip
 If you publish a new version of your widget, the **Changes** list resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
 :::
 

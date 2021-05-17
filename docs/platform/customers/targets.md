@@ -24,7 +24,7 @@ In addition, on the far right you will find an "Action" button with a drop-down 
 - Edit: Edit the target name and filters.
 - Delete: Delete the target.
 
-::: warning Warning
+:::warning Warning
 If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the target.
 :::
 
@@ -44,7 +44,7 @@ To save a target, click on the **Save as a Target** button at the bottom of the 
 
 To see the users that match your target filters, click on the **Apply** button. This opens a [User](/platform/customers/realms.html) list that displays all users that fit your filters.
 
-::: tip Tip
+:::tip Tip
 When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
 :::
 

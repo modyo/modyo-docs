@@ -25,7 +25,7 @@ In the top bar, you will find different actions and information:
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking on the Differences icon will take you to the [differences view](/platform/channels/sites.html#review-and-joint-publication) that allows you to select and compare two versions of the same page. This view also allows you to perform a [reset or rollback](/platform/core/key-concepts.html#actions-for-versioning) of your page.
 
-::: tip Tip
+:::tip Tip
 If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare with the current editable version. To learn more about differences and backups, review the [versioning](/platform/core/key-concepts.html # versioning) section.
 :::
 
@@ -36,7 +36,7 @@ If your page is in "draft" status, the differences icon will not appear, since t
 - Archive <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M5.12 5l.81-1h12l.94 1M12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5m8.54-12.27l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6 3 6.5V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.5c0-.5-.17-.93-.46-1.27z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: If a page is not published, this action allows you to archive it. When a page is archived, it will not appear in the page index and allows you to keep the site structure clean.
 - Duplicate <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: This action allows you to copy the editable version of the page you are currently working on. The copied version starts in a draft state as if it were a newly created page.
 
-::: warning Warning
+:::warning Warning
 Once the copying action is complete, you will be directed to the new page. Remember to save all changes before using this action, otherwise you could lose valuable information.
 :::
 
@@ -46,7 +46,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
 - Publish: If the page is approved, and if all the changes have been saved, you can got to the [publish view](/platform/channels/sites.html#review-and-joint-publication) to review and publish changes in across the site.
 
-::: tip Tip
+:::tip Tip
 * If a page has a parent page, you can only publish it if the parent page is published.
 * If a page has children, you can only unpublish it if all of its child pages are unpublished.
 * If a page has children, you can only archive it if all of its child pages are archived.
@@ -72,7 +72,7 @@ You can add them from the first tab of the Page builder. The available widgets a
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/platform/channels/widgets.html).
 - **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
-::: warning Warning
+:::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
 - **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to display. To modify how these widgets look, you must do so in the [template builder](/platform/channels/templates.html), in the widgets section.

@@ -84,7 +84,7 @@ Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de
 
 Al hacer _click_ en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde puedes rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
-::: tip Tip
+:::tip Tip
 Para traducir una entrada ya escrita a un idioma distinto, deberás tener en cuenta que tu espacio debe estar configurado para los idiomas en los que quieres escribir. (Revisa [Configurar un Espacio](/es/platform/content/spaces.html#configurar-un-espacio))
 
 Después, solo deberás hacer _click_ en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
@@ -151,13 +151,13 @@ Para ver las Categorías, es necesario que hagas _click_ en la sección **Catego
 
 Si quieres crear una categoría, solo debes hacer _click_ en el botón verde que se encuentra en la parte superior de la pantalla. Después, puedes ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
-::: tip Tip
+:::tip Tip
 Cuando se ingrese el nombre de la categoría, la ruta se establece predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer _click_ en ella.
 
 Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
 :::
 
-::: warning Atención
+:::warning Atención
 Si se quiere eliminar una categoría, simplemente basta con hacer _click_ en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
 :::
 

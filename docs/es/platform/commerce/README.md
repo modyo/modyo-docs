@@ -7,8 +7,8 @@ search: true
 
 <img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;">
 
-::: tip Medios de Pago
-Actualmente Modyo Commerce sólo permite la integración con medios de pago de latinoamérica.
+:::tip Medios de Pago
+Actualmente Modyo Commerce sólo permite la integración con medios de pago en latinoamérica.
 :::
 
 ## Estructura

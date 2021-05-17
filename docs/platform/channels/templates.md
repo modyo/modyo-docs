@@ -32,7 +32,7 @@ It is possible to enter the preview mode with or without a logged in user sessio
 
 By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
-::: tip Tip
+:::tip Tip
 Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved so that the most recent twenty backups can be compared, restored or used for a rollback. For more information on versioning, check out the [versioning](/platform/core/key-concepts.html#versioning) section .
 :::
 
@@ -74,11 +74,11 @@ You can add custom snippets at the bottom of the snippets tab, by clicking on th
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
-::: tip Tip
+:::tip Tip
 In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name (i.e. **"front_css"** or **"library_js"**). Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
 :::
 
-::: tip Tip
+:::tip Tip
 All elements of the Template Builder use Liquid as a templating engine.
 
 For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/platform/channels/liquid-markup.html) page.
@@ -90,7 +90,7 @@ In the work area, under the tabs, you will find a bar with useful elements:
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
-::: tip Tip
+:::tip Tip
 For more information on the functionality of the Asset Manager, go to the [Asset Manager](/docs/content/asset-manager.html).
 :::
 
@@ -106,15 +106,15 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
 
-::: tip Tip
+:::tip Tip
 If you publish a new version of your templates, this list of changes resets and erases all saved states. This is because the new editable version now matches the version you just published. Saving new changes adds new saved states until the next time you publish.
 :::
 
-::: tip Tip
+:::tip Tip
 Saved states exist for every template. This means that while some templates may have changes, others may not. Selecting a previous saved state of any individual template only affects that template and not any of the other templates.
 :::
 
-::: tip Tip
+:::tip Tip
 If an earlier version of your templates is restored, you can access the saved states of each template of that restored version. You can learn more about [versioning here](/platform/core/key-concepts.html#versioning)
 :::
 
@@ -134,11 +134,11 @@ At the top of this view, you can find a few useful actions:
 - **Reset** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> : Like the reset action of the template builder, this action restores all editable templates to their original versions.
 - **Load templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: In some cases, after complex migrations, there may be some unmodified templates that could be lost and you may not see them in the template list of the Template Builder. This action retrieves those templates from the original theme and allows you to recover them.
 
-::: tip Tip
+:::tip Tip
 The "Load templates" action does not modify the editable templates that are already in the Template Builder. It only restores those in the Themes Gallery.
 :::
 
-::: tip Tip
+:::tip Tip
 When you create a theme from a site or channel, that theme becomes available to all other sites in your account. This means you can create a base theme and then use that theme to rapidly build new sites.
 :::
 
@@ -193,7 +193,7 @@ A basic example of Liquid + HTML code that you can use to get started in these v
 
 The example above assumes that a couple of field names, such as "title" and "description", exist in the type you created. Modify these as necessary.
 
-::: tip Tip
+:::tip Tip
 To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/liquid-markup.html).
 :::
 

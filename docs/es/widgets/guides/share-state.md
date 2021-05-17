@@ -38,7 +38,7 @@ Todos los Widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gest
   - Sería lo más parecido a una propiedad computed en el componente.
   - Un ejemplo sería una función que filtrara el estado. No lo modifica pero te devuelve un nuevo objeto diferente con los datos filtrados que necesitas.
 
-::: tip Nota
+:::tip Nota
 Para saber más acerca de la implementación y uso de Vuex, recomiendo leer la [documentación](https://vuex.vuejs.org/guide/) y ver este curso gratuito: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) de [VueSchool](https://vueschool.io/)
 :::
 

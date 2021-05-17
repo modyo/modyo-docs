@@ -13,7 +13,7 @@ The available filters are:
 - Site
 - Space
 
-::: warning Warning
+:::warning Warning
 When you filter by site, the elements that use space data will not display in the interface, and likewise, if you filter by space, elements from Modyo Channels that use data from sites will not display.
 :::
 
@@ -35,7 +35,7 @@ You will see five boxes that will represent the number of items created, edited,
 
 Next to each main counter, you will see an upward (green) or downward (red) indicator that represents whether the ratio between the current period and the previous one increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
-::: tip Tip
+:::tip Tip
 The time ranges that are compared in each of the boxes, depend on the date range selected in the upper right part of the view, so that, if you have selected the last seven days, you will be comparing, for example, the amount of elements created within the last seven days, with the amount of elements created within the previous week.
 :::
 
@@ -45,7 +45,7 @@ A line chart that represents a comparison over time between created versus publi
 
 With this graphic you can show how much created content gets published, and visualize, for example, if created content gets published multiple times.
 
-::: tip Tip
+:::tip Tip
 The total date range on this chart depends on the total date range selected in the filter at the top right of the page.
 :::
 

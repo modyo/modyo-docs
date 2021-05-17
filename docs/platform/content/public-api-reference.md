@@ -8,7 +8,7 @@ translated: true
 
 Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](/platform/content/) with [Modyo Channels](/platform/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
 
-::: tip SDKs for other languages
+:::tip SDKs for other languages
 At the moment there is only an SDK for Javascript. In the future, we plan to incorporate versions in other languages.
 :::
 
@@ -75,11 +75,11 @@ You can use a `for` loop to iterate over the array, and you can paginate the ent
 
 In the previous case, the list of entries with 10 elements per page will be paginated and at the end of the list the pagination links will appear. You can navigate through each page using the _GET_ parameter `page` in the URL, for example `my-page.com/landing?page=2`.
 
-::: warning Warning
+:::warning Warning
 Note that if you have more than one widget that uses content pagination, the _GET_ `per_page` and `page` parameters in the URL affect all widgets within a page.
 :::
 
-::: warning Warning
+:::warning Warning
 To use pagination in a custom widget, you must change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}} `</span>. This is necessary since custom widgets are loaded asynchronously. You also need to ensure that _JQuery_ is available on your site and remember that when you use the pagination links, only the widget HTML will be changed and the widget's _JavaScript_ will not be executed again.
 :::
 
@@ -812,7 +812,7 @@ The Modyo API provides a RESTful interface with responses formatted in a lightwe
 
 Whenever you use the Modyo Content API, you can access the published content that is available to all users (not private). However, if you want to access private content, you must add a header or a GET parameter to the request URL of the content API.
 
-::: tip Tip
+:::tip Tip
 If you use Liquid to access content, users who log in and are part of a target will automatically see the content when appropriate and no extra action is required by the Front End developer.
 :::
 
@@ -846,11 +846,11 @@ For example:
 }
 ```
 
-::: warning Warning
+:::warning Warning
 To be able to access the URL to obtain a token, you must make sure you have a session initiated with a user in the account, or at least in a site within that account, otherwise you will receive an error `404 - Not found`.
 :::
 
-::: warning Warning
+:::warning Warning
 It is necessary to dynamically obtain an access token for content, since this token changes based on the targets the user is a part of. Since target association can change frequently, it is not recommended to store this value.
 :::
 

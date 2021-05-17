@@ -23,7 +23,7 @@ Además, en el extremo izquierdo encontrarás un botón con un menú desplegable
 - Editar: Editar el nombre y los filtros del target.
 - Borrar: Borrar el target.
 
-::: warning Atención
+:::warning Atención
 Si borras el target, tendrás que crearlo nuevamente. Sin embargo, esto no quiere decir que borras los usuarios que pertenecen a él.
 :::
 

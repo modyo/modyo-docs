@@ -32,7 +32,7 @@ Las recetas que pueden encontrar son:
 - PR Labeler
 - PR Labeler config
 
-::: tip
+:::tip
 Cada una de éstas esta documentada y explicada en el archivo **README.md**
 :::
 
@@ -46,7 +46,7 @@ Para obtener un **token** primero tenemos que crear un **API Access** a nivel de
 
 Después de crear el API access tenemos que generar un token para el usuario que va a cargar el Widget.
 
-::: tip
+:::tip
 Recomendamos crear un nuevo usuario que tenga permisos y el token para cargar y publicar Widgets desde un servicio de CI/CD.
 :::
 

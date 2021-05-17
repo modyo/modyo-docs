@@ -37,11 +37,11 @@ The next section of the form properties contains the Form Options for what happe
 
 - **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/platform/customers/targets.html)
 
-::: warning Warning
+:::warning Warning
 If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
-::: warning Warning
+:::warning Warning
 If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
 :::
 
@@ -132,7 +132,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - Date: Allows you to add a date field in which the user can select a date within the allowed range.
 - Nested questions: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
-:::warning Atención
+:::warning
 From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
@@ -175,12 +175,12 @@ The **Form Snippet** section, which will only appear if the form is public, will
 
 <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
-::: warning Warning
+:::warning Warning
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
 The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
-::: warning Warning
+:::warning Warning
 If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
 :::

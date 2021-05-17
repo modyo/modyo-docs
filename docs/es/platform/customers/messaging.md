@@ -76,7 +76,7 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
 En la vista superior, podrás encontrar las estadísticas de la campaña.
 
-::: warning Atención
+:::warning Atención
 Si no has enviado aún la campaña, los valores aparecerán en cero.
 :::
 
@@ -157,7 +157,7 @@ A primera vista, puedes encontrar todas las plantillas de correos que se han hec
 
 Cada una de las plantillas estarán ordenadas según su nombre, además de poder ver la última vez que se les hizo alguna modificación.
 
-::: tip Tip
+:::tip Tip
 Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
 :::
 
@@ -169,7 +169,7 @@ A un costado, se encuentra un botón que despliega un menú con las siguientes o
 - **Copiar**: Puedes hacer una copia de la plantilla.
 - **Borrar**: Se borra la plantilla
 
-::: tip Tip
+:::tip Tip
 Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
 :::
 
@@ -181,13 +181,13 @@ Para hacer una plantilla, primero debes hacer _click_ en el botón **+ Nuevo**, 
 
 Al hacer _click_, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
 
-::: tip Tip
+:::tip Tip
 Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
 :::
 
 Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
 
-::: warning Atención
+:::warning Atención
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
 Para automatizar la inserción del Footer, lee [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers)

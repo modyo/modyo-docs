@@ -12,7 +12,7 @@ Los filtros disponibles son:
 - Sitio
 - Espacio
 
-::: warning Atención
+:::warning Atención
 Cuando filtras por sitio, los elementos que usan datos de espacios, no aportarán su data en el conteo, y a la vez, si filtras por espacio, los elementos que usen data de sitios, no aportarán al conteo de datos.
 :::
 

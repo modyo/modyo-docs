@@ -32,7 +32,7 @@ If you want to enter any Type, you must click on its Name to open the correspond
 
 To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
-::: tip Tip
+:::tip Tip
 The best practice for UID naming is to name them by their formats, e.g. videos, posts, promotions, etc. This makes it easier for users know what types of content they're working with, and avoid creating redundant types within a space.
 :::
 
@@ -46,7 +46,7 @@ This interface is where we populate our types with the correct fields we need ba
 
 ## Fields
 
-::: tip Tip
+:::tip Tip
 The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/platform/content/public-api-reference.html)
 :::
 
@@ -148,10 +148,10 @@ In this tab, you can see the name of the type, along with its UID. The UID is im
 - **Reindex type**: Allows you to reindex the model if you encountered a problem with your public API.
 - **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
 
-::: warning Warning
+:::warning Warning
 When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
 :::
 
-::: warning Warning
+:::warning Warning
 Note that depending on the [cache settings you have in your space](/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::

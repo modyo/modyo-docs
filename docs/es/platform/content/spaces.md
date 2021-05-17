@@ -76,7 +76,7 @@ El caché es una herramienta que permite reducir la cantidad de requests que lle
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
-::: warning Atención
+:::warning Atención
 Debes tener en consideración que al habilitar esta opción, los cambios en tu contenido serán visibles en intervalos del tiempo que elijas en esta opción, por ejemplo, si usas 5 minutos, al publicar el contenido con título "A", y luego publicas el mismo contenido con título "A+1", por 5 minutos verás el contenido con el título "A" hasta que el caché inicial quede invalidado.
 :::
 
@@ -134,13 +134,13 @@ Para añadir un usuario al Espacio, selecciona el botón primario **+ Nuevo** en
 #### Modificar Rol ####
 Puedes modificar el rol de alguno de los usuarios asociados haciendo _click_ en su nombre. Se levantará un modal, donde podrás seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
-::: warning Atención
+:::warning Atención
 Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del espacio, por lo que si solo hay un administrador a este no se le podrá modificar su Rol.
 :::
 
 #### Eliminar Miembros del Equipo ####
 Para eliminar a algún miembro del equipo de un espacio, puedes seleccionarlos usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
 
-::: warning Atención
+:::warning Atención
 Se debe tener en cuenta que el sistema validará que siempre exista un administrador dentro del Espacio, por lo que si existe un solo administrador, este no podrá ser borrado.
 :::

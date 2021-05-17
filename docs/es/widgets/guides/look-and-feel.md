@@ -8,7 +8,7 @@ Todos los Widgets de este catalogo tienen como base un diseño plano, basado en 
 
 Tanto para la base de estilos, asi como la grilla utilizada en los Widgets, se hace uso de [Bootstrap](https://getbootstrap.com/) en su version `4.5.x`, utilizando al máximo los helpers y clases que éste incluye. De esta manera la cantidad de estilos personalizados en nuestros Widgets es muy baja lo que hace que su modificación sea simple y fácil.
 
-::: tip
+:::tip
 Para aprovechar al máximo el potencial de bootstrap usamos **SCSS** como pre-procesador de **css** lo que nos permite modificar los valores por defecto de las variables utilizadas en la compilación de bootstrap.
 :::
 
@@ -102,7 +102,7 @@ En el archivo `custom.scss` importamos y le damos orden a todas las otras hojas 
 @import "./theme.scss";
 ```
 
-::: tip
+:::tip
 El orden es importante, las **variables** siempre van antes de importar bootstrap.
 :::
 
@@ -121,7 +121,7 @@ new Vue({
 }).$mount("#my-Widget");
 ```
 
-::: warning Importante
+:::warning Importante
 El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los estilos!
 :::
 

@@ -35,7 +35,7 @@ To create an entry, click the "+ New" button in the upper right of the screen. I
 
 When you click Create, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
 
-::: tip Tip
+:::tip Tip
 To translate an already written entry into a different language, click the language dropdown along the top and select the new language you want to translate. This opens a blank version of the entry, where you can press the **Copy from locale** button in the upper-right section of the editor to bring in the content of another locale of the entry and work to translate it directly.
 :::
 
@@ -144,13 +144,13 @@ To see the Categories, click on the Categories section in the main menu on the l
 
 To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
 
-::: tip Tip
+:::tip Tip
 When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
 
 If we change the path, remember to change all links in any channel using it.
 :::
 
-::: warning Warning
+:::warning Warning
 If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
 :::
 

@@ -44,7 +44,7 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 
 **Tags**: Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
 
-::: tip Tip
+:::tip Tip
 Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado. 
 
 Así, aparecerá apenas selecciones el primer elemento (haciendo _click_ en el checkbox de la primera columna.
@@ -57,7 +57,7 @@ Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo a
 
 **Barra de búsqueda**: Con la barra de búsqueda, el Gestor te mostrará todos los archivos que tengan una palabra o contenido que se encuentre dentro de la metadata de este. En este caso, también incluye la búsqueda de su extensión específica, etiqueta, nombre o usuario que lo haya subido.
 
-::: tip Tip
+:::tip Tip
 Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predeterminada y no es posible cambiarlo.
 :::
 
@@ -102,7 +102,7 @@ En la interfaz de edición de las propiedades del archivo, puedes ver ciertos ca
 
 **Tag de Liquid**: Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
 
-::: warning Atención
+:::warning Atención
 Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
 :::
 
@@ -146,7 +146,7 @@ Posteriormente, puedes ver las tres opciones que puedes elegir para editar el ta
 
 A un costado, puedes observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
 
-::: tip Tip
+:::tip Tip
 Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
 
 - **Zoom:** Usa el scroll del mouse para acercar la imagen.
@@ -159,7 +159,7 @@ Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actu
 
 Para borrar un archivo en específico se debe hacer _click_ en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
 
-::: warning Atención
+:::warning Atención
 Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no puedes recuperarlo y aparece como un link roto.
 :::
 
@@ -176,7 +176,7 @@ Esta acción abre una nueva ventana que permite subir los archivos de dos manera
 - **Drag & Drop**: Arrastrar desde el navegador de archivos de tu computador hacia la ventana)
 - **Manera tradicional**: A través del navegador, pinchando y seleccionado los archivos
 
-::: warning Atención
+:::warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
 

@@ -164,7 +164,7 @@ When saving the information of your application, Modyo will show you a view wher
 
 ![New API Access](/assets/img/platform/save-API-access.png)
 
-::: warning Warning
+:::warning Warning
 Keep in mind that when you log out of one of your sites, a _GET_ command will be sent to all the logout URLs of your API access applications, which could generate unwanted redirects if a URL is set incorrectly in this field.
 :::
 
@@ -180,7 +180,7 @@ in our example "My application", and then `Create Token`.
 
 ![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
 
-::: warning Warning
+:::warning Warning
 You should keep in mind that administrative users can only execute actions through the Modyo administrative API if they have the necessary permissions. For example, an administrator with the role of "Developer" on a site cannot execute the "Publish" action on that site.
 :::
 

@@ -6,7 +6,7 @@ search: true
 
  Si nunca has usado la plataforma Modyo y/o los Widgets, te recomiendo empezar por [aquí](/platform/). Ademas esta guía asume que tienes el [modyo-cli](/platform/channels/Widgets.md#modyo-cli) instalado y que has leído su [documentación](/platform/channels/Widgets.md#modyo-cli).
 
-::: tip Token de acceso al API
+:::tip Token de acceso al API
 Para poder usar los Widgets de este catálogo, necesitas tener un token de acceso de API que te permitirá descargarlos para su uso. Éste lo puedes conseguir con tu organización o directamente con Modyo.
 :::
 

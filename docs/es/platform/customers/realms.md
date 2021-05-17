@@ -183,7 +183,7 @@ Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno,
 
 Sin embargo, el editor no subirá automáticamente el vínculo, sino que cuando lo subas, tienes que hacer _click_ en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en el código CSS para poder usarla.
 
-::: tip Tip
+:::tip Tip
 Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer _click_ en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
 :::
 
@@ -280,6 +280,6 @@ Además de lo anterior, los **Custom Fields** pueden estar habilitados o deshabi
 Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar un **Custom Field**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Custom Field**.
 :::
 
-::: tip Tip
+:::tip Tip
 Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/es/platform/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
 :::

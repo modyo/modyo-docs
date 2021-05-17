@@ -66,7 +66,7 @@ Los usuarios con el rol intermedio, además de lo anterior, pueden aprobar los e
 
 Los usuarios con el nivel más alto, además de realizar todo lo anterior, pueden saltarse el flujo de revisión y hacer uso de la acción "Forzar aprobación" para publicar un elemento sin necesidad de cumplir con las restricciones de la revisión en equipo.
 
-::: warning Atención
+:::warning Atención
 Los administradores de sitio o espacio siempre tienen la posibilidad de saltarse el flujo de revisión en equipo.
 
 Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción dentro del dropdown para "Forzar aprobación" que les permitirá ver el elemento en la vista de publicación.
@@ -134,7 +134,7 @@ Los respaldos son versiones previamente publicadas de los elementos. Es decir, c
 
 Si deseas revisar alguna versión en particular de un elemento, puedes ir a las "Diferencias entre versiones", y así poder ver los cambios que se han realizado y revertirlos cuando sea necesario.
 
-::: warning Atención
+:::warning Atención
 Por defecto, Modyo guarda las últimas 20 versiones (`MAX_BACKUPS`) publicadas de cada elemento, por lo que al hacer la vigésimoprimera publicación, estarás borrando el respaldo de la primera publicación del elemento.
 
 Este valor se puede modificar mediante variables de entorno y es común para todas las cuentas de este.
@@ -207,7 +207,7 @@ En otras secciones como [Customers](/es/platform/customers/) y Configuración, L
 En este caso, sólo un Administrador podrá tomar el control, activando para sí mismo la edición y descartándose los avances no guardados del usuario que se encuentra trabajando en él.
 
 
-::: warning Tomar el control
+:::warning Tomar el control
 
 Si un Administrador quiere tomar el control de una vista, deberá hacer _click_ en el elemento en uso y en la pantalla siguiente, hacer _click_ en el botón **Tomar Control**.
 

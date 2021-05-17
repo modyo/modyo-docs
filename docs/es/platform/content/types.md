@@ -35,7 +35,7 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 Para crear un Tipo, es necesario hacer _click_ en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
 
-::: tip Tip
+:::tip Tip
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. 
 
 Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
@@ -51,7 +51,7 @@ Esta interfaz sirve para crear cada uno de los tipos, dándoles el formato que s
 
 ## Campos
 
-::: tip Tip
+:::tip Tip
 El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
 
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference.html)
@@ -157,10 +157,10 @@ En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es imp
 - **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
 - **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo _click_ en este botón. 
 
-::: warning Atención
+:::warning Atención
 Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
 :::
 
-::: warning Atención
+:::warning Atención
 Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::

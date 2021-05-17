@@ -46,7 +46,7 @@ The list has three different filters for useful file searching:
 
 **Tags**: This filter allows you to display all files that match all selected tags.
 
-::: tip Tip
+:::tip Tip
 If you want to add a tag to one or more files, you can either edit a file directly or by clicking the checkbox of at least one file in the main list and use the "Add tags" button that appears in the lower left.
 
 Click this button to add tags to all selected files. If you select one or more checkboxes that are on your screen, the button will only tag those files that you have checked.
@@ -57,7 +57,7 @@ Click this button to add tags to all selected files. If you select one or more c
 
 **Search bar**: With the search bar, the manager will show you all files with titles or metadata that match your search terms. This also includes searches for specific file extensions, tags, and the names of users who uploaded a file.
 
-::: tip Tip
+:::tip Tip
 Modyo displays 30 files at a time, and this value cannot be updated.
 :::
 
@@ -102,7 +102,7 @@ You can find and/or edit the following in the file properties editor:
 
 **Liquid Tag**: Use this tag within the platform to reference the file through Liquid as opposed to it's URL.
 
-::: warning Warning
+:::warning Warning
 Neither the URL nor the Liquid Tag is possible to change through Modyo.
 :::
 
@@ -144,7 +144,7 @@ On the left side of the image editor are three options to edit the image size:
 
 The left side displays the original size of the image and the size in pixels of the crop edit.
 
-::: tip Tip
+:::tip Tip
 There are two ways to change the view and cut the image with the cursor:
 
 - **Zoom**: Use the mouse scroll to zoom in.
@@ -157,7 +157,7 @@ After cropping an image, if you want to restore it to its original dimensions, y
 
 To delete a file, click on the Delete icon, located in the upper right corner of the image preview in the "Update information" window.
 
-::: warning Warning
+:::warning Warning
 This action is irreversible, and any content using this file will display a broken link.
 :::
 
@@ -174,7 +174,7 @@ This action opens a new window that allows you to upload files in two ways:
 - **Drag & Drop**: Drag the file to the window where it says "Drop files here".
 - **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
-::: warning Warning
+:::warning Warning
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
 :::
 

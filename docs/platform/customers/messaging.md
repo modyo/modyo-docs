@@ -77,7 +77,7 @@ In addition, you will find a drop-down menu that will take you to four sections:
 
 In the Campaign Status view, you can find campaign statistics.
 
-::: warning Warning
+:::warning Warning
 If you haven't sent the campaign yet, the values will appear at zero.
 :::
 
@@ -155,7 +155,7 @@ At first glance, you can find all the email templates available.
 
 Each of the templates is ordered according to their name, in addition to being able to see the last time they were modified.
 
-::: tip Tip
+:::tip Tip
 If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
 :::
 
@@ -167,7 +167,7 @@ On one side, there is a button that displays a menu with the following options:
 - Copy: Makes a copy of the template.
 - Delete: Deletes the template
 
-::: tip Tip
+:::tip Tip
 If you want to temporarily change the template when sending a new campaign, it is better to make a copy of the template and work on it, leaving the original unchanged.
 :::
 
@@ -179,13 +179,13 @@ To make a template, you must first click on the **+ New** button, located at the
 
 This opens the edit view where you must give your template a name.
 
-::: tip Tip
+:::tip Tip
 Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for.
 :::
 
 Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
-::: warning Warning
+:::warning Warning
 If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
 To automate the insertion of the Footer, read [Customers Settings](/platform/customers/realms.html#customers-settings)

@@ -8,7 +8,7 @@ Bienvenido a la documentación de la Modyo. Esperamos cubrir aquí todos los pun
 
 La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
 
-::: tip Versiones pasadas
+:::tip Versiones pasadas
 La documentación en este sitio aplica a la última versión (9.1). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf).
 :::
 
@@ -48,7 +48,7 @@ Para obtener soporte de la Plataforma Modyo visita el [sitio oficial de soporte]
 
 Para utilizar Modyo, sólo debes disponer de un navegador Web compatible. Toda la interfaz del producto puede ser accedida mediante su [consola Web](/es/platform/core/the-modyo-interface.html).
 
-::: tip Navegadores compatibles
+:::tip Navegadores compatibles
 Modyo es compatible con las versiones más modernas de Google Chrome, Firefox y Microsoft Edge.
 Si tienes actualizaciones pendientes, recomendamos que actualices tu navegador.
 :::

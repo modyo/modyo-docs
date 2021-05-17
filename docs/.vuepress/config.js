@@ -245,7 +245,7 @@ module.exports = {
                 ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
                 ["/es/platform/key-concepts", "Conceptos claves"],    
                 "/es/platform/release-notes",
-                ["/es/platform/training", "Entrenamiento"],
+                "/es/platform/training",
               ],
             },            
             {
