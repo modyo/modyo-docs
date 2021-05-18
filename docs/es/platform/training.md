@@ -31,7 +31,7 @@ Los [tutoriales](/es/platform/tutorials) son la forma más fácil de iniciarte e
 Te recomendamos realizar los tutoriales en orden, siguiendo todos los pasos que se presentan en ellos.
 
 ### Programa de certificación
-Modyo cuenta con un programa de certificación para clientes y socios de negocio que consiste en cursos de capacitación para tres perfiles diferentes:
+Modyo cuenta con un [programa de certificación](https://training.modyo.com/catalog) para clientes y socios de negocio que consiste en cursos de capacitación para tres perfiles diferentes:
 - Content Manager
 - Frontend Developer
 - Administrador del sistema (configuración de seguridad, organizaciones, reinos, sitios y espacios de contenidos)
