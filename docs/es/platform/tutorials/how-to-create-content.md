@@ -6,41 +6,42 @@ search: true
 
 ## Introducción
 
-Bienvenido al primer tutorial de la serie de entrenamiento de Modyo. En este primer tutorial revisaremos todo lo que necesitas saber para crear y publicar contenido mediante usando [Modyo Content](/es/platform/content), el cual usaremos más adelante en los siguientes tutoriales para construir un completo sitio Web.
-
-Crear contenido es la funcionalidad más importante a la hora de tener sitios dinámicos y poder disponibilizar estos en diversos dispositivos.
-
-A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
+Bienvenido al primer tutorial de la serie de entrenamiento de Modyo. En este primer tutorial revisaremos todo lo que necesitas saber para crear y publicar contenido con [Modyo Content](/es/platform/content), herramienta indispensable a la hora de gestionar sitios dinámicos y multiplataforma.
 
 ### Dynamic Bank
 
-Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer uan experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez que completes la serie de tutoriales tu proyecto debería lucir así:
+Dynamic Bank es nuestra marca ficticia que creamos para usar en todos nuestros demos y tutoriales. Con Dynamic Bank intentamos recrear de la manera más fidedigna la experiencia de construir productos digitales con Modyo.
+
+Una vez que completes esta serie de tutoriales, tu proyecto debería lucir así:
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
-<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver el diseño en Figma</a>
 
 ## Requisitos Previos
 
-Para ejecutar los pasos de este tutorial debes contar solamente con una cuenta activa en Modyo. Como este es el primer tutorial de la serie, no necesitas haber completado ninguno antes de comenzar.
+Para ejecutar los pasos de este tutorial debes contar únicamente con una cuenta activa en Modyo, y como es el primer tutorial de la serie, no requiere haber completado ninguno previamente.
 
-¿No tienes una cuenta en Modyo? Contacta al administrador de sistemas a cargo de la plataforma en tu empresa, o puedes crear una cuenta de pruebas sólo para tí desde [aquí](https://platform.modyo.cloud/onboarding).
+¿No tienes una cuenta en Modyo? Puedes solicitar una cuenta con el administrador de la plataforma en tu empresa, o crear una de prueba sólo para tí desde [aquí](https://platform.modyo.cloud/onboarding).
 
 ## Paso 1: Crear un espacio de contenidos
 
-Al ingresar a Modyo debemos entrar al modulo de [Modyo Content](/es/platform/content) para poder crear nuestro primer espacio, el cual llamaremos "Bank" y selecionamos Español(España) como idioma.
+Una vez que ingreses a Modyo con tu cuenta, iremos al modulo de [Modyo Content](/es/platform/content) para [crear nuestro primer espacio](/es/platform/content/spaces.html#crear-un-espacio), que llamaremos **"Bank"**, selecionando como idioma **Español(España)**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
 ## Paso 2: Crear tipo "Hero"
 
-Una vez creado el espacio "Bank" debes ir al menu "Types" y generamos nuestro primero Tipo llamado "Hero" con los siguientes campos:
+Ahora necesitamos crear nuestro primer [tipo de contenido](/es/platform/content/types.html#tipos-de-contenido) en nuestro espacio **"Bank"**. 
+Una vez que estes en este espacio, debes ir a la sección **Types**, adrle click al botón superior derecho que dice **"+ Nuevo Tipo"**. 
+
+Desde ahí, generamos nuestro primero Tipo llamado **"Hero"** con los siguientes campos:
 
 <table>
  <tr>
-  <th style="text-align: left">Field</th>
-  <th style="text-align: left">Name</th>
-  <th style="text-align: left">Allowed values</th>
+  <th style="text-align: left">Tipo de campo</th>
+  <th style="text-align: left">Nombre</th>
+  <th style="text-align: left">Valores que permitiremos</th>
  </tr>
  <tr>
   <td>
@@ -100,9 +101,9 @@ Es importante guardar los cambios antes de salir.
 
 ## Paso 3: Crear y publicar entrada del Tipo "Hero"
 
-Para crear nuestra primera [entrada](/es/platform/content/entries) debemos ir a la sección Entries y hacer click en el botón "New Entry", para luego selecionar el tipo "Hero" y agregar en Name "Donde estes, Dynamic Bank te acompaña".
+Ahora crearemos nuestra primera [entrada](/es/platform/content/entries) del tipo que acabamos de crear. Para eso, debemos ir a la sección **Entries** y hacer click en el botón **"New Entry"**, para luego selecionar el tipo "Hero" y agregar en Name **_"Donde estés, Dynamic Bank te acompaña"_**.
 
-Una vez creada completamos los siguientes campos:
+Para el resto de los campos, usaremos los siguientes valores:
 
 <table>
  <tr>
@@ -134,7 +135,7 @@ Una vez creada completamos los siguientes campos:
    <b>Url</b>
   </td>
   <td>
-   url de destino o #
+   url de destino, por ahora <code>#</code> bastará
   </td>
  </tr>
  <tr> 
