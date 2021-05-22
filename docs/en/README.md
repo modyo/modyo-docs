@@ -1,20 +1,11 @@
 ---
-search: true
+search: false
 ---
 
-# Modyo Content
+# Brand Guide
 
-**Modyo Content** es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+Welcome to the official guide of the Modyo brand. Below we present the different standards we use for the construction of websites and documents, indicating specific details about the use of logos, colors and fonts, among other things.
 
-<img src="/assets/img/content/header.jpg" style="margin: 40px auto; width: 500px; display: block;" />
+If you have questions about how to properly use the Modyo brand, please feel free to [contact us](https://support.modyo.com/hc/es-cl)
 
-**Modyo Content** posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en **Modyo Channels** como de sistemas o aplicaciones externas.
-
-Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.
-
-### Funcionalidades principales
-
-- [Espacios](/es/platform/content/spaces.html) para la organización de contenidos y equipos que los administran.
-- [Tipos de contenido](/es/platform/content/types.html) para definir estructuras personalizadas.
-- [Gestor de archivos](/es/platform/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
-- [API y SDKs](/es/platform/content/public-api-reference.html) para el acceso a los repositorios de contenidos, tanto dentro como fuera de la plataforma.
+<img src='/assets/img/m.png' style="width:300px;" />
