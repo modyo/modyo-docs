@@ -2,18 +2,12 @@
 search: true
 ---
 
-# Modyo Insights
+# Acerca de Onboarding
 
-Para cualquier empresa o institución, es importante saber qué es lo que está pasando en su ecosistema, por lo que tener a la mano una visión generalizada tanto de la actividad de sus propios usuarios finales, como del equipo de trabajo, es fundamental para implementar cualquier estrategia.
+Los Widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
 
-<img src="/assets/img/insights/header.jpg" style="margin: 40px auto; width: 500px; display: block;" />
+Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los Widgets que se han creado. En la barra superior podrás filtrar el listado de Widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del Widget.
 
-**Modyo Insights** es una sección especializada en la representación de datos estadísticos tanto de los usuarios de tus sitios, como del equipo de trabajo que crea el contenido y los canales digitales.
+En la esquina superior derecha verás un botón principal **+ Nuevo** que te permitirá crear un nuevo Widget. Deberás escribir un nombre para luego entrar a la vista de edición del Widget.
 
-Cada vista de **Modyo Insights** cuenta con tres secciones principales:
-
-- Contadores generales
-- Gráfica comparativa
-- Elementos específicos
-
-También podrás filtrar los datos asociados a la vista con los tres filtros en la parte superior derecha de la pantalla, donde podrás filtrar por fecha y otros 2 valores, dependiendo del contexto.
+En la vista de edición del Widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
