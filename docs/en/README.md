@@ -2,45 +2,21 @@
 search: true
 ---
 
-# Modyo Commerce
-**Modyo Commerce** es una aplicación de Modyo que posibilita a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign On).
+# Modyo
 
-<img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;" />
+**Modyo Channels** is an application that allows the management of content and Web applications for multiple sites and languages centrally.
 
-:::tip Medios de Pago Actualmente Modyo Commerce sólo permite la integración con medios de pago en latinoamérica. :::
+<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
-## Estructura
+**Modyo Channels** provides extensive access to the HTML code of the templates, giving developers complete control of details about how user digital experiences are implemented and through an integrated version system.
 
-**Modyo** también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
+**Modyo Channels** has HTML editable design templates that make it easy to reuse code.
 
-Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
+**Modyo Channels**also has a template system based on [Liquid Markup](/es/platform/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
 
-## Configuración de commerce
+### Key features
 
-La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
-
-### General
-
-En esta sección podremos configurar los datos más generales que dan vida al commerce, como es el caso del formato de la moneda.
-
-Además, se permite activar el envío de un correo electrónico automático cuando el usuario pague su orden, en forma de recibo.
-
-Para este recibo, es fundamental adaptarlo hacia el commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
-
-### Formas de pago
-
-**Modyo** permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
-
-Actualmente, los métodos de pago compatibles con Modyo son:
-
-- Oneclick
-- Webpay
-- Khipu
-- PayU
-- PayU PSE
-- TigoMoney
-- PayMe
-- Credomatic
-- Bancard
-
-Recuerda que para cada una de estas formas de pago, necesitas permisos y credenciales para operar. Contacta a los representantes de cada empresa para obtenerlas.
+- [Site management](/es/platform/channels/sites.html) to organize digital channels.
+- [Dynamic Pages](/es/platform/channels/pages.html) to define the structure of each site and add content in the.
+- [Widgets](/es/platform/channels/widgets.html) to create reusable components using technologies like Javascript, HTML and CSS.
+- [Templates](/es/platform/channels/templates.html) to organize the global structures of the site and the design system.
