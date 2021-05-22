@@ -2,21 +2,91 @@
 search: true
 ---
 
-# Modyo Customers
+# Integraciones
 
-**Modyo Customers** es una aplicación que permite habilitar a los sitios en Modyo de autenticación de usuarios, ya sea por medio de su sistema interno de registro de cuentas como de sus integraciones empresariales a sistemas de Single Sign On (SSO).
+Una de las funcionalidades de Modyo para facilitar la interacción de otros sistemas de usuarios con Modyo son las integraciones con distintos servicios de autenticación.
 
-<img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 400px; display: block;" />
+Actualmente la plataforma es compatible con:
 
-Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Targets la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
+- [Facebook](/es/platform/core/integrations/facebook.html)
+- [Google](/es/platform/core/integrations/google.html)
+- [LDAP](/es/platform/core/integrations/ldap.html)
+- [SAML](/es/platform/core/integrations/saml.html)
+- [OAuth2](/es/platform/core/integrations/oauth2.html)
+- [OpenID Connect](/es/platform/core/integrations/oidc.html)
 
-**Modyo Customers** representa un importante elemento a la hora de desarrollar productos digitales sobre la plataforma.
+Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-**Modyo Customers** además posee un sistema integrado de mensajería al usuario autenticado.
+:::tip Tip Desde Modyo 9 en adelante, los usuarios (Customers>Usuarios) y administradores (Settings>Equipo) están separados lógicamente. Ambos cuentan con soporte para todas las integraciones compatibles con la plataforma, pero con inicios de sesión distintos, por lo que puedes configurar, por ejemplo, Facebook para tus usuarios y Oauth2 para tus administradores. :::
 
-### Funcionalidades principales
+### Webhooks
 
-- [Gestión de usuarios](/es/platform/customers/realms.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
-- [Targets](/es/platform/customers/targets.html) para definir segmentos dinámicos de usuarios.
-- [Formularios dinámicos](/es/platform/customers/forms.html) para capturar información asociada a los usuarios.
-- [Mensajería](/es/platform/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.
+La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, se deben habilitar y configurar desde la sección webhooks en la configuración de la cuenta.
+
+Un webhook es una acción _POST_ automática a una URL determinada con información determinada.
+
+Para habilitarlos, debes checkear la parte superior de la página y después proceder a crear todos los webhooks que quieras.
+
+Los webhooks se pueden crear a partir de acciones de sitios o espacios.
+
+Los webhooks de sitio son:
+
+* Respuesta del formulario creado
+* Respuesta de formulario actualizada
+* Página creada
+* Página eliminada
+* Página publicada
+* Página despublicada
+* Página actualizada
+* Inicio de sesión
+* Cierre de sesión
+* Navegación aprobada
+* Navegación publicada
+* Navegación enviada a revisión
+* Navegación actualizada
+* Perfil actualizado
+* Sitio creado
+* Sitio eliminado
+* Sitio desactivado
+* Sitio habilitado
+* Sitio oculto
+* Sitio puesto en desarrollo
+* Sitio visible
+* Sitio actualizado
+* Templates aprobados
+* Templates enviados para su revisión
+* Templates actualizados
+* Tema instalado
+* Tema restablecido
+* Tema actualizado
+* Widget aprobado
+* Widget clonado
+* Widget creado
+* Widget publicado
+* Widget restaurado
+* Widget enviado a revisión
+* Widget despublicado
+* Widget actualizado
+
+Los webhooks de espacios son:
+
+* Categoría creada
+* Categoría eliminada
+* Categoría actualizada
+* Entrada aprobada
+* Entrada creada
+* Entrada publicada
+* Entrada enviada a revisión
+* Entrada despublicada
+* Entrada actualizada
+* Espacio creado
+* Espacio actualizado
+* Tipo creado
+* Tipo eliminado
+* Tipo actualizado
+
+Al crear un webhook, debes tener la URL a la que quieres enviar la información, seleccionar el tipo de log y sitio (en caso de ser necesario) que gatillará el webhook y luego guardar los cambios.
+
+Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
+
+Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
