@@ -1,11 +1,7 @@
 ---
-search: false
+search: true
 ---
 
-# Guía de Marca
+# Banca de Inversiones
 
-Bienvenido a la guía oficial de la marca Modyo. A continuación presentamos los diferentes estándares que utilizamos para la construcción de sitios web y documentos, indicando detalles específicos sobre el uso de logotipos, colores y tipografías, entre otras cosas.
-
-Si tiene preguntas sobre cómo usar correctamente la marca Modyo, no dude en [contactarnos](https://support.modyo.com/hc/es-cl)
-
-<img src='/assets/img/m.png' style="width:300px;" />
+Los Widgets de la Banca de Inversiones te permiten acceder a un completo catálogo de experiencias pre construídas con foco en el cliente que busca invertir su dinero en diferentes tipos de instrumentos.
