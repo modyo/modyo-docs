@@ -2,12 +2,21 @@
 search: true
 ---
 
-# Acerca de Onboarding
+# Modyo Customers
 
-Los Widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
+**Modyo Customers** es una aplicación que permite habilitar a los sitios en Modyo de autenticación de usuarios, ya sea por medio de su sistema interno de registro de cuentas como de sus integraciones empresariales a sistemas de Single Sign On (SSO).
 
-Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los Widgets que se han creado. En la barra superior podrás filtrar el listado de Widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del Widget.
+<img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
-En la esquina superior derecha verás un botón principal **+ Nuevo** que te permitirá crear un nuevo Widget. Deberás escribir un nombre para luego entrar a la vista de edición del Widget.
+Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Targets la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
 
-En la vista de edición del Widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
+**Modyo Customers** representa un importante elemento a la hora de desarrollar productos digitales sobre la plataforma.
+
+**Modyo Customers** además posee un sistema integrado de mensajería al usuario autenticado.
+
+### Funcionalidades principales
+
+- [Gestión de usuarios](/es/platform/customers/realms.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
+- [Targets](/es/platform/customers/targets.html) para definir segmentos dinámicos de usuarios.
+- [Formularios dinámicos](/es/platform/customers/forms.html) para capturar información asociada a los usuarios.
+- [Mensajería](/es/platform/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.
