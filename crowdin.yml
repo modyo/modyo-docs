@@ -49,4 +49,4 @@ files:
   - source: /docs/es/brand/documents/*.md
     translation: /docs/%two_letters_code%/brand/documents/%original_file_name%
   - source: /docs/es/brand/*.md
-    translation: /docs/%two_letters_code%/brand/*.md
+    translation: /docs/%two_letters_code%/brand/%original_file_name%
