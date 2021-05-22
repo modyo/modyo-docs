@@ -2,17 +2,16 @@
 search: false
 ---
 
-# Deployment Standard
+# Documents <Badge text="Beta" type="warn"/>
 
-Dockerfile
+## Text Rules
 
-Virtual Machine Parametry
+Text in Modyo is not justified. Titles do not use journods, unless they are full sentences.
 
-Continuing Integration
+## Google G Suite
 
-Artifact Repositories
+For Google G Suite documents and presentations.
 
-Observability Implementation of metrics
+## Microsoft 365
 
-
-
+For Microsoft 365 documents and presentations.
