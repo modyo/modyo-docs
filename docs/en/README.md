@@ -1,11 +1,22 @@
 ---
-search: false
+search: true
 ---
 
-# Brand Guide
+# Modyo
 
-Welcome to the official guide of the Modyo brand. Below we present the different standards we use for the construction of websites and documents, indicating specific details about the use of logos, colors and fonts, among other things.
+**Modyo Channels** is an application that allows the management of content and Web applications for multiple sites and languages centrally.
 
-If you have questions about how to properly use the Modyo brand, please feel free to [contact us](https://support.modyo.com/hc/es-cl)
+<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
-<img src='/assets/img/m.png' style="width:300px;" />
+**Modyo Channels** provides extensive access to the HTML code of the templates, giving developers complete control of details about how user digital experiences are implemented and through an integrated version system.
+
+**Modyo Channels** has HTML editable design templates that make it easy to reuse code.
+
+**Modyo Channels**also has a template system based on [Liquid Markup](/es/platform/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
+
+### Key features
+
+- [Site management](/es/platform/channels/sites.html) to organize digital channels.
+- [Dynamic Pages](/es/platform/channels/pages.html) to define the structure of each site and add content in the.
+- [Widgets](/es/platform/channels/widgets.html) to create reusable components using technologies like Javascript, HTML and CSS.
+- [Templates](/es/platform/channels/templates.html) to organize the global structures of the site and the design system.
