@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Acerca de Onboarding
+# Acerca de la banca personas
 
 Los Widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
 
