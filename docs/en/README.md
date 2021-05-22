@@ -2,19 +2,48 @@
 search: true
 ---
 
-# Modyo Content
+# Bienvenido a Modyo
 
-**Modyo Content** es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+Bienvenido a la documentación de la Modyo. Esperamos cubrir aquí todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
 
-<img src="/assets/img/content/header.jpg" style="margin: 40px auto; width: 500px; display: block;" />
+La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
 
-**Modyo Content** posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en **Modyo Channels** como de sistemas o aplicaciones externas.
+:::tip Versiones pasadas La documentación en este sitio aplica a la última versión (9.1). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf). :::
 
-Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.
+### ¿Qué es Modyo?
 
-### Funcionalidades principales
+Modyo es una plataforma de experiencia digital que potencia soluciones para la interacción con clientes digitales, acelerando el desarrollo web y móvil de forma segura y permitiendo además unificar aplicaciones nativas y de terceros en una sola área para administrar tus canales digitales.
 
-- [Espacios](/es/platform/content/spaces.html) para la organización de contenidos y equipos que los administran.
-- [Tipos de contenido](/es/platform/content/types.html) para definir estructuras personalizadas.
-- [Gestor de archivos](/es/platform/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
-- [API y SDKs](/es/platform/content/public-api-reference.html) para el acceso a los repositorios de contenidos, tanto dentro como fuera de la plataforma.
+### ¿Para qué usar Modyo?
+
+* Utiliza Modyo para crear **experiencias digitales integradas** para tus consumidores a través de canales públicos y privados.
+* Utiliza Modyo para crear **agilidad y gobernabilidad** en tu fábrica digital.
+* Utiliza Modyo para crear experiencias digitales a través de **widgets**.
+
+### ¿Por qué usar Modyo?
+
+Modyo provee un ambiente de desarrollo seguro, ya sea en la nube u "On Premise" (local), para construir interacciones inteligentes con tus clientes. Permite crear, manejar y medir fácilmente tanto sitios públicos como privados. Grandes equipos digitales pueden agilizar la creación de contenido y componentes desarrollados para Front End de forma segura, en un ambiente que provee una amplia librería de widgets inteligentes que pueden ser conectados a diversos sistemas de su empresa.
+
+### ¿Para quién es Modyo?
+
+* **Líderes de Canales Digitales** que son responsables de guiar interacciones, ventas y experiencias de clientes en canales web y móvil.
+
+* **Arquitectos de Software** buscando crear una arquitectura limpia, que abarque desde los Microservicios y APIs hasta Micro frontends para canales web y móvil.
+
+* **Expertos en Marketing Digital** que requieren un sistema de administración de contenido para crear experiencias digitales para grupos objetivos.
+
+* **Administradores de Contenido** que quieren manejar sus publicaciones de manera fácil en un sólo lugar para todos sus canales digitales.
+
+* **Desarrolladores de Front End** que quieren construir experiencias digitales a través de widgets fáciles de crear y administrar.
+
+* **Desarrolladores de Back End** que requieren un ambiente de desarrollo de Front End poderoso para conectar APIs y Microservicios.
+
+### ¿Dónde puedo obtener soporte?
+
+Para obtener soporte de la Plataforma Modyo visita el [sitio oficial de soporte](https://support.modyo.com/hc/es).
+
+### Requisitos para usar Modyo
+
+Para utilizar Modyo, sólo debes disponer de un navegador Web compatible. Toda la interfaz del producto puede ser accedida mediante su [consola Web](/es/platform/core/the-modyo-interface.html).
+
+:::tip Navegadores compatibles Modyo es compatible con las versiones más modernas de Google Chrome, Firefox y Microsoft Edge. Si tienes actualizaciones pendientes, recomendamos que actualices tu navegador. :::
