@@ -2,45 +2,19 @@
 search: true
 ---
 
-# Modyo Commerce
-**Modyo Commerce** es una aplicación de Modyo que posibilita a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign On).
+# Modyo Content
 
-<img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;" />
+**Modyo Content** es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
 
-:::tip Medios de Pago Actualmente Modyo Commerce sólo permite la integración con medios de pago en latinoamérica. :::
+<img src="/assets/img/content/header.jpg" style="margin: 40px auto; width: 500px; display: block;" />
 
-## Estructura
+**Modyo Content** posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en **Modyo Channels** como de sistemas o aplicaciones externas.
 
-**Modyo** también permite manejar un ecommerce fácilmente, organizando y centralizando los pedidos, además de simplificar la inserción de formas de pago.
+Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.
 
-Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
+### Funcionalidades principales
 
-## Configuración de commerce
-
-La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
-
-### General
-
-En esta sección podremos configurar los datos más generales que dan vida al commerce, como es el caso del formato de la moneda.
-
-Además, se permite activar el envío de un correo electrónico automático cuando el usuario pague su orden, en forma de recibo.
-
-Para este recibo, es fundamental adaptarlo hacia el commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
-
-### Formas de pago
-
-**Modyo** permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
-
-Actualmente, los métodos de pago compatibles con Modyo son:
-
-- Oneclick
-- Webpay
-- Khipu
-- PayU
-- PayU PSE
-- TigoMoney
-- PayMe
-- Credomatic
-- Bancard
-
-Recuerda que para cada una de estas formas de pago, necesitas permisos y credenciales para operar. Contacta a los representantes de cada empresa para obtenerlas.
+- [Espacios](/es/platform/content/spaces.html) para la organización de contenidos y equipos que los administran.
+- [Tipos de contenido](/es/platform/content/types.html) para definir estructuras personalizadas.
+- [Gestor de archivos](/es/platform/content/asset-manager.html) para la organización de archivos como imágenes o videos que son usados dentro de los contenidos.
+- [API y SDKs](/es/platform/content/public-api-reference.html) para el acceso a los repositorios de contenidos, tanto dentro como fuera de la plataforma.
