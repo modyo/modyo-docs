@@ -1,13 +1,25 @@
 ---
-search: true
+home: true
+heroImage: /assets/img/welcome.png
+actionText: Comenzar
+actionLink: /es/platform/
+footer: Copyright © 2008-2021 Modyo SpA
 ---
 
-# Acerca de la banca de seguros
-
-Los Widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
-
-Al entrar en la sección **Widgets** de tu sitio, verás un listado de todos los Widgets que se han creado. En la barra superior podrás filtrar el listado de Widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del Widget.
-
-En la esquina superior derecha verás un botón principal **+ Nuevo** que te permitirá crear un nuevo Widget. Deberás escribir un nombre para luego entrar a la vista de edición del Widget.
-
-En la vista de edición del Widget, podrás ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
+<div class="features">
+  <div class="feature">
+    <h2>Bienvenido a Modyo</h2>
+    <p>Modyo ayuda a acelerar la transformación digital de grandes empresas e instituciones financieras.</p>
+    <a href="/es/platform/">Leer más</a>
+  </div>
+  <div class="feature">
+    <h2>Conceptos Clave</h2>
+    <p>¿Qué conceptos clave necesitas aprender para comenzar rápidamente?</p>
+    <a href="/es/platform/key-concepts.html">Leer más</a>
+  </div>
+  <div class="feature">
+    <h2>Widgets</h2>
+    <p>Explora el catálogo de Widgets de Modyo.</p>
+    <a href="/es/widgets/">Leer más</a>
+  </div>
+</div>
