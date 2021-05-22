@@ -1,0 +1,86 @@
+---
+search: true
+---
+
+# Histórico de transferencias
+
+Modyo ofrece un Widget que presenta todos los datos relevantes sobre las operaciones en tránsito asociadas a la compra y venta de acciones del usuario, para que encuentre rápidamente su información consolidada en la plataforma.
+
+#### Instalación:
+
+```bash
+modyo-cli get modyo-widgets-investments-transfer-history
+```
+
+[Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/historico-de-transferencias)
+
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/historico-de-transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"></p>
+
+<table spaces-before="0">
+  <tr>
+    <th>
+      Funcionalidad
+    </th>
+    
+    <th>
+      Descripción
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Operaciones en Tránsito
+    </td>
+    
+    <td>
+      Muestra el listado con las operaciones en tránsito asociadas a la compra/venta de acciones. Permite cancelar operaciones en tránsito.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Cancelar Operación
+    </td>
+    
+    <td>
+      Despliega información de la operación específica a cancelar, para que el cliente confirme la opción.
+    </td>
+  </tr>
+</table>
+
+<script>
+
+  export default {
+    mounted() {
+
+      function setIframeHeightCO(id, ht) {
+          var ifrm = document.getElementById(id);
+          if(ifrm) {
+            ifrm.style.height = ht + 4 + "px";
+          }
+      }
+      // iframed document sends its height using postMessage
+      function handleDocHeightMsg(e) {
+          // check origin
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+              // parse data
+              var data = JSON.parse( e.data );
+
+              console.log('data:', data)
+              // check data object
+              if ( data['docHeight'] ) {
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
+              } else {
+                  setIframeHeightCO( 'widgetFrame', 700 );
+              }
+          }
+      }
+
+      // assign message handler
+      if ( window.addEventListener ) {
+          window.addEventListener('message', handleDocHeightMsg, false);
+      }
+    }
+  }
+
+</script>
