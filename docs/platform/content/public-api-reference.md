@@ -124,7 +124,7 @@ In addition, the Modyo SDK allows you to obtain information about end users that
 
 #### 1. Obtain a Modyo token
 
-The `@modyo/sdk` package is available from the Github registry, under the Modyo organization. For this reason, besides including it in your `package.json`, **you need to get a token with the `read:packages` scope**([Github reference](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens)) to use this package in a project.
+The `@modyo/sdk` package is available from the Github registry, under the Modyo organization. For this reason, besides including it in your `package.json`, **you need to get a token with the `read:packages` scope**([Github reference](https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens)) to use this package in a project.
 
 
 #### 2. Authenticate to Github packages
@@ -136,7 +136,7 @@ The content of that file (replacing `TOKEN` with your token) should be:
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
 
-[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 
 #### 3. Add the organization to your project
@@ -149,7 +149,7 @@ registry=https://npm.pkg.github.com/OWNER
 
 Where `OWNER` is the name of the organization that owns the package, in this case `modyo`.
 
-[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
 
 ### Usage

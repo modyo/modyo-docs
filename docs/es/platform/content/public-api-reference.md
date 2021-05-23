@@ -150,7 +150,7 @@ Asimismo, el SDK de Modyo permite obtener información del usuario final que ya 
 
 #### 1. Obtener un token de Modyo
 
-El paquete `@modyo/sdk` está disponible en el registro de Github, bajo la organización Modyo. Es por eso que para consumir el paquete en un proyecto necesitamos, además de agregarlo al `package.json`, **necesitas obtener un token con el scope `read:packages`**([referencia en Github](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
+El paquete `@modyo/sdk` está disponible en el registro de Github, bajo la organización Modyo. Es por eso que para consumir el paquete en un proyecto necesitamos, además de agregarlo al `package.json`, **necesitas obtener un token con el scope `read:packages`**([referencia en Github](https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
 
 #### 2. Autenticarse en Github packages
 
@@ -161,7 +161,7 @@ El contenido de ese archivo (reemplazando `TOKEN` por nuestro token)
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
 
-[Referencia en Github docs](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Referencia en Github docs](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 #### 3. Agregar la organización a tu proyecto
 
@@ -173,7 +173,7 @@ registry=https://npm.pkg.github.com/OWNER
 
 Donde `OWNER` es el nombre de la organización dueña del paquete, en este caso `modyo`
 
-[Referencia Github docs](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+[Referencia Github docs](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
 ### Uso
 
