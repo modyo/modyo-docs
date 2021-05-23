@@ -12,13 +12,13 @@ Al entrar a la herramienta, podrás ver un listado de todos los formularios que 
 
 En cada fila de la tabla de formularios, verás en la primera columna el nombre del formulario, a continuación la fecha de creación, y en la última columna, la cantidad de respuestas que se han enviado para ese formulario.
 
-Desde este listado también puedes acceder a la vista de análisis individual, haciendo _click_ en el título del formulario, asimismo al listado de respuestas del formulario, haciendo _click_ en el número de respuestas del formulario.
+Desde este listado también puedes acceder a la vista de análisis individual, haciendo click en el título del formulario, asimismo al listado de respuestas del formulario, haciendo click en el número de respuestas del formulario.
 
 Para habilitar o deshabilitar los formularios y permitir que usuario puedan o no enviar sus respuestas, debes ir a la vista de análisis y seleccionar la acción respectiva entre las opciones desplegadas en la sección superior derecha.
 
 ## Crear Formulario
 
-Para crear un nuevo formulario, haz _click_ en la botón principal arriba a la derecha **+ Nuevo**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
+Para crear un nuevo formulario, haz click en la botón principal arriba a la derecha **+ Nuevo**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
 
 - **Nombre**: Nombre asociado al formulario. Este valor aparecerá tanto en el índice de formularios en el administrador de Modyo, y también como título cuando un usuario lo vaya a responder.
 - **Descripción**: Este texto aparecerá como texto debajo del título cuando los usuarios lo vayan a responder.
@@ -100,7 +100,7 @@ Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
 
 ## Respuestas
 
-Al hacer _click_ en el contador de respuestas de un formulario, llegarás a una vista donde se listan todas las respuestas que los usuarios han enviado y la fecha en que respondieron.
+Al hacer click en el contador de respuestas de un formulario, llegarás a una vista donde se listan todas las respuestas que los usuarios han enviado y la fecha en que respondieron.
 
 Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionándolas en el listado y luego usando las acciones masivas al final del mismo.
 
@@ -108,7 +108,7 @@ Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionándolas en e
 Puedes eliminar respuestas una a una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón **Borrar** al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
 :::
 
-Para ver en detalle la respuesta de un usuario, basta con hacer _click_ en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
+Para ver en detalle la respuesta de un usuario, basta con hacer click en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
 
 <img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">
 
@@ -136,7 +136,7 @@ Esta sección te permitirá añadir cuantos campos sean necesarios para completa
 Desde la versión 9.0.8 en adelante, los formularios ya no cuentan con preguntas de tipo archivos, por lo que no podrás requerir que los usuarios suban archivos usando los formularios de Modyo.
 :::
 
-Puedes eliminar uno de los campos del formulario haciendo _click_ en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
+Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
 ::: danger Peligro
 Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.

@@ -289,9 +289,9 @@ Para ello, el administrador que creó el sitio puede asignar manualmente a los u
 
 Para añadir un usuario al sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del sitio.
 
-Puedes modificar el rol de alguno de los administradores asociados haciendo _click_ en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
+Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
-Si quieres eliminar a un administrador de un sitio, selecciona usando los checks a la izquierda de su nombre, y luego haciendo _click_ en el botón al final de la lista **Borrar**.
+Si quieres eliminar a un administrador de un sitio, selecciona usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
 
 Los roles disponibles son:
 

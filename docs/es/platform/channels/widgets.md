@@ -29,7 +29,7 @@ A la derecha, estas son las distintas acciones:
 Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-fame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
 :::
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer _click_ en este ícono, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este ícono, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
 
 Por defecto comienzas comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, se puede además con las versiones de respaldo. Si este ícono no aparece, entonces no hay ninguna versión publicada de este widget.
 
@@ -66,10 +66,10 @@ Para aprender más sobre el flujo de publicación, revise la sección de [Versio
 En el área de trabajo se puede ver:
 
 - **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS y HTML para construir widgets.
-- **Gestor de archivos**: Al hacer _click_, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
+- **Gestor de archivos**: Al hacer click, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
 - **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
 - **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/es/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
-- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS y HTML). Al hacer _click_ en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo _click_.
+- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS y HTML). Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
 
 :::tip Tip
 Para no perder los cambios que tienes actualmente, se debe guardar antes de saltar entre sub-versiones, de tal forma que siempre pueda volver a la última versión guardada en la lista de cambios.

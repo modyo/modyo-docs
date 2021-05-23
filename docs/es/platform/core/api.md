@@ -45,7 +45,7 @@ POST     /targets/count_matches  Create a temporary target, and return the total
 El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que
 realiza.
 
-Si haces _click_ a alguno de estos métodos, por ejemplo a "Targets List", muestra
+Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra
 una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y
 `order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro.
 
@@ -140,7 +140,7 @@ la respuesta es 200:
 ```
 
 Lo anterior corresponde a lo que llamas `Example Value`, mostrando un ejemplo de lo
-que puedes obtener, pero también puedes consultar el modelo correspondiente haciendo _click_ en `model`.
+que puedes obtener, pero también puedes consultar el modelo correspondiente haciendo click en `model`.
 
  Ahí verás la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, valores de ejemplo, conjunto de posibles valores cuando corresponda y formato de los textos (`date-time`, `ipv4`, `email`, etc ).
 

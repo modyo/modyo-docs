@@ -12,13 +12,13 @@ By logging into the tool, you will be able to see a list of all the forms that a
 
 In each row in the forms table, you'll see in the first column the name of the form, then the creation date, and in the last column, the number of responses that have been submitted for that form.
 
-From this list you can also access the individual analysis view, making _click_ in the form title, as well as the list of responses of the form, making _click_ on the number of responses in the form.
+From this list you can also access the individual analysis view, making click in the form title, as well as the list of responses of the form, making click on the number of responses in the form.
 
 To enable or disable forms and allow users to send their replies or not, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
 ## Create Form
 
-To create a new form, make _click_ on the main button on the top right **+ New**. This will take you to the creation view of a new form, where you need to fill out the main attributes of the form:
+To create a new form, make click on the main button on the top right **+ New**. This will take you to the creation view of a new form, where you need to fill out the main attributes of the form:
 
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator, and also as a title when a user will respond to it.
 - **Description**: This text will appear as text below the title when users will respond to it.
@@ -100,7 +100,7 @@ You sent this response on: {{'now' | date: "%b %d, %y"}}
 
 ## Answers
 
-When you make _click_ on a form's response counter, you'll get to a view listing all the responses that users have submitted and the date they responded.
+When you make click on a form's response counter, you'll get to a view listing all the responses that users have submitted and the date they responded.
 
 You can export the answers to a _XLS_ or _CSV_ file by selecting them from the list and then using the bulk actions at the end of it.
 
@@ -108,7 +108,7 @@ You can export the answers to a _XLS_ or _CSV_ file by selecting them from the l
 You can delete responses one by one by using the action to the right of each response, or by using the bulk actions, selecting multiple responses and then the**Dele** button at the bottom of the list. Please note that this action is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
-To see a user's answer in detail, simply make _click_ on the user's name, and you'll access the list of questions next to the answers that user sent on that particular occasion.
+To see a user's answer in detail, simply make click on the user's name, and you'll access the list of questions next to the answers that user sent on that particular occasion.
 
  <img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600"> 
 
@@ -136,7 +136,7 @@ This section will allow you to add as many fields that are necessary to complete
 From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 ።:
 
-You can delete one of the fields from the form by _click_ on the trash can icon to the right of each field in the main section. Deletion will be effective once you save the changes.
+You can delete one of the fields from the form by click on the trash can icon to the right of each field in the main section. Deletion will be effective once you save the changes.
 
 ።: danger danger
 If your form is already activated and you already have answers, be very careful when deleting questions from it, as by doing so, you'll be deleting the values of those responses that users already sent. This action is irreversible.

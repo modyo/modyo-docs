@@ -12,13 +12,13 @@ Con los Tipos, podrás evitar tener que estar muchas veces elaborando contenido 
 
 ## Sobre la Interfaz
 
-A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer _click_ ahí, te permitirá crear un Tipo.
+A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer click ahí, te permitirá crear un Tipo.
 
 Más abajo, podrás ver la barra de búsqueda de Tipos, que te permitirá filtrar por cualquier palabra que se encuentre dentro del campo Nombre.
 
 Después, encontrarás la tabla con los Tipos ya creados, que estarán ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, partiendo desde el elemento más reciente hacia atrás.
 
-Para reordenarla, solo debes hacer _click_ en los símbolos que se encuentran a un costado de cada categoría.
+Para reordenarla, solo debes hacer click en los símbolos que se encuentran a un costado de cada categoría.
 
 Las categorías por las cuales puedes reordenar son cuatro:
 
@@ -33,7 +33,7 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 <img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
 
-Para crear un Tipo, es necesario hacer _click_ en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
+Para crear un Tipo, es necesario hacer click en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
 
 :::tip Tip
 Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. 
@@ -155,7 +155,7 @@ Este campo te permite vincular muchas Entradas que ya se encuentren creadas dent
 En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es importante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
 
 - **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
-- **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo _click_ en este botón. 
+- **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
 
 :::warning Atención
 Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.

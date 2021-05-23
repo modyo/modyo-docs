@@ -122,7 +122,7 @@ You can preview the content either as a logged in user or as a user that has not
 
 #### Edit an entry
 
-Si deseas editar una entrada, solo debes hacer _click_ en el nombre dentro del administrador.
+Si deseas editar una entrada, solo debes hacer click en el nombre dentro del administrador.
 
 Después de esto, entras a la vista de edición en la que puedes cambiar el contenido y las propiedades de esta, como el nombre, el slug y los tags.
 

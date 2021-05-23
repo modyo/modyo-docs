@@ -84,7 +84,7 @@ Al momento de enviar a revisión la barra cambiará de estado:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
 
-Al hacer _click_, verás que en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
+Al hacer click, verás que en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
 
 En caso de existir algún revisor requerido, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
 
@@ -94,7 +94,7 @@ A la derecha de cada revisor, aparecerá el estado de su revisión, mostrando un
 
 Todos quienes puedan acceder a la vista de edición del elemento, verán un botón **Aprobar** bajo el listado de revisores.
 
-Quienes tengan el permiso necesario, lo verán activo y podrán hacerle _click_ para aprobar el elemento. Los que no tengan permiso, verán el botón deshabilitado.
+Quienes tengan el permiso necesario, lo verán activo y podrán hacerle click para aprobar el elemento. Los que no tengan permiso, verán el botón deshabilitado.
 
 Al aprobar el elemento, quedará registrada la aprobación de ese usuario, mostrando un check verde a la derecha de su nombre en el listado de revisores.
 
@@ -209,7 +209,7 @@ En este caso, sólo un Administrador podrá tomar el control, activando para sí
 
 :::warning Tomar el control
 
-Si un Administrador quiere tomar el control de una vista, deberá hacer _click_ en el elemento en uso y en la pantalla siguiente, hacer _click_ en el botón **Tomar Control**.
+Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón **Tomar Control**.
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
@@ -233,7 +233,7 @@ Los elementos con los que puedes interactuar en la barra de vista previa son:
 * **Selector de vista de contenido**: Este selector te permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
 * **Selector de widgets**: Si estás previsualizando páginas que contengan widgets personalizados, encontrarás una lista de los widgets que aparecen en la página, y podrás seleccionar si quieres visualizar la versión editable o publicada de cada uno de ellos. Una vez que completes la selección, haz click en el botón "refrescar" para que la configuración de los widgets tenga efecto.
 * **Pestaña para minimizar**: Te permite esconder la barra de previsualización para que no interfiera con los elementos que estén en la parte superior del sitio. Una vez minimizada, la pestaña se mantendrá visible para que puedas restaurar la barra del modo vista previa.
-* **Editar elemento**: al hacer _click_ irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget o un template por defecto del sitio.
+* **Editar elemento**: al hacer click irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget o un template por defecto del sitio.
 * **Compartir link**: Te permite copiar un enlace que puedes compartir y quien lo abra, irá directamente al modo vista previa con la configuración al momento de copiar el link. Para poder ver el modo vista previa, basta con tener una sesión iniciada en el admin de la cuenta.
 * **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejándo la pestaña en la url actual del sitio.
 
