@@ -32,9 +32,9 @@ Por defecto, inicias comparando la versión publicada con la versión editable, 
 
 :::tip Tip Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. 
 
-Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. 
+By default, up to 20 backups are saved, so that the most recent 20 backups can be compared, restored, and rolled back. 
 
-Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts.html#versionado). :::
+For more information on versioning, see the [Versioning](/es/platform/core/key-concepts.html#versionado)section. :::
 
 **Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Si es que tienes la [revisión en equipo](/es/platform/core/key-concepts.html) habilitada, ves esta opción que al hacerle _click_, despliega una barra lateral con el historial de actividad y comentarios del menú. 
 
@@ -43,8 +43,8 @@ Al final de la barra lateral, ves una caja de texto donde puedes escribir un com
 **Acción principal**
 
 - **Guardar**: Guarda todos los cambios del menú.
-- **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
-- **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
+- **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". In this state you continue to make changes, but each change will be notified via mail to the assigned reviewers.
+- **Reject**: Returns to “In Edit” status, notifying reviewers that the item was rejected.
 - **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) para publicar tu navegación.
 
 En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección puedes ver las opciones:
