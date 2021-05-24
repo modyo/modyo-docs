@@ -38,9 +38,9 @@ The options available are:
 - **Number of approvals**: Determine how many users must approve the item in order to be published (it will change its status from “Waiting for Review” to “Approved”).
 - **Restrict review selection**: By default, any user with the necessary permissions will be able to approve the items that are awaiting review. By enabling this option, only those chosen by the editor will be able to do so.
 
-።: tip Tip
+:::tip Tip
 While approval is limited, any user with permissions can comment on the item.
-።:
+:::
 
 - **Force Review**: This option allows you to select a list of users, of whom at least one approval is required for the item to move to the “Approved” status. This is independent of the number of approvals configured earlier, that is, even if an item has the number of approvals required, it will remain in the “Waiting Approval” status if no user in the list has approved it.
 
@@ -82,7 +82,7 @@ When team review is enabled, and after saving your changes, you will see the gre
 
 At the time of submission to review the bar will change status:
 
- a081f9f5e389ez0 
+<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
 
 When you click, you will see that the right side section will indicate the requirements to publish the item.
 
@@ -92,7 +92,7 @@ If there is a required reviewer, `(required)` will appear next to your name in t
 
 To the right of each reviewer, the status of your review will appear, showing a yellow circle if you have not made your review, and a green check if you have approved the item.
 
-Everyone who can access the item's edit view will see a **Approv** button under the reviewer list.
+Everyone who can access the item's edit view will see a **Approve** button under the reviewer list.
 
 Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission will see the disabled button.
 
@@ -245,9 +245,9 @@ Changing the content selector in the preview bar will have no effect on the cont
 
 Modyo has the functionality to define global variables that you can use everywhere you have Liquid, so you can, for example, share a _snippet_ code between sites.
 
-።: tip Tip
+:::tip Tip
 You can use plain text, HTML, JavaScript, and CSS within global variables, however you cannot use Liquid code within them, however you should be aware that the content is up to 65,535 characters.
-።:
+:::
 
 You can create global variables in your account settings, and you can add values for different languages. If you require, you can also overwrite the values for certain sites in the Site Variables menu, in your site settings, or in each of the custom widget builder widget.
 
@@ -255,6 +255,6 @@ You can create global variables in your account settings, and you can add values
 When using global variables, the variables defined at the lowest level will always be preferred, with the variables defined in the widget first, then those defined in the site and then the variables defined at the account level, so be careful when defining variables in widgets or the site with the same name that the variables in the account.
 ።:
 
-። :danger danger
+:::danger danger
 Global variables do not have a publishing, versioned, or team review workflow, and only account and site administrators can modify them, so consider that making a change in the value of these variables will immediately be reflected wherever they are being used. This does not apply for variables defined in widgets, because widgets and pages do have publishing flow.
-።:
+:::
