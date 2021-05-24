@@ -102,9 +102,9 @@ In the editing interface of the file properties, you can see certain fields:
 
 **Liquid Tag**: Displays the Liquid tag of the file, for use within the contents of the platform.
 
-። :warning Attention
+:::warning Attention
 Neither the URL nor the Liquid Tag is possible to change via Modyo.
-።:
+:::
 
 **Title**: Displays the title of the file. This section is different from the file name, which cannot be changed.
 
@@ -159,9 +159,9 @@ If you want to reedit the file or restore it, you can return to the Update Infor
 
 To delete a specific file, click the Delete icon, which is located on the side of the file URL.
 
-። :warning Attention
+:::warning Attention
 This action is irreversible. If this file is linked to a content, you cannot recover it and it appears as a broken link.
-።:
+:::
 
 ## Upload a file
 
@@ -176,9 +176,9 @@ This action opens a new window that allows you to upload files in two ways:
 - **Drag & Drop**: Drag from your computer's file browser to the window)
 - **Traditional way**: Through the browser, clicking and selecting the files
 
-። :warning Attention
+:::warning Attention
 Modyo only allows uploading 10 files at a time. If you want to upload more items, it should be done in two or more batches.
-።:
+:::
 
 As a way to safeguard the security of the platform Modyo sets a limit on the size of the files that you can upload to the platform depending on their type. These are the limits:
 
