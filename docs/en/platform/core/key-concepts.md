@@ -38,9 +38,9 @@ The options available are:
 - **Number of approvals**: Determine how many users must approve the item in order to be published (it will change its status from “Waiting for Review” to “Approved”).
 - **Restrict review selection**: By default, any user with the necessary permissions will be able to approve the items that are awaiting review. By enabling this option, only those chosen by the editor will be able to do so.
 
-።: tip Tip
+::: tip Tip
 While approval is limited, any user with permissions can comment on the item.
-።:
+:::
 
 - **Force Review**: This option allows you to select a list of users, of whom at least one approval is required for the item to move to the “Approved” status. This is independent of the number of approvals configured earlier, that is, even if an item has the number of approvals required, it will remain in the “Waiting Approval” status if no user in the list has approved it.
 
