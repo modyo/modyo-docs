@@ -14,7 +14,7 @@ Spaces also allows you to organize content in the areas where you are working, f
 
 Accessing the Spaces section will display a list indicating the name of the space and its number of content types and entries. 
 
-። :warning Attention
+:::warning Attention
 In the Spaces Index, you will only see the spaces in which you are part of the work team with a role.
 ።:
 
@@ -46,13 +46,13 @@ Keep in mind that this attribute, apart from being unique, cannot contain tildes
 
 The next option is to configure whether the content author will be visible in both the public API and the liquid SDK. If the option is enabled, then you will see the data of the administrator who created the content, and if the option is disabled, you will see the author blank. 
 
-። :warning Attention
+:::warning Attention
 Keep in mind that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries are finished reindexing.
 ።:
 
 The last option is to erase the space. This option allows you to definitely delete a space and all its elements.
 
-። :danger danger
+:::danger danger
 This option is irreversible, so you need to be completely sure when you run this action. By pressing the delete button, the system will prompt you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
 ።:
 
@@ -76,7 +76,7 @@ Cache is a tool that allows you to reduce the number of applications that reach 
 
  <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600"> 
 
-። :warning Attention
+:::warning Attention
 Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled “A”, and then post the same content with the title “A+1", for 5 minutes you will see the content with the title “A” until the cache initial is invalidated.
 ።:
 
@@ -134,13 +134,13 @@ To add a user to the Space, select the primary button **+ New** at the top right
 #### Modify Role ####
 You can modify the role of any of the associated users by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
 
-። :warning Attention
+:::warning Attention
 It should be noted that the system will validate that an administrator always exists within the space, so if there is only one administrator the administrator will not be able to modify its Role.
 ።:
 
 #### Remove Team Members ####
 To remove a team member from a space, you can select them using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
 
-። :warning Attention
+:::warning Attention
 It should be noted that the system will validate that an administrator always exists within the Space, so if there is only one administrator, the administrator cannot be deleted.
 ።:
