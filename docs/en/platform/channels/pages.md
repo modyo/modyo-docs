@@ -28,9 +28,9 @@ You can preview pages as a user without session or user with Modyo session. For 
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on the differences icon you will go to the [difference view] (/es/platform/channels/sites.html #revision -y-and-joint) on the page that allows you to select two versions to compare, allowing you to execute the [reset and rollback] (/es/platform/core/key-concepts.html #acciones -for-the-versioned)
 
-።: tip Tip
+:::tip Tip
 If your page is in “Draft” status, the differences icon does not appear, as there is nothing to compare with the current editable version. To learn more about differences and backups, check out the [versioned] section (/es/platform/core/key-concepts.html #versionado)
-።:
+:::
 
 **Activiti** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on this icon displays a sidebar showing you the activity associated with the page, such as modifications, posts, and comments. At the bottom of this bar, you can type associated comments. In case the page is under review, everyone who is assigned as reviewers will receive a notification with the comment.
 
@@ -147,12 +147,12 @@ If you enable privacy on a page, then a session will be required to view this pa
 
 In this section you can add meta tags to the pages and modify the value of existing meta tags, to enrich the SEO of the page. With the tags added to the pages, you can decide whether to use the default value, overwrite the available value for the tag, or remove the tag from the page.
 
-።: tip Tip
+:::tip Tip
 Keep in mind that for meta tags to take effect on your page, you must publish the changes.
-።:
+:::
 
 To access the meta tag list on the page, you must use the Liquid drop <span v-pre> `{{page.meta_tags}}` </span>. We recommend that you see the example in the SEO section of the [Template builder] (/es/platform/channels/templates.html #seo).
 
-።: tip Tip
+:::tip Tip
 If you want to add a common meta tag for all pages in a single action, go to the [site settings, SEO section] (/es/platform/channels/sites.html #seo).
-።:
+:::
