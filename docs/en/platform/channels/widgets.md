@@ -58,9 +58,9 @@ Archived widgets will not appear in the initial listing or in the widget selecti
 
 Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder.] (/es/platform/channels/pages.html)
 
-።: tip Tip
+:::tip Tip
 To learn more about the publication flow, review the [Versioning.] section (/es/platform/core/key-concepts.html #versionado)
-።:
+:::
 
 
 In the work area you can see:
