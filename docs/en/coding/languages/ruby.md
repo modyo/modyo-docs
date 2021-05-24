@@ -3600,7 +3600,7 @@ own logic.
     end
     ```
 
-* Avoid using `method_missing for metaprogramming, because it makes it difficult to read the code, the behavior is not listed in `#methods`, and misspelled method calls can work siliciously, example: `nukes.launch_state = false. Instead, consider using delegation, proxy, or `define_method. If necessary, use method_missing:
+* Avoid using `method_missing` for metaprogramming, because it makes it difficult to read the code, the behavior is not listed in `#methods`, and misspelled method calls can work siliciously, example: `nukes.launch_state = false`. Instead, consider using delegation, proxy, or `define_method`. If necessary, use `method_missing`:
 
   - Are you sure to [also define `respond_to_missing? `] (http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
   - Just catch methods with a well-defined prefix, such as `find_by_*` — make your code as assertive as possible.
