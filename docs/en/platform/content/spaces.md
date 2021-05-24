@@ -26,9 +26,9 @@ To create a space, click the green button at the top right of the space index vi
 
 In addition, you will need to select the default language about which the content you want to publish will be written, for a better configuration of the characters.
 
-።: tip Tip
+:::tip Tip
 Later, in the settings you will be able to define other secondary languages for space entries.
-።:
+:::
 
 ## Configure a Space
 
@@ -66,9 +66,9 @@ The default language of a space is defined at the time of creating the space and
 
  <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350"> 
 
-።: tip Tip
+:::tip Tip
 You can learn how to select one of the available languages from an entry in its corresponding sections: [Public API] (/es/platform/content/public-api-reference.html #filtros), [Javascript SDK] (/es/platform/content/public-api-reference.html #sdk -javascript) and in [Liquid SDK] (/es/platform/content/public-api-reference.html #filtrar - tickets)
-።:
+:::
 
 ### Cache
 
@@ -80,9 +80,9 @@ Cache is a tool that allows you to reduce the number of applications that reach 
 Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled “A”, and then post the same content with the title “A+1", for 5 minutes you will see the content with the title “A” until the cache initial is invalidated.
 ።:
 
-።: tip Tip
+:::tip Tip
 To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have to face some high-demand or concurrency scenario.
-።:
+:::
 
 ### Security
 
