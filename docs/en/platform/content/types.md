@@ -39,7 +39,7 @@ To create a Type, you need to click on the top green button on the screen and en
 It is a good practice to put within the UID, the format of what will be published as they are, for example, videos, posts, etc. 
 
 Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
-።:
+:::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs. 
 
@@ -55,7 +55,7 @@ This interface is used to create each of the types, giving them the format that 
 The field name is of the utmost importance because it will be through what its value can be accessed in the Liquid and JS SDKs. To access the value of a field in an entry you can for example use <span v-pre> `{{entry ["field name"]}}` </span>. 
 
 For more information go to the [API reference] (/es/platform/content/public-api-reference.html)
-።:
+:::
 
 All fields that can be added in a type, have a name, and the possibility of being required.
 
@@ -122,7 +122,7 @@ Allows you to add a date picker. You can restrict the date values you can choose
 
 Allows you to add a field where you can select a geographic address, depending on Google Maps fields, or if you don't have a google _key_ API, will allow you to manually enter the name, latitude, longitude and the five political limitations of the location. These areas of administration are not standard and depend on each country. In the case of Chile these are: Region, Province, Commune and City.
 
-። :warning Attention
+:::warning Attention
 For location maps to work correctly with the Google key API configured on the account, the key must have permissions to access:
 
 * Map API via JavaScript
@@ -157,10 +157,10 @@ In this tab, you can see the name of the type, along with its UID. The UID is im
 - **Reindexar**: Allows you to reindex the model if you encountered a problem with your public API.
 - **Cancel reindexation**: If there is already a reindex in progress, you can cancel the process by clicking on this button. 
 
-። :warning Attention
+:::warning Attention
 When you reindex any of your types, the model that was previously reindexed will be available until the new index is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 Please note that depending on the [cache settings you have in your space] (/es/platform/content/spaces.html #cache), you may not see the changes immediately after reindexing is complete.
-።:
+:::
