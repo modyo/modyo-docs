@@ -2708,7 +2708,7 @@ to instantiate a particular class.
 
 ## Exceptions
 
-* Signals exceptions using the `fail` method. Use Raise
+* Signals exceptions using the `fail` method. Use `raise`
   only when you want to catch an exception and want to go back to
   call it (because it is not failing, but is throwing a
   exception explicitly and purposefully).
