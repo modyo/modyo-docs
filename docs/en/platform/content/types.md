@@ -35,7 +35,7 @@ If you want to enter any Type, you must click on the name of it to open the corr
 
 To create a Type, you need to click on the top green button on the screen and enter the corresponding name and User ID (UID).
 
-።: tip Tip
+:::tip Tip
 It is a good practice to put within the UID, the format of what will be published as they are, for example, videos, posts, etc. 
 
 Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
@@ -51,7 +51,7 @@ This interface is used to create each of the types, giving them the format that 
 
 ## Fields
 
-።: tip Tip
+::: tip Tip
 The field name is of the utmost importance because it will be through what its value can be accessed in the Liquid and JS SDKs. To access the value of a field in an entry you can for example use <span v-pre> `{{entry ["field name"]}}` </span>. 
 
 For more information go to the [API reference] (/es/platform/content/public-api-reference.html)
