@@ -8,9 +8,9 @@ search: true
 
 Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) donde crearemos una vista para poder desplegar nuestras entradas creadas en [Modyo Content](/es/platform/content).
 
-Hacer el enlace entre Content y Channels es una de las funcionalidads más importantes a la hora de tener sitios dinámicos y fáciles de administrar por cualquier persona.
+El enlace entre Content y Channels, es una de las funcionalidads más importantes a la hora de tener sitios dinámicos y fáciles de administrar por cualquier persona.
 
-En este tutorial usaremos la marca ficticia "Dynamic Bank", al igual que en los anteriores, pero ahora nos enfocaremos en la viste detalle de los beneficios.
+En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocaremos en la viste detalle de los beneficios.
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
@@ -18,131 +18,137 @@ En este tutorial usaremos la marca ficticia "Dynamic Bank", al igual que en los 
 
 ## Requisitos Previos
 
-Para comenzar este tutorial debemos haber completado los dos tutoriales anteriores: [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) ya tener creados los Beneficios y [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home) por la base del template que utilizaremos, más tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
+Para comenzar este tutorial debemos haber completado los siguientes tutoriales: [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home). Y al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
 
 ## Paso 1: Agregar nuevos campos a los Beneficios
 
-En el Tutorial de Creacion de contenido, habiamos creado el [Type](/es/platform/content/types) y [Entries](/es/platform/content/entries) de Beneficios, para este vamos a utilizar ese Type añandiendo más campos para generar su detalle como de ve en el diseño arriba.
+En el Tutorial de creación de contenido, habíamos creado el [Space](/es/platform/content/space) Bank, el [Type](/es/platform/content/types) Benefits y las [Entries](/es/platform/content/entries). Ahora utilizaremos este Type, pero añandiendo los campos necesarios para generar su detalle según el diseño del Figma.
 
-Para modificar el Type <b>Beneficios</b> vamos a ingresar a Content, dentro de la Nube de Modyo, seleccionar nuestro space y una vez ya dentro del space ingresamos a Types y seleccionamos el Type Benefits, a los campos ya existentes (Cover y Excerpt) vamos a agregar los siguientes campos:
+Para modificar el Type <b>Benefits</b> vamos a ingresar al módulo de Content, seleccionar nuestro space y una vez ya dentro, ingresamos a Types y seleccionamos el Type correspondiente. A los campos ya existentes (Cover y Excerpt) vamos a agregar los siguientes campos:
 
 <table>
 <tr><th style="text-align: left;">Field</th> <th style="text-align: left;">Name</th></tr> 
-  <tr>
-    <td>
-      Multiline text
-    </td>
-    <td>
-      Short description
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Asset
-    </td>
-    <td>
-      Logo
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Multiline text
-    </td>
-    <td>
-      Description
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Multiline text
-    </td>
-    <td>
-      Commercial terms
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Multiline text
-    </td>
-    <td>
-      Validity
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Locations
-    </td>
-    <td>
-      Location
-    </td>
-  </tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Short description
+  </td>
+</tr>
+<tr>
+  <td>
+    Asset
+  </td>
+  <td>
+    Logo
+  </td>
+</tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Description
+  </td>
+</tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Commercial terms
+  </td>
+</tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Validity
+  </td>
+</tr>
+<tr>
+  <td>
+    Locations
+  </td>
+  <td>
+    Location
+  </td>
+</tr>
 </table>
 
 ## Paso 2: Llenar campos de una entrada
 
-Luego de tener nuestro Type con todos los campos, vamos a completar una entrada para poder utilizarla de ejemplo.
+Luego de tener nuestro Type con todos los campos que necesitamos, vamos a completar una entrada para poder utilizarla de ejemplo.
+
+Para este caso usaremos la entrada Dynamic Cine:
 
 <table>
 <tr><th style="text-align: left;">Field</th> <th style="text-align: left;"></th></tr> 
-  <tr>
-    <td>
-      Short description
-    </td>
-    <td>
-     40% de decuento en entradas todos los Viernes.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Logo
-    </td>
-    <td>
-      <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Description
-    </td>
-    <td>
-      Disfruta todos los Viernes de un 40% en entradas para la mejor cartelera de Dynamic Cine, aprovecha este beneficios exclusivo para clientes Dynamic Bank Pagando con tu Tarjetas crédito o débito.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Commercial terms
-    </td>
-    <td>
-      Beneficio válido para clientes Dynamic Bank al pagar con su Tarjetas de Crédito o Débito en entradas para día viernes con un máximo 8 entradas diarias por cliente titular.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Validity
-    </td>
-    <td>
-      Del primero de Enero al 31 de Diciembre del 2021
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Location
-    </td>
-    <td>
-      Agregar location ejemplo
-    </td>
-  </tr>
+<tr>
+  <td>
+    Short description
+  </td>
+  <td>
+    40% de decuento en entradas todos los Viernes.
+  </td>
+</tr>
+<tr>
+  <td>
+    Logo
+  </td>
+  <td>
+    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+</tr>
+<tr>
+  <td>
+    Description
+  </td>
+  <td>
+    Disfruta todos los Viernes de un 40% en entradas para la mejor cartelera de Dynamic Cine, aprovecha este beneficios exclusivo para clientes Dynamic Bank Pagando con tu Tarjetas crédito o débito.
+  </td>
+</tr>
+<tr>
+  <td>
+    Commercial terms
+  </td>
+  <td>
+    Beneficio válido para clientes Dynamic Bank al pagar con su Tarjetas de Crédito o Débito en entradas para día viernes con un máximo 8 entradas diarias por cliente titular.
+  </td>
+</tr>
+<tr>
+  <td>
+    Validity
+  </td>
+  <td>
+    Del primero de Enero al 31 de Diciembre del 2021
+  </td>
+</tr>
+<tr>
+  <td>
+    Location
+  </td>
+  <td>
+    Agregar location ejemplo
+  </td>
+</tr>
 </table>
 
 Recuerda publicar tus cambios para que se vean reflejados.
 
 ## Paso 3: Crear Custom View de Beneficios
 
-Una vez listo nuestro contenidol, vamos a desarrollar su [Custom View](/es/platform/channels/templates.html#vistas-para-contenido) dentro de nuestro sitio, para asi generar Pages dinamicas conectadas a content, las cuales se administran desde content y pueden tener vistas en todos nuestros sitios de la nube o consumir el contenido a través de la API en diferentes canales digitales.
+Una vez listo nuestro contenido, vamos a desarrollar su [Custom View](/es/platform/channels/templates.html#vistas-para-contenido) dentro de nuestro sitio, para así generar Pages dinámicas conectadas a Content.
 
-Para esto volveremos a ingresar a nuestro sitio, dentro de Templates vamos a la sección Custom y hacemos click en el <b>+</b>. Al abirse el panel debemos ingresar un Path, que es la url que tendria anidado nuestro contenido, en nuestro caso <b>beneficio</b>, y seleccionamos nuestro Space bank y Type Benefits para hacer el enlace entre Content y nuetro canal digital.
+Para esto, volveremos a ingresar a Templates dentro de nuestro sitio, y en la sección Views en el apartado Custom hacemos click en el <b>+</b>.
 
-Para que se vea como nuestro diseño vamos a copiar el siguiente HTML remplazando el HTML de ejemplo que viene.
+<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
+
+Al abirse el panel debemos ingresar un Path, que es la url que tendrá anidado nuestro contenido, que en nuestro caso será <b>beneficio</b>, y seleccionamos nuestro Space <b>Bank</b> y Type <b>Benefits</b>.
+
+Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML remplazando el código que viene de ejemplo.
 
 ```html
 <div class="mb-5 mb-md-0 pb-5 pb-md-0" id="hero">
@@ -153,7 +159,6 @@ Para que se vea como nuestro diseño vamos a copiar el siguiente HTML remplazand
         <div
           class="col-10 col-md-7 wow slideInRight hero_img rounded-left"
           style="background-image: url({{ entry.fields['Cover'].url }})"
-          ;}
         ></div>
       </div>
     </div>
@@ -255,22 +260,22 @@ Para que se vea como nuestro diseño vamos a copiar el siguiente HTML remplazand
 </style>
 ```
 
-¡Felicidades! ya creaste tu Custom View conectada un un Space de Modyo Content, con ella podremos ingresar a una Entry desde nuestro sitio y además previsualizar el trabajo desde Modyo Content.
+Ya creaste tu primer Custom View conectada a un Space de Modyo Content. Con ella podremos ingresar a una Entry desde nuestro sitio y además previsualizar el trabajo desde Modyo Content.
 
 ## Paso 4: Previsualizar entries en Content
 
-Ahora que ya tenemos nuestro Space y Type asociados a un sitio, se nos activará una nueva funcionalidad, el [Modo vistra previa en un sitio](/es/platform/content/entries.html#vista-previa), para acceder al modo vista previa tenemos hacer hacer click en el ícono del "ojo" en la barra superior de acciones:
+Ahora que ya tenemos nuestro Space y Type asociados a un sitio, se nos activará una nueva funcionalidad, el [Modo vistra previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa tenemos que hacer click en el ícono del "ojo" en la barra superior de acciones:
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
 
-Luego dentro del modal seleccionar <b>Preview on site</b> y seleccionar el sitio donde hicimos su custom view dentro del dropdown:
+Dentro del modal hacer click en <b>Preview on site</b> y seleccionar el sitio donde hicimos la custom view dentro del dropdown:
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
 
-Al seleccionarlo en una nueva pestaña se nos abrira en preview en nuestro sitio, para que se pueda ir revisando los cambios en el destino final.
+Al seleccionarlo en una nueva pestaña se nos abrirá el preview de la entrada en el sitio, para que se pueda ir revisando los cambios en el sitio.
 
 ## Conclusiones
 
 ¡Felicidades! Haz finalizado el tercer curso de la serie de tutoriales de Modyo.
 
-En este tutorial realizamos una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregando una capa intermedia para poder revisar el trabajo que esta desarrollando en [Modyo Content](/es/platform/content) y generando Pages dinamicos a conectado nuestro sitio en [Modyo Channels](/es/platform/channels) con Contenido.
+En este tutorial realizamos una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregando una capa intermedia para poder revisar el trabajo que se está desarrollando en [Modyo Content](/es/platform/content) y generando Pages dinámicos conectados a nuestros sitios en [Modyo Channels](/es/platform/channels).
