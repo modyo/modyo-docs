@@ -132,7 +132,7 @@ This section will allow you to add as many fields that are necessary to complete
 - **Date**: Allows you to add a date field in which the user can select one within the allowed range.
 - **Questions anidas**: Allows you to add a number of alternatives that can be nested, so that the user is prompted to select one of the possible nested options within the option you selected.
 
-። :warning Attention
+:::warning Attention
 From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 ።:
 
