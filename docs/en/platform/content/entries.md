@@ -40,7 +40,7 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 - **Desublicar**: Selected posts that are published will be unpublished.
 - **Archive**: Selected entries that are unpublished will be archived.
 
-። :warning Attention
+:::warning Attention
 - Mass publishing will only be effective on selected entries that have pending changes.
 - Mass unpublishing will only take effect on selected entries that have a published version.
 - Bulk Archive will only take effect on selected entries that are not published.
@@ -54,7 +54,7 @@ Mass actions run in the background and you may not see the changes immediately, 
 
 ## Massively Edit
 
-። :warning Attention
+:::warning Attention
 This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for mass actions.
 
 If you select multiple entries, but are not using the filter by type in the table, you won't see this option.
@@ -64,7 +64,7 @@ When you select entries of the same type, you'll see this option in the bulk act
 
 You can make changes to all fields of the type. Once you've finished adding values in the fields you need, tap “Next” at the top of the screen to see the summary of your changes. If you agree with the changes, press “confirm” to have Modyo start applying the changes to all selected entries
 
-። :warning Attention
+:::warning Attention
 By using bulk editing entries you are overwriting the values for the selected fields in all the selected entries, so the values that existed before the joint editing will no longer be available in the editable version.
 
 If you need to retrieve a specific value from an entry, you can use the “Differences” option in the Entry Edit View to review the previous values that a particular entry had.
@@ -78,7 +78,7 @@ To create an entry, click on the button at the top right of the screen.
 
 First, **Modyo** asks for the name, slug, and type of entry you want to create, to organize the format to be presented, which can be created in the [Types section] (/es/platform/content/types.html).
 
-። :warning Attention
+:::warning Attention
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
 ።:
 
@@ -125,11 +125,11 @@ If you already have [Content Views on your sites] (/es/platform/channels/templat
 If Space is not associated with a site, you can only view the JSON code for the entry you are developing.
 ።:
 
-። :warning Attention
+:::warning Attention
 You will only be able to preview on the site the content that is of a language equal to the language of the site. If the entry is in another language, when you arrive at the preview you will encounter a 404 error.
 ።:
 
-። :warning Attention
+:::warning Attention
 You can preview the content as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
 ።:
 
@@ -157,7 +157,7 @@ When the category name is entered, the path is defaulted as a slug. If you want 
 If you change the route, also remember to change all links to it, if they are on a website.
 ።:
 
-። :warning Attention
+:::warning Attention
 If you want to delete a category, simply click on the icon at the end of the category name. However, if there are Entries assigned to that category, they are not deleted but are not assigned to any category. To re-assign some category to them, you need to perform the assignment again.
 ።:
 
