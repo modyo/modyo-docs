@@ -64,7 +64,7 @@ We now have the**token** we can use it to configure our repository and so the Gi
 
 ! [2] (/assets/img/widgets/ci-cd/3.png)
 
-።: important danger
+::: important danger
 You should never share or publish the**TOKEN** or sensitive information in the repository!
 That is why it is recommended to use environment variables, .env file that is listed in the project's .gitignore, locally and make use of the [secrets] (https://docs.GitHub.com/actions/reference/encrypted-secrets) on GitHub.
-።:
+:::
