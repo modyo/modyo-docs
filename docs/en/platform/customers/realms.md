@@ -281,5 +281,5 @@ When a**Custom Field** is disabled, it can be deleted. By deleting a**Custom Fie
 :::
 
 :::tip Tip
-Apart from being able to save specific values to users, you can create [Targets] filters (/es/platform/customers/targets.html) using the **Custom Fields** values, allowing users to segment by customizable values.
+Apart from being able to save specific values to users, you can create [Targets](/es/platform/customers/targets.html) filters using the **Custom Fields** values, allowing users to segment by customizable values.
 :::
