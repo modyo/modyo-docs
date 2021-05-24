@@ -22,9 +22,9 @@ In the top bar, you can find different actions and information:
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: This icon allows you to open a new tab with Preview mode so you can view the changes that have been made to the page without having to publish it.
 
-። :warning Attention
+:::warning Attention
 You can preview pages as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
-።:
+:::
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on the differences icon you will go to the [difference view] (/es/platform/channels/sites.html #revision -y-and-joint) on the page that allows you to select two versions to compare, allowing you to execute the [reset and rollback] (/es/platform/core/key-concepts.html #acciones -for-the-versioned)
 
@@ -39,9 +39,9 @@ If your page is in “Draft” status, the differences icon does not appear, as 
 - Archive <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M5.12 5l.81-1h12l.94 1M12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5m8.54-12.27l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6 3 6.5V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.5c0-.5-.17-.93-.46-1.27z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: If a page is not published, this action allows you to archive it. When a page is archived, by default it does not appear in the page index and allows you to keep the site structure clean.
 - Duplicate <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: This action allows you to copy the editable version of the page you are on. The copied version is in the “Draft” state.
 
-። :warning Attention
+:::warning Attention
 Once the copy action is finished, it directs you to the new page, so remember to save all your changes before using this action, otherwise you might lose important information.
-።:
+:::
 
 **Main Action**: This is the green button at the top right. This button can take different forms:
 
@@ -75,7 +75,7 @@ You can add them from the first tab of the Page builder. Available widgets are:
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
 - **Rich text**: Allows you to use a rich text editor, where you can format text and switch between code view and rich text.
-። :warning Attention
+:::warning Attention
 The rich text widget has an automatic formatter, so the code you type in the code view may be affected.
 :::
 - **Content**: These are default widgets that allows you to display content listings using filters by space, type, language, tags and category. To modify how these widgets look, you must do so in the [Template Builder] (/es/platform/channels/templates.html), in the Widgets section.
@@ -95,7 +95,7 @@ In this tab you will find options common properties for all pages:
 * Privacy
 * Meta tags
 
-። :warning Attention
+:::warning Attention
 Modyo has reserved paths for the pages, so you won't be able to use them as paths for your custom pages:
  <table style="border: none;"> <tr style="border: none;"> 
  <td style="border: none;"> <ul> 
@@ -133,7 +133,7 @@ Modyo has reserved paths for the pages, so you won't be able to use them as path
  <li> widget_manager </li> 
  </ul> </td> 
  </tr> </table> 
-።:
+:::
 
 #### Route Delegation
 
