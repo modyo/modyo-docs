@@ -48,19 +48,19 @@ By default you start by comparing the published version with the editable versio
 - **After**: If the widget is published, it can be taken out of production using this option.
 - **Force Publishing**: If you are an administrator of the site, you can use this option to immediately publish a widget, even if Team Review is enabled.
 
-።: tip Tip
+:::tip Tip
 Only widgets that have been previously unpublished can be archived.
-።:
+:::
 
-።: tip Tip
+:::tip Tip
 Archived widgets will not appear in the initial listing or in the widget selection modal in Page Builder. To restore an archived widget, you must enter the edit view, using the**Restore** option in the upper right corner of the view.
-።:
+:::
 
 Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder.] (/es/platform/channels/pages.html)
 
-።: tip Tip
+:::tip Tip
 To learn more about the publication flow, review the [Versioning.] section (/es/platform/core/key-concepts.html #versionado)
-።:
+:::
 
 
 In the work area you can see:
@@ -71,13 +71,13 @@ In the work area you can see:
 - **Snippets**: Displays a list of snippets available from the [Template Builder] (/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
 - **Changes**: If changes have been saved and not published, it will display this list of all the times saved each of the files (JS, CSS and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
-።: tip Tip
+:::tip Tip
 In order not to lose the changes you currently have, it must be saved before jumping between sub-versions, so that you can always return to the latest version saved in the changelist.
-።:
+:::
 
-።: tip Tip
+:::tip Tip
 When the widget is published, no changes are available. This is because each version parts unchanged from the productive version. If you restore the widget to a previous version, so will sub-versions, so can access all instances where changes were saved in that version.
-።:
+:::
 
 In the three tabs of the widget you can make use of Liquid. For more information, see [the documentation associated with Liquid.] (/es/platform/channels/liquid-markup.html)
 
