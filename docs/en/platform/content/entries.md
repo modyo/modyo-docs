@@ -48,9 +48,9 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 So if you try to archive an entry that is published, this action will be skipped and will not take effect.
 ።:
 
-።: tip Tip
+:::tip Tip
 Mass actions run in the background and you may not see the changes immediately, so we recommend waiting a moment and refreshing the view after running a mass action.
-።:
+:::
 
 ## Massively Edit
 
@@ -151,7 +151,7 @@ To view the Categories, you need to click on the **Categories** section, which i
 
 If you want to create a category, just click on the green button at the top of the screen. Then, you can see a window asking to enter the name of it, the Path, and if it has a Parent Category.
 
-።: tip Tip
+:::tip Tip
 When the category name is entered, the path is defaulted as a slug. If you want to change it, just click on it.
 
 If you change the route, also remember to change all links to it, if they are on a website.
