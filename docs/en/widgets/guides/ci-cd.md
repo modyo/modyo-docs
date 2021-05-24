@@ -32,9 +32,9 @@ The recipes you can find are:
 - PR Labeler
 - PR Labeler config
 
-። :tip
+:::tip
 Each of these is documented and explained in the**README.md** file
-።:
+:::
 
 ### Deploying a Widget with GitHub Actions
 
@@ -46,9 +46,9 @@ To get a **token** we first need to create an **API Access** at the site's own a
 
 After creating the access API we need to generate a token for the user who will load the Widget.
 
-። :tip
+:::tip
 We recommend creating a new user that has permissions and the token to upload and publish Widgets from an CI/CD service.
-።:
+:::
 
 **Again at account level: **
 
