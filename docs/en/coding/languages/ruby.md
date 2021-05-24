@@ -2782,7 +2782,7 @@ to instantiate a particular class.
     end
     ```
 
-* Mitigate the proliferation of beginning blocks using
+* Mitigate the proliferation of `begin` blocks using
   *contingency methods* (a term chosen by Avdi Grimm).
 
     ```ruby
