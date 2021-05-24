@@ -48,9 +48,9 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 So if you try to archive an entry that is published, this action will be skipped and will not take effect.
 ።:
 
-።: tip Tip
+:::tip Tip
 Mass actions run in the background and you may not see the changes immediately, so we recommend waiting a moment and refreshing the view after running a mass action.
-።:
+:::
 
 ## Massively Edit
 
@@ -84,7 +84,7 @@ If the name field is empty, the platform defaults the UUID of the entry as a slu
 
 By clicking on **Create**, the entry will be created and you will be redirected to editing it where you can fill with the content you want, it will contain the structure defined in the content type you selected.
 
-።: tip Tip
+:::tip Tip
 To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to type in. (Check [Configure a Space] (/es/platform/content/spaces.html #configurar -a-space))
 
 Then, you just need to click on the current language and select the language you want to type it in.
@@ -151,7 +151,7 @@ To view the Categories, you need to click on the **Categories** section, which i
 
 If you want to create a category, just click on the green button at the top of the screen. Then, you can see a window asking to enter the name of it, the Path, and if it has a Parent Category.
 
-።: tip Tip
+:::tip Tip
 When the category name is entered, the path is defaulted as a slug. If you want to change it, just click on it.
 
 If you change the route, also remember to change all links to it, if they are on a website.
