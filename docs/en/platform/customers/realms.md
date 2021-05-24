@@ -45,12 +45,12 @@ A selector opens showing the two possible ways to create users on the system: ma
 
 When you select add a user, the platform prompts you to complete the following fields:
 
-- Name: Legal name of the user. **Required
+- Name: Legal name of the user. **Required**
 - Last name: Last name of the user.
 - Maternal surname: Maternal surname of the user.
-- User name: Name within the platform **Required
-- Email: User's email **Required
-- Password: Password for the user to enter the platform. The password cannot be less than 8 characters. **Required
+- User name: Name within the platform **Required**
+- Email: User's email **Required**
+- Password: Password for the user to enter the platform. The password cannot be less than 8 characters. **Required**
 - Password Confirmation: Repeating the password given by the administrator.
 - Tags: Tags that are used to identify the user.
 
@@ -276,10 +276,10 @@ All **Custom Fields** have certain standard properties:
 
 In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then it can be used by administrators and depending on its configuration, it will be available to users. If a**Custom Field** is disabled, then it will not appear in any form, but its values will be kept saved.
 
-።: danger danger
+:::danger danger
 When a**Custom Field** is disabled, it can be deleted. By deleting a**Custom Field**, you will be forever deleting all the values that users had for that **Custom Field**.
-።:
+:::
 
-።: tip Tip
+:::tip Tip
 Apart from being able to save specific values to users, you can create [Targets] filters (/es/platform/customers/targets.html) using the **Custom Fields** values, allowing users to segment by customizable values.
-።:
+:::
