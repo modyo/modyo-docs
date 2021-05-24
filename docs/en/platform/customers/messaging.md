@@ -34,9 +34,9 @@ At one side of each campaign, there is a button where you can perform two action
 - **Edit the Campaign**
 - **Delete the Campaign**
 
-።: danger danger
+::: danger danger
 If you delete the campaign, there is no way to recover it. It won't be recorded in the system
-።:
+:::
 
 ### Create a campaign
 
@@ -76,9 +76,9 @@ In addition, you'll find a drop-down menu that will take you to four sections:
 
 In the top view, you can find campaign statistics.
 
-። :warning Attention
+:::warning Attention
 If you haven't sent the campaign yet, the values will appear at zero.
-።:
+:::
 
 If you mailed the campaign, you can find the following numbers:
 
@@ -112,10 +112,10 @@ Finally you can find a table with all the campaign submissions, which you can so
 
 Then, you can find a button that will allow you to delete the registration submission.
 
-።: danger danger
+:::danger danger
 Remember that if you delete the shipment, you will not be able to recover the registration if you made any changes to the shipment. 
 Also, if you delete when the campaign is in the process of sending, it does not mean that emails will not reach users, but rather stop the process at the point where it is located.
-።:
+:::
 
 If you click on the campaign names, you'll go to the Message Deliveries section.
 
@@ -157,9 +157,9 @@ At first glance, you can find all the post templates that have been made.
 
 Each of the templates will be sorted according to their name, in addition to being able to see the last time they were modified.
 
-።: tip Tip
+:::tip Tip
 If you are reusing a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
-።:
+:::
 
 Under each name, you will find a button that will allow you to edit. If you click on it, you'll get to the editor where you made your template.
 
@@ -169,9 +169,9 @@ On the side, there is a button that displays a menu with the following options:
 - **Copy**: You can make a copy of the template.
 - **Dele**: The template is deleted
 
-።: tip Tip
+:::tip Tip
 If you want to intervene the template temporarily and then return to a new one, you better make a copy and work on it, leaving the original unchanged.
-።:
+:::
 
 ### Edit Templates
 
@@ -181,17 +181,17 @@ To make a template, you must first click on the **+ New** button at the top of t
 
 When you click, the edit view will open where you need to enter the name you will give to the template.
 
-።: tip Tip
+:::tip Tip
 Remember that this name is the one you will need to search for sending when you do the Campaign. Therefore, you should put a text that helps you identify well which template you want to use and not put something that can confuse you.
-።:
+:::
 
 Below, you will find a WYSIWYG editor, which will allow you to visually assemble what your email will be like and add the corresponding parameters that allow you to automatically customize the message.
 
-። :warning Attention
+:::warning Attention
 If you're campaigning, remember to add in the footer all the legal information required by your country's mass mail regulation.
 
 To automate footer insertion, read [Customers Configuration] (/es/platform/customers/realms.html #configuracion -de-customers)
-።:
+:::
 
 To record the template, you must click the**Save** button at the top of the page.
 
@@ -207,7 +207,7 @@ If you click on the user's name, you can find the [user profile] (/es/platform/c
 
 Finally, at the end of each user name, you'll find a button that allows you to re-enroll them to any campaign on the site.
 
-።: danger danger
+:::danger danger
 Making a re-enrollment without express authorization from the user, can cause legal problems.
 Review the regulation on mass mailing in each country.
-።:
+:::
