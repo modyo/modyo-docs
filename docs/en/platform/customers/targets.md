@@ -23,9 +23,9 @@ In addition, on the far left you will find a button with a drop-down menu that a
 - Edit: Edit the name and filters of the target.
 - Delete: Delete the target.
 
-። :warning Attention
+:::warning Attention
 If you delete the target, you will have to create it again. However, this does not mean that you delete the users that belong to it.
-።:
+:::
 
 If you need to search for a target by specific name, you can do so through the search bar at the top of the screen.
 
@@ -82,11 +82,11 @@ The filters found by default on the platform are:
 
 To create an advanced filter that fits your needs, go to the Custom Fields section, located in [Customers Settings] (/es/platform/customers/realms.html #configuracion -de-customers).
 
-። :warning Attention
+:::warning Attention
 The targets to which each user belongs is updated in a background process:
 * Every five minutes.
 * Each time a user's profile is modified.
 * Every time a user answers a form.
 
 Because the update runs in a background process, the update is not immediate and depends on the system load, so some users may not see targeted content for a few minutes after they have executed an action that includes or excludes them from a target.
-።:
+:::
