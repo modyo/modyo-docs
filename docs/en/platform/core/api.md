@@ -185,7 +185,7 @@ _callback URL_ (which corresponds to the Redirect URI field entered in the previ
 
 ! [New API Access] (/assets/img/platform/save-API-access.png)
 
-። :warning Attention
+:::warning Attention
 Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
 ።:
 
@@ -201,7 +201,7 @@ In the _popup_ shown below, select the name of the application you just created,
 
 ! [Team Member API Access 2] (/assets/img/platform/team-member-API-access-2.png)
 
-። :warning Attention
+:::warning Attention
 Keep in mind that administrative users will only be able to execute actions through the Modyo Administrative API if they have the necessary permissions to perform each action. For example, an administrator with the “Developer” role on a site will not be able to execute the “Publish” action on that site.
 ።:
 
