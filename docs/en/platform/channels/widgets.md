@@ -25,7 +25,7 @@ The following sections are located on the top bar:
 On the right, these are the different actions:
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Open the preview of the editable version of the widget in a new tab.
 
-። :warning Attention
+:::warning Attention
 You can preview widgets as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
 ።:
 
@@ -87,7 +87,7 @@ In the properties column you can see:
 - **Tags**: Add tags to a widget. The tags are for administrative use and are used to search and filter widgets so you can find them quickly.
 - **Pages using this widget**: You will see a list of pages that are using this widget. While viewing pages in this listing, you will not be able to download or archive the widget.
 
-። :warning Attention
+:::warning Attention
 If you delete a widget from a page and publish, you'll still see that page in this listing because the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can download any published widget, even if it's in use. Active references on pages will be inactive, so you won't see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so if there are still references on some widget pages that you want to archive, they will be deleted when you archive the widget. 
 ።:
 
@@ -107,13 +107,13 @@ When you use the list of possible values, you must leave each value in a new lin
 
 When you instantiate the widget on a page, you'll see that now all variables that are being used (whether account, site or widget) will be listed as “disabled” with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
-። :warning Attention
+:::warning Attention
 Instantiating the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, the variable is most likely not being used in the widget code.
 ።:
 
 ## Synchronous load
 
-። :warning Attention
+:::warning Attention
 This is an experimental functionality and may be subject to change.
 ።:
 
@@ -121,7 +121,7 @@ You can decide whether you want to load your widgets synchronously, that is, tha
 
 To change the way each widget loads, you must go to the edit view of the page containing the widget, select the widget, and check or uncheck the “Synchronous load” option.
 
-። :warning Attention
+:::warning Attention
 Keep in mind that using very heavy widgets synchronously can cause your page's performance to be diminished, so you should carefully decide which widgets will load synchronously and which asynchronously
 ።:
 
