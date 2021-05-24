@@ -40,13 +40,13 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 - **Desublicar**: Selected posts that are published will be unpublished.
 - **Archive**: Selected entries that are unpublished will be archived.
 
-። :warning Attention
+:::warning Attention
 - Mass publishing will only be effective on selected entries that have pending changes.
 - Mass unpublishing will only take effect on selected entries that have a published version.
 - Bulk Archive will only take effect on selected entries that are not published.
 
 So if you try to archive an entry that is published, this action will be skipped and will not take effect.
-።:
+:::
 
 :::tip Tip
 Mass actions run in the background and you may not see the changes immediately, so we recommend waiting a moment and refreshing the view after running a mass action.
@@ -54,21 +54,21 @@ Mass actions run in the background and you may not see the changes immediately, 
 
 ## Massively Edit
 
-። :warning Attention
+:::warning Attention
 This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for mass actions.
 
 If you select multiple entries, but are not using the filter by type in the table, you won't see this option.
-።:
+:::
 
 When you select entries of the same type, you'll see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you check the selector on the left of each field, you can enter the value associated with the field.
 
 You can make changes to all fields of the type. Once you've finished adding values in the fields you need, tap “Next” at the top of the screen to see the summary of your changes. If you agree with the changes, press “confirm” to have Modyo start applying the changes to all selected entries
 
-። :warning Attention
+:::warning Attention
 By using bulk editing entries you are overwriting the values for the selected fields in all the selected entries, so the values that existed before the joint editing will no longer be available in the editable version.
 
 If you need to retrieve a specific value from an entry, you can use the “Differences” option in the Entry Edit View to review the previous values that a particular entry had.
-።:
+:::
 
 Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now with pending changes and you must publish them. For this, you can make use of the mass action “Publish”.
 
@@ -78,9 +78,9 @@ To create an entry, click on the button at the top right of the screen.
 
 First, **Modyo** asks for the name, slug, and type of entry you want to create, to organize the format to be presented, which can be created in the [Types section] (/es/platform/content/types.html).
 
-። :warning Attention
+:::warning Attention
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
-።:
+:::
 
 By clicking on **Create**, the entry will be created and you will be redirected to editing it where you can fill with the content you want, it will contain the structure defined in the content type you selected.
 
@@ -90,7 +90,7 @@ To translate an already written entry into a different language, keep in mind th
 Then, you just need to click on the current language and select the language you want to type it in.
 
 You'll get to a blank version of the entry, where you can press the**Copy from language** button to bring the content from another version of the entry and be able to translate it easier.
-።:
+:::
 
 ### Publish an Entry
 
@@ -121,17 +121,17 @@ As a headless platform, Modyo allows you to preview an entry on multiple sites.
 
 If you already have [Content Views on your sites] (/es/platform/channels/templates.html #vistas -for-content), you can see the**Site Preview button**, where you want to see how your resource is developing.
 
-።: danger Attention
+::: danger Attention
 If Space is not associated with a site, you can only view the JSON code for the entry you are developing.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 You will only be able to preview on the site the content that is of a language equal to the language of the site. If the entry is in another language, when you arrive at the preview you will encounter a 404 error.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 You can preview the content as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
-።:
+:::
 
 #### Edit an entry
 
@@ -155,15 +155,15 @@ If you want to create a category, just click on the green button at the top of t
 When the category name is entered, the path is defaulted as a slug. If you want to change it, just click on it.
 
 If you change the route, also remember to change all links to it, if they are on a website.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 If you want to delete a category, simply click on the icon at the end of the category name. However, if there are Entries assigned to that category, they are not deleted but are not assigned to any category. To re-assign some category to them, you need to perform the assignment again.
-።:
+:::
 
-።: danger danger
+::: danger danger
 If the Parent Category is deleted, all subcategories assigned to the Parent Category are also deleted. And the entries associated with those categories are without assigned category.
-።:
+:::
 
 ### Slug
 
