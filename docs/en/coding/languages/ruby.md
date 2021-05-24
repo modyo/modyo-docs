@@ -2858,7 +2858,7 @@ to instantiate a particular class.
     end
     ```
 
-* Avoid rescuing the 'Exception' class. This is going to catch the `exit` signal, 
+* Avoid rescuing the `Exception` class. This is going to catch the `exit` signal, 
   you need to pass `kill -9` to the process in order to finish it.
 
     ```ruby
