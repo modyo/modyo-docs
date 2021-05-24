@@ -52,15 +52,15 @@ By default you start by comparing the published version with the editable versio
 Only widgets that have been previously unpublished can be archived.
 ።:
 
-።: tip Tip
+:::tip Tip
 Archived widgets will not appear in the initial listing or in the widget selection modal in Page Builder. To restore an archived widget, you must enter the edit view, using the**Restore** option in the upper right corner of the view.
-።:
+:::
 
 Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder.] (/es/platform/channels/pages.html)
 
-።: tip Tip
+:::tip Tip
 To learn more about the publication flow, review the [Versioning.] section (/es/platform/core/key-concepts.html #versionado)
-።:
+:::
 
 
 In the work area you can see:
