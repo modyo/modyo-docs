@@ -123,7 +123,7 @@ Also each of the sections has a list of possible _responses_ that you get by inv
 In the above example, you will see the _response_ that is obtained from the target list when
 the answer is 200:     
 
-``json
+```json
 {
  “targets”: [
  {
@@ -294,7 +294,7 @@ curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns? type=m
 
 When invoking the service, you get an `HTTP 200 OK` and the _response_ containing a JSON object that looks as follows:
 
-``json
+```json
 {
  “campaigns”: [{
  “id”: 15,
@@ -364,7 +364,7 @@ curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deli
 
 Similar to the previous example, the _response_ will look as follows
 
-``json
+```json
 {
  “deliveries”: [{
  “id”: 29,
@@ -542,7 +542,7 @@ curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliverie
 
 What gives a response like the following:
 
-``json
+```json
 {
  “message_deliveries”: [{
  “id”: 1341,
