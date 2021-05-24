@@ -2825,7 +2825,7 @@ to instantiate a particular class.
     do_something rescue nil
     ```
 
-* Avoid using 'rescue' in its modifier form.
+* Avoid using `rescue` in its modifier form.
 
     ```ruby
     # mal - esto atrapa una excepción de la clase StandardError y sus clases hijas
