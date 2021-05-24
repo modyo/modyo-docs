@@ -23,7 +23,7 @@ https://[account_host]/api/content/docs
 ```
 This way, the public Swagger documentation for the https://un.modyo.be account content API can be found at https://un.modyo.be/api/content/docs. Likewise, you will find the documentation of administrative functions and the user profile respectively at:
 
-http
+```http
 https://[account_host]/api/admin/docs
 https://[account_host]/api/profile/docs
 ```
@@ -185,9 +185,9 @@ _callback URL_ (which corresponds to the Redirect URI field entered in the previ
 
 ! [New API Access] (/assets/img/platform/save-API-access.png)
 
-። :warning Attention
+:::warning Attention
 Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
-።:
+:::
 
 With the already registered application, it is only enough to assign that application to the user or users
 that will make use of the API. To do this, you must access the _Settings_/_Team_ menu and select an existing user or create a new user, which must have an administrative role within the application (for more details refer to [Users and Roles section] (/es/platform/core/roles.html)).
@@ -201,9 +201,9 @@ In the _popup_ shown below, select the name of the application you just created,
 
 ! [Team Member API Access 2] (/assets/img/platform/team-member-API-access-2.png)
 
-። :warning Attention
+:::warning Attention
 Keep in mind that administrative users will only be able to execute actions through the Modyo Administrative API if they have the necessary permissions to perform each action. For example, an administrator with the “Developer” role on a site will not be able to execute the “Publish” action on that site.
-።:
+:::
 
 Finally, you will now see that in the “Manage Access Tokens” section the application (“My application”) will appear, along with a red highlighted value that corresponds precisely to _access token_, and that
 you will then use to perform authenticated _requests_ on the Modyo API.
@@ -214,7 +214,7 @@ Ready! With the token already created, you can start taking advantage of all the
 available administrators, you can perform a _request_ to the _endpoint_ `/api/admin/roles`, including in
 _header_ HTTP _"Authorization: Bearer"_ the value of _access token_ previously obtained:
 
-shell
+```shell
 curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
  8c280dcc1fcff361aa1120836841b4b82faab23e912148c91766bbf5e452ab56'
 ```
@@ -255,7 +255,7 @@ in your _response_ in JSON format:
 And what happens if someone tries to perform a _request_ to the API without having a valid token? If you try to make an unauthenticated call or with an invalid token, the system will respond
 with an error `HTTP 401 Unauthorized`:
 
-shell
+```shell
 curl GET https://modyodev.modyo.me:3000/api/admin/roles -v
 
 > GET /api/admin/HTTP/1.1 roles
@@ -288,7 +288,7 @@ For example
 you only want to include campaigns of type `mailing` (`type=mailing`), so that the _request_, after
 add the necessary authentication headers, would be as follows:
 
-shell script
+```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns? type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
@@ -513,7 +513,7 @@ For example, when you see the corresponding _response_ of this call:
  }
 }
 ```
-As you can see, the ``message_deliveries object within the JSON contains a list of 10 items, where each represents a _message delivery_ or a specific delivery of a campaign mail to a given user, and each object has attributes relevant to this concept, such as the name and
+As you can see, the ``message_deliveries`` object within the JSON contains a list of 10 items, where each represents a _message delivery_ or a specific delivery of a campaign mail to a given user, and each object has attributes relevant to this concept, such as the name and
 customer's mail or the date on which it was sent. But where are the other records? This is where the pagination of resources plays a very important role, and for this you need to pay
 attention to the `meta` object within the JSON.
 
