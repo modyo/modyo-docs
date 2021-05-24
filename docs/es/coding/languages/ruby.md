@@ -949,7 +949,7 @@ Nunca uses `::` para la invocación de métodos.
 
 * Evita usar `?:` (operador ternario) en multilíneas; en su lugar usá `if/unless`.
 
-* Favorecé al uso del modificador `if/unless` cuando tengas que escribir en una línea.
+* Favorece al uso del modificador `if/unless` cuando tengas que escribir en una línea.
   Otra buena alternativa es el uso del control de flujo con `&&/||`.
 
     ```ruby
@@ -1067,7 +1067,7 @@ Nunca uses `::` para la invocación de métodos.
     end
     ```
 
-* Favorecé el uso del modificador `while/until` cuando puedas escribir la
+* Favorece el uso del modificador `while/until` cuando puedas escribir la
   comparación en una línea.
 
     ```ruby
@@ -1080,7 +1080,7 @@ Nunca uses `::` para la invocación de métodos.
     do_something while some_condition
     ```
 
-* Favorecé `until` por sobre `while` para condiciones negativas.
+* Favorece `until` por sobre `while` para condiciones negativas.
 
     ```ruby
     # mal
@@ -2559,7 +2559,7 @@ de crear instancias de una clase en particular.
   `protected`) de acuerdo con su correcto uso. No vayas por ahi dejando
   todo `public` (que es el estado predeterminado). Después de todo
   ahora estamos programando en *Ruby*, no en *Python*.
-* Indenta las palabas `public`, `protected`, y `private` tanto como los
+* Indenta las palabras `public`, `protected`, y `private` tanto como los
   métodos a los que se aplican. Dejá una línea en blanco antes y después
   del modificador de visibilidad, en orden de enfatizar que eso aplica a
   todos los métodos que se encuentran debajo.
