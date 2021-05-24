@@ -43,9 +43,9 @@ To record your target, simply click the**Save as Target** button at the bottom o
 
 Finally, if you want to see the users that make up that target, you just have to click the**Apply** button. With this, you'll get to the [Users] view (/es/platform/customers/realms.html) that will show you a list of all the contacts that fit your filters.
 
-።: tip Tip
+:::tip Tip
  It is necessary that each customer's file is complete, since each of the data that appears on it, can be taken into account to better segment. If the tab is not complete or the customer data to filter is not available, it will not be added to the target.
-።:
+:::
 
 ### Filters
 
