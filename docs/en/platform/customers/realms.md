@@ -159,7 +159,7 @@ Here you can set up general aspects of realm, such as:
   - Enable gender
 - **Remove**: Allows complete removal of realm. This is a background process, so you may not see realm disappear immediately after executing the action. To be able to delete the kingdom, you must enter the full name of the kingdom to confirm the action.
 
-። :danger danger
+:::danger danger
 By disabling the realm Modyo credentials, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
 ።:
 
@@ -212,7 +212,7 @@ The email styles of the platform you send can also be customized. To do this, yo
 
 When you click to enable each email, it will display a default editor into which you can paste the code.
 
-። :danger danger
+:::danger danger
 It is critical that each email includes customizable codes that allow the platform to include random data of the user requesting the shipment.
 
 To do this, you must insert into the code the attributes that are under the editor, and which you can easily copy and paste to place them in the part you need.
