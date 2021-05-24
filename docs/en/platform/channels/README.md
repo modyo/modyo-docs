@@ -18,5 +18,5 @@ search: true
 
 - [Site Management](/es/platform/channels/sites.html) to organize digital channels.
 - [Dynamic Pages](/es/platform/channels/pages.html) to define the structure of each site and add content in the.
-- [Widgets] (/es/platform/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML, and CSS.
+- [Widgets](/es/platform/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML, and CSS.
 - [Templates] (/es/platform/channels/templates.html) to organize global site structures and design system.
