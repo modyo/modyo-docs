@@ -44,7 +44,7 @@ The list has three types of filters that will be useful to find a file.
 
 **Tags**: This filter allows you to display all the files associated with a tag that are within the platform.
 
-።: tip Tip
+:::tip Tip
 If you want to add a tag to a file or group of files, you can do so by directly editing the file or using the bulk actions that appear at the bottom left of the list. 
 
 Thus, you will appear as soon as you select the first item (clicking on the checkbox in the first column.
@@ -57,9 +57,9 @@ If you select one or more checkboxes that are on your screen, the button will on
 
 **Search Bar**: With the search bar, the Manager will show you all the files that have a word or content that is within the search bar. In this case, it also includes the search for your specific extension, tag, name or user that uploaded it.
 
-።: tip Tip
+:::tip Tip
 Modyo allows you to display only 30 files at a time. This comes by default and it is not possible to change it.
-።:
+:::
 
 For this view, the columns are:
 
@@ -146,7 +146,7 @@ Then, you can see the three options you can choose to edit the size:
 
 On one side, you can see the original size of the image and the pixel size of what you've already edited.
 
-።: tip Tip
+:::tip Tip
 There are two ways to change the view and cut the image with the cursor:
 
 - **Zoom: ** Use the mouse scroll to zoom in.
