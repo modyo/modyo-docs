@@ -132,15 +132,15 @@ This section will allow you to add as many fields that are necessary to complete
 - **Date**: Allows you to add a date field in which the user can select one within the allowed range.
 - **Questions anidas**: Allows you to add a number of alternatives that can be nested, so that the user is prompted to select one of the possible nested options within the option you selected.
 
-። :warning Attention
+:::warning Attention
 From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
-።:
+:::
 
 You can delete one of the fields from the form by clicking on the dump icon to the right of each field in the main section. Deletion will be effective once you save the changes.
 
-።: danger danger
+::: danger danger
 If your form is already activated and you already have answers, be very careful when deleting questions from it, as by doing so, you'll be deleting the values of those responses that users already sent. This action is irreversible.
-።:
+:::
 
 ### Field Properties
 This section will allow you to modify the options for each of the questions in your form, you must select a field from the main section to make use of this section.
