@@ -22,9 +22,9 @@ To create a site, simply click on the**New** tab, which will allow you to design
 
 After that, you can see it in “Enabled” mode, which means that it is online to work.
 
-። :warning Attention
+:::warning Attention
 In the Site Index, you will only see the sites where you are part of the team working with a role.
-።:
+:::
 
 ## Joint review and publication
 
@@ -32,13 +32,13 @@ You can review and publish multiple items of a site in a single view. To review 
 
 If you want to publish multiple items in one step, you must press the “Publish” button from the pages, navigation, widgets or templates and you must mark in the list all the items you want to publish and then press the button to publish again.
 
-። :warning Attention
+:::warning Attention
 All items that have pending changes to be published will appear in the listing, so if any item does not appear in the listing, it is very likely that you do not have any changes to publish yet.
 
 If you have team review enabled, only items that are already approved will appear in the list.
 
 If you need to quickly publish an item, admin users can skip the approval process using the “Force Publish” option allowing the item to move directly to the publication view.
-።:
+:::
 
 ## Setting up a Site
 
@@ -61,9 +61,9 @@ Within this section, you can configure the following data:
 - **Apple Icon**: Image that appears on mobile devices when you use the site as an app.
 - **Dele**: This option allows you to definitely delete a site and all its elements.
 
-። :danger danger
+:::danger danger
 This option is irreversible, so you need to be completely sure when you run this action. By pressing the delete button, the system will prompt you for the name of the site. You will need to enter the text name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its items again.
-።:
+:::
 
 #### Google Tag Manager
 
@@ -128,13 +128,13 @@ The manifest must be implemented on each of the pages on which the PWA is develo
 
 You can create and modify the manifest in the following field, allowing you to add each of the changes without having to leave the view.
 
-። :warning Attention
+:::warning Attention
 If you change the manifest, remember to save it with the**Save** button at the top of the screen to keep your changes.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 If you don't customize the manifest but add the path in the Template Builder, it will be blank and will not do any action.
-።:
+:::
 
 #### Service Worker**
 
@@ -147,13 +147,13 @@ https://[domain]/[site-name]/serviceworker.js
 
 You can modify and program the Service Worker in the following field, adapting it to your routes and with the available variables as follows.
 
-። :warning Attention
+:::warning Attention
 If the Service Worker is disabled, the page will continue to walk only in its basic functions and not with the benefits that this option has.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 If the code is not customized or saved, the site won't have the features you're designing.
-።:
+:::
 
 ### SEO
 
@@ -178,9 +178,9 @@ The robots.txt and sitemap.xml files are only visible on the site, if you have t
 By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages, so you'll have to publish each page for the new meta tags to take effect on the site.
 :::
 
-። :warning Attention
+:::warning Attention
 Since the meta tag listing is part of the site configuration, only site administrators can add meta tags for all pages, however, site developers can add and remove meta tags on pages and modify their page by page values.
-።:
+:::
 
 ### Restrictions
 
@@ -207,7 +207,7 @@ The variables you can change here are:
 - **Primary domain**: Site address.
 - **Alternative**: Secondary address to redirect in case the first fails.
 
-። :warning Attention
+:::warning Attention
 Modyo has reserved domains that cannot be used as custom domains of sites:
  <table style="border: none;"> <tr style="border: none;"> 
  <td style="border: none;"> <ul> 
@@ -229,9 +229,9 @@ Modyo has reserved domains that cannot be used as custom domains of sites:
  <li> global.modyo.com </li> 
  </ul> </td> 
  </tr> </table> 
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 Modyo has hosts reserved for sites, so you won't be able to use them as a host for your sites:
  <table style="border: none;"> <tr style="border: none;"> 
  <td style="border: none;"> <ul> 
@@ -273,7 +273,7 @@ Modyo has hosts reserved for sites, so you won't be able to use them as a host f
  <li> widgets </li> 
  </ul> </td> 
  </tr> </table> 
-።:
+:::
 
 ### Site Variables
 
@@ -330,19 +330,19 @@ In this view you will find a table with all the redirects that currently exist o
 
 To create a new redirect, click the**New** button in the upper right corner of the view. By filling in the Source **_URL_ and Destination **_URL_ fields and redirect code and then saving the changes, you will create a new redirect entry.
 
-። :warning Attention
+:::warning Attention
 The redirection table is the penultimate in precedence, so if there is a URL on the site pointing to a [page] (/es/platform/channels/pages.html), a default view, or a [custom content view] (/es/platform/channels/templates.html #vistas -for-content), you'll see those views instead of being redirected using the custom redirects table.
-።:
+:::
 
 In addition to creating redirects one by one, you can import a [CSV file] (/assets/examples/custom-redirections.csv) with up to 1000 redirects.
 
-። :warning Attention
+:::warning Attention
 The columns required to import redirects are source and destination.
 
 You can select a 301 or 302 response code for all items without having a column for them.
 
 Along with the above, keep in mind that if you are importing a redirect with an already registered source, you will not be able to start the import process and you will need to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record from the site whose origin you are trying to import.
-።:
+:::
 
 The precedence of locations on Modyo sites is as follows:
 
@@ -410,13 +410,13 @@ Freely specify your content security policy in the text area;
 for a complete guide on how to write your policy, see
 [MDN Content Security Policy (CSP)] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
-። :warning Attention
+:::warning Attention
 A very strict value can interfere with some features such as
 [Google tag manager] (/es/platform/channels/sites.html #google -tag-manager),
 [PWA] (/es/platform/channels/sites.html #pwa),
 [Widgets] (/es/platform/channels/widgets.html) and
 [Asset Manager] (/es/platform/content/asset-manager.html).
-።:
+:::
 
 A production-friendly policy must ensure that all resources such as
 images and stylesheets are loaded from reliable sources and require everyone
