@@ -54,9 +54,9 @@ When you select add a user, the platform prompts you to complete the following f
 - Password Confirmation: Repeating the password given by the administrator.
 - Tags: Tags that are used to identify the user.
 
-።: tip Tip
+:::tip Tip
 To send the password to the user's email, you only need to check the checkbox under the email field. When saving, an email will be sent to the created user with his password, which will be able to change when entering the platform.
-።:
+:::
 
 This user creation view may contain more fields depending on the configuration on the platform, available in the [Customers Settings] section (/es/platform/customers/realms.html #configuracion -de-customers). Some special fields, such as second surname, avatar, or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -registration). On the other hand, there are also **Custom Fields**, which can be created and modified in the [Custom Fields] section (/es/platform/customers/realms.html #campos -custom).
 
@@ -71,9 +71,9 @@ Below you will see the main import view. On the left, a table with three main co
 
 In this view, you will proceed to assign each column in the\ *.CSV file to a respective attribute available on the platform.
 
-።: tip Tip
+:::tip Tip
 The minimum attributes required for import are the real name of the user (not to be confused with user name) and his/her email.
-።:
+:::
 
 On the right, in a sidebar, you will see main import settings. Here you can define if the file does not follow one of the common standards of the\ *.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which by default is a comma). A little below is a box indicating whether you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those fields to be imported. Finally, four main import options:
 
@@ -127,9 +127,9 @@ In the upper right section you will find additional options with which you can d
 * **Disable**: You can deactivate users and prevent them from logging in.
 * **Dele**: Once a user is disabled, you can delete that user. This action can be performed by team members who are account administrators, and each user can delete their account from the additional options in their profile.
 
-።: tip Tip
+:::tip Tip
 When you modify a user, you may change the Targets list to which it belongs.
-።:
+:::
 
 
 —
@@ -183,9 +183,9 @@ It is common to have linked files in CSS code. If you want to add one, you just 
 
 However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
 
-።: tip Tip
+:::tip Tip
 If you're having problems with keyboard codes when you're editing CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
-።:
+:::
 
 ### Post Office
 
@@ -281,5 +281,5 @@ When a**Custom Field** is disabled, it can be deleted. By deleting a**Custom Fie
 :::
 
 :::tip Tip
-Apart from being able to save specific values to users, you can create [Targets] filters (/es/platform/customers/targets.html) using the **Custom Fields** values, allowing users to segment by customizable values.
+Apart from being able to save specific values to users, you can create [Targets](/es/platform/customers/targets.html) filters using the **Custom Fields** values, allowing users to segment by customizable values.
 :::
