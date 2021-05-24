@@ -48,9 +48,9 @@ When you select add a user, the platform prompts you to complete the following f
 - Name: Legal name of the user. **Required
 - Last name: Last name of the user.
 - Maternal surname: Maternal surname of the user.
-- User name: Name within the platform **Required
-- Email: User's email **Required
-- Password: Password for the user to enter the platform. The password cannot be less than 8 characters. **Required
+- User name: Name within the platform **Required**
+- Email: User's email **Required**
+- Password: Password for the user to enter the platform. The password cannot be less than 8 characters. **Required**
 - Password Confirmation: Repeating the password given by the administrator.
 - Tags: Tags that are used to identify the user.
 
