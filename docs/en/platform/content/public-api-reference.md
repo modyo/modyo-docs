@@ -7,28 +7,28 @@ sidebarDepth: 1
 
 Modyo Content has an API to be able to access spaces containing content entries quickly and efficiently. In order to access it there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content] (/en/platform/content/) with [Modyo Channels] (/en/platform/channels/) from the server side via Liquid and another external one that uses the public API in REST for consumption from Javascript.
 
-። :tip SDKs for other languages
+:::tip SDKs for other languages
 At the moment there is only, officially, an SDK for Javascript. In the future, versions are planned to make it easier to work with other languages.
-።:
+:::
 
 ## Liquid SDK
 
 The Liquid SDK allows you to natively consume content from [Modyo Channels] (/en/platform/channels) in any of the sections that use the [Liquid] markup language (/es/platform/channels/liquid-markup.html), such as [Widgets] (/es/platform/channels/widgets.html) and [Templates] (/es/platform/channels/templates.html) of the site.
 
-። :warning Attention
+:::warning Attention
 From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, such that:
 
 * The fields belonging to the meta-information of the input that were previously used as <span v-pre> `{{entry.slug}}` </span> should now be used as <span v-pre> `{{entry.meta.slug}}` </span> 0, or <span v-pre> `{{entry.meta ['slug']}}` </span>.
 * Custom fields previously used as <span v-pre> `{{entry.title}}` </span> should now be used as <span v-pre> `{{entry.fields.title}}` </span>, or a0758c65z0 0756f1abz0 `{{entry.fields ['title']}}` </span>.
 
 Both forms will be available until Modyo version 9.2.
-።:
+:::
 
 ### Accessing entries in a space
 
 To access the list of entries for a type of uid `type_uid` in a uid space `space_uid` use:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entiries%}
 {% for entry in entiries%}
  entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
@@ -37,7 +37,7 @@ liquid
 
 To access the total number of entries that a content filter returns, you can use the liquid filter `total_entries`, for example:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entiries%}
 Total Entries: {{Entries | total_Entries}}
 ```
@@ -46,16 +46,16 @@ Total Entries: {{Entries | total_Entries}}
 
 If you want to filter entries, you can do so using the following attributes: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. They all receive an array of values, so it is possible to filter by a value or several, and the way to use it is as follows:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3'%}
 {% for entry in entiries%}
  entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
 {% endfor%}
 ```
 
-In the case of the filter_by filter, you can make use of either meta attributes or custom fields of the content type, for example:
+In the case of the `filter_by` filter, you can make use of either meta attributes or custom fields of the content type, for example:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit 8%}
 {% for entry in entiries%}
  entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
@@ -64,7 +64,7 @@ liquid
 
 If you want to deny a value within the field filter, you can use `note `inside the filter:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | filter_by: field: 'field_name', not: nil%}
 {% for entry in entiries%}
  entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
@@ -73,14 +73,14 @@ liquid
 
 The selection of inputs always returns an array, so it is necessary to iterate over the result or access the first element, in case of filtering by a single uuid:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | by_uuid: 'entry_uuid'%}
 {% assign entry = entries.first%}
 ```
 
 You can page the entries using the `paginated` filter and display the pagination links with the `pagination_links` filter, for example:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | paginated: 10%}
  <ul> 
  {% for entry in entiries%}
@@ -92,19 +92,19 @@ liquid
 
 In the previous case, the list of entries will be paginated with 10 items per page and at the end of the list the pages will appear. You can navigate through each page using the GET `page` parameter in the URL, for example `my-pagina.com/ landing?page=2 `.
 
-። :warning Attention
+:::warning Attention
 Note that if you have more than one widget that uses content pagination, using the _GET_ `per_page` and `page` parameters in the URL, all widgets with page pagination will be affected by those parameters.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 To make use of pagination in a custom widget, change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}}` </span>. This is necessary because custom widgets are loaded asynchronously. Along with the above change, you need to ensure that _jQuery_ is available on the site and remember that by making use of the pagination links, only the HTML of the widget will change and the _JavaScript_ of the widget will not run again.
-።:
+:::
 
 ### Sort tickets
 
 In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes “meta” `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters `, as follows:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | sort_by: 'published_at', 'asc'%}
 ```
 
@@ -113,7 +113,7 @@ Possible values for `sort_by` are: `name, `published_at`, `created_at`, `updated
 
 To sort by a custom field, you must use the field's `fields.uid` as a parameter:
 
-liquid
+```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit 8%}
 {% for entry in entiries%}
  entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
@@ -134,13 +134,13 @@ The `dynamic_map filter accepts an additional attribute to control the visibilit
 {{entry.fields ['Locations'] | dynamic_map: '600x300',5, 'roadmap', 'https://goo.gl/5y3S82',true}}
 ```
 
-።: tip Tip
+:::tip Tip
 To use input attributes, you can use dot or square bracketed notation, so <span v-pre> `{{entry.meta.slug}}` </span>, returns the same value as <span v-pre> `{{entry.meta ['slug']}}` </span>, and if you have a field called `location`, you can use it as much as <span v-pre> `{{entry. fields.location}} `</span>, or <span v-pre>` {{entry.fields ['location']}} `</span> 
-።:
+:::
 
 ## Javascript SDK
 
-The Modyo SDK** is a library that facilitates the interaction of Javascript based applications with Modyo's public API.
+**The Modyo SDK** is a library that facilitates the interaction of Javascript based applications with Modyo's public API.
 
 Using the SDK, you can obtain, filter and sort your created content so that you can fully take advantage of the capabilities of the Headless API.
 
@@ -157,7 +157,7 @@ The `@modyo /sdk` package is available in the Github registry under the Modyo or
 Once that token is obtained, we must occupy it to authenticate to Github packages. For that we create a `.npmrc` file in the `home`, that is, the file path would be `~/.npmrc`
 The contents of that file (replacing `TOKEN` with our token)
 
-bash
+```bash
 //npm.pkg.github.com/:_AuthToken =TOKEN
 ```
 
@@ -167,7 +167,7 @@ bash
 
 Now you have to inform the project that will occupy `@modyo /sdk` that it should look for that package in the Github log and not in NPM. For that, in the same folder where `package.json` is in the project, we create a `.npmrc` containing the following:
 
-bash
+```bash
 registry= https://npm.pkg.github.com/OWNER
 ```
 
@@ -180,15 +180,15 @@ Where `OWNER `is the name of the organization that owns the package, in this cas
 Once installed in our project we can create a client from which we will obtain the contents.
 For that we instantiated a new customer with the web address of Modyo's account as an argument along with the language to request.
 
-js
-import {Client,} from "@modyo /sdk “;
+```js
+import {Client,} from "@modyo /sdk";
 //To get the correct account, we must use the account url
 const modyoAccount = new Client (” https://my-account.modyo.com","es “);
 ```
 
-።: tip Tip
+:::tip Tip
 When instantiating a new client, the second parameter _locale_ is optional, so that entries are requested only in the requested language, otherwise the default language of the space will be used.
-።:
+:::
 
 ### Content
 
@@ -198,7 +198,7 @@ The SDK allows access to both public and private/targetized content, facilitatin
 
 We can consult for a particular content type and thus get your schema
 
-js
+```js
 //To get the `Post `type of a space called `Blog`
 const TypePost = modyoAccount.getContentType (“blog”, “post”);
 //`TypePost` will return an object with various information of the type, including the schema of that type
@@ -206,7 +206,7 @@ const TypePost = modyoAccount.getContentType (“blog”, “post”);
 
 When we have the type we need we can see its schema, its attributes or query its entries:
 
-js
+```js
 //If we want to see that schema in detail, we can occupy the method `getSchema () `
 TypePost.getSchema () .then (sch => console.log (“Content Type JSON Schema:”, sch));
 /*
@@ -223,7 +223,7 @@ In general, all results delivered by Modyo's Headless API are paginated. A `getE
 
 The object returned by `GetEntries () `includes a `meta` field that will help you navigate it. The shape of the returned object will be something like this:
 
-``json
+```json
 
 {
  “goal”: {
@@ -272,7 +272,7 @@ Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, 
 If you intend to filter by date, it is important that the filter value use the ISO-8601 standard.
 ።:
 
-js
+```js
 //If we want to get a list of attributes for which we can consult
 TypePost
  .getSchema ()
@@ -281,7 +281,7 @@ TypePost
 
 To create a filter, we use the `Filter () `method
 
-js
+```js
 const filters = TypePost
  .Filter ()
  .Before (“meta.created_at”, “2020-05-01")
@@ -297,37 +297,37 @@ FilterEdentries.Then (res => console.log (“Filtered response: “, res));
 
 The results of our search can also be sorted with the `sortBy () `method
 
-js
+```js
 //JSONPath and Sorting are also supported by filters
 const filters = ctype
- .Filter ()
- .sortBy (“meta.created_at”, “desc”)
- .jsonPath (“$.. uuid”);
+ .Filter()
+ .sortBy("meta.created_at", "desc")
+ .jsonPath("$.. uuid");
 ```
 
-**Note**: As you can see in the example, it is possible to use in our queries expressions `JsonPath - XPath for JSON] (https://goessner.net/articles/JsonPath/)
+**Note**: As you can see in the example, it is possible to use in our queries expressions `JsonPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
 
 #### Private content
 
-To get private content, it is enough for the user to be logged in, passing to the `getContentType () `method a third argument in `false (which indicates that it is not public)
+To get private content, it is enough for the user to be logged in, passing to the `getContentType()` method a third argument in `false` (which indicates that it is not public)
 
-js
+```js
 //To access private content (user must be logged in on account)
-const PrivateTypePost = modyoAccount.getContentType (“blog”, “post”, false);
+const PrivateTypePost = modyoAccount.getContentType ("blog", "post", false);
 ```
 
-። :warning Attention
+:::warning Attention
 It is important that this potentially sensitive information be treated with care. Private content requires cookies and an end user who is logged into Modyo.
-።:
+:::
 
 ### End User Information
 
-። :warning Attention
+:::warning Attention
 It is important that you treat this sensitive information carefully. As with Private Content, this information is only available if you work from a browser that supports cookies, and the end user is logged into the platform.
 
 To get end-user information, you need to call the function: `Client.getUserInfo () `that function will return an object with the basic information
 of that user.
-።:
+:::
 
 ## API Reference
 
@@ -351,7 +351,7 @@ For any JSON element, in Modyo the structure is done this way:
 
 JSON Entires:
 
-javascript
+```javascript
 {
  “goal”: {
  “total_entries”: 2,
@@ -405,7 +405,7 @@ javascript
 
 Entires JSON Schema:
 
-javascript
+```javascript
 {
  “definitions”: {
  “entry”: {
@@ -545,7 +545,7 @@ javascript
 
 Entry JSON:
 
-javascript
+```javascript
 {
  “goal”: {
  “uid” :"9b0a24a6-d84f-4851-8750-a86244947510",
@@ -571,7 +571,7 @@ javascript
 
 Entry JSON Schema:
 
-javascript
+```javascript
 {
  “definitions”: {},
  “$schema”: "http://json-schema.org/draft-07/schema #”,
@@ -697,7 +697,7 @@ For example, with `page = 3`, `per_page = 20` you are prompting to return the ne
 
 A pagination goal is delivered along with the response, such as:
 
-javascript
+```javascript
  “goal”: {
  “total_entries”: 2,
  “per_page”: 15,
@@ -722,7 +722,7 @@ In searching ContentTypes with filters, an app-level distinction will be made de
 Metadata (e.g. Tags, Category, Dates): Searches by SQL, will be queried by `meta.param_name` parameters. This as long as it's only the Metadata that is being consulted.
 
 - Tags: consultable in two ways
-  - meta.tags=tag_name
+  - `meta.tags=tag_name`
   - `meta.tags [in] [] =tag1_name&meta.tags [in] [] =tag2_name`
 - Categories, searchable in one way: `meta.category=category_full_path` will consider the child categories of the consulted
 - Creation/update/publish/unopen dates: searchable using ISO-8601 specification and with possibility to search by ranges (lt, gt):
@@ -732,8 +732,8 @@ Metadata (e.g. Tags, Category, Dates): Searches by SQL, will be queried by `meta
 - Fields: Searches using ElasticSearch, for example:
   - Location: The search will be either by QueryString (and will be searched in street_name, country, admin_area_levels) or by geohash. In both cases you must change <span v-pre> `{{field_name}}` </span> to the name of the location field of the content type
     -  <span v-pre> `.../? fields. {{field_name}} [search] =chile` </span>. With the field called `location` would be: `.../? fields.location [search] =chile` This search does not take into account uppercase or lowercase, but it takes into account space, tyls, and special characters.
-    -  <span v-pre> `.../? fields. {{field_name}} [geohash] =66j` </span>. With the field called `location` would be: `.../? fields.location [geohash] =66j
-  - `... /Enries? fields.color=black
+    -  <span v-pre> `.../? fields. {{field_name}} [geohash] =66j` </span>. With the field called `location` would be: `.../? fields.location [geohash] =66j`
+  - `... /entries? fields.color=black`
 
 ###### Language Filter
 
@@ -832,9 +832,9 @@ The Modyo API provides a RESTful interface with responses formatted in a lightwe
 
 Whenever you use the Content API, you can access published content that is available to all users (not private), however, if you want to access private content, you must add a header or a GET parameter to the request URL of the Content API.
 
-።: tip Tip
+:::tip Tip
 If you use Liquid to access content, users who sign in and meet targets will automatically see the content as appropriate and no extra action is required by the Front End developer.
-።:
+:::
 
 The Content API can receive the delivery token parameter in two ways:
 
@@ -854,7 +854,7 @@ The content delivery token contains the following attributes:
 
 For example:
 
-javascript
+```javascript
 {
  “iss”: "http://my-account.modyo.me/api/profile “,
  “aud”: "http://my-account.modyo.me/api/content “,
@@ -865,12 +865,12 @@ javascript
 }
 ```
 
-። :warning Attention
+:::warning Attention
 In order to access the token's retrieval URL, you must make sure you have a login with a user in the account or at least one site on the account, otherwise you will receive an error `404 - Not found`.
-።:
+:::
 
-። :warning Attention
+:::warning Attention
 It is necessary that obtaining the content access token be done dynamically, because that token will change according to the targets to which the user belongs, and since targets can become highly volatile, it is not advisable to store this value.
-።:
+:::
 
 The response to the content API query with the delivery token is the same as the response you would receive without the delivery token, but it will contain as part of the response, both private content (without targets) and targetized content that is restricted to the targets to which the user who requested your delivery token belongs.
