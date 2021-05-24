@@ -46,7 +46,7 @@ While approval is limited, any user with permissions can comment on the item.
 
 - **Require All**: This option extends the previous restriction to all selected users.
 
-። :warning Attention
+:::warning Attention
 When you make changes to your team review settings, items that were already awaiting review will continue to be governed by the rules prior to the changes.
 
 For those items to take into account the new configuration, they need to be rejected and sent for review again.
@@ -66,7 +66,7 @@ Users with the intermediate role, in addition to the above, can approve items un
 
 Users at the highest level, in addition to doing all of the above, can skip the review flow and use the Force Approval action to publish an item without having to comply with the restrictions of the team review.
 
-። :warning Attention
+:::warning Attention
 Site or space administrators always have the ability to skip the team review flow.
 
 For them, the “Send to Review” and “Review” buttons have an option inside the dropdown to “Force Approval” that will allow them to see the item in the publication view.
@@ -134,7 +134,7 @@ Backups are previously published versions of items. That is, every time we publi
 
 If you want to review a particular version of an item, you can go to the “Differences Between Versions” so you can see the changes that have been made and revert them when necessary.
 
-። :warning Attention
+:::warning Attention
 By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you'll be clearing the backing for the first post of the item.
 
 This value can be modified using environment variables and is common for all accounts in environment variables.
@@ -144,13 +144,13 @@ This value can be modified using environment variables and is common for all acc
 
 When you decide to schedule a publication, the editable version moves to a scheduled state, and when it is time for publication, that scheduled version will take the place of the version that is currently published. This allows you to schedule a future change for items, and continue working on the editable version.
 
-። :warning Attention
+:::warning Attention
 Modyo only allows you to have one scheduled version of each item, so if you program a second modification to the item, you'll be overwriting the previous programming.
 ።:
 
 Along with the publication schedule, you can schedule an unpublicisation. At the time, the version that is published will become a backup, leaving the item in question without a published version.
 
-። :warning Attention
+:::warning Attention
 When it is time to execute the scheduled actions, Modyo may take a couple of minutes to perform the action. We'll send you an email when the action is complete.
 ።:
 
@@ -207,7 +207,7 @@ In other sections such as [Customers] (/en/platform/customers/) and Settings, Lo
 In this case, only an Administrator will be able to take control, activating editing for himself and discarding the unsaved progress of the user who is working on it.
 
 
-። :warning Take control
+:::warning Take control
 
 If an Administrator wants to take control of a view, you must click on the item in use and on the next screen, click the**Take Control** button.
 
@@ -237,7 +237,7 @@ The items you can interact with in the preview bar are:
 * **Share link**: Allows you to copy a link that you can share and whoever opens it, will go directly to the preview mode with the settings when copying the link. In order to view the preview mode, just have a login to the account admin.
 * **Exit preview mode**: Close preview mode, removing the bar and leaving the tab in the current url of the site.
 
-። :warning Attention
+:::warning Attention
 Changing the content selector in the preview bar will have no effect on the content you're using through the JavaScript SDK or the Content API. It will only have an effect on the content used through the Liquid SDK.
 ።:
 
@@ -251,7 +251,7 @@ You can use plain text, HTML, JavaScript, and CSS within global variables, howev
 
 You can create global variables in your account settings, and you can add values for different languages. If you require, you can also overwrite the values for certain sites in the Site Variables menu, in your site settings, or in each of the custom widget builder widget.
 
-። :warning Attention
+:::warning Attention
 When using global variables, the variables defined at the lowest level will always be preferred, with the variables defined in the widget first, then those defined in the site and then the variables defined at the account level, so be careful when defining variables in widgets or the site with the same name that the variables in the account.
 ።:
 
