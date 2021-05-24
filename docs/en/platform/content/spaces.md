@@ -80,9 +80,9 @@ Cache is a tool that allows you to reduce the number of applications that reach 
 Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled “A”, and then post the same content with the title “A+1", for 5 minutes you will see the content with the title “A” until the cache initial is invalidated.
 ።:
 
-።: tip Tip
+:::tip Tip
 To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have to face some high-demand or concurrency scenario.
-።:
+:::
 
 ### Security
 
