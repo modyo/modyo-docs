@@ -268,9 +268,9 @@ Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, 
 
 - **Pagination**: Receives page number and total entries per page as parameters.
 
-። :warning Attention
+:::warning Attention
 If you intend to filter by date, it is important that the filter value use the ISO-8601 standard.
-።:
+:::
 
 ```js
 //If we want to get a list of attributes for which we can consult
