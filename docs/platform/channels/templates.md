@@ -146,10 +146,10 @@ When you create a theme from a site or channel, that theme becomes available to 
 
 In the views section, you will find 4 error types available for customization:
 
-* **Disabled**: You will see this error view if the site you are trying to access has been [disabled](/platform/channels/sites.html).
-* **404**: You will see this view if you enter a site URL that is not defined and if you decide to show 404 errors in the [site restrictions](/platform/channels/sites.html#restrictions) instead of redirecting to the home page.
-* **Privacy**: You will see this error view if you don't have permission to access the [site](/platform/channels/sites.html#restrictions) or one of its [pages](/platform/channels/pages.html#privacy).
-* **Template**: You will see this error view when the site page you are loading has a liquid syntax error. It is unlikely that you will see this view, since from Modyo 8.1 onwards we have a feature that checks the liquid syntax before you can save and publish changes in the template builder.
+- **Disabled**: You will see this error view if the site you are trying to access has been [disabled](/platform/channels/sites.html).
+- **404**: You will see this view if you enter a site URL that is not defined and if you decide to show 404 errors in the [site restrictions](/platform/channels/sites.html#restrictions) instead of redirecting to the home page.
+- **Privacy**: You will see this error view if you don't have permission to access the [site](/platform/channels/sites.html#restrictions) or one of its [pages](/platform/channels/pages.html#privacy).
+- **Template**: You will see this error view when the site page you are loading has a liquid syntax error. It is unlikely that you will see this view, since from Modyo 8.1 onwards we have a feature that checks the liquid syntax before you can save and publish changes in the template builder.
 
 ## Content views
 
@@ -207,10 +207,12 @@ In case it is not enabled, the URL will be in the form `account_url/site_host`.
 :::
 
 ## Custom layouts
-Modyo has three default layouts: 
-* **Home**: Used exclusively on the home page of the site.
-* **Base**: All pages except the home page use this default layout.
-* **Error**: The error views use this clean layout (404, 401)
+
+Modyo has three default layouts:
+
+- **Home**: Used exclusively on the home page of the site.
+- **Base**: All pages except the home page use this default layout.
+- **Error**: The error views use this clean layout (404, 401)
 
 You can create new Layouts from the template builder, by clicking on "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on the pages.
 
@@ -370,21 +372,21 @@ The tasks you must cover with these snippets are:
 var axios_api=axios.create ();
   axios_api.defaults.baseURL='API URL';
 }
-//global variable that will represent an instance of axios that will be responsible for making the requests of the modyo api
-var axios_modyo=axios.create ({
-  baseURL: window.baseUrl + '/api/admin',
+// variable global que representará una instancia de axios que se encargará de hacer las peticiones de la api de modyo
+var axios_modyo=axios.create({
+  baseURL: '{{site.account_url}}/api/admin',
 });
 //global variable that represents an instance of axios that will make the requests of the site content jsons
 var axios_modyo_json=axios.create ({
   baseURL: {{site.url}},
 });
-//global variable that represents an axios instance that will be responsible for making authentication-related requests
-var axios_auth=axios.create ();
-axios_auth.defaults.baseURL=window.baseUrl + '/auth/openidc';
-//function that generates activity on the site with each authentication request
-var resetIdleTime=function (request) {
-  sessionManager.resetIdleTime ();
-return request;
+// variable global que representará una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
+var axios_auth = axios.create();
+axios_auth.defaults.baseURL = '{{site.account_url}}/auth/openidc';
+// función que genera actividad en el sitio con cada petición de autenticación
+var resetIdleTime = function(request){
+  sessionManager.resetIdleTime();
+ return request;
 }
 //function that adds the token to each request
 var appendTokenToRequest=function (request) {
@@ -422,92 +424,94 @@ var modalConfirm=function () {
     });
   });
 };
-//it will be the one that will be in charge of starting the time tracking to lift this modal and handle the Front side of the session, then we will explain each of the properties and methods of this object that handles the session
-var sessionManager={
-  //property that defines the time from the last activity until the end of the session in seconds (note not the refresh time of the token but the end of the session, it is recommended that this be one minute shorter than the one declared by the provider of the Open ID Connect to have a little slack with the session and closing it is 100% valid)
-  timeToEndSessionInSeconds: 900,
-  //property where the lifting time of the inactivity modal is defined since the last action or request on the page
-  timeToRaiseWarningModalInSeconds: 720,
-  //property that saves the timestamp of the last moment of activity of the sessionManager
-  lastActionTimeInThisWindow: new Date (). getTime (),
-  //function that converts seconds to milliseconds
-  secondsToMilisecs: function (minutes) {
-    return minutes * 1000;
-  },
-  //property to store the session id interval of session review
-  intevalId: null,
-  //function that determines if the application is being accessed from the modyoShell or not
-  isModyoAppShell: function () {
-    return/; Modyo_App_Shell/.test (navigator.userAgent);
-  },
-  //method that must be executed on each page load to begin the process of session events to follow up recommended do this invocation sessionManager.init () in the head of the layout to begin tracking the session (in some cases it will be defined that developers do not launch this invocation in that case the test api to connect us must also have this if and so we will achieve that axios_api serves for the develop and development environment one with session and the other without session manager)
-  init: function () {
-    this.resetIdleTime ();
-    this.intevalId=this.interval ();
-  },
-  //restart the timeout or create a new activity on the site
-  resetIdleTime: function () {
-    this.lastActionTimeInThisWindow=new Date (). getTime ();
-    var sessionEndTime =
-      this.lastActionTimeInThisWindow +
-      this.secondsToMilisecs (this.timeToEndSessionInSeconds);
-    localStorage.setItem ("timeToEndSession", sessionEndTime);
-    var raiseWarningModalTime =
-      this.lastActionTimeInThisWindow +
-      this.secondsToMilisecs (this.timeToRaiseWarningModalInSeconds);
-    localStorage.setItem ("timeToRaiseWarningModal", raiseWarningModalTime);
-  },
-  //method that initiates the activity every second js that will handle the session events
-  interval: function () {
-    var self=this;
-    return setInterval (this.checkSessionEvents, 1000, self);
-  },
-  //method that raises the warning time modal
-  raiseModal: function () {
-    return modalConfirm ();
-  },
-  //logout method and clean storage
-  logout: function () {
-    localStorage.clear ();
-    sessionStorage.clear ();
-    clearInterval (this.intevalId);
-    var withRedirect =
-      arguments.length> 0 && arguments [0]! == undefined? arguments [0]: false;
-    if (withRedirect) {
-      window.location.href =
-        "{{site.account_url}}/logout?multi=true&redirect_to=https://chile.larrainvial.com";
-    } else {
-      window.location.href="{{site.account_url}}/logout? site={{site.uuid}}";
-    }
-  },
-  //method that reviews session events to determine if it is time to close it or keep it after showing the modal
-  checkSessionEvents: function (self) {
-    var sessionEndTime=localStorage.getItem ("timeToEndSession");
-    var raiseWarningModalTime=localStorage.getItem ("timeToRaiseWarningModal");
-    var diffInSecsToShow =
-      Math.round ((sessionEndTime - new Date (). GetTime ())/1000)> 0
-        ? Math.round ((sessionEndTime - new Date (). GetTime ())/1000)
-        : 0;
-    var expirationTimeHtml=document.querySelector ("# expiration-time");
-    var timeNow=new Date (). getTime ();
-    expirationTimeHtml.innerText=diffInSecsToShow;
-    if (sessionEndTime - timeNow <0) {
-      self.logout ();
-    } else if (raiseWarningModalTime - timeNow <0) {
-      self
-        .raiseModal ()
-        .then (function (response) {
-          axios_auth.get ("/access_token");
-        })
-        .catch (function (err) {
-          self.logout ();
-        });
-    } else {
-      if (($ ("# session-modal"). data ("bs.modal") || {}) ._ isShown) {
-        $ ("# session-modal"). modal ("hide");
-      }
-    }
-  }
+// será la que se encarga de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
+var sessionManager = {
+  // propiedad que define el tiempo desde la ultima actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
+  timeToEndSessionInSeconds: 900,
+  // propiedad donde se define el tiempo de levantamiento del modal de inactividad desde la ultima acción o petición en la pagina
+  timeToRaiseWarningModalInSeconds: 720,
+  // propiedad que guarda el timestamp del ultimo momento de actividad del sessionManager
+  lastActionTimeInThisWindow: new Date().getTime(),
+  // función que convierte segundos a milisegundos
+  secondsToMilisecs: function(minutes) {
+    return minutes * 1000;
+  },
+  // propiedad para almacenar el interval id de revision de eventos de sesion
+  intevalId:null,
+  // url de redireccion si la funcion logout tiene argumentos
+  redirectURL:"https://modyo.com",
+  // función que determina si se esta accediendo a la aplicación desde el modyoShell o no
+  isModyoAppShell: function() {
+    return /; Modyo_App_Shell/.test(navigator.userAgent);
+  },
+  // método que debe ser ejecutado en cada carga de pagina para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se define que los developers no lancen esta invocación en ese caso la API de prueba a conectar debe tener también este if y así lograrás que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
+  init: function() {
+    this.resetIdleTime();
+    this.intevalId=this.interval();
+  },
+  // reinicia el tiempo de espera o crea una nueva actividad en el sitio
+  resetIdleTime: function() {
+    this.lastActionTimeInThisWindow = new Date().getTime();
+    var sessionEndTime =
+      this.lastActionTimeInThisWindow +
+      this.secondsToMilisecs(this.timeToEndSessionInSeconds);
+    localStorage.setItem("timeToEndSession", sessionEndTime);
+    var raiseWarningModalTime =
+      this.lastActionTimeInThisWindow +
+      this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
+    localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
+  },
+  // método que inicia la actividad cada segundo js que maneja los eventos de sesión
+  interval: function() {
+    var self = this;
+    return setInterval(this.checkSessionEvents, 1000, self);
+  },
+  // método que levanta el modal de warning time
+  raiseModal: function() {
+    return modalConfirm();
+  },
+  // método que cierra sesión y limpia storage
+  logout: function() {
+    localStorage.clear();
+    sessionStorage.clear();
+    clearInterval(this.intevalId);
+    var withRedirect =
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    if (withRedirect) {
+      window.location.href =
+        "{{site.account_url}}/logout?multi=true&redirect_to="+this.redirectURL;
+    } else {
+      window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
+    }
+  },
+  // método que revisa los eventos de sesión para determinar si es momento de cierre de la misma o de mantenerla después de mostrar el modal
+  checkSessionEvents: function(self) {
+    var sessionEndTime = localStorage.getItem("timeToEndSession");
+    var raiseWarningModalTime = localStorage.getItem("timeToRaiseWarningModal");
+    var diffInSecsToShow =
+      Math.round((sessionEndTime - new Date().getTime()) / 1000) > 0
+        ? Math.round((sessionEndTime - new Date().getTime()) / 1000)
+        : 0;
+    var expirationTimeHtml = document.querySelector("#expiration-time");
+    var timeNow = new Date().getTime();
+    expirationTimeHtml.innerText = diffInSecsToShow;
+    if (sessionEndTime - timeNow < 0) {
+      self.logout();
+    } else if (raiseWarningModalTime - timeNow < 0) {
+      self
+        .raiseModal()
+        .then(function(response) {
+          axios_auth.get("/access_token");
+        })
+        .catch(function(err) {
+          self.logout();
+        });
+    } else {
+      if (($("#session-modal").data("bs.modal") || {})._isShown) {
+        $("#session-modal").modal("hide");
+      }
+    }
+  }
 };
 ```
 

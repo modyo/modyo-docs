@@ -204,7 +204,8 @@ EXAMPLE
   $ modyo-cli get name [directory]
 ```
 
->There are some public widget names that can be accessed via this command
+>Hay algunas plantillas de widgets públicos a los que se puede acceder a través de este comando
+>El CLI de Modyo está diseñado para funcionar en base a una arquitectura de micro front-end y acelerará el proceso de inicialización de un widget, con decisiones modyo.
 
 ```bash
   EXAMPLE
@@ -252,4 +253,5 @@ MODYO_SITE_ID=siteId
 MODYO_SITE_HOST=siteHost
 MODYO_BUILD_COMMAND=buildCommand
 MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+MODYO_WIDGET_NAME=name of widget
 ```
