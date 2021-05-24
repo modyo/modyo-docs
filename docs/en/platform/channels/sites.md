@@ -168,15 +168,15 @@ The options to configure are:
 - **Sitemap: This file allows search engines to better index the content of your site. Modyo automatically updates your default sitemap file, but you can also manually modify it to focus only on a particular page and content.
 - **Robots.txt**: This file is part of the Robots Exclusion Protocol (REP), a group of web rules that regulate how robots track the web, access and index content and serve it to users. In practice, this file determines whether or not certain user agents (web tracking software) may or may not track parts of a website. These tracking instructions are specified “allowing” or “prohibiting” the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
-።: tip Tip
+:::tip Tip
 The robots.txt and sitemap.xml files are only visible on the site, if you have the custom domain enabled (custom domain). Otherwise, robots.txt and sitemap.xml are only at the account level, have their default values and cannot be customized.
-።:
+:::
 
 - **Meta tags**: Allows you to set meta tags for all pages and their default values.
 
-።: tip Tip
+:::tip Tip
 By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages, so you'll have to publish each page for the new meta tags to take effect on the site.
-።:
+:::
 
 ። :warning Attention
 Since the meta tag listing is part of the site configuration, only site administrators can add meta tags for all pages, however, site developers can add and remove meta tags on pages and modify their page by page values.
