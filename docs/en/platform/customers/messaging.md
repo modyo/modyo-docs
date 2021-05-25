@@ -48,7 +48,7 @@ Subsequently, it will display a form that you must fill in with the following in
 - **Type**: Format the campaign will have (Mail or Notification).
 - **Subject**: Text that will appear on the subject line that will be sent to users.
 - **Reply to**: Email address people can respond to ** (Mail campaigns only) **
-- **Template**: List of [templates](/es/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, it will send to a blank template. ** (For email campaigns only) **
+- **Template**: List of [templates](/en/platform/customers/messaging.html#templates) that will be used to send an email. If one is not selected, it will send to a blank template. ** (For email campaigns only) **
 - **Enable targetication**: Checkbox to select a target to send the campaign. If left blank, the campaign will be sent to all users.
 
 After filling in this data, you must click on the**Save and Continue** button, located at the top of the screen.
