@@ -12,9 +12,9 @@ The available filters are:
 - Site
 - Clearance
 
-። :warning Attention
+:::warning Attention
 When you filter by site, items that use space data will not contribute their data into the count, and at the same time, if you filter by space, items that use site data will not contribute to the data count.
-።:
+:::
 
 ![Digital factory](/assets/img/platform/digital-factory.png)
 
