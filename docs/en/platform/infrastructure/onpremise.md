@@ -274,7 +274,7 @@ To start or stop Apache2 it is recommended to use the apache2ctl start|stop|rest
 
 ### Upstart Configuration
 
-**App Server: ** App Server upstart scripts are responsible for running the platform as an operating system service and ensuring that the platform is started in the system boot sequence.
+**App Server:** App Server upstart scripts are responsible for running the platform as an operating system service and ensuring that the platform is started in the system boot sequence.
 
 ```sh
 # /etc/init/modyo-app.conf
@@ -301,7 +301,7 @@ To start or stop the Modyo App Server service with Upstart configuration, use th
 service modyo-app start|stop|status|restart (Ubuntu)
 initctl start|stop|status|restart modyo-app (Red Hat)
 
-**Worker Process: ** Worker Process upstart scripts are responsible for running the platform's background processes as an operating system service and ensuring that the platform starts in the system boot sequence.
+**Worker Process:** Worker Process upstart scripts are responsible for running the platform's background processes as an operating system service and ensuring that the platform starts in the system boot sequence.
 
 ```sh
 # /etc/init/modyo-worker.conf
@@ -342,7 +342,7 @@ In addition, for application and index servers it is recommended that you use so
 
 To maximize uptime, it is recommended to make a log rotated policy that does not require a process restart, as is the case with the Linux logrotate tool and its copytruncate option.
 
-**Logrotate: ** The following configuration is recommended for logging rotates with logrotate:
+**Logrotate:** The following configuration is recommended for logging rotates with logrotate:
 
 ```sh
 /var/log/modyo/log/*.log {
@@ -359,7 +359,7 @@ To maximize uptime, it is recommended to make a log rotated policy that does not
 
 ### Load Balancer
 
-**Monitoring URL: ** It is recommended to use the platform monitoring URL to configure within the load balancer a policy that discards or includes a particular application server. To do this, the following URL is used:
+**Monitoring URL:** It is recommended to use the platform monitoring URL to configure within the load balancer a policy that discards or includes a particular application server. To do this, the following URL is used:
 
 ```sh
 curl MODYO_URL/status
@@ -368,7 +368,7 @@ curl MODYO_URL/status
 
 The platform response must be with an HTTP 200 OK code.
 
-**SSL Certificates: ** If you want to configure access to the platform using an SSL certificate, it is recommended that the platform be installed on the load balancer and that traffic to the application servers be done without encryption. This prevents the processing of complex encryption algorithms on application servers by delegating this task to the load balancer. In many cases load balancers have specialized components for this task.
+**SSL Certificates:** If you want to configure access to the platform using an SSL certificate, it is recommended that the platform be installed on the load balancer and that traffic to the application servers be done without encryption. This prevents the processing of complex encryption algorithms on application servers by delegating this task to the load balancer. In many cases load balancers have specialized components for this task.
 
 
 The SSL certificate is configured in the balancer.
@@ -511,11 +511,11 @@ The Modyo Enterprise On Premise version is developed in the JRuby programming la
 
 The following Java VM configurations correspond to values that have been successfully tested in production in the Cloud versions of Modyo, for high availability and concurrency.
 
-**Heap Space: ** You choose to use 3/4 of the available RAM, not exceeding 4GB.
+**Heap Space:** You choose to use 3/4 of the available RAM, not exceeding 4GB.
 
-**Garbage Collection: ** You choose to use a concurrent collector to minimize pauses in the application during execution.
+**Garbage Collection:** You choose to use a concurrent collector to minimize pauses in the application during execution.
 
-**NewRelic Agent: ** If you have NewRelic integration enabled, an additional parameter must be added indicating the location of the library where the agent is located.
+**NewRelic Agent:** If you have NewRelic integration enabled, an additional parameter must be added indicating the location of the library where the agent is located.
 
 
 Configuration example (server with 8GB RAM and NewRelic): installed in /opt/newrelic
