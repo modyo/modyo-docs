@@ -10,7 +10,7 @@ The available filters are:
 
 - Date Range
 - Site
-- Clearance
+- Space
 
 :::warning Attention
 When you filter by site, items that use space data will not contribute their data into the count, and at the same time, if you filter by space, items that use site data will not contribute to the data count.
