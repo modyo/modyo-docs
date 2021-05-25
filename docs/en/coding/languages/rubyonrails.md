@@ -8,7 +8,7 @@ search: false
 The next section is under development and has not yet been revised.
 :::
 
-The goal of this guide is to present a set of best practices and style prescriptions for Ruby on Rails 4 development. It's a complementary guide to the already existing community-driven [Ruby coding style guide] (https://github.com/rubocop-hq/ruby-style-guide).
+The goal of this guide is to present a set of best practices and style prescriptions for Ruby on Rails 4 development. It's a complementary guide to the already existing community-driven [Ruby coding style guide](https://github.com/rubocop-hq/ruby-style-guide).
 
 This Rails style guide recommends best practices so that real-world Rails programmers can write code that can be maintained by other real-world Rails programmers. A style guide that reflections real-world usage gets used, and a style guide that holds to an ideal that has been rejected by the people it is supposed to help risks not getting used at all - no matter how good it is.
 
@@ -280,7 +280,7 @@ render plain: 'Ruby!'
 HTTP Status Code Symbols
 —
 
-Prefer [corresponding symbols] (https://gist.github.com/mlanett/a31c340b132ddefa9cca) to numeric HTTP status codes. They are meaningful and do not look like “magic” numbers for less known HTTP status codes.
+Prefer [corresponding symbols](https://gist.github.com/mlanett/a31c340b132ddefa9cca) to numeric HTTP status codes. They are meaningful and do not look like “magic” numbers for less known HTTP status codes.
 
 ``` ruby
 # bad
@@ -493,7 +493,7 @@ end
 New-style Validations
 —
 
-Always use the ["new-style” validations] (http://thelucid.com/2010/01/08/sexy-validation-in-edge-rails-rails-3/).
+Always use the ["new-style” validations](http://thelucid.com/2010/01/08/sexy-validation-in-edge-rails-rails-3/).
 
 ``` ruby
 # bad
@@ -612,7 +612,7 @@ end
 Callbacks Order
 —
 
-Order callback declarations in the order in which they will be executed. For reference, see [Available Callbacks] (https://guides.rubyonrails.org/active_record_callbacks.html#available-callbacks).
+Order callback declarations in the order in which they will be executed. For reference, see [Available Callbacks](https://guides.rubyonrails.org/active_record_callbacks.html#available-callbacks).
 
 ``` Ruby
 #bad
@@ -631,7 +631,7 @@ end
 Beware Skip Model Validations
 —
 
-Beware of the behavior of the [following] (https://guides.rubyonrails.org/active_record_validations.html#skipping-validations) methods. They do not run the model validations and could easily corrupt the model state.
+Beware of the behavior of the [following](https://guides.rubyonrails.org/active_record_validations.html#skipping-validations) methods. They do not run the model validations and could easily corrupt the model state.
 
 ``` ruby
 # bad
@@ -680,7 +680,7 @@ class Person
 end
 ```
 
-Check the [gem documentation] (https://github.com/norman/friendly_id) for more information about its usage.
+Check the [gem documentation](https://github.com/norman/friendly_id) for more information about its usage.
 
 `find_each`
 -----------
@@ -889,7 +889,7 @@ scope :chronological, -> { order(created_at: :asc) }
 `pluck`
 -------
 
-Use [pluck] (https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html#method-i-pluck) to select a single value from multiple records.
+Use [pluck](https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html#method-i-pluck) to select a single value from multiple records.
 
 ``` ruby
 # bad
@@ -905,7 +905,7 @@ User.pluck(:name)
 `pick`
 ------
 
-Use [pick] (https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html#method-i-pick) to select a single value from a single record.
+Use [pick](https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html#method-i-pick) to select a single value from a single record.
 
 ``` ruby
 # bad
@@ -950,7 +950,7 @@ User.find_by_sql(<<-SQL.squish)
 SQL
 ```
 
-[`String #squish `] (https://api.rubyonrails.org/classes/String.html#method-i-squish) remove the indentation and newline characters so that your server log shows a fluid string of SQL rather than something like this:
+[`String #squish `](https://api.rubyonrails.org/classes/String.html#method-i-squish) remove the indentation and newline characters so that your server log shows a fluid string of SQL rather than something like this:
 
     SELECT\ n users.id, accounts.plan\ n FROM\ n users\ n INNER JOIN\ n acounts\ n ON\ n accounts.user_id = users.id
 
@@ -1136,7 +1136,7 @@ end
 Reversible Migration
 —
 
-Don't use non-reversible migration commands in the `change` method. Reversible migration commands are listed below. [ActiveRecord::Migration::CommandRecorder] (https://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html)
+Don't use non-reversible migration commands in the `change` method. Reversible migration commands are listed below. [ActiveRecord::Migration::CommandRecorder](https://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html)
 
 ``` ruby
 # bad
@@ -1285,12 +1285,12 @@ I18n.t 'activerecord.errors.messages.record_invalid'
 I18n Guides
 —
 
-More detailed information about the Rails i18N can be found in the [Rails Guides] (https://guides.rubyonrails.org/i18n.html)
+More detailed information about the Rails i18N can be found in the [Rails Guides](https://guides.rubyonrails.org/i18n.html)
 
 Assets
 ======
 
-Use the [asset pipeline] (https://guides.rubyonrails.org/asset_pipeline.html) to leverage organization within your application.
+Use the [asset pipeline](https://guides.rubyonrails.org/asset_pipeline.html) to leverage organization within your application.
 
 Reserve `app/assets`
 --------------------
@@ -1305,12 +1305,12 @@ Use `lib/assets` for your own libraries that don’t really fit into the scope o
 `vendor/assets`
 ---------------
 
-Third party code such as [jQuery] (https://jquery.com/) or [bootstrap] (https://twitter.github.com/bootstrap/) should be placed in `vendor/assets`.
+Third party code such as [jQuery](https://jquery.com/) or [bootstrap](https://twitter.github.com/bootstrap/) should be placed in `vendor/assets`.
 
 `gem/assets`
 ------------
 
-When possible, use gemified versions of assets (e.g. [jquery-rails] (https://github.com/rails/jquery-rails), [jquery-ui-rails] (https://github.com/joliss/jquery-ui-rails), [bootstrap-sass] (https://github.com/thomas-mcdonald/bootstrap-sass), [zurb-foundation] (https://github.com/zurb/foundation)).
+When possible, use gemified versions of assets (e.g. [jquery-rails](https://github.com/rails/jquery-rails), [jquery-ui-rails](https://github.com/joliss/jquery-ui-rails), [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass), [zurb-foundation](https://github.com/zurb/foundation)).
 
 Mailers
 =======
@@ -1339,7 +1339,7 @@ config.action_mailer.raise_delivery_errors = true
 Local SMTP
 —
 
-Use local SMTP server like [Mailcatcher] (https://github.com/sj26/mailcatcher) in development environment.
+Use local SMTP server like [Mailcatcher](https://github.com/sj26/mailcatcher) in development environment.
 
 ``` ruby
 # config/environments/development.rb
@@ -1402,12 +1402,12 @@ config.action_mailer.delivery_method = :smtp
 Inline Email Styles
 —
 
-When sending html emails all styles should be inline, as some mail clients have problems with external styles. This however makes them harder to maintain and leads to code duplication. There are two similar gems that transform the styles and put them in the corresponding html tags: [premailer-rails] (https://github.com/fphilipe/premailer-rails) and [roadie] (https://github.com/Mange/roadie).
+When sending html emails all styles should be inline, as some mail clients have problems with external styles. This however makes them harder to maintain and leads to code duplication. There are two similar gems that transform the styles and put them in the corresponding html tags: [premailer-rails](https://github.com/fphilipe/premailer-rails) and [roadie](https://github.com/Mange/roadie).
 
 Background Email
 —
 
-Sending emails while generating page response should be avoided. It causes delays in loading of the page and request can timeout if multiple email is sent. To overcome this emails can be sent in background process with the help of [sidekiq] (https://github.com/mperham/sidekiq) gem.
+Sending emails while generating page response should be avoided. It causes delays in loading of the page and request can timeout if multiple email is sent. To overcome this emails can be sent in background process with the help of [sidekiq](https://github.com/mperham/sidekiq) gem.
 
 Active Support Core Extensions
 ==========================
@@ -1527,7 +1527,7 @@ Time.zone.parse('2015-03-02 19:05:37') # => Mon, 02 Mar 2015 19:05:37 EET +02:00
 `to_time`
 ---------
 
-Don't use [`String #to_time `] (https://api.rubyonrails.org/classes/String.html#method-i-to_time)
+Don't use [`String #to_time `](https://api.rubyonrails.org/classes/String.html#method-i-to_time)
 
 ``` ruby
 # bad - assumes time string given is in the system's time zone.
@@ -1642,4 +1642,4 @@ Managing Processes
 Foreman's Info
 —
 
-If your projects depend on various external processes use [foreman] (https://github.com/ddollar/foreman) to manage them.
+If your projects depend on various external processes use [foreman](https://github.com/ddollar/foreman) to manage them.
