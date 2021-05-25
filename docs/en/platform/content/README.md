@@ -14,7 +14,7 @@ Thanks to its integrated HTTP Headers management and cache system, content can a
 
 ### Key features
 
-- [Spaces] (/es/platform/content/spaces.html) for the organization of content and computers that manage them.
-- [Content Types] (/es/platform/content/types.html) to define custom structures.
-- [File Manager] (/es/platform/content/asset-manager.html) for the organization of files as images or videos that are used within the contents.
-- [API and SDKs] (/es/platform/content/public-api-reference.html) for access to content repositories, both on and outside the platform.
+- [Spaces](/es/platform/content/spaces.html) for the organization of content and computers that manage them.
+- [Content Types](/es/platform/content/types.html) to define custom structures.
+- [File Manager](/es/platform/content/asset-manager.html) for the organization of files as images or videos that are used within the contents.
+- [API and SDKs](/es/platform/content/public-api-reference.html) for access to content repositories, both on and outside the platform.
