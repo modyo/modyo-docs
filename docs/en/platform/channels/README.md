@@ -12,7 +12,7 @@ search: true
 
 **Modyo Channels** has HTML editable layout templates that make it easy to reuse code.
 
-**Modyo Channels** also has a template system based on [Liquid Markup] (/es/platform/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
+**Modyo Channels** also has a template system based on [Liquid Markup](/es/platform/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
 
 ### Key features
 
