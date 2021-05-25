@@ -178,28 +178,28 @@ In the administrative menu you will access the _Settings_/_API access_ option an
 In the following view, you can give the application a name (in the example “My application”) and a description that distinguish it, and you must also enter a redirect URL and a logout URL, which will be invoked at the end
 the session of a user.
 
-! [New API Access] (/assets/img/platform/new-API-access.png)
+! [New API Access](/assets/img/platform/new-API-access.png)
 
 When you save the application information, Modyo will display a view where you will see the
 _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and also the _Application ID_ and _Secret_ fields that you can use later.
 
-! [New API Access] (/assets/img/platform/save-API-access.png)
+! [New API Access](/assets/img/platform/save-API-access.png)
 
 :::warning Attention
 Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
 :::
 
 With the already registered application, it is only enough to assign that application to the user or users
-that will make use of the API. To do this, you must access the _Settings_/_Team_ menu and select an existing user or create a new user, which must have an administrative role within the application (for more details refer to [Users and Roles section] (/es/platform/core/roles.html)).
+that will make use of the API. To do this, you must access the _Settings_/_Team_ menu and select an existing user or create a new user, which must have an administrative role within the application (for more details refer to [Users and Roles section](/es/platform/core/roles.html)).
 
 In the edit view
 admin user, you will access the _API Access_ tab and select the `+New Access Token` option
 
-! [Team Member API Access 1] (/assets/img/platform/team-member-API-access-1.png)
+! [Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
 
 In the _popup_ shown below, select the name of the application you just created, “My application” in our example, and then `Create Token`.
 
-! [Team Member API Access 2] (/assets/img/platform/team-member-API-access-2.png)
+! [Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
 
 :::warning Attention
 Keep in mind that administrative users will only be able to execute actions through the Modyo Administrative API if they have the necessary permissions to perform each action. For example, an administrator with the “Developer” role on a site will not be able to execute the “Publish” action on that site.
@@ -208,7 +208,7 @@ Keep in mind that administrative users will only be able to execute actions thro
 Finally, you will now see that in the “Manage Access Tokens” section the application (“My application”) will appear, along with a red highlighted value that corresponds precisely to _access token_, and that
 you will then use to perform authenticated _requests_ on the Modyo API.
 
-! [Team Member API Access 3] (/assets/img/platform/team-member-API-access-3.png)
+! [Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
 
 Ready! With the token already created, you can start taking advantage of all the options provided by the Modyo Administrative API. For example, if you want to see a list of roles for users
 available administrators, you can perform a _request_ to the _endpoint_ `/api/admin/roles`, including in
@@ -275,7 +275,7 @@ Remember that you can only access the sections of the API that you are allowed t
 
 ### Invoking services
 
-Once you know the service you will query, according to what you saw in the [Exploring the API] section (/es/platform/core/api.html #explorando -el-api), and that you have a valid authentication method (refer to [Authentication section] (/es/platform/core/api.html #autenticacion)), you can already perform a _request_ to the resource URL required.
+Once you know the service you will query, according to what you saw in the [Exploring the API] section (/es/platform/core/api.html #explorando -el-api), and that you have a valid authentication method (refer to [Authentication section](/es/platform/core/api.html #autenticacion)), you can already perform a _request_ to the resource URL required.
 
 For example, if you need to get a list of all the email campaigns that were created. According to the Swagger documentation available, you'll know that you need to call the following URL:
 
