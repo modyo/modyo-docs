@@ -2031,7 +2031,7 @@ of course, `warn` allows you to delete warnings if you need it
 * Use a space between the first `#` character of the comment and the text
   own of the commentary.
 * Comments that are longer than a word are capitalized and use
-  punctuation. Use [a space] (http://es.wikipedia.org/wiki/Espacio_entre_oraciones) after the dots.
+  punctuation. Use [a space](http://es.wikipedia.org/wiki/Espacio_entre_oraciones) after the dots.
 * Avoid surviving comments.
 
     ```ruby
@@ -2093,7 +2093,7 @@ that you do not use comments.
 
 *  <a name="magic-comments-first"> </a> 
   Position a magic comment on all the code and documentation of a file 
-  (except for the [Shebangs] (https://es.wikipedia.org/wiki/Shebang), we'll talk about them later.)
+  (except for the [Shebangs](https://es.wikipedia.org/wiki/Shebang), we'll talk about them later.)
 
   ```ruby
   # mal
@@ -2266,7 +2266,7 @@ that you do not use comments.
 * <a name="namespace-definition"> </a> 
  Defines (and reopens) Namespace Classes and Modules using a specific nesting.
  Using the scope resolution operator `።` you can lead to amazing constant searches due to Ruby's lexical scope
- [lexical scoping] (https://cirw.in/blog/constant-lookup.html), which depends on the Module being nested from the point of the definition.
+ [lexical scoping](https://cirw.in/blog/constant-lookup.html), which depends on the Module being nested from the point of the definition.
  Example.
 
  ```ruby
@@ -2358,9 +2358,9 @@ that you do not use comments.
     ```
 
 * When designing class hierarchies, make sure they are ausetted to
-  [Liskov Substitution Principle] (http://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov).
+  [Liskov Substitution Principle](http://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov).
 * Try to make your classes so
-  [SOLID] (http://es.wikipedia.org/wiki/SOLID_(object-oriented_design))
+  [SOLID](http://es.wikipedia.org/wiki/SOLID_(object-oriented_design))
   as possible.
 * Always provide a `to_s` method for classes that represent
   domain objects.
@@ -2494,7 +2494,7 @@ to instantiate a particular class.
     end
     ```
 
-* Prefer [duck-typing] (http://es.wikipedia.org/wiki/Duck_typing) rather than inheritance.
+* Prefer [duck-typing](http://es.wikipedia.org/wiki/Duck_typing) rather than inheritance.
 
     ```ruby
     # mal
@@ -3039,7 +3039,7 @@ elements.
 
 * Use `Hash #key? `instead of `Hash #has_key? `and `Hash #value? `instead
   `Hash #has_value? ` How Matz says
-  [here] (http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765),
+  [here](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765),
   Long functions are considered deprecated.
 
     ```ruby
@@ -3320,7 +3320,7 @@ own logic.
     ```
 
 *  <a name="heredoc-delimiters"> </a> 
-  Use descriptive delimiters for [Heredoc] (https://es.wikipedia.org/wiki/Here_document)
+  Use descriptive delimiters for [Heredoc](https://es.wikipedia.org/wiki/Here_document)
   Correct delimiters can add valuable information about the content.
   Some Text Editors are able to recognize delimiters and highlight content 
   using the corresponding “Highlight”
@@ -3602,7 +3602,7 @@ own logic.
 
 * Avoid using `method_missing` for metaprogramming, because it makes it difficult to read the code, the behavior is not listed in `#methods`, and misspelled method calls can work siliciously, example: `nukes.launch_state = false`. Instead, consider using delegation, proxy, or `define_method`. If necessary, use `method_missing`:
 
-  - Are you sure to [also define `respond_to_missing? `] (http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
+  - Are you sure to [also define `respond_to_missing? `](http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
   - Just catch methods with a well-defined prefix, such as `find_by_*` — make your code as assertive as possible.
   - Call `super` at the end of your definition
   - Delegate to assertive, not magical methods:
