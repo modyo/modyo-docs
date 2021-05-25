@@ -16,5 +16,5 @@ In the following steps we'll show you what you can see and do within the platfor
 
 When you enter Modyo, you can see the following items in the main menu:
 
-- **Home: ** The latest activity and movement within the platform
-- **My Tasks: ** Review your tasks assigned by the other team members. Approve and comment on content created by the team.
+- **Home:** The latest activity and movement within the platform
+- **My Tasks:** Review your tasks assigned by the other team members. Approve and comment on content created by the team.
