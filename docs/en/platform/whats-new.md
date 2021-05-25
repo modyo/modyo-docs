@@ -10,11 +10,11 @@ In this new platform version, we highlight the following improvements and new fe
 
 ### New Simplified Interface
 
-[New simplified user interface] (/es/platform/core/the-modyo-interface.html), cleaner and with the ability to change the Modyo logo to customize it according to the client.
+[New simplified user interface](/es/platform/core/the-modyo-interface.html), cleaner and with the ability to change the Modyo logo to customize it according to the client.
 
 ### Application of contents
 
-It allows its use both in _headless_ mode through its [APIs and SDKs] (/es/platform/content/public-api-reference.html), and undocked within templates developed in [Liquid] (/es/platform/channels/liquid-markup.html).
+It allows its use both in _headless_ mode through its [APIs and SDKs](/es/platform/content/public-api-reference.html), and undocked within templates developed in [Liquid](/es/platform/channels/liquid-markup.html).
 
 ### File Manager
 
