@@ -12,7 +12,7 @@ The Account Summary allows you to display a detailed graph of a customer's entir
 modyo-cli get modyo-widgets-retail-summary
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/personas/resumen-de-cuentas)
+[Open in another tab](https://widgets-es.modyo.com/personas/resumen-de-cuentas)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/resumen-de-cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
