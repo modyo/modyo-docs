@@ -14,7 +14,7 @@ The columns by which you can sort the list of entries are:
 
 - **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
 - **Name**: Name of the content.
-- **Type**: Content Type (View [Types] (/es/platform/content/types.html)).
+- **Type**: Content Type (View [Types](/es/platform/content/types.html)).
 - **Updated**: Date of last saved content update.
 - **Author**: Name of the author of the content.
 
@@ -22,7 +22,7 @@ In the admin you can also filter the view according to several default filters t
 
 In this case, the filters are six:
 
-- **Type**: Type of Content that was created (View [Types] (/es/platform/content/types.html))
+- **Type**: Type of Content that was created (View [Types](/es/platform/content/types.html))
 - **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
 - **Category**: Category to which entries are assigned.
 - **Language**: The language in which the content is written.
@@ -76,7 +76,7 @@ Once Modyo has finished modifying the fields for the selected entries, you will 
 
 To create an entry, click on the button at the top right of the screen.
 
-First, **Modyo** asks for the name, slug, and type of entry you want to create, to organize the format to be presented, which can be created in the [Types section] (/es/platform/content/types.html).
+First, **Modyo** asks for the name, slug, and type of entry you want to create, to organize the format to be presented, which can be created in the [Types section](/es/platform/content/types.html).
 
 :::warning Attention
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
@@ -85,7 +85,7 @@ If the name field is empty, the platform defaults the UUID of the entry as a slu
 By clicking on **Create**, the entry will be created and you will be redirected to editing it where you can fill with the content you want, it will contain the structure defined in the content type you selected.
 
 :::tip Tip
-To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to type in. (Check [Configure a Space] (/es/platform/content/spaces.html #configurar -a-space))
+To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to type in. (Check [Configure a Space](/es/platform/content/spaces.html #configurar -a-space))
 
 Then, you just need to click on the current language and select the language you want to type it in.
 
@@ -102,7 +102,7 @@ If you click on it, the button will undergo two changes. If you have Space Manag
 
 However, if the Team Review option is found, you will go to the check-up process by other users, where you can assign specific reviewers who can publish.
 
-To learn more, you can see [Team Review.] (/es/platform/core/key-concepts.html)
+To learn more, you can see [Team Review.](/es/platform/core/key-concepts.html)
 
 
 ### Unpublish an entry
@@ -119,7 +119,7 @@ Modyo only allows you to delete entries that are archived. To perform this actio
 
 As a headless platform, Modyo allows you to preview an entry on multiple sites.
 
-If you already have [Content Views on your sites] (/es/platform/channels/templates.html #vistas -for-content), you can see the**Site Preview button**, where you want to see how your resource is developing.
+If you already have [Content Views on your sites](/es/platform/channels/templates.html #vistas -for-content), you can see the**Site Preview button**, where you want to see how your resource is developing.
 
 ::: danger Attention
 If Space is not associated with a site, you can only view the JSON code for the entry you are developing.
@@ -177,7 +177,7 @@ This value must be unique for entries of the same type. In case two entries are 
 
 If you want content to be unique to users who have a session on the platform you must enable this option.
 
-Depending on how you are consuming the content, you need to take a few extra steps to access it. If you're using the public API, go to the section on [private content in the API] (/es/platform/content/public-api-reference.html #contenido -private). If you're consuming content through Liquid, you just need users to sign in to the site to view the private content.
+Depending on how you are consuming the content, you need to take a few extra steps to access it. If you're using the public API, go to the section on [private content in the API](/es/platform/content/public-api-reference.html #contenido -private). If you're consuming content through Liquid, you just need users to sign in to the site to view the private content.
 
 ### Targets
 
@@ -185,4 +185,4 @@ Targeted content is essential for any entity or company that wants to send speci
 
 To do this, you can enable the content to be visible to a particular group of your choice in the Entry. To do this, simply check the option that Content is private and then that you want to enable targetizing and then select which user target the entry is directed to.
 
-To create a specific target, review the [Targets section] (/es/platform/customers/targets.html).
+To create a specific target, review the [Targets section](/es/platform/customers/targets.html).
