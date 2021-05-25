@@ -164,7 +164,7 @@ This status appears when computer review is enabled and means that an item in th
 
 Inside the versioned you have two actions that allow you to interact with backups. Both actions are available in the differences modal.
 
-! [Differences Modal] (/assets/img/platform/differences.png)
+! [Differences Modal](/assets/img/platform/differences.png)
 
 By default the differences modal shows the published version on the left, and the editable version on the right.
 
@@ -194,15 +194,15 @@ Locks is a Modyo functionality that allows you to securely modify a resource, wi
 
 ### What elements do Locks use?
 
-Locks is mostly used in [Contents] (/en/platform/content/) and [Channels] (/en/platform/channels/), but can also be used in other sections where items such as Settings and [Customers] (/en/platform/customers/) are edited.
+Locks is mostly used in [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items such as Settings and [Customers](/en/platform/customers/) are edited.
 
 ### How to use Locks?
 
-Locks is implemented in different ways within the platform. In [Contents] (/en/platform/content/) and [Channels] (/en/platform/channels/), multiple users can enter a resource, only one being able to edit and save those changes, while others will only see the latest version saved on the platform.
+Locks is implemented in different ways within the platform. In [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can enter a resource, only one being able to edit and save those changes, while others will only see the latest version saved on the platform.
 
 If a second person tries to make a change, you will receive a message stating that the item already has changes and that what you are trying to modify is deprecated.
 
-In other sections such as [Customers] (/en/platform/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if the resource is in edit, another user will not be able to enter the work view.
+In other sections such as [Customers](/en/platform/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if the resource is in edit, another user will not be able to enter the work view.
 
 In this case, only an Administrator will be able to take control, activating editing for himself and discarding the unsaved progress of the user who is working on it.
 
@@ -222,7 +222,7 @@ After taking control, the Administrator will only have two hours to make unsaved
 
 Preview mode allows you to preview the result of changes to publishable items such as Posts, Pages, Navigation, Widgets or Templates; accessible from the top right with the icon <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>. You can recognize that you are in preview mode, when you see the bar at the top of the site.
 
-! [Preview Bar] (/assets/img/platform/preview-bar.png)
+! [Preview Bar](/assets/img/platform/preview-bar.png)
 
 The items you can interact with in the preview bar are:
 
