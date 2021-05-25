@@ -67,7 +67,7 @@ In the work area you can see:
 
 - **Code Tabs**: A JavaScript, CSS and HTML tab is available to build widgets.
 - **File Manager**: Clicking lifts the file management modal, where you can filter and search the files you uploaded in the [File Manager](/es/platform/content/asset-manager.html) and copy its URL to use them in the widget. You can also upload new files from this modal.
-- **Keyboard Shortcuts: Displays a small information window with some useful keyboard shortcuts.
+- **Keyboard Shortcuts**: Displays a small information window with some useful keyboard shortcuts.
 - **Snippets**: Displays a list of snippets available from the [Template Builder](/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
 - **Changes**: If changes have been saved and not published, it will display this list of all the times saved each of the files (JS, CSS and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
