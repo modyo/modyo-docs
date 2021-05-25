@@ -4,7 +4,7 @@ search: true
 
 # Content types
 
-! [Types] (/assets/img/content/types/types.jpg)
+! [Types](/assets/img/content/types/types.jpg)
 
 The Types within Modyo are tools that will allow us to structure content templates to insert into the service you are granting, with more than 15 types of fields.
 
@@ -54,7 +54,7 @@ This interface is used to create each of the types, giving them the format that 
 ::: tip Tip
 The field name is of the utmost importance because it will be through what its value can be accessed in the Liquid and JS SDKs. To access the value of a field in an entry you can for example use <span v-pre> `{{entry ["field name"]}}` </span>. 
 
-For more information go to the [API reference] (/es/platform/content/public-api-reference.html)
+For more information go to the [API reference](/es/platform/content/public-api-reference.html)
 :::
 
 All fields that can be added in a type, have a name, and the possibility of being required.
@@ -162,5 +162,5 @@ When you reindex any of your types, the model that was previously reindexed will
 :::
 
 :::warning Attention
-Please note that depending on the [cache settings you have in your space] (/es/platform/content/spaces.html #cache), you may not see the changes immediately after reindexing is complete.
+Please note that depending on the [cache settings you have in your space](/es/platform/content/spaces.html #cache), you may not see the changes immediately after reindexing is complete.
 :::
