@@ -4,7 +4,7 @@ search: true
 
 # Share status between Widgets
 
-All Widgets in the catalog use [Vuex] (https://vuex.vuejs.org/) to manage the status of a Widget and as a centralized store for all widget components, with rules that ensure that the status can be changed predictably. In other words **Vuex** helps us share data between different components of the same Widget.
+All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the status of a Widget and as a centralized store for all widget components, with rules that ensure that the status can be changed predictably. In other words **Vuex** helps us share data between different components of the same Widget.
 
 ### The structure of Vuex
 
@@ -39,7 +39,7 @@ All Widgets in the catalog use [Vuex] (https://vuex.vuejs.org/) to manage the st
   - An example would be a function that filtered the state. It doesn't modify it but returns you a new different object with the filtered data you need.
 
 :::tip Note
-To learn more about implementing and using Vuex, I recommend reading the [documentation] (https://vuex.vuejs.org/guide/) and see this free course: [Vuex for Everyone] (https://vueschool.io/courses/vuex-for-everyone) from [VueSchool] (https://vueschool.io/)
+To learn more about implementing and using Vuex, I recommend reading the [documentation](https://vuex.vuejs.org/guide/) and see this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) from [VueSchool](https://vueschool.io/)
 :::
 
 ### Persisting status between Widgets and page reloads
