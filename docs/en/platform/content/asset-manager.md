@@ -149,8 +149,8 @@ On one side, you can see the original size of the image and the pixel size of wh
 :::tip Tip
 There are two ways to change the view and cut the image with the cursor:
 
-- **Zoom: ** Use the mouse scroll to zoom in.
-- **Move Background: ** Double-click outside the clipping area and drag the background.
+- **Zoom:** Use the mouse scroll to zoom in.
+- **Move Background:** Double-click outside the clipping area and drag the background.
 :::
 
 If you want to reedit the file or restore it, you can return to the Update Information window, where you find the **Restore Original** button, which causes the image to return to its original state but the modified one is permanently lost.
