@@ -53,8 +53,8 @@ Within this section, you can configure the following data:
 - **Site Name**: The name of your site, this field is used as the default title for your site's SEO.
 - **Description**: A brief description of your site that will be used as the default value for the site SEO.
 - **Site logo**: Image to be used on the top left as the site logo.
-- **Language**: The language in which your site will be. This value is important when using [content on a site] (/es/platform/channels/templates.html #vistas -for-content).
-- ** [Team Review] (/es/platform/core/key-concepts.html) **
+- **Language**: The language in which your site will be. This value is important when using [content on a site](/es/platform/channels/templates.html #vistas -for-content).
+- ** [Team Review](/es/platform/core/key-concepts.html) **
 - **Time Zone**: The time zone in which the date and time fields will be displayed within the site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily insert scripts to make use of the google event logging tool.
 - **Favicon**: Image that appears on the side of the address bar.
@@ -67,7 +67,7 @@ This option is irreversible, so you need to be completely sure when you run this
 
 #### Google Tag Manager
 
-By default, new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets are located in the _snippets>general_ section of the [Template builder] (/es/platform/channels/templates.html) and are embedded in both the snippet _head_ and the _home_ and _base_ views.
+By default, new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets are located in the _snippets>general_ section of the [Template builder](/es/platform/channels/templates.html) and are embedded in both the snippet _head_ and the _home_ and _base_ views.
 
 
 If you have the latest theme available and you still don't have these snippets, you can go to the “Themes” section at the top right and click on the “Upload templates” option in the additional options at the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
@@ -124,7 +124,7 @@ The manifest is used to indicate how you want a browser to display your digital 
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages on which the PWA is developed, through the [Template Builder] (/es/platform/channels/templates.html), in the snippet ```head```.
+The manifest must be implemented on each of the pages on which the PWA is developed, through the [Template Builder](/es/platform/channels/templates.html), in the snippet ```head```.
 
 You can create and modify the manifest in the following field, allowing you to add each of the changes without having to leave the view.
 
@@ -165,7 +165,7 @@ The options to configure are:
 
 - **Tagline**: Description that appears in search engines, under the site name
 - **Keywords**: Words that users search and you want the site to appear.
-- **Sitemap: This file allows search engines to better index the content of your site. Modyo automatically updates your default sitemap file, but you can also manually modify it to focus only on a particular page and content.
+- **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your default sitemap file, but you can also manually modify it to focus only on a particular page and content.
 - **Robots.txt**: This file is part of the Robots Exclusion Protocol (REP), a group of web rules that regulate how robots track the web, access and index content and serve it to users. In practice, this file determines whether or not certain user agents (web tracking software) may or may not track parts of a website. These tracking instructions are specified “allowing” or “prohibiting” the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
 :::tip Tip
@@ -277,7 +277,7 @@ Modyo has hosts reserved for sites, so you won't be able to use them as a host f
 
 ### Site Variables
 
-Modyo has [global variables] (/es/platform/core/key-concepts.html #variables -globals) that you can use across multiple sites. However, you can create site-specific variables or overwrite the value of an already created global variable, with a specific value for the particular site.
+Modyo has [global variables](/es/platform/core/key-concepts.html #variables -globals) that you can use across multiple sites. However, you can create site-specific variables or overwrite the value of an already created global variable, with a specific value for the particular site.
 
 ### Team Members
 
@@ -306,7 +306,7 @@ He is the user in charge of the structural development of resources, the creatio
 
 This user cannot publish, delete, return to previous versions of resources (Rollback), or change settings.
 
-There is a variation of this role with the name “CLI” that in addition to developer permissions, allows them to push widgets from external applications, such as [modyo-cli] (/es/platform/channels/widgets.html #modyo -cli).
+There is a variation of this role with the name “CLI” that in addition to developer permissions, allows them to push widgets from external applications, such as [modyo-cli](/es/platform/channels/widgets.html #modyo -cli).
 
 #### Reviewer
 
@@ -331,10 +331,10 @@ In this view you will find a table with all the redirects that currently exist o
 To create a new redirect, click the**New** button in the upper right corner of the view. By filling in the Source **_URL_ and Destination **_URL_ fields and redirect code and then saving the changes, you will create a new redirect entry.
 
 :::warning Attention
-The redirection table is the penultimate in precedence, so if there is a URL on the site pointing to a [page] (/es/platform/channels/pages.html), a default view, or a [custom content view] (/es/platform/channels/templates.html #vistas -for-content), you'll see those views instead of being redirected using the custom redirects table.
+The redirection table is the penultimate in precedence, so if there is a URL on the site pointing to a [page](/es/platform/channels/pages.html), a default view, or a [custom content view](/es/platform/channels/templates.html #vistas -for-content), you'll see those views instead of being redirected using the custom redirects table.
 :::
 
-In addition to creating redirects one by one, you can import a [CSV file] (/assets/examples/custom-redirections.csv) with up to 1000 redirects.
+In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
 
 :::warning Attention
 The columns required to import redirects are source and destination.
@@ -346,11 +346,11 @@ Along with the above, keep in mind that if you are importing a redirect with an 
 
 The precedence of locations on Modyo sites is as follows:
 
-1. [Default views (Home, search)] (/es/platform/channels/templates.html)
-1. [Pages] (/es/platform/channels/pages.html)
-1. [Custom Content Views] (/es/platform/channels/templates.html #vistas -for-content)
+1. [Default views (Home, search)](/es/platform/channels/templates.html)
+1. [Pages](/es/platform/channels/pages.html)
+1. [Custom Content Views](/es/platform/channels/templates.html #vistas -for-content)
 1. Custom Redirects
-1. [Site 404 Error Settings] (/es/platform/channels/sites.html #restricciones)
+1. [Site 404 Error Settings](/es/platform/channels/sites.html #restricciones)
 
 ## Security headers
 
@@ -364,7 +364,7 @@ Instructs the browser that the site should be accessed using HTTPS only.
 * **Duration**: Set how long the browser should remember that only
   access the site using HTTPS.
 * **Preload**: Includes preload policy. For more information, see
-   [HSTS Preload List Submission] (https://hstspreload.org/).
+   [HSTS Preload List Submission](https://hstspreload.org/).
 * **Include subdomains**: Use the HSTS rule also for all subdomains on the site.
 
 ### Referrer-Policy
@@ -408,14 +408,14 @@ load resources from anywhere*, so it's important to design a
 Content security policy that is appropriate for your site.
 Freely specify your content security policy in the text area;
 for a complete guide on how to write your policy, see
-[MDN Content Security Policy (CSP)] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+[MDN Content Security Policy (CSP)](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Attention
 A very strict value can interfere with some features such as
-[Google tag manager] (/es/platform/channels/sites.html #google -tag-manager),
-[PWA] (/es/platform/channels/sites.html #pwa),
-[Widgets] (/es/platform/channels/widgets.html) and
-[Asset Manager] (/es/platform/content/asset-manager.html).
+[Google tag manager](/es/platform/channels/sites.html #google -tag-manager),
+[PWA](/es/platform/channels/sites.html #pwa),
+[Widgets](/es/platform/channels/widgets.html) and
+[Asset Manager](/es/platform/content/asset-manager.html).
 :::
 
 A production-friendly policy must ensure that all resources such as
@@ -445,9 +445,9 @@ the _tags_ `script` and `style in your _templates_ using the variable `csp_nonce
 ```
 
 There are several tools to help you design a robust security policy:
-* [Google CSP evaluator] (https://csp-evaluator.withgoogle.com)
-* [ReportURI] (https://report-uri.com/home/analyse)
-* [Salvation CSP validator] (https://cspvalidator.org)
+* [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
+* [ReportURI](https://report-uri.com/home/analyse)
+* [Salvation CSP validator](https://cspvalidator.org)
 
 ### Permissions-Policy
 
@@ -455,13 +455,13 @@ Allow or deny the use of browser functions and APIs for the site, by
 example, you can restrict privacy-sensitive APIs such as camera or
 microphone and auto-play videos. To get a list
 complete features supported by browsers, see
-[Feature Policy from MDN] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+[Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 ### X-XSS-Protection
 
 Prevents pages from loading when the browser detects an
 _cross-site scripting_. This protection is not required with browsers
-modern when implementing a [Content-Security-Policy] (/es/platform/channels/sites.html #content -security-policy)
+modern when implementing a [Content-Security-Policy](/es/platform/channels/sites.html #content -security-policy)
 strict, but some security inspectors will wait for the presence of
 this _header_.
 
