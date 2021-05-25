@@ -26,7 +26,7 @@ In the top bar, you can find different actions and information:
 You can preview pages as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on the differences icon you will go to the [difference view] (/es/platform/channels/sites.html #revision -y-and-joint) on the page that allows you to select two versions to compare, allowing you to execute the [reset and rollback] (/es/platform/core/key-concepts.html #acciones -for-the-versioned)
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on the differences icon you will go to the [difference view](/es/platform/channels/sites.html #revision -y-and-joint) on the page that allows you to select two versions to compare, allowing you to execute the [reset and rollback](/es/platform/core/key-concepts.html #acciones -for-the-versioned)
 
 :::tip Tip
 If your page is in “Draft” status, the differences icon does not appear, as there is nothing to compare with the current editable version. To learn more about differences and backups, check out the [versioned] section (/es/platform/core/key-concepts.html #versionado)
@@ -47,7 +47,7 @@ Once the copy action is finished, it directs you to the new page, so remember to
 
 - Save: Allows you to save the changes you have made to the page.
 - Send to Review: If team review is enabled, then if there are no changes to save, this action will allow you to review the page and assign reviewers.
-- Publish: If the page is approved, you can go to the [joint publishing view] (/es/platform/channels/sites.html #revision -y-y-joint publication) using this action.
+- Publish: If the page is approved, you can go to the [joint publishing view](/es/platform/channels/sites.html #revision -y-y-joint publication) using this action.
 
 :::tip Tip
 * If a page has a parent, you can only publish it if the page is published.
@@ -59,7 +59,7 @@ Once the copy action is finished, it directs you to the new page, so remember to
 - Force Publishing: If you are an administrator of the site, then you can view and use this option that allows you to publish the page at any time, even skipping the team review.
 - Unpublish: If the page is published, then you see this action that allows you to unpublish the page.
 
-! [Page builder] (/assets/img/platform/page-builder.png)
+! [Page builder](/assets/img/platform/page-builder.png)
 
 The central grid is the place where you can position your widgets. You can move widgets from side to side by using the _drag-and-drop_ functionality by dragging them from the icon <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M7 19v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4V9h2v2H7m4 0V9h2v2h-2m4 0V9h2v2h-2M7 7V5h2v2H7m4 0V5h2v2h-2m4 0V5h2v2h-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>.
 
@@ -78,10 +78,10 @@ You can add them from the first tab of the Page builder. Available widgets are:
 :::warning Attention
 The rich text widget has an automatic formatter, so the code you type in the code view may be affected.
 :::
-- **Content**: These are default widgets that allows you to display content listings using filters by space, type, language, tags and category. To modify how these widgets look, you must do so in the [Template Builder] (/es/platform/channels/templates.html), in the Widgets section.
+- **Content**: These are default widgets that allows you to display content listings using filters by space, type, language, tags and category. To modify how these widgets look, you must do so in the [Template Builder](/es/platform/channels/templates.html), in the Widgets section.
 - **Customized**: You will find a list of all the widgets you created and published in the widget builder.
 
-Once you have selected a widget in the middle section, the focus will go to the central tab, where you can find different widget configuration options and if you select a custom widget, you will find a link to go directly to its editing view in the [widget builder] (/es/platform/channels/widgets.html) and the variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes. 
+Once you have selected a widget in the middle section, the focus will go to the central tab, where you can find different widget configuration options and if you select a custom widget, you will find a link to go directly to its editing view in the [widget builder](/es/platform/channels/widgets.html) and the variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes. 
 
 ### Properties
 
@@ -141,7 +141,7 @@ Enables route delegation to allow absolute control of page sub-paths through the
 
 #### Privacy
 
-If you enable privacy on a page, then a session will be required to view this page. Next to privacy, you can also associate [Targets] (/es/platform/customers/targets.html), so that only users belonging to those targets will be able to access this page. Those who are not part of the selected target group will be redirected to the previous page or to the home of the site.
+If you enable privacy on a page, then a session will be required to view this page. Next to privacy, you can also associate [Targets](/es/platform/customers/targets.html), so that only users belonging to those targets will be able to access this page. Those who are not part of the selected target group will be redirected to the previous page or to the home of the site.
 
 #### Meta tags
 
@@ -151,8 +151,8 @@ In this section you can add meta tags to the pages and modify the value of exist
 Keep in mind that for meta tags to take effect on your page, you must publish the changes.
 :::
 
-To access the meta tag list on the page, you must use the Liquid drop <span v-pre> `{{page.meta_tags}}` </span>. We recommend that you see the example in the SEO section of the [Template builder] (/es/platform/channels/templates.html #seo).
+To access the meta tag list on the page, you must use the Liquid drop <span v-pre> `{{page.meta_tags}}` </span>. We recommend that you see the example in the SEO section of the [Template builder](/es/platform/channels/templates.html #seo).
 
 :::tip Tip
-If you want to add a common meta tag for all pages in a single action, go to the [site settings, SEO section] (/es/platform/channels/sites.html #seo).
+If you want to add a common meta tag for all pages in a single action, go to the [site settings, SEO section](/es/platform/channels/sites.html #seo).
 :::
