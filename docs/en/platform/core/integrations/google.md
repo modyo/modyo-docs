@@ -9,7 +9,7 @@ In order to integrate Google login with Modyo, you'll need to have:
 - Application ID
 - Key
 
-You can get these values after creating a Google app with login permissions. You can learn more about creating and configuring a Google app in its [Official Documentation] (https://developers.google.com/identity/sign-in/web/sign-in).
+You can get these values after creating a Google app with login permissions. You can learn more about creating and configuring a Google app in its [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
 
 Please note that at the end of the form the callback URL (_Callback URI_) is available. You need to use that URL in the app or project you create on Google in order to successfully complete the login flow.
 
