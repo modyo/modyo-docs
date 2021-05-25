@@ -20,7 +20,7 @@ At the top of the table, you will find filters that will allow you to find a gro
 
 - Status: View active and inactive users.
 - Verification: View the users who have confirmed their data on the platform.
-- Targets: Users found within a given [Target] (/es/platform/customers/targets.html)
+- Targets: Users found within a given [Target](/es/platform/customers/targets.html)
 - Advanced filters: Users who have a specific data or action within the platform.
 - Search: Filter users by name, last name, email and username.
 
@@ -78,13 +78,13 @@ The minimum attributes required for import are the real name of the user (not to
 On the right, in a sidebar, you will see main import settings. Here you can define if the file does not follow one of the common standards of the\ *.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which by default is a comma). A little below is a box indicating whether you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those fields to be imported. Finally, four main import options:
 
 - Activate user account
-- Activate account and send email (customizable in [Correos] (/es/platform/customers/realms.html #correos)
+- Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos)
 - Add users to sites
 - Update users (if they are already registered on the platform)
 
 Finally, once the import is configured, by clicking the **Start import** button at the top, you will return to the main import view, and the first record in the table will be your import in process. There you can see the progress of the same, indicated in the column of **Status**.
 
-In addition, you will be able to complete a number of custom fields that might be required. These can be configured in [Custom Fields] (/es/platform/customers/realms.html #campos -custom), which are located in the [Customers Settings section] (/es/platform/customers/realms.html #configuracion -de-customers).
+In addition, you will be able to complete a number of custom fields that might be required. These can be configured in [Custom Fields](/es/platform/customers/realms.html #campos -custom), which are located in the [Customers Settings section](/es/platform/customers/realms.html #configuracion -de-customers).
 
 
 ### Users tab
@@ -123,7 +123,7 @@ In this section you can add custom notes about users, only administrators can ad
 
 In the upper right section you will find additional options with which you can disable and delete users:
 
-* **Edit**: Open the user editing modal. To add more fields to the form you can go to [Custom Fields] (/es/platform/customers/realms.html #campos -custom).
+* **Edit**: Open the user editing modal. To add more fields to the form you can go to [Custom Fields](/es/platform/customers/realms.html #campos -custom).
 * **Disable**: You can deactivate users and prevent them from logging in.
 * **Dele**: Once a user is disabled, you can delete that user. This action can be performed by team members who are account administrators, and each user can delete their account from the additional options in their profile.
 
@@ -173,13 +173,13 @@ The primary color is shown in the main session handling buttons, such as login, 
 
 #### Show the logo
 
-This option allows you to display the logo configured for the account in the session views, which will be displayed over the respective forms of those views. To change the logo, you must access the [Modyo Interface] (/es/platform/core/the-modyo-interface.html).
+This option allows you to display the logo configured for the account in the session views, which will be displayed over the respective forms of those views. To change the logo, you must access the [Modyo Interface](/es/platform/core/the-modyo-interface.html).
 
 #### Customize with CSS
 
 If you want to have a custom CSS that fits your needs in session views, you just have to paste the code into the editor that is in the window and click on the**Save** button.
 
-It is common to have linked files in CSS code. If you want to add one, you just have the button that is above the editor, and that will lead to the [File Manager] (/es/platform/content/asset-manager.html), which will allow you to upload any file you need without problems.
+It is common to have linked files in CSS code. If you want to add one, you just have the button that is above the editor, and that will lead to the [File Manager](/es/platform/content/asset-manager.html), which will allow you to upload any file you need without problems.
 
 However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
 
@@ -233,7 +233,7 @@ The services compatible with admission to Modyo are:
 - Oauth2
 - OpenID Connect
 
-It is necessary to have the correct configuration of the associated service that Modyo can connect to them. Make sure all required fields are complete. For more information about integrations, go to the [Platform Integrations section] (/en/platform/core/integrations)
+It is necessary to have the correct configuration of the associated service that Modyo can connect to them. Make sure all required fields are complete. For more information about integrations, go to the [Platform Integrations section](/en/platform/core/integrations)
 
 ### Team Members
 
