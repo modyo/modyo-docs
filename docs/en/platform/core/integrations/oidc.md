@@ -4,10 +4,10 @@ search: true
 
 ### OpenID Connect
 
-OpenID Connect (OIDC) is an authentication and framework layer that funiates over OAuth 2.0. Its standard is controlled by the [OpenID Foundation] (https://openid.net/connect/).
+OpenID Connect (OIDC) is an authentication and framework layer that funiates over OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
 :::warning Attention
-For the proper functioning of an OpenID Connect integration, it is necessary that the OIDC Provider has an SSL certificate up to date, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)] (https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
+For the proper functioning of an OpenID Connect integration, it is necessary that the OIDC Provider has an SSL certificate up to date, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
 :::warning Attention
 The API for obtaining delegated access tokens via `/auth/openidc/access_token` is deprecated and has been replaced by `/api/profile/me`.
@@ -42,7 +42,7 @@ At the time of a specific integration, Modyo allows you to enable certain settin
 | **Enable refresh token**                                         | Enables the token refresh managed by Modyo. Access tokens will be automatically renewed by the platform if the user is active on the site and has a valid refresh token.          |
 | **Enable logout**                                      | Enables logging out of provider when logging out of Modyo. This allows you to effectively log off, forcing the user to sign in again in Keycloak and disabling the SSO experience. |
 | **Enable token revocation**                                   | Not supported by Keycloak                                                                                                                                                                                              |
-| **Enable claims synchronization at login** | Enables synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization] (#sincronizacion -claims).                                                             |
+| **Enable claims synchronization at login** | Enables synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#sincronizacion -claims).                                                             |
 |                                                                     |                                                                                                                                                                                                                        |
 
 ## Using Azure Active Directory
@@ -51,11 +51,11 @@ Azure Active Directory is a Microsoft Azure cloud identity service that enables 
 
 ### Register new client application
 
-1. Sign in to [Azure Portal] (https://portal.azure.com/).
+1. Sign in to [Azure Portal](https://portal.azure.com/).
 2. In the search bar, search by **Azure Active Directory**, and then select **App registrations > New registration**.
 3. Complete the following information
    * **Name**: Use a meaningful name, for example, `modyo-production`.
-   * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include Microsoft personal accounts. You can find more information about it [here] (https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
+   * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include Microsoft personal accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
    * **Redirect URI**: Use the URL relating to the account `/auth/openidc/callback`.
 4. After the application is created, go to **App registrations > modyo-production** and get the **Application ID** and **Directory ID**.
 5. Go to **App registrations > Certificates & secrets** and create a new secret with the**New client secret** button.
