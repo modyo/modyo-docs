@@ -12,7 +12,7 @@ Keep track of the key details of your policies and keep track of the entire issu
 modyo-cli get modyo-widgets-brokers-detailed-view
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/seguros/broker/vista-detallada)
+[Open in another tab](https://widgets-es.modyo.com/seguros/broker/vista-detallada)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/broker/vista-detallada" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
