@@ -48,7 +48,7 @@ Subsequently, it will display a form that you must fill in with the following in
 - **Type**: Format the campaign will have (Mail or Notification).
 - **Subject**: Text that will appear on the subject line that will be sent to users.
 - **Reply to**: Email address people can respond to ** (Mail campaigns only) **
-- **Template**: List of [templates] (/es/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, it will send to a blank template. ** (For email campaigns only) **
+- **Template**: List of [templates](/es/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, it will send to a blank template. ** (For email campaigns only) **
 - **Enable targetication**: Checkbox to select a target to send the campaign. If left blank, the campaign will be sent to all users.
 
 After filling in this data, you must click on the**Save and Continue** button, located at the top of the screen.
@@ -99,7 +99,7 @@ Instead, if you sent the campaign by Notification, you can find these numbers:
 - **Open**: Number of open notifications.
 
 
-Below you will be able to see the [Targets] (/es/platform/customers/targets.html) to which the campaign was reached. If this section does not appear, it means that the campaign was sent to all contacts.
+Below you will be able to see the [Targets](/es/platform/customers/targets.html) to which the campaign was reached. If this section does not appear, it means that the campaign was sent to all contacts.
 
 Finally you can find a table with all the campaign submissions, which you can sort ascending or descending according to the following columns:
 
@@ -126,7 +126,7 @@ In the Message Delivery section, you can find the list of users who have receive
 At first glance, you can find a list of all users who have received a single email or notification, which are called “No Campaign”.
 
 “No Campaign” refers to an email or notification that has 
-was sent specifically to a user, on a certain date. They do not fall within the concept of Campaigns as these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section] (/es/platform/core/api.html). 
+was sent specifically to a user, on a certain date. They do not fall within the concept of Campaigns as these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/es/platform/core/api.html). 
 
 In the first view, the administrator is sorted under the following categories.
 
@@ -190,7 +190,7 @@ Below, you will find a WYSIWYG editor, which will allow you to visually assemble
 :::warning Attention
 If you're campaigning, remember to add in the footer all the legal information required by your country's mass mail regulation.
 
-To automate footer insertion, read [Customers Configuration] (/es/platform/customers/realms.html #configuracion -de-customers)
+To automate footer insertion, read [Customers Configuration](/es/platform/customers/realms.html #configuracion -de-customers)
 :::
 
 To record the template, you must click the**Save** button at the top of the page.
@@ -203,7 +203,7 @@ In this section, you will find a list of all users who have unsubscribed from em
 
 To find a user, at the top of the screen there is a search bar where you can enter their name or email.
 
-If you click on the user's name, you can find the [user profile] (/es/platform/customers/realms.html #ficha -users) with all the activities you have done on the platform.
+If you click on the user's name, you can find the [user profile](/es/platform/customers/realms.html #ficha -users) with all the activities you have done on the platform.
 
 Finally, at the end of each user name, you'll find a button that allows you to re-enroll them to any campaign on the site.
 
