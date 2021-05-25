@@ -58,7 +58,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
    touch ModyoClient.js && touch ApiClient.js
    ```
 
-   For **ModyOClient** and using [**ModyosDK**] (/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
+   For **ModyOClient** and using [**ModyosDK**](/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
 
    ```js
    import { Client } from "@modyo/sdk";
@@ -70,7 +70,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
    export default new Client(accountUrl, LANG);
    ```
 
-   For **Apiclient** and using [**Axios**] (https://github.com/axios/axios), the configuration is as follows:
+   For **Apiclient** and using [**Axios**](https://github.com/axios/axios), the configuration is as follows:
 
    ```js
    import axios from "axios";
