@@ -12,7 +12,7 @@ In the upper right corner there is a main button **+ New** that allows you to cr
 
 In the edit view of the widget, you can see the top action bar, the workspace, and the properties column.
 
-! [Widget Builder](/assets/img/platform/widget-builder.png) 
+![Widget Builder](/assets/img/platform/widget-builder.png) 
 
 The following sections are located on the top bar:
 
@@ -147,7 +147,7 @@ The available commands are get, push, and help
 - [`modyo-cli (-v|—version|version) `](#modyo -cli-version)
 - [`modyo-cli help [COMMAND] `](#modyo -cli-help-command)
 - [`modyo-cli get NAME [DIRECTORY] `](#modyo -cli-get-name-directory)
-- [modyo-cli push name](#modyo -cli-push-name)
+- [`modyo-cli push name`](#modyo -cli-push-name)
 
 ### modyo-cli (-v|—version|version) `
 Print the `modyo-cli` version
