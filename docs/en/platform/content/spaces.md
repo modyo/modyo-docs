@@ -40,7 +40,7 @@ In this case, Spaces settings are used to change general characteristics, langua
 
 In this section, you can change the name of the space or its UID.
 
-The Space UID is very important since it is the attribute with which you access from the [public API] (/es/platform/content/public-api-reference.html #referencia -del-api) content, the [Javascript SDK] (/es/platform/content/public-api-reference.html #sdk -de-javascript) and the [Liquid SDK] (/es/platform/content/public-api-reference.html #sdk -de-liquid) ). 
+The Space UID is very important since it is the attribute with which you access from the [public API](/es/platform/content/public-api-reference.html #referencia -del-api) content, the [Javascript SDK](/es/platform/content/public-api-reference.html #sdk -de-javascript) and the [Liquid SDK](/es/platform/content/public-api-reference.html #sdk -de-liquid) ). 
 
 Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, as it will be used in URLs to access the content.
 
@@ -67,7 +67,7 @@ The default language of a space is defined at the time of creating the space and
  <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350"> 
 
 :::tip Tip
-You can learn how to select one of the available languages from an entry in its corresponding sections: [Public API] (/es/platform/content/public-api-reference.html #filtros), [Javascript SDK] (/es/platform/content/public-api-reference.html #sdk -javascript) and in [Liquid SDK] (/es/platform/content/public-api-reference.html #filtrar - tickets)
+You can learn how to select one of the available languages from an entry in its corresponding sections: [Public API](/es/platform/content/public-api-reference.html #filtros), [Javascript SDK](/es/platform/content/public-api-reference.html #sdk -javascript) and in [Liquid SDK](/es/platform/content/public-api-reference.html #filtrar - tickets)
 :::
 
 ### Cache
