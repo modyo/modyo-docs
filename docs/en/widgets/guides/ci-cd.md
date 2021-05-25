@@ -42,7 +42,7 @@ In order to load a Widget using **GitHub Actions** we need the _"recipe"_ **Buil
 
 To get a **token** we first need to create an **API Access** at the site's own account level. We're going to **Settings (1) —> API access (2) —> New API access (3) —> Create (4) **.
 
-! [1](/assets/img/widgets/ci-cd/1.png)
+![1](/assets/img/widgets/ci-cd/1.png)
 
 After creating the access API we need to generate a token for the user who will load the Widget.
 
@@ -58,11 +58,11 @@ We recommend creating a new user that has permissions and the token to upload an
 4. Select the Api access we created earlier
 5. Create Token
 
-! [2](/assets/img/widgets/ci-cd/2.png)
+![2](/assets/img/widgets/ci-cd/2.png)
 
 We now have the**token** we can use it to configure our repository and so the GitHub action will have access to it.
 
-! [2](/assets/img/widgets/ci-cd/3.png)
+![2](/assets/img/widgets/ci-cd/3.png)
 
 ::: important danger
 You should never share or publish the**TOKEN** or sensitive information in the repository!
