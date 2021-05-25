@@ -12,7 +12,7 @@ In the upper right corner there is a main button **+ New** that allows you to cr
 
 In the edit view of the widget, you can see the top action bar, the workspace, and the properties column.
 
-! [Widget Builder] (/assets/img/platform/widget-builder.png) 
+! [Widget Builder](/assets/img/platform/widget-builder.png) 
 
 The following sections are located on the top bar:
 
@@ -29,7 +29,7 @@ On the right, these are the different actions:
 You can preview widgets as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: By clicking on this icon, you will go to the [difference view] (/es/platform/channels/sites.html #revision -y-publication-joint), in which you can compare changes between multiple versions of the widget.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: By clicking on this icon, you will go to the [difference view](/es/platform/channels/sites.html #revision -y-publication-joint), in which you can compare changes between multiple versions of the widget.
 
 By default you start by comparing the published version with the editable version, but when using the version selectors, you can also with the backup versions. If this icon does not appear, then there is no published version of this widget.
 
@@ -56,7 +56,7 @@ Only widgets that have been previously unpublished can be archived.
 Archived widgets will not appear in the initial listing or in the widget selection modal in Page Builder. To restore an archived widget, you must enter the edit view, using the**Restore** option in the upper right corner of the view.
 :::
 
-Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder.] (/es/platform/channels/pages.html)
+Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder.](/es/platform/channels/pages.html)
 
 :::tip Tip
 To learn more about the publication flow, review the [Versioning.] section (/es/platform/core/key-concepts.html #versionado)
@@ -66,9 +66,9 @@ To learn more about the publication flow, review the [Versioning.] section (/es/
 In the work area you can see:
 
 - **Code Tabs**: A JavaScript, CSS and HTML tab is available to build widgets.
-- **File Manager**: Clicking lifts the file management modal, where you can filter and search the files you uploaded in the [File Manager] (/es/platform/content/asset-manager.html) and copy its URL to use them in the widget. You can also upload new files from this modal.
+- **File Manager**: Clicking lifts the file management modal, where you can filter and search the files you uploaded in the [File Manager](/es/platform/content/asset-manager.html) and copy its URL to use them in the widget. You can also upload new files from this modal.
 - **Keyboard Shortcuts: Displays a small information window with some useful keyboard shortcuts.
-- **Snippets**: Displays a list of snippets available from the [Template Builder] (/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
+- **Snippets**: Displays a list of snippets available from the [Template Builder](/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
 - **Changes**: If changes have been saved and not published, it will display this list of all the times saved each of the files (JS, CSS and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
 :::tip Tip
@@ -79,7 +79,7 @@ In order not to lose the changes you currently have, it must be saved before jum
 When the widget is published, no changes are available. This is because each version parts unchanged from the productive version. If you restore the widget to a previous version, so will sub-versions, so can access all instances where changes were saved in that version.
 :::
 
-In the three tabs of the widget you can make use of Liquid. For more information, see [the documentation associated with Liquid.] (/es/platform/channels/liquid-markup.html)
+In the three tabs of the widget you can make use of Liquid. For more information, see [the documentation associated with Liquid.](/es/platform/channels/liquid-markup.html)
 
 In the properties column you can see: 
 
@@ -99,7 +99,7 @@ In the variables tab you can see the list of variables created in the widget, an
 * **Modify** the variable
 * **Remove** the variable.
 
-Next to the name of each variable you will see an “overwritten” indicator if the variable also exists at the account or site level in the [global variables] (/es/platform/core/key-concepts.html #variables -global).
+Next to the name of each variable you will see an “overwritten” indicator if the variable also exists at the account or site level in the [global variables](/es/platform/core/key-concepts.html #variables -global).
 
 By modifying a variable, you can decide which name and default value that variable will take in the widget. In addition, you can decide whether you want to make a list of values available so that when you instantiate the widget on a page, you can choose between these different values. 
 
@@ -144,10 +144,10 @@ $ yarn global add @modyo /cli #via yarn
 
 The available commands are get, push, and help
 
-- [`modyo-cli (-v|—version|version) `] (#modyo -cli-version)
-- [`modyo-cli help [COMMAND] `] (#modyo -cli-help-command)
-- [`modyo-cli get NAME [DIRECTORY] `] (#modyo -cli-get-name-directory)
-- [modyo-cli push name] (#modyo -cli-push-name)
+- [`modyo-cli (-v|—version|version) `](#modyo -cli-version)
+- [`modyo-cli help [COMMAND] `](#modyo -cli-help-command)
+- [`modyo-cli get NAME [DIRECTORY] `](#modyo -cli-get-name-directory)
+- [modyo-cli push name](#modyo -cli-push-name)
 
 ### modyo-cli (-v|—version|version) `
 Print the `modyo-cli` version
