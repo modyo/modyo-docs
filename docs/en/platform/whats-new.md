@@ -10,7 +10,7 @@ In this new platform version, we highlight the following improvements and new fe
 
 ### New Simplified Interface
 
-[New simplified user interface](/es/platform/core/the-modyo-interface.html), cleaner and with the ability to change the Modyo logo to customize it according to the client.
+[A new, simplified and cleaner user interface](/en/platform/core/the-modyo-interface.html) that now also allows you to change the Modyo logo within your account to any logo you like.
 
 ### Application of contents
 
