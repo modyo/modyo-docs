@@ -16,7 +16,7 @@ In this new platform version, we highlight the following improvements and new fe
 
 The Modyo Content application now serves content through its [API and SDKs](/platform/content/public-api-reference.html) as a _headless_ solution, and also serves decoupled content within Modyo Channels through [Liquid](/platform/channels/liquid-markup.html).
 
-### File Manager
+### Asset Manager
 
 It allows the management of digital assets, including various functionalities such as _tags_ management, image resizing, management of meta descriptions, among others. The new file manager is accessed from the new Modyo Content application, but is also integrated from text and code editors within the platform.
 
