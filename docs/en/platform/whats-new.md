@@ -18,7 +18,7 @@ The Modyo Content application now serves content through its [API and SDKs](/pla
 
 ### Asset Manager
 
-It allows the management of digital assets, including various functionalities such as _tags_ management, image resizing, management of meta descriptions, among others. The new file manager is accessed from the new Modyo Content application, but is also integrated from text and code editors within the platform.
+The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag management_, image resizing, and more.
 
 ### User Kingdoms
 
