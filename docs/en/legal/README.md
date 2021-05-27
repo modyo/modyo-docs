@@ -10,8 +10,6 @@ In this Agreement, "you," "your" and "Licensee" will refer to you. If you are re
 
 This Modyo Agreement is entered into as of your first access to ANY Modyo Software (the "Effective Date") by and between Modyo B.V. ("Modyo"), a corporation organized under the laws of The Netherlands with offices at WTC Amsterdam, Tower C-11, Strawinskylaan 1143, Netherlands (hereinafter referred to as "Licensor") and YOU, (hereinafter referred to as "Licensee" or "Client"). Licensor and Licensee shall each be referred to herein as a "Party" and together as the "Parties."
 
-Translation made with the free version of the translator www.deepl.com/Translator
-
 WHEREAS Licensor and its Related Companies have developed certain technologies of which they own and the Licensor wishes to grant Licensee certain rights to use such technologies and to provide associated maintenance, support and/or professional services in connection with them; and
 
 WHEREAS Licensee wishes to obtain such rights and receive such services, subject to the terms and conditions contained herein;
