@@ -4,16 +4,16 @@ search: true
 
 # Dressage
 
-Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and correspond to the learning activities leading to generating the minimum skills necessary to be able to effectively use the product. Training activities include reviewing [Modyo documentation] (/en/platform), [explanatory videos] (https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [self-learning tutorials] (/en/platform/tutorials), among others.
+Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and correspond to the learning activities leading to generating the minimum skills necessary to be able to effectively use the product. Training activities include reviewing [Modyo documentation] (/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [self-learning tutorials] (/en/platform/tutorials), among others.
 
 ## Modyo Platform
 
 ### Recommendations before departure
 1. Understand what [Modyo and its main modules] is (https://www.modyo.com/platform)
 2. Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
-3. Set up a [test environment] (https://platform.modyo.cloud/onboarding) to implement the knowledge gained
+3. Set up a [test environment](https://platform.modyo.cloud/onboarding) to implement the knowledge gained
 4. Access [platform documentation] (/en/platform/core)
-5. Access our [Support Center] (https://support.modyo.com/hc/es) to report problems and make queries
+5. Access our [Support Center](https://support.modyo.com/hc/es) to report problems and make queries
 
 Next, we'll tell you how you can access all the material, information and access necessary to make your experience with Modyo easier.
 
@@ -31,14 +31,14 @@ The [tutorials] (/en/platform/tutorials) are the easiest way to get started on t
 We recommend you to perform the tutorials in order, following all the steps presented in them.
 
 ### Certification Program
-Modyo has a [certification program] (https://training.modyo.com/catalog) for customers and business partners consisting of training courses for three different profiles:
+Modyo has a [certification program](https://training.modyo.com/catalog) for customers and business partners consisting of training courses for three different profiles:
 - Content Manager
 - Frontend Developer
 - System Administrator (Security Settings, Organizations, Kingdoms, Sites, and Content Spaces)
 
 The modality of these trainings are courses with videos and a test at the end of each course, which if approved will give you a respective certificate.
 
-For account activation you must send an email to [success@modyo.com] (mailto: success@modyo.com) indicating the following information for each person who will perform the courses:
+For account activation you must send an email to [success@modyo.com](mailto: success@modyo.com) indicating the following information for each person who will perform the courses:
 - Full name
 - Corporate mail
 - Role
@@ -48,12 +48,12 @@ Access will be granted for the period of one month, during which you will have t
 ### Test environment
 To understand how the Modyo platform works it is very important that you can test what you have learned. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
 
-To create the trial account you must log in to [next link] (https://platform.modyo.cloud/onboarding
+To create the trial account you must log in to [next link](https://platform.modyo.cloud/onboarding
 ) and fill out the form by entering your data and those of the organization.
 
 You will automatically be assigned the account administrator role, granting you privileges to invite other users on your team to participate in it.
 
-This environment will be available for the limited period of time. Once the deadline has expired, the account will be automatically deactivated. If you require an extension of the indicated period, you must request it to [success@modyo.com] (mailto: success@modyo.com), indicating the additional time you need.
+This environment will be available for the limited period of time. Once the deadline has expired, the account will be automatically deactivated. If you require an extension of the indicated period, you must request it to [success@modyo.com](mailto: success@modyo.com), indicating the additional time you need.
 
 ## How to ask for help?
 
