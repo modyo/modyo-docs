@@ -13,7 +13,7 @@ Training on the Modyo Platform is a key aspect for any user who plays a role wit
 2. Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
 3. Set up a [test environment](https://platform.modyo.cloud/onboarding) to implement the knowledge gained
 4. Access [platform documentation](/en/platform/core)
-5. Access our [Support Center](https://support.modyo.com/hc/es) to report problems and make queries
+5. Access our [Support Center](https://support.modyo.com/hc/en) to report problems and make queries
 
 Next, we'll tell you how you can access all the material, information and access necessary to make your experience with Modyo easier.
 
