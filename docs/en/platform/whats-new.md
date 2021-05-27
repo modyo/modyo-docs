@@ -26,7 +26,7 @@ Allows you to define multiple end-user realms and assign them uniquely across di
 
 ### Team Review
 
-Evolution of the old _workflows_ functionality, which allows you to improve the collaboration experience with group review and change approval tools. Team review can be configured in different ways between different sites and content spaces.
+Modyo's new Team Review system is the evolution of the earlier _Workflows_ functionality, which improves team collaboration with tools to review and approve changes to content and other elements within the platform. Team Review also has more options, allowing you to enable or disable review systems, assign specific team members to their respective roles, and customize separate sets of rules in any content space or digital channel.
 
 ### New and simplified roles and permissions
 
