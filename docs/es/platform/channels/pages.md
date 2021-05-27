@@ -51,7 +51,7 @@ Una vez terminada la acción de copiado, te dirige a la nueva página, por lo qu
 
 :::tip Tip
 * Si una página tiene un padre, solo la puedes publicar si es que éste se encuentra publicado.
-* Si una pagina tiene hijos, solo puedes despublicarla si todos estos se encuentran despublicados.
+* Si una página tiene hijos, solo puedes despublicarla si todos estos se encuentran despublicados.
 * Si una página tiene hijos, solo puedes archivarla si todos estos se encuentran archivados.
 :::
 

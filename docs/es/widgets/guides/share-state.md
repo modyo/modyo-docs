@@ -73,7 +73,7 @@ export default function(sParam) {
 }
 ```
 
-Otra alternativa para persistir datos (estado) al recargar la pagina o al cambiar de Widget es utilizar **Vuex** en conjunto con **localStorage**. Cuando usar esta alternativa? Por ejemplo, tenemos a un usuario que esta completando un proceso de onboarding que consta de varios pasos y preguntas y por error recarga la pagina. Todo el avance que el usuario llevaba hasta ese momento se pierde y tiene que volver a empezar, lo que puede significar perder ese posible cliente.
+Otra alternativa para persistir datos (estado) al recargar la página o al cambiar de Widget es utilizar **Vuex** en conjunto con **localStorage**. Cuando usar esta alternativa? Por ejemplo, tenemos a un usuario que esta completando un proceso de onboarding que consta de varios pasos y preguntas y por error recarga la pagina. Todo el avance que el usuario llevaba hasta ese momento se pierde y tiene que volver a empezar, lo que puede significar perder ese posible cliente.
 
 Por ejemplo
 
