@@ -59,7 +59,7 @@ This environment will be available for the limited period of time. Once the dead
 
 ### Queries and report problems
 To report a problem or queries you must:
-1. Log in to our Support Center: https://support.modyo.com/hc/es
+1. Log in to our Support Center: https://support.modyo.com/hc/en
 2. Create an account linked to your corporate email
 3. Select the type of case to report:
     - **Incidence: ** Problems that affect the correct functioning of the environment or the product developed on the platform indicating severity level (drops of environments, performance problems, among others).
