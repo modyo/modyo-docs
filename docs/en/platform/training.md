@@ -8,7 +8,7 @@ Training on the Modyo Platform is a key aspect for any user who plays a role wit
 
 ## Modyo Platform
 
-### Recommendations before departure
+### Recommendations before starting
 1. Understand what [Modyo and its main modules] is (https://www.modyo.com/platform)
 2. Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
 3. Set up a [test environment](https://platform.modyo.cloud/onboarding) to implement the knowledge gained
