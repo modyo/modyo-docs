@@ -14,7 +14,7 @@ In this new platform version, we highlight the following improvements and new fe
 
 ### New Modyo Content application
 
-It allows its use both in _headless_ mode through its [APIs and SDKs](/es/platform/content/public-api-reference.html), and undocked within templates developed in [Liquid](/es/platform/channels/liquid-markup.html).
+The Modyo Content application now serves content through its [API and SDKs](/platform/content/public-api-reference.html) as a _headless_ solution, and also serves decoupled content within Modyo Channels through [Liquid](/platform/channels/liquid-markup.html).
 
 ### File Manager
 
