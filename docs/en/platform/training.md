@@ -21,10 +21,10 @@ Next, we'll tell you how you can access all the material, information and access
 Modyo is a next-generation digital experience platform that powers solutions for interaction with digital customers, accelerating Web and mobile development safely and efficiently, creating a centralized space to govern your digital channels.
 
 Modyo has the following main modules, which you will know in your training process:
-- [**Modyo Content: **](/en/platform/content) Headless architecture application that allows the creation of content spaces that you can consume through an API both inside and outside of Modyo. Among the main concepts are: spaces, types, entries, file manager, team review, among others.
-- [**Modyo Channels: **](/en/platform/channels) Application that allows the construction and management of multiple digital channels centrally. Among the main concepts are: pages, widgets, templates, PWA, Liquid markup, CLI, among others.
-- [**Modyo Customers: **](/en/platform/customers) An application that enables user authentication to sites in Modyo, either through its internal account logging system or your enterprise integrations to Single Sign On (SSO) systems. Among the main concepts are: users, targets (targeting), forms, messaging (campaigns and notifications), personalization, among others.
-- [**Modyo Insights: **](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
+- [**Modyo Content:**](/en/platform/content) Headless architecture application that allows the creation of content spaces that you can consume through an API both inside and outside of Modyo. Among the main concepts are: spaces, types, entries, file manager, team review, among others.
+- [**Modyo Channels:**](/en/platform/channels) Application that allows the construction and management of multiple digital channels centrally. Among the main concepts are: pages, widgets, templates, PWA, Liquid markup, CLI, among others.
+- [**Modyo Customers:**](/en/platform/customers) An application that enables user authentication to sites in Modyo, either through its internal account logging system or your enterprise integrations to Single Sign On (SSO) systems. Among the main concepts are: users, targets (targeting), forms, messaging (campaigns and notifications), personalization, among others.
+- [**Modyo Insights:**](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
 
 ### Tutorials
 The [tutorials](/en/platform/tutorials) are the easiest way to get started on the Modyo Platform. It only takes a [test environment](/es/platform/training.html #ambiente -testing) and some time to go step by step learning the fundamental concepts.
@@ -62,13 +62,13 @@ To report a problem or queries you must:
 1. Log in to our Support Center: https://support.modyo.com/hc/en
 2. Create an account linked to your corporate email
 3. Select the type of case to report:
-    - **Incidence: ** Problems that affect the correct functioning of the environment or the product developed on the platform indicating severity level (drops of environments, performance problems, among others).
-    - **Consult: ** Any questions about the functionality of the platform or the product developed about it.
-    - **Requirement: ** Requests for configuration of environments, domains, VPN, execution of scripts, access to systems, among others.
+    - **Incidence:** Problems that affect the correct functioning of the environment or the product developed on the platform indicating severity level (drops of environments, performance problems, among others).
+    - **Consult:** Any questions about the functionality of the platform or the product developed about it.
+    - **Requirement:** Requests for configuration of environments, domains, VPN, execution of scripts, access to systems, among others.
 4. Complete the corresponding form according to the selected case.
 
 ### What information should you include to give you the right care?
 In order to review what you report it is important that you can include in the “description” field of the ticket the following information:
-- **Context: ** indicate account route/affected site, browser used, Modyo version, user role in the platform (the latter if applicable).
-- **Description: ** Briefly indicate the step by step to be able to replicate the case.
+- **Context:** indicate account route/affected site, browser used, Modyo version, user role in the platform (the latter if applicable).
+- **Description:** Briefly indicate the step by step to be able to replicate the case.
 - **Files (optional) :** Include screenshots or files that do not contain sensitive customer information in the case of transactional sites.
