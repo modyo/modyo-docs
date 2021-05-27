@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Dressage
+# Training
 
 Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and correspond to the learning activities leading to generating the minimum skills necessary to be able to effectively use the product. Training activities include reviewing [Modyo documentation] (/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [self-learning tutorials] (/en/platform/tutorials), among others.
 
