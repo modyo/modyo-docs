@@ -12,7 +12,7 @@ In this new platform version, we highlight the following improvements and new fe
 
 [A new, simplified and cleaner user interface](/en/platform/core/the-modyo-interface.html) that now also allows you to change the Modyo logo within your account to any logo you like.
 
-### Application of contents
+### New Modyo Content application
 
 It allows its use both in _headless_ mode through its [APIs and SDKs](/es/platform/content/public-api-reference.html), and undocked within templates developed in [Liquid](/es/platform/channels/liquid-markup.html).
 
