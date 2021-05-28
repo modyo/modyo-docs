@@ -81,7 +81,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Editable Version**](/en/platform/core/key-concepts.html#editable): It is the version that you can modify and use to preview versioned elements.
 * [**Global Variables**](/en/platform/core/key-concepts.html#global-variables): These are elements that you can define globally and reuse in different sites.
 * [**Scheduled Version**](/en/platform/core/key-concepts.html#scheduled): It is the version that is ready to be published at a predetermined date and time.
-* [**Published version**](/en/platform/core/key-concepts.html #publicado): This is the visible or productive version of versioned elements. This version could not be modified.
+* [**Published version**](/en/platform/core/key-concepts.html#published): It is the visible or productive version of the elements. This version can not be modified.
 * [**Backup version**](/en/platform/core/key-concepts.html #respaldos): These are the versions that have been previously released.
 * [**Webhook**](/en/platform/core/integrations #webhooks): Automatically sends information to an external system when a particular event occurs.
 
