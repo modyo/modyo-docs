@@ -116,5 +116,5 @@ The following definitions correspond to commonly used terms between the differen
 * [**Filters**](/en/platform/customers/targets.html#filters): Basic units that allow you to build targets.
 * [**Form**](/en/platform/customers/forms.html): Allows you to capture data from your users on your sites.
 * [**Messaging**](/en/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
-* [**Target**](/en/platform/customers/targets.html): Allows you to add and group your users using filter groups with different conditions.
+* [**Target**](/en/platform/customers/targets.html): Allows you to add and group your users through filter groups with different conditions.
 * [**User**](/en/platform/customers/realms.html): It is the person who accesses and registers on Modyo's sites.
