@@ -64,7 +64,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Added dynamic filters by field values in the entries index.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Resolves a bug where site copying did not consider templates.
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
