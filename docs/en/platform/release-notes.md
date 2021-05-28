@@ -68,7 +68,7 @@ search: true
 * Fixed a bug where copying a site did not consider templates.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Resolves a bug where the OIDC integration flow redirected to the user's profile and not to the site where the flow started.
+* Fixed a bug where the integration with OIDC redirected to the user's profile and not to the site from where the flow was started.
 
 ### 9.1.12 - 19 March 2021
 
