@@ -9,7 +9,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Administrators groups: Easily add users corresponding to different sites or spaces.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Site stages: Work in a safe, pre-productive environment of a site, without compromising the integrity of what is already published on it.
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
