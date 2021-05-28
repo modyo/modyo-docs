@@ -65,7 +65,7 @@ search: true
 * Added dynamic filters by field values in the entries index.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Resolves a bug where site copying did not consider templates.
+* Fixed a bug where copying a site did not consider templates.
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 * Resolves a bug where the OIDC integration flow redirected to the user's profile and not to the site where the flow started.
