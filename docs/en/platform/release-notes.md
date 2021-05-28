@@ -45,7 +45,7 @@ search: true
 
 ### 9.1.14 - April 1, 2021
  
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs solved.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
