@@ -62,7 +62,7 @@ Progressive Web Applications will be the future of the Web, as they improve the 
 
 ### Security, Governance and Agility
 
-Modyo has an architecture where all published code generates versions. Before you publish a version of a widget or layout, you can easily review code changes between versions.
+Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
 
 Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated on the platform within Channels, two people (Reviewer and Approver) can change the status of digital resources to “Published” through an easy-to-handle formal process. Your team's capacity is later measured within Insights.
 
