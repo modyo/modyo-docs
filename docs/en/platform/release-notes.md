@@ -44,7 +44,7 @@ search: true
 * Page indexing is improved so that you can now find results that contain text from the content referenced in the pages.
 
 ### 9.1.14 - April 1, 2021
-&nbsp;
+ 
  <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bugs solved.
 
