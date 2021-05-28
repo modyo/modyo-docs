@@ -399,7 +399,7 @@ search: true
 - Separation of users and [team members] (/es/platform/core/roles.html #equipo), those who have access to the platform are segregated from the users of the page itself.
 - New [roles and permissions] (/es/platform/core/roles.html).
 - [Team review] (/es/platform/core/key-concepts.html), replacing the workflow application, allows team collaboration for release approval and step to production.
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 
 <Badge text="Content" type="content" vertical="middle"/>
