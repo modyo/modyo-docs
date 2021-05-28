@@ -48,7 +48,7 @@ If you have any additional questions regarding the Modyo Platform, visit our [of
 
 To use Modyo, you only need to have a supported Web browser. The entire product interface can be accessed using its [Web Console](/en/platform/core/the-modyo-interface.html).
 
-:::tip Supported browsers
+:::tip Compatible browsers
 Modyo is compatible with the latest versions of Google Chrome, Firefox and Microsoft Edge.
 If you have pending updates, we recommend that you update your browser.
 :::
