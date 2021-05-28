@@ -14,7 +14,7 @@ The documentation on this site applies to the latest version (9.1). To access do
 
 ### What is Modyo?
 
-Modyo is a digital experience platform that empowers solutions for interaction with digital customers, accelerating web and mobile development securely and also allowing native and third-party applications to be unified in a single area to manage your digital channels.
+Modyo is a digital experience platform that enhances solutions for interacting with clients online, securely accelerating web and mobile development, while allowing you to manage all your digital channels, such as native and third-party applications, in one place.
 
 ### Why use Modyo?
 
