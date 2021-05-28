@@ -106,7 +106,7 @@ search: true
 - Multiple performance improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Add the ability to [filter by slug] (/es/platform/content/public-api-reference.html #filtrar -entries) of entries in the liquid SDK using the `by_slug` filter
+* The option to [filter by slug] (/en/platform/content/public-api-reference.html#filter-entries) in the Liquid SDK using the filter `by_slug` was added.
 * It adds the ability to [unopen widgets] (/es/platform/channels/widgets.html) even if they are being referenced, and all unpublished widgets can be archived (even if they are referenced on some pages)
 
 ### 9.1.9 - 10 February 2021
