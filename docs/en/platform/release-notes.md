@@ -99,7 +99,7 @@ search: true
 
 ### 9.1.10 - February 23, 2021
 
-&nbsp;
+ 
  <Badge text="Core" type="core" vertical="middle"/> 
 
 - Multiple bugs solved.
