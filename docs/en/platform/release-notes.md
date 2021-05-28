@@ -79,7 +79,7 @@ search: true
 - Multiple navigation and usability improvements
 - Multiple security improvements.
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * [new filters are added to the Liquid SDK] (/es/platform/content/public-api-reference.html #filtrar -entries) of content that allow you to select, filter, and [sort] (/es/platform/content/public-api-reference.html #ordenar -entries) by custom fields of the content type.
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
