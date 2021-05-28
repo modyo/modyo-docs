@@ -381,7 +381,7 @@ search: true
 ### 9.0.1 - 17 January 2020
 &nbsp;
 <Badge text="Core" type="core"/>
-* Multiple bugs solved.
+* Multiple bugs resolved.
 * Multiple navigation and usability improvements
 
 <Badge text="Content" type="content" vertical="middle"/>
