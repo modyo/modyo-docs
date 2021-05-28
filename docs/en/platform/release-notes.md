@@ -59,7 +59,7 @@ search: true
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
-- Multiple JS libraries with vulnerabilities are updated
+- Multiple JS libraries with vulnerabilities updated.
 
  <Badge text="Content" type="content" vertical="middle"/> 
 * Dynamic filters are added by field values in the input index.
