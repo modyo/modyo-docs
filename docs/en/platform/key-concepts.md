@@ -88,7 +88,7 @@ The following definitions correspond to commonly used terms between the differen
 
 #### Modyo Content
 
-* [**Assets**](/en/platform/content/asset-manager.html #acerca -la-interface): These are the different files that are uploaded to the platform for use in content and sites.
+* [**Assets**](/en/platform/content/asset-manager.html#about-the-interface): These are the various files that are uploaded to the platform to be used in content and sites.
 * [**Field**](/en/platform/content/types.html #campos): It is the atomic unit with which the different types of content are formed.
 * [**Categories**](/en/platform/content/entries.html #categorias): They are a tree structure that allows you to sort the content of your spaces.
 * [**Input**](/en/platform/content/entries.html): This is a set of values associated with the various fields defined in the content type.
