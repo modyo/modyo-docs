@@ -31,7 +31,7 @@ search: true
 * Fixed a bug that caused the "Save" button in the page builder to not work correctly.
 * Fixed a bug when creating new sites where the "About Us" page was left without a layout selected.
 
-### 9.1.15 - 14 April 2021
+### 9.1.15 - April 14, 2021
 &nbsp;
  <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bugs solved.
