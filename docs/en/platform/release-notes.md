@@ -54,7 +54,7 @@ search: true
 ### 9.1.13 - March 25, 2021
 
  
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs solved.
 - Multiple navigation and usability improvements
