@@ -34,7 +34,7 @@ Modyo provides a secure development environment either in the cloud or "On-Premi
 
 * **Experts in Digital Marketing** that require a content management system to create digital experiences for targeted user groups.
 
-* **Content Managers** who want to manage their posts easily in one place for all their digital channels.
+* **Content Administrators** who want to manage their publications easily in one place for all their digital channels.
 
 * **Front End Developers** who want to build digital experiences through widgets that are easy to create and manage.
 
