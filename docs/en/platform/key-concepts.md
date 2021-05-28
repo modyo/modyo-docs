@@ -11,7 +11,7 @@ Below you will find a brief explanation of some of the key concepts related to t
 
 Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-Go further, and use Modyo to gain a more complete knowledge about your digital customers.
+You can even go further and use Modyo to develop a deeper understanding about your digital customers throughout your different sites.
 
 ### Customers interact on sites depending on context
 
