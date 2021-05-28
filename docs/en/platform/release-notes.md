@@ -125,7 +125,7 @@ search: true
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements
 
-### 9.1.7 - 25 January 2021
+### 9.1.7 - January 25, 2021
 
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
