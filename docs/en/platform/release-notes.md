@@ -49,7 +49,7 @@ search: true
 * Multiple bugs resolved.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Resolves a bug in which control of the locks was lost in the template builder.
+* A bug where you could loose the control over the templates was resolved.
 
 ### 9.1.13 - 25 March 2021
 
