@@ -105,7 +105,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Page**](/en/platform/channels/pages.html): Pages are what allow you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
 * [**PWA**](/en/platform/channels/sites.html#pwa): Allows you to configure the _serviceworker_ and manifest of your site to be able to use it offline.
 * [**SEO**](/en/platform/channels/sites.html#seo): Allows you to configure the way indexing robots see your site.
-* [**Templates**](/en/platform/channels/templates.html): They are the basis of your site and define the base structure of your site's pages.
+* [**Templates**](/en/platform/channels/templates.html): They are the base of your site and define the basic structure of your site's pages.
 * [**Content views**](/en/platform/channels/templates.html #vistas -for-content): They are the meeting point between your site and content entries, which allow you to define a base page and that all entries of the same type are seen under the same display.
 * [**Widget**](/en/platform/channels/widgets.html): It is a reusable functionality package that contains HTML, JavaScript, and CSS that can be used across different pages.
 
