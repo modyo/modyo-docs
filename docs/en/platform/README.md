@@ -20,7 +20,7 @@ Modyo is a digital experience platform that enhances solutions for interacting w
 
 * Use Modyo to create **integrated digital experiences** for your consumers through public and private channels.
 * Use Modyo to increase **agility and governance** in your digital factory.
-* Use Modyo to create digital experiences through **widgets**.
+* Use Modyo to create digital experiences through **intelligent widgets**.
 
 ### Why use Modyo?
 
