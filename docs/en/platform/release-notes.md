@@ -102,7 +102,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple performance enhancements.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
