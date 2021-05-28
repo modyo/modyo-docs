@@ -114,7 +114,7 @@ search: true
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple performance enhancements.
 
 ### 9.1.8 - 02 February 2021
