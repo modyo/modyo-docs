@@ -12,7 +12,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Business Events: Add to Modyo any event that is relevant to your business, allowing you to segment customers.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
