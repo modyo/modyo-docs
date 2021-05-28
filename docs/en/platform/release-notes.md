@@ -135,7 +135,7 @@ search: true
 - Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Add the option to [edit entries in bulk] (/es/platform/content/entries.html #editar -massively).
+* The option to [edit entries in bulk] (/en/platform/content/entries.html#bulk-edit) was added.
 * Filters are added by author and targets in the entry index.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
