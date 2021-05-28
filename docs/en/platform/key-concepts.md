@@ -33,7 +33,7 @@ The widget generator helps Back and Front End developers work together to create
 
 ### Widgets vs Portlets
 
-Most companies that are on the market chose the old _porlets_ model (server-side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
+Most of our competitors chose the old _portlets_ model (server-side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
 
 Modyo is widget-based and a widget generator that tracks every change in a version control system. Digital work is easy to audit, move to the next stage, and publish to make it available quickly to your customers.
 
