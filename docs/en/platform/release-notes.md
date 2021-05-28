@@ -148,7 +148,7 @@ search: true
 
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Add the option to define [variables in custom widgets] (/es/platform/channels/widgets.html #variables -del-widget).
