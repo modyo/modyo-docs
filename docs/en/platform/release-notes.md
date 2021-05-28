@@ -92,7 +92,7 @@ search: true
 
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple security improvements.
 - Errors caused by standard attributes with specific formats are resolved in integration using OIDC
 - Resolve bugs that caused the post/unpublish schedule to run 10 minutes late
 - Resolves a particular case where the HTML view of the rich text editor did not save changes
