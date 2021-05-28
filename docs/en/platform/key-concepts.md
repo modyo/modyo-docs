@@ -77,7 +77,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Integrations**](/en/platform/core/integrations/): This is where you can delegate or federate the authentication process of users or team members.
 * [**Password Policy**](/en/platform/core/security.html#password-policy): Allows you to define rules that team members must follow when creating or modifying their passwords.
 * [**Team Review**](/en/platform/core/key-concepts.html#team-review): Revision flow of versioned items in which you can request approval from multiple team members.
-* [**Site**](/en/platform/channels/sites.html): It is the tool to create digital channels within the platform. Site operation encompasses the entire development, design and navigation flow.
+* [**Site**](/en/platform/channels/sites.html): This is the tool you can use to create digital channels within the platform. Site management includes development, design and navigation flow.
 * [**Editable Version**](/en/platform/core/key-concepts.html #editable): This is the version you can modify and preview the versioned elements.
 * [**Global Variables**](/en/platform/core/key-concepts.html #variables -global): These are elements that you can define globally and reuse them in different places.
 * [**Scheduled Version**](/en/platform/core/key-concepts.html #programado): This is the version that is ready to be published at a given date and time.
