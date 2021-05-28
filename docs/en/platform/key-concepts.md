@@ -57,7 +57,7 @@ APIs enhance our platform and make it easier to build solutions.
 
 
 ### Prepared for the future: PWAs
-Progressive Web Applications will be the future of the Web, as they improve the way they are distributed to end users and give more prominence to the web browser as an execution platform. With Modyo you can control the definitions of _manifest.json_ and _Service Workers_ on each site, which are key technical enablers when implementing PWAs.
+Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
 
 
 ### Security, Governance and Agility
