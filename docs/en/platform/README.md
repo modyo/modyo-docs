@@ -24,7 +24,7 @@ Modyo is a digital experience platform that enhances solutions for interacting w
 
 ### Why use Modyo?
 
-Modyo provides a secure development environment, whether in the cloud or “On Premise” (on-premises), to build smart interactions with your customers. It allows you to easily create, manage and measure both public and private sites. Large digital teams can speed up the creation of content and components developed for Front End securely, in an environment that provides a wide library of intelligent widgets that can be connected to various systems in your company.
+Modyo provides a secure development environment either in the cloud or "On-Premise" to build intelligent interactions with your customers. It allows you to easily create, manage, and measure both public and private sites. Large digital teams can securely streamline the creation of content and components developed for the Front End with an extensive library of intelligent widgets that you can connect to various systems in your enterprise.
 
 ### Who is Modyo for?
 
