@@ -64,7 +64,7 @@ Progressive Web Applications will be the future of the Web, as they improve the 
 
 Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
 
-Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated on the platform within Channels, two people (Reviewer and Approver) can change the status of digital resources to “Published” through an easy-to-handle formal process. Your team's capacity is later measured within Insights.
+Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.
 
 ### Glossary
 The following definitions correspond to commonly used terms between the different Modyo applications.
