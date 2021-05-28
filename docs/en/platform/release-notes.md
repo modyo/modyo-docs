@@ -241,7 +241,7 @@ search: true
 - [New Preview Mode] (/es/platform/core/key-concepts.html #modo -preview): A preview mode that allows you to view content, pages, templates, widgets and navigation together.
 - Upgrade the ElasticSearch version to 7.4.
 - Upgrade MySQL version to version 5.7 (adds support for emojis).
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 - Multiple security enhancements.
 
