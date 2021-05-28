@@ -58,7 +58,7 @@ search: true
 
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Multiple security improvements.
 - Multiple JS libraries with vulnerabilities are updated
 
  <Badge text="Content" type="content" vertical="middle"/> 
