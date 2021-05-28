@@ -71,7 +71,7 @@ The following definitions correspond to commonly used terms between the differen
 
 #### General
 
-* [**CORS**](/en/platform/core/security.html #compartir -resources-in-distinct-domains): Cross Origin Resource Sharing - Allows resource sharing across different domains.
+* [**CORS**](/en/platform/core/security.html#share-resources-across-different-domains): Cross Origin Resource Sharing - Allows sharing of resources across different domains.
 * **Account**: This is the access point to all Modyo features.
 * [**Computer**](/en/platform/core/roles.html #equipo): All users who have access to the Modyo admin and can be assigned roles and permissions.
 * [**Integrations**](/en/platform/core/integrations): This is the way to delegate or federate the authentication process for users or team members.
