@@ -88,7 +88,7 @@ search: true
 ### 9.1.11 - March 02, 2021
 
  
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs solved.
 - Multiple navigation and usability improvements
