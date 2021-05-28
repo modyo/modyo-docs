@@ -94,7 +94,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Entry**](/en/platform/content/entries.html): It is a set of values associated with the different fields defined in the content type.
 * [**Space**](/en/platform/content/spaces.html): Resource repository where team members can define different content structures (types), create and publish entries.
 * **Tags**: Allow you to sort and filter the entries freely and without restrictions.
-* [**Content type**](/en/platform/content/types.html): It is a structure with fields that allows you to define the different content of your business.
+* [**Content type**](/en/platform/content/types.html): It is a structure with fields that allows you to define the different types of content of your business.
 
 
 #### Modyo Channels
