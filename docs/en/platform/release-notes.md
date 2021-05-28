@@ -132,7 +132,7 @@ search: true
 
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Add the option to [edit entries in bulk] (/es/platform/content/entries.html #editar -massively).
