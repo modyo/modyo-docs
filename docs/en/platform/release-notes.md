@@ -117,7 +117,7 @@ search: true
 - Multiple bugs resolved.
 - Multiple performance improvements.
 
-### 9.1.8 - 02 February 2021
+### 9.1.8 - February 02, 2021
 
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
