@@ -72,7 +72,7 @@ search: true
 
 ### 9.1.12 - March 19, 2021
 
-&nbsp;
+ 
  <Badge text="Core" type="core" vertical="middle"/> 
 
 - Multiple bugs solved.
