@@ -32,7 +32,7 @@ Modyo provides a secure development environment either in the cloud or "On-Premi
 
 * **Software Architects** seeking to create a clean architecture, ranging from Microservices and APIs to Micro frontends for web and mobile channels.
 
-* **Digital Marketing** experts requiring a content management system to create digital experiences for target groups.
+* **Experts in Digital Marketing** that require a content management system to create digital experiences for targeted user groups.
 
 * **Content Managers** who want to manage their posts easily in one place for all their digital channels.
 
