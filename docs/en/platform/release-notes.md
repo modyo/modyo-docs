@@ -32,7 +32,7 @@ search: true
 * Fixed a bug when creating new sites where the "About Us" page was left without a layout selected.
 
 ### 9.1.15 - April 14, 2021
-&nbsp;
+ 
  <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bugs resolved.
 * A tool to resolve inconsistencies in secondary structure is added to the panel to maintain the order of the site pages.
