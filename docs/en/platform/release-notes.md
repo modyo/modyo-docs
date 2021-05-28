@@ -75,7 +75,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 - Multiple security enhancements.
 
