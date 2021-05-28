@@ -122,7 +122,7 @@ search: true
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 
 ### 9.1.7 - 25 January 2021
