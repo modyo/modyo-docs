@@ -4,7 +4,7 @@ search: true
 
 # Welcome to Modyo
 
-Welcome to the official Modyo documentation site. We hope to cover all relevant topics related to the platform here. You will find descriptions of every user interface, best practices when interacting with the platform, clear use cases, and more.
+Welcome to the Modyo documentation. We hope to cover all relevant topics related to the platform here. You will find descriptions of every user interface, best practices when interacting with the platform, clear use cases, and more.
 
 We have designed the Modyo documentation to be navigated as a guide (from start to finish) or resolve a specific query. The contents within the documentation are interrelated to each other in order to facilitate the understanding of these.
 
