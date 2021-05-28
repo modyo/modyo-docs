@@ -136,7 +136,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 * The option to [edit entries in bulk] (/en/platform/content/entries.html#bulk-edit) was added.
-* Filters are added by author and targets in the entry index.
+* The option to filters by author and targets in the index of entries was added.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Add the ability to decide whether you want your widget builder widgets to be loaded synchronously or asynchronously (/es/platform/channels/widgets.html #carga -synchronous).
