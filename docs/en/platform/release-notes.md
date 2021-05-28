@@ -310,7 +310,7 @@ search: true
 - Support for FOG with Azure and Google Cloud is added as Modyo installation base.
 - Added integration with [Google Authenticator] (/es/platform/core/security.html #autenticacion -in-two-steps) for second factor of team member authentication.
 - [password policies] (/es/platform/core/security.html #politica -password) are added for team members.
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 
 <Badge text="Content" type="content" vertical="middle"/>
