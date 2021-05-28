@@ -74,7 +74,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**CORS**](/en/platform/core/security.html#share-resources-across-different-domains): Cross Origin Resource Sharing - Allows sharing of resources across different domains.
 * **Account**: This is where you can access all the features that Modyo has to offer.
 * [**Team**](/en/platform/core/roles.html#team): All users who have access to the Modyo admin and can be assigned roles and permissions.
-* [**Integrations**](/en/platform/core/integrations): This is the way to delegate or federate the authentication process for users or team members.
+* [**Integrations**](/en/platform/core/integrations/): This is where you can delegate or federate the authentication process of users or team members.
 * [**Password Policy**](/en/platform/core/security.html #politica -password): Allows you to define rules that team members must comply with when creating or modifying their passwords.
 * [**Team Review**](/en/platform/core/key-concepts.html #revision -in-team): Review flow of versioned items in which approval can be requested from multiple team members.
 * [**Site**](/en/platform/channels/sites.html): It is the tool to create digital channels within the platform. Site operation encompasses the entire development, design and navigation flow.
