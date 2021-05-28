@@ -38,7 +38,7 @@ Modyo provides a secure development environment either in the cloud or "On-Premi
 
 * **Front End Developers** who want to build digital experiences through easy-to-create, manageable widgets.
 
-* **Back End Developers** requiring a powerful Front End development environment to connect APIs and Microservices.
+* **Back End Developers** that require a powerful Front End development environment to connect APIs and Microservices.
 
 ### Where can I get support?
 
