@@ -21,7 +21,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Performance improvements
 
-### 9.1.16 - 23 April 2021
+### 9.1.16 - April 23, 2021
 &nbsp;
  <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bugs solved.
