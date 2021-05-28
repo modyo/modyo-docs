@@ -53,10 +53,10 @@ A separate license model applies to Modyo Banking.
 
 Modyo uses Liquid Markup within the platform to give Front and Back End developers a rich language that allows them to add more functionality when building digital experiences. Liquid Markup is used by leading companies to easily add more logic to the Front End code.
 
-APIs empower the platform and make it easier to build solutions.
+APIs enhance our platform and make it easier to build solutions.
 
 
-### Future Ready: PWAs
+### Prepared for the future: PWAs
 Progressive Web Applications will be the future of the Web, as they improve the way they are distributed to end users and give more prominence to the web browser as an execution platform. With Modyo you can control the definitions of _manifest.json_ and _Service Workers_ on each site, which are key technical enablers when implementing PWAs.
 
 
