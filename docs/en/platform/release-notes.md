@@ -103,7 +103,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple performance enhancements.
+- Multiple performance improvements.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Add the ability to [filter by slug] (/es/platform/content/public-api-reference.html #filtrar -entries) of entries in the liquid SDK using the `by_slug` filter
