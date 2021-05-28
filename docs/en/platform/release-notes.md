@@ -51,7 +51,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * A bug where you could loose the control over the templates was resolved.
 
-### 9.1.13 - 25 March 2021
+### 9.1.13 - March 25, 2021
 
 &nbsp;
  <Badge text="Core" type="core" vertical="middle"/> 
