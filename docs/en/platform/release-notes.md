@@ -95,7 +95,7 @@ search: true
 - Multiple security improvements.
 - Errors caused by standard attributes with specific formats in OIDC integration were fixed.
 - Bugs that caused the publish/unpublish schedule to run 10 minutes later were fixed.
-- Resolves a particular case where the HTML view of the rich text editor did not save changes
+- A particular case where the HTML view of the rich text editor did not save changes was fixed.
 
 ### 9.1.10 - 23 February 2021
 
