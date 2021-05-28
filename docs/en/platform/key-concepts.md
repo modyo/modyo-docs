@@ -27,9 +27,9 @@ All structured content that you publish generates an equivalent JSON file that c
 
 ### An integration platform
 
-Modyo is designed to facilitate the creation of digital solutions integrated with the central systems of companies. With this in mind, we keep the focus on facilitating widget development and connecting to APIs.
+Modyo is designed to facilitate the creation of digital solutions integrated with the central systems of enterprises. With this in mind, we keep our focus on facilitating the development of widgets and their integration with APIs.
 
-The widget builder helps Back and Front End developers work together to create digital experiences connected to APIs. The governance model allows digital teams to easily preview and publish their work to customers in record time.
+The widget generator helps Back and Front End developers work together to create digital experiences connected to APIs. Our governance model allows digital teams to easily preview and publish their work to their digital channels in record time.
 
 ### Widgets vs Portlets
 
