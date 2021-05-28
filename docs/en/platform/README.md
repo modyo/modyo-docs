@@ -30,7 +30,7 @@ Modyo provides a secure development environment either in the cloud or "On-Premi
 
 * **Digital Channel Leaders** who are responsible for guiding interactions, sales and customer experiences on web and mobile channels.
 
-* **Software Architects** looking to create a clean architecture, ranging from Microservices and APIs to Micro Frontends for web and mobile channels.
+* **Software Architects** seeking to create a clean architecture, ranging from Microservices and APIs to Micro frontends for web and mobile channels.
 
 * **Digital Marketing** experts requiring a content management system to create digital experiences for target groups.
 
