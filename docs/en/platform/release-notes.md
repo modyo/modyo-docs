@@ -41,7 +41,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Added [new Liquid filters](/en/platform/channels/liquid-markup.html#filters) that allow using algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256 and base64_encod.
-* The indexing of pages is improved in such a way that you can now find results that contain text of the referenced content on the pages.
+* Page indexing is improved so that you can now find results that contain text from the content referenced in the pages.
 
 ### 9.1.14 - 1 April 2021
 &nbsp;
