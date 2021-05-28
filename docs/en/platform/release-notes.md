@@ -35,7 +35,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
-* A tool to resolve inconsistencies in secondary structure is added to the panel to maintain the order of the site pages.
+* Added to the panel a tool to resolve inconsistencies in secondary structure to maintain the order of the pages of the site.
 * Resolves an error when uploading very large images to the file manager.
 * Resolves a bug that caused the code editor to freeze to liquid specific syntax.
 
