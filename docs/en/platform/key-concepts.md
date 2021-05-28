@@ -83,7 +83,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Scheduled Version**](/en/platform/core/key-concepts.html#scheduled): It is the version that is ready to be published at a predetermined date and time.
 * [**Published version**](/en/platform/core/key-concepts.html#published): It is the visible or productive version of the elements. This version can not be modified.
 * [**Backup version**](/en/platform/core/key-concepts.html#backups): It is a version that was previously published.
-* [**Webhook**](/en/platform/core/integrations #webhooks): Automatically sends information to an external system when a particular event occurs.
+* [**Webhook**](/en/platform/core/integrations/#webhooks): Sends information automatically to an external system when a certain event occurs.
 
 
 #### Modyo Content
