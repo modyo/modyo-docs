@@ -107,7 +107,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**SEO**](/en/platform/channels/sites.html#seo): Allows you to configure the way indexing robots see your site.
 * [**Templates**](/en/platform/channels/templates.html): They are the base of your site and define the basic structure of your site's pages.
 * [**Content views**](/en/platform/channels/templates.html#content-views): This is where your site and the content entries meet, allowing you to define a base page so that all the entries of the same type are seen under the same view.
-* [**Widget**](/en/platform/channels/widgets.html): It is a reusable functionality package that contains HTML, JavaScript, and CSS that can be used across different pages.
+* [**Widget**](/en/platform/channels/widgets.html): A reusable feature package that contains HTML, JavaScript and CSS that can be used in different pages.
 
 #### Modyo Customers
 
