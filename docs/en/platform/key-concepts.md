@@ -23,7 +23,7 @@ Clients can interact in different sites and in different contexts, maintaining t
 
 Modyo Content allows you to create and publish content. You can add fields to define custom content structures easily. Modyo Channels allows you to work with HTML templates and reusable Front End components called widgets.
 
-All structured content that is published generates an equivalent JSON file that can feed to any other site or application. These are served through the API.
+All structured content that you publish generates an equivalent JSON file that can feed any other site or application. These are served through the Content API.
 
 ### An integration platform
 
