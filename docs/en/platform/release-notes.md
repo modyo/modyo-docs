@@ -33,7 +33,7 @@ search: true
 
 ### 9.1.15 - April 14, 2021
  
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
 * A tool to resolve inconsistencies in secondary structure is added to the panel to maintain the order of the site pages.
 * Resolves an error when uploading very large images to the file manager.
