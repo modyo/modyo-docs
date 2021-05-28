@@ -103,7 +103,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Meta tags**](/en/platform/channels/pages.html#meta-tags): Allows you to customize the meta tags for your pages and improve the way search engines index your pages.
 * [**Navigation**](/en/platform/channels/navigation.html): Allows you to modify the main menu of your site with an easy to use interface.
 * [**Page**](/en/platform/channels/pages.html): Pages are what allow you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
-* [**PWA**](/en/platform/channels/sites.html #pwa): Allows you to configure your site's _serviceworker_ and manifest so you can use it offline.
+* [**PWA**](/en/platform/channels/sites.html#pwa): Allows you to configure the _serviceworker_ and manifest of your site to be able to use it offline.
 * [**SEO**](/en/platform/channels/sites.html #seo): Allows you to configure how your site looks before indexing robots.
 * [**Templates**](/en/platform/channels/templates.html): They are the basis of your site and define the base structure of your site's pages.
 * [**Content views**](/en/platform/channels/templates.html #vistas -for-content): They are the meeting point between your site and content entries, which allow you to define a base page and that all entries of the same type are seen under the same display.
