@@ -113,7 +113,7 @@ The following definitions correspond to commonly used terms between the differen
 
 * [**Campaigns**](/en/platform/customers/messaging.html#campaigns): A defined communication channel with your users which allows you to reach them through emails and notifications.
 * [**Custom field**](/en/platform/customers/users.html#custom-fields): Allows you to add personalized attributes to the users' profile.
-* [**Filters**](/en/platform/customers/targets.html #filtros): These are the drive that allows you to build targets.
+* [**Filters**](/en/platform/customers/targets.html#filters): Basic units that allow you to build targets.
 * [**Form**](/en/platform/customers/forms.html): Allows you to capture data about your users on your sites.
 * [**Messagery**](/en/platform/customers/messaging.html): Allows you to control the channels of direct communication with your users-
 * [**Target**](/en/platform/customers/targets.html): Allows you to add and group your users using filter groups with different conditions.
