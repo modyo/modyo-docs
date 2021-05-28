@@ -41,7 +41,7 @@ Modyo bases its development model on widgets and a widget generator that tracks 
 
 With the widget generator you can develop any type of widget you require and include all necessary HTML, CSS and Javascript. You can connect widgets to your APIs, and publish them to your widget library to reuse them when needed.
 
-The widget generator enhances the digital experience by making Front End development easy to operate, fast to send to production and easy to audit, providing greater security and fulfilment of your goals.
+The widget generator enhances the digital experience by making Front End development easy to handle, quick to send to production and easy to audit, providing greater security and fulfillment of your key objectives.
 
 ### Prefabricated Widgets for Financial Services
 
