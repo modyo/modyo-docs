@@ -286,7 +286,7 @@ search: true
 
 - Improvements to management and plan quotas.
 - Empty view of [my tasks] (/es/platform/core/the-modyo-interface.html) is added.
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 
 <Badge text="Content" type="content" vertical="middle"/>
