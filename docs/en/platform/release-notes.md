@@ -17,7 +17,7 @@ search: true
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
 ### 9.1.17 - May 5, 2021
-&nbsp;
+ 
  <Badge text="Core" type="core" vertical="middle"/> 
 * Performance Enhancements
 
