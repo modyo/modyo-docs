@@ -141,7 +141,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously](/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
 
-### 9.1.6 - 23 December 2020
+### 9.1.6 - December 23, 2020
 
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
