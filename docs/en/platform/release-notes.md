@@ -48,7 +48,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Resolves a bug in which control of the locks was lost in the template builder.
 
 ### 9.1.13 - 25 March 2021
