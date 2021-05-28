@@ -36,7 +36,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
 * Added to the panel a tool to resolve inconsistencies in secondary structure to maintain the order of the pages of the site.
-* Resolves an error when uploading very large images to the file manager.
+* Fixed a bug when uploading very large images to the file manager.
 * Resolves a bug that caused the code editor to freeze to liquid specific syntax.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
