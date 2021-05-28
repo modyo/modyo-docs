@@ -70,7 +70,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Fixed a bug where the integration with OIDC redirected to the user's profile and not to the site from where the flow was started.
 
-### 9.1.12 - 19 March 2021
+### 9.1.12 - March 19, 2021
 
 &nbsp;
  <Badge text="Core" type="core" vertical="middle"/> 
