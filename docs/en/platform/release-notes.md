@@ -27,7 +27,7 @@ search: true
 * Multiple bugs solved.
 * Multiple security enhancements.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Resolves an error that caused the “Save” button in the page builder to not work properly.
 * Resolves an error when creating new sites where the “About Us” page was left without a selected layout.
 
