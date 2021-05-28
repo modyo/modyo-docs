@@ -83,7 +83,8 @@ search: true
 * New filters were added to the Liquid SDK for content that enables to [search] (/en/platform/content/public-api-reference.html#filter-entries), filter and [sort] (/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Associate the language in which the forms are deployed according to the language of the associated site and not the account language
+* Form language is now tied to the site associated instead of the account language.
+#
 
 ### 9.1.11 - 02 March 2021
 
