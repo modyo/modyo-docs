@@ -17,7 +17,7 @@ You can even go further and use Modyo to develop a deeper understanding about yo
 
 Modyo provides you with different authentication mechanisms, from OpenID Connect to OAuth2 and Google, so you can easily authenticate your customers.
 
-Customers can interact across different sites and in different contexts, maintaining the same central profile that will make it easier for you to manage.
+Clients can interact in different sites and in different contexts, maintaining the same central profile that facilitates administration tasks.
 
 ### Both CMS and Headless CMS
 
