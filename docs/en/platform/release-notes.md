@@ -139,7 +139,7 @@ search: true
 * The option to filters by author and targets in the index of entries was added.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously] (/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
+* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously](/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
 
 ### 9.1.6 - 23 December 2020
 
