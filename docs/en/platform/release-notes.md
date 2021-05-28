@@ -29,7 +29,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Fixed a bug that caused the "Save" button in the page builder to not work correctly.
-* Resolves an error when creating new sites where the “About Us” page was left without a selected layout.
+* Fixed a bug when creating new sites where the "About Us" page was left without a layout selected.
 
 ### 9.1.15 - 14 April 2021
 &nbsp;
