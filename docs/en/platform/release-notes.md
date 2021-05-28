@@ -22,7 +22,7 @@ search: true
 * Performance improvements
 
 ### 9.1.16 - April 23, 2021
-&nbsp;
+ 
  <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bugs solved.
 * Multiple security enhancements.
