@@ -62,7 +62,7 @@ search: true
 - Multiple JS libraries with vulnerabilities updated.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Dynamic filters are added by field values in the input index.
+* Added dynamic filters by field values in the entries index.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Resolves a bug where site copying did not consider templates.
