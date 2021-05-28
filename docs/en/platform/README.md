@@ -28,7 +28,7 @@ Modyo provides a secure development environment either in the cloud or "On-Premi
 
 ### Who is Modyo for?
 
-* **Digital Channel Leaders** who are responsible for guiding interactions, sales and customer experiences across web and mobile channels.
+* **Digital Channel Leaders** who are responsible for guiding interactions, sales and customer experiences on web and mobile channels.
 
 * **Software Architects** looking to create a clean architecture, ranging from Microservices and APIs to Micro Frontends for web and mobile channels.
 
