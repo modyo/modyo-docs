@@ -7,7 +7,7 @@ search: true
 ### 9.2.X - First release planned for the first quarter of 2021.
  
 <Badge text="Core" type="core" vertical="middle"/>
-* Administrators groups: To easily add users together to different sites or spaces.
+* Administrators groups: Easily add users corresponding to different sites or spaces.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Site stages: Work in a safe, pre-productive environment of a site, without compromising the integrity of what is already published on it.
