@@ -37,7 +37,7 @@ search: true
 * Multiple bugs resolved.
 * Added to the panel a tool to resolve inconsistencies in secondary structure to maintain the order of the pages of the site.
 * Fixed a bug when uploading very large images to the file manager.
-* Resolves a bug that caused the code editor to freeze to liquid specific syntax.
+* Fixed a bug that caused the code editor to freeze on specific liquid syntaxes.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * New [Liquid filters](/en/platform/channels/liquid-markup.html#filtros -standard) added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256 y base64_encod.
