@@ -266,7 +266,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Security enhancements are added to file upload endpoints.
-- Multiple bugs solved.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 
 <Badge text="Content" type="content" vertical="middle"/>
