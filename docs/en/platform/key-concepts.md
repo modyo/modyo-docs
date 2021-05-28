@@ -79,7 +79,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Team Review**](/en/platform/core/key-concepts.html#team-review): Revision flow of versioned items in which you can request approval from multiple team members.
 * [**Site**](/en/platform/channels/sites.html): This is the tool you can use to create digital channels within the platform. Site management includes development, design and navigation flow.
 * [**Editable Version**](/en/platform/core/key-concepts.html#editable): It is the version that you can modify and use to preview versioned elements.
-* [**Global Variables**](/en/platform/core/key-concepts.html #variables -global): These are elements that you can define globally and reuse them in different places.
+* [**Global Variables**](/en/platform/core/key-concepts.html#global-variables): These are elements that you can define globally and reuse in different sites.
 * [**Scheduled Version**](/en/platform/core/key-concepts.html #programado): This is the version that is ready to be published at a given date and time.
 * [**Published version**](/en/platform/core/key-concepts.html #publicado): This is the visible or productive version of versioned elements. This version could not be modified.
 * [**Backup version**](/en/platform/core/key-concepts.html #respaldos): These are the versions that have been previously released.
