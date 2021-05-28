@@ -85,7 +85,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Form language is now tied to the site associated instead of the account language.
 
-### 9.1.11 - 02 March 2021
+### 9.1.11 - March 02, 2021
 
 &nbsp;
  <Badge text="Core" type="core" vertical="middle"/> 
