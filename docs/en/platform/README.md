@@ -42,7 +42,7 @@ Modyo provides a secure development environment either in the cloud or "On-Premi
 
 ### Where can I get support?
 
-For support from the Modyo Platform visit the [official support site](https://support.modyo.com/hc/es).
+If you have any additional questions regarding the Modyo Platform, visit our [official support site](https://support.modyo.com/hc/en-us).
 
 ### Requirements for using Modyo
 
