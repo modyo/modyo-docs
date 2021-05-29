@@ -63,7 +63,7 @@ If you would like to use the logo on dark backgrounds, ideally use the following
 
 ### Exclusion zone
 
-The clearance and exclusion zone around the logo is equal to the height of the “M” (marked as × in the diagram).
+The clearance and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
 
 For the use of the isotype the reference is the same.
 
@@ -90,7 +90,7 @@ Minimum digital size: 20px
 
 ### Alliances
 
-Separate clearance rules apply to align association logos. Use the width of an “M” as a guide for a free space between the Modyo logo and partner logos.
+Separate clearance rules apply to align association logos. Use the width of an "M" as a guide for a free space between the Modyo logo and partner logos.
 
  <img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances"> 
 
@@ -116,7 +116,7 @@ It is important that the appearance of the logo remains constant. It should not 
  </tr> 
  <tr> 
  <td> 
- <p class="dont"> Do not remove the characteristic green symbol from the logo that accompanies the “O” at the end. </p> 
+ <p class="dont"> Do not remove the characteristic green symbol from the logo that accompanies the "O" at the end. </p> 
  </td> 
  <td> 
  <p class="dont"> Do not turn the logo. </p> 
@@ -173,7 +173,7 @@ It is important that the appearance of the logo remains constant. It should not 
 
 ## Isotype
 
-When you want to replace the use of the mark, that is when you can use the isotype, i.e. the “M” with the complementary symbol, leaving aside the whole word.
+When you want to replace the use of the mark, that is when you can use the isotype, i.e. the "M" with the complementary symbol, leaving aside the whole word.
 
 While the icon may exist without the word mark, the word mark should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
 
@@ -230,7 +230,7 @@ If you would like to use the isotype on dark backgrounds, ideally use it with th
 
 ### Exclusion zone
 
-The clearance and exclusion zone around the logo is equal to the height of the “M” (marked as × in the diagram).
+The clearance and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
 For the use of the isotype the reference is the same.
 
  <img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0"> 
