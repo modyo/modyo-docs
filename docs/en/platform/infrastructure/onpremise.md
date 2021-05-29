@@ -86,7 +86,7 @@ The following correspond to the basic components that any Modyo deployment shoul
  <b> Index Cluster </b> 
  </td> 
  <td> 
- Implemented with Elasticsearch which is used for full indexing of documents and layout pages that will be “searchable” or “georeferencable”, Elastic Search also supports user dashboards and targets that are processed in real time.
+ Implemented with Elasticsearch which is used for full indexing of documents and layout pages that will be "searchable" or "georeferencable", Elastic Search also supports user dashboards and targets that are processed in real time.
  </td> 
  </tr> 
  <tr> 
@@ -147,7 +147,7 @@ Additionally, a secure and scalable installation will require the following addi
  </table> 
 
 
-## Hardware Required
+## Hardware Requirements
 The Modyo Enterprise On Premise Platform is designed to be compatible with the most modern versions of Java Virtual Machine (JVM). While the JVM is available on a wide range of operating systems, the recommended configuration is in Linux environments. Other operating system configurations should be reviewed in conjunction with the Modyo support team.
 
 Depending on the level of availability you want to configure, one or more servers may be required for each of the previously discussed roles.
