@@ -17,13 +17,13 @@ Throughout this standard, you will find general rules and other particular rules
 ### How can I contribute?
 The standard is periodically reviewed. Adjustments and changes are always welcome, and when made, they are sought to be adopted quickly and transversely. That is why these changes must be applied methodically, in specific periods that ensure the focus and appropriate participation of all stakeholders.
 
-The idea is to encourage healthy debate, seek consensus and learn from the experience of the most experienced developers, in order to propose justifiable improvements that add value to different work teams. The dogmatic fights like "Tangananica, Tanganana" are out of the discussion.
+The idea is to encourage healthy debate, seek consensus and learn from the experience of the most experienced developers, in order to propose justifiable improvements that add value to different work teams. The dogmatic fights like “Tangananica, Tanganana” are out of the discussion.
 
 ## General Principles
 - The best architectures are those that allow change. It is better a bad software with a good architecture than good software with a poor one. Why? Because good architectures can always be arranged. (Uncle Bob, Clean Architecture)
 - Avoid duplicating functionality that is already available in a library
 - A good copy & paste is sometimes better than a bad refactoring
-- KISS: "Keep It Stupid Simple" (or "Keep It Simple, Stupid!"). We avoid overengineering where there is no need. Pragmatism.
+- KISS: “Keep It Stupid Simple” (or “Keep It Simple, Stupid!”). We avoid overengineering where there is no need. Pragmatism.
 - Be humble, don't feel a prodigy of the code
 - Divide your big tasks into smaller tasks
 - Keep your methods and classes small, and with one responsibility. If you have many conditions in one method, divide it into smaller methods. Not only will this make the code easier to read, but also easier to debugging
@@ -32,9 +32,9 @@ The idea is to encourage healthy debate, seek consensus and learn from the exper
 
 
 ### Do not allow faults to be silent
-Don't write code that guesses the future. Avoid the "just in case in the future someone asks..."
+Don't write code that guesses the future. Avoid the “just in case in the future someone asks...”
 Avoid coupling codes between different modules. Avoid cross importing
-Unstable things depend on stable things. Not upside down! If we depend on something unstable ("commons" library in development) the whole project will become unstable
+Unstable things depend on stable things. Not upside down! If we depend on something unstable (“commons” library in development) the whole project will become unstable
 As detailed as a standard is made, you'll always see yourself implementing complex things that aren't covered here. Learn patterns and design archetypes, most of the problems someone in the past solved them. Learn how to combine specific patterns with globals used in a cross-cutting way
 Indispensable references:
 
