@@ -95,18 +95,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 2. Create a custom snippet with the following code and then insert it inside the body tags of the home and base views using `{% snippet “gtm-body”%}`, replacing “gtm-body” with the name you gave the snippet.
 
 **Google Tag Manager for _body_**
-liquid
-{% if site.tag_manager_id! = "%}
+```liquid
+{% if site.tag_manager_id != '' %}
 
  <!-- Google Tag Manager (noscript) --> 
- <noscript> 
-<iframe src=” https://www.googletagmanager.com/ns.html?id = {{site.tag_manager_id}}” height="0" width="0"
-style="display:none; visibility:hidden">
- </iframe> 
- </noscript> 
- <!-- End Google Tag Manager (noscript) --> 
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
+style="display:none;visibility:hidden">
+</iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) --> 
 
-{% endif%}
+{% endif %}
 ```
 
 With this ready, when there is a value associated with the **Google Tag Manager Identifier** field in the Site's General settings, the scripts will be automatically injected and you can start creating events in Google Tag Manager to record your users' actions.
