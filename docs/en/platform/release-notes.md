@@ -16,6 +16,30 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.21 - 28 May 2021
+ 
+<Badge text="Core" type="core" vertical="middle"/>
+* Fixed security issues
+
+### 9.1.20 - 27 May 2021
+ 
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs solved.
+* User Experience Improvements
+
+### 9.1.19 - 19 May 2021
+ 
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs resolved.
+
+### 9.1.18 - 18 May 2021
+ 
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple security improvements.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Page tree is redeployed
+
 ### 9.1.17 - May 5, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
@@ -24,8 +48,8 @@ search: true
 ### 9.1.16 - April 23, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs solved.
-* Multiple security enhancements.
+* Multiple bugs resolved.
+* Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Fixed a bug that caused the "Save" button in the page builder to not work correctly.
@@ -76,7 +100,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 - Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -91,7 +115,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 - Multiple security improvements.
 - Errors caused by standard attributes with specific formats in OIDC integration were fixed.
 - Bugs that caused the publish/unpublish schedule to run 10 minutes later were fixed.
@@ -111,7 +135,7 @@ search: true
 
 ### 9.1.9 - February 10, 2021
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
@@ -119,19 +143,19 @@ search: true
 
 ### 9.1.8 - February 02, 2021
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 ### 9.1.7 - January 25, 2021
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 - Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -143,11 +167,11 @@ search: true
 
 ### 9.1.6 - December 23, 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 - Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -161,11 +185,11 @@ search: true
 
 ### 9.1.5 - 1 December 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Add the option to use [operators] (/es/platform/content/public-api-reference.html #operadores) [in], [has], and [nin] in slug, name, uuid, and categories fields.
@@ -180,12 +204,12 @@ search: true
 
 ### 9.1.4 - 10 November 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple navigation and usability improvements.
+- Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * The [joint publication] (/es/platform/channels/sites.html #revision -and-joint publication) is added to the sites.
@@ -193,21 +217,21 @@ search: true
 
 ### 9.1.3 - 16 October 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple navigation and usability improvements.
+- Multiple security improvements.
 
 ### 9.1.2 - 8 October 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple navigation and usability improvements.
+- Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Add the drop `page` that considers both the home page and custom pages.
@@ -218,12 +242,12 @@ search: true
 
 ### 9.1.1 - 25 September 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple navigation and usability improvements.
+- Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Added the ability to delete archived entries.
@@ -233,7 +257,7 @@ search: true
 
 ### 9.1.0 - 4 September 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - [Scheduler] (es/platform/core/key-concepts.html #programado): Schedule a change in the future without the need to unpublish what is already published.
@@ -242,8 +266,8 @@ search: true
 - Upgrade the ElasticSearch version to 7.4.
 - Upgrade MySQL version to version 5.7 (adds support for emojis).
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple navigation and usability improvements.
+- Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Performance improvements and scalability in the public content API
@@ -255,19 +279,19 @@ search: true
 
 ### 9.0.9 - 12 August 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Support for session cookies for older browsers is improved.
 
 ### 9.0.8 - 15 June 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Security enhancements are added to file upload endpoints.
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Different drops of liquid are added depending on the file type in the [asset manager] (/es/platform/content/asset-manager.html #propiedades -of-the files).
@@ -281,13 +305,13 @@ search: true
 
 ### 9.0.7 - 01 June 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Improvements to management and plan quotas.
 - Empty view of [my tasks] (/es/platform/core/the-modyo-interface.html) is added.
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Change [preview] mode (/es/platform/content/entries.html #vista -preview) so that by default always use editable templates.
@@ -304,14 +328,14 @@ search: true
 
 ### 9.0.6 - 30 April 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Support for FOG with Azure and Google Cloud is added as Modyo installation base.
 - Added integration with [Google Authenticator] (/es/platform/core/security.html #autenticacion -in-two-steps) for second factor of team member authentication.
 - [password policies] (/es/platform/core/security.html #politica -password) are added for team members.
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Only spaces where you have permissions as a team member will be displayed.
@@ -330,22 +354,22 @@ search: true
 
 ### 9.0.5 - 19 March 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Content is added to site search results from the front end.
 
 ### 9.0.4 - 12 March 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Text search in [template builder] (/es/platform/channels/templates.html), for easy changes.
@@ -353,11 +377,11 @@ search: true
 
 ### 9.0.3 - 02 March 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Obtaining the content delivery token through the [JavaScript SDK] (/es/platform/content/public-api-reference.html #contenido -private).
@@ -371,7 +395,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Use locations in content with maps or with a form, setting up a google api key in account settings.
@@ -379,10 +403,10 @@ search: true
 * Usability improvements to [asset manager] (/es/platform/content/asset-manager.html).
 
 ### 9.0.1 - 17 January 2020
-&nbsp;
+ 
 <Badge text="Core" type="core"/>
 * Multiple bugs resolved.
-* Multiple navigation and usability improvements
+* Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * It adds the functionality to [preview content] (/es/platform/content/entries.html #vista -previous) on sites, despite being headless, when using content on a Modyo site you can use the tool to preview that content.
@@ -393,14 +417,14 @@ search: true
 
 ### 9.0.0 - 19 December 2019
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Separation of users and [team members] (/es/platform/core/roles.html #equipo), those who have access to the platform are segregated from the users of the page itself.
 - New [roles and permissions] (/es/platform/core/roles.html).
 - [Team review] (/es/platform/core/key-concepts.html), replacing the workflow application, allows team collaboration for release approval and step to production.
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * New [content application] (/en/platform/content/), with all headless content.
