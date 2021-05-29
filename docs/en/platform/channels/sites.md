@@ -329,7 +329,7 @@ Modyo has a custom redirects system that will allow you to take a URL from your 
 
 In this view you will find a table with all the redirects that currently exist on the site, where you can search by path or description.
 
-To create a new redirect, click the**New** button in the upper right corner of the view. By filling in the Source **_URL_ and Destination **_URL_ fields and redirect code and then saving the changes, you will create a new redirect entry.
+To create a new redirect, click the**New** button in the upper right corner of the view. By filling in the Source **_URL_ and Destination** and **_URL_ fields** redirect code and then saving the changes, you will create a new redirect entry.
 
 :::warning Attention
 The redirection table is the penultimate in precedence, so if there is a URL on the site pointing to a [page](/es/platform/channels/pages.html), a default view, or a [custom content view](/es/platform/channels/templates.html #vistas -for-content), you'll see those views instead of being redirected using the custom redirects table.
