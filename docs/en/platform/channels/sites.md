@@ -137,7 +137,7 @@ If you change the manifest, remember to save it with the**Save** button at the t
 If you don't customize the manifest but add the path in the Template Builder, it will be blank and will not do any action.
 :::
 
-#### Service Worker**
+#### **Service Worker**
 
 Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to see a structure in case of a bad connection. The platform grants the possibility that this can be enabled through the following checkbox. Thus, the following path will be created:
 
