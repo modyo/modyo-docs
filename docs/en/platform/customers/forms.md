@@ -47,7 +47,7 @@ If a user does not have an active session, and fill out the form, and the email 
 
 In the**Notifications** section you can configure the various emails that are sent after a user replies the form.
 
-The email notification sends an email of the "administrative” type in which it is notified via that channel that someone replied the form. You can assign a subject and list of emails you want to notify.
+The email notification sends an email of the "administrative" type in which it is notified via that channel that someone replied the form. You can assign a subject and list of emails you want to notify.
 
 The thank you email allows you to personalize an email that will be sent to the user who replied the form. You can customize both the subject and body of the message using [Liquid](/es/platform/channels/liquid-markup.html). Under the field to customize the message, you can see a list of variables that you can use to customize your email.
 
