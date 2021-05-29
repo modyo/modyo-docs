@@ -99,13 +99,13 @@ In the variables tab you can see the list of variables created in the widget, an
 * **Modify** the variable
 * **Remove** the variable.
 
-Next to the name of each variable you will see an “overwritten” indicator if the variable also exists at the account or site level in the [global variables](/es/platform/core/key-concepts.html #variables -global).
+Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/es/platform/core/key-concepts.html #variables -global).
 
 By modifying a variable, you can decide which name and default value that variable will take in the widget. In addition, you can decide whether you want to make a list of values available so that when you instantiate the widget on a page, you can choose between these different values. 
 
 When you use the list of possible values, you must leave each value in a new line, and leave a `*` before the value you want to be taken as the default value.
 
-When you instantiate the widget on a page, you'll see that now all variables that are being used (whether account, site or widget) will be listed as “disabled” with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+When you instantiate the widget on a page, you'll see that now all variables that are being used (whether account, site or widget) will be listed as "disabled" with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 :::warning Attention
 Instantiating the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, the variable is most likely not being used in the widget code.
@@ -119,7 +119,7 @@ This is an experimental functionality and may be subject to change.
 
 You can decide whether you want to load your widgets synchronously, that is, that your widget's HTML, CSS, and JavaScript code will load along with the rest of the page from the server, or load asynchronously, so that all the static content of the page will be loaded and once the main document is loaded, the content of your widget will be loaded using JavaScript. By default, all widgets are loaded asynchronously.
 
-To change the way each widget loads, you must go to the edit view of the page containing the widget, select the widget, and check or uncheck the “Synchronous load” option.
+To change the way each widget loads, you must go to the edit view of the page containing the widget, select the widget, and check or uncheck the "Synchronous load" option.
 
 :::warning Attention
 Keep in mind that using very heavy widgets synchronously can cause your page's performance to be diminished, so you should carefully decide which widgets will load synchronously and which asynchronously
@@ -225,7 +225,7 @@ OPTIONS
  -n, —site-host=site-host host of the site where the widget will be push
  -p, —publish force widget publication
  -t, —token=token (required) Modyo Api token
- -u, —account-url=account-url=account-url (required) URL of your® Modyo account ex (” https://account.modyo.com “)
+ -u, —account-url=account-url=account-url (required) URL of your® Modyo account ex (" https://account.modyo.com ")
  -v, —version=8|9 [default: 9] Version of Modyo platform
 
 EXAMPLE
