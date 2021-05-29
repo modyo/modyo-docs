@@ -10,7 +10,7 @@ This is where you need to operate to create digital channels within the platform
 
 When you enter, you can see that there are 4 states:
 
- <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" /> 
+<img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
 - **Enabled**: The default state in which newly created sites remain and those that are enabled for use.
 - **Hidden**: Sites created and enabled that do not appear in the list of sites in the user profile. They can only be accessed if you have the site URL.
