@@ -409,7 +409,7 @@ load resources from anywhere*, so it's important to design a
 Content security policy that is appropriate for your site.
 Freely specify your content security policy in the text area;
 for a complete guide on how to write your policy, see
-[MDN Content Security Policy (CSP)](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+[MDN Content Security Policy (CSP)](https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
 
 :::warning Attention
 A very strict value can interfere with some features such as
