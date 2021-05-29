@@ -12,7 +12,7 @@ The Credit Widget allows the user to easily and quickly upload funds to their in
 modyo-cli get modyo-widgets-investments-deposits
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/inversiones/depositos)
+[Open in another tab](https://widgets-es.modyo.com/inversiones/depositos)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/depositos" width="100%"  frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/> 
 
@@ -28,7 +28,7 @@ modyo-cli get modyo-widgets-investments-deposits
  function setFrameHeightCo (id, ht) {
  var ifrm = document.getElementById (id);
  if (ifrm) {
- ifrm.style.height = ht + 4 + “px”;
+ ifrm.style.height = ht + 4 + "px";
  }
  }
  //iframed document sends its height using postMessage
