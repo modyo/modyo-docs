@@ -12,7 +12,7 @@ With this Widget you can view a summary of bank accounts, draw maps and see in d
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/personas/cuentas)
+[Open in another tab](https://widgets-es.modyo.com/personas/cuentas)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
@@ -48,7 +48,7 @@ modyo-cli get modyo-widgets-retail-accounts
  function setFrameHeightCo (id, ht) {
  var ifrm = document.getElementById (id);
  if (ifrm) {
- ifrm.style.height = ht + 4 + “px”;
+ ifrm.style.height = ht + 4 + "px";
  }
  }
  //iframed document sends its height using postMessage
