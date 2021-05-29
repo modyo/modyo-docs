@@ -72,7 +72,7 @@ Liquid accepts the following types of expressions:
     * `my_variable [<KEY EXPRESSION>] `— The name of the variable, followed immediately by brackets containing a key expression.
         * For arrays, the key must be a literal integer or an expression that resolves to an integer.
         * For hashes, the key must be a literal quote string or an expression that resolves to a string.
-    * `my_hash.key` — Hashes also allow a shorter “dot” notation, where the variable name is followed by a dot and the name of a key. This only works with keys that do not contain spaces, and (unlike bracketed notation) does not allow the use of a key name stored in a variable.
+    * `my_hash.key` — Hashes also allow a shorter "dot" notation, where the variable name is followed by a dot and the name of a key. This only works with keys that do not contain spaces, and (unlike bracketed notation) does not allow the use of a key name stored in a variable.
     * Note: If the value of an access expression is also an array or hash, you can access the values from it in the same way, and you can even combine the two methods. (For example, `site.posts [34] .title`.)
 * **First and last array.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve its first or last element.
 * **Array size or hash** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve the number of elements of the original expression, such as an integer.
@@ -110,7 +110,7 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `capitalize` - Put capital word in the input phrase
 * `ceil` - Round up a decimal number to the next integer, *e.g.* <span v-pre> `{{4.6 | ceil}} #=> 5` </span> 
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
-* `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre> `{{undefined_variable | default: “Default value”}} #=> “Default value"` </span> 
+* `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre> `{{undefined_variable | default: "Default value"}} #=> "Default value"` </span> 
 * `divided_by` - Division of integers *e.g.* <span v-pre> `{{10 | divided_by:3}} #=> 3` </span> 
 * `downcase` - Converts an input string to lowercase
 * `escape_once` - Returns an escape version of html without affecting existing escape features
@@ -140,9 +140,9 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `sha1` - Return the SHA-1 hash of a string *e.g.* <span v-pre> `{% 'Hello world' | sha1%} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'` </span>.
 * `sha256` - Return the SHA-256 hash of a string *e.g.* <span v-pre> `{% 'Hello world' | sha256%} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3ccc0756f3cc0756b2477232534a8aeca37f3cc'`</span>.
 * `size` - Return the size of an array or string
-* `slice` - Divide a string. Take an offset and a length, *e.g.* <span v-pre> `{{“hello” | slice ፦3, 3}} #=> llo` </span> 
+* `slice` - Divide a string. Take an offset and a length, *e.g.* <span v-pre> `{{"hello" | slice ፦3, 3}} #=> llo` </span> 
 * `sort` - Sorts array elements
-* `split` - Split a string into a matching pattern *e.g.* <span v-pre> `{{“a~b” | split: "~”}} #=> ['a', 'b']` </span> 
+* `split` - Split a string into a matching pattern *e.g.* <span v-pre> `{{"a~b" | split: "~"}} #=> ['a', 'b']` </span> 
 * `strip_html` - Removes html from the string
 * `strip_newlines` - Removes all new lines (\ n) from the string
 * `strip` - Removes all blanks from both ends of the string.
@@ -195,15 +195,15 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use a 
 `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
 * `{% if <CONDITION>%}... {% endif%}` — Attach a section of the template that will only be executed if the condition is true.
-* `{% elsif <CONDITION>%}` — Can optionally be used within an `if... endif` block. Specifies another condition; if the initial “if” fails, Liquid tests the “elsif”, and executes the next section of the template if it succeeds. Any elsif number can be used in a block `if` * `{% else%}` - Optionally it can be used within a block `if... endif`, _after_ of any “elsif” tag. If all of the above conditions fail, Liquid will execute the template section following the tag “else”.
-* `{% unless <CONDITION>%}... {% endunless%}` — The reverse side of an “if” statement. Do not use “elsif” or “else” with an unless statement.
+* `{% elsif <CONDITION>%}` — Can optionally be used within an `if... endif` block. Specifies another condition; if the initial "if" fails, Liquid tests the "elsif", and executes the next section of the template if it succeeds. Any elsif number can be used in a block `if` * `{% else%}` - Optionally it can be used within a block `if... endif`, _after_ of any "elsif" tag. If all of the above conditions fail, Liquid will execute the template section following the tag "else".
+* `{% unless <CONDITION>%}... {% endunless%}` — The reverse side of an "if" statement. Do not use "elsif" or "else" with an unless statement.
 
-The condition of a tag `if`, `elsif` or `unless` must be a normal Liquid expression or a _comparation_ using Liquid expressions. Note that comparison operators are implemented using tags similar to “if”; they don't work anywhere else in Liquid.
+The condition of a tag `if`, `elsif` or `unless` must be a normal Liquid expression or a _comparation_ using Liquid expressions. Note that comparison operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
 
 The available relational operators are:
 
 * `==,! =, `and` <> `— equal and unequal (the latter two are synonyms)
-    * There is a special secret value “empty” (without quotes) to which arrays can be compared; the comparison is true if the array does not have members.
+    * There is a special secret value "empty" (without quotes) to which arrays can be compared; the comparison is true if the array does not have members.
 * `<, <=, >, >=` — less/greater than
 * `contains` — a wrapper around the `include method? `of Ruby, which is implemented in strings, arrays, and hashes. If the left argument is a string and the right is not, it converts to string the right.
 
@@ -212,9 +212,9 @@ Available Boolean operators are:
 * `and`
 * `or`
 
-Note that there is NO operator, and also that YOU CAN NOT use parentheses to control the order of operations, as operator precedence appears not to be specified. So when you have doubts, use nested “if” statements.
+Note that there is NO operator, and also that YOU CAN NOT use parentheses to control the order of operations, as operator precedence appears not to be specified. So when you have doubts, use nested "if" statements.
 
-Liquid expressions are tested to determine their “truthfulness” in what appears to be a Ruby form:
+Liquid expressions are tested to determine their "truthfulness" in what appears to be a Ruby form:
 
 * `true` is true
 * `false` is false.
@@ -304,7 +304,7 @@ Liquid expressions are tested to determine their “truthfulness” in what appe
 
 ### Case Statement
 
-If you need more conditions, you can use the “case” statement:
+If you need more conditions, you can use the "case" statement:
 
 ```liquid
 {% case condition %}
@@ -409,10 +409,10 @@ Instead of looping over an existing collection, you can also loop through a rang
 
 You can exit a loop early with the following tags:
 
-* `{% continue%}` - immediately ends the current iteration, and continues the “for” loop with the next value.
-* `{% break%}` - immediately ends the current iteration, then completely ends the “for” loop.
+* `{% continue%}` - immediately ends the current iteration, and continues the "for" loop with the next value.
+* `{% break%}` - immediately ends the current iteration, then completely ends the "for" loop.
 
-Both are only useful when combined with something like an “if” statement.
+Both are only useful when combined with something like an "if" statement.
 
 ``` liquid
 {% for page in pages %}
@@ -510,7 +510,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 {% endif %}
 ```
 
-If you want to combine multiple strings into one and save it in a variable, you can do so with the `capture` tag, which “captures” whatever is displayed inside, and then assign the captured value to the given variable instead of showing it on the screen.
+If you want to combine multiple strings into one and save it in a variable, you can do so with the `capture` tag, which "captures" whatever is displayed inside, and then assign the captured value to the given variable instead of showing it on the screen.
 
 ```liquid
   {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
