@@ -4,7 +4,7 @@ search: true
 
 # Liquid Markup
 
-Liquid es un motor de plantillas que está escrito con requerimientos muy específicos:
+Liquid Markup es un motor de plantillas que está escrito con requerimientos muy específicos:
 
 * Debe tener un marcado bonito y sencillo. Los motores de plantillas que no producen un marcado atractivo no son divertidos de usar.
 * Tiene que ser no evaluable y seguro. Las plantillas Liquid están hechas para que los usuarios puedan editarlas. No quieres ejecutar código en tu servidor que tus usuarios escribieron.
