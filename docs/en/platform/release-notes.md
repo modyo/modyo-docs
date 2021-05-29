@@ -4,18 +4,6 @@ search: true
 
 # Release Notes
 
-### 9.2.X - First release planned for the first quarter of 2021.
- 
-<Badge text="Core" type="core" vertical="middle"/>
-* Administrators groups: Easily add users corresponding to different sites or spaces.
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Site stages: Work in a safe pre-productive environment of a site without compromising the integrity of what has already been published.
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
-* User Realms: Set up different user realms to access different sites or even different stages of the same site.
-
 ### 9.1.21 - 28 May 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
@@ -30,7 +18,7 @@ search: true
 ### 9.1.19 - 19 May 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs resolved.
+* Multiple bugs solved
 
 ### 9.1.18 - 18 May 2021
  
@@ -48,7 +36,7 @@ search: true
 ### 9.1.16 - April 23, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs resolved.
+* Multiple bugs solved
 * Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -58,7 +46,7 @@ search: true
 ### 9.1.15 - April 14, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs resolved.
+* Multiple bugs solved
 * Added to the panel a tool to resolve inconsistencies in secondary structure to maintain the order of the pages of the site.
 * Fixed a bug when uploading very large images to the file manager.
 * Fixed a bug that caused the code editor to freeze on specific liquid syntaxes.
@@ -70,7 +58,7 @@ search: true
 ### 9.1.14 - April 1, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs resolved.
+* Multiple bugs solved
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * A bug where you could loose the control over the templates was resolved.
@@ -80,7 +68,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 - Multiple JS libraries with vulnerabilities updated.
@@ -99,7 +87,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -114,7 +102,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 - Errors caused by standard attributes with specific formats in OIDC integration were fixed.
@@ -138,7 +126,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple performance improvements.
 
 ### 9.1.8 - February 02, 2021
@@ -146,7 +134,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 ### 9.1.7 - January 25, 2021
@@ -154,7 +142,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -170,7 +158,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -188,7 +176,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -207,7 +195,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -229,7 +217,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -245,7 +233,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -265,7 +253,7 @@ search: true
 - [New Preview Mode](/es/platform/core/key-concepts.html #modo -preview): A preview mode that allows you to view content, pages, templates, widgets and navigation together.
 - Upgrade the ElasticSearch version to 7.4.
 - Upgrade MySQL version to version 5.7 (adds support for emojis).
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 - Multiple security improvements.
 
@@ -290,7 +278,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Security enhancements are added to file upload endpoints.
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -310,7 +298,7 @@ search: true
 
 - Improvements to management and plan quotas.
 - Empty view of [my tasks](/es/platform/core/the-modyo-interface.html) is added.
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -334,7 +322,7 @@ search: true
 - Support for FOG with Azure and Google Cloud is added as Modyo installation base.
 - Added integration with [Google Authenticator](/es/platform/core/security.html #autenticacion -in-two-steps) for second factor of team member authentication.
 - [password policies](/es/platform/core/security.html #politica -password) are added for team members.
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -357,7 +345,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -368,7 +356,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -380,7 +368,7 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -391,7 +379,7 @@ search: true
 
 ### 9.0.2 - 04 February 2020
 
-&nbsp;
+ 
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
@@ -403,7 +391,7 @@ search: true
 * Usability improvements to [asset manager](/es/platform/content/asset-manager.html).
 
 ### 9.0.1 - 17 January 2020
- 
+&nbsp;
 <Badge text="Core" type="core"/>
 * Multiple bugs resolved.
 * Multiple navigation and usability improvements.
@@ -423,7 +411,7 @@ search: true
 - Separation of users and [team members](/es/platform/core/roles.html #equipo), those who have access to the platform are segregated from the users of the page itself.
 - New [roles and permissions](/es/platform/core/roles.html).
 - [Team review](/es/platform/core/key-concepts.html), replacing the workflow application, allows team collaboration for release approval and step to production.
-- Multiple bugs resolved.
+- Multiple bugs solved
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
