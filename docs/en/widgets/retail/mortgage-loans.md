@@ -36,7 +36,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
  function setFrameHeightCo (id, ht) {
  var ifrm = document.getElementById (id);
  if (ifrm) {
- ifrm.style.height = ht + 4 + "px”;
+ ifrm.style.height = ht + 4 + "px";
  }
  }
  //iframed document sends its height using postMessage
