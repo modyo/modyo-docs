@@ -2276,7 +2276,7 @@ that you do not use comments.
  end
 
  # bad
- class Utilities። Store
+ class Utilities::Store
  Module.nesting # => [Utilities::Store]
 
  def initialize
@@ -2292,7 +2292,7 @@ that you do not use comments.
  Module.nesting # => [Utilities::WaitingList, Utilities]
 
  def initialize
- @queue = Queue.new # Refers to Utilities። Queue
+ @queue = Queue.new # Refers to Utilities::Queue
  end
  end
  end
