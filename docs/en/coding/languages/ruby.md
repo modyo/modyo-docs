@@ -2265,7 +2265,7 @@ that you do not use comments.
 
 * <a name="namespace-definition"> </a> 
  Defines (and reopens) Namespace Classes and Modules using a specific nesting.
- Using the scope resolution operator `።` you can lead to amazing constant searches due to Ruby's lexical scope
+ Using the scope resolution operator `::` you can lead to amazing constant searches due to Ruby's lexical scope
  [lexical scoping](https://cirw.in/blog/constant-lookup.html), which depends on the Module being nested from the point of the definition.
  Example.
 
@@ -2277,7 +2277,7 @@ that you do not use comments.
 
  # bad
  class Utilities። Store
- Module.nesting # => [Utilities። Store]
+ Module.nesting # => [Utilities::Store]
 
  def initialize
  # Refers to the top level። Queue class because Utilities isn't in the
