@@ -31,7 +31,7 @@ You can preview the changes as a user without session or user with Modyo session
 
 By default, parts by comparing the published version to the editable version, but by using the version selectors, you can also compare with the backup versions.
 
-::: tip Tip
+:::tip Tip
 Each time you publish a version, the version that was released becomes a backup version. By default, up to 20 backups are saved, so that the most recent 20 backups can be compared, restored, and rolled back. 
 For more information on versioning, check out the [versioning] section (/es/platform/core/key-concepts.html #versionado).
 :::
@@ -75,11 +75,11 @@ You can add custom snippets to the end of the platform's snippets list by clicki
 
  <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300"> 
 
-::: tip Tip
+:::tip Tip
 For the system to recognize the type of programming language to which the snippet belongs, you must add the underscore ending +ending, i.e. **"front_css"** or **"library_js"** by default will recognize the snippet as HTML language.
 :::
 
-::: tip Tip
+:::tip Tip
 All elements in the Template Builder use Liquid as a template engine.
 
 For more information on what Liquid is and how to get the best out of it, check out the [Liquid Markup] page (/es/docs/channels/liquid-markup.html)
@@ -91,7 +91,7 @@ In the work area, under the tabs, you will find a bar with useful items:
 
 **File Manager**: A modal is raised where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
-::: tip Tip
+:::tip Tip
 For more information about the benefits and features of File Manager, go to [Asset Manager](/es/docs/content/asset-manager.html)
 :::
 
@@ -107,15 +107,15 @@ For more information about the benefits and features of File Manager, go to [Ass
 
  <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300"> 
 
-::: tip Tip
+:::tip Tip
 If you publish a version, you can see that the changelog disappears, this is because the new editable version has not had any changes.
 :::
 
-::: tip Tip
+:::tip Tip
 Sub-versions are for each template, so for some you can see that there are changes and for others you will not see the change selector. Similarly, if you return to a previous sub-version of a template, it does not affect the rest of the templates.
 :::
 
-::: tip Tip
+:::tip Tip
 If you reset a version prior to the editable version, you will be able to access the sub-versions of each template of that version. 
 You can learn more about the [versioned here]. (/platform/core/key-concepts.html #versionado)
 :::
@@ -136,11 +136,11 @@ At the top you can find different actions:
 - **Reset ** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Like the Reset action in the Template Builder, this action restores all editable templates to the original version of the theme.
 - **Load templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: In a few cases, after complex migrations, there are unmodified templates that you could not miss and you might not see them in the list found in the Template Builder. This action retrieves those templates from the original theme and allows them to reoccupy them.
 
-::: tip Tip
+:::tip Tip
 The load templates action does not modify or touch the editable templates that are already visible in the Template Builder, it only restores those that are not visible.
 :::
 
-::: tip Tip
+:::tip Tip
 When you create a theme from one site, that theme becomes available to all other sites in the account, so you can create a base theme, and start from that base when you need to create new sites quickly.
 :::
 
@@ -167,7 +167,7 @@ To create a custom view, you need to enter the Template Builder and make sure th
 The name of the view will be the path (URL) relative to the site of the content to display, so pay attention when naming these views.
 :::
 
-::: tip Tip
+:::tip Tip
 You can use the name you want for views, no matter what type or space you want to associate it with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site you're creating these views on.
 :::
 
@@ -191,7 +191,7 @@ A basic example of Liquid+HTML code you can use in these views is:
 </div>
 ```
 
-::: tip Tip
+:::tip Tip
 To learn more about using Liquid, go to [Liquid markup](/es/platform/channels/liquid-markup.html)
 :::
 
@@ -204,7 +204,7 @@ If you want to display the view with the values of the entry you're working on, 
 1. An entry already exists in the language of the site. 
 1. The slug of the input is `entry_slug`.
 
-::: tip Tip
+:::tip Tip
 
 To find the shape of the URL, if the custom domain is enabled, you must go to ``Site Settings > Domains``.
 
