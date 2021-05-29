@@ -8,7 +8,7 @@ One of the advantages of working with Widgets locally using the Modyo CLI ([**mo
 
 Catalog Widgets, as well as base templates to start a new project, bring _"recipes"_ from [**GitHub Actions**](https://GitHub.com/features/actions) that you can use to run some of the most common CI/CD tasks quickly and easily.
 
-These _"recipes” _ are in the **README.md** file located in the Widget's `.github` folder.
+These _"recipes" _ are in the **README.md** file located in the Widget's `.github` folder.
 
 ```treeview {1, 5}
 ├── .Github/
@@ -50,7 +50,7 @@ After creating the access API we need to generate a token for the user who will 
 We recommend creating a new user that has permissions and the token to upload and publish Widgets from an CI/CD service.
 :::
 
-**Again at account level: **
+**Again at account level:**
 
 1. Settings
 2. Team (we select or create a user)
