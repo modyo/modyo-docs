@@ -34,15 +34,15 @@ This is an example of how to implement this pattern in a Widget.
 
 To consume data with Vue.js using the repository design pattern that helps us undock, follow these simple steps.
 
-#### 1. Create a “repositories” folder within the `src` folder of the Widget.
+#### 1. Create a "repositories" folder within the `src` folder of the Widget.
 
    ```sh
    cd src && mkdir repositories
    ```
 
-#### 2. Create a “clients” folder (Could have any name, but is recommended and use _clients_)
+#### 2. Create a "clients" folder (Could have any name, but is recommended and use _clients_)
 
-   I will create a “clients” folder inside the “repositories” folder, basically what will be inside this folder are the different HTTP Clients you might want to use, for example if you want to use **Modyosdk**, Axios, Vue-resource etc.
+   I will create a "clients" folder inside the "repositories" folder, basically what will be inside this folder are the different HTTP Clients you might want to use, for example if you want to use **Modyosdk**, Axios, Vue-resource etc.
 
    ```sh
    cd repositories && mkdir clients
@@ -139,7 +139,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
    In the above code we define and export all our API requests that we need
 
 :::tip Important
-We must import the corresponding HTTP Client file into all Repositories that need it. In this example “ModyoClient”
+We must import the corresponding HTTP Client file into all Repositories that need it. In this example "ModyoClient"
 :::
 
 #### 5. Create the file "RepositoryFactory.js”
@@ -233,7 +233,7 @@ export default {
 
 #### In the Vuex Store
 
-In the file "actions.js" located in the “store” folder of the Widget we paste the following
+In the file "actions.js" located in the "store" folder of the Widget we paste the following
 
 ```js
 import Repository from "../repositories/RepositoryFactory";
