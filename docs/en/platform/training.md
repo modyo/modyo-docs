@@ -70,4 +70,4 @@ To report a problem or queries you must:
 In order to review what you report it is important that you can include in the “description” field of the ticket the following information:
 - **Context:** indicate account route/affected site, browser used, Modyo version, user role in the platform (the latter if applicable).
 - **Description:** Briefly indicate the step by step to be able to replicate the case.
-- **Files (optional) :** Include screenshots or files that do not contain sensitive customer information in the case of transactional sites.
+- **Files (optional):** Include screenshots or files that do not contain sensitive customer information in the case of transactional sites.
