@@ -249,7 +249,7 @@ This is the minimum size in which the isotype can be used.
 </td>
 <td style="border-left: 0;">
 <b>Isotype:</b><br>
-Tamaño digital minimo: 24px
+Minimum digital size: 24px
 </td>
 </tr>
 </table>
