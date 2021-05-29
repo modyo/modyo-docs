@@ -14,7 +14,7 @@ Through the Widget, the customer can perform different functions according to th
 modyo-cli get modyo-widgets-retail-cash-advance
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/personas/avance-en-efectivo)
+[Open in another tab](https://widgets-es.modyo.com/personas/avance-en-efectivo)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/avance-en-efectivo" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/> 
 
@@ -46,7 +46,7 @@ After the selected features, the Widget will display the preview simulation and 
  function setFrameHeightCo (id, ht) {
  var ifrm = document.getElementById (id);
  if (ifrm) {
- ifrm.style.height = ht + 4 + “px”;
+ ifrm.style.height = ht + 4 + "px”;
  }
  }
  //iframed document sends its height using postMessage
