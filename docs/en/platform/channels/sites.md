@@ -20,7 +20,7 @@ When you enter, you can see that there are 4 states:
 
 To create a site, simply click on the**New** tab, which will allow you to designate the name and host, and then a template for its appearance and structure.
 
-After that, you can see it in “Enabled” mode, which means that it is online to work.
+After that, you can see it in "Enabled" mode, which means that it is online to work.
 
 :::warning Attention
 In the Site Index, you will only see the sites where you are part of the team working with a role.
@@ -30,14 +30,14 @@ In the Site Index, you will only see the sites where you are part of the team wo
 
 You can review and publish multiple items of a site in a single view. To review the differences for an item, select the item from the left listing, and the differences between the editable and published version will appear in the right section of the view.
 
-If you want to publish multiple items in one step, you must press the “Publish” button from the pages, navigation, widgets or templates and you must mark in the list all the items you want to publish and then press the button to publish again.
+If you want to publish multiple items in one step, you must press the "Publish" button from the pages, navigation, widgets or templates and you must mark in the list all the items you want to publish and then press the button to publish again.
 
 :::warning Attention
 All items that have pending changes to be published will appear in the listing, so if any item does not appear in the listing, it is very likely that you do not have any changes to publish yet.
 
 If you have team review enabled, only items that are already approved will appear in the list.
 
-If you need to quickly publish an item, admin users can skip the approval process using the “Force Publish” option allowing the item to move directly to the publication view.
+If you need to quickly publish an item, admin users can skip the approval process using the "Force Publish" option allowing the item to move directly to the publication view.
 :::
 
 ## Setting up a Site
@@ -70,11 +70,11 @@ This option is irreversible, so you need to be completely sure when you run this
 By default, new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets are located in the _snippets>general_ section of the [Template builder](/es/platform/channels/templates.html) and are embedded in both the snippet _head_ and the _home_ and _base_ views.
 
 
-If you have the latest theme available and you still don't have these snippets, you can go to the “Themes” section at the top right and click on the “Upload templates” option in the additional options at the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
+If you have the latest theme available and you still don't have these snippets, you can go to the "Themes" section at the top right and click on the "Upload templates" option in the additional options at the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
 
 If you have an old theme installed and do not have these snippets, here you can access the code to create them as custom snippets and be able to easily embed Google Tag Manager to your site.
 
-1. Create a custom snippet with the following code and then embed the snippet into the site head using `{% snippet “gtm-head”%}`, replacing “gtm-head” with the name you gave the snippet.
+1. Create a custom snippet with the following code and then embed the snippet into the site head using `{% snippet "gtm-head"%}`, replacing "gtm-head" with the name you gave the snippet.
 
 **Google Tag Manager for _head_**
 ```liquid
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% endif %}
 ```
 
-2. Create a custom snippet with the following code and then insert it inside the body tags of the home and base views using `{% snippet “gtm-body”%}`, replacing “gtm-body” with the name you gave the snippet.
+2. Create a custom snippet with the following code and then insert it inside the body tags of the home and base views using `{% snippet "gtm-body"%}`, replacing "gtm-body" with the name you gave the snippet.
 
 **Google Tag Manager for _body_**
 ```liquid
@@ -167,7 +167,7 @@ The options to configure are:
 - **Tagline**: Description that appears in search engines, under the site name
 - **Keywords**: Words that users search and you want the site to appear.
 - **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your default sitemap file, but you can also manually modify it to focus only on a particular page and content.
-- **Robots.txt**: This file is part of the Robots Exclusion Protocol (REP), a group of web rules that regulate how robots track the web, access and index content and serve it to users. In practice, this file determines whether or not certain user agents (web tracking software) may or may not track parts of a website. These tracking instructions are specified “allowing” or “prohibiting” the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
+- **Robots.txt**: This file is part of the Robots Exclusion Protocol (REP), a group of web rules that regulate how robots track the web, access and index content and serve it to users. In practice, this file determines whether or not certain user agents (web tracking software) may or may not track parts of a website. These tracking instructions are specified "allowing" or "prohibiting" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
 :::tip Tip
 The robots.txt and sitemap.xml files are only visible on the site, if you have the custom domain enabled (custom domain). Otherwise, robots.txt and sitemap.xml are only at the account level, have their default values and cannot be customized.
@@ -203,7 +203,7 @@ The Domains section allows you to know where the site is publicly located, so it
 The variables you can change here are:
 
 - **Host**: Where the site is located inside the server.
-- **Enable custom domains**: If you want within the domain, there are sites with a custom URL or “custom host.
+- **Enable custom domains**: If you want within the domain, there are sites with a custom URL or "custom host.
 - **Enable SSL on the site**: You need to have a certificate inside the server to enable it.
 - **Primary domain**: Site address.
 - **Alternative**: Secondary address to redirect in case the first fails.
@@ -307,7 +307,7 @@ He is the user in charge of the structural development of resources, the creatio
 
 This user cannot publish, delete, return to previous versions of resources (Rollback), or change settings.
 
-There is a variation of this role with the name “CLI” that in addition to developer permissions, allows them to push widgets from external applications, such as [modyo-cli](/es/platform/channels/widgets.html #modyo -cli).
+There is a variation of this role with the name "CLI" that in addition to developer permissions, allows them to push widgets from external applications, such as [modyo-cli](/es/platform/channels/widgets.html #modyo -cli).
 
 #### Reviewer
 
@@ -441,7 +441,7 @@ the _tags_ `script` and `style` in your _templates_ using the variable `csp_nonc
 
 ```liquid
  <script nonce="{{csp_nonce}}"> 
- alert (“everything will be fine”);
+ alert ("everything will be fine");
  </script> 
 ```
 
