@@ -48,8 +48,7 @@ Access will be granted for the period of one month, during which you will have t
 ### Test environment
 To understand how the Modyo platform works it is very important that you can test what you have learned. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
 
-To create the trial account you must log in to [next link](https://platform.modyo.cloud/onboarding
-) and fill out the form by entering your data and those of the organization.
+To create the test account you must log in to the [following link] (https://platform.modyo.cloud/onboarding) and complete the form by entering your data and those of the organization.
 
 You will automatically be assigned the account administrator role, granting you privileges to invite other users on your team to participate in it.
 
