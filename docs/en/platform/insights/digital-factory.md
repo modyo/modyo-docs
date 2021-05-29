@@ -18,7 +18,7 @@ When you filter by site, items that use space data will not contribute their dat
 
 ![Digital factory](/assets/img/platform/digital-factory.png)
 
-### Activity by types
+### Activity by type
 
 You will see five boxes representing the number of items created, modified, submitted for review, approved, and published. The elements that are grouped in these boxes are posts, page, navigation, widgets, and templates.
 
