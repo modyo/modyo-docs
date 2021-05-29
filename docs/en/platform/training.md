@@ -56,7 +56,7 @@ This environment will be available for the limited period of time. Once the dead
 
 ## How to ask for help?
 
-### Queries and report problems
+### Questions and report problems
 To report a problem or queries you must:
 1. Log in to our Support Center: https://support.modyo.com/hc/en
 2. Create an account linked to your corporate email
