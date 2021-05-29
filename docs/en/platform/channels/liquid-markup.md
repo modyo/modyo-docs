@@ -4,7 +4,7 @@ search: true
 
 # Liquid Markup
 
-Liquid is a template engine that is written with very specific requirements:
+Liquid Markup is a template engine that is written with very specific requirements:
 
 * It must have a nice and simple marking. Template engines that do not produce attractive markup are not fun to use.
 * It has to be unassessable and safe. Liquid templates are made for users to edit them. You don't want to run code on your server that your users wrote.
