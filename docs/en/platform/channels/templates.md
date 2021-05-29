@@ -412,81 +412,83 @@ axios_api.interceptors.request.use (AppendTokentoRequest, ErrorRequest);
 ```js
 // is in charge of raising the warning modal that will warn of the upcoming session closure, this variable will return a promise that will be effective if the Keep Session button is clicked and that will launch a reject promise in the case of selecting the button with the refusal to continue.
 var modalConfirm = function() {
-  return new Promise(function(resolve, reject) {
-    $("#session-modal").modal({
-      backdrop: "static",
-      keyboard: false,
-      show: true
-    });
-    $("#session-modal-yes").on("click", function() {
-      resolve("keep session");
-      $("#session-modal").modal("hide");
-    });
-    $("#session-modal-no").on("click", function() {
-      reject("destroy session");
-      $("#session-modal").modal("hide");
-    });
-  });
+return new Promise(function(resolve, reject) {
+$("#session-modal").modal({
+backdrop: "static",
+keyboard: false,
+show: true
+});
+$("#session-modal-yes").on("click", function() {
+resolve("keep session");
+$("#session-modal").modal("hide");
+});
+$("#session-modal-no").on("click", function() {
+reject("destroy session");
+$("#session-modal").modal("hide");
+});
+});
 };
-// will be in charge of starting the time tracking to raise this modal and manage the session on the Front side. The following explains each of the properties and methods of this object that manages the session.
+// will be the one in charge of starting the time tracking to raise this modal and manage the session on the Front side. The following explains each of the properties and methods of this object that manages the session
 var sessionManager = {
-  // property that defines the time from the last activity to the end of the session in seconds (not the token refresh time but the session end time, it is recommended that this is one minute less than the time declared by the Open ID Connect provider to have some slack with the session and the session closure is 100% valid).
-  timeToEndSessionInSeconds: 900,
-  // property defining the inactivity mode lifting time since the last action or request on the page.
-  timeToRaiseWarningModalInSeconds: 720,
-  // property that stores the timestamp of the last activity time of the sessionManager
-  lastActionTimeInThisWindow: new Date().getTime(),
-  // función que convierte segundos a milisegundos
-  secondsToMilisecs: function(minutes) {
-    return minutes * 1000;
-  },
-  // property to store the interval id of session event revision
-  intevalId:null,
-  // function that determines whether the application is being accessed from the modyoShell or not.
-  isModyoAppShell: function() {
-    return /; Modyo_App_Shell/.test(navigator.userAgent);
-  },
-  // method to be executed at each page load to start the session event tracking process recommended to make this invocation sessionManager.init() in the layout head to start tracking the session (in some cases it is defined that developers do not launch this invocation in that case the test API to be connected must also have this if and so you will achieve that axios_api serves for the develop and development environment one with session and the other without session manager).
-  init: function() {
-    this.resetIdleTime();
-    this.intevalId=this.interval();
-  },
-  // restarts the timeout or creates a new activity on the site
-  resetIdleTime: function() {
-    this.lastActionTimeInThisWindow = new Date().getTime();
-    var sessionEndTime =
-      this.lastActionTimeInThisWindow +
-      this.secondsToMilisecs(this.timeToEndSessionInSeconds);
-    localStorage.setItem("timeToEndSession", sessionEndTime);
-    var raiseWarningModalTime =
-      this.lastActionTimeInThisWindow +
-      this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
-    localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
-  },
-  // method that starts the activity every second js that handles session events
-  interval: function() {
-    var self = this;
-    return setInterval(this.checkSessionEvents, 1000, self);
-  },
-  // method that raises the warning time modal
-  raiseModal: function() {
-    return modalConfirm();
-  },
-  // method that logs out and clears storage
-  logout: function() {
-    localStorage.clear();
-    sessionStorage.clear();
-    clearInterval(this.intevalId);
-    var withRedirect =
-      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-    if (withRedirect) {
-      window.location.href =
-        "{{site.account_url}}/logout?multi=true&redirect_to=https://chile.larrainvial.com";
-    } else {
-      window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
-    }
-  },
-  // method that reviews session events to determine if it is time to close the session or to keep it after displaying the modal.
+// property that defines the time from the last activity to the end of the session in seconds (not the refresh time of the token but the end of the session, it is recommended that this is one minute less than that declared by the Open ID Connect provider to have a little slack with the session and the closing of the same is 100% valid)
+timeToEndSessionInSeconds: 900,
+// property where is defined the time to raise the inactivity modal since the last action or request on the page.
+timeToRaiseWarningModalInSeconds: 720,
+// property that stores the timestamp of the last activity time of the sessionManager.
+lastActionTimeInThisWindow: new Date().getTime(),
+// function that converts seconds to milliseconds
+secondsToMillisecs: function(minutes) {
+return minutes * 1000;
+},
+// property to store the session event review interval id.
+intevalId:null,
+// function that determines whether the application is being accessed from the modyoShell or not
+isModyoAppShell: function() {
+return /; Modyo_App_Shell/.test(navigator.userAgent);
+},
+// method that must be executed on each page load to start the process of session events to track recommended to make this invocation sessionManager.init() in the head of the layout to start tracking the session (in some cases it is defined that developers do not launch this invocation in that case the test API to connect must also have this if and so you get axios_api to serve for the develop and development environment one with session and the other without session manager)
+init: function() {
+this.resetIdleTime();
+this.intevalId=this.interval();
+},
+// resets the timeout or creates a new activity on the site
+resetIdleTime: function() {
+this.lastActionTimeInThisWindow = new Date().getTime();
+var sessionEndTime =
+this.lastActionTimeInThisWindow +
+this.secondsToMillisecs(this.timeToEndSessionInSeconds);
+localStorage.setItem("timeToEndSession", sessionEndTime);
+var raiseWarningModalTime =
+this.lastActionTimeInThisWindow +
+this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
+localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
+},
+// method that starts activity every second js that handles session events.
+interval: function() {
+var self = this;
+return setInterval(this.checkSessionEvents, 1000, self);
+},
+// method that raises the warning time modal.
+raiseModal: function() {
+return modalConfirm();
+},
+// method that logs out and clears storage
+logout: function() {
+localStorage.clear();
+sessionStorage.clear();
+clearInterval(this.intevalId);
+var withRedirect =
+arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+if (withRedirect) {
+window.location.href =
+"{{site.account_url}}/logout?multi=true&redirect_to=https://chile.larrainvial.com";
+} else {
+window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
+}
+},
+// method that checks the session events to determine if it is time to close the session or keep it after displaying the modal.
+
+Translated with www.DeepL.com/Translator (free version)
   checkSessionEvents: function(self) {
     var sessionEndTime = localStorage.getItem("timeToEndSession");
     var raiseWarningModalTime = localStorage.getItem("timeToRaiseWarningModal");
