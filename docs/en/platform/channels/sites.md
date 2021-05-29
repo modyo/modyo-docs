@@ -4,7 +4,7 @@ search: true
 
 # Sites
 
- <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" /> 
+<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
 This is where you need to operate to create digital channels within the platform. In this case, the operation of sites involves the entire development, design and flow of navigation. If you want to add content to each of them, it must be added in the Content section.
 
