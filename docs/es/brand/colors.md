@@ -59,7 +59,7 @@ RGB: 32 104 216</p>
 
 ## Paleta de colores
 
-Nuestra marca se acompla bien a los siguientes colores:
+Nuestra marca se acopla bien a los siguientes colores:
 
 <table class="no-border">
 <tr>
@@ -79,7 +79,7 @@ RGB: 32 104 216</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #444C60;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -91,7 +91,7 @@ RGB: 68 76 96</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #737988;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -103,7 +103,7 @@ RGB: 115 121 136</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #A1A5AF;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -115,7 +115,7 @@ RGB: 161 165 175</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #D0D2D7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -127,7 +127,7 @@ RGB: 208 210 215</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #F3F4F7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -139,7 +139,7 @@ RGB: 208 210 215</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 </tr>
 
 <tr>
@@ -160,7 +160,7 @@ RGB: 5 165 98</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #3dc681;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -172,7 +172,7 @@ RGB: 14 189 116</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #51CD8F;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -184,7 +184,7 @@ RGB: 62 202 144</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #81DAAD;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -196,7 +196,7 @@ RGB: 110 215 172</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #BFEDD7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -208,7 +208,7 @@ RGB: 159 229 199</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #EFFBF5;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -220,7 +220,7 @@ RGB: 159 229 199</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 </tr>
 <tr>
 <td colspan="6">
@@ -240,7 +240,7 @@ RGB: 27 87 178</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #2068D5;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -252,7 +252,7 @@ RGB: 32 104 213</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #5891E7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -264,7 +264,7 @@ RGB: 88 145 231</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #A0C1F3;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -276,7 +276,7 @@ RGB: 160 193 243</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #CDDFF9;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -288,7 +288,7 @@ RGB: 205 223 249</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #EDF3FC;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -300,7 +300,7 @@ RGB: 205 223 249</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 </tr>
 <tr>
 <td colspan="6">
@@ -321,7 +321,7 @@ RGB: 27 87 178</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #4B4F57;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -333,7 +333,7 @@ RGB: 32 104 213</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #5D616C;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -345,7 +345,7 @@ RGB: 88 145 231</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #DEDFE3;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #fff;">
@@ -357,7 +357,7 @@ RGB: 160 193 243</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 <span style="background: #F6F7F7;width: 100px;height: 100px;border-radius: 100%;display: flex;align-items: center;justify-content: center;font-size: 12px;;color: #444C60;">
@@ -369,12 +369,12 @@ RGB: 205 223 249</p>
 </div>
 </div>
 </td>
-<!-- -->
+
 <td>
 <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
 </div>
 </td>
-<!-- -->
+
 </tr>
 </table>
 
