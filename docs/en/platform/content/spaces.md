@@ -77,7 +77,7 @@ Cache is a tool that allows you to reduce the number of applications that reach 
  <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600"> 
 
 :::warning Attention
-Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled “A”, and then post the same content with the title “A+1", for 5 minutes you will see the content with the title “A” until the cache initial is invalidated.
+Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled "A", and then post the same content with the title "A+1", for 5 minutes you will see the content with the title "A" until the cache initial is invalidated.
 :::
 
 :::tip Tip
@@ -101,7 +101,7 @@ When CORS is enabled, the following changes occur within the API:
 
 ```javascript
 Varnish: sub vcl_hash {if (req.http.Origin) {hash_data (req.http.Origin);}}
-Nginx: set $cache_key “$http_x_forwarded_proto: //$host$request_uri-$http_accept-$http_x_requested_with”;
+Nginx: set $cache_key "$http_x_forwarded_proto: //$host$request_uri-$http_accept-$http_x_requested_with";
 ```
 
 #### CORS and SSL
