@@ -12,7 +12,7 @@ This Widget allows you to simulate a mortgage credit and start the application f
 modyo-cli get modyo-widgets-retail-mortgage-loan
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/personas/creditos-hipotecarios)
+[Open in another tab](https://widgets-es.modyo.com/personas/creditos-hipotecarios)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/> 
 
