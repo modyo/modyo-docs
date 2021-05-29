@@ -17,7 +17,7 @@ The primary colors of the brand are petroleum blue and green. Both are connected
  <span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;"> 
  </span> 
  <div style="margin-left: 24px;"> 
- <p> <b> Blue Oil </b> </p> 
+ <p> <b> Dark Blue </b> </p> 
  <p> HEX: #151F38 <br> 
 RGB: 21 31 56 </p> 
  </div> 
