@@ -410,7 +410,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ### Un controlador de sesiones
 
 ```js
-// se encarga de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón Mantener Sesión y que lanzará una promesa reject en el caso de seleccionar el botón con la negativa de continuar
+// se encarga de levantar el modal de advertencia que avisará el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón Mantener Sesión y que lanzará una promesa reject en el caso de seleccionar el botón con la negativa de continuar
 var modalConfirm = function() {
   return new Promise(function(resolve, reject) {
     $("#session-modal").modal({
@@ -440,7 +440,7 @@ var sessionManager = {
   secondsToMilisecs: function(minutes) {
     return minutes * 1000;
   },
-  // propiedad para almacenar el interval id de revision de eventos de sesión
+  // propiedad para almacenar el interval id de revisión de eventos de sesión
   intevalId:null,
   // función que determina si se esta accediendo a la aplicación desde el modyoShell o no
   isModyoAppShell: function() {

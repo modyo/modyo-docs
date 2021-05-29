@@ -17,13 +17,13 @@ A lo largo de este estándar, encontrarás reglas generales y otras particulares
 ### ¿Cómo puedo contribuir?
 El estándar se revisa periódicamente. Ajustes y cambios son siempre bienvenidos, y cuando se realizan, se busca que se adopten rápida y transversalmente. Es por ello que estos cambios deben aplicarse metódicamente, en periodos específicos que garanticen el foco de atención y la apropiada participación de todas las partes interesadas.
 
-La idea es fomentar el sano debate, buscar el consenso y aprender de la experiencia de los desarrolladores más experimentados, con el fin de proponer mejoras justificables que agreguen valor a los diferentes equipos de trabajo. Quedan fuera de la discusión las peleas dogmáticas tipo “Tangananica, Tangananá”.
+La idea es fomentar el sano debate, buscar el consenso y aprender de la experiencia de los desarrolladores más experimentados, con el fin de proponer mejoras justificables que agreguen valor a los diferentes equipos de trabajo. Quedan fuera de la discusión las peleas dogmáticas tipo "Tangananica, Tangananá".
 
 ## Principios Generales
 - Las mejores arquitecturas son las que permiten el cambio. Es mejor un mal software con una buena arquitectura que un buen software con una deficiente. ¿Por qué? Porque las buenas arquitecturas siempre se pueden arreglar. (Uncle Bob, Clean Architecture)
 - Evitar duplicar funcionalidad que ya esté disponible en una librería
 - Un buen copy & paste a veces es mejor que una mala refactorización
-- KISS: “Keep It Stupid Simple” (o “Keep It Simple, Stupid!”). Evitamos hacer sobre-ingeniería en donde no hace falta. Pragmatismo.
+- KISS: "Keep It Stupid Simple" (o "Keep It Simple, Stupid!"). Evitamos hacer sobre-ingeniería en donde no hace falta. Pragmatismo.
 - Sé humilde, no te sientas un prodigio del código
 - Divide tus tareas grandes en tareas más pequeñas
 - Mantén tus métodos y clases pequeños, y con una sola responsabilidad. Si tienes muchas condiciones en un método, divídelo en métodos más pequeños. No sólo esto hará que el código sea más fácil de leer, si no que además más fácil de debuguear
@@ -32,9 +32,9 @@ La idea es fomentar el sano debate, buscar el consenso y aprender de la experien
 
 
 ### No permitir que las fallas sean silenciosas
-No escribas código que adivine el futuro. Evita el “por si acaso en el futuro alguien pide…”
-Evita el acoplamiento de códigos entre módulos diferentes. Evita el “cross importing”
-Las cosas inestables dependen de las cosas estables. ¡No alrevés! Si dependemos de algo inestable (librería “commons” en desarrollo) todo el proyecto se volverá inestable
+No escribas código que adivine el futuro. Evita el "por si acaso en el futuro alguien pide…"
+Evita el acoplamiento de códigos entre módulos diferentes. Evita el "cross importing"
+Las cosas inestables dependen de las cosas estables. ¡No alrevés! Si dependemos de algo inestable (librería "commons" en desarrollo) todo el proyecto se volverá inestable
 Por más detallado que se realice un estándar, siempre te verás implementando cosas complejas que no se cubren aquí. Aprende patrones y arquetipos de diseño, la mayoría de los problemas alguien en el pasado los resolvió. Aprende a combinar patrones específicos con los globales usados de forma transversal
 Referencias indispensables:
 
