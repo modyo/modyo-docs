@@ -20,9 +20,9 @@ THEREFORE, in consideration of the mutual agreements contained herein and with t
 
 "Related Enterprises" for the purposes of this contract means any entity that controls, is controlled by or under common control with a Party, where control means the power to direct a Party's administration and policies, whether through a voting property relationship, contract or otherwise.
 
-"Associated Services" means Support and Maintenance Services and Professional Services.
+“Associated Services” means Support and Maintenance Services and Professional Services.
 
-"Confidential Information" means any information or data that is not of a public nature or is essentially proprietary and which is disclosed by a Party (or its Representatives) to the other Party (or its Representatives) in the course of the performance of this Agreement, either orally, in writing, electronically or in any other form or medium, and which is identified or labeled as confidential or owned by the disclosing Party or reasonably considered confidential or proprietary information of the disclosing Party based on the nature of the information or the circumstances of disclosure, including, but not limited to: (a) information from a Party (or its Related Companies) on finance, investment, business, customers, investors, products, services, organizational structure, procedures, sales, projections, marketing, pricing, costs, debts and other matters related to their business; and (b) software, systems, designs, specifications, documentation, code, images, components, protocols, processes, inventions, ideas, methods, discoveries, trade secrets, know-how, intellectual property and other technologies. For the avoidance of doubt, Licensor's Software, Materials, and Licensor Documentation shall be considered Licensor's Confidential Information, and Licensee's Materials shall be considered Licensee's Confidential Information.
+“Confidential Information” means any information or data that is not of a public nature or is essentially proprietary and which is disclosed by a Party (or its Representatives) to the other Party (or its Representatives) in the course of the performance of this Agreement, either orally, in writing, electronically or in any other form or medium, and which is identified or labeled as confidential or owned by the disclosing Party or reasonably considered confidential or proprietary information of the disclosing Party based on the nature of the information or the circumstances of disclosure, including, but not limited to: (a) information from a Party (or its Related Companies) on finance, investment, business, customers, investors, products, services, organizational structure, procedures, sales, projections, marketing, pricing, costs, debts and other matters related to their business; and (b) software, systems, designs, specifications, documentation, code, images, components, protocols, processes, inventions, ideas, methods, discoveries, trade secrets, know-how, intellectual property and other technologies. For the avoidance of doubt, Licensor's Software, Materials, and Licensor Documentation shall be considered Licensor's Confidential Information, and Licensee's Materials shall be considered Licensee's Confidential Information.
 
 "Documentation" means any applicable specification to the Licensor Software, along with the installation, usage and operation guides and manuals, technical and functional specifications, release notes and any material provided by Licensor describing the installation, operation, use or functionality of the Licensor. Licensor's Software, whether printed, electronic or in any other form or medium.
 
@@ -36,13 +36,13 @@ THEREFORE, in consideration of the mutual agreements contained herein and with t
 
 "Licensor Software" means any software identified as Licensor Software in an Order of Order (including, but not limited to, updates thereto).
 
-"Minor Versions" means code fixes, patches, updates, and minor versions of the Software that are generally released on a commercial level, designated by a change in the number to the right of the first decimal in the version number (e.g. Modyo 8.X, i.e. in the Major.Minor format).
+“Minor Versions” means code fixes, patches, updates, and minor versions of the Software that are generally released on a commercial level, designated by a change in the number to the right of the first decimal in the version number (e.g. Modyo 8.X, i.e. in the Major.Minor format).
 
-"Major Versions" means new versions, modifications or enhancements to the Software that are generally released on a commercial level, designated by a change in the number to the left of the first decimal in the version number (e.g. Modyo X.2, i.e. Major.Minor format).
+“Major Versions” means new versions, modifications or enhancements to the Software that are generally released on a commercial level, designated by a change in the number to the left of the first decimal in the version number (e.g. Modyo X.2, i.e. Major.Minor format).
 
 "Notice" means any notice or notice with a legal effect that is sent in accordance with the procedures set out in Section 14.9.
 
-"Open Source Components" means any open source software identified as such in an Order Order that is subject to a GNU General Public License ("GNU General Public License") or other license that conforms to the definition established by the Open Source Initiative.
+“Open Source Components” means any open source software identified as such in an Order Order that is subject to a GNU General Public License (“GNU General Public License”) or other license that conforms to the definition established by the Open Source Initiative.
 
 "Order Order" means any form that specifically refers to this Agreement that sets forth the Licensor Software and Associated Services that Licensor must provide to Licensee and the Fees payable by Licensor for such Licensor Software and Associated Services, together with any other additional terms and conditions applicable to the provision of such Software from Licensor and Associated Services.
 
@@ -52,15 +52,15 @@ THEREFORE, in consideration of the mutual agreements contained herein and with t
 
 "Addendum" means any Addendum that specifically refers to this Agreement that sets out additional terms and conditions for any Licensor Software and/or Associated Services such as Support and Maintenance and Professional Services that Licensor must provide to Licensee.
 
-"Support and Maintenance" means any software support and maintenance service identified in an Order Order or in an Attachment.
+“Support and Maintenance” means any software support and maintenance service identified in an Order Order or in an Attachment.
 
 "Deadline" means the deadline set in an Order Order.
 
-"Territory" means the geographical area specified in the Order.
+“Territory” means the geographical area specified in the Order.
 
-"Third-Party Software" means any third-party software identified as such in an Order Order, including without limitation plug-ins, add-ons, application programming interfaces, utilities or scripts that Licensor may provide to Licensee under present contract.
+“Third-Party Software” means any third-party software identified as such in an Order Order, including without limitation plug-ins, add-ons, application programming interfaces, utilities or scripts that Licensor may provide to Licensee under present contract.
 
-"Updates" or "Updates" means any updates and new versions of the Licensor Software released by Licensor from time to time that may contain improvements, bug fixes or other modifications to the Licensor Software.
+“Updates” or “Updates” means any updates and new versions of the Licensor Software released by Licensor from time to time that may contain improvements, bug fixes or other modifications to the Licensor Software.
 
 "User" means any person (whether on behalf of Licensee, its Related Companies, partners, customers, investors, prospective investors or others) who is authorized by Licensee to access and/or use the Licensor Software under this agreement. 
 
