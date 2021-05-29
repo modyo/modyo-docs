@@ -104,7 +104,7 @@ search: true
 - Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* New filters were added to the Liquid SDK for content that enables to [search] (/en/platform/content/public-api-reference.html#filter-entries), filter and [sort] (/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
+* New filters were added to the Liquid SDK for content that enables to [search](/en/platform/content/public-api-reference.html#filter-entries), filter and [sort](/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Form language is now tied to the site associated instead of the account language.
@@ -130,8 +130,8 @@ search: true
 - Multiple performance improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to [filter by slug] (/en/platform/content/public-api-reference.html#filter-entries) in the Liquid SDK using the filter `by_slug` was added.
-* The option to [unpublish all widgets] (/en/platform/channels/widgets.html) and archive all non published widgets, even if they are being used in pages, was added.
+* The option to [filter by slug](/en/platform/content/public-api-reference.html#filter-entries) in the Liquid SDK using the filter `by_slug` was added.
+* The option to [unpublish all widgets](/en/platform/channels/widgets.html) and archive all non published widgets, even if they are being used in pages, was added.
 
 ### 9.1.9 - February 10, 2021
 
@@ -159,11 +159,11 @@ search: true
 - Multiple security improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* The option to [edit entries in bulk] (/en/platform/content/entries.html#bulk-edit) was added.
+* The option to [edit entries in bulk](/en/platform/content/entries.html#bulk-edit) was added.
 * The option to filters by author and targets in the index of entries was added.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously] (/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
+* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously](/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
 
 ### 9.1.6 - December 23, 2020
 
@@ -175,9 +175,9 @@ search: true
 - Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Add the option to define [variables in custom widgets] (/es/platform/channels/widgets.html #variables -del-widget).
-* Add the option to define multiple [JavaScripts and CSS] (/es/platform/channels/templates.html #css -y-javascript) as assets of the site.
-* Add the option to create [custom layouts] (/es/platform/channels/templates.html #layouts -custom) and then be able to use them on pages.
+* Add the option to define [variables in custom widgets](/es/platform/channels/widgets.html #variables -del-widget).
+* Add the option to define multiple [JavaScripts and CSS](/es/platform/channels/templates.html #css -y-javascript) as assets of the site.
+* Add the option to create [custom layouts](/es/platform/channels/templates.html #layouts -custom) and then be able to use them on pages.
 * Add the possibility to query the search results of the site in json format
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -192,8 +192,8 @@ search: true
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Add the option to use [operators] (/es/platform/content/public-api-reference.html #operadores) [in], [has], and [nin] in slug, name, uuid, and categories fields.
-* Add the option to use [bulk actions] (/es/platform/content/entries.html #acciones -bulk) in entries.
+* Add the option to use [operators](/es/platform/content/public-api-reference.html #operadores) [in], [has], and [nin] in slug, name, uuid, and categories fields.
+* Add the option to use [bulk actions](/es/platform/content/entries.html #acciones -bulk) in entries.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Add [total entry] filter (/es/platform/content/public-api-reference.html #acceder -a-a-space-inputs-) after using a content filter.
@@ -212,8 +212,8 @@ search: true
 - Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The [joint publication] (/es/platform/channels/sites.html #revision -and-joint publication) is added to the sites.
-* Add the ability to [delegate sub-paths] (/es/platform/channels/pages.html #delegacion -de-paths) of pages using JavaScript.
+* The [joint publication](/es/platform/channels/sites.html #revision -and-joint publication) is added to the sites.
+* Add the ability to [delegate sub-paths](/es/platform/channels/pages.html #delegacion -de-paths) of pages using JavaScript.
 
 ### 9.1.3 - 16 October 2020
 
@@ -238,7 +238,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Adds the ability to use templates in already created messaging campaigns.
-* Added the ability to [delete users] (/es/platform/customers/realms.html #opciones -additional).
+* Added the ability to [delete users](/es/platform/customers/realms.html #opciones -additional).
 
 ### 9.1.1 - 25 September 2020
 
@@ -253,16 +253,16 @@ search: true
 * Added the ability to delete archived entries.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* It adds the ability to [copy sites] (/es/platform/channels/sites.html) and all its published content.
+* It adds the ability to [copy sites](/es/platform/channels/sites.html) and all its published content.
 
 ### 9.1.0 - 4 September 2020
 
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- [Scheduler] (es/platform/core/key-concepts.html #programado): Schedule a change in the future without the need to unpublish what is already published.
+- [Scheduler](es/platform/core/key-concepts.html #programado): Schedule a change in the future without the need to unpublish what is already published.
 - Modyo Lite: Access a version of Modyo that includes Core and Content and Channels applications.
-- [New Preview Mode] (/es/platform/core/key-concepts.html #modo -preview): A preview mode that allows you to view content, pages, templates, widgets and navigation together.
+- [New Preview Mode](/es/platform/core/key-concepts.html #modo -preview): A preview mode that allows you to view content, pages, templates, widgets and navigation together.
 - Upgrade the ElasticSearch version to 7.4.
 - Upgrade MySQL version to version 5.7 (adds support for emojis).
 - Multiple bugs resolved.
@@ -273,9 +273,9 @@ search: true
 * Performance improvements and scalability in the public content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* [Global Variables] (/es/platform/core/key-concepts.html #variables -global): Reuse snippets between sites.
-* [SEO Improvements] (/es/platform/channels/pages.html #meta -tags): Customize meta-tags for your pages from an easy-to-use interface.
-* Added the ability to import [custom redirects] (/es/platform/channels/sites.html #redirecciones -custom) from the site.
+* [Global Variables](/es/platform/core/key-concepts.html #variables -global): Reuse snippets between sites.
+* [SEO Improvements](/es/platform/channels/pages.html #meta -tags): Customize meta-tags for your pages from an easy-to-use interface.
+* Added the ability to import [custom redirects](/es/platform/channels/sites.html #redirecciones -custom) from the site.
 
 ### 9.0.9 - 12 August 2020
 
@@ -294,14 +294,14 @@ search: true
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Different drops of liquid are added depending on the file type in the [asset manager] (/es/platform/content/asset-manager.html #propiedades -of-the files).
+* Different drops of liquid are added depending on the file type in the [asset manager](/es/platform/content/asset-manager.html #propiedades -of-the files).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Example code is added when creating new [content views] (/es/platform/channels/templates.html #vistas -for-content).
+* Example code is added when creating new [content views](/es/platform/channels/templates.html #vistas -for-content).
 * An entry attribute selector is added to content views.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* File type questions are deleted in [forms] (/es/platform/customers/forms.html #anadir -field).
+* File type questions are deleted in [forms](/es/platform/customers/forms.html #anadir -field).
 
 ### 9.0.7 - 01 June 2020
 
@@ -309,22 +309,22 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Improvements to management and plan quotas.
-- Empty view of [my tasks] (/es/platform/core/the-modyo-interface.html) is added.
+- Empty view of [my tasks](/es/platform/core/the-modyo-interface.html) is added.
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Change [preview] mode (/es/platform/content/entries.html #vista -preview) so that by default always use editable templates.
-* New views are added when there are no items created in [entries] (/es/platform/content/entries.html), [types] (/es/platform/content/types.html), [categories] (/es/platform/content/entries.html #categorias), and [spaces] (/es/platform/content/spaces.html).
+* New views are added when there are no items created in [entries](/es/platform/content/entries.html), [types](/es/platform/content/types.html), [categories](/es/platform/content/entries.html #categorias), and [spaces](/es/platform/content/spaces.html).
 * [search] operator (/es/platform/content/public-api-reference.html #filtros -2) is added to search the entry location fields.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* An example is added when creating [content views] (/es/platform/channels/templates.html #vistas -for-content).
-* The [manifest.json and serviceworker.js] (/es/platform/channels/sites.html #pwa) files are left public, while [robots.txt and sitemap.xml] file privacy (/es/platform/channels/sites.html #seo) is forced.
-* Improvements to usability and concepts of [themes] (/es/platform/channels/templates.html #temas) in the template builder
+* An example is added when creating [content views](/es/platform/channels/templates.html #vistas -for-content).
+* The [manifest.json and serviceworker.js](/es/platform/channels/sites.html #pwa) files are left public, while [robots.txt and sitemap.xml] file privacy (/es/platform/channels/sites.html #seo) is forced.
+* Improvements to usability and concepts of [themes](/es/platform/channels/templates.html #temas) in the template builder
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* New views are added when there are no items created in [users] (/es/platform/customers/realms.html), [targets] (/es/platform/customers/targets.html), [forms] (/es/platform/customers/forms.html), and [campaigns] (/es/platform/customers/messaging.html).
+* New views are added when there are no items created in [users](/es/platform/customers/realms.html), [targets](/es/platform/customers/targets.html), [forms](/es/platform/customers/forms.html), and [campaigns](/es/platform/customers/messaging.html).
 
 ### 9.0.6 - 30 April 2020
 
@@ -332,25 +332,25 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Support for FOG with Azure and Google Cloud is added as Modyo installation base.
-- Added integration with [Google Authenticator] (/es/platform/core/security.html #autenticacion -in-two-steps) for second factor of team member authentication.
-- [password policies] (/es/platform/core/security.html #politica -password) are added for team members.
+- Added integration with [Google Authenticator](/es/platform/core/security.html #autenticacion -in-two-steps) for second factor of team member authentication.
+- [password policies](/es/platform/core/security.html #politica -password) are added for team members.
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Only spaces where you have permissions as a team member will be displayed.
-* Added the ability to [delete spaces] (/es/platform/content/spaces.html #general).
+* Added the ability to [delete spaces](/es/platform/content/spaces.html #general).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* It adds [redirects table] (/es/platform/channels/sites.html #redirecciones -custom) that will allow you to reuse old urls with good SEO and redirect them to the new site URLs.
+* It adds [redirects table](/es/platform/channels/sites.html #redirecciones -custom) that will allow you to reuse old urls with good SEO and redirect them to the new site URLs.
 * The content where the pages are searched is improved.
-* Add snippets to [enable PWA] (/es/platform/channels/sites.html #pwa) in the JavaScript site base when the property is enabled.
+* Add snippets to [enable PWA](/es/platform/channels/sites.html #pwa) in the JavaScript site base when the property is enabled.
 * Added the possibility to integrate google tag manager to sites.
 * Only sites where you have permissions as a team member will be displayed.
-* Added the ability to [delete sites] (/es/platform/channels/sites.html #general).
+* Added the ability to [delete sites](/es/platform/channels/sites.html #general).
 
 <Badge text="Insights" type="insights" vertical="middle"/>
-* Add view of [reports in insights] (/es/platform/insights/data-studio.html).
+* Add view of [reports in insights](/es/platform/insights/data-studio.html).
 
 ### 9.0.5 - 19 March 2020
 
@@ -372,8 +372,8 @@ search: true
 - Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Text search in [template builder] (/es/platform/channels/templates.html), for easy changes.
-* It adds feature to force widgets publishing via [Modyo CLI] (/es/platform/channels/widgets.html #comandos -available).
+* Text search in [template builder](/es/platform/channels/templates.html), for easy changes.
+* It adds feature to force widgets publishing via [Modyo CLI](/es/platform/channels/widgets.html #comandos -available).
 
 ### 9.0.3 - 02 March 2020
 
@@ -384,10 +384,10 @@ search: true
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Obtaining the content delivery token through the [JavaScript SDK] (/es/platform/content/public-api-reference.html #contenido -private).
+* Obtaining the content delivery token through the [JavaScript SDK](/es/platform/content/public-api-reference.html #contenido -private).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Customizing the reaction of a site when a url does not exist, [showing a 404 error or redirecting to home] (/es/platform/channels/sites.html #restricciones).
+* Customizing the reaction of a site when a url does not exist, [showing a 404 error or redirecting to home](/es/platform/channels/sites.html #restricciones).
 
 ### 9.0.2 - 04 February 2020
 
@@ -399,8 +399,8 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Use locations in content with maps or with a form, setting up a google api key in account settings.
-* Improvements to the [liquid SDK] (/es/platform/content/public-api-reference.html #sdk -liquid) content.
-* Usability improvements to [asset manager] (/es/platform/content/asset-manager.html).
+* Improvements to the [liquid SDK](/es/platform/content/public-api-reference.html #sdk -liquid) content.
+* Usability improvements to [asset manager](/es/platform/content/asset-manager.html).
 
 ### 9.0.1 - 17 January 2020
  
@@ -409,10 +409,10 @@ search: true
 * Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* It adds the functionality to [preview content] (/es/platform/content/entries.html #vista -previous) on sites, despite being headless, when using content on a Modyo site you can use the tool to preview that content.
+* It adds the functionality to [preview content](/es/platform/content/entries.html #vista -previous) on sites, despite being headless, when using content on a Modyo site you can use the tool to preview that content.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Added functionality to create [custom content views] (/es/platform/channels/templates.html #vistas -for-content) on sites.
+* Added functionality to create [custom content views](/es/platform/channels/templates.html #vistas -for-content) on sites.
 * A list of pages that use each widget is added, so you can see the effects of a change wherever it is used.
 
 ### 9.0.0 - 19 December 2019
@@ -420,15 +420,15 @@ search: true
  
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Separation of users and [team members] (/es/platform/core/roles.html #equipo), those who have access to the platform are segregated from the users of the page itself.
-- New [roles and permissions] (/es/platform/core/roles.html).
-- [Team review] (/es/platform/core/key-concepts.html), replacing the workflow application, allows team collaboration for release approval and step to production.
+- Separation of users and [team members](/es/platform/core/roles.html #equipo), those who have access to the platform are segregated from the users of the page itself.
+- New [roles and permissions](/es/platform/core/roles.html).
+- [Team review](/es/platform/core/key-concepts.html), replacing the workflow application, allows team collaboration for release approval and step to production.
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* New [content application] (/en/platform/content/), with all headless content.
-* New [asset manager] (/es/platform/content/asset-manager.html) that allows you to have all the files in an account in one place.
+* New [content application](/en/platform/content/), with all headless content.
+* New [asset manager](/es/platform/content/asset-manager.html) that allows you to have all the files in an account in one place.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * New minimal theme 2020 cleaner and easier to adapt.
