@@ -493,7 +493,7 @@ end
 New-style Validations
 —
 
-Always use the ["new-style” validations](http://thelucid.com/2010/01/08/sexy-validation-in-edge-rails-rails-3/).
+Always use the ["new-style" validations](http://thelucid.com/2010/01/08/sexy-validation-in-edge-rails-rails-3/).
 
 ``` ruby
 # bad
