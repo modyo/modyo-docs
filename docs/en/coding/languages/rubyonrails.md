@@ -515,7 +515,7 @@ When naming custom validation methods, adhere to the simple rules:
 
 -   the method is recognizable as a validation method by its name, not a predicate method
 
- <!-- --> 
+
 
 ``` ruby
 # good
