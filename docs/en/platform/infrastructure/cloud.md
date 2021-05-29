@@ -62,7 +62,7 @@ Amazon AWS Content Indexing Service, deployed using Elasticsearch and with the a
 Amazon AWS Database Service, available in multiple versions (Postgres, Oracle, SQL Server, MySQL). RDS Aurora supports MySQL 5.6, and unlike a traditional MySQL deployment, Aurora implements a high-availability cluster in which data stored in it is persisted in 3 Availability Zones. 
 
 #### AWS WAF
-Amazon AWS Application Firewall Service Amazon WAF can be deployed to the Amazon CDN (CloudFront) or directly onto ELBs of the type “ELB” or ALB. Amazon WAF has filters for the most common web attacks (OWASP Top 10), such as SQL injections or scripts, and offers the ability to define your own rules. 
+Amazon AWS Application Firewall Service Amazon WAF can be deployed to the Amazon CDN (CloudFront) or directly onto ELBs of the type "ELB” or ALB. Amazon WAF has filters for the most common web attacks (OWASP Top 10), such as SQL injections or scripts, and offers the ability to define your own rules. 
 
 #### AWS SQS
 High-performance, long-lasting messaging queue service that allows applications to communicate asynchronously.
