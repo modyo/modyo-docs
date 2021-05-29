@@ -26,7 +26,7 @@ In this case, the filters are six:
 - **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
 - **Category**: Category to which entries are assigned.
 - **Language**: The language in which the content is written.
-- **Translation**: This filter is associated with the selected language and filters by the translation status of the entries for that language. Ex: This means that if an entry does not have a version in the selected language, it will fall under “Not translated”.
+- **Translation**: This filter is associated with the selected language and filters by the translation status of the entries for that language. Ex: This means that if an entry does not have a version in the selected language, it will fall under "Not translated".
 - **Tags**: Tags available in the account. You can occupy the search bar inside the filter for tags in a simpler way.
 - **Search Bar**: Filter by the content of the title of the entries.
 
@@ -62,15 +62,15 @@ If you select multiple entries, but are not using the filter by type in the tabl
 
 When you select entries of the same type, you'll see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you check the selector on the left of each field, you can enter the value associated with the field.
 
-You can make changes to all fields of the type. Once you've finished adding values in the fields you need, tap “Next” at the top of the screen to see the summary of your changes. If you agree with the changes, press “confirm” to have Modyo start applying the changes to all selected entries
+You can make changes to all fields of the type. Once you've finished adding values in the fields you need, tap "Next" at the top of the screen to see the summary of your changes. If you agree with the changes, press "confirm" to have Modyo start applying the changes to all selected entries
 
 :::warning Attention
 By using bulk editing entries you are overwriting the values for the selected fields in all the selected entries, so the values that existed before the joint editing will no longer be available in the editable version.
 
-If you need to retrieve a specific value from an entry, you can use the “Differences” option in the Entry Edit View to review the previous values that a particular entry had.
+If you need to retrieve a specific value from an entry, you can use the "Differences" option in the Entry Edit View to review the previous values that a particular entry had.
 :::
 
-Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now with pending changes and you must publish them. For this, you can make use of the mass action “Publish”.
+Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now with pending changes and you must publish them. For this, you can make use of the mass action "Publish".
 
 ## Create an Entry
 
@@ -113,7 +113,7 @@ If you want to republish the entry, it will go through the Team Review process a
 
 ### Delete Entries
 
-Modyo only allows you to delete entries that are archived. To perform this action, enter the edit view of the entry and in the additional options use the “Delete” option from the selector to the left of the main button of the view.
+Modyo only allows you to delete entries that are archived. To perform this action, enter the edit view of the entry and in the additional options use the "Delete" option from the selector to the left of the main button of the view.
 
 #### Preview
 
