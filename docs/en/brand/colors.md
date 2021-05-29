@@ -64,7 +64,7 @@ Our brand fits well to the following colours:
 <table class="no-border">
 <tr>
 <td colspan="6">
-<b>Azul Petróleo</b>
+<b>Dark Blue</b>
 </td>
 </tr>
 <tr>
