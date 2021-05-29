@@ -280,7 +280,7 @@ render plain: 'Ruby!'
 HTTP Status Code Symbols
 —
 
-Prefer [corresponding symbols](https://gist.github.com/mlanett/a31c340b132ddefa9cca) to numeric HTTP status codes. They are meaningful and do not look like “magic” numbers for less known HTTP status codes.
+Prefer [corresponding symbols](https://gist.github.com/mlanett/a31c340b132ddefa9cca) to numeric HTTP status codes. They are meaningful and do not look like "magic” numbers for less known HTTP status codes.
 
 ``` ruby
 # bad
@@ -1229,7 +1229,7 @@ When the labels of an Active Record model need to be translated, use the `active
  user:
  name: 'Full name'
 
-Then `User.Model_Name.Human` will return “Member” and `User.Human_Attribute_Name (“name”) `will return “Full name”. These translations of the attributes will be used as labels in the views.
+Then `User.Model_Name.Human` will return "Member” and `User.Human_Attribute_Name ("name”) `will return "Full name”. These translations of the attributes will be used as labels in the views.
 
 Organize Locale Files
 —
@@ -1256,7 +1256,7 @@ Use the short form of the I18n methods: `I18n.t` instead of `I18n.translate` and
 Lazy
 —
 
-Use “lazy” lookup for the texts used in views. Let's say we have the following structure:
+Use "lazy” lookup for the texts used in views. Let's say we have the following structure:
 
     in:
  users:
