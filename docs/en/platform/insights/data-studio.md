@@ -32,7 +32,7 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/1.png)
 
-2. If this is your first time using Data studio, you'll see a pop-up window. Click the “Start” button.
+2. If this is your first time using Data studio, you'll see a pop-up window. Click the "Start” button.
 
     If you used Data studio before you can skip to the next step
 
@@ -46,9 +46,9 @@ Steps to connect your data to a Google Data Studio template:
 
     All current data sources are sample datasets provided by Google.
 
-    First click the drop-down list for Google Analytics data under “New Data Source”.
+    First click the drop-down list for Google Analytics data under "New Data Source”.
 
-    From the list choose “Create a new data source”
+    From the list choose "Create a new data source”
 
     ![Data studio](/assets/img/insights/3.png)
 
@@ -62,17 +62,17 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/6.png)
 
-    To finish click on “Connect”
+    To finish click on "Connect”
 
-    The next page shows the available dimensions and metrics. There is no need to modify anything, click “Add to Report” to continue.
+    The next page shows the available dimensions and metrics. There is no need to modify anything, click "Add to Report” to continue.
 
     ![Data studio](/assets/img/insights/7.png)
 
-    This will take you back to the “Copy this report” window. 
+    This will take you back to the "Copy this report” window. 
 
 5. Create Google Search Console fonts
 
-    As in the previous step, click “Create a new data source” in the “Search Console Data (URL)” drop-down menu.
+    As in the previous step, click "Create a new data source” in the "Search Console Data (URL)” drop-down menu.
 
     ![Data studio](/assets/img/insights/8.png)
 
@@ -80,19 +80,19 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/9.png)
 
-    Choose the desired account and in “Tables” select “Url Print” 
+    Choose the desired account and in "Tables” select "Url Print” 
 
     ![Data studio](/assets/img/insights/10.png)
 
-    Click “Connect” to continue and then “Add to Report”
+    Click "Connect” to continue and then "Add to Report”
 
-    Repeat this process for the next data source and under “Table” select “Site Print”.
+    Repeat this process for the next data source and under "Table” select "Site Print”.
 
 6. Copy the report with your data
 
     Once you've created all the data sources, make sure that the new sources correspond to the original data source of the same type. 
 
-    To finish, click on “Copy Report”
+    To finish, click on "Copy Report”
 
 ** Do you still have questions? **
 
