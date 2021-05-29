@@ -158,7 +158,7 @@ If the code is not customized or saved, the site won't have the features you're 
 
 ### SEO
 
- a005b718da3a9z0 
+<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 SEO (Search Engine Optimization) is the key to appearing in different search engines. It depends on a good configuration whether users reach the site through them.
 
