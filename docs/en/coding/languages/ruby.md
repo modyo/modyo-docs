@@ -16,7 +16,7 @@ The guide is divided into several sections of related rules. I tried adding the 
 
 > Almost everyone is convinced that all styles
 > except their own are ugly and illegible. Let go of the
-> “except their own”, and they're probably right... <br/> 
+> "except their own", and they're probably right... <br/> 
 > — Jerry Coffin (about indentation)
 
 * Use `UTF-8` as the encoding of the source file.
@@ -208,7 +208,7 @@ The guide is divided into several sections of related rules. I tried adding the 
 
 * Indent `when` at the same level as `case`. 
   I know many will not agree with this, but it is the style set in both 
-  “The Ruby Programming Language” and “Programming Ruby”.
+  "The Ruby Programming Language" and "Programming Ruby".
 
     ```ruby
     # mal
@@ -1130,7 +1130,7 @@ Never use `::` for method invocation.
 
 * Skip parentheses around parameters for methods
   which are part of an internal DSL (example: Rake, Rails, RSpec),
-  methods that have “keyword” status in Ruby (example: `attr_reader`,
+  methods that have "keyword" status in Ruby (example: `attr_reader`,
   `puts`) and attribute accessory methods. Use parentheses around
   of the arguments of all other method calls.
 
@@ -1189,8 +1189,8 @@ Never use `::` for method invocation.
 
 * Choose `{...}` over `do... end` for one-line blocks. Avoid
   the use of `{...}` for multiline blocks (multiline chaining
-  is always horrible). Always use `do... end` for “flow contorl” and
-  “methods definitions” (e.g. in Rakefiles and some DSLs). Avoid using
+  is always horrible). Always use `do... end` for "flow contorl" and
+  "methods definitions" (e.g. in Rakefiles and some DSLs). Avoid using
   `do... end` when you're chaining methods.
 
     ```ruby
@@ -2020,8 +2020,8 @@ of course, `warn` allows you to delete warnings if you need it
 ## Comments
 
 > Good code is your best documentation. When you're about to
-> add a comment, ask yourself: “How can I improve the code
-> so that this comment is not necessary?” Improve the code and then
+> add a comment, ask yourself: "How can I improve the code
+> so that this comment is not necessary?" Improve the code and then
 > document it to make it even clearer. <br/> 
 > — Steve McConnell
 
@@ -2533,7 +2533,7 @@ to instantiate a particular class.
     ```
 
 * Avoid the use of clas variables (`@@`) due to their behaviors
-“dirty” in inheritance.
+"dirty" in inheritance.
 
     ```ruby
     class Parent
@@ -2559,7 +2559,7 @@ to instantiate a particular class.
   `protected`) according to its correct use. Don't go around leaving
   all `public` (which is the default state). After all
   We're now programming on *Ruby*, not *Python*.
-* Indent the words “public”, “protected”, and `private` as much as
+* Indent the words "public", "protected", and `private` as much as
   methods to which they apply. Leave a blank line before and after
   of the visibility modifier, in order to emphasize that that applies to
   all the methods below.
@@ -2680,7 +2680,7 @@ to instantiate a particular class.
   When the Method of a class (or Module) calls other Methods of the same type, 
   omits the use of `self` or the use of the Class's own name followed by a ` . ` 
 
-  This is very often seen in “Classes of Service” or other similar concepts
+  This is very often seen in "Classes of Service" or other similar concepts
   where the Class is treated as if it were a function. This convention tends to 
   reduce repetitivity in such classes.
 
@@ -3323,7 +3323,7 @@ own logic.
   Use descriptive delimiters for [Heredoc](https://es.wikipedia.org/wiki/Here_document)
   Correct delimiters can add valuable information about the content.
   Some Text Editors are able to recognize delimiters and highlight content 
-  using the corresponding “Highlight”
+  using the corresponding "Highlight"
 
   ```ruby
   # mal
@@ -3378,7 +3378,7 @@ own logic.
 ## Regular Expressions
 
 > Some people, when they encounter a problem, think
-> “I know, I'm going to use regular expressions.” Now they have two problems. <br/> 
+> "I know, I'm going to use regular expressions." Now they have two problems. <br/> 
 > — Jamie Zawinski
 
 * Don't use regular expressions if you only need to search plain text in a string:
@@ -3531,7 +3531,7 @@ own logic.
 
 
 *  <a name="percent-literal-braces"> </a> 
-  Use the parentheses that are most appropriate depending on the type of “Literal Percentage” you want to use.
+  Use the parentheses that are most appropriate depending on the type of "Literal Percentage" you want to use.
 
   - `()` for String literal (`%q`, `%Q`).
   - `[]` for Literals Arrays (`%w`, `%i`, `%W`, `%I`) just like normal Arrays.
@@ -3544,7 +3544,7 @@ own logic.
   %q {"Test's king!” John said.
 
   # good
-  %q (“Test's king!” , John said.)
+  %q ("Test's king!" , John said.)
 
   # evil
   %w (one two three)
@@ -3693,7 +3693,7 @@ own logic.
 * Avoid methods greater than 10 LOC (lines of code). Ideally, most methods go
   to be less than 5 LOC. Empty lines do not count as relevant LOC.
 * Avoid lists of parameters greater than three or four parameters.
-* If you really need “global” methods, add them to your Kernel
+* If you really need "global" methods, add them to your Kernel
   and turn them into `private`.
 * Use instance variables in modules instead of global variables.
 
