@@ -35,14 +35,14 @@ To configure the tool, go to `Site/Space Settings > Computer Review`.
 The options available are:
 
 - **Enable Team Review**: Enables or disables team review completely in this context (site or space).
-- **Number of approvals**: Determine how many users must approve the item in order to be published (it will change its status from “Waiting for Review” to “Approved”).
+- **Number of approvals**: Determine how many users must approve the item in order to be published (it will change its status from "Waiting for Review" to "Approved").
 - **Restrict review selection**: By default, any user with the necessary permissions will be able to approve the items that are awaiting review. By enabling this option, only those chosen by the editor will be able to do so.
 
 :::tip Tip
 While approval is limited, any user with permissions can comment on the item.
 :::
 
-- **Force Review**: This option allows you to select a list of users, of whom at least one approval is required for the item to move to the “Approved” status. This is independent of the number of approvals configured earlier, that is, even if an item has the number of approvals required, it will remain in the “Waiting Approval” status if no user in the list has approved it.
+- **Force Review**: This option allows you to select a list of users, of whom at least one approval is required for the item to move to the "Approved" status. This is independent of the number of approvals configured earlier, that is, even if an item has the number of approvals required, it will remain in the "Waiting Approval" status if no user in the list has approved it.
 
 - **Require All**: This option extends the previous restriction to all selected users.
 
@@ -69,7 +69,7 @@ Users at the highest level, in addition to doing all of the above, can skip the 
 :::warning Attention
 Site or space administrators always have the ability to skip the team review flow.
 
-For them, the “Send to Review” and “Review” buttons have an option inside the dropdown to “Force Approval” that will allow them to see the item in the publication view.
+For them, the "Send to Review" and "Review" buttons have an option inside the dropdown to "Force Approval" that will allow them to see the item in the publication view.
 
 This option exists because there are times when you need to publish quickly, so be cautious when you assign roles for your spaces or sites.
 :::
@@ -118,7 +118,7 @@ This system is available for Widgets, Pages, Navigation, Templates and Content.
 
 The Editable version maintains changes made to the item since its last publication or its creation if it has never been published.
 
-This version is the one that goes through the team review process when it is enabled, and just at the time of publication, the “Editable” and “Published” versions have the same content.
+This version is the one that goes through the team review process when it is enabled, and just at the time of publication, the "Editable" and "Published" versions have the same content.
 
 #### Published
 
@@ -132,7 +132,7 @@ The published version does not necessarily have the same content as the editable
 
 Backups are previously published versions of items. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
-If you want to review a particular version of an item, you can go to the “Differences Between Versions” so you can see the changes that have been made and revert them when necessary.
+If you want to review a particular version of an item, you can go to the "Differences Between Versions" so you can see the changes that have been made and revert them when necessary.
 
 :::warning Attention
 By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you'll be clearing the backing for the first post of the item.
@@ -231,7 +231,7 @@ The items you can interact with in the preview bar are:
 * **Navigation Selector**: Allows you to switch between the published and editable version of items belonging to the navigation builder.
 * **Page Selector**: Allows you to switch between the published and editable version of the items belonging to the page builder.
 * **Content View Selector**: This selector allows you to switch between the published and editable version of the content entry being previewed in custom content views. This view does not directly use the Content Liquid SDK, so the content in these views will not be affected by the Content SDK selector.
-* **Widgets Selector**: If you're previewing pages that contain custom widgets, you will find a list of widgets that appear on the page, and you can select whether you want to view the editable or published version of each one of them. Once you complete the selection, click the “refresh” button for the widget settings to take effect.
+* **Widgets Selector**: If you're previewing pages that contain custom widgets, you will find a list of widgets that appear on the page, and you can select whether you want to view the editable or published version of each one of them. Once you complete the selection, click the "refresh" button for the widget settings to take effect.
 * **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with items at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
 * **Edit item**: Clicking will go to the edit view of the item you're viewing, whether it's an entry, a page, a widget or a default template of the site.
 * **Share link**: Allows you to copy a link that you can share and whoever opens it, will go directly to the preview mode with the settings when copying the link. In order to view the preview mode, just have a login to the account admin.
