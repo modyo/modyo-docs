@@ -67,7 +67,7 @@ For this, inside Templates, we go back to the Views tab, look for the Layouts se
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
 
-And we remove <code> class="container” </code>.
+And we remove <code> class="container" </code>.
 
 ## Step 4: Change Site Source
 
