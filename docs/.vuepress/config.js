@@ -44,7 +44,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          { text: "Connect", link: "/en/connect/" },
+          //{ text: "Connect", link: "/en/connect/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],
@@ -57,8 +57,8 @@ module.exports = {
               children: [
                 "/en/platform/whats-new",
                 "/en/platform/key-concepts",
-                "/en/platform/versions",
                 "/en/platform/release-notes",
+                "/en/platform/training",
               ],
             },            
             {
@@ -158,8 +158,16 @@ module.exports = {
           "/en/widgets/": [
             {
               title: "Catalog",
-              collapsable: false,
-              children: [["/en/widgets/", "About widgets"]],
+              collapsable: true,
+              children: [
+                "/en/widgets/guides/first-steps",
+                "/en/widgets/guides/look-and-feel",
+                ["/en/widgets/guides/i18n", "Internationalization"],
+                ["/en/widgets/guides/share-state", "Shared state"],
+                "/en/widgets/guides/liquid-variables",
+                "/en/widgets/guides/ci-cd",
+                "/en/widgets/guides/repository-pattern"
+              ],
             },
             {
               title: "Retail",
@@ -279,7 +287,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          { text: "Connect", link: "/es/connect/" },
+          //{ text: "Connect", link: "/es/connect/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],

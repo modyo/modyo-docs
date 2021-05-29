@@ -48,8 +48,7 @@ El acceso se otorgará por el período de un mes, durante el cual tendrás la li
 ### Ambiente de pruebas
 Para entender cómo funciona la plataforma Modyo es muy importante que puedas realizar pruebas de lo aprendido. Para ello, tendrás acceso a crear una cuenta temporal donde podrás implementar un proyecto de ejemplo para conocer en mayor profundidad la plataforma.
 
-Para crear la cuenta de prueba deberás ingresar al [siguiente link](https://platform.modyo.cloud/onboarding
-) y completar el formulario ingresando tus datos y los de la organización.
+Para crear la cuenta de prueba deberás ingresar al [siguiente link](https://platform.modyo.cloud/onboarding) y completar el formulario ingresando tus datos y los de la organización.
 
 Automáticamente se te asignará el rol de administrador de la cuenta, lo que te otorgará privilegios para invitar a otros usuarios de tu equipo a participar en ella.
 
