@@ -3541,7 +3541,7 @@ own logic.
 
   ```ruby
   # evil
-  %q {"Test's king!” John said.
+  %q {"Test's king!" John said.
 
   # good
   %q ("Test's king!" , John said.)
