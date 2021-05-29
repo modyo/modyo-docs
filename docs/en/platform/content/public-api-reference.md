@@ -5,7 +5,7 @@ sidebarDepth: 1
 
 # APIs & SDKs
 
-Modyo Content has an API to be able to access spaces containing content entries quickly and efficiently. In order to access it there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content] (/en/platform/content/) with [Modyo Channels] (/en/platform/channels/) from the server side via Liquid and another external one that uses the public API in REST for consumption from Javascript.
+Modyo Content has an API to be able to access spaces containing content entries quickly and efficiently. In order to access it there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](/en/platform/content/) with [Modyo Channels](/en/platform/channels/) from the server side via Liquid and another external one that uses the public API in REST for consumption from Javascript.
 
 :::tip SDKs for other languages
 At the moment there is only, officially, an SDK for Javascript. In the future, versions are planned to make it easier to work with other languages.
@@ -13,7 +13,7 @@ At the moment there is only, officially, an SDK for Javascript. In the future, v
 
 ## Liquid SDK
 
-The Liquid SDK allows you to natively consume content from [Modyo Channels] (/en/platform/channels) in any of the sections that use the [Liquid] markup language (/es/platform/channels/liquid-markup.html), such as [Widgets] (/es/platform/channels/widgets.html) and [Templates] (/es/platform/channels/templates.html) of the site.
+The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/platform/channels) in any of the sections that use the [Liquid] markup language (/es/platform/channels/liquid-markup.html), such as [Widgets](/es/platform/channels/widgets.html) and [Templates](/es/platform/channels/templates.html) of the site.
 
 :::warning Attention
 From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, such that:
@@ -102,7 +102,7 @@ To make use of pagination in a custom widget, change the filter associated with 
 
 ### Sort tickets
 
-In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes “meta” `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters `, as follows:
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters `, as follows:
 
 ```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | sort_by: 'published_at', 'asc'%}
@@ -150,7 +150,7 @@ In addition, the Modyo SDK allows you to obtain information from the end user wh
 
 #### 1. Get a Modyo Token
 
-The `@modyo /sdk` package is available in the Github registry under the Modyo organization. That's why to consume the package in a project we need, in addition to adding it to the `package.json`, **you need to get a token with the scope `read:packages`** ([reference on Github] (https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
+The `@modyo /sdk` package is available in the Github registry under the Modyo organization. That's why to consume the package in a project we need, in addition to adding it to the `package.json`, **you need to get a token with the scope `read:packages`** ([reference on Github](https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
 
 #### 2. Authenticate to Github packages
 
@@ -161,7 +161,7 @@ The contents of that file (replacing `TOKEN` with our token)
 //npm.pkg.github.com/:_AuthToken =TOKEN
 ```
 
-[Reference on Github docs] (https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Reference on Github docs](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 #### 3. Add the organization to your project
 
@@ -173,7 +173,7 @@ registry= https://npm.pkg.github.com/OWNER
 
 Where `OWNER `is the name of the organization that owns the package, in this case `modyo`
 
-[Github docs reference] (https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
 ### Use
 
@@ -183,7 +183,7 @@ For that we instantiated a new customer with the web address of Modyo's account 
 ```js
 import {Client,} from "@modyo /sdk";
 //To get the correct account, we must use the account url
-const modyoAccount = new Client (” https://my-account.modyo.com","es “);
+const modyoAccount = new Client (" https://my-account.modyo.com","es ");
 ```
 
 :::tip Tip
@@ -200,7 +200,7 @@ We can consult for a particular content type and thus get your schema
 
 ```js
 //To get the `Post `type of a space called `Blog`
-const TypePost = modyoAccount.getContentType (“blog”, “post”);
+const TypePost = modyoAccount.getContentType ("blog", "post");
 //`TypePost` will return an object with various information of the type, including the schema of that type
 ```
 
@@ -208,10 +208,10 @@ When we have the type we need we can see its schema, its attributes or query its
 
 ```js
 //If we want to see that schema in detail, we can occupy the method `getSchema () `
-TypePost.getSchema () .then (sch => console.log (“Content Type JSON Schema:”, sch));
+TypePost.getSchema () .then (sch => console.log ("Content Type JSON Schema:", sch));
 /*
 That will print something like this:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema #”, definitions: {...}, type: “object”, required: Array (2), properties: {...}}
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema #", definitions: {...}, type: "object", required: Array (2), properties: {...}}
 */
 //To get the entries of that type
 const entries = TypePost.getEntiries ();
@@ -226,25 +226,25 @@ The object returned by `GetEntries () `includes a `meta` field that will help yo
 ```json
 
 {
- “goal”: {
- “total_entries”: 4,
- “per_page”: 10,
- “current_page”: 1,
- “total_pages”: 1
+ "goal": {
+ "total_entries": 4,
+ "per_page": 10,
+ "current_page": 1,
+ "total_pages": 1
  },
- “Entiries”: [
+ "Entiries": [
  {
- “goal”: {
- “uid”: “baf8f3e2-5f15-4406-985c-ae2db0922c5b”,
- “tags”: [],
- “slug”: “baf8f3e2-5f15-4406-985c-ae2db0922c5b”
- “...”
+ "goal": {
+ "uid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
+ "tags": [],
+ "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
+ "..."
  },
- “fields”: {
- “title”: “title”,
- “slug”: “slug”,
- “excerpt”: “Excerpt of the entry... “,
- “...”
+ "fields": {
+ "title": "title",
+ "slug": "slug",
+ "excerpt": "Excerpt of the entry... ",
+ "..."
  }
  }
  ]
@@ -264,7 +264,7 @@ Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, 
 
 - **SortBy**: Receives as parameters the field to sort and order (`asc` or `desc`).
 
-- **JSONPath**: Receives the JSONPath [ref] (https://goessner.net/articles/JsonPath/) that models a response structure.
+- **JSONPath**: Receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
 
 - **Pagination**: Receives page number and total entries per page as parameters.
 
@@ -276,7 +276,7 @@ If you intend to filter by date, it is important that the filter value use the I
 //If we want to get a list of attributes for which we can consult
 TypePost
  .getSchema ()
- .then () => console.log (“List of attributes:”, TypePost.getAttrs ()));
+ .then () => console.log ("List of attributes:", TypePost.getAttrs ()));
 ```
 
 To create a filter, we use the `Filter () `method
@@ -284,13 +284,13 @@ To create a filter, we use the `Filter () `method
 ```js
 const filters = TypePost
  .Filter ()
- .Before (“meta.created_at”, “2020-05-01")
- .In (“meta.tags”, ["tag1", “tag2"])
+ .Before ("meta.created_at", "2020-05-01")
+ .In ("meta.tags", ["tag1", "tag2"])
  Pagination (15,1);
 //Now we take it up to get tickets with these criteria
 const FilterEdentries = TypePost.getEntiries (filters);
 //now we solve the promise
-FilterEdentries.Then (res => console.log (“Filtered response: “, res));
+FilterEdentries.Then (res => console.log ("Filtered response: ", res));
 ```
 
 ### Order
@@ -353,51 +353,51 @@ JSON Entires:
 
 ```javascript
 {
- “goal”: {
- “total_entries”: 2,
- “per_page”: 15,
- “current_page”: 1,
- “total_pages”: 1
+ "goal": {
+ "total_entries": 2,
+ "per_page": 15,
+ "current_page": 1,
+ "total_pages": 1
  },
- “Entiries”: [
+ "Entiries": [
  {
- “goal”: {
- “uid”: “9b0a24a6-d84f-4851-8750-a86244947510",
- “space”: “myspace”,
- “name”: “Lorem Ipsum pain”,
- “type_name”: “Post”,
- “category”: null,
- “updated_at”: “2019-03-18T 14:06:59 .000- 03:00 “,
- “created_at”: “2019-03-18T 14:06:59 .000- 03:00 “,
- “tags”: [],
- “locale”: “in”,
- “available_locales”: [
- “in”
+ "goal": {
+ "uid": "9b0a24a6-d84f-4851-8750-a86244947510",
+ "space": "myspace",
+ "name": "Lorem Ipsum pain",
+ "type_name": "Post",
+ "category": null,
+ "updated_at": "2019-03-18T 14:06:59 .000- 03:00 ",
+ "created_at": "2019-03-18T 14:06:59 .000- 03:00 ",
+ "tags": [],
+ "locale": "in",
+ "available_locales": [
+ "in"
  ]
  },
- “fields”: {
- “Excerpt”: “Lorem Ipsum pain”,
- “body”: “Lorem ipsum pain sit amet, sectetur adipiscing elit, thirst of eiusmod tempor incidundt ut labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory.”
+ "fields": {
+ "Excerpt": "Lorem Ipsum pain",
+ "body": "Lorem ipsum pain sit amet, sectetur adipiscing elit, thirst of eiusmod tempor incidundt ut labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory."
  }
  },
  {
- “goal”: {
- “uid”: “1c9b24a6-d84f-4851-8750-a86244963589",
- “space”: “myspace”,
- “name”: “Lorem Ipsum pain”,
- “type_name”: “Post”,
- “category”: null,
- “updated_at”: “2019-03-18T 14:06:59 .000- 03:00 “,
- “created_at”: “2019-03-18T 14:06:59 .000- 03:00 “,
- “tags”: [],
- “locale”: “in”,
- “available_locales”: [
- “in”
+ "goal": {
+ "uid": "1c9b24a6-d84f-4851-8750-a86244963589",
+ "space": "myspace",
+ "name": "Lorem Ipsum pain",
+ "type_name": "Post",
+ "category": null,
+ "updated_at": "2019-03-18T 14:06:59 .000- 03:00 ",
+ "created_at": "2019-03-18T 14:06:59 .000- 03:00 ",
+ "tags": [],
+ "locale": "in",
+ "available_locales": [
+ "in"
  ]
  },
- “fields”: {
- “Excerpt”: “Lorem Ipsum pain”,
- “body”: “Lorem ipsum pain sit amet, sectetur adipiscing elit, thirst of eiusmod tempor incidundt ut labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory.”
+ "fields": {
+ "Excerpt": "Lorem Ipsum pain",
+ "body": "Lorem ipsum pain sit amet, sectetur adipiscing elit, thirst of eiusmod tempor incidundt ut labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory."
  }
  }
  ]
@@ -407,136 +407,136 @@ Entires JSON Schema:
 
 ```javascript
 {
- “definitions”: {
- “entry”: {
- “type”: “object”,
- “properties”: {
- “goal”: {
- “type”: “object”,
- “required”: [
- “uid”,
- “space”,
- “name”,
- “type_name”,
- “category”,
- “updated_at”,
- “created_at”,
- “tags”,
- “locale”,
- “available_locales”
+ "definitions": {
+ "entry": {
+ "type": "object",
+ "properties": {
+ "goal": {
+ "type": "object",
+ "required": [
+ "uid",
+ "space",
+ "name",
+ "type_name",
+ "category",
+ "updated_at",
+ "created_at",
+ "tags",
+ "locale",
+ "available_locales"
  ],
- “properties”: {
- “uuid”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “9b0a24a6-d84f-4851-8750-a86244947510"
+ "properties": {
+ "uuid": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "9b0a24a6-d84f-4851-8750-a86244947510"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “space”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “myspace”
+ "space": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "myspace"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “name”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “Lorem Ipsum pain”
+ "name": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "Lorem Ipsum pain"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “type_name”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “Post”
+ "type_name": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "Post"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “category”: {
- “type”: “null”,
- “default”: null,
- “examples”: [
+ "category": {
+ "type": "null",
+ "default": null,
+ "examples": [
  null
  ]
  },
- “updated_at”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “2019-03-18T 14:06:59 .000- 03:00”
+ "updated_at": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "2019-03-18T 14:06:59 .000- 03:00"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “tags”: {
- “type”: “array”
+ "tags": {
+ "type": "array"
  },
- “locale”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “in”
+ "locale": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "in"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “available_locales”: {
- “type”: “array”,
- “items”: {
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “in”
+ "available_locales": {
+ "type": "array",
+ "items": {
+ "type": "string",
+ "default": "",
+ "examples": [
+ "in"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  }
  }
  }
  },
- “fields”: {
- “type”: “object”
+ "fields": {
+ "type": "object"
  }
  }
  }
  },
- “$schema”: "http://json-schema.org/draft-07/schema #”,
- “type”: “object”,
- “required”: [
- “goal”,
- “Enries”
+ "$schema": "http://json-schema.org/draft-07/schema #",
+ "type": "object",
+ "required": [
+ "goal",
+ "Enries"
  ],
- “properties”: {
- “goal”: {
- “type”: “object”,
- “required”: [
- “total_entries”,
- “per_page”,
- “current_page”,
- “total_pages”
+ "properties": {
+ "goal": {
+ "type": "object",
+ "required": [
+ "total_entries",
+ "per_page",
+ "current_page",
+ "total_pages"
  ],
- “properties”: {
- “total_entries”: {
- “type”: “integer”
+ "properties": {
+ "total_entries": {
+ "type": "integer"
  },
- “per_page”: {
- “type”: “integer”
+ "per_page": {
+ "type": "integer"
  },
- “current_page”: {
- “type”: “integer”
+ "current_page": {
+ "type": "integer"
  },
- “total_pages”: {
- “type”: “integer”
+ "total_pages": {
+ "type": "integer"
  }
  }
  },
- “Entries”: {
- “type”: “array”,
- “items”: {
- “$ref”: “#/definitions/entry”
+ "Entries": {
+ "type": "array",
+ "items": {
+ "$ref": "#/definitions/entry"
  }
  }
  }
@@ -547,25 +547,25 @@ Entry JSON:
 
 ```javascript
 {
- “goal”: {
- “uid” :"9b0a24a6-d84f-4851-8750-a86244947510",
- “space” :"myspace”,
- “name” :"Lorem Ipsum pain”,
- “type_name” :"Post”,
- “category” :null,
- “updated_at” :"2019-03-18T 14:06:59 .000- 03:00 “,
- “created_at”: “2019-03-18T 14:06:59 .000- 03:00 “,
- “tags”: [
+ "goal": {
+ "uid" :"9b0a24a6-d84f-4851-8750-a86244947510",
+ "space" :"myspace",
+ "name" :"Lorem Ipsum pain",
+ "type_name" :"Post",
+ "category" :null,
+ "updated_at" :"2019-03-18T 14:06:59 .000- 03:00 ",
+ "created_at": "2019-03-18T 14:06:59 .000- 03:00 ",
+ "tags": [
 
  ],
- “locale” :"en”,
- “available_locales”: [
- “in”
+ "locale" :"en",
+ "available_locales": [
+ "in"
  ]
  },
- “fields”: {
- “excerpt” :"Lorem Ipsum pain”,
- “body” :"Lorem ipsum pain sit amet, sectetur adipiscing elit, be the second time for labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory.”
+ "fields": {
+ "excerpt" :"Lorem Ipsum pain",
+ "body" :"Lorem ipsum pain sit amet, sectetur adipiscing elit, be the second time for labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory."
  }
 ```
 
@@ -573,115 +573,115 @@ Entry JSON Schema:
 
 ```javascript
 {
- “definitions”: {},
- “$schema”: "http://json-schema.org/draft-07/schema #”,
- “$id”: "http://example.com/root.json “,
- “type”: “object”,
- “required”: [
- “goal”,
- “fields”
+ "definitions": {},
+ "$schema": "http://json-schema.org/draft-07/schema #",
+ "$id": "http://example.com/root.json ",
+ "type": "object",
+ "required": [
+ "goal",
+ "fields"
  ],
- “properties”: {
- “goal”: {
- “$id”: “#/properties/meta”,
- “type”: “object”,
- “required”: [
- “uid”,
- “space”,
- “name”,
- “type_name”,
- “category”,
- “updated_at”,
- “created_at”,
- “tags”,
- “locale”,
- “available_locales”
+ "properties": {
+ "goal": {
+ "$id": "#/properties/meta",
+ "type": "object",
+ "required": [
+ "uid",
+ "space",
+ "name",
+ "type_name",
+ "category",
+ "updated_at",
+ "created_at",
+ "tags",
+ "locale",
+ "available_locales"
  ],
- “properties”: {
- “uuid”: {
- “$id”: “#/properties/meta/properties/uuid”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “9b0a24a6-d84f-4851-8750-a86244947510"
+ "properties": {
+ "uuid": {
+ "$id": "#/properties/meta/properties/uuid",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "9b0a24a6-d84f-4851-8750-a86244947510"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “space”: {
- “$id”: “#/properties/meta/properties/space”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “myspace”
+ "space": {
+ "$id": "#/properties/meta/properties/space",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "myspace"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “name”: {
- “$id”: “#/properties/meta/properties/name”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “Lorem Ipsum pain”
+ "name": {
+ "$id": "#/properties/meta/properties/name",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "Lorem Ipsum pain"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “type_name”: {
- “$id”: “#/properties/meta/properties/type_name”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “Post”
+ "type_name": {
+ "$id": "#/properties/meta/properties/type_name",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "Post"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “category”: {
- “$id”: “#/properties/meta/properties/category”,
- “type”: “null”,
- “default”: null,
- “examples”: [
+ "category": {
+ "$id": "#/properties/meta/properties/category",
+ "type": "null",
+ "default": null,
+ "examples": [
  null
  ]
  },
- “updated_at”: {
- “$id”: “#/properties/meta/properties/updated_at”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “2019-03-18T 14:06:59 .000- 03:00”
+ "updated_at": {
+ "$id": "#/properties/meta/properties/updated_at",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "2019-03-18T 14:06:59 .000- 03:00"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “tags”: {
- “$id”: “#/properties/meta/properties/tags”,
- “type”: “array”
+ "tags": {
+ "$id": "#/properties/meta/properties/tags",
+ "type": "array"
  },
- “locale”: {
- “$id”: “#/properties/meta/properties/locale”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “in”
+ "locale": {
+ "$id": "#/properties/meta/properties/locale",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "in"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  },
- “available_locales”: {
- “$id”: “#/properties/meta/properties/available_local”,
- “type”: “array”,
- “items”: {
- “$id”: “#/properties/meta/properties/available_locales/items”,
- “type”: “string”,
- “default”: “”,
- “examples”: [
- “in”
+ "available_locales": {
+ "$id": "#/properties/meta/properties/available_local",
+ "type": "array",
+ "items": {
+ "$id": "#/properties/meta/properties/available_locales/items",
+ "type": "string",
+ "default": "",
+ "examples": [
+ "in"
  ],
- “pattern”: “^ (.*) $”
+ "pattern": "^ (.*) $"
  }
  }
  }
  },
- “fields”: {
- “$id”: “#/properties/fields”,
- “type”: “object”
+ "fields": {
+ "$id": "#/properties/fields",
+ "type": "object"
  }
  }
 }
@@ -698,11 +698,11 @@ For example, with `page = 3`, `per_page = 20` you are prompting to return the ne
 A pagination goal is delivered along with the response, such as:
 
 ```javascript
- “goal”: {
- “total_entries”: 2,
- “per_page”: 15,
- “current_page”: 1,
- “total_pages”: 1
+ "goal": {
+ "total_entries": 2,
+ "per_page": 15,
+ "current_page": 1,
+ "total_pages": 1
  }
 ```
 
@@ -788,7 +788,7 @@ Fields that search in multiple items (checkboxes, multiple) can use the followin
 The order of the results must be specified with the parameters `sort_by` and `order`:
 
 - `sort_by`: indicating the name of the attribute (e.g. meta.tags, or fields.name)
-- `order`: ['asc', 'desc'] (optional, asc by default)
+- `order`: ['asc', 'desc'](optional, asc by default)
 
 #### jQuery
 
@@ -796,14 +796,14 @@ The jQuery JavaScript library makes it easy to implement them within Modyo, arou
 
 A powerful feature of jQuery is its easy-to-understand AJAX functionality. It allows you to easily bring content data within your site, and also from other sites and services.
 
-In this AJAX request, you are specifying an exit point (using the Liquid object <span v-pre> {{site.url}} </span>) and including options to specify that it is a “GET” of type 'json'. Finally link the “data.promotions” to “vm.promos” for use in the app.
+In this AJAX request, you are specifying an exit point (using the Liquid object <span v-pre> {{site.url}} </span>) and including options to specify that it is a "GET" of type 'json'. Finally link the "data.promotions" to "vm.promos" for use in the app.
 
 #### Fetch API with native JavaScript
 
 The Fetch API provides a simple JavaScript interface, to access and manipulate some of the HTTP protocol, such as requests and responses. The global fetch () method is an easy and logical way to bring resources asynchronously across a network.
 
 A basic fetch request is very simple to perform. Look at the following code:
-A JSON file is being brought from within the site using the Liquid object <span v-pre> {{site.url}} </span>. The simplest use of fetch () requires an argument —the path of the resource you want to bring — and returns a “promise” containing the response (Response object).
+A JSON file is being brought from within the site using the Liquid object <span v-pre> {{site.url}} </span>. The simplest use of fetch () requires an argument —the path of the resource you want to bring — and returns a "promise" containing the response (Response object).
 
 This is an HTTP response, not the real JSON. To extract the JSON body from the response, use the json () method at the end of the response, and then link the data to the promotions (this fetch () is for this application).
 
@@ -856,12 +856,12 @@ For example:
 
 ```javascript
 {
- “iss”: "http://my-account.modyo.me/api/profile “,
- “aud”: "http://my-account.modyo.me/api/content “,
- “sub”: “account_uuid”,
- “exp”: 1516242622,
- “access_type”: “delivery”,
- “targets”: ["target1", “target2"]
+ "iss": "http://my-account.modyo.me/api/profile ",
+ "aud": "http://my-account.modyo.me/api/content ",
+ "sub": "account_uuid",
+ "exp": 1516242622,
+ "access_type": "delivery",
+ "targets": ["target1", "target2"]
 }
 ```
 
