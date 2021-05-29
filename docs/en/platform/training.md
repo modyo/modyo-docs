@@ -52,7 +52,7 @@ To create the test account you must log in to the [following link] (https://plat
 
 You will automatically be assigned the account administrator role, granting you privileges to invite other users on your team to participate in it.
 
-This environment will be available for the limited period of time. Once the deadline has expired, the account will be automatically deactivated. If you require an extension of the indicated period, you must request it to [success@modyo.com](mailto: success@modyo.com), indicating the additional time you need.
+This environment will be available for the limited period of time. Once the deadline has expired, the account will be automatically deactivated. If you require an extension of the indicated period, you must request it to [success@modyo.com](mailto:success@modyo.com), indicating the additional time you need.
 
 ## How to ask for help?
 
