@@ -44,7 +44,7 @@ If you need to quickly publish an item, admin users can skip the approval proces
 
 Site settings allow you to open platform options to be viewed differently by visitors, customers, developers, and site administrators. In addition, you can modify options to improve the appearance in search engines and the view of some of the data that the public has access to when they reach the pages.
 
- <img src="/assets/img/channels/sites/config-site.jpg" width="250" /> 
+<img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
 ### General
 
