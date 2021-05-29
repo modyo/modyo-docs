@@ -9,7 +9,7 @@ Welcome to the Modyo documentation. We hope to cover all relevant topics related
 We have designed the Modyo documentation to be navigated as a guide (from start to finish) or resolve a specific query. The contents within the documentation are interrelated to each other in order to facilitate the understanding of these.
 
 :::tip Past versions
-The documentation on this site applies to the latest version (9.1). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
+The documentation on this site applies to the latest version (9.2). To access documentation for previous version (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
 :::
 
 ### What is Modyo?
