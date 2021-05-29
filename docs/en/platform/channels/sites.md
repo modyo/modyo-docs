@@ -428,9 +428,9 @@ strict policy for the _template minimal_ would look like this:
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
-The policy must include a 'default-src' self' directive, which is _fallback_
+The policy must include a `default-src 'self'` directive, which is _fallback_
 for any other type of resource. You must also include policies
-`script-src` and `style-src` to prevent the evaluation of tags _inline_ `style and
+`script-src` and `style-src` to prevent the evaluation of tags _inline_ `style` and
 `script`.
 
 * **Nonce**: The server will add a nonce CSP to the policies
