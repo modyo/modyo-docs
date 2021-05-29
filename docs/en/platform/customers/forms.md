@@ -23,7 +23,7 @@ To create a new form, click the main button on the top right. **+ New**. This wi
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator, and also as a title when a user will respond to it.
 - **Description**: This text will appear as text below the title when users will respond to it.
 - **People Limit**: Allows to determine the maximum number of responses are allowed.
-- **Site**: Allows you to select on which site this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder] (/es/platform/channels/templates.html)
+- **Site**: Allows you to select on which site this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/es/platform/channels/templates.html)
 - **Accept multiple responses**: If this option is enabled, each time a user responds to the form, it will be registered as a new response. If this option is disabled, each time the same user replies to the form, they will be overwriting their previous response.
 - **For registered users only**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session will not be able to view the form. If this option is disabled, any user will be able to reply to the form.
 - **Request to Automatically**: If the form is private (only registered user can answer it), this option will appear that will allow you to automatically redirect users who log in to the site associated with the form to answer it.
@@ -35,7 +35,7 @@ After a split you will be able to see the options to modify the redirect after a
 - **Thank You Page**: Allows you to add a personalized thank you message after a user replies the form, next to a button that will take you to a page of the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
 
-- **Enable targetization**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more go to [Targets] (/es/platform/customers/targets.html)
+- **Enable targetization**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more go to [Targets](/es/platform/customers/targets.html)
 
 :::warning Attention
 If it is a public form, users who do not have an active session in Modyo, you will see three required fields at the top of the form: First Name, Last Name and Email. Once they submit the form, a user will be created with those values and then the response will be associated with that user.
@@ -47,9 +47,9 @@ If a user does not have an active session, and fill out the form, and the email 
 
 In the**Notifications** section you can configure the various emails that are sent after a user replies the form.
 
-The email notification sends an email of the “administrative” type in which it is notified via that channel that someone replied the form. You can assign a subject and list of emails you want to notify.
+The email notification sends an email of the "administrative” type in which it is notified via that channel that someone replied the form. You can assign a subject and list of emails you want to notify.
 
-The thank you email allows you to personalize an email that will be sent to the user who replied the form. You can customize both the subject and body of the message using [Liquid] (/es/platform/channels/liquid-markup.html). Under the field to customize the message, you can see a list of variables that you can use to customize your email.
+The thank you email allows you to personalize an email that will be sent to the user who replied the form. You can customize both the subject and body of the message using [Liquid](/es/platform/channels/liquid-markup.html). Under the field to customize the message, you can see a list of variables that you can use to customize your email.
 
 Below is an example of code that you can use as a basis for customizing your thank you email.
 
