@@ -13,7 +13,7 @@ Once inside the Template Builder, you can see that the main menu is hidden to op
 - **Publiced**: When a published version already exists and its editable version is the same.
 - **Pending changes**: When there is a published version, but there are pending changes to your editable version.
 - **In Review**: When [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and the editable version has been sent for revision.
-- **Approved**: When [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, your templates are ready to be published.
+- **Approved**: When [Computer Patch] is enabled (/en/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, your templates are ready to be published.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
@@ -21,9 +21,9 @@ In the upper right, you can find the latest release date and available actions:
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on this icon opens a new tab with preview mode of the templates, in which you can see as if they were published, all the changes you have in your templates.
 
-። :warning Attention
+:::warning Attention
 You can preview the changes as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
-።:
+:::
 
  <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700"> 
 
@@ -52,8 +52,8 @@ At the end of the sidebar, you see a text box where you can write a comment. Nex
 **Main Action**
 
 - **Save**: Save all changes to all templates.
-- **Send to Review**: Change the status of the templates to “Waiting for Review”. In this state you can continue to make changes, but each change will be notified via mail to the assigned reviewers.
-- **Reject**: Returns to “In Edit” status, notifying reviewers that the item was rejected.
+- **Send to Review**: Change the status of the templates to "Waiting for Review". In this state you can continue to make changes, but each change will be notified via mail to the assigned reviewers.
+- **Reject**: Returns to "In Edit" status, notifying reviewers that the item was rejected.
 - **Publish**: Once the templates have been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -and-joint publication) and publish your templates.
 
 In the main work area, you can see two sections:
@@ -69,7 +69,7 @@ Views are base elements required by Modyo, and usually translate into the direct
 
 ### Snippets
 
-Snippets are pieces of code that can be used once or more times. Next to each custom snippet, you will find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) to copy its reference path. The code will look similar to this: <span v-pre> `{% snippet “snippet-name”%}` </span>.
+Snippets are pieces of code that can be used once or more times. Next to each custom snippet, you will find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) to copy its reference path. The code will look similar to this: <span v-pre> `{% snippet "snippet-name"%}` </span>.
 
 You can add custom snippets to the end of the platform's snippets list by clicking on the **+ Add a snippet** button.
 
@@ -103,7 +103,7 @@ For more information about the benefits and features of File Manager, go to [Ass
 
  <img src="/assets/img/channels/template_builder/snippets.jpg" width="300"> 
 
-**Changes**: A list of all the times and states in which you have done the “Save” action in this release. By clicking on one of the sub-versions, you change the content of the template you're working on to that sub-version.
+**Changes**: A list of all the times and states in which you have done the "Save" action in this release. By clicking on one of the sub-versions, you change the content of the template you're working on to that sub-version.
 
  <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300"> 
 
@@ -120,7 +120,7 @@ If you reset a version prior to the editable version, you will be able to access
 You can learn more about the [versioned here]. (/platform/core/key-concepts.html #versionado)
 ።:
 
-Like each template, you can restore all templates to their original version by clicking on the secondary action in the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> Restore All”. For those changes to take effect, you must publish the templates.
+Like each template, you can restore all templates to their original version by clicking on the secondary action in the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> Restore All". For those changes to take effect, you must publish the templates.
 
 ### Topics
 
@@ -161,7 +161,7 @@ In order to automatically display [content](/en/platform/content/) on a site, yo
 1. Have posts published in the language of the site. Go to [Entries](/es/platform/content/entries.html) and [Location](/es/platform/content/spaces.html #localizacion) to learn more.
 1. Create a custom view in the Templates Builder.
 
-To create a custom view, you need to enter the Template Builder and make sure that you are in the first “Views” tab. When you scroll to the end of the list, you will see that there is a section called **Custom** and a **+ Add Custom View** button. When creating the custom view, you must select a name, a space to which it will be associated with, and finally a space content type.
+To create a custom view, you need to enter the Template Builder and make sure that you are in the first "Views" tab. When you scroll to the end of the list, you will see that there is a section called **Custom** and a **+ Add Custom View** button. When creating the custom view, you must select a name, a space to which it will be associated with, and finally a space content type.
 
 ። :warning Attention
 The name of the view will be the path (URL) relative to the site of the content to display, so pay attention when naming these views.
@@ -217,7 +217,7 @@ Modyo has three layouts by default:
 * **Base**: All pages except the home use this layout by default.
 * **Error**: Error views use this clean layout (404, 401)
 
-You can create new Layouts from the template builder by clicking “Add Layout” in the “Views” tab, which will allow you to define a new base structure to use on pages.
+You can create new Layouts from the template builder by clicking "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on pages.
 
 You can use as a base, this code that contains everything you need for your pages to use all the necessary elements of the site, such as head, header, footer, service worker and Google Tag Manager settings, but keep in mind that you can modify it as much as you want:
 
@@ -430,11 +430,11 @@ var modalConfirm = function() {
 };
 // will be in charge of starting the time tracking to raise this modal and manage the session on the Front side. The following explains each of the properties and methods of this object that manages the session.
 var sessionManager = {
-  // property that defines the time from the last activity to the end of the session in seconds (not the refresh time of the token but the end of the session, it is recommended that this is one minute less than that declared by the Open ID Connect provider to have some slack with the session and the closing of the session to be 100% valid).
+  // property that defines the time from the last activity to the end of the session in seconds (not the token refresh time but the session end time, it is recommended that this is one minute less than the time declared by the Open ID Connect provider to have some slack with the session and the session closure is 100% valid).
   timeToEndSessionInSeconds: 900,
   // property defining the inactivity mode lifting time since the last action or request on the page.
   timeToRaiseWarningModalInSeconds: 720,
-  // property that stores the timestamp of the last activity time of the sessionManager.
+  // property that stores the timestamp of the last activity time of the sessionManager
   lastActionTimeInThisWindow: new Date().getTime(),
   // función que convierte segundos a milisegundos
   secondsToMilisecs: function(minutes) {
@@ -468,7 +468,7 @@ var sessionManager = {
     var self = this;
     return setInterval(this.checkSessionEvents, 1000, self);
   },
-  // método que levanta el modal de warning time
+  // method that raises the warning time modal
   raiseModal: function() {
     return modalConfirm();
   },
@@ -523,11 +523,11 @@ This is the modal to activate in the previous step with bootstrap for the handli
 
 ```html
 <div
- id="session-modal”
- class="modal fade”
- tabindex=” -1"
- role="dialog”
- aria-labelledby="session-modal-label”
+ id="session-modal"
+ class="modal fade"
+ tabindex=" -1"
+ role="dialog"
+ aria-labelledby="session-modal-label"
 >
  <div class="modal-dialog" role="document"> 
  <div class="modal-content"> 
@@ -547,10 +547,10 @@ This is the modal to activate in the previous step with bootstrap for the handli
  If
  </button> 
  <button
- id="session-modal-no”
- type="button”
- class="btn btn-second”
- data-dismiss="modal”
+ id="session-modal-no"
+ type="button"
+ class="btn btn-second"
+ data-dismiss="modal"
  >
  Not
  </button> 
