@@ -191,7 +191,7 @@ If you're having problems with keyboard codes when you're editing CSS, you can c
 
 Modyo allows you to configure the sending address and appearance of emails that will be sent to realm users.
 
-To adjust the address that will appear as the sender that will send your email, just enter it in the “Default Mail” field and click on the**Save** button.
+To adjust the address that will appear as the sender that will send your email, just enter it in the "Default Mail" field and click on the**Save** button.
 
 This section allows is to enable, disable, and customize the sending of automatic mails after specific user interactions, the emails are as follows:
 
