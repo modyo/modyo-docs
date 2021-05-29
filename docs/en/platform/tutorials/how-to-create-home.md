@@ -10,7 +10,7 @@ Welcome to a new tutorial of the Modyo training series. In this tutorial we will
 
 Linking Content and Channels is one of the most important functionalities when it comes to having dynamic sites and easy to manage by anyone.
 
-Throughout this tutorial, and others too, we will use the fictitious brand “Dynamic Bank”, which we introduce you below.
+Throughout this tutorial, and others too, we will use the fictitious brand "Dynamic Bank", which we introduce you below.
 
 ### Dynamic Bank
 
@@ -28,7 +28,7 @@ To run the steps in this tutorial you must have created the contents of the [Dyn
 
 To create our [site] (/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
 
-We fill the Name fields with “Bank” and select the Theme “Minimal” as shown in the image.
+We fill the Name fields with "Bank" and select the Theme "Minimal" as shown in the image.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
 
@@ -306,7 +306,7 @@ For order topics, we are going to create a CSS snippet, where later we'll add al
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;"> 
 
-For this snippet to take effect in our Home we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet “home_css”%} </code> so that the content of our snippet within the general template stylesheet.
+For this snippet to take effect in our Home we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet "home_css"%} </code> so that the content of our snippet within the general template stylesheet.
 
 ## Step 9: Add Dependent Libraries
 
