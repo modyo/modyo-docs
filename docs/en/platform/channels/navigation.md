@@ -41,13 +41,13 @@ For more information on versioning, see the [Versioning] section (/es/platform/c
 
 **Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: If you have [team review](/es/platform/core/key-concepts.html) enabled, you see this option that clicking it, displays a sidebar with the activity history and comments from the menu. 
 
-At the end of the sidebar, you see a text box where you can write a comment. Next to each activity, you can click on “view detail” to display the complete information of that activity log.
+At the end of the sidebar, you see a text box where you can write a comment. Next to each activity, you can click on "view detail" to display the complete information of that activity log.
 
 **Main Action**
 
 - **Save**: Save all menu changes.
-- **Send to Review**: Change the menu status to “Waiting for Review”. In this state you continue to make changes, but each change will be notified via mail to the assigned reviewers.
-- **Reject**: Returns to “In Edit” status, notifying reviewers that the item was rejected.
+- **Send to Review**: Change the menu status to "Waiting for Review". In this state you continue to make changes, but each change will be notified via mail to the assigned reviewers.
+- **Reject**: Returns to "In Edit" status, notifying reviewers that the item was rejected.
 - **Publish**: Once the menu has been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -y-y-joint) to publish your navigation.
 
 In the right side section you can see a bar that changes according to the item selected in the main area. In this section you can see the options:
