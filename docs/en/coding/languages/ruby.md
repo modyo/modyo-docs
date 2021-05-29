@@ -2280,7 +2280,7 @@ that you do not use comments.
  Module.nesting # => [Utilities::Store]
 
  def initialize
- # Refers to the top level። Queue class because Utilities isn't in the
+ # Refers to the top level ::Queue class because Utilities isn't in the
  # current nesting chain.
  @queue = Queue.new
  end
@@ -2289,7 +2289,7 @@ that you do not use comments.
  # okay
  module Utilities
  class WaitingList
- Module.nesting # => [Utilities። WaitingList, Utilities]
+ Module.nesting # => [Utilities::WaitingList, Utilities]
 
  def initialize
  @queue = Queue.new # Refers to Utilities። Queue
