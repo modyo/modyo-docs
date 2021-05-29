@@ -18,19 +18,19 @@ When you filter by site, items that use space data will not contribute their dat
 
 ![Digital factory](/assets/img/platform/digital-factory.png)
 
-### Activity by type
+### Activity by types
 
 You will see five boxes representing the number of items created, modified, submitted for review, approved, and published. The elements that are grouped in these boxes are posts, page, navigation, widgets, and templates.
 
 **Created**: Account each time an entry, page or widget is created.
 
-**Edits**: Count every time you use the "save” action on posts, pages, navigation, widgets and templates.
+**Edits**: Count every time you use the "save" action on posts, pages, navigation, widgets and templates.
 
 **Sent for Review**: Account each time in a site or space with team review enabled, an item is sent for review.
 
 **Approved**: Count each time team review restrictions are met and an item is ready to be published.
 
-**Publiced**: Account each time an item is published, either on a site or space without team review (direct posting), or through team review, or also, through the "force publication” action of administrators.
+**Publiced**: Account each time an item is published, either on a site or space without team review (direct posting), or through team review, or also, through the "force publication" action of administrators.
 
 Next to each main counter, you'll see an up (green) or down (red) indicator that represents whether the ratio between the current and previous period increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
