@@ -410,7 +410,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ### Un controlador de sesiones
 
 ```js
-// se encarga de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón Mantener Sesión y que lanzara una promesa reject en el caso de seleccionar el botón con la negativa de continuar
+// se encarga de levantar el modal de advertencia que avisara el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón Mantener Sesión y que lanzará una promesa reject en el caso de seleccionar el botón con la negativa de continuar
 var modalConfirm = function() {
   return new Promise(function(resolve, reject) {
     $("#session-modal").modal({
@@ -430,17 +430,17 @@ var modalConfirm = function() {
 };
 // será la que se encarga de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
 var sessionManager = {
-  // propiedad que define el tiempo desde la ultima actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
+  // propiedad que define el tiempo desde la última actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
   timeToEndSessionInSeconds: 900,
-  // propiedad donde se define el tiempo de levantamiento del modal de inactividad desde la ultima acción o petición en la pagina
+  // propiedad donde se define el tiempo de levantamiento del modal de inactividad desde la última acción o petición en la página
   timeToRaiseWarningModalInSeconds: 720,
-  // propiedad que guarda el timestamp del ultimo momento de actividad del sessionManager
+  // propiedad que guarda el timestamp del último momento de actividad del sessionManager
   lastActionTimeInThisWindow: new Date().getTime(),
   // función que convierte segundos a milisegundos
   secondsToMilisecs: function(minutes) {
     return minutes * 1000;
   },
-  // propiedad para almacenar el interval id de revision de eventos de sesion
+  // propiedad para almacenar el interval id de revision de eventos de sesión
   intevalId:null,
   // función que determina si se esta accediendo a la aplicación desde el modyoShell o no
   isModyoAppShell: function() {
