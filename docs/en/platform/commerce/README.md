@@ -11,7 +11,7 @@ search: true
 Currently Modyo Commerce only allows integration with payment methods in Latin America.
 :::
 
-## Frame
+## Structure
 
 **Modyo** also allows you to manage an ecommerce easily, organizing and centralizing orders, as well as simplifying the insertion of payment methods.
 
