@@ -4,18 +4,6 @@ search: true
 
 # Notas del release
 
-### 9.2.X - Primer release planificado para el primer trimestre del 2021.
-&nbsp;
-<Badge text="Core" type="core" vertical="middle"/>
-* Grupos de administradores: Para añadir fácilmente usuarios en conjunto a distintos sitios o espacios.
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Site stages: Trabaja en un ambiente seguro pre-productivo de un sitio, sin comprometer la integridad de lo que ya está publicado en él.
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
-* Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
-
 ### 9.1.21 - 28 de mayo del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
