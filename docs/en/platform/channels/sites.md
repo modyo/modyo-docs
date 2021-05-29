@@ -437,7 +437,7 @@ for any other type of resource. You must also include policies
   `script-src` and `style-src` if they are present.
 
 If you have nonce present in your policy, you can add to the allowed list
-the _tags_ `script` and `style in your _templates_ using the variable `csp_nonce`.
+the _tags_ `script` and `style` in your _templates_ using the variable `csp_nonce`.
 
 ```liquid
  <script nonce="{{csp_nonce}}"> 
