@@ -142,7 +142,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
 We must import the corresponding HTTP Client file into all Repositories that need it. In this example "ModyoClient"
 :::
 
-#### 5. Create the file "RepositoryFactory.js”
+#### 5. Create the file "RepositoryFactory.js"
    We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, this way it is easier to use them anywhere in our Widget.
 
    ```sh
