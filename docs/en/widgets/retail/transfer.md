@@ -12,7 +12,7 @@ Transfers is a wigdet that allows a customer to move money between their account
 modyo-cli get modyo-widgets-retail-transfer
 ```
 
-[Open in another tab] (https://widgets-es.modyo.com/personas/transferencia)
+[Open in another tab](https://widgets-es.modyo.com/personas/transferencia)
 
  <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/transferencia" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/> 
 
