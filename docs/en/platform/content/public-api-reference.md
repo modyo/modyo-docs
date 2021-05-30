@@ -18,7 +18,7 @@ The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/
 :::warning Attention
 From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, such that:
 
-* The fields belonging to the meta-information of the input that were previously used as <span v-pre> `{{entry.slug}}` </span> should now be used as <span v-pre> `{{entry.meta.slug}}` </span> 0, or <span v-pre> `{{entry.meta['slug']}}` </span>.
+* The fields belonging to the meta-information of the input that were previously used as <span v-pre> `{{entry.slug}}` </span> should now be used as <span v-pre> `{{ entry.meta.slug }}` </span> 0, or <span v-pre> `{{entry.meta['slug']}}` </span>.
 * Custom fields previously used as <span v-pre> `{{entry.title}}` </span> should now be used as <span v-pre> `{{entry.fields.title}}` </span>, or a0758c65z0 0756f1abz0 `{{entry.fields ['title']}}` </span>.
 
 Both forms will be available until Modyo version 9.2.
