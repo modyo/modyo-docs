@@ -38,8 +38,8 @@ To access the list of entries for a type of uid `type_uid` in a uid space `space
 To access the total number of entries that a content filter returns, you can use the liquid filter `total_entries`, for example:
 
 ```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entiries%}
-Total Entries: {{Entries | total_Entries}}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+Total entries: {{ entries | total_entries }}
 ```
 
 ### Filter entries
