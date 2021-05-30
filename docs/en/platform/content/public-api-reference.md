@@ -253,8 +253,8 @@ The object returned by `getEntries()` includes a `meta` field to help you naviga
 
 #### Filters
 
-The `getEntries () `method that we occupy above may also receive a filter object to query the entries.
-Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, being able to query the meta fields of each entry (such as creation date or assigned tags)
+The `getEntries()` method that we occupy above may also receive a filter object to query the entries.
+Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, being able to query the `meta` fields of each entry (such as creation date or assigned tags)
 
 **Supported filters**:
 
