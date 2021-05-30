@@ -12,9 +12,9 @@ Modyo offers a Widget that allows you to see an overview of the credits that the
 modyo-cli get modyo-widgets-retail-loans
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/creditos)
+[Open in another tab](https://widgets.modyo.com/personas/creditos)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/creditos" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality       | Description                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -35,7 +35,7 @@ modyo-cli get modyo-widgets-retail-loans
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
