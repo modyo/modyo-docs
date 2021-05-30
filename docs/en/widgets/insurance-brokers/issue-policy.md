@@ -18,6 +18,6 @@ modyo-cli get modyo-widgets-insurance-issue-policy
 
 | Feature      | Description                                                                                                                                                                                                             |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Saved           | Not always intermediaries have all the data at hand, help them with options that generate draft policies without losing that issue.                                                                   |
+| Save           | Not always intermediaries have all the data at hand, help them with options that generate draft policies without losing that issue.                                                                   |
 | Effective Dates | Allow your intermediaries to select only the effective date or type of Co-Ownership to be insured. Save time filling data by integrating these steps with the information collected in the quoter. |
 | Overview            | Presents a summary of the quote before generating it to validate hedges, deductibles and offers the option to display the premium increase percentages selected in the quote.                       |
