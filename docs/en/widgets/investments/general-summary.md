@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-general-summary
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="min-height:612px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality          | Description                                                                                                                                                                                                                               |
+| Feature          | Description                                                                                                                                                                                                                               |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consolidated Heritage | Displays the consolidated information of the customer's total wealth at the end of the previous day. Delivers a summary of the assets invested by the customer, viewing accounts, products and the currency in which the transaction is performed. |
 | Monthly Evolution      | It presents the initial and end of the selected month, along with the movements of the month (contributions, bailouts, patrimonial changes).                                                                                                  |
