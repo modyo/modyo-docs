@@ -273,10 +273,10 @@ If you intend to filter by date, it is important that the filter value use the I
 :::
 
 ```js
-//If we want to get a list of attributes for which we can consult
-TypePost
- .getSchema ()
- .then () => console.log ("List of attributes:", TypePost.getAttrs ()));
+// How to obtain a list of attributes that we can use in our queries
+typePost
+.getSchema()
+.then(() => console.log("List of attributes:", typePost.getAttrs()));
 ```
 
 To create a filter, we use the `Filter () `method
