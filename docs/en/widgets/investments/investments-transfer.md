@@ -12,9 +12,9 @@ This Widget exists for customers to transfer funds between their investment acco
 modyo-cli get modyo-widgets-investments-transfer
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/transferencia)
+[Open in another tab](https://widgets.modyo.com/inversiones/transferencia)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality | Description                                                                                                                                                      |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,7 +34,7 @@ modyo-cli get modyo-widgets-investments-transfer
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
