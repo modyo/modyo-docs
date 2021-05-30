@@ -6,8 +6,8 @@ search: true
 
 In this Widget, each user will be able to complete the Investor Profile survey, in order to receive the best recommendations on their movements.
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/profile-survey)
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/> 
+[Open in another tab](https://widgets.modyo.com/inversiones/profile-survey)
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/> 
 
 | Functionality                    | Description                                                                                                                                                      |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ In this Widget, each user will be able to complete the Investor Profile survey, 
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
