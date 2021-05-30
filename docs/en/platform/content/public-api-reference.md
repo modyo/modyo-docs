@@ -573,117 +573,117 @@ Entry JSON Schema:
 
 ```javascript
 {
- "definitions": {},
- "$schema": "http://json-schema.org/draft-07/schema #",
- "$id": "http://example.com/root.json ",
- "type": "object",
- "required": [
- "goal",
- "fields"
- ],
- "properties": {
- "goal": {
- "$id": "#/properties/meta",
- "type": "object",
- "required": [
- "uid",
- "space",
- "name",
- "type_name",
- "category",
- "updated_at",
- "created_at",
- "tags",
- "locale",
- "available_locales"
- ],
- "properties": {
- "uuid": {
- "$id": "#/properties/meta/properties/uuid",
- "type": "string",
- "default": "",
- "examples": [
- "9b0a24a6-d84f-4851-8750-a86244947510"
- ],
- "pattern": "^ (.*) $"
- },
- "space": {
- "$id": "#/properties/meta/properties/space",
- "type": "string",
- "default": "",
- "examples": [
- "myspace"
- ],
- "pattern": "^ (.*) $"
- },
- "name": {
- "$id": "#/properties/meta/properties/name",
- "type": "string",
- "default": "",
- "examples": [
- "Lorem Ipsum pain"
- ],
- "pattern": "^ (.*) $"
- },
- "type_name": {
- "$id": "#/properties/meta/properties/type_name",
- "type": "string",
- "default": "",
- "examples": [
- "Post"
- ],
- "pattern": "^ (.*) $"
- },
- "category": {
- "$id": "#/properties/meta/properties/category",
- "type": "null",
- "default": null,
- "examples": [
- null
- ]
- },
- "updated_at": {
- "$id": "#/properties/meta/properties/updated_at",
- "type": "string",
- "default": "",
- "examples": [
- "2019-03-18T 14:06:59 .000- 03:00"
- ],
- "pattern": "^ (.*) $"
- },
- "tags": {
- "$id": "#/properties/meta/properties/tags",
- "type": "array"
- },
- "locale": {
- "$id": "#/properties/meta/properties/locale",
- "type": "string",
- "default": "",
- "examples": [
- "in"
- ],
- "pattern": "^ (.*) $"
- },
- "available_locales": {
- "$id": "#/properties/meta/properties/available_local",
- "type": "array",
- "items": {
- "$id": "#/properties/meta/properties/available_locales/items",
- "type": "string",
- "default": "",
- "examples": [
- "in"
- ],
- "pattern": "^ (.*) $"
- }
- }
- }
- },
- "fields": {
- "$id": "#/properties/fields",
- "type": "object"
- }
- }
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "meta",
+    "fields"
+  ],
+  "properties": {
+    "meta": {
+      "$id": "#/properties/meta",
+      "type": "object",
+      "required": [
+        "uuid",
+        "space",
+        "name",
+        "type_name",
+        "category",
+        "updated_at",
+        "created_at",
+        "tags",
+        "locale",
+        "available_locales"
+      ],
+      "properties": {
+        "uuid": {
+          "$id": "#/properties/meta/properties/uuid",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "9b0a24a6-d84f-4851-8750-a86244947510"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "space": {
+          "$id": "#/properties/meta/properties/space",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "myspace"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/meta/properties/name",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "type_name": {
+          "$id": "#/properties/meta/properties/type_name",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "Post"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "category": {
+          "$id": "#/properties/meta/properties/category",
+          "type": "null",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "updated_at": {
+          "$id": "#/properties/meta/properties/updated_at",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "tags": {
+          "$id": "#/properties/meta/properties/tags",
+          "type": "array"
+        },
+        "locale": {
+          "$id": "#/properties/meta/properties/locale",
+          "type": "string",
+          "default": "",
+          "examples": [
+            "en"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "available_locales": {
+          "$id": "#/properties/meta/properties/available_locales",
+          "type": "array",
+          "items": {
+            "$id": "#/properties/meta/properties/available_locales/items",
+            "type": "string",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "fields": {
+      "$id": "#/properties/fields",
+      "type": "object"
+    }
+  }
 }
 ```
 
