@@ -407,139 +407,139 @@ Entires JSON Schema:
 
 ```javascript
 {
- "definitions": {
- "entry": {
- "type": "object",
- "properties": {
- "goal": {
- "type": "object",
- "required": [
- "uid",
- "space",
- "name",
- "type_name",
- "category",
- "updated_at",
- "created_at",
- "tags",
- "locale",
- "available_locales"
- ],
- "properties": {
- "uuid": {
- "type": "string",
- "default": "",
- "examples": [
- "9b0a24a6-d84f-4851-8750-a86244947510"
- ],
- "pattern": "^ (.*) $"
- },
- "space": {
- "type": "string",
- "default": "",
- "examples": [
- "myspace"
- ],
- "pattern": "^ (.*) $"
- },
- "name": {
- "type": "string",
- "default": "",
- "examples": [
- "Lorem Ipsum pain"
- ],
- "pattern": "^ (.*) $"
- },
- "type_name": {
- "type": "string",
- "default": "",
- "examples": [
- "Post"
- ],
- "pattern": "^ (.*) $"
- },
- "category": {
- "type": "null",
- "default": null,
- "examples": [
- null
- ]
- },
- "updated_at": {
- "type": "string",
- "default": "",
- "examples": [
- "2019-03-18T 14:06:59 .000- 03:00"
- ],
- "pattern": "^ (.*) $"
- },
- "tags": {
- "type": "array"
- },
- "locale": {
- "type": "string",
- "default": "",
- "examples": [
- "in"
- ],
- "pattern": "^ (.*) $"
- },
- "available_locales": {
- "type": "array",
- "items": {
- "type": "string",
- "default": "",
- "examples": [
- "in"
- ],
- "pattern": "^ (.*) $"
- }
- }
- }
- },
- "fields": {
- "type": "object"
- }
- }
- }
- },
- "$schema": "http://json-schema.org/draft-07/schema #",
- "type": "object",
- "required": [
- "goal",
- "entries"
- ],
- "properties": {
- "goal": {
- "type": "object",
- "required": [
- "total_entries",
- "per_page",
- "current_page",
- "total_pages"
- ],
- "properties": {
- "total_entries": {
- "type": "integer"
- },
- "per_page": {
- "type": "integer"
- },
- "current_page": {
- "type": "integer"
- },
- "total_pages": {
- "type": "integer"
- }
- }
- },
- "Entries": {
- "type": "array",
- "items": {
- "$ref": "#/definitions/entry"
- }
- }
- }
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "uuid",
+            "space",
+            "name",
+            "type_name",
+            "category",
+            "updated_at",
+            "created_at",
+            "tags",
+            "locale",
+            "available_locales"
+          ],
+          "properties": {
+            "uuid": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "9b0a24a6-d84f-4851-8750-a86244947510"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "space": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "myspace"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "name": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Lorem Ipsum dolor"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "type_name": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Post"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "category": {
+              "type": "null",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "updated_at": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "tags": {
+              "type": "array"
+            },
+            "locale": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "en"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "available_locales": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "",
+                "examples": [
+                  "en"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "fields": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "meta",
+    "entries"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "total_entries",
+        "per_page",
+        "current_page",
+        "total_pages"
+      ],
+      "properties": {
+        "total_entries": {
+          "type": "integer"
+        },
+        "per_page": {
+          "type": "integer"
+        },
+        "current_page": {
+          "type": "integer"
+        },
+        "total_pages": {
+          "type": "integer"
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/entry"
+      }
+    }
+  }
 }
 ```
 
