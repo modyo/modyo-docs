@@ -338,7 +338,7 @@ To perform any action, it is necessary to know the path structure of the content
 ```
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
-https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries? [filters]
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
 
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
