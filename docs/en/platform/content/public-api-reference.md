@@ -282,15 +282,14 @@ typePost
 To create a filter, we use the `Filter() `method
 
 ```js
-const filters = TypePost
- .Filter ()
- .Before ("meta.created_at", "2020-05-01")
- .In ("meta.tags", ["tag1", "tag2"])
- Pagination (15,1);
-//Now we take it up to get tickets with these criteria
-const FilterEdentries = TypePost.getEntiries (filters);
-//now we solve the promise
-FilterEdentries.Then (res => console.log ("Filtered response: ", res));
+const filters = typePost
+  .Filter()
+  .Before("meta.created_at", "2020-05-01")
+  .In("meta.tags", ["tag1", "tag2"]);
+// Now we can use it to obtain entries with these criteria
+const filteredEntries = typePost.getEntries(filters);
+// Resolve the promise
+filteredEntries.then(res => console.log("Filtered entries response: ", res));
 ```
 
 ### Order
