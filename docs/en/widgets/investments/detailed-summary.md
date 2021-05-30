@@ -12,9 +12,9 @@ Modyo offers a Widget that provides detailed information on existing investments
 modyo-cli get modyo-widgets-investments-detailed-summary
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/resumen-detallado)
+[Open in another tab](https://widgets.modyo.com/inversiones/resumen-detallado)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-detallado" width="100%"  frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-detallado" width="100%"  frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality                   | Description                                                                                                                                        |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ modyo-cli get modyo-widgets-investments-detailed-summary
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
