@@ -81,13 +81,13 @@ The selection of inputs always returns an array, so it is necessary to iterate o
 You can page the entries using the `paginated` filter and display the pagination links with the `pagination_links` filter, for example:
 
 ```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | paginated: 10%}
- <ul> 
- {% for entry in entiries%}
- <li> {{entry.meta.slug}} </li> 
- {% endfor%}
- </ul> 
-{{entries | pagination_links}}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
+<ul>
+  {% for entry in entries %}
+  <li>{{ entry.meta.slug }}</li>
+  {% endfor %}
+</ul>
+{{ entries | pagination_links }}
 ```
 
 In the previous case, the list of entries will be paginated with 10 items per page and at the end of the list the pages will appear. You can navigate through each page using the GET `page` parameter in the URL, for example `my-pagina.com/ landing?page=2 `.
