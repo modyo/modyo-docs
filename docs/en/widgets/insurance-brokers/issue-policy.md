@@ -4,7 +4,7 @@ search: true
 
 # Issue Policy
 
-Simplifies policy issuance processes by reducing the amount of data from integration with the quotes module. Preload information quickly and customize emission controls to prevent fraud or deception in active co-properties.
+Simplify policy issuance processes by reducing the amount of data needed by integrating with the Quotes widget. This widget preloads information quickly and allows you to customizes controls and verification checks to prevent fraud or deception in active properties.
 
 #### Installation:
 
