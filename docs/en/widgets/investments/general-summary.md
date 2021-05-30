@@ -12,9 +12,9 @@ This Widget allows you to know the consolidated information and the evolution of
 modyo-cli get modyo-widgets-investments-general-summary
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/resumen-general)
+[Open in another tab](https://widgets.modyo.com/inversiones/resumen-general)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="min-height:612px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="min-height:612px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality          | Description                                                                                                                                                                                                                               |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
