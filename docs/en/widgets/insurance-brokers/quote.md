@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-insurance-quote
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/seguros/broker/cotizador" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality                  | Description                                                                                                                                                                              |
+| Feature                  | Description                                                                                                                                                                              |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stepper                        | Quickly and organized customize the steps you want for your quoter.                                                                                                        |
 | Customizing Forms | Configure the forms and data you require according to the quoter. Saves information according to the product and makes it easy to create new quotes.                              |
