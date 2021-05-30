@@ -12,7 +12,7 @@ Generate new quotes in a custom form stepper, based on your business needs. Crea
 modyo-cli get modyo-widgets-insurance-quote
 ```
 
-[Open in another tab](https://widgets.modyo.com/seguros/broker/cotizador)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/quote)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/seguros/broker/cotizador" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
