@@ -279,7 +279,7 @@ typePost
   .then(() => console.log("List of attributes:", typePost.getAttrs()));
 ```
 
-To create a filter, we use the `Filter () `method
+To create a filter, we use the `Filter() `method
 
 ```js
 const filters = TypePost
