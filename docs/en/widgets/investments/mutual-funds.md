@@ -12,9 +12,9 @@ Modyo offers a Widget that displays the information of the available Mutual Fund
 modyo-cli get modyo-widgets-investments-mutual-funds
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/fondos-mutuos)
+[Open in another tab](https://widgets.modyo.com/inversiones/fondos-mutuos)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality           | Description                                                                                                                                                                                                                                                                                                 |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,7 +37,7 @@ modyo-cli get modyo-widgets-investments-mutual-funds
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
