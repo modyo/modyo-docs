@@ -158,7 +158,7 @@ Once that token is obtained, we must occupy it to authenticate to Github package
 The contents of that file (replacing `TOKEN` with our token)
 
 ```bash
-//npm.pkg.github.com/:_AuthToken =TOKEN
+//npm.pkg.github.com/:_authToken=TOKEN
 ```
 
 [Reference on Github docs](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
