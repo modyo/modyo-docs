@@ -345,7 +345,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Here, `space_uid` and `type_uid` correspond to the slugified name of the Space and the name of the Content Type, respectively.
 
-### JSON Enries Structure
+### JSON entries Structure
 
 For any JSON element, in Modyo the structure is done this way:
 
@@ -507,7 +507,7 @@ Entires JSON Schema:
  "type": "object",
  "required": [
  "goal",
- "Enries"
+ "entries"
  ],
  "properties": {
  "goal": {
@@ -726,9 +726,9 @@ Metadata (e.g. Tags, Category, Dates): Searches by SQL, will be queried by `meta
   - `meta.tags [in] [] =tag1_name&meta.tags [in] [] =tag2_name`
 - Categories, searchable in one way: `meta.category=category_full_path` will consider the child categories of the consulted
 - Creation/update/publish/unopen dates: searchable using ISO-8601 specification and with possibility to search by ranges (lt, gt):
-  - `... /Enries? Meta.created_at=1987-11-19T 13:13:13 `
-  - `... /Enries? meta.updated_at [lt] =1987-11-19`
-  - `... /Enries? meta.published_at [gt] =1987-11-19`
+  - `... /entries? Meta.created_at=1987-11-19T 13:13:13 `
+  - `... /entries? meta.updated_at [lt] =1987-11-19`
+  - `... /entries? meta.published_at [gt] =1987-11-19`
 - Fields: Searches using ElasticSearch, for example:
   - Location: The search will be either by QueryString (and will be searched in street_name, country, admin_area_levels) or by geohash. In both cases you must change <span v-pre> `{{field_name}}` </span> to the name of the location field of the content type
     -  <span v-pre> `.../? fields. {{field_name}} [search] =chile` </span>. With the field called `location` would be: `.../? fields.location [search] =chile` This search does not take into account uppercase or lowercase, but it takes into account space, tyls, and special characters.
@@ -759,7 +759,7 @@ The main operations on fields are:
 
 Example:
 
-- `.. /Enries? meta.created_at [in] [] =1987-11-19T 13:13:13 &meta.created_at [in] [] =1987-11-19T 14:14:14 `will search entries created on November 11 at both 13:13 and 14:14
+- `.. /entries? meta.created_at [in] [] =1987-11-19T 13:13:13 &meta.created_at [in] [] =1987-11-19T 14:14:14 `will search entries created on November 11 at both 13:13 and 14:14
 
 ##### Returned Fields
 
@@ -777,11 +777,11 @@ A JSONPath expression is used for example:
 Fields that search in multiple items (checkboxes, multiple) can use the following syntax:
 
 - HAS: equivalent to a sql AND
-  `... /Enries? fields.color [has] [] =red&fields.color [has] [] =black`
+  `... /entries? fields.color [has] [] =red&fields.color [has] [] =black`
 - IN: equivalent to a sql OR
-  `... /Enries? fields.color [in] [] =red&fields.color [in] [] =blue`
+  `... /entries? fields.color [in] [] =red&fields.color [in] [] =blue`
 - NIN: equivalent to a sql NOT IN
-  `... /Enries? fields.color [nin] [] =red&fields.color [nin] [] =blue`
+  `... /entries? fields.color [nin] [] =red&fields.color [nin] [] =blue`
 
 ##### Order
 
