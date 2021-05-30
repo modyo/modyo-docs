@@ -20,7 +20,7 @@ This Widget is divided into functionalities for two similar products: Transfer t
 
 ### Transfer between Accounts
 
-| Functionality            | Description                                                                                                                                          |
+| Feature            | Description                                                                                                                                          |
 |:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Transfer Source  | Select the current account or view from which the amount of money to move will come out. In addition, it shows the available balance that can be transferred. |
 | Transfer destination | Select the account to which the money will be moved                                                                                                   |
@@ -29,7 +29,7 @@ This Widget is divided into functionalities for two similar products: Transfer t
 
 ### Transfer to Third Parties
 
-| Functionality      | Description                                                                                                                                                                                                    |
+| Feature      | Description                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Source Account   | Please provide information about the account from which the transfer will be made, such as account number and available balance. Allows you to schedule moves to one of the registered recipients.                |
 | Destination Account  | Select the account that will receive the transfer made by the user. The customer can select an already registered contact or add new contacts.                                       |
