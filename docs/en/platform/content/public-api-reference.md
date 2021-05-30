@@ -31,7 +31,7 @@ To access the list of entries for a type of uid `type_uid` in a uid space `space
 ``` liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 {% for entry in entries %}
-  entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
+  entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
 {% endfor %}
 ```
 
