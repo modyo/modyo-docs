@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Quoter
+# Quote
 
 Create new quotes in a customized stepper according to your business needs. Create restrictive list validations, non-coverage rules based on georeferencing, and get the data needed to save time on future policy issues.
 
