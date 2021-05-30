@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-deposits
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/depositos" width="100%"  frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality | Description                                                                                                       |
+| Feature | Description                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
 | Fertilize        | It allows you to pay funds to an investment account using payment buttons from different banking institutions. |
 
