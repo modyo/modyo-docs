@@ -699,11 +699,11 @@ A pagination goal is delivered along with the response, such as:
 
 ``` javascript
   "meta": {
-    "total_entries": 2,
-    "per_page": 15,
-    "current_page": 1,
-    "total_pages": 1
-    }
+     "total_entries": 2,
+     "per_page": 15,
+     "current_page": 1,
+     "total_pages": 1
+     }
 ```
 
 #### Tickets
