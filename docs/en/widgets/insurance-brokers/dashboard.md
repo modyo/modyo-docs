@@ -23,4 +23,4 @@ modyo-cli get modyo-widgets-insurance-dashboard
 | Results table | Configure key data according to user device and business needs to show a summary of important information on quotes, policies and renewals.                                              |
 | Organizer         | Optimize space by customizing displayed results, and use the order filter to sort results by newest, oldest, or alphanumerically.                                                                      |
 | New quote    | Quick access to creating new quotes, directly from the main dashboard.                                                                                                            |
-| New policy        | Facilitate the issuance of policies through the search for current quotes that your intermediaries can issue. Relate results of the latest quotes made to increase the conversion (issue). |
+| New policy        | Makes it easy to issue policies by searching through current quotes that agents can issue. Displays results of the latest quotes created, to help increase the conversion rate (policy issuance). |
