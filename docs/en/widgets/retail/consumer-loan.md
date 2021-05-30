@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/consumer-loan" width="100%" frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"/>
 
-| Functionality         | Description                                                                                                                                                                 |
+| Feature         | Description                                                                                                                                                                 |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Amount of Credit     | Allows you to enter the amount of the credit in pesos that the customer wants to simulate.                                                                                               |
 | Fees                | Allows you to choose the amount of installments in which the customer wants to simulate consumer credit.                                                                            |
