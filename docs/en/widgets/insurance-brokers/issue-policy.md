@@ -12,7 +12,7 @@ Simplify policy issuance processes by reducing the amount of data needed by inte
 modyo-cli get modyo-widgets-insurance-issue-policy
 ```
 
-[Open in another tab](https://widgets.modyo.com/seguros/broker/emitir-poliza)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/issue-policy)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/seguros/broker/emitir-poliza" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
