@@ -4,7 +4,9 @@ search: true
 
 # Quote
 
-Create new quotes in a customized stepper according to your business needs. Create restrictive list validations, non-coverage rules based on georeferencing, and get the data needed to save time on future policy issues.
+Generate new quotes in a custom form stepper, based on your business needs. Create restrictive list validations, non-coverage georeferencing rules, and obtain the necessary data to save time when issuing future policies.
+
+
 
 #### Installation:
 
