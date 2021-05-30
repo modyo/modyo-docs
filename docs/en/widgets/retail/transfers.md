@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-transfer-history
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/historial-de-transferencias" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality                    | Description                                                                                                                                                                                       |
+| Feature                    | Description                                                                                                                                                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Transfer History      | Displays the details of transfers received and sent from the customer's account. Include the transfer amount, available balance, and contact name, as applicable. |
 | Transfers to Third Parties        | Defines that the Widget only displays information related to transfers to third parties made by the user.                                                                                 |
