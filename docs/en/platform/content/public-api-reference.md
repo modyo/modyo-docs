@@ -226,27 +226,27 @@ The object returned by `getEntries()` includes a `meta` field to help you naviga
 ```json
 
 {
-"meta": {
-"total_entries": 4,
-"per_page": 10,
-"current_page": 1,
-"total_pages": 1
-},
-"entries": [
-{
-"meta": {
-"uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
-"tags": [],
-"slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
-"..."
-},
-"fields": {
-"title": "title",
-"slug": "slug",
-"excerpt": "Excerpt of the entry...",
-"..."
-}
-}
+  "meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+  "entries": [
+    {
+      "meta": {
+      "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
+      "tags": [],
+      "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
+      "..."
+    },
+    "fields": {
+      "title": "title",
+      "slug": "slug",
+      "excerpt": "Excerpt of the entry...",
+      "..."
+    }
+  }
 ]
 }
 ```
