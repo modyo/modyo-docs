@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-brokers-detailed-view
 
 | Feature   | Description                                                                                                                                                                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Summary         | Facilitate the consultation of policies and present the relevant data to your intermediaries regardless of the status of the policies. Use this section to notify important dates or changes in policy status.               |
+| Summary         | The summary makes it easy to review policies, showing relevant data to your agents regardless of policy status. Use this section to notify agents about important dates or changes in policy status.               |
 | Conditions     | Customize the module to present the coverage and deductibles of the policy in case of claims. It makes it easy for intermediaries to identify minimum coverage data or evolve this module to configure activation. |
 | Premiums Table | Set up the premiums paid on the policy according to your business strategy or make it easier for your intermediaries to manage premium increases under your rules.                                                                       |
 | Historic       | Generate traceability of policy movements so that both intermediaries and your operating team can view or manage endorsements, resignations or PDF submissions of each move.                           |
