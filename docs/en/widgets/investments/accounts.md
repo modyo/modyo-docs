@@ -12,9 +12,9 @@ The Accounts Widget displays the detail of all the investment accounts of a user
 modyo-cli get modyo-widgets-investments-accounts
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/cuentas)
+[Open in another tab](https://widgets.modyo.com/inversiones/cuentas)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
