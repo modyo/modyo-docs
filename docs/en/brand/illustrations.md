@@ -42,24 +42,24 @@ Representation of a concept using a fantastic scene.
 
 Spot Hero are slightly simplified versions of a Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space. Generally, the concepts or ideas represented are simple and straightforward.
 
- <table> 
- <tr> 
- <td style="width: 50%;"> 
- <img src="/assets/img/brand/pago.png"> 
- </td> 
- <td style="width: 50%;"> 
- <img src="/assets/img/brand/unificado.png"> 
- </td> 
- </tr> 
- <tr> 
- <td style="width: 50%;"> 
-With the presence of metaphor
- </td> 
- <td style="width: 50%;"> 
-Without the presence of metaphor
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width: 50%;">
+<img src="/assets/img/brand/pago.png">
+</td>
+<td style="width: 50%;">
+<img src="/assets/img/brand/unificado.png">
+</td>
+</tr>
+<tr>
+<td style="width: 50%;">
+With presence of metaphor
+</td>
+<td style="width: 50%;">
+Without presence of metaphor
+</td>
+</tr>
+</table>
 
 ## Support element
 
