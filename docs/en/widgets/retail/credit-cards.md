@@ -12,9 +12,9 @@ Modyo offers a Widget that allows the customer to view the data and operations o
 modyo-cli get modyo-widgets-retail-credit-cards
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/tarjetas-de-credito)
+[Open in another tab](https://widgets.modyo.com/personas/tarjetas-de-credito)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/tarjetas-de-credito" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/tarjetas-de-credito" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality                 | Description                                                                                                                                                                                                                                                        |
 |:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ modyo-cli get modyo-widgets-retail-credit-cards
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
