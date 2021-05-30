@@ -183,7 +183,7 @@ For that we instantiated a new customer with the web address of Modyo's account 
 ```js
 import {Client,} from "@modyo /sdk";
 //To get the correct account, we must use the account url
-const modyoAccount = new Client (" https://my-account.modyo.com","es ");
+const modyoAccount = new Client ("https://my-account.modyo.com","es");
 ```
 
 :::tip Tip
