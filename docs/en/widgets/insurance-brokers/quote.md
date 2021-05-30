@@ -23,4 +23,4 @@ modyo-cli get modyo-widgets-insurance-quote
 | Validations                   | Integrate restrictive lists and georeferencing in the data validation to limit risks according to business interests.                                                                 |
 | Accident rate                 | Generates claim validations and digitally optimize processes for your quotes, reducing manual input or additional complexities.                                           |
 | Summary                        | Presents a quote summary before generating it to validate coverages, deductibles and allows you to modify commission percentages for your agents. |
-| Document downloads         | It allows the download of documents from a current quote, send via email and configure the options according to the needs of the intermediaries.              |
+| Document downloads         | Allows you to download current quote documents, send them via email and configure options based on agent needs.              |
