@@ -300,9 +300,9 @@ The results of our search can also be sorted with the `sortBy () `method
 ```js
 // JSONPath and Sorting are also supported as filters
 const filters = ctype
-.Filter()
-.SortBy("meta.created_at", "desc")
-.JSONPath("$..uuid");
+  .Filter()
+  .SortBy("meta.created_at", "desc")
+  .JSONPath("$..uuid");
 ```
 
 **Note**: As you can see in the example, it is possible to use in our queries expressions `JsonPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
