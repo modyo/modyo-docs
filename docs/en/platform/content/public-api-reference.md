@@ -727,7 +727,7 @@ Metadata (e.g. Tags, Category, Dates): Searches by SQL, will be queried by `meta
 - Categories, searchable in one way: `meta.category=category_full_path` will consider the child categories of the consulted
 - Creation/update/publish/unopen dates: searchable using ISO-8601 specification and with possibility to search by ranges (lt, gt):
   - `... /entries?meta.created_at=1987-11-19T 13:13:13 `
-  - `... /entries? meta.updated_at [lt] =1987-11-19`
+  - `... /entries?meta.updated_at [lt] =1987-11-19`
   - `... /entries? meta.published_at [gt] =1987-11-19`
 - Fields: Searches using ElasticSearch, for example:
   - Location: The search will be either by QueryString (and will be searched in street_name, country, admin_area_levels) or by geohash. In both cases you must change <span v-pre> `{{field_name}}` </span> to the name of the location field of the content type
