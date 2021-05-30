@@ -12,9 +12,9 @@ This Widget allows you to review in detail all transfers received and sent that 
 modyo-cli get modyo-widgets-retail-transfer-history
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/historial-de-transferencias)
+[Open in another tab](https://widgets.modyo.com/personas/historial-de-transferencias)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/historial-de-transferencias" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/historial-de-transferencias" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
 | Functionality                    | Description                                                                                                                                                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ modyo-cli get modyo-widgets-retail-transfer-history
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
