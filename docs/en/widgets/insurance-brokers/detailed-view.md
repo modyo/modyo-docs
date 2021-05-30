@@ -4,7 +4,7 @@ search: true
 
 # Detailed view
 
-Keep track of the key details of your policies and keep track of the entire issuance process from start to finish. Facilitate access to information and customize every detail according to the strategy of your products.
+Keep track of key policy details and follow the entire issuing process from start to finish. Easily access information and customize every detail according to your product strategy.
 
 #### Installation
 
@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-brokers-detailed-view
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/seguros/broker/vista-detallada" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality   | Description                                                                                                                                                                                                                                |
+| Feature   | Description                                                                                                                                                                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Overview         | Facilitate the consultation of policies and present the relevant data to your intermediaries regardless of the status of the policies. Use this section to notify important dates or changes in policy status.               |
 | Conditions     | Customize the module to present the coverage and deductibles of the policy in case of claims. It makes it easy for intermediaries to identify minimum coverage data or evolve this module to configure activation. |
