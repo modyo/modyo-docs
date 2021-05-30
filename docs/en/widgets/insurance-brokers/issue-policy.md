@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Issue policy
+# Issue Policy
 
 Simplifies policy issuance processes by reducing the amount of data from integration with the quotes module. Preload information quickly and customize emission controls to prevent fraud or deception in active co-properties.
 
