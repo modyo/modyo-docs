@@ -8,7 +8,7 @@ search: true
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/puntos" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/> 
 
-| Functionality         | Description                                                                                                                                                                                                   |
+| Feature         | Description                                                                                                                                                                                                   |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Summary of Points | Displays the total number of points available to the customer, along with the next expiration. It has a button that allows you to link a relevant catalog of redeemable items.                                  |
 | Associated Cards    | Displays customer card information linked to the points and benefits system. Includes card type, customer name, and total points accumulated during the time period. |
