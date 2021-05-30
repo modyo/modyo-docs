@@ -731,7 +731,7 @@ Metadata (e.g. Tags, Category, Dates): Searches by SQL, will be queried by `meta
   - `... /entries? meta.published_at [gt] =1987-11-19`
 - Fields: Searches using ElasticSearch, for example:
   - Location: The search will be either by QueryString (and will be searched in street_name, country, admin_area_levels) or by geohash. In both cases you must change <span v-pre> `{{field_name}}` </span> to the name of the location field of the content type
-    -  <span v-pre> `.../? fields. {{field_name}} [search] =chile` </span>. With the field called `location` would be: `.../? fields.location [search] =chile` This search does not take into account uppercase or lowercase, but it takes into account space, tyls, and special characters.
+    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. With the field called `location` it would be: `.../?fields.location[search]=chile`. This search does not take into account capital letters or small letters, but it does take into account spaces, titles and special characters.
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. With the field called `location` it would be: `.../?fields.location[geohash]=66j`
   - `... /entries? fields.color=black`
 
