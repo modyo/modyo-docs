@@ -12,13 +12,13 @@ With this Widget you can view a summary of bank accounts, draw maps and see in d
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/cuentas)
+[Open in another tab](https://widgets.modyo.com/personas/cuentas)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
 #### Current Account
 
-| Functionality               | Description                                                                                                                                                                                                                                          |
+| Feature               | Description                                                                                                                                                                                                                                          |
 |:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Summary of Account Corriente | Presents the account statement and if applicable, the status of the associated credit line. <br> <br> Specific information is presented numerically and graphically.                                                                             |
 | Inquiry of Movements     | Presents the latest moves that have been made on the account, initially sorted by date. <br> <br> is also included the ability to perform searches within the displayed movements.                                           |
@@ -26,7 +26,7 @@ modyo-cli get modyo-widgets-retail-accounts
 
 #### Vista Account
 
-| Functionality           | Description                                                                                                                                                                                                                                                     |
+| Feature           | Description                                                                                                                                                                                                                                                     |
 |:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Summary of Centa Vista | Displays the account status similar to what is presented for a checking account, with the difference that there are no checks or associated credit line for a view account. <br> <br> Specific information is presented numerically and tabular. |
 | Inquiry of Movements | Displays the last moves that were made on the account, initially sorted by date. <br> <br> The ability to search within the displayed movements is also included.                                                       |
@@ -54,7 +54,7 @@ modyo-cli get modyo-widgets-retail-accounts
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
