@@ -47,10 +47,10 @@ Total entries: {{ entries | total_entries }}
 If you want to filter entries, you can do so using the following attributes: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. They all receive an array of values, so it is possible to filter by a value or several, and the way to use it is as follows:
 
 ```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3'%}
-{% for entry in entiries%}
- entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
-{% endfor%}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
 ```
 
 In the case of the `filter_by` filter, you can make use of either meta attributes or custom fields of the content type, for example:
