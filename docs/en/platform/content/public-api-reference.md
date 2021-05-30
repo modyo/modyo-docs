@@ -235,19 +235,19 @@ The object returned by `getEntries()` includes a `meta` field to help you naviga
   "entries": [
     {
       "meta": {
-      "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
-      "tags": [],
-      "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
-      "..."
-    },
-    "fields": {
-      "title": "title",
-      "slug": "slug",
-      "excerpt": "Excerpt of the entry...",
-      "..."
+        "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
+        "tags": [],
+        "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
+        "..."
+      },
+      "fields": {
+        "title": "title",
+        "slug": "slug",
+        "excerpt": "Excerpt of the entry...",
+        "..."
+      }
     }
-  }
-]
+  ]
 }
 ```
 
