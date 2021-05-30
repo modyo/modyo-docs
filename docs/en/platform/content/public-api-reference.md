@@ -697,13 +697,13 @@ For example, with `page = 3`, `per_page = 20` you are prompting to return the ne
 
 A pagination goal is delivered along with the response, such as:
 
-```javascript
- "goal": {
- "total_entries": 2,
- "per_page": 15,
- "current_page": 1,
- "total_pages": 1
- }
+``` javascript
+ "meta": {
+    "total_entries": 2,
+    "per_page": 15,
+    "current_page": 1,
+    "total_pages": 1
+    }
 ```
 
 #### Tickets
