@@ -12,11 +12,11 @@ This Widget allows you to simulate a mortgage credit and start the application f
 modyo-cli get modyo-widgets-retail-mortgage-loan
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/creditos-hipotecarios)
+[Open in another tab](https://widgets.modyo.com/personas/creditos-hipotecarios)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality         | Description                                                                                                                                                                                                               |
+| Feature         | Description                                                                                                                                                                                                               |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Amount of Credit     | Allows you to enter the amount in UF of the credit that the customer wants to simulate.                                                                                                                                                |
 | Foot                   | Allows you to enter the amount in UF of the foot that will be included in the application.                                                                                                                                                     |
@@ -42,7 +42,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
