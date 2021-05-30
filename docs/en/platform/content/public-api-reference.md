@@ -135,7 +135,7 @@ The `dynamic_map` filter accepts an additional attribute to control the visibili
 ```
 
 :::tip Tip
-To use input attributes, you can use dot or square bracketed notation, so <span v-pre> `{{entry.meta.slug}}` </span>, returns the same value as <span v-pre> `{{entry.meta ['slug']}}` </span>, and if you have a field called `location`, you can use it as much as <span v-pre> `{{ entry. fields.location }}`</span>, or <span v-pre>`{{ entry.fields ['location'] }}`</span> 
+To use the attributes of the entries, you can use either dotted or bracketed notation, so <span v-pre>`{{ entry.meta.slug }}`</span>, returns the same value as <span v-pre>`{{ entry.meta['slug'] }}`</span>, and if you have a field called `location`, you can use it as much as <span v-pre>`{{ entry.fields.location' }}`</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span>
 :::
 
 ## Javascript SDK
