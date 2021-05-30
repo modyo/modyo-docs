@@ -77,34 +77,34 @@ The following colors are used, giving priority to dark blue for shadows and leav
 
 White is a color that is always used on faces and hands.
 
- <table> 
- <tr> 
- <td style="width: 30%;"> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #33C08C;display: flex;color: white;padding: 10px 20px;justify-content:center;"> #33C08C </span> 
- <span style="background: #66D0A8;display: flex;color: white;padding: 10px 20px;justify-content:center;"> #66D0A8 </span> 
- <span style="background: #B2E7D5;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;"> #B2E7D5 </span> 
- <span style="background: #E6F7F1;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;"> #E6F7F1 </span> 
- </div> 
- </td> 
- <td style="width: 30%;"> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #82AAC4;display: flex;color: white;padding: 10px 20px;justify-content:center;"> #82AAC4 </span> 
- <span style="background: #B5CCDC;display: flex;color: white;padding: 10px 20px;justify-content:center;"> #B5CCDC </span> 
- <span style="background: #DBE5EE;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;"> #DBE5EE </span> 
- <span style="background: #F2F6F9;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;"> #F2F6F9 </span> 
- </div> 
- </td> 
- <td style="width: 30%;"> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #3C475D;display: flex;color: white;padding: 10px 20px;justify-content:center;"> #3C475D </span> 
- <span style="background: #6D7484;display: flex;color: white;padding: 10px 20px;justify-content:center;"> #6D7484 </span> 
- <span style="background: #B5B9C2;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;"> #B5B9C2 </span> 
- <span style="background: #E7E8EA;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;"> #E7E8EA </span> 
- </div> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width: 30%;">
+<div style="display: flex;flex-direction: column;">
+<span style="background: #33C08C;display: flex;color: white;padding: 10px 20px;justify-content:center;">#33C08C</span>
+<span style="background: #66D0A8;display: flex;color: white;padding: 10px 20px;justify-content:center;">#66D0A8</span>
+<span style="background: #B2E7D5;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;">#B2E7D5</span>
+<span style="background: #E6F7F1;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;">#E6F7F1</span>
+</div>
+</td>
+<td style="width: 30%;">
+<div style="display: flex;flex-direction: column;">
+<span style="background: #82AAC4;display: flex;color: white;padding: 10px 20px;justify-content:center;">#82AAC4</span>
+<span style="background: #B5CCDC;display: flex;color: white;padding: 10px 20px;justify-content:center;">#B5CCDC</span>
+<span style="background: #DBE5EE;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;">#DBE5EE</span>
+<span style="background: #F2F6F9;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;">#F2F6F9</span>
+</div>
+</td>
+<td style="width: 30%;">
+<div style="display: flex;flex-direction: column;">
+<span style="background: #3C475D;display: flex;color: white;padding: 10px 20px;justify-content:center;">#3C475D</span>
+<span style="background: #6D7484;display: flex;color: white;padding: 10px 20px;justify-content:center;">#6D7484</span>
+<span style="background: #B5B9C2;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;">#B5B9C2</span>
+<span style="background: #E7E8EA;display: flex;color: #6D7484;padding: 10px 20px;justify-content:center;">#E7E8EA</span>
+</div>
+</td>
+</tr>
+</table>
 
  <img src="/assets/img/brand/webinar.png" style="margin-left: 0;"> 
 
