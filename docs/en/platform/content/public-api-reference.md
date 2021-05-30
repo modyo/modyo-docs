@@ -28,11 +28,11 @@ Both forms will be available until Modyo version 9.2.
 
 To access the list of entries for a type of uid `type_uid` in a uid space `space_uid` use:
 
-```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entiries%}
-{% for entry in entiries%}
- entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
-{% endfor%}
+``` liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
+{% endfor %}
 ```
 
 To access the total number of entries that a content filter returns, you can use the liquid filter `total_entries`, for example:
