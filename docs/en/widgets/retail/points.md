@@ -4,9 +4,9 @@ search: true
 
 # Points
 
-[Open in another tab](https://widgets-es.modyo.com/personas/puntos)
+[Open in another tab](https://widgets.modyo.com/personas/puntos)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/puntos" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/puntos" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/> 
 
 | Functionality         | Description                                                                                                                                                                                                   |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -29,7 +29,7 @@ search: true
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
