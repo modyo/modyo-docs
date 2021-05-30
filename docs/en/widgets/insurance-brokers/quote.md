@@ -20,7 +20,7 @@ modyo-cli get modyo-widgets-insurance-quote
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stepper                        | Customize the desired steps based on user milestones in the quote process in a fast, organized way.                                                                                                        |
 | Form customization | Configure form fields and required data for a quote. Save information for each product and facilitate the creation of new quotes.                              |
-| Validations                   | It integrates in the data validations restrictive lists, georeferencing of risks according to the interest of the business.                                                                 |
+| Validations                   | Integrate restrictive lists and georeferencing in the data validation to limit risks according to business interests.                                                                 |
 | Accident rate                 | Generates claim validations and digitally optimize processes for your quotes, reducing manual input or additional complexities.                                           |
 | Summary                        | Present a summary of the quote before generating it to validate hedges, deductibles and offer the option to set up premium increment percentages for your intermediaries. |
 | Download documents         | It allows the download of documents from a current quote, send via email and configure the options according to the needs of the intermediaries.              |
