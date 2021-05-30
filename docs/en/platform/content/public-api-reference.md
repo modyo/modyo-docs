@@ -298,11 +298,11 @@ filteredEntries.then(res => console.log("Filtered entries response: ", res));
 The results of our search can also be sorted with the `sortBy () `method
 
 ```js
-//JSONPath and Sorting are also supported by filters
+// JSONPath and Sorting are also supported as filters
 const filters = ctype
- .Filter()
- .sortBy("meta.created_at", "desc")
- .jsonPath("$.. uuid");
+.Filter()
+.SortBy("meta.created_at", "desc")
+.JSONPath("$..uuid");
 ```
 
 **Note**: As you can see in the example, it is possible to use in our queries expressions `JsonPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
