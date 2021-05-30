@@ -102,7 +102,7 @@ To make use of pagination in a custom widget, change the filter associated with 
 
 ### Sort tickets
 
-In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters `, as follows:
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters, as follows:
 
 ```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | sort_by: 'published_at', 'asc'%}
