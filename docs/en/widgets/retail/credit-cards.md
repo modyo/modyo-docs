@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-credit-cards
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/tarjetas-de-credito" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality                 | Description                                                                                                                                                                                                                                                        |
+| Feature                 | Description                                                                                                                                                                                                                                                        |
 |:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Summary of Card de Crédito | Presents a summary of the credit card status. <br> <br> The specific information associated with the balances (available, used and total quota) is presented numerically and graphically.                                                                    |
 | Balance Query             | This query shows the specific card quotas by currency type, plus expense indicators compared to the available quota.                                                                                                                |
