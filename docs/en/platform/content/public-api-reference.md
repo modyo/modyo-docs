@@ -856,12 +856,12 @@ For example:
 
 ```javascript
 {
- "iss": "http://my-account.modyo.me/api/profile ",
- "aud": "http://my-account.modyo.me/api/content ",
- "sub": "account_uuid",
- "exp": 1516242622,
- "access_type": "delivery",
- "targets": ["target1", "target2"]
+  "iss": "http://my-account.modyo.me/api/profile ",
+  "aud": "http://my-account.modyo.me/api/content ",
+  "sub": "account_uuid",
+  "exp": 1516242622,
+  "access_type": "delivery",
+  "targets": ["target1", "target2"]
 }
 ```
 
