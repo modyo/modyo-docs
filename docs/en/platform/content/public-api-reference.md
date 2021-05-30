@@ -65,10 +65,10 @@ In the case of the `filter_by` filter, you can make use of either meta attribute
 If you want to deny a value within the field filter, you can use `note `inside the filter:
 
 ```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | filter_by: field: 'field_name', not: nil%}
-{% for entry in entiries%}
- entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
-{% endfor%}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
 ```
 
 The selection of inputs always returns an array, so it is necessary to iterate over the result or access the first element, in case of filtering by a single uuid:
