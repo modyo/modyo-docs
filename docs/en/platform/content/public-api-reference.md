@@ -353,54 +353,54 @@ JSON Entires:
 
 ```javascript
 {
- "goal": {
- "total_entries": 2,
- "per_page": 15,
- "current_page": 1,
- "total_pages": 1
- },
- "Entiries": [
- {
- "goal": {
- "uid": "9b0a24a6-d84f-4851-8750-a86244947510",
- "space": "myspace",
- "name": "Lorem Ipsum pain",
- "type_name": "Post",
- "category": null,
- "updated_at": "2019-03-18T 14:06:59 .000- 03:00 ",
- "created_at": "2019-03-18T 14:06:59 .000- 03:00 ",
- "tags": [],
- "locale": "in",
- "available_locales": [
- "in"
- ]
- },
- "fields": {
- "Excerpt": "Lorem Ipsum pain",
- "body": "Lorem ipsum pain sit amet, sectetur adipiscing elit, thirst of eiusmod tempor incidundt ut labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory."
- }
- },
- {
- "goal": {
- "uid": "1c9b24a6-d84f-4851-8750-a86244963589",
- "space": "myspace",
- "name": "Lorem Ipsum pain",
- "type_name": "Post",
- "category": null,
- "updated_at": "2019-03-18T 14:06:59 .000- 03:00 ",
- "created_at": "2019-03-18T 14:06:59 .000- 03:00 ",
- "tags": [],
- "locale": "in",
- "available_locales": [
- "in"
- ]
- },
- "fields": {
- "Excerpt": "Lorem Ipsum pain",
- "body": "Lorem ipsum pain sit amet, sectetur adipiscing elit, thirst of eiusmod tempor incidundt ut labor and pain magna aliqua. At the best of this, what is the excitement of llamco laboris nisi ut aliquip ex ea commodo consequence. Duis aute pain in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id is laboratory."
- }
- }
- ]
+  "meta": {
+    "total_entries": 2,
+    "per_page": 15,
+    "current_page": 1,
+    "total_pages": 1
+  },
+  "entries": [
+    {
+      "meta": {
+        "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
+        "space": "myspace",
+        "name": "Lorem Ipsum dolor",
+        "type_name": "Post",
+        "category": null,
+        "updated_at": "2019-03-18T14:06:59.000-03:00",
+        "created_at": "2019-03-18T14:06:59.000-03:00",
+        "tags": [],
+        "locale": "en",
+        "available_locales": [
+          "en"
+        ]
+      },
+      "fields": {
+        "excerpt": "Lorem Ipsum dolor",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    },
+    {
+      "meta": {
+        "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
+        "space": "myspace",
+        "name": "Lorem Ipsum dolor",
+        "type_name": "Post",
+        "category": null,
+        "updated_at": "2019-03-18T14:06:59.000-03:00",
+        "created_at": "2019-03-18T14:06:59.000-03:00",
+        "tags": [],
+        "locale": "en",
+        "available_locales": [
+          "en"
+        ]
+      },
+      "fields": {
+        "excerpt": "Lorem Ipsum dolor",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    }
+  ]
 ```
 
 Entires JSON Schema:
