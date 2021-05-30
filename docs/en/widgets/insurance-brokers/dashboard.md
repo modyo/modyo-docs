@@ -12,7 +12,7 @@ The dashboard widget provides an overview of the quotes, policies, and policy re
 modyo-cli get modyo-widgets-insurance-dashboard
 ```
 
-[Open in another tab](https://widgets.modyo.com/seguros/broker/dashboard)
+[Open in new tab](https://widgets.modyo.com/insurance/broker/dashboard)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/seguros/broker/dashboard" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
