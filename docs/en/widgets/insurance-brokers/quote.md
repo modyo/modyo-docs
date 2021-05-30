@@ -6,8 +6,6 @@ search: true
 
 Generate new quotes in a custom form stepper, based on your business needs. Create restrictive list validations, non-coverage georeferencing rules, and obtain the necessary data to save time when issuing future policies.
 
-
-
 #### Installation:
 
 ```bash
