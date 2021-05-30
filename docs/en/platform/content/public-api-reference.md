@@ -181,9 +181,9 @@ Once installed in our project we can create a client from which we will obtain t
 For that we instantiated a new customer with the web address of Modyo's account as an argument along with the language to request.
 
 ```js
-import {Client,} from "@modyo /sdk";
-//To get the correct account, we must use the account url
-const modyoAccount = new Client ("https://my-account.modyo.com","es");
+import { Client } from "@modyo/sdk";
+// We must use the account url to get the correct account
+const modyoAccount = new Client("https://my-account.modyo.com", "en");
 ```
 
 :::tip Tip
