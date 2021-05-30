@@ -14,13 +14,13 @@ Through the Widget, the customer can perform different functions according to th
 modyo-cli get modyo-widgets-retail-cash-advance
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/avance-en-efectivo)
+[Open in another tab](https://widgets.modyo.com/personas/avance-en-efectivo)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/avance-en-efectivo" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/avance-en-efectivo" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/> 
 
 At first glance, the customer will be able to select the features of the Cash Advance and their payment to perform the simulation.
 
-| Functionality    | Description                                                                                 |
+| Feature    | Description                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
 | Origin           | Select the card from which the actual amount will be extracted.                          |
 | Destination          | Displays the target account of the cash being requested.                                  |
@@ -31,7 +31,7 @@ At first glance, the customer will be able to select the features of the Cash Ad
 
 After the selected features, the Widget will display the preview simulation and details of the payments to be made.
 
-| Functionality           | Description                                                               |
+| Feature           | Description                                                               |
 |:------------------------|:--------------------------------------------------------------------------|
 | Total cost of advance  | Displays the amount of debt that will be applied to the card.                  |
 | Value of quota       | Displays the value of each fee that will be charged according to the requested time. |
@@ -52,7 +52,7 @@ After the selected features, the Widget will display the preview simulation and 
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
