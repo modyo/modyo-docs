@@ -204,7 +204,7 @@ const typePost = modyoAccount.getContentType("blog", "post");
 // `typePost` will return an object with multiple information about the type, including the type schema.
 ```
 
-When we have the type we need we can see its schema, its attributes or query its entries:
+Once we have the type we need, we can see its schema, its attributes or consult its entries:
 
 ```js
 // If we want to see that schema in more detail, we can use the `getSchema()` method
