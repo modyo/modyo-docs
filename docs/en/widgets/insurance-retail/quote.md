@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Quoter <Badge text="Beta" type="warn"/> 
+# Quote <Badge text="Beta" type="warn"/> 
 
 #### Installation:
 
