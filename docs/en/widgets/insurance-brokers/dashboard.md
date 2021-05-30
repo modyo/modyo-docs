@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-insurance-dashboard
 
 | Feature       | Description                                                                                                                                                                                                              |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Search tool            | It facilitates the search of information through key data on quotes and policies. Customize options or choose searches based on product ID, holder name, or document numbers.        |
+| Search tool            | Easy-to-search information through key data from quotes and policies. Customize search options and search by product ID, policyholder name, or quote numbers.        |
 | Date Filter     | Customize the results calendar and optimize calls to the query service according to users' query interest or according to the time periods set by legal teams.                |
 | Table of results | Configure key data based on device and business need to show a summary of important quotes, policies, and renewals information.                                              |
 | Organizer         | Optimize space by customizing result panners and order filter to deliver a better experience based on user interest.                                                                      |
