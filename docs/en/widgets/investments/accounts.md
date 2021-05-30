@@ -4,7 +4,7 @@ search: true
 
 # Accounts
 
-The Accounts Widget displays the detail of all the investment accounts of a user, with relevant information in charts and numbers, as well as presenting the movements made along with the maps and statements.
+The Accounts widget shows the detail of each investment account a user has, with relevant information in graphs and numbers. It also presents the account movements with the corresponding bank statements.
 
 #### Installation:
 
