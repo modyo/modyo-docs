@@ -207,14 +207,14 @@ const typePost = modyoAccount.getContentType("blog", "post");
 When we have the type we need we can see its schema, its attributes or query its entries:
 
 ```js
-//If we want to see that schema in detail, we can occupy the method `getSchema () `
-TypePost.getSchema () .then (sch => console.log ("Content Type JSON Schema:", sch));
+// If we want to see that schema in more detail, we can use the `getSchema()` method
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
 /*
 That will print something like this:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema #", definitions: {...}, type: "object", required: Array (2), properties: {...}}
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
 */
-//To get the entries of that type
-const entries = TypePost.getEntiries ();
+// To obtain the entries of that type
+const entries = typePost.getEntries();
 ```
 
 #### Pagination
