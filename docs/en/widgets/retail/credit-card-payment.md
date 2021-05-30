@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-retail-credit-card-payment
 
 To perform the transaction, the customer will see by default:
 
-| Functionality                          | Description                                                                                                              |
+| Feature                          | Description                                                                                                              |
 |:---------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|
 | Credit card to be paid             | Present the credit card on which the transaction will be made                                                    |
 | National payment debt                 | Presents the total amount that has been used in the national quota of the card, including what is not billed.      |
