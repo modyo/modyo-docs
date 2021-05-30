@@ -147,7 +147,7 @@ A suitable margin of at least 28 px/1 cm must be respected around the entire ima
 
 #### Down
 
- <img src="/assets/img/brand/vertical.png" style="margin-left: 0;"> 
+<img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
 
 ### Misuse of illustrations
 
