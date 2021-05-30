@@ -12,9 +12,9 @@ Transfers is a wigdet that allows a customer to move money between their account
 modyo-cli get modyo-widgets-retail-transfer
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/personas/transferencia)
+[Open in another tab](https://widgets.modyo.com/personas/transferencia)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/transferencia" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/transferencia" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/> 
 
 This Widget is divided into functionalities for two similar products: Transfer to Third Parties and Transfer Between Accounts.
 
@@ -51,7 +51,7 @@ This Widget is divided into functionalities for two similar products: Transfer t
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+          if ( e.origin === 'https://widgets.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
