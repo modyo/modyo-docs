@@ -114,10 +114,10 @@ Possible values for `sort_by` are: `name`, `published_at`, `created_at`, `update
 To sort by a custom field, you must use the field's `fields.uid` as a parameter:
 
 ```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit 8%}
-{% for entry in entiries%}
- entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
-{% endfor%}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
 ```
 
 ### Entrances with location
