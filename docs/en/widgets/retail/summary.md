@@ -26,7 +26,7 @@ Individual summaries present the specific product information numerically and gr
 
 The Current Account section allows you to view an overview of available amounts, as well as access to transactions such as transfers and movements.
 
-| Functionality    | Description                                                                              |
+| Feature    | Description                                                                              |
 |:-----------------|:-----------------------------------------------------------------------------------------|
 | Balance available | Displays the total available balance in the current account.                                |
 | Total Charges     | View the total charges for each account.                                           |
@@ -40,7 +40,7 @@ The Current Account section allows you to view an overview of available amounts,
 
 This section has the same functions as the Current Account section. However, it only changes in the Credit Line section, where it is replaced by the latest movements and charges made to the product.
 
-| Functionality       | Description                                                                                            |
+| Feature       | Description                                                                                            |
 |:--------------------|:-------------------------------------------------------------------------------------------------------|
 | Balance available    | Displays the total available balance in the current account.                                              |
 | Total Charges        | View the total charges for each account.                                                         |
@@ -54,7 +54,7 @@ This section has the same functions as the Current Account section. However, it 
 Each of the credit cards has its own graphic module, which allows you to see the details of each of them, its used and available amount and the latest moves.
 In addition, it separates the national and international quota, including a graph that allows you to see in proportion what is used.
 
-| Functionality       | Description                                                                                                                                     |
+| Feature       | Description                                                                                                                                     |
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
 | National amount      | Displays the national amount used and authorized, plus a graph indicating the first number in pesos versus the authorized total.        |
 | International Amount | Displays the international amount used and authorized, plus a graph indicating the first number versus the authorized total in dollars. |
