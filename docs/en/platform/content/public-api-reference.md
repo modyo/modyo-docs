@@ -199,9 +199,9 @@ The SDK allows access to both public and private/targetized content, facilitatin
 We can consult for a particular content type and thus get your schema
 
 ```js
-//To get the `Post `type of a space called `Blog`
-const TypePost = modyoAccount.getContentType ("blog", "post");
-//`TypePost` will return an object with various information of the type, including the schema of that type
+// To obtain the type `Post` from a space called `Blog`
+const typePost = modyoAccount.getContentType("blog", "post");
+// `typePost` will return an object with multiple information about the type, including the type schema.
 ```
 
 When we have the type we need we can see its schema, its attributes or query its entries:
