@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-insurance-issue-policy
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/seguros/broker/emitir-poliza" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality      | Description                                                                                                                                                                                                             |
+| Feature      | Description                                                                                                                                                                                                             |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Saved           | Not always intermediaries have all the data at hand, help them with options that generate draft policies without losing that issue.                                                                   |
 | Effective Dates | Allow your intermediaries to select only the effective date or type of Co-Ownership to be insured. Save time filling data by integrating these steps with the information collected in the quoter. |
