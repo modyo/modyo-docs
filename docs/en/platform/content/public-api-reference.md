@@ -56,10 +56,10 @@ If you want to filter entries, you can do so using the following attributes: by_
 In the case of the `filter_by` filter, you can make use of either meta attributes or custom fields of the content type, for example:
 
 ```liquid
-{% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit 8%}
-{% for entry in entiries%}
- entry: {{entry.meta.uuid}} — {{entry.meta.title}} <br /> 
-{% endfor%}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
 ```
 
 If you want to deny a value within the field filter, you can use `note `inside the filter:
