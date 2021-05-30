@@ -22,5 +22,5 @@ modyo-cli get modyo-widgets-insurance-dashboard
 | Date Filter     | Filters results and optimizes searches based on user needs or time periods established by legal teams.                |
 | Results table | Configure key data according to user device and business needs to show a summary of important information on quotes, policies and renewals.                                              |
 | Organizer         | Optimize space by customizing displayed results, and use the order filter to sort results by newest, oldest, or alphanumerically.                                                                      |
-| New quote    | Generates access to creating new quotes quickly and directly from the main dashboard.                                                                                                            |
+| New quote    | Quick access to creating new quotes, directly from the main dashboard.                                                                                                            |
 | New policy        | Facilitate the issuance of policies through the search for current quotes that your intermediaries can issue. Relate results of the latest quotes made to increase the conversion (issue). |
