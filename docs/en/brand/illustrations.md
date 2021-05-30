@@ -110,24 +110,24 @@ White is a color that is always used on faces and hands.
 
 If necessary, color is used to reinforce ideas, direct the look to specific points, demonstrate difference in certain elements, and emphasize the idea of overlapping on one or more elements.
 
- <table> 
- <tr> 
- <td style="width: 50%;"> 
- <img src="/assets/img/brand/modular.png"> 
- </td> 
- <td style="width: 50%;"> 
- <img src="/assets/img/brand/exito.png"> 
- </td> 
- </tr> 
- <tr> 
- <td style="width: 50%;"> 
-Use color to differentiate elements.
- </td> 
- <td style="width: 50%;"> 
-Use color to highlight an element.
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width: 50%;">
+<img src="/assets/img/brand/modular.png">
+</td>
+<td style="width: 50%;">
+<img src="/assets/img/brand/exito.png">
+</td>
+</tr>
+<tr>
+<td style="width: 50%;">
+Use of color to differentiate elements.
+</td>
+<td style="width: 50%;">
+Use of color to highlight an element.
+</td>
+</tr>
+</table>
 
 ## Applications
 
