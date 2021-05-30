@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-documents
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/investments/documents" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
-| Functionality                       | Description                                                                                                                                                                                                                                |
+| Feature                       | Description                                                                                                                                                                                                                                |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consolidated Heritage Maps | Displays a list of the available heritage maps.                                                                                                                                                                             |
 | Invoices                            | Displays the list of electronic invoices by the instructed transactions. Allows the recovery of the invoice in PDF format, for viewing, printing and/or downloading.                                                           |
