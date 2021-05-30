@@ -221,7 +221,7 @@ const entries = typePost.getEntries();
 
 In general, all results delivered by Modyo's Headless API are paginated. A `getEntries () `query with no associated filters brings up to 20 entries per page. The maximum number of entries per page is 100, and is configurable using the `Pagination` filter described in the following section, for example: `GetEntries (f.pagination (15.1)) `that will return the first page of the `f` filter where each page contains up to 15 entries.
 
-The object returned by `GetEntries () `includes a `meta` field that will help you navigate it. The shape of the returned object will be something like this:
+The object returned by `getEntries()` includes a `meta` field to help you navigate it. The the returned object will look something like this:
 
 ```json
 
