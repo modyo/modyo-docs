@@ -345,7 +345,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Here, `space_uid` and `type_uid` correspond to the slugified name of the Space and the name of the Content Type, respectively.
 
-### JSON entries Structure
+### JSON Entries Structure
 
 For any JSON element, in Modyo the structure is done this way:
 
