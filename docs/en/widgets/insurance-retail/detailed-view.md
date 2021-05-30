@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Detailed view <Badge text="Beta" type="warn"/> 
+# Detailed View <Badge text="Beta" type="warn"/> 
 
 #### Installation
 
