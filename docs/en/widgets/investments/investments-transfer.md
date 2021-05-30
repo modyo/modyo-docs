@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-transfer
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality | Description                                                                                                                                                      |
+| Feature | Description                                                                                                                                                      |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Convey    | Allows you to transfer funds between investment accounts. Allows you to request a transfer of funds to the client's current accounts, previously registered. |
 
