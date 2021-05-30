@@ -151,48 +151,48 @@ A suitable margin of at least 28 px/1 cm must be respected around the entire ima
 
 ### Misuse of illustrations
 
- <table> 
- <tr> 
- <td style="width:30%;"> 
- <img src="/assets/img/brand/error6.png"> 
- </td> 
- <td style="width:30%;"> 
- <img src="/assets/img/brand/error2.png"> 
- </td> 
- <td style="width:30%;"> 
- <img src="/assets/img/brand/error3.png"> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not use artwork with less than 100% opacity. </p> 
- </td> 
- <td> Artwork must not be rotated or tilted. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not modify the colors. </p> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="/assets/img/brand/error4.png"> 
- </td> 
- <td> 
- <img src="/assets/img/brand/error1.png"> 
- </td> 
- <td> 
- <img src="/assets/img/brand/error5.png"> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not cut the illustrations, but if necessary the illustrator should do it. </p> 
- </td> 
- <td> 
- <p class="dont"> Never change the proportion of illustrations. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use text about the illustration. Do it under it or with a margin less than 1 cm. </p> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width:30%;">
+<img src="/assets/img/brand/error6.png">
+</td>
+<td style="width:30%;">
+<img src="/assets/img/brand/error2.png">
+</td>
+<td style="width:30%;">
+<img src="/assets/img/brand/error3.png">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not use illustrations with opacity less than 100%.</p>
+</td>
+<td>Illustrations should not be rotated or tilted.</p>
+</td>
+<td>
+<p class="dont">Do not modify the colors.</p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="/assets/img/brand/error4.png">
+</td>
+<td>
+<img src="/assets/img/brand/error1.png">
+</td>
+<td>
+<img src="/assets/img/brand/error5.png">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not cut the illustrations, but if necessary, the illustrator should do it.</p>
+</td>
+<td>
+<p class="dont">Never change the proportion of the illustrations.</p>
+</td>
+<td>
+<p class="dont">Do not use text over the illustration. Do it below it or with a margin of less than 1 cm.</p>
+</td>
+</tr>
+</table>
