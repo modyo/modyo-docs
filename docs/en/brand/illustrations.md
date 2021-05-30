@@ -19,24 +19,24 @@ They can be categorized into three types depending on the level of complexity an
 
 They are illustrations that tell stories and complex concepts, which are usually represented with fantastic and unreal metaphors or situations. Sometimes these can be literal but always linked to ideas with a certain complexity and greater amount of details and elements.
 
- <table> 
- <tr> 
- <td style="width: 50%;"> 
- <img src="/assets/img/brand/ruta.jpg"> 
- </td> 
- <td style="width: 50%;"> 
- <img src="/assets/img/brand/candado.jpg"> 
- </td> 
- </tr> 
- <tr> 
- <td style="width: 50%;"> 
+<table>
+<tr>
+<td style="width: 50%;">
+<img src="/assets/img/brand/ruta.jpg">
+</td>
+<td style="width: 50%;">
+<img src="/assets/img/brand/candado.jpg">
+</td>
+</tr>
+<tr>
+<td style="width: 50%;">
 Representation of a complex concept through metaphor.
- </td> 
- <td style="width: 50%;"> 
+</td>
+<td style="width: 50%;">
 Representation of a concept using a fantastic scene.
- </td> 
- </tr> 
- </table> 
+</td>
+</tr>
+</table>
 
 ### Spot hero
 
