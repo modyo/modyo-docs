@@ -14,7 +14,7 @@ modyo-cli get modyo-widgets-investments-accounts
 
 [Open in new tab](https://widgets.modyo.com/investments/accounts)
 
- <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/> 
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/accounts" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Feature                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
