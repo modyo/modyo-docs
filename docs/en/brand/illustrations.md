@@ -67,7 +67,7 @@ Supporting elements are usually characters or things that, as its name says, sup
 
 Unlike Hero and spot Hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without removing prominence to what you want to communicate.
 
- <img src="/assets/img/brand/support_element.png" style="margin-left: 0;"> 
+<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
 
 ## Color
 
