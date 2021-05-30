@@ -2,7 +2,7 @@
 search: true
 ---
 
-# About Insurance Banking
+# About insurance
 
 Widgets are the ones that allow you to create encapsulated _micro frontends_ for your sites and applications.
 
