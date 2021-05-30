@@ -286,6 +286,7 @@ const filters = typePost
   .Filter()
   .Before("meta.created_at", "2020-05-01")
   .In("meta.tags", ["tag1", "tag2"]);
+  .Pagination(15,1);
 // Now we can use it to obtain entries with these criteria
 const filteredEntries = typePost.getEntries(filters);
 // Resolve the promise
