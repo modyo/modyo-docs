@@ -21,7 +21,7 @@ modyo-cli get modyo-widgets-retail-accounts
 | Feature               | Description                                                                                                                                                                                                                                          |
 |:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Checking Account Summary | Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.                                                                             |
-| View recent activity     | Presents the latest moves that have been made on the account, initially sorted by date. <br> <br> is also included the ability to perform searches within the displayed movements.                                           |
+| View recent activity     | Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.                                           |
 | Historical cartoles         | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. <br> <br> The ability to search within the displayed movements is also included. |
 
 #### Vista Account
