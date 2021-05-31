@@ -16,7 +16,7 @@ The columns in the list display the following details:
 - **Name**: Title of the entry.
 - **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
 - **Updated on**: Date of the last saved update.
-- **Author**: Name of the author of the content.
+- **Author**: Original creator of the entry.
 
 In the admin you can also filter the view according to several default filters that you can adjust according to your need, regardless of how you order the list of your contents.
 
