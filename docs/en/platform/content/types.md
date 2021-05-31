@@ -115,7 +115,7 @@ This field allows you to add a decimal number that must be by default between `-
 
 Allows you to add a date picker. You can restrict the values of dates that can be chosen, using the restrictions:
 
-- **From**: Allows you to limit the least selectable.
+- **From**: Limit the oldest selectable date.
 - **Ast**: Allows you to limit the highest selectable date.
 
 ### Location
