@@ -694,7 +694,7 @@ You can create a pagination offset with the `page` and `per_page` parameters in 
 
 For example, with `page=3`, `per_page=20` as your parameters, you are requesting the third page with 20 entries in it, effectively retrieving entries starting with the 41st, up to the 60th.
 
-A pagination goal is delivered along with the response, such as:
+The response comes with pagination metadata:
 
 ```javascript
  "meta": {
