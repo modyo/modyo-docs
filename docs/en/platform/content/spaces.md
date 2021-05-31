@@ -60,7 +60,7 @@ This option is irreversible, so you must be completely sure when executing this 
 
 Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages.
 
- <img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600"> 
+<img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
 
 The default language of a space is defined at the time of creating the space and cannot be modified, but in this section you can add as many secondary languages you need. Just select one from the list, add it, and save your changes. After adding a secondary language, when you modify an entry, you'll notice that a language selector will appear next to the page title.
 
