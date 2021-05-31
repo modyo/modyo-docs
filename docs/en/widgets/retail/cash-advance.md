@@ -34,7 +34,7 @@ The client can select the number of payments in which the requested amount will 
 | Feature           | Description                                                               |
 |:------------------------|:--------------------------------------------------------------------------|
 | Total advance cost  | Shows the total amount that will be charged to the card.                  |
-| Value of quota       | Shows the amount of each monthly payment according to the established time period. |
+| Monthly payment       | Shows the amount of each monthly payment according to the established time period. |
 | Monthly interest rate | Shows the monthly interest rate of the cash advance.              |
 | Annual Percentage Rate (APR)   | Shows the annual interest rate of the cash advance.                |
 
