@@ -764,9 +764,9 @@ Example:
 
 Using the fields parameter you can choose which parameters are returned in the document:
 
-Metadata fields are referenced as: meta.attr_name (e.g. meta.tags)
-The fields of entries such as: field.attr_name
-A JSONPath expression is used for example:
+The metadata fields are referenced as: meta.attr_name (ex meta.tags)
+The fields of the entries as: field.attr_name
+An example JsonPath expression:
 
 `... /entries?fields=$.entries[*] .meta.uuid` to get only the uuids of the meta-data of the entries.
 `... /entries?fields=$..description` to get all _description_ fields in entries.
