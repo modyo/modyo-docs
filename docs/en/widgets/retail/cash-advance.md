@@ -18,7 +18,9 @@ modyo-cli get modyo-widgets-retail-cash-advance
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/cash-advance" width="100%" frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/>
 
-At first glance, the customer will be able to select the features of the Cash Advance and their payment to perform the simulation.
+The customer can select the desired options for their cash advance and payment amount to run the simulation.
+
+
 
 | Feature    | Description                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
