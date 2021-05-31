@@ -542,7 +542,7 @@ Entires JSON Schema:
 }
 ```
 
-Entry JSON:
+JSON Entry:
 
 ```javascript
 {
