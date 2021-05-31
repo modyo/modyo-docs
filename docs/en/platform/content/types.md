@@ -95,7 +95,7 @@ This field allows you type and select an option that can be predetermined or pro
 
 ### Boolean
 
-This field allows you to add a question or statement (True/True oo False/False).
+This field allows you to add a question or statement (True or False).
 
 ### Integer
 
