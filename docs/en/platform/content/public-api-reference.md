@@ -297,7 +297,6 @@ filteredEntries.then(res => console.log("Filtered entries response: ", res));
 
 The results of our search can also be sorted with the `SortBy()` method
 
-
 ```js
 // JSONPath and Sorting are also supported as filters
 const filters = ctype
