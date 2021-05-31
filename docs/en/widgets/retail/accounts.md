@@ -37,7 +37,7 @@ modyo-cli get modyo-widgets-retail-accounts
 | Feature           | Description                                                                                                                                                                                                                                  |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Inquiry of Movements | Presents the latest moves that have been made on the account, initially sorted by date. It also includes the ability to perform searches within the movements shown.                                           |
-| Historical cartoles     | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. It also includes the ability to perform searches within the movements shown. |
+| Account Statements     | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. It also includes the ability to perform searches within the movements shown. |
 | Line of Credit Payment   | Allows you to provide the payment functionality of a credit line, using the funds available from a checking account. The customer can repay their debt in whole or in part.                                                     |
 
 <script>
