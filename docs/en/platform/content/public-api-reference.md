@@ -260,7 +260,7 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 - **Before, After, LessThan, GreaterThan**: they receive the name of the desired field as a parameter and the value with which it will be compared.
 
-- **In, NoTin, Has**: they receive as a parameter the name of the field to compare and an array of values to be compared to. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
+- **In, NotIn, Has**: they receive the name of the desired field as a parameter and an array of values with which it will be compared. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
 
 - **SortBy**: Receives as parameters the field to sort and order (`asc` or `desc`).
 
