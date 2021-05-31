@@ -840,7 +840,7 @@ The content API can receive the delivery token parameter in two ways:
 - In the header: `Delivery-Token`
 - As a GET parameter: `delivery_token`
 
-The content access token is a public token in [JWT] format (https://tools.ietf.org/html/rfc7519) shared by all users belonging to the same target group. It can be obtained by making a GET request to the URL `account.url/api/profile/delivery_token`.
+The content access token is a public token in [JWT](https://tools.ietf.org/html/rfc7519) format shared by all users belonging to the same group of targets. It can be obtained by making a GET request to the URL `account.url/api/profile/delivery_token`.
 
 The content delivery token contains the following attributes:
 
