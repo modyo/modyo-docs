@@ -170,7 +170,7 @@ If you delete a Parent Category, you also delete all its subcategories. Entries 
 
 If you want to make a link easier to read with any microservice or endpoint that you want to connect, you can provide a custom slug.
 
-When you create an entry, the platform randomly assigns you a slug. However, to change it you just have to change the field in the properties window.
+When you create an entry, the platform will randomly assign you a slug. However, to change it you just have to change the field in the properties window.
 
 This value must be unique for entries of the same type. In case two entries are saved with the same slug, it will be modified at the time of publishing the entry.
 
