@@ -21,7 +21,7 @@ You can access the Asset Manager in one of two ways. The first way is integrated
 
 #### Assets Selector
 
- <img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
 
 The second is directly through the file manager tool found in the Content section.
 
