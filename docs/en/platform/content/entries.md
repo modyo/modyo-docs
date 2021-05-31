@@ -146,7 +146,7 @@ In case the post is published, the changes will be made automatically. If the en
 
 Categories are one of the most useful ways to order your Entries. Applying a category to an entry establishes a relative path in its URL that allows us to access the entry without going through other pages.
 
-To view the Categories, you need to click on the **Categories** section, which is located on the left side of the input interface. There, you can see all the categories that are ready-made.
+To see the Categories, click on the **Categories** section in the main menu on the left. There, we can see all the categories that are already made.
 
 #### Create a Category
 
