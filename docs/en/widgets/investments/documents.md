@@ -24,7 +24,7 @@ modyo-cli get modyo-widgets-investments-documents
 | Order Executions        | Provides information on the execution of the client's orders.                                                                                                                       |
 | Electronic Contract Signatures     | Shows the contracts to be signed, either because they are completely new or because there are new or updated versions of existing contracts. Allows the user to directly review the contracts with the option to sign them online with the user's key or passcode. |
 | Product Risk Table       | Table with a description of products and their risk classification.                                                                                                                                                                           |
-| Tax Certificates            | Displays a list of tax certificates that are in PDF format, for viewing, printing and/or downloading.                                                                                                                    |
+| Tax Certificates            | Shows a list of tax certificates in PDF format for viewing, printing and/or downloading.                                                                                                                     |
 
 <script>
 
