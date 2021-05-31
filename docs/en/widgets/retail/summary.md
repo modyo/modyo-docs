@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Summary of Cuentas
+# Summary
 
-The Account Summary allows you to display a detailed graph of a customer's entire product portfolio, with which you can do basic operations or go to Widgets to make more moves.
+The Account Summary widget allows you to review detailed information of your financial products, with which you can make basic payments and transfers, or navigate to other widgets to complete more transactions.
 
 #### Installation:
 
