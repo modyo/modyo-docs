@@ -102,8 +102,8 @@ You can find and/or edit the following in the file properties editor:
 
 **Liquid Tag**: Use this tag within the platform to reference the file through Liquid as opposed to it's URL.
 
-:::warning Attention
-Neither the URL nor the Liquid Tag is possible to change via Modyo.
+::: warning Warning
+Neither the URL nor the Liquid Tag is possible to change through Modyo.
 :::
 
 **Title**: Displays the title of the file. This section is different from the file name, which cannot be changed.
