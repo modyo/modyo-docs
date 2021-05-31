@@ -85,7 +85,7 @@ This field allows you to add a drop-down list to select only one option.
 
 This field allows you to add a fixed list of items to select only one option.
 
-### Checkbox
+### Check box
 
 This field allows you to add a list from which you can select more than one option or leave blank.
 
