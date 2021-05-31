@@ -152,8 +152,8 @@ To see the Categories, click on the **Categories** section in the main menu on t
 
 To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
 
-:::tip Tip
-When the category name is entered, the path is defaulted as a slug. If you want to change it, just click on it.
+::: tip Tip
+When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
 
 If you change the route, also remember to change all links to it, if they are on a website.
 :::
