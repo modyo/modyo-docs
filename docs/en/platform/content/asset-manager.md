@@ -38,7 +38,7 @@ In the upper right part of the screen you can see the percentage of space used c
 
 The list has three different filters for useful file searching.
 
- <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
 
 **Extensions**: With this filter you can see all the files of the same type that are within the platform (the list consists of the types of files that have been uploaded to the platform).
 
