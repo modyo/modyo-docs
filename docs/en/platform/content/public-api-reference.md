@@ -262,7 +262,7 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 - **In, NotIn, Has**: they receive the name of the desired field as a parameter and an array of values with which it will be compared. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
 
-- **SortBy**: Receives as parameters the field to sort and order (`asc` or `desc`).
+- **SortBy**: receives as parameters the field to be ordered and the order (`asc` or `desc`).
 
 - **JSONPath**: Receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
 
