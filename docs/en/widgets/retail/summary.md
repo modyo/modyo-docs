@@ -20,7 +20,7 @@ modyo-cli get modyo-widgets-retail-summary
 
 The Account Summary presents a customer's financial state within the different products they have with the financial institution (Accounts and Credit Cards).
 
-Individual summaries present the specific product information numerically and graphically.
+Each summary presents financial information for a specific product both numerically and graphically.
 
 #### Current Account
 
