@@ -186,4 +186,4 @@ As a way to protect the security of the Modyo platform, there is a file size lim
 - Videos: 200 MB
 - Audios: 100 MB
 - CSV: 2 MB
-- Other: 100 MB
+- Others: 100 MB
