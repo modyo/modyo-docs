@@ -8,7 +8,7 @@ search: true
 
 Types in Modyo are tools that allow us to structure content templates to build entries, with more than 15 types of fields.
 
-With Types, you can avoid having to be often producing content of the same format, setting a default style that will allow you to optimize times and quality when it comes to creating it.
+With types, you can avoid having to build a piece of content in the same format many times. You can establish a predetermined style that will allow you to optimize time and promote consistency.
 
 ## About the Interface
 
