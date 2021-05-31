@@ -144,7 +144,7 @@ The **Modyo SDK** is a library that facilitates the interaction between JavaScri
 
 Through the SDK you can get, filter and sort your created content to fully leverage the capabilities of the Headless API.
 
-In addition, the Modyo SDK allows you to obtain information from the end user who has already logged into the platform, to further customize the platform's interaction with your site.
+In addition, the Modyo SDK allows you to obtain information about end users that have logged into the platform to further customize their experience with your site.
 
 ### Installation
 
