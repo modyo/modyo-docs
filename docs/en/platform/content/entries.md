@@ -144,7 +144,7 @@ In case the post is published, the changes will be made automatically. If the en
 
 ### Categories
 
-Categories are one of Modyo's most useful ways to sort your Tickets. In this case, each time a Category is used, a route is generated on the web that allows you to access the resource without having to go through other websites, in the event that it is public.
+Categories are one of the most useful ways to order your Entries. Applying a category to an entry establishes a relative path in its URL that allows us to access the entry without going through other pages.
 
 To view the Categories, you need to click on the **Categories** section, which is located on the left side of the input interface. There, you can see all the categories that are ready-made.
 
