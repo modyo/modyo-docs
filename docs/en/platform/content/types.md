@@ -41,7 +41,7 @@ It is a good practice to put within the UID, the format of what will be publishe
 Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
 :::
 
-In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs. 
+In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
 
 - **Add fields**
 - **Field Configuration**
