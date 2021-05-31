@@ -51,8 +51,8 @@ Savings Accounts have the same features as Checking Accounts. However, Savings A
 
 #### Credit Cards
 
-Each of the credit cards has its own graphic module, which allows you to see the details of each of them, its used and available amount and the latest moves.
-In addition, it separates the national and international quota, including a graph that allows you to see in proportion what is used.
+Each of the credit cards has its own section within the summary, which shows the details of each card, the total amount of credit used, the amount available, and the latest movements.
+The widget also allows you to separate national from international lines of credit, showing you graphically the usage of each one.
 
 | Feature       | Description                                                                                                                                     |
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
