@@ -180,7 +180,7 @@ This action opens a new window that allows you to upload files in two ways:
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
 :::
 
-As a way to safeguard the security of the platform Modyo sets a limit on the size of the files that you can upload to the platform depending on their type. These are the limits:
+As a way to protect the security of the Modyo platform, there is a file size limit, depending on the file type. These limits are:
 
 - Images: 30 MB
 - Videos: 200 MB
