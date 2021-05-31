@@ -148,7 +148,7 @@ This field allows you to link an entry to another entry that is already created 
 
 This field allows you to link many entries in the space to another entry. This field has the following restrictions:
 
-- **Restrict Type**: Allows you to select a default type so that entries that can be selected as a link are only of the selected type.
+- **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
 ## Properties
 
