@@ -4,7 +4,7 @@ search: true
 
 # Asset Manager
 
-An organization needs to have a platform that allows them to organize the required content files and documents within the platform.
+An organization needs to have a platform that allows them to organize and manage their required files and content.
 
 In order to make it not necessary to use external services, **Modyo** allows you to upload, review and edit files within the same platform, through the File Manager tool.
 
