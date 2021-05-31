@@ -72,7 +72,7 @@ This field allows you to enter single-line texts. and has the following restrict
 
 ### Rich Text
 
-This field translates into a WYSIWYG multi-line text editor that also allows you to modify the HTML code of the same. This field has the following restrictions:
+This field translates into a multi-line text WYSIWYG editor that also allows you to modify its HTML code. This field has the following restrictions:
 
 - **Minimum Length**: Allows you to require a minimum length of the entered text.
 - **Maximum Length**: Allows you to limit the maximum length to the entered text.
