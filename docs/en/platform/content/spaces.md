@@ -18,7 +18,7 @@ When accessing the list of spaces in the Modyo Content section, each listed spac
 In the Space index, you will only see the spaces in which you are part of the work team with an assigned role
 :::
 
-This list can be sorted alphabetically by the name of the space or by the date it was created, and filtered through a search engine that will search for matches with the names of existing spaces.
+This list can be sorted alphabetically by space name or by the date the space was created, and you can also search for spaces by name.
 
 ## Create a Space
 
