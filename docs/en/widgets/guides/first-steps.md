@@ -16,7 +16,7 @@ The fastest way to start a Widget, is to use one of the templates of this Catalo
 To use one of our templates we will use the `GET` command of the `modyo-cli`:
 
 ```bash
-modyo-cli get widget-name widget-folder```
+modyo-cli get <widget-name> <widget-folder>```
 
 For example if we want to use the `Consumer Cred` template of the People Banking the command would be as follows:
 
