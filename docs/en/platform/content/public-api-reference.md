@@ -90,7 +90,7 @@ You can page the entries using the `paginated` filter and display the pagination
 {{ entries | pagination_links }}
 ```
 
-In the previous case, the list of entries will be paginated with 10 items per page and at the end of the list the pages will appear. You can navigate through each page using the GET `page` parameter in the URL, for example `my-pagina.com/ landing?page=2 `.
+In the previous case, the list of entries with 10 elements per page will be paginated and at the end of the list the pagination links will appear. You can navigate through each page using the _GET_ parameter `page` in the URL, for example `my-page.com/landing?page=2`.
 
 :::warning Attention
 Note that if you have more than one widget that uses content pagination, using the _GET_ `per_page` and `page` parameters in the URL, all widgets with page pagination will be affected by those parameters.
