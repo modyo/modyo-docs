@@ -688,7 +688,7 @@ Entry JSON Schema:
 
 ### API Pagination
 
-For any content resource through the API, it is necessary to make a pagination for its proper functioning.
+It's necessary to paginate content retrieved through the API to access it correctly.
 
 To do this, an offset pagination with the page and per_page parameters is used in the query string of the input URL.
 
