@@ -33,7 +33,7 @@ If you want to enter any Type, you must click on its Name to open the correspond
 
 <img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
 
-To create a Type, you need to click on the top green button on the screen and enter the corresponding name and User ID (UID).
+To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
 :::tip Tip
 It is a good practice to put within the UID, the format of what will be published as they are, for example, videos, posts, etc. 
