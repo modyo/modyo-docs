@@ -19,7 +19,7 @@ modyo-cli get modyo-widgets-investments-detailed-summary
 | Feature                   | Description                                                                                                                                        |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Investment Details          | Provides a set of individual summaries for all investments in the portfolio.                                     |
-| Summary by Investment Account | Displays the grouped totals of the various investments that exist within a specific investment account.                               |
+| Investment Account Summary | Displays the grouped totals of the various investments that exist within a specific investment account.                               |
 | Transit Operations         | Displays customer-instructed operations that are still in pending status.                                                             |
 | Latest Movements             | Displays the latest moves made in the revised investment account.                                                                     |
 | Summary by Product            | Shows the totals of investments included for each type of investment existing in the equity.                                           |
