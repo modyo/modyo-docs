@@ -130,7 +130,7 @@ If you want to upload a file again, keeping the name and the original link, clic
 
 ## Edit an image
 
- <img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
 To facilitate the handling of images within the platform, Modyo includes an image editor that allows you to make small changes online.
 
