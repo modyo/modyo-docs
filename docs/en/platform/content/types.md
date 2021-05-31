@@ -130,7 +130,7 @@ For location maps to work properly with the Google API Key configured in your ac
 * Geocoding API
 :::
 
-### File
+### Asset
 
 This field allows you to attach a single file to the entry using the file manager.
 
