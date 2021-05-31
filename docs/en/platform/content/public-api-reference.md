@@ -844,7 +844,7 @@ The content access token is a public token in [JWT](https://tools.ietf.org/html/
 
 The content delivery token contains the following attributes:
 
-- **iss**: Profile API base URL
+- **iss**: base URL of the profile API
 - **aud**: Content API base URL
 - **sub**: Name of space
 - **exp**: Token expiration time
