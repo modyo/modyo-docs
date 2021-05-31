@@ -148,7 +148,7 @@ In addition, the Modyo SDK allows you to obtain information about end users that
 
 ### Installation
 
-#### 1. Get a Modyo Token
+#### 1. Obtain a Modyo token
 
 The `@modyo /sdk` package is available in the Github registry under the Modyo organization. That's why to consume the package in a project we need, in addition to adding it to the `package.json`, **you need to get a token with the scope `read:packages`** ([reference on Github](https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
 
