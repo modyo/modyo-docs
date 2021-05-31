@@ -24,7 +24,7 @@ From version 9.0.8 onwards, the attributes of the entries will be called accordi
 Both forms will be available until Modyo version 9.2.
 :::
 
-### Accessing entries from a space
+### Access entries in a space
 
 To access the list of entries for a type of uid `type_uid` in a uid space `space_uid` use:
 
