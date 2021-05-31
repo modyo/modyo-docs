@@ -4,7 +4,7 @@ search: true
 
 # Transfer
 
-This Widget exists for customers to transfer funds between their investment accounts and their registered checking account.
+This widget exists so that clients can transfer funds between their investment accounts and their current registered account.
 
 #### Installation:
 
