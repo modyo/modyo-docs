@@ -141,7 +141,7 @@ This opens a window with two views that display the original image and a preview
 On the left side of the image editor are three options to edit the image size:
 
 - **16:9**: Crop the image with a 16:9 ratio.
-- **Square**: Edit the image to the size of a square.
+- **Square**: Crop the image to the size of a square with a 1:1 ratio.
 - **Free**: Edit the image to a free pixel size that you can change at the bottom of the screen.
 
 On one side, you can see the original size of the image and the pixel size of what you've already edited.
