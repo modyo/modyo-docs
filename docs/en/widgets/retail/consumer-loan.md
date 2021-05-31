@@ -19,7 +19,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 | Feature         | Description                                                                                                                                                                 |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Loan Amount     | The loan amount to be requested from to the institution.                                                                                               |
-| Fees                | Allows you to choose the amount of installments in which the customer wants to simulate consumer credit.                                                                            |
+| Payments                | Allows you to choose the amount of installments in which the customer wants to simulate consumer credit.                                                                            |
 | Months of grace       | Select the number of grace months that the client wants to add in their simulation.                                                                           |
 | Dates of non-payment     | Deliver the possibility to choose the months in which the customer will not make the payment of the credit, if you allow                                                            |
 | Account credit       | Select the target account to which the requested amount will be charged if the credit is approved by the institution.                                             |
