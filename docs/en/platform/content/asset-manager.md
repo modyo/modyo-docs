@@ -69,7 +69,7 @@ Attributes with arrows can be sorted by either ascending and descending order. T
 
 **Preview**: Image files display small thumbnail previews. Non-image files do not use this feature.
 
-**Name**: Name of the file with the included extension. The sort is in alphabetical order.
+**Name**: File name with the extension included. Ordering by this field sorts all files alphabetically.
 
 **Type**: File type and file extension. The sort is in alphabetical order first by type and then by the letter of the extension name.
 
