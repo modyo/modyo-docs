@@ -29,7 +29,7 @@ modyo-cli get modyo-widgets-retail-accounts
 | Feature           | Description                                                                                                                                                                                                                                                     |
 |:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Savings Account Summary | Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists. |
-| Inquiry of Movements | Displays the last moves that were made on the account, initially sorted by date. <br> <br> The ability to search within the displayed movements is also included.                                                       |
+| View recent activity | Displays the last moves that were made on the account, initially sorted by date. <br> <br> The ability to search within the displayed movements is also included.                                                       |
 | Historical cartoles     | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. <br> <br> The ability to search within the displayed movements is also included.            |
 
 #### Line of Credit
