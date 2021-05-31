@@ -146,7 +146,7 @@ On the left side of the image editor are three options to edit the image size:
 
 The left side displays the original size of the image and the size in pixels of the crop edit.
 
-:::tip Tip
+::: tip Tip
 There are two ways to change the view and cut the image with the cursor:
 
 - **Zoom:** Use the mouse scroll to zoom in.
