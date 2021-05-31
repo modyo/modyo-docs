@@ -177,8 +177,8 @@ Where `OWNER` is the name of the organization that owns the package, in this cas
 
 ### Usage
 
-Once installed in our project we can create a client from which we will obtain the contents.
-For that we instantiated a new customer with the web address of Modyo's account as an argument along with the language to request.
+Once the package has been installed in our project, we can create a client that we will use to fetch content.
+This can be done by creating a new client with the Modyo account's web address as the argument along with the language to be requested.
 
 ```js
 import { Client } from "@modyo/sdk";
