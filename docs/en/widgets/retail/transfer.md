@@ -14,7 +14,7 @@ modyo-cli get modyo-widgets-retail-transfer
 
 [Open in new tab](https://widgets.modyo.com/retail/transfer)
 
- <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/transferencia" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/> 
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer" width="100%" frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"/>
 
 This Widget is divided into functionalities for two similar products: Transfer to Third Parties and Transfer Between Accounts.
 
