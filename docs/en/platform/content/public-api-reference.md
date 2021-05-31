@@ -120,7 +120,7 @@ To sort by a custom field, you must use the field's `fields.uid` as a parameter:
 {% endfor %}
 ```
 
-### Entrances with location
+### Entries with location
 
 For entries with location fields you can easily generate maps using the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the field `Locations` with a size of 600x300 px, a level 5 zoom, with map type 'roadmap', and with a custom icon.
 
