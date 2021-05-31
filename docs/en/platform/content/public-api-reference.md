@@ -346,7 +346,7 @@ Here, `space_uid` and `type_uid` correspond to the 'slugified' name of the Space
 
 ### JSON Entries Structure
 
-For any JSON element, in Modyo the structure is done this way:
+The structure of every JSON element in Modyo looks like the following:
 
 JSON Entires:
 
