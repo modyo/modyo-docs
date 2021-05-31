@@ -71,7 +71,7 @@ Attributes with arrows can be sorted by either ascending and descending order. T
 
 **Name**: File name with the extension included. Ordering by this field sorts all files alphabetically.
 
-**Type**: File type and file extension. The sort is in alphabetical order first by type and then by the letter of the extension name.
+**Type**: File type and extension. The ordering is in alphabetical order first by type and then by the letter of the name of the extension.
 
 **Size**: Size in kilobytes of the file.
 
