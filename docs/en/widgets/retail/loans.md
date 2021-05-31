@@ -12,7 +12,7 @@ Modyo also offers a widget that allows you to see an overview of the loans that 
 modyo-cli get modyo-widgets-retail-loans
 ```
 
-[Open in another tab](https://widgets.modyo.com/personas/creditos)
+[Open in new tab](https://widgets.modyo.com/retail/loans)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/creditos" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/> 
 
