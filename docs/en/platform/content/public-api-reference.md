@@ -736,7 +736,7 @@ Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the for
 
 ###### Language Filter
 
-The Modyo API delivers input in the default space language, unless another language is explicitly requested via the query string locale parameter or the Accept-Language header.
+The Modyo API delivers entries in the default language of the Space, unless another language is explicitly requested through the query string locale parameter or the Accept-Language header.
 
 For example, to obtain entries in the Spanish-English language (en-cl):
 
