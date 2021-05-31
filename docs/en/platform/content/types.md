@@ -91,7 +91,7 @@ This field allows you to add a list from which you can select more than one opti
 
 ### Multiple choices
 
-This field allows you to add a field in which you can type to select an option that can be default or proposed.
+This field allows you type and select an option that can be predetermined or proposed.
 
 ### Boolean
 
