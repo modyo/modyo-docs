@@ -4,7 +4,7 @@ search: true
 
 # General Summary
 
-This Widget allows you to know the consolidated information and the evolution of the client's assets, offering the option to filter the data by accounts, type of investment or invested currency.
+This widget allows clients see a consolidated overview of the growth of their assets, with the option to filter the data by accounts, investment types, or invested currency.
 
 #### Installation:
 
@@ -12,9 +12,9 @@ This Widget allows you to know the consolidated information and the evolution of
 modyo-cli get modyo-widgets-investments-general-summary
 ```
 
-[Open in another tab](https://widgets.modyo.com/inversiones/resumen-general)
+[Open in new tab](https://widgets.modyo.com/investments/general-summary)
 
- <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="min-height:612px;overflow:auto;margin-top:20px;"/> 
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/general-summary" width="100%" frameBorder="0" style="min-height:612px;overflow:auto;margin-top:20px;"/>
 
 | Feature          | Description                                                                                                                                                                                                                               |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
