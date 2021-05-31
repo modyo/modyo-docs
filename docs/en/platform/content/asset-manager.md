@@ -173,7 +173,7 @@ To upload a file, click on the **+ New** button, located at the top of the scree
 
 This action opens a new window that allows you to upload files in two ways:
 
-- **Drag & Drop**: Drag from your computer's file browser to the window)
+- **Drag & Drop**: Drag the file to the window where it says "Drop files here".
 - **Traditional way**: Through the browser, clicking and selecting the files
 
 :::warning Attention
