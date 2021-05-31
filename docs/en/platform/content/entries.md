@@ -26,7 +26,7 @@ You can also filter the list by six different attributes:
 - **Status**: Filter the list by the following statuses: Published, Not Published, Scheduled, Archived, and All. Filtering by All does not show Archived entries. Filtering by Not Published displays entries in either the Draft or Scheduled status.
 - **Category**: Filter the list by a single category. Displays "All" by default.
 - - **Locale**: Filter the list by a particular language. Entries without a translation in the filtered language display Not translated in the Status column.
-- **Translation**: This filter is associated with the selected language and filters by the translation status of the entries for that language. Ex: This means that if an entry does not have a version in the selected language, it will fall under "Not translated".
+- **Translation**: This filter is associated with the Locale filter, and further filters the list by either Translated or Not Translated.
 - **Tags**: Tags available in the account. You can occupy the search bar inside the filter for tags in a simpler way.
 - **Search Bar**: Filter by the content of the title of the entries.
 
