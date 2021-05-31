@@ -60,7 +60,7 @@ This option is only available if you have the index of entries filtered by a par
 If you select multiple entries, but are not using the filter by table type, you will not see this option.
 :::
 
-When you select entries of the same type, you'll see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you check the selector on the left of each field, you can enter the value associated with the field.
+When selecting entries of the same type, you will see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you have checked the selector to the left of each field, you will be able to enter the value associated with the field.
 
 You can make changes to all fields of the type. Once you've finished adding values in the fields you need, tap "Next" at the top of the screen to see the summary of your changes. If you agree with the changes, press "confirm" to have Modyo start applying the changes to all selected entries
 
