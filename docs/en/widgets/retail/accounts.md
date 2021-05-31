@@ -32,7 +32,7 @@ modyo-cli get modyo-widgets-retail-accounts
 | View recent activity | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                        |
 | Account Statements     | Displays account statements from previous periods, showing the transactions of each selected account statement, sorted by date.<br><br>Clients can also search within the displayed transactions.            |
 
-#### Credit Line
+#### Line of Credit
 
 | Feature           | Description                                                                                                                                                                                                                                  |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
