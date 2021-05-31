@@ -24,11 +24,11 @@ modyo-cli get modyo-widgets-retail-accounts
 | View recent activity     | Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.                                           |
 | Account Statements         | Displays account statements from previous periods which can be expanded to show the transactions of each selected account statement, sorted by date.<br><br> Clients can also search within the displayed transactions. |
 
-#### Vista Account
+#### Savings Account
 
 | Feature           | Description                                                                                                                                                                                                                                                     |
 |:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Summary of Centa Vista | Displays the account status similar to what is presented for a checking account, with the difference that there are no checks or associated credit line for a view account. <br> <br> Specific information is presented numerically and tabular. |
+| Savings Account Summary | Displays the account status similar to what is presented for a checking account, with the difference that there are no checks or associated credit line for a view account. <br> <br> Specific information is presented numerically and tabular. |
 | Inquiry of Movements | Displays the last moves that were made on the account, initially sorted by date. <br> <br> The ability to search within the displayed movements is also included.                                                       |
 | Historical cartoles     | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. <br> <br> The ability to search within the displayed movements is also included.            |
 
