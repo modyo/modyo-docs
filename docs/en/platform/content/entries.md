@@ -27,8 +27,8 @@ You can also filter the list by six different attributes:
 - **Category**: Filter the list by a single category. Displays "All" by default.
 - - **Locale**: Filter the list by a particular language. Entries without a translation in the filtered language display Not translated in the Status column.
 - **Translation**: This filter is associated with the Locale filter, and further filters the list by either Translated or Not Translated.
-- **Tags**: Tags available in the account. You can occupy the search bar inside the filter for tags in a simpler way.
-- **Search Bar**: Filter by the content of the title of the entries.
+- **Tags**: Filter by a selectable, searchable list of the current tags available in the account.
+- **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
 ## Mass Actions
 
