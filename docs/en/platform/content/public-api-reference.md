@@ -108,8 +108,8 @@ In the same way that you can filter by category `by_category`, tags `by_tags` an
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | sort_by: 'published_at', 'asc'%}
 ```
 
-The possible values for the order are `asc` and `desc`, by default, if the parameter does not go, you can leave `desc`.
-Possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug` and `field`.
+The available ordering options are `asc` and `desc`, and by default if this parameter is not specified, the values will be set to `desc`.
+The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug` and `field`.
 
 To sort by a custom field, you must use the field's `fields.uid` as a parameter:
 
