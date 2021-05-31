@@ -62,7 +62,7 @@ If you select multiple entries, but are not using the filter by table type, you 
 
 When selecting entries of the same type, you will see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you have checked the selector to the left of each field, you will be able to enter the value associated with the field.
 
-You can make changes to all fields of the type. Once you've finished adding values in the fields you need, tap "Next" at the top of the screen to see the summary of your changes. If you agree with the changes, press "confirm" to have Modyo start applying the changes to all selected entries
+You can make changes to all fields of the type. Once you have finished adding values to the fields you need, press "Next" at the top of the screen to see a summary of your changes. If you agree with the changes, press "Save" to have Modyo start applying the changes to all selected entries.
 
 :::warning Attention
 By using bulk editing entries you are overwriting the values for the selected fields in all the selected entries, so the values that existed before the joint editing will no longer be available in the editable version.
