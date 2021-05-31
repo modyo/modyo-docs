@@ -817,7 +817,7 @@ It's promise-based, and this lets you write async/await code to perform XHR requ
 Using Axios has quite a few advantages over the native Fetch API:
 
 - Supports older browsers (Fetch needs a polyfill)
-- You have a way to cancel a request
+- Has a way to abort a request
 - You have a way to set a timeout for a response
 - Comes with CSRF protection included
 - Supports charging progress
