@@ -814,7 +814,7 @@ Axios is a very popular JavaScript library that developers use to perform HTTP r
 
 It's promise-based, and this lets you write async/await code to perform XHR requests easily.
 
-Using Axios has some advantages over the native Fetch API:
+Using Axios has quite a few advantages over the native Fetch API:
 
 - Supports older browsers (Fetch needs a polyfill)
 - You have a way to cancel a request
