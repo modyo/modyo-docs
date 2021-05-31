@@ -122,7 +122,7 @@ If the data is modified but the button is not clicked to be saved, these modific
 
 If you want to close the window and return to the Manager interface, click on the **Close** button, located at the bottom of the screen.
 
-## Resuming an image
+## Recover an image
 
 If you want to upload a file again, keeping the original name and link, click the icon to upload the file in the**Update Information** window. This shows a new window where you can select a new file.
 
