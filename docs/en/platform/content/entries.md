@@ -70,7 +70,6 @@ By using bulk editing of entries you are overwriting the values for the selected
 If you need to restore a specific value from an entry, you can make use of the "Differences" option in the edit entries view to review the previous values that a particular entry had.
 :::
 
-
 Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now with pending changes and you must publish them. For this, you can make use of the mass action "Publish".
 
 ## Create an Entry
