@@ -6,7 +6,7 @@ search: true
 
 [Open in new tab](https://widgets.modyo.com/retail/benefits)
 
- <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/beneficios" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/> 
+<iframe src="https://widgets.modyo.com/retail/benefits" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
 | Feature             | Description                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
