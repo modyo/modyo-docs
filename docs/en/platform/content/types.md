@@ -102,7 +102,7 @@ This field allows you to add a question or statement (True or False).
 This field allows you to add an integer that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
 - **Minimum length**: Allows you to require a minimum integer value.
-- **Maximum Length**: Allows you to limit the maximum length to the entered text.
+- **Maximum length**: Limit a maximum integer value.
 
 ### Decimal
 
