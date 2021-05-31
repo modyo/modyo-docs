@@ -108,7 +108,7 @@ Neither the URL nor the Liquid Tag is possible to change through Modyo.
 
 **Title**: Shows the title of the file. This section is different from the file name, which cannot be changed.
 
-**Alternative**: Displays the ```alt text``` of the element. (Only applies to pictures and videos.)
+**Alternative text**: Shows the ```alt text``` of the element. (Only applies to images and videos).
 
 **Description**: Description of the item. It is a good practice to write a small text that references the image.
 
