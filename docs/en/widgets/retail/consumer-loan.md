@@ -24,7 +24,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 | Grace period      | If necessary, customers can select non-payment dates for their personal loan.                                                            |
 | Destination account       | Corresponds to the account in which the requested loan amount will be deposited.                                              |
 | Insurance               | Shows different types of insurance that clients can add to their loans if necessary.                                                                                     |
-| According to the selected options, the widget will display the credit amount and simulate the necessary payments, along with a report of the corresponding credit details. | Lastly, a button will appear that allows the client to directly apply for the loan.
+| Simulation Summary | Lastly, a button will appear that allows the client to directly apply for the loan.
 
  |
 | Simulation Detail | Displays detailed credit simulation information. Includes liquid amount, taxes, insurance and expenses, among others.                                              |
