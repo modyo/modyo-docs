@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Tickets
+# Entries
 
 ## About the interface
 
