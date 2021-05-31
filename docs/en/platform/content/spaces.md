@@ -22,9 +22,9 @@ This list can be sorted alphabetically by space name or by the date the space wa
 
 ## Create a Space
 
-To create a space, click the green button at the top right of the space index view, and assign the name and UID you will use.
+To create a Space, you must click on the green button in the upper right of the Spaces index view, and assign the name and the UID that you will use.
 
-In addition, you will need to select the default language about which the content you want to publish will be written, for a better configuration of the characters.
+In addition, you must select the default language of your content which will result in a better character configuration.
 
 :::tip Tip
 Later, in the settings you will be able to define other secondary languages for space entries.
