@@ -55,7 +55,7 @@ If you select one or more checkboxes that are on your screen, the button will on
 
 :::
 
-**Search Bar**: With the search bar, the Manager will show you all the files that have a word or content that is within the search bar. In this case, it also includes the search for your specific extension, tag, name or user that uploaded it.
+**Search bar**: With the search bar, the manager will show you all files with titles or metadata that match your search terms. This also includes searches for specific file extensions, tags, and the names of users who uploaded a file.
 
 :::tip Tip
 Modyo allows you to display only 30 files at a time. This comes by default and it is not possible to change it.
