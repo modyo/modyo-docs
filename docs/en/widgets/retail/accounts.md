@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-accounts
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/accounts" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-#### Current Account
+#### Checking Account
 
 | Feature               | Description                                                                                                                                                                                                                                          |
 |:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
