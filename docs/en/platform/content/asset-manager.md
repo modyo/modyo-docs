@@ -114,7 +114,7 @@ Neither the URL nor the Liquid Tag is possible to change through Modyo.
 
 **Tags**: Shows the tags associated to the file, clicking on the box you can search and add more tags. In turn, you can click on the X of the existing tags to remove the association with the file.
 
- <hr style="margin: 40px 0;" /> 
+<hr style="margin: 40px 0;" />
 
 To save the modification of the data, you need to click on the**Update Information** button located in the bottom right of the window. 
 
