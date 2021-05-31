@@ -129,7 +129,7 @@ To allow access to a space, you must select the team members who will work in th
 To do this, the Content Administrator who created the space must manually assign users and their roles for each function.
 
 #### Add User ####
-To add a user to the Space, select the primary button **+ New** at the top right of the view, in the modal select a user and assign a role, then press**Add** to make it part of the workforce in the space.
+To add a user to the space, select the primary button **+ New** in the upper right of the view, in the modal that appears, select a user and assign a role, then press **Add** to add them to the space.
 
 #### Modify Role ####
 You can modify the role of any of the associated users by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
