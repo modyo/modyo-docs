@@ -120,7 +120,7 @@ Allows you to add a date picker. You can restrict the values of dates that can b
 
 ### Location
 
-Allows you to add a field where you can select a geographic address, depending on Google Maps fields, or if you don't have a google _key_ API, will allow you to manually enter the name, latitude, longitude and the five political limitations of the location. These areas of administration are not standard and depend on each country. In the case of Chile these are: Region, Province, Commune and City.
+Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand.
 
 :::warning Attention
 For location maps to work correctly with the Google key API configured on the account, the key must have permissions to access:
