@@ -864,8 +864,8 @@ For example:
 }
 ```
 
-:::warning Attention
-In order to access the token's retrieval URL, you must make sure you have a login with a user in the account or at least one site on the account, otherwise you will receive an error `404 - Not found`.
+::: warning Warning
+To be able to access the URL to obtain a token, you must make sure you have a session initiated with a user in the account, or at least in a site within that account, otherwise you will receive an error `404 - Not found`.
 :::
 
 :::warning Attention
