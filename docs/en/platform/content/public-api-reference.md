@@ -26,7 +26,8 @@ Both forms will be available until Modyo version 9.2.
 
 ### Access entries in a space
 
-To access the list of entries for a type of uid `type_uid` in a uid space `space_uid` use:
+To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
+
 
 ``` liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
