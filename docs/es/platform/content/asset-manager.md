@@ -173,7 +173,7 @@ Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en 
 
 Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
 
-- **Drag & Drop**: Arrastrar desde el navegador de archivos de tu computador hacia la ventana)
+- **Drag & Drop**: Arrastrar desde el navegador de archivos de tu computador hacia la ventana
 - **Manera tradicional**: A través del navegador, pinchando y seleccionado los archivos
 
 :::warning Atención
