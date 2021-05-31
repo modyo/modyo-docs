@@ -20,7 +20,7 @@ The columns in the list display the following details:
 
 In the admin you can also filter the view according to several default filters that you can adjust according to your need, regardless of how you order the list of your contents.
 
-In this case, the filters are six:
+You can also filter the list by six different attributes:
 
 - **Type**: Type of Content that was created (View [Types](/es/platform/content/types.html))
 - **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
