@@ -20,7 +20,7 @@ modyo-cli get modyo-widgets-retail-accounts
 
 | Feature               | Description                                                                                                                                                                                                                                          |
 |:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Checking Account Summary | Presents the account statement and if applicable, the status of the associated credit line. <br> <br> Specific information is presented numerically and graphically.                                                                             |
+| Checking Account Summary | Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.                                                                             |
 | Inquiry of Movements     | Presents the latest moves that have been made on the account, initially sorted by date. <br> <br> is also included the ability to perform searches within the displayed movements.                                           |
 | Historical cartoles         | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. <br> <br> The ability to search within the displayed movements is also included. |
 
