@@ -30,7 +30,7 @@ The Checking Account section allows you to see an overview of the available bala
 |:-----------------|:-----------------------------------------------------------------------------------------|
 | Available Balance | Shows the total available balance in the checking account.                                 |
 | Withdrawals     | Allows you to see the total withdrawals within the account.                                            |
-| Deposits     | Displays the total number of credits or deposits that have been made to an account.                 |
+| Deposits     | Shows the total credits or deposits made to an account.                  |
 | Credit Line | Displays the status of the account's credit line.                                   |
 | Amount available | Displays the total amount available on the account line of credit.                   |
 | Convey       | Derive to the Transfers Widget for each account.                                       |
