@@ -8,7 +8,7 @@ A Space is a distinct area where team members can define different content struc
 
 All items can be used inside or outside of **Modyo** through its public API or in creating a site on Channels.
 
-From Modyo you can configure access from different sources so that the service that consumes the API can easily interpret it.
+From Modyo you can configure access to different sources so that services consuming the API can easily interpret them.
 
 Spaces also allows you to organize content in the areas where you are working, for better distribution and order.
 
