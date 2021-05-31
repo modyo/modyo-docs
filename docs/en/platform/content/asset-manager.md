@@ -96,7 +96,7 @@ To access the properties of a file, click on its name to open a modal where you 
 
 <img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
 
-In the editing interface of the file properties, you can see certain fields:
+You can find and/or edit the following in the file properties editor:
 
 **File URL**: Displays the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
 
