@@ -45,7 +45,7 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 - Bulk unpublish will only take effect on selected entries that have a published version.
 - Bulk archiving will only take effect on selected entries that are not published.
 
-So if you try to archive an entry that is published, this action will be skipped and will not take effect.
+If you try to archive an entry that is published, this action will be omitted and will have no effect.
 :::
 
 :::tip Tip
