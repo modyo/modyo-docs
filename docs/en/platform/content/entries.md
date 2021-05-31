@@ -162,8 +162,8 @@ If we change the path, remember to change all links in any channel using it.
 If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
 :::
 
-::: danger danger
-If the Parent Category is deleted, all subcategories assigned to the Parent Category are also deleted. And the entries associated with those categories are without assigned category.
+::: danger Danger
+If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments.
 :::
 
 ### Slug
