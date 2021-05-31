@@ -176,8 +176,8 @@ This action opens a new window that allows you to upload files in two ways:
 - **Drag & Drop**: Drag from your computer's file browser to the window
 - **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
-:::warning Attention
-Modyo only allows uploading 10 files at a time. If you want to upload more items, it should be done in two or more batches.
+::: warning Warning
+You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
 :::
 
 As a way to safeguard the security of the platform Modyo sets a limit on the size of the files that you can upload to the platform depending on their type. These are the limits:
