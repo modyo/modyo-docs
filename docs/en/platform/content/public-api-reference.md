@@ -831,8 +831,8 @@ The Modyo API provides a RESTful interface with responses formatted in a lightwe
 
 Whenever you use the Modyo Content API, you can access the published content that is available to all users (not private). However, if you want to access private content, you must add a header or a GET parameter to the request URL of the content API.
 
-:::tip Tip
-If you use Liquid to access content, users who sign in and meet targets will automatically see the content as appropriate and no extra action is required by the Front End developer.
+::: tip Tip
+If you use Liquid to access content, users who log in and are part of a target will automatically see the content when appropriate and no extra action is required by the Front End developer.
 :::
 
 The Content API can receive the delivery token parameter in two ways:
