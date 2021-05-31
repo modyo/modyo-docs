@@ -158,8 +158,8 @@ When the category title is entered, the path field will default to matching the 
 If we change the path, remember to change all links in any channel using it.
 :::
 
-:::warning Attention
-If you want to delete a category, simply click on the icon at the end of the category name. However, if there are Entries assigned to that category, they are not deleted but are not assigned to any category. To re-assign some category to them, you need to perform the assignment again.
+::: warning Warning
+If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
 :::
 
 ::: danger danger
