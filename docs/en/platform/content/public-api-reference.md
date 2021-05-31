@@ -793,7 +793,7 @@ The order of the results must be specified with the parameters `sort_by` and `or
 
 The jQuery JavaScript library makes it easy to implement them within Modyo, around APIs.
 
-A powerful feature of jQuery is its easy-to-understand AJAX functionality. It allows you to easily bring content data within your site, and also from other sites and services.
+A powerful feature of jQuery is that its AJAX functionality is easy to understand. It allows you to easily retrieve Modyo Content data into your sites, as well as from other external channels and services.
 
 In this AJAX request, you are specifying an exit point (using the Liquid object <span v-pre> {{site.url}} </span>) and including options to specify that it is a "GET" of type 'json'. Finally link the "data.promotions" to "vm.promos" for use in the app.
 
