@@ -692,7 +692,7 @@ It's necessary to paginate content retrieved through the API to access it correc
 
 You can create a pagination offset with the `page` and `per_page` parameters in the query string of the URL.
 
-For example, with `page = 3`, `per_page = 20` you are prompting to return the next 20 items by skipping the first 40.
+For example, with `page=3`, `per_page=20` as your parameters, you are requesting the third page with 20 entries in it, effectively retrieving entries starting with the 41st, up to the 60th.
 
 A pagination goal is delivered along with the response, such as:
 
