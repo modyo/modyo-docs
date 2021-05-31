@@ -30,7 +30,7 @@ You can also filter the list by six different attributes:
 - **Tags**: Filter by a selectable, searchable list of the current tags available in the account.
 - **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
-## Mass Actions
+## Bulk actions
 
 By selecting entries with the _checkbox_ to the left of each entry, you can use the bulk actions that appear at the bottom of the list.
 
