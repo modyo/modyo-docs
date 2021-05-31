@@ -720,7 +720,7 @@ There is a distinction at the application level between the filter types used to
 
 Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata.
 
-- Tags: consultable in two ways
+- Tags: available in two ways
   - `meta.tags=tag_name`
   - `meta.tags [in] [] =tag1_name&meta.tags [in] [] =tag2_name`
 - Categories, searchable in one way: `meta.category=category_full_path` will consider the child categories of the consulted
