@@ -144,7 +144,7 @@ On the left side of the image editor are three options to edit the image size:
 - **Square**: Crop the image to the size of a square with a 1:1 ratio.
 - **Free**: Freely crop the image to any size by selecting the edges and corners of the blue cropping tool.
 
-On one side, you can see the original size of the image and the pixel size of what you've already edited.
+The left side displays the original size of the image and the size in pixels of the crop edit.
 
 :::tip Tip
 There are two ways to change the view and cut the image with the cursor:
