@@ -4,7 +4,7 @@ search: true
 
 # Mutual Funds
 
-Modyo offers a Widget that displays the information of the available Mutual Funds and the transactions performed by the user, in addition to delivering the possibility of making online transactions through the platform.
+Modyo offers a widget that displays information on available mutual funds and transactions made by the client, in addition to providing the ability to trade online through the platform.
 
 #### Installation:
 
