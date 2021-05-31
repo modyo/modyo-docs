@@ -4,7 +4,7 @@ search: true
 
 # Loans
 
-Modyo offers a Widget that allows you to see an overview of the credits that the customer has with the financial institution, in detail and with their updated data.
+Modyo also offers a widget that allows you to see an overview of the loans that a customer has with the financial institution with updated and detailed data.
 
 #### Installation:
 
