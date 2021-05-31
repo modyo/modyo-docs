@@ -67,7 +67,6 @@ Each file listed in the main view shows the following information and attributes
 
 Attributes with arrows can be sorted by either ascending and descending order. The default sort order **is the file upload date**.
 
-
 **Preview**: If the platform identifies that the file is an image, you can see a small thumbnail of it. If it is not, this space will be blank.
 
 **Name**: Name of the file with the included extension. The sort is in alphabetical order.
