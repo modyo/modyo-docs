@@ -122,7 +122,7 @@ For more information on how to configure this option, go to [Team Review](/en/pl
 
 ### Team Members
 
- <img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600"> 
+<img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 To form the working group, on the platform you can select the members who will work in this space and who will have access to writing, review and/or publication.
 
