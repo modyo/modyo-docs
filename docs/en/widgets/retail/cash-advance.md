@@ -36,7 +36,7 @@ The client can select the number of payments in which the requested amount will 
 | Total advance cost  | Shows the total amount that will be charged to the card.                  |
 | Value of quota       | Displays the value of each fee that will be charged according to the requested time. |
 | Monthly interest rate | The monthly interest rate of the requested advance is shown.              |
-| Annual interest rate   | The annual interest rate of the requested advance is shown.                |
+| Annual Percentage Rate (APR)   | The annual interest rate of the requested advance is shown.                |
 
 <script>
 
