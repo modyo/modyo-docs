@@ -305,7 +305,7 @@ const filters = ctype
   .JSONPath("$..uuid");
 ```
 
-**Note**: As you can see in the example, it is possible to use in our queries expressions `JsonPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+**Note**: As you can see in the example, it is possible to use `JSONPath` expressions in our queries [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
 
 #### Private content
 
