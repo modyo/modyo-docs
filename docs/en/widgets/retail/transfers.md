@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-retail-transfer-history
 
 | Feature                    | Description                                                                                                                                                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Transfer History      | Displays the details of transfers received and sent from the customer's account. Include the transfer amount, available balance, and contact name, as applicable. |
+| Transfer History      | Displays the transaction details sent and received from the customer's account showing the corresponding transfer amount, the available balance, and the contact name. |
 | Transfers to Third Parties        | Defines that the Widget only displays information related to transfers to third parties made by the user.                                                                                 |
 | Transfers Between my accounts | Defines that the Widget only displays information related to transfers made between user accounts.                                                                             |
 | Contacts                        | It allows you to review and edit the information of the contacts already entered into the user's account. Displays information such as name, bank, account type, and account number.                       |
