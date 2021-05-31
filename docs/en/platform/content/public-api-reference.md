@@ -96,8 +96,8 @@ In the previous case, the list of entries with 10 elements per page will be pagi
 Note that if you have more than one widget that uses content pagination, the _GET_ `per_page` and `page` parameters in the URL affect all widgets within a page.
 :::
 
-:::warning Attention
-To make use of pagination in a custom widget, change the filter associated with pagination to <span v-pre> `{{ entries | pagination_links_remote }}` </span>. This is necessary because custom widgets are loaded asynchronously. Along with the above change, you need to ensure that _jQuery_ is available on the site and remember that by making use of the pagination links, only the HTML of the widget will change and the _JavaScript_ of the widget will not run again.
+::: warning Warning
+To use pagination in a custom widget, you must change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}} `</span>. This is necessary since custom widgets are loaded asynchronously. You also need to ensure that _JQuery_ is available on your site and remember that when you use the pagination links, only the widget HTML will be changed and the widget's _JavaScript_ will not be executed again.
 :::
 
 ### Sort tickets
