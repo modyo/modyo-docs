@@ -72,7 +72,7 @@ You can learn how to select one of the available languages of an entry in the fo
 
 ### Cache
 
-Cache is a tool that allows you to reduce the number of applications that reach application servers, improving performance and reducing response times. In this section, you can enable cache for the public space content API, allowing content to be cached for up to 5 minutes (300 seconds).
+The cache is a tool that allows you to reduce the number of requests that reach the application servers, improving performance and reducing response times. In this section, you can enable the cache for the Content API of the Space, allowing the content to be cached for up to 5 minutes (300 seconds).
 
  <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600"> 
 
