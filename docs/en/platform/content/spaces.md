@@ -74,7 +74,7 @@ You can learn how to select one of the available languages of an entry in the fo
 
 The cache is a tool that allows you to reduce the number of requests that reach the application servers, improving performance and reducing response times. In this section, you can enable the cache for the Content API of the Space, allowing the content to be cached for up to 5 minutes (300 seconds).
 
- <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600"> 
+<img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
 :::warning Attention
 Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled "A", and then post the same content with the title "A+1", for 5 minutes you will see the content with the title "A" until the cache initial is invalidated.
