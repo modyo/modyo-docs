@@ -322,8 +322,8 @@ It is important that this potentially sensitive information be treated with care
 
 ### End User Information
 
-:::warning Attention
-It is important that you treat this sensitive information carefully. As with Private Content, this information is only available if you work from a browser that supports cookies, and the end user is logged into the platform.
+:::warning Warning
+It is important that you treat this sensitive information with care. As with Private Content, this information is only obtainable if you work from a browser that supports cookies and the end user is logged into the platform.
 
 To get end-user information, you need to call the function: `Client.getUserInfo () `that function will return an object with the basic information
 of that user.
