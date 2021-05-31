@@ -111,7 +111,7 @@ When deciding whether to use SSL within the platform, the following should also 
 - **SSL**: Wildcards are not allowed.
 - **NO SSL**: Wildcards are allowed, but Modyo must be secure by default.
 
-### Team Review is a system to review and approve changes made to content and elements in the platform before making these changes publicly available. Modyo uses the Team Review to confirm and correct content sent through the API.
+### Team Review
 
 Team Review is a system to review and approve changes made to content and elements in the platform before making these changes publicly available. Modyo uses the Team Review to confirm and correct content sent through the API.
 
