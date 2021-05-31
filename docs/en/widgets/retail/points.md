@@ -4,7 +4,7 @@ search: true
 
 # Points
 
-[Open in another tab](https://widgets.modyo.com/personas/puntos)
+[Open in new tab](https://widgets.modyo.com/retail/points)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/puntos" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/> 
 
