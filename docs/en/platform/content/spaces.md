@@ -94,7 +94,7 @@ You need to specify the domain from which the information will be accessed. It's
 
 When CORS is enabled, the following changes occur within the API:
 
-- The configuration of URLs allowed to access content at the space level, automatically allowing custom domains of sites.
+- The configuration of permitted URLs to access the content at the level of your Spaces, automatically allowing specified custom site domains.
 - When a request is made to the API, the header ```Access-Control-Allow-Origin``` with a request.origin value is added to the response and ```Access-Control-Allow-Credentials' = true```, only if the source belongs to the above-mentioned urls/domains. Otherwise they are not configured.
 - Allowed URLs are cached at the application level.
 - In case of using intermediate cache, the source in the cache key should be considered for the cache to be handled separately on each source:
