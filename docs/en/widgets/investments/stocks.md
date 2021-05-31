@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Actions
+# Stocks
 
-In the Modyo Shares Widget the user will be able to find all the information about the available shares, along with Market Information and a module to trade online in an agile and simple way.
+In the Stock widget, clients can find all the information about available stocks, along with market information and a module for quick and simple online trading.
 
 #### Installation:
 
@@ -12,7 +12,7 @@ In the Modyo Shares Widget the user will be able to find all the information abo
 modyo-cli get modyo-widgets-investments-stocks
 ```
 
-[Open in another tab](https://widgets.modyo.com/inversiones/acciones)
+[Open in new tab](https://widgets.modyo.com/investments/stocks)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/acciones" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
