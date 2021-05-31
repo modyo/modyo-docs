@@ -76,8 +76,8 @@ The cache is a tool that allows you to reduce the number of requests that reach 
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
 
-:::warning Attention
-Keep in mind that when you enable this option, changes to your content will be visible at intervals of the time you choose in this option, for example, if you use 5 minutes, when publishing content titled "A", and then post the same content with the title "A+1", for 5 minutes you will see the content with the title "A" until the cache initial is invalidated.
+::: warning Warning
+You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "Example", and then publishing the same content with the title "New Example", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
 :::
 
 :::tip Tip
