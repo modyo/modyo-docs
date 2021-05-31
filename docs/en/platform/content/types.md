@@ -155,7 +155,7 @@ This field allows you to link many entries in the space to another entry. This f
 In this tab, you can see the name of the type, along with its UID. The UID is important as it will be what the type is called from through the Liquid SDK, Javascript and API. Below you will see a button that can be in 2 states:
 
 - **Reindex type**: Allows you to reindex the model if you encountered a problem with your public API.
-- **Cancel reindexation**: If there is already a reindex in progress, you can cancel the process by clicking on this button. 
+- **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
 
 :::warning Attention
 When you reindex any of your types, the model that was previously reindexed will be available until the new index is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
