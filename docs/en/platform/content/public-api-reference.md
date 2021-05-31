@@ -196,7 +196,7 @@ The SDK allows access to both public and private/targeted content, facilitating 
 
 #### How to get public content
 
-We can consult for a particular content type and thus get your schema
+We can ask for a particular type of content in order to get its schema.
 
 ```js
 // To obtain the type `Post` from a space called `Blog`
