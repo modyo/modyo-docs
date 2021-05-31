@@ -26,7 +26,7 @@ To complete a payment, the default options available to customers are:
 | Selecting the payment source account | The customer can select the account from which the payment amount will be extracted.                                          |
 | Minimum payment                   | Shows the minimum payment amount for the card, so that it does not fall into delinquency.                                              |
 | Total amount to pay                     | Shows the total amount of debt to be paid.                                                                    |
-| Personalized amount to pay            | Allows the customer to select a custom amount to pay off the debt.                                            |
+| Other amount to be paid            | Allows the customer to select a custom amount to pay off the debt.                                            |
 
 <script>
 
