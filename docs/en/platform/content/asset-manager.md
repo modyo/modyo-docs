@@ -112,7 +112,7 @@ Neither the URL nor the Liquid Tag is possible to change through Modyo.
 
 **Description**: Description of the element. It is good practice to write a small text that refers to the image.
 
-**Tags**: Displays the tags associated with the file, clicking on the box you can search and add more tags. In turn, you can click on the X of existing tags to remove the association with the file.
+**Tags**: Shows the tags associated to the file, clicking on the box you can search and add more tags. In turn, you can click on the X of the existing tags to remove the association with the file.
 
  <hr style="margin: 40px 0;" /> 
 
