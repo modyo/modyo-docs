@@ -99,9 +99,9 @@ When CORS is enabled, the following changes occur within the API:
 - Permitted URLs are cached at the application level.
 - When using an intermediate cache, the origin in the cache key must be considered so that the cache is handled separately in each source:
 
-``` javascript
-Varnish: sub vcl_hash {if (req.http.Origin) {hash_data (req.http.Origin); }}
-Nginx: set $ cache_key "$ http_x_forwarded_proto://$ host $ request_uri- $ http_accept- $ http_x_requested_with";
+```javascript
+Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
+Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
 ```
 
 #### CORS and SSL
