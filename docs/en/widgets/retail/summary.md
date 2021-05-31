@@ -46,7 +46,7 @@ Savings Accounts have the same features as Checking Accounts. However, Savings A
 | Withdrawals        | View the total charges for each account.                                                         |
 | Deposits        | Displays the total number of credits or deposits that have been made to an account.                               |
 | Recent activity | Displays a list of the latest moves and charges made to the account, along with their amount and date. |
-| Convey          | Derive to the Transfers Widget for each account.                                                     |
+| Transfer          | Derive to the Transfers Widget for each account.                                                     |
 | Movements         | Please refer to the Account Movements Widget, to see each of them in detail.               |
 
 #### Credit Cards
