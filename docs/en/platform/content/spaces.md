@@ -86,7 +86,7 @@ To work in development mode, it is highly recommended to have this option disabl
 
 ### Security
 
-Modyo, as a form of secure data transmission, allows CORS to enable the API to be accessed by any microservice in an external domain.
+Modyo allows CORS to be enabled as a form of secure data transmission so that the API can be accessed by any microservice in an external domain.
 
 To do this, it is also necessary to specify the domain from which the information will be accessed. There is the possibility to allow all sources but this is not the most recommended option.
 
