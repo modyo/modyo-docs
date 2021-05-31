@@ -54,8 +54,8 @@ Bulk actions are executed in the background and you may not see the changes imme
 
 ## Bulk edit
 
-:::warning Attention
-This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for mass actions.
+:::warning Warning
+This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for bulk actions.
 
 If you select multiple entries, but are not using the filter by type in the table, you won't see this option.
 :::
