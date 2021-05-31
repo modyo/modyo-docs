@@ -4,7 +4,7 @@ search: true
 
 # About retail banking
 
-Widgets are the ones that allow you to create encapsulated _micro frontends_ for your sites and applications.
+Widgets are what allow you to create self-contained _micro frontends_ for your sites and applications.
 
 When you enter the **Widgets** section of your site, you will see a list of all the widgets that have been created. In the top bar, you can filter the list of widgets by status, author or tags, or do a text search by the widget name.
 
