@@ -106,7 +106,7 @@ Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-
 
 #### CORS and SSL
 
-When deciding whether to use SSL within the platform, you should also consider the following:
+When deciding whether to use SSL within the platform, the following should also be considered:
 
 - **SSL**: Wildcards are not allowed.
 - **NO SSL**: Wildcards are allowed, but Modyo must now be secure by default.
