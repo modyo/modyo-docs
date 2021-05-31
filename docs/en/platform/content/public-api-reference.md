@@ -71,7 +71,7 @@ If you want to deny a value within the field filter, you can use `note `inside t
 {% endfor %}
 ```
 
-The selection of inputs always returns an array, so it is necessary to iterate over the result or access the first element, in case of filtering by a single uuid:
+The entries selection always returns an array. To access a particular entry in the array, you need to use the `first` attribute to access the first element, or filter by a single uuid:
 
 ```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | by_uuid: 'entry_uuid'%}
