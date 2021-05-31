@@ -74,7 +74,7 @@ Once Modyo has finished modifying the fields for the selected entries, you will 
 
 ## Create an Entry
 
-To create an entry, click on the button at the top right of the screen.
+To create an entry, click the "+ New" button in the upper right of the screen.
 
 First, **Modyo** asks for the name, slug, and type of entry you want to create, to organize the format to be presented, which can be created in the [Types section](/es/platform/content/types.html).
 
