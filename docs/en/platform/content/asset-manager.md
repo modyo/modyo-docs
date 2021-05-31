@@ -169,7 +169,7 @@ This action is irreversible, and any content using this file will display a brok
 
 There are two ways to upload a file in **Modyo**. The first way is in the context of working with content. This can be either in the Content editor with an asset field, or working in the Template or Widget Builder to load files as necessary. The second way is through the Asset Manager in the Content section.
 
-To upload the file, click the **+ New** button at the top of the screen.
+To upload a file, click on the **+ New** button, located at the top of the screen.
 
 This action opens a new window that allows you to upload files in two ways:
 
