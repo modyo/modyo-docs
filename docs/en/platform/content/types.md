@@ -6,7 +6,7 @@ search: true
 
 ![Types](/assets/img/content/types/types.jpg)
 
-The Types within Modyo are tools that will allow us to structure content templates to insert into the service you are granting, with more than 15 types of fields.
+Types in Modyo are tools that allow us to structure content templates to build entries, with more than 15 types of fields.
 
 With Types, you can avoid having to be often producing content of the same format, setting a default style that will allow you to optimize times and quality when it comes to creating it.
 
