@@ -268,8 +268,8 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 - **Paginate**: receives as parameters the number of pages and the total number of entries per page.
 
-:::warning Attention
-If you intend to filter by date, it is important that the filter value use the ISO-8601 standard.
+:::warning Warning
+If you intend to filter by date, it is important that the filter value uses the ISO-8601 standard.
 :::
 
 ```js
