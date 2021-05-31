@@ -61,39 +61,39 @@ In addition, it separates the national and international quota, including a grap
 | Pay               | Please refer to the Card Payment Widget, where you can pay the billed amounts.                                                                 |
 | Movements         | Go to the Card Moves Widget, to see each of them in detail.                                                       |
 
- <script> 
+<script>
 
- export default {
- mounted () {
+  export default {
+    mounted() {
 
- function setFrameHeightCo (id, ht) {
- var ifrm = document.getElementById (id);
- if (ifrm) {
- ifrm.style.height = ht + 4 + "px";
- }
- }
- //iframed document sends its height using postMessage
- function HandleDoCheightMsg (e) {
- //check origin
- if (e.origin === 'https://widgets.modyo.com') {
- //parse data
- var data = json.parse (e.data);
+      function setIframeHeightCO(id, ht) {
+          var ifrm = document.getElementById(id);
+          if(ifrm) {
+            ifrm.style.height = ht + 4 + "px";
+          }
+      }
+      // iframed document sends its height using postMessage
+      function handleDocHeightMsg(e) {
+          // check origin
+          if ( e.origin === 'https://widgets.modyo.com' ) {
+              // parse data
+              var data = JSON.parse( e.data );
 
- console.log ('data: ', data)
- //check data object
- if (data ['doChight']) {
- setFrameHeightCo ('WidgetFrame', data ['DoChight']);
- } else {
- SetFrameHeightCo ('WidgetFrame', 700);
- }
- }
- }
+              console.log('data:', data)
+              // check data object
+              if ( data['docHeight'] ) {
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
+              } else {
+                  setIframeHeightCO( 'widgetFrame', 700 );
+              }
+          }
+      }
 
- //assign message handler
- if (Window.addEventListener) {
- Window.addEventListener ('message', HandleDoCheightMSG, false);
- }
- }
- }
+      // assign message handler
+      if ( window.addEventListener ) {
+          window.addEventListener('message', handleDocHeightMsg, false);
+      }
+    }
+  }
 
- </script> 
+</script>
