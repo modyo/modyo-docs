@@ -33,7 +33,7 @@ The Checking Account section allows you to see an overview of the available bala
 | Deposits     | Shows the total credits or deposits made to an account.                  |
 | Line of Credit | Displays the line of credit status of the account.                                   |
 | Available Balance  | Displays the total available balance in the line of credit associated with the account.                   |
-| Transfer       | Derive to the Transfers Widget for each account.                                       |
+| Transfer       | Switches to the Transfer widget associated with the account.                                       |
 | Movements      | Please refer to the Account Movements Widget, to see each of them in detail. |
 
 #### Vista Account
