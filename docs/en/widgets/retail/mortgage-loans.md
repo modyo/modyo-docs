@@ -24,7 +24,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
 | Loan Term         | Allows the user to choose the length of the loan term during which payments will be made.                                                                                                                                   |
 | Grace Period       | The customer can add a grace period in months of non-payment to the simulation.                                                                                                                         |
 | Insurance               | The customer can add different types of insurance to the mortgage loan simulation.                                                                                                                                   |
-| Simulation Summary | Presents general information about the credit simulation performed. It includes total cost of credit in pesos and UF, number of years, dividend value, respective interest rates and percentage of financing. |
+| Simulation Summary | Presents general information obtained from the mortgage loan simulation. It includes total cost of the loan, the loan term in years, the monthly payment amount, the corresponding interest rates, and financing percentage. |
 | Simulation Detail | Displays detailed credit simulation information. It includes liquid amount, term, foot, dividend value, property type, taxes, insurance and expenses, among others.                                         |
 | Application             | It allows you to confirm the simulation and manage the mortgage loan application with the institution.                                                                                                                      |
 
