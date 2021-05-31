@@ -65,7 +65,8 @@ Each file listed in the main view shows the following information and attributes
 
 <img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
 
-Those with arrows can be ordered ascending and descending. The default sorting option is the date of updating the files.
+Attributes with arrows can be sorted by either ascending and descending order. The default sort order **is the file upload date**.
+
 
 **Preview**: If the platform identifies that the file is an image, you can see a small thumbnail of it. If it is not, this space will be blank.
 
