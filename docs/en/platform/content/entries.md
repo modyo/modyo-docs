@@ -182,7 +182,7 @@ Depending on how you are consuming the content, you will need to perform extra s
 
 ### Targets
 
-Targeted content is essential for any entity or company that wants to send specific information to a user group.
+Targeted content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
 To do this, you can enable the content to be visible to a particular group of your choice in the Entry. To do this, simply check the option that Content is private and then that you want to enable targetizing and then select which user target the entry is directed to.
 
