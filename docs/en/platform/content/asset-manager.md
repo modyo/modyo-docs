@@ -13,7 +13,7 @@ You can access the Asset Manager in one of two ways. The first way is integrated
 
 #### Rich Text
 
- <img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0">
 
 #### Multiline
 
