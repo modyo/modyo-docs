@@ -61,7 +61,7 @@ If you select one or more checkboxes that are on your screen, the button will on
 Modyo displays 30 files at a time, and this value cannot be updated.
 :::
 
-For this view, the columns are:
+Each file listed in the main view shows the following information and attributes:
 
  <img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0"> 
 
