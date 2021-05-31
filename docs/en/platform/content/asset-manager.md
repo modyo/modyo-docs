@@ -51,7 +51,7 @@ Thus, you will appear as soon as you select the first item (clicking on the chec
 
 If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've checked.
 
- <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
 
 :::
 
