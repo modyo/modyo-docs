@@ -63,7 +63,7 @@ Modyo displays 30 files at a time, and this value cannot be updated.
 
 Each file listed in the main view shows the following information and attributes:
 
- <img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
 
 Those with arrows can be ordered ascending and descending. The default sorting option is the date of updating the files.
 
