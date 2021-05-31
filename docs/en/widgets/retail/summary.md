@@ -42,7 +42,7 @@ Savings Accounts have the same features as Checking Accounts. However, Savings A
 
 | Feature       | Description                                                                                            |
 |:--------------------|:-------------------------------------------------------------------------------------------------------|
-| Available Balance    | Displays the total available balance in the current account.                                              |
+| Available Balance    | Show the total available balance in the Savings Account.                                              |
 | Withdrawals        | Allows you to see the total withdrawals within the account.                                                         |
 | Deposits        | Shows the total credits or deposits made to an account.                               |
 | Recent activity | Displays a list of the latest transactions made within the account, together with the amounts and dates. |
