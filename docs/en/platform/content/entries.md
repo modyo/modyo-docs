@@ -172,7 +172,7 @@ If you want to make a link easier to read with any microservice or endpoint that
 
 When you create an entry, the platform will randomly assign you a slug. However, to change it you just have to change the field in the properties window.
 
-This value must be unique for entries of the same type. In case two entries are saved with the same slug, it will be modified at the time of publishing the entry.
+This value must be unique for entries of the same type. If two entries with the same slug are saved, this will be modified at the time of posting the entry.
 
 ## Private Content
 
