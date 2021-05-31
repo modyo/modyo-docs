@@ -175,7 +175,7 @@ Where `OWNER` is the name of the organization that owns the package, in this cas
 
 [Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
-### Use
+### Usage
 
 Once installed in our project we can create a client from which we will obtain the contents.
 For that we instantiated a new customer with the web address of Modyo's account as an argument along with the language to request.
