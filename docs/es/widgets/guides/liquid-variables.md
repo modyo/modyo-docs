@@ -30,10 +30,9 @@ Los Widgets al estar desacoplados de la plataforma tienen la desventaja de no po
 
    :::warning Importante
    En modo de desarrollo no tendremos acceso a este objeto ya que estamos trabajando localmente, es por eso que la recomendación es asignar valores por defecto al definir estas variables localmente.
+   :::
 
-   ```js
+  ```js
    // si no existe el objeto liquid y la llave lang no esta definida, asignamos 'es-CL' por defecto
    const LANG = window.liquid ? window.liquid.lang : "es-CL";
    ```
-
-   :::
