@@ -124,7 +124,7 @@ If you want to close the window and return to the Manager interface, click on th
 
 ## Recover an image
 
-If you want to upload a file again, keeping the original name and link, click the icon to upload the file in the**Update Information** window. This shows a new window where you can select a new file.
+If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, it will display a new window where you can select a new file.
 
  <img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0"> 
 
