@@ -176,7 +176,7 @@ This value must be unique for entries of the same type. If two entries with the 
 
 ## Private Content
 
-If you want content to be unique to users who have a session on the platform you must enable this option.
+If you want the content to be private or exclusive for users who have a current authenticated session within the platform, you must enable this option.
 
 Depending on how you are consuming the content, you need to take a few extra steps to access it. If you're using the public API, go to the section on [private content in the API](/es/platform/content/public-api-reference.html #contenido -private). If you're consuming content through Liquid, you just need users to sign in to the site to view the private content.
 
