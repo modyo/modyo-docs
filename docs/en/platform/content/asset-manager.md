@@ -86,7 +86,7 @@ The lower right corner lists the pagination of all your account files.
 
 <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-The platform allows the handling and uploading of files of all types, without an extension limit.
+You can upload any file type to the platform, without no filetype exclusions.
 
 However, when it comes to known extensions, the platform recognizes them and classifies the file according to its use and then its extension.
 
