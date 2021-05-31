@@ -12,7 +12,7 @@ With this widget you can see a summary of your bank accounts, download bank stat
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Open in another tab](https://widgets.modyo.com/personas/cuentas)
+[Open in new tab](https://widgets.modyo.com/retail/accounts)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
