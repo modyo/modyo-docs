@@ -46,8 +46,8 @@ Keep in mind that this attribute, apart from being unique, cannot contain tildes
 
 The next option is to configure whether the author of the content will be visible in both the public API and the Liquid SDK. If the option is enabled, then you'll see the details of the administrator who created the content, and if the option is disabled, you'll see a blank author.
 
-:::warning Attention
-Keep in mind that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries are finished reindexing.
+:::warning Warning
+Note that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries have finished reindexing.
 :::
 
 The last option is to erase the space. This option allows you to definitely delete a space and all its elements.
