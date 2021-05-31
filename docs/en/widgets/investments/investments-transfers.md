@@ -4,7 +4,7 @@ search: true
 
 # Transfer History
 
-Modyo offers a Widget that presents all relevant data about the in-transit operations associated with the purchase and sale of shares of the user, so that you can quickly find your consolidated information on the platform.
+Modyo offers a widget that presents all the relevant data about a user's stock purchases and sale transactions in transit, so they can quickly find their consolidated information on the platform.
 
 #### Installation:
 
