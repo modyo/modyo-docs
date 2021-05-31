@@ -848,7 +848,7 @@ The content delivery token contains the following attributes:
 - **aud**: Content API base URL
 - **sub**: Name of space
 - **exp**: Token expiration time
-- **access_type**: delivery,
+- **access_type**: delivery
 - **targets**: Target Array
 
 For example:
