@@ -266,7 +266,7 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 - **JSONPath**: receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
 
-- **Pagination**: Receives page number and total entries per page as parameters.
+- **Paginate**: receives as parameters the number of pages and the total number of entries per page.
 
 :::warning Attention
 If you intend to filter by date, it is important that the filter value use the ISO-8601 standard.
