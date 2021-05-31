@@ -141,6 +141,6 @@ The system will check to verify that there is always an administrator within a s
 #### Remove Team Members ####
 To remove a member of the team from a space, you can select them using the checkbox to the left of their name, and then clicking on the **Delete** button at the bottom of the list.
 
-:::warning Attention
-It should be noted that the system will validate that an administrator always exists within the Space, so if there is only one administrator, the administrator cannot be deleted.
+::: warning Warning
+The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member cannot be deleted.
 :::
