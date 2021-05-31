@@ -123,7 +123,7 @@ Allows you to add a date picker. You can restrict the values of dates that can b
 Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand.
 
 :::warning Attention
-For location maps to work correctly with the Google key API configured on the account, the key must have permissions to access:
+For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
 
 * Map API via JavaScript
 * Places API
