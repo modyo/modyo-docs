@@ -10,7 +10,7 @@ search: true
 
 | Feature             | Description                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Summary of Benefits | Give a list of promotions with automatic labeling by category. Displays the title of each promotion and its basic information. Quickly filter promotions by category or search for any promotion by name. Allows you to view promotions by location on the map and automatically calculates the distance to the nearest promotions using geolocation data. |
+| Benefits Summary | Give a list of promotions with automatic labeling by category. Displays the title of each promotion and its basic information. Quickly filter promotions by category or search for any promotion by name. Allows you to view promotions by location on the map and automatically calculates the distance to the nearest promotions using geolocation data. |
 
  <script> 
 
