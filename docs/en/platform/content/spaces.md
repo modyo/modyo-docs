@@ -50,10 +50,10 @@ The next option is to configure whether the author of the content will be visibl
 Note that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries have finished reindexing.
 :::
 
-The last option is to erase the space. This option allows you to definitely delete a space and all its elements.
+The last option is to eliminate the space. This option allows you to permanently delete a space and all its elements.
 
-:::danger danger
-This option is irreversible, so you need to be completely sure when you run this action. By pressing the delete button, the system will prompt you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
+:::danger Danger
+This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
 :::
 
 ### Localization
