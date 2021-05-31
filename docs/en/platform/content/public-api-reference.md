@@ -872,4 +872,4 @@ To be able to access the URL to obtain a token, you must make sure you have a se
 It is necessary to dynamically obtain an access token for content, since this token changes based on the targets the user is a part of. Since target association can change frequently, it is not recommended to store this value.
 :::
 
-The response to the content API query with the delivery token is the same as the response you would receive without the delivery token, but it will contain as part of the response, both private content (without targets) and targetized content that is restricted to the targets to which the user who requested your delivery token belongs.
+The Content API query response with a delivery token is the same as the response you would receive without a delivery token, but will contain both the private content (without targets) and the restricted targeted content to which the requesting user belongs.
