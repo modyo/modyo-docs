@@ -795,7 +795,7 @@ The jQuery JavaScript library makes it easy to implement them within Modyo, arou
 
 A powerful feature of jQuery is that its AJAX functionality is easy to understand. It allows you to easily retrieve Modyo Content data into your sites, as well as from other external channels and services.
 
-In this AJAX request, you are specifying an exit point (using the Liquid object <span v-pre> {{site.url}} </span>) and including options to specify that it is a "GET" of type 'json'. Finally link the "data.promotions" to "vm.promos" for use in the app.
+In this AJAX request, we are specifying an exit point (using the Liquid <span v-pre> {{site.url}} </span> object) and including options to specify what is a "GET" of type 'json'. Finally we link the "data.promotions" to our "vm.promos" to use it in the application.
 
 #### Fetch API with native JavaScript
 
