@@ -36,7 +36,7 @@ The Asset manager interface displays a list of all the files we have within the 
 
 In the upper right part of the screen you can see the percentage of space used corresponding to the total allocated for the account and the button to upload new files.
 
-The list has three types of filters that will be useful to find a file.
+The list has three different filters for useful file searching.
 
  <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0"> 
 
