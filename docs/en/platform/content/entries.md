@@ -150,7 +150,7 @@ To see the Categories, click on the **Categories** section in the main menu on t
 
 #### Create a Category
 
-If you want to create a category, just click on the green button at the top of the screen. Then, you can see a window asking to enter the name of it, the Path, and if it has a Parent Category.
+To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
 
 :::tip Tip
 When the category name is entered, the path is defaulted as a slug. If you want to change it, just click on it.
