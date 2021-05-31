@@ -12,7 +12,7 @@ search: true
 
 Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
 
-### Key features
+### Main functionalities
 
 - [Spaces](/es/platform/content/spaces.html) for the organization of content and computers that manage them.
 - [Content Types](/es/platform/content/types.html) to define custom structures.
