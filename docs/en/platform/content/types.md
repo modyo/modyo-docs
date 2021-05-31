@@ -12,7 +12,7 @@ With types, you can avoid having to build a piece of content in the same format 
 
 ## About the Interface
 
-At first glance, you can find at the top a green button that, by clicking there, will allow you to create a Type.
+In the Types section of a space, you can find a green **+ New** button at the top you can click to create a new Type.
 
 Below, you can see the Type search bar, which will allow you to filter by any word that is in the Name field.
 
