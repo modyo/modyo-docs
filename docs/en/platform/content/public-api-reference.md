@@ -13,7 +13,8 @@ At the moment there is only an SDK for Javascript. In the future, we plan to inc
 
 ## Liquid SDK
 
-The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/platform/channels) in any of the sections that use the [Liquid] markup language (/es/platform/channels/liquid-markup.html), such as [Widgets](/es/platform/channels/widgets.html) and [Templates](/es/platform/channels/templates.html) of the site.
+The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/platform/channels/) in any of the sections of the platform that use the [Liquid](/en/platform/channels/liquid-markup.html) markup language, like [Widgets](/en/platform/channels/widgets.html) and [Templates](/en/platform/channels/templates.html) in your sites.
+
 
 :::warning Attention
 From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, such that:
