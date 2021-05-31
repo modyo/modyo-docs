@@ -22,7 +22,7 @@ The customer can select the desired options for their cash advance and payment a
 
 | Feature    | Description                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
-| Origin           | Select the card from which the actual amount will be extracted.                          |
+| From           | Select the card from which the actual amount will be extracted.                          |
 | Destination          | Displays the target account of the cash being requested.                                  |
 | Advance Amount | This section allows you to add the amount requested in cash                             |
 | Fees           | The customer can select the amount of installments in which the requested amount will be paid |
