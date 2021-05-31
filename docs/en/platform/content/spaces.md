@@ -132,7 +132,7 @@ To do this, the Content Administrator who created the space must manually assign
 To add a user to the space, select the primary button **+ New** in the upper right of the view, in the modal that appears, select a user and assign a role, then press **Add** to add them to the space.
 
 #### Modify Role ####
-You can modify the role of any of the associated users by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
+You can modify the role of any of the associated users by clicking on their name. In the modal that appears, select a new role. Press **Save** to confirm the change.
 
 :::warning Attention
 It should be noted that the system will validate that an administrator always exists within the space, so if there is only one administrator the administrator will not be able to modify its Role.
