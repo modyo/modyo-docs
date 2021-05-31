@@ -134,7 +134,7 @@ If you want to upload a file again, keeping the name and the original link, clic
 
 To facilitate the handling of images within the platform, **Modyo includes an image editor** that allows you to make changes to your images.
 
-One of the changes you can make is to edit the image measurements. To do this, click on the**pencil** icon located in the Update Info window.
+One of the changes you can make is to edit the image measurements. To do this, click on the **pencil** icon found in the "Update information" window.
 
 After that, another window is displayed in which you will have two views. The original image and preview of the edited image.
 
