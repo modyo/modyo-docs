@@ -42,7 +42,7 @@ Savings Accounts have the same features as Checking Accounts. However, Savings A
 
 | Feature       | Description                                                                                            |
 |:--------------------|:-------------------------------------------------------------------------------------------------------|
-| Balance available    | Displays the total available balance in the current account.                                              |
+| Available Balance    | Displays the total available balance in the current account.                                              |
 | Total Charges        | View the total charges for each account.                                                         |
 | Total Fertilisers        | Displays the total number of credits or deposits that have been made to an account.                               |
 | Last moves | Displays a list of the latest moves and charges made to the account, along with their amount and date. |
