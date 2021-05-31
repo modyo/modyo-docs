@@ -311,7 +311,6 @@ const filters = ctype
 
 To obtain private content, the user only needs to be logged in and we can add a third argument with a `false` value to the `getContentType()` method (which indicates that it is not public)
 
-
 ```js
 // To acces private content (user must have logged in to the account)
 const privateTypePost = modyoAccount.getContentType("blog", "post", false);
