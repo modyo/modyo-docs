@@ -799,7 +799,7 @@ In this AJAX request, we are specifying an exit point (using the Liquid <span v-
 
 #### Fetch API with native JavaScript
 
-The Fetch API provides a simple JavaScript interface, to access and manipulate some of the HTTP protocol, such as requests and responses. The global fetch () method is an easy and logical way to bring resources asynchronously across a network.
+The Fetch API provides a simple JavaScript interface, to access and manipulate part of the HTTP protocol, such as requests and responses. The global fetch() method is an easy and logical way to bring resources asynchronously across a network.
 
 A basic fetch request is very simple to perform. Look at the following code:
 A JSON file is being brought from within the site using the Liquid object <span v-pre>{{ site.url }}</span>. The simplest use of fetch () requires an argument —the path of the resource you want to bring — and returns a "promise" containing the response (Response object).
