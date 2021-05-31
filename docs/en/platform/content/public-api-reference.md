@@ -752,7 +752,7 @@ The main operations on fields are:
 - [gt], [lt] = greater/less than, applicable to integers and dates.
 - [in]=allows you to include several values that input an OR type query.
 - [has] = allows you to include multiple values, which enter a query type AND, only works in multiple and text fields.
-- [nin] = allows you to include multiple values, which enter a NOT IN query
+- [nin]=allows you to include several values, which input a NOT IN query.
 - [search] = allows text searches within all attributes of the locations of an entry.
 - [geohash] = allows searches using a lat-long geohash in base 32, for more information see https://www.movable-type.co.uk/scripts/geohash.html.
 
