@@ -10,7 +10,7 @@ search: true
 
 **Modyo Content** has a Headless architecture that allows content to be consumed via an HTTP API from channels defined in **Modyo Channels** and external systems or applications.
 
-Thanks to its integrated HTTP Headers management and cache system, content can also be hosted on CDNs for greater availability and access speed, regardless of geographical location.
+Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
 
 ### Key features
 
