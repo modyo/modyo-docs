@@ -126,7 +126,7 @@ For more information on how to configure this option, go to [Team Review](/en/pl
 
 To allow access to a space, you must select the team members who will work in this Space and have varying levels of access to writing, reviewing and/or publishing.
 
-To do this, the Administrator who created the space can manually assign users and default roles that enable each of the roles.
+To do this, the Content Administrator who created the space must manually assign users and their roles for each function.
 
 #### Add User ####
 To add a user to the Space, select the primary button **+ New** at the top right of the view, in the modal select a user and assign a role, then press**Add** to make it part of the workforce in the space.
