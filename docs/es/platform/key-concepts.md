@@ -115,6 +115,6 @@ Las siguientes definiciones corresponden a términos comunmente utulizados entre
 * [**Campo personalizado**](/es/platform/customers/realms.html#custom-fields): Te permite añadir atributos personalizados al perfil de los usuarios.
 * [**Filtros**](/es/platform/customers/targets.html#filtros): Son la unidad que te permite construir targets.
 * [**Formulario**](/es/platform/customers/forms.html): Te permite capturar datos de tus usuarios en tus sitios.
-* [**Mensajería**](/es/platform/customers/messaging.html): Te permite controlas los canales de comunicación directa con tus usuarios-
+* [**Mensajería**](/es/platform/customers/messaging.html): Te permite controlas los canales de comunicación directa con tus usuarios.
 * [**Target**](/es/platform/customers/targets.html): Te permite agregar y agrupar tus usuarios mediante grupos de filtros con distintas condiciones.
 * [**Usuario**](/es/platform/customers/realms.html): Es quien accede y se registra en los sitios de Modyo.
