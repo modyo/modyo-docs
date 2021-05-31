@@ -35,7 +35,7 @@ You can also filter the list by six different attributes:
 By selecting entries with the _checkbox_ to the left of each entry, you can use the bulk actions that appear at the bottom of the list.
 
 - **Mass Edit**: You will enter the interface that allows you to modify multiple entries at once.
-- **Publish**: Selected entries that have pending changes or are in Draft status will be published.
+- **Publish**: The selected entries that have pending changes or are in a Draft status will be published.
 - **Force Publish**: If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in Draft status without having to go through the review process.
 - **Desublicar**: Selected posts that are published will be unpublished.
 - **Archive**: Selected entries that are unpublished will be archived.
