@@ -709,7 +709,7 @@ The response comes with pagination metadata:
 
 The entries that you can see in section correspond to all the content sent through the API. In that sense, they can be filtered according to:
 
-- Kind
+- Type
 - Category
 - Tags
 - Author
