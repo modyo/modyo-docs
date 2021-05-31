@@ -34,11 +34,11 @@ The Checking Account section allows you to see an overview of the available bala
 | Line of Credit | Displays the line of credit status of the account.                                   |
 | Available Balance  | Displays the total available balance in the line of credit associated with the account.                   |
 | Transfer       | Switches to the Transfer widget associated with the account.                                       |
-| Transactions      | Please refer to the Account Movements Widget, to see each of them in detail. |
+| Transactions      | Switches to the Transfers History widget, to see each movement in detail. |
 
-#### Vista Account
+#### Savings Account
 
-This section has the same functions as the Current Account section. However, it only changes in the Credit Line section, where it is replaced by the latest movements and charges made to the product.
+Savings Accounts have the same features as Checking Accounts. However, Savings Accounts are not associated with Lines of Credit, and display a list of recent activity instead.
 
 | Feature       | Description                                                                                            |
 |:--------------------|:-------------------------------------------------------------------------------------------------------|
