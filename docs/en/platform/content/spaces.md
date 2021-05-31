@@ -84,7 +84,6 @@ You should take into account that when you enable this option, changes in your c
 To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have a scenario of high demand or concurrence, with frequent, high-volume requests being made to your content in this space.
 :::
 
-
 ### Security
 
 Modyo, as a form of secure data transmission, allows CORS to enable the API to be accessed by any microservice in an external domain.
