@@ -56,7 +56,7 @@ The widget also allows you to separate national from international lines of cred
 
 | Feature       | Description                                                                                                                                     |
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
-| Available Credit      | Displays the national amount used and authorized, plus a graph indicating the first number in pesos versus the authorized total.        |
+| Available Credit      | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used versus the total credit limit.        |
 | International Amount | Displays the international amount used and authorized, plus a graph indicating the first number versus the authorized total in dollars. |
 | Pay               | Please refer to the Card Payment Widget, where you can pay the billed amounts.                                                                 |
 | Movements         | Go to the Card Moves Widget, to see each of them in detail.                                                       |
