@@ -154,8 +154,8 @@ The `@modyo /sdk` package is available in the Github registry under the Modyo or
 
 #### 2. Authenticate to Github packages
 
-Once that token is obtained, we must occupy it to authenticate to Github packages. For that we create a `.npmrc` file in the `home`, that is, the file path would be `~/.npmrc`
-The contents of that file (replacing `TOKEN` with our token)
+Once we have obtained this token, we must use it to authenticate ourselves to Github packages. To do this, we create a `.npmrc` file in the `home` so that the file path is `~/.npmrc`.
+The content of that file (replacing `TOKEN` with your token) should be:
 
 ```bash
 //npm.pkg.github.com/:_authToken=TOKEN
