@@ -22,7 +22,7 @@ In the admin you can also filter the view according to several default filters t
 
 You can also filter the list by six different attributes:
 
-- **Type**: Type of Content that was created (View [Types](/es/platform/content/types.html))
+- **Types**: Filter the list by any single type. (See [Types](/en/platform/content/types.html)).
 - **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
 - **Category**: Category to which entries are assigned.
 - **Language**: The language in which the content is written.
