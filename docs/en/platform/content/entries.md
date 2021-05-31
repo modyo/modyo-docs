@@ -121,8 +121,8 @@ As a headless platform, Modyo allows you to preview an entry in multiple sites.
 
 If you already have [content views on your sites](/en/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
 
-::: danger Attention
-If Space is not associated with a site, you can only view the JSON code for the entry you are developing.
+::: danger Warning
+If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
 :::
 
 :::warning Attention
