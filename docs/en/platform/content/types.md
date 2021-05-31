@@ -61,7 +61,7 @@ All fields require a name, and can optionally be set as required.
 
 When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, the entry cannot be saved.
 
-### Text of a line
+### Single-line text
 
 This field allows you to enter single-line texts. and has the following restrictions:
 
