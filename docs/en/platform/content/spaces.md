@@ -14,8 +14,8 @@ Spaces also allow us to organize content, for better order and easier distributi
 
 When accessing the list of spaces in the Modyo Content section, each listed space indicates how many content types and total entries it contains.
 
-:::warning Attention
-In the Spaces Index, you will only see the spaces in which you are part of the work team with a role.
+:::warning Warning
+In the Space index, you will only see the spaces in which you are part of the work team with an assigned role
 :::
 
 This list can be sorted alphabetically by the name of the space or by the date it was created, and filtered through a search engine that will search for matches with the names of existing spaces.
