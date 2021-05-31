@@ -45,7 +45,7 @@ In the creation interface, you can see an empty template at the center of your s
 
 - **Add fields**
 - **Field Configuration**
-- **Settings**
+- **Configuration**
 
 This interface is used to create each of the types, giving them the format that is required.
 
