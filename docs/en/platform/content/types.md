@@ -89,7 +89,7 @@ This field allows you to add a fixed list of items to select only one option.
 
 This field allows you to add a list from which you can select more than one option or leave it blank.
 
-### Multiple Options
+### Multiple choices
 
 This field allows you to add a field in which you can type to select an option that can be default or proposed.
 
