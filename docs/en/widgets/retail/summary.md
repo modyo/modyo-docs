@@ -22,7 +22,7 @@ The Account Summary presents a customer's financial state within the different p
 
 Each summary presents financial information for a specific product both numerically and graphically.
 
-#### Current Account
+#### Checking Account
 
 The Current Account section allows you to view an overview of available amounts, as well as access to transactions such as transfers and movements.
 
