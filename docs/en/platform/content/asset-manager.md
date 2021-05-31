@@ -120,7 +120,7 @@ To save the modification of the data, it is necessary to click on the **Update I
 
 If the data is modified but the button is not clicked to be saved, these modifications will be lost.
 
-If you want to close the window and return to the Manager interface, click the**Close** button at the bottom of the screen.
+If you want to close the window and return to the Manager interface, click on the **Close** button, located at the bottom of the screen.
 
 ## Resuming an image
 
