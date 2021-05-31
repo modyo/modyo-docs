@@ -21,7 +21,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 | Loan Amount     | The loan amount to be requested from to the institution.                                                                                               |
 | Payments                | Shows the total payment amounts for the requested personal loan.                                                                            |
 | Months of non-payment       | This section allows customers to select the months of their grace period.                                                                            |
-| Grace period      | Deliver the possibility to choose the months in which the customer will not make the payment of the credit, if you allow                                                            |
+| Grace period      | If necessary, customers can select non-payment dates for their personal loan.                                                            |
 | Account credit       | Select the target account to which the requested amount will be charged if the credit is approved by the institution.                                             |
 | Insurance               | It gives you the possibility to choose which insurance will be included in the credit simulation.                                                                                     |
 | Simulation Summary | Presents general information about the credit simulation performed. Includes total credit cost, amount of installments, quota value and respective interest rates. |
