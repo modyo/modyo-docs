@@ -4,7 +4,7 @@ search: true
 
 # Credit Cards
 
-Modyo offers a Widget that allows the customer to view the data and operations of their credit cards, to make transactions on it.
+Modyo offers a widget that allows customers to view their credit card details and operations, and to perform various transactions.
 
 ### Installation:
 
