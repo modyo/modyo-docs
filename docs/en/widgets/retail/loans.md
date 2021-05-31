@@ -19,7 +19,9 @@ modyo-cli get modyo-widgets-retail-loans
 | Feature       | Description                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Loan Summary | Displays information on the customer's current loans, such as type of loan, name and application number.                                                                                                       |
-| Loan Detail | When you select an item, displays detailed credit information, including outstanding balance, grant date, end date, and credit type fee value. Include information about upcoming maturities |
+| Loan Detail | | Loan Details | c |
+
+ |
 
 <script>
 
