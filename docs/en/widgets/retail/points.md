@@ -10,7 +10,7 @@ search: true
 
 | Feature         | Description                                                                                                                                                                                                   |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Points Summary | Displays the total number of points available to the customer, along with the next expiration. It has a button that allows you to link a relevant catalog of redeemable items.                                  |
+| Points Summary | Displays the total points available to the customer, along with the next due date. Has a button that enables you to link a relevant catalog of redeemable items.                                  |
 | Associated Cards    | Displays customer card information linked to the points and benefits system. Includes card type, customer name, and total points accumulated during the time period. |
 | Points Redeemed      | Present the points redeemed by the customer. Displays in detail the redemption date, product, business and cost of points.                                                                                 |
 | Accumulated Points     | Presents the points accumulated by the customer. Displays the detail of each transaction and the points earned. Includes the total redeemed points per period.                                                 |
