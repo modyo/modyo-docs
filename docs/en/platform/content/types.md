@@ -59,7 +59,7 @@ For more information go to the [API reference](/en/platform/content/public-api-r
 
 All fields require a name, and can optionally be set as required.
 
-When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise changes cannot be saved.
+When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, the entry cannot be saved.
 
 ### Text of a line
 
