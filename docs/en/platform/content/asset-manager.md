@@ -165,7 +165,7 @@ This action is irreversible, and any content using this file will display a brok
 
 ## Upload a file
 
- <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
 There are two ways to upload a file for use in **Modyo**. One is through the same section from which you work and another is through the File Manager, which gives the option to take any material from the local disk to upload it to the platform.
 
