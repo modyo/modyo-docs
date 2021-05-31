@@ -26,7 +26,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
 | Insurance               | The customer can add different types of insurance to the mortgage loan simulation.                                                                                                                                   |
 | Simulation Summary | Presents general information obtained from the mortgage loan simulation. It includes total cost of the loan, the loan term in years, the monthly payment amount, the corresponding interest rates, and financing percentage. |
 | Simulation Details | Displays the details of the mortgage loan simulation. Includes the loan amount, term, down payment, monthly payment amount, property type, taxes, insurances, expenses and more.                                         |
-| Application             | It allows you to confirm the simulation and manage the mortgage loan application with the institution.                                                                                                                      |
+| Apply for Loan             | It allows you to confirm the simulation and manage the mortgage loan application with the institution.                                                                                                                      |
 
 <script>
 
