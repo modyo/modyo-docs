@@ -15,7 +15,7 @@ The columns in the list display the following details:
 - **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
 - **Name**: Title of the entry.
 - **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
-- **Updated**: Date of last saved content update.
+- **Updated on**: Date of the last saved update.
 - **Author**: Name of the author of the content.
 
 In the admin you can also filter the view according to several default filters that you can adjust according to your need, regardless of how you order the list of your contents.
