@@ -100,7 +100,7 @@ After finishing your writing, editing, and then clicking the **Save** button, on
 
 If you click on it, the button will undergo two changes. If you have Space Manager permissions, you can publish automatically. If you don't have those permissions, you can't publish the resource, but another user with a role greater than you can do it.
 
-However, if the Team Review option is found, you will go to the check-up process by other users, where you can assign specific reviewers who can publish.
+If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
 To learn more, you can see [Team Review.](/es/platform/core/key-concepts.html)
 
