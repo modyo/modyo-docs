@@ -22,7 +22,7 @@ modyo-cli get modyo-widgets-investments-detailed-summary
 | Investment Account Summary | Displays the grouped totals of the multiple investments that exist within a specific investment account.                               |
 | Pending Transactions         | Shows the operations made by the client still in a pending status.                                                             |
 | Latest Transactions             | Shows the latest completed transactions made in the investment account.                                                                     |
-| Product Summary            | Shows the totals of investments included for each type of investment existing in the equity.                                           |
+| Product Summary            | Shows the investment totals for each existing investment type in the portfolio.                                           |
 | Summary by Currency              | It shows the aggregated totals of the various investments that exist within the equity, considering each available currency (CLP, USD, EUR). |
 
  <script> 
