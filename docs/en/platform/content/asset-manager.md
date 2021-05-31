@@ -40,7 +40,7 @@ The list has three different filters for useful file searching.
 
 <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
 
-**Extensions**: With this filter you can see all the files of the same type that are within the platform (the list consists of the types of files that have been uploaded to the platform).
+**Extensions**: Use this to filter all files of the same type within the platform (the default list displays all uploaded files).
 
 **Tags**: This filter allows you to display all the files associated with a tag that are within the platform.
 
