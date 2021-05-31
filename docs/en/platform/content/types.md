@@ -47,12 +47,13 @@ In the creation interface, you can see an empty template at the center of your s
 - **Field Configuration**
 - **Configuration**
 
-This interface is used to create each of the types, giving them the format that is required.
+This interface is where we populate our types with the correct fields we need based on our content requirements.
 
 ## Fields
 
 ::: tip Tip
-The field name is of the utmost importance because it will be through what its value can be accessed in the Liquid and JS SDKs. To access the value of a field in an entry you can for example use <span v-pre> `{{entry ["field name"]}}` </span>. 
+The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/en/platform/content/public-api-reference.html)
+:::
 
 For more information go to the [API reference](/es/platform/content/public-api-reference.html)
 :::
