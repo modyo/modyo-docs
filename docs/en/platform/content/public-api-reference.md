@@ -771,7 +771,7 @@ An example JsonPath expression:
 `.../entries?fields=$.entries[*].meta.uuid` to obtain only the uuid from the meta-data of the entries.
 `.../entries?fields=$..description` to get all the _description_ fields in the entries.
 
-##### Equalities/Inequalities in arrays
+##### Equalities/Inequalities in arrangements
 
 Fields that search in multiple items (checkboxes, multiple) can use the following syntax:
 
