@@ -4,7 +4,7 @@ search: true
 
 # Accounts
 
-With this Widget you can view a summary of bank accounts, draw maps and see in detail each transaction made during certain periods of time.
+With this widget you can see a summary of your bank accounts, download bank statements and see each transaction made in detail during certain periods of time.
 
 #### Installation:
 
