@@ -804,7 +804,7 @@ The Fetch API provides a simple JavaScript interface, to access and manipulate p
 A basic fetch request is very simple to make. Look at the following code:
 We are bringing a JSON file from within our site using the Liquid <span v-pre> {{site.url}} </span> object. The simplest use of fetch() requires an argument - the path of the resource you want to bring - and returns a "promise" that contains the response (Response object).
 
-This is an HTTP response, not the real JSON. To extract the JSON body from the response, use the json () method at the end of the response, and then link the data to the promotions (this fetch () is for this application).
+This is an HTTP response, not the real JSON. To extract the JSON body from the answer, we use the json() method at the end, and then link the data to our promotions (this fetch() is for this application).
 
 For more detailed information, visit MDN webdocs.
 
