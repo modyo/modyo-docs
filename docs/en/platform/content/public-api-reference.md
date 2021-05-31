@@ -187,7 +187,7 @@ const modyoAccount = new Client("https://my-account.modyo.com", "en");
 ```
 
 :::tip Tip
-When instantiating a new client, the second parameter _locale_ is optional, so that entries are requested only in the requested language, otherwise the default language of the space will be used.
+When a new client is instantiated, the second parameter _locale_ is optional and used to request entries only in the specified language, otherwise the default language of the space will be used.
 :::
 
 ### Content
