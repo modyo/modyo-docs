@@ -64,7 +64,7 @@ Modyo allows language and vocabulary changes by country, which is useful when yo
 
 The default language of a space is defined when first creating a space and cannot be modified, but in this section you can add as many secondary languages as needed. You just have to select one from the list, add it and save the changes. Adding a secondary language places a language selector next to the page title of any entries you edit in order to switch between entry languages.
 
- <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350"> 
+<img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 :::tip Tip
 You can learn how to select one of the available languages from an entry in its corresponding sections: [Public API](/es/platform/content/public-api-reference.html #filtros), [Javascript SDK](/es/platform/content/public-api-reference.html #sdk -javascript) and in [Liquid SDK](/es/platform/content/public-api-reference.html #filtrar - tickets)
