@@ -10,7 +10,7 @@ The entry list displays every type of non-archived entry within in that space.
 
 By default, this list displays entries by their "Updated on" date, meaning either by the date the entry was created, or last updated.
 
-The columns by which you can sort the list of entries are:
+The columns in the list display the following details:
 
 - **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
 - **Name**: Name of the content.
