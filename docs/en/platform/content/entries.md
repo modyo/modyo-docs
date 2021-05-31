@@ -140,7 +140,7 @@ If you want to edit an entry, just click on the entry's name inside the entry ma
 
 This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
 
-In the event that the entry is published, the changes will be made automatically. If the Team Review is in the process of Team Review, reviewers will need to update their view in order to notice the changes.
+In case the post is published, the changes will be made automatically. If the entry is in the Team Review process, reviewers must update their view in order to see the changes.
 
 ### Categories
 
