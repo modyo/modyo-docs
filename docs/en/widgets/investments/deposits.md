@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-investments-deposits
 
 | Feature | Description                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
-| Deposit        | It allows you to pay funds to an investment account using payment buttons from different banking institutions. |
+| Deposit        | Allows funds to be deposited to an investment account using payment buttons from different banking institutions. |
 
  <script> 
 
