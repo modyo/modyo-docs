@@ -79,7 +79,7 @@ Attributes with arrows can be sorted by either ascending and descending order. T
 
 **Author**: Name of the user who uploaded the file, as long as the user has a name assigned.
 
-Finally, in the lower right corner, you can find the pagination of all system files.
+The lower right corner lists the pagination of all your account files.
 
 
 ## File Properties
