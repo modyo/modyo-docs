@@ -316,7 +316,7 @@ To obtain private content, the user only needs to be logged in and we can add a 
 const privateTypePost = modyoAccount.getContentType("blog", "post", false);
 ```
 
-:::warning Attention
+:::warning Warning
 It is important that this potentially sensitive information be treated with care. Private content requires cookies and an end user who is logged into Modyo.
 :::
 
