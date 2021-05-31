@@ -758,7 +758,7 @@ The main operations on fields are:
 
 Example:
 
-- `.. /entries? meta.created_at [in] [] =1987-11-19T 13:13:13 &meta.created_at [in] [] =1987-11-19T 14:14:14 `will search entries created on November 11 at both 13:13 and 14:14
+- `.. /entries? meta.created_at [in] [] =1987-11-19T 13:13:13 &meta.created_at [in] [] =1987-11-19T 14:14:14 `will search entries created on November 11 at both at 13:13 and 14:14
 
 ##### Returned Fields
 
