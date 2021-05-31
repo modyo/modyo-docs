@@ -309,7 +309,8 @@ const filters = ctype
 
 #### Private content
 
-To get private content, it is enough for the user to be logged in, passing to the `getContentType()` method a third argument in `false` (which indicates that it is not public)
+To obtain private content, the user only needs to be logged in and we can add a third argument with a `false` value to the `getContentType()` method (which indicates that it is not public)
+
 
 ```js
 // To acces private content (user must have logged in to the account)
