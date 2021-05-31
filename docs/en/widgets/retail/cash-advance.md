@@ -29,7 +29,7 @@ The customer can select the desired options for their cash advance and payment a
 
 ### Simulation
 
-After the selected features, the Widget will display the preview simulation and details of the payments to be made.
+The client can select the number of payments in which the requested amount will be paid.
 
 | Feature           | Description                                                               |
 |:------------------------|:--------------------------------------------------------------------------|
