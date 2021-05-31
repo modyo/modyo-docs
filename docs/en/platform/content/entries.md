@@ -57,7 +57,7 @@ Bulk actions are executed in the background and you may not see the changes imme
 :::warning Warning
 This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for bulk actions.
 
-If you select multiple entries, but are not using the filter by type in the table, you won't see this option.
+If you select multiple entries, but are not using the filter by table type, you will not see this option.
 :::
 
 When you select entries of the same type, you'll see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you check the selector on the left of each field, you can enter the value associated with the field.
