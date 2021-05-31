@@ -115,7 +115,7 @@ When deciding whether to use SSL within the platform, the following should also 
 
 Team Review is a system to review and approve changes made to content and elements in the platform before making these changes publicly available. Modyo uses the Team Review to confirm and correct content sent through the API.
 
- <img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600"> 
+<img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
 
 
 For more information on how to configure this option, see the [Team Review] section (/es/platform/core/key-concepts.html)
