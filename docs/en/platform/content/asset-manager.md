@@ -84,7 +84,7 @@ The lower right corner lists the pagination of all your account files.
 
 ## File Properties
 
- <img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
 The platform allows the handling and uploading of files of all types, without an extension limit.
 
