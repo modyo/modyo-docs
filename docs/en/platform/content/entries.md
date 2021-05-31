@@ -76,7 +76,7 @@ Once Modyo has finished modifying the fields for the selected entries, you will 
 
 To create an entry, click the "+ New" button in the upper right of the screen.
 
-First, **Modyo** asks for the name, slug, and type of entry you want to create, to organize the format to be presented, which can be created in the [Types section](/es/platform/content/types.html).
+In the **New Entry** modal that appears, give your entry a name. You can fill in the "Slug" field, or let it autocomplete based on the entry name. Lastly, select the content type of the entry. Types can be created in the [Types section](/en/platform/content/types.html).
 
 :::warning Attention
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
