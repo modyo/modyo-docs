@@ -722,7 +722,7 @@ Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the for
 
 - Tags: available in two ways
   - `meta.tags=tag_name`
-  - `meta.tags [in] [] =tag1_name&meta.tags [in] [] =tag2_name`
+  - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
 - Categories, searchable in one way: `meta.category=category_full_path` will consider the child categories of the consulted
 - Creation/update/publish/unopen dates: searchable using ISO-8601 specification and with possibility to search by ranges (lt, gt):
   - `... /entries?meta.created_at=1987-11-19T 13:13:13 `
