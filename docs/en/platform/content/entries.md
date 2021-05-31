@@ -23,7 +23,7 @@ In the admin you can also filter the view according to several default filters t
 You can also filter the list by six different attributes:
 
 - **Types**: Filter the list by any single type. (See [Types](/en/platform/content/types.html)).
-- **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
+- **Status**: Filter the list by the following statuses: Published, Not Published, Scheduled, Archived, and All. Filtering by All does not show Archived entries. Filtering by Not Published displays entries in either the Draft or Scheduled status.
 - **Category**: Category to which entries are assigned.
 - **Language**: The language in which the content is written.
 - **Translation**: This filter is associated with the selected language and filters by the translation status of the entries for that language. Ex: This means that if an entry does not have a version in the selected language, it will fall under "Not translated".
