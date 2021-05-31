@@ -155,7 +155,7 @@ To create a category, click on the green button at the top of the screen. This t
 ::: tip Tip
 When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
 
-If you change the route, also remember to change all links to it, if they are on a website.
+If we change the path, remember to change all links in any channel using it.
 :::
 
 :::warning Attention
