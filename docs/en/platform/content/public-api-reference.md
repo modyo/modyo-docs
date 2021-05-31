@@ -825,7 +825,7 @@ Using Axios has quite a few advantages over the native Fetch API:
 
 In order to use Axios in Modyo, you need to add the axios.js source code as a custom snippet and include it somewhere that your widgets can access, such as the javascript theme (located in Templates, under the Assets tab).
 
-The Modyo API provides a RESTful interface with responses formatted in a lightweight JSON that can be used in many functionalities of your account.
+The Modyo API provides a RESTful interface with responses formatted in a lightweight JSON that can be used in many features of your account.
 
 ## Private content
 
