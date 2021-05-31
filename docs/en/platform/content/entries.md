@@ -119,7 +119,7 @@ Modyo only allows you to delete entries that are archived. To do this open the a
 
 As a headless platform, Modyo allows you to preview an entry in multiple sites.
 
-If you already have [Content Views on your sites](/es/platform/channels/templates.html #vistas -for-content), you can see the**Site Preview button**, where you want to see how your resource is developing.
+If you already have [content views on your sites](/en/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
 
 ::: danger Attention
 If Space is not associated with a site, you can only view the JSON code for the entry you are developing.
