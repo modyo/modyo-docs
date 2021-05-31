@@ -342,7 +342,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[f
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
 
-Here, `space_uid` and `type_uid` correspond to the slugified name of the Space and the name of the Content Type, respectively.
+Here, `space_uid` and `type_uid` correspond to the 'slugified' name of the Space and the name of the Content Type, respectively.
 
 ### JSON Entries Structure
 
