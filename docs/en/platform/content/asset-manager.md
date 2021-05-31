@@ -42,7 +42,7 @@ The list has three different filters for useful file searching.
 
 **Extensions**: Use this to filter all files of the same type within the platform (the default list displays all uploaded files).
 
-**Tags**: This filter allows you to display all the files associated with a tag that are within the platform.
+**Tags**: This filter allows you to display all files that match all selected tags.
 
 :::tip Tip
 If you want to add a tag to a file or group of files, you can do so by directly editing the file or using the bulk actions that appear at the bottom left of the list. 
