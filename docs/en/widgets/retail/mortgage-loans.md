@@ -25,7 +25,7 @@ modyo-cli get modyo-widgets-retail-mortgage-loan
 | Grace Period       | The customer can add a grace period in months of non-payment to the simulation.                                                                                                                         |
 | Insurance               | The customer can add different types of insurance to the mortgage loan simulation.                                                                                                                                   |
 | Simulation Summary | Presents general information obtained from the mortgage loan simulation. It includes total cost of the loan, the loan term in years, the monthly payment amount, the corresponding interest rates, and financing percentage. |
-| Simulation Detail | Displays detailed credit simulation information. It includes liquid amount, term, foot, dividend value, property type, taxes, insurance and expenses, among others.                                         |
+| Simulation Details | Displays detailed credit simulation information. It includes liquid amount, term, foot, dividend value, property type, taxes, insurance and expenses, among others.                                         |
 | Application             | It allows you to confirm the simulation and manage the mortgage loan application with the institution.                                                                                                                      |
 
 <script>
