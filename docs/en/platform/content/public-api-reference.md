@@ -740,9 +740,9 @@ The Modyo API delivers entries in the default language of the Space, unless anot
 
 For example, to get entries in the Spanish-Chile language (es_CL):
 
-```plain
-Query string: GET... /posts/posts? locale=en-cl
-Header: Set Accept-Language
+``` plain
+Query string: GET .../posts/entries?locale=es_CL
+Header: Set Accept-Language en_CL
 ```
 
 ##### Operators
