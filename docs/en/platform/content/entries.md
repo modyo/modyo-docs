@@ -37,7 +37,7 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 - **Mass Edit**: You will enter the interface that allows you to modify multiple entries at once.
 - **Publish**: The selected entries that have pending changes or are in a Draft status will be published.
 - **Force publish**: If team review is enabled, space admins can use this action to force publish entries that have pending changes or are in draft status without going through the review process.
-- **Desublicar**: Selected posts that are published will be unpublished.
+- **Unpublish**: Selected entries that are published will be unpublished.
 - **Archive**: Selected entries that are unpublished will be archived.
 
 :::warning Attention
