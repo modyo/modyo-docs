@@ -40,39 +40,39 @@ modyo-cli get modyo-widgets-retail-accounts
 | Historical cartoles     | Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. It also includes the ability to perform searches within the movements shown. |
 | Payment Line of Credit   | Allows you to provide the payment functionality of a credit line, using the funds available from a checking account. The customer can repay their debt in whole or in part.                                                     |
 
- <script> 
+<script>
 
- export default {
- mounted () {
+  export default {
+    mounted() {
 
- function setFrameHeightCo (id, ht) {
- var ifrm = document.getElementById (id);
- if (ifrm) {
- ifrm.style.height = ht + 4 + "px";
- }
- }
- //iframed document sends its height using postMessage
- function HandleDoCheightMsg (e) {
- //check origin
- if (e.origin === 'https://widgets.modyo.com') {
- //parse data
- var data = json.parse (e.data);
+      function setIframeHeightCO(id, ht) {
+          var ifrm = document.getElementById(id);
+          if(ifrm) {
+            ifrm.style.height = ht + 4 + "px";
+          }
+      }
+      // iframed document sends its height using postMessage
+      function handleDocHeightMsg(e) {
+          // check origin
+          if ( e.origin === 'https://widgets.modyo.com' ) {
+              // parse data
+              var data = JSON.parse( e.data );
 
- console.log ('data: ', data)
- //check data object
- if (data ['doChight']) {
- setFrameHeightCo ('WidgetFrame', data ['DoChight']);
- } else {
- SetFrameHeightCo ('WidgetFrame', 700);
- }
- }
- }
+              console.log('data:', data)
+              // check data object
+              if ( data['docHeight'] ) {
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
+              } else {
+                  setIframeHeightCO( 'widgetFrame', 700 );
+              }
+          }
+      }
 
- //assign message handler
- if (Window.addEventListener) {
- Window.addEventListener ('message', HandleDoCheightMSG, false);
- }
- }
- }
+      // assign message handler
+      if ( window.addEventListener ) {
+          window.addEventListener('message', handleDocHeightMsg, false);
+      }
+    }
+  }
 
- </script> 
+</script>
