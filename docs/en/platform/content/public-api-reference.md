@@ -806,7 +806,7 @@ We are bringing a JSON file from within our site using the Liquid <span v-pre> {
 
 This is an HTTP response, not the real JSON. To extract the JSON body from the answer, we use the json() method at the end, and then link the data to our promotions (this fetch() is for this application).
 
-For more detailed information, visit MDN webdocs.
+For more detailed information, we recommend you visit the MDN webdocs.
 
 #### Axios
 
