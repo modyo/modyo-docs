@@ -192,7 +192,7 @@ When a new client is instantiated, the second parameter _locale_ is optional and
 
 ### Content
 
-The SDK allows access to both public and private/targetized content, facilitating interaction with our Headless API.
+The SDK allows access to both public and private/targeted content, facilitating interaction with our Headless API.
 
 #### How to get public content
 
