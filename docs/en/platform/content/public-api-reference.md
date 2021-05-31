@@ -44,7 +44,7 @@ Total entries: {{ entries | total_entries }}
 
 ### Filter entries
 
-If you want to filter entries, you can do so using the following attributes: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. They all receive an array of values, so it is possible to filter by a value or several, and the way to use it is as follows:
+If we want to filter the entries, we can do so by the following attributes: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. Every response contains an array of values, so it is possible to filter by one value or several, as follows:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
