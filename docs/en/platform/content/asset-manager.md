@@ -136,7 +136,7 @@ To facilitate the handling of images within the platform, **Modyo includes an im
 
 One of the changes you can make is to edit the image measurements. To do this, click on the **pencil** icon found in the "Update information" window.
 
-After that, another window is displayed in which you will have two views. The original image and preview of the edited image.
+This opens a window with two views that display the original image and a preview of the edited image.
 
 Then, you can see the three options you can choose to edit the size:
 
