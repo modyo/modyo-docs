@@ -705,7 +705,7 @@ The response comes with pagination metadata:
     }
 ```
 
-#### Tickets
+#### Entries
 
 The entries that you can see in section correspond to all content sent through the API. In this regard, they may be filtered according to:
 
