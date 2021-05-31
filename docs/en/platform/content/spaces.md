@@ -27,7 +27,7 @@ To create a Space, you must click on the green button in the upper right of the 
 In addition, you must select the default language of your content which will result in a better character configuration.
 
 :::tip Tip
-Later, in the settings you will be able to define other secondary languages for space entries.
+Later, in the configuration, you can define other secondary languages for the space.
 :::
 
 ## Configure a Space
