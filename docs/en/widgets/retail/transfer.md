@@ -31,7 +31,7 @@ This widget includes features for two similar products: Transfer to Third Party 
 
 | Feature      | Description                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Source Account   | Please provide information about the account from which the transfer will be made, such as account number and available balance. Allows you to schedule moves to one of the registered recipients.                |
+| Origin Account   | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred.                |
 | Destination Account  | Select the account that will receive the transfer made by the user. The customer can select an already registered contact or add new contacts.                                       |
 | My Contacts      | Select the account that will receive the transfer from among the accounts already registered by the customer. Deliver a wanted to quickly and quickly find the recipients of the transfer. |
 | New Contact     | Enables you to enter information about a recipient who is not registered to the customer's account. Includes name, bank, account type, account number, RUT, and email address of the recipient.     |
