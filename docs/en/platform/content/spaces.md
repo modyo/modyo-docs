@@ -40,9 +40,9 @@ In this case, the space configuration helps us to change the general settings, l
 
 Here you can change the name of a space and its UID.
 
-The Space UID is very important since it is the attribute with which you access from the [public API](/es/platform/content/public-api-reference.html #referencia -del-api) content, the [Javascript SDK](/es/platform/content/public-api-reference.html #sdk -de-javascript) and the [Liquid SDK](/es/platform/content/public-api-reference.html #sdk -de-liquid) ). 
+The UID of the space is very important. It determines how you access the space through the  [public API](/en/platform/content/public-api-reference.html#reference-del-api) content, the [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](platform/content/public-api-reference.html#sdk-de-liquid). 
 
-Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, as it will be used in URLs to access the content.
+Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
 
 The next option is to configure whether the content author will be visible in both the public API and the liquid SDK. If the option is enabled, then you will see the data of the administrator who created the content, and if the option is disabled, you will see the author blank. 
 
