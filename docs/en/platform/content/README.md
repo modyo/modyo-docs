@@ -14,7 +14,7 @@ Thanks to its integrated system of cache and management of HTTP Headers, content
 
 ### Main functionalities
 
-- [Spaces](/es/platform/content/spaces.html) for the organization of content and computers that manage them.
+- [Spaces](/en/platform/content/spaces.html) for the organization of contents and teams that manage them.
 - [Content Types](/es/platform/content/types.html) to define custom structures.
 - [File Manager](/es/platform/content/asset-manager.html) for the organization of files as images or videos that are used within the contents.
 - [API and SDKs](/es/platform/content/public-api-reference.html) for access to content repositories, both on and outside the platform.
