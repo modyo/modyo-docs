@@ -690,7 +690,7 @@ Entry JSON Schema:
 
 It's necessary to paginate content retrieved through the API to access it correctly.
 
-To do this, an offset pagination with the page and per_page parameters is used in the query string of the input URL.
+You can create a pagination offset with the `page` and `per_page` parameters in the query string of the URL.
 
 For example, with `page = 3`, `per_page = 20` you are prompting to return the next 20 items by skipping the first 40.
 
