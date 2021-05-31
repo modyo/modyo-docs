@@ -786,7 +786,7 @@ Fields that search in multiple elements (checkboxes, multiple) can use the follo
 
 The order of the results must be specified with the parameters `sort_by` and `order`:
 
-- `sort_by`: indicating the name of the attribute (e.g. meta.tags, or fields.name)
+- `sort_by`: indicating the name of the attribute (ex: meta.tags, or fields.name)
 - `order`: ['asc', 'desc'](optional, asc by default)
 
 #### jQuery
