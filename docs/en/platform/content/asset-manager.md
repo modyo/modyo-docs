@@ -157,7 +157,7 @@ After cropping an image, if you want to restore it to its original dimensions, y
 
 ## Delete a file
 
-To delete a specific file, click the Delete icon, which is located on the side of the file URL.
+To delete a file, click on the Delete icon, located in the upper right corner of the image preview in the "Update information" window.
 
 :::warning Attention
 This action is irreversible. If this file is linked to a content, you cannot recover it and it appears as a broken link.
