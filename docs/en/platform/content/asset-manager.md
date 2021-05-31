@@ -75,7 +75,7 @@ Attributes with arrows can be sorted by either ascending and descending order. T
 
 **Size**: Size in kilobytes of the file.
 
-**Created on**: Date of upload or creation within the platform, independent if the file was created on a different date on another service.
+**Created on**: Upload or creation date within the platform, independent if the file was created on a different date in another service.
 
 **Author**: Name of the user who uploaded the file, as long as the user is assigned a name.
 
