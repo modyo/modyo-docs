@@ -6,7 +6,7 @@ search: true
 
 The Cash Advance widget allows any customer to create a credit simulation to request a cash advance from a financial institution.
 
-Through the Widget, the customer can perform different functions according to the features they need for this product.
+Through this widget, customers can select different options according to their requirements of this product.
 
 ### Installation:
 
