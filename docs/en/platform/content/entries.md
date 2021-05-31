@@ -49,7 +49,7 @@ If you try to archive an entry that is published, this action will be omitted an
 :::
 
 :::tip Tip
-Mass actions run in the background and you may not see the changes immediately, so we recommend waiting a moment and refreshing the view after running a mass action.
+Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action.
 :::
 
 ## Massively Edit
