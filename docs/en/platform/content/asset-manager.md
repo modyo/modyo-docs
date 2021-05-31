@@ -2,7 +2,7 @@
 search: true
 ---
 
-# File Manager
+# Asset Manager
 
 An organization needs to have a platform that allows them to organize the required content files and documents within the platform.
 
