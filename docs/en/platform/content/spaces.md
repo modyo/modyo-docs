@@ -80,9 +80,10 @@ The cache is a tool that allows you to reduce the number of requests that reach 
 You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "Example", and then publishing the same content with the title "New Example", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
 :::
 
-:::tip Tip
-To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have to face some high-demand or concurrency scenario.
+::: tip Tip
+To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have a scenario of high demand or concurrence, with frequent, high-volume requests being made to your content in this space.
 :::
+
 
 ### Security
 
