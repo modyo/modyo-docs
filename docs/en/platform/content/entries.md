@@ -52,7 +52,7 @@ If you try to archive an entry that is published, this action will be omitted an
 Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action.
 :::
 
-## Massively Edit
+## Bulk edit
 
 :::warning Attention
 This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for mass actions.
