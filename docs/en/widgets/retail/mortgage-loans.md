@@ -4,7 +4,7 @@ search: true
 
 # Mortgage Loans
 
-This Widget allows you to simulate a mortgage credit and start the application for it with the variables that each client needs.
+This widget allows customers to simulate a mortgage loan and start the application process according to the applicant's requirements.
 
 ### Installation:
 
