@@ -125,7 +125,7 @@ Allows you to add a field in which you can select a geographic address, accordin
 :::warning Attention
 For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
 
-* Map API via JavaScript
+* Maps JavaScript API
 * Places API
 * Geocoding API
 :::
