@@ -868,8 +868,8 @@ For example:
 To be able to access the URL to obtain a token, you must make sure you have a session initiated with a user in the account, or at least in a site within that account, otherwise you will receive an error `404 - Not found`.
 :::
 
-:::warning Attention
-It is necessary that obtaining the content access token be done dynamically, because that token will change according to the targets to which the user belongs, and since targets can become highly volatile, it is not advisable to store this value.
+::: warning Warning
+It is necessary to dynamically obtain an access token for content, since this token changes based on the targets the user is a part of. Since target association can change frequently, it is not recommended to store this value.
 :::
 
 The response to the content API query with the delivery token is the same as the response you would receive without the delivery token, but it will contain as part of the response, both private content (without targets) and targetized content that is restricted to the targets to which the user who requested your delivery token belongs.
