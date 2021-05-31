@@ -4,7 +4,7 @@ search: true
 
 # Transfer History
 
-This Widget allows you to review in detail all transfers received and sent that have been made from the different accounts that a customer may have, as well as review the details of their registered contacts.
+This widget allows customers to review, in detail, all the sent and received transactions that have been made from their different accounts, in addition to reviewing the data of their registered contacts.
 
 #### Installation:
 
