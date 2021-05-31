@@ -52,8 +52,7 @@ This interface is where we populate our types with the correct fields we need ba
 ## Fields
 
 ::: tip Tip
-The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>. For more information go to the [API reference](/en/platform/content/public-api-reference.html)
-:::
+The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>.
 
 For more information go to the [API reference](/es/platform/content/public-api-reference.html)
 :::
