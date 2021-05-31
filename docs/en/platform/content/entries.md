@@ -109,7 +109,7 @@ To learn more, please go to [Team Review.](/en/platform/core/key-concepts.html)
 
 To unpublish an entry, open it and click on the **Unpublish** button at the top of the screen. This changes the status of the entry to Draft, is no longer published.
 
-If you want to republish the entry, it will go through the Team Review process again, so if you make a change, it will be saved again and the user with a higher role must approve it to be published correctly.
+If you want to republish the entry, it must go through the Team Review process again (if enabled).
 
 ### Delete Entries
 
