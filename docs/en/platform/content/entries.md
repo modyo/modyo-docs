@@ -64,8 +64,8 @@ When selecting entries of the same type, you will see this option in the bulk ac
 
 You can make changes to all fields of the type. Once you have finished adding values to the fields you need, press "Next" at the top of the screen to see a summary of your changes. If you agree with the changes, press "Save" to have Modyo start applying the changes to all selected entries.
 
-:::warning Attention
-By using bulk editing entries you are overwriting the values for the selected fields in all the selected entries, so the values that existed before the joint editing will no longer be available in the editable version.
+:::warning Warning
+By using bulk editing of entries you are overwriting the values for the selected fields in all selected entries, so the values that existed before the bulk edit will no longer be available in the editable version.
 
 If you need to retrieve a specific value from an entry, you can use the "Differences" option in the Entry Edit View to review the previous values that a particular entry had.
 :::
