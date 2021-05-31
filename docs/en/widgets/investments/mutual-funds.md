@@ -14,7 +14,7 @@ modyo-cli get modyo-widgets-investments-mutual-funds
 
 [Open in new tab](https://widgets.modyo.com/investments/mutual-funds)
 
- <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/mutual-funds" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
 | Feature           | Description                                                                                                                                                                                                                                                                                                 |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
