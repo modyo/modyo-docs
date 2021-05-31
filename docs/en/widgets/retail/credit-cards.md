@@ -21,7 +21,7 @@ modyo-cli get modyo-widgets-retail-credit-cards
 | Credit card summary | Presents a summary of the credit card status with specific information associated with each card balance.<br><br>                                                                    |
 | Credit balance             | Shows the payment options available for the specific card, in addition to indicators of expenditure compared to the amount available.                                                                                                                |
 | Account statements              | Shows statements with the movements of the last invoiced period for a credit card.                                                                                                                                                           |
-| Recent activity           | Displays all national and international movements that are not invoiced.                                                                                                                                                                                |
+| Recent activity           | Shows recent movements and activity that are not yet invoiced.                                                                                                                                                                                |
 | Pay off debt                   | Corresponds to the debt payment functionality. <br> <br> This debt payment can be total or partial. <br> <br> Click on this button will take the Card Payment Widget, where you can select the domestic or international debt payment option. |
 
  <script> 
