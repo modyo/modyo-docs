@@ -4,7 +4,7 @@ search: true
 
 # Modyo Content
 
-**Modyo Content** is an application that allows the creation of dynamic content repositories called spaces. Within a space you define both the types of content to manage and the access rules and roles that different team members will have.
+**Modyo Content** is an application that makes it possible to create dynamic content repositories called spaces. Within a space, you can create content entries based on types that you define and administrators can establish space access configurations and roles for team members.
 
  <img src="/assets/img/content/header.jpg" style="margin: 40px auto; width: 500px; display: block;"> 
 
