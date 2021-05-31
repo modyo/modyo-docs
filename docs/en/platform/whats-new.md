@@ -40,4 +40,4 @@ Modyo 9.0 improves upon user management by completely separating users in the fr
 
 Modyo now has native support for Progressive Web Application enablers, allowing you to improve your users' experience when they are intermittently or lose their connection.
 
-Modyo now has native support for Progressive Web Applications, which allow you to improve your users' experience by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittent or bad network connections, and can be installed by the user without the need for an app store.
+Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittent or bad network connections, and can be installed by the user without the need of an app store.
