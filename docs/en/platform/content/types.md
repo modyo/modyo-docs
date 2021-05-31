@@ -25,7 +25,7 @@ The categories by which you can reorder are four:
 - **Name**
 - **UID**
 - **Creation Date**
-- **Update Date**
+- **Updated on** Date
 
 If you want to enter any Type, you must click on the name of it to open the corresponding editor.
 
