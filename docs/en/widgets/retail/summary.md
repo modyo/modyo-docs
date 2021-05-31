@@ -24,7 +24,7 @@ Each summary presents financial information for a specific product both numerica
 
 #### Checking Account
 
-The Current Account section allows you to view an overview of available amounts, as well as access to transactions such as transfers and movements.
+The Checking Account section allows you to see an overview of the available balance amounts and gives you access to transactions such as transfers and movements.
 
 | Feature    | Description                                                                              |
 |:-----------------|:-----------------------------------------------------------------------------------------|
