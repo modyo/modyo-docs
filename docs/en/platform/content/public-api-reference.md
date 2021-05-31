@@ -849,7 +849,7 @@ The content delivery token contains the following attributes:
 - **sub**: Name of space
 - **exp**: Token expiration time
 - **access_type**: delivery
-- **targets**: Target Array
+- **targets**: Array of targets
 
 For example:
 
