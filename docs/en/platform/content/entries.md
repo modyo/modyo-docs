@@ -138,7 +138,7 @@ You can preview the content either as a logged in user or as a user that has not
 
 If you want to edit an entry, just click on the entry's name inside the entry manager.
 
-After that, you enter the edit view where you can change the content and properties of the edit view, such as name, slug, and tags.
+This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
 
 In the event that the entry is published, the changes will be made automatically. If the Team Review is in the process of Team Review, reviewers will need to update their view in order to notice the changes.
 
