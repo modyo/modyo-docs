@@ -100,7 +100,7 @@ Note that if you have more than one widget that uses content pagination, the _GE
 To use pagination in a custom widget, you must change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}} `</span>. This is necessary since custom widgets are loaded asynchronously. You also need to ensure that _JQuery_ is available on your site and remember that when you use the pagination links, only the widget HTML will be changed and the widget's _JavaScript_ will not be executed again.
 :::
 
-### Sort tickets
+### Order entries
 
 In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters, as follows:
 
