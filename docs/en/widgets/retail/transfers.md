@@ -22,7 +22,7 @@ modyo-cli get modyo-widgets-retail-transfer-history
 | Third-party Transfers        | Filters the widget to only show information regarding transfers to third parties made by the customer.                                                                                 |
 | Transfers between my Accounts | Filters the widget to only show information regarding transfers made between the customer's own accounts.                                                                             |
 | Contacts                        | Allows customers to review and edit contact information that are already entered in the customer's account. Displays information such as name, bank, account type and account number.                       |
-| Add Contact                 | Add new target accounts to the Contact section. Includes name, bank, account type, account number, RUT, and email address of the recipient.                           |
+| Add Contact                 | Add new destination accounts to Contacts. Includes fields to define the name, bank, account type, account number, ID and recipient's email.                           |
 
 <script>
 
