@@ -12,7 +12,7 @@ By default, this list displays entries by their "Updated on" date, meaning eithe
 
 The columns in the list display the following details:
 
-- **Status**: State in which you are in the process of publishing the content. In this case, the statuses are four: Draft, Published, Scheduled, and Archived.
+- **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
 - **Name**: Name of the content.
 - **Type**: Content Type (View [Types](/es/platform/content/types.html)).
 - **Updated**: Date of last saved content update.
