@@ -125,8 +125,9 @@ If you already have [content views on your sites](/en/platform/channels/template
 If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
 :::
 
-:::warning Attention
-You will only be able to preview on the site the content that is of a language equal to the language of the site. If the entry is in another language, when you arrive at the preview you will encounter a 404 error.
+:::warning Warning
+Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
+You can only preview the contents on a site if the language corresponds to the language of the site. If the entry is in another language, you will receive a 404 error when you reach the preview.
 :::
 
 :::warning Attention
