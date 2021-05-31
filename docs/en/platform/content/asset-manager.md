@@ -100,7 +100,7 @@ You can find and/or edit the following in the file properties editor:
 
 **File URL**: Displays the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
 
-**Liquid Tag**: Displays the Liquid tag of the file, for use within the contents of the platform.
+**Liquid Tag**: Use this tag within the platform to reference the file through Liquid as opposed to it's URL.
 
 :::warning Attention
 Neither the URL nor the Liquid Tag is possible to change via Modyo.
