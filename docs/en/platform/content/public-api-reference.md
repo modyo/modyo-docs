@@ -768,8 +768,8 @@ The metadata fields are referenced as: meta.attr_name (ex meta.tags)
 The fields of the entries as: field.attr_name
 An example JsonPath expression:
 
-`... /entries?fields=$.entries[*] .meta.uuid` to get only the uuids of the meta-data of the entries.
-`... /entries?fields=$..description` to get all _description_ fields in entries.
+`.../entries?fields=$.entries[*].meta.uuid` to obtain only the uuid from the meta-data of the entries.
+`.../entries?fields=$..description` to get all the _description_ fields in the entries.
 
 ##### Equalities/Inequalities in arrays
 
