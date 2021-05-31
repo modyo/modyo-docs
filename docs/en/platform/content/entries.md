@@ -8,7 +8,7 @@ search: true
 
 The entry list displays every type of non-archived entry within in that space.
 
-The list is sorted by date the content was updated. In this case, it refers to the creation date or the last time the respective entry was saved.
+By default, this list displays entries by their "Updated on" date, meaning either by the date the entry was created, or last updated.
 
 The columns by which you can sort the list of entries are:
 
