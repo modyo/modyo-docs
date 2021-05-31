@@ -67,7 +67,7 @@ This field allows you to enter single-line texts. and has the following restrict
 
 - **Minimum length**: Allows you to require a minimum text length.
 - **Maximum length**: Limit the maximum length of the text entered.
-- **Regular Expression Validation**: Allows you to add a regular expression to validate that the text entered at the time of creating/modifying an entry matches a given format. 
+- **Regular expression validation**: Allows you to add a regular expression to validate that the text matches a certain format.
 
 
 ### Rich Text
