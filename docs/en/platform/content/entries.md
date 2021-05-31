@@ -107,7 +107,7 @@ To learn more, please go to [Team Review.](/en/platform/core/key-concepts.html)
 
 ### Unpublish an entry
 
-To unpublish an entry, you must access the ticket and click on the **Desublicar** button at the top of the screen. With this, the resource will return to Draft status and will not be in the Published state.
+To unpublish an entry, open it and click on the **Unpublish** button at the top of the screen. This changes the status of the entry to Draft, is no longer published.
 
 If you want to republish the entry, it will go through the Team Review process again, so if you make a change, it will be saved again and the user with a higher role must approve it to be published correctly.
 
