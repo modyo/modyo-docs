@@ -140,7 +140,7 @@ To use the attributes of the entries, you can use either dotted or bracketed not
 
 ## Javascript SDK
 
-**The Modyo SDK** is a library that facilitates the interaction of Javascript based applications with Modyo's public API.
+The **Modyo SDK** is a library that facilitates the interaction between JavaScript-based applications and Modyo's public API.
 
 Using the SDK, you can obtain, filter and sort your created content so that you can fully take advantage of the capabilities of the Headless API.
 
