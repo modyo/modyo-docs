@@ -87,7 +87,7 @@ This field allows you to add a fixed list of items to select only one option.
 
 ### Check box
 
-This field allows you to add a list from which you can select more than one option or leave blank.
+This field allows you to add a list from which you can select more than one option or leave it blank.
 
 ### Multiple Options
 
