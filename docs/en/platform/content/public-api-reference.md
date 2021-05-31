@@ -171,7 +171,7 @@ Now you have to inform the project that will use `@modyo/sdk` that it must look 
 registry= https://npm.pkg.github.com/OWNER
 ```
 
-Where `OWNER `is the name of the organization that owns the package, in this case `modyo`
+Where `OWNER` is the name of the organization that owns the package, in this case `modyo`.
 
 [Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
