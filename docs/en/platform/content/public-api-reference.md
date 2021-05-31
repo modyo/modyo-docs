@@ -835,7 +835,7 @@ Whenever you use the Modyo Content API, you can access the published content tha
 If you use Liquid to access content, users who log in and are part of a target will automatically see the content when appropriate and no extra action is required by the Front End developer.
 :::
 
-The Content API can receive the delivery token parameter in two ways:
+The content API can receive the delivery token parameter in two ways:
 
 - As header: `Delivery-Token`
 - As a GET parameter: `delivery_token`
