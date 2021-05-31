@@ -94,7 +94,7 @@ You'll get to a blank version of the entry, where you can press the**Copy from l
 
 ### Publish an Entry
 
-To post an entry, Modyo ensures a gradual checkup process to certify that the content you are going to offer is correct.
+To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
 
 At the end of your entry development, at the top of the screen you will find the **Save** button, which will record all your content.
 
