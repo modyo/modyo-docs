@@ -102,7 +102,7 @@ To use pagination in a custom widget, you must change the filter associated with
 
 ### Order entries
 
-In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the attributes "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` of the entries using the `sort_by` filters, as follows:
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to sort the results by the "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` attributes of the entries using the `sort_by` filters, in the following way:
 
 ```liquid
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | sort_by: 'published_at', 'asc'%}
