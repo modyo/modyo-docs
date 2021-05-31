@@ -90,7 +90,7 @@ Modyo allows CORS to be enabled as a form of secure data transmission so that th
 
 You need to specify the domain from which the information will be accessed. It's possible to allow access to all origins but it is not usually recommended.
 
- <img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0"> 
+ <img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
 When CORS is enabled, the following changes occur within the API:
 
