@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-summary
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/summary" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-### Functions
+### Purpose
 
 Presents the customer's position in the various products it has with the financial institution. (Accounts and Cards).
 
