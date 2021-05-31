@@ -14,7 +14,7 @@ Through this widget, customers can select different options according to their r
 modyo-cli get modyo-widgets-retail-cash-advance
 ```
 
-[Open in another tab](https://widgets.modyo.com/personas/avance-en-efectivo)
+[Open in new tab](https://widgets.modyo.com/retail/cash-advance)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/avance-en-efectivo" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"/> 
 
