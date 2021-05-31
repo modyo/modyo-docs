@@ -165,7 +165,7 @@ The content of that file (replacing `TOKEN` with your token) should be:
 
 #### 3. Add the organization to your project
 
-Now you have to inform the project that will occupy `@modyo /sdk` that it should look for that package in the Github log and not in NPM. For that, in the same folder where `package.json` is in the project, we create a `.npmrc` containing the following:
+Now you have to inform the project that will use `@modyo/sdk` that it must look for that package in the Github registry and not in NPM. To do this, we create a `.npmrc` in the same folder where `package.json` of the project is, containing the following:
 
 ```bash
 registry= https://npm.pkg.github.com/OWNER
