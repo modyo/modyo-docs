@@ -88,7 +88,7 @@ The lower right corner lists the pagination of all your account files.
 
 You can upload any file type to the platform, without no filetype exclusions.
 
-However, when it comes to known extensions, the platform recognizes them and classifies the file according to its use and then its extension.
+However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
 
 To access the properties of the files, you must click on the file name. This way, a modal is raised in which you can edit each of the properties.
 
