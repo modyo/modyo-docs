@@ -88,7 +88,7 @@ To work in development mode, it is highly recommended to have this option disabl
 
 Modyo allows CORS to be enabled as a form of secure data transmission so that the API can be accessed by any microservice in an external domain.
 
-To do this, it is also necessary to specify the domain from which the information will be accessed. There is the possibility to allow all sources but this is not the most recommended option.
+You need to specify the domain from which the information will be accessed. It's possible to allow access to all origins but it is not usually recommended.
 
  <img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0"> 
 
