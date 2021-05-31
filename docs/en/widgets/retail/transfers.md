@@ -12,7 +12,7 @@ This widget allows customers to review, in detail, all the sent and received tra
 modyo-cli get modyo-widgets-retail-transfer-history
 ```
 
-[Open in another tab](https://widgets.modyo.com/personas/historial-de-transferencias)
+[Open in new tab](https://widgets.modyo.com/retail/transfer-history)
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/historial-de-transferencias" width="100%"  frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
