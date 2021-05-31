@@ -140,7 +140,7 @@ This field allows you to attach multiple files to the entry using the file manag
 
 ### Content (links to one)
 
-This field allows you to link an Entry to another Entry that is already created and published within the Space. This field has the following restrictions:
+This field allows you to link an entry to another entry that is already created and published within the same space. This field has the following restrictions:
 
 - **Restrict Type**: Allows you to select a default type so that entries that can be selected as a link are only of the selected type.
 
