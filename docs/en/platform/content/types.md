@@ -66,7 +66,7 @@ When a field is required, at the time of creating or modifying an entry, there m
 This field allows you to enter single-line texts. and has the following restrictions:
 
 - **Minimum length**: Allows you to require a minimum text length.
-- **Maximum Length**: Allows you to limit the maximum length to the entered text.
+- **Maximum length**: Limit the maximum length of the text entered.
 - **Regular Expression Validation**: Allows you to add a regular expression to validate that the text entered at the time of creating/modifying an entry matches a given format. 
 
 
