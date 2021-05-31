@@ -32,7 +32,7 @@ Later, in the configuration, you can define other secondary languages for the sp
 
 ## Configure a Space
 
-In this case, Spaces settings are used to change general characteristics, language, security, team members, and review and publishing rules.
+In this case, the space configuration helps us to change the general settings, language, security, team members with access, and rules for revision and publication.
 
  <img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300"> 
 
