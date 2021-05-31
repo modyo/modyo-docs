@@ -184,6 +184,6 @@ Depending on how you are consuming the content, you will need to perform extra s
 
 Targeted content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
-To do this, you can enable the content to be visible to a particular group of your choice in the Entry. To do this, simply check the option that Content is private and then that you want to enable targetizing and then select which user target the entry is directed to.
+With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the Private option in the entry's properties, then check the Enable targeting option, and select from the list of targets. You can select more than one target audience.
 
 To create a specific target, review the [Targets section](/es/platform/customers/targets.html).
