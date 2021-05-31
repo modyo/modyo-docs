@@ -138,7 +138,7 @@ This field allows you to attach a single file to the entry using the file manage
 
 This field allows you to attach multiple files to the entry using the file manager.
 
-### Content (link to a)
+### Content (links to one)
 
 This field allows you to link an Entry to another Entry that is already created and published within the Space. This field has the following restrictions:
 
