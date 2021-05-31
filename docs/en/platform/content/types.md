@@ -161,6 +161,6 @@ In this tab, you can see the name of the type, along with its UID. The UID is im
 When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
 :::
 
-:::warning Attention
-Please note that depending on the [cache settings you have in your space](/es/platform/content/spaces.html #cache), you may not see the changes immediately after reindexing is complete.
+::: warning Warning
+Note that depending on the [cache settings you have in your space](/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::
