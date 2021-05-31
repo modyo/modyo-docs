@@ -116,7 +116,7 @@ Neither the URL nor the Liquid Tag is possible to change through Modyo.
 
 <hr style="margin: 40px 0;" />
 
-To save the modification of the data, it is necessary to click on the **Update Information** button located in the lower right part of the window. If the data is modified but the button is not clicked to be saved, these modifications will be lost.
+To save the modification of the data, it is necessary to click on the **Update Information** button located in the lower right part of the window.
 
 If the data is changed but the button is not clicked to save, these modifications will be lost.
 
