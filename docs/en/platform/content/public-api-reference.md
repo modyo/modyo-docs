@@ -15,8 +15,9 @@ At the moment there is only an SDK for Javascript. In the future, we plan to inc
 
 The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/platform/channels/) in any of the sections of the platform that use the [Liquid](/en/platform/channels/liquid-markup.html) markup language, like [Widgets](/en/platform/channels/widgets.html) and [Templates](/en/platform/channels/templates.html) in your sites.
 
-:::warning Attention
-From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, such that:
+:::warning Warning
+From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
+
 
 * The fields belonging to the meta-information of the input that were previously used as <span v-pre>`{{ entry.slug }}`</span> should now be used as <span v-pre>`{{ entry.meta.slug }}`</span> 0, or <span v-pre>`{{ entry.meta['slug'] }}`</span>.
 * Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
