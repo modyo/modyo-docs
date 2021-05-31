@@ -77,7 +77,7 @@ Attributes with arrows can be sorted by either ascending and descending order. T
 
 **Created on**: Upload or creation date within the platform, independent if the file was created on a different date in another service.
 
-**Author**: Name of the user who uploaded the file, as long as the user is assigned a name.
+**Author**: Name of the user who uploaded the file, as long as the user has a name assigned.
 
 Finally, in the lower right corner, you can find the pagination of all system files.
 
