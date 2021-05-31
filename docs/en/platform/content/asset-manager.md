@@ -94,7 +94,7 @@ To access the properties of a file, click on its name to open a modal where you 
 
 ## Edit a file
 
- <img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
 
 In the editing interface of the file properties, you can see certain fields:
 
