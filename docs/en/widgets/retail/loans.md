@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Credits
+# Loans
 
 Modyo offers a Widget that allows you to see an overview of the credits that the customer has with the financial institution, in detail and with their updated data.
 
@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-loans
 
  <iframe id="widgetFrame" src="https://widgets.modyo.com/personas/creditos" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality       | Description                                                                                                                                                                                                                 |
+| Feature       | Description                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Summary of Creditas | Displays the information the credits that the customer has assets, such as credit type, name, and request number.                                                                                                       |
 | Credits Detail | When you select an item, displays detailed credit information, including outstanding balance, grant date, end date, and credit type fee value. Include information about upcoming maturities |
