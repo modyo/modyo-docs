@@ -10,7 +10,7 @@ All items can be used inside or outside of **Modyo** through its public API or i
 
 From Modyo you can configure access to different sources so that services consuming the API can easily interpret them.
 
-Spaces also allows you to organize content in the areas where you are working, for better distribution and order.
+Spaces also allow us to organize content, for better order and easier distribution.
 
 Accessing the Spaces section will display a list indicating the name of the space and its number of content types and entries. 
 
