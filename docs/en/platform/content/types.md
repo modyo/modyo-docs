@@ -134,7 +134,7 @@ For location maps to work properly with the Google API Key configured in your ac
 
 This field allows you to attach a single file to the entry using the file manager.
 
-### File Listing
+### Asset List
 
 This field allows you to attach multiple files to the entry using the file manager.
 
