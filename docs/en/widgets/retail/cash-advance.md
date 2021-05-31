@@ -20,8 +20,6 @@ modyo-cli get modyo-widgets-retail-cash-advance
 
 The customer can select the desired options for their cash advance and payment amount to run the simulation.
 
-
-
 | Feature    | Description                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
 | Origin           | Select the card from which the actual amount will be extracted.                          |
