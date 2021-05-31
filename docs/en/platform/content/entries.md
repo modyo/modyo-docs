@@ -130,8 +130,8 @@ Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual
 You can only preview the contents on a site if the language corresponds to the language of the site. If the entry is in another language, you will receive a 404 error when you reach the preview.
 :::
 
-:::warning Attention
-You can preview the content as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-fame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
+:::warning Warning
+You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-fame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
 :::
 
 #### Edit an entry
