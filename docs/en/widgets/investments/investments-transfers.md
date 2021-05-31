@@ -2,7 +2,7 @@
 search: true
 ---
 
-# History of transfers
+# Transfer History
 
 Modyo offers a Widget that presents all relevant data about the in-transit operations associated with the purchase and sale of shares of the user, so that you can quickly find your consolidated information on the platform.
 
@@ -12,11 +12,11 @@ Modyo offers a Widget that presents all relevant data about the in-transit opera
 modyo-cli get modyo-widgets-investments-transfer-history
 ```
 
-[Open in another tab](https://widgets-es.modyo.com/inversiones/historico-de-transferencias)
+[Open in another tab](https://widgets.modyo.com/inversiones/historico-de-transferencias)
 
- <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/historico-de-transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
+ <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/historico-de-transferencias" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"/> 
 
-| Functionality           | Description                                                                                                                           |
+| Feature           | Description                                                                                                                           |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | Transit Operations | Displays the list of in-transit operations associated with the buy/sale of shares. Allows you to cancel operations in transit. |
 | Cancel Operation      | Disploys information about the specific operation to cancel, for the customer to confirm the option.                                  |
@@ -35,7 +35,7 @@ modyo-cli get modyo-widgets-investments-transfer-history
  //iframed document sends its height using postMessage
  function HandleDoCheightMsg (e) {
  //check origin
- if (e.origin === 'https://widgets-es.modyo.com') {
+ if (e.origin === 'https://widgets.modyo.com') {
  //parse data
  var data = json.parse (e.data);
 
