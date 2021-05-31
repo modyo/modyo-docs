@@ -20,7 +20,7 @@ modyo-cli get modyo-widgets-investments-stocks
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stock Layout     | Shows the set of available tradable stocks. Displays a list of transactions in transit associated with the stocks. Displays market information for specific stocks. Allows clients to cancel transactions in transit, if necessary. |
 | Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price, and possible institution-specific documents. Allows the user to buy or sell a selected stock.                                |
-| Buying Shares     | Allows you to purchase the selected share by defining the investment account, the number of shares, the maximum amount at which you want to buy, and the duration time of the order.                                                                |
+| Buy Shares     | Allows you to purchase the selected share by defining the investment account, the number of shares, the maximum amount at which you want to buy, and the duration time of the order.                                                                |
 | Sale of Shares      | Allows you to sell the selected share by defining the investment account, the number of shares you want to sell, and the minimum selling price.                                                                                              |
 
  <script> 
