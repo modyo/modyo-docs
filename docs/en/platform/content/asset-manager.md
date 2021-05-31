@@ -30,7 +30,7 @@ The second one is directly through the Asset manager tool found in the Content s
 
 ## About the interface
 
- <img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0"> 
+<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
 
 The first interface is a list of all the files that exist within the platform.
 
