@@ -23,7 +23,7 @@ The customer can select the desired options for their cash advance and payment a
 | Feature    | Description                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
 | From           | Displays the destination account of the requested cash.                          |
-| To          | Displays the target account of the cash being requested.                                  |
+| To          | Displays the destination account of the requested cash.                                  |
 | Advance Amount | This section allows you to add the amount requested in cash                             |
 | Fees           | The customer can select the amount of installments in which the requested amount will be paid |
 
