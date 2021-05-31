@@ -818,7 +818,7 @@ Using Axios has quite a few advantages over the native Fetch API:
 
 - Supports older browsers (Fetch needs a polyfill)
 - Has a way to abort a request
-- You have a way to set a timeout for a response
+- Has a way to set a response timeout
 - Comes with CSRF protection included
 - Supports charging progress
 - Performs JSON data transformation automatically
