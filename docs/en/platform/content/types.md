@@ -31,7 +31,7 @@ If you want to enter any Type, you must click on its Name to open the correspond
 
 ## Create a Type
 
- <img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450"> 
+<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
 
 To create a Type, you need to click on the top green button on the screen and enter the corresponding name and User ID (UID).
 
