@@ -110,7 +110,7 @@ Neither the URL nor the Liquid Tag is possible to change through Modyo.
 
 **Alternative text**: Shows the ```alt text``` of the element. (Only applies to images and videos).
 
-**Description**: Description of the item. It is a good practice to write a small text that references the image.
+**Description**: Description of the element. It is good practice to write a small text that refers to the image.
 
 **Tags**: Displays the tags associated with the file, clicking on the box you can search and add more tags. In turn, you can click on the X of existing tags to remove the association with the file.
 
