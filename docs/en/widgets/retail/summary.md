@@ -29,7 +29,7 @@ The Checking Account section allows you to see an overview of the available bala
 | Feature    | Description                                                                              |
 |:-----------------|:-----------------------------------------------------------------------------------------|
 | Available Balance | Shows the total available balance in the checking account.                                 |
-| Total Charges     | View the total charges for each account.                                           |
+| Withdrawals     | View the total charges for each account.                                           |
 | Total Fertilisers     | Displays the total number of credits or deposits that have been made to an account.                 |
 | Credit Line | Displays the status of the account's credit line.                                   |
 | Amount available | Displays the total amount available on the account line of credit.                   |
