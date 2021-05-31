@@ -106,7 +106,7 @@ This field allows you to add an integer that must be by default between `-65325`
 
 ### Decimal
 
-This field allows you to add a decimal number that should be by default between the numbers `-65325` and `+65325`. However, it can be dimensioned by using the constraints:
+This field allows you to add a decimal number that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
 - **Minimum Length**: Allows you to require a minimum length of the entered text.
 - **Maximum Length**: Allows you to limit the maximum length to the entered text.
