@@ -81,7 +81,7 @@ This field translates into a multi-line text WYSIWYG editor that also allows you
 
 This field allows you to add a drop-down list to select only one option.
 
-### Airwaves
+### Radio
 
 This field allows you to add a fixed list of items to select only one option.
 
