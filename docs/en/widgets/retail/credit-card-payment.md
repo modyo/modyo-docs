@@ -24,7 +24,7 @@ To complete a payment, the default options available to customers are:
 | National payment debt                 | Presents the total amount that has been used in the national quota of the card, including what is not billed.      |
 | International payment debt            | Please present the total amount that has been used in the international quota of the card, including what is not billed. |
 | Selecting the payment source account | The customer can select the account from which the payment amount will be extracted.                                          |
-| Minimum amount to be paid                   | It shows the minimum amount to be paid from the debt, so that the debt is not defaulted.                                              |
+| Minimum payment                   | It shows the minimum amount to be paid from the debt, so that the debt is not defaulted.                                              |
 | Total amount payable                    | Displays the total billed amount of the debt to be paid.                                                                    |
 | Personalized amount to pay            | Allows the customer to select a custom amount to pay off the debt.                                            |
 
