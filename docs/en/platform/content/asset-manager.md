@@ -138,7 +138,7 @@ One of the changes you can make is to edit the image measurements. To do this, c
 
 This opens a window with two views that display the original image and a preview of the edited image.
 
-Then, you can see the three options you can choose to edit the size:
+On the left side of the image editor are three options to edit the image size:
 
 - ** 16:9 **: Edit the image in a 16:9 ratio.
 - **Square**: Edit the image to the size of a square.
