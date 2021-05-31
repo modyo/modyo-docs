@@ -44,7 +44,7 @@ The UID of the space is very important. It determines how you access the space t
 
 Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
 
-The next option is to configure whether the content author will be visible in both the public API and the liquid SDK. If the option is enabled, then you will see the data of the administrator who created the content, and if the option is disabled, you will see the author blank. 
+The next option is to configure whether the author of the content will be visible in both the public API and the Liquid SDK. If the option is enabled, then you'll see the details of the administrator who created the content, and if the option is disabled, you'll see a blank author.
 
 :::warning Attention
 Keep in mind that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries are finished reindexing.
