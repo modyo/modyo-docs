@@ -40,8 +40,8 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 - **Unpublish**: Selected entries that are published will be unpublished.
 - **Archive**: Selected entries that are unpublished will be archived.
 
-:::warning Attention
-- Mass publishing will only be effective on selected entries that have pending changes.
+:::warning Warning
+- Bulk publication will only be effective on selected entries that have pending changes.
 - Mass unpublishing will only take effect on selected entries that have a published version.
 - Bulk Archive will only take effect on selected entries that are not published.
 
