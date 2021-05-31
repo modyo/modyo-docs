@@ -167,7 +167,7 @@ This action is irreversible, and any content using this file will display a brok
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
 
-There are two ways to upload a file for use in **Modyo**. One is through the same section from which you work and another is through the File Manager, which gives the option to take any material from the local disk to upload it to the platform.
+There are two ways to upload a file in **Modyo**. The first way is in the context of working with content. This can be either in the Content editor with an asset field, or working in the Template or Widget Builder to load files as necessary. The second way is through the Asset Manager in the Content section.
 
 To upload the file, click the **+ New** button at the top of the screen.
 
