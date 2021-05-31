@@ -749,7 +749,7 @@ Header: Set Accept-Language es_CL
 
 The main operations on fields are:
 
-- [gt], [lt] = greater/less than, applicable to integers and dates
+- [gt], [lt] = greater/less than, applicable to integers and dates.
 - [in] = allows you to include multiple values that enter an OR query
 - [has] = allows you to include multiple values, which enter a query type AND, only works in multiple and text fields.
 - [nin] = allows you to include multiple values, which enter a NOT IN query
