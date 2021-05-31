@@ -8,7 +8,7 @@ An organization needs to have a platform that allows them to organize and manage
 
 **Modyo** allows you to upload, review and edit files through the Asset Manager tool, without the need to integrate with an external service.
 
-To access the tool, it is possible to do this in two ways. The first consists of an integration within the same forms where content is being edited, either in Spaces or Sites.
+You can access the Asset Manager in one of two ways. The first way is integrated within the platform tools where you create and edit content, either in Spaces or Sites.
 
 
 #### Rich Text
