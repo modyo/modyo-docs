@@ -144,7 +144,7 @@ This field allows you to link an entry to another entry that is already created 
 
 - **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
-### Content List (link to muchas)
+### Content List (links to many)
 
 This field allows you to link many Entries that are already created within Space to another Entry. This field has the following restrictions:
 
