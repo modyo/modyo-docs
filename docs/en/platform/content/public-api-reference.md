@@ -5,7 +5,7 @@ sidebarDepth: 1
 
 # APIs & SDKs
 
-Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](/platform/content/) with [Modyo Channels](/platform/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
+Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](/en/platform/content/) with [Modyo Channels](/en/platform/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
 
 :::tip SDKs for other languages
 At the moment there is only, officially, an SDK for Javascript. In the future, versions are planned to make it easier to work with other languages.
