@@ -258,7 +258,7 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 **Supported filters**:
 
-- **Before, After, LessThan, GreaterThan**: They receive as a parameter the name of the field to compare and the value to which it will be compared.
+- **Before, After, LessThan, GreaterThan**: they receive the name of the desired field as a parameter and the value with which it will be compared.
 
 - **In, NoTin, Has**: they receive as a parameter the name of the field to compare and an array of values to be compared to. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
 
