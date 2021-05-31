@@ -15,7 +15,6 @@ The columns in the list display the following details:
 - **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
 - **Name**: Title of the entry.
 - **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
-
 - **Updated**: Date of last saved content update.
 - **Author**: Name of the author of the content.
 
