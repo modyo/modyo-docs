@@ -27,7 +27,7 @@ The categories by which you can reorder are four:
 - **Creation Date**
 - **Updated on** Date
 
-If you want to enter any Type, you must click on the name of it to open the corresponding editor.
+If you want to enter any Type, you must click on its Name to open the corresponding editor.
 
 ## Create a Type
 
