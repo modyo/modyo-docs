@@ -128,7 +128,7 @@ For entries with Location fields you can easily generate maps with the `static_m
 {{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
 ```
 
-The `dynamic_map` filter accepts an additional attribute to control the visibility of zoom, drag, and full screen controls.
+The `dynamic_map` filter accepts an additional attribute to control the visibility of the zoom, drag and full screen controls.
 
 ```
 {{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
