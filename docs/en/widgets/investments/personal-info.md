@@ -6,7 +6,7 @@ search: true
 
 This section of the platform allows the user to review and modify their personal data, subscribe to sending information to their email and know their Investor Profile.
 
-[Open in another tab](https://widgets.modyo.com/inversiones/personal-info)
+[Open in new tab](https://widgets.modyo.com/inversiones/personal-info)
  <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/personal-info" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/> 
 
 | Feature                   | Description                                                                                                                                                                                                                                                                                                                                         |
