@@ -82,7 +82,7 @@ In the **New Entry** modal that appears, give your entry a name. You can fill in
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
 :::
 
-By clicking on **Create**, the entry will be created and you will be redirected to editing it where you can fill with the content you want, it will contain the structure defined in the content type you selected.
+When you click **Create**, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
 
 :::tip Tip
 To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to type in. (Check [Configure a Space](/es/platform/content/spaces.html #configurar -a-space))
