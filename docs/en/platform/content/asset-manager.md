@@ -174,7 +174,7 @@ To upload a file, click on the **+ New** button, located at the top of the scree
 This action opens a new window that allows you to upload files in two ways:
 
 - **Drag & Drop**: Drag from your computer's file browser to the window
-- **Traditional way**: Through the browser, clicking and selecting the files
+- **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
 :::warning Attention
 Modyo only allows uploading 10 files at a time. If you want to upload more items, it should be done in two or more batches.
