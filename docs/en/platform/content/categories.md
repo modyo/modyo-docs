@@ -10,4 +10,4 @@ Categories allow you to organize the content you publish by applying a structure
 
 To create a category, click on the top button on the screen. There you must assign a Title and a Route to the category.
 
-This step is also used to create subcategories. To do these, you must do the same steps but assign the corresponding Parent Category.
+This step also serves to create subcategories. To do them, the same steps must be done but the corresponding Parent Category assigned.
