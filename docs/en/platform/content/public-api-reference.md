@@ -707,7 +707,7 @@ The response comes with pagination metadata:
 
 #### Entries
 
-The entries that you can see in section correspond to all content sent through the API. In this regard, they may be filtered according to:
+The entries that you can see in section correspond to all the content sent through the API. In that sense, they can be filtered according to:
 
 - Kind
 - Category
