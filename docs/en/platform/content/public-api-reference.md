@@ -264,7 +264,7 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 - **SortBy**: receives as parameters the field to be ordered and the order (`asc` or `desc`).
 
-- **JSONPath**: Receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
+- **JSONPath**: receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
 
 - **Pagination**: Receives page number and total entries per page as parameters.
 
