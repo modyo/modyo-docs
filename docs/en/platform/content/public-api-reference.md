@@ -718,7 +718,7 @@ The entries that you can see in section correspond to all the content sent throu
 
 There is a distinction at the application level between the filter types used to query content:
 
-Metadata (e.g. Tags, Category, Dates): Searches by SQL, will be queried by `meta.param_name` parameters. This as long as it's only the Metadata that is being consulted.
+Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata.
 
 - Tags: consultable in two ways
   - `meta.tags=tag_name`
