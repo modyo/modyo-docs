@@ -742,7 +742,7 @@ For example, to get entries in the Spanish-Chile language (es_CL):
 
 ``` plain
 Query string: GET .../posts/entries?locale=es_CL
-Header: Set Accept-Language en_CL
+Header: Set Accept-Language es_CL
 ```
 
 ##### Operators
