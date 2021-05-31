@@ -106,7 +106,7 @@ You can find and/or edit the following in the file properties editor:
 Neither the URL nor the Liquid Tag is possible to change through Modyo.
 :::
 
-**Title**: Displays the title of the file. This section is different from the file name, which cannot be changed.
+**Title**: Shows the title of the file. This section is different from the file name, which cannot be changed.
 
 **Alternative**: Displays the ```alt text``` of the element. (Only applies to pictures and videos.)
 
