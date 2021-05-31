@@ -12,7 +12,7 @@ From Modyo you can configure access to different sources so that services consum
 
 Spaces also allow us to organize content, for better order and easier distribution.
 
-Accessing the Spaces section will display a list indicating the name of the space and its number of content types and entries. 
+When accessing the list of spaces in the Modyo Content section, each listed space indicates how many content types and total entries it contains.
 
 :::warning Attention
 In the Spaces Index, you will only see the spaces in which you are part of the work team with a role.
