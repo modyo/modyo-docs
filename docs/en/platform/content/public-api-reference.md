@@ -161,7 +161,7 @@ The content of that file (replacing `TOKEN` with your token) should be:
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
 
-[Reference on Github docs](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 #### 3. Add the organization to your project
 
