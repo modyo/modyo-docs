@@ -105,7 +105,6 @@ If the space has Team Review enabled, your entry goes through a review process w
 To learn more, please go to [Team Review.](/en/platform/core/key-concepts.html)
 
 
-
 ### Unpublish an entry
 
 To unpublish an entry, you must access the ticket and click on the **Desublicar** button at the top of the screen. With this, the resource will return to Draft status and will not be in the Published state.
