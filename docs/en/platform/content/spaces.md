@@ -134,8 +134,8 @@ To add a user to the space, select the primary button **+ New** in the upper rig
 #### Modify Role ####
 You can modify the role of any of the associated users by clicking on their name. In the modal that appears, select a new role. Press **Save** to confirm the change.
 
-:::warning Attention
-It should be noted that the system will validate that an administrator always exists within the space, so if there is only one administrator the administrator will not be able to modify its Role.
+::: warning Warning
+The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member's role cannot be deleted.
 :::
 
 #### Remove Team Members ####
