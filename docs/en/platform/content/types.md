@@ -57,7 +57,7 @@ The field name is important because this name is how you access the field value 
 For more information go to the [API reference](/en/platform/content/public-api-reference.html)
 :::
 
-All fields require a name, and can optionally be set as required. When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise, the entry cannot be saved.
+All fields require a name, and can optionally be set as required.
 
 When a field is required, at the time of creating or modifying an entry, there must be an associated value for that field, otherwise changes cannot be saved.
 
