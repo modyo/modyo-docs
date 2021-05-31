@@ -25,9 +25,9 @@ This widget includes features for two similar products: Transfer to Third Party 
 | Origin Account  | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred. |
 | Destination Account | Select the recipient account to which the money will be transferred and deposited.                                                                                                   |
 | Schedule transfer  | Allows the client to schedule periodic transfers by selecting the frequency (e.g. weekly, monthly, quarterly) of the transfers.                              |
-| Recent Activity      | Displays all national and international movements that are not invoiced.                                                                  |
+| Recent Activity      | Displays all recent activity that has not yet been invoiced.                                                                  |
 
-### Transfer to Third Parties
+### Third-party Transfers
 
 | Feature      | Description                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
