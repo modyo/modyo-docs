@@ -812,7 +812,7 @@ For more detailed information, we recommend you visit the MDN webdocs.
 
 Axios is a very popular JavaScript library that developers use to perform HTTP requests that work in all modern browsers, including support for IE8 and higher.
 
-It is based on the Promise object and allows you to asynchronously write code to make XHR requests easily.
+It's promise-based, and this lets you write async/await code to perform XHR requests easily.
 
 Using Axios has some advantages over the native Fetch API:
 
