@@ -90,7 +90,7 @@ You can upload any file type to the platform, without no filetype exclusions.
 
 However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
 
-To access the properties of the files, you must click on the file name. This way, a modal is raised in which you can edit each of the properties.
+To access the properties of a file, click on its name to open a modal where you can edit the file's properties.
 
 ## Edit a file
 
