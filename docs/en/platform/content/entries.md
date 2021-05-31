@@ -136,7 +136,7 @@ You can preview the content either as a logged in user or as a user that has not
 
 #### Edit an entry
 
-If you want to edit an entry, just click on the name inside the administrator.
+If you want to edit an entry, just click on the entry's name inside the entry manager.
 
 After that, you enter the edit view where you can change the content and properties of the edit view, such as name, slug, and tags.
 
