@@ -4,7 +4,7 @@ search: true
 
 # Transfer
 
-Transfers is a wigdet that allows a customer to move money between their accounts or transfer to third parties in a simple and secure way.
+The Transfer widget allows customers to move money between their accounts or transfer money to third parties with ease and security.
 
 #### Installation:
 
