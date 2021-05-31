@@ -115,6 +115,6 @@ The following definitions correspond to commonly used terms between the differen
 * [**Custom field**](/en/platform/customers/users.html#custom-fields): Allows you to add personalized attributes to the users' profile.
 * [**Filters**](/en/platform/customers/targets.html#filters): Basic units that allow you to build targets.
 * [**Form**](/en/platform/customers/forms.html): Allows you to capture data from your users on your sites.
-* [**Messagery**] (/es/platform/customers/messaging.html): Allows you to control the channels of direct communication with your users.
+* [**Messaging**](/en/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
 * [**Target**](/en/platform/customers/targets.html): Allows you to add and group your users through filter groups with different conditions.
 * [**User**](/en/platform/customers/realms.html): This is any person who accesses and registers on sites built with Modyo.
