@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 
 | Feature         | Description                                                                                                                                                                 |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Amount of Credit     | Allows you to enter the amount of the credit in pesos that the customer wants to simulate.                                                                                               |
+| Loan Amount     | Allows you to enter the amount of the credit in pesos that the customer wants to simulate.                                                                                               |
 | Fees                | Allows you to choose the amount of installments in which the customer wants to simulate consumer credit.                                                                            |
 | Months of grace       | Select the number of grace months that the client wants to add in their simulation.                                                                           |
 | Dates of non-payment     | Deliver the possibility to choose the months in which the customer will not make the payment of the credit, if you allow                                                            |
