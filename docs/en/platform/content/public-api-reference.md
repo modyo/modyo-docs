@@ -773,7 +773,7 @@ An example JsonPath expression:
 
 ##### Equalities/Inequalities in arrangements
 
-Fields that search in multiple items (checkboxes, multiple) can use the following syntax:
+Fields that search in multiple elements (checkboxes, multiple) can use the following syntax:
 
 - HAS: equivalent to a sql AND
   `... /entries? fields.color [has] [] =red&fields.color [has] [] =black`
