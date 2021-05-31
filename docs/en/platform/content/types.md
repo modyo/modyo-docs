@@ -150,7 +150,7 @@ This field allows you to link many entries in the space to another entry. This f
 
 - **Restrict type**: Allows you to select a default type so that the entries that can be selected as a link are only of the selected type.
 
-## Properties
+## Settings
 
 In this tab, you can see the name of the type, along with its UID. The UID is important as it will be what the type is called from the Liquid SDKs, Javascript and API. Below you will see a button that can be in 2 states:
 
