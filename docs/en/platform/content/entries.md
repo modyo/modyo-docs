@@ -102,7 +102,8 @@ If you click on it, the button will undergo two changes. If you have Space Manag
 
 If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
-To learn more, you can see [Team Review.](/es/platform/core/key-concepts.html)
+To learn more, please go to [Team Review.](/en/platform/core/key-concepts.html)
+
 
 
 ### Unpublish an entry
