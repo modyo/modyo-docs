@@ -6,7 +6,7 @@ search: true
 
 An organization needs to have a platform that allows them to organize and manage their required files and content.
 
-In order to make it not necessary to use external services, **Modyo** allows you to upload, review and edit files within the same platform, through the File Manager tool.
+**Modyo** allows you to upload, review and edit files through the Asset Manager tool, without the need to integrate with an external service.
 
 To access the tool, it is possible to do this in two ways. The first consists of an integration within the same forms where content is being edited, either in Spaces or Sites.
 
