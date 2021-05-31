@@ -810,7 +810,7 @@ For more detailed information, we recommend you visit the MDN webdocs.
 
 #### Axios
 
-Axios is a very popular JavaScript library that developers use to make HTTP requests that work on all modern browsers, including IE8 onwards.
+Axios is a very popular JavaScript library that developers use to perform HTTP requests that work in all modern browsers, including support for IE8 and higher.
 
 It is based on the Promise object and allows you to asynchronously write code to make XHR requests easily.
 
