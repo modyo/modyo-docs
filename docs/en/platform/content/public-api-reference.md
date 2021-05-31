@@ -821,7 +821,7 @@ Using Axios has quite a few advantages over the native Fetch API:
 - Has a way to set a response timeout
 - Has built-in CSRF protection
 - Supports upload progress
-- Performs JSON data transformation automatically
+- Performs automatic JSON data transformation
 
 In order to use Axios in Modyo, you need to add the axios.js base code as a custom snippet and include it somewhere your widgets can access it, like your JavaScript theme (located in Templates, under the Files tab).
 
