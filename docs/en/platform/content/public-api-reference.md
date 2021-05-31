@@ -332,7 +332,7 @@ To obtain information from the end user, it is necessary to call the `client.get
 
 ### API Route Structure
 
-To perform any action, it is necessary to know the path structure of the contents in the API, which is done as follows:
+To perform any action, it is necessary to know the route structure of the content in an API call, as follows:
 
 ```
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
