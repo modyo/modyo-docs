@@ -4,7 +4,7 @@ search: true
 
 ### Customers
 
-As in Digital Factory you can see a direct statistic of team members, Customers allows you to get a global overview of what end users do within it and the behavior of the content that has reached them.
+Similar to how the Digital Factory provides direct statistics of our team members' activities, Customers gives us a global overview of what our customers are doing in the platform, as well as the behavior of the content that reaches them.
 
 The available filters are:
 
