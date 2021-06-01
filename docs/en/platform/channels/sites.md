@@ -287,7 +287,7 @@ The Team members section of your Site settings allows you to select eligible use
 
 To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
-To add a user to the site, select the primary button **+ New** at the top right of the view, in the modal select an administrator and assign it a role, then press**Add** to make that administrator part of the site's work team.
+To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
 
 You can modify the role of any of the associated administrators by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
 
