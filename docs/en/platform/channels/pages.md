@@ -79,7 +79,7 @@ You can add them from the first tab of the Page builder. The available widgets a
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
 - **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to display. To modify how these widgets look, you must do so in the [template builder](/en/platform/channels/templates.html), in the widgets section.
-- **Customized**: You will find a list of all the widgets you created and published in the widget builder.
+- **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.
 
 Once you have selected a widget in the middle section, the focus will go to the central tab, where you can find different widget configuration options and if you select a custom widget, you will find a link to go directly to its editing view in the [widget builder](/es/platform/channels/widgets.html) and the variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes. 
 
