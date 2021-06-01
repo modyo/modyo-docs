@@ -28,7 +28,7 @@ To create a new form, click on the main action at the top right **+ New**. This 
 - **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
 - **Automatically ask the form to the audience?**: If the form is private (only registered users can answer it), this option appears and allows you to automatically redirect users who log in to the site associated with the form to answer it.
 
-After a split you will be able to see the options to modify the redirect after a user replies to the form.
+The next section of the form properties contains the Form Options for what happens after a customer completes a form.
 
 - **Default options**: After replying the form, the user is redirected to the home of the site associated with the form
 - **Redirect URL**: Allows you to enter a URL to which the user will be redirected after the form has been answered
