@@ -91,7 +91,7 @@ In this tab you will find common property options for all pages:
 * Name
 * Parent
 * Path
-* Extract
+* Excerpt
 * Grid
 * Privacy
 * Meta tags
