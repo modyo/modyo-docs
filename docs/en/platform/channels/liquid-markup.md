@@ -354,8 +354,8 @@ one
 If no name is provided for the cycle group, then it is assumed that multiple
 Calls with the same parameters are a group.
 
-If you want to have full control over cycle groups, you can optionally specify
-the name of the group. This may even be a variable.
+If you want to have full control over the cycle groups, you can optionally specify
+The name of the group. This can even be a variable.
 
 ```liquid
 {% cycle 'group 1': 'one', 'two', 'three' %}
