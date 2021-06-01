@@ -8,7 +8,7 @@ Navigation is the fastest way to put together a list of items to give your users
 
 ![Navigation builder](/assets/img/platform/navigation-builder.png)
 
-In this section you will find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre> `{% menu%}` </span> in the [template builder section](/es/platform/channels/templates.html).
+In this section you will find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre> `{% menu%}` </span> in the [template builder section](/en/platform/channels/templates.html).
 
 The builder menu allows only two levels of depth, so you can have a main listing, and sub items in each of the main items. You cannot nest other items within nested elements. 
 
