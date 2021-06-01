@@ -265,7 +265,7 @@ SEO [(Search Engine Optimization)](/en/platform/channels/sites.html#seo) is one 
 
 In Modyo, we have a way to control the way search engines read your site and content, dynamically adding meta tags depending on the attributes you add to your pages and content.
 
-You can add this code snippet to the Template Builder, and then call this snippet from the head of your site:
+We recommend adding this code snippet to the Template Builder, and then calling this snippet from the `<head>` of your site:
 
 ```html
 <!-- Site SEO -->
