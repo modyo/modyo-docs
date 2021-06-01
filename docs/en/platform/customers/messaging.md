@@ -42,7 +42,7 @@ If you delete a campaign, there is no way to recover it.
 
 To create a campaign, we must click the green **+ New** button, located at the top of the Administrator view.
 
-Subsequently, it will display a form that you must fill in with the following information:
+This opens a form that you must fill out with the following information:
 
 - **Name**: Name that will have the campaign.
 - **Type**: Format the campaign will have (Mail or Notification).
