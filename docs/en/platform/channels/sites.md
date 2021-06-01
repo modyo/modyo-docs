@@ -202,7 +202,7 @@ The Domains section is where you configure where and how your site is publicly l
 The options you configure here are:
 
 - **Host**: This name designates where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
-- **Enable custom domains**: If you want within the domain, there are sites with a custom URL or "custom host.
+- **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
 - **Enable SSL on the site**: You need to have a certificate inside the server to enable it.
 - **Primary domain**: Site address.
 - **Alternative**: Secondary address to redirect in case the first fails.
