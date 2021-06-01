@@ -204,7 +204,7 @@ EXAMPLE
 
 >From this command and on you can continue using the widget like any other vue-cli widget.
 
-### Modyo Cli Push Name`
+### `modyo-cli push NAME`
 
 The command `push` is responsible for the principle of integration, used to send the widget to the selected site on the modyo platform.
 
