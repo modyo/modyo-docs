@@ -69,7 +69,7 @@ Liquid accepts the following kinds of expressions:
 
 * **Variables.** The most basic type of expression is just the name of a variable. Liquid variables are named like Ruby variables: they must contain alphanumeric characters and underscores, should always start with a letter, and not have any kind of leading symbol (that is, they must look like `var_name`, not `$var_name`).
 * **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
-    * `my_variable [<KEY EXPRESSION>] `— The name of the variable, followed immediately by brackets containing a key expression.
+    * `my_variable[<KEY EXPRESSION>]` — The name of the variable, followed immediately by square brackets containing a key expression.
         * For arrays, the key must be a literal integer or an expression that resolves to an integer.
         * For hashes, the key must be a literal quote string or an expression that resolves to a string.
     * `my_hash.key` — Hashes also allow a shorter "dot" notation, where the variable name is followed by a dot and the name of a key. This only works with keys that do not contain spaces, and (unlike bracketed notation) does not allow the use of a key name stored in a variable.
