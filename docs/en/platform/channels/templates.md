@@ -110,8 +110,8 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 If you publish a new version of your templates, this list of changes resets and erases all saved states. This is because the new editable version now matches the version you just published. Saving new changes adds new saved states until the next time you publish.
 :::
 
-:::tip Tip
-Sub-versions are for each template, so for some you can see that there are changes and for others you will not see the change selector. Similarly, if you return to a previous sub-version of a template, it does not affect the rest of the templates.
+::: tip Tip
+Saved states exist for every template. This means that while some templates may have changes, others may not. Selecting a previous saved state of any individual template only affects that template and not any of the other templates.
 :::
 
 :::tip Tip
