@@ -64,7 +64,7 @@ Each template that you click on in the selection area opens in the central area,
 
 The templates selection bar on the right has two tabs: Views and Snippets.
 
-Views are base elements required by Modyo, and usually translate into the direct structure of any of your site's URLs.
+Views are base elements and required by Modyo and are commonly used to define direct structure of your site's URLs.
 
 ### Snippets
 
