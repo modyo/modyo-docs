@@ -163,7 +163,7 @@ SEO (Search Engine Optimization) is key to high-ranking pages in your channels a
 
 The options listed in this section help improve your SEO across a particular channel:
 
-- **Tagline**: Description that appears in search engines, under the site name
+- **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
 - **Keywords**: Words that users search and you want the site to appear.
 - **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your default sitemap file, but you can also manually modify it to focus only on a particular page and content.
 - **Robots.txt**: This file is part of the Robots Exclusion Protocol (REP), a group of web rules that regulate how robots track the web, access and index content and serve it to users. In practice, this file determines whether or not certain user agents (web tracking software) may or may not track parts of a website. These tracking instructions are specified "allowing" or "prohibiting" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
