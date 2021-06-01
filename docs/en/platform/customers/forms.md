@@ -136,7 +136,7 @@ This section will allow you to add as many fields as necessary to complete the f
 From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
-You can delete one of the fields from the form by clicking on the dump icon to the right of each field in the main section. Deletion will be effective once you save the changes.
+You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
 
 ::: danger danger
 If your form is already activated and you already have answers, be very careful when deleting questions from it, as by doing so, you'll be deleting the values of those responses that users already sent. This action is irreversible.
