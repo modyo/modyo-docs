@@ -142,7 +142,7 @@ Enable the child routes delegation to allow the full control of the page routes 
 
 #### Privacy
 
-If you enable privacy on a page, then a session will be required to view this page. Next to privacy, you can also associate [Targets](/es/platform/customers/targets.html), so that only users belonging to those targets will be able to access this page. Those who are not part of the selected target group will be redirected to the previous page or to the home of the site.
+If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Targets](/en/platform/customers/targets.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page, or to the home page.
 
 #### Meta tags
 
