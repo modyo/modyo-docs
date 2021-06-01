@@ -39,7 +39,7 @@ To remove a filter, click on the "trash" icon on the right side of the window.
 
 To erase all filters, click on the **Clear all** button at the bottom of the window.
 
-To record your target, simply click the**Save as Target** button at the bottom of the screen.
+To save a target, click on the **Save as a Target** button at the bottom of the window.
 
 Finally, if you want to see the users that make up that target, you just have to click the**Apply** button. With this, you'll get to the [Users] view (/es/platform/customers/realms.html) that will show you a list of all the contacts that fit your filters.
 
