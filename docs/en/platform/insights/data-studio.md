@@ -70,7 +70,7 @@ Steps to connect your data to a Google Data Studio template:
 
     This will take you back to the "Copy this report" window. 
 
-5. Create Google Search Console fonts
+5. Create Google Search Console Sources
 
     As in the previous step, click "Create a new data source" in the "Search Console Data (URL)" drop-down menu.
 
