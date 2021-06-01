@@ -88,5 +88,5 @@ Updating targets occurs constantly in background in one of three ways:
 * Each time a user's profile is modified.
 * Every time a user answers a form.
 
-Because the update runs in a background process, the update is not immediate and depends on the system load, so some users may not see targeted content for a few minutes after they have executed an action that includes or excludes them from a target.
+These updates are not immediate, and depend on the system load. It is possible that some users may not see targeted content right away after having executed an action that includes or excludes them from a particular target. Please give the system a few minutes to reflect target changes.
 :::
