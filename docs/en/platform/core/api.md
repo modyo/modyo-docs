@@ -14,7 +14,7 @@ To start benefiting from the Modyo API, it is important to first know which serv
 
 Modyo facilitates this task, making the description of your _headless_ API available through the use of Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their functionality: administrative functions, public content and user profile.
 
-Each list of services is automatically displayed in your Modyo account by visiting the corresponding URL with your browser. For example, you can find the details of the public content API in the following route:
+Each list of services is automatically displayed in your Modyo account by visiting the corresponding URL with your browser.
 
 For example, you'll find the detail of the public content API in the following path:
 
