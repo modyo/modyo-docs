@@ -48,8 +48,8 @@ By default, you see the differences between the published version and the editab
 - **Unpublish**: If the widget is published, you can take it out of production using this option.
 - **Force Publish**: Admin team members have the option to forcibly publish widgets, circumventing the established reviewal process.
 
-:::tip Tip
-Only widgets that have been previously unpublished can be archived.
+::: tip Tip
+Only unpublished widgets can be archived.
 :::
 
 :::tip Tip
