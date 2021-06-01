@@ -175,7 +175,7 @@ The robots.txt and sitemap.xml files are only visible on the site if you have a 
 - **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
 
 :::tip Tip
-By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages, so you'll have to publish each page for the new meta tags to take effect on the site.
+By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
 :::
 
 :::warning Attention
