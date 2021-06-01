@@ -102,7 +102,7 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300">
 
-**Changes**: A list of all the times and states in which you have done the "Save" action in this release. By clicking on one of the sub-versions, you change the content of the template you're working on to that sub-version.
+**Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
 
  <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300"> 
 
