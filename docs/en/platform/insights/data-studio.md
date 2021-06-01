@@ -80,7 +80,7 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/9.png)
 
-    Choose the desired account and in "Tables" select "Url Print" 
+    Choose the desired account and under "Tables" select "Url Impression"
 
     ![Data studio](/assets/img/insights/10.png)
 
