@@ -45,7 +45,7 @@ If the form is public, users who do not have an active session in Modyo will see
 If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
 :::
 
-In the**Notifications** section you can configure the various emails that are sent after a user replies the form.
+In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
 
 The email notification sends an email of the "administrative" type in which it is notified via that channel that someone replied the form. You can assign a subject and list of emails you want to notify.
 
