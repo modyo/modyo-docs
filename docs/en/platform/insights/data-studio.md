@@ -72,7 +72,7 @@ Steps to connect your data to a Google Data Studio template:
 
 5. Create Google Search Console Sources
 
-    As in the previous step, click "Create a new data source" in the "Search Console Data (URL)" drop-down menu.
+    Just like we did in the previous step, click on "Create a new data source" in the dropdown for "Search Console Data (URL)".
 
     ![Data studio](/assets/img/insights/8.png)
 
