@@ -4,7 +4,7 @@ search: true
 
 # Pages
 
-Pages (or pages) are what allows you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
+Pages are what allow you to create structure for your sites, where you can add unstructured content and customize the routes from which that content is displayed.
 
 ![Page index](/assets/img/platform/page-index.png)
 
