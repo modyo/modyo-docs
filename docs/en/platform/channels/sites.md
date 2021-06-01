@@ -275,7 +275,7 @@ Modyo has hosts reserved for sites, so you won't be able to use them as a host f
  </tr> </table> 
 :::
 
-### Site Variables
+### Site variables
 
 Modyo has [global variables](/es/platform/core/key-concepts.html #variables -globals) that you can use across multiple sites. However, you can create site-specific variables or overwrite the value of an already created global variable, with a specific value for the particular site.
 
