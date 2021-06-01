@@ -61,8 +61,8 @@ Within this section, you can configure the following data:
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
 - **Delete**: This option allows you to permanently delete a site and all its elements.
 
-:::danger danger
-This option is irreversible, so you need to be completely sure when you run this action. By pressing the delete button, the system will prompt you for the name of the site. You will need to enter the text name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its items again.
+:::danger Danger
+This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the site. You will have to enter the textual name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its elements again.
 :::
 
 #### Google Tag Manager
