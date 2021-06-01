@@ -387,7 +387,7 @@ Liquid allows `for` loops over collections:
 
 For loops can iterate over **arrays, hashes and integer ranges.**
 
-When iterating a hash, `element [0] `contains the key, and `element [1]` contains the value:
+When iterating over a hash, `element[0]` contains the key, and `element[1]` contains the value:
 
 ```liquid
 {% for item in hash %}
