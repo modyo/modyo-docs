@@ -215,7 +215,7 @@ When you click to enable each of the emails, it will show a default editor in wh
 ::: danger Danger
 It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the mail.
 
-To do this, you must insert into the code the attributes that are under the editor, and which you can easily copy and paste to place them in the part you need.
+To do this, we must insert attributes in the code under the editor, and we can easily copy and paste to locate them in the part we need.
 :::
 
 Each time you make a change to the code, click the **Save** button at the top of the screen.
