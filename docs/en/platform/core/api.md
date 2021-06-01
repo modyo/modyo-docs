@@ -149,7 +149,7 @@ In addition, there are possible cases of failure that may occur in order to cont
 For example, if you try to search for a resource that does not exist:
 
 ```http
-404 Not found
+404            Not found
 ```
 
 Finally, in each of the three catalogs (admin, content and profile), you will find a section
