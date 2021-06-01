@@ -96,7 +96,7 @@ Clicking any user from the main list opens their profile. In each profile is the
 - Signup Date
 - Last Login
 - Logins Count (number of sessions)
-- User Verification Status
+- User verification status
 - Targets in which it is included (if available)
 
 In the main section, you can see the following horizontal separators, which are described below:
