@@ -149,7 +149,7 @@ If you enable the "Private" option on a page, then a user must be logged in with
 In this section you can add meta tags to your pages or modify the value of existing meta tags, in order to improve the SEO of the page. With the tags added to the page, you can decide whether to use the default value, change current tag values or remove the tag from the page.
 
 :::tip Tip
-Keep in mind that for meta tags to take effect on your page, you must publish the changes.
+Please note that for the meta tags to take effect on your page, you must publish the changes.
 :::
 
 To access the meta tag list on the page, you must use the Liquid drop <span v-pre> `{{page.meta_tags}}` </span>. We recommend that you see the example in the SEO section of the [Template builder](/es/platform/channels/templates.html #seo).
