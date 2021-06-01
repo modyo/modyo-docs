@@ -28,7 +28,7 @@ In this section, each user can modify his own profile data, depending on the [cu
 * Last name
 * Second last name
 * Email
-* Date of birth
+* Birthdate
 * Gender
 * [Custom Fields](/en/platform/customers/realms.html #custom -fields)
 * Password
