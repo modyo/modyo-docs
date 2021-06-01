@@ -43,7 +43,7 @@ If your page is in "draft" status, the differences icon will not appear, since t
 Once the copying action is complete, you will be directed to the new page. Remember to save all changes before using this action, otherwise you could lose valuable information.
 :::
 
-**Main Action**: This is the green button at the top right. This button can take different forms:
+**Main action**: The green button in the upper right. This button can take different forms:
 
 - Save: Allows you to save the changes you have made to the page.
 - Send to Review: If team review is enabled, then if there are no changes to save, this action will allow you to review the page and assign reviewers.
