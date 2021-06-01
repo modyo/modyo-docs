@@ -26,7 +26,7 @@ You will see five boxes that will represent the number of items created, edited,
 
 **Edited**: Number of times the "save" action is used on entries, pages, navigation, widgets and templates.
 
-**Sent for Review**: Account each time in a site or space with team review enabled, an item is sent for review.
+**Sent to Review**: Number of times in a place or space with the team review activated, an item is sent for review.
 
 **Approved**: Count each time team review restrictions are met and an item is ready to be published.
 
