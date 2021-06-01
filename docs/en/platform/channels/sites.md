@@ -312,7 +312,7 @@ There is a variation of the Developer role with the name "CLI". In addition to d
 
 Reviewers correct the work done by Developers, approving or rejecting their changes, and then publishing.
 
-You cannot edit the site settings.
+Reviewers cannot edit the Site settings.
 
 #### Admin
 
