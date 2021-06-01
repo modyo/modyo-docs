@@ -128,8 +128,8 @@ The manifest should be implemented on every page where the PWA is developed, thr
 
 The manifest can be created and modified in the next field, allowing you to add changes without having to leave the view.
 
-:::warning Attention
-If you change the manifest, remember to save it with the**Save** button at the top of the screen to keep your changes.
+:::warning Warning
+If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
 :::warning Attention
