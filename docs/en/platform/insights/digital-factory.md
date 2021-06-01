@@ -42,7 +42,7 @@ The time ranges that are compared in each of the boxes, depend on the date range
 
 A line chart that represents a comparison over time between created versus published resources.
 
-With this graphic you can show how much content is created is published, and view, for example, if all created content is published, or if the created content is published multiple times.
+With this graphic you can show how much created content gets published, and visualize, for example, if created content gets published multiple times.
 
 :::tip Tip
 The total date range on this chart depends on the total date range selected in the filter at the top right of the page.
