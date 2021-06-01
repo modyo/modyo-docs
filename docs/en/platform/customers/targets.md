@@ -58,7 +58,7 @@ The filters found by default in the platform are:
 - Birth date
 - Custom field value
 - Device
-- Mail delivered
+- Delivered mail
 - Email reported as spam
 - Count of responses to forms
 - Gender
