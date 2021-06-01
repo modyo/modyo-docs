@@ -28,7 +28,7 @@ You will see five boxes that will represent the number of items created, edited,
 
 **Sent to Review**: Number of times in a place or space with the team review activated, an item is sent for review.
 
-**Approved**: Count each time team review restrictions are met and an item is ready to be published.
+**Approved**: Number of times the restrictions of the team review are met and an item is ready to be published.
 
 **Publiced**: Account each time an item is published, either on a site or space without team review (direct posting), or through team review, or also, through the "force publication" action of administrators.
 
