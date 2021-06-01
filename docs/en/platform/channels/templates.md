@@ -126,7 +126,7 @@ In this view you can see what theme you have installed and a list of all the ins
 
 By clicking on the **Use** button of an installed theme, you replace the content in all your editable themes with the content of the new theme you are using. You can preview these changes using the Template Builder preview mode and then publish them to use the new theme in the published site.
 
-At the top you can find different actions:
+At the top of this view, you can find a few useful actions:
 
 - **Theme Gallery**: Open a modal with all the themes available to install on the site. You can choose to install the default Modyo themes or account themes (those that you turned into themes from other sites). When you install a theme from the theme gallery, you'll change the editable version of your templates to the templates of the theme you just installed.
 - **Customize** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: It takes you to the edition (Template Builder) of the currently installed theme.
