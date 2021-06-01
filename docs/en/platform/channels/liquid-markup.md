@@ -164,7 +164,7 @@ Tags (tags) are used for template logic. Here is a list of currently supported t
 * **comment** - Block tag, comment on the text in the block.
 * **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
 * **for** - Loop for
-* **break** - Exits from a loop
+* **break** - Exits a loop
 * **continue** Skip the remaining code in the current loop and continue with the next loop.
 * **if** - Standard if/else block.
 * **include** - Includes another template; useful for partials
