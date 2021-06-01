@@ -124,8 +124,8 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `lstrip` - Remove all blank spaces from the beginning of a string
 * `map` - Map/collect an array on a given property.
 * `md5` - Returns the MD5 hash for a string, *e.g.* <span v-pre>`{% 'Hello world' | md5  %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>.
-* `minus` - Subtraction *e.g.* <span v-pre> `{{4 | minus:2}} #=> 2` </span> 
-* `modulo` - Rest *e.g.* <span v-pre> `{{3 | module:2}} #=> 1` </span> 
+* `minus` - Subtract *e.g.*  <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
+* `modulo` - Rest *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 * `newline_to_br` - Replaces each new line (\ n) with html space
 * `plus` - Sum *e.g.* <span v-pre> `{{'1' | plus: '1'}} #=> 2` </span>, <span v-pre>` {{1 | plus:1}} #=> 2` </span> 
 * `prepend` - Precede a string *e.g.* <span v-pre> `{{'bar' | prepend: 'foo'}} #=> 'foobar'` </span> 
