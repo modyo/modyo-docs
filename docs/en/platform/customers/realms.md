@@ -262,7 +262,7 @@ The types of **Custom Fields** you can add are:
 - Paragraph
 - Number
 - Choice
-- Simple text
+- Simple Text Line
 
 You can drag the**Custom Fields** to sort them. Note that this is the order in which fields appear in the edit views and in the user profile.
 
