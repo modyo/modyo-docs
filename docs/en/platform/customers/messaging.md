@@ -82,7 +82,7 @@ If you haven't sent the campaign yet, the values will appear at zero.
 
 If you sent the campaign by mail, you can find the following metrics:
 
-- **Scope**: People to whom the campaign reaches.
+- **Reach**: People who receive the campaign.
 - **Shipments**: Number of times the campaign has been sent
 - **Sended**: Total number of mails sent.
 - **Open**: Total number of open mails. 
