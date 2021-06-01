@@ -12,8 +12,6 @@ For any company or institution, it is important to know what is happening in the
 
 Each area of **Modyo Insights** has three main sections:
 
-
-
 - General counters
 - Comparative chart
 - Specific elements
