@@ -48,7 +48,7 @@ You can add new comments at the bottom of the sidebar. Next to each activity, yo
 - **Themes**: This takes you to the Themes Gallery, where you can copy the current theme and use it in the other sites or channels in your account. To learn more, check [Themes](/en/platform/channels/templates.html#themes).
 - **Reset all**: Resets all templates to the original state of the corresponding theme.
 
-**Main Action**
+**Primary Actions**
 
 - **Save**: Save all changes to all templates.
 - **Send to Review**: Change the status of the templates to "Waiting for Review". In this state you can continue to make changes, but each change will be notified via mail to the assigned reviewers.
