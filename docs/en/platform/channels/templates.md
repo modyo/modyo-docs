@@ -50,7 +50,7 @@ You can add new comments at the bottom of the sidebar. Next to each activity, yo
 
 **Primary Actions**
 
-- **Save**: Save all changes to all templates.
+- **Save**: Saves current changes in all templates.
 - **Send to Review**: Change the status of the templates to "Waiting for Review". In this state you can continue to make changes, but each change will be notified via mail to the assigned reviewers.
 - **Reject**: Returns to "In Edit" status, notifying reviewers that the item was rejected.
 - **Publish**: Once the templates have been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -and-joint publication) and publish your templates.
