@@ -126,7 +126,7 @@ https://[domain]/[site-name]/manifest.json
 
 The manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the ```head``` snippet.
 
-You can create and modify the manifest in the following field, allowing you to add each of the changes without having to leave the view.
+The manifest can be created and modified in the next field, allowing you to add changes without having to leave the view.
 
 :::warning Attention
 If you change the manifest, remember to save it with the**Save** button at the top of the screen to keep your changes.
