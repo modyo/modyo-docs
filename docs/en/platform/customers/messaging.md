@@ -99,7 +99,7 @@ If you sent the campaign as a Notification, these are your metrics:
 - **Open**: Number of open notifications.
 
 
-Below you will be able to see the [Targets](/es/platform/customers/targets.html) to which the campaign was reached. If this section does not appear, it means that the campaign was sent to all contacts.
+Below you can see the [Targets](/en/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
 
 Finally you can find a table with all the campaign submissions, which you can sort ascending or descending according to the following columns:
 
