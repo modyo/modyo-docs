@@ -106,7 +106,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `append` - Add a string *e.g.* <span v-pre>` {{'foo' | append: 'bar'}} # => 'foobar'` </span>
 * `asset_url` - Generates the URL for an Asset object with a determined size, *e.g.* <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>. Also, can generate the URL of a CSS or JavaScript template, *e.g.* <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> or <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>.
 * `base64_decode` - Returns the Base64-decoded value for a string *e.g.* <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>.
-* `base64_encode` - Returns the base64-encoded value of a string *e.g.* <span v-pre> `{% 'sgvsBG8gd29yBGQ=' | base64_decode%} # => 'Hello world` </span> string.
+* `base64_encode` - Returns the Base64-encoded value for a string *e.g.* <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 * `capitalize` - Put capital word in the input phrase
 * `ceil` - Round up a decimal number to the next integer, *e.g.* <span v-pre> `{{4.6 | ceil}} #=> 5` </span> 
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
