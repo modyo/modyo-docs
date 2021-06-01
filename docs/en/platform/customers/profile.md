@@ -26,7 +26,7 @@ In this section, each user can modify his own profile data, depending on the [cu
 
 * Name
 * Last name
-* Second surname
+* Second last name
 * E-mail
 * Date of birth
 * Gender
