@@ -14,7 +14,7 @@ In the widget editing view, you can see three areas: the top action bar, the mai
 
 ![Widget Builder](/assets/img/platform/widget-builder.png) 
 
-The following sections are located on the top bar:
+Along the **top bar**, on the left, you can see the widget name and current status:
 
 - **Draft**: This status appears when a widget has just been created or when it has been unopened.
 - **Published**: This status appears after you have made a publication and when the editable and published versions are the same.
