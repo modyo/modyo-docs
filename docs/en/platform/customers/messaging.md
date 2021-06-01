@@ -150,7 +150,7 @@ You also have access to a search bar that to find campaigns or users by name and
 
 To create your campaign as an email, you will need a template for your content.
 
-From this section, you will be able to make mailing models easily and then send them to users.
+From the Templates section, you can make templates for your emails to send to users.
 
 At first glance, you can find all the post templates that have been made.
 
