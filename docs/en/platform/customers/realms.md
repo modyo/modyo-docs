@@ -268,7 +268,7 @@ You can drag the **Custom Fields** to order them. Note that this is the order in
 
 All **Custom Fields** have certain standard properties:
 
-- **Unique answer**: It implies that the value must be unique to each user, preventing another equal value from being saved.
+- **Must be a unique response**: It implies that the value must be unique for each user, preventing another equal value from being saved.
 - **Required**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In case the field is also visible and editable by users, this fields will appear in the registration form and will be required to create new users.
 - **Visible to users**: It implies it'll be visible in profile view.
 - **User Editable**: It implies that if it is visible, in addition, the user can modify its value.
