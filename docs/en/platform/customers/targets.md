@@ -59,7 +59,7 @@ The filters found by default in the platform are:
 - Custom field value
 - Device
 - Delivered mail
-- Email reported as spam
+- Mail reported as spam
 - Count of responses to forms
 - Gender
 - Last login date
