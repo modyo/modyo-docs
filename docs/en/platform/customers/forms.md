@@ -37,8 +37,8 @@ The next section of the form properties contains the Form Options for what happe
 
 - **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/en/platform/customers/targets.html)
 
-:::warning Attention
-If it is a public form, users who do not have an active session in Modyo, you will see three required fields at the top of the form: First Name, Last Name and Email. Once they submit the form, a user will be created with those values and then the response will be associated with that user.
+::: warning Warning
+If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
 :::warning Attention
