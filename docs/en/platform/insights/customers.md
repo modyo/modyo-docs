@@ -16,7 +16,7 @@ The available filters are:
 
 **Activity**: Corresponds to the total login count, form responses, open emails, emails notified as spam, and open notifications.
 
-**Logins**: Corresponds to the count of all user logins.
+**Logins**: Total count of all user logins.
 
 **Logs**: Corresponds to the count of all user records.
 
