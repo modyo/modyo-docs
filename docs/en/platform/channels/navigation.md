@@ -56,5 +56,5 @@ In the right side section, you will see a bar that changes according to the item
 - **Associated Layout Page**: Directly associate a page to this menu item with a custom URL.
 - **URL**: If you chose a custom URL in the "Associated Layout Page", you can specify the URL of this menu item.
 - **Open in new tab**: Enable this option to open a the menu item link in a new tab. Adds the `target='blank'` attribute to the menu item's HTML.
-- **Private**: Makes the selected item visible only when there is an active user session on the site.
+- **Private**: Makes the selected item appear visible only when the user has an active session on the site.
 - **Targets**: If the above option is enabled, you can also target this item, so that in addition to having a session, users who are within the selected targets can already see this menu item.
