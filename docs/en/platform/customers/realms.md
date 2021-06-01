@@ -22,7 +22,7 @@ Along the top of the list are filters that allow you to refine the list of users
 - Verification: Filter by users who have (or have not) confirmed their data within the platform.
 - Targets: Filter by users that match certain [Targets](/en/platform/customers/targets.html).
 - Advanced filters: Filter by users who match specific filters based on data in their user profiles, e.g. birth date, or custom field value.
-- Search: Filter users by name, last name, email and username.
+- Search: Filter by user name, last name, email, or username.
 
 The Advanced Filters option will open a modal which allows you to filter users by more specific attributes, such as age, or Custom Fields. When you add a new advanced filter, the number of matches will automatically appear at the bottom left of the modal, next to the button to clean the filters. If you want to view the list of these filtered users, you just have to click on the**Applicar** button.
 
