@@ -59,7 +59,7 @@ When you do this, your campaign is saved and you will get to the Campaign Status
 
 ### Campaign Status
 
- <img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 The Shipping Status view allows not only to send a campaign you created for the first time. In this, you can also find campaign statistics that will allow you to see the performance of the content you sent.
 
