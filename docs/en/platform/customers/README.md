@@ -14,7 +14,7 @@ Once a user is identified, the platform manages the business events that the use
 
 **Modyo Customers** also has an integrated user messaging system.
 
-### Key features
+### Main functionalities
 
 - [User Management](/es/platform/customers/realms.html) to manage the user database and integration policies to Single Sign On (SSO) systems.
 - [Targets](/es/platform/customers/targets.html) to define dynamic user segments.
