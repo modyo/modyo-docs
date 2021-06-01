@@ -67,7 +67,7 @@ This option is irreversible, so you must be completely sure when executing this 
 
 #### Google Tag Manager
 
-By default, new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets are located in the _snippets>general_ section of the [Template builder](/es/platform/channels/templates.html) and are embedded in both the snippet _head_ and the _home_ and _base_ views.
+By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets can be found in the _snippets>general_ section of the [Template builder](/en/platform/channels/templates.html) and are embedded into both the _head_ snippet and the _home_ and _base_ views.
 
 
 If you have the latest theme available and you still don't have these snippets, you can go to the "Themes" section at the top right and click on the "Upload templates" option in the additional options at the top right. This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
