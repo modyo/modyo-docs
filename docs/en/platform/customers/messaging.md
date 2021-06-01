@@ -80,7 +80,7 @@ In the Campaign Status view, you can find campaign statistics.
 If you haven't sent the campaign yet, the values will appear at zero.
 :::
 
-If you mailed the campaign, you can find the following numbers:
+If you sent the campaign by mail, you can find the following metrics:
 
 - **Scope**: People to whom the campaign reaches.
 - **Shipments**: Number of times the campaign has been sent
