@@ -277,7 +277,7 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 
 ### Site variables
 
-Modyo has [global variables](/es/platform/core/key-concepts.html #variables -globals) that you can use across multiple sites. However, you can create site-specific variables or overwrite the value of an already created global variable, with a specific value for the particular site.
+Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can create site-specific variables or overwrite the value of a global variable already created with a site-specific value
 
 ### Team Members
 
