@@ -108,7 +108,7 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 - **Targets**: Targets to which the specific delivery was made.
 - **Scope**: Number of people who received the delivery.
 - **Sent**: Number of emails/notifications sent.
-- **Status**: The condition in which the shipment is located. There can be four: Completed, Pending, Failed, or Cancelled.
+- **Status**: There are four delivery statuses: Completed, Pending, Failed or Canceled.
 
 Then, you can find a button that will allow you to delete the registration submission.
 
