@@ -168,8 +168,8 @@ On one side, there is a button that displays a menu with the following options:
 - **Copy**: Makes a copy of the template.
 - **Delete**: Deletes the template
 
-:::tip Tip
-If you want to intervene the template temporarily and then return to a new one, you better make a copy and work on it, leaving the original unchanged.
+::: tip Tip
+If you want to temporarily change the template when sending a new campaign, it is better to make a copy of the template and work on it, leaving the original unchanged.
 :::
 
 ### Edit Templates
