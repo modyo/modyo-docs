@@ -63,9 +63,9 @@ To learn more about publication lifecycles in Modyo, review the [Versioning](/en
 :::
 
 
-In the work area you can see:
+In the main work area you can see the following:
 
-- **Code Tabs**: A JavaScript, CSS and HTML tab is available to build widgets.
+- **Code tabs**: The Widget Builder has a JavaScript, CSS and HTML tab at your disposal to build your widgets.
 - **File Manager**: Clicking lifts the file management modal, where you can filter and search the files you uploaded in the [File Manager](/es/platform/content/asset-manager.html) and copy its URL to use them in the widget. You can also upload new files from this modal.
 - **Keyboard Shortcuts**: Displays a small information window with some useful keyboard shortcuts.
 - **Snippets**: Displays a list of snippets available from the [Template Builder](/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
