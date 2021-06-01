@@ -8,9 +8,9 @@ Messaging is a Modyo tool for those who want to launch campaigns, which allows u
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Modyo allows you to send messages to users of the platform through two channels:
+Modyo sends messages to platform users through two channels:
 
-- **Mails**: Send campaigns to email boxes registered in user profiles. It is not necessary to enter the platform to view it.
+- **Emails**: Send campaigns to the emails registered in the user profiles.
 - **Notifications**: Send notifications through the internal messaging system. To view them, the user has to enter the platform.
 
  <img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px"> 
