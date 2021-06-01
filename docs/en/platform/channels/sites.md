@@ -50,7 +50,7 @@ Site settings allow you to configure various options of your site, such as set u
 
 Within this section, you can configure the following data:
 
-- **Site Name**: The name of your site, this field is used as the default title for your site's SEO.
+- **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
 - **Description**: A brief description of your site that will be used as the default value for the site SEO.
 - **Site logo**: Image to be used on the top left as the site logo.
 - **Language**: The language in which your site will be. This value is important when using [content on a site](/es/platform/channels/templates.html #vistas -for-content).
