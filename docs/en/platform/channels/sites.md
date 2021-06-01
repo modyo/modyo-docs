@@ -15,7 +15,7 @@ Upon entering, you will see that there are 4 statuses:
 - **Enabled**: Default state of functioning online digital channels and newly created Sites.
 - **Hidden**: Sites created that only users with access can see.
 - **Development**: Sites only accessible by backend users who are working on them.
-- **Disabled**: Sites that cannot be accessed.
+- **Disabled**: Sites that have been disabled.
 - **Copy**: Creates a copy of the site and all published items of the site.
 
 To create a site, simply click on the**New** tab, which will allow you to designate the name and host, and then a template for its appearance and structure.
