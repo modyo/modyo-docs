@@ -210,7 +210,7 @@ The options you configure here are:
 :::warning Warning
 Modyo has reserved domains that cannot be used as custom site domains:
 <table style="border: none;"><tr style="border: none;">
- <td style="border: none;"> <ul> 
+<td style="border: none;"><ul>
  <li> education.modyo.com </li> 
  <li> elearning.modyo.com </li> 
  <li> training.modyo.com </li> 
