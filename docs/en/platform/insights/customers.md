@@ -45,7 +45,7 @@ In this list, you can find both email and notification campaigns.
 
 ### Recent Forms
 
-You'll see a list of the latest forms created, next to the response count.
+You will see a list of the latest forms created, along with the total responses to each.
 
 ### Engagement
 
