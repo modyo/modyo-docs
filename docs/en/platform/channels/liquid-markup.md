@@ -113,7 +113,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 * `divided_by` - Division of integers *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 * `downcase` - Convert an input string to lowercase
-* `escape_once` - Returns an escape version of html without affecting existing escape features
+* `escape_once` - Returns an escape version of html without affecting existing escape entities
 * `escape` - Escape html to a string
 * `first` - Get the first element of the last array
 * `floor` - Round a decimal number down to the nearest integer, *e.g.* <span v-pre> `{{4.6 | floor}} #=> 4` </span> 
