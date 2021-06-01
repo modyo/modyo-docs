@@ -10,7 +10,7 @@ When you enter the **Widgets** section of any site or channel, you see a list of
 
 In the upper right corner you can select the **+ New** primary button to create a new widget. Give the widget a name, then click Create to begin building your widget.
 
-In the edit view of the widget, you can see the top action bar, the workspace, and the properties column.
+In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
 ![Widget Builder](/assets/img/platform/widget-builder.png) 
 
