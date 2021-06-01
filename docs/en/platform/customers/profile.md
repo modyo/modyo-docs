@@ -35,8 +35,8 @@ In this section, each user can modify his own profile data, depending on the [cu
 
 In addition, each user can permanently delete their account. 
 
-:::danger danger
-Deleting the user account is an irreversible action, and users who execute this action will need to register again in order to access.
+:::danger Danger
+Deleting the user account is an irreversible action, and users who perform this action must register again to be able to access.
 :::
 
 ## Profile API
