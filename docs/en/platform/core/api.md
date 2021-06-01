@@ -362,7 +362,7 @@ This way, you could perform a _request_ to see the _campaign deliveries_ informa
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-Similar to the previous example, the _response_ will look as follows
+Similar to the previous example, the _response_ will look like this
 
 ```json
 {
