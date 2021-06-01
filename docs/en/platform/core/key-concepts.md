@@ -24,7 +24,7 @@ Each step of this process takes the item through different states, which are rec
 
 This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
 
-The configuration of revision rules is done independently for each site or space.
+The configuration of review rules is done independently for each site or space.
 
 ### Configuration
 
