@@ -282,14 +282,12 @@ For example, if you need to get a list of all the email campaigns that were crea
 ```http request
 GET https://[account_host]/api/admin/messaging/campaigns
 ```
-This service accepts parameters via URL to filter by types (`mailing` and `notification`) using the `type` parameter. Allows you to include only campaigns that have _deliveries_ (`filtered` parameter) or require only a reduced list of attributes to be included in the _response_ (`only` parameter).
+This service accepts parameters via URL to filter by type (`mailing` and` notification`) using the `type` parameter. You can choose to only include campaigns that have _deliveries_ (parameter` filtered`) or only request a list of attributes that should be included in the _response_ (parameter `only`).
 
-For example
-you only want to include campaigns of type `mailing` (`type=mailing`), so that the _request_, after
-add the necessary authentication headers, would be as follows:
+For the following example, we only include campaigns with the type set to `mailing` (` type=mailing`), so that our _request_, after including the necessary authentication headers, is as follows:
 
 ```shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns? type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 When invoking the service, you get an `HTTP 200 OK` and the _response_ containing a JSON object that looks as follows:
