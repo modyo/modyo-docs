@@ -86,7 +86,7 @@ To build an input array, you cannot do it in a control statement. You need to do
 
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 
-* A vertical bar character (`|`)
+* A pipe character (`|`)
 * The name of the filter
 * Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter predefines the parameters it accepts and the order in which they must be passed.
 
