@@ -106,7 +106,7 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 <li>admin</li>
 <li>auth</li>
 </ul></td>
- <td style="border: none;"> <ul> 
+<td style="border: none;"><ul>
  <li> crossdomain </li> 
  <li> dist </li> 
  <li> forms </li> 
