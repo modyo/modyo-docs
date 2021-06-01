@@ -24,31 +24,31 @@ You should be signed into a Google account in your browser to copy the templates
 
 Steps to connect your data to a Google Data Studio template:
 
-1. Choose the Data Studio template you want to use
+1. Choose the corresponding data studio template
 
-    For this guide we will use the Google Analytics+Search Console template. This template is designed to give you an overview of metrics related to acquisition, behavior, conversions, and SEO for your digital channels.
+    For this guide we'll be using the Google Analytics + Search Console template. This template is designed to give you a general overview on metrics related to acquisition, behavior, conversions & SEO of your digital channels.
 
     Copy the report by clicking on this icon in the upper right corner:
 
     ![Data studio](/assets/img/insights/1.png)
 
-2. If this is your first time using Data studio, you'll see a pop-up window. Click the "Start" button.
+2. If this is your first time using Data studio you will see a pop-up window. Click on the "Get started" button.
 
-    If you used Data studio before you can skip to the next step
+    If you have used Data studio before you can skip this step
 
-    On the next page you can select your country, the desired language and confirm the Terms and Conditions
+    In the next page you can select your country, desired language and confirm the Terms & Conditions.
 
     ![Data studio](/assets/img/insights/2.png)
 
-    Once you're done, try copying the report again.
+    Once you are done try copying the report again.
 
-3. Select or create the necessary data sources
+3. Once you are done try copying the report again.
 
-    All current data sources are sample datasets provided by Google.
+    All of the current data sources are sample data sets supplied by Google.
 
-    First click the drop-down list for Google Analytics data under "New Data Source".
+    First click on the dropdown list corresponding to Google Analytics Data under "New Data Source"
 
-    From the list choose "Create a new data source"
+    In the list choose "Create a New Data Source"
 
     ![Data studio](/assets/img/insights/3.png)
 
@@ -56,7 +56,7 @@ Steps to connect your data to a Google Data Studio template:
 
 4. Create a Google Analytics data source
 
-    Select the default Google Analytics connector and select the account, property, and view you want to connect.
+    Select the default Google Analytics Connector and select the desired Account, Property & View
 
     ![Data studio](/assets/img/insights/5.png)
 
