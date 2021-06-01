@@ -53,49 +53,49 @@ The thank you email allows you to customize an email that will be sent to the us
 
 Here is a code sample that you can use as a base to personalize the thank you mail.
 
-```html
-You sent this response on: {{'now' | date: "%b %d, %y"}}
- <table width="600px"> 
- <tr> 
- <td> <b> user name </b> </td> 
- <td colspan="2"> {{user.name}} </td> 
- </tr> 
- <tr> 
- <td> <b> user first name </b> </td> 
- <td colspan="2"> {{user.first_name}} </td> 
- </tr> 
- <tr> 
- <td> <b> user last name </b> </td> 
- <td colspan="2"> {{user.last_name}} </td> 
- </tr> 
- <tr> 
- <td> <b> user email </b> </td> 
- <td colspan="2"> {{user.email}} </td> 
- </tr> 
- <tr> 
- <td> <b> form name </b> </td> 
- <td colspan="2"> {{form.name}} </td> 
- </tr> 
- <tr> 
- <td> <b> form description </b> </td> 
- <td colspan="2"> {{form.description}} </td> 
- </tr> 
- <tr> 
- <td colspan="3" align="center" background-color="#f0f8ff"> <b> Questions </b> </td> 
- </tr> 
- <tr> 
- <td width="15%"> <b> Question type </b> </td> 
- <td width="15%"> <b> Question </b> </td> 
- <td width="70%"> <b> Answer </b> </td> 
- </tr> 
- {% for question in form.questions%}
- <tr> 
- <td> {{question.type}} </td> 
- <td> {{question.title}} </td> 
- <td> {{question.answer}} </td> 
- </tr> 
- {% endfor%}
- </table> 
+``` html
+You sent this answer on: {{'now' | date: "% b% d,% y"}}
+<table width="600px">
+    <tr>
+        <td> <b> user name </b> </td>
+        <td colspan="2"> {{user.name}} </td>
+    </tr>
+    <tr>
+        <td> <b> user first name </b> </td>
+        <td colspan="2"> {{user.first_name}} </td>
+    </tr>
+    <tr>
+        <td> <b> user last name </b> </td>
+        <td colspan="2"> {{user.last_name}} </td>
+    </tr>
+    <tr>
+        <td> <b> user email </b> </td>
+        <td colspan="2"> {{user.email}} </td>
+    </tr>
+    <tr>
+        <td> <b> form name </b> </td>
+        <td colspan="2"> {{form.name}} </td>
+    </tr>
+    <tr>
+        <td> <b> form description </b> </td>
+        <td colspan="2"> {{form.description}} </td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center" background-color="# f0f8ff"> <b> Questions </b> </td>
+    </tr>
+    <tr>
+        <td width="15%"> <b> Question type </b> </td>
+        <td width="15%"> <b> Question </b> </td>
+        <td width="70%"> <b> Answer </b> </td>
+    </tr>
+    {% for question in form.questions%}
+    <tr>
+        <td> {{question.type}} </td>
+        <td> {{question.title}} </td>
+        <td> {{question.answer}} </td>
+    </tr>
+    {% endfor%}
+</table>
 ```
 
 ## Answers
