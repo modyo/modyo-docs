@@ -196,7 +196,7 @@ To adjust the address that will appear as the sender that will send your mail, y
 What this section allows is to enable, disable and customize the sending of automatic emails after specific interactions made by users, the emails are as follows:
 
 - Activation email: Sent once a user registration is completed, so that it confirms your data.
-- Imported User: Sent once the user was imported
+- Imported user: Sent once the user was imported
 - Welcome Email: Sent after a user registration is completed on a specific site.
 - Added by administrator: Sent once the administrator created the user manually.
 - Password Recovery: Sent when the user requested to recover their password.
