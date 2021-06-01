@@ -453,7 +453,7 @@ forloop.last        # => is this the last iteration?
 
 There are several optional arguments in the `for` tag that can influence the elements you receive in your loop and in the order in which they appear:
 
-* `limit: <INTEGER> `allows you to restrict the number of objects to be obtained.
+* `limit: <INTEGER> ` allows you to restrict the amount of objects to obtain.
 * `offset: <INTEGER> `allows you to start the collection with the nth item.
 * `reversed` iterates about the collection from the last to the first.
 
