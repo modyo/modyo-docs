@@ -35,12 +35,12 @@ For example, the Administrative API (/api/admin/docs) displays different section
 ```http
 Targets
 
-GET /Targets List
-POST /targets Create a target
-PUT /targets/ {id} Update to target
-DELETE /targets/ {id} Delete to Target
-POST /targets/apply_filters Create a temporary target
-POST /targets/count_matches Create a temporary target, and return the total number of matching users
+GET      /targets                Targets List
+POST     /targets                Create a target
+PUT      /targets/{id}           Update a target
+DELETE   /targets/{id}           Delete a Target
+POST     /targets/apply_filters  Create a temporary target
+POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
 ```
 The list shows for each operation, the HTTP method, the route and the description of what
 performs.
