@@ -131,7 +131,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `prepend` - Precede a string *e.g.* <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
 * `remove_first` - Eliminates the first incident *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
 * `remove` - Eliminates all incidents *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
-* `replace_first` - Replaces the first occurrence *e.g.* <span v-pre> `{{'barbar' | replace_first: 'bar', 'foo'}} #=> 'foobar'` </span> 
+* `replace_first` - Replaces the first incident *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 * `replace` - Replaces all issues *e.g.* <span v-pre> `{{'foofoo' | replace: 'foo', 'bar'}} #=> 'barbar'` </span> 
 * `reverse` - Reverses the given array.
 * `round` - Rounds to the nearest integer or specified number of decimal places *e.g.* <span v-pre> `{{4.5612 | round: 2}} #=> 4.56` </span> 
