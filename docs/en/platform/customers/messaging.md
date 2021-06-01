@@ -25,7 +25,7 @@ In the table, campaigns are sorted by the following columns.
 
 - **Name**: Name given to the campaign. It can also contain the specific Target to which it was sent.
 - **Type**: Type of message in which the campaign was sent.
-- **Shipment**: Total amount of shipments made from the campaign. If the campaign was sent more than once, it adds up.
+- **Sent**: Total number of times you have launched this campaign.
 - **Last Shipment**: Date and time the campaign was last sent.
 - **Created at**: Date of creation of the campaign.
 
