@@ -12,7 +12,7 @@ In this section you will find a nested list of elements, which correspond to the
 
 The builder menu only allows two levels of depth, so you can have a main list, and sub elements in each of the main items. You will not be able to nest other elements within the nested elements.
 
-At the top of the view, you will find the list status of the menu:
+At the top of the view, you will find the publication status of the menu:
 
 - **Published**: This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes**: This status appears if there is already a published version, but there are changes to be published in your editable version.
