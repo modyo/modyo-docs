@@ -233,7 +233,7 @@ The services compatible with logging into Modyo are:
 - Oauth2
 - OpenID Connect
 
-It is necessary to have the correct configuration of the associated service that Modyo can connect to them. Make sure all required fields are complete. For more information about integrations, go to the [Platform Integrations section](/en/platform/core/integrations)
+It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/en/platform/core/integrations)
 
 ### Team Members
 
