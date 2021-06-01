@@ -221,7 +221,7 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 * Any string is true, including an empty string.
 * Any array is true.
 * Any hash is true.
-* Any nonexistent/null value (such as a missing part of a hash) is false.
+* Any non-existent/null value (as a missing part of a hash) is false.
 
 ```liquid
 {% if user %}
