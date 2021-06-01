@@ -52,7 +52,7 @@ Within this section, you can configure the following data:
 
 - **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
-- **Site logo**: Image to be used on the top left as the site logo.
+- **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language in which your site will be. This value is important when using [content on a site](/es/platform/channels/templates.html #vistas -for-content).
 - ** [Team Review](/es/platform/core/key-concepts.html) **
 - **Time Zone**: The time zone in which the date and time fields will be displayed within the site.
