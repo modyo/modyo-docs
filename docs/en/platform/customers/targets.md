@@ -68,7 +68,7 @@ The filters found by default in the platform are:
 - Mail not opened
 - Count of opened mails
 - Notification read
-- Open notification count
+- Count of opened notifications
 - Date of registration
 - User Tags
 - User Field Values
