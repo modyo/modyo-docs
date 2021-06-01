@@ -121,7 +121,7 @@ If you click on the campaign dates, this takes you to the Message Deliveries sec
 
 ## Message Deliveries
 
-In the Message Delivery section, you can find the list of users who have received a message from the platform. 
+In the Message Deliveries section, you can find the list of users who have received messages from the platform.
 
 At first glance, you can find a list of all users who have received a single email or notification, which are called "No Campaign".
 
