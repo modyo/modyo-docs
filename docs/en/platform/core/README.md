@@ -18,7 +18,7 @@ The documentation on this site applies to the latest version (9.1). To access do
 
 - [Team review](/en/platform/core/key-concepts.html)
 - [Integrations](/en/platform/core/integrations)
-- [Administration Users and Roles](/es/platform/core/roles.html)
+- [Users and administrative roles](/platform/core/roles.html)
 - [Security](/en/platform/core/security.html)
 - [Administration API](/en/platform/core/api.html)
 
