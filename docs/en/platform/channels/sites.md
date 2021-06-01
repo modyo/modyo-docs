@@ -233,15 +233,15 @@ Modyo has reserved domains that cannot be used as custom site domains:
 
 :::warning Warning
 Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites:
- <table style="border: none;"> <tr style="border: none;"> 
- <td style="border: none;"> <ul> 
- <li> 404 </li> 
- <li> 422 </li> 
- <li> 500 </li> 
- <li> activate </li> 
- <li> admin </li> 
- <li> api </li> 
- </ul> </td> 
+<table style="border: none;"><tr style="border: none;">
+<td style="border: none;"><ul>
+<li>404</li>
+<li>422</li>
+<li>500</li>
+<li>activate</li>
+<li>admin</li>
+<li>api</li>
+</ul></td>
  <td style="border: none;"> <ul> 
  <li> auth </li> 
  <li> callback </li> 
