@@ -218,7 +218,7 @@ It is essential that each email includes the customizable codes that allow the p
 To do this, we must insert attributes in the code under the editor, and we can easily copy and paste to locate them in the part we need.
 :::
 
-Each time you make a change to the code, click the **Save** button at the top of the screen.
+Each time a code change is made, click on the **Save** button at the top of the screen.
 
 ### Identity Providers
 
