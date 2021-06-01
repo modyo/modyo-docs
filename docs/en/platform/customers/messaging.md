@@ -192,7 +192,7 @@ If you are campaigning, remember to add all legal infomration required by your c
 To automate the insertion of the Footer, read [Customers Settings](/en/platform/customers/users.html#customers-settings)
 :::
 
-To record the template, you must click the**Save** button at the top of the page.
+To save the template, you must click on the **Save** button, located at the top of the page.
 
 If you want to use the template in an email, simply select the template name when you're creating the campaign.
 
