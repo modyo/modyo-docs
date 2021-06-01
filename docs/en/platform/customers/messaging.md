@@ -110,7 +110,7 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 - **Sent**: Number of emails/notifications sent.
 - **Status**: There are four delivery statuses: Completed, Pending, Failed or Canceled.
 
-Then, you can find a button that will allow you to delete the registration submission.
+The last option is the Actions column where you can delete delete a delivery.
 
 :::danger danger
 Remember that if you delete the shipment, you will not be able to recover the registration if you made any changes to the shipment. 
