@@ -103,7 +103,7 @@ In the main section to the right are the following tabs:
 
 - Activity (within the site)
 - Responses to forms (which have been submitted by the user)
-- Notes (in case you want to take into account something special about the user)
+- Notes (to provide notes about this user in their profile, visible only to administrators)
 
 #### Activity
 
