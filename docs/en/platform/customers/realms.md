@@ -39,7 +39,7 @@ You can sort users by ascending or descending order by the following values:
 
 ### Add a user
 
-To add a new user, click the **+ New** button at the top right of the screen.
+To add a new user, you must click on the **+ New** button at the top right of the screen.
 
 A selector opens showing the two possible ways to create users on the system: manually or by importing them from a\ *.CSV file. The second option allows you to import multiple users simultaneously.
 
