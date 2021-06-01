@@ -153,20 +153,20 @@ The available commands are get, push and help
 Print the `modyo-cli` version
 
 ```bash
-$modyo-cli (-v|—version|version)
+$ modyo-cli (-v|--version|version)
 modyo-cli/3.0.6 darwin-x64 node-v12.13.1
 ```
 
-### modyo-cli help [COMMAND] `
+### `modyo-cli help [COMMAND]`
 
 ```bash
 USAGE
- $modyo-cli help [COMMAND]
+  $ modyo-cli help [COMMAND]
 
 ARGUMENTS
- get Pull a widget from our catalog into a new directory
- help Display help for modyo-cli
- push push widget to Modyo platform
+  get   Pull a widget from our catalog into a new directory
+  help  Display help for modyo-cli
+  push  Push widget to Modyo platform
 ```
 
 ### Get a template for a project
