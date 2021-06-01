@@ -28,7 +28,7 @@ The configuration of review rules is done independently for each site or space.
 
 ### Configuration
 
-To configure the tool, go to `Site/Space Settings > Computer Review`.
+To configure Team Review, go to `Site/Space configuration > Team review`.
 
  <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" /> 
 
