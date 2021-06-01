@@ -138,8 +138,8 @@ At the top of this view, you can find a few useful actions:
 The "Load templates" action does not modify the editable templates that are already in the Template Builder. It only restores those in the Themes Gallery.
 :::
 
-:::tip Tip
-When you create a theme from one site, that theme becomes available to all other sites in the account, so you can create a base theme, and start from that base when you need to create new sites quickly.
+::: tip Tip
+When you create a theme from a site or channel, that theme becomes available to all other sites in your account. This means you can create a base theme and then use that theme to rapidly build new sites.
 :::
 
 ## Error views
