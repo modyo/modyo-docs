@@ -289,7 +289,7 @@ To do this, the administrator who created the site must manually assign team mem
 
 To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
 
-You can modify the role of any of the associated administrators by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
+You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
 
 If you want to remove an administrator from a site, select using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
 
