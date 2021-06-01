@@ -50,7 +50,7 @@ The total date range on this chart depends on the total date range selected in t
 
 ### Activity by user
 
-This heatmap allows you to view the detailed activity of the most active administrators on your team, separating into columns the count of items created, modified, submitted for review, approved and published.
+This heat map allows you to visualize the detailed activity of the most active administrators on your team, separating the count of elements created, modified, sent for review, approved and published into columns.
 
 ### Activity by resource
 
