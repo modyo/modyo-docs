@@ -397,8 +397,8 @@ In the examples in the previous section, it was shown that on many occasions the
 If you want to review the full list of message deliveries for a particular campaign and a campaign delivery execution. With the data obtained in the _requests_ in the previous sections, you can use the _endpoint_ that
 lists the _message deliveries_, passing as parameters the corresponding `campaign_id` and `delivery_id`:
 
-shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries? campaign_id=15&delivery_id=29 -H 'Authorization: Bearer 8c280d601fc1f1aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```shell script
+curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 For example, when you see the corresponding _response_ of this call:
 
