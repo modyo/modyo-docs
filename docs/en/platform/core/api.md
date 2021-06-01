@@ -346,7 +346,7 @@ When invoking the service, you get an `HTTP 200 OK` and the _response_ containin
 }
 ```
 
-This JSON response corresponds to a list (or collection) of email campaigns (`campaigns) and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the name of the campaign (`name`), the last date it was sent (`last_sent`), or whether this campaign was targetized or not (`targets_enabled`).
+This JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the name of the campaign (`name`), the last date it was sent (`last_sent`), or whether this campaign was targetized or not (`targets_enabled`).
 
 Apart from the collection, you can see an object called `meta` that contains information about the pagination of this resource.
 
