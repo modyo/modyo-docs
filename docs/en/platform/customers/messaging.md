@@ -27,7 +27,7 @@ In the table, campaigns are sorted by the following columns.
 - **Type**: Type of message in which the campaign was sent.
 - **Sent**: Total number of times you have launched this campaign.
 - **Last sent**: Date and time the campaign was last sent.
-- **Created at**: Date of creation of the campaign.
+- **Created on**: Campaign creation date.
 
 At one side of each campaign, there is a button where you can perform two actions. 
 
