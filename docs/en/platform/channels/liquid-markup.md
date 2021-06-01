@@ -623,129 +623,129 @@ The drops available for channels are:
 
 ```
 site:
- - breadcrumb
- - categories
- - csrf_meta_tag
- - url
- - menu_items
- - account_url
- - current_year
- - manifest_url
- - sw_enabled
- - sw_url
- - sw_scope
- - add_parent_breadcrumb
+  - breadcrumb
+  - categories
+  - csrf_meta_tag
+  - url
+  - menu_items
+  - account_url
+  - current_year
+  - manifest_url
+  - sw_enabled
+  - sw_url
+  - sw_scope
+  - add_parent_breadcrumb
 site_search:
- - have_results
- - results
- - have_less_relevant_results
+  - have_results
+  - results
+  - have_less_relevant_results
 request:
- - user_agent
- - host
- - domain
- - protocol
- - url
- - path
- - interact_url
- - refresh_url
- - comments_url
- - is_app_shell
+  - user_agent
+  - host
+  - domain
+  - protocol
+  - url
+  - path
+  - interact_url
+  - refresh_url
+  - comments_url
+  - is_app_shell
 user_agent:
- - initialize
- - browser
- - browser_version
- - platform
- - platform_version
- - agent
- - is_modyo_shell
+  - initialize
+  - browser
+  - browser_version
+  - platform
+  - platform_version
+  - agent
+  - is_modyo_shell
 page:
- - grid
- - name
- - content
- - title
- - excerpt
- - name
- - url
- - parent
- - description
+  - grid
+  - name
+  - content
+  - title
+  - excerpt
+  - name
+  - url
+  - parent
+  - description
 menu:
- - items
+  - items
 menu_item:
- - label
- - child_items
- - url
- - parameterized_label
- - category
- - position
- - target
+  - label
+  - child_items
+  - url
+  - parameterized_label
+  - category
+  - position
+  - target
 widget:
- - id
- - cache_key
- - type
- - created_at
- - css_class
- - width
- - name
- - use_default_title
- - title
- - resolve_type
- - uuid
- - wid
- - permanent_cache
+  - id
+  - cache_key
+  - type
+  - created_at
+  - css_class
+  - width
+  - name
+  - use_default_title
+  - title
+  - resolve_type
+  - uuid
+  - wid
+  - permanent_cache
 rich_text_widget:
- - html
+  - html
 custom_widget:
- - manager_uid
- - version
+  - manager_uuid
+  - version
 text_widget:
- - html
+  - html
 content_list_widget:
- - show_caption
- - Enries
- - context_params
- - space_id
- - type_uid
+  - show_caption
+  - entries
+  - context_params
+  - space_id
+  - type_uid
 grid:
- - id
- - cache_key
- - resolve_type
+  - id
+  - cache_key
+  - resolve_type
 full_three_cols_grid:
- - main_widgets
- - col1_widgets
- - col2_widgets
- - col3_widgets
+  - main_widgets
+  - col1_widgets
+  - col2_widgets
+  - col3_widgets
 side_right_three_cols_grid:
- - main_widgets
- - side_right_widgets
- - col1_widgets
- - col2_widgets
- - col3_widgets
+  - main_widgets
+  - side_right_widgets
+  - col1_widgets
+  - col2_widgets
+  - col3_widgets
 side_left_grid:
- - main_widgets
- - side_left_widgets
+  - main_widgets
+  - side_left_widgets
 side_left_one_col_grid:
- - main_widgets
- - side_left_widgets
- - full_widgets
+  - main_widgets
+  - side_left_widgets
+  - full_widgets
 side_right_one_col_grid:
- - main_widgets
- - side_right_widgets
- - full_widgets
+  - main_widgets
+  - side_right_widgets
+  - full_widgets
 full_grid:
- - main_widgets
+  - main_widgets
 full_two_cols_grid:
- - main_widgets
- - col1_widgets
- - col2_widgets
+  - main_widgets
+  - col1_widgets
+  - col2_widgets
 side_right_grid:
- - main_widgets
- - side_right_widgets
+  - main_widgets
+  - side_right_widgets
 side_left_three_cols_grid:
- - main_widgets
- - side_left_widgets
- - col1_widgets
- - col2_widgets
- - col3_widgets
+  - main_widgets
+  - side_left_widgets
+  - col1_widgets
+  - col2_widgets
+  - col3_widgets
 ```
 
 ### Drops by customers
