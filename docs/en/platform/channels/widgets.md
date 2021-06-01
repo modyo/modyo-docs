@@ -180,19 +180,19 @@ If you have a token provided by Modyo, the same command can be used to pull any 
 
 ```bash
 USAGE
- $modyo-cli get NAME [DIRECTORY]
+  $ modyo-cli get NAME [DIRECTORY]
 
 ARGUMENTS
- NAME The name of the widget
- DIRECTORY Name of directory to init
+  NAME       The name of the widget
+  DIRECTORY  Name of directory to init
 
 OPTIONS
- -f, —force Override folder if exist
- -h, —help Output usage information
- -x, —no-install Don't install packages
+  -f, --force       Override folder if exist
+  -h, --help        Output usage information
+  -x, --no-install  Don't install packages
 
 EXAMPLE
- $modyo-cli get name [directory]
+  $ modyo-cli get name [directory]
 ```
 
 >There are some public widget templates that can be accessed through this command
