@@ -52,6 +52,6 @@ The total date range on this chart depends on the total date range selected in t
 
 This heatmap allows you to view the detailed activity of the most active administrators on your team, separating into columns the count of items created, modified, submitted for review, approved and published.
 
-### Activity by content
+### Activity by resource
 
 This graph allows you to compare the activity of each Modyo element, both your sites and your spaces. You can see horizontal bars that correspond to the number of elements of that type, in any state.
