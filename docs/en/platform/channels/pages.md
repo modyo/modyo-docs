@@ -50,7 +50,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 - Publish: If the page is approved, and if all the changes have been saved, you can got to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes in across the site.
 
 :::tip Tip
-* If a page has a parent, you can only publish it if the page is published.
+* If a page has a parent page, you can only publish it if the parent page is published.
 * If a page has children, you can only unpublish it if all of them are unpublished.
 * If a page has children, you can only archive it if all of them are archived.
 :::
