@@ -4,7 +4,7 @@ search: true
 
 # Targets
 
-Targets is the ideal Modyo feature to handle users in bulk if you need them to receive certain information.
+Targets are the ideal Modyo function to handle users in bulk if we need them to receive certain information.
 
 These allow us to group end users into different segments and thus make it easier to send emails or notifications.
 
@@ -80,7 +80,7 @@ The filters found by default on the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, go to the Custom Fields section, located in [Customers Settings] (/es/platform/customers/realms.html #configuracion -de-customers).
+To create an advanced filter that fits your needs, go to the Custom Fields section, located in [Customers Settings](/es/platform/customers/realms.html #configuracion -de-customers).
 
 :::warning Attention
 The targets to which each user belongs is updated in a background process:
