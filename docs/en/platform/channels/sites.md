@@ -23,7 +23,7 @@ To create a site, you just have to click on the **New** tab, which will allow yo
 After that, you can see it with the status "Enabled", which means that it is online to work.
 
 :::warning Attention
-In the Site Index, you will only see the sites where you are part of the team working with a role.
+In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
 ## Joint review and publication
