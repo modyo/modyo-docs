@@ -51,7 +51,7 @@ There are two types of markup in Liquid: Output and Tag.
 
 ### Output
 
-An Output statement is a set of double braces that contain an expression; when the template is rendered, it is replaced by the value of that expression.
+An output statement is a set of double curly braces containing an expression; when the template is rendered, it gets replaced with the value of that expression.
 
 Here is a simple example of output:
 
