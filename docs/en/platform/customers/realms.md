@@ -264,7 +264,7 @@ The types of **Custom Fields** you can add are:
 - Choice
 - Simple Text Line
 
-You can drag the**Custom Fields** to sort them. Note that this is the order in which fields appear in the edit views and in the user profile.
+You can drag the **Custom Fields** to order them. Note that this is the order in which the fields will appear in the editing views and in the users profile.
 
 All **Custom Fields** have certain standard properties:
 
