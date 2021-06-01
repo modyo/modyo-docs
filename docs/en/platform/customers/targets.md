@@ -6,7 +6,7 @@ search: true
 
 Targets are the ideal Modyo function to handle users in bulk if we need them to receive certain information.
 
-These allow us to group end users into different segments and thus make it easier to send emails or notifications.
+These allow you to group your customers into different segments and facilitate communication through emails or notifications.
 
 ## Interface
 
