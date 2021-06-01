@@ -16,7 +16,7 @@ You can hide that section of the profile by using CSS in the appearance section 
 
 ### Notifications
 
-Each user can access their notifications directly from the profile, listing the unread notifications at the top, and then read notifications. Both listings are sorted from the most recent to the oldest. 
+Each user can access their notifications directly from the profile, listing at the top the unread notifications, and then the read notifications. Both lists are ordered from the most recent to the oldest.
 
 Clicking on a notification will display the full content of the notification and marked as read. 
 
