@@ -161,7 +161,7 @@ If the code is not customized or saved, the site will not have the features you 
 
 SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Good SEO depends on whether users reach your site through these search engines. SEO is a large topic, but at a general site/digital channel level, there are a few important configurations to consider.
 
-The options to configure are:
+The options listed in this section help improve your SEO across a particular channel:
 
 - **Tagline**: Description that appears in search engines, under the site name
 - **Keywords**: Words that users search and you want the site to appear.
