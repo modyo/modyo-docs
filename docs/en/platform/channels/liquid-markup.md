@@ -531,13 +531,13 @@ Modyo has drops available for different contexts within which you can find drops
 The drops available globally are:
 
 ```
-account account:
- - url
- - host
- - disable_modyo_credentials
- - google_key
- - oauth2_callback_url
- - oidc_callback_url
+account:
+  - url
+  - host
+  - disable_modyo_credentials
+  - google_key
+  - oauth2_callback_url
+  - oidc_callback_url
 ```
 
 ### Drops of content
