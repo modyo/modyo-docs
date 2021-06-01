@@ -55,7 +55,7 @@ The filters found by default in the platform are:
 
 - Activation status
 - Age
-- Date of birth
+- Birth date
 - Custom field value
 - Device
 - Mail delivered
