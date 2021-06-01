@@ -42,8 +42,7 @@ DELETE   /targets/{id}           Delete a Target
 POST     /targets/apply_filters  Create a temporary target
 POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
 ```
-The list shows us the HTTP method for each operation, the route and the description of what
-it does.
+The list shows us the HTTP method for each operation, the route and the description of what it does.
 
 If you click on any of these methods, for example "Targets List", it shows
 a section with the parameters that can be used when invoking it, in this case `query, `sort_by` and
