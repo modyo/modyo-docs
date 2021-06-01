@@ -172,7 +172,7 @@ The options listed in this section help improve your SEO across a particular cha
 The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
 :::
 
-- **Meta tags**: Allows you to set meta tags for all pages and their default values.
+- **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
 
 :::tip Tip
 By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages, so you'll have to publish each page for the new meta tags to take effect on the site.
