@@ -125,17 +125,17 @@ the answer is 200:
 
 ```json
 {
- "targets": [
- {
- "id": 0,
- "uuid": "string",
- "name": "string",
- "filters_summary": "string",
- "matches_count": 0,
- "created_at": "2019-11-19T 20:19:17 .152Z",
- "updated_at": "2019-11-19T 20:19:17 .152Z"
- }
- ]
+  "targets": [
+    {
+      "id": 0,
+      "uuid": "string",
+      "name": "string",
+      "filters_summary": "string",
+      "matches_count": 0,
+      "created_at": "2019-11-19T20:19:17.152Z",
+      "updated_at": "2019-11-19T20:19:17.152Z"
+    }
+  ]
 }
 ```
 
