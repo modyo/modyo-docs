@@ -6,7 +6,7 @@ search: true
 
 Data visualization is important in making data and analysis a central part of business decisions, systems, processes and overall culture. It allows trends and patterns to be more easily seen and facilitates communication of data for decision-making.
 
-Data Studio is Google's reporting solution that allows you to easily create custom visualizations of data. To make things even easier, we've created Data Studio templates that you can use to connect your data sources in minutes.
+Data Studio is Google’s reporting solution that allows you to easily create custom visualizations of your data. To make things even easier, we’ve created Data Studio templates that you can connect to your data sources out of the box.
 
 This guide will guide you through the steps to copy a Data Studio template and connect your own data sources to analyze the performance of your digital channels and discover patterns in your data. 
 
