@@ -94,7 +94,7 @@ Steps to connect your data to a Google Data Studio template:
 
     To finish, click on "Copy Report".
 
-** Do you still have questions? **
+**Still have questions?**
 
 Do not hesitate to contact us so we can help you.
 
