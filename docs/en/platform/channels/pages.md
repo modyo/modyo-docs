@@ -51,7 +51,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 
 :::tip Tip
 * If a page has a parent page, you can only publish it if the parent page is published.
-* If a page has children, you can only unpublish it if all of them are unpublished.
+* If a page has children, you can only unpublish it if all of its child pages are unpublished.
 * If a page has children, you can only archive it if all of them are archived.
 :::
 
