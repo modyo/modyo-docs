@@ -55,7 +55,7 @@ You can add new comments at the bottom of the sidebar. Next to each activity, yo
 - **Reject**: Returns the status to "Pending changes" and notifies reviewers that the item was rejected.
 - **Publish**: Once they have been approved you can go to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes across the site.
 
-In the main work area, you can see two sections:
+In the main work area, there are two sections:
 
 - The work area.
 - The area of selection of templates.
