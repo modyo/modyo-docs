@@ -20,4 +20,4 @@ This chart allows us to compare the use of the different types of payment method
 
 ### Orders by Current Status
 
-Finally, you can see the effectiveness of e-commerce movements, with the status of orders of the last time, showing the amount of movements in pending payment status, paid, rejected, cancelled, awaiting confirmation, failed and completed.
+Finally, we can see the effectiveness of the movements of our e-commerce, with the status of the orders of the last time, showing the amount of movements in pending payment status, paid, rejected, canceled, pending confirmation, failures and completed.
