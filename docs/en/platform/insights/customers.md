@@ -41,8 +41,6 @@ You can select any of these values to compare:
 
 Displays a list of the last 5 messaging campaigns sent, with total unique opens versus reach.
 
-
-
 In this listing, you can find both email campaigns and notification campaigns.
 
 ### Recent Forms
