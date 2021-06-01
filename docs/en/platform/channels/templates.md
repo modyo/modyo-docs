@@ -58,7 +58,7 @@ You can add new comments at the bottom of the sidebar. Next to each activity, yo
 In the main work area, there are two sections:
 
 - The central work area.
-- The area of selection of templates.
+- The template selection area.
 
 Each template you click on the right sidebar opens in the middle area, very similar to an IDE. If you open multiple templates, these are open as tabs in the workspace.
 
