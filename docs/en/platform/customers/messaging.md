@@ -44,7 +44,7 @@ To create a campaign, we must click the green **+ New** button, located at the t
 
 This opens a form that you must fill out with the following information:
 
-- **Name**: Name that will have the campaign.
+- **Name**: Name that the campaign will have.
 - **Type**: Format the campaign will have (Mail or Notification).
 - **Subject**: Text that will appear on the subject line that will be sent to users.
 - **Reply to**: Email address people can respond to ** (Mail campaigns only) **
