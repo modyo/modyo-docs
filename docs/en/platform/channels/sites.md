@@ -312,19 +312,19 @@ There is a variation of the Developer role with the name "CLI". In addition to d
 
 Reviewers correct the work done by Developers, approving or rejecting their changes, and then publishing.
 
-You cannot edit the site settings.
+Reviewers cannot edit the Site settings.
 
 #### Admin
 
-The Site Administrator, has access to the two previous roles, in addition to being able to configure the entire site.
+The Admins role has access to all the permissions of the two previous roles, and also has access to the Site settings.
 
-This user is different from Default Admin. Site Admin can only configure the external site, but it cannot change anything about the platform.
+This team member is different from the account-level Default Admin. A site Admin can only configure a site, and cannot make any changes to the platform itself.
 
 If necessary, users from the site who already have previous roles can be deleted. To do this, just click the user and the Delete action.
 
 ### Custom redirects
 
-Modyo has a custom redirects system that will allow you to take a URL from your site and automatically redirect using a 301 or 302 code to another section of the site.
+Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
 In this view you will find a table with all the redirects that currently exist on the site, where you can search by path or description.
 
@@ -447,7 +447,7 @@ the _tags_ `script` and `style` in your _templates_ using the variable `csp_nonc
 There are several tools to help you design a robust security policy:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
-* [Salvation CSP validator](https://cspvalidator.org)
+* [CSP validator](https://cspvalidator.org)
 
 ### Permissions-Policy
 
