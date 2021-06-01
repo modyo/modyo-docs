@@ -16,11 +16,11 @@ After walking through this example, you’ll be able to apply the same steps for
 
 ### Connect your data to a Data Studio template
 
-The template gallery is located on the Modyo platform in Insights > Data studio.
+The templates gallery can be found in the Modyo platform under Insights > Data studio.
 
 ![Data studio](/assets/img/insights/0.png)
 
-You must be signed in to a Google account in your browser to copy the templates. For this specific example, you should also have access to your site's Google Analytics and/or Google Search Console accounts.
+You should be signed into a Google account in your browser to copy the templates. For this example you should also have access to your site’s Google Analytics and/or Google Search Console accounts.
 
 Steps to connect your data to a Google Data Studio template:
 
