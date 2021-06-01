@@ -110,7 +110,7 @@ You can delete responses one by one using the action to the right of each answer
 
 To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
 
- <img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600"> 
+<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">
 
 ## Edit
 
