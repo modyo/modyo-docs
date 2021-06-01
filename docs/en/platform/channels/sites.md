@@ -42,7 +42,7 @@ In case you need to publish an element quickly, administrator users can skip the
 
 ## Site settings
 
-Site settings allow you to open platform options to be viewed differently by visitors, customers, developers, and site administrators. In addition, you can modify options to improve the appearance in search engines and the view of some of the data that the public has access to when they reach the pages.
+Site settings allow you to configure various options of your site, such as set up its visibility depending on whether the user is a visitor, customer with a session, a developer or an administrator. In addition, you can modify options that allow us to improve your site's appearance in search engines and the visibility of some of the content that the public has access to when they reach your pages.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
