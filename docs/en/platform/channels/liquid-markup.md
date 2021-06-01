@@ -753,79 +753,79 @@ The drops available for customers are:
 
 ```
 - user:
- - access_token
- - age
- - avatar
- - birth_at
- - change_password_url
- - custom_fields
- - email
- - external_access_token
- - external_user_id
- - female_sex_value
- - first_name
- - genders
- - generated_password
- - id
- - initials
- - last_name
- - male_sex_value
- - member_since
- - name
- - notifications
- - profile_url
- - sex
- - target_names
- - targets
- - undefined_sex_value
- - unread_notifications
- - unread_notifications_count
- - username
- - uuid
+  - access_token
+  - age
+  - avatar
+  - birth_at
+  - change_password_url
+  - custom_fields
+  - email
+  - external_access_token
+  - external_user_id
+  - female_sex_value
+  - first_name
+  - genders
+  - generated_password
+  - id
+  - initials
+  - last_name
+  - male_sex_value
+  - member_since
+  - name
+  - notifications
+  - profile_url
+  - sex
+  - target_names
+  - targets
+  - undefined_sex_value
+  - unread_notifications
+  - unread_notifications_count
+  - username
+  - uuid
 notification:
- - subject
- - body
- - sent_at
- - url
- - opened
+  - subject
+  - body
+  - sent_at
+  - url
+  - opened
 - user_agent:
- - agent
- - browser
- - browser_version
- - initialize
- - is_modyo_shell
- - platform
- - platform_version
+  - agent
+  - browser
+  - browser_version
+  - initialize
+  - is_modyo_shell
+  - platform
+  - platform_version
 - user_session:
- - email
- - password
+  - email
+  - password
 - target:
- - id
- - name
+  - id
+  - name
 - form:
- - slug
+  - slug
 - form_response:
- - description
- - name
- - parse_answer
- - parse_answers
- - questions
+  - description
+  - name
+  - parse_answer
+  - parse_answers
+  - questions
 - question:
- - allow_alternatives
- - alternatives
- - form
- - id
- - label
+  - allow_alternatives
+  - alternatives
+  - form
+  - id
+  - label
 - alternative:
- - id
- - question
+  - id
+  - question
 - answer:
- - alternative
- - dynamic_target_url
- - edit_url
- - id
- - question
- - response
- - text_field
- - type
+  - alternative
+  - dynamic_target_url
+  - edit_url
+  - id
+  - question
+  - response
+  - text_field
+  - type
 ```
