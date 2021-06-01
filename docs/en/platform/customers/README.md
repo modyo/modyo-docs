@@ -12,7 +12,7 @@ Once a user is identified, the platform manages the business events that the use
 
 **Modyo Customers** represents an important element when developing digital products on the platform.
 
-**Modyo Customers** also has an integrated messaging system to the authenticated user.
+**Modyo Customers** also has an integrated user messaging system.
 
 ### Key features
 
