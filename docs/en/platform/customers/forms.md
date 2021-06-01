@@ -178,8 +178,8 @@ The **Form Snippet** section, which will only appear if the form is public, will
 
 <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
-:::warning Attention
-To be able to make proper use of the form's snippet, you must consider the _CORS_ settings of your Modyo account and the security _headers_ where you are inserting the snippet.
+::: warning Warning
+In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
 The **Options** and **Notifications** sections add nothing different to what is in **New Form**
