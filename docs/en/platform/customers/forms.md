@@ -166,7 +166,7 @@ This section will allow you to change the general behavior of the form. It conta
 Its four main sections are:
 
 - **General**
-- **Snippet**
+- **Form Snippet**
 - **Options**
 - **Notifications**
 
