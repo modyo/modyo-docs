@@ -160,7 +160,7 @@ Each of the templates is ordered according to their name, in addition to being a
 If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
 :::
 
-Under each name, you will find a button that will allow you to edit. If you click on it, you'll get to the editor where you made your template.
+Under each name, there is a button that allows you to edit. If you click on it, this opens the messaging template editor.
 
 On the side, there is a button that displays a menu with the following options:
 
