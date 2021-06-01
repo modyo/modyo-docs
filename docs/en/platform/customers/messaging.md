@@ -178,7 +178,7 @@ If you want to temporarily change the template when sending a new campaign, it i
 
 To make a template, you must first click on the **+ New** button, located at the top of the page.
 
-When you click, the edit view will open where you need to enter the name you will give to the template.
+This opens the edit view where you must give your template a name.
 
 :::tip Tip
 Remember that this name is the one you will need to search for sending when you do the Campaign. Therefore, you should put a text that helps you identify well which template you want to use and not put something that can confuse you.
