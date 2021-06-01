@@ -118,7 +118,7 @@ Modyo provides the ability to implement Progressive Web Applications (PWA) withi
 
 #### **Manifest**
 
-The manifest is used to indicate how you want a browser to display your digital channel. On the platform, it is possible to activate it through this checkbox. This will create the following route:
+The purpose of the manifest is to indicate how you want a browser to display your digital channel. On the platform, it is possible to activate it with the checkbox seen above. This will create the following route:
 
 ```
 https://[domain]/[site-name]/manifest.json
