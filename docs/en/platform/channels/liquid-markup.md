@@ -352,7 +352,7 @@ one
 ```
 
 If no name is provided for the cycle group, then it is assumed that multiple
-calls with the same parameters are a group.
+Calls with the same parameters are a group.
 
 If you want to have full control over cycle groups, you can optionally specify
 the name of the group. This may even be a variable.
