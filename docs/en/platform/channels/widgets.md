@@ -16,7 +16,7 @@ In the widget editing view, you can see three areas: the top action bar, the mai
 
 Along the **top bar**, on the left, you can see the widget name and current status:
 
-- **Draft**: This status appears when a widget has just been created or when it has been unopened.
+- **Draft**: This status means a widget is new or is unpublished.
 - **Published**: This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes**: This status appears if there is already a published version, but there are changes pending to publish in editable version.
 - **In Review**: This status appears when [computer hotfix] is enabled (/es/platform/core/key-concepts.html) and the editable version has been sent for revision.
