@@ -189,7 +189,7 @@ Under the name is the Template content section, a WYSIWYG editor where you can v
 ::: warning Warning
 If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
-To automate footer insertion, read [Customers Configuration](/es/platform/customers/realms.html #configuracion -de-customers)
+To automate the insertion of the Footer, read [Customers Settings](/en/platform/customers/users.html#customers-settings)
 :::
 
 To record the template, you must click the**Save** button at the top of the page.
