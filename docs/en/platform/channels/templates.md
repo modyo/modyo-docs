@@ -31,9 +31,8 @@ It is possible to enter the preview mode with or without a logged in user sessio
 
 By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
-:::tip Tip
-Each time you publish a version, the version that was released becomes a backup version. By default, up to 20 backups are saved, so that the most recent 20 backups can be compared, restored, and rolled back. 
-For more information on versioning, check out the [versioning] section (/es/platform/core/key-concepts.html #versionado).
+::: tip Tip
+Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved so that the most recent twenty backups can be compared, restored or used for a rollback. For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section .
 :::
 
 **Search templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Deploy a sidebar with a text finder that searches all editable templates. 
