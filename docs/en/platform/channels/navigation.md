@@ -43,7 +43,7 @@ For more information on versioning, check out the [versioning](/en/platform/core
 
 You can add comments by submitting them at the bottom of the sidebar. Next to each activity, you can click on "Show details" to show the complete information of that particular activity log.
 
-**Main Action**
+**Main Actions**
 
 - **Save**: Save all menu changes.
 - **Send to Review**: Change the menu status to "Waiting for Review". In this state you continue to make changes, but each change will be notified via mail to the assigned reviewers.
