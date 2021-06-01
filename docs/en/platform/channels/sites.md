@@ -330,8 +330,8 @@ In this view you will find a table with all the redirects that currently exist o
 
 To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ Source** and **_URL_ Destination** fields redirection code and then saving the changes, you will create a new redirection entry.
 
-:::warning Attention
-The redirection table is the penultimate in precedence, so if there is a URL on the site pointing to a [page](/es/platform/channels/pages.html), a default view, or a [custom content view](/es/platform/channels/templates.html #vistas -for-content), you'll see those views instead of being redirected using the custom redirects table.
+:::warning Warning
+The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
