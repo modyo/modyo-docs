@@ -45,7 +45,7 @@ To create a campaign, we must click the green **+ New** button, located at the t
 This opens a form that you must fill out with the following information:
 
 - **Name**: Name that the campaign will have.
-- **Type**: Format the campaign will have (Mail or Notification).
+- **Type**: Format that the campaign will have (Mailing or Notification).
 - **Subject**: Text that will appear on the subject line that will be sent to users.
 - **Reply to**: Email address people can respond to ** (Mail campaigns only) **
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) that will be used to send an email. If one is not selected, it will send to a blank template. **(For email campaigns only)**
