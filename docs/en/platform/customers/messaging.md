@@ -76,7 +76,7 @@ In addition, you will find a drop-down menu that will take you to four sections:
 
 In the Campaign Status view, you can find campaign statistics.
 
-:::warning Attention
+::: warning Warning
 If you haven't sent the campaign yet, the values will appear at zero.
 :::
 
