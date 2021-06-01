@@ -95,7 +95,7 @@ Clicking any user from the main list opens their profile. In each profile is the
 - Status within the platform: active or inactive.
 - Signup Date
 - Last Login
-- Number of sessions done on the platform
+- Logins Count (number of sessions)
 - User Verification Status
 - Targets in which it is included (if available)
 
