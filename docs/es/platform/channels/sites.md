@@ -355,23 +355,18 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 ## Security headers
 
 Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
-Esta acción no se puede deshacer, pero cuando está habilitada, tienes el control
-total de los encabezados que desea usar.
+Esta acción no se puede deshacer, pero cuando está habilitada, tienes el control total de los encabezados que desea usar.
 
 ### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que el sitio se debe acceder usando solo HTTPS.
-* **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se
-  accede al sitio mediante HTTPS.
-* **Precarga**: Incluye la directiva de precarga. Para más información consulta
-   [HSTS Preload List Submission](https://hstspreload.org/).
+* **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se accede al sitio mediante HTTPS.
+* **Precarga**: Incluye la directiva de precarga. Para más información consulta [HSTS Preload List Submission](https://hstspreload.org/).
 * **Incluir subdominios**: Utiliza la regla HSTS también para todos los subdominios del sitio.
 
 ### Referrer-Policy
 
-El _header_ `Referer` contiene información de la página web anterior desde al cual
-está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta
-información debe incluirse en el _header_ `Referer`.
+El _header_ `Referer` contiene información de la página web anterior desde al cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
 
 * **no-referrer**: No se envía información de _referrer_.
 * **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
@@ -384,53 +379,34 @@ información debe incluirse en el _header_ `Referer`.
 
 ### X-Frame-Options
 
-Indica si tu sitio puede ser incluido en un `frame`, `iframe`,
-`embed` or `object`.
+Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed` or `object`.
 * **DENY**: El sitio no se puede mostrar en un _frame_.
 * **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
 
 ### X-Content-Type-Options
 
-Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type`
-para evitar _MIME type sniffing_.
+Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type` para evitar _MIME type sniffing_.
 
 ### Content-Security-Policy
 
-Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques
-de inyección de datos y _cross site scripting_. El valor predeterminado *permite
-cargar recursos desde cualquier lugar*, por lo que es importante diseñar una
-política de seguridad de contenido adecuada para tu sitio.
-Especifica libremente tu política de seguridad de contenido en el área de texto;
-para obtener una guía completa sobre cómo escribir su política, consulta
-[Content Security Policy (CSP) de la MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
+Especifica libremente tu política de seguridad de contenido en el área de texto; para obtener una guía completa sobre cómo escribir su política, consulta [Content Security Policy (CSP) de la MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como
-[Google tag manager](/es/platform/channels/sites.html#google-tag-manager),
-[PWA](/es/platform/channels/sites.html#pwa),
-[Widgets](/es/platform/channels/widgets.html) y
-[Asset Manager](/es/platform/content/asset-manager.html).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html) y [Asset Manager](/es/platform/content/asset-manager.html).
 :::
 
-Una política apta para producción debe asegurar que todos los recursos, como
-imágenes y hojas de estilo se cargan de fuentes confiables y requiera que todos
-los scripts sean seguros y confiables para la aplicación. Por ejemplo, una
-política estricta para el _template minimal_ se vería así:
+Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo se cargan de fuentes confiables y requiera que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
-La política debe incluir una directiva `default-src 'self'`, que es _fallback_
-para cualquier otro tipo de recurso. También debe incluir directivas
-`script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y
-`script`.
+La política debe incluir una directiva `default-src 'self'`, que es _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
 
-* **Nonce**: El servidor agregará un CSP nonce a las directivas
-  `script-src` y `style-src` si están presentes.
+* **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
 
-Si tienes el nonce presente en tu política, puedes agregar a la lista permitida
-los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
+Si tienes el nonce presente en tu política, puedes agregar a la lista permitida los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
 
 ```liquid
 <script nonce="{{csp_nonce}}">
@@ -445,19 +421,11 @@ Hay varias herramientas para ayudarte a diseñar una política de seguridad sól
 
 ### Permissions-Policy
 
-Permite o niega el uso de funciones y APIs del navegador para el sitio, por
-ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o
-el micrófono y la reproducción automática de videos. Para obtener una lista
-completa de las funciones compatibles con los navegadores, consulte
-[Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+Permite o niega el uso de funciones y APIs del navegador para el sitio, por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos. Para obtener una lista completa de las funciones compatibles con los navegadores, consulte [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 ### X-XSS-Protection
 
-Evita que las páginas se carguen cuando el navegador detecta un ataque de
-_cross-site scripting_. Esta protección no es necesaria con los navegadores
-modernos cuando se implementa una [Content-Security-Policy](/es/platform/channels/sites.html#content-security-policy)
-estricta, pero algunos inspectores de seguridad van a esperar la presencia de
-este _header_.
+Evita que las páginas se carguen cuando el navegador detecta un ataque de _cross-site scripting_. Esta protección no es necesaria con los navegadores modernos cuando se implementa una [Content-Security-Policy](/es/platform/channels/sites.html#content-security-policy) estricta, pero algunos inspectores de seguridad van a esperar la presencia de este _header_.
 
 * **0**: Deshabilita XSS _filtering_.
 * **1**: Habilita XSS _filtering_, quitando las partes inseguras.
