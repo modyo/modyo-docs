@@ -519,7 +519,7 @@ var sessionManager={
 
 ### A modal window that informs the user that their session will expire
 
-This is the modal to activate in the previous step with bootstrap for the handling of the warning modal.
+This should be the modal to activate in the previous step with bootstrap for handling the warning modal.
 
 ```html
 <div
