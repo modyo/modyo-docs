@@ -32,7 +32,7 @@ The next section of the form properties contains the Form Options for what happe
 
 - **Default options**: After answering the form the user is redirected to the home of the site associated to the form
 - **Redirect URL**: Allows you to enter a URL to which the user will be redirected after the form has been answered
-- **Thank You Page**: Allows you to add a personalized thank you message after a user replies the form, next to a button that will take you to a page of the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
+- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
 
 - **Enable targetization**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more go to [Targets](/es/platform/customers/targets.html)
