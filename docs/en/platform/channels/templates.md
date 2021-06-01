@@ -144,7 +144,7 @@ When you create a theme from a site or channel, that theme becomes available to 
 
 ## Error views
 
-**Disabled**: You will see this error view if the site you are trying to access has been [disabled](/en/platform/channels/sites.html).
+In the views section, you will find 4 error types available for customization:
 
 * **Disabled**: You will see this error view if the site you are trying to access has been [disabled](/es/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if in the [site restrictions] settings (/es/platform/channels/sites.html #restricciones) you decide to display the 404 and not redirect to the home page.
