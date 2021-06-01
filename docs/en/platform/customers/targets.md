@@ -20,7 +20,7 @@ The list is sorted as follows.
 
 In addition, on the far right you will find an "Action" button with a drop-down menu that allows you to execute the following options:
 
-- Edit: Edit the name and filters of the target.
+- Edit: Edit the target name and filters.
 - Delete: Delete the target.
 
 :::warning Attention
