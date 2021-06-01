@@ -18,7 +18,7 @@ The available filters are:
 
 **Logins**: Total count of all user logins.
 
-**Logs**: Corresponds to the count of all user records.
+**Signups**: Total count of all user signups.
 
 ![Customers](/assets/img/platform/customers.png)
 
