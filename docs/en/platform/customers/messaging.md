@@ -104,7 +104,7 @@ Below you can see the [Targets](/en/platform/customers/targets.html) to which th
 At the bottom you can find a table with all the campaign deliveries, which you can sort in ascending or descending order according to the following columns:
 
 
-- **Date**: The day and time the shipment was made.
+- **Date**: Day and time the delivery was made.
 - **Targets**: Targets to which the specific shipment was made.
 - **Scope**: Number of people who received the shipment.
 - **Sended**: Number of mails/notifications sent.
