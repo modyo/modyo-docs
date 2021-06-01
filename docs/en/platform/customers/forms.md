@@ -161,7 +161,7 @@ In the same way that some fields have validations, most have a default value tha
 
 ### Form Properties
 
-This section will allow you to change the general behavior of the form. It contains the same options as when creating a new form, but in turn adds a couple of new options which we will detail below. Its four main sections are:
+This section will allow you to change the general behavior of the form. It contains the same options as when creating a new form, but in turn adds a couple of new options which we will detail below.
 
 Its four main sections are:
 
