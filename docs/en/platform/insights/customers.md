@@ -49,4 +49,4 @@ You will see a list of the latest forms created, along with the total responses 
 
 ### Engagement
 
-Finally, you can also view through a donut chart, the percentage of active users on the site (in the selected period), compared to the total number of users.
+Finally, engagement shows the percentage of active users on the site (in the selected period), compared to the total number of users, vizualized through a donut chart.
