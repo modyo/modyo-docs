@@ -161,8 +161,8 @@ In order to automatically display [content](/en/platform/content/) on a site, yo
 
 To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called **Custom** and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to.
 
-:::warning Attention
-The name of the view will be the path (URL) relative to the site of the content to display, so pay attention when naming these views.
+:::warning Warning
+The name of the view is the route (URL) relative to the site with the content you want to show. For this reason, you have to be careful when naming your views.
 :::
 
 :::tip Tip
