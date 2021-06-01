@@ -117,7 +117,7 @@ Remember that if you delete the delivery, it is unrecoverable.
 In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is.
 :::
 
-If you click on the campaign names, you'll go to the Message Deliveries section.
+If you click on the campaign dates, this takes you to the Message Deliveries section.
 
 ## Message Deliveries
 
