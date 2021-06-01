@@ -72,7 +72,7 @@ Snippets are pieces of code that can be created, modified, and reused. Next to e
 
 You can add custom snippets at the bottom of the snippets tab, by clicking on the **+ Add a snippet** button.
 
- <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300"> 
+<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
 :::tip Tip
 For the system to recognize the type of programming language to which the snippet belongs, you must add the underscore ending +ending, i.e. **"front_css"** or **"library_js"** by default will recognize the snippet as HTML language.
