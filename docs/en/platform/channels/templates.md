@@ -213,7 +213,7 @@ In case it is not enabled, the URL will be in the form `account_url/site_host`.
 Modyo has three default layouts:
 * **Home**: Used exclusively on the home page of the site.
 * **Base**: All pages except the home page use this default layout.
-* **Error**: Error views use this clean layout (404, 401)
+* **Error**: The error views use this clean layout (404, 401)
 
 You can create new Layouts from the template builder by clicking "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on pages.
 
