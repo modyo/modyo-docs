@@ -74,8 +74,8 @@ You can add custom snippets at the bottom of the snippets tab, by clicking on th
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
-:::tip Tip
-For the system to recognize the type of programming language to which the snippet belongs, you must add the underscore ending +ending, i.e. **"front_css"** or **"library_js"** by default will recognize the snippet as HTML language.
+::: tip Tip
+In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name (i.e. **"front_css"** or **"library_js"**). Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
 :::
 
 :::tip Tip
