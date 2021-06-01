@@ -374,18 +374,12 @@ está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta
 información debe incluirse en el _header_ `Referer`.
 
 * **no-referrer**: No se envía información de _referrer_.
-* **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino
-  menos seguro.
+* **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
 * **origin**: Envía solo el dominio de origen y elimina las rutas y _query string_ .
-* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_
-  del mismo origen y elimina las rutas y _query string_ para otros destinos.
-* **same-origin**: Envía información de _referrer_ solo para _requests_ del
-  mismo origen.
-* **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo
-  nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
-* **strict-origin-when-cross-origin**: Envía información de _referrer_ a
-  _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es
-  el mismo y no envía información de _referrer_ a destinos menos seguros .
+* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen y elimina las rutas y _query string_ para otros destinos.
+* **same-origin**: Envía información de _referrer_ solo para _requests_ del mismo origen.
+* **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
+* **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros .
 * **unsafe-url**: Envía siempre la información de _referrer_.
 
 ### X-Frame-Options
