@@ -191,7 +191,7 @@ If you have problems with keyboard codes when you are editing the CSS, you can c
 
 Modyo allows you to configure the sender and appearance of the emails that will be sent to users.
 
-To adjust the address that will appear as the sender that will send your email, just enter it in the "Default Mail" field and click on the**Save** button.
+To adjust the address that will appear as the sender that will send your mail, you just have to enter it in the "Default mail" field and click on the **Save** button.
 
 This section allows is to enable, disable, and customize the sending of automatic mails after specific user interactions, the emails are as follows:
 
