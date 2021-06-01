@@ -38,7 +38,7 @@ Next to each main counter, you will see an upward (green) or downward (red) indi
 The time ranges that are compared in each of the boxes, depend on the date range selected in the upper right part of the view, so that, if you have selected the last seven days, you will be comparing, for example, the amount of elements created within the last seven days, with the amount of elements created within the previous week.
 :::
 
-### Resources Created vs. Published
+### Created vs. Published Resources
 
 A line graph that represents a comparison over time between created versus published resources.
 
