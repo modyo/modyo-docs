@@ -202,7 +202,7 @@ The condition of an `if`,` elsif` or `unless` tag must be a normal Liquid expres
 
 The available relational operators are:
 
-* `==,! =, `and` <> `— equal and unequal (the latter two are synonyms)
+* `==,! =, `and` <> `— equal and unequal (the last two are synonyms)
     * There is a special secret value "empty" (without quotes) to which arrays can be compared; the comparison is true if the array does not have members.
 * `<, <=, >, >=` — less/greater than
 * `contains` — a wrapper around the `include method? `of Ruby, which is implemented in strings, arrays, and hashes. If the left argument is a string and the right is not, it converts to string the right.
