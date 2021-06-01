@@ -186,8 +186,8 @@ Remember that this name is the one that you will have to look for in order to se
 
 Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
-:::warning Attention
-If you're campaigning, remember to add in the footer all the legal information required by your country's mass mail regulation.
+::: warning Warning
+If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
 To automate footer insertion, read [Customers Configuration](/es/platform/customers/realms.html #configuracion -de-customers)
 :::
