@@ -258,7 +258,7 @@ The types of **Custom Fields** you can add are:
 
 - Checkbox
 - Date
-- Dropdown (Drop-down List)
+- Dropdown (drop-down list)
 - Paragraph
 - Number
 - Choice
