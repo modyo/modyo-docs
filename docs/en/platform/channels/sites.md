@@ -32,8 +32,8 @@ You can review and publish multiple elements of a site in a single view. To revi
 
 If you want to publish multiple elements in a single step, click the "Publish" button on pages, navigation, widgets or templates and just mark all items you want to publish in the list and then press the publish button.
 
-:::warning Attention
-All items that have pending changes to be published will appear in the listing, so if any item does not appear in the listing, it is very likely that you do not have any changes to publish yet.
+:::warning Warning
+All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
 
 If you have team review enabled, only items that are already approved will appear in the list.
 
