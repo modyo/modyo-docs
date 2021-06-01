@@ -111,7 +111,7 @@ In this section you will see a record of all the actions that the user has perfo
 
 It should be noted that it is not a follow-up to the navigation of a user within the platform, but rather of the main interactions that it carries out within it. These records cannot be deleted or edited by administrators.
 
-#### Responses to forms
+#### Form responses
 
 This section shows you all the forms that the user has filled out within the platform. By clicking on one of them, it takes you to see the user's answers in that form. If you want to know more about forms, go to the [Forms] section (/es/platform/customers/forms.html).
 
