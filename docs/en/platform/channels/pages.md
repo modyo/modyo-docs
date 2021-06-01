@@ -74,7 +74,7 @@ In the right side section you will find three tabs:
 You can add them from the first tab of the Page builder. The available widgets are:
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/en/platform/channels/widgets.html).
-- **Rich text**: Allows you to use a rich text editor, where you can format text and switch between code view and rich text.
+- **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
 :::warning Attention
 The rich text widget has an automatic formatter, so the code you type in the code view may be affected.
 :::
