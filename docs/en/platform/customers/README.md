@@ -10,7 +10,7 @@ search: true
 
 Once a user is identified, the platform manages the business events that the user performs during their session and through the functionality of Targets, the Platform can customize the content and experience during their navigation of your digital channels.
 
-**Modyo Customers** represents an important element in developing digital products on the platform.
+**Modyo Customers** represents an important element when developing digital products on the platform.
 
 **Modyo Customers** also has an integrated messaging system to the authenticated user.
 
