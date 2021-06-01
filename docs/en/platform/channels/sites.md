@@ -138,14 +138,14 @@ If you do not customize the manifest but add the route in the Template Builder, 
 
 #### **Service Worker**
 
-Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to see a structure in case of a bad connection. The platform grants the possibility that this can be enabled through the following checkbox. Thus, the following path will be created:
+The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to show some structure in case of a bad connection. The platform gives you the possibility to enable this through the second checkbox above. Thus, the following route will be created:
 
 
 ```
 https://[domain]/[site-name]/serviceworker.js
 ```
 
-You can modify and program the Service Worker in the following field, adapting it to your routes and with the available variables as follows.
+You can modify and program the Service Worker in the next field, adapting it to your routes and with the available variables as shown above.
 
 :::warning Attention
 If the Service Worker is disabled, the page will continue to walk only in its basic functions and not with the benefits that this option has.
