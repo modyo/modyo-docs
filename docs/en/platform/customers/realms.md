@@ -123,7 +123,7 @@ In this section you can add personalized notes about users, only administrators 
 
 In the upper right section you will find additional options with which you can disable and delete users:
 
-* **Edit**: Open the user editing modal. To add more fields to the form you can go to [Custom Fields](/es/platform/customers/realms.html #campos -custom).
+* **Edit**: Opens the user edit modal. If you want to add more fileds to a user go to [Custom Fields](/en/platform/customers/users.html#custom-fields).
 * **Disable**: You can deactivate users and prevent them from logging in.
 * **Dele**: Once a user is disabled, you can delete that user. This action can be performed by team members who are account administrators, and each user can delete their account from the additional options in their profile.
 
