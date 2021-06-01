@@ -138,7 +138,8 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 
 #### Child routes delegation
 
-Enables route delegation to allow absolute control of page sub-paths through the JavaScript router.
+Enable the child routes delegation to allow the full control of the page routes from the Javascript router.
+
 
 #### Privacy
 
