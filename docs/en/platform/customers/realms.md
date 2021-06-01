@@ -206,7 +206,7 @@ What this section allows is to enable, disable and customize the sending of auto
 
 To enable or disable the sending of these emails, we just have to click on the **Enabled/Disabled** button next to each function and click on the **Save** button.
 
-#### Customize emails
+#### Custom emails
 
 The email styles of the platform you send can also be customized. To do this, you must have the HTML code that you want to include in them.
 
