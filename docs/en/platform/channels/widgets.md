@@ -20,7 +20,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
 - **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
 - **In review**: This status means [team review](/en/platform/core/key-concepts.html) is enabled and this widget is in review.
-- **Approved**: This status appears when [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, the templates are ready to be published.
+- **Approved**: This status means [team review](/en/platform/core/key-concepts.html) is enabled and a widget passed the review process. You can now publish this widget.
 
 On the right, these are the different actions:
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Open the preview of the editable version of the widget in a new tab.
