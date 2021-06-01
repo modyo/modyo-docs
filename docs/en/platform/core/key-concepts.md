@@ -6,7 +6,7 @@ search: true
 
 ## Team Review
 
-Team Review is a tool that allows you to control the process of publishing items in Modyo. When enabled, each item must go through review stages before enabling its publication.
+Team Review is a tool that allows you to control the process of publishing items in Modyo, such as entries, widgets, pages, templates, and more. When enabled, each item must go through the required review stages before it can be published.
 
 This adds a level of monitoring and collaboration between the content editor and a team of reviewers.
 
