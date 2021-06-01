@@ -89,7 +89,7 @@ In addition, you can add any required custom fields. These can be configured in 
 
 ### Users tab
 
-Clicking, from the main list, on each of the users, the tab of the selected user will open. In it you will see a sidebar that includes the following information:
+Clicking any user from the main list opens their profile. In each profile is the following information:
 
 - User Avatar (If uploaded)
 - Status within the platform: Whether it is active or inactive.
