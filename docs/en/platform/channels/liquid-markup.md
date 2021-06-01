@@ -61,7 +61,7 @@ Hello {{user.name}}
 Hello {{ 'tobi' }}
 ```
 
-## Expressions and variables
+## Expressions and Variables
 
 Expressions are statements that have values. Liquid templates can use expressions in many places; very often in output statements, but also as arguments for tags or filters.
 
