@@ -11,7 +11,7 @@ Once you have selected a theme for a new site, you can access each template in t
 Inside the Template Builder, you will find that the main menu is hidden to optimize the available workspace. In the top bar, you can also find the section name and a badge indicating its current status:
 
 - **Published**: There is a published version of the templates and that the editable version you are working on now matches the state of the published version. This status changes whenever you save any changes to your templates.
-- **Pending changes**: When there is a published version, but there are pending changes to your editable version.
+- **Pending changes**: When there is a previously published version, this status indicates that your editable version has "pending changes" that have not been published.
 - **In Review**: When [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and the editable version has been sent for revision.
 - **Approved**: When [Computer Patch] is enabled (/en/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, your templates are ready to be published.
 
