@@ -30,7 +30,7 @@ In this section, each user can modify his own profile data, depending on the [cu
 * Email
 * Birthdate
 * Gender
-* [Custom Fields](/en/platform/customers/realms.html #custom -fields)
+* [Custom fields](/en/platform/customers/users.html#custom-fields)
 * Password
 
 In addition, each user can definitely delete their account. 
