@@ -147,12 +147,12 @@ https://[domain]/[site-name]/serviceworker.js
 
 You can modify and program the Service Worker in the next field, adapting it to your routes and with the available variables as shown above.
 
-:::warning Attention
-If the Service Worker is disabled, the page will continue to walk only in its basic functions and not with the benefits that this option has.
+:::warning Warning
+If the Service Worker is disabled, the page will continue to run only with its basic functions and not with the benefits that this option provides.
 :::
 
-:::warning Attention
-If the code is not customized or saved, the site won't have the features you're designing.
+:::warning Warning
+If the code is not customized or saved, the site will not have the features you are designing.
 :::
 
 ### SEO
