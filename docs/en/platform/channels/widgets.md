@@ -121,8 +121,8 @@ You can choose to load your widgets synchronously, meaning that the HTML, CSS an
 
 To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
 
-:::warning Attention
-Keep in mind that using very heavy widgets synchronously can cause your page's performance to be diminished, so you should carefully decide which widgets will load synchronously and which asynchronously
+:::warning Warning
+You must take into consideration that using very heavy widgets in a synchronous way can decrease the performance of your page, so you must decide carefully which widgets will be loaded in a synchronous way and which in an asynchronous way
 :::
 
 ## Modyo CLI
