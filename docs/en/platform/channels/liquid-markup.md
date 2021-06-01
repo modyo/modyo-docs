@@ -148,7 +148,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `strip` - Removes all blank spaces at both ends of the string.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiply  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
-* `truncate` - Restrict a string to x characters. It also accepts a second parameter to be added to the string *e.g.* <span v-pre> `{{'foobarfoobar' | truncate: 5, '.'}} #=> 'foob'`. </span> 
+* `truncate` - Restrict a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
 * `truncatewords` - Restrict a string to x words
 * `uniq` - Removes duplicate elements from an array, optionally using a given property to check their uniqueness.
 * `upcase` - Converts an input string to uppercase
