@@ -86,7 +86,7 @@ Steps to connect your data to a Google Data Studio template:
 
     Click on "Connect" to continue and then "Add to report"
 
-    Repeat this process for the next data source and under "Table" select "Site Print".
+    Repeat this process for the next data source and in "Table" select "Site impression"
 
 6. Copy the report with your data
 
