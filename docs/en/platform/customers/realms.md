@@ -80,7 +80,7 @@ On the right, in a sidebar, you will see main import settings. Here you can defi
 - Activate user account
 - Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos)
 - Add users to sites
-- Update users (if they are already registered on the platform)
+- Update existing users (in case they are already registered on the platform)
 
 Finally, once the import is configured, by clicking the **Start import** button at the top, you will return to the main import view, and the first record in the table will be your import in process. There you can see the progress of the same, indicated in the column of **Status**.
 
