@@ -499,8 +499,7 @@ The 4 attributes we have are the following:
 * `current_page`: The current data window
 * `total_pages`: The total number of pages or groups of elements that we can request.
 
-In the previous example, apart from having the first 10 records, we already know
-for the next _requests_ that there are a total of 1078 entries, grouped into 108 pages. If we want to get the second page of this data, for example, we just need to add the `page` parameter with the value set to 2 and call the same URL again. To modify the number of records by page, just add the `per_page` parameter with the desired value.
+In the previous example, apart from having the first 10 records, we already know for the next _requests_ that there are a total of 1078 entries, grouped into 108 pages. If we want to get the second page of this data, for example, we just need to add the `page` parameter with the value set to 2 and call the same URL again. To modify the number of records by page, just add the `per_page` parameter with the desired value.
 
 For example, let's get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
 
