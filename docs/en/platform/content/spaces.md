@@ -6,7 +6,7 @@ search: true
 
 A Space is a distinct area where team members can define different content structures (types), and create and publish content entries to use both inside or outside Modyo through their the public Modyo Content API or in the creation of a site through Modyo Channels.
 
-All items can be used inside or outside of **Modyo** through its public API or in creating a site on Channels.
+All items can be used inside or outside of **Modyo** through its public API or in creating a site in Channels.
 
 From Modyo you can configure access to different sources so that services consuming the API can easily interpret them.
 
