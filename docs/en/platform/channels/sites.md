@@ -242,40 +242,40 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 <li>admin</li>
 <li>api</li>
 </ul></td>
- <td style="border: none;"> <ul> 
- <li> auth </li> 
- <li> callback </li> 
- <li> code_generators </li> 
- <li> crossdomain </li> 
- <li> dist </li> 
- <li> login </li> 
- </ul> </td> 
- <td style="border: none;"> <ul> 
- <li> logout </li> 
- <li> mailing </li> 
- <li> panel </li> 
- <li> password </li> 
- <li> profile </li> 
- <li> rails </li> 
- </ul> </td> 
- <td style="border: none;"> <ul> 
- <li> realms </li> 
- <li> robots </li> 
- <li> session </li> 
- <li> signup </li> 
- <li> sitemap </li> 
- <li> status </li> 
- </ul> </td> 
- <td style="border: none;  vertical-align: top;"> <ul> 
- <li> uploads </li> 
- <li> users </li> 
- <li> welcome </li> 
- <li> widgets </li> 
- </ul> </td> 
- </tr> </table> 
+<td style="border: none;"><ul>
+<li>auth</li>
+<li>callback</li>
+<li>code_generators</li>
+<li>crossdomain</li>
+<li>dist</li>
+<li>login</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>logout</li>
+<li>mailing</li>
+<li>panel</li>
+<li>password</li>
+<li>profile</li>
+<li>rails</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>realms</li>
+<li>robots</li>
+<li>session</li>
+<li>signup</li>
+<li>sitemap</li>
+<li>status</li>
+</ul></td>
+<td style="border: none;  vertical-align: top;"><ul>
+<li>uploads</li>
+<li>users</li>
+<li>welcome</li>
+<li>widgets</li>
+</ul></td>
+</tr></table>
 :::
 
-### Site variables
+### Variables del sitio
 
 Modyo has [global variables](/es/platform/core/key-concepts.html #variables -globals) that you can use across multiple sites. However, you can create site-specific variables or overwrite the value of an already created global variable, with a specific value for the particular site.
 
