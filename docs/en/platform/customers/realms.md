@@ -24,7 +24,7 @@ Along the top of the list are filters that allow you to refine the list of users
 - Advanced filters: Filter by users who match specific filters based on data in their user profiles, e.g. birth date, or custom field value.
 - Search: Filter by user name, last name, email, or username.
 
-The Advanced Filters option will open a modal which allows you to filter users by more specific attributes, such as age, or Custom Fields. When you add a new advanced filter, the number of matches will automatically appear at the bottom left of the modal, next to the button to clean the filters. If you want to view the list of these filtered users, you just have to click on the**Applicar** button.
+The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
 :::tip Tip
 Next to the **Apply** button, there is the **Save as Target** button. It will save the filters you applied to a new Target, which you need to give a title and description. You can then find it in the [Targets] section (/es/platform/customers/targets.html)
