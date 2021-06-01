@@ -4,7 +4,7 @@ search: true
 
 # Modyo Channels
 
-**Modyo Channels** is an application that allows the management of content and Web applications for multiple sites and languages centrally.
+**Modyo Channels** is an application that allows you to manage content distribution and web applications for multiple sites and languages in one place.
 
  <img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;"> 
 
