@@ -347,7 +347,7 @@ The recommended method to interact with a private API using the Modyo session wi
 1. Log in to the account where you want to create a private site.
 1. Click on create a new site.
 1. Assign a name to the new site and select the base theme.
-1. In the `Settings > Site` section, under the**Restrictions** tab, select **Private**. Also activate**Show home to public visits** to be able to redirect users without session.
+1. In the `Site > settings` section, under the **Restrictions** tab, we select **private** under the Privacy level. This also activates **Show home page to public visitors** in order to redirect users without a session.
 
 #### Enable account-level integration (for all sites)
 
