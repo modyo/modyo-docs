@@ -8,7 +8,7 @@ One of the most demanted features in any platforms is the ability to capture of 
 
 ![Digital factory](/assets/img/platform/form-index.png)
 
-By logging into the tool, you will be able to see a list of all the forms that are currently active in the account. You will be able to filter by their status (enabled or disabled), by the site where they are deployed, and search by the name of the form.
+Upon entering Forms, you can see a list of all the forms that are currently active in the account. You can filter by their status (enabled or disabled), by the site where they are deployed and search for them by name.
 
 In each row in the forms table, you'll see in the first column the name of the form, then the creation date, and in the last column, the number of responses that have been submitted for that form.
 
