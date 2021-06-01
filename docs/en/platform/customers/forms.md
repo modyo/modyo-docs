@@ -118,7 +118,7 @@ To see a user response in detail, just click on the user name, and you can acces
 
 To modify a form, you must go to the **"Analysis"** section and use the **"Edit"** action in the options menu at the top right.
 
-Once you enter the edit section of a form, you can see 2 sections: a central section, where you can rearrange questions by dragging them in the required order, and the right side section, which has three tabs:
+Once you enter the editing section of a form, you will see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
 
 ### Add field
 This section will allow you to add as many fields that are necessary to complete the form or delete the ones that are not necessary:
