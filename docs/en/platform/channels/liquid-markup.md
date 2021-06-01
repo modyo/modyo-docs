@@ -142,7 +142,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `size` - Return the size of an array or string
 * `slice` - Divide a string. Take a offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
 * `sort` - Sort array items
-* `split` - Split a string into a matching pattern *e.g.* <span v-pre> `{{"a~b" | split: "~"}} #=> ['a', 'b']` </span> 
+* `split` - Split a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 * `strip_html` - Removes html from the string
 * `strip_newlines` - Removes all new lines (\ n) from the string
 * `strip` - Removes all blanks from both ends of the string.
