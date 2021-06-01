@@ -41,8 +41,8 @@ The next section of the form properties contains the Form Options for what happe
 If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
-:::warning Attention
-If a user does not have an active session, and fill out the form, and the email matches one of the user already registered in Modyo, then the response will be associated with the already existing user and a new one will not be created.
+::: warning Warning
+If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
 :::
 
 In the**Notifications** section you can configure the various emails that are sent after a user replies the form.
