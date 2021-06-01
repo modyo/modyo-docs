@@ -58,7 +58,7 @@ Within this section, you can configure the following data:
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
-- **Apple Icon**: Image that appears on mobile devices when you use the site as an app.
+- **Apple icon**: Image that appears on mobile devices when using the site as an application.
 - **Dele**: This option allows you to definitely delete a site and all its elements.
 
 :::danger danger
