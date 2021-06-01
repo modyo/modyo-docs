@@ -4,7 +4,7 @@ search: true
 
 # Navigation
 
-Navigation is the fastest way to put together a list of items to give your users easy access to key points on your site. 
+Navigation is the fastest way to put together a list of elements to give your users easy access to the key points of your site.
 
 ![Navigation builder](/assets/img/platform/navigation-builder.png)
 
