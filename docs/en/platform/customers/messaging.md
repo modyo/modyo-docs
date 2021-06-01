@@ -84,7 +84,7 @@ If you sent the campaign by mail, you can find the following metrics:
 
 - **Reach**: People who receive the campaign.
 - **Deliveries**: Number of times the campaign has been sent.
-- **Sended**: Total number of mails sent.
+- **Sent**: Total number of emails sent.
 - **Open**: Total number of open mails. 
 - **Open uniques**: Total number of users who ever opened the campaign.
 - **Clicks**: Number of times when a link in the campaign has been clicked.
