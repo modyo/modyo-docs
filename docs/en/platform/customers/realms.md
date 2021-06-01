@@ -49,7 +49,7 @@ When you select "Add User", the platform will ask you to complete the following 
 - Last Name: Last name of the user.
 - Second Last Name: user's second last name (optional).
 - User Name: Name within the platform **Required**.
-- Email: User's email **Required**
+- Email: User email **Required**.
 - Password: Password for the user to enter the platform. The password cannot be less than 8 characters. **Required**
 - Password Confirmation: Repeating the password given by the administrator.
 - Tags: Tags that are used to identify the user.
