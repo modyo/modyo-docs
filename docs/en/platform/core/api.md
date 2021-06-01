@@ -48,8 +48,7 @@ If we click on any of these methods, like "Targets List", it shows us a descript
 
 Additionally, you can call the API directly from Swagger filling in the parameters described earlier and then clicking on "Execute". This will invoke the API and deliver the result in the same view.
 
-In the example, the view invokes the URL `https://[account_host]/api/admin/targets` with
-GET and displays the answer in JSON to this _request_:
+In our example, the view will invoke the URL `https://[account_host]/api/admin/targets` with GET and will show us the JSON response to this _request_:
 
 ```json
 {
