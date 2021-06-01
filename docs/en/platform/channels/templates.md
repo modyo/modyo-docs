@@ -4,7 +4,7 @@ search: true
 
 # Templates
 
-One of the most important aspects when creating the site is the base architecture and appearance of the site. In Template Builder, you can modify base templates, along with global JavaScript and CSS to use on your pages and change their structure as required.
+One of the most important aspects of site creation is the base architecture and appearance. In the Template Builder, you can modify the base templates and the global JavaScript and CSS used in your pages. You can also change the structure of these documents according to your requirements.
 
 When you already select the theme that is used within the site, you can access the different pages from the Template Builder to change the codes as you need them.
 
