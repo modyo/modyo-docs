@@ -205,7 +205,7 @@ The options you configure here are:
 - **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
 - **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
 - **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
-- **Alternative**: Secondary address to redirect in case the first fails.
+- **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
 
 :::warning Attention
 Modyo has reserved domains that cannot be used as custom domains of sites:
