@@ -78,8 +78,8 @@ You can add custom snippets at the bottom of the snippets tab, by clicking on th
 In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name (i.e. **"front_css"** or **"library_js"**). Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
 :::
 
-:::tip Tip
-All elements in the Template Builder use Liquid as a template engine.
+::: tip Tip
+All elements of the Template Builder use Liquid as a templating engine.
 
 For more information on what Liquid is and how to get the best out of it, check out the [Liquid Markup] page (/es/docs/channels/liquid-markup.html)
 :::
