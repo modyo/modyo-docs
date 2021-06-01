@@ -296,7 +296,7 @@ To remove a team member, click the checkbox next to their name, and then the **D
 The available roles are:
 
 - **Developer**: Can create, modify and submit pages, widgets, menu and templates for review.
-- **Developer CLI**: You can create, modify and submit to review pages, widgets, menu and templates. You can also push widgets from external applications.
+- **Developer CLI**: Can create, modify and submit pages, widgets, menu and templates for review. Can also push widgets to the platform from external applications.
 - **Reviewer**: You can create, modify, submit to review, and approve pages, widgets, menu and templates, as well as publish them when the review conditions are met.
 - **Admin**: You can create, modify, submit to review and approve pages, widget, menu, and templates. You can publish without going through team review validations. You can also modify the settings of the site.
 
