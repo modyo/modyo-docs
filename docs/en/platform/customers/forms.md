@@ -128,7 +128,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Number**: Allows the user to enter numbers.
 - **Dropdown**: Allows you to add a list of options from which the user may choose one in a dropdown format.
 - **Checkbox**: Allows you to add a list of options from which the user may choose one or more in a checkbox format.
-- **Choice**: Allows you to add options from which the user will be able to choose one in _radio button_ format.
+- **Choice**: Allows you to add a list of options from which the user may choose one in a _radio button_ format.
 - **Date**: Allows you to add a date field in which the user can select one within the allowed range.
 - **Questions anidas**: Allows you to add a number of alternatives that can be nested, so that the user is prompted to select one of the possible nested options within the option you selected.
 
