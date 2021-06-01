@@ -147,7 +147,7 @@ This section allows you to modify the options for each of the questions on your 
 
 All the fields that you can add have a title, which are effectively the questions associated with each answer, they have the option of making that field required to submit the form, and each has a brief description in case instructions are required to answer the field.
 
-Some fields have validations, to ensure that the user meets certain requirements to populate the field, some of these restrictions are:
+Some fields have validations, to ensure the user meets certain requirements to fill in the field, some of those restrictions are:
 
 - **Minimum length**: Length required for text to be valid
 - **Maximum Length**: Maximum length allowed for text to be allowed
