@@ -84,7 +84,7 @@ All elements of the Template Builder use Liquid as a templating engine.
 For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
 :::
 
-In the work area, under the tabs, you will find a bar with useful items:
+In the work area, under the tabs, you will find a bar with useful elements:
 
  <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700"> 
 
