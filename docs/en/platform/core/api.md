@@ -21,7 +21,7 @@ For example, you can find the details of the public content API in the following
 ```http
 https://[account_host]/api/content/docs
 ```
-This way, the public Swagger documentation for the https://un.modyo.be account content API can be found at https://un.modyo.be/api/content/docs. Likewise, you will find the documentation of administrative functions and the user profile respectively at:
+In this way, the public Swagger documentation of the public content API corresponding to the https://un.modyo.be account is found at https://un.modyo.be/api/content/docs. Likewise, the corresponding documentation for administrative functions and the user profile can be found respectively in:
 
 ```http
 https://[account_host]/api/admin/docs
