@@ -71,8 +71,8 @@ Below you will see the main import view. On the left, a table with three main co
 
 In this view, you will proceed to assign each column in the\ *.CSV file to a respective attribute available on the platform.
 
-:::tip Tip
-The minimum attributes required for import are the real name of the user (not to be confused with user name) and his/her email.
+::: tip Tip
+The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
 On the right, in a sidebar, you will see main import settings. Here you can define if the file does not follow one of the common standards of the\ *.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which by default is a comma). A little below is a box indicating whether you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those fields to be imported. Finally, four main import options:
