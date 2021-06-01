@@ -19,7 +19,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft**: This status means a widget is new or is unpublished.
 - **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
 - **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
-- **In Review**: This status appears when [computer hotfix] is enabled (/es/platform/core/key-concepts.html) and the editable version has been sent for revision.
+- **In review**: This status means [team review](/en/platform/core/key-concepts.html) is enabled and this widget is in review.
 - **Approved**: This status appears when [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, the templates are ready to be published.
 
 On the right, these are the different actions:
