@@ -76,7 +76,7 @@ Liquid accepts the following kinds of expressions:
     * Note: if the value of an access expression is also an array or hash, you can access values from it in the same way, and can even combine the two methods. (For example, `site.posts[34].title`.)
 * **Array first and last.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve to its first or last element.
 * **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
-* **Strings.** Literal strings must be surrounded by double or single quotes (``""My String"`` or `'My String'`). There is no difference; no style allows variable interpolation.
+* **Strings.** Literal strings must be surrounded by double or single quotes (``"my string"`` or `'my string'`). There is no difference; neither style allows variable interpolation.
 * **Enters.** Integers cannot be quoted.
 * **Boolean and nil** The literal values `true`, `false`, and `nil`.
 
