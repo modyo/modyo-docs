@@ -77,7 +77,7 @@ Liquid accepts the following kinds of expressions:
 * **Array first and last.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve to its first or last element.
 * **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
 * **Strings.** Literal strings must be surrounded by double or single quotes (``"my string"`` or `'my string'`). There is no difference; neither style allows variable interpolation.
-* **Enters.** Integers cannot be quoted.
+* **Integers.** Integers must not be quoted.
 * **Boolean and nil** The literal values `true`, `false`, and `nil`.
 
 Note that there is no way to write a literal array or hash as an expression; arrays and hashes must be passed to the template, or constructed obliquely with a tag or output statement.
