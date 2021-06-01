@@ -204,7 +204,7 @@ The options you configure here are:
 - **Host**: This name designates where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
 - **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
 - **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
-- **Primary domain**: Site address.
+- **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
 - **Alternative**: Secondary address to redirect in case the first fails.
 
 :::warning Attention
