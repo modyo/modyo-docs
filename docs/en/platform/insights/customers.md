@@ -14,7 +14,7 @@ The available filters are:
 
 **Active users**: Total users with two or more activity records in the selected period.
 
-**Activiti**: Corresponds to login count, form responses, open emails, emails notified as spam, open notifications.
+**Activity**: Corresponds to the total login count, form responses, open emails, emails notified as spam, and open notifications.
 
 **Logins**: Corresponds to the count of all user logins.
 
