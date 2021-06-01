@@ -68,7 +68,7 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/7.png)
 
-    This will take you back to the "Copy this report" window. 
+    This will take you back to the "Copy this report" window. 
 
 5. Create Google Search Console fonts
 
