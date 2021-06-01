@@ -124,7 +124,7 @@ The purpose of the manifest is to indicate how you want a browser to display you
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages on which the PWA is developed, through the [Template Builder](/es/platform/channels/templates.html), in the snippet ```head```.
+The manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the ```head``` snippet.
 
 You can create and modify the manifest in the following field, allowing you to add each of the changes without having to leave the view.
 
