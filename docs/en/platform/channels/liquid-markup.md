@@ -173,7 +173,7 @@ Tags (tags) are used for template logic. Here is a list of currently supported t
 
 ### Comments
 
-Any content that is written between the tags `{% comment%}` and `{% endcomment%}` will be converted to a comment.
+Any content that is written between the tags `{% comment %}` and `{% endcomment %}` will be converted to a comment.
 
 ```liquid
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
