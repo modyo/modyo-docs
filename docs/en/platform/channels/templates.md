@@ -215,7 +215,7 @@ Modyo has three default layouts:
 * **Base**: All pages except the home page use this default layout.
 * **Error**: The error views use this clean layout (404, 401)
 
-You can create new Layouts from the template builder by clicking "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on pages.
+You can create new Layouts from the template builder, by clicking on "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on the pages.
 
 You can use as a base, this code that contains everything you need for your pages to use all the necessary elements of the site, such as head, header, footer, service worker and Google Tag Manager settings, but keep in mind that you can modify it as much as you want:
 
