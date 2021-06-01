@@ -96,7 +96,7 @@ Steps to connect your data to a Google Data Studio template:
 
 **Still have questions?**
 
-Do not hesitate to contact us so we can help you.
+If you still have any questions, please feel free to send us a message so that we can help you out.
 
 
 
