@@ -183,8 +183,8 @@ It is common to have linked files in the Custom CSS. To link a file, click the b
 
 However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
 
-:::tip Tip
-If you're having problems with keyboard codes when you're editing CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
+::: tip Tip
+If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
 :::
 
 ### Post Office
