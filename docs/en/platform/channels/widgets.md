@@ -8,7 +8,8 @@ Widgets allow you to create encapsulated _micro frontends_ for your sites and ap
 
 When you enter the **Widgets** section of any site or channel, you see a list of all the widgets in that channel. In the top bar, you can filter the list of widgets by status, author or tags, or search for any widget by either its name or tags.
 
-In the upper right corner there is a main button **+ New** that allows you to create a new widget. To do this, you must enter a name and then enter the edit view of the widget.
+In the upper right corner you can select the **+ New** primary button to create a new widget. Give the widget a name, then click Create to begin building your widget.
+
 
 In the edit view of the widget, you can see the top action bar, the workspace, and the properties column.
 
