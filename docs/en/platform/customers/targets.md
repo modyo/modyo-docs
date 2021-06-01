@@ -43,8 +43,8 @@ To save a target, click on the **Save as a Target** button at the bottom of the 
 
 To see the users that match your target filters, click on the **Apply** button. This opens a [User](/en/platform/customers/users.html) list that displays all users that fit your filters.
 
-:::tip Tip
- It is necessary that each customer's file is complete, since each of the data that appears on it, can be taken into account to better segment. If the tab is not complete or the customer data to filter is not available, it will not be added to the target.
+::: tip Tip
+When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
 :::
 
 ### Filters
