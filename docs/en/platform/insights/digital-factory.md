@@ -30,7 +30,7 @@ You will see five boxes that will represent the number of items created, edited,
 
 **Approved**: Number of times the restrictions of the team review are met and an item is ready to be published.
 
-**Publiced**: Account each time an item is published, either on a site or space without team review (direct posting), or through team review, or also, through the "force publication" action of administrators.
+**Published**: Number of times an item is published, either on a site or space without team review (direct publication), or through team review, or also, through the "force post" action of the administrators.
 
 Next to each main counter, you'll see an up (green) or down (red) indicator that represents whether the ratio between the current and previous period increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
