@@ -34,8 +34,8 @@ You can select any of these values to compare:
 - **Email opened**: Total emails opened in campaigns.
 - **Email spam report**: Total spam notifications sent by users receiving emails from your campaigns.
 - **Form response created**: Total count of all Modyo form responses.
-- **Login**: Corresponds to the count of all user logins.
-- **Open Notification**: Corresponds to the count of all user notification message openings.
+- **Login**: Total count of all user logins.
+- **Notification opened**: Total number of times users opened notification messages.
 
 ### Recent Campaigns
 
