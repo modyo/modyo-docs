@@ -214,7 +214,7 @@ The available Boolean operators are:
 
 Note that there is NO "no" operator, and you CANNOT use parentheses to control the order of operations, as the precedence of each operator will appear unspecified. When in doubt, use nested "if" statements.
 
-Liquid expressions are tested to determine their "truthfulness" in what appears to be a Ruby form:
+Liquid expressions are tested to determine their "truthiness" in similar to Ruby:
 
 * `true` is true
 * `false` is false.
