@@ -174,7 +174,7 @@ If you want to temporarily change the template when sending a new campaign, it i
 
 ### Edit Templates
 
- <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 To make a template, you must first click on the **+ New** button at the top of the page.
 
