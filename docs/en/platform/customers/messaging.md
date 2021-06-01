@@ -47,7 +47,7 @@ This opens a form that you must fill out with the following information:
 - **Name**: Name that the campaign will have.
 - **Type**: Format that the campaign will have (Mailing or Notification).
 - **Subject**: Text that appears in the subject line that users receive.
-- **Reply to**: Email address people can respond to ** (Mail campaigns only) **
+- **Reply to email**: Email address to which people can reply **(Only for mailing campaigns)**
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) that will be used to send an email. If one is not selected, it will send to a blank template. **(For email campaigns only)**
 - **Enable targetication**: Checkbox to select a target to send the campaign. If left blank, the campaign will be sent to all users.
 
