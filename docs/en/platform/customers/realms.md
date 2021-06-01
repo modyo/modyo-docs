@@ -204,7 +204,7 @@ What this section allows is to enable, disable and customize the sending of auto
 - Waiting for approval: Sent once the user has been confirmed, but you must wait for manual activation from an administrator.
 - Custom footer: Custom footer for all the emails described above.
 
-To enable or disable the sending of these emails, simply click the **Enabled/Disabled** button on the side of each feature and click on the**Save** button.
+To enable or disable the sending of these emails, we just have to click on the **Enabled/Disabled** button next to each function and click on the **Save** button.
 
 #### Customize emails
 
