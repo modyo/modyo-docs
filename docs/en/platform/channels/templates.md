@@ -171,7 +171,7 @@ You can freely choose the name of each view, regardless of the space and content
 
 When modifying a custom view, you can use Liquid and the `entry` object. For example: <span v-pre>`{{ entry.published_at | format_date }}`</span>
 
-A basic example of Liquid+HTML code you can use in these views is:
+A basic example of Liquid + HTML code that you can use to get started in these views is:
 
 ```html
 <div>
