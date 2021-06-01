@@ -70,7 +70,7 @@ In addition, you will find a drop-down menu that will take you to four sections:
 <img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Message Editor**: Allows you to edit the message before sending it.
-- **Send test**: Send a test email with the campaign to a particular address.
+- **Send test**: Send a test email with the campaign to a specific address.
 - **Editor**: Allows you to edit campaign properties, including technical aspects such as shipping address and targets to receive.
 - **Dele**: Delete the entire campaign.
 
