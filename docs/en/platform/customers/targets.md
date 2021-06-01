@@ -60,7 +60,7 @@ The filters found by default in the platform are:
 - Device
 - Delivered mail
 - Mail reported as spam
-- Count of responses to forms
+- Form response count
 - Gender
 - Last login date
 - Log count
