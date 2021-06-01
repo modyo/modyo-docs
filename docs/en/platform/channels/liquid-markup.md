@@ -37,7 +37,7 @@ Liquid is a template engine which was written with very specific requirements:
 
 There are two types of markup in Liquid: Output and Tag.
 
-* The Output markup (which can be translated into text) is inserted between
+* Output markup (which may resolve to text) is surrounded by
 
 ```liquid
 {{ matched pairs of curly brackets (ie, braces) }}
