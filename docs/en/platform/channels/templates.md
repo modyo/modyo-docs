@@ -124,7 +124,7 @@ You can reset all templates to their original version by clicking on the seconda
 
 In this view you can see what theme you have installed and a list of all the installed themes on the site.
 
-By clicking on the **Use** button of an installed theme, you replace all the content of your editable themes with the content of the theme you are using. You can preview the changes using Template Builder's preview mode and then publish them to bring that new theme to the published site.
+By clicking on the **Use** button of an installed theme, you replace the content in all your editable themes with the content of the new theme you are using. You can preview these changes using the Template Builder preview mode and then publish them to use the new theme in the published site.
 
 At the top you can find different actions:
 
