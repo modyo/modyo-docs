@@ -4,7 +4,7 @@ search: true
 
 ## User Profile
 
-The user profile is the central place where users can find different account sites, notifications, and view to modify their profile such as their name, email, custom fields and their subscription to email campaigns.
+The user profile is the central place where users can find the various sites in the account, notifications and view or modify their profile such as their name, email, custom fields and their subscription to mail campaigns.
 
 ### Sites
 
