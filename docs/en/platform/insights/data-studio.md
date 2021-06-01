@@ -92,7 +92,7 @@ Steps to connect your data to a Google Data Studio template:
 
     Once all of the new data sources have been created double-check that the new sources are mapped to the corresponding original data source.
 
-    To finish, click on "Copy Report"
+    To finish, click on "Copy Report".
 
 ** Do you still have questions? **
 
