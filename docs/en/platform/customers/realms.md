@@ -65,7 +65,7 @@ This user creation view may contain more fields depending on the configuration o
 
 The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, and through the search bar above the table you can filter by the file name.
 
-To make a new import, you must click on the top right button **Import**. This will open a modal which allows you to select and upload the\ *.CSV file that has the user list and its attribute. It is important to leave the box selected that the file contains headers or column names if so, or the headers will attempt to be included as a new user. Then you proceed to click on the**Accept** button.
+To make a new import, click on the upper right **+ Import** button. This opens a window where we can select and upload a local \*.CSV file that has a list of users and their attributes. It is important to check the box that indicates whether the file contains column headers or names, otherwise the headers themselves will be registered as a new user. Click **Accept** when ready.
 
 Below you will see the main import view. On the left, a table with three main columns appears, the first contains the name of the imported column header (if it exists), the second some examples of the data contained in that column, and the third a selector. This selector performs the respective assignment of the imported value to the user's attribute on the platform.
 
