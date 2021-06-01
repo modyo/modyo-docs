@@ -75,7 +75,7 @@ The filters found by default in the platform are:
 - Form responses
 - Order Completed
 - Order failed
-- Confirming order
+- Order confirming
 - Paid order
 - Order paying
 - Order rejected
