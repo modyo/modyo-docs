@@ -13,9 +13,9 @@ Liquid is a template engine which was written with very specific requirements:
 ### Why use Liquid?
 
 * You want to allow your users to edit the appearance of your application but don't want them to run **insecure code on your server**.
-* You want to render your templates directly from the database.
-* You like smart style template engines (PHP).
-* You need a template engine that works well in both HTML and emails.
+* You want to render templates directly from a database.
+* You like smarty (PHP) style template engines.
+* You need a template engine which does HTML just as well as emails.
 * You don't like the markup of your current template engine.
 
 ### What does Liquid look like?
