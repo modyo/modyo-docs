@@ -366,23 +366,23 @@ Similar to the previous example, the _response_ will look as follows
 
 ```json
 {
- "deliveries": [{
- "id": 29,
- "uid": "b728b957-78e5-4e2d-b28d-8e699a665a2c",
- "campaign_id": 15,
- "starts_at": "2019-07-15T 17:05:12 .000- 03:00 ",
- "ends_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "sent_count": 1078,
- "reach" ፦1,
- "status": "completed",
- "target_list": "—"
- }],
- "goal": {
- "total_entries": 1,
- "per_page": 10,
- "current_page": 1,
- "total_pages": 1
- }
+    "deliveries": [{
+        "id": 29,
+        "uuid": "b728b957-78e5-4e2d-b28d-8e699a665a2c",
+        "campaign_id": 15,
+        "starts_at": "2019-07-15T17:05:12.000-03:00",
+        "ends_at": "2019-07-15T17:05:20.000-03:00",
+        "sent_count": 1078,
+        "reach": -1,
+        "status": "completed",
+        "target_list": "--"
+    }],
+    "meta": {
+        "total_entries": 1,
+        "per_page": 10,
+        "current_page": 1,
+        "total_pages": 1
+    }
 }
 ```
 
