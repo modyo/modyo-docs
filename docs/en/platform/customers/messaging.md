@@ -95,7 +95,7 @@ If you sent the campaign as a Notification, these are your metrics:
 
 - **Reach**: People who receive the campaign.
 - **Deliveries**: Number of times the campaign has been sent.
-- **Sended**: Number of notifications sent.
+- **Sent**: Number of notifications sent.
 - **Open**: Number of open notifications.
 
 
