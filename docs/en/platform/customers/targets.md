@@ -16,7 +16,7 @@ The list is sorted as follows.
 
 - Name: The particular name that has the list. (under this are the filters that compose it).
 - Created on: Target creation date.
-- People: Number of users belonging to the target.
+- People: Number of users that within the target.
 
 In addition, on the far left you will find a button with a drop-down menu that allows you to run the following options:
 
