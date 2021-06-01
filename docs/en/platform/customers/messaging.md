@@ -94,7 +94,7 @@ If you sent the campaign by mail, you can find the following metrics:
 If you sent the campaign as a Notification, these are your metrics:
 
 - **Reach**: People who receive the campaign.
-- **Shipments**: Number of times the campaign was sent.
+- **Deliveries**: Number of times the campaign has been sent.
 - **Sended**: Number of notifications sent.
 - **Open**: Number of open notifications.
 
