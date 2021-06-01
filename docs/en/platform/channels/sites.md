@@ -347,7 +347,7 @@ Along with the above, keep in mind that if you are importing a redirect with an 
 The precedence of locations on Modyo sites is as follows:
 
 1. [Default views (Home, search)](/es/platform/channels/templates.html)
-1. [Pages](/es/platform/channels/pages.html)
+1. [Pages](/en/platform/channels/pages.html)
 1. [Custom Content Views](/es/platform/channels/templates.html #vistas -for-content)
 1. Custom Redirects
 1. [Site 404 Error Settings](/es/platform/channels/sites.html #restricciones)
