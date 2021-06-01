@@ -199,7 +199,7 @@ What this section allows is to enable, disable and customize the sending of auto
 - Imported user: Sent once the user was imported
 - Welcome email: Sent after completing a user registration at a specific site.
 - Added by administrator: Sent once the administrator created the user manually.
-- Password Recovery: Sent when the user requested to recover their password.
+- Password recovery: Sent when the user requested to recover their password.
 - Confirmation: Sent once the user was confirmed and activated.
 - Waiting for approval: Sent once the user has been confirmed, but you must expect manual activation from an administrator.
 - Custom Footer: Custom Footer for all emails described above.
