@@ -222,7 +222,7 @@ Each time a code change is made, click on the **Save** button at the top of the 
 
 ### Identity Providers
 
-To simplify the entry to the platform, it is possible to configure your entry and registration through certain standard services.
+To simplify logging into the platform, it is possible to configure your login through the APIs of certain services that allow universal logins.
 
 The services compatible with admission to Modyo are:
 
