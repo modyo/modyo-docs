@@ -108,7 +108,7 @@ style="display:none;visibility:hidden">
 {% endif %}
 ```
 
-With this ready, when there is a value associated with the **Google Tag Manager Identifier** field in the Site's General settings, the scripts will be automatically injected and you can start creating events in Google Tag Manager to record your users' actions.
+With this ready, when there's a value associated with the **Google Tag Manager Identifier** field in the General site settings, the scripts will be automatically injected and you'll be able to start creating events in Google Tag Manager to record your users' actions.
 
 ### PWA
 
