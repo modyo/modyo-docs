@@ -369,41 +369,42 @@ The tasks you must cover with these snippets are:
 
 ### Intercept requests to include a token
 
-```js
-//global variable that will represent an instance of axios that will be responsible for making requests for services
-var axios_api = axios.create ();
- axios_api.defaults.baseURL = 'API URL';
+``` js
+//global variable that represents an axios instance that will be in charge of making the service requests
+var axios_api=axios.create ();
+  axios_api.defaults.baseURL='API URL';
 }
-//global variable that will represent an axios instance that will be responsible for making modyo api requests
+//global variable that will represent an instance of axios that will be responsible for making the requests of the modyo api
 var axios_modyo=axios.create ({
- BaseUrl: Window.baseUrl + '/api/admin',
+  baseURL: window.baseUrl + '/api/admin',
 });
-//global variable that will represent an axios instance that will be responsible for making requests for site content json
+//global variable that represents an instance of axios that will make the requests of the site content jsons
 var axios_modyo_json=axios.create ({
- BaseUrl: {{site.url}},
+  baseURL: {{site.url}},
 });
-//global variable that will represent an axios instance that will be responsible for making requests related to authentication
-var axios_auth = axios.create ();
-axios_auth.defaults.baseURL = window.baseUrl + '/auth/openidc';
+//global variable that represents an axios instance that will be responsible for making authentication-related requests
+var axios_auth=axios.create ();
+axios_auth.defaults.baseURL=window.baseUrl + '/auth/openidc';
 //function that generates activity on the site with each authentication request
-var resetIdleTime = function (request) {
- SessionManager.resetidleTime ();
- return request;
+var resetIdleTime=function (request) {
+  sessionManager.resetIdleTime ();
+return request;
 }
 //function that adds the token to each request
-var appendTokentoRequest=Function (request) {
- return axios_auth.get ('/access_token') .then (function (response) {
- request.headers.authorization='bearer '+ response.data.access_token;
- return request;
- }
+var appendTokenToRequest=function (request) {
+return axios_auth.get ('/access_token'). then (function (response) {
+request.headers.authorization='Bearer' + response.data.access_token;
+return request;
 }
-//function that handles errors for each of the requests and sends them to a higher instance
-var errorRequest=Function (error) {
- throw error;
 }
-axios_auth.interceptors.request.use (ReseTidleTime);
-axios_api.interceptors.request.use (AppendTokentoRequest, ErrorRequest);
+//function that handles the errors of each of the requests and sends them to a higher instance
+var errorRequest=function (error) {
+  throw error;
+}
+axios_auth.interceptors.request.use (resetIdleTime);
+axios_api.interceptors.request.use (appendTokenToRequest, errorRequest);
 ```
+
 
 ### A session handler
 
