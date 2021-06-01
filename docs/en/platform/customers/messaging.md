@@ -63,7 +63,7 @@ When you do this, your campaign is saved and you will get to the Campaign Status
 
 The Campaign Status view allows you to not only send a campaign, but also review the campaign metrics that will allow you to see the performance of the content you sent.
 
-At first glance, you will find at the top of the screen the**Preview** button, which allows you to see the email you will send.
+You can use the **Preview** button at the top of the screen, to review the email messaging and layout of your campaign.
 
 In addition, you'll find a drop-down menu that will take you to four sections:
 
