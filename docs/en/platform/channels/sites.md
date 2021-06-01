@@ -190,7 +190,7 @@ Restrictions allow you to configure the privacy of your site.
 
 - If the privacy level is set to public, then it is visible to everyone.
 - If the privacy level is set to private, then this site is only visible to users with an active session (authenticated login).
-- If the site is private, but the home is public, the home is shown to everyone who arrives at the Home, but when navigating to any other page on the site, they are prompted to register or sign in.
+- If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
 - If you reach a URL that does not exist within the site, by default you will find a 404 response, but if you check this option, instead of receiving a 404, you will be redirected to the Site Home.
 
 ### Domains
