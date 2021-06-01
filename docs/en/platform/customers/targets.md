@@ -27,7 +27,7 @@ In addition, on the far right you will find an "Action" button with a drop-down 
 If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the target.
 :::
 
-If you need to search for a target by specific name, you can do so through the search bar at the top of the screen.
+If you need to search for a specific target by name, you can do so through the search bar at the top of the screen.
 
 ## Create a Target
 
