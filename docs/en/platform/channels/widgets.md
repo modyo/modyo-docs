@@ -101,7 +101,7 @@ In the variables tab you can see the list of variables created in the widget, an
 
 Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts.html#global-variables).
 
-By modifying a variable, you can decide which name and default value that variable will take in the widget. In addition, you can decide whether you want to make a list of values available so that when you instantiate the widget on a page, you can choose between these different values. 
+When modifying a variable, you can choose the name and default value that the variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when you instantiate the widget on a page, you can choose from these different values.
 
 When you use the list of possible values, you must leave each value in a new line, and leave a `*` before the value you want to be taken as the default value.
 
