@@ -171,7 +171,7 @@ Its four main sections are:
 - **Email Notifications**
 
 The **General** section adds two options:
-- **Send button text**: Allows you to customize the text associated with the **Submit** button on the form.
+- **Send button text**: Allows you to customize the text associated with the **Send** button on the form.
 - **Enabled**: Allows you to determine whether or not users will be able to respond to the form. If the option is checked, then you will be able to access and answer the form, if it is not enabled, then users will not see it and will not be able to answer it.
 
 The **Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
