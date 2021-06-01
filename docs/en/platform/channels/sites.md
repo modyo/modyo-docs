@@ -30,7 +30,7 @@ In the site index, you will only be able to see sites where you are part of the 
 
 You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
 
-If you want to publish multiple items in one step, you must press the "Publish" button from the pages, navigation, widgets or templates and you must mark in the list all the items you want to publish and then press the button to publish again.
+If you want to publish multiple elements in a single step, click the "Publish" button on pages, navigation, widgets or templates and just mark all items you want to publish in the list and then press the publish button.
 
 :::warning Attention
 All items that have pending changes to be published will appear in the listing, so if any item does not appear in the listing, it is very likely that you do not have any changes to publish yet.
