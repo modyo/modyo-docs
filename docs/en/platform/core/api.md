@@ -16,7 +16,7 @@ Modyo facilitates this task, making the description of your _headless_ API avail
 
 Each list of services is automatically displayed in your Modyo account by visiting the corresponding URL with your browser.
 
-For example, you'll find the detail of the public content API in the following path:
+For example, you can find the details of the public content API in the following route:
 
 ```http
 https://[account_host]/api/content/docs
