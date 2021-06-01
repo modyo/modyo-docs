@@ -167,7 +167,7 @@ Its four main sections are:
 
 - **General**
 - **Form Snippet**
-- **Options**
+- **Form Options**
 - **Notifications**
 
 The**General** section adds two options:
