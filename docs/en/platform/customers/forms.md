@@ -105,7 +105,7 @@ By clicking on the answer counter of a form, you will arrive at a view listing a
 You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
 ::: danger Danger
-You can delete responses one by one by using the action to the right of each response, or by using the bulk actions, selecting multiple responses and then the**Dele** button at the bottom of the list. Please note that this action is irreversible and once a response has been deleted, it cannot be recovered.
+You can delete responses one by one using the action to the right of each answer, or by using the actions selection that appears at the bottom, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that deleting is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
 To see a user's answer in detail, simply click on the user's name, and you will access the list of questions next to the answers that user sent on that particular occasion.
