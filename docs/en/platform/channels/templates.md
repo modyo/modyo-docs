@@ -147,7 +147,7 @@ When you create a theme from a site or channel, that theme becomes available to 
 In the views section, you will find 4 error types available for customization:
 
 * **Disabled**: You will see this error view if the site you are trying to access has been [disabled](/en/platform/channels/sites.html).
-* **404**: You will see this view if you enter a site URL that is not defined and if in the [site restrictions] settings (/es/platform/channels/sites.html #restricciones) you decide to display the 404 and not redirect to the home page.
+* **404**: You will see this view if you enter a site URL that is not defined and if you decide to show 404 errors in the [site restrictions](/en/platform/channels/sites.html#restrictions) instead of redirecting to the home page.
 * **Privacy**: You will see this error view if you don't have permissions to access [site](/es/platform/channels/sites.html #restricciones) or one of its [pages](/es/platform/channels/pages.html #privacidad).
 * **Template**: You will see this error view when the page of the site you are loading has a liquid syntax error. You're unlikely to see this view, since modyo 8.1 onwards we have a functionality that checks the liquid syntax before you can save and publish changes to the template builder.
 
