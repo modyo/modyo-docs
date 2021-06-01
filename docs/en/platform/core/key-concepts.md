@@ -16,7 +16,7 @@ When an editor or developer feels that the item he is working on is ready, he ca
 
 This task can be performed by users enabled by default or by a team chosen by the editor.
 
-They will be responsible for approving or rejecting the item, and finally determine whether it is already in a position to be published.
+They will be responsible for approving or rejecting the item, and will ultimately determine whether it is ready to be published.
 
 Each step in this process leads the item through different states, which are recorded in a history for subsequent audit.
 
