@@ -42,19 +42,13 @@ DELETE   /targets/{id}           Delete a Target
 POST     /targets/apply_filters  Create a temporary target
 POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
 ```
-El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que
-realiza.
+El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que realiza.
 
-Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra
-una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y
-`order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro.
+Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y `order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro.
 
-Adicionalmente podrás consultar la API directamente desde la vista en Swagger completando los parámetros antes
-descritos y luego clickeando en "Execute", el que invocará al API y te entrega el resultado en la
-misma vista.
+Adicionalmente podrás consultar la API directamente desde la vista en Swagger completando los parámetros antes descritos y luego clickeando en "Execute", el que invocará al API y te entrega el resultado en la misma vista.
 
-En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/targets` con
-GET y muestra la respuesta en JSON a este _request_:
+En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/targets` con GET y muestra la respuesta en JSON a este _request_:
 
 ```json
 {
