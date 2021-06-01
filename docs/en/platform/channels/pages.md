@@ -56,8 +56,8 @@ Once the copying action is complete, you will be directed to the new page. Remem
 :::
 
 **Secondary Actions**:
-- Force Publishing: If you are an administrator of the site, then you can view and use this option that allows you to publish the page at any time, even skipping the team review.
-- Unpublish: If the page is published, then you see this action that allows you to unpublish the page.
+- Force publish: If you are a site administrator, then you have the option to publish pages at any time, including skipping the team review process.
+- Unpublish: If the page is published, then you will see this action and can unpublish the page.
 
 ![Page builder](/assets/img/platform/page-builder.png)
 
