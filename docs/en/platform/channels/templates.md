@@ -96,7 +96,7 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 **Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
 
- <img src="/assets/img/channels/template_builder/keywords.jpg" width="400"> 
+<img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
 
 **Snippets**: A list of all snippets is displayed next to the option to copy your referral code.
 
