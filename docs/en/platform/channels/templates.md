@@ -114,9 +114,8 @@ If you publish a new version of your templates, this list of changes resets and 
 Saved states exist for every template. This means that while some templates may have changes, others may not. Selecting a previous saved state of any individual template only affects that template and not any of the other templates.
 :::
 
-:::tip Tip
-If you reset a version prior to the editable version, you will be able to access the sub-versions of each template of that version. 
-You can learn more about the [versioned here]. (/platform/core/key-concepts.html #versionado)
+::: tip Tip
+If an earlier version of your templates is restored, you can access the saved states of each template of that restored version. You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning)
 :::
 
 Like each template, you can restore all templates to their original version by clicking on the secondary action in the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> Restore All". For those changes to take effect, you must publish the templates.
