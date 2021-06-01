@@ -748,7 +748,7 @@ side_left_three_cols_grid:
   - col3_widgets
 ```
 
-### Drops by customers
+### Customers drops
 The drops available for customers are:
 
 ```
