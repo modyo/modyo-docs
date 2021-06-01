@@ -338,7 +338,7 @@ In this example, the `posts` and `place` types share the _title_, _excerpt_ and 
 
 ## Integrations
 
-### Handling private session using OpenID Connect (OIDC)
+### Private session management using OpenID Connect (OIDC)
 
 The recommended method for interacting with a private API using the Modyo session with an OIDC integration consists basically of two steps:**make the private site** and **enable account-level integration**.
 
