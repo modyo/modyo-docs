@@ -224,7 +224,7 @@ Each time a code change is made, click on the **Save** button at the top of the 
 
 To simplify logging into the platform, it is possible to configure your login through the APIs of certain services that allow universal logins.
 
-The services compatible with admission to Modyo are:
+The services compatible with logging into Modyo are:
 
 - Facebook
 - Google
