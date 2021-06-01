@@ -80,33 +80,33 @@ In the Campaign Status view, you can find campaign statistics.
 If you haven't sent the campaign yet, the values will appear at zero.
 :::
 
-If you mailed the campaign, you can find the following numbers:
+If you sent the campaign by mail, you can find the following metrics:
 
-- **Scope**: People to whom the campaign reaches.
-- **Shipments**: Number of times the campaign has been sent
-- **Sended**: Total number of mails sent.
-- **Open**: Total number of open mails. 
-- **Open uniques**: Total number of users who ever opened the campaign.
-- **Clicks**: Number of times when a link in the campaign has been clicked.
-- **One Clicks**: Number of users who have ever clicked on the campaign.
-- **Spam**: Number of users that your email reached the Spam box.
+- **Reach**: People who receive the campaign.
+- **Deliveries**: Number of times the campaign has been sent.
+- **Sent**: Total number of emails sent.
+- **Open**: Total number of open mails.
+- **Unique openings**: Total number of unique users who opened the campaign.
+- **Clicks**: Number of times in which a link in the campaign has been clicked.
+- **Unique clicks**: Number of unique users who have clicked on a link in the campaign.
+- **Spam**: Number of users whose mail reached the Spam box.
 
-Instead, if you sent the campaign by Notification, you can find these numbers:
+If you sent the campaign as a Notification, these are your metrics:
 
-- **Scope**: People to whom the campaign reached.
-- **Shipments**: Number of times the campaign was sent.
-- **Sended**: Number of notifications sent.
+- **Reach**: People who receive the campaign.
+- **Deliveries**: Number of times the campaign has been sent.
+- **Sent**: Number of notifications sent.
 - **Open**: Number of open notifications.
 
 
-Below you will be able to see the [Targets](/es/platform/customers/targets.html) to which the campaign was reached. If this section does not appear, it means that the campaign was sent to all contacts.
+Below you can see the [Targets](/en/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
 
-Finally you can find a table with all the campaign submissions, which you can sort ascending or descending according to the following columns:
+At the bottom you can find a table with all the campaign deliveries, which you can sort in ascending or descending order according to the following columns:
 
 
-- **Date**: The day and time the shipment was made.
-- **Targets**: Targets to which the specific shipment was made.
-- **Scope**: Number of people who received the shipment.
+- **Date**: Day and time the delivery was made.
+- **Targets**: Targets to which the specific delivery was made.
+- **Scope**: Number of people who received the delivery.
 - **Sended**: Number of mails/notifications sent.
 - **Status**: The condition in which the shipment is located. There can be four: Completed, Pending, Failed, or Cancelled.
 

@@ -4,33 +4,33 @@ search: true
 
 # Administration API
 
-In addition to the functionality provided by Modyo's Back End, the platform has an administrative API. This allows you, in an authenticated way, to external access to different actions such as listing, creating and deleting items such as forms, layouts, content, creating custom fields, navigation menus, sending mail campaigns, among others.
+In addition to the functionality that is provided by the Modyo Back End, the platform has an administrative API that, when authenticated, gives you external access to different actions such as listing, creating and deleting elements such as forms, layouts, content, etc. You can also create custom fields, navigation menus, send email campaigns, among others.
 
-In this way, it is possible to perform administrative tasks by consuming the API and without relying on the Modyo interface, which gives you greater freedom to control your work.  
+In this way, it is possible to perform administrative tasks consuming the API without having to depend on the Modyo interface, which gives you greater freedom to control the way you work with Modyo.
 
 ## Exploring the API
 
-To start taking advantage of the Modyo API, it is important first to know what services you have, what operations you can invoke, and how to use them.
+To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked and how to use them.
 
-Modyo facilitates this task by providing the description of its _headless_ API by using Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their role: administrative, public content, and user profile.
+Modyo facilitates this task, making the description of your _headless_ API available through the use of Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their functionality: administrative functions, public content and user profile.
 
-Each list of services is automatically deployed to your Modyo account, logging into your browser when you visit the appropriate URL.
+Each list of services is automatically displayed in your Modyo account by visiting the corresponding URL with your browser.
 
-For example, you'll find the detail of the public content API in the following path:
+For example, you can find the details of the public content API in the following route:
 
 ```http
 https://[account_host]/api/content/docs
 ```
-This way, the public Swagger documentation for the https://un.modyo.be account content API can be found at https://un.modyo.be/api/content/docs. Likewise, you will find the documentation of administrative functions and the user profile respectively at:
+In this way, the public Swagger documentation of the public content API corresponding to the https://un.modyo.be account is found at https://un.modyo.be/api/content/docs. Likewise, the corresponding documentation for administrative functions and the user profile can be found respectively in:
 
 ```http
 https://[account_host]/api/admin/docs
 https://[account_host]/api/profile/docs
 ```
 
-In each documentation view you can find the details of the various resources that Modyo provides you and the operations you can perform on them.
+In each documentation view you will find the details of the different resources that Modyo provides and the different operations you can perform on them.
 
-For example, the Administrative API (/api/admin/docs) displays different sections, such as "Locks", "Layout pages", "Email templates" or "Targets". If you focus on the latter, you see that it has a list of operations that it performs on the application's targets:
+For example, the Administrative API (/api/admin/docs) displayes different sections, such as "Locks", "Layout pages", "Email templates" or "Targets". If we focus on the latter, we can see that this section has a list of operations that we can perform on the targets of the application:
 
 ```http
 Targets
@@ -42,19 +42,13 @@ DELETE   /targets/{id}           Delete a Target
 POST     /targets/apply_filters  Create a temporary target
 POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
 ```
-The list shows for each operation, the HTTP method, the route and the description of what
-performs.
+The list shows us the HTTP method for each operation, the route and the description of what it does.
 
-If you click on any of these methods, for example "Targets List", it shows
-a section with the parameters that can be used when invoking it, in this case `query, `sort_by` and
-`order, its data types and a field to enter a test value for each parameter.
+If we click on any of these methods, like "Targets List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types and a field to enter a test value for each parameter.
 
-Additionally, you will be able to query the API directly from the Swagger view by completing the parameters before
-described and then clicking on "Execute", which will invoke the API and gives you the result in the
-same view.
+Additionally, you can call the API directly from Swagger filling in the parameters described earlier and then clicking on "Execute". This will invoke the API and deliver the result in the same view.
 
-In the example, the view invokes the URL `https://[account_host]/api/admin/targets` with
-GET and displays the answer in JSON to this _request_:
+In our example, the view will invoke the URL `https://[account_host]/api/admin/targets` with GET and will show us the JSON response to this _request_:
 
 ```json
 {
