@@ -37,7 +37,7 @@ All the elements with changes that have not been published will appear in the li
 
 If you have team review enabled, only the items that are already approved will appear in the list.
 
-If you need to quickly publish an item, admin users can skip the approval process using the "Force Publish" option allowing the item to move directly to the publication view.
+In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force publish" option, allowing the element to go directly to the published view.
 :::
 
 ## Setting up a Site
