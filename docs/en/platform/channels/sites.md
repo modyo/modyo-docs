@@ -26,7 +26,7 @@ After that, you can see it with the status "Enabled", which means that it is onl
 In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
-## Joint review and publication
+## Review and joint publication
 
 You can review and publish multiple items of a site in a single view. To review the differences for an item, select the item from the left listing, and the differences between the editable and published version will appear in the right section of the view.
 
