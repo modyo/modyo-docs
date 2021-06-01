@@ -293,7 +293,7 @@ You can modify the role of any of team member by clicking their name. In the mod
 
 To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
-The roles available are:
+The available roles are:
 
 - **Developer**: You can create, modify and submit to review pages, widgets, menu and templates.
 - **Developer CLI**: You can create, modify and submit to review pages, widgets, menu and templates. You can also push widgets from external applications.
