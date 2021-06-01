@@ -71,7 +71,7 @@ Liquid accepts the following kinds of expressions:
 * **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
     * `my_variable[<KEY EXPRESSION>]` — The name of the variable, followed immediately by square brackets containing a key expression.
         * For arrays, the key must be a literal integer or an expression that resolves to an integer.
-        * For hashes, the key must be a literal quote string or an expression that resolves to a string.
+        * For hashes, the key must be a literal quotation string or an expression that resolves to a string.
     * `my_hash.key` — Hashes also allow a shorter "dot" notation, where the variable name is followed by a dot and the name of a key. This only works with keys that do not contain spaces, and (unlike bracketed notation) does not allow the use of a key name stored in a variable.
     * Note: If the value of an access expression is also an array or hash, you can access the values from it in the same way, and you can even combine the two methods. (For example, `site.posts [34] .title`.)
 * **First and last array.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve its first or last element.
