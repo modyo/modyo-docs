@@ -7,7 +7,7 @@ search: true
 Liquid is a template engine which was written with very specific requirements:
 
 * It has to have beautiful and simple markup. Template engines which don't produce good looking markup are no fun to use.
-* It has to be unassessable and safe. Liquid templates are made for users to edit them. You don't want to run code on your server that your users wrote.
+* It needs to be non-evaluable and safe. Liquid templates are made so that users can edit them. You don't want to run code on your server which your users wrote.
 * It must not have a state. The build and render steps have to be separate so that the parsing and its compilation can be done only once, and later rendered by hashing with local objects and variables.
 
 ### Why do we use Liquid?
