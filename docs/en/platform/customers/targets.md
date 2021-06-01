@@ -69,7 +69,7 @@ The filters found by default in the platform are:
 - Count of opened mails
 - Notification read
 - Count of opened notifications
-- Date of registration
+- Registration date
 - User Tags
 - User Field Values
 - Form responses
