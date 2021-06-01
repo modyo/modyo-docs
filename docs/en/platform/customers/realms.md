@@ -51,7 +51,7 @@ When you select "Add User", the platform will ask you to complete the following 
 - User Name: Name within the platform **Required**.
 - Email: User email **Required**.
 - Password: Password for the user to enter the platform. The password must be at least 8 characters. **Required**.
-- Password Confirmation: Repeating the password given by the administrator.
+- Password confirmation: Input the same password to confirm.
 - Tags: Tags that are used to identify the user.
 
 :::tip Tip
