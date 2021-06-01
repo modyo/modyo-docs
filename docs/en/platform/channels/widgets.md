@@ -58,8 +58,8 @@ Archived widgets do not appear in the main widget list or in the Custom widget s
 
 Once a widget is published, it is available as a custom widget in the [page builder.](/en/platform/channels/pages.html)
 
-:::tip Tip
-To learn more about the publication flow, review the [Versioning.] section (/es/platform/core/key-concepts.html #versionado)
+::: tip Tip
+To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
 
 
