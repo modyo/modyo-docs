@@ -20,7 +20,7 @@ They will be responsible for approving or rejecting the item, and will ultimatel
 
 Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
-[Image of review stages]
+[Imagen de etapas de revisión]
 
 This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
 
