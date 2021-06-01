@@ -256,9 +256,9 @@ And what happens if someone tries to perform a _request_ to the API without havi
 with an error `HTTP 401 Unauthorized`:
 
 ```shell
-curl GET https://modyodev.modyo.me:3000/api/admin/roles -v
+curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
 
-> GET /api/admin/HTTP/1.1 roles
+> GET /api/admin/roles HTTP/1.1
 > Host: modyodev.modyo.me:3000
 > User-Agent: curl/7.54.0
 > Accept: */*
