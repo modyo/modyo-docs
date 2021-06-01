@@ -525,7 +525,7 @@ If you want to combine several strings into one and save it in one variable, you
 
 ## Drops
 
-Modyo has drops available for different contexts within which you can find drops for account, content, channels and customers.
+Modyo has drops available for different contexts within which you can find drops for the account, content, channels and customers.
 
 ### Account Drops
 The drops available globally are:
