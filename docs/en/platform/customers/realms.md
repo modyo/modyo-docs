@@ -92,7 +92,7 @@ In addition, you can add any required custom fields. These can be configured in 
 Clicking any user from the main list opens their profile. In each profile is the following information:
 
 - User avatar (if one has been uploaded)
-- Status within the platform: Whether it is active or inactive.
+- Status within the platform: active or inactive.
 - Date of registration on the platform
 - Last entry to the platform
 - Number of sessions done on the platform
