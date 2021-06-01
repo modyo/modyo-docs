@@ -132,7 +132,7 @@ The message deliveries list displays the following information:
 - **User**: Name of the user to whom the message is sent. The user's email is included, regardless of whether the message was via email or notification.
 - **Campaign**: Campaign under which the message was sent.
 - **Type**: Route through which the message was sent. Mail or notification.
-- **Shipment**: Date on which the campaign was started.
+- **Delivery**: Date on which the campaign started.
 - **Sended**: Date the message was sent.
 - **Read**: Alert if the user read or saw the message.
 
