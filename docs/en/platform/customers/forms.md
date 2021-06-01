@@ -123,7 +123,7 @@ Once you enter the editing section of a form, you will see 2 sections: a central
 ### Add field
 This section will allow you to add as many fields as necessary to complete the form or remove fields that are not necessary:
 
-- **Simple text**: Allows the user to enter text up to 256 characters.
+- **Simple text**: Allows the user to enter a single-line text response up to 256 characters.
 - **Paraph**: Allows the user to enter a multi-line text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
 - **Dropdown**: Allows you to add options from which the user will be able to choose one in dropdown format.
