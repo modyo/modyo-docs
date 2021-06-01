@@ -34,7 +34,7 @@ You can sort users by ascending or descending order by the following values:
 - Name: User Name
 - Sign Up Date: Date and time of registration in the platform.
 - Last Login: Most recent date and time a user logged into the platform.
-- Sessions: Number of logins made within the platform
+- Logins Count: Number of times a user has logged into the platform.
 
 
 ### Add a user
