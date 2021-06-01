@@ -198,8 +198,8 @@ EXAMPLE
 >There are some public widget names that can be accessed via this command
 
 ```bash
- EXAMPLES
- $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
+  EJEMPLOS
+    $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
 ```
 
 >From this command and thereafter, you can continue to use the widget like any other vue-cli widget.
