@@ -55,7 +55,7 @@ Within this section, you can configure the following data:
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
 - **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/key-concepts.html).
-- **Time Zone**: The time zone in which the date and time fields will be displayed within the site.
+- **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily insert scripts to make use of the google event logging tool.
 - **Favicon**: Image that appears on the side of the address bar.
 - **Apple Icon**: Image that appears on mobile devices when you use the site as an app.
