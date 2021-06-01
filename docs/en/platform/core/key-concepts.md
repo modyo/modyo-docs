@@ -18,11 +18,11 @@ This task can be performed by users enabled by default or by a team chosen by th
 
 They will be responsible for approving or rejecting the item, and will ultimately determine whether it is ready to be published.
 
-Each step in this process leads the item through different states, which are recorded in a history for subsequent audit.
+Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
 [Image of review stages]
 
-This tool is available for both Channels and Content (spaces).
+This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
 
 The configuration of revision rules is done independently for each site or space.
 
