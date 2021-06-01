@@ -247,7 +247,7 @@ After you have created your new layout, you can go to the edit view of the pages
 
 It is possible to create custom CSS and JavaScript templates by clicking the **+ Add Style Sheet** and **+ Add JavaScript** buttons, respectively, at the end of the Views tab.
 
-To include any of these templates, there are different Liquid filters available: `asset_url` to generate the template URL, and `stylesheet_tag` and `script_tag` to generate the corresponding tags, e.g. 
+To include any of these templates, there are different Liquid filters available: `asset_url` which generates the template URL, and `stylesheet_tag` and `script_tag` which generate the corresponding HTML tags, e.g.
 
 ```html
 <head>
