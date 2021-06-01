@@ -80,7 +80,7 @@ Liquid accepts the following kinds of expressions:
 * **Integers.** Integers must not be quoted.
 * **Booleans and nil.** The literal values `true`, `false`, and `nil`.
 
-Note that there is no way to write a literal array or hash as an expression; arrays and hashes must be passed to the template, or constructed obliquely with a tag or output statement.
+To build an input array, you cannot do it in a control statement. You need to do it in a separate statement and then use that as a variable in a control statement.
 
 ## Filters
 
