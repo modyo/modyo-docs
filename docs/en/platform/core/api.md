@@ -12,7 +12,7 @@ In this way, it is possible to perform administrative tasks consuming the API wi
 
 To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked and how to use them.
 
-Modyo facilitates this task by providing the description of its _headless_ API by using Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their role: administrative, public content, and user profile.
+Modyo facilitates this task, making the description of your _headless_ API available through the use of Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their functionality: administrative functions, public content and user profile.
 
 Each list of services is automatically deployed to your Modyo account, logging into your browser when you visit the appropriate URL.
 
