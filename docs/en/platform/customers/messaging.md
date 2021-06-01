@@ -154,7 +154,7 @@ From the Templates section, you can make templates for your emails to send to us
 
 At first glance, you can find all the email templates available.
 
-Each of the templates will be sorted according to their name, in addition to being able to see the last time they were modified.
+Each of the templates is ordered according to their name, in addition to being able to see the last time they were modified.
 
 :::tip Tip
 If you are reusing a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
