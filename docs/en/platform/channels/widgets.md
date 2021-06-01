@@ -67,36 +67,36 @@ In the main work area you can see the following:
 
 - **Code tabs**: The Widget Builder has a JavaScript, CSS and HTML tab at your disposal to build your widgets.
 - **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
-- **Keyboard Shortcuts**: Displays a small information window with some useful keyboard shortcuts.
-- **Snippets**: Displays a list of snippets available from the [Template Builder](/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
-- **Changes**: If changes have been saved and not published, it will display this list of all the times saved each of the files (JS, CSS and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
+- **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
+- **Snippets**: Displays a list of custom snippets where you can copy their reference code and insert them in your widget.
+- **Changes**: A list of every "Save" state of this widget since it was last published. Click on any of these save states to change the content of the widget to that particular save state. If doing so, all your current changes will be lost.
 
-:::tip Tip
-In order not to lose the changes you currently have, it must be saved before jumping between sub-versions, so that you can always return to the latest version saved in the changelist.
+::: tip Tip
+To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
 :::
 
-:::tip Tip
-When the widget is published, no changes are available. This is because each version parts unchanged from the productive version. If you restore the widget to a previous version, so will sub-versions, so can access all instances where changes were saved in that version.
+::: tip Tip
+If you publish a new version of your widget, the **Changes** list resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
 :::
 
-In the three tabs of the widget you can make use of Liquid. For more information, see [the documentation associated with Liquid.](/es/platform/channels/liquid-markup.html)
+You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation.](/en/platform/channels/liquid-markup.html)
 
-In the properties column you can see: 
+The Properties on the right contains the following fields:
 
-- **Name**: Allows you to change the name of the widget
-- **Tags**: Add tags to a widget. The tags are for administrative use and are used to search and filter widgets so you can find them quickly.
+- **Name**: Use this field to update the name of your widget.
+- **Tags**: Use this field to add tags to your widget. Tagging a widget makes it easier to search and filter. As your digital channels scale in size and complexity, good tagging helps keep your channel management well organized.
 - **Pages using this widget**: You will see a list of pages that are using this widget. While viewing pages in this listing, you will not be able to download or archive the widget.
 
-:::warning Attention
-If you delete a widget from a page and publish, you'll still see that page in this listing because the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can download any published widget, even if it's in use. Active references on pages will be inactive, so you won't see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so if there are still references on some widget pages that you want to archive, they will be deleted when you archive the widget. 
+:::warning Warning
+If you delete a widget from a page and publish, you will still see that page in this listing since the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can unpublish any published widget, even if it is in use. Active references on pages will become inactive, so you will not see the widget on the site if you unpublished it. Also, you will be able to archive any unpublished widget, so if there are still references on some pages of the widget you want to archive, they will be removed when you archive the widget.
 :::
 
 ## Widget Variables
 
-In the variables tab you can see the list of variables created in the widget, and their respective actions to:
+In the variables tab you can see the list of variables created in the widget, and their respective actions for:
 
 * **Copy** the liquid code to use that variable.
-* **Modify** the variable
+* **Edit** the variable
 * **Remove** the variable.
 
 Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/es/platform/core/key-concepts.html #variables -global).
