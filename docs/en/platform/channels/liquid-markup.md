@@ -540,7 +540,7 @@ account:
   - oidc_callback_url
 ```
 
-### Drops of content
+### Content drops
 The drops available for content are:
 
 ```
