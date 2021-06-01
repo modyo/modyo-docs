@@ -202,7 +202,7 @@ EXAMPLE
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
 ```
 
->From this command and thereafter, you can continue to use the widget like any other vue-cli widget.
+>From this command and on you can continue using the widget like any other vue-cli widget.
 
 ### Modyo Cli Push Name`
 
