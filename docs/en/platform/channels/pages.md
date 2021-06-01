@@ -86,7 +86,7 @@ In the right sidebar, you can select different grids based on the structure you 
 
 ### Properties
 
-In this tab you will find options common properties for all pages:
+In this tab you will find common property options for all pages:
 
 * Name
 * Father
