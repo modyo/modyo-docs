@@ -10,7 +10,7 @@ Team Review is a tool that allows you to control the process of publishing items
 
 This adds a level of supervision and collaboration between the content editor and a team of reviewers.
 
-### Function
+### Feature
 
 When a publisher or developer considers the item you're working on is ready, you can submit it for review.
 
