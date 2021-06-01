@@ -486,7 +486,7 @@ A for loop can take an optional `else` clause to display a block of text when th
 
 ### Variable assignment
 
-You can store data in your own variables, for use in output tags or other tags as desired. The easiest way to create a variable is with the tag `assign`, which has a very easy syntax:
+You can store data in your own variables and use them in output tags or any other tags you wish. The easiest way to create a variable is with the `assign` tag with simple syntax:
 
 ```liquid
 {% assign name = 'freestyle' %}
