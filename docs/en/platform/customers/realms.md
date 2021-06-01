@@ -269,7 +269,7 @@ You can drag the **Custom Fields** to order them. Note that this is the order in
 All **Custom Fields** have certain standard properties:
 
 - **Must be a unique response**: It implies that the value must be unique for each user, preventing another equal value from being saved.
-- **Required**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In case the field is also visible and editable by users, this fields will appear in the registration form and will be required to create new users.
+- **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In the event that the field is also visible and editable by users, this fields will appear on the registration form and will be required to create new users.
 - **Visible to users**: It implies it'll be visible in profile view.
 - **User Editable**: It implies that if it is visible, in addition, the user can modify its value.
 - **Searchable by administrators**: It implies that this value will be indexed and users can be found when searched from the user index of the Modyo administrator, by the value of that field.
