@@ -50,7 +50,7 @@ You can add comments by submitting them at the bottom of the sidebar. Next to ea
 - **Reject**: Returns to the "Pending changes" state, and notifies reviewers that the item was rejected.
 - **Publish**: Once the changes are approved, you can go to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes across the site.
 
-In the right side section you can see a bar that changes according to the item selected in the main area. In this section you can see the options:
+In the right side section, you will see a bar that changes according to the item selected in the main area. In this section are the following options:
 
 - **Name**: The name of the item that will appear on the site.
 - **Associated Page**: Can be directly associated with a page or a custom URL.
