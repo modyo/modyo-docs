@@ -64,7 +64,7 @@ Steps to connect your data to a Google Data Studio template:
 
     To finish click on "Connect"
 
-    The next page shows the available dimensions and metrics. There is no need to modify anything, click "Add to Report" to continue.
+    The next page shows the available dimensions & metrics. There is no need to modify anything, click "Add to report" to continue
 
     ![Data studio](/assets/img/insights/7.png)
 
