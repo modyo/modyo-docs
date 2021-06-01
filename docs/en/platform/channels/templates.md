@@ -149,7 +149,6 @@ In the views section, you will find 4 error types available for customization:
 * **Disabled**: You will see this error view if the site you are trying to access has been [disabled](/en/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if you decide to show 404 errors in the [site restrictions](/en/platform/channels/sites.html#restrictions) instead of redirecting to the home page.
 * **Privacy**: You will see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#restrictions) or one of its [pages](/en/platform/channels/pages.html#privacy).
-
 * **Template**: You will see this error view when the page of the site you are loading has a liquid syntax error. You're unlikely to see this view, since modyo 8.1 onwards we have a functionality that checks the liquid syntax before you can save and publish changes to the template builder.
 
 ## Views for content
