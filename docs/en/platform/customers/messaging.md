@@ -57,7 +57,7 @@ Now, a WYSIWYG editor will appear with the template you selected, which you can 
 
 When you do this, your campaign is saved and you will get to the Campaign Status view, where you can send it.
 
-### Shipment Status
+### Campaign Status
 
  <img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
 
