@@ -194,7 +194,7 @@ To automate the insertion of the Footer, read [Customers Settings](/en/platform/
 
 To save the template, you must click on the **Save** button, located at the top of the page.
 
-If you want to use the template in an email, simply select the template name when you're creating the campaign.
+If you want to use the template in an email, you only have to select the name of the template, when you are preparing the campaign.
 
 ## Disregistrations
 
