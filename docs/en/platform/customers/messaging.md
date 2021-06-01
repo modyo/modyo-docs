@@ -88,7 +88,7 @@ If you sent the campaign by mail, you can find the following metrics:
 - **Open**: Total number of open mails.
 - **Unique openings**: Total number of unique users who opened the campaign.
 - **Clicks**: Number of times in which a link in the campaign has been clicked.
-- **One Clicks**: Number of users who have ever clicked on the campaign.
+- **Unique clicks**: Number of unique users who have clicked on a link in the campaign.
 - **Spam**: Number of users that your email reached the Spam box.
 
 Instead, if you sent the campaign by Notification, you can find these numbers:
