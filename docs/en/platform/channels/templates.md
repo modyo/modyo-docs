@@ -189,8 +189,8 @@ A basic example of Liquid + HTML code that you can use to get started in these v
 </div>
 ```
 
-:::tip Tip
-To learn more about using Liquid, go to [Liquid markup](/es/platform/channels/liquid-markup.html)
+::: tip Tip
+To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/liquid-markup.html).
 :::
 
 If you want to display the view with the values of the entry you're working on, the following requirements must be met:
