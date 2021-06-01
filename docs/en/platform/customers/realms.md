@@ -84,7 +84,7 @@ On the right, in a sidebar, you will see main import settings. Here you can defi
 
 Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
 
-In addition, you will be able to complete a number of custom fields that might be required. These can be configured in [Custom Fields](/es/platform/customers/realms.html #campos -custom), which are located in the [Customers Settings section](/es/platform/customers/realms.html #configuracion -de-customers).
+In addition, you can add any required custom fields. These can be configured in [Custom Fields](/en/platform/customers/users.html#custom-fields), which are found in the [Customer Configuration section](/en/platform/customers/users.html#customer-configuration).
 
 
 ### Users tab
