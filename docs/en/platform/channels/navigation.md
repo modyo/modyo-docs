@@ -15,7 +15,7 @@ The builder menu only allows two levels of depth, so you can have a main list, a
 At the top of the view, you will find the publication status of the menu:
 
 - **Published**: You will see this status after you have made a publication and when the editable and published versions are the same.
-- **Pending changes**: This status appears if there is already a published version, but there are changes to be published in your editable version.
+- **Pending changes**: You will see this status if there is already a published version, but there are pending changes to be published in your editable version.
 - **In Review**: This status appears when [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and the editable version has been sent for revision.
 - **Approved**: This status appears when [Computer Patch] is enabled (/es/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, your templates can already be published.
 
