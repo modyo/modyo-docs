@@ -31,7 +31,7 @@ If you need to search for a specific target by name, you can do so through the s
 
 ## Create a Target
 
-To create a target, you need to click on the**New Target** button at the top of the screen.
+To create a target, click on the **New Target** button at the top of the screen.
 
 Immediately a view will open in which you can select the filters you want for each Target.
 
