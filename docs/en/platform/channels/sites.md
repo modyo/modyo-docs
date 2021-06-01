@@ -35,7 +35,7 @@ If you want to publish multiple elements in a single step, click the "Publish" b
 :::warning Warning
 All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
 
-If you have team review enabled, only items that are already approved will appear in the list.
+If you have team review enabled, only the items that are already approved will appear in the list.
 
 If you need to quickly publish an item, admin users can skip the approval process using the "Force Publish" option allowing the item to move directly to the publication view.
 :::
