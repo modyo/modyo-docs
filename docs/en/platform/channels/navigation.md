@@ -46,7 +46,7 @@ You can add comments by submitting them at the bottom of the sidebar. Next to ea
 **Main Actions**
 
 - **Save**: Save all menu changes.
-- **Send to Review**: Change the menu status to "Waiting for Review". In this state you continue to make changes, but each change will be notified via mail to the assigned reviewers.
+- **Send to review**: Changes the menu status to "In review". In this state you can continue making changes, but each change alerts assigned reviewers via email.
 - **Reject**: Returns to "In Edit" status, notifying reviewers that the item was rejected.
 - **Publish**: Once the menu has been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -y-y-joint) to publish your navigation.
 
