@@ -55,7 +55,7 @@ After filling in this information, you must click on the **Save and continue** b
 
 Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, you just have to click on the button at the top of the screen.
 
-By doing this, your campaign will be saved and you'll get to the Shipping Status view, where you can send it.
+When you do this, your campaign is saved and you will get to the Campaign Status view, where you can send it.
 
 ### Shipment Status
 
