@@ -536,41 +536,41 @@ page, just add the parameter `per_page` with the desired value.
 
 For example, if you want to get page 30, but this time with _message deliveries_ grouped into pages of 5 items:
 
-shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries? campaign_id=15&delivery_id=29&page=30&per_page=5 -H 'Authorization: Bearer 8c280d601fc1f1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```shell script
+curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-What gives a response like the following:
+What gives us the following response:
 
 ```json
 {
- "message_deliveries": [{
- "id": 1341,
- "user_name": "Test user 868",
- ...
- }, {
- "id": 1342,
- "user_name": "Test user 869",
- ...
- }, {
- "id": 1343,
- "user_name": "Test user 870",
- ...
- }, {
- "id": 1344,
- "user_name": "Test user 871",
- ...
- }, {
- "id": 1345,
- "user_name": "Test user 872",
- ...
- }],
- "goal": {
- "total_entries": 1078,
- "per_page": 5,
- "current_pag": 30,
- "total_pages": 216
- }
+    "message_deliveries": [{
+        "id": 1341,
+        "user_name": "Test user 868",
+        ...
+    }, {
+        "id": 1342,
+        "user_name": "Test user 869",
+        ...
+    }, {
+        "id": 1343,
+        "user_name": "Test user 870",
+        ...
+    }, {
+        "id": 1344,
+        "user_name": "Test user 871",
+        ...
+    }, {
+        "id": 1345,
+        "user_name": "Test user 872",
+        ...
+    }],
+    "meta": {
+        "total_entries": 1078,
+        "per_page": 5,
+        "current_pag": 30,
+        "total_pages": 216
+    }
 }
 ```
 Finally, remember that the API by default will always return the first page (`current_page: 1`) of resources grouped into 10-item pages (`per_page: 10`).
