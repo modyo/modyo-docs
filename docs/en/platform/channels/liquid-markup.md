@@ -88,9 +88,9 @@ Output markup can take filters, which modify the result of the output statement.
 
 * A pipe character (`|`)
 * The name of the filter
-* Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter predefines the parameters it accepts and the order in which they must be passed.
+* Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
 
-Filters can also be joined together by adding additional filter statements (starting with another vertical bar character). The Output of the previous filter will be the Input for the next one.
+Filters can also be chained together by adding additional filter statements (starting with another pipe character). The output of the previous filter will be the input for the next one.
 
 ```liquid
 Hello {{ 'tobi' | upcase }}
@@ -99,7 +99,7 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression that precedes the vertical bar character, and additional parameters can be passed using the syntax `name: arg1, arg2`.
+Under the hood, a filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
 
 ### Standard Filters
 
