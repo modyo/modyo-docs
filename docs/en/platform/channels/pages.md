@@ -46,7 +46,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 **Main action**: The green button in the upper right. This button can take different forms:
 
 - Save: Allows you to save all changes made to the page.
-- Send to Review: If team review is enabled, then if there are no changes to save, this action will allow you to review the page and assign reviewers.
+- Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
 - Publish: If the page is approved, you can go to the [joint publishing view](/es/platform/channels/sites.html #revision -y-y-joint publication) using this action.
 
 :::tip Tip
