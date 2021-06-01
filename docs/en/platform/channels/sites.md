@@ -132,8 +132,8 @@ The manifest can be created and modified in the next field, allowing you to add 
 If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
-:::warning Attention
-If you don't customize the manifest but add the path in the Template Builder, it will be blank and will not do any action.
+:::warning Warning
+If you do not customize the manifest but add the route in the Template Builder, it will be blank and will not take any action.
 :::
 
 #### **Service Worker**
