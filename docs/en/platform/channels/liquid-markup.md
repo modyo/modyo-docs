@@ -304,7 +304,7 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 
 ### Case/when
 
-If you need more conditions, you can use the "case" statement:
+If you need to evaluate multiple conditions, you can use the "case" statement:
 
 ```liquid
 {% case condition %}
