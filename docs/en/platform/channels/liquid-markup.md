@@ -198,7 +198,7 @@ The `if/else` statements should be known from other programming languages. Liqui
 * `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
 * `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
 
-The condition of a tag `if`, `elsif` or `unless` must be a normal Liquid expression or a _comparation_ using Liquid expressions. Note that comparison operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
+The condition of an `if`,` elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
 
 The available relational operators are:
 
