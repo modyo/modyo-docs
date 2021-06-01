@@ -211,8 +211,8 @@ The options you configure here are:
 Modyo has reserved domains that cannot be used as custom site domains:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
- <li> education.modyo.com </li> 
- <li> elearning.modyo.com </li> 
+<li>education.modyo.com</li>
+<li>elearning.modyo.com</li>
  <li> training.modyo.com </li> 
  <li> training.modyo.com </li> 
  </ul> </td> 
