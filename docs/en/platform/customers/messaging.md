@@ -133,7 +133,7 @@ The message deliveries list displays the following information:
 - **Campaign**: Campaign under which the message was sent.
 - **Type**: Route through which the message was sent. Mail or notification.
 - **Delivery**: Date on which the campaign started.
-- **Sended**: Date the message was sent.
+- **Sent**: Date the message was sent.
 - **Read**: Alert if the user read or saw the message.
 
 In addition, you can filter the data under the following filters:
