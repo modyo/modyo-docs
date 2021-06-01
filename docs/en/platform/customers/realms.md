@@ -99,7 +99,7 @@ Clicking any user from the main list opens their profile. In each profile is the
 - User verification status
 - Targets in which it is included (if available)
 
-In the main section, you can see the following horizontal separators, which are described below:
+In the main section to the right are the following tabs:
 
 - Activity (within the site)
 - Responses to forms (which have been submitted by the user)
