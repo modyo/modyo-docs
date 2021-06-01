@@ -207,8 +207,8 @@ The options you configure here are:
 - **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
 - **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
 
-:::warning Attention
-Modyo has reserved domains that cannot be used as custom domains of sites:
+:::warning Warning
+Modyo has reserved domains that cannot be used as custom site domains:
  <table style="border: none;"> <tr style="border: none;"> 
  <td style="border: none;"> <ul> 
  <li> education.modyo.com </li> 
