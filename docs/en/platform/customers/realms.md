@@ -173,7 +173,7 @@ The primary color is the one shown in the main buttons of the session management
 
 #### Show the logo
 
-This option allows you to display the logo configured for the account in the session views, which will be displayed over the respective forms of those views. To change the logo, you must access the [Modyo Interface](/es/platform/core/the-modyo-interface.html).
+This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/en/platform/core/the-modyo-interface.html).
 
 #### Customize with CSS
 
