@@ -28,7 +28,7 @@ In the site index, you will only be able to see sites where you are part of the 
 
 ## Review and joint publication
 
-You can review and publish multiple items of a site in a single view. To review the differences for an item, select the item from the left listing, and the differences between the editable and published version will appear in the right section of the view.
+You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
 
 If you want to publish multiple items in one step, you must press the "Publish" button from the pages, navigation, widgets or templates and you must mark in the list all the items you want to publish and then press the button to publish again.
 
