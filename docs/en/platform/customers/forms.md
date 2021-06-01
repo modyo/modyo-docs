@@ -182,7 +182,7 @@ The **Form Snippet** section, which will only appear if the form is public, will
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
-The **Options** and **Notifications** sections add nothing different to what is in **New Form**
+The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
 :::warning Attention
 If you're using a Modyo site with a custom domain, you'll need to enable the [CORS] resource source sharing option (/es/platform/core/security.htm) in your account settings.
