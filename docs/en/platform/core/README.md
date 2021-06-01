@@ -20,11 +20,11 @@ The documentation on this site applies to the latest version (9.1). To access do
 - [Integrations](/en/platform/core/integrations)
 - [Administration Users and Roles](/es/platform/core/roles.html)
 - [Security](/es/platform/core/security.html)
-- [Management API](/es/platform/core/api.html)
+- [Administration API](/en/platform/core/api.html)
 
 
 ### Reserved words
-Modyo has restricted hosts for the account, so you can't use as hosts for your account:
+Modyo has restricted hosts for the account, so you can't use as hosts for your account.
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>admin</li>
