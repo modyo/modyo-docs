@@ -274,7 +274,7 @@ All **Custom Fields** have certain standard properties:
 - **Editable by front end users**: It implies that if it is visible, in addition, the user can modify its value.
 - **Searchable by admins**: It implies that this value will be indexed and users can be found when searched in the users index for the value of that field.
 
-In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then it can be used by administrators and depending on its configuration, it will be available to users. If a**Custom Field** is disabled, then it will not appear in any form, but its values will be kept saved.
+In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then they can be used by administrators and depending on their configuration, they will be available to users. If a **Custom Field** is disabled, then it will not appear on any form, but its values will remain saved.
 
 :::danger danger
 When a**Custom Field** is disabled, it can be deleted. By deleting a**Custom Field**, you will be forever deleting all the values that users had for that **Custom Field**.
