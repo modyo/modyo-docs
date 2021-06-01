@@ -352,8 +352,8 @@ Apart from the collection, you can see an object called `meta` that contains inf
 
 Continuing with the exercise, it is possible to use the data obtained in the previous query for more information. For example, we may be interested to know the number of times a particular campaign (Campaign Deliveries) was run with that campaign ID. To do this, you can revisit the service catalog, and you will find the following _endpoint_:
 
-http request
-GET /messaging/campaigns/ {campaign_id} /deliveries Campaign deliveries list
+```http request
+GET /messaging/campaigns/{campaign_id}/deliveries Campaign deliveries list
 ```
 
 This way, you can perform a _request_ to view the specific information about the _campaign deliveries_ of the campaign called "Test campaign 01", passing in the `campaign_id` parameter the corresponding campaign ID (in this case it is `15`):
