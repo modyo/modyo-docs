@@ -18,7 +18,7 @@ In the main view, we can see a list of all registered users within the platform,
 
 Along the top of the list are filters that allow you to refine the list of users by the following attributes:
 
-- Status: View active and inactive users.
+- Status: Filter by active and inactive users.
 - Verification: View the users who have confirmed their data on the platform.
 - Targets: Users found within a given [Target](/es/platform/customers/targets.html)
 - Advanced filters: Users who have a specific data or action within the platform.
