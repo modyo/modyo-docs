@@ -140,7 +140,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `sha1` - Returns the SHA-1 hash for a string *e.g.* <span v-pre>`{% 'Hello world' | sha1  %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>.
 * `sha256` - Returns the SHA-256 hash for a string *e.g.* <span v-pre> `{% 'Hello world' | sha256%} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3ccc0756f3cc0756b2477232534a8aeca37f3cc'`</span>.
 * `size` - Return the size of an array or string
-* `slice` - Divide a string. Take a offset and a length, *e.g.* <span v-pre> `{{" hello "| slice: -3, 3}} # => llo` </span>
+* `slice` - Divide a string. Take a offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
 * `sort` - Sorts array elements
 * `split` - Split a string into a matching pattern *e.g.* <span v-pre> `{{"a~b" | split: "~"}} #=> ['a', 'b']` </span> 
 * `strip_html` - Removes html from the string
