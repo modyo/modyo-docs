@@ -111,7 +111,7 @@ When you instantiate the widget on a page, you will see that now all variables b
 Adding the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, chances are that the variable in the widget code is not being used.
 :::
 
-## Synchronous load
+## Synchronous and asynchronous loading
 
 :::warning Attention
 This is an experimental functionality and may be subject to change.
