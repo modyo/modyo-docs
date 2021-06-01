@@ -86,7 +86,7 @@ For more information on what Liquid is and how to get the most out of it, check 
 
 In the work area, under the tabs, you will find a bar with useful elements:
 
- <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700"> 
+<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700">
 
 **File Manager**: A modal is raised where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
