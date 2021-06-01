@@ -46,7 +46,7 @@ By default, you see the differences between the published version and the editab
 **Other primary actions**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
 
 - **After**: If the widget is published, it can be taken out of production using this option.
-- **Force Publishing**: If you are an administrator of the site, you can use this option to immediately publish a widget, even if Team Review is enabled.
+- **Force Publish**: Admin team members have the option to forcibly publish widgets, circumventing the established reviewal process.
 
 :::tip Tip
 Only widgets that have been previously unpublished can be archived.
