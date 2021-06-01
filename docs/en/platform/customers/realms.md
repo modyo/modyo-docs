@@ -58,7 +58,7 @@ When you select "Add User", the platform will ask you to complete the following 
 To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-This user creation view may contain more fields depending on the configuration on the platform, available in the [Customers Settings] section (/es/platform/customers/realms.html #configuracion -de-customers). Some special fields, such as second surname, avatar, or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -registration). On the other hand, there are also **Custom Fields**, which can be created and modified in the [Custom Fields] section (/es/platform/customers/realms.html #campos -custom).
+The available fields may be more than those listed above, depending on the configuration on the platform and how many user **custom fields** are enabled in the account. You can learn more about this in the [Customers Configuration](/en/platform/customers/users.html#customers-configuration) section.
 
 
 ### Import users
