@@ -117,7 +117,7 @@ This section shows you all the forms that the user has filled out within the pla
 
 #### Notes
 
-In this section you can add custom notes about users, only administrators can add, view, and delete them.
+In this section you can add personalized notes about users, only administrators can add, view and delete them.
 
 #### Additional options
 
