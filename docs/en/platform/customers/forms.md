@@ -168,7 +168,7 @@ Its four main sections are:
 - **General**
 - **Form Snippet**
 - **Form Options**
-- **Notifications**
+- **Email Notifications**
 
 The**General** section adds two options:
 - **Send button text**: Allows you to customize the text associated with the **Submit** button on the form.
