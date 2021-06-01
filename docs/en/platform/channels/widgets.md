@@ -173,7 +173,7 @@ ARGUMENTS
 
 The Modyo CLI is designed to work based on micro front-end architecture, and will accelerate the process of initialization of a widget, with modyo decisions.
 
-### `modyo-cli get NAME [DIRECTORY] `
+### `modyo-cli get NAME [DIRECTORY]`
 
 Generally, the `get `command is used to get a widget template.
 If you have a token provided by Modyo, you can use the same command to extract any of our premium widgets from our Widget Library:
