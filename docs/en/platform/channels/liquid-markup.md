@@ -205,7 +205,7 @@ The available relational operators are:
 * `==,! =, `and` <> `— equal and unequal (the last two are synonyms)
     * There is a special secret value "empty" (without quotes) to compare arrays; The comparison is true if the array has no items.
 * `<, <=, >, >=` — less/greater than
-* `contains` — a wrapper around the `include method? `of Ruby, which is implemented in strings, arrays, and hashes. If the left argument is a string and the right is not, it converts to string the right.
+* `contains` - a wrapper around Ruby's `include?` method, which is implemented in strings, arrays and hashes. If the left argument is a string and the right is not, this will convert the right to a string.
 
 Available Boolean operators are:
 
