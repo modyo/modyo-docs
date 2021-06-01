@@ -185,7 +185,7 @@ _callback URL_ (which corresponds to the Redirect URI field entered in the previ
 
 ![New API Access](/assets/img/platform/save-API-access.png)
 
-:::warning Attention
+:::warning Warning
 Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
 :::
 
