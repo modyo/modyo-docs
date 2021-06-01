@@ -22,7 +22,7 @@ To create a new form, click on the main action at the top right **+ New**. This 
 
 - **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title in the front end.
 - **Description**: This text will appear as text under the title in the front end.
-- **People Limit**: Allows to determine the maximum number of responses are allowed.
+- **People limit**: Determines the maximum number of answers are allowed.
 - **Site**: Allows you to select on which site this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/es/platform/channels/templates.html)
 - **Accept multiple responses**: If this option is enabled, each time a user responds to the form, it will be registered as a new response. If this option is disabled, each time the same user replies to the form, they will be overwriting their previous response.
 - **For registered users only**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session will not be able to view the form. If this option is disabled, any user will be able to reply to the form.
