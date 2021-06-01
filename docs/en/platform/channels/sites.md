@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 2. Create a custom snippet with the following code and then insert it into the body tags of the home and base views using `{% snippet "gtm-body" %}`, replacing "gtm-body" with the name you gave the snippet.
 
-**Google Tag Manager for _body_**
+**Google Tag Manager for the _body_**
 ```liquid
 {% if site.tag_manager_id != '' %}
 
