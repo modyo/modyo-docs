@@ -467,5 +467,4 @@ este _header_.
 
 * **0**: Deshabilita XSS _filtering_.
 * **1**: Habilita XSS _filtering_, quitando las partes inseguras.
-* **1; mode=block**: Habilita XSS _filtering_, impidiendo el _rendering_ de la
-  página.
+* **1; mode=block**: Habilita XSS _filtering_, impidiendo el _rendering_ de la página.
