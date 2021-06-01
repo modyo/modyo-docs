@@ -400,117 +400,117 @@ lists the _message deliveries_, passing as parameters the corresponding `campaig
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
-For example, when you see the corresponding _response_ of this call:
+Let's analyze the corresponding _response_ of this call below:
 
 ```json
 {
- "message_deliveries": [{
- "id": 1506,
- "user_name": "Samuel L. Jackson",
- "user_email": "contact@mrjackson.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1505,
- "user_name": "John Travolta",
- "user_email": "john.travolta@modyo.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1504,
- "user_name": "Al Pacino",
- "user_email": "mr.pacino@globalmovies.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1503,
- "user_name": "Silvester Stallone",
- "user_email": "stallone.54@gmail.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1502,
- "user_name": "Linda Hamilton",
- "user_email": "hamilton@hamilton.co ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1501,
- "user_name": "Sigourney Weaver",
- "user_email": "contact@weaverproductions.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1500,
- "user_name": "Mark Hamill",
- "user_email": "hamillhimself@modyo.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1499,
- "user_name": "Anthony Daniels",
- "user_email": "bep.bep@daniels.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1498,
- "user_name": "Harrison Ford",
- "user_email": "ford@harrisonford.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }, {
- "id": 1497,
- "user_name": "Meryl Streep",
- "user_email": "meryl@representationms.com ",
- "type": "admin.messaging.mail",
- "sent_at": "2019-07-15T 17:05:20 .000- 03:00 ",
- "opened": false,
- "delivery_id": 29,
- "campaign_name": "Test campaign 01",
- "delivery_start_date": "2019-07-15T 17:05:12 .000- 03:00"
- }],
- "goal": {
- "total_entries": 1078,
- "per_page": 10,
- "current_page": 1,
- "total_pages": 108
- }
+    "message_deliveries": [{
+        "id": 1506,
+        "user_name": "Samuel L. Jackson",
+        "user_email": "contact@mrjackson.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1505,
+        "user_name": "John Travolta",
+        "user_email": "john.travolta@modyo.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1504,
+        "user_name": "Al Pacino",
+        "user_email": "mr.pacino@globalmovies.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1503,
+        "user_name": "Silvester Stallone",
+        "user_email": "stallone.54@gmail.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1502,
+        "user_name": "Linda Hamilton",
+        "user_email": "hamilton@hamilton.co",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1501,
+        "user_name": "Sigourney Weaver",
+        "user_email": "contact@weaverproductions.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1500,
+        "user_name": "Mark Hamill",
+        "user_email": "hamillhimself@modyo.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1499,
+        "user_name": "Anthony Daniels",
+        "user_email": "bep.bep@daniels.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1498,
+        "user_name": "Harrison Ford",
+        "user_email": "ford@harrisonford.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }, {
+        "id": 1497,
+        "user_name": "Meryl Streep",
+        "user_email": "meryl@representationms.com",
+        "type": "admin.messaging.mail",
+        "sent_at": "2019-07-15T17:05:20.000-03:00",
+        "opened": false,
+        "delivery_id": 29,
+        "campaign_name": "Test campaign 01",
+        "delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+    }],
+    "meta": {
+        "total_entries": 1078,
+        "per_page": 10,
+        "current_page": 1,
+        "total_pages": 108
+    }
 }
 ```
 As you can see, the ``message_deliveries`` object within the JSON contains a list of 10 items, where each represents a _message delivery_ or a specific delivery of a campaign mail to a given user, and each object has attributes relevant to this concept, such as the name and
