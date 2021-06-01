@@ -36,7 +36,7 @@ The available options are:
 
 - **Enable Team Review**: Enables or disables Team Review within the current site or space.
 - **Number of approvals**: Determines how many team members must approve the item before publishing (this changes the status from "In review" to "Approved").
-- **Restrict review selection**: By default, any user with the necessary permissions will be able to approve the items that are awaiting review. By enabling this option, only those chosen by the editor will be able to do so.
+- **Restrict the selection of reviewers**: By default, any user with the necessary permissions will be able to approve the items that are waiting for revision. By enabling this option, only those chosen by the editor will be able to do so.
 
 :::tip Tip
 While approval is limited, any user with permissions can comment on the item.
