@@ -217,7 +217,7 @@ Modyo has three default layouts:
 
 You can create new Layouts from the template builder, by clicking on "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on the pages.
 
-You can use as a base, this code that contains everything you need for your pages to use all the necessary elements of the site, such as head, header, footer, service worker and Google Tag Manager settings, but keep in mind that you can modify it as much as you want:
+You can use as a base, this code that contains everything you need to make your pages use all the necessary elements of the site, such as the head, header, footer, service worker and the Google Tag Manager configuration, but keep in mind that you can modify it as much as you want:
 
 ```liquid
 {% html5 %}
