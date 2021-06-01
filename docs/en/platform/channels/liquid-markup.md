@@ -121,8 +121,8 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `hmac_sha256` - Returns the SHA-256 hash using a message authentication code (HMAC) value for a string, *e.g.* <span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>.
 * `join` - Join elements of the array with a certain character between them.
 * `last` - Get the last element of the last array
-* `lstrip` - Removes all blanks from the beginning of a string
-* `map` - Map/Collect an array into a given property.
+* `lstrip` - Remove all blank spaces from the beginning of a string
+* `map` - Map/collect an array on a given property.
 * `md5` - Return the MD5 hash of a string, *e.g.* <span v-pre> `{% 'Hello world' | md5%} # => '3e25960a79dbc69b674cd4ec67a72c62'` </span>.
 * `minus` - Subtraction *e.g.* <span v-pre> `{{4 | minus:2}} #=> 2` </span> 
 * `modulo` - Rest *e.g.* <span v-pre> `{{3 | module:2}} #=> 1` </span> 
