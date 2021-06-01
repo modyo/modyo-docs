@@ -49,7 +49,7 @@ This opens a form that you must fill out with the following information:
 - **Subject**: Text that appears in the subject line that users receive.
 - **Reply to email**: Email address to which people can reply **(Only for mailing campaigns)**
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
-- **Enable targetication**: Checkbox to select a target to send the campaign. If left blank, the campaign will be sent to all users.
+- **Enable targeting**: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
 
 After filling in this data, you must click on the**Save and Continue** button, located at the top of the screen.
 
