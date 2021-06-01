@@ -166,7 +166,7 @@ The name of the view is the route (URL) relative to the site with the content yo
 :::
 
 :::tip Tip
-You can use the name you want for views, no matter what type or space you want to associate it with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site you're creating these views on.
+You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
 :::
 
 By modifying this view, you can make use of Liquid, and the `entry` object, for example: <span v-pre> `{{entry.published_at | format_date}}` </span> 
