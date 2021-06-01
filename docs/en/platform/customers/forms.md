@@ -174,7 +174,7 @@ The **General** section adds two options:
 - **Send button text**: Allows you to customize the text associated with the **Send** button on the form.
 - **Enabled**: Allows you to determine whether or not users can respond to the form. If the option is checked, then the form can be accessed and answered, if it is not enabled, then users will not see or answer it.
 
-The **Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
+The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
  <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350"> 
 
