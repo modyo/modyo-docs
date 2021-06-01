@@ -297,7 +297,7 @@ The available roles are:
 
 - **Developer**: Can create, modify and submit pages, widgets, menu and templates for review.
 - **Developer CLI**: Can create, modify and submit pages, widgets, menu and templates for review. Can also push widgets to the platform from external applications.
-- **Reviewer**: You can create, modify, submit to review, and approve pages, widgets, menu and templates, as well as publish them when the review conditions are met.
+- **Reviewer**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them when the correct review conditions are met.
 - **Admin**: You can create, modify, submit to review and approve pages, widget, menu, and templates. You can publish without going through team review validations. You can also modify the settings of the site.
 
 #### Developer
