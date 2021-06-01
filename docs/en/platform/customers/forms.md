@@ -26,7 +26,7 @@ To create a new form, click on the main action at the top right **+ New**. This 
 - **Site**: Allows you to select which sites display the form. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/en/platform/channels/templates.html)
 - **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
-- **Request to Automatically**: If the form is private (only registered user can answer it), this option will appear that will allow you to automatically redirect users who log in to the site associated with the form to answer it.
+- **Automatically ask the form to the audience?**: If the form is private (only registered users can answer it), this option appears and allows you to automatically redirect users who log in to the site associated with the form to answer it.
 
 After a split you will be able to see the options to modify the redirect after a user replies to the form.
 
