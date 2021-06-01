@@ -206,7 +206,7 @@ If you click on the name of the user, you can find the [user profile](/en/platfo
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
-:::danger danger
-Making a re-enrollment without express authorization from the user, can cause legal problems.
-Review the regulation on mass mailing in each country.
+::: danger Danger
+Resubscription without the express authorization of the user can cause legal problems.
+Check the regulation on mass mailings in each country.
 :::
