@@ -23,8 +23,8 @@ In addition, on the far right you will find an "Action" button with a drop-down 
 - Edit: Edit the target name and filters.
 - Delete: Delete the target.
 
-:::warning Attention
-If you delete the target, you will have to create it again. However, this does not mean that you delete the users that belong to it.
+::: warning Warning
+If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the target.
 :::
 
 If you need to search for a target by specific name, you can do so through the search bar at the top of the screen.
