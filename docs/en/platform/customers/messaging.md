@@ -13,7 +13,7 @@ Modyo sends messages to platform users through two channels:
 - **Emails**: Send campaigns to the emails registered in the user profiles.
 - **Notifications**: Send notifications through Modyo's internal messaging system. To see a notification, users must enter the platform.
 
- <img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## Campaigns
 
