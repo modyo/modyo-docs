@@ -291,7 +291,7 @@ To add a user to the Site, select the primary button **+ New** in the upper righ
 
 You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
 
-If you want to remove an administrator from a site, select using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
+To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
 The roles available are:
 
