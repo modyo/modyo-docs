@@ -204,7 +204,7 @@ To find a user, at the top of the screen there is a search bar where you can ent
 
 If you click on the name of the user, you can find the [user profile](/en/platform/customers/users.html#user-tab) with all their platform activities.
 
-Finally, at the end of each user name, you'll find a button that allows you to re-enroll them to any campaign on the site.
+Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
 :::danger danger
 Making a re-enrollment without express authorization from the user, can cause legal problems.
