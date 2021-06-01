@@ -34,8 +34,8 @@ Next to each campaign, there is a button where we can perform two actions.
 - **Edit the Campaign**
 - **Delete the Campaign**
 
-::: danger danger
-If you delete the campaign, there is no way to recover it. It won't be recorded in the system
+::: danger Danger
+If you delete a campaign, there is no way to recover it.
 :::
 
 ### Create a campaign
