@@ -231,8 +231,8 @@ Modyo has reserved domains that cannot be used as custom site domains:
 </tr></table>
 :::
 
-:::warning Attention
-Modyo has hosts reserved for sites, so you won't be able to use them as a host for your sites:
+:::warning Warning
+Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites:
  <table style="border: none;"> <tr style="border: none;"> 
  <td style="border: none;"> <ul> 
  <li> 404 </li> 
