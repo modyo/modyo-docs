@@ -40,7 +40,7 @@ If you have team review enabled, only the items that are already approved will a
 In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force publish" option, allowing the element to go directly to the published view.
 :::
 
-## Setting up a Site
+## Site settings
 
 Site settings allow you to open platform options to be viewed differently by visitors, customers, developers, and site administrators. In addition, you can modify options to improve the appearance in search engines and the view of some of the data that the public has access to when they reach the pages.
 
