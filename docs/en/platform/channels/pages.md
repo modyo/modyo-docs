@@ -89,7 +89,7 @@ In the right sidebar, you can select different grids based on the structure you 
 In this tab you will find common property options for all pages:
 
 * Name
-* Father
+* Parent
 * Path
 * Extract
 * Grid
