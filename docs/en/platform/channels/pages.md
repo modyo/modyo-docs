@@ -6,7 +6,7 @@ search: true
 
 Pages are what allow you to create structure for your sites, where you can add unstructured content and customize the routes from which that content is displayed.
 
-![Page index](/assets/img/platform/page-index.png)
+![Index of pages](/assets/img/platform/page-index.png)
 
 You can add new pages by clicking the **+ New** button at the top right of the view. You must choose a name, path and if the new page will have a parent.
 
