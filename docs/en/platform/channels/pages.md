@@ -108,32 +108,32 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 </ul></td>
 <td style="border: none;"><ul>
 <li>crossdomain</li>
- <li> dist </li> 
- <li> forms </li> 
- <li> javascript </li> 
- <li> login </li> 
- </ul> </td> 
- <td style="border: none;"> <ul> 
- <li> logout </li> 
- <li> manifest </li> 
- <li> ping </li> 
- <li> preview </li> 
- <li> profile </li> 
- </ul> </td> 
- <td style="border: none;"> <ul> 
- <li> robots </li> 
- <li> search </li> 
- <li> serviceworker </li> 
- <li> session </li> 
- <li> site_logout </li> 
- </ul> </td> 
- <td style="border: none; vertical-align: top;"> <ul> 
- <li> sitemap </li> 
- <li> stylesheets </li> 
- <li> uploads </li> 
- <li> widget_manager </li> 
- </ul> </td> 
- </tr> </table> 
+<li>dist</li>
+<li>forms</li>
+<li>javascript</li>
+<li>login</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>logout</li>
+<li>manifest</li>
+<li>ping</li>
+<li>preview</li>
+<li>profile</li>
+</ul></td>
+<td style="border: none;"><ul>
+<li>robots</li>
+<li>search</li>
+<li>serviceworker</li>
+<li>session</li>
+<li>site_logout</li>
+</ul></td>
+<td style="border: none; vertical-align: top;"><ul>
+<li>sitemap</li>
+<li>stylesheets</li>
+<li>uploads</li>
+<li>widget_manager</li>
+</ul></td>
+</tr></table>
 :::
 
 #### Route Delegation
