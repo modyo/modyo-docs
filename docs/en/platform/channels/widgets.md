@@ -235,12 +235,12 @@ EXAMPLE
 >Many of the options can be defined as environment variables or inside of an .env file that is recommended to avoid the publication to the github registry because can contain some delicate information
 
 ```bash
-modyo_build_directory=BuildDirectoryPath
-modyo_version=version
-modyo_token=Token
-modyo_account_url=account-url
-modyo_site_id=siteID
-modyo_site_host=SiteHost
-modyo_build_command=BuildCommand
-modyo_regex_exclude=RegExtoExcludeFiles
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_VERSION=version
+MODYO_TOKEN=token
+MODYO_ACCOUNT_URL=account-url
+MODYO_SITE_ID=siteId
+MODYO_SITE_HOST=siteHost
+MODYO_BUILD_COMMAND=buildCommand
+MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```
