@@ -17,7 +17,7 @@ Modyo sends messages to platform users through two channels:
 
 ## Campaigns
 
-At first glance, we will be in the Campaigns section, where you can see through an administrator all the messages and information we have sent to end users.
+In messaging campaigns, administrators can see and review all the messages that you have sent to your clients.
 
 At the top of the screen, there is a button that indicates that we see all the messages that have been sent on the system. If we want to filter by the message type (Mail or Notification), we can click to change the view.
 
