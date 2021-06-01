@@ -10,7 +10,7 @@ One of the most demanted features in any platforms is the ability to capture of 
 
 Upon entering Forms, you can see a list of all the forms that are currently active in the account. You can filter by their status (enabled or disabled), by the site where they are deployed and search for them by name.
 
-In each row in the forms table, you'll see in the first column the name of the form, then the creation date, and in the last column, the number of responses that have been submitted for that form.
+In each row of the form table, you will see the name of the form in the first column, the date of creation, and in the last column, the number of responses that have been completed for that form.
 
 From this list you can also access the individual analysis view, clicking on the title of the form, also the list of answers of the form, clicking on the number of answers in the form.
 
