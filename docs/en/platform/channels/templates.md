@@ -12,7 +12,7 @@ Inside the Template Builder, you will find that the main menu is hidden to optim
 
 - **Published**: There is a published version of the templates and that the editable version you are working on now matches the state of the published version. This status changes whenever you save any changes to your templates.
 - **Pending changes**: When there is a previously published version, this status indicates that your editable version has "pending changes" that have not been published.
-- **In review**: This status appears when [Team review](/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
+- **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
 - **Approved**: When [Computer Patch] is enabled (/en/platform/core/key-concepts.html) and if the item review conditions were met. If you are in this state, your templates are ready to be published.
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
