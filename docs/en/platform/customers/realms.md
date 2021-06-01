@@ -132,7 +132,7 @@ When modifying a user, you may change the list of Targets to which they belong.
 :::
 
 
-—
+----
 
 ## Configuring realm
 
