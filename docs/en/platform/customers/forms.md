@@ -14,7 +14,7 @@ In each row of the form table, you will see the name of the form in the first co
 
 From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
 
-To enable or disable forms and allow users to send their replies or not, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
+To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
 ## Create Form
 
