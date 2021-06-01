@@ -280,6 +280,6 @@ In addition to the above, **Custom Fields** may be enabled or disabled. If enabl
 When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**.
 :::
 
-:::tip Tip
-Apart from being able to save specific values to users, you can create [Targets](/es/platform/customers/targets.html) filters using the **Custom Fields** values, allowing users to segment by customizable values.
+::: tip Tip
+Apart from being able to save specific data in user profiles, [Targets]filters(/platform/customers/targets.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
 :::
