@@ -39,7 +39,7 @@ By default, you see the differences between the published version and the editab
 
 **Primary actions:**
 
-- **Save**: Save the current changes.
+- **Save**: Saves current changes.
 - **Send to Review**: If team review is enabled, then it can be submitted for review and notify reviewers that the widget is ready to be reviewed.
 - **Publish**: Takes you to the [joint publication] view (/es/platform/channels/sites.html #revision -and-joint publication) where you can publish your widgets.
 
