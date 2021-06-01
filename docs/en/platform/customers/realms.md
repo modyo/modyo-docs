@@ -32,7 +32,7 @@ Next to the **Apply** button, there is the **Save as Target** button. This saves
 
 You can sort users by ascending or descending order by the following values:
 - Name: User Name
-- Registration Date: Date of enrollment in the user database
+- Sign Up Date: Date and time of registration in the platform.
 - Last entry: Date of last entry to the platform
 - Sessions: Number of logins made within the platform
 
