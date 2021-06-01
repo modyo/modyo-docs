@@ -58,50 +58,50 @@ GET and displays the answer in JSON to this _request_:
 
 ```json
 {
- "targets": [
- {
- "id": 4,
- "uid": "46a80345-6e27-4262-9ea3-7e2f4e9af26a",
- "name": "Men",
- "filters_summary": "Gender Male",
- "matches_count": 1234,
- "created_at": "2018-08-09T 16:11:25 .000- 03:00 ",
- "updated_at": "2018-08-09T 16:11:25 .000- 03:00"
- },
- {
- "id": 3,
- "uid": "35fe710e-6f01-4f06-bba2-b44fa13d3e3",
- "name": "Women",
- "filters_summary": "Gender Female",
- "matches_count": 4532,
- "created_at": "2018-06-04T 17:20:39 .000- 03:00 ",
- "updated_at": "2018-06-04T 17:20:39 .000- 03:00"
- },
- {
- "id": 2,
- "uid": "cd72f535-6df0-4ebf-b4e3-9649ac02a144",
- "name": "Target mobile users",
- "filters_summary": "Login Device Mobile",
- "matches_count": 4413,
- "created_at": "2018-06-04T 17:20:21 .000- 03:00 ",
- "updated_at": "2018-06-04T 17:20:21 .000- 03:00"
- },
- {
- "id": 1,
- "uid": "6c30c2a6-8db4-4580-8ede-2a913c8a1b6b",
- "name": "Target 01",
- "filters_summary": "Age between 18 and 65",
- "matches_count": 1023,
- "created_at": "2018-06-04T 17:20:05 .000- 03:00 ",
- "updated_at": "2018-06-04T 17:20:05 .000- 03:00"
- }
- ],
- "goal": {
- "total_entries": 4,
- "per_page": 10,
- "current_page": 1,
- "total_pages": 1
- }
+  "targets": [
+    {
+      "id": 4,
+      "uuid": "46a80345-6e27-4262-9ea3-7e2f4e9af26a",
+      "name": "Hombres",
+      "filters_summary": "Gender Male",
+      "matches_count": 1234,
+      "created_at": "2018-08-09T16:11:25.000-03:00",
+      "updated_at": "2018-08-09T16:11:25.000-03:00"
+    },
+    {
+      "id": 3,
+      "uuid": "35fe710e-6f01-4f06-bba2-b44fa13d3ee3",
+      "name": "Mujeres",
+      "filters_summary": "Gender Female",
+      "matches_count": 4532,
+      "created_at": "2018-06-04T17:20:39.000-03:00",
+      "updated_at": "2018-06-04T17:20:39.000-03:00"
+    },
+    {
+      "id": 2,
+      "uuid": "cd72f535-6df0-4ebf-b4e3-9649ac02a144",
+      "name": "Target mobile users",
+      "filters_summary": "Login Device Mobile",
+      "matches_count": 4413,
+      "created_at": "2018-06-04T17:20:21.000-03:00",
+      "updated_at": "2018-06-04T17:20:21.000-03:00"
+    },
+    {
+      "id": 1,
+      "uuid": "6c30c2a6-8db4-4580-8ede-2a913c8a1b6b",
+      "name": "Target 01",
+      "filters_summary": "Age between 18 and 65",
+      "matches_count": 1023,
+      "created_at": "2018-06-04T17:20:05.000-03:00",
+      "updated_at": "2018-06-04T17:20:05.000-03:00"
+    }
+  ],
+  "meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  }
 }
 ```
 
