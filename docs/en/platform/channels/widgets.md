@@ -144,7 +144,7 @@ $ yarn global add @modyo/cli #via yarn
 
 The available commands are get, push and help
 
-- [`modyo-cli (-v|—version|version) `](#modyo -cli-version)
+- [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
 - [`modyo-cli help [COMMAND] `](#modyo -cli-help-command)
 - [`modyo-cli get NAME [DIRECTORY] `](#modyo -cli-get-name-directory)
 - [`modyo-cli push name`](#modyo -cli-push-name)
