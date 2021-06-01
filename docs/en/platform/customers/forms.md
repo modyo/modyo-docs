@@ -18,7 +18,7 @@ To enable or disable forms and allow users to send their answers, you must go to
 
 ## Create a Form
 
-To create a new form, click the main button on the top right. **+ New**. This will take you to the creation view of a new form, where you need to fill out the main attributes of the form:
+To create a new form, click on the main action at the top right **+ New**. This will take you to the creation view of a new form, where you must fill in its main attributes:
 
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator, and also as a title when a user will respond to it.
 - **Description**: This text will appear as text below the title when users will respond to it.
