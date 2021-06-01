@@ -46,7 +46,7 @@ A selector will open that shows the two possible ways to create users in the sys
 When you select "Add User", the platform will ask you to complete the following fields:
 
 - First Name: Legal name of the user. **Required**
-- Last name: Last name of the user.
+- Last Name: Last name of the user.
 - Maternal surname: Maternal surname of the user.
 - User name: Name within the platform **Required**
 - Email: User's email **Required**
