@@ -80,7 +80,8 @@ The filters found by default in the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, go to the Custom Fields section, located in [Customers Settings](/es/platform/customers/realms.html #configuracion -de-customers).
+To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
+
 
 :::warning Attention
 The targets to which each user belongs is updated in a background process:
