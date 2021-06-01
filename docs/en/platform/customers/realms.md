@@ -125,7 +125,7 @@ In the upper right section you will find additional options with which you can d
 
 * **Edit**: Opens the user edit modal. If you want to add more fileds to a user go to [Custom Fields](/en/platform/customers/users.html#custom-fields).
 * **Disable**: You can disable users and prevent them from logging in.
-* **Dele**: Once a user is disabled, you can delete that user. This action can be performed by team members who are account administrators, and each user can delete their account from the additional options in their profile.
+* **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
 :::tip Tip
 When you modify a user, you may change the Targets list to which it belongs.
