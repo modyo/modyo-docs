@@ -63,7 +63,7 @@ Hello {{ 'tobi' }}
 
 ## Expressions and Variables
 
-Expressions are statements that have values. Liquid templates can use expressions in many places; very often in output statements, but also as arguments for tags or filters.
+Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output statements, but also as arguments to some tags or filters.
 
 Liquid accepts the following types of expressions:
 
