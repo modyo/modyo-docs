@@ -276,8 +276,8 @@ All **Custom Fields** have certain standard properties:
 
 In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then they can be used by administrators and depending on their configuration, they will be available to users. If a **Custom Field** is disabled, then it will not appear on any form, but its values will remain saved.
 
-:::danger danger
-When a**Custom Field** is disabled, it can be deleted. By deleting a**Custom Field**, you will be forever deleting all the values that users had for that **Custom Field**.
+::: danger Danger
+When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**.
 :::
 
 :::tip Tip
