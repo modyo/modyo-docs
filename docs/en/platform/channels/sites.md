@@ -159,7 +159,7 @@ If the code is not customized or saved, the site will not have the features you 
 
 <img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-SEO (Search Engine Optimization) is the key to appearing in different search engines. It depends on a good configuration whether users reach the site through them.
+SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Good SEO depends on whether users reach your site through these search engines. SEO is a large topic, but at a general site/digital channel level, there are a few important configurations to consider.
 
 The options to configure are:
 
