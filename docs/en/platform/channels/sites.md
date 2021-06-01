@@ -8,7 +8,7 @@ search: true
 
 This is where you work to create sites and web-based applications within the platform. Building in Sites focuses on all the development, design and navigation flow and structure. If you want to add content to a site or web-based application, you must first create content in the [Content](/en/platform/content/) section.
 
-When you enter, you can see that there are 4 states:
+Upon entering, you will see that there are 4 statuses:
 
 <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
