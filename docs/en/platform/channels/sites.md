@@ -466,6 +466,6 @@ strict, but some security inspectors will wait for the presence of
 this _header_.
 
 * **0**: Disable XSS _filtering_.
-* **1**: Enable XSS _filtering_, removing unsafe parts.
+* **1**: Enable XSS _filtering_, removing the unsafe parts.
 * **1; mode=block**: Enables XSS _filtering_, preventing the _rendering_ of the
   page.
