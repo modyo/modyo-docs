@@ -84,7 +84,7 @@ To create an advanced filter that fits your needs, go to the Custom Fields secti
 
 :::warning Warning
 Updating targets occurs constantly in background in one of three ways:
-* Every five minutes.
+* Every 5 minutes.
 * Each time a user's profile is modified.
 * Every time a user answers a form.
 
