@@ -375,7 +375,7 @@ two
 
 ### For Loop
 
-Liquid allows `for` loops on collections:
+Liquid allows `for` loops over collections:
 
 ```liquid
 {% for item in array %}
