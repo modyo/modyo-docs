@@ -10,7 +10,7 @@ Navigation is the fastest way to put together a list of elements to give your us
 
 In this section you will find a nested list of elements, which correspond to the elements that will appear on the site when using the <span v-pre> `{% menu%}` </span> tag in the [template builder section](/platform/channels/templates.html).
 
-The builder menu allows only two levels of depth, so you can have a main listing, and sub items in each of the main items. You cannot nest other items within nested elements. 
+The builder menu only allows two levels of depth, so you can have a main list, and sub elements in each of the main items. You will not be able to nest other elements within the nested elements.
 
 At the top of the view, you will find the list status of the menu:
 
