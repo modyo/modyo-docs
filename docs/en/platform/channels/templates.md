@@ -100,7 +100,7 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 **Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
 
- <img src="/assets/img/channels/template_builder/snippets.jpg" width="300"> 
+<img src="/assets/img/channels/template_builder/snippets.jpg" width="300">
 
 **Changes**: A list of all the times and states in which you have done the "Save" action in this release. By clicking on one of the sub-versions, you change the content of the template you're working on to that sub-version.
 
