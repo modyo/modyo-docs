@@ -26,9 +26,9 @@ The available filters are:
 
 In this graph we can see a comparison between two values that represent user actions within Modyo Channels.
 
-You can select any of these value counts to compare:
+You can select any of these values to compare:
 
-- **Activiti**: Gather all actions below.
+- **Activity**: Total of all activity.
 - **Active Users**: See all users who have performed two or more actions within the specified time period.
 - **Delivered**: Contemplate the count of all campaign emails that were successfully sent.
 - **Open mail**: Corresponds to the count of all email campaigns opened by users.
