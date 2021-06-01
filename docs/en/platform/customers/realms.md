@@ -179,7 +179,7 @@ This option allows you to display the logo configured for the account in the ses
 
 If you want to have custom CSS in the session views, add it to the editor and click on the **Save** button.
 
-It is common to have linked files in CSS code. If you want to add one, you just have the button that is above the editor, and that will lead to the [File Manager](/es/platform/content/asset-manager.html), which will allow you to upload any file you need without problems.
+It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
 However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
 
