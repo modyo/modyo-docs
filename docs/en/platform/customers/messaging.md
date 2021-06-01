@@ -162,7 +162,7 @@ If you are going to reuse a template, remember to review its content in detail, 
 
 Under each name, there is a button that allows you to edit. If you click on it, this opens the messaging template editor.
 
-On the side, there is a button that displays a menu with the following options:
+On one side, there is a button that displays a menu with the following options:
 
 - **Preview**: Displays the mail template model that is saved.
 - **Copy**: You can make a copy of the template.
