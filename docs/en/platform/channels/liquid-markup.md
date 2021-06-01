@@ -302,7 +302,7 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 {% endif %}
 ```
 
-### Case Statement
+### Case/when
 
 If you need more conditions, you can use the "case" statement:
 
