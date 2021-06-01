@@ -473,7 +473,7 @@ Loop Inversion:
 {% for item in collection reversed %} {{item}} {% endfor %}
 ```
 
-A for loop can take an optional `else` clause to display a text block when there are no items in the collection:
+A for loop can take an optional `else` clause to display a block of text when there are no items in the collection:
 
 ```liquid
 # items => []
