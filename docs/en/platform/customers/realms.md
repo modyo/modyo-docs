@@ -212,8 +212,8 @@ The styles of the platform emails that we send can also be customized. To do thi
 
 When you click to enable each of the emails, it will show a default editor in which we can paste our code.
 
-:::danger danger
-It is critical that each email includes customizable codes that allow the platform to include random data of the user requesting the shipment.
+::: danger Danger
+It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the mail.
 
 To do this, you must insert into the code the attributes that are under the editor, and which you can easily copy and paste to place them in the part you need.
 :::
