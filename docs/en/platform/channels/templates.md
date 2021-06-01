@@ -204,7 +204,7 @@ If you want to display the view with the values of the entry you're working on, 
 
 :::tip Tip
 
-To find the shape of the URL, if the custom domain is enabled, you must go to ``Site Settings > Domains``.
+To find the form of the URL, in case a custom domain is enabled, you must go to ``Site Configuration > Domains``.
 
 If it is not enabled, the URL will be in the form `account_url/site_host`.
 :::
