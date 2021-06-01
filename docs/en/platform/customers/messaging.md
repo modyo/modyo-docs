@@ -29,7 +29,7 @@ In the table, campaigns are sorted by the following columns.
 - **Last sent**: Date and time the campaign was last sent.
 - **Created on**: Campaign creation date.
 
-At one side of each campaign, there is a button where you can perform two actions. 
+Next to each campaign, there is a button where we can perform two actions.
 
 - **Edit the Campaign**
 - **Delete the Campaign**
