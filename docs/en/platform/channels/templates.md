@@ -357,7 +357,7 @@ The recommended method to interact with a private API using the Modyo session wi
 1. Check the fields you need (Enable refresh token, Enable remote logout, Enable token revocation, Enable claims synchronization on login)
 1. Associate the provider fields with the custom fields you have in Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
-### Using Axios to do integration
+### Using Axios to do the integration
 
 If you want to use a library like `axios` to perform an integration from Modyo, a pattern that is convenient is to create 3 snippets that take care of the most basic aspects of an integration.
 
