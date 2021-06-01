@@ -74,7 +74,7 @@ If you have the latest theme available and still don't have these snippets, you 
 
 In case you have an old theme installed and do not have these snippets, you can access the code here to add them as custom snippets and easily embed Google Tag Manager to your site.
 
-1. Create a custom snippet with the following code and then embed the snippet into the site head using `{% snippet "gtm-head"%}`, replacing "gtm-head" with the name you gave the snippet.
+1. Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
 
 **Google Tag Manager for _head_**
 ```liquid
