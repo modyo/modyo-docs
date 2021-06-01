@@ -43,7 +43,7 @@ To add a new user, you must click on the **+ New** button at the top right of th
 
 A selector will open that shows the two possible ways to create users in the system: manually or by importing them from a \*.CSV file. The second option allows us to import multiple users simultaneously.
 
-When you select add a user, the platform prompts you to complete the following fields:
+When you select "Add User", the platform will ask you to complete the following fields:
 
 - Name: Legal name of the user. **Required**
 - Last name: Last name of the user.
