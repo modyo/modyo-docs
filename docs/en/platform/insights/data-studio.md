@@ -10,7 +10,7 @@ Data Studio is Google’s reporting solution that allows you to easily create cu
 
 This guide will walk you through the simple steps to copy a Data Studio reporting template and connect your own data sources so you can analyze the performance of your digital channels and gain insights from your data. 
 
-After you go through this guide, you can apply the same steps for other Data Studio templates.
+After walking through this example, you’ll be able to apply the same steps for other Data Studio report templates.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AMNY32HIO0g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
