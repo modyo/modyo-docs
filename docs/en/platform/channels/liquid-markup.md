@@ -618,7 +618,7 @@ video_asset:
   - thumbnail_url
 ```
 
-### Drops from channels
+### Channels drops
 The drops available for channels are:
 
 ```
