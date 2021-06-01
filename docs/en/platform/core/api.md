@@ -4,7 +4,7 @@ search: true
 
 # Administration API
 
-In addition to the functionality provided by Modyo's Back End, the platform has an administrative API. This allows you, in an authenticated way, to external access to different actions such as listing, creating and deleting items such as forms, layouts, content, creating custom fields, navigation menus, sending mail campaigns, among others.
+In addition to the functionality that is provided by the Modyo Back End, the platform has an administrative API that, when authenticated, gives you external access to different actions such as listing, creating and deleting elements such as forms, layouts, content, etc. You can also create custom fields, navigation menus, send email campaigns, among others.
 
 In this way, it is possible to perform administrative tasks by consuming the API and without relying on the Modyo interface, which gives you greater freedom to control your work.  
 
