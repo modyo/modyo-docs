@@ -12,7 +12,7 @@ Upon entering, you will see that there are 4 statuses:
 
 <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
-- **Enabled**: The default state in which newly created sites remain and those that are enabled for use.
+- **Enabled**: Default state of functioning online digital channels and newly created Sites.
 - **Hidden**: Sites created and enabled that do not appear in the list of sites in the user profile. They can only be accessed if you have the site URL.
 - **Development**: Sites available only to Modyo administrators. Users who do not have administrator permissions will not be able to view these sites.
 - **Disabled**: Sites that cannot be accessed.
