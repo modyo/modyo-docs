@@ -289,28 +289,28 @@ To do this, the administrator who created the site must manually assign team mem
 
 To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
 
-You can modify the role of any of the associated administrators by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
+You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
 
-If you want to remove an administrator from a site, select using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
+To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
-The roles available are:
+The available roles are:
 
-- **Developer**: You can create, modify and submit to review pages, widgets, menu and templates.
-- **Developer CLI**: You can create, modify and submit to review pages, widgets, menu and templates. You can also push widgets from external applications.
-- **Reviewer**: You can create, modify, submit to review, and approve pages, widgets, menu and templates, as well as publish them when the review conditions are met.
-- **Admin**: You can create, modify, submit to review and approve pages, widget, menu, and templates. You can publish without going through team review validations. You can also modify the settings of the site.
+- **Developer**: Can create, modify and submit pages, widgets, menu and templates for review.
+- **Developer CLI**: Can create, modify and submit pages, widgets, menu and templates for review. Can also push widgets to the platform from external applications.
+- **Reviewer**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them when the correct review conditions are met.
+- **Admin**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them without going through the validations of the team review if necessarty. Admins can also modify site configurations.
 
 #### Developer
 
-He is the user in charge of the structural development of resources, the creation and editing of content. Anything you do, you have to go to review.
+Developers are in charge of the structural development of resources, design and the creation of or integration with content. Everything developers do has to go to review, or be directly published by a higher role.
 
-This user cannot publish, delete, return to previous versions of resources (Rollback), or change settings.
+Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
 
-There is a variation of this role with the name "CLI" that in addition to developer permissions, allows them to push widgets from external applications, such as [modyo-cli](/es/platform/channels/widgets.html #modyo -cli).
+There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 
-They correct the work done by Developers, approving or discarding what is already done, and then publish.
+Reviewers correct the work done by Developers, approving or rejecting their changes, and then publishing.
 
 You cannot edit the site settings.
 
@@ -466,6 +466,6 @@ strict, but some security inspectors will wait for the presence of
 this _header_.
 
 * **0**: Disable XSS _filtering_.
-* **1**: Enable XSS _filtering_, removing unsafe parts.
+* **1**: Enable XSS _filtering_, removing the unsafe parts.
 * **1; mode=block**: Enables XSS _filtering_, preventing the _rendering_ of the
   page.
