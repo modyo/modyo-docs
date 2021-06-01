@@ -10,7 +10,7 @@ These allow you to group your customers into different segments and facilitate c
 
 ## Interface
 
-In the interface, you can see a list of all the targets created so far, with the name and the different specifications that allow filtering them.
+In the interface, you can see a list of all targets in your account, with the following details:
 
 The list is sorted as follows.
 
