@@ -29,7 +29,7 @@ It is possible to enter the preview mode with or without a logged in user sessio
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon takes you to the [differences view](/en/platform/channels/sites.html#review-and-joint-publication) in which you can compare the differences between multiple versions of your templates.
 
-By default, parts by comparing the published version to the editable version, but by using the version selectors, you can also compare with the backup versions.
+By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
 :::tip Tip
 Each time you publish a version, the version that was released becomes a backup version. By default, up to 20 backups are saved, so that the most recent 20 backups can be compared, restored, and rolled back. 
