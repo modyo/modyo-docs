@@ -176,7 +176,7 @@ The **General** section adds two options:
 
 The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
- <img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350"> 
+<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 :::warning Attention
 To be able to make proper use of the form's snippet, you must consider the _CORS_ settings of your Modyo account and the security _headers_ where you are inserting the snippet.
