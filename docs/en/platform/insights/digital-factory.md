@@ -54,4 +54,4 @@ This heat map allows you to visualize the detailed activity of the most active a
 
 ### Activity by resource
 
-This graph allows you to compare the activity of each Modyo element, both your sites and your spaces. You can see horizontal bars that correspond to the number of elements of that type, in any state.
+This graph allows you to compare the activity of each Modyo element, both of your sites and your spaces. You can see horizontal bars that correspond to the amount of elements of that type, in any state.
