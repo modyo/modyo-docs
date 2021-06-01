@@ -159,7 +159,7 @@ In order to automatically display [content](/en/platform/content/) on a site, yo
 1. Have entries published in the language of the site. Go to [Entries](/en/platform/content/entries.html) and [Location](/en/platform/content/spaces.html#location) to learn more.
 1. Create a custom view in the Template Builder.
 
-To create a custom view, you need to enter the Template Builder and make sure that you are in the first "Views" tab. When you scroll to the end of the list, you will see that there is a section called **Custom** and a **+ Add Custom View** button. When creating the custom view, you must select a name, a space to which it will be associated with, and finally a space content type.
+To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called **Custom** and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to.
 
 :::warning Attention
 The name of the view will be the path (URL) relative to the site of the content to display, so pay attention when naming these views.
