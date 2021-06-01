@@ -104,10 +104,10 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 **Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
 
- <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300"> 
+<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
 
-:::tip Tip
-If you publish a version, you can see that the changelog disappears, this is because the new editable version has not had any changes.
+::: tip Tip
+If you publish a new version of your templates, this list of changes resets and erases all saved states. This is because the new editable version now matches the version you just published. Saving new changes adds new saved states until the next time you publish.
 :::
 
 :::tip Tip
