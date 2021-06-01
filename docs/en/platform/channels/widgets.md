@@ -206,7 +206,7 @@ EXAMPLE
 
 ### `modyo-cli push NAME`
 
-The command `push` is responsible for the principle of integration, used to send the widget to the selected site on the modyo platform.
+The `push` command is the one in charge of the integration principle, used to send the widget to the selected site in the modyo platform.
 
 It will use an argument called name to load the widget into the platform and some indicators required as a site_base id token or host to identify the® Modyo platform that hosts the widget and have an additional indicator to prevent manual process flow of widget publication.
 
