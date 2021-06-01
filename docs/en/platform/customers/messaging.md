@@ -4,7 +4,7 @@ search: true
 
 # Messaging
 
-Messaging is a Modyo tool for those who want to campaign on the site, which allows you to send information to end users in a massive way, aimed at specific targets.
+Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific targets.
 
  <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
 
