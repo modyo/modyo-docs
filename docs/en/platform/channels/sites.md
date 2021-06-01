@@ -322,7 +322,7 @@ This user is different from Default Admin. Site Admin can only configure the ext
 
 If necessary, users from the site who already have previous roles can be deleted. To do this, just click the user and the Delete action.
 
-### Custom Redirects
+### Custom redirects
 
 Modyo has a custom redirects system that will allow you to take a URL from your site and automatically redirect using a 301 or 302 code to another section of the site.
 
