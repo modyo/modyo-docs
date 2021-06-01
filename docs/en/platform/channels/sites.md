@@ -189,7 +189,7 @@ Since the meta tags list is part of the site's configuration, only the site's ad
 Restrictions allow you to configure the privacy of your site.
 
 - If the privacy level is set to public, then it is visible to everyone.
-- If the site is private, only users with a Modyo session will be able to view the site.
+- If the privacy level is set to private, then this site is only visible to users with an active session (authenticated login).
 - If the site is private, but the home is public, the home is shown to everyone who arrives at the Home, but when navigating to any other page on the site, they are prompted to register or sign in.
 - If you reach a URL that does not exist within the site, by default you will find a 404 response, but if you check this option, instead of receiving a 404, you will be redirected to the Site Home.
 
