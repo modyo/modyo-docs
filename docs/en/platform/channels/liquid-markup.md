@@ -395,7 +395,7 @@ When iterating over a hash, `element[0]` contains the key, and `element[1]` cont
 {% endfor %}
 ```
 
-Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges resemble `(1.. 10)` - parentheses containing an initial value, two points and an end value. The start and end values must be integers or expressions that resolve to integers.
+Instead of looping over an existing collection, you can also loop through a range of numbers. The ranges appear as `(1..10)`—parentheses that contain an initial value, two points and an end value. The initial and final values must be integers or expressions that are resolved to whole numbers.
 
 ```liquid
 # if item.quantity is 4...
