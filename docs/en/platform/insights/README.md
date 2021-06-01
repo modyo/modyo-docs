@@ -4,7 +4,7 @@ search: true
 
 # Modyo Insights
 
-For any company or institution, it is important to know what is going on in your ecosystem, so having on hand a generalized view of both your own end-users' activity and the work team is essential to implement any strategy.
+For any company or institution, it is important to know what is happening in their digital ecosystem, so having at hand a visual overview of both the activity of their own customers and the teams doing digital work team is essential to implementing any strategy.
 
  <img src="/assets/img/insights/header.jpg" style="margin: 40px auto; width: 500px; display: block;"> 
 
