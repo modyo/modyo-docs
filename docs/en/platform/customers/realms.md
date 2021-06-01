@@ -30,7 +30,7 @@ The Advanced Filters option opens a window which allows you to filter users by s
 Next to the **Apply** button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/platform/customers/targets.html) section.
 :::
 
-In the table itself, it is possible to sort users by their respective values by clicking on the headers of each of the following columns:
+You can sort users by ascending or descending order by the following values:
 - Name: Username
 - Registration Date: Date of enrollment in the user database
 - Last entry: Date of last entry to the platform
