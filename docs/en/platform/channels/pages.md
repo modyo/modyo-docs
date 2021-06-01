@@ -66,7 +66,7 @@ The central grid is the place where you can position your widgets. You can move 
 In the right side section you will find three tabs:
 
 - Add Widgets: allows you to select widgets from a list and add them to the grid.
-- Edit widget: Allows you to change different properties and filters for each widget.
+- Edit Widget: allows you to change different properties and filters for each widget.
 - Properties: Allows you to modify the name, excerpt, path, parent, privacy, page grid and meta tags.
 
 ### Widgets
