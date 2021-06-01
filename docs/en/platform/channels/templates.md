@@ -151,7 +151,7 @@ In the views section, you will find 4 error types available for customization:
 * **Privacy**: You will see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#restrictions) or one of its [pages](/en/platform/channels/pages.html#privacy).
 * **Template**: You will see this error view when the site page you are loading has a liquid syntax error. It is unlikely that you will see this view, since from Modyo 8.1 onwards we have a feature that checks the liquid syntax before you can save and publish changes in the template builder.
 
-## Views for content
+## Content views
 
 In order to automatically display [content](/en/platform/content/) on a site, you must meet certain conditions:
 
