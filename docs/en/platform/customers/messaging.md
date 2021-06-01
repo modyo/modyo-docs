@@ -61,7 +61,7 @@ When you do this, your campaign is saved and you will get to the Campaign Status
 
 <img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-The Shipping Status view allows not only to send a campaign you created for the first time. In this, you can also find campaign statistics that will allow you to see the performance of the content you sent.
+The Campaign Status view allows you to not only send a campaign, but also review the campaign metrics that will allow you to see the performance of the content you sent.
 
 At first glance, you will find at the top of the screen the**Preview** button, which allows you to see the email you will send.
 
