@@ -46,9 +46,7 @@ The list shows us the HTTP method for each operation, the route and the descript
 
 If we click on any of these methods, like "Targets List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types and a field to enter a test value for each parameter.
 
-Additionally, you will be able to query the API directly from the Swagger view by completing the parameters before
-described and then clicking on "Execute", which will invoke the API and gives you the result in the
-same view.
+Additionally, you can call the API directly from Swagger filling in the parameters described earlier and then clicking on "Execute". This will invoke the API and deliver the result in the same view.
 
 In the example, the view invokes the URL `https://[account_host]/api/admin/targets` with
 GET and displays the answer in JSON to this _request_:
