@@ -33,7 +33,7 @@ In this section, each user can modify his own profile data, depending on the [cu
 * [Custom fields](/en/platform/customers/users.html#custom-fields)
 * Password
 
-In addition, each user can definitely delete their account. 
+In addition, each user can permanently delete their account. 
 
 :::danger danger
 Deleting the user account is an irreversible action, and users who execute this action will need to register again in order to access.
