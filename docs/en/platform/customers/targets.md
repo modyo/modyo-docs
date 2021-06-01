@@ -33,7 +33,7 @@ If you need to search for a specific target by name, you can do so through the s
 
 To create a target, click on the **New Target** button at the top of the screen.
 
-Immediately a view will open in which you can select the filters you want for each Target.
+In the window that appears, you can select the filters for your target.
 
 If you want to delete a filter from the target you're putting together, just click on the icon on the right side of the screen.
 
