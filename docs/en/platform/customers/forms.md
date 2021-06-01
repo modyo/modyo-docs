@@ -12,7 +12,7 @@ Upon entering Forms, you can see a list of all the forms that are currently acti
 
 In each row of the form table, you will see the name of the form in the first column, the date of creation, and in the last column, the number of responses that have been completed for that form.
 
-From this list you can also access the individual analysis view, clicking on the title of the form, also the list of answers of the form, clicking on the number of answers in the form.
+From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
 
 To enable or disable forms and allow users to send their replies or not, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
