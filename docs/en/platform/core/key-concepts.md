@@ -32,7 +32,7 @@ To configure Team Review, go to `Site/Space configuration > Team review`.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-The options available are:
+The available options are:
 
 - **Enable Team Review**: Enables or disables team review completely in this context (site or space).
 - **Number of approvals**: Determine how many users must approve the item in order to be published (it will change its status from "Waiting for Review" to "Approved").
