@@ -261,7 +261,7 @@ To learn more about these filters and their supported arguments, go to the [Liqu
 
 ## SEO
 
-SEO [(Search Engine Optimization)](/es/platform/channels/sites.html #seo) is one of the most important topics of the site and content. 
+SEO [(Search Engine Optimization)](/en/platform/channels/sites.html#seo) is one of the most important topics of your site and content.
 
 In Modyo there is a way to control how search engines read your site and content, adding meta tags dynamically depending on the attributes you add to your pages and content.
 
