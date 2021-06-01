@@ -76,7 +76,7 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/8.png)
 
-    In the next window, find and select the Google Search Console connector. 
+    In the next window find and select the Search Console Connector by Google.
 
     ![Data studio](/assets/img/insights/9.png)
 
