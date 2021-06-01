@@ -56,7 +56,7 @@ Only unpublished widgets can be archived.
 Archived widgets do not appear in the main widget list or in the Custom widget selection in Page Builder. You can restore an archived widget by editing it and using the **restore** option in the upper right corner of the editing view.
 :::
 
-Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder.](/es/platform/channels/pages.html)
+Once a widget is published, it is available as a custom widget in the [page builder.](/en/platform/channels/pages.html)
 
 :::tip Tip
 To learn more about the publication flow, review the [Versioning.] section (/es/platform/core/key-concepts.html #versionado)
