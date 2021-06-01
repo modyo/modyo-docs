@@ -56,7 +56,7 @@ Within this section, you can configure the following data:
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
 - **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/key-concepts.html).
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
-- **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily insert scripts to make use of the google event logging tool.
+- **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears on the side of the address bar.
 - **Apple Icon**: Image that appears on mobile devices when you use the site as an app.
 - **Dele**: This option allows you to definitely delete a site and all its elements.
