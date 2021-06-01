@@ -186,7 +186,7 @@ Since the meta tags list is part of the site's configuration, only the site's ad
 
 <img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-Restrictions allows you to configure the privacy of the site.
+Restrictions allow you to configure the privacy of your site.
 
 - If the site is public, then everyone can see the site.
 - If the site is private, only users with a Modyo session will be able to view the site.
