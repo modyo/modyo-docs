@@ -521,41 +521,41 @@ var sessionManager={
 
 This should be the modal to activate in the previous step with bootstrap for handling the warning modal.
 
-```html
+``` html
 <div
- id="session-modal"
- class="modal fade"
- tabindex=" -1"
- role="dialog"
- aria-labelledby="session-modal-label"
+  id="session-modal"
+  class="modal fade"
+  tabindex="- 1"
+  role="dialog"
+  aria-labelledby="session-modal-label"
 >
- <div class="modal-dialog" role="document"> 
- <div class="modal-content"> 
- <div class="modal-header"> 
- <h5 class="modal-title" id="session-modal-label"> 
- Your session will expire
- </h5> 
- </div> 
- <div class="modal-body text-center"> 
- <p> 
- Your session will expire in <span id="expiration-time"> </span> seconds.
- </p> 
- <p> Want to keep your session? </p> 
- </div> 
- <div class="modal-footer"> 
- <button id="session-modal-yes" type="button" class="btn btn-primary"> 
- If
- </button> 
- <button
- id="session-modal-no"
- type="button"
- class="btn btn-second"
- data-dismiss="modal"
- >
- Not
- </button> 
- </div> 
- </div> 
- </div> 
- </div> 
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="session-modal-label">
+          Your session will expire
+        </h5>
+      </div>
+      <div class="modal-body text-center">
+        <p>
+          Your session will expire in <span id="expiration-time"> </span> seconds.
+        </p>
+        <p> Do you want to keep your session? </p>
+      </div>
+      <div class="modal-footer">
+        <button id="session-modal-yes" type="button" class="btn btn-primary">
+          Yes
+        </button>
+        <button
+          id="session-modal-no"
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >
+          No
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
