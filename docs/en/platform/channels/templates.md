@@ -257,7 +257,7 @@ To include any of these templates, there are different Liquid filters available:
 </head>
 ```
 
-For details and parameters supported by these filters, go to [Liquid Filters](/es/platform/channels/liquid-markup.html #filtros).
+To learn more about these filters and their supported arguments, go to the [Liquid filters](/en/platform/channels/liquid-markup.html#filters) page.
 
 ## SEO
 
