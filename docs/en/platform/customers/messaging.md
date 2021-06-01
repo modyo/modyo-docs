@@ -148,7 +148,7 @@ You also have access to a search bar that to find campaigns or users by name and
 
 <img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-To make your message in the form of an email, you'll need a template to be able to add the content you want.
+To create your campaign as an email, you will need a template for your content.
 
 From this section, you will be able to make mailing models easily and then send them to users.
 
