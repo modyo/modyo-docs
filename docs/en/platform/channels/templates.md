@@ -210,7 +210,7 @@ In case it is not enabled, the URL will be in the form `account_url/site_host`.
 :::
 
 ## Custom Layouts
-Modyo has three layouts by default: 
+Modyo has three default layouts:
 * **Home**: Used exclusively on the home page of the site.
 * **Base**: All pages except the home use this layout by default.
 * **Error**: Error views use this clean layout (404, 401)
