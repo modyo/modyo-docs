@@ -116,7 +116,7 @@ Modyo provides the ability to implement Progressive Web Applications (PWA) withi
 
 <img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-#### **Manifesto**
+#### **Manifest**
 
 The manifest is used to indicate how you want a browser to display your digital channel. On the platform, it is possible to activate it through this checkbox. This will create the following route:
 
