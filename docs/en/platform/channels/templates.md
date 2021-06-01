@@ -155,7 +155,7 @@ In the views section, you will find 4 error types available for customization:
 
 In order to automatically display [content](/en/platform/content/) on a site, you need to meet certain conditions:
 
-1. Have a space with at least one language (the same as the site) with at least one Type. Go to [Spaces](/es/platform/content/spaces.html) and [Types](/es/platform/content/types.html) to learn how.
+1. Have a space with at least one language that matches the site where you want to automate content and have at least one created Type within that space. Go to [Spaces](/en/platform/content/spaces.html) and [Types](/en/platform/content/types.html) to learn how.
 1. Have posts published in the language of the site. Go to [Entries](/es/platform/content/entries.html) and [Location](/es/platform/content/spaces.html #localizacion) to learn more.
 1. Create a custom view in the Templates Builder.
 
