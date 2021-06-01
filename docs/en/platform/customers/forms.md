@@ -4,7 +4,7 @@ search: true
 
 # Forms
 
-One of the features most required by all platforms is the capture of user data for later analysis and segmentation. With this tool you can create as many forms you need to collect data from the users of your sites.
+One of the most demanted features in any platforms is the ability to capture of user data, analyze it, and use it for segmentation. With this tool you can create as many forms as you need to collect data from the users of your sites.
 
 ![Digital factory](/assets/img/platform/form-index.png)
 
