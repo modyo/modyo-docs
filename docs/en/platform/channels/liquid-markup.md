@@ -116,7 +116,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `escape_once` - Returns an escape version of html without affecting existing escape entities
 * `escape` - Escape html to a string
 * `first` - Get the first element of the last array
-* `floor` - Round a decimal number down to the nearest integer, *e.g.* <span v-pre> `{{4.6 | floor}} #=> 4` </span> 
+* `floor` - Rounds a decimal number down to the nearest integer, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
 * `hmac_sha1` - Return the SHA-1 hash using a message authentication code (HMAC) from a string, *e.g.* <span v-pre> `{% 'Hello world' | hmac_sha1: 'key'%} # => '2a73959742baf046e6e2e27e5ee94bcfffffff 0af31b1'`</span>.
 * `hmac_sha256` - Return the SHA-256 hash using a Message Authentication Code (HMAC) from a string, *e.g.* <span v-pre> `{% 'Hello world' | hmac_sha256: 'key'%} # => 'a82b2e160edaf92a6589dc11160d2a10c04c04d 449840a58717db308c1e3512b039'`</span>.
 * `join` - Join elements of the array with a certain character between them.
