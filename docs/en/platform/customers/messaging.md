@@ -51,7 +51,7 @@ This opens a form that you must fill out with the following information:
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
 - **Enable targeting**: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
 
-After filling in this data, you must click on the**Save and Continue** button, located at the top of the screen.
+After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
 
 Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, simply click on the button at the top of the screen.
 
