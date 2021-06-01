@@ -20,7 +20,7 @@ Upon entering, you will see that there are 4 statuses:
 
 To create a site, you just have to click on the **New** tab, which will allow you to designate the name and host, and then select a base template for the site's appearance and structure.
 
-After that, you can see it in "Enabled" mode, which means that it is online to work.
+After that, you can see it with the status "Enabled", which means that it is online to work.
 
 :::warning Attention
 In the Site Index, you will only see the sites where you are part of the team working with a role.
