@@ -175,8 +175,8 @@ The Modyo CLI is designed to work based on micro front-end architecture, and wil
 
 ### `modyo-cli get NAME [DIRECTORY]`
 
-Generally, the `get `command is used to get a widget template.
-If you have a token provided by Modyo, you can use the same command to extract any of our premium widgets from our Widget Library:
+In general, the `get` command is used to obtain a boilerplate widget.
+If you have a token provided by Modyo, the same command can be used to pull any of our premium widgets from our Widget Library.:
 
 ```bash
 USAGE
