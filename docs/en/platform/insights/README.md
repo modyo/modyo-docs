@@ -8,7 +8,7 @@ For any company or institution, it is important to know what is happening in the
 
 <img src="/assets/img/insights/header.jpg" style="margin: 40px auto; width: 500px; display: block;">
 
-**Modyo Insights** is a section specializing in the representation of statistical data from both the users of your sites and the work team that creates content and digital channels.
+**Modyo Insights** is a set of dashboards and visual tools specialized in the representation of statistical data of both the customers of your sites, as well as the teams that create content and elements in your digital channels.
 
 Each view of **Modyo Insights** has three main sections:
 
