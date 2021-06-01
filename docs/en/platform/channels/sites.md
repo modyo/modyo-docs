@@ -336,134 +336,96 @@ The redirect table is the penultimate in precedence, so if there is a URL on the
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
 
-:::warning Attention
-The columns required to import redirects are source and destination.
+:::warning Warning
+The required columns to import redirects are origin y destination.
 
-You can select a 301 or 302 response code for all items without having a column for them.
+You can select a 301 or 302 response code for all elements without having to add an additional column.
 
-Along with the above, keep in mind that if you are importing a redirect with an already registered source, you will not be able to start the import process and you will need to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record from the site whose origin you are trying to import.
+Along with the above, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
 :::
 
 The precedence of locations on Modyo sites is as follows:
 
-1. [Default views (Home, search)](/es/platform/channels/templates.html)
+1. [Default views (Home, search)](/en/platform/channels/templates.html)
 1. [Pages](/en/platform/channels/pages.html)
-1. [Custom Content Views](/es/platform/channels/templates.html #vistas -for-content)
+1. [Custom content views](/en/platform/channels/templates.html#content-views)
 1. Custom Redirects
-1. [Site 404 Error Settings](/es/platform/channels/sites.html #restricciones)
+1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
 
 ## Security headers
 
-Configure HTTP security headers by enabling this module for your site.
-This action cannot be undone, but when enabled, you have control
-total headers you want to use.
+Configure your HTTP security headers by enabling this module for your site.
+This action cannot be undone, but when enabled you have full control of which headers you want to use.
 
 ### HTTP Strict Transport Security (HSTS)
 
-Instructs the browser that the site should be accessed using HTTPS only.
-* **Duration**: Set how long the browser should remember that only
-  access the site using HTTPS.
-* **Preload**: Includes preload policy. For more information, see
-   [HSTS Preload List Submission](https://hstspreload.org/).
-* **Include subdomains**: Use the HSTS rule also for all subdomains on the site.
+Instructs the browser that your site should be accessed using HTTPS only.
+* **Duration**: Sets how long the browser should remember that your site is only accessed using HTTPS.
+* **Preload**: Include the preload directive. See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
+* **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
 
 ### Referrer-Policy
 
-The _header_ `Referer` contains information from the previous web page from which
-is linking, with the _header_ `Referrer-Policy `you can control how much
-information should be included in the _header_ `Referer`.
+The `Referer` _header_ contains information about the previous web page which is linked to the resource being requested, and you can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
 
 * **no-referrer**: No _referrer_ information is sent.
-* **no-referrer-when-downgrade**: Does not send _referrer_ information to a destination
-  less safe.
-* **origin**: Send only the source domain and delete the routes and _query string_.
-* **origin-when-cross-origin**: Send _referrer_ information for _requests_
-  from the same source and deletes routes and _query string_ for other destinations.
-* **same-origin**: Send _referrer_ information only for _requests_ from
-  same origin.
-* **strict-origin**: Send the source domain only to _requests_ of the same
-  security level and does not send _referrer_ information to less secure destinations.
-* **strict-origin-when-cross-origin**: Send information from _referrer_ to
-  _requests_ of the same source. Sends the source only if the security level is
-  the same and does not send _referrer_ information to less secure destinations.
+* **no-referrer-when-downgrade**: Don't send _referrer_ information to a less secure destination.
+* **origin**: Send the origin domain only and strip out the paths and _query string_.
+* **origin-when-cross-origin**: Send _referrer_ information for same origin _requests_ and strip out the paths and _query string_ to other destinations.
+* **same-origin**: Send _referrer_ information for same origin _requests_ only.
+* **strict-origin**: Send the origin domain only for same security level _requests_, and don't send _referrer_ information to less secure destinations.
+* **strict-origin-when-cross-origin**: Send _referrer_ information to same-origin _requests_. Send the origin only to same protocol security level and don't send _referrer_ information to less secure destinations.
 * **unsafe-url**: Always send _referrer_ information.
 
 ### X-Frame-Options
 
-Indicate if your site can be included in a `frame`, `iframe`,
-`embed` or `object`.
-* **DENY**: Site cannot be displayed in a _frame_.
-* **SAMEORIGIN**: The site can be displayed in _frames_ of the same domain.
+Indicates if your site should be allowed to be rendered in a `frame`, `iframe`, `embed` or `object`.
+* **DENY**: The site cannot be displayed in a _frame_.
+* **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
 ### X-Content-Type-Options
 
-Indicates that the _MIME types_ announced in the _header_ `Content-Type` must be followed
-to avoid _MIME type sniffing_.
+Indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
 ### Content-Security-Policy
 
-Control which resources the browser can load on the site to mitigate attacks
-data injection and _cross site scripting_. The default value *allows
-load resources from anywhere*, so it's important to design a
-Content security policy that is appropriate for your site.
-Freely specify your content security policy in the text area;
-for a complete guide on how to write your policy, see
-[MDN Content Security Policy (CSP)](https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
+Control which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
+Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see [MDN Content Security Policy (CSP)] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
-:::warning Attention
-A very strict value can interfere with some features such as
-[Google tag manager](/es/platform/channels/sites.html #google -tag-manager),
-[PWA](/es/platform/channels/sites.html #pwa),
-[Widgets](/es/platform/channels/widgets.html) and
-[Asset Manager](/es/platform/content/asset-manager.html).
+:::warning Warning
+A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-A production-friendly policy must ensure that all resources such as
-images and stylesheets are loaded from reliable sources and require everyone
-scripts are safe and reliable for the application. For example, a
-strict policy for the _template minimal_ would look like this:
+A ready for production policy must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
-The policy must include a `default-src 'self'` directive, which is _fallback_
-for any other type of resource. You must also include policies
-`script-src` and `style-src` to prevent the evaluation of tags _inline_ `style` and
-`script`.
+Your policy should include a `default-src 'self'` directive, which is a _fallback_ for any other resource type. It also needs to include `script-src` and `style-src` directives to prevent evaluation of the `script` and `style` _inline_ tags.
 
-* **Nonce**: The server will add a nonce CSP to the policies
-  `script-src` and `style-src` if they are present.
+* **Nonce**: A CSP nonce will be added automatically by the server to the `script-src` and `style-src` directives if present.
 
-If you have nonce present in your policy, you can add to the allowed list
-the _tags_ `script` and `style` in your _templates_ using the variable `csp_nonce`.
+If you have the nonce present in your policy then you can add the `script` and `style` _tags_ to the allowed list in your _templates_ using the `csp_nonce` variable.
 
 ```liquid
- <script nonce="{{csp_nonce}}"> 
- alert ("everything will be fine");
- </script> 
+<script nonce="{{csp_nonce}}">
+  alert("todo va a estar bien");
+</script>
 ```
 
-There are several tools to help you design a robust security policy:
+There are several tools to assist you in designing a strong security policy:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
 ### Permissions-Policy
 
-Allow or deny the use of browser functions and APIs for the site, by
-example, you can restrict privacy-sensitive APIs such as camera or
-microphone and auto-play videos. To get a list
-complete features supported by browsers, see
-[Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+Allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs like the camera or microphone and the autoplay of videos. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 ### X-XSS-Protection
 
-Prevents pages from loading when the browser detects an
-_cross-site scripting_. This protection is not required with browsers
-modern when implementing a [Content-Security-Policy](/es/platform/channels/sites.html #content -security-policy)
-strict, but some security inspectors will wait for the presence of
-this _header_.
+Prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
 
 * **0**: Disable XSS _filtering_.
 * **1**: Enable XSS _filtering_, removing the unsafe parts.
