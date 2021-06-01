@@ -35,7 +35,7 @@ To create a target, click on the **New Target** button at the top of the screen.
 
 In the window that appears, you can select the filters for your target.
 
-If you want to delete a filter from the target you're putting together, just click on the icon on the right side of the screen.
+To remove a filter, click on the "trash" icon on the right side of the window.
 
 If you want to clear all filters, you can click the**Clean** button at the bottom of the screen.
 
