@@ -53,7 +53,7 @@ This opens a form that you must fill out with the following information:
 
 After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
 
-Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, simply click on the button at the top of the screen.
+Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, you just have to click on the button at the top of the screen.
 
 By doing this, your campaign will be saved and you'll get to the Shipping Status view, where you can send it.
 
