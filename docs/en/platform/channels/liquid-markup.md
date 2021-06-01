@@ -545,77 +545,77 @@ The drops available for content are:
 
 ```
 space:
- - Enries
- - types
- - name
+  - entries
+  - types
+  - name
 type:
- - Enries
- - fields
- - name
+  - entries
+  - fields
+  - name
 entry:
- - space
- - category
- - type
- - type_uid
- - tags
- - account_url
- - url
- - author
- - goal
- - fields
+  - space
+  - category
+  - type
+  - type_uid
+  - tags
+  - account_url
+  - url
+  - author
+  - meta
+  - fields
 field:
- - name
- - type
+  - name
+  - type
 location:
- - location_street
- - latitude
- - length
+  - location_street
+  - latitude
+  - longitude
 category:
- - id
- - slug
- - name
- - url
- - parent
- - children
- - siblings
- - products_url
- - support_url
- - networks_url
- - profiles_url
- - posts_url
- - promotions_url
- - albums_url
- - videos_url
- - files_url
- - audio_url
- - places_url
+  - id
+  - slug
+  - name
+  - url
+  - parent
+  - children
+  - siblings
+  - products_url
+  - support_url
+  - networks_url
+  - profiles_url
+  - posts_url
+  - promotions_url
+  - albums_url
+  - videos_url
+  - files_url
+  - audio_url
+  - places_url
 asset:
- - url
- - thumbnail_url
- - uuid
- - data_file_name
- - name
- - content_type
- - title
- - alt
- - size
- - description
+  - url
+  - thumbnail_url
+  - uuid
+  - data_file_name
+  - name
+  - content_type
+  - title
+  - alt
+  - size
+  - description
 audio_asset:
- - url
+  - url
 file_asset:
- - url
- - thumbnail_url
- - image_thumbnail_url
- - pdf_thumbnail_url
- - is_image
- - is_video
- - is_audio
- - is_pdf
- - is_another
- - temp_url
+  - url
+  - thumbnail_url
+  - image_thumbnail_url
+  - pdf_thumbnail_url
+  - is_image
+  - is_video
+  - is_audio
+  - is_pdf
+  - is_another
+  - temp_url
 video_asset:
- - url
- - thumbnail_url
+  - url
+  - thumbnail_url
 ```
 
 ### Drops from channels
