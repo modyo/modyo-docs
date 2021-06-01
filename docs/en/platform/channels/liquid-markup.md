@@ -457,7 +457,7 @@ There are several optional arguments in the `for` tag that can influence the ele
 * `offset: <INTEGER> ` allows you to start the collection with the nth item.
 * `reversed` iterates over the collection from the last to the first.
 
-Constraint Elements:
+Restriction elements:
 
 ```liquid
 # array = [1,2,3,4,5,6]
