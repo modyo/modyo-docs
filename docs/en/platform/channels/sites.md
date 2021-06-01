@@ -285,7 +285,7 @@ Modyo has [global variables](/en/platform/core/key-concepts.html#global-variable
 
 The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. These roles start with editing privileges, and can expand to include reviewing, publishing, and configuring site settings.
 
-To do this, the administrator who created the site can manually assign users and default roles that enable each of the roles.
+To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
 To add a user to the site, select the primary button **+ New** at the top right of the view, in the modal select an administrator and assign it a role, then press**Add** to make that administrator part of the site's work team.
 
