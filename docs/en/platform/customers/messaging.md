@@ -72,7 +72,7 @@ In addition, you will find a drop-down menu that will take you to four sections:
 - **Message Editor**: Allows you to edit the message before sending it.
 - **Send test**: Send a test email with the campaign to a specific address.
 - **Edit**: Allows you to edit the campaign properties.
-- **Dele**: Delete the entire campaign.
+- **Delete**: Delete the entire campaign.
 
 In the top view, you can find campaign statistics.
 
