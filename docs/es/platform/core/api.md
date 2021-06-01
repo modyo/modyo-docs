@@ -99,23 +99,16 @@ En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/target
 }
 ```
 
-Como puedes notar, el `body` de este `response` es un objeto JSON que contiene un elemento llamado "targets",
-el que corresponde a una lista (`array`) de elementos de este tipo.
+Como puedes notar, el `body` de este `response` es un objeto JSON que contiene un elemento llamado "targets", el que corresponde a una lista (`array`) de elementos de este tipo.
 
-Además, contiene metadata
-referente a la `response`, donde se incluyen datos como el total de entradas que satisfacen esta
-consulta (`total_entries`), la cantidad máxima de entradas o elementos devueltos por cada
-`request` (`per_page`), la "ventana" actual de datos o página actual (`current_page`) y el total de páginas
- (`total_pages`).
+Además, contiene metadata referente a la `response`, donde se incluyen datos como el total de entradas que satisfacen esta consulta (`total_entries`), la cantidad máxima de entradas o elementos devueltos por cada `request` (`per_page`), la "ventana" actual de datos o página actual (`current_page`) y el total de páginas (`total_pages`).
 
- Con estos datos puedes recorrer fácilmente los datos de un servicio determinado,
- solo con pasar los parámetros requeridos.
+ Con estos datos puedes recorrer fácilmente los datos de un servicio determinado, solo con pasar los parámetros requeridos.
 
 
 También cada una de las secciones cuenta con un listado de posibles _responses_ que obtienes al invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
 
-En el ejemplo anterior, verás el _response_ que se obtiene del listado de targets cuando
-la respuesta es 200:     
+En el ejemplo anterior, verás el _response_ que se obtiene del listado de targets cuando la respuesta es 200:     
 
 ```json
 {
@@ -133,8 +126,7 @@ la respuesta es 200:
 }
 ```
 
-Lo anterior corresponde a lo que llamas `Example Value`, mostrando un ejemplo de lo
-que puedes obtener, pero también puedes consultar el modelo correspondiente haciendo click en `model`.
+Lo anterior corresponde a lo que llamas `Example Value`, mostrando un ejemplo de lo que puedes obtener, pero también puedes consultar el modelo correspondiente haciendo click en `model`.
 
  Ahí verás la estructura JSON que compone la respuesta, los distintos campos, sus tipos de datos, valores de ejemplo, conjunto de posibles valores cuando corresponda y formato de los textos (`date-time`, `ipv4`, `email`, etc ).
 
@@ -146,8 +138,7 @@ Por ejemplo, si se intenta buscar un recurso que no existe:
 404	           Not found
 ```
 
-Finalmente, en cada uno de los tres catálogos (admin, content y profile), encontrarás una sección
-llamada "Models", la que contiene los modelos involucrados en los servicios, y te permitirá comprender de mejor manera los recursos disponibles y sus atributos.
+Finalmente, en cada uno de los tres catálogos (admin, content y profile), encontrarás una sección llamada "Models", la que contiene los modelos involucrados en los servicios, y te permitirá comprender de mejor manera los recursos disponibles y sus atributos.
 
 
 ## Utilizando la API
@@ -166,16 +157,13 @@ A continuación, se explica como utilizar cada uno de estos métodos
 
 #### Bearer Token
 
-Lo primero que debes realizar, es registrar la aplicación para consumir la API. Para esto,
-en el menú administrativo accederás a la opción _Settings_/_API access_ y clickearás el botón **+ Nuevo**.
+Lo primero que debes realizar, es registrar la aplicación para consumir la API. Para esto, en el menú administrativo accederás a la opción _Settings_/_API access_ y clickearás el botón **+ Nuevo**.
 
-En la vista siguiente, puedes dar a la aplicación un nombre (en el ejemplo "My application") y una descripción que la distingan, y además debes ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar
-la sesión de un usuario.
+En la vista siguiente, puedes dar a la aplicación un nombre (en el ejemplo "My application") y una descripción que la distingan, y además debes ingresar una URL de redirección y otra de cierre de sesión, la que será invocada al finalizar la sesión de un usuario.
 
 ![New API Access](/assets/img/platform/new-API-access.png)
 
-Al guardar la información de la aplicación, Modyo mostrará una vista donde verás el
-_callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además los campos _Application ID_ y _Secret_ que puedes utilizar posteriormente.
+Al guardar la información de la aplicación, Modyo mostrará una vista donde verás el _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además los campos _Application ID_ y _Secret_ que puedes utilizar posteriormente.
 
 ![New API Access](/assets/img/platform/save-API-access.png)
 
@@ -183,11 +171,9 @@ _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso an
 Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se hará un _GET_ a todas las URL de cierre de sesión de tus aplicaciones de acceso a la API, lo que podría generar algunas redirecciones no deseadas si es que se usa una URL sin cuidado en ese campo.
 :::
 
-Con la aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios
-que harán uso de la API. Para esto, debes acceder en el menú a la opción _Settings_/_Team_ y seleccionar un usuario ya existente o bien crear uno nuevo, el que debe contar con un rol administrativo dentro de la aplicación (para más detalles referirse a [sección Usuarios y Roles](/es/platform/core/roles.html)  ).
+Con la aplicación ya registrada, sólo basta asignar dicha aplicación al usuario o usuarios que harán uso de la API. Para esto, debes acceder en el menú a la opción _Settings_/_Team_ y seleccionar un usuario ya existente o bien crear uno nuevo, el que debe contar con un rol administrativo dentro de la aplicación (para más detalles referirse a [sección Usuarios y Roles](/es/platform/core/roles.html)  ).
 
-En la vista de edición del
-usuario administrador, accederás al tab _API Access_ y selecciona la opción `+New Access Token`
+En la vista de edición del usuario administrador, accederás al tab _API Access_ y selecciona la opción `+New Access Token`
 
 ![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
 
@@ -199,22 +185,18 @@ En el _popup_ que se muestra a continuación, selecciona el nombre de la aplicac
 Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
 :::
 
-Finalmente, ahora verás que en la sección "Manage Access Tokens" aparecerá la aplicación ("My application"), junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que
-utilizarás a continuación para realizar _requests_ autenticados sobre la API de Modyo.
+Finalmente, ahora verás que en la sección "Manage Access Tokens" aparecerá la aplicación ("My application"), junto con un valor destacado en color rojo el que corresponde precisamente al _access token_, y que utilizarás a continuación para realizar _requests_ autenticados sobre la API de Modyo.
 
 ![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
 
-¡Listo! Con el token ya creado, puedes comenzar a sacar provecho a todas las opciones que da la API Administrativa de Modyo. Por ejemplo, si deseas ver una lista de los roles para usuarios
-administradores disponibles, puedes realizar un _request_ al _endpoint_ `/api/admin/roles`, incluyendo en el
-_header_ HTTP _"Authorization: Bearer"_ el valor del _access token_ obtenido previamente:
+¡Listo! Con el token ya creado, puedes comenzar a sacar provecho a todas las opciones que da la API Administrativa de Modyo. Por ejemplo, si deseas ver una lista de los roles para usuarios administradores disponibles, puedes realizar un _request_ al _endpoint_ `/api/admin/roles`, incluyendo en el _header_ HTTP _"Authorization: Bearer"_ el valor del _access token_ obtenido previamente:
 
 ```shell
 curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
  8c280dcc1fcff361aa1120836841b4b82faab23e912148c91766bbf5e452ab56'
 ```
 
-La respuesta obtenida desde el servicio es un `HTTP 200 OK`, y contiene la información de los roles
-en su _response_ en formato JSON:
+La respuesta obtenida desde el servicio es un `HTTP 200 OK`, y contiene la información de los roles en su _response_ en formato JSON:
 
 ```json
 {
@@ -246,8 +228,7 @@ en su _response_ en formato JSON:
 }
 ```
 
-¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido? Si intentas realizar una llamada sin autenticar o con un token inválido, el sistema responderá
-con un error `HTTP 401 Unauthorized`:
+¿Y que ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido? Si intentas realizar una llamada sin autenticar o con un token inválido, el sistema responderá con un error `HTTP 401 Unauthorized`:
 
 ```shell
 curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
@@ -278,9 +259,7 @@ GET https://[account_host]/api/admin/messaging/campaigns
 ```
 Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `notification`) mediante el parámetro `type`. Te permite incluir solo campañas que cuentan con _deliveries_ (parámetro `filtered`) o bien requerir sólo una lista reducida de atributos para ser incluídos en la _response_ (parámetro `only`).
 
-Para el ejemplo
-solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que la _request_, después de
-sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
+Para el ejemplo solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que la _request_, después de sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
@@ -388,8 +367,7 @@ Siguiendo este ejemplo, puedes utilizar el amplio catálogo de servicios de Mody
 
 En los ejemplos de la sección previa, se mostró que en muchas ocasiones la cantidad de resultados que se obtienen para una consulta es tan alta que se entregan de forma parcelada para poder ser utilizados de forma eficiente y ordenada. Esta entrega organizada y acotada de resultados se llama **paginación**.
 
-Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, puedes utilizar el _endpoint_ que
-lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
+Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, puedes utilizar el _endpoint_ que lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
 
 ```shell script
 curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
@@ -507,26 +485,18 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 	}
 }
 ```
-Como bien podrás observar, el objeto ``message_deliveries`` dentro del JSON contiene una lista de 10 elementos, donde cada uno representa un _message delivery_ o entrega concreta de un correo de campaña a un usuario determinado, y cada objeto tiene atributos relevantes a este concepto, como el nombre y
-correo del cliente o la fecha en donde se envió. Pero, ¿donde están los demás registros? Acá es donde juega un papel muy importante la paginación de los recursos, y para esto debes prestar
-atención al objeto `meta` dentro del JSON.
+Como bien podrás observar, el objeto ``message_deliveries`` dentro del JSON contiene una lista de 10 elementos, donde cada uno representa un _message delivery_ o entrega concreta de un correo de campaña a un usuario determinado, y cada objeto tiene atributos relevantes a este concepto, como el nombre y correo del cliente o la fecha en donde se envió. Pero, ¿donde están los demás registros? Acá es donde juega un papel muy importante la paginación de los recursos, y para esto debes prestar atención al objeto `meta` dentro del JSON.
 
-El objeto `meta` contiene la información relevante para poder recorrer una gran cantidad de registros,
-mediante pequeños grupos de registros o páginas.
+El objeto `meta` contiene la información relevante para poder recorrer una gran cantidad de registros, mediante pequeños grupos de registros o páginas.
 
 Los 4 atributos son:
-
 
 * `total_entries`: El número total de items del recurso consultado
 * `per_page`: La cantidad de items que se entregarán por cada página
 * `current_page`: La ventana actual de datos
 * `total_pages`: El total de páginas, o grupos de elementos que puedes consultar.
 
-En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya se sabe
-para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres
-obtener, por ejemplo, la segunda página de estos datos, sólo necesitas agregar el parámetro `page` con valor
-igual a 2, invocando nuevamente a la URL ya conocida. Para modificar la cantidad de registros por
-página, basta con agregar el parámetro `per_page` con el valor deseado.
+En el ejemplo anterior, aparte de contar con los primeros 10 registros, ya se sabe para los _requests_ siguientes que existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres obtener, por ejemplo, la segunda página de estos datos, sólo necesitas agregar el parámetro `page` con valor igual a 2, invocando nuevamente a la URL ya conocida. Para modificar la cantidad de registros por página, basta con agregar el parámetro `per_page` con el valor deseado.
 
 Por ejemplo, si quieres obtener la página 30, pero esta vez con los _message deliveries_ agrupados en páginas de 5 elementos:
 
