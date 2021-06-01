@@ -18,7 +18,7 @@ The list is sorted as follows.
 - Created on: Target creation date.
 - People: Number of users that within the target.
 
-In addition, on the far left you will find a button with a drop-down menu that allows you to run the following options:
+In addition, on the far right you will find an "Action" button with a drop-down menu that allows you to execute the following options:
 
 - Edit: Edit the name and filters of the target.
 - Delete: Delete the target.
