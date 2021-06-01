@@ -110,7 +110,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `capitalize` - Capitalize the entry sentence
 * `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
-* `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre> `{{undefined_variable | default: "Default value"}} #=> "Default value"` </span> 
+* `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 * `divided_by` - Division of integers *e.g.* <span v-pre> `{{10 | divided_by:3}} #=> 3` </span> 
 * `downcase` - Converts an input string to lowercase
 * `escape_once` - Returns an escape version of html without affecting existing escape features
