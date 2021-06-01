@@ -455,7 +455,7 @@ There are several optional arguments in the `for` tag that can influence the ele
 
 * `limit: <INTEGER> ` allows you to restrict the amount of objects to obtain.
 * `offset: <INTEGER> ` allows you to start the collection with the nth item.
-* `reversed` iterates about the collection from the last to the first.
+* `reversed` iterates over the collection from the last to the first.
 
 Constraint Elements:
 
