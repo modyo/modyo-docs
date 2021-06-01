@@ -97,7 +97,7 @@ In the variables tab you can see the list of variables created in the widget, an
 
 * **Copy** the liquid code to use that variable.
 * **Edit** the variable
-* **Remove** the variable.
+* **Delete** the variable.
 
 Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/es/platform/core/key-concepts.html #variables -global).
 
