@@ -46,8 +46,8 @@ While approval is limited, any user with permissions can comment on the item.
 
 - **Require all**: This option extends the previous restriction to all selected users.
 
-:::warning Attention
-When you make changes to your team review settings, items that were already awaiting review will continue to be governed by the rules prior to the changes.
+:::warning Warning
+When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
 
 For those items to take into account the new configuration, they need to be rejected and sent for review again.
 :::
