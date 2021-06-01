@@ -10,7 +10,7 @@ search: true
 
 **Modyo Channels** provides extensive access to the base code of every channel through a set of templates, giving developers complete control of every detail of a user's digital experiences, published through an integrated version control system.
 
-**Modyo Channels** has HTML editable layout templates that make it easy to reuse code.
+**Modyo Channels** has editable design templates that make it easy to reuse code.
 
 **Modyo Channels** also has a template system based on [Liquid Markup](/es/platform/channels/liquid-markup.html) that allows dynamic interpolation of information which is efficiently processed from the server side.
 
