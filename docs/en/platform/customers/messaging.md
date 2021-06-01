@@ -184,7 +184,7 @@ This opens the edit view where you must give your template a name.
 Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for.
 :::
 
-Below, you will find a WYSIWYG editor, which will allow you to visually assemble what your email will be like and add the corresponding parameters that allow you to automatically customize the message.
+Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
 :::warning Attention
 If you're campaigning, remember to add in the footer all the legal information required by your country's mass mail regulation.
