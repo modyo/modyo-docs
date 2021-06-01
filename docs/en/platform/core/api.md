@@ -296,53 +296,53 @@ When invoking the service, you get an `HTTP 200 OK` and the _response_ containin
 
 ```json
 {
- "campaigns": [{
- "id": 15,
- "name": "Test campaign 01",
- "uid": "52dc64c2-8c31-4de1-b10c-0313ae6486f6",
- "type": "mailing",
- "sent_count": 1078,
- "last_sent": "2019-07-15T 17:05:12 .000- 03:00 ",
- "targets_enabled": false,
- "target_list": "—",
- "created_at": "2019-07-15T 16:58:43 .000- 03:00"
- }, {
- "id": 11,
- "name": "Test campaign 02 Mar8 1546",
- "uid": "2c210b2c-af4e-4f9c-b2c5-b768dde622a2",
- "type": "mailing",
- "sent_count": 6,
- "last_sent": "2019-03-11T 15:17:20 .000- 03:00 ",
- "targets_enabled": true,
- "target_list": "Test Mailing Mar08",
- "created_at": "2019-03-08T 15:46:52 .000- 03:00"
- }, {
- "id": 6,
- "name": "campaign jan7 1210",
- "uid": "7dc46be9-ec5e-4468-b74e-a5ba4b88ecb4",
- "type": "mailing",
- "sent_count": 327,
- "last_sent": "2019-01-07T 16:53:33 .000- 03:00 ",
- "targets_enabled": true,
- "target_list": "—",
- "created_at": "2019-01-07T 12:10:22 .000- 03:00"
- }, {
- "id": 5,
- "name": "Spanish Campaign",
- "uid": "4b13358e-f2b7-48ef-a720-26b55e4f2502",
- "type": "mailing",
- "sent_count": 0,
- "last_sent": null,
- "targets_enabled": false,
- "target_list": "—",
- "created_at": "2019-01-02T 15:59:06 .000- 03:00"
- }],
- "goal": {
- "total_entries": 4,
- "per_page": 10,
- "current_page": 1,
- "total_pages": 1
- }
+    "campaigns": [{
+        "id": 15,
+        "name": "Test campaign 01",
+        "uuid": "52dc64c2-8c31-4de1-b10c-0313ae6486f6",
+        "type": "mailing",
+        "sent_count": 1078,
+        "last_sent": "2019-07-15T17:05:12.000-03:00",
+        "targets_enabled": false,
+        "target_list": "--",
+        "created_at": "2019-07-15T16:58:43.000-03:00"
+    }, {
+        "id": 11,
+        "name": "Test campaing 02 Mar8 1546",
+        "uuid": "2c210b2c-af4e-4f9c-b2c5-b768dde622a2",
+        "type": "mailing",
+        "sent_count": 6,
+        "last_sent": "2019-03-11T15:17:20.000-03:00",
+        "targets_enabled": true,
+        "target_list": "Test Mailing Mar08",
+        "created_at": "2019-03-08T15:46:52.000-03:00"
+    }, {
+        "id": 6,
+        "name": "campaign jan7 1210",
+        "uuid": "7dc46be9-ec5e-4468-b74e-a5ba4b88ecb4",
+        "type": "mailing",
+        "sent_count": 327,
+        "last_sent": "2019-01-07T16:53:33.000-03:00",
+        "targets_enabled": true,
+        "target_list": "--",
+        "created_at": "2019-01-07T12:10:22.000-03:00"
+    }, {
+        "id": 5,
+        "name": "Spanish Campaign",
+        "uuid": "4b13358e-f2b7-48ef-a720-26b55e4f2502",
+        "type": "mailing",
+        "sent_count": 0,
+        "last_sent": null,
+        "targets_enabled": false,
+        "target_list": "--",
+        "created_at": "2019-01-02T15:59:06.000-03:00"
+    }],
+    "meta": {
+        "total_entries": 4,
+        "per_page": 10,
+        "current_page": 1,
+        "total_pages": 1
+    }
 }
 ```
 
