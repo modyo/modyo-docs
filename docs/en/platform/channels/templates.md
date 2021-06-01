@@ -352,7 +352,7 @@ The recommended method to interact with a private API using the Modyo session wi
 #### Enable account-level integration (for all sites)
 
 1. In your account, go to **Customers** and from there to the **Customer settings** section and a the top of the view, click the drop down and select the **Integration** tab.
-1. Select OpenID Connect integration and select the**Enable OpenID Connect** check box
+1. Select the OpenID Connect integration and check the box for **Enable OpenID Connect**
 1. Fill in the**Service Name, Client ID, Secret, and Issuer** data and click on**Launch Discovery Service**
 1. Check the fields you need (Enable refresh token, Enable remote logout, Enable token revocation, Enable claims synchronization)
 1. Associate vendor fields with custom fields you have in Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
