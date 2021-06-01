@@ -67,7 +67,7 @@ In the right side section you will find three tabs:
 
 - Add Widgets: allows you to select widgets from a list and add them to the grid.
 - Edit Widget: allows you to change different properties and filters for each widget.
-- Properties: Allows you to modify the name, excerpt, path, parent, privacy, page grid and meta tags.
+- Properties: allows you to modify the name, excerpt, path, parent, privacy, grid layout, and meta tags of the page.
 
 ### Widgets
 
