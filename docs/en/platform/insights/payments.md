@@ -12,7 +12,7 @@ These numbers can be viewed according to Date, Order Status and Method of Paymen
 
 In this section you can see the number of orders entered, the items sold and the income received during that time, along with a comparison to the previous period.
 
-The order states are also dynamically plotted, in order to make a comparison over time.
+The states of the orders are also dynamically plotted, in order to make a comparison over time.
 
 ### Orders by Payment
 
