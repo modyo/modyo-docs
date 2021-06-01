@@ -104,8 +104,8 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 <li>422</li>
 <li>500</li>
 <li>admin</li>
- <li> auth </li> 
- </ul> </td> 
+<li>auth</li>
+</ul></td>
  <td style="border: none;"> <ul> 
  <li> crossdomain </li> 
  <li> dist </li> 
