@@ -12,8 +12,8 @@ The available filters are:
 - Site
 - Space
 
-:::warning Attention
-When you filter by site, items that use space data will not contribute their data into the count, and at the same time, if you filter by space, items that use site data will not contribute to the data count.
+:::warning Warning
+When you filter by site, the elements that use space data will not display in the interface, and likewise, if you filter by space, elements from Modyo Channels that use data from sites will not display.
 :::
 
 ![Digital factory](/assets/img/platform/digital-factory.png)
