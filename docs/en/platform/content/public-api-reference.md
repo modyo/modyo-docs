@@ -62,7 +62,7 @@ In the case of the `filter_by` filter, you can make use of either meta attribute
 {% endfor %}
 ```
 
-If you want to deny a value within the field filter, you can use `note `inside the filter:
+If you want to deny a value within the field filter, you can use `no` inside the filter:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
