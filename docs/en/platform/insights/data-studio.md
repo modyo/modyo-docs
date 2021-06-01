@@ -8,7 +8,7 @@ Data visualization is important in making data and analysis a central part of bu
 
 Data Studio is Google’s reporting solution that allows you to easily create custom visualizations of your data. To make things even easier, we’ve created Data Studio templates that you can connect to your data sources out of the box.
 
-This guide will guide you through the steps to copy a Data Studio template and connect your own data sources to analyze the performance of your digital channels and discover patterns in your data. 
+This guide will walk you through the simple steps to copy a Data Studio reporting template and connect your own data sources so you can analyze the performance of your digital channels and gain insights from your data. 
 
 After you go through this guide, you can apply the same steps for other Data Studio templates.
 
