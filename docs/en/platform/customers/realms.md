@@ -187,7 +187,7 @@ However, the editor will not automatically upload the link, but when you upload 
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
 :::
 
-### Post Office
+### Emails
 
 Modyo allows you to configure the sending address and appearance of emails that will be sent to realm users.
 
