@@ -76,7 +76,7 @@ In case you have an old theme installed and do not have these snippets, you can 
 
 1. Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
 
-**Google Tag Manager for _head_**
+**Google Tag Manager for the _head_**
 ```liquid
 {% if site.tag_manager_id != '' %}
 
