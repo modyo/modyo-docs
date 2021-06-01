@@ -207,7 +207,7 @@ The available relational operators are:
 * `<, <=, >, >=` — less/greater than
 * `contains` - a wrapper around Ruby's `include?` method, which is implemented in strings, arrays and hashes. If the left argument is a string and the right is not, this will convert the right to a string.
 
-Available Boolean operators are:
+The available Boolean operators are:
 
 * `and`
 * `or`
