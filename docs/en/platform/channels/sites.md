@@ -302,7 +302,7 @@ The available roles are:
 
 #### Developer
 
-He is the user in charge of the structural development of resources, the creation and editing of content. Anything you do, you have to go to review.
+Developers are in charge of the structural development of resources, design and the creation of or integration with content. Everything developers do has to go to review, or be directly published by a higher role.
 
 This user cannot publish, delete, return to previous versions of resources (Rollback), or change settings.
 
