@@ -316,7 +316,7 @@ Reviewers cannot edit the Site settings.
 
 #### Admin
 
-The Site Administrator, has access to the two previous roles, in addition to being able to configure the entire site.
+The Admins role has access to all the permissions of the two previous roles, and also has access to the Site settings.
 
 This user is different from Default Admin. Site Admin can only configure the external site, but it cannot change anything about the platform.
 
