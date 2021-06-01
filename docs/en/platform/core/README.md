@@ -8,7 +8,7 @@ The Modyo Platform is the technological foundation on which Modyo applications s
 
 Modyo Platform presents the main interface of Modyo from which you have access to all relevant sections.
 
- <img src="/assets/img/platform/header.jpg" style="margin: 40px auto; width: 300px; display: block;"> 
+<img src="/assets/img/platform/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
 
 :::tip Past versions
 The documentation on this site applies to the latest version (9.1). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
