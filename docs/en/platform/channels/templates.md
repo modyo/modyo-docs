@@ -6,7 +6,7 @@ search: true
 
 One of the most important aspects of site creation is the base architecture and appearance. In the Template Builder, you can modify the base templates and the global JavaScript and CSS used in your pages. You can also change the structure of these documents according to your requirements.
 
-When you already select the theme that is used within the site, you can access the different pages from the Template Builder to change the codes as you need them.
+Once you have selected a theme for a new site, you can access each template in the Template Builder and make any change you need.
 
 Once inside the Template Builder, you can see that the main menu is hidden to optimize the workspace. In the top bar, on the left, you can find the section name and the current publication status:
 
