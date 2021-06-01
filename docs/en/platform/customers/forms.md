@@ -51,7 +51,7 @@ The notification by mail sends an "administrative" email in which platform users
 
 The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/platform/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
 
-Below is an example of code that you can use as a basis for customizing your thank you email.
+Here is a code sample that you can use as a base to personalize the thank you mail.
 
 ```html
 You sent this response on: {{'now' | date: "%b %d, %y"}}
