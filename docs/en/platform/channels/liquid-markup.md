@@ -437,7 +437,7 @@ Both are only useful when combined with something like an "if" statement.
 
 #### Help Variables
 
-During each `for` loop, the following help variables are available for additional styling needs:
+During each `for` loop, the following help variables are available for additional style needs:
 
 ```liquid
 forloop.length      # => length of the entire for loop
