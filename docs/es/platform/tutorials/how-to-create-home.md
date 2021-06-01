@@ -135,7 +135,7 @@ El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en Gener
           >
             <path
               fill-rule="evenodd"
-              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5- 5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
         </button>
@@ -165,8 +165,8 @@ El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en Gener
             class="modal-body p-4 navbar navbar-expand-md  navbar-light align-items-start"
           >
             <nav>
-              {% assign responsive = "Responsive" %} {% snippet
-              'shared/general/menu' %}
+              {% assign responsive = "Responsive" %}
+              {% snippet "shared/general/menu" %}
             </nav>
           </div>
         </div>
@@ -6347,7 +6347,7 @@ $('.single-item').slick({
             <img
               class="w-100"
               src="{{ entry.Image.url }}"
-              alt="{{ entry.autor }}"
+              alt="{{ entry.Author }}"
             />
           </figure>
           <div class="figcaption col-11 col-md-6">
@@ -6356,7 +6356,7 @@ $('.single-item').slick({
                 Nuestros clientes dicen...
               </h3>
               <p class="text-muted">{{ entry.Testimony }}</p>
-              <p class="text-muted font-weight-bold">{{ entry.autor }}</p>
+              <p class="text-muted font-weight-bold">{{ entry.Author }}</p>
             </figcaption>
           </div>
         </div>
