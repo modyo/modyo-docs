@@ -39,7 +39,9 @@ You can select any of these values to compare:
 
 ### Recent Campaigns
 
-Displays a list of the last 5 sent messaging campaigns, with a reason for open messages versus the scope of that send.
+Displays a list of the last 5 messaging campaigns sent, with total unique opens versus reach.
+
+
 
 In this listing, you can find both email campaigns and notification campaigns.
 
