@@ -281,7 +281,7 @@ Modyo has [global variables](/en/platform/core/key-concepts.html#global-variable
 
 ### Team Members
 
- <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" > 
+<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 To sort the work, Modyo allows you to select the team members who will work on each site and thus have access to writing, review and/or publication.
 
