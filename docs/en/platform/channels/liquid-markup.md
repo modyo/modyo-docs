@@ -127,7 +127,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `minus` - Subtract *e.g.*  <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
 * `modulo` - Rest *e.g.* <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 * `newline_to_br` - Replaces each new line (\ n) with html space
-* `plus` - Sum *e.g.* <span v-pre> `{{'1' | plus: '1'}} #=> 2` </span>, <span v-pre>` {{1 | plus:1}} #=> 2` </span> 
+* `plus` - Sum *e.g.*  <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
 * `prepend` - Precede a string *e.g.* <span v-pre> `{{'bar' | prepend: 'foo'}} #=> 'foobar'` </span> 
 * `remove_first` - Removes first occurrence *e.g.* <span v-pre> `{{'barbar' | remove_first: 'bar'}} #=> 'bar'` </span> 
 * `remove` - Delete all issues *e.g.* <span v-pre> `{{'foobarfoobar' | remove: 'foo'}} #=> 'barbar'` </span> 
