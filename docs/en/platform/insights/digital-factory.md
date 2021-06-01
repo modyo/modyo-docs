@@ -4,7 +4,7 @@ search: true
 
 ### Digital Factory
 
-Digital Factory allows you to view statistics related to the flow of content creation and publication of your digital channels. You can use the filters at the top right to view different aspects of the data.
+The Digital Factory allows you to monitor statistics related to the creation, editing, and publishing of content and other elements in your digital channels. You can use the filters in the upper right to visualize different aspects of the data.
 
 The available filters are:
 
