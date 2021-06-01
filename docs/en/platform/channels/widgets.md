@@ -6,7 +6,7 @@ search: true
 
 Widgets allow you to create encapsulated _micro frontends_ for your sites and applications.
 
-By entering the **Widgets** section of the site, you can see a list of all the widgets that have been created. In the top bar you can filter the widget list by status, author or tags, or do a text search by the name of the widget.
+When you enter the **Widgets** section of any site or channel, you see a list of all the widgets in that channel. In the top bar, you can filter the list of widgets by status, author or tags, or search for any widget by either its name or tags.
 
 In the upper right corner there is a main button **+ New** that allows you to create a new widget. To do this, you must enter a name and then enter the edit view of the widget.
 
