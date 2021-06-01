@@ -130,7 +130,7 @@ At first glance, you can find a list of all the users who have received a single
 The message deliveries list displays the following information:
 
 - **User**: Name of the user to whom the message is sent. The user's email is included, regardless of whether the message was via email or notification.
-- **Campaign**: Campaign under which the message is sent.
+- **Campaign**: Campaign under which the message was sent.
 - **Type**: Way by which the message is sent. Mail or notification.
 - **Shipment**: Date on which the campaign was started.
 - **Sended**: Date the message was sent.
