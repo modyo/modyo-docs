@@ -177,7 +177,7 @@ This option allows you to display the logo configured for the account in the ses
 
 #### Customize with CSS
 
-If you want to have a custom CSS that fits your needs in session views, you just have to paste the code into the editor that is in the window and click on the**Save** button.
+If you want to have custom CSS in the session views, add it to the editor and click on the **Save** button.
 
 It is common to have linked files in CSS code. If you want to add one, you just have the button that is above the editor, and that will lead to the [File Manager](/es/platform/content/asset-manager.html), which will allow you to upload any file you need without problems.
 
