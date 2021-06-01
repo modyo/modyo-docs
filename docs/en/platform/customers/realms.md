@@ -169,7 +169,7 @@ This section will allow you to modify some visuals of the registration, login, a
 
 #### Primary Color
 
-The primary color is shown in the main session handling buttons, such as login, registration, password modifications, or other attributes. To modify it you just have to enter the HEX Code of the color you want and click on the**Save** button at the top of the screen.
+The primary color is the one shown in the main buttons of the session management, such as entry, registration, password modifications or other attributes. To modify it, enter the HEX Code of the color you want and click on the **Save** button at the top of the screen.
 
 #### Show the logo
 
