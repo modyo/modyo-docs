@@ -6,7 +6,7 @@ search: true
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
-Es aquí donde debes operar para crear canales digitales dentro de la plataforma. En este caso, la operación de sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección Content.
+Es aquí donde debes operar para crear canales digitales dentro de la plataforma. En este caso, la operación de sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección [Content](/es/platform/content/).
 
 Al entrar, puedes ver que existen 4 estados:
 
