@@ -94,7 +94,7 @@ In the work area, under the tabs, you will find a bar with useful elements:
 For more information on the functionality of the Asset Manager, go to the [Asset Manager](/docs/content/asset-manager.html).
 :::
 
-**Keyboard Shortcuts**: A small pop-up is displayed with some of the useful keyboard shortcuts to use in the Template Builder.
+**Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
 
  <img src="/assets/img/channels/template_builder/keywords.jpg" width="400"> 
 
