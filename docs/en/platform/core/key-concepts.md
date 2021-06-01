@@ -12,7 +12,7 @@ This adds a level of supervision and collaboration between the content editor an
 
 ### Feature
 
-When a publisher or developer considers the item you're working on is ready, you can submit it for review.
+When an editor or developer feels that the item he is working on is ready, he can submit it for review.
 
 This task can be performed by default enabled users or by a computer chosen by the publisher.
 
