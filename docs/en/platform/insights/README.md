@@ -10,7 +10,9 @@ For any company or institution, it is important to know what is happening in the
 
 **Modyo Insights** is a set of dashboards and visual tools specialized in the representation of statistical data of both the customers of your sites, as well as the teams that create content and elements in your digital channels.
 
-Each view of **Modyo Insights** has three main sections:
+Each area of **Modyo Insights** has three main sections:
+
+
 
 - General counters
 - Comparative chart
