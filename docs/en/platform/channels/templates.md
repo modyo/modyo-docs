@@ -359,7 +359,7 @@ The recommended method to interact with a private API using the Modyo session wi
 
 ### Using Axios to do the integration
 
-If you want to use a library like `axios` to perform an integration from Modyo, a pattern that is convenient is to create 3 snippets that take care of the most basic aspects of an integration.
+If you want to use a library such as `axios` to perform an integration from Modyo, a convenient pattern is to create 3 snippets that take care of the most basic aspects of an integration.
 
 The tasks you need to cover with snippets are:
 
