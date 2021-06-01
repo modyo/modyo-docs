@@ -37,7 +37,7 @@ In the window that appears, you can select the filters for your target.
 
 To remove a filter, click on the "trash" icon on the right side of the window.
 
-If you want to clear all filters, you can click the**Clean** button at the bottom of the screen.
+To erase all filters, click on the **Clear all** button at the bottom of the window.
 
 To record your target, simply click the**Save as Target** button at the bottom of the screen.
 
