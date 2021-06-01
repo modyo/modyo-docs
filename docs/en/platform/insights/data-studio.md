@@ -84,7 +84,7 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/10.png)
 
-    Click "Connect" to continue and then "Add to Report"
+    Click on "Connect" to continue and then "Add to report"
 
     Repeat this process for the next data source and under "Table" select "Site Print".
 
