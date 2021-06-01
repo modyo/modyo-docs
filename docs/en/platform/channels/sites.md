@@ -169,7 +169,7 @@ The options listed in this section help improve your SEO across a particular cha
 - **Robots.txt**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by "disallowing" or "allowing" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
 :::tip Tip
-The robots.txt and sitemap.xml files are only visible on the site, if you have the custom domain enabled (custom domain). Otherwise, robots.txt and sitemap.xml are only at the account level, have their default values and cannot be customized.
+The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
 :::
 
 - **Meta tags**: Allows you to set meta tags for all pages and their default values.
