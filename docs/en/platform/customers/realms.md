@@ -208,7 +208,7 @@ To enable or disable the sending of these emails, we just have to click on the *
 
 #### Custom emails
 
-The email styles of the platform you send can also be customized. To do this, you must have the HTML code that you want to include in them.
+The styles of the platform emails that we send can also be customized. To do this, we must have the HTML code that we want to include in them.
 
 When you click to enable each email, it will display a default editor into which you can paste the code.
 
