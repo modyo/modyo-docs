@@ -189,7 +189,7 @@ If you have problems with keyboard codes when you are editing the CSS, you can c
 
 ### Emails
 
-Modyo allows you to configure the sending address and appearance of emails that will be sent to realm users.
+Modyo allows you to configure the sender and appearance of the emails that will be sent to users.
 
 To adjust the address that will appear as the sender that will send your email, just enter it in the "Default Mail" field and click on the**Save** button.
 
