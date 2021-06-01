@@ -195,7 +195,7 @@ Restrictions allow you to configure the privacy of your site.
 
 ### Domains
 
- <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" > 
+<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 The Domains section allows you to know where the site is publicly located, so it is essential that each member of the platform be informed of any changes made here.
 
