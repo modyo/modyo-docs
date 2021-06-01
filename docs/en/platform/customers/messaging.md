@@ -196,7 +196,7 @@ To save the template, you must click on the **Save** button, located at the top 
 
 If you want to use the template in an email, you only have to select the name of the template, when you are preparing the campaign.
 
-## Disregistrations
+## Unsubscriptions
 
 In this section, you will find a list of all users who have unsubscribed from email campaigns or notifications through their web profile.
 
