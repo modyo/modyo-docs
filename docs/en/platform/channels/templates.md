@@ -306,7 +306,7 @@ We recommend adding this code snippet to the Template Builder, and then calling 
 <!-- END SEO <-->
 ```
 
-This snippet differs when you are using a custom page, some of the default Modyo pages, or content views, so by making use of the attributes of each element, you can define a good SEO base for all the URLs of your site.
+This snippet renders differently depending on whether the endpoint is a custom page, one of the Modyo default pages, or a custom content view. By taking advantage of the fields and attributes of each element in context, and using Liquid's control flow, you can define a robust SEO foundation across every URL of your site.
 
 If you require it, you can further customize this snippet, defining which goals you want to appear for specific URLs or types. 
 
