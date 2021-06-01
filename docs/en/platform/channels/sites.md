@@ -72,7 +72,7 @@ By default, the new Modyo themes include the snippets needed to automatically in
 
 If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section in the upper right and click on the "Load templates" option in the "additional options". This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
 
-If you have an old theme installed and do not have these snippets, here you can access the code to create them as custom snippets and be able to easily embed Google Tag Manager to your site.
+In case you have an old theme installed and do not have these snippets, you can access the code here to add them as custom snippets and easily embed Google Tag Manager to your site.
 
 1. Create a custom snippet with the following code and then embed the snippet into the site head using `{% snippet "gtm-head"%}`, replacing "gtm-head" with the name you gave the snippet.
 
