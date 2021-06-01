@@ -14,7 +14,7 @@ This adds a level of supervision and collaboration between the content editor an
 
 When an editor or developer feels that the item he is working on is ready, he can submit it for review.
 
-This task can be performed by default enabled users or by a computer chosen by the publisher.
+This task can be performed by users enabled by default or by a team chosen by the editor.
 
 They will be responsible for approving or rejecting the item, and finally determine whether it is already in a position to be published.
 
