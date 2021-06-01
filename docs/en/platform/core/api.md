@@ -279,7 +279,7 @@ Once you know the service you will query, according to what you saw in the [Expl
 
 For example, if you need to get a list of all the email campaigns that were created. According to the Swagger documentation available, you'll know that you need to call the following URL:
 
-http request
+```http request
 GET https://[account_host]/api/admin/messaging/campaigns
 ```
 This service accepts parameters via URL to filter by types (`mailing` and `notification`) using the `type` parameter. Allows you to include only campaigns that have _deliveries_ (`filtered` parameter) or require only a reduced list of attributes to be included in the _response_ (`only` parameter).
