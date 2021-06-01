@@ -184,7 +184,7 @@ Since the meta tags list is part of the site's configuration, only the site's ad
 
 ### Restrictions
 
- <img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" > 
+<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 Restrictions allows you to configure the privacy of the site.
 
