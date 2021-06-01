@@ -451,7 +451,7 @@ forloop.last        # => is this the last iteration?
 
 #### Optional arguments
 
-There are several optional arguments in the `for` tag that can influence the items you receive in your loop and the order in which they appear:
+There are several optional arguments in the `for` tag that can influence the elements you receive in your loop and in the order in which they appear:
 
 * `limit: <INTEGER> `allows you to restrict the number of objects to be obtained.
 * `offset: <INTEGER> `allows you to start the collection with the nth item.
