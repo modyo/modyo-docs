@@ -44,5 +44,5 @@ Deleting the user account is an irreversible action, and users who perform this 
 You can access the user profile API through the URL `account_url/api/profile`, where you can make use of the endpoints: 
 
 * Technical documentation of the API: `account_url/api/profile/docs`
-* Notifications: `account_url/api/profile/notifications`
+* Notifications: `account_url/api/profile/notificaciones`
 * User info: `account_url/api/profile/me`
