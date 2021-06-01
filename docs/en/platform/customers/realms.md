@@ -82,7 +82,7 @@ On the right, in a sidebar, you will see main import settings. Here you can defi
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
-Finally, once the import is configured, by clicking the **Start import** button at the top, you will return to the main import view, and the first record in the table will be your import in process. There you can see the progress of the same, indicated in the column of **Status**.
+Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
 
 In addition, you will be able to complete a number of custom fields that might be required. These can be configured in [Custom Fields](/es/platform/customers/realms.html #campos -custom), which are located in the [Customers Settings section](/es/platform/customers/realms.html #configuracion -de-customers).
 
