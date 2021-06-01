@@ -142,7 +142,6 @@ $ yarn global add @modyo/cli #via yarn
 
 > This command will make the command modyo-cli available on the terminal session globally
 
-
 The available commands are get, push, and help
 
 - [`modyo-cli (-v|—version|version) `](#modyo -cli-version)
