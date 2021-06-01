@@ -66,7 +66,7 @@ To learn more about publication lifecycles in Modyo, review the [Versioning](/en
 In the main work area you can see the following:
 
 - **Code tabs**: The Widget Builder has a JavaScript, CSS and HTML tab at your disposal to build your widgets.
-- **File Manager**: Clicking lifts the file management modal, where you can filter and search the files you uploaded in the [File Manager](/es/platform/content/asset-manager.html) and copy its URL to use them in the widget. You can also upload new files from this modal.
+- **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
 - **Keyboard Shortcuts**: Displays a small information window with some useful keyboard shortcuts.
 - **Snippets**: Displays a list of snippets available from the [Template Builder](/es/platform/channels/templates.html #snippets) and copy their code for reference in the widget.
 - **Changes**: If changes have been saved and not published, it will display this list of all the times saved each of the files (JS, CSS and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
