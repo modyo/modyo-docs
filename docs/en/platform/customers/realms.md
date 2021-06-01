@@ -193,7 +193,7 @@ Modyo allows you to configure the sender and appearance of the emails that will 
 
 To adjust the address that will appear as the sender that will send your mail, you just have to enter it in the "Default mail" field and click on the **Save** button.
 
-This section allows is to enable, disable, and customize the sending of automatic mails after specific user interactions, the emails are as follows:
+What this section allows is to enable, disable and customize the sending of automatic emails after specific interactions made by users, the emails are as follows:
 
 - Activation email: Sent after a user registration has been completed, for the user to confirm your data.
 - Imported User: Sent once the user was imported
