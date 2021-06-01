@@ -20,7 +20,7 @@ To enable or disable forms and allow users to send their answers, you must go to
 
 To create a new form, click on the main action at the top right **+ New**. This will take you to the creation view of a new form, where you must fill in its main attributes:
 
-- **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator, and also as a title when a user will respond to it.
+- **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title in the front end.
 - **Description**: This text will appear as text below the title when users will respond to it.
 - **People Limit**: Allows to determine the maximum number of responses are allowed.
 - **Site**: Allows you to select on which site this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/es/platform/channels/templates.html)
