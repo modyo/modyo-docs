@@ -180,8 +180,8 @@ To make a template, you must first click on the **+ New** button, located at the
 
 This opens the edit view where you must give your template a name.
 
-:::tip Tip
-Remember that this name is the one you will need to search for sending when you do the Campaign. Therefore, you should put a text that helps you identify well which template you want to use and not put something that can confuse you.
+::: tip Tip
+Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for.
 :::
 
 Below, you will find a WYSIWYG editor, which will allow you to visually assemble what your email will be like and add the corresponding parameters that allow you to automatically customize the message.
