@@ -447,7 +447,7 @@ the _tags_ `script` and `style` in your _templates_ using the variable `csp_nonc
 There are several tools to help you design a robust security policy:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
-* [Salvation CSP validator](https://cspvalidator.org)
+* [CSP validator](https://cspvalidator.org)
 
 ### Permissions-Policy
 
