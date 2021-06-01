@@ -98,7 +98,7 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
 
-**Snippets**: A list of all snippets is displayed next to the option to copy your referral code.
+**Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
 
  <img src="/assets/img/channels/template_builder/snippets.jpg" width="300"> 
 
