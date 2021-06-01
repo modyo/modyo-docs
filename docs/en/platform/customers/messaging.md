@@ -156,8 +156,8 @@ At first glance, you can find all the email templates available.
 
 Each of the templates is ordered according to their name, in addition to being able to see the last time they were modified.
 
-:::tip Tip
-If you are reusing a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
+::: tip Tip
+If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
 :::
 
 Under each name, you will find a button that will allow you to edit. If you click on it, you'll get to the editor where you made your template.
