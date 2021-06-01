@@ -127,8 +127,8 @@ In the upper right section you will find additional options with which you can d
 * **Disable**: You can disable users and prevent them from logging in.
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
-:::tip Tip
-When you modify a user, you may change the Targets list to which it belongs.
+::: tip Tip
+When modifying a user, you may change the list of Targets to which they belong.
 :::
 
 
