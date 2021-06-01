@@ -71,7 +71,7 @@ In the right side section you will find three tabs:
 
 ### Widgets
 
-You can add them from the first tab of the Page builder. Available widgets are:
+You can add them from the first tab of the Page builder. The available widgets are:
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
 - **Rich text**: Allows you to use a rich text editor, where you can format text and switch between code view and rich text.
