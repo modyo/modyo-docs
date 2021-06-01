@@ -112,7 +112,7 @@ With this ready, when there's a value associated with the **Google Tag Manager I
 
 ### PWA
 
-Modyo allows the deployment of Progressive Web Apps (PWA) within the digital channels being put together. To do this, give two options to easily deploy them.
+Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
 
  <img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" > 
 
