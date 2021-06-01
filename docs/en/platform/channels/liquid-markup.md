@@ -410,7 +410,7 @@ Instead of looping over an existing collection, you can also loop through a rang
 You can exit a loop early with the following tags:
 
 * `{% continue%}` - immediately ends the current iteration, and continues the "for" loop with the following value.
-* `{% break%}` - immediately ends the current iteration, then completely ends the "for" loop.
+* `{% break%}` - immediately ends the current iteration, then exits the "for" loop.
 
 Both are only useful when combined with something like an "if" statement.
 
