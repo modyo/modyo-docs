@@ -108,7 +108,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `base64_decode` - Returns the Base64-decoded value for a string *e.g.* <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>.
 * `base64_encode` - Returns the Base64-encoded value for a string *e.g.* <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 * `capitalize` - Capitalize the entry sentence
-* `ceil` - Round up a decimal number to the next integer, *e.g.* <span v-pre> `{{4.6 | ceil}} #=> 5` </span> 
+* `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
 * `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre> `{{undefined_variable | default: "Default value"}} #=> "Default value"` </span> 
 * `divided_by` - Division of integers *e.g.* <span v-pre> `{{10 | divided_by:3}} #=> 3` </span> 
