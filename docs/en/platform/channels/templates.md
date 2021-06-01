@@ -8,7 +8,7 @@ One of the most important aspects of site creation is the base architecture and 
 
 Once you have selected a theme for a new site, you can access each template in the Template Builder and make any change you need.
 
-Once inside the Template Builder, you can see that the main menu is hidden to optimize the workspace. In the top bar, on the left, you can find the section name and the current publication status:
+Inside the Template Builder, you will find that the main menu is hidden to optimize the available workspace. In the top bar, you can also find the section name and a badge indicating its current status:
 
 - **Publiced**: When a published version already exists and its editable version is the same.
 - **Pending changes**: When there is a published version, but there are pending changes to your editable version.
