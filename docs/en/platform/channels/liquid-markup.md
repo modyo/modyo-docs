@@ -181,8 +181,7 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 ### Raw
 
-Raw is used to temporarily disable the tag process.
-This is useful for generating content (eg, Mustache, Handlebars) that can use a conflicting syntax with other elements.
+Any content that is written between the tags `{% comment %}` and `{% endcomment %}` will be converted to a comment.
 
 ```liquid
 {% raw %}
