@@ -113,7 +113,7 @@ It should be noted that it is not a follow-up to the navigation of a user within
 
 #### Form responses
 
-This section shows you all the forms that the user has filled out within the platform. By clicking on one of them, it takes you to see the user's answers in that form. If you want to know more about forms, go to the [Forms] section (/es/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out within the platform. When you click on any of them, it takes you to see the answers of the user in said form. If you want to know more about the forms, go to the [Forms](/en/platform/customers/forms.html) section.
 
 #### Notes
 
