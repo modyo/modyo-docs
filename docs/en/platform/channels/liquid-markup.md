@@ -510,7 +510,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 {% endif %}
 ```
 
-If you want to combine multiple strings into one and save it in a variable, you can do so with the `capture` tag, which "captures" whatever is displayed inside, and then assign the captured value to the given variable instead of showing it on the screen.
+If you want to combine several strings into one and save it in one variable, you can do it with the `capture` tag, which "captures" whatever is displayed inside, and then assigns the captured value to the given variable.
 
 ```liquid
   {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
