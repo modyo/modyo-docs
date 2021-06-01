@@ -218,7 +218,7 @@ Modyo has reserved domains that cannot be used as custom site domains:
 </ul></td>
 <td style="border: none;"><ul>
 <li>support.modyo.com</li>
- <li> support.modyo.com </li> 
+<li>soporte.modyo.com</li>
  <li> developers.modyo.com </li> 
  <li> developers.modyo.com </li> 
  </ul> </td> 
