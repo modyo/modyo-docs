@@ -20,7 +20,7 @@ When you filter by site, the elements that use space data will not display in th
 
 ### Activity by type
 
-You will see five boxes representing the number of items created, modified, submitted for review, approved, and published. The elements that are grouped in these boxes are posts, page, navigation, widgets, and templates.
+You will see five boxes that will represent the number of items created, edited, sent to review, approved and published within a given date range. The elements that are grouped in these boxes are entries, pages, navigation, widgets and templates.
 
 **Created**: Account each time an entry, page or widget is created.
 
