@@ -199,7 +199,7 @@ Restrictions allow you to configure the privacy of your site.
 
 The Domains section is where you configure where and how your site is publicly located. It is essential that each member of the platform be aware of any changes made here.
 
-The variables you can change here are:
+The options you configure here are:
 
 - **Host**: Where the site is located inside the server.
 - **Enable custom domains**: If you want within the domain, there are sites with a custom URL or "custom host.
