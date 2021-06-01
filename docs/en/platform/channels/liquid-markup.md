@@ -467,7 +467,7 @@ Restriction elements:
 # results in 3,4
 ```
 
-Reversing the loop:
+Loop Inversion:
 
 ```liquid
 {% for item in collection reversed %} {{item}} {% endfor %}
