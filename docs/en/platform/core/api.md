@@ -10,7 +10,7 @@ In this way, it is possible to perform administrative tasks consuming the API wi
 
 ## Exploring the API
 
-To start taking advantage of the Modyo API, it is important first to know what services you have, what operations you can invoke, and how to use them.
+To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked and how to use them.
 
 Modyo facilitates this task by providing the description of its _headless_ API by using Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their role: administrative, public content, and user profile.
 
