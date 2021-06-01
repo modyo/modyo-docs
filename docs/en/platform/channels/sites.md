@@ -224,7 +224,7 @@ Modyo has reserved domains that cannot be used as custom site domains:
 </ul></td>
 <td style="border: none;"><ul>
 <li>www.modyo.com</li>
- <li> en.modyo.com </li> 
+<li>es.modyo.com</li>
  <li> pt.modyo.com </li> 
  <li> global.modyo.com </li> 
  </ul> </td> 
