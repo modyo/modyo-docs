@@ -161,9 +161,9 @@ Tags (tags) are used for template logic. Here is a list of currently supported t
 * **assign** - Assigns a value to a variable
 * **capture** - Tag block that captures text to a variable.
 * **case** - Tag block, case standard statement.
-* **comment** - Tag block, comment the text in the block.
-* **cycle** - Cycle is usually used within a loop to toggle between values, such as colors or DOM classes.
-* **for** - for loop
+* **comment** - Block tag, comment on the text in the block.
+* **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
+* **for** - Loop for
 * **break** - Exits from a loop
 * **continue** Skip the remaining code in the current loop and continue with the next loop.
 * **if** - Standard if/else block.
