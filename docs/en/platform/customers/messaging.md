@@ -152,7 +152,7 @@ To create your campaign as an email, you will need a template for your content.
 
 From the Templates section, you can make templates for your emails to send to users.
 
-At first glance, you can find all the post templates that have been made.
+At first glance, you can find all the email templates available.
 
 Each of the templates will be sorted according to their name, in addition to being able to see the last time they were modified.
 
