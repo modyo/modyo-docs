@@ -365,7 +365,7 @@ The tasks you must cover with these snippets are:
 
 1. A request interceptor to include a token.
 1. A session controller.
-1. A modal window that will inform the user that their session will expire.
+1. A modal window that informs the user that their session will expire.
 
 ### Intercept requests to include a token
 
