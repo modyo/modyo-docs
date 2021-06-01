@@ -116,7 +116,7 @@ To see a user response in detail, just click on the user name, and you can acces
 
 <img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-To modify a form, you will need to go to the **"Analysis"** section and use the **"Edit"** action in the options menu at the top right.
+To modify a form, you must go to the **"Analysis"** section and use the **"Edit"** action in the options menu at the top right.
 
 Once you enter the edit section of a form, you can see 2 sections: a central section, where you can rearrange questions by dragging them in the required order, and the right side section, which has three tabs:
 
