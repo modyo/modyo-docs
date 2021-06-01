@@ -232,7 +232,7 @@ EXAMPLE
   $ modyo-cli push <NAME>
 ```
 
->Many of the options can be defined as environment variables or within a.env file that is recommended to prevent publishing to the github registry because it may contain sensitive information
+>Many of the options can be defined as environment variables or inside of an .env file that is recommended to avoid the publication to the github registry because can contain some delicate information
 
 ```bash
 modyo_build_directory=BuildDirectoryPath
