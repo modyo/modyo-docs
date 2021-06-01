@@ -126,7 +126,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Simple text**: Allows the user to enter a single-line text response up to 256 characters.
 - **Paragraph**: Allows the user to enter a multi-line text response up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
-- **Dropdown**: Allows you to add options from which the user will be able to choose one in dropdown format.
+- **Dropdown**: Allows you to add a list of options from which the user may choose one in a dropdown format.
 - **Checkbox**: Allows you to add options from which the user will be able to choose multiple in checkbox format.
 - **Choice**: Allows you to add options from which the user will be able to choose one in _radio button_ format.
 - **Date**: Allows you to add a date field in which the user can select one within the allowed range.
