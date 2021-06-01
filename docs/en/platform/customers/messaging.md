@@ -166,7 +166,7 @@ On one side, there is a button that displays a menu with the following options:
 
 - **Preview**: Shows a preview of the email template.
 - **Copy**: Makes a copy of the template.
-- **Dele**: The template is deleted
+- **Delete**: Deletes the template
 
 :::tip Tip
 If you want to intervene the template temporarily and then return to a new one, you better make a copy and work on it, leaving the original unchanged.
