@@ -53,7 +53,7 @@ You can add comments by submitting them at the bottom of the sidebar. Next to ea
 In the right side section, you will see a bar that changes according to the item selected in the main area. In this section are the following options:
 
 - **Name**: Name of the item as it appears on the site.
-- **Associated Page**: Can be directly associated with a page or a custom URL.
+- **Associated Layout Page**: Directly associate a page to this menu item with a custom URL.
 - **URL**: If you chose a custom URL in the previous item, here you can type the URL you want this menu item to point to.
 - **Open in new tab**: Add the attribute `target='blank '` to the HTML element of the menu item, so that when you click it, it opens in a new tab.
 - **Private**: Makes the selected item visible only when there is an active user session on the site.
