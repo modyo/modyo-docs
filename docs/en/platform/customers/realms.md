@@ -210,7 +210,7 @@ To enable or disable the sending of these emails, we just have to click on the *
 
 The styles of the platform emails that we send can also be customized. To do this, we must have the HTML code that we want to include in them.
 
-When you click to enable each email, it will display a default editor into which you can paste the code.
+When you click to enable each of the emails, it will show a default editor in which we can paste our code.
 
 :::danger danger
 It is critical that each email includes customizable codes that allow the platform to include random data of the user requesting the shipment.
