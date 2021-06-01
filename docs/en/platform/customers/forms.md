@@ -170,7 +170,7 @@ Its four main sections are:
 - **Form Options**
 - **Email Notifications**
 
-The**General** section adds two options:
+The **General** section adds two options:
 - **Send button text**: Allows you to customize the text associated with the **Submit** button on the form.
 - **Enabled**: Allows you to determine whether or not users will be able to respond to the form. If the option is checked, then you will be able to access and answer the form, if it is not enabled, then users will not see it and will not be able to answer it.
 
