@@ -324,7 +324,7 @@ If necessary, users from the site who already have previous roles can be deleted
 
 ### Custom redirects
 
-Modyo has a custom redirects system that will allow you to take a URL from your site and automatically redirect using a 301 or 302 code to another section of the site.
+Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
 In this view you will find a table with all the redirects that currently exist on the site, where you can search by path or description.
 
