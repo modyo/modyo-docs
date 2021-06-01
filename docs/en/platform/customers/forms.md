@@ -121,7 +121,7 @@ To modify a form, you must go to the **"Analysis"** section and use the **"Edit"
 Once you enter the editing section of a form, you will see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
 
 ### Add field
-This section will allow you to add as many fields that are necessary to complete the form or delete the ones that are not necessary:
+This section will allow you to add as many fields as necessary to complete the form or remove fields that are not necessary:
 
 - **Simple text**: Allows the user to enter text up to 256 characters.
 - **Paraph**: Allows the user to enter a multi-line text up to 65535 characters.
