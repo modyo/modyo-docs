@@ -4,7 +4,7 @@ search: true
 
 # Modyo Insights with Data Studio
 
-Data visualization is a critical step for data and analysis to be a central part of an organization's decisions, processes, and overall culture. It allows us to more easily identify trends and guidelines, as well as improve data communication for decision-making.
+Data visualization is important in making data and analysis a central part of business decisions, systems, processes and overall culture. It allows trends and patterns to be more easily seen and facilitates communication of data for decision-making.
 
 Data Studio is Google's reporting solution that allows you to easily create custom visualizations of data. To make things even easier, we've created Data Studio templates that you can use to connect your data sources in minutes.
 
