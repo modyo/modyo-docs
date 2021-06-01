@@ -142,7 +142,7 @@ In addition, you can filter the data under the following filters:
 - **Campaign Name**: Name given to the campaign in general.
 - **Shipment**: Date on which the campaign was sent.
 
-Finally, you can see a search bar that will allow you to find for a specific term.
+You also have access to a search bar that to find campaigns or users by name and email.
 
 ## Templates
 
