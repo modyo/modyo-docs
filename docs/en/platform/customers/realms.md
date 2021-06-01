@@ -26,8 +26,8 @@ Along the top of the list are filters that allow you to refine the list of users
 
 The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
-:::tip Tip
-Next to the **Apply** button, there is the **Save as Target** button. It will save the filters you applied to a new Target, which you need to give a title and description. You can then find it in the [Targets] section (/es/platform/customers/targets.html)
+::: tip Tip
+Next to the **Apply** button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/platform/customers/targets.html) section.
 :::
 
 In the table itself, it is possible to sort users by their respective values by clicking on the headers of each of the following columns:
