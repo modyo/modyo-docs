@@ -22,7 +22,7 @@ When you filter by site, the elements that use space data will not display in th
 
 You will see five boxes that will represent the number of items created, edited, sent to review, approved and published within a given date range. The elements that are grouped in these boxes are entries, pages, navigation, widgets and templates.
 
-**Created**: Account each time an entry, page or widget is created.
+**Created**: Number of times an entry, page or widget is created.
 
 **Edits**: Count every time you use the "save" action on posts, pages, navigation, widgets and templates.
 
