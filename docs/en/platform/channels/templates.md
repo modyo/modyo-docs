@@ -60,7 +60,7 @@ In the main work area, there are two sections:
 - The central work area.
 - The template selection area.
 
-Each template you click on the right sidebar opens in the middle area, very similar to an IDE. If you open multiple templates, these are open as tabs in the workspace.
+Each template that you click on in the selection area opens in the central area, very similar to an IDE. If you open multiple templates, they will remain open as tabs in the central work area.
 
 The templates bar on the right has two tabs: views and snippets.
 
