@@ -51,7 +51,7 @@ When using targets, it's important to make sure that each user profile is comple
 
 Filters allow you to create targets based on the information that appears in the customer's profile and their activity within the site. You can create targets including users that match certain criteria or users that do not match certain criteria.
 
-The filters found by default on the platform are:
+The filters found by default in the platform are:
 
 - Activation status
 - Age
