@@ -100,7 +100,7 @@ In this tab you will find common property options for all pages:
 Modyo has reserved paths for the pages, so you cannot use these as paths for your custom pages:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
- <li> 404 </li> 
+<li>404</li>
  <li> 422 </li> 
  <li> 500 </li> 
  <li> admin </li> 
