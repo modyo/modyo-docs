@@ -16,7 +16,7 @@ The documentation on this site applies to the latest version (9.1). To access do
 
 ### Key features
 
-- [Team Review](/es/platform/core/key-concepts.html)
+- [Team review](/platform/core/key-concepts.html)
 - [Integrations](/en/platform/core/integrations)
 - [Administration Users and Roles](/es/platform/core/roles.html)
 - [Security](/es/platform/core/security.html)
