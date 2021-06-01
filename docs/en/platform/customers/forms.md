@@ -100,7 +100,7 @@ You sent this answer on: {{'now' | date: "% b% d,% y"}}
 
 ## Answers
 
-By clicking on a form's response counter, you'll get to a view listing all the responses that users have submitted and the date they responded.
+By clicking on the answer counter of a form, you will arrive at a view listing all the answers that users have submitted, and the date they responded.
 
 You can export the answers to a _XLS_ or _CSV_ file by selecting them from the list and then using the bulk actions at the end of it.
 
