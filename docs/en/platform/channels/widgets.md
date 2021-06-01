@@ -127,7 +127,7 @@ You must take into consideration that using very heavy widgets in a synchronous 
 
 ## Modyo CLI
 
-The Modyo Command Line Interface (CLI) is a command-line tool based on two principles of acceleration and integration, and these principles have a get and push command respectively.
+The Modyo Command Line Interface (CLI) is a command line tool based in two principles acceleration and integration, and this principles has a command get and push respectively.
 
 ### Introduction
 
