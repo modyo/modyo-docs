@@ -212,7 +212,7 @@ The available Boolean operators are:
 * `and`
 * `or`
 
-Note that there is NO operator, and also that YOU CAN NOT use parentheses to control the order of operations, as operator precedence appears not to be specified. So when you have doubts, use nested "if" statements.
+Note that there is NO "no" operator, and you CANNOT use parentheses to control the order of operations, as the precedence of each operator will appear unspecified. When in doubt, use nested "if" statements.
 
 Liquid expressions are tested to determine their "truthfulness" in what appears to be a Ruby form:
 
