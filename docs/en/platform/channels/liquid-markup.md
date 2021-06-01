@@ -22,14 +22,14 @@ Liquid is a template engine which was written with very specific requirements:
 
 ```html
 <ul id="products">
-{% for product in products %}
-<li>
-<h2>{{ product.name }}</h2>
-Only {{ product.price | price }}
+  {% for product in products %}
+    <li>
+      <h2>{{ product.name }}</h2>
+      Only {{ product.price | price }}
 
-{{ product.description | prettyprint | paragraph }}
-</li>
-{% endfor %}
+      {{ product.description | prettyprint | paragraph }}
+    </li>
+  {% endfor %}
 </ul>
 ```
 
