@@ -197,7 +197,7 @@ What this section allows is to enable, disable and customize the sending of auto
 
 - Activation email: Sent once a user registration is completed, so that it confirms your data.
 - Imported user: Sent once the user was imported
-- Welcome Email: Sent after a user registration is completed on a specific site.
+- Welcome email: Sent after completing a user registration at a specific site.
 - Added by administrator: Sent once the administrator created the user manually.
 - Password Recovery: Sent when the user requested to recover their password.
 - Confirmation: Sent once the user was confirmed and activated.
