@@ -214,8 +214,8 @@ Modyo has reserved domains that cannot be used as custom site domains:
 <li>education.modyo.com</li>
 <li>elearning.modyo.com</li>
 <li>training.modyo.com</li>
- <li> training.modyo.com </li> 
- </ul> </td> 
+<li>capacitacion.modyo.com</li>
+</ul></td>
  <td style="border: none;"> <ul> 
  <li> support.modyo.com </li> 
  <li> support.modyo.com </li> 
