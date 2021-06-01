@@ -52,7 +52,7 @@ When you select "Add User", the platform will ask you to complete the following 
 - Email: User email **Required**.
 - Password: Password for the user to enter the platform. The password must be at least 8 characters. **Required**.
 - Password confirmation: Input the same password to confirm.
-- Tags: Tags that are used to identify the user.
+- Tags: Tags that serve to identify the user.
 
 :::tip Tip
 To send the password to the user's email, you only need to check the checkbox under the email field. When saving, an email will be sent to the created user with his password, which will be able to change when entering the platform.
