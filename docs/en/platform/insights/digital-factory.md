@@ -35,7 +35,7 @@ You will see five boxes that will represent the number of items created, edited,
 Next to each main counter, you will see an upward (green) or downward (red) indicator that represents whether the ratio between the current period and the previous one increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
 ::: tip Tip
-The time ranges that are compared in each of the boxes depend on the date range selected in the top right of the view, so if you have selected the last seven days, you'll be comparing, for example, the number of items created within the last seven days, with the number of items created within the week before last.
+The time ranges that are compared in each of the boxes, depend on the date range selected in the upper right part of the view, so that, if you have selected the last seven days, you will be comparing, for example, the amount of elements created within the last seven days, with the amount of elements created within the previous week.
 :::
 
 ### Resources Created vs. Published
