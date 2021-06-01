@@ -208,7 +208,7 @@ EXAMPLE
 
 The `push` command is the one in charge of the integration principle, used to send the widget to the selected site in the modyo platform.
 
-It will use an argument called name to load the widget into the platform and some indicators required as a site_base id token or host to identify the® Modyo platform that hosts the widget and have an additional indicator to prevent manual process flow of widget publication.
+It will use an argument called name to upload the widget to the platform and some required flags like token site_base id or host to can identify the ®Modyo platform which host the widget and have an additional flag to avoid the manual process flow of widget publication.
 
 ```bash
 USAGE
