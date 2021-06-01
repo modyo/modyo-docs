@@ -62,7 +62,7 @@ In the main work area, there are two sections:
 
 Each template that you click on in the selection area opens in the central area, very similar to an IDE. If you open multiple templates, they will remain open as tabs in the central work area.
 
-The templates bar on the right has two tabs: views and snippets.
+The templates selection bar on the right has two tabs: Views and Snippets.
 
 Views are base elements required by Modyo, and usually translate into the direct structure of any of your site's URLs.
 
