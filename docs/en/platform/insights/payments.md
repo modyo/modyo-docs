@@ -16,7 +16,7 @@ The order states are also dynamically plotted, in order to make a comparison ove
 
 ### Orders by Payment
 
-This chart allows us to compare the use of the different types of payment methods installed within e-commerce, through the number of transactions that have been made using them.
+This graphic allows us to compare the use of the different types of payment methods that we have installed within our e-commerce, through the amount of transactions that have been made through them.
 
 ### Orders by Current Status
 
