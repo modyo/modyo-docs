@@ -212,24 +212,24 @@ It will use an argument called name to upload the widget to the platform and som
 
 ```bash
 USAGE
- $ modyo-cli push NAME
+  $ modyo-cli push NAME
 
 ARGUMENTS
- NAME The name of the widget
+  NAME  The name of the widget
 
 OPTIONS
- -b, —build-command=build-command [default: build] Build command in package.json
- -d, —build-directory=build-directory [default: dist] Build directory path
- -h, —help Output usage information
- -i, —site-id=site-id Id of the site where the widget will be push
- -n, —site-host=site-host host of the site where the widget will be push
- -p, —publish force widget publication
- -t, —token=token (required) Modyo Api token
- -u, —account-url=account-url=account-url (required) URL of your® Modyo account ex (" https://account.modyo.com ")
- -v, —version=8|9 [default: 9] Version of Modyo platform
+  -b, --build-command=build-command      [default: build] Build command in package.json
+  -d, --build-directory=build-directory  [default: dist] Build directory path
+  -h, --help                             Output usage information
+  -i, --site-id=site-id                  Id of the site where the widget will be push
+  -n, --site-host=site-host              Host of the site where the widget will be push
+  -p, --publish                          Force widget publication
+  -t, --token=token                      (required) Modyo Api token
+  -u, --account-url=account-url          (required) URL of your ®Modyo account ex("https://account.modyo.com")
+  -v, --version=8|9                      [default: 9] Version of Modyo platform
 
 EXAMPLE
- $ modyo-cli push <NAME> 
+  $ modyo-cli push <NAME>
 ```
 
 >Many of the options can be defined as environment variables or within a.env file that is recommended to prevent publishing to the github registry because it may contain sensitive information
