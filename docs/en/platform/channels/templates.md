@@ -334,7 +334,7 @@ For example, in the content section, you can use:
 ...
 ```
 
-In this case, the types `posts` and `place` share the attributes _title_, _excerpt_, and _covers_, and differ in the _locations_ object. In addition, it defines a different document type for each.
+In this example, the `posts` and `place` types share the _title_, _excerpt_ and _covers_ attributes, but the place types contain _location_ attributes. In addition, we would need to define a different custom view in our site for each of these separate types.
 
 ## Integrations
 
