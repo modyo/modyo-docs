@@ -67,7 +67,7 @@ You can use the **Preview** button at the top of the screen, to review the email
 
 In addition, you will find a drop-down menu that will take you to four sections:
 
- <img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Message Editor**: Allows you to edit the message before sending it.
 - **Send test**: Send a test email with the campaign to a particular address.
