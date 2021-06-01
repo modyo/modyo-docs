@@ -24,7 +24,7 @@ The documentation on this site applies to the latest version (9.1). To access do
 
 
 ### Reserved words
-Modyo has a list of reserved words that cannot be used to call organizations, content spaces or sites.
+Modyo has restricted hosts for the account, so you can't use as hosts for your account:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>admin</li>
