@@ -195,7 +195,7 @@ EXAMPLE
   $ modyo-cli get name [directory]
 ```
 
->there are some public widget names that can be accessed via this command
+>There are some public widget names that can be accessed via this command
 
 ```bash
  EXAMPLES
