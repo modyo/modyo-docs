@@ -164,7 +164,7 @@ Under each name, there is a button that allows you to edit. If you click on it, 
 
 On one side, there is a button that displays a menu with the following options:
 
-- **Preview**: Displays the mail template model that is saved.
+- **Preview**: Shows a preview of the email template.
 - **Copy**: You can make a copy of the template.
 - **Dele**: The template is deleted
 
