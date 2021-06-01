@@ -356,10 +356,10 @@ Continuing with the exercise, it is possible to use the data obtained in the pre
 GET /messaging/campaigns/{campaign_id}/deliveries Campaign deliveries list
 ```
 
-This way, you can perform a _request_ to view the specific information about the _campaign deliveries_ of the campaign called "Test campaign 01", passing in the `campaign_id` parameter the corresponding campaign ID (in this case it is `15`):
+This way, you could perform a _request_ to see the _campaign deliveries_ information of a campaign called "Test campaign 01" by passing in the `campaign_id` parameter corresponding to the campaign ID (which in this case is `15`):
 
 ```shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deliveries -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 Similar to the previous example, the _response_ will look as follows
