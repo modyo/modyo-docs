@@ -42,7 +42,7 @@ The available options are:
 While approval is limited, any user with permissions can comment on the item.
 :::
 
-- **Force Review**: This option allows you to select a list of users, of whom at least one approval is required for the item to move to the "Approved" status. This is independent of the number of approvals configured earlier, that is, even if an item has the number of approvals required, it will remain in the "Waiting Approval" status if no user in the list has approved it.
+- **Force review**: This option allows you to select a list of users, from which at least one approval is required for the item to be moved to the "Approved" status. This is independent of the number of approvals previously configured, i.e. even if an item has the required number of approvals, it will still be in "Waiting for approval" status if no user in the list has approved it.
 
 - **Require All**: This option extends the previous restriction to all selected users.
 
