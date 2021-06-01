@@ -24,7 +24,7 @@ The available filters are:
 
 ### User activity
 
-In this chart you will see a comparison between two values representing user actions on the sites.
+In this graph we can see a comparison between two values that represent user actions within Modyo Channels.
 
 You can select any of these value counts to compare:
 
