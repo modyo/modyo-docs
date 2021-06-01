@@ -306,7 +306,7 @@ Developers are in charge of the structural development of resources, design and 
 
 Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
 
-There is a variation of this role with the name "CLI" that in addition to developer permissions, allows them to push widgets from external applications, such as [modyo-cli](/es/platform/channels/widgets.html #modyo -cli).
+There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 
