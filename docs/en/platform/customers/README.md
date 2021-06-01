@@ -8,7 +8,7 @@ search: true
 
 <img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
-Once the user has been identified, the platform will internally manage the business events that the user performs during his/her session and through the Targets functionality the Platform will be able to customize the content and experience in their browsing.
+Once a user is identified, the platform manages the business events that the user performs during their session and through the functionality of Targets, the Platform can customize the content and experience during their navigation of your digital channels.
 
 **Modyo Customers** represents an important element in developing digital products on the platform.
 
