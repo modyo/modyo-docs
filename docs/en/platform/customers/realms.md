@@ -109,7 +109,7 @@ In the main section to the right are the following tabs:
 
 In this section you will see a record of all the actions that the user has performed within the platform.
 
-It should be noted that it is not a follow-up to a user's navigation within the platform, but rather the main interactions that the user performs within the platform. These records cannot be deleted or edited by administrators.
+It should be noted that it is not a follow-up to the navigation of a user within the platform, but rather of the main interactions that it carries out within it. These records cannot be deleted or edited by administrators.
 
 #### Responses to forms
 
