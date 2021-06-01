@@ -16,7 +16,7 @@ Through the Users section, you will be able to view and modify external users of
 
 In the main view, we can see a list of all registered users within the platform, paginated with 30 users per page.
 
-At the top of the table, you will find filters that will allow you to find a group of users in a better way. The available filters are as follows:
+Along the top of the list are filters that allow you to refine the list of users by the following attributes:
 
 - Status: View active and inactive users.
 - Verification: View the users who have confirmed their data on the platform.
