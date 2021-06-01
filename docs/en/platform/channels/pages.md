@@ -146,7 +146,7 @@ If you enable the "Private" option on a page, then a user must be logged in with
 
 #### Meta tags
 
-In this section you can add meta tags to the pages and modify the value of existing meta tags, to enrich the SEO of the page. With the tags added to the pages, you can decide whether to use the default value, overwrite the available value for the tag, or remove the tag from the page.
+In this section you can add meta tags to your pages or modify the value of existing meta tags, in order to improve the SEO of the page. With the tags added to the page, you can decide whether to use the default value, change current tag values or remove the tag from the page.
 
 :::tip Tip
 Keep in mind that for meta tags to take effect on your page, you must publish the changes.
