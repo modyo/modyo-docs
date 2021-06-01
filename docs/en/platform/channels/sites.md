@@ -178,8 +178,8 @@ The robots.txt and sitemap.xml files are only visible on the site if you have a 
 By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
 :::
 
-:::warning Attention
-Since the meta tag listing is part of the site configuration, only site administrators can add meta tags for all pages, however, site developers can add and remove meta tags on pages and modify their page by page values.
+:::warning Warning
+Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
 :::
 
 ### Restrictions
