@@ -12,7 +12,7 @@ The available filters are:
 - Target
 - Site
 
-**Active Users**: Count all users with two or more activity logs in the selected period.
+**Active users**: Total users with two or more activity records in the selected period.
 
 **Activiti**: Corresponds to login count, form responses, open emails, emails notified as spam, open notifications.
 
