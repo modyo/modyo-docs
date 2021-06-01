@@ -47,7 +47,7 @@ You can add comments by submitting them at the bottom of the sidebar. Next to ea
 
 - **Save**: Save all menu changes.
 - **Send to review**: Changes the menu status to "In review". In this state you can continue making changes, but each change alerts assigned reviewers via email.
-- **Reject**: Returns to "In Edit" status, notifying reviewers that the item was rejected.
+- **Reject**: Returns to the "Pending changes" state, and notifies reviewers that the item was rejected.
 - **Publish**: Once the menu has been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -y-y-joint) to publish your navigation.
 
 In the right side section you can see a bar that changes according to the item selected in the main area. In this section you can see the options:
