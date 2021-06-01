@@ -102,7 +102,7 @@ You sent this answer on: {{'now' | date: "% b% d,% y"}}
 
 By clicking on the answer counter of a form, you will arrive at a view listing all the answers that users have submitted, and the date they responded.
 
-You can export the answers to a _XLS_ or _CSV_ file by selecting them from the list and then using the bulk actions at the end of it.
+You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
 ::: danger Danger
 You can delete responses one by one by using the action to the right of each response, or by using the bulk actions, selecting multiple responses and then the**Dele** button at the bottom of the list. Please note that this action is irreversible and once a response has been deleted, it cannot be recovered.
