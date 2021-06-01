@@ -134,7 +134,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `replace_first` - Replaces the first incident *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 * `replace` - Replace all incidents *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
 * `reverse` - Reverses the given array.
-* `round` - Rounds to the nearest integer or specified number of decimal places *e.g.* <span v-pre> `{{4.5612 | round: 2}} #=> 4.56` </span> 
+* `round` - Round to the nearest whole number or to the specified number of decimals *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
 * `rstrip` - Removes all blanks from the end of a string
 * `script_tag` - Generate the HTML tag `<script>` for a JavaScript template, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre> `{{'my-js-url' | script_tag: async: 'async', defer: 'defer'}}` </span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'> </script>`
 * `sha1` - Return the SHA-1 hash of a string *e.g.* <span v-pre> `{% 'Hello world' | sha1%} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'` </span>.
