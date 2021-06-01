@@ -47,7 +47,7 @@ Once the copying action is complete, you will be directed to the new page. Remem
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
-- Publish: If the page is approved, you can go to the [joint publishing view](/es/platform/channels/sites.html #revision -y-y-joint publication) using this action.
+- Publish: If the page is approved, and if all the changes have been saved, you can got to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes in across the site.
 
 :::tip Tip
 * If a page has a parent, you can only publish it if the page is published.
