@@ -15,7 +15,7 @@ In the interface, you can see a list of all targets in your account, with the fo
 The list is sorted as follows.
 
 - Name: The particular name that has the list. (under this are the filters that compose it).
-- Created on: Date the target was created.
+- Created on: Target creation date.
 - People: Number of users belonging to the target.
 
 In addition, on the far left you will find a button with a drop-down menu that allows you to run the following options:
