@@ -224,31 +224,31 @@ in your _response_ in JSON format:
 
 ```json
 {
- "roles": [{
- "id": 65,
- "key": "space_writer",
- "name": "Writer",
- "context": "space",
- "read_only": true,
- "restorable": true,
- "users_count": 0,
- "created_at": "2019-07-09T 17:15:14 .000- 03:00"
- }, {
- "id": 66,
- "key": "space_editor",
- "name": "Editor",
- "context": "space",
- "read_only": true,
- "restorable": true,
- "users_count": 1,
- "created_at": "2019-07-09T 17:15:14 .000- 03:00"
- }],
- "goal": {
- "total_entries": 2,
- "per_page": 10,
- "current_page": 1,
- "total_pages": 1
- }
+    "roles": [{
+        "id": 65,
+        "key": "space_writer",
+        "name": "Writer",
+        "context": "space",
+        "read_only": true,
+        "restorable": true,
+        "users_count": 0,
+        "created_at": "2019-07-09T17:15:14.000-03:00"
+    }, {
+        "id": 66,
+        "key": "space_editor",
+        "name": "Editor",
+        "context": "space",
+        "read_only": true,
+        "restorable": true,
+        "users_count": 1,
+        "created_at": "2019-07-09T17:15:14.000-03:00"
+    }],
+    "meta": {
+        "total_entries": 2,
+        "per_page": 10,
+        "current_page": 1,
+        "total_pages": 1
+    }
 }
 ```
 
