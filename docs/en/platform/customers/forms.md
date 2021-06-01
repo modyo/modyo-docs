@@ -184,6 +184,6 @@ In order to make proper use of the form snippet, you must take into account the 
 
 The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
-:::warning Attention
-If you're using a Modyo site with a custom domain, you'll need to enable the [CORS] resource source sharing option (/es/platform/core/security.htm) in your account settings.
+::: warning Warning
+If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
 :::
