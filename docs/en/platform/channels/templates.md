@@ -406,7 +406,7 @@ axios_api.interceptors.request.use (appendTokenToRequest, errorRequest);
 ```
 
 
-### A session handler
+### A session controller
 
 ```js
 // is in charge of raising the warning modal that will warn of the upcoming session closure, this variable will return a promise that will be effective if the Keep Session button is clicked and that will launch a reject promise in the case of selecting the button with the refusal to continue.
