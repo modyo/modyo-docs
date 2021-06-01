@@ -283,7 +283,7 @@ Modyo has [global variables](/en/platform/core/key-concepts.html#global-variable
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-To sort the work, Modyo allows you to select the team members who will work on each site and thus have access to writing, review and/or publication.
+The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. These roles start with editing privileges, and can expand to include reviewing, publishing, and configuring site settings.
 
 To do this, the administrator who created the site can manually assign users and default roles that enable each of the roles.
 
