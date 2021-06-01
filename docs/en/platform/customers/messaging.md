@@ -112,9 +112,9 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 
 The last option is the Actions column where you can delete a delivery.
 
-:::danger danger
-Remember that if you delete the shipment, you will not be able to recover the registration if you made any changes to the shipment. 
-Also, if you delete when the campaign is in the process of sending, it does not mean that emails will not reach users, but rather stop the process at the point where it is located.
+::: danger Danger
+Remember that if you delete the delivery, it is unrecoverable.
+In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is.
 :::
 
 If you click on the campaign names, you'll go to the Message Deliveries section.
