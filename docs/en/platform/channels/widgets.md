@@ -119,7 +119,7 @@ This is an experimental feature and it may be subject to changes.
 
 You can choose to load your widgets synchronously, meaning that the HTML, CSS and JavaScript code of your widget will load along with the rest of the page from the server, or you can choose to load them asynchronously, so that all static content of the page will load and once the main document is loaded, the content of your widget will load via JavaScript. By default, all widgets load asynchronously.
 
-To change the way each widget loads, you must go to the edit view of the page containing the widget, select the widget, and check or uncheck the "Synchronous load" option.
+To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
 
 :::warning Attention
 Keep in mind that using very heavy widgets synchronously can cause your page's performance to be diminished, so you should carefully decide which widgets will load synchronously and which asynchronously
