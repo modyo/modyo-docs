@@ -32,7 +32,7 @@ You will see five boxes that will represent the number of items created, edited,
 
 **Published**: Number of times an item is published, either on a site or space without team review (direct publication), or through team review, or also, through the "force post" action of the administrators.
 
-Next to each main counter, you'll see an up (green) or down (red) indicator that represents whether the ratio between the current and previous period increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
+Next to each main counter, you will see an upward (green) or downward (red) indicator that represents whether the ratio between the current period and the previous one increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
 ::: tip Tip
 The time ranges that are compared in each of the boxes depend on the date range selected in the top right of the view, so if you have selected the last seven days, you'll be comparing, for example, the number of items created within the last seven days, with the number of items created within the week before last.
