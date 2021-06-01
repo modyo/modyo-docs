@@ -133,14 +133,15 @@ The Modyo Command Line Interface (CLI) is a command line tool based in two princ
 
 First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some Front end architectural decisions already taken, or use to initialize a widget from the catalog if you have access.
 
-To install modyo-cli globally, you must use one of these options
+To install the modyo-cli globally you must use one of these options
 
 ```bash
-$ npm i -g @modyo /cli #via npm
-$ yarn global add @modyo /cli #via yarn
+$ npm i -g @modyo/cli #via npm
+$ yarn global add @modyo/cli #via yarn
 ```
 
-> This command will make the modyo-cli command available in the terminal session globally
+> This command will make the command modyo-cli available on the terminal session globally
+
 
 The available commands are get, push, and help
 
