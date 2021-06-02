@@ -8,15 +8,13 @@ All Widgets in this catalog are based on a flat design, based on Bootstrap, wait
 
 For both the style base, as well as the grid used in Widgets, [Bootstrap](https://getbootstrap.com/) is used in its version `4.5.x`, using to the maximum the helpers and classes that it includes. This way the number of custom styles in our Widgets is very low which makes your modification simple and easy.
 
-:::tip
-To make the most of the potential of bootstrap we use **SCSS** as the **css** pre-processor which allows us to modify the default values of the variables used in bootstrap build.
-:::
+:::tip To make the most of the potential of bootstrap we use **SCSS** as the **css** pre-processor which allows us to modify the default values of the variables used in bootstrap build. :::
 
 ```html{1-2}
 <div class="bg-white px-3 pt-3 pb-2 rounded mt-3">
 <div class="d-flex justify-content-between mb-2">
-<!-- content -->
-</div>
+    <!-- content -->
+  </div>
 </div>
 ```
 
@@ -41,7 +39,7 @@ The `_theme.scss` file is used for:
 - Widget Global Styles
 - Extend bootstrap using your mixins
 
-```scss {2,3,8,11}
+```scss{2,3,8,11}
 //Example: We use the mixin bg-variant to create more background colors
 @include bg-variant (".bg-tertiary", $tertiary, true);
 @include bg-variant (".bg-tertiary-10", $tertiary-10, true);
@@ -76,11 +74,11 @@ $border-radius: 0.35rem;
 //...
 ```
 
- <img src="/assets/img/widgets/before.png" width="400"> 
+<img src="/assets/img/widgets/before.png" width="400" />
 
 After
 
-```scss {2,4-6}
+```scss{2,4-6}
 //...
 $light: lightblue;
 //...
@@ -90,21 +88,19 @@ $border-radius: 1.35rem;
 //...
 ```
 
- <img src="/assets/img/widgets/after.png" width="400"> 
+<img src="/assets/img/widgets/after.png" width="400" />
 
 ### Custom
 
 In the `custom.scss` file we import and give order to all the other stylesheets that we have in the**scss** folder along with the bootstrap base.
 
-```scss {1}
+```scss{1}
 @import". /variables ";//always before bootstrap
 @import "~bootstrap";
 @import". /theme.scss ";
 ```
 
-:::tip
-Order is important, **variables** always go before importing bootstrap.
-:::
+:::tip Order is important, **variables** always go before importing bootstrap. :::
 
 This**scss** file is imported into the `main.js` file of the project.
 
@@ -121,9 +117,7 @@ new Vue({
 }).$mount("#my-Widget");
 ```
 
-:::warning Important
-The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not styles!
-:::
+:::warning Important The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not styles! :::
 
 ### Component Styles
 
@@ -154,9 +148,7 @@ When you're building a Widget with Bootstrap (or another style framework) you'll
 
 Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we managed to remove those extra **bytes** that we don't need and optimize our Widgets. Excellent!
 
-::: danger PROBLEM!
-What about the **NO** styles declared in the content, but what **YES** are used in the Widget?
-:::
+::: danger PROBLEM! What about the **NO** styles declared in the content, but what **YES** are used in the Widget? :::
 
 Sometimes we may encounter some style problems, for example when we use the Bootstrap modal component and the `modal-backdrop` style does not load since this element is created dynamically when you open the modal; or when we use external component libraries in our Widgets where the styles of that component have not been loaded and are not on site. This happens because **PurgeCSS** does not know where to read the contents of the external component.
 
