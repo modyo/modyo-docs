@@ -78,8 +78,6 @@ This option exists because there are times when you need to publish quickly, so 
 
 When the team review option is enabled, and after saving the changes, you will see the green **Send to review** button as the main action.
 
-
-
  <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" /> 
 
 At the time of submission to review the bar will change status:
