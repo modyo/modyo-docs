@@ -8,10 +8,9 @@ Illustrations aim to communicate, transmit ideas, sensations and feeling while c
 
 They can have different objectives, either as support of a text, narrative of a situation, or the symbology of a concept.
 
-<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
-The illustrations are made for use on a dark and white background. It is recommended to use the specified shades
-in the brand guide.
+The illustrations are made for use on a dark and white background. It is recommended to use the specified shades in the brand guide.
 
 They can be categorized into three types depending on the level of complexity and usage given to them.
 
@@ -67,7 +66,7 @@ Supporting elements are usually characters or things that, as its name says, sup
 
 Unlike Hero and spot Hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without removing prominence to what you want to communicate.
 
-<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" style="margin-left: 0;" />
 
 ## Color
 
@@ -106,7 +105,7 @@ White is a color that is always used on faces and hands.
 </tr>
 </table>
 
-<img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
+<img src="/assets/img/brand/webinar.png" style="margin-left: 0;" />
 
 If necessary, color is used to reinforce ideas, direct the look to specific points, demonstrate difference in certain elements, and emphasize the idea of overlapping on one or more elements.
 
@@ -143,11 +142,11 @@ A suitable margin of at least 28 px/1 cm must be respected around the entire ima
 
 #### Horizontal
 
-<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;">
+<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;" />
 
 #### Vertical
 
-<img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
+<img src="/assets/img/brand/vertical.png" style="margin-left: 0;" />
 
 ### Misuse of illustrations
 
