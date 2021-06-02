@@ -49,7 +49,7 @@ If you want to add a tag to a file or group of files, you can do so by directly 
 
 Now, it will appear as soon as you select the first item (by clicking on the checkbox in the first column).
 
-If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've checked.
+If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've selected.
 
 <img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
 
