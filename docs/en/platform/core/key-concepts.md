@@ -80,7 +80,7 @@ When the team review option is enabled, and after saving the changes, you will s
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
 
-At the time of submission to review the bar will change status:
+When you send the item for revision, the bar will change status:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
 
