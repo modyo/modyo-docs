@@ -14,7 +14,7 @@ In the interface, you can see a list of all targets in your account, with the fo
 
 The list is sorted as follows.
 
-- Name: The particular name that has the list. (under this are the filters that compose it).
+- Name: Particular name of the list. (Below are the filters that it contains).
 - Created on: Target creation date.
 - People: Number of users that within the target.
 
