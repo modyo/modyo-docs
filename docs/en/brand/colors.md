@@ -385,8 +385,8 @@ Gradients are used as block backgrounds, always respecting and using white and s
 Their most frequent use cases are:
 
  <ul> 
- <li> As support for an icon or group of icons </li> 
- <li> As background illustrations (only in the case of light blue) </li> 
+ <li> As support for an icon or a group of icons </li> 
+ <li> As an artwork background (only in the case of light blue) </li> 
  </ul> 
 
    <table class="no-border"> 
