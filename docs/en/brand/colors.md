@@ -10,32 +10,32 @@ The color in a brand is important since it allows giving personality to a compan
 
 The primary brand colors are petrol blue and green. The two are connected and represent the identity of Modyo. They are used to generate contrast, presence and accessibility in each of the formats where it is present.
 
- <table class="no-border"> 
- <tr> 
- <td> 
- <div style="display: flex;"> 
- <span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-left: 24px;"> 
- <p> <b> Dark Blue </b> </p> 
- <p> HEX: #151F38 <br> 
-RGB: 21 31 56 </p> 
- </div> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;"> 
- <span style="background: #3dc681;width: 150px;height: 150px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-left: 24px;"> 
- <p> <b> green </b> </p> 
- <p> HEX: #3dc681 <br> 
-RGB: 14 189 116 </p> 
- </div> 
- </div> 
- </td> 
- </tr> 
- </table> 
+<table class="no-border">
+<tr>
+<td>
+<div style="display: flex;">
+<span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-left: 24px;">
+<p><b>Azul Petróleo</b></p>
+<p>HEX: #151F38 <br>
+RGB: 21 31 56</p>
+</div>
+</div>
+</td>
+<td>
+<div style="display: flex;">
+<span style="background: #3dc681;width: 150px;height: 150px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-left: 24px;">
+<p><b>Verde</b></p>
+<p>HEX: #3dc681 <br>
+RGB: 14 189 116</p>
+</div>
+</div>
+</td>
+</tr>
+</table>
 
 ## Secondary Color
 
