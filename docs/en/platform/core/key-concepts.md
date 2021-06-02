@@ -94,7 +94,7 @@ To the right of each reviewer you can find the status of their revision, showing
 
 Anyone who can access the edit view of the item will see an **Approve** button under the list of reviewers.
 
-Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission will see the disabled button.
+Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission, will see the button disabled.
 
 When you approve the item, that user's approval will be recorded, showing a green check to the right of their name in the reviewers list.
 
