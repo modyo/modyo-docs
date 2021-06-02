@@ -66,7 +66,7 @@ Users with the intermediate role, in addition to the above, can approve the item
 
 Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force approve" to publish an item without the restrictions of team review.
 
-:::warning Attention
+:::warning Warning
 Site or space administrators always have the ability to skip the team review flow.
 
 For them, the "Send to Review" and "Review" buttons have an option inside the dropdown to "Force Approval" that will allow them to see the item in the publication view.
