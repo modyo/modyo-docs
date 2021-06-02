@@ -76,7 +76,9 @@ This option exists because there are times when you need to publish quickly, so 
 
 ### About the interface
 
-When team review is enabled, and after saving your changes, you will see the green button **Send to Review** as the main action.
+When the team review option is enabled, and after saving the changes, you will see the green **Send to review** button as the main action.
+
+
 
  <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" /> 
 
