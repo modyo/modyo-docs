@@ -34,9 +34,7 @@ To create a group, go to the "Groups" section of your account settings, give it 
 
 In addition, from the "Groups" section of each team member's profile, you can add or remove the user from existing groups.
 
-::: tip Tip
-Keep in mind that if a user already has an associated role in a context (account, space, realm, or site) and you add it to a group with a higher privileged role, the user will gain the most privileged role between the own role and that of the group.
-:::
+::: tip Tip Keep in mind that if a user already has an associated role in a context (account, space, realm, or site) and you add it to a group with a higher privileged role, the user will gain the most privileged role between the own role and that of the group. :::
 
 ## Roles
 
