@@ -16,7 +16,7 @@ In the Types section of a space, you can find a green **+ New** button at the to
 
 Below, you can see the Type search bar, which will allow you to filter by any word that is in the Name field.
 
-Then, you will find the table with the Types already created, which will be sorted by default according to the updated date and time, starting from the most recent item back.
+Then, you will find the table with the Types that have already been created, which will be sorted by default according to the updated date and time, starting from the most recent item back.
 
 To reorder it, you just need to click on the symbols on one side of each category.
 
