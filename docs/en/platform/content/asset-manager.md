@@ -47,7 +47,7 @@ The list has three different filters for useful file searching.
 :::tip Tip
 If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list. 
 
-Thus, you will appear as soon as you select the first item (clicking on the checkbox in the first column.
+Now, it will appear as soon as you select the first item (by clicking on the checkbox in the first column).
 
 If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've checked.
 
