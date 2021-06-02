@@ -86,9 +86,9 @@ When you send the item for revision, the bar will change status:
 
 When you click on it, you will be able to see the requirements to publish the item in the right side section.
 
-If there is a required reviewer, `(required)` will appear next to your name in the list of reviewers.
+If there is a required reviewer, `(required)` will appear next to his name in the list of reviewers.
 
- <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" /> 
+<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 To the right of each reviewer, the status of your review will appear, showing a yellow circle if you have not made your review, and a green check if you have approved the item.
 
