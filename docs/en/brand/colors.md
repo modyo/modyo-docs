@@ -64,7 +64,7 @@ Our brand is well suited to the following colors:
 <table class="no-border">
 <tr>
 <td colspan="6">
-<b>Azul Petróleo</b>
+<b>Dark Blue</b>
 </td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ RGB: 208 210 215</p>
 
 <tr>
 <td colspan="6">
-<b>Verde</b>
+<b>Green</b>
 </td>
 </tr>
 
@@ -224,7 +224,7 @@ RGB: 159 229 199</p>
 </tr>
 <tr>
 <td colspan="6">
-<b>Azul</b>
+<b>Blue</b>
 </td>
 </tr>
 
@@ -305,7 +305,7 @@ RGB: 205 223 249</p>
 <tr>
 <td colspan="6">
 <hr style="margin-bottom: 26px;">
-<b>Gris</b>
+<b>Grey</b>
 </td>
 </tr>
 
