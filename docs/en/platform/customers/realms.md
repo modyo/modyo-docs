@@ -16,24 +16,22 @@ Through the Users section, you will be able to view and modify external users of
 
 In the main view, we can see a list of all registered users within the platform, paginated with 30 users per page.
 
-Along the top of the list are filters that allow you to refine the list of users by the following attributes:
+En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera. Los filtros disponibles son los que siguen:
 
 - Status: Filter by active and inactive users.
 - Verification: Filter by users who have (or have not) confirmed their data within the platform.
 - Targets: Filter by users that match certain [Targets](/en/platform/customers/targets.html).
-- Advanced filters: Filter by users who match specific filters based on data in their user profiles, e.g. birth date, or custom field value.
+- Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
 - Search: Filter by user name, last name, email, or username.
 
 The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
-::: tip Tip
-Next to the **Apply** button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/platform/customers/targets.html) section.
-:::
+::: tip Tip Next to the **Apply** button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/platform/customers/targets.html) section. :::
 
 You can sort users by ascending or descending order by the following values:
 - Name: User Name
-- Sign Up Date: Date and time of registration in the platform.
-- Last Login: Most recent date and time a user logged into the platform.
+- Sign Up Date: Date and time of registration in the platform. Fecha de inscripción en la base de datos de usuarios
+- Ultimo ingreso: Fecha de último ingreso a la plataforma
 - Logins Count: Number of times a user has logged into the platform.
 
 
@@ -47,16 +45,14 @@ When you select "Add User", the platform will ask you to complete the following 
 
 - First Name: Legal name of the user. **Required**
 - Last Name: Last name of the user.
-- Second Last Name: user's second last name (optional).
-- User Name: Name within the platform **Required**.
+- Apellido materno: Apellido materno del usuario.
+- Nombre del usuario: User Name: Name within the platform **Required**.
 - Email: User email **Required**.
 - Password: Password for the user to enter the platform. The password must be at least 8 characters. **Required**.
 - Password confirmation: Input the same password to confirm.
 - Tags: Tags that serve to identify the user.
 
-::: tip Tip
-To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
-:::
+::: tip Tip To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later. :::
 
 This user creation view may contain more fields depending on the configuration on the platform, available in the [Customers Settings] section (/es/platform/customers/realms.html #configuracion -de-customers). Some special fields, such as second surname, avatar, or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -registration). On the other hand, there are also **Custom Fields**, which can be created and modified in the [Custom Fields] section (/es/platform/customers/realms.html #campos -custom).
 
@@ -71,14 +67,12 @@ Below you will see the main import view. On the left, a table with three main co
 
 In this view, you will proceed to assign each column in the\ *.CSV file to a respective attribute available on the platform.
 
-::: tip Tip
-The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
-:::
+::: tip Tip The minimum attributes required to import a user are their first name (not to be confused with username) and their email address. :::
 
 On the right, in a sidebar, you will see main import settings. Here you can define if the file does not follow one of the common standards of the\ *.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which by default is a comma). A little below is a box indicating whether you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those fields to be imported. Finally, four main import options:
 
 - Activate user account
-- Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos)
+- Activate account and send email (customizable in \[Correos\](/es/platform/customers/realms.html #correos)
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
@@ -127,9 +121,7 @@ In the upper right section you will find additional options with which you can d
 * **Disable**: You can disable users and prevent them from logging in.
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
-::: tip Tip
-When modifying a user, you may change the list of Targets to which they belong.
-:::
+::: tip Tip When modifying a user, you may change the list of Targets to which they belong. :::
 
 
 ----
@@ -147,21 +139,19 @@ Here you can set up general aspects of realm, such as:
 - **Enable/Disable Credencials**: Allows you to disable Modyo credentials in this realm.
 - **Modify user account activation type**:
   - Direct: Registering users will be able to log in directly
-  - Activation email: Registering users must activate their account using a link sent to the email in order to sign in.
+  - Correo de activación: Activation email: Registering users must activate their account using a link sent to the email in order to sign in.
   - Moderate: Registering users will need to wait for a Modyo administrator to activate their account in order to sign in.
   - Disabled: Unable to register new users in the kingdom. Users already registered and activated will be able to log in without problems.
 - **Extra attributes of the registration form**:
   - Enable second last name
   - Make the second surname required
-  - Enable Email Confirmation: Enables an extra email field that the user must fill in and must match the primary email field for the user to register.
+  - Habilitar confirmación de correo electrónico: Enable Email Confirmation: Enables an extra email field that the user must fill in and must match the primary email field for the user to register.
   - Enable user avatar
   - Enable date of birth
   - Enable gender
 - **Remove**: Allows complete removal of realm. This is a background process, so you may not see realm disappear immediately after executing the action. To be able to delete the kingdom, you must enter the full name of the kingdom to confirm the action.
 
-:::danger danger
-By disabling the realm Modyo credentials, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
-:::
+:::danger danger By disabling the realm Modyo credentials, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in. :::
 
 ### Appearance
 
@@ -183,9 +173,7 @@ It is common to have linked files in the Custom CSS. To link a file, click the b
 
 However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
 
-::: tip Tip
-If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
-:::
+::: tip Tip If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing. :::
 
 ### Emails
 
@@ -195,13 +183,13 @@ To adjust the address that will appear as the sender that will send your mail, y
 
 What this section allows is to enable, disable and customize the sending of automatic emails after specific interactions made by users, the emails are as follows:
 
-- Activation email: Sent once a user registration is completed, so that it confirms your data.
-- Imported user: Sent once the user was imported
-- Welcome email: Sent after completing a user registration at a specific site.
-- Added by administrator: Sent once the administrator created the user manually.
+- Correo de activación: Activation email: Sent once a user registration is completed, so that it confirms your data.
+- Usuario importado: Imported user: Sent once the user was imported
+- Correo de bienvenida: Welcome email: Sent after completing a user registration at a specific site.
+- Añadido por administrador: Added by administrator: Sent once the administrator created the user manually.
 - Password recovery: Sent when the user requested to recover their password.
 - Confirmation: Sent once the user was confirmed and activated.
-- Waiting for approval: Sent once the user has been confirmed, but you must wait for manual activation from an administrator.
+- Esperando aprobación: Waiting for approval: Sent once the user has been confirmed, but you must wait for manual activation from an administrator.
 - Custom footer: Custom footer for all the emails described above.
 
 To enable or disable the sending of these emails, we just have to click on the **Enabled/Disabled** button next to each function and click on the **Save** button.
@@ -212,11 +200,9 @@ The styles of the platform emails that we send can also be customized. To do thi
 
 When you click to enable each of the emails, it will show a default editor in which we can paste our code.
 
-::: danger Danger
-It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the mail.
+::: danger Danger It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the mail.
 
-To do this, we must insert attributes in the code under the editor, and we can easily copy and paste to locate them in the part we need.
-:::
+To do this, we must insert attributes in the code under the editor, and we can easily copy and paste to locate them in the part we need. :::
 
 Each time a code change is made, click on the **Save** button at the top of the screen.
 
@@ -276,10 +262,6 @@ All **Custom Fields** have certain standard properties:
 
 In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then they can be used by administrators and depending on their configuration, they will be available to users. If a **Custom Field** is disabled, then it will not appear on any form, but its values will remain saved.
 
-::: danger Danger
-When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**.
-:::
+::: danger Danger When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**. :::
 
-::: tip Tip
-Apart from being able to save specific data in user profiles, [Targets]filters(/platform/customers/targets.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
-:::
+::: tip Tip Apart from being able to save specific data in user profiles, [Targets]filters(/platform/customers/targets.html) can be created using **custom field** data, allowing users to be segmented by customizable values. :::
