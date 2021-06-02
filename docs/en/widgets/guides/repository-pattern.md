@@ -138,9 +138,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
 
    In the above code we define and export all our API requests that we need
 
-:::tip Important
-We must import the corresponding HTTP Client file into all Repositories that need it. In this example "ModyoClient"
-:::
+   :::tip Important We must import the corresponding HTTP Client file into all Repositories that need it. In this example "ModyoClient" :::
 
 #### 5. Create the file "RepositoryFactory.js"
    We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, this way it is easier to use them anywhere in our Widget.
@@ -161,12 +159,16 @@ We must import the corresponding HTTP Client file into all Repositories that nee
    };
    export default {
      get: (name) => repositories[name],
+   }; ApiRepository,
+   };
+   export default {
+     get: (name) => repositories[name],
    };
    ```
 
 We've finished setting up our Repository Pattern. If you followed the steps you should have a file structure similar to this:
 
-```tree {3-12}
+```tree{3-12}
 ├── src/
 │ ├── components/
 │ ├── repositories/
