@@ -8,4 +8,4 @@ Welcome to the official Modyo brand guide. Here we present the different standar
 
 If you have questions about how to properly use the Modyo brand, don't hesitate to [contact us](https://support.modyo.com/hc/en-us) for additional guidance.
 
-<img src='/assets/img/m.png' style="width:300px;"/>
+<img src='/assets/img/m.png' style="width:300px;" />
