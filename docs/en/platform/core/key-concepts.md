@@ -71,7 +71,7 @@ Site or space administrators always have the ability to skip the team review flo
 
 For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force approve" which allows you to see the element in the published view.
 
-This option exists because there are times when you need to publish quickly, so be cautious when you assign roles for your spaces or sites.
+This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
 
 ### About the interface
