@@ -60,7 +60,7 @@ There are three levels of roles that allow users to perform different actions in
 - Medium: Reviewer (site) or Editor (space)
 - Under: Developer (site) or Writer (space)
 
-Users with the lowest role can submit to review and comment on items that are in that state.
+Users with the lowest role, can submit items for review and comment on items that are in that state.
 
 Users with the intermediate role, in addition to the above, can approve items under review and once they are approved, they can publish them using the team review flow.
 
