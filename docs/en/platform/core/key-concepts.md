@@ -84,7 +84,7 @@ When you send the item for revision, the bar will change status:
 
 <img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
 
-When you click on it, you will be able to see the requirements to publish the item in the right side section. If there is a required reviewer, `(required)` will appear next to his name in the list of reviewers.
+When you click on it, you will be able to see the requirements to publish the item in the right side section.
 
 If there is a required reviewer, `(required)` will appear next to your name in the list of reviewers.
 
