@@ -39,7 +39,7 @@ RGB: 14 189 116</p>
 
 ## Secondary Color
 
-Our secondary colours that usually accompany the brand on different media are blue. They should be used sparingly throughout the illustration, photography and product to maintain meaning and potency.
+Our secondary colors, which often accompany the brand on different media, are blue and should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
 
 <table class="no-border">
 <tr>
