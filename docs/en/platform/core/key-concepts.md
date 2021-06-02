@@ -58,7 +58,7 @@ There are three levels of roles that allow users to perform different actions in
 
 - High: Administrator (site or space)
 - Medium: Reviewer (site) or Editor (space)
-- Under: Developer (site) or writer (space)
+- Under: Developer (site) or Writer (space)
 
 Users with the lowest role can submit to review and comment on items that are in that state.
 
