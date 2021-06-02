@@ -537,4 +537,5 @@ Lo que entrega un response como el siguiente:
 	}
 }
 ```
+
 Finalmente, recuerda que la API de manera predeterminada, siempre retornará la primera página (`current_page: 1`) de recursos agrupados en páginas de 10 elementos (`per_page: 10`).
