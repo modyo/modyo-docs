@@ -57,7 +57,7 @@ For these items to follow the new configuration, they need to be rejected and se
 There are three levels of roles that allow users to perform different actions in the review process:
 
 - High: Administrator (site or space)
-- Media: Reviewer (site) or Editor (space)
+- Medium: Reviewer (site) or Editor (space)
 - Under: Developer (site) or writer (space)
 
 Users with the lowest role can submit to review and comment on items that are in that state.
