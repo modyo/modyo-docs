@@ -8,7 +8,7 @@ The color in a brand is important since it allows giving personality to a compan
 
 ## Primary colors
 
-The primary colors of the brand are petroleum blue and green. Both are connected and represent Modyo's identity. They are used to generate contrast, presence and accessibility in each of the formats where it is present.
+The primary brand colors are petrol blue and green. The two are connected and represent the identity of Modyo. They are used to generate contrast, presence and accessibility in each of the formats where it is present.
 
  <table class="no-border"> 
  <tr> 
