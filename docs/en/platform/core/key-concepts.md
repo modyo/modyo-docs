@@ -64,7 +64,7 @@ Users with the lowest role, can submit items for review and comment on items tha
 
 Users with the intermediate role, in addition to the above, can approve the items under review and, once they are approved, publish them through the team review flow.
 
-Users at the highest level, in addition to doing all of the above, can skip the review flow and use the Force Approval action to publish an item without having to comply with the restrictions of the team review.
+Users with the highest level, in addition to performing all of the above, can skip the review flow and make use of the "Force approve" to publish an item without the restrictions of team review.
 
 :::warning Attention
 Site or space administrators always have the ability to skip the team review flow.
