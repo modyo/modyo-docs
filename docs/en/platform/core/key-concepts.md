@@ -49,7 +49,7 @@ While approval is limited, any user with permissions can comment on the item.
 :::warning Warning
 When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
 
-For those items to take into account the new configuration, they need to be rejected and sent for review again.
+For these items to follow the new configuration, they need to be rejected and sent into revision again.
 :::
 
 ### Roles and permissions
