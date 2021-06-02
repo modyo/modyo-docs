@@ -6,26 +6,26 @@ search: true
 
 Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific targets.
 
-<img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px" />
 
 Modyo sends messages to platform users through two channels:
 
-- **Emails**: Send campaigns to the emails registered in the user profiles.
 - **Notifications**: Send notifications through Modyo's internal messaging system. To see a notification, users must enter the platform.
+- **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
 
-<img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px" />
 
 ## Campaigns
 
 In messaging campaigns, administrators can see and review all the messages that you have sent to your clients.
 
-At the top of the screen, there is a button that lets us filter by message type (Mailing or Notification).
+En la parte superior de la pantalla, existe un botón que indica que vemos todos los mensajes que se han enviado en el sistema. At the top of the screen, there is a button that lets us filter by message type (Mailing or Notification).
 
 In the table, campaigns are sorted by the following columns.
 
 - **Name**: Name given to the campaign. It can also contain the specific Target to which it was sent.
 - **Type**: Type of message in which the campaign was sent.
-- **Sent**: Total number of times you have launched this campaign.
+- **Enable targeting**: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
 - **Last sent**: Date and time the campaign was last sent.
 - **Created on**: Campaign creation date.
 
@@ -34,9 +34,7 @@ Next to each campaign, there is a button where we can perform two actions.
 - **Edit the Campaign**
 - **Delete the Campaign**
 
-::: danger Danger
-If you delete a campaign, there is no way to recover it.
-:::
+::: danger Danger If you delete a campaign, there is no way to recover it. ::: No quedará grabada en el sistema :::
 
 ### Create a campaign
 
@@ -49,7 +47,7 @@ This opens a form that you must fill out with the following information:
 - **Subject**: Text that appears in the subject line that users receive.
 - **Reply to email**: Email address to which people can reply **(Only for mailing campaigns)**
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
-- **Enable targeting**: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
+- Below you can see the [Targets](/en/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
 
 After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
 
@@ -59,15 +57,15 @@ When you do this, your campaign is saved and you will get to the Campaign Status
 
 ### Campaign Status
 
-<img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" />
 
-The Campaign Status view allows you to not only send a campaign, but also review the campaign metrics that will allow you to see the performance of the content you sent.
+El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. The Campaign Status view allows you to not only send a campaign, but also review the campaign metrics that will allow you to see the performance of the content you sent.
 
 You can use the **Preview** button at the top of the screen, to review the email messaging and layout of your campaign.
 
 In addition, you will find a drop-down menu that will take you to four sections:
 
-<img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px" />
 
 - **Message Editor**: Allows you to edit the message before sending it.
 - **Send test**: Send a test email with the campaign to a specific address.
@@ -76,9 +74,7 @@ In addition, you will find a drop-down menu that will take you to four sections:
 
 In the Campaign Status view, you can find campaign statistics.
 
-::: warning Warning
-If you haven't sent the campaign yet, the values will appear at zero.
-:::
+::: warning Warning If you haven't sent the campaign yet, the values will appear at zero. :::
 
 If you sent the campaign by mail, you can find the following metrics:
 
@@ -99,7 +95,7 @@ If you sent the campaign as a Notification, these are your metrics:
 - **Open**: Number of open notifications.
 
 
-Below you can see the [Targets](/en/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
+Más abajo podrás ver los [Targets](/es/platform/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
 
 At the bottom you can find a table with all the campaign deliveries, which you can sort in ascending or descending order according to the following columns:
 
@@ -108,14 +104,11 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 - **Targets**: Targets to which the specific delivery was made.
 - **Scope**: Number of people who received the delivery.
 - **Sent**: Number of emails/notifications sent.
-- **Status**: There are four delivery statuses: Completed, Pending, Failed or Canceled.
+- **Status**: There are four delivery statuses: Completed, Pending, Failed or Canceled. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
 
 The last option is the Actions column where you can delete a delivery.
 
-::: danger Danger
-Remember that if you delete the delivery, it is unrecoverable.
-In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is.
-:::
+::: danger Danger Remember that if you delete the delivery, it is unrecoverable. In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is. :::
 
 If you click on the campaign dates, this takes you to the Message Deliveries section.
 
@@ -146,7 +139,7 @@ You also have access to a search bar that to find campaigns or users by name and
 
 ## Templates
 
-<img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px" />
 
 To create your campaign as an email, you will need a template for your content.
 
@@ -156,9 +149,7 @@ At first glance, you can find all the email templates available.
 
 Each of the templates is ordered according to their name, in addition to being able to see the last time they were modified.
 
-::: tip Tip
-If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
-:::
+::: tip Tip If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users. :::
 
 Under each name, there is a button that allows you to edit. If you click on it, this opens the messaging template editor.
 
@@ -168,29 +159,23 @@ On one side, there is a button that displays a menu with the following options:
 - **Copy**: Makes a copy of the template.
 - **Delete**: Deletes the template
 
-::: tip Tip
-If you want to temporarily change the template when sending a new campaign, it is better to make a copy of the template and work on it, leaving the original unchanged.
-:::
+::: tip Tip If you want to temporarily change the template when sending a new campaign, it is better to make a copy of the template and work on it, leaving the original unchanged. :::
 
 ### Edit Templates
 
-<img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" />
 
 To make a template, you must first click on the **+ New** button, located at the top of the page.
 
 This opens the edit view where you must give your template a name.
 
-::: tip Tip
-Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for.
-:::
+::: tip Tip Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for. :::
 
 Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
-::: warning Warning
-If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
+::: warning Warning If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
 
-To automate the insertion of the Footer, read [Customers Settings](/en/platform/customers/users.html#customers-settings)
-:::
+To automate the insertion of the Footer, read [Customers Settings](/en/platform/customers/users.html#customers-settings) :::
 
 To save the template, you must click on the **Save** button, located at the top of the page.
 
@@ -206,7 +191,4 @@ If you click on the name of the user, you can find the [user profile](/en/platfo
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
-::: danger Danger
-Resubscription without the express authorization of the user can cause legal problems.
-Check the regulation on mass mailings in each country.
-:::
+::: danger Danger Resubscription without the express authorization of the user can cause legal problems. Check the regulation on mass mailings in each country. :::
