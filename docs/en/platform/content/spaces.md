@@ -4,7 +4,7 @@ search: true
 
 # Spaces
 
-A Space is a distinct area where team members can define different content structures (types), and create and publish content entries to use both inside or outside Modyo through their the public Modyo Content API or in the creation of a site through Modyo Channels.
+A Space is a distinct area where team members can define different content structures (types), and create and publish content entries.
 
 All items can be used inside or outside of **Modyo** through its public API or in creating a site in Channels.
 
