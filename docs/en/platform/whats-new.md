@@ -4,7 +4,7 @@ search: true
 
 # What's new in Modyo?
 
-Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform and represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience. 
+Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform and represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience.
 
 In this new platform version, we highlight the following improvements and new features.
 
@@ -18,7 +18,7 @@ The Modyo Content application now serves content through its [API and SDKs](/pla
 
 ### Asset Manager
 
-The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag management_, image resizing, and more.
+The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag management_, image resizing, and more. El nuevo gestor de archivos se accede desde la nueva aplicación Modyo Content, pero también se encuentra integrado desde los editores de texto y código dentro de la plataforma.
 
 ### User Realms
 
