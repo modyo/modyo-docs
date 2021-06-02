@@ -20,7 +20,7 @@ Then, you will find the table with the Types that have already been created, whi
 
 To reorder it, you just need to click on the symbols on one side of each category.
 
-The categories by which you can reorder are four:
+There are four categories by which you can reorder:
 
 - **Name**
 - **UID**
