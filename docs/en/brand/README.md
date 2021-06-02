@@ -6,6 +6,6 @@ search: false
 
 Welcome to the official Modyo brand guide. Here we present the different standards we use for the construction of websites and documents, indicating specific details about the use of logos, colors and typographies, among other things.
 
-If you have questions about how to properly use the Modyo brand, please feel free to [contact us](https://support.modyo.com/hc/es-cl)
+If you have questions about how to properly use the Modyo brand, don't hesitate to [contact us](https://support.modyo.com/hc/en-us) for additional guidance.
 
  <img src='/assets/img/m.png' style="width:300px;"/> 
