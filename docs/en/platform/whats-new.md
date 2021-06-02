@@ -4,7 +4,7 @@ search: true
 
 # What's new in Modyo?
 
-Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform and represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience. 
+Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform. They represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience. 
 
 In this new platform version, we highlight the following improvements and new features.
 
