@@ -2,7 +2,7 @@
 search: false
 ---
 
-# Brand Guide
+# Brand Guidelines
 
 Welcome to the official guide of the Modyo brand. Below we present the different standards we use for the construction of websites and documents, indicating specific details about the use of logos, colors and fonts, among other things.
 
