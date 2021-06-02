@@ -22,7 +22,7 @@ The new asset manager allows users to upload, search, and manage various file ty
 
 ### User Realms
 
-It allows you to define multiple end-user realms and assign them uniquely across different sites and content spaces. With this new functionality, end user databases can be managed in a cleaner and separate way, granting differentiated access to different managed resources on the platform and reduce the need to manage separate organizations for different types of users.
+User realms allow you to define multiple end-user realms and assign them uniquely across different sites and content spaces. With this new functionality, end user databases can be managed in a cleaner and separate way, granting differentiated access to different managed resources on the platform and reduce the need to manage separate organizations for different types of users.
 
 ### Team Review
 
