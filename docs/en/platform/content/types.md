@@ -38,7 +38,7 @@ To create a Type, click on the green **+ New** button at the top of the screen a
 :::tip Tip
 It is a good practice to include the format of what will be published within the UID, such as videos, posts, etc. 
 
-Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
+By doing so, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
