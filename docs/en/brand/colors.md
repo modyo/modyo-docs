@@ -39,7 +39,7 @@ RGB: 14 189 116</p>
 
 ## Secondary Color
 
-Our secondary colors, which often accompany the brand on different media, are blue and should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
+Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul.Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
 
 <table class="no-border">
 <tr>
@@ -64,7 +64,7 @@ Our brand is well suited to the following colors:
 <table class="no-border">
 <tr>
 <td colspan="6">
-<b>Dark Blue</b>
+<b>Azul Petróleo</b>
 </td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ RGB: 208 210 215</p>
 
 <tr>
 <td colspan="6">
-<b>Green</b>
+<b>Verde</b>
 </td>
 </tr>
 
@@ -224,7 +224,7 @@ RGB: 159 229 199</p>
 </tr>
 <tr>
 <td colspan="6">
-<b>Blue</b>
+<b>Azul</b>
 </td>
 </tr>
 
@@ -389,65 +389,65 @@ Their most frequent use cases are:
 <li> As an artwork background (only in the case of light blue)</li>
 </ul>
 
-   <table class="no-border"> 
- <tr> 
- <td style="padding: 20px 50px;border-right: 1px solid #dfe2e5;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Light blue </b> </p> 
- <span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #CDDFF9 </p> 
- <span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #F2F6FC </p> 
- </div> 
- </div> 
- </td> 
+  <table class="no-border">
+  <tr>
+  <td style="padding: 20px 50px;border-right: 1px solid #dfe2e5;">
+  <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+  <span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+  </span>
+  <div style="margin-top: 20px;">
+  <p><b>Light blue</b></p>
+  <span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+  <p>HEX: #CDDFF9</p>
+  <span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+  <p>HEX: #F2F6FC</p>
+  </div>
+  </div>
+  </td>
 
- <td style="padding: 20px 50px;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Blue petroleum </b> </p> 
- <span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #151F38 </p> 
- <span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #A1A5AF </p> 
- </div> 
- </div> 
- </td> 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Blue petroleum</b></p>
+<span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #151F38</p>
+<span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A1A5AF</p>
+</div>
+</div>
+</td>
 
- <td style="padding: 20px 50px;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> green </b> </p> 
- <span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #0EBD74 </p> 
- <span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #9FE5C7 </p> 
- </div> 
- </div> 
- </td> 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Verde</b></p>
+<span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #0EBD74</p>
+<span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #9FE5C7</p>
+</div>
+</div>
+</td>
 
- <td style="padding: 20px 50px;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Blue </b> </p> 
- <span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #2068D5 </p> 
- <span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #A0C1F3 </p> 
- </div> 
- </div> 
- </td> 
- </tr> 
- </table> 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Azul</b></p>
+<span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #2068D5</p>
+<span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A0C1F3</p>
+</div>
+</div>
+</td>
+</tr>
+</table>
 
 ## Special colors
 
@@ -533,129 +533,129 @@ Special colors are designated only for some internal illustrations (controlled b
 
 ### Colours of associated backgrounds
 
-All background colors are defined with the main palette colors and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b> 
+All background colors are defined with the main palette colors and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b>
 
- <table> 
- <tr> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F2F6FC;display: flex;padding: 30px 20px;color:#737988"> #F2F6FC </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F3FBFB;display: flex;padding: 30px 20px;color:#737988"> #F3FBFB </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F4F8FA;display: flex;padding: 30px 20px;color:#737988"> #F4F8FA </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F3F5F8;display: flex;padding: 30px 20px;color:#737988"> #F3F5F8 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F5F3F7;display: flex;padding: 30px 20px;color:#737988"> #F5F3F7 </span> 
- </div> 
- </td> 
- </tr> 
+<table>
+<tr>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F2F6FC;display: flex;padding: 30px 20px;color:#737988">#F2F6FC</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F3FBFB;display: flex;padding: 30px 20px;color:#737988">#F3FBFB</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F4F8FA;display: flex;padding: 30px 20px;color:#737988">#F4F8FA</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F3F5F8;display: flex;padding: 30px 20px;color:#737988">#F3F5F8</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F5F3F7;display: flex;padding: 30px 20px;color:#737988">#F5F3F7</span>
+</div>
+</td>
+</tr>
 
- <tr style="background: white;"> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FCF3F6;display: flex;padding: 30px 20px;color:#737988"> #FCF3F6 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FEF3F4;display: flex;padding: 30px 20px;color:#737988"> #FEF3F4 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FEF7F2;display: flex;padding: 30px 20px;color:#737988"> #FEF7F2 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FFFBF3;display: flex;padding: 30px 20px;color:#737988"> #FFFBF3 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F9F9F7;display: flex;padding: 30px 20px;color:#737988"> #F9F9F7 </span> 
- </div> 
- </td> 
- </tr> 
+<tr style="background: white;">
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FCF3F6;display: flex;padding: 30px 20px;color:#737988">#FCF3F6</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FEF3F4;display: flex;padding: 30px 20px;color:#737988">#FEF3F4</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FEF7F2;display: flex;padding: 30px 20px;color:#737988">#FEF7F2</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FFFBF3;display: flex;padding: 30px 20px;color:#737988">#FFFBF3</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F9F9F7;display: flex;padding: 30px 20px;color:#737988">#F9F9F7</span>
+</div>
+</td>
+</tr>
 
- </table> 
+</table>
 
 ### Overlay in pictures
 
 The overlay of the photos is black with an opacity of 80% so that there is the best possible contrast between figure and background.
 
- <table class="no-border"> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/67d44ef3-4b73-423b-8eab-1edc70258bbf/original/img.png" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/2ad43924-5665-431a-93f1-729f0922c830/original/img-1.png" alt=""> 
- </td> 
- </tr> 
- </table> 
+<table class="no-border">
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/67d44ef3-4b73-423b-8eab-1edc70258bbf/original/img.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/2ad43924-5665-431a-93f1-729f0922c830/original/img-1.png" alt="">
+</td>
+</tr>
+</table>
 
 ## Incorrect use of color
 
 Given the above, it is important that the use of color is respected.
 
- <table> 
- <tr> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/3e56754e-330d-4b81-a35d-3c2c632e710e/original/color-1.png" alt=""> 
- </td> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/965e7dd6-cee2-4772-9b12-c8869ec94d36/original/color-2.png" alt=""> 
- </td> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/caae2e80-9482-41c9-affc-58570363664e/original/color-3.png" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not use special colors, leaving aside completely brand identity. </p> 
- </td> 
- <td> 
- <p class="dont"> Text should never have a color other than the primary colors, especially paragraph. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use special background colors, losing even the contrast. </p> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/a9694ec4-629e-4135-828b-52a47533d79c/original/color-4.png" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/31598c0d-370f-47e3-9352-3fad7c02588e/original/color-5.png" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/003cebeb-9231-473d-807d-f4ac85075ea2/original/color-6.png" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not use a special or different color than mentioned above for an overlay. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use a special or different color than mentioned above for an overlay. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use a special or different color than mentioned above for an overlay. </p> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/3e56754e-330d-4b81-a35d-3c2c632e710e/original/color-1.png" alt="">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/965e7dd6-cee2-4772-9b12-c8869ec94d36/original/color-2.png" alt="">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/caae2e80-9482-41c9-affc-58570363664e/original/color-3.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not use special colors, leaving aside completely brand identity.</p>
+</td>
+<td>
+<p class="dont">Text should never have a color other than the primary colors, especially paragraph.</p>
+</td>
+<td>
+<p class="dont">Do not use special background colors, losing even the contrast.</p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/a9694ec4-629e-4135-828b-52a47533d79c/original/color-4.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/31598c0d-370f-47e3-9352-3fad7c02588e/original/color-5.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/003cebeb-9231-473d-807d-f4ac85075ea2/original/color-6.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not use a special or different color than mentioned above for an overlay.</p>
+</td>
+<td>
+<p class="dont">Do not use a special or different color than mentioned above for an overlay.</p>
+</td>
+<td>
+<p class="dont">Do not use a special or different color than mentioned above for an overlay.</p>
+</td>
+</tr>
+</table>
