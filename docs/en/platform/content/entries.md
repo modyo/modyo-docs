@@ -96,7 +96,7 @@ You'll get to a blank version of the entry, where you can press the **Copy from 
 
 To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
 
-After finishing your writing and editing, in the top right part of the screen click the **Save** button, which will save all of your content.
+After you finish writing and editing, click the **Save** button in the top right part of the screen, which will save all of your content.
 
 If you click on it, the button will respond in two ways. If you have Space Manager permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
 
