@@ -18,7 +18,7 @@ The columns in the list display the following details:
 - **Updated on**: Date of the last saved update.
 - **Author**: Original creator of the entry.
 
-In the admin you can also filter the view according to several default filters that you can adjust according to your need, regardless of how you order the list of your contents.
+In the admin you can also filter the view according to several default filters that you can adjust depending on  your need, regardless of how you order your content list.
 
 You can also filter the list by six different attributes:
 
