@@ -22,7 +22,7 @@ Permite la gestión de activos digitales, incluyendo diversas funcionalidades co
 
 ### Reinos de usuarios
 
-Permite definir múltiples reinos de usuarios finales y asignarlos de forma exclusiva en diferentes sitios y espacios de contenido. Con esta nueva funcionalidad se podrán gestionar bases de datos de usuarios finales de forma más limpia y separada, otorgando acceso diferenciado a diferentes recursos gestionados en la plataforma y reducionedo la necesidad de manejar organizaciones separadas para diferentes tipos de usuarios.
+Se pueden definir múltiples reinos de usuarios finales y asignarlos de forma exclusiva en diferentes sitios y espacios de contenido. Con esta nueva funcionalidad se podrán gestionar bases de datos de usuarios finales de forma más limpia y separada, otorgando acceso diferenciado a diferentes recursos gestionados en la plataforma y reducionedo la necesidad de manejar organizaciones separadas para diferentes tipos de usuarios.
 
 ### Revisión en equipo
 
