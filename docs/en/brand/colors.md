@@ -380,7 +380,7 @@ RGB: 205 223 249</p>
 
 ### Gradients
 
-Gradients are used as backgrounds of blocks, always respecting and using the white and spaces in most of the composition.
+Gradients are used as block backgrounds, always respecting and using white and spaces in most of the composition.
 
 Its use cases are more common are:
 
