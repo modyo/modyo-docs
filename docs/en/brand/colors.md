@@ -59,7 +59,7 @@ RGB: 32 104 216</p>
 
 ## Color palette
 
-Our brand fits well to the following colours:
+Our brand is well suited to the following colors:
 
 <table class="no-border">
 <tr>
