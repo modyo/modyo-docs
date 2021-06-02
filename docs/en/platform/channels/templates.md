@@ -196,7 +196,7 @@ To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/
 If you want to display the view with the values of the entry you're working on, the following requirements must be met:
 
 1. The view must be created and published. 
-1. The URL that is being accessed is of type `site_url/custom_view_name/entry_slug`.
+1. The URL being accessed is of type `site_url/custom_view_name/entry_slug`.
 1. The `custom_view_name` is the name of the content view you created.
 1. The URL matches the name of the view you just created. 
 1. An entry already exists in the language of the site. 
