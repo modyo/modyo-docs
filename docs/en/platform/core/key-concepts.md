@@ -62,7 +62,7 @@ There are three levels of roles that allow users to perform different actions in
 
 Users with the lowest role, can submit items for review and comment on items that are in that state.
 
-Users with the intermediate role, in addition to the above, can approve items under review and once they are approved, they can publish them using the team review flow.
+Users with the intermediate role, in addition to the above, can approve the items under review and, once they are approved, publish them through the team review flow.
 
 Users at the highest level, in addition to doing all of the above, can skip the review flow and use the Force Approval action to publish an item without having to comply with the restrictions of the team review.
 
