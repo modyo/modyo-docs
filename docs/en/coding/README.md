@@ -5,9 +5,9 @@ search: false
 # Development Standard
 
 ## Intent
-The main purpose of the development standard is to ensure that all code has been designed, written and deployed following cross-cutting conventions that facilitate collaboration between developers, allowing them to interact in different projects without having to decipher particular styles and practices on each occasion. 
+The main purpose of the development standard is to ensure that all code has been designed, written and deployed following cross-cutting conventions that facilitate collaboration between developers, allowing them to interact in different projects without having to decipher particular styles and practices on each occasion.
 
-The standard is about uniformity and consistency, not about which practice is better than another. The standard should serve as a supporting guide for the joint code review process. The standard must also be clear and avoid confusion, the idea is not to leave the rules to the free interpretation of each one, but on the contrary, the idea is to be aligned in common practices. 
+The standard is about uniformity and consistency, not about which practice is better than another. The standard should serve as a supporting guide for the joint code review process. The standard must also be clear and avoid confusion, the idea is not to leave the rules to the free interpretation of each one, but on the contrary, the idea is to be aligned in common practices.
 
 ### Does the standard only apply to working with Ruby or Java?
 Not for nothing! The standard applies to all the code we produce, be it backend, frontend, product, service, middleware, automations, firmware, etc. (no, we don't do firmware yet, but it would apply the same). All the software we produce as a team must respect these guides.
@@ -32,11 +32,7 @@ The idea is to encourage healthy debate, seek consensus and learn from the exper
 
 
 ### Do not allow faults to be silent
-Don't write code that guesses the future. Avoid the “just in case in the future someone asks...”
-Avoid coupling codes between different modules. Avoid cross importing
-Unstable things depend on stable things. Not upside down! If we depend on something unstable (“commons” library in development) the whole project will become unstable
-As detailed as a standard is made, you'll always see yourself implementing complex things that aren't covered here. Learn patterns and design archetypes, most of the problems someone in the past solved them. Learn how to combine specific patterns with globals used in a cross-cutting way
-Indispensable references:
+Don't write code that guesses the future. Avoid the “just in case in the future someone asks...” Avoid coupling codes between different modules. Avoid cross importing Unstable things depend on stable things. Not upside down! If we depend on something unstable (“commons” library in development) the whole project will become unstable As detailed as a standard is made, you'll always see yourself implementing complex things that aren't covered here. Learn patterns and design archetypes, most of the problems someone in the past solved them. Learn how to combine specific patterns with globals used in a cross-cutting way Indispensable references:
 
 
 ### Clean Code
@@ -49,16 +45,13 @@ Indispensable references:
 
 ### Directory Structure/Project
 
-Name Conventions
-How variables, methods, classes, and interfaces are named. Which notation will be used.
+Name Conventions How variables, methods, classes, and interfaces are named. Which notation will be used.
 
 ### Indentation
 How the code will be tabulated. Example: Use of tabs or 4 spaces.
 
 ### Code Layout
-Style of use for brackets and line breaks.
-Location of models, drivers, interfaces, documentation, testing, etc.
-Size of methods, class size.
+Style of use for brackets and line breaks. Location of models, drivers, interfaces, documentation, testing, etc. Size of methods, class size.
 
 ### Exception Handling
 Declare where error or exception codes are expected and why.
@@ -86,9 +79,7 @@ Structure of branches
 Accepted versions of the framework, templates
 
 ### Web & APIs
-Use UTF8 only
-Use HTTPS only in production
-Use HTTP2. Learn what it involves.
+Use UTF8 only Use HTTPS only in production Use HTTP2. Learn what it involves.
 
 Spring Boot
 
@@ -96,8 +87,7 @@ Spring Boot
 NodeJS
 
 
-Javascript/VueJS
-Avoid latencies caused by the blocking Javascript
+Javascript/VueJS Avoid latencies caused by the blocking Javascript
 
 HTML
 
@@ -109,47 +99,30 @@ Liquid
 Build
 
 
-Testing
-Do not haggis testing private methods
-Use intermediary assertions throughout the test. This will make it possible to identify the points of failure faster.
-Perform unit and integration tests
-Ensure to check coverage measurements, they must always be greater than 90%.
+Testing Do not haggis testing private methods Use intermediary assertions throughout the test. This will make it possible to identify the points of failure faster. Perform unit and integration tests Ensure to check coverage measurements, they must always be greater than 90%.
 
-Persistence
-Objectual
+Persistence Objectual
 
 Relational
 
-Working with Files
-If you open it, you close it. If you don't close it, make sure someone does it for you.
+Working with Files If you open it, you close it. If you don't close it, make sure someone does it for you.
 
 
 
-Integration
-SOAP
+Integration SOAP
 
 Rest
 
 External Database
 
 
-Configuration
-When property files are used, by default, by environment. Environment variables or command-line initializers, etc.
-Object Orientation
-Avoid global variables and long parameter lists
-Limit the dependencies of an object (entities on which an object depends)
-Prefer composition rather than heredity
-Small classes with a unique and well-defined purpose
-Say it, don't ask. https://thoughtbot.com/blog/tell-dont-ask 
-Security
-Secret Management
+Configuration When property files are used, by default, by environment. Environment variables or command-line initializers, etc. Object Orientation Avoid global variables and long parameter lists Limit the dependencies of an object (entities on which an object depends) Prefer composition rather than heredity Small classes with a unique and well-defined purpose Say it, don't ask. https://thoughtbot.com/blog/tell-dont-ask Security Secret Management
 
 Management of environment variables
 
 
 
-Deployment
-Dockerfile
+Deployment Dockerfile
 
 Virtual Machine Parametry
 
@@ -157,8 +130,7 @@ Continuing Integration
 
 Artifact Repositories
 
-Observability
-Implementation of metrics
+Observability Implementation of metrics
 
 
 
