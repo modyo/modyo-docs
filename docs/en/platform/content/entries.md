@@ -85,7 +85,7 @@ If the name field is empty, the platform defaults the UUID of the entry as a slu
 When you click **Create**, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
 
 :::tip Tip
-To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to type in. (Check [Configure a Space](/es/platform/content/spaces.html #configurar -a-space))
+To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to select. (Check [Configure a Space](/es/platform/content/spaces.html #configurar -a-space))
 
 Then, you just need to click on the current language and select the language you want to enter.
 
