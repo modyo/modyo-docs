@@ -382,7 +382,7 @@ RGB: 205 223 249</p>
 
 Gradients are used as block backgrounds, always respecting and using white and spaces in most of the composition.
 
-Its use cases are more common are:
+Their most frequent use cases are:
 
  <ul> 
  <li> As support for an icon or group of icons </li> 
