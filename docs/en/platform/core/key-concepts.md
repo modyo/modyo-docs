@@ -96,7 +96,7 @@ Anyone who can access the edit view of the item will see an **Approve** button u
 
 Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission, will see the button disabled.
 
-When you approve the item, that user's approval will be recorded, showing a green check to the right of their name in the reviewers list.
+When an item is approved, the approval of that user will be registered, showing a green check to the right of his name in the list of reviewers.
 
 When computer review is enabled, in the item's action bar, to the left of the green main button, and to the right of the differences button, an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) will appear to open the item's activity tab.
 
