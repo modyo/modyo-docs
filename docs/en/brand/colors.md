@@ -4,7 +4,7 @@ search: false
 
 # Colours
 
-Color in a brand is important as it allows you to give personality to a company, product or person, is a distinctive factor, gives identity and allows you to position the brand. It takes great power in people's minds. All brands have primary colors that identify them, these are the corporate colors.
+The color in a brand is important since it allows giving personality to a company, product or person, it is a distinctive factor, it gives identity and it allows the brand to be positioned. It takes on great power in people's minds. All brands have primary colors that identify them, these are the corporate colors.
 
 ## Primary colors
 
