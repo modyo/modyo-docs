@@ -48,7 +48,7 @@ Our secondary colors, which often accompany the brand on different media, are bl
 <span style="background: #2068D5;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Blue</b></p>
+<p><b>Azul</b></p>
 <p>HEX: #2068D5 <br>
 RGB: 32 104 216</p>
 </div>
