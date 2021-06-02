@@ -69,7 +69,7 @@ Users with the highest level, in addition to performing all of the above, can sk
 :::warning Warning
 Site or space administrators always have the ability to skip the team review flow.
 
-For them, the "Send to Review" and "Review" buttons have an option inside the dropdown to "Force Approval" that will allow them to see the item in the publication view.
+For them, the "Submit for review" and "Review" buttons have an option within the dropdown to "Force approve" which allows you to see the element in the published view.
 
 This option exists because there are times when you need to publish quickly, so be cautious when you assign roles for your spaces or sites.
 :::
