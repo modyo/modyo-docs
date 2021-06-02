@@ -89,7 +89,7 @@ To translate an already written entry into a different language, keep in mind th
 
 Then, you just need to click on the current language and select the new language you want to use.
 
-You'll get to a blank version of the entry, where you can press the**Copy from language** button to bring the content from another version of the entry and be able to translate it easier.
+You'll get to a blank version of the entry, where you can press the **Copy from language** button to bring the content from another version of the entry and consequently be able to translate it with more ease.
 :::
 
 ### Publish an Entry
