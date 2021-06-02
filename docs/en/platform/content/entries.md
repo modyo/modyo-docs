@@ -98,7 +98,7 @@ To publish an entry, Modyo assures you a gradual check process in order to certi
 
 After finishing your writing and editing, in the top right part of the screen click the **Save** button, which will save all of your content.
 
-If you click on it, the button will respond in two ways. If you have Space Manager permission, you can publish automatically. If you don't have that permission, you can't publish the resource, but rather another user with a higher role will have to do it.
+If you click on it, the button will respond in two ways. If you have Space Manager permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
 
 If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
