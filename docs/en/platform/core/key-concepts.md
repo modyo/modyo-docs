@@ -90,7 +90,7 @@ If there is a required reviewer, `(required)` will appear next to his name in th
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
-To the right of each reviewer, the status of your review will appear, showing a yellow circle if you have not made your review, and a green check if you have approved the item.
+To the right of each reviewer you can find the status of their revision, showing a yellow circle if they have not finished their review, and a green check if they have approved the item.
 
 Everyone who can access the item's edit view will see a **Approve** button under the reviewer list.
 
