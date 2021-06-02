@@ -36,7 +36,7 @@ If you want to enter any Type, you must click on its Name to open the correspond
 To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
 :::tip Tip
-It is a good practice to put within the UID, the format of what will be published as they are, for example, videos, posts, etc. 
+It is a good practice to put the format of what will be published within the UID, such as videos, posts, etc. 
 
 Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
 :::
