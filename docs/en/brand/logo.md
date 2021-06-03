@@ -82,7 +82,8 @@ This is the minimum size in which the logo can be displayed.
 </div>
 </td>
 <td style="border-left: 0;">
-<b>Logotype:</b><br>Minimum digital size: 20px
+<b>Logotype:</b><br>
+Minimum digital size: 20px
 </td>
 </tr>
 </table>
