@@ -138,7 +138,7 @@ In marketing they are used as supporting elements and for communication, general
 
 ### Exclusion zone
 
-A suitable margin of at least 28 px/1 cm must be respected around the entire image both in the horizontal and vertical version.
+An adequate margin of at least 28 px / 1 cm must be respected around the entire image in both the horizontal and vertical versions.
 
 #### Horizontal
 
