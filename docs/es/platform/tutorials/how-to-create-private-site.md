@@ -673,32 +673,38 @@ UJS
 
 ## Paso 8: Instalar Modyo Cli
 
-Ahora que ya tenemos lista nuestra Base en Modyo para agregar nuestros widgets, vamos a instalar el Modyo Cli en nuestro computador.
+Ahora que ya tenemos lista nuestra Base en Modyo para agregar nuestros widgets, vamos a instalar el Modyo Cli en nuestra computadora.
 
 El [Modyo Cli](/es/platform/channels/widgets.html#modyo-cli) es una es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
 
-Para instalar el modyo-cli en la máquina local de manera global, debe usar una de estas opciones:
+Para instalar el modyo-cli necesitamos algunas dependencias, las cuales ya deben estar instaladas.
+
+Ellas son </code>Git distributed version control system (v 1.7+)</code>, <code>Node (v 12+)</code>, <code>Npm (v 6.14+)</code>, <code>Yarn (v 1.22+)</code> y un editor de código como <code>VSCode</code> u otro.
+
+en la máquina local de manera global, debe usar una de estas opciones la consola.
+
+<code>Via yarn</code>
 
 ```sh
-$ npm i -g @modyo/cli #via npm
-$ yarn global add @modyo/cli #via yarn
+yarn global add @modyo/cli
 ```
 
-Luego de completar el proceso, y tener disponible el modyo-cli a nivel globar, vamos a obtener el Widget de [Resumen de Cuentas](/es/widgets/retail/summary.html) el cual se compone entrega de manera detallada toda la cartera de productos de un cliente, con la cual puede hacer operaciones básicas o dirigirse a Widgets para realizar más movimientos.
+<code>Via npm</code>
 
-para instalarlo traerlo a nuestro local lo hacemos con el siguiente comando
+```sh
+npm i -g @modyo/cli
+```
+Una vez instalado podemos chequear en nuestra consola al ejecutar el comando <code>modyo-cli help</code> para comprobar que este todo correcto.
+
+## Paso 9: Inicializar un Widget del Catálogo
+
+Luego de completar el proceso, y tener disponible el modyo-cli a nivel globar, vamos a obtener el Widget de [Resumen de Cuentas](/es/widgets/retail/summary.html) desd el [Catálogo de Widgets Financieros de Modyo](/es/widgets/).
+
+Para traer el Widget a nuestro ambiente local lo hacemos con el siguiente comando:
 
 ```sh
 modyo-cli get modyo-widgets-retail-summary
 ```
-
-Una vez instalado
-
-## Paso 9: Inicializar un Widget del Catálogo
-
-El [Catálogo de Widgets Financieros de Modyo](/es/widgets/) es una recopilación de experiencias financieras diseñadas y desarrolladas en Modyo, con el objetivo de acelerar los desarrollos puesto que ofrecen componentes interactivos personalizables para poder integrarlos en diversos flujos.
-
-Desde la instalación y desarrollo en tu ambiente local, hasta la descripción de interfaces, parámetros disponibles y referencia de las principales funcionalidades de cada Widget.
 
 ## Paso XX: Revisar y Publicar
 
