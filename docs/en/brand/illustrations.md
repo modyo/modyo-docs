@@ -16,7 +16,7 @@ They can be categorized into three types depending on the level of complexity an
 
 ## Hero
 
-They are illustrations that tell stories and complex concepts, which are usually represented with fantastic and unreal metaphors or situations. Sometimes these can be literal but always linked to ideas with a certain complexity and greater amount of details and elements.
+These are illustrations that tell stories and complex concepts, which are generally represented with metaphors or fantastic and unreal situations. Sometimes these can be literal but they will always be linked to ideas with some complexity, more details and elements.
 
 <table>
 <tr>
