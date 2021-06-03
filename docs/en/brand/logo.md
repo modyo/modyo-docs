@@ -96,7 +96,7 @@ Separate free space rules are applied align our logo with associated logos. Use 
 
 You can change the color of the two logos together to white. When you need to do that, put a simple, perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
 
- <img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances"> 
+<img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
 
 ### Misuse of the logo
 
