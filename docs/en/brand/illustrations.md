@@ -6,7 +6,7 @@ search: false
 
 Illustrations aim to communicate, convey ideas and feelings while creating an identity for the brand.
 
-They can have different objectives, either as support of a text, narrative of a situation, or the symbology of a concept.
+They can have different objectives, either as support of a text, narrative of a situation or the symbolism of a concept.
 
 <img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
