@@ -102,74 +102,74 @@ You can change the color of the two logos together to white. When you need to do
 
 It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added to. The following are uses that are NOT allowed.
 
- <table> 
- <tr> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/e08b173b-b3eb-4144-a5f3-da55eec550df/original/incorrect_logo_1.svg" alt=""> 
- </td> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/fd2e39bf-c82d-4a27-ad2b-57d21ece288c/original/incorrect_logo_2.svg" alt=""> 
- </td> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/c8762be2-b85a-4eff-be55-f80e79274bbf/original/incorrect_logo_3.svg" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not remove the characteristic green symbol from the logo that accompanies the "O" at the end. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not turn the logo. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not apply a gradient to the logo or isotype. </p> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/b07a3a1d-ea57-4a60-93e1-7846c7819938/original/incorrect_logo_4.svg" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/a397d677-b3c1-4a8e-bf7c-353e7c04d298/original/incorrect_logo_5.svg" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/8003c329-6b87-4dbe-954e-ae68d0867443/original/incorrect_logo_6.svg" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not stretch, shrink or manipulate the logo disproportionately. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use a stroke around the logo, use is only with padding. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not change logo typography. </p> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/e2c52d29-253e-423f-8f4e-f047adf16d36/original/incorrect_logo_7.svg" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/29c773ca-ee01-4c67-89ff-c5f31fac39a0/original/incorrect_logo_8.svg" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/0952f110-6319-41a8-a24d-4f151bcda5af/original/incorrect_logo_9.svg" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Restrict use to corporate colors, white or black according to manual. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not exchange corporate colors. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use the old colors. </p> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/e08b173b-b3eb-4144-a5f3-da55eec550df/original/incorrect_logo_1.svg" alt="">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/fd2e39bf-c82d-4a27-ad2b-57d21ece288c/original/incorrect_logo_2.svg" alt="">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/c8762be2-b85a-4eff-be55-f80e79274bbf/original/incorrect_logo_3.svg" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not remove the green symbol accompanying the "O" at the end.</p>
+</td>
+<td>
+<p class="dont">Do not rotate the logo in any direction.</p>
+</td>
+<td>
+<p class="dont">Do not apply a gradient to the logo or isotype.</p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/b07a3a1d-ea57-4a60-93e1-7846c7819938/original/incorrect_logo_4.svg" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/a397d677-b3c1-4a8e-bf7c-353e7c04d298/original/incorrect_logo_5.svg" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/8003c329-6b87-4dbe-954e-ae68d0867443/original/incorrect_logo_6.svg" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not stretch, shrink or manipulate the logo in a disproportionate manner.</p>
+</td>
+<td>
+<p class="dont">Do outline or draw a line around the logo, only use padding.</p>
+</td>
+<td>
+<p class="dont">Do not change the typography of the logo or isotype.</p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/e2c52d29-253e-423f-8f4e-f047adf16d36/original/incorrect_logo_7.svg" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/29c773ca-ee01-4c67-89ff-c5f31fac39a0/original/incorrect_logo_8.svg" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/0952f110-6319-41a8-a24d-4f151bcda5af/original/incorrect_logo_9.svg" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Only use corporate colors, black or white according to the manual.</p>
+</td>
+<td>
+<p class="dont">Do not interchange corporate colors.</p>
+</td>
+<td>
+<p class="dont">Do not use the old colors.</p>
+</td>
+</tr>
+</table>
 
 ## Isotype
 
