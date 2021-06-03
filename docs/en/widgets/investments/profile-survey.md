@@ -11,7 +11,7 @@ In this Widget, each user will be able to complete the Investor Profile survey, 
 
 | Feature                    | Description                                                                                                                                                      |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Investor Profile Survey | Enables you to complete the Investor Profile survey, whether for new customers, if the customer wants to retake it or as required by regulations. |
+| Investor Profile Survey | This enables you to complete the Investor Profile survey, which can be for new customers, ones who want to retake it, or if it's required by regulations. |
 
 <script>
 
