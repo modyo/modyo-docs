@@ -4,24 +4,29 @@ search: true
 
 # Notas del release
 
+### 9.1.XX - Soy de mentiritas
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Nada de esto es real
+
 ### 9.1.21 - 28 de mayo del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arreglan problemas de seguridad
 
 ### 9.1.20 - 27 de mayo del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Mejoras de experiencia usuaria
 
 ### 9.1.19 - 19 de mayo del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 
 ### 9.1.18 - 18 de mayo del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples mejoras de seguridad.
 
