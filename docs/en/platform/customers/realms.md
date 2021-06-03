@@ -160,7 +160,7 @@ Here you can set up general aspects of realm, such as:
 - **Remove**: Allows complete removal of realm. This is a background process, so you may not see the realm disappear immediately after completing the action. To be able to delete the realm, you must enter the realm's full name to confirm the action.
 
 :::danger danger
-By disabling the realm Modyo credentials, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
+By disabling Modyo's credentials in the realm, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
 :::
 
 ### Appearance
