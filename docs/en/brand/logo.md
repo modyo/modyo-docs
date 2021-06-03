@@ -71,7 +71,7 @@ For the use of the isotype the reference is the same.
 
 ### Minimum size
 
-This is the minimum size in which you can use the logo.
+This is the minimum size in which the logo can be displayed.
 
  <table> 
  <tr> 
