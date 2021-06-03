@@ -165,7 +165,7 @@ By disabling Modyo's credentials in the realm, you must make sure you have an id
 
 ### Appearance
 
-This section will allow you to modify some visuals of the registration, login, and profile views of the realm users.
+This section will allow you to modify some visuals of the realm users' registration, login, and profile views.
 
 #### Primary Color
 
