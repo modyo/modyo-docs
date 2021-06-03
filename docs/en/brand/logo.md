@@ -6,7 +6,7 @@ search: false
 
 Hello, we will review various topics associated with the use of the brand below, respecting its applications and limiting factors.
 
-## Logo
+## Logotype
 
 The Modyo logo features the written word of the company name and a green symbol, both instantly recognizable. This is why it is as important to use the logo exactly as specified in these guidelines. [Download.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
 
