@@ -63,7 +63,7 @@ This user creation view may contain more fields depending on the configuration o
 
 ### Import users
 
-The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, by using the search bar above the table.
+The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, and can also be filtered by file name using the search bar above the table.
 
 To make a new import, click on the upper right **+ Import** button. This opens a window where we can select and upload a local \*.CSV file that has a list of users and their attributes. It is important to check the box that indicates whether the file contains column headers or names, otherwise the headers themselves will be registered as a new user. Click **Accept** when ready.
 
