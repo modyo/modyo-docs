@@ -64,7 +64,7 @@ No presence of a metaphor.
 
 The supporting elements are generally characters or things that, just as their name implies, support texts and graphics, providing humanity and reinforcing Modyo's identity.
 
-Unlike Hero and spot Hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without removing prominence to what you want to communicate.
+In contrast to the hero and the point hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without taking away from what is being communicated.
 
 <img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
 
