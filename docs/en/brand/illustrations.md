@@ -148,7 +148,7 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 
 <img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
 
-### Misuse of illustrations
+### Incorrect use of illustrations
 
 <table>
 <tr>
