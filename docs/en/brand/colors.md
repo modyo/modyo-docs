@@ -598,16 +598,16 @@ All background colors are defined with the colors of the main palette and specia
 
 The overlay of the photos is black with an opacity of 80% so that there is the best possible contrast between figure and background.
 
- <table class="no-border"> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/67d44ef3-4b73-423b-8eab-1edc70258bbf/original/img.png" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/2ad43924-5665-431a-93f1-729f0922c830/original/img-1.png" alt=""> 
- </td> 
- </tr> 
- </table> 
+<table class="no-border">
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/67d44ef3-4b73-423b-8eab-1edc70258bbf/original/img.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/2ad43924-5665-431a-93f1-729f0922c830/original/img-1.png" alt="">
+</td>
+</tr>
+</table>
 
 ## Incorrect use of color
 
