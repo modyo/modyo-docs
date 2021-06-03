@@ -394,6 +394,7 @@ module.exports = {
               children: [
                 "/es/platform/tutorials/how-to-create-content",
                 "/es/platform/tutorials/how-to-create-home",
+                "/es/platform/tutorials/how-to-create-a-custom-view",
                 "/es/platform/tutorials/how-to-create-a-widget",                
               ],
             },
