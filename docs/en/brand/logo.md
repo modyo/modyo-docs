@@ -173,7 +173,7 @@ It is important that the appearance of the logo remains constant. It should not 
 
 ## Isotype
 
-When you want to replace the use of the mark, that is when you can use the isotype, i.e. the "M" with the complementary symbol, leaving aside the whole word.
+When you want to replace the use of the brand, then you can use the isotype. This is the "M" with the complementary symbol, leaving aside the complete word.
 
 While the icon may exist without the word mark, the word mark should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
 
