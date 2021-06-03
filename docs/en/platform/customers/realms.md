@@ -146,7 +146,7 @@ Here you can set up general aspects of realm, such as:
 - **Identifier**: Allows you to modify the URL of profile views, login, registration and password recovery of the realm.
 - **Enable/Disable Credencials**: Allows you to disable Modyo credentials in this realm.
 - **Modify user account activation type**:
-  - Direct: Registering users will be able to log in directly
+  - Direct: Users that register will be able to log in directly
   - Activation email: Registering users must activate their account using a link sent to the email in order to sign in.
   - Moderate: Registering users will need to wait for a Modyo administrator to activate their account in order to sign in.
   - Disabled: Unable to register new users in the kingdom. Users already registered and activated will be able to log in without problems.
