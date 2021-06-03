@@ -379,7 +379,7 @@ The `Referer` _header_ contains information about the previous web page that is 
 
 ### X-Frame-Options
 
-Indicates if your site should be allowed to be rendered in a `frame`, `iframe`, `embed` or `object`.
+It indicates if your site should be allowed to be rendered in a `frame`, `iframe`, `embed` or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
 * **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
