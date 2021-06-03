@@ -35,26 +35,26 @@ Letter-spacing: -1px
 </div>
 
 <img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" style="margin-left: 0;">
- <div style="display:flex"> 
- <div style="margin-right: 36px;"> 
- <h4> h2 </h4> 
- <p> 
-Font size: 48px /3rem <br> 
-Line-height: 48px <br> 
-Font weight: Bold <br> 
-Letter-spacing ፦1px
- </p> 
- </div> 
- <div style="margin-right: 36px;"> 
- <h4> h4 </h4> 
- <p> 
-Font size: 32px /2rem <br> 
-Line-height: 32px <br> 
-Font weight: Regular <br> 
-Letter-spacing ፦1px
- </p> 
- </div> 
- </div> 
+<div style="display:flex">
+<div style="margin-right: 36px;">
+<h4>H2</h4>
+<p>
+Font-size: 48px / 3rem<br>
+Line-height: 48px<br>
+Font-weight: Bold<br>
+Letter-spacing: -1px
+</p>
+</div>
+<div style="margin-right: 36px;">
+<h4>H4</h4>
+<p>
+Font-size: 32px / 2rem<br>
+Line-height: 32px<br>
+Font-weight: Regular<br>
+Letter-spacing: -1px
+</p>
+</div>
+</div>
 
 ### Alternative fonts
 
