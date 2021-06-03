@@ -613,49 +613,49 @@ The overlay of the photos is black with an opacity of 80% so that there is the b
 
 Given the aforementioned, it is important to respect the use of colors.
 
- <table> 
- <tr> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/3e56754e-330d-4b81-a35d-3c2c632e710e/original/color-1.png" alt=""> 
- </td> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/965e7dd6-cee2-4772-9b12-c8869ec94d36/original/color-2.png" alt=""> 
- </td> 
- <td style="width:30%;"> 
- <img src="https://cloud.modyocdn.com/uploads/caae2e80-9482-41c9-affc-58570363664e/original/color-3.png" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not use special colors, leaving aside completely brand identity. </p> 
- </td> 
- <td> 
- <p class="dont"> Text should never have a color other than the primary colors, especially paragraph. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use special background colors, losing even the contrast. </p> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/a9694ec4-629e-4135-828b-52a47533d79c/original/color-4.png" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/31598c0d-370f-47e3-9352-3fad7c02588e/original/color-5.png" alt=""> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/003cebeb-9231-473d-807d-f4ac85075ea2/original/color-6.png" alt=""> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <p class="dont"> Do not use a special or different color than mentioned above for an overlay. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use a special or different color than mentioned above for an overlay. </p> 
- </td> 
- <td> 
- <p class="dont"> Do not use a special or different color than mentioned above for an overlay. </p> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/3e56754e-330d-4b81-a35d-3c2c632e710e/original/color-1.png" alt="">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/965e7dd6-cee2-4772-9b12-c8869ec94d36/original/color-2.png" alt="">
+</td>
+<td style="width:30%;">
+<img src="https://cloud.modyocdn.com/uploads/caae2e80-9482-41c9-affc-58570363664e/original/color-3.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not use special colors, completely leaving aside the identity of the brand.</p>
+</td>
+<td>
+<p class="dont">The text should never have a color other than the primary colors, especially the paragraph.</p>
+</td>
+<td>
+<p class="dont">Do not use special background colors, losing even the contrast.</p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/a9694ec4-629e-4135-828b-52a47533d79c/original/color-4.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/31598c0d-370f-47e3-9352-3fad7c02588e/original/color-5.png" alt="">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/003cebeb-9231-473d-807d-f4ac85075ea2/original/color-6.png" alt="">
+</td>
+</tr>
+<tr>
+<td>
+<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
+</td>
+<td>
+<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
+</td>
+<td>
+<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
+</td>
+</tr>
+</table>
