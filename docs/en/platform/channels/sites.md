@@ -414,7 +414,7 @@ If you have the nonce present in your policy then you can add the `script` and `
 </script>
 ```
 
-There are several tools to assist you in designing a strong security policy:
+There are several tools to help you design a strong security policy:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
