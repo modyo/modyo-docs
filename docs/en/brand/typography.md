@@ -34,7 +34,7 @@ Letter-spacing: -1px
 </div>
 </div>
 
- <img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" style="margin-left: 0;"> 
+<img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" style="margin-left: 0;">
  <div style="display:flex"> 
  <div style="margin-right: 36px;"> 
  <h4> h2 </h4> 
