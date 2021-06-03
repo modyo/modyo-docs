@@ -52,10 +52,10 @@ Spot Heroes are slightly simplified versions of a Hero, both visually and metaph
 </tr>
 <tr>
 <td style="width: 50%;">
-With presence of metaphor
+With the presence of metaphor.
 </td>
 <td style="width: 50%;">
-Without presence of metaphor
+No presence of a metaphor.
 </td>
 </tr>
 </table>
