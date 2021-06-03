@@ -132,7 +132,7 @@ Use of color to highlight an element.
 
 Illustrations make ideas more accessible. Like words, illustrations tell stories and represent our brand efficiently and clearly.
 
-It is very important that they are used correctly and never transform into a distracting element.
+It is very important that they are used correctly and that they never become a distracting element.
 
 In marketing they are used as a backup and communication element, usually on websites, service sites, presentations, email, infographics, social media and campaigns.
 
