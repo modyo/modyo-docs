@@ -4,7 +4,7 @@ search: true
 
 # Personal information
 
-This section of the platform allows the user to review and modify their personal data, subscribe to sending information to their email and know their Investor Profile.
+This section of the platform allows the user to review and modify their personal data, subscribe to email notifications, and get to know their Investor Profile.
 
 [Open in new tab](https://widgets.modyo.com/inversiones/personal-info)
 <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/personal-info" width="100%" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
