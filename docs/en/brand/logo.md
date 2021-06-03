@@ -203,30 +203,30 @@ The de facto use of the isotype is on a white background, giving priority to the
 
 When using the isotype on dark backgrounds, it is ideal to use it with the following background colors for best contrast.
 
- <table class="table-dark"> 
- <tr> 
- <td style="background-color: #000; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/5bfbdb4a-5d2c-4c0e-a0f1-8f6792ac0e99/original/normal_1_.svg" style="width:150px;" alt="isotype"> 
- </td> 
- <td style="background-color: #000; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/95500ffc-0669-4d7b-9782-77b6a5f35241/original/white.svg" style="width:150px;" alt="isotype"> 
- </td> 
- <td style="background-color: #151F38; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/5bfbdb4a-5d2c-4c0e-a0f1-8f6792ac0e99/original/normal_1_.svg" style="width:150px;" alt="isotype"> 
- </td> 
- <td style="background-color: #151F38; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/95500ffc-0669-4d7b-9782-77b6a5f35241/original/white.svg" style="width:150px;" alt="isotype white"> 
- </td> 
- </tr> 
- <tr> 
- <td colspan="2" style="background-color: #000; padding: 20px;"> 
- <div class="center" style="color: #fff;"> HEX: #000000 </div> 
- </td> 
- <td colspan="2" style="background-color: #151F38; padding: 20px;"> 
- <div class="center" style="color: #fff;"> HEX: #151F38 </div> 
- </td> 
- </tr> 
- </table> 
+<table class="table-dark">
+<tr>
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/5bfbdb4a-5d2c-4c0e-a0f1-8f6792ac0e99/original/normal_1_.svg" style="width:150px;" alt="isotype">        
+</td>
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/95500ffc-0669-4d7b-9782-77b6a5f35241/original/white.svg" style="width:150px;" alt="isotype">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/5bfbdb4a-5d2c-4c0e-a0f1-8f6792ac0e99/original/normal_1_.svg" style="width:150px;" alt="isotype">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/95500ffc-0669-4d7b-9782-77b6a5f35241/original/white.svg" style="width:150px;" alt="isotype white">        
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color: #000; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #000000</div>
+</td>
+<td colspan="2" style="background-color: #151F38; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #151F38</div>
+</td>
+</tr>
+</table>
 
 ### Exclusion zone
 
