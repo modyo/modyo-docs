@@ -63,7 +63,7 @@ If you want to use the logo on dark backgrounds, it is ideal to use it on dark g
 
 ### Exclusion zone
 
-The clearance and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
+The free space and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
 
 For the use of the isotype the reference is the same.
 
