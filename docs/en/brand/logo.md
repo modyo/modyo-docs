@@ -183,21 +183,21 @@ While the icon can exist without the word brand, the word brand should never exi
 
 The de facto use of the isotype is on a white background, giving priority to the original, but using the isotype in black is also allowed.
 
- <table> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width:150px;" alt="isotype"> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/8c6ba79d-a80a-4290-97b8-99f7a80eafc9/original/black.svg" style="width:150px;" alt="isotype black"> 
- </td> 
- </tr> 
- <tr> 
- <td  colspan="2"> 
- <div class="center"> HEX: #FFFFFF </div> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width:150px;" alt="isotype">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/8c6ba79d-a80a-4290-97b8-99f7a80eafc9/original/black.svg" style="width:150px;" alt="isotype black">
+</td>
+</tr>
+<tr>
+<td  colspan="2">
+<div class="center">HEX: #FFFFFF</div>
+</td>
+</tr>
+</table>
 
 ### Negative application
 
