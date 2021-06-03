@@ -29,7 +29,7 @@ These are illustrations that tell stories and complex concepts, which are genera
 </tr>
 <tr>
 <td style="width: 50%;">
-Representation of a complex concept through metaphor.
+A complex concept represented through a metaphor.
 </td>
 <td style="width: 50%;">
 Representation of a concept using a fantastic scene.
