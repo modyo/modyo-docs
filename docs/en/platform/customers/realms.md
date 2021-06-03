@@ -10,7 +10,7 @@ Each realm has its own login, registration, integrations, forms, targets, and me
 
 ## Users
 
-Through the Users section, you will be able to view and modify the system's external users. Those who log in to Modyo's sites are registered within the platform, respond to forms or may receive email campaigns.
+Through the Users section, you will be able to view and modify the system's external users. Those who log in to Modyo's sites or respond to forms are registered within the platform.
 
 ### About the interface
 
