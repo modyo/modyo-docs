@@ -4,7 +4,7 @@ search: false
 
 # Illustrations
 
-Illustrations aim to communicate, transmit ideas, sensations and feeling while creating an identity to the brand.
+Illustrations aim to communicate, convey ideas and feelings while creating an identity for the brand.
 
 They can have different objectives, either as support of a text, narrative of a situation, or the symbology of a concept.
 
