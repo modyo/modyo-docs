@@ -177,7 +177,7 @@ When you want to replace the use of the brand, then you can use the isotype. Thi
 
 While the icon can exist without the word brand, the word brand should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
 
- <img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype"> 
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype">
 
 ### Application in positive
 
