@@ -4,7 +4,7 @@ search: true
 
 # About insurance
 
-Widgets are the ones that allow you to create encapsulated _micro frontends_ for your sites and applications.
+Widgets allow you to create encapsulated _micro frontends_ for your sites and applications.
 
 When you enter the **Widgets** section of your site, you will see a list of all Widgets that have been created. In the top bar you can filter the list of Widgets by status, author or tags, or do a text search by the name of the Widget.
 
