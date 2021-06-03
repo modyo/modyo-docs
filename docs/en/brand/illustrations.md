@@ -72,7 +72,7 @@ In contrast to the hero and the point hero, these elements do not represent a sp
 
 Illustrations are made up of solid colored shapes with shadows and linear details in vector.
 
-The following colors are used, giving priority to dark blue for shadows and leaving deep green for accents and details. White is a color that is always used on faces and hands.
+The following colors are used, giving priority to dark blue for shadows and leaving deep green for accents and details.
 
 White is a color that is always used on faces and hands.
 
