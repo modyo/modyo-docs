@@ -70,7 +70,7 @@ In contrast to the hero and the point hero, these elements do not represent a sp
 
 ## Color
 
-Illustrations are made up of solid color shapes with shadows and linear vector details.
+Illustrations are made up of solid colored shapes with shadows and linear details in vector.
 
 The following colors are used, giving priority to dark blue for shadows and leaving intense green for accents and details.
 
