@@ -243,7 +243,7 @@ To add a user to the kingdom, select the primary button **+ New** at the top rig
 
 You can modify the role of any of the associated administrators by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
 
-If you want to remove a realm administrator, select using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
+If you want to remove a realm administrator, select the checks to the left of their name, and then click the button at the bottom of the**Delete** list.
 
 The available roles are:
 
