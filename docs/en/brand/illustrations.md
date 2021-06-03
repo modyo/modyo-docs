@@ -107,7 +107,7 @@ White is a color that is always used on faces and hands.
 
 <img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
 
-If necessary, color is used to reinforce ideas, direct the look to specific points, demonstrate difference in certain elements, and emphasize the idea of overlapping on one or more elements.
+If necessary, color is used to reinforce ideas, direct the gaze to specific points, demonstrate differences between certain elements, and emphasize the idea of ​​overlap in one or more elements.
 
 <table>
 <tr>
