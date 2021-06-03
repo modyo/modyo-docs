@@ -153,7 +153,7 @@ Here you can set up general aspects of realm, such as:
 - **Extra attributes of the registration form**:
   - Enable second last name
   - Make the second last name required
-  - Enable Email Confirmation: Enables an extra email field that the user must fill in and must match the primary email field for the user to register.
+  - Enable Email Confirmation: Enables an extra email field that the user must fill in, which must match the primary email field in order for the user to register.
   - Enable user avatar
   - Enable date of birth
   - Enable gender
