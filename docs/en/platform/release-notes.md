@@ -4,7 +4,7 @@ search: true
 
 # Release Notes
 
-### 9.1.21 - 28 May 2021
+### 9.1.21 - May 28, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
 * Security issues solved
