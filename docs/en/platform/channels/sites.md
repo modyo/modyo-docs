@@ -360,7 +360,7 @@ This action cannot be undone, but when enabled you have full control of which he
 ### HTTP Strict Transport Security (HSTS)
 
 Instructs the browser that your site should be accessed using HTTPS only.
-* **Duration**: Sets how long the browser should remember that your site is only accessed using HTTPS.
+* **Duration**: Sets how long the browser should remember that your site is only accessed by using HTTPS.
 * **Preload**: Include the preload directive. See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
 * **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
 
