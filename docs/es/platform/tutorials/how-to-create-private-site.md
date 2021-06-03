@@ -14,7 +14,7 @@ A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynam
 
 Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer uan experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutoriales tu sitio debería lucir así:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
 <a href="https://www.figma.com/proto/UtgKA8d7kN0lWUk3RvhHl4/PD-Private-Site?page-id=1086%3A0&node-id=1086%3A1&viewport=444%2C519%2C0.49354425072669983&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
@@ -886,7 +886,7 @@ Agregamos el título en <b>App.vue</b>:
         v-else
         ref="viewport"
         class="products-viewport">
-        <div class="header-summary">
+        <div class="header-summary mb-3">
           <h3 class="h4 text-primary font-weight-bold">Hola</h3>
           <h3 class="h4 text-primary">Bienvenido a Dynamic</h3>
         </div>
@@ -1001,7 +1001,9 @@ export default {
     font-size: 24px;
   }
 }
-
+.header-summary {
+  margin-left: 30px;
+}
 @media (min-width: 1200px) {
   .header-summary {
     margin-left: 140px;
@@ -1094,6 +1096,6 @@ Luego seguiremos los pasos para seleccionar la fecha de publicación, que en est
 
 ## Conclusiones
 
-¡Felicidades! Haz finalizado el curso de Creación del Home de Dynamic Bank en Modyo.
+¡Muy bien! Haz finalizado el curso de Sitio Privado con Widgets del Modyo-CLI.
 
-Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, lograste enlazar tu sitio con [Modyo Content](/es/platform/content) que permite generar canales digitales dinámicos conectados a contenidos separados del código del sitio.
+Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, de utilizar modyo-cli para trabajar en un Widget del [Catálogo de Modyo](/es/widgets/) y hacer push a un sitio.
