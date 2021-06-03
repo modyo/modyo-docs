@@ -611,7 +611,7 @@ The overlay of the photos is black with an opacity of 80% so that there is the b
 
 ## Incorrect use of color
 
-Given the above, it is important that the use of color is respected.
+Given the aforementioned, it is important to respect the use of colors.
 
  <table> 
  <tr> 
