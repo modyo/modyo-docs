@@ -245,7 +245,7 @@ You can modify the role of any of the associated administrators by clicking on t
 
 If you want to remove a realm administrator, select using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
 
-The roles available are:
+The available roles are:
 
 - **User**: You can add users, create, modify and submit to review campaigns, forms and targets.
 - **Admin**: You can access all settings and sections of the kingdom, add and remove users and team members, as well as delete the kingdom.
