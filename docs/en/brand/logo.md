@@ -98,7 +98,7 @@ You can change the color of the two logos together to white. When you need to do
 
 <img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
 
-### Misuse of the logo
+### Incorrect use of the logo
 
 It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added. The following uses are NOT allowed.
 
