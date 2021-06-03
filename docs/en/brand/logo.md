@@ -181,7 +181,7 @@ While the icon can exist without the word brand, the word brand should never exi
 
 ### Positive application
 
-The initial use of the isotype is on white backgrounds, giving priority to use the original, but the use of the isotype in black is also allowed.
+The de facto use of the isotype is on a white background, giving priority to the original, but using the isotype in black is also allowed.
 
  <table> 
  <tr> 
