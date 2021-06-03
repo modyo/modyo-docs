@@ -320,7 +320,7 @@ The Admins role has access to all the permissions of the two previous roles, and
 
 This team member is different from the account-level Default Admin. A site Admin can only configure a site, and cannot make any changes to the platform itself.
 
-If necessary, users from the site who already have previous roles can be deleted. To do this, just click the user and the Delete action.
+If necessary, users from the site who already have existing roles can be deleted. To do this, just click the user and the Delete action.
 
 ### Custom redirects
 
