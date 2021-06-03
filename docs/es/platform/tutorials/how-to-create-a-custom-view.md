@@ -123,7 +123,7 @@ Para este caso usaremos la entrada Dynamic Cine:
     Validity
   </td>
   <td>
-    Del primero de Enero al 31 de Diciembre del 2021
+    Del 1 de Enero al 31 de Diciembre del 2021
   </td>
 </tr>
 <tr>
