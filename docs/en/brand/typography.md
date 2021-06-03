@@ -12,7 +12,7 @@ Modyo's official font for use in all its formats and platforms is [DM Sans](http
 
 ### Use cases
 
- <img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" style="margin-left: 0;"> 
+<img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" style="margin-left: 0;">
  <div style="display:flex"> 
  <div style="margin-right: 36px;"> 
  <h4> h1 </h4> 
