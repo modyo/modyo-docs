@@ -164,12 +164,12 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 </tr>
 <tr>
 <td>
-<p class="dont">Do not use illustrations with opacity less than 100%.</p>
+<p class="dont">Do not use the illustrations with opacity less than 100%.</p>
 </td>
-<td>Illustrations should not be rotated or tilted.</p>
+<td>Illustrations should not be turned or skewed.</p>
 </td>
 <td>
-<p class="dont">Do not modify the colors.</p>
+<p class="dont">The colors should not be modified.</p>
 </td>
 </tr>
 <tr>
@@ -185,13 +185,13 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 </tr>
 <tr>
 <td>
-<p class="dont">Do not cut the illustrations, but if necessary, the illustrator should do it.</p>
+<p class="dont">Illustrations should not be cut, but if necessary it should be done by the illustrator.</p>
 </td>
 <td>
-<p class="dont">Never change the proportion of the illustrations.</p>
+<p class="dont">NNever change the proportion of illustrations.</p>
 </td>
 <td>
-<p class="dont">Do not use text over the illustration. Do it below it or with a margin of less than 1 cm.</p>
+<p class="dont">Do not use text over the illustration. Do it below it or with a margin less than 1 cm.</p>
 </td>
 </tr>
 </table>
