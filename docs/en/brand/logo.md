@@ -230,7 +230,7 @@ When using the isotype on dark backgrounds, it is ideal to use it with the follo
 
 ### Exclusion zone
 
-The clearance and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
+The free space around the logo is equal to the height of the "M" (marked as × in the diagram).
 For the use of the isotype the reference is the same.
 
  <img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0"> 
