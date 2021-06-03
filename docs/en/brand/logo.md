@@ -90,7 +90,7 @@ Minimum digital size: 20px
 
 ### Alliances
 
-Separate clearance rules apply to align association logos. Use the width of an "M" as a guide for a free space between the Modyo logo and partner logos.
+Separate free space rules are applied align our logo with associated logos. Use the width of an "M" as a guide for a gap between the Modyo logo and partner logos.
 
  <img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances"> 
 
