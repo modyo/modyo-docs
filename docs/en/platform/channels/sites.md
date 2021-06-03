@@ -366,7 +366,7 @@ Instructs the browser that your site should be accessed using HTTPS only.
 
 ### Referrer-Policy
 
-The `Referer` _header_ contains information about the previous web page which is linked to the resource being requested, and you can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
+The `Referer` _header_ contains information about the previous web page that is linked to the resource being requested. You can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
 
 * **no-referrer**: No _referrer_ information is sent.
 * **no-referrer-when-downgrade**: Don't send _referrer_ information to a less secure destination.
