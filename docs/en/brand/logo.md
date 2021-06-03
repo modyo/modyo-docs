@@ -73,20 +73,19 @@ For the use of the isotype the reference is the same.
 
 This is the minimum size in which the logo can be displayed.
 
- <table> 
- <tr> 
- <td style="border-right: 0;"> 
- <div style="display: flex;"> 
- <img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="height:20px;margin-right: 10px;" alt="logo"> 
- <img src="https://cloud.modyocdn.com/uploads/effce9f6-1c02-47a0-b9c8-434056aa250f/original/height.svg" style="height:20px;" alt="height"> 
- </div> 
- </td> 
- <td style="border-left: 0;"> 
- <b> Logo: </b> <br> 
-Minimum digital size: 20px
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td style="border-right: 0;">
+<div style="display: flex;">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="height:20px;margin-right: 10px;" alt="logo">
+<img src="https://cloud.modyocdn.com/uploads/effce9f6-1c02-47a0-b9c8-434056aa250f/original/height.svg" style="height:20px;" alt="height">
+</div>
+</td>
+<td style="border-left: 0;">
+<b>Logotype:</b><br>Minimum digital size: 20px
+</td>
+</tr>
+</table>
 
 ### Alliances
 
