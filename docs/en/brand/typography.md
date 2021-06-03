@@ -10,7 +10,7 @@ Modyo's official font for use in all its formats and platforms is [DM Sans](http
 
 <img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" style="margin-left: 0;">
 
-### Examples of use
+### Use cases
 
  <img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" style="margin-left: 0;"> 
  <div style="display:flex"> 
