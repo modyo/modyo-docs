@@ -34,7 +34,7 @@ The de facto use of the logo is mainly on white backgrounds, giving priority of 
 
 ### Negative application
 
-If you would like to use the logo on dark backgrounds, ideally use the following background colors for better contrast.
+If you want to use the logo on dark backgrounds, it is ideal to use it on dark grey backgrounds, to provide high contrast.
 
  <table class="table-dark"> 
  <tr> 
