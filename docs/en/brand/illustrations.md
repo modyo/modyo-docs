@@ -134,7 +134,7 @@ Illustrations make ideas more accessible. Like words, illustrations tell stories
 
 It is very important that they are used correctly and that they never become a distracting element.
 
-In marketing they are used as a backup and communication element, usually on websites, service sites, presentations, email, infographics, social media and campaigns.
+In marketing they are used as supporting elements and for communication, generally in websites, service sites, presentations, email, infographics, in social media and campaigns.
 
 ### Exclusion zone
 
