@@ -14,9 +14,9 @@ A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynam
 
 Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer uan experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutoriales tu sitio debería lucir así:
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
-<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
+<a href="https://www.figma.com/proto/UtgKA8d7kN0lWUk3RvhHl4/PD-Private-Site?page-id=1086%3A0&node-id=1086%3A1&viewport=444%2C519%2C0.49354425072669983&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
 ## Requisitos Previos
 
@@ -671,7 +671,91 @@ UJS
 {% snippet "shared/libs/forms_js" %}
 ```
 
-## Paso 8: Instalar Modyo Cli
+## Paso 8: Generar el menú
+
+Otra de las funcionalidades que existen dentro de Modyo es la herramienta de Navigation, en la cual podemos generar el menú para nuestro sitio de manera sencilla.
+
+Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.html) y modificamos el menú ya esxistente y dejaremos las siguientes opciones.
+
+<table>
+ <tr>
+  <th style="text-align: left">Name</th>
+  <th style="text-align: left">Associated Layout Page</th>
+  <th style="text-align: left">URL</th>
+ </tr>
+ <tr>
+  <td>
+   Mi Banca
+  </td>
+  <td>
+   Home
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Cuentas
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Tarjetas
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Transferencias
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Créditos
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Avance en Efectivo
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+</table>
+
+Lo que se vería reflejado de la siguiente forma:
+
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;">
+
+Luego de tener nuestro menú completo guardamos y publicamos.
+
+## Paso 9: Instalar Modyo Cli
 
 Ahora que ya tenemos lista nuestra Base en Modyo para agregar nuestros widgets, vamos a instalar el Modyo Cli en nuestra computadora.
 
@@ -696,23 +780,315 @@ npm i -g @modyo/cli
 ```
 Una vez instalado podemos chequear en nuestra consola al ejecutar el comando <code>modyo-cli help</code> para comprobar que este todo correcto.
 
-## Paso 9: Inicializar un Widget del Catálogo
+## Paso 10: Inicializar un Widget del Catálogo
 
-Luego de completar el proceso, y tener disponible el modyo-cli a nivel globar, vamos a obtener el Widget de [Resumen de Cuentas](/es/widgets/retail/summary.html) desd el [Catálogo de Widgets Financieros de Modyo](/es/widgets/).
+Luego de completar el proceso, y tener disponible el modyo-cli a nivel globar, vamos a obtener el Widget de [Resumen de Cuentas](/es/widgets/retail/summary.html) desde el [Catálogo de Widgets Financieros de Modyo](/es/widgets/).
 
-Para traer el Widget a nuestro ambiente local lo hacemos con el siguiente comando:
+Para traer el Widget a nuestro ambiente local lo hacemos con el siguiente comando en la consola:
 
 ```sh
 modyo-cli get modyo-widgets-retail-summary
 ```
+Una vez terminado el proceso tendremos nuestro widget tendremos una vista asi en nuestra terminal:
 
-## Paso XX: Revisar y Publicar
+<img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;"/>
 
-Una vez terminados todos nuestros widgets y CSS del Home, revisaremos en modo vista previa el trabajo que hemos realizado en este Tutorial. Una vez que estés conforme con el resultado debemos publicar los cambios para recién ahora dejar todo nuestro trabajo disponible de cara a nuestros usuarios finales.
+ Luego entramos en la carpeta <code>modyo-widgets-retail-summary</code> y con <code>yarn serve</code> o <code>npm serve</code> podemos ver el widget de manera local en nuestro navegador.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;"/>
+
+## Paso 11: Cambios de estilos en el Widget
+
+Los Widgets del catálogo se han diseñado en Modyo con un estilo plano, para hacer cambios debemos abrir la carpeta del widget <code>modyo-widgets-retail-summary</code> en nuestro editor, en nuestro caso VS Code.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;"/>
+
+Comenzaremos modificando el CSS, lo primero que haremos es cambiar los colores de las variables, por nuestros colores.
+
+Para esto abrimos las carpetas src, sccs y dentro modificamos el _variables.sccs
+
+```css
+$primary-10: #EEF0F5;
+$primary-20: #E8EAF1;
+$primary-40: #D2D6E5;
+$primary-60: #A5AECC;
+$primary-80: #7985B2;
+$primary-100: #384470;
+$primary-dark: #2e4553;
+$secondary-10: #eff0f1;
+$secondary-20: #e0e2e3;
+$secondary-40: #c1c5c7;
+$secondary-60: #a1a8aa;
+$secondary-80: #828b8e;
+$secondary-100: #636e72;
+$secondary-dark: #515a5e;
+$tertiary-10: #f7f8f9;
+$tertiary-20: #f0f2f3;
+$tertiary-40: #e0e5e7;
+$tertiary-60: #d1d8db;
+$tertiary-80: #c1cbcf;
+$tertiary-100: #b2bec3;
+$tertiary-dark: #a3afb4;
+$red: #D7426E;
+$yellow: #F2C10D;
+$green: #70D960;
+$primary: $primary-100;
+$secondary: $secondary-100;
+$light: $secondary-10;
+$dark: $secondary-dark;
+```
+
+Luego en _theme.sccs y modificamos la linea 8 dejando el body con un background: white;
+
+En el directorio src/components/SummaryAccount.vue modificaremos el header de las cards para agregarle la variable $primary-40 para el background especificamente la línea 169:
+
+```css
+.card-header.product-summary__header:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: $primary-40;
+}
+```
+y en la línea 8 le agregamos un h6 al h2
+
+```html
+<h2 class="h6 mb-0 text-capitalize">
+  {{ account.accountType }}
+  <span class="d-block mt-1">{{ $tc('commons.number', account.accountNumber) }}</span>
+</h2>
+```
+
+Luego agregaremos estilos para que la barra ea verde:
+
+```css
+.m-progress-bar .progress-bar {
+  background: $green !important;
+}
+```
+
+Agregamos el título en <b>App.vue</b>:
+
+```
+<template>
+  <article
+    id="summary-app"
+    class="py-4 py-sm-5">
+    <div class="container-fluid px-0">
+      <div
+        v-if="isLoading"
+        class="loading text-center pt-5">
+        <font-awesome-icon
+          icon="circle-notch"
+          size="5x"
+          spin />
+      </div>
+      <div
+        v-else
+        ref="viewport"
+        class="products-viewport">
+        <div class="header-summary">
+          <h3 class="h4 text-primary font-weight-bold">Hola</h3>
+          <h3 class="h4 text-primary">Bienvenido a Dynamic</h3>
+        </div>
+        <div
+          ref="content"
+          class="products-summary d-flex align-items-stretch">
+          <summary-account
+            v-for="account in accounts"
+            :key="`account-${account.id}`"
+            :account="account"
+            :client-id="clientId" />
+
+          <summary-card
+            v-for="card in cards"
+            :key="`card-${card.id}`"
+            :card="card"
+            :client-id="clientId" />
+
+          <summary-add key="add" />
+        </div>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script>
+import ScrollBooster from 'scrollbooster';
+import { getURLParams } from '@modyo/financial-commons';
+import SummaryAccount from './components/SummaryAccount.vue';
+import SummaryCard from './components/SummaryCard.vue';
+import SummaryAdd from './components/SummaryAdd.vue';
+
+export default {
+  name: 'App',
+  components: {
+    SummaryAccount,
+    SummaryCard,
+    SummaryAdd,
+  },
+  data() {
+    return {
+      carousel: {},
+    };
+  },
+  computed: {
+    isLoading() {
+      return this.$store.state.isLoading;
+    },
+    accounts() {
+      return this.$store.state.accounts;
+    },
+    cards() {
+      return this.$store.state.cards;
+    },
+    clientId() {
+      return this.$store.state.clientId;
+    },
+  },
+  created() {
+    const client = parseInt(getURLParams('client'), 10) || 1;
+    this.$store.commit('SET_CLIENT_ID', client);
+    this.$store.dispatch('DO_DATA_INITIALIZATION').then(() => {
+      this.initProductsCarousel();
+    });
+  },
+  methods: {
+    initProductsCarousel() {
+      const { viewport } = this.$refs;
+      const { content } = this.$refs;
+
+      // eslint-disable-next-line no-unused-vars
+      const sb = new ScrollBooster({
+        viewport,
+        content,
+        direction: 'horizontal',
+        emulateScroll: false,
+        onUpdate: (state) => {
+          if (state.borderCollision.right) {
+            content.style.transform = `translateX(${-state.position.x - 20}px)`;
+          } else {
+            content.style.transform = `translateX(${-state.position.x}px)`;
+          }
+
+          if (state.isMoving) {
+            viewport.style.cursor = 'grabbing';
+          } else {
+            viewport.style.cursor = 'grab';
+          }
+        },
+        shouldScroll: (state, event) => {
+          // disable scroll if clicked on button
+          const isLink = event.target.nodeName.toLowerCase() === 'a';
+          return !isLink;
+        },
+      });
+
+      sb.updateMetrics();
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.products-viewport {
+  overflow: hidden;
+
+  cursor: grab;
+}
+
+@media (max-width: 575.98px) {
+  .header-summary h2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-summary {
+    margin-left: 140px;
+  }
+}
+</style>
+```
+Una vez que terminamos de darle el look and feel al widget estamos listos para hacer el push a Modyo.
+
+## Paso 12: Pushear Widget al sitio
+
+Para hacer el push de nuestro Widget a Modyo, para esto tenemos que generar la configuración para que asi el cli sepa hacia donde vamos a hacer el push.
+
+El archivo de configuración lo vamos a crear en la raíz del sitio y se va a llamar <code>.env</code>
+
+```
+MODYO_ACCOUNT_URL= Account url
+MODYO_SITE_HOST=private-site
+MODYO_VERSION=9
+MODYO_TOKEN= Token obtained in Modyo
+MODYO_BUILD_COMMAND=build
+MODYO_BUILD_DIRECTORY=dist
+MODYO_WIDGET_NAME=Summary
+```
+
+<img src="/assets/img/tutorials/how-to-create-private-site/env.png" style="max-width: 400px;margin: auto 0;"/>
+
+Para obtener un token vamos a ir a los Settings de la cuenta, y dentro de API access vamos a generar una nueva en el boton <b>New Application</b> arriba a la derecha.
+
+En el modal completamos los siguientes datos
+
+<table>
+ <tr>
+  <td>
+   Name
+  </td>
+  <td>
+   modyo-cli
+  </td>
+ </tr>
+<tr>
+  <td>
+   Description
+  </td>
+  <td>
+   Token que se utilizara para hacer push desde modyo-cli
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Redirect URI
+  </td>
+  <td>
+   urn:ietf:wg:oauth:2.0:oob
+  </td>
+ </tr>
+</table>
+
+<img src="/assets/img/tutorials/how-to-create-private-site/token.png" style="max-width: 400px;margin: auto 0;"/>
+
+Una vez creado el API access, ingresamos <b>Team</b> en el mismo menú y buscamos nuestro usuario, y en el tab <b>API access</b> hacemos click en <b>New Access Token</b>, seleccionamos <b>modyo-cli</b> y hacemos click en <b>Create Token</b>.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/access_token.png" style="max-width: 400px;margin: auto 0;"/>
+
+Ahora ya tenemos nuestro token, y podemos copiarlo en el archivo <b>.env</b> de configuración.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;"/>
+
+Luego con el comando <code>modyo-cli push Summary</code> disponibilizaremos el widget en nuestro sitio.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;"/>
+
+Entramos al Widget, lo publicamos para luego lo agregamos en el Home.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;"/>
+
+Borramos el Widget de HTML existente y remplazamos por nuestro Widget Custom.
+
+<img src="/assets/img/tutorials/how-to-create-private-site/home.png" style="max-width: 600px;margin: auto 0;"/>
+
+## Paso 13: Revisar y Publicar
+
+Una vez realizados los pasos anteriores, revisaremos en modo vista previa el trabajo. Cuando nos tenga conforme el resultado debemos publicar los cambios para recién ahora dejar todo nuestro trabajo disponible de cara a nuestros usuarios finales.
 
 Para realizar una publicación, hacemos click en el botón <b>Publish</b> donde se abrirá un panel con los cambios que hemos realizado.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;"/>
 
 Luego seguiremos los pasos para seleccionar la fecha de publicación, que en este caso será pulicación inmediata.
 
