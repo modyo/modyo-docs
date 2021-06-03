@@ -201,7 +201,7 @@ The de facto use of the isotype is on a white background, giving priority to the
 
 ### Negative application
 
-If you would like to use the isotype on dark backgrounds, ideally use it with the following background colors for better contrast.
+When using the isotype on dark backgrounds, it is ideal to use it with the following background colors for best contrast.
 
  <table class="table-dark"> 
  <tr> 
