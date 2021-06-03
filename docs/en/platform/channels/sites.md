@@ -396,7 +396,7 @@ Freely specify your content security policy in the text area; for a comprehensiv
 A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-A ready for production policy must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
+A policy that's ready for production must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
