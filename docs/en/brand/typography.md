@@ -4,7 +4,7 @@ search: false
 
 # Typography
 
-Modyo's official typography for use in all its formats and platforms is [DM Sans](https://fonts.google.com/specimen/DM+Sans).
+Modyo's official font for use in all its formats and platforms is [DM Sans](https://fonts.google.com/specimen/DM+Sans).
 
 ### Font Styles
 
