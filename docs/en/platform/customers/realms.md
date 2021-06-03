@@ -181,7 +181,7 @@ If you want to have custom CSS in the session views, add it to the editor and cl
 
 It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
-However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
+However, the editor will not automatically upload the link, but instead when you upload it, you have to click on the paste button, which is located on the side of each file and will then give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
 
 ::: tip Tip
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
