@@ -247,7 +247,7 @@ If you want to remove a realm administrator, select using the checks to the left
 
 The available roles are:
 
-- **User**: You can add users, create, modify and submit to review campaigns, forms and targets.
+- **User**: You can add users, create, modify, and submit to review campaigns, forms, and targets.
 - **Admin**: You can access all settings and sections of the kingdom, add and remove users and team members, as well as delete the kingdom.
 
 ### Custom Fields
