@@ -15,7 +15,7 @@ search: true
 * Multiple bug fixes
 * User Experience Improvements
 
-### 9.1.19 - 19 May 2021
+### 9.1.19 - May 19, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bug fixes
