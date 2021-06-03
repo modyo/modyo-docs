@@ -143,7 +143,7 @@ In this section you can largely configure interaction between users and the Mody
 Here you can set up general aspects of realm, such as:
 
 - **Name**.
-- **Identifier**: Allows you to modify the url of profile views, login, registration and password recovery of the realm.
+- **Identifier**: Allows you to modify the URL of profile views, login, registration and password recovery of the realm.
 - **Enable/Disable Credencials**: Allows you to disable Modyo credentials in this realm.
 - **Modify user account activation type**:
   - Direct: Registering users will be able to log in directly
