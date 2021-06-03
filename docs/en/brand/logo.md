@@ -67,7 +67,7 @@ The free space and exclusion zone around the logo is equal to the height of the 
 
 For the use of the isotype the reference is the same.
 
- <img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0"> 
+<img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
 
 ### Minimum size
 
