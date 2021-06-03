@@ -16,21 +16,21 @@ The Modyo logo features the written word of the company name, and a green symbol
 
 The de facto use of the logo is mainly on white backgrounds, giving priority of use to the original brand, but using it in black is also allowed.
 
- <table> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:200px;" alt="logo"> 
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/792297b4-00d1-4e65-8a58-38409e6de3c1/original/black.svg" style="width:200px;" alt="logo black"> 
- </td> 
- </tr> 
- <tr> 
- <td colspan="2"> 
- <div class="center"> HEX: #FFFFFF </div> 
- </td> 
- </tr> 
- </table> 
+<table>
+<tr>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:200px;" alt="logo">
+</td>
+<td>
+<img src="https://cloud.modyocdn.com/uploads/792297b4-00d1-4e65-8a58-38409e6de3c1/original/black.svg" style="width:200px;" alt="logo black">
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="center">HEX: #FFFFFF</div>
+</td>
+</tr>
+</table>
 
 ### Negative application
 
