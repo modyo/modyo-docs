@@ -152,7 +152,7 @@ Here you can set up general aspects of realm, such as:
   - Disabled: Unable to register new users in the realm. Users already registered and activated will be able to log in without problems.
 - **Extra attributes of the registration form**:
   - Enable second last name
-  - Make the second surname required
+  - Make the second last name required
   - Enable Email Confirmation: Enables an extra email field that the user must fill in and must match the primary email field for the user to register.
   - Enable user avatar
   - Enable date of birth
