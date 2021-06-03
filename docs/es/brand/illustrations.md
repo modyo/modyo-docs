@@ -10,8 +10,7 @@ Pueden tener diferentes objetivos, ya sea como apoyo de un texto, narrativa de u
 
 <img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
-Las ilustraciones están hechas para usarlas sobre fondo blanco y oscuro. Se recomienda usar los tonos especificados
-en la guía de marca.
+Las ilustraciones están hechas para usarlas sobre fondo blanco y oscuro. Se recomienda usar los tonos especificados en la guía de marca.
 
 Se pueden categorizar en tres tipos dependiendo del nivel de complejidad y el uso que se les da.
 
