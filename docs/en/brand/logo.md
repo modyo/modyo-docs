@@ -4,7 +4,7 @@ search: false
 
 # Logos
 
-Hello, below we will review various contents associated with the use of the brand, respecting its application and also its limitations.
+Hello, we will review various topics associated with the use of the brand below, respecting its applications and limiting factors.
 
 ## Logo
 
