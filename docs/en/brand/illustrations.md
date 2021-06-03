@@ -10,8 +10,7 @@ They can have different objectives, either as support of a text, narrative of a 
 
 <img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
-The illustrations are made for use on a dark and white background. It is recommended to use the specified shades
-in the brand guide.
+Illustrations are made for use on a dark and white background. It is recommended to use the specified shades in the brand guide.
 
 They can be categorized into three types depending on the level of complexity and usage given to them.
 
