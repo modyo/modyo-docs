@@ -535,64 +535,64 @@ Spot colors are designated only for some internal illustrations (controlled by t
 
 All background colors are defined with the colors of the main palette and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b> 
 
- <table> 
- <tr> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F2F6FC;display: flex;padding: 30px 20px;color:#737988"> #F2F6FC </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F3FBFB;display: flex;padding: 30px 20px;color:#737988"> #F3FBFB </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F4F8FA;display: flex;padding: 30px 20px;color:#737988"> #F4F8FA </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F3F5F8;display: flex;padding: 30px 20px;color:#737988"> #F3F5F8 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F5F3F7;display: flex;padding: 30px 20px;color:#737988"> #F5F3F7 </span> 
- </div> 
- </td> 
- </tr> 
+<table>
+<tr>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F2F6FC;display: flex;padding: 30px 20px;color:#737988">#F2F6FC</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F3FBFB;display: flex;padding: 30px 20px;color:#737988">#F3FBFB</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F4F8FA;display: flex;padding: 30px 20px;color:#737988">#F4F8FA</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F3F5F8;display: flex;padding: 30px 20px;color:#737988">#F3F5F8</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F5F3F7;display: flex;padding: 30px 20px;color:#737988">#F5F3F7</span>
+</div>
+</td>
+</tr>
 
- <tr style="background: white;"> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FCF3F6;display: flex;padding: 30px 20px;color:#737988"> #FCF3F6 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FEF3F4;display: flex;padding: 30px 20px;color:#737988"> #FEF3F4 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FEF7F2;display: flex;padding: 30px 20px;color:#737988"> #FEF7F2 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #FFFBF3;display: flex;padding: 30px 20px;color:#737988"> #FFFBF3 </span> 
- </div> 
- </td> 
- <td> 
- <div style="display: flex;flex-direction: column;"> 
- <span style="background: #F9F9F7;display: flex;padding: 30px 20px;color:#737988"> #F9F9F7 </span> 
- </div> 
- </td> 
- </tr> 
+<tr style="background: white;">
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FCF3F6;display: flex;padding: 30px 20px;color:#737988">#FCF3F6</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FEF3F4;display: flex;padding: 30px 20px;color:#737988">#FEF3F4</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FEF7F2;display: flex;padding: 30px 20px;color:#737988">#FEF7F2</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #FFFBF3;display: flex;padding: 30px 20px;color:#737988">#FFFBF3</span>
+</div>
+</td>
+<td>
+<div style="display: flex;flex-direction: column;">
+<span style="background: #F9F9F7;display: flex;padding: 30px 20px;color:#737988">#F9F9F7</span>
+</div>
+</td>
+</tr>
 
- </table> 
+</table>
 
 ### Overlay in pictures
 
