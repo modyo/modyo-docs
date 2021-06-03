@@ -62,69 +62,69 @@ For alternate use when DM SANS is not available, always use SANS SERIF fonts suc
 
 ### Hierarchy
 
- <table class="no-border"> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: bold;font-size: 64px;"> Title H1 </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Bold 64px/57.6px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: bold;font-size: 56px;"> Title H2 </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Bold 56px/56px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: bold;font-size: 48px;"> Title H3 </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Bold 48px/48px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: bold;font-size: 36px;"> Title H4 </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Bold 36px/36px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: bold;font-size: 24px;"> Title H5 </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Bold 24px/33.6px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: bold;font-size: 18px;"> Title H6 </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Bold 18px/27px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: regular;font-size: 18px;"> Paragraph </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Regular 16px/27.2px
- </td> 
- </tr> 
- <tr style="background: #F6F7F7;"> 
- <td style="width: 50%;padding: 24px 34px;"> 
- <span style="font-weight: regular;font-size: 18px;"> Sub -paragraph </span> 
- </td> 
- <td style="width: 50%;padding: 24px 34px;"> 
- Regular 14px/23.8px
- </td> 
- </tr> 
- </table> 
+<table class="no-border">
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: bold;font-size: 64px;">Title H1</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Bold 64px/57.6px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: bold;font-size: 56px;">Title H2</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Bold 56px/56px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: bold;font-size: 48px;">Title H3</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Bold 48px/48px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: bold;font-size: 36px;">Title H4</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Bold 36px/36px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: bold;font-size: 24px;">Title H5</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Bold 24px/33.6px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: bold;font-size: 18px;">Title H6</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Bold 18px/27px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: regular;font-size: 18px;">Paragraph</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Regular 16px/27.2px
+  </td>
+ </tr>
+ <tr style="background: #F6F7F7;">
+  <td style="width: 50%;padding: 24px 34px;">
+   <span style="font-weight: regular;font-size: 18px;">Sub -paragraph</span>
+  </td>
+  <td style="width: 50%;padding: 24px 34px;">
+   Regular 14px/23.8px
+  </td>
+ </tr>
+</table>
