@@ -39,7 +39,7 @@ Representation of a concept using a fantastic scene.
 
 ### Spot hero
 
-Spot Hero are slightly simplified versions of a Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space. Generally, the concepts or ideas represented are simple and straightforward.
+Spot Heroes are slightly simplified versions of a Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space. Generally, the concepts or ideas represented are simple and direct.
 
 <table>
 <tr>
