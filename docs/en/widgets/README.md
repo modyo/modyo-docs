@@ -9,7 +9,7 @@ Welcome to the **Modyo Financial Widget Catalog**. Here you will find a complete
 
 ### What is a Widget?
 
-A **Widget** is an isolated component that packages its own markup (`html`), style (`css`) and javascript so that it can be deployed as part of any web page without having runtime errors or conflicts with the styles or javascript of the page hosting it.
+A **Widget** is an isolated component that packages its own markup (`html`), style (`css`), and javascript so that it can be deployed as part of any web page without having runtime errors or conflicts with the host page's styles or javascript.
 
 In other words, a **Widget** is a [micro frontend](https://martinfowler.com/articles/micro-frontends.html): an architectural style that allows you to compose and deploy multiple javascript applications on a page.
 
