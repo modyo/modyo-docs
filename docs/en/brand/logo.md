@@ -12,7 +12,7 @@ The Modyo logo features the written word of the company name, and a green symbol
 
 <img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
 
-### Application in positive
+### Positive application
 
 Initial use of the logo is mainly on white backgrounds, giving priority to use the original brand, but the use of the brand in black is also allowed.
 
