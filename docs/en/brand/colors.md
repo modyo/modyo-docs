@@ -594,7 +594,7 @@ All background colors are defined with the colors of the main palette and specia
 
 </table>
 
-### Overlay in pictures
+### Overlay in images
 
 The overlay of the photos is black with an opacity of 80% so that there is the best possible contrast between figure and background.
 
