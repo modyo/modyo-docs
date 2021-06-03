@@ -58,7 +58,7 @@ Letter-spacing: -1px
 
 ### Alternative fonts
 
-For alternate use when DM SANS is not available, always use <b>SANS SERIF</b> fonts such as Roboto, Open Sans or Poppins to maintain brand personality as well as visual readability.
+For alternate use when DM SANS is not available, always use SANS SERIF fonts such as Roboto, Open Sans or Poppins to maintain brand personality as well as visual readability.
 
 ### Hierarchy
 
