@@ -179,7 +179,7 @@ While the icon can exist without the word brand, the word brand should never exi
 
 <img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype">
 
-### Application in positive
+### Positive application
 
 The initial use of the isotype is on white backgrounds, giving priority to use the original, but the use of the isotype in black is also allowed.
 
