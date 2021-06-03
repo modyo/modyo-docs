@@ -25,7 +25,7 @@ Financial Widgets deliver out of the box:
 
 - **UX** designed to facilitate user interaction
 - **Basic accessibility** (such as contrasting suitable colors, use of legible typographical sizes, semantic structure, etc)
-- **Internationalization and localization of texts and currencies**. By default each Widget comes in English and Spanish, but it has all the necessary infrastructure to customize the languages it brings or add more languages to suit your business needs. If deployed in Modyo, Widgets detect the language configured for the site
+- **Internationalization and localization of texts and currencies**. By default each Widget comes in English and Spanish, but it has all the necessary infrastructure to customize the current languages or add more languages to suit your business needs. If deployed in Modyo, Widgets detect the language configured for the site
 - **Validations for forms, dates**
 - **Flat styles for easy customization** with our downloadable PDF design system [from here](/assets/pdf/Widget_Modyo.pdf) using **Sass** and popular libraries like [Bootstrap](https://getbootstrap.com/) and [Font Awesome](https://github.com/FortAwesome/vue-fontawesome#using-brand-icons)
 
