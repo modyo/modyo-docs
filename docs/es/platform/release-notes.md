@@ -4,11 +4,6 @@ search: true
 
 # Notas del release
 
-### 9.1.XX - Soy de mentiritas
-
-<Badge text="Core" type="core" vertical="middle"/>
-* Nada de esto es real
-
 ### 9.1.21 - 28 de mayo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -34,12 +29,12 @@ search: true
 * Se reimplementa árbol de páginas
 
 ### 9.1.17 - 5 de mayo del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Mejoras de rendimiento
 
 ### 9.1.16 - 23 de abril del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de seguridad.
@@ -49,7 +44,7 @@ search: true
 * Se resuelve un error al crear nuevos sitios en que la página "About Us" quedaba sin un layout seleccionado.
 
 ### 9.1.15 - 14 de abril del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 * Se añade al panel una herramienta para resolver inconsistencias en estructura secundaria para mantener el orden de las páginas del sitio.
@@ -61,7 +56,7 @@ search: true
 * Se mejora el indexado de páginas de tal forma que ahora se puede encontrar resultados que contienen texto del contenido referenciado en las páginas.
 
 ### 9.1.14 - 1 de abril del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Múltiples bugs resueltos.
 
@@ -70,7 +65,6 @@ search: true
 
 ### 9.1.13 - 25 de marzo del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -89,7 +83,6 @@ search: true
 
 ### 9.1.12 - 19 de marzo del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -104,7 +97,6 @@ search: true
 
 ### 9.1.11 - 02 de marzo del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -116,7 +108,6 @@ search: true
 
 ### 9.1.10 - 23 de febrero del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -128,7 +119,6 @@ search: true
 
 ### 9.1.9 - 10 de febrero del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -136,7 +126,6 @@ search: true
 
 ### 9.1.8 - 02 de febrero del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -144,7 +133,6 @@ search: true
 
 ### 9.1.7 - 25 de enero del 2021
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -160,7 +148,6 @@ search: true
 
 ### 9.1.6 - 23 de diciembre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -178,7 +165,6 @@ search: true
 
 ### 9.1.5 - 1 de diciembre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -197,7 +183,6 @@ search: true
 
 ### 9.1.4 - 10 de noviembre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -210,7 +195,6 @@ search: true
 
 ### 9.1.3 - 16 de octubre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -219,7 +203,6 @@ search: true
 
 ### 9.1.2 - 8 de octubre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -235,7 +218,6 @@ search: true
 
 ### 9.1.1 - 25 de Septiembre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -250,7 +232,6 @@ search: true
 
 ### 9.1.0 - 4 de Septiembre del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - [Scheduler](es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
@@ -272,14 +253,12 @@ search: true
 
 ### 9.0.9 - 12 de Agosto del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Se mejora la compatibilidad con cookies de sesión para navegadores antiguos.
 
 ### 9.0.8 - 15 de Junio del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Se añaden mejoras de seguridad a endpoints de subida de archivos.
@@ -298,7 +277,6 @@ search: true
 
 ### 9.0.7 - 01 de Junio del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Mejoras a gestión y cuotas de planes.
@@ -321,7 +299,6 @@ search: true
 
 ### 9.0.6 - 30 de Abril del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Se añade soporte para FOG con Azure y Google Cloud como base de instalación de Modyo.
@@ -347,7 +324,6 @@ search: true
 
 ### 9.0.5 - 19 de Marzo del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -358,7 +334,6 @@ search: true
 
 ### 9.0.4 - 12 de Marzo del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -370,7 +345,6 @@ search: true
 
 ### 9.0.3 - 02 de Marzo del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -384,7 +358,6 @@ search: true
 
 ### 9.0.2 - 04 de Febrero del 2020
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Múltiples bugs resueltos.
@@ -396,7 +369,7 @@ search: true
 * Mejoras de usabilidad al [asset manager](/es/platform/content/asset-manager.html).
 
 ### 9.0.1 - 17 de Enero del 2020
-&nbsp;
+
 <Badge text="Core" type="core"/>
 * Múltiples bugs resueltos.
 * Múltiples mejoras de navegación y usabilidad.
@@ -410,7 +383,6 @@ search: true
 
 ### 9.0.0 - 19 de Diciembre del 2019
 
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Separación de usuarios y [miembros del equipo](/es/platform/core/roles.html#equipo), los que tienen acceso a la plataforma se encuentran segregados de los usuarios de la página en sí.
