@@ -8,7 +8,7 @@ Modyo's official font for use in all its formats and platforms is [DM Sans](http
 
 ### Font Styles
 
- <img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" style="margin-left: 0;"> 
+<img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" style="margin-left: 0;">
 
 ### Examples of use
 
