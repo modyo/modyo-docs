@@ -100,7 +100,7 @@ You can change the color of the two logos together to white. When you need to do
 
 ### Incorrect use of the logo
 
-It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added. The following uses are NOT allowed.
+It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added to. The following are uses that are NOT allowed.
 
  <table> 
  <tr> 
