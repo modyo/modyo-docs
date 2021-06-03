@@ -36,30 +36,30 @@ The de facto use of the logo is mainly on white backgrounds, giving priority of 
 
 If you want to use the logo on dark backgrounds, it is ideal to use it on dark grey backgrounds, to provide high contrast.
 
- <table class="table-dark"> 
- <tr> 
- <td style="background-color: #000; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/e1b4d73d-c058-4a1d-8886-ff3400305e13/original/normal.svg" style="width:200px;" alt="logo"> 
- </td> 
- <td style="background-color: #000; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/645364f9-94c6-425c-a868-3ac055a167d5/original/white.svg" style="width:200px;" alt="logo"> 
- </td> 
- <td style="background-color: #151F38; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/e1b4d73d-c058-4a1d-8886-ff3400305e13/original/normal.svg" style="width:200px;" alt="logo"> 
- </td> 
- <td style="background-color: #151F38; padding: 20px;"> 
- <img src="https://cloud.modyocdn.com/uploads/645364f9-94c6-425c-a868-3ac055a167d5/original/white.svg" style="width:200px;" alt="logo black"> 
- </td> 
- </tr> 
- <tr> 
- <td colspan="2" style="background-color: #000; padding: 20px;"> 
- <div class="center" style="color: #fff;"> HEX: #000000 </div> 
- </td> 
- <td colspan="2" style="background-color: #151F38; padding: 20px;"> 
- <div class="center" style="color: #fff;"> HEX: #151F38 </div> 
- </td> 
- </tr> 
- </table> 
+<table class="table-dark">
+<tr>
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/e1b4d73d-c058-4a1d-8886-ff3400305e13/original/normal.svg" style="width:200px;" alt="logo">        
+</td>
+<td style="background-color: #000; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/645364f9-94c6-425c-a868-3ac055a167d5/original/white.svg" style="width:200px;" alt="logo">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/e1b4d73d-c058-4a1d-8886-ff3400305e13/original/normal.svg" style="width:200px;" alt="logo">        
+</td>
+<td style="background-color: #151F38; padding: 20px;">
+<img src="https://cloud.modyocdn.com/uploads/645364f9-94c6-425c-a868-3ac055a167d5/original/white.svg" style="width:200px;" alt="logo black">        
+</td>
+</tr>
+<tr>
+<td colspan="2" style="background-color: #000; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #000000</div>
+</td>
+<td colspan="2" style="background-color: #151F38; padding: 20px;">
+<div class="center" style="color: #fff;">HEX: #151F38</div>
+</td>
+</tr>
+</table>
 
 ### Exclusion zone
 
