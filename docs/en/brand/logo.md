@@ -14,7 +14,7 @@ The Modyo logo features the written word of the company name, and a green symbol
 
 ### Positive application
 
-Initial use of the logo is mainly on white backgrounds, giving priority to use the original brand, but the use of the brand in black is also allowed.
+The de facto use of the logo is mainly on white backgrounds, giving priority of use to the original brand, but using it in black is also allowed.
 
  <table> 
  <tr> 
