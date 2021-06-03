@@ -134,7 +134,7 @@ When modifying a user, you may change the list of Targets to which they belong.
 
 ----
 
-## Configuring realm
+## Realm configuration
 
 In this section you can largely configure interaction between users and the Modyo platform. Some settings are focused on the visual experience for the user, such as selection colors or post templates, while others are focused on registration, access control, and customization of the same. In particular this second part is essential for the proper functioning of the platform, so it is important to be cautious when modifying configurations in this section.
 
