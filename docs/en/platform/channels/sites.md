@@ -425,7 +425,7 @@ It allows or denies the use of browser features and APIs for the site. For examp
 
 ### X-XSS-Protection
 
-Prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
+It prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
 
 * **0**: Disable XSS _filtering_.
 * **1**: Enable XSS _filtering_, removing the unsafe parts.
