@@ -531,7 +531,7 @@ Spot colors are designated only for some internal illustrations (controlled by t
 </tr>
 </table>
 
-### Colours of associated backgrounds
+### Associated Background Colors
 
 All background colors are defined with the main palette colors and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b> 
 
