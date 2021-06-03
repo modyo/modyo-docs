@@ -19,7 +19,7 @@ Modyo is an agnostic platform in terms of the use of Javascript frameworks. You 
 
 ### Why use a Widget from this catalog?
 
-The Financial Widgets catalog is designed to accelerate the development of your digital experiences by offering interactive components for you to customize and assemble them into flows that fit your business.
+The Financial Widgets catalog is designed to accelerate your digital experiences' development by offering interactive components for you to customize and assemble into flows that fit your business.
 
 Financial Widgets deliver from the box:
 
