@@ -451,7 +451,7 @@ Their most frequent use cases are:
 
 ## Special colors
 
-Special colors are designated only for some internal illustrations (controlled by the branding team) and for graphics that require combinations. They should be used sparingly and always complementing the various pieces in contrast and color.
+Spot colors are designated only for some internal illustrations (controlled by the branding team) and for graphics that require combinations. They should be used in moderation and always complementing the various pieces in contrast and color.
 
 <table>
 <tr>
