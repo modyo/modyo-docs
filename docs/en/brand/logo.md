@@ -92,7 +92,7 @@ Minimum digital size: 20px
 
 Separate free space rules are applied align our logo with associated logos. Use the width of an "M" as a guide for a gap between the Modyo logo and partner logos.
 
- <img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances"> 
+<img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
 
 You can change the color of the two logos together to only white. When you need to do this, place a simple and perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
 
