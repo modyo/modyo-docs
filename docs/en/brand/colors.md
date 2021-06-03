@@ -64,7 +64,7 @@ Our brand is well suited to the following colors:
 <table class="no-border">
 <tr>
 <td colspan="6">
-<b>Dark Blue</b>
+<b>Petrol Blue</b>
 </td>
 </tr>
 <tr>
