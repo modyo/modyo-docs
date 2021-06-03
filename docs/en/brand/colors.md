@@ -389,65 +389,65 @@ Their most frequent use cases are:
 <li> As an artwork background (only in the case of light blue)</li>
 </ul>
 
-   <table class="no-border"> 
- <tr> 
- <td style="padding: 20px 50px;border-right: 1px solid #dfe2e5;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Light blue </b> </p> 
- <span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #CDDFF9 </p> 
- <span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #F2F6FC </p> 
- </div> 
- </div> 
- </td> 
+  <table class="no-border">
+  <tr>
+  <td style="padding: 20px 50px;border-right: 1px solid #dfe2e5;">
+  <div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+  <span style="background: linear-gradient(180deg, #CDDFF9 0%, #F2F6FC 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+  </span>
+  <div style="margin-top: 20px;">
+  <p><b>Light blue</b></p>
+  <span style="background: #CDDFF9;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+  <p>HEX: #CDDFF9</p>
+  <span style="background: #F2F6FC;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+  <p>HEX: #F2F6FC</p>
+  </div>
+  </div>
+  </td>
 
- <td style="padding: 20px 50px;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Petrol Blue </b> </p> 
- <span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #151F38 </p> 
- <span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #A1A5AF </p> 
- </div> 
- </div> 
- </td> 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Petrol Blue</b></p>
+<span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #151F38</p>
+<span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A1A5AF</p>
+</div>
+</div>
+</td>
 
- <td style="padding: 20px 50px;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Green </b> </p> 
- <span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #0EBD74 </p> 
- <span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #9FE5C7 </p> 
- </div> 
- </div> 
- </td> 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Green</b></p>
+<span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #0EBD74</p>
+<span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #9FE5C7</p>
+</div>
+</div>
+</td>
 
- <td style="padding: 20px 50px;"> 
- <div style="display: flex;flex-direction: column;text-align: center;align-items: center;"> 
- <span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;"> 
- </span> 
- <div style="margin-top: 20px;"> 
- <p> <b> Blue </b> </p> 
- <span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #2068D5 </p> 
- <span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"> </span> 
- <p> HEX: #A0C1F3 </p> 
- </div> 
- </div> 
- </td> 
- </tr> 
- </table> 
+<td style="padding: 20px 50px;">
+<div style="display: flex;flex-direction: column;text-align: center;align-items: center;">
+<span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
+</span>
+<div style="margin-top: 20px;">
+<p><b>Blue</b></p>
+<span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #2068D5</p>
+<span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
+<p>HEX: #A0C1F3</p>
+</div>
+</div>
+</td>
+</tr>
+</table>
 
 ## Special colors
 
