@@ -10,4 +10,4 @@ When you enter the **Widgets** section of your site, you will see a list of all 
 
 In the upper right corner you will see a main button **+ New** that will allow you to create a new Widget. You will need to type a name and then enter the Widget edit view.
 
-In the widget edit view, you can see the top action bar, workspace, and property column.
+In the Widget edit view, you can see the top action bar, workspace, and property column.
