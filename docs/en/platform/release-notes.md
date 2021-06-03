@@ -9,7 +9,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Fix to security issues
 
-### 9.1.20 - 27 May 2021
+### 9.1.20 - May 27, 2021
  
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bug fixes
