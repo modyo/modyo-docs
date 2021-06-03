@@ -4,7 +4,7 @@ search: true
 
 # Tutoriales
 
-!Bienvenido a la sección de tutoriales de Modyo! 
+¡Bienvenido a la sección de tutoriales de Modyo! 
 
 Acá podrás aprender desde los aspectos más básicos hasta lo más avanzado de la plataforma, organizados por temas, incluyendo [creación y personalización de sitios](/es/platform/channels/sites.html) integrando creación de [tipos](/es/platform/content/types.html) y de [contenidos](/es/platform/content/), así como estrategias de [Search Engine Optimization (SEO)](/es/platform/channels/sites.html#seo), desarrollo de micro frontends con [Widgets](/es/platform/channels/widgets.html), entre otros tópicos.
 
