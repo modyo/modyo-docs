@@ -385,7 +385,7 @@ It indicates if your site should be allowed to be rendered in a `frame`, `iframe
 
 ### X-Content-Type-Options
 
-Indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
+It indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
 ### Content-Security-Policy
 
