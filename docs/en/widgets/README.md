@@ -15,7 +15,7 @@ In other words, a **Widget** is a [micro frontend](https://martinfowler.com/arti
 
 Modyo provides the ideal platform to deploy these types of applications and create your Widget gallery through the [Widget builder](https://develop.docs.modyo.com/platform/channels/Widgets.html) and the tools needed to be able to develop them using the [modyo-cli](https://www.npmjs.com/package/@modyo/cli) or the [javascript SDK]( https://www.npmjs.com/package/@modyo/sdk).
 
-Modyo is an agnostic platform in terms of the use of javascript frameworks, you can deploy applications made in **Vue**, **Angular** or **React**. For the**Financial Widgets**, we decided to use **Vue** (because we think the learning curve is small, it has a vibrant ecosystem that gains traction, among other things), but you and your team can occupy Angular or React.
+Modyo is an agnostic platform in terms of the use of Javascript frameworks. You can deploy applications made in **Vue**, **Angular** or **React**. For the**Financial Widgets**, we decided to use **Vue** (because we think the learning curve is small and it has a vibrant ecosystem that gains traction, among other things), but you and your team can occupy Angular or React.
 
 ### Why use a Widget from this catalog?
 
