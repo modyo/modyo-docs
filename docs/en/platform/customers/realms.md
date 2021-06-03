@@ -75,10 +75,10 @@ In this view, you will proceed to assign each column in the\ *.CSV file to a res
 The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
-On the right, in a sidebar, you will see main import settings. Here you can define if the file does not follow one of the common standards of the\ *.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which by default is a comma). A little below is a box indicating whether you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those fields to be imported. Finally, four main import options:
+In a sidebar on the right, you will see the main import settings. Here you can define if the file does not follow one of the common standards of the \*.CSV files. You can also set the code in which the file is located, and define attribute separation (which by default is a comma). Below, there's a box that indicates if you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those import fields. Finally, four main import options:
 
 - Activate user account
-- Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos)
+- Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos))
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
