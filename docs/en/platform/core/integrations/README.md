@@ -36,7 +36,7 @@ Site webhooks are:
 * Response of the form created
 * Updated form response
 * Page created
-* Deleted page
+* Page deleted
 * Published page
 * Unpublished page
 * Updated page
