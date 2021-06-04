@@ -55,7 +55,7 @@ Site webhooks are:
 * Site staged
 * Visible Site
 * Site updated
-* Approved templates
+* Templates approved
 * Submitted templates for review
 * Updated templates
 * Theme Installed
