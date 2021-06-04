@@ -27,7 +27,7 @@ In this section we will explain how to configure various options to improve the 
 * Content delivery token ([JWT](https://tools.ietf.org/html/rfc7519))
 * Two-Step Authentication
 
- <img src="/assets/img/platform/cors.png" style="margin-top: 40px; border: 1px solid #EEE;" /> 
+<img src="/assets/img/platform/cors.png" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Password Policy
 
