@@ -154,7 +154,7 @@ In the same way you can schedule a publication, you can schedule to unpublish an
 When the time comes to execute the scheduled actions, it may take a couple of minutes for Modyo to perform the action. We will send you an email when the action is complete.
 :::
 
-There are elements (home, navigation and templates) that cannot be unpublished, and when publishing them and scheduling an unpublication in conjunction with other elements, the latter will have no effect on these specific elements.
+There are elements (home, navigation and templates) that cannot be unpublished, and by publishing them and scheduling to unpublish in conjunction with other elements, the last one will have no effect on these specific elements.
 
 #### Approved
 
