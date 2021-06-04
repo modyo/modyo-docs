@@ -6,7 +6,7 @@ search: true
 
 ## Activity logs
 
- <img src="/assets/img/platform/activity-logs.jpg" style="margin-top: 40px; border: 1px solid #EEE;" /> 
+<img src="/assets/img/platform/activity-logs.jpg" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 The platform allows you to see all the moves that have been made for as long as you have it active.
 
