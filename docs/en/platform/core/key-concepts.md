@@ -226,7 +226,7 @@ The preview mode allows you to preview the result of changes to publishable item
 
 The elements you can interact with in the preview bar are:
 
-* **Template Selector**: Allows you to switch between the published and editable version of the elements belonging to the template builder.
+* **Template selector**: Allows you to switch between published and editable versions of items in the template builder.
 * **Content Selector**: Allows you to switch between the published and editable version of items belonging to the content application and that are being used on the site using the Content Liquid SDK.
 * **Navigation Selector**: Allows you to switch between the published and editable version of items belonging to the navigation builder.
 * **Page Selector**: Allows you to switch between the published and editable version of the items belonging to the page builder.
