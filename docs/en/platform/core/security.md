@@ -59,7 +59,7 @@ The key or _secret_ has a specific time duration in seconds that can be configur
 
 ### Two-Step Authentication
 
-Two-Step Authentication adds an extra layer of security to your account. Each time team members sign in, they will need to enter both their password and a dynamic key provided by the _Google Authenticator_ app from their phones.
+Two-step authentication adds an extra layer of security to your account. Each time team members sign in, they'll need to enter both their password and a dynamic key provided by the _Google Authenticator_ app on their phones.
 
 You can download the app for your phone at the following links:
 
