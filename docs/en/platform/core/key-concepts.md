@@ -224,7 +224,7 @@ The preview mode allows you to preview the result of changes to publishable item
 
 ![Preview Bar](/assets/img/platform/preview-bar.png)
 
-The items you can interact with in the preview bar are:
+The elements you can interact with in the preview bar are:
 
 * **Template Selector**: Allows you to switch between the published and editable version of the elements belonging to the template builder.
 * **Content Selector**: Allows you to switch between the published and editable version of items belonging to the content application and that are being used on the site using the Content Liquid SDK.
