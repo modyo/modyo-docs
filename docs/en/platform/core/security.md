@@ -24,7 +24,7 @@ In this section we will explain how to configure various options to improve the 
 
 * Password policy
 * Share resources across different domains ([CORS - Cross Origin Resource Sharing](https://www.w3.org/TR/cors/))
-* Content Delivery Token ([JWT](https://tools.ietf.org/html/rfc7519))
+* Content delivery token ([JWT](https://tools.ietf.org/html/rfc7519))
 * Two-Step Authentication
 
  <img src="/assets/img/platform/cors.png" style="margin-top: 40px; border: 1px solid #EEE;" /> 
