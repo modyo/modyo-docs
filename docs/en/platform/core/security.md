@@ -66,7 +66,6 @@ You can download the app for your phone with the following links:
 * Android: [Google Authenticator on Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
 * iOS: [Google Authenticator on the Apple App Store](https://apps.apple.com/us/app/google-authenticator/id388497605)
 
-
 Each team member can enable two-step authentication from their profile, but as an administrator, you can force two-step authentication for all team members. 
 
 When you force two-step authentication for team members, the next time a team member logs in, you will be required to configure your authentication device in two steps. Once configured, you will need to log in using your password and the code provided by _Google Authenticator_.
