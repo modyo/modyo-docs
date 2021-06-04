@@ -234,7 +234,7 @@ The elements you can interact with in the preview bar are:
 * **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button for the widget settings to take effect.
 * **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
 * **Edit element**: Clicking this option will take you to the edit page of the item you are looking at, be it an entry, a page, a widget or a default template of the site.
-* **Share link**: Allows you to copy a link that you can share and whoever opens it, will go directly to the preview mode with the settings when copying the link. In order to view the preview mode, just have a login to the account admin.
+* **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
 * **Exit preview mode**: Close preview mode, removing the bar and leaving the tab in the current url of the site.
 
 :::warning Attention
