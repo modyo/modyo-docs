@@ -4,7 +4,7 @@ search: true
 
 # The Modyo interface
 
-In the following steps we'll show you what you can see and do within the platform.
+In the following sections we will show you what you can see and do within the platform.
 
 ![The Modyo interface](/assets/img/platform/modyo-screenshot.png)
 
