@@ -4,7 +4,7 @@ search: true
 
 # Users and Roles
 
-## Equipment
+## Team
 
 All internal users of the platform make up the team, and each member of the platform can have a specific role to play to harness the full potential of the system.
 
