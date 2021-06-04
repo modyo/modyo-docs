@@ -52,7 +52,7 @@ Site webhooks are:
 * Site disabled
 * Site Enabled
 * Site hidden
-* Site put in development
+* Site staged
 * Visible Site
 * Updated site
 * Approved templates
