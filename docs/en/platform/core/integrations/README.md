@@ -23,7 +23,7 @@ From Modyo 9 onwards, users (Customers> Users) and administrators (Settings> Tea
 
 ### Webhooks
 
-The platform also allows the use of Webhooks for certain specific events within your account. To do this, they must be enabled and configured from the webhooks section in the account settings.
+The platform also makes it possible to trigger Webhooks with specific events within your account. To do this, they must be enabled and configured from the webhooks section in the account settings.
 
 A webhook is an automatic _POST_ action to a given URL with certain information.
 
