@@ -102,7 +102,7 @@ When team review is enabled, you will be able to see an icon ( <svg xmlns="http:
 
 When this tab is opened, a chronological list of all the actions that have been carried out on the item will be displayed, with the option to see the detail of each action. You can leave comments at the bottom of the tab.
 
-When you leave a comment or action is executed on the item, a notification is sent to both the one sent for review and to the users who are on the reviewer list.
+When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision and the users who are on the list of reviewers.
 
 ## Versioning
 
