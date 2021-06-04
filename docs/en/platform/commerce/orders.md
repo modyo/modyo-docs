@@ -9,5 +9,5 @@ Here you can see the complete list of all orders made through the site. This all
 The filters that can be applied are:
 
 - Date
-- Order Status
-- Means of payment
+- Order status
+- Payment methods
