@@ -164,7 +164,7 @@ This status appears when team review is enabled and it means that an item in thi
 
 Within versioning, you have two actions that allow you to interact with the backups of an item (reset & rollback). Both actions are available in the "differences" pop-up window.
 
-![Differences Modal](/assets/img/platform/differences.png)
+![Difference mode](/assets/img/platform/differences.png)
 
 By default the differences modal shows the published version on the left, and the editable version on the right.
 
