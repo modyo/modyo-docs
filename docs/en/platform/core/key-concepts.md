@@ -104,7 +104,7 @@ When this tab is opened, a chronological list of all the actions that have been 
 
 When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision and the users who are on the list of reviewers.
 
-## Versioning
+## Versions
 
 As a backup mechanism, at the time of publishing an item, Modyo automatically generates and maintains a number of versions that can subsequently be retrieved if necessary.
 
