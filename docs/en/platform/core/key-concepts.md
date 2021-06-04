@@ -200,7 +200,7 @@ Locks are mostly used in [Content](/en/platform/content/) and [Channels](/en/pla
 
 Locks are implemented in different ways within the platform. In [Content](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can access a resource, with only one user being able to edit and save changes, while the others will only be able to see the latest saved version.
 
-If a second person tries to make a change, you will receive a message stating that the item already has changes and that what you are trying to modify is deprecated.
+If a second person tries to make a change, a message will appear indicating that the item already has changes and that what they are trying to modify is obsolete.
 
 In other sections such as [Customers](/en/platform/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if the resource is in edit, another user will not be able to enter the work view.
 
