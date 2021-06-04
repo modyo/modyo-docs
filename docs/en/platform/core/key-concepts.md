@@ -118,7 +118,7 @@ This system is available for Widgets, Pages, Navigation, Templates and Content.
 
 The "Editable" version stores changes made to the item since its last publication or its creation if it has never been published.
 
-This version is the one that goes through the team review process when it is enabled, and just at the time of publication, the "Editable" and "Published" versions have the same content.
+This version is the one that goes through the team review process when enabled, and at the time of publication, the "Editable" and "Published" versions have the same content.
 
 #### Published
 
