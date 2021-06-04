@@ -40,7 +40,7 @@ Keep in mind that if a user already has an associated role in a context (account
 
 ## Roles
 
-Roles are an essential feature of each of the internal users of the platform, as they allow you to optimize the workflow that each one has.
+Roles are an essential characteristic of each internal user of the platform, since roles allow you to optimize the workflow that each internal user has.
 
 Modyo has 11 default roles with different functions per context that will allow you to distribute and control who has access to which sections of each context of the platform.
 
