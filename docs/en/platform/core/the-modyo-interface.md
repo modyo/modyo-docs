@@ -11,7 +11,7 @@ In the following sections we will show you what you can see and do within the pl
 1. Main menu
 2. User session
 3. Main section title
-4. Primary stock area
+4. Primary action zone
 5. Account logo
 
 When you enter Modyo, you can see the following items in the main menu:
