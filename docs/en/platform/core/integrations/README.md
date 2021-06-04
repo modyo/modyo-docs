@@ -39,7 +39,7 @@ Site webhooks are:
 * Page deleted
 * Page published
 * Page unpublished
-* Updated page
+* Page updated
 * Login
 * Logout
 * Approved navigation
