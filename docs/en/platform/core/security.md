@@ -10,7 +10,7 @@ search: true
 
 The platform allows you to see all activity and changes made throughout the entire duration of the platform's existence.
 
-In this section, you can filter by date, movement type, or user that will allow you to track correctly.
+In this section, you can filter by date, activity type, or platform team member.
 
 In addition, you will have the possibility to see the detail of what was done and from which section it was done.
 
