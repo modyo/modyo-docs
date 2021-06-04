@@ -211,7 +211,7 @@ In this case, only an Administrator will be able to take control, activating for
 
 If an Administrator wants to take control of a view, he must click on the item in use and, in the next screen, click on the **Take Control** button.
 
- <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" /> 
+<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
 When the Administrator takes control, the user who is using the resource will receive a message preventing them from continuing to make changes, so any changes that are being made must be saved and backed up offline.
 
