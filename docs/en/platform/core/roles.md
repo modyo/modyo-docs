@@ -56,7 +56,7 @@ The default roles that exist are, depending on context:
 - **Default admin**: You have all existing permissions, but you must be invited to each context in order to access its roles.
 - **Owner**: You have all existing perimsos and you can access all contexts without having to be invited to them.
 
-#### Roles per site:
+#### Site-level roles:
 
 - **Site developer**: You can only edit resources (you cannot publish, delete, rollback, or edit settings).
 - **Site reviewer**: It is a site admin but without editing the site configuration.
