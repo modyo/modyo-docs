@@ -14,7 +14,7 @@ In this section, you can filter by date, activity type, or platform team member.
 
 In addition, you can see the details of what activity was done and in which section of the platform it originated.
 
-This can help you if you have many internal users of the platform or to detect errors and changes in the production and development chain.
+These activity logs are especially useful when you need to stay on top of changes and updates made by many concurrent users and will help you to detect errors and changes in the production and development chain.
 
 
 
