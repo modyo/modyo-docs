@@ -6,7 +6,7 @@ search: true
 
 ## Team
 
-All internal users of the platform make up the team, and each member of the platform can have a specific role to play to harness the full potential of the system.
+All internal users of the platform make up the team, and each member of the platform can be assigned a specific role to unlock the full potential of the system.
 
 To create an internal user, you must click on the top button and fill in the fields. Once created the registration invitation is sent to you by email, you can choose whether to send your login password in the same message.
 
