@@ -51,8 +51,8 @@ When you enable this option, you will need to specify the domains (separated by 
 
 After configuring CORS, the platform will give you a key or _secret_ to be able to decode users' JWTs in order to access [private content via the API](/en/platform/content/public-api-reference.html#private-content).
 
-:::warning Attention
-The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all private content requests to pass through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
+:::warning Warning
+The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
 The key or _secret_ has a certain duration time in seconds that can be set in the box below. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very small duration, as it could affect the _performance_ of the platform.
