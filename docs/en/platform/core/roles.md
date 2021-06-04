@@ -18,7 +18,7 @@ If you want to deactivate an internal user, you must click on the action button 
 
 When you enter the edit view of an internal user, you will see in the main tab a list of all his actions since he registered and logged in for the first time to the platform.
 
-The rest of the tabs can include visible or modifiable information about a user, including:
+The rest of the tabs include visible or modifiable user information:
 
 - Sites (to which you have access)
 - Role
