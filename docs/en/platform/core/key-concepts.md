@@ -255,6 +255,6 @@ You can create global variables in your account settings, and you can add values
 When using global variables, always take as preference the variables defined at the lowest level, being first the variables defined in the widget, then the ones defined in the site and then the variables defined at the account level, so you must be careful when defining variables in widgets or the site with the same name as the account variables.
 :::
 
-:::danger danger
-Global variables do not have a publishing, versioned, or team review workflow, and only account and site administrators can modify them, so consider that making a change in the value of these variables will immediately be reflected wherever they are being used. This does not apply for variables defined in widgets, because widgets and pages do have publishing flow.
+:::danger Danger
+The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them, so you should consider that when you make a change in the value of these, it will be reflected immediately wherever they are being used. This does not apply to the variables defined in the widgets, since the widgets and pages do have a publishing flow.
 :::
