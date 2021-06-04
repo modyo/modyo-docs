@@ -168,7 +168,7 @@ Within versioning, you have two actions that allow you to interact with the back
 
 By default, this pop-up shows you the published version on the left side, and the editable version on the right side.
 
-You can change which versions to compare, changing the values in the version selectors at the top of the modal.
+You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
 When you apply any of the actions, you always take the selected version on the left, so if you reset, the left-hand version will be taken to the editable version, and if you roll back, the left version will be taken to the published version.
 
