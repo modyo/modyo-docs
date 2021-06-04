@@ -29,7 +29,7 @@ A webhook is an automatic _POST_ action at a given URL with certain information.
 
 To enable them, you must check the box at the top of the page and then proceed to create all the webhooks you want.
 
-Webhooks can be created from site or space actions.
+Webhooks can be created from actions of sites or spaces.
 
 Site webhooks are:
 
