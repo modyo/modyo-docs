@@ -75,4 +75,4 @@ Since we have roles that allow access to all applications without any restrictio
 
 ### Assign a role per account
 
-To assign a role in the account context, you must go to the Team section and click the profile of the user you want to change. Then enter the Role tab and select the role you want to assign to the user.
+To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user.
