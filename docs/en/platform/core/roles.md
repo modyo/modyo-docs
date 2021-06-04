@@ -23,7 +23,7 @@ The rest of the tabs include visible or modifiable user information:
 - Sites (to which you have access)
 - Role
 - Credentials
-- Custom API Access
+- API access
 - General data
 
 ## Groups
