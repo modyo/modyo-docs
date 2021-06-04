@@ -10,7 +10,7 @@ The platform is currently compatible with:
 
 - [Facebook](/en/platform/core/integrations/facebook.html)
 - [Google](/en/platform/core/integrations/google.html)
-- [LDAP] (/es/platform/core/integrations/ldap.html)
+- [LDAP](/en/platform/core/integrations/ldap.html)
 - [SAML] (/es/platform/core/integrations/saml.html)
 - [OAuth2] (/es/platform/core/integrations/oauth2.html)
 - [OpenID Connect] (/es/platform/core/integrations/oidc.html)
