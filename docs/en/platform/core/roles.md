@@ -64,7 +64,7 @@ The default roles that exist are, depending on context:
 
 #### Space-level roles:
 
-- **Space writer**: You can only edit content (you cannot publish, delete, rollback, or edit settings).
+- **Space writer**: Can only edit content (cannot publish, delete, rollback or edit the configuration).
 - **Space editor**: It is a space admin but without editing the space configuration, it does not have permissions on assets or can create types.
 - **Space admin**: You have all the permissions at the level of a space, but you cannot create new spaces, you can create and delete assets.
 
