@@ -166,7 +166,7 @@ Within versioning, you have two actions that allow you to interact with the back
 
 ![Difference mode](/assets/img/platform/differences.png)
 
-By default the differences modal shows the published version on the left, and the editable version on the right.
+By default, this pop-up shows you the published version on the left side, and the editable version on the right side. You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
 You can change which versions to compare, changing the values in the version selectors at the top of the modal.
 
