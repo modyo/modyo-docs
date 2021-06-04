@@ -170,7 +170,7 @@ By default, this pop-up shows you the published version on the left side, and th
 
 You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
-When you apply any of the actions, you always take the selected version on the left, so if you reset, the left-hand version will be taken to the editable version, and if you roll back, the left version will be taken to the published version.
+When one of the actions is applied, it will always use the version to the left. This means that if you choose to reset an item to a previous version, the code to the left will become the new editable version, and if you choose to perform a rollback, the version to the left will become the new published version.
 
 #### Reset
 
