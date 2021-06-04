@@ -68,4 +68,4 @@ You can download the app for your phone with the following links:
 
 Each team member will be able to enable two-step authentication from their profile, but as an administrator, you can also enforce two-step authentication for all team members.
 
-When you force two-step authentication for team members, the next time a team member logs in, you will be required to configure your authentication device in two steps. Once configured, you will need to log in using your password and the code provided by _Google Authenticator_.
+By enforcing two-step authentication for team members, the next time a team member logs in, they will be required to set up their two-step authentication device. Once set up, they will need to sign in using their password and the code provided by _Google Authenticator_.
