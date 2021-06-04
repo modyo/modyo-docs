@@ -9,7 +9,7 @@ One of the features Modyo has to facilitate the interaction between other user s
 The platform is currently compatible with:
 
 - [Facebook](/en/platform/core/integrations/facebook.html)
-- [Google] (/es/platform/core/integrations/google.html)
+- [Google](/en/platform/core/integrations/google.html)
 - [LDAP] (/es/platform/core/integrations/ldap.html)
 - [SAML] (/es/platform/core/integrations/saml.html)
 - [OAuth2] (/es/platform/core/integrations/oauth2.html)
