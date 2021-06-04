@@ -134,8 +134,8 @@ Backups are previously published versions of the items. That is, every time we p
 
 If you want to review a particular version of an item, you can go to the "Differences between versions" section, so you can see the changes that have been made and revert them when necessary.
 
-:::warning Attention
-By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you'll be clearing the backing for the first post of the item.
+::: warning Warning
+By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item.
 
 This value can be modified using environment variables and is common for all accounts in environment variables.
 :::
