@@ -49,7 +49,7 @@ Site webhooks are:
 * Profile updated
 * Site created
 * Site deleted
-* Deactivated site
+* Site disabled
 * Site Enabled
 * Hidden Site
 * Site put in development
