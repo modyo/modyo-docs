@@ -13,7 +13,7 @@ The platform is currently compatible with:
 - [LDAP](/en/platform/core/integrations/ldap.html)
 - [SAML](/en/platform/core/integrations/saml.html)
 - [OAuth2](/en/platform/core/integrations/oauth2.html)
-- [OpenID Connect] (/es/platform/core/integrations/oidc.html)
+- [OpenID Connect](/en/platform/core/integrations/oidc.html)
 
 Remember to have at hand all the data and certificates that are required of you before changing them or integrating a service, so that there are no problems with the general income of users.
 
