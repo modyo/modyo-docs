@@ -10,7 +10,7 @@ All internal users of the platform make up the team, and each member of the plat
 
 To create and add a new team member to the platform, you must click on the "New" button at the top of your interface and complete the fields. Once the registration is completed an invitation will be sent to the user by email, you can choose whether to send the login password in the same message.
 
-To check all users, you can filter by their status and by the roles they have assigned to occupy on the platform.
+To check all users, you can filter by their status and by their roles within the platform.
 
 If you want to disable an internal user, you must click on the actions button to the right of the user. In case you want to edit your data, you can use the same button, or click on the same name.
 
