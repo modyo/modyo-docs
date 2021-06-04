@@ -198,7 +198,7 @@ Locks are mostly used in [Content](/en/platform/content/) and [Channels](/en/pla
 
 ### How to use Locks?
 
-Locks is implemented in different ways within the platform. In [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can enter a resource, only one being able to edit and save those changes, while others will only see the latest version saved on the platform.
+Locks are implemented in different ways within the platform. In [Content](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can access a resource, with only one user being able to edit and save changes, while the others will only be able to see the latest saved version.
 
 If a second person tries to make a change, you will receive a message stating that the item already has changes and that what you are trying to modify is deprecated.
 
