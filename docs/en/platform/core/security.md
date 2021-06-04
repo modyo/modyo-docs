@@ -8,7 +8,7 @@ search: true
 
 <img src="/assets/img/platform/activity-logs.jpg" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-The platform allows you to see all the moves that have been made for as long as you have it active.
+The platform allows you to see all activity and changes made throughout the entire duration of the platform's existence.
 
 In this section, you can filter by date, movement type, or user that will allow you to track correctly.
 
