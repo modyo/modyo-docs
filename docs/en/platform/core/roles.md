@@ -50,7 +50,7 @@ Modyo defaults to default roles, sorted according to the context or section in w
 
 The default roles that exist are, depending on context:
 
-#### Roles per account:
+#### Account-level roles:
 
 - **Default user**: You have all existing permissions. minus editing the settings for each context. You must be invited to each context in order to access its functionalities.
 - **Default admin**: You have all existing permissions, but you must be invited to each context in order to access its roles.
