@@ -29,7 +29,7 @@ In this section we will explain how to configure various options to improve the 
 
 <img src="/assets/img/platform/cors.png" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-### Password Policy
+### Password policy
 
 This section will allow you to configure password security policy for team members. Within the options you can choose the following:
 
