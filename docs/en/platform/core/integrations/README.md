@@ -61,7 +61,7 @@ Site webhooks are:
 * Theme Installed
 * Theme restored
 * Theme updated
-* Approved widget
+* Widget approved
 * Cloned widget
 * Widget created
 * Published widget
