@@ -122,7 +122,7 @@ This version is the one that goes through the team review process when enabled, 
 
 #### Published
 
-This version saves the content visible on the site and is freely available to any user.
+This version stores the content that is visible on the site and is freely available to any user.
 
 In this case, internal resources such as Widgets and Templates can already be used in the creation of any site or page.
 
