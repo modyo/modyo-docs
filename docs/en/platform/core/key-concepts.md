@@ -215,7 +215,6 @@ If an Administrator wants to take control of a view, he must click on the item i
 
 When the Administrator takes control, the user who is using the resource will receive a message that will prevent him from making any further changes. Any changes that are being made must be saved and backed up offline.
 
-
 After taking control, the Administrator will only have two hours to make unsaved changes. After that time, the resource will be released again and can be taken by any other user.
 :::
 
