@@ -64,7 +64,8 @@ Two-step authentication adds an extra layer of security to your account. Each ti
 You can download the app for your phone with the following links:
 
 * Android: [Google Authenticator on Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
-* iOS: [Google Authenticator on Apple App Store](https://apps.apple.com/us/app/google-authenticator/id388497605)
+* iOS: [Google Authenticator on the Apple App Store](https://apps.apple.com/us/app/google-authenticator/id388497605)
+
 
 Each team member can enable two-step authentication from their profile, but as an administrator, you can force two-step authentication for all team members. 
 
