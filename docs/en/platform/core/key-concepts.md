@@ -126,7 +126,7 @@ This version stores the content that is visible on the site and is freely availa
 
 In this state, internal resources such as Widgets and Templates can be used in the creation of any site or page.
 
-The published version does not necessarily have the same content as the editable one (except at the right time of publication), as it may contain changes that are in the process of testing or revision.
+The published version does not necessarily have the same content as the editable version (except at the time of publication), as it may contain changes that are in the process of being tested or reviewed.
 
 #### Backups
 
