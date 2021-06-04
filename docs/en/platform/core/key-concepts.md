@@ -162,7 +162,7 @@ This status appears when team review is enabled and it means that an item in thi
 
 ### Actions for versioning
 
-Inside the versioned you have two actions that allow you to interact with backups. Both actions are available in the differences modal.
+Within versioning, you have two actions that allow you to interact with the backups of an item (reset & rollback). Both actions are available in the "differences" pop-up window.
 
 ![Differences Modal](/assets/img/platform/differences.png)
 
