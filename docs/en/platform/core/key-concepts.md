@@ -106,7 +106,7 @@ When a team member has left a comment or an action is performed on the item, a n
 
 ## Versions
 
-As a backup mechanism, at the time of publishing an item, Modyo automatically generates and maintains a number of versions that can subsequently be retrieved if necessary.
+As a backup mechanism, Modyo automatically generates and stores different versions of an item each time it is published, which can later be retrieved if necessary.
 
 This is useful when, for some reason, an improper change is made, then there is a possibility to reverse it through the platform.
 
