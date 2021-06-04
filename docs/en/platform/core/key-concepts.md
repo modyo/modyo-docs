@@ -235,7 +235,7 @@ The elements you can interact with in the preview bar are:
 * **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
 * **Edit element**: Clicking this option will take you to the edit page of the item you are looking at, be it an entry, a page, a widget or a default template of the site.
 * **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
-* **Exit preview mode**: Close preview mode, removing the bar and leaving the tab in the current url of the site.
+* **Exit preview mode**: Closes the preview mode, removes the bar and leaves the tab in the current site url.
 
 :::warning Attention
 Changing the content selector in the preview bar will have no effect on the content you're using through the JavaScript SDK or the Content API. It will only have an effect on the content used through the Liquid SDK.
