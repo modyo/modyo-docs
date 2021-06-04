@@ -237,8 +237,8 @@ The elements you can interact with in the preview bar are:
 * **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
 * **Exit preview mode**: Closes the preview mode, removes the bar and leaves the tab in the current site url.
 
-:::warning Attention
-Changing the content selector in the preview bar will have no effect on the content you're using through the JavaScript SDK or the Content API. It will only have an effect on the content used through the Liquid SDK.
+:::warning Warning
+Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
 :::
 
 ## Global Variables
