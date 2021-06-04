@@ -4,6 +4,13 @@ search: true
 
 # Notas del release
 
+### 9.1.22 - 4 de junio del 2021
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arreglan problemas de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arreglan problemas de rendimiento
+
 ### 9.1.21 - 28 de mayo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
