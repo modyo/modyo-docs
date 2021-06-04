@@ -51,7 +51,7 @@ Site webhooks are:
 * Site deleted
 * Site disabled
 * Site Enabled
-* Hidden Site
+* Site hidden
 * Site put in development
 * Visible Site
 * Updated site
