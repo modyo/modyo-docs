@@ -16,7 +16,7 @@ If you want to deactivate an internal user, you must click on the action button 
 
 ### User Editing
 
-When you enter the edit view of an internal user, you will be able to see in the main tab a list of all their actions since they first registered and entered the platform.
+When you enter the edit view of an internal user, you will see in the main tab a list of all his actions since he registered and logged in for the first time to the platform.
 
 The rest of the tabs can include visible or modifiable information about a user, including:
 
