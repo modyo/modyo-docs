@@ -8,7 +8,7 @@ search: true
 
 All internal users of the platform make up the team, and each member of the platform can be assigned a specific role to unlock the full potential of the system.
 
-To create an internal user, you must click on the top button and fill in the fields. Once created the registration invitation is sent to you by email, you can choose whether to send your login password in the same message.
+To create and add a new team member to the platform, you must click on the "New" button at the top of your interface and complete the fields. Once the registration is completed an invitation will be sent to the user by email, you can choose whether to send the login password in the same message.
 
 To check all users, you can filter by their status and by the roles they have assigned to occupy on the platform.
 
