@@ -10,7 +10,7 @@ In the following sections we will show you what you can see and do within the pl
 
 1. Main menu
 2. User session
-3. Main title of the section
+3. Main section title
 4. Primary stock area
 5. Account logo
 
