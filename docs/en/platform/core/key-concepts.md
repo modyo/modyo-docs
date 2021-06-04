@@ -150,8 +150,8 @@ Modyo only allows you to have one scheduled version of each element, so if you s
 
 In the same way you can schedule a publication, you can schedule to unpublish an item. When the time comes, the published version will become a backup, leaving the corresponding item without a published version.
 
-:::warning Attention
-When it is time to execute the scheduled actions, Modyo may take a couple of minutes to perform the action. We'll send you an email when the action is complete.
+:::warning Warning
+When the time comes to execute the scheduled actions, it may take a couple of minutes for Modyo to perform the action. We will send you an email when the action is complete.
 :::
 
 There are elements (home, navigation and templates) that cannot be unpublished, and when publishing them and scheduling an unpublication in conjunction with other elements, the latter will have no effect on these specific elements.
