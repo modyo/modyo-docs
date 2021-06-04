@@ -180,7 +180,7 @@ In this case, the backup will be copied to the editable version, losing all subs
 
 In this case, the backup will be copied directly to the published version of the item, without touching the editable version.
 
-This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
+This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had. 
 
 ::: danger danger
 Because this is a potentially dangerous action, only site or space administrators have the permission to be able to execute this action.
