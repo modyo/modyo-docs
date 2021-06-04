@@ -144,8 +144,8 @@ This value can be modified using environment variables and is common for all acc
 
 When you decide to schedule a publication, the editable version goes into a scheduled state, and and when it is time to publish, that scheduled version will take the place of the version that is published at that time. This way, you can schedule a future change for items, and continue working on the editable version.
 
-:::warning Attention
-Modyo only allows you to have one scheduled version of each item, so if you program a second modification to the item, you'll be overwriting the previous programming.
+:::warning Warning
+Modyo only allows you to have one scheduled version of each element, so if you schedule a second modification of the item, you will be overwriting the previous scheduled version.
 :::
 
 Along with the publication schedule, you can schedule an unpublicisation. At the time, the version that is published will become a backup, leaving the item in question without a published version.
