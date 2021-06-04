@@ -55,7 +55,7 @@ After configuring CORS, the platform will give you a key or _secret_ to be able 
 The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
-The key or _secret_ has a certain duration time in seconds that can be set in the box below. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very small duration, as it could affect the _performance_ of the platform.
+The key or _secret_ has a specific time duration in seconds that can be configured in the box labeled _Content delivery token TTL_. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very small duration, as this could affect the performance of the platform.
 
 ### Two-Step Authentication
 
