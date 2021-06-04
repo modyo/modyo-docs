@@ -12,7 +12,7 @@ The platform allows you to see all activity and changes made throughout the enti
 
 In this section, you can filter by date, activity type, or platform team member.
 
-In addition, you will have the possibility to see the detail of what was done and from which section it was done.
+In addition, you can see the details of what activity was done and in which section of the platform it originated.
 
 This can help you if you have many internal users of the platform or to detect errors and changes in the production and development chain.
 
