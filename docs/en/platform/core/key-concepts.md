@@ -112,7 +112,7 @@ This is useful when, for some reason, an undue change is made, there is the poss
 
 This system is available for Widgets, Pages, Navigation, Templates and Content.
 
-### Versions of resources
+### Resource Versions
 
 #### Editable
 
