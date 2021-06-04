@@ -251,8 +251,8 @@ You can use plain text, HTML code, JavaScript and CSS within the global variable
 
 You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings, or in each of the custom widgets of the builder widget.
 
-:::warning Attention
-When using global variables, the variables defined at the lowest level will always be preferred, with the variables defined in the widget first, then those defined in the site and then the variables defined at the account level, so be careful when defining variables in widgets or the site with the same name that the variables in the account.
+:::warning Warning
+When using global variables, always take as preference the variables defined at the lowest level, being first the variables defined in the widget, then the ones defined in the site and then the variables defined at the account level, so you must be careful when defining variables in widgets or the site with the same name as the account variables.
 :::
 
 :::danger danger
