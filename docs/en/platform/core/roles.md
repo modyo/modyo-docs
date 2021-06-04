@@ -42,7 +42,7 @@ Keep in mind that if a user already has an associated role in a context (account
 
 Roles are an essential characteristic of each internal user of the platform, since roles allow you to optimize the workflow that each internal user has.
 
-Modyo has 11 default roles with different functions per context that will allow you to distribute and control who has access to which sections of each context of the platform.
+Modyo has 11 default roles with different functions by area or application. The platform also allows you to create more custom roles, depending on the area of the platform.
 
 ### Default Roles
 
