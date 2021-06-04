@@ -6,7 +6,7 @@ search: true
 
 One of the features Modyo has to facilitate the interaction between other user systems and Modyo is the integration with different authentication services.
 
-Currently the platform is compatible with:
+The platform is currently compatible with:
 
 - [Facebook] (/es/platform/core/integrations/facebook.html)
 - [Google] (/es/platform/core/integrations/google.html)
