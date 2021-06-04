@@ -42,7 +42,7 @@ Site webhooks are:
 * Page updated
 * Login
 * Logout
-* Approved navigation
+* Navigation approved
 * Published navigation
 * Navigation sent for review
 * Updated navigation
