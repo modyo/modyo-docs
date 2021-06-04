@@ -44,8 +44,9 @@ When saving this configuration, existing users will have to comply with these co
 
 In this section we can activate Cross Origin Resource Sharing (CORS), so that Modyo resources can be accessed from other websites that are not necessarily secure.
 
-When you enable it, you'll need to specify the domains (separated by comma and no bar at the end) that you want to enable to be sharing resources with your site. For example:
+When you enable this option, you will need to specify the domains (separated by comma and no slash at the end) that you want to allow access from to share resources with your site. For example:
 `http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
+
 
 ### Content Delivery Token (JWT)
 
