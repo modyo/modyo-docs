@@ -33,7 +33,7 @@ Webhooks can be created from actions of sites or spaces.
 
 Site webhooks are:
 
-* Response of the created form
+* Response of the form created
 * Updated form response
 * Page created
 * Deleted page
