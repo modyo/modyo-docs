@@ -38,7 +38,7 @@ This section will allow you to set the password security policy for team members
 * **Require at least one uppercase letter from the Latin alphabet (A to Z)**: With this option you ensure that at least one capital letter exists within team members' passwords.
 * **Require at least one non-alphanumeric character (! @ # $ % ^ & * () _ + - = [] {} |)**: With this option you force your team members to use at least one of the special characters indicated in the list in their passwords.
 
-When saving these settings, users must comply with these conditions when changing their password.
+When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
 
 ### Share resources across different domains
 
