@@ -194,7 +194,7 @@ Locks is a feature in Modyo that allows you to modify a resource safely, without
 
 ### What elements do Locks use?
 
-Locks is mostly used in [Contents](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items such as Settings and [Customers](/en/platform/customers/) are edited.
+Locks are mostly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items can be edited, such as Settings and [Customers](/en/platform/customers/).
 
 ### How to use Locks?
 
