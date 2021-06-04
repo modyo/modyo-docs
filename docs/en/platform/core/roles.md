@@ -62,7 +62,7 @@ The default roles that exist are, depending on context:
 - **Site reviewer**: A site admin, but without the ability to edit the site configuration.
 - **Site admin**: You have all the permissions at the level of a site, but you cannot create new sites.
 
-#### Roles by space:
+#### Space-level roles:
 
 - **Space writer**: You can only edit content (you cannot publish, delete, rollback, or edit settings).
 - **Space editor**: It is a space admin but without editing the space configuration, it does not have permissions on assets or can create types.
