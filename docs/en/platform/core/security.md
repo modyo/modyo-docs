@@ -23,7 +23,7 @@ These activity logs are especially useful when you need to stay on top of change
 In this section we will explain how to configure various options to improve the security of your Modyo account:
 
 * Password policy
-* Share resources across domains ([CORS - Cross Origin Resource Sharing](https://www.w3.org/TR/cors/))
+* Share resources across different domains ([CORS - Cross Origin Resource Sharing](https://www.w3.org/TR/cors/))
 * Content Delivery Token ([JWT](https://tools.ietf.org/html/rfc7519))
 * Two-Step Authentication
 
