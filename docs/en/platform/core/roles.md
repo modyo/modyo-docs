@@ -12,7 +12,7 @@ To create and add a new team member to the platform, you must click on the "New"
 
 To check all users, you can filter by their status and by their roles within the platform.
 
-If you want to disable an internal user, you must click on the actions button to the right of the user. In case you want to edit your data, you can use the same button, or click on the same name.
+If you want to deactivate an internal user, you must click on the action button to the right. If you want to edit their data, you can use the same button, or click on their name.
 
 ### Edit User
 
