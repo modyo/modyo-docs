@@ -43,7 +43,7 @@ Site webhooks are:
 * Login
 * Logout
 * Navigation approved
-* Published navigation
+* Navigation published
 * Navigation sent for review
 * Updated navigation
 * Updated profile
