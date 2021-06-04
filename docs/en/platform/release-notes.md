@@ -12,13 +12,13 @@ search: true
 ### 9.1.20 - 27 May 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs solved
+* Multiple bugs solved.
 * User Experience Improvements
 
 ### 9.1.19 - 19 May 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs solved
+* Multiple bugs solved.
 
 ### 9.1.18 - 18 May 2021
 
@@ -36,7 +36,7 @@ search: true
 ### 9.1.16 - April 23, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs solved
+* Multiple bugs solved.
 * Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -46,7 +46,7 @@ search: true
 ### 9.1.15 - April 14, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bugs solved
+* Multiple bugs solved.
 * Added to the panel a tool to resolve inconsistencies in secondary structure to maintain the order of the pages of the site.
 * Fixed a bug when uploading very large images to the file manager.
 * Fixed a bug that caused the code editor to freeze on specific liquid syntaxes.
