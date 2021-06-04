@@ -241,7 +241,7 @@ The elements you can interact with in the preview bar are:
 Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
 :::
 
-## Modyo allows you to define global variables that you can use in all the sites where you have Liquid. This way you can, for example, share a code snippet between sites.
+## Global variables
 
 Modyo has the functionality to define global variables that you can use everywhere you have Liquid, so you can, for example, share a _snippet_ code between sites.
 
