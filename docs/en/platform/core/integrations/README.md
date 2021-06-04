@@ -15,7 +15,7 @@ The platform is currently compatible with:
 - [OAuth2](/en/platform/core/integrations/oauth2.html)
 - [OpenID Connect](/en/platform/core/integrations/oidc.html)
 
-Remember to have at hand all the data and certificates that are required of you before changing them or integrating a service, so that there are no problems with the general income of users.
+Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
 :::tip Tip
 From Modyo 9 onwards, users (Customers>Users) and administrators (Settings>Computer) are logically separated. Both have support for all integrations that support the platform, but with different logins, so you can configure Facebook for your users and Oauth2 for your administrators, for example.
