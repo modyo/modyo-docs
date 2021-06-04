@@ -60,7 +60,7 @@ The default roles that exist are, depending on context:
 
 - **Site developer**: Can only edit resources (cannot publish, delete, rollback or edit the configuration).
 - **Site reviewer**: A site admin, but without the ability to edit the site configuration.
-- **Site admin**: You have all the permissions at a site level, but you cannot create new sites.
+- **Site admin**: You have all the permissions at the level of a site, but you cannot create new sites.
 
 #### Roles by space:
 
