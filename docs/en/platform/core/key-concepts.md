@@ -182,8 +182,8 @@ In this case, the backup will be copied directly to the published version of the
 
 This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
 
-::: danger danger
-Because this is a potentially dangerous action, only site or space administrators have the permission to be able to execute this action.
+::: danger Danger
+Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
 :::
 
 ## Locks
