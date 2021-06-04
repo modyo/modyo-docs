@@ -68,7 +68,7 @@ The default roles that exist are, depending on context:
 - **Space editor**: A space admin, but without the ability to edit the space configuration. This role does not have asset permissions, nor can it create types.
 - **Space admin**: You have all the permissions at the level of a space, but you cannot create new spaces. Space admins can create and delete assets.
 
-The most important user will have the role of Default Admin or Administrator, who will have all the functions enabled to manage the platform and sites.
+The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
 ### Access to applications:
 Since we have roles that allow access to all applications without any restriction, Modyo allows you to restrict access to certain applications by setting the team member, so you can give a user full access (Owner) but only in the channels app.
