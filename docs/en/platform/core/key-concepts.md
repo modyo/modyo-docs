@@ -137,7 +137,7 @@ If you want to review a particular version of an item, you can go to the "Differ
 ::: warning Warning
 By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item.
 
-This value can be modified using environment variables and is common for all accounts in environment variables.
+This value can be modified using environment variables and is common for all accounts in that environment.
 :::
 
 #### Scheduled
