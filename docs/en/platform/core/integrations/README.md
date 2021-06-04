@@ -4,7 +4,7 @@ search: true
 
 # Integrations
 
-One of the features of Modyo to facilitate the interaction of other user systems with Modyo is integrations with different authentication services.
+One of the features Modyo has to facilitate the interaction between other user systems and Modyo is the integration with different authentication services.
 
 Currently the platform is compatible with:
 
