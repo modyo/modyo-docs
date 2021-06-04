@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Modyo's interface
+# The Modyo interface
 
 In the following steps we'll show you what you can see and do within the platform.
 
