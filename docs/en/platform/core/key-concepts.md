@@ -130,7 +130,7 @@ The published version does not necessarily have the same content as the editable
 
 #### Backups
 
-Backups are previously published versions of items. That is, every time we publish an item, Modyo saves the previously published version as a backup.
+Backups are previously published versions of the items. That is, every time we publish an item, Modyo saves the previously published version as a backup.
 
 If you want to review a particular version of an item, you can go to the "Differences Between Versions" so you can see the changes that have been made and revert them when necessary.
 
