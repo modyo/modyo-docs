@@ -14,7 +14,7 @@ To check all users, you can filter by their status and by their roles within the
 
 If you want to deactivate an internal user, you must click on the action button to the right. If you want to edit their data, you can use the same button, or click on their name.
 
-### Edit User
+### User Editing
 
 When you enter the edit view of an internal user, you will be able to see in the main tab a list of all their actions since they first registered and entered the platform.
 
