@@ -174,7 +174,7 @@ When one of the actions is applied, it will always use the version to the left. 
 
 #### Reset
 
-In this case, the backup will be copied to the editable version, so all the changes that were made later will be lost, so you can continue working on potential changes to that version to republish it.
+In this case, the backup will be copied to the editable version, losing all subsequent changes so that you can continue working on potential changes to this version before publishing again.
 
 #### Rollback
 
