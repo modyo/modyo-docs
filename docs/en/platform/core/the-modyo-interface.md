@@ -9,7 +9,7 @@ In the following sections we will show you what you can see and do within the pl
 ![The Modyo interface](/assets/img/platform/modyo-screenshot.png)
 
 1. Main menu
-2. Session
+2. User session
 3. Main title of the section
 4. Primary stock area
 5. Account logo
