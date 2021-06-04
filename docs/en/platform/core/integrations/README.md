@@ -46,7 +46,7 @@ Site webhooks are:
 * Navigation published
 * Navigation sent for review
 * Navigation updated
-* Updated profile
+* Profile updated
 * Site created
 * Deleted site
 * Deactivated site
