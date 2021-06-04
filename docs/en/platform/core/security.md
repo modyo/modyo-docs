@@ -20,7 +20,7 @@ These activity logs are especially useful when you need to stay on top of change
 
 ## Security
 
-In this section we can configure different aspects to improve the security of our account in Modyo:
+In this section we will explain how to configure various options to improve the security of your Modyo account:
 
 * Password Policy
 * Share resources across domains ([CORS - Cross Origin Resource Sharing](https://www.w3.org/TR/cors/))
