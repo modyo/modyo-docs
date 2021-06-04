@@ -49,7 +49,7 @@ When you enable this option, you will need to specify the domains (separated by 
 
 ### Content Delivery Token (JWT)
 
-After configuring CORS, the platform will give you a key or _secret_ to decode users' JWTs and thus be able to access [private content via the API](/es/platform/content/public-api-reference.html #contenido -private-2).
+After configuring CORS, the platform will give you a key or _secret_ to be able to decode users' JWTs in order to access [private content via the API](/en/platform/content/public-api-reference.html#private-content).
 
 :::warning Attention
 The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all private content requests to pass through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
