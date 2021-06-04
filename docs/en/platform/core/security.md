@@ -31,7 +31,7 @@ In this section we will explain how to configure various options to improve the 
 
 ### Password policy
 
-This section will allow you to configure password security policy for team members. Within the options you can choose the following:
+This section will allow you to set the password security policy for team members. Within the options you can choose the following:
 
 * **Force Minimum Length**: By default the minimum length required by Modyo is 8 characters, but if required, you can force the minimum length of team member passwords to a larger size.
 * **Require at least one lowercase letter of the Latin alphabet (a - z) **: With this option you ensure that at least one lowercase letter exists within the team members' password.
