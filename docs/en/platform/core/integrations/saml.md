@@ -4,7 +4,7 @@ search: true
 
 ### SAML
 
-In order to integrate a SAML login into Modyo, you will need the following information from your identity provider:
+In order to integrate a login with SAML in Modyo, you will need the following information from your identity provider:
 
 - Name of the service
 - Issuer
