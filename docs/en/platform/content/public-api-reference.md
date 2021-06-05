@@ -7,28 +7,24 @@ sidebarDepth: 1
 
 Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](/en/platform/content/) with [Modyo Channels](/en/platform/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
 
-::: tip SDKs for other languages
-At the moment there is only an SDK for Javascript. In the future, we plan to incorporate versions in other languages.
-:::
+::: tip SDKs for other languages At the moment there is only an SDK for Javascript. In the future, we plan to incorporate versions in other languages. :::
 
 ## Liquid SDK
 
 The Liquid SDK allows you to natively consume content from [Modyo Channels](/en/platform/channels/) in any of the sections of the platform that use the [Liquid](/en/platform/channels/liquid-markup.html) markup language, like [Widgets](/en/platform/channels/widgets.html) and [Templates](/en/platform/channels/templates.html) in your sites.
 
-:::warning Warning
-From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
+:::warning Warning From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
 
 * Fields belonging to the meta-information of the entry that were previously used as <span v-pre>`{{ entry.slug }}`</span> must now be used as <span v-pre>`{{ entry.meta.slug }}`</span> or <span v-pre>`{{ entry.meta['slug'] }}`</span>
 * Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
 
-Both forms will be available until Modyo version 9.2.
-:::
+Both forms will be available until Modyo version 9.2. :::
 
 ### Access entries in a space
 
 To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
 
-``` liquid
+```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
@@ -92,13 +88,9 @@ You can page the entries using the `paginated` filter and display the pagination
 
 In the previous case, the list of entries with 10 elements per page will be paginated and at the end of the list the pagination links will appear. You can navigate through each page using the _GET_ parameter `page` in the URL, for example `my-page.com/landing?page=2`.
 
-::: warning Warning
-Note that if you have more than one widget that uses content pagination, the _GET_ `per_page` and `page` parameters in the URL affect all widgets within a page.
-:::
+::: warning Warning Note that if you have more than one widget that uses content pagination, the _GET_ `per_page` and `page` parameters in the URL affect all widgets within a page. :::
 
-::: warning Warning
-To use pagination in a custom widget, you must change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}} `</span>. This is necessary since custom widgets are loaded asynchronously. You also need to ensure that _JQuery_ is available on your site and remember that when you use the pagination links, only the widget HTML will be changed and the widget's _JavaScript_ will not be executed again.
-:::
+::: warning Warning To use pagination in a custom widget, you must change the filter associated with pagination to <span v-pre> `{{entries | pagination_links_remote}} `</span>. This is necessary since custom widgets are loaded asynchronously. You also need to ensure that _JQuery_ is available on your site and remember that when you use the pagination links, only the widget HTML will be changed and the widget's _JavaScript_ will not be executed again. :::
 
 ### Order entries
 
@@ -108,8 +100,7 @@ In the same way that you can filter by category `by_category`, tags `by_tags` an
 {% assign entries = spaces ['space_uid'] .types ['type_uid'] .entries | sort_by: 'published_at', 'asc'%}
 ```
 
-The available ordering options are `asc` and `desc`, and by default if this parameter is not specified, the values will be set to `desc`.
-The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug` and `field`.
+The available ordering options are `asc` and `desc`, and by default if this parameter is not specified, the values will be set to `desc`. The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug` and `field`.
 
 To sort by a custom field, you must use the field's `fields.uid` as a parameter:
 
@@ -134,9 +125,7 @@ The `dynamic_map` filter accepts an additional attribute to control the visibili
 {{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
 
-:::tip Tip
-To use the attributes of the entries, you can use either dotted or bracketed notation, so <span v-pre>`{{ entry.meta.slug }}`</span>, returns the same value as <span v-pre>`{{ entry.meta['slug'] }}`</span>, and if you have a field called `location`, you can use it as much as <span v-pre>`{{ entry.fields.location' }}`</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span>
-:::
+:::tip Tip To use the attributes of the entries, you can use either dotted or bracketed notation, so <span v-pre>`{{ entry.meta.slug }}`</span>, returns the same value as <span v-pre>`{{ entry.meta['slug'] }}`</span>, and if you have a field called `location`, you can use it as much as <span v-pre>`{{ entry.fields.location' }}`</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> :::
 
 ## Javascript SDK
 
@@ -144,7 +133,7 @@ The **Modyo SDK** is a library that facilitates the interaction between JavaScri
 
 Through the SDK you can get, filter and sort your created content to fully leverage the capabilities of the Headless API.
 
-In addition, the Modyo SDK allows you to obtain information about end users that have logged in to the platform to further customize their experience with your site.
+In addition, the Modyo SDK allows you to obtain information about end users that have logged into the platform to further customize their experience with your site.
 
 ### Installation
 
@@ -154,14 +143,13 @@ The `@modyo /sdk` package is available in the Github registry under the Modyo or
 
 #### 2. Authenticate to Github packages
 
-Once we have obtained this token, we must use it to authenticate ourselves to Github packages. To do this, we create a `.npmrc` file in the `home` so that the file path is `~/.npmrc`.
-The content of that file (replacing `TOKEN` with your token) should be:
+Once we have obtained this token, we must use it to authenticate ourselves to Github packages. To do this, we create a `.npmrc` file in the `home` so that the file path is `~/.npmrc`. The content of that file (replacing `TOKEN` with your token) should be:
 
 ```bash
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
 
-[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 #### 3. Add the organization to your project
 
@@ -173,12 +161,11 @@ registry= https://npm.pkg.github.com/OWNER
 
 Where `OWNER` is the name of the organization that owns the package, in this case `modyo`.
 
-[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
 ### Usage
 
-Once the package has been installed in our project, we can create a client that we will use to fetch content.
-This can be done by creating a new client with the Modyo account's web address as the argument along with the language to be requested.
+Once the package has been installed in our project, we can create a client that we will use to fetch content. This can be done by creating a new client with the Modyo account's web address as the argument along with the language to be requested.
 
 ```js
 import { Client } from "@modyo/sdk";
@@ -186,9 +173,7 @@ import { Client } from "@modyo/sdk";
 const modyoAccount = new Client("https://my-account.modyo.com", "en");
 ```
 
-:::tip Tip
-When a new client is instantiated, the second parameter _locale_ is optional and used to request entries only in the specified language, otherwise the default language of the space will be used.
-:::
+:::tip Tip When a new client is instantiated, the second parameter _locale_ is optional and used to request entries only in the specified language, otherwise the default language of the space will be used. :::
 
 ### Content
 
@@ -211,15 +196,14 @@ Once we have the type we need, we can see its schema, its attributes or consult 
 typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
 /*
 That will print something like this:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
-*/
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}} */
 // To obtain the entries of that type
 const entries = typePost.getEntries();
 ```
 
 #### Pagination
 
-In general, all results delivered by Modyo's Headless API are paginated. A `getEntries () `query with no associated filters brings up to 20 entries per page. The maximum number of entries per page is 100, and is configurable using the `Pagination` filter described in the following section, for example: `GetEntries (f.pagination (15.1)) `that will return the first page of the `f` filter where each page contains up to 15 entries.
+In general, all results delivered by Modyo's Headless API are paginated. A `getEntries ()`query with no associated filters brings up to 20 entries per page. The maximum number of entries per page is 100, and is configurable using the `Pagination` filter described in the following section, for example: `GetEntries (f.pagination (15.1))`that will return the first page of the `f` filter where each page contains up to 15 entries.
 
 The object returned by `getEntries()` includes a `meta` field to help you navigate it. The the returned object will look something like this:
 
@@ -253,8 +237,7 @@ The object returned by `getEntries()` includes a `meta` field to help you naviga
 
 #### Filters
 
-The `getEntries()` method above can also receive a filter object to query the entries.
-The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has` and can be used to query the `meta` fields of each entry (such as the creation date or assigned tags)
+The `getEntries()` method above can also receive a filter object to query the entries. The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has` and can be used to query the `meta` fields of each entry (such as the creation date or assigned tags)
 
 **Supported filters**:
 
@@ -268,9 +251,7 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 
 - **Paginate**: receives as parameters the number of pages and the total number of entries per page.
 
-:::warning Warning
-If you intend to filter by date, it is important that the filter value uses the ISO-8601 standard.
-:::
+:::warning Warning If you intend to filter by date, it is important that the filter value uses the ISO-8601 standard. :::
 
 ```js
 // How to obtain a list of attributes that we can use in our queries
@@ -279,7 +260,7 @@ typePost
   .then(() => console.log("List of attributes:", typePost.getAttrs()));
 ```
 
-To create a filter, we use the `Filter() `method
+To create a filter, we use the `Filter()`method
 
 ```js
 const filters = typePost
@@ -316,17 +297,13 @@ To obtain private content, the user only needs to be logged in and we can add a 
 const privateTypePost = modyoAccount.getContentType("blog", "post", false);
 ```
 
-:::warning Warning
-It is important that this potentially sensitive information be treated with care. Private content requires cookies and an end user who is logged into Modyo.
-:::
+:::warning Warning It is important that this potentially sensitive information be treated with care. Private content requires cookies and an end user who is logged into Modyo. :::
 
 ### End User Information
 
-:::warning Warning
-It is important that you treat this sensitive information with care. As with Private Content, this information is only obtainable if you work from a browser that supports cookies and the end user is logged into the platform.
+:::warning Warning It is important that you treat this sensitive information with care. As with Private Content, this information is only obtainable if you work from a browser that supports cookies and the end user is logged into the platform.
 
-To obtain information from the end user, it is necessary to call the `client.getUserInfo()` function that will return an object with the basic information of that user.
-:::
+To obtain information from the end user, it is necessary to call the `client.getUserInfo()` function that will return an object with the basic information of that user. :::
 
 ## API Reference
 
@@ -718,20 +695,20 @@ The entries that you can see in section correspond to all the content sent throu
 
 There is a distinction at the application level between the filter types used to query content:
 
-Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata.
+Metadata (ej: Tags, Category, Fechas): Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata. Esto mientras sólo sea la Metadata lo que se esté consultando.
 
 - Tags: available in two ways
   - `meta.tags=tag_name`
   - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
 - Categories, which can only be specified with `meta.category=category_full_path` also consider child categories in the response.
 - Dates of creation/update/publication/unpublishing: available using ISO-8601 specification and with the possibility of searching by ranges (lt, gt):
-  - `... /entries?meta.created_at=1987-11-19T 13:13:13 `
+  - `... /entries?meta.created_at=1987-11-19T 13:13:13`
   - `... /entries?meta.updated_at [lt] =1987-11-19`
   - `... /entries?meta.published_at [gt] =1987-11-19`
 - Fields: Searches through ElasticSearch, for example:
   - Location: the search will be by queryString (and will be searched in the fields street_name, country, admin_area_levels) or by geohash. In both cases you must change <span v-pre>`{{field_name}}`</span> to the name of the location field of the content type
-    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. With the field called `location` it would be: `.../?fields.location[search]=chile`. This search does not take into account capital letters or small letters, but it does take into account spaces, titles and special characters.
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. With the field called `location` it would be: `.../?fields.location[geohash]=66j`
+    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. With the field called `location` it would be: `.../?fields.location[search]=chile`.
   - `... /entries? fields.color=black`
 
 ###### Language Filter
@@ -740,9 +717,9 @@ The Modyo API delivers entries in the default language of the Space, unless anot
 
 For example, to get entries in the Spanish-Chile language (es_CL):
 
-``` plain
-Query string: GET .../posts/entries?locale=es_CL
-Header: Set Accept-Language es_CL
+```plain
+Query string: GET .../posts/entries?locale=es-cl
+Header: Setear Accept-Language es-cl
 ```
 
 ##### Operators
@@ -758,36 +735,30 @@ The main operations on fields are:
 
 Example:
 
-- `.. /entries? meta.created_at [in] [] =1987-11-19T 13:13:13 &meta.created_at [in] [] =1987-11-19T 14:14:14 `will search entries created on November 11 at both at 13:13 and 14:14
+- `.. /entries? meta.created_at [in] [] =1987-11-19T 13:13:13 &meta.created_at [in] [] =1987-11-19T 14:14:14`will search entries created on November 11 at both at 13:13 and 14:14
 
 ##### Returned Fields
 
 Using the fields parameter you can choose which parameters are returned in the document:
 
-The metadata fields are referenced as: meta.attr_name (ex meta.tags)
-The fields of the entries as: field.attr_name
-An example JsonPath expression:
+The metadata fields are referenced as: meta.attr_name (ex meta.tags) The fields of the entries as: field.attr_name An example JsonPath expression:
 
-`.../entries?fields=$.entries[*].meta.uuid` to obtain only the uuid from the meta-data of the entries.
-`.../entries?fields=$..description` to get all the _description_ fields in the entries.
+`.../entries?fields=$.entries[*].meta.uuid` to obtain only the uuid from the meta-data of the entries. `.../entries?fields=$..description` to get all the _description_ fields in the entries.
 
 ##### Equalities/Inequalities in arrangements
 
 Fields that search in multiple elements (checkboxes, multiple) can use the following syntax:
 
-- HAS: equivalent to a sql AND
-  `... /entries? fields.color [has] [] =red&fields.color [has] [] =black`
-- IN: equivalent to a sql OR
-  `... /entries? fields.color [in] [] =red&fields.color [in] [] =blue`
-- NIN: equivalent to a sql NOT IN
-  `... /entries? fields.color [nin] [] =red&fields.color [nin] [] =blue`
+- HAS: equivalent to a sql AND `... /entries? fields.color [has] [] =red&fields.color [has] [] =black`
+- IN: equivalent to a sql OR `... /entries? fields.color [in] [] =red&fields.color [in] [] =blue`
+- NIN: equivalent to a sql NOT IN `... /entries? fields.color [nin] [] =red&fields.color [nin] [] =blue`
 
 ##### Order
 
 The order of the results must be specified with the parameters `sort_by` and `order`:
 
 - `sort_by`: indicating the name of the attribute (ex: meta.tags, or fields.name)
-- `order`: ['asc', 'desc'](optional, asc by default)
+- `order`: \['asc', 'desc'\](optional, asc by default)
 
 #### jQuery
 
@@ -801,8 +772,7 @@ In this AJAX request, we are specifying an exit point (using the Liquid <span v-
 
 The Fetch API provides a simple JavaScript interface, to access and manipulate part of the HTTP protocol, such as requests and responses. The global fetch() method is an easy and logical way to bring resources asynchronously across a network.
 
-A basic fetch request is very simple to make. Look at the following code:
-We are bringing a JSON file from within our site using the Liquid <span v-pre> {{site.url}} </span> object. The simplest use of fetch() requires an argument - the path of the resource you want to bring - and returns a "promise" that contains the response (Response object).
+A basic fetch request is very simple to make. Look at the following code: We are bringing a JSON file from within our site using the Liquid <span v-pre> {{site.url}} </span> object. The simplest use of fetch() requires an argument - the path of the resource you want to bring - and returns a "promise" that contains the response (Response object).
 
 This is an HTTP response, not the real JSON. To extract the JSON body from the answer, we use the json() method at the end, and then link the data to our promotions (this fetch() is for this application).
 
@@ -831,9 +801,7 @@ The Modyo API provides a RESTful interface with responses formatted in a lightwe
 
 Whenever you use the Modyo Content API, you can access the published content that is available to all users (not private). However, if you want to access private content, you must add a header or a GET parameter to the request URL of the content API.
 
-::: tip Tip
-If you use Liquid to access content, users who log in and are part of a target will automatically see the content when appropriate and no extra action is required by the Front End developer.
-:::
+::: tip Tip If you use Liquid to access content, users who log in and are part of a target will automatically see the content when appropriate and no extra action is required by the Front End developer. :::
 
 The content API can receive the delivery token parameter in two ways:
 
@@ -864,12 +832,8 @@ For example:
 }
 ```
 
-::: warning Warning
-To be able to access the URL to obtain a token, you must make sure you have a session initiated with a user in the account, or at least in a site within that account, otherwise you will receive an error `404 - Not found`.
-:::
+::: warning Warning To be able to access the URL to obtain a token, you must make sure you have a session initiated with a user in the account, or at least in a site within that account, otherwise you will receive an error `404 - Not found`. :::
 
-::: warning Warning
-It is necessary to dynamically obtain an access token for content, since this token changes based on the targets the user is a part of. Since target association can change frequently, it is not recommended to store this value.
-:::
+:::warning Atención Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor. :::
 
 The Content API query response with a delivery token is the same as the response you would receive without a delivery token, but will contain both the private content (without targets) and the restricted targeted content to which the requesting user belongs.
