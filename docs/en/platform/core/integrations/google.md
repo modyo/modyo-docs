@@ -11,7 +11,7 @@ In order to integrate Google login with Modyo, you must have:
 
 These values can be obtained after creating an application in the Google Platform with login permissions. You can learn more about how to create and configure a Google application in your [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
 
-Please note that at the end of the form the callback URL (_Callback URI_) is available. You need to use that URL in the app or project you create on Google in order to successfully complete the login flow.
+You should keep in mind that the callback URL (_Callback URI_) is available at the end of the form. You need to use that URL in the application or project that you create in Google to be able to complete the login flow correctly.
 
 In addition to the necessary settings, you can set up some extra data to control the behavior of your login with Google. If you enable the _Restrict Domains_ option, you can use two extra fields:
 
