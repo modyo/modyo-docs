@@ -85,7 +85,7 @@ Spaces webhooks are:
 * Space updated
 * Type created
 * Type deleted
-* Updated type
+* Type updated
 
 When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook and then save the changes.
 
