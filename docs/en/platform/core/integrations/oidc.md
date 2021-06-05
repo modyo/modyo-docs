@@ -4,7 +4,7 @@ search: true
 
 ### OpenID Connect
 
-OpenID Connect (OIDC) is an authentication and framework layer that funiates over OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
+OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
 :::warning Attention
 For the proper functioning of an OpenID Connect integration, it is necessary that the OIDC Provider has an SSL certificate up to date, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
