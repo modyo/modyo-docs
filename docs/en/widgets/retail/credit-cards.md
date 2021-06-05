@@ -12,17 +12,71 @@ Modyo offers a widget that allows customers to view their credit card details an
 modyo-cli get modyo-widgets-retail-credit-cards
 ```
 
-[Open in new tab](https://widgets.modyo.com/retail/credit-cards)
+[Open in new tab](https://widgets-es.modyo.com/personas/tarjetas-de-credito)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/tarjetas-de-credito" width="100%"  frameBorder="0"  style="min-height:900px;overflow:auto;margin-top:20px;"></p>
 
-| Feature                 | Description                                                                                                                                                                                                                                                        |
-|:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Credit card summary | Presents a summary of the credit card status with specific information associated with each card balance.<br><br>                                                                    |
-| Credit balance             | Shows the payment options available for the specific card, in addition to indicators of expenditure compared to the amount available.                                                                                                                |
-| Account statements              | Shows statements with the movements of the last invoiced period for a credit card.                                                                                                                                                           |
-| Recent activity           | Shows recent movements and activity that are not yet invoiced.                                                                                                                                                                                |
-| Pay balance                   | Corresponds to the balance payment functionality.<br><br> This payment can be either total or partial.<br><br> Clicking on the button will take you to the Credit Card Payment widget, where you can make a payment. |
+<table spaces-before="0">
+  <tr>
+    <th align="left">
+      Feature
+    </th>
+    
+    <th align="left">
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Credit card summary
+    </td>
+    
+    <td align="left">
+      Presents a summary of the credit card status with specific information associated with each card balance. <br><br>La información específica asociada a los saldos (disponible, utilizado y cupo total) se presenta de manera numérica y gráfica.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Credit balance
+    </td>
+    
+    <td align="left">
+      Shows the payment options available for the specific card, in addition to indicators of expenditure compared to the amount available.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Account statements
+    </td>
+    
+    <td align="left">
+      Shows statements with the movements of the last invoiced period for a credit card.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Recent activity
+    </td>
+    
+    <td align="left">
+      Shows recent movements and activity that are not yet invoiced.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Pay balance
+    </td>
+    
+    <td align="left">
+      Corresponds to the balance payment functionality.<br><br> This payment can be either total or partial.<br><br> Clicking on the button will take you to the Credit Card Payment widget, where you can make a payment.
+    </td>
+  </tr>
+</table>
 
 <script>
 
@@ -38,7 +92,7 @@ modyo-cli get modyo-widgets-retail-credit-cards
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
