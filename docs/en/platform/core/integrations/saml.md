@@ -10,7 +10,7 @@ In order to integrate a login with SAML in Modyo, you will need the following in
 - Issuer
 - URL of the identity provider service
 - Parameters of the identity service provider URL
-- Identity Provider Certificate
+- Identity provider certificate
 - Signing the identity provider's certificate
 - Format of the name identification
 - Service callback URL: By default this URL is `account_url/admin/auth/saml/callback`
