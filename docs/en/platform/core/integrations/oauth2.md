@@ -4,11 +4,11 @@ search: true
 
 ### OAuth2
 
-In order to integrate a login with OAuth2 into Modyo, you'll need the following information from your identity provider:
+In order to integrate a login with OAuth2 in Modyo, you will need the following information from your identity provider:
 
-- Name of the service
-- Description of the service
-- Authentication URL: OAuth2 Authentication Service URL
+- Service name
+- Service description
+- Authentication URL: OAuth2 authentication service URL
 - Customer ID
 - Key (secret)
 - Scope: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you'll need to define it in this field.
