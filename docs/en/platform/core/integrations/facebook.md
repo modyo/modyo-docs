@@ -4,7 +4,7 @@ search: true
 
 ### Facebook
 
-To be able to make an integration with Facebook, you must have:
+To be able to integrate with Facebook, you must have:
 
 - API Key
 - Application Secret Code
