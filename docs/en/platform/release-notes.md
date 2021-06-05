@@ -4,16 +4,16 @@ search: true
 
 # Release Notes
 
-### 9.1.23 - 5 de junio del 2021
+### 9.1.23 - 5 June 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Se arreglan otros problemas de seguridad
+* More security problem solved
 
-### 9.1.22 - 4 de junio del 2021
+### 9.1.22 - 4 June 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Security issues solved
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Se arreglan problemas de rendimiento
+* Performance problem solved
 
 ### 9.1.21 - 28 May 2021
 
