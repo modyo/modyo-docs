@@ -27,8 +27,7 @@ Modyo has the following main modules, which you will know in your training proce
 - [**Modyo Insights:**](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
 
 ### Tutorials
-The [tutorials](/en/platform/tutorials) are the easiest way to get started on the Modyo Platform. It only takes a [test environment](/es/platform/training.html #ambiente -testing) and some time to go step by step learning the fundamental concepts.
-We recommend you to perform the tutorials in order, following all the steps presented in them.
+The [tutorials](/en/platform/tutorials) are the easiest way to get started on the Modyo Platform. It only takes a \[test environment\](/es/platform/training.html #ambiente -testing) and some time to go step by step learning the fundamental concepts. We recommend you to perform the tutorials in order, following all the steps presented in them.
 
 ### Certification Program
 Modyo has a [certification program](https://training.modyo.com/catalog) for customers and business partners consisting of training courses for three different profiles:
@@ -38,7 +37,7 @@ Modyo has a [certification program](https://training.modyo.com/catalog) for cust
 
 The modality of these trainings are courses with videos and a test at the end of each course, which if approved will give you a respective certificate.
 
-For account activation you must send an email to [success@modyo.com](mailto: success@modyo.com) indicating the following information for each person who will perform the courses:
+For account activation you must send an email to \[success@modyo.com\](mailto: success@modyo.com) indicating the following information for each person who will perform the courses:
 - Full name
 - Corporate mail
 - Role
