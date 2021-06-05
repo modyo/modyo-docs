@@ -91,4 +91,4 @@ When creating a webhook, you must have the URL to which you want to send the inf
 
 After this, you will see in the list all the webhooks that are active.
 
-Once the webhook is created, you will be able to send a test notification with false information to prove that your URL is correctly receiving the Posts from Modyo.
+Once the webhook is created, you can send a test notification with false information to prove that your URL is correctly receiving the POSTs from Modyo.
