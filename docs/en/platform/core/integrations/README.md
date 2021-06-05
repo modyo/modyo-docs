@@ -80,7 +80,7 @@ Spaces webhooks are:
 * Entry published
 * Entry sent for review
 * Entry unpublished
-* Updated entry
+* Entry updated
 * Space created
 * Updated space
 * Type created
