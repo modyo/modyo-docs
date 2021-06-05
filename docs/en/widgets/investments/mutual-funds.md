@@ -12,16 +12,61 @@ Modyo offers a widget that displays information on available mutual funds and tr
 modyo-cli get modyo-widgets-investments-mutual-funds
 ```
 
-[Open in new tab](https://widgets.modyo.com/investments/mutual-funds)
+[Open in new tab](https://widgets-es.modyo.com/inversiones/fondos-mutuos)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/mutual-funds" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/fondos-mutuos" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"></p>
 
-| Feature           | Description                                                                                                                                                                                                                                                                                                 |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mutual Fund Layout | Shows all the available mutual funds. Lists the transactions currently in transit associated with each mutual fund. Shows the set of mutual funds in which clients have their investments and the respective market information. Allows the user to cancel transactions in transit. |
-| Market Information  | Displays the essential information of the selected mutual fund. Allows clients to contribute or withdraw from the selected fund/series.                                                                                                                                                                                 |
-| Mutual Fund Contribution   | Allows clients to make contributions to the selected mutual fund, defining the investment account and the amount they wish to contribute.                                                                                                                                                                                    |
-| Mutual Fund Withdrawal  | Allows clients to perform money withdrawals from the selected mutual fund.                                                                                                                                                                                                                                      |
+<table spaces-before="0">
+  <tr>
+    <th>
+      Feature
+    </th>
+    
+    <th>
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Mutual Fund Layout
+    </td>
+    
+    <td>
+      Shows all the available mutual funds. Lists the transactions currently in transit associated with each mutual fund. Shows the set of mutual funds in which clients have their investments and the respective market information. Allows the user to cancel transactions in transit.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Market Information
+    </td>
+    
+    <td>
+      Displays the essential information of the selected mutual fund. Allows clients to contribute or withdraw from the selected fund/series.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Mutual Fund Contribution
+    </td>
+    
+    <td>
+      Allows clients to make contributions to the selected mutual fund, defining the investment account and the amount they wish to contribute.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Mutual Fund Withdrawal
+    </td>
+    
+    <td>
+      Allows clients to perform money withdrawals from the selected mutual fund.
+    </td>
+  </tr>
+</table>
 
 <script>
 
@@ -37,7 +82,7 @@ modyo-cli get modyo-widgets-investments-mutual-funds
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
