@@ -71,7 +71,7 @@ The following configuration is valid for both Team and Customer user integration
    |                                        |                                                                                                                                                                                                                        |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
-   | **Enable logout** | Enables logoff in provider when logging off from Modyo. This allows you to effectively log out, forcing the user to sign in again in Azure AD, and disabling the SSO experience. |
+   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
    | **Enable token revocation** | Not supported by Azure AD|
    | **Enable _claims_ synchronization at login** | Enables synchronization of _claims_ OpenID Connect with custom fields in Modyo. |
 
