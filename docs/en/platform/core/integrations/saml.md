@@ -8,7 +8,7 @@ In order to integrate a login with SAML in Modyo, you will need the following in
 
 - Service name
 - Issuer
-- Identity Provider Service URL
+- URL of the identity provider service
 - Identity Service Provider URL Parameters
 - Identity Provider Certificate
 - Signing the identity provider's certificate
