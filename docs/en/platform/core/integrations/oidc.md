@@ -51,7 +51,7 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 
 ### Register new client application
 
-1. Sign in to [Azure Portal](https://portal.azure.com/).
+1. Log in to the [Azure Portal](https://portal.azure.com/).
 2. In the search bar, search by **Azure Active Directory**, and then select **App registrations > New registration**.
 3. Complete the following information
    * **Name**: Use a meaningful name, for example, `modyo-production`.
