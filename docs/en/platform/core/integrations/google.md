@@ -4,7 +4,7 @@ search: true
 
 ### Google
 
-In order to integrate Google login with Modyo, you'll need to have:
+In order to integrate Google login with Modyo, you must have:
 
 - Application ID
 - Key
