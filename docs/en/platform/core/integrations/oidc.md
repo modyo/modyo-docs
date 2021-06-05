@@ -42,7 +42,7 @@ When performing a specific integration, Modyo allows you to enable certain setti
 | **Enable refresh token**                                         | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.          |
 | **Enable logout**                                      | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again in Keycloak and disabling the SSO experience. |
 | **Enable token revocation**                                   | Not supported by Keycloak                                                                                                                                                                                              |
-| **Enable claims synchronization at login** | Enables synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#sincronizacion -claims).                                                             |
+| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                             |
 |                                                                     |                                                                                                                                                                                                                        |
 
 ## Using Azure Active Directory
