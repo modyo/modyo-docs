@@ -22,7 +22,7 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 1. Access the administrative console, for example [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) and add a new realm.
 2. Add a client application using `openid-connect` as the **Client Protocol** for integration with Modyo.
 3. Set **Access Type** to `confidential` and leave only the **Standard Flow** enabled.
-4. Configure the **Valid Redirect URIS** with the callback and logout URLs of the Modyo account, using the URLs relating to the account `/auth/openidc/callback` and `/logout*`.
+4. Configure the **Valid Redirect URIs** with the callback and logout URLs of the Modyo account, using the URLs related to the `/auth/openidc/callback` and`/logout * `account.
 
 ### Integration Configuration
 
