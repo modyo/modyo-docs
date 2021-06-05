@@ -24,7 +24,7 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 3. Set **Access Type** to `confidential` and leave only the **Standard Flow** enabled.
 4. Configure the **Valid Redirect URIs** with the callback and logout URLs of the Modyo account, using the URLs related to the `/auth/openidc/callback` and`/logout * `account.
 
-### Integration Configuration
+### Integration Settings
 
 The following configuration is valid for both Team and Customer user integrations.
 
