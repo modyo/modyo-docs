@@ -4,396 +4,415 @@ search: true
 
 # Release Notes
 
-### 9.1.21 - May 28, 2021
-
+### 9.1.24 - 6 de junio del 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Fix to security issues
+* Se arreglan otros problemas
 
-### 9.1.20 - May 27, 2021
-
+### 9.1.23 - 5 de junio del 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes
-* User experience improvements.
+* Se arreglan otros problemas de seguridad
 
-### 9.1.19 - May 19, 2021
-
+### 9.1.22 - 4 de junio del 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes
-
-### 9.1.18 - May 18, 2021
-
-<Badge text="Core" type="core" vertical="middle"/>
-* Multiple security enhancements..
+* Se arreglan problemas de seguridad
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Page tree is reimplemented
+* Se arreglan problemas de rendimiento
 
-### 9.1.17 - May 5, 2021
-
-<Badge text="Core" type="core" vertical="middle"/>
-* Performance improvements
-
-### 9.1.16 - April 23, 2021
+### 9.1.21 - 28 de mayo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes
-* Multiple security enhancements.
+* Se arreglan problemas de seguridad
+
+### 9.1.20 - 27 de mayo del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs solved.
+* Mejoras de experiencia usuaria
+
+### 9.1.19 - 19 de mayo del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+
+### 9.1.18 - 18 de mayo del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples mejoras de seguridad.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Fixed a bug that caused the "Save" button in the page builder to not work correctly.
-* Fixed a bug when creating new sites where the "About Us" page was left without a layout selected.
+* Se reimplementa árbol de páginas
 
-### 9.1.15 - April 14, 2021
+### 9.1.17 - 5 de mayo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes
-* Added to the panel a tool to resolve inconsistencies in secondary structure to maintain the order of the pages of the site.
-* Fixed a bug when uploading very large images to the file manager.
-* Fixed a bug that caused the code editor to freeze on specific liquid syntaxes.
+* Mejoras de rendimiento
+
+### 9.1.16 - 23 de abril del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples bugs resueltos.
+* Múltiples mejoras de seguridad.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Added [new Liquid filters](/en/platform/channels/liquid-markup.html#filters) that allow using algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256 and base64_encod.
-* Page indexing is improved so that you can now find results that contain text from the content referenced in the pages.
+* Se resuelve un error que producía que el botón "Guardar" del page builder no funcionara correctamente.
+* Se resuelve un error al crear nuevos sitios en que la página "About Us" quedaba sin un layout seleccionado.
 
-### 9.1.14 - April 1, 2021
+### 9.1.15.1 - 6 de junio del 2021
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arreglan otros problemas urgentes
+
+### 9.1.15 - 14 de abril del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes
+* Multiple bugs solved.
+* Se añade al panel una herramienta para resolver inconsistencias en estructura secundaria para mantener el orden de las páginas del sitio.
+* Se resuelve un error al subir imágenes muy grandes al gestor de archivos.
+* Se resuelve un bug que provocaba que el editor de código se congelara ante sintaxis específicas de liquid.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* A bug where you could loose the control over the templates was resolved.
+* Se añaden [nuevos filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar) que permiten usar algoritmos como md5, sha1, sha256, hmac_sha1, hmac_sha256 y base64_encod.
+* Se mejora el indexado de páginas de tal forma que ahora se puede encontrar resultados que contienen texto del contenido referenciado en las páginas.
 
-### 9.1.13 - March 25, 2021
+### 9.1.14 - 1 de abril del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple bugs solved.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se resuelve un bug en que se perdía el control de los locks en el template builder.
+
+### 9.1.13 - 25 de marzo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
-- Multiple JS libraries with vulnerabilities updated.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
+- Se actualizan múltiples bibliotecas JS con vulnerabilidades
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Added dynamic filters by field values in the entries index.
+* Se añaden filtros dinámicos por valores de campos en el indice de entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Fixed a bug where copying a site did not consider templates.
+* Se resuelve un bug en que el copiado de sitios no consideraba los templates.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Fixed a bug where the integration with OIDC redirected to the user's profile and not to the site from where the flow was started.
+* Se resuelve un bug en que el flujo de integración con OIDC redirigía al perfil del usuario y no al sitio desde donde se inició el flujo.
 
-### 9.1.12 - March 19, 2021
+### 9.1.12 - 19 de marzo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* New filters were added to the Liquid SDK for content that enables to [search](/en/platform/content/public-api-reference.html#filter-entries), filter and [sort](/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
+* Se añaden [nuevos filtros al SDK de Liquid](/es/platform/content/public-api-reference.html#filtrar-entradas) de contenido que permiten selccionar, filtrar y [ordenar](/es/platform/content/public-api-reference.html#ordenar-entradas) por campos personalizados del tipo de contenido.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Form language is now tied to the site associated instead of the account language.
+* Se asocia el idioma en el que se despliegan los formularios de acuerdo al idioma del sitio asociado y no al idioma de la cuenta
 
-### 9.1.11 - March 02, 2021
-
-<Badge text="Core" type="core" vertical="middle"/>
-
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
-- Errors caused by standard attributes with specific formats in OIDC integration were fixed.
-- Bugs that caused the publish/unpublish schedule to run 10 minutes later were fixed.
-- A particular case where the HTML view of the rich text editor did not save changes was fixed.
-
-### 9.1.10 - February 23, 2021
+### 9.1.11 - 02 de marzo del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
+- Se resuelven errores producidos por atributos estándar con formatos específicos en integración mediante OIDC
+- Se resuelven errores que provocaban que la programación de publicación/despublicación se ejecutara 10 minutos tarde
+- Se resuelve un caso particular en que la vista HTML del editor de texto enriquecido no guardaba los cambios
+
+### 9.1.10 - 23 de febrero del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+- Multiple bugs solved.
 - Multiple performance improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to [filter by slug](/en/platform/content/public-api-reference.html#filter-entries) in the Liquid SDK using the filter `by_slug` was added.
-* The option to [unpublish all widgets](/en/platform/channels/widgets.html) and archive all non published widgets, even if they are being used in pages, was added.
+* Se añade la posibilidad de [filtrar por slug](/es/platform/content/public-api-reference.html#filtrar-entradas) de entradas en el SDK de liquid usando el filtro `by_slug`
+* Se añade la posibilidad de [despublicar widgets](/es/platform/channels/widgets.html) incluso si están siendo referenciados, y se pueden archivar todos los widgets no publicados (incluso si están referenciados en algunas páginas)
 
-### 9.1.9 - February 10, 2021
-
-<Badge text="Core" type="core" vertical="middle"/>
-
-- Multiple bug fixes
-- Multiple performance improvements.
-
-### 9.1.8 - February 02, 2021
+### 9.1.9 - 10 de febrero del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
+- Multiple bugs solved.
+- Múltiples mejoras de performance.
 
-### 9.1.7 - January 25, 2021
+### 9.1.8 - 02 de febrero del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+
+### 9.1.7 - 25 de enero del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* The option to [edit entries in bulk](/en/platform/content/entries.html#bulk-edit) was added.
-* The option to filters by author and targets in the index of entries was added.
+* Se añade la opción de [editar entradas de forma masiva](/es/platform/content/entries.html#editar-masivamente).
+* Se añaden filtros por autor y targets en el indice de entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to decide whether you want your widgets in the widget builder to [load synchronously or asynchronously](/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading) was added.
+* Se añade la posibilidad de decidir si quieres que tus widgets del widget builder se [carguen de forma síncrona o asíncrona](/es/platform/channels/widgets.html#carga-sincrona).
 
-### 9.1.6 - December 23, 2020
+### 9.1.6 - 23 de diciembre del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to add [widget variables](/en/platform/channels/widgets.html#widget-variables) was added.
-* The option to define multiple custom [JavaScripts and CSS](/en/platform/channels/templates.html#css-and-javascript) to the site was added.
-* The option to create [custom layouts](/en/platform/channels/templates.html#custom-layouts) to the template builder to further use on pages was added.
-* The option to get the results of the site search as Json object was added.
+* Se añade la opción de definir [variables en los widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget).
+* Se añade la opción de definir múltiples [JavaScripts y CSS](/es/platform/channels/templates.html#css-y-javascript) como assets del sitio.
+* Se añade la opción para crear [layouts personalizados](/es/platform/channels/templates.html#layouts-personalizados) y luego poder usarlos en las páginas.
+* Se añade la posibilidad de consultar los resultados de la búsqueda del sitio en formato json
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* You can only delete forms that are disabled now.
+* Ahora solo se puede eliminar los formularios que están deshabilitados.
 
-### 9.1.5 - December 1, 2020
+### 9.1.5 - 1 de diciembre del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* The option to use [operators](/en/platform/content/public-api-reference.html#operators) [in], [has], and [nin] on fields slug, name, uuid and category was added.
-* The option to use [bulk actions](/en/platform/content/entries.html#bulk-actions) on entries was added.
+* Se añade la opción de usar [operadores](/es/platform/content/public-api-reference.html#operadores) [in], [has] y [nin] en campos slug, name, uuid y categorías.
+* Se añade la opción de usar [acciones masivas](/es/platform/content/entries.html#acciones-masivas) en entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to get the [total entries](/en/platform/content/public-api-reference.html#access-entries-in-a-space) after using a liquid content filter was added.
-* The option to use the same widget multiple times in the same page was added.
+* Se añade filtro de [entries totales](/es/platform/content/public-api-reference.html#acceder-a-entradas-de-un-espacio) luego de usar un filtro de contenido.
+* Se añade la funcionalidad de distinguir un mismo widget instanciado múltiples veces en una misma página.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* A new and fresh interface to build [Targets](/en/platform/customers/targets.html) including the option to use `AND` & `OR` operators.
+* Se añade una nueva y mejorada interfaz de creación de [Targets](/es/platform/customers/targets.html) incluyendo la opción de usar operadores `AND` y `OR`.
 
-### 9.1.4 - November 10, 2020
+### 9.1.4 - 10 de noviembre del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
+- Multiple bugs solved.
 - Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to [publish multiple items](/platform/channels/sites.html#review-and-joint-publication) in one action was added.
-* The option to [delegate child routes](/platform/channels/pages.html#child-routes-delegation) in a page using JavaScript router was added.
+* Se añade la [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) a los sitios.
+* Se añade la posibilidad de [delegar sub-rutas](/es/platform/channels/pages.html#delegacion-de-rutas) de páginas mediante JavaScript.
 
-### 9.1.3 - October 16, 2020
-
-<Badge text="Core" type="core" vertical="middle"/>
-
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
-
-### 9.1.2 - October 8, 2020
+### 9.1.3 - 16 de octubre del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
+
+### 9.1.2 - 8 de octubre del 2020
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The drop `page` that includes the home page and custom pages was added.
+* Se añade el drop `page` que considera tanto al home page como los pages personalizados.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* The option to use messaging templates in already created campaigns was added.
-* The option to [delete users](/en/platform/customers/users.html#additional-options) was added.
+* Se añade la posibilidad de utilizar plantillas en campañas de mensajería ya creadas .
+* Se añade la posibilidad de [eliminar usuarios](/es/platform/customers/realms.html#opciones-adicionales).
 
-### 9.1.1 - September 25, 2020
+### 9.1.1 - 25 de Septiembre del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* The option to delete archived entries was added.
+* Se añade la posibilidad de eliminar entradas archivadas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* The option to [copy sites](/en/platform/channels/sites.html) and all its content was added.
+* Se añade la posibilidad de [copiar sitios](/es/platform/channels/sites.html) y todo su contenido publicado.
 
-### 9.1.0 - September 4, 2020
+### 9.1.0 - 4 de Septiembre del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- [Scheduler](/en/platform/core/key-concepts.html#scheduled): Schedule a change in the future without the need to unpublish what is already published.
-- Modyo Lite: Access a version of Modyo that includes the Core with the Content and Channels applications.
-- [New preview mode](/en/platform/core/key-concepts.html#preview-mode): Allows you to preview content, pages, templates, widgets and navigation.
-- ElasticSearch version update to 7.4.
-- MySQL version update to 5.7 (adds support for emojis).
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- [Scheduler](es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
+- Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
+- [Nuevo modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa): Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación.
+- Actualización de la versión de ElasticSearch a 7.4.
+- Actualización de la versión de MySQL a la versión 5.7 (añade soporte para emojis).
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+- Múltiples mejoras de seguridad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Improvements in performance and scalability of the public content API.
+* Mejoras de performance y escalabilidad en la API pública de contenidos.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* [Global variables](/en/platform/core/key-concepts.html#global-variables): Reuse snippets between sites.
-* [Improvements to SEO](/en/platform/channels/pages.html#meta-tags): Customize meta-tags for your pages from an easy-to-use interface.
-* The option to import [custom redirects](/en/platform/channels/sites.html#custom-redirects) for the site was added.
+* [Variables globales](/es/platform/core/key-concepts.html#variables-globales): Reutiliza snippets entre sitios.
+* [Mejoras a SEO](/es/platform/channels/pages.html#meta-tags): Personaliza los meta-tags para tus páginas desde una interfaz fácil de usar.
+* Se añade la posibilidad de importar [redirecciones personalizadas](/es/platform/channels/sites.html#redirecciones-personalizadas) del sitio.
 
-### 9.0.9 - August 12, 2020
-
-<Badge text="Core" type="core" vertical="middle"/>
-
-- Improved support for session cookies for older browsers.
-
-### 9.0.8 - June 15, 2020
+### 9.0.9 - 12 de Agosto del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Security enhancements to the file upload endpoints.
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
+- Se mejora la compatibilidad con cookies de sesión para navegadores antiguos.
+
+### 9.0.8 - 15 de Junio del 2020
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+- Se añaden mejoras de seguridad a endpoints de subida de archivos.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Different Liquid Drops were added according to the file types in the [asset manager](/en/platform/content/asset-manager.html#file-properties).
+* Se añaden distintos drops de liquid dependiendo del tipo de archivo en el [asset manager](/es/platform/content/asset-manager.html#propiedades-de-los-archivos).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Code samples were added when creating new [content views](/en/platform/channels/templates.html#automated-content-views).
-* An input attribute selector was added to the content views.
+* Se añade ejemplo de código al crear nuevas [vistas de contenido](/es/platform/channels/templates.html#vistas-para-contenido).
+* Se añade un selector de atributos de la entrada a las vistas de contenido.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* File type questions on [forms](/en/platform/customers/forms.html#add-field) were removed.
+* Se eliminan las preguntas de tipo archivo en los [formularios](/es/platform/customers/forms.html#anadir-campo).
 
-### 9.0.7 - June 01, 2020
+### 9.0.7 - 01 de Junio del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Improvements to management and plan fees.
-- Added empty view of [my tasks](/en/platform/core/the-modyo-interface.html).
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
+- Mejoras a gestión y cuotas de planes.
+- Se añade vista vacía de [mis tareas](/es/platform/core/the-modyo-interface.html).
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* The [preview mode](/en/platform/content/entries.html#preview) is changed so that by default it always uses the editable templates.
-* New views are added when there are no elements created in [entries](/en/platform/content/entries.html), [types](/en/platform/content/types.html), [categories](/en/platform/content/entries.html#categories) and [spaces](/en/platform/content/spaces.html).
-* The [search operator](/en/platform/content/public-api-reference.html#filters-2) is added to search the location fields of the entries.
+* Se cambia modo [vista previa](/es/platform/content/entries.html#vista-previa) para que por defecto siempre use los templates editables.
+* Se añaden nueva vistas cuando no hay elementos creados en [entradas](/es/platform/content/entries.html), [tipos](/es/platform/content/types.html), [categorías](/es/platform/content/entries.html#categorias) y [espacios](/es/platform/content/spaces.html).
+* Se añade operador [search](/es/platform/content/public-api-reference.html#filtros-2) para búsqueda en los campos de ubicación de las entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* An example is added when creating [content views](/en/platform/channels/templates.html#content-views).
-* The files [manifest.json and serviceworker.js](/en/platform/channels/sites.html#pwa) are left public, while privacy is forced on files [robots.txt and sitemap.xml](/en/platform/channels/sites.html#seo).
-* Improvements to usability and concepts of [themes](/en/platform/channels/templates.html#themes) in the template builder.
+* Se añade un ejemplo al crear [vistas de contenido](/es/platform/channels/templates.html#vistas-para-contenido).
+* Se deja públicos los archivos [manifest.json y serviceworker.js](/es/platform/channels/sites.html#pwa), mientras que se fuerza privacidad de archivos [robots.txt y sitemap.xml](/es/platform/channels/sites.html#seo).
+* Mejoras a la usabilidad y conceptos de [temas](/es/platform/channels/templates.html#temas) en el template builder
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* New views are added when there are no items created in [users](/en/platform/customers/users.html), [targets](/en/platform/customers/targets.html), [forms](/en/platform/customers/forms.html) and [campaigns](/en/platform/customers/messaging.html).
+* Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/es/platform/customers/realms.html), [targets](/es/platform/customers/targets.html), [formularios](/es/platform/customers/forms.html) y [campañas](/es/platform/customers/messaging.html).
 
-### 9.0.6 - April 30, 2020
+### 9.0.6 - 30 de Abril del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- FOG support is added with Azure and Google Cloud as a base for Modyo installation.
-- Added integration with [Google Authenticator](/en/platform/core/security.html) for second team member authentication factor.
-- Added [password policies](/en/platform/core/security.html#password-policy) for team members.
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
+- Se añade soporte para FOG con Azure y Google Cloud como base de instalación de Modyo.
+- Se añade integración con [Google Authenticator](/es/platform/core/security.html#autenticacion-en-dos-pasos) para segundo factor de autenticación de miembros del equipo.
+- Se añaden [políticas de contraseña](/es/platform/core/security.html#politica-de-contrasena) para miembros del equipo.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* You will only see the spaces where you are allowed to be a member of the team.
-* The possibility of [remove spaces](/en/platform/content/spaces.html#general) is added.
+* Solo se verán los espacios en los que tienes permisos como miembro del equipo.
+* Se añade la posibilidad de [eliminar espacios](/es/platform/content/spaces.html#general).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Adding [redirect table](/en/platform/channels/sites.html#custom-redirects) will allow you to reuse old urls with a good SEO and redirect them to new site URLs.
-* The content where you search in the pages is improved.
-* Snippets are added to [enable PWA](/en/platform/channels/sites.html#pwa) in the site's base JavaScript when the property is enabled.
-* Added possibility to integrate google tag manager to sites.
-* Only sites where you have permissions as a team member will be displayed.
-* Added ability to [remove sites](/en/platform/channels/sites.html#general).
+* Se añade [tabla de redirecciones](/es/platform/channels/sites.html#redirecciones-personalizadas) que te permitirá reutilizar antiguas url con un buen SEO y redireccionarlas a las nuevas URL del sitio.
+* Se mejora el contenido donde se busca en los pages.
+* Se añade snippets para [habilitar PWA](/es/platform/channels/sites.html#pwa) en JavaScript base del sitio cuando la propiedad está activada.
+* Se añade la posibilidad de integrar google tag manager a sitios.
+* Solo se verán los sitios en los que tienes permisos como miembro del equipo.
+* Se añade la posibilidad de [eliminar sitios](/es/platform/channels/sites.html#general).
 
 <Badge text="Insights" type="insights" vertical="middle"/>
-* Added view of [reports in insights](/en/platform/insights/data-studio.html).
+* Se añade vista de [reportes en insights](/es/platform/insights/data-studio.html).
 
-### 9.0.5 - March 19, 2020
+### 9.0.5 - 19 de Marzo del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
+- Multiple bugs solved.
 - Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Content is added to search results on sites from the front end.
+* Se añade el contenido a los resultados de búsqueda en sitios desde el front end.
 
-### 9.0.4 - March 12, 2020
+### 9.0.4 - 12 de Marzo del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
+- Multiple bugs solved.
 - Multiple navigation and usability improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Text search in [template builder](/en/platform/channels/templates.html), to facilitate changes.
-* Added feature to force publishing widgets via [Modyo CLI](/en/platform/channels/widgets.html).
+* Buscador por texto en [template builder](/es/platform/channels/templates.html), para facilitar los cambios.
+* Se añade función para forzar la publicación de widgets a través de [Modyo CLI](/es/platform/channels/widgets.html#comandos-disponibles).
 
-### 9.0.3 - March 02, 2020
+### 9.0.3 - 02 de Marzo del 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Multiple bug fixes
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Obtención del content delivery token a través del [SDK de JavaScript](/es/platform/content/public-api-reference.html#contenido-privado).
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Personalización de la reacción de un sitio cuando una url no existe, [mostrando un error 404 o redirigiendo al home](/es/platform/channels/sites.html#restricciones).
+
+### 9.0.2 - 04 de Febrero del 2020
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+- Multiple bugs solved.
 - Multiple navigation and usability improvements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Obtaining the content delivery token through the [JavaScript SDK](/en/platform/content/public-api-reference.html#private-content).
+* Usa locations en content con mapas o con un formulario, configurando una api key propia de google en las settings de la cuenta.
+* Mejoras al [SDK de liquid](/es/platform/content/public-api-reference.html#sdk-de-liquid) de contenido.
+* Mejoras de usabilidad al [asset manager](/es/platform/content/asset-manager.html).
 
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Customize the reaction of a site when a url does not exist, [showing a 404 error or redirecting to home](/en/platform/channels/sites.html#restrictions).
-
-### 9.0.2 - February 04, 2020
-
-<Badge text="Core" type="core" vertical="middle"/>
-
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
-
-<Badge text="Content" type="content" vertical="middle"/>
-* Use locations in content with maps or with a form, configuring a google api key in the account settings.
-* Improvements to the [liquid SDK](/en/platform/content/public-api-reference.html#liquid-sdk) content.
-* Usability improvements to the [asset manager](/en/platform/content/asset-manager.html).
-
-### 9.0.1 - January 17, 2020
+### 9.0.1 - 17 de Enero del 2020
 
 <Badge text="Core" type="core"/>
-* Multiple bug fixes
-* Multiple navigation and usability improvements.
+* Múltiples bugs resueltos.
+* Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Added functionality to [preview content](/en/platform/content/entries.html#preview) on sites, despite being headless, when using content on a Modyo site you can use the tool to preview that content.
+* Se añade la funcionalidad para [previsualizar contenido](/es/platform/content/entries.html#vista-previa) en los sitios, a pesar de ser headless, cuando se usan contenidos en un sitio de Modyo se puede usar la herramienta para previsualizar dicho contenido.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Functionality is added to create [custom content views](/en/platform/channels/templates.html#content-views) on sites.
-* A list of pages using each widget is added, so you can see the effects of a change wherever it is used.
+* Se añade la funcionalidad para  crear [vistas personalizadas de contenido](/es/platform/channels/templates.html#vistas-para-contenido) en los sitios.
+* Se añade un listado de páginas que usan cada widget, para poder ver los efectos de un cambio en donde sea que se use.
 
-### 9.0.0 - December 19, 2019
+### 9.0.0 - 19 de Diciembre del 2019
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Separation of users and [team members](/en/platform/core/roles.html#team), those who have access to the platform are separated from the users of the page itself.
-- New [roles and permissions](/en/platform/core/roles.html).
-- [Team review](/en/platform/core/key-concepts.html), replacing the workflow application, allows the team to collaborate for the approval of the publication and the transition to production.
-- Multiple bug fixes
-- Multiple navigation and usability improvements.
+- Separación de usuarios y [miembros del equipo](/es/platform/core/roles.html#equipo), los que tienen acceso a la plataforma se encuentran segregados de los usuarios de la página en sí.
+- Nuevos [roles y permisos](/es/platform/core/roles.html).
+- [Team review](/es/platform/core/key-concepts.html), reemplazando la aplicación de workflow, permite la colaboración del equipo para la aprobación de publicación y paso a producción.
+- Múltiples bugs resueltos.
+- Múltiples mejoras de navegación y usabilidad.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* New [content application](/en/platform/content/), with all headless content.
-* New [asset manager](/en/platform/content/asset-manager.html) that allows to have all the files of an account in one place.
+* Nueva [aplicación de contenido](/es/platform/content/), con todo el contenido headless.
+* Nuevo [asset manager](/es/platform/content/asset-manager.html) que permite tener todos los archivos de una cuenta en un solo lugar.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* New minimal theme 2020 cleaner and easier to adapt.
+* Nuevo tema minimal 2020 más limpio y fácil de adaptar.
