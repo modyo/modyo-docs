@@ -35,7 +35,7 @@ Liquid is a template engine which was written with very specific requirements:
 
 ### How to use Liquid?
 
-There are two types of markup in Liquid: Output and Tag.
+There are two types of markup in Liquid: Output and Tag. Output and Tag.
 
 * Output markup (which may resolve to text) is surrounded by
 
@@ -76,11 +76,11 @@ Liquid accepts the following kinds of expressions:
     * Note: if the value of an access expression is also an array or hash, you can access values from it in the same way, and can even combine the two methods. (For example, `site.posts[34].title`.)
 * **Array first and last.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve to its first or last element.
 * **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
-* **Strings.** Literal strings must be surrounded by double or single quotes (``"my string"`` or `'my string'`). There is no difference; neither style allows variable interpolation.
+* **Strings.** Literal strings must be surrounded by double or single quotes (`"my string"` or `'my string'`). There is no difference; neither style allows variable interpolation.
 * **Integers.** Integers must not be quoted.
 * **Booleans and nil.** The literal values `true`, `false`, and `nil`.
 
-To build an input array, you cannot do it in a control statement. You need to do it in a separate statement and then use that as a variable in a control statement.
+Tenga en cuenta que no hay manera de escribir un array literal o hash como expresión; los arrays y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
 
 ## Filters
 
@@ -110,7 +110,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `capitalize` - Capitalize the entry sentence
 * `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 * `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
-* `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
+* `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span> "Default value" }} #=> "Default value"`</span>
 * `divided_by` - Division of integers *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 * `downcase` - Convert an input string to lowercase
 * `escape_once` - Returns an escape version of html without affecting existing escape entities
@@ -148,7 +148,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `strip` - Removes all blank spaces at both ends of the string.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiply  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
-* `truncate` - Restrict a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
+* `truncate` - Restrict a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span> }} #=> 'foob.'`</span>
 * `truncatewords` - Restrict a string to x words
 * `uniq` - Removes duplicate elements from an array, optionally using a specific property to check its uniqueness.
 * `upcase` - Convert an input string to uppercase
@@ -181,8 +181,7 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 ### Raw
 
-Raw is used to temporarily disable the tag process.
-This is useful for generating content (eg, Mustache, Handlebars) that can use conflicting syntax with other elements.
+Raw is used to temporarily disable the tag process. This is useful for generating content (eg, Mustache, Handlebars) that can use conflicting syntax with other elements.
 
 ```liquid
 {% raw %}
@@ -194,15 +193,15 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use co
 
 The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
-* `{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
-* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
-* `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
+* `{% if <CONDITION> %} ... <code>{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
+* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. endif</code>. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. endif</code>, _después_ de cualquier etiqueta "elsif". If all the above conditions fail, Liquid will execute the template section following the "else" tag.
+* `{% unless &lt;CONDITION&gt; %} ... <code>{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
 
-The condition of an `if`,` elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
+The condition of an `if`,`elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
 
 The available relational operators are:
 
-* `==,! =, `and` <> `— equal and unequal (the last two are synonyms)
+* `==,! =,`and`<>`— equal and unequal (the last two are synonyms)
     * There is a special secret value "empty" (without quotes) to compare arrays; The comparison is true if the array has no items.
 * `<, <=, >, >=` — less/greater than
 * `contains` - a wrapper around Ruby's `include?` method, which is implemented in strings, arrays and hashes. If the left argument is a string and the right is not, this will convert the right to a string.
@@ -272,12 +271,10 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 ```liquid
 # Check for the size of an array
 {% if user.payments == empty %}
-   you never paid !
-{% endif %}
+   you never paid ! {% endif %}
 
 {% if user.payments.size > 0  %}
-   you paid !
-{% endif %}
+   you paid ! {% endif %}
 ```
 
 ```liquid
@@ -313,11 +310,11 @@ hit 1
 {% when 2 or 3 %}
 hit 2 or 3
 {% else %}
-... else ...
+... else ... else ...
 {% endcase %}
 ```
 
-*Example: *
+**Example: **
 
 ```liquid
 {% case template %}
@@ -351,11 +348,9 @@ three
 one
 ```
 
-If no name is provided for the cycle group, then it is assumed that multiple
-Calls with the same parameters are a group.
+If no name is provided for the cycle group, then it is assumed that multiple Calls with the same parameters are a group.
 
-If you want to have full control over the cycle groups, you can optionally specify
-The name of the group. This can even be a variable.
+If you want to have full control over the cycle groups, you can optionally specify The name of the group. This can even be a variable.
 
 ```liquid
 {% cycle 'group 1': 'one', 'two', 'three' %}
@@ -443,18 +438,16 @@ During each `for` loop, the following help variables are available for additiona
 forloop.length      # => length of the entire for loop
 forloop.index       # => index of the current iteration
 forloop.index0      # => index of the current iteration (zero based)
-forloop.rindex      # => how many items are still left?
-forloop.rindex0     # => how many items are still left? (zero based)
-forloop.first       # => is this the first iteration?
-forloop.last        # => is this the last iteration?
+forloop.rindex      # => how many items are still left? forloop.rindex0     # => how many items are still left? (zero based)
+forloop.first       # => is this the first iteration? forloop.last        # => is this the last iteration?
 ```
 
 #### Optional arguments
 
 There are several optional arguments in the `for` tag that can influence the elements you receive in your loop and in the order in which they appear:
 
-* `limit: <INTEGER> ` allows you to restrict the amount of objects to obtain.
-* `offset: <INTEGER> ` allows you to start the collection with the nth item.
+* `limit: <INTEGER>` allows you to restrict the amount of objects to obtain.
+* `offset: <INTEGER>` allows you to start the collection with the nth item.
 * `reversed` iterates over the collection from the last to the first.
 
 Restriction elements:
@@ -480,8 +473,7 @@ A for loop can take an optional `else` clause to display a block of text when th
 {% for item in items %}
    {{ item.title }}
 {% else %}
-   There are no items!
-{% endfor %}
+   There are no items! {% endfor %}
 ```
 
 ### Variable assignment
