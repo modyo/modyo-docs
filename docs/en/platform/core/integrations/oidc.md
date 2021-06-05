@@ -69,7 +69,7 @@ The following configuration is valid for both Team and Customer user integration
 3. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 4. Enable optional integration features.
    |                                        |                                                                                                                                                                                                                        |
-   |—|—|
+   |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Enable refresh token** | Enable token refresh managed by Modyo. Access tokens will be automatically renewed by the platform if the user is active on the site and has a valid refresh token. |
    | **Enable logout** | Enables logoff in provider when logging off from Modyo. This allows you to effectively log out, forcing the user to sign in again in Azure AD, and disabling the SSO experience. |
    | **Enable token revocation** | Not supported by Azure AD|
