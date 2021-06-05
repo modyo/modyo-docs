@@ -73,7 +73,7 @@ Site webhooks are:
 Spaces webhooks are:
 
 * Category created
-* Deleted category
+* Category deleted
 * Updated Category
 * Approved entry
 * Entry created
