@@ -75,9 +75,9 @@ Spaces webhooks are:
 * Category created
 * Category deleted
 * Category updated
-* Approved entry
+* Entry approved
 * Entry created
-* Published entry
+* Entry published
 * Entry sent for review
 * Unpublished entry
 * Updated entry
