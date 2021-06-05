@@ -8,26 +8,26 @@ search: true
 
 The entry list displays every type of non-archived entry within in that space.
 
-By default, this list displays entries by their "Updated on" date, meaning either by the date the entry was created, or last updated.
+La lista está ordenada por fecha de actualización del contenido. En este caso, hace referencia a la fecha de creación o de la última vez que fue guardada la entrada respectiva.
 
 The columns in the list display the following details:
 
-- **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
+- **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
 - **Name**: Title of the entry.
 - **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
 - **Updated on**: Date of the last saved update.
 - **Author**: Original creator of the entry.
 
-You can also filter the view by other default filters that you can adjust depending on your need, regardless of how you order your entry list.
+In the admin you can also filter the view according to several default filters that you can adjust depending on  your need, regardless of how you order your content list.
 
 You can also filter the list by six different attributes:
 
 - **Types**: Filter the list by any single type. (See [Types](/en/platform/content/types.html)).
-- **Status**: Filter the list by the following statuses: Published, Not Published, Scheduled, Archived, and All. Filtering by All does not show Archived entries. Filtering by Not Published displays entries in either the Draft or Scheduled status.
-- **Category**: Filter the list by a single category. Displays "All" by default.
-- - **Locale**: Filter the list by a particular language. Entries without a translation in the filtered language display Not translated in the Status column.
-- **Translation**: This filter is associated to the selected language and filters by the translation status of the entries for that language. Ex: If an entry does not have a version in the selected language, it will be set to "Not translated".
+- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
 - **Tags**: Filter by a selectable, searchable list of the current tags available in the account.
+- - **Locale**: Filter the list by a particular language.
+- **Translation**: This filter is associated to the selected language and filters by the translation status of the entries for that language. Ex: If an entry does not have a version in the selected language, it will be set to "Not translated".
+- **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
 - **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
 ## Bulk actions
@@ -45,30 +45,23 @@ By selecting entries with the _checkbox_ to the left of each entry, you can use 
 - Bulk unpublish will only take effect on selected entries that have a published version.
 - Bulk archiving will only take effect on selected entries that are not published.
 
-If you try to archive an entry that is published, this action will be omitted and will have no effect.
-:::
+If you try to archive an entry that is published, this action will be omitted and will have no effect. :::
 
-:::tip Tip
-Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action.
-:::
+:::tip Tip Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action. :::
 
 ## Bulk edit
 
-:::warning Warning
-This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for bulk actions.
+:::warning Warning This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for bulk actions.
 
-If you select multiple entries, but are not using the filter by table type, you will not see this option.
-:::
+If you select multiple entries, but are not using the filter by table type, you will not see this option. :::
 
 When selecting entries of the same type, you will see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you have checked the selector to the left of each field, you will be able to enter the value associated with the field.
 
 You can make changes to all fields of the type. Once you have finished adding values to the fields you need, press "Next" at the top of the screen to see a summary of your changes. If you agree with the changes, press "Save" to have Modyo start applying the changes to all selected entries.
 
-:::warning Warning
-By using bulk editing of entries you are overwriting the values for the selected fields in all selected entries, so the values that existed before the bulk edit will no longer be available in the editable version.
+:::warning Warning By using bulk editing of entries you are overwriting the values for the selected fields in all selected entries, so the values that existed before the bulk edit will no longer be available in the editable version.
 
-If you need to restore a specific value from an entry, you can make use of the "Differences" option in the edit entries view to review the previous values that a particular entry had.
-:::
+If you need to restore a specific value from an entry, you can make use of the "Differences" option in the edit entries view to review the previous values that a particular entry had. :::
 
 Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now pending changes and you must publish them. For this, you can use the "Publish" mass action.
 
@@ -78,25 +71,21 @@ To create an entry, click the "+ New" button in the upper right of the screen.
 
 In the **New Entry** modal that appears, give your entry a name. You can fill in the "Slug" field, or let it autocomplete based on the entry name. Lastly, select the content type of the entry. Types can be created in the [Types section](/en/platform/content/types.html).
 
-:::warning Attention
-If the name field is empty, the platform defaults the UUID of the entry as a slug.
-:::
+:::warning Attention If the name field is empty, the platform defaults the UUID of the entry as a slug. :::
 
 When you click **Create**, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
 
-:::tip Tip
-To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to select. (Check [Configure a Space](/es/platform/content/spaces.html #configurar -a-space))
+:::tip Tip To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to select. (Check \[Configure a Space\](/es/platform/content/spaces.html #configurar -a-space))
 
 Then, you just need to click on the current language and select the new language you want to use.
 
-You'll get to a blank version of the entry, where you can press the **Copy from language** button to bring the content from another version of the entry and consequently be able to translate it with more ease.
-:::
+You'll get to a blank version of the entry, where you can press the **Copy from language** button to bring the content from another version of the entry and consequently be able to translate it with more ease. :::
 
 ### Publish an Entry
 
 To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
 
-After you finish writing and editing, click the **Save** button in the top right part of the screen, which will save all of your content.
+After finishing your writing and editing, in the top right part of the screen click the **Save** button, which will save all of your content.
 
 If you click on it, the button will respond in two ways. If you have Space Manager permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
 
@@ -121,18 +110,11 @@ As a headless platform, Modyo allows you to preview an entry in multiple sites.
 
 If you already have [content views on your sites](/en/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
 
-::: danger Warning
-If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
-:::
+::: danger Warning If the Space is not associated with a site, you can only see the JSON code of the entry you are developing. :::
 
-:::warning Warning
-Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
-You can only preview the contents on a site if the language corresponds to the language of the site. If the entry is in another language, you will receive a 404 error when you reach the preview.
-:::
+:::warning Warning You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-fame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings. :::
 
-:::warning Warning
-You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-fame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
-:::
+:::warning Atención Puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio :::
 
 #### Edit an entry
 
@@ -152,19 +134,13 @@ To see the Categories, click on the **Categories** section in the main menu on t
 
 To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
 
-::: tip Tip
-When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
+::: tip Tip When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
 
-If we change the path, remember to change all links in any channel using it.
-:::
+If we change the path, remember to change all links in any channel using it. :::
 
-::: warning Warning
-If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
-:::
+::: warning Warning If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category. ::: Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente. :::
 
-::: danger Danger
-If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments.
-:::
+::: danger Danger If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments. :::
 
 ### Slug
 
@@ -184,6 +160,6 @@ Depending on how you are consuming the content, you will need to perform extra s
 
 Targeted content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
-With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the Private option in the entry's properties, then check the Enable targeting option, and select from the list of targets. You can select more than one target audience.
+Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the Private option in the entry's properties, then check the Enable targeting option, and select from the list of targets.
 
 To create a specific target, review the [Targets section](/en/platform/customers/targets.html).
