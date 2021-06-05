@@ -12,14 +12,41 @@ Modyo also offers a widget that allows you to see an overview of the loans that 
 modyo-cli get modyo-widgets-retail-loans
 ```
 
-[Open in new tab](https://widgets.modyo.com/retail/loans)
+[Open in new tab](https://widgets-es.modyo.com/personas/creditos)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/loans" width="100%" frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos" width="100%"  frameBorder="0" style="min-height:630px;overflow:auto;margin-top:20px;"></p>
 
-| Feature       | Description                                                                                                                                                                                                                 |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Loan Summary | Displays information on the customer's current loans, such as type of loan, name and application number.                                                                                                       |
-| Loan Detail | When you select view details, the widget displays more detailed information about the loan including outstanding balance, date awarded, end date, loan type and payment amount. Includes information on upcoming due dates. |
+<table spaces-before="0">
+  <tr>
+    <th>
+      Feature
+    </th>
+    
+    <th>
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Loan Summary
+    </td>
+    
+    <td>
+      Displays information on the customer's current loans, such as type of loan, name and application number.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Loan Detail
+    </td>
+    
+    <td>
+      When you select view details, the widget displays more detailed information about the loan including outstanding balance, date awarded, end date, loan type and payment amount. Includes information on upcoming due dates.
+    </td>
+  </tr>
+</table>
 
 <script>
 
@@ -35,7 +62,7 @@ modyo-cli get modyo-widgets-retail-loans
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
