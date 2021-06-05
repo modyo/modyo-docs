@@ -4,16 +4,16 @@ search: true
 
 ### Google
 
-In order to integrate Google login with Modyo, you'll need to have:
+In order to integrate Google login with Modyo, you must have:
 
 - Application ID
 - Key
 
-You can get these values after creating a Google app with login permissions. You can learn more about creating and configuring a Google app in its [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
+These values can be obtained after creating an application in the Google Platform with login permissions. You can learn more about how to create and configure a Google application in your [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
 
-Please note that at the end of the form the callback URL (_Callback URI_) is available. You need to use that URL in the app or project you create on Google in order to successfully complete the login flow.
+You should keep in mind that the callback URL (_Callback URI_) is available at the end of the form. You need to use that URL in the application or project that you create in Google to be able to complete the login flow correctly.
 
-In addition to the necessary settings, you can set up some extra data to control the behavior of your login with Google. If you enable the _Restrict Domains_ option, you can use two extra fields:
+In addition to the necessary values, you can configure additional data to control the Google login experience. If you enable the _Restrict domains_ option, you can use two extra fields:
 
-- **Domain example**: These will be the domains shown as a suggestion when you are signing in to Google.
-- **Supported domains**: If the domain of the mail that the user entered at the time of logging in to Google is not within this list, then the login will be invalid and the user will be redirected to the Modyo login view without an active session.
+- **Domain example**: These will be the domains that are shown as a suggestion when you are signing in to Google.
+- **Supported domains**: If the email domain that the user uses when signing in with Google is not in this list, then the login will not be valid and the user will be redirected to the Modyo login view without an active session.
