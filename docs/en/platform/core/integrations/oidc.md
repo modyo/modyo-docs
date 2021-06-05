@@ -33,7 +33,7 @@ The following configuration is valid for both Team and Customer user integration
 3. Click **Launch discovery service**. This will complete most of the settings.
 4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 
-### Optional integration configurations
+### Optional integration settings
 
 At the time of a specific integration, Modyo allows you to enable certain settings to control the following session features:
 
