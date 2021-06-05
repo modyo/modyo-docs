@@ -55,7 +55,7 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 2. In the search bar, search for **Azure Active Directory**, and then select **App registrations> New registration**.
 3. Complete the following information
    * **Name**: Use a meaningful name, for example, `modyo-production`.
-   * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include Microsoft personal accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
+   * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include personal Microsoft accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
    * **Redirect URI**: Use the URL relating to the account `/auth/openidc/callback`.
 4. After the application is created, go to **App registrations > modyo-production** and get the **Application ID** and **Directory ID**.
 5. Go to **App registrations > Certificates & secrets** and create a new secret with the**New client secret** button.
