@@ -79,7 +79,6 @@ The following configuration is valid for both Team and Customer user integration
 
 Modyo allows you to synchronize attributes and other properties of Customer users through standard and additional _claims_ through OpenID Connect.
 
-
 1. In **Clients > Mappers** create a new **Protocol Mapper** with the user's attribute or property. Make sure **Add to userinfo** is enabled.
 2. In **Customers > Customer Settings > Custom Fields** add a new **Custom Field** with a data type equivalent to the claim.
 3. In **Customers > Customers Settings > Integrations > OpenID Connect** enable **Enable _claims_ synchronization on login** and add _claims_ mappings for each of your _claims_.
