@@ -14,4 +14,4 @@ In order to integrate a login with SAML in Modyo, you will need the following in
 - Signature of the identity provider certificate
 - Name identification format
 - Service callback URL: By default this URL is `account_url/admin/auth/saml/callback`
-- Logo: As in LDAP, this image will be displayed as the service logo next to the service name in the login form.
+- Logo: As in LDAP, this image will be displayed as a service logo next to the service name in the login form.
