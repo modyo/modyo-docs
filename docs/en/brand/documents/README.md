@@ -2,7 +2,7 @@
 search: false
 ---
 
-# Documents <Badge text="Beta" type="warn"/> 
+# Documents <Badge text="Beta" type="warn"/>
 
 ## Text Rules
 
