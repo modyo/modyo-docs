@@ -11,7 +11,7 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 - Authentication URL: OAuth2 authentication service URL
 - Customer ID
 - Key (secret)
-- Scope: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you'll need to define it in this field.
+- Scope: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
 - Login field: You can choose between using Modyo users' email, or their username. This option is useful if your OAuth2 authentication provider uses, for example, a numeric field and not an email as an identifier.
 - Placeholder for login: Text to be displayed in the id field as placeholder if the user has not filled in the field
 - Use SSL: Enable this option if your OAuth2 authentication service uses a secure socket layer (SSL: _Secure Sockets Layer_)
