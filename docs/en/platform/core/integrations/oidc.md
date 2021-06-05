@@ -6,11 +6,11 @@ search: true
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
-:::warning Attention
-For the proper functioning of an OpenID Connect integration, it is necessary that the OIDC Provider has an SSL certificate up to date, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
+:::warning Warning
+For a successful OpenID Connect integration, the OIDC Provider must have an up-to-date SSL certificate, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
-:::warning Attention
-The API for obtaining delegated access tokens via `/auth/openidc/access_token` is deprecated and has been replaced by `/api/profile/me`.
+:::warning Warning
+The delegated token API via `/auth/openidc/access_token` has been deprecated in favor of `/api/profile/me`.
 :::
 
 ## Using Keycloak
