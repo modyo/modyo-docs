@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels] (/en/platform/channels) where you will learn how to create a site, modify the template base, add new libraries and connect widgets with already created content.
+Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde aprenderás a crear un sitio, modificar la base del template, agregar nuevas librerías y conectar widgets con contenido ya creado.
 
 Linking Content and Channels is one of the most important functionalities when it comes to having dynamic sites and easy to manage by anyone.
 
@@ -14,11 +14,11 @@ Throughout this tutorial, and others too, we will use the fictitious brand "Dyna
 
 ### Dynamic Bank
 
-Dynamic Bank is the name we give in Modyo to everything about demos and example of the platform. We wanted to create it in order to offer an experience very close to the reality of what it really means to work with Modyo. Once you have completed this tutorials, your site should look like this:
+Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplos de la plataforma. Quisimos crearlo para poder ofrecer una experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutorial tu sitio debería lucir así:
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
- <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank"> View Design Figma </a> 
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">View Design Figma</a>
 
 ## Prerequisites
 
@@ -26,13 +26,13 @@ To run the steps in this tutorial you must have created the contents of the [Dyn
 
 ## Step 1: Create a Cloud Site
 
-To create our [site] (/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
+Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer clic en el botón <b>New Site</b>.
 
 We fill the Name fields with "Bank" and select the Theme "Minimal" as shown in the image.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
- <b>! You've already created your first site in Modyo! </b> 
+<b>!Ya creaste tu primer sitio en Modyo!</b>
 
 ## Step 2: Change CSS variables to give you Dynamic Bank look and feel
 
@@ -54,18 +54,18 @@ To make the change, we will modify the following variables in the aforementioned
 
 #### Buttons:
 
- <code> button_radius = 100px </code> <br> 
- <code> button_font_weight = 600 </code> 
+<code> button_radius = 100px </code> <br> 
+ <code> button_font_weight = 600 </code>
 
-To review the change you just made, let's use [preview mode] (/es/platform/core/key-concepts.html #modo -preview-view).
+To review the change you just made, let's use \[preview mode\] (/es/platform/core/key-concepts.html #modo -preview-view).
 
 ## Step 3: Take out container
 
-In the [layout] (/es/platform/channels/templates.html #layouts -custom), which are the HTML structure in which the widgets we will add to each [Page] (/en/platform/channels/pages), we need to remove the <b> container </b> class from the main to be able to use 100% of the width of our Page.
+In the \[layout\] (/es/platform/channels/templates.html #layouts -custom), which are the HTML structure in which the widgets we will add to each \[Page\] (/en/platform/channels/pages), we need to remove the <b> container </b> class from the main to be able to use 100% of the width of our Page.
 
 For this, inside Templates, we go back to the Views tab, look for the Layouts section and open the home.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
 And we remove <code> class="container" </code>.
 
@@ -73,15 +73,15 @@ And we remove <code> class="container" </code>.
 
 In Minimal we are using the [webfontload] library (https://github.com/typekit/webfontloader) to load the typography asynchronously.
 
-For Dynamic we'll use the Jost font. To change it we have to enter the snippet <b> webfontload_config_js </b> and modify the line where the call is made, replacing <code> families: ['DM Sans:400,700&display=Swap'] </code> by <code> families: ['jost:400,700&display=Swap'] </code>.
+Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar al snippet <b>webfontload_config_js</b> y modificar la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
 
 ## Step 5: Change header and footer
 
 Within Templates, one of the most powerful features we have is to reuse code in various Pages, which is the case of Header and Footer.
 
-The HTML of them is located within the Snippets tab, grouped in General, and we will replace it with the following HTMls codes.
+El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en General, y lo vamos a remplazar por los siguientes códigos HTML.
 
- <code> header </code> 
+<code>header</code>
 
 ```html
 <header role="banner" id="header">
@@ -135,7 +135,7 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
           >
             <path
               fill-rule="evenodd"
-              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5- 5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
         </button>
@@ -165,8 +165,8 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
             class="modal-body p-4 navbar navbar-expand-md  navbar-light align-items-start"
           >
             <nav>
-              {% assign responsive = "Responsive" %} {% snippet
-              'shared/general/menu' %}
+              {% assign responsive = "Responsive" %}
+              {% snippet "shared/general/menu" %}
             </nav>
           </div>
         </div>
@@ -176,7 +176,7 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
 </header>
 ```
 
- <code> footer </code> 
+<code>footer</code>
 
 ```html
 <footer id="footer" class="py-5 bg-dark navbar-expand-md" role="contentinfo">
@@ -222,7 +222,7 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
 </footer>
 ```
 
-After we termimate our snippets header and footer, we will work on the CSS of the footer. For order topics we will generate a new [snippet] (/es/platform/channels/templates.html #snippets) and add it in the template's base stylesheet.
+Luego de terminar nuestros snippets header y footer, vamos a trabajar en el CSS del footer. Por temas de orden vamos a generar un nuevo [snippet](/es/platform/channels/templates.html#snippets) y lo agregaremos en la hoja de estilos base del Template.
 
 To create a new snippet you need to go to the Custom section and press the button <b> + </b>, fill the Path field as <b> footer_css </b> and then add the following code.
 
@@ -242,7 +242,7 @@ footer a:hover {
 
 To add our new snippet to the template's base stylesheet, we need to press the copy icon next to our snippet as the following image shows:
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/copy.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/copy.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
 And paste it into our Style Sheet that is in Views, Style Sheets, style.
 
@@ -252,25 +252,25 @@ The code that gives us the snippet is like this:
 
 ## Step 6: Upload logo and favicon
 
-To perform this step we will go to the [Site settings] section (/es/platform/channels/sites.html #configuracion -a-site), where we can change or add some site settings, including: Site Name, Description, Language, GTM ID, SEO, PWA, Team, among others.
+Para realizar este paso vamos a ir a la sección [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio), donde podemos cambiar o agregar algunas configuraciones del sitio, entre ellas: Nombre del sitio, Descripción, idioma, ID de GTM, SEO, PWA, Team, entre otras.
 
 In this case we will focus on General and add our logo file in <b> Site logo </b> and Favicon in <b> Visualization </b>.
 
 #### Logo
 
- <img src="https://cloud.modyocdn.com/uploads/b3d572c9-a49a-4b8a-b411-d9b79b9b7b1d/original/dynamicbank-01.svg" style="margin: 30px 0;max-width: 300px;"> 
+<img src="https://cloud.modyocdn.com/uploads/b3d572c9-a49a-4b8a-b411-d9b79b9b7b1d/original/dynamicbank-01.svg" style="margin: 30px 0;max-width: 300px;" />
 
 #### Favicon
 
- <img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;"> 
+<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;" />
 
 Remember to save your changes after uploading the files.
 
 ## Step 7: Make Bootstrap css changes
 
-Once our logo is loaded, we will make the size changes to fit our design. For this we will go to Templates and within the Libs group we open the snippet <b> bootstrap css </b> and look for the class that is affecting our logo, <code> .navbar-brand img </code> and we change the height of <code> 50px </code> to <code> 30px </code>.
+Una vez cargado nuestro logo, vamos a hacer los cambios de tamaño para que se ajuste a nuestro diseño. Para esto vamos a ir a Templates y dentro de el grupo de Libs abrimos el snippet <b>bootstrap css</b> y buscamos la clase que está afectando a nuestro logo, <code>.navbar-brand img</code> y cambiamos el height de <code>50px</code> a <code>30px</code>.
 
-Once we have reviewed in preview mode that our logo looks good, we need to change how the menu links look like.
+Una vez revisado en modo vista previa que nuestro logo se vea bien, tenemos que cambiar cómo se ven los enlaces del menú.
 
 For this we will modify the styles of the navbar-light, navbar-nav and nav-link classes.
 
@@ -304,19 +304,19 @@ For this we will modify the styles of the navbar-light, navbar-nav and nav-link 
 
 For order topics, we are going to create a CSS snippet, where later we'll add all the styles that will affect our Home.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;"> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;" />
 
-For this snippet to take effect in our Home we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet "home_css"%} </code> so that the content of our snippet within the general template stylesheet.
+Para que este snippet haga efecto en nuestro Home tenemos que agregar el código del llamado del snippet en la hoja de CSS general con el siguiente código <code>{% snippet "home_css" %}</code> para que el contenido de nuestro snippet aparezca dentro de la hoja de estilos generales del template.
 
 ## Step 9: Add Dependent Libraries
 
-Now that we know how to create snippets within Templates, we're going to load external libraries in the same way.
+Ahora que ya sabemos cómo crear snippets dentro de Templates, vamos a cargar librerías externas de la misma forma.
 
 For some of the sections of our Home we will need JS and CSS libraries, to add animations in the Hero or testimonial slides for example.
 
-In the same way we created the snippet footer_css, we're going to create four new snippets to load the external libraries, where two will be CSS and two from JS. We will include each of them in the corresponding sheets with the code of the snippet.
+De la misma forma en la que creamos el snippet footer_css, vamos a crear cuatro nuevos snippets para cargar las librerías externas, donde dos serán de CSS y dos de JS. Incluiremos cada uno de ellos en las hojas correspondientes con el código del snippet.
 
- <code> animate_css </code> 
+<code>animate_css</code>
 
 ```css
 @charset "UTF-8"; /*!
@@ -2999,459 +2999,7 @@ In the same way we created the snippet footer_css, we're going to create four ne
     opacity: 0;
     -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
     transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
-}
-.zoomInUp {
-  -webkit-animation-name: zoomInUp;
-  animation-name: zoomInUp;
-}
-@-webkit-keyframes zoomOut {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes zoomOut {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-  to {
-    opacity: 0;
-  }
-}
-.zoomOut {
-  -webkit-animation-name: zoomOut;
-  animation-name: zoomOut;
-}
-@-webkit-keyframes zoomOutDown {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
-}
-@keyframes zoomOutDown {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
-}
-.zoomOutDown {
-  -webkit-animation-name: zoomOutDown;
-  animation-name: zoomOutDown;
-}
-@-webkit-keyframes zoomOutLeft {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
-    transform: scale(0.1) translate3d(-2000px, 0, 0);
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-}
-@keyframes zoomOutLeft {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
-    transform: scale(0.1) translate3d(-2000px, 0, 0);
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-}
-.zoomOutLeft {
-  -webkit-animation-name: zoomOutLeft;
-  animation-name: zoomOutLeft;
-}
-@-webkit-keyframes zoomOutRight {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
-    transform: scale(0.1) translate3d(2000px, 0, 0);
-    -webkit-transform-origin: right center;
-    transform-origin: right center;
-  }
-}
-@keyframes zoomOutRight {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
-    transform: scale(0.1) translate3d(2000px, 0, 0);
-    -webkit-transform-origin: right center;
-    transform-origin: right center;
-  }
-}
-.zoomOutRight {
-  -webkit-animation-name: zoomOutRight;
-  animation-name: zoomOutRight;
-}
-@-webkit-keyframes zoomOutUp {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
-}
-@keyframes zoomOutUp {
-  40% {
-    opacity: 1;
-    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
-    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
-    -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
-    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  }
-}
-.zoomOutUp {
-  -webkit-animation-name: zoomOutUp;
-  animation-name: zoomOutUp;
-}
-@-webkit-keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes slideInDown {
-  from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-.slideInDown {
-  -webkit-animation-name: slideInDown;
-  animation-name: slideInDown;
-}
-@-webkit-keyframes slideInLeft {
-  from {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes slideInLeft {
-  from {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-  animation-name: slideInLeft;
-}
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes slideInRight {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-.slideInRight {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
-}
-@-webkit-keyframes slideInUp {
-  from {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes slideInUp {
-  from {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-.slideInUp {
-  -webkit-animation-name: slideInUp;
-  animation-name: slideInUp;
-}
-@-webkit-keyframes slideOutDown {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-}
-@keyframes slideOutDown {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-}
-.slideOutDown {
-  -webkit-animation-name: slideOutDown;
-  animation-name: slideOutDown;
-}
-@-webkit-keyframes slideOutLeft {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-@keyframes slideOutLeft {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-.slideOutLeft {
-  -webkit-animation-name: slideOutLeft;
-  animation-name: slideOutLeft;
-}
-@-webkit-keyframes slideOutRight {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-}
-@keyframes slideOutRight {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-}
-.slideOutRight {
-  -webkit-animation-name: slideOutRight;
-  animation-name: slideOutRight;
-}
-@-webkit-keyframes slideOutUp {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-}
-@keyframes slideOutUp {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-}
-.slideOutUp {
-  -webkit-animation-name: slideOutUp;
-  animation-name: slideOutUp;
-}
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.animated.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-.animated.delay-1s {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-.animated.delay-2s {
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-.animated.delay-3s {
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-.animated.delay-4s {
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-}
-.animated.delay-5s {
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
-}
-.animated.fast {
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
-}
-.animated.faster {
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-}
-.animated.slow {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
-.animated.slower {
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-}
-@media (print), (prefers-reduced-motion: reduce) {
-  .animated {
-    -webkit-animation-duration: 1ms !important;
-    animation-duration: 1ms !important;
-    -webkit-transition-duration: 1ms !important;
-    transition-duration: 1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-    animation-iteration-count: 1 !important;
-  }
-}
+    -w
 ```
 
 <code>wow_js</code>
@@ -5919,69 +5467,69 @@ Don't forget to add the animate_css and slick_css snippets to the stylesheet and
 
 Another feature that exists within Modyo is the Navigation tool, in which we can generate the menu for our site in a simple way.
 
-For this, we go to the [Navigation] section (/es/platform/channels/navigation.html) and modify the already esxistent menu and leave the following options.
+Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.html), modificamos el menú ya existente y dejaremos las siguientes opciones.
 
- <table> 
- <tr> 
- <th style="text-align: left"> Name </th> 
- <th style="text-align: left"> Associated Layout Page </th> 
- <th style="text-align: left"> URL </th> 
- </tr> 
- <tr> 
- <td> 
- Home page
- </td> 
- <td> 
- Home page
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Products
- </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- </tr> 
- <tr> 
- <td> 
- Benefits
- </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- </tr> 
- <tr> 
- <td> 
- Offices
- </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <th style="text-align: left">Name</th>
+  <th style="text-align: left">Associated Layout Page</th>
+  <th style="text-align: left">URL</th>
+ </tr>
+ <tr>
+  <td>
+   Home page
+  </td>
+  <td>
+   Home page
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Products
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Benefits
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Offices
+  </td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+ </tr>
+</table>
 
 This would be reflected as follows:
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;"> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;" />
 
 After having our full menu we save and publish.
 
 ## Step 11: Modify Page Home
 
-Once you list the Template base, menu and site settings, we will start working on our Home. To do this we go to the [Page] section (/en/platform/channels/pages) and enter Home.
+Una vez lista la base del Template, el menú y la configuración del sitio, vamos a comenzar a trabajar en nuestro Home. Para ello vamos ir a la seccion [Page](/es/platform/channels/pages) y entrar al Home.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/page.png" style="margin: 30px 0;max-width: 300px;"> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/page.png" style="margin: 30px 0;max-width: 300px;" />
 
 The first thing we're going to do is modify the HTML widget that already comes in the Page, changing the title of the widget to Hero and changing the HTML to the following:
 
@@ -6024,7 +5572,7 @@ The first thing we're going to do is modify the HTML widget that already comes i
 </div>
 ```
 
-In this HTML we will use the [Liquid SKD] (/es/platform/content/public-api-reference.html #sdk -liquid) to connect [Modyo Channels] (/en/platform/channels) with [Modyo Content] (/en/platform/content).
+In this HTML we will use the \[Liquid SKD\] (/es/platform/content/public-api-reference.html #sdk -liquid) to connect \[Modyo Channels\] (/en/platform/channels) with \[Modyo Content\] (/en/platform/content).
 
 The call to the Liquid SDK is done through an assign as follows: <code> {% assign entries = spaces ['bank'] .types ['hero'] .entries | paginated: 1%} </code>, in which we assign the space and the Type that we had already created in the previous tutorial.
 
@@ -6096,13 +5644,13 @@ Once we're ready our HTML on the page, let's add the style in the snippet <b> ho
 }
 ```
 
-By having our Hero code, HTML in Page and CSS in Templates ready, we can [preview] (/es/platform/core/key-concepts.html #modo -preview) our work by activating Page and Templates in Draft in the preview mode bar.
+By having our Hero code, HTML in Page and CSS in Templates ready, we can \[preview\] (/es/platform/core/key-concepts.html #modo -preview) our work by activating Page and Templates in Draft in the preview mode bar.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/preview.png" style="margin: 30px 0;"> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/preview.png" style="margin: 30px 0;" />
 
 ## Step 12: News Widgets
 
-For the news section of our Home, we will create an HTML widget similar to Hero within our Page Home. In the tab <b> Add Widgets </b>, click on HTML and in our widget we paste the following code:
+Para la sección de noticias de nuestro Home, vamos a crear un widget de HTML similar al de Hero dentro de nuesto Page Home. En la pestaña <b>Add Widgets</b>, hacemos click en HTML y en nuestro widget pegamos el siguiente código:
 
 ```html
 {% assign entries = spaces['bank'].types['news'].entries | paginated: 3 %}
@@ -6156,17 +5704,17 @@ For the benefits we will follow the same logic of the already created widgets, a
     <div class="row justify-content-center mb-4">
       <div class="col-12 col-md-8 text-center">
         <h3 class="text-white">
-          Become part of a world of benefits designed for you
+          Se parte de un mundo de beneficios pensados especialmete para ti
         </h3>
         <p class="text-white">
-          Enjoying your banking experience is the most important thing for us
+          Para nosotros lo más importante es que disfrutes tu banca
         </p>
       </div>
     </div>
     <div class="row">
       {% for entry in entries limit:1 %}
       <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100" href="{{ entry.fiels.Url }}">
+        <a class="card shadow-sm w-100" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
@@ -6187,7 +5735,7 @@ For the benefits we will follow the same logic of the already created widgets, a
       </div>
       {% endfor %} {% for entry in entries offset:1 %}
       <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100" href="{{ entry.fiels.Url }}">
+        <a class="card shadow-sm w-100" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
@@ -6234,7 +5782,7 @@ And the CSS in the snippet <b> home_css </b> within Templates.
 }
 ```
 
-Remember that you can review how our Home is doing with the preview mode.
+Recuerda que puedes revisar cómo va quedando nuestro Home con el modo vista previa.
 
 ## Step 14: DYNAMIC APP Widgets
 
@@ -6280,13 +5828,13 @@ Again we will create an HTML widget inside the Page Home and its respective CSS 
 
 ## Step 15: Testimonial Widgets
 
-The testimonials widget is a bit more complex as we will use JS to generate the slide. This is why we will create a widget within the [Widget Builder] section (/es/platform/channels/widgets.html).
+El widget de testimonios es un poco más complejo ya que utilizaremos JS para generar el slide. Es por eso que crearemos un widget dentro de la sección [Widget Builder](/es/platform/channels/widgets.html).
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;" />
 
-Widgets Builder is where you can create micro frontends for your sites. To create one we just need to enter the aforementioned section, click on the button <b> New Widget </b> to which we will assign a name that in our case is Testimonial. By creating it this will display three tabs, where you will have to paste the JS, CSS and HTML accordingly.
+El Widgets Builder es donde puedes crear micro frontends para tus sitios. Para crear uno solo necesitamos entrar a la sección ya mencionada, hacer click en el botón <b>New Widget</b> y le asignaremos un nombre, que en nuestro caso es Testimonial. Al crearlo, este te desplegará tres pestañas, donde deberás pegar el JS, CSS y HTML según corresponda.
 
- <code> js </code> 
+<code>js</code>
 
 ```js
 $('.single-item').slick({
@@ -6299,7 +5847,7 @@ $('.single-item').slick({
 })
 ```
 
- <code> CSS </code> 
+<code>CSS</code>
 
 ```css
 #testimonial {
@@ -6329,7 +5877,7 @@ $('.single-item').slick({
 }
 ```
 
- <code> html </code> 
+<code>html</code>
 
 ```html
 {% assign entries = spaces['bank'].types['testimonial'].entries | by_lang: 'en'
@@ -6347,7 +5895,7 @@ $('.single-item').slick({
             <img
               class="w-100"
               src="{{ entry.Image.url }}"
-              alt="{{ entry.autor }}"
+              alt="{{ entry.Author }}"
             />
           </figure>
           <div class="figcaption col-11 col-md-6">
@@ -6356,7 +5904,7 @@ $('.single-item').slick({
                 Nuestros clientes dicen...
               </h3>
               <p class="text-muted">{{ entry.Testimony }}</p>
-              <p class="text-muted font-weight-bold">{{ entry.autor }}</p>
+              <p class="text-muted font-weight-bold">{{ entry.Author }}</p>
             </figcaption>
           </div>
         </div>
@@ -6367,28 +5915,28 @@ $('.single-item').slick({
 </div>
 ```
 
-Once the widget is finished, you must save your changes in order to review it in preview mode. Publishing it will be available in the widget library, which you can access from Pages.
+Una vez terminado el widget deberás guardar tus cambios para poder revisarlo en modo vista previa. Al publicarlo quedará disponible en la bibiolteca de widgets, a los que podrás acceder desde Pages.
 
 To display it in the Home we need to add it as widget <b> Custom </b> and search it inside the list (in this example we only have one).
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" style="max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" style="max-width: 300px;margin: auto 0;" />
 
- <b> Congratulations! we will already have all the necessary widgets already in the Home </b> 
+<b>¡Felicidades! Ya tenemos todos los widgets necesarios en el Home</b>
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets_home.png" style="max-width: 400px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets_home.png" style="max-width: 400px;margin: auto 0;" />
 
 ## Step 16: Review and Publish
 
-Once all our Home widgets and CSS are finished, we will preview the work we have done in this Tutorial. Once you're happy with the result, we must publish the changes to just now leave all our work available for our end users.
+Una vez terminados todos nuestros widgets y CSS del Home, revisaremos en modo vista previa el trabajo que hemos realizado en este Tutorial. Una vez que estés conforme con el resultado debemos publicar los cambios para recién ahora dejar todo nuestro trabajo disponible de cara a nuestros usuarios finales.
 
-To make a publication, click on the <b> Publish </b> button where a panel will open with the changes we have made.
+Para realizar una publicación, hacemos clic en el botón <b>Publish</b> donde se abrirá un panel con los cambios que hemos realizado.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;" />
 
 Then we will follow the steps to select the publication date, which in this case will be immediate polication.
 
 ## Opinion
 
-Congratulations! You have completed the Dynamic Bank Home Creation course in Modyo.
+¡Felicidades! Haz finalizado el curso de Creación del Home de Dynamic Bank en Modyo.
 
-Now you have knowledge of how to use [Modyo Channels] (/en/platform/channels) with all its modules; [Pages] (/en/platform/channels/pages), [Navigation] (/en/platform/channels/navigation), [Widgets] (/en/platform/channels/widgets), [Templates] (/en/platform/channels/templates) and some details within [Site settings] (/en/platform/channels/sites. html #configuracion -a-site). In addition, you managed to link your site with [Modyo Content] (/en/platform/content) that allows you to generate dynamic digital channels connected to content separated from the site code.
+Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, lograste enlazar tu sitio con [Modyo Content](/es/platform/content) que permite generar canales digitales dinámicos conectados a contenidos separados del código del sitio.
