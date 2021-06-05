@@ -60,7 +60,7 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 4. Once the application is created, go to **App registrations> modyo-production** and get the **Application ID** and **Directory ID**.
 5. Go to **App registrations> Certificates & secrets** and create a new secret with the **New client secret** button.
 
-### Integration Configuration
+### Integration Settings
 
 The following configuration is valid for both Team and Customer user integrations.
 
