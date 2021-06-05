@@ -6,7 +6,7 @@ search: true
 
 ## Introducción
 
-Bienvenido al primer tutorial de la serie de entrenamiento de Modyo. En este primer tutorial revisaremos todo lo que necesitas saber para crear y publicar contenido usando [Modyo Content](/es/platform/content), herramienta indispensable a la hora de gestionar sitios dinámicos y multiplataforma.
+Bienvenido al primer tutorial de la serie de entrenamiento de Modyo. En este primer tutorial revisaremos todo lo que necesitas saber para crear y licar contenido usando [Modyo Content](/es/platform/content), herramienta indispensable a la hora de gestionar sitios dinámicos y multiplataforma.
 
 ### Dynamic Bank
 
@@ -26,7 +26,7 @@ Para ejecutar los pasos de este tutorial debes contar únicamente con una cuenta
 
 ## Paso 1: Crear un espacio de contenidos
 
-Una vez que ingreses a Modyo con tu cuenta, iremos al módulo de [Modyo Content](/es/platform/content) para [crear nuestro primer espacio](/es/platform/content/spaces.html#crear-un-espacio), que llamaremos **"Bank"**, selecionando como idioma **Spanish (Spain)**.
+Una vez que ingreses a Modyo con tu cuenta, iremos al modulo de [Modyo Content](/es/platform/content) para [crear nuestro primer espacio](/es/platform/content/spaces.html#crear-un-espacio), que llamaremos **"Bank"**, selecionando como idioma **Spanish (Spain)**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
 
@@ -35,7 +35,7 @@ Una vez que ingreses a Modyo con tu cuenta, iremos al módulo de [Modyo Content]
 ## Paso 2: Crear tipo "Hero"
 
 Ahora necesitamos crear nuestro primer [tipo de contenido](/es/platform/content/types.html#tipos-de-contenido) en nuestro espacio **"Bank"**.
-Una vez que estés en este espacio, debes ir a la sección **Types** y darle clic al botón superior derecho que dice **"+ Nuevo Tipo"**.
+Una vez que estes en este espacio, debes ir a la sección **Types**, adrle click al botón superior derecho que dice **"+ Nuevo Tipo"**.
 
 Desde ahí, generamos nuestro primero Tipo llamado **"Hero"** con los siguientes campos:
 
@@ -103,7 +103,7 @@ Es importante guardar los cambios antes de salir.
 
 ## Paso 3: Crear y publicar entrada del Tipo "Hero"
 
-Ahora crearemos nuestra primera [entrada](/es/platform/content/entries) del tipo que acabamos de crear. Para eso, debemos ir a la sección **Entries** y hacer clic en el botón **Create an entry**, para luego seleccionar el tipo "Hero" y agregar en Name **_"Donde estés, Dynamic Bank te acompaña"_**.
+Ahora crearemos nuestra primera [entrada](/es/platform/content/entries) del tipo que acabamos de crear. Para eso, debemos ir a la sección **Entries** y hacer click en el botón **Create an entry**, para luego seleccionar el tipo "Hero" y agregar en Name **_"Donde estés, Dynamic Bank te acompaña"_**.
 
 Para el resto de los campos, usaremos los siguientes valores:
 
@@ -124,7 +124,7 @@ Para el resto de los campos, usaremos los siguientes valores:
    Para lo que necesites estamos contigo a todos lados
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Title Link</b>
   </td>
@@ -132,7 +132,7 @@ Para el resto de los campos, usaremos los siguientes valores:
    Hazte cliente
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Url</b>
   </td>
@@ -140,7 +140,7 @@ Para el resto de los campos, usaremos los siguientes valores:
    url de destino, por ahora <code>#</code> bastará
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Button color</b>
   </td>
@@ -154,7 +154,7 @@ Luego de editar el contenido debemos guardar y [publicar](/es/platform/content/e
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/>
 
-:::tip ¡Muy bien! Ya conseguiste crear tu primer Tipo y Entrada con éxito
+:::tip ¡Muy bien! ya conseguiste crear tu primer Tipo y Entrada con éxito
 Ahora crearemos el resto de los Tipos y Entradas que necesitamos para este tutorial.
 :::
 
@@ -203,7 +203,7 @@ Al igual que con el tipo "Hero" vamos a crear nuestro segundo tipo "News" consid
 
 ## Paso 5: Crear y publicar News
 
-Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news con los siguientes campos:
+Al igual que lo hizimos con el Hero, ahora crearemos las tres entradas para news con los siguientes campos:
 
 #### Entrada Uno
 
@@ -232,7 +232,7 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    Encuentra tu sucursal más cercana para que no te des paseos de más.
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Link</b>
   </td>
@@ -240,7 +240,7 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    Revisar sucursales
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Url</b>
   </td>
@@ -258,7 +258,7 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    <b>Name</b>
   </td>
   <td>
-   Crédito Hipotecario
+   Credito Hipotecario
   </td>
  </tr>
  <tr>
@@ -274,10 +274,10 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    <b>Text</b>
   </td>
   <td>
-   Conoce todo lo que necesitas saber sobre cómo solicitar tu crédito hipotecario.
+   Conoce todo lo que necesitas saber sobre como solicitar tu crédito hipotecario.
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Link</b>
   </td>
@@ -285,7 +285,7 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    Conocer más
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Url</b>
   </td>
@@ -322,7 +322,7 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    40% dcto. todos los miércoles en los mejores restaurantes con despacho a domicilio.
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Link</b>
   </td>
@@ -330,7 +330,7 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
    Ver beneficios
   </td>
  </tr>
- <tr>
+ <tr> 
   <td>
    <b>Url</b>
   </td>
@@ -371,7 +371,7 @@ Al igual que ya hicimos con Hero y News, debemos crear nuestro nuevo tipo para B
 
 ## Paso 7: Crear Categorías
 
-Ahora pondremos un poco más de orden creando categorías para poder filtrar nuestros beneficios.
+Ahora pondremos un poco más de órden creando categorías para poder filtrar nuestros beneficios.
 
 Para ello iremos a la sección Categories y creamos las siguentes categorias:
 
@@ -385,7 +385,7 @@ Para ello iremos a la sección Categories y creamos las siguentes categorias:
 
 ## Paso 8: Crear y publicar Beneficios
 
-Para los Beneficios vamos a crear siete entradas con los siguientes campos:
+Para los Beneficios vamos a crear siete entrada con los siguientes campos:
 
 #### Beneficio Uno
 
@@ -567,7 +567,7 @@ Para los Beneficios vamos a crear siete entradas con los siguientes campos:
    <b>Categoría</b>
   </td>
   <td>
-   Healthy
+   Healty
   </td>
  </tr>
 </table>
@@ -641,7 +641,7 @@ Para los Beneficios vamos a crear siete entradas con los siguientes campos:
    <b>Categoría</b>
   </td>
   <td>
-   Healthy
+   Healty
   </td>
  </tr>
 </table>
@@ -703,7 +703,7 @@ Crear dos entrada con los siguientes campos:
    <b>Author</b>
   </td>
   <td>
-   Adriana Pérez
+   Adriana Perez
   </td>
  </tr>
  <tr>
@@ -732,7 +732,7 @@ Crear dos entrada con los siguientes campos:
    <b>Name</b>
   </td>
   <td>
-   Testimonio Raúl
+   Testimonio Raul
   </td>
  </tr>
  <tr>
@@ -740,7 +740,7 @@ Crear dos entrada con los siguientes campos:
    <b>Author</b>
   </td>
   <td>
-   Raúl Díaz
+   Raul Díaz
   </td>
  </tr>
  <tr>
@@ -765,8 +765,8 @@ No olvides publicar todas tus entradas luego de crearlas.
 
 ## Conclusión
 
-Si llegaste hasta acá te felicitamos. Has conseguido utilizar [Modyo Content](/es/platform/content) con todo su potencial ya que utilizamos [Espacios](/es/platform/content/spaces), [Tipos](/es/platform/content/types), [Entradas](/es/platform/content/entries) y [Categorías](/es/platform/content/entries.html#categorias) para poder generar todo el contenido necesario para armar el Home de Dynamic Bank.
+Si llegaste hasta acá te felicitamos. Has conseguido utilizar [Modyo Content](/es/platform/content) con todo su potencial ya que utilizamos [Espacios](/es/platform/content/spaces), [Tipos](/es/platform/content/types), [Entradas](/es/platform/content/entries) y [Categorías](/es/platform/content/entries.html#categorias) para poder generar todo el contenido necesarios para armar el Home de Dynamic Bank.
 
-Ya tenemos todas nuestras entradas para poder entregarlas al Front-end y que él pueda generar el Home de Dynamic Bank sin problemas mientras nosotros podemos cambiar los textos desde contenido.
+Ya tenemos todas nuestras entradas para poder entregarlas al Front-end y él pueda generar el Home de Dynamic Bank sin problemas mientras nosotros podemos cambiar los textos desde contenido.
 
 ¿Qué sigue ahora? Obtener todo este contenido desde un sitio Web creado en [Modyo Channels](/es/platform/channels).
