@@ -12,13 +12,31 @@ The Deposits widget allows the user to easily and quickly upload funds to their 
 modyo-cli get modyo-widgets-investments-deposits
 ```
 
-[Open in new tab](https://widgets.modyo.com/investments/deposits)
+[Open in new tab](https://widgets-es.modyo.com/inversiones/depositos)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/deposits" width="100%" frameBorder="0" style="min-height:860px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/depositos" width="100%"  frameBorder="0"  style="min-height:860px;overflow:auto;margin-top:20px;"></p>
 
-| Feature | Description                                                                                                       |
-|---------------|-------------------------------------------------------------------------------------------------------------------|
-| Deposit        | Allows funds to be deposited to an investment account using payment buttons from different banking institutions. |
+<table spaces-before="0">
+  <tr>
+    <th>
+      Feature
+    </th>
+    
+    <th>
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Deposit
+    </td>
+    
+    <td>
+      Allows funds to be deposited to an investment account using payment buttons from different banking institutions.
+    </td>
+  </tr>
+</table>
 
 <script>
 
@@ -34,7 +52,7 @@ modyo-cli get modyo-widgets-investments-deposits
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
