@@ -17,7 +17,7 @@ The primary brand colors are petrol blue and green. The two are connected and re
 <span style="background: #151F38;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Petrol Blue</b></p>
+<p><b>Azul Petróleo</b></p>
 <p>HEX: #151F38 <br>
 RGB: 21 31 56</p>
 </div>
@@ -28,7 +28,7 @@ RGB: 21 31 56</p>
 <span style="background: #3dc681;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Green</b></p>
+<p><b>Verde</b></p>
 <p>HEX: #3dc681 <br>
 RGB: 14 189 116</p>
 </div>
@@ -39,7 +39,7 @@ RGB: 14 189 116</p>
 
 ## Secondary Color
 
-Our secondary colors, which often accompany the brand on different media, are blue and should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
+Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul.Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
 
 <table class="no-border">
 <tr>
@@ -48,7 +48,7 @@ Our secondary colors, which often accompany the brand on different media, are bl
 <span style="background: #2068D5;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Blue</b></p>
+<p><b>Azul</b></p>
 <p>HEX: #2068D5 <br>
 RGB: 32 104 216</p>
 </div>
@@ -64,7 +64,7 @@ Our brand is well suited to the following colors:
 <table class="no-border">
 <tr>
 <td colspan="6">
-<b>Petrol Blue</b>
+<b>Azul Petróleo</b>
 </td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ RGB: 208 210 215</p>
 
 <tr>
 <td colspan="6">
-<b>Green</b>
+<b>Verde</b>
 </td>
 </tr>
 
@@ -224,7 +224,7 @@ RGB: 159 229 199</p>
 </tr>
 <tr>
 <td colspan="6">
-<b>Blue</b>
+<b>Azul</b>
 </td>
 </tr>
 
@@ -410,7 +410,7 @@ Their most frequent use cases are:
 <span style="background: linear-gradient(180deg, #151F38 0%, #A1A5AF 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
-<p><b>Petrol Blue</b></p>
+<p><b>Blue petroleum</b></p>
 <span style="background: #151F38;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #151F38</p>
 <span style="background: #A1A5AF;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -424,7 +424,7 @@ Their most frequent use cases are:
 <span style="background: linear-gradient(180deg, #0EBD74 0%, #9FE5C7 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
-<p><b>Green</b></p>
+<p><b>Verde</b></p>
 <span style="background: #0EBD74;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #0EBD74</p>
 <span style="background: #9FE5C7;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -438,7 +438,7 @@ Their most frequent use cases are:
 <span style="background: linear-gradient(180deg, #2068D5 0%, #A0C1F3 100%);;width: 120px;height: 120px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-top: 20px;">
-<p><b>Blue</b></p>
+<p><b>Azul</b></p>
 <span style="background: #2068D5;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
 <p>HEX: #2068D5</p>
 <span style="background: #A0C1F3;width: 20px;height: 20px;display: block;border-radius: 100%;margin: auto;"></span>
@@ -451,7 +451,7 @@ Their most frequent use cases are:
 
 ## Special colors
 
-Spot colors are designated only for some internal illustrations (controlled by the branding team) and for graphics that require combinations. They should be used in moderation and always complementing the various pieces in contrast and color.
+Special colors are designated only for some internal illustrations (controlled by the branding team) and for graphics that require combinations. They should be used sparingly and always complementing the various pieces in contrast and color.
 
 <table>
 <tr>
@@ -531,9 +531,9 @@ Spot colors are designated only for some internal illustrations (controlled by t
 </tr>
 </table>
 
-### Associated Background Colors
+### Colours of associated backgrounds
 
-All background colors are defined with the colors of the main palette and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b> 
+All background colors are defined with the main palette colors and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b>
 
 <table>
 <tr>
@@ -594,7 +594,7 @@ All background colors are defined with the colors of the main palette and specia
 
 </table>
 
-### Overlay in images
+### Overlay in pictures
 
 The overlay of the photos is black with an opacity of 80% so that there is the best possible contrast between figure and background.
 
@@ -611,7 +611,7 @@ The overlay of the photos is black with an opacity of 80% so that there is the b
 
 ## Incorrect use of color
 
-Given the aforementioned, it is important to respect the use of colors.
+Given the above, it is important that the use of color is respected.
 
 <table>
 <tr>
@@ -627,10 +627,10 @@ Given the aforementioned, it is important to respect the use of colors.
 </tr>
 <tr>
 <td>
-<p class="dont">Do not use special colors, completely leaving aside the identity of the brand.</p>
+<p class="dont">Do not use special colors, leaving aside completely brand identity.</p>
 </td>
 <td>
-<p class="dont">The text should never have a color other than the primary colors, especially the paragraph.</p>
+<p class="dont">Text should never have a color other than the primary colors, especially paragraph.</p>
 </td>
 <td>
 <p class="dont">Do not use special background colors, losing even the contrast.</p>
@@ -649,13 +649,13 @@ Given the aforementioned, it is important to respect the use of colors.
 </tr>
 <tr>
 <td>
-<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
+<p class="dont">Do not use a special or different color than mentioned above for an overlay.</p>
 </td>
 <td>
-<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
+<p class="dont">Do not use a special or different color than mentioned above for an overlay.</p>
 </td>
 <td>
-<p class="dont">Do not use a special or different color to the one already mentioned for an overlay.</p>
+<p class="dont">Do not use a special or different color than mentioned above for an overlay.</p>
 </td>
 </tr>
 </table>
