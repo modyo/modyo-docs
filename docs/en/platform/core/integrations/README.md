@@ -67,7 +67,7 @@ Site webhooks are:
 * Widget published
 * Widget restored
 * Widget sent for review
-* Unpublished widget
+* Widget unpublished
 * Updated widget
 
 Spaces webhooks are:
