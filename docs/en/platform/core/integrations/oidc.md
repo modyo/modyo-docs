@@ -47,7 +47,7 @@ When performing a specific integration, Modyo allows you to enable certain setti
 
 ## Using Azure Active Directory
 
-Azure Active Directory is a Microsoft Azure cloud identity service that enables you to deploy an on-premises directory-based hybrid identity scheme with SSO in the cloud.
+Azure Active Directory is a Microsoft Azure cloud identity service that allows you to implement a hybrid identity scheme based on on-premise directories with SSO in the cloud.
 
 ### Register new client application
 
