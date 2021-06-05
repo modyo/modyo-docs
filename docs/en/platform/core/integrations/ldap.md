@@ -7,7 +7,7 @@ search: true
 In order to integrate a login with LDAP in Modyo, you will need the following information from your identity provider:
 
 - **Service name**: It will be displayed under the service login icon or logo.
-- **Host**: Address where the LDAP login service is available
+- **Host**: Address in which the LDAP login service is available
 - **Port**: Port with which Modyo and your LDAP identification service must be communicated.
 - **Base**: Search base, composed of multiple objects separated by commas.
 - **UID**: The name of the field used by the LDAP service to identify users as a unique attribute.
