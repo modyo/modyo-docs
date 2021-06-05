@@ -64,7 +64,7 @@ Site webhooks are:
 * Widget approved
 * Widget cloned
 * Widget created
-* Published widget
+* Widget published
 * Refurbished widget
 * Widget sent for review
 * Unpublished widget
