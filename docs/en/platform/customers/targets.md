@@ -10,12 +10,12 @@ These allow you to group your customers into different segments and facilitate c
 
 ## Interface
 
-In the interface, you can see a list of all targets in your account, with the following details:
+In the interface, you can see a list of all targets in your account, with the following details.
 
 The list is sorted as follows.
 
-- Name: Particular name of the list. (Below are the filters that it contains).
-- Created on: Target creation date.
+- Name: The particular name that has the list. (under this are the filters that compose it).
+- Created at: Created on: Target creation date.
 - People: Number of users that within the target.
 
 In addition, on the far right you will find an "Action" button with a drop-down menu that allows you to execute the following options:
@@ -23,9 +23,7 @@ In addition, on the far right you will find an "Action" button with a drop-down 
 - Edit: Edit the target name and filters.
 - Delete: Delete the target.
 
-::: warning Warning
-If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the target.
-:::
+::: warning Warning If you delete the target, the target is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the target. :::
 
 If you need to search for a specific target by name, you can do so through the search bar at the top of the screen.
 
@@ -43,9 +41,7 @@ To save a target, click on the **Save as a Target** button at the bottom of the 
 
 To see the users that match your target filters, click on the **Apply** button. This opens a [User](/en/platform/customers/users.html) list that displays all users that fit your filters.
 
-::: tip Tip
-When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results.
-:::
+::: tip Tip When using targets, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating targets to segment your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your target results. :::
 
 ### Filters
 
@@ -80,13 +76,11 @@ The filters found by default in the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
+To create an advanced filter that fits your needs, go to the Custom Fields section located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
 
-:::warning Warning
-Updating targets occurs constantly in background in one of three ways:
+:::warning Warning Updating targets occurs constantly in background in one of three ways:
 * Every 5 minutes.
 * Each time a user's profile is modified.
 * Every time a user answers a form.
 
-These updates are not immediate, and depend on the system load. It is possible that some users may not see targeted content right away after having executed an action that includes or excludes them from a particular target. Please give the system a few minutes to reflect target changes.
-:::
+These updates are not immediate, and depend on the system load. It is possible that some users may not see targeted content right away after having executed an action that includes or excludes them from a particular target. Please give the system a few minutes to reflect target changes. :::
