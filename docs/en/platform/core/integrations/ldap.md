@@ -4,7 +4,7 @@ search: true
 
 ### LDAP
 
-In order to integrate an LDAP login into Modyo, you'll need the following information from your identity provider:
+In order to integrate a login with LDAP in Modyo, you will need the following information from your identity provider:
 
 - **Service Name**: It will be displayed under the service login icon or logo.
 - **Host**: Address where the LDAP login service is available
