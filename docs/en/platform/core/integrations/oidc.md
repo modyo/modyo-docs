@@ -15,7 +15,7 @@ The delegated token API via `/auth/openidc/access_token` has been deprecated in 
 
 ## Using Keycloak
 
-Keycloak is a certified OpenID Connect identity provider that implements most of the features of Modyo's OpenID Connect integration.
+Keycloak is a certified OpenID Connect identity provider that implements most of the features of Modyo OpenID Connect integration.
 
 ### Register a new client application
 
