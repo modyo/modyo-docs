@@ -4,19 +4,19 @@ search: false
 
 # Illustrations
 
-Illustrations aim to communicate, convey ideas and feelings while creating an identity for the brand.
+Illustrations aim to communicate, transmit ideas, sensations and feeling while creating an identity to the brand.
 
-They can have different objectives, either as support of a text, narrative of a situation or the symbolism of a concept.
+They can have different objectives, either as support of a text, narrative of a situation, or the symbology of a concept.
 
-<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
-Illustrations are made for use on a dark and white background. It is recommended to use the specified shades in the brand guide.
+The illustrations are made for use on a dark and white background. Se recomienda usar los tonos especificados en la guía de marca.
 
-They can be categorized into three types depending on the level of complexity and the use that is given to them.
+They can be categorized into three types depending on the level of complexity and usage given to them.
 
 ## Hero
 
-These are illustrations that tell stories and complex concepts, which are generally represented with metaphors or fantastic and unreal situations. Sometimes these can be literal but they will always be linked to ideas with some complexity, more details and elements.
+They are illustrations that tell stories and complex concepts, which are usually represented with fantastic and unreal metaphors or situations. Sometimes these can be literal but always linked to ideas with a certain complexity and greater amount of details and elements.
 
 <table>
 <tr>
@@ -29,7 +29,7 @@ These are illustrations that tell stories and complex concepts, which are genera
 </tr>
 <tr>
 <td style="width: 50%;">
-A complex concept represented through a metaphor.
+Representation of a complex concept through metaphor.
 </td>
 <td style="width: 50%;">
 Representation of a concept using a fantastic scene.
@@ -39,7 +39,7 @@ Representation of a concept using a fantastic scene.
 
 ### Spot hero
 
-Spot Heroes are slightly simplified versions of a Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space. Generally, the concepts or ideas represented are simple and direct.
+Spot Hero are slightly simplified versions of a Hero, both visually and metaphorically. These assets are perfect when you need to impact within a limited space. Generally, the concepts or ideas represented are simple and straightforward.
 
 <table>
 <tr>
@@ -52,27 +52,27 @@ Spot Heroes are slightly simplified versions of a Hero, both visually and metaph
 </tr>
 <tr>
 <td style="width: 50%;">
-With the presence of metaphor.
+With presence of metaphor
 </td>
 <td style="width: 50%;">
-No presence of a metaphor.
+Without presence of metaphor
 </td>
 </tr>
 </table>
 
 ## Support element
 
-The supporting elements are generally characters or things that, just as their name implies, support texts and graphics, providing humanity and reinforcing Modyo's identity.
+Supporting elements are usually characters or things that, as its name says, support texts and graphics contributing humanity and reinforcing Modyo's identity.
 
-In contrast to the hero and the point hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without taking away from what is being communicated.
+Unlike Hero and spot Hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without removing prominence to what you want to communicate.
 
-<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" style="margin-left: 0;" />
 
 ## Color
 
-Illustrations are made up of solid colored shapes with shadows and linear details in vector.
+Illustrations are made up of solid color shapes with shadows and linear vector details.
 
-The following colors are used, giving priority to dark blue for shadows and leaving deep green for accents and details.
+The following colors are used, giving priority to dark blue for shadows and leaving intense green for accents and details.
 
 White is a color that is always used on faces and hands.
 
@@ -105,9 +105,9 @@ White is a color that is always used on faces and hands.
 </tr>
 </table>
 
-<img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
+<img src="/assets/img/brand/webinar.png" style="margin-left: 0;" />
 
-If necessary, color is used to reinforce ideas, direct the gaze to specific points, demonstrate differences between certain elements, and emphasize the idea of ​​overlap in one or more elements.
+If necessary, color is used to reinforce ideas, direct the look to specific points, demonstrate difference in certain elements, and emphasize the idea of overlapping on one or more elements.
 
 <table>
 <tr>
@@ -132,23 +132,23 @@ Use of color to highlight an element.
 
 Illustrations make ideas more accessible. Like words, illustrations tell stories and represent our brand efficiently and clearly.
 
-It is very important that they are used correctly and that they never become a distracting element.
+It is very important that they are used correctly and never transform into a distracting element.
 
-In marketing they are used as supporting elements and for communication, generally in websites, service sites, presentations, email, infographics, in social media and campaigns.
+In marketing they are used as a backup and communication element, usually on websites, service sites, presentations, email, infographics, social media and campaigns.
 
 ### Exclusion zone
 
-An adequate margin of at least 28 px / 1 cm must be respected around the entire image in both the horizontal and vertical versions.
+A suitable margin of at least 28 px/1 cm must be respected around the entire image both in the horizontal and vertical version.
 
 #### Horizontal
 
-<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;">
+<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;" />
 
 #### Vertical
 
-<img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
+<img src="/assets/img/brand/vertical.png" style="margin-left: 0;" />
 
-### Incorrect use of illustrations
+### Misuse of illustrations
 
 <table>
 <tr>
@@ -164,12 +164,12 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 </tr>
 <tr>
 <td>
-<p class="dont">Do not use the illustrations with opacity less than 100%.</p>
+<p class="dont">Do not use illustrations with opacity less than 100%.</p>
 </td>
-<td>Illustrations should not be turned or skewed.</p>
+<td>Illustrations should not be rotated or tilted.</p>
 </td>
 <td>
-<p class="dont">The colors should not be modified.</p>
+<p class="dont">Do not modify the colors.</p>
 </td>
 </tr>
 <tr>
@@ -185,13 +185,13 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 </tr>
 <tr>
 <td>
-<p class="dont">Illustrations should not be cut, but if necessary it should be done by the illustrator.</p>
+<p class="dont">Do not cut the illustrations, but if necessary, the illustrator should do it.</p>
 </td>
 <td>
-<p class="dont">NNever change the proportion of illustrations.</p>
+<p class="dont">Never change the proportion of the illustrations.</p>
 </td>
 <td>
-<p class="dont">Do not use text over the illustration. Do it below it or with a margin less than 1 cm.</p>
+<p class="dont">Do not use text over the illustration. Do it below it or with a margin of less than 1 cm.</p>
 </td>
 </tr>
 </table>
