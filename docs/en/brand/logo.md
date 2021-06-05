@@ -4,17 +4,17 @@ search: false
 
 # Logos
 
-Hello, we will review various topics associated with the use of the brand below, respecting its applications and limiting factors.
+Hello, below we will review various contents associated with the use of the brand, respecting its application and also its limitations.
 
-## Logotype
+## Logo
 
-The Modyo logo features the written word of the company name, and a green symbol, both of which are instantly recognizable. This is why it is so important to use the logo exactly as specified in these guidelines. [Download.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
+The Modyo logo features the written word of the company name and a green symbol, both instantly recognizable. This is why it is as important to use the logo exactly as specified in these guidelines. [Download.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
 
-<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;" />
 
-### Positive application
+### Application in positive
 
-The de facto use of the logo is mainly on white backgrounds, giving priority of use to the original brand, but using it in black is also allowed.
+Initial use of the logo is mainly on white backgrounds, giving priority to use the original brand, but the use of the brand in black is also allowed.
 
 <table>
 <tr>
@@ -34,7 +34,7 @@ The de facto use of the logo is mainly on white backgrounds, giving priority of 
 
 ### Negative application
 
-If you want to use the logo on dark backgrounds, it is ideal to use it on dark grey backgrounds, to provide high contrast.
+If you would like to use the logo on dark backgrounds, ideally use the following background colors for better contrast.
 
 <table class="table-dark">
 <tr>
@@ -63,15 +63,15 @@ If you want to use the logo on dark backgrounds, it is ideal to use it on dark g
 
 ### Exclusion zone
 
-The free space and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
+The clearance and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram).
 
 For the use of the isotype the reference is the same.
 
-<img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
+<img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0" />
 
 ### Minimum size
 
-This is the minimum size in which the logo can be displayed.
+This is the minimum size in which you can use the logo.
 
 <table>
 <tr>
@@ -82,7 +82,7 @@ This is the minimum size in which the logo can be displayed.
 </div>
 </td>
 <td style="border-left: 0;">
-<b>Logotype:</b><br>
+<b> Logo: </b> <br> 
 Minimum digital size: 20px
 </td>
 </tr>
@@ -90,17 +90,17 @@ Minimum digital size: 20px
 
 ### Alliances
 
-Separate free space rules are applied align our logo with associated logos. Use the width of an "M" as a guide for a gap between the Modyo logo and partner logos.
+Separate clearance rules apply to align association logos. Use the width of an "M" as a guide for a free space between the Modyo logo and partner logos.
 
-<img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
+<img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances" />
 
-You can change the color of the two logos together to white. When you need to do that, put a simple, perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
+You can change the color of the two logos together to only white. When you need to do this, place a simple and perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
 
-<img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
+<img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances" />
 
-### Incorrect use of the logo
+### Misuse of the logo
 
-It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added to. The following are uses that are NOT allowed.
+It is important that the appearance of the logo remains constant. It should not be misinterpreted, modified or added. The following uses are NOT allowed.
 
 <table>
 <tr>
@@ -116,10 +116,10 @@ It is important that the appearance of the logo remains constant. It should not 
 </tr>
 <tr>
 <td>
-<p class="dont">Do not remove the green symbol accompanying the "O" at the end.</p>
+<p class="dont">Do not remove the characteristic green symbol from the logo that accompanies the "O" at the end.</p>
 </td>
 <td>
-<p class="dont">Do not rotate the logo in any direction.</p>
+<p class="dont">Do not turn the logo.</p>
 </td>
 <td>
 <p class="dont">Do not apply a gradient to the logo or isotype.</p>
@@ -138,13 +138,13 @@ It is important that the appearance of the logo remains constant. It should not 
 </tr>
 <tr>
 <td>
-<p class="dont">Do not stretch, shrink or manipulate the logo in a disproportionate manner.</p>
+<p class="dont">Do not stretch, shrink or manipulate the logo disproportionately.</p>
 </td>
 <td>
-<p class="dont">Do outline or draw a line around the logo, only use padding.</p>
+<p class="dont">Do not use a stroke around the logo, use is only with padding.</p>
 </td>
 <td>
-<p class="dont">Do not change the typography of the logo or isotype.</p>
+<p class="dont">Do not change logo typography.</p>
 </td>
 </tr>
 <tr>
@@ -160,10 +160,10 @@ It is important that the appearance of the logo remains constant. It should not 
 </tr>
 <tr>
 <td>
-<p class="dont">Only use corporate colors, black or white according to the manual.</p>
+<p class="dont">Restrict use to corporate colors, white or black according to manual.</p>
 </td>
 <td>
-<p class="dont">Do not interchange corporate colors.</p>
+<p class="dont">Do not exchange corporate colors.</p>
 </td>
 <td>
 <p class="dont">Do not use the old colors.</p>
@@ -173,15 +173,15 @@ It is important that the appearance of the logo remains constant. It should not 
 
 ## Isotype
 
-When you want to replace the use of the brand, then you can use the isotype. This is the "M" with the complementary symbol, leaving aside the complete word.
+When you want to replace the use of the mark, that is when you can use the isotype, i.e. the "M" with the complementary symbol, leaving aside the whole word.
 
-While the icon can exist without the word brand, the word brand should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
+While the icon may exist without the word mark, the word mark should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
 
-<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype">
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype" />
 
-### Positive application
+### Application in positive
 
-The de facto use of the isotype is on a white background, giving priority to the original, but using the isotype in black is also allowed.
+The initial use of the isotype is on white backgrounds, giving priority to use the original, but the use of the isotype in black is also allowed.
 
 <table>
 <tr>
@@ -201,7 +201,7 @@ The de facto use of the isotype is on a white background, giving priority to the
 
 ### Negative application
 
-When using the isotype on dark backgrounds, it is ideal to use it with the following background colors for best contrast.
+If you would like to use the isotype on dark backgrounds, ideally use it with the following background colors for better contrast.
 
 <table class="table-dark">
 <tr>
@@ -230,10 +230,9 @@ When using the isotype on dark backgrounds, it is ideal to use it with the follo
 
 ### Exclusion zone
 
-The free space around the logo is equal to the height of the "M" (marked as × in the diagram).
-For the use of the isotype the reference is the same.
+The clearance and exclusion zone around the logo is equal to the height of the "M" (marked as × in the diagram). For the use of the isotype the reference is the same.
 
-<img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
+<img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0" />
 
 ### Minimum size
 
