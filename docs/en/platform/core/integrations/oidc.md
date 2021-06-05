@@ -65,7 +65,7 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 The following configuration is valid for both Team and Customer user integrations.
 
 1. Access **Configuration/Configuration of customers> Integrations> OpenID Connect**, and complete **Client ID** and **Secret** with the credentials obtained from the Azure portal.
-2. In the Azure console go to **App registrations > Endpoints** and get URLs for **Authorization endpoint** and **Token endpoint**. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
+2. In the Azure console go to **App registrations> Endpoints** and get URLs for **Authorization endpoint** and **Token endpoint**. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
 3. Set up **Scopes** with the required scopes for the application. Use `openid, email, profile' in case you don't have custom scopes.
 4. Enables optional integration features.
    | | |
