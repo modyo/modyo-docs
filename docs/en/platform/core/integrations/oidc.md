@@ -35,7 +35,7 @@ The following configuration is valid for both Team and Customer user integration
 
 ### Optional integration settings
 
-At the time of a specific integration, Modyo allows you to enable certain settings to control the following session features:
+When performing a specific integration, Modyo allows you to enable certain settings to control the following session features:
 
 |                                                                     |                                                                                                                                                                                                                        |
 |---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
