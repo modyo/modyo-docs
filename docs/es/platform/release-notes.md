@@ -4,6 +4,10 @@ search: true
 
 # Notas del release
 
+### 9.1.23 - 5 de junio del 2021
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arreglan otros problemas de seguridad
+
 ### 9.1.22 - 4 de junio del 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arreglan problemas de seguridad
