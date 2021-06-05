@@ -29,7 +29,7 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 The following configuration is valid for both Team and Customer user integrations.
 
 1. Access **Settings/Customer settings> Integrations> OpenID Connect** and complete **Client ID** and **Secret** with the name of the client and the credentials that appear in the tab **Credentials** of the client in Keycloak.
-2. In Issuer, fill in with the realm URL, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
+2. In Issuer, fill in the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
 3. Click on **Launch Discovery Service**. This will complete most configurations.
 4. Configure the**Scopes** with the required scopes for the application. Use `openid, email, profile' in case you don't have custom scopes.
 
