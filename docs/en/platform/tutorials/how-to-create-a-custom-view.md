@@ -266,7 +266,7 @@ You've already created your first Custom View connected to a Modyo Content Space
 
 Now that we already have our Space and Type associated with a site, we will be activated a new feature, the [Preview mode on a site] (/es/platform/content/entries.html #vista -previous). To access the preview mode we have to click on the “eye” icon in the top action bar:
 
- <img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
 
 Within the modal click on <b> Preview on site </b> and select the site where we did the custom view inside the dropdown:
 
