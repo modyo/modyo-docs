@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creación de Custom View conectado con Modyo Content
+# Creación de una Vista de Contenido
 
 ## Introducción
 

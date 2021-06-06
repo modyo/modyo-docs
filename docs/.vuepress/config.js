@@ -60,7 +60,18 @@ module.exports = {
                 "/en/platform/release-notes",
                 "/en/platform/training",
               ],
-            },            
+            },    
+            {
+              title: "Tutorials",
+              path: "/en/platform/tutorials/",
+              collapsable: true,
+              children: [
+                "/en/platform/tutorials/how-to-create-content",
+                "/en/platform/tutorials/how-to-create-home",
+                "/en/platform/tutorials/how-to-create-a-custom-view",
+                "/en/platform/tutorials/how-to-create-private-site",                
+              ],
+            },        
             {
               title: "Architecture",
               path: "/en/platform/infrastructure/",
@@ -143,17 +154,7 @@ module.exports = {
                 "/en/platform/insights/digital-factory",
                 ["/en/platform/insights/data-studio", "Data Studio"],
               ],
-            },
-            {
-              title: "Tutorials",
-              path: "/en/platform/tutorials/",
-              collapsable: true,
-              children: [
-                "/en/platform/tutorials/how-to-create-content",
-                "/en/platform/tutorials/how-to-create-home",
-                "/en/platform/tutorials/how-to-create-a-widget",                
-              ],
-            },
+            },            
           ],
           "/en/widgets/": [
             {
@@ -303,7 +304,18 @@ module.exports = {
                 "/es/platform/release-notes",
                 ["/es/platform/training", "Entrenamiento"],
               ],
-            },            
+            },  
+            {
+              title: "Tutoriales",
+              path: "/es/platform/tutorials/",
+              collapsable: true,
+              children: [
+                "/es/platform/tutorials/how-to-create-content",
+                "/es/platform/tutorials/how-to-create-home",
+                "/es/platform/tutorials/how-to-create-a-custom-view",
+                "/es/platform/tutorials/how-to-create-private-site",
+              ],
+            },          
             {
               title: "Arquitectura",
               path: "/es/platform/infrastructure/",
@@ -386,19 +398,7 @@ module.exports = {
                 "/es/platform/insights/digital-factory",
                 ["/es/platform/insights/data-studio", "Data Studio"],
               ],
-            },
-            {
-              title: "Tutoriales",
-              path: "/es/platform/tutorials/",
-              collapsable: true,
-              children: [
-                "/es/platform/tutorials/how-to-create-content",
-                "/es/platform/tutorials/how-to-create-home",
-                "/es/platform/tutorials/how-to-create-a-custom-view",
-                "/es/platform/tutorials/how-to-create-a-widget",
-                "/es/platform/tutorials/how-to-create-private-site",
-              ],
-            },
+            },            
           ],
           "/es/widgets/": [
             {

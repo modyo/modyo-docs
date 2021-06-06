@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creación de Sitio Privado con Widgets del Modyo-CLI
+# Creación de Sitio Privado
 
 ## Introducción
 
