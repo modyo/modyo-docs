@@ -270,7 +270,7 @@ Now that we already have our Space and Type associated with a site, we will be a
 
 Within the modal click on <b> Preview on site </b> and select the site where we did the custom view inside the dropdown:
 
- <img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
 
 Selecting it in a new tab will open the preview of the entry on the site, so that you can review the changes to the site.
 
