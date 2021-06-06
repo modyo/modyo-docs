@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Creación de Custom View conectado con Modyo Content
+# Creación de una Vista de Contenido
 
-## Introducción
+## Introduction
 
 Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) donde crearemos una vista para poder desplegar nuestras entradas creadas en [Modyo Content](/es/platform/content).
 
@@ -14,9 +14,9 @@ En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora 
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
-<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">View Design Figma</a>
 
-## Requisitos Previos
+## Prerequisites
 
 Para comenzar este tutorial debemos haber completado los siguientes tutoriales: [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home). Y al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
 
@@ -274,7 +274,7 @@ Dentro del modal hacer click en <b>Preview on site</b> y seleccionar el sitio do
 
 Al seleccionarlo en una nueva pestaña se nos abrirá el preview de la entrada en el sitio, para que se pueda ir revisando los cambios en el sitio.
 
-## Conclusiones
+## Opinion
 
 ¡Felicidades! Haz finalizado el tercer curso de la serie de tutoriales de Modyo.
 
