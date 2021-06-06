@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Creating and Publishing Content for Dynamic Bank
+# Creación y Publicación de Contenidos
 
 ## Introduction
 
-Welcome to the first tutorial of the Modyo training series. In this first tutorial we will review everything you need to know to create and publish content with [Modyo Content](/en/platform/content), an indispensable tool for managing dynamic and cross-platform sites.
+Welcome to the first tutorial of the Modyo training series. En este primer tutorial revisaremos todo lo que necesitas saber para crear y publicar contenido usando [Modyo Content](/es/platform/content), herramienta indispensable a la hora de gestionar sitios dinámicos y multiplataforma.
 
 ### Dynamic Bank
 
@@ -26,7 +26,7 @@ Don't have a Modyo account? You can request an account with the platform adminis
 
 ## Step 1: Create a Content Space
 
-Once you log into Modyo with your account, we will go to the \[Modyo Content] module (/en/platform/content) to [create our first space\](/es/platform/content/spaces.html #crear -a-space), which we will call **"Bank"**, selecting as the language **Spanish (Spain) **.
+Una vez que ingreses a Modyo con tu cuenta, iremos al módulo de [Modyo Content](/es/platform/content) para [crear nuestro primer espacio](/es/platform/content/spaces.html#crear-un-espacio), que llamaremos **"Bank"**, selecionando como idioma **Spanish (Spain)**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;" />
 
@@ -34,14 +34,14 @@ Once you log into Modyo with your account, we will go to the \[Modyo Content] mo
 
 ## Step 2: Create Type "Hero"
 
-Now we need to create our first \[content type\](/es/platform/content/types.html #tipos -content) in our **"Bank"** space. Once you are in this space, you should go to the **Types** section, click the top right button that says **"+ New Type"**.
+Now we need to create our first \[content type\](/es/platform/content/types.html #tipos -content) in our **"Bank"** space. Una vez que estés en este espacio, debes ir a la sección **Types** y darle clic al botón superior derecho que dice **"+ Nuevo Tipo"**.
 
 From there, we generate our first Type called **"Hero"** with the following fields:
 
 <table>
  <tr>
   <th style="text-align: left">Field Type</th>
-  <th style="text-align: left">Nombre</th>
+  <th style="text-align: left">Name</th>
   <th style="text-align: left">Values that we will allow</th>
  </tr>
  <tr>
@@ -100,7 +100,7 @@ From there, we generate our first Type called **"Hero"** with the following fiel
 
 ## Step 3: Create and Post Type "Hero" entry
 
-Now we'll create our first [entry](/en/platform/content/entries) of the type we just created. For that, we must go to the **Entries** section and click on the**"New Entry"** button, then select the "Hero" type and add to Name **_"Where you are, Dynamic Bank accompanies you" _**.
+Now we'll create our first [entry](/en/platform/content/entries) of the type we just created. Para eso, debemos ir a la sección **Entries** y hacer clic en el botón **Create an entry**, para luego seleccionar el tipo "Hero" y agregar en Name **_"Donde estés, Dynamic Bank te acompaña"_**.
 
 After editing the content we must save and \[publish\](/es/platform/content/entries.html #publicar -a-entry).
 
@@ -121,7 +121,7 @@ After editing the content we must save and \[publish\](/es/platform/content/entr
    For whatever you need we are with you everywhere
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Title Link</b>
   </td>
@@ -129,7 +129,7 @@ After editing the content we must save and \[publish\](/es/platform/content/entr
    Become a customer
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Url</b>
   </td>
@@ -137,7 +137,7 @@ After editing the content we must save and \[publish\](/es/platform/content/entr
    destination url, for now <code> # </code> will suffice
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Button color</b>
   </td>
@@ -151,7 +151,7 @@ Luego de editar el contenido debemos guardar y [publicar](/es/platform/content/e
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;" />
 
-:::tip ¡Muy bien! ya conseguiste crear tu primer Tipo y Entrada con éxito Ahora crearemos el resto de los Tipos y Entradas que necesitamos para este tutorial. :::
+:::tip ¡Muy bien! Ya conseguiste crear tu primer Tipo y Entrada con éxito Ahora crearemos el resto de los Tipos y Entradas que necesitamos para este tutorial. :::
 
 ## Step 4: Create Type "News"
 
@@ -198,7 +198,7 @@ Just like we did with the Hero, we'll now create all three news entries with the
 
 ## Step 5: Create and publish News
 
-Don't forget to publish all your posts after creating them.
+Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news con los siguientes campos:
 
 #### Entrance One
 
@@ -227,7 +227,7 @@ Don't forget to publish all your posts after creating them.
    Find your nearest branch so you don't have any extra walks.
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Link</b>
   </td>
@@ -235,7 +235,7 @@ Don't forget to publish all your posts after creating them.
    Review Branches
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Url</b>
   </td>
@@ -253,7 +253,7 @@ Don't forget to publish all your posts after creating them.
    <b>Name</b>
   </td>
   <td>
-   Mortgage Credit
+   Crédito Hipotecario
   </td>
  </tr>
  <tr>
@@ -269,10 +269,10 @@ Don't forget to publish all your posts after creating them.
    <b>Text</b>
   </td>
   <td>
-   Learn everything you need to know about how to apply for your mortgage credit.
+   Conoce todo lo que necesitas saber sobre cómo solicitar tu crédito hipotecario.
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Link</b>
   </td>
@@ -280,7 +280,7 @@ Don't forget to publish all your posts after creating them.
    Learn more
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Url</b>
   </td>
@@ -317,7 +317,7 @@ Don't forget to publish all your posts after creating them.
    40% dcto. every Wednesday in the best restaurants with home delivery.
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Link</b>
   </td>
@@ -325,7 +325,7 @@ Don't forget to publish all your posts after creating them.
    See benefits
   </td>
  </tr>
- <tr> 
+ <tr>
   <td>
    <b>Url</b>
   </td>
@@ -366,7 +366,7 @@ Now we'll put a little more order creating categories so we can filter out our b
 
 ## Step 7: Create Categories
 
-To do this we go to the Categories section and create the following categories:
+Ahora pondremos un poco más de orden creando categorías para poder filtrar nuestros beneficios.
 
 Para ello iremos a la sección Categories y creamos las siguentes categorias:
 
@@ -380,7 +380,7 @@ Para ello iremos a la sección Categories y creamos las siguentes categorias:
 
 ## Step 8: Create and Publish Benefits
 
-Don't forget to publish all your posts after creating them.
+Para los Beneficios vamos a crear siete entradas con los siguientes campos:
 
 #### Benefit One
 
@@ -562,7 +562,7 @@ Don't forget to publish all your posts after creating them.
    <b>Category</b>
   </td>
   <td>
-   Healty
+   Healthy
   </td>
  </tr>
 </table>
@@ -636,7 +636,7 @@ Don't forget to publish all your posts after creating them.
    <b>Category</b>
   </td>
   <td>
-   Healty
+   Healthy
   </td>
  </tr>
 </table>
@@ -698,7 +698,7 @@ Don't forget to publish all your posts after creating them.
    <b>Author</b>
   </td>
   <td>
-   Adriana Perez
+   Adriana Pérez
   </td>
  </tr>
  <tr>
@@ -727,7 +727,7 @@ Don't forget to publish all your posts after creating them.
    <b>Name</b>
   </td>
   <td>
-   Testimonial Raul
+   Testimonio Raúl
   </td>
  </tr>
  <tr>
@@ -735,7 +735,7 @@ Don't forget to publish all your posts after creating them.
    <b>Author</b>
   </td>
   <td>
-   Raul Diaz
+   Raúl Díaz
   </td>
  </tr>
  <tr>
@@ -756,12 +756,12 @@ Don't forget to publish all your posts after creating them.
  </tr>
 </table>
 
-No olvides publicar todas tus entradas luego de crearlas.
+As we already did with Hero and News, we need to create our new type for Benefits with the fields:
 
 ## Conclusion
 
-If you got this far, we congratulate you. You managed to use [Modyo Content](/en/platform/content) to its full potential because we use [Spaces](/en/platform/content/spaces), [Types](/en/platform/content/types), [Entries](/en/platform/content/entries) and \[Categories\](/es/platform/content/entries.html #categorias) to generate all the content needed to build the Home of Dynamic Bank.
+If you got this far, we congratulate you. Has conseguido utilizar [Modyo Content](/es/platform/content) con todo su potencial ya que utilizamos [Espacios](/es/platform/content/spaces), [Tipos](/es/platform/content/types), [Entradas](/es/platform/content/entries) y [Categorías](/es/platform/content/entries.html#categorias) para poder generar todo el contenido necesario para armar el Home de Dynamic Bank.
 
-We already have all our tickets to be able to deliver them to the Front-end and can generate the Dynamic Bank Home without problems while we can change the texts from content.
+Ya tenemos todas nuestras entradas para poder entregarlas al Front-end y que él pueda generar el Home de Dynamic Bank sin problemas mientras nosotros podemos cambiar los textos desde contenido.
 
 What's next now? Get all this content from a Web site created in [Modyo Channels](/en/platform/channels).
