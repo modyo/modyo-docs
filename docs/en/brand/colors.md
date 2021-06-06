@@ -48,7 +48,7 @@ Nuestros colores secundarios y que suelen acompañar a la marca en distintos sop
 <span style="background: #2068D5;width: 150px;height: 150px;display: block;border-radius: 100%;">
 </span>
 <div style="margin-left: 24px;">
-<p><b>Azul</b></p>
+<p><b>Blue</b></p>
 <p>HEX: #2068D5 <br>
 RGB: 32 104 216</p>
 </div>
@@ -64,7 +64,7 @@ Our brand is well suited to the following colors:
 <table class="no-border">
 <tr>
 <td colspan="6">
-<b>Azul Petróleo</b>
+<b>Dark Blue</b>
 </td>
 </tr>
 <tr>
