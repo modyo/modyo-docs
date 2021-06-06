@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Creación de Sitio Privado con Widgets del Modyo-CLI
+# Creación de Sitio Privado
 
-## Introducción
+## Introduction
 
 Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde generaremos la base del sitio en el cual agregarmoslos [Widgets](/es/widgets/) del catálogo de Widgets de Modyo.
 
-A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
+Throughout this tutorial, and others too, we will use the fictitious brand "Dynamic Bank", which we introduce you below.
 
 ### Dynamic Bank
 
@@ -16,25 +16,25 @@ Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ej
 
 <img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" />
 
-<a href="https://www.figma.com/proto/UtgKA8d7kN0lWUk3RvhHl4/PD-Private-Site?page-id=1086%3A0&node-id=1086%3A1&viewport=444%2C519%2C0.49354425072669983&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
+<a href="https://www.figma.com/proto/UtgKA8d7kN0lWUk3RvhHl4/PD-Private-Site?page-id=1086%3A0&node-id=1086%3A1&viewport=444%2C519%2C0.49354425072669983&scaling=min-zoom" target="blank">View Design Figma</a>
 
-## Requisitos Previos
+## Prerequisites
 
-Para ejecutar los pasos de este tutorial debes tener creados los contenidos del tutorial de [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
+To run the steps in this tutorial you must have created the contents of the [Dynamic Bank Content](/en/platform/tutorials/how-to-create-content) tutorial and have knowledge about HTML, CSS, JS and the Modyo platform.
 
-## Paso 1: Crear un sitio en la Nube
+## Step 1: Create a Cloud Site
 
-Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer click en el botón <b>New Site</b>.
+To create our \[site\] (/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
 
 Llenamos los campos Name con "Private Site" y seleccionamos el Theme "Minimal" como se muestra en la imagen.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
-## Paso 2: Cargar logo y favicon
+## Step 2: Upload logo and favicon
 
 Para realizar este paso vamos a ir a la sección [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio), donde podemos cambiar o agregar algunas configuraciones del sitio, entre ellas: Nombre del sitio, Descripción, idioma, ID de GTM, SEO, PWA, Team, entre otras.
 
-En este caso nos enfocaremos en General y agregaremos nuestro archivo del logo en <b>Site logo</b> y el Favicon en <b>Visualization</b>.
+In this case we will focus on General and add our logo file in <b> Site logo </b> and Favicon in <b> Visualization </b>.
 
 #### Logo
 
@@ -44,21 +44,21 @@ En este caso nos enfocaremos en General y agregaremos nuestro archivo del logo e
 
 <img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;" />
 
-Recuerda guardar los cambios luego de cargar los archivos.
+Remember to save your changes after uploading the files.
 
 Una vez cargado nuestro logo, vamos a hacer los cambios de tamaño para que se ajuste a nuestro diseño. Para esto vamos a ir a Templates y dentro de el grupo de Libs abrimos el snippet bootstrap css y buscamos la clase que está afectando a nuestro logo, <code>.navbar-brand img</code> y cambiamos el height de <code>50px</code> a <code>30px</code>.
 
-## Paso 3: Cambiar variables CSS para darle look and feel de Dynamic Bank
+## Step 3: Change CSS variables to give you Dynamic Bank look and feel
 
-Dentro de nuestro nuevo sitio, a la izquierda encontrarás el menú principal con las secciones en las que trabajaremos en este tutorial.
+Inside our new site, on the left you will find the main menu with the sections we will work on in this tutorial.
 
-Vamos a partir en la sección [Templates](/es/platform/channels/templates), la que corresponde a la estructura que contiene el sitio, es decir la base del HTML, el CSS y JS, más las librerías que contemplan el Template.
+Let's start in the [Templates] section (/en/platform/channels/templates), which corresponds to the structure that contains the site, that is the base of HTML, CSS and JS, plus the libraries that contemplate the Template.
 
-Aquí vamos a modificar las variables de CSS, que están en un snippet llamado <b>variables css</b> que alimenta el resto de las hojas de estilo ya configuradas dentro del Theme Minimal.
+Here we are going to modify the CSS variables, which are in a snippet called <b> css variables </b> that feeds the rest of the stylesheets already configured within the Minimal Theme.
 
-Para hacer el cambio, vamos a modificar en el snippet ya mencionado las siguientes variables:
+To make the change, we will modify the following variables in the aforementioned snippet:
 
-#### Colores:
+#### Colours:
 
 <code>primary = rgba(56, 68, 112, 1)</code><br>
 <code>secondary = rgba(98, 125, 229, 1)</code><br>
@@ -66,16 +66,16 @@ Para hacer el cambio, vamos a modificar en el snippet ya mencionado las siguient
 <code>info = rgba(121, 133, 178, 1)</code><br>
 <code>dark = rgba(56, 68, 112, 1)</code><br>
 
-#### Botones:
+#### Buttons:
 
-<code>button_radius = 100px</code><br>
-<code>button_font_weight = 600</code>
+<code> button_radius = 100px </code> <br> 
+ <code> button_font_weight = 600 </code>
 
-Para revisar el cambio que acabas de realizar vamos a utiliar el [modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa).
+To review the change you just made, let's use \[preview mode\] (/es/platform/core/key-concepts.html #modo -preview-view).
 
-## Paso 4: Cambiar fuente del sitio
+## Step 4: Change Site Source
 
-En el Minimal estamos usando la librería [webfontload](https://github.com/typekit/webfontloader) para cargar la tipografía de manera asincrónica.
+In Minimal we are using the [webfontload] library (https://github.com/typekit/webfontloader) to load the typography asynchronously.
 
 Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar al snippet <b>webfontload_config_js</b> y modificar la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
 
@@ -673,9 +673,9 @@ UJS
 
 ## Paso 8: Generar el menú
 
-Otra de las funcionalidades que existen dentro de Modyo es la herramienta de Navigation, en la cual podemos generar el menú para nuestro sitio de manera sencilla.
+Another feature that exists within Modyo is the Navigation tool, in which we can generate the menu for our site in a simple way.
 
-Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.html) y modificamos el menú ya esxistente y dejaremos las siguientes opciones.
+For this, we go to the [Navigation] section (/es/platform/channels/navigation.html) and modify the already esxistent menu and leave the following options.
 
 <table>
  <tr>
@@ -688,13 +688,13 @@ Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.htm
    Mi Banca
   </td>
   <td>
-   Home
+   Home page
   </td>
   <td></td>
  </tr>
  <tr>
   <td>
-   Cuentas
+   Accounts
   </td>
   <td>
    Custom URL
@@ -727,7 +727,7 @@ Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.htm
  </tr>
  <tr>
   <td>
-   Créditos
+   Loans
   </td>
   <td>
    Custom URL
@@ -738,7 +738,7 @@ Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.htm
  </tr>
  <tr>
   <td>
-   Avance en Efectivo
+   Cash Advance
   </td>
   <td>
    Custom URL
@@ -749,11 +749,11 @@ Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.htm
  </tr>
 </table>
 
-Lo que se vería reflejado de la siguiente forma:
+This would be reflected as follows:
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;" />
 
-Luego de tener nuestro menú completo guardamos y publicamos.
+After having our full menu we save and publish.
 
 ## Paso 9: Instalar Modyo Cli
 
@@ -1088,13 +1088,13 @@ Borramos el Widget de HTML existente y remplazamos por nuestro Widget Custom.
 
 Una vez realizados los pasos anteriores, revisaremos en modo vista previa el trabajo. Cuando nos tenga conforme el resultado debemos publicar los cambios para recién ahora dejar todo nuestro trabajo disponible de cara a nuestros usuarios finales.
 
-Para realizar una publicación, hacemos click en el botón <b>Publish</b> donde se abrirá un panel con los cambios que hemos realizado.
+To make a publication, click on the <b> Publish </b> button where a panel will open with the changes we have made.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;" />
 
-Luego seguiremos los pasos para seleccionar la fecha de publicación, que en este caso será pulicación inmediata.
+Then we will follow the steps to select the publication date, which in this case will be immediate polication.
 
-## Conclusiones
+## Opinion
 
 ¡Muy bien! Haz finalizado el curso de Sitio Privado con Widgets del Modyo-CLI.
 
