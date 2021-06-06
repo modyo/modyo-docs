@@ -46,10 +46,6 @@ search: true
 * Se resuelve un error que producía que el botón "Guardar" del page builder no funcionara correctamente.
 * Se resuelve un error al crear nuevos sitios en que la página "About Us" quedaba sin un layout seleccionado.
 
-### 9.1.15.1 - 6 de junio del 2021
-<Badge text="Core" type="core" vertical="middle"/>
-* Se arreglan otros problemas urgentes
-
 ### 9.1.15 - 14 de abril del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
