@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creación de Home de Dynamic Bank
+# Creación de un Sitio Básico
 
 ## Introducción
 
