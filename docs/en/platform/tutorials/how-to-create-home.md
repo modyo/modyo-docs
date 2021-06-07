@@ -6373,7 +6373,7 @@ To display it in the Home we need to add it as widget <b> Custom </b> and search
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" style="max-width: 300px;margin: auto 0;"/>
 
-<b> Congratulations! We already have all the necessary widgets in the Home</b>
+<b>Congratulations! We already have all the necessary widgets in the Home</b>
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets_home.png" style="max-width: 400px;margin: auto 0;"/> 
 
