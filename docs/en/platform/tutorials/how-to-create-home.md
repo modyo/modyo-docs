@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Creating Dynamic Bank Home
+# Creating a Basic Site
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels] (/en/platform/channels) where you will learn how to create a site, modify the template base, add new libraries and connect widgets with already created content.
+Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels](/en/platform/channels) where you will learn how to create a site, modify the template base, add new libraries and connect widgets with already created content.
 
 Linking Content and Channels is one of the most important functionalities when it comes to having dynamic sites and easy to manage by anyone.
 
@@ -14,7 +14,7 @@ Throughout this tutorial, and others too, we will use the fictitious brand "Dyna
 
 ### Dynamic Bank
 
-Dynamic Bank is the name we give in Modyo to everything about demos and example of the platform. We wanted to create it in order to offer an experience very close to the reality of what it really means to work with Modyo. Once you have completed this tutorials, your site should look like this:
+Dynamic Bank is the name we give in Modyo to everything about demos and examples of the platform. We wanted to create it in order to offer an experience very close to the reality of what it really means to work with Modyo. Once you have completed this tutorial, your site should look like this:
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
 
@@ -79,7 +79,7 @@ For Dynamic we'll use the Jost font. To change it we have to enter the snippet <
 
 Within Templates, one of the most powerful features we have is to reuse code in various Pages, which is the case of Header and Footer.
 
-The HTML of them is located within the Snippets tab, grouped in General, and we will replace it with the following HTMls codes.
+The HTML of them is located within the Snippets tab, grouped in General, and we will replace it with the following HTML codes.
 
  <code> header </code> 
 
@@ -135,7 +135,7 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
           >
             <path
               fill-rule="evenodd"
-              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5- 5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
         </button>
@@ -165,8 +165,8 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
             class="modal-body p-4 navbar navbar-expand-md  navbar-light align-items-start"
           >
             <nav>
-              {% assign responsive = "Responsive" %} {% snippet
-              'shared/general/menu' %}
+              {% assign responsive = "Responsive" %}
+              {% snippet "shared/general/menu" %}
             </nav>
           </div>
         </div>
@@ -222,7 +222,7 @@ The HTML of them is located within the Snippets tab, grouped in General, and we 
 </footer>
 ```
 
-After we termimate our snippets header and footer, we will work on the CSS of the footer. For order topics we will generate a new [snippet] (/es/platform/channels/templates.html #snippets) and add it in the template's base stylesheet.
+After finishing our snippets header and footer, we're going to work on the CSS of the footer. For order topics we will generate a new [snippet] (/es/platform/channels/templates.html #snippets) and add it in the template's base stylesheet.
 
 To create a new snippet you need to go to the Custom section and press the button <b> + </b>, fill the Path field as <b> footer_css </b> and then add the following code.
 
@@ -306,7 +306,7 @@ For order topics, we are going to create a CSS snippet, where later we'll add al
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;"> 
 
-For this snippet to take effect in our Home we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet "home_css"%} </code> so that the content of our snippet within the general template stylesheet.
+For this snippet to take effect in our Home we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet “home_css”%} </code> so that the content of our snippet appears inside the template's general stylesheet.
 
 ## Step 9: Add Dependent Libraries
 
@@ -5919,7 +5919,7 @@ Don't forget to add the animate_css and slick_css snippets to the stylesheet and
 
 Another feature that exists within Modyo is the Navigation tool, in which we can generate the menu for our site in a simple way.
 
-For this, we go to the [Navigation] section (/es/platform/channels/navigation.html) and modify the already esxistent menu and leave the following options.
+For this, we go to the [Navigation](/en/platform/channels/navigation.html) section, modify the existing menu and leave the following options.
 
  <table> 
  <tr> 
@@ -6156,17 +6156,17 @@ For the benefits we will follow the same logic of the already created widgets, a
     <div class="row justify-content-center mb-4">
       <div class="col-12 col-md-8 text-center">
         <h3 class="text-white">
-          Become part of a world of benefits designed for you
+          Se parte de un mundo de beneficios pensados especialmete para ti
         </h3>
         <p class="text-white">
-          Enjoying your banking experience is the most important thing for us
+          Para nosotros lo más importante es que disfrutes tu banca
         </p>
       </div>
     </div>
     <div class="row">
       {% for entry in entries limit:1 %}
       <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100" href="{{ entry.fiels.Url }}">
+        <a class="card shadow-sm w-100" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
@@ -6187,7 +6187,7 @@ For the benefits we will follow the same logic of the already created widgets, a
       </div>
       {% endfor %} {% for entry in entries offset:1 %}
       <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100" href="{{ entry.fiels.Url }}">
+        <a class="card shadow-sm w-100" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
@@ -6234,7 +6234,7 @@ And the CSS in the snippet <b> home_css </b> within Templates.
 }
 ```
 
-Remember that you can review how our Home is doing with the preview mode.
+Remember that you can check how our Home is doing with the preview mode.
 
 ## Step 14: DYNAMIC APP Widgets
 
@@ -6280,11 +6280,11 @@ Again we will create an HTML widget inside the Page Home and its respective CSS 
 
 ## Step 15: Testimonial Widgets
 
-The testimonials widget is a bit more complex as we will use JS to generate the slide. This is why we will create a widget within the [Widget Builder] section (/es/platform/channels/widgets.html).
+The testimonials widget is a bit more complex as we will use JS to generate the slide. That's why we'll create a widget within the [Widget Builder](/en/platform/channels/widgets.html) section.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;"/> 
 
-Widgets Builder is where you can create micro frontends for your sites. To create one we just need to enter the aforementioned section, click on the button <b> New Widget </b> to which we will assign a name that in our case is Testimonial. By creating it this will display three tabs, where you will have to paste the JS, CSS and HTML accordingly.
+Widgets Builder is where you can create micro frontends for your sites. To create one we just need to enter the aforementioned section, click on the button <b> New Widget </b> and we will assign it a name, which in our case is Testimonial. When you create it, it will display three tabs, where you will have to paste the JS, CSS and HTML accordingly.
 
  <code> js </code> 
 
@@ -6337,7 +6337,7 @@ $('.single-item').slick({
 <div class="bg-light px-3 py-5" id="testimonial">
   <div class="py-5">
     <div class="container d-block d-md-none">
-      <h3 class="h3 mb-4 text-dark">Nuestros clientes dicen...</h3>
+      <h3 class="h3 mb-4 text-dark">Our clients said...</h3>
     </div>
     <div class="container p-relative single-item">
       {% for entry in entries %}
@@ -6347,7 +6347,7 @@ $('.single-item').slick({
             <img
               class="w-100"
               src="{{ entry.Image.url }}"
-              alt="{{ entry.autor }}"
+              alt="{{ entry.Author }}"
             />
           </figure>
           <div class="figcaption col-11 col-md-6">
@@ -6356,7 +6356,7 @@ $('.single-item').slick({
                 Nuestros clientes dicen...
               </h3>
               <p class="text-muted">{{ entry.Testimony }}</p>
-              <p class="text-muted font-weight-bold">{{ entry.autor }}</p>
+              <p class="text-muted font-weight-bold">{{ entry.Author }}</p>
             </figcaption>
           </div>
         </div>
@@ -6373,7 +6373,7 @@ To display it in the Home we need to add it as widget <b> Custom </b> and search
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" style="max-width: 300px;margin: auto 0;"/>
 
- <b> Congratulations! we will already have all the necessary widgets already in the Home </b> 
+ <b> Congratulations! We already have all the necessary widgets in the Home </b> 
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets_home.png" style="max-width: 400px;margin: auto 0;"/> 
 
@@ -6381,7 +6381,7 @@ To display it in the Home we need to add it as widget <b> Custom </b> and search
 
 Once all our Home widgets and CSS are finished, we will preview the work we have done in this Tutorial. Once you're happy with the result, we must publish the changes to just now leave all our work available for our end users.
 
-To make a publication, click on the <b> Publish </b> button where a panel will open with the changes we have made.
+To make a publication, we click the <b> Publish </b> button where a panel will open with the changes we have made.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/> 
 
