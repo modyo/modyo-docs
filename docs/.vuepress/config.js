@@ -69,15 +69,15 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-content",
                 "/en/platform/tutorials/how-to-create-home",
                 "/en/platform/tutorials/how-to-create-a-custom-view",
-                "/en/platform/tutorials/how-to-create-private-site",                
+                "/en/platform/tutorials/how-to-create-private-site",
               ],
-            },        
+            },
             {
               title: "Architecture",
               path: "/en/platform/infrastructure/",
               collapsable: true,
               children: [       
-                "/en/platform/infrastructure/integration",         
+                "/en/platform/infrastructure/integration",
                 "/en/platform/infrastructure/cloud",
                 "/en/platform/infrastructure/onpremise",
                 "/en/platform/infrastructure/connect",
