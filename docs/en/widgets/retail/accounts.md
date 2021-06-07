@@ -38,7 +38,7 @@ modyo-cli get modyo-widgets-retail-accounts
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | View recent activity | Recent activity shows the latest moves that have been made on the account, initially sorted by date. You can also perform searches within the shown movements.                                           |
 | Account Statements     | Account statements display the statements of previous periods that have already ended. They are sorted by date and provide each selected statement's movements. You can also perform searches within the shown movements. |
-| Line of Credit Payment   | Allows you to provide the payment functionality of a credit line, using the funds available from a checking account. The customer can repay their debt in whole or in part.                                                     |
+| Line of Credit Payment   | This allows you to provide the payment of a line of credit. The customer can pay their debt in full or in part by using the available funds from a checking account.                                                     |
 
 <script>
 
