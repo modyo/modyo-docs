@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Creating and Publishing Content for Dynamic Bank
+# Creating and Publishing Content
 
 ## Introduction
 
-Welcome to the first tutorial of the Modyo training series. In this first tutorial we will review everything you need to know to create and publish content with [Modyo Content](/en/platform/content), an indispensable tool for managing dynamic and cross-platform sites.
+Welcome to the first tutorial of the Modyo training series. In this first tutorial, we will review everything you need to know to create and publish content using [Modyo Content](/en/platform/content), an indispensable tool for managing dynamic and cross-platform sites.
 
 ### Dynamic Bank
 
@@ -14,9 +14,9 @@ Dynamic Bank is our fictitious brand that we create for use in all our demos and
 
 Once you complete this tutorial series, your project should look like this:
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
- <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank"> See the design in Figma </a> 
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver el diseño en Figma</a>
 
 ## Prerequisites
 
@@ -26,14 +26,16 @@ Don't have a Modyo account? You can request an account with the platform adminis
 
 ## Step 1: Create a Content Space
 
-Once you log into Modyo with your account, we will go to the [Modyo Content] module (/en/platform/content) to [create our first space](/es/platform/content/spaces.html #crear -a-space), which we will call **"Bank"**, selecting as the language **Spanish (Spain) **.
+Once you log into Modyo with your account, we will go to the [Modyo Content] module (/en/platform/content) to [create our first space] (/es/platform/content/spaces.html #crear -a-space), which we will call **"Bank"**, selecting as the language **Spanish (Spain) **.
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
+
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
 ## Step 2: Create Type "Hero"
 
-Now we need to create our first [content type](/es/platform/content/types.html #tipos -content) in our **"Bank"** space. 
-Once you are in this space, you should go to the **Types** section, click the top right button that says **"+ New Type"**. 
+Now we need to create our first [content type] (/es/platform/content/types.html #tipos -content) in our **"Bank"** space.
+Once you are in this space, you should go to the **Types** section and click the top right button that says **"+ New Type"**.
 
 From there, we generate our first Type called **"Hero"** with the following fields:
 
@@ -101,7 +103,7 @@ It is important to save changes before exiting.
 
 ## Step 3: Create and Post Type "Hero" entry
 
-Now we'll create our first [entry](/en/platform/content/entries) of the type we just created. For that, we must go to the **Entries** section and click on the**"New Entry"** button, then select the "Hero" type and add to Name **_"Where you are, Dynamic Bank accompanies you" _**.
+Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. For that, we must go to the **Entries** section and click on the**Create an entry** button, then select the type “Hero” and add in Name **_"Where you are, Dynamic Bank accompanies you” _**.
 
 For the rest of the fields, we will use the following values:
 
@@ -152,9 +154,9 @@ After editing the content we must save and [publish](/es/platform/content/entrie
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/> 
 
-:::tip Very good! you already managed to create your first Type and Entry successfully
+። :tip Very good! You've already managed to create your first Type and Entry successfully
 We will now create the rest of the Types and Entries we need for this tutorial.
-:::
+።:
 
 ## Step 4: Create Type "News"
 
@@ -201,7 +203,7 @@ As with the "Hero" type we will create our second type "News" considering the fo
 
 ## Step 5: Create and publish News
 
-Just like we did with the Hero, we'll now create all three news entries with the following fields:
+As we did with Hero, we will now create all three news entries with the following fields:
 
 #### Entrance One
 
@@ -340,7 +342,7 @@ Just like we did with the Hero, we'll now create all three news entries with the
 
 Don't forget to publish all your posts after creating them.
 
-## Step 6: Create Type "Benefits"
+## Step 6: Create Type “Benefits”
 
 As we already did with Hero and News, we need to create our new type for Benefits with the fields:
 
@@ -383,7 +385,7 @@ To do this we go to the Categories section and create the following categories:
 
 ## Step 8: Create and Publish Benefits
 
-For Benefits we will create seven entry with the following fields:
+For Benefits we will create seven entries with the following fields:
 
 #### Benefit One
 
@@ -565,7 +567,7 @@ For Benefits we will create seven entry with the following fields:
  <b> Category </b> 
  </td> 
  <td> 
- Healty
+ Healthy
  </td> 
  </tr> 
  </table> 
@@ -639,7 +641,7 @@ For Benefits we will create seven entry with the following fields:
  <b> Category </b> 
  </td> 
  <td> 
- Healty
+ Healthy
  </td> 
  </tr> 
  </table> 
@@ -730,7 +732,7 @@ Create two entries with the following fields:
  <b> Name </b> 
  </td> 
  <td> 
- Testimonial Raul
+ Testimony Raul
  </td> 
  </tr> 
  <tr> 
@@ -763,8 +765,8 @@ Don't forget to publish all your posts after creating them.
 
 ## Conclusion
 
-If you got this far, we congratulate you. You managed to use [Modyo Content](/en/platform/content) to its full potential because we use [Spaces](/en/platform/content/spaces), [Types](/en/platform/content/types), [Entries](/en/platform/content/entries) and [Categories](/es/platform/content/entries.html #categorias) to generate all the content needed to build the Home of Dynamic Bank.
+If you got this far, we congratulate you. You managed to use [Modyo Content] (/en/platform/content) with its full potential because we use [Spaces] (/en/platform/content/spaces), [Types] (/en/platform/content/types), [Entries] (/en/platform/content/entries) and [Categories] (/es/platform/content/entries.html #categorias) to generate all the content needed to build the Home of Dynamic Bank.
 
-We already have all our tickets to be able to deliver them to the Front-end and can generate the Dynamic Bank Home without problems while we can change the texts from content.
+We already have all our tickets to be able to deliver them to the Front-end and that he can generate the Dynamic Bank Home without problems while we can change the texts from content.
 
 What's next now? Get all this content from a Web site created in [Modyo Channels](/en/platform/channels).
