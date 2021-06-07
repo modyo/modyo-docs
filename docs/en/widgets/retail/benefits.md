@@ -10,7 +10,7 @@ search: true
 
 | Feature             | Description                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Benefits Summary | The summary shows a list of promotions and automatic labels them by category. It shows each promotion's title and basic information. You can view promotions by location on the map and it automatically calculates the distance to the nearest promotions using geolocation data. |
+| Benefits Summary | The benefits summary shows a list of promotions and automatically labels them by category and provides each promotion's title and basic information. You can view promotions by location on the map, and it automatically calculates the distance to the nearest promotions using geolocation data. |
 
 <script>
 
