@@ -769,4 +769,4 @@ If you got this far, we congratulate you. You managed to use [Modyo Content] (/e
 
 We already have all our tickets to be able to deliver them to the Front-end and that he can generate the Dynamic Bank Home without problems while we can change the texts from content.
 
-What's next now? Get all this content from a Web site created in [Modyo Channels](/en/platform/channels).
+What's next now? Get all this content from a Web site created in [Modyo Channels] (/en/platform/channels).
