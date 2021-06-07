@@ -181,7 +181,7 @@ If you want to have custom CSS in the session views, add it to the editor and cl
 
 It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
-However, the editor will not automatically upload the link, but instead when you upload it, you have to click on the paste button located on the side of each file, which will then provide the link within the page. With this address, you can paste it into the CSS code to use it.
+However, the editor will not automatically update the link. Instead, when you upload it, you must click on the paste button located on the side of each file, which will then provide the link within the page. You can then paste this address into the CSS code.
 
 ::: tip Tip
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
@@ -237,11 +237,11 @@ It is necessary to have the API logged in and configured in the services to allo
 
 ### Team Members
 
-To sort the work, Modyo allows you to select the team members who will work on each realm to control access to the different aspects of the realm.
+To sort the work, Modyo allows you to select the team members who will work on each realm, which controls access to the realm's different aspects.
 
-To add a user to the kingdom, select the primary button **+ New** at the top right of the view, in the modal select an administrator and assign it a role, then press**Add** to make that administrator part of the kingdom's work team.
+To add a user to the realm, select the primary button **+ New** at the top right of the view. Select an administrator and assign them a role, then press**Add** to make that administrator part of the realm's work team.
 
-You can modify the role of any of the associated administrators by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
+You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
 If you want to remove a realm administrator, select the checks to the left of their name, and then click the button at the bottom of the**Delete** list.
 
