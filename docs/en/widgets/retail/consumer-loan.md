@@ -26,7 +26,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 | Insurance               | Shows different types of insurance that clients can add to their loans if necessary.                                                                                     |
 | Simulation Summary | This summary provides general information about the performed credit simulation. It includes total credit cost, amount of installments, quota value and respective interest rates. |
 | Simulation Detail | This displays detailed credit simulation information. It includes net amount, taxes, insurance and expenses, among others.                                              |
-| Application             | The application confirms the simulation and manages the consumer credit request with the institution.                                                                         |
+| Application             | The application confirms the simulation and manages the credit request with the institution.                                                                         |
 
 <script>
 
