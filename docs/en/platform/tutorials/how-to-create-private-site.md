@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creation of a Private Site
+# Creating a Private Site
 
 ## Introduction
 
