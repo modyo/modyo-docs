@@ -24,7 +24,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 | Grace period      | If necessary, customers can select non-payment dates for their personal loan.                                                            |
 | Destination account       | Corresponds to the account in which the requested loan amount will be deposited.                                              |
 | Insurance               | Shows different types of insurance that clients can add to their loans if necessary.                                                                                     |
-| Simulation Summary | Presents general information about the credit simulation performed. Includes total credit cost, amount of installments, quota value and respective interest rates. |
+| Simulation Summary | This summary provides general information about the performed credit simulation. It includes total credit cost, amount of installments, quota value and respective interest rates. |
 | Simulation Detail | Displays detailed credit simulation information. Includes liquid amount, taxes, insurance and expenses, among others.                                              |
 | Application             | Confirm the simulation and manage the consumer credit request with the institution.                                                                         |
 
