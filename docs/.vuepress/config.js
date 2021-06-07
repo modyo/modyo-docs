@@ -306,17 +306,6 @@ module.exports = {
               ],
             },  
             {
-              title: "Tutoriales",
-              path: "/es/platform/tutorials/",
-              collapsable: true,
-              children: [
-                "/es/platform/tutorials/how-to-create-content",
-                "/es/platform/tutorials/how-to-create-home",
-                "/es/platform/tutorials/how-to-create-a-custom-view",
-                "/es/platform/tutorials/how-to-create-private-site",
-              ],
-            },          
-            {
               title: "Arquitectura",
               path: "/es/platform/infrastructure/",
               collapsable: true,
@@ -398,7 +387,18 @@ module.exports = {
                 "/es/platform/insights/digital-factory",
                 ["/es/platform/insights/data-studio", "Data Studio"],
               ],
-            },            
+            },
+            {
+              title: "Tutoriales",
+              path: "/es/platform/tutorials/",
+              collapsable: true,
+              children: [
+                "/es/platform/tutorials/how-to-create-content",
+                "/es/platform/tutorials/how-to-create-home",
+                "/es/platform/tutorials/how-to-create-a-custom-view",
+                "/es/platform/tutorials/how-to-create-private-site",
+              ],
+            },          
           ],
           "/es/widgets/": [
             {
