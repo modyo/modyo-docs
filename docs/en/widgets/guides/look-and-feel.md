@@ -158,7 +158,7 @@ Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](http
 What happens to the styles **NOT** declared in the content, but are **YES** used in the Widget?
 :::
 
-Sometimes we may encounter some style problems, for example when we use the Bootstrap modal component and the `modal-backdrop` style does not load since this element is created dynamically when you open the modal; or when we use external component libraries in our Widgets where the styles of that component have not been loaded and are not on site. This happens because **PurgeCSS** does not know where to read the contents of the external component.
+Sometimes we may encounter some style problems, for example when we use the Bootstrap modal component and the `modal-backdrop` style does not load since this element is created dynamically when you open the modal; or when we use external component libraries in our Widgets where the styles have not been loaded and are not on the site. This happens because **PurgeCSS** does not know where to read the contents of the external component.
 
 To include the styles that **PurgeCSS** has removed but we need on the site we need to declare them in a **PostCSS** configuration file. This file is located at the root of the Widget and is called **postcss.config.js**
 
