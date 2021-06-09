@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Customizing Styles
+# Style Customization
 
 All Widgets in this catalog are based on a flat design, based on Bootstrap, waiting to be intervened and modified to adapt to the client's designs and guidelines. Remember that these Widgets are intended to be used as a base for the final product and not as a product itself.
 
