@@ -38,7 +38,7 @@ In the `src` folder of the project we will find a folder called `scss` that has 
 
 The `_theme.scss` file is used for:
 
-- Widget Global Styles
+- Global Widget Styles
 - Extend bootstrap using your mixins
 
 ```scss {2,3,8,11}
