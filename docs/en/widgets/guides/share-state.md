@@ -44,7 +44,7 @@ To learn more about implementing and using Vuex, we recommend reading the [docum
 
 ### Persisting status between Widgets and page reloads
 
-The widgets in the catalog, unlike a SPA (Frontend Monolith), are built under the concept of **Micro Frontends**.
+The Widgets in the catalog, unlike a SPA (Frontend Monolith), are built under the concept of **Micro Frontends**.
 
 The idea behind our Widgets is to separate a set of features or functionalities into different parts that are owned by independent teams. Each team has a different business or mission area and develops its features from start to finish, has its own git repository, its own package.json file, etc. As a result, each Widget has a separate build process and an independent deployment (**CI**). This usually means that each Widget has fast and limited development times.
 
