@@ -120,4 +120,4 @@ new Vue({
 }).$mount('#brokers-dashboard');
 ```
 
-That's all for **Vuex** and **LocalStorage**. One caveat I should mention is that localStorage is NOT infinite. Many browsers limit it to a few megabytes.
+That's all for **Vuex** and **LocalStorage**. One caveat we should mention is that localStorage is NOT infinite. Many browsers limit it to a few megabytes.
