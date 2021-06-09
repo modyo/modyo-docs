@@ -111,7 +111,7 @@ This**scss** file is imported into the project's `main.js` file.
 ```js{4}
 import Vue from "vue";
 //...
-import "bootstrap"; // solo importa el javascript, no los estilos
+import "bootstrap"; // only import javascript, not the styles
 import "./scss/custom.scss";
 //...
 new Vue({
