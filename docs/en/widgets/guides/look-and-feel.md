@@ -150,7 +150,7 @@ Some of the widget components have their own styles and these are written in the
 
 ### PurgeCSS
 
-When you're building a Widget with Bootstrap (or another style framework) you'll only use a small set of it, and many unused CSS styles will be included. This is where **PurgeCSS** comes into play. PurgeCSS analyzes your content and CSS files. It then matches the selectors used in your files with those of your content files and removes the unused selectors from your CSS, resulting in smaller CSS files.
+When you're building a Widget with Bootstrap (or another style framework) you'll only use a small set, and many unused CSS styles will be included. This is where **PurgeCSS** comes into play. PurgeCSS analyzes your content and CSS files. It then matches the selectors used in your files to those in your content files, and removes the unused selectors from your CSS, resulting in smaller CSS files.
 
 Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we managed to remove those extra **bytes** that we don't need and optimize our Widgets. Excellent!
 
