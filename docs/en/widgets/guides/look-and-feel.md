@@ -127,7 +127,7 @@ The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not sty
 
 ### Component Styles
 
-Some of the widget components have their own styles and these are written to the same component (`.vue`). This way we can define the scope of these styles at the component level without affecting other parts of the Widget using the `scoped` attribute.
+Some of the widget components have their own styles and these are written in the same component (`.vue`). This allows us to define the scope of these styles at the component level without affecting other parts of the Widget using the `scoped` attribute.
 
 ```html{5}
 <template>...</template>
