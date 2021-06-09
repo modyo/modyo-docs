@@ -38,7 +38,7 @@ Each of these is documented and explained in the**README.md** file
 
 ### Deploying a Widget with GitHub Actions
 
-In order to load a Widget using **GitHub Actions** we need the _"recipe"_ **Build and Publish** that makes use of the command [**PUSH**](/es/platform/channels/widgets.html #modyo -cli-push-name) of the **Modyo CLI** and for that we need a **token** which authorize it to do so.
+In order to load a Widget using **GitHub Actions** we need the _"recipe"_ **Build and Publish** that makes use of the command [**PUSH**](/es/platform/channels/widgets.html #modyo -cli-push-name) of the **Modyo CLI** and for that we need a **token** that authorizes it.
 
 To get a **token** we first need to create an **API Access** at the site's own account level. We're going to **Settings (1) —> API access (2) —> New API access (3) —> Create (4) **.
 
