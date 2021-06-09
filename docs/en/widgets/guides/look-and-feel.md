@@ -4,7 +4,7 @@ search: true
 
 # Style Customization
 
-All Widgets in this catalog are based on a flat design, based on Bootstrap, waiting to be intervened and modified to adapt to the client's designs and guidelines. Remember that these Widgets are intended to be used as a base for the final product and not as a product itself.
+All Widgets in this catalog are based on a flat design, based on Bootstrap, waiting to be modified to adapt to the client's designs and guidelines. Remember that these Widgets are intended to be used as a base for the final product and not as a product itself.
 
 For both the style base, as well as the grid used in Widgets, [Bootstrap](https://getbootstrap.com/) is used in its version `4.5.x`, using to the maximum the helpers and classes that it includes. This way the number of custom styles in our Widgets is very low which makes your modification simple and easy.
 
