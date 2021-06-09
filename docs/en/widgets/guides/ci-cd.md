@@ -6,7 +6,7 @@ search: true
 
 One of the advantages of working with Widgets locally using the Modyo CLI ([**modyo-cli**] (/es/platform/channels/widgets.html #modyo -cli)) is that you can use tools to automate code review (**CI**) and make continuous delivery or continuous deployment (**CD**)
 
-Catalog Widgets, as well as base templates to start a new project, bring _"recipes"_ from [**GitHub Actions**](https://GitHub.com/features/actions) that you can use to run some of the most common CI/CD tasks quickly and easily.
+Catalog Widgets, as well as base templates to start a new project, provide _"recipes"_ from [**GitHub Actions**](https://GitHub.com/features/actions) that you can use to run some of the most common CI/CD tasks quickly and easily.
 
 These _"recipes" _ are in the **README.md** file located in the Widget's `.github` folder.
 
