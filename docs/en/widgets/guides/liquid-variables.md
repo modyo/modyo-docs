@@ -11,7 +11,7 @@ When decoupled from the platform, Widgets have the disadvantage of not being abl
 1. First we create a new snippet: **Templates (1) —> Snippets (2) —> Add a Snippet (3)**. For this snippet example we use the name `liquid2js_js`, but it can have any name.
    ![template views](/assets/img/widgets/template_snippets.png)
 
-2. In this snippet we create an object in the `window` scope containing all the drops we want to have available in our Widget. In this example the object is called liquid, but you can name it any name.
+2. In this snippet we create an object in the `window` scope containing all the drops we want to have available in our Widget. In this example the object is called liquid, but you can give it any name.
 
    ```js
    window.liquid = {
