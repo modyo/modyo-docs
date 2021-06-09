@@ -26,7 +26,7 @@ All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the sta
 - **Actions** (in the actions code):
 
   - They're functions.
-  - They have the business logic.
+  - They have business logic.
   - To change the status they must call mutations via commit.
   - They can call other actions through dispatch.
   - The way to use them in the component is through dispatch or using modules.
