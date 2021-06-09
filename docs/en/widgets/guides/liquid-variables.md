@@ -29,7 +29,7 @@ When decoupled from the platform, Widgets have the disadvantage of not being abl
    ```
 
    :::warning Important
-   In development mode we will not have access to this object as we are working locally, which is why the recommendation is to assign defaults when defining these variables locally.
+   In development mode we will not have access to this object since we are working locally, which is why we recommend assigning defaults when defining these variables locally.
    :::
 
   ```js
