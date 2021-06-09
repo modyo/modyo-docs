@@ -18,7 +18,7 @@ To use one of our templates we will use the `GET` command in the `modyo-cli`:
 ```bash
 modyo-cli get <widget-name> <widget-folder>```
 
-For example if we want to use the `Consumer Cred` template of the People Banking the command would be as follows:
+For example, if we want to use the `Consumer Cred` template from People Banking, the command is as follows:
 
 ```shell
 modyo-cli get modyo-widgets-retail-consumer-loan ~/Desktop/MyLoanWidget
