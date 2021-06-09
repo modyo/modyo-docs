@@ -198,7 +198,7 @@ if (IN_PRODUCTION) {
 
 In this file we can force **PurgeCSS** to include styles in 3 different ways:
 
-- Add the content file to the `content` property, in this way PurgeCss is layers to read the content and determine which styles should include.
+- Add the content file to the `content` property. This way PurgeCss is able to read the content and determine which styles it should include.
 
   ```js{6}
   // ...
