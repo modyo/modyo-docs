@@ -171,7 +171,7 @@ ARGUMENTS
 
 ### Get a template for a project
 
-The Modyo CLI is designed to work based on micro frontend architecture, and will accelerate the creation process of a widget, with Modyo decisions.
+The Modyo CLI is designed to work based on a micro frontend architecture, which will accelerate the widget creation process.
 
 ### `modyo-cli get NAME [DIRECTORY]`
 
