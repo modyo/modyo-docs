@@ -4,7 +4,7 @@ search: true
 
 # Liquid Variables
 
-[**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform and how we build views and access content on it, as well as [**drops**](/en/platform/channels/liquid-markup.html#drops) context variables that allow us to interact with our views more dynamically. For example, you can determine which content to display to the user according to the target they belong to, or hide a menu depending on the page you are visiting, etc.
+[**Liquid Markup**](/en/platform/channels/liquid-markup.html) It is an important part of the platform and how we build views and access content, as well as [**drops**](/en/platform/channels/liquid-markup.html#drops) context variables that allow us to interact with our views more dynamically. For example, you can determine which content to display to the user according to the target they belong to, or hide a menu depending on the page you are visiting, etc.
 
 Widgets when decoupled from the platform have the disadvantage of not being able to use liquid directly and we do not have access to those drops (although we are working on a solution for that), in order to work with them we will have to make them available using javascript from the platform.
 
@@ -30,10 +30,9 @@ Widgets when decoupled from the platform have the disadvantage of not being able
 
    :::warning Important
    In development mode we will not have access to this object as we are working locally, which is why the recommendation is to assign defaults when defining these variables locally.
+   :::
 
-   ```js
+  ```js
    // si no existe el objeto liquid y la llave lang no esta definida, asignamos 'es-CL' por defecto
    const LANG = window.liquid ? window.liquid.lang : "es-CL";
    ```
-
-   :::
