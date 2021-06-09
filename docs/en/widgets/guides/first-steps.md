@@ -32,7 +32,7 @@ cd ~/Desktop/MyLoanWidget && yarn serve
 
 ### Publish a Widget
 
-To load our Widget to the platform and publish it, we will use the `PUSH `command of the `modyo-cli`. This can be done locally or using continuous integration (recommended).
+To upload our Widget to the platform and publish it, we will use the `PUSH `command of the `modyo-cli`. This can be done locally or by using continuous integration (recommended).
 
 Before we can load and publish our Widget locally, we must create a `.env` environment variable file at the root of the project with the following variables:
 
