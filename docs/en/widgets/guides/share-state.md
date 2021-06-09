@@ -4,7 +4,7 @@ search: true
 
 # Share status between Widgets
 
-All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the status of a Widget and as a centralized store for all widget components, with rules that ensure that the status can be changed predictably. In other words **Vuex** helps us share data between different components of the same Widget.
+All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the status of a Widget. It also serves as a centralized storage for all widget components, with rules that ensure that the status can be changed predictably. In other words **Vuex** helps us share data between different components of the same Widget.
 
 ### The structure of Vuex
 
