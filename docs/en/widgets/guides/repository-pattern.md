@@ -40,7 +40,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
    cd src && mkdir repositories
    ```
 
-#### 2. Create a "clients" folder (Could have any name, but is recommended and use _clients_)
+#### 2. Create a "clients" folder (It could have any name, but we recommend using _clients_)
 
    I will create a "clients" folder inside the "repositories" folder, basically what will be inside this folder are the different HTTP Clients you might want to use, for example if you want to use **Modyosdk**, Axios, Vue-resource etc.
 
