@@ -46,7 +46,7 @@ To learn more about implementing and using Vuex, we recommend reading the [docum
 
 The Widgets in the catalog, unlike a SPA (Frontend Monolith), are built under the concept of **Micro Frontends**.
 
-The idea behind our Widgets is to separate a set of features or functionalities into different parts that are owned by independent teams. Each team has a different business or mission area and develops its features from start to finish, has its own git repository, its own package.json file, etc. As a result, each Widget has a separate build process and an independent deployment (**CI**). This usually means that each Widget has fast and limited development times.
+The idea behind our Widgets is to separate a set of features or functionalities into different parts that are owned by independent teams. Each team has a different business or mission area and develops its features from start to finish, has its own git repository, package.json file, etc. As a result, each Widget has a separate build process and an independent deployment (**CI**). This usually means that each Widget has fast and limited development times.
 
 This approach does not give you the ability to communicate directly between Widgets, but this is widely seen as a feature, not an error. Broadcasting events and receiving data is a scalable Widget design paradigm. Widgets, where possible, should be a reflection of the state.
 
