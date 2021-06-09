@@ -6,13 +6,13 @@ search: true
 
 ## Introducción
 
-Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde generaremos la base del sitio en el cual agregarmoslos [Widgets](/es/widgets/) del catálogo de Widgets de Modyo.
+Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde generaremos la base del sitio en el cual agregarmoslos un [Widgets](/es/widgets/) del [Catálogo de Widgets Financieros de Modyo](/es/widgets/) utilizando el [Modyo Cli](/es/platform/channels/widgets.html#modyo-cli).
 
 A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
 
 ### Dynamic Bank
 
-Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer uan experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutoriales tu sitio debería lucir así:
+Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer una experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutoriales tu sitio debería lucir así:
 
 <img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
@@ -20,15 +20,15 @@ Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ej
 
 ## Requisitos Previos
 
-Para ejecutar los pasos de este tutorial debes tener creados los contenidos del tutorial de [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
+Para ejecutar los pasos de este tutorial debes tener tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
 
 ## Paso 1: Crear un sitio en la Nube
 
-Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer click en el botón <b>New Site</b>.
+Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar el sitio pribado de Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer click en el botón <b>New Site</b>.
 
 Llenamos los campos Name con "Private Site" y seleccionamos el Theme "Minimal" como se muestra en la imagen.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 ## Paso 2: Cargar logo y favicon
 
@@ -52,9 +52,9 @@ Una vez cargado nuestro logo, vamos a hacer los cambios de tamaño para que se a
 
 Dentro de nuestro nuevo sitio, a la izquierda encontrarás el menú principal con las secciones en las que trabajaremos en este tutorial.
 
-Vamos a partir en la sección [Templates](/es/platform/channels/templates), la que corresponde a la estructura que contiene el sitio, es decir la base del HTML, el CSS y JS, más las librerías que contemplan el Template.
+Vamos a partir en [Templates](/es/platform/channels/templates), la que corresponde a la estructura que contiene el sitio, es decir la base del HTML, el CSS y JS, más las librerías que contemplan el Template.
 
-Aquí vamos a modificar las variables de CSS, que están en un snippet llamado <b>variables css</b> que alimenta el resto de las hojas de estilo ya configuradas dentro del Theme Minimal.
+Para comenzar, vamos a modificar las variables de CSS, estas están en un snippet llamado <b>variables css</b> que alimenta el resto de las hojas de estilo ya configuradas dentro del Theme Minimal.
 
 Para hacer el cambio, vamos a modificar en el snippet ya mencionado las siguientes variables:
 
@@ -77,13 +77,13 @@ Para revisar el cambio que acabas de realizar vamos a utiliar el [modo vista pre
 
 En el Minimal estamos usando la librería [webfontload](https://github.com/typekit/webfontloader) para cargar la tipografía de manera asincrónica.
 
-Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar al snippet <b>webfontload_config_js</b> y modificar la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
+Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar a la <b>hoja de javacript Base</b> dentro de Views y modificar la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
 
 ## Paso 5: Modificar Layout Base
 
-Para que nuestro sitio se vea como el diseño tenemso que modificar la estructura que tiene. Para ello, vamos a ir a Templates, y dentro de la la pestaña Views, buscamos la sección Layouts y abrimos el base.
+Para que nuestro sitio se vea como el diseño tenemso que modificar su estructura HTML, para ello, vamos a ir a Templates, y dentro de la la pestaña Views, buscamos la sección [Layouts](/es/platform/channels/templates.html#layouts-personalizados) y abrimos el base.
 
-La idea es cambiar el código por uno se acemeje más a una aplicación; con el menu en el sidebar y utilizando el 100% del ancho de nuestra pantalla.
+La idea es cambiar el código por uno se acemeje más a una aplicación; con el menú en el sidebar y utilizando el 100% del ancho de nuestra pantalla.
 
 ```html
 {% html5 %}
@@ -124,7 +124,7 @@ La idea es cambiar el código por uno se acemeje más a una aplicación; con el 
 
 ## Paso 6: Modificar Header
 
-Ahora que modificamos el Layout Base tenemos que hacer los cambios en el header para que se vea como en nuestro diseño, para ello vamos a copiar el siguiente código
+Ahora que modificamos el Layout Base, vamos que hacer los cambios en el header para que se vea como en nuestro diseño, copiando el siguiente código en el snippet Header.
 
 ```html
 <header role="banner" id="header" class="bg-primary">
@@ -281,7 +281,7 @@ Ahora que modificamos el Layout Base tenemos que hacer los cambios en el header 
 
 ## Paso 7: Modificar Notificaciones y Sidebar
 
-Para modificar las notificaciones debemos editar el css, dentro de Templates en Snippets <code>notifications_css</code> remplazandolo por el siguiente código:
+Para modificar las notificaciones debemos editar el css, el Snippets <code>notifications_css</code> remplazamos el código:
 
 ```css
 .notifications_btn svg {fill: {{white}};transition:.3s}
@@ -296,7 +296,7 @@ Para modificar las notificaciones debemos editar el css, dentro de Templates en 
 #menu_panel.modal.right .modal-dialog {max-width: 400px;}
 ```
 
-De la misma forma, remplazar el HTML en el snipppet <code>notifications_html</code>:
+De la misma forma, HTML en el snipppet <code>notifications_html</code>:
 
 ```html
 {% if user %}
@@ -381,7 +381,7 @@ De la misma forma, remplazar el HTML en el snipppet <code>notifications_html</co
 </script>
 ```
 
-Modificar el menú para que se vea como nav lateral, remplazar el código dentro de Snippets <code>menu</code> en el grupo General
+Para que nuestro menú se vea como nav lateral, vamos a remplazar el código del snippet <code>menu</code> con el siguiente.
 
 ```html
 <ul class="nav menu_nav">
@@ -428,7 +428,7 @@ Modificar el menú para que se vea como nav lateral, remplazar el código dentro
 </ul>
 ```
 
-Remplazar el <code>user_html</code>:
+Modificar el snippet <code>user_html</code> que utilizaremos para mostrar los botones de Sign in, Profeile y Log Out
 
 ```html
 <nav class="menu_nav" id="second_nav">
@@ -471,7 +471,7 @@ Remplazar el <code>user_html</code>:
 </nav>
 ```
 
-Agregar nuestro estilo en un nuevo snippet que llamaremos <code>private_site_css</code> y lo agregamos a la Hoja de estilos general.
+Luego de tener todo esto, vamos a crear un snippet para los estilos con el nombre de <code>private_site_css</code> y lo agregamos a la Hoja de estilos general.
 
 ```css
 html{
@@ -749,23 +749,19 @@ Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.htm
  </tr>
 </table>
 
-Lo que se vería reflejado de la siguiente forma:
-
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;">
-
-Luego de tener nuestro menú completo guardamos y publicamos.
+Luego de tener nuestro menú completo lo guardamos y publicamos.
 
 ## Paso 9: Instalar Modyo Cli
 
-Ahora que ya tenemos lista nuestra Base en Modyo para agregar nuestros widgets, vamos a instalar el Modyo Cli en nuestra computadora.
+Ahora que tenemos lista la Base para agregar nuestro widgets, vamos a instalar el [Modyo Cli](/es/platform/channels/widgets.html#modyo-cli) en nuestra computadora.
 
-El [Modyo Cli](/es/platform/channels/widgets.html#modyo-cli) es una es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
+[Modyo Cli](/es/platform/channels/widgets.html#modyo-cli) es una es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
 
-Para instalar el modyo-cli necesitamos algunas dependencias, las cuales ya deben estar instaladas.
+Para instalar el modyo-cli necesitamos algunas dependencias, las cuales ya deben estar instaladas para realizar la instalación.
 
-Ellas son </code>Git distributed version control system (v 1.7+)</code>, <code>Node (v 12+)</code>, <code>Npm (v 6.14+)</code>, <code>Yarn (v 1.22+)</code> y un editor de código como <code>VSCode</code> u otro.
+Ellas son </code>Git distributed version control system (v 1.7+)</code>, <code>Node (v 12+)</code>, <code>Npm (v 6.14+)</code>, <code>Yarn (v 1.22+)</code> y un editor de código como <code>Visual Studio Code</code> u otro.
 
-en la máquina local de manera global, debe usar una de estas opciones la consola.
+Para realizar la instalación se puede usar una de estas opciones la consola.
 
 <code>Via yarn</code>
 
@@ -778,34 +774,35 @@ yarn global add @modyo/cli
 ```sh
 npm i -g @modyo/cli
 ```
-Una vez instalado podemos chequear en nuestra consola al ejecutar el comando <code>modyo-cli help</code> para comprobar que este todo correcto.
+Una vez instalado podemos comprobar que todo este bien ejecutando el comando <code>modyo-cli help</code> el cual nos entregará alguna información como la versión.
 
 ## Paso 10: Inicializar un Widget del Catálogo
 
-Luego de completar el proceso, y tener disponible el modyo-cli a nivel globar, vamos a obtener el Widget de [Resumen de Cuentas](/es/widgets/retail/summary.html) desde el [Catálogo de Widgets Financieros de Modyo](/es/widgets/).
+Luego de completar el proceso de instalación, vamos a obtener el Widget de [Resumen de Cuentas](/es/widgets/retail/summary.html) desde el [Catálogo de Widgets Financieros de Modyo](/es/widgets/).
 
-Para traer el Widget a nuestro ambiente local lo hacemos con el siguiente comando en la consola:
+Para traer el Widget a nuestro ambiente local lo hacemos con el siguiente comando:
 
 ```sh
 modyo-cli get modyo-widgets-retail-summary
 ```
-Una vez terminado el proceso tendremos nuestro widget tendremos una vista asi en nuestra terminal:
+
+Luego de que termine el proceso tendremos nuestro widget tendremos una vista asi en nuestra terminal:
 
 <img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;"/>
 
- Luego entramos en la carpeta <code>modyo-widgets-retail-summary</code> y con <code>yarn serve</code> o <code>npm serve</code> podemos ver el widget de manera local en nuestro navegador.
+ Para editarlo debemos ir a la carpeta <code>modyo-widgets-retail-summary</code> y con <code>yarn serve</code> o <code>npm serve</code> veremos el widget de manera local en nuestro navegador.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;"/>
 
 ## Paso 11: Cambios de estilos en el Widget
 
-Los Widgets del catálogo se han diseñado en Modyo con un estilo plano, para hacer cambios debemos abrir la carpeta del widget <code>modyo-widgets-retail-summary</code> en nuestro editor, en nuestro caso VS Code.
+Los Widgets del catálogo se han diseñado en Modyo con un estilo plano, para hacer cambios debemos abrir la carpeta del widget <code>modyo-widgets-retail-summary</code> en nuestro editor, en nuestro caso Visual Studio Code.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;"/>
 
 Comenzaremos modificando el CSS, lo primero que haremos es cambiar los colores de las variables, por nuestros colores.
 
-Para esto abrimos las carpetas src, sccs y dentro modificamos el _variables.sccs
+Para esto abrimos las carpetas src, sccs y dentro modificamos el <code>_variables.sccs</code>.
 
 ```css
 $primary-10: #EEF0F5;
@@ -838,9 +835,9 @@ $light: $secondary-10;
 $dark: $secondary-dark;
 ```
 
-Luego en _theme.sccs y modificamos la linea 8 dejando el body con un background: white;
+Luego en <code>_theme.sccs</code> y modificamos la linea 8 dejando el body con un <b>background: white</b>;
 
-En el directorio src/components/SummaryAccount.vue modificaremos el header de las cards para agregarle la variable $primary-40 para el background especificamente la línea 169:
+En el directorio <code>src/components/SummaryAccount.vue</code> modificaremos el header de las cards para agregarle la variable $primary-40 para el background especificamente la línea 169:
 
 ```css
 .card-header.product-summary__header:first-child {
@@ -849,7 +846,8 @@ En el directorio src/components/SummaryAccount.vue modificaremos el header de la
   background: $primary-40;
 }
 ```
-y en la línea 8 le agregamos un h6 al h2
+
+Y en la línea 8 le agregamos la clase h6 al h2
 
 ```html
 <h2 class="h6 mb-0 text-capitalize">
@@ -858,7 +856,7 @@ y en la línea 8 le agregamos un h6 al h2
 </h2>
 ```
 
-Luego agregaremos estilos para que la barra ea verde:
+Luego agregaremos estilos para que la barra se vea verde:
 
 ```css
 .m-progress-bar .progress-bar {
@@ -866,7 +864,7 @@ Luego agregaremos estilos para que la barra ea verde:
 }
 ```
 
-Agregamos el título en <b>App.vue</b>:
+Agregamos el título en <code>App.vue</code>:
 
 ```
 <template>
@@ -1011,13 +1009,14 @@ export default {
 }
 </style>
 ```
+
 Una vez que terminamos de darle el look and feel al widget estamos listos para hacer el push a Modyo.
 
 ## Paso 12: Pushear Widget al sitio
 
-Para hacer el push de nuestro Widget a Modyo, para esto tenemos que generar la configuración para que asi el cli sepa hacia donde vamos a hacer el push.
+Para hacer el push del Widget al sitio en Modyo, tenemos que generar la configuración en el modyo-cli para sepa hacia donde vamos a hacer el push.
 
-El archivo de configuración lo vamos a crear en la raíz del sitio y se va a llamar <code>.env</code>
+El archivo de configuración lo vamos a crear en la raíz del sitio y se va a llamar <code>.env</code>.
 
 ```
 MODYO_ACCOUNT_URL= Account url
@@ -1033,7 +1032,7 @@ MODYO_WIDGET_NAME=Summary
 
 Para obtener un token vamos a ir a los Settings de la cuenta, y dentro de API access vamos a generar una nueva en el boton <b>New Application</b> arriba a la derecha.
 
-En el modal completamos los siguientes datos
+En el modal completamos los siguientes datos:
 
 <table>
  <tr>
@@ -1076,7 +1075,7 @@ Luego con el comando <code>modyo-cli push Summary</code> disponibilizaremos el w
 
 <img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;"/>
 
-Entramos al Widget, lo publicamos para luego lo agregamos en el Home.
+Entramos al Widget, lo publicamos para disponibilizarlo en la biblioteca de widgets y poder agregarlo al Home.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;"/>
 
@@ -1098,4 +1097,4 @@ Luego seguiremos los pasos para seleccionar la fecha de publicación, que en est
 
 ¡Muy bien! Haz finalizado el curso de Sitio Privado con Widgets del Modyo-CLI.
 
-Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, de utilizar modyo-cli para trabajar en un Widget del [Catálogo de Modyo](/es/widgets/) y hacer push a un sitio.
+Ya tienes conocimientos sobre [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, de utilizar [Modyo Cli](/es/platform/channels/widgets.html#modyo-cli) para trabajar en un Widget del [Catálogo de Modyo](/es/widgets/) y hacer push a un sitio en Modyo.
