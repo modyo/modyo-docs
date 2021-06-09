@@ -106,7 +106,7 @@ In the `custom.scss` file we import and give order to all the other stylesheets 
 Order is important, **variables** always go before importing bootstrap.
 :::
 
-This**scss** file is imported into the `main.js` file of the project.
+This**scss** file is imported into the project's `main.js` file.
 
 ```js{4}
 import Vue from "vue";
