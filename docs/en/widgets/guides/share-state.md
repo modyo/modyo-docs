@@ -34,7 +34,7 @@ All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the sta
 
 - **Getters** (in getters code).
   - They're functions.
-  - They don't change the state but they do format it so that we can use that information the way we need it.
+  - They don't change the state, but they do format it so that we can use the information the way we need it.
   - It would be the closest thing to a computed property in the component.
   - An example would be a function that filtered the state. It doesn't modify it but returns you a new different object with the filtered data you need.
 
