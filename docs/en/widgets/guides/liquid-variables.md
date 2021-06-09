@@ -8,7 +8,7 @@ search: true
 
 When decoupled from the platform, Widgets have the disadvantage of not being able to directly use liquid. We do not have access to those drops (although we are working on a solution), and we will have to use javascript from the platform to make them available.
 
-1. First we create a new snippet: **Templates (1) —> Snippets (2) —> Add a Snippet (3)**. For this snippet example we used the name `liquid2js_js`, but it can have any name.
+1. First we create a new snippet: **Templates (1) —> Snippets (2) —> Add a Snippet (3)**. For this snippet example we use the name `liquid2js_js`, but it can have any name.
    ![template views](/assets/img/widgets/template_snippets.png)
 
 2. In this snippet we create an object in the `window` scope containing all the drops we want to have available in our Widget. In this example the object is called liquid, but you can name it any name.
