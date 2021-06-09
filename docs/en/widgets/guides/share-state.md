@@ -36,7 +36,7 @@ All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the sta
   - They're functions.
   - They don't change the state, but they do format it so that we can use the information in the way we need.
   - It would be the closest thing to a computed property in the component.
-  - An example would be a function that filtered the state. It doesn't modify it but returns you a new different object with the filtered data you need.
+  - An example would be a function that filtered the state. It doesn't modify it, but instead gives you a new different object with the filtered data you need.
 
 :::tip Note
 To learn more about implementing and using Vuex, I recommend reading the [documentation](https://vuex.vuejs.org/guide/) and see this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) from [VueSchool](https://vueschool.io/)
