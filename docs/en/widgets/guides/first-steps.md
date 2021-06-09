@@ -59,7 +59,7 @@ Once the loading process is finished, the Widget will be available in the**Widge
 
 ![widgets-list](/assets/img/widgets/widgets_list.png)
 
-If we want the Widget to be published automatically at the end of loading, we can use the `—publish` option of the `PUSH` command
+If we want the Widget to be published automatically after loading, we can use the `—publish` option of the `PUSH` command.
 
 ```shell
 modyo-cli push --publish
