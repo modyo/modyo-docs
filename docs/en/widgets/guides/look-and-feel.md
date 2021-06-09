@@ -6,7 +6,7 @@ search: true
 
 All Widgets in this catalog are based on a flat design, based on Bootstrap, waiting to be modified to adapt to the client's designs and guidelines. Remember that these Widgets are intended to be used as a base for the final product and not as a product itself.
 
-For both the style base and the grid used in Widgets, we use version `4.5.x` of [Bootstrap](https://getbootstrap.com/), which includes useful helpers and classes. This way the number of custom styles in our Widgets is very low, making your modification simple and easy.
+For both the style base and the grid used in Widgets, we use [Bootstrap](https://getbootstrap.com/) version `4.5.x`, which includes useful helpers and classes. This way the number of custom styles in our Widgets is very low, making them simple and easy to modify.
 
 :::tip
 To make the most of the potential of bootstrap we use **SCSS** as the **css** pre-processor which allows us to modify the default values of the variables used in bootstrap build.
