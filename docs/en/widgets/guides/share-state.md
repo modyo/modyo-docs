@@ -29,7 +29,7 @@ All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the sta
   - They have business logic.
   - To change the status they must call mutations via commit.
   - They can call other actions through dispatch.
-  - The way to use them in the component is through dispatch or using modules.
+  - The way to use them in the component is through dispatch or by using modules.
   - They're asynchronous.
 
 - **Getters** (in getters code).
