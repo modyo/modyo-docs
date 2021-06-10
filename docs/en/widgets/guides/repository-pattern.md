@@ -233,7 +233,7 @@ export default {
 
 #### In the Vuex Store
 
-In the file "actions.js" located in the "store" folder of the Widget we paste the following
+In the file "actions.js" located in the Widget's "store" we paste the following
 
 ```js
 import Repository from "../repositories/RepositoryFactory";
