@@ -48,7 +48,7 @@ Modyo has 11 default roles with different functions by area or application. The 
 
 Modyo by default assigns default roles, sorted according to the area of the platform and the context.
 
-The default roles that exist are, depending on context:
+The default roles that exist, depending on the given area of the platform:
 
 #### Account-level roles:
 
