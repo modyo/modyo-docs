@@ -20,7 +20,7 @@ All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the sta
   - They're functions.
   - They are the only functions that can modify the status.
   - They're called by actions.
-  - They can be called on the component to use through a commit or through an action.
+  - They can be called in the component to use through a commit or through an action.
   - They're synchronous.
 
 - **Actions** (in the actions code):
