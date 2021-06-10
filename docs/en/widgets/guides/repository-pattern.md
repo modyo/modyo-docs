@@ -139,7 +139,7 @@ I will create a "clients" folder inside the "repositories" folder, basically thi
    In the above code we define and export all our API requests that we need
 
 :::tip Important
-We must import the corresponding HTTP Client file into all Repositories that need it. In this example "ModyoClient"
+We must import the corresponding HTTP Client file into all Repositories where it is required. In this example "ModyoClient"
 :::
 
 #### 5. Create the file "RepositoryFactory.js"
