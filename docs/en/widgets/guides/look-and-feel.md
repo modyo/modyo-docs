@@ -9,7 +9,7 @@ All Widgets in this catalog use a flat, minimal design based on Bootstrap, waiti
 For both the style base and the grid used in Widgets, we use [Bootstrap](https://getbootstrap.com/) version `4.5.x`, which includes useful helpers and classes. This way the number of custom styles in our Widgets is very low, making them simple and easy to modify.
 
 :::tip
-To make the most of Bootstrap's potential, we use **SCSS** as the **css** pre-processor, which allows us to modify the default values of the variables used in Bootstrap build.
+To make the most of Bootstrap's potential, we use **SCSS** as the **css** pre-processor, which allows us to modify the default variable values used in Bootstrap.
 :::
 
 ```html{1-2}
