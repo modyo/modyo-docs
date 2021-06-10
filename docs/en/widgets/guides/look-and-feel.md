@@ -41,12 +41,12 @@ The `_theme.scss` file is used for:
 - Global Widget Styles
 - Extend bootstrap using your mixins
 
-```scss {2,3,8,11}
-//Example: We use the mixin bg-variant to create more background colors
+```scss{2,3,8,11}
+// Example: We use the mixin bg-variant to create more background colors
 @include bg-variant (".bg-tertiary", $tertiary, true);
 @include bg-variant (".bg-tertiary-10", $tertiary-10, true);
 
-//In these following examples we use the mixin button-variant that allows us to create new buttons with all their states
+// In these following examples we use the mixin button-variant that allows us to create new buttons with all their states
 .btn-tertiary {
  @include button-variant ($tertiary, $tertiary);
 }
