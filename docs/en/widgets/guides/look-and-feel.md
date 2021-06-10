@@ -94,7 +94,7 @@ $border-radius: 1.35rem;
 
 ### Custom
 
-In the `custom.scss` file we import and give order to all the other stylesheets that we have in the**scss** folder along with the bootstrap base.
+In the `custom.scss` file we import and give order to all the other stylesheets that we have in the**scss** folder along with the Bootstrap base.
 
 ```scss {1}
 @import". /variables ";//always before bootstrap
