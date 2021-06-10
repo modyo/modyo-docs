@@ -28,7 +28,7 @@ The rest of the tabs include visible or modifiable user information:
 
 ## Groups
 
-Groups allow you to streamline access control across different Modyo contexts, so you can assign a default role to a context (account, spaces, realms, or sites) to multiple users at once. You can then add that user group to different contexts, allowing all users to acquire the group's role in the associated context.
+Groups allow you to streamline control access across different areas of Modyo, so that you can assign a default role to an area (account, spaces, realms, or sites) to multiple users at once. You can then add that user group in different contexts, allowing all users to acquire a group's role in the associated context.
 
 To create a group, go to the "Groups" section of your account settings, give it a name, role, and start adding users to the group. Once it's saved, you can also go back and make changes.
 
