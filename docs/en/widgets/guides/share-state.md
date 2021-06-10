@@ -73,7 +73,7 @@ export default function(sParam) {
 }
 ```
 
-Another alternative to persisting data (state) when reloading the page or changing Widgets is to use **Vuex** in conjunction with **LocalStorage**. When should you do this? For example, we have a user who is completing an onboarding process that consists of several steps and questions and they mistakenly reload the page. All the progress that the user made up until that moment is lost and they now have to start over, which can mean losing that potential customer.
+Another alternative to persisting data (state) when reloading the page or changing Widgets is to use **Vuex** in conjunction with **localStorage**. When should you do this? For example, we have a user who is completing an onboarding process that consists of several steps and questions and they mistakenly reload the page. All the progress that the user made up until that moment is lost and they now have to start over, which can mean losing that potential customer.
 
 For example
 
