@@ -48,7 +48,7 @@ The `_theme.scss` file is used for:
 
 // In these following examples we use the mixin button-variant that allows us to create new buttons with all their states
 .btn-tertiary {
- @include button-variant ($tertiary, $tertiary);
+  @include button-variant ($tertiary, $tertiary);
 }
 .btn-outline-tertiary {
  @include button-outline-variant ($tertiary, $white, $primary-80, $primary-80);
