@@ -45,7 +45,7 @@ MODYO_WIDGET_NAME=[widgetName]
 
 Follow [this](/es/widgets/guides/ci-cd.html) guide to get a token that allows us to upload and publish the Widget.
 
-The **AccountUrl** is the URL of the account that owns the site and the **SiteHost** can be searched in the **Channels —> SiteS** section and review the host column of the site list.
+The **AccountUrl** is the URL of the account that owns the site. The **SiteHost** can be searched in the **Channels —> SiteS** section and can be reviewed in the host column of the site list.
 
 ![Host](/assets/img/widgets/host.png)
 
