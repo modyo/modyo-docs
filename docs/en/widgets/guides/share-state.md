@@ -50,7 +50,7 @@ The idea behind our Widgets is to separate a set of features or functionalities 
 
 This approach does not give you the ability to communicate directly between Widgets, but this is widely seen as a feature, not an bug. Broadcasting events and receiving data is a scalable Widget design paradigm. Widgets, where possible, should be a reflection of the state.
 
-When it is necessary to persist data (status) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://mi-sitio.com/formulario?step=2&username=Jorge>) and use a function that allows us to obtain the values easily, such as:
+When it is necessary to persist data (state) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://mi-sitio.com/formulario?step=2&username=Jorge>) and use a function that allows us to obtain the values easily, such as:
 
 ```js
 /**
