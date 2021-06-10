@@ -52,7 +52,7 @@ The `_theme.scss` file is used for:
 }
 .btn-outline-tertiary {
   @include button-outline-variant ($tertiary, $white, $primary-80, $primary-80);
- color: $secondary-100;
+  color: $secondary-100;
 }
 ```
 
