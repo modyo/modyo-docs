@@ -52,7 +52,7 @@ The default roles that exist, depending on the given area of the platform:
 
 #### Account-level roles:
 
-- **Default user**: You have all existing permissions. minus editing the settings for each context. You must be invited to each context in order to access its functionalities.
+- **Default user**: You have all existing permissions. except for the ability to edit the settings within the given context. You must be invited to an area of the platform in order to access its functionalities.
 - **Default admin**: You have all existing permissions, but you must be invited to each context in order to access its roles.
 - **Owner**: You have all existing perimsos and you can access all contexts without having to be invited to them.
 
