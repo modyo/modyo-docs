@@ -99,7 +99,7 @@ I will create a "clients" folder inside the "repositories" folder, basically thi
 
 #### 4. Create the Repositories
 
-   In these files are the different API operations that will be done within a particular feature of the Widget.
+   These files contain the different API operations that will be done within a particular feature of the Widget.
 
    For example, to consume POSTS with the ModyosDK we create a file "PostRepository.js" inside the `repositories` folder and copy the following code.
 
