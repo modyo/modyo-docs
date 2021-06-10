@@ -73,6 +73,6 @@ The most important user will have the role of Default Admin or Administrator wit
 ### Access to applications:
 Since we have roles that allow access to all applications without any restriction, Modyo allows you to restrict access to certain applications by setting the team member, so you can give a user full access (Owner) but only in the channels app.
 
-### Assign a role per account
+### Assign an account role
 
 To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user.
