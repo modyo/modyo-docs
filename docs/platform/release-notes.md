@@ -16,6 +16,11 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.22 - 10 June, 2021
+&nbsp;
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Remove route restrictions for site redirects
+
 ### 9.1.21 - May 28, 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
