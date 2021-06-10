@@ -143,7 +143,7 @@ We must import the corresponding HTTP Client file into all Repositories where it
 :::
 
 #### 5. Create the file "RepositoryFactory.js"
-   We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, this way it is easier to use them anywhere in our Widget.
+   We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, so it is easier to use them anywhere in our Widget.
 
    ```sh
    touch  RepositoryFactory.js
