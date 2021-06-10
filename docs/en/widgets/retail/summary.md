@@ -57,7 +57,7 @@ The widget also allows you to separate national from international lines of cred
 | Feature       | Description                                                                                                                                     |
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
 | Available Credit      | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used versus the total credit limit.        |
-| International Transactions | Displays the international amount used and authorized, plus a graph indicating the first number versus the authorized total in dollars. |
+| International Transactions | It displays the international amount used and authorized, plus a graph indicating the amount used versus the authorized total in dollars. |
 | Pay               | Switches to the Card Payment widget, where you can pay invoiced amounts.                                                                  |
 | Transactions         | Switches to the Transactions widget of the card, where you can review the details of each transaction.                                                        |
 
