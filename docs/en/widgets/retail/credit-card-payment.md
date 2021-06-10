@@ -20,7 +20,7 @@ To complete a payment, the default options available to customers are:
 
 | Feature                          | Description                                                                                                              |
 |:---------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|
-| Credit card to be paid             | Present the credit card on which the transaction will be made                                                    |
+| Credit Payment Due             | Present the credit card on which the transaction will be made                                                    |
 | National payment debt                 | Presents the total amount that has been used in the national quota of the card, including what is not billed.      |
 | International payment debt            | Present the total amount that has been used in the international quota of the card, including what is not billed. |
 | Selection of payment source account | The customer can select the account from which the payment amount will be drawn.                                           |
