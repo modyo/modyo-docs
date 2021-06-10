@@ -185,7 +185,7 @@ We've finished setting up our Repository Pattern. If you followed the steps you 
 
 ### How do we use our Repository Pattern?
 
-Since we're working with Vue.js, we'll show you how to use it in the Vue components and in the Vuex store.
+Since we're working with Vue.js, we'll review how to use our repository pattern in the Vue components and in the Vuex store.
 
 #### In Vue Components (SFC)
 
