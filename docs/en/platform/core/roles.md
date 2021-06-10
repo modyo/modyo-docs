@@ -71,7 +71,7 @@ The default roles that exist, depending on the given area of the platform:
 The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
 ### Access to applications:
-Since we have roles that allow unrestricted access to all applications, Modyo allows you to restrict access to certain applications through the configuration of team members. So, for example, you can give a user full access (Owner) but only within the Channels application.
+Since we have roles that allow unrestricted access to all applications, Modyo allows you to restrict access to certain applications through the configuration of team members. So, for example, you can give a user full, unrestricted access (Owner) but only within the context of Channels application.
 
 ### Assign one role per account
 
