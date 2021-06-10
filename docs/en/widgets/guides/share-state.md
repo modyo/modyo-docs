@@ -48,7 +48,7 @@ The Widgets in the catalog, unlike a SPA (Frontend Monolith), are built under th
 
 The idea behind our Widgets is to separate a set of features or functionalities into different parts that are owned by independent teams. Each team has a different business or mission area and develops its features from start to finish, has its own git repository, package.json file, etc. As a result, each Widget has a separate construction process and an independent deployment (**CI**). This usually means that each Widget has fast and limited development times.
 
-This approach does not give you the ability to communicate directly between Widgets, but this is widely seen as a feature, not an error. Broadcasting events and receiving data is a scalable Widget design paradigm. Widgets, where possible, should be a reflection of the state.
+This approach does not give you the ability to communicate directly between Widgets, but this is widely seen as a feature, not an bug. Broadcasting events and receiving data is a scalable Widget design paradigm. Widgets, where possible, should be a reflection of the state.
 
 When it is necessary to persist data (status) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://mi-sitio.com/formulario?step=2&username=Jorge>) and use a function that allows us to obtain the values easily, such as:
 
