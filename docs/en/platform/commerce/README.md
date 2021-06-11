@@ -5,10 +5,10 @@ search: true
 # Modyo Commerce
 **Modyo Commerce** is a Modyo application that enables development teams to charge users registered on the site (or authenticated via one of the Single Sign On systems).
 
-<img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;">
+<img src="/assets/img/commerce/header.jpg" style="margin: auto; width: 300px; display: block;" />
 
-:::tip Payment methods
-Currently Modyo Commerce only allows integration with payment methods in Latin America.
+:::tip
+Payment methods Currently Modyo Commerce only allows integration with payment methods in Latin America.
 :::
 
 ## Structure
