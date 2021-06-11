@@ -126,7 +126,7 @@ https://[domain]/[site-name]/manifest.json
 
 The manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the `head` snippet.
 
-The manifest can be created and modified in the next field, allowing you to add changes without having to leave the view.
+The manifest can be created and modified in the following field, allowing you to add changes without having to leave the view.
 
 :::warning
 Warning If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
@@ -191,7 +191,7 @@ Restrictions allow you to configure the privacy of your site.
 - If the privacy level is set to public, then it is visible to everyone.
 - If the privacy level is set to private, then this site is only visible to users with an active session (authenticated login).
 - If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
-- If you reach a URL that does not exist within the site, by default you will find a 404 response, but if you check this option, instead of receiving a 404, you will be redirected to the Site Home.
+- If you reach a URL that does not exist within the site, you will receive a 404 response by default, but if you check this option, instead of receiving a 404, you will be redirected to the home page.
 
 ### Domains
 
@@ -320,7 +320,7 @@ The Admins role has access to all the permissions of the two previous roles, and
 
 This team member is different from the account-level Default Admin. A site Admin can only configure a site, and cannot make any changes to the platform itself.
 
-If necessary, users from the site who already have previous roles can be deleted. To do this, just click the user and the Delete action.
+If necessary, users from the site who already have existing roles can be deleted. To do this, just click the user and the Delete action.
 
 ### Custom redirects
 
@@ -328,7 +328,7 @@ Modyo has a custom redirect system that will allow you to take a URL from your s
 
 In this view you will find a table with all the redirects that currently exist on the site, where you can search by path or description.
 
-To create a new redirect, click on the **New** button in the upper right corner of the view. By completing the Source **_URL_ Source** and **_URL_ Destination** fields redirection code and then saving the changes, you will create a new redirection entry.
+To create a new redirect, click on the **New** button in the upper right hand corner of the view. By completing the fields **_URL_ Source** and **_URL_ Destination** and redirection code and then saving the changes, you will create a new redirection entry.
 
 :::warning
 Atención La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/es/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
@@ -359,13 +359,13 @@ Configure your HTTP security headers by enabling this module for your site. This
 ### HTTP Strict Transport Security (HSTS)
 
 Instructs the browser that your site should be accessed using HTTPS only.
-* **Duration**: Sets how long the browser should remember that your site is only accessed using HTTPS.
+* **Duration**: Sets how long the browser should remember that your site is only accessed by using HTTPS.
 * **Preload**: Include the preload directive. See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
 * **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
 
 ### Referrer-Policy
 
-The `Referer` _header_ contains information about the previous web page which is linked to the resource being requested, and you can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
+The `Referer` _header_ contains information about the previous web page that is linked to the resource being requested. You can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
 
 * **no-referrer**: No _referrer_ information is sent.
 * **no-referrer-when-downgrade**: Don't send _referrer_ information to a less secure destination.
@@ -378,23 +378,23 @@ The `Referer` _header_ contains information about the previous web page which is
 
 ### X-Frame-Options
 
-Indicates if your site should be allowed to be rendered in a `frame`, `iframe`, `embed` or `object`.
+It indicates if your site should be allowed to be rendered in a `frame`, `iframe`, `embed` or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
 * **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
 ### X-Content-Type-Options
 
-Indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
+It indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
 ### Content-Security-Policy
 
-Control which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site. Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see \[MDN Content Security Policy (CSP)\] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+It controls which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site. Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see \[MDN Content Security Policy (CSP)\] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning
 Atención Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html) y [Asset Manager](/es/platform/content/asset-manager.html).
 :::
 
-A ready for production policy must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
+A policy that's ready for production must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
@@ -412,18 +412,18 @@ If you have the nonce present in your policy then you can add the `script` and `
 </script>
 ```
 
-There are several tools to assist you in designing a strong security policy:
+There are several tools to help you design a strong security policy:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
 ### Permissions-Policy
 
-Allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs like the camera or microphone and the autoplay of videos. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+It allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs, like the camera or microphone, and video autoplay. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 ### X-XSS-Protection
 
-Prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
+It prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
 
 * **0**: Disable XSS _filtering_.
 * **1**: Enable XSS _filtering_, removing the unsafe parts.
