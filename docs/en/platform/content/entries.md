@@ -18,7 +18,7 @@ The columns in the list display the following details:
 - **Updated on**: Date of the last saved update.
 - **Author**: Original creator of the entry.
 
-In the admin you can also filter the view according to several default filters that you can adjust depending on  your need, regardless of how you order your content list.
+You can also filter the view by other default filters that you can adjust depending on your need, regardless of how you order your entry list.
 
 You can also filter the list by six different attributes:
 
@@ -97,7 +97,7 @@ You'll get to a blank version of the entry, where you can press the **Copy from 
 
 To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
 
-After finishing your writing and editing, in the top right part of the screen click the **Save** button, which will save all of your content.
+After you finish writing and editing, click the **Save** button in the top right part of the screen, which will save all of your content.
 
 If you click on it, the button will respond in two ways. If you have Space Manager permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
 
@@ -127,7 +127,7 @@ Warning If the Space is not associated with a site, you can only see the JSON co
 :::
 
 :::warning
-Warning You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-fame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
+Warning You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-frame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
 :::
 
 :::warning
