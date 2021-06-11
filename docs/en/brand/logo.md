@@ -10,7 +10,7 @@ Hello, we will review various topics associated with the use of the brand below,
 
 The Modyo logo features the written word of the company name, and a green symbol, both of which are instantly recognizable. This is why it is so important to use the logo exactly as specified in these guidelines. [Download.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
 
-<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;" />
 
 ### Positive application
 
@@ -67,7 +67,7 @@ The free space and exclusion zone around the logo is equal to the height of the 
 
 For the use of the isotype the reference is the same.
 
-<img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
+<img src="https://cloud.modyocdn.com/uploads/cd84193c-3c82-4647-b35d-b57fae239b15/original/logo_redzone.svg" alt="redzone" style="width:100%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0" />
 
 ### Minimum size
 
@@ -92,11 +92,11 @@ Minimum digital size: 20px
 
 Separate free space rules are applied align our logo with associated logos. Use the width of an "M" as a guide for a gap between the Modyo logo and partner logos.
 
-<img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
+<img src="https://cloud.modyocdn.com/uploads/b9ede6ad-e4ba-4a4c-9ba1-e775e7dbe948/original/Zona_de_exclusion.png" style="height:200px;margin-left: 0;" alt="logo Alliances" />
 
 You can change the color of the two logos together to white. When you need to do that, put a simple, perfect square in the middle to separate the two logos. The size of the square should provide an optical balance between the two logos.
 
-<img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances">
+<img src="https://cloud.modyocdn.com/uploads/6a854d8f-c149-45d1-b4b1-6c1bb9dc7a29/original/Zona_de_exclusion-1.png" style="height:200px;margin-left: 0;" alt="logo Alliances" />
 
 ### Incorrect use of the logo
 
@@ -177,7 +177,7 @@ When you want to replace the use of the brand, then you can use the isotype. Thi
 
 While the icon can exist without the word brand, the word brand should never exist without the icon. [Download.](https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg)
 
-<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype">
+<img src="https://cloud.modyocdn.com/uploads/dd5a73ef-ec9b-46d5-99a3-e4875b0c257b/original/normal.svg" style="width: 40%;height: auto;margin: auto;margin-left: 0;max-width: 250px;" alt="isotype" />
 
 ### Positive application
 
@@ -230,10 +230,9 @@ When using the isotype on dark backgrounds, it is ideal to use it with the follo
 
 ### Exclusion zone
 
-The free space around the logo is equal to the height of the "M" (marked as × in the diagram).
-For the use of the isotype the reference is the same.
+The free space around the logo is equal to the height of the "M" (marked as × in the diagram). For the use of the isotype the reference is the same.
 
-<img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0">
+<img src="https://cloud.modyocdn.com/uploads/182750e7-a89b-41d9-8dc5-5ebdccd1b1d8/original/redzone_M.svg" alt="redzone" style="width:80%; height:auto; padding: 17px 30px; max-width:700px;margin-left: 0" />
 
 ### Minimum size
 
