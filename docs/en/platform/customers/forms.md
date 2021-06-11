@@ -37,12 +37,12 @@ The next section of the form properties contains the Form Options for what happe
 
 - **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/en/platform/customers/targets.html)
 
-::: warning Warning
-If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
+::: warning
+Warning If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Nombre, Apellido y Correo. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
-::: warning Warning
-If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
+::: warning
+Warning If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
 :::
 
 In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
@@ -53,7 +53,7 @@ The thank you email allows you to customize an email that will be sent to the us
 
 Here is a code sample that you can use as a base to personalize the thank you mail.
 
-``` html
+```html
 You sent this answer on: {{'now' | date: "% b% d,% y"}}
 <table width="600px">
     <tr>
@@ -104,17 +104,17 @@ By clicking on the answer counter of a form, you will arrive at a view listing a
 
 You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
-::: danger Danger
-You can delete responses one by one using the action to the right of each answer, or by using the actions selection that appears at the bottom, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that deleting is irreversible and once a response has been deleted, it cannot be recovered.
+::: danger
+Danger You can delete responses one by one using the action to the right of each answer, or by using the actions selection that appears at the bottom, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that deleting is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
 To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
 
-<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">
+<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600" />
 
 ## Edit
 
-<img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px" />
 
 To modify a form, you must go to the **"Analysis"** section and use the **"Edit"** action in the options menu at the top right.
 
@@ -132,14 +132,14 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Date**: Allows you to add a date field in which the user can select a date within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
-:::warning Atención
-From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
+:::warning
+Atención From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
 You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
 
-::: danger Danger
-If your form is already activated and you already have answers, be very careful when deleting questions. Doing so deletes the values of those answers that the users have already sent. This action is irreversible.
+::: danger
+Peligro Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. This action is irreversible.
 :::
 
 ### Field Properties
@@ -176,14 +176,14 @@ The **General** section adds two options:
 
 The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
-<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
+<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350" />
 
-::: warning Warning
-In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
+::: warning
+Warning In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
 The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
-::: warning Warning
-If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
+::: warning
+Warning If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
 :::
