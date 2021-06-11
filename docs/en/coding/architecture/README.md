@@ -12,8 +12,7 @@ Continuing Integration
 
 Artifact Repositories
 
-Observability
-Implementation of metrics
+Observability Implementation of metrics
 
 
 
