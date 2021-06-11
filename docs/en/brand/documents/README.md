@@ -2,16 +2,16 @@
 search: false
 ---
 
-# Documents <Badge text="Beta" type="warn"/> 
+# Languages and Frameworks<Badge text="Beta" type="warn"/>
 
-## Text Rules
+## Intent
 
 Text in Modyo is not justified. Titles do not use journods, unless they are full sentences.
 
-## Google G Suite
+## General Principles
 
-For Google G Suite documents and presentations.
+Virtual Machine Parameters
 
-## Microsoft 365
+## Architecture
 
-For Microsoft 365 documents and presentations.
+Continuing Integration
