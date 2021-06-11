@@ -4,13 +4,13 @@ search: true
 
 # Realms
 
-Kingdoms are a grouping of users with similar features that are governed by the same configuration. Realms are especially useful when you have different groupings for sites within the same account that are not directly related, or also, to have a test site with test users without affecting productive user grouping.
+Realms are a grouping of users with similar features that are governed by the same configuration. Realms are especially useful when you have different groupings for sites within the same account that are not directly related, or to have a test site with test users without affecting productive user grouping.
 
-Each realm has its own login, registration, integrations, forms, targets, and messaging settings, so keep in mind that when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
+Each realm has its own login, registration, integrations, forms, targets, and messaging settings. Therefore, keep in mind that when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
 
 ## Users
 
-Through the Users section, you will be able to view and modify external users of the system. Those users are registered within the platform who log in to Modyo's sites, respond to forms or may receive email campaigns.
+Through the Users section, you will be able to view and modify the system's external users. Those who log in to Modyo's sites or respond to forms are registered within the platform.
 
 ### About the interface
 
@@ -58,16 +58,16 @@ When you select "Add User", the platform will ask you to complete the following 
 Tip To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-This user creation view may contain more fields depending on the configuration on the platform, available in the [Customers Settings] section (/es/platform/customers/realms.html #configuracion -de-customers). Some special fields, such as second surname, avatar, or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -registration). On the other hand, there are also **Custom Fields**, which can be created and modified in the [Custom Fields] section (/es/platform/customers/realms.html #campos -custom).
+This user creation view may contain more fields depending on the configuration on the platform, available in the [Customers Settings] section (/es/platform/customers/realms.html #configuracion -de-customers). Some special fields, such as second last name, avatar, or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -registration). On the other hand, there are also **Custom Fields**, which can be created and modified in the [Custom Fields] section (/es/platform/customers/realms.html #campos -custom).
 
 
 ### Import users
 
-The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, and through the search bar above the table you can filter by the file name.
+The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, and can also be filtered by file name using the search bar above the table.
 
 To make a new import, click on the upper right **+ Import** button. This opens a window where we can select and upload a local \*.CSV file that has a list of users and their attributes. It is important to check the box that indicates whether the file contains column headers or names, otherwise the headers themselves will be registered as a new user. Click **Accept** when ready.
 
-Below you will see the main import view. On the left, a table with three main columns appears, the first contains the name of the imported column header (if it exists), the second some examples of the data contained in that column, and the third a selector. This selector performs the respective assignment of the imported value to the user's attribute on the platform.
+Below you will see the main import view. On the left, there is a table with three main columns: the first contains the name of the imported column header (if it exists), the second contains some examples of the data in that column, and the third has a selector. This selector performs the imported value's respective assignment to the user's attribute on the platform.
 
 In this view, you will proceed to assign each column in the\ *.CSV file to a respective attribute available on the platform.
 
@@ -75,10 +75,10 @@ In this view, you will proceed to assign each column in the\ *.CSV file to a res
 Tip The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
-On the right, in a sidebar, you will see main import settings. Here you can define if the file does not follow one of the common standards of the\ *.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which by default is a comma). A little below is a box indicating whether you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those fields to be imported. Finally, four main import options:
+In a sidebar on the right, you will see the main import settings. Here you can define if the file does not follow one of the common standards of the \*.CSV files. You can also set the code in which the file is located, and define attribute separation (which by default is a comma). Below, there's a box that indicates if you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those import fields. Finally, four main import options:
 
 - Activate user account
-- Activate account and send email (customizable in \[Correos\](/es/platform/customers/realms.html #correos)
+- Activate account and send email (customizable in \[Correos\](/es/platform/customers/realms.html #correos))
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
@@ -97,7 +97,7 @@ Clicking any user from the main list opens their profile. In each profile is the
 - Last Login
 - Logins Count (number of sessions)
 - User verification status
-- Targets in which it is included (if available)
+- Targets that include it (if available)
 
 In the main section to the right are the following tabs:
 
@@ -134,38 +134,38 @@ Tip When modifying a user, you may change the list of Targets to which they belo
 
 ----
 
-## Configuring realm
+## Realm configuration
 
-In this section you can largely configure interaction between users and the Modyo platform. Some settings are focused on the visual experience for the user, such as selection colors or post templates, while others are focused on registration, access control, and customization of the same. In particular this second part is essential for the proper functioning of the platform, so it is important to be cautious when modifying configurations in this section.
+In this section you can largely configure interaction between users and the Modyo platform. Some settings are focused on the visual experience for the user, such as the selection of colors or post templates, while others are focused on registration, access control, and personalization. In particular, this second part is essential for the platform to function properly, so it is important to be cautious when modifying this section's settings.
 
 ### General
 
 Here you can set up general aspects of realm, such as:
 
 - **Name**.
-- **Identifier**: Allows you to modify the url of profile views, login, registration and password recovery of the realm.
+- **Identifier**: Allows you to modify the URL of profile views, login, registration and password recovery of the realm.
 - **Enable/Disable Credencials**: Allows you to disable Modyo credentials in this realm.
 - **Modify user account activation type**:
-  - Direct: Registering users will be able to log in directly
-  - Correo de activación: Activation email: Registering users must activate their account using a link sent to the email in order to sign in.
-  - Moderate: Registering users will need to wait for a Modyo administrator to activate their account in order to sign in.
-  - Disabled: Unable to register new users in the kingdom. Users already registered and activated will be able to log in without problems.
+  - Direct: Users that register will be able to log in directly
+  - Correo de activación: Activation email: Users that register must activate their account using a link sent to the email in order to sign in.
+  - Moderate: Users that register will need to wait for a Modyo administrator to activate their account in order to sign in.
+  - Disabled: Unable to register new users in the realm. Users already registered and activated will be able to log in without problems.
 - **Extra attributes of the registration form**:
   - Enable second last name
-  - Make the second surname required
-  - Habilitar confirmación de correo electrónico: Enable Email Confirmation: Enables an extra email field that the user must fill in and must match the primary email field for the user to register.
+  - Make the second last name required
+  - Habilitar confirmación de correo electrónico: Enable Email Confirmation: Enables an extra email field that the user must fill in, which must match the primary email field in order for the user to register.
   - Enable user avatar
   - Enable date of birth
   - Enable gender
-- **Remove**: Allows complete removal of realm. This is a background process, so you may not see realm disappear immediately after executing the action. To be able to delete the kingdom, you must enter the full name of the kingdom to confirm the action.
+- **Remove**: Allows complete removal of realm. This is a background process, so you may not see the realm disappear immediately after completing the action. To be able to delete the realm, you must enter the realm's full name to confirm the action.
 
 :::danger
-danger By disabling the realm Modyo credentials, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
+danger By disabling Modyo's credentials in the realm, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
 :::
 
 ### Appearance
 
-This section will allow you to modify some visuals of the registration, login, and profile views of the realm users.
+This section will allow you to modify some visuals of the realm users' registration, login, and profile views.
 
 #### Primary Color
 
@@ -181,7 +181,7 @@ If you want to have custom CSS in the session views, add it to the editor and cl
 
 It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
 
-However, the editor will not automatically upload the link, but when you upload it, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into the CSS code so you can use it.
+However, the editor will not automatically update the link. Instead, when you upload it, you must click on the paste button located on the side of each file, which will then provide the link within the page. You can then paste this address into the CSS code.
 
 ::: tip
 Tip If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
@@ -237,18 +237,18 @@ It is necessary to have the API logged in and configured in the services to allo
 
 ### Team Members
 
-To sort the work, Modyo allows you to select the team members who will work on each realm to control access to the different aspects of the realm.
+To sort the work, Modyo allows you to select the team members who will work on each realm, which controls access to the realm's different aspects.
 
-To add a user to the kingdom, select the primary button **+ New** at the top right of the view, in the modal select an administrator and assign it a role, then press**Add** to make that administrator part of the kingdom's work team.
+To add a user to the realm, select the primary button **+ New** at the top right of the view. Select an administrator and assign them a role, then press**Add** to make that administrator part of the realm's work team.
 
-You can modify the role of any of the associated administrators by clicking on their name. A modal will be raised, where you can select the new role. Tap **Save** to confirm the change.
+You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
-If you want to remove a realm administrator, select using the checks to the left of their name, and then clicking the button at the bottom of the**Dele** list.
+If you want to remove a realm administrator, select the checks to the left of their name, and then click the button at the bottom of the**Delete** list.
 
-The roles available are:
+The available roles are:
 
-- **User**: You can add users, create, modify and submit to review campaigns, forms and targets.
-- **Admin**: You can access all settings and sections of the kingdom, add and remove users and team members, as well as delete the kingdom.
+- **User**: You can add users, create, modify, and submit to review campaigns, forms, and targets.
+- **Admin**: You can access all settings and sections of the realm, add and remove users and team members, as well as delete the realm.
 
 ### Custom Fields
 
