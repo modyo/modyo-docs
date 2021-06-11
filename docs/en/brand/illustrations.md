@@ -8,7 +8,7 @@ Illustrations aim to communicate, convey ideas and feelings while creating an id
 
 They can have different objectives, either as support of a text, narrative of a situation or the symbolism of a concept.
 
-<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
 Illustrations are made for use on a dark and white background. It is recommended to use the specified shades in the brand guide.
 
@@ -66,7 +66,7 @@ The supporting elements are generally characters or things that, just as their n
 
 In contrast to the hero and the point hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without taking away from what is being communicated.
 
-<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" style="margin-left: 0;" />
 
 ## Color
 
@@ -105,7 +105,7 @@ White is a color that is always used on faces and hands.
 </tr>
 </table>
 
-<img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
+<img src="/assets/img/brand/webinar.png" style="margin-left: 0;" />
 
 If necessary, color is used to reinforce ideas, direct the gaze to specific points, demonstrate differences between certain elements, and emphasize the idea of ​​overlap in one or more elements.
 
@@ -142,11 +142,11 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 
 #### Horizontal
 
-<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;">
+<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;" />
 
 #### Vertical
 
-<img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
+<img src="/assets/img/brand/vertical.png" style="margin-left: 0;" />
 
 ### Incorrect use of illustrations
 
