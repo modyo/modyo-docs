@@ -8,50 +8,50 @@ Modyo's official font for use in all its formats and platforms is [DM Sans](http
 
 ### Font Styles
 
-<img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" style="margin-left: 0;">
+<img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" style="margin-left: 0;" />
 
 ### Use cases
 
-<img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" style="margin-left: 0;">
+<img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" style="margin-left: 0;" />
 <div style="display:flex">
 <div style="margin-right: 36px;">
-<h4>H1</h4>
+<h4>h1</h4>
 <p>
-Font-size: 64px / 4rem<br>
-Line-height: 57.6px<br>
-Font-weight: Bold<br>
-Letter-spacing: -3.5px
+Font size: 64px /4rem <br> 
+Line-height: 57.6px <br> 
+Font weight: Bold <br> 
+Letter-spacing ፦3.5px
 </p>
 </div>
 <div style="margin-right: 36px;">
-<h4>H4</h4>
+<h4>h4</h4>
 <p>
-Font-size: 32px / 2rem<br>
-Line-height: 32px<br>
-Font-weight: Regular<br>
-Letter-spacing: -1px
+Font size: 32px /2rem <br> 
+Line-height: 32px <br> 
+Font weight: Regular <br> 
+Letter-spacing ፦1px
 </p>
 </div>
 </div>
 
-<img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" style="margin-left: 0;">
+<img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" style="margin-left: 0;" />
 <div style="display:flex">
 <div style="margin-right: 36px;">
-<h4>H2</h4>
+<h4>h2</h4>
 <p>
-Font-size: 48px / 3rem<br>
-Line-height: 48px<br>
-Font-weight: Bold<br>
-Letter-spacing: -1px
+Font size: 48px /3rem <br> 
+Line-height: 48px <br> 
+Font weight: Bold <br> 
+Letter-spacing ፦1px
 </p>
 </div>
 <div style="margin-right: 36px;">
-<h4>H4</h4>
+<h4>h4</h4>
 <p>
-Font-size: 32px / 2rem<br>
-Line-height: 32px<br>
-Font-weight: Regular<br>
-Letter-spacing: -1px
+Font size: 32px /2rem <br> 
+Line-height: 32px <br> 
+Font weight: Regular <br> 
+Letter-spacing ፦1px
 </p>
 </div>
 </div>
