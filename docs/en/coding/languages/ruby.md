@@ -4,8 +4,8 @@ search: false
 
 # Ruby
 
-:::warning Section under development
-The next section is under development and has not yet been revised.
+:::warning
+Section under development The next section is under development and has not yet been revised.
 :::
 
 This Ruby style guide recommends best practices so that real world Ruby programmers can write code that can be maintained by other Ruby programmers in the real world. A style guide that reflects real-world uses is used, and a style guide that clings to an ideal that has been rejected by people assumes it is best not to use it at all — no matter how good it is.
@@ -14,10 +14,7 @@ The guide is divided into several sections of related rules. I tried adding the 
 
 ## Source Code Structure
 
-> Almost everyone is convinced that all styles
-> except their own are ugly and illegible. Let go of the
-> "except their own", and they're probably right... <br/> 
-> — Jerry Coffin (about indentation)
+> Almost everyone is convinced that all styles except their own are ugly and illegible. Let go of the "except their own", and they're probably right... <br/> — Jerry Coffin (about indentation) <br/> -- Jerry Coffin (sobre indentación)
 
 * Use `UTF-8` as the encoding of the source file.
 * Use two **spaces** for each level of lidentation. No tabs.
@@ -34,18 +31,14 @@ The guide is divided into several sections of related rules. I tried adding the 
     end
     ```
 
-* Use Unix-style line endings. (*by default BSD/Solaris/Linux/OSX users
-  are protected, Windows users have to be very careful.)
-    * If you're using Git you might want to add the following
-    settings to protect your project from the end of the line
-    from Windows so that they don't appear alone:
+* Use Unix-style line endings. (*by default BSD/Solaris/Linux/OSX users are protected, Windows users have to be very careful.)
+    * If you're using Git you might want to add the following settings to protect your project from the end of the line from Windows so that they don't appear alone:
 
     ```bash
     $ git config --global core.autocrlf true
     ```
 
-* Do not use `;` to separate declarations and expressions.
-  By convention - use one expression per line.
+* Do not use `;` to separate declarations and expressions. By convention - use one expression per line.
 
     ```ruby
     # mal
@@ -62,8 +55,7 @@ The guide is divided into several sections of related rules. I tried adding the 
     puts 'foo', 'bar' # esto aplica a puts en particular
     ```
 
-* Prefer a single line format for each class definition
-  no body.
+* Prefer a single line format for each class definition no body.
 
     ```ruby
     # mal
@@ -77,10 +69,7 @@ The guide is divided into several sections of related rules. I tried adding the 
     FooError = Class.new(StandardError)
     ```
 
-* Avoid single-line methods. Although they are something popular, there
-  some particularities about their syntax to define them that
-  make their use undesirable. In any case - should not
-  exist more than one expression in a single-line method.
+* Avoid single-line methods. Although they are something popular, there some particularities about their syntax to define them that make their use undesirable. In any case - should not exist more than one expression in a single-line method.
 
     ```ruby
     # mal
@@ -108,16 +97,11 @@ The guide is divided into several sections of related rules. I tried adding the 
     def no_op; end
     ```
 
-* Use spaces between operators, after commas, colons and points
-  and commas, after `{` and before `}`. Blanks can (in
-  mostly) irrelevant to the Ruby interpreter, but its proper use
-  is the key to writing easy-to-read code.
+* Use spaces between operators, after commas, colons and points and commas, after `{` and before `}`. Blanks can (in mostly) irrelevant to the Ruby interpreter, but its proper use is the key to writing easy-to-read code.
 
     ```ruby
-    sum = 1 + 2
-    a, b = 1, 2
-    1 > 2 ? true : false; puts 'Hi'
-    [1, 2, 3].each { |e| puts e }
+    ruby
+arr = [1, 2, 3]
     ```
 
     There are some exceptions, with regard to operators, one is the exponent operator:
@@ -133,28 +117,27 @@ The guide is divided into several sections of related rules. I tried adding the 
 
     Another exception is the slash operator in rational numbers:
 
-```ruby
- # bad
+    ```ruby
+    # bad
  o_scale = 1/48r
 
  # okay
  o_scale = 1/48r
- ```
+    ```
 
- Another exception is the safe navigation operator:
- ```ruby
- # bad
+    Another exception is the safe navigation operator:
+    ```ruby
+    # bad
  foo &. bar
  foo
  foo&. bar
 
  # okay
  foo&.bar
- ```
+    ```
 
-*  <a name="spaces-braces"> </a> 
-  Do not use spaces after `(`, `[` or before `]`, `)`.
-  Use spaces after `{` and before `}`.
+* <a name="spaces-braces"></a>
+Do not use spaces after `(`, `[` or before `]`, `)`. Use spaces after `{` and before `}`.
 
     ```ruby
     # mal
@@ -166,10 +149,7 @@ The guide is divided into several sections of related rules. I tried adding the 
     [1, 2, 3].each { |e| puts e }
     ```
 
-    `{` and `}` deserve special clarification, as they are used
-    for literal blocks and hashes, as well as expressions
-    embedded in strings. Two styles are considered acceptable
-    for literal hashes.
+    `{` and `}` deserve special clarification, as they are used for literal blocks and hashes, as well as expressions embedded in strings. Two styles are considered acceptable for literal hashes.
 
     ```ruby
     # bien - espacio luego de { y antes de }
@@ -179,14 +159,9 @@ The guide is divided into several sections of related rules. I tried adding the 
     {one: 1, two: 2}
     ```
 
-    The first variant is a little easier to read (and possibly
-    most popular in the Ruby community in general). The second
-    variant has the advantage of having visual differentiation between
-    literal blocks and hashes. Whichever you choose -
-    Use it consistently.
+    The first variant is a little easier to read (and possibly most popular in the Ruby community in general). The second variant has the advantage of having visual differentiation between literal blocks and hashes. Whichever you choose - Use it consistently.
 
-    As for embedded expressions, there are also two forms
-    acceptable:
+    As for embedded expressions, there are also two forms acceptable:
 
     ```ruby
     # bien - sin espacios
@@ -196,28 +171,20 @@ The guide is divided into several sections of related rules. I tried adding the 
     "string#{ expr }"
     ```
 
-* No spaces after `! `
+* No spaces after `!`
 
     ```ruby
-    # mal
-    ! something
-
-    # bien
-    !something
+    bad
     ```
 
-* Indent `when` at the same level as `case`. 
-  I know many will not agree with this, but it is the style set in both 
-  "The Ruby Programming Language" and "Programming Ruby".
+* Indent `when` at the same level as `case`. I know many will not agree with this, but it is the style set in both "The Ruby Programming Language" and "Programming Ruby".
 
     ```ruby
     # mal
     case
       when song.name == 'Misty'
-        puts 'Not again!'
-      when song.duration > 120
-        puts 'Too long!'
-      when Time.now.hour > 21
+        puts 'Not again!' when song.duration > 120
+        puts 'Too long!' when Time.now.hour > 21
         puts "It's too late"
       else
         song.play
@@ -226,10 +193,8 @@ The guide is divided into several sections of related rules. I tried adding the 
     # bien
     case
     when song.name == 'Misty'
-      puts 'Not again!'
-    when song.duration > 120
-      puts 'Too long!'
-    when Time.now.hour > 21
+      puts 'Not again!' when song.duration > 120
+      puts 'Too long!' when Time.now.hour > 21
       puts "It's too late"
     else
       song.play
@@ -290,16 +255,13 @@ The guide is divided into several sections of related rules. I tried adding the 
       end
     ```
 
-* Use empty lines between method definitions and also to break a method into
-  internal logical paragraphs.
+* Use empty lines between method definitions and also to break a method into internal logical paragraphs.
 
     ```ruby
     def some_method
       data = initialize(options)
 
-      data.manipulate!
-
-      data.result
+      data.manipulate! data.result
     end
 
     def some_method
@@ -307,8 +269,8 @@ The guide is divided into several sections of related rules. I tried adding the 
     end
     ```
 
-*  <a name="two-or-more-empty-lines"> </a> 
-  Do not use more than one empty line in a row.
+* <a name="two-or-more-empty-lines"></a>
+Do not use more than one empty line in a row.
 
   ```ruby
   # wrong - there are two empty lines in a row.
@@ -322,72 +284,66 @@ The guide is divided into several sections of related rules. I tried adding the 
 
   some_method
   ```
-* <a name="empty-lines-around-access-modifier"> </a> 
- Use empty lines around accessibility modifiers.
-
- ruby
- # bad
- class Foo
- attr_reader:foo
- def foo
- # do something...
- end
- end
-
- # okay
- class Foo
- attr_reader:foo
-
- def foo
- # do something...
- end
- end
- ```
-
-*  <a name="empty-lines-around-bodies"> </a> 
-  Do not use empty lines around methods, classes, modules, and blocks.
+* <a name="empty-lines-around-access-modifier"></a>
+Use empty lines around accessibility modifiers.
 
   ```ruby
   # mal
-  class Foo
-
-    def foo
-
-      begin
-
-        do_something do
-
-          something
-
-        end
-
-      rescue
-
-        something
-
-      end
-
+    def some_method(arg1=:default, arg2=nil, arg3=[])
+      # do something...
     end
 
+    # bien
+    def some_method(arg1 = :default, arg2 = nil, arg3 = [])
+      # do something...
+    end
+  ```
+
+* <a name="empty-lines-around-bodies"></a>
+*  &lt;a name="empty-lines-around-bodies"&gt; &lt;/a&gt; Do not use empty lines around methods, classes, modules, and blocks.
+
+  ```ruby
+  # evil
+
+  # foo.rb
+  class Foo
+    class bar
+      #30 methods inside
+    end
+
+    class car
+      #20 methods inside
+    end
+
+    #30 methods inside
   end
 
-  # bien
+
+
+  # okay
+
+  # foo.rb
   class Foo
-    def foo
-      begin
-        do_something do
-          something
-        end
-      rescue
-        something
-      end
-    end
+    #30 methods inside
+  end
+
+  # foo/bar.rb
+  class Foo
+ class bar
+      #30 methods inside
+ end
+  end
+
+  # foo/car.rb
+  class Foo
+ class car
+      #20 methods inside
+ end
   end
   ```
 
-*  <a name="no-trailing-params-comma"> </a> 
-  Avoid commas in the last parameter when calling a method.
-  Especially if the parameters aren't separated by lines
+* <a name="no-trailing-params-comma"></a>
+Avoid commas in the last parameter when calling a method. Especially if the parameters aren't separated by lines
 
   ```ruby
   # mal - Es facil mover, eliminar o agregar parametros, pero aún asi no es recomendado
@@ -404,23 +360,27 @@ The guide is divided into several sections of related rules. I tried adding the 
   some_method(size, count, color)
   ```
 
-* Use spaces around the `=` operator when you assign defaults to
-  method parameters:
+* Use spaces around the `=` operator when you assign defaults to method parameters:
 
     ```ruby
-    # mal
-    def some_method(arg1=:default, arg2=nil, arg3=[])
-      # do something...
-    end
+    class Array
+      def flatten_once!
+    res = []
 
-    # bien
-    def some_method(arg1 = :default, arg2 = nil, arg3 = [])
-      # do something...
+        each do |e|
+          [*e].each { |f| res << f }
+        end
+
+        replace(res)
+      end
+
+      def flatten_once
+        dup.flatten_once!
+    end
     end
     ```
 
-    While several Ruby books suggest the first style, the second is a lot
-    most often used in practice (and you could even say that it is easier to read).
+    While several Ruby books suggest the first style, the second is a lot most often used in practice (and you could even say that it is easier to read).
 
 * Avoid using line continuous with '\' when not necessary. In practice, avoid using line continuation in any case, except for string concatenation.
 
@@ -450,15 +410,40 @@ The guide is divided into several sections of related rules. I tried adding the 
       .four
     ```
 
-* Align the parameters of a call to a method if they occupy more than one
-  line. When the parameters are aligned it is not appropriate that it is with
-  more indentation than appropriate, and use a unique indent for
-  lines after the first parameter is also acceptable.
+* Align the parameters of a call to a method if they occupy more than one line. When the parameters are aligned it is not appropriate that it is with more indentation than appropriate, and use a unique indent for lines after the first parameter is also acceptable.
 
     ```ruby
     # punto de partida (la línea es muy larga)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
+    end
+
+    # mal (doble indentado)
+    def send_mail(source)
+      Mailer.deliver(
+          to: 'bob@example.com',
+          from: 'us@example.com',
+          subject: 'Important message',
+          body: source.text)
+    end
+
+    # bien (identado bajo el primer parámetro)
+    def send_mail(source)
+      Mailer.deliver(to: 'bob@example.com',
+                     from: 'us@example.com',
+                     subject: 'Important message',
+                     body: source.text)
+    end
+
+    # bien (indentado normal)
+    def send_mail(source)
+      Mailer.deliver(
+        to: 'bob@example.com',
+        from: 'us@example.com',
+        subject: 'Important message',
+        body: source.text
+      )
+    end 'Important message', body: source.text)
     end
 
     # mal (doble indentado)
@@ -511,16 +496,13 @@ The guide is divided into several sections of related rules. I tried adding the 
 * Add underscores for large literal numbers to improve your reading.
 
     ```ruby
-    # mal - cuantos 0s hay ahi?
-    num = 1000000
+    # mal - cuantos 0s hay ahi? num = 1000000
 
     # bien - mucho más fácil de leer por el cerebro humano
     num = 1_000_000
     ```
-*  <a name="numeric-literal-prefixes"> </a> 
-  Use lowercase letters for numeric literals prefixes.
-  `0o` for octal base, `0x` for hexadecimal base, and `0b` for binary base.
-  Do not use `0d` for decimal numbers.
+* <a name="numeric-literal-prefixes"></a>
+Use lowercase letters for numeric literals prefixes. `0o` for octal base, `0x` for hexadecimal base, and `0b` for binary base. Do not use `0d` for decimal numbers.
 
   ```ruby
   # evil
@@ -558,9 +540,7 @@ The guide is divided into several sections of related rules. I tried adding the 
 
 ## Syntax
 
-* Use `::` only to reference constants (this includes classes
-and modules) and constructs (such as `Array () `or `Nokogiri:: HTML ()`).
-Never use `::` for method invocation.
+* Use `::` only to reference constants (this includes classes and modules) and constructs (such as `Array ()`or `Nokogiri:: HTML ()`). Never use `::` for method invocation.
 
     ```ruby
     # mal
@@ -571,11 +551,12 @@ Never use `::` for method invocation.
     SomeClass.some_method
     some_object.some_method
     SomeModule::SomeClass::SOME_CONST
+    SomeModule::SomeClass()SomeClass::SOME_CONST
     SomeModule::SomeClass()
     ```
 
-*  <a name="colon-method-definition"> </a> 
-    Do not use `::` to define class methods.
+* <a name="colon-method-definition"></a>
+  Do not use `::` to define class methods.
 
   ```ruby
   # nal
@@ -591,8 +572,7 @@ Never use `::` for method invocation.
   end
   ```
 
-* Use `def` with parentheses when you have arguments. Skip the
-  parentheses when the method does not accept any arguments.
+* Use `def` with parentheses when you have arguments. Skip the parentheses when the method does not accept any arguments.
 
      ```ruby
      # mal
@@ -617,10 +597,8 @@ Never use `::` for method invocation.
      ```
 
 
-*  <a name="method-invocation-parens"> </a> 
-  Use parentheses around arguments for invocation of a method,
-  especially if the first argument starts with an open parenthesis `(`,
-  such as: `f ((3 + 2) + 1) `.
+* <a name="method-invocation-parens"></a>
+Use parentheses around arguments for invocation of a method, especially if the first argument starts with an open parenthesis `(`, such as: `f ((3 + 2) + 1)`.
 
   ```ruby
   # mal
@@ -651,13 +629,11 @@ Never use `::` for method invocation.
     'test'.upcase()
 
     # bien
-    Kernel.exit!
-    2.even?
-    fork
+    Kernel.exit! 2.even? fork
     'test'.upcase
     ```
 
-  * Methods that are part of an internal DSL (for example: Rake, Rails, RSpec):
+  * Methods that are part of an internal DSL (for example: Rake, Rails, RSpec): Rake, Rails, RSpec):
 
     ```ruby
     # mal
@@ -693,8 +669,7 @@ Never use `::` for method invocation.
     ```
 
 * <a name="optional-arguments"></a>
-    Defines the optional arguments of a method, at the end of the argument list.
-    Ruby has some unexpected results when optional arguments are at the top of the argument list.
+  Defines the optional arguments of a method, at the end of the argument list. Ruby has some unexpected results when optional arguments are at the top of the argument list.
 
   ```ruby
   # mal
@@ -716,11 +691,8 @@ Never use `::` for method invocation.
   some_method('w', 'x', 'y', 'z') # => 'y, z, w, x'
   ```
 
-*  <a name="parallel-assignment"> </a> 
-    Prevents the use of parallel mappings for defining variables. 
-    Parallel assignment is allowed when it is the result of a previously called method.
-    Parallel mapping is allowed when using the splat operator (* before a variable) or swapping a variable (swap). 
-    Parallel assignment is more difficult to read than a separate assignment.
+* <a name="parallel-assignment"></a>
+  Prevents the use of parallel mappings for defining variables. Parallel assignment is allowed when it is the result of a previously called method. Parallel mapping is allowed when using the splat operator (* before a variable) or swapping a variable (swap). Parallel assignment is more difficult to read than a separate assignment.
 
   ```ruby
   # mal
@@ -758,11 +730,8 @@ Never use `::` for method invocation.
   a = *(1..3) # => [1, 2, 3]
   ```
 
-*  <a name="trailing-underscore-variables"> </a> 
-  Prevents unnecessary use of the `_` variable during parallel assignment.
-  Variables named with an underscore `_` at the beginning of the name are preferred to only use an underscore `_`.
-  Use underscore `_` only in combination with a `splat` variable defined to the left side of the assignment
-  and only if the splat variable has no underscore `_` at the beginning of the name.
+* <a name="trailing-underscore-variables"></a>
+Prevents unnecessary use of the `_` variable during parallel assignment. Variables named with an underscore `_` at the beginning of the name are preferred to only use an underscore `_`. Use underscore `_` only in combination with a `splat` variable defined to the left side of the assignment and only if the splat variable has no underscore `_` at the beginning of the name.
 
   ```ruby
   # evil
@@ -792,33 +761,15 @@ Never use `::` for method invocation.
  first, *_ending = foo.split (',')
   ```
 
-* Never use `for`, unless you know exactly what you're using it for. In his
- instead you should use iterators most of the time. `for` se
- you must implement in the form of an `each` (so you're adding a level of
- indirection), but with a peculiarity - `for` does not introduce a new
- scope (unlike each`) and the variables that are defined within
- of its block are visible outside it.
+* Never use `for`, unless you know exactly what you're using it for. In his instead you should use iterators most of the time. `for` se you must implement in the form of an `each` (so you're adding a level of indirection), but with a peculiarity - `for` does not introduce a new scope (unlike each`) and the variables that are defined within of its block are visible outside it.
 
- ruby
- arr = [1, 2, 3]
+    ```ruby
+    arr.each {|elem| puts elem}
+    ```
 
- # bad
- for elem in arr do
- puts elem
- end
+* Never use `while/until` condition `do` for a multi line `while/until`.
 
- # elem can be read outside the loop for
- elem #=> 3
-
- # okay
- arr.each {|elem| puts elem}
-
- # elem cannot be read outside the each block
- elem #=> nameError: undefined local variable or method `elem'
- ```
-
-* Never use `then` for `if/unless` with multilines.
-
+    ```ruby
     ```ruby
     # mal
     if some_condition then
@@ -848,8 +799,7 @@ Never use `::` for method invocation.
     end
     ```
 
-* Prefer the ternary operator (`? :`) instead of constructions
-  `if/then/else/end`. It is more common and obviously more concise.
+* Prefer the ternary operator (`? :`) instead of constructions `if/then/else/end`. It is more common and obviously more concise.
 
     ```ruby
     # mal
@@ -859,9 +809,7 @@ Never use `::` for method invocation.
     result = some_condition ? something : something_else
     ```
 
-* Use one expression per row by ternary operator. This too
-  means that ternary operators should not be nested. Is
-  preferable to use `if/else` constructs in these cases.
+* Use one expression per row by ternary operator. This too means that ternary operators should not be nested. Is preferable to use `if/else` constructs in these cases.
 
     ```ruby
     # mal
@@ -875,8 +823,7 @@ Never use `::` for method invocation.
     end
     ```
 
-* Never use `if x:... `- was removed in Ruby 1.9. Use the
-  ternary operator instead.
+* Never use `if x:...`- was removed in Ruby 1.9. Use the ternary operator instead.
 
     ```ruby
     # mal
@@ -886,14 +833,13 @@ Never use `::` for method invocation.
     result = some_condition ? something : something_else
     ```
 
-* Never use `if x;... `. Use the ternary operator instead.
+* Never use `if x;...`. Use the ternary operator instead.
 
-* Use `when x then... `for one-line conditionals. The syntax
-  alternative `when x:... `was removed in Ruby 1.9.
+* Use `when x then...`for one-line conditionals. The syntax alternative `when x:...`was removed in Ruby 1.9.
 
-* Never use `when x;... `. Look at the above rule.
+* Never use `when x;...`. Look at the above rule.
 
-* Use `! `instead of `not`.
+* Use `!`instead of `not`.
 
     ```ruby
     # mal - los paréntesis son necesarios por la precedencia de operador
@@ -903,7 +849,7 @@ Never use `::` for method invocation.
     x = !something
     ```
 
-* Avoid the use of `!! `
+* Avoid the use of `!!`
 
     ```ruby
     # mal
@@ -919,13 +865,11 @@ Never use `::` for method invocation.
 
     # bien
     x = 'test'
-    if !x.nil?
-      # body omitted
+    if !x.nil? # body omitted
     end
     ```
 
-* The words `and` and `or` are forbidden. They're just not worth
-  the penalty. Instead, always use `&&` and `||`.
+* The words `and` and `or` are forbidden. They're just not worth the penalty. Instead, always use `&&` and `||`.
 
     ```ruby
     # mal
@@ -935,9 +879,7 @@ Never use `::` for method invocation.
     end
 
     # control flow
-    document.saved? or document.save!
-
-    # bien
+    document.saved? or document.save! # bien
     # boolean expression
     if some_condition && some_other_condition
       do_something
@@ -947,10 +889,9 @@ Never use `::` for method invocation.
     document.saved? || document.save!
     ```
 
-* Avoid using `? :` (ternary operator) in multilines; instead use `if/unless`.
+* Do not use parentheses around the `if/unless/while/until` condition.
 
-* Favors the use of the `if/unless` switch when you have to type on a line.
-  Another good alternative is to use flow control with `&&/||`.
+* Favors the use of the `if/unless` switch when you have to type on a line. Another good alternative is to use flow control with `&&/||`.
 
     ```ruby
     # mal
@@ -966,8 +907,8 @@ Never use `::` for method invocation.
     some_condition && do_something
     ```
 
-*  <a name="no-multiline-if-modifiers"> </a> 
-  Avoid the use of `if`/`unless` modifiers at the end of a block that consists of more than one linear.
+* <a name="no-multiline-if-modifiers"></a>
+Avoid the use of `if`/`unless` modifiers at the end of a block that consists of more than one linear.
 
   ```ruby
   # mal
@@ -983,9 +924,8 @@ Never use `::` for method invocation.
   end
   ```
 
-*  <a name="no-nested-modifiers"> </a> 
-  Avoid sudo of `if`/`unless`/`while`/`until` modifiers in a nested way. 
-  Better properly use `&&`/`||` if.
+* <a name="no-nested-modifiers"></a>
+Avoid sudo of `if`/`unless`/`while`/`until` modifiers in a nested way. Better properly use `&&`/`||` if.
 
   ```ruby
   # mal
@@ -995,8 +935,7 @@ Never use `::` for method invocation.
   do_something if some_condition && other_condition
   ```
 
-* Favors `unless` over `if` for negative conditions (or control
-  flow with `||`).
+* Favors `unless` over `if` for negative conditions (or control flow with `||`).
 
     ```ruby
     # mal
@@ -1017,21 +956,19 @@ Never use `::` for method invocation.
 
     ```ruby
     # mal
-    unless success?
-      puts 'failure'
+    unless success? puts 'failure'
     else
       puts 'success'
     end
 
     # bien
-    if success?
-      puts 'success'
+    if success? puts 'success'
     else
       puts 'failure'
     end
     ```
 
-* Do not use parentheses around the `if/unless/while/until` condition.
+* Favors `until` over `while' for negative conditions.
 
     ```ruby
     # mal
@@ -1045,7 +982,7 @@ Never use `::` for method invocation.
     end
     ```
 
-* Never use `while/until` condition `do` for a multi line `while/until`.
+* Use `Kernel #loop`instead of `while/until` when you need an infinite cycle.
 
     ```ruby
     # mal
@@ -1067,8 +1004,7 @@ Never use `::` for method invocation.
     end
     ```
 
-* Favors the use of the `while/until 'switch when you can type the
-  comparison in one line.
+* Favors the use of the `while/until 'switch when you can type the comparison in one line.
 
     ```ruby
     # mal
@@ -1080,7 +1016,7 @@ Never use `::` for method invocation.
     do_something while some_condition
     ```
 
-* Favors `until` over `while' for negative conditions.
+* Prefer `next` in loops instead of conditional blocks.
 
     ```ruby
     # mal
@@ -1090,8 +1026,8 @@ Never use `::` for method invocation.
     do_something until some_condition
     ```
 
-*  <a name="infinite-loop"> </a> 
-  Use `Kernel #loop `instead of `while/until` when you need an infinite cycle.
+* <a name="infinite-loop"></a>
+Use `Kernel#loop` with break instead of `begin/end/until` or `begin/end/while` to validate at the end of each cycle.
 
     ```ruby
     # mal
@@ -1110,8 +1046,7 @@ Never use `::` for method invocation.
     ```
 
 
-* Use `Kernel#loop` with break instead of `begin/end/until` or `begin/end/while`
-  to validate at the end of each cycle.
+* Usa `Kernel#loop` con break en lugar de `begin/end/until` o `begin/end/while` para validar al final de cada ciclo.
 
    ```ruby
    # mal
@@ -1128,11 +1063,7 @@ Never use `::` for method invocation.
    end
    ```
 
-* Skip parentheses around parameters for methods
-  which are part of an internal DSL (example: Rake, Rails, RSpec),
-  methods that have "keyword" status in Ruby (example: `attr_reader`,
-  `puts`) and attribute accessory methods. Use parentheses around
-  of the arguments of all other method calls.
+* Skip parentheses around parameters for methods which are part of an internal DSL (example: Rake, Rails, RSpec), methods that have "keyword" status in Ruby (example: `attr_reader`, `puts`) and attribute accessory methods. Use parentheses around of the arguments of all other method calls.
 
     ```ruby
     class Person
@@ -1152,8 +1083,7 @@ Never use `::` for method invocation.
     bowling.score.should == 0
     ```
 
-* Skip external keys around implicit options
-  of a hash.
+* Skip external keys around implicit options of a hash.
 
     ```ruby
     # mal
@@ -1163,11 +1093,10 @@ Never use `::` for method invocation.
     user.set(name: 'John', age: 45, permissions: { read: true })
     ```
 
-* Skip both external braces and parentheses for methods that form
-  part of an internal DSL.
+* Skip both external braces and parentheses for methods that form part of an internal DSL.
 
     ```ruby
-    class Person < ActiveRecord::Base
+    class Person < ActiveRecord::class Person < ActiveRecord::Base
       # mal
       validates(:name, { presence: true, length: { within: 1..10 } })
 
@@ -1176,8 +1105,8 @@ Never use `::` for method invocation.
     end
     ```
 
-*  <a name="single-action-blocks"> </a> 
-  Use process invocation when you only perform one operation on a block
+* <a name="single-action-blocks"></a>
+Use process invocation when you only perform one operation on a block
 
   ```ruby
   # mal
@@ -1187,11 +1116,7 @@ Never use `::` for method invocation.
   names.map(&:upcase)
   ```
 
-* Choose `{...}` over `do... end` for one-line blocks. Avoid
-  the use of `{...}` for multiline blocks (multiline chaining
-  is always horrible). Always use `do... end` for "flow contorl" and
-  "methods definitions" (e.g. in Rakefiles and some DSLs). Avoid using
-  `do... end` when you're chaining methods.
+* Choose `{...}` over `do... end` for one-line blocks. Avoid the use of `{...}` for multiline blocks (multiline chaining is always horrible). Always use `do... end` for "flow contorl" and "methods definitions" (e.g. in Rakefiles and some DSLs). Avoid using `do... end` when you're chaining methods.
 
     ```ruby
     names = ['Bozhidar', 'Steve', 'Sarah']
@@ -1213,11 +1138,9 @@ Never use `::` for method invocation.
     names.select { |name| name.start_with?('S') }.map(&:upcase)
     ```
 
-    It might be that some people think that multiline chaining would look good with
-    using {...}, but in reality they should ask themselves - is the code really
-    readable and the contents of the blocks can be extracted with elegant methods?
+    It might be that some people think that multiline chaining would look good with using {...}, but in reality they should ask themselves - is the code really readable and the contents of the blocks can be extracted with elegant methods?
 
-* Avoid using `return `when flow control is not required.
+* Avoid using `return`when flow control is not required.
 
     ```ruby
     # mal
@@ -1235,8 +1158,7 @@ Never use `::` for method invocation.
 
     ```ruby
     # mal
-    def ready?
-      if self.last_reviewed_at > self.last_updated_at
+    def ready? if self.last_reviewed_at > self.last_updated_at
         self.worker.update(self.content, self.options)
         self.status = :in_progress
       end
@@ -1244,8 +1166,7 @@ Never use `::` for method invocation.
     end
 
     # bien
-    def ready?
-      if last_reviewed_at > last_updated_at
+    def ready? if last_reviewed_at > last_updated_at
         worker.update(content, options)
         self.status = :in_progress
       end
@@ -1281,10 +1202,7 @@ Never use `::` for method invocation.
     end
     ```
 
-* Do not use the return value of `=` (mapping) in expressions
-  conditional unless the assignment is in parentheses.
-  This is a fairly popular expression among Rubyists who are
-  sometimes referred to as *secure assignment in conditions*.
+* Do not use the return value of `=` (mapping) in expressions conditional unless the assignment is in parentheses. This is a fairly popular expression among Rubyists who are sometimes referred to as *secure assignment in conditions*.
 
     ```ruby
     # mal (+ una advertencia)
@@ -1306,8 +1224,8 @@ Never use `::` for method invocation.
       ...
     end
     ```
-*  <a name="self-assignment"> </a> 
-  Use abbreviations to assign values after an operation.
+* <a name="self-assignment"></a>
+Use abbreviations to assign values after an operation.
 
   ```ruby
   # mal
@@ -1334,8 +1252,7 @@ Never use `::` for method invocation.
     name ||= 'Bozhidar'
     ```
 
-* Do not use `||=` to initialize Boolean variables. (Consider what
-would happen if the current value was `false`.)
+* Do not use `||=` to initialize Boolean variables. (Consider what would happen if the current value was `false`.)
 
     ```ruby
     # mal - asignaría true a enabled aunque ya era false
@@ -1345,10 +1262,8 @@ would happen if the current value was `false`.)
     enabled = true if enabled.nil?
     ```
 
-*  <a name="double-amper-preprocess"> </a> 
-  Use `&&=` to preprocess variables that may not exist.
-  Using `&&=` you will change the value of the variable, only if it exists, 
-  eliminating the need to check its existence using an `if`.
+* <a name="double-amper-preprocess"></a>
+Use `&&=` to preprocess variables that may not exist. Using `&&=` you will change the value of the variable, only if it exists, eliminating the need to check its existence using an `if`.
 
   ```ruby
   # mal
@@ -1369,10 +1284,7 @@ would happen if the current value was `false`.)
   something &&= something.downcase
   ```
 
-* Avoid explicit use of the identical equality operator `===`.
-  As the name suggests, it is intended to be used
-  implicitly by expressions `case` and outside of them provides
-  Pretty confusing code.
+* Avoid explicit use of the identical equality operator `===`. As the name suggests, it is intended to be used implicitly by expressions `case` and outside of them provides Pretty confusing code.
 
     ```ruby
     # mal
@@ -1385,10 +1297,8 @@ would happen if the current value was `false`.)
     (1..100).include?(7)
     some_string =~ /something/
     ```
-*  <a name="eql"> </a> 
-  Don't use `eql? `when you can use `==`. 
-  The strict semantica comparator offered by `eql? ` 
-  is rarely needed in practice.
+* <a name="eql"></a>
+Don't use `eql?`when you can use `==`. The strict semantica comparator offered by `eql?` is rarely needed in practice.
 
   ```ruby
   # mal - eql? es lo mismo que == para strings
@@ -1401,7 +1311,7 @@ would happen if the current value was `false`.)
   1.0.eql? x 
   ```
 
-* Avoid using special variables of type Perl (such as `$: `, `$;`, etc.). They are quite cryptic and their use anywhere except one-line scripts is discouraged. Use the human-friendly aliases provided by the `English` library.
+* Avoid using special variables of type Perl (such as `$:`, `$;`, etc.). They are quite cryptic and their use anywhere except one-line scripts is discouraged. Use the human-friendly aliases provided by the `English` library.
 
     ```ruby
     # mal
@@ -1422,17 +1332,12 @@ would happen if the current value was `false`.)
     f(3 + 2) + 1
     ```
 
-* If the first argument of a method starts with an open parenthesis,
-  always use parentheses in the invocation of the method. For example,
-  type `f ((3 + 2) + 1) `.
+* If the first argument of a method starts with an open parenthesis, always use parentheses in the invocation of the method. For example, type `f ((3 + 2) + 1)`.
 
-* Always run the Ruby interpreter with the `-w` option, so that
-let us know if you forget any of the above rules!
+* Always run the Ruby interpreter with the `-w` option, so that let us know if you forget any of the above rules!
 
-*  <a name="no-nested-methods"> </a> 
-  Do not use nested methods, better use lambda functions.
-  Nested methods currently produce methods in the same scope (example: classes)
-  In addition, the nested method will be redefined each time the method containing it is called.
+* <a name="no-nested-methods"></a>
+Do not use nested methods, better use lambda functions. Nested methods currently produce methods in the same scope (example: classes) In addition, the nested method will be redefined each time the method containing it is called.
 
   ```ruby
   # evil
@@ -1455,8 +1360,7 @@ let us know if you forget any of the above rules!
 
   # well also
   def foo (x)
-    bar = -> (y) {...}
-    bar.call (x)
+    bar = -> (y) {...} bar.call (x)
   end
   ``
 
@@ -1484,8 +1388,8 @@ let us know if you forget any of the above rules!
       tmp * b / 50
     end
     ```
-*  <a name="stabby-lambda-with-args"> </a> 
-  Do not omit parentesis when you are defining a lambda function that uses parameters.
+* <a name="stabby-lambda-with-args"></a>
+Do not omit parentesis when you are defining a lambda function that uses parameters.
 
   ```ruby
   # mal
@@ -1495,8 +1399,8 @@ let us know if you forget any of the above rules!
   l = ->(x, y) { something(x, y) }
   ```
 
-*  <a name="stabby-lambda-no-args"> </a> 
-  Skip parentheses if your lambda function does not need parameters.
+* <a name="stabby-lambda-no-args"></a>
+Skip parentheses if your lambda function does not need parameters.
 
   ```ruby
   # mal
@@ -1516,7 +1420,7 @@ let us know if you forget any of the above rules!
     p = proc { |n| puts n }
     ```
 
-* Choose `proc.call () `over `proc []` or `proc. () `for both lambdas and procs.
+* Choose `proc.call ()`over `proc []` or `proc. ()`for both lambdas and procs.
 
     ```ruby
     # mal - se ve similar a un acceso de Enumeración
@@ -1542,18 +1446,11 @@ let us know if you forget any of the above rules!
     result = hash.map { |_, v| v + 1 }
     ```
 
-* Use `$stdout/$stderr/$stdin` instead of
-  `STDOUT/STDERR/STDIN`. `STDOUT/STDERR/STDIN` are constants, and
-  while you can reassign constants (possibly to redirect
-  a process) in Ruby, you're going to have a warning from the interpreter if
-  You do that.
+* Use `$stdout/$stderr/$stdin` instead of `STDOUT/STDERR/STDIN`. `STDOUT/STDERR/STDIN` are constants, and while you can reassign constants (possibly to redirect a process) in Ruby, you're going to have a warning from the interpreter if You do that.
 
-* Use `warn` instead of `$stderr.puts`. Apart from being more concise and
-of course, `warn` allows you to delete warnings if you need it
-(setting the warning level to 0 via `-W0`).
+* Use `warn` instead of `$stderr.puts`. Apart from being more concise and of course, `warn` allows you to delete warnings if you need it (setting the warning level to 0 via `-W0`).
 
-* Choose to use `sprintf` and its alias `format` over the
-  cryptic `String#%`.
+* Choose to use `sprintf` and its alias `format` over the cryptic `String#%`.
 
     ```ruby
     # mal
@@ -1577,9 +1474,8 @@ of course, `warn` allows you to delete warnings if you need it
     # => '20 10'
     ```
 
-*  <a name="named-format-tokens"> </a> 
-  When you use name tokens, please use `% <name> s` over `% {name} `, because at the time of referencing them
-  you are referencing the type of value the token will take.
+* <a name="named-format-tokens"></a>
+When you use name tokens, please use `% <name> s` over `% {name}`, because at the time of referencing them you are referencing the type of value the token will take.
 
   ```ruby
   # evil
@@ -1602,9 +1498,7 @@ of course, `warn` allows you to delete warnings if you need it
     # => 'one, two, three'
     ```
 
-* Use `[*var]` or `Array () `instead of explicit verification `Array`,
-  when you work with a variable you want to treat as an Array, but
-  you're not sure it's an array.
+* Use `[*var]` or `Array ()`instead of explicit verification `Array`, when you work with a variable you want to treat as an Array, but you're not sure it's an array.
 
     ```ruby
     # mal
@@ -1618,8 +1512,7 @@ of course, `warn` allows you to delete warnings if you need it
     Array(paths).each { |path| do_something(path) }
     ```
 
-* Use ranges or `Comparable #between? `instead of a logical comparison
-  complex where possible.
+* Use ranges or `Comparable #between?`instead of a logical comparison complex where possible.
 
     ```ruby
     # mal
@@ -1632,8 +1525,7 @@ of course, `warn` allows you to delete warnings if you need it
     do_something if x.between?(1000, 2000)
     ```
 
-* Choose the use of underlying methods instead of comparisons
-  explicit with `==`. Numerical comparisons are OK.
+* Choose the use of underlying methods instead of comparisons explicit with `==`. Numerical comparisons are OK.
 
     ```ruby
     # mal
@@ -1647,43 +1539,46 @@ of course, `warn` allows you to delete warnings if you need it
     end
 
     # bien
-    if x.even?
-    end
+    if x.even? end
 
-    if x.odd?
-    end
+    if x.odd? end
 
-    if x.nil?
-    end
+    if x.nil? end
 
-    if x.zero?
-    end
+    if x.zero? end
 
     if x == 0
     end
     ```
 
-*  <a name="no-non-nil-checks"> </a> 
-  Do not explicitly use no-`nil` to validate a variable, 
-  unless you're dealing with bolean variables.
+* <a name="no-non-nil-checks"></a>
+Do not explicitly use no-`nil` to validate a variable, unless you're dealing with bolean variables.
 
     ```ruby
     # mal
-    do_something if !something.nil?
-    do_something if something != nil
+    def method_missing?(meth, *args, &block)
+      if /^find_by_(?<prop>.*)/ =~ meth
+        # ... lots of code to do a find_by
+      else
+        super
+      end
+    end
 
     # bien
-    do_something if something
-
-    # bien - solo si se está seguro de que la variable es boleana
-    def value_set?
-      !@some_boolean.nil?
+    def method_missing?(meth, *args, &block)
+      if /^find_by_(?<prop>.*)/ =~ meth
+        find_by(prop, *args, &block)
+      else
+        super
+      end
     end
+
+    # best of all, though, would to define_method as each findable attribute is declared
     ```
 
-* Avoid the use of `BEGIN `blocks.
+* Avoid the use of `BEGIN`blocks.
 
-* Never use `END` blocks. Instead use `Kernel #at_exit `.
+* Never use `END` blocks. Instead use `Kernel #at_exit`.
 
     ```ruby
     # mal
@@ -1697,10 +1592,7 @@ of course, `warn` allows you to delete warnings if you need it
 
 * Avoid the use of flip-flops.
 
-* Avoid the use of nested conditionals for flow control.
-  Choose a guard clause when you can say invalid data.
-  A guard clause is a conditional at the beginning of a function that tries to
-  get out of it as soon as you can.
+* Avoid the use of nested conditionals for flow control. Choose a guard clause when you can say invalid data. A guard clause is a conditional at the beginning of a function that tries to get out of it as soon as you can.
 
     ```ruby
     # mal
@@ -1724,7 +1616,7 @@ of course, `warn` allows you to delete warnings if you need it
       end
     ```
 
-  Prefer `next` in loops instead of conditional blocks.
+  Prefiere `next` en los ciclos (loop) en vez de bloques condicionales.
 
   ```ruby
   # mal
@@ -1742,18 +1634,10 @@ of course, `warn` allows you to delete warnings if you need it
   ```
 
 
-*  <a name="map-find-select-reduce-size"> </a> 
-* Choose `map` over `collect`, `find` over `detecet`, `select`
-  by about `find_all`, `reduce` by about `inject` and `size` by over
-  `length`. Not a difficult requirement; if using aliases enhances
-  readability, it's okay to use them. Rhyming methods are inherited
-  from Smalltalk and are not common in other programming languages. It
-  reason to use `select` for `find_all` is because it goes very well
-  along with `reject` and its name is quite self-explanatory.
+* <a name="map-find-select-reduce-size"></a>* Choose `map` over `collect`, `find` over `detecet`, `select` by about `find_all`, `reduce` by about `inject` and `size` by over `length`. Not a difficult requirement; if using aliases enhances readability, it's okay to use them. Rhyming methods are inherited from Smalltalk and are not common in other programming languages. It reason to use `select` for `find_all` is because it goes very well along with `reject` and its name is quite self-explanatory.
 
-*  <a name="count-vs-size"> </a> 
-  Do not use `count` as a substitute for `size`. For objects of type `Enumerable`,
-  the entire object will be iterated to find out the number of elements.
+* <a name="count-vs-size"></a>
+Do not use `count` as a substitute for `size`. For objects of type `Enumerable`, the entire object will be iterated to find out the number of elements.
 
   ```ruby
   # mal
@@ -1763,11 +1647,8 @@ of course, `warn` allows you to delete warnings if you need it
   some_hash.size
   ```
 
-*  <a name="flat-map"> </a> 
-  Use `flat_map` instead of `map` + `flatten`. This does not apply to arrays with a 
-  depth greater than 2, for example. If `users.first.songs == ['a', ['b', ['c']] `,
-  then use `map+ flatten` instead of `flat_map`. `flat_map` flattens the array with depth 1, 
-  while `flatten` flatten it completely.
+* <a name="flat-map"></a>
+Use `flat_map` instead of `map` + `flatten`.  This does not apply to arrays with a depth greater than 2, for example.  If `users.first.songs == ['a', ['b', ['c']]`, then use `map+ flatten` instead of `flat_map`. `flat_map` flattens the array with depth 1, while `flatten` flatten it completely.
 
   ```ruby
   # mal
@@ -1777,20 +1658,13 @@ of course, `warn` allows you to delete warnings if you need it
   all_songs = users.flat_map(&:songs).uniq
   ```
 
-*  <a name="reverse-each"> </a> 
-  Prefer `reverse_each` to `reverse.each` because some classes that include `Enumerable` 
-  can provide efficient implementation. Even in the worst case if the class does not implement an improvement
-  the general from `Enumerable` will be as efficient as `reverse.each`.
+* <a name="reverse-each"></a>
+Prefer `reverse_each` to `reverse.each` because some classes that include `Enumerable` can provide efficient implementation. Even in the worst case if the class does not implement an improvement the general from `Enumerable` will be as efficient as `reverse.each`.
 
   ```ruby
   # evil
-  array.reverse.each {...}
-
-  # good
-  array.reverse_each {...}
-
-
-## Names
+  array.reverse.each {...} # good
+  array.reverse_each {...} ## Names
 
 > The only real difficulties in programming are invalidation of
 > cache and name things. <br/> 
@@ -1834,8 +1708,8 @@ of course, `warn` allows you to delete warnings if you need it
     end
     ```
 
-*  <a name="snake-case-symbols-methods-vars-with-numbers"> </a> 
-  Do not separate numbers from letters, symbols, methods, or variables.
+* <a name="snake-case-symbols-methods-vars-with-numbers"></a>
+Do not separate numbers from letters, symbols, methods, or variables.
 
   ```ruby
   # mal
@@ -1857,8 +1731,7 @@ of course, `warn` allows you to delete warnings if you need it
   end
   ```
 
-* Use `CamelCase` for classes and modules. (I kept in capital letters
-  acronyms such as HTTP, RFC, XML.)
+* Use `CamelCase` for classes and modules.  (I kept in capital letters acronyms such as HTTP, RFC, XML.)
 
     ```ruby
     # mal
@@ -1884,24 +1757,21 @@ of course, `warn` allows you to delete warnings if you need it
     end
     ```
 
-*  <a name="snake-case-files"> </a> 
-  Use `snake_case` to name files, example. `hello_world.rb`.
+* <a name="snake-case-files"></a>
+Use `snake_case` to name files, example. `hello_world.rb`.
 
-*  <a name="snake-case-dirs"> </a> 
-  Use `snake_case` to name directories, example.
-  `lib/hello_world/hello_world.rb`.
+* <a name="snake-case-dirs"></a>
+Use `snake_case` to name directories, example. `lib/hello_world/hello_world.rb`.
 
-*  <a name="one-class-per-file"> </a> 
-  Try to have only one Class or Module per source file. Name the file with the name
-  from the Class or Module, but replacing the name of `CamelCase` to `snake_case`.
-  example. `some_class.rb`
+* <a name="one-class-per-file"></a>
+Try to have only one Class or Module per source file. Name the file with the name from the Class or Module, but replacing the name of `CamelCase` to `snake_case`. example. `some_class.rb`
 
     ```ruby
     # bien
     class SomeClass
       # No body
     end
-    ```  
+    ```
 
 * Use `SCREAMING_SNAKE_CASE` for constants.
 
@@ -1913,59 +1783,43 @@ of course, `warn` allows you to delete warnings if you need it
     SOME_CONST = 5
     ```
 
-* The names of the methods they claim (methods that return a
-  boolean value) must end with a question sign.
-  (example: `Array #empty? `). Methods that do not return a boolean,
-  should not end with a question sign.
+* The names of the methods they claim (methods that return a boolean value) must end with a question sign. (example: `Array #empty?`). Methods that do not return a boolean, should not end with a question sign.
 
-*  <a name="bool-methods-prefix"> </a> 
-  Avoid using auxiliary prefixes such as (`is`, `does`, or `can`) for Method names.
-  These words are redundant and inconsistent with the style of Bolean Methods found in Ruby core library, 
-  such as `empty? `or `include? `
+* <a name="bool-methods-prefix"></a>
+Avoid using auxiliary prefixes such as (`is`, `does`, or `can`) for Method names. These words are redundant and inconsistent with the style of Bolean Methods found in Ruby core library, such as `empty?`or `include?`
 
   ```ruby
   # mal
   class Person
-    def is_tall?
-      true
+    def is_tall? true
     end
 
-    def can_play_basketball?
-      false
+    def can_play_basketball? false
     end
 
-    def does_like_candy?
-      true
+    def does_like_candy? true
     end
   end
 
   # bien
   class Person
-    def tall?
-      true
+    def tall? true
     end
 
-    def basketball_player?
-      false
+    def basketball_player? false
     end
 
-    def likes_candy?
-      true
+    def likes_candy? true
     end
   end
   ```
 
-* Potentially *dangerous* method names (example: methods
-  which modify `self` or arguments, `exit! `- does not run
-  finishers as `exit`, etc.) must end with a sign
-  exclamation only if there is a secure version of that method
-  *dangerous*.
+* Potentially *dangerous* method names (example: methods which modify `self` or arguments, `exit!`- does not run finishers as `exit`, etc.) must end with a sign exclamation only if there is a secure version of that method *dangerous*.
 
     ```ruby
     # mal - no hay ningún método 'seguro' que se llame igual
     class Person
-      def update!
-      end
+      def update! end
     end
 
     # bien
@@ -1976,16 +1830,14 @@ of course, `warn` allows you to delete warnings if you need it
 
     # bien
     class Person
-      def update!
-      end
+      def update! end
 
       def update
       end
     end
     ```
 
-* Defines a non-bang (safe) method relative to the bang method
-  (dangerous) if possible.
+* Defines a non-bang (safe) method relative to the bang method (dangerous) if possible.
 
     ```ruby
     class Array
@@ -2005,11 +1857,8 @@ of course, `warn` allows you to delete warnings if you need it
     end
     ```
 
-* When using `reduce` with small blocks, name the arguments
-  `|a, e|` (accumulator, element).
-* When you define binary operators, name the argument as `other`
-  (`<<` and `[]` are exceptions to the rule, since their semantics is
-  different).
+* When using `reduce` with small blocks, name the arguments `|a, e|` (accumulator, element).
+* When you define binary operators, name the argument as `other` (`<<` and `[]` are exceptions to the rule, since their semantics is different).
 
     ```ruby
     def +(other)
@@ -2019,19 +1868,12 @@ of course, `warn` allows you to delete warnings if you need it
 
 ## Comments
 
-> Good code is your best documentation. When you're about to
-> add a comment, ask yourself: "How can I improve the code
-> so that this comment is not necessary?" Improve the code and then
-> document it to make it even clearer. <br/> 
-> — Steve McConnell
+> Good code is your best documentation. When you're about to add a comment, ask yourself: "How can I improve the code so that this comment is not necessary?" Improve the code and then document it to make it even clearer. <br/> — Steve McConnell
 
 * Write self-documented code and ignore the rest of this section. Seriously!
-* Write your comments in English to avoid problems with characters
-  special.
-* Use a space between the first `#` character of the comment and the text
-  own of the commentary.
-* Comments that are longer than a word are capitalized and use
-  punctuation. Use [a space](http://es.wikipedia.org/wiki/Espacio_entre_oraciones) after the dots.
+* Write your comments in English to avoid problems with characters special.
+* Use a space between the first `#` character of the comment and the text own of the commentary.
+* Comments that are longer than a word are capitalized and use punctuation. Use [a space](http://es.wikipedia.org/wiki/Espacio_entre_oraciones) after the dots.
 * Avoid surviving comments.
 
     ```ruby
@@ -2039,35 +1881,28 @@ of course, `warn` allows you to delete warnings if you need it
     counter += 1 # Increments counter by one.
     ```
 
-* I kept the existing comments up to date. An old comment is worse
-that you do not use comments.
+* I kept the existing comments up to date. An old comment is worse that you do not use comments.
 
-> Good code is like a good joke - no need explanation <br/> 
-> — Russ Olsen
+> Good code is like a good joke - no need explanation <br/> — Russ Olsen
 
-* Avoid writing comments to explain bad code. Refactor the code
-  to make it more self-explanatory. (Do it or don't - there are no attempts. —Yoda)
+* Avoid writing comments to explain bad code. Refactor the code to make it more self-explanatory. (Do it or don't - there are no attempts. —Yoda)
 
 ### Comments Notes
 
-* Generally the notes have to be written immediately in the first
-  line above the code to comment.
-* The keyword of the note is followed by a colon and a space, and then
-  a note describing the problem.
-* If multiple lines are needed to describe the problem, the
-  subsequent ones have to have a two-space indent after the `#`.
+* Generally the notes have to be written immediately in the first line above the code to comment.
+* The keyword of the note is followed by a colon and a space, and then a note describing the problem.
+* Prefer to use double quotation marks `""`unless the String contain `"`or escape characters you want to delete.
 
     ```ruby
     def bar
+      # FIXME: def bar
       # FIXME: This has crashed occasionally since v3.2.1. It may
       #   be related to the BarBazUtil upgrade.
       baz(:quux)
     end
     ```
 
-* In cases where the problem is so obvious that any documentation
-  is redundant, notes can be left at the end of that line, without
-  no note. Its use should be the exception and not the rule.
+* In cases where the problem is so obvious that any documentation is redundant, notes can be left at the end of that line, without no note. Its use should be the exception and not the rule.
 
     ```ruby
     def bar
@@ -2075,25 +1910,19 @@ that you do not use comments.
     end
     ```
 
-* Use `TODO` to highlight missing functionalities or functionalities that
-  should be added later.
+* Use `TODO` to highlight missing functionalities or functionalities that should be added later.
 * Use `FIXME` to highlight broken code that needs to be fixed.
-* Use `OPTIMIZE` to highlight slow or inefficient code that may cause
-  performance problems.
-* Use `HACK` to highlight code that uses questionable practices that
-  do not look good and that it should be refactorized as soon as possible.
-* Use `REVIEW` to highlight anything that needs to be reviewed for
-  confirm that it is working as it should. For example: `REVIEW: Are
-  we sure this is how the client does X currently? `
-* Use another word as a note if you feel it appropriate, but make sure
-  to document them in the `README` of your project or similar.
+* Use `OPTIMIZE` to highlight slow or inefficient code that may cause performance problems.
+* Use `HACK` to highlight code that uses questionable practices that do not look good and that it should be refactorized as soon as possible.
+* Use `REVIEW` to highlight anything that needs to be reviewed for confirm that it is working as it should. For example: `REVIEW: Are
+we sure this is how the client does X currently?`
+* Use another word as a note if you feel it appropriate, but make sure to document them in the `README` of your project or similar.
 
 
 ### Magic Comments
 
-*  <a name="magic-comments-first"> </a> 
-  Position a magic comment on all the code and documentation of a file 
-  (except for the [Shebangs](https://es.wikipedia.org/wiki/Shebang), we'll talk about them later.)
+* <a name="magic-comments-first"></a>
+Position a magic comment on all the code and documentation of a file (except for the [Shebangs](https://es.wikipedia.org/wiki/Shebang), we'll talk about them later.)
 
   ```ruby
   # mal
@@ -2111,8 +1940,8 @@ that you do not use comments.
   end
   ```
 
-*  <a name="below-shebang"> </a> 
-  Position a magic comment below the `shebangs` if there is one present in the file.
+* <a name="below-shebang"></a>
+Position a magic comment below the `shebangs` if there is one present in the file.
 
   ```ruby
   # mal
@@ -2129,7 +1958,7 @@ that you do not use comments.
   ```
 
 * <a name="one-magic-comment-per-line"></a>
-  Use a magic comment per line, if you need to use more than one.
+Use a magic comment per line, if you need to use more than one.
 
   ```ruby
   # mal
@@ -2140,8 +1969,8 @@ that you do not use comments.
   # encoding: ascii-8bit
   ```
 
-*  <a name="separate-magic-comments-from-code"> </a> 
-  Separate magic comments from the rest of the code or documentation using a white line.
+* <a name="separate-magic-comments-from-code"></a>
+Separate magic comments from the rest of the code or documentation using a white line.
 
   ```ruby
   # mal
@@ -2200,8 +2029,8 @@ that you do not use comments.
     end
     ```
 
-*  <a name="mixin-grouping"> </a> 
-  Separate multiple `mixins` with multiple statements (separate lines).
+* <a name="mixin-grouping"></a>
+:</code> (ternary operator) in multilines; instead use `if/unless`.
 
   ```ruby
   # mal
@@ -2217,60 +2046,60 @@ that you do not use comments.
   end
   ```
 
-*  <a name="file-classes"> </a> 
-  Do not nite Multilinear Classes within another Class.
-  Try to separate each into different files within a folder
-  which is called the Class in which you want to nest them.
-  Example.
+* <a name="file-classes"></a>
+Do not nite Multilinear Classes within another Class. Try to separate each into different files within a folder which is called the Class in which you want to nest them. Example.
 
   ```ruby
-  # evil
+  # mal
 
   # foo.rb
   class Foo
-    class bar
-      #30 methods inside
+    class Bar
+      # 30 methods inside
     end
 
-    class car
-      #20 methods inside
+    class Car
+      # 20 methods inside
     end
 
-    #30 methods inside
+    # 30 methods inside
   end
 
 
 
-  # okay
+  # bien
 
   # foo.rb
   class Foo
-    #30 methods inside
+    # 30 methods inside
   end
 
   # foo/bar.rb
   class Foo
- class bar
-      #30 methods inside
- end
+    class Bar
+      # 30 methods inside
+    end
   end
 
   # foo/car.rb
   class Foo
- class car
-      #20 methods inside
- end
+    class Car
+      # 20 methods inside
+    end
   end
   ```
 
-* <a name="namespace-definition"> </a> 
- Defines (and reopens) Namespace Classes and Modules using a specific nesting.
- Using the scope resolution operator `::` you can lead to amazing constant searches due to Ruby's lexical scope
- [lexical scoping](https://cirw.in/blog/constant-lookup.html), which depends on the Module being nested from the point of the definition.
- Example.
+* <a name="namespace-definition"></a>
+Defines (and reopens) Namespace Classes and Modules using a specific nesting. Using the scope resolution operator `::` you can lead to amazing constant searches due to Ruby's lexical scope [lexical scoping](https://cirw.in/blog/constant-lookup.html), which depends on the Module being nested from the point of the definition. Example.
 
- ```ruby
- module Utilities
+  ```ruby
+  module Utilities
+    class Queue
+    end
+  end
+
+  # mal
+  class Utilities::module Utilities
  class Queue
  end
  end
@@ -2282,7 +2111,7 @@ that you do not use comments.
  def initialize
  # Refers to the top level ::Queue class because Utilities isn't in the
  # current nesting chain.
- @queue = Queue.new
+      @queue = Queue.new
  end
  end
 
@@ -2295,11 +2124,11 @@ that you do not use comments.
  @queue = Queue.new # Refers to Utilities::Queue
  end
  end
- end
- ```
+ endend
+    end
+  ```
 
-* Prefer modules to classes that have only class methods. 
-  Classes should be used only when it makes sense to create instances outside them.
+* Prefer modules to classes that have only class methods. Classes should be used only when it makes sense to create instances outside them.
 
     ```ruby
     # mal
@@ -2325,9 +2154,7 @@ that you do not use comments.
     end
     ```
 
-* Choose the use of `module_function` over `extend self` when
-  you want to change the instance methods of a module in a
-  of class.
+* Choose the use of `module_function` over `extend self` when you want to change the instance methods of a module in a of class.
 
     ```ruby
     # mal
@@ -2357,13 +2184,9 @@ that you do not use comments.
     end
     ```
 
-* When designing class hierarchies, make sure they are ausetted to
-  [Liskov Substitution Principle](http://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov).
-* Try to make your classes so
-  [SOLID](http://es.wikipedia.org/wiki/SOLID_(object-oriented_design))
-  as possible.
-* Always provide a `to_s` method for classes that represent
-  domain objects.
+* When designing class hierarchies, make sure they are ausetted to [Liskov Substitution Principle](http://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov).
+* Try to make your classes so [SOLID](http://es.wikipedia.org/wiki/SOLID_(object-oriented_design)) as possible.
+* Always use `alias_method` when you want to rename the a Module, Classes or Singleton Classes at runtime, otherwise like `alias` could lead to unforeseen cases.
 
     ```ruby
     class Person
@@ -2380,8 +2203,7 @@ that you do not use comments.
     end
     ```
 
-* Use the `attr` family of functions to define trivial accessors
-or mutators.
+* Use the `attr` family of functions to define trivial accessors or mutators.
 
     ```ruby
     # mal
@@ -2411,10 +2233,8 @@ or mutators.
     end
     ```
 
-*  <a name="accessor_mutator_method_names"> </a> 
-  For the `accessors` and `mutators`, avoid using prefixes such as `get_` and `set_` in function names.
-  It is a convention in Ruby to use the attribute name (`attr_name`) for type functions (readers) and 
-  `attr_name=` for mutators (writers).
+* <a name="accessor_mutator_method_names"></a>
+For the `accessors` and `mutators`, avoid using prefixes such as `get_` and `set_` in function names. It is a convention in Ruby to use the attribute name (`attr_name`) for type functions (readers) and `attr_name=` for mutators (writers).
 
   ```ruby
   # mal
@@ -2452,9 +2272,7 @@ or mutators.
     attr_reader :one, :two, :three
     ```
 
-* Consider using a `Struct.new `to define a class.
-  `Struct.new` define for you the trivial accessors, 
-  constructor and comparison operators.
+* Consider using a `Struct.new`to define a class. `Struct.new` define for you the trivial accessors, constructor and comparison operators.
 
     ```ruby
     # bien
@@ -2483,8 +2301,7 @@ or mutators.
   Person = Struct.new(:first_name, :last_name)
   ```
 
-* Consider adding a factory method to provide more sensitive shapes
-to instantiate a particular class.
+* Consider adding a factory method to provide more sensitive shapes to instantiate a particular class.
 
     ```ruby
     class Person
@@ -2514,8 +2331,7 @@ to instantiate a particular class.
     # extend superclass
     class Dog < Animal
       def speak
-        puts 'Bau! Bau!'
-      end
+        puts 'Bau! end
     end
 
     # bien
@@ -2527,13 +2343,10 @@ to instantiate a particular class.
 
     class Dog
       def speak
-        puts 'Bau! Bau!'
-      end
-    end
+        puts 'Bau!
     ```
 
-* Avoid the use of clas variables (`@@`) due to their behaviors
-"dirty" in inheritance.
+* Avoid the use of clas variables (`@@`) due to their behaviors "dirty" in inheritance.
 
     ```ruby
     class Parent
@@ -2551,18 +2364,10 @@ to instantiate a particular class.
     Parent.print_class_var # => will print "child"
     ```
 
-    How can you see all the classes in a class hierarchy actually
-    share a class variable. Usually instance variables
-    class variables should be preferred to class variables.
+    How can you see all the classes in a class hierarchy actually share a class variable. Usually instance variables class variables should be preferred to class variables.
 
-* Assigns adequate visibility levels for methods (`private`,
-  `protected`) according to its correct use. Don't go around leaving
-  all `public` (which is the default state). After all
-  We're now programming on *Ruby*, not *Python*.
-* Indent the words "public", "protected", and `private` as much as
-  methods to which they apply. Leave a blank line before and after
-  of the visibility modifier, in order to emphasize that that applies to
-  all the methods below.
+* Assigns adequate visibility levels for methods (`private`, `protected`) according to its correct use. Don't go around leaving all `public` (which is the default state). After all We're now programming on *Ruby*, not *Python*.
+* Indent the words "public", "protected", and `private` as much as methods to which they apply. Leave a blank line before and after of the visibility modifier, in order to emphasize that that applies to all the methods below.
 
     ```ruby
     class SomeClass
@@ -2582,9 +2387,7 @@ to instantiate a particular class.
     end
     ```
 
-* Use `def self.method` to define singleton methods. That does the
-  code easier to refactor, because the class name
-  is not repeated.
+* Use `def self.method` to define singleton methods. That does the code easier to refactor, because the class name is not repeated.
 
     ```ruby
     class TestClass
@@ -2612,11 +2415,8 @@ to instantiate a particular class.
     end
     ```
 
-*  <a name="alias-method-lexically"> </a> 
-  Keep in mind that the use of `alias` reaches the Methods that are within the class 
-  just like the use of `self`. Clearly communica to the user that the diversion made by
-  your alias will not alter the Runtime Class or Subclasses unless it is made 
-  explicit way..
+* <a name="alias-method-lexically"></a>
+Keep in mind that the use of `alias` reaches the Methods that are within the class just like the use of `self`. Clearly communica to the user that the diversion made by your alias will not alter the Runtime Class or Subclasses unless it is made explicit way..
 
   ```ruby
   class Westerner
@@ -2628,13 +2428,9 @@ to instantiate a particular class.
   end
   ```
 
-  Since `alias`, like `def`, is a reserved word 
-  use it preferably with normal words as arguments, not with symbols
-  or Strings. Example. uses `alias foo bar`, not `alias:foo:bar`.
+  Since `alias`, like `def`, is a reserved word use it preferably with normal words as arguments, not with symbols or Strings. Example. uses `alias foo bar`, not `alias:foo:bar`.
 
-  Also be careful how Ruby handles Aliases in conjunction with Inheritance.
-  An alias refers to the method for which it was defined at the time that the alias was created
-  and it won't work dynamically
+  Also be careful how Ruby handles Aliases in conjunction with Inheritance. An alias refers to the method for which it was defined at the time that the alias was created and it won't work dynamically
 
   ```ruby
   class Fugitive < Westerner
@@ -2644,10 +2440,7 @@ to instantiate a particular class.
   end
   ```
 
-  In the above example `Fugitive #given_name `could keep calling 
-  to the original method of its parent class `Westerner #first_name `and not to `Fugitive #first_name`. 
-  To also overwrite the behavior of `Fugitive #given_name `, you would have to 
-  also redefine the alias in the `Fugitive` class, as follows.
+  In the above example `Fugitive #given_name`could keep calling to the original method of its parent class `Westerner #first_name`and not to `Fugitive #first_name`. To also overwrite the behavior of `Fugitive #given_name`, you would have to also redefine the alias in the `Fugitive` class, as follows.
 
   ```ruby
   class Fugitive < Westerner
@@ -2659,10 +2452,8 @@ to instantiate a particular class.
   end
   ```
 
-*  <a name="alias-method"> </a> 
-  Always use `alias_method` when you want to rename the 
-  a Module, Classes or Singleton Classes at runtime, 
-  otherwise like `alias` could lead to unforeseen cases.
+* <a name="alias-method"></a>
+When the Method of a class (or Module) calls other Methods of the same type, omits the use of `self` or the use of the Class's own name followed by a `.`
 
   ```ruby
   module Mononymous
@@ -2676,13 +2467,10 @@ to instantiate a particular class.
   end
   ```
 
-*  <a name="class-and-self"> </a> 
-  When the Method of a class (or Module) calls other Methods of the same type, 
-  omits the use of `self` or the use of the Class's own name followed by a ` . ` 
+* <a name="class-and-self"></a>
+Cuando el Método de  una clase (o Módulo) llama a otros Métodos del mismo tipo, se omite el uso de `self` o el uso del propio nombre de la Clase seguido por un `.`
 
-  This is very often seen in "Classes of Service" or other similar concepts
-  where the Class is treated as if it were a function. This convention tends to 
-  reduce repetitivity in such classes.
+  This is very often seen in "Classes of Service" or other similar concepts where the Class is treated as if it were a function. This convention tends to reduce repetitivity in such classes.
 
   ```ruby
   class TestClass
@@ -2708,10 +2496,7 @@ to instantiate a particular class.
 
 ## Exceptions
 
-* Signals exceptions using the `fail` method. Use `raise`
-  only when you want to catch an exception and want to go back to
-  call it (because it is not failing, but is throwing a
-  exception explicitly and purposefully).
+* Signals exceptions using the `fail` method. Use `raise` only when you want to catch an exception and want to go back to call it (because it is not failing, but is throwing a exception explicitly and purposefully).
 
     ```ruby
     begin
@@ -2721,8 +2506,7 @@ to instantiate a particular class.
     end
     ```
 
-* Do not explicitly specify `RuntimeError` in the two-argument version of
-  `fail/raise`.
+* Do not explicitly specify `RuntimeError` in the two-argument version of `fail/raise`.
 
     ```ruby
     # mal
@@ -2732,9 +2516,7 @@ to instantiate a particular class.
     fail 'message'
     ```
 
-* Choose to supply an exception class and a message as two
-  separate arguments for `fail/raise`, instead of an instance
-  of exception.
+* If multiple lines are needed to describe the problem, the subsequent ones have to have a two-space indent after the `#`.
 
     ```ruby
     # mal
@@ -2746,11 +2528,7 @@ to instantiate a particular class.
     # Consistente con `fail SomeException, 'message', backtrace`.
     ```
 
-* Never return from an `ensure` block. If you return explicitly
-  from a method within an `ensure` block, the return will take
-  precedent about any exception that is called, and the method will
-  return as if no exception had been called. In fact, the
-  exception will be rejected quietly.
+* Never return from an `ensure` block. If you return explicitly from a method within an `ensure` block, the return will take precedent about any exception that is called, and the method will return as if no exception had been called. In fact, the exception will be rejected quietly.
 
     ```ruby
     def foo
@@ -2782,8 +2560,7 @@ to instantiate a particular class.
     end
     ```
 
-* Mitigate the proliferation of `begin` blocks using
-  *contingency methods* (a term chosen by Avdi Grimm).
+* Mitigate the proliferation of `begin` blocks using *contingency methods* (a term chosen by Avdi Grimm).
 
     ```ruby
     # mal
@@ -2829,12 +2606,12 @@ to instantiate a particular class.
 
     ```ruby
     # mal - esto atrapa una excepción de la clase StandardError y sus clases hijas
-    read_file rescue handle_error($!)
-
-    # bien - esto atrapa solo las excepciones de la clase Errno::ENOENT y sus clases hijas
+    read_file rescue handle_error($!)# bien - esto atrapa solo las excepciones de la clase Errno::ENOENT y sus clases hijas
     def foo
       read_file
     rescue Errno::ENOENT => ex
+      handle_error(ex)
+    endENOENT => ex
       handle_error(ex)
     end
     ```
@@ -2847,19 +2624,15 @@ to instantiate a particular class.
     begin
       n / d
     rescue ZeroDivisionError
-      puts 'Cannot divide by 0!'
-    end
+      puts 'Cannot divide by 0!' end
 
     # bien
-    if d.zero?
-      puts 'Cannot divide by 0!'
-    else
+    if d.zero? puts 'Cannot divide by 0!' else
       n / d
     end
     ```
 
-* Avoid rescuing the `Exception` class. This is going to catch the `exit` signal, 
-  you need to pass `kill -9` to the process in order to finish it.
+* Avoid rescuing the `Exception` class. This is going to catch the `exit` signal, you need to pass `kill -9` to the process in order to finish it.
 
     ```ruby
     # mal
@@ -2867,8 +2640,7 @@ to instantiate a particular class.
       # calls to exit and kill signals will be caught (except kill -9)
       exit
     rescue Exception
-      puts "you didn't really want to exit, right?"
-      # exception handling
+      puts "you didn't really want to exit, right?" # exception handling
     end
 
     # bien
@@ -2889,8 +2661,7 @@ to instantiate a particular class.
 
     ```
 
-* Write more specific exceptions first, otherwise never
-  they're gonna be able to get caught.
+* Write more specific exceptions first, otherwise never they're gonna be able to get caught.
 
     ```ruby
     # mal
@@ -2912,8 +2683,7 @@ to instantiate a particular class.
     end
     ```
 
-* Close external resources opened by your program in a block
-ensure.
+* Close external resources opened by your program in a block ensure.
 
     ```ruby
     f = File.open('testfile')
@@ -2922,12 +2692,11 @@ ensure.
     rescue
       # .. handle error
     ensure
-      f.close unless f.nil?
-    end
+      f.close unless f.nil? end
     ```
 
-*  <a name="auto-release-resources"> </a> 
-  Use methods versions of resources that automatically clean up when possible.
+* <a name="auto-release-resources"></a>
+Use methods versions of resources that automatically clean up when possible.
 
   ```ruby
   # mal - tu debes cerrar especificamente el archivo
@@ -2941,13 +2710,11 @@ ensure.
   end
   ```
 
-* Prefer using standard library exceptions instead
-to create new exception classes.
+* Prefer using standard library exceptions instead to create new exception classes.
 
 ## Collections
 
-* Prefer the use of notation for literal arrays and hash creation
-(except you need to pass parameters to your builders).
+* Prefer the use of notation for literal arrays and hash creation (except you need to pass parameters to your builders).
 
     ```ruby
     # mal
@@ -2959,10 +2726,7 @@ to create new exception classes.
     hash = {}
     ```
 
-* Prefer to use `%w` instead of literal array syntax when
-you need an array of words (non-empty strings without spaces or
-spatile characters in each). Apply this rule only to arrays
-of two or more elements.
+* Prefer to use `%w` instead of literal array syntax when you need an array of words (non-empty strings without spaces or spatile characters in each). Apply this rule only to arrays of two or more elements.
 
     ```ruby
     # mal
@@ -2972,10 +2736,7 @@ of two or more elements.
     STATES = %w(draft open closed)
     ```
 
-* Prefer `%i` rather than literal array syntax when
-you need an array of symbols (and you don't need to maintain compatibility
-with Ruby 1.9). Apply this rule only to arrays with two or more
-elements.
+* Prefer `%i` rather than literal array syntax when you need an array of symbols (and you don't need to maintain compatibility with Ruby 1.9). Apply this rule only to arrays with two or more elements.
 
     ```ruby
     # mal
@@ -2992,13 +2753,9 @@ elements.
     arr[100] = 1 # y así tenés un array con un montón de nils
     ```
 
-* When you are accessing the first or last element of an array, you prefer
-   use `first` or `last` instead of `[0]` or `[-1]`.
+* When you are accessing the first or last element of an array, you prefer use `first` or `last` instead of `[0]` or `[-1]`.
 
-* Use `Set` instead of `Array` when dealing with items
-  unique ones. `Set` implements a collection of cluttered values without
-  duplicates. This is a hybrid of interoperative hesitation
-  intuitive `Array`, and read speed of `Hash`.
+* Use `Set` instead of `Array` when dealing with items unique ones. `Set` implements a collection of cluttered values without duplicates. This is a hybrid of interoperative hesitation intuitive `Array`, and read speed of `Hash`.
 
     ```ruby
     require 'set'
@@ -3016,7 +2773,7 @@ elements.
     ```
 
 * Avoid the use of mutable objects such as hash keys.
-* Use literal hash syntax when your hash keys are symbols.
+* Use `Hash #fetch`when you're dealing with hash keys that should be present.
 
     ```ruby
     # mal
@@ -3025,9 +2782,8 @@ elements.
     # bien
     hash = { one: 1, two: 2, three: 3 }
     ```
-*  <a name="no-mixed-hash-syntaces"> </a> 
-  Don't mix Ruby 1.9 syntax with hash arrows in the same hash definition
-  Use the arrows only when the hash key is not a Symbol.
+* <a name="no-mixed-hash-syntaces"></a>
+Don't mix Ruby 1.9 syntax with hash arrows in the same hash definition Use the arrows only when the hash key is not a Symbol.
 
   ```ruby
   # mal
@@ -3037,10 +2793,7 @@ elements.
   { :a => 1, 'b' => 2 }
   ```
 
-* Use `Hash #key? `instead of `Hash #has_key? `and `Hash #value? `instead
-  `Hash #has_value? ` How Matz says
-  [here](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765),
-  Long functions are considered deprecated.
+* Usa `Hash#key?` en lugar de `Hash#has_key?` y `Hash#value?` en lugar de `Hash#has_value?`. Como dice Matz [aquí](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765), Las funciones largas están consideradas deprecadas.
 
     ```ruby
     # mal
@@ -3052,9 +2805,8 @@ elements.
     hash.value?(value)
     ```
 
-*  <a name="hash-each"> </a> 
-  Use `Hash #each_key `instead of `Hash #keys .each` and 
-  `Hash #each_value `instead of `Hash #values .each`.
+* <a name="hash-each"></a>
+Use `Hash #each_key`instead of `Hash #keys .each` and `Hash #each_value`instead of `Hash #values .each`.
 
   ```ruby
   # bad
@@ -3068,11 +2820,10 @@ elements.
   hash.each_value { |v| puts v }
   ```
 
-* Use `Hash #fetch `when you're dealing with hash keys that should be
-present.
+* Use `Hash #values_at`when you want to get many consecutively values from the Hash.
 
     ```ruby
-    heroes = { batman: 'Bruce Wayne', superman: 'Clark Kent' }
+    heroes = { batman: 'Bruce Wayne', superman: heroes = { batman: 'Bruce Wayne', superman: 'Clark Kent' }
     # mal - si generamos un error, puede que no lo veamos rápido
     heroes[:batman] # => "Bruce Wayne"
     heroes[:supermann] # => nil
@@ -3081,8 +2832,7 @@ present.
     heroes.fetch(:supermann)
     ```
 
-* Use default values for hash keys using `Hash #fetch `, as opposed to generating your
-own logic.
+* Use default values for hash keys using `Hash #fetch`, as opposed to generating your own logic.
 
    ```ruby
    batman = { name: 'Bruce Wayne', is_evil: false }
@@ -3096,7 +2846,7 @@ own logic.
    batman.fetch(:is_evil, true) # => false
    ```
 
-* Prefer the use of blocks rather than the default format of `Hash #fetch `.
+* Prefiere el uso de bloques en lugar del formato por defecto de `Hash#fetch`.
 
    ```ruby
    batman = { name: 'Bruce Wayne' }
@@ -3109,8 +2859,8 @@ own logic.
    batman.fetch(:powers) { get_batman_powers }
    ```
 
-*  <a name="hash-values-at"> </a> 
-  Use `Hash #values_at `when you want to get many consecutively values from the Hash.
+* <a name="hash-values-at"></a>
+Usa `Hash#values_at` cuando quieras obtener muchos valores consecutivamente del Hash.
 
   ```ruby
   # mal
@@ -3124,10 +2874,8 @@ own logic.
 * Trust the fact that since Ruby 1.9 hashes are sorted.
 * Never modify a collection while you're touring it.
 
-*  <a name="accessing-elements-directly"> </a> 
-  When you access items in a Collection, avoid shortcut
-  using `[n]`, for this you can use an alternative form of reading
-  This can save you from calling `[]` about a value `nil`.
+* <a name="accessing-elements-directly"></a>
+When you access items in a Collection, avoid shortcut using `[n]`, for this you can use an alternative form of reading This can save you from calling `[]` about a value `nil`.
 
   ```ruby
   # mal
@@ -3137,9 +2885,8 @@ own logic.
   Regexp.last_match(1)
   ```
 
-*  <a name="provide-alternate-accessor-to-collections"> </a> 
-  If you provide access to a collection, it also provides an alternative way
-  will save users from getting a `nil` before accessing the item in the Collection
+* <a name="provide-alternate-accessor-to-collections"></a>
+If you provide access to a collection, it also provides an alternative way will save users from getting a `nil` before accessing the item in the Collection
 
   ```ruby
   # mal
@@ -3160,24 +2907,28 @@ own logic.
 
 ## Numbers
 
-*  <a name="integer-type-checking"> </a> 
-  Use `Integer` to test the type of an integer. 
-  since `Fixnum` depends on the platform, checking the value of the variable 
-  with it will give different results depending on the architecture of the 32-bit or 64-bit maquin.
+* <a name="integer-type-checking"></a>
+Use `Integer` to test the type of an integer. since `Fixnum` depends on the platform, checking the value of the variable with it will give different results depending on the architecture of the 32-bit or 64-bit maquin.
 
   ```ruby
-  timestamp = Time.now.to_i
+  # mal - uso de 'DateTime' para el tiempo actual del sistema
+  DateTime.now
 
-  # mal
-  timestamp.is_a? Fixnum
-  timestamp.is_a? Bignum
+  # bien - uso de 'Time' para el tiempo actual del sistema
+  Time.now
 
-  # bien
-  timestamp.is_a? Integer
+  # mal - uso de 'DateTime' para una fecha actual
+  DateTime.iso8601('2016-06-29')
+
+  # bien - uso 'Date' para una fecha actual
+  Date.iso8601('2016-06-29')
+
+  # bien - uso de 'DateTime' con un argumento extra para representar una fecha histórica
+  DateTime.iso8601('1751-04-23', Date::ENGLAND)
   ```
 
-*  <a name="random-numbers"> </a> 
-  Prefer the use of Ranges to generate random numbers.
+* <a name="random-numbers"></a>
+Separate multiple `mixins` with multiple statements (separate lines).
 
   ```ruby
   # mal
@@ -3203,15 +2954,13 @@ own logic.
     email_with_name = format('%s <%s>', user.name, user.email)
     ```
 
-* Consider the use of string interpolation with space. Makes it clearer
-  to separate the code from the string.
+* Consider the use of string interpolation with space. Makes it clearer to separate the code from the string.
 
     ```ruby
     "#{ user.last_name }, #{ user.first_name }"
     ```
 
-* Prefer to write them with a single quote when you don't have the need
-  perform interpolation or use special symbols such as `\ t`,`\ n`, `'`, etc.
+* Prefer to write them with a single quote when you don't have the need perform interpolation or use special symbols such as `\ t`,`\ n`, `'`, etc.
 
     ```ruby
     # mal
@@ -3225,8 +2974,7 @@ own logic.
 
     ```
 
-  * Prefer to use double quotation marks `""`unless the String 
-    contain `"`or escape characters you want to delete.
+  * Character classes have only special characters that you should care about: `^`, `-`, `\`, `]`, so you should not escape `.` or keys in `[]`.
 
     ```ruby
     # mal
@@ -3235,9 +2983,7 @@ own logic.
     # bien
     sarcasm = 'I "like" it.'
     ```
-* Don't use the literal character of `? x`. Since Ruby 1.0 this
-  became redundant - `? x` is interpreted as `'x'` (a string with
-  only one character inside).
+* No uses el caracter literal de sintaxis `?x`. Since Ruby 1.0 this became redundant - `? x` is interpreted as `'x'` (a string with only one character inside).
 
     ```ruby
     # mal
@@ -3247,8 +2993,7 @@ own logic.
     char = 'c'
     ```
 
-* Don't stop using `{}` around instance variables or
-  global, being interpolated within a string.
+* Always provide a `to_s` method for classes that represent domain objects.
 
     ```ruby
     class Person
@@ -3278,8 +3023,8 @@ own logic.
     puts "$global = #{$global}"
     ```
 
-*  <a name="no-to-s"> </a> 
-  Do not use `Object #to_s `to interpolate objects. That function is called automatically.
+* <a name="no-to-s"></a>
+Do not use `Object #to_s`to interpolate objects. That function is called automatically.
 
   ```ruby
   # mal
@@ -3289,10 +3034,7 @@ own logic.
   message = "This is the #{result}."
   ```
 
-* Avoid using `String#+` when you need to build a large piece of data.
-  Instead use `String#<<`. Concatenation mutates the instance of the string in the
-  place and is always faster than `String#+`, which creates a group of new
-  string objects.
+* Avoid using `String#+` when you need to build a large piece of data. Instead use `String#<<`. Concatenation mutates the instance of the string in the place and is always faster than `String#+`, which creates a group of new string objects.
 
     ```ruby
     # bien y rápido además
@@ -3304,10 +3046,7 @@ own logic.
     end
     ```
 
-* When you're using heredocs for multi-line strings don't forget
-  from the fact that they need blanks. It's a good one
-  practice using some margin based on how to trim
-  excessive white space.
+* When you're using heredocs for multi-line strings don't forget from the fact that they need blanks. It's a good one practice using some margin based on how to trim excessive white space.
 
     ```ruby
     code = <<-END.gsub(/^\s+\|/, '')
@@ -3319,11 +3058,8 @@ own logic.
     #=> "def test\n  some_method\n  other_method\nend\n"
     ```
 
-*  <a name="heredoc-delimiters"> </a> 
-  Use descriptive delimiters for [Heredoc](https://es.wikipedia.org/wiki/Here_document)
-  Correct delimiters can add valuable information about the content.
-  Some Text Editors are able to recognize delimiters and highlight content 
-  using the corresponding "Highlight"
+* <a name="heredoc-delimiters"></a>
+Use descriptive delimiters for [Heredoc](https://es.wikipedia.org/wiki/Here_document) Correct delimiters can add valuable information about the content. Some Text Editors are able to recognize delimiters and highlight content using the corresponding "Highlight"
 
   ```ruby
   # mal
@@ -3344,19 +3080,17 @@ own logic.
   code = <<~SUMMARY
     An imposing black structure provides a connection between the past and
     the future in this enigmatic adaptation of a short story by revered
-    sci-fi author Arthur C. Clarke.
+    sci-fi author Arthur C. Clarke. Clarke.
   SUMMARY
   ```
 
 ## Date & Time
 
-*  <a name="time-now"> </a> 
-  Prefer `time.now` over `time.new` when you try to get the current system time.
+* <a name="time-now"></a>
+Prefer `time.now` over `time.new` when you try to get the current system time.
 
-*  <a name="no-datetime"> </a> 
-  Don't use `DateTime` unless you need to create a Historical Calendar
-  and if you do so explicitly specify in the argument the `start` for
-  make your intentions clear.
+* <a name="no-datetime"></a>
+Don't use `DateTime` unless you need to create a Historical Calendar and if you do so explicitly specify in the argument the `start` for make your intentions clear.
 
   ```ruby
   # mal - uso de 'DateTime' para el tiempo actual del sistema
@@ -3377,12 +3111,9 @@ own logic.
 
 ## Regular Expressions
 
-> Some people, when they encounter a problem, think
-> "I know, I'm going to use regular expressions." Now they have two problems. <br/> 
-> — Jamie Zawinski
+> Some people, when they encounter a problem, think "I know, I'm going to use regular expressions." Now they have two problems. <br/> — Jamie Zawinski
 
-* Don't use regular expressions if you only need to search plain text in a string:
-  `string ['text'] `
+* Don't use regular expressions if you only need to search plain text in a string: `string ['text']`
 * For simple constructions you can use the `regexp` directly as a string index.
 
     ```ruby
@@ -3398,8 +3129,7 @@ own logic.
     /(?:first|second)/ # bien
     ```
 
-* Do not use the cryptic variables of Perl, which denote the potions of regex results
-  (`$1`, `$2`, etc). Instead use `RegExp.Last_match [n] `.
+* Do not use the cryptic variables of Perl, which denote the potions of regex results (`$1`, `$2`, etc). Instead use `RegExp.Last_match [n]`.
 
     ```ruby
     /(regexp)/ =~ string
@@ -3413,8 +3143,7 @@ own logic.
     ```
 
 
-* Avoid using numbered groups, as it can be difficult to say what they contain. Instead
-  named groups must be used.
+* Avoid using numbered groups, as it can be difficult to say what they contain. Instead named groups must be used.
 
     ```ruby
     # mal
@@ -3428,12 +3157,9 @@ own logic.
     process meaningful_var
     ```
 
-* Character classes have only special characters that you should care about:
-  `^`, `-`, `\`, `]`, so you should not escape `.` or keys in `[]`.
+* Clases de caracteres únicamente tienen caracteres especiales que te deberían importar: `^`, `-`, `\`, `]`, por lo que no debes escapar `.` o llaves en `[]`.
 
-* Be careful with `^` and `$`, as they match the start/end of the line,
-  not the end of the string. If you want to match the full string use: `\ A` and`\ z` (no
-  confuse with `\ Z` which is the equivalent of `/\ n? \ z/`).
+* Be careful with `^` and `$`, as they match the start/end of the line, not the end of the string. If you want to match the full string use: `\ A` and`\ z` (no confuse with `\ Z` which is the equivalent of `/\ n? \ z/`).
 
     ```ruby
     string = "some injection\nusername"
@@ -3441,9 +3167,7 @@ own logic.
     string[/\Ausername\z/] # don't match
     ```
 
-* Use the `x` switch for complex regexps. This makes them more readable and
-  you're going to be able to add better comments. But be careful, that spaces
-  are ignored.
+* Use the `x` switch for complex regexps. This makes them more readable and you're going to be able to add better comments. But be careful, that spaces are ignored.
 
     ```ruby
     regexp = %r{
@@ -3455,7 +3179,7 @@ own logic.
     }x
     ```
 
-* For complex changes you can use `sub`/`gsub` with a block or a hash.
+* Use literal hash syntax when your hash keys are symbols.
 
   ```ruby
   words = 'foo bar'
@@ -3485,23 +3209,19 @@ own logic.
     %(<tr><td class="name">#{name}</td>)
     ```
 
-* Avoid `%q`, except that you have a string with `'`and `"`inside.
-  Literal strings are more readable and should be chosen,
-  except we have to escape a bunch of internal characters.
+* Avoid `%q`, except that you have a string with `'`and `"`inside. Literal strings are more readable and should be chosen, except we have to escape a bunch of internal characters.
 
     ```ruby
     # mal
     name = %q(Bruce Wayne)
     time = %q(8 o'clock)
-    question = %q("What did you say?")
-
-    # bien
+    question = %q("What did you say?") # bien
     name = 'Bruce Wayne'
     time = "8 o'clock"
     question = '"What did you say?"'
     ```
 
-* Use `%r` only for regular expressions that equal*to more than one* character `/`.
+* Use `Hash #key?`instead of `Hash #has_key?`and `Hash #value?`instead `Hash #has_value?` How Matz says [here](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765), Long functions are considered deprecated.
 
     ```ruby
     # mal
@@ -3526,27 +3246,20 @@ own logic.
     echo = %x(echo `date`)
     ```
 
-* Avoid using `%s`. It seems that the community decided that `: "some string"`
-  is the preferred way to create a symbol with spaces inside.
+* Avoid using `%s`. It seems that the community decided that `: "some string"` is the preferred way to create a symbol with spaces inside.
 
 
-*  <a name="percent-literal-braces"> </a> 
-  Use the parentheses that are most appropriate depending on the type of "Literal Percentage" you want to use.
+* <a name="percent-literal-braces"></a>
+Use the parentheses that are most appropriate depending on the type of "Literal Percentage" you want to use.
 
   - `()` for String literal (`%q`, `%Q`).
   - `[]` for Literals Arrays (`%w`, `%i`, `%W`, `%I`) just like normal Arrays.
-  - `{}` For literal regexp (`%r`) unless the regular expression contains key parentheses `{}`. 
-         The idea is to use a rare character in regular expression. (For example `||`)
+  - `{}` For literal regexp (`%r`) unless the regular expression contains key parentheses `{}`. The idea is to use a rare character in regular expression. (For example `||`)
   - `()` For all other literal (for example: `%s`, `%x`)
 
   ```ruby
-  # evil
-  %q {"Test's king!" John said.
-
   # good
-  %q ("Test's king!" , John said.)
-
-  # evil
+  %q ("Test's king!" , John said.) # evil
   %w (one two three)
   %i (one two three)
 
@@ -3568,9 +3281,7 @@ own logic.
 * Avoid unnecessary meta-programming.
 
 * Don't make a mess with core classes when you're writing libraries.
-  (Do not use monkey-patch.)
-
-* The block shape of `class_eval` is preferable in the form of string interpolation.
+  (Do not use monkey-patch.) * The block shape of `class_eval` is preferable in the form of string interpolation.
   - when you use the string interpolation form, always use `__FILE__` and `__LINE__`,
   so code search makes sense:
 
@@ -3578,9 +3289,9 @@ own logic.
     class_eval 'def use_relative_model_naming?; true; end', __FILE__, __LINE__
     ```
 
-  - `define_method` is better than `class_eval {def...} `
+  - `define_method` is better than `class_eval {def...}` x</code>.
 
-* When you use `class_eval` (or other `eval`) with string interpolation, add a comment block that shows its appearance if it is interpolated (a practice I learned with Rails code):
+* Prefer the use of blocks rather than the default format of `Hash #fetch`.
 
     ```ruby
     # from activesupport/lib/active_support/core_ext/string/output_safety.rb
@@ -3602,7 +3313,7 @@ own logic.
 
 * Avoid using `method_missing` for metaprogramming, because it makes it difficult to read the code, the behavior is not listed in `#methods`, and misspelled method calls can work siliciously, example: `nukes.launch_state = false`. Instead, consider using delegation, proxy, or `define_method`. If necessary, use `method_missing`:
 
-  - Are you sure to [also define `respond_to_missing? `](http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
+  - Are you sure to [also define `respond_to_missing?`](http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
   - Just catch methods with a well-defined prefix, such as `find_by_*` — make your code as assertive as possible.
   - Call `super` at the end of your definition
   - Delegate to assertive, not magical methods:
@@ -3629,8 +3340,8 @@ own logic.
     # best of all, though, would to define_method as each findable attribute is declared
     ```
 
-*  <a name="prefer-public-send"> </a> 
-  Prefer `public_send` over `send` so as not to bypass the `private`/`protected` visibility.
+* <a name="prefer-public-send"></a>
+Prefer `public_send` over `send` so as not to bypass the `private`/`protected` visibility.
 
   ```ruby
   # Tenemos una organización ActiveModel que incluye Activatable
@@ -3651,8 +3362,7 @@ own logic.
       # some code
     end
 
-    def activate!
-      # some code
+    def activate!# some code
     end
   end
 
@@ -3660,15 +3370,14 @@ own logic.
     include Activatable
   end
 
-  linux_organization = Organization.find(...)
-  # MAL - viola la privacidad
+  linux_organization = Organization.find(...)# MAL - viola la privacidad
   linux_organization.send(:reset_token)
   # Bien - debería arrojar una excepción
   linux_organization.public_send(:reset_token)
   ```
 
-*  <a name="prefer-__send__"> </a> 
-  Prefer `__send__` over `send`, since `send` can overlap existing methods.
+* <a name="prefer-__send__"></a>
+Prefer `__send__` over `send`, since `send` can overlap existing methods.
 
   ```ruby
   require 'socket'
@@ -3688,13 +3397,10 @@ own logic.
 ## Miscellaneous
 
 * Write secure code with `ruby -w`.
-* Avoid hashes as an optional parameter. Does the method do too much? (The
-  object initializers are exceptions to this rule).
-* Avoid methods greater than 10 LOC (lines of code). Ideally, most methods go
-  to be less than 5 LOC. Empty lines do not count as relevant LOC.
+* Avoid hashes as an optional parameter. Does the method do too much? (The object initializers are exceptions to this rule).
+* Avoid methods greater than 10 LOC (lines of code). Ideally, most methods go to be less than 5 LOC. Empty lines do not count as relevant LOC.
 * Avoid lists of parameters greater than three or four parameters.
-* If you really need "global" methods, add them to your Kernel
-  and turn them into `private`.
+* If you really need "global" methods, add them to your Kernel and turn them into `private`.
 * Use instance variables in modules instead of global variables.
 
     ```ruby
@@ -3711,9 +3417,8 @@ own logic.
     Foo.bar = 1
     ```
 
-* Avoid `alias` when `alias_method `does the job better.
-* Use `OptionParser` to parse complex command option lines
-and `ruby -s` for trivial command option lines.
+* Avoid `alias` when `alias_method`does the job better.
+* Use `OptionParser` to parse complex command option lines and `ruby -s` for trivial command option lines.
 * Write code in a functional way, avoiding mutation when that makes sense.
 * Don't mute arguments except that is the purpose of the method.
 * Avoid more than three levels of block nesting.
