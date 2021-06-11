@@ -4,7 +4,7 @@ search: true
 
 # What's new in Modyo?
 
-Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform. They represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience. 
+Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform and represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience.
 
 In this new platform version, we highlight the following improvements and new features.
 
@@ -18,11 +18,11 @@ The Modyo Content application now serves content through its [API and SDKs](/pla
 
 ### Asset Manager
 
-The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag management_, image resizing, and more.
+The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag management_, image resizing, and more. El nuevo gestor de archivos se accede desde la nueva aplicación Modyo Content, pero también se encuentra integrado desde los editores de texto y código dentro de la plataforma.
 
 ### User Realms
 
-They allow you to define multiple end-user realms and assign them uniquely across different sites and content spaces. With this new functionality, end user databases can be managed in a cleaner and separate way, granting differentiated access to different managed resources on the platform and reduce the need to manage separate organizations for different types of users.
+Se pueden definir múltiples reinos de usuarios finales y asignarlos de forma exclusiva en diferentes sitios y espacios de contenido. With this new functionality, end user databases can be managed in a cleaner and separate way, granting differentiated access to different managed resources on the platform and reduced the need to manage separate organizations for different types of users.
 
 ### Team Review
 
@@ -38,6 +38,6 @@ Modyo 9.0 improves upon user management by completely separating users in the fr
 
 ### Support for PWA
 
-Modyo now has native support for Progressive Web Application enablers, allowing you to improve your users' experience when they have intermittency or lose their connection.
+Modyo now has native support for Progressive Web Application enablers, allowing you to improve your users' experience when they are intermittently or lose their connection.
 
-Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittency or bad network connections, and can be installed by the user without the need of an app store.
+Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittent or bad network connections, and can be installed by the user without the need of an app store.
