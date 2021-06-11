@@ -16,11 +16,11 @@ In the Types section of a space, you can find a green **+ New** button at the to
 
 Below, you can see the Type search bar, which will allow you to filter by any word that is in the Name field.
 
-Then, you will find the table with the Types already created, which will be sorted by default according to the updated date and time, starting from the most recent item back.
+Then, you will find the table with the Types that have already been created, which will be sorted by default according to the updated date and time, starting from the most recent item back.
 
 To reorder it, you just need to click on the symbols on one side of each category.
 
-The categories by which you can reorder are four:
+There are four categories by which you can reorder:
 
 - **Name**
 - **UID**
@@ -36,9 +36,9 @@ If you want to enter any Type, you must click on its Name to open the correspond
 To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
 :::tip
-Tip It is a good practice to put within the UID, the format of what will be published as they are, for example, videos, posts, etc.
+Tip It is a good practice to include the format of what will be published within the UID, such as videos, posts, etc.
 
-Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
+By doing so, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
