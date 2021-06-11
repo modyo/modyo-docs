@@ -4,13 +4,13 @@ search: true
 
 # Templates
 
-One of the most important aspects of site creation is the base architecture and appearance. In the Template Builder, you can modify the base templates and the global JavaScript and CSS used in your pages. You can also change the structure of these documents according to your requirements.
+One of the most important aspects of site creation is the base architecture and appearance. In the Template Builder, you can modify the base templates and the global JavaScript and CSS used in your pages.
 
 Once you have selected a theme for a new site, you can access each template in the Template Builder and make any change you need.
 
 Inside the Template Builder, you will find that the main menu is hidden to optimize the available workspace. In the top bar, you can also find the section name and a badge indicating its current status:
 
-- **Published**: There is a published version of the templates and that the editable version you are working on now matches the state of the published version. This status changes whenever you save any changes to your templates.
+- **Published**: There is a published version of the templates and that the editable version you are working on now matches the state of the published version.
 - **Pending changes**: When there is a previously published version, this status indicates that your editable version has "pending changes" that have not been published.
 - **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
 - **Approved**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and if the review conditions were met. The templates are ready to be published if they have this status.
@@ -19,25 +19,25 @@ Inside the Template Builder, you will find that the main menu is hidden to optim
 
 On the right side of the upper bar, you will find the latest publication date and the available actions:
 
-**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on this icon will open a new tab with the templates in preview mode. This allows you to review your site or digital channel as if all current changes in your templates were currently live.
+**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Clicking on this icon will open a new tab with the templates in preview mode.
 
-። :warning Warning
-You can preview the changes as a user without session or user with Modyo session. For this, it is advisable to log out or log out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors such as _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings, depending on your site's SSL and custom domain settings
-።:
+:::warning
+Warning It is possible to enter the preview mode with or without a logged in user session in Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+:::
 
-<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700">
+<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" />
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon takes you to the [differences view](/en/platform/channels/sites.html#review-and-joint-publication) in which you can compare the differences between multiple versions of your templates.
 
 By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
-::: tip Tip
-Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved so that the most recent twenty backups can be compared, restored or used for a rollback. For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section .
+::: tip
+Tip Every time you publish a new version, the version that gets replaced now becomes a backup version. By default, up to 20 backups are saved so that the most recent twenty backups can be compared, restored or used for a rollback. For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section .
 :::
 
-**Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Displays a sidebar with a search box. You can search any text inside the editable version of the templates.
+**Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Displays a sidebar with a search box.
 
-<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
+<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" />
 
 **Show activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Displays a sidebar with the activity history and template comments.
 
@@ -72,50 +72,50 @@ Snippets are pieces of code that can be created, modified, and reused. Next to e
 
 You can add custom snippets at the bottom of the snippets tab, by clicking on the **+ Add a snippet** button.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
+<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" />
 
-::: tip Tip
-In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name (i.e. **"front_css"** or **"library_js"**). Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
+::: tip
+Tip To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/liquid-markup.html).
 :::
 
-::: tip Tip
-All elements of the Template Builder use Liquid as a templating engine.
+::: tip
+Tip All elements of the Template Builder use Liquid as a templating engine.
 
-For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
+Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/docs/channels/liquid-markup.html)
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
 
-<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700">
+<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" />
 
-**Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
+**Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
 
-::: tip Tip
-For more information on the functionality of the Asset Manager, go to the [Asset Manager](/docs/content/asset-manager.html).
+:::tip
+Tip Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/es/docs/content/asset-manager.html)
 :::
 
 **Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
 
-<img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
+<img src="/assets/img/channels/template_builder/keywords.jpg" width="400" />
 
 **Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
 
-<img src="/assets/img/channels/template_builder/snippets.jpg" width="300">
+<img src="/assets/img/channels/template_builder/snippets.jpg" width="300" />
 
-**Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
+**Changes**: A list of every "Saved" state of a template since it was last published. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
 
-<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
+<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" />
 
-::: tip Tip
-If you publish a new version of your templates, this list of changes resets and erases all saved states. This is because the new editable version now matches the version you just published. Saving new changes adds new saved states until the next time you publish.
+::: tip
+Tip For more information on the functionality of the Asset Manager, go to the [Asset Manager](/docs/content/asset-manager.html).
 :::
 
-::: tip Tip
-Saved states exist for every template. This means that while some templates may have changes, others may not. Selecting a previous saved state of any individual template only affects that template and not any of the other templates.
+::: tip
+Tip The "Load templates" action does not modify the editable templates that are already in the Template Builder. It only restores those in the Themes Gallery.
 :::
 
-::: tip Tip
-If an earlier version of your templates is restored, you can access the saved states of each template of that restored version. You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning)
+::: tip
+Tip If an earlier version of your templates is restored, you can access the saved states of each template of that restored version. You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning)
 :::
 
 You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> Reset All". If you want these reset changes to show up in the front end, you must publish them.
@@ -134,12 +134,10 @@ At the top of this view, you can find a few useful actions:
 - **Reset ** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Like the reset action of the template builder, this action restores all editable templates to their original versions.
 - **Load templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: In some cases, after complex migrations, there may be some unmodified templates that could be lost and you may not see them in the template list of the Template Builder. This action retrieves those templates from the original theme and allows you to recover them.
 
-::: tip Tip
-The "Load templates" action does not modify the editable templates that are already in the Template Builder. It only restores those in the Themes Gallery.
+In case it is not enabled, the URL will be in the form `account_url/site_host`.
 :::
 
-::: tip Tip
-When you create a theme from a site or channel, that theme becomes available to all other sites in your account. This means you can create a base theme and then use that theme to rapidly build new sites.
+For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
 :::
 
 ## Error views
@@ -161,12 +159,12 @@ In order to automatically display [content](/en/platform/content/) on a site, yo
 
 To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called **Custom** and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to.
 
-:::warning Warning
-The name of the view is the route (URL) relative to the site with the content you want to show. For this reason, you have to be careful when naming your views.
+:::warning
+Warning The name of the view is the route (URL) relative to the site with the content you want to show. For this reason, you have to be careful when naming your views.
 :::
 
-:::tip Tip
-You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
+:::tip
+Tip You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
 :::
 
 When modifying a custom view, you can use Liquid and the `entry` object. For example: <span v-pre>`{{ entry.published_at | format_date }}`</span>
@@ -189,24 +187,25 @@ A basic example of Liquid + HTML code that you can use to get started in these v
 </div>
 ```
 
-::: tip Tip
-To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/liquid-markup.html).
+:::tip
+Tip Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
 :::
 
 If you want to display the view with the values of the entry you're working on, the following requirements must be met:
 
-1. The view must be created and published. 
-1. The URL being accessed is of type `site_url/custom_view_name/entry_slug`.
+1. The view must be created and published.
+1. The URL that is being accessed is of type `site_url/custom_view_name/entry_slug`.
 1. The `custom_view_name` is the name of the content view you created.
-1. The URL matches the name of the view you just created. 
-1. An entry already exists in the language of the site. 
+1. The URL matches the name of the view you just created.
+1. An entry already exists in the language of the site.
 1. The slug of the input is `entry_slug`.
 
-:::tip Tip
+:::tip
+Tip
 
-To find the form of the URL, in case a custom domain is enabled, you must go to ``Site Configuration > Domains``.
+To find the form of the URL, in case a custom domain is enabled, you must go to `Site Configuration > Domains`.
 
-In case it is not enabled, the URL will be in the form `account_url/site_host`.
+En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
 :::
 
 ## Custom Layouts
@@ -369,7 +368,7 @@ The tasks you must cover with these snippets are:
 
 ### Intercept requests to include a token
 
-``` js
+```js
 //global variable that represents an axios instance that will be in charge of making the service requests
 var axios_api=axios.create ();
   axios_api.defaults.baseURL='API URL';
@@ -405,10 +404,9 @@ axios_auth.interceptors.request.use (resetIdleTime);
 axios_api.interceptors.request.use (appendTokenToRequest, errorRequest);
 ```
 
-
 ### A session controller
 
-``` js
+```js
 //will be in charge of raising the warning modality that will warn the close of the session, this variable will return a promise that will be effective if you click on the Hold Session button and will issue a reject promise in the case of selecting the button with the refusal to continue
 var modalConfirm=function () {
   return new Promise (function (resolve, reject) {
@@ -509,19 +507,14 @@ var sessionManager={
         });
     } else {
       if (($ ("# session-modal"). data ("bs.modal") || {}) ._ isShown) {
-        $ ("# session-modal"). modal ("hide");
-      }
-    }
-  }
-};
+        $ ("# session-modal").
 ```
-
 
 ### A modal window that informs the user that their session will expire
 
 This should be the modal to activate in the previous step with bootstrap for handling the warning modal.
 
-``` html
+```html
 <div
   id="session-modal"
   class="modal fade"
@@ -539,7 +532,7 @@ This should be the modal to activate in the previous step with bootstrap for han
       <div class="modal-body text-center">
         <p>
           Your session will expire in <span id="expiration-time"> </span> seconds.
-        </p>
+        </p>
         <p> Do you want to keep your session? </p>
       </div>
       <div class="modal-footer">
