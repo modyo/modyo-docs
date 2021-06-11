@@ -6,10 +6,10 @@ search: true
 
 Welcome to the Modyo documentation. We hope to cover all relevant topics related to the platform here. You will find descriptions of every user interface, best practices when interacting with the platform, clear use cases, and more.
 
-We have designed the Modyo documentation as a navigation guide (from start to finish) or as a tool to resolve a specific query. The contents within the documentation are interrelated to facilitate understanding.
+We have designed the Modyo documentation to be navigated as a guide (from start to finish) or resolve a specific query. The contents within the documentation are interrelated to each other in order to facilitate the understanding of these.
 
-:::tip Past versions
-The documentation on this site applies to the latest version (9.1). To access documentation for previous version (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
+:::tip
+Past versions The documentation on this site applies to the latest version (9.1). To access documentation for previous version (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
 :::
 
 ### What is Modyo?
@@ -48,7 +48,6 @@ If you have any additional questions regarding the Modyo Platform, visit our [of
 
 To use Modyo, you only need to have a supported Web browser. The entire product interface can be accessed using its [Web Console](/en/platform/core/the-modyo-interface.html).
 
-:::tip Compatible browsers
-Modyo is compatible with the latest versions of Google Chrome, Firefox and Microsoft Edge.
-If you have pending updates, we recommend that you update your browser.
+:::tip
+Compatible browsers Modyo is compatible with the latest versions of Google Chrome, Firefox and Microsoft Edge. If you have pending updates, we recommend that you update your browser.
 :::
