@@ -16,29 +16,29 @@ In the Types section of a space, you can find a green **+ New** button at the to
 
 Below, you can see the Type search bar, which will allow you to filter by any word that is in the Name field.
 
-Then, you will find the table with the Types that have already been created, which will be sorted by default according to the updated date and time, starting from the most recent item back.
+Then, you will find the table with the Types already created, which will be sorted by default according to the updated date and time, starting from the most recent item back.
 
 To reorder it, you just need to click on the symbols on one side of each category.
 
-There are four categories by which you can reorder:
+The categories by which you can reorder are four:
 
 - **Name**
 - **UID**
 - **Creation Date**
-- **Updated on** Date
+- **Fecha de Actualización**
 
 If you want to enter any Type, you must click on its Name to open the corresponding editor.
 
 ## Create a Type
 
-<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
+<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450" />
 
 To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
 
-:::tip Tip
-It is a good practice to include the format of what will be published within the UID, such as videos, posts, etc. 
+:::tip
+Tip It is a good practice to put within the UID, the format of what will be published as they are, for example, videos, posts, etc.
 
-By doing so, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
+Thus, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
@@ -51,8 +51,8 @@ This interface is where we populate our types with the correct fields we need ba
 
 ## Fields
 
-::: tip Tip
-The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>.
+::: tip
+Tip The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>.
 
 For more information go to the [API reference](/en/platform/content/public-api-reference.html)
 :::
@@ -120,10 +120,10 @@ Allows you to add a date picker. You can restrict the values of dates that can b
 
 ### Location
 
-Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand.
+Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand. Estas áreas de administración no son estándar y dependen de cada país. En el caso de Chile estas son: Región, Provincia, Comuna y Ciudad.
 
-:::warning Attention
-For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
+:::warning
+Attention For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
 
 * Maps JavaScript API
 * Places API
@@ -157,10 +157,10 @@ In this tab, you can see the name of the type, along with its UID. The UID is im
 - **Reindex type**: Allows you to reindex the model if you encountered a problem with your public API.
 - **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
 
-::: warning Warning
-When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
+::: warning
+Warning When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
 :::
 
-::: warning Warning
-Note that depending on the [cache settings you have in your space](/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
+::: warning
+Warning Note that depending on the [cache settings you have in your space](/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::
