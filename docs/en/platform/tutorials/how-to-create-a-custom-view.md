@@ -2,153 +2,153 @@
 search: true
 ---
 
-# Creating a Content View
+# Creación de una Vista de Contenido
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels] (/en/platform/channels) where we will create a view to deploy our created entries in [Modyo Content] (/en/platform/content).
+Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) donde crearemos una vista para poder desplegar nuestras entradas creadas en [Modyo Content](/es/platform/content).
 
-The link between Content and Channels is one of the most important functionalities when it comes to having dynamic sites and easy to manage by anyone.
+El enlace entre Content y Channels, es una de las funcionalidads más importantes a la hora de tener sitios dinámicos y fáciles de administrar por cualquier persona.
 
-In this tutorial we will continue to use the fictitious brand “Dynamic Bank”, but now we will focus on the detail of the benefits.
+En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocaremos en la viste detalle de los beneficios.
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" />
 
-<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">View Figma design</a>
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">View Design Figma</a>
 
-## Prerequisite
+## Prerequisites
 
-To start this tutorial we must have completed the following tutorials: [Dynamic Bank Content] (/en/platform/tutorials/how-to-create-content) and [Creation Home Dynamic Bank] (/en/platform/tutorials/how-to-create-home). And as in the previous tutorials you should have knowledge about HTML, CSS, JS and the Modyo platform.
+Para comenzar este tutorial debemos haber completado los siguientes tutoriales: [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home). Y al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
 
-## Step 1: Add New Fields to Benefits
+## Paso 1: Agregar nuevos campos a los Beneficios
 
-In the Content Creation Tutorial, we created the [Space] (/en/platform/content/space) Bank, the [Type] (/en/platform/content/types) Benefits, and the [Enries] (/en/platform/content/entries). We will now use this Type, but adding the necessary fields to generate its detail according to the Figma design.
+En el Tutorial de creación de contenido, habíamos creado el [Space](/es/platform/content/space) Bank, el [Type](/es/platform/content/types) Benefits y las [Entries](/es/platform/content/entries). Ahora utilizaremos este Type, pero añandiendo los campos necesarios para generar su detalle según el diseño del Figma.
 
-To modify the Type <b> Benefits </b> we will enter the Content module, select our space and once inside, enter Types and select the corresponding Type. To the existing fields (Cover and Excerpt) we will add the following fields:
+Para modificar el Type <b>Benefits</b> vamos a ingresar al módulo de Content, seleccionar nuestro space y una vez ya dentro, ingresamos a Types y seleccionamos el Type correspondiente. A los campos ya existentes (Cover y Excerpt) vamos a agregar los siguientes campos:
 
- <table> 
- <tr> <th style="text-align: left;"> Field </th> <th style="text-align: left;"> Name </th> </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Short description
- </td> 
- </tr> 
- <tr> 
- <td> 
- Asset
- </td> 
- <td> 
- Logo
- </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Description
- </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Commercial terms
- </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Validity
- </td> 
- </tr> 
- <tr> 
- <td> 
- Locations
- </td> 
- <td> 
- Location
- </td> 
- </tr> 
- </table> 
+<table>
+<tr><th style="text-align: left;">Field</th> <th style="text-align: left;">Name</th></tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Short description
+  </td>
+</tr>
+<tr>
+  <td>
+    Asset
+  </td>
+  <td>
+    Logo
+  </td>
+</tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Description
+  </td>
+</tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Commercial terms
+  </td>
+</tr>
+<tr>
+  <td>
+    Multiline text
+  </td>
+  <td>
+    Validity
+  </td>
+</tr>
+<tr>
+  <td>
+    Locations
+  </td>
+  <td>
+    Location
+  </td>
+</tr>
+</table>
 
-## Step 2: Fill fields in an entry
+## Paso 2: Llenar campos de una entrada
 
-After we have our Type with all the fields we need, we will fill in an entry so we can use it as an example.
+Luego de tener nuestro Type con todos los campos que necesitamos, vamos a completar una entrada para poder utilizarla de ejemplo.
 
-For this case we will use the Dynamic Cine entry:
+Para este caso usaremos la entrada Dynamic Cine:
 
- <table> 
- <tr> <th style="text-align: left;"> Field </th> <th style="text-align: left;"> </th> </tr> 
- <tr> 
- <td> 
- Short description
- </td> 
- <td> 
- 40% off tickets every Friday.
- </td> 
- </tr> 
- <tr> 
- <td> 
- Logo
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- Description
- </td> 
- <td> 
- Enjoy 40% tickets for the best Dynamic Cinema billboard every Friday, take advantage of this exclusive benefits for Dynamic Bank customers Paying with your Credit or Debit Cards.
- </td> 
- </tr> 
- <tr> 
- <td> 
- Commercial terms
- </td> 
- <td> 
- Benefit is valid for Dynamic Bank customers when paying with their Credit or Debit Cards on Friday tickets with a maximum of 8 daily tickets per holder customer.
- </td> 
- </tr> 
- <tr> 
- <td> 
- Validity
- </td> 
- <td> 
- From January 1 to December 31, 2021
- </td> 
- </tr> 
- <tr> 
- <td> 
- Location
- </td> 
- <td> 
- Add location example
- </td> 
- </tr> 
- </table> 
+<table>
+<tr><th style="text-align: left;">Field</th> <th style="text-align: left;"></th></tr>
+<tr>
+  <td>
+    Short description
+  </td>
+  <td>
+    40% de decuento en entradas todos los Viernes.
+  </td>
+</tr>
+<tr>
+  <td>
+    Logo
+  </td>
+  <td>
+    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+</tr>
+<tr>
+  <td>
+    Description
+  </td>
+  <td>
+    Disfruta todos los Viernes de un 40% en entradas para la mejor cartelera de Dynamic Cine, aprovecha este beneficios exclusivo para clientes Dynamic Bank Pagando con tu Tarjetas crédito o débito.
+  </td>
+</tr>
+<tr>
+  <td>
+    Commercial terms
+  </td>
+  <td>
+    Beneficio válido para clientes Dynamic Bank al pagar con su Tarjetas de Crédito o Débito en entradas para día viernes con un máximo 8 entradas diarias por cliente titular.
+  </td>
+</tr>
+<tr>
+  <td>
+    Validity
+  </td>
+  <td>
+    Del 1 de Enero al 31 de Diciembre del 2021
+  </td>
+</tr>
+<tr>
+  <td>
+    Location
+  </td>
+  <td>
+    Agregar location ejemplo
+  </td>
+</tr>
+</table>
 
-Remember to post your changes so they are reflected.
+Recuerda publicar tus cambios para que se vean reflejados.
 
-## Step 3: Create Custom Benefit View
+## Paso 3: Crear Custom View de Beneficios
 
-Once our content is ready, we will develop your [Custom View] (/es/platform/channels/templates.html #vistas -for-content) within our site, in order to generate dynamic Pages connected to Content.
+Una vez listo nuestro contenido, vamos a desarrollar su [Custom View](/es/platform/channels/templates.html#vistas-para-contenido) dentro de nuestro sitio, para así generar Pages dinámicas conectadas a Content.
 
-For this, we will re-enter Templates within our site, and in the Views section in the Custom section we click on <b> + </b>.
+Para esto, volveremos a ingresar a Templates dentro de nuestro sitio, y en la sección Views en el apartado Custom hacemos click en el <b>+</b>.
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;" />
 
-When you follow the panel we must enter a Path, which is the url that will have nested our content, which in our case will be <b>benefit</b>, and select our Space <b>Bank</b> and Type <b>Benefits</b>.
+Al abirse el panel debemos ingresar un Path, que es la url que tendrá anidado nuestro contenido, que en nuestro caso será <b>beneficio</b>, y seleccionamos nuestro Space <b>Bank</b> y Type <b>Benefits</b>.
 
-To make it look like in our design, we're going to copy the following HTML replacing the code that comes as an example.
+Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML remplazando el código que viene de ejemplo.
 
 ```html
 <div class="mb-5 mb-md-0 pb-5 pb-md-0" id="hero">
@@ -260,22 +260,22 @@ To make it look like in our design, we're going to copy the following HTML repla
 </style>
 ```
 
-You've already created your first Custom View connected to a Modyo Content Space. With it we can enter an Entry from our site and also preview the work from Modyo Content.
+Ya creaste tu primer Custom View conectada a un Space de Modyo Content. Con ella podremos ingresar a una Entry desde nuestro sitio y además previsualizar el trabajo desde Modyo Content.
 
-## Step 4: Preview Entires in Content
+## Paso 4: Previsualizar entries en Content
 
-Now that we already have our Space and Type associated with a site, we will be activated a new feature, the [Preview mode on a site] (/es/platform/content/entries.html #vista -previous). To access the preview mode we have to click on the “eye” icon in the top action bar:
+Ahora que ya tenemos nuestro Space y Type asociados a un sitio, se nos activará una nueva funcionalidad, el [Modo vistra previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa tenemos que hacer click en el ícono del "ojo" en la barra superior de acciones:
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;" />
 
-Within the modal click on <b> Preview on site </b> and select the site where we did the custom view inside the dropdown:
+Dentro del modal hacer click en <b>Preview on site</b> y seleccionar el sitio donde hicimos la custom view dentro del dropdown:
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;" />
 
-Selecting it in a new tab will open the preview of the entry on the site, so that you can review the changes to the site.
+Al seleccionarlo en una nueva pestaña se nos abrirá el preview de la entrada en el sitio, para que se pueda ir revisando los cambios en el sitio.
 
 ## Opinion
 
-Congratulations! You have finished the third course of the Modyo tutorials series.
+¡Felicidades! Haz finalizado el tercer curso de la serie de tutoriales de Modyo.
 
-In this tutorial we perform one of the main tools that Modyo delivers when it comes to maintaining your digital channels, adding an intermediate layer to review the work being developed in [Modyo Content] (/en/platform/content) and generating dynamic Pages connected to our sites on [Modyo Channels] (/en/platform/channels) .
+En este tutorial realizamos una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregando una capa intermedia para poder revisar el trabajo que se está desarrollando en [Modyo Content](/es/platform/content) y generando Pages dinámicos conectados a nuestros sitios en [Modyo Channels](/es/platform/channels).
