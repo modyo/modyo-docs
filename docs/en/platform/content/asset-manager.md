@@ -13,24 +13,24 @@ You can access the Asset Manager in one of two ways. The first way is integrated
 
 #### Rich Text
 
-<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0" />
 
 #### Multiline
 
-<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0" />
 
 #### Assets Selector
 
-<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0" />
 
 The second one is directly through the Asset manager tool found in the Content section.
 
-<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0" />
 
 
 ## About the interface
 
-<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" />
 
 The Asset manager interface displays a list of all the files we have within the platform.
 
@@ -38,36 +38,36 @@ In the upper right part of the screen you can see the percentage of space used c
 
 The list has three different filters for useful file searching.
 
-<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0" />
 
 **Extensions**: Use this to filter all files of the same type within the platform (the default list displays all uploaded files).
 
 **Tags**: This filter allows you to display all files that match all selected tags.
 
-:::tip Tip
-If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list. 
+:::tip
+Tip If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list.
 
 Now, it will appear as soon as you select the first item (by clicking on the checkbox in the first column).
 
 If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've selected.
 
-<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0" />
 
 :::
 
 **Search bar**: With the search bar, the manager will show you all files with titles or metadata that match your search terms. This also includes searches for specific file extensions, tags, and the names of users who uploaded a file.
 
-::: tip Tip
-Modyo displays 30 files at a time, and this value cannot be updated.
+:::tip
+Tip Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predeterminada y no es posible cambiarlo.
 :::
 
 Each file listed in the main view shows the following information and attributes:
 
-<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0" />
 
 Attributes with arrows can be sorted by either ascending and descending order. The default sort order **is the file upload date**.
 
-**Preview**: Image files display small thumbnail previews. Non-image files do not use this feature.
+**Preview**: Image files display small thumbnail previews. Si no lo es, este espacio aparecerá en blanco.
 
 **Name**: File name with the extension included. Ordering by this field sorts all files alphabetically.
 
@@ -84,17 +84,17 @@ The lower right corner lists the pagination of all your account files.
 
 ## File Properties
 
-<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" />
 
 You can upload any file type to the platform, without no filetype exclusions.
 
 However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
 
-To access the properties of a file, click on its name to open a modal where you can edit the file's properties.
+Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. De esta manera, se levanta un modal en el que puedes editar cada una de las propiedades.
 
 ## Edit a file
 
-<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0" />
 
 You can find and/or edit the following in the file properties editor:
 
@@ -102,13 +102,13 @@ You can find and/or edit the following in the file properties editor:
 
 **Liquid Tag**: Use this tag within the platform to reference the file through Liquid as opposed to it's URL.
 
-::: warning Warning
-Neither the URL nor the Liquid Tag is possible to change through Modyo.
+::: warning
+Warning Neither the URL nor the Liquid Tag is possible to change through Modyo.
 :::
 
 **Title**: Shows the title of the file. This section is different from the file name, which cannot be changed.
 
-**Alternative text**: Shows the ```alt text``` of the element. (Only applies to images and videos).
+**Alternative text**: Shows the `alt text` of the element. (Only applies to images and videos).
 
 **Description**: Description of the element. It is good practice to write a small text that refers to the image.
 
@@ -126,17 +126,17 @@ If you want to close the window and return to the Manager interface, click on th
 
 If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, it will display a new window where you can select a new file.
 
-<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0" />
 
 ## Edit an image
 
-<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" />
 
 To facilitate the handling of images within the platform, **Modyo includes an image editor** that allows you to make changes to your images.
 
 One of the changes you can make is to edit the image measurements. To do this, click on the **pencil** icon found in the "Update information" window.
 
-This opens a window with two views that display the original image and a preview of the edited image.
+Tras ello, se despliega otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
 
 On the left side of the image editor are three options to edit the image size:
 
@@ -146,8 +146,8 @@ On the left side of the image editor are three options to edit the image size:
 
 The left side displays the original size of the image and the size in pixels of the crop edit.
 
-::: tip Tip
-There are two ways to change the view and cut the image with the cursor:
+::: tip
+Tip There are two ways to change the view and cut the image with the cursor:
 
 - **Zoom:** Use the mouse scroll to zoom in.
 - **Move background**: Double click outside the clipping area and drag the background.
@@ -159,15 +159,15 @@ After cropping an image, if you want to restore it to its original dimensions, y
 
 To delete a file, click on the Delete icon, located in the upper right corner of the image preview in the "Update information" window.
 
-::: warning Warning
-This action is irreversible, and any content using this file will display a broken link.
+::: warning
+Warning You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
 :::
 
 ## Upload a file
 
-<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" />
 
-There are two ways to upload a file in **Modyo**. The first way is in the context of working with content. This can be either in the Content editor with an asset field, or working in the Template or Widget Builder to load files as necessary. The second way is through the Asset Manager in the Content section.
+There are two ways to upload a file in **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
 To upload a file, click on the **+ New** button, located at the top of the screen.
 
@@ -176,8 +176,8 @@ This action opens a new window that allows you to upload files in two ways:
 - **Drag & Drop**: Drag from your computer's file browser to the window
 - **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
-::: warning Warning
-You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
+:::warning
+Atención Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
 
 As a way to protect the security of the Modyo platform, there is a file size limit, depending on the file type. These limits are:
