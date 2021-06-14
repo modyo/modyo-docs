@@ -30,7 +30,7 @@ Attention You can preview widgets as a user without a session or with a Modyo se
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon opens the [differences view](/en/platform/channels/sites.html#review-and-joint-publication) in which you can see the differences between multiple versions of a widget.
 
-By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well. Si este ícono no aparece, entonces no hay ninguna versión publicada de este widget.
+By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well. If this icon does not appear, then there is no published version of this widget.
 
 **Activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: This displays a sidebar with the widget's activity history and comments.
 
@@ -58,7 +58,7 @@ Tip Archived widgets do not appear in the main widget list or in the Custom widg
 Once a widget is published, it is available as a custom widget in the [page builder.](/en/platform/channels/pages.html)
 
 :::tip
-Tip Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/key-concepts.html#versionado)
+Tip To learn more about the publishing flow, check out the [Versioned.](/en/platform/core/key-concepts.html#versioned) section.
 :::
 
 
@@ -68,7 +68,7 @@ In the main work area you can see the following:
 - **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can also upload new files from this modal.
 - **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
 - **Snippets**: Displays a list of custom snippets where you can copy their reference code and insert them in your widget.
-- **Changes**: A list of every "Save" state of this widget since it was last published. Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
+- **Changes**: A list of every "Save" state of this widget since it was last published. Clicking on a sub-version changes the content of the tab to the content of the clicked sub-version.
 
 :::warning
 Warning This is an experimental feature and it may be subject to changes.
