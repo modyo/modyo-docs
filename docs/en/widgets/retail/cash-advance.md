@@ -14,9 +14,9 @@ Through this widget, customers can select different options according to their r
 modyo-cli get modyo-widgets-retail-cash-advance
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/personas/avance-en-efectivo)
+[Open in new tab](https://widgets.modyo.com/retail/cash-advance)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/avance-en-efectivo" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"></p> 
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/cash-advance" width="100%"  frameBorder="0" style="min-height:670px;overflow:auto;margin-top:20px;"></p> 
 
 <p spaces-before="0">
   The customer can select the desired options for their cash advance and payment amount to run the simulation.
