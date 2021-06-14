@@ -12,9 +12,9 @@ This widget allows customers to simulate a mortgage loan and start the applicati
 modyo-cli get modyo-widgets-retail-mortgage-loan
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/personas/creditos-hipotecarios)
+[Open in new tab](https://widgets.modyo.com/retail/mortgage-loan)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/creditos-hipotecarios" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/mortgage-loan" width="100%"  frameBorder="0" style="min-height:900px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
