@@ -46,7 +46,7 @@ Tip Please note that for the meta tags to take effect on your page, you must pub
 **Main action**: The green button in the upper right. This button can take different forms:
 
 - Save: Allows you to save all changes made to the page.
-- Enviar a revisión: Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
+- Send to revision: Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
 - Publish: If the page is approved, and if all the changes have been saved, you can got to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes in across the site.
 
 :::tip
@@ -153,5 +153,5 @@ Tip If you want to add a meta tag to all your pages simultaneously, you can do t
 To access the list of meta tags on the page, you must use the <span v-pre>`{{ page.meta_tags }}`</span> Liquid drop. We recommend that you go through the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
 
 :::tip
-Tip Si quieres añadir un meta tag común para todos los pages en una sola acción, dirígete a la [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
+Tip If you want to add a common meta tag for all pages in a single action, go to the [site settings, SEO section](/en/platform/channels/sites.html#seo).
 :::
