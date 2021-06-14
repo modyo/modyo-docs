@@ -12,9 +12,9 @@ In the Stock widget, clients can find all the information about available stocks
 modyo-cli get modyo-widgets-investments-stocks
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/acciones)
+[Open in new tab](https://widgets.modyo.com/investments/stocks)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/acciones" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/stocks" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
