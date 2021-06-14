@@ -39,7 +39,7 @@ RGB: 14 189 116</p>
 
 ## Secondary Color
 
-Nuestros colores secundarios y que suelen acompañar a la marca en distintos soportes, son el azul.Deben usarse con moderación a lo largo de la ilustración, la fotografía y el producto para mantener el significado y la potencia.
+Our secondary colors, which often accompany the brand on different media, are blue.They should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
 
 <table class="no-border">
 <tr>
