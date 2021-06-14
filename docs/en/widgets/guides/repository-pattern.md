@@ -41,9 +41,9 @@ To consume data with Vue.js using the repository design pattern that helps us un
    cd src && mkdir repositories
    ```
 
-#### 2. Create a "clients" folder (Could have any name, but is recommended and use _clients_)
+#### 2. Create a "clients" folder (It could have any name, but we recommend using _clients_)
 
-   I will create a "clients" folder inside the "repositories" folder, basically what will be inside this folder are the different HTTP Clients you might want to use, for example if you want to use **Modyosdk**, Axios, Vue-resource etc.
+   We can create different files for each Customer we use, for example, one for Axios and another for **Modyosdk**
 
    ```sh
    cd repositories && mkdir clients
@@ -53,13 +53,13 @@ To consume data with Vue.js using the repository design pattern that helps us un
 
    We can create different files for each Customer we use, for example, one for Axios and another for **Modyosdk**
 
-   If you are going to use multiple HTTP Clients that share information for their configuration, you can create a config.js file
+   For **ModyOClient** and using [**ModyosDK**](/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
 
    ```sh
    touch ModyoClient.js && touch ApiClient.js
    ```
 
-   For **ModyOClient** and using [**ModyosDK**](/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
+   For **Apiclient** and using [**Axios**](https://github.com/axios/axios), the configuration is as follows:
 
    ```js
    import { Client } from "@modyo/sdk";
@@ -100,9 +100,9 @@ To consume data with Vue.js using the repository design pattern that helps us un
 
 #### 4. Create the Repositories
 
-   In these files are the different API operations that will be done within a particular feature of the Widget.
+   These files contain the different API operations that will be done within a particular feature of the Widget.
 
-   For example, to consume POSTS with the ModyosDK we create a file "PostRepository.js" inside the `repositories` folder and copy the following code.
+   For example, to consume POSTS with the ModyosDK, we create a file "PostRepository.js" inside the `repositories` folder and copy the following code.
 
    ```sh
    touch PostRepository.js
@@ -140,11 +140,11 @@ To consume data with Vue.js using the repository design pattern that helps us un
    In the above code we define and export all our API requests that we need
 
 :::tip
-Important We must import the corresponding HTTP Client file into all Repositories that need it. In this example "ModyoClient"
+Important We must import the corresponding HTTP Client file into all Repositories where it is required. In this example "ModyoClient"
 :::
 
 #### 5. Create the file "RepositoryFactory.js"
-   We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, this way it is easier to use them anywhere in our Widget.
+   In this file we paste the following code
 
    ```sh
    touch  RepositoryFactory.js
@@ -190,11 +190,11 @@ We've finished setting up our Repository Pattern. If you followed the steps you 
 
 ### How do we use our Repository Pattern?
 
-Since we're working with Vue.js, I'll show you how to use it in the Vue components and in the Vuex store.
+We create a component for the POSTS and import the repository as shown below
 
 #### In Vue Components (SFC)
 
-We create a component for the POSTS and import the repository as shown below
+In the file "actions.js" located in the Widget's "store" we paste the following
 
 ```vue
 <template>
