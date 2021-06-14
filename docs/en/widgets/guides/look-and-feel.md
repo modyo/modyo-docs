@@ -2,14 +2,14 @@
 search: true
 ---
 
-# Customizing Styles
+# Style Customization
 
-All Widgets in this catalog are based on a flat design, based on Bootstrap, waiting to be intervened and modified to adapt to the client's designs and guidelines. Remember that these Widgets are intended to be used as a base for the final product and not as a product itself.
+All Widgets in this catalog use a flat, minimal design based on Bootstrap, waiting to be adapted to a client's designs and guidelines. Remember that these Widgets are intended to be used as the basis for finished products and not as a products themselves.
 
-For both the style base, as well as the grid used in Widgets, [Bootstrap](https://getbootstrap.com/) is used in its version `4.5.x`, using to the maximum the helpers and classes that it includes. This way the number of custom styles in our Widgets is very low which makes your modification simple and easy.
+For both the style base and the grid used in Widgets, we use [Bootstrap](https://getbootstrap.com/) version `4.5.x`, which includes useful helpers and classes. This way the number of custom styles in our Widgets is very low, making them simple and easy to modify.
 
 :::tip
-To make the most of the potential of bootstrap we use **SCSS** as the **css** pre-processor which allows us to modify the default values of the variables used in bootstrap build.
+To make the most of Bootstrap's potential, we use **SCSS** as the **css** pre-processor, which allows us to modify the default variable values used in Bootstrap.
 :::
 
 ```html{1-2}
@@ -38,21 +38,21 @@ In the `src` folder of the project we will find a folder called `scss` that has 
 
 The `_theme.scss` file is used for:
 
-- Widget Global Styles
+- Global Widget Styles
 - Extend bootstrap using your mixins
 
 ```scss{2,3,8,11}
-//Example: We use the mixin bg-variant to create more background colors
+// Example: We use the mixin bg-variant to create more background colors
 @include bg-variant (".bg-tertiary", $tertiary, true);
 @include bg-variant (".bg-tertiary-10", $tertiary-10, true);
 
-//In these following examples we use the mixin button-variant that allows us to create new buttons with all their states
+// In these following examples we use the mixin button-variant that allows us to create new buttons with all their states
 .btn-tertiary {
- @include button-variant ($tertiary, $tertiary);
+  @include button-variant ($tertiary, $tertiary);
 }
 .btn-outline-tertiary {
- @include button-outline-variant ($tertiary, $white, $primary-80, $primary-80);
- color: $secondary-100;
+  @include button-outline-variant ($tertiary, $white, $primary-80, $primary-80);
+  color: $secondary-100;
 }
 ```
 
@@ -94,7 +94,7 @@ $border-radius: 1.35rem;
 
 ### Custom
 
-In the `custom.scss` file we import and give order to all the other stylesheets that we have in the**scss** folder along with the bootstrap base.
+In the `custom.scss` file we import and give order to all the other stylesheets that we have in the**scss** folder along with the Bootstrap base.
 
 ```scss{1}
 @import". /variables ";//always before bootstrap
@@ -106,12 +106,12 @@ In the `custom.scss` file we import and give order to all the other stylesheets 
 Order is important, **variables** always go before importing bootstrap.
 :::
 
-This**scss** file is imported into the `main.js` file of the project.
+This**scss** file is imported into the project's `main.js` file.
 
 ```js{4}
 import Vue from "vue";
 //...
-import "bootstrap"; // solo importa el javascript, no los estilos
+import "bootstrap"; // only import javascript, not the styles
 import "./scss/custom.scss";
 //...
 new Vue({
@@ -127,7 +127,7 @@ Important The `@import 'bootstrap'` of this file **only** imports bootstrap.js a
 
 ### Component Styles
 
-Some of the widget components have their own styles and these are written to the same component (`.vue`). This way we can define the scope of these styles at the component level without affecting other parts of the Widget using the `scoped` attribute.
+Some of the widget components have their own styles and these are written in the same component (`.vue`). By using the `scoped` attribute, we can define the scope of these styles at the component level without affecting other parts of the Widget.
 
 ```html{5}
 <template>...</template>
@@ -150,16 +150,16 @@ Some of the widget components have their own styles and these are written to the
 
 ### PurgeCSS
 
-When you're building a Widget with Bootstrap (or another style framework) you'll only use a small set of it, and many unused CSS styles will be included. This is where **PurgeCSS** comes into play. PurgeCSS analyzes your content and CSS files. It then matches the selectors used in your files with those of your content files and removes the unused selectors from your CSS, resulting in smaller CSS files.
+When you're building a Widget with Bootstrap (or another style framework) you'll likely only use a small portion of it, and many unused CSS styles could be included. This is where **PurgeCSS** comes into play. PurgeCSS analyzes your content and CSS files. It then matches the selectors used in your files to those in your content files, and removes the unused selectors from your CSS, resulting in smaller CSS files.
 
-Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we managed to remove those extra **bytes** that we don't need and optimize our Widgets. Excellent!
+Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we manage to remove those extra **bytes** that we don't need and optimize our Widgets. Excellent!
 
-::: danger PROBLEM! What about the **NO** styles declared in the content, but what **YES** are used in the Widget?
+::: danger PROBLEM! What happens to the styles **NOT** declared in the content, but that **ARE** used in the Widget?
 :::
 
-Sometimes we may encounter some style problems, for example when we use the Bootstrap modal component and the `modal-backdrop` style does not load since this element is created dynamically when you open the modal; or when we use external component libraries in our Widgets where the styles of that component have not been loaded and are not on site. This happens because **PurgeCSS** does not know where to read the contents of the external component.
+Sometimes we may encounter some style problems, for example when we use the Bootstrap modal component and the `modal-backdrop` style does not load since this element is created dynamically when you open the modal; or when we use external component libraries in our Widgets where the styles have not been loaded and are not on the site. This happens because **PurgeCSS** does not know where to read the contents of the external component.
 
-To include the styles that **PurgeCSS** has removed but we need on the site we need to declare them in a **PostCSS** configuration file. This file is located at the root of the Widget and is called **postcss.config.js**
+To include the styles that we need on the site but **PurgeCSS** has removed, we need to declare them in a **PostCSS** configuration file. This file is located at the root of the Widget and is called **postcss.config.js**
 
 ```js
 const PURGE_CSS = require("@fullhuman/postcss-purgecss");
@@ -197,7 +197,7 @@ if (IN_PRODUCTION) {
 
 In this file we can force **PurgeCSS** to include styles in 3 different ways:
 
-- Add the content file to the `content` property, in this way PurgeCss is layers to read the content and determine which styles should include.
+- Add the content file to the `content` property. This way PurgeCss is able to read the content and determine which styles it should include.
 
   ```js{6}
   // ...
