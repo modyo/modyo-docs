@@ -58,7 +58,7 @@ If you select one or more checkboxes that are on your screen, the button will on
 **Search bar**: With the search bar, the manager will show you all files with titles or metadata that match your search terms. This also includes searches for specific file extensions, tags, and the names of users who uploaded a file.
 
 :::tip
-Tip Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predeterminada y no es posible cambiarlo.
+Tip Modyo allows to display only 30 files at a time. This is set by default and cannot be changed.
 :::
 
 Each file listed in the main view shows the following information and attributes:
@@ -67,7 +67,7 @@ Each file listed in the main view shows the following information and attributes
 
 Attributes with arrows can be sorted by either ascending and descending order. The default sort order **is the file upload date**.
 
-**Preview**: Image files display small thumbnail previews. Si no lo es, este espacio aparecerá en blanco.
+**Preview**: Image files display small thumbnail previews. If it is not, this space will be blank.
 
 **Name**: File name with the extension included. Ordering by this field sorts all files alphabetically.
 
@@ -90,7 +90,7 @@ You can upload any file type to the platform, without no filetype exclusions.
 
 However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
 
-Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. De esta manera, se levanta un modal en el que puedes editar cada una de las propiedades.
+To access the file properties, click on the file name. In this way, a modal is raised in which you can edit each of the properties.
 
 ## Edit a file
 
@@ -136,7 +136,7 @@ To facilitate the handling of images within the platform, **Modyo includes an im
 
 One of the changes you can make is to edit the image measurements. To do this, click on the **pencil** icon found in the "Update information" window.
 
-Tras ello, se despliega otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
+After that, another window opens in which you will have two views. The original image and the preview of the edited image.
 
 On the left side of the image editor are three options to edit the image size:
 
@@ -167,7 +167,7 @@ Warning You can upload a maximum of 10 files at a time. If you need to upload mo
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" />
 
-There are two ways to upload a file in **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
+There are two ways to upload a file in **Modyo**. One of them is through the same section from which you work and the other is through the File Manager, which gives you the option to take any material from the local disk and upload it to the platform.
 
 To upload a file, click on the **+ New** button, located at the top of the screen.
 
@@ -177,7 +177,7 @@ This action opens a new window that allows you to upload files in two ways:
 - **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
 :::warning
-Atención Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
+Warning Modyo only allows the upload of 10 files at a time. If more elements are to be uploaded, it must be done in two or more batches.
 :::
 
 As a way to protect the security of the Modyo platform, there is a file size limit, depending on the file type. These limits are:
