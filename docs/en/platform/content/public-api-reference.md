@@ -712,7 +712,7 @@ The entries that you can see in section correspond to all the content sent throu
 
 There is a distinction at the application level between the filter types used to query content:
 
-Metadata (ej: Tags, Category, Fechas): Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata. Esto mientras sólo sea la Metadata lo que se esté consultando.
+Metadata (e. g. Tags, Category, Dates): Metadata (ex: Tags, Category, Dates): SQL searches using parameters with the format `meta.param_name` allow you to specify searches related to entry metadata. This is as long as it is only the Metadata that is being queried.
 
 - Tags: available in two ways
   - `meta.tags=tag_name`
@@ -736,7 +736,7 @@ For example, to get entries in the Spanish-Chile language (es_CL):
 
 ```plain
 Query string: GET .../posts/entries?locale=es-cl
-Header: Setear Accept-Language es-cl
+Header: Set Accept-Language es-cl
 ```
 
 ##### Operators
@@ -856,7 +856,7 @@ Warning To be able to access the URL to obtain a token, you must make sure you h
 :::
 
 :::warning
-Atención Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor.
+Warning It is necessary to obtain the content access token dynamically, since this token will change according to the targets to which the user belongs, and since the targets can be highly volatile, it is not advisable to store this value.
 :::
 
 The Content API query response with a delivery token is the same as the response you would receive without a delivery token, but will contain both the private content (without targets) and the restricted targeted content to which the requesting user belongs.
