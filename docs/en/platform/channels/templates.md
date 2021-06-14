@@ -79,7 +79,7 @@ Tip To learn more about how to use Liquid, go to [Liquid markup](/platform/chann
 ::: tip
 Tip All elements of the Template Builder use Liquid as a templating engine.
 
-Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/docs/channels/liquid-markup.html)
+For more information on what Liquid is and how to get the best out of it, check out the [Liquid Markup](/en/docs/channels/liquid-markup.html) page.
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
@@ -89,7 +89,7 @@ In the work area, under the tabs, you will find a bar with useful elements:
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. If you access the second tab, you can upload new files.
 
 :::tip
-Tip Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/es/docs/content/asset-manager.html)
+Tip For more information on File Manager benefits and features, go to [Asset Manager](/en/docs/content/asset-manager.html).
 :::
 
 **Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
@@ -186,7 +186,7 @@ A basic example of Liquid + HTML code that you can use to get started in these v
 ```
 
 :::tip
-Tip Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
+Tip To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup.html).
 :::
 
 If you want to display the view with the values of the entry you're working on, the following requirements must be met:
@@ -203,7 +203,7 @@ Tip
 
 To find the form of the URL, in case a custom domain is enabled, you must go to `Site Configuration > Domains`.
 
-En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
+If it is not enabled, the URL will be of the form `account_url/site_host`.
 :::
 
 ## Custom Layouts
