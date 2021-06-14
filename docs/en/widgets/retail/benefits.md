@@ -4,9 +4,9 @@ search: true
 
 # Benefits
 
-[Open in new tab](https://widgets-es.modyo.com/personas/beneficios)
+[Open in new tab](https://widgets.modyo.com/retail/benefits)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/beneficios" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/benefits" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
@@ -25,7 +25,7 @@ search: true
     </td>
     
     <td>
-      Give a list of promotions with automatic labeling by category. Displays the title of each promotion and its basic information. Quickly filter promotions by category or search for any promotion by name. Allows you to view promotions by location on the map and automatically calculates the distance to the nearest promotions using geolocation data.
+      The benefits summary shows a list of promotions and automatically labels them by category. Displays the title of each promotion and its basic information. It provides each promotion's title and basic information, and allows you to quickly filter by name or category. You can view promotions by location on the map, and it automatically calculates the distance to the nearest promotions using geolocation data.
     </td>
   </tr>
 </table>
