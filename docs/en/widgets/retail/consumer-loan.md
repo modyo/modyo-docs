@@ -12,9 +12,9 @@ Modyo also offers a widget that allows customers to simulate and apply for a per
 modyo-cli get modyo-widgets-retail-consumer-loan
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/personas/credito-de-consumo)
+[Open in new tab](https://widgets.modyo.com/retail/consumer-loan)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/credito-de-consumo" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/consumer-loan" width="100%"  frameBorder="0" style="min-height:1010px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
@@ -93,7 +93,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
     </td>
     
     <td>
-      Presents general information about the credit simulation performed. Includes total credit cost, amount of installments, quota value and respective interest rates.
+      This summary provides general information about the performed credit simulation. It includes total credit cost, amount of installments, quota value and respective interest rates.
     </td>
   </tr>
   
@@ -103,7 +103,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
     </td>
     
     <td>
-      Displays detailed credit simulation information. Includes liquid amount, taxes, insurance and expenses, among others.
+      This displays detailed credit simulation information. It includes net amount, taxes, insurance and expenses, among others.
     </td>
   </tr>
   
@@ -113,7 +113,7 @@ modyo-cli get modyo-widgets-retail-consumer-loan
     </td>
     
     <td>
-      Confirm the simulation and manage the consumer credit request with the institution.
+      The application confirms the simulation and manages the credit request with the institution.
     </td>
   </tr>
 </table>
