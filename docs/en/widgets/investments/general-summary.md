@@ -12,9 +12,9 @@ This widget allows clients see a consolidated overview of the growth of their as
 modyo-cli get modyo-widgets-investments-general-summary
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/resumen-general)
+[Open in new tab](https://widgets.modyo.com/investments/general-summary)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-general" width="100%"  frameBorder="0"  style="min-height:612px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/general-summary" width="100%"  frameBorder="0"  style="min-height:612px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
