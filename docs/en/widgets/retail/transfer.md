@@ -12,9 +12,9 @@ The Transfer widget allows customers to move money between their accounts or tra
 modyo-cli get modyo-widgets-retail-transfer
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/personas/transferencia)
+[Open in new tab](https://widgets.modyo.com/retail/transfer)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/transferencia" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"></p> 
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer" width="100%"  frameBorder="0" style="min-height:750px;overflow:auto;margin-top:20px;"></p> 
 
 <p spaces-before="0">
   This widget includes features for two similar products: Transfer to Third Party and Transfer between Accounts. Transferencia a Terceros y Transferencia entre Cuentas.
