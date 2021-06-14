@@ -113,7 +113,7 @@ This system is available for Widgets, Pages, Navigation, Templates and Content.
 
 ### Widgets vs Portlets
 
-#### General
+#### Editable
 
 The "Editable" version stores changes made to the item since its last publication or its creation if it has never been published.
 
