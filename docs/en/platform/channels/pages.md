@@ -74,7 +74,7 @@ In the right side section you will find three tabs:
 
 You can add them from the first tab of the Page builder. The available widgets are:
 
-- **HTML**: Allows you to enter HTML and CSS code without validations. No te permitirá ingresar código Javascript.
+- **HTML**: Allows you to enter HTML and CSS code without validations. No Javascript code allowed.
 - **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly. :::warning Warning The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
 - **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to display. To modify how these widgets look, you must do so in the [template builder](/en/platform/channels/templates.html), in the widgets section.
