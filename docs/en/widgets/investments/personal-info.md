@@ -4,10 +4,10 @@ search: true
 
 # Personal information
 
-This section of the platform allows the user to review and modify their personal data, subscribe to sending information to their email and know their Investor Profile.
+This section of the platform allows the user to review and modify their personal data, subscribe to email notifications, and get to know their Investor Profile.
 
 [Open in new tab](https://widgets.modyo.com/inversiones/personal-info)
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/personal-info" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/personal-info" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
@@ -26,7 +26,7 @@ This section of the platform allows the user to review and modify their personal
     </td>
     
     <td>
-      Allows you to verify and/or change user information. Deliver information about your account manager and how to contact you.
+      This allows the user to verify and/or change their information. It also provides their account manager's information and contact.
     </td>
   </tr>
   
@@ -36,7 +36,7 @@ This section of the platform allows the user to review and modify their personal
     </td>
     
     <td>
-      View the current Investor Profile and the date the survey was conducted. It allows to recommend what type of investment should be considered based on the current investor profile. It includes information associated with the survey, such as what is measured, why it is important, what should be the periodicity to conduct it, etc.
+      Users can view the current Investor Profile and the date the survey was conducted. It recommends what type of investment they should consider based on the current investor profile. It also includes information associated to the survey, such as what is measured, why it is important, how often it should be conducted, etc.
     </td>
   </tr>
   
@@ -46,17 +46,17 @@ This section of the platform allows the user to review and modify their personal
     </td>
     
     <td>
-      Allows you to make a password change and displays the necessary features for the new password (maximum and minimum length, characters, uppercase and lowercase, numbers, etc.).
+      This allows users to make password changes and displays the necessary features for the new password (maximum and minimum length, characters, uppercase and lowercase, numbers, etc.).
     </td>
   </tr>
   
   <tr>
     <td>
-      Subscription of email submissions
+      Subscription to emails
     </td>
     
     <td>
-      It allows you to subscribe to sending information about maps, reports, tax certificates and other documents.
+      This allows users to subscribe to receiving information about account statements, reports, tax certificates and other documents.
     </td>
   </tr>
 </table>
