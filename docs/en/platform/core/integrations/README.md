@@ -8,12 +8,12 @@ One of the features of Modyo to facilitate the interaction of other user systems
 
 Currently the platform is compatible with:
 
-- [Facebook](/es/platform/core/integrations/facebook.html)
-- [Google](/es/platform/core/integrations/google.html)
-- [\[LDAP\] (/es/platform/core/integrations/ldap.html)](/es/platform/core/integrations/ldap.html)
-- [SAML](/es/platform/core/integrations/saml.html)
-- [\[OAuth2\] (/es/platform/core/integrations/oauth2.html)](/es/platform/core/integrations/oauth2.html)
-- [\[OpenID Connect\] (/es/platform/core/integrations/oidc.html)](/es/platform/core/integrations/oidc.html)
+- [Facebook](/en/platform/core/integrations/facebook.html)
+- [Google](/en/platform/core/integrations/google.html)
+- [\[LDAP\] (/es/platform/core/integrations/ldap.html)](/en/platform/core/integrations/ldap.html)
+- [SAML](/en/platform/core/integrations/saml.html)
+- [\[OAuth2\] (/es/platform/core/integrations/oauth2.html)](/en/platform/core/integrations/saml.html)
+- [\[OpenID Connect\] (/es/platform/core/integrations/oidc.html)](/en/platform/core/integrations/oidc.html)
 
 Remember to have at hand all the data and certificates that are required of you before changing them or integrating a service, so that there are no problems with the general income of users.
 
