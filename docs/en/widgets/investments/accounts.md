@@ -4,17 +4,17 @@ search: true
 
 # Accounts
 
-The Accounts widget shows the detail of each investment account a user has, with relevant information in graphs and numbers. It also presents the account movements with the corresponding bank statements.
+With this widget you can see a summary of your bank accounts, download bank statements and see each transaction made in detail during certain periods of time.
 
 #### Installation:
 
 ```bash
-modyo-cli get modyo-widgets-investments-accounts
+modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/cuentas)
+[Open in new tab](https://widgets.modyo.com/retail/accounts)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/accounts" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
@@ -29,7 +29,7 @@ modyo-cli get modyo-widgets-investments-accounts
   
   <tr>
     <td>
-      Account Summary
+      Checking Account Summary
     </td>
     
     <td>
@@ -39,7 +39,7 @@ modyo-cli get modyo-widgets-investments-accounts
   
   <tr>
     <td>
-      Investment Account
+      View recent activity
     </td>
     
     <td>
@@ -49,11 +49,11 @@ modyo-cli get modyo-widgets-investments-accounts
   
   <tr>
     <td>
-      Account Settings
+      Account Statements
     </td>
     
     <td>
-      Allows the user to choose a name for the investment account and enable the option of receiving information by email like purchase/sale statements and confirmations (stocks, mutual funds, etc.).
+      Displays account statements from previous periods which can be expanded to show the transactions of each selected account statement, sorted by date.<br><br> Clients can also search within the displayed transactions.
     </td>
   </tr>
   
@@ -69,7 +69,7 @@ modyo-cli get modyo-widgets-investments-accounts
   
   <tr>
     <td>
-      Account Details
+      Account Statements
     </td>
     
     <td>
@@ -79,7 +79,7 @@ modyo-cli get modyo-widgets-investments-accounts
   
   <tr>
     <td>
-      Detailed Account Movements
+      Account Statements
     </td>
     
     <td>
