@@ -12,9 +12,9 @@ This widget exists so that clients can transfer funds between their investment a
 modyo-cli get modyo-widgets-investments-transfer
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/transferencia)
+[Open in new tab](https://widgets.modyo.com/investments/transfer)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/transferencia" width="100%"  frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/transfer" width="100%"  frameBorder="0"  style="min-height:680px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
