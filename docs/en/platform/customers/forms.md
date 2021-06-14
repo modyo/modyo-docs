@@ -38,7 +38,7 @@ The next section of the form properties contains the Form Options for what happe
 - **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/en/platform/customers/targets.html)
 
 ::: warning
-Warning If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Nombre, Apellido y Correo. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
+Warning If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Name, Last Name and Mail. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
 :::
 
 ::: warning
@@ -139,7 +139,7 @@ Atención From version 9.0.8 onwards, forms no longer have file-type questions, 
 You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
 
 ::: danger
-Peligro Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. This action is irreversible.
+Danger If your form is already activated and you already have answers, be very careful when deleting questions from it, because by doing so, you will be deleting the values of those answers that users have already submitted. This action is irreversible.
 :::
 
 ### Field Properties
