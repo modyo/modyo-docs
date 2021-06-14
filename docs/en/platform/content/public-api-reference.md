@@ -158,7 +158,7 @@ Once we have obtained this token, we must use it to authenticate ourselves to Gi
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
 
-[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 #### 3. Add the organization to your project
 
@@ -170,7 +170,7 @@ registry= https://npm.pkg.github.com/OWNER
 
 Where `OWNER` is the name of the organization that owns the package, in this case `modyo`.
 
-[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+[Github docs reference](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
 ### Usage
 
