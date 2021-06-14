@@ -23,11 +23,11 @@ You can also filter the view by other default filters that you can adjust depend
 You can also filter the list by six different attributes:
 
 - **Types**: Filter the list by any single type. (See [Types](/en/platform/content/types.html)).
-- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
+- **Status**: State in which the content is in the process of publication. In this case, there are four statuses: Draft, Published, Scheduled and Archived.
 - **Tags**: Filter by a selectable, searchable list of the current tags available in the account.
 - - **Locale**: Filter the list by a particular language.
 - **Translation**: This filter is associated to the selected language and filters by the translation status of the entries for that language. Ex: If an entry does not have a version in the selected language, it will be set to "Not translated".
-- **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
+- **Tags**: Tags available in the account. You can use the search bar inside the filter for tags in a simpler way.
 - **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
 ## Bulk actions
@@ -159,7 +159,7 @@ If we change the path, remember to change all links in any channel using it.
 :::
 
 ::: warning
-Warning If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category. ::: Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
+Warning If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category. ::: However, if there are entries assigned to that category, they are not deleted but are not assigned to any category. To reassign them to a category, it is necessary to perform the assignment again.
 :::
 
 ::: danger
@@ -184,6 +184,6 @@ Depending on how you are consuming the content, you will need to perform extra s
 
 Targeted content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
-Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the Private option in the entry's properties, then check the Enable targeting option, and select from the list of targets.
+To do this, it is possible to enable in the Entry that the content is visible to a specific group of your choice. With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the Private option in the entry's properties, then check the Enable targeting option, and select from the list of targets.
 
 To create a specific target, review the [Targets section](/en/platform/customers/targets.html).
