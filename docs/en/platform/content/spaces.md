@@ -58,7 +58,7 @@ Danger This option is irreversible, so you must be completely sure when executin
 
 ### Locales
 
-Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
+Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages. The change is useful in case you need to work with customized content and users with different languages.
 
 <img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600" />
 
