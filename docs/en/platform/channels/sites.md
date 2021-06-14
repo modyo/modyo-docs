@@ -13,8 +13,8 @@ Upon entering, you will see that there are 4 statuses:
 <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
 - **Enabled**: Default state of functioning online digital channels and newly created Sites.
-- **Oculto**: Sitios creados y habilitados que no aparecen en el listado de sitios del perfil de los usuarios. Sólo se pueden acceder si se cuenta con la URL del sitio.
-- **Desarrollo**: Sitios disponibles sólo para administradores de Modyo. Los usuarios que no tengan permisos de administrador no podrán ver estos sitios.
+- **Hidden**: Sites created and enabled that do not appear in the list of sites in the user's profile. They can only be accessed if you have the URL of the site.
+- **Development**: Sites available for Modyo administrators only. Users who do not have administrator permissions will not be able to view these sites.
 - **Disabled**: Sites that have been disabled.
 - **Copy**: Creates a copy of the site and all the published elements of it.
 
@@ -54,7 +54,7 @@ Within this section, you can configure the following data:
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
-- **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
+- **[Team Review](/es/platform/core/key-concepts.html)**
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
@@ -159,7 +159,7 @@ Warning If the code is not customized or saved, the site will not have the featu
 
 <img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
-SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. De una buena configuración depende si los usuarios llegan al sitio a través de ellos.
+SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Whether users reach the site through them depends on a good configuration.
 
 The options listed in this section help improve your SEO across a particular channel:
 
@@ -283,13 +283,13 @@ Modyo has [global variables](/en/platform/core/key-concepts.html#global-variable
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
-Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada sitio y así tendrán acceso a la escritura, revisión y/o publicación.
+To organize the work, Modyo allows you to select the team members who will work on each site and thus have access to writing, reviewing and/or publishing.
 
 To do this, the administrator who created the site must manually assign team members and their roles.
 
 To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
 
-You can modify the role of any of team member by clicking their name. Se levantará un modal, donde puedes seleccionar el nuevo rol. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
+You can modify the role of any of team member by clicking their name. A modal will pop up, where you can select the new role. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
 
 To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
@@ -298,11 +298,11 @@ The available roles are:
 - **Developer**: Can create, modify and submit pages, widgets, menu and templates for review.
 - **Developer CLI**: Can create, modify and submit pages, widgets, menu and templates for review. Can also push widgets to the platform from external applications.
 - **Reviewer**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them when the correct review conditions are met.
-- **Admin**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them without going through the validations of the team review if necessarty. Puede publicar sin pasar por las validaciones de la revisión en equipo. Admins can also modify site configurations.
+- **Admin**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them without going through the validations of the team review if necessarty. You can publish without going through team review validations. Admins can also modify site configurations.
 
 #### Developer
 
-Es el usuario a cargo del desarrollo estructural de los recursos, la creación y edición de contenido. Todo lo que haga, tiene que pasar a revisión.
+It is the user in charge of the structural development of resources, content creation and editing. Everything you do has to be reviewed.
 
 Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
 
@@ -331,7 +331,7 @@ In this view you will find a table with all the redirects that currently exist o
 To create a new redirect, click on the **New** button in the upper right hand corner of the view. By completing the fields **_URL_ Source** and **_URL_ Destination** and redirection code and then saving the changes, you will create a new redirection entry.
 
 :::warning
-Atención La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/es/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
+Warning The redirect table is second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html), a default view or a [custom content view](/en/platform/channels/templates.html#views-for-content), you will see those views instead of being redirected via the custom redirect table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
@@ -391,7 +391,7 @@ It indicates that _MIME types_ announced in the _header_ `Content-Type` must be 
 It controls which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site. Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see \[MDN Content Security Policy (CSP)\] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning
-Atención Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html) y [Asset Manager](/es/platform/content/asset-manager.html).
+Warning A very strict value may interfere with some features such as [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
 A policy that's ready for production must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
