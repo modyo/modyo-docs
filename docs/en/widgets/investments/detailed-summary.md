@@ -12,9 +12,9 @@ Modyo offers a widget that delivers detailed information on existing investments
 modyo-cli get modyo-widgets-investments-detailed-summary
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/resumen-detallado)
+[Open in new tab](https://widgets.modyo.com/investments/detailed-summary)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/resumen-detallado" width="100%"  frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/detailed-summary" width="100%"  frameBorder="0" style="min-height:449px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
