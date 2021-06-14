@@ -8,11 +8,11 @@ search: true
 
 The entry list displays every type of non-archived entry within in that space.
 
-La lista está ordenada por fecha de actualización del contenido. En este caso, hace referencia a la fecha de creación o de la última vez que fue guardada la entrada respectiva.
+By default, this list displays entries by their "Updated on" date, meaning either by the date the entry was created, or last updated. In this case, the reference is to the creation date or the last modification date.
 
 The columns in the list display the following details:
 
-- **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
+- **Status**: Current status of the entry in the publishing process. In this case, the statuses can be: Draft, Published, Pending Changes, Scheduled and Archived.
 - **Name**: Title of the entry.
 - **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
 - **Updated on**: Date of the last saved update.
@@ -131,7 +131,7 @@ Warning You can preview the content either as a logged in user or as a user that
 :::
 
 :::warning
-Atención Puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+Warning You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-frame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
 :::
 
 #### Edit an entry
