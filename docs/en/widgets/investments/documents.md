@@ -12,9 +12,9 @@ In this widget users can find all documents they need related to their investmen
 modyo-cli get modyo-widgets-investments-documents
 ```
 
-[Open in new tab](https://widgets-es.modyo.com/inversiones/documentos)
+[Open in new tab](https://widgets.modyo.com/investments/documents)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/documentos" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"></p>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/documents" width="100%"  frameBorder="0"  style="min-height:675px;overflow:auto;margin-top:20px;"></p>
 
 <table spaces-before="0">
   <tr>
