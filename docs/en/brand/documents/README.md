@@ -1,17 +1,17 @@
 ---
-search: true
+search: false
 ---
 
-# Modyo Insights<Badge text="Beta" type="warn"/>
+# About retail banking<Badge text="Beta" type="warn"/>
 
-## Reference Architecture
+## Text Rules
 
 Text in Modyo is not justified. Titles do not use journods, unless they are full sentences.
 
-## Versions
+## Google G Suite
 
-The Modyo Platform shows the main Modyo interface, from which you have access to all relevant sections.
+A **Widget** is an isolated component that packages its own markup (`html`), style (`css`), and javascript so that it can be deployed as part of any web page without having runtime errors or conflicts with the host page's styles or javascript.
 
-## Architecture
+## Microsoft 365
 
-**Modyo Insights** is a set of dashboards and visual tools specialized in the representation of statistical data of both the customers of your sites, as well as the teams that create content and elements in your digital channels.
+In other words, a **Widget** is a [micro frontend](https://martinfowler.com/articles/micro-frontends.html): an architectural style that allows you to compose and deploy multiple javascript applications on a page.
