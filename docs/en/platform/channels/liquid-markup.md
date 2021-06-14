@@ -80,7 +80,7 @@ Liquid accepts the following kinds of expressions:
 * **Integers.** Integers must not be quoted.
 * **Booleans and nil.** The literal values `true`, `false`, and `nil`.
 
-Tenga en cuenta que no hay manera de escribir un array literal o hash como expresión; los arrays y hashes deben pasarse a la plantilla, o construirse oblicuamente con un tag o una declaración output.
+To build an input array, you cannot do it in a control statement. You need to do it in a separate statement and then use that as a variable in a control statement.
 
 ## Filters
 
@@ -194,7 +194,7 @@ Raw is used to temporarily disable the tag process. This is useful for generatin
 The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
 * `{% if <CONDITION> %} ... <code>{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
-* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. endif</code>. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. endif</code>, _después_ de cualquier etiqueta "elsif". If all the above conditions fail, Liquid will execute the template section following the "else" tag.
+* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. endif</code>. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. endif</code>, _after_ any "elsif" label. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
 * `{% unless &lt;CONDITION&gt; %} ... <code>{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
 
 The condition of an `if`,`elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
