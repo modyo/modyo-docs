@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creación de un Sitio Básico
+# Creating a Basic Site
 
 ## Introduction
 
@@ -26,7 +26,7 @@ To run the steps in this tutorial you must have created the contents of the [Dyn
 
 ## Step 1: Create a Cloud Site
 
-Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer clic en el botón <b>New Site</b>.
+To create our \[site\] (/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
 
 We fill the Name fields with "Bank" and select the Theme "Minimal" as shown in the image.
 
@@ -79,7 +79,7 @@ Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar a la
 
 Within Templates, one of the most powerful features we have is to reuse code in various Pages, which is the case of Header and Footer.
 
-El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en General, y lo vamos a remplazar por los siguientes códigos HTML.
+The HTML of them is located within the Snippets tab, grouped in General, and we will replace it with the following HTML codes.
 
 <code>header</code>
 
@@ -270,7 +270,7 @@ Remember to save your changes after uploading the files.
 
 Una vez cargado nuestro logo, vamos a hacer los cambios de tamaño para que se ajuste a nuestro diseño. Para esto vamos a ir a Templates y dentro de el grupo de Libs abrimos el snippet <b>bootstrap css</b> y buscamos la clase que está afectando a nuestro logo, <code>.navbar-brand img</code> y cambiamos el height de <code>50px</code> a <code>30px</code>.
 
-Una vez revisado en modo vista previa que nuestro logo se vea bien, tenemos que cambiar cómo se ven los enlaces del menú.
+Once we have reviewed in preview mode that our logo looks good, we need to change how the menu links look like.
 
 For this we will modify the styles of the navbar-light, navbar-nav and nav-link classes.
 
@@ -306,11 +306,11 @@ For order topics, we are going to create a CSS snippet, where later we'll add al
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;" />
 
-Para que este snippet haga efecto en nuestro Home tenemos que agregar el código del llamado del snippet en la hoja de CSS general con el siguiente código <code>{% snippet "home_css" %}</code> para que el contenido de nuestro snippet aparezca dentro de la hoja de estilos generales del template.
+For this snippet to take effect in our Home we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet “home_css”%} </code> so that the content of our snippet appears inside the template's general stylesheet.
 
 ## Step 9: Add Dependent Libraries
 
-Ahora que ya sabemos cómo crear snippets dentro de Templates, vamos a cargar librerías externas de la misma forma.
+Now that we know how to create snippets within Templates, we're going to load external libraries in the same way.
 
 For some of the sections of our Home we will need JS and CSS libraries, to add animations in the Hero or testimonial slides for example.
 
@@ -5467,7 +5467,7 @@ Don't forget to add the animate_css and slick_css snippets to the stylesheet and
 
 Another feature that exists within Modyo is the Navigation tool, in which we can generate the menu for our site in a simple way.
 
-Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.html), modificamos el menú ya existente y dejaremos las siguientes opciones.
+For this, we go to the [Navigation](/en/platform/channels/navigation.html) section, modify the existing menu and leave the following options.
 
 <table>
  <tr>
@@ -5782,7 +5782,7 @@ And the CSS in the snippet <b> home_css </b> within Templates.
 }
 ```
 
-Recuerda que puedes revisar cómo va quedando nuestro Home con el modo vista previa.
+Remember that you can check how our Home is doing with the preview mode.
 
 ## Step 14: DYNAMIC APP Widgets
 
@@ -5929,7 +5929,7 @@ To display it in the Home we need to add it as widget <b> Custom </b> and search
 
 Una vez terminados todos nuestros widgets y CSS del Home, revisaremos en modo vista previa el trabajo que hemos realizado en este Tutorial. Una vez que estés conforme con el resultado debemos publicar los cambios para recién ahora dejar todo nuestro trabajo disponible de cara a nuestros usuarios finales.
 
-Para realizar una publicación, hacemos clic en el botón <b>Publish</b> donde se abrirá un panel con los cambios que hemos realizado.
+To make a publication, we click the <b> Publish </b> button where a panel will open with the changes we have made.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;" />
 
