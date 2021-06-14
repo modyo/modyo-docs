@@ -86,7 +86,7 @@ In the work area, under the tabs, you will find a bar with useful elements:
 
 <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" />
 
-**Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
+**Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. If you access the second tab, you can upload new files.
 
 :::tip
 Tip Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/es/docs/content/asset-manager.html)
@@ -100,7 +100,7 @@ Tip Para más información sobre los beneficios y prestaciones de Gestor de Arch
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" />
 
-**Changes**: A list of every "Saved" state of a template since it was last published. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
+**Changes**: A list of every "Saved" state of a template since it was last published. By clicking on one of the sub-versions, you change the content of the template you are working on to that sub-version.
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" />
 
