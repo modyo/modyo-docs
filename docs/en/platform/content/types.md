@@ -25,7 +25,7 @@ There are four categories by which you can reorder:
 - **Name**
 - **UID**
 - **Creation Date**
-- **Fecha de Actualización**
+- **Date of Update**
 
 If you want to enter any Type, you must click on its Name to open the corresponding editor.
 
@@ -120,7 +120,7 @@ Allows you to add a date picker. You can restrict the values of dates that can b
 
 ### Location
 
-Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand. Estas áreas de administración no son estándar y dependen de cada país. En el caso de Chile estas son: Región, Provincia, Comuna y Ciudad.
+Allows you to add a field in which you can select a geographic address, according to the Google Maps fields, or if you do not have a Google _API key_, it will allow you to enter the name, latitude, longitude and five geopolitical location limitations by hand. These management areas are not standard and depend on each country. In the case of Chile, these are: Region, Province, Commune and City.
 
 :::warning
 Attention For location maps to work properly with the Google API Key configured in your account, the key must have permissions to access to:
