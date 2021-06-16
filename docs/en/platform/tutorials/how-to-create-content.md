@@ -98,7 +98,7 @@ From there, we generate our first Type called **"Hero"** with the following fiel
 ![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
 
 :::warning Attention
-It is important to save changes before exiting.
+It's important to save changes before exiting.
 :::
 
 ## Step 3: Create and Post Type "Hero" entry
