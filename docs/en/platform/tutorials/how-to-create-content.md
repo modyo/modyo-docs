@@ -724,7 +724,7 @@ Create two entries with the following fields:
  </tr> 
  </table> 
 
-#### Testimony Two
+#### Testimonial Two
 
  <table> 
  <tr> 
