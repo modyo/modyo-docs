@@ -732,7 +732,7 @@ Create two entries with the following fields:
  <b> Name </b> 
  </td> 
  <td> 
- Testimony Raul
+Raul Testimony
  </td> 
  </tr> 
  <tr> 
