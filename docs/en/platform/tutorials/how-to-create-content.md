@@ -20,7 +20,7 @@ Once you complete this tutorial series, your project should look like this:
 
 ## Prerequisites
 
-To run the steps in this tutorial you must have only one active account in Modyo, and as is the first tutorial in the series, it does not require you to have completed any previously.
+To complete the steps in this tutorial, you must have only one active account in Modyo. As it's the first tutorial in the series, it does not require you to have previously completed any others.
 
 Don't have a Modyo account? You can request an account with the platform administrator in your company, or create a trial account just for you from [here](https://platform.modyo.cloud/onboarding).
 
