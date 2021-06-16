@@ -295,7 +295,7 @@ As we did with Hero, we will now create all three news entries with the followin
  </tr> 
  </table> 
 
-#### Entrance Three
+#### Third Entry
 
  <table> 
  <tr> 
