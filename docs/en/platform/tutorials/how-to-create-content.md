@@ -748,7 +748,7 @@ Create two entries with the following fields:
  <b> Testimony </b> 
  </td> 
  <td> 
- I approached Dynamic Bank, got my credit, and I'm already applying for the third. I really thank you for trusting me
+ I approached Dynamic Bank, got my credit, and I'm already applying for my third one. I really appreciate them trusting me.
  </td> 
  </tr> 
  <tr> 
