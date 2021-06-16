@@ -26,7 +26,7 @@ Don't have a Modyo account? You can request an account from your company's platf
 
 ## Step 1: Create a Content Space
 
-Once you log into Modyo with your account, we will go to the [Modyo Content] module (/en/platform/content) to [create our first space] (/es/platform/content/spaces.html #crear -a-space), which we will call **"Bank"**, selecting the language as **English**.
+Once you log into Modyo with your account, we will go to the [Modyo Content] module (/en/platform/content) to [create our first space] (/es/platform/content/spaces.html #crear -a-space), which we will call **"Bank"**, and selecting the language as **English**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
 
