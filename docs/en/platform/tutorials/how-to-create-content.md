@@ -695,7 +695,7 @@ Create two entries with the following fields:
  <b> Name </b> 
  </td> 
  <td> 
- Adriana testimony
+ Adriana Testimonial
  </td> 
  </tr> 
  <tr> 
@@ -708,7 +708,7 @@ Create two entries with the following fields:
  </tr> 
  <tr> 
  <td> 
- <b> Testimony </b> 
+ <b> Testimonial </b> 
  </td> 
  <td> 
  I'm very satisfied with Dynamic Bank because they gave me the opportunity to grow as a merchant, and now I have other projects in mind that will help me keep growing.
