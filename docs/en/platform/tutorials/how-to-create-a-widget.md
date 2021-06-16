@@ -12,7 +12,7 @@ search: true
 
 ## Step 2: Install x
 
-## Step 3: Install and
+## Step 3: Install y
 
 ## Step 4: Install z
 
