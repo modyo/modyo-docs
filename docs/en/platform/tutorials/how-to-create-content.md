@@ -160,7 +160,7 @@ We will now create the rest of the Types and Entries we need for this tutorial.
 
 ## Step 4: Create "News" Type
 
-As with the "Hero" type we will create our second type "News" considering the following fields:
+As with the "Hero" type, we will create our second type, "News", considering the following fields:
 
  <table> 
  <tr> 
