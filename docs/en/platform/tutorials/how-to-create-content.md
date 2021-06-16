@@ -732,7 +732,7 @@ Create two entries with the following fields:
  <b> Name </b> 
  </td> 
  <td> 
-Raul Testimony
+Raul Testimonial
  </td> 
  </tr> 
  <tr> 
@@ -745,7 +745,7 @@ Raul Testimony
  </tr> 
  <tr> 
  <td> 
- <b> Testimony </b> 
+ <b> Testimonial </b> 
  </td> 
  <td> 
  I approached Dynamic Bank, got my credit, and I'm already applying for my third one. I really appreciate them trusting me.
