@@ -303,7 +303,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Name </b> 
  </td> 
  <td> 
- Wednesday Gourmet
+ Gourmet Wednesday
  </td> 
  </tr> 
  <tr> 
