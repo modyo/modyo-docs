@@ -765,7 +765,7 @@ Don't forget to publish all your posts after creating them.
 
 ## Conclusion
 
-If you got this far, we congratulate you. You managed to use [Modyo Content] (/en/platform/content) with its full potential because we use [Spaces] (/en/platform/content/spaces), [Types] (/en/platform/content/types), [Entries] (/en/platform/content/entries) and [Categories] (/es/platform/content/entries.html #categorias) to generate all the content needed to build the Home of Dynamic Bank.
+If you've gotten this far, we congratulate you. You managed to use [Modyo Content] (/en/platform/content) to its full potential because we used [Spaces] (/en/platform/content/spaces), [Types] (/en/platform/content/types), [Entries] (/en/platform/content/entries) and [Categories] (/es/platform/content/entries.html #categorias) to generate all the content needed to build the Dynamic Bank's home page.
 
 We already have all our tickets to be able to deliver them to the Front-end and that he can generate the Dynamic Bank Home without problems while we can change the texts from content.
 
