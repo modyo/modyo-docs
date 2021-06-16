@@ -103,7 +103,7 @@ It's important to save changes before exiting.
 
 ## Step 3: Create and Post "Hero" Type entry
 
-Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. For that, we must go to the **Entries** section and click on the**Create an entry** button, then select the type “Hero” and add in Name **_"Where you are, Dynamic Bank accompanies you” _**.
+Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. We must go to the **Entries** section and click on the **Create an entry** button, then select the type “Hero” and add in Name **_"Wherever you are, Dynamic Bank is with you” _**.
 
 For the rest of the fields, we will use the following values:
 
