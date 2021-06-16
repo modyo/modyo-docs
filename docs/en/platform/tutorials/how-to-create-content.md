@@ -229,7 +229,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Text </b> 
  </td> 
  <td> 
- Find your nearest branch so you don't have any extra walks.
+ Find your nearest branch so you don't have any extra steps.
  </td> 
  </tr> 
  <tr> 
