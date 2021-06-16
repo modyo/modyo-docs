@@ -158,7 +158,7 @@ After editing the content we must save and [publish](/es/platform/content/entrie
 We will now create the rest of the Types and Entries we need for this tutorial.
 ።:
 
-## Step 4: Create Type "News"
+## Step 4: Create "News" Type
 
 As with the "Hero" type we will create our second type "News" considering the following fields:
 
