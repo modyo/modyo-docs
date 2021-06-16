@@ -342,7 +342,7 @@ As we did with Hero, we will now create all three news entries with the followin
 
 Don't forget to publish all your posts after creating them.
 
-## Step 6: Create Type “Benefits”
+## Step 6: Create “Benefits” Type
 
 As we already did with Hero and News, we need to create our new type for Benefits with the fields:
 
