@@ -101,7 +101,7 @@ From there, we generate our first Type called **"Hero"** with the following fiel
 It's important to save changes before exiting.
 :::
 
-## Step 3: Create and Post Type "Hero" entry
+## Step 3: Create and Post "Hero" Type entry
 
 Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. For that, we must go to the **Entries** section and click on the**Create an entry** button, then select the type “Hero” and add in Name **_"Where you are, Dynamic Bank accompanies you” _**.
 
