@@ -32,7 +32,7 @@ Once you log into Modyo with your account, we will go to the [Modyo Content] mod
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
-## Step 2: Create Type "Hero"
+## Step 2: Create "Hero" Type 
 
 Now we need to create our first [content type] (/en/platform/content/types.html #types-content) in our **"Bank"** space.
 Once you are in this space, go to the **Types** section and click the top right button that says **"+ New Type"**.
