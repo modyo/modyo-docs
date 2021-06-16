@@ -371,7 +371,7 @@ As we already did with Hero and News, we need to create our new type for Benefit
 
 ## Step 7: Create Categories
 
-Now we'll put a little more order creating categories so we can filter out our benefits.
+Now we'll create some more structure by creating categories that can filter our benefits.
 
 To do this we go to the Categories section and create the following categories:
 
