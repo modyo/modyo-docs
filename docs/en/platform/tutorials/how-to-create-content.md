@@ -711,7 +711,7 @@ Create two entries with the following fields:
  <b> Testimony </b> 
  </td> 
  <td> 
- I feel great about Dynamic Bank, because they gave me the opportunity to grow as a merchant and I have other projects in mind to keep growing.
+ I'm very satisfied with Dynamic Bank because they gave me the opportunity to grow as a merchant, and now I have other projects in mind that will help me keep growing.
  </td> 
  </tr> 
  <tr> 
