@@ -16,7 +16,8 @@ The fastest way to start a Widget is to use one of the templates in this Catalog
 To use one of our templates we will use the `GET` command in the `modyo-cli`:
 
 ```bash
-modyo-cli get <widget-name> <widget-folder>```
+modyo-cli get nombre-del-Widget nombreCarpeta
+```
 
 For example, if we want to use the `Consumer Cred` template from People Banking, the command is as follows:
 
