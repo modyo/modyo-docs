@@ -695,7 +695,7 @@ Create two entries with the following fields:
  <b> Name </b> 
  </td> 
  <td> 
- Adriana testimonial
+ Adriana testimony
  </td> 
  </tr> 
  <tr> 
