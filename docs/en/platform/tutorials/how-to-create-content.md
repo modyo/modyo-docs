@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-Welcome to the first tutorial of the Modyo training series. In this first tutorial, we will review everything you need to know to create and publish content using [Modyo Content](/en/platform/content), an indispensable tool for managing dynamic and cross-platform sites.
+Welcome to the first tutorial of the Modyo training series. In this first tutorial, we'll review everything you need to know to create and publish content using [Modyo Content](/en/platform/content), an indispensable tool for managing dynamic and cross-platform sites.
 
 ### Dynamic Bank
 
