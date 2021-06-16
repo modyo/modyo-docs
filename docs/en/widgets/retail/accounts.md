@@ -12,33 +12,147 @@ With this widget you can see a summary of your bank accounts, download bank stat
 modyo-cli get modyo-widgets-retail-accounts
 ```
 
-[Open in new tab](https://widgets.modyo.com/retail/accounts)
+[Open in new tab](https://widgets-es.modyo.com/personas/cuentas)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/accounts" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/cuentas" width="100%"  frameBorder="0"  style="min-height:800px;overflow:auto;margin-top:20px;"></p>
 
-#### Checking Account
+<h4 spaces-before="0">
+  Checking Account
+</h4>
 
-| Feature               | Description                                                                                                                                                                                                                                          |
-|:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Checking Account Summary | Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.                                                                             |
-| View recent activity     | Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.                                           |
-| Account Statements         | Displays account statements from previous periods which can be expanded to show the transactions of each selected account statement, sorted by date.<br><br> Clients can also search within the displayed transactions. |
+<table spaces-before="0">
+  <tr>
+    <th align="left">
+      Feature
+    </th>
+    
+    <th align="left">
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Checking Account Summary
+    </td>
+    
+    <td align="left">
+      Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      View recent activity
+    </td>
+    
+    <td align="left">
+      Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Account Statements
+    </td>
+    
+    <td align="left">
+      Displays account statements from previous periods which can be expanded to show the transactions of each selected account statement, sorted by date.<br><br> Clients can also search within the displayed transactions.
+    </td>
+  </tr>
+</table>
 
-#### Savings Account
+<h4 spaces-before="0">
+  Savings Account
+</h4>
 
-| Feature           | Description                                                                                                                                                                                                                                                     |
-|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Savings Account Summary | Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists. |
-| View recent activity | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                        |
-| Account Statements     | Displays account statements from previous periods, showing the transactions of each selected account statement, sorted by date.<br><br>Clients can also search within the displayed transactions.            |
+<table spaces-before="0">
+  <tr>
+    <th align="left">
+      Feature
+    </th>
+    
+    <th align="left">
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Savings Account Summary
+    </td>
+    
+    <td align="left">
+      Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      View recent activity
+    </td>
+    
+    <td align="left">
+      Presents the latest moves that have been made on the account, initially sorted by date. It also includes the ability to perform searches within the movements shown.
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="left">
+      Account Statements
+    </td>
+    
+    <td align="left">
+      Displays the maps of previous periods already closed, displaying the movements of each selected historical map and sorted by date. It also includes the ability to perform searches within the movements shown.
+    </td>
+  </tr>
+</table>
 
-#### Line of Credit
+<h4 spaces-before="0">
+  Line of Credit
+</h4>
 
-| Feature           | Description                                                                                                                                                                                                                                  |
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| View recent activity | Recent activity shows the latest moves that have been made on the account, initially sorted by date. You can also perform searches within the shown movements.                                           |
-| Account Statements     | Account statements display the statements of previous periods that have already ended. They are sorted by date and provide each selected statement's movements. You can also perform searches within the shown movements. |
-| Line of Credit Payment   | This allows customers to pay off a line of credit. They can repay their debt in full or in part by using the available funds in their checking account.                                                     |
+<table spaces-before="0">
+  <tr>
+    <th>
+      Feature
+    </th>
+    
+    <th>
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      View recent activity
+    </td>
+    
+    <td>
+      Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Account Statements
+    </td>
+    
+    <td>
+      Muestra las cartolas de períodos anteriores ya cerrados, desplegando los movimientos de cada cartola histórica seleccionada y ordenados por fecha. Se incluye además la capacidad de realizar búsquedas dentro de los movimientos mostrados.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Line of Credit Payment
+    </td>
+    
+    <td>
+      Allows you to provide the payment functionality of a credit line, using the funds available from a checking account. The customer can repay their debt in whole or in part.
+    </td>
+  </tr>
+</table>
 
 <script>
 
@@ -54,7 +168,7 @@ modyo-cli get modyo-widgets-retail-accounts
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Detailed View <Badge text="Beta" type="warn"/> 
+# Detailed View <Badge text="Beta" type="warn"/>
 
 #### Installation
 
@@ -10,9 +10,26 @@ search: true
 modyo-cli get modyo-widgets-insurance-details
 ```
 
-[Open in new tab](https://widgets.modyo.com/insurance/retail/detailed-view)
+[Open in new tab](https://widgets-es.modyo.com/seguros/personas/vista-detallada)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/retail/detailed-view" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/personas/vista-detallada" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"></p>
 
-| Feature | Description |
-| ------------- | ----------- |
+<table spaces-before="0">
+  <tr>
+    <th>
+      Feature
+    </th>
+    
+    <th>
+      Description
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+    </td>
+    
+    <td>
+    </td>
+  </tr>
+</table>

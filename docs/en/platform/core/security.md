@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Platform Security
+# Security
 
 ## Activity logs
 
@@ -10,7 +10,7 @@ search: true
 
 The platform allows you to see all activity and changes made throughout the entire duration of the platform's existence.
 
-In this section, you can filter by date, activity type, or platform team member.
+Ensure that access always comes from an up-to-date computer, using reliable and up-to-date Internet browsers.
 
 In addition, you can see the details of what activity was done and in which section of the platform it originated.
 
@@ -25,11 +25,11 @@ In this section we will explain how to configure various options to improve the 
 * Password policy
 * Share resources across different domains ([CORS - Cross Origin Resource Sharing](https://www.w3.org/TR/cors/))
 * Content delivery token ([JWT](https://tools.ietf.org/html/rfc7519))
-* Two-Step Authentication
+* Enable the Second Factor of Authentication
 
 <img src="/assets/img/platform/cors.png" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-### Password policy
+### Important Concepts
 
 This section will allow you to set the password security policy for team members. Within the options you can choose the following:
 
@@ -40,24 +40,23 @@ This section will allow you to set the password security policy for team members
 
 When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
 
-### Share resources across different domains
+### Local Vulnerabilities
 
 In this section we can activate Cross Origin Resource Sharing (CORS), so that Modyo resources can be accessed from other websites that are not necessarily secure.
 
-When you enable this option, you will need to specify the domains (separated by comma and no slash at the end) that you want to allow access from to share resources with your site. For example:
-`http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
+When you enable this option, you will need to specify the domains (separated by comma and no slash at the end) that you want to allow access from to share resources with your site. For example: `http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
 
-### Content Delivery Token (JWT)
+### Set up a Strong Password in the Admin Panel
 
 After configuring CORS, the platform will give you a key or _secret_ to be able to decode users' JWTs in order to access [private content via the API](/en/platform/content/public-api-reference.html#private-content).
 
-:::warning Warning
-The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
+:::warning
+Warning The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
 The key or _secret_ has a specific time duration in seconds that can be configured in the box labeled _Content delivery token TTL_. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very small duration, as this could affect the performance of the platform.
 
-### Two-Step Authentication
+### Review Administration Permissions
 
 Two-step authentication adds an extra layer of security to your account. Each time team members sign in, they'll need to enter both their password and a dynamic key provided by the _Google Authenticator_ app on their phones.
 

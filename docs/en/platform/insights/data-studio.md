@@ -8,11 +8,9 @@ Data visualization is important in making data and analysis a central part of bu
 
 Data Studio is Google’s reporting solution that allows you to easily create custom visualizations of your data. To make things even easier, we’ve created Data Studio templates that you can connect to your data sources out of the box.
 
-This guide will walk you through the simple steps to copy a Data Studio reporting template and connect your own data sources so you can analyze the performance of your digital channels and gain insights from your data. 
+This guide will walk you through the simple steps to copy a Data Studio reporting template and connect your own data sources so you can analyze the performance of your digital channels and gain insights from your data.
 
-After walking through this example, you’ll be able to apply the same steps for other Data Studio report templates.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AMNY32HIO0g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+After walking through this example, you’ll be able to apply the same steps for other Data Studio report templates. <iframe width="560" height="315" src="https://www.youtube.com/embed/AMNY32HIO0g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 ### Connect your data to a Data Studio template
 
@@ -68,7 +66,7 @@ Steps to connect your data to a Google Data Studio template:
 
     ![Data studio](/assets/img/insights/7.png)
 
-    This will take you back to the "Copy this report" window. 
+    This will take you back to the "Copy this report" window.
 
 5. Create Google Search Console Sources
 

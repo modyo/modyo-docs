@@ -39,7 +39,7 @@ RGB: 14 189 116</p>
 
 ## Secondary Color
 
-Our secondary colors, which often accompany the brand on different media, are blue and should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
+Our secondary colors, which often accompany the brand on different media, are blue.They should be used sparingly throughout illustration, photography and product to maintain meaning and potency.
 
 <table class="no-border">
 <tr>
@@ -533,7 +533,7 @@ Spot colors are designated only for some internal illustrations (controlled by t
 
 ### Associated Background Colors
 
-All background colors are defined with the colors of the main palette and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b> 
+All background colors are defined with the colors of the main palette and special colors with the following usage rule: <b> Apply 6% to 12% opacity </b>
 
 <table>
 <tr>

@@ -34,8 +34,8 @@ To create a group, go to the "Groups" section of your account settings, give it 
 
 In addition, you can add or remove a user from existing groups by selecting the "Groups" section in each team member's profile.
 
-::: tip Tip
-Keep in mind that if a user already has an associated role in a context (account, space, realm, or site) and you add them to a group with a higher privileged role, the user will gain the role with the highest authority.
+::: tip
+Tip Keep in mind that if a user already has an associated role in a context (account, space, realm, or site) and you add them to a group with a higher privileged role, the user will gain the role with the highest authority.
 :::
 
 ## Roles
@@ -75,4 +75,4 @@ Since we have roles that allow unrestricted access to all applications, Modyo al
 
 ### Assign one role per account
 
-To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user.
+To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user. Then enter the Role tab and select the role you want to assign to the user.

@@ -56,7 +56,7 @@ Modyo uses Liquid Markup within the platform to give Front and Back End develope
 APIs enhance our platform and make it easier to build solutions.
 
 
-### Prepared for the future: PWAs
+### Prepared for the future: PWAs PWAs
 Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
 
 

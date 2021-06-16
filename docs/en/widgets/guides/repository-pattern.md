@@ -24,7 +24,8 @@ Why you should use the Repository Design Pattern.
 
 This is an example of how to implement this pattern in a Widget.
 
-:::tip Prerequisites
+:::tip
+Prerequisites
 
 1. Basic knowledge of design patterns, especially the Repository Design Pattern
 2. Basic knowledge of Vue.js and Vuex
@@ -42,7 +43,7 @@ To consume data with Vue.js using the repository design pattern that helps us un
 
 #### 2. Create a "clients" folder (It could have any name, but we recommend using _clients_)
 
-    It will create a "clients" folder inside the "repositories" folder. Basically, this folder will contain the different HTTP Clients you might want to use, for example if you want to use **Modyosdk**, Axios, Vue-resource etc.
+   We can create different files for each Customer we use, for example, one for Axios and another for **Modyosdk**
 
    ```sh
    cd repositories && mkdir clients
@@ -52,13 +53,13 @@ To consume data with Vue.js using the repository design pattern that helps us un
 
    We can create different files for each Customer we use, for example, one for Axios and another for **Modyosdk**
 
-   If you are going to use multiple HTTP Clients that share information for their configuration, you can create a config.js file
+   For **ModyOClient** and using [**ModyosDK**](/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
 
    ```sh
    touch ModyoClient.js && touch ApiClient.js
    ```
 
-   For **ModyOClient** and using [**ModyosDK**](/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
+   For **Apiclient** and using [**Axios**](https://github.com/axios/axios), the configuration is as follows:
 
    ```js
    import { Client } from "@modyo/sdk";
@@ -138,12 +139,12 @@ To consume data with Vue.js using the repository design pattern that helps us un
 
    In the above code we define and export all our API requests that we need
 
-:::tip Important
-We must import the corresponding HTTP Client file into all Repositories where it is required. In this example "ModyoClient"
+:::tip
+Important We must import the corresponding HTTP Client file into all Repositories where it is required. In this example "ModyoClient"
 :::
 
 #### 5. Create the file "RepositoryFactory.js"
-   We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, so it is easier to use them anywhere in our Widget.
+   In this file we paste the following code
 
    ```sh
    touch  RepositoryFactory.js
@@ -161,12 +162,16 @@ We must import the corresponding HTTP Client file into all Repositories where it
    };
    export default {
      get: (name) => repositories[name],
+   }; ApiRepository,
+   };
+   export default {
+     get: (name) => repositories[name],
    };
    ```
 
 We've finished setting up our Repository Pattern. If you followed the steps you should have a file structure similar to this:
 
-```tree {3-12}
+```tree{3-12}
 ├── src/
 │ ├── components/
 │ ├── repositories/
@@ -185,11 +190,11 @@ We've finished setting up our Repository Pattern. If you followed the steps you 
 
 ### How do we use our Repository Pattern?
 
-Since we're working with Vue.js, we'll review how to use our repository pattern in the Vue components and in the Vuex store.
+We create a component for the POSTS and import the repository as shown below
 
 #### In Vue Components (SFC)
 
-We create a component for the POSTS and import the repository as shown below
+In the file "actions.js" located in the Widget's "store" we paste the following
 
 ```vue
 <template>
@@ -233,7 +238,7 @@ export default {
 
 #### In the Vuex Store
 
-In the file "actions.js" located in the Widget's "store" we paste the following
+In the file "actions.js" located in the "store" folder of the Widget we paste the following
 
 ```js
 import Repository from "../repositories/RepositoryFactory";

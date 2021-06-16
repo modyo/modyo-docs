@@ -13,8 +13,8 @@ Upon entering, you will see that there are 4 statuses:
 <img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
 
 - **Enabled**: Default state of functioning online digital channels and newly created Sites.
-- **Hidden**: Sites created that only users with access can see.
-- **Development**: Sites only accessible by backend users who are working on them.
+- **Hidden**: Sites created and enabled that do not appear in the list of sites in the user's profile. They can only be accessed if you have the URL of the site.
+- **Development**: Sites available for Modyo administrators only. Users who do not have administrator permissions will not be able to view these sites.
 - **Disabled**: Sites that have been disabled.
 - **Copy**: Creates a copy of the site and all the published elements of it.
 
@@ -22,8 +22,8 @@ To create a site, you just have to click on the **New** tab, which will allow yo
 
 After that, you can see it with the status "Enabled", which means that it is online to work.
 
-:::warning Attention
-In the site index, you will only be able to see sites where you are part of the team with a designated role.
+:::warning
+Attention In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
 ## Review and joint publication
@@ -32,8 +32,8 @@ You can review and publish multiple elements of a site in a single view. To revi
 
 If you want to publish multiple elements in a single step, click the "Publish" button on pages, navigation, widgets or templates and just mark all items you want to publish in the list and then press the publish button.
 
-:::warning Warning
-All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
+:::warning
+Warning All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
 
 If you have team review enabled, only the items that are already approved will appear in the list.
 
@@ -54,15 +54,15 @@ Within this section, you can configure the following data:
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
-- **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/key-concepts.html).
+- **[Team Review](/es/platform/core/key-concepts.html)**
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
 - **Delete**: This option allows you to permanently delete a site and all its elements.
 
-:::danger Danger
-This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the site. You will have to enter the textual name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its elements again.
+:::danger
+Danger This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the site. You will have to enter the textual name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its elements again.
 :::
 
 #### Google Tag Manager
@@ -97,13 +97,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 ```liquid
 {% if site.tag_manager_id != '' %}
 
- <!-- Google Tag Manager (noscript) --> 
+<!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
 style="display:none;visibility:hidden">
 </iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) --> 
+<!-- End Google Tag Manager (noscript) -->
 
 {% endif %}
 ```
@@ -114,7 +114,7 @@ With this ready, when there's a value associated with the **Google Tag Manager I
 
 Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
 
-<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
 #### **Manifest**
 
@@ -124,16 +124,16 @@ The purpose of the manifest is to indicate how you want a browser to display you
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the ```head``` snippet.
+The manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the `head` snippet.
 
 The manifest can be created and modified in the following field, allowing you to add changes without having to leave the view.
 
-:::warning Warning
-If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
+:::warning
+Warning If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
-:::warning Warning
-If you do not customize the manifest but add the route in the Template Builder, it will be blank and will not take any action.
+:::warning
+Warning If you do not customize the manifest but add the route in the Template Builder, it will be blank and will not take any action.
 :::
 
 #### **Service Worker**
@@ -147,44 +147,44 @@ https://[domain]/[site-name]/serviceworker.js
 
 You can modify and program the Service Worker in the next field, adapting it to your routes and with the available variables as shown above.
 
-:::warning Warning
-If the Service Worker is disabled, the page will continue to run only with its basic functions and not with the benefits that this option provides.
+:::warning
+Warning If the Service Worker is disabled, the page will continue to run only with its basic functions and not with the benefits that this option provides.
 :::
 
-:::warning Warning
-If the code is not customized or saved, the site will not have the features you are designing.
+:::warning
+Warning If the code is not customized or saved, the site will not have the features you are designing.
 :::
 
 ### SEO
 
-<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
-SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Good SEO depends on whether users reach your site through these search engines. SEO is a large topic, but at a general site/digital channel level, there are a few important configurations to consider.
+SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Whether users reach the site through them depends on a good configuration.
 
 The options listed in this section help improve your SEO across a particular channel:
 
 - **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
-- **Keywords**: Associated words relevant to your site that users search for that appear in the keywords meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines.
+- **Development**: Sites only accessible by backend users who are working on them.
 - **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on particular pages and content.
 - **Robots.txt**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by "disallowing" or "allowing" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
 
-:::tip Tip
-The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
+:::tip
+Tip The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
 :::
 
 - **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
 
-:::tip Tip
-By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
+:::warning
+Warning A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-:::warning Warning
-Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
+:::warning
+Warning The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
 :::
 
 ### Restrictions
 
-<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
 Restrictions allow you to configure the privacy of your site.
 
@@ -195,20 +195,20 @@ Restrictions allow you to configure the privacy of your site.
 
 ### Domains
 
-<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
 The Domains section is where you configure where and how your site is publicly located. It is essential that each member of the platform be aware of any changes made here.
 
 The options you configure here are:
 
-- **Host**: This name designates where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
-- **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
+- **Hidden**: Sites created that only users with access can see.
+- **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here.
 - **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
-- **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
+- **Primary domain**: This is the main address of your site.
 - **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
 
-:::warning Warning
-Modyo has reserved domains that cannot be used as custom site domains:
+:::warning
+Warning Modyo has reserved domains that cannot be used as custom site domains:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
@@ -231,8 +231,8 @@ Modyo has reserved domains that cannot be used as custom site domains:
 </tr></table>
 :::
 
-:::warning Warning
-Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites:
+:::warning
+Warning Modyo has reserved hosts for the sites, so you can't use them as hosts for your sites:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -281,15 +281,15 @@ Modyo has [global variables](/en/platform/core/key-concepts.html#global-variable
 
 ### Team Members
 
-<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;"  />
 
-The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. These roles start with editing privileges, and can expand to include reviewing, publishing, and configuring site settings.
+To organize the work, Modyo allows you to select the team members who will work on each site and thus have access to writing, reviewing and/or publishing.
 
-To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
+To do this, the administrator who created the site must manually assign team members and their roles.
 
 To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
 
-You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
+You can modify the role of any of team member by clicking their name. A modal will pop up, where you can select the new role. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
 
 To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
@@ -298,11 +298,11 @@ The available roles are:
 - **Developer**: Can create, modify and submit pages, widgets, menu and templates for review.
 - **Developer CLI**: Can create, modify and submit pages, widgets, menu and templates for review. Can also push widgets to the platform from external applications.
 - **Reviewer**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them when the correct review conditions are met.
-- **Admin**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them without going through the validations of the team review if necessarty. Admins can also modify site configurations.
+- **Admin**: Can create, modify, and submit pages, widgets, menu and templates for review and approval, as well as publish them without going through the validations of the team review if necessarty. You can publish without going through team review validations. Admins can also modify site configurations.
 
 #### Developer
 
-Developers are in charge of the structural development of resources, design and the creation of or integration with content. Everything developers do has to go to review, or be directly published by a higher role.
+It is the user in charge of the structural development of resources, content creation and editing. Everything you do has to be reviewed.
 
 Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
 
@@ -330,14 +330,14 @@ In this view you will find a table with all the redirects that currently exist o
 
 To create a new redirect, click on the **New** button in the upper right hand corner of the view. By completing the fields **_URL_ Source** and **_URL_ Destination** and redirection code and then saving the changes, you will create a new redirection entry.
 
-:::warning Warning
-The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
+:::warning
+Warning The redirect table is second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html), a default view or a [custom content view](/en/platform/channels/templates.html#views-for-content), you will see those views instead of being redirected via the custom redirect table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
 
-:::warning Warning
-The required columns to import redirects are origin y destination.
+:::warning
+Warning The required columns to import redirects are origin y destination.
 
 You can select a 301 or 302 response code for all elements without having to add an additional column.
 
@@ -354,8 +354,7 @@ The precedence of locations on Modyo sites is as follows:
 
 ## Security headers
 
-Configure your HTTP security headers by enabling this module for your site.
-This action cannot be undone, but when enabled you have full control of which headers you want to use.
+Configure your HTTP security headers by enabling this module for your site. This action cannot be undone, but when enabled you have full control of which headers you want to use.
 
 ### HTTP Strict Transport Security (HSTS)
 
@@ -389,11 +388,10 @@ It indicates that _MIME types_ announced in the _header_ `Content-Type` must be 
 
 ### Content-Security-Policy
 
-It controls which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
-Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see [MDN Content Security Policy (CSP)] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+It controls which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site. Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see \[MDN Content Security Policy (CSP)\] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
-:::warning Warning
-A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
+:::warning
+Warning A very strict value may interfere with some features such as [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
 A policy that's ready for production must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:

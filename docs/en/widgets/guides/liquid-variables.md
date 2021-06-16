@@ -8,8 +8,7 @@ search: true
 
 When decoupled from the platform, Widgets have the disadvantage of not being able to directly use liquid. We do not have access to those drops (although we are working on a solution), and we will have to use javascript from the platform to make them available.
 
-1. First we create a new snippet: **Templates (1) —> Snippets (2) —> Add a Snippet (3)**. For this snippet example we use the name `liquid2js_js`, but it can have any name.
-   ![template views](/assets/img/widgets/template_snippets.png)
+1. First we create a new snippet: **Templates (1) —> Snippets (2) —> Add a Snippet (3)**. For this snippet example we use the name `liquid2js_js`, but it can have any name. ![template views](/assets/img/widgets/template_snippets.png)
 
 2. In this snippet we create an object in the `window` scope containing all the drops we want to have available in our Widget. In this example the object is called liquid, but you can give it any name.
 
@@ -28,9 +27,9 @@ When decoupled from the platform, Widgets have the disadvantage of not being abl
    const LANG = window.liquid.lang;
    ```
 
-   :::warning Important
-   In development mode we will not have access to this object since we are working locally, which is why we recommend assigning defaults when defining these variables locally.
-   :::
+:::warning
+Important In development mode we will not have access to this object since we are working locally, which is why we recommend assigning defaults when defining these variables locally.
+:::
 
   ```js
    // si no existe el objeto liquid y la llave lang no esta definida, asignamos 'es-CL' por defecto

@@ -15,8 +15,8 @@ To make the most of Bootstrap's potential, we use **SCSS** as the **css** pre-pr
 ```html{1-2}
 <div class="bg-white px-3 pt-3 pb-2 rounded mt-3">
 <div class="d-flex justify-content-between mb-2">
-<!-- content -->
-</div>
+    <!-- content -->
+  </div>
 </div>
 ```
 
@@ -76,11 +76,11 @@ $border-radius: 0.35rem;
 //...
 ```
 
- <img src="/assets/img/widgets/before.png" width="400"> 
+<img src="/assets/img/widgets/before.png" width="400" />
 
 After
 
-```scss {2,4-6}
+```scss{2,4-6}
 //...
 $light: lightblue;
 //...
@@ -90,13 +90,13 @@ $border-radius: 1.35rem;
 //...
 ```
 
- <img src="/assets/img/widgets/after.png" width="400"> 
+<img src="/assets/img/widgets/after.png" width="400" />
 
 ### Custom
 
 In the `custom.scss` file we import and give order to all the other stylesheets that we have in the**scss** folder along with the Bootstrap base.
 
-```scss {1}
+```scss{1}
 @import". /variables ";//always before bootstrap
 @import "~bootstrap";
 @import". /theme.scss ";
@@ -121,8 +121,8 @@ new Vue({
 }).$mount("#my-Widget");
 ```
 
-:::warning Important
-The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not styles!
+:::warning
+Important The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not styles!
 :::
 
 ### Component Styles
@@ -154,8 +154,7 @@ When you're building a Widget with Bootstrap (or another style framework) you'll
 
 Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we manage to remove those extra **bytes** that we don't need and optimize our Widgets. Excellent!
 
-::: danger PROBLEM!
-What happens to the styles **NOT** declared in the content, but that **ARE** used in the Widget?
+::: danger PROBLEM! What happens to the styles **NOT** declared in the content, but that **ARE** used in the Widget?
 :::
 
 Sometimes we may encounter some style problems, for example when we use the Bootstrap modal component and the `modal-backdrop` style does not load since this element is created dynamically when you open the modal; or when we use external component libraries in our Widgets where the styles have not been loaded and are not on the site. This happens because **PurgeCSS** does not know where to read the contents of the external component.

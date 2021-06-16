@@ -11,23 +11,18 @@ The Modyo Platform, through a decentralized integration scheme based on APIs and
 ## Reference Architecture
 The reference architecture on which the Modyo Platform is implemented varies from simple scenarios, where no further integration such as public sites or intranets is required, to more complex scenarios, in which additional functionality is required. In this second scenario, business system integrations are performed using a layer of APIs that are implemented independently of the platform, as shown in the following diagram.
 
- <img src="/assets/img/infrastructure/reference_architecture.png" style="margin-top: 40px;" /> 
+<img src="/assets/img/infrastructure/reference_architecture.png" style="margin-top: 40px;" />
 
 
 The left part of the diagram corresponds to the Modyo Platform, whose primary responsibility lies with the management of the digital channels Web, Web Mobile and Progressive Web Application (PWA). The platform provides the necessary tools to manage the lifecycle of all frontend developments, including both Web sites and Widgets, which can initiate connections to the integration layer.
 
-On the right side of the diagram, you can see the integration layer where the Single Sign On (SSO) system acts as the central authentication pivot, and which, in conjunction with the API Gateway, represent the heart of any digital transformation initiative by granting:
-Unified access for all digital channels
-A multichannel bridge for access to business systems
-APIs that can be safely consumed from the Internet
-An environment on which to orchestrate and consolidate calls to business systems, granting unique access to different digital channels
-A mechanism to interoperate at the APIs level with multiple business partners
+On the right side of the diagram, you can see the integration layer where the Single Sign On (SSO) system acts as the central authentication pivot, and which, in conjunction with the API Gateway, represent the heart of any digital transformation initiative by granting: Unified access for all digital channels A multichannel bridge for access to business systems APIs that can be safely consumed from the Internet An environment on which to orchestrate and consolidate calls to business systems, granting unique access to different digital channels A mechanism to interoperate at the APIs level with multiple business partners Un acceso unificado para todos los canales digitales Un puente multicanal de acceso a los sistemas de negocio APIs que pueden ser consumidas de forma segura desde Internet Un ambiente sobre el cual orquestar y consolidar las llamadas a los sistemas de negocio, otorgando un acceso único a los diferentes canales digitales Un mecanismo para interoperar a nivel de APIs con múltiples socios de negocio
 
 Modyo has services handled for both parts of the diagram. In the case of the Platform, a Software as a Service (SaaS) solution is offered in Cloud and Enterprise Cloud versions. For the integration layer, Modyo offers a managed Platform as a Service (PaaS) services called Modyo Connect, which takes over the management of the SSO, API Gateway and everything required to handle the development lifecycle of microservices and integration components. Modyo Connect integration is only available to customers on Enterprise Cloud.
 
 ## Versions
 
-The Modyo Platform is currently distributed in two versions: Modyo Cloud and Modyo Enterprise. Modyo Cloud is deployed to a _multi-tenant_ cloud on Amazon Web Services (AWS), where resources are shared between different customers. Modyo Enterprise can be deployed in _Cloud_ or _On Premise_ mode. A Modyo Enterprise Cloud customer can also choose a less stable version, receiving the latest improvements in return.
+The Modyo Platform is currently distributed in two versions: Modyo Cloud and Modyo Enterprise. Modyo Cloud y Modyo Enterprise. Modyo Cloud is deployed to a _multi-tenant_ cloud on Amazon Web Services (AWS), where resources are shared between different customers. Modyo Enterprise can be deployed in _Cloud_ or _On Premise_ mode. A Modyo Enterprise Cloud customer can also choose a less stable version, receiving the latest improvements in return.
 
 For Cloud and Enterprise Cloud versions, the subscription value includes 24x7 infrastructure support services.
 

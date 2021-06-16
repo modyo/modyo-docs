@@ -10,7 +10,7 @@ Catalog Widgets, as well as base templates to start a new project, provide _"rec
 
 These _"recipes" _ are in the **README.md** file located in the Widget's `.github` folder.
 
-```treeview {1, 5}
+```treeview{1,5}
 ├── .Github/
 │ ├── pr-labeler.yml
 │ ├── release-drafter.yml
@@ -64,7 +64,6 @@ We now have the**token** we can use to configure our repository and so the GitHu
 
 ![2](/assets/img/widgets/ci-cd/3.png)
 
-::: danger Important
-You should never share or publish the **TOKEN** or sensitive information in the repository!
-That is why it is recommended to use environment variables, .env file that is listed in the project's .gitignore, locally and make use of the [secrets](https://docs.GitHub.com/actions/reference/encrypted-secrets) on GitHub.
+::: danger
+Important You should never share or publish the **TOKEN** or sensitive information in the repository! That is why it is recommended to use environment variables, .env file that is listed in the project's .gitignore, locally and make use of the [secrets](https://docs.GitHub.com/actions/reference/encrypted-secrets) on GitHub.
 :::

@@ -6,11 +6,8 @@ search: true
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
-:::warning Warning
-For a successful OpenID Connect integration, the OIDC Provider must have an up-to-date SSL certificate, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
-:::
-:::warning Warning
-The delegated token API via `/auth/openidc/access_token` has been deprecated in favor of `/api/profile/me`.
+:::warning
+Warning For a successful OpenID Connect integration, the OIDC Provider must have an up-to-date SSL certificate, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html). ::: :::warning Warning The delegated token API via `/auth/openidc/access_token` has been deprecated in favor of `/api/profile/me`.
 :::
 
 ## Using Keycloak
@@ -22,7 +19,7 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 1. Access the administrative console, for example [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) and add a new realm.
 2. Add a client application using `openid-connect` as the **Client Protocol** for integration with Modyo.
 3. Set **Access Type** to `confidential` and leave only the **Standard Flow** enabled.
-4. Configure the **Valid Redirect URIs** with the callback and logout URLs of the Modyo account, using the URLs related to the `/auth/openidc/callback` and`/logout * `account.
+4. Configure the **Valid Redirect URIs** with the callback and logout URLs of the Modyo account, using the URLs related to the `/auth/openidc/callback` and`/logout *`account.
 
 ### Integration Settings
 
@@ -31,19 +28,19 @@ The following configuration is valid for both Team and Customer user integration
 1. Access **Settings/Customer settings> Integrations> OpenID Connect** and complete **Client ID** and **Secret** with the name of the client and the credentials that appear in the tab **Credentials** of the client in Keycloak.
 2. In Issuer, fill in the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
 3. Click **Launch discovery service**. This will complete most of the settings.
-4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+4. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 
 ### Optional integration settings
 
 When performing a specific integration, Modyo allows you to enable certain settings to control the following session features:
 
-|                                                                     |                                                                                                                                                                                                                        |
-|---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Enable refresh token**                                         | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.          |
-| **Enable logout**                                      | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again in Keycloak and disabling the SSO experience. |
-| **Enable token revocation**                                   | Not supported by Keycloak                                                                                                                                                                                              |
-| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                             |
-|                                                                     |                                                                                                                                                                                                                        |
+|                                            |                                                                                                                                                                                                             |
+| ------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Enable refresh token**                   | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.                        |
+| **Enable logout**                          | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again in Keycloak and disabling the SSO experience. |
+| **Enable token revocation**                | Not supported by Keycloak                                                                                                                                                                                   |
+| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                         |
+|                                            |                                                                                                                                                                                                             |
 
 ## Using Azure Active Directory
 
@@ -66,14 +63,14 @@ The following configuration is valid for both Team and Customer user integration
 
 1. Access **Configuration/Configuration of customers> Integrations> OpenID Connect**, and complete **Client ID** and **Secret** with the credentials obtained from the Azure portal.
 2. In the Azure console go to **App registrations> Endpoints** and get URLs for **Authorization endpoint** and **Token endpoint**. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
-3. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+3. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 4. Enable optional integration features.
-   |                                        |                                                                                                                                                                                                                        |
-   |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
-   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
-   | **Enable token revocation** | Not supported by Azure AD|
-   | **Enable sync of _claims_ at login** | Enable sync of _claims_ OpenID Connect with custom fields in Modyo.|
+   |                                      |                                                                                                                                                                                                   |
+   | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **Enable refresh token**             | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.              |
+   | **Enable logout**                    | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
+   | **Enable token revocation**          | Not supported by Azure AD                                                                                                                                                                         |
+   | **Enable sync of _claims_ at login** | Enable sync of _claims_ OpenID Connect with custom fields in Modyo.                                                                                                                               |
 
 ## Synchronization of _claims_
 

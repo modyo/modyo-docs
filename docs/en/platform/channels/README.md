@@ -6,7 +6,7 @@ search: true
 
 **Modyo Channels** is an application that allows you to manage content distribution and web applications for multiple sites and languages in one place.
 
-<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;" />
 
 **Modyo Channels** provides extensive access to the base code of every channel through a set of templates, giving developers complete control of every detail of a user's digital experiences, published through an integrated version control system.
 

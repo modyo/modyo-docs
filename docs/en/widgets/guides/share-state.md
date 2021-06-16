@@ -38,8 +38,8 @@ All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the sta
   - It would be the closest thing to a computed property in the component.
   - An example would be a function that filtered the state. It doesn't modify it, but instead gives you a new different object with the filtered data you need.
 
-:::tip Note
-To learn more about implementing and using Vuex, we recommend reading the [documentation](https://vuex.vuejs.org/guide/) and watching this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) from [VueSchool](https://vueschool.io/)
+:::tip
+Note To learn more about implementing and using Vuex, we recommend reading the [documentation](https://vuex.vuejs.org/guide/) and watching this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) from [VueSchool](https://vueschool.io/)
 :::
 
 ### Persisting status between Widgets and page reloads
@@ -50,9 +50,12 @@ The idea behind our Widgets is to separate a set of features or functionalities 
 
 This approach does not give you the ability to communicate directly between Widgets, but this is widely seen as a feature, not an bug. Broadcasting events and receiving data is a scalable Widget design paradigm. Widgets, where possible, should be a reflection of the state.
 
-When it is necessary to persist data (state) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://mi-sitio.com/formulario?step=2&username=Jorge>) and use a function that allows us to obtain the values easily, such as:
+When it is necessary to persist data (state) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://mi-sitio.com/formulario?step=2&username=Jorge>) and use a function that allows us to obtain the values easily, such as: <http://mi-sitio.com/formulario?step=2&username=Jorge>) y usar una función que nos permita obtener los valores fácilmente, como por ejemplo:
 
 ```js
+/**
+Get the params from an url
+Usage:
 /**
 Get the params from an url
 Usage:
@@ -80,6 +83,8 @@ For example
 ```js
 //in our store.js file
 export default new Vuex.Store({
+  state: {
+    ...Store({
   state: {
     ...
     step: 1,

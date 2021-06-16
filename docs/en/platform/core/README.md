@@ -4,23 +4,23 @@ search: true
 
 # The Modyo Platform
 
-The Modyo Platform is the technological foundation on which Modyo applications such as Channels, Content or Customers operate. It provides everything you need for the most relevant cross-sectional configurations.
+The Modyo Platform is the technological foundation on which Modyo applications such as Channels, Content or Customers operate, and it provides everything needed for the most relevant cross-sectional configurations.
 
-The Modyo Platform shows the main Modyo interface, from which you have access to all relevant sections.
+Modyo Platform presents the main interface of Modyo from which you have access to all relevant sections.
 
-<img src="/assets/img/platform/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
+<img src="/assets/img/platform/header.jpg" style="margin: 40px auto; width: 300px; display: block;" />
 
-:::tip Past versions
-The documentation on this site applies to the latest version (9.1). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
+:::tip
+Past versions The documentation on this site applies to the latest version (9.1). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
 :::
 
 ### Key features
 
-- [Team review](/en/platform/core/key-concepts.html)
-- [Integrations](/en/platform/core/integrations)
-- [Users and administrative roles](/en/platform/core/roles.html)
-- [Security](/en/platform/core/security.html)
-- [Administration API](/en/platform/core/api.html)
+- [Team review](/es/platform/core/key-concepts.html)
+- [Integrations](/es/platform/core/integrations)
+- [Users and administrative roles](/es/platform/core/roles.html)
+- [Security](/es/platform/core/security.html)
+- [Administration API](/es/platform/core/api.html)
 
 
 ### Reserved words
