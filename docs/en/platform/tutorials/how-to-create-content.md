@@ -376,7 +376,7 @@ Now we'll create some more structure by creating categories that can filter our 
 To do this we go to the Categories section and create the following categories:
 
 - Gourmet
-- Healthy
+- Health
 - Activities
 - Shopping
 - Travel
