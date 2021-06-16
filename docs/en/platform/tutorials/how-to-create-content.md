@@ -10,7 +10,7 @@ Welcome to the first tutorial of the Modyo training series. In this first tutori
 
 ### Dynamic Bank
 
-Dynamic Bank is our fictitious brand that we create for use in all our demos and tutorials. With Dynamic Bank we try to recreate in the most reliable way the experience of building digital products with Modyo.
+Dynamic Bank is our fictitious brand that we created to use in all our demos and tutorials. With Dynamic Bank we tried to recreate the experience of building digital products with Modyo in the most credible way.
 
 Once you complete this tutorial series, your project should look like this:
 
