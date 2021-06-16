@@ -121,7 +121,7 @@ For the rest of the fields, we will use the following values:
  <b> Text </b> 
  </td> 
  <td> 
- For whatever you need we are with you everywhere
+ For whatever you need, we are with you everywhere
  </td> 
  </tr> 
  <tr> 
