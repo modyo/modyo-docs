@@ -34,8 +34,8 @@ Once you log into Modyo with your account, we will go to the [Modyo Content] mod
 
 ## Step 2: Create Type "Hero"
 
-Now we need to create our first [content type] (/es/platform/content/types.html #tipos -content) in our **"Bank"** space.
-Once you are in this space, you should go to the **Types** section and click the top right button that says **"+ New Type"**.
+Now we need to create our first [content type] (/en/platform/content/types.html #types-content) in our **"Bank"** space.
+Once you are in this space, go to the **Types** section and click the top right button that says **"+ New Type"**.
 
 From there, we generate our first Type called **"Hero"** with the following fields:
 
