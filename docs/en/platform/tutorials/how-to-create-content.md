@@ -319,7 +319,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Text </b> 
  </td> 
  <td> 
- 40% dcto. every Wednesday in the best restaurants with home delivery.
+ 40% discount every Wednesday at the best restaurants with home delivery.
  </td> 
  </tr> 
  <tr> 
