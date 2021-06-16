@@ -461,7 +461,7 @@ For Benefits we will create seven entries with the following fields:
  </tr> 
  </table> 
 
-#### Profit Three
+#### Benefit Three
 
  <table> 
  <tr> 
