@@ -205,7 +205,7 @@ As with the "Hero" type, we will create our second type, "News", considering the
 
 As we did with Hero, we will now create all three news entries with the following fields:
 
-#### Entrance One
+#### First Entry
 
  <table> 
  <tr> 
