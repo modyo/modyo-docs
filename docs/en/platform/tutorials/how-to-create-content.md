@@ -687,7 +687,7 @@ Now let's create our last type for site testimonials. For this type we will need
 
 Create two entries with the following fields:
 
-#### Testimony One
+#### Testimonial One
 
  <table> 
  <tr> 
