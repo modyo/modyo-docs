@@ -377,7 +377,7 @@ To do this we go to the Categories section and create the following categories:
 
 - Gourmet
 - Healthy
-- Panoramas
+- Activities
 - Shopping
 - Travel
 
