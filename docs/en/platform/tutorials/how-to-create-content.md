@@ -648,7 +648,7 @@ For Benefits we will create seven entries with the following fields:
 
 Don't forget to publish all your posts after creating them.
 
-## Step 9: Create Testimonial Type
+## Step 9: Create "Testimonial" Type
 
 Now let's create our last type for site testimonials, for this type we will need the following fields:
 
