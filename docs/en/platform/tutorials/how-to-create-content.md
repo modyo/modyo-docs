@@ -250,7 +250,7 @@ As we did with Hero, we will now create all three news entries with the followin
  </tr> 
  </table> 
 
-#### Entrance Two
+#### Second Entry
 
  <table> 
  <tr> 
