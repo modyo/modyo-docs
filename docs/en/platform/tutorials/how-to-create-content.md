@@ -641,7 +641,7 @@ For Benefits we will create seven entries with the following fields:
  <b> Category </b> 
  </td> 
  <td> 
- Healthy
+ Health
  </td> 
  </tr> 
  </table> 
