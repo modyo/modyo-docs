@@ -233,53 +233,7 @@ module.exports = {
                 "/en/brand/illustrations",
               ],
             },
-          ],
-          "/en/legal/": [
-            {
-              title: "Legal",
-              collapsable: true,
-              children: [
-                ["/en/legal/", "Licence Agreement"],                
-              ],
-            },            
-          ],
-          "/en/coding/": [
-            {
-              title: "Standards",
-              collapsable: true,
-              children: [
-                "/en/coding/",              
-              ],
-            },  
-            {
-              title: "Archtecture",
-              collapsable: true,
-              children: [
-                "/en/coding/architecture/",                
-              ],
-            },
-            {
-              title: "Languages",
-              collapsable: true,
-              path: "/en/coding/languages/",
-              children: [
-                "/en/coding/languages/java",
-                "/en/coding/languages/springboot",
-                "/en/coding/languages/javascript",
-                "/en/coding/languages/vuejs",
-                "/en/coding/languages/nodejs",
-                "/en/coding/languages/ruby",
-                "/en/coding/languages/rubyonrails",
-              ],
-            },
-            {
-              title: "DevOps",
-              collapsable: true,
-              children: [
-                "/es/coding/devops/",                
-              ],
-            },          
-          ],
+          ],                   
         },
       },
       "/es/": {
@@ -478,52 +432,6 @@ module.exports = {
                 "/es/brand/illustrations",
               ],
             },           
-          ],
-          "/es/legal/": [
-            {
-              title: "Legal",
-              collapsable: false,
-              children: [
-                ["/es/legal/", "Acuerdo de Licenciamiento"],                
-              ],
-            },            
-          ],
-          "/es/coding/": [
-            {
-              title: "Estándares",
-              collapsable: true,
-              children: [
-                "/es/coding/",              
-              ],
-            },  
-            {
-              title: "Arquitectura",
-              collapsable: true,
-              children: [
-                "/es/coding/architecture/",                
-              ],
-            },
-            {
-              title: "Lenguajes",
-              collapsable: true,
-              path: "/es/coding/languages/",
-              children: [
-                "/es/coding/languages/java",
-                "/es/coding/languages/springboot",
-                "/es/coding/languages/javascript",
-                "/es/coding/languages/vuejs",
-                "/es/coding/languages/nodejs",
-                "/es/coding/languages/ruby",
-                "/es/coding/languages/rubyonrails",
-              ],
-            },
-            {
-              title: "DevOps",
-              collapsable: true,
-              children: [
-                "/es/coding/devops/",                
-              ],
-            },          
           ],
         },
       },
