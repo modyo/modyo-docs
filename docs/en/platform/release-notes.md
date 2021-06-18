@@ -4,6 +4,9 @@ search: true
 
 # Release Notes
 
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fix performance issues
+
 ### 9.1.21 - May 28, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -23,7 +26,7 @@ search: true
 ### 9.1.18 - May 18, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple security enhancements..
+* Multiple security enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Page tree is reimplemented
