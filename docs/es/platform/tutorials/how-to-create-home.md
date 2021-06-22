@@ -6284,7 +6284,7 @@ El widget de testimonios es un poco más complejo ya que utilizaremos JS para ge
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;"/>
 
-El Widgets Builder es donde puedes crear micro frontends para tus sitios. Para crear uno solo necesitamos entrar a la sección ya mencionada, hacer click en el botón <b>New Widget</b> y le asignaremos un nombre, que en nuestro caso es Testimonial. Al crearlo, este te desplegará tres pestañas, donde deberás pegar el JS, CSS y HTML según corresponda.
+El Widget Builder es donde puedes crear micro frontends para tus sitios. Para crear uno solo necesitamos entrar a la sección ya mencionada, hacer click en el botón <b>New Widget</b> y le asignaremos un nombre, que en nuestro caso es Testimonial. Al crearlo, este te desplegará tres pestañas, donde deberás pegar el JS, CSS y HTML según corresponda.
 
 <code>JS</code>
 
@@ -6385,7 +6385,7 @@ Para realizar una publicación, hacemos clic en el botón <b>Publish</b> donde s
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/>
 
-Luego seguiremos los pasos para seleccionar la fecha de publicación, que en este caso será pulicación inmediata.
+Luego seguiremos los pasos para seleccionar la fecha de publicación, que en este caso será publicación inmediata.
 
 ## Conclusiones
 
