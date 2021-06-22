@@ -198,7 +198,7 @@ if (IN_PRODUCTION) {
 
 En este archivo podemos obligar a **PurgeCSS** a incluir los estilos de 3 maneras distintas:
 
-- Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capas de leer el contenido y determinar que estilos debe incluir.
+- Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capaz de leer el contenido y determinar que estilos debe incluir.
 
   ```js{6}
   // ...
