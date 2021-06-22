@@ -128,152 +128,62 @@ Ahora que modificamos el Layout Base, vamos a hacer cambios en el header copiand
 
 ```html
 <header role="banner" id="header" class="bg-primary">
-  <div class="row">
-    <aside class="col-10 col-xl-2">
-      <div class="pl-3 py-2 d-flex">
-        <button id="btn_menu" class="d-block d-xl-none mr-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5rem"
-            height="1.5rem"
-            fill="#fff"
-            class="bi bi-list m_open"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5rem"
-            height="1.5rem"
-            fill="#fff"
-            class="bi bi-x m_close"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
-        </button>
-        <a class="navbar-brand" href="{{ site.url }}">
-          <img src="{{ site.logo | asset_url }}" alt="Logo {{site.name}}" />
-        </a>
-      </div>
-    </aside>
-    <section
-      class="col-2 col-xl-10 text-white d-flex justify-content-end justify-content-xl-between align-items-center"
-    >
-      <small class="d-none d-xl-block">
-        <b>UF:</b> 28.680,39
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>UTM:</b> 50.322,00
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>IPSA:</b> 3.972,25
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>USD:</b> 787,50
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>EURO:</b> 898,25
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#70D960"
-          class="bi bi-arrow-up"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
-          />
-        </svg>
-      </small>
-      {% if user %}
-      <div class="mr-3">
-        <button
-          type="button"
-          class="py-2 px-0 bg-transparent border-0 text-dark position-relative notifications_btn"
-          data-toggle="modal"
-          data-target="#notifications"
-          id="dropdownProfileButton"
-        >
-          <h3 class="sr-only">Notifications</h3>
-          <svg
-            width="1.5em"
-            height="1.5em"
-            viewBox="0 0 16 16"
-            class="bi bi-bell"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
-            <path
-              fill-rule="evenodd"
-              d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
-            />
-          </svg>
-          {%if user.unread_notifications_count > 0 %}
-          <span
-            class="badge badge-primary notifications-badge badge_new"
-            id="badge_new"
-          >
-          </span>
-          {% endif %}
-        </button>
-      </div>
-      {% endif %}
-    </section>
-  </div>
+	<div class="row">
+		<aside class="col-10 col-xl-2">
+			<div class="pl-3 py-2 d-flex"> 
+				<button id="btn_menu" class="d-block d-xl-none mr-2">
+					<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="#fff" class="bi bi-list m_open" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="#fff" class="bi bi-x m_close" viewBox="0 0 16 16">
+						<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+				</button>
+				<a class="navbar-brand" href="{{ site.url }}">
+					<img src="{{ site.logo | asset_url }}" alt="Logo {{site.name}}">
+				</a>
+			</div>
+		</aside>
+		<section class="col-2 col-xl-10 text-white d-flex justify-content-end justify-content-xl-between align-items-center">
+			<small class="d-none d-xl-block">
+				<b>UF:</b> 28.680,39
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+				</svg>
+				<b>UTM:</b> 50.322,00
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+				</svg>
+				<b>IPSA:</b> 3.972,25
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+				</svg>
+				<b>USD:</b> 787,50
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+				</svg>
+				<b>EURO:</b> 898,25
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#70D960" class="bi bi-arrow-up" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+				</svg>
+			</small>
+			{% if user %}
+			<div class="mr-3">
+				<button type="button" class="py-2 px-0 bg-transparent border-0 text-dark position-relative notifications_btn" data-toggle="modal" data-target="#notifications" id="dropdownProfileButton">
+					<h3 class="sr-only">Notifications</h3>
+					<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+						<path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+					</svg>
+					{%if user.unread_notifications_count > 0 %}
+					<span class="badge badge-success notifications-badge badge_new" id="badge_new">
+					</span>
+					{% endif %}
+				</button>
+			</div>
+			{% endif %}
+		</section>
+	</div>
 </header>
 <!-- Notifications Panel -->
 {% snippet "notifications_html" %}
@@ -299,85 +209,52 @@ Para modificar las notificaciones debemos editar el css. En el snippet <code>not
 De la misma forma, remplazamos el código del HTML en el snipppet <code>notifications_html</code>:
 
 ```html
-{% if user %}
-<div
-  class="modal right fade"
-  id="notifications"
-  tabindex="-1"
-  aria-labelledby="notificationsLabel"
-  aria-modal="true"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-white px-4 py-3">
-        <h3 class="h5 modal-title" id="notificationsLabel">Notifications</h3>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&#10005;</span>
-        </button>
-      </div>
-      <div class="modal-body px-4 py-3">
-        {%if user.notifications == 0 %}
-        <p class="text-muted p-3 text-center mb-0">No new notifications</p>
-        {% else %}
-        <div class="accordion" id="notificationsCollapsed">
-          {% for notification in user.notifications %} {% assign
-          notification_url = notification.url | split: "notification_id=" %} {%
-          assign id = notification_url[1] %}
-          <div class="mb-3 border rounded">
-            <div class="p-0">
-              <button
-                class="notification_btn py-2 px-3 border-0 bg-transparent text-dark d-block w-100 text-left {%unless notification.opened%}font-weight-bold new_not{%endunless%}"
-                type="button"
-                data-toggle="collapse"
-                data-target="#notification_{{forloop.index}}"
-                aria-expanded="true"
-                aria-controls="collapse_{{forloop.index}}"
-                data-url="{{account.url}}/api/profile/notifications/{{id}}/mark_as_read"
-                onclick="openNotification('{{forloop.index}}')"
-                id="not_{{forloop.index}}"
-              >
-                <small class="d-block mb-1 text-muted"
-                  >{{ notification.sent_at | date: "%H:%M %a, %b, %y" }}</small
-                >
-                <span class="font-weight-bold d-flex">
-                  <span
-                    class="mt-1 mr-2 badge {% unless notification.opened  %}badge-primary{% else %} badge-light{% endunless %} notifications-badge"
-                    id="badge_{{forloop.index}}"
-                    style="margin-top: 6px"
-                  >
-                  </span>
-                  {{ notification.subject }}
-                </span>
-              </button>
-            </div>
-            <div
-              id="notification_{{forloop.index}}"
-              class="notification collapse"
-              aria-labelledby="notification_{{forloop.index}}"
-              data-parent="#notificationsCollapsed"
-            >
-              <div class="border-top p-3">
-                {{ notification.body }}
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+{% if user %}	
+<div class="modal right fade" id="notifications" tabindex="-1" aria-labelledby="notificationsLabel" aria-modal="true" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bg-white px-4 py-3">
+				<h3 class="h5 modal-title" id="notificationsLabel">Notifications</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&#10005;</span>
+				</button>
+			</div>
+			<div class="modal-body px-4 py-3">
+				{%if user.notifications == 0 %}
+				<p class="text-muted p-3 text-center mb-0">No new notifications</p>
+				{% else %}
+				<div class="accordion" id="notificationsCollapsed">
+					{% for notification in user.notifications %}
+					{% assign notification_url = notification.url | split: "notification_id="  %}
+					{% assign id =  notification_url[1] %}
+					<div class="mb-3 border rounded">
+						<div class="p-0">
+							<button class="notification_btn py-2 px-3 border-0 bg-transparent text-dark d-block w-100 text-left {%unless notification.opened%}font-weight-bold new_not{%endunless%}" type="button" data-toggle="collapse" data-target="#notification_{{forloop.index}}" aria-expanded="true" aria-controls="collapse_{{forloop.index}}" data-url="{{account.url}}/api/profile/notifications/{{id}}/mark_as_read" onclick="openNotification('{{forloop.index}}')" id="not_{{forloop.index}}">
+								<small class="d-block mb-1 text-muted">{{ notification.sent_at | date: "%H:%M %a, %b, %y" }}</small>
+								<span class="d-flex">
+									<span class="mt-1 mr-2 badge {% unless notification.opened  %}badge-success{% else %} badge-light{% endunless %} notifications-badge" id="badge_{{forloop.index}}" style="margin-top: 6px">
+									</span>
+									{{ notification.subject }}
+								</span>
+							</button>
+						</div>
+						<div id="notification_{{forloop.index}}" class="notification collapse" aria-labelledby="notification_{{forloop.index}}" data-parent="#notificationsCollapsed">
+							<div class="border-top p-3">
+								{{ notification.body }}
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </div>
 {% endif %}
 <!-- Notifications JS -->
 <script>
-  {% snippet "notifications_js" %}
+	{% snippet "notifications_js" %}
 </script>
 ```
 
