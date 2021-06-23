@@ -6,33 +6,33 @@ search: true
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels](/en/platform/channels) where we will generate the base of the site where we will add [Widgets](/en/widgets/) from the Modyo Widgets catalog.
+Welcome to a new tutorial from the Modyo training series. In this tutorial we're going to focus on [Modyo Channels] (/en/platform/channels), where we'll build the base of the site where we'll add a [Widget] (/en/platform/channels/widgets.html/) from the [Modyo Financial Widget Catalog] (/en/widgets/) using the [Modyo CLI] (/es/platform/channels/widgets.html #modyo -cli).
 
-Throughout this tutorial, and others too, we will use the fictitious brand "Dynamic Bank", which we introduce you below.
+As in the other tutorials, we will use the fictional brand “Dynamic Bank”, which we will introduce below.
 
 ### Dynamic Bank
 
-Dynamic Bank is the name we give in Modyo to everything about demos and example of the platform. We wanted to create it in order to offer an experience very close to the reality of what it really means to work with Modyo. Once you have completed this tutorials, your site should look like this:
+Dynamic Bank is the name we use at Modyo for our demos and examples of the platform. We created it so users of the Dynamic demos can get a close sense of what it's like to work with the Modyo platform. Once you have completed this tutorial, your site should look like this:
 
 <img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
-<a href="https://www.figma.com/proto/UtgKA8d7kN0lWUk3RvhHl4/PD-Private-Site?page-id=1086%3A0&node-id=1086%3A1&viewport=444%2C519%2C0.49354425072669983&scaling=min-zoom" target="blank">View Design Figma</a>
+<a href="https://www.figma.com/proto/UtgKA8d7kN0lWUk3RvhHl4/PD-Private-Site?page-id=1086%3A0&node-id=1086%3A1&viewport=444%2C519%2C0.49354425072669983&scaling=min-zoom" target="blank">View Figma Design</a>
 
 ## Prerequisites
 
-To run the steps in this tutorial you must have created the contents of the [Dynamic Bank Content](/en/platform/tutorials/how-to-create-content) tutorial and have knowledge about HTML, CSS, JS and the Modyo platform.
+To complete the steps in this tutorial you must have knowledge of HTML, CSS, JS and the Modyo platform.
 
-## Step 1: Create a Cloud Site
+## Step 1: Create a site in the Cloud
 
-To create our [site] (/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
+To create our [site] (/en/platform/channels/sites), where we are going to set up the Private Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
 
-Fill the Name fields with "Private Site" and select the Theme "Minimal" as shown in the image.
+Fill the Name fields with "Private Site" and select the "Minimal" Theme as shown in the image.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
 
 ## Step 2: Upload logo and favicon
 
-To perform this step we will go to the [Site settings](/en/platform/channels/sites.html#configuracion) section, where we can change or add some site settings, including: Site Name, Description, Language, GTM ID, SEO, PWA, Team, among others.
+To perform this step we will go to the [Site settings] section (/es/platform/channels/sites.html #configuracion of a site), where we can change or add some site settings, such as site name, description, language, GTM ID, SEO, PWA, team, among others.
 
 In this case we will focus on General and add our logo file in <b> Site logo </b> and Favicon in <b> Visualization </b>.
 
@@ -46,19 +46,19 @@ In this case we will focus on General and add our logo file in <b> Site logo </b
 
 Remember to save your changes after uploading the files.
 
-Once our logo is loaded, we will make the size changes to fit our design. For this we will go to Templates and within the Libs group we open the snippet bootstrap css and look for the class that is affecting our logo, <code> .navbar-brand img </code> and change the height of <code> 50px</code> to <code> 30px </code>.
+Once our logo is uploaded, we're going to make the size changes to fit our design.
+
+For this, we will go to [Templates] (/en/platform/channels/templates) and within the <b>Libs</b> group we open the snippet <code>bootstrap css</code> and look for the class that is affecting our logo, <code>.navbar-brand img</code>, and change the height from <code>50px</code> to <code>30px</code>.
+
+The [Templates] section (/en/platform/channels/templates) corresponds to the structure contained in the site, i.e. the basis of HTML, CSS and JS, plus the libraries that contemplate the Template.
 
 ## Step 3: Change CSS variables to give you Dynamic Bank look and feel
 
-Inside our new site, on the left you will find the main menu with the sections we will work on in this tutorial.
-
-Let's start in the [Templates](/en/platform/channels/templates) section, which corresponds to the structure that contains the site, that is the base of HTML, CSS and JS, plus the libraries that contemplate the Template.
-
-Here we are going to modify the CSS variables, which are in a snippet called <b> css variables </b> that feeds the rest of the stylesheets already configured within the Minimal Theme.
+To begin, let's modify the CSS variables, which are in a snippet called <code> css variables </code> that feeds the rest of the style sheets already configured within the Minimal Theme.
 
 To make the change, we will modify the following variables in the aforementioned snippet:
 
-#### Colours:
+#### Colors:
 
 <code>primary = rgba(56, 68, 112, 1)</code><br>
 <code>secondary = rgba(98, 125, 229, 1)</code><br>
@@ -71,19 +71,19 @@ To make the change, we will modify the following variables in the aforementioned
 <code>button_radius = 100px</code><br>
 <code>button_font_weight = 600</code>
 
-To review the change you just made, let's use [preview mode] (/es/platform/core/key-concepts.html #modo -preview-view).
+To review, let's save our changes and then use the [preview mode] (/es/platform/core/key-concepts.html #modo -preview).
 
 ## Step 4: Change Site Source
 
 In Minimal we are using the [webfontload](https://github.com/typekit/webfontloader) library to load the typography asynchronously.
 
-For Dynamic we'll use the Jost font. To change it we have to enter the snippet <b> webfontload_config_js </b> and modify the line where the call is made, replacing <code> families: ['DM Sans:400,700&display=Swap'] </code> by <code> families: ['jost:400,700&display=Swap'] </code>.
+We will use the Jost font for Dynamic. To change it, we have to enter the  <b>Javascript Base sheet</b> inside Views and modify the line where the call is made, replacing <code>families: ['DM Sans:400,700&display=swap']</code> by <code>families: ['Jost:400,700&display=swap']</code>.
 
 ## Step 5: Modify Layout Base
 
-To make our site look like the design we have to modify the structure it has. To do this, we go to Templates, and inside the Views tab, we look for the Layouts section and open the base.
+To make our site look like it does in the design, we need to modify its HTML structure. To do this, while still in Templates, we will go to the Views tab and look for the [Layouts] section (/en/platform/channels/templates.html #layouts -custom) where we will select the <b> base </b>.
 
-The idea is to change the code by one gets closer to an application; with the menu on the sidebar and using 100% of the width of our screen.
+The idea is to change the code to one that's more similar to an application; with the menu in the sidebar and using 100% of the width of our screen.
 
 ```html
 {% html5 %}
@@ -124,156 +124,66 @@ The idea is to change the code by one gets closer to an application; with the me
 
 ## Step 6: Modify Header
 
-Now that we modify the Layout Base we have to make the changes to the header to make it look like in our design, for this we will copy the following code
+Now that we have modified the Base Layout, let's make changes to the header by copying the following code into the snippet <b> Header </b>.
 
 ```html
 <header role="banner" id="header" class="bg-primary">
-  <div class="row">
-    <aside class="col-10 col-xl-2">
-      <div class="pl-3 py-2 d-flex">
-        <button id="btn_menu" class="d-block d-xl-none mr-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5rem"
-            height="1.5rem"
-            fill="#fff"
-            class="bi bi-list m_open"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5rem"
-            height="1.5rem"
-            fill="#fff"
-            class="bi bi-x m_close"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
-        </button>
-        <a class="navbar-brand" href="{{ site.url }}">
-          <img src="{{ site.logo | asset_url }}" alt="Logo {{site.name}}" />
-        </a>
-      </div>
-    </aside>
-    <section
-      class="col-2 col-xl-10 text-white d-flex justify-content-end justify-content-xl-between align-items-center"
-    >
-      <small class="d-none d-xl-block">
-        <b>UF:</b> 28.680,39
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>UTM:</b> 50.322,00
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>IPSA:</b> 3.972,25
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>USD:</b> 787,50
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#D7426E"
-          class="bi bi-arrow-down mr-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-          />
-        </svg>
-        <b>EURO:</b> 898,25
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="#70D960"
-          class="bi bi-arrow-up"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
-          />
-        </svg>
-      </small>
-      {% if user %}
-      <div class="mr-3">
-        <button
-          type="button"
-          class="py-2 px-0 bg-transparent border-0 text-dark position-relative notifications_btn"
-          data-toggle="modal"
-          data-target="#notifications"
-          id="dropdownProfileButton"
-        >
-          <h3 class="sr-only">Notifications</h3>
-          <svg
-            width="1.5em"
-            height="1.5em"
-            viewBox="0 0 16 16"
-            class="bi bi-bell"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
-            <path
-              fill-rule="evenodd"
-              d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
-            />
-          </svg>
-          {%if user.unread_notifications_count > 0 %}
-          <span
-            class="badge badge-primary notifications-badge badge_new"
-            id="badge_new"
-          >
-          </span>
-          {% endif %}
-        </button>
-      </div>
-      {% endif %}
-    </section>
-  </div>
+    <div class="row">
+        <aside class="col-10 col-xl-2">
+            <div class="pl-3 py-2 d-flex"> 
+                <button id="btn_menu" class="d-block d-xl-none mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="#fff" class="bi bi-list m_open" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="#fff" class="bi bi-x m_close" viewBox="0 0 16 16">
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+                <a class="navbar-brand" href="{{ site.url }}">
+                    <img src="{{ site.logo | asset_url }}" alt="Logo {{site.name}}">
+                </a>
+            </div>
+        </aside>
+        <section class="col-2 col-xl-10 text-white d-flex justify-content-end justify-content-xl-between align-items-center">
+            <small class="d-none d-xl-block">
+                <b>UF:</b> 28.680,39
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                <b>UTM:</b> 50.322,00
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                <b>IPSA:</b> 3.972,25
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                <b>USD:</b> 787,50
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#D7426E" class="bi bi-arrow-down mr-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                <b>EURO:</b> 898,25
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#70D960" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </small>
+            {% if user %}
+            <div class="mr-3">
+                <button type="button" class="py-2 px-0 bg-transparent border-0 text-dark position-relative notifications_btn" data-toggle="modal" data-target="#notifications" id="dropdownProfileButton">
+                    <h3 class="sr-only">Notifications</h3>
+                    <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+                        <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                    </svg>
+                    {%if user.unread_notifications_count > 0 %}
+                    <span class="badge badge-success notifications-badge badge_new" id="badge_new">
+                    </span>
+                    {% endif %}
+                </button>
+            </div>
+            {% endif %}
+        </section>
+    </div>
 </header>
 <!-- Notifications Panel -->
 {% snippet "notifications_html" %}
@@ -281,7 +191,7 @@ Now that we modify the Layout Base we have to make the changes to the header to 
 
 ## Step 7: Modify Notifications and Sidebar
 
-To modify notifications we must edit the css, inside Templates in Snippets <code> notifications_css </code> replacing it with the following code:
+To modify notifications we need to edit the css. In the snippet <code> notifications_css </code> replace the code with the following:
 
 ```css
 .notifications_btn svg {fill: {{white}};transition:.3s}
@@ -296,92 +206,59 @@ To modify notifications we must edit the css, inside Templates in Snippets <code
 #menu_panel.modal.right .modal-dialog {max-width: 400px;}
 ```
 
-In the same way, replace the HTML in the snipppet <code> notifications_html </code>:
+In the same way, we replace the HTML code in the snipppet <code> notifications_html </code>:
 
 ```html
-{% if user %}
-<div
-  class="modal right fade"
-  id="notifications"
-  tabindex="-1"
-  aria-labelledby="notificationsLabel"
-  aria-modal="true"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-white px-4 py-3">
-        <h3 class="h5 modal-title" id="notificationsLabel">Notifications</h3>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&#10005;</span>
-        </button>
-      </div>
-      <div class="modal-body px-4 py-3">
-        {%if user.notifications == 0 %}
-        <p class="text-muted p-3 text-center mb-0">No new notifications</p>
-        {% else %}
-        <div class="accordion" id="notificationsCollapsed">
-          {% for notification in user.notifications %} {% assign
-          notification_url = notification.url | split: "notification_id=" %} {%
-          assign id = notification_url[1] %}
-          <div class="mb-3 border rounded">
-            <div class="p-0">
-              <button
-                class="notification_btn py-2 px-3 border-0 bg-transparent text-dark d-block w-100 text-left {%unless notification.opened%}font-weight-bold new_not{%endunless%}"
-                type="button"
-                data-toggle="collapse"
-                data-target="#notification_{{forloop.index}}"
-                aria-expanded="true"
-                aria-controls="collapse_{{forloop.index}}"
-                data-url="{{account.url}}/api/profile/notifications/{{id}}/mark_as_read"
-                onclick="openNotification('{{forloop.index}}')"
-                id="not_{{forloop.index}}"
-              >
-                <small class="d-block mb-1 text-muted"
-                  >{{ notification.sent_at | date: "%H:%M %a, %b, %y" }}</small
-                >
-                <span class="font-weight-bold d-flex">
-                  <span
-                    class="mt-1 mr-2 badge {% unless notification.opened  %}badge-primary{% else %} badge-light{% endunless %} notifications-badge"
-                    id="badge_{{forloop.index}}"
-                    style="margin-top: 6px"
-                  >
-                  </span>
-                  {{ notification.subject }}
-                </span>
-              </button>
+{% if user %}   
+<div class="modal right fade" id="notifications" tabindex="-1" aria-labelledby="notificationsLabel" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-white px-4 py-3">
+                <h3 class="h5 modal-title" id="notificationsLabel">Notifications</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&#10005;</span>
+                </button>
             </div>
-            <div
-              id="notification_{{forloop.index}}"
-              class="notification collapse"
-              aria-labelledby="notification_{{forloop.index}}"
-              data-parent="#notificationsCollapsed"
-            >
-              <div class="border-top p-3">
-                {{ notification.body }}
-              </div>
+            <div class="modal-body px-4 py-3">
+                {%if user.notifications == 0 %}
+                <p class="text-muted p-3 text-center mb-0">No new notifications</p>
+                {% else %}
+                <div class="accordion" id="notificationsCollapsed">
+                    {% for notification in user.notifications %}
+                    {% assign notification_url = notification.url | split: "notification_id="  %}
+                    {% assign id =  notification_url[1] %}
+                    <div class="mb-3 border rounded">
+                        <div class="p-0">
+                            <button class="notification_btn py-2 px-3 border-0 bg-transparent text-dark d-block w-100 text-left {%unless notification.opened%}font-weight-bold new_not{%endunless%}" type="button" data-toggle="collapse" data-target="#notification_{{forloop.index}}" aria-expanded="true" aria-controls="collapse_{{forloop.index}}" data-url="{{account.url}}/api/profile/notifications/{{id}}/mark_as_read" onclick="openNotification('{{forloop.index}}')" id="not_{{forloop.index}}">
+                                <small class="d-block mb-1 text-muted">{{ notification.sent_at | date: "%H:%M %a, %b, %y" }}</small>
+                                <span class="d-flex">
+                                    <span class="mt-1 mr-2 badge {% unless notification.opened  %}badge-success{% else %} badge-light{% endunless %} notifications-badge" id="badge_{{forloop.index}}" style="margin-top: 6px">
+                                    </span>
+                                    {{ notification.subject }}
+                                </span>
+                            </button>
+                        </div>
+                        <div id="notification_{{forloop.index}}" class="notification collapse" aria-labelledby="notification_{{forloop.index}}" data-parent="#notificationsCollapsed">
+                            <div class="border-top p-3">
+                                {{ notification.body }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
-          </div>
-          {% endfor %}
         </div>
-        {% endif %}
-      </div>
     </div>
-  </div>
 </div>
 {% endif %}
 <!-- Notifications JS -->
 <script>
-  {% snippet "notifications_js" %}
+    {% snippet "notifications_js" %}
 </script>
 ```
 
-Modify the menu to look like side nav, replace the code within Snippets <code> menu </code> in the General group
+To make our menu look like a side navigation, let's replace the snippet code <code> menu </code> with the following:
 
 ```html
 <ul class="nav menu_nav">
@@ -428,7 +305,7 @@ Modify the menu to look like side nav, replace the code within Snippets <code> m
 </ul>
 ```
 
-Replace the <code> user_html </code>:
+To display the Sign in, Profile and Log Out buttons, we need to modify the snippet <code> user_html </code>: 
 
 ```html
 <nav class="menu_nav" id="second_nav">
@@ -471,7 +348,7 @@ Replace the <code> user_html </code>:
 </nav>
 ```
 
-Add our style in a new snippet which we will call <code> private_site_css </code> and add it to the General Style Sheet.
+After having all this, let's create a snippet for styles with the name <code> private_site_css </code> and add it to the General Stylesheet.
 
 ```css
 html{
@@ -636,7 +513,7 @@ body.open_menu #btn_menu .m_close {
 }
 ```
 
-Add Javascript for menu effect in responsive, in Javascript sheet.
+Finally, we'll add Javascript for the responsive menu effect, in the Javascript sheet.
 
 ```js
 window.csrf_token = '';
@@ -671,11 +548,13 @@ UJS
 {% snippet "shared/libs/forms_js" %}
 ```
 
+Remember to save all changes before leaving Templates. 
+
 ## Step 8: Generate the menu
 
-Another feature that exists within Modyo is the Navigation tool, in which we can generate the menu for our site in a simple way.
+Another one of Modyo's features is the Navigation tool, where we can generate the menu for our site in a simple way.
 
-For this, we go to the [Navigation] section (/es/platform/channels/navigation.html) and modify the already esxistent menu and leave the following options.
+For this, we go to the [Navigation] section (/es/platform/channels/navigation.html) and modify the existing menu and leave the following options:
 
 <table>
  <tr>
@@ -685,7 +564,7 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
  <tr>
   <td>
-   Mi Banca
+   My Bank
   </td>
   <td>
    Home
@@ -694,7 +573,7 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
  <tr>
   <td>
-   Cuentas
+   Accounts
   </td>
   <td>
    Custom URL
@@ -705,7 +584,7 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
  <tr>
   <td>
-   Tarjetas
+   Cards
   </td>
   <td>
    Custom URL
@@ -716,7 +595,7 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
  <tr>
   <td>
-   Transferencias
+   Transfers
   </td>
   <td>
    Custom URL
@@ -727,7 +606,7 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
  <tr>
   <td>
-   Créditos
+   Credit
   </td>
   <td>
    Custom URL
@@ -738,7 +617,7 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
  <tr>
   <td>
-   Avance en Efectivo
+   Cash Advance
   </td>
   <td>
    Custom URL
@@ -749,63 +628,61 @@ For this, we go to the [Navigation] section (/es/platform/channels/navigation.ht
  </tr>
 </table>
 
-This would be reflected as follows:
+Once our full menu is complete, we must save it.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;">
+## Step 9: Install Modyo CLI
 
-After having our full menu we save and publish.
+Now that we have the base ready for adding our Widget, let's install the [Modyo CLI] (/es/platform/channels/widgets.html #modyo -cli).
 
-## Step 9: Install Modyo Cli
+[Modyo CLI] (/en/platform/channels/widgets.html #modyo -cli) is a command-line tool based on the acceleration and integration principles, which have a GET and PUSH command, respectively.
 
-Now that we have ready our Base in Modyo to add our widgets, let's install the Modyo Cli on our computer.
+To install the Modyo CLI we need some dependencies, which must be installed globally.
 
-The [Modyo Cli] (/es/platform/channels/widgets.html #modyo -cli) is a is a command line tool based on two principles of acceleration and integration, and these principles have a get and push command respectively.
+They are </code> Git distributed version control system (v 1.7+) </code>, <code> Node (v 12+) </code>, a code editor like <code> Visual Studio Code </code> or other, and <code> Npm (v 6.14+) </code> or <code> Yarn (v 1.22+) </code>.
 
-To install the modyo-cli we need some dependencies, which must already be installed.
-
-They are </code> Git distributed version control system (v 1.7+) </code>, <code> Node (v 12+) </code>, <code> Npm (v 6.14+) </code> d5a6b7z0, <code> Yarn (v 1.22+) </code> and a code editor like <code> VScode </code> or other.
-
-on the local machine globally, you must use one of these options in the console.
+To perform the installation, one of these options in the terminal can be used.
 
 <code>Via yarn</code>
 
 ```sh
-yarn global add @modyo/cli
+$ yarn global add @modyo/cli
 ```
 
 <code>Via npm</code>
 
 ```sh
-npm i -g @modyo/cli
+$ npm i -g @modyo/cli
 ```
-Once installed we can check in our console by running the command <code> modyo-cli help </code> to verify that this is all correct.
+
+Once installed, we can check that everything is OK by running the command <code> modyo-cli help </code>.
 
 ## Step 10: Initialize a Catalog Widget
 
-After completing the process, and having the modyo-cli available at the globar level, we will get the [Account Summary] Widget (/es/widgets/retail/summary.html) from the [Modyo Financial Widget Catalog] (/en/widgets/).
+After completing the installation process, let's get the [Account Summary] Widget (/es/widgets/retail/summary.html) from the [Modyo Financial Widget Catalog] (/en/widgets/).
 
-To bring the Widget to our local environment we do it with the following command in the console:
+We bring the Widget to our local environment with the following command:
 
 ```sh
 modyo-cli get modyo-widgets-retail-summary
 ```
-Once the process is finished we will have our widget we will have a view like this in our terminal:
+
+After the process is over, we will have a view like this in our terminal:
 
 <img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;"/>
 
- Then we enter the folder <code>modyo-widgets-retail-summary</code> and with <code>yarn serve</code> or <code>npm serve</code> we can view the widget locally in our browser.
+ To edit it we must go to the folder <code> modyo-widgets-retail-summary </code> inside the terminal, and with <code> yarn serve </code> or <code> npm serve </code> we'll see the widget locally in our browser.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;"/>
 
-## Step 11: Style changes in the Widget
+## Step 11: Style Changes in the Widget
 
-Catalog Widgets have been designed in Modyo with a flat style, to make changes we must open the widget folder <code> modyo-widgets-retail-summary </code> in our editor, in our case VS Code.
+Catalog Widgets are designed in Modyo with a flat style. To make changes we need to open the widget folder <code> modyo-widgets-retail-summary </code> in our editor, which in our case is Visual Studio Code.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;"/>
 
-We will start by modifying the CSS, the first thing we will do is change the colors of the variables, for our colors.
+We'll start by modifying the CSS to change the colors of the variables to Dynamic Bank.
 
-For this we open the folders src, sccs and inside modify the _variables.sccs
+For this, we open the src folder and then inside sccs modify the file <code> _variables.sccs </code>.
 
 ```css
 $primary-10: #EEF0F5;
@@ -838,9 +715,9 @@ $light: $secondary-10;
 $dark: $secondary-dark;
 ```
 
-Then in _theme.sccs and modify line 8 leaving the body with a background: white;
+Then in file <code> _theme.sccs </code> we modify line 8, leaving the body with a <code> background: white </code>;
 
-In the SRC/Components/SummarYAccount.vue directory we will modify the header of the cards to add the $primary-40 variable for the background specifically line 169:
+In the <code> src/components/SummaryAccount.vue </code> directory we will modify the header of the cards, modifying the background for $primary-40, specifically line 169:
 
 ```css
 .card-header.product-summary__header:first-child {
@@ -849,7 +726,8 @@ In the SRC/Components/SummarYAccount.vue directory we will modify the header of 
   background: $primary-40;
 }
 ```
-and on line 8 we add a h6 to the h2
+
+And on line 8 we add the h6 class to the h2
 
 ```html
 <h2 class="h6 mb-0 text-capitalize">
@@ -858,7 +736,7 @@ and on line 8 we add a h6 to the h2
 </h2>
 ```
 
-Then we'll add styles so that the bar ea green:
+Next, we'll add styles to make the amount bar look green:
 
 ```css
 .m-progress-bar .progress-bar {
@@ -866,7 +744,7 @@ Then we'll add styles so that the bar ea green:
 }
 ```
 
-We added the title in <b> app.vue </b>:
+And finally we add the title at <code> App.vue </code>:
 
 ```
 <template>
@@ -887,8 +765,8 @@ We added the title in <b> app.vue </b>:
         ref="viewport"
         class="products-viewport">
         <div class="header-summary mb-3">
-          <h3 class="h4 text-primary font-weight-bold">Hola</h3>
-          <h3 class="h4 text-primary">Bienvenido a Dynamic</h3>
+          <h3 class="h4 text-primary font-weight-bold">Hello</h3>
+          <h3 class="h4 text-primary">Welcome to Dynamic</h3>
         </div>
         <div
           ref="content"
@@ -1011,91 +889,92 @@ export default {
 }
 </style>
 ```
-Once we finish giving the widget the look and feel we are ready to push Modyo.
 
-## Step 12: Pushear Widget to the site
+Once we finish giving the widget the look and feel, we're ready to PUSH Modyo.
 
-To push our Widget to Modyo, for this we have to generate the configuration so that the cli knows where we are going to push.
+## Step 12: Push Widget to Site
 
-The configuration file will be created in the root of the site and it will be called <code> .env </code> 
+To PUSH the Widget to the site in Modyo, we need to generate the configuration in the Modyo CLI to know where we are going to do the PUSH.
+
+The configuration file will be created in the root folder and it must be called <code> .env </code>, adding the following code and replacing [Account url] and [Modyo API Token] according to your context.
 
 ```
-MODYO_ACCOUNT_URL= Account url
-MODYO_SITE_HOST=private-site
+MODYO_ACCOUNT_URL= [Account url]
+modyo_site_host=private-site
 MODYO_VERSION=9
-MODYO_TOKEN= Token obtained in Modyo
-MODYO_BUILD_COMMAND=build
-MODYO_BUILD_DIRECTORY=dist
-MODYO_WIDGET_NAME=Summary
+MODYO_TOKEN= [Modyo API Token]
+modyo_build_command=build
+modyo_build_directory=Dist
+modyo_widget_name=summary
 ```
 
 <img src="/assets/img/tutorials/how-to-create-private-site/env.png" style="max-width: 400px;margin: auto 0;"/>
 
-To get a token we're going to go to the Account Settings, and within API access we will generate a new one in the button <b> New Application </b> on the top right.
+To obtain a token we will go to the Modyo Account Settings, and within API access we will generate a new one in the button <b> New Application </b>, in the top right.
 
-In the modal we complete the following data
+In the modal we complete the following data:
 
-<table> 
- <tr> 
-  <td> 
+<table>
+ <tr>
+  <td>
    Name
-   </td> 
-   <td> 
+  </td>
+  <td>
    modyo-cli
-   </td> 
- </tr> 
-<tr> 
-  <td> 
+  </td>
+ </tr>
+<tr>
+  <td>
    Description
-  </td> 
-  <td> 
-   Token to be used to push from modyo-cli
-  </td> 
- </tr> 
- <tr> 
-  <td> 
+  </td>
+  <td>
+   Token used to push from modyo-cli
+  </td>
+ </tr>
+ <tr>
+  <td>
    Redirect URI
-  </td> 
-  <td> 
+  </td>
+  <td>
    urn:ietf:wg:oauth:2.0:oob
-  </td> 
-  </tr> 
-</table> 
+  </td>
+ </tr>
+</table>
 
 <img src="/assets/img/tutorials/how-to-create-private-site/token.png" style="max-width: 400px;margin: auto 0;"/>
 
-Once the API access is created, enter <b> Team </b> in the same menu and look for our user, and in the tab <b> API access </b> we click on <b> New Access Token </b> a4b739f17f8z0, select <b> modyo-cli </b> and click on <b> Create Token </b>.
+Once the API access is created, we enter <b> Team </b> and search for our user. On the tab <b> API access </b> we click <b> New Access Token </b>, we select <b> modyo-cli </b> and click on <b> Create Token </b>.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/access_token.png" style="max-width: 400px;margin: auto 0;"/>
 
-Now we have our token, and we can copy it into the configuration <b> .env </b> file.
+Now that we have our token, we can add it to the configuration file <b> .env </b>.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;"/>
 
-Then with the command <code> modyo-cli push Summary </code> we will make the widget available on our site.
+Then with the <code> modyo-cli push Summary </code> command in the terminal, we will take the widget to our site's Widget Builder.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;"/>
 
-We enter the Widget, publish it and then add it in the Home.
+To make it available in the widget library, let's go into our Widget and publish.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;"/>
 
-We delete the existing HTML Widget and replace it with our Custom Widget.
+Then we go to Page Home, delete the existing HTML Widget and replace it with our Custom Widget.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/home.png" style="max-width: 600px;margin: auto 0;"/>
 
-## Step 13: Review and Publish
+## Step 13: Review and Publish Home, Navigation, and Template
 
-After the previous steps are done, we will preview the work. When we agree with the result we must publish the changes so that we will only now leave all our work available for our end users.
+Once we have completed the steps above, we will review the work in preview mode. When we are satisfied with the result, we will publish the changes so that they are available for our end users.
 
-To make a publication, click on the <b> Publish </b> button where a panel will open with the changes we have made.
+To make a publication, click the <b> Publish </b> button where a panel will open with the changes we have made.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;"/>
 
-Then we will follow the steps to select the publication date, which in this case will be immediate polication.
+Then we will follow the steps to select the publication date, which in this case will be immediate publication.
 
-## Opinion
+## Conclusion
 
-Very good! You have finished the course of Private Site with Widgets from Modyo-CLI.
+Congratulations! You have completed the Private Site course with Modyo CLI Widgets.
 
-Now you have knowledge of how to use [Modyo Channels](/en/platform/channels) with all its modules; [Pages](/en/platform/channels/pages), [Navigation](/en/platform/channels/navigation), [Widgets](/en/platform/channels/widgets), [Templates](/en/platform/channels/templates) and some details within [Site settings](/en/platform/channels/sites.html#configuracion). In addition, use modyo-cli to work on a Widget in the [Modyo Catalog](/en/widgets/) and push to a site.
+You already have knowledge about [Modyo Channels] (/en/platform/channels) and all its modules: [Pages] (/en/platform/channels/pages), [Navigation] (/en/platform/channels/navigation), [Widgets] (/platform/channels/templates), [Templates] (/en/platform/channels/templates) and some details within [Site settings] (/es/platform/channels/sites.html #configuracion -de-a-site). Also, use [Modyo CLI] (/es/platform/channels/widgets.html #modyo -cli) to work on a [Modyo Catalog] Widget (/en/widgets/) and PUSH your site.
