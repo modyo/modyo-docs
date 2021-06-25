@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creación de mega menú
+# Creación de Mega Menú 
 
 ## Introducción
 
