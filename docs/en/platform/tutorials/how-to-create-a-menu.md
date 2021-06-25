@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-Welcome to a new tutorial from the Modyo training series. In this tutorial we're going to focus on [Modyo Channels] (/en/platform/channels) using the [Navigation] modules (/es/platform/channels/navigation.html) and [Templates] (/es/platform/channels/templates.html) to create a mega menu on our site.
+Welcome to a new tutorial from the Modyo training series. In this tutorial we're going to focus on [Modyo Channels] (/en/platform/channels) using the [Navigation] modules (/en/platform/channels/navigation.html) and [Templates] (/en/platform/channels/templates.html) to create a mega menu on our site.
 
 Navigation is a tool that helps us develop in a simple way and can then be managed in a better way. 
 
