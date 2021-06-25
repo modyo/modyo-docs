@@ -414,201 +414,201 @@ Add the images in the [Asset Manager] (/es/platform/content/asset-manager.html #
 Create snippet <code> menu_responsive </code> where we will paste the code from the menu that will go into the panel.
 
 ```html
-{% assign menu = menus ['main']%} 
- <div id="accordion_menu" class="navbar-light navbar-nav"> 
- {% assign items_to_show = menu.items | visible_items%}
- {% for item in items_to_show%}
- {% assign active = item.url | active_page: request.url%}
- {% assign second_level = item.child_items | visible_items%}
- {% if second_level.size > 0%}
- {% if item.classes == 'megamenu'%}
- <!-- --> 
- <div> 
- <div id="heading-{{ item.parameterized_label }}"> 
- <a class="nav-link dropdown-toggle" href="#collapse-{{ item.parameterized_label }}" data-toggle="collapse" data-target="#collapse-{{ item.parameterized_label }}" aria-expanded="false" aria-controls="collapse-{{ item.parameterized_label }}"> 
- {{item.label}}
- </a> 
- </div> 
- <div id="collapse-{{ item.parameterized_label }}" class="collapse p-3" aria-labelledby="heading-{{ item.parameterized_label }}" data-parent="#accordion_menu"> 
- {% for child in second_level%}
- <div class=""> 
- <p class="megamenu-title small font-weight-bold mb-0 text-uppercase"> {{child.label}} </p> 
- <ul class="list-unstyled"> 
- {% assign third_level = child.child_items | visible_items%}
- {% if third_level.size > 0%}
- {% for child in third_level%}
- <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}> 
- <div class="megamenu_icon icon-{{child.classes}}"> 
- </div> 
- <div> 
- <span> {{child.label}} </span> 
- <p class="small text-muted mb-0"> {{child.description}} </p> 
- </div> 
- </a> 
- {% endfor%}
- {% endif%}
- </ul> 
- </div> 
- {% endfor%}
- </div> 
- </div> 
- <!-- --> 
- {% else%}
- <!-- --> 
- <div> 
- <div id="heading-{{ item.parameterized_label }}"> 
- <a class="nav-link dropdown-toggle" href="#collapse-{{ item.parameterized_label }}" data-toggle="collapse p-3" data-target="#collapse-{{ item.parameterized_label }}" aria-expanded="false" aria-controls="collapse-{{ item.parameterized_label }}"> 
- {{item.label}} - <!-- --> 
- <div> 
- <div id="heading-{{ item.parameterized_label }}"> 
- <a class="" href="#collapse-{{ item.parameterized_label }}" data-toggle="collapse" data-target="#collapse-{{ item.parameterized_label }}" aria-expanded="false" aria-controls="collapse-{{ item.parameterized_label }}"> 
- {{item.label}} - 
- </a> 
- </div> 
- <div id="collapse-{{ item.parameterized_label }}" class="collapse" aria-labelledby="heading-{{ item.parameterized_label }}" data-parent="#accordion_menu"> 
- {% for child in second_level%}
- <div class=""> 
- <p class="megamenu-title small font-weight-bold mb-0 text-uppercase"> {{child.label}} </p> 
- <ul class="list-unstyled"> 
- {% assign third_level = child.child_items | visible_items%}
- {% if third_level.size > 0%}
- {% for child in third_level%}
- <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}> 
- <span> {{child.label}} </span> 
- </a> 
- {% endfor%}
- {% endif%}
- </ul> 
- </div> 
- {% endfor%}
- </div> 
- </div> 
- <!-- --> 
- </a> 
- </div> 
- <div id="collapse-{{ item.parameterized_label }}" class="collapse" aria-labelledby="heading-{{ item.parameterized_label }}" data-parent="#accordion_menu"> 
- {% for child in second_level%}
- <div class=""> 
- <p class="megamenu-title small font-weight-bold mb-0 text-uppercase"> {{child.label}} </p> 
- <ul class="list-unstyled"> 
- {% assign third_level = child.child_items | visible_items%}
- {% if third_level.size > 0%}
- {% for child in third_level%}
- <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}> 
- <div> 
- <span> {{child.label}} </span> 
- <p class="small text-muted mb-0"> {{child.description}} </p> 
- </div> 
- </a> 
- {% endfor%}
- {% endif%}
- </ul> 
- </div> 
- {% endfor%}
- </div> 
- </div> 
- <!-- --> 
- {% endif%}
- {% else%}
- <div> 
- <div id="heading-{{ item.parameterized_label }}"> 
- <a target="{{ item.target }}" class="{{item.classes}} nav-link" rel="{{ item.target | item_rel}}" href="{{ item.url }}" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}"> {{item.label}} </a> 
- </div> 
- </div> 
- {% endif%}
- {% endfor%}
- </div> 
+{% assign menu = menus['main'] %} 
+<div id="accordion_menu" class="navbar-light navbar-nav">
+    {% assign items_to_show = menu.items | visible_items %}
+    {% for item in items_to_show %}
+    {% assign active = item.url | active_page: request.url %}
+    {% assign second_level = item.child_items | visible_items %}
+    {% if second_level.size > 0 %}
+    {% if item.classes == 'megamenu'%}
+    <!-- -->
+    <div>
+        <div id="heading-{{ item.parameterized_label }}">
+            <a class="nav-link dropdown-toggle" href="#collapse-{{ item.parameterized_label }}" data-toggle="collapse" data-target="#collapse-{{ item.parameterized_label }}" aria-expanded="false" aria-controls="collapse-{{ item.parameterized_label }}">
+                {{ item.label }}
+            </a>
+        </div>
+        <div id="collapse-{{ item.parameterized_label }}" class="collapse p-3" aria-labelledby="heading-{{ item.parameterized_label }}" data-parent="#accordion_menu">
+            {% for child in second_level %}
+            <div class="">
+                <p class="megamenu-title small font-weight-bold mb-0 text-uppercase">{{ child.label }}</p>
+                <ul class="list-unstyled">
+                    {% assign third_level = child.child_items | visible_items %}
+                    {% if third_level.size > 0 %}
+                    {% for child in third_level %}
+                    <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+                        <div class="megamenu_icon icon-{{child.classes}}">
+                        </div>
+                        <div>
+                            <span>{{ child.label }}</span>
+                            <p class="small text-muted mb-0">{{ child.description }}</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- -->
+    {% else%}
+    <!-- -->
+    <div>
+        <div id="heading-{{ item.parameterized_label }}">
+            <a class="nav-link dropdown-toggle" href="#collapse-{{ item.parameterized_label }}" data-toggle="collapse p-3" data-target="#collapse-{{ item.parameterized_label }}" aria-expanded="false" aria-controls="collapse-{{ item.parameterized_label }}">
+                {{ item.label }} - <!-- -->
+                <div>
+                    <div id="heading-{{ item.parameterized_label }}">
+                        <a class="" href="#collapse-{{ item.parameterized_label }}" data-toggle="collapse" data-target="#collapse-{{ item.parameterized_label }}" aria-expanded="false" aria-controls="collapse-{{ item.parameterized_label }}">
+                            {{ item.label }} - 
+                        </a>
+                    </div>
+                    <div id="collapse-{{ item.parameterized_label }}" class="collapse" aria-labelledby="heading-{{ item.parameterized_label }}" data-parent="#accordion_menu">
+                        {% for child in second_level %}
+                        <div class="">
+                            <p class="megamenu-title small font-weight-bold mb-0 text-uppercase">{{ child.label }}</p>
+                            <ul class="list-unstyled">
+                                {% assign third_level = child.child_items | visible_items %}
+                                {% if third_level.size > 0 %}
+                                {% for child in third_level %}
+                                <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+                                    <span>{{ child.label }}</span>
+                                </a>
+                                {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- -->
+            </a>
+        </div>
+        <div id="collapse-{{ item.parameterized_label }}" class="collapse" aria-labelledby="heading-{{ item.parameterized_label }}" data-parent="#accordion_menu">
+            {% for child in second_level %}
+            <div class="">
+                <p class="megamenu-title small font-weight-bold mb-0 text-uppercase">{{ child.label }}</p>
+                <ul class="list-unstyled">
+                    {% assign third_level = child.child_items | visible_items %}
+                    {% if third_level.size > 0 %}
+                    {% for child in third_level %}
+                    <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+                        <div>
+                            <span>{{ child.label }}</span>
+                            <p class="small text-muted mb-0">{{ child.description }}</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- -->
+    {% endif %}
+    {% else %}
+    <div>
+        <div id="heading-{{ item.parameterized_label }}">
+            <a target="{{ item.target }}" class="{{item.classes}} nav-link" rel="{{ item.target | item_rel}}" href="{{ item.url }}" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}">{{ item.label }}</a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
 ```
 
 Modify code from the Snippet <code> Header </code> where we will add the snippet of <code> menu_responsive </code> we created a while ago.
 
 ```html
- <header role="banner" id="header"> 
- <div
- class="navbar navbar-expand-md navbar-light py-4"
- role="navigation”
- aria-label="NavBar”
- >
- <div
- class="navbar-inner container d-flex justify-content-between align-items-center text-right”
- >
- <div class="d-flex flex-column"> 
- <a
- class="navbar-brand”
- href= "{{site.url}}”
- title="Logo {{site.name}}”
- rel="home”
- >
- <img
- src= "{{site.logo | asset_url | replace: 'R360x50', 'original'}}”
- alt="Logo {{site.name}}”
- />
- </a> 
- <a class="sr-only sr-only-focusable btn btn-dark p-2" href=” #content”
- > Skip to main content</a
- >
- </div> 
- <div
- class="d-flex justify-content-end align-items-center”
- id="navbar-menu”
- >
- <nav class="d-none d-md-flex align-items-center"> 
- <h2 class="sr-only"> Main Menu </h2> 
- {% snippet 'shared/general/menu'%}
- </nav> 
- <button
- type="button”
- class="py-2 px-3 bg-transparent border-0 text-dark position-relative d-block d-md-none”
- data-toggle="modal”
- data-target=” #menu_panel”
- >
- <h2 id="mainmenulabel" class="sr-only"> Open Menu </h2> 
- <svg
- width="2em”
- height="2em”
- viewbox="0 0 16 16"
- class="bi bi-list”
- fill="CurrentColor”
- xmlns=” http://www.w3.org/2000/svg”
- >
- <path
- fill-rule="evenodd”
- d="m2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 1h3a.5.5 0 0 1-.5- 5Zm0-4a.5.5 0 0 1 3 7h10a.5.5 0 1 0 1h3a.5.5 0 1-.5-.5Zm0-4a.5.5 0 0 1 3 3h10a.5.5 0 0 1 1h3a.5.5 0 0 1-.5-.5.5 0 0 1-.5-.5-.5.5 0 0 1-.5-.5 5z”
- />
- </svg> 
- </button> 
- </div> 
- </div> 
- <!-- Menu Panel --> 
- <div
- class="modal right fade”
- id="menu_panel”
- tabindex=” -1"
- aria-labelledby="NotificationsLabel”
- aria-modal="true”
- >
- <div class="modal-dialog"> 
- <div class="modal-content"> 
- <div class="modal-header bg-white"> 
- <button
- type="button”
- class="close”
- data-dismiss="modal”
- aria-label="Close”
- >
- <span aria-hidden="true"> ✕ </span> 
- </button> 
- </div> 
- <div
- class="modal-body p-4 align-items-start”
- >
- {% snippet “menu_responsive”%}
- </div> 
- </div> 
- </div> 
- </div> 
- </div> 
- </header> 
+<header role="banner" id="header">
+  <div
+    class="navbar navbar-expand-md  navbar-light py-4"
+    role="navigation"
+    aria-label="Navbar"
+  >
+    <div
+      class="navbar-inner container d-flex justify-content-between align-items-center text-right"
+    >
+      <div class="d-flex flex-column">
+        <a
+          class="navbar-brand"
+          href="{{ site.url }}"
+          title="Logo {{site.name}}"
+          rel="home"
+        >
+          <img
+            src="{{ site.logo | asset_url | replace: 'R360x50', 'original'}}"
+            alt="Logo {{site.name}}"
+          />
+        </a>
+        <a class="sr-only sr-only-focusable btn btn-dark p-2" href="#content"
+          >Skip to main content</a
+        >
+      </div>
+      <div
+        class="d-flex justify-content-end align-items-center"
+        id="navbar-menu"
+      >
+        <nav class="d-none d-md-flex align-items-center">
+          <h2 class="sr-only">Main Menu</h2>
+          {% snippet 'shared/general/menu' %}
+        </nav>
+        <button
+          type="button"
+          class="py-2 px-3 bg-transparent border-0 text-dark position-relative d-block d-md-none"
+          data-toggle="modal"
+          data-target="#menu_panel"
+        >
+          <h2 id="mainmenulabel" class="sr-only">Open Menu</h2>
+          <svg
+            width="2em"
+            height="2em"
+            viewBox="0 0 16 16"
+            class="bi bi-list"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5- 5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Menu Panel -->
+    <div
+      class="modal right fade"
+      id="menu_panel"
+      tabindex="-1"
+      aria-labelledby="notificationsLabel"
+      aria-modal="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&#10005;</span>
+            </button>
+          </div>
+          <div
+            class="modal-body p-4 align-items-start"
+          >
+            {% snippet "menu_responsive" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 ```
 
 ## Conclusion
