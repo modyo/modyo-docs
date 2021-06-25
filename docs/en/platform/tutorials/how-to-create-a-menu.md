@@ -227,152 +227,152 @@ After we have our navigation ready we save and publish.
 To make the change in the HTML menu we will go to the Template and on the Snippets tab we open the file <code> menu </code>.
 
 ```html
-{% assign menu = menus ['main']%} 
- <ul class="nav navbar-nav d-flex align-items-center" role="menu" aria-label="Main menu {{responsive}}"> 
- {% assign items_to_show = menu.items | visible_items%}
- {% for item in items_to_show%}
- {% assign active = item.url | active_page: request.url%}
- {% assign second_level = item.child_items | visible_items%}
- {% if second_level.size > 0%}
- {% if item.classes == 'megamenu'%}
- <!-- --> 
- <li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item megamenu {{ active }}"> 
- <a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="{{item.classes}} nav-link dropdown-toggle"> {{item.label}} <span class="sr-only"> dropdown </span> </a> 
- <div aria-labelledby="megamneu" class="megamenu dropdown-menu border-0 p-0 m-0"> 
- <div class="container p-lg-0"> 
- <div class="row justify-content-end w-100"> 
- <div class="col-12 col-xl-8 bg-white rounded m-0 shadow-sm"> 
- <div class="p-4"> 
- <div class="row"> 
- {% for child in second_level%}
- <div class="col-4"> 
- <p class="megamenu-title small font-weight-bold mb-0 text-uppercase"> {{child.label}} </p> 
- <ul class="list-unstyled"> 
- {% assign third_level = child.child_items | visible_items%}
- {% if third_level.size > 0%}
- {% for child in third_level%}
- <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}> 
- <div class="megamenu_icon icon-{{child.classes}}"> 
+{% assign menu = menus['main'] %} 
+<ul class="nav navbar-nav d-flex align-items-center" role="menu" aria-label="Main menu {{responsive}}">
+    {% assign items_to_show = menu.items | visible_items %}
+    {% for item in items_to_show %}
+    {% assign active = item.url | active_page: request.url %}
+    {% assign second_level = item.child_items | visible_items %}
+    {% if second_level.size > 0 %}
+    {% if item.classes == 'megamenu'%}
+    <!-- -->
+    <li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item megamenu {{ active }}">
+        <a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="{{item.classes}} nav-link dropdown-toggle">{{ item.label }} <span class="sr-only">dropdown</span></a>
+        <div aria-labelledby="megamneu" class="megamenu dropdown-menu border-0 p-0 m-0">
+            <div class="container p-lg-0">
+                <div class="row justify-content-end w-100">
+                    <div class="col-12 col-xl-8 bg-white rounded m-0 shadow-sm">
+                        <div class="p-4">
+                            <div class="row">
+                                {% for child in second_level %}
+                                <div class="col-4">
+                                    <p class="megamenu-title small font-weight-bold mb-0 text-uppercase">{{ child.label }}</p>
+                                    <ul class="list-unstyled">
+                                        {% assign third_level = child.child_items | visible_items %}
+                                        {% if third_level.size > 0 %}
+                                        {% for child in third_level %}
+                                        <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="{{child.classes}} megamenu-item d-flex" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+                                            <div class="megamenu_icon icon-{{child.classes}}">
 
- </div> 
- <div> 
- <span> {{child.label}} </span> 
- <p class="small text-muted mb-0"> {{child.description}} </p> 
- </div> 
- </a> 
- {% endfor%}
- {% endif%}
- </ul> 
- </div> 
- {% endfor%}
- </div> 
- </div> 
- </div> 
- </div> 
- </div> 
- </div> 
- </li> 
- <!-- --> 
- {% else%}
- <li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none"> 
- <a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="{{item.classes}} nav-link dropdown-toggle {% for child in second_level %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{ responsive }}" role="menuitem"> 
- {{item.label}} <span class="sr-only"> dropdown </span> 
- </a> 
- <div class="{{item.classes}} submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }} dropdown-menu" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{responsive}}" aria-expanded="false"> 
- {% for child in second_level%}
- <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}> 
- {{child.label}}
- </a> 
- {% assign third_level = child.child_items | visible_items%}
- {% if third_level.size > 0%}
- {% for child in third_level%}
- <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}> 
- <span class="pl-2 small"> {{child.label}} </span> 
- </a> 
- {% endfor%}
- {% endif%}
- {% endfor%}
- </div> 
- {% endif%}
- {% else%}
- <li class="nav-item nav-item-{{ item.parameterized_label }} {{ active }}" role="none"> 
- <a target="{{ item.target }}" class="{{item.classes}} nav-link" rel="{{ item.target | item_rel}}" href="{{ item.url }}" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}"> {{item.label}} </a> 
- </li> 
- {% endif%}
- {% endfor%}
- </ul> 
+                                            </div>
+                                            <div>
+                                                <span>{{ child.label }}</span>
+                                                <p class="small text-muted mb-0">{{ child.description }}</p>
+                                            </div>
+                                        </a>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- -->
+    {% else %}
+    <li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none">
+        <a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="{{item.classes}} nav-link dropdown-toggle {% for child in second_level %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{ responsive }}" role="menuitem">
+            {{ item.label }} <span class="sr-only">dropdown</span>
+        </a>
+        <div class="{{item.classes}} submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }} dropdown-menu" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{responsive}}" aria-expanded="false">
+            {% for child in second_level %}
+            <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+                {{ child.label }}
+            </a>
+            {% assign third_level = child.child_items | visible_items %}
+            {% if third_level.size > 0 %}
+            {% for child in third_level %}
+            <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+                <span class="pl-2 small">{{ child.label }}</span>
+            </a>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% else %}
+    <li class="nav-item nav-item-{{ item.parameterized_label }} {{ active }}" role="none">
+        <a target="{{ item.target }}" class="{{item.classes}} nav-link" rel="{{ item.target | item_rel}}" href="{{ item.url }}" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}">{{ item.label }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 ```
 
 Create Snippet <code> megamenu_css </code> and add the following code and add the snippet in the Base Stylesheet of the Site.
 
 ```css
 .megamenu {
- position: static
+    position: static
 }
 .megamenu .dropdown-menu {
- background: none;
- border: none;
- width: 100%
+    background: none;
+    border: none;
+    width: 100%
 }
 a.megamenu-item {
- color: {{dark}};
- padding: .5rem 0;
- display: block;
- text-decoration: none! important;
+    color: {{dark}};
+    padding: .5rem 0;
+    display: block;
+    text-decoration: none !important;
 }
 .megamenu-title {
- color: #A5AECC;
+    color: #A5AECC;
 }
-.dropdown-toggle። after {
- color: #A5AECC;
+.dropdown-toggle::after {
+    color: #A5AECC;
 }
 .megamenu_icon {
- width: 30px;
- height: 30px;
- margin-right: 8px;
- background-repeat: no-repeat;
- background-position: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .nav-link.btn.btn-primary {
- color: white! important;
- padding: .5rem 1rem! important;
+    color: white !important;
+    padding: .5rem 1rem !important;
 }
 .navbar-expand-md .navbar-nav .dropdown-menu.megamenu {
- top: 85%;
+    top: 85%;
 }
 .megamenu.show .nav-link {
- border-bottom: 0px solid transparent! important;
+    border-bottom: 0px solid transparent !important;
 }
-.megamenu_icon.icon-current-account {
- background-image: url (Asset URL);
- background-size: 23px;
+.megamenu_icon.icon-cuenta-corriente {
+    background-image: url(Asset URL);
+    background-size: 23px;
 }
 .megamenu_icon.icon-plan-dynamic {
- background-image: url (Asset URL);
- background-size: 22px;
+    background-image: url(Asset URL);
+    background-size: 22px;
 }
 .megamenu_icon.icon-debito {
- background-image: url (Asset URL);
- background-size: 22px;
+    background-image: url(Asset URL);
+    background-size: 22px;
 }
-.megamenu_icon.icon-credit {
- background-image: url (Asset URL);
- background-size: 22px;
+.megamenu_icon.icon-credito {
+    background-image: url(Asset URL);
+    background-size: 22px;
 }
-.megamenu_icon.icon-mortgage {
- background-image: url (Asset URL);
- background-size: 23px;
+.megamenu_icon.icon-hipotecario {
+    background-image: url(Asset URL);
+    background-size: 23px;
 }
-.megamenu_icon.icon-consumption {
- background-image: url (Asset URL);
- background-size: 21px;
+.megamenu_icon.icon-consumo {
+    background-image: url(Asset URL);
+    background-size: 21px;
 }
 .menu_responsive .nav-item {
- padding: 10px! important;
- margin-bottom: 10px! important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
 }
-#accordion_menu .navbar-nav .nav-link {
- padding: 1rem .5rem! important;
+#accordion_menu.navbar-nav .nav-link {
+    padding: 1rem .5rem !important;
 }
 ```
 
