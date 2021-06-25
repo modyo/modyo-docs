@@ -376,7 +376,7 @@ a.megamenu-item {
 }
 ```
 
-Add the images in the [Asset Manager] (/es/platform/content/asset-manager.html #selector -de-assets) and replace the background-image of each class with the <code> Asset URL </code>.
+Add the images in the [Asset Manager] (/en/platform/content/asset-manager.html #selector -de-assets) and replace the background-image of each class with the <code> Asset URL </code>.
 
 <table>
   <tr>
