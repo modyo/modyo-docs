@@ -378,38 +378,38 @@ a.megamenu-item {
 
 Add the images in the [Asset Manager] (/es/platform/content/asset-manager.html #selector -de-assets) and replace the background-image of each class with the <code> Asset URL </code>.
 
- <table> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/3eb47aa1-6a61-4f4d-9fd2-904f8a4fcfc4/original/cuenta.svg" style="max-width: 30px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/6b52e454-e56f-43b3-aae1-a99e8818d2d0/original/dynamic.svg" style="max-width: 30px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/a29ed39d-e8c5-4856-883e-9beb8af17de7/original/debito.svg" style="max-width: 30px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/488c67ed-0b59-449d-89d2-baad0b5231c6/original/credito.svg" style="max-width: 30px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/c001808b-09b1-4122-915a-15f47d35ff78/original/hipotecario.svg" style="max-width: 30px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/30f3799b-ade1-462c-bbd0-597673ecb6dd/original/consumo.svg" style="max-width: 30px;margin: auto 0;"/> 
- </td> 
- </tr> 
- </table> 
+<table>
+  <tr>
+    <td>
+      <img src="https://cloud.modyocdn.com/uploads/3eb47aa1-6a61-4f4d-9fd2-904f8a4fcfc4/original/cuenta.svg" style="max-width: 30px;margin: auto 0;"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://cloud.modyocdn.com/uploads/6b52e454-e56f-43b3-aae1-a99e8818d2d0/original/dynamic.svg" style="max-width: 30px;margin: auto 0;"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://cloud.modyocdn.com/uploads/a29ed39d-e8c5-4856-883e-9beb8af17de7/original/debito.svg" style="max-width: 30px;margin: auto 0;"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://cloud.modyocdn.com/uploads/488c67ed-0b59-449d-89d2-baad0b5231c6/original/credito.svg" style="max-width: 30px;margin: auto 0;"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://cloud.modyocdn.com/uploads/c001808b-09b1-4122-915a-15f47d35ff78/original/hipotecario.svg" style="max-width: 30px;margin: auto 0;"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://cloud.modyocdn.com/uploads/30f3799b-ade1-462c-bbd0-597673ecb6dd/original/consumo.svg" style="max-width: 30px;margin: auto 0;"/>
+    </td>
+  </tr>
+</table>
 
 Create snippet <code> menu_responsive </code> where we will paste the code from the menu that will go into the panel.
 
