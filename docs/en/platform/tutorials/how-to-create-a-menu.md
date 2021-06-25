@@ -615,4 +615,4 @@ Modify code from the Snippet <code> Header </code> where we will add the snippet
 
 Congratulations! Complete a new course in the Modyo tutorial series.
 
-In this tutorial we focus on creating a menu from [Navigation] (/es/platform/channels/navigation.html) and then deploying the code in [Templates] (/es/platform/channels/templates.html).
+In this tutorial we focus on creating a menu from [Navigation] (/en/platform/channels/navigation.html) and then deploying the code in [Templates] (/en/platform/channels/templates.html).
