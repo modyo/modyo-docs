@@ -258,7 +258,19 @@ module.exports = {
                 "/es/platform/release-notes",
                 ["/es/platform/training", "Entrenamiento"],
               ],
-            },  
+            },
+            {
+              title: "Tutoriales",
+              path: "/es/platform/tutorials/",
+              collapsable: true,
+              children: [
+                "/es/platform/tutorials/how-to-create-content",
+                "/es/platform/tutorials/how-to-create-home",
+                "/es/platform/tutorials/how-to-create-a-custom-view",
+                "/es/platform/tutorials/how-to-create-private-site",
+                "/es/platform/tutorials/how-to-create-a-menu",
+              ],
+            },
             {
               title: "Arquitectura",
               path: "/es/platform/infrastructure/",
@@ -340,17 +352,6 @@ module.exports = {
               children: [
                 "/es/platform/insights/digital-factory",
                 ["/es/platform/insights/data-studio", "Data Studio"],
-              ],
-            },
-            {
-              title: "Tutoriales",
-              path: "/es/platform/tutorials/",
-              collapsable: true,
-              children: [
-                "/es/platform/tutorials/how-to-create-content",
-                "/es/platform/tutorials/how-to-create-home",
-                "/es/platform/tutorials/how-to-create-a-custom-view",
-                "/es/platform/tutorials/how-to-create-private-site",
               ],
             },          
           ],
