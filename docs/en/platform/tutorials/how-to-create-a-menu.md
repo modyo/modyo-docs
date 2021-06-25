@@ -218,7 +218,7 @@ In the previous Tutorials we created the Dynamic Bank site, now we will generate
 
 Which will give us a look like this:
 
- <img src="/assets/img/tutorials/how-to-create-a-menu/menu.png" style="max-width: 700px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-a-menu/menu.png" style="max-width: 700px;margin: auto 0;"/>
 
 After we have our navigation ready we save and publish.
 
