@@ -231,7 +231,7 @@ The object returned by `getEntries()` includes a `meta` field to help you naviga
 #### Filters
 
 The `getEntries()` method above can also receive a filter object to query the entries.
-The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has` and can be used to query the `meta` fields of each entry (such as the creation date or assigned tags)
+The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, `Geohash` and can be used to query the `meta` fields of each entry (such as the creation date or assigned tags)
 
 **Supported filters**:
 
@@ -244,6 +244,8 @@ The supported filters are `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `N
 - **JSONPath**: receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
 
 - **Paginate**: receives as parameters the number of pages and the total number of entries per page.
+
+- **Geohash**: receives as parameters a location field and a geohash [ref](https://www.movable-type.co.uk/scripts/geohash.html) to select the content within a location.
 
 
 :::warning Warning

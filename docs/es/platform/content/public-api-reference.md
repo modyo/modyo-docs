@@ -254,7 +254,7 @@ El objeto retornado por `getEntries()` incluye un campo `meta` que te ayudará a
 #### Filtros
 
 El método `getEntries()` que ocupamos más arriba también puede recibir un objecto de filtros para consultar las entradas.
-Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, pudiendo consultar los campos `meta` de cada entrada (como la fecha de creación o tags asignados)
+Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, `Geohash`, pudiendo consultar los campos `meta` de cada entrada (como la fecha de creación o tags asignados)
 
 **Filtros soportados**:
 
@@ -267,6 +267,8 @@ Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `Not
 - **JSONPath**: recibe el JSONPath [ref](https://goessner.net/articles/JsonPath/) que modela una estructura de respuesta.
 
 - **Pagination**: recibe como parámetros el número de página y el total de entradas por página.
+
+- **Geohash**: recibe como parámetros un campo de ubicación y un geohash [ref](https://www.movable-type.co.uk/scripts/geohash.html) para seleccionar el contenido dentro de una ubicación.
 
 :::warning Atención
 Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
