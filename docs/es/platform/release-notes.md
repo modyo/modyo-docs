@@ -16,6 +16,19 @@ search: true
 * Eventos de negocio: Añade a Modyo cualquier evento que que sea relevante para tu negocio, permitiendo luego segmentar a los clientes.
 * Reinos de usuarios: Configura distintos reinos de usuarios para que accedan a distintos sitios o incluso a distintos stages de un mismo sitio.
 
+### 9.1.24 - 13 de julio del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Se actualizan versiones jQuery de la plataforma.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla problema que impide guardar elementos con el número límite de versiones de respaldo.
+* Se corrige error al copiar páginas que usan widgets con variables.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se permite el envío de correos raw a través de la messaging API.
+* Se arreglan problemas al exportar respuestas de formularios.
+
 ### 9.1.23 - 22 de junio del 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>

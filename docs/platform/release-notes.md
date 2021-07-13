@@ -16,6 +16,19 @@ search: true
 * Business Events: Track any event that is relevant to your business in Modyo, and leverage events for customer segmentation.
 * User Realms: Set up different user realms to access different sites or even different stages of the same site.
 
+### 9.1.24 - 13 July, 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Platform jQuery version updated.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixed problem that prevented saving items with the max number of backup versions.
+* Fixed bug with copied pages with widgets and variables.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Raw mailing allowed for messaging API.
+* Fixed bugs with form responses export.
+
 ### 9.1.23 - 22 June, 2021
 &nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
