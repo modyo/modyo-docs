@@ -44,7 +44,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          //{ text: "Connect", link: "/en/connect/" },
+          { text: "Services", link: "/en/connect/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],
@@ -242,7 +242,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          //{ text: "Connect", link: "/es/connect/" },
+          { text: "Servicios", link: "/es/connect/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -276,10 +276,8 @@ module.exports = {
               path: "/es/platform/infrastructure/",
               collapsable: true,
               children: [       
-                "/es/platform/infrastructure/integration",         
-                "/es/platform/infrastructure/cloud",
+                "/es/platform/infrastructure/integration",
                 "/es/platform/infrastructure/onpremise",
-                "/es/platform/infrastructure/connect",
                 "/es/platform/infrastructure/security",
               ],
             },
@@ -421,10 +419,22 @@ module.exports = {
               ],
             },           
           ],
+          "/es/connect/": [
+            {
+              title: "Servicios Manejados",
+              collapsable: false,
+              children: [
+                ["/es/connect/", "Introducción"],
+                ["/es/connect/cloud", "Modyo Cloud"],
+                "/es/connect/connect",
+                "/es/connect/faq",
+              ],
+            },           
+          ],
           "/es/brand/": [
             {
               title: "Guía de Marca",
-              collapsable: true,
+              collapsable: false,
               children: [
                 ["/es/brand/", "Introducción"],
                 "/es/brand/logo",
