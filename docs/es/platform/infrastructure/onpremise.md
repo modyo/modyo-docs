@@ -86,7 +86,7 @@ Los siguientes corresponden a los componentes básicos que todo despliegue de Mo
       <b>Index Cluster</b>
    </td>
    <td>
-      Implementado con Elasticsearch el cual es utilizado para la indexación completa de los documentos y layout pages que serán "buscables" o "georeferenciables", Elastic Search también brinda soporte a los dashboards y targets de usuarios que son procesados en tiempo real.
+      Implementado con Elasticsearch el cual es utilizado para la indexación completa de los documentos y layout pages que serán "buscables" o "georeferenciables", Elastic Search también brinda soporte a los dashboards y segmentos de usuarios que son procesados en tiempo real.
    </td>
 </tr>
 <tr>
@@ -463,7 +463,7 @@ table {display: table;}
 |MODYO_PLATFORM_NAME|Nombre de la plataforma|String válido||SI|
 |MODYO_PLATFORM<br>_NAMESPACE|Identificador de la plataforma para crear los namespaces de los servicios utilizados: redis, elasticsearch,  SQS y Sidekiq|String representando un namespace (ej: modyo-cloud)||SI|
 |MODYO_PLATFORM_PORT|Puerto utilizado por la plataforma|: + Numero del puerto|no definido (:80)|NO|
-|MODYO_PLATFORM<br>_TARGET_EXPIRES_IN|Tiempo de expiración en minutos del cache utilizado para los targets|Cantidad de minutos|15|NO|
+|MODYO_PLATFORM<br>_TARGET_EXPIRES_IN|Tiempo de expiración en minutos del cache utilizado para los segmentos|Cantidad de minutos|15|NO|
 |MODYO_PLATFORM_<br>USE_CUSTOM_HOST<br>_ON_NON_PRODUCTION|Permite el uso de custom hosts en ambientes no productivos|true \| false|false|NO|
 |MODYO_PLATFORM<br>_WIDGETS<br>_APPLICATION_NAME|Usado para identificar cuando un request viene desde una app al estilo de modyo-cli, se compara el user agent del request contra este valor|Aplication name|MODYO-CLI|NO|
 |MODYO_PUMA<br>_MAX_THREADS|Cantidad máxima de threads usados por puma|Cantidad de threads|16|NO|

@@ -141,7 +141,7 @@ module.exports = {
               children: [
                 "/en/platform/customers/realms",
                 "/en/platform/customers/profile",
-                "/en/platform/customers/targets",
+                "/en/platform/customers/segments",
                 "/en/platform/customers/forms",
                 "/en/platform/customers/messaging",
               ],
@@ -338,7 +338,7 @@ module.exports = {
               children: [
                 "/es/platform/customers/realms",
                 "/es/platform/customers/profile",
-                "/es/platform/customers/targets",
+                "/es/platform/customers/segments",
                 "/es/platform/customers/forms",
                 "/es/platform/customers/messaging",
               ],

@@ -144,7 +144,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Se añade la opción de [editar entradas de forma masiva](/es/platform/content/entries.html#editar-masivamente).
-* Se añaden filtros por autor y targets en el indice de entradas.
+* Se añaden filtros por autor y segmentos en el indice de entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se añade la posibilidad de decidir si quieres que tus widgets del widget builder se [carguen de forma síncrona o asíncrona](/es/platform/channels/widgets.html#carga-sincrona).
@@ -182,7 +182,7 @@ search: true
 * Se añade la funcionalidad de distinguir un mismo widget instanciado múltiples veces en una misma página.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Se añade una nueva y mejorada interfaz de creación de [Targets](/es/platform/customers/targets.html) incluyendo la opción de usar operadores `AND` y `OR`.
+* Se añade una nueva y mejorada interfaz de creación de [Segmentos](/es/platform/customers/segments.html) incluyendo la opción de usar operadores `AND` y `OR`.
 
 ### 9.1.4 - 10 de noviembre del 2020
 
@@ -298,7 +298,7 @@ search: true
 * Mejoras a la usabilidad y conceptos de [temas](/es/platform/channels/templates.html#temas) en el template builder
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/es/platform/customers/realms.html), [targets](/es/platform/customers/targets.html), [formularios](/es/platform/customers/forms.html) y [campañas](/es/platform/customers/messaging.html).
+* Se añaden nueva vistas cuando no hay elementos creados en [usuarios](/es/platform/customers/realms.html), [segmentos](/es/platform/customers/segments.html), [formularios](/es/platform/customers/forms.html) y [campañas](/es/platform/customers/messaging.html).
 
 ### 9.0.6 - 30 de Abril del 2020
 

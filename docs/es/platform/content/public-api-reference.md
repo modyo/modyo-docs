@@ -192,7 +192,7 @@ Al instanciar un nuevo cliente, el segundo parámetro _locale_ es opcional, de t
 
 ### Contenido
 
-El SDK permite acceder tanto a contenido público como privado/targetizado, facilitando la interacción con nuestra API Headless.
+El SDK permite acceder tanto a contenido público como privado/segmentado, facilitando la interacción con nuestra API Headless.
 
 #### Cómo obtener contenido público
 
@@ -833,7 +833,7 @@ La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSO
 Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido.
 
 :::tip Tip
-Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los targets automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
+Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los segmentos automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
 :::
 
 La API de contenido puede recibir el parámetro delivery token de dos formas:
@@ -841,7 +841,7 @@ La API de contenido puede recibir el parámetro delivery token de dos formas:
 - Como header: `Delivery-Token`
 - Como parámetro GET: `delivery_token`
 
-El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de targets. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`.
+El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de segmentos. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`.
 
 El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
 
@@ -850,7 +850,7 @@ El token de acceso a contenido (content delivery token) contiene los siguientes 
 - **sub**: Nombre del space
 - **exp**: Tiempo de expiración del token
 - **access_type**: delivery,
-- **targets**: Array de targets
+- **segmentos**: Array de segmentos
 
 Por ejemplo:
 
@@ -861,7 +861,7 @@ Por ejemplo:
   "sub": "account_uuid",
   "exp": 1516242622,
   "access_type": "delivery",
-  "targets": ["target1", "target2"]
+  "segments": ["segment1", "segment2"]
 }
 ```
 
@@ -870,7 +870,7 @@ Para poder acceder a la URL de obtención del token, debes asegurarte de tener u
 :::
 
 :::warning Atención
-Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los targets a los que pertenezca el usuario, y dado que los targets pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor.
+Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los segmentos a los que pertenezca el usuario, y dado que los segmentos pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor.
 :::
 
-La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin targets) como el contenido targetizado que esté restringido a los targets a los que pertenece el usuario que solicitó su delivery token.
+La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin segmentos) como el contenido segmentado que esté restringido a los segmentos a los que pertenece el usuario que solicitó su delivery token.

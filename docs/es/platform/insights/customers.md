@@ -9,7 +9,7 @@ Así como en Digital Factory puedes ver una estadística directa de los miembros
 Los filtros disponibles son:
 
 - Rango de fecha
-- Target
+- Segmento
 - Sitio
 
 **Usuarios activos**: Conteo de todos los usuarios con dos o más registros de actividad en el periodo seleccionado.

@@ -8,7 +8,7 @@ search: true
 
 <img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
-Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Targets la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
+Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Segmentos la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
 
 **Modyo Customers** representa un importante elemento a la hora de desarrollar productos digitales sobre la plataforma.
 
@@ -17,6 +17,6 @@ Una vez que el usuario ha sido identificado, la plataforma gestionará de forma 
 ### Funcionalidades principales
 
 - [Gestión de usuarios](/es/platform/customers/realms.html) para gestionar la base de datos de usuarios y políticas de integración a sistemas de Single Sign On (SSO).
-- [Targets](/es/platform/customers/targets.html) para definir segmentos dinámicos de usuarios.
+- [Segmentos](/es/platform/customers/segments.html) para definir segmentos dinámicos de usuarios.
 - [Formularios dinámicos](/es/platform/customers/forms.html) para capturar información asociada a los usuarios.
 - [Mensajería](/es/platform/customers/messaging.html) para enviar notificaciones Web o campañas de correo electrónico a los usuarios.

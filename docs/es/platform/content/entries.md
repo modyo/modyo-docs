@@ -179,10 +179,10 @@ Si deseas que el contenido sea exclusivo para usuarios que tengan una sesión en
 
 Dependiendo de como estés consumiendo el contenido, necesitas realizar unos pasos extras para acceder a este. Si estás usando la API pública, dirígete a la sección sobre [contenido privado en la API](/es/platform/content/public-api-reference.html#contenido-privado). Si estás consumiendo el contenido a través de Liquid, basta con que los usuarios inicien sesión en el sitio para poder visualizar el contenido privado.
 
-### Targets
+### Segmentos
 
-El contenido targetizado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
+El contenido segmentado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
 
-Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar targetización y después seleccionar a qué target de usuarios al que se dirige la entrada.
+Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar segmentación y después seleccionar a qué segmento de usuarios al que se dirige la entrada.
 
-Para crear un target en específico, revisa la [sección Targets](/es/platform/customers/targets.html).
+Para crear un segmento en específico, revisa la [sección Segmentos](/es/platform/customers/segments.html).

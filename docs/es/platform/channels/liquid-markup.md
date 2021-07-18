@@ -677,7 +677,7 @@ menu_item:
   - parameterized_label
   - category
   - position
-  - target
+  - segment
 widget:
   - id
   - cache_key
@@ -775,7 +775,7 @@ Los drops disponibles para customers son:
   - notifications
   - profile_url
   - sex
-  - target_names
+  - segment_names
   - targets
   - undefined_sex_value
   - unread_notifications
@@ -799,7 +799,7 @@ notification:
 - user_session:
   - email
   - password
-- target:
+- segment:
   - id
   - name
 - form:
@@ -821,7 +821,7 @@ notification:
   - question
 - answer:
   - alternative
-  - dynamic_target_url
+  - dynamic_segment_url
   - edit_url
   - id
   - question

@@ -141,7 +141,7 @@ Habilita la delegación de rutas para permitir el control absoluto de las sub-ru
 
 #### Privacidad
 
-Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Targets](/es/platform/customers/targets.html), de tal manera que solo los usuarios que pertenezcan a esos targets podrán acceder a esta página. Quienes no sean parte del grupo de targets seleccionados, serán redirigidos a la página anterior o al home del sitio.
+Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Segmentos](/es/platform/customers/segments.html), de tal manera que solo los usuarios que pertenezcan a esos segmentos podrán acceder a esta página. Quienes no sean parte del grupo de segmentos seleccionados, serán redirigidos a la página anterior o al home del sitio.
 
 #### Meta tags
 

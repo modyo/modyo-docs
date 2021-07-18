@@ -57,4 +57,4 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 - **URL**: Si escogiste una URL personalizada en el elemento anterior, acá puedes escribir la URL a la que quieres que apunte este ítem del menú.
 - **Abrir en pestaña nueva**: Le añade el atributo `target='blank'` al elemento HTML del item del menú, para que al hacerle click, se abra en una pestaña nueva.
 - **Privado**: Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
-- **Targets**: Si la opción anterior se habilita,también puedes targetizar este elemento, para que además de tener una sesión, los usuarios que se encuentran dentro de los targets seleccionados, ya pueden ver este ítem de menú.
+- **Segmentos**: Si la opción anterior se habilita,también puedes segmentar este elemento, para que además de tener una sesión, los usuarios que se encuentran dentro de los segmentos seleccionados, ya pueden ver este ítem de menú.

@@ -4,7 +4,7 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que permite enviar la información hacia los usuarios finales de una manera masiva, dirigida a targets determinados.
+Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que permite enviar la información hacia los usuarios finales de una manera masiva, dirigida a segmentos determinados.
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
@@ -23,7 +23,7 @@ En la parte superior de la pantalla, existe un botón que indica que vemos todos
 
 En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
 
-- **Nombre**: Nombre que se le dio a la campaña. También puede contener el Target específico al que se le envió.
+- **Nombre**: Nombre que se le dio a la campaña. También puede contener el Segmento específico al que se le envió.
 - **Tipo**: Tipo de mensaje en que se envió la campaña.
 - **Enviados**: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
 - **Último envío**: Fecha y hora en que se envió por última vez la campaña.
@@ -49,7 +49,7 @@ Posteriormente, mostrará un formulario que deberás rellenar con los siguientes
 - **Asunto**: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
 - **Responder a**: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
 - **Plantilla**: Lista de [plantillas](/es/platform/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
-- **Habilitar targetización**: Checkbox para seleccionar un target para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
+- **Habilitar segmentación**: Checkbox para seleccionar un segmento para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
 
 Después de rellenar estos datos, deberás hacer click en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
 
@@ -71,7 +71,7 @@ Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
 
 - **Editor de Mensajes**: Te permite editar el mensaje antes de enviarlo.
 - **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada.
-- **Editor**: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los targets a recibir.
+- **Editor**: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los segmentos a recibir.
 - **Borrar**: Borra toda la campaña.
 
 En la vista superior, podrás encontrar las estadísticas de la campaña.
@@ -99,13 +99,13 @@ En cambio, si enviaste la campaña por Notificación, podrás encontrar estas ci
 - **Abiertos**: Nº de notificaciones abiertas.
 
 
-Más abajo podrás ver los [Targets](/es/platform/customers/targets.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
+Más abajo podrás ver los [Segmentos](/es/platform/customers/segments.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
 
 Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
 
 
 - **Fecha**: Día y hora en que se hizo el envío.
-- **Targets**: Targets a los cuales se hizo el envío en específico.
+- **Segmentos**: Segmentos a los cuales se hizo el envío en específico.
 - **Alcance**: Nº de personas que recibieron el envío.
 - **Enviados**: Nº de correos/notificaciones enviadas.
 - **Estado**: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.

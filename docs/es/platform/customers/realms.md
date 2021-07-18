@@ -6,7 +6,7 @@ search: true
 
 Los reinos son una agrupación de usuarios con características similares que están gobernados por una misma configuración. Los realms son especialmente útiles cuando cuentas con distintas agrupaciones para sitios de una misma cuenta que no están directamente relacionados, o también, para tener un sitio de pruebas con usuarios de prueba sin afectar la agrupación de usuarios productivos.
 
-Cada realm tiene su propia configuración de inicio de sesión, registro, integraciones, formularios, targets y mensajería, por lo que debes tener en consideración que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese realm y no tendrá efecto sobre usuarios de otro realm.
+Cada realm tiene su propia configuración de inicio de sesión, registro, integraciones, formularios, segmentos y mensajería, por lo que debes tener en consideración que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese realm y no tendrá efecto sobre usuarios de otro realm.
 
 ## Usuarios
 
@@ -20,14 +20,14 @@ En la parte superior de la tabla, encontrarás filtros que te permitirán encont
 
 - Estado: Ver los usuarios activos e inactivos.
 - Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
-- Targets: Usuarios que se encuentran dentro de un determinado [Target](/es/platform/customers/targets.html)
+- Segmentos: Usuarios que se encuentran dentro de un determinado [Segmento](/es/platform/customers/segments.html)
 - Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
 - Búsqueda: Filtra usuarios por nombre, apellido, email y username.
 
 La opción de Filtros Avanzados abrirá un modal el cual te permitirá filtrar a los usuarios por atributos más específicos, tales como su edad, o Custom Fields. Al agregar un nuevo filtro avanzado, aparecerá automáticamente el número de coincidencias en la parte inferior izquierda del modal, al lado del botón para limpiar los filtros. Si quieres visualizar el listado de estos usuarios filtrados, solo debes hacer click en el botón **Aplicar**.
 
 :::tip Tip
-Junto al botón de **Aplicar**, está el botón **Guardar como Target**. Este guardará los filtros que aplicaste en un nuevo Target, al cual deberás darle un título y una descripción. Posteriormente lo podrás encontrar en la sección [Targets](/es/platform/customers/targets.html)
+Junto al botón de **Aplicar**, está el botón **Guardar como Segmento**. Este guardará los filtros que aplicaste en un nuevo Segmento, al cual deberás darle un título y una descripción. Posteriormente lo podrás encontrar en la sección [Segmentos](/es/platform/customers/segments.html)
 :::
 
 En la tabla misma, es posible ordenar los usuarios por sus valores respectivos haciendo click en las cabeceras de cada una de las siguientes columnas:
@@ -97,7 +97,7 @@ Al hacer click, desde el listado principal, en cada uno de los usuarios, se abri
 - Último ingreso a la plataforma
 - Cantidad de sesiones hechas en la plataforma
 - Estado de verificación de usuario
-- Targets en los que se encuentra incluído (si hay disponibles)
+- Segmentos en los que se encuentra incluído (si hay disponibles)
 
 En la sección principal, podrás ver los siguientes separadores horizontales, que se describen a continuación:
 
@@ -128,7 +128,7 @@ En la sección superior derecha encontrarás opciones adicionales con las que po
 * **Eliminar**: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
 
 :::tip Tip
-Al modificar un usuario, puede que cambie el listado de Targets a los que pertenece.
+Al modificar un usuario, puede que cambie el listado de Segmentos a los que pertenece.
 :::
 
 
@@ -247,7 +247,7 @@ Si quieres eliminar a un administrador del reino, selecciona usando los checks a
 
 Los roles disponibles son:
 
-- **Usuario**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y targets.
+- **Usuario**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
 
 ### Custom Fields
@@ -281,5 +281,5 @@ Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar
 :::
 
 :::tip Tip
-Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Targets](/es/platform/customers/targets.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
+Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Segmentos](/es/platform/customers/segments.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
 :::

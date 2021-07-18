@@ -30,29 +30,29 @@ https://[account_host]/api/profile/docs
 
 En cada vista de documentación encuentras el detalle de los distintos recursos que Modyo te provee y las operaciones que puedes realizar sobre ellos.
 
-Por ejemplo, en la API Administrativa (/api/admin/docs) se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Targets". Si te centras en esta última, ves que cuenta con un listado de operaciones que realiza sobre los targets de la aplicación:
+Por ejemplo, en la API Administrativa (/api/admin/docs) se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Segmentos". Si te centras en esta última, ves que cuenta con un listado de operaciones que realiza sobre los segmentos de la aplicación:
 
 ```http
-Targets
+Segments
 
-GET      /targets                Targets List
-POST     /targets                Create a target
-PUT      /targets/{id}           Update a target
-DELETE   /targets/{id}           Delete a Target
-POST     /targets/apply_filters  Create a temporary target
-POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
+GET      /segments                Segments List
+POST     /segments                Create a segment
+PUT      /segments/{id}           Update a segment
+DELETE   /segments/{id}           Delete a Segment
+POST     /segments/apply_filters  Create a temporary segment
+POST     /segments/count_matches  Create a temporary segment, and return the total number of matching users
 ```
 El listado muestra para cada operación, el método HTTP, la ruta y la descripción de lo que realiza.
 
-Si haces click a alguno de estos métodos, por ejemplo a "Targets List", muestra una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y `order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro.
+Si haces click a alguno de estos métodos, por ejemplo a "Segmentos List", muestra una sección con los parámetros que es posible utilizar al invocarlo, en este caso `query`, `sort_by` y `order`, sus tipos de datos y un campo para ingresar un valor de prueba para cada parámetro.
 
 Adicionalmente podrás consultar la API directamente desde la vista en Swagger completando los parámetros antes descritos y luego clickeando en "Execute", el que invocará al API y te entrega el resultado en la misma vista.
 
-En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/targets` con GET y muestra la respuesta en JSON a este _request_:
+En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/segments` con GET y muestra la respuesta en JSON a este _request_:
 
 ```json
 {
-  "targets": [
+  "segments": [
     {
       "id": 4,
       "uuid": "46a80345-6e27-4262-9ea3-7e2f4e9af26a",
@@ -74,7 +74,7 @@ En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/target
     {
       "id": 2,
       "uuid": "cd72f535-6df0-4ebf-b4e3-9649ac02a144",
-      "name": "Target mobile users",
+      "name": "Segment mobile users",
       "filters_summary": "Login Device Mobile",
       "matches_count": 4413,
       "created_at": "2018-06-04T17:20:21.000-03:00",
@@ -83,7 +83,7 @@ En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/target
     {
       "id": 1,
       "uuid": "6c30c2a6-8db4-4580-8ede-2a913c8a1b6b",
-      "name": "Target 01",
+      "name": "Segment 01",
       "filters_summary": "Age between 18 and 65",
       "matches_count": 1023,
       "created_at": "2018-06-04T17:20:05.000-03:00",
@@ -99,7 +99,7 @@ En el ejemplo, la vista invoca a la URL `https://[account_host]/api/admin/target
 }
 ```
 
-Como puedes notar, el `body` de este `response` es un objeto JSON que contiene un elemento llamado "targets", el que corresponde a una lista (`array`) de elementos de este tipo.
+Como puedes notar, el `body` de este `response` es un objeto JSON que contiene un elemento llamado "segmentos", el que corresponde a una lista (`array`) de elementos de este tipo.
 
 Además, contiene metadata referente a la `response`, donde se incluyen datos como el total de entradas que satisfacen esta consulta (`total_entries`), la cantidad máxima de entradas o elementos devueltos por cada `request` (`per_page`), la "ventana" actual de datos o página actual (`current_page`) y el total de páginas (`total_pages`).
 
@@ -108,11 +108,11 @@ Además, contiene metadata referente a la `response`, donde se incluyen datos co
 
 También cada una de las secciones cuenta con un listado de posibles _responses_ que obtienes al invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
 
-En el ejemplo anterior, verás el _response_ que se obtiene del listado de targets cuando la respuesta es 200:     
+En el ejemplo anterior, verás el _response_ que se obtiene del listado de segmentos cuando la respuesta es 200:     
 
 ```json
 {
-  "targets": [
+  "segments": [
     {
       "id": 0,
       "uuid": "string",
@@ -276,8 +276,8 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 		"type": "mailing",
 		"sent_count": 1078,
 		"last_sent": "2019-07-15T17:05:12.000-03:00",
-		"targets_enabled": false,
-		"target_list": "--",
+		"segments_enabled": false,
+		"segment_list": "--",
 		"created_at": "2019-07-15T16:58:43.000-03:00"
 	}, {
 		"id": 11,
@@ -286,8 +286,8 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 		"type": "mailing",
 		"sent_count": 6,
 		"last_sent": "2019-03-11T15:17:20.000-03:00",
-		"targets_enabled": true,
-		"target_list": "Test Mailing Mar08",
+		"segments_enabled": true,
+		"segment_list": "Test Mailing Mar08",
 		"created_at": "2019-03-08T15:46:52.000-03:00"
 	}, {
 		"id": 6,
@@ -296,8 +296,8 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 		"type": "mailing",
 		"sent_count": 327,
 		"last_sent": "2019-01-07T16:53:33.000-03:00",
-		"targets_enabled": true,
-		"target_list": "--",
+		"segments_enabled": true,
+		"segment_list": "--",
 		"created_at": "2019-01-07T12:10:22.000-03:00"
 	}, {
 		"id": 5,
@@ -306,8 +306,8 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 		"type": "mailing",
 		"sent_count": 0,
 		"last_sent": null,
-		"targets_enabled": false,
-		"target_list": "--",
+		"segments_enabled": false,
+		"segment_list": "--",
 		"created_at": "2019-01-02T15:59:06.000-03:00"
 	}],
 	"meta": {
@@ -319,7 +319,7 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 }
 ```
 
-Esta respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos de cada objeto de la colección contienen información relevante para el recurso consultado. En el ejemplo, el nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`) o si esta campaña fue targetizada o no (`targets_enabled`).
+Esta respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos de cada objeto de la colección contienen información relevante para el recurso consultado. En el ejemplo, el nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`) o si esta campaña fue segmentada o no (`segments_enabled`).
 
 Aparte de la colección, se puede ver un objeto llamado `meta` que contiene información acerca de la paginación de este recurso.
 
@@ -348,7 +348,7 @@ Similar al ejemplo anterior, la _response_ se verá de la siguiente forma
 		"sent_count": 1078,
 		"reach": -1,
 		"status": "completed",
-		"target_list": "--"
+		"segment_list": "--"
 	}],
 	"meta": {
 		"total_entries": 1,
