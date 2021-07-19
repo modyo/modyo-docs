@@ -182,7 +182,7 @@ search: true
 * The option to use the same widget multiple times in the same page was added.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* A new and fresh interface to build [Targets](/en/platform/customers/targets.html) including the option to use `AND` & `OR` operators.
+* A new and fresh interface to build [Segments](/en/platform/customers/segments.html) including the option to use `AND` & `OR` operators.
 
 ### 9.1.4 - November 10, 2020
 
@@ -298,7 +298,7 @@ search: true
 * Improvements to usability and concepts of [themes](/en/platform/channels/templates.html#themes) in the template builder.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* New views are added when there are no items created in [users](/en/platform/customers/users.html), [targets](/en/platform/customers/targets.html), [forms](/en/platform/customers/forms.html) and [campaigns](/en/platform/customers/messaging.html).
+* New views are added when there are no items created in [users](/en/platform/customers/users.html), [segments](/en/platform/customers/targets.html), [forms](/en/platform/customers/forms.html) and [campaigns](/en/platform/customers/messaging.html).
 
 ### 9.0.6 - April 30, 2020
 
