@@ -192,7 +192,7 @@ When a new client is instantiated, the second parameter _locale_ is optional and
 
 ### Content
 
-The SDK allows access to both public and private/targeted content, facilitating interaction with our Headless API.
+The SDK allows access to both public and private/segmented content, facilitating interaction with our Headless API.
 
 #### How to get public content
 
@@ -832,7 +832,7 @@ The Modyo API provides a RESTful interface with responses formatted in a lightwe
 Whenever you use the Modyo Content API, you can access the published content that is available to all users (not private). However, if you want to access private content, you must add a header or a GET parameter to the request URL of the content API.
 
 ::: tip Tip
-If you use Liquid to access content, users who log in and are part of a target will automatically see the content when appropriate and no extra action is required by the Front End developer.
+If you use Liquid to access content, users who log in and are part of a segment will automatically see the content when appropriate and no extra action is required by the Front End developer.
 :::
 
 The content API can receive the delivery token parameter in two ways:
@@ -840,7 +840,7 @@ The content API can receive the delivery token parameter in two ways:
 - In the header: `Delivery-Token`
 - As a GET parameter: `delivery_token`
 
-The content access token is a public token in [JWT](https://tools.ietf.org/html/rfc7519) format shared by all users belonging to the same group of targets. It can be obtained by making a GET request to the URL `account.url/api/profile/delivery_token`.
+The content access token is a public token in [JWT](https://tools.ietf.org/html/rfc7519) format shared by all users belonging to the same group of segments. It can be obtained by making a GET request to the URL `account.url/api/profile/delivery_token`.
 
 The content delivery token contains the following attributes:
 
@@ -849,18 +849,18 @@ The content delivery token contains the following attributes:
 - **sub**: Name of space
 - **exp**: Token expiration time
 - **access_type**: delivery
-- **targets**: Array of targets
+- **segments**: Array of segments
 
 For example:
 
 ```javascript
 {
-  "iss": "http://my-account.modyo.me/api/profile ",
-  "aud": "http://my-account.modyo.me/api/content ",
+  "iss": "http://my-account.modyo.me/api/profile",
+  "aud": "http://my-account.modyo.me/api/content",
   "sub": "account_uuid",
   "exp": 1516242622,
   "access_type": "delivery",
-  "targets": ["target1", "target2"]
+  "segments": ["segment1", "segment2"]
 }
 ```
 
@@ -869,7 +869,7 @@ To be able to access the URL to obtain a token, you must make sure you have a se
 :::
 
 ::: warning Warning
-It is necessary to dynamically obtain an access token for content, since this token changes based on the targets the user is a part of. Since target association can change frequently, it is not recommended to store this value.
+It is necessary to dynamically obtain an access token for content, since this token changes based on the segments the user is a part of. Since segment association can change frequently, it is not recommended to store this value.
 :::
 
-The Content API query response with a delivery token is the same as the response you would receive without a delivery token, but will contain both the private content (without targets) and the restricted targeted content to which the requesting user belongs.
+The Content API query response with a delivery token is the same as the response you would receive without a delivery token, but will contain both the private content (without segments) and the restricted segmented content to which the requesting user belongs.
