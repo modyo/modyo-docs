@@ -8,7 +8,7 @@ search: true
 
 <img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
 
-Once a user is identified, the platform manages the business events that the user performs during their session and through the functionality of Targets, the Platform can customize the content and experience during their navigation of your digital channels.
+Once a user is identified, the platform manages the business events that the user performs during their session and through the functionality of Segments, the Platform can customize the content and experience during their navigation of your digital channels.
 
 **Modyo Customers** represents an important element when developing digital products on the platform.
 
@@ -17,6 +17,6 @@ Once a user is identified, the platform manages the business events that the use
 ### Main functionalities
 
 - [User management](/en/platform/customers/users.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
-- [Targets](/en/platform/customers/targets.html) to define dynamic user segments.
+- [Segments](/en/platform/customers/segments.html) to define dynamic user segments.
 - [Dynamic forms](/en/platform/customers/forms.html) to capture information associated with users.
 - [Messaging](/en/platform/customers/messaging.html) to send Web notifications or email campaigns to users.
