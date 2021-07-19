@@ -23,7 +23,7 @@ Modyo is a next-generation digital experience platform that powers solutions for
 Modyo has the following main modules, which you will know in your training process:
 - [**Modyo Content:**](/en/platform/content) Headless architecture application that allows the creation of content spaces that you can consume through an API both inside and outside of Modyo. Among the main concepts are: spaces, types, entries, file manager, team review, among others.
 - [**Modyo Channels:**](/en/platform/channels) Application that allows the construction and management of multiple digital channels centrally. Among the main concepts are: pages, widgets, templates, PWA, Liquid markup, CLI, among others.
-- [**Modyo Customers:**](/en/platform/customers) An application that enables user authentication to sites in Modyo, either through its internal account logging system or your enterprise integrations to Single Sign On (SSO) systems. Among the main concepts are: users, targets (targeting), forms, messaging (campaigns and notifications), personalization, among others.
+- [**Modyo Customers:**](/en/platform/customers) An application that enables user authentication to sites in Modyo, either through its internal account logging system or your enterprise integrations to Single Sign On (SSO) systems. Among the main concepts are: users, segments, forms, messaging (campaigns and notifications), personalization, among others.
 - [**Modyo Insights:**](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
 
 ### Tutorials
