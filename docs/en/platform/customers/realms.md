@@ -281,5 +281,5 @@ When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom F
 :::
 
 ::: tip Tip
-Apart from being able to save specific data in user profiles, [Segments](/platform/customers/segments.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
+Apart from being able to save specific data in user profiles, [Segments](/en/platform/customers/segments.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
 :::
