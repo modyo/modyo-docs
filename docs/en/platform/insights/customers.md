@@ -9,7 +9,7 @@ Similar to how the Digital Factory provides direct statistics of our team member
 The available filters are:
 
 - Date Range
-- Target
+- Segment
 - Site
 
 **Active users**: Total users with two or more activity records in the selected period.
