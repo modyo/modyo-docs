@@ -6,7 +6,7 @@ search: true
 
 Realms are a grouping of users with similar features that are governed by the same configuration. Realms are especially useful when you have different groupings for sites within the same account that are not directly related, or to have a test site with test users without affecting productive user grouping.
 
-Each realm has its own login, registration, integrations, forms, targets, and messaging settings. Therefore, keep in mind that when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
+Each realm has its own login, registration, integrations, forms, segments, and messaging settings. Therefore, keep in mind that when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
 
 ## Users
 
@@ -20,14 +20,14 @@ Along the top of the list are filters that allow you to refine the list of users
 
 - Status: Filter by active and inactive users.
 - Verification: Filter by users who have (or have not) confirmed their data within the platform.
-- Targets: Filter by users that match certain [Targets](/en/platform/customers/targets.html).
+- Segments: Filter by users that match certain [Segment](/en/platform/customers/segments.html).
 - Advanced filters: Filter by users who match specific filters based on data in their user profiles, e.g. birth date, or custom field value.
 - Search: Filter by user name, last name, email, or username.
 
 The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
 ::: tip Tip
-Next to the **Apply** button, there is the **Save as Target** button. This saves the filters you applied in a new Target. Give your new target a title and description. Later you can find it in the [Targets](/en/platform/customers/targets.html) section.
+Next to the **Apply** button, there is the **Save as Segment** button. This saves the filters you applied in a new Segment. Give your new segment a title and description. Later you can find it in the [Segments](/en/platform/customers/segments.html) section.
 :::
 
 You can sort users by ascending or descending order by the following values:
@@ -97,7 +97,7 @@ Clicking any user from the main list opens their profile. In each profile is the
 - Last Login
 - Logins Count (number of sessions)
 - User verification status
-- Targets that include it (if available)
+- Segments that include it (if available)
 
 In the main section to the right are the following tabs:
 
@@ -128,7 +128,7 @@ In the upper right section you will find additional options with which you can d
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
 ::: tip Tip
-When modifying a user, you may change the list of Targets to which they belong.
+When modifying a user, you may change the list of Segments to which they belong.
 :::
 
 
@@ -247,7 +247,7 @@ If you want to remove a realm administrator, select the checks to the left of th
 
 The available roles are:
 
-- **User**: You can add users, create, modify, and submit to review campaigns, forms, and targets.
+- **User**: You can add users, create, modify, and submit to review campaigns, forms, and segments.
 - **Admin**: You can access all settings and sections of the realm, add and remove users and team members, as well as delete the realm.
 
 ### Custom Fields
@@ -281,5 +281,5 @@ When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom F
 :::
 
 ::: tip Tip
-Apart from being able to save specific data in user profiles, [Targets]filters(/platform/customers/targets.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
+Apart from being able to save specific data in user profiles, [Segments](/platform/customers/segments.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
 :::
