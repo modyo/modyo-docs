@@ -30,30 +30,30 @@ https://[account_host]/api/profile/docs
 
 In each documentation view you will find the details of the different resources that Modyo provides and the different operations you can perform on them.
 
-For example, the Administrative API (/api/admin/docs) displayes different sections, such as "Locks", "Layout pages", "Email templates" or "Targets". If we focus on the latter, we can see that this section has a list of operations that we can perform on the targets of the application:
+For example, the Administrative API (/api/admin/docs) displays different sections, such as "Locks", "Layout pages", "Email templates" or "Segments". If we focus on the latter, we can see that this section has a list of operations that we can perform on the segments of the application:
 
 ```http
-Targets
+Segments
 
-GET      /targets                Targets List
-POST     /targets                Create a target
-PUT      /targets/{id}           Update a target
-DELETE   /targets/{id}           Delete a Target
-POST     /targets/apply_filters  Create a temporary target
-POST     /targets/count_matches  Create a temporary target, and return the total number of matching users
+GET      /segments                Segments List
+POST     /segments                Create a segment
+PUT      /segments/{id}           Update a segment
+DELETE   /segments/{id}           Delete a Segment
+POST     /segments/apply_filters  Create a temporary segment
+POST     /segments/count_matches  Create a temporary segment, and return the total number of matching users
 ```
 The list shows us the HTTP method for each operation, the route and the description of what
 it does.
 
-If we click on any of these methods, like "Targets List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types and a field to enter a test value for each parameter.
+If we click on any of these methods, like "Segments List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types and a field to enter a test value for each parameter.
 
 Additionally, you can call the API directly from Swagger filling in the parameters described earlier and then clicking on "Execute". This will invoke the API and deliver the result in the same view.
 
-In our example, the view will invoke the URL `https://[account_host]/api/admin/targets` with GET and will show us the JSON response to this _request_:
+In our example, the view will invoke the URL `https://[account_host]/api/admin/segments` with GET and will show us the JSON response to this _request_:
 
 ```json
 {
-  "targets": [
+  "segments": [
     {
       "id": 4,
       "uuid": "46a80345-6e27-4262-9ea3-7e2f4e9af26a",
@@ -75,7 +75,7 @@ In our example, the view will invoke the URL `https://[account_host]/api/admin/t
     {
       "id": 2,
       "uuid": "cd72f535-6df0-4ebf-b4e3-9649ac02a144",
-      "name": "Target mobile users",
+      "name": "Segment mobile users",
       "filters_summary": "Login Device Mobile",
       "matches_count": 4413,
       "created_at": "2018-06-04T17:20:21.000-03:00",
@@ -84,7 +84,7 @@ In our example, the view will invoke the URL `https://[account_host]/api/admin/t
     {
       "id": 1,
       "uuid": "6c30c2a6-8db4-4580-8ede-2a913c8a1b6b",
-      "name": "Target 01",
+      "name": "Segment 01",
       "filters_summary": "Age between 18 and 65",
       "matches_count": 1023,
       "created_at": "2018-06-04T17:20:05.000-03:00",
@@ -100,7 +100,7 @@ In our example, the view will invoke the URL `https://[account_host]/api/admin/t
 }
 ```
 
-As you can see, the `body` of this` response` is a JSON object containing an element called "targets", which corresponds to a list (`array`) of elements of this type.
+As you can see, the `body` of this` response` is a JSON object containing an element called "segments", which corresponds to a list (`array`) of elements of this type.
 
 It also contains metadata referring to the `response`, which includes data such as the total entries that satisfy this query (`total_entries`), the maximum number of entries or items returned for each `request` (` per_page`), the current "window" of data or current page (`current_page`) and the total pages (`total_pages`). With this data you can easily browse the data of a particular service just by passing in the required parameters.
 
@@ -109,11 +109,11 @@ It also contains metadata referring to the `response`, which includes data such 
 
 Also each of the sections has a list of possible _responses_ that you get by invoking these methods, so that you can properly prepare your application to handle the data.
 
-For the previous example, we can check the _response_ with the list of targets we get when the answer is 200:
+For the previous example, we can check the _response_ with the list of segments we get when the answer is 200:
 
 ```json
 {
-  "targets": [
+  "segments": [
     {
       "id": 0,
       "uuid": "string",
@@ -278,8 +278,8 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
         "type": "mailing",
         "sent_count": 1078,
         "last_sent": "2019-07-15T17:05:12.000-03:00",
-        "targets_enabled": false,
-        "target_list": "--",
+        "segments_enabled": false,
+        "segment_list": "--",
         "created_at": "2019-07-15T16:58:43.000-03:00"
     }, {
         "id": 11,
@@ -288,8 +288,8 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
         "type": "mailing",
         "sent_count": 6,
         "last_sent": "2019-03-11T15:17:20.000-03:00",
-        "targets_enabled": true,
-        "target_list": "Test Mailing Mar08",
+        "segments_enabled": true,
+        "segment_list": "Test Mailing Mar08",
         "created_at": "2019-03-08T15:46:52.000-03:00"
     }, {
         "id": 6,
@@ -298,8 +298,8 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
         "type": "mailing",
         "sent_count": 327,
         "last_sent": "2019-01-07T16:53:33.000-03:00",
-        "targets_enabled": true,
-        "target_list": "--",
+        "segments_enabled": true,
+        "segment_list": "--",
         "created_at": "2019-01-07T12:10:22.000-03:00"
     }, {
         "id": 5,
@@ -308,8 +308,8 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
         "type": "mailing",
         "sent_count": 0,
         "last_sent": null,
-        "targets_enabled": false,
-        "target_list": "--",
+        "segments_enabled": false,
+        "segment_list": "--",
         "created_at": "2019-01-02T15:59:06.000-03:00"
     }],
     "meta": {
@@ -321,7 +321,7 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
 }
 ```
 
-This JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object has relevant information related to that object. In our example you can see the campaign name (`name`), the last date it was sent (` last_sent`) and whether this campaign was targeted or not (`targets_enabled`).
+This JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object has relevant information related to that object. In our example you can see the campaign name (`name`), the last date it was sent (` last_sent`) and whether this campaign was segmented or not (`segments_enabled`).
 
 Apart from the list, you can also see an object called `meta` which contains information about the pagination of this resource.
 
@@ -351,7 +351,7 @@ Similar to the previous example, the _response_ will look like this
         "sent_count": 1078,
         "reach": -1,
         "status": "completed",
-        "target_list": "--"
+        "segment_list": "--"
     }],
     "meta": {
         "total_entries": 1,
@@ -540,4 +540,5 @@ What gives us the following response:
     }
 }
 ```
+
 To finish, remember that the API will always return the first page (`current_page: 1`) with resources grouped into pages of 10 elements (` per_page: 10`) by default.
