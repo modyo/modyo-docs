@@ -69,6 +69,6 @@ Una vez que hayamos comprobado que la instalación esta bien vamos a iniciar la 
 
 ## Conclusiones
 
-¡Felicidades! Haz finalizado el curso de Creación del Home de Dynamic Bank en Modyo.
+¡Felicidades! Haz finalizado el curso de Personalización de Experiencias con Google Optimize.
 
-Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, lograste enlazar tu sitio con [Modyo Content](/es/platform/content) que permite generar canales digitales dinámicos conectados a contenidos separados del código del sitio.
+Ahora puedes generar diferenciar tu audiencia y perzonalizar la experiencia dependiendo de donde venga.
