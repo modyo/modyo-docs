@@ -35,7 +35,7 @@ The next section of the form properties contains the Form Options for what happe
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
 
-- **Enable targeting**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the targets. To learn more, go to [Targets](/en/platform/customers/targets.html)
+- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
 
 ::: warning Warning
 If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
