@@ -4,7 +4,7 @@ search: true
 
 # Messaging
 
-Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific targets.
+Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific segments.
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
@@ -23,7 +23,7 @@ At the top of the screen, there is a button that lets us filter by message type 
 
 In the table, campaigns are sorted by the following columns.
 
-- **Name**: Name given to the campaign. It can also contain the specific Target to which it was sent.
+- **Name**: Name given to the campaign. It can also contain the specific Segment to which it was sent.
 - **Type**: Type of message in which the campaign was sent.
 - **Sent**: Total number of times you have launched this campaign.
 - **Last sent**: Date and time the campaign was last sent.
@@ -49,7 +49,7 @@ This opens a form that you must fill out with the following information:
 - **Subject**: Text that appears in the subject line that users receive.
 - **Reply to email**: Email address to which people can reply **(Only for mailing campaigns)**
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
-- **Enable targeting**: Checkbox to select a target to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
+- **Enable segments**: Checkbox to select a segment to send the campaign. If this is left blank, you are choosing to send this campaign to all users.
 
 After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
 
@@ -99,13 +99,13 @@ If you sent the campaign as a Notification, these are your metrics:
 - **Open**: Number of open notifications.
 
 
-Below you can see the [Targets](/en/platform/customers/targets.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
+Below you can see the [Segments](/en/platform/customers/segments.html) to which the campaign was sent. If this section does not appear, it means that the campaign was sent to all users.
 
 At the bottom you can find a table with all the campaign deliveries, which you can sort in ascending or descending order according to the following columns:
 
 
 - **Date**: Day and time the delivery was made.
-- **Targets**: Targets to which the specific delivery was made.
+- **Segments**: Segments to which the specific delivery was made.
 - **Scope**: Number of people who received the delivery.
 - **Sent**: Number of emails/notifications sent.
 - **Status**: There are four delivery statuses: Completed, Pending, Failed or Canceled.
