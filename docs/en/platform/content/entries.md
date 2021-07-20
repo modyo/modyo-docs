@@ -180,10 +180,10 @@ If you want the content to be private or exclusive for users who have a current 
 
 Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](/en/platform/content/public-api-reference.html#private-content). If you are consuming the content through [Liquid](/en/platform/channels/liquid-markup.html), it is enough for users to log in to the site in order to view private content.
 
-### Targets
+### Segments
 
-Targeted content is essential for any organization that wants to send specific information to their different audiences or customer segments.
+Segmented content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
-With Targets, it is possible to enable an entry to have its content only be visible specific audiences. To do this, just check the Private option in the entry's properties, then check the Enable targeting option, and select from the list of targets. You can select more than one target audience.
+To do this, it is possible to enable the content to be visible to a particular group of your choice in the Input. To do this, just check the option that Content is private and then you want to enable targeting and then select which user segment the entry is directed to.
 
-To create a specific target, review the [Targets section](/en/platform/customers/targets.html).
+To create a specific target, review the [Segments section](/en/platform/customers/segments.html).
