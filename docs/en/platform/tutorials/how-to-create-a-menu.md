@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Creating a mega menu
+# Creating Mega Menu 
 
 ## Introduction
 
@@ -14,9 +14,9 @@ In this tutorial we will continue to use the Dynamic Bank site.
 
 <img src="/assets/img/tutorials/how-to-create-a-menu/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
- <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=905%3A0&node-id=905%3A1&viewport=401%2C2127%2C0.9736564755439758&scaling=min-zoom" target="blank"> See Figma of design </a> 
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=905%3A0&node-id=905%3A1&viewport=401%2C2127%2C0.9736564755439758&scaling=min-zoom" target="blank">See Figma of design</a>
 
-## Prerequisite
+## Prerequisites
 
 To start this tutorial we must have completed the tutorial on [Creation Home Dynamic Bank] (/en/platform/tutorials/how-to-create-home) and optionally [Dynamic Bank Content] (/en/platform/tutorials/how-to-create-content) to view the full Home with its contents. And just like in the previous tutorials you should have knowledge about HTML, CSS, JS and the Modyo platform.
 
