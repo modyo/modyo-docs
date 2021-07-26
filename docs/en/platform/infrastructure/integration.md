@@ -155,7 +155,7 @@ Integration components developed following this reference architecture, will be 
 
 ### Business Systems Integration
 Integration to business systems owned by the client that implements the platform, usually present within their own infrastructure accessed via VPN or similar. In this category we can mention systems such as:
-- Core banking or insurance systems (example: Mambu)
+- Core banking or insurance systems (for example: Mambu)
 - Legacy or proprietary systems
 - Databases with information or procedures
 - Integrated Service Bus
