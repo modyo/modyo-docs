@@ -30,7 +30,7 @@ https://[account_host]/api/profile/docs
 
 In each documentation view you will find the details of the different resources that Modyo provides and the different operations you can perform on them.
 
-For example, the Administrative API (/api/admin/docs) displays different sections, such as "Locks", "Layout pages", "Email templates" or "Segments". If we focus on the latter, we can see that this section has a list of operations that we can perform on the segments of the application:
+For example, the Administrative API (/api/admin/docs) displays different sections, such as "Locks", "Layout pages", "Email templates", or "Segments". If we focus on the latter, we can see that this section has a list of operations that we can perform on the segments of the application:
 
 ```http
 Segments
