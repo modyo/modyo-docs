@@ -31,7 +31,7 @@ For this receipt, it is essential to adapt it to commerce, so it is essential th
 
 ### Payment methods
 
-**Modyo** allows you to insert various forms of payment, which can make the operation of any company and customer more comfortable.
+**Modyo** allows you to insert various forms of payment, which can make any companies' and customers' operation more comfortable.
 
 Currently, the payment methods supported by Modyo are:
 
