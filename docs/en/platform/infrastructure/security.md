@@ -3,16 +3,16 @@ search: true
 ---
 
 # Security
-At Modyo, everything about safety is very important to us. That is why we created this guide that will serve as a guide in everything you need to secure a Modyo installation. While Modyo Cloud and Enterprise Cloud, our hosted solutions, provide an excellent level of security by default, platform administrators can take additional protection measures to increase the security of their organizations. This guide presents the most important recommendations to achieve this.
+At Modyo, everything about safety is very important to us. That is why we created this guide that will serve as a reference in everything you need to secure a Modyo installation. While Modyo Cloud and Enterprise Cloud, our hosted solutions, provide an excellent level of security by default, platform administrators can take additional protection measures to increase the security of their organizations. This guide presents the most important recommendations to achieve this.
 
 ### Important Concepts
-* **Limit access: ** Reduce the chances of a malicious actor gaining access to the system.
+* **Limit access:** Reduce the chances of a malicious actor gaining access to the system.
 
-* **Containment: ** The system must be configured in such a way as to minimize the amount of damage a bad actor may cause if it is violated.
+* **Containment:** The system must be configured in such a way as to minimize the amount of damage a bad actor may cause if it is violated.
 
-* **Preparation and knowledge: ** Maintain backups and procedures to be prepared in the event of a catastrophe.
+* **Preparation and knowledge:** Maintain backups and procedures to be prepared in the event of a catastrophe.
 
-* **Trusted Sources: ** Avoid deploying Widgets or codes from unreliable sources. Ensure that all dependencies that are loaded into a site come from a reliable source.
+* **Trusted Sources:** Avoid deploying Widgets or codes from unreliable sources. Ensure that all dependencies that are loaded into a site come from a reliable source.
 
 ### Local Vulnerabilities
 Ensure that the computational equipment of all administrators of the platform is free of spyware, malware and virus infections. Even a secure installation of Modyo could be violated by an attacker who exploits a user's valid session from a local computer.
