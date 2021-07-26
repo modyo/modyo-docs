@@ -184,6 +184,6 @@ Depending on how you are consuming the content, you will need to perform extra s
 
 Segmented content is essential for any organization that wants to send specific information to their different audiences or customer segments.
 
-To do this, it is possible to enable the content to be visible to a particular group of your choice in the Input. To do this, just check the option that Content is private and then you want to enable targeting and then select which user segment the entry is directed to.
+To do this, it is possible to enable the content to be visible to a particular group of your choice in the Input. To do this, just check the option that Content is private, enable targeting, and then select which user segment the entry is directed to.
 
 To create a specific target, review the [Segments section](/en/platform/customers/segments.html).
