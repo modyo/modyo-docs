@@ -97,7 +97,7 @@ Clicking any user from the main list opens their profile. In each profile is the
 - Last Login
 - Logins Count (number of sessions)
 - User verification status
-- Segments that include it (if available)
+- Segments that it's included in (if available)
 
 In the main section to the right are the following tabs:
 
