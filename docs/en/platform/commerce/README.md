@@ -23,7 +23,7 @@ The configuration will allow the commerce to be shaped in all technical aspects,
 
 ### General
 
-In this section we will be able to configure the most general data that give life to commerce, as is the case of the currency format.
+In this section we will be able to configure general data that give life to commerce, such as currency format.
 
 In addition, it is allowed to activate the sending of an automatic email when the user pays for his order, in the form of a receipt.
 
