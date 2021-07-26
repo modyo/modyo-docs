@@ -25,7 +25,7 @@ The configuration will allow the commerce to be shaped in all technical aspects,
 
 In this section we will be able to configure general data that give life to commerce, such as currency format.
 
-In addition, it is allowed to activate the sending of an automatic email when the user pays for his order, in the form of a receipt.
+In addition, it is allowed to activate sending an automatic email when the user pays for his order, in the form of a receipt.
 
 For this receipt, it is essential to adapt it to commerce, so it is essential that the code that is implemented as a template is correctly aligned with the user's order data that the platform will automatically write.
 
