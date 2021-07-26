@@ -45,7 +45,7 @@ POST     /segments/count_matches  Create a temporary segment, and return the tot
 The list shows us the HTTP method for each operation, the route and the description of what
 it does.
 
-If we click on any of these methods, like "Segments List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types and a field to enter a test value for each parameter.
+If we click on any of these methods, like "Segments List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types, and a field to enter a test value for each parameter.
 
 Additionally, you can call the API directly from Swagger filling in the parameters described earlier and then clicking on "Execute". This will invoke the API and deliver the result in the same view.
 
