@@ -6,7 +6,7 @@ search: true
 
 Realms are a grouping of users with similar features that are governed by the same configuration. Realms are especially useful when you have different groupings for sites within the same account that are not directly related, or to have a test site with test users without affecting productive user grouping.
 
-Each realm has its own login, registration, integrations, forms, segments, and messaging settings. Therefore, keep in mind that when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
+Each realm has its own login, registration, integrations, forms, segments, and messaging settings. Therefore, keep in mind when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
 
 ## Users
 
