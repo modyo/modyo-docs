@@ -321,7 +321,7 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
 }
 ```
 
-This JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object has relevant information related to that object. In our example you can see the campaign name (`name`), the last date it was sent (` last_sent`) and whether this campaign was segmented or not (`segments_enabled`).
+This JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object has relevant information related to that object. In our example you can see the campaign name (`name`), the last date it was sent (` last_sent`), and whether this campaign was segmented or not (`segments_enabled`).
 
 Apart from the list, you can also see an object called `meta` which contains information about the pagination of this resource.
 
