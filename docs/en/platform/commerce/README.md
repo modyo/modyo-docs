@@ -19,7 +19,7 @@ For this, there are two options that can be viewed from the same sidebar:
 
 ## Commerce Settings
 
-The configuration will allow the commerce to be shaped in all technical aspects, allowing to adjust defaults and standardize them throughout the site
+The configuration will allow the commerce to be shaped in all technical aspects, allowing you to adjust defaults and standardize them throughout the site
 
 ### General
 
