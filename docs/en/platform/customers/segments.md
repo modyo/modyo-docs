@@ -45,7 +45,7 @@ To save a segment, click on the **Save as a Segment** button at the bottom of th
 To see the users that match your segment filters, click on the **Apply** button. This opens a [Users](/en/platform/customers/realms.html) list that displays all users that fit your filters.
 
 :::tip Tip
-When using segments, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating segments of your customers. If a user profile is incomplete and has no data to match a given filter, they are not included in your segment results.
+When using segments, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating segments of your customers. If a user profile is incomplete and has no data to match a given filter, they will not be included in your segment results.
 :::
 
 ### Filters
