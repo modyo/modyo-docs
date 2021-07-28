@@ -81,7 +81,7 @@ The filters found by default in the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, go to the Custom Fields sectiond located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
+To create an advanced filter that fits your needs, go to the Custom Fields section located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
 
 :::warning Warning
 Updating targets occurs constantly in background in one of three ways:
