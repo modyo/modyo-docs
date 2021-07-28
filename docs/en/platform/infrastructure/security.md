@@ -24,7 +24,7 @@ Ensure that access always comes from an up-to-date computer, using reliable and 
 The Admin Panel is Modyo's most powerful management tool. It is possible to take control of many of the most relevant configurations and actions in Modyo's operation, as well as providing an administrative gateway to all organizations defined within the platform. We recommend setting a strong password and rotating it regularly (example: after each important platform update).
 
 ### Review Administration Permissions
-Administrators of an organization or site have a high level of access to content and settings that must be private. Printer to one of these administrators can pose a great security risk. That is why we recommend keeping a small and highly controlled number of users with a general management role and ensuring that these users maintain active additional levels of protection as the second authentication factor.
+Administrators of an organization or site have a high level of access to content and settings that must be private. Any vulnerability to one of these administrators can pose a great security risk. That is why we recommend keeping a small and highly controlled number of users with a general management role and ensuring that these users maintain active additional levels of protection such as a second authentication factor.
 
 Administrators can also create tokens for access to platform management APIs. These tokens are often used to automate common management tasks, it is important to ensure that they are only used within secure systems that ensure their protection.
 
