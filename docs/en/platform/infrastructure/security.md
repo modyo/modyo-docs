@@ -15,7 +15,7 @@ At Modyo, everything about safety is very important to us. That is why we create
 * **Trusted Sources:** Avoid deploying Widgets or codes from unreliable sources. Ensure that all dependencies that are loaded into a site come from a reliable source.
 
 ### Local Vulnerabilities
-Ensure that the computational equipment of all administrators of the platform is free of spyware, malware and virus infections. Even a secure installation of Modyo could be violated by an attacker who exploits a user's valid session from a local computer.
+Ensure that the hardware of all administrators of the platform is free of spyware, malware, and virus infections. Even a secure installation of Modyo could be broken into by malicious actors who exploit a user's valid session from a local computer.
 
 Ensure that access always comes from an up-to-date computer, using reliable and up-to-date Internet browsers.
 
