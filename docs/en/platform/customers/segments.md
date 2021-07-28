@@ -84,7 +84,7 @@ The filters found by default in the platform are:
 To create an advanced filter that fits your needs, go to the Custom Fields section located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
 
 :::warning Warning
-Updating targets occurs constantly in background in one of three ways:
+User segments are updated constantly in the background:
 * Every 5 minutes.
 * Each time a user's profile is modified.
 * Every time a user answers a form.
