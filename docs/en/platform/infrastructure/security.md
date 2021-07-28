@@ -43,7 +43,7 @@ Forcing connections to be TLS only in your installation ensures that all inbound
 Subdomain differentiation is very important, as there are multiple places where Modyo supports HTML development. If this is not active, the HTML of sites developed on Modyo can become an attack vector that could impact other Modyo components via cross-site _scripting_.
 
 ### Review the Backup Processors
-Running backup processes on a regular basis is very important in a secure Modyo deployment. For Cloud and Enterprise Cloud, this is done automatically. In the case of Enterprise On Premise, it is the operation team of each customer responsible for this activity.
+Running backup processes on a regular basis is very important in a secure Modyo deployment. For Cloud and Enterprise Cloud, this is done automatically. In the case of Enterprise On Premise, it is the customer's operation team that is responsible for this activity.
 
 Modyo backups cover both the database and file shared directories, where static content is stored.
 
