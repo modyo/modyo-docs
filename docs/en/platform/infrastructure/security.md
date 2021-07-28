@@ -8,7 +8,7 @@ At Modyo, everything about safety is very important to us. That is why we create
 ### Important Concepts
 * **Limit access:** Reduce the chances of a malicious actor gaining access to the system.
 
-* **Containment:** The system must be configured in such a way as to minimize the amount of damage a bad actor may cause if it is violated.
+* **Containment:** The system must be configured in such a way as to minimize the amount of damage a bad actor may cause.
 
 * **Preparation and knowledge:** Maintain backups and procedures to be prepared in the event of a catastrophe.
 
