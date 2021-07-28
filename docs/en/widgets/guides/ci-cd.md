@@ -60,7 +60,7 @@ We recommend creating a new user that has permissions and the token to upload an
 
 ![2](/assets/img/widgets/ci-cd/2.png)
 
-We now have the**token** we can use to configure our repository and so the GitHub action will have access to it.
+We now have the **token** we can use to configure our repository and so the GitHub action will have access to it.
 
 ![2](/assets/img/widgets/ci-cd/3.png)
 
