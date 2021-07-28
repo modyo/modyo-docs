@@ -191,7 +191,7 @@ Integration with distributed messaging platforms for asynchronous process execut
 - AWS SQS
 
 ### Integration with eCommerce
-Integration with eCommerce platforms in headless format, but requiring connection to local payment means and user authentication provided by the platform, within which we can mention:
+Integration with eCommerce platforms in headless format, but requiring connection to local payment means and user authentication provided by the platform, which we can mention:
 - CommerceTools
 - Magento Headless
 - Shopify Plus
