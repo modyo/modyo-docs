@@ -26,7 +26,7 @@ The Admin Panel is Modyo's most powerful management tool. It is possible to take
 ### Review Administration Permissions
 Administrators of an organization or site have a high level of access to content and settings that must be private. Printer to one of these administrators can pose a great security risk. That is why we recommend keeping a small and highly controlled number of users with a general management role and ensuring that these users maintain active additional levels of protection as the second authentication factor.
 
-Administrators can also create tokens for access to platform management APIs. These tokens are often used to automate common management tasks, so it is important to ensure that they are only used within secure systems that ensure their protection.
+Administrators can also create tokens for access to platform management APIs. These tokens are often used to automate common management tasks, it is important to ensure that they are only used within secure systems that ensure their protection.
 
 ### Update Modyo Regularly
 We recommend updating Modyo periodically to ensure you are always on the last patch available. This will ensure that your installation has all security patches up to date. Security patches are performed in such a way that they can be applied without mostly affecting work computers (example: moving from 9.1.10 to 9.1.12).
