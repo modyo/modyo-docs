@@ -68,7 +68,7 @@ The filters found by default in the platform are:
 - Login Date
 - Mail not opened
 - Count of opened mails
-- Notification read
+- Seen notification
 - Count of opened notifications
 - Registration date
 - User Tags
