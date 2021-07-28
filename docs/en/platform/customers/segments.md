@@ -89,4 +89,4 @@ User segments are updated constantly in the background:
 * Each time a user's profile is modified.
 * Every time a user answers a form.
 
-These updates are not immediate, and depend on the system load. It is possible that some users may not see segmented content right away after having executed an action that includes or excludes them from a particular segment. Please give the system a few minutes to reflect segment changes.
+These updates are not immediate, and depend on system load. It is possible that some users may not see segmented content right away after having executed an action that includes or excludes them from a particular segment. Please give the system a few minutes to reflect segment changes.
