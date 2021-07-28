@@ -25,7 +25,7 @@ These _"recipes" _ are in the **README.md** file located in the Widget's `.githu
 The recipes you can find are:
 
 - Build and publish to Modyo
-- Run eSint, Stylelint and Unit Tests on pull quests
+- Run ESLint, Stylelint, and Unit Tests on pull quests
 - Publish package on GitHub registry
 - Release draft
 - Release draft config
