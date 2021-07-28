@@ -51,7 +51,7 @@ Modyo backups cover both the database and file shared directories, where static 
 Modyo may make communications to the Internet, with regard to the capabilities of identity providers or integration Webhooks. In order to control outbound communication, you must establish an outbound proxy or network NAT scheme where the source IPs of the communication are not exposed.
 
 ### Restrict Public Ports of Entry
-Modyo users will have to access exclusively through port 443, behind a load balancer that distributes traffic to different instances of the platform. Between the load balancer and the platform instances traffic can go through port 443 or 80 depending on the internal security of your network (example: isolated and protected networks such as Amazon AWS VPCs may not require internal encryption).
+Modyo users will have to access through port 443 exclusively, behind a load balancer that distributes traffic to different instances of the platform. Between the load balancer and the platform instances, traffic can go through port 443 or 80 depending on the internal security of your network (example: ∑ networks that are isolated and protected such as Amazon AWS VPCs may not require internal encryption).
 
 ### Vulnerability Report
 If you think you found a security vulnerability in Modyo, please help us by reporting the problem. Modyo has secure and confidential security incident reporting channels through our [support center](https://support.modyo.com/hc/es) or email <a href="mailto:security@modyo.com">security@modyo.com</a>.
