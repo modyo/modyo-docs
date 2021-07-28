@@ -117,7 +117,7 @@ Product management tools are implemented using Javascript codes that are install
 - Hotjar's Hotel
 
 ### Safety and Performance Tools
-Security and performance tools are implemented in a very similar way to analytics and product management, but unlike these, the focus is focused on capturing experience in terms of performance, detection of Javascript errors in the browser and compliance with service levels. In this category we can mention tools such as:
+Security and performance tools are implemented in a very similar way to analytics and product management, but unlike these, the focus is focused on capturing experience in terms of performance, detection of Javascript errors in the browser, and compliance with service levels. In this category we can mention tools such as:
 - NewRelic Browser
 - Dynatrace RUM
 - Elastic Observability
