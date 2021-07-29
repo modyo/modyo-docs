@@ -151,7 +151,7 @@ In addition, the Spring Boot framework allows you to work with specialized libra
 
 The Modyo Professional Services Area has experts with extensive experience in developing integrations to different types of systems, which can be hired for full implementation or accompaniment in complex integration projects related to Modyo Connect.
 
-Integration components developed following this reference architecture, will be able to establish integrations to a large number of system types, such as those mentioned below.
+Integration components developed following this reference architecture will be able to establish integrations to a large number of system types, such as those mentioned below.
 
 ### Business Systems Integration
 Integration to business systems owned by the client that implements the platform, usually present within their own infrastructure accessed via VPN or similar. In this category we can mention systems such as:
