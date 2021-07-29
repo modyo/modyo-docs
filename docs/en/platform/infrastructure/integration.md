@@ -97,7 +97,7 @@ Web analytics tools integrated into each of the pages of a site by including scr
 By using Liquid specific tags, Modyo Channels is able to interpolate context information to tracking events, such as user name, email, unique identifiers, segments to which the user belongs, among many others.
 
 ### Marketing Tools
-Digital marketing tools that allow to alter the user experience according to previously established rules, type A/B testing or similar. In this category we can mention tools such as:
+Digital marketing tools that allow to alter the user experience according to previously established rules, type A/B testing, or similar. In this category we can mention tools such as:
 - Google Optimize
 - SalesForce Marketing Cloud
 
