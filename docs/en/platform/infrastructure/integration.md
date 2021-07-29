@@ -37,7 +37,7 @@ For integration with user accounts, Modyo has native support for OAuth 2.0, OIDC
 ### Integration with messaging
 Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a Realm in Modyo Customers.
 
-We currently support email messaging channels, SMS, Whatsapp for Business, Web Push, Push and notifications in the Web application.
+We currently support email messaging channels, SMS, Whatsapp for Business, Web Push, Push, and notifications in the Web application.
 
 Integration microservices can also send notifications to users and track users using the Modyo Customers messaging API.
 
