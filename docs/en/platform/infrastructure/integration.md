@@ -17,7 +17,7 @@ Customer Relationship Management (CRM) and Customer Data Platform (CDP) systems 
 
 Modyo Customers is the application within Modyo where the actions and business events of authenticated users converge, carried out on the different digital channels managed by the platform. Modyo Customers allows you to segment audiences, using both user behavior information and data in their profiles. It is precisely the latter that can be enriched by integrating systems such as CRMs and CDPs. To perform this type of integration, we make use of the Modyo Customers administrative API, which allows you to obtain the information of users in Modyo as well as update the attributes of these users if required. In addition, this API allows the execution of administrative tasks such as creating new users or disabling them on the platform.
 
-The Modyo Administrative API requires a validly issued authentication token on behalf of an administrator user, who must have sufficient permissions to perform the tasks you want to automate.
+The Modyo Administrative API requires a valid authentication token on behalf of an administrator user, who must have sufficient permissions to perform the tasks you want to automate.
 
 The Modyo Customers API can also be used to keep records up to date with other business solutions, such as SalesForce Flows or Microsoft Dynamic Power, triggering flows in both directions.
 
