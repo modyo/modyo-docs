@@ -71,7 +71,7 @@ The platform's integration with chat for notifications (Slack and Microsoft Team
 While the Modyo Customers administrative API allows you to perform integrations with different CRMs and CDPs today, we believe that for SalesForce we need to do something else. That's why we have plans to be able to make a deeper integration that makes it easier to keep Modyo and Salesforce records synchronized.
 
 #### Content Indexers
-We currently have in mind to generate a direct integration with Algolia (https://www.algolia.com), which is presented as a business content search solution that allows marketers to boost results or A/B testing in searches. Algolia has indexing solutions not only to content present on regular pages, but also content that comes from an API.
+We are currently working to generate a direct integration with Algolia (https://www.algolia.com), which is presented as a business content search solution that allows marketers to boost results or A/B testing in searches. Algolia has indexing solutions not only to content present on regular pages, but also content that comes from an API.
 
 #### Auto Provisioning of Administrators Users
 Through the support of the SCIM protocol we seek to adopt a standard protocol that allows to perform the activities of automatic provision of administrators users in conjunction with SAML. In this way, when you register or unsubscribe a contributor in the central registries of our customers, they will be automatically incorporated or removed in Modyo.
