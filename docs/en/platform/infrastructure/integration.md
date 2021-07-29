@@ -114,7 +114,7 @@ Chat tools are commonly used in support or conversational marketing actions. The
 Product management tools are implemented using Javascript codes that are installed in different locations on the page depending on the purpose. This allows you to integrate features such as product tours, NPS capture, feedback, and capture metrics oriented to authenticated users. In this category we can mention tools such as:
 - Pendo
 - Qualtrics
-- Hotjar's Hotel
+- Hotjar
 
 ### Safety and Performance Tools
 Security and performance tools are implemented in a very similar way to analytics and product management, but unlike these, the focus is focused on capturing experience in terms of performance, detection of Javascript errors in the browser, and compliance with service levels. In this category we can mention tools such as:
