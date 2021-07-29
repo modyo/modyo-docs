@@ -31,7 +31,7 @@ Currently, the platform supports integration into SSO systems in two ways:
 
 For integration with management accounts, Modyo has native support for LDAP, SAML, OAuth 2.0, OIDC, and Google Workspace.
 
-For integration with user accounts, Modyo has native support for OAuth 2.0, OIDC and Google Workspace.
+For integration with user accounts, Modyo has native support for OAuth 2.0, OIDC, and Google Workspace.
 
 
 ### Integration with messaging
