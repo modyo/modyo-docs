@@ -59,7 +59,7 @@ Integration with payment methods is activated in Modyo as a mechanism that allow
 
 For all these payment methods, Modyo provides an interface in which you can review the status of transactions associated with the profile of a user authenticated to the platform. In addition, payment and purchase information persists on the platform to be used as a segmentation criterion.
 
-Modyo is in a continuous process of inclusion of new means of payment to incorporate into the platform.
+Modyo is in a continuous process of including new means of payment to incorporate into the platform.
 
 ### What integrations do we plan for the future?
 The following integrations are today part of our roadmap in the product and will improve the posture of the product against integration with the most popular platforms in use by our customers.
