@@ -6,7 +6,7 @@ search: true
 
 ## Revisión en Equipo
 
-La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de elementos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación.
+La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación.
 
 De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores.
 
@@ -20,15 +20,15 @@ Ellos serán los responsables de aprobar o rechazar el elemento, y determinará 
 
 Cada paso de este proceso lleva al elemento por distintos estados, que quedan registrados en un historial para su posterior auditoría.
 
-[Imagen de etapas de revisión]
+<img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios).
-
-La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
+Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios) y se configura individualmente.
 
 ### Configuración
 
-Para configurar la herramienta, debes dirigirte a `Configuración del sitio/espacio > Revisión en equipo`.
+La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
+
+Para configurar la herramienta, debes seleccionar un espacio o sitio y seleccionar la opción  `Configuración del sitio/espacio > Revisión en equipo` en el menú lateral.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -49,7 +49,7 @@ Si bien la aprobación se encuentra limitada, cualquier usuario con permisos pue
 :::warning Atención
 Cuando haces cambios en la configuración de revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios.
 
-Para que esos elementos tomen en cuenta la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
+Para que esos elementos se tomen en cuenta la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
 :::
 
 ### Roles y permisos
