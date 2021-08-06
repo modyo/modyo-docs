@@ -11,7 +11,7 @@ The Modyo Platform, through a decentralized integration scheme based on APIs and
 ## Reference Architecture
 The reference architecture on which the Modyo Platform is implemented varies from simple scenarios, where no further integration such as public sites or intranets is required, to more complex scenarios, in which additional functionality is required. In this second scenario, business system integrations are performed using a layer of APIs that are implemented independently of the platform, as shown in the following diagram.
 
- <img src="/assets/img/infrastructure/reference_architecture.png" style="margin-top: 40px;" /> 
+<img src="/assets/img/infrastructure/reference_architecture.png" style="margin-top: 40px;" />
 
 
 The left part of the diagram corresponds to the Modyo Platform, whose primary responsibility lies with the management of the digital channels Web, Web Mobile and Progressive Web Application (PWA). The platform provides the necessary tools to manage the lifecycle of all frontend developments, including both Web sites and Widgets, which can initiate connections to the integration layer.
