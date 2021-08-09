@@ -31,6 +31,22 @@ Para habilitarlos, debes checkear la parte superior de la página y después pro
 
 Los webhooks se pueden crear a partir de acciones de sitios o espacios.
 
+#### Crear un webhook
+
+Llama a tus canales de gestión a través de un webhook.
+
+Para crear un webhook, sigue estos pasos:
+
+1. Desde la página de administración, haz click en Configuración, luego selecciona Webhooks.
+2. Haz click en crear Webhook.
+3. Escribe el nombre y la URL a la cual quieres llamar.
+4. Selecciona los sitios o espacios que quieras que activen el webhook.
+5. Selecciona el tipo de log que activará el webhook.
+6. Agrega los headers necesarios para la llamada. 
+7. Haz click en guardar.
+
+Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
+
 Los webhooks de sitio son:
 
 * Respuesta del formulario creado
@@ -86,9 +102,3 @@ Los webhooks de espacios son:
 * Tipo creado
 * Tipo eliminado
 * Tipo actualizado
-
-Al crear un webhook, debes tener la URL a la que quieres enviar la información, seleccionar el tipo de log y sitio (en caso de ser necesario) que gatillará el webhook y luego guardar los cambios.
-
-Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
-
-Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
