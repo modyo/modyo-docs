@@ -118,7 +118,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * The option to [filter by slug](/en/platform/content/public-api-reference.html#filter-entries) in the Liquid SDK using the filter `by_slug` was added.
-* The option to [unpublish all widgets](/en/platform/channels/widgets.html) and archive all non published widgets, even if they are being used in pages, was added.
+* The option to [unpublish all widgets](/en/platform/channels/widgets.html) and archive all non published widgets, (even if they are being used in pages) was added.
 
 ### 9.1.9 - February 10, 2021
 
