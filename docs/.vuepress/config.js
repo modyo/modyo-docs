@@ -94,19 +94,7 @@ module.exports = {
                 "/en/platform/core/roles",
                 "/en/platform/core/security",
                 "/en/platform/core/api",
-                {
-                  title: "Integrations",
-                  path: "/en/platform/core/integrations/",
-                  collapsable: true,
-                  children: [
-                    "/en/platform/core/integrations/facebook",
-                    "/en/platform/core/integrations/google",
-                    "/en/platform/core/integrations/ldap",
-                    "/en/platform/core/integrations/saml",
-                    "/en/platform/core/integrations/oauth2",
-                    "/en/platform/core/integrations/oidc",
-                  ]
-                  },
+                "/en/platform/core/integrations"
               ],
             },
             {
@@ -291,19 +279,7 @@ module.exports = {
                 "/es/platform/core/roles",
                 "/es/platform/core/security",
                 "/es/platform/core/api",
-                {
-                  title: "Integraciones",
-                  path: "/es/platform/core/integrations/",
-                  collapsable: true,
-                  children: [
-                    "/es/platform/core/integrations/facebook",
-                    "/es/platform/core/integrations/google",
-                    "/es/platform/core/integrations/ldap",
-                    "/es/platform/core/integrations/saml",
-                    "/es/platform/core/integrations/oauth2",
-                    "/es/platform/core/integrations/oidc",
-                  ]
-                  },
+                "/es/platform/core/integrations"
               ],
             },
             {
