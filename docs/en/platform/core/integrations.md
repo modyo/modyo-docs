@@ -2,7 +2,161 @@
 search: true
 ---
 
-### OpenID Connect
+# Integrations
+
+One of the features Modyo has to facilitate the interaction between other user systems and Modyo is the integration with different authentication services.
+
+The platform is currently compatible with:
+
+- [Facebook](/en/platform/core/integrations/facebook.html)
+- [Google](/en/platform/core/integrations/google.html)
+- [LDAP](/en/platform/core/integrations/ldap.html)
+- [SAML](/en/platform/core/integrations/saml.html)
+- [OAuth2](/en/platform/core/integrations/oauth2.html)
+- [OpenID Connect](/en/platform/core/integrations/oidc.html)
+
+Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
+
+::: tip Tip
+From Modyo 9 onwards, users (Customers> Users) and administrators (Settings> Team) are logically separated. Both have support for all the integrations compatible with the platform, but with different logins. This way you can configure, for example, Facebook for your users and Oauth2 for your administrators.
+:::
+
+## Webhooks
+
+The platform also makes it possible to trigger Webhooks with specific events within your account. To do this, they must be enabled and configured from the webhooks section in the account settings.
+
+A webhook is an automatic _POST_ action at a given URL with certain information.
+
+To enable them, you must check the box at the top of the page and then proceed to create all the webhooks you want.
+
+Webhooks can be created from actions of sites or spaces.
+
+### Create a webhook
+
+Call your management channels through webhooks.
+
+To create a webhook, follow these steps:
+
+1. From the administration screen, click Configuration, then select Webhooks.
+2. Click create Webhook.
+3. Write the name and URL you want to call.
+4. Select the sites or spaces you want to activate the webhook.
+5. Select the log type that will activate the call.
+6. Add the required headers for your call.
+7. Click Save.
+
+Note: The webhook is called through a POST call when the selected log type is generated. Once a webhook is created, you can send a test notification with fake information to test that your URL is receiving POST calls from Modyo.
+
+Site webhooks are:
+
+* Response of the form created
+* Updated form response
+* Page created
+* Page deleted
+* Page published
+* Page unpublished
+* Page updated
+* Login
+* Logout
+* Navigation approved
+* Navigation published
+* Navigation sent for review
+* Navigation updated
+* Profile updated
+* Site created
+* Site deleted
+* Site disabled
+* Site Enabled
+* Site hidden
+* Site staged
+* Visible Site
+* Site updated
+* Templates approved
+* Templates sent for review
+* Templates updated
+* Theme Installed
+* Theme restored
+* Theme updated
+* Widget approved
+* Widget cloned
+* Widget created
+* Widget published
+* Widget restored
+* Widget sent for review
+* Widget unpublished
+* Widget updated
+
+Spaces webhooks are:
+
+* Category created
+* Category deleted
+* Category updated
+* Entry approved
+* Entry created
+* Entry published
+* Entry sent for review
+* Entry unpublished
+* Entry updated
+* Space created
+* Space updated
+* Type created
+* Type deleted
+* Type updated
+
+## Facebook
+
+To be able to integrate with Facebook, you must have:
+
+- API Key
+- Secret application code
+
+You can obtain these by creating a Facebook application with login permissions. You can learn more about how to create and configure a Facebook application in the [Official Documentation](https://developers.facebook.com/docs/facebook-login/).
+
+## Google
+
+In order to integrate Google login with Modyo, you must have:
+
+- Application ID
+- Key
+
+These values can be obtained after creating an application in the Google Platform with login permissions. You can learn more about how to create and configure a Google application in your [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
+
+You should keep in mind that the callback URL (_Callback URI_) is available at the end of the form. You need to use that URL in the application or project that you create in Google to be able to complete the login flow correctly.
+
+In addition to the necessary values, you can configure additional data to control the Google login experience. If you enable the _Restrict domains_ option, you can use two extra fields:
+
+- **Domain example**: These will be the domains that are shown as a suggestion when you are signing in to Google.
+- **Supported domains**: If the email domain that the user uses when signing in with Google is not in this list, then the login will not be valid and the user will be redirected to the Modyo login view without an active session.
+
+## LDAP
+
+In order to integrate a login with LDAP in Modyo, you will need the following information from your identity provider:
+
+- **Service name**: It will be displayed under the service login icon or logo.
+- **Host**: Address in which the LDAP login service is available
+- **Port**: Port with which Modyo and your LDAP identification service should communicate.
+- **Base**: Search base, consisting of multiple objects separated by commas.
+- **UID**: Name of the field used by the LDAP service to identify users as a unique attribute.
+- **Bind DN**: Default credentials.
+- **Password**
+- **Method**: Authentication method with the LDAP identity service.
+- **Logo**: It is not required, but if you want it to appear next to the name of the service (for example, the logo of your company), you can upload an image in this field.
+
+## OAuth2
+
+In order to integrate a login with OAuth2 in Modyo, you will need the following information from your identity provider:
+
+- Service name
+- Service description
+- Authentication URL: OAuth2 authentication service URL
+- Customer ID
+- Key (secret)
+- Scope: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
+- Field for login: You can choose between using the user's email or username. This option is useful if your OAuth2 authentication provider uses, for example, a numeric field and not an email as an identifier.
+- Placeholder for login: Text that will be displayed in the identification field as a placeholder if the user has not filled in the field
+- Use SSL: Enable this option if your OAuth2 authentication service uses a secure sockets layer (SSL: _Secure Sockets Layer_)
+
+## OpenID Connect
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
@@ -13,7 +167,7 @@ For a successful OpenID Connect integration, the OIDC Provider must have an up-t
 The delegated token API via `/auth/openidc/access_token` has been deprecated in favor of `/api/profile/me`.
 :::
 
-## Using Keycloak
+### Using Keycloak
 
 Keycloak is a certified OpenID Connect identity provider that implements most of the features of Modyo OpenID Connect integration.
 
@@ -45,7 +199,7 @@ When performing a specific integration, Modyo allows you to enable certain setti
 | **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                             |
 |                                                                     |                                                                                                                                                                                                                        |
 
-## Using Azure Active Directory
+### Using Azure Active Directory
 
 Azure Active Directory is a Microsoft Azure cloud identity service that allows you to implement a hybrid identity scheme based on on-premise directories with SSO in the cloud.
 
@@ -75,10 +229,24 @@ The following configuration is valid for both Team and Customer user integration
    | **Enable token revocation** | Not supported by Azure AD|
    | **Enable sync of _claims_ at login** | Enable sync of _claims_ OpenID Connect with custom fields in Modyo.|
 
-## Synchronization of _claims_
+### Synchronization of _claims_
 
 Modyo allows you to synchronize attributes and other properties of Customer users through standard and additional _claims_ through OpenID Connect.
 
 1. In **Clients> Mappers** create a new **Protocol Mapper** with the attribute or property of the user. Make sure **Add to userinfo** is enabled.
 2. In **Customers> Customer settings> Custom fields** add a new **Custom Field** with a data type equivalent to the claim.
 3. In **Customers> Customer settings> Integrations> OpenID Connect** enable **Enable _claims_ synchronization on login** and add _claims_ mappings for each of your _claims_.
+
+## SAML
+
+In order to integrate a login with SAML in Modyo, you will need the following information from your identity provider:
+
+- Service name
+- Issuer
+- URL of the identity provider service
+- Parameters of the identity service provider URL
+- Identity provider certificate
+- Signature of the identity provider certificate
+- Name identification format
+- Service callback URL: By default this URL is `account_url/admin/auth/saml/callback`
+- Logo: As in LDAP, this image will be displayed as a service logo next to the service name in the login form.
