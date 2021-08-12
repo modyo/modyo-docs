@@ -19,9 +19,9 @@ modyo-cli get modyo-widgets-investments-stocks
 | Feature          | Description                                                                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stock Layout     | Shows the set of available tradable stocks. Displays a list of transactions in transit associated with the stocks. Displays market information for specific stocks. Allows clients to cancel transactions in transit, if necessary. |
-| Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price, and possible institution-specific documents. Allows the user to buy or sell a selected stock.                                |
+| Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price, and possible institution-specific documents. Allows the user to buy or sell a selected stock.                               |
 | Buy Shares     | Allows the user to buy the selected stock, choosing the investment account, the number of shares to buy, the maximum buying price, and the duration of the buying order.                                                                |
-| Sell Shares      | Allows the user to sell the selected stock, choosing the investment account, the number of shares to be sold, and the minimum sale price.                                                                                               |
+| Sell Shares      | Allows the user to sell the selected stock, choosing the investment account, the number of shares to be sold, and the minimum sale price.                                                                                              |
 
 <script>
 
