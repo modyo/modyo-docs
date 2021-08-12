@@ -20,9 +20,9 @@ modyo-cli get modyo-widgets-retail-consumer-loan
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Loan Amount     | The loan amount to be requested from to the institution.                                                                                               |
 | Payments                | Shows the total payment amounts for the requested personal loan.                                                                            |
-| Months of non-payment       | This section allows customers to select the months of their grace period.                                                                            |
-| Grace period      | If necessary, customers can select non-payment dates for their personal loan.                                                            |
-| Destination account       | Corresponds to the account in which the requested loan amount will be deposited.                                              |
+| Months of non-payment       | This section allows customers to select the months of their grace period.                                                                           |
+| Grace period     | If necessary, customers can select non-payment dates for their personal loan.                                                            |
+| Destination account       | Corresponds to the account in which the requested loan amount will be deposited.                                             |
 | Insurance               | Shows different types of insurance that clients can add to their loans if necessary.                                                                                     |
 | Simulation Summary | This summary provides general information about the performed credit simulation. It includes total credit cost, amount of installments, quota value and respective interest rates. |
 | Simulation Detail | This displays detailed credit simulation information. It includes net amount, taxes, insurance and expenses, among others.                                              |
