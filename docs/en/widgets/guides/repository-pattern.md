@@ -181,7 +181,8 @@ We've finished setting up our Repository Pattern. If you followed the steps you 
 │ │ ── modyo.config.js
 │ ├── store/
 ──...
-```
+
+### ```
 
 ### How do we use our Repository Pattern?
 
@@ -190,6 +191,72 @@ Since we're working with Vue.js, we'll review how to use our repository pattern 
 #### In Vue Components (SFC)
 
 We create a component for the POSTS and import the repository as shown below
+
+```vue
+<template>
+  <div class="row">
+    <Post v-for="(post, i) in posts" :key="i" :posts="post" />
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Repository from "../repositories/RepositoryFactory";
+const PostRepository = Repository.get("posts");
+
+import Post from "./Post";
+export default {
+  name: "Posts",
+  components: {
+    Post,
+  },
+  data() {
+    return {
+      posts: [],
+    };
+  },
+  created() {
+    this.getPosts();
+  },
+  methods: {
+    getPosts: async function() {
+      const { data } = await PostRepository.getTop(3);
+      this.posts = data;
+    },
+  },
+};
+</script>
+```
+
+In the Vuex Store
+
+#### In the file "actions.js" located in the Widget's "store" we paste the following
+
+```js
+import Repository from "../repositories/RepositoryFactory";
+
+const PostRepository = Repository.get("posts");
+
+export default {
+  async getPosts({ commit }) {
+    commit("setLoading", true);
+    try {
+      const response = await PostRepository.getTop(3);
+      const posts = response;
+      commit("updatePosts", posts);
+      return response;
+    } catch (error) {
+      return error;
+    } finally {
+      commit("setLoading", false);
+    }
+  },
+};
+```
 
 ```vue
 <template>

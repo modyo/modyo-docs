@@ -156,7 +156,7 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 - Placeholder for login: Text that will be displayed in the identification field as a placeholder if the user has not filled in the field
 - Use SSL: Enable this option if your OAuth2 authentication service uses a secure sockets layer (SSL: _Secure Sockets Layer_)
 
-## OpenID Connect
+### OpenID Connect
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 

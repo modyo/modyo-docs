@@ -28,11 +28,11 @@ The Checking Account section allows you to see an overview of the available bala
 
 | Feature    | Description                                                                              |
 |:-----------------|:-----------------------------------------------------------------------------------------|
-| Available Balance | Shows the total available balance in the checking account.                                 |
-| Withdrawals     | Allows you to see the total withdrawals within the account.                                            |
-| Deposits     | Shows the total credits or deposits made to an account.                  |
+| Available Balance | Shows the total available balance in the checking account.                                |
+| Withdrawals     | Allows you to see the total withdrawals within the account.                                           |
+| Deposits     | Shows the total credits or deposits made to an account.                 |
 | Line of Credit | Displays the line of credit status of the account.                                   |
-| Available Balance  | Displays the total available balance in the line of credit associated with the account.                   |
+| Available Balance | Displays the total available balance in the line of credit associated with the account.                   |
 | Transfer       | Switches to the Transfer widget associated with the account.                                       |
 | Transactions      | Switches to the Transfers History widget, to see each movement in detail. |
 
@@ -58,8 +58,8 @@ The widget also allows you to separate national from international lines of cred
 |:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
 | Available Credit      | Shows the current credit balance used and the amount of credit available, plus a graph indicating the amount used versus the total credit limit.        |
 | International Transactions | It displays the international amount used and authorized, plus a graph indicating the amount used versus the authorized total in dollars. |
-| Pay               | Switches to the Card Payment widget, where you can pay invoiced amounts.                                                                  |
-| Transactions         | Switches to the Transactions widget of the card, where you can review the details of each transaction.                                                        |
+| Pay               | Switches to the Card Payment widget, where you can pay invoiced amounts.                                                                 |
+| Transactions         | Switches to the Transactions widget of the card, where you can review the details of each transaction.                                                       |
 
 <script>
 

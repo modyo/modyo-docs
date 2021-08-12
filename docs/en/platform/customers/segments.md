@@ -12,7 +12,6 @@ These allow you to group your customers into different segments and facilitate c
 
 In the interface, you can see a list of all segments in your account, with the following details:
 
-
 The list is sorted as follows.
 
 - Name: Particular name of the list. (Below are the filters that it contains).

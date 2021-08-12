@@ -88,6 +88,7 @@ $border-width: 2px;
 $border-color: $second;
 $border-radius: 1.35rem;
 //...
+
 ```
 
  <img src="/assets/img/widgets/after.png" width="400"> 
@@ -102,7 +103,7 @@ In the `custom.scss` file we import and give order to all the other stylesheets 
 @import". /theme.scss ";
 ```
 
-:::tip
+### :::tip
 Order is important, **variables** always go before importing bootstrap.
 :::
 
@@ -125,7 +126,7 @@ new Vue({
 The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not styles!
 :::
 
-### Component Styles
+Component Styles
 
 Some of the widget components have their own styles and these are written in the same component (`.vue`). By using the `scoped` attribute, we can define the scope of these styles at the component level without affecting other parts of the Widget.
 
@@ -154,7 +155,7 @@ When you're building a Widget with Bootstrap (or another style framework) you'll
 
 Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we manage to remove those extra **bytes** that we don't need and optimize our Widgets. Excellent!
 
-::: danger PROBLEM!
+### ::: danger PROBLEM!
 What happens to the styles **NOT** declared in the content, but that **ARE** used in the Widget?
 :::
 
@@ -197,6 +198,12 @@ if (IN_PRODUCTION) {
 ```
 
 In this file we can force **PurgeCSS** to include styles in 3 different ways:
+
+Add the content file to the `content` property. This way PurgeCss is able to read the content and determine which styles it should include.
+
+Add keywords to the `whitelist` property
+
+Add regex patterns to the `WhiteListPatterns` property
 
 - Add the content file to the `content` property. This way PurgeCss is able to read the content and determine which styles it should include.
 

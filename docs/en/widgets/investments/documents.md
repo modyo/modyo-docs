@@ -20,11 +20,11 @@ modyo-cli get modyo-widgets-investments-documents
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consolidated Financial Statements | Displays a list of available financial statements.                                                                                                                                                                             |
 | Invoices                            | Displays the list of electronic invoices for all the completed transactions. Allows the user to open invoices in PDF format to review, print, and/or download.                                                           |
-| Order Confirmations             | Displays a list of order documents available in PDF format.                                                                                                                                                    |
+| Order Confirmations             | Displays a list of order documents available in PDF format.                                                                                                                                                   |
 | Order Executions        | Provides information on the execution of the client's orders.                                                                                                                       |
 | Electronic Contract Signatures     | Shows the contracts to be signed, either because they are completely new or because there are new or updated versions of existing contracts. Allows the user to directly review the contracts with the option to sign them online with the user's key or passcode. |
 | Product Risk Table       | Table with a description of products and their risk classification.                                                                                                                                                                           |
-| Tax Certificates            | Shows a list of tax certificates in PDF format for viewing, printing and/or downloading.                                                                                                                     |
+| Tax Certificates            | Shows a list of tax certificates in PDF format for viewing, printing and/or downloading.                                                                                                                    |
 
 <script>
 
