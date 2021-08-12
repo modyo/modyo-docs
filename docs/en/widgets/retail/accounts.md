@@ -29,7 +29,7 @@ modyo-cli get modyo-widgets-retail-accounts
 | Feature           | Description                                                                                                                                                                                                                                                     |
 |:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Savings Account Summary | Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists. |
-| View recent activity | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                        |
+| View recent activity | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                       |
 | Account Statements     | Displays account statements from previous periods, showing the transactions of each selected account statement, sorted by date.<br><br>Clients can also search within the displayed transactions.            |
 
 #### Line of Credit
