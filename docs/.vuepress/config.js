@@ -82,7 +82,8 @@ module.exports = {
                 "/en/platform/core/roles",
                 "/en/platform/core/security",
                 "/en/platform/core/api",
-                "/en/platform/core/integrations"
+                "/en/platform/core/identity-providers",
+                "/en/platform/core/webhooks"
               ],
             },
             {
@@ -257,7 +258,8 @@ module.exports = {
                 "/es/platform/core/roles",
                 "/es/platform/core/security",
                 "/es/platform/core/api",
-                "/es/platform/core/integrations"
+                "/es/platform/core/identity-providers",
+                "/es/platform/core/webhooks"
               ],
             },
             {
