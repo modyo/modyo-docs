@@ -35,7 +35,7 @@ This widget includes features for two similar products: Transfer to Third Party 
 | Destination Account  | Select the account to which the money will be transferred and deposited.                                       |
 | My Contacts      | Allows you to select the account that will receive the transfer, among the accounts already registered by the client. Offers a search bar to find transfer recipients quickly and easily. |
 | New Contact     | Allows you to enter information about a recipient who is not registered on the customer's account. Includes name, bank, account type, account number, ID and recipient's email.     |
-| Transfer Amount | Allows you to enter the amount to be transferred and deposited to the selected recipient's account.                                                                                                                     |
+| Transfer Amount | Allows you to enter the amount to be transferred and deposited to the selected recipient's account.                                                                                                                    |
 
 <script>
 
