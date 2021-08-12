@@ -405,7 +405,6 @@ axios_auth.interceptors.request.use (resetIdleTime);
 axios_api.interceptors.request.use (appendTokenToRequest, errorRequest);
 ```
 
-
 ### A session controller
 
 ``` js
@@ -515,7 +514,6 @@ var sessionManager={
   }
 };
 ```
-
 
 ### A modal window that informs the user that their session will expire
 
