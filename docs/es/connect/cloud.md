@@ -11,7 +11,7 @@ Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. 
 
 <img src="/assets/img/cloud/partner_badge.png" style="margin-top: 40px;" />
 
-El año 2019 Modyo fue reconocido por Amazon como el Technology Partner of the Year para Chile y Perú.
+Los años 2019 y 2021 Modyo fue reconocido por Amazon como el Technology Partner of the Year para Chile y Perú.
 
 Las versiones de Modyo Cloud y Enterprise Cloud operan en una configuración de alta disponibilidad, haciendo uso de al menos dos zonas de disponibilidad en la región de Virginia del Norte (us-east-1). Modyo cuenta además con una región de contingencia ubicada en California (us-west-1). El despliegue de la plataforma se realiza en una configuración de contenedores (compatibles con Docker) que corren sobre el sistema de Amazon EC2 Container Service (ECS).
 
