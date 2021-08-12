@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Realms
+# Reinos
 
 Los reinos son una agrupación de usuarios con características similares que están gobernados por una misma configuración. Los realms son especialmente útiles cuando cuentas con distintas agrupaciones para sitios de una misma cuenta que no están directamente relacionados, o también, para tener un sitio de pruebas con usuarios de prueba sin afectar la agrupación de usuarios productivos.
 
