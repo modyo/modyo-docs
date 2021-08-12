@@ -73,18 +73,6 @@ module.exports = {
               ],
             },
             {
-              title: "Architecture",
-              path: "/en/platform/infrastructure/",
-              collapsable: true,
-              children: [       
-                "/en/platform/infrastructure/integration",
-                "/en/platform/infrastructure/cloud",
-                "/en/platform/infrastructure/onpremise",
-                "/en/platform/infrastructure/connect",
-                "/en/platform/infrastructure/security",
-              ],
-            },
-            {
               title: "Platform",
               path: "/en/platform/core/",
               collapsable: true,
@@ -230,7 +218,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          { text: "Servicios", link: "/es/connect/" },
+          { text: "Servicios", link: "/es/services/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -257,16 +245,6 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-a-custom-view",
                 "/es/platform/tutorials/how-to-create-private-site",
                 "/es/platform/tutorials/how-to-create-a-menu",
-              ],
-            },
-            {
-              title: "Arquitectura",
-              path: "/es/platform/infrastructure/",
-              collapsable: true,
-              children: [       
-                "/es/platform/infrastructure/integration",
-                "/es/platform/infrastructure/onpremise",
-                "/es/platform/infrastructure/security",
               ],
             },
             {
