@@ -395,15 +395,15 @@ module.exports = {
               ],
             },           
           ],
-          "/es/connect/": [
+          "/es/services/": [
             {
               title: "Servicios Manejados",
               collapsable: false,
               children: [
-                ["/es/connect/", "Introducción"],
-                ["/es/connect/cloud", "Modyo Cloud"],
-                "/es/connect/connect",
-                "/es/connect/faq",
+                ["/es/services/", "Introducción"],
+                ["/es/services/cloud", "Modyo Cloud"],
+                "/es/services/connect",
+                "/es/services/faq",
               ],
             },           
           ],
