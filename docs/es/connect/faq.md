@@ -1,5 +1,0 @@
----
-search: true
----
-
-# Preguntas Frecuentes
