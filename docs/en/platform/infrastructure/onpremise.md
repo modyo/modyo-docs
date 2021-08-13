@@ -381,9 +381,9 @@ The following list of environment variables correspond to the different paramete
 Modyo recommends setting these parameters in the /etc/profile.d/modyo.sh file
 
 
- <style> 
+<style> 
 table {display: table;}
- </style> 
+</style> 
 
 | Changeable | Description | Values | Default | Required |
 |----------|-------------|---------|---------|-----------|
