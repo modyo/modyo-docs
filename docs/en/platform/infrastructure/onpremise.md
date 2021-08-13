@@ -417,7 +417,7 @@ table {display: table;}
 |MODYO_MAILER <br> _SMTP_PASSWORD|Password of the smtp service. MODYO_SENDGRID_PASSWORD is used as fallback|Valid String||IF smtp|
 |MODYO_MAILER <br> _SMTP_PORT|Port of the smtp service|Port number|587|NOT|
 |MODYO_MAILER <br> _SMTP_STARTTLS_AUTO|Enables starttls|true\| false|false|NO|
-|MODYO_MAILER <br> _SMTP_USER_NAME|User name of the smtp service. MODYO_SENDGRID_USERNAME is used as fallback|Valid String||IF smtp|
+|MODYO_MAILER <br> _SMTP_USER_NAME|User name of the smtp service. MODYO_SENDGRID_USERNAME is used as fallback|Valid String||YES smtp|
 |MODYO_MULTI <br> _ACCOUNT_ENABLED|Enable multi-account mode|true \| false|false|NO|
 |MODYO_MULTI <br> _ACCOUNT_LIST|List of account hostnames|Comma Separated List of Hosts||IF multi-account list|
 |MODYO_MULTI <br> _ACCOUNT_MODE|How multi-account operates|list\| subdomain||YES multi-account|
