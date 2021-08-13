@@ -412,13 +412,13 @@ table {display: table;}
 |MODYO_MAILER <br> _SENDMAIL_ARGUMENTS|arguments for sendmail app|sendmail arguments|-i|NO|
 |MODYO_MAILER <br> _SENDMAIL_LOCATION|location of sendmail app|Absolute route|/usr/sbin/sendmail|NO|
 |MODYO_MAILER <br> _SMTP_ADDRESS|Address of the smtp service|Service URI|smtp.sendgrid.net|NOT|
-|MODYO_MAILER <br> _SMTP_AUTHENTICATION|Smtp service authentication type|Valid String|plain|NOT|
-|MODYO_MAILER <br> _SMTP_OPENSSL_VERIFY_MODE|TLS Certificate Verification Mode|none\| peer||SI tls certificate|
+|MODYO_MAILER <br> _SMTP_AUTHENTICATION|Smtp service authentication type|Valid String|plain|NO|
+|MODYO_MAILER <br> _SMTP_OPENSSL_VERIFY_MODE|TLS Certificate Verification Mode|none \| peer||SI tls certificate|
 |MODYO_MAILER <br> _SMTP_PASSWORD|Password of the smtp service. MODYO_SENDGRID_PASSWORD is used as fallback|Valid String||IF smtp|
 |MODYO_MAILER <br> _SMTP_PORT|Port of the smtp service|Port number|587|NOT|
-|MODYO_MAILER <br> _SMTP_STARTTLS_AUTO|Enables starttls|true\| false|false|NOT|
+|MODYO_MAILER <br> _SMTP_STARTTLS_AUTO|Enables starttls|true\| false|false|NO|
 |MODYO_MAILER <br> _SMTP_USER_NAME|User name of the smtp service. MODYO_SENDGRID_USERNAME is used as fallback|Valid String||IF smtp|
-|MODYO_MULTI <br> _ACCOUNT_ENABLED|Enable multi-account mode|true\| false|false|NOT|
+|MODYO_MULTI <br> _ACCOUNT_ENABLED|Enable multi-account mode|true \| false|false|NO|
 |MODYO_MULTI <br> _ACCOUNT_LIST|List of account hostnames|Comma Separated List of Hosts||IF multi-account list|
 |MODYO_MULTI <br> _ACCOUNT_MODE|How multi-account operates|list\| subdomain||YES multi-account|
 |MODYO_MYSQL <br> _ADAPTER|Adapter to use for database connection|mysql2\| jdbcmysql|mysql2|NOT|
