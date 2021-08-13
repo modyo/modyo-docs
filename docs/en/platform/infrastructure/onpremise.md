@@ -488,15 +488,15 @@ table {display: table;}
 |MODYO_SESSION_KEY|Key used to name the session cookie|Valid String (e.g.: _modyo_cloud)||IF|
 |MODYO_SESSION_STORE|Sets how to persist the session|cookie\| cache|cookie|NOT|
 |MODYO_SESSION <br> _TRACKING_PERIOD|The period in minutes when session tracking is recorded. The value 0 corresponds to untracked|Number of minutes|5|NOT|
-|MODYO_TIGOMONEY <br> _BASE_URL|Set the base URI for TigoMoney|String type URI||NOT|
-|MODYO_TRIAL <br> _ACCOUNT_NEEDS <br> _AUTHORIZATION|Enables trial authorization|true\| false|false|NOT|
-|MODYO_WEBPAY <br> _BASE_URL|Set the base URI for WebPay|String type URI||NOT|
-|MODYO_WEBPAY <br> _CALLBACK_URL|Set the callback URI for WebPay response|String type URI||NOT|
-|MODYO_WEBPAY <br> _LOGGING|Enables logging for WebPay responses|true\| false|true|NOT|
-|MODYO_WEBPAY <br> _PUBLIC_CERTIFICATE|Set the public certificate for WebPay|String type certificate||NOT|
-|MODYO_WEBPAY <br> _REDIRECT <br> _CONFIRMATION_URL|Set the commit URI|String type URI||NOT|
-|MODYO_WEBPAY <br> _REDIRECT_URL|Set the redirect URI for WebPay|String type URI||NOT|
-|NODE_ENV|Set the Node runtime environment|test\| development\| production|development|NOT|
+|MODYO_TIGOMONEY <br> _BASE_URL|Set the base URI for TigoMoney|String type URI||NO|
+|MODYO_TRIAL <br> _ACCOUNT_NEEDS <br> _AUTHORIZATION|Enables trial authorization|true \| false|false|NO|
+|MODYO_WEBPAY <br> _BASE_URL|Set the base URI for WebPay|String type URI||NO|
+|MODYO_WEBPAY <br> _CALLBACK_URL|Set the callback URI for WebPay response|String type URI||NO|
+|MODYO_WEBPAY <br> _LOGGING|Enables logging for WebPay responses|true \| false|true|NO|
+|MODYO_WEBPAY <br> _PUBLIC_CERTIFICATE|Set the public certificate for WebPay|String type certificate||NO|
+|MODYO_WEBPAY <br> _REDIRECT <br> _CONFIRMATION_URL|Set the commit URI|String type URI||NO|
+|MODYO_WEBPAY <br> _REDIRECT_URL|Set the redirect URI for WebPay|String type URI||NO|
+|NODE_ENV|Set the Node runtime environment|test \| development \| production|development|NO|
 |RACK_ENV|Establishes the Rack runtime|test\| development\| production|development|NOT|
 |RAILS_ENV|Set the Rails runtime environment|test\| development\| production\| certification\| staging|development|NOT|
 |RAILS_SERVE <br> _STATIC_FILES|Allows Rails to serve files in /public/, including precompiled resources|true\| false||NOT|
