@@ -399,18 +399,18 @@ table {display: table;}
 |MODYO_CREDOMATIC <br> _CALLBACK_URL|Sets the callback URI for Credomatic response|String type URI||NO|
 |MODYO_ELASTICSEARCH<br>_HOSTS|Comma separated list of elasticsearch servers URI|URIs (e.g.: http://elasticsearch.modyo.me:9200)||YES|
 |MODYO_GOOGLE <br> _TAG_MANAGER_ID|Enable and specify the google tag manager identifier|Valid String||NO|
-|MODYO_HTML <br> _ALLOWED_ATTRS|Allowed attributes (of tags) to use in froala. Overwrite froala defaults|Comma Separated Attribute List|View froala default in docs|NOT|
-|MODYO_HTML <br> _ALLOWED_TAGS|Tags allowed to use in froala. Overwrite froala defaults|Comma separated list of html tags|Watch froala conf|NOT|
-|MODYO_KHIPU <br> _CALLBACK_URL|Set callback URI for Khipu response|String type URI||NOT|
-|MODYO_LOCK <br> _TIMEOUT|Set the maximum time before unlinking the user from a locked edit resource, so that it is free to be reassigned|Number of seconds|7200|NOT|
-|MODYO_LOG_LEVEL|Level of reported incidents in the platform log|Info\| warning\| error\| fatal\| debug|debug|NOT|
-|MODYO_LOG<br>_OUTPUT|Specifies whether the log is to a file or to standard output|stdout\| file file|stdout|NOT|
-|MODYO_MAILER <br> _DELIVERY_METHOD|Protocol for delivery|smtp\| sendmail\| file\| test|smtp|NOT|
-|MODYO_MAILER <br> _FILE_LOCATION|location of the mailer file|Absolute route|tmp/mails|NOT|
-|MODYO_MAILER <br> _PERFORM_DELIVERIES|Perform deliveries|true\| false|true|NOT|
-|MODYO_MAILER <br> _RAISE_DELIVERY_ERRORS|Defines whether to propagate errors|true\| false|false|NOT|
-|MODYO_MAILER <br> _SENDMAIL_ARGUMENTS|arguments for sendmail app|sendmail arguments|-i|NOT|
-|MODYO_MAILER <br> _SENDMAIL_LOCATION|location of sendmail app|Absolute route|/usr/sbin/sendmail|NOT|
+|MODYO_HTML <br> _ALLOWED_ATTRS|Allowed attributes (of tags) to use in froala. Overwrite froala defaults|Comma Separated Attribute List|View froala default in docs|NO|
+|MODYO_HTML <br> _ALLOWED_TAGS|Tags allowed to use in froala. Overwrite froala defaults|Comma separated list of html tags|Watch froala conf|NO|
+|MODYO_KHIPU <br> _CALLBACK_URL|Set callback URI for Khipu response|String type URI||NO|
+|MODYO_LOCK <br> _TIMEOUT|Set the maximum time before unlinking the user from a locked edit resource, so that it is free to be reassigned|Number of seconds|7200|NO|
+|MODYO_LOG_LEVEL|Level of reported incidents in the platform log|Info \| warning \| error \| fatal \| debug|debug|NO|
+|MODYO_LOG<br>_OUTPUT|Specifies whether the log is to a file or to standard output|stdout \| file|stdout|NOT|
+|MODYO_MAILER <br> _DELIVERY_METHOD|Protocol for delivery|smtp \| sendmail \| file \| test|smtp|NO|
+|MODYO_MAILER <br> _FILE_LOCATION|location of the mailer file|Absolute route|tmp/mails|NO|
+|MODYO_MAILER <br> _PERFORM_DELIVERIES|Perform deliveries|true \| false|true|NO|
+|MODYO_MAILER <br> _RAISE_DELIVERY_ERRORS|Defines whether to propagate errors|true \| false|false|NO|
+|MODYO_MAILER <br> _SENDMAIL_ARGUMENTS|arguments for sendmail app|sendmail arguments|-i|NO|
+|MODYO_MAILER <br> _SENDMAIL_LOCATION|location of sendmail app|Absolute route|/usr/sbin/sendmail|NO|
 |MODYO_MAILER <br> _SMTP_ADDRESS|Address of the smtp service|Service URI|smtp.sendgrid.net|NOT|
 |MODYO_MAILER <br> _SMTP_AUTHENTICATION|Smtp Service Authentication Type|Valid String|plain|NOT|
 |MODYO_MAILER <br> _SMTP_OPENSSL_VERIFY_MODE|TLS Certificate Verification Mode|none\| fart||SI tls certificate|
