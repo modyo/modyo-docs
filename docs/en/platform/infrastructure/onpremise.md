@@ -397,7 +397,7 @@ table {display: table;}
 |MODYO_BANCARD <br> _BASE_URL|Sets the bancard URI|String type URI||NO|
 |MODYO_CREDOMATIC <br> _BASE_URL|Stable the credomatic URI|String type URI||NO|
 |MODYO_CREDOMATIC <br> _CALLBACK_URL|Sets the callback URI for Credomatic response|String type URI||NO|
-|MODYO_ELASTICSEARCH<br>_HOSTS|Comma separated list of elasticsearch servers URI|URIs (e.g.: http://elasticsearch.modyo.me:9200)||IF|
+|MODYO_ELASTICSEARCH<br>_HOSTS|Comma separated list of elasticsearch servers URI|URIs (e.g.: http://elasticsearch.modyo.me:9200)||YES|
 |MODYO_GOOGLE <br> _TAG_MANAGER_ID|Enable and specify the google tag manager identifier|Valid String||NO|
 |MODYO_HTML <br> _ALLOWED_ATTRS|Allowed attributes (of tags) to use in froala. Overwrite froala defaults|Comma Separated Attribute List|View froala default in docs|NOT|
 |MODYO_HTML <br> _ALLOWED_TAGS|Tags allowed to use in froala. Overwrite froala defaults|Comma separated list of html tags|Watch froala conf|NOT|
