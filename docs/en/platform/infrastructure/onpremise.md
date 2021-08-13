@@ -501,7 +501,7 @@ table {display: table;}
 |RAILS_ENV|Set the Rails runtime environment|test\| development \| production \| certification \| staging|development|NOT|
 |RAILS_SERVE <br> _STATIC_FILES|Allows Rails to serve files in /public/, including precompiled resources|true \| false||NO|
 |SECRET_KEY_BASE|Set the secret_key_base for the application|String of more than 30 random characters||YES|
-|TEST_ENV_NUMBER|Number of processes used to run tests in parallel, is handled internally by the parallel test gem|Process number||NOT|
+|TEST_ENV_NUMBER|Number of processes used to run tests in parallel, is handled internally by the parallel test gem|Process number||NO|
 
 
 
