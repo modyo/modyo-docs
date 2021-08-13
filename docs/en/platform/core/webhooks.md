@@ -12,6 +12,22 @@ To enable them, you must check the box at the top of the page and then proceed t
 
 Webhooks can be created from actions of sites or spaces.
 
+### Create a webhook
+
+Call your management channels through a  webhook.
+
+To create a webhook, follow these steps:
+
+1. From the administration page, click Settings, then select Webhooks.
+2. Click create Webhook.
+3. Type the name and URL you want to call.
+4. Select the sites or spaces you want to activate the webhook.
+5. Select the type of log that will activate the webhook.
+6. Add the required headers for the call.
+7. Click Save.
+
+Note: Once the webhook is created, you can send a test notification with false information to prove that your URL is correctly receiving the POSTs from Modyo.
+
 Site webhooks are:
 
 * Response of the form created
@@ -68,8 +84,37 @@ Spaces webhooks are:
 * Type deleted
 * Type updated
 
-When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook and then save the changes.
+### Payload Example
 
-After this, you will see in the list all the webhooks that are active.
-
-Once the webhook is created, you can send a test notification with false information to prove that your URL is correctly receiving the POSTs from Modyo.
+``` javascript
+{
+    "id": 29928694,
+    "account_id": 13,
+    "site_id": 1025,
+    "user_id": 13,
+    "type": null,
+    "value_1": null,
+    "value_2": null,
+    "value_3": null,
+    "request_ip": "127.0.0.1",
+    "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+    "loggeable_id": 1025,
+    "loggeable_type": "Site",
+    "options":
+    {
+        "title": "Site 2019"
+    },
+    "created_at": "2021-05-18T21:14:33.000Z",
+    "user_type": "AdminUser",
+    "space_id": null,
+    "log_type_id": 750,
+    "realm_id": null,
+    "trigger_uid": "site_disabled_log",
+    "trigger_name": "Site disabled log",
+    "trigger_entity": "Site",
+    "trigger_entity_id": 1025,
+    "trigger_entry_uuid": null,
+    "trigger_content_uuid": null,
+    "trigger_entry_space_uid": null
+}
+```
