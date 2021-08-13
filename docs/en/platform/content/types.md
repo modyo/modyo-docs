@@ -31,14 +31,19 @@ If you want to enter any Type, you must click on its Name to open the correspond
 
 ## Create a Type
 
-<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
+Create a content type which will function as a template to future entries.
 
-To create a Type, click on the green **+ New** button at the top of the screen and give your type a name and a corresponding Unique Identifier (UID).
+1. From the main menu, click Content, then select Type.
+2. Click new Type.
+3. Type the name and identifier (UID).
+4. Select the type's cardinality.
 
 :::tip Tip
-It is a good practice to include the format of what will be published within the UID, such as videos, posts, etc. 
+It is considered good practice to write the format of what will be published in the UID, such as videos, posts, etc. 
 
 By doing so, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
+
+Selecting single cardinality means that only one entry of that type can exist. Selecting multiple cardinality won't limit you in the number of entries.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
