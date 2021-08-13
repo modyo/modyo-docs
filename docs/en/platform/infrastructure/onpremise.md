@@ -387,9 +387,9 @@ table {display: table;}
 
 | Changeable | Description | Values | Default | Required |
 |----------|-------------|---------|---------|-----------|
-|BUNDLE_GEMFILE|Sets the path to the Gemfile|absolute route|(rails.root) /Gemfile|NOT|
-|EXECJS_RUNTIME|Set execjs runtime|disabled\| node||NOT|
-|MODYO_AUTH <br> _TIMEOUT|HttpClient timeout|Number of seconds|10|NOT|
+|BUNDLE_GEMFILE|Sets the path to the Gemfile|absolute route|(rails.root) /Gemfile|NO|
+|EXECJS_RUNTIME|Set execjs runtime|disabled \| node||NO|
+|MODYO_AUTH <br> _TIMEOUT|HttpClient timeout|Number of seconds|10|NO|
 |MODYO_AWS <br> _KEY|AWS key|Valid String||IF aws|
 |MODYO_AWS <br> _S3_BUCKET|S3 bucket URI|Valid URI||IF aws|
 |MODYO_AWS <br> _SECRET|AWS secret|Valid String||IF aws|
