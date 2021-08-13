@@ -511,7 +511,7 @@ The Modyo Enterprise On Premise version is developed in the JRuby programming la
 
 The following Java VM configurations correspond to values that have been successfully tested in production in the Cloud versions of Modyo, for high availability and concurrency.
 
-**Heap Space:** You choose to use 3/4 of the available RAM, not exceeding 4GB.
+**Heap Space:** Opt to use 3/4 of the available RAM, not exceeding 4GB.
 
 **Garbage Collection:** You choose to use a concurrent collector to minimize pauses in the application during execution.
 
