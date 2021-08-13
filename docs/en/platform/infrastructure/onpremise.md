@@ -422,13 +422,13 @@ table {display: table;}
 |MODYO_MULTI <br> _ACCOUNT_LIST|List of account hostnames|Comma Separated List of Hosts||IF multi-account list|
 |MODYO_MULTI <br> _ACCOUNT_MODE|How multi-account operates|list \| subdomain||YES multi-account|
 |MODYO_MYSQL <br> _ADAPTER|Adapter to use for database connection|mysql2 \| jdbcmysql|mysql2|NO|
-|MODYO_MYSQL <br> _DATABASE|Name of the database|Valid String||IF|
+|MODYO_MYSQL <br> _DATABASE|Name of the database|Valid String||YES|
 |MODYO_MYSQL_HOST|Database URI|Valid URI||IF|
-|MODYO_MYSQL <br> _PASSWORD|Database password|Valid String||IF|
+|MODYO_MYSQL <br> _PASSWORD|Database password|Valid String||YES|
 |MODYO_MYSQL_POOL|Database Connection Pool Size|Number of connections|100|NO|
 |MODYO_MYSQL <br> _TIMEOUT|Maximum timeout for a query to the database in ms|Time in milliseconds|5000|NO|
-|MODYO_MYSQL <br> _USERNAME|Database User|Valid String||IF|
-|MODYO_NEWRELIC <br> _APP_NAME|Application name in NewRelic|Valid String||IF newrelic|
+|MODYO_MYSQL <br> _USERNAME|Database User|Valid String||YES|
+|MODYO_NEWRELIC <br> _APP_NAME|Application name in NewRelic|Valid String||YES newrelic|
 |MODYO_NEWRELIC <br> _CA_BUNDLE_PATH||||NO|
 |MODYO_NEWRELIC <br> _ENABLED|Enable reporting to NewRelic|true \| false|false|NO|
 |MODYO_NEWRELIC<br>_KEY|NewRelic Connection Key|Valid String||IF newrelic|
@@ -441,8 +441,8 @@ table {display: table;}
 |MODYO_ORDER <br>\ _IMAGE_CODE_ <br> SECRET|Secret to qr and barcode generation|String|48c7954272|NO|
 |MODYO_PANEL <br> _DEFAULT_SUBSCRIPTION <br> _PERIOD|Default subscription time when creating new plans|Number of days||NO|
 |MODYO_PANEL <br> _DEFAULT_TRIAL_PERIOD|Default test mode time when creating new plans|Number of days||NO|
-|MODYO_PANEL <br> _PASSWORD|User password for the platform panel|Valid String as password||IF|
-|MODYO_PANEL <br> _USER|User for the platform panel|Valid String as a User||IF|
+|MODYO_PANEL <br> _PASSWORD|User password for the platform panel|Valid String as password||YES|
+|MODYO_PANEL <br> _USER|User for the platform panel|Valid String as a User||YES|
 |MODYO_PAPERCLIP <br> _COMMAND_PATH|Indicates the path where ImageMagick is installed|Absolute route|/usr/bin/|NO|
 |MODYO_PAPERCLIP <br> _FOG_CREDENTIALS|It's how it communicates with the storage service, S3, Azure, Google or on-premises|Hash with provider and credentials|local provider|NO|
 |MODYO_PAPERCLIP <br> _FOG_DIRECTORY|Indicates where assets will be saved. If local, it is an empty string, if it is an s3, it is the url of the bucket, url of the bucket if Google|Valid String||NO|
@@ -453,14 +453,14 @@ table {display: table;}
 |MODYO_PAYME <br> _WALLET_BASE_URL|Set the base URI for PayMe|String type URI||NOT|
 |MODYO_PAYUAPI <br> _BASE_URL|Set the base URI for PayuAPI|String type URI||NOT|
 |MODYO_PAYUAPI <br> _CALLBACK_URL|Set callback URI for PayuAPI response|String type URI||NOT|
-|MODYO_PLATFORM <br> _DOMAIN|Platform domain name|platform domain (e.g. modyo.cloud)||IF|
-|MODYO_PLATFORM<br>_EMAIL|Mailname as sender on mail shipments|String valid as email||IF|
-|MODYO_PLATFORM <br> _EMAIL_DOMAIN|Domain for auto-generated emails with oauth2 integration|String with valid domain name||IF|
+|MODYO_PLATFORM <br> _DOMAIN|Platform domain name|platform domain (e.g. modyo.cloud)||YES|
+|MODYO_PLATFORM<br>_EMAIL|Mailname as sender on mail shipments|String valid as email||YES|
+|MODYO_PLATFORM <br> _EMAIL_DOMAIN|Domain for auto-generated emails with oauth2 integration|String with valid domain name||YES|
 |MODYO_PLATFORM <br> _MAX_ALLOWED_REVIEWS|Maximum number of revisions allowed in the team review|Positive quantity|7|NOT|
 |MODYO_PLATFORM <br> _MAX_CUSTOM_FIELDS|Sets the maximum number of user custom fields that can be created in an account|Number of custom fields allowed|20|NOT|
 |MODYO_PLATFORM <br> _MAX_SITE_SEARCH <br> _RESULTS|Maximum number of results in the site search|Positive quantity|100|NOT|
 |MODYO_PLATFORM <br> _MIN_ACCEPTED_AGE|Set the minimum age for registration users on the platform|Number of years|13|NOT|
-|MODYO_PLATFORM_NAME|Name of the platform|Valid String||IF|
+|MODYO_PLATFORM_NAME|Name of the platform|Valid String||YES|
 |MODYO_PLATFORM <br> _NAMESPACE|Platform ID to create the namespaces of the services used: redis, elasticsearch, SQS and Sidekiq|String representing a namespace (e.g. modyo-cloud)||IF|
 |MODYO_PLATFORM_PORT|Port used by the platform|: + Port number|undefined (:80)|NOT|
 |MODYO_PLATFORM <br> _TARGET_EXPIRES_IN|Expiration time in minutes of the cache used for targets|Number of minutes|15|NOT|
@@ -472,9 +472,9 @@ table {display: table;}
 |MODYO_PUMA <br> _WORKER_TIMEOUT|Maximum execution time of a puma worker|Number of seconds|60|NOT|
 |MODYO_QUEUE <br> _PROVIDER|Type of work queue to use by the application|sidekiq\| shoryuken|sidekiq|NOT|
 |MODYO_RAILS <br> _SERVE_STATIC_FILES|Allows Rails to serve files in /public/, including precompiled resources|true\| false|false|NOT|
-|MODYO_REDIS <br> _CACHE_SERVERS|Comma separated list of the Cache Servers URI|URIs (e.g. redis: //redis.modyo.me:6379)||IF|
+|MODYO_REDIS <br> _CACHE_SERVERS|Comma separated list of the Cache Servers URI|URIs (e.g. redis: //redis.modyo.me:6379)||YES|
 |MODYO_REDIS <br> _PASSWORD|Password for connecting to redis|Valid String||NOT|
-|MODYO_REDIS <br> _SIDEKIQ_SERVER|URI of the redis server to be used with sidekiq|URI (e.g. redis: //redis.modyo.me:6379)||IF|
+|MODYO_REDIS <br> _SIDEKIQ_SERVER|URI of the redis server to be used with sidekiq|URI (e.g. redis: //redis.modyo.me:6379)||YES|
 |MODYO_RUN <br> _IT_ANYWAY|Database Destructive Rake Task Protection Bypass|1 if you want to perform a destructive task||NOT|
 |MODYO_SEC <br> _USE_SSL|Enable SSL on the platform|true\| false|true|NOT|
 |MODYO_SEC <br> _USE_SSL_HSTS|Enable HSTS header on the platform|true\| false|false|NOT|
@@ -482,8 +482,8 @@ table {display: table;}
 |MODYO_SEC <br> _X_FRAME_OPTIONS|Set the X-Frame-Options header|DENY\| SAMEORIGIN\| ALLOW-FROM uri|SAMEORIGIN|NOT|
 |MODYO_SECRET_TOKEN|Secret used by the application to encrypt sensitive data (cookies)|String at least 30 characters (random)||IF|
 |MODYO_SENDGRID <br> _CALLBACK_KEY|Set a key to validate notifications from Sendgrid|Minimum string 30 random characters||IF sendgrid|
-|MODYO_SENDGRID <br> _PASSWORD|Sendgrid User Password|Valid String||IF sendgrid|
-|MODYO_SENDGRID<br>_USERNAME|Sendgrid Username|Valid String||IF sendgrid|
+|MODYO_SENDGRID <br> _PASSWORD|Sendgrid User Password|Valid String||YES sendgrid|
+|MODYO_SENDGRID<br>_USERNAME|Sendgrid Username|Valid String||YES sendgrid|
 |MODYO_SESSION <br> _EXPIRE_AFTER|Set the time at which the session will expire|unit value (units: second, seconds, minute, minutes, hour, hours, day, days, week, weeks, month, months)|1.week|NOT|
 |MODYO_SESSION_KEY|Key used to name the session cookie|Valid String (e.g.: _modyo_cloud)||IF|
 |MODYO_SESSION_STORE|Sets how to persist the session|cookie\| cache|cookie|NOT|
