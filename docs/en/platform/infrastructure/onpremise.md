@@ -395,7 +395,7 @@ table {display: table;}
 |MODYO_AWS <br> _SECRET|AWS secret|Valid String||IF aws|
 |MODYO_BACKUPS <br> _LIMIT|Number of backup-type versions stored on the platform|0 (unlimited) - Positive number|20|NO|
 |MODYO_BANCARD <br> _BASE_URL|Sets the bancard URI|String type URI||NO|
-|MODYO_CREDOMATIC <br> _BASE_URL|Stable the credomatic URI|String type URI||NO|
+|MODYO_CREDOMATIC <br> _BASE_URL|Sets the credomatic URI|String type URI||NO|
 |MODYO_CREDOMATIC <br> _CALLBACK_URL|Sets the callback URI for Credomatic response|String type URI||NO|
 |MODYO_ELASTICSEARCH<br>_HOSTS|Comma separated list of elasticsearch servers URI|URIs (e.g.: http://elasticsearch.modyo.me:9200)||YES|
 |MODYO_GOOGLE <br> _TAG_MANAGER_ID|Enable and specify the google tag manager identifier|Valid String||NO|
