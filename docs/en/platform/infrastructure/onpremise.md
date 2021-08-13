@@ -390,7 +390,7 @@ table {display: table;}
 |BUNDLE_GEMFILE|Sets the path to the Gemfile|absolute route|(rails.root) /Gemfile|NO|
 |EXECJS_RUNTIME|Set execjs runtime|disabled \| node||NO|
 |MODYO_AUTH <br> _TIMEOUT|HttpClient timeout|Number of seconds|10|NO|
-|MODYO_AWS <br> _KEY|AWS key|Valid String||IF aws|
+|MODYO_AWS <br> _KEY|AWS key|Valid String||YES aws|
 |MODYO_AWS <br> _S3_BUCKET|S3 bucket URI|Valid URI||IF aws|
 |MODYO_AWS <br> _SECRET|AWS secret|Valid String||IF aws|
 |MODYO_BACKUPS <br> _LIMIT|Number of backup-type versions stored on the platform|0 (unlimited) - Positive number|20|NOT|
