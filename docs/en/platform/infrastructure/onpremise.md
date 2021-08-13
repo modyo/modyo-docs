@@ -447,46 +447,46 @@ table {display: table;}
 |MODYO_PAPERCLIP <br> _FOG_CREDENTIALS|It's how it communicates with the storage service, S3, Azure, Google or on-premises|Hash with provider and credentials|local provider|NO|
 |MODYO_PAPERCLIP <br> _FOG_DIRECTORY|Indicates where assets will be saved. If local, it is an empty string, if it is an s3, it is the url of the bucket, url of the bucket if Google|Valid String||NO|
 |MODYO_PAPERCLIP<br>_FOG_HOST|CDN URL (ex CDN_URL)|CDN URI||IF|
-|MODYO_PAPERCLIP <br> _PATH|Indicates how the path will be split where the files already processed will be saved.|Valid String|uploads/:uuid/:style/ <br>:basename. :extension|NOT|
-|MODYO_PAPERCLIP <br> _PRESERVE_FILES_ON_DESTROY|Indicates whether files should be preserved when destroying the container instance|true\| false|true|NOT|
+|MODYO_PAPERCLIP <br> _PATH|Indicates how the path will be split where the files already processed will be saved.|Valid String|uploads/:uuid/:style/ <br>:basename. :extension|NO|
+|MODYO_PAPERCLIP <br> _PRESERVE_FILES_ON_DESTROY|Indicates whether files should be preserved when destroying the container instance|true \| false|true|NOT|
 |MODYO_PAPERCLIP <br> _STORAGE|Set the library that will be associated with the provider. In our case it is always FOG|fog|fog|NOT|
-|MODYO_PAYME <br> _WALLET_BASE_URL|Set the base URI for PayMe|String type URI||NOT|
-|MODYO_PAYUAPI <br> _BASE_URL|Set the base URI for PayuAPI|String type URI||NOT|
-|MODYO_PAYUAPI <br> _CALLBACK_URL|Set callback URI for PayuAPI response|String type URI||NOT|
+|MODYO_PAYME <br> _WALLET_BASE_URL|Set the base URI for PayMe|String type URI||NO|
+|MODYO_PAYUAPI <br> _BASE_URL|Set the base URI for PayuAPI|String type URI||NO|
+|MODYO_PAYUAPI <br> _CALLBACK_URL|Set callback URI for PayuAPI response|String type URI||NO|
 |MODYO_PLATFORM <br> _DOMAIN|Platform domain name|platform domain (e.g. modyo.cloud)||YES|
 |MODYO_PLATFORM<br>_EMAIL|Mailname as sender on mail shipments|String valid as email||YES|
 |MODYO_PLATFORM <br> _EMAIL_DOMAIN|Domain for auto-generated emails with oauth2 integration|String with valid domain name||YES|
-|MODYO_PLATFORM <br> _MAX_ALLOWED_REVIEWS|Maximum number of revisions allowed in the team review|Positive quantity|7|NOT|
-|MODYO_PLATFORM <br> _MAX_CUSTOM_FIELDS|Sets the maximum number of user custom fields that can be created in an account|Number of custom fields allowed|20|NOT|
-|MODYO_PLATFORM <br> _MAX_SITE_SEARCH <br> _RESULTS|Maximum number of results in the site search|Positive quantity|100|NOT|
-|MODYO_PLATFORM <br> _MIN_ACCEPTED_AGE|Set the minimum age for registration users on the platform|Number of years|13|NOT|
+|MODYO_PLATFORM <br> _MAX_ALLOWED_REVIEWS|Maximum number of revisions allowed in the team review|Positive quantity|7|NO|
+|MODYO_PLATFORM <br> _MAX_CUSTOM_FIELDS|Sets the maximum number of user custom fields that can be created in an account|Number of custom fields allowed|20|NO|
+|MODYO_PLATFORM <br> _MAX_SITE_SEARCH <br> _RESULTS|Maximum number of results in the site search|Positive quantity|100|NO|
+|MODYO_PLATFORM <br> _MIN_ACCEPTED_AGE|Set the minimum age for registration users on the platform|Number of years|13|NO|
 |MODYO_PLATFORM_NAME|Name of the platform|Valid String||YES|
 |MODYO_PLATFORM <br> _NAMESPACE|Platform ID to create the namespaces of the services used: redis, elasticsearch, SQS and Sidekiq|String representing a namespace (e.g. modyo-cloud)||IF|
 |MODYO_PLATFORM_PORT|Port used by the platform|: + Port number|undefined (:80)|NOT|
-|MODYO_PLATFORM <br> _TARGET_EXPIRES_IN|Expiration time in minutes of the cache used for targets|Number of minutes|15|NOT|
-|MODYO_PLATFORM_ <br> USE_CUSTOM_HOST <br> _ON_NON_PRODUCTION|Allows the use of custom hosts in non-productive environments|true\| false|false|NOT|
+|MODYO_PLATFORM <br> _TARGET_EXPIRES_IN|Expiration time in minutes of the cache used for targets|Number of minutes|15|NO|
+|MODYO_PLATFORM_ <br> USE_CUSTOM_HOST <br> _ON_NON_PRODUCTION|Allows the use of custom hosts in non-productive environments|true \| false|false|NOT|
 |MODYO_PLATFORM <br> _WIDGETS <br> _APPLICATION_NAME|Used to identify when a request comes from a modyo-cli style app, the user agent of the request is compared against this value|Application name|MODYO-CLI|NOT|
 |MODYO_PUMA <br> _MAX_THREADS|Maximum number of threads used by puma|Number of threads|16|NOT|
-|MODYO_PUMA <br> _MIN_THREADS|Minimum number of threads used by puma|Number of threads|16|NOT|
-|MODYO_PUMA <br> _PROCESSES|Sets the number of puma workers|Number of processes|2|NOT|
-|MODYO_PUMA <br> _WORKER_TIMEOUT|Maximum execution time of a puma worker|Number of seconds|60|NOT|
-|MODYO_QUEUE <br> _PROVIDER|Type of work queue to use by the application|sidekiq\| shoryuken|sidekiq|NOT|
-|MODYO_RAILS <br> _SERVE_STATIC_FILES|Allows Rails to serve files in /public/, including precompiled resources|true\| false|false|NOT|
+|MODYO_PUMA <br> _MIN_THREADS|Minimum number of threads used by puma|Number of threads|16|NO|
+|MODYO_PUMA <br> _PROCESSES|Sets the number of puma workers|Number of processes|2|NO|
+|MODYO_PUMA <br> _WORKER_TIMEOUT|Maximum execution time of a puma worker|Number of seconds|60|NO|
+|MODYO_QUEUE <br> _PROVIDER|Type of work queue to use by the application|sidekiq \| shoryuken|sidekiq|NO|
+|MODYO_RAILS <br> _SERVE_STATIC_FILES|Allows Rails to serve files in /public/, including precompiled resources|true \| false|false|NOT|
 |MODYO_REDIS <br> _CACHE_SERVERS|Comma separated list of the Cache Servers URI|URIs (e.g. redis: //redis.modyo.me:6379)||YES|
-|MODYO_REDIS <br> _PASSWORD|Password for connecting to redis|Valid String||NOT|
+|MODYO_REDIS <br> _PASSWORD|Password for connecting to redis|Valid String||NO|
 |MODYO_REDIS <br> _SIDEKIQ_SERVER|URI of the redis server to be used with sidekiq|URI (e.g. redis: //redis.modyo.me:6379)||YES|
-|MODYO_RUN <br> _IT_ANYWAY|Database Destructive Rake Task Protection Bypass|1 if you want to perform a destructive task||NOT|
-|MODYO_SEC <br> _USE_SSL|Enable SSL on the platform|true\| false|true|NOT|
-|MODYO_SEC <br> _USE_SSL_HSTS|Enable HSTS header on the platform|true\| false|false|NOT|
-|MODYO_SEC <br> _USE_SSL_ON_LOGOUT|Enables use of SSL in the logout|true\| false|true|NOT|
-|MODYO_SEC <br> _X_FRAME_OPTIONS|Set the X-Frame-Options header|DENY\| SAMEORIGIN\| ALLOW-FROM uri|SAMEORIGIN|NOT|
+|MODYO_RUN <br> _IT_ANYWAY|Database Destructive Rake Task Protection Bypass|1 if you want to perform a destructive task||NO|
+|MODYO_SEC <br> _USE_SSL|Enable SSL on the platform|true \| false|true|NOT|
+|MODYO_SEC <br> _USE_SSL_HSTS|Enable HSTS header on the platform|true \| false|false|NO|
+|MODYO_SEC <br> _USE_SSL_ON_LOGOUT|Enables use of SSL in the logout|true \| false|true|NO|
+|MODYO_SEC <br> _X_FRAME_OPTIONS|Set the X-Frame-Options header|DENY \| SAMEORIGIN \| ALLOW-FROM uri|SAMEORIGIN|NOT|
 |MODYO_SECRET_TOKEN|Secret used by the application to encrypt sensitive data (cookies)|String at least 30 characters (random)||IF|
 |MODYO_SENDGRID <br> _CALLBACK_KEY|Set a key to validate notifications from Sendgrid|Minimum string 30 random characters||IF sendgrid|
 |MODYO_SENDGRID <br> _PASSWORD|Sendgrid User Password|Valid String||YES sendgrid|
 |MODYO_SENDGRID<br>_USERNAME|Sendgrid Username|Valid String||YES sendgrid|
-|MODYO_SESSION <br> _EXPIRE_AFTER|Set the time at which the session will expire|unit value (units: second, seconds, minute, minutes, hour, hours, day, days, week, weeks, month, months)|1.week|NOT|
+|MODYO_SESSION <br> _EXPIRE_AFTER|Set the time at which the session will expire|unit value (units: second, seconds, minute, minutes, hour, hours, day, days, week, weeks, month, months)|1.week|NO|
 |MODYO_SESSION_KEY|Key used to name the session cookie|Valid String (e.g.: _modyo_cloud)||IF|
-|MODYO_SESSION_STORE|Sets how to persist the session|cookie\| cache|cookie|NOT|
+|MODYO_SESSION_STORE|Sets how to persist the session|cookie\| cache|cookie|NO|
 |MODYO_SESSION <br> _TRACKING_PERIOD|The period in minutes when session tracking is recorded. The value 0 corresponds to untracked|Number of minutes|5|NOT|
 |MODYO_TIGOMONEY <br> _BASE_URL|Set the base URI for TigoMoney|String type URI||NO|
 |MODYO_TRIAL <br> _ACCOUNT_NEEDS <br> _AUTHORIZATION|Enables trial authorization|true \| false|false|NO|
