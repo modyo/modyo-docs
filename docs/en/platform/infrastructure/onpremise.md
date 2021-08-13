@@ -393,12 +393,12 @@ table {display: table;}
 |MODYO_AWS <br> _KEY|AWS key|Valid String||YES aws|
 |MODYO_AWS <br> _S3_BUCKET|S3 bucket URI|Valid URI||IF aws|
 |MODYO_AWS <br> _SECRET|AWS secret|Valid String||IF aws|
-|MODYO_BACKUPS <br> _LIMIT|Number of backup-type versions stored on the platform|0 (unlimited) - Positive number|20|NOT|
-|MODYO_BANCARD <br> _BASE_URL|Sets the bancard URI|String type URI||NOT|
-|MODYO_CREDOMATIC <br> _BASE_URL|Stable the credomatic URI|String type URI||NOT|
-|MODYO_CREDOMATIC <br> _CALLBACK_URL|Sets the callback URI for Credomatic response|String type URI||NOT|
+|MODYO_BACKUPS <br> _LIMIT|Number of backup-type versions stored on the platform|0 (unlimited) - Positive number|20|NO|
+|MODYO_BANCARD <br> _BASE_URL|Sets the bancard URI|String type URI||NO|
+|MODYO_CREDOMATIC <br> _BASE_URL|Stable the credomatic URI|String type URI||NO|
+|MODYO_CREDOMATIC <br> _CALLBACK_URL|Sets the callback URI for Credomatic response|String type URI||NO|
 |MODYO_ELASTICSEARCH<br>_HOSTS|Comma separated list of elasticsearch servers URI|URIs (e.g.: http://elasticsearch.modyo.me:9200)||IF|
-|MODYO_GOOGLE <br> _TAG_MANAGER_ID|Enable and specify the google tag manager identifier|Valid String||NOT|
+|MODYO_GOOGLE <br> _TAG_MANAGER_ID|Enable and specify the google tag manager identifier|Valid String||NO|
 |MODYO_HTML <br> _ALLOWED_ATTRS|Allowed attributes (of tags) to use in froala. Overwrite froala defaults|Comma Separated Attribute List|View froala default in docs|NOT|
 |MODYO_HTML <br> _ALLOWED_TAGS|Tags allowed to use in froala. Overwrite froala defaults|Comma separated list of html tags|Watch froala conf|NOT|
 |MODYO_KHIPU <br> _CALLBACK_URL|Set callback URI for Khipu response|String type URI||NOT|
