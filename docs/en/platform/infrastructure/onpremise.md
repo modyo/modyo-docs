@@ -497,7 +497,7 @@ table {display: table;}
 |MODYO_WEBPAY <br> _REDIRECT <br> _CONFIRMATION_URL|Set the commit URI|String type URI||NO|
 |MODYO_WEBPAY <br> _REDIRECT_URL|Set the redirect URI for WebPay|String type URI||NO|
 |NODE_ENV|Set the Node runtime environment|test \| development \| production|development|NO|
-|RACK_ENV|Establishes the Rack runtime|test \| development \| production|development|NOT|
+|RACK_ENV|Sets the Rack runtime|test \| development \| production|development|NOT|
 |RAILS_ENV|Set the Rails runtime environment|test\| development \| production \| certification \| staging|development|NOT|
 |RAILS_SERVE <br> _STATIC_FILES|Allows Rails to serve files in /public/, including precompiled resources|true \| false||NO|
 |SECRET_KEY_BASE|Set the secret_key_base for the application|String of more than 30 random characters||YES|
