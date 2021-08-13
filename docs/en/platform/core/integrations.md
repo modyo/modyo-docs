@@ -37,7 +37,7 @@ Call your management channels through webhooks.
 
 To create a webhook, follow these steps:
 
-1. From the administration screen, click Configuration, then select Webhooks.
+1. From the administration screen, click Settings, then select Webhooks.
 2. Click create Webhook.
 3. Write the name and URL you want to call.
 4. Select the sites or spaces you want to activate the webhook.
@@ -46,6 +46,41 @@ To create a webhook, follow these steps:
 7. Click Save.
 
 Note: The webhook is called through a POST call when the selected log type is generated. Once a webhook is created, you can send a test notification with fake information to test that your URL is receiving POST calls from Modyo.
+
+### Payload Example
+
+``` javascript
+{
+    "id": 29928694,
+    "account_id": 13,
+    "site_id": 1025,
+    "user_id": 13,
+    "type": null,
+    "value_1": null,
+    "value_2": null,
+    "value_3": null,
+    "request_ip": "127.0.0.1",
+    "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
+    "loggeable_id": 1025,
+    "loggeable_type": "Site",
+    "options":
+    {
+        "title": "Site 2019"
+    },
+    "created_at": "2021-05-18T21:14:33.000Z",
+    "user_type": "AdminUser",
+    "space_id": null,
+    "log_type_id": 750,
+    "realm_id": null,
+    "trigger_uid": "site_disabled_log",
+    "trigger_name": "Site disabled log",
+    "trigger_entity": "Site",
+    "trigger_entity_id": 1025,
+    "trigger_entry_uuid": null,
+    "trigger_content_uuid": null,
+    "trigger_entry_space_uid": null
+}
+```
 
 Site webhooks are:
 
@@ -109,6 +144,7 @@ To be able to integrate with Facebook, you must have:
 
 - API Key
 - Secret application code
+- Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
 
 You can obtain these by creating a Facebook application with login permissions. You can learn more about how to create and configure a Facebook application in the [Official Documentation](https://developers.facebook.com/docs/facebook-login/).
 
