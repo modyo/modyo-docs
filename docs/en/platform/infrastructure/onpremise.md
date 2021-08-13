@@ -412,7 +412,7 @@ table {display: table;}
 |MODYO_MAILER <br> _SENDMAIL_ARGUMENTS|arguments for sendmail app|sendmail arguments|-i|NO|
 |MODYO_MAILER <br> _SENDMAIL_LOCATION|location of sendmail app|Absolute route|/usr/sbin/sendmail|NO|
 |MODYO_MAILER <br> _SMTP_ADDRESS|Address of the smtp service|Service URI|smtp.sendgrid.net|NOT|
-|MODYO_MAILER <br> _SMTP_AUTHENTICATION|Smtp Service Authentication Type|Valid String|plain|NOT|
+|MODYO_MAILER <br> _SMTP_AUTHENTICATION|Smtp service authentication type|Valid String|plain|NOT|
 |MODYO_MAILER <br> _SMTP_OPENSSL_VERIFY_MODE|TLS Certificate Verification Mode|none\| fart||SI tls certificate|
 |MODYO_MAILER <br> _SMTP_PASSWORD|Password of the smtp service. MODYO_SENDGRID_PASSWORD is used as fallback|Valid String||IF smtp|
 |MODYO_MAILER <br> _SMTP_PORT|Port of the smtp service|Port number|587|NOT|
