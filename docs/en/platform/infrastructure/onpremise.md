@@ -420,7 +420,7 @@ table {display: table;}
 |MODYO_MAILER <br> _SMTP_USER_NAME|User name of the smtp service. MODYO_SENDGRID_USERNAME is used as fallback|Valid String||YES smtp|
 |MODYO_MULTI <br> _ACCOUNT_ENABLED|Enable multi-account mode|true \| false|false|NO|
 |MODYO_MULTI <br> _ACCOUNT_LIST|List of account hostnames|Comma Separated List of Hosts||IF multi-account list|
-|MODYO_MULTI <br> _ACCOUNT_MODE|How multi-account operates|list \| subdomain||YES multi-account|
+|MODYO_MULTI <br> _ACCOUNT_MODE|Multi-account operating mode|list \| subdomain||YES multi-account|
 |MODYO_MYSQL <br> _ADAPTER|Adapter to use for database connection|mysql2 \| jdbcmysql|mysql2|NO|
 |MODYO_MYSQL <br> _DATABASE|Name of the database|Valid String||YES|
 |MODYO_MYSQL_HOST|Database URI|Valid URI||IF|
