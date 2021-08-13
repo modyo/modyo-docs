@@ -420,32 +420,32 @@ table {display: table;}
 |MODYO_MAILER <br> _SMTP_USER_NAME|User name of the smtp service. MODYO_SENDGRID_USERNAME is used as fallback|Valid String||YES smtp|
 |MODYO_MULTI <br> _ACCOUNT_ENABLED|Enable multi-account mode|true \| false|false|NO|
 |MODYO_MULTI <br> _ACCOUNT_LIST|List of account hostnames|Comma Separated List of Hosts||IF multi-account list|
-|MODYO_MULTI <br> _ACCOUNT_MODE|How multi-account operates|list\| subdomain||YES multi-account|
-|MODYO_MYSQL <br> _ADAPTER|Adapter to use for database connection|mysql2\| jdbcmysql|mysql2|NOT|
+|MODYO_MULTI <br> _ACCOUNT_MODE|How multi-account operates|list \| subdomain||YES multi-account|
+|MODYO_MYSQL <br> _ADAPTER|Adapter to use for database connection|mysql2 \| jdbcmysql|mysql2|NO|
 |MODYO_MYSQL <br> _DATABASE|Name of the database|Valid String||IF|
 |MODYO_MYSQL_HOST|Database URI|Valid URI||IF|
 |MODYO_MYSQL <br> _PASSWORD|Database password|Valid String||IF|
-|MODYO_MYSQL_POOL|Database Connection Pool Size|Number of connections|100|NOT|
-|MODYO_MYSQL <br> _TIMEOUT|Maximum timeout for a query to the database in ms|Time in milliseconds|5000|NOT|
+|MODYO_MYSQL_POOL|Database Connection Pool Size|Number of connections|100|NO|
+|MODYO_MYSQL <br> _TIMEOUT|Maximum timeout for a query to the database in ms|Time in milliseconds|5000|NO|
 |MODYO_MYSQL <br> _USERNAME|Database User|Valid String||IF|
 |MODYO_NEWRELIC <br> _APP_NAME|Application name in NewRelic|Valid String||IF newrelic|
-|MODYO_NEWRELIC <br> _CA_BUNDLE_PATH||||NOT|
-|MODYO_NEWRELIC <br> _ENABLED|Enable reporting to NewRelic|true\| false|false|NOT|
+|MODYO_NEWRELIC <br> _CA_BUNDLE_PATH||||NO|
+|MODYO_NEWRELIC <br> _ENABLED|Enable reporting to NewRelic|true \| false|false|NO|
 |MODYO_NEWRELIC<br>_KEY|NewRelic Connection Key|Valid String||IF newrelic|
-|MODYO_ONECLICK <br> _BASE_URL|Set the base URI for OneClick|String type URI||NOT|
-|MODYO_ONECLICK <br> _PUBLIC_CERTIFICATE|Set the public certificate for OneClick|String type certificate||NOT|
-|MODYO_ORDER <br> _CONFIRMATION <br> _OPEN_TIMEOUT|Time to wait for confirmation of an order|Number of seconds|2|NOT|
+|MODYO_ONECLICK <br> _BASE_URL|Set the base URI for OneClick|String type URI||NO|
+|MODYO_ONECLICK <br> _PUBLIC_CERTIFICATE|Set the public certificate for OneClick|String type certificate||NO|
+|MODYO_ORDER <br> _CONFIRMATION <br> _OPEN_TIMEOUT|Time to wait for confirmation of an order|Number of seconds|2|NO|
 |MODYO_ORDER <br> _CONFIRMATION <br> _READ_TIMEOUT|Timeout for reading the confirmation of an order|Number of seconds|5|NOT|
-|MODYO_ORDER <br> _CONFIRMATION <br> _RETRIES|Number of attempts to confirm an order|Number of Attempts|5|NOT|
-|MODYO_ORDER <br> _CONFIRMATION <br> _RETRIES_TIMEOUT|Timeout between retries for confirmation of an order|Number of seconds|5|NOT|
-|MODYO_ORDER <br>\ _IMAGE_CODE_ <br> SECRET|Secret to qr and barcode generation|String|48c7954272|NOT|
-|MODYO_PANEL <br> _DEFAULT_SUBSCRIPTION <br> _PERIOD|Default subscription time when creating new plans|Number of days||NOT|
-|MODYO_PANEL <br> _DEFAULT_TRIAL_PERIOD|Default test mode time when creating new plans|Number of days||NOT|
+|MODYO_ORDER <br> _CONFIRMATION <br> _RETRIES|Number of attempts to confirm an order|Number of Attempts|5|NO|
+|MODYO_ORDER <br> _CONFIRMATION <br> _RETRIES_TIMEOUT|Timeout between retries for confirmation of an order|Number of seconds|5|NO|
+|MODYO_ORDER <br>\ _IMAGE_CODE_ <br> SECRET|Secret to qr and barcode generation|String|48c7954272|NO|
+|MODYO_PANEL <br> _DEFAULT_SUBSCRIPTION <br> _PERIOD|Default subscription time when creating new plans|Number of days||NO|
+|MODYO_PANEL <br> _DEFAULT_TRIAL_PERIOD|Default test mode time when creating new plans|Number of days||NO|
 |MODYO_PANEL <br> _PASSWORD|User password for the platform panel|Valid String as password||IF|
 |MODYO_PANEL <br> _USER|User for the platform panel|Valid String as a User||IF|
-|MODYO_PAPERCLIP <br> _COMMAND_PATH|Indicates the path where ImageMagick is installed|Absolute route|/usr/bin/|NOT|
-|MODYO_PAPERCLIP <br> _FOG_CREDENTIALS|It's how it communicates with the storage service, S3, Azure, Google or on-premises|Hash with provider and credentials|local provider|NOT|
-|MODYO_PAPERCLIP <br> _FOG_DIRECTORY|Indicates where assets will be saved. If local, it is an empty string, if it is an s3, it is the url of the bucket, url of the bucket if Google|Valid String||NOT|
+|MODYO_PAPERCLIP <br> _COMMAND_PATH|Indicates the path where ImageMagick is installed|Absolute route|/usr/bin/|NO|
+|MODYO_PAPERCLIP <br> _FOG_CREDENTIALS|It's how it communicates with the storage service, S3, Azure, Google or on-premises|Hash with provider and credentials|local provider|NO|
+|MODYO_PAPERCLIP <br> _FOG_DIRECTORY|Indicates where assets will be saved. If local, it is an empty string, if it is an s3, it is the url of the bucket, url of the bucket if Google|Valid String||NO|
 |MODYO_PAPERCLIP<br>_FOG_HOST|CDN URL (ex CDN_URL)|CDN URI||IF|
 |MODYO_PAPERCLIP <br> _PATH|Indicates how the path will be split where the files already processed will be saved.|Valid String|uploads/:uuid/:style/ <br>:basename. :extension|NOT|
 |MODYO_PAPERCLIP <br> _PRESERVE_FILES_ON_DESTROY|Indicates whether files should be preserved when destroying the container instance|true\| false|true|NOT|
