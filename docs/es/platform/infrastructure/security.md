@@ -1,9 +1,0 @@
----
-search: true
----
-
-# Seguridad
-
-
-
-

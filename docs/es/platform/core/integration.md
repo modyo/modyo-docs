@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Integración
+# Integraciones
 Los sistemas de DXP juegan un rol fundamental en cualquier estrategia de transformación digital. Sus capacidades de tomar control de los canales principales de comunicación con clientes y colaboradores hacen necesaria una sólida estrategia de integraciones hacia el resto del ecosistema de aplicaciones de negocio que forman parte en cada estrategia.
 
 La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, los [DXP de siguiente generación](https://www.modyo.com/platform) privilegian la integración con plataformas especializadas en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas, bajando con ello los costos totales de operación e infraestructura, al escalar sólo los recursos que lo requieren.
@@ -132,66 +132,3 @@ Las APIs privadas se comportan de forma similar a las públicas, con la diferenc
 
 Modyo no recomienda la integración directa desde el frontend ya que dificulta el proceso de gestionar los tokens de autenticación de forma segura. En lugar de ello, el flujo iniciado por Modyo Customers asegura una apropiada gestión de las credenciales y establece mecanismos de consulta para que el Widget que lo requiera pueda obtener un token válido cada vez que lo requiera.
 
-## Modyo Connect
-Modyo Connect es un servicio manejado de gestión de API Gateway y microservicios ofrecido por Modyo que otorga acceso a todas las herramientas requeridas para la gestión del ciclo de vida de desarrollo de componentes avanzados de integración.
-
-Los componentes de integración y la gestión apropiada de un API Gateway son elementos fundamentales dentro de la arquitectura de referencia de Modyo y son los que posibilitan la extensión de las funcionalidades de la plataforma de una forma descentralizada privilegiando una arquitectura de Widgets y microservicios por sobre una monolítica en la cual las integraciones convergen en un sólo punto único de fallo.
-
-El desarrollo y la operación de los componentes de integración puede realizarse sobre múltiples tecnologías, diferentes a las expresadas en esta sección. El uso de Modyo Connect sólo es recomendado en casos en los que el cliente que implementa Modyo no cuenta con las tecnologías requeridas para exponer sus servicios de negocio en forma segura como APIs disponibles desde Internet.
-
-Los componentes de integración son desarrollados como microservicios en el framework  Spring Boot, el cual posee una gran variedad de mecanismos y librerías de integración, entre las cuales podemos mencionar:
-- Web Services SOAP y REST
-- Bases de datos
-- Mensajería
-- JMS/MQ
-- AWS S3
-- FTP
-
-Además, el framework de Spring Boot permite el trabajo con librerías especializadas como Spring Integration o Apache Camel, las cuales implementan patrones avanzados de transformaciones e integración.
-
-El Área de Servicios Profesionales de Modyo cuenta con expertos con una amplia experiencia en el desarrollo de integraciones a diferentes tipos de sistemas, los cuales pueden ser contratados para la implementación completa o el acompañamiento en proyectos complejos de integración relacionados con Modyo Connect.
-
-Los componentes de integración desarrollados siguiendo esta arquitectura de referencia, serán capaces de establecer integraciones a un gran número de tipos de sistemas, cómo los que mencionamos a continuación.
-
-### Integración a Sistemas de Negocio
-Integración a sistemas de negocio que posea el cliente que implementa la plataforma, habitualmente presentes dentro de una infraestructura propia a la cual se accede vía VPN o similar. En esta categoría podemos mencionar sistemas cómo:
-- Sistemas de core banking o insurance (ejemplo: Mambu)
-- Sistemas legados o propietarios
-- Bases de datos con información o procedimientos
-- Bus de servicios integrados
-- Servicios Web SOAP o REST
-- ERPs
-- CRMs o CDPs
-
-### Integración a Sistemas de Validación
-Integración a sistemas de validación de antecedentes (KyC) o identidad, típicamente utilizados en escenarios de onboarding digital, entre los que podemos mencionar:
-- Equifax
-- Au10tix
-- Trulioo
-- Truora
-- Mati
-- Sinacofi
-
-### Integración a Firma Electrónica
-Integración a sistemas de firma electrónica simple o avanzada, entre los que podemos mencionar:
-- Docusign
-- Acepta
-
-### Integración a Gestión Documental
-Integración a sistemas de gestión documental empresarial y automatización de procesos dentro de los que podemos mencionar:
-- Docuware
-- Laserfiche
-
-### Integración de Mensajería Avanzada
-Integración con plataformas de mensajería distribuida para la ejecución asíncrona de procesos:
-- ActiveMQ
-- JMS
-- RabbitMQ
-- AWS SNS
-- AWS SQS
-
-### Integración con eCommerce
-Integración con plataformas de eCommerce en formato headless, pero que requieran de conexión a medios de pagos locales y autenticación de usuarios provistos por la plataforma, dentro de las cuales podemos mencionar:
-- CommerceTools
-- Magento Headless
-- Shopify Plus
