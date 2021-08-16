@@ -11,9 +11,9 @@ The platform is currently compatible with:
 - [Facebook](#facebook)
 - [Google](#google)
 - [LDAP](#ldap)
-- [SAML](/en/platform/core/integrations/saml.html)
-- [OAuth2](/en/platform/core/integrations/oauth2.html)
-- [OpenID Connect](/en/platform/core/integrations/oidc.html)
+- [SAML](#saml)
+- [OAuth2](#oauth2)
+- [OpenID Connect](#oidc)
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
