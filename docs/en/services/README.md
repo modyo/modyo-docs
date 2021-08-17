@@ -1,8 +1,6 @@
 ---
 search: true
 ---
+# Cloud services
 
-# Managed Services
-
-
-
+Modyo offers its customers a full service
