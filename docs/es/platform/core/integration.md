@@ -61,23 +61,6 @@ Para todos estos medios de pago, Modyo provee de una interfaz en la cual se pued
 
 Modyo se encuentra en un proceso contínuo de inclusión de nuevos medios de pago para incorporar a la plataforma.
 
-### ¿Qué integraciones planeamos a futuro?
-Las siguientes integraciones son parte hoy de nuestro roadmap en el producto y permitirán mejorar la postura del producto frente a la integración con las plataformas más populares en uso por nuestros clientes.
-
-#### Plataformas de Chat empresarial
-La integración con chat para notificaciones (Slack y Microsoft Teams) de la plataforma será implementada en el transcurso del año 2021 como parte de las mejoras referidas a la experiencia de la administración mediante la consola Web. La integración se realizará mediante un bot de Modyo que estará disponible para ambas plataformas y que permitirá notificar, en canales específicos, los diferentes eventos que ocurren dentro de Modyo y requieren de la atención de algún usuario en particular (comentarios, requerimientos de revisión, publicación de contenido, etc).
-
-#### SalesForce AppExchange
-Si bien el API administrativa de Modyo Customers permite hoy realizar integraciones con diferentes CRMs y CDPs, creemos que para el caso de SalesForce debemos hacer algo más. Es por ello que tenemos planes para poder realizar una integración más profunda y que permita de una forma más simple mantener los registros de Modyo y Salesforce sincronizados.
-
-#### Indexadores de Contenido
-Actualmente tenemos en mente generar una integración directa con Algolia (https://www.algolia.com), el cual se presenta como una solución de búsqueda de contenido empresarial que permite a los responsables del marketing efectuar boosting de resultados o A/B testing en las búsquedas. Algolia posee soluciones de indexación no sólo al contenido presente en páginas regulares, sino también en contenido que proviene desde un API.
-
-#### Auto Provisioning de Usuarios Administradores
-Mediante el soporte del protocolo SCIM buscamos adoptar un protocolo estándar que permita realizar las actividades de provisión automática de usuarios administradores en conjunto con SAML. De esta manera, al dar de alta o baja un colaborador en los registros centrales de nuestros clientes, este será incorporado o removido de forma automática en Modyo.
-
-
-
 
 ## Sitios y Aplicaciones Web
 

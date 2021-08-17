@@ -46,30 +46,10 @@ Los usuarios de Modyo deberán acceder de forma exclusiva por el puerto 443, det
 
 
 
-## Registros de actividad
+### Registros de actividad
 
-<img src="/assets/img/platform/activity-logs.jpg" style="margin-top: 40px; border: 1px solid #EEE;" />
+La plataforma guarda un registro de todas las acciones realizadas por los usuarios administradores dentro de ella, los cuales se pueden revisar dentro de la sección "Registros de actividad". Recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Estos registros de actividad están disponibles también por medio del API administrativa de Modyo.
 
-La plataforma te permite ver todos los movimientos que se han hecho durante todo el tiempo que la tengas activa.
-
-En esta sección, podrás filtrar por fecha, tipo de movimiento o usuario que te permitirán hacer un seguimiento correcto.
-
-Además, tendrás la posibilidad de ver el detalle de lo que se hizo y desde qué sección se hizo.
-
-Esto te puede servir en el caso de tener muchos usuarios internos de la plataforma o para detectar errores y cambios en la cadena de producción y desarrollo.
-
-
-
-## Configuraciones de seguridad
-
-En esta sección podemos configurar distintos aspectos para mejorar la seguridad de nuestra cuenta en Modyo:
-
-* Política de contraseña
-* Compartir recursos en distintos dominios ([CORS - Cross Origin Resource Sharing](https://www.w3.org/TR/cors/))
-* Token de entrega de contenido ([JWT](https://tools.ietf.org/html/rfc7519))
-* Autenticación en dos pasos
-
-<img src="/assets/img/platform/cors.png" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Revisar Permisos de Administración
 Los administradores de una organización o sitio poseen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impresora a uno de estos administradores puede representar un gran riesgo de seguridad. Es por ello que recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
@@ -121,5 +101,5 @@ Cada miembro del equipo podrá activar la autenticación en dos pasos desde su p
 Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
 
 
-## Reporte de vulnerabilidades
+### Reporte de vulnerabilidades
 Si piensas que encontraste una vulnerabilidad de seguridad en Modyo, ayúdanos por favor reportando el problema. Modyo posee canales seguros y confidenciales de reporte de incidencias de seguridad por medio de nuestro [centro de soporte](https://support.modyo.com/hc/es) o del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.

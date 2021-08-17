@@ -1,8 +1,6 @@
 ---
 search: true
 ---
-
 # Servicios de Cloud
 
-Modyo ofrece servicios de cloud.
-
+Modyo ofrece a sus clientes un completo servicio

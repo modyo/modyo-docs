@@ -44,7 +44,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          { text: "Cloud", link: "/en/services/" },
+          /*{ text: "Cloud", link: "/en/services/" },*/
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],
@@ -228,7 +228,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          { text: "Cloud", link: "/es/services/" },
+          /*{ text: "Cloud", link: "/es/services/" },*/
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -264,9 +264,8 @@ module.exports = {
               children: [
                 "/es/platform/core/the-modyo-interface",
                 "/es/platform/core/key-concepts",
-                "/es/platform/core/architecture",
-                "/es/platform/core/integration",
-                "/es/platform/core/installation",
+                /*"/es/platform/core/integration",*/
+                /*"/es/platform/core/installation",*/
                 "/es/platform/core/roles",
                 "/es/platform/core/security",
                 "/es/platform/core/api",
