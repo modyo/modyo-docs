@@ -61,23 +61,6 @@ For all these payment methods, Modyo provides an interface in which you can revi
 
 Modyo is in a continuous process of including new means of payment to incorporate into the platform.
 
-### What integrations do we plan for the future?
-The following integrations are today part of our roadmap in the product and will improve the posture of the product against integration with the most popular platforms in use by our customers.
-
-#### Enterprise Chat Platforms
-The platform's integration with chat for notifications (Slack and Microsoft Teams) will be implemented over the course of 2021 as part of the improvements to the management experience using the web console. The integration will be done through a Modyo bot that will be available for both platforms and that will allow to notify, in specific channels, the different events that occur within Modyo and require the attention of a particular user (comments, review requirements, content publication, etc).
-
-#### SalesForce AppExchange
-While the Modyo Customers administrative API allows you to perform integrations with different CRMs and CDPs today, we believe that for SalesForce we need to do something else. That's why we have plans to be able to make a deeper integration that makes it easier to keep Modyo and Salesforce records synchronized.
-
-#### Content Indexers
-We are currently working to generate a direct integration with Algolia (https://www.algolia.com), which is presented as a business content search solution that allows marketers to boost results or A/B testing in searches. Algolia has indexing solutions not only to content present on regular pages, but also content that comes from an API.
-
-#### Auto Provisioning of Administrators Users
-Through the support of the SCIM protocol we seek to adopt a standard protocol that allows to perform the activities of automatic provision of administrators users in conjunction with SAML. In this way, when you register or unsubscribe a contributor in the central registries of our customers, they will be automatically incorporated or removed in Modyo.
-
-
-
 
 ## Web Sites and Applications
 
