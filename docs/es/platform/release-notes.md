@@ -4,8 +4,45 @@ search: true
 
 # Notas del release
 
+### 9.1.25 - 9 de agosto del 2021
+
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se arreglan problemas de rendimiento
+* Se arregla problema con cache de previsualización de widgets y vistas de contenido.
+* Se arregla error con status code al importar redirecciones.
+
+### 9.1.24 - 14 de julio del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Se actualizan versiones jQuery de la plataforma.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla problema que impide guardar elementos con el número límite de versiones de respaldo.
+* Se corrige error al copiar páginas que usan widgets con variables.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se permite el envío de correos raw a través de la messaging API.
+* Se arreglan problemas al exportar respuestas de formularios.
+
+### 9.1.23 - 22 de junio del 2021
+&nbsp;
+<Badge text="Core" type="core" vertical="middle"/>
+* Multiple mejoras de seguridad.
+* Newsletter con novedades.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arregla problema con zona horaria de campos de tipo Fecha.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se quitan restricciones en editor de correos.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Ahora se pueden eliminar las páginas.
+
+### 9.1.22 - 10 de junio del 2021
+&nbsp;
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se eliminan restricciones de rutas para redirecciones de sitios
 
 ### 9.1.21 - 28 de mayo del 2021
 
