@@ -224,7 +224,7 @@ Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML rempla
         {% assign count = 0 %} {% for related in relateds %} {% if related.slug
         != entry.slug and 4 > count %} {% assign count = count | plus: 1 %}
         <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-          <a class="card shadow-sm w-100" href="{{ related.meta.url }}">
+          <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ related.meta.url }}">
             <figure class="m-0">
               <span
                 class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
