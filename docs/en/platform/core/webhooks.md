@@ -14,19 +14,19 @@ Webhooks can be created from actions of sites or spaces.
 
 ### Create a webhook
 
-Call your management channels through a  webhook.
+Call your management channels through webhooks.
 
 To create a webhook, follow these steps:
 
-1. From the administration page, click Settings, then select Webhooks.
+1. From the administration screen, click Configuration, then select Webhooks.
 2. Click create Webhook.
-3. Type the name and URL you want to call.
+3. Write the name and URL you want to call.
 4. Select the sites or spaces you want to activate the webhook.
-5. Select the type of log that will activate the webhook.
-6. Add the required headers for the call.
+5. Select the log type that will activate the call.
+6. Add the required headers for your call.
 7. Click Save.
 
-Note: Once the webhook is created, you can send a test notification with false information to prove that your URL is correctly receiving the POSTs from Modyo.
+Note: The webhook is called through a POST call when the selected log type is generated. Once a webhook is created, you can send a test notification with fake information to test that your URL is receiving POST calls from Modyo.
 
 Site webhooks are:
 
@@ -47,15 +47,15 @@ Site webhooks are:
 * Site created
 * Site deleted
 * Site disabled
-* Site Enabled
+* Site enabled
 * Site hidden
 * Site staged
-* Visible Site
+* Visible site
 * Site updated
 * Templates approved
 * Templates sent for review
 * Templates updated
-* Theme Installed
+* Theme installed
 * Theme restored
 * Theme updated
 * Widget approved
@@ -84,7 +84,13 @@ Spaces webhooks are:
 * Type deleted
 * Type updated
 
-### Payload Example
+When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook and then save the changes.
+
+After this, you will see in the list all the webhooks that are active.
+
+Once the webhook is created, you can send a test notification with false information to prove that your URL is correctly receiving the POSTs from Modyo.
+
+### Payload example
 
 ``` javascript
 {
