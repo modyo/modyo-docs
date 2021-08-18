@@ -6120,7 +6120,7 @@ Para la sección de noticias de nuestro Home, vamos a crear un widget de HTML si
   <div class="row">
     {% for entry in entries %}
     <div class="col-4 d-flex">
-      <a class="card shadow-sm" href="{{ entry.fiels.Url }}">
+      <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ entry.fiels.Url }}">
         <figure class="m-0">
           <img
             aria-hidden="true"
@@ -6166,7 +6166,7 @@ Para los beneficios seguiremos la misma lógica de los widgets ya creados, agreg
     <div class="row">
       {% for entry in entries limit:1 %}
       <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100 bg-white" href="{{ entry.meta.url }}">
+        <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
@@ -6187,7 +6187,7 @@ Para los beneficios seguiremos la misma lógica de los widgets ya creados, agreg
       </div>
       {% endfor %} {% for entry in entries offset:1 %}
       <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100" href="{{ entry.meta.url }}">
+        <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
