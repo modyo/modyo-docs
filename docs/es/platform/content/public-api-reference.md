@@ -41,6 +41,13 @@ Para acceder a la cantidad total de entradas que retorna un filtro de contenido,
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 Total entries: {{ entries | total_entries }}
 ```
+### Entrada única
+
+Para desplegar una entrada de cardinalidad single puedes usar el método entry, por ejemplo:
+
+```liquid
+{{ spaces['my-space'].types['homepage'].entry }}
+```
 
 ### Filtrar entradas
 
