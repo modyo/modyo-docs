@@ -6166,7 +6166,7 @@ Para los beneficios seguiremos la misma lógica de los widgets ya creados, agreg
     <div class="row">
       {% for entry in entries limit:1 %}
       <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
-        <a class="card shadow-sm w-100" href="{{ entry.meta.url }}">
+        <a class="card shadow-sm w-100 bg-white" href="{{ entry.meta.url }}">
           <figure class="m-0">
             <span
               class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
