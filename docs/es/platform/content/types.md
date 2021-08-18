@@ -31,14 +31,19 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 ## Crear un Tipo
 
-<img src="/assets/img/content/types/new-type.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="450">
+Crea un tipo de contenido que servirá como una base para las entradas futuras.
 
-Para crear un Tipo, es necesario hacer click en el botón verde superior de la pantalla y poner el nombre y el Identificador de Usuario (UID) correspondiente.
+1. Desde el menú principal, haz click en Contenido, luego selecciona Tipo.
+2. Haz click en nuevo Tipo.
+3. Escribe el nombre e identificador (UID).
+4. Selecciona la cardinalidad del tipo.
 
 :::tip Tip
-Es una buena práctica poner dentro del UID, el formato de qué se publicará como lo son, por ejemplo, videos, posts, etc. 
+Es una buena práctica escribir el formato dentro del UID, por ejemplo, videos, posts, etc. 
 
 Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
+
+La cardinalidad single significa que solamente una entrada de ese tipo puede existir. Seleccionar cardinalidad múltiple no te limita en el número de entradas.
 :::
 
 En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
