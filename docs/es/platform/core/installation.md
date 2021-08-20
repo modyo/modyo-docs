@@ -6,7 +6,11 @@ search: true
 
 Instalación de plataforma Modyo Enterprise On Premise.
 
+<<<<<<< Updated upstream
 ## Tipos de despliegue
+=======
+## Arquitectura
+>>>>>>> Stashed changes
 La plataforma Modyo y todos los componentes de su stack tecnológico del cual depende puede ser configurado en diferentes escenarios de disponibilidad.
 
 Los siguientes escenarios corresponden a las arquitecturas de despliegue de Modyo recomendadas para la modalidad On Premise. Dependiendo del tipo de infraestructura que posea el cliente, uno podría ser más recomendable uno por sobre el otro.
