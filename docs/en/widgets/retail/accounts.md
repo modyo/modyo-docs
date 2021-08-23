@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-retail-accounts
 
 #### Checking Account
 
-| Feature               | Description                                                                                                                                                                                                                                          |
+| Description               | Investor Profile Survey                                                                                                                                                                                                                                          |
 |:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Checking Account Summary | Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.                                                                             |
 | View recent activity     | Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.                                           |
@@ -26,7 +26,7 @@ modyo-cli get modyo-widgets-retail-accounts
 
 #### Savings Account
 
-| Feature           | Description                                                                                                                                                                                                                                                     |
+| Description           | Investor Profile Survey                                                                                                                                                                                                                                                     |
 |:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Savings Account Summary | Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists. |
 | View recent activity | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                       |
@@ -34,7 +34,7 @@ modyo-cli get modyo-widgets-retail-accounts
 
 #### Line of Credit
 
-| Feature           | Description                                                                                                                                                                                                                                  |
+| Description           | Investor Profile Survey                                                                                                                                                                                                                                  |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | View recent activity | Recent activity shows the latest moves that have been made on the account, initially sorted by date. You can also perform searches within the shown movements.                                           |
 | Account Statements     | Account statements display the statements of previous periods that have already ended. They are sorted by date and provide each selected statement's movements. You can also perform searches within the shown movements. |
