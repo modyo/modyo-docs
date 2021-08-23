@@ -70,8 +70,8 @@ When a field is required, at the time of creating or modifying an entry, there m
 
 This field allows you to enter single-line texts. and has the following restrictions:
 
-- **Minimum length**: Allows you to require a minimum text length.
-- **Maximum length**: Limit the maximum length of the text entered.
+- **Minimum length**: Allows you to require a minimum decimal value.
+- **Maximum length**: Limit a maximum decimal value.
 - **Regular expression validation**: Allows you to add a regular expression to validate that the text matches a certain format.
 
 
@@ -79,8 +79,8 @@ This field allows you to enter single-line texts. and has the following restrict
 
 This field translates into a multi-line text WYSIWYG editor that also allows you to modify its HTML code. This field has the following restrictions:
 
-- **Minimum length**: Allows you to require a minimum text length.
-- **Maximum length**: Limit the maximum length of the text entered.
+- **Minimum length**: Allows you to require a minimum decimal value.
+- **Maximum length**: Limit a maximum decimal value.
 
 ### Dropdown
 
@@ -106,8 +106,8 @@ This field allows you to add a question or statement (True or False).
 
 This field allows you to add an integer that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
-- **Minimum length**: Allows you to require a minimum integer value.
-- **Maximum length**: Limit a maximum integer value.
+- **Minimum length**: Allows you to require a minimum decimal value.
+- **Maximum length**: Limit a maximum decimal value.
 
 ### Decimal
 
