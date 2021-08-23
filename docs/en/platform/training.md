@@ -6,9 +6,9 @@ search: true
 
 Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and correspond to the learning activities leading to generating the minimum skills necessary to be able to effectively use the product. Training activities include reviewing [Modyo documentation](/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [self-learning tutorials](/en/platform/tutorials), among others.
 
-## Modyo Platform
+### Modyo Platform
 
-### Recommendations before starting
+#### Recommendations before starting
 1. Understand what [Modyo and its main modules] is (https://www.modyo.com/platform)
 2. Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
 3. Set up a [test environment](https://platform.modyo.cloud/onboarding) to implement the knowledge gained
@@ -17,7 +17,7 @@ Training on the Modyo Platform is a key aspect for any user who plays a role wit
 
 Next, we'll tell you how you can access all the material, information and access necessary to make your experience with Modyo easier.
 
-### General Concepts
+#### General Concepts
 Modyo is a next-generation digital experience platform that powers solutions for interaction with digital customers, accelerating Web and mobile development safely and efficiently, creating a centralized space to govern your digital channels.
 
 Modyo has the following main modules, which you will know in your training process:
@@ -26,11 +26,11 @@ Modyo has the following main modules, which you will know in your training proce
 - [**Modyo Customers:**](/en/platform/customers) An application that enables user authentication to sites in Modyo, either through its internal account logging system or your enterprise integrations to Single Sign On (SSO) systems. Among the main concepts are: users, segments, forms, messaging (campaigns and notifications), personalization, among others.
 - [**Modyo Insights:**](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
 
-### Tutorials
+#### Tutorials
 The [tutorials](/en/platform/tutorials) are the easiest way to get started on the Modyo Platform. It only takes a [test environment](/es/platform/training.html #ambiente -testing) and some time to go step by step learning the fundamental concepts.
 We recommend you to perform the tutorials in order, following all the steps presented in them.
 
-### Certification Program
+#### Certification Program
 Modyo has a [certification program](https://training.modyo.com/catalog) for customers and business partners consisting of training courses for three different profiles:
 - Content Manager
 - Frontend Developer
@@ -45,7 +45,7 @@ For account activation you must send an email to [success@modyo.com](mailto: suc
 
 Access will be granted for the period of one month, during which you will have the freedom to train yourself at your own pace. If you require an extension of the specified period, you must request it to the above email.
 
-### Test environment
+#### Test environment
 To understand how the Modyo platform works it is very important that you can test what you have learned. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
 
 To create the test account you must log in to the [following link](https://platform.modyo.cloud/onboarding) and complete the form by entering your data and those of the organization.
@@ -54,9 +54,9 @@ You will automatically be assigned the account administrator role, granting you 
 
 This environment will be available for the limited period of time. Once the deadline has expired, the account will be automatically deactivated. If you require an extension of the indicated period, you must request it to [success@modyo.com](mailto:success@modyo.com), indicating the additional time you need.
 
-## How to ask for help?
+### How to ask for help?
 
-### Questions and report problems
+#### Questions and report problems
 To report a problem or queries you must:
 1. Log in to our Support Center: https://support.modyo.com/hc/en
 2. Create an account linked to your corporate email
@@ -66,7 +66,7 @@ To report a problem or queries you must:
     - **Requirement:** Requests for configuration of environments, domains, VPN, execution of scripts, access to systems, among others.
 4. Complete the corresponding form according to the selected case.
 
-### What information should you include to give you the right care?
+#### What information should you include to give you the right care?
 In order to review what you report it is important that you can include in the "description" field of the ticket the following information:
 - **Context:** indicate account route/affected site, browser used, Modyo version, user role in the platform (the latter if applicable).
 - **Description:** Briefly indicate the step by step to be able to replicate the case.
