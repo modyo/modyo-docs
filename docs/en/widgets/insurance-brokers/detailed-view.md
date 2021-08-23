@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-brokers-detailed-view
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/detailed-view" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Feature   | Description                                                                                                                                                                                                                                |
+| Description   | Investor Profile Survey                                                                                                                                                                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Summary         | The summary makes it easy to review policies, showing relevant data to your agents regardless of policy status. Use this section to notify agents about important dates or changes in policy status.               |
 | Conditions     | Customize this module to present the policy coverage and deductibles in case of claims. Make it easy for your agents to identify the minimum requirements or configure this module to set up activations. |
