@@ -289,7 +289,7 @@ To do this, the administrator who created the site must manually assign team mem
 
 To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
 
-You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
+You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
 To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
@@ -349,7 +349,7 @@ The precedence of locations on Modyo sites is as follows:
 1. [Default views (Home, search)](/en/platform/channels/templates.html)
 1. [Pages](/en/platform/channels/pages.html)
 1. [Custom content views](/en/platform/channels/templates.html#content-views)
-1. Custom Redirects
+1. Custom redirects
 1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
 
 ## Security headers
