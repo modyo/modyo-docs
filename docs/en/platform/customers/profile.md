@@ -28,7 +28,7 @@ In this section, each user can modify his own profile data, depending on the [cu
 * Last name
 * Second last name
 * Email
-* Birthdate
+* Birth date
 * Gender
 * [Custom fields](/en/platform/customers/users.html#custom-fields)
 * Password
