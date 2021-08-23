@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-retail-transfer-history
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/transfer-history" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Feature                    | Description                                                                                                                                                                                       |
+| Description                    | Investor Profile Survey                                                                                                                                                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Transfer History      | Displays the transaction details sent and received from the customer's account showing the corresponding transfer amount, the available balance, and the contact name. |
 | Third-party Transfers        | Filters the widget to only show information regarding transfers to third parties made by the customer.                                                                                 |
