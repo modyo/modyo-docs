@@ -11,10 +11,10 @@ The Modyo Platform shows the main Modyo interface, from which you have access to
 <img src="/assets/img/platform/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
 
 :::tip Past versions
-The documentation on this site applies to the latest version (9.1). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
+The documentation on this site applies to the latest version (9.1). To access documentation for previous version (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
 :::
 
-### Key features
+### Main functionalities
 
 - [Team review](/en/platform/core/key-concepts.html)
 - [Integrations](/en/platform/core/integrations)
