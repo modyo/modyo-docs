@@ -14,7 +14,7 @@ search: true
 
 **Modyo Channels** also has a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information which is efficiently processed from the server side.
 
-### Key features
+### Main functionalities
 
 - [Site management](/en/platform/channels/sites.html) to organize digital channels.
 - [Dynamic pages](/en/platform/channels/pages.html) to define the structure of each site and add content to it.
