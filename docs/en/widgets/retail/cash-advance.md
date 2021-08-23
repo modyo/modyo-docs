@@ -20,7 +20,7 @@ modyo-cli get modyo-widgets-retail-cash-advance
 
 The customer can select the desired options for their cash advance and payment amount to run the simulation.
 
-| Feature    | Description                                                                                 |
+| Description    | Investor Profile Survey                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
 | From           | Displays the destination account of the requested cash.                          |
 | To          | Displays the destination account of the requested cash.                                  |
@@ -31,7 +31,7 @@ The customer can select the desired options for their cash advance and payment a
 
 The client can select the number of payments in which the requested amount will be paid.
 
-| Feature           | Description                                                               |
+| Description           | Investor Profile Survey                                                               |
 |:------------------------|:--------------------------------------------------------------------------|
 | Total advance cost  | Shows the total amount that will be charged to the card.                  |
 | Monthly payment       | Shows the amount of each monthly payment according to the established time period. |
