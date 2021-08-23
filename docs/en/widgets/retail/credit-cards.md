@@ -16,12 +16,12 @@ modyo-cli get modyo-widgets-retail-credit-cards
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Feature                 | Description                                                                                                                                                                                                                                                        |
+| Description                 | Investor Profile Survey                                                                                                                                                                                                                                                        |
 |:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Credit card summary | Presents a summary of the credit card status with specific information associated with each card balance.<br><br>                                                                    |
 | Credit balance             | Shows the payment options available for the specific card, in addition to indicators of expenditure compared to the amount available.                                                                                                                |
 | Account statements              | Shows statements with the movements of the last invoiced period for a credit card.                                                                                                                                                          |
-| Recent activity           | Shows recent movements and activity that are not yet invoiced.                                                                                                                                                                                |
+| Recent Activity           | Displays all recent activity that has not yet been invoiced.                                                                                                                                                                                |
 | Pay balance                   | Corresponds to the balance payment functionality.<br><br> This payment can be either total or partial.<br><br> Clicking on the button will take you to the Credit Card Payment widget, where you can make a payment. |
 
 <script>
