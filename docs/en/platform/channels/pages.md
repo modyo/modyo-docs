@@ -84,7 +84,7 @@ The rich text widget has an automatic formatter, so the code you write in the co
 Once a widget is selected in the central section, the focus will move to the central tab, where you can find different configuration options for the widgets and if you select a custom widget, you will find a link to go directly to its edit view in the [widget builder](/en/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 In the right sidebar, you can select different grids based on the structure you need in the third tab.
 
-### Properties
+### Settings
 
 In this tab you will find common property options for all pages:
 
