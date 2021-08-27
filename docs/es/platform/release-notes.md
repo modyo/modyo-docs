@@ -4,6 +4,25 @@ search: true
 
 # Notas del release
 
+### 9.1.27 - 11 de agosto del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arregla doble envío al crear access tokens.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla error con reset de páginas.
+* Se previene la generación de cookies para sitios públicos.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arreglan problemas con acciones masivas de despublicación, archivado y eliminación de entries.
+
+### 9.1.26 - 11 de agosto del 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla redirect de sesiones expiradas.
+* Se arregla bug que impedía invertir orden de páginas padre-hijo.
+
+
 ### 9.1.25 - 9 de agosto del 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>
