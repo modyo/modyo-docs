@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Navigation
+# Navegación
 
 La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio. 
 

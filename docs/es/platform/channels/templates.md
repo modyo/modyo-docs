@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Templates
+# Plantillas
 
 Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar los templates base, junto con el JavaScript y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
 

@@ -250,11 +250,11 @@ Los roles disponibles son:
 - **Usuario**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
 
-### Custom Fields
+### Campos personalizados
 
 Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
 
-Los tipos de **Custom Fields** que puedes agregar son:
+Los tipos de **Campos personalizados** que puedes agregar son:
 
 - Checkbox
 - Fecha
@@ -264,9 +264,9 @@ Los tipos de **Custom Fields** que puedes agregar son:
 - Elección
 - Texto simple
 
-Puedes arrastrar los **Custom Fields** para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios.
+Puedes arrastrar los **Campos personalizados** para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios.
 
-Todos los **Custom Fields** tienen ciertas propiedades estándar:
+Todos los **Campos personalizados** tienen ciertas propiedades estándar:
 
 - **Respuesta única**: Implica que el valor debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
 - **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
@@ -274,12 +274,12 @@ Todos los **Custom Fields** tienen ciertas propiedades estándar:
 - **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar su valor.
 - **Buscable por administradores**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al ser buscados desde el indice de usuarios del administrador de Modyo, por el valor de ese campo.
 
-Además de lo anterior, los **Custom Fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom Field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
+Además de lo anterior, los **Campos personalizados** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Campos personalizados** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
 
 ::: danger Peligro
-Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar un **Custom Field**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Custom Field**.
+Cuando un **Campos personalizados** está deshabilitado, puede ser eliminado. Al eliminar un **Campos personalizados**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Campos personalizados**.
 :::
 
 :::tip Tip
-Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Segmentos](/es/platform/customers/segments.html) usando los valores de los **Custom Fields**, permitiendo segmentar a los usuarios por valores personalizables.
+Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Segmentos](/es/platform/customers/segments.html) usando los valores de los **Campos personalizados**, permitiendo segmentar a los usuarios por valores personalizables.
 :::
