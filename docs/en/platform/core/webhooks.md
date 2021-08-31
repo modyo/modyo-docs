@@ -123,3 +123,6 @@ Once the webhook is created, you can send a test notification with false informa
    "trigger_entry_space_uid":"space-test"
 }
 ```
+=======
+Once the webhook is created, you will be able to send a notification with fake information to test that your URL is correctly receiving POSTs from Modyo.
+>>>>>>> Stashed changes
