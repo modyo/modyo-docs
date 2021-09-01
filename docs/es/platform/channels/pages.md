@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Páginas
+# Pages
 
 Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
 
