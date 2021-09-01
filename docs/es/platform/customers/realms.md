@@ -58,7 +58,7 @@ Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguie
 Para enviar la contraseña al mail del usuario, solo es necesario marcar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo al usuario creado con su contraseña, que podrá cambiar al ingresar a la plataforma.
 :::
 
-Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Campos Personalizados**, los que se pueden crear y modificar en la sección [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados).
+Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Custom Fields**, los que se pueden crear y modificar en la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
 
 
 ### Importar usuarios
@@ -84,7 +84,7 @@ A la derecha, en una barra lateral, podrás ver configuraciones principales de l
 
 Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
 
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados), que se encuentran en la [sección Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers).
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Custom Fields](/es/platform/customers/realms.html#custom-fields), que se encuentran en la [sección Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers).
 
 
 ### Ficha de Usuarios
@@ -123,7 +123,7 @@ En esta sección se pueden agregar notas personalizadas sobre los usuarios, sól
 
 En la sección superior derecha encontrarás opciones adicionales con las que podrás desactivar y eliminar usuarios:
 
-* **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Campos Personalizados](/es/platform/customers/realms.html#campos-personalizados).
+* **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Custom Fields](/es/platform/customers/realms.html#custom-fields).
 * **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión.
 * **Eliminar**: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
 
@@ -274,7 +274,7 @@ Todos los **Custom Fields** tienen ciertas propiedades estándar:
 - **Editable por usuarios**: Implica que si es visible, además, el usuario podrá modificar su valor.
 - **Buscable por administradores**: Implica que ese valor estará indexado y los usuarios podrán ser encontrados al ser buscados desde el indice de usuarios del administrador de Modyo, por el valor de ese campo.
 
-Además de lo anterior, los **Custom Fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom Field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
+Además de lo anterior, los **Custom Fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom Fields** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
 
 ::: danger Peligro
 Cuando un **Custom Field** está deshabilitado, puede ser eliminado. Al eliminar un **Custom Field**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Custom Field**.
