@@ -138,11 +138,11 @@ Para este caso usaremos la entrada Dynamic Cine:
 
 Recuerda publicar tus cambios para que se vean reflejados.
 
-## Paso 3: Crear Custom View de Beneficios
+## Paso 3: Crear Content View de Beneficios
 
-Una vez listo nuestro contenido, vamos a desarrollar su [Custom View](/es/platform/channels/templates.html#vistas-para-contenido) dentro de nuestro sitio, para así generar Pages dinámicas conectadas a Content.
+Una vez listo nuestro contenido, vamos a desarrollar su [Content View](/es/platform/channels/templates.html#vistas-para-contenido) dentro de nuestro sitio, para así generar Pages dinámicas conectadas a Content.
 
-Para esto, volveremos a ingresar a Templates dentro de nuestro sitio, y en la sección Views en el apartado Custom hacemos click en el <b>+</b>.
+Para esto, volveremos a ingresar a Templates dentro de nuestro sitio, y en la sección Views en el apartado Content hacemos click en el <b>+</b>.
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
 
@@ -204,8 +204,7 @@ Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML rempla
     <div class="col-12 col-md-5">
       <div class="mb-4">
         <h5 class="text-dark">Where</h5>
-        {{entry.fields['Location'] | static_map: '800x400', 15, 'roadmap',
-        'https://cloud.modyocdn.com/uploads/5fc8b46c-1f64-404c-86a0-3db703f76398/original/pin_dynamic.png'}}
+        {{entry.fields['Location'] | static_map: '800x400', 15, 'roadmap','https://cloud.modyocdn.com/uploads/5fc8b46c-1f64-404c-86a0-3db703f76398/original/pin_dynamic.png'}}
       </div>
       <div class="mb-4">
         <h5 class="text-dark">Commercial terms</h5>
@@ -217,12 +216,10 @@ Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML rempla
 <div class="bg-light py-5" id="benefits">
   <div class="container py-5">
     <h3 class="text-dark text-center">Related benefits</h3>
-    {% assign relateds = spaces['bank'].types['benefits'].entries | paginated: 5
-    | by_lang: 'en' %}
+    {% assign relateds = spaces['bank'].types['benefits'].entries | paginated: 5 %}
     <div class="py-5" id="productos">
       <div class="row">
-        {% assign count = 0 %} {% for related in relateds %} {% if related.slug
-        != entry.slug and 4 > count %} {% assign count = count | plus: 1 %}
+        {% assign count = 0 %} {% for related in relateds %} {% if related.slug != entry.slug and 4 > count %} {% assign count = count | plus: 1 %}
         <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
           <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ related.meta.url }}">
             <figure class="m-0">
@@ -260,7 +257,7 @@ Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML rempla
 </style>
 ```
 
-Ya creaste tu primer Custom View conectada a un Space de Modyo Content. Con ella podremos ingresar a una Entry desde nuestro sitio y además previsualizar el trabajo desde Modyo Content.
+Ya creaste tu primer Content View conectada a un Space de Modyo Content. Con ella podremos ingresar a una Entry desde nuestro sitio y además previsualizar el trabajo desde Modyo Content.
 
 ## Paso 4: Previsualizar entries en Content
 
@@ -268,7 +265,7 @@ Ahora que ya tenemos nuestro Space y Type asociados a un sitio, se nos activará
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
 
-Dentro del modal hacer click en <b>Preview on site</b> y seleccionar el sitio donde hicimos la custom view dentro del dropdown:
+Dentro del modal hacer click en <b>Preview on site</b> y seleccionar el sitio donde hicimos la Content View dentro del dropdown:
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
 
