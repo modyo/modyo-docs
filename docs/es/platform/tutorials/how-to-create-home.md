@@ -28,7 +28,7 @@ Para ejecutar los pasos de este tutorial debes tener creados los contenidos del 
 
 Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer clic en el botón <b>New Site</b>.
 
-Llenamos los campos Name con "Bank" y seleccionamos el Theme "Minimal" como se muestra en la imagen.
+Llenamos los campos Name con "Bank", se autocompleta el Host key y dejamos el Site realm como está.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
@@ -73,7 +73,13 @@ Y quitamos <code>class="container"</code>.
 
 En el Minimal estamos usando la librería [webfontload](https://github.com/typekit/webfontloader) para cargar la tipografía de manera asincrónica.
 
-Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar a la <b>hoja de javascript Base</b> dentro de Views y modificar la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
+Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar a la hoja de javascript <b>Base</b> dentro de Views.
+
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/javascript.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+
+Donde modificaremos la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
+
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/webfontloader.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 ## Paso 5: Cambiar header y footer
 
@@ -244,7 +250,9 @@ Para agregar nuestro nuevo snippet a la hoja de estilo base del template, debemo
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/copy.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
-Y pegarla en nuestra Hoja de estilo que está en Views, Style Sheets, style.
+Y pegarla en nuestra Hoja de estilo que está en Views, Style Sheets, <b>base</b>.
+
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/StyleSheets.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 El código que nos entrega el snippet es asi:
 
@@ -6332,8 +6340,7 @@ $('.single-item').slick({
 <code>HTML</code>
 
 ```html
-{% assign entries = spaces['bank'].types['testimonial'].entries | by_lang: 'en'
-%}
+{% assign entries = spaces['bank'].types['testimonial'].entries %}
 <div class="bg-light px-3 py-5" id="testimonial">
   <div class="py-5">
     <div class="container d-block d-md-none">
@@ -6346,8 +6353,8 @@ $('.single-item').slick({
           <figure class="col-7 col-md-3 mb-4 m-md-0">
             <img
               class="w-100"
-              src="{{ entry.Image.url }}"
-              alt="{{ entry.Author }}"
+              src="{{ entry.fields.Image.url }}"
+              alt="{{ entry.fields.Author }}"
             />
           </figure>
           <div class="figcaption col-11 col-md-6">
@@ -6355,8 +6362,8 @@ $('.single-item').slick({
               <h3 class="d-none d-md-block h3 mb-4 text-dark">
                 Nuestros clientes dicen...
               </h3>
-              <p class="text-muted">{{ entry.Testimony }}</p>
-              <p class="text-muted font-weight-bold">{{ entry.Author }}</p>
+              <p class="text-muted">{{ entry.fields.Testimony }}</p>
+              <p class="text-muted font-weight-bold">{{ entry.fields.Author }}</p>
             </figcaption>
           </div>
         </div>
