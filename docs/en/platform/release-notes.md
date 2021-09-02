@@ -28,23 +28,22 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Performance issues fix
 * Fixed issue with widget preview cache and content views.
-* Fix to security issues
+* Fixed an error with status code when importing redirects.
 
 ### 9.1.24 - July 14, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* User experience improvements.
+* Platform jQuery versions are updated.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* <Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes
+* Fixed issue that prevents saving elements with the limit number of backup versions.
+* Fixed bug when copying pages that use widgets with variables.
 
-9.0.9 - August 12, 2020
-* <Badge text="Core" type="core" vertical="middle"/>
-* Multiple security enhancements.
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Raw emails are allowed to be sent through the messaging API.
+* Se arreglan problemas al exportar respuestas de formularios.
 
 ### <Badge text="Channels" type="channels" vertical="middle"/>
-9.1.15 - April 14, 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * <Badge text="Core" type="core" vertical="middle"/>
 * Performance improvements
@@ -52,14 +51,13 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * <Badge text="Core" type="core" vertical="middle"/>
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Multiple security enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Fixed a bug that caused the "Save" button in the page builder to not work correctly.
 
 ### Fixed a bug when creating new sites where the "About Us" page was left without a layout selected.
-9.1.15 - April 14, 2021
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Multiple bug fixes
 
@@ -137,7 +135,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * <Badge text="Core" type="core" vertical="middle"/>
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Multiple performance improvements.
 
 ### 9.1.8 - February 02, 2021
@@ -151,7 +149,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Multiple bug fixes
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Multiple security enhancements.
 
 ### <Badge text="Content" type="content" vertical="middle"/>
@@ -219,7 +217,7 @@ search: true
 * Multiple security enhancements.
 * 9.1.2 - October 8, 2020
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Multiple bug fixes
 
 ### Multiple navigation and usability improvements.
@@ -237,7 +235,7 @@ search: true
 * <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bug fixes
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Multiple security enhancements.
 
 ### <Badge text="Content" type="content" vertical="middle"/>
@@ -271,7 +269,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * The option to import [custom redirects](/en/platform/channels/sites.html#custom-redirects) for the site was added.
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * <Badge text="Core" type="core" vertical="middle"/>
 * Improved support for session cookies for older browsers.
 
@@ -331,7 +329,7 @@ search: true
 * You will only see the spaces where you are allowed to be a member of the team.
 * The possibility of [remove spaces](/en/platform/content/spaces.html#general) is added.
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Adding [redirect table](/en/platform/channels/sites.html#custom-redirects) will allow you to reuse old urls with a good SEO and redirect them to new site URLs.
 
 ### The content where you search in the pages is improved.
@@ -353,7 +351,7 @@ search: true
 * Content is added to search results on sites from the front end.
 * 9.0.4 - March 12, 2020
 
-9.0.9 - August 12, 2020
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Multiple bug fixes
 
 ### Multiple navigation and usability improvements.
