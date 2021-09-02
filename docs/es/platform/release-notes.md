@@ -31,7 +31,7 @@ search: true
 * Se arregla error con status code al importar redirecciones.
 
 ### 9.1.24 - 14 de julio del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Se actualizan versiones jQuery de la plataforma.
 
