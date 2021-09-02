@@ -44,7 +44,6 @@ search: true
 * Se arreglan problemas al exportar respuestas de formularios.
 
 ### 9.1.23 - 22 de junio del 2021
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple mejoras de seguridad.
 * Newsletter con novedades.
@@ -59,7 +58,6 @@ search: true
 * Ahora se pueden eliminar las páginas.
 
 ### 9.1.22 - 10 de junio del 2021
-&nbsp;
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se eliminan restricciones de rutas para redirecciones de sitios
 
