@@ -4,7 +4,15 @@ search: true
 
 # Notas del release
 
-### 9.1.27 - 11 de agosto del 2021
+### 9.1.28 - 1 de septiembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples mejoras a Security Headers.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se permiten Liquid tags adicionales.
+
+### 9.1.27 - 27 de agosto del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arregla doble envío al crear access tokens.
