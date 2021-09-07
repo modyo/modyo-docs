@@ -35,7 +35,7 @@ Una vez que ingreses a Modyo con tu cuenta, iremos al módulo de [Modyo Content]
 ## Paso 2: Crear tipo "Hero"
 
 Ahora necesitamos crear nuestro primer [tipo de contenido](/es/platform/content/types.html#tipos-de-contenido) en nuestro espacio **"Bank"**.
-Una vez que estés en este espacio, debes ir a la sección **Types** y darle clic al botón superior derecho que dice **"+ Nuevo Tipo"**.
+Una vez que estés en este espacio, debes ir a la sección **Tipos** y darle clic al botón superior derecho que dice **"+ Nuevo Tipo"**.
 
 Desde ahí, generamos nuestro primero Tipo llamado **"Hero"** con los siguientes campos:
 
@@ -97,13 +97,9 @@ Desde ahí, generamos nuestro primero Tipo llamado **"Hero"** con los siguientes
 
 ![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
 
-:::warning Atención
-Es importante guardar los cambios antes de salir.
-:::
-
 ## Paso 3: Crear y publicar entrada del Tipo "Hero"
 
-Ahora crearemos nuestra primera [entrada](/es/platform/content/entries) del tipo que acabamos de crear. Para eso, debemos ir a la sección **Entries** y hacer clic en el botón **Create an entry**, para luego seleccionar el tipo "Hero" y agregar en Name **_"Donde estés, Dynamic Bank te acompaña"_**.
+Ahora crearemos nuestra primera [entrada](/es/platform/content/entries) del tipo que acabamos de crear. Para eso, debemos ir a la sección **Entradas** y hacer clic en el botón **+ Nueva Entrada**, para luego seleccionar el tipo "Hero" y agregar en Name **_"Donde estés, Dynamic Bank te acompaña"_**.
 
 Para el resto de los campos, usaremos los siguientes valores:
 
@@ -242,10 +238,10 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
  </tr>
  <tr>
   <td>
-   <b>Url</b>
+   <b>URL</b>
   </td>
   <td>
-   url de destino o #
+   URL de destino o #
   </td>
  </tr>
 </table>
@@ -287,10 +283,10 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
  </tr>
  <tr>
   <td>
-   <b>Url</b>
+   <b>URL</b>
   </td>
   <td>
-   url de destino o #
+   URL de destino o #
   </td>
  </tr>
 </table>
@@ -332,10 +328,10 @@ Al igual que lo hicimos con el Hero, ahora crearemos las tres entradas para news
  </tr>
  <tr>
   <td>
-   <b>Url</b>
+   <b>URL</b>
   </td>
   <td>
-   url de destino o #
+   URL de destino o #
   </td>
  </tr>
 </table>
@@ -685,7 +681,7 @@ Ahora vamos a crear nuestro último tipo para los testimoniales del sitio, para 
 
 ## Paso 10: Crear y publicar Testimoniales
 
-Crear dos entrada con los siguientes campos:
+Crear dos entradas con los siguientes campos:
 
 #### Testimonio Uno
 
@@ -767,6 +763,6 @@ No olvides publicar todas tus entradas luego de crearlas.
 
 Si llegaste hasta acá te felicitamos. Has conseguido utilizar [Modyo Content](/es/platform/content) con todo su potencial ya que utilizamos [Espacios](/es/platform/content/spaces), [Tipos](/es/platform/content/types), [Entradas](/es/platform/content/entries) y [Categorías](/es/platform/content/entries.html#categorias) para poder generar todo el contenido necesario para armar el Home de Dynamic Bank.
 
-Ya tenemos todas nuestras entradas para poder entregarlas al Front-end y que él pueda generar el Home de Dynamic Bank sin problemas mientras nosotros podemos cambiar los textos desde contenido.
+Ya tenemos todas nuestras entradas para poder entregarlas al Front-end y que este pueda generar el Home de Dynamic Bank sin problemas mientras nosotros podemos cambiar los textos desde Modyo Content.
 
-¿Qué sigue ahora? Obtener todo este contenido desde un sitio Web creado en [Modyo Channels](/es/platform/channels).
+¿Qué sigue ahora? Gestionar todo este contenido desde un sitio Web creado en [Modyo Channels](/es/platform/channels).

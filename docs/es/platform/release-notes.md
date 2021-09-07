@@ -352,7 +352,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Se cambia modo [vista previa](/es/platform/content/entries.html#vista-previa) para que por defecto siempre use los templates editables.
 * Se añaden nueva vistas cuando no hay elementos creados en [entradas](/es/platform/content/entries.html), [tipos](/es/platform/content/types.html), [categorías](/es/platform/content/entries.html#categorias) y [espacios](/es/platform/content/spaces.html).
-* Se añade operador [search](/es/platform/content/public-api-reference.html#filtros-2) para búsqueda en los campos de ubicación de las entradas.
+* Se añade operador [search](/es/platform/content/public-api-reference.html#filtros) para búsqueda en los campos de ubicación de las entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se añade un ejemplo al crear [vistas de contenido](/es/platform/channels/templates.html#vistas-para-contenido).
