@@ -4,6 +4,11 @@ search: true
 
 # Notas del release
 
+### 9.1.29 - 9 de septiembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arregla error con user access token inválido.
+
 ### 9.1.28 - 1 de septiembre del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
