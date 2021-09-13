@@ -5,17 +5,17 @@ search: true
 # Integraciones
 Los sistemas de DXP juegan un rol fundamental en cualquier estrategia de transformación digital. Sus capacidades de tomar control de los canales principales de comunicación con clientes y colaboradores hacen necesaria una sólida estrategia de integraciones hacia el resto del ecosistema de aplicaciones de negocio que forman parte en cada estrategia.
 
-La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, los [DXP de siguiente generación](https://www.modyo.com/platform) privilegian la integración con plataformas especializadas en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas, bajando con ello los costos totales de operación e infraestructura, al escalar sólo los recursos que lo requieren.
+La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, los [DXP de siguiente generación](https://www.modyo.com/es/platform) privilegian la integración con plataformas especializadas en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas. Todo esto resulta en bajar los costos totales de operación e infraestructura al escalar sólo los recursos que lo requieren.
 
 ## Integraciones de la Plataforma
-Las integraciones de plataforma, corresponde a todas aquellas integraciones que se establecen por Modyo de forma directa y sin necesidad de requerir grandes desarrollos. Estas integraciones responden a diferentes propósitos según el contexto en el que se usen, pero en su gran mayoría se relacionan al perfil de los usuarios y la comunicación con éstos.
+Las integraciones de plataforma corresponde a todas aquellas integraciones que se establecen por Modyo de forma directa y sin necesidad de requerir grandes desarrollos. Estas integraciones responden a diferentes propósitos según el contexto en el que se usen pero en su gran mayoría se relacionan al perfil de los usuarios y la comunicación con éstos.
 
 A continuación se revisan las integraciones de plataforma más relevantes.
 
 ### Integración con CRMs y CDPs
-Los sistemas de Customer Relationship Management (CRM) y de Customer Data Platform (CDP) gestionan datos de clientes interconectados a diferentes aplicaciones de negocio, con el fin de brindar una visión unificada del comportamiento de éstos. 
+Los sistemas de Customer Relationship Management (CRM) y de Customer Data Platform (CDP) gestionan datos de clientes interconectados a diferentes aplicaciones de negocio con el fin de brindar una visión unificada del comportamiento de éstos. 
 
-Modyo Customers es la aplicación dentro de Modyo en donde convergen las acciones y eventos de negocios de los usuarios autenticados, realizadas sobre los diferentes canales digitales gestionados por la plataforma. Modyo Customers permite segmentar las audiencias, utilizando tanto información del comportamiento de los usuarios como de los datos en sus perfiles. Es precisamente esto último lo que puede ser enriquecido mediante la integración de sistemas como CRMs y CDPs. Para realizar este tipo de integración, se hace uso del API administrativa de Modyo Customers, la que permite obtener la información de los usuarios en Modyo así como también actualizar los atributos de éstos en caso de ser requerido. Además, esta API permite la ejecución de tareas administrativas como la creación de nuevos usuarios o la desactivación de ellos en la plataforma.
+[Modyo Customers](https://docs.modyo.com/es/platform/customers/) es la aplicación dentro de Modyo en donde convergen las acciones y eventos de negocios de los usuarios autenticados, realizadas sobre los diferentes canales digitales gestionados por la plataforma. Modyo Customers permite segmentar las audiencias, utilizando tanto información del comportamiento de los usuarios como de los datos en sus perfiles. Es precisamente esto último lo que puede ser enriquecido mediante la integración de sistemas como CRMs y CDPs. Para realizar este tipo de integración, se hace uso del API administrativa de Modyo Customers, la que permite obtener la información de los usuarios en Modyo así como también actualizar los atributos de éstos en caso de ser requerido. Además, esta API permite la ejecución de tareas administrativas como la creación de nuevos usuarios o la desactivación de ellos en la plataforma.
 
 El API administrativa de Modyo requiere de un token de autenticación válidamente emitido a nombre de un usuario administrador, quien debe poseer los permisos suficientes para realizar las tareas que se desean automatizar.
 
@@ -23,21 +23,35 @@ La API de Modyo Customers también se puede usar para mantener los registros act
 
 
 ### Integración con SSO
-Los sistemas de Single Sign On (SSO) son una pieza clave en la estrategia de integración del DXP de Modyo hacia los sistemas de negocio.
+Los sistemas de Single Sign-On (SSO) son una pieza clave en la estrategia de integración del DXP de Modyo hacia los sistemas de negocio.
 
 Actualmente la plataforma soporta la integración a sistemas de SSO de dos formas:
 - Integración de cuentas de usuario administradores
 - Integración de cuentas de usuarios finales
 
-En el caso de la integración con cuentas de administración, Modyo cuenta con soporte nativo para LDAP, SAML, OAuth 2.0, OIDC y Google Workspace.
+En el caso de la integración con cuentas de administración, Modyo cuenta con soporte nativo para:
+* LDAP
+* SAML
+* OAuth 2.0
+* OIDC
+* Google Workspace.
 
-En el caso de la integración con cuentas de usuario, Modyo cuenta con soporte nativo para OAuth 2.0, OIDC y Google Workspace.
+En el caso de la integración con cuentas de usuario, Modyo cuenta con soporte nativo para:
+* OAuth 2.0
+* OIDC
+* Google Workspace.
 
 
 ### Integración con mensajería
 La integración con sistemas de mensajería permite el envío de mensajes de notificación y campañas de marketing a usuarios finales que se encuentren habilitados dentro de un Realm en Modyo Customers.
 
-Actualmente soportamos los canales de mensajería de Email, SMS, Whatsapp for Business, Web Push, Push y notificaciones en la aplicación Web.
+Actualmente soportamos los canales de mensajería:
+* Email
+* SMS 
+* Whatsapp for Business
+* Web Push
+* Push
+* Notificaciones en la aplicación Web.
 
 Los microservicios de integración también pueden enviar notificaciones a los usuarios y dar seguimiento a estas usando el API de mensajería de Modyo Customers.
 
@@ -100,7 +114,7 @@ Las herramientas de product management se implementan mediante códigos Javascri
 - Hotjar
 
 ### Herramientas de Seguridad y Rendimiento
-Las herramientas de seguridad y rendimiento se implementan de manera muy similar a las de analítica y product management, pero a diferencia de éstas el foco está orientado a la captura de la experiencia en cuanto a rendimiento, detección de errores de Javascript en el navegador y cumplimiento de niveles de servicio. En esta categoría podemos mencionar herramientas cómo:
+Las herramientas de seguridad y rendimiento se implementan de manera muy similar a las de analítica y product management, pero a diferencia de éstas el foco está orientado a la captura de la experiencia en cuanto a rendimiento, detección de errores de Javascript en el navegador, y cumplimiento de niveles de servicio. En esta categoría podemos mencionar herramientas cómo:
 - NewRelic Browser
 - Dynatrace RUM
 - Elastic Observability

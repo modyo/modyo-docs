@@ -16,7 +16,7 @@ El Despliegue de Alta Disponibilidad considera dos ubicaciones físicas (datacen
 
 Este modelo permite ofrecer una alta disponibilidad en un escenario principalmente destinado a un consumo primario de lectura de los proyectos desarrollados sobre Modyo y permite un alto grado de escalabilidad para operaciones de lectura al poder usar simultáneamente las réplicas de la base de datos.
 
-Con esta forma de despliegue se debe considerar que las operaciones de failover son en un sentido, es decir, que una vez realizadas el sistema debe re configurarse manualmente.
+Con esta forma de despliegue se debe considerar que las operaciones de failover son en un sentido, es decir, que una vez realizadas el sistema debe reconfigurarse manualmente.
 
 
 ### Despliegue de Misión Crítica
@@ -127,7 +127,7 @@ Adicionalmente, una instalación segura y escalable requerirá de los siguientes
       <b>Firewall Aplicativo</b>
    </td>
    <td>
-      Si bien Modyo es continuamente revisado para eliminar cualquier posibilidad de inyección de código o comandos remotos, una instalación segura requerirá de la protección adicional de un firewall aplicativo. En el caso de la nube Modyo opera con el Amazon WAF de forma estándar y CloudFlare de forma opcional. En el caso de la modalidad On Premise dependerá del cliente.
+      Modyo es continuamente revisado para eliminar cualquier posibilidad de inyección de código o comandos remotos, una instalación segura requerirá de la protección adicional de un firewall aplicativo. En el caso de la nube Modyo opera con el Amazon WAF de forma estándar y CloudFlare de forma opcional. En el caso de la modalidad On Premise dependerá del cliente.
    </td>
 </tr>
 <tr>
@@ -163,40 +163,46 @@ Para entornos de alta concurrencia de usuarios se recomienda contar con al menos
 Almacenamiento
 Se requiere que las siguientes rutas tengan espacio suficiente, y con un mínimo indicado disponible para Modyo, para realizar operaciones como carga de binarios, copias temporales, deployment de aplicación y uso de datos de trabajo.
 
-Ruta
+**Ruta
 Tamaño mínimo
-Detalles
-/home/user
-5G
+Detalles**
+
+`/home/user`
+5GBs
 Home de usuario asignado (/root si corresponde) donde se realizan operaciones de carga y descompresión temporal de archivos.
-/tmp
-5G
+
+`/tmp`
+5GBs
 Se realizan operaciones de carga temporal remotamente, en procesos de deployment.
-/var
-30G
 
-200G
+`/var`
+30GBs
+
+
+200GBs
 Espacio en los servidores de aplicación para Modyo.
-
 Espacio en servidores de indexación y base de datos.
-/var/log
-10G
+
+`/var/log`
+10GBs
 En caso de tener partición aparte para logs.
 
 
-Software
+### Software
 Según el rol del servidor configurado, los siguientes requerimientos de software deben ser adecuadamente configurados:
-CentOS / Red Hat 7.2 o superior
-Java JDK 1.8 (en los servidores de aplicación, workers e indexación)
-Base de Datos compatible con MySQL 5.5 o superior (5.7 recomendado)
-Elastic Search 2.3
-Redis Server 3.2
-Repositorio EPEL habilitados (RedHat/CentOS)
-Registro y repositorios habilitados (RedHat/CentOS)
-Requerimientos de la Instalación
+
+- CentOS / Red Hat 7.2 o superior
+- Java JDK 1.8 (en los servidores de aplicación, workers e indexación)
+- Base de Datos compatible con MySQL 5.5 o superior (5.7 recomendado)
+- Elastic Search 2.3
+- Redis Server 3.2
+- Repositorio EPEL habilitados (RedHat/CentOS)
+- Registro y repositorios habilitados (RedHat/CentOS)
+
+### Requerimientos de la Instalación
 La plataforma Modyo es distribuida en dos formatos: Paquete que contiene los binarios con los scripts de control para su ejecución y una Imagen de Contenedor compatible con Docker.
 Paquete Binario
-Para el caso de Modyo como paquete binario, éste debe ser desplegado en servidores Linux de 64 bits compatibles con CentOS / Red Hat 7.2, los cuales podrán ser físicos o virtuales, especificados más adelante en este documento.
+Para el caso de Modyo como paquete binario, éste debe ser desplegado en servidores Linux de 64 bits compatibles con **CentOS / Red Hat 7.2**, los cuales podrán ser físicos o virtuales, especificados más adelante en este documento.
 
 ### Contenedores Docker
 En el caso de Modyo como contenedor, éste es configurado sobre una máquina base basada en Linux Debian que es compatible con Docker. El despliegue con Docker de la plataforma sólo contempla a la plataforma Modyo y aún requiere de la configuración de los elementos adicionales de la infraestructura.
@@ -209,7 +215,7 @@ El resto de esta guía asume primariamente una instalación por paquete binario.
 ## Configuraciones Básicas
 Se recomienda que las ciertas variables sean incluídas en las configuraciones de entorno del servidor donde se instale la plataforma.
 
-Ejemplo de configuración de /etc/profile.d/modyo.sh:
+Ejemplo de configuración de `/etc/profile.d/modyo.sh`:
 ```sh
 export MAGICK_MEMORY_LIMIT=512MB
 export MODYO_HOME=/opt/modyo/current
@@ -223,7 +229,7 @@ El servidor de aplicaciones y los procesos de worker están pensados para ser es
 
 
 ### Creación del Usuario para Modyo
-El usuario modyo será el responsable de la ejecución de los procesos de la plataforma. Los scripts de inicialización de la plataforma necesitan que este usuario esté creado y posea permisos suficientes para levantar el entorno de ejecución.
+El usuario Modyo será el responsable de la ejecución de los procesos de la plataforma. Los scripts de inicialización de la plataforma necesitan que este usuario esté creado y posea permisos suficientes para levantar el entorno de ejecución.
 
 ```sh
 adduser --disabled-password --gecos "" modyo
@@ -300,8 +306,11 @@ end script
 ```
 
 Para iniciar o detener el servicio de Modyo App Server con la configuración de Upstart se utiliza el siguiente comando:
+
+```sh
 service modyo-app start|stop|status|restart (Ubuntu)
 initctl start|stop|status|restart modyo-app (Red Hat)
+```
 
 **Worker Process:** Los scripts de upstart del Worker Process son los encargados de ejecutar los procesos en segundo plano de la plataforma como un servicio del sistema operativo y asegurar que ésta se inicie en la secuencia de arranque del sistema.
 
@@ -327,8 +336,11 @@ end script
 ```
 
 Para iniciar o detener el servicio de Modyo Worker Process con la configuración de Upstart se utiliza el siguiente comando:
+
+```sh
 service modyo-worker start|stop|status|restart (Ubuntu)
 initctl start|stop|status|restart modyo-worker (Red Hat)
+```
 
 ### Configuraciones de Monitoreo
 
@@ -380,7 +392,7 @@ El certificado SSL se encuentra configurado en el balanceador.
 ## Variables de Entorno
 El siguiente listado de variables de entorno corresponden a los diferentes parámetros que en Modyo pueden ser configurados.
 
-Modyo recomienda configurar estos parámetros en el archivo /etc/profile.d/modyo.sh
+Modyo recomienda configurar estos parámetros en el archivo `/etc/profile.d/modyo.sh`
 
 
 <style>

@@ -26,7 +26,7 @@ Para poder realizar una integración con Facebook, deberás contar con:
 - Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
 
 
-Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Puedes aprender más sobre como crear y configurar una aplicación de Facebook en su [Documentación oficial](https://developers.facebook.com/docs/facebook-login/).
+Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Puedes aprender más sobre como crear y configurar una aplicación de Facebook en su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
 
 ### Google
 
@@ -35,7 +35,7 @@ Para poder integrar el inicio de sesión de Google con Modyo, deberás contar co
 - ID de aplicación
 - Clave
 
-Estos valores los podrás obtener luego de crear una aplicación en Google con permisos para inicio de sesión. Puedes aprender más sobre como crear y configurar una aplicación de Google en su [Documentación oficial](https://developers.google.com/identity/sign-in/web/sign-in).
+Estos valores los podrás obtener luego de crear una aplicación en Google con permisos para inicio de sesión. Puedes aprender más sobre como crear y configurar una aplicación de Google en su [documentación oficial](https://developers.google.com/identity/sign-in/web/sign-in).
 
 Debes tener en cuenta que al final del formulario se encuentra disponible la URL de callback (_Callback  URI_). Es necesario usar esa URL en la aplicación o proyecto que crees en Google para poder completar el flujo de inicio de sesión correctamente.
 
@@ -89,11 +89,12 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 
 ### OpenID Connect
 
-OpenID Connect (OIDC) es una capa de autenticación y framework que funiona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
+OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
 
 :::warning Atención
-Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3 y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
+Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3, y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
+
 :::warning Atención
 La API para obtención de access tokens delegados vía  `/auth/openidc/access_token` está obsoleta y ha sido reemplazada por `/api/profile/me`.
 :::
