@@ -4,7 +4,7 @@ search: true
 
 # Modyo Platform
 
-Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content o Customers y en ella encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes.
+Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content, y Customers y en ella encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes.
 
 Modyo Platform presenta la interfaz principal de Modyo desde la cual se tienen acceso a todas las secciones relevantes.
 

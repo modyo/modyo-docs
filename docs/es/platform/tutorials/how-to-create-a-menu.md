@@ -6,7 +6,7 @@ search: true
 
 ## Introducción
 
-Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) utilizando los modulos de [Navigation](/es/platform/channels/navigation.html) y [Templates](/es/platform/channels/templates.html) para crear un mega menú en nuestro sitio.
+Bienvenido a un tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) utilizando los modulos de [Navigation](/es/platform/channels/navigation.html) y [Plantillas](/es/platform/channels/templates.html) para crear un mega menú en nuestro sitio.
 
 Navigation es una herramienta que nos ayuda a desarrollar de manera simple y que luego se puede administrar de una mejor manera. 
 
@@ -18,7 +18,7 @@ En este tutorial seguiremos usando el sitio de "Dynamic Bank".
 
 ## Requisitos Previos
 
-Para comenzar este tutorial debemos haber completado el tutorial de [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home) y opcionalmente [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) para ver el Home completo cons sus contenidos. Y al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
+Para comenzar este tutorial debemos haber completado el tutorial de [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home) y opcionalmente [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) para ver el Home completo con sus contenidos. Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS, y la plataforma Modyo.
 
 ## Paso 1: Completar el Menú
 
@@ -222,9 +222,9 @@ Lo que nos dará una vista asi:
 
 Luego de tener lista nuestra navegación guardamos y publicamos.
 
-## Paso 2: Crear vista en Templates
+## Paso 2: Crear vista en Plantillas
 
-Para hacer el cambio en el HTML del menú vamos a ir al Template y en el tab Snippets abrimos el archivo <code>menu</code>.
+Para hacer el cambio en el HTML del menú vamos a ir a Plantillas y en el tab Snippets abrimos el archivo <code>menu</code>.
 
 ```html
 {% assign menu = menus['main'] %} 
@@ -520,7 +520,7 @@ Crear snippet <code>menu_responsive</code> donde pegaremos el código del menu q
 </div>
 ```
 
-Modificar código del Snippet <code>Header</code> donde agregaremos el snippet de <code>menu_responsive</code> que creamos hace un rato.
+Modificar código del Snippet <code>Header</code> donde agregaremos el snippet de <code>menu_responsive</code> que creamos previamente.
 
 ```html
 <header role="banner" id="header">
@@ -615,4 +615,4 @@ Modificar código del Snippet <code>Header</code> donde agregaremos el snippet d
 
 ¡Felicidades! Haz finalizado un nuevo curso de la serie de tutoriales de Modyo.
 
-En este tutorial nos enfocamos en la creación de un menú desde [Navigation](/es/platform/channels/navigation.html) y luego hacer el despliegue del código en [Templates](/es/platform/channels/templates.html).
+En este tutorial nos enfocamos en la creación de un menú desde [Navigation](/es/platform/channels/navigation.html) y luego hacer el despliegue del código en [Plantillas](/es/platform/channels/templates.html).

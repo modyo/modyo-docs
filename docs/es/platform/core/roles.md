@@ -6,11 +6,11 @@ search: true
 
 ## Equipo
 
-Todos los usuarios internos de la plataforma conforman el equipo, y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema.
+Todos los usuarios internos de la plataforma conforman el equipo y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema.
 
-Para crear un usuario interno, debes hacer click en el botón superior y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
+Para crear un usuario interno, debes hacer click en el botón **+ Nuevo Miembro** y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
 
-Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados para ocupar en la plataforma.
+Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados en la plataforma.
 
 Si quieres desactivar un usuario interno, debes hacer click en el botón de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer click sobre el nombre del mismo.
 
@@ -28,9 +28,9 @@ El resto de las pestañas pueden incluír información visible o modificable de 
 
 ## Grupos
 
-Los grupos te permiten agilizar el control de acceso a los distintos contextos de Modyo, de tal manera que puedes asignar un rol predeterminado a un contexto (cuenta, espacios, realms o sitios) a múltiples usuarios a la vez y luego añadir ese grupo de usuario a distintos contextos, permitiendo que todos los usuarios obtengan el rol del grupo en el contexto asociado.
+Los grupos te permiten agilizar el control de acceso a los distintos contextos de Modyo, de tal manera que puedes asignar un rol predeterminado a un contexto (cuenta, espacios, realms, o sitios) a múltiples usuarios a la vez y luego añadir ese grupo de usuario a distintos contextos, permitiendo que todos los usuarios obtengan el rol del grupo en el contexto asociado.
 
-Para crear un grupo, dirígete a la sección "Grupos" de la configuración de la cuenta, asígnale un nombre, rol y comienza a añadir usuarios al grupo. Puedes modificar el nombre, rol y usuarios que pertenecen al grupo una vez que guardes los cambios.
+Para crear un grupo, dirígete a la sección "Grupos" de la configuración de la cuenta, asígnale un nombre, rol y comienza a añadir usuarios al grupo. Puedes modificar el nombre, rol, y usuarios que pertenecen al grupo una vez que guardes los cambios.
 
 Además, desde la sección de "Grupos" del perfil de cada miembro del equipo, puedes añadir o remover al usuario de los grupos existentes.
 
@@ -52,26 +52,26 @@ Los roles predeterminados que existen son, según contexto:
 
 #### Roles por cuenta:
 
-- **Default user**: Tiene todos los permisos existentes. menos la edición de la configuración de cada contexto. Debe se invitado a cada contexto para poder acceder a sus funcionalidades.
+- **Default user**: Tiene todos los permisos existentes, menos la edición de la configuración de cada contexto. Debe se invitado a cada contexto para poder acceder a sus funcionalidades.
 - **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones.
 - **Owner**: Tiene todos los perimsos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
 
 #### Roles por sitio:
 
-- **Site developer**: Sólo puede editar recursos (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+- **Site developer**: Sólo puede editar recursos (no puede publicar, eliminar, hacer rollback, ni editar la configuración).
 - **Site reviewer**: Es un site admin pero sin edición de la configuración del sitio.
 - **Site admin**: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
 
 #### Roles por espacio:
 
-- **Space writer**: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback ni editar la configuración).
+- **Space writer**: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback, ni editar la configuración).
 - **Space editor**: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
-- **Space admin**: Tiene todos los permisos a nivel de un space, pero no puede crear nuevos spaces, puede crear y eliminar assets.
+- **Space admin**: Tiene todos los permisos a nivel de un space, pero no puede crear nuevos espacios, puede crear y eliminar assets.
 
 El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
 
 ### Acceso a las aplicaciones:
-Dado que contamos con roles que permiten acceder a todas las aplicaciones sin restricción alguna, Modyo permite restringir acceso a ciertas aplicaciones mediante la configuración del miembro del equipo, de esta forma, puedes darle a un usuario acceso total (Owner) pero solamente en la aplicación de channels.
+Dado que contamos con roles que permiten acceder a todas las aplicaciones sin restricción alguna, Modyo permite restringir acceso a ciertas aplicaciones mediante la configuración del miembro del equipo, de esta forma, puedes darle a un usuario acceso total (Owner) pero solamente en la aplicación de Channels.
 
 ### Asignar un rol por cuenta
 
