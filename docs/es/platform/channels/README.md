@@ -20,3 +20,4 @@ search: true
 - [Páginas dinámicas](/es/platform/channels/pages.html) para definir la estructura de cada sitio y agregar contenido en el.
 - [Widgets](/es/platform/channels/widgets.html) para crear componentes reutilizables usando tecnologías como Javascript, HTML, y CSS.
 - [Plantillas](/es/platform/channels/templates.html) para organizar las estructuras globales del sitio y el sistema de diseño.
+- [Stages](/es/platform/channels/sites.html#stages) para crear distintas ramas dentro de un sitio en donde podrás trabajar ambientes encapsulados, con la opción de sincronizar tus cambios.

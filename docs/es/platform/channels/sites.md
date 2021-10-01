@@ -262,6 +262,37 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 </tr></table>
 :::
 
+## Stages
+
+Agregar stages en tu sitio te permite trabajar nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
+
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para visualizar cambios de inmediato. Al finalizar los cambios dentro de un stage, podrán sincronizar los cambios desde el stage `main`.
+
+:::warning Atención
+Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
+:::
+
+### Agregar un nuevo stage
+
+Para agregar un nuevo stage a tu sitio, sigue estos pasos:
+
+1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
+1. Expande **Configuración del sitio**, haz click en **Stages**.
+1. Haz click en **+ Nuevo Stage**
+1. Selecciona cual será la base del stage y escribe el nombre.
+1. Haz click en **Crear**.
+
+### Sincronizar un stage
+
+Para sincronizar un stage, sigue estos pasos:
+
+1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
+1. Haz click en **Overview**.
+1. En el apartado de **Sincronización**, selecciona los stages que quieres sincronizar.
+1. En la ventana que aparece, verás todos los cambios entre los stages. Selecciona los cambios que quieres sincronizar.
+1. Haz click en **Sincronizar**.
+
+
 ## Revisión en equipo
 
 Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista.
