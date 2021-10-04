@@ -58,6 +58,10 @@ Para crear un nuevo Menú, sigue estos pasos:
 6. Personaliza el menú agregando o editando items.
 7. Una vez terminado, haz click en **Publicar**.
 
+:::tip Tip
+Tu menú en este momento ya es público pero necesita ser llamado desde una plantilla para poder mostrarse. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en las plantilla `base` usando `{% snippet 'shared/general/menu' %}`.
+:::
+
 Para más información de como se crea y publica un menú personalizado, vea [Creación de Mega Menú](/es/platform/tutorials/how-to-create-a-menu.html)
 
 **Acción principal**
