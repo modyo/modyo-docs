@@ -4,6 +4,11 @@ search: true
 
 # Release Notes
 
+### 9.1.31 - October 7, 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* SAML response validation is fixed for Azure AD
+
 ### 9.1.30 - September 24, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -11,7 +16,6 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Fixed email validation.
-
 
 ### 9.1.29 - September 9, 2021
 
