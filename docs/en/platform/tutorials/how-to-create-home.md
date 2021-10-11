@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels](/en/platform/channels) where you will learn how to create a site, modify the base template, add new libraries, and connect widgets with already created content.
+Welcome to a tutorial in the Modyo training series. In this tutorial we're going to focus on [Modyo Channels] (/en/platform/channels) where you'll learn how to create a site, modify the template base, add new libraries, and connect widgets with existing content.
 
 Linking Content and Channels is one of the most important functionalities when it comes to having easy to manage dynamic sites.
 
@@ -26,7 +26,7 @@ To complete the steps in this tutorial you must have created the contents of the
 
 ## Step 1: Create a Cloud Site
 
-To create our [site] (/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels] section (/en/platform/channels) and click on the button <b> New Site </b>.
+To create our [site](/en/platform/channels/sites), where we are going to mount Dynamic Bank, we need to go to the [Modyo Channels](/en/platform/channels) and click the button <b>+ New Site</b>.
 
 We fill the Name fields with "Bank" and select the "Minimal" Theme as shown in the image.
 
@@ -38,46 +38,50 @@ We fill the Name fields with "Bank" and select the "Minimal" Theme as shown in t
 
 Inside our new site, on the left you will find the main menu with the sections we will work on in this tutorial.
 
-Let's start in the [Templates] section (/en/platform/channels/templates), which corresponds to the site's structure, that is, the base of HTML, CSS and JS, plus the libraries that support the Template.
+We will start with [Templates](/en/platform/channels/templates), which corresponds to the structure that contains the site, i.e. the base of HTML, CSS, JS, plus the libraries that form the template.
 
 Here we are going to modify the CSS variables, which are in a snippet called <b> css variables </b> that feeds the rest of the stylesheets already configured within the Minimal Theme.
 
-To make the change, we will modify the following variables in the aforementioned snippet:
+To make the change, we are going to modify the following variables in the snippet:
 
 #### Colors:
 
-<code>primary = rgba(240, 90, 162, 1)</code><br>
-<code>secondary = rgba(98, 125, 229, 1)</code><br>
-<code>light = rgba(250, 250, 250, 1)</code><br>
-<code>info = rgba(121, 133, 178, 1)</code><br>
-<code>dark = rgba(56, 68, 112, 1)</code><br>
+```css
+primary = rgba(240, 90, 162, 1)
+secondary = rgba(98, 125, 229, 1)
+light = rgba(250, 250, 250, 1)
+info = rgba(121, 133, 178, 1)
+dark = rgba(56, 68, 112, 1)
+```
 
 #### Buttons:
 
- <code> button_radius = 100px </code> <br> 
- <code> button_font_weight = 600 </code> 
+```css
+button_radius = 100px
+button_font_weight = 600
+```
 
-To review the change you just made, let's use [preview mode] (/es/platform/core/key-concepts.html #modo -preview-view).
+To review the change you just made we are going to use [preview mode](/en/platform/core/key-concepts.html#preview-mode).
 
 ## Step 3: Remove container
 
-In the [layout] (/es/platform/channels/templates.html #layouts -custom), which is the HTML structure in which the widgets we will add to each [Page] (/en/platform/channels/pages) are mounted, we need to remove the <b> container </b> class from the main to be able to use 100% of the width of our Page.
+In the [Layout](/en/platform/channels/templates.html#custom-layouts), which are the HTML structure in which the widgets that we will add in each [Page](/en/platform/channels/pages) are mounted, we need to remove the class <b>container</b> from the main to be able to use 100% of the width of our page.
 
-To complete this action inside Templates, we go back to the Views tab, look for the Layouts section and open the home.
+For this, within Templates, we are going to go back to the Views tab, click the Layouts section, and open <b>home</b>.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
 
-And we remove <code> class="container" </code>.
+Here we remove <code>class="container”</code>.
 
 ## Step 4: Change Site Source
 
-In Minimal we are using the [webfontload] library (https://github.com/typekit/webfontloader) to load the typography asynchronously.
+In the minimal we are using the [webfontloader] library (https://github.com/typekit/webfontloader) to load the typography asynchronously.
 
 For Dynamic we will use the Jost font. To change it we need to enter the <b> javascript sheet Base </b> within Views and modify the line where the call is made, replacing <code> families: ['DM SANS:400,700&display=swap'] </code> 0 by <code> families: ['jost:400,700&display=swap'] </code>.
 
 ## Step 5: Change header and footer
 
-Within Templates, one of the most powerful features we have is the ability to reuse code in various Pages, which is what we do with the Header and Footer.
+Within Templates, one of our most powerful features reusing our code in various Pages, which is the case for Header and Footer.
 
 Their HTML is located within the Snippets tab, grouped in General, and we will replace it with the following HTML codes.
 
@@ -222,7 +226,7 @@ Their HTML is located within the Snippets tab, grouped in General, and we will r
 </footer>
 ```
 
-After finishing our header and footer snippets, we're going to work on the CSS of the footer. For topics in order we will generate a new [snippet] (/es/platform/channels/templates.html #snippets) and add it in the template's base stylesheet.
+After we finish our changes to the header and footer snippets, we're going to work on the footer CSS. To keep things clean, we are going to generate a new [Snippet] (/en/platform/channels/templates.html#snippets) and add it to the base stylesheet of the Template.
 
 To create a new snippet you need to go to the Custom section and press the button <b> + </b>, fill the Path field as <b> footer_css </b> and then add the following code.
 
@@ -246,13 +250,13 @@ To add our new snippet to the template's base stylesheet, we need to press the c
 
 And paste it into our Style Sheet that is in Views, Style Sheets, style.
 
-The code that gives us the snippet is like this:
+The code for our snippet looks like this:
 
 <code>{% snippet "footer_css" %}</code>
 
 ## Step 6: Upload logo and favicon
 
-To perform this step we will go to the [Site settings] section (/es/platform/channels/sites.html #configuracion -a-site), where we can change or add some site settings, including: Site Name, Description, Language, GTM ID, SEO, PWA, Team, among others.
+To perform this step we are going to go to [Site settings] section (/en/platform/channels/sites.html#site-settings), where we can change or add some site settings, including: Site Name, Description, Language, GTM ID, SEO, PWA, Team, among others.
 
 In this case we will focus on General and add our logo file in <b> Site logo </b> and Favicon in <b> Visualization </b>.
 
@@ -268,7 +272,7 @@ Remember to save your changes after uploading the files.
 
 ## Step 7: Make Bootstrap CSS changes
 
-Once our logo is loaded, we will make the size changes to fit our design. For this we will go to Templates and within the Libs group we open the snippet <b> bootstrap css </b> and look for the class that is affecting our logo, <code> .navbar-brand img </code> and we change the height of <code> 50px </code> to <code> 30px </code>.
+Once our logo is uploaded, we will make the size changes to fit our design. For this we will go to Templates and within the group of Libs, open the snippet <b>bootstrap css</b> and look for the class that is affecting our logo, <code>.navbar-brand img</code> and change the height of <code>50px</code> to <code>30px</code>.
 
 Once we have reviewed that our logo looks good in preview mode, we need to change how the menu links look.
 
@@ -306,13 +310,13 @@ For order topics, we are going to create a CSS snippet, where later we'll add al
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;"> 
 
-For this snippet to work in our Home, we need to add the snippet call code in the general CSS sheet with the following code <code> {% snippet “home_css”%} </code> so that the content of our snippet appears inside the template's general stylesheet.
+For this snippet to take effect in our Home, we need to add the snippet call in the general CSS sheet with the following code <code>{% snippet “home_css”%}</code> so that the content of our snippet appears inside the general stylesheet of the template.
 
 ## Step 9: Add Dependent Libraries
 
-Now that we know how to create snippets within Templates, we're going to load external libraries in the same way.
+Now that we know how to create snippets within Templates, let's load external libraries in the same way.
 
-For some of the sections of our Home we will need JS and CSS libraries. For example, to add animations in the Hero or testimonial slides.
+For some of the sections of our Home we're going to need JS and CSS libraries, for example to add animations in the Hero or testimonial slides.
 
 In the same way we created the snippet footer_css, we're going to create four new snippets to load the external libraries, where two will be CSS and two from JS. We will include each of them in the corresponding sheets with the snippet code.
 
@@ -5913,7 +5917,7 @@ In the same way we created the snippet footer_css, we're going to create four ne
 })
 ```
 
-Don't forget to add the animate_css and slick_css snippets to the stylesheet and wow_js and slick_js to the javascripts Template sheet.
+Don't forget to add the snippets <code>animate_css</code> and <code>slick_css</code> to the stylesheet and <code>wow_js</code> and <code> slick_js </code> to the javascripts Template.
 
 ## Step 10: Generate the menu
 
@@ -5979,7 +5983,7 @@ After completing our menu we save it and publish.
 
 ## Step 11: Modify Page Home
 
-Once you list the base Template, menu and site settings, we will start working on our Home. To do this we go to the [Page] section (/en/platform/channels/pages) and enter Home.
+Once you have ready the template base, menu, and site settings, let's start working on our Home. To do this we go to [Pages](/en/platform/channels/pages) and enter the Home page.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/page.png" style="margin: 30px 0;max-width: 300px;"> 
 
@@ -6024,11 +6028,11 @@ The first thing we're going to do is modify the HTML widget that already comes i
 </div>
 ```
 
-In this HTML we will use the [Liquid SKD] (/es/platform/content/public-api-reference.html #sdk -liquid) to connect [Modyo Channels] (/en/platform/channels) with [Modyo Content] (/en/platform/content).
+In this HTML we are going to use the [Liquid SDK] (/en/platform/content/public-api-reference.html#liquid-sdk) to connect [Modyo Channels](/en/platform/channels) with [Modyo Content](/en/platform/content).
 
-The call to the Liquid SDK is done through an assign as follows: <code> {% assign entries = spaces ['bank'] .types ['hero'] .entries | paginated: 1%} </code>, in which we assign the space and the Type that we had already created in the previous tutorial.
+The call to Liquid SDK is done through the following way: <code>{% assign entries = spaces['bank'].types['hero'].entries | paginated: 1 %}</code>, in which we assign to Entries the Space and the Type that we had already created in the previous tutorial.
 
-Once we're ready our HTML on the page, let's add the style in the snippet <b> home_css </b> that we had already created within Templates.
+Once our HTML is ready on the page, let's add the style in the snippet <code>home_css</code> that we had already created inside Templates.
 
 ```css
 /*** hero ***/
@@ -6096,13 +6100,13 @@ Once we're ready our HTML on the page, let's add the style in the snippet <b> ho
 }
 ```
 
-By having our Hero code, HTML in Page and CSS in Templates ready, we can [preview] (/es/platform/core/key-concepts.html #modo -preview) our work by activating Page and Templates in Draft in the preview mode bar.
+By having our Hero code, HTML on the Page, and CSS in Templates ready, we can [preview](/en/platform/core/key-concepts.html#preview-mode) our work by activating Page and Templates in Draft in the preview mode bar.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/preview.png" style="margin: 30px 0;"> 
 
 ## Step 12: News Widgets
 
-For the news section of our Home, we will create an HTML widget similar to Hero within our Page Home. In the tab <b> Add Widgets </b>, click on HTML and in our widget we paste the following code:
+For the news feed of our Home, we are going to create an HTML widget similar to Hero within our Home page. In the tab <b>+ New Widgets</b>, we click on HTML and in our widget paste the following code:
 
 ```html
 {% assign entries = spaces['bank'].types['news'].entries | paginated: 3 %}
@@ -6147,7 +6151,7 @@ For these Cards we don't need CSS as we only use Bootstrap helpers.
 
 ## Step 13: Benefits Widgets
 
-For the benefits we will follow the same logic of the already created widgets, adding a new HTML widget to the Page Home with the HTML code:
+For the benefits we'll follow the same logic as the widgets already created, adding a new HTML widget to Home with the HTML code:
 
 ```html
 {% assign entries = spaces['bank'].types['benefits'].entries | paginated: 7 %}
@@ -6212,7 +6216,7 @@ For the benefits we will follow the same logic of the already created widgets, a
 </div>
 ```
 
-And the CSS in the snippet <b> home_css </b> within Templates.
+And the CSS in the snippet <code>home_css</code> within Templates.
 
 ```css
 /** benefits **/
@@ -6238,9 +6242,9 @@ Remember that you can check how our Home is doing with the preview mode.
 
 ## Step 14: DYNAMIC APP Widgets
 
-The DYNAMIC APP widget is a simple HTML widget that is not connected to Content so it has no liquid assign.
+The DYNAMIC APP widget is an HTML widget that is not connected to Content so it does not have a liquid assign.
 
-Again we will create an HTML widget inside the Home Page and its respective CSS in the snippet <b> home_css </b>.
+We will create an HTML widget within the page Home and its respective CSS in the snippet <code>home_css</code>.
 
 ```html
 <div class="bg-white" id="app_home">
@@ -6280,11 +6284,11 @@ Again we will create an HTML widget inside the Home Page and its respective CSS 
 
 ## Step 15: Testimonial Widgets
 
-The testimonials widget is a bit more complex as we will use JS to generate the slide. That's why we'll create a widget within the [Widget Builder](/en/platform/channels/widgets.html) section.
+The testimonials widget is a bit more complex as we'll be using JS to generate the animation. That's why we'll create a widget within [Widget Builder](/en/platform/channels/widgets.html).
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;"/> 
 
-Widget Builder is where you can create micro frontends for your sites. To create one we just need to enter the aforementioned section, click on the button <b> New Widget </b> and we will assign it a name, which in our case is Testimonial. Once it's created, it will display three tabs, where you will have to paste the JS, CSS and HTML accordingly.
+The Widget Builder is where you can create micro frontends for your sites. To create one we just need to go to the Widget Builder section and click on the button <b>+ New Widget</b> and we will assign it a name, which in our case is Testimonial. When you create it, it will display three tabs, where you need to paste the JS, CSS, and HTML accordingly.
 
 <code>JS</code>
 
@@ -6379,9 +6383,9 @@ To display it in the Home we need to add it as a <b> Custom </b> widget and sear
 
 ## Step 16: Review and Publish
 
-Once all our Home widgets and CSS are finished, we will preview the work we have done in this Tutorial. Once you're happy with the results, we must publish the changes to now make everything available to our end users.
+Once all of our Home widgets and CSS are finished, we will review in preview mode the work we've done in this Tutorial. Once you're happy with the result we need to publish the changes to make our work available to our end users.
 
-To make a publication, we click the <b> Publish </b> button where a panel will open with the changes we have made.
+To make a publication, we click the button <b>Publish</b> where a panel with the changes we have made will open.
 
  <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/> 
 
