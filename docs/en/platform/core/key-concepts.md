@@ -20,8 +20,6 @@ They will be responsible for approving or rejecting the item, and will ultimatel
 
 Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
-[Imagen de etapas de revisión]
-
 This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
 
 The configuration of review rules is done independently for each site or space.
@@ -110,7 +108,7 @@ As a backup mechanism, Modyo automatically generates and stores different versio
 
 This is useful when, for some reason, an undue change is made, there is the possibility of reverting it through the platform.
 
-This system is available for Widgets, Pages, Navigation, Templates and Content.
+This system is available for Widgets, Pages, Navigation, Templates, and Spaces.
 
 ### Resource Versions
 
@@ -124,7 +122,7 @@ This version is the one that goes through the team review process when enabled, 
 
 This version stores the content that is visible on the site and is freely available to any user.
 
-In this state, internal resources such as Widgets and Templates can be used in the creation of any site or page.
+In this case, internal resources such as Widgets and Templates can already be used in the creation of any site or page.
 
 The published version does not necessarily have the same content as the editable version (except at the time of publication), as it may contain changes that are in the process of being tested or reviewed.
 
@@ -154,7 +152,7 @@ In the same way you can schedule a publication, you can schedule to unpublish an
 When the time comes to execute the scheduled actions, it may take a couple of minutes for Modyo to perform the action. We will send you an email when the action is complete.
 :::
 
-There are elements (home, navigation and templates) that cannot be unpublished, and by publishing them and scheduling to unpublish in conjunction with other elements, the last one will have no effect on these specific elements.
+There are elements (home, navigation, and templates) that cannot be unpublished. If you schedule an unpublish in conjunction with other elements, it will have no effect on these specific items.
 
 #### Approved
 
@@ -174,15 +172,15 @@ When one of the actions is applied, it will always use the version to the left. 
 
 #### Reset
 
-In this case, the backup will be copied to the editable version, losing all subsequent changes so that you can continue working on potential changes to this version before publishing again.
+In this case, the backup will be copied to the editable version, so all subsequent changes will be lost, so you can continue working on potential changes to that version to republish it.
 
 #### Rollback
 
-In this case, the backup will be copied directly to the published version of the item, without touching the editable version.
+In this case, the backup is returned directly to the published version of the item, without touching the editable version.
 
-This is especially useful when something was published by mistake, and it is necessary to return to some of the stable versions quickly, while continuing to work on solving the problems that the version with errors may have had.
+ This is useful when something was released by mistake and you need to revert to one of the stable versions, so that you can work on resolving problems that the buggy version may have had.
 
-::: danger Danger
+:::danger Danger
 Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
 :::
 
@@ -194,11 +192,11 @@ Locks is a feature in Modyo that allows you to modify a resource safely, without
 
 ### What elements do Locks use?
 
-Locks are mostly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where items can be edited, such as Settings and [Customers](/en/platform/customers/).
+Locks is mostly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but it can also be used in other sections where elements are edited such as Settings and [Customers](/en/platform/customers/).
 
 ### How to use Locks?
 
-Locks are implemented in different ways within the platform. In [Content](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can access a resource, with only one user being able to edit and save changes, while the others will only be able to see the latest saved version.
+Locks are deployed in different ways within the platform. In [Content](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can access a resource, with only one user able to edit and save those changes, while others will only see the latest version saved on the platform.
 
 If a second person tries to make a change, a message will appear indicating that the item already has changes and that what they are trying to modify is obsolete.
 
@@ -220,22 +218,22 @@ After taking control, the Administrator will only have two hours to make unsaved
 
 ## Preview mode
 
-The preview mode allows you to preview the result of changes to publishable items such as Entries, Pages, Navigation, Widgets or Templates; accessible in the upper right corner with the <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> icon. You can recognize that you are in preview mode when you see the bar at the top of the site.
+Preview mode allows you to preview the result of changes to publishable items such as Posts, Pages, Navigation, Widgets or Templates; accessible from the top right with the icon <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>. You can know that you are in preview mode, when you see the bar at the top of the site.
 
 ![Preview Bar](/assets/img/platform/preview-bar.png)
 
 The elements you can interact with in the preview bar are:
 
-* **Template selector**: Allows you to switch between published and editable versions of items in the template builder.
+* **Template selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.
 * **Content selector**: Allows you to switch between published and editable versions of items in the content application that are being used on the site through the Liquid Content SDK.
 * **Navigation selector**: Allows you to change between published and editable versions of items in the navigation builder.
 * **Page selector**: Allows you to switch between published and editable versions of items in the page builder.
 * **Content view selector**: This selector allows you to switch between the published and editable versions of the content entry being previewed in the custom content views. This view does not directly use the Liquid Content SDK, so the content in these views will not be affected by the Content SDK selector.
-* **Widget selector**: If you are previewing pages that contain custom widgets, you will find a list of the widgets that appear on the page, and you can select whether to display the editable or published version of each of them. Once you've completed your selection, click the "refresh" button for the widget settings to take effect.
+* **Widget Selector**: If you're previewing pages containing custom widgets, you'll find a list of widgets that appear on the page and you can select whether you want to view the editable or published version of each widget. Once you've completed the selection, click the “refresh” button to make the widget settings take effect.
 * **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
-* **Edit element**: Clicking this option will take you to the edit page of the item you are looking at, be it an entry, a page, a widget or a default template of the site.
-* **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in to the account's admin.
-* **Exit preview mode**: Closes the preview mode, removes the bar and leaves the tab in the current site url.
+* **Edit Item**: Clicking this will take you to the edit view of the item you're viewing, whether it's a post, a page, a widget, or a default site template.
+* **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in as the account's admin.
+* **Exit Preview Mode**: Close the preview mode, removing the bar and taking you to the current URL of the site.
 
 :::warning Warning
 Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
@@ -246,15 +244,16 @@ Changing the content selector in the preview bar will have no effect on the cont
 Modyo allows you to define global variables that you can use in all the sites where you have Liquid. This way you can, for example, share a code _snippet_ between sites.
 
 :::tip Tip
-You can use plain text, HTML code, JavaScript and CSS within the global variables. However, you cannot use Liquid code in a global variable. Keep in mind that the content of a global variable has a limit of 65,535 characters.
+You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
 :::
 
-You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu in the site settings, or in each of the custom widgets of the builder widget.
+You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu, in the site settings, or in each of the custom widgets in the widget builder.
 
 :::warning Warning
-When using global variables, always take as preference the variables defined at the lowest level, being first the variables defined in the widget, then the ones defined in the site and then the variables defined at the account level, so you must be careful when defining variables in widgets or the site with the same name as the account variables.
+When using global variables, the variables defined at the deepest level will always be taken if they exist, with variables defined in the widget first, then those defined in the site, and finally the variables defined at the account level, be careful when defining variables in widgets or in the site with the same name as the variables in the account.
 :::
 
 :::danger Danger
-The global variables do not have a publishing, versioning or team review workflow, and only the account and site administrators can modify them, so you should consider that when you make a change in the value of these, it will be reflected immediately wherever they are being used. This does not apply to the variables defined in the widgets, since the widgets and pages do have a publishing flow.
+Global variables do not have a publishing, versioning, or team review workflow. Only account and site administrators can modify them, be careful when making changes to these settings, as they will be immediately reflected wherever they are being used.
+This does not apply to variables defined in widgets because widgets and pages do have a publishing flow.
 :::
