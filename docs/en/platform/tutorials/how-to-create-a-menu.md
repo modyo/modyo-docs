@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Creating Mega Menu 
+# Creating a Mega Menu
 
 ## Introduction
 
-Welcome to a new tutorial from the Modyo training series. In this tutorial we're going to focus on [Modyo Channels] (/en/platform/channels) using the [Navigation] modules (/en/platform/channels/navigation.html) and [Templates] (/en/platform/channels/templates.html) to create a mega menu on our site.
+Welcome to a tutorial in the Modyo training series. In this tutorial we're going to focus on [Modyo Channels](/en/platform/channels) using the [Navigation](/en/platform/channels/navigation.html) and [Templates](/en/platform/channels/templates.html) modules to create a mega menu on our site.
 
 Navigation is a tool that helps us develop in a simple way and can then be managed in a better way. 
 
@@ -18,213 +18,213 @@ In this tutorial we will continue to use the Dynamic Bank site.
 
 ## Prerequisites
 
-To start this tutorial we must have completed the tutorial on [Creation Home Dynamic Bank] (/en/platform/tutorials/how-to-create-home) and optionally [Dynamic Bank Content] (/en/platform/tutorials/how-to-create-content) to view the full Home with its contents. And just like in the previous tutorials you should have knowledge about HTML, CSS, JS and the Modyo platform.
+To begin this tutorial you must have completed the [Creating Home Dynamic Bank](/en/platform/tutorials/how-to-create-home) tutorial and optionally [Dynamic Bank Content](/en/platform/tutorials/how-to-create-content) to see the full Home page with its contents. As in the previous tutorials you should have previous experience with HTML, CSS, JS, and the Modyo platform.
 
 ## Step 1: Complete the Menu
 
 In the previous Tutorials we created the Dynamic Bank site, now we will generate a more complex menu, for this we will go to our site, enter the 
-[Navigation] (/es/platform/channels/navigation.html) enter the menu <code> Main </code> and fill in with the following fields:
+[Navigation](/en/platform/channels/navigation.html) enter the menu <code>Main</code> and fill in with the following fields:
 
- <table> 
- <tr> 
- <th style="text-align: left"> Name </th> 
- <th style="text-align: left"> Description </th> 
- <th style="text-align: left"> Classes </th> 
- <th style="text-align: left"> Link </th> 
- <th style="text-align: left"> URL </th> 
- <th style="text-align: left"> Parent </th> 
- </tr> 
- <tr> 
- <td> 
- Home
- </td> 
- <td> </td> 
- <td> </td> 
- <td> 
- Home Layout
- </td> 
- <td> </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Products
- </td> 
- <td> </td> 
- <td> megamenu </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Arrangement
- </td> 
- <td> </td> 
- <td> </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Products </td> 
- </tr> 
- <tr> 
- <td> 
- Current Account 
- </td> 
- <td> Anywhere you want with Dynamic </td> 
- <td> current account </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Plans </td> 
- </tr> 
- <tr> 
- <td> 
- Dynamic Plan
- </td> 
- <td> We adapt to your needs </td> 
- <td> plan-dynamic </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Plans </td> 
- </tr> 
- <tr> 
- <td> 
- Cards
- </td> 
- <td> </td> 
- <td> </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Products </td> 
- </tr> 
- <tr> 
- <td> 
- Credit Cards
- </td> 
- <td> Enjoy all our benefits </td> 
- <td> credit </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> </td> cards 
- </tr> 
- <tr> 
- <td> 
- Debit cards
- </td> 
- <td> Make purchases in stores </td> 
- <td> debit </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> </td> cards 
- </tr> 
- <tr> 
- <td> 
- Credits
- </td> 
- <td> </td> 
- <td> </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Products </td> 
- </tr> 
- <tr> 
- <td> 
- Mortgage Credit
- </td> 
- <td> The home you always dreamed of </td> 
- <td> mortgage </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Credits </td> 
- </tr> 
- <tr> 
- <td> 
- Consumer Credit
- </td> 
- <td> Your projects are ours </td> 
- <td> consumption </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> Credits </td> 
- </tr> 
- <tr> 
- <td> 
- Benefits
- </td> 
- <td> </td> 
- <td> </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Branches
- </td> 
- <td> </td> 
- <td> </td> 
- <td> 
- Custom URL
- </td> 
- <td> 
- #
- </td> 
- <td> </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <th style="text-align: left">Name</th>
+  <th style="text-align: left">Description</th>
+  <th style="text-align: left">Classes</th>
+  <th style="text-align: left">Link</th>
+  <th style="text-align: left">URL</th>
+  <th style="text-align: left">Parent</th>
+ </tr>
+ <tr>
+  <td>
+   Home
+  </td>
+  <td></td>
+  <td></td>
+  <td>
+   Home Layout
+  </td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Productos
+  </td>
+  <td></td>
+  <td>megamenu</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Planes
+  </td>
+  <td></td>
+  <td></td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Productos</td>
+ </tr>
+  <tr>
+  <td>
+   Cuenta Corriente 
+  </td>
+  <td>Donde quieras con Dynamic</td>
+  <td>cuenta-corriente</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Planes</td>
+ </tr>
+  <tr>
+  <td>
+   Plan Dynamic
+  </td>
+  <td>Nos adaptamos a tus necesidades</td>
+  <td>plan-dynamic</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Planes</td>
+ </tr>
+ <tr>
+  <td>
+   Tarjetas
+  </td>
+  <td></td>
+  <td></td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Productos</td>
+ </tr>
+ <tr>
+  <td>
+   Tarjetas de Crédito
+  </td>
+  <td>Disfruta todos nuestros beneficios</td>
+  <td>credito</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Tarjetas</td>
+ </tr>
+ <tr>
+  <td>
+   Tarjetas de Débito
+  </td>
+  <td>Realiza compras en comercios</td>
+  <td>debito</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Tarjetas</td>
+ </tr>
+ <tr>
+  <td>
+   Créditos
+  </td>
+  <td></td>
+  <td></td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Productos</td>
+ </tr>
+  <tr>
+  <td>
+   Crédito Hipotecario
+  </td>
+  <td>El hogar que siempre soñaste</td>
+  <td>hipotecario</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Créditos</td>
+ </tr>
+  <tr>
+  <td>
+   Crédito de Consumo
+  </td>
+  <td>Tus proyectos son los  nuestros</td>
+  <td>consumo</td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td>Créditos</td>
+ </tr>
+ <tr>
+  <td>
+   Beneficios
+  </td>
+  <td></td>
+  <td></td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Sucursales
+  </td>
+  <td></td>
+  <td></td>
+  <td>
+   Custom URL
+  </td>
+  <td>
+  #
+  </td>
+  <td></td>
+ </tr>
+</table>
 
-Which will give us a look like this:
+Which will give us the following look:
 
 <img src="/assets/img/tutorials/how-to-create-a-menu/menu.png" style="max-width: 700px;margin: auto 0;"/>
 
 After we have our navigation ready we save and publish.
 
-## Step 2: Create View in Templates
+## Step 2: Create view in Templates
 
-To make the change in the HTML menu we will go to the Template and on the Snippets tab we open the file <code> menu </code>.
+To make the change to the HTML of the menu we will go to Templates and on the Snippets tab open the file <code>menu</code>.
 
 ```html
 {% assign menu = menus['main'] %} 
@@ -303,7 +303,7 @@ To make the change in the HTML menu we will go to the Template and on the Snippe
 </ul>
 ```
 
-Create Snippet <code> megamenu_css </code> and add the following code and add the snippet in the Base Stylesheet of the Site.
+Create Snippet <code>megamenu_css</code> and add the following code and add the snippet in the Base Stylesheet of the Site.
 
 ```css
 .megamenu {
@@ -376,7 +376,7 @@ a.megamenu-item {
 }
 ```
 
-Add the images in the [Asset Manager] (/en/platform/content/asset-manager.html #selector -de-assets) and replace the background-image of each class with the <code> Asset URL </code>.
+Add the images in the [Asset Manager](/en/platform/content/asset-manager.html##assets-selector) and replace the background-image of each class with the <code>Asset URL</code>.
 
 <table>
   <tr>
@@ -411,7 +411,7 @@ Add the images in the [Asset Manager] (/en/platform/content/asset-manager.html #
   </tr>
 </table>
 
-Create snippet <code> menu_responsive </code> where we will paste the code from the menu that will go into the panel.
+Create snippet <code>menu_responsive</code> where we will paste the code from the menu that will go into the panel.
 
 ```html
 {% assign menu = menus['main'] %} 
@@ -520,7 +520,7 @@ Create snippet <code> menu_responsive </code> where we will paste the code from 
 </div>
 ```
 
-Modify code from the Snippet <code> Header </code> where we will add the snippet of <code> menu_responsive </code> we created a while ago.
+Modify Snippet code <code>Header</code> where we will add the snippet of <code>menu_responsive</code> that we created previously.
 
 ```html
 <header role="banner" id="header">
@@ -613,6 +613,6 @@ Modify code from the Snippet <code> Header </code> where we will add the snippet
 
 ## Conclusion
 
-Congratulations! Complete a new course in the Modyo tutorial series.
+Congratulations! You have completed a new course in the Modyo tutorial series.
 
-In this tutorial we focus on creating a menu from [Navigation] (/en/platform/channels/navigation.html) and then deploying the code in [Templates] (/en/platform/channels/templates.html).
+In this tutorial we focused on creating a menu from [Navigation](/en/platform/channels/navigation.html) and then deploying the code in [Templates](/en/platform/channels/templates.html).
