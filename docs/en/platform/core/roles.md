@@ -6,11 +6,11 @@ search: true
 
 ## Team
 
-All internal users of the platform make up the team, and each member of the platform can be assigned a specific role to unlock the full potential of the system.
+All internal platform users make up the team, and each team member can have a specific role to play in realizing the full potential of the system.
 
-To create and add a new team member to the platform, you must click on the "New" button at the top of your interface and complete the fields. Once the registration is completed an invitation will be sent to the user by email, you can choose whether to send the login password in the same message.
+To create an internal user, you must click the **+ New Team Member** button and fill in the fields. Once the registration invitation is sent to him by email, you can choose whether to send him his login password in the same message.
 
-To check all users, you can filter by their status and by their roles within the platform.
+To check all users, you can filter by their status and the roles assigned to them on the platform.
 
 If you want to deactivate an internal user, you must click on the action button to the right. If you want to edit their data, you can use the same button, or click on their name.
 
@@ -28,13 +28,13 @@ The rest of the tabs include visible or modifiable user information:
 
 ## Groups
 
-Groups allow you to streamline control access across different areas of Modyo, so that you can assign a default role to an area (account, spaces, realms, or sites) to multiple users at once. You can then add that user group in different contexts, allowing all users to acquire a group's role in the associated context.
+Groups allow you to streamline access control across Modyo, so you can assign a default role to a context (account, spaces, realms, or sites) to multiple users at once and then add that user group to different contexts, allowing all users to get the group's role in the associated context.
 
-To create a group, go to the "Groups" section of your account settings, give it a name, role, and start adding users to the group. Once it's saved, you can also go back and make changes.
+To create a group, go to the “Groups” section of the account settings, give it a name, role, and start adding users to the group. You can modify the name, role, and users that belong to the group once you save the changes.
 
 In addition, you can add or remove a user from existing groups by selecting the "Groups" section in each team member's profile.
 
-::: tip Tip
+:::tip Tip
 Keep in mind that if a user already has an associated role in a context (account, space, realm, or site) and you add them to a group with a higher privileged role, the user will gain the role with the highest authority.
 :::
 
@@ -52,26 +52,26 @@ The default roles that exist, depending on the given area of the platform:
 
 #### Account-level roles:
 
-- **Default user**: You have all existing permissions. except for the ability to edit the settings within the given context. You must be invited to an area of the platform in order to access its functionalities.
+- **Default user**: You have all existing permissions, except editing the settings for each context. This user must be invited to each context to access its functionality.
 - **Default admin**: You have all existing permissions, but you must be invited to an area of the platform in order to access its functionalities.
 - **Owner**: You have all existing permissions and you can access all areas of the platform without needing to be invited to them.
 
 #### Site-level roles:
 
-- **Site developer**: Can only edit resources (cannot publish, delete, rollback or edit the configuration).
+- **Site developer**: You can only edit resources (you cannot publish, delete, roll back, or edit the configuration).
 - **Site reviewer**: A site admin, but without the ability to edit the site configuration.
 - **Site admin**: You have all the permissions at the level of a site, but you cannot create new sites.
 
 #### Space-level roles:
 
-- **Space writer**: Can only edit content (cannot publish, delete, rollback or edit the configuration).
+- **Space writer**: You can only edit content (you cannot publish, delete, roll back, or edit settings).
 - **Space editor**: A space admin, but without the ability to edit the space configuration. This role does not have asset permissions, nor can it create types.
-- **Space admin**: You have all the permissions at the level of a space, but you cannot create new spaces. Space admins can create and delete assets.
+- **Space admin**: You have all the permissions at the level of a space, you can create and delete assets, but you cannot create new spaces.
 
 The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
 ### Access to applications:
-Since we have roles that allow unrestricted access to all applications, Modyo allows you to restrict access to certain applications through the configuration of team members. So, for example, you can give a user full, unrestricted access (Owner) but only within the context of the Channels application.
+Since we have roles that allow access to all applications without restriction, Modyo allows you to restrict access to certain applications through the team member settings, so you can give a user full access (Owner) but only in the Channels app.
 
 ### Assign one role per account
 
