@@ -26,7 +26,7 @@ To be able to integrate with Facebook, you must have:
 - Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
 
 
-You can obtain these by creating a Facebook application with login permissions. You can learn more about how to create and configure a Facebook application in the [Official Documentation](https://developers.facebook.com/docs/facebook-login/).
+You can get these values by creating a Facebook app with login permissions. You can learn more about how to create and configure a Facebook app in their [official documentation](https://developers.facebook.com/docs/facebook-login/).
 
 ### Google
 
@@ -35,7 +35,7 @@ In order to integrate Google login with Modyo, you must have:
 - Application ID
 - Key
 
-These values can be obtained after creating an application in the Google Platform with login permissions. You can learn more about how to create and configure a Google application in your [Official Documentation](https://developers.google.com/identity/sign-in/web/sign-in).
+These values can be obtained after creating a Google app with login permissions. You can learn more about how to create and configure a Google app in their [official documentation](https://developers.google.com/identity/sign-in/web/sign-in).
 
 You should keep in mind that the callback URL (_Callback URI_) is available at the end of the form. You need to use that URL in the application or project that you create in Google to be able to complete the login flow correctly.
 
@@ -68,7 +68,7 @@ In order to integrate a login with SAML in Modyo, you will need the following in
 - Parameters of the identity service provider URL
 - Identity provider certificate
 - Signature of the identity provider certificate
-- Name identification format
+- Name ID format
 - Service callback URL: By default this URL is `account_url/admin/auth/saml/callback`
 - Logo: As in LDAP, this image will be displayed as a service logo next to the service name in the login form.
 
@@ -92,10 +92,11 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
 :::warning Warning
-For a successful OpenID Connect integration, the OIDC Provider must have an up-to-date SSL certificate, the Modyo client uses TLS 1.3 and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
+For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
+
 :::warning Warning
-The delegated token API via `/auth/openidc/access_token` has been deprecated in favor of `/api/profile/me`.
+The API for obtaining delegated access tokens via `/auth/openidc/access_token` is deprecated and replaced by `/api/profile/me`.
 :::
 
 ## Using Keycloak
@@ -142,15 +143,15 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
    * **Name**: Use a meaningful name, for example, `modyo-production`.
    * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include personal Microsoft accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
    * **Redirect URI**: Use the URL related to the `/auth/openidc/callback` account.
-4. Once the application is created, go to **App registrations> modyo-production** and get the **Application ID** and **Directory ID**.
-5. Go to **App registrations> Certificates & secrets** and create a new secret with the **New client secret** button.
+4. Once the application is created, go to **App registrations > modyo-production** and get the **Application ID** and **Directory ID**.
+5. Go to **App registrations > Certificates & secrets** and create a new secret with the **New client secret** button.
 
 ### Integration Settings
 
 The following configuration is valid for both Team and Customer user integrations.
 
-1. Access **Configuration/Configuration of customers> Integrations> OpenID Connect**, and complete **Client ID** and **Secret** with the credentials obtained from the Azure portal.
-2. In the Azure console go to **App registrations> Endpoints** and get URLs for **Authorization endpoint** and **Token endpoint**. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
+1. Access **Configuration/Configuration of customers > Integrations > OpenID Connect**, and complete **Client ID** and **Secret** with the credentials obtained from the Azure portal.
+2. In the Azure console go to **App registrations > Endpoints** and get URLs for **Authorization endpoint** and **Token endpoint**. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
 3. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 4. Enable optional integration features.
    |                                        |                                                                                                                                                                                                                        |
@@ -164,9 +165,9 @@ The following configuration is valid for both Team and Customer user integration
 
 Modyo allows you to synchronize attributes and other properties of Customer users through standard and additional _claims_ through OpenID Connect.
 
-1. In **Clients> Mappers** create a new **Protocol Mapper** with the attribute or property of the user. Make sure **Add to userinfo** is enabled.
-2. In **Customers> Customer settings> Custom fields** add a new **Custom Field** with a data type equivalent to the claim.
-3. In **Customers> Customer settings> Integrations> OpenID Connect** enable **Enable _claims_ synchronization on login** and add _claims_ mappings for each of your _claims_.
+1. In **Clients > Mappers** create a new **Protocol Mapper** with the attribute or property of the user. Make sure **Add to userinfo** is enabled.
+2. In **Customers > Customer settings > Custom fields** add a new **Custom Field** with a data type equivalent to the claim.
+3. In **Customers > Customer settings > Integrations > OpenID Connect** enable **Enable _claims_ synchronization on login** and add _claims_ mappings for each of your _claims_.
 
 
 
