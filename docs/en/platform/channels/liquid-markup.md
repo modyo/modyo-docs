@@ -14,13 +14,13 @@ Liquid is a template engine which was written with very specific requirements:
 
 * You want to allow your users to edit the appearance of your application but don't want them to run **insecure code on your server**.
 * You want to render templates directly from a database.
-* You like smarty (PHP) style template engines.
+* You like smart style template engines (PHP).
 * You need a template engine which does HTML just as well as emails.
 * You don't like the markup of your current templating engine.
 
-### What does it look like?
+### What does Liquid look like?
 
-```html
+```liquid
 <ul id="products">
   {% for product in products %}
     <li>
@@ -525,7 +525,7 @@ If you want to combine several strings into one and save it in one variable, you
 
 ## Drops
 
-Modyo has drops available for different contexts within which you can find drops for the account, content, channels and customers.
+Modyo has drops available for different contexts within, for example you can find drops for account, content, channels, and customers.
 
 ### Account Drops
 The drops available globally are:
