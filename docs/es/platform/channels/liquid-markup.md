@@ -20,7 +20,7 @@ Liquid Markup es un motor de plantillas que está escrito con requerimientos muy
 
 ### ¿Cómo se ve Liquid?
 
-```html
+```liquid
 <ul id="products">
   {% for product in products %}
     <li>
@@ -525,7 +525,7 @@ Si quieres combinar varios strings en uno solo y guardarlo en una variable, pued
 
 ## Drops
 
-Modyo cuenta con drops disponibles para distintos contextos dentro de los cuales puedes encontrar drops para la cuenta, content, channels y customers.
+Modyo cuenta con drops disponibles para distintos contextos dentro de los cuales puedes encontrar drops para la cuenta, content, channels, y customers.
 
 ### Drops de cuenta
 Los drops disponibles a nivel global son:

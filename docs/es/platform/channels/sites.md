@@ -6,7 +6,7 @@ search: true
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
-Es aquí donde debes operar para crear canales digitales dentro de la plataforma. En este caso, la operación de sitios implica todo el desarrollo, diseño y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección [Content](/es/platform/content/).
+Aquí es donde debes operar para crear canales digitales dentro de la plataforma. En este caso, la operación de sitios implica todo el desarrollo, diseño, y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección [Content](/es/platform/content/).
 
 Al entrar, puedes ver que existen 4 estados:
 
@@ -26,29 +26,15 @@ Después de ello, puedes verlo en modo "Habilitado", lo que significa que está 
 En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
 :::
 
-## Revisión y publicación conjunta
-
-Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista.
-
-Si quieres publicar múltiples elementos en un solo paso, debes presionar el botón "Publicar" desde las páginas, navegación, widgets o templates y debes marcar en el listado todos los elementos que quieras publicar y luego presionar el botón para publicar nuevamente.
-
-:::warning Atención
-En el listado aparecerán todos los elementos que tienen cambios pendientes por publicar, por lo que si algún elemento no aparece en el listado, es muy probable que aún no tenga cambios por publicar.
-
-Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados.
-
-En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar publicación" permitiendo que el elemento pase directamente a la vista de publicación.
-:::
-
 ## Configuración de un Sitio
 
-La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores y administradores del sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
+La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores, y administradores del sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
 ### General
 
-Dentro de esta sección, puedes configurar los siguientes datos:
+Dentro de esta sección puedes configurar los siguientes datos:
 
 - **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
@@ -62,7 +48,7 @@ Dentro de esta sección, puedes configurar los siguientes datos:
 - **Borrar**: Esta opción te permite eliminar definitivamente un sitio y todo sus elementos.
 
 :::danger Peligro
-Esta opción es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del sitio. Deberás ingresar el nombre textual del sitio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al sitio ni a sus elementos.
+Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. Al presionar el botón de eliminado, el sistema te preguntará por el nombre del sitio. Deberás ingresar el nombre textual del sitio que estés eliminando para poder ejecutar la acción. Una vez confirmada la acción, no podrás volver a acceder al sitio ni a sus elementos.
 :::
 
 #### Google Tag Manager
@@ -110,7 +96,46 @@ style="display:none;visibility:hidden">
 
 Con esto listo, cuando haya un valor asociado al campo **Identificador de Google Tag Manager** de la configuración General del sitio, los scripts se inyectarán de forma automática y podrás comenzar a crear eventos en Google Tag Manager para registrar acciones de tus usuarios.
 
-### PWA
+#### Privacidad
+
+<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+Restricciones permite configurar la privacidad del sitio.
+
+- Si el sitio es público, entonces todos pueden ver el sitio.
+- Si el sitio es privado, solo usuarios con una sesión de Modyo podrán ver el sitio.
+- Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
+- Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
+
+
+## SEO
+
+<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. Los usuarios dependen de una buena configuración de SEO para llegar al sitio.
+
+Las opciones a configurar son:
+
+- **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
+- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca.
+- **Sitemap**: Este archivo permite a los motores de búsqueda indexar mejor el contenido de su sitio. Modyo actualiza automáticamente su archivo de mapa de sitio por defecto, pero también puede modificarlo manualmente para que se centre sólo en una página y un contenido determinados.
+- **Robots.txt**: Este archivo forma parte del Protocolo de Exclusión de Robots (REP), un grupo de normas web que regulan la forma en que los robots rastrean la web, acceden e indexan el contenido y lo sirven a los usuarios. En la práctica, este archivo determina si ciertos agentes de usuario (software de rastreo web) pueden o no rastrear partes de un sitio web. Estas instrucciones de rastreo se especifican "permitiendo" o "prohibiendo" el comportamiento de ciertos (o todos) agentes de usuario. Puede modificar este archivo para proporcionar instrucciones personalizadas a los rastreadores de sitios.
+
+:::tip Tip
+Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado). De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
+:::
+
+- **Meta tags**: Te permite configurar meta tags para todos los pages y sus valores por defecto.
+
+:::tip Tip
+Al añadir un meta tag a todos los pages a través de la configuración de SEO del sitio, se añadirá a la versión editable de todas las páginas de tal forma que tendrás que publicar cada página para que los nuevos meta tags tengan efecto en el sitio.
+:::
+
+:::warning Atención
+Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán añadir meta tags para todas las páginas, sin embargo, los developers del sitio podrán añadir y eliminar meta tags en las páginas y modificar sus valores página por página.
+:::
+
+## PWA
 
 Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén armando. Para ello, otorga dos opciones para implementarlos fácilmente.
 
@@ -124,7 +149,7 @@ El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/es/platform/channels/templates.html), en el snippet ```head```.
+El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/es/platform/channels/templates.html), en el snippet ``head``.
 
 Se puede crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cada uno de los cambios sin tener que salir de la vista.
 
@@ -155,45 +180,7 @@ Si se desactiva el Service Worker, la página seguirá andando sólo en sus func
 Si el código no se personaliza o no se guarda, el sitio no contará con las funciones que estás diseñando.
 :::
 
-### SEO
-
-<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
-
-El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. De una buena configuración depende si los usuarios llegan al sitio a través de ellos.
-
-Las opciones a configurar son:
-
-- **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
-- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca.
-- **Sitemap**: Este archivo permite a los motores de búsqueda indexar mejor el contenido de su sitio. Modyo actualiza automáticamente su archivo de mapa de sitio por defecto, pero también puede modificarlo manualmente para que se centre sólo en una página y un contenido determinados.
-- **Robots.txt**: Este archivo forma parte del Protocolo de Exclusión de Robots (REP), un grupo de normas web que regulan la forma en que los robots rastrean la web, acceden e indexan el contenido y lo sirven a los usuarios. En la práctica, este archivo determina si ciertos agentes de usuario (software de rastreo web) pueden o no rastrear partes de un sitio web. Estas instrucciones de rastreo se especifican "permitiendo" o "prohibiendo" el comportamiento de ciertos (o todos) agentes de usuario. Puede modificar este archivo para proporcionar instrucciones personalizadas a los rastreadores de sitios.
-
-:::tip Tip
-Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado). De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
-:::
-
-- **Meta tags**: Te permite configurar meta tags para todos los pages y sus valores por defecto.
-
-:::tip Tip
-Al añadir un meta tag a todos los pages a través de la configuración de SEO del sitio, se añadirá a la versión editable de todas las páginas, de tal forma que tendrás que publicar cada página para que los nuevos meta tags tengan efecto en el sitio.
-:::
-
-:::warning Atención
-Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán añadir meta tags para todas las páginas, sin embargo, los developers del sitio podrán añadir y eliminar meta tags en las páginas y modificar sus valores página por página.
-:::
-
-### Restricciones
-
-<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
-
-Restricciones permite configurar la privacidad del sitio.
-
-- Si el sitio es público, entonces todos pueden ver el sitio.
-- Si el sitio es privado, solo usuarios con una sesión de Modyo podrán ver el sitio.
-- Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
-- Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
-
-### Dominios
+## Dominios
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -275,11 +262,52 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 </tr></table>
 :::
 
-### Variables del sitio
+## Stages
 
-Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada, con un valor específico para el sitio en particular.
+Agregar stages en tu sitio te permite trabajar nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-### Miembros del Equipo
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para visualizar cambios de inmediato. Al finalizar los cambios dentro de un stage, podrán sincronizar los cambios desde el stage `main`.
+
+:::warning Atención
+Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
+:::
+
+### Agregar un nuevo stage
+
+Para agregar un nuevo stage a tu sitio, sigue estos pasos:
+
+1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
+1. Expande **Configuración del sitio**, haz click en **Stages**.
+1. Haz click en **+ Nuevo Stage**
+1. Selecciona cual será la base del stage y escribe el nombre.
+1. Haz click en **Crear**.
+
+### Sincronizar un stage
+
+Para sincronizar un stage, sigue estos pasos:
+
+1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
+1. Haz click en **Overview**.
+1. En el apartado de **Sincronización**, selecciona los stages que quieres sincronizar.
+1. En la ventana que aparece, verás todos los cambios entre los stages. Selecciona los cambios que quieres sincronizar.
+1. Haz click en **Sincronizar**.
+
+
+## Revisión en equipo
+
+Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista.
+
+Si quieres publicar múltiples elementos en un solo paso, debes presionar el botón "Publicar" desde las páginas, navegación, widgets, o templates y debes marcar en el listado todos los elementos que quieras publicar y luego presionar el botón para publicar nuevamente.
+
+:::warning Atención
+En el listado aparecerán todos los elementos que tienen cambios pendientes por publicar, por lo que si algún elemento no aparece en el listado, es porque aún no tenga cambios por publicar.
+
+Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados.
+
+En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar publicación" permitiendo que el elemento pase directamente a la vista de publicación.
+:::
+
+## Miembros del Equipo
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -287,7 +315,14 @@ Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que t
 
 Para ello, el administrador que creó el sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-Para añadir un usuario al sitio, selecciona el botón primario **+ Nuevo** en la parte superior derecha de la vista, en el modal selecciona a un administrador y asígnale un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del sitio.
+### Agregar un nuevo miembro
+Para agregar un nuevo miembro para tu sitio, sigue estos pasos:
+
+1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en tu sitio.
+1. Expande **Configuración de Sitio** y haz click en **Miembros del Equipo**.
+1. Haz click en el botón **+ Agregar Miembro**.
+1. Busca el usuario que quieres agregar a tu sitio y selecciona un rol.
+1. Haz click en **Añadir**. 
 
 Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
@@ -304,13 +339,13 @@ Los roles disponibles son:
 
 Es el usuario a cargo del desarrollo estructural de los recursos, la creación y edición de contenido. Todo lo que haga, tiene que pasar a revisión.
 
-Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback) ni cambiar la configuración.
+Este usuario no puede publicar, eliminar, volver a versiones anteriores de recursos (Rollback), ni cambiar la configuración.
 
 Existe una variación de este rol con el nombre "CLI" que además de los permisos de desarrollador, les permite hacer push de widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 
-Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho, para después publicar.
+Corrigen el trabajo hecho por Developers, aprobando o desechando lo que ya está hecho para después publicar.
 
 No puede editar la configuración del sitio.
 
@@ -322,7 +357,7 @@ Este usuario es distinto al Default Admin. El Site Admin solo puede configurar e
 
 En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tengan roles anteriores. Para ello, solo se debe hacer clic en el usuario y la acción de Borrar.
 
-### Redirecciones personalizadas
+## Redirecciones personalizadas
 
 Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio.
 
@@ -352,19 +387,19 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
 
-## Security headers
+#### Security headers
 
 Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
-Esta acción no se puede deshacer, pero cuando está habilitada, tienes el control total de los encabezados que desea usar.
+Esta acción no se puede deshacer. Al ser habilitada, tendrás el control total de los encabezados que desees usar.
 
-### HTTP Strict Transport Security (HSTS)
+#### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que el sitio se debe acceder usando solo HTTPS.
 * **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se accede al sitio mediante HTTPS.
 * **Precarga**: Incluye la directiva de precarga. Para más información consulta [HSTS Preload List Submission](https://hstspreload.org/).
 * **Incluir subdominios**: Utiliza la regla HSTS también para todos los subdominios del sitio.
 
-### Referrer-Policy
+#### Referrer-Policy
 
 El _header_ `Referer` contiene información de la página web anterior desde al cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
 
@@ -377,26 +412,27 @@ El _header_ `Referer` contiene información de la página web anterior desde al 
 * **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros .
 * **unsafe-url**: Envía siempre la información de _referrer_.
 
-### X-Frame-Options
+#### X-Frame-Options
 
-Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed` or `object`.
+Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: El sitio no se puede mostrar en un _frame_.
 * **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
 
-### X-Content-Type-Options
+#### X-Content-Type-Options
 
 Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type` para evitar _MIME type sniffing_.
 
-### Content-Security-Policy
+#### Content-Security-Policy
 
 Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
+
 Especifica libremente tu política de seguridad de contenido en el área de texto; para obtener una guía completa sobre cómo escribir su política, consulta [Content Security Policy (CSP) de la MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html) y [Asset Manager](/es/platform/content/asset-manager.html).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html), y [Asset Manager](/es/platform/content/asset-manager.html).
 :::
 
-Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo se cargan de fuentes confiables y requiera que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
+Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se cargan de fuentes confiables y requiera que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
@@ -419,14 +455,18 @@ Hay varias herramientas para ayudarte a diseñar una política de seguridad sól
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
-### Permissions-Policy
+#### Permissions-Policy
 
 Permite o niega el uso de funciones y APIs del navegador para el sitio, por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos. Para obtener una lista completa de las funciones compatibles con los navegadores, consulte [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
-### X-XSS-Protection
+#### X-XSS-Protection
 
 Evita que las páginas se carguen cuando el navegador detecta un ataque de _cross-site scripting_. Esta protección no es necesaria con los navegadores modernos cuando se implementa una [Content-Security-Policy](/es/platform/channels/sites.html#content-security-policy) estricta, pero algunos inspectores de seguridad van a esperar la presencia de este _header_.
 
 * **0**: Deshabilita XSS _filtering_.
 * **1**: Habilita XSS _filtering_, quitando las partes inseguras.
 * **1; mode=block**: Habilita XSS _filtering_, impidiendo el _rendering_ de la página.
+
+## Variables del sitio
+
+Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada con un valor específico para el sitio en particular.
