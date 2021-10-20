@@ -8,9 +8,9 @@ search: true
 
 Welcome to a new tutorial of the Modyo training series. In this tutorial we will focus on [Modyo Channels] (/en/platform/channels) where we will create a view to deploy our created entries in [Modyo Content] (/en/platform/content).
 
-The link between Content and Channels is one of the most important functionalities when it comes to having dynamic sites and easy to manage by anyone.
+The link between Content and Channels is one of the most important features when it comes to having dynamic sites that are easy to manage by anyone.
 
-In this tutorial we will continue to use the fictitious brand “Dynamic Bank”, but now we will focus on the detail of the benefits.
+In this tutorial we will continue to use the fictional “Dynamic Bank” brand, but now we will focus on the detailed view of the benefits.
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
@@ -18,13 +18,13 @@ In this tutorial we will continue to use the fictitious brand “Dynamic Bank”
 
 ## Prerequisite
 
-To start this tutorial we must have completed the following tutorials: [Dynamic Bank Content] (/en/platform/tutorials/how-to-create-content) and [Creation Home Dynamic Bank] (/en/platform/tutorials/how-to-create-home). And as in the previous tutorials you should have knowledge about HTML, CSS, JS and the Modyo platform.
+To begin this tutorial we must have completed the following tutorials: [Dynamic Bank Content](/en/platform/tutorials/how-to-create-content) and [Creation Home Dynamic Bank](/en/platform/tutorials/how-to-create-home). And just like in previous tutorials you should have knowledge about HTML, CSS, JS, and the Modyo platform.
 
 ## Step 1: Add New Fields to Benefits
 
 In the Content Creation Tutorial, we created the [Space] (/en/platform/content/space) Bank, the [Type] (/en/platform/content/types) Benefits, and the [Enries] (/en/platform/content/entries). We will now use this Type, but adding the necessary fields to generate its detail according to the Figma design.
 
-To modify the Type <b> Benefits </b> we will enter the Content module, select our space and once inside, enter Types and select the corresponding Type. To the existing fields (Cover and Excerpt) we will add the following fields:
+To modify the Type <b>Benefits</b> we are going to enter the Content module, select our Space, enter Types and select the corresponding Type. To the existing fields (Cover and Excerpt) we are going to add the following fields:
 
  <table> 
  <tr> <th style="text-align: left;"> Field </th> <th style="text-align: left;"> Name </th> </tr> 
@@ -84,57 +84,57 @@ After we have our Type with all the fields we need, we will fill in an entry so 
 
 For this case we will use the Dynamic Cine entry:
 
- <table> 
- <tr> <th style="text-align: left;"> Field </th> <th style="text-align: left;"> </th> </tr> 
- <tr> 
- <td> 
- Short description
- </td> 
- <td> 
- 40% off tickets every Friday.
- </td> 
- </tr> 
- <tr> 
- <td> 
- Logo
- </td> 
- <td> 
- <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- Description
- </td> 
- <td> 
- Enjoy 40% tickets for the best Dynamic Cinema billboard every Friday, take advantage of this exclusive benefits for Dynamic Bank customers Paying with your Credit or Debit Cards.
- </td> 
- </tr> 
- <tr> 
- <td> 
- Commercial terms
- </td> 
- <td> 
- Benefit is valid for Dynamic Bank customers when paying with their Credit or Debit Cards on Friday tickets with a maximum of 8 daily tickets per holder customer.
- </td> 
- </tr> 
- <tr> 
- <td> 
- Validity
- </td> 
- <td> 
- From January 1 to December 31, 2021
- </td> 
- </tr> 
- <tr> 
- <td> 
- Location
- </td> 
- <td> 
- Add location example
- </td> 
- </tr> 
- </table> 
+<table>
+<tr><th style="text-align: left;">Field</th> <th style="text-align: left;"></th></tr> 
+<tr>
+  <td>
+    Short description
+  </td>
+  <td>
+    40% off in admissions every Friday.
+  </td>
+</tr>
+<tr>
+  <td>
+    Logo
+  </td>
+  <td>
+    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+</tr>
+<tr>
+  <td>
+    Description
+  </td>
+  <td>
+    Enjoy 40% off in admissions every Friday to enjoy the best selection of Dynamic Cinema, enjoy this exclusive benefits for Dynamic Bank clients paying with your debit or credit cards.
+  </td>
+</tr>
+<tr>
+  <td>
+    Commercial terms
+  </td>
+  <td>
+    Benefit valid for Dynamic Bank clients paying their admission with their debit or credit cards every Friday with a maximum of 8 tickets per client.
+  </td>
+</tr>
+<tr>
+  <td>
+    Validity
+  </td>
+  <td>
+    January 1st to December 31st, 2021
+  </td>
+</tr>
+<tr>
+  <td>
+    Location
+  </td>
+  <td>
+    Santiago, Chile
+  </td>
+</tr>
+</table>
 
 Remember to post your changes so they are reflected.
 
@@ -142,11 +142,11 @@ Remember to post your changes so they are reflected.
 
 Once our content is ready, we will develop your [Custom View] (/es/platform/channels/templates.html #vistas -for-content) within our site, in order to generate dynamic Pages connected to Content.
 
-For this, we will re-enter Templates within our site, and in the Views section in the Custom section we click on <b> + </b>.
+For this, we will go back to Templates within our site, and in the Views section in the Custom section we click on <b> + </b>.
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
 
-When you follow the panel we must enter a Path, which is the url that will have nested our content, which in our case will be <b>benefit</b>, and select our Space <b>Bank</b> and Type <b>Benefits</b>.
+When opening the panel we must enter a Path, which is the URL that will have nested our content, which in our case will be <b> benefit </b>, and select our Space <b> Bank </b> and Type <b> z0 Benefits </b>.
 
 To make it look like in our design, we're going to copy the following HTML replacing the code that comes as an example.
 
@@ -268,11 +268,11 @@ Now that we already have our Space and Type associated with a site, we will be a
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
 
-Within the modal click on <b> Preview on site </b> and select the site where we did the custom view inside the dropdown:
+Within the modal click on <b> Preview on site </b> and select the site where we did the custom view within the dropdown:
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
 
-Selecting it in a new tab will open the preview of the entry on the site, so that you can review the changes to the site.
+When you select it, in a new tab we will open the preview of the entry on the site, so that you can review the changes to the site.
 
 ## Opinion
 
