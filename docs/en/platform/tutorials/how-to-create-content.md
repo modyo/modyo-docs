@@ -26,7 +26,7 @@ Don't have a Modyo account? You can request an account from your company's platf
 
 ## Step 1: Create a Content Space
 
-Once you log into Modyo with your account, we will go to the [Modyo Content] module (/en/platform/content) to [create our first space] (/es/platform/content/spaces.html #crear -a-space), which we will call **"Bank"**, and select the language as **English**.
+Once you log into Modyo with your account, we will go to [Modyo Content](/en/platform/content) to [create our first space](/en/platform/content/spaces.html#create-a-space), which we will call **"Bank"**, and select the language **English**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
 
@@ -34,172 +34,168 @@ Once you log into Modyo with your account, we will go to the [Modyo Content] mod
 
 ## Step 2: Create "Hero" Type 
 
-Now we need to create our first [content type] (/en/platform/content/types.html #types-content) in our **"Bank"** space.
-Once you are in this space, go to the **Types** section and click the top right button that says **"+ New Type"**.
+Now we need to create our first [content type] (/es/platform/content/types.html #tipos of content) in our **"Bank"** space.
+Once you are in this space, you should go to the**Types** section and click the top right button that says **"+ New Type"**.
 
 From there, we generate our first Type called **"Hero"** with the following fields:
 
- <table> 
- <tr> 
- <th style="text-align: left"> Field Type </th> 
- <th style="text-align: left"> Name </th> 
- <th style="text-align: left"> Values that we will allow </th> 
- </tr> 
- <tr> 
- <td> 
- Asset
- </td> 
- <td> 
- Cover
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Text file
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Single line text
- </td> 
- <td> 
- Title Link
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Single line text
- </td> 
- <td> 
- Url
- </td> 
- <td> </td> 
- </tr> 
- <tr> 
- <td> 
- Dropdown
- </td> 
- <td> 
- Button color <br> 
- </td> 
- <td> 
- *primary <br> 
- secondary </small> 
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <th style="text-align: left">Tipo de campo</th>
+  <th style="text-align: left">Nombre</th>
+  <th style="text-align: left">Valores que permitiremos</th>
+ </tr>
+ <tr>
+  <td>
+   Asset
+  </td>
+  <td>
+   Cover
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Multiline text
+  </td>
+  <td>
+   Text
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Single line text
+  </td>
+  <td>
+   Title Link
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Single line text
+  </td>
+  <td>
+   Url
+  </td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>
+   Dropdown
+  </td>
+  <td>
+   Button color<br>
+  </td>
+  <td>
+    *primary<br>
+    secondary</small>
+  </td>
+ </tr>
+</table>
 
 ![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
 
-:::warning Attention
-It's important to save changes before exiting.
-:::
-
 ## Step 3: Create and Post "Hero" Type entry
 
-Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. We must go to the **Entries** section and click on the **Create an entry** button, then select the type “Hero” and add in Name **_"Wherever you are, Dynamic Bank is with you” _**.
+Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. For that, we need to go to the**Entrances** section and click on the**+ New Entry** button, and then select the type “Hero” and add in Name **_"Wherever you are, Dynamic Bank accompanies you"_**.
 
 For the rest of the fields, we will use the following values:
 
- <table> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/bank-hero.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Text </b> 
- </td> 
- <td> 
- For whatever you need, we are with you everywhere
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Title Link </b> 
- </td> 
- <td> 
- Become a customer
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> url </b> 
- </td> 
- <td> 
- destination url, for now <code> # </code> will suffice
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Button color </b> 
- </td> 
- <td> 
- primary
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/bank-hero.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Text</b>
+  </td>
+  <td>
+   We are here for you for everything that you need
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Title Link</b>
+  </td>
+  <td>
+   Join now
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Url</b>
+  </td>
+  <td>
+   destination url, use<code>#</code> for now
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Button color</b>
+  </td>
+  <td>
+   primary
+  </td>
+ </tr>
+</table>
 
-After editing the content we must save and [publish](/es/platform/content/entries.html #publicar -a-entry).
+After editing the content we must save and [publish](/en/platform/content/entries.html#publish-an-entry).
 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/> 
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/>
 
-። :tip Very good! You've already managed to create your first Type and Entry successfully
+:::tip Very good! You have created your first Type and Entry successfully
 We will now create the rest of the Types and Entries we need for this tutorial.
-።:
+:::
 
 ## Step 4: Create "News" Type
 
-As with the "Hero" type, we will create our second type, "News", considering the following fields:
+As with the "Hero" type, we will create our second type, "News", with the following fields:
 
- <table> 
- <tr> 
- <th style="text-align: left"> Field </th> 
- <th style="text-align: left"> Name </th> 
- </tr> 
- <tr> 
- <td> 
- Asset
- </td> 
- <td> 
- Cover
- </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Excerpt
- </td> 
- </tr> 
- <tr> 
- <td> 
- Single line text
- </td> 
- <td> 
- Link
- </td> 
- </tr> 
- <tr> 
- <td> 
- Single line text
- </td> 
- <td> 
- Url
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Name</th>
+ </tr>
+ <tr>
+  <td>
+   Asset
+  </td>
+  <td>
+   Cover
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Multiline text
+  </td>
+  <td>
+   Excerpt
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Single line text
+  </td>
+  <td>
+   Link
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Single line text
+  </td>
+  <td>
+   Url
+  </td>
+ </tr>
+</table>
 
 ## Step 5: Create and publish News
 
@@ -213,7 +209,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Name </b> 
  </td> 
  <td> 
- Operational Branches
+ Operating Branches
  </td> 
  </tr> 
  <tr> 
@@ -229,7 +225,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Text </b> 
  </td> 
  <td> 
- Find your nearest branch so you don't have to take any extra steps.
+ Find your nearest branch so you don't take too much walks.
  </td> 
  </tr> 
  <tr> 
@@ -237,7 +233,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Link </b> 
  </td> 
  <td> 
- Review Branches
+ Review branches
  </td> 
  </tr> 
  <tr> 
@@ -245,7 +241,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> url </b> 
  </td> 
  <td> 
- destination url or #
+ Destination URL or #
  </td> 
  </tr> 
  </table> 
@@ -274,7 +270,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Text </b> 
  </td> 
  <td> 
- Learn everything you need to know about how to apply for your mortgage credit.
+ Learn everything you need to know about applying for your home loan.
  </td> 
  </tr> 
  <tr> 
@@ -290,7 +286,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> url </b> 
  </td> 
  <td> 
- destination url or #
+ Destination URL or #
  </td> 
  </tr> 
  </table> 
@@ -319,7 +315,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> Text </b> 
  </td> 
  <td> 
- 40% discount every Wednesday at the best restaurants with home delivery.
+ 40% off every Wednesday at the best restaurants with home delivery.
  </td> 
  </tr> 
  <tr> 
@@ -335,7 +331,7 @@ As we did with Hero, we will now create all three news entries with the followin
  <b> url </b> 
  </td> 
  <td> 
- destination url or #
+ Destination URL or #
  </td> 
  </tr> 
  </table> 
@@ -346,32 +342,32 @@ Don't forget to publish all your posts after creating them.
 
 As we already did with Hero and News, we need to create our new type for Benefits with the fields:
 
- <table> 
- <tr> 
- <th style="text-align: left"> Field </th> 
- <th style="text-align: left"> Name </th> 
- </tr> 
- <tr> 
- <td> 
- Asset
- </td> 
- <td> 
- Cover
- </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Excerpt
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Name</th>
+ </tr>
+ <tr>
+  <td>
+   Asset
+  </td>
+  <td>
+   Cover
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Multiline text
+  </td>
+  <td>
+   Excerpt
+  </td>
+ </tr>
+</table>
 
 ## Step 7: Create Categories
 
-Now we'll create some more structure by creating categories that can filter our benefits.
+Now we'll create categories so that we will be able to filter our benefits.
 
 To do this we go to the Categories section and create the following categories:
 
@@ -389,262 +385,262 @@ For Benefits we will create seven entries with the following fields:
 
 #### Benefit One
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Master Card
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/mall.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 20% using your card in Miami.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Travel
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Master Card
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/mall.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   20% off using your card in Miami.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Travel
+  </td>
+ </tr>
+</table>
 
 #### Benefit Two
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Seafood Restaurant
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gourmet.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 20% on the total account.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Gourmet
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Seafood Restaurant
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gourmet.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   20% off your total.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Gourmet
+  </td>
+ </tr>
+</table>
 
 #### Benefit Three
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Dynamic AIR
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/plane.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 30% on flights abroad.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Travel
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Dynamic AIR
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/plane.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   30% off in international flights.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Travel
+  </td>
+ </tr>
+</table>
 
 #### Benefit Four
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Kids clothes
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/kids.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 2x1 for the whole month.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Shopping
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Kids clothes
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/kids.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   2x1 for the entire month.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Shopping
+  </td>
+ </tr>
+</table>
 
 #### Benefit Five
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Dynamic AID
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/pills.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 15% every Monday.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Health
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Dynamic AID
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/pills.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   15% off every Monday.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Healthy
+  </td>
+ </tr>
+</table>
 
 #### Benefit Six
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Dynamic Cinema
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/cine.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 40% on tickets on Fridays.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Activities
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Dynamic Cinema
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/cine.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   40% off every Friday.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Panorama
+  </td>
+ </tr>
+</table>
 
 #### Benefit Seven
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Dynamic Fit
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gym.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Excerpt </b> 
- </td> 
- <td> 
- 20% on annual plan.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Category </b> 
- </td> 
- <td> 
- Health
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Dynamic FIT
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gym.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Excerpt</b>
+  </td>
+  <td>
+   20% off in annual plan.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Category</b>
+  </td>
+  <td>
+   Healthy
+  </td>
+ </tr>
+</table>
 
 Don't forget to publish all your posts after creating them.
 
@@ -652,36 +648,36 @@ Don't forget to publish all your posts after creating them.
 
 Now let's create our last type for site testimonials. For this type we will need the following fields:
 
- <table> 
- <tr> 
- <th style="text-align: left"> Field </th> 
- <th style="text-align: left"> Name </th> 
- </tr> 
- <tr> 
- <td> 
- Single line text
- </td> 
- <td> 
- Author
- </td> 
- </tr> 
- <tr> 
- <td> 
- Multiline text
- </td> 
- <td> 
- Testimony
- </td> 
- </tr> 
- <tr> 
- <td> 
- Asset
- </td> 
- <td> 
- Image
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Name</th>
+ </tr>
+ <tr>
+  <td>
+   Single line text
+  </td>
+  <td>
+   Author
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Multiline text
+  </td>
+  <td>
+   Testimony
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Asset
+  </td>
+  <td>
+   Image
+  </td>
+ </tr>
+</table>
 
 ## Step 10: Create and Publish Testimonials
 
@@ -689,84 +685,84 @@ Create two entries with the following fields:
 
 #### Testimonial One
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Adriana Testimonial
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Author </b> 
- </td> 
- <td> 
- Adriana Perez
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Testimonial </b> 
- </td> 
- <td> 
- I'm very satisfied with Dynamic Bank because they gave me the opportunity to grow as a merchant, and now I have other projects in mind that will help me keep growing.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Image </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/adriana.png" style="max-width: 100px;margin: auto 0;"/> 
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Testimonio Adriana
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Author</b>
+  </td>
+  <td>
+   Adriana Pérez
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Testimony</b>
+  </td>
+  <td>
+   I'm very happy with Dynamic Bank, because they gave me the opportunity to grow my business and now I am developing my next project.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Image</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/adriana.png" style="max-width: 100px;margin: auto 0;"/>
+  </td>
+ </tr>
+</table>
 
 #### Testimonial Two
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
-Raul Testimonial
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Author </b> 
- </td> 
- <td> 
- Raul Diaz
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Testimonial </b> 
- </td> 
- <td> 
- I approached Dynamic Bank, got my credit, and I'm already applying for my third one. I really appreciate them trusting me.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Image </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/raul.png" style="max-width: 100px;margin: auto 0;"/> 
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Testimonio Raúl
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Author</b>
+  </td>
+  <td>
+   Raúl Díaz
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Testimony</b>
+  </td>
+  <td>
+   I contacted Dynamic Bank, obtained my credit and now I am currently soliciting my third. I am truly grateful for their trust in me.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Image</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/raul.png" style="max-width: 100px;margin: auto 0;"/>
+  </td>
+ </tr>
+</table>
 
 Don't forget to publish all your posts after creating them.
 
 ## Conclusion
 
-If you've gotten this far, we congratulate you. You managed to use [Modyo Content] (/en/platform/content) to its full potential because we used [Spaces] (/en/platform/content/spaces), [Types] (/en/platform/content/types), [Entries] (/en/platform/content/entries) and [Categories] (/es/platform/content/entries.html #categorias) to generate all the content needed to build the Dynamic Bank's home page.
+If you've gotten this far, we congratulate you. You used [Modyo Content](/en/platform/content) to its full potential because we used [Spaces](/en/platform/content/spaces), [Types](/en/platform/content/types), [Entries](/en/platform/content/entries) and [Categories](/en/platform/content/entries.html#categories) to generate all the content needed to build the Dynamic Bank's home page.
 
-We now have all of our Entries that can be delivered to the Frontend and generated in the Dynamic Bank Home. Meanwhile, we can change the texts from content without problems.
+We already have all our tickets so we can deliver them to the Front End so that it can generate the Dynamic Bank Home without problems while we can change the texts from Modyo Content.
 
-Now what's next? Get all this content from a Web site created in [Modyo Channels] (/en/platform/channels).
+What's next now? Manage all this content from a Web site created in [Modyo Channels] (/en/platform/channels).
