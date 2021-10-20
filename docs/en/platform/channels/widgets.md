@@ -6,9 +6,7 @@ search: true
 
 Widgets allow you to create encapsulated _micro frontends_ for your sites and applications.
 
-When you enter the **Widgets** section of any site or channel, you see a list of all the widgets in that channel. In the top bar, you can filter the list of widgets by status, author or tags, or search for any widget by either its name or tags.
-
-In the upper right corner you can select the **+ New** primary button to create a new widget. Give the widget a name, then click Create to begin building your widget.
+When entering the **Widgets** section in a site, you can see a list of every created widget. In the upper bar you can filter the widgets by state, author, tags, or by text search by the name of the widget.
 
 In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
@@ -62,14 +60,13 @@ Once a widget is published, it is available as a custom widget in the [page buil
 To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
 
-
 In the main work area you can see the following:
 
-- **Code tabs**: The Widget Builder has a JavaScript, CSS and HTML tab at your disposal to build your widgets.
+- **Code Tabs**: A JavaScript, CSS, and HTML tab is available to build widgets.
 - **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
 - **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
 - **Snippets**: Displays a list of custom snippets where you can copy their reference code and insert them in your widget.
-- **Changes**: A list of every "Save" state of this widget since it was last published. Click on any of these save states to change the content of the widget to that particular save state. If doing so, all your current changes will be lost.
+- **Changes**: If changes have been saved and not published, it will display this list of all the times saved each file (JS, CSS, and HTML). Clicking on a sub-version changes the contents of the tab to the content of the subversion that was clicked.
 
 ::: tip Tip
 To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
@@ -91,7 +88,16 @@ The Properties on the right contains the following fields:
 If you delete a widget from a page and publish, you will still see that page in this listing since the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can unpublish any published widget, even if it is in use. Active references on pages will become inactive, so you will not see the widget on the site if you unpublished it. Also, you will be able to archive any unpublished widget, so if there are still references on some pages of the widget you want to archive, they will be removed when you archive the widget.
 :::
 
-## Widget Variables
+## Create a Widget
+To create a new Widget and have a _micro frontend_ for your sites and posts, follow these steps:
+1. From the Modyo Platform main menu, expand Channels, and click your site.
+1. Click Widgets.
+1. Click the**+ New Widget** button.
+1. Enter the name of your widget and click on **Create**.
+1. Customize your widget using HTML, CSS, JavaScript, or Liquid.
+1. Once finished, click on **Publish**.
+
+## Widget variables
 
 In the variables tab you can see the list of variables created in the widget, and their respective actions for:
 
@@ -117,21 +123,21 @@ Adding the widget on a page will list all the variables that that widget is usin
 This is an experimental feature and it may be subject to changes.
 :::
 
-You can choose to load your widgets synchronously, meaning that the HTML, CSS and JavaScript code of your widget will load along with the rest of the page from the server, or you can choose to load them asynchronously, so that all static content of the page will load and once the main document is loaded, the content of your widget will load via JavaScript. By default, all widgets load asynchronously.
+You can decide whether you want to load your widgets synchronously, that is, have your widget's HTML, CSS, and JavaScript code loaded along with the rest of the page from the server, or load asynchronously, so all static content on the page will load and once the main document is loaded, the content of your widget will be loaded using JavaScript. By default, all widgets are loaded asynchronously.
 
 To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
 
-:::warning Warning
-You must take into consideration that using very heavy widgets in a synchronous way can decrease the performance of your page, so you must decide carefully which widgets will be loaded in a synchronous way and which in an asynchronous way
-:::
+። :warning Attention
+Keep in mind that using very heavy widgets synchronously can cause your page's performance to be diminished, so you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
+።:
 
 ## Modyo CLI
 
-The Modyo Command Line Interface (CLI) is a command line tool based in two principles acceleration and integration, and this principles has a command get and push respectively.
+The Modyo Command Line Interface (CLI) is a command-line tool based on two principles of acceleration and integration, these principles have a get and push command respectively.
 
 ### Introduction
 
-First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some Front end architectural decisions already taken, or use to initialize a widget from the catalog if you have access.
+First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some predefined front-end architectural decisions, or use to initialize a widget from catalog if you have access.
 
 To install the modyo-cli globally you must use one of these options
 
@@ -212,27 +218,27 @@ It will use an argument called name to upload the widget to the platform and som
 
 ```bash
 USAGE
-  $ modyo-cli push NAME
+ $modyo-cli push
 
 ARGUMENTS
-  NAME  The name of the widget
+ NAME The name of the widget
 
 OPTIONS
-  -b, --build-command=build-command      [default: build] Build command in package.json
-  -d, --build-directory=build-directory  [default: dist] Build directory path
-  -h, --help                             Output usage information
-  -i, --site-id=site-id                  Id of the site where the widget will be push
-  -n, --site-host=site-host              Host of the site where the widget will be push
-  -p, --publish                          Force widget publication
-  -t, --token=token                      (required) Modyo Api token
-  -u, --account-url=account-url          (required) URL of your ®Modyo account ex("https://account.modyo.com")
-  -v, --version=8|9                      [default: 9] Version of Modyo platform
+ -b, —build-command=build-command [default: build] Build command in package.json
+ -d, —build-directory=build-directory [default: dist] Build directory path
+ -h, —help Output usage information
+ -i, —site-id=site-id Id of the site where the widget will be push
+ -n, —site-host=site-host Host of the site where the widget will be push
+ -p, —publish Force widget publication
+ -t, —token=token (required) Modyo Api token
+ -u, —account-url=account-url (required) URL of your Modyo account ex (” https://account.modyo.com “)
+ -v, —version=8|9 [default: 9] Version of Modyo platform
 
 EXAMPLE
-  $ modyo-cli push <NAME>
+ $modyo-cli push <NAME> 
 ```
 
->Many of the options can be defined as environment variables or inside of an .env file that is recommended to avoid the publication to the github registry because can contain some delicate information
+Many of the options can be defined as environment variables or within a _.env_ file that is recommended to avoid publishing to the github registry because it may contain sensitive information
 
 ```bash
 MODYO_BUILD_DIRECTORY=buildDirectoryPath
