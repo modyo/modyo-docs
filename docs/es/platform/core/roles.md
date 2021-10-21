@@ -6,25 +6,31 @@ search: true
 
 ## Equipo
 
-Todos los usuarios internos de la plataforma conforman el equipo y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema.
+Todos los usuarios internos de la plataforma conforman el equipo y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema. Aquí es donde podrás crear, editar, y desactivar a los usuarios de la plataforma.
 
-Para crear un usuario interno, debes hacer click en el botón **+ Nuevo Miembro** y completar los campos. Una vez creado se le envía la invitación de registro por email, puedes escoger si enviarle su contraseña de ingreso en el mismo mensaje.
+### Crear usuario
 
-Para chequear a todos los usuarios, puedes filtrar por su estado y por los roles que tienen asignados en la plataforma.
+Para crear un usuario interno, sigue estos pasos:
 
-Si quieres desactivar un usuario interno, debes hacer click en el botón de acciones que se encuentra a la derecha del mismo. En caso de que quieras editar sus datos, puedes usar el mismo botón, o hacer click sobre el nombre del mismo.
+1. Desde el menú principal, haz click en Configuración, luego selecciona Equipo.
+1. Haz click en **+ Nuevo Miembro del Equipo**.
+1. Llena el nombre, apellido, nombre de usuario, email, y contraseña.
+1. Haz click en **Guardar**.
+
+:::tip Tip
+Si quieres que el nuevo miembro reciba un correo con los datos de su cuenta en la plataforma, haz click en el checkbox "Enviar contraseña al correo electrónico de usuario".
+:::
 
 ### Editar usuario
 
-Al entrar a la vista de edición de un usuario interno, podrás ver en la pestaña principal un listado de todas sus acciones desde que se registró e ingresó por primera vez a la plataforma.
+Dentro de la pantalla de edición de usuario, los administradores de la plataforma tendrán acceso a las siguientes ventanas:
 
-El resto de las pestañas pueden incluír información visible o modificable de un usuario, entre ellas están:
-
-- Sitios (a los que tiene acceso)
-- Rol
-- Credenciales
-- Accesos personalizados a la API
-- Datos generales
+- Actividad: El historial de todas las acciones realizadas por este usuario.
+- Acceso: Los permisos otorgados para este usuario a los distintos módulos en Modyo. Aquí también podrás seleccionar el rol del usuario.
+- Acceso a la API: Genera nuevo tokens de acceso para usar nuestras APIs. Debes generar un token por cada sitio.
+- Editar: Modifica los datos del usuario como nombre, email, y contraseña.
+- Grupos: Listado de todos los grupos a los cuales pertenece este usuario.
+- Dispositivos: Listado de todos los dispositivos en donde el usuario tiene una sesión activa. Se despliegan datos como: navegador, sistema operativo, último ingreso, y dirección IP. Aquí podrás cerrar la sesión remotamente para cada dispositivo.
 
 ## Grupos
 
@@ -35,7 +41,7 @@ Para crear un grupo, dirígete a la sección "Grupos" de la configuración de la
 Además, desde la sección de "Grupos" del perfil de cada miembro del equipo, puedes añadir o remover al usuario de los grupos existentes.
 
 :::tip Tip
-Debes tener en consideración que si un usuario ya tiene un rol asociado en un contexto (cuenta, espacio, realm o sitio) y lo añades a un grupo con un rol de mayor nivel de privilegios, el usuario obtendra el rol de mayor privilegios entre el rol propio y el del grupo.
+Debes tener en consideración que si un usuario ya tiene un rol asociado en un contexto (cuenta, espacio, realm o sitio) y lo añades a un grupo con un rol de mayor nivel de privilegios, el usuario obtendrá el rol de mayor privilegios entre el rol propio y el del grupo.
 :::
 
 ## Roles
@@ -54,7 +60,7 @@ Los roles predeterminados que existen son, según contexto:
 
 - **Default user**: Tiene todos los permisos existentes, menos la edición de la configuración de cada contexto. Debe se invitado a cada contexto para poder acceder a sus funcionalidades.
 - **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones.
-- **Owner**: Tiene todos los perimsos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
+- **Owner**: Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
 
 #### Roles por sitio:
 

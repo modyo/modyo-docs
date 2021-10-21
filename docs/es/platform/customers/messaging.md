@@ -4,7 +4,7 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, que permite enviar la información hacia los usuarios finales de una manera masiva, dirigida a segmentos determinados.
+Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, permite enviar la información hacia los usuarios finales de una manera masiva dirigida a segmentos determinados.
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
@@ -40,7 +40,7 @@ Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el si
 
 ### Crear una campaña
 
-Para hacer una campaña, debemos hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la vista del Administrador.
+Para hacer una campaña, debemos hacer click en el botón **+ Nueva Campaña**, ubicado en la parte superior de la vista del Administrador.
 
 Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
 
@@ -53,7 +53,7 @@ Posteriormente, mostrará un formulario que deberás rellenar con los siguientes
 
 Después de rellenar estos datos, deberás hacer click en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
 
-Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, solo tendrás que hacer click en el botón en la parte superior de la pantalla.
+Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, haz click en el botón en la parte superior de la pantalla.
 
 Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de Envío, donde podrás enviarla.
 
@@ -61,7 +61,7 @@ Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de 
 
 <img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-El vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+La vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
 
 A primera vista, encontrarás en la parte superior de la pantalla el botón de **Vista Previa**, que te permite ver el correo que enviarás.
 
@@ -108,9 +108,9 @@ Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la 
 - **Segmentos**: Segmentos a los cuales se hizo el envío en específico.
 - **Alcance**: Nº de personas que recibieron el envío.
 - **Enviados**: Nº de correos/notificaciones enviadas.
-- **Estado**: Estado en el que se encuentra el envío. Pueden ser cuatro: Completado, Pendiente, Fallido o Cancelado.
+- **Estado**: Estado en el que se encuentra el envío. Pueden ser: Completado, Pendiente, Fallido o Cancelado.
 
-Después, podrás encontrar un botón que te permitirá borras el envío del registro.
+También podrás encontrar un botón que te permitirá borrar el envío del registro.
 
 ::: danger Peligro
 Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
@@ -126,9 +126,9 @@ En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a lo
 A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
 
 "Sin Campaña" refiere a un correo o notificación que ha 
-sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a la [sección API de Administración](/es/platform/core/api.html). 
+sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a [API de Administración](/es/platform/core/api.html). 
 
-En la primera vista, el administrador se ordena bajo las siguientes categorías.
+En la primera vista, el mensaje se ordena bajo las siguientes categorías.
 
 - **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
 - **Campaña**: Campaña bajo la cual se envío el mensaje.
@@ -177,12 +177,12 @@ Si quieres intervenir la plantilla temporalmente y después volver a una nueva, 
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer una plantilla, primero debes hacer click en el botón **+ Nuevo**, que se encuentra en la parte superior de la página.
+Para hacer una plantilla, primero debes hacer click en el botón **+ Nueva Plantilla**, que se encuentra en la parte superior de la página.
 
 Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
 
 :::tip Tip
-Recuerda que este nombre es el que después deberás buscar para hacer el envío al Hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar y no poner algo que te pueda confundir.
+Recuerda que este nombre es el que después deberás buscar para hacer el envío al hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar.
 :::
 
 Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
@@ -208,6 +208,6 @@ Si se hace click en el nombre del usuario, puedes encontrar el [perfil del usuar
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 
 ::: danger Peligro
-Hacer una reinscripción sin una autorización expresa del usuario, puede causar problemas legales.
+Hacer una reinscripción sin autorización del usuario puede causar problemas legales.
 Revisa la regulación sobre correos masivos en cada país.
 :::
