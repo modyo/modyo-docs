@@ -88,7 +88,6 @@ Al crear un webhook, debes tener la URL a la que quieres enviar la información,
 
 Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
 
-<<<<<<< Updated upstream
 Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
 
 ### Ejemplo de Carga Útil
@@ -124,6 +123,3 @@ Una vez creado el webhook, podrás enviar una notificación de prueba con inform
    "trigger_entry_space_uid":"space-test"
 }
 ```
-=======
-Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
->>>>>>> Stashed changes
