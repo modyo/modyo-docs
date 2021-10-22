@@ -264,15 +264,17 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 
 ## Stages
 
-Agregar stages en tu sitio te permite trabajar nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
+Agregar stages en tu sitio te permite trabajar en nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para visualizar cambios de inmediato. Al finalizar los cambios dentro de un stage, podrán sincronizar los cambios desde el stage `main`.
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán sincronizarse desde el stage `main`.
 
 :::warning Atención
 Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
 :::
 
 ### Agregar un nuevo stage
+
+<img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
 
 Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 
@@ -282,15 +284,34 @@ Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 1. Selecciona cual será la base del stage y escribe el nombre.
 1. Haz click en **Crear**.
 
+
+:::tip Tip
+Al tener más de un stage en tu sitio, la página de **Overview** mostrará los detalles del stage actual y un botón para sincronizar cambios entre stages.
+
+En la barra lateral podrás ver en que stage estas actualmente y al hacer click en el dropdown, desplegara un listado de todos los stages de tu sitio.
+:::
+
 ### Sincronizar un stage
+
+Una vez que hayas terminado tus pruebas en tu stage, asegúrate de sincronizarlos a `main`. En la pantalla de sincronizaciones, podrás ver todos los cambios que se realizaran entre los dos stages seleccionados. Al hacer click en _Ver_
+
+<img src="/assets/img/channels/sites/sync-stage.jpg"/>
 
 Para sincronizar un stage, sigue estos pasos:
 
 1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
-1. Haz click en **Overview**.
-1. En el apartado de **Sincronización**, selecciona los stages que quieres sincronizar.
-1. En la ventana que aparece, verás todos los cambios entre los stages. Selecciona los cambios que quieres sincronizar.
+1. En **Overview**, en el apartado de **Sincronización**, selecciona el stage que quieres sincronizar.
+1. En la ventana que aparece, verás todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para ver más detalle en que cambió.
+1. Selecciona los elementos que quieres sincronizar.
 1. Haz click en **Sincronizar**.
+
+:::tip Tip
+Al hacer click en sincronizar, podrás seleccionar que cambios tomar de un stage. Es decir, si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en sincronizar.
+:::
+
+:::warning Atención
+Recibirás una alerta si intentas sincronizar cambios que todavía no están publicados. 
+:::
 
 
 ## Revisión en equipo
