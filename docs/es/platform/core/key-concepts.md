@@ -233,10 +233,10 @@ Los elementos con los que puedes interactuar en la barra de vista previa son:
 * **Pestaña para minimizar**: Te permite esconder la barra de previsualización para que no interfiera con los elementos que estén en la parte superior del sitio. Una vez minimizada, la pestaña se mantendrá visible para que puedas restaurar la barra del modo vista previa.
 * **Editar elemento**: al hacer click irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget, o una plantilla por defecto del sitio.
 * **Compartir link**: Te permite copiar un enlace que puedes compartir y quien lo abra, irá directamente al modo vista previa con la configuración al momento de copiar el link. Para poder ver el modo vista previa, basta con tener una sesión iniciada en el admin de la cuenta.
-* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejándo la pestaña en la URL actual del sitio.
+* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejando la pestaña en la URL actual del sitio.
 
 :::warning Atención
-Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
+Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
 :::
 
 ## Variables globales
@@ -245,9 +245,20 @@ Modyo cuenta con la funcionalidad para definir variables globales que puedes usa
 
 :::tip Tip
 Puedes usar texto plano, HTML, JavaScript, y CSS dentro de las variables globales, sin embargo no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
+
+Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup (entradas, widgets, plantillas), usa:<span v-pre>`{{vars.Nombre}}`</span>
 :::
 
-Puedes crear variables globales en la configuración de la cuenta, y puedes añadir valores para distintos idiomas. Si lo requieres, también puedes sobrescribir los valores para determinados sitios en el menú de variables del sitio, en la configuración del sitio, o bien, en cada uno de los widgets personalizados del widget builder.
+### Crear una variable global
+
+Para crear una variable global, sigue esto pasos:
+
+1. Desde el menú lateral principal, haz click en **Configuración**, luego selecciona **Variables Globales**.
+1. Aquí podrás ver el listado de todas las variables globales de la cuenta, su información general, y un botón para copiar su nombre en Liquid. Haz click en **+ Nueva Variable**.
+1. Llena el **Nombre** y **Valor** de la variable.
+1. Haz click en **Guardar**.
+
+Las variables global se pueden utilizar para añadir valores para distintos idiomas. Si lo requieres, también tienes la opción de sobrescribir los valores de variables global en sitios y widgets, utilizando los apartados de [configuración del sitio](/es/platform/channels/sites.html#variables-del-sitio) y [widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget), respectivamente.
 
 :::warning Atención
 Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el nivel más bajo, quedando primero las variables definidas en el widget, luego las definidas en el sitio, y por último las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en widgets o el sitio con el mismo nombre que las variables de la cuenta.

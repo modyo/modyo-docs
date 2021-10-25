@@ -491,3 +491,25 @@ Evita que las páginas se carguen cuando el navegador detecta un ataque de _cros
 ## Variables del sitio
 
 Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada con un valor específico para el sitio en particular.
+
+Usando variables te permite reutilizar código HTML, JS, CSS, o texto a través de distintos sitios, widgets, o plantillas. Si tienes código que usas repetitivamente en diferentes partes de tu cuenta, puedes asignar este valor a una variable y de esta manera simplificar tus procesos. Al editar el valor de la variable, esto se verá reflejado en todos lados donde se use la variable actualmente.
+
+:::tip Tip
+Puedes usar texto plano, HTML, JavaScript, y CSS dentro de las variables globales, sin embargo no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
+
+Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup, usa:<span v-pre>`{{vars.Nombre}}`</span>
+:::
+
+### Crear una variable en sitios
+
+Para crear una variable en sitios, sigue esto pasos:
+
+1. Desde el menú lateral principal, haz click en **Channels**, luego selecciona tu **Sitio**.
+1. Dentro de **Configuración del sitio**, haz click en **Variables del Sitio**.
+1. Aquí podrás ver el listado de todas las variables globales y las variables del sitio, su información general, y un botón para copiar su código en Liquid markup. Haz click en **+ Nueva Variable**.
+1. Llena el **Nombre** y **Valor** de la variable.
+1. Haz click en **Guardar**.
+
+:::warning Atención
+Cuando usas variables, siempre se tomará como preferencia las variables definidas en el nivel más bajo, quedando primero las variables definidas en el widget, luego las definidas en el sitio, y por último las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en widgets o el sitio con el mismo nombre que las variables de la cuenta.
+:::
