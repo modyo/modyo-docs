@@ -233,11 +233,11 @@ The elements you can interact with in the preview bar are:
 * **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
 * **Edit Item**: Clicking this will take you to the edit view of the item you're viewing, whether it's a post, a page, a widget, or a default site template.
 * **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in as the account's admin.
-* **Exit Preview Mode**: Close the preview mode, removing the bar and taking you to the current URL of the site.
+* **Exit Preview Mode**: Close the preview mode, removing the slash and leaving the tab at the current URL of the site.
 
-:::warning Warning
-Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
-:::
+። :warning Attention
+Changing the content selector of the preview bar will have no effect on the content you're using via the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
+።:
 
 ## Global variables
 
@@ -245,9 +245,20 @@ Modyo allows you to define global variables that you can use in all the sites wh
 
 :::tip Tip
 You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
-:::
 
-You can create global variables in your account settings, and you can add values for different languages. If required, you can also overwrite the values for certain sites in the site variables menu, in the site settings, or in each of the custom widgets in the widget builder.
+To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre> `{{vars.name}}` </span> 
+።:
+
+### Create a global variable
+
+To create a global variable, follow these steps:
+
+1. From the main side menu, click on **Settings**, then select **Global Variables**.
+1. Here you can see the list of all global variables in the account, their general information, and a button to copy their name into Liquid. Click **+ New Variable**.
+1. Fill in the **Name** and **Value** of the variable.
+1. Click **Save**.
+
+Global variables can be used to add values for different languages. If required, you also have the option to overwrite global variable values in sites and widgets, using the [site settings] (/es/platform/channels/sites.html #variables -the-site) and [custom widgets] (/es/platform/channels/widgets.html #variables -the-widget) sections, respectively.
 
 :::warning Warning
 When using global variables, the variables defined at the deepest level will always be taken if they exist, with variables defined in the widget first, then those defined in the site, and finally the variables defined at the account level, be careful when defining variables in widgets or in the site with the same name as the variables in the account.
