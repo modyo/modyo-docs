@@ -22,7 +22,7 @@ To create a site, you just have to click on the **New** tab, which will allow yo
 
 After that, you can see it with the status "Enabled", which means that it is online to work.
 
-:::warning Attention
+:::warning Warning
 In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
@@ -40,7 +40,7 @@ Within this section you can configure the following data:
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
-- **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/key-concepts.html).
+- **[Team Review](/en/platform/core/key-concepts.html)**
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
@@ -83,13 +83,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 ```liquid
 {% if site.tag_manager_id != '' %}
 
- <!-- Google Tag Manager (noscript) --> 
+<!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
 style="display:none;visibility:hidden">
 </iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) --> 
+<!-- End Google Tag Manager (noscript) -->
 
 {% endif %}
 ```
@@ -103,7 +103,7 @@ With this ready, when there's a value associated with the **Google Tag Manager I
 Restrictions allow you to configure the privacy of your site.
 
 - If the privacy level is set to public, then it is visible to everyone.
-- If the privacy level is set to private, then this site is only visible to users with an active session (authenticated login).
+- If the privacy level is set to private, then this site is only visible to users with an active session.
 - If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
 - If you reach a URL that does not exist within the site, you will receive a 404 response by default, but if you check this option, instead of receiving a 404, you will be redirected to the home page.
 
@@ -266,7 +266,7 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 
 Adding stages to your site allows you to work on new features for your site without modifying what's already published.
 
-The main advantages of having different stages on your sites is that it allows you to only develop for the current stage, without modifying what already exists on the site. These stages can create and use variables, widgets, and local templates to display changes immediately. When you finish the changes within a stage, you can synchronize the changes to the `main` stage.
+The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use variables, widgets, and local templates to customize the experience or visualize changes. Upon completion of changes within a stage, they can be synchronized from the `main` stage.
 
 :::warning Attention
 When using stages, custom PWAs, and redirects will be disabled. You can only use these in the `main` stage.
@@ -274,23 +274,44 @@ When using stages, custom PWAs, and redirects will be disabled. You can only use
 
 ### Add a new stage
 
+ <img src="/assets/img/channels/sites/create-stage.jpg" width="300" /> 
+
 To add a new stage to your site, follow these steps:
 
-1. From the side menu, click on **Channels**, then click on your **Site**.
+1. From the side menu, click **Channels**, then select your **Site**.
 1. Expand **Site Settings**, click on **Stages**.
 1. Click on **+ New Stage**
 1. Select what the base of the stage and type the name.
 1. Click **Create**.
 
+
+። :tip Tip
+When you have more than one stage on your site, the**Overview** page will display the details of the current stage and a button to synchronize changes between stages.
+
+In the sidebar you can see which stage you are currently in and when you click on the dropdown, it will display a list of all the stages of your site.
+።:
+
 ### Synchronize a stage
+
+Once you've finished your tests on your stage, make sure you sync them to `main`. On the syncs screen, you will be able to see all the changes that were made between the two selected stages. By clicking on _Ver_
+
+ <img src="/assets/img/channels/sites/sync-stage.jpg"/> 
 
 To synchronize a stage, follow these steps:
 
 1. From the side menu, click **Channels**, then select your **Site**.
-1. Click **Overview**.
-1. In the**Synchronization** section, select the stages you want to synchronize.
-1. In the window that appears, you will see all the changes between stages. Select the changes you want to sync.
+1. In **Overview**, in the**Synchronization** section, select the stage you want to synchronize.
+1. In the window that appears, you will see all the items with differences between the selected stages. Click _View_ to see more detail how it changed.
+1. Select the items you want to sync.
 1. Click **Synchronize**.
+
+። :tip Tip
+When you click on sync, you will be able to select which changes to take from a stage. That is, if you want to sync changes to `main`, you must be in `main` when you click sync.
+።:
+
+። :warning Attention
+You'll be alerted if you try to sync changes that aren't yet published. 
+።:
 
 
 ## Team Review
@@ -376,7 +397,7 @@ The required columns to import redirects are origin y destination.
 
 You can select a 301 or 302 response code for all elements without having to add an additional column.
 
-Along with the above, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
+Also, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
 :::
 
 The precedence of locations on Modyo sites is as follows:
@@ -469,4 +490,4 @@ It prevents pages from loading when the browser detects a _cross-site scripting_
 
 ## Site variables
 
-Modyo has [global variables][/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
+Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
