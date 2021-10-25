@@ -41,3 +41,7 @@ Modyo 9.0 mejora la gestión de los usuarios separando completamente a los usuar
 Modyo ahora tiene soporte nativo para los habilitadores de Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen intermitencia o pierden la conexión.
 
 Modyo ahora tiene soporte nativo para Aplicaciones Web Progresivas, que te permiten mejorar la experiencia de tus usuarios al proveer canales digitales que pre-cachéan recursos clave. Esto hace posible cargar instantáneamente experiencias confiables rápidamente sin importar las conexiones de red intermitentes o malas, y pueden ser instaladas por el usuario sin necesidad de una tienda de aplicaciones.
+
+### Nuevo editor de texto enriquecido
+
+Modyo ahora usa el editor de texto enriquecido Froala. Este editor de texto te permite desarrollar contenido en un instante así como también pegar el texto de tus documentos manteniendo el mismo formato.
