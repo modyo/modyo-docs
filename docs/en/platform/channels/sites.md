@@ -274,7 +274,7 @@ When using stages, custom PWAs, and redirects will be disabled. You can only use
 
 ### Add a new stage
 
- <img src="/assets/img/channels/sites/create-stage.jpg" width="300" /> 
+<img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
 
 To add a new stage to your site, follow these steps:
 
@@ -285,33 +285,33 @@ To add a new stage to your site, follow these steps:
 1. Click **Create**.
 
 
-። :tip Tip
-When you have more than one stage on your site, the**Overview** page will display the details of the current stage and a button to synchronize changes between stages.
+:::tip Tip
+When you have more than one stage on your site, the **Overview** page will now display the details of the current stage and a button to synchronize changes between stages.
 
 In the sidebar you can see which stage you are currently in and when you click on the dropdown, it will display a list of all the stages of your site.
-።:
+:::
 
 ### Synchronize a stage
 
-Once you've finished your tests on your stage, make sure you sync them to `main`. On the syncs screen, you will be able to see all the changes that were made between the two selected stages. By clicking on _Ver_
+Once you've finished your tests on your stage, make sure you sync them to `main`. On the synchronizations screen, you will be able to see all the changes that were made between the two selected stages by clicking on _View_.
 
- <img src="/assets/img/channels/sites/sync-stage.jpg"/> 
+<img src="/assets/img/channels/sites/sync-stage.jpg"/>
 
 To synchronize a stage, follow these steps:
 
 1. From the side menu, click **Channels**, then select your **Site**.
 1. In **Overview**, in the**Synchronization** section, select the stage you want to synchronize.
-1. In the window that appears, you will see all the items with differences between the selected stages. Click _View_ to see more detail how it changed.
+1. In the window that appears, you will see all the items with differences between the selected stages. Click _View_ to see the details of what changed.
 1. Select the items you want to sync.
 1. Click **Synchronize**.
 
-። :tip Tip
-When you click on sync, you will be able to select which changes to take from a stage. That is, if you want to sync changes to `main`, you must be in `main` when you click sync.
-።:
+:::tip Tip
+When you click on sync, you will be able to select which changes to take from another stage. That is, if you want to sync changes to `main`, you must be in `main` when you click sync.
+:::
 
-። :warning Attention
-You'll be alerted if you try to sync changes that aren't yet published. 
-።:
+:::warning Warning
+You'll receive an alert if you try to sync changes that aren't published yet.
+:::
 
 
 ## Team Review
@@ -332,7 +332,7 @@ In case you need to publish an element quickly, administrator users can skip the
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. These roles start with editing privileges, and can expand to include reviewing, publishing, and configuring site settings.
+The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role just includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
 
 To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
@@ -341,7 +341,7 @@ To add a new member to your site, follow these steps:
 
 1. From the Modyo Platform main menu, expand Channels, and click your site.
 1. Expand **Site Settings** and click **Team Members**.
-1. Click the**+ Add Member** button.
+1. Click the **+ Add Member** button.
 1. Find the user you want to add to your site and select a role.
 1. Click **Add**. 
 
@@ -467,7 +467,7 @@ If you have the nonce present in your policy then you can add the `script` and `
 
 ```liquid
 <script nonce="{{csp_nonce}}">
-  alert("todo va a estar bien");
+  alert("everything will be ok");
 </script>
 ```
 
@@ -491,3 +491,25 @@ It prevents pages from loading when the browser detects a _cross-site scripting_
 ## Site variables
 
 Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
+
+Using variables allows you to reuse HTML, JS, CSS, or text across different sites, widgets, or templates. If you have code that you use repeatedly in different parts of your account, you can assign this value to a variable and thus simplify your processes. When you edit the value of the variable, this will be reflected everywhere the variable is currently used.
+
+። :tip Tip
+You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
+
+To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.name}}` </span> 
+።:
+
+### Create a variable in sites
+
+To create a variable in sites, follow these steps:
+
+1. From the main side menu, click on **Channels**, then select your **Site**.
+1. Under **Site Settings**, click **Site Variables**.
+1. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup. Click **+ New Variable**.
+1. Fill in the**Name** and **Value** of the variable.
+1. Click on **Save**.
+
+። :warning Attention
+When using variables, variables defined at the lowest level will always be preferred, with variables defined in the widget first, then those defined in the site, and finally variables defined at the account level, so be careful when defining variables in widgets or the site with the same name than account variables.
+።:
