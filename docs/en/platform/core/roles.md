@@ -6,25 +6,31 @@ search: true
 
 ## Team
 
-All internal platform users make up the team, and each team member can have a specific role to play in realizing the full potential of the system.
+All internal platform users make up the team, and each team member can have a specific role to play in realizing the full potential of the system. This is where you'll be able to create, edit, and deactivate platform users.
 
-To create an internal user, you must click the **+ New Team Member** button and fill in the fields. Once the registration invitation is sent to him by email, you can choose whether to send him his login password in the same message.
+### Create user
 
-To check all users, you can filter by their status and the roles assigned to them on the platform.
+To create an internal user, follow these steps:
 
-If you want to deactivate an internal user, you must click on the action button to the right. If you want to edit their data, you can use the same button, or click on their name.
+1. From the main menu, click Settings, then select Device.
+1. Click on **+ New Team Member**.
+1. Fill in the first name, last name, username, email, and password.
+1. Click **Save**.
+
+። :tip Tip
+If you want the new member to receive an email with their account details on the platform, click on the “Send password to user email” checkbox.
+።:
 
 ### User Editing
 
-When you enter the edit view of an internal user, you will see in the main tab a list of all his actions since he registered and logged in for the first time to the platform.
+Within the user editing screen, platform administrators will have access to the following windows:
 
-The rest of the tabs include visible or modifiable user information:
-
-- Sites (to which you have access)
-- Role
-- Credentials
-- API access
-- General data
+- Activity: The history of all actions performed by this user.
+- Access: The permissions granted for this user to the various modules in Modyo. Here you can also select the user's role.
+- API Access: Generate new access tokens to use our APIs. You must generate a token for each site.
+- Edit: Modify user data such as name, email, and password.
+- Groups: List of all groups to which this user belongs.
+- Devices: List of all devices where the user has an active session. Data such as: browser, operating system, last login, and IP address are displayed. Here you can remotely log out for each device.
 
 ## Groups
 
@@ -34,9 +40,9 @@ To create a group, go to the “Groups” section of the account settings, give 
 
 In addition, you can add or remove a user from existing groups by selecting the "Groups" section in each team member's profile.
 
-:::tip Tip
-Keep in mind that if a user already has an associated role in a context (account, space, realm, or site) and you add them to a group with a higher privileged role, the user will gain the role with the highest authority.
-:::
+። :tip Tip
+Note that if a user already has an associated role in a context (account, space, realm, or site) and you add it to a group with a higher privilege role, the user gets the highest privileged role between the own role and the group's role.
+።:
 
 ## Roles
 
@@ -54,7 +60,7 @@ The default roles that exist, depending on the given area of the platform:
 
 - **Default user**: You have all existing permissions, except editing the settings for each context. This user must be invited to each context to access its functionality.
 - **Default admin**: You have all existing permissions, but you must be invited to an area of the platform in order to access its functionalities.
-- **Owner**: You have all existing permissions and you can access all areas of the platform without needing to be invited to them.
+- **Owner**: You have all existing permissions and can access all contexts without needing to be invited to them.
 
 #### Site-level roles:
 
