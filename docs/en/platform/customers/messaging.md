@@ -4,7 +4,7 @@ search: true
 
 # Messaging
 
-Messaging is a Modyo tool for those who want to launch campaigns, which allows us to send information to our customers or customer segments, aimed at specific segments.
+Messaging is a Modyo tool for those who want to do campaigns on the site, it allows you to send information to end users in a massive way aimed at specific segments.
 
 <img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
@@ -40,7 +40,7 @@ If you delete a campaign, there is no way to recover it.
 
 ### Create a campaign
 
-To create a campaign, we must click the green **+ New** button, located at the top of the Administrator view.
+To make a campaign, we need to click on the**+ New Campaign** button, located at the top of the Admin view.
 
 This opens a form that you must fill out with the following information:
 
@@ -53,7 +53,7 @@ This opens a form that you must fill out with the following information:
 
 After filling in this information, you must click on the **Save and continue** button, located at the top of the screen.
 
-Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, you just have to click on the button at the top of the screen.
+Now, a WYSIWYG editor will appear with the template you selected, which you can edit according to your requirements. To save, click the button at the top of the screen.
 
 When you do this, your campaign is saved and you will get to the Campaign Status view, where you can send it.
 
@@ -61,7 +61,7 @@ When you do this, your campaign is saved and you will get to the Campaign Status
 
 <img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-The Campaign Status view allows you to not only send a campaign, but also review the campaign metrics that will allow you to see the performance of the content you sent.
+The Shipping Status view allows you not only to send a campaign you created for the first time. In this, you'll also be able to find campaign stats that will allow you to see how the content you sent is performing.
 
 You can use the **Preview** button at the top of the screen, to review the email messaging and layout of your campaign.
 
@@ -108,9 +108,9 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 - **Segments**: Segments to which the specific delivery was made.
 - **Scope**: Number of people who received the delivery.
 - **Sent**: Number of emails/notifications sent.
-- **Status**: There are four delivery statuses: Completed, Pending, Failed or Canceled.
+- **Status**: State in which the shipment is located. They can be: Completed, Pending, Failed, or Canceled.
 
-The last option is the Actions column where you can delete a delivery.
+You will also be able to find a button that will allow you to delete the registration submission.
 
 ::: danger Danger
 Remember that if you delete the delivery, it is unrecoverable.
@@ -125,9 +125,10 @@ In the Message Deliveries section, you can find the list of users who have recei
 
 At first glance, you can find a list of all the users who have received a single email or notification, which is called "No Campaign".
 
-"No Campaign" refers to an email or notification that has been sent specifically to a user, on a specific date. They do not fall under the concept of Campaigns since these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to the [Administration API section](/en/platform/core/api.html).
+“No Campaign” refers to an email or notification that has 
+been sent specifically to a user, on a certain date. They do not fall under the concept of Campaigns as these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to [Management API] (/es/platform/core/api.html). 
 
-The message deliveries list displays the following information:
+At first glance, the message is sorted under the following categories.
 
 - **User**: Name of the user to whom the message is sent. The user's email is included, regardless of whether the message was via email or notification.
 - **Campaign**: Campaign under which the message was sent.
@@ -176,13 +177,13 @@ If you want to temporarily change the template when sending a new campaign, it i
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-To make a template, you must first click on the **+ New** button, located at the top of the page.
+To make a template, you must first click the**+ New Template** button at the top of the page.
 
 This opens the edit view where you must give your template a name.
 
-::: tip Tip
-Remember that this name is the one that you will have to look for in order to send a Campaign. Give it a name that helps you identify what it's for.
-:::
+። :tip Tip
+Remember that this name is what you will need to look for later to send when doing the Campaign. Therefore, you should put some text that will help you identify the template you want to use.
+።:
 
 Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
@@ -202,11 +203,11 @@ In this section, you will find a list of all users who have unsubscribed from em
 
 To find a user, at the top of the screen there is a search bar where you can enter their name or email.
 
-If you click on the name of the user, you can find the [user profile](/en/platform/customers/users.html#user-tab) with all their platform activities.
+If you click on the name of the user, you can find the [user profile](/en/platform/customers/users.html#users-tab) with all their platform activities.
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
-::: danger Danger
-Resubscription without the express authorization of the user can cause legal problems.
-Check the regulation on mass mailings in each country.
-:::
+።: danger danger
+Re-enrolling without user authorization can cause legal problems.
+Review the regulations on mass mailing in each country.
+።:
