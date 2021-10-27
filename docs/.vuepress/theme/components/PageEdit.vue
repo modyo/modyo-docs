@@ -19,9 +19,7 @@ export default {
   name: 'PageEdit',
   computed: {
     lastUpdated () {
-      const fullDate =  this.$page.lastUpdated.split(" ") || this.$page.lastUpdated;
-      const days = fullDate[0] || '' ;
-      return  days;  
+      return this.$page.lastUpdated;
     },
     lastUpdatedText () {
       if (typeof this.$themeLocaleConfig.lastUpdated === 'string') {
