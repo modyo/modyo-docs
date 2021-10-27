@@ -6,7 +6,7 @@ search: true
 
 ## Introducción
 
-En este tutorial nos vamos a enfocar en Modyo Channels utilizando los módulos de PWA para activar el soporte de aplicaciones web progresivas.
+En este tutorial nos vamos a enfocar en [Modyo Channels](https://docs.modyo.com/es/platform/channels) utilizando los módulos de PWA para activar el soporte de aplicaciones web progresivas.
 
 Las aplicaciones web progresivas, también conocidas como PWA (Progressive Web Apps) son aplicaciones web que progresivamente implementan capacidades tales como soporte para navegación offline o push notifications.
 
@@ -14,23 +14,22 @@ Las PWA se pueden instalar localmente en sistemas operativos móviles y de escri
 
 En este tutorial seguiremos usando el sitio de "Dynamic Bank" y vamos a habilitar el soporte PWA.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"></iframe>
 
 ## Requisitos Previos
 
-Para comenzar este tutorial necesitas haber completado el tutorial de creación de un sitio básico. Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, JS, y la plataforma Modyo.
+Para comenzar este tutorial necesitas haber completado el [tutorial de creación de un sitio básico](http://localhost:8080/es/platform/tutorials/how-to-create-home.html). Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, JS, y la plataforma Modyo.
 
+### Código fuente
+Te recomendamos que sigas el ejercicio paso a paso para crear tus propias PWA personalizada, pero si deseas puedes descargar todo el código e imágenes del ejercicio [en este enlace](https://cloud.modyocdn.com/uploads/a4ca197c-af7a-4888-99ce-cf455779dc8f/original/assets.zip).
 
-**Código fuente**
-Te recomendamos que sigas el ejercicio paso a paso para crear tus propias PWA personalizada, pero si deseas puedes descargar aqui todo el código e imágenes del ejercicio [en este enlace](https://cloud.modyocdn.com/uploads/a4ca197c-af7a-4888-99ce-cf455779dc8f/original/assets.zip).
-
-## Paso 1: Generar Manifiesto
-
+## Paso 1: Generar el Manifiesto PWA
 
 El manifiesto de un PWA es donde se configura la aplicación, aquí definimos su nombre, imágenes y área de acción.
 
 Antes de comenzar necesitarás dos imágenes
 - Un ícono de alta resolución 1024x1024
-- Un Splash screen de 2048x1536
+- Un Splash screen de 2048x1536 (opcional)
 
 Si no tienes imágenes a mano, puedes utilizar las que están incluidas en los archivos base de este tutorial
 
@@ -58,7 +57,7 @@ Localiza la primera casilla con el título “Custom PWA Manifest”, Toma los v
 
 Al final del proceso los valores de tu custom manifest deberían verse así.
 
-```
+``` json
 {
   "theme_color": "#4C5D99",
   "background_color": "#4C5D99",
@@ -114,7 +113,7 @@ Finalmente con el evento ‘activate’ incorporaremos un control de cache para 
 El resultado final es un código similar a este, puedes copiarlo directamente en la casilla “Top level service worker”
 
 
-```
+``` javascript
 const cacheName = "cache";
 
 self.addEventListener("fetch", function (event) {
@@ -144,7 +143,7 @@ self.addEventListener("activate", function (event) {
 
 Para activar el service worker marca la casilla “Enable top level service worker” y presiona “Save”
 
-## Paso 5 Instalar PWA
+## Paso 5: Instalar PWA
 
 Para este punto tu aplicación Modyo ya tiene un PWA funcional y al entrar al sitio encontrarás un nuevo icono en la barra de navegación.
 
