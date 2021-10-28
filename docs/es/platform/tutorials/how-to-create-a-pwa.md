@@ -10,7 +10,7 @@ En este tutorial nos vamos a enfocar en [Modyo Channels](https://docs.modyo.com/
 
 Las aplicaciones web progresivas, también conocidas como PWA (Progressive Web Apps) son aplicaciones web que progresivamente implementan capacidades tales como soporte para navegación offline o push notifications.
 
-Las PWA se pueden instalar localmente en sistemas operativos móviles y de escritorio, son livianas y se comportan como cualquier aplicación nativa.
+Las PWA se pueden instalar localmente en sistemas operativos móviles y de escritorio, son livianas, y se comportan como cualquier aplicación nativa.
 
 En este tutorial seguiremos usando el sitio de "Dynamic Bank" y vamos a habilitar el soporte PWA.
 
@@ -25,35 +25,37 @@ Te recomendamos que sigas el ejercicio paso a paso para crear tus propias PWA pe
 
 ## Paso 1: Generar el Manifiesto PWA
 
-El manifiesto de un PWA es donde se configura la aplicación, aquí definimos su nombre, imágenes y área de acción.
+El manifiesto de un PWA es donde se configura la aplicación, aquí definimos su nombre, imágenes, y área de acción.
 
 Antes de comenzar necesitarás dos imágenes
 - Un ícono de alta resolución 1024x1024
 - Un Splash screen de 2048x1536 (opcional)
 
-Si no tienes imágenes a mano, puedes utilizar las que están incluidas en los archivos base de este tutorial
+Si no tienes imágenes a mano, puedes utilizar las que están incluidas en los archivos base de este tutorial.
 
-Visita [este sitio web](https://bit.ly/2Zv2H5i) para generar los archivos de tu PWA automáticamente e incluye los datos de tu aplicación
+Visita [PWA Manifest Generator](https://bit.ly/2Zv2H5i) de SimiCart para generar los archivos de tu PWA automáticamente e incluye los datos de tu aplicación.
 
 <img src="/assets/img/tutorials/how-to-create-pwa/manifest_data.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
-En la sección Icons, incluye el Icono de alta resolución y presiona el botón “Generate Manifest” para generar automáticamente un archivo manifest con todas las imágenes que necesitarás
+En la sección Icons, incluye el ícono de alta resolución y presiona el botón **Generate Manifest** para generar automáticamente un archivo manifest con todas las imágenes que necesitarás.
 
 ## Paso 2: Almacenar imágenes en Modyo
 
-Descarga el archivo generado en el proceso anterior y descomprímelo. Encontrarás un grupo de imágenes que son las versiones del icono de tu aplicación en diferentes tamaños y resoluciones.
+Descarga el archivo generado en el proceso anterior y descomprímelo. Encontrarás un grupo de imágenes que son las versiones del ícono de tu aplicación en diferentes tamaños y resoluciones.
 
-En el menú lateral de Modyo busca el asset manager, presiona en “new asset” y arrastra las imágenes generadas
+En la plataforma Modyo, en el menú lateral, expande **Content** y haz click en **Gestor de Archivos**.
+
+Presiona **+ Nuevo Asset** y arrastra las imágenes generadas.
 
 <img src="/assets/img/tutorials/how-to-create-pwa/drag_images.gif" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
 ## Paso 3: Activar PWA manifest
 
-Selecciona en la barra lateral Channels > Sites y busca alli el sitio que quieres convertir en PWA.
+En la barra lateral selecciona **Channels**, haz click en **Sites**. Abre el sitio que quieres convertir en PWA.
 
-En la barra lateral, busca la sección “settings” y selecciona la opción “PWA”
+En la barra lateral, busca la sección **Configuración del sitio** y selecciona la opción **PWA**.
 
-Localiza la primera casilla con el título “Custom PWA Manifest”, Toma los valores generados en el archivo “manifest.webmanifest” y pégalos. Luego actualiza los valores de la propiedad “src” y reemplázalo por la ruta a las imágenes que acabas de almacenar en tu cuenta de Modyo.
+Localiza la primera casilla con el título **Custom PWA Manifest**, toma los valores generados en el archivo _manifest.webmanifest_ y pégalos. Luego actualiza los valores de la propiedad _src_ y reemplázalo por la ruta a las imágenes que acabas de almacenar en tu cuenta de Modyo.
 
 Al final del proceso los valores de tu custom manifest deberían verse así.
 
@@ -94,23 +96,23 @@ Al final del proceso los valores de tu custom manifest deberían verse así.
 
 ```
 
-Asegúrate de no introducir errores de sintáxis porque esto afectará el funcionamiento de tu aplicación, si necesitas verificar, puedes copiar el código y pegarlo en jsonlint.com para analizar que no contenga ningún error.
-Una vez actualizados los valores, activa tu manifest marcando la casilla “Enable PWA manifest” y luego el botón “Save”
+Asegúrate de no introducir errores de sintaxis porque esto afectará el funcionamiento de tu aplicación, si necesitas verificar, puedes copiar el código y pegarlo en [jsonlint.com](www.jsonlint.com) para verificar que no contenga ningún error.
+Una vez actualizados los valores, activa tu manifest marcando la casilla **Enable PWA manifest** y luego el botón **Guardar**.
 
 
 ## Paso 4: Activar service worker
 
 Si el archivo manifest es el que configura un PWA, el service worker es el encargado de ejecutar tareas y conectar la aplicación con el sistema local.
 
-El service worker puede realizar un amplio rango de tareas, en este ejercicio usaremos para almacenar una copia en cache de la aplicación.
+El service worker puede realizar un amplio rango de tareas, en este ejercicio lo usaremos para almacenar una copia en cache de la aplicación.
 
-Comenzaremos definiendo un espacio de almacenamiento local que llamaremos “cache”.
+Comenzaremos definiendo un espacio de almacenamiento local que llamaremos _cache_.
 
-Luego usaremos el evento ‘fetch’ para capturar los datos de la aplicación y crear una copia local que despliegue contenido aun sin conexión a internet.
+Luego usaremos el evento _fetch_ para capturar los datos de la aplicación y crear una copia local que despliegue contenido aun sin conexión a internet.
 
-Finalmente con el evento ‘activate’ incorporaremos un control de cache para eliminar la copia local cada vez que iniciemos una nueva sesión y garantizar así que los usuarios siempre ven una versión actualizada.
+Finalmente con el evento _activate_ incorporaremos un control de cache para eliminar la copia local cada vez que iniciemos una nueva sesión y garantizar así que los usuarios siempre ven una versión actualizada.
 
-El resultado final es un código similar a este, puedes copiarlo directamente en la casilla “Top level service worker”
+El resultado final es un código similar a este, puedes copiarlo directamente en la casilla **Top level service worker**
 
 
 ``` javascript
@@ -141,7 +143,7 @@ self.addEventListener("activate", function (event) {
 
 ```
 
-Para activar el service worker marca la casilla “Enable top level service worker” y presiona “Save”
+Para activar el service worker marca la casilla **Enable top level service worker** y presiona **Guardar**.
 
 ## Paso 5: Instalar PWA
 
@@ -149,7 +151,7 @@ Para este punto tu aplicación Modyo ya tiene un PWA funcional y al entrar al si
 
 <img src="/assets/img/tutorials/how-to-create-pwa/pwa_installed.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
-Al presionarlo el sistema instalará una Versión local de tu aplicación.
+Al presionarlo, el sistema instalará una versión local de tu aplicación.
 
 <img src="/assets/img/tutorials/how-to-create-pwa/pwa_install.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
@@ -159,7 +161,7 @@ Al presionarlo el sistema instalará una Versión local de tu aplicación.
 
 Los PWA ofrecen una nueva gama de posibilidades para distribuir aplicaciones en sistemas operativos móviles y de escritorio.
 
-En este tutorial exploramos los elementos básicas de una instalación, pero puedo puedes encontrar más recursos para seguir creando tus PWA en:
+En este tutorial exploramos los elementos básicas de una instalación, para conocer más acerca de PWA vea:
 
 - [Documentación oficial de PWA](https://blog.pwabuilder.com/docs)
 - [Documentación oficial del web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
