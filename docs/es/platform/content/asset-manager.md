@@ -47,7 +47,7 @@ El listado cuenta con tres tipos de filtros que te serán útiles para encontrar
 :::tip Tip
 Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado. 
 
-Así, aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna.
+Así, aparecerá apenas selecciones el primer elemento (haciendo click en el checkbox de la primera columna.)
 
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
