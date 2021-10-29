@@ -4,6 +4,15 @@ search: true
 
 # Notas del release
 
+### 9.1.32 - 28 de octubre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* AppShell OAuth 2.0 provider
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se repara error que afecta el reseteo de templates
+* Cache más granular que ahora considera el UserAgent
+
 ### 9.1.31 - 7 de octubre del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
