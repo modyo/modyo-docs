@@ -71,6 +71,7 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-a-custom-view",
                 "/en/platform/tutorials/how-to-create-private-site",
                 "/en/platform/tutorials/how-to-create-a-menu",
+                "/en/platform/tutorials/how-to-create-a-pwa",
               ],
             },
             {
@@ -256,6 +257,7 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-a-custom-view",
                 "/es/platform/tutorials/how-to-create-private-site",
                 "/es/platform/tutorials/how-to-create-a-menu",
+                "/es/platform/tutorials/how-to-create-a-pwa",
               ],
             },
             {
