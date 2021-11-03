@@ -70,6 +70,8 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-home",
                 "/en/platform/tutorials/how-to-create-a-custom-view",
                 "/en/platform/tutorials/how-to-create-private-site",
+                "/en/platform/tutorials/how-to-create-a-menu",
+                "/en/platform/tutorials/how-to-create-a-pwa",
               ],
             },
             {
