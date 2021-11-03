@@ -4,7 +4,7 @@ search: true
 
 # Introducción
 
-Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás una completa referencia de todas las experiencias financieras que Modyo entrega como parte de este producto, desde la instalación y desarrollo en tu ambiente local, hasta la descripción de interfaces, parámetros disponibles y referencia de las principales funcionalidades de cada Widget.
+Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás una completa referencia de todas las experiencias financieras que Modyo entrega como parte de este producto, desde la instalación y desarrollo en tu ambiente local, hasta la descripción de interfaces, parámetros disponibles, y referencia de las principales funcionalidades de cada Widget.
 
 
 ### ¿Qué es un Widget?
@@ -13,9 +13,9 @@ Un **Widget** es un componente aislado que empaqueta su propio marcado (`html`),
 
 En otras palabras, un **Widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
 
-Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crear tu galería de Widgets a través del [Widget builder](https://develop.docs.modyo.com/platform/channels/Widgets.html) y las herramientas necesarias para poder desarrollarlas usando el [modyo-cli](https://www.npmjs.com/package/@modyo/cli) o el [SDK de javascript](https://www.npmjs.com/package/@modyo/sdk).
+Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crear tu galería de Widgets a través del [Widget builder](https://docs.modyo.com/es/platform/channels/Widgets.html) y las herramientas necesarias para poder desarrollarlas usando [modyo-cli](https://www.npmjs.com/package/@modyo/cli) o [SDK de javascript](https://www.npmjs.com/package/@modyo/sdk).
 
-Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular** o **React**. En el caso de los **Widgets financieros**, nosotros decidimos usar **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero tú y tu equipo pueden ocupar Angular o React.
+Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular**, o **React**. En el caso de los **Widgets financieros**, nosotros decidimos usar **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero tú y tu equipo pueden ocupar Angular o React.
 
 ### ¿Por qué usar un Widget de este catálogo?
 
