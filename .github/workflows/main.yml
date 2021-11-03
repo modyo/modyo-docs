@@ -1,0 +1,19 @@
+
+name: Modyo Docs Build
+on:
+  push:
+    branches: [ master , develop ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: npm i
+      - name: Run a one-line script
+        run: npm run docs:build
