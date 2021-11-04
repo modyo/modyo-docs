@@ -18,7 +18,7 @@ To enable or disable forms and allow users to send their answers, you must go to
 
 ## Create a Form
 
-To create a new form, click **+ New Form**. This will take you to the create form view      where you will need to fill in the main attributes of the form:
+To create a new form, click **+ New Form**. This will take you to the create form view where you will need to fill in the main attributes of the form:
 
 - **Name**: Name associated with the form. This value will appear both in the form index in the platform and as a title when a user responds to it.
 - **Description**: This text will appear as text under the title in the front end.
@@ -54,7 +54,7 @@ The thank you email allows you to customize an email that will be sent to the us
 Here is a code sample that you can use as a base to personalize the thank you mail.
 
 ```liquid
-Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
+You sent this answer on: {{ 'now' | date: "%b %d, %y" }}
 <table width="600px">
     <tr>
         <td><b>user name</b></td>
@@ -132,8 +132,8 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Date**: Allows you to add a date field in which the user can select a date within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
-:::warning Atención
-From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
+:::warning Warning
+From version 9.0.8 onwards, forms no longer have file-type questions, so you won't be able to request users to upload files using Modyo forms.
 :::
 
 You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
@@ -182,7 +182,7 @@ The **Form Snippet** section, which will only appear if the form is public, will
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
-The**Options** and **Notifications** sections do not add anything other than what is in **New Form**.
+The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
 ::: warning Warning
 If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
