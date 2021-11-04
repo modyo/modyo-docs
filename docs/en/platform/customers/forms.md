@@ -8,9 +8,9 @@ One of the most demanted features in any platforms is the ability to capture of 
 
 ![Digital factory](/assets/img/platform/form-index.png)
 
-Upon entering Forms, you can see a list of all the forms that are currently active in the account. You can filter by their status (enabled or disabled), by the site where they are deployed and search for them by name.
+When you access the tool, you are able to see a list of all the forms currently active in the account. You can filter by their status (enabled or disabled), by the site they're deployed to, and search by the name of the form.
 
-In each row of the form table, you will see the name of the form in the first column, the date of creation, and in the last column, the number of responses that have been completed for that form.
+In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
 
 From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
 
@@ -18,15 +18,15 @@ To enable or disable forms and allow users to send their answers, you must go to
 
 ## Create a Form
 
-To create a new form, click on the main action at the top right **+ New**. This will take you to the creation view of a new form, where you must fill in its main attributes:
+To create a new form, click **+ New Form**. This will take you to the create form view      where you will need to fill in the main attributes of the form:
 
-- **Name**: Name associated to the form. This value will appear both in the forms index in the Modyo administrator, and also as a title in the front end.
+- **Name**: Name associated with the form. This value will appear both in the form index in the platform and as a title when a user responds to it.
 - **Description**: This text will appear as text under the title in the front end.
 - **People limit**: Determines the maximum number of answers are allowed.
 - **Site**: Allows you to select which sites display the form. Keep in mind that this causes the form to change its appearance according to the classes defined in the global CSS of the site. For more information, go to [Template builder](/en/platform/channels/templates.html)
 - **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
-- **Automatically ask the form to the audience?**: If the form is private (only registered users can answer it), this option appears and allows you to automatically redirect users who log in to the site associated with the form to answer it.
+- **Automatically redirect to form**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect the users that are associated to the form when they log in.
 
 The next section of the form properties contains the Form Options for what happens after a customer completes a form.
 
@@ -37,64 +37,64 @@ The next section of the form properties contains the Form Options for what happe
 
 - **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
 
-::: warning Warning
-If the form is public, users who do not have an active session in Modyo will see three mandatory fields at the top: Name, Last name and Email. Once they submit the form, a user profile with those values is created and then the response is associated with that user.
+:::warning Warning
+If it is a public form, users who do not have an active session in Modyo will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values and then the response will be associated with that user.
 :::
 
-::: warning Warning
-If a user does not have an active session, and fill out the form, and the email matches one of the users already registered in Modyo, then the response will be associated with the existing user and a new user will not be created.
+:::warning Warning
+If a user does not have an active session, fills out the form, and the email matches one of the users already registered in Modyo, the response will be associated with the existing user instead.
 :::
 
 In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
 
 The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/platform/channels/liquid-markup.html). Under the field to personalize the message, you will see a list of variables that you can use to personalize the email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/platform/channels/liquid-markup.html). Below the field to customize your message, you'll see a list of variables you can use to personalize your email.
 
 Here is a code sample that you can use as a base to personalize the thank you mail.
 
-``` html
-You sent this answer on: {{'now' | date: "% b% d,% y"}}
+```liquid
+Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
 <table width="600px">
-    <tr>
-        <td> <b> user name </b> </td>
-        <td colspan="2"> {{user.name}} </td>
-    </tr>
-    <tr>
-        <td> <b> user first name </b> </td>
-        <td colspan="2"> {{user.first_name}} </td>
-    </tr>
-    <tr>
-        <td> <b> user last name </b> </td>
-        <td colspan="2"> {{user.last_name}} </td>
-    </tr>
-    <tr>
-        <td> <b> user email </b> </td>
-        <td colspan="2"> {{user.email}} </td>
-    </tr>
-    <tr>
-        <td> <b> form name </b> </td>
-        <td colspan="2"> {{form.name}} </td>
-    </tr>
-    <tr>
-        <td> <b> form description </b> </td>
-        <td colspan="2"> {{form.description}} </td>
-    </tr>
-    <tr>
-        <td colspan="3" align="center" background-color="# f0f8ff"> <b> Questions </b> </td>
-    </tr>
-    <tr>
-        <td width="15%"> <b> Question type </b> </td>
-        <td width="15%"> <b> Question </b> </td>
-        <td width="70%"> <b> Answer </b> </td>
-    </tr>
-    {% for question in form.questions%}
-    <tr>
-        <td> {{question.type}} </td>
-        <td> {{question.title}} </td>
-        <td> {{question.answer}} </td>
-    </tr>
-    {% endfor%}
+    <tr>
+        <td><b>user name</b></td>
+        <td colspan="2"> {{user.name}}</td>
+    </tr>
+    <tr>
+        <td><b>user first name</b> </td>
+        <td colspan="2"> {{user.first_name}}</td>
+    </tr>
+    <tr>
+        <td><b>user last name</b></td>
+        <td colspan="2"> {{user.last_name}}</td>
+    </tr>
+    <tr>
+        <td><b>user email</b></td>
+        <td colspan="2"> {{user.email}}</td>
+    </tr>
+    <tr>
+        <td><b>form name</b></td>
+        <td colspan="2"> {{form.name}}</td>
+    </tr>
+    <tr>
+        <td><b>form description</b></td>
+        <td colspan="2"> {{form.description}}</td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center" background-color="#f0f8ff"><b>Questions</b></td>
+    </tr>
+    <tr>
+        <td width="15%"><b>Question type</b></td>
+        <td width="15%"><b>Question</b></td>
+        <td width="70%"><b>Answer</b></td>
+    </tr>
+    {% for question in form.questions %}
+    <tr>
+        <td>{{ question.type }}</td>
+        <td>{{ question.title }}</td>
+        <td>{{ question.answer }}</td>
+    </tr>
+    {% endfor %}
 </table>
 ```
 
@@ -104,8 +104,8 @@ By clicking on the answer counter of a form, you will arrive at a view listing a
 
 You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
-::: danger Danger
-You can delete responses one by one using the action to the right of each answer, or by using the actions selection that appears at the bottom, selecting multiple responses and then the **Delete** button at the end of the list. Keep in mind that deleting is irreversible and once a response has been deleted, it cannot be recovered.
+:::danger Danger
+You can delete responses one by one using the action to the right of each response, or by using bulk actions, selecting multiple responses and then clicking **Delete** at the bottom of the list. Note that this action is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
 To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
@@ -121,14 +121,14 @@ To modify a form, you must go to the **"Analysis"** section and use the **"Edit"
 Once you enter the editing section of a form, you will see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
 
 ### Add field
-This section will allow you to add as many fields as necessary to complete the form or remove fields that are not necessary:
+This section will allow you to add as many fields as necessary to complete the form or delete the ones that are not needed. Here are the fields you can add for a form:
 
 - **Simple text**: Allows the user to enter a single-line text response up to 256 characters.
 - **Paragraph**: Allows the user to enter a multi-line text response up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
-- **Dropdown**: Allows you to add a list of options from which the user may choose one in a dropdown format.
-- **Checkbox**: Allows you to add a list of options from which the user may choose one or more in a checkbox format.
-- **Choice**: Allows you to add a list of options from which the user may choose one in a _radio button_ format.
+- **Dropdown**: Allows you to add options from which the user can choose one in a dropdown format.
+- **Checkbox**: Allows you to add options from which the user can choose multiple in checkbox format.
+- **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
 - **Date**: Allows you to add a date field in which the user can select a date within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
@@ -182,7 +182,7 @@ The **Form Snippet** section, which will only appear if the form is public, will
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ of where you are inserting the snippet.
 :::
 
-The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
+The**Options** and **Notifications** sections do not add anything other than what is in **New Form**.
 
 ::: warning Warning
 If you use a Modyo site with a custom domain, you must enable the option to share resource sources [CORS](/platform/core/security.htm) in the account settings.
