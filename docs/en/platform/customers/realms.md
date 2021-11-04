@@ -6,7 +6,7 @@ search: true
 
 Realms are a grouping of users with similar features that are governed by the same configuration. Realms are especially useful when you have different groupings for sites within the same account that are not directly related, or to have a test site with test users without affecting productive user grouping.
 
-Each realm has its own login, registration, integrations, forms, segments, and messaging settings. Therefore, keep in mind when creating any of these items in a realm, it will only affect users of that realm and will have no effect on users in another realm.
+Each realm has its own login, registration, integrations, forms, segments, and messaging settings. You should be aware that when creating any of these elements in a realm, it will only affect users of that realm and will have no effect on users of another realm.
 
 ## Users
 
@@ -39,33 +39,33 @@ You can sort users by ascending or descending order by the following values:
 
 ### Add a user
 
-To add a new user, you must click on the **+ New** button at the top right of the screen.
+To add a new user, click the **+ New User** button at the top right of the screen.
 
 A selector will open that shows the two possible ways to create users in the system: manually or by importing them from a \*.CSV file. The second option allows us to import multiple users simultaneously.
 
 When you select "Add User", the platform will ask you to complete the following fields:
 
-- First Name: Legal name of the user. **Required**
+- Name: ** [Required] ** Legal name of the user.
 - Last Name: Last name of the user.
 - Second Last Name: user's second last name (optional).
-- User Name: Name within the platform **Required**.
-- Email: User email **Required**.
-- Password: Password for the user to enter the platform. The password must be at least 8 characters. **Required**.
-- Password confirmation: Input the same password to confirm.
+- Username: ** [Required] ** Name within the platform
+- Email: ** [Required] ** User's Email
+- Password: ** [Required] ** Password for the user to enter the platform. The password cannot be less than 8 characters long.
+- Password confirmation: ** [Required] ** A copy of the password given by the administrator.
 - Tags: Tags that serve to identify the user.
 
 ::: tip Tip
 To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-This user creation view may contain more fields depending on the configuration on the platform, available in the [Customers Settings] section (/es/platform/customers/realms.html #configuracion -de-customers). Some special fields, such as second last name, avatar, or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -registration). On the other hand, there are also **Custom Fields**, which can be created and modified in the [Custom Fields] section (/es/platform/customers/realms.html #campos -custom).
+This user creation view may contain more fields depending on the configuration in the platform, available in the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration). Some special fields, such as the second surname, avatar, or date of birth, can be activated in the [Registration Form](/en/platform/customers/realms.html#registration-form) section. On the other hand, there are also **Custom Fields**, which can be created and modified in [Custom Fields](/en/platform/customers/realms.html#custom-fields).
 
 
 ### Import users
 
 The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, and can also be filtered by file name using the search bar above the table.
 
-To make a new import, click on the upper right **+ Import** button. This opens a window where we can select and upload a local \*.CSV file that has a list of users and their attributes. It is important to check the box that indicates whether the file contains column headers or names, otherwise the headers themselves will be registered as a new user. Click **Accept** when ready.
+To perform a new import, you must click on the top right button **+ Import**. This will open a modal that allows you to select and upload the \*.CSV file that has the list of users and their attributes. It is important to leave the box that indicates that the file contains headers or column names selected if so, or the headers will attempt to be included as a new user. Then you proceed to click on the **Accept** button.
 
 Below you will see the main import view. On the left, there is a table with three main columns: the first contains the name of the imported column header (if it exists), the second contains some examples of the data in that column, and the third has a selector. This selector performs the imported value's respective assignment to the user's attribute on the platform.
 
@@ -75,7 +75,7 @@ In this view, you will proceed to assign each column in the\ *.CSV file to a res
 The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
-In a sidebar on the right, you will see the main import settings. Here you can define if the file does not follow one of the common standards of the \*.CSV files. You can also set the code in which the file is located, and define attribute separation (which by default is a comma). Below, there's a box that indicates if you have already selected the main attributes required for import (name and email). The button for **Start importation** will only be enabled once you have included those import fields. Finally, four main import options:
+On the right sidebar, you can see main import settings. Here you can define if the file does not follow one of the common standards for \*.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which defaults to a comma). A little further down is a box indicating whether you have already selected the primary attributes required for the import (name and email). The **Start import** button will only be enabled once you have included those fields to be imported. Finally, you'll have to choose four main import options:
 
 - Activate user account
 - Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos))
@@ -84,12 +84,20 @@ In a sidebar on the right, you will see the main import settings. Here you can d
 
 Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
 
-In addition, you can add any required custom fields. These can be configured in [Custom Fields](/en/platform/customers/users.html#custom-fields), which are found in the [Customer Configuration section](/en/platform/customers/users.html#customer-configuration).
+In addition, you will be able to complete a series of custom fields that may be required. These can be configured in [Custom Fields](/en/platform/customers/realms.html#custom-fields), which are located in the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration).
 
 
 ### Users tab
 
 Clicking any user from the main list opens their profile. In each profile is the following information:
+
+- Profile (general user data)
+- Activity (within the site)
+- Responses to forms (which have been submitted by the user)
+- Notes (to provide notes about this user in their profile, visible only to administrators)
+
+#### Profile
+In this section you will find the general user data:
 
 - User avatar (if one has been uploaded)
 - Status within the platform: active or inactive.
@@ -99,17 +107,13 @@ Clicking any user from the main list opens their profile. In each profile is the
 - User verification status
 - Segments that it's included in (if available)
 
-In the main section to the right are the following tabs:
-
-- Activity (within the site)
-- Responses to forms (which have been submitted by the user)
-- Notes (to provide notes about this user in their profile, visible only to administrators)
-
 #### Activity
 
 In this section you will see a record of all the actions that the user has performed within the platform.
 
-It should be noted that it is not a follow-up to the navigation of a user within the platform, but rather of the main interactions that it carries out within it. These records cannot be deleted or edited by administrators.
+:::tip Tip
+Note that this section deals with the main interactions that this user performs within the platform. These records cannot be deleted or edited.
+:::
 
 #### Form responses
 
@@ -119,11 +123,15 @@ This section shows you all the forms that the user has filled out within the pla
 
 In this section you can add personalized notes about users, only administrators can add, view and delete them.
 
+#### Devices
+
+In this section you will be able to see all devices that have an active session. Here an administrator can log the user off remotely. 
+
 #### Additional options
 
 In the upper right section you will find additional options with which you can disable and delete users:
 
-* **Edit**: Opens the user edit modal. If you want to add more fileds to a user go to [Custom Fields](/en/platform/customers/users.html#custom-fields).
+* **Edit**: Opens the user edit modal. To add more fields to the form you can go to [Custom Fields](/en/platform/customers/realms.html#custom-fields).
 * **Disable**: You can disable users and prevent them from logging in.
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
@@ -134,7 +142,7 @@ When modifying a user, you may change the list of Segments to which they belong.
 
 ----
 
-## Realm configuration
+## Realm Configuration
 
 In this section you can largely configure interaction between users and the Modyo platform. Some settings are focused on the visual experience for the user, such as the selection of colors or post templates, while others are focused on registration, access control, and personalization. In particular, this second part is essential for the platform to function properly, so it is important to be cautious when modifying this section's settings.
 
@@ -143,7 +151,7 @@ In this section you can largely configure interaction between users and the Mody
 Here you can set up general aspects of realm, such as:
 
 - **Name**.
-- **Identifier**: Allows you to modify the URL of profile views, login, registration and password recovery of the realm.
+- **Identifier**: Allows you to modify the url of the profile views, login, registration, and password recovery of the realm.
 - **Enable/Disable Credencials**: Allows you to disable Modyo credentials in this realm.
 - **Modify user account activation type**:
   - Direct: Users that register will be able to log in directly
@@ -157,7 +165,7 @@ Here you can set up general aspects of realm, such as:
   - Enable user avatar
   - Enable date of birth
   - Enable gender
-- **Remove**: Allows complete removal of realm. This is a background process, so you may not see the realm disappear immediately after completing the action. To be able to delete the realm, you must enter the realm's full name to confirm the action.
+- **Delete Realm**: Allows complete deletion of realm. This is a background process, so you may not see the realm disappear immediately after executing the action. In order to remove the realm, you'll need to enter the full realm name to confirm the action.
 
 :::danger danger
 By disabling Modyo's credentials in the realm, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
@@ -165,23 +173,23 @@ By disabling Modyo's credentials in the realm, you must make sure you have an id
 
 ### Appearance
 
-This section will allow you to modify some visuals of the realm users' registration, login, and profile views.
+This section will allow you to modify some visual aspects of the registration, login, and profile views of users in the realm.
 
 #### Primary Color
 
 The primary color is the one shown in the main buttons of the session management, such as entry, registration, password modifications or other attributes. To modify it, enter the HEX Code of the color you want and click on the **Save** button at the top of the screen.
 
-#### Show the logo
+#### Show the logo of the account
 
-This option allows you to display the logo configured for the account in the session views, which will be displayed on the respective forms of those views. To change the logo, you must access the [Modyo Interface](/en/platform/core/the-modyo-interface.html).
+This option allows you to display the logo configured for the account in session views, which will be displayed over the respective forms of those views. To change the logo, you need to access the [Modyo Interface](/en/platform/core/the-modyo-interface.html).
 
-#### Customize with CSS
+#### Custom CSS
 
-If you want to have custom CSS in the session views, add it to the editor and click on the **Save** button.
+If you want to have a custom CSS that fits your needs in session views, just paste the code into the editor in the window and click **Save**.
 
-It is common to have linked files in the Custom CSS. To link a file, click the button above the editor. This opens the [Asset Manager](/en/platform/content/asset-manager.html), where you can search for and copy the links of any files you need (by clicking the copy icon) to paste into the editor.
+It is common to have linked files in CSS code. If you want to add one, click on the [File Manager](/en/platform/content/asset-manager.html) icon, which will allow you to upload the files you need.
 
-However, the editor will not automatically update the link. Instead, when you upload it, you must click on the paste button located on the side of each file, which will then provide the link within the page. You can then paste this address into the CSS code.
+Note that the editor will not automatically paste the link, but after uploading the file, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into your CSS code so you can use it.
 
 ::: tip Tip
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
@@ -196,12 +204,12 @@ To adjust the address that will appear as the sender that will send your mail, y
 What this section allows is to enable, disable and customize the sending of automatic emails after specific interactions made by users, the emails are as follows:
 
 - Activation email: Sent once a user registration is completed, so that it confirms your data.
-- Imported user: Sent once the user was imported
-- Welcome email: Sent after completing a user registration at a specific site.
-- Added by administrator: Sent once the administrator created the user manually.
-- Password recovery: Sent when the user requested to recover their password.
-- Confirmation: Sent once the user was confirmed and activated.
-- Waiting for approval: Sent once the user has been confirmed, but you must wait for manual activation from an administrator.
+- Imported User: Sent once the user was imported.
+- Welcome Email: Sent after completing a user registration on a specific site.
+- Added by Admin: Submitted once the administrator created the user manually.
+- Password Recovery: Sent when the user requested to recover their password.
+- Awaiting Confirmation: Sent once the user was confirmed and activated.
+- Confirmation: Sent once the user is confirmed, but you must wait for manual activation from an administrator.
 - Custom footer: Custom footer for all the emails described above.
 
 To enable or disable the sending of these emails, we just have to click on the **Enabled/Disabled** button next to each function and click on the **Save** button.
@@ -233,13 +241,13 @@ The services compatible with logging into Modyo are:
 - Oauth2
 - OpenID Connect
 
-It is necessary to have the API logged in and configured in the services to allow its use. Make sure all required fields are complete. For more information on integrations, go to the [Platform Integrations section](/en/platform/core/integrations)
+It is necessary to have the correct configuration of the associated service that Modyo can connect to them. Make sure all required fields are complete. For more information about integrations, see [Platform Integrations](/en/platform/core/integrations)
 
-### Team Members
+### Team members
 
 To sort the work, Modyo allows you to select the team members who will work on each realm, which controls access to the realm's different aspects.
 
-To add a user to the realm, select the primary button **+ New** at the top right of the view. Select an administrator and assign them a role, then press**Add** to make that administrator part of the realm's work team.
+To add a user to the realm, click the **+ Add Member** primary button at the top right of the view, in the modal select an admin, and assign them a role, then press **Add** to make that admin part of the realm team.
 
 You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
@@ -247,39 +255,39 @@ If you want to remove a realm administrator, select the checks to the left of th
 
 The available roles are:
 
-- **User**: You can add users, create, modify, and submit to review campaigns, forms, and segments.
+- **User**: You can add users, create, modify, and send for review campaigns, forms, and segments.
 - **Admin**: You can access all settings and sections of the realm, add and remove users and team members, as well as delete the realm.
 
-### Custom Fields
+### Custom fields
 
 From here you can create custom fields that help identify the user's profile. Therefore, it is essential that these are correctly identified for their best use.
 
-The types of **Custom Fields** you can add are:
+The types of **Custom fields** you can add are:
 
 - Checkbox
 - Date
-- Dropdown (drop-down list)
+- Dropdown
 - Paragraph
 - Number
 - Choice
 - Simple Text Line
 
-You can drag the **Custom Fields** to order them. Note that this is the order in which the fields will appear in the editing views and in the users profile.
+You can drag the **Custom Fields** to sort them. Note that this is the order in which fields will appear in edit views and in the user profile.
 
 All **Custom Fields** have certain standard properties:
 
 - **Must be a unique response**: It implies that the value must be unique for each user, preventing another equal value from being saved.
 - **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In the event that the field is also visible and editable by users, this fields will appear on the registration form and will be required to create new users.
-- **Visible to front end users**: It implies that it will be visible in the profile view.
-- **Editable by front end users**: It implies that if it is visible, in addition, the user can modify its value.
-- **Searchable by admins**: It implies that this value will be indexed and users can be found when searched in the users index for the value of that field.
+- **Visible to users**: This means that it will be visible in the profile view.
+    - **User Editable**: This means that it will be visible and can also be modified by the user.
+- **Searchable by Administrators**: This value will be indexed and users can be found when searched from the user index of the Modyo administrator, by the value of that field.
 
-In addition to the above, **Custom Fields** may be enabled or disabled. If enabled, then they can be used by administrators and depending on their configuration, they will be available to users. If a **Custom Field** is disabled, then it will not appear on any form, but its values will remain saved.
+In addition to the above, **Custom fields** can be enabled or disabled. If enabled, then it can be used by administrators and depending on their configuration, it will be available to users. If a **Custom field** is disabled, then it will not appear on any form, but its values will remain saved.
 
-::: danger Danger
-When a **Custom Field** is disabled, it can be deleted. By deleting a **Custom Field**, you permanently delete all the values that users had for that **Custom Field**.
+:::danger Danger
+When a **Custom field** is disabled, it can be removed. By deleting a **Custom field**, you will be forever deleting all the values that users had for that **Custom field**.
 :::
 
-::: tip Tip
-Apart from being able to save specific data in user profiles, [Segments](/en/platform/customers/segments.html) can be created using **custom field** data, allowing users to be segmented by customizable values.
+:::tip Tip
+In addition to being able to save specific values to users, [Segments](/en/platform/customers/segments.html) filters can be created using the values of the **Custom fields**, allowing users to be segmented by customizable values.
 :::
