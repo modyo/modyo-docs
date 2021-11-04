@@ -58,7 +58,7 @@ Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguie
 Para enviar la contraseña al mail del usuario, solo es necesario marcar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo al usuario creado con su contraseña, que podrá cambiar al ingresar a la plataforma.
 :::
 
-Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers). Algunos campos especiales, tales como el segundo apellido, avatar, o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Custom Fields**, los que se pueden crear y modificar en la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
+Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino). Algunos campos especiales, tales como el segundo apellido, avatar, o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Custom Fields**, los que se pueden crear y modificar en la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
 
 
 ### Importar usuarios
@@ -84,7 +84,7 @@ A la derecha, en una barra lateral, podrás ver configuraciones principales de l
 
 Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
 
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Custom Fields](/es/platform/customers/realms.html#custom-fields), que se encuentran en la [sección Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers).
+Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Custom Fields](/es/platform/customers/realms.html#custom-fields), que se encuentran en la [sección Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino).
 
 
 ### Ficha de Usuarios
@@ -138,9 +138,6 @@ En la sección superior derecha encontrarás opciones adicionales con las que po
 :::tip Tip
 Al modificar un usuario, puede que cambie el listado de Segmentos a los que pertenece.
 :::
-
-
-----
 
 ## Configuración de reino
 
