@@ -14,8 +14,9 @@ Las PWA se pueden instalar localmente en sistemas operativos móviles y de escri
 
 En este tutorial seguiremos usando el sitio de "Dynamic Bank" y vamos a habilitar el soporte PWA.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"></iframe>
-
+<div style="margin: 50px auto; text-align: center;" >
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 ## Requisitos Previos
 
 Para comenzar este tutorial necesitas haber completado el [tutorial de creación de un sitio básico](/es/platform/tutorials/how-to-create-home.html). Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, JS, y la plataforma Modyo.
