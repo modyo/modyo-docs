@@ -4,11 +4,11 @@ search: true
 
 # Segments
 
-Segments are the ideal Modyo function to handle users in bulk if we need them to receive certain information.
+Segments is the ideal Modyo feature to manage users in bulk if you need them to receive specific information.
 
 These allow you to group your customers into different segments and facilitate communication through emails or notifications.
 
-## Interface
+### About the interface
 
 In the interface, you can see a list of all segments in your account, with the following details:
 
@@ -24,27 +24,28 @@ In addition, on the far right you will find an "Action" button with a drop-down 
 - Delete: Delete the segment.
 
 :::warning Warning
-If you delete the segment, the segment is lost, and must be recreated. However, this does not mean that you delete the users that once belonged to the segment.
+If you delete the segment, you will have to create it again, users will not be deleted.
 :::
 
 If you need to search for a specific segment by name, you can do so through the search bar at the top of the screen.
 
 ## Create a Segment
+To create a segment, follow these steps:
 
-To create a segment, click on the **New Segment** button at the top of the screen.
-
-In the window that appears, you can select the filters for your segment.
-
-To remove a filter, click on the "trash" icon on the right side of the window.
-
-To erase all filters, click on the **Clear all** button at the bottom of the window.
-
-To save a segment, click on the **Save as a Segment** button at the bottom of the window.
-
-To see the users that match your segment filters, click on the **Apply** button. This opens a [Users](/en/platform/customers/realms.html) list that displays all users that fit your filters.
+1. From the admin page, click on **Customers**, then select **Realms**.
+1. Click on your **Realm**.
+1. Select **Segments**, and click on **+ New Segment**.
+1. Add the required filters for your segment.
+1. Click **Next**.
+1. Enter a **Name** and **Description**.
+1. Click **Save**.
 
 :::tip Tip
-When using segments, it's important to make sure that each user profile is complete and up to date. All user data can be taken into account when creating segments of your customers. If a user profile is incomplete and has no data to match a given filter, they will not be included in your segment results.
+If you want to see the users who are part of a segment, in the Segments menu, click on the number of users. This will bring you to the [Users](/en/platform/customers/realms.html) view that will show you a list of all the contacts that fit your segment.
+:::
+
+:::tip Tip
+It is necessary that each customer's file is complete, as each of the data that appears on it, can be taken into account for segmenting. If the tab is not complete or there is no customer data to filter, it will not be added to the segment.
 :::
 
 ### Filters
@@ -80,7 +81,7 @@ The filters found by default in the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, go to the Custom Fields section located in [Customers Settings](/en/platform/customers/users.html#customers-settings) for more information.
+To create an advanced filter that suits your needs, see [Custom Fields](en/platform/customers/realms.html#custom-fields).
 
 :::warning Warning
 User segments are updated constantly in the background:
@@ -88,4 +89,5 @@ User segments are updated constantly in the background:
 * Each time a user's profile is modified.
 * Every time a user answers a form.
 
-These updates are not immediate, and depend on system load. It is possible that some users may not see segmented content right away after having executed an action that includes or excludes them from a particular segment. Please give the system a few minutes to reflect segment changes.
+The update runs in a background process, meaning that the update is not immediate and depends on the system load. Some users may not see segmented content for a few minutes after they've run an action that includes or excludes them from a segment.
+:::
