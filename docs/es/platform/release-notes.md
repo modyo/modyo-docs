@@ -4,6 +4,14 @@ search: true
 
 # Notas del release
 
+### 9.1.33 - 5 de noviembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se evita llamada a discovery service en callback OIDC
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arregla bug que impedía filtrar entradas por más de 100 tags en el admin
+
 ### 9.1.32 - 28 de octubre del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
