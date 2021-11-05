@@ -26,7 +26,7 @@ Along the top of the list are filters that allow you to refine the list of users
 
 The Advanced Filters option opens a window which allows you to filter users by specific attributes, such as their age, or by data in a custom field. When adding a new advanced filter, the number of users that match the filter criteria appears automatically in the lower left of the window, next to the button to clear the filters. If you want to see the list of these filtered users, click on the **Apply** button.
 
-::: tip Tip
+:::tip Tip
 Next to the **Apply** button, there is the **Save as Segment** button. This saves the filters you applied in a new Segment. Give your new segment a title and description. Afterwards you can find it in the [Segments](/en/platform/customers/segments.html) section.
 :::
 
@@ -45,40 +45,40 @@ A selector will open that shows the two possible ways to create users in the sys
 
 When you select "Add User", the platform will ask you to complete the following fields:
 
-- Name: ** [Required] ** Legal name of the user.
+- Name: **[Required]** Legal name of the user.
 - Last Name: Last name of the user.
 - Second Last Name: user's second last name (optional).
-- Username: ** [Required] ** Name within the platform
-- Email: ** [Required] ** User's Email
-- Password: ** [Required] ** Password for the user to enter the platform. The password cannot be less than 8 characters long.
-- Password confirmation: ** [Required] ** A copy of the password given by the administrator.
+- Username: **[Required]** Name within the platform
+- Email: **[Required]** User's Email
+- Password: **[Required]** Password for the user to enter the platform. The password cannot be less than 8 characters long.
+- Password confirmation: **[Required]** A copy of the password given by the administrator.
 - Tags: Tags that serve to identify the user.
 
-::: tip Tip
+:::tip Tip
 To send the password to the user's email, check the box under the password field. When saving, an email with the password will be sent to the user. They can change this password later.
 :::
 
-This user creation view may contain more fields depending on the configuration in the platform, available in the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration). Some special fields, such as the second surname, avatar, or date of birth, can be activated in the [Registration Form](/en/platform/customers/realms.html#registration-form) section. On the other hand, there are also **Custom Fields**, which can be created and modified in [Custom Fields](/en/platform/customers/realms.html#custom-fields).
+This user creation view may contain more fields depending on the configuration in the platform, available in the [Realm Settings](/en/platform/customers/realms.html#realm-configuration). Some special fields, such as the second surname, avatar, or date of birth, can be activated in the [Registration Form](/en/platform/customers/realms.html#registration-form). On the other hand, there are also **Custom Fields**, which can be created and modified in [Custom Fields](/en/platform/customers/realms.html#custom-fields).
 
 
 ### Import users
 
-The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name\ *.CSV or by import status, and can also be filtered by file name using the search bar above the table.
+The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name \*.CSV or by import status, and can also be filtered by file name using the search bar above the table.
 
 To perform a new import, you must click on the top right button **+ Import**. This will open a modal that allows you to select and upload the \*.CSV file that has the list of users and their attributes. It is important to leave the box that indicates that the file contains headers or column names selected if so, or the headers will attempt to be included as a new user. Then you proceed to click on the **Accept** button.
 
 Below you will see the main import view. On the left, there is a table with three main columns: the first contains the name of the imported column header (if it exists), the second contains some examples of the data in that column, and the third has a selector. This selector performs the imported value's respective assignment to the user's attribute on the platform.
 
-In this view, you will proceed to assign each column in the\ *.CSV file to a respective attribute available on the platform.
+In this view, you will proceed to assign each column in the \*.CSV file to a respective attribute available on the platform.
 
-::: tip Tip
+:::tip Tip
 The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
 :::
 
 On the right sidebar, you can see main import settings. Here you can define if the file does not follow one of the common standards for \*.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which defaults to a comma). A little further down is a box indicating whether you have already selected the primary attributes required for the import (name and email). The **Start import** button will only be enabled once you have included those fields to be imported. Finally, you'll have to choose four main import options:
 
 - Activate user account
-- Activate account and send email (customizable in [Correos](/es/platform/customers/realms.html #correos))
+- Activate account and send email (customizable in [Emails](/en/platform/customers/realms.html#emails))
 - Add users to sites
 - Update existing users (in case they are already registered on the platform)
 
@@ -135,12 +135,9 @@ In the upper right section you will find additional options with which you can d
 * **Disable**: You can disable users and prevent them from logging in.
 * **Delete**: Once a user is deactivated, you can delete that user. This action can be executed by team members who are administrators of the account and also each user can delete their account from the additional options in their profile.
 
-::: tip Tip
+:::tip Tip
 When modifying a user, you may change the list of Segments to which they belong.
 :::
-
-
-----
 
 ## Realm Configuration
 
@@ -191,7 +188,7 @@ It is common to have linked files in CSS code. If you want to add one, click on 
 
 Note that the editor will not automatically paste the link, but after uploading the file, you have to click on the paste button, which is located on the side of each file and which will give the link to it within the page. With this address, you can paste it into your CSS code so you can use it.
 
-::: tip Tip
+:::tip Tip
 If you have problems with keyboard codes when you are editing the CSS, you can click on the keyboard icon above the editor. This will display a series of button shortcuts that will allow you to easily handle editing.
 :::
 
@@ -220,7 +217,7 @@ The styles of the platform emails that we send can also be customized. To do thi
 
 When you click to enable each of the emails, it will show a default editor in which we can paste our code.
 
-::: danger Danger
+:::danger Danger
 It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the mail.
 
 To do this, we must insert attributes in the code under the editor, and we can easily copy and paste to locate them in the part we need.
@@ -251,7 +248,7 @@ To add a user to the realm, click the **+ Add Member** primary button at the top
 
 You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
-If you want to remove a realm administrator, select the checks to the left of their name, and then click the button at the bottom of the**Delete** list.
+If you want to remove a realm administrator, select the checks to the left of their name, and then click the button at the bottom of the **Delete** list.
 
 The available roles are:
 
