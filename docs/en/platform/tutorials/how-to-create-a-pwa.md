@@ -14,11 +14,12 @@ PWAs can be installed locally on desktop and mobile operating systems, are light
 
 In this tutorial we will continue to use the "Dynamic Bank" site and enable PWA support.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"></iframe>
-
+<div style="margin: 50px auto; text-align: center;" >
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 ## Prerequisites
 
-To start this tutorial you need to have completed the [Creating a basic site tutorial](/en/platform/tutorials/how-to-create-home.html). As in the previous tutorials you should have knowledge about HTML, JS, and the Modyo platform.
+To start this tutorial you need to have completed the [Create a Basic Site](/en/platform/tutorials/how-to-create-home.html). As in the previous tutorials you should already know HTML, JS, and how to use the Modyo platform.
 
 ### Source code
 We recommend that you follow this exercise step by step to create your own custom PWA. If you want, you can download all the code and images from this tutorial from [this link](https://cloud.modyocdn.com/uploads/a4ca197c-af7a-4888-99ce-cf455779dc8f/original/assets.zip).
@@ -53,7 +54,7 @@ Press **+ New Asset** and drag the generated images.
 
 In the sidebar select **Channels**, click on **Sites**. Open the site you want to convert to PWA.
 
-In the sidebar, expand **Configuration**, and click **PWA**.
+In the sidebar, expand **Site Settings** and click **PWA**.
 
 Locate the first box with the title **Custom PWA Manifest**, take the values generated in the _manifest.webmanifest_ file and paste them. Then update the values of the _src_ property and replace it with the path to the images you just stored in your Modyo account.
 
