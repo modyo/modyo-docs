@@ -2,16 +2,16 @@
 search: true
 ---
 
-## User Profile
+# User Profile
 
-The user profile is the central place where users can find the various sites in the account, notifications and view or modify their profile such as their name, email, custom fields and their subscription to mail campaigns.
+The user profile is the central place where users can find the various account sites, notifications, and the view to modify their profile such as their name, email, custom fields, and their subscription to email campaigns.
 
 ### Sites
 
-Displays the list of enabled sites in the account, so that the user can easily find all the digital channels associated with the account
+Displays the list of enabled sites in the account, so that the user can easily find all the digital channels associated with the account.
 
 :::tip Tip
-You can hide that section of the profile by using CSS in the appearance section of the customers configuration.
+You can hide that section of the profile by using CSS in the customers settings, appearance section.
 :::
 
 ### Notifications
@@ -30,13 +30,13 @@ In this section, each user can modify his own profile data, depending on the [cu
 * Email
 * Birth date
 * Gender
-* [Custom fields](/en/platform/customers/users.html#custom-fields)
+* [Custom fields](/en/platform/customers/realms.html#custom-fields)
 * Password
 
 In addition, each user can permanently delete their account. 
 
 :::danger Danger
-Deleting the user account is an irreversible action, and users who perform this action must register again to be able to access.
+Deleting the user account is an irreversible action and users who perform this action will need to register again in order to access it.
 :::
 
 ## Profile API

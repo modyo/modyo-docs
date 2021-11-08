@@ -9,13 +9,13 @@ Training on the Modyo Platform is a key aspect for any user who plays a role wit
 ### Modyo Platform
 
 #### Recommendations before starting
-1. Understand what [Modyo and its main modules] is (https://www.modyo.com/platform)
-2. Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
-3. Set up a [test environment](https://platform.modyo.cloud/onboarding) to implement the knowledge gained
-4. Access [platform documentation](/en/platform/core)
-5. Access our [Support Center](https://support.modyo.com/hc/en) to report problems and make queries
+- Understand what [Modyo and its main modules](https://www.modyo.com/platform) are
+- Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
+- Set up a [test environment](https://platform.modyo.cloud/onboarding) and put your skills to the test
+- Access [platform documentation](/en/platform/core)
+- Access our [Support Center](https://support.modyo.com/hc/en) to report problems and make queries
 
-Next, we'll tell you how you can access all the material, information and access necessary to make your experience with Modyo easier.
+Here's how you'll be able to access all the information and access you need to make your Modyo experience easier.
 
 #### General Concepts
 Modyo is a next-generation digital experience platform that powers solutions for interaction with digital customers, accelerating Web and mobile development safely and efficiently, creating a centralized space to govern your digital channels.
@@ -34,9 +34,9 @@ We recommend you to perform the tutorials in order, following all the steps pres
 Modyo has a [certification program](https://training.modyo.com/catalog) for customers and business partners consisting of training courses for three different profiles:
 - Content Manager
 - Frontend Developer
-- System Administrator (Security Settings, Organizations, Kingdoms, Sites, and Content Spaces)
+- System Administrator (security settings, organizations, realms, sites, and content spaces)
 
-The modality of these trainings are courses with videos and a test at the end of each course, which if approved will give you a respective certificate.
+These trainings consist of courses with videos and a test at the end of each course, which if approved will give you a respective certificate.
 
 For account activation you must send an email to [success@modyo.com](mailto: success@modyo.com) indicating the following information for each person who will perform the courses:
 - Full name
@@ -62,7 +62,7 @@ To report a problem or queries you must:
 2. Create an account linked to your corporate email
 3. Select the type of case to report:
     - **Incidence:** Problems that affect the correct functioning of the environment or the product developed on the platform indicating severity level (drops of environments, performance problems, among others).
-    - **Consult:** Any questions about the functionality of the platform or the product developed about it.
+    - **Query:** Any questions about the functionality of the platform or the product developed about it.
     - **Requirement:** Requests for configuration of environments, domains, VPN, execution of scripts, access to systems, among others.
 4. Complete the corresponding form according to the selected case.
 

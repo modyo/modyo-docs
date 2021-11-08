@@ -177,7 +177,7 @@ ARGUMENTS
 ```
 
 :::tip Tip
-Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_ en el directorio raíz del proyecto. Se recomienda la opción de un archivo para evitar la publicación en el registro de Github porque puede contener información delicada
+Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_ en el directorio raíz del proyecto. Se recomienda la opción de un archivo para evitar la publicación de información delicada en el registro de Github.
 :::
 
 La siguiente lista son las variables de entorno que puedes configurar:
@@ -192,6 +192,10 @@ MODYO_SITE_HOST=siteHost
 MODYO_BUILD_COMMAND=buildCommand
 MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```
+
+:::tip Tip
+Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_. Se recomienda la opción de un archivo para evitar la publicación en el registro de Github porque puede contener información delicada
+:::
 
 ### `modyo-cli autocomplete [SHELL]`
 
@@ -229,7 +233,6 @@ Después del comando, puedes correr `$ compaudit -D` para verificar que no hay c
 ```bash
 $ modyo-cli <TAB>           #Completar comando
 $ modyo-cli command --<TAB> #Completar opción
->>>>>>> Stashed changes
 ```
 
 ### Obtenga una plantilla para un proyecto
@@ -250,9 +253,10 @@ ARGUMENTS
   DIRECTORY  Name of directory to init
 
 OPTIONS
-  -f, --force       Override folder if exist
-  -h, --help        Output usage information
-  -x, --no-install  Don't install packages
+  -f, --force        Override folder if exist
+  -h, --help         Output usage information
+  -o, --organization [default: modyo] Github organization
+  -x, --no-install   Don't install packages
 
 EXAMPLE
   $ modyo-cli get name [directory]
@@ -269,9 +273,9 @@ EXAMPLE
 
 ### `modyo-cli push NAME`
 
-El comando `push` es el encargado del principio de integración, utilizado para enviar el widget al sitio seleccionado en la plataforma modyo.
+El comando `push` es el encargado del integrar el widget al sitio seleccionado en la plataforma Modyo.
 
-Utilizará un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token site_base id o host para identificar la plataforma ®Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
+Utilizarás un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token `site_base id` o `host` para identificar la plataforma Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
 
 ```bash
 USAGE
@@ -284,8 +288,9 @@ OPTIONS
   -b, --build-command=build-command      [default: build] Build command in package.json
   -d, --build-directory=build-directory  [default: dist] Build directory path
   -h, --help                             Output usage information
-  -i, --site-id=site-id                  Id of the site where the widget will be push
-  -n, --site-host=site-host              Host of the site where the widget will be push
+  -i, --site-id=site-id                  Id of the site where the widget will be pushed
+  -l, --disable-liquid                   Disable Liquid
+  -n, --site-host=site-host              Host of the site where the widget will be pushed
   -p, --publish                          Force widget publication
   -t, --token=token                      (required) Modyo Api token
   -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
@@ -293,17 +298,4 @@ OPTIONS
 
 EXAMPLE
   $ modyo-cli push <NAME>
-```
-
-Muchas de las opciones se pueden definir como variables de entorno o dentro de un archivo _.env_ que se recomienda para evitar la publicación en el registro de github porque puede contener información delicada
-
-```bash
-MODYO_BUILD_DIRECTORY=buildDirectoryPath
-MODYO_VERSION=version
-MODYO_TOKEN=token
-MODYO_ACCOUNT_URL=account-url
-MODYO_SITE_ID=siteId
-MODYO_SITE_HOST=siteHost
-MODYO_BUILD_COMMAND=buildCommand
-MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```

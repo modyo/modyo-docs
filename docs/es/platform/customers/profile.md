@@ -2,16 +2,16 @@
 search: true
 ---
 
-## Perfil de usuario
+# Perfil de usuario
 
-El perfil de usuario es el lugar central donde los usuarios pueden encontrar los distintos sitios de la cuenta, las notificaciones y la vista para modificar su perfil como su nombre, correo, campos personalizados y su suscripción a las campañas de correo.
+El perfil de usuario es el lugar central donde los usuarios pueden encontrar los distintos sitios de la cuenta, las notificaciones, y la vista para modificar su perfil como su nombre, correo, campos personalizados, y su suscripción a las campañas de correo.
 
 ### Sitios
 
-Muestra el listado de sitios habilitados de la cuenta, de tal forma que el usuario pueda encontrar fácilmente todos los canales digitales asociados a la cuenta
+Muestra el listado de sitios habilitados de la cuenta, de tal forma que el usuario pueda encontrar fácilmente todos los canales digitales asociados a la cuenta.
 
 :::tip Tip
-Puedes esconder esa sección del profile haciendo uso de CSS en la configuración de customers, sección apariencia
+Puedes esconder esa sección del profile haciendo uso de CSS en la configuración de customers, sección apariencia.
 :::
 
 ### Notificaciones
@@ -30,13 +30,13 @@ En esta sección, cada usuario puede modificar los datos de su perfil, dependien
 * Correo electrónico
 * Fecha de nacimiento
 * Género
-* [Campos personalizados](/es/platform/customers/realms.html#custom-fields)
+* [Custom fields](/es/platform/customers/realms.html#custom-fields)
 * Contraseña
 
 Además, cada usuario puede eliminar definitivamente su cuenta. 
 
 :::danger Peligro
-La eliminación de la cuenta de usuario es una acción irreversible, y los usuarios que ejecuten esta acción deberán registrarse nuevamente para poder acceder.
+La eliminación de la cuenta de usuario es una acción irreversible y los usuarios que ejecuten esta acción deberán registrarse nuevamente para poder acceder.
 :::
 
 ## API de perfil
