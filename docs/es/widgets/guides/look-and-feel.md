@@ -4,12 +4,12 @@ search: true
 
 # Personalización de estilos
 
-Todos los Widgets de este catalogo tienen como base un diseño plano, basado en Bootstrap, esperando ser intervenido y modificado para adaptarse a los diseños y lineamientos del cliente. Recuerden que estos Widgets están pensados para ser usados como base para el producto final y no como un producto en si mismo.
+Todos los Widgets de este catalogo tienen como base un diseño plano, basado en Bootstrap, esperando ser intervenido y modificado para adaptarse a los diseños y lineamientos del cliente. Recuerda que estos Widgets están pensados para ser usados como base para el producto final y no como un producto por si mismo.
 
-Tanto para la base de estilos, asi como la grilla utilizada en los Widgets, se hace uso de [Bootstrap](https://getbootstrap.com/) en su version `4.5.x`, utilizando al máximo los helpers y clases que éste incluye. De esta manera la cantidad de estilos personalizados en nuestros Widgets es muy baja lo que hace que su modificación sea simple y fácil.
+Tanto para la base de estilos, así como la grilla utilizada en los Widgets, se hace uso de [Bootstrap](https://getbootstrap.com/) en su versión `4.5.x`, utilizando al máximo los helpers y clases que éste incluye. De esta manera la cantidad de estilos personalizados en nuestros Widgets es muy baja lo que hace que su modificación sea simple y fácil.
 
 :::tip
-Para aprovechar al máximo el potencial de bootstrap usamos **SCSS** como pre-procesador de **css** lo que nos permite modificar los valores por defecto de las variables utilizadas en la compilación de bootstrap.
+Para aprovechar al máximo el potencial de Bootstrap usamos **SCSS** como pre-procesador de **css** lo que nos permite modificar los valores por defecto de las variables utilizadas en la compilación de Bootstrap.
 :::
 
 ```html{1-2}
@@ -22,7 +22,7 @@ Para aprovechar al máximo el potencial de bootstrap usamos **SCSS** como pre-pr
 
 ### Estructura de archivos y carga de estilos
 
-En la carpeta `src` del proyecto encontraremos una carpeta llamada `scss` que tiene la siguiente estructura:
+En la carpeta "src" del proyecto encontraremos una carpeta llamada "scss" que tiene la siguiente estructura:
 
 ```treeview{4-6}
 ├── src/
@@ -42,7 +42,7 @@ El archivo `_theme.scss` es usado para:
 - Extender bootstrap usando sus mixins
 
 ```scss{2,3,8,11}
-// Ejemplo: usamos el mixin bg-variant para crear mas colores de fondo
+// Ejemplo: usamos el mixin bg-variant para crear más colores de fondo
 @include bg-variant(".bg-tertiary", $tertiary, true);
 @include bg-variant(".bg-tertiary-10", $tertiary-10, true);
 
@@ -56,11 +56,13 @@ El archivo `_theme.scss` es usado para:
 }
 ```
 
-Puedes encontrar un listado con los mixins disponibles [aqui](https://gist.github.com/jCrip/4d76a90a4a5c569d9300e633ea8b52c7) y una explicación detallada [aqui](https://luisramirez.dev/como-usar-los-mixins-de-bootstrap-4-con-scss/)
+:::tip Tip
+Puedes encontrar un listado con los mixins disponibles [aquí](https://gist.github.com/jCrip/4d76a90a4a5c569d9300e633ea8b52c7) y una explicación detallada [aquí](https://luisramirez.dev/como-usar-los-mixins-de-bootstrap-4-con-scss/)
+:::
 
 #### Variables
 
-El archivo `_variables.scss` contiene todas las variables por defecto de bootstrap (colores, tamaños, botones, etc). Aquí podemos cambiar los valores que necesitemos para ajustar los estilos base de bootstrap a nuestro diseño, evitando asi tener que sobre escribir o añadir mas clases a nuestro proyecto (puedes leer mas sobre como modificar bootstrap [aqui](https://getbootstrap.com/docs/4.5/getting-started/theming/)).
+El archivo `_variables.scss` contiene todas las variables por defecto de Bootstrap (colores, tamaños, botones, etc). Aquí podrás cambiar los valores que necesitemos para ajustar los estilos base de Bootstrap a nuestro diseño, evitando así tener que sobre escribir o añadir más clases a al proyecto (puedes leer más sobre como modificar Bootstrap [aquí](https://getbootstrap.com/docs/4.5/getting-started/theming/)).
 
 ##### Ejemplo
 
@@ -94,19 +96,19 @@ $border-radius: 1.35rem;
 
 ### Custom
 
-En el archivo `custom.scss` importamos y le damos orden a todas las otras hojas de estilos que tenemos en la carpeta **scss** junto con la base de bootstrap.
+En el archivo `custom.scss` importa y ordena a todas las otras hojas de estilos que tienes en la carpeta **scss** junto con la base de Bootstrap:
 
 ```scss{1}
-@import "./variables"; // siempre antes de bootstrap
+@import "./variables"; // siempre antes de Bootstrap
 @import "~bootstrap";
 @import "./theme.scss";
 ```
 
 :::tip
-El orden es importante, las **variables** siempre van antes de importar bootstrap.
+El orden es importante, las **variables** siempre van antes de importar Bootstrap.
 :::
 
-Éste archivo **scss** se importa en el archivo `main.js` del proyecto.
+El archivo `custom.scss` se importa en `main.js` del proyecto.
 
 ```js{4}
 import Vue from "vue";
@@ -121,7 +123,7 @@ new Vue({
 }).$mount("#my-Widget");
 ```
 
-:::warning Importante
+:::warning Advertencia
 El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los estilos!
 :::
 
@@ -152,13 +154,11 @@ Algunos de los componentes de los Widgets tienen estilos propios y estos se escr
 
 Cuando estás construyendo un Widget con Bootstrap (u otro framework de estilos) sólo usarás un pequeño conjunto de éste, y se incluirán muchos estilos CSS no utilizados. Aquí es donde entra en juego **PurgeCSS**. PurgeCSS analiza tu contenido y tus archivos CSS. Luego hace coincidir los selectores utilizados en tus archivos con los de tus archivos de contenido y elimina los selectores no utilizados de tu CSS, lo que da como resultado archivos CSS más pequeños.
 
-Los Widgets utilizan [PurgeCSS](https://purgecss.com/) en conjunto con [PostCSS](https://postcss.org/) como parte del flujo de desarrollo. De esta manera logramos quitar esos **bytes** extra que no necesitamos y optimizamos nuestros Widgets. ¡Excelente!
+Los Widgets utilizan [PurgeCSS](https://purgecss.com/) en conjunto con [PostCSS](https://postcss.org/) como parte del flujo de desarrollo. De esta manera logramos optimizar el tamaño de nuestros Widgets.
 
-::: danger PROBLEMA!
-¿Qué pasa con los estilos **NO** declarados en el contenido, pero qué **SÍ** son usados en el Widget?
-:::
+### PostCSS 
 
-A veces nos podemos encontrar con algunos problemas de estilos, por ejemplo cuando usamos el componente modal de Bootstrap y no se carga el estilo del `modal-backdrop` ya que este elemento se crea de manera dinámica al abrir el modal; ó cuando usamos librerías de componentes externos en nuestros Widgets donde los estilos de ese componente no se han cargado y no están en el sitio. Esto pasa porque **PurgeCSS** no sabe donde leer el contenido de el componente externo.
+¿Qué pasa con los estilos **NO** declarados en el contenido, pero qué **SÍ** son usados en el Widget? A veces nos podemos encontrar con algunos problemas de estilos, por ejemplo cuando usamos el componente modal de Bootstrap y no se carga el estilo del `modal-backdrop` ya que este elemento se crea de manera dinámica al abrir el modal; ó cuando usamos librerías de componentes externos en nuestros Widgets donde los estilos de ese componente no se han cargado y no están en el sitio. Esto pasa porque **PurgeCSS** no sabe donde leer el contenido del componente externo.
 
 Para incluir los estilos que **PurgeCSS** ha eliminado pero que necesitamos en el sitio tenemos que declararlos en un archivo de configuración de **PostCSS**. Este archivo se encuentra en la raíz del Widget y se llama **postcss.config.js**
 
@@ -196,9 +196,9 @@ if (IN_PRODUCTION) {
 // ...
 ```
 
-En este archivo podemos obligar a **PurgeCSS** a incluir los estilos de 3 maneras distintas:
+En este archivo puedes obligar a **PurgeCSS** a incluir los estilos de 3 maneras distintas:
 
-- Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capaz de leer el contenido y determinar que estilos debe incluir.
+1. Agregar el archivo de contenido a la propiedad `content`, de esta manera PurgeCSS es capaz de leer el contenido y determinar que estilos debe incluir.
 
   ```js{6}
   // ...
@@ -212,7 +212,7 @@ En este archivo podemos obligar a **PurgeCSS** a incluir los estilos de 3 manera
   // ...
   ```
 
-- Agregar palabras claves a la propiedad `whitelist`
+2. Agregar palabras claves a la propiedad `whitelist`
 
   ```js{2}
   ...
@@ -221,7 +221,7 @@ En este archivo podemos obligar a **PurgeCSS** a incluir los estilos de 3 manera
   ...
   ```
 
-- Agregar patrones regex a la propiedad `whitelistPatterns`
+3. Agregar patrones regex a la propiedad `whitelistPatterns`
 
   ```js{6}
   // ...

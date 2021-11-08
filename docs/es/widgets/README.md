@@ -9,13 +9,13 @@ Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás u
 
 ### ¿Qué es un Widget?
 
-Un **Widget** es un componente aislado que empaqueta su propio marcado (`html`), estilo (`css`) y javascript de manera que pueda ser desplegado como parte de cualquier página web sin tener errores de runtime o conflictos con los estilos o el javascript de la página que lo aloja.
+Un **Widget** es un componente aislado que empaqueta su propio marcado (`html`), estilo (`css`), y javascript de manera que pueda ser desplegado como parte de cualquier página web sin tener errores de runtime o conflictos con los estilos o el javascript de la página que lo aloja.
 
 En otras palabras, un **Widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
 
 Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crear tu galería de Widgets a través del [Widget builder](https://develop.docs.modyo.com/platform/channels/Widgets.html) y las herramientas necesarias para poder desarrollarlas usando el [modyo-cli](https://www.npmjs.com/package/@modyo/cli) o el [SDK de javascript](https://www.npmjs.com/package/@modyo/sdk).
 
-Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular** o **React**. En el caso de los **Widgets financieros**, nosotros decidimos usar **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero tú y tu equipo pueden ocupar Angular o React.
+Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular**, **React**, etc. En el caso de los **Widgets financieros**, nosotros principalmente usamos **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero eres libre de escoger otra opción.
 
 ### ¿Por qué usar un Widget de este catálogo?
 

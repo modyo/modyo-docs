@@ -4,35 +4,40 @@ search: true
 
 # Variables de Liquid
 
-[**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma y de como construimos las vistas y accedemos al contenido en ella, así como también a [**drops**](/es/platform/channels/liquid-markup.html#drops) (variables) de contexto que nos permiten interactuar con nuestras vistas de manera mas dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, u ocultar un menu según la página que se este visitando, etc.
+Crea un objeto javascript en Snippets para poder hacer uso de Liquid en tus Widgets.
 
-Los Widgets al estar desacoplados de la plataforma tienen la desventaja de no poder usar liquid directamente y no tenemos acceso a esos drops (aunque estamos trabajando en una solución para eso), para poder trabajar con ellos los tendremos que disponibilizar mediante javascript desde la plataforma.
+Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a esos drops, para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/liquid-markup.html#drops) (variables) de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
 
-1. Primero creamos un nuevo snippet: **Templates(1) --> Snippets(2) --> Add a Snippet(3)**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
+
+Sigue estos pasos para crear un snippet con variables de Liquid:
+1. En el menú lateral en la plataforma, expande **Channels** y haz click en **Sitios**.
+1. Haz click en tu sitio.
+1. En el menú de tu sitio, haz click en **Plantillas** y selecciona **Snippets**.
+1. Agrega un nuevo **Snippet Personalizado**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
+
    ![template views](/assets/img/widgets/template_snippets.png)
 
-2. En este snippet creamos un objecto en el scope de `window` que contenga todos los drops que queremos tener disponibles en nuestro Widget. En este ejemplo el objeto se llama liquid, pero le pueden poner cualquier nombre.
-
-   ```js
+1. Abre el apartado de javascript y pega el código:
+```js
    window.liquid = {
-     lang: "{{@site.language}}" === "en" ? "en-US" : "es-CL",
+     lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL',
      request: {
        path: "{{request.path}}",
      },
    };
-   ```
-
-3. Desde nuestro Widget podremos acceder a estos valores utilizando el objeto creado en el paso anterior.
+```
+En este snippet creamos un objecto llamado _liquid_ con scope de `window` que contenga el lenguaje y el request path del sitio. Desde nuestro Widget ahora podemos acceder a estos datos utilizando el objeto creado en el paso anterior. Por ejemplo, si quieres obtener las categorías del sitio desde el Widget, puedes hacerlo con: 
 
    ```js
-   const LANG = window.liquid.lang;
+   const categories = window.liquid.lang;
    ```
 
-   :::warning Importante
-   En modo de desarrollo no tendremos acceso a este objeto ya que estamos trabajando localmente, es por eso que la recomendación es asignar valores por defecto al definir estas variables localmente.
-   :::
+:::warning Atención
+En modo de desarrollo no tendremos acceso a este objeto ya que estamos trabajando localmente, es por eso que la recomendación es asignar valores por defecto al definir estas variables localmente.
+:::
 
-  ```js
-   // si no existe el objeto liquid y la llave lang no esta definida, asignamos 'es-CL' por defecto
-   const LANG = window.liquid ? window.liquid.lang : "es-CL";
-   ```
+```js
+// Esta línea checa si existe el objeto liquid, si existe el objeto, const lang toma el valor de window.liquid.lang, si no existe el objeto, asigna el valor "es-CL" por defecto
+
+const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
+```

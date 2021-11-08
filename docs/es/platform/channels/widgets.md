@@ -170,9 +170,66 @@ USAGE
   $ modyo-cli help [COMMAND]
 
 ARGUMENTS
-  get   Pull a widget from our catalog into a new directory
-  help  Display help for modyo-cli
-  push  Push widget to Modyo platform
+  autocomplete Display autocomplete installation instructions 
+  get          Pull a widget from our catalog into a new directory
+  help         Display help for modyo-cli
+  push         Push widget to Modyo platform
+```
+
+:::tip Tip
+Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_ en el directorio raíz del proyecto. Se recomienda la opción de un archivo para evitar la publicación en el registro de Github porque puede contener información delicada
+:::
+
+La siguiente lista son las variables de entorno que puedes configurar:
+
+```bash
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_VERSION=version
+MODYO_TOKEN=token
+MODYO_ACCOUNT_URL=account-url
+MODYO_SITE_ID=siteId
+MODYO_SITE_HOST=siteHost
+MODYO_BUILD_COMMAND=buildCommand
+MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+```
+
+### `modyo-cli autocomplete [SHELL]`
+
+Modyo ofrece la habilidad de autocompletar los comandos de nuestro CLI si se configura esta opción.
+
+```bash
+USAGE
+  $ modyo-cli autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL       shell type
+
+OPTIONS
+  -r, --refresh-cache   Refresh cache (ignores displaying instructions)
+
+EXAMPLE
+  $ modyo-cli autocomplete
+  $ modyo-cli autocomplete bash
+  $ modyo-cli autocomplete zsh
+  $ modyo-cli autocomplete --refresh-cache
+```
+
+### Instrucciones para utilizar MODYO-CLI CLI Autocomplete
+
+1. Agregar autocomplete variable de entorno para tu perfil de zsh y agregarlo a source
+```bash
+$ printf "eval $(modyo-cli autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc
+```
+
+:::tip Tip
+Después del comando, puedes correr `$ compaudit -D` para verificar que no hay conflictos en los permisos.
+:::
+
+2. Prueba que funcione correctamente, e.g.:
+```bash
+$ modyo-cli <TAB>           #Completar comando
+$ modyo-cli command --<TAB> #Completar opción
+>>>>>>> Stashed changes
 ```
 
 ### Obtenga una plantilla para un proyecto

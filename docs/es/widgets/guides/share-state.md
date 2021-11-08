@@ -4,47 +4,47 @@ search: true
 
 # Compartir estado entre Widgets
 
-Todos los Widgets del catalogo usan [Vuex](https://vuex.vuejs.org/) para la gestión del estado de un Widget y como un almacén centralizado para todos los componentes de éste, con reglas que garantizan que el estado se puede cambiar de manera predecible. En otras palabras **Vuex** nos ayuda a compartir datos entre distintos componentes de un mismo Widget.
+**Vuex** ayuda a compartir datos entre distintos componentes de un mismo Widget. Todos los Widgets del catálogo usan [Vuex](https://vuex.vuejs.org/) para la gestión del estado de un Widget. También funciona como un almacén centralizado para todos los componentes, con reglas que garantizan que el estado se pueda cambiar de manera predecible.
 
 ### La estructura de Vuex
 
 ![vuex](/assets/img/widgets/vuex.png)
 
-- **Estado** (en el código state):
+- **Estado** (state):
 
-  - Es un objeto que puede contener cualquier tipo de información: strings, arrays u otros objetos.
+  - Es un objeto que puede contener cualquier tipo de información: strings, arrays, u otros objetos.
   - Es la información que almacenamos de forma centralizada en toda la app.
 
-- **Mutaciones** (en el código mutations):
+- **Mutaciones** (mutations):
 
   - Son funciones.
   - Son las únicas funciones que pueden modificar el estado.
   - Son llamadas por las acciones.
-  - Se pueden llamar en el componente a utilizar a través de un commit o a través de una acción.
+  - Se pueden llamar en el componente a utilizar a través de un `commit` o a través de una acción.
   - Son síncronas.
 
-- **Acciones** (en el código actions):
+- **Acciones** (actions):
 
   - Son funciones.
   - Poseen la lógica de negocio.
-  - Para cambiar el estado deben de llamar a mutaciones a través de commit.
-  - Pueden llamar otras acciones a través de dispatch.
-  - La forma de usarlas en el componente es a través de dispatch o utilizando módulos.
+  - Para cambiar el estado deben de llamar a mutaciones a través de un `commit`.
+  - Pueden llamar otras acciones a través de un `dispatch`.
+  - La forma de usarlas en el componente es a través de un `dispatch` o utilizando módulos.
   - Son asíncronas.
 
-- **Getters** (en el código getters).
+- **Getters**:
   - Son funciones.
-  - No cambian el estado pero sí que lo formatean para que podemos utilizar esa información de la manera que la necesitemos.
-  - Sería lo más parecido a una propiedad computed en el componente.
-  - Un ejemplo sería una función que filtrara el estado. No lo modifica pero te devuelve un nuevo objeto diferente con los datos filtrados que necesitas.
+  - No cambian el estado pero sí cambian el formato para que podemos utilizar esa información de la manera que la necesites.
+  - Sería lo más parecido a una propiedad `computed` en el componente.
+  - Un ejemplo sería una función que filtrara el estado. No lo modifica pero te devuelve un nuevo objeto diferente con los datos filtrados que necesites.
 
-:::tip Nota
-Para saber más acerca de la implementación y uso de Vuex, recomiendo leer la [documentación](https://vuex.vuejs.org/guide/) y ver este curso gratuito: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) de [VueSchool](https://vueschool.io/)
+:::tip Tip
+Para saber más acerca de la implementación y uso de Vuex, ve la [documentación](https://vuex.vuejs.org/guide/) y este curso gratuito: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) de [VueSchool](https://vueschool.io/)
 :::
 
 ### Persistir estado entre Widgets y recargas de página
 
-Los Widgets del catalogo, a diferencia de una SPA (Frontend Monolith), están construidos bajo el concepto de **Micro Frontends**.
+Los Widgets del catálogo, a diferencia de una SPA (Single-page application), están construidos bajo el concepto de **Micro Frontends**.
 
 La idea detrás de nuestros Widgets es separar un conjunto de características o funcionalidades en piezas diferentes que son propiedad de equipos independientes. Cada equipo tiene un área de negocio o misión distinta y desarrolla sus características de principio a fin, tiene su propio repositorio git, su propio archivo package.json, etc. Como resultado, cada Widget tiene un proceso de construcción independiente y un despliegue independiente (**CI**). Esto generalmente significa que cada Widget tiene tiempos de desarrollo rápidos y acotados.
 
@@ -73,9 +73,9 @@ export default function(sParam) {
 }
 ```
 
-Otra alternativa para persistir datos (estado) al recargar la página o al cambiar de Widget es utilizar **Vuex** en conjunto con **localStorage**. Cuando usar esta alternativa? Por ejemplo, tenemos a un usuario que esta completando un proceso de onboarding que consta de varios pasos y preguntas y por error recarga la pagina. Todo el avance que el usuario llevaba hasta ese momento se pierde y tiene que volver a empezar, lo que puede significar perder ese posible cliente.
+Otra alternativa para persistir datos (estado) al recargar la página o al cambiar de Widget es utilizar **Vuex** en conjunto con **localStorage**. Por ejemplo, un usuario está completando un proceso de onboarding que consta de varios pasos y por error recarga la pagina. Todo el avance que el usuario llevaba hasta ese momento se pierde y tiene que volver a empezar, lo que puede significar perder ese posible cliente.
 
-Por ejemplo
+Por ejemplo, se puede persistir los pasos del formulario de la siguiente manera:
 
 ```js
 //in our store.js file
@@ -120,4 +120,6 @@ new Vue({
 }).$mount('#brokers-dashboard');
 ```
 
-Eso es todo para **Vuex** y **localStorage**. Una advertencia que debo mencionar es que localStorage NO ES infinito. Muchos navegadores lo limitan a unos pocos megabytes.
+:::warning Atención
+En un navegador, localStorage *no es* infinito y cualquier usuario lo puede vaciar. Muchos navegadores lo limitan a menos de 10 megabytes por default.
+:::
