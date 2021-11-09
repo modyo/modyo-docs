@@ -4,28 +4,32 @@ search: true
 
 # Primeros pasos
 
- Si nunca has usado la plataforma Modyo y/o los Widgets, te recomiendo empezar por [aquí](/platform/). Ademas esta guía asume que tienes el [modyo-cli](/platform/channels/Widgets.md#modyo-cli) instalado y que has leído su [documentación](/platform/channels/Widgets.md#modyo-cli).
+Inicializa y publica un widget localmente utilizando Modyo CLI.
 
-:::tip Token de acceso al API
-Para poder usar los Widgets de este catálogo, necesitas tener un token de acceso de API que te permitirá descargarlos para su uso. Éste lo puedes conseguir con tu organización o directamente con Modyo.
-:::
+### Prerequisitos
 
-### Iniciar un Widget
+Esta guía fue creada para usuarios que ya tienen conocimiento de los siguientes temas:
+- [Modyo Platform](/es/platform/)
+- [Interfaz de linea de comandos `modyo-cli`](/es/platform/channels/Widgets.md#modyo-cli) instalada y conocer su [documentación](/es/platform/channels/widgets.html#modyo-cli)
+- Tener [acceso a la API administrativa](es/platform/core/api.html#bearer-token)
 
-La manera mas rápida de iniciar un Widget, es utilizando una de las plantillas de este Catalogo como acelerador y modificarla para nuestras necesidades.
-Para utilizar una de nuestras plantillas usaremos el comando `GET` del `modyo-cli`:
+### Inicializar un Widget
+
+La manera mas rápida de inicializar un Widget, es utilizando una de las plantillas de este catálogo como acelerador y modificarlo para tus necesidades.
+
+1. Usa el comando `get` de `modyo-cli` para descargar los archivos necesarios para el widget:
 
 ```bash
-modyo-cli get nombre-del-Widget nombreCarpeta
+modyo-cli get <nombre-del-Widget> <directorioDestino>
 ```
 
-Por ejemplo si queremos usar la plantilla de `Crédito de Consumo` de la Banca de Personas el comando seria el siguiente:
+Por ejemplo si queremos usar la plantilla de `Crédito de Consumo` de la Banca de Personas el comando sería el siguiente:
 
 ```shell
 modyo-cli get modyo-widgets-retail-consumer-loan ~/Desktop/MyLoanWidget
 ```
 
-Y para iniciar el servidor en modo de desarrollo:
+2. Cambia de directorio e inicializa el servidor en modo de desarrollo:
 
 ```shell
 cd ~/Desktop/MyLoanWidget && yarn serve
@@ -33,24 +37,24 @@ cd ~/Desktop/MyLoanWidget && yarn serve
 
 ### Publicar un Widget
 
-Para cargar nuestro Widget a la plataforma y publicarlo, usaremos el comando `PUSH` del `modyo-cli`. Esto se puede hacer de manera local o usando integración continua (recomendado).
+Para cargar nuestro Widget a la plataforma y publicarlo, usaremos el comando `push` de `modyo-cli`. Esto se puede hacer de manera local o usando integración continua (recomendado).
 
-Antes de poder cargar y publicar nuestro Widget de manera local, debemos crear un archivo de variables de entorno `.env` en la raíz del proyecto con las siguientes variables:
+1. Crea un archivo de variables de entorno `.env` en la raíz del proyecto con las siguientes variables:
 
 ```shell
-MODYO_TOKEN=[siteToken]
-MODYO_ACCOUNT_URL=[accountUrl]
-MODYO_SITE_HOST=[siteHost]
-MODYO_WIDGET_NAME=[widgetName]
+MODYO_TOKEN=[siteToken]        //El token para accesar a la API administrativa
+MODYO_ACCOUNT_URL=[accountUrl] //URL de la cuenta dueña del sitio
+MODYO_SITE_HOST=[siteHost]     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
+MODYO_WIDGET_NAME=[widgetName] //El nombre del widget
 ```
 
-Sigue [ésta](/es/widgets/guides/ci-cd.html#despliegue-de-un-widget-con-github-actions) guía para obtener un token que nos permita cargar y publicar el Widget.
-
-El **accountUrl** es el la URL de la cuenta dueña del sitio y el **siteHost** lo podemos buscar en la sección **Channels --> Sites** y revisar la columna host del listado de sitios.
+:::tip Tip
+Para saber más acerca de como obtener un token de acceso a la API, vea [API de administración](es/platform/core/api.html)
+:::
 
 ![Host](/assets/img/widgets/host.png)
 
-Con el archivo `.env` creado y los valores agregados podemos cargar el Widget a nuestro sitio:
+2. Abre una terminal en el proyecto y usa `push` para enviar el widget a la plataforma:
 
 ```shell
 modyo-cli push
@@ -60,7 +64,7 @@ Una vez terminado el proceso de carga, el Widget estará disponible en la secci�
 
 ![widgets-list](/assets/img/widgets/widgets_list.png)
 
-Si queremos que el Widget se publique automáticamente al terminar la carga, podemos usar la opción `--publish` del comando `PUSH`
+Si queremos que el Widget se publique automáticamente al terminar la carga, podemos usar la opción `--publish`.
 
 ```shell
 modyo-cli push --publish

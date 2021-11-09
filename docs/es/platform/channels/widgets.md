@@ -176,6 +176,10 @@ ARGUMENTS
   push         Push widget to Modyo platform
 ```
 
+:::tip Tip
+Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_ en el directorio raíz del proyecto. Se recomienda la opción de un archivo para evitar la publicación de información delicada en el registro de Github.
+:::
+
 La siguiente lista son las variables de entorno que puedes configurar:
 
 ```bash
