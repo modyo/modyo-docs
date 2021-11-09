@@ -23,7 +23,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 On the right, these are the different actions:
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: This allows you to open the preview of the widget's editable version in a new tab.
 
-:::warning Attention
+:::warning Warning
 You can preview widgets as a user without a session or with a Modyo session. For this, it's recommended to log in or out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
 :::
 
@@ -46,17 +46,17 @@ By default, you see the differences between the published version and the editab
 - **Unpublish**: If the widget is published, you can take it out of production using this option.
 - **Force Publish**: Admin team members have the option to forcibly publish widgets, circumventing the established reviewal process.
 
-::: tip Tip
+:::tip Tip
 Only unpublished widgets can be archived.
 :::
 
-::: tip Tip
+:::tip Tip
 Archived widgets do not appear in the main widget list or in the Custom widget selection in Page Builder. You can restore an archived widget by editing it and using the **restore** option in the upper right corner of the editing view.
 :::
 
-Once a widget is published, it is available as a custom widget in the [page builder.](/en/platform/channels/pages.html)
+Once a widget is published, it is available as a custom widget in the [page builder](/en/platform/channels/pages.html).
 
-::: tip Tip
+:::tip Tip
 To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
 
@@ -68,15 +68,15 @@ In the main work area you can see the following:
 - **Snippets**: Displays a list of snippets available from the [Template Builder](/en/platform/channels/templates.html#snippets) and copies their code to reference them in the widget.
 - **Changes**: If changes have been saved and not published, it will display this list of all the times saved each file (JS, CSS, and HTML). Clicking on a sub-version changes the contents of the tab to the content of the subversion that was clicked.
 
-::: tip Tip
+:::tip Tip
 To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
 :::
 
-::: tip Tip
+:::tip Tip
 If you publish a new version of your widget, the **Changes** list resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
 :::
 
-You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation.](/en/platform/channels/liquid-markup.html)
+You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation](/en/platform/channels/liquid-markup.html).
 
 The Properties on the right contains the following fields:
 
@@ -175,6 +175,10 @@ ARGUMENTS
   help         Display help for modyo-cli
   push         Push widget to Modyo platform
 ```
+
+:::tip Tip
+Options can be set in environment variables or within a _.env_ file in the project root directory. The file method is recommended to prevent logging sensitive information.
+:::
 
 The following list are the environment variables you can configure:
 
