@@ -9,13 +9,14 @@ Welcome to the **Modyo Financial Widgets Catalogue**. Here you will find a compl
 
 ### What is a Widget?
 
-A **Widget** is an isolated component that packages its own markup (`html`), style (`css`), and javascript so that it can be deployed as part of any web page without having runtime errors or conflicts with the host page's styles or javascript.
+A **Widget** is an isolated component that packages its own markup (`html`), style (`css`), and javascript so that it can be displayed as part of any web page without runtime errors or conflicts with the styles or javascript of the hosting page.
 
 In other words, a **Widget** is a [micro frontend](https://martinfowler.com/articles/micro-frontends.html): an architectural style that allows you to compose and deploy multiple javascript applications on a page.
 
 Modyo provides the ideal platform for deploying such applications and creating your Widgets gallery through the [Widget builder](https://docs.modyo.com/en/platform/channels/Widgets.html) and the tools needed to develop them using [modyo-cli](https://www.npmjs.com/package/@modyo/cli) or [javascript SDK](https://www.npmjs.com/package/@modyo/sdk).
 
-Modyo is an agnostic platform for the use of javascript frameworks, you can deploy applications made in **Vue**, **Angular**, or **React**. In the case of the **Financial Widgets**, we decided to use **Vue** (because we think the learning curve is small, it has a vibrant ecosystem that is gaining traction, among other things), but feel free to use Angular or React.
+Modyo is platform agnostic within javascript frameworks, you can deploy applications made in **Vue**, **Angular**, **React**, etc. In the case of the **financial widgets**, we mainly use **Vue** (because we think the learning curve is small, it has a flourishing ecosystem that is gaining traction, among others things), but you're free to choose another option.
+
 
 ### Why use a Widget from this catalog?
 
@@ -25,8 +26,6 @@ Financial Widgets deliver out of the box:
 
 - **UX** designed to facilitate user interaction
 - **Basic accessibility** (such as contrasting suitable colors, use of legible typographical sizes, semantic structure, etc)
-- **Internationalization and localization of texts and currencies**. By default each Widget comes in English and Spanish, but it has all the necessary infrastructure to customize the current languages or add more languages to suit your business needs. If deployed in Modyo, Widgets detect the language configured for the site
+- **Internationalization and localization of texts and currencies**. By default each Widget comes in English and Spanish, but it has all the necessary infrastructure to customize the your language or add more languages to suit your business needs. If deployed in Modyo, Widgets detect the language configured for the site
 - **Validations for forms, dates**
 - **Flat styles for easy customization** with our downloadable PDF design system [from here](/assets/pdf/Widget_Modyo.pdf) using **Sass** and popular libraries like [Bootstrap](https://getbootstrap.com/) and [Font Awesome](https://github.com/FortAwesome/vue-fontawesome#using-brand-icons)
-
-
