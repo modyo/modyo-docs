@@ -2,75 +2,69 @@
 search: true
 ---
 
-# Repository structure
+# Repository pattern
 
-### Repository Design Pattern
+Develop a repository pattern in a widget to consume data with Vue.js.
 
-The Repository Design Pattern is one of the most popular for creating an enterprise-grade application. It restricts us to work directly with application data and creates new layers for database operations, business logic, and application user interface.
+The repository design pattern is one of the most popular for creating an enterprise-grade application. A restriction is that you work directly with application data and creates new layers for database operations, business logic, and application user interface.
 
-Why you should use the Repository Design Pattern.
+Advantages of the repository pattern:
 
-1. The access code to the data can be reused.
+- The access code to the data can be reused.
+- It is easy to implement domain logic.
+- It helps us to decouple the application's logic.
+- Business logic can be easily tested without access to data.
+- It's a good way to implement dependency between code so that it's easier to test.
 
-2. It is easy to implement domain logic.
+#### Prerequisites
 
-3. It helps us undock logic.
+- Experience with design patterns, especially the Repository pattern
+- Experience with Vue.js and Vuex
+- Experience with JavaScript
 
-4. Business logic can be easily tested without access to data.
+#### 1. Create a "repositories" folder 
 
-5. It is also a good way to implement dependency injection that makes code more testable.
-
-### Deploying in a Widget
-
-This is an example of how to implement this pattern in a Widget.
-
-:::tip Prerequisites
-
-1. Basic knowledge of design patterns, especially the Repository Design Pattern
-2. Basic knowledge of Vue.js and Vuex
-3. Basic knowledge of JavaScript
-
-:::
-
-To consume data with Vue.js using the repository design pattern that helps us undock, follow these simple steps.
-
-#### 1. Create a "repositories" folder within the `src` folder of the Widget.
+Create a "repositories" folder within the "src" folder of the Widget. 
 
    ```sh
    cd src && mkdir repositories
    ```
 
-#### 2. Create a "clients" folder (It could have any name, but we recommend using _clients_)
+#### 2. Create a "clients" folder
 
-    It will create a "clients" folder inside the "repositories" folder. Basically, this folder will contain the different HTTP Clients you might want to use, for example if you want to use **Modyosdk**, Axios, Vue-resource etc.
+Create a "clients" folder within the "repositories" folder. This directory will contain the different HTTP Clients that communicate with the repository, for example: **ModyoSDK**, Axios, Vue-resource, etc.
 
    ```sh
    cd repositories && mkdir clients
    ```
 
-#### 3. Create a `XXXClient.JS` file: This contains all client API settings including all CRUD methods, for example `ModyOClient.js`.
+#### 3. Create a `XXClient.js` file: 
 
-   We can create different files for each Customer we use, for example, one for Axios and another for **Modyosdk**
+This contains all the client API configuration including CRUD methods, for example `ModyoClient.js`.
 
-   If you are going to use multiple HTTP Clients that share information for their configuration, you can create a config.js file
+Different files have to be created for each Client, for example, one for Axios and one for **ModyoSDK**.
+
+For **ModyoClient** and [**ModyoSDK**](/en/platform/content/public-api-reference.html#liquid-sdk), copy the following code:
 
    ```sh
-   touch ModyoClient.js && touch ApiClient.js
+   touch ModyoClient.js
    ```
-
-   For **ModyOClient** and using [**ModyosDK**](/platform/content/public-api-reference.html #sdk -de-liquid), the configuration is as follows:
 
    ```js
    import { Client } from "@modyo/sdk";
    import { accountUrl } from "./config/modyo.config";
 
    // Get page language from modyo, change to your needs
-   const LANG = window?.liquid?.lang ?? "es";
+   const LANG = <window.liquid.lang> ?? "es";
 
    export default new Client(accountUrl, LANG);
    ```
 
-   For **Apiclient** and using [**Axios**](https://github.com/axios/axios), the configuration is as follows:
+For **ApiCustom** and using [**Axios**](https://github.com/axios/axios), the configuration is as follows:
+
+   ```sh
+   touch ApiClient.js   
+   ```
 
    ```js
    import axios from "axios";
@@ -97,11 +91,15 @@ To consume data with Vue.js using the repository design pattern that helps us un
    export default apiClient;
    ```
 
+:::tip Tip
+If you use multiple HTTP Clients that share information for their configuration, you can create a config.js file
+:::
+
 #### 4. Create the Repositories
 
-   These files contain the different API operations that will be done within a particular feature of the Widget.
+   In these files are the different API operations that will be performed within a particular feature of the Widget. In the code we define and export the requests that are needed.
 
-   For example, to consume POSTS with the ModyosDK, we create a file "PostRepository.js" inside the `repositories` folder and copy the following code.
+   For example, to consume POSTS with ModyoSDK we create a _PostRepository.js_ file inside the `repositories` folder and copy the following code:
 
    ```sh
    touch PostRepository.js
@@ -136,20 +134,18 @@ To consume data with Vue.js using the repository design pattern that helps us un
    };
    ```
 
-   In the above code we define and export all our API requests that we need
-
-:::tip Important
-We must import the corresponding HTTP Client file into all Repositories where it is required. In this example "ModyoClient"
-:::
+   :::tip Tip
+   You must import the corresponding HTTP Client file into all repositories that need it. In this example "ModyoClient"
+   :::
 
 #### 5. Create the file "RepositoryFactory.js"
-   We create a file inside the `repositories` folder called `RepositoryFactory` to export all the different repositories we have created, so it is easier to use them anywhere in our Widget.
+   We create a file inside the "repositories" folder called `RepositoryFactory` to export all the different repositories we've created, so it's easier to use them anywhere in the Widget.
 
    ```sh
    touch  RepositoryFactory.js
    ```
 
-   In this file we paste the following code
+   Paste the following code:
 
    ```js
    import PostRepository from "./PostRepository";
@@ -166,31 +162,30 @@ We must import the corresponding HTTP Client file into all Repositories where it
 
 We've finished setting up our Repository Pattern. If you followed the steps you should have a file structure similar to this:
 
-```tree {3-12}
+```tree{3-12}
 ├── src/
-│ ├── components/
-│ ├── repositories/
-│ │ ├── ApiRepository.js
-│ │ ├── PostRepository.js
-│ │ ├── RepositoryFactory.js
-│ │ ── clients/
-│ │ ├── ApiClient.js
-│ │ ├── ModyoAuthClient.js
-│ │ ├── ModyoClient.js
-│ │ ── config/
-│ │ ── modyo.config.js
-│ ├── store/
-──...
+│   ├── components/
+│   ├── repositories/
+│   │   ├── ApiRepository.js
+│   │   ├── PostRepository.js
+│   │   ├── RepositoryFactory.js
+│   │   └── clients/
+│   │       ├── ApiClient.js
+│   │       ├── ModyoAuthClient.js
+│   │       ├── ModyoClient.js
+│   │       └── config/
+│   │           └── modyo.config.js
+│   ├── store/
+└── ...
+```
 
-### ```
+### How to use the Repository Pattern with Vue.js?
 
-### How do we use our Repository Pattern?
-
-Since we're working with Vue.js, we'll review how to use our repository pattern in the Vue components and in the Vuex store.
+To add the created repositories to the Vuex store for later consumption in Vue components, follow these steps:
 
 #### In Vue Components (SFC)
 
-We create a component for the POSTS and import the repository as shown below
+Create a component for POSTS and import the repository:
 
 ```vue
 <template>
@@ -232,75 +227,9 @@ export default {
 </script>
 ```
 
-In the Vuex Store
+#### In Vuex Store
 
-#### In the file "actions.js" located in the Widget's "store" we paste the following
-
-```js
-import Repository from "../repositories/RepositoryFactory";
-
-const PostRepository = Repository.get("posts");
-
-export default {
-  async getPosts({ commit }) {
-    commit("setLoading", true);
-    try {
-      const response = await PostRepository.getTop(3);
-      const posts = response;
-      commit("updatePosts", posts);
-      return response;
-    } catch (error) {
-      return error;
-    } finally {
-      commit("setLoading", false);
-    }
-  },
-};
-```
-
-```vue
-<template>
-  <div class="row">
-    <Post v-for="(post, i) in posts" :key="i" :posts="post" />
-    <div class="col-lg-8 col-md-10 mx-auto">
-      <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-import Repository from "../repositories/RepositoryFactory";
-const PostRepository = Repository.get("posts");
-
-import Post from "./Post";
-export default {
-  name: "Posts",
-  components: {
-    Post,
-  },
-  data() {
-    return {
-      posts: [],
-    };
-  },
-  created() {
-    this.getPosts();
-  },
-  methods: {
-    getPosts: async function() {
-      const { data } = await PostRepository.getTop(3);
-      this.posts = data;
-    },
-  },
-};
-</script>
-```
-
-#### In the Vuex Store
-
-In the file "actions.js" located in the Widget's "store" we paste the following
+In the `actions.js` file located in the "store" folder of the Widget we paste the following:
 
 ```js
 import Repository from "../repositories/RepositoryFactory";
