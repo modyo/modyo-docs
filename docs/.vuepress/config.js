@@ -11,7 +11,7 @@ module.exports = {
     },
     "/es/": {
       lang: "es",
-      title: "Documentación de Modyo",
+      title: "Modyo Docs",
       description: "Bienvenido a la documentación oficial de Modyo.",
     },
   },
