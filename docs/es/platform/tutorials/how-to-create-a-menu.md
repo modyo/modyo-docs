@@ -6,7 +6,7 @@ search: true
 
 ## Introducción
 
-Bienvenido a un tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) utilizando los modulos de [Navigation](/es/platform/channels/navigation.html) y [Plantillas](/es/platform/channels/templates.html) para crear un mega menú en nuestro sitio.
+Bienvenido a un tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfoca en [Modyo Channels](/es/platform/channels), utilizando los modulos de [Navigation](/es/platform/channels/navigation.html), y [Plantillas](/es/platform/channels/templates.html) para crear un mega menú en tu sitio.
 
 Navigation es una herramienta que nos ayuda a desarrollar de manera simple y que luego se puede administrar de una mejor manera. 
 
@@ -18,12 +18,26 @@ En este tutorial seguiremos usando el sitio de "Dynamic Bank".
 
 ## Requisitos Previos
 
-Para comenzar este tutorial debemos haber completado el tutorial de [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home) y opcionalmente [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) para ver el Home completo con sus contenidos. Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS, y la plataforma Modyo.
+Completado los tutoriales:
+
+- [Creación y Publicación de Contenidos](/es/platform/tutorials/how-to-create-content) 
+- [Creación de un Sitio Básico](/es/platform/tutorials/how-to-create-home)
+
+Conocimientos de:
+
+- HTML
+- CSS
+- JS
+- La plataforma de Modyo
 
 ## Paso 1: Completar el Menú
 
-En los Tutoriales anteriores creamos el sitio de Dynamic Bank, ahora vamos a generar un menú mas complejo, para esto vamos a ir a nuestro sitio, ingresar al módulo de 
-[Navigation](/es/platform/channels/navigation.html) entramos al Menú <code>Main</code> y llenamos con los siguientes campos:
+En los Tutoriales anteriores creaste el sitio de Dynamic Bank, ahora vas a generar un menú complejo usando las herramientas de [Navigation](/es/platform/channels/navigation.html), y [Plantillas](/es/platform/channels/templates.html). 
+
+Para agregar más elementos al menú, sigue estos pasos:
+1. En el menú lateral, selecciona **Channels**, haz click en **Sitios**.
+1. Selecciona tu sitio y haz click en [Navegación](/es/platform/channels/navigation.html).
+1. Selecciona el menú <code>Main</code> y lo llenamos con los siguientes campos:
 
 <table>
  <tr>
@@ -216,15 +230,23 @@ En los Tutoriales anteriores creamos el sitio de Dynamic Bank, ahora vamos a gen
  </tr>
 </table>
 
-Lo que nos dará una vista asi:
+Lo que nos dará una vista así:
 
 <img src="/assets/img/tutorials/how-to-create-a-menu/menu.png" style="max-width: 700px;margin: auto 0;"/>
 
-Luego de tener lista nuestra navegación guardamos y publicamos.
+3. **Guarda** tus cambios y al terminar haz click en **Publicar**.
 
 ## Paso 2: Crear vista en Plantillas
 
-Para hacer el cambio en el HTML del menú vamos a ir a Plantillas y en el tab Snippets abrimos el archivo <code>menu</code>.
+En este paso, todavía no hay lugar para desplegar tu menú. Para visualizar el menú, vas a generarlo utilizando Liquid y Snippets.
+
+Para visualizar tu menú, sigue estos pasos:
+
+1. En el menú principal, haz click en **Plantillas**.
+1. Abre **Snippets**, y selecciona el snippet General `menu`.
+1. Reemplaza el código por el siguiente:
+
+>Este código va a tomar el menú que creaste e iterar sobre los ítems encontrados, desplegándolos utilizando una combinación de Liquid y HTML. El código aplica diferente lógica si el ítem se encuentra en primer, segundo, o tercer nivel de profundidad.
 
 ```html
 {% assign menu = menus['main'] %} 
@@ -303,7 +325,7 @@ Para hacer el cambio en el HTML del menú vamos a ir a Plantillas y en el tab Sn
 </ul>
 ```
 
-Crear Snippet <code>megamenu_css</code> y agregar el siguiente código y agregar el snippet en la Hoja de estilos Base del sitio.
+4. Crea un nuevo Snippet personalizado `megamenu_css` y agrega el siguiente código:
 
 ```css
 .megamenu {
@@ -376,7 +398,20 @@ a.megamenu-item {
 }
 ```
 
-Agregar las imagenes en el [Asset Manager](/es/platform/content/asset-manager.html#selector-de-assets) y remplazar el background-image de cada clase por el <code>Asset URL</code>.
+5. Abre la Hoja de Estilos `style`, y agrega `megamenu_css`:
+
+```css
+{% snippet "shared/libs/bootstrap_css" %}
+{% snippet "shared/libs/materialdesign_icons_css" %}
+{% snippet "shared/libs/file_upload_css" %}
+{% snippet "shared/libs/select2_css" %}
+
+{% snippet "shared/libs/modyo_base_css" %}
+{% snippet "shared/libs/theme_css" %}
+{% snippet "megamenu_css" %}
+```
+
+6. Agrega las imágenes en el [Asset Manager](/es/platform/content/asset-manager.html#selector-de-assets) y remplaza el _background-image_ de cada clase por el `Asset URL`.
 
 <table>
   <tr>
@@ -411,7 +446,7 @@ Agregar las imagenes en el [Asset Manager](/es/platform/content/asset-manager.ht
   </tr>
 </table>
 
-Crear snippet <code>menu_responsive</code> donde pegaremos el código del menu que va a ir en el panel.
+7. Crea un nuevo Snippet personalizado `menu_responsive` y agrega el código del menú que va a ir en el panel:
 
 ```html
 {% assign menu = menus['main'] %} 

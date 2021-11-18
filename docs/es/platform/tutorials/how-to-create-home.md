@@ -6,15 +6,15 @@ search: true
 
 ## Introducción
 
-Bienvenido a un tutorial de la serie de entrenamiento de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde aprenderás a crear un sitio, modificar la base del template, agregar nuevas librerías, y conectar widgets con contenido ya creado.
+Bienvenido a un tutorial de la serie de entrenamiento de Modyo. En este tutorial se enfoca en [Modyo Channels](/es/platform/channels) donde aprenderás a crear un sitio, modificar la base de una plantilla, agregar nuevas librerías, y conectar widgets con contenido ya creado.
 
-Hacer el enlace entre Content y Channels es una de las funcionalidads más importantes a la hora de tener sitios dinámicos y fáciles de administrar por cualquier persona.
+Hacer el enlace entre Content y Channels es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar.
 
-A lo largo de este tutorial, y otros también, usaremos la marca ficticia "Dynamic Bank", la cual te introducimos a continuación.
+A lo largo de este tutorial usaremos la marca ficticia "Dynamic Bank", la cual te presentamos a continuación.
 
 ### Dynamic Bank
 
-Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplos de la plataforma. Quisimos crearlo para poder ofrecer una experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutorial tu sitio debería lucir así:
+Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplos de la plataforma. Quisimos crearlo para poder ofrecer una experiencia cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutorial tu sitio debería lucir así:
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
@@ -22,13 +22,27 @@ Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ej
 
 ## Requisitos Previos
 
-Para ejecutar los pasos de este tutorial debes tener creados los contenidos del tutorial de [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y tener conocimientos sobre HTML, CSS, JS y la plataforma Modyo.
+Para ejecutar los pasos de este tutorial debes haber completado:
+
+- [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content)
+
+Tener conocimientos sobre:
+- HTML
+- CSS
+- JS
+- La plataforma Modyo
 
 ## Paso 1: Crear un sitio en la Nube
 
-Para crear nuestro [sitio](/es/platform/channels/sites), donde vamos a montar Dynamic Bank, tenemos que ir a la sección [Modyo Channels](/es/platform/channels) y hacer clic en el botón <b>+ Nuevo Sitio</b>.
+Para crear tu [sitio](/es/platform/channels/sites), sigue estos pasos:
 
-Llenamos los campos Name con "Bank" y seleccionamos el Theme "Minimal" como se muestra en la imagen.
+1. En el menú principal, selecciona **Channels** y haz click en **Sitios**.
+2. Haz click en **+ Nuevo Sitio**.
+3. En la ventana de Nuevo Sitio llena los siguientes datos:
+  - Nombre: **Bank**
+  - Host: **bank**
+  - Reino del sitio: **Ninguno**
+4. Haz click en **Crear**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
@@ -36,56 +50,68 @@ Llenamos los campos Name con "Bank" y seleccionamos el Theme "Minimal" como se m
 
 ## Paso 2: Cambiar variables CSS para darle look and feel de Dynamic Bank
 
-Dentro de nuestro nuevo sitio, a la izquierda encontrarás el menú principal con las secciones en las que trabajaremos en este tutorial.
-
-Vamos a partir en la sección [Plantillas](/es/platform/channels/templates), la que corresponde a la estructura que contiene el sitio, es decir la base del HTML, el CSS y JS, más las librerías que contemplan la plantilla.
-
 Aquí vamos a modificar las variables de CSS, que están en un snippet llamado <b>variables css</b> que alimenta el resto de las hojas de estilo ya configuradas dentro del Theme Minimal.
 
-Para hacer el cambio, vamos a modificar las siguientes variables en el snippet:
+Para hacer el cambio a variables css, sigue estos pasos:
+
+1. En el menú principal, haz click en **Plantillas**.
+1. En el menú Vistas y Snippets de la derecha, haz click en **Snippets**.
+1. En el apartado de **Libs**, haz click en `variables_css`.
+1. Modifica los siguientes valores:
 
 #### Colores:
 
-```css
-primary = rgba(240, 90, 162, 1)
-secondary = rgba(98, 125, 229, 1)
-light = rgba(250, 250, 250, 1)
-info = rgba(121, 133, 178, 1)
-dark = rgba(56, 68, 112, 1)
+```liquid
+{% assign primary = rgba(240, 90, 162, 1) %}
+{% assign secondary = rgba(98, 125, 229, 1) %}
+{% assign light = rgba(250, 250, 250, 1) %}
+{% assign info = rgba(121, 133, 178, 1) %}
+{% assign dark = rgba(56, 68, 112, 1) %}
 ```
 
 #### Botones:
 
-```css
-button_radius = 100px
-button_font_weight = 600
+```liquid
+{% assign button_radius = 100px %}
+{% assign button_font_weight = 600 %}
 ```
 
-Para revisar el cambio que acabas de realizar vamos a utilizar el [modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa).
+Para revisar el cambio que acabas de realizar, haz click en ícono de un "ojo" para activar el [modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa).
 
-## Paso 3: Sacar container
+## Paso 3: Editar `container`
 
-En los [Layout](/es/platform/channels/templates.html#layouts-personalizados), que son la estructura HTML en la cual se montan los widgets que agregaremos en cada [Page](/es/platform/channels/pages), tenemos que quitar la clase <b>container</b> del main para poder utilizar el 100% del ancho de nuestra Page.
+En los [Layouts](/es/platform/channels/templates.html#layouts-personalizados), estructuras HTML que se agregan en cada [Página](/es/platform/channels/pages), tienes que quitar la clase `container` del main para poder utilizar el 100% del ancho de una Página.
 
-Para esto, dentro de Plantillas, vamos a volver a la pestaña Views, buscamos la sección Layouts, y abrimos <b>home</b>.
+1. En **Plantillas**, en la lista de Vistas de la derecha, adentro de Layouts haz click en `home`.
+1. Quita `class="container` de la plantilla.
+1. Haz click en **Publicar**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
-
-Aquí quitamos <code>class="container"</code>.
 
 ## Paso 4: Cambiar fuente del sitio
 
 En el minimal estamos usando la librería [webfontloader](https://github.com/typekit/webfontloader) para cargar la tipografía de manera asincrónica.
 
-Para Dynamic utilizaremos la fuente Jost. Para cambiarla tenemos que entrar a la <b>hoja de javascript Base</b> dentro de Views y modificar la línea donde se hace el llamado, remplazando <code>families: ['DM Sans:400,700&display=swap']</code> por <code>families: ['Jost:400,700&display=swap']</code>.
+Para Dynamic Bank utilizaremos la fuente Jost. Sigue estos pasos para cambiar la tipografía:
+
+1. Dentro de la lista de Vistas, haz click en Javascript `base`.
+1. Reemplaza la siguiente linea:
+
+```css
+families: ['DM Sans:400,700&display=swap']
+
+por
+
+families: ['Jost:400,700&display=swap']
+```
 
 ## Paso 5: Cambiar header y footer
 
-Dentro de las Plantillas, una de las funcionalidades más potentes que tenemos es la de reutilizar código en diversas Pages, que es el caso del Header y Footer.
+Dentro de Plantillas, una de las funcionalidades más potentes que tienes es la de reutilizar código en diversas Páginas con las plantillas de Header y Footer. Este código se va a cargar para cada página de tu sitio.
 
-El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en General, y lo vamos a remplazar por los siguientes códigos HTML.
+Para lograr el look and feel de Dynamic Bank en tu sitio, reemplaza el header y footer, localizado dentro de Snippets -> General, por el siguiente código: 
 
-<code>header</code>
+`header`
 
 ```html
 <header role="banner" id="header">
@@ -180,7 +206,7 @@ El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en Gener
 </header>
 ```
 
-<code>footer</code>
+`footer`
 
 ```html
 <footer id="footer" class="py-5 bg-dark navbar-expand-md" role="contentinfo">
@@ -226,9 +252,15 @@ El HTML de ellos se encuentra dentro de la pestaña Snippets, agrupados en Gener
 </footer>
 ```
 
-Luego de terminar nuestros cambios a los snippets de header y footer, vamos a trabajar en el CSS del footer. Por temas de orden vamos a generar un nuevo [Snippet](/es/platform/channels/templates.html#snippets) y lo agregaremos en la hoja de estilos base de la Plantilla.
+### Paso 6: Crear nuevo CSS para footer
 
-Para crear un nuevo snippet debes ir a la sección Custom y presionar el botón <b>+</b>, llenar el campo Path como <b>footer_css</b> para luego agregar el siguiente código.
+Luego de terminar nuestros cambios a los Snippets de header y footer, vamos a trabajar en el CSS del footer. Por temas de orden vamos a generar un nuevo [Snippet](/es/platform/channels/templates.html#snippets) y luego se manda a llamar en la hoja de estilos `base` de la Plantilla.
+
+Para crear un nuevo snippet, sigue estos pasos:
+
+1. Dentro de la lista de Snippets, en la sección de Personalizado, haz click en **+**.
+1. El valor de la ruta es: `footer_css`
+1. Agrega el siguiente código:
 
 ```css
 footer {
@@ -244,11 +276,11 @@ footer a:hover {
 }
 ```
 
-Para agregar nuestro nuevo snippet a la hoja de estilo base del template, debemos apretar el ícono de copiar al lado de nuestro snippet como muestra la siguiente imagen:
+4. Para agregar nuestro nuevo snippet a la hoja de estilo base del template, haz click en el ícono de copiar al lado de nuestro snippet como muestra la siguiente imagen:
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/copy.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
-Y pegarla en nuestra Hoja de estilo que está en Views, Style Sheets, style.
+5. Pega en nuestra Hoja de estilo que está en Vistas -> Hojas de Estilo -> `base`.
 
 El código que nos entrega el snippet es así:
 
@@ -256,9 +288,16 @@ El código que nos entrega el snippet es así:
 
 ## Paso 6: Cargar logo y favicon
 
-Para realizar este paso vamos a ir a la sección [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio), donde podemos cambiar o agregar algunas configuraciones del sitio, entre ellas: Nombre del sitio, Descripción, Idioma, ID de GTM, SEO, PWA, Team, entre otras.
+Para cambiar el logo y favicon, tienes que usar la sección de [Configuración del sitio](/es/platform/channels/sites.html#configuracion-de-un-sitio), donde podemos cambiar o agregar algunas configuraciones del sitio, entre ellas: Nombre del sitio, Descripción, Idioma, SEO, PWA, Team, entre otras.
 
-En este caso nos enfocaremos en General y agregaremos nuestro archivo del logo en <b>Site logo</b> y el Favicon en <b>Visualization</b>.
+Para cambiar los archivos, sigue estos pasos:
+
+1. Desde el menú principal, selecciona **Configuración del sitio**, haz click en **General**.
+1. En logo del sitio, haz click en **Subir**.
+1. Selecciona tu logo y haz click en **Abrir**. 
+1. Dentro de la sección de Visualización, en Favicon, haz click en **Subir**.
+1. Selecciona tu favicon y haz click en **Abrir**.
+1. Haz click en **Guardar**.
 
 #### Logo
 
@@ -268,15 +307,18 @@ En este caso nos enfocaremos en General y agregaremos nuestro archivo del logo e
 
 <img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;">
 
-Recuerda guardar los cambios luego de cargar los archivos.
 
 ## Paso 7: Hacer cambios de CSS de Bootstrap
 
-Una vez cargado nuestro logo, vamos a hacer los cambios de tamaño para que se ajuste a nuestro diseño. Para esto vamos a ir a Plantillas y dentro de el grupo de Libs abrimos el snippet <b>bootstrap css</b> y buscamos la clase que está afectando a nuestro logo, <code>.navbar-brand img</code> y cambiamos el height de <code>50px</code> a <code>30px</code>.
+Una vez cargado tu nuevo logo, tienes que hacer cambios de tamaño para que se ajuste al diseño de Dynamic Bank. Para realizar los cambios de CSS, sigue estos pasos:
 
-Una vez revisado en modo vista previa que nuestro logo se vea bien, tenemos que cambiar cómo se ven los enlaces del menú.
+1. En el menú principal, haz click en **Plantillas**.
+1. Dentro de el listado de **Snippets**, en el grupo de Libs, abre el snippet `bootstrap_css`.
+1. Buscamos la clase `.navbar-brand img` y cambiamos el **height** de `50px` a `30px`.
 
-Para esto modificaremos los estilos de las clases navbar-light, navbar-nav y nav-link.
+> Después de revisar en modo vista previa que tu nuevo logo se vea bien, tienes que cambiar como se ven los enlaces del menú.
+
+4. Modifica los estilos de las clases `navbar-light`, `navbar-nav` y `nav-link` con el siguiente código:
 
 ```css
 .navbar-light .navbar-nav .nav-link {
@@ -306,21 +348,31 @@ Para esto modificaremos los estilos de las clases navbar-light, navbar-nav y nav
 
 ## Paso 8: Crear Snippet CSS para Home
 
-Por temas de orden, vamos a crear un snippet de CSS, donde más adelante agregaremos todos los estilos que afectarán a nuestro Home.
+Para tener todo ordenado, crea un snippet de CSS, donde agregarás todos los estilos que afectan a Home.
+
+Para crear un nuevo snippet, sigue estos pasos:
+
+1. Desde **Plantillas**, en el apartado de **Snippets** personalizados, haz click en **+**.
+1. El valor de la ruta es `home_css`. 
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;">
 
-Para que este snippet haga efecto en nuestro Home tenemos que agregar el código del llamado del snippet en la hoja de CSS general con el siguiente código <code>{% snippet "home_css" %}</code> para que el contenido de nuestro snippet aparezca dentro de la hoja de estilos generales de la plantilla.
+Para que este snippet haga efecto en nuestro Home tenemos que importar el snippet en la vista de CSS `base` con el siguiente código `{% snippet "home_css" %}` para que el contenido de nuestro snippet aparezca dentro de la hoja de estilos generales de la plantilla.
+
+3. En el apartado de **Vistas**, abre la hoja de estilo `base`.
+4. Pega el siguiente código para importar el snippet: `{% snippet "home_css" %}`
 
 ## Paso 9: Agregar librerías dependientes
 
-Ahora que ya sabemos cómo crear snippets dentro de Plantillas, vamos a cargar librerías externas de la misma forma.
+Para algunas de las secciones de Home se necesitan agregar librerías de JS y CSS, por ejemplo para agregar animaciones en el Hero o slides de testimonios.
 
-Para algunas de las secciones de nuestro Home vamos a necesitar librerías de JS y CSS, por ejemplo para agregar animaciones en el Hero o slides de testimonios.
+Para agregar dependencias a librerías externas, sigue estos pasos:
 
-De la misma forma en la que creamos el snippet footer_css, vamos a crear cuatro nuevos snippets para cargar las librerías externas, donde dos serán de CSS y dos de JS. Incluiremos cada uno de ellos en las hojas correspondientes con el código del snippet.
+1. En la sección de **Plantillas**, dentro del apartado de **Snippets**, crea los siguientes snippets personalizados.
 
-<code>animate_css</code>
+> Los nombres de los snippets son el valor de la Ruta.
+
+`animate_css`
 
 ```css
 @charset "UTF-8"; /*!
@@ -3458,7 +3510,7 @@ De la misma forma en la que creamos el snippet footer_css, vamos a crear cuatro 
 }
 ```
 
-<code>wow_js</code>
+`wow_js`
 
 ```js
 /*! WOW wow.js - v1.2.1 - 2016-09-05
@@ -3958,13 +4010,13 @@ De la misma forma en la que creamos el snippet footer_css, vamos a crear cuatro 
 })
 ```
 
-<code>slick_css</code>
+`slick_css`
 
 ```css
 .slick-slider{position:relative;display:block;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}.slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0}.slick-list:focus{outline:0}.slick-list.dragging{cursor:pointer;cursor:hand}.slick-slider .slick-list,.slick-slider .slick-track{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.slick-track{position:relative;top:0;left:0;display:block;margin-left:auto;margin-right:auto}.slick-track:after,.slick-track:before{display:table;content:''}.slick-track:after{clear:both}.slick-loading .slick-track{visibility:hidden}.slick-slide{display:none;float:left;height:100%;min-height:1px}[dir=rtl] .slick-slide{float:right}.slick-slide img{display:block}.slick-slide.slick-loading img{display:none}.slick-slide.dragging img{pointer-events:none}.slick-initialized .slick-slide{display:block}.slick-loading .slick-slide{visibility:hidden}.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}.slick-arrow.slick-hidden{display:none}.slick-dotted.slick-slider{margin-bottom:30px}.slick-dots{position:absolute;bottom:-25px;display:block;width:100%;padding:0;margin:0;list-style:none;text-align:center}.slick-dots li{position:relative;display:inline-block;width:20px;height:20px;margin:0 5px;padding:0;cursor:pointer}.slick-dots li button{font-size:0;line-height:0;display:block;width:20px;height:20px;padding:5px;cursor:pointer;color:transparent;border:0;outline:0;background:0 0}.slick-dots li button:focus,.slick-dots li button:hover{outline:0}.slick-dots li button:focus:before,.slick-dots li button:hover:before{opacity:1}.slick-dots li button:before{font-family:slick;font-size:45px;line-height:20px;position:absolute;top:0;left:0;width:20px;height:20px;content:'•';text-align:center;opacity:.2;color:{{dark}};-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}.slick-dots li.slick-active button:before {opacity:1;color:{{dark}};}
 ```
 
-<code>slick_js</code>
+`slick_js`
 
 ```js
 /*************************************************************************
@@ -5917,13 +5969,18 @@ De la misma forma en la que creamos el snippet footer_css, vamos a crear cuatro 
 })
 ```
 
-No olvides agregar los snippets <code>animate_css</code> y <code>slick_css</code> a la hoja de estilos y <code>wow_js</code> y <code>slick_js</code> a la hoja de javascripts de la Plantilla.
+2. En la **Vista** de hoja de estilo `base`, agrega `{% snippet "animate_css" %}` y `{% snippet slick_css %}`.
+3. En la **Vista** de javascript `base`, agrega `{% snippet "wow_js" %}` y `{% snippet "slick_js" %}`.
 
 ## Paso 10: Generar el menú
 
-Otra de las funcionalidades que existen dentro de Modyo es la herramienta de Navigation, en la cual podemos generar el menú para nuestro sitio de manera sencilla.
+Otra de las funcionalidades que existen dentro de Modyo es la herramienta de Navegación, en la cual puedes generar el menú para tus sitios.
 
-Para esto, vamos a la sección [Navigation](/es/platform/channels/navigation.html), modificamos el menú ya existente y dejaremos las siguientes opciones.
+Para generar un menú, sigue estos pasos:
+
+1. Desde el menú principal de tu sitio, haz click en [Navegación](/es/platform/channels/navigation.html).
+1. Haz click en **Menu**.
+1. Modifica el menú ya existente con las siguientes opciones:
 
 <table>
  <tr>
@@ -5979,15 +6036,21 @@ Lo que se vería reflejado de la siguiente forma:
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;">
 
-Luego de tener nuestro menú completo guardamos y publicamos.
+4. Al terminar, haz click en **Guardar** y luego en **Publicar**.
+5. En la pantalla de **Revisar y Publicar**, puedes ver todos los archivos que han sido modificados. Selecciona todos y haz click en **Publicar**.
 
-## Paso 11: Modificar Page Home
+## Paso 11: Modificar page Home
 
-Una vez lista la base de la Plantilla, el menú, y la configuración del sitio, vamos a comenzar a trabajar en nuestro Home. Para ello vamos ir a la seccion [Page](/es/platform/channels/pages) y entrar al Home.
+Una vez lista la base de la Plantilla, el menú, y la configuración del sitio, comienza a trabajar en el desarrollo de Home siguiendo estos pasos:
+
+1. En el menú principal de tu sitio, haz click en [Pages](/es/platform/channels/pages).
+1. Haz click en **Home**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/page.png" style="margin: 30px 0;max-width: 300px;">
 
-Lo primero que vamos a hacer es modificar el widget de HTML que ya viene en el Page, cambiando el Title del widget por Hero y cambiando el HTML por el siguiente:
+3. Haz click en el widget.
+4. Modifica el Title del widget a **Hero**. 
+5. Cambia el HTML por el siguiente:
 
 ```html
 {% assign entries = spaces['bank'].types['hero'].entries | paginated: 1 %}
@@ -6028,11 +6091,16 @@ Lo primero que vamos a hacer es modificar el widget de HTML que ya viene en el P
 </div>
 ```
 
-En este HTML vamos a utilizar el [SDK de Liquid](/es/platform/content/public-api-reference.html#sdk-de-liquid) para conectar [Modyo Channels](/es/platform/channels) con [Modyo Content](/es/platform/content).
+En este HTML se utiliza el [SDK de Liquid](/es/platform/content/public-api-reference.html#sdk-de-liquid) para conectar [Modyo Channels](/es/platform/channels) con [Modyo Content](/es/platform/content). El llamado al SDK de Liquid se realiza a través de la siguiente forma: 
 
-El llamado al SDK de Liquid se realiza a través de la siguiente forma: <code>{% assign entries = spaces['bank'].types['hero'].entries | paginated: 1 %}</code>, en el cual le asignamos a Entries el Space y el Type que ya habíamos creado en el tutorial anterior.
+```liquid
+{% assign entries = spaces['bank'].types['hero'].entries | paginated: 1 %}
+```
 
-Una vez listo nuestro HTML en el page, vamos a agregar el estilo en el snippet <code>home_css</code> que ya habíamos creado dentro de Templates.
+En esta linea se asigna el Space y Type que creaste previamente a Entries.
+
+6. Una vez listo nuestro HTML, en el menú principal haz click en **Plantillas**.
+7. En el apartado de **Snippets**, abre el snippet personalizado `home_css` y pega lo siguiente:
 
 ```css
 /*** hero ***/
@@ -6100,13 +6168,20 @@ Una vez listo nuestro HTML en el page, vamos a agregar el estilo en el snippet <
 }
 ```
 
-Al tener listo nuestro código Hero, el HTML en el Page, y el CSS en Plantillas, podemos [previsualizar](/es/platform/core/key-concepts.html#modo-vista-previa) nuestro trabajo activando Page y Templates en Draft en la barra del modo vista previa.
+> Este código contiene las clases necesarias para el estilo de Hero.
+
+8. Activa el modo de [vista previa](/es/platform/core/key-concepts.html#modo-vista-previa).
+9. En la venta de vista previa, activa los cambios de Page y Templates.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/preview.png" style="margin: 30px 0;">
 
 ## Paso 12: Widgets de News
 
-Para la sección de noticias de nuestro Home, vamos a crear un widget de HTML similar al de Hero dentro de nuestro página de Home. En la pestaña <b>+ Nuevo Widgets</b>, hacemos click en HTML y en nuestro widget pegamos el siguiente código:
+Para crear la sección de noticias de Home, sigue estos pasos:
+
+1. En el menú principal de tu sitio, haz click en **Pages**.
+2. Desde **Home** agrega un widget HTML llamado **News**.
+3. En la pestaña HTML pega el siguiente código:
 
 ```html
 {% assign entries = spaces['bank'].types['news'].entries | paginated: 3 %}
@@ -6147,11 +6222,18 @@ Para la sección de noticias de nuestro Home, vamos a crear un widget de HTML si
 </div>
 ```
 
-Para estas Cards no necesitamos CSS ya que sólo utilizamos helpers de Bootstrap.
+> Para estas Cards no necesitas CSS personalizado ya que sólo utilizarás helpers de Bootstrap.
+
+4. Haz click en **Guardar**.
+5. Haz click en **Publicar** y luego **Publicar Ahora**.
 
 ## Paso 13: Widgets de Beneficios
 
-Para los beneficios seguiremos la misma lógica de los widgets ya creados, agregando un nuevo widget de HTML a Home con el código HTML:
+Para el widgets de los beneficios sigue estos pasos:
+
+1. En el menú principal de tu sitio, haz click en **Pages**.
+2. Desde **Home** agrega un widget HTML llamado **Benefits**.
+3. En la pestaña HTML pega el siguiente código:
 
 ```html
 {% assign entries = spaces['bank'].types['benefits'].entries | paginated: 7 %}
@@ -6160,7 +6242,7 @@ Para los beneficios seguiremos la misma lógica de los widgets ya creados, agreg
     <div class="row justify-content-center mb-4">
       <div class="col-12 col-md-8 text-center">
         <h3 class="text-white">
-          Se parte de un mundo de beneficios pensados especialmete para ti
+          Se parte de un mundo de beneficios pensados especialmente para ti
         </h3>
         <p class="text-white">
           Para nosotros lo más importante es que disfrutes tu banca
@@ -6216,7 +6298,9 @@ Para los beneficios seguiremos la misma lógica de los widgets ya creados, agreg
 </div>
 ```
 
-Y el CSS en el snippet <code>home_css</code> dentro de Templates.
+3. Haz click en **Plantillas**.
+4. Abre la pestaña de **Snippets** y abre el snippet personalizado `home_css`.
+5. Copia el siguiente código para agregar las clases necesarias para benefits:
 
 ```css
 /** benefits **/
@@ -6238,13 +6322,15 @@ Y el CSS en el snippet <code>home_css</code> dentro de Templates.
 }
 ```
 
-Recuerda que puedes revisar cómo va quedando nuestro Home con el modo vista previa.
+> Recuerda que puedes revisar cómo va quedando Home con el modo vista previa.
 
-## Paso 14: Widgets de DYNAMIC APP
+## Paso 14: Widgets de Dynamic App
 
-El widget de DYNAMIC APP es un widget de HTML que no está conectado a Content por lo que no tiene assign de liquid.
+El widget de Dynamic app es un widget personalizado de HTML que no está conectado a Content por lo que no se puede usar `assign` de Liquid.
 
-Nuevamente crearemos un widget HTML dentro del Page Home y su respectivo CSS en el snippet <code>home_css</code>.
+1. En el menú principal de tu sitio, haz click en **Widgets**.
+2. Haz click en **+ Nuevo Widget** llamado `Dynamic App`.
+3. Pega el siguiente código en la pestaña de HTML:
 
 ```html
 <div class="bg-white" id="app_home">
@@ -6253,7 +6339,7 @@ Nuevamente crearemos un widget HTML dentro del Page Home y su respectivo CSS en 
       <div class="pattern_app"></div>
       <div class="col-12 col-md-4">
         <h4 class="h2 mb-3">
-          DYNAMIC APP,
+          Dynamic App,
           <span class="font-weight-normal">lleva tu banca a todas partes</span>
         </h4>
         <img
@@ -6270,6 +6356,9 @@ Nuevamente crearemos un widget HTML dentro del Page Home y su respectivo CSS en 
 </div>
 ```
 
+4. En el menú principal, haz click en **Plantillas**.
+5. En el apartado de **Snippets**, abre el snippet personalizado `home_css` y agrega las clases necesarias para Dynamic App:
+
 ```css
 /** APP **/
 .pattern_app {
@@ -6284,13 +6373,17 @@ Nuevamente crearemos un widget HTML dentro del Page Home y su respectivo CSS en 
 
 ## Paso 15: Widgets de Testimonios
 
-El widget de testimonios es un poco más complejo ya que utilizaremos JS para generar la animación. Es por eso que crearemos un widget dentro de la sección [Widget Builder](/es/platform/channels/widgets.html).
+El widget de testimonios es un poco más complejo ya que utiliza JS para generar la animación.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;"/>
 
-El Widget Builder es donde puedes crear micro frontends para tus sitios. Para crear uno solo necesitamos entrar a la sección de Widget Builder y hacer click en el botón <b>+ Nuevo Widget</b> y le asignaremos un nombre, que en nuestro caso es Testimonial. Al crearlo, este te desplegará tres pestañas, donde deberás pegar el JS, CSS, y HTML según corresponda.
+El Widget Builder es donde puedes crear micro frontends para tus sitios. 
 
-<code>JS</code>
+1. En el menú principal de tu sitio, haz click en **Widgets**.
+2. Haz click en **+ Nuevo Widget** llamado `Testimonials`.
+3. Pega el siguiente código en la pestaña de JS:
+
+`JS`
 
 ```js
 $('.single-item').slick({
@@ -6303,7 +6396,7 @@ $('.single-item').slick({
 })
 ```
 
-<code>CSS</code>
+`CSS`
 
 ```css
 #testimonial {
@@ -6333,7 +6426,7 @@ $('.single-item').slick({
 }
 ```
 
-<code>HTML</code>
+`HTML`
 
 ```html
 {% assign entries = spaces['bank'].types['testimonial'].entries | by_lang: 'en'
@@ -6371,9 +6464,10 @@ $('.single-item').slick({
 </div>
 ```
 
-Una vez terminado el widget deberás guardar tus cambios para poder revisarlo en modo vista previa. Al publicarlo quedará disponible en la bibiolteca de widgets, a los que podrás acceder desde Pages.
+4. Guarda tus cambios para poder revisarlo en modo vista previa. 
+5. Haz click en **Publicar** y selecciona **Publicar Ahora**. Al publicarlo quedará disponible en la biblioteca de widgets personalizados, a los que podrás acceder desde Pages.
 
-Para desplegarlo en el Home tenemos que agregarlo como widget <b>Custom</b> y buscarlo dentro del listado (en este ejemplo solo tenemos uno).
+> Para poder verlo en el Home tienes que agregarlo como widget <b>Personalizado</b> y buscarlo dentro del listado (en este ejemplo solo tenemos uno).
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" style="max-width: 300px;margin: auto 0;"/>
 
@@ -6383,16 +6477,27 @@ Para desplegarlo en el Home tenemos que agregarlo como widget <b>Custom</b> y bu
 
 ## Paso 16: Revisar y Publicar
 
-Una vez terminados todos nuestros widgets y CSS del Home, revisaremos en modo vista previa el trabajo que hemos realizado en este Tutorial. Una vez que estés conforme con el resultado debemos publicar los cambios para que nuestro trabajo esté disponible para nuestros usuarios finales.
+Una vez terminados todos los widgets y CSS del Home, revisa en modo vista previa el trabajo que realizaste en este Tutorial.
 
-Para realizar una publicación, hacemos clic en el botón <b>Publicar</b> donde se abrirá un panel con los cambios que hemos realizado.
+Para realizar una publicación de tu página, sigue estos pasos:
+
+1. Desde el menú principal de tu sitio, haz click en **Resumen**.
+1. Haz clic en el botón <b>Publicar</b> donde se abrirá un panel con los cambios que hemos realizado.
+1. Agrega todos los archivos y haz click en **Publicar**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/>
 
-Luego seguiremos los pasos para seleccionar la fecha de publicación, que en este caso será publicación inmediata.
+1. Selecciona **Publicar Ahora** y haz click en **Publicar**.
 
 ## Conclusiones
 
 ¡Felicidades! Haz finalizado el curso de Creación del Home de Dynamic Bank en Modyo.
 
-Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, lograste enlazar tu sitio con [Modyo Content](/es/platform/content) que permite generar canales digitales dinámicos conectados a contenidos separados del código del sitio.
+Ahora tienes conocimientos de cómo utilizar:
+- [Modyo Channels](/es/platform/channels) con todos sus módulos
+- [Pages](/es/platform/channels/pages)
+- [Navigation](/es/platform/channels/navigation)
+- [Widgets](/es/platform/channels/widgets)
+- [Templates](/es/platform/channels/templates)
+- [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio)
+- Además, lograste enlazar tu sitio con [Modyo Content](/es/platform/content) que permite generar canales digitales dinámicos conectados a contenidos separados del código del sitio.
