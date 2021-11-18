@@ -170,6 +170,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/en/widgets/investments/accounts",
+                "/en/widgets/investments/accounts-react",
                 "/en/widgets/investments/general-summary",
                 "/en/widgets/investments/detailed-summary",
                 "/en/widgets/investments/investments-transfers",
@@ -359,6 +360,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/widgets/investments/accounts",
+                "/en/widgets/investments/accounts-react",
                 "/es/widgets/investments/general-summary",
                 "/es/widgets/investments/detailed-summary",
                 "/es/widgets/investments/investments-transfers",
