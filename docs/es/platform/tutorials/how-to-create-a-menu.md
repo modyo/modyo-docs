@@ -563,19 +563,11 @@ Modificar código del Snippet <code>Header</code> donde agregaremos el snippet d
           data-target="#menu_panel"
         >
           <h2 id="mainmenulabel" class="sr-only">Open Menu</h2>
-          <svg
-            width="2em"
-            height="2em"
-            viewBox="0 0 16 16"
-            class="bi bi-list"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5- 5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
+          <svg viewBox="0 0 100 60" width="30" height="30" style="fill:#384470">
+						<rect width="100" height="5"></rect>
+						<rect y="30" width="100" height="5"></rect>
+						<rect y="60" width="100" height="5"></rect>
+					</svg>
         </button>
       </div>
     </div>
