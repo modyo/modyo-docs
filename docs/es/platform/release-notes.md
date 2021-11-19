@@ -4,6 +4,16 @@ search: true
 
 # Notas del release
 
+### 9.1.34 - 19 de noviembre del 2021
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arregla bug con límite de archivos en asset manager
+* Mejoras al copiar entries de otro locale
+* Se agrega nombre y slug de categorias en drop de Entry y en API de content
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se permite iniciar sesión con access token en el sitio
+
 ### 9.1.33 - 5 de noviembre del 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
