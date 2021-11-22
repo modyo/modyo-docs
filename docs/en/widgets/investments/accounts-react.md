@@ -2,25 +2,25 @@
 search: true
 ---
 
-# Accounts
+# Accounts - React
 
 The Accounts widget shows the detail of each investment account a user has, with relevant information in graphs and numbers. It also presents the account movements with the corresponding bank statements.
 
 :::tip Tip
 This widget was developed using React, it's practially identical to [Accounts](/accounts) in every other aspect.
 
-To know more about React, see [their documentation](https://reactjs.org/). 
+To know more about React, see [their documentation](https://reactjs.org/).
 :::
 
 #### Installation:
 
 ```bash
-modyo-cli get modyo-widgets-investments-accounts
+modyo-cli get modyo-widgets-investments-accounts-react
 ```
 
-[Open in new tab](https://widgets.modyo.com/investments/accounts)
+[Open in new tab](https://widgets.modyo.com/investments/accounts-react)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/accounts" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/accounts-react" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Description                    | Investor Profile Survey                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

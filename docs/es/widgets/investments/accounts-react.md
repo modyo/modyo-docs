@@ -2,14 +2,14 @@
 search: true
 ---
 
-# Cuentas
+# Cuentas - React
 
 El Widget de Cuentas muestra el detalle de todas las cuentas de inversión de un usuario, con información relevante en gráficos y números, además de presentar los movimientos realizados junto con las cartolas y extractos.
 
 :::tip Tip
 Este widget fue desarrollado utilizando React, es prácticamente igual que [Cuentas](/cuentas) en todos los aspectos.
 
-Para conocer más acerca de React, vea [su documentación](https://reactjs.org/). 
+Para conocer más acerca de React, vea [su documentación](https://reactjs.org/).
 :::
 
 #### Instalación:
@@ -20,7 +20,7 @@ modyo-cli get modyo-widgets-investments-accounts-react
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/cuentas-react)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas-react" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
 | Funcionalidad                    | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
