@@ -7,9 +7,9 @@ search: true
 The Accounts widget shows the detail of each investment account a user has, with relevant information in graphs and numbers. It also presents the account movements with the corresponding bank statements.
 
 :::tip Tip
-This widget was developed using React, it's practially identical to [Accounts](/accounts) in every other aspect.
+This widget was developed using React, it's pretty much the same as [Accounts] (/accounts) in all aspects.
 
-To know more about React, see [their documentation](https://reactjs.org/).
+To learn more about React, see [its documentation](https://reactjs.org/).
 :::
 
 #### Installation:
@@ -18,11 +18,11 @@ To know more about React, see [their documentation](https://reactjs.org/).
 modyo-cli get modyo-widgets-investments-accounts-react
 ```
 
-[Open in new tab](https://widgets.modyo.com/investments/accounts-react)
+[Open in another tab](https://widgets.modyo.com/investments/accounts-react)
 
-<iframe id="widgetFrame" src="https://widgets.modyo.com/investments/accounts-react" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/cuentas-react" width="100%" frameBorder="0"  style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Description                    | Investor Profile Survey                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Feature                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Account Summary             | Groups all of the client's investment accounts. Each investment account has its own tab with detailed information.                                                                                                                                                                                                                                                                                      |
 | Investment Account              | Focuses on all the information associated with a specific investment account, presenting the data numerically and graphically. Includes a section to view Dividends Paid as of the day of the consultation and another for shares in the portfolio. Allows users to configure the account, see investment details, obtain statements, track movements, and make payments to the account.                                                                                           |
