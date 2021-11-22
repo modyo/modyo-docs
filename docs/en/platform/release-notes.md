@@ -4,6 +4,16 @@ search: true
 
 # Release Notes
 
+### 9.1.34 - November 19, 2021
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed bug with file limit in asset manager
+* Improvements when copying entry from another locale
+* Add category name and slug to Entry drop and content API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Login with access token on the site
+
 ### 9.1.33 - November 5, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
