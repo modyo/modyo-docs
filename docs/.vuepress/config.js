@@ -60,7 +60,7 @@ module.exports = {
                 "/en/platform/release-notes",
                 "/en/platform/training",
               ],
-            },    
+            },
             {
               title: "Tutorials",
               path: "/en/platform/tutorials/",
@@ -133,7 +133,7 @@ module.exports = {
                 "/en/platform/insights/digital-factory",
                 ["/en/platform/insights/data-studio", "Data Studio"],
               ],
-            },            
+            },
           ],
           "/en/widgets/": [
             {
@@ -170,6 +170,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/en/widgets/investments/accounts",
+                "/en/widgets/investments/accounts-react",
                 "/en/widgets/investments/general-summary",
                 "/en/widgets/investments/detailed-summary",
                 "/en/widgets/investments/investments-transfers",
@@ -218,10 +219,10 @@ module.exports = {
               title: "Legal",
               collapsable: true,
               children: [
-                ["/en/legal/", "License Agreement"],                
+                ["/en/legal/", "License Agreement"],
               ],
-            },            
-          ],                  
+            },
+          ],
         },
       },
       "/es/": {
@@ -242,7 +243,7 @@ module.exports = {
               collapsable: true,
               children: [
                 ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
-                ["/es/platform/key-concepts", "Conceptos claves"],    
+                ["/es/platform/key-concepts", "Conceptos claves"],
                 "/es/platform/release-notes",
                 ["/es/platform/training", "Entrenamiento"],
               ],
@@ -261,7 +262,7 @@ module.exports = {
               ],
             },
             {
-              title: "Plataforma", 
+              title: "Plataforma",
               path: "/es/platform/core/",
               collapsable: true,
               children: [
@@ -321,7 +322,7 @@ module.exports = {
                 "/es/platform/insights/digital-factory",
                 ["/es/platform/insights/data-studio", "Data Studio"],
               ],
-            },          
+            },
           ],
           "/es/widgets/": [
             {
@@ -359,6 +360,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/widgets/investments/accounts",
+                "/es/widgets/investments/accounts-react",
                 "/es/widgets/investments/general-summary",
                 "/es/widgets/investments/detailed-summary",
                 "/es/widgets/investments/investments-transfers",
@@ -387,7 +389,7 @@ module.exports = {
                 "/es/widgets/insurance-retail/quote",
                 "/es/widgets/insurance-retail/detailed-view",
               ],
-            },           
+            },
           ],
           "/es/services/": [
             {
@@ -399,7 +401,7 @@ module.exports = {
                 "/es/services/connect",
                 "/es/services/faq",
               ],
-            },           
+            },
           ],
           "/es/brand/": [
             {
@@ -412,16 +414,16 @@ module.exports = {
                 "/es/brand/typography",
                 "/es/brand/illustrations",
               ],
-            },           
+            },
           ],
           "/es/legal/": [
             {
               title: "Legal",
               collapsable: true,
               children: [
-                ["/es/legal/", "Acuerdo de Licencia"],                
+                ["/es/legal/", "Acuerdo de Licencia"],
               ],
-            },            
+            },
           ],
         },
       },
