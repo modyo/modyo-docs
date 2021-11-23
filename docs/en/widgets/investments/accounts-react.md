@@ -7,7 +7,7 @@ search: true
 The Accounts widget shows the detail of each investment account a user has, with relevant information in graphs and numbers. It also presents the account movements with the corresponding bank statements.
 
 :::tip Tip
-This widget was developed using React, it's pretty much the same as [Accounts] (/accounts) in all aspects.
+This widget was developed using React, it's practically identical to [Accounts](/en/widgets/investments/accounts) in every aspect.
 
 To learn more about React, see [its documentation](https://reactjs.org/).
 :::
