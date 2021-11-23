@@ -7,7 +7,7 @@ search: true
 El Widget de Cuentas muestra el detalle de todas las cuentas de inversión de un usuario, con información relevante en gráficos y números, además de presentar los movimientos realizados junto con las cartolas y extractos.
 
 :::tip Tip
-Este widget fue desarrollado utilizando React, es prácticamente igual que [Cuentas](/cuentas) en todos los aspectos.
+Este widget fue desarrollado utilizando React, es prácticamente igual que [Cuentas](/es/widgets/investments/accounts) en todos los aspectos.
 
 Para conocer más acerca de React, vea [su documentación](https://reactjs.org/).
 :::
