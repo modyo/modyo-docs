@@ -4,6 +4,43 @@ search: true
 
 # Release Notes
 
+## 9.2
+
+### 9.2.1 - November 25, 2021
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed bug with file limit in asset manager
+* Improvements when copying entry from another locale
+* Add category name and slug to Entry drop and content API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fix issue with widget preview
+* Login with access token on the site
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Security enhancements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Improvements to the campaign editor
+
+### 9.2.0 - November 15, 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Security Headers Management
+* New minimal theme
+* Navigation builders
+* Seven stages
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* User Realms
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Team member groups
+* Multiple full admins
+* Landing page “Get started”
+* Froala editor
+
+## 9.1
+
 ### 9.1.34 - November 19, 2021
 
 <Badge text="Content" type="content" vertical="middle"/>
