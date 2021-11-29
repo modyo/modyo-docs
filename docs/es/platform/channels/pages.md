@@ -217,13 +217,19 @@ Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Conte
 
 #### Propiedades
 
-Muestra el tipo de contenido y el espacio al cual pertenece esta página. A demás tendrás opciones para cambiar el nombre, la página padre, la ruta, y un extracto
+Muestra el tipo de contenido y el espacio al cual pertenece esta página. A demás tendrás opciones para cambiar el nombre, la página padre, la ruta, y un extracto.
 
 :::tip Tip
 En el caso de que el custom domain esté habilitado, para encontrar la forma de la URL debes ir a ``Configuración del Sitio > Dominios``.
 
 En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
 :::
+
+El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es posible tanto para todos los tipos de páginas y [Plantillas](/es/platform/channels/templates.html). Dentro del `<head>` se agrega un tag:
+
+```html
+<meta name="description" content="{{ page.excerpt }}"/>
+```
 
 #### Delegación de rutas
 
