@@ -63,7 +63,7 @@ tutorial4Title: Crear un Sitio Privado
 tutorial4Url: /es/platform/tutorials/how-to-create-private-site.html
 
 DontMiss: No te pierdas nada de
-DontMissText: Manténgase actualizado sobre los nuevos lanzamientos y sepa hacia dónde vamos.
+DontMissText: Mantente actualizado sobre los nuevos lanzamientos y sepa hacia dónde vamos.
 
 releaseText: Notas del release
 releaseUrl: /es/platform/release-notes.html
