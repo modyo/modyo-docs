@@ -6,11 +6,11 @@ search: true
 
 ## Introducción
 
-Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial vamos a enfocar en [Modyo Channels](/es/platform/channels) donde crearemos una vista para poder desplegar nuestras entradas creadas en [Modyo Content](/es/platform/content).
+Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfocará en [Modyo Channels](/es/platform/channels) donde tu crearás una vista para poder desplegar entradas creadas en [Modyo Content](/es/platform/content).
 
-El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar por cualquier persona.
+El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar. En el Tutorial de [Creación de contenido](/es/platform/tutorials/how-to-create-content), creaste el [Espacio](/es/platform/content/space) Bank, el [Tipo de contenido](/es/platform/content/types) Benefits y las [Entradas](/es/platform/content/entries). Ahora utilizarás este Tipo, pero añadiendo los campos necesarios para generar los detalle según el diseño de Figma.
 
-En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocaremos en la vista a detalle de los beneficios.
+En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocamos en crear, previsualizar, y publicar una entrada de tipo **Benefits** para la marca ficticia "Dynamic Cine".
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
@@ -18,13 +18,24 @@ En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora 
 
 ## Requisitos Previos
 
-Para comenzar este tutorial debemos haber completado los siguientes tutoriales: [Contenido de Dynamic Bank](/es/platform/tutorials/how-to-create-content) y [Creacion Home Dynamic Bank](/es/platform/tutorials/how-to-create-home). Y al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, CSS, JS, y la plataforma Modyo.
+Completado los tutoriales:
 
-## Paso 1: Agregar nuevos campos a los Beneficios
+- [Creación y Publicación de Contenidos](/es/platform/tutorials/how-to-create-content)
+- [Creación de un Sitio Básico](/es/platform/tutorials/how-to-create-home)
 
-En el Tutorial de creación de contenido, habíamos creado el [Space](/es/platform/content/space) Bank, el [Type](/es/platform/content/types) Benefits y las [Entries](/es/platform/content/entries). Ahora utilizaremos este Type, pero añandiendo los campos necesarios para generar su detalle según el diseño del Figma.
+Conocimientos de:
 
-Para modificar el Type <b>Benefits</b> vamos a ingresar al módulo de Content, seleccionar nuestro Space, ingresamos a Types y seleccionamos el Type correspondiente. A los campos ya existentes (Cover y Excerpt) vamos a agregar los siguientes campos:
+- HTML
+- CSS
+- JS
+- La plataforma Modyo
+
+## Paso 1: Agregar campos al tipo **Beneficios**
+
+1. En la plataforma, haz click en **Content**, selecciona **Espacios**.
+1. Haz click tu Espacio y selecciona **Tipos**
+1. Haz click en el tipo **Bank**. 
+1. En la pantalla de tipo de contenido, agrega los siguientes campos:
 
 <table>
 <tr><th style="text-align: left;">Field</th> <th style="text-align: left;">Name</th></tr> 
@@ -78,11 +89,17 @@ Para modificar el Type <b>Benefits</b> vamos a ingresar al módulo de Content, s
 </tr>
 </table>
 
-## Paso 2: Llenar campos de una entrada
+## Paso 2: Crear entrada con nuevos campos
 
-Luego de tener nuestro Type con todos los campos que necesitamos, vamos a completar una entrada para poder utilizarla de ejemplo.
+Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar contenido de este tipo. Para crear una nueva entrada llamada **Dynamic Cine**, sigue estos pasos:
 
-Para este caso usaremos la entrada Dynamic Cine:
+1. En el menú lateral, selecciona **Entradas**.
+1. Haz click en **+ Nueva Entrada**.
+1. Selecciona el tipo **Benefits**.
+1. Llena el nombre **Dynamic Cine** e identificador **dynamic-cine**.
+1. Haz click en **Crear**. 
+1. En la pantalla de campos de Entrada, llena los siguientes valores:
+
 
 <table>
 <tr><th style="text-align: left;">Field</th> <th style="text-align: left;"></th></tr> 
@@ -91,7 +108,7 @@ Para este caso usaremos la entrada Dynamic Cine:
     Short description
   </td>
   <td>
-    40% de decuento en entradas todos los Viernes.
+    40% de descuento en entradas todos los Viernes.
   </td>
 </tr>
 <tr>
@@ -136,19 +153,23 @@ Para este caso usaremos la entrada Dynamic Cine:
 </tr>
 </table>
 
-Recuerda publicar tus cambios para que se vean reflejados.
+7. Haz click en **Guardar**.
 
-## Paso 3: Crear Custom View de Beneficios
+## Paso 3: Crear Vista de Contenido de Beneficios
 
-Una vez listo nuestro contenido, vamos a desarrollar su [Custom View](/es/platform/channels/templates.html#vistas-para-contenido) dentro de nuestro sitio, para así generar Pages dinámicas conectadas a Content.
+Después de crear la entrada con su contenido, ahora tienes que crear una [Vista para Contenido](/es/platform/channels/templates.html#vistas-para-contenido) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
 
-Para esto, volveremos a ingresar a Templates dentro de nuestro sitio, y en la sección Views en el apartado Custom hacemos click en <b>+</b>.
+Para crear una Vista de Contenido, sigue estos pasos:
+
+1. En el menú lateral, selecciona **Channels**, haz click **Sitios**.
+1. Selecciona tu sitio y haz click en **Plantillas**. 
+1. Dentro de **Vistas de Contenido**, haz click en **+**.
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
 
-Al abirse el panel debemos ingresar un Path, que es la URL que tendrá anidado nuestro contenido, lo cual en nuestro caso será <b>beneficio</b>, y seleccionamos nuestro Space <b>Bank</b> y Type <b>Benefits</b>.
+4. En el modal, ingresa la Ruta **beneficio**, y seleccionamos el Espacio **Bank** y Tipo **Benefits**.
 
-Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML remplazando el código que viene de ejemplo.
+Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que viene de ejemplo:
 
 ```html
 <div class="mb-5 mb-md-0 pb-5 pb-md-0" id="hero">
@@ -260,22 +281,22 @@ Para que se vea como en nuestro diseño, vamos a copiar el siguiente HTML rempla
 </style>
 ```
 
-Ya creaste tu primer Custom View conectada a un Space de Modyo Content. Con ella podremos ingresar a una Entry desde nuestro sitio y además previsualizar el trabajo desde Modyo Content.
+Esta **Vista de Contenido** ahora está conectada al Espacio de **Dynamic Bank**. Con ella puedes ingresar a los datos de la Entrada desde tu Sitio utilizando Liquid.
 
-## Paso 4: Previsualizar entries en Content
+## Paso 4: Previsualizar Entrada en Content
 
-Ahora que ya tenemos nuestro Space y Type asociados a un sitio, se nos activará una nueva funcionalidad, el [Modo vistra previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa tenemos que hacer click en el ícono del "ojo" en la barra superior de acciones:
+Ahora que ya tenemos nuestro Espacio y Tipo asociados a un Sitio, podrás activar [Modo vista previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa haz click en el ícono del "ojo" en la barra superior de acciones:
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
 
-Dentro del modal hacer click en <b>Vista previa en sitio</b> y seleccionar el sitio donde hicimos la custom view dentro del dropdown:
+Dentro del modal hacer click en <b>Vista previa en sitio</b> y seleccionar el sitio **Bank**:
 
 <img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
 
-Al seleccionarlo, en una nueva pestaña se nos abrirá la vista previa de la entrada en el sitio, para que se pueda ir revisando los cambios en el sitio.
+Al seleccionarlo, en una nueva pestaña se abrirá la vista previa de la Entrada en el Sitio para visualizar las modificaciones.
 
 ## Conclusiones
 
 ¡Felicidades! Haz finalizado el tercer curso de la serie de tutoriales de Modyo.
 
-En este tutorial realizamos una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregando una capa intermedia para poder revisar el trabajo que se está desarrollando en [Modyo Content](/es/platform/content) y generando Pages dinámicos conectados a nuestros sitios en [Modyo Channels](/es/platform/channels).
+En este tutorial realizaste una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregaste una capa intermedia para poder visualizar el trabajo que se desarrolló en [Modyo Content](/es/platform/content), y generaste una Página dinámicas conectada a tu Sitio en [Modyo Channels](/es/platform/channels).
