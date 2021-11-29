@@ -45,3 +45,7 @@ Modyo ahora tiene soporte nativo para Aplicaciones Web Progresivas, que te permi
 ### Nuevo editor de texto enriquecido
 
 Modyo ahora usa el editor de texto enriquecido Froala. Este editor de texto te permite desarrollar contenido en un instante así como también pegar el texto de tus documentos manteniendo el mismo formato.
+
+### Content Pages
+
+Modyo ahora cambia la manera en la que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/channels/templates) hacia la sección de Pages. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Content Pages](/es/channels/pages#content-pages).

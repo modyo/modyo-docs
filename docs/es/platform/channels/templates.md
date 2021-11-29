@@ -100,80 +100,6 @@ Puedes usar como base este código que contiene todo lo necesario para que tus p
 
 Luego de haber creado tu nuevo layout, puedes empezar a usarlo yendo a la vista de edición de las páginas y cambiarlo desde el tab de propiedades.
 
-## Vistas para contenido
-
-Para poder mostrar [contenido](/es/platform/content/) de forma automática en un sitio, debes cumplir con ciertas condiciones:
-
-* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo. Dirígete a [Espacios](/es/platform/content/spaces.html) y [Tipos](/es/platform/content/types.html) para aprender como.
-* Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion) para aprender más.
-* Crear una vista personalizada en el Templates Builder.
-
-Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Al crear la vista personalizada debes seleccionar un nombre, un espacio al que estará asociado y finalmente un tipo de contenido del espacio.
-
-### Crear nueva Plantilla de Vista de Contenido
-Para crear una nueva plantilla de Vista de Contenido logrando tener una página dinámica personalizada conectada a Modyo Content, sigue estos pasos:
-
-1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en tu sitio.
-1. Haz click en Plantillas.
-1. Para crear una nueva **Vista de Contenido**, haz click en el botón **+**.
-1. Escribe la ruta de la nueva plantilla, selecciona un Espacio, y selecciona el tipo de entrada al que la plantilla va a pertenecer.
-1. Haz click en **Añadir**.
-1. Personaliza la Vista agregando atributos de la entrada, campos personalizados, Snippets, HTML, CSS, JavaScript, o Liquid.
-1. Una vez terminado, haz click en **Publicar**.
-
-:::tip Tip
-Para conocer más acerca de como crear una vista de contenido personalizada, vea [Creación de una Vista de Contenido](/es/platform/tutorials/how-to-create-a-custom-view.html).
-:::
-
-:::warning Atención
-El nombre de la vista será la ruta (URL) relativa al sitio del contenido a mostrar, por lo que debes prestar atención al momento de nombrar estas vistas.
-:::
-
-:::tip Tip
-Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
-:::
-
-Al modificar esta vista, puedes hacer uso de Liquid y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
-
-Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
-
-```html
-<div>
-  <h1 class="title">{{ entry.name }}</h1>
-  <time>{{ entry.published_at | format_date }}</time>
-  <span class="url">
-    <a href="{{request.url}}">{{request.url}}</a>
-    </span>
-</div>
-
-<div>
-  <div class="description">
-    {{ entry.description }}
-  </div>
-</div>
-```
-
-Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.description` para generar una vista de contenido dinámica dependiendo de la entrada que selecciones.
-
-:::tip Tip
-Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
-:::
-
-Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
-
-* La vista debe estar creada y publicada. 
-* La URL a la que se está accediendo es del tipo `site_url/custom_view_name/entry_slug`.
-* El `custom_view_name` es el nombre de la vista de contenido que creaste.
-* La URL coincide con el nombre de la vista que acabas de crear. 
-* Ya existe una entrada publicada en el idioma del sitio. 
-* El slug de la entrada es `entry_slug`.
-
-:::tip Tip
-
-En el caso de que el custom domain esté habilitado, para encontrar la forma de la URL debes ir a ``Configuración del Sitio > Dominios``.
-
-En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
-:::
 
 ## Errores en Vistas
 
@@ -325,7 +251,7 @@ Puedes añadir este snippet de código al Template Builder y luego llamar a este
 <!-- END SEO <-->
 ```
 
-Este snippet es diferente cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
+Este snippet es diferente cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las content pages, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
 
 Si es que lo requieres, puedes personalizar este snippet, definiendo qué metas quieres que aparezcan para URLs o tipos específicos. 
 

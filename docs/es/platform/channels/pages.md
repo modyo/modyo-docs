@@ -44,15 +44,18 @@ Una vez terminada la acción de copiado, te dirige a la nueva página, por lo qu
 ## Crear una página
 Para crear una nueva página, sigue estos pasos:
 
-1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en Sitios.
-2. Selecciona el sitio que desees agregar una nueva página.
-3. Haz click en **Pages**.
-4. Haz click en **+ Nueva Página**.
-5. Llena el Nombre del Layout, la Ruta, de ser necesario selecciona el layout padre, y presiona **Crear**.
-6. Personaliza la página agregando o editando widgets.
-7. Una vez terminado, haz click en **Publicar**.
+1. Dentro del menú principal de Modyo Platform, expande Channels, y haz click en Sitios.
+1. Selecciona el sitio que desees agregar una nueva página.
+1. Haz click en **Pages**.
+1. Haz click en **+ Nueva Página**.
+1. Selecciona el tipo de página **(Widget o Content)** que quieres crear.
+1. Llena el Nombre del Layout, la Ruta, de ser necesario selecciona el layout padre, y presiona **Crear**.
+1. Personaliza la página dependiendo del tipo: agregando o editando widgets para Widget Pages o editando el Index y Show para Content Pages.
+1. Una vez terminado, haz click en **Publicar**.
 
-Para conocer los tipos de widgets que puedes agregar, vea [Widgets](/es/platform/channels/pages.html#widgets)
+Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/channels/pages.html#widgets)
+
+Para conocer más acerca de content pages, ve [Content Pages](/es/platform/channels/pages.html#content-pages)
 
 **Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
@@ -145,6 +148,88 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 </ul></td>
 </tr></table>
 :::
+
+## Content Pages
+
+Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando content pages. 
+
+### Requisitos previos
+
+Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
+
+* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces.html#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types.html#crear-un-tipo)
+* Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion)
+
+:::tip Tip
+Para conocer más acerca de como crear una vista de contenido personalizada, vea [Creación de una Vista de Contenido](/es/platform/tutorials/how-to-create-a-custom-view.html).
+:::
+
+:::tip Tip
+Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
+:::
+
+Content pages están compuestas por dos secciones **Index** y **Show**. 
+
+### Index
+
+La página índice que contiene el listado de todas las entradas del tipo de contenido. Aquí podrás seleccionar las siguientes opciones:
+
+#### Edit
+
+- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio al Content Page cuando fue creado. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Layout**: La plantilla Layout que va a cargar para el Index.
+- **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
+
+### Show
+
+La pestaña en donde defines como van a lucir las entradas dinámicas. Aquí podrás seleccionar las siguientes opciones:
+
+#### Edit:
+
+- **Layout**: La plantilla Layout que va a cargar para el Show.
+- **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del show. Este meta tag solo será cargado para el Show, no para el Index. También puedes utilizar Liquid para cargar meta tags dinámicos.
+
+Un ejemplo básico de código Liquid+HTML que puedes usar en **Show** es:
+
+```html
+<div>
+  <h1 class="title">{{ entry.name }}</h1>
+  <time>{{ entry.published_at | format_date }}</time>
+  <span class="url">
+    <a href="{{request.url}}">{{request.url}}</a>
+    </span>
+</div>
+
+<div>
+  <div class="description">
+    {{ entry.description }}
+  </div>
+</div>
+```
+
+Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.description` para generar una página dinámica dependiendo de la entrada que selecciones.
+
+:::tip Tip
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
+
+Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/liquid-markup.html#drops-de-content)
+:::
+
+#### Propiedades
+
+Muestra el tipo de contenido y el espacio al cual pertenece esta página. A demás tendrás opciones para cambiar el nombre, la página padre, la ruta, y un extracto.
+
+:::tip Tip
+En el caso de que el custom domain esté habilitado, para encontrar la forma de la URL debes ir a ``Configuración del Sitio > Dominios``.
+
+En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
+:::
+
+El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es posible tanto para todos los tipos de páginas y [Plantillas](/es/platform/channels/templates.html). Dentro del `<head>` se agrega un tag:
+
+```html
+<meta name="description" content="{{ page.excerpt }}"/>
+```
 
 #### Delegación de rutas
 
