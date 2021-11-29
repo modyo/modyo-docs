@@ -12,12 +12,12 @@ Once inside the Template Builder, the main menu is hidden to optimize the worksp
 
 ![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
-- **Published**: There is a published version of the templates and that the editable version you are working on now matches the state of the published version. This status changes whenever you save any changes to your templates.
-- **Pending changes**: When there is a previously published version, this status indicates that your editable version has "pending changes" that have not been published.
+- **Published**: When a published version already exists and its editable version is the same.
+- **Pending Changes**: When there is a published version, but your editable version has changes that are not published yet.
 - **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
 - **Approved**: When [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If you're in this state, your templates are ready to be published.
 
-On the right side of the upper bar, you will find the latest publication date and the available actions:
+On the bar in the upper-right, you will find the latest publication date and the available actions:
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking this icon opens a new tab with the template preview mode, in which you will see how it looks as if they were published, with all the changes you have in your templates.
 
@@ -48,7 +48,7 @@ You can add new comments at the bottom of the sidebar. Next to each activity, yo
 - **Themes**: This takes you to the Themes Gallery, where you can copy the current theme and use it in the other sites or channels in your account. To learn more, check [Themes](/en/platform/channels/templates.html#themes).
 - **Restore All**: You restore all templates to the original value of the theme.
 
-**Primary Actions**
+**Main Actions**
 
 - **Save**: Saves all changes to all templates.
 - **Send for Review**: Change the status of templates to “Waiting for Review”. In this state you can continue to make changes, but each change will be notified via email to the assigned reviewers.
@@ -99,80 +99,6 @@ You can use this code as a base, this contains everything you need to make your 
 
 After you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
 
-## Content views
-
-In order to automatically display [content](/en/platform/content/) on a site, you need to meet certain conditions:
-
-* Have a space with at least one language (the same language as the site) and at least one Type. Go to [Spaces](/en/platform/content/spaces.html) and [Types](/en/platform/content/types.html) to learn how.
-* Have entries published in the language of the site. Go to [Entries](/en/platform/content/entries.html) and [Location](/en/platform/content/spaces.html#location) to learn more.
-* Create a custom view in the Template Builder.
-
-To create a custom view in the Template Builder, go to the "Views" tab. At bottom of the list, there is a section called **Custom** and a button **+ Add a custom view**. Click this to create a new custom view. You must type a name, select a space and choose a content type for this view to link to.
-
-### Create a new Content View Template
-To create a new Content View template with a custom dynamic page connected to Modyo Content, follow these steps:
-
-1. From the Modyo Platform main menu, expand Channels, and click your site.
-1. Click Templates.
-1. To create a new **Content View**, click the**+** button.
-1. Enter the path of the new template, select a Space, and select the type of entry that the template will belong to.
-1. Click **Add**.
-1. Customize the View by adding input attributes, custom fields, Snippets, HTML, CSS, JavaScript, or Liquid.
-1. Once finished, click on **Publish**.
-
-::tip Tip
-To learn more about how to create a custom content view, see [Creating a Content View](/en/platform/tutorials/how-to-create-a-custom-view.html).
-:::
-
-:::warning Warning
-The name of the view is the route (URL) relative to the site with the content you want to show. For this reason, you have to be careful when naming your views.
-:::
-
-:::tip Tip
-You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
-:::
-
-By modifying this view, you can make use of Liquid and the `entry` object, for example: <span v-pre>`{{entry.published_at | format_date}}`</span>
-
-A basic example of Liquid + HTML code that you can use to get started in these views is:
-
-```html
-<div>
-  <h1 class="title">{{ entry.name }}</h1>
-  <time>{{ entry.published_at | format_date }}</time>
-  <span class="url">
-    <a href="{{request.url}}">{{request.url}}</a>
-    </span>
-</div>
-
-<div>
-  <div class="description">
-    {{ entry.description }}
-  </div>
-</div>
-```
-
-This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry.description` to generate a dynamic content view depending on the input you select.
-
-::: tip Tip
-To learn more about how to use Liquid, go to [Liquid markup](/platform/channels/liquid-markup.html).
-:::
-
-If you want to display the view with the values of the entry you're working on, the following requirements must be met:
-
-* The view must be created and published. 
-* The URL being accessed is of type `site_url/custom_view_name/entry_slug`.
-* The `custom_view_name` is the name of the content view you created.
-* The URL matches the name of the view you just created. 
-* An entry already exists in the language of the site. 
-* The slug of the input is `entry_slug`.
-
-:::tip Tip
-
-If custom domain is enabled, to find the URL you must go to ``Site Settings > Domains``.
-
-In case it is not enabled, the URL will be in the form `account_url/site_host`.
-:::
 
 ## Errors in Views
 
@@ -202,20 +128,20 @@ For more details and the parameters supported by these filters, see [Liquid filt
 
 ## Snippets
 
-Snippets are pieces of code that can be created, modified, and reused. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) that you can use to copy the snippet's reference path. The copied code looks like this: <span v-pre> `{% snippet "snippet-name"%}` </span>.
+Snippets are pieces of code that can be created, modified, and reused. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) that you can use to copy the snippet's reference path. The copied code looks like this: <span v-pre>`{% snippet "snippet-name"%}`</span>.
 
 You can add custom snippets to the bottom of the platform's snippet list by clicking on the **+** button.
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
-::: tip Tip
-In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name (i.e. **"front_css"** or **"library_js"**). Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
+:::tip Tip
+In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name i.e. **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
 :::
 
-::: tip Tip
+:::tip Tip
 All elements of the Template Builder use Liquid as a templating engine.
 
-For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
+For more information on what Liquid is and how to get the most out of it, see [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
@@ -224,8 +150,8 @@ In the work area, under the tabs, you will find a bar with useful elements:
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
-::: tip Tip
-For more information on the functionality of the Asset Manager, go to the [Asset Manager](/docs/content/asset-manager.html).
+:::tip Tip
+For more information on the functionality of the Asset Manager, see [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
 **Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
@@ -240,8 +166,8 @@ For more information on the functionality of the Asset Manager, go to the [Asset
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
 
-::: tip Tip
-If you publish a new version of your templates, this list of changes resets and erases all saved states. This is because the new editable version now matches the version you just published. Saving new changes adds new saved states until the next time you publish.
+:::tip Tip
+If you publish a version, you can see that the changelog disappears, that is because the new editable version does not have any changes.
 :::
 
 :::tip Tip
@@ -252,7 +178,7 @@ Sub-versions are for each template, so for some you may notice that there are ch
 If an earlier version of your templates is restored, you can access the saved states of each template of that restored version. You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning)
 :::
 
-You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> Reset All". If you want these reset changes to show up in the front end, you must publish them.
+You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Reset All". If you want these reset changes to show up in the front end, you must publish them.
 
 ## Themes
 
@@ -265,14 +191,14 @@ At the top of this view, you can find a few useful actions:
 - **Theme Gallery**: This opens a modal with all the themes available to install on the site. You can choose to install the default Modyo themes or the account themes (those you converted to themes from other sites). When you install a theme from the theme gallery, you will change the editable version of your templates to the templates of the theme you just installed.
 - **Customize** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M14.6 16.6l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Takes you to the Template Builder of the currently installed theme.
 - **Convert to theme** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Creates a copy of the currently installed theme as a global theme in your account. you can select a new name for this copy and use it for other sites in your account.
-- **Reset ** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Like the reset action of the template builder, this action restores all editable templates to their original versions.
+- **Reset ** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Like the reset action of the template builder, this action restores all editable templates to their original versions.
 - **Load templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41l-3.74 3.74m11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41l3.74-3.74z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: In some cases, after complex migrations, there may be some unmodified templates that could be lost and you may not see them in the template list of the Template Builder. This action retrieves those templates from the original theme and allows you to recover them.
 
-::: tip Tip
+:::tip Tip
 The "Load templates" action does not modify the editable templates that are already in the Template Builder. It only restores those in the Themes Gallery.
 :::
 
-::: tip Tip
+:::tip Tip
 When you create a theme from a site or channel, that theme becomes available to all other sites in your account. This means you can create a base theme and then use that theme to rapidly build new sites.
 :::
 
@@ -323,7 +249,7 @@ You can add this code snippet to the Template Builder and then call this snippet
 <!-- END SEO <-->
 ```
 
-This snippet is different when you're using a custom page, Modyo's default pages, or content views, so by using the attributes of each element, you can define a good SEO base for all your site's URLs.
+This snippet is different when you're using a custom page, one of Modyo's default pages, or content pages, so by using the attributes of each element, you can define a good SEO base for all your site's URLs.
 
 If you require it, you can customize this snippet, defining what you want to appear for specific URLs or types. 
 
@@ -429,7 +355,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ### A session controller
 
 ``` js
-//will be in charge of raising the warning modality that will warn the close of the session, this variable will return a promise that will be effective if you click on the Hold Session button and will issue a reject promise in the case of selecting the button with the refusal to continue
+//will be in charge of raising the warning modal that will warn the session closing, this variable will return a promise that will be effective if you click the Keep Session button and will issue a reject promise in the case of selecting the button with the refusal to continue
 var modalConfirm=function () {
   return new Promise (function (resolve, reject) {
     $ ("# session-modal"). modal ({
@@ -447,9 +373,9 @@ var modalConfirm=function () {
     });
   });
 };
-//it will be the one that will be in charge of starting the time tracking to lift this modal and handle the Front side of the session, then we will explain each of the properties and methods of this object that handles the session
+//this will be the one in charge of starting the time tracking to lift this modal and handle the Front side of the session, then we will explain each of the properties and methods of this object that handles the session
 var sessionManager={
-  //property that defines the time from the last activity until the end of the session in seconds (note not the refresh time of the token but the end of the session, it is recommended that this be one minute shorter than the one declared by the provider of the Open ID Connect to have a little slack with the session and closing it is 100% valid)
+  //property that defines the time from the last activity until the end of the session in seconds (note not the refresh time of the token but the end of the session, it is recommended that this be one minute shorter than the one declared by the provider of the OpenID Connect to have a little slack with the session and closing it is guaranteed)
   timeToEndSessionInSeconds: 900,
   //property where the lifting time of the inactivity modal is defined since the last action or request on the page
   timeToRaiseWarningModalInSeconds: 720,
@@ -461,11 +387,11 @@ var sessionManager={
   },
   //property to store the session id interval of session review
   intevalId: null,
-  //function that determines if the application is being accessed from the modyoShell or not
+  //function that determines if the application is being accessed from modyoShell or not
   isModyoAppShell: function () {
     return/; Modyo_App_Shell/.test (navigator.userAgent);
   },
-  //method that must be executed on each page load to begin the process of session events to follow up recommended do this invocation sessionManager.init () in the head of the layout to begin tracking the session (in some cases it will be defined that developers do not launch this invocation in that case the test api to connect us must also have this if and so we will achieve that axios_api serves for the develop and development environment one with session and the other without session manager)
+  //method that must be executed on each page load to begin the process of session events to follow up. It's recommended to do this invocation sessionManager.init() in the head of the layout to begin tracking the session (in the case that developers do not launch this invocation, the test api to connect us must also have this and so we will achieve that axios_api serves for the develop and development environment, one with session and the other without session manager)
   init: function () {
     this.resetIdleTime ();
     this.intevalId=this.interval ();
