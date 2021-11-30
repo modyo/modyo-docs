@@ -555,6 +555,8 @@ type:
 entry:
   - space
   - category
+  - category_name
+  - category_slug
   - type
   - type_uid
   - tags
