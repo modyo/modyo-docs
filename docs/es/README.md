@@ -72,7 +72,7 @@ roadmapText: Modyo Roadmap
 roadmapUrl: https://es.modyo.com/roadmap
 
 communityTitle: ¿Necesitas más ayuda?
-communityText: Utilice nuestros canales de ayuda
+communityText: Utiliza nuestros canales de ayuda
 
 communityLang: es
 ---
