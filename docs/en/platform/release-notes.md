@@ -5,6 +5,12 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.2 - November 1, 2021
+<Badge text="Core" type="core" vertical="middle"/>
+Fixed issue when allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variable
+
+<Badge text="Content" type="content" vertical="middle"/>
+Fix bug with tag filter with 100 or more tags in admin
 
 ### 9.2.1 - November 25, 2021
 <Badge text="Content" type="content" vertical="middle"/>
