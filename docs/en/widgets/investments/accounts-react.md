@@ -30,3 +30,40 @@ modyo-cli get modyo-widgets-investments-accounts-react
 | Account Statements             | Displays a list of statements to review within a configurable date range. The statements appear as PDFs that can be downloaded and reviewed.                                                                                                                                                                                                                                                                                      |
 | Account Details                | Lists the types of instruments that exist within the investment account. Includes a summary of all the specific instruments that correspond to the type of investment selected. Displays investment escrow, pricing, and distribution information. Through these summaries, you can review the details of the account transaction history. Allows the user to see the movements associated with the investment account. |
 | Detailed Account Movements | Delivers a set of options that allow the user to select date periods and movement types, including transfer movements. Shows the specific movements and their detail, as well as all the operations that are pending and not yet completed.                                                                                                                                                                                               |
+
+<script>
+
+  export default {
+    mounted() {
+
+      function setIframeHeightCO(id, ht) {
+          var ifrm = document.getElementById(id);
+          if(ifrm) {
+            ifrm.style.height = ht + 4 + "px";
+          }
+      }
+      // iframed document sends its height using postMessage
+      function handleDocHeightMsg(e) {
+          // check origin
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+              // parse data
+              var data = JSON.parse( e.data );
+
+              console.log('data:', data)
+              // check data object
+              if ( data['docHeight'] ) {
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
+              } else {
+                  setIframeHeightCO( 'widgetFrame', 700 );
+              }
+          }
+      }
+
+      // assign message handler
+      if ( window.addEventListener ) {
+          window.addEventListener('message', handleDocHeightMsg, false);
+      }
+    }
+  }
+
+</script>
