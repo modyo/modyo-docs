@@ -7,7 +7,7 @@ sidebarDepth: 1
 
 Modyo Content has a complete API to quickly and efficiently access content entries within the spaces in your account. To access them, there are two types of Software Development Kits (SDKs), one for internal use that connects [Modyo Content](/en/platform/content/) with [Modyo Channels](/en/platform/channels/) server-side through Liquid, and another external SDK that uses the public RESTful API for consumption through Javascript.
 
-::: tip SDKs for other languages
+:::tip SDKs for other languages
 At the moment there is only an SDK for Javascript. In the future, we plan to incorporate versions in other languages.
 :::
 
@@ -28,7 +28,7 @@ Both forms will be available until Modyo version 9.2.
 
 To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
 
-``` liquid
+```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
@@ -104,7 +104,8 @@ Keep in mind that if you have more than one widget that uses pagination in the c
 :::
 
 :::warning Warning
-To use pagination in a custom widget, you must change the filter associate to the pagination to <span v-pre>`{{ entries | pagination_links_remote }}`</span>.  This is required because custom widgets are loaded asynchronously. With this and the previous change, you must ensure that _JQuery_ is available in the site and while using pagination links, only the HTML will be modified in the widget, the _JavaScript_ code won't be executed again.  
+To use pagination in a custom widget, you must change the filter associate to the pagination to <span v-pre>`{{ entries | pagination_links_remote }}`</span>.  This is required because custom widgets are loaded asynchronously. With this and the previous change, you must ensure that _JQuery_ is available in the site and while using pagination links, only the HTML will be modified in the widget, the _JavaScript_ code won't be executed again. 
+:::
 
 ### Order entries
 
@@ -140,9 +141,9 @@ The `dynamic_map` filter accepts an additional attribute to control the visibili
 {{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
 
-። :tip Tip
-To use input attributes, you can use dot or square bracket notation, so <span v-pre> `{{ entry.meta.slug }}` </span>, returns the same value as <span v-pre> `{{ entry.meta ['slug'] }}` </span>, and if you have a field called `location`, you can use it as <span v-pre> `{{ entry. fields.location }} `</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> 
-።:
+:::tip Tip
+To use input attributes, you can use dot or square bracket notation, so <span v-pre> `{{ entry.meta.slug }}` </span>, returns the same value as <span v-pre> `{{ entry.meta['slug'] }}` </span>, and if you have a field called `location`, you can use it as <span v-pre> `{{ entry.fields.location }} `</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> 
+:::
 
 ## Javascript SDK
 
@@ -156,7 +157,7 @@ In addition, the Modyo SDK allows you to obtain information from the end user wh
 
 #### 1. Get a Modyo token
 
-The `@modyo /sdk` package is available in Github, under the Modyo organization. That's why to consume the package in a project, besides adding it to `package.json`, **you need to get a token with the scope `read:packages`** ([reference on Github] (https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
+The `@modyo /sdk` package is available in Github, under the Modyo organization. That's why to consume the package in a project, besides adding it to `package.json`, **you need to get a token with the scope `read:packages`** ([reference on Github](https://help.github.com/packages/publishing-and-managing-packages/about-github-packages#about-tokens))
 
 #### 2. Authenticating to Github packages
 
@@ -167,7 +168,7 @@ The contents of that file (replacing `TOKEN` with our token)
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
 
-[Reference on Github docs] (https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
+[Reference on Github docs](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
 
 #### 3. Add the organization to your project
 
@@ -179,7 +180,7 @@ registry=https://npm.pkg.github.com/OWNER
 
 Where `OWNER` is the name of the organization that owns the package, in this case `modyo`
 
-[Github docs reference] (https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
+[Github docs reference](https://help.github.com/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#installing-a-package)
 
 ### Use
 
@@ -192,9 +193,9 @@ import { Client } from "@modyo/sdk";
 const modyoAccount = new Client("https://my-account.modyo.com","es");
 ```
 
-። :tip Tip
+:::tip Tip
 When instantiating a new client, the second parameter _locale_ is optional, the inputs are requested only in the requested language, otherwise the default language of the space will be used.
-።:
+:::
 
 ### Content
 
@@ -206,8 +207,8 @@ We can query for a particular type of content and thus get its schema
 
 ```js
 // To get the `Post` type of a space called `Blog`
-const typePost = modyoAccount.getContentType (“blog”, “post”);
-//`typePost` will return an object with various information of the type, including the schema of that type
+const typePost = modyoAccount.getContentType(“blog”, “post”);
+// `typePost` will return an object with various information of the type, including the schema of that type
 ```
 
 When we have the type we need we can see its schema, its attributes, or query its entries:
@@ -270,7 +271,7 @@ Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, 
 
 - **SortBy**: receives as parameters the field to sort and order (`asc` or `desc`).
 
-- **JSONPath**: Receives the JSONPath [ref] (https://goessner.net/articles/JsonPath/) that models a response structure.
+- **JSONPath**: Receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
 
 - **Pagination**: receives the page number and total entries per page as parameters.
 
@@ -313,7 +314,7 @@ const filters = ctype
   .JSONPath("$..uuid");
 ```
 
-**Note**: As you can see in the example, it is possible to use expressions in our queries `JSONPath` [JSONPath - XPath for JSON] (https://goessner.net/articles/JsonPath/)
+**Note**: As you can see in the example, it is possible to use expressions in our queries `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
 
 #### Private content
 
@@ -373,10 +374,18 @@ Entries JSON:
         "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
         "space": "myspace",
         "name": "Lorem Ipsum dolor",
-        "type_name": "Post",
-        "category": null,
+        "slug": "lorem-ipsum-dolor"
+        "type": "Post",
+        "private": false,
+        "targets": [],
+        "category": "lorem/ipsum",
         "updated_at": "2019-03-18T14:06:59.000-03:00",
         "created_at": "2019-03-18T14:06:59.000-03:00",
+        "published_at": "2021-02-26T13:37:42.000Z",
+        "version_type": "current",
+        "category_name": "Ipsum",
+        "category_slug": "ipsum",
+        "unpublished_at": null,
         "tags": [],
         "locale": "en",
         "available_locales": [
@@ -392,11 +401,19 @@ Entries JSON:
       "meta": {
         "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
         "space": "myspace",
-        "name": "Lorem Ipsum dolor",
-        "type_name": "Post",
-        "category": null,
+        "name": "Lorem Ipsum",
+        "slug": "lorem-ipsum"
+        "type": "Post",
+        "private": false,
+        "targets": [],
+        "category": "lorem",
         "updated_at": "2019-03-18T14:06:59.000-03:00",
         "created_at": "2019-03-18T14:06:59.000-03:00",
+        "published_at": "2021-02-26T13:37:42.000Z",
+        "version_type": "current",
+        "category_name": "Lorem",
+        "category_slug": "lorem",
+        "unpublished_at": null,
         "tags": [],
         "locale": "en",
         "available_locales": [
@@ -425,52 +442,70 @@ Entries JSON Schema:
             "uuid",
             "space",
             "name",
-            "type_name",
+            "type",
             "category",
-            "updated_at",
+            "category_name",
+            "category_slug",
             "created_at",
+            "updated_at",
+            "published_at",
+            "unpublished_at",
             "tags",
             "locale",
-            "available_locales"
+            "available_locales",
+            "targets",
+            "private",
+            "version_type",
+            "slug"
           ],
           "properties": {
             "uuid": {
               "type": "string",
-              "default": "",
               "examples": [
                 "9b0a24a6-d84f-4851-8750-a86244947510"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
             "space": {
               "type": "string",
-              "default": "",
               "examples": [
-                "myspace"
-              ],
-              "pattern": "^(.*)$"
+                "mySpace"
+              ]
             },
             "name": {
               "type": "string",
-              "default": "",
               "examples": [
                 "Lorem Ipsum dolor"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
-            "type_name": {
+            "type": {
+              "type": "string",
+              "examples": [
+                "Lorem Ipsum dolor"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "examples": [
+                "parent-category/my-category"
+              ]
+            },
+            "category_name": {
+              "type": "string",
+              "examples": [
+                "My Category"
+              ]
+            },
+            "category_slug": {
+              "type": "string",
+              "examples": [
+                "my-category"
+              ]
+            },
+            "created_at": {
               "type": "string",
               "default": "",
               "examples": [
-                "Post"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "category": {
-              "type": "null",
-              "default": null,
-              "examples": [
-                null
+                "2019-03-18T14:06:59.000-03:00"
               ]
             },
             "updated_at": {
@@ -478,30 +513,73 @@ Entries JSON Schema:
               "default": "",
               "examples": [
                 "2019-03-18T14:06:59.000-03:00"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
-            "tags": {
-              "type": "array"
-            },
-            "locale": {
+            "published_at": {
               "type": "string",
               "default": "",
               "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ]
+            },
+            "unpublished_at": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ]
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "tag1",
+                  "tag2"
+                ]
+              }
+            },
+            "locale": {
+              "type": "string",
+              "examples": [
                 "en"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
             "available_locales": {
               "type": "array",
               "items": {
                 "type": "string",
-                "default": "",
                 "examples": [
-                  "en"
-                ],
-                "pattern": "^(.*)$"
+                  "es"
+                ]
               }
+            },
+            "targets": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "target1"
+                ]
+              }
+            },
+            "private": {
+              "type": "boolean",
+              "examples": [
+                false
+              ]
+            },
+            "version_type": {
+              "type": "string",
+              "examples": [
+                "current"
+              ]
+            },
+            "slug": {
+              "type": "string",
+              "examples": [
+                "en-labore"
+              ]
             }
           }
         },
@@ -557,18 +635,24 @@ Entry JSON:
 {
    "meta":{
       "uuid":"9b0a24a6-d84f-4851-8750-a86244947510",
-      "space":"myspace",
-      "name":"Lorem Ipsum dolor",
-      "type_name":"Post",
-      "category":null,
-      "updated_at":"2019-03-18T14:06:59.000-03:00",
+      "space": "myspace",
+      "name": "Lorem Ipsum dolor",
+      "slug": "lorem-ipsum-dolor"
+      "type": "Post",
+      "private": false,
+      "targets": [],
+      "category": "lorem/ipsum",
+      "updated_at": "2019-03-18T14:06:59.000-03:00",
       "created_at": "2019-03-18T14:06:59.000-03:00",
-      "tags":[
-
-      ],
-      "locale":"en",
-      "available_locales":[
-         "en"
+      "published_at": "2021-02-26T13:37:42.000Z",
+      "version_type": "current",
+      "category_name": "Ipsum",
+      "category_slug": "ipsum",
+      "unpublished_at": null,
+      "tags": [],
+      "locale": "en",
+      "available_locales": [
+        "en"
       ]
    },
    "fields":{
@@ -597,93 +681,144 @@ Entry JSON Schema:
         "uuid",
         "space",
         "name",
-        "type_name",
+        "type",
         "category",
-        "updated_at",
+        "category_name",
+        "category_slug",
         "created_at",
+        "updated_at",
+        "published_at",
+        "unpublished_at",
         "tags",
         "locale",
-        "available_locales"
+        "available_locales",
+        "targets",
+        "private",
+        "version_type",
+        "slug"
       ],
       "properties": {
         "uuid": {
-          "$id": "#/properties/meta/properties/uuid",
           "type": "string",
-          "default": "",
           "examples": [
             "9b0a24a6-d84f-4851-8750-a86244947510"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "space": {
-          "$id": "#/properties/meta/properties/space",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "myspace"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "name": {
-          "$id": "#/properties/meta/properties/name",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Lorem Ipsum dolor"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "type_name": {
-          "$id": "#/properties/meta/properties/type_name",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Post"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "category": {
-          "$id": "#/properties/meta/properties/category",
-          "type": "null",
-          "default": null,
-          "examples": [
-            null
           ]
         },
-        "updated_at": {
-          "$id": "#/properties/meta/properties/updated_at",
+        "space": {
+          "type": "string",
+          "examples": [
+            "mySpace"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "examples": [
+            "parent-category/my-category"
+          ]
+        },
+        "category_name": {
+          "type": "string",
+          "examples": [
+            "My Category"
+          ]
+        },
+        "category_slug": {
+          "type": "string",
+          "examples": [
+            "my-category"
+          ]
+        },
+        "created_at": {
           "type": "string",
           "default": "",
           "examples": [
             "2019-03-18T14:06:59.000-03:00"
-          ],
-          "pattern": "^(.*)$"
+          ]
         },
-        "tags": {
-          "$id": "#/properties/meta/properties/tags",
-          "type": "array"
-        },
-        "locale": {
-          "$id": "#/properties/meta/properties/locale",
+        "updated_at": {
           "type": "string",
           "default": "",
           "examples": [
-            "en"
-          ],
-          "pattern": "^(.*)$"
+            "2019-03-18T14:06:59.000-03:00"
+          ]
         },
-        "available_locales": {
-          "$id": "#/properties/meta/properties/available_locales",
+        "published_at": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ]
+        },
+        "unpublished_at": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ]
+        },
+        "tags": {
           "type": "array",
           "items": {
-            "$id": "#/properties/meta/properties/available_locales/items",
             "type": "string",
-            "default": "",
             "examples": [
-              "en"
-            ],
-            "pattern": "^(.*)$"
+              "tag1",
+              "tag2"
+            ]
           }
+        },
+        "locale": {
+          "type": "string",
+          "examples": [
+            "en"
+          ]
+        },
+        "available_locales": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "es"
+            ]
+          }
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "target1"
+            ]
+          }
+        },
+        "private": {
+          "type": "boolean",
+          "examples": [
+            false
+          ]
+        },
+        "version_type": {
+          "type": "string",
+          "examples": [
+            "current"
+          ]
+        },
+        "slug": {
+          "type": "string",
+          "examples": [
+            "en-labore"
+          ]
         }
       }
     },
@@ -739,8 +874,8 @@ Metadata (e.g. Tags, Category, Dates): SQL searches will be queried by `meta.par
   - `.../entries?meta.published_at[gt]=1987-11-19`
 - Fields: Searches using ElasticSearch, for example:
   - Location: The search will be by queryString (and will be searched in the street_name, country, admin_area_levels fields) or by geohash. In both cases you should change <span v-pre> `{{field_name}}` </span> to the name of the location field of the content type
-    -  <span v-pre>`.../? fields extension. {{field_name}}[search]=chile`</span>. With the field called `location` it would be: `.../?fields.location[search]=chile` This search is case-insensitive, but does take space, tildes, and special characters into account.
-    -  <span v-pre>`.../? fields extension.{{field_name}}[geohash]=66j`</span>. With the field called `location` it would be: `.../?fields.location[geohash]=66j`
+    - <span v-pre>`.../? fields extension. {{field_name}}[search]=chile`</span>. With the field called `location` it would be: `.../?fields.location[search]=chile` This search is case-insensitive, but does take space, tildes, and special characters into account.
+    - <span v-pre>`.../? fields extension.{{field_name}}[geohash]=66j`</span>. With the field called `location` it would be: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 
 ###### Language filter
