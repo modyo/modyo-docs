@@ -374,10 +374,18 @@ Entries JSON:
         "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
         "space": "myspace",
         "name": "Lorem Ipsum dolor",
-        "type_name": "Post",
-        "category": null,
+        "slug": "lorem-ipsum-dolor"
+        "type": "Post",
+        "private": false,
+        "targets": [],
+        "category": "lorem/ipsum",
         "updated_at": "2019-03-18T14:06:59.000-03:00",
         "created_at": "2019-03-18T14:06:59.000-03:00",
+        "published_at": "2021-02-26T13:37:42.000Z",
+        "version_type": "current",
+        "category_name": "Ipsum",
+        "category_slug": "ipsum",
+        "unpublished_at": null,
         "tags": [],
         "locale": "en",
         "available_locales": [
@@ -393,11 +401,19 @@ Entries JSON:
       "meta": {
         "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
         "space": "myspace",
-        "name": "Lorem Ipsum dolor",
-        "type_name": "Post",
-        "category": null,
+        "name": "Lorem Ipsum",
+        "slug": "lorem-ipsum"
+        "type": "Post",
+        "private": false,
+        "targets": [],
+        "category": "lorem",
         "updated_at": "2019-03-18T14:06:59.000-03:00",
         "created_at": "2019-03-18T14:06:59.000-03:00",
+        "published_at": "2021-02-26T13:37:42.000Z",
+        "version_type": "current",
+        "category_name": "Lorem",
+        "category_slug": "lorem",
+        "unpublished_at": null,
         "tags": [],
         "locale": "en",
         "available_locales": [
@@ -426,52 +442,70 @@ Entries JSON Schema:
             "uuid",
             "space",
             "name",
-            "type_name",
+            "type",
             "category",
-            "updated_at",
+            "category_name",
+            "category_slug",
             "created_at",
+            "updated_at",
+            "published_at",
+            "unpublished_at",
             "tags",
             "locale",
-            "available_locales"
+            "available_locales",
+            "targets",
+            "private",
+            "version_type",
+            "slug"
           ],
           "properties": {
             "uuid": {
               "type": "string",
-              "default": "",
               "examples": [
                 "9b0a24a6-d84f-4851-8750-a86244947510"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
             "space": {
               "type": "string",
-              "default": "",
               "examples": [
-                "myspace"
-              ],
-              "pattern": "^(.*)$"
+                "mySpace"
+              ]
             },
             "name": {
               "type": "string",
-              "default": "",
               "examples": [
                 "Lorem Ipsum dolor"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
-            "type_name": {
+            "type": {
+              "type": "string",
+              "examples": [
+                "Lorem Ipsum dolor"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "examples": [
+                "parent-category/my-category"
+              ]
+            },
+            "category_name": {
+              "type": "string",
+              "examples": [
+                "My Category"
+              ]
+            },
+            "category_slug": {
+              "type": "string",
+              "examples": [
+                "my-category"
+              ]
+            },
+            "created_at": {
               "type": "string",
               "default": "",
               "examples": [
-                "Post"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "category": {
-              "type": "null",
-              "default": null,
-              "examples": [
-                null
+                "2019-03-18T14:06:59.000-03:00"
               ]
             },
             "updated_at": {
@@ -479,30 +513,73 @@ Entries JSON Schema:
               "default": "",
               "examples": [
                 "2019-03-18T14:06:59.000-03:00"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
-            "tags": {
-              "type": "array"
-            },
-            "locale": {
+            "published_at": {
               "type": "string",
               "default": "",
               "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ]
+            },
+            "unpublished_at": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ]
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "tag1",
+                  "tag2"
+                ]
+              }
+            },
+            "locale": {
+              "type": "string",
+              "examples": [
                 "en"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
             "available_locales": {
               "type": "array",
               "items": {
                 "type": "string",
-                "default": "",
                 "examples": [
-                  "en"
-                ],
-                "pattern": "^(.*)$"
+                  "es"
+                ]
               }
+            },
+            "targets": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "target1"
+                ]
+              }
+            },
+            "private": {
+              "type": "boolean",
+              "examples": [
+                false
+              ]
+            },
+            "version_type": {
+              "type": "string",
+              "examples": [
+                "current"
+              ]
+            },
+            "slug": {
+              "type": "string",
+              "examples": [
+                "en-labore"
+              ]
             }
           }
         },
@@ -558,18 +635,24 @@ Entry JSON:
 {
    "meta":{
       "uuid":"9b0a24a6-d84f-4851-8750-a86244947510",
-      "space":"myspace",
-      "name":"Lorem Ipsum dolor",
-      "type_name":"Post",
-      "category":null,
-      "updated_at":"2019-03-18T14:06:59.000-03:00",
+      "space": "myspace",
+      "name": "Lorem Ipsum dolor",
+      "slug": "lorem-ipsum-dolor"
+      "type": "Post",
+      "private": false,
+      "targets": [],
+      "category": "lorem/ipsum",
+      "updated_at": "2019-03-18T14:06:59.000-03:00",
       "created_at": "2019-03-18T14:06:59.000-03:00",
-      "tags":[
-
-      ],
-      "locale":"en",
-      "available_locales":[
-         "en"
+      "published_at": "2021-02-26T13:37:42.000Z",
+      "version_type": "current",
+      "category_name": "Ipsum",
+      "category_slug": "ipsum",
+      "unpublished_at": null,
+      "tags": [],
+      "locale": "en",
+      "available_locales": [
+        "en"
       ]
    },
    "fields":{
@@ -598,93 +681,144 @@ Entry JSON Schema:
         "uuid",
         "space",
         "name",
-        "type_name",
+        "type",
         "category",
-        "updated_at",
+        "category_name",
+        "category_slug",
         "created_at",
+        "updated_at",
+        "published_at",
+        "unpublished_at",
         "tags",
         "locale",
-        "available_locales"
+        "available_locales",
+        "targets",
+        "private",
+        "version_type",
+        "slug"
       ],
       "properties": {
         "uuid": {
-          "$id": "#/properties/meta/properties/uuid",
           "type": "string",
-          "default": "",
           "examples": [
             "9b0a24a6-d84f-4851-8750-a86244947510"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "space": {
-          "$id": "#/properties/meta/properties/space",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "myspace"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "name": {
-          "$id": "#/properties/meta/properties/name",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Lorem Ipsum dolor"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "type_name": {
-          "$id": "#/properties/meta/properties/type_name",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Post"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "category": {
-          "$id": "#/properties/meta/properties/category",
-          "type": "null",
-          "default": null,
-          "examples": [
-            null
           ]
         },
-        "updated_at": {
-          "$id": "#/properties/meta/properties/updated_at",
+        "space": {
+          "type": "string",
+          "examples": [
+            "mySpace"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "examples": [
+            "parent-category/my-category"
+          ]
+        },
+        "category_name": {
+          "type": "string",
+          "examples": [
+            "My Category"
+          ]
+        },
+        "category_slug": {
+          "type": "string",
+          "examples": [
+            "my-category"
+          ]
+        },
+        "created_at": {
           "type": "string",
           "default": "",
           "examples": [
             "2019-03-18T14:06:59.000-03:00"
-          ],
-          "pattern": "^(.*)$"
+          ]
         },
-        "tags": {
-          "$id": "#/properties/meta/properties/tags",
-          "type": "array"
-        },
-        "locale": {
-          "$id": "#/properties/meta/properties/locale",
+        "updated_at": {
           "type": "string",
           "default": "",
           "examples": [
-            "en"
-          ],
-          "pattern": "^(.*)$"
+            "2019-03-18T14:06:59.000-03:00"
+          ]
         },
-        "available_locales": {
-          "$id": "#/properties/meta/properties/available_locales",
+        "published_at": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ]
+        },
+        "unpublished_at": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ]
+        },
+        "tags": {
           "type": "array",
           "items": {
-            "$id": "#/properties/meta/properties/available_locales/items",
             "type": "string",
-            "default": "",
             "examples": [
-              "en"
-            ],
-            "pattern": "^(.*)$"
+              "tag1",
+              "tag2"
+            ]
           }
+        },
+        "locale": {
+          "type": "string",
+          "examples": [
+            "en"
+          ]
+        },
+        "available_locales": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "es"
+            ]
+          }
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "target1"
+            ]
+          }
+        },
+        "private": {
+          "type": "boolean",
+          "examples": [
+            false
+          ]
+        },
+        "version_type": {
+          "type": "string",
+          "examples": [
+            "current"
+          ]
+        },
+        "slug": {
+          "type": "string",
+          "examples": [
+            "en-labore"
+          ]
         }
       }
     },
