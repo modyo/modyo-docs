@@ -310,7 +310,7 @@ Al hacer click en sincronizar, podrás seleccionar que cambios tomar de un stage
 :::
 
 :::warning Atención
-Recibirás una alerta si intentas sincronizar cambios que todavía no están publicados. 
+Recibirás una alerta si intentas sincronizar cambios que todavía no están publicados.
 :::
 
 
@@ -343,7 +343,7 @@ Para agregar un nuevo miembro para tu sitio, sigue estos pasos:
 1. Expande **Configuración de Sitio** y haz click en **Miembros del Equipo**.
 1. Haz click en el botón **+ Agregar Miembro**.
 1. Busca el usuario que quieres agregar a tu sitio y selecciona un rol.
-1. Haz click en **Añadir**. 
+1. Haz click en **Añadir**.
 
 Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
@@ -408,19 +408,19 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
 
-#### Security headers
+## Security headers
 
 Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
 Esta acción no se puede deshacer. Al ser habilitada, tendrás el control total de los encabezados que desees usar.
 
-#### HTTP Strict Transport Security (HSTS)
+### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que el sitio se debe acceder usando solo HTTPS.
 * **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se accede al sitio mediante HTTPS.
 * **Precarga**: Incluye la directiva de precarga. Para más información consulta [HSTS Preload List Submission](https://hstspreload.org/).
 * **Incluir subdominios**: Utiliza la regla HSTS también para todos los subdominios del sitio.
 
-#### Referrer-Policy
+### Referrer-Policy
 
 El _header_ `Referer` contiene información de la página web anterior desde al cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
 
@@ -433,17 +433,17 @@ El _header_ `Referer` contiene información de la página web anterior desde al 
 * **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros .
 * **unsafe-url**: Envía siempre la información de _referrer_.
 
-#### X-Frame-Options
+### X-Frame-Options
 
 Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: El sitio no se puede mostrar en un _frame_.
 * **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
 
-#### X-Content-Type-Options
+### X-Content-Type-Options
 
 Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type` para evitar _MIME type sniffing_.
 
-#### Content-Security-Policy
+### Content-Security-Policy
 
 Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
 
@@ -476,11 +476,11 @@ Hay varias herramientas para ayudarte a diseñar una política de seguridad sól
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
-#### Permissions-Policy
+### Permissions-Policy
 
 Permite o niega el uso de funciones y APIs del navegador para el sitio, por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos. Para obtener una lista completa de las funciones compatibles con los navegadores, consulte [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
-#### X-XSS-Protection
+### X-XSS-Protection
 
 Evita que las páginas se carguen cuando el navegador detecta un ataque de _cross-site scripting_. Esta protección no es necesaria con los navegadores modernos cuando se implementa una [Content-Security-Policy](/es/platform/channels/sites.html#content-security-policy) estricta, pero algunos inspectores de seguridad van a esperar la presencia de este _header_.
 
