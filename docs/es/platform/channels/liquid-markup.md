@@ -117,6 +117,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `escape` - Escape html a un string
 * `first` - Obtener el primer elemento del array pasado
 * `floor` - Redondea un número decimal hacia abajo al entero más cercano, *e.g.* <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
+* `format_date` - Da formato a una fecha con la localización del sitio, usa la misma sintaxis que `date`
 * `hmac_sha1` - Retorna el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string , *e.g.* <span v-pre>`{% 'Hello world' | hmac_sha1: 'key'  %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>.
 * `hmac_sha256` - Retorna el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string , *e.g.* <span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>.
 * `join` - Une elementos del array con cierto caracter entre ellos.
