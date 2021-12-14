@@ -15,6 +15,16 @@ module.exports = {
       description: "Bienvenido a la documentación oficial de Modyo.",
     },
   },
+  plugins: [
+    [
+    'code-switcher',
+        {
+            groups: {
+                default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
+            },
+        },
+    ],
+  ],
   head: [
     [
       "script",
@@ -287,6 +297,7 @@ module.exports = {
                 "/es/platform/content/entries",
                 "/es/platform/content/asset-manager",
                 "/es/platform/content/public-api-reference",
+                "/es/platform/content/nu-public",
               ],
             },
             {
