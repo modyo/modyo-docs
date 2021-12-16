@@ -161,7 +161,7 @@ In order to display content on a site, you must meet certain conditions:
 * Have a space with at least one language (the same language as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces.html#create-a-space) and [Create a Type](/en/platform/content/types.html#create-a-type)
 * Have entries published in the language of the site. For more information, see [Entries](/en/platform/content/entries.html) and [Locales](/en/platform/content/spaces.html#locales)
 
-::tip Tip
+:::tip Tip
 To learn more about how to create a custom content view, see [Creating a Content View](/en/platform/tutorials/how-to-create-a-custom-view.html).
 :::
 
