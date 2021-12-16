@@ -17,6 +17,7 @@ En este tutorial seguiremos usando el sitio de "Dynamic Bank" y vamos a habilita
 <div style="margin: 50px auto; text-align: center;" >
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
 ## Requisitos Previos
 
 Para comenzar este tutorial necesitas haber completado el [tutorial de creación de un sitio básico](/es/platform/tutorials/how-to-create-home.html). Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, JS, y la plataforma Modyo.
