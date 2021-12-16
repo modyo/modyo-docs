@@ -790,7 +790,7 @@ Create two entries with the following fields:
 
 ## Conclusion
 
-Congratulations! You used [Modyo Content](/en/platform/content) to its full potential using [Spaces](/en/platform/content/spaces), [Types] (/en/platform/content/types), [Entries] (/en/platform/content/entries), and [Categories](/en/platform/content/entries.html#categories) to generate all the content you need to build the Home page for Dynamic Bank.
+Congratulations! You used [Modyo Content](/en/platform/content) to its full potential using [Spaces](/en/platform/content/spaces), [Types](/en/platform/content/types), [Entries](/en/platform/content/entries), and [Categories](/en/platform/content/entries.html#categories) to generate all the content you need to build the Home page for Dynamic Bank.
 
 We already have all our entries to be able to develop the Front-end and the Home page for Dynamic Bank can be generated from [Modyo Channels](/en/platform/channels) while the content is changed from Modyo Content.
 
