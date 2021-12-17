@@ -5,6 +5,21 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.3 - 17 de noviembre de 2021
+<Badge text="Core" type="core" vertical="middle"/>
+* Mejoras en documentación Swagger
+* Mejoras a responsive de modales
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se homologa alt_text para assets en API JSON
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se arreglan webhooks de realms
+* Mejora en cambios a custom fields buscables
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla API de búsqueda
+
 ### 9.2.2 - 1 de noviembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 Se arregla problema al permitir tag style con variable de entorno MODYO_HTML_ALLOWED_ATTRS
