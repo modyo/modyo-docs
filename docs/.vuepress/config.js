@@ -297,7 +297,6 @@ module.exports = {
                 "/es/platform/content/entries",
                 "/es/platform/content/asset-manager",
                 "/es/platform/content/public-api-reference",
-                "/es/platform/content/nu-public",
               ],
             },
             {
