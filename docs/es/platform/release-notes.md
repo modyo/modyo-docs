@@ -5,7 +5,7 @@ search: true
 # Notas del release
 
 ## 9.2
-### 9.2.3 - 17 de noviembre de 2021
+### 9.2.3 - 17 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Mejoras en documentación Swagger
 * Mejoras a responsive de modales
@@ -20,7 +20,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se arregla API de búsqueda
 
-### 9.2.2 - 1 de noviembre de 2021
+### 9.2.2 - 1 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 Se arregla problema al permitir tag style con variable de entorno MODYO_HTML_ALLOWED_ATTRS
 
