@@ -12,7 +12,7 @@ La plataforma ofrece un widget para pagar tus cuentas, permitiéndote pagarlos d
 modyo-cli get modyo-widgets-bill-payment
 ```
 
-[Abrir en nueva tab](https://widgets-es.modyo.com/insurance/retail/bill-payment)
+[Abrir en nueva tab](https://widgets.modyo.com/retail/bill-payment)
 
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/insurance/retail/bill-payment" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
