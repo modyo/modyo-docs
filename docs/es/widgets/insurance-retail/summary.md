@@ -20,9 +20,9 @@ Las funcionalidades de este widget son las siguientes:
 
 | Funcionalidad           | Descripción                                           |
 |:------------------------|:------------------------------------------------------|
-| Actividad            |  Visualiza la actividad de los pagos a tus cuentas usando filtros de: **1, 3, 6, 9, o 12 meses** y por default muestra el último monto y el promedio de los pagos a la cuenta.                                                       |
+| Actividad            |  Visualiza la actividad de los pagos a tus cuentas usando filtros de: **6, 9, 12, o 18 meses atrás** y **siguentes 6 y 9 meses**. Por default muestra el último monto y el promedio de los pagos a la cuenta.                                                       |
 | Próximos pagos       |  Muestra el nombre de la empresa, el tipo de empresa, y la fecha de pago para los pagos en el futuro cercano. |
-| Pagos anteriores     | Muestra el nombre de la empresa, el tipo de empresa, el monto del pago, la fecha de pago, y el comprobante de pago de la cuenta. |
+| Pagos recientes     | Muestra el nombre de la empresa, el tipo de empresa, el monto del pago, la fecha de pago, y el comprobante de pago de la cuenta. |
 
 
 <script>
