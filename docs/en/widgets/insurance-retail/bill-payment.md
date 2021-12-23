@@ -14,7 +14,7 @@ modyo-cli get modyo-widgets-bill-payment
 
 [Open in new tab](https://widgets.modyo.com/retail/bill-payment)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/insurance/retail/bill-payment" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/payments-summary" width="100%" frameborder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 To add and pay your bills, the default options available are:
 
