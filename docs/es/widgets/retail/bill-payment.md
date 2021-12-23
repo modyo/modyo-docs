@@ -9,7 +9,7 @@ La plataforma ofrece un widget para pagar tus cuentas, permitiéndote pagarlos d
 ### Instalación:
 
 ```bash
-modyo-cli get modyo-widgets-bill-payment
+modyo-cli get modyo-widgets-retail-bill-payment
 ```
 
 [Abrir en nueva tab](https://widgets-es.modyo.com/personas/pago-de-cuentas)

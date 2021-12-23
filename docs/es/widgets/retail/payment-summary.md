@@ -9,12 +9,12 @@ La plataforma ofrece un widget en donde podrás visualizar todos los pagos de tu
 ### Instalación:
 
 ```bash
-modyo-cli get modyo-widgets-payment-summary
+modyo-cli get modyo-widgets-retail-payment-summary
 ```
 
 [Abrir en nueva tab](https://widgets-es.modyo.com/personas/resumen-de-pagos)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/insurance/retail/bill-payment" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/resumen-de-pagos" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 Las funcionalidades de este widget son las siguientes:
 
