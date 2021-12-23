@@ -14,7 +14,7 @@ modyo-cli get modyo-widgets-bill-payment
 
 [Abrir en nueva tab](https://widgets-es.modyo.com/personas/pago-de-cuentas)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/insurance/retail/bill-payment" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/pago-de-cuentas" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 Para agregar y pagar tus cuentas, las opciones por default disponibles son:
 
