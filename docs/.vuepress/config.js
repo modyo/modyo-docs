@@ -163,6 +163,8 @@ module.exports = {
                 "/en/widgets/retail/cash-advance",
                 "/en/widgets/retail/transfer",
                 "/en/widgets/retail/transfers",
+                "/en/widgets/retail/bill-payment",
+                "/en/widgets/retail/payment-summary",
               ],
             },
             {
@@ -197,8 +199,7 @@ module.exports = {
               children: [
                 "/en/widgets/insurance-retail/summary",
                 "/en/widgets/insurance-retail/quote",
-                "/en/widgets/insurance-retail/detailed-view",
-                "/en/widgets/insurance-retail/bill-payment",
+                "/en/widgets/insurance-retail/detailed-view"
               ],
             },
           ],
@@ -354,6 +355,8 @@ module.exports = {
                 "/es/widgets/retail/cash-advance",
                 "/es/widgets/retail/transfer",
                 "/es/widgets/retail/transfers",
+                "/es/widgets/retail/bill-payment",
+                "/es/widgets/retail/payment-summary",
               ],
             },
             {
@@ -388,8 +391,7 @@ module.exports = {
               children: [
                 "/es/widgets/insurance-retail/summary",
                 "/es/widgets/insurance-retail/quote",
-                "/es/widgets/insurance-retail/detailed-view",
-                "/es/widgets/insurance-retail/bill-payment",
+                "/es/widgets/insurance-retail/detailed-view"
               ],
             },           
           ],
