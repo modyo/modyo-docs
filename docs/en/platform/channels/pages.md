@@ -53,7 +53,7 @@ To create a new page, follow these steps:
 1. Customize the page depending on the type: adding or editing widgets for Widget Pages or editing the Index and Show for Content Pages.
 1. Once finished, click **Publish**.
 
-To learn more about the types of widgets available, see [Widgets](/en/platform/channels/pages.html#widgets)
+To learn more about the types of widgets you can add, see [Widgets](/en/platform/channels/pages.html#widget-pages)
 
 To learn more about content pages, see [Content Pages](/en/platform/channels/pages.html#content-pages)
 
@@ -83,20 +83,21 @@ In the right side section you will find three tabs:
 - Edit Widget: allows you to change different properties and filters for each widget.
 - Properties: allows you to modify the name, excerpt, path, parent, privacy, grid layout, and meta tags of the page.
 
-## Widgets
+## Widget Pages
 
-You can add them from the first tab of the Page builder. The available widgets are:
+Here you can customize your page using preset widgets from the following list: 
+
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/en/platform/channels/widgets.html).
 - **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content**: These are default widgets that will allow you to display filtered content lists connected to your spaces. Use the filters to specify the space, type, language, tags and category of the content you want to display. To modify how these widgets look, you must do so in the [template builder](/en/platform/channels/templates.html), in the widgets section.
+- **Content List**: Displays a list of Content entries using filters by space, type, language, tags, and category. To modify what these widgets look like, you must do so from the Widgets section in [Templates](/en/platform/channels/templates.html).
+- **Content featured**: Displays a list of entries as “hero” images in a carousel.
 - **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.
 
-Once a widget is selected in the central section, the focus will move to the central tab, where you can find different configuration options for the widgets and if you select a custom widget, you will find a link to go directly to its edit view in the [widget builder](/en/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
-In the right sidebar, you can select different grids based on the structure you need in the third tab.
+Once you have selected a widget in the middle section, the focus will be shifted to the side tab, where you can find different widget configuration options and if you select a custom widget, you will find a link to go directly to its edit view in [widget builder](/en/platform/channels/widgets.html) with a list of the variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you need to select the checkbox to the left of the variable and change the value. 
 
 ### Settings
 
@@ -108,7 +109,7 @@ In this tab you will find options of common properties between all pages:
 * Excerpt
 * Grid
 * Privacy
-* Meta tags
+* Custom meta tags
 
 :::warning Warning
 Modyo has reserved paths for the pages, so you cannot use these as paths for your custom pages:
