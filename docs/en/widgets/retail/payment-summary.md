@@ -2,27 +2,27 @@
 search: true
 ---
 
-# Resumen de pagos <Badge text="Beta" type="warn"/>
+# Payment summary <Badge text="Beta" type="warn"/>
 
-La plataforma ofrece un widget en donde podrás visualizar todos los pagos de tus cuentas, por default cuenta con una gráfica de actividad de tus pagos previos, una ventana de tus próximos pagos, y tu historial con las boletas de tus pagos. 
+The platform offers a widget where you can view all the payments in your accounts, by default it has a history graph with your previous payments, a section for upcoming payments, and your previous payment slips. 
 
-### Instalación:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-payment-summary
 ```
 
-[Abrir en nueva tab](https://widgets-es.modyo.com/personas/resumen-de-pagos)
+[Open in new tab](https://widgets.modyo.com/retail/payments-summary)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/resumen-de-pagos" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/payments-summary" width="100%" frameborder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
-Las funcionalidades de este widget son las siguientes:
+The features of this widget are as follows:
 
-| Funcionalidad           | Descripción                                           |
+| Feature           | Description                                           |
 |:------------------------|:------------------------------------------------------|
-| Actividad            |  Visualiza la actividad de los pagos a tus cuentas usando filtros de: **6, 9, 12, o 18 meses atrás** y **siguentes 6 y 9 meses**. Por default muestra el último monto y el promedio de los pagos a la cuenta.                                                       |
-| Próximos pagos       |  Muestra el nombre de la empresa, el tipo de empresa, y la fecha de pago para los pagos en el futuro cercano. |
-| Pagos recientes     | Muestra el nombre de la empresa, el tipo de empresa, el monto del pago, la fecha de pago, y el comprobante de pago de la cuenta. |
+| Activity            |  View payment activity of your accounts using filters from: **6, 9, 12, or 18 months ago** and **next 6 and 9 months**. By default it shows the last and average amount of payments to the account.                                                       |
+| Upcoming payments       |  Displays the company name, company type, and payment date for payments in the near future. |
+| Recent payments     | Displays the company name, business type, payment amount, payment date, and proof of payment for the account. |
 
 
 <script>
