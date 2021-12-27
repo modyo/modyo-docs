@@ -17,7 +17,21 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-### Facebook
+
+
+## Integrar un proveedor de identidad
+
+Para integrar un nuevo proveedor de identidad, sigue estos pasos:
+
+1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de Identidad**.
+1. Haz click en **+ Añadir**.
+1. En el dropdown, selecciona la integración que quieres añadir.
+1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
+1. Haz click en **Añadir**.
+
+<img src="/assets/img/platform/nuevo-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
+## Facebook
 
 Para poder realizar una integración con Facebook, deberás contar con:
 
@@ -26,9 +40,11 @@ Para poder realizar una integración con Facebook, deberás contar con:
 - Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
 
 
-Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Puedes aprender más sobre como crear y configurar una aplicación de Facebook en su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
+Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Para saber más sobre como crear y configurar una aplicación de Facebook, ve su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
 
-### Google
+<img src="/assets/img/platform/facebook-login-settings.png" width="500px" style="margin-top: 40px;" />
+
+## Google
 
 Para poder integrar el inicio de sesión de Google con Modyo, deberás contar con:
 
@@ -44,7 +60,7 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 - **Ejemplo de dominio**: Serán los dominios que se muestren como sugerencia al momento de estar iniciando sesión en Google.
 - **Dominios admitidos**: Si el dominio del correo que el usuario ingresó al momento de iniciar sesión en Google no está dentro de este listado, entonces el inicio de sesión no será válido y el usuario será redirigido a la vista de inicio de sesión de Modyo sin una sesión activa.
 
-### LDAP
+## LDAP
 
 Para poder integrar un inicio de sesión con LDAP en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
@@ -58,7 +74,7 @@ Para poder integrar un inicio de sesión con LDAP en Modyo, necesitarás los sig
 - **Método**: Método de autenticación con el servicio de identidad LDAP.
 - **Logo**: No es requerido, pero si quieres que aparezca junto al nombre del servicio, por ejemplo, el logo de tu empresa, puedes subir una imagen en este campo.
 
-### SAML
+## SAML
 
 Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
@@ -72,7 +88,7 @@ Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los sig
 - URL de callback del servicio: Por defecto esta URL es `account_url/admin/auth/saml/callback`
 - Logo: AL igual que en LDAP, esta imagen se mostrará como logo del servicio junto al nombre del servicio en el formulario de inicio de sesión.
 
-### OAuth2
+## OAuth2
 
 Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
@@ -87,7 +103,7 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 - Usar SSL: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
 
 
-### OpenID Connect
+## OpenID Connect
 
 OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
 
@@ -99,14 +115,28 @@ Para el correcto funcionamiento de una integración con OpenID Connect, es neces
 La API para obtención de access tokens delegados vía  `/auth/openidc/access_token` está obsoleta y ha sido reemplazada por `/api/profile/me`.
 :::
 
-## Usando Keycloak
+### Sincronización de _claims_
+
+Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
+
+1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
+2. En **Customers >  Configuración de customers > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
+3. En **Customers > Configuración de customers > Integrations > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
+
+## Keycloak
 
 Keycloak es un identity provider certificado de OpenID Connect que implementa la mayoría de las funcionalidades de la integración OpenID Connect de Modyo.
 
 ### Registrar una nueva aplicación cliente
 
-1. Accede a la consola administrativa, por ejemplo [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) y agrega un nuevo realm.
-2. Agrega una aplicación cliente usando `openid-connect` como **Client Protocol** para la integración con Modyo.
+1. Desde la consola administrativa, por ejemplo [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) haz click en agregar un nuevo realm.
+
+<img src="/assets/img/platform/keycloak-add-realm.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
+2. Haz click en agregar una aplicación cliente. Usa `openid-connect` como **Client Protocol** para la integración con Modyo.
+
+<img src="/assets/img/platform/keycloak-add-client.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
 4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
 
@@ -118,6 +148,8 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
+
+<img src="/assets/img/platform/keycloak-new-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Configuraciones opcionales de la integración
 
@@ -131,7 +163,7 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                             |
 |                                                                     |                                                                                                                                                                                                                        |
 
-## Usando Azure Active Directory
+## Azure Active Directory
 
 Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que permite implementar un esquema híbrido de identidad basado en directorios on-premise con SSO en la nube.
 
@@ -160,14 +192,3 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, y deshabilitando la experiencia SSO. |
    | **Habilitar revocación de token**                | No soportado por Azure AD|
    | **Habilitar sincronización de _claims_ al momento de iniciar sesión** | Habilita la sincronización de _claims_ OpenID Connect con custom fields en Modyo.                                                                                         |
-
-## Sincronización de _claims_
-
-Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
-
-1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
-2. En **Customers >  Configuración de customers > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
-3. En **Customers > Configuración de customers > Integrations > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
-
-
-

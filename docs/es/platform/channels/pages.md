@@ -52,7 +52,9 @@ Para crear una nueva página, sigue estos pasos:
 6. Personaliza la página agregando o editando widgets.
 7. Una vez terminado, haz click en **Publicar**.
 
-Para conocer los tipos de widgets que puedes agregar, vea [Widgets](/es/platform/channels/pages.html#widgets)
+Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/channels/pages.html#widget-pages)
+
+Para conocer más acerca de content pages, ve [Content Pages](/es/platform/channels/pages.html#content-pages)
 
 **Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
@@ -80,19 +82,21 @@ En la sección lateral derecha encontrarás tres pestañas:
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
 - Propiedades: Te permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
 
-## Widgets
+## Widget Pages
 
-Los puedes añadir desde la primera pestaña del Page builder. Los widgets disponibles son:
+Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista: 
+
 
 - **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
 - **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
 :::warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
-- **Contenido**: Son widgets por defecto que te permite mostrar listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags y categoría. Para modificar como se ven estos widgets, debes hacerlo en el [Template Builder](/es/platform/channels/templates.html), en la sección Widgets.
+- **Listado de contenido**: Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates.html).
+- **Contenido destacado**: Muestra un listado de entradas como imágenes "hero" en un carrusel.
 - **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
 
-Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña central, donde podrás encontrar distintas opciones de configuración de los widgets y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en el [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobreescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma. 
+Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma. 
 
 ### Propiedades
 
@@ -104,7 +108,7 @@ En esta pestaña encontrarás opciones propiedades comunes de todas las páginas
 * Extracto
 * Grilla
 * Privacidad
-* Meta tags
+* Meta tags personalizados
 
 :::warning Atención
 Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
