@@ -1,5 +1,5 @@
 <template>
-  <main class="home" aria-labelledby="main-title">
+  <main id="test-deployment-01" class="home" aria-labelledby="main-title">
     <div class=" m-0 p-0">
       <div class="bg-dark">
         <div class="container pb-0 pb-md-5 pt-5 mt-5 bg-hero">
