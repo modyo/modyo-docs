@@ -61,6 +61,11 @@ Se arregla bug con filtro con 100 o más tags en el admin
 * Editor Froala
 
 ## 9.1
+### 9.1.35 - 29 de diciembre del 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla error con cache en previsualización de snippets
+* Se arregla validación de lenguaje de sitios
 
 ### 9.1.34 - 19 de noviembre del 2021
 
