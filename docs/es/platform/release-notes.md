@@ -5,20 +5,9 @@ search: true
 # Notas del release
 
 ## 9.2
-### 9.2.3 - 17 de diciembre de 2021
+### 9.2.4 - 30 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Mejoras en documentación Swagger
-* Mejoras a responsive de modales
-
-<Badge text="Content" type="content" vertical="middle"/>
-* Se homologa alt_text para assets en API JSON
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Se arreglan webhooks de realms
-* Mejora en cambios a custom fields buscables
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Se arregla API de búsqueda
+* Se arregla problema que contaminaba el caché al realizar previsualizaciones
 
 ### 9.2.2 - 1 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
