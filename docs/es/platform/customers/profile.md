@@ -46,3 +46,17 @@ Puedes acceder a la API de perfil de usuarios a través de la URL `account_url/a
 * Documentación técnica de la API: `account_url/api/profile/docs`
 * Notificaciones: `account_url/api/profile/notifications`
 * Info del usuario: `account_url/api/profile/me`
+
+### Tokens delegados
+
+Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/identity-providers.html) en tus proveedores de identidad, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+
+```json
+...
+   "delegated_token":{
+      "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
+      "access_token":"TOKEN",
+      "access_token_expires_in":300,
+      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
+   }
+```

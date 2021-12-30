@@ -14,14 +14,16 @@ Actualmente la plataforma es compatible con:
 - [SAML](#saml)
 - [OAuth2](#oauth2)
 - [OpenID Connect](#oidc)
+- [Keycloak](#keycloak)
+- [Azure Active Directory](#azure-active-directory)
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
 
 
-## Integrar un proveedor de identidad
+## Agregar un proveedor de identidad
 
-Para integrar un nuevo proveedor de identidad, sigue estos pasos:
+Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
 1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de Identidad**.
 1. Haz click en **+ Añadir**.
@@ -155,13 +157,15 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 
 Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
 
-|                                                                     |                                                                                                                                                                                                                        |
-|---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
+|Opción  | Descripción  |
+|:---    |:---          |
 | **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak y deshabilitando la experiencia SSO. |
-| **Habilitar revocación de token**                                   | No soportado por Keycloak                                                                                                                                                                                              |
+| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
+| **Habilitar revocación de token**                                   | No soportado por Keycloak|
+| **Activar token de actualización (Refresh Token)**                                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint de keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt>                                       |
+| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
 | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                             |
-|                                                                     |                                                                                                                                                                                                                        |
+
 
 ## Azure Active Directory
 
@@ -171,24 +175,35 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 
 1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
 2. En la barra de búsqueda, busca por **Azure Active Directory**, y luego selecciona **App registrations > New registration**.
+
+<img src="/assets/img/platform/aad-registration.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
 3. Completa la siguiente información
    * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
    * **Supported account types**: Usa **"Accounts in any organizational directory and personal Microsoft accounts"** para incluir cuentas personales de Microsoft. Puedes encontrar más información al respecto [aquí](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
    * **Redirect URI**: Usa la URL relativa a la cuenta `/auth/openidc/callback`.
 4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtiene el **Application ID** y **Directory ID**.
+
+<img src="/assets/img/platform/aad-client.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
 5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**.
+
+<img src="/assets/img/platform/aad-secret.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Configuración de la integración
 
-La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
+La siguiente configuración es válida tanto para las integraciones de usuarios de Equipos como de Customer.
 
-1. Accede a **Configuración/Configuración de customers > Integrations > OpenID Connect**, y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
-2. En la consola de Azure ir a **App registrations > Endpoints** y obtener URLs para **Authorization endpoint** y **Token endpoint**. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
-3. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no contar con scopes personalizados.
-4. Habilita características opcionales de la integración.
-   |                                        |                                                                                                                                                                                                                        |
+1. Desde la plataforma de Modyo, selecciona **Configuración/Configuración de customers** y haz click en **Integrations**
+1. Selecciona **OpenID Connect** y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
+1. En la consola de Azure, selecciona **App registrations** y haz click en **Endpoints** para obtener URLs de **Authorization endpoint** y **Token endpoint**. 
+1. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
+1. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no contar con scopes personalizados.
+1. Habilita características opcionales de la integración.
+   |  Opción                                      |       Descripción                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
    | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, y deshabilitando la experiencia SSO. |
    | **Habilitar revocación de token**                | No soportado por Azure AD|
-   | **Habilitar sincronización de _claims_ al momento de iniciar sesión** | Habilita la sincronización de _claims_ OpenID Connect con custom fields en Modyo.                                                                                         |
+   | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
+| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                             |
