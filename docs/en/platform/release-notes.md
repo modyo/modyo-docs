@@ -5,20 +5,9 @@ search: true
 # Release Notes
 
 ## 9.2
-### 9.2.3 - December 17, 2021
+### 9.2.4 - December 30, 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Swagger documentation improvements
-* Improvements to modals responsiveness
-
-<Badge text="Content" type="content" vertical="middle"/>
-* Field alt_text is homologated for assets in JSON API
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Realms webhooks are fixed
-* Improvement in changes to searchable custom fields
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Fix search API
+* Fixed problem that contaminated the cache when performing previews
 
 ### 9.2.2 - December 1, 2021
 <Badge text="Core" type="core" vertical="middle"/>
@@ -61,6 +50,11 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+### 9.1.35 - December 29, 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fix bug with cache in snippet preview
+* Fix site language validation
 
 ### 9.1.34 - November 19, 2021
 
