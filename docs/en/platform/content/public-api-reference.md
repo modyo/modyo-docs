@@ -1,6 +1,5 @@
 ---
 search: true
-sidebarDepth: 1
 ---
 
 # APIs & SDKs
@@ -22,127 +21,6 @@ From version 9.0.8 onwards, the attributes of the entries will be called accordi
 * Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
 
 Both forms will be available until Modyo version 9.2.
-:::
-
-### Access entries in a space
-
-To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} - {{ entry.meta.title }} <br/>
-{% endfor %}
-```
-
-To access the total amount of entries returned by a content filter, you can use the liquid `total_entries` filter, for example:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-Total entries: {{ entries | total_entries }}
-```
-### Unique entries
-
-To display an entry with a single cardinality you can use the entry method, for example:
-
-```liquid
-{{ spaces['my-space'].types['homepage'].entry }}
-```
-
-### Filter entries
-
-If you want to filter entries, you can do se by the following attributes: y_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. These are all arrays, which is why it is possible to filter by one or more values, for example:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-In the case of the `filter_by` filter, it should be used for meta attributes or custom fields of the content type, for example:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-If you want to negate the value of a filter, you can use `not` inside the filter:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-Selecting entries will always return an array, it is necessary to iterate over the result or accessing the first element, in the case of filtering by a unique uuid:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
-{% assign entry = entries.first %}
-```
-
-You can paginate the entries using the filter `paginated` and display the pagination links with the filter `pagination_links`, for example:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
-<ul>
-  {% for entry in entries %}
-  <li>{{ entry.meta.slug }}</li>
-  {% endfor %}
-</ul>
-{{ entries | pagination_links }}
-```
-
-In the previous case, the entries will be paginated with 10 elements per page and the pagination links will appear at the end. You can navigate each page using the parameter GET `page` in the URL, for example: `my-page.com/landing?page=2`.
-
-:::warning Warning
-Keep in mind that if you have more than one widget that uses pagination in the content, using the parameters _GET_ `per_page` and `page` in the URL, every widget with pagination will be affected.
-:::
-
-:::warning Warning
-To use pagination in a custom widget, you must change the filter associate to the pagination to <span v-pre>`{{ entries | pagination_links_remote }}`</span>.  This is required because custom widgets are loaded asynchronously. With this and the previous change, you must ensure that _JQuery_ is available in the site and while using pagination links, only the HTML will be modified in the widget, the _JavaScript_ code won't be executed again. 
-:::
-
-### Order entries
-
-In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
-```
-
-The possible values for the order are `asc` and `desc`, by default, `desc` is used.
-Possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug`, and `field`.
-
-To sort by a custom field, you must use the field's `fields.uid` as a parameter:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-### Entries with location
-
-For entries with location fields you can easily generate maps with the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the `Locations` field with a size of 600x300 px, a level 5 zoom, with a map type 'roadmap' and with a custom icon.
-
-```
-{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
-```
-
-The `dynamic_map` filter accepts an additional attribute to control the visibility of the zoom, drag and full screen controls.
-
-```
-{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
-```
-
-:::tip Tip
-To use input attributes, you can use dot or square bracket notation, so <span v-pre> `{{ entry.meta.slug }}` </span>, returns the same value as <span v-pre> `{{ entry.meta['slug'] }}` </span>, and if you have a field called `location`, you can use it as <span v-pre> `{{ entry.fields.location }} `</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> 
 :::
 
 ## Javascript SDK
@@ -195,147 +73,6 @@ const modyoAccount = new Client("https://my-account.modyo.com","es");
 
 :::tip Tip
 When instantiating a new client, the second parameter _locale_ is optional, the inputs are requested only in the requested language, otherwise the default language of the space will be used.
-:::
-
-### Content
-
-The SDK allows access to both public and private/segmented content, making it easy to interact with our Headless API.
-
-#### How to get public content
-
-We can query for a particular type of content and thus get its schema
-
-```js
-// To get the `Post` type of a space called `Blog`
-const typePost = modyoAccount.getContentType(“blog”, “post”);
-// `typePost` will return an object with various information of the type, including the schema of that type
-```
-
-When we have the type we need we can see its schema, its attributes, or query its entries:
-
-```js
-// If we want to see that schema in detail, we can use the `getSchema()` method
-typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
-/*
-That will print something like this:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
-*/
-// To get the entries of that type
-const entries = typePost.getEntries();
-```
-
-#### Pagination
-
-In general, all results delivered by Modyo's Headless API are paginated. A query `getEntries()` without associated filters brings up to 20 entries per page. The maximum number of entries per page is 100, and it is configurable using the `Pagination` filter described in the following section, for example: `getEntries(f.Pagination(15,1))` which will return the first page of the `f` filter where each page contains up to 15 entries.
-
-The object returned by `getEntries()` includes a `meta` field that will help you navigate it. The returned object will look something like this:
-
-```json
-
-{
-  "meta": {
-    "total_entries": 4,
-    "per_page": 10,
-    "current_page": 1,
-    "total_pages": 1
-  },
-  "entries": [
-    {
-      "meta": {
-        "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
-        "tags": [],
-        "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
-        "..."
-      },
-      "fields": {
-        "title": "titulo",
-        "slug": "slug",
-        "excerpt": "Excerpt of the entry...",
-        "..."
-      }
-    }
-  ]
-}
-```
-
-#### Filters
-
-The `getEntries()` method above can also receive a filter object to query the entries.
-Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, `Geohash`, and you can view the `meta` fields of each entry (such as creation date or assigned tags)
-
-**Supported Filters**:
-
-- **Before, After, LessThan, GreaterThan**: they receive as a parameter the name of the field to be compared and the value to which it will be compared.
-
-- **In, NoTin, Has**: receive as a parameter the name of the field to be compared and an array of values with which it will be compared to. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
-
-- **SortBy**: receives as parameters the field to sort and order (`asc` or `desc`).
-
-- **JSONPath**: Receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
-
-- **Pagination**: receives the page number and total entries per page as parameters.
-
-- **Geohash**: receives as parameters a location field and a geohash [ref](https://www.movable-type.co.uk/scripts/geohash.html) to select content within a location.
-
-:::warning Warning
-It is important that you filter by date using the ISO-8601 standard.
-:::
-
-```js
-// If you want to obtain a list of attributes you can use
-typePost
-  .getSchema()
-  .then(() => console.log("List of attributes:", typePost.getAttrs()));
-```
-
-To create a filter, we use the `Filter()` method
-
-```js
-const filters = typePost
-  .Filter()
-  .Before("meta.created_at", "2020-05-01")
-  .In("meta.tags", ["tag1", "tag2"])
-  .Pagination(15,1);
-// We now use this to obtain entries with these filters
-const filteredEntries = typePost.getEntries(filters);
-// We can now use the filtered entries
-filteredEntries.then(res => console.log("Filtered entries response: ", res));
-```
-
-### Order
-
-The results of our search can also be sorted using the `sortBy()` method
-
-```js
-// JSONPath and Sorting are also supported as filters
-const filters = ctype
-  .Filter()
-  .SortBy("meta.created_at", "desc")
-  .JSONPath("$..uuid");
-```
-
-**Note**: As you can see in the example, it is possible to use expressions in our queries `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
-
-#### Private content
-
-To get private content, it is enough that the user has an active session, passing a third argument `false` to the method `getContentType()` (this indicates that it is not public)
-
-```js
-// To access private content (user must be logged in on account)
-const privateTypePost = modyoAccount.getContentType("blog", "post", false);
-```
-
-:::warning Warning
-It is important that this potentially sensitive information be treated with care. Obtaining private content requires cookies and an end user who is logged into Modyo.
-:::
-
-### End User Information
-
-:::warning Warning
-It is important that you treat this sensitive information with care. As with Private Content, this information is only available if working from a browser that supports cookies, and the end user is logged in to the platform.
-
-To get information from the end user, you need to call the function: `client.getUserInfo()`, this will return an object with the basic information
-of that user.
 :::
 
 ## API reference
@@ -830,35 +567,213 @@ Entry JSON Schema:
 }
 ```
 
-### Pagination API
+## Examples
 
-For any content passing through the API, it is necessary to use pagination so it functions properly.
+### Display Entries
 
-To do this, an offset pagination with the page and per_page parameters is used in the query string of the entries URL.
+To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
 
-For example, with `page = 3`, `per_page = 20` is requesting that the next 20 items be returned, skipping the first 40 items.
+<CodeSwitcher>
+<template v-slot:lq>
 
-Along with the response, a pagination meta is delivered such as:
-
-```javascript
- "meta": {
-    "total_entries": 2,
-    "per_page": 15,
-    "current_page": 1,
-    "total_pages": 1
-    }
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
 ```
 
-#### Entries
+In the case of a unique entry (single cardinality), you can use the method enttry, for example:
 
-The entries that you will be able to see in the section correspond to all the content sent through the API. In this sense, they can be filtered according to:
+```liquid
+{{ spaces['space_uid'].types['type_uid'].entry }}
+```
+
+</template>
+<template v-slot:js>
+
+```js
+import { Client } from "@modyo/sdk";
+// To obtain the correct account, you must use the url of the account
+const modyoAccount = new Client("https://my-account.modyo.com","en");
+
+const typePost = modyoAccount.getContentType("space_uid", "type_uid");
+// `typePost` will return an object with information of the type like the schema for example
+
+// If you want to view the schema in detail, you can use the method `getSchema()`
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
+/*
+This will print something like:
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {...}, type: "object", required: Array(2), properties: {...}}
+*/
+```
+</template>
+<template v-slot:curl>
+
+The entries you can view in the section, correspond to the content sent through the API. They can be filtered by:
 
 - Type
 - Category
 - Tags
 - Author
 
-#### Filters
+</template>
+</CodeSwitcher>
+
+### Display total number of Entries
+
+To access the total amount of entries returned by a content filter, you can use the liquid `total_entries` filter, for example:
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+Total entries: {{ entries | total_entries }}
+```
+
+</template>
+<template v-slot:js>
+
+
+```js
+import { Client } from "@modyo/sdk";
+const modyoAccount = new Client("https://my-account.modyo.com","es");
+const typePost = modyoAccount.getContentType("space_uid", "type_uid");
+
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
+
+// To obtain the entries of that type
+const entries = typePost.getEntries();
+
+```
+
+The object returned by getEntries() includes a meta field that will help you navigate it. The shape of the returned object will look something like this:
+
+```json
+"meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+```
+
+
+</template>
+<template v-slot:curl>
+    <!-- ... (see above) -->
+</template>
+</CodeSwitcher>
+
+### Filter
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+If you want to filter entries, you can do se by the following attributes: y_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. These are all arrays, which is why it is possible to filter by one or more values, for example:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}    
+```
+
+In the case of the `filter_by` filter, it should be used for meta attributes or custom fields of the content type, for example:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+If you want to negate the value of a filter, you can use `not` inside the filter:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+Selecting entries will always return an array, it is necessary to iterate over the result or accessing the first element, in the case of filtering by a unique uuid:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
+{% assign entry = entries.first %}
+```
+
+You can paginate the entries using the filter `paginated` and display the pagination links with the filter `pagination_links`, for example:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
+<ul>
+  {% for entry in entries %}
+  <li>{{ entry.meta.slug }}</li>
+  {% endfor %}
+</ul>
+{{ entries | pagination_links }}
+```
+
+In the previous case, the entries will be paginated with 10 elements per page and the pagination links will appear at the end. You can navigate each page using the parameter GET `page` in the URL, for example: `my-page.com/landing?page=2`.
+
+:::warning Warning
+Keep in mind that if you have more than one widget that uses pagination in the content, using the parameters _GET_ `per_page` and `page` in the URL, every widget with pagination will be affected.
+:::
+
+:::warning Warning
+To use pagination in a custom widget, you must change the filter associate to the pagination to <span v-pre>`{{ entries | pagination_links_remote }}`</span>.  This is required because custom widgets are loaded asynchronously. With this and the previous change, you must ensure that _JQuery_ is available in the site and while using pagination links, only the HTML will be modified in the widget, the _JavaScript_ code won't be executed again. 
+:::
+
+</template>
+<template v-slot:js>
+
+The `getEntries()` method above can also receive a filter object to query the entries.
+Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, `Geohash`, and you can view the `meta` fields of each entry (such as creation date or assigned tags)
+
+**Supported Filters**:
+
+- **Before, After, LessThan, GreaterThan**: they receive as a parameter the name of the field to be compared and the value to which it will be compared.
+
+- **In, NoTin, Has**: receive as a parameter the name of the field to be compared and an array of values with which it will be compared to. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
+
+- **SortBy**: receives as parameters the field to sort and order (`asc` or `desc`).
+
+- **JSONPath**: Receives the JSONPath [ref](https://goessner.net/articles/JsonPath/) that models a response structure.
+
+- **Pagination**: receives the page number and total entries per page as parameters.
+
+- **Geohash**: receives as parameters a location field and a geohash [ref](https://www.movable-type.co.uk/scripts/geohash.html) to select content within a location.
+
+:::warning Warning
+It is important that you filter by date using the ISO-8601 standard.
+:::
+
+```js
+// If you want to obtain a list of attributes you can use
+typePost
+  .getSchema()
+  .then(() => console.log("List of attributes:", typePost.getAttrs()));
+```
+
+To create a filter, we use the `Filter()` method
+
+```js
+const filters = typePost
+  .Filter()
+  .Before("meta.created_at", "2020-05-01")
+  .In("meta.tags", ["tag1", "tag2"])
+  .Pagination(15,1);
+// We now use this to obtain entries with these filters
+const filteredEntries = typePost.getEntries(filters);
+// We can now use the filtered entries
+filteredEntries.then(res => console.log("Filtered entries response: ", res));
+```
+
+</template>
+<template v-slot:curl>
 
 In the search for contentTypes with filters, a distinction will be made at the app level depending on the filters requested:
 
@@ -926,52 +841,78 @@ Fields that search multiple items (checkboxes, multiple) can use the following s
 - NIN: equivalent to an sql NOT IN
   `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
-##### Order
+</template>
+</CodeSwitcher>
+
+### Order
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
+```
+
+The possible values for the order are `asc` and `desc`, by default, `desc` is used.
+Possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug`, and `field`.
+
+To sort by a custom field, you must use the field's `fields.uid` as a parameter:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+</template>
+<template v-slot:js>
+
+The results of our search can also be sorted using the `sortBy()` method
+
+```js
+// JSONPath and Sorting are also supported as filters
+const filters = ctype
+  .Filter()
+  .SortBy("meta.created_at", "desc")
+  .JSONPath("$..uuid");
+```
+
+**Note**: As you can see in the example, it is possible to use expressions in our queries `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+
+#### Private content
+
+To get private content, it is enough that the user has an active session, passing a third argument `false` to the method `getContentType()` (this indicates that it is not public)
+
+```js
+// To access private content (user must be logged in on account)
+const privateTypePost = modyoAccount.getContentType("blog", "post", false);
+```
+
+:::warning Warning
+It is important that this potentially sensitive information be treated with care. Obtaining private content requires cookies and an end user who is logged into Modyo.
+:::
+
+### End User Information
+
+:::warning Warning
+It is important that you treat this sensitive information with care. As with Private Content, this information is only available if working from a browser that supports cookies, and the end user is logged in to the platform.
+
+To get information from the end user, you need to call the function: `client.getUserInfo()`, this will return an object with the basic information
+of that user.
+:::
+
+</template>
+<template v-slot:curl>
 
 The order of the results must be specified with the `sort_by` and `order` parameters:
 
 - `sort_by`: indicating the name of the attribute (e.g. meta.tags, or fields.name)
 - `order`: ['asc','desc'] (opcional, asc by default)
 
-#### jQuery
-
-The jQuery JavaScript library makes it easy to implement them within Modyo, based around APIs.
-
-A powerful feature of jQuery is its easy-to-understand AJAX functionality. It allows you to easily bring content data within your site, as well as from other sites and services.
-
-In this AJAX request, you are specifying an exit point (using the Liquid object <span v-pre> {{ site.url }} </span>) and including options to specify that it is a “GET” of type 'json'. Finally link the “data.promotions” to “vm.promos” for use in the app.
-
-#### Fetch API with native JavaScript
-
-The Fetch API provides a simple JavaScript interface, for accessing and manipulating part of the HTTP protocol, such as requests and responses. The global fetch() method is an easy and logical way to bring resources asynchronously across a network.
-
-A basic fetch request is very simple to perform. Look at the following code:
-A JSON file is being brought from within the site using the Liquid object <span v-pre> {{ site.url }} </span>. The simplest use of fetch() requires an argument — the path of the resource you want to fetch — and returns a promise containing the response (Response object).
-
-This is an HTTP response, not the real JSON. To extract the JSON body from the response, use the json() method at the end of the response, and then bind the data to the promotions (this fetch() is for this application).
-
-For more detailed information, visit the MDN webdocs.
-
-#### Axios
-
-Axios is a very popular JavaScript library that developers use to make HTTP requests that work in all modern browsers, including IE8 and up.
-
-It's based on the Promise object and allows you to asynchronously write code to make XHR requests easily.
-
-Using Axios has some advantages over the native Fetch API:
-
-- Supports older browsers (Fetch needs a polyfill)
-- You have a way to cancel a request
-- You have a way to set a timeout for a response
-- Comes with CSRF protection included
-- Supports loading progress
-- Performs JSON data transformation automatically
-
-In order to use Axios in Modyo, you need to add the axios.js base code as a custom snippet and include it somewhere your widgets can access it, like your JavaScript theme (located in Templates, under the Files tab).
-
-The Modyo API provides a RESTful interface with responses formatted in a lightweight JSON that can be used in many functions of your account.
-
-## Private content
+### Private content
 
 Whenever you use the Content API, you can access published content that is available to all users (not private), however, if you want to access private content, you must add a header or a GET parameter to the Content API request URL.
 
@@ -1017,3 +958,40 @@ Obtaining the content access token needs to be done dynamically, as that token w
 :::
 
 The response of the Content API query with the delivery token is the same as the response you would receive without the delivery token, but this will contain both private content (without segments) and segmented content that is restricted to the segments to which the user requesting your delivery token belongs as part of the response.
+
+</template>
+</CodeSwitcher>
+
+### Geolocalization
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+For entries with location fields you can easily generate maps with the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the `Locations` field with a size of 600x300 px, a level 5 zoom, with a map type 'roadmap' and with a custom icon.
+
+```
+{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+The `dynamic_map` filter accepts an additional attribute to control the visibility of the zoom, drag and full screen controls.
+
+```
+{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
+
+:::tip Tip
+To use input attributes, you can use dot or square bracket notation, so <span v-pre> `{{ entry.meta.slug }}` </span>, returns the same value as <span v-pre> `{{ entry.meta['slug'] }}` </span>, and if you have a field called `location`, you can use it as <span v-pre> `{{ entry.fields.location }} `</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> 
+:::
+
+</template>
+<template v-slot:js>
+
+    <!-- ... (see above) -->
+</template>
+
+<template v-slot:curl>
+
+    <!-- ... (see above) -->
+
+</template>
+</CodeSwitcher>
