@@ -10,7 +10,7 @@ La navegación es la forma más rápida de armar un listado de elementos para en
 
 En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Template builder](/es/platform/channels/templates.html).
 
-El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y sub elementos en cada uno de los ítems principales.
+El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los ítems principales.
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 

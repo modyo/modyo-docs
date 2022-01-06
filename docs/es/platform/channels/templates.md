@@ -10,7 +10,7 @@ Cuando ya se selecciona el tema que se usa dentro del sitio, se puede acceder de
 
 Una vez dentro del Template Builder, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
 
-![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
+![Template Builder](/assets/img/channels/template_builder/template-builder.png)
 
 - **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
