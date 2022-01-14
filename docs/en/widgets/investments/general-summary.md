@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-general-summary
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/investments/general-summary" width="100%" frameBorder="0" style="min-height:612px;overflow:auto;margin-top:20px;"/>
 
-| Feature          | Description                                                                                                                                                                                                                               |
+| Description          | Investor Profile Survey                                                                                                                                                                                                                               |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consolidated Assets | Shows a consolidated view of the client's total assets at the end of the previous day. Provides a summary of the client's invested assets displayed by accounts, products and the currency in which the transaction was made. |
 | Monthly Growth      | Displays the initial and final balance of the selected month, together with the transactions of the month (contributions, returns and gain/loss).                                                                                                  |

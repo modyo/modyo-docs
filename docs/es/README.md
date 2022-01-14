@@ -53,6 +53,7 @@ FirstSteps5Url: https://training.modyo.com/
 
 search: Buscar en
 
+
 tutorials: tutoriales
 tutorialsText: Conozce los diferentes aspectos de la plataforma a su propio ritmo.
 

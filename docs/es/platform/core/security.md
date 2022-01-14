@@ -3,7 +3,8 @@ search: true
 ---
 
 # Seguridad
-En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta guía que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que Modyo Cloud y Enterprise Cloud, nuestras soluciones hosteadas, provee un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
+
+En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta página que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que Modyo Cloud y Enterprise Cloud, nuestras soluciones hosteadas, proveen un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
 
 ### Conceptos importantes
 * **Limitar accesos:** Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
@@ -12,12 +13,12 @@ En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por 
 
 * **Preparación y conocimiento:** Mantener copias de seguridad y procedimientos para estar preparados en el caso de que una catástrofe ocurra.
 
-* **Fuentes confiables:** Evitar implementar Widgets o códigos de fuentes poco confiables. Asegurar que todas las dependencias que se cargan en un sitio provengan de una fuente confiable.
+* **Fuentes confiables:** Evitar implementar Widgets o código de fuentes poco confiables. Asegurar que todas las dependencias que se cargan en un sitio provengan de una fuente confiable.
 
 ### Vulnerabilidades Locales
-Asegurar que el equipamiento computacional de todos los usuarios administradores de la plataforma se encuentre libre de spyware, malware e infecciones de virus. Incluso una instalación segura de Modyo podría ser vulnerada por un atacante que explote la sesión válida de un usuario desde un equipo local.
+Asegurar que el equipamiento computacional de todos los usuarios administradores de la plataforma se encuentre libre de spyware, malware, o infecciones de virus.
 
-Asegurar que los accesos provengan siempre desde un equipo actualizado, mediante navegadores de Internet confiables y actualizados.
+Asegurar que los accesos provengan siempre desde un equipo actualizado mediante navegadores de Internet confiables y actualizados.
 
 ### Actualizar Modyo con Regularidad
 Recomendamos actualizar periódicamente Modyo para asegurar siempre estar en el último parche disponible. Esto asegurará que tu instalación posee todos los parches de seguridad al día. Los parches de seguridad se realizan de tal forma que pueden ser aplicados sin afectar mayormente a los equipos de trabajo (ejemplo: pasar de la versión 9.1.10 a la 9.1.12).
@@ -44,19 +45,18 @@ Modyo puede efectuar comunicaciones hacia Internet, en lo que refiere a las func
 ### Restringir los Puertos Públicos de Entrada
 Los usuarios de Modyo deberán acceder de forma exclusiva por el puerto 443, detrás de un balanceador de carga que reparta el tráfico a las diferentes instancias de la plataforma. Entre el balanceador de carga y las instancias de la plataforma el tráfico podrá ir por el puerto 443 o 80 dependiendo de la seguridad interna de la red (ejemplo: redes aisladas y protegidas como el caso de las VPC de Amazon AWS podrían no requerir de encriptación interna).
 
-
-
 ### Registros de actividad
 
 La plataforma guarda un registro de todas las acciones realizadas por los usuarios administradores dentro de ella, los cuales se pueden revisar dentro de la sección "Registros de actividad". Recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Estos registros de actividad están disponibles también por medio del API administrativa de Modyo.
 
-
 ### Revisar Permisos de Administración
-Los administradores de una organización o sitio poseen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impresora a uno de estos administradores puede representar un gran riesgo de seguridad. Es por ello que recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
+
+Los administradores de una organización o sitio poseen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impersonar a uno de estos administradores puede representar un gran riesgo de seguridad. Es por ello que recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
 
 Además los administradores pueden crear tokens para el acceso a las APIs de administración de la plataforma. Estos tokens en muchas ocasiones son usados para automatizar tareas comunes de administración, por lo que es importante asegurar que sólo se usen dentro de sistemas seguros que garanticen su protección.
 
 ### Habilitar el Segundo Factor de Autenticación
+
 Considera habilitar el segundo factor de autenticación siempre que tu servidor de identidad lo permita. En el caso que uses el sistema de credenciales de Modyo, te recomendamos activar esta protección. Recomendamos encarecidamente habilitar esta funcionalidad para una mejor postura de seguridad.
 
 ### Política de contraseña
@@ -64,8 +64,8 @@ Considera habilitar el segundo factor de autenticación siempre que tu servidor 
 Esta sección te permitirá configurar la política de seguridad de contraseñas para los miembros del equipo. Dentro de las opciones puedes elegir las siguientes:
 
 * **Forzar largo mínimo**: Por defecto el largo mínimo requerido por Modyo es 8 caracteres, pero si lo requieres, puedes forzar a que el largo mínimo de las contraseñas de los miembros del equipo sea de un tamaño mayor.
-* **Requerir por lo menos una letra minúscula del alfabeto Latino (a - z)**: Con esta opción aseguras que por lo menos exista una letra minúscula dentro de la contraseña de los miembros del equipo.
-* **Requerir por lo menos una letra mayúscula del alfabeto Latino (A - Z)**: Con esta opción aseguras que por lo menos exista una letra mayúscula dentro de la contraseña de los miembros del equipo.
+* **Requerir por lo menos una letra minúscula (a - z)**: Con esta opción aseguras que por lo menos exista una letra minúscula dentro de la contraseña de los miembros del equipo.
+* **Requerir por lo menos una letra mayúscula (A - Z)**: Con esta opción aseguras que por lo menos exista una letra mayúscula dentro de la contraseña de los miembros del equipo.
 * **Requerir por lo menos un carácter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)**: Con esta opción obligas a que la contraseña de los miembros del equipo contenga por lo menos uno de los caracteres especiales indicados en la lista.
 
 Al guardar esta configuración, los usuarios deberán cumplir con estas condiciones al momento de cambiar su contraseña.
@@ -77,7 +77,7 @@ En esta sección podremos activar el Cross Origin Resource Sharing (CORS), para 
 Al habilitarlo, deberás especificar los dominios (separados por coma y sin barra al final) que quieres que se habiliten para que estén compartiendo recursos con tu sitio. Por ejemplo:
 `http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
 
-### Token de entrega de contenido (JWT)
+### Token de entrega de contenido (JWT - JSON Web Token)
 
 Luego de configurar CORS, la plataforma te dará una clave o _secret_ para poder decodificar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado-2).
 

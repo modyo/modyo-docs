@@ -12,7 +12,7 @@ By default, this list displays entries by their "Updated on" date, meaning eithe
 
 The columns in the list display the following details:
 
-- **Status**: Current status of the entry in the publishing process: Draft, Published, Pending Changes, Scheduled and Archived.
+- **Status**: Filter the list by the following statuses: Published, Not Published, Scheduled, Archived, and All. Filtering by All does not show Archived entries. Filtering by Not Published displays entries in either the Draft or Scheduled status.
 - **Name**: Title of the entry.
 - **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
 - **Updated on**: Date of the last saved update.

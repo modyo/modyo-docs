@@ -47,7 +47,7 @@ The list has three different filters for useful file searching.
 :::tip Tip
 If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list. 
 
-Now, it will appear as soon as you select the first item (by clicking on the checkbox in the first column).
+This will appear as soon as you select the first item (by clicking on the checkbox in the first column.)
 
 If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've selected.
 
@@ -102,7 +102,7 @@ You can find and/or edit the following in the file properties editor:
 
 **Liquid Tag**: Use this tag within the platform to reference the file through Liquid as opposed to it's URL.
 
-::: warning Warning
+:::warning Warning
 Neither the URL nor the Liquid Tag is possible to change through Modyo.
 :::
 
@@ -146,7 +146,7 @@ On the left side of the image editor are three options to edit the image size:
 
 The left side displays the original size of the image and the size in pixels of the crop edit.
 
-::: tip Tip
+:::tip Tip
 There are two ways to change the view and cut the image with the cursor:
 
 - **Zoom:** Use the mouse scroll to zoom in.
@@ -159,7 +159,7 @@ After cropping an image, if you want to restore it to its original dimensions, y
 
 To delete a file, click on the Delete icon, located in the upper right corner of the image preview in the "Update information" window.
 
-::: warning Warning
+:::warning Warning
 This action is irreversible, and any content using this file will display a broken link.
 :::
 
@@ -176,7 +176,7 @@ This action opens a new window that allows you to upload files in two ways:
 - **Drag & Drop**: Drag from your computer's file browser to the window
 - **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
 
-::: warning Warning
+:::warning Warning
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
 :::
 

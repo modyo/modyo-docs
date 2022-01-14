@@ -4,6 +4,130 @@ search: true
 
 # Notas del release
 
+## 9.2
+### 9.2.4 - 30 de diciembre de 2021
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arregla problema que contaminaba el caché al realizar previsualizaciones
+
+### 9.2.2 - 1 de diciembre de 2021
+<Badge text="Core" type="core" vertical="middle"/>
+Se arregla problema al permitir tag style con variable de entorno MODYO_HTML_ALLOWED_ATTRS
+
+<Badge text="Content" type="content" vertical="middle"/>
+Se arregla bug con filtro con 100 o más tags en el admin
+
+### 9.2.1 - 25 de noviembre de 2021
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arregla bug con límite de archivos en asset manager
+* Mejoras al copiar entries de otro locale
+* Se agrega nombre y slug de categorias en drop de Entry y en API de content
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se repara preview de widgets
+* Se permite iniciar sesión con access token en el sitio
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Mejoras de seguridad
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Mejoras al editor de campañas
+
+### 9.2.0 - 15 de noviembre de 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Gestión de Security Headers
+* Nuevo tema minimal
+* Navigation builders
+* Site stages
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Reinos de usuarios
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Grupos de miembros del equipo
+* Multiple full admins
+* Landing page "Get started"
+* Editor Froala
+
+## 9.1
+### 9.1.35 - 29 de diciembre del 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla error con cache en previsualización de snippets
+* Se arregla validación de lenguaje de sitios
+
+### 9.1.34 - 19 de noviembre del 2021
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arregla bug con límite de archivos en asset manager
+* Mejoras al copiar entries de otro locale
+* Se agrega nombre y slug de categorias en drop de Entry y en API de content
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se permite iniciar sesión con access token en el sitio
+
+### 9.1.33 - 5 de noviembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se evita llamada a discovery service en callback OIDC
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arregla bug que impedía filtrar entradas por más de 100 tags en el admin
+
+### 9.1.32 - 28 de octubre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* AppShell OAuth 2.0 provider
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se repara error que afecta el reseteo de templates
+* Cache más granular que ahora considera el UserAgent
+
+### 9.1.31 - 7 de octubre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se repara validación de respuesta SAML para Azure AD
+
+### 9.1.30 - 24 de septiembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Mejoras a Security Headers transversales
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Se arregla validación de emails.
+
+### 9.1.29 - 9 de septiembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arregla error con user access token inválido.
+
+### 9.1.28 - 1 de septiembre del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Múltiples mejoras a Security Headers.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se permiten Liquid tags adicionales.
+
+### 9.1.27 - 27 de agosto del 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arregla doble envío al crear access tokens.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla error con reset de páginas.
+* Se previene la generación de cookies para sitios públicos.
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Se arreglan problemas con acciones masivas de despublicación, archivado y eliminación de entries.
+
+### 9.1.26 - 11 de agosto del 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arregla redirect de sesiones expiradas.
+* Se arregla bug que impedía invertir orden de páginas padre-hijo.
+
+
 ### 9.1.25 - 9 de agosto del 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -12,7 +136,7 @@ search: true
 * Se arregla error con status code al importar redirecciones.
 
 ### 9.1.24 - 14 de julio del 2021
-&nbsp;
+
 <Badge text="Core" type="core" vertical="middle"/>
 * Se actualizan versiones jQuery de la plataforma.
 
@@ -25,7 +149,6 @@ search: true
 * Se arreglan problemas al exportar respuestas de formularios.
 
 ### 9.1.23 - 22 de junio del 2021
-&nbsp;
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple mejoras de seguridad.
 * Newsletter con novedades.
@@ -40,7 +163,6 @@ search: true
 * Ahora se pueden eliminar las páginas.
 
 ### 9.1.22 - 10 de junio del 2021
-&nbsp;
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se eliminan restricciones de rutas para redirecciones de sitios
 
@@ -327,7 +449,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Se cambia modo [vista previa](/es/platform/content/entries.html#vista-previa) para que por defecto siempre use los templates editables.
 * Se añaden nueva vistas cuando no hay elementos creados en [entradas](/es/platform/content/entries.html), [tipos](/es/platform/content/types.html), [categorías](/es/platform/content/entries.html#categorias) y [espacios](/es/platform/content/spaces.html).
-* Se añade operador [search](/es/platform/content/public-api-reference.html#filtros-2) para búsqueda en los campos de ubicación de las entradas.
+* Se añade operador [search](/es/platform/content/public-api-reference.html#filtros) para búsqueda en los campos de ubicación de las entradas.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se añade un ejemplo al crear [vistas de contenido](/es/platform/channels/templates.html#vistas-para-contenido).

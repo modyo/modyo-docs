@@ -4,7 +4,7 @@ search: true
 
 # Administration API
 
-In addition to the functionality that is provided by the Modyo Back End, the platform has an administrative API that, when authenticated, gives you external access to different actions such as listing, creating and deleting elements such as forms, layouts, content, etc. You can also create custom fields, navigation menus, send email campaigns, among others.
+In addition to the functionality provided by Modyo's Back End, the platform has an administration API. This allows you to externally access different actions such as list, create, and delete items such as forms, layouts, content, custom fields, navigation menus, email campaigns, among others.
 
 In this way, it is possible to perform administrative tasks consuming the API without having to depend on the Modyo interface, which gives you greater freedom to control the way you work with Modyo.
 
@@ -12,11 +12,11 @@ In this way, it is possible to perform administrative tasks consuming the API wi
 
 To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked and how to use them.
 
-Modyo facilitates this task, making the description of your _headless_ API available through the use of Swagger (which in turn implements the OpenAPI specification) in lists of services grouped according to their functionality: administrative functions, public content and user profile.
+Modyo facilitates this task by arranging the description of its _headless_ API by using Swagger (which in turn implements the OpenAPI specification) in lists of services, grouped according to their function: administrative, public content, and user profile.
 
 Each list of services is automatically displayed in your Modyo account by visiting the corresponding URL with your browser.
 
-For example, you can find the details of the public content API in the following route:
+For example, the public content API details can be found in the following path:
 
 ```http
 https://[account_host]/api/content/docs
@@ -173,13 +173,13 @@ When saving the information of your application, Modyo will show you a view wher
 Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
 :::
 
-Once your application is registered, you can assign that application to the user or users that will make use of the API. For this, you must access the _Settings_/_Team_ section of the menu and select an existing user or create a new one. This user must have an administrative role within the application (for more details refer to [Users and Roles section](/en/platform/core/roles.html)).
+With the application already being registered, you only need to assign that application to the user or users who will make use of the API. To do this, you must access the option _Setting_/_Computer_ in the menu and select an existing user or create a new one, which must have an administrative role within the application (for more details refer to [Users and Roles](/en/platform/core/roles.html)).
 
-In the edit view of the administrator user, you can click on the _API Access_ tab and select the `+ New Access Token` option.
+In the admin user edit view, select _API Access_ and click `+ New API Access`
 
 ![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
 
-In the _popup_ shown below, select the name of the application we just created, in our example "My application", and then `Create Token`.
+In the _popup_ shown below, select the name of the application you just created, “My application” in our example, and then click `+ New Access Token`.
 
 ![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
 
@@ -187,7 +187,7 @@ In the _popup_ shown below, select the name of the application we just created, 
 You should keep in mind that administrative users can only execute actions through the Modyo administrative API if they have the necessary permissions. For example, an administrator with the role of "Developer" on a site cannot execute the "Publish" action on that site.
 :::
 
-Finally, you will now see your application ("My application") in the "Manage Access Tokens", along with a highlighted value in red which corresponds to the _access token_ that you will need to use to perform authenticated _requests_ with the Modyo API.
+Finally, you will now see that in the “Manage Access Tokens” section, the application (“My application”) will appear, along with a value highlighted in red which corresponds precisely to the _access token_, and which you will then use to perform authenticated _requests_ in Modyo API.
 
 ![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
 
@@ -246,15 +246,15 @@ curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
 
 #### Admin session cookie
 
-If you are using Modyo through a web browser and you are logged in as an administrator, then you can access API URLs from the same browser, and make _requests_ simply by having a session cookie from the administrative part of the platform.
+If you are using Modyo from a web browser and are logged in as an administrator, then you will be able to access API URLs from the same browser. You can make _requests_ simply by having the session cookie in the administrative part of the platform.
 
 Remember that you can only access the sections of the API that you are allowed to access in the Modyo interface.
 
 ### Invoking services
 
-Once you know which service you need to access, according to what we saw in the [Exploring the API](/platform/core/api.html#exploring-the-api) section and when you have a valid authentication method (refer to [Authentication section](/platform/core/api.html#authentication)), you can make a _request_ to the URL of the required resource.
+Once you know the service you'll be querying, according to [Exploring the API](/en/platform/core/api.html#exploring-the-api) and a [Authentication](/en/platform/core/api.html#authentication)), you can make a _request_ to the URL of the required resource.
 
-For example, let's imagine that you need to get a list of all the email campaigns you have created. According to the available Swagger documentation, you can know that you need to call the following URL:
+For example, if you need to get a list of all the email campaigns that were created. According to the documentation in Swagger, you need to call the following URL:
 
 ```http request
 GET https://[account_host]/api/admin/messaging/campaigns
@@ -321,7 +321,7 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
 }
 ```
 
-This JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object has relevant information related to that object. In our example you can see the campaign name (`name`), the last date it was sent (` last_sent`), and whether this campaign was segmented or not (`segments_enabled`).
+This JSON response corresponds to a list (or collection) of mail campaigns (`campaigns`), and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the name of the campaign (`name`), the last date it was sent (`last_sent`), or whether this campaign was segmented or not (`segments_enabled`).
 
 Apart from the list, you can also see an object called `meta` which contains information about the pagination of this resource.
 
@@ -488,7 +488,7 @@ Let's analyze the corresponding _response_ of this call below:
     }
 }
 ```
-As you can see, the `` message_deliveries`` object within the JSON contains a list of 10 elements, where each represents a _message delivery_ or concrete delivery of a campaign email to a specific user. Each object also has relevant attributes like the customer's name and email or the date it was sent. But where are the other records? This is where the pagination of resources plays a very important role and you will have to pay attention to the `meta` object within the JSON response.
+As you can see, the ``message_deliveries`` object within the JSON contains a list of 10 elements, each representing a specific _message delivery_ or delivery of a campaign email to a particular user, and each object has attributes relevant to this concept, such as the customer's name and email or the date it was sent. But where are the other records? This is where the pagination of resources plays a very important role and for this you should pay attention to the `meta` object within the JSON.
 
 The `meta` object contains the information you need to be able to traverse a large number of records, through small groups of records or pages.
 

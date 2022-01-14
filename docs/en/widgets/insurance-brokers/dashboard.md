@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-insurance-dashboard
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/dashboard" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Feature       | Description                                                                                                                                                                                                              |
+| Description       | Investor Profile Survey                                                                                                                                                                                                              |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Search tool            | Easy-to-search information through key data from quotes and policies. Customize search options and search by product ID, policyholder name, or quote numbers.        |
 | Date Filter     | Filters results and optimizes searches based on user needs or time periods established by legal teams.                |

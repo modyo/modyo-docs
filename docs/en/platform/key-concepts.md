@@ -11,8 +11,6 @@ Below you will find a brief explanation of some of the key concepts related to t
 
 Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-You can even go further and use Modyo to develop a deeper understanding about your digital customers throughout your different sites.
-
 ### Customers interact on sites depending on context
 
 Modyo provides you with different authentication mechanisms, from OpenID Connect to OAuth2 and Google, so you can easily authenticate your customers.
@@ -35,13 +33,13 @@ The widget generator helps Back and Front End developers work together to create
 
 Most of our competitors chose the old _portlets_ model (server-side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
 
-Modyo bases its development model on widgets and a widget generator that tracks every change in a version control system. Digital work is easy to audit, move on to the next stage and publish so that it is quickly available to your customers.
+Modyo is based on widgets and a widget builder that tracks every change in a version control system. Digital work is: easy to audit, moved to the next stage, and published to make it quickly available to your customers.
 
 ### Our widget generator
 
-With the widget generator you can develop any type of widget you require and include all necessary HTML, CSS and Javascript. You can connect widgets to your APIs, and publish them to your widget library to reuse them when needed.
+With Modyo's widget builder you can develop any type of widget you require, where you can include components in HTML, CSS, and Javascript that connect to APIs. These become part of your widget library where you'll be able to reuse them when you need them.
 
-The widget generator enhances the digital experience by making Front End development easy to handle, quick to send to production and easy to audit, providing greater security and fulfillment of your key objectives.
+The widget builder enhances the digital experience by making Front End development easy to manage, quick to send to production, and easy to audit, providing better security and goal expectations.
 
 ### Prefabricated Widgets for Financial Services
 
@@ -77,13 +75,13 @@ The following definitions correspond to commonly used terms between the differen
 * [**Integrations**](/en/platform/core/integrations/): This is where you can delegate or federate the authentication process of users or team members.
 * [**Password Policy**](/en/platform/core/security.html#password-policy): Allows you to define rules that team members must follow when creating or modifying their passwords.
 * [**Team Review**](/en/platform/core/key-concepts.html#team-review): Revision flow of versioned items in which you can request approval from multiple team members.
-* [**Site**](/en/platform/channels/sites.html): This is the tool you can use to create digital channels within the platform. Site management includes development, design and navigation flow.
+* [**Site**](/en/platform/channels/sites.html): This is the tool for creating digital channels within the platform. Sites operations include all areas of development, design, and navigation flow.
 * [**Editable Version**](/en/platform/core/key-concepts.html#editable): It is the version that you can modify and use to preview versioned elements.
 * [**Global Variables**](/en/platform/core/key-concepts.html#global-variables): These are elements that you can define globally and reuse in different sites.
 * [**Scheduled Version**](/en/platform/core/key-concepts.html#scheduled): It is the version that is ready to be published at a predetermined date and time.
 * [**Published version**](/en/platform/core/key-concepts.html#published): It is the visible or productive version of the elements. This version can not be modified.
 * [**Backup version**](/en/platform/core/key-concepts.html#backups): It is a version that was previously published.
-* [**Webhook**](/en/platform/core/integrations/#webhooks): Sends information automatically to an external system when a certain event occurs.
+* [**Webhook**](/en/platform/core/webhooks.html): Automatically sends information to an external system when a particular event occurs.
 
 
 #### Modyo Content

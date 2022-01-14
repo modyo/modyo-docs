@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-insurance-quote
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/quote" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Feature                  | Description                                                                                                                                                                              |
+| Description                  | Investor Profile Survey                                                                                                                                                                              |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stepper                        | Customize the desired steps based on user milestones in the quote process in a fast, organized way.                                                                                                        |
 | Form customization | Configure form fields and required data for a quote. Save information for each product and facilitate the creation of new quotes.                              |

@@ -8,8 +8,6 @@ Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio,
 
 ![Índice de páginas](/assets/img/platform/page-index.png)
 
-Puedes añadir nuevas páginas haciendo click en el botón **+ Nuevo** arriba a la derecha de la vista. Debes elegir un nombre, path y si es que la nueva página tendrá un padre.
-
 Para editar una página, debes hacer click en el ícono de edición (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) o en el nombre de la página para ir a la vista de edición.
 
 En la vista de edición, encuentras una barra superior con acciones, una grilla central y una barra lateral con pestañas.
@@ -32,7 +30,7 @@ Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión
 Si tu página está en estado "Borrador" no aparece el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
 :::
 
-**Actividad** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en este ícono, se despliega una barra lateral que te muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos quienes esté asignados como revisores recibirán una notificación con el comentario.
+**Actividad** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en este ícono, se despliega una barra lateral que te muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos quienes estén asignados como revisores recibirán una notificación con el comentario.
 
 **Otras acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
@@ -40,8 +38,24 @@ Si tu página está en estado "Borrador" no aparece el icono de diferencias, dad
 - Duplicar <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Esta acción te permite copiar la versión editable de la página en la que estás. La versión copiada queda en estado "Borrador".
 
 :::warning Atención
-Una vez terminada la acción de copiado, te dirige a la nueva página, por lo que recuerda guardar todos los cambios antes de usar esta acción, de lo contrario podrías perder información importante.
+Una vez terminada la acción de copiado, te dirige a la nueva página, por lo que es importante guardar todos los cambios antes de usar esta acción, de lo contrario podrías perder información importante.
 :::
+
+## Crear una página
+Para crear una nueva página, sigue estos pasos:
+
+1. Dentro del menú principal de Modyo Platform, expande Channels, y haz click en Sitios.
+1. Selecciona el sitio que desees agregar una nueva página.
+1. Haz click en **Pages**.
+1. Haz click en **+ Nueva Página**.
+1. Selecciona el tipo de página **(Widget o Content)** que quieres crear.
+1. Llena el Nombre del Layout, la Ruta, de ser necesario selecciona el layout padre, y presiona **Crear**.
+1. Personaliza la página dependiendo del tipo: agregando o editando widgets para Widget Pages o editando el Index y Show para Content Pages.
+1. Una vez terminado, haz click en **Publicar**.
+
+Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/channels/pages.html#widget-pages)
+
+Para conocer más acerca de content pages, ve [Content Pages](/es/platform/channels/pages.html#content-pages)
 
 **Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
@@ -69,23 +83,25 @@ En la sección lateral derecha encontrarás tres pestañas:
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
 - Propiedades: Te permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
 
-### Widgets
+## Widget Pages
 
-Los puedes añadir desde la primera pestaña del Page builder. Los widgets disponibles son:
+Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista: 
+
 
 - **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
 - **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
 :::warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
-- **Contenido**: Son widgets por defecto que te permite mostrar listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags y categoría. Para modificar como se ven estos widgets, debes hacerlo en el [Template Builder](/es/platform/channels/templates.html), en la sección Widgets.
+- **Listado de contenido**: Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates.html).
+- **Contenido destacado**: Muestra un listado de entradas como imágenes "hero" en un carrusel.
 - **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
 
-Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña central, donde podrás encontrar distintas opciones de configuración de los widgets y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en el [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobreescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma. 
+Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma. 
 
 ### Propiedades
 
-En esta pestaña encontrarás opciones propiedades comunes de todos los pages:
+En esta pestaña encontrarás opciones propiedades comunes de todas las páginas:
 
 * Nombre
 * Padre
@@ -93,7 +109,7 @@ En esta pestaña encontrarás opciones propiedades comunes de todos los pages:
 * Extracto
 * Grilla
 * Privacidad
-* Meta tags
+* Meta tags personalizados
 
 :::warning Atención
 Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
@@ -135,17 +151,99 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 </tr></table>
 :::
 
+## Content Pages
+
+Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando content pages. 
+
+### Requisitos previos
+
+Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
+
+* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces.html#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types.html#crear-un-tipo)
+* Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion)
+
+:::tip Tip
+Para conocer más acerca de como crear una vista de contenido personalizada, vea [Creación de una Vista de Contenido](/es/platform/tutorials/how-to-create-a-custom-view.html).
+:::
+
+:::tip Tip
+Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
+:::
+
+Content pages están compuestas por dos secciones **Index** y **Show**. 
+
+### Index
+
+La página índice que contiene el listado de todas las entradas del tipo de contenido. Aquí podrás seleccionar las siguientes opciones:
+
+#### Edit
+
+- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio al Content Page cuando fue creado. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Layout**: La plantilla Layout que va a cargar para el Index.
+- **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
+
+### Show
+
+La pestaña en donde defines como van a lucir las entradas dinámicas. Aquí podrás seleccionar las siguientes opciones:
+
+#### Edit:
+
+- **Layout**: La plantilla Layout que va a cargar para el Show.
+- **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del show. Este meta tag solo será cargado para el Show, no para el Index. También puedes utilizar Liquid para cargar meta tags dinámicos.
+
+Un ejemplo básico de código Liquid+HTML que puedes usar en **Show** es:
+
+```html
+<div>
+  <h1 class="title">{{ entry.name }}</h1>
+  <time>{{ entry.published_at | format_date }}</time>
+  <span class="url">
+    <a href="{{request.url}}">{{request.url}}</a>
+    </span>
+</div>
+
+<div>
+  <div class="description">
+    {{ entry.description }}
+  </div>
+</div>
+```
+
+Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.description` para generar una página dinámica dependiendo de la entrada que selecciones.
+
+:::tip Tip
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
+
+Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/liquid-markup.html#drops-de-content)
+:::
+
+#### Propiedades
+
+Muestra el tipo de contenido y el espacio al cual pertenece esta página. A demás tendrás opciones para cambiar el nombre, la página padre, la ruta, y un extracto.
+
+:::tip Tip
+En el caso de que el custom domain esté habilitado, para encontrar la forma de la URL debes ir a ``Configuración del Sitio > Dominios``.
+
+En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
+:::
+
+El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es posible tanto para todos los tipos de páginas y [Plantillas](/es/platform/channels/templates.html). Dentro del `<head>` se agrega un tag:
+
+```html
+<meta name="description" content="{{ page.excerpt }}"/>
+```
+
 #### Delegación de rutas
 
 Habilita la delegación de rutas para permitir el control absoluto de las sub-rutas de la página a través del router de JavaScript.
 
-#### Privacidad
+## Privacidad
 
 Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Segmentos](/es/platform/customers/segments.html), de tal manera que solo los usuarios que pertenezcan a esos segmentos podrán acceder a esta página. Quienes no sean parte del grupo de segmentos seleccionados, serán redirigidos a la página anterior o al home del sitio.
 
-#### Meta tags
+## Meta tags
 
-En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag o eliminar el tag de la página.
+En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
 
 :::tip Tip
 Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.

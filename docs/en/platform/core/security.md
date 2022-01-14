@@ -3,7 +3,8 @@ search: true
 ---
 
 # Security
-At Modyo, everything about security is very important to us. That is why we created this guide that will serve as a reference in everything you need to secure a Modyo installation. While Modyo Cloud and Enterprise Cloud, our hosted solutions, provide an excellent level of security by default, platform administrators can take additional protection measures to increase the security of their organizations. This guide presents the most important recommendations to achieve this.
+
+At Modyo, everything about safety is very important to us. That's why we created this page that will guide you through everything you need to secure a Modyo installation. While Modyo Cloud and Enterprise Cloud, our hosted solutions, provide excellent security by default, platform administrators can take additional safety measures to increase the security of their organizations. This guide presents the most important recommendations to achieve this.
 
 ### Important Concepts
 * **Limit access:** Reduce the chances of a malicious actor gaining access to the system.
@@ -12,12 +13,12 @@ At Modyo, everything about security is very important to us. That is why we crea
 
 * **Preparation and knowledge:** Maintain backups and procedures to be prepared in the event of a catastrophe.
 
-* **Trusted Sources:** Avoid deploying Widgets or codes from unreliable sources. Ensure that all dependencies that are loaded into a site come from a reliable source.
+* **Trusted Sources:** Avoid deploying Widgets or code from unreliable sources. Ensure that all dependencies that are loaded into a site come from a trusted source.
 
 ### Local Vulnerabilities
-Ensure that the hardware of all administrators of the platform is free of spyware, malware, and virus infections. Even a secure installation of Modyo could be broken into by malicious actors who exploit a user's valid session from a local computer.
+Ensure that the computer equipment of all platform administrator users is free of spyware, malware, or virus infections.
 
-Ensure that access always comes from an up-to-date computer, using reliable and up-to-date Internet browsers.
+Ensure access always comes from an up-to-date computer using reliable and up-to-date Internet browsers.
 
 ### Update Modyo Regularly
 We recommend updating Modyo periodically to ensure you are always on the last patch available. This will ensure that your installation has all security patches up to date. Security patches are performed in such a way that they can be applied without mostly affecting work computers (example: moving from 9.1.10 to 9.1.12).
@@ -44,19 +45,18 @@ Modyo may make communications to the Internet, with regard to the capabilities o
 ### Restrict Public Ports of Entry
 Modyo users will have to access through port 443 exclusively, behind a load balancer that distributes traffic to different instances of the platform. Between the load balancer and the platform instances, traffic can go through port 443 or 80 depending on the internal security of your network (example: ∑ networks that are isolated and protected such as Amazon AWS VPCs may not require internal encryption).
 
-
-
 ### Activity logs
 
 The platform keeps a record of all actions taken by admin users within it, which can be reviewed within the “Activity Logs” section. We recommend reviewing these logs periodically to verify the correct behavior of users within the system. These activity logs are also available through the Modyo administrative API.
 
-
 ### Review Administration Permissions
-Administrators of an organization or site have a high level of access to content and settings that must be private. Any vulnerability to one of these administrators can pose a great security risk. That is why we recommend keeping a small and highly controlled number of users with a general management role and ensuring that these users maintain active additional levels of protection such as a second authentication factor.
+
+Administrators of an organization or site have a high level of access to content and settings that must be private. Impersonating one of these administrators can pose a major security risk. That's why we recommend keeping a small and tightly controlled number of users with a general management role and ensuring that these users maintain additional levels of protection active as the second factor of authentication.
 
 Administrators can also create tokens for access to platform management APIs. These tokens are often used to automate common management tasks, it is important to ensure that they are only used within secure systems that ensure their protection.
 
 ### Enable the Second Factor of Authentication
+
 Consider enabling the second authentication factor whenever your identity server allows it. If you use Modyo's credentials system, we recommend that you enable this protection. We strongly recommend enabling this functionality for better security posture.
 
 ### Password policy
@@ -64,8 +64,8 @@ Consider enabling the second authentication factor whenever your identity server
 This section will allow you to set the password security policy for team members. Within the options you can choose the following:
 
 * **Enforce minimum password length**: By default the minimum length required by Modyo is 8 characters, but if you require it, you can force the minimum length of team members' passwords to be longer.
-* **Require at least one lowercase letter from the Latin alphabet (a to z)**: With this option you can ensure that at least one lower case letter exists within team members' passwords.
-* **Require at least one uppercase letter from the Latin alphabet (A to Z)**: With this option you ensure that at least one capital letter exists within team members' passwords.
+* **Require at least one lowercase letter (a - z)**: This option ensures that at least one lowercase letter exists within the team members' password.
+* **Require at least one capital letter (A - Z)**: This option ensures that at least one capital letter exists within the team members' password.
 * **Require at least one non-alphanumeric character (! @ # $ % ^ & * () _ + - = [] {} |)**: With this option you force your team members to use at least one of the special characters indicated in the list in their passwords.
 
 When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
@@ -77,7 +77,7 @@ In this section we can activate Cross Origin Resource Sharing (CORS), so that Mo
 When you enable this option, you will need to specify the domains (separated by comma and no slash at the end) that you want to allow access from to share resources with your site. For example:
 `http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
 
-### Content Delivery Token (JWT)
+### Content Delivery Token (JWT - JSON Web Token)
 
 After configuring CORS, the platform will give you a key or _secret_ to be able to decode users' JWTs in order to access [private content via the API](/en/platform/content/public-api-reference.html#private-content).
 

@@ -9,13 +9,13 @@ El entrenamiento en la Plataforma Modyo es un aspecto clave para cualquier usuar
 ### Plataforma Modyo
 
 #### Recomendaciones antes de partir
-1. Entender qué es [Modyo y sus módulos principales](https://www.modyo.com/platform)
-2. Tener claro el rol que desempeñas, por ejemplo: desarrollo frontend, gestión de contenido, marketing digital, administración del sistema, etc.
-3. Configurar un [ambiente de pruebas](https://platform.modyo.cloud/onboarding) para poner en práctica los conocimientos adquiridos
-4. Tener acceso a la [documentación de la plataforma](/es/platform/core)
-5. Tener acceso a nuestro [Centro de Soporte](https://support.modyo.com/hc/es) para reportar problemas y hacer consultas
+- Entender qué es [Modyo y sus módulos principales](https://www.modyo.com/platform)
+- Tener claro el rol que desempeñas, por ejemplo: desarrollo frontend, gestión de contenido, marketing digital, administración del sistema, etc.
+- Configurar un [ambiente de pruebas](https://platform.modyo.cloud/onboarding) para poner en práctica los conocimientos adquiridos
+- Tener acceso a la [documentación de la plataforma](/es/platform/core)
+- Tener acceso a nuestro [Centro de Soporte](https://support.modyo.com/hc/es) para reportar problemas y hacer consultas
 
-A continuación, te contaremos cómo podrás acceder a todo el material, información y accesos necesarios para que tu experiencia con Modyo sea más fácil.
+A continuación, te contaremos cómo podrás acceder a todo la información y accesos necesarios para que tu experiencia con Modyo sea más fácil.
 
 #### Conceptos generales
 Modyo es una plataforma de experiencia digital de siguiente generación que potencia soluciones para la interacción con clientes digitales, acelerando el desarrollo Web y móvil de forma segura y eficiente, creando un espacio centralizado para gobernar tus canales digitales.
@@ -34,7 +34,7 @@ Te recomendamos realizar los tutoriales en orden, siguiendo todos los pasos que 
 Modyo cuenta con un [programa de certificación](https://training.modyo.com/catalog) para clientes y socios de negocio que consiste en cursos de capacitación para tres perfiles diferentes:
 - Content Manager
 - Frontend Developer
-- Administrador del sistema (configuración de seguridad, organizaciones, reinos, sitios y espacios de contenidos)
+- Administrador del sistema (configuración de seguridad, organizaciones, reinos, sitios, y espacios de contenidos)
 
 La modalidad de estas capacitaciones son cursos con videos y un test al finalizar cada curso, los que de ser aprobados te otorgarán un respectivo certificado.
  

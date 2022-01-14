@@ -2,16 +2,16 @@
 search: true
 ---
 
-## Perfil de usuario
+# Perfil de usuario
 
-El perfil de usuario es el lugar central donde los usuarios pueden encontrar los distintos sitios de la cuenta, las notificaciones y la vista para modificar su perfil como su nombre, correo, campos personalizados y su suscripción a las campañas de correo.
+El perfil de usuario es el lugar central donde los usuarios pueden encontrar los distintos sitios de la cuenta, las notificaciones, y la vista para modificar su perfil como su nombre, correo, campos personalizados, y su suscripción a las campañas de correo.
 
 ### Sitios
 
-Muestra el listado de sitios habilitados de la cuenta, de tal forma que el usuario pueda encontrar fácilmente todos los canales digitales asociados a la cuenta
+Muestra el listado de sitios habilitados de la cuenta, de tal forma que el usuario pueda encontrar fácilmente todos los canales digitales asociados a la cuenta.
 
 :::tip Tip
-Puedes esconder esa sección del profile haciendo uso de CSS en la configuración de customers, sección apariencia
+Puedes esconder esa sección del profile haciendo uso de CSS en la configuración de customers, sección apariencia.
 :::
 
 ### Notificaciones
@@ -30,13 +30,13 @@ En esta sección, cada usuario puede modificar los datos de su perfil, dependien
 * Correo electrónico
 * Fecha de nacimiento
 * Género
-* [Campos personalizados](/es/platform/customers/realms.html#custom-fields)
+* [Custom fields](/es/platform/customers/realms.html#custom-fields)
 * Contraseña
 
 Además, cada usuario puede eliminar definitivamente su cuenta. 
 
 :::danger Peligro
-La eliminación de la cuenta de usuario es una acción irreversible, y los usuarios que ejecuten esta acción deberán registrarse nuevamente para poder acceder.
+La eliminación de la cuenta de usuario es una acción irreversible y los usuarios que ejecuten esta acción deberán registrarse nuevamente para poder acceder.
 :::
 
 ## API de perfil
@@ -46,3 +46,17 @@ Puedes acceder a la API de perfil de usuarios a través de la URL `account_url/a
 * Documentación técnica de la API: `account_url/api/profile/docs`
 * Notificaciones: `account_url/api/profile/notifications`
 * Info del usuario: `account_url/api/profile/me`
+
+### Tokens delegados
+
+Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/identity-providers.html) en tus proveedores de identidad, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+
+```json
+...
+   "delegated_token":{
+      "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
+      "access_token":"TOKEN",
+      "access_token_expires_in":300,
+      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
+   }
+```

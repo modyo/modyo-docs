@@ -4,35 +4,40 @@ search: true
 
 # Liquid Variables
 
-[**Liquid Markup**](/en/platform/channels/liquid-markup.html) It is an important part of the platform and is also how we build views and access content, as well as [**drops**](/en/platform/channels/liquid-markup.html#drops) context variables that allow us to interact with our views more dynamically. For example, you can determine which content to display to the user according to the target they belong to, or hide a menu depending on the page you are visiting, etc.
+Create a javascript object in Snippets so you can make use of Liquid in your Widgets.
 
-When decoupled from the platform, Widgets have the disadvantage of not being able to directly use liquid. We do not have access to those drops (although we are working on a solution), and we will have to use javascript from the platform to make them available.
+Widgets, as they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly and do not have access to Liquid drops, in order to work with them we will have to make them available through javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access content on it. It also gives us access to context [**drops**](/en/platform/channels/liquid-markup.html#drops) (variables) that allow us to interact with our views more dynamically. For example, you can determine what content to show to the user based on the segment they belong to, hide a menu based on the page being visited, and so on.
 
-1. First we create a new snippet: **Templates (1) —> Snippets (2) —> Add a Snippet (3)**. For this snippet example we use the name `liquid2js_js`, but it can have any name.
+
+Follow these steps to create a snippet with Liquid variables:
+1. In the side menu on the platform, expand **Channels** and click on **Sites**.
+1. Click on your site.
+1. In your site menu, click on **Templates** and select **Snippets**.
+1. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any name.
+
    ![template views](/assets/img/widgets/template_snippets.png)
 
-2. In this snippet we create an object in the `window` scope containing all the drops we want to have available in our Widget. In this example the object is called liquid, but you can give it any name.
-
-   ```js
+1. Open the javascript section and paste the code:
+```js
    window.liquid = {
-     lang: "{{@site.language}}" === "en" ? "en-US" : "es-CL",
+     lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL',
      request: {
        path: "{{request.path}}",
      },
    };
-   ```
-
-3. From our Widget you can access these values using the object created in the previous step.
+```
+In this snippet we create an object named _liquid_ with `window` scope that contains the language and request path of the site. From our Widget we can now access this data using the object created in the previous step. For example, if you want to get the site categories from the Widget, you can do so with: 
 
    ```js
-   const LANG = window.liquid.lang;
+   const categories = window.liquid.lang;
    ```
 
-   :::warning Important
-   In development mode we will not have access to this object since we are working locally, which is why we recommend assigning defaults when defining these variables locally.
-   :::
+:::warning Warning
+In development mode we won't have access to this object since we're working locally, so the recommendation is to assign default values when defining these variables locally.
+:::
 
-  ```js
-   // si no existe el objeto liquid y la llave lang no esta definida, asignamos 'es-CL' por defecto
-   const LANG = window.liquid ? window.liquid.lang : "es-CL";
-   ```
+```js
+// This line checks if the liquid object exists, if it does, const lang takes the value window.liquid.lang, if the object doesn't exist, it takes the value "es-CL" by default.
+
+const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
+```

@@ -6,9 +6,7 @@ search: true
 
 Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
 
-Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor o tags, o hacer una búsqueda de texto por el nombre del widget.
-
-En la esquina superior derecha se observa un botón principal **+ Nuevo** que permite crear un nuevo widget. Para ello, se debe escribir un nombre para luego entrar a la vista de edición del widget.
+Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor, tags, o hacer una búsqueda de texto por el nombre del widget.
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
@@ -62,14 +60,13 @@ Una vez que un widget está publicado, este será visible en el modal de selecci
 Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/key-concepts.html#versionado)
 :::
 
-
 En el área de trabajo se puede ver:
 
-- **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS y HTML para construir widgets.
+- **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS, y HTML para construir widgets.
 - **Gestor de archivos**: Al hacer click, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
 - **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
 - **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/es/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
-- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS y HTML). Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
+- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS, y HTML). Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
 
 :::tip Tip
 Para no perder los cambios que tienes actualmente, se debe guardar antes de saltar entre sub-versiones, de tal forma que siempre pueda volver a la última versión guardada en la lista de cambios.
@@ -91,7 +88,16 @@ En la columna de propiedades se pueden ver:
 Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Desde la versión 9.1.10 en adelante, puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias activas en las páginas quedarán inactivas, por lo que no verás el widget en el sitio si lo despublicaste. Además, podrás archivar cualquier widget que no esté publicado, de tal forma que si aun existen referencias en algunas páginas del widget que quieres archivar, estas se eliminarán al momento de archivar el widget. 
 :::
 
-## Variables del widget
+## Crear un Widget
+Para crear un nuevo Widget y tener un _micro frontend_ para tus sitios y publicaciones, sigue estos pasos:
+1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en tu sitio.
+1. Haz click en Widgets.
+1. Haz click en el botón **+ Nuevo Widget**.
+1. Escribe el nombre de tu widget y haz click en **Crear**.
+1. Personaliza tu widget usando HTML, CSS, JavaScript, o Liquid.
+1. Una vez terminado, haz click en **Publicar**.
+
+## Variables del Widget
 
 En la pestaña de variables puedes ver el listado de variables creadas en el widget, y sus respectivas acciones para:
 
@@ -117,21 +123,21 @@ Al instanciar el widget en una página se listarán todas las variables que ese 
 Esta es una funcionalidad experimental y puede estar sujeta a cambios.
 :::
 
-Puedes decidir si quieres cargar tus widgets de forma sincrónica, es decir, que el código HTML, CSS y JavaScript de tu widget se carguen junto con el resto de la página desde el servidor, o bien, que se carguen de forma asincrónica, de tal manera que se cargará todo el contenido estático de la página y una vez que el documento principal esté cargado, el contenido de tu widget se cargará mediante JavaScript. Por defecto, todos los widgets se cargan de forma asincróica.
+Puedes decidir si quieres cargar tus widgets de forma sincrónica, es decir, que el código HTML, CSS, y JavaScript de tu widget se carguen junto con el resto de la página desde el servidor, o bien, que se carguen de forma asincrónica, de tal manera que se cargará todo el contenido estático de la página y una vez que el documento principal esté cargado, el contenido de tu widget se cargará mediante JavaScript. Por defecto, todos los widgets se cargan de forma asincróica.
 
 Para cambiar la forma en que se carga cada widget, debes ir a la vista de edición de la página que contiene el widget, seleccionar el widget y marcar o desmarcar la opción "Carga síncrona".
 
 :::warning Atención
-Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el performance de tu página, por lo que debes decidir con cuidado cuales widgets se cargarán de forma síncrona y cuales de forma asíncrona
+Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuales widgets se cargarán de forma síncrona y cuales de forma asíncrona.
 :::
 
 ## Modyo CLI
 
-La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, y estos principios tienen un comando get y push respectivamente.
+La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, estos principios tienen un comando get y push respectivamente.
 
 ### Introduction
 
-Primero, necesita instalar la CLI de Modyo globalmente en su máquina local para tener disponible el comando `modyo-cli`, esto le permitirá inicializar un proyecto con algunas decisiones arquitectónicas de front-end ya tomadas, o usar para inicializar un widget desde catálogo si tiene acceso.
+Primero, necesita instalar la CLI de Modyo globalmente en su máquina local para tener disponible el comando `modyo-cli`, esto le permitirá inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas, o usar para inicializar un widget desde catálogo si tiene acceso.
 
 Para instalar el modyo-cli globalmente, debe usar una de estas opciones
 
@@ -164,9 +170,69 @@ USAGE
   $ modyo-cli help [COMMAND]
 
 ARGUMENTS
-  get   Pull a widget from our catalog into a new directory
-  help  Display help for modyo-cli
-  push  Push widget to Modyo platform
+  autocomplete Display autocomplete installation instructions 
+  get          Pull a widget from our catalog into a new directory
+  help         Display help for modyo-cli
+  push         Push widget to Modyo platform
+```
+
+:::tip Tip
+Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_ en el directorio raíz del proyecto. Se recomienda la opción de un archivo para evitar la publicación de información delicada en el registro de Github.
+:::
+
+La siguiente lista son las variables de entorno que puedes configurar:
+
+```bash
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_VERSION=version
+MODYO_TOKEN=token
+MODYO_ACCOUNT_URL=account-url
+MODYO_SITE_ID=siteId
+MODYO_SITE_HOST=siteHost
+MODYO_BUILD_COMMAND=buildCommand
+MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+```
+
+:::tip Tip
+Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_. Se recomienda la opción de un archivo para evitar la publicación en el registro de Github porque puede contener información delicada
+:::
+
+### `modyo-cli autocomplete [SHELL]`
+
+Modyo ofrece la habilidad de autocompletar los comandos de nuestro CLI si se configura esta opción.
+
+```bash
+USAGE
+  $ modyo-cli autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL       shell type
+
+OPTIONS
+  -r, --refresh-cache   Refresh cache (ignores displaying instructions)
+
+EXAMPLE
+  $ modyo-cli autocomplete
+  $ modyo-cli autocomplete bash
+  $ modyo-cli autocomplete zsh
+  $ modyo-cli autocomplete --refresh-cache
+```
+
+### Instrucciones para utilizar MODYO-CLI CLI Autocomplete
+
+1. Agregar autocomplete variable de entorno para tu perfil de zsh y agregarlo a source
+```bash
+$ printf "eval $(modyo-cli autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc
+```
+
+:::tip Tip
+Después del comando, puedes correr `$ compaudit -D` para verificar que no hay conflictos en los permisos.
+:::
+
+2. Prueba que funcione correctamente, e.g.:
+```bash
+$ modyo-cli <TAB>           #Completar comando
+$ modyo-cli command --<TAB> #Completar opción
 ```
 
 ### Obtenga una plantilla para un proyecto
@@ -187,9 +253,10 @@ ARGUMENTS
   DIRECTORY  Name of directory to init
 
 OPTIONS
-  -f, --force       Override folder if exist
-  -h, --help        Output usage information
-  -x, --no-install  Don't install packages
+  -f, --force        Override folder if exist
+  -h, --help         Output usage information
+  -o, --organization [default: modyo] Github organization
+  -x, --no-install   Don't install packages
 
 EXAMPLE
   $ modyo-cli get name [directory]
@@ -206,9 +273,9 @@ EXAMPLE
 
 ### `modyo-cli push NAME`
 
-El comando `push` es el encargado del principio de integración, utilizado para enviar el widget al sitio seleccionado en la plataforma modyo.
+El comando `push` es el encargado del integrar el widget al sitio seleccionado en la plataforma Modyo.
 
-Utilizará un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token site_base id o host para identificar la plataforma ®Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
+Utilizarás un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token `site_base id` o `host` para identificar la plataforma Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
 
 ```bash
 USAGE
@@ -221,26 +288,14 @@ OPTIONS
   -b, --build-command=build-command      [default: build] Build command in package.json
   -d, --build-directory=build-directory  [default: dist] Build directory path
   -h, --help                             Output usage information
-  -i, --site-id=site-id                  Id of the site where the widget will be push
-  -n, --site-host=site-host              Host of the site where the widget will be push
+  -i, --site-id=site-id                  Id of the site where the widget will be pushed
+  -l, --disable-liquid                   Disable Liquid
+  -n, --site-host=site-host              Host of the site where the widget will be pushed
   -p, --publish                          Force widget publication
   -t, --token=token                      (required) Modyo Api token
-  -u, --account-url=account-url          (required) URL of your ®Modyo account ex("https://account.modyo.com")
+  -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
   -v, --version=8|9                      [default: 9] Version of Modyo platform
 
 EXAMPLE
   $ modyo-cli push <NAME>
-```
-
->Muchas de las opciones se pueden definir como variables de entorno o dentro de un archivo .env que se recomienda para evitar la publicación en el registro de github porque puede contener información delicada
-
-```bash
-MODYO_BUILD_DIRECTORY=buildDirectoryPath
-MODYO_VERSION=version
-MODYO_TOKEN=token
-MODYO_ACCOUNT_URL=account-url
-MODYO_SITE_ID=siteId
-MODYO_SITE_HOST=siteHost
-MODYO_BUILD_COMMAND=buildCommand
-MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```

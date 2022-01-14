@@ -2,24 +2,24 @@
 search: true
 ---
 
-# Templates
+# Plantillas
 
-Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar los templates base, junto con el JavaScript y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
+Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar las plantillas base, junto con el JavaScript y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
 
 Cuando ya se selecciona el tema que se usa dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
 
-Una vez dentro del Template Builder, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual:
+Una vez dentro del Template Builder, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
+
+![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
 
 - **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
 - **En revisión**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
-- **Aprobado**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus templates están listos para ser publicados.
-
-![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
+- **Aprobado**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
-**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en este icono se abre una nueva pestaña con el modo vista previa de los templates, en el cual podrás ver como si estuvieran publicados, todos los cambios que tienes en tus templates.
+**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en este icono se abre una nueva pestaña con el modo vista previa de los plantillas, en el cual podrás ver como si estuvieran publicados, todos los cambios que tienes en tus plantillas.
 
 :::warning Atención
 Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
@@ -27,51 +27,111 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este icono, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual podrás comparar los cambios que hay entre múltiples versiones de tus templates. 
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este icono, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual podrás comparar los cambios que hay entre múltiples versiones de tus plantillas. 
 
-Por defecto, partes comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, puedes comparar además con las versiones de respaldo.
+Por defecto, comienzas comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, puedes comparar además con las versiones de respaldo.
 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback. 
 Para más información sobre el versionamiento, échale un vistazo a la sección de [versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Buscar en templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con un buscador de texto que busca en todos los templates editables. 
+**Buscar en plantillas** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables. 
 
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
 
-**Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con el historial de actividad y comentarios de los templates. 
+**Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con el historial de actividad y comentarios de las plantillas. 
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
 
 **Más acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
 
 - **Temas**: Se dirige directo al índice de temas del sitio, donde podrás crear copias del tema actual para usar en los otros sitios de tu cuenta. Para saber más revisa [Temas](/es/platform/channels/templates.html#temas)
-- **Restaurar todo**: Restauras todos los templates al valor original del tema.
+- **Restaurar todo**: Restauras todos las plantillas al valor original del tema.
 
 **Acción principal**
 
-- **Guardar**: Guarda todos los cambios de todos los templates.
-- **Enviar a revisión**: Cambia el estado de los templates a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
+- **Guardar**: Guarda todos los cambios de todas las plantillas.
+- **Enviar a revisión**: Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que los templates fueron aprobados, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus templates.
+- **Publicar**: Una vez que las plantillas fueron aprobadas, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus plantillas.
 
 En el área de trabajo principal, puedes ver dos secciones:
 
 - El área de trabajo.
-- El área de selección de templates.
+- El área de selección de plantillas.
 
-Cada template al que le hagas click en la barra lateral derecha, se abre en el área central, muy similar a un IDE. Si abres múltiples templates, estos quedan abiertos como pestañas en el área de trabajo.
+Cada plantillas al que le hagas click en la barra lateral derecha, se abre en el área central con un editor de texto. Si abres múltiples plantillas, estas quedan abiertas como pestañas en el área de trabajo.
 
-La barra de templates a la derecha tiene dos pestañas: vistas y snippets.
+La barra de plantillas a la derecha tiene dos pestañas: vistas y snippets.
 
-Las vistas son elementos base y requeridos por Modyo, y usualmente se traducen en la estructura directa de alguna de las URL de tu sitio.
+## Layouts personalizados
 
-### Snippets
+Modyo cuenta con tres layouts por defecto: 
+* **Home**: Se usa exclusivamente en la página home del sitio.
+* **Base**: Todas las páginas excepto el home usan este layout por defecto.
+* **Error**: Las vistas de error usan este layout limpio (404, 401)
+
+Puedes crear nuevos Layouts desde el template builder, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
+
+Puedes usar como base este código que contiene todo lo necesario para que tus páginas usen todos los elementos necesarios del sitio, como el head, header, footer, service worker, y la configuración de Google Tag Manager, pero ten en cuenta que puedes modifcarlo tanto como quieras:
+
+```liquid
+{% html5 %}
+<head>
+  {% snippet 'shared/general/head' %}
+</head>
+
+{% body %}
+{% snippet 'shared/general/body_tag_manager' %}
+{% snippet 'shared/general/header' %}
+
+{{ site.breadcrumb }}
+<div id="main-layout">
+{{ content_for_layout }}
+</div>
+
+<script>{% snippet "shared/serviceworker/register_js" %}</script>
+{% snippet 'shared/general/footer' %}
+
+{% endbody %}
+{% endhtml5 %}
+```
+
+Luego de haber creado tu nuevo layout, puedes empezar a usarlo yendo a la vista de edición de las páginas y cambiarlo desde el tab de propiedades.
+
+
+## Errores en Vistas
+
+En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
+
+* **Deshabilitado**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
+* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#restricciones) decides mostrar el 404 y no redireccionar a la página home.
+* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#restricciones) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en el template builder.
+
+## CSS y JavaScript
+
+Es posible crear plantillas personalizadas de código CSS y JavaScript haciendo click en los botones **+**, en las secciones de CSS y JavaScript respectivamente, al final de la pestaña Vistas.
+
+Para incluir cualquiera de estas plantilla, existen distintos filtros de Liquid disponibles: `asset_url` para generar la URL de la plantilla, y `stylesheet_tag` y `script_tag` para generar los tags correspondientes, e.g. 
+
+```html
+<head>
+  {{ 'my-css' | asset_url: 'css' }}
+  {{ 'my-css' | asset_url: 'css' | stylesheet_tag }}
+  {{ 'my-js' | asset_url: 'js' | script_tag }}
+</head>
+```
+
+Para conocer a detalle y los parámetros soportados por estos filtros, dirígete a [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros).
+
+
+## Snippets
 
 Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cada snippet personalizado, encontrarás un ícono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+ Añadir un snippet**.
+Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+**.
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
 
@@ -112,7 +172,7 @@ Si publicas una versión, puedes ver que el listado de cambios desaparece, esto 
 :::
 
 :::tip Tip
-Las sub-versiones son por cada template, por lo que para algunos puedes observar que hay cambios y para otros no verás el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectas al resto de los templates.
+Las sub-versiones son por cada plantilla, por lo que para algunos puedes observar que hay cambios y para otros no verás el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectas al resto de los templates.
 :::
 
 :::tip Tip
@@ -122,7 +182,7 @@ Puedes aprender más sobre el [versionado aquí].(/platform/core/key-concepts.ht
 
 Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
 
-### Temas
+## Temas
 
 En esta vista puedes ver cuál es el tema que tienes instalado, y luego el listado de todos los temas instalados en el sitio. 
 
@@ -144,130 +204,13 @@ La acción cargar templates no modifica ni toca los templates editables que ya e
 Cuando creas un tema desde un sitio, ese tema queda disponible para todos los otros sitios de la cuenta, de tal forma que puedes crear un tema base, y partir desde esa base cuando necesites crear nuevos sitios de forma rápida.
 :::
 
-## Vistas de error
-
-En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
-
-* **Disabled**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
-* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#restricciones) decides mostrar el 404 y no redireccionar a la página home.
-* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#restricciones) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
-* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checkea la sintaxis de liquid antes de poder guardar y publicar cambios en el template builder.
-
-## Vistas para contenido
-
-Para poder mostrar [contenido](/es/platform/content/) de forma automática en un sitio, debes cumplir con ciertas condiciones:
-
-1. Contar con un espacio con al menos un idioma (el mismo del sitio) con por lo menos un Tipo. Dirígete a [Espacios](/es/platform/content/spaces.html) y [Tipos](/es/platform/content/types.html) para aprender cómo.
-1. Contar con entradas publicadas en el idioma del sitio. Dirígete a [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion) para aprender más.
-1. Crear una vista personalizada en el Templates Builder.
-
-Para crear una vista personalizada, debes entrar al Template Builder y asegurarte de que estás en la primera pestaña "Vistas". Al hacer scroll hasta el final de la lista, verás que hay una sección llamada **Custom** y un botón **+ Añadir vista personalizada**. Al crear la vista personalizada debes seleccionar un nombre, un espacio al que estará asociado y finalmente un tipo de contenido del espacio.
-
-:::warning Atención
-El nombre de la vista será la ruta (URL) relativa al sitio del contenido a mostrar, por lo que debes prestar atención al momento de nombrar estas vistas.
-:::
-
-:::tip Tip
-Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
-:::
-
-Al modificar esta vista, puedes hacer uso de Liquid, y del objeto `entry`, por ejemplo: <span v-pre>`{{ entry.published_at | format_date }}`</span>
-
-Un ejemplo básico de código Liquid+HTML que puedes usar en estas vistas es:
-
-```html
-<div>
-  <h1 class="title">{{ entry.name }}</h1>
-  <time>{{ entry.published_at | format_date }}</time>
-  <span class="url">
-    <a href="{{request.url}}">{{request.url}}</a>
-    </span>
-</div>
-
-<div>
-  <div class="description">
-    {{ entry.description }}
-  </div>
-</div>
-```
-
-:::tip Tip
-Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
-:::
-
-Si quieres mostrar la vista con los valores de la entrada en que estás trabajando, se debe cumplir con los siguientes requisitos:
-
-1. La vista debe estar creada y publicada. 
-1. La URL a la que se está accediendo es del tipo `site_url/custom_view_name/entry_slug`.
-1. El `custom_view_name` es el nombre de la vista de contenido que creaste.
-1. La URL coincide con el nombre de la vista que acabas de crear. 
-1. Ya existe una entrada publicada en el idioma del sitio. 
-1. El slug de la entrada es `entry_slug`.
-
-:::tip Tip
-
-Para encontrar la forma de la URL, en el caso de que el custom domain esté habilitado, debes ir a ``Configuración del Sitio > Dominios``.
-
-En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
-:::
-
-## Layouts personalizados
-Modyo cuenta con tres layouts por defecto: 
-* **Home**: Se usa exclusivamente en la página home del sitio.
-* **Base**: Todas las páginas excepto el home usan este layout por defecto.
-* **Error**: Las vistas de error usan este layout limpio (404, 401)
-
-Puedes crear nuevos Layouts desde el template builder, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
-
-Puedes usar como base, este código que contiene todo lo necesario para que tus páginas usen todos los elementos necesarios del sitio, como el head, header, footer, service worker y la configuración de Google Tag Manager, pero ten en cuenta que puedes modifcarlo tanto como quieras:
-
-```liquid
-{% html5 %}
-<head>
-  {% snippet 'shared/general/head' %}
-</head>
-
-{% body %}
-{% snippet 'shared/general/body_tag_manager' %}
-{% snippet 'shared/general/header' %}
-
-{{ site.breadcrumb }}
-<div id="main-layout">
-{{ content_for_layout }}
-</div>
-
-<script>{% snippet "shared/serviceworker/register_js" %}</script>
-{% snippet 'shared/general/footer' %}
-
-{% endbody %}
-{% endhtml5 %}
-```
-
-Luego de haber creado tu nuevo layout, puedes ir a la vista de edición de las páginas y cambiar desde el tab de propiedades el layout que está usando.
-
-## CSS y JavaScript
-
-Es posible crear templates personalizados de código CSS y JavaScript haciendo click en los botones **+ Añadir hoja de estilo** y **+ Añadir JavaScript**, respectivamente, al final de la pestaña Vistas.
-
-Para incluir cualquiera de estos templates, existen distintos filtros de Liquid disponibles: `asset_url` para generar la URL del template, y `stylesheet_tag` y `script_tag` para generar los tags correspondientes, e.g. 
-
-```html
-<head>
-  {{ 'my-css' | asset_url: 'css' }}
-  {{ 'my-css' | asset_url: 'css' | stylesheet_tag }}
-  {{ 'my-js' | asset_url: 'js' | script_tag }}
-</head>
-```
-
-Para conocer el detalle y los parámetros soportados por estos filtros, dirígete a [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros).
-
 ## SEO
 
 El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. 
 
 En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
-Puedes añadir este snippet de código al Template Builder, y luego llamar a este snippet desde el head de tu sitio:
+Puedes añadir este snippet de código al Template Builder y luego llamar a este snippet desde el head de tu sitio:
 
 ```html
 <!-- Site SEO -->
@@ -308,9 +251,9 @@ Puedes añadir este snippet de código al Template Builder, y luego llamar a est
 <!-- END SEO <-->
 ```
 
-Este snippet diferencia cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las vistas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
+Este snippet es diferente cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las content pages, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
 
-Si es que lo requieres, puedes personalizar aún más este snippet, definiendo qué metas quieres que aparezcan para URLs o tipos específicos. 
+Si es que lo requieres, puedes personalizar este snippet, definiendo qué metas quieres que aparezcan para URLs o tipos específicos. 
 
 Por ejemplo, en la sección de contenido, puedes usar:
 
@@ -342,7 +285,7 @@ En este caso, los tipos `posts` y `place` comparten los atributos _title_, _exce
 
 ### Manejo de sesión privada usando OpenID Connect (OIDC)
 
-El método recomendado para interactuar con una API privada usando la sesión de Modyo con una integración OIDC, consiste, básicamente de dos pasos: **hacer el sitio privado** y **habilitar la integración a nivel de cuenta**.
+El método recomendado para interactuar con una API privada usando la sesión de Modyo con una integración OIDC, consiste de dos pasos: **hacer el sitio privado** y **habilitar la integración a nivel de cuenta**.
 
 #### Hacer el sitio privado
 
@@ -355,8 +298,12 @@ El método recomendado para interactuar con una API privada usando la sesión de
 
 1. Ve a la cuenta, **Customers** y desde ahí a la sección **Configuración** y luego la pestaña **Integración**
 1. Selecciona la integración OpenID Connect y activa la casilla de **Habilitar OpenID Connect**
-1. Llena los datos de **Nombre del servicio, Client ID, Secret e Issuer** y haz click en **Lanzar servicio de descubrimiento**
-1. Chequea los campos que necesites (Habilitar refresh token, Habilitar cierre de sesión remoto, Habilitar revocación de token, Habilitar sincronización de claims)
+1. Llena los datos de **Nombre del servicio, Client ID, Secret, e Issuer** y haz click en **Lanzar servicio de descubrimiento**
+1. Chequea los campos que necesites
+    * Habilitar refresh token
+    * Habilitar cierre de sesión remoto
+    * Habilitar revocación de token
+    * Habilitar sincronización de claims
 1. Asocia los campos del proveedor con los campos personalizados que tengas en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
 ### Usando Axios para hacer la integración
@@ -374,8 +321,8 @@ Las tareas que debes cubrir con los snippets son:
 ```js
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones de los servicios
 var axios_api = axios.create();
-  axios_api.defaults.baseURL = 'URL DE API';
-}
+axios_api.defaults.baseURL = 'URL DE API';
+
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones de la api de modyo
 var axios_modyo=axios.create({
   baseURL: window.baseUrl + '/api/admin',
@@ -393,7 +340,7 @@ var resetIdleTime = function(request){
 	return request;
 }
 // función que agrega el token a cada uno de los request
-var appendTokenToRequest=function (request) {
+var appendTokenToRequest = function (request) {
 	return axios_auth.get('/access_token').then(function(response){
 		request.headers.authorization='Bearer '+ response.data.access_token;
 		return request;

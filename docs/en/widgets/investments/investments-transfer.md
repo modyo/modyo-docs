@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-transfer
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/investments/transfer" width="100%" frameBorder="0" style="min-height:680px;overflow:auto;margin-top:20px;"/>
 
-| Feature | Description                                                                                                                                                      |
+| Description | Investor Profile Survey                                                                                                                                                      |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Transfer    | Allows clients to transfer funds between investment accounts. It also makes it possible to request a transfer of funds to the client's previously registered accounts. |
 

@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-documents
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/investments/documents" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
-| Feature                       | Description                                                                                                                                                                                                                                |
+| Description                       | Investor Profile Survey                                                                                                                                                                                                                                |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consolidated Financial Statements | Displays a list of available financial statements.                                                                                                                                                                             |
 | Invoices                            | Displays the list of electronic invoices for all the completed transactions. Allows the user to open invoices in PDF format to review, print, and/or download.                                                           |

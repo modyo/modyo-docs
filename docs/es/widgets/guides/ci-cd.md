@@ -4,7 +4,7 @@ search: true
 
 # CI/CD con GitHub
 
-Una de las ventajas de trabajar con los Widgets de manera local usando el CLI de Modyo ([**modyo-cli**](/es/platform/channels/widgets.html#modyo-cli)) es que se puede hacer uso de herramientas para automatizar la revisión de código (**CI**) y hacer entrega continua o despliegue continuo (**CD**)
+Una de las ventajas de trabajar con los Widgets de manera local usando el CLI de Modyo ([**modyo-cli**](/es/platform/channels/widgets.html#modyo-cli)) es que se puede hacer uso de herramientas para automatizar la revisión de código (**CI**) y hacer entrega continua o despliegue continuo (**CD**).
 
 Los Widgets del catalogo, asi como los templates base para iniciar un nuevo proyecto, traen _"recetas"_ de [**GitHub Actions**](https://GitHub.com/features/actions) que puedes utilizar para ejecutar algunas de las tareas mas comunes de CI/CD de manera rápida y sencilla.
 

@@ -8,7 +8,7 @@ search: true
 
 <iframe src="https://widgets.modyo.com/retail/points" width="100%" height="700px" frameBorder="0" style="overflow:auto;margin-top:20px;"/>
 
-| Feature         | Description                                                                                                                                                                                                   |
+| Description         | Investor Profile Survey                                                                                                                                                                                                   |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Points Summary | Displays the total points available to the customer, along with the next due date. Has a button that enables you to link a relevant catalog of redeemable items.                                  |
 | Associated Cards    | Displays customer card information linked to your points and benefits system. It includes the card type, customer's name and the total points accumulated during a set period of time. |

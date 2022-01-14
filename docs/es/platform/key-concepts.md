@@ -11,8 +11,6 @@ A continuación encontrarás una breve explicación de algunos de los conceptos 
 
 Modyo implementa una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, puedes crear múltiples sitios públicos o privados.
 
-Ve más allá, y utiliza Modyo para obtener un conocimiento más completo sobre tus clientes digitales.
-
 ### Los clientes interactúan en los sitios dependiendo del contexto
 
 Modyo te provee de diferentes mecanismos de autenticación, desde OpenID Connect hasta OAuth2 y Google, para que puedas autenticar a tus clientes fácilmente.
@@ -35,13 +33,13 @@ El generador de widgets le ayuda a los desarrolladores de Back y Front End a tra
 
 La mayoría de las empresas que están en el mercado eligieron el antiguo modelo de _porlets_ (modelo de desarrollo del lado del servidor). Este es más lento y requiere publicar a producción cada vez que se haga un cambio, haciendo el trabajo digital más complejo.
 
-Modyo está basado en widgets y un generador de widgets que rastrea cada cambio en un sistema de control de versiones. El trabajo digital es fácil de auditar, de pasar a la próxima etapa y de publicar para que esté disponible rápidamente para tus clientes.
+Modyo está basado en widgets y un generador de widgets que rastrea cada cambio en un sistema de control de versiones. El trabajo digital es fácil de auditar, de pasar a la próxima etapa, y de publicar para que esté disponible rápidamente para tus clientes.
 
 ### Nuestro generador de widgets
 
-Con el generador de widgets puedes desarrollar cualquier tipo de widget que requieras, donde puedes incluir componentes en HTML, CSS y Javascript que se conectan con APIs, y que pasan a formar parte de tu librería de widgets para reutilizarlos cuando los necesites.
+Con el generador de widgets puedes desarrollar cualquier tipo de widget que requieras, donde puedes incluir componentes en HTML, CSS, y Javascript que se conectan con APIs. Estos pasan a formar parte de tu librería de widgets para reutilizarlos cuando los necesites.
 
-El generador de widgets potencia la experiencia digital al hacer el desarrollo del Front End fácil de manejar, rápido de enviar a producción y fácil de auditar, otorgando mayor seguridad y cumplimiento de tus objetivos.
+El generador de widgets potencia la experiencia digital al hacer el desarrollo del Front End fácil de manejar, rápido de enviar a producción, y fácil de auditar, otorgando mayor seguridad y cumplimiento de tus objetivos.
 
 ### Widgets prefabricados para servicios financieros
 
@@ -77,13 +75,13 @@ Las siguientes definiciones corresponden a términos comunmente utulizados entre
 * [**Integraciones**](/es/platform/core/integrations): Es la forma de delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.
 * [**Política de contraseña**](/es/platform/core/security.html#politica-de-contrasena): Permite definir reglas que los miembros del equipo deben cumplir al momento de crear o modificar sus contraseñas.
 * [**Revisión en equipo**](/es/platform/core/key-concepts.html#revision-en-equipo): Flujo de revisión de los elementos versionados en el que se puede solicitar la aprobación de múltiples miembros del equipo.
-* [**Sitio**](/es/platform/channels/sites.html): Es la herramienta para crear canales digitales dentro de la plataforma. La operación de sitios abarca todo el desarrollo, diseño y flujo de navegación.
+* [**Sitio**](/es/platform/channels/sites.html): Es la herramienta para crear canales digitales dentro de la plataforma. La operación de sitios abarca todo el desarrollo, diseño, y flujo de navegación.
 * [**Version editable**](/es/platform/core/key-concepts.html#editable): Es la versión que puedes modificar y previsualizar de los elementos versionados.
 * [**Variables globales**](/es/platform/core/key-concepts.html#variables-globales): Son elementos que puedes definir de forma global y reutilizarlos en distintos sitios.
 * [**Versión programada**](/es/platform/core/key-concepts.html#programado): Es la versión que está lista para pasar ser publicada en una fecha y hora determinada.
 * [**Versión publicada**](/es/platform/core/key-concepts.html#publicado): Es la versión visible o productiva de los elementos versionados. Esta versión no se pude modificar.
 * [**Versión de respaldo**](/es/platform/core/key-concepts.html#respaldos): Son las versiones que han sido publicadas anteriormente.
-* [**Webhook**](/es/platform/core/integrations#webhooks): Envía información de forma automática a un sistema externo cuando ocurre un evento determinado.
+* [**Webhook**](/es/platform/core/webhooks.html): Envía información de forma automática a un sistema externo cuando ocurre un evento determinado.
 
 
 #### Modyo Content

@@ -20,7 +20,7 @@ This widget includes features for two similar products: Transfer to Third Party 
 
 ### Transfer between Accounts
 
-| Feature            | Description                                                                                                                                          |
+| Description            | Investor Profile Survey                                                                                                                                          |
 |:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Origin Account  | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred. |
 | Destination Account | Select the recipient account to which the money will be transferred and deposited.                                                                                                   |
@@ -29,7 +29,7 @@ This widget includes features for two similar products: Transfer to Third Party 
 
 ### Third-party Transfers
 
-| Feature      | Description                                                                                                                                                                                                    |
+| Description      | Investor Profile Survey                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Origin Account   | Select the origin account from which money will be withdrawn and transferred. It also displays the available balance that can be transferred.                |
 | Destination Account  | Select the account to which the money will be transferred and deposited.                                       |

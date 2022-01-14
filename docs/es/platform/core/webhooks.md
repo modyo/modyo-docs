@@ -123,3 +123,5 @@ Una vez creado el webhook, podrás enviar una notificación de prueba con inform
    "trigger_entry_space_uid":"space-test"
 }
 ```
+
+Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.

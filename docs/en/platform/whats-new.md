@@ -4,7 +4,7 @@ search: true
 
 # What's new in Modyo?
 
-Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform. They represent a great evolution compared to previous versions in terms of performance, modularity, availability and functionalities that enable better control and management of the digital customer experience. 
+Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform and represent a major evolution from previous versions in terms of performance, modularity, availability, and features that allow for improved control and management of the digital customer experience. 
 
 In this new platform version, we highlight the following improvements and new features.
 
@@ -41,3 +41,11 @@ Modyo 9.0 improves upon user management by completely separating users in the fr
 Modyo now has native support for Progressive Web Application enablers, allowing you to improve your users' experience when they have intermittency or lose their connection.
 
 Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittency or bad network connections, and can be installed by the user without the need of an app store.
+
+### New rich text editor
+
+Modyo now uses the rich text editor Froala. This text editor allows you to develop content in an instant as well as paste the text from your documents while maintaining the same format.
+
+### Content Pages
+
+Modyo now changes the way you use content views. An automatic migration will be performed in Modyo 9.2 to move your content views from [Templates](/en/channels/templates) to the Pages section. You can now create widget or content pages from the same place. To learn more, see [Content Pages](/en/channels/pages#content-pages).

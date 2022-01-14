@@ -6,7 +6,7 @@ search: true
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
-This is where you work to create sites and web-based applications within the platform. Building in Sites focuses on all the development, design and navigation flow and structure. If you want to add content to a site or web-based application, you must first create content in the [Content](/en/platform/content/) section.
+This is where you need to go to create digital channels within the platform. In this case, the operation of sites involves all the development, design, and navigation flow. If you want to add content to each of them, it must be added in the [Content](/en/platform/content/) section.
 
 Upon entering, you will see that there are 4 statuses:
 
@@ -22,39 +22,25 @@ To create a site, you just have to click on the **New** tab, which will allow yo
 
 After that, you can see it with the status "Enabled", which means that it is online to work.
 
-:::warning Attention
-In the site index, you will only be able to see sites where you are part of the team with a designated role.
-:::
-
-## Review and joint publication
-
-You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
-
-If you want to publish multiple elements in a single step, click the "Publish" button on pages, navigation, widgets or templates and just mark all items you want to publish in the list and then press the publish button.
-
 :::warning Warning
-All the elements with changes that have not been published will appear in the list. If an element does not appear in the list, it is very probable that it still does not have any pending changes to be published.
-
-If you have team review enabled, only the items that are already approved will appear in the list.
-
-In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force publish" option, allowing the element to go directly to the published view.
+In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
 ## Site settings
 
-Site settings allow you to configure various options of your site, such as set up its visibility depending on whether the user is a visitor, customer with a session, a developer or an administrator. In addition, you can modify options that allow us to improve your site's appearance in search engines and the visibility of some of the content that the public has access to when they reach your pages.
+Site settings allow you to open platform options, so that it is viewed differently by visitors, customers, developers, and site administrators. Additionally, you can modify options to improve the appearance in search engines and the visibility of some of the data that the public has access to when they reach the pages.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
 ### General
 
-Within this section, you can configure the following data:
+Within this section you can configure the following data:
 
 - **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
 - **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
-- **Team Review**: This is an important review system with [its own separate explanation](/en/platform/core/key-concepts.html).
+- **[Team Review](/en/platform/core/key-concepts.html)**
 - **Time Zone**: Selects the time zone that your date and time fields use within your site.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
@@ -62,7 +48,7 @@ Within this section, you can configure the following data:
 - **Delete**: This option allows you to permanently delete a site and all its elements.
 
 :::danger Danger
-This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the site. You will have to enter the textual name of the site you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the site or its elements again.
+Deleting is irreversible, be careful when executing this action. When you press the delete button, the system will ask you for the name of the site. You'll need to enter the text name of the site you're deleting before you can execute the action. Once the action is confirmed, you will not be able to access the site or its items again.
 :::
 
 #### Google Tag Manager
@@ -97,20 +83,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 ```liquid
 {% if site.tag_manager_id != '' %}
 
- <!-- Google Tag Manager (noscript) --> 
+<!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.tag_manager_id }}" height="0" width="0"
 style="display:none;visibility:hidden">
 </iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) --> 
+<!-- End Google Tag Manager (noscript) -->
 
 {% endif %}
 ```
 
 With this ready, when there's a value associated with the **Google Tag Manager Identifier** field in the General site settings, the scripts will be automatically injected and you'll be able to start creating events in Google Tag Manager to record your users' actions.
 
-### PWA
+#### Privacy
+
+<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+Restrictions allow you to configure the privacy of your site.
+
+- If the privacy level is set to public, then it is visible to everyone.
+- If the privacy level is set to private, then this site is only visible to users with an active session.
+- If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
+- If you reach a URL that does not exist within the site, you will receive a 404 response by default, but if you check this option, instead of receiving a 404, you will be redirected to the home page.
+
+
+## SEO
+
+<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+SEO (Search Engine Optimization) is the key to appearing in different search engines. Users rely on a good SEO setup to get to the site.
+
+The options listed in this section help improve your SEO across a particular channel:
+
+- **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
+- **Keywords**: Associated words relevant to your site that users search for that appear in the keywords meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines.
+- **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on particular pages and content.
+- **Robots.txt**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by "disallowing" or "allowing" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
+
+:::tip Tip
+The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
+:::
+
+- **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
+
+:::tip Tip
+When you add a meta tag to all pages through your site's SEO settings, it will be added to the editable version of all pages so you'll have to publish each page for the new meta tags to take effect on your site.
+:::
+
+:::warning Warning
+Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
+:::
+
+## PWA
 
 Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
 
@@ -124,7 +149,7 @@ The purpose of the manifest is to indicate how you want a browser to display you
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest should be implemented on every page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the ```head``` snippet.
+The manifest must be implemented on each page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the snippet ``head``.
 
 The manifest can be created and modified in the following field, allowing you to add changes without having to leave the view.
 
@@ -155,45 +180,7 @@ If the Service Worker is disabled, the page will continue to run only with its b
 If the code is not customized or saved, the site will not have the features you are designing.
 :::
 
-### SEO
-
-<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
-
-SEO (Search Engine Optimization) is key to high-ranking pages in your channels across various search engines. Good SEO depends on whether users reach your site through these search engines. SEO is a large topic, but at a general site/digital channel level, there are a few important configurations to consider.
-
-The options listed in this section help improve your SEO across a particular channel:
-
-- **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
-- **Keywords**: Associated words relevant to your site that users search for that appear in the keywords meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines.
-- **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on particular pages and content.
-- **Robots.txt**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by "disallowing" or "allowing" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
-
-:::tip Tip
-The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
-:::
-
-- **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
-
-:::tip Tip
-By adding a meta tag to all pages through the site's SEO settings, it will be added to the editable version of all pages. This means that you will have to publish each page for the new meta tags to take effect on the site.
-:::
-
-:::warning Warning
-Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
-:::
-
-### Restrictions
-
-<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
-
-Restrictions allow you to configure the privacy of your site.
-
-- If the privacy level is set to public, then it is visible to everyone.
-- If the privacy level is set to private, then this site is only visible to users with an active session (authenticated login).
-- If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
-- If you reach a URL that does not exist within the site, you will receive a 404 response by default, but if you check this option, instead of receiving a 404, you will be redirected to the home page.
-
-### Domains
+## Domains
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -275,21 +262,90 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 </tr></table>
 :::
 
-### Site variables
+## Stages
 
-Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can create site-specific variables or overwrite the value of a global variable already created with a site-specific value
+Adding stages to your site allows you to work on new features for your site without modifying what's already published.
 
-### Team Members
+The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use variables, widgets, and local templates to customize the experience or visualize changes. Upon completion of changes within a stage, they can be synchronized from the `main` stage.
+
+:::warning Attention
+When using stages, custom PWAs, and redirects will be disabled. You can only use these in the `main` stage.
+:::
+
+### Add a new stage
+
+<img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
+
+To add a new stage to your site, follow these steps:
+
+1. From the side menu, click **Channels**, then select your **Site**.
+1. Expand **Site Settings**, click on **Stages**.
+1. Click on **+ New Stage**
+1. Select what the base of the stage and type the name.
+1. Click **Create**.
+
+
+:::tip Tip
+When you have more than one stage on your site, the **Overview** page will now display the details of the current stage and a button to synchronize changes between stages.
+
+In the sidebar you can see which stage you are currently in and when you click on the dropdown, it will display a list of all the stages of your site.
+:::
+
+### Synchronize a stage
+
+Once you've finished your tests on your stage, make sure you sync them to `main`. On the synchronizations screen, you will be able to see all the changes that were made between the two selected stages by clicking on _View_.
+
+<img src="/assets/img/channels/sites/sync-stage.jpg"/>
+
+To synchronize a stage, follow these steps:
+
+1. From the side menu, click **Channels**, then select your **Site**.
+1. In **Overview**, in the**Synchronization** section, select the stage you want to synchronize.
+1. In the window that appears, you will see all the items with differences between the selected stages. Click _View_ to see the details of what changed.
+1. Select the items you want to sync.
+1. Click **Synchronize**.
+
+:::tip Tip
+When you click on sync, you will be able to select which changes to take from another stage. That is, if you want to sync changes to `main`, you must be in `main` when you click sync.
+:::
+
+:::warning Warning
+You will receive an alert if you try to sync changes that haven't been published yet.
+:::
+
+
+## Team Review
+
+You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
+
+If you want to publish multiple items in one step, you must press the “Publish” button from the pages, navigation, widgets, or templates and you must mark all the items you want to publish in the list and then press the button to publish again.
+
+:::warning Warning
+All items that have pending changes to be published will appear in the list, if any item does not appear in the list, it's because it has no changes yet to publish.
+
+If you have team review enabled, only the items that are already approved will appear in the list.
+
+In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force publish" option, allowing the element to go directly to the published view.
+:::
+
+## Team Members
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. These roles start with editing privileges, and can expand to include reviewing, publishing, and configuring site settings.
+The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role just includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
 
 To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
-To add a user to the Site, select the primary button **+ New** in the upper right of the view. In the modal that appears, search for and select from among the list of eligible users. Once selected, assign them one of three roles (Developer, Reviewer, Admin), and then press **Create**.
+### Add a new member
+To add a new member to your site, follow these steps:
 
-You can modify the role of any of team member by clicking their name. In the modal that apepars, select a new role from the drop down, then press **Save** to confirm the change.
+1. From the Modyo Platform main menu, expand Channels, and click your site.
+1. Expand **Site Settings** and click **Team Members**.
+1. Click the **+ Add Member** button.
+1. Find the user you want to add to your site and select a role.
+1. Click **Add**.
+
+You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
 To remove a team member, click the checkbox next to their name, and then the **Delete** button that appears at the bottom of the page.
 
@@ -304,13 +360,13 @@ The available roles are:
 
 Developers are in charge of the structural development of resources, design and the creation of or integration with content. Everything developers do has to go to review, or be directly published by a higher role.
 
-Developers cannot publish, delete, restore resources to previous versions (Rollback) or make changes to the site settings.
+This user cannot publish, delete, revert to previous versions of resources (Rollback), or change settings.
 
 There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
 
 #### Reviewer
 
-Reviewers correct the work done by Developers, approving or rejecting their changes, and then publishing.
+They review the work done by Developers, approving or discarding what is already done and then publish the changes.
 
 Reviewers cannot edit the Site settings.
 
@@ -322,7 +378,7 @@ This team member is different from the account-level Default Admin. A site Admin
 
 If necessary, users from the site who already have existing roles can be deleted. To do this, just click the user and the Delete action.
 
-### Custom redirects
+## Custom redirects
 
 Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
@@ -341,7 +397,7 @@ The required columns to import redirects are origin y destination.
 
 You can select a 301 or 302 response code for all elements without having to add an additional column.
 
-Along with the above, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
+Also, you should keep in mind that if you are importing a redirect with an origin that has already been registered, you will not be able to start the import process. You will have to modify your CSV file and delete the row whose origin already exists, or delete the custom redirect record of the site whose origin you are trying to import.
 :::
 
 The precedence of locations on Modyo sites is as follows:
@@ -349,13 +405,13 @@ The precedence of locations on Modyo sites is as follows:
 1. [Default views (Home, search)](/en/platform/channels/templates.html)
 1. [Pages](/en/platform/channels/pages.html)
 1. [Custom content views](/en/platform/channels/templates.html#content-views)
-1. Custom Redirects
+1. Custom redirects
 1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
 
 ## Security headers
 
-Configure your HTTP security headers by enabling this module for your site.
-This action cannot be undone, but when enabled you have full control of which headers you want to use.
+Configure HTTP security headers by enabling this module for your site.
+This action cannot be undone. When enabled, you'll have full control over the headers you want to use.
 
 ### HTTP Strict Transport Security (HSTS)
 
@@ -379,7 +435,7 @@ The `Referer` _header_ contains information about the previous web page that is 
 
 ### X-Frame-Options
 
-It indicates if your site should be allowed to be rendered in a `frame`, `iframe`, `embed` or `object`.
+Indicate whether your site can be included in a `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
 * **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
@@ -389,14 +445,15 @@ It indicates that _MIME types_ announced in the _header_ `Content-Type` must be 
 
 ### Content-Security-Policy
 
-It controls which resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
-Freely specify your content security policy in the text area; for a comprehensive guide on how to write your policy, see [MDN Content Security Policy (CSP)] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
+
+Freely specify your content security policy in the text area; for a complete guide on how to write your policy, see [MDN Content Security Policy (CSP)](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Warning
-A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
+A very strict value can interfere with features such as [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html), and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-A policy that's ready for production must ensure that all the resources, such as images and stylesheets, are loaded from trusted sources, and require that all scripts are safe and trusted by the application. For example, a strict policy for the _minimal template_ would look like this:
+A production-friendly policy must ensure that all assets, such as images and style sheets, are loaded from trusted sources and requires that all scripts be safe and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
@@ -410,7 +467,7 @@ If you have the nonce present in your policy then you can add the `script` and `
 
 ```liquid
 <script nonce="{{csp_nonce}}">
-  alert("todo va a estar bien");
+  alert("everything will be ok");
 </script>
 ```
 
@@ -430,3 +487,29 @@ It prevents pages from loading when the browser detects a _cross-site scripting_
 * **0**: Disable XSS _filtering_.
 * **1**: Enable XSS _filtering_, removing the unsafe parts.
 * **1; mode=block**: Enable XSS _filtering_, preventing the _page rendering_.
+
+## Site variables
+
+Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
+
+Using variables allows you to reuse HTML, JS, CSS, or text across different sites, widgets, or templates. If you have code that you use repeatedly in different parts of your account, you can assign this value to a variable and thus simplify your processes. When you edit the value of the variable, this will be reflected everywhere the variable is currently used.
+
+:::tip Tip
+You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
+
+To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.Name}}` </span> 
+:::
+
+### Create a variable in sites
+
+To create a variable in sites, follow these steps:
+
+1. From the main side menu, click on **Channels**, then select your **Site**.
+1. Under **Site settings**, click **Site variables**.
+1. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code in Liquid markup. Click **+ New Variable**.
+1. Fill in the **Name** and **Value** of the variable.
+1. Click **Save**.
+
+:::warning Warning
+When using variables, variables defined at the lowest level will always be preferred, with variables defined in the widget first, then those defined in the site, and finally variables defined at the account level, so be careful when defining variables in widgets or the site with the same name as account variables.
+:::

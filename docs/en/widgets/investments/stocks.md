@@ -16,7 +16,7 @@ modyo-cli get modyo-widgets-investments-stocks
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/investments/stocks" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Feature          | Description                                                                                                                                                                                                                                                    |
+| Description          | Investor Profile Survey                                                                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Stock Layout     | Shows the set of available tradable stocks. Displays a list of transactions in transit associated with the stocks. Displays market information for specific stocks. Allows clients to cancel transactions in transit, if necessary. |
 | Market Information | Shows the information available for a stock, such as the growth, market peaks, amount traded, latest price, and possible institution-specific documents. Allows the user to buy or sell a selected stock.                               |

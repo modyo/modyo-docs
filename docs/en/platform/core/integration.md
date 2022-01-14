@@ -5,17 +5,17 @@ search: true
 # Integrations
 DXP systems play a key role in any digital transformation strategy. Its ability to take control of the main channels of communication with customers and collaborators require a robust integration strategy towards the rest of the ecosystem of business applications that are part of each strategy.
 
-The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, allows to adapt to different challenges. Unlike monolithic platforms that sought to have an internal response to each issue, the [Next Generation DXPs](https://www.modyo.com/platform) privilege integration with specialized platforms rather than offering full functionality. This translates into lighter platforms and adaptable to every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities, thereby lowering total operating and infrastructure costs, by scaling only the resources that require it.
+The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, allows us to adapt to different challenges. Unlike monolithic platforms that sought to have an internal answer to each issue, [Next Generation DXPs](https://www.modyo.com/en/platform) prioritize integration with specialized platforms rather than offering full functionality. This translates into lighter platforms that are adaptable to every need, allowing organizations to choose within the ecosystem, the best solutions that suit their specific needs. All of this results in lowering total operating and infrastructure costs by scaling only the resources that require it.
 
 ## Platform Integrations
-Platform integrations correspond to all those integrations that are established by Modyo directly and without requiring large developments. These integrations respond to different purposes depending on the context in which they are used, but mostly relate to the user's profile and communication with users.
+Platform integrations correspond to all those integrations that are established by Modyo directly and without requiring major developments. These integrations serve different purposes depending on the context in which they are used, but most of them relate to the profile of users and the communication with them.
 
 The most relevant platform integrations are reviewed below.
 
 ### Integration with CRMs and CDPs
 Customer Relationship Management (CRM) and Customer Data Platform (CDP) systems manage customer data interconnected to different business applications to provide a unified view of customer behavior. 
 
-Modyo Customers is the application within Modyo where the actions and business events of authenticated users converge, carried out on the different digital channels managed by the platform. Modyo Customers allows you to segment audiences, using both user behavior information and data in their profiles. It is precisely the latter that can be enriched by integrating systems such as CRMs and CDPs. To perform this type of integration, we make use of the Modyo Customers administrative API, which allows you to obtain the information of users in Modyo as well as update the attributes of these users if required. In addition, this API allows the execution of administrative tasks such as creating new users or disabling them on the platform.
+[Modyo Customers](https://docs.modyo.com/en/platform/customers/) is the application within Modyo where the actions and business events of authenticated users, carried out on the different digital channels managed by the platform, converge. Modyo Customers allows you to segment audiences, using both information about user behavior and the data in their profiles. It is precisely the latter that can be enriched by integrating systems such as CRMs and CDPs. To carry out this type of integration, the Modyo Customers administrative API is used, which allows users to obtain information in Modyo as well as update their attributes if required. In addition, this API allows the execution of administrative tasks such as creating new users or deactivating them on the platform.
 
 The Modyo Administrative API requires a valid authentication token on behalf of an administrator user, who must have sufficient permissions to perform the tasks you want to automate.
 
@@ -23,21 +23,35 @@ The Modyo Customers API can also be used to keep records up to date with other b
 
 
 ### Integration with SSO
-Single Sign On (SSO) systems are a key part of Modyo's DXP integration strategy into business systems.
+Single Sign-On (SSO) systems are a key part of Modyo's DXP integration strategy into business systems.
 
 Currently, the platform supports integration into SSO systems in two ways:
 - Integration of administrators user accounts
 - Integration of end-user accounts
 
-For integration with management accounts, Modyo has native support for LDAP, SAML, OAuth 2.0, OIDC, and Google Workspace.
+In the case of integration with management accounts, Modyo has native support for:
+* LDAP
+* SAML
+* OAuth 2.0
+* OIDC
+* Google Workspace.
 
-For integration with user accounts, Modyo has native support for OAuth 2.0, OIDC, and Google Workspace.
+In the case of user account integration, Modyo has native support for:
+* OAuth 2.0
+* OIDC
+* Google Workspace.
 
 
 ### Integration with messaging
 Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a Realm in Modyo Customers.
 
-We currently support email messaging channels, SMS, Whatsapp for Business, Web Push, Push, and notifications in the Web application.
+We currently support the following messaging channels:
+* Email
+* SMS 
+* Whatsapp for Business
+* Web Push
+* Push
+* Web application notifications.
 
 Integration microservices can also send notifications to users and track users using the Modyo Customers messaging API.
 
@@ -100,7 +114,7 @@ Product management tools are implemented using Javascript codes that are install
 - Hotjar
 
 ### Safety and Performance Tools
-Security and performance tools are implemented in a very similar way to analytics and product management, but unlike these, the focus is focused on capturing experience in terms of performance, detection of Javascript errors in the browser, and compliance with service levels. In this category we can mention tools such as:
+Security and performance tools are implemented much like analytics and product management tools, but unlike these, the focus is on capturing experience in terms of performance, detecting Javascript errors in the browser, and service level compliance. In this category we can mention tools such as:
 - NewRelic Browser
 - Dynatrace RUM
 - Elastic Observability

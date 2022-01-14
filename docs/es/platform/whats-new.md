@@ -4,7 +4,7 @@ search: true
 
 # ¿Qué hay de nuevo en Modyo?
 
-Modyo Cloud y Modyo Enterprise Cloud versión 9 corresponden a las últimas versiones de la plataforma y representan una gran evolución con respecto a las versiones anteriores en cuanto a rendimiento, modularidad, disponibilidad y funcionalidades que permiten mejorar el control y la gestión de la experiencia digital de los clientes. 
+Modyo Cloud y Modyo Enterprise Cloud versión 9 corresponden a las últimas versiones de la plataforma y representan una gran evolución con respecto a las versiones anteriores en cuanto a rendimiento, modularidad, disponibilidad, y funcionalidades que permiten mejorar el control y la gestión de la experiencia digital de los clientes. 
 
 En esta nueva versión de plataforma, destacamos las siguientes mejoras y nuevas funcionalidades.
 
@@ -41,3 +41,11 @@ Modyo 9.0 mejora la gestión de los usuarios separando completamente a los usuar
 Modyo ahora tiene soporte nativo para los habilitadores de Progressive Web Application, lo que te permite mejorar la experiencia de tus usuarios cuando tienen intermitencia o pierden la conexión.
 
 Modyo ahora tiene soporte nativo para Aplicaciones Web Progresivas, que te permiten mejorar la experiencia de tus usuarios al proveer canales digitales que pre-cachéan recursos clave. Esto hace posible cargar instantáneamente experiencias confiables rápidamente sin importar las conexiones de red intermitentes o malas, y pueden ser instaladas por el usuario sin necesidad de una tienda de aplicaciones.
+
+### Nuevo editor de texto enriquecido
+
+Modyo ahora usa el editor de texto enriquecido Froala. Este editor de texto te permite desarrollar contenido en un instante así como también pegar el texto de tus documentos manteniendo el mismo formato.
+
+### Content Pages
+
+Modyo ahora cambia la manera en la que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/channels/templates) hacia la sección de Pages. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Content Pages](/es/channels/pages#content-pages).

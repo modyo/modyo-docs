@@ -4,10 +4,10 @@ search: true
 
 # About retail banking
 
-Widgets are what allow you to create self-contained _micro frontends_ for your sites and applications.
+Widgets allow you to create encapsulated _micro frontends_ for your sites and applications.
 
-When you enter the **Widgets** section of your site, you will see a list of all the widgets that have been created. In the top bar, you can filter the list of widgets by status, author or tags, or do a text search by the widget name.
+When you enter the **Widgets** section of your site, you will see a list of all Widgets that have been created. In the top bar you can filter the list of Widgets by status, author, or tags, or do a text search by the Widget's name.
 
-In the upper right corner you will see a main button **+ New** that will allow you to create a new widget. You will need to type in a name and then enter the edit view of the widget.
+In the upper right corner you will see a main button **+ New** that will allow you to create a new Widget. You will need to type a name and then enter the Widget edit view.
 
-In the edit view of the widget, you will see the top action bar, the workspace, and the properties column.
+In the Widget edit view, you can see the top action bar, workspace, and property column.

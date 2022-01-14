@@ -22,7 +22,10 @@ Cada paso de este proceso lleva al elemento por distintos estados, que quedan re
 
 <img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios) y se configura individualmente.
+Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios).
+
+La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
+
 
 ### Configuración
 
@@ -110,7 +113,7 @@ Como mecanismo de respaldo, al momento de publicar un elemento, Modyo genera y m
 
 Esto es útil cuando, por alguna razón, se realiza un cambio indebido, entonces existe la posibilidad de revertirlo a través de la plataforma.
 
-Este sistema está disponible para Widgets, Pages, Navegación, Templates y Contenido.
+Este sistema está disponible para Widgets, Pages, Navigation, Plantillas, y Espacios.
 
 ### Versiones de los recursos
 
@@ -124,7 +127,7 @@ Esta versión es la que pasa por el proceso de revisión en equipo cuando está 
 
 Esta versión guarda el contenido visible en el sitio y es de libre disponibilidad para cualquier usuario.
 
-En este caso, recursos internos como Widgets y Templates ya se pueden usar en la creación de cualquier sitio o página.
+En este caso, recursos internos como Widgets y Plantillas ya se pueden usar en la creación de cualquier sitio o página.
 
 La versión publicada no necesariamente tiene el mismo contenido que la editable (excepto en el momento justo de la publicación), ya que puede contener cambios que estén en proceso de prueba o revisión.
 
@@ -154,7 +157,7 @@ Junto con la programación de publicación, puedes programar una despublicación
 Cuando llega el momento de ejecutar las acciones programadas es posible que Modyo se demore un par de minutos en efectuar la acción. Te enviaremos un correo cuando la acción se haya completado.
 :::
 
-Hay elementos (home, navegación y templates) que no pueden ser despublicados, y al publicarlos y programar una despublicación en conjunto con otros elementos, esta última no tendrá efecto sobre estos elementos en específico.
+Hay elementos (home, navegación, y plantillas) que no pueden ser despublicados. Si se programa una despublicación en conjunto con otros elementos, no tendrá efecto sobre estos elementos en específico.
 
 #### Aprobado
 
@@ -174,13 +177,13 @@ Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionad
 
 #### Reestablecer
 
-En este caso, el respaldo se copiará a la versión editable, por lo que se perderán todos los cambios que se hicieron posteriormente, y así podrás seguir trabajando en potenciales cambios a esa versión para volverla a publicar.
+En este caso, el respaldo se copiará a la versión editable, por lo que se perderán todos los cambios que se hicieron posteriormente, y así podrás seguir trabajando en cambios potenciales a esa versión para volverla a publicar.
 
 #### Rollback
 
-En este caso, el respaldo se copiará directamente a la versión publicada del elemento, sin tocar la versión editable.
+En este caso, el respaldo se regresa directamente a la versión publicada del elemento, sin tocar la versión editable.
 
- Esto es útil cuando se publicó algo por error, y es necesario volver a alguna de las versiones estables rápidamente, mientras se sigue trabajando en resolver los problemas que la versión con errores pudo haber tenido.
+ Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables, para que se pueda trabajar en resolver los problemas que la versión con errores pudo haber tenido.
 
 ::: danger Peligro
 Dado que esta es una acción potencialmente peligrosa, sólo los administradores de sitios o espacios tienen el permiso para poder ejecutar esta acción.
@@ -194,11 +197,11 @@ Locks es una funcionalidad de Modyo que permite modificar un recurso de manera s
 
 ### ¿Qué elementos usan Locks?
 
-Locks se usa mayoritariamente en [Contenidos](/es/platform/content/) y en [Channels](/es/platform/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/es/platform/customers/).
+Locks se usa mayoritariamente en [Content](/es/platform/content/) y en [Channels](/es/platform/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/es/platform/customers/).
 
 ### ¿Cómo usar Locks?
 
-Locks se implementa de distintas maneras dentro de la plataforma. En [Contenidos](/es/platform/content/) y [Channels](/es/platform/channels/), múltiples usuarios pueden entrar a un recurso, siendo sólo uno el que podrá editar y guardar esos cambios, mientras que los demás sólo verán la última versión guardada en la plataforma.
+Locks se implementa de distintas maneras dentro de la plataforma. En [Content](/es/platform/content/) y [Channels](/es/platform/channels/), múltiples usuarios pueden entrar a un recurso, siendo sólo uno el que podrá editar y guardar esos cambios, mientras que los demás sólo verán la última versión guardada en la plataforma.
 
 Si una segunda persona intenta hacer un cambio, le aparecerá un mensaje indicando que el elemento ya tiene cambios y que lo que está intentando modificar está obsoleto.
 
@@ -220,25 +223,25 @@ Tras tomar el control, el Administrador sólo tendrá dos horas para hacer cambi
 
 ## Modo vista previa
 
-El modo vista previa te permite previsualizar el resultado de los cambios a elementos publicables como las Entradas, Páginas, Navegación, Widgets o Templates; accesible desde la parte superior derecha con el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
+El modo vista previa te permite previsualizar el resultado de los cambios a elementos publicables como las Entradas, Pages, Navigation, Widgets o Plantillas; accesible desde la parte superior derecha con el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
 
 ![Barra de vista previa](/assets/img/platform/preview-bar.png)
 
 Los elementos con los que puedes interactuar en la barra de vista previa son:
 
-* **Selector de templates**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
+* **Selector de plantillas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
 * **Selector de contenido**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
 * **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
 * **Selector de páginas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al page builder.
 * **Selector de vista de contenido**: Este selector te permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
-* **Selector de widgets**: Si estás previsualizando páginas que contengan widgets personalizados, encontrarás una lista de los widgets que aparecen en la página, y podrás seleccionar si quieres visualizar la versión editable o publicada de cada uno de ellos. Una vez que completes la selección, haz click en el botón "refrescar" para que la configuración de los widgets tenga efecto.
+* **Selector de widgets**: Si estás previsualizando páginas que contengan widgets personalizados, encontrarás una lista de los widgets que aparecen en la página y podrás seleccionar si quieres visualizar la versión editable o publicada de cada uno de ellos. Una vez que completes la selección, haz click en el botón "refrescar" para que la configuración de los widgets tenga efecto.
 * **Pestaña para minimizar**: Te permite esconder la barra de previsualización para que no interfiera con los elementos que estén en la parte superior del sitio. Una vez minimizada, la pestaña se mantendrá visible para que puedas restaurar la barra del modo vista previa.
-* **Editar elemento**: al hacer click irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget o un template por defecto del sitio.
+* **Editar elemento**: al hacer click irás a la vista de edición del elemento que estás viendo, ya sea una entrada, una página, un widget, o una plantilla por defecto del sitio.
 * **Compartir link**: Te permite copiar un enlace que puedes compartir y quien lo abra, irá directamente al modo vista previa con la configuración al momento de copiar el link. Para poder ver el modo vista previa, basta con tener una sesión iniciada en el admin de la cuenta.
-* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejándo la pestaña en la url actual del sitio.
+* **Salir del modo vista previa**: Cierra el modo vista previa, quitando la barra y dejando la pestaña en la URL actual del sitio.
 
 :::warning Atención
-Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
+Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
 :::
 
 ## Variables globales
@@ -246,15 +249,27 @@ Cambiar el selector de contenido de la barra de preview no tendrá efecto sobre 
 Modyo cuenta con la funcionalidad para definir variables globales que puedes usar en todos los sitios donde cuentes con Liquid, de esta manera puedes, por ejemplo, compartir un _snippet_ de código entre sitios.
 
 :::tip Tip
-Puedes usar texto plano, código HTML, JavaScript y CSS dentro de las variables globales, sin embargo no puedes usar código Liquid dentro de ellas, sin embargo, debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
+Puedes usar texto plano, HTML, JavaScript, y CSS dentro de las variables globales, sin embargo no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
+
+Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup (entradas, widgets, plantillas), usa:<span v-pre>`{{vars.Nombre}}`</span>
 :::
 
-Puedes crear variables globales en la configuración de la cuenta, y puedes añadir valores para distintos idiomas. Si lo requieres, también puedes sobrescribir los valores para determinados sitios en el menú variables del sitio, en la configuración del sitio, o bien, en cada uno de los widgets personalizados del widget builder.
+### Crear una variable global
+
+Para crear una variable global, sigue esto pasos:
+
+1. Desde el menú lateral principal, haz click en **Configuración**, luego selecciona **Variables Globales**.
+1. Aquí podrás ver el listado de todas las variables globales de la cuenta, su información general, y un botón para copiar su nombre en Liquid. Haz click en **+ Nueva Variable**.
+1. Llena el **Nombre** y **Valor** de la variable.
+1. Haz click en **Guardar**.
+
+Las variables global se pueden utilizar para añadir valores para distintos idiomas. Si lo requieres, también tienes la opción de sobrescribir los valores de variables global en sitios y widgets, utilizando los apartados de [configuración del sitio](/es/platform/channels/sites.html#variables-del-sitio) y [widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget), respectivamente.
 
 :::warning Atención
-Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el nivel mas bajo, quedando primero las variables definidas en el widget, luego las definidas en el sitio y luego las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en widgets o el sitio con el mismo nombre que las variables de la cuenta.
+Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el nivel más bajo, quedando primero las variables definidas en el widget, luego las definidas en el sitio, y por último las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en widgets o el sitio con el mismo nombre que las variables de la cuenta.
 :::
 
 :::danger Peligro
-Las variables globales no cuentan con un flujo de trabajo de publicación, versionado ni revisión en equipo, y solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer un cambio en el valor de estas, este se verá reflejado inmediatamente en donde sea que se estén usando. Esto no aplica para las variables definidas en los widgets, dado que los widgets y páginas si cuentan con flujo de publicación.
+Las variables globales no cuentan con un flujo de trabajo de publicación, versionado, ni revisión en equipo. Solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer cambios en estos valores, se verán reflejados inmediatamente en todo lugar donde se estén usando. 
+Esto no aplica para las variables definidas en los widgets dado que los widgets y páginas si cuentan con flujo de publicación.
 :::

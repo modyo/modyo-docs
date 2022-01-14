@@ -15,6 +15,16 @@ module.exports = {
       description: "Bienvenido a la documentación oficial de Modyo.",
     },
   },
+  plugins: [
+    [
+    'code-switcher',
+        {
+            groups: {
+                default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
+            },
+        },
+    ],
+  ],
   head: [
     [
       "script",
@@ -70,6 +80,8 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-home",
                 "/en/platform/tutorials/how-to-create-a-custom-view",
                 "/en/platform/tutorials/how-to-create-private-site",
+                "/en/platform/tutorials/how-to-create-a-menu",
+                "/en/platform/tutorials/how-to-create-a-pwa",
               ],
             },
             {
@@ -161,6 +173,8 @@ module.exports = {
                 "/en/widgets/retail/cash-advance",
                 "/en/widgets/retail/transfer",
                 "/en/widgets/retail/transfers",
+                "/en/widgets/retail/bill-payment",
+                "/en/widgets/retail/payment-summary",
               ],
             },
             {
@@ -168,6 +182,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/en/widgets/investments/accounts",
+                "/en/widgets/investments/accounts-react",
                 "/en/widgets/investments/general-summary",
                 "/en/widgets/investments/detailed-summary",
                 "/en/widgets/investments/investments-transfers",
@@ -194,7 +209,7 @@ module.exports = {
               children: [
                 "/en/widgets/insurance-retail/summary",
                 "/en/widgets/insurance-retail/quote",
-                "/en/widgets/insurance-retail/detailed-view",
+                "/en/widgets/insurance-retail/detailed-view"
               ],
             },
           ],
@@ -255,7 +270,7 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-a-custom-view",
                 "/es/platform/tutorials/how-to-create-private-site",
                 "/es/platform/tutorials/how-to-create-a-menu",
-                "/es/platform/tutorials/conect-modyo-saleforce",
+                //"/es/platform/tutorials/conect-modyo-saleforce",
                 "/es/platform/tutorials/how-to-create-a-pwa",
               ],
             },
@@ -351,6 +366,8 @@ module.exports = {
                 "/es/widgets/retail/cash-advance",
                 "/es/widgets/retail/transfer",
                 "/es/widgets/retail/transfers",
+                "/es/widgets/retail/bill-payment",
+                "/es/widgets/retail/payment-summary",
               ],
             },
             {
@@ -358,6 +375,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/widgets/investments/accounts",
+                "/es/widgets/investments/accounts-react",
                 "/es/widgets/investments/general-summary",
                 "/es/widgets/investments/detailed-summary",
                 "/es/widgets/investments/investments-transfers",
@@ -384,7 +402,7 @@ module.exports = {
               children: [
                 "/es/widgets/insurance-retail/summary",
                 "/es/widgets/insurance-retail/quote",
-                "/es/widgets/insurance-retail/detailed-view",
+                "/es/widgets/insurance-retail/detailed-view"
               ],
             },           
           ],
