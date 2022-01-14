@@ -10,15 +10,9 @@ version: 9.2
 
 # Bienvenido a Modyo
 
-<<<<<<< HEAD
-Te damos la bienvenida a la documentación oficial de Modyo. Aquí encontrarás los puntos más relevantes de la plataforma, buenas prácticas de interacción y ejemplos de uso, entre otros temas.
-
-Hemos diseñado documentación de Modyo para ser navegada en forma de guía (de principio a fin) o resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
-=======
 Bienvenido a la documentación de la Modyo. Aquí cubriremos todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
 
 La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o para resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
->>>>>>> master
 
 :::tip Versiones anteriores
 La documentación en este sitio aplica a la última versión ( {{ $frontmatter.version }} ). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf). 
@@ -36,11 +30,7 @@ Modyo es una plataforma de experiencia digital que potencia soluciones para la i
 
 ### ¿Por qué usar Modyo?
 
-<<<<<<< HEAD
-Modyo provee un ambiente de desarrollo seguro, ya sea "On Premise" (local) o en la nube, para construir interacciones inteligentes con tus clientes. Permite crear, manejar y medir fácilmente tanto sitios públicos como privados. Grandes equipos digitales pueden agilizar la creación de contenido y componentes desarrollados para Front End de forma segura, en un ambiente que provee una amplia librería de widgets inteligentes que pueden ser conectados a diversos sistemas de su empresa.
-=======
 Modyo proveé un ambiente de desarrollo seguro, ya sea en la nube u "On Premise" (local), para construir interacciones inteligentes con tus clientes. Permite crear, manejar, y medir fácilmente tanto sitios públicos como privados. Grandes equipos digitales pueden agilizar la creación de contenido y componentes desarrollados para Front End de forma segura, en un ambiente que provee una amplia librería de widgets inteligentes que pueden ser conectados a diversos sistemas de su empresa.
->>>>>>> master
 
 ### ¿Para quién es Modyo?
 
