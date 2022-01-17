@@ -288,7 +288,7 @@ module.exports = {
                                 "/es/platform/core/security",
                                 "/es/platform/core/api",
                                 "/es/platform/core/identity-providers",
-                                "/es/platform/core/webhooks"
+                                "/es/platform/core/webhooks",
                                 {
                                     title: "Integraciones",
                                     path: "/es/platform/core/integrations/",
