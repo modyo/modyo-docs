@@ -17,6 +17,7 @@ In this tutorial we will continue to use the "Dynamic Bank" site and enable PWA 
 <div style="margin: 50px auto; text-align: center;" >
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SQwUOVyG2UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
 ## Prerequisites
 
 To start this tutorial you need to have completed the [Create a Basic Site](/en/platform/tutorials/how-to-create-home.html). As in the previous tutorials you should already know HTML, JS, and how to use the Modyo platform.

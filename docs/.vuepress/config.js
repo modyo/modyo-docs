@@ -271,6 +271,7 @@ module.exports = {
                                 "/es/platform/tutorials/how-to-create-a-custom-view",
                                 "/es/platform/tutorials/how-to-create-private-site",
                                 "/es/platform/tutorials/how-to-create-a-menu",
+                                //"/es/platform/tutorials/conect-modyo-saleforce",
                                 "/es/platform/tutorials/how-to-create-a-pwa",
                             ],
                         },
@@ -287,14 +288,14 @@ module.exports = {
                                 "/es/platform/core/security",
                                 "/es/platform/core/api",
                                 "/es/platform/core/identity-providers",
-                                "/es/platform/core/webhooks",
+                                "/es/platform/core/webhooks"
                                 {
                                     title: "Integraciones",
                                     path: "/es/platform/core/integrations/",
                                     collapsable: true,
                                     children: [
-                                        ["/es/platform/core/integrations/identity-providers", "Identity Providers"],
-                                        ["/es/platform/core/integrations/scim", "SCIM Integration with Azure AD"],
+                                        ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
+                                        ["/es/platform/core/integrations/scim", "Integración SCIM con Azure AD"],
                                     ],
                                 },
                             ],
@@ -324,6 +325,7 @@ module.exports = {
                                 "/es/platform/channels/liquid-markup",
                             ],
                         },
+
                         {
                             title: "Customers",
                             path: "/es/platform/customers/",

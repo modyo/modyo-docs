@@ -22,15 +22,12 @@
 
     <div
       class="links"
-      :style="linksWrapMaxWidth ? {
-        'max-width': linksWrapMaxWidth + 'px'
-      } : {}"
-    >
+      :style="linksWrapMaxWidth ? {'max-width': linksWrapMaxWidth + 'px'} : {}">
       <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
+        v-if="isAlgoliaSearch && $page.path !== $localePath"
         :options="algolia"
       />
-      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
+      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false && $page.path !== $localePath"/>
       <NavLinks class="can-hide"/>
     </div>
   </header>

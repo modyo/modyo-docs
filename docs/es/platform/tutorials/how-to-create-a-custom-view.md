@@ -165,6 +165,7 @@ Para crear una Vista de Contenido, sigue estos pasos:
 1. Selecciona tu sitio y haz click en **Plantillas**. 
 1. Dentro de **Vistas de Contenido**, haz click en **+**.
 
+
 <img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
 
 4. En el modal, ingresa la Ruta **beneficio**, y seleccionamos el Espacio **Bank** y Tipo **Benefits**.
@@ -225,8 +226,7 @@ Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que 
     <div class="col-12 col-md-5">
       <div class="mb-4">
         <h5 class="text-dark">Where</h5>
-        {{entry.fields['Location'] | static_map: '800x400', 15, 'roadmap',
-        'https://cloud.modyocdn.com/uploads/5fc8b46c-1f64-404c-86a0-3db703f76398/original/pin_dynamic.png'}}
+        {{entry.fields['Location'] | static_map: '800x400', 15, 'roadmap','https://cloud.modyocdn.com/uploads/5fc8b46c-1f64-404c-86a0-3db703f76398/original/pin_dynamic.png'}}
       </div>
       <div class="mb-4">
         <h5 class="text-dark">Commercial terms</h5>
@@ -238,12 +238,10 @@ Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que 
 <div class="bg-light py-5" id="benefits">
   <div class="container py-5">
     <h3 class="text-dark text-center">Related benefits</h3>
-    {% assign relateds = spaces['bank'].types['benefits'].entries | paginated: 5
-    | by_lang: 'en' %}
+    {% assign relateds = spaces['bank'].types['benefits'].entries | paginated: 5 %}
     <div class="py-5" id="productos">
       <div class="row">
-        {% assign count = 0 %} {% for related in relateds %} {% if related.slug
-        != entry.slug and 4 > count %} {% assign count = count | plus: 1 %}
+        {% assign count = 0 %} {% for related in relateds %} {% if related.slug != entry.slug and 4 > count %} {% assign count = count | plus: 1 %}
         <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
           <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ related.meta.url }}">
             <figure class="m-0">
@@ -282,6 +280,7 @@ Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que 
 ```
 
 Esta **Vista de Contenido** ahora está conectada al Espacio de **Dynamic Bank**. Con ella puedes ingresar a los datos de la Entrada desde tu Sitio utilizando Liquid.
+
 
 ## Paso 4: Previsualizar Entrada en Content
 
