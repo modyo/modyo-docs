@@ -13,7 +13,7 @@ Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Direct
 
 <img src="/assets/img/platform/scim-1-createapp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
-3. Escribe un nombre para tu aplicación y elije **Integrate any other application you don't find in the gallery**. Haz click en **Create**.
+3. Escribe un nombre para tu aplicación y elige **Integrate any other application you don't find in the gallery**. Haz click en **Create**.
 
 4. En el menú lateral, selecciona **Provisioning** y después haz click en **Get Started**.
 
@@ -60,7 +60,7 @@ Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Direct
 <img src="/assets/img/platform/scim-7-allusers.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
 12. En el menú principal de Active Directory, selecciona Grupos. 
-13. Haz click en **Nuevo group**.
+13. Haz click en **Nuevo grupo**.
 
 <img src="/assets/img/platform/scim-8-allgroups.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
@@ -71,7 +71,7 @@ Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Direct
 :::tip Tip
 Para verificar que el aprovisionamiento funciona, haz click en **Provision on demand** y selecciona un usuario.
 
-Para los grupos no existe provisionamiento "on demand", asi que hay que crear un usuario agregarlo a un grupo y poner "start provisioning", esta tarea se ejecuta cada 45 minutos, por lo que se deberia esperar este tiempo y ver reflejado los cambios en la plataforma.
+Para grupos, no existe provisionamiento "on demand", así que hay que crear un usuario agregarlo a un grupo y poner "start provisioning", esta tarea se ejecuta cada 45 minutos, por lo que se debería esperar este tiempo y ver reflejado los cambios en la plataforma.
 :::
 
 <img src="/assets/img/platform/scim-9-ondemand.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
