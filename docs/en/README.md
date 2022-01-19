@@ -3,7 +3,7 @@ home: true
 
 title: Modyo Docs
 heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
-footer: Copyright © 2008-2021 Modyo SpA
+footer: Copyright © 2008-2022 Modyo SpA
 ChannelsTitle: Channels
 ChannelsText: Empower your digital teams to build faster apps and websites. Create and reuse digital experiences across your enterprise.
 ChannelsImg: https://cloud.modyocdn.com/uploads/015ea188-f83e-4af7-8485-4530731ddc7b/original/Channels.png
