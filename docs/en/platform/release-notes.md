@@ -50,6 +50,20 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+### 9.1.36 - January 18, 2022
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Added option to specify status code in default site redirection
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* HTML injection through account name attribute is prevented in login form
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed problem when filtering by multiple field without options
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Root certificate bundle is updated
+
 ### 9.1.35 - December 29, 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>
