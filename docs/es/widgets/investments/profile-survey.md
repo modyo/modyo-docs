@@ -4,7 +4,7 @@ search: true
 
 # Encuesta perfil
 
-En este Widget, cada usuario podrá completar la encuesta de Perfil de Inversionista, para poder recibir las mejores recomendaciones en sus movimientos.
+Realiza la encuesta de Perfil de Inversionista, para poder recibir las mejores recomendaciones en sus movimientos.
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/profile-survey)
 <iframe id="widgetFrame" src="https://widgets-es.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/>

@@ -4,7 +4,7 @@ search: true
 
 # Depósitos
 
-El Widget de Abonos permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
+Permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
 
 #### Instalación:
 
