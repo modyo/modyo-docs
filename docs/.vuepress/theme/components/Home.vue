@@ -190,7 +190,7 @@
           <h5 class="text-white text-center mt-0 mb-2">{{data.communityText}}</h5>
           <div class="d-flex flex-wrap justify-content-center">
             <a :href="'https://support.modyo.com/hc/'+data.communityLang" target="_blank" class="btn btn-lg btn-primary m-3">Modyo Support</a>
-            <a :href="'https://support.modyo.com/hc/'+data.communityLang+'/community/topics/'" target="_blank" class="btn btn-lg btn-outline-primary m-3">Modyo Comunnity</a>
+            <a :href="'https://support.modyo.com/hc/'+data.communityLang+'/community/topics/'" target="_blank" class="btn btn-lg btn-outline-primary m-3">Modyo Community</a>
           </div>
         </div>
       </div>
