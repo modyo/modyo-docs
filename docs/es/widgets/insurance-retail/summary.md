@@ -16,3 +16,4 @@ modyo-cli get modyo-widgets-insurance-summary
 
 | Funcionalidad | Descripción |
 | ------------- | ----------- |
+|Resumen de seguros| Despliega el resumen de todos los seguros de la cuenta. Podrás ver la siguiente información: <ul><li>Tipo de Seguro</li><li>Número de poliza</li><li>Estatus de la poliza</li><li>Detalles de Compra</li><li>Capital de asegurado</li></ul>|
