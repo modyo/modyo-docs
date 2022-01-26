@@ -4,7 +4,7 @@ search: true
 
 # SCIM Provisioning with Microsoft Azure AD
 
-Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Directory elaborando una API compatible con SCIM.
+Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Directory usando la API compatible con SCIM que Modyo provee.
 
 #### Para crear tu aplicación en Azure Active Directory, sigue estos pasos:
 
@@ -77,5 +77,7 @@ Para grupos, no existe provisionamiento "on demand", así que hay que crear un u
 <img src="/assets/img/platform/scim-9-ondemand.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
 
+
 ### Referencias
-Para la construir un API de SCMI compatible con Azure AD, sigue esta guía de Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
+- Para la construir un API de SCMI compatible con Azure AD, sigue esta guía de Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
+- Para más información de las APIs que Modyo ofrece, ve [API de administración](https://docs.modyo.com/es/platform/core/api.html).
