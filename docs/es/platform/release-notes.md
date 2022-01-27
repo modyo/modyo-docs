@@ -5,6 +5,17 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.5 - 27 de enero de 2022
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se incorporan Content Pages
+* Se arreglan problemas con barra de preview
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Mejoras y correcciones en editor de Entries
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se agrega soporte de SCIM para usuarios administradores
+
 ### 9.2.4 - 30 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arregla problema que contaminaba el caché al realizar previsualizaciones
