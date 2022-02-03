@@ -128,6 +128,7 @@ module.exports = {
                                 "/en/platform/channels/widgets",
                                 "/en/platform/channels/templates",
                                 "/en/platform/channels/liquid-markup",
+                                "/en/platform/channels/drops",
                             ],
                         },
                         {
@@ -323,6 +324,7 @@ module.exports = {
                                 "/es/platform/channels/widgets",
                                 "/es/platform/channels/templates",
                                 "/es/platform/channels/liquid-markup",
+                                "/es/platform/channels/drops",
                             ],
                         },
 
