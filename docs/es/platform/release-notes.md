@@ -61,6 +61,14 @@ Se arregla bug con filtro con 100 o más tags en el admin
 * Editor Froala
 
 ## 9.1
+### 9.1.37 - 5 de febrero del 2022
+<Badge text="Core" type="core" vertical="middle"/>
+* Se arregla inscripción de tarjetas con OneClick API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se arreglan problemas con editor de texto multilínea
+* Se arregla problema de contaminación de cache
+
 ### 9.1.36 - 18 de enero del 2022
 
 <Badge text="Channels" type="channels" vertical="middle"/>
