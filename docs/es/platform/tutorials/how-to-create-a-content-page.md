@@ -8,7 +8,7 @@ search: true
 
 Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfocará en [Modyo Channels](/es/platform/channels) donde tu crearás una vista para poder desplegar entradas creadas en [Modyo Content](/es/platform/content).
 
-El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar. En el Tutorial de [Creación de contenido](/es/platform/tutorials/how-to-create-content), creaste el [Espacio](/es/platform/content/space) Bank, el [Tipo de contenido](/es/platform/content/types) Benefits y las [Entradas](/es/platform/content/entries). Ahora utilizarás este Tipo, pero añadiendo los campos necesarios para generar los detalle según el diseño de Figma.
+El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar. En el Tutorial de [Creación de contenido](/es/platform/tutorials/how-to-create-content), creaste el [Espacio](/es/platform/content/space) Bank, el [Tipo de contenido](/es/platform/content/types) Benefits y las [Entradas](/es/platform/content/entries). Ahora utilizarás este Tipo añadiendo los campos necesarios para generar los detalle según el diseño de Figma.
 
 En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocamos en crear, previsualizar, y publicar una entrada de tipo **Benefits** para la marca ficticia "Dynamic Cine".
 
@@ -33,7 +33,7 @@ Conocimientos de:
 ## Paso 1: Agregar campos al tipo "Benefits"
 
 1. En la plataforma, haz click en **Content**, selecciona **Espacios**.
-1. Haz click tu Espacio y selecciona **Tipos**
+1. Haz click en el Espacio **Bank** y selecciona **Tipos**
 1. Haz click en el tipo **Benefits**.
 1. En la pantalla de tipo de contenido, agrega los siguientes campos:
 
@@ -163,11 +163,11 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
 
 7. Haz click en **Guardar**.
 
-## Paso 3: Crear Content Page de Beneficios
+## Paso 3: Crear Página de Contenido "Benefits"
 
-Después de crear la entrada con su contenido, ahora tienes que crear una [Content Page](/es/platform/channels/pages.html#content-pages) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
+Después de crear la entrada con su contenido, ahora tienes que crear una [Página de contenido](/es/platform/channels/pages.html#content-pages) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
 
-Para crear una Content Page, sigue estos pasos:
+Para crear una Página de contenido, sigue estos pasos:
 
 1. En el menú lateral, selecciona **Channels**, haz click **Sitios**.
 1. Selecciona tu sitio y haz click en **Pages**.
@@ -175,15 +175,15 @@ Para crear una Content Page, sigue estos pasos:
 
 <img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;"/>
 
-4. En el modal, selecciona la opción "Página de Contenido"
-5. Selecciona el espacio  el Espacio **Bank** y Tipo **Benefits**. Define el nombre de la página y su ruta.
-6. Presiona crear
+4. En el modal, selecciona la opción **Página de Contenido**.
+5. Selecciona el espacio el Espacio **Bank** y Tipo **Benefits**. Define el nombre de la página y su ruta.
+6. Presiona crear.
 
 
 Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que viene de ejemplo:
 
 
-INDEX
+``INDEX``
 
 ```html
 <div class="mb-5" id="benefits">
@@ -208,7 +208,8 @@ INDEX
 </div>
 ```
 
-SHOW 
+``SHOW``
+ 
 ```html
 <div class="mb-5 mb-md-0 pb-5 pb-md-0" id="hero">
     <div class="bg-dark mb-5 mb-md-0 pt-5 pb-0 py-md-5">
