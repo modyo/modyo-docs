@@ -152,6 +152,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/en/widgets/retail/summary",
+                "/en/widgets/retail/account-summary",
                 "/en/widgets/retail/accounts",
                 "/en/widgets/retail/credit-cards",
                 "/en/widgets/retail/credit-card-payment",
@@ -340,6 +341,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/widgets/retail/summary",
+                "/es/widgets/retail/account-summary",
                 "/es/widgets/retail/accounts",
                 "/es/widgets/retail/credit-cards",
                 "/es/widgets/retail/credit-card-payment",
