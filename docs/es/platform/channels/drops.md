@@ -13,229 +13,235 @@ Los drops de Cuenta son utilizados principalmente en el contexto de autenticaci�
 
 ### account.url
 
-Despliega la URL de Modyo Platform, incluyendo el protocolo y sub-dominio. **(E.g. https://test.miModyo.com)**
+Despliega la URL de Modyo Platform, incluyendo el protocolo y sub-dominio.
+#### output
+```https://test.miModyo.com```
 
 ### account.host
 
-Despliega el nombre del sub-dominio de Modyo Platform. **(E.g. test)**
-
-### account.disable_modyo_credentials
-
-Deshabilita el uso de credenciales de autenticación por parte de Modyo para la página en donde se manda a llamar.
+Despliega el nombre del sub-dominio de Modyo Platform. 
+#### output
+```test```
 
 ### account.google_key
 
-Si existe autenticación con Google, despliega la llave de la credencial, de lo contrario despliega vacío (void). **(E.g AIzaSyDmuYmbFpzTdIxHycHbatJrb9ahKOfggEE)**
-
-### account.oauth2_callback_url
-
-Si existe autenticación con OAuth 2.0, despliega la URL de retorno, de lo contrario despliega vacío **(void). (E.g https://test.miModyo.com/home)**
-
-### account.oidc_callback_url
-
-Si existe autenticación con OIDC, despliega la URL de retorno, de lo contrario despliega vacío **(void). (E.g https://test.miModyo.com/home)**
-
-
+Si existe autenticación con Google, despliega la llave de la credencial, de lo contrario despliega vacío (void).
+#### output
+```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE```
 
 ## Content
 
 Despliega contenido dinámico creado en Content desde cualquier parte de tu sitio. En este objeto tienes acceso a toda información pertinente a las entradas y gestor de archivos. Los atributos disponibles son:
 
-### content.space.entries
+### space.entries
 
-Arreglo de strings que contiene todas las entradas del espacio.
+Arreglo de objetos del tipo entry que contiene todas las entries del espacio.
 
-### content.space.types
+### space.types
 
-Arreglo de strings que contiene todos los tipos del espacio.
+Arreglo de objetos del tipo type que contiene todos los tipos del espacio.
 
-### content.space.name
+### space.name
 
 Nombre del espacio.
+#### output
+```Espacio Nuevo```
 
-### content.type.entries
+### type.entries
 
-Arreglo de strings que contiene todas las entradas del tipo.
+Arreglo de objetos del tipo entries que contiene todas las entradas del tipo.
 
-### content.type.fields
+### type.fields
 
-Arreglo de strings que contiene todos los campos del tipo.
+Arreglo de objectos del tipo fields que tienen el tipo seleccionado.
 
-### content.type.name
+### type.entry
+
+El primer objecto del tipo entry que contiene el tipo seleccionado.
+
+### type.name
 
 Nombre del tipo.
+#### output
+```TipoNuevo```
 
-### content.entry
+### entry
 
 Objeto de la entrada. Contiene la información pertinente a esta entrada. También puedes encontrar esta información desde la vista previa en Content o desde la API.
 
-```json
-{
-  "meta": {
-    "uuid": "a1adb530-43c2-4c5c-9e72-891cc26a6fdb",
-    "space": "mytest",
-    "name": "helloworld",
-    "slug": "helloworld",
-    "type": "mytype",
-    "category": null,
-    "category_slug": null,
-    "category_name": null,
-    "updated_at": "2021-08-04T01:35:54.000-03:00",
-    "created_at": "2021-08-04T01:26:19.000-03:00",
-    "published_at": "2021-08-04T01:34:29.000-03:00",
-    "unpublished_at": null,
-    "tags": [],
-    "available_locales": [
-      "en"
-    ],
-    "locale": "en",
-    "targets": [],
-    "private": false,
-    "version_type": "editable",
-    "author": {}
-  }
-}
-``` 
+### entry.space
 
-### content.entry.space
+Retorna el nombre del espacio asociado a la entry
 
-El espacio de esta entrada.
+#### output
+```espacio1```
 
-### content.entry.category
+### entry.category
 
 La ruta de la categoría de esta entrada.
 
-### content.entry.category_name
+#### output
+```category-1/category-2```
+
+El espacio de esta entrada.
+
+### entry.category_name
 
 El nombre de la categoría de esta entrada.
 
-### content.entry.category_slug
+#### output
+```category 2```
+
+### entry.category_slug
 
 El slug de la categoría de esta entrada.
+#### output
+```category-2```
 
-### content.entry.type
+### entry.type
 
 El tipo de la entrada.
+#### output
+```type2```
 
-### content.entry.type_uid
+### entry.type_uid
 
 El id único del tipo de la entrada.
+#### output
+```type2```
 
-### content.entry.tags
+### entry.tags
 
 Arreglo de strings de los tags de esta entrada.
+#### output
+```tag1, tag2```
 
-### content.entry.account_url
+### entry.account_url
+Retorna la url de la cuenta
+#### output
+```https://test.miModyo.com```
 
-
-### content.entry.url
+### entry.url
 
 URL canónico de la entrada
+#### output
+```https://test.miModyo.com/entry```
 
-### content.entry.author
+### entry.author
 
-Autor de la entrada
+Retorna el onjecto user que es autor de la entrada
 
-### content.entry.meta
+### entry.meta
 
-Objeto del metadata de la entrada.
+Retorna objeto del metadata de la entrada. Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private
 
-### content.entry.fields
+### entry.fields
 
-Campos personalizados de la entrada.
+Retorna un array con objetos del tipo fields.
 
-### content.field.name
+### Field
+
+Objecto del tipo field. Contiene la información pertinente a un field.
+
+### field.name
 
 Nombre del campo personalizado.
+#### output
+```Field1```
 
-### content.field.type
+### field.type
 
-Tipo del campo personalizado.
+Nombre del type asociado al field.
+#### output
+```Type1```
 
-### content.location.location_street
+### Location
+
+Objecto del tipo location. Contiene la información pertinente a una location.
+
+### location.location_street
 
 Nombre de la ubicación como aparece en Google Maps.
+#### output
+```Main street 3883```
 
-### content.location.latitude
+### location.latitude
 
-Latitud del punto de Google Maps. //Lo encontré como location.lat en APIs
+Latitud del punto de Google Maps.
+#### output
+```-33.3982607```
 
-### content.location.longitude
+### location.longitude
 
 Longitud del punto de Google Maps. //Lo encontré como location.lon en APIs
+#### output
+```-70.6003616```
 
-### content.location.country
-
+### location.country
 País del punto en Google Maps.
 
-### content.location.administrative_area_#
+#### output
+```Mexico```
 
+### location.administrative_area_#
 Información del área administrativa del punto de Google Maps, puede incluir datos como nombre de la ciudad, estado, región, municipio, etc.
+#### output
+```Jalisco```
 
-### content.category.id
+### category.id
 
-ID de la categoría. //No la veo en APIs
+ID de la categoría. 
+#### output
+```12345```
 
-### content.category.slug
-
+### category.slug
 Slug de la categoría.
+#### output
+```category-1``
 
-### content.category.name
+### category.name
 
 Nombre de la categoría.
+#### output
+```Category 1``
 
-### content.category.url
+### category.url
 
 URL canónica de la categoría.
+#### output
+```/category-1``
 
-### content.category.children
+### category.children
 
-Objeto de la información de los hijos de la categoría. Menciona nombre, slug, hijos, y ruta.
+Array de objectos tipo category con todos los hijos de la categoria.
 
-### content.category.parent
-### content.category.siblings
-### content.category.products_url
-### content.category.support_url
-### content.category.networks_url
-### content.category.profiles_url
-### content.category.posts_url
-### content.category.promotions_url
-### content.category.albums_url
-### content.category.videos_url
-### content.category.files_url
-### content.category.audio_url
-### content.category.places_url
+### category.parent
 
-```json
-{
-  "uuid": "8f0cecf4-16a9-486e-a754-f1d8f8331ed4",
-  "url": "https://cloud.modyocdn.com/uploads/8f0cecf4-16a9-486e-a754-f1d8f8331ed4/original01_Aankh_Maare_Remix_-_O2SRK_SongsMp3_Com_.mp3",
-  "content_type": "audio/mp3",
-  "title": null,
-  "description": null,
-  "alt_text": null,
-  "tags": []
-}
-```
+Retorna objecto del tipo category correspondiente a el padre de la categoria.
 
-### content.asset.url
-### content.asset.thumbnail_url
-### content.asset.uuid
-### content.asset.data_file_name
-### content.asset.name
-### content.asset.content_type
-### content.asset.title
-### content.asset.alt
-### content.asset.size
-### content.asset.description
-### content.audio_asset.url
-### content.file_asset.url
-### content.file_asset.thumbnail_url
-### content.file_asset.image_thumbnail_url
-### content.file_asset.pdf_thumbnail_url
-### content.file_asset.is_image
-### content.file_asset.is_video
-### content.file_asset.is_audio
+### category.siblings
+
+Array de objectos tipo category con todos los hijos de la categoria.
+
+
+### asset.url
+### asset.thumbnail_url
+### asset.uuid
+### asset.data_file_name
+### asset.name
+### asset.content_type
+### asset.title
+### asset.alt
+### asset.size
+### asset.description
+### audio_asset.url
+### file_asset.url
+### file_asset.thumbnail_url
+### file_asset.image_thumbnail_url
+### file_asset.pdf_thumbnail_url
+### file_asset.is_image
+### file_asset.is_video
+### file_asset.is_audio
 ### content.file_asset.is_pdf
 ### content.file_asset.is_another
 ### content.file_asset.temp_url
