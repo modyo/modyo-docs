@@ -132,7 +132,7 @@ Backups are previously published versions of the items. That is, every time we p
 
 If you want to review a particular version of an item, you can go to the "Differences between versions" section, so you can see the changes that have been made and revert them when necessary.
 
-::: warning Warning
+:::warning Warning
 By default, Modyo saves the last 20 published versions (`MAX_BACKUPS`) of each item, so by making the twenty-first publication, you will be deleting the backup from the first publication of the item.
 
 This value can be modified using environment variables and is common for all accounts in that environment.
@@ -233,11 +233,11 @@ The elements you can interact with in the preview bar are:
 * **Minimize tab**: Allows you to hide the preview bar so that it does not interfere with the elements at the top of the site. Once minimized, the tab will remain visible so you can restore the preview mode bar.
 * **Edit Item**: Clicking this will take you to the edit view of the item you're viewing, whether it's a post, a page, a widget, or a default site template.
 * **Share link**: Allows you to copy a link that you can share and whoever opens it will go directly to preview mode with the settings used at the time of copying the link. To be able to see the preview mode, you only need to be logged in as the account's admin.
-* **Exit Preview Mode**: Close the preview mode, removing the slash and leaving the tab at the current URL of the site.
+* **Exit Preview Mode**: Close the preview mode, removing the bar and leaving the tab at the current URL of the site.
 
-። :warning Attention
-Changing the content selector of the preview bar will have no effect on the content you're using via the JavaScript SDK or Content API. It will only have an effect on content that is used through the Liquid SDK.
-።:
+:::warning Warning
+Changing the content selector of the preview bar will have no effect on the content you're using via the JavaScript SDK or Content API. It will only have an effect on content that is used through Liquid SDK.
+:::
 
 ## Global variables
 
@@ -246,19 +246,19 @@ Modyo allows you to define global variables that you can use in all the sites wh
 :::tip Tip
 You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
 
-To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre> `{{vars.name}}` </span> 
-።:
+To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre> `{{vars.Name}}` </span> 
+:::
 
 ### Create a global variable
 
 To create a global variable, follow these steps:
 
-1. From the main side menu, click on **Settings**, then select **Global Variables**.
-1. Here you can see the list of all global variables in the account, their general information, and a button to copy their name into Liquid. Click **+ New Variable**.
+1. From the main side menu, click on **Settings**, then select **Global variables**.
+1. Here you can see the list of all global variables in the account, their general information, and a button to copy their code in Liquid. Click **+ New Variable**.
 1. Fill in the **Name** and **Value** of the variable.
 1. Click **Save**.
 
-Global variables can be used to add values for different languages. If required, you also have the option to overwrite global variable values in sites and widgets, using the [site settings] (/es/platform/channels/sites.html #variables -the-site) and [custom widgets] (/es/platform/channels/widgets.html #variables -the-widget) sections, respectively.
+Global variables can be used to add values for different languages. If required, you also have the option to overwrite global variable values in sites and widgets, using the [site settings](/en/platform/channels/sites.html#site-variables) and [custom widgets](/en/platform/channels/widgets.html#widget-variables) sections, respectively.
 
 :::warning Warning
 When using global variables, the variables defined at the deepest level will always be taken if they exist, with variables defined in the widget first, then those defined in the site, and finally the variables defined at the account level, be careful when defining variables in widgets or in the site with the same name as the variables in the account.

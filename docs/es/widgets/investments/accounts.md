@@ -22,5 +22,42 @@ modyo-cli get modyo-widgets-investments-accounts
 | Cuenta de Inversión              | Concentra toda la información asociada a una cuenta de inversión específica, presentando los datos de manera numérica y gráfica. Incluye una zona con los Dividendos Pagados al día de la consulta y otra para las acciones en cartera. Permite configurar la Cuenta, ver el Detalle de las Inversiones, obtener las Cartolas, Transferir, y Abonar a la Cuenta.                                                                                           |
 | Configuración Cuenta             | Permite definir un nombre para la cuenta de inversión, además de configurar el envío de información por correo electrónico para las cartolas y las confirmaciones de compra/venta de instrumentos de inversión (acciones, fondos mutuos, etc.).                                                                                                                                                                                                           |
 | Cartolas / Extractos             | Muestra la lista de cartolas que se quieren revisar dentro de un rango de fechas configurable. Las cartolas aparecen como PDFs que se pueden descargar y visualizar.                                                                                                                                                                                                                                                                                      |
-| Detalle de Cuenta                | Presenta una lista con los tipos de instrumentos que existen en la cuenta de inversión. Incluye un resumen de todos los instrumentos específicos que corresponden al tipo de inversión seleccionado. Muestra información de custodia, precios, y distribución de las inversiones. A través de los resúmenes, se puede revisar el detalle con el histórico de las operaciones. Permite ver los movimientos asociados a la caja de la cuenta de inversiones. |
-| Movimientos en Detalle de Cuenta | Entrega un conjunto de opciones que permite seleccionar período y tipos de movimientos, incluyendo los movimientos en tránsito. Muestra los movimientos específicos y su detalle, además de todas las operaciones que están en vuelo y que aún no finalizan.                                                                                                                                                                                               |
+| Detalle de Cuenta                | Presenta una lista con los tipos de instrumentos que existen en la cuenta de inversión. Incluye un resumen de todos los instrumentos específicos que corresponden al tipo de inversión seleccionado. Muestra información de custodia, precios y distribución de las inversiones. A través de los resúmenes, se puede revisar el detalle con el histórico de las operaciones. Permite ver los movimientos asociados a la caja de la cuenta de inversiones. |
+| Movimientos en Detalle de Cuenta | Entrega un conjunto de opciones que permite seleccionar período y tipos de movimientos, incluidos los movimientos en tránsito. Muestra los movimientos específicos y su detalle, además de todas las operaciones que están en vuelo y que aún no finalizan.                                                                                                                                                                                               |
+
+<script>
+
+  export default {
+    mounted() {
+
+      function setIframeHeightCO(id, ht) {
+          var ifrm = document.getElementById(id);
+          if(ifrm) {
+            ifrm.style.height = ht + 4 + "px";
+          }
+      }
+      // iframed document sends its height using postMessage
+      function handleDocHeightMsg(e) {
+          // check origin
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
+              // parse data
+              var data = JSON.parse( e.data );
+
+              console.log('data:', data)
+              // check data object
+              if ( data['docHeight'] ) {
+                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
+              } else {
+                  setIframeHeightCO( 'widgetFrame', 700 );
+              }
+          }
+      }
+
+      // assign message handler
+      if ( window.addEventListener ) {
+          window.addEventListener('message', handleDocHeightMsg, false);
+      }
+    }
+  }
+
+</script>

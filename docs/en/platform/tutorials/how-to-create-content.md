@@ -6,11 +6,11 @@ search: true
 
 ## Introduction
 
-Welcome to the first tutorial of the Modyo training series. In this first tutorial, we'll review everything you need to know to create and publish content using [Modyo Content](/en/platform/content), an indispensable tool for managing dynamic and cross-platform sites.
+Welcome to the first tutorial in the Modyo training series. In this tutorial, you'll create and publish content using [Modyo Content](/en/platform/content), the Modyo tool for managing dynamic, cross-platform sites.
 
 ### Dynamic Bank
 
-Dynamic Bank is our fictitious brand that we created to use in all our demos and tutorials. With Dynamic Bank we tried to recreate the experience of building digital products with Modyo in the most credible way.
+Dynamic Bank is our fictional brand that we built to use in all our demos and tutorials. With Dynamic Bank you can live the experience of building digital products with Modyo.
 
 Once you complete this tutorial series, your project should look like this:
 
@@ -20,13 +20,23 @@ Once you complete this tutorial series, your project should look like this:
 
 ## Prerequisites
 
-To complete the steps in this tutorial, you must have only one active account in Modyo. As it's the first tutorial in the series, it does not require you to have previously completed any others.
+You only need to have a Modyo account and have access to the platform. Don't have an account? You can request one with the platform administrator at your company, or request a trial [here](https://platform.modyo.cloud/onboarding).
 
-Don't have a Modyo account? You can request an account from your company's platform administrator, or create a trial account just for you from [here](https://platform.modyo.cloud/onboarding).
+## Step 1: Create a Space
 
-## Step 1: Create a Content Space
+Once you log in to Modyo with your account, we'll go to the [Modyo Content](/en/platform/content) module to create our first [Space](/en/platform/content/spaces.html#create-a-space). A Space is where you group content types and entries from your sites.
 
-Once you log into Modyo with your account, we will go to [Modyo Content](/en/platform/content) to [create our first space](/en/platform/content/spaces.html#create-a-space), which we will call **"Bank"**, and select the language **English**.
+To create your Space, follow these steps:
+
+1. In the main menu, select **Content** and click on **Spaces**.
+2. Click **+ New Space**.
+3. In the New Space window fill in the following fields:
+  - Name: **Bank**
+  - Identifier: **bank**
+  - Default language: **Spanish (Spain) **
+  - Realm of Space: **None**
+4. Click **Create**.
+
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
 
@@ -34,10 +44,15 @@ Once you log into Modyo with your account, we will go to [Modyo Content](/en/pla
 
 ## Step 2: Create "Hero" Type 
 
-Now we need to create our first [content type] (/es/platform/content/types.html #tipos of content) in our **"Bank"** space.
-Once you are in this space, you should go to the**Types** section and click the top right button that says **"+ New Type"**.
+Create your first [content type](/en/platform/content/types.html#content-types) by following these steps:
 
-From there, we generate our first Type called **"Hero"** with the following fields:
+1. In the Spaces window, click on the space **Bank**.
+2. From the main menu, click **Types**.
+3. Click **+ New Type** and fill in the following fields:
+
+ - Name: Hero
+ - Identifier: hero
+ - Cardinality: Multiple
 
 <table>
  <tr>
@@ -95,13 +110,22 @@ From there, we generate our first Type called **"Hero"** with the following fiel
  </tr>
 </table>
 
+4. In the content type window, drag the items in the following order.
+
+
 ![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
 
 ## Step 3: Create and Post "Hero" Type entry
 
-Now we'll create our first [entry] (/en/platform/content/entries) of the type we just created. For that, we need to go to the**Entrances** section and click on the**+ New Entry** button, and then select the type “Hero” and add in Name **_"Wherever you are, Dynamic Bank accompanies you"_**.
+To create your first [entry](/en/platform/content/entries) of type “Hero”, follow these steps:
 
-For the rest of the fields, we will use the following values:
+1. In the main menu, click **Entries**.
+1. Click **+ New Entry**.
+1. Select the content type **Hero** and fill in the following values:
+ - Name: **_"Wherever you are, Dynamic Bank is with you"_**
+ - Identifier: dynamicbank_hero
+
+4. For the rest of the fields, use the following values:
 
 <table>
  <tr>
@@ -117,7 +141,7 @@ For the rest of the fields, we will use the following values:
    <b>Text</b>
   </td>
   <td>
-   We are here for you for everything that you need
+   We are with you for everything you need
   </td>
  </tr>
  <tr>
@@ -125,7 +149,7 @@ For the rest of the fields, we will use the following values:
    <b>Title Link</b>
   </td>
   <td>
-   Join now
+   Make an account now
   </td>
  </tr>
  <tr>
@@ -133,7 +157,7 @@ For the rest of the fields, we will use the following values:
    <b>Url</b>
   </td>
   <td>
-   destination url, use<code>#</code> for now
+   <code>#</code>
   </td>
  </tr>
  <tr>
@@ -146,17 +170,17 @@ For the rest of the fields, we will use the following values:
  </tr>
 </table>
 
-After editing the content we must save and [publish](/en/platform/content/entries.html#publish-an-entry).
+When finished, select **Publish Now** and click **[Publish](/en/platform/content/entries.html#publish-an-entry)**.
 
 <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/>
 
 :::tip Very good! You have created your first Type and Entry successfully
-We will now create the rest of the Types and Entries we need for this tutorial.
+Now follow the steps below to create the Types and Tickets you'll need for future tutorials.
 :::
 
 ## Step 4: Create "News" Type
 
-As with the "Hero" type, we will create our second type, "News", with the following fields:
+From the main menu return to the **Types** section. As with the type “Hero”, create the type “News” with the following fields:
 
 <table>
  <tr>
@@ -199,148 +223,148 @@ As with the "Hero" type, we will create our second type, "News", with the follow
 
 ## Step 5: Create and publish News
 
-As we did with Hero, we will now create all three news entries with the following fields:
+Go to **Entries** and create the following entries for the “News” type:
 
-#### First Entry
+### First Entry
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Operating Branches
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_01.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Text </b> 
- </td> 
- <td> 
- Find your nearest branch so you don't take too much walks.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Link </b> 
- </td> 
- <td> 
- Review branches
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> url </b> 
- </td> 
- <td> 
- Destination URL or #
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Locations
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_01.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Text</b>
+  </td>
+  <td>
+   Find your closest location and avoid any hassles.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Link</b>
+  </td>
+  <td>
+   See locations
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>URL</b>
+  </td>
+  <td>
+   Destination url or #
+  </td>
+ </tr>
+</table>
 
-#### Second Entry
+### Second Entry
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Mortgage Credit
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_02.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Text </b> 
- </td> 
- <td> 
- Learn everything you need to know about applying for your home loan.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Link </b> 
- </td> 
- <td> 
- Learn more
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> url </b> 
- </td> 
- <td> 
- Destination URL or #
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Mortgage
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_02.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Text</b>
+  </td>
+  <td>
+   Everything that you need to know about your mortgage.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Link</b>
+  </td>
+  <td>
+   Learn more
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>URL</b>
+  </td>
+  <td>
+   Destination URL or #
+  </td>
+ </tr>
+</table>
 
-#### Third Entry
+### Third Entry
 
- <table> 
- <tr> 
- <td> 
- <b> Name </b> 
- </td> 
- <td> 
- Gourmet Wednesday
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Cover </b> 
- </td> 
- <td> 
- <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_03.jpg" style="max-width: 200px;margin: auto 0;"/> 
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Text </b> 
- </td> 
- <td> 
- 40% off every Wednesday at the best restaurants with home delivery.
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> Link </b> 
- </td> 
- <td> 
- See benefits
- </td> 
- </tr> 
- <tr> 
- <td> 
- <b> url </b> 
- </td> 
- <td> 
- Destination URL or #
- </td> 
- </tr> 
- </table> 
+<table>
+ <tr>
+  <td>
+   <b>Name</b>
+  </td>
+  <td>
+   Gourmet Wednesday
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Cover</b>
+  </td>
+  <td>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_03.jpg" style="max-width: 200px;margin: auto 0;"/>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Text</b>
+  </td>
+  <td>
+   40% off every Wednesday in the best takeout restaurants.
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>Link</b>
+  </td>
+  <td>
+   See benefits
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>URL</b>
+  </td>
+  <td>
+   Destination URL or #
+  </td>
+ </tr>
+</table>
 
-Don't forget to publish all your posts after creating them.
+At the end of each entry, select **Publish Now** and click **Publish**.
 
 ## Step 6: Create “Benefits” Type
 
-As we already did with Hero and News, we need to create our new type for Benefits with the fields:
+Following the same steps, create the type for “Benefits” with the fields:
 
 <table>
  <tr>
@@ -367,9 +391,10 @@ As we already did with Hero and News, we need to create our new type for Benefit
 
 ## Step 7: Create Categories
 
-Now we'll create categories so that we will be able to filter our benefits.
+The [categories](/en/platform/content/entries.html#categories) are used to sort your entries. To filter your entries of type “Benefits” create the following categories.
 
-To do this we go to the Categories section and create the following categories:
+1. From the main menu, click **Categories**.
+2. Click **+ New Category** and create the following categories:
 
 - Gourmet
 - Health
@@ -377,11 +402,15 @@ To do this we go to the Categories section and create the following categories:
 - Shopping
 - Travel
 
+3. Click **Save**.
+
+>Your category window should like the following image.
+
 ![Type](/assets/img/tutorials/how-to-create-dynamicbank-content/categories.png)
 
 ## Step 8: Create and Publish Benefits
 
-For Benefits we will create seven entries with the following fields:
+In the main menu, click **Entries**. Create the Benefits entries with the following fields:
 
 #### Benefit One
 
@@ -642,11 +671,11 @@ For Benefits we will create seven entries with the following fields:
  </tr>
 </table>
 
-Don't forget to publish all your posts after creating them.
+At the end of each entry, select **Publish Now** and click **Publish**.
 
 ## Step 9: Create "Testimonial" Type
 
-Now let's create our last type for site testimonials. For this type we will need the following fields:
+Create the last type for testimonials, for this type you will need the following fields:
 
 <table>
  <tr>
@@ -757,12 +786,12 @@ Create two entries with the following fields:
  </tr>
 </table>
 
-Don't forget to publish all your posts after creating them.
+>Remember to publish the posts you've created.
 
 ## Conclusion
 
-If you've gotten this far, we congratulate you. You used [Modyo Content](/en/platform/content) to its full potential because we used [Spaces](/en/platform/content/spaces), [Types](/en/platform/content/types), [Entries](/en/platform/content/entries) and [Categories](/en/platform/content/entries.html#categories) to generate all the content needed to build the Dynamic Bank's home page.
+Congratulations! You used [Modyo Content](/en/platform/content) to its full potential using [Spaces](/en/platform/content/spaces), [Types](/en/platform/content/types), [Entries](/en/platform/content/entries), and [Categories](/en/platform/content/entries.html#categories) to generate all the content you need to build the Home page for Dynamic Bank.
 
-We already have all our tickets so we can deliver them to the Front End so that it can generate the Dynamic Bank Home without problems while we can change the texts from Modyo Content.
+We already have all our entries to be able to develop the Front-end and the Home page for Dynamic Bank can be generated from [Modyo Channels](/en/platform/channels) while the content is changed from Modyo Content.
 
-What's next now? Manage all this content from a Web site created in [Modyo Channels] (/en/platform/channels).
+What comes next? Managing this content from a Web site created in [Modyo Channels](/en/platform/channels).

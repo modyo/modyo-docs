@@ -12,7 +12,9 @@ Feature
 
 | Description                    | Investor Profile Survey                                                                                                                                                      |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| This enables you to complete the Investor Profile survey, whether it be be for new customers, ones who want to retake it, or if it's required by regulations. | <script>
+| This enables you to complete the Investor Profile survey, whether it be be for new customers, ones who want to retake it, or if it's required by regulations. | 
+
+<script>
 
   export default {
     mounted() {

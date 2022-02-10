@@ -4,28 +4,32 @@ search: true
 
 # First steps
 
-If you've never used the Modyo platform and/or Widgets, we recommend starting with [here](/platform/). In addition, this guide assumes that you have the [modyo-cli](/platform/channels/widgets.md#modyo-cli) installed and that you have read its [documentation](/platform/channels/widgets.md#modyo-cli).
+Initialize and publish a widget locally using Modyo CLI.
 
-:::tip API access token
-In order to use the Widgets in this catalog, you need to have an API access token that allows you to download them for use. You can get this through your organization or directly with Modyo.
-:::
+### Prerequisites
 
-### Start a Widget
+This guide was created for users who are already familiar with the following topics:
+- [Modyo Platform](/en/platform/)
+- [`modyo-cli` command-line interface](/en/platform/channels/widgets.md#modyo-cli) installed and its [documentation](/en/platform/channels/widgets.html#modyo-cli)
+- Have [access to the administrative API](en/platform/core/api.html#bearer-token)
 
-The fastest way to start a Widget is to use one of the templates in this Catalog as an accelerator and then modify it to suit your needs.
-To use one of our templates we will use the `GET` command in the `modyo-cli`:
+### Initialize a Widget
+
+The quickest way to initialize a Widget is to use one of the templates in this catalog as a template and modify it for your business needs.
+
+1. Use the `get` command in `modyo-cli` to download the necessary files for the widget:
 
 ```bash
-modyo-cli get name-from-Widget nameFolder
+modyo-cli get <nombre-del-Widget> <directorioDestino>
 ```
 
-For example, if we want to use the `Consumer Cred` template from People Banking, the command is as follows:
+For example, if we want to use the Retail `Consumer Loan` template, the command would be as follows:
 
 ```shell
 modyo-cli get modyo-widgets-retail-consumer-loan ~/Desktop/MyLoanWidget
 ```
 
-And to start the server in development mode:
+2. Change directory and initialize the server in development mode:
 
 ```shell
 cd ~/Desktop/MyLoanWidget && yarn serve
@@ -33,24 +37,24 @@ cd ~/Desktop/MyLoanWidget && yarn serve
 
 ### Publish a Widget
 
-To upload our Widget to the platform and publish it, we will use the `PUSH `command of the `modyo-cli`. This can be done locally or by using continuous integration (recommended).
+To load our Widget to the platform and publish it, we'll use the `modyo-cli` `push` command. This can be done locally or using continuous integration (recommended).
 
-Before we can load and publish our Widget locally, we must create a `.env` environment variable file at the root of the project with the following variables:
+1. Create a `.env` environment variable file at the root of the project with the following variables:
 
 ```shell
-MODYO_TOKEN=[siteToken]
-MODYO_ACCOUNT_URL=[accountUrl]
-MODYO_SITE_HOST=[siteHost]
-MODYO_WIDGET_NAME=[widgetName]
+MODYO_TOKEN=[siteToken]         //The token to access the admin API
+MODYO_ACCOUNT_URL=[accountUrl] //Account URL
+MODYO_SITE_HOST=[siteHost]     //Site host name, found inside the platform, in the sites section
+MODYO_WIDGET_NAME=[widgetName] //The widget's name
 ```
 
-Follow [this](/es/widgets/guides/ci-cd.html) guide to get a token that allows us to upload and publish the Widget.
-
-The **AccountUrl** is the URL of the account that owns the site. The **SiteHost** can be searched in the **Channels —> SiteS** section and can be reviewed in the host column of the site list.
+:::tip Tip
+To learn more about obtaining an API access token, see [Administration API](en/platform/core/api.html)
+:::
 
 ![Host](/assets/img/widgets/host.png)
 
-With the created `.env` file and the added values we can load the Widget to our site:
+2. Open a terminal in the project and use `push` to send the widget to the platform:
 
 ```shell
 modyo-cli push
@@ -60,7 +64,7 @@ Once the loading process is finished, the Widget will be available in the**Widge
 
 ![widgets-list](/assets/img/widgets/widgets_list.png)
 
-If we want to publish the Widget automatically after loading, we can use the `—publish` option of the `PUSH` command.
+If we want the Widget to be published automatically when it finishes loading, we can use the `--publish` option.
 
 ```shell
 modyo-cli push --publish

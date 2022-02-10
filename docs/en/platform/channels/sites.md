@@ -310,7 +310,7 @@ When you click on sync, you will be able to select which changes to take from an
 :::
 
 :::warning Warning
-You'll receive an alert if you try to sync changes that aren't published yet.
+You will receive an alert if you try to sync changes that haven't been published yet.
 :::
 
 
@@ -343,7 +343,7 @@ To add a new member to your site, follow these steps:
 1. Expand **Site Settings** and click **Team Members**.
 1. Click the **+ Add Member** button.
 1. Find the user you want to add to your site and select a role.
-1. Click **Add**. 
+1. Click **Add**.
 
 You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
@@ -408,19 +408,19 @@ The precedence of locations on Modyo sites is as follows:
 1. Custom redirects
 1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
 
-#### Security headers
+## Security headers
 
 Configure HTTP security headers by enabling this module for your site.
 This action cannot be undone. When enabled, you'll have full control over the headers you want to use.
 
-#### HTTP Strict Transport Security (HSTS)
+### HTTP Strict Transport Security (HSTS)
 
 Instructs the browser that your site should be accessed using HTTPS only.
 * **Duration**: Sets how long the browser should remember that your site is only accessed by using HTTPS.
 * **Preload**: Include the preload directive. See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
 * **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
 
-#### Referrer-Policy
+### Referrer-Policy
 
 The `Referer` _header_ contains information about the previous web page that is linked to the resource being requested. You can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
 
@@ -433,17 +433,17 @@ The `Referer` _header_ contains information about the previous web page that is 
 * **strict-origin-when-cross-origin**: Send _referrer_ information to same-origin _requests_. Send the origin only to same protocol security level and don't send _referrer_ information to less secure destinations.
 * **unsafe-url**: Always send _referrer_ information.
 
-#### X-Frame-Options
+### X-Frame-Options
 
 Indicate whether your site can be included in a `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
 * **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
-#### X-Content-Type-Options
+### X-Content-Type-Options
 
 It indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
-#### Content-Security-Policy
+### Content-Security-Policy
 
 Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
@@ -476,11 +476,11 @@ There are several tools to help you design a strong security policy:
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
-#### Permissions-Policy
+### Permissions-Policy
 
 It allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs, like the camera or microphone, and video autoplay. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
-#### X-XSS-Protection
+### X-XSS-Protection
 
 It prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
 
@@ -494,22 +494,22 @@ Modyo has [global variables](/en/platform/core/key-concepts.html#global-variable
 
 Using variables allows you to reuse HTML, JS, CSS, or text across different sites, widgets, or templates. If you have code that you use repeatedly in different parts of your account, you can assign this value to a variable and thus simplify your processes. When you edit the value of the variable, this will be reflected everywhere the variable is currently used.
 
-። :tip Tip
+:::tip Tip
 You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
 
-To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.name}}` </span> 
-።:
+To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.Name}}` </span> 
+:::
 
 ### Create a variable in sites
 
 To create a variable in sites, follow these steps:
 
 1. From the main side menu, click on **Channels**, then select your **Site**.
-1. Under **Site Settings**, click **Site Variables**.
-1. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup. Click **+ New Variable**.
-1. Fill in the**Name** and **Value** of the variable.
-1. Click on **Save**.
+1. Under **Site settings**, click **Site variables**.
+1. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code in Liquid markup. Click **+ New Variable**.
+1. Fill in the **Name** and **Value** of the variable.
+1. Click **Save**.
 
-። :warning Attention
-When using variables, variables defined at the lowest level will always be preferred, with variables defined in the widget first, then those defined in the site, and finally variables defined at the account level, so be careful when defining variables in widgets or the site with the same name than account variables.
-።:
+:::warning Warning
+When using variables, variables defined at the lowest level will always be preferred, with variables defined in the widget first, then those defined in the site, and finally variables defined at the account level, so be careful when defining variables in widgets or the site with the same name as account variables.
+:::

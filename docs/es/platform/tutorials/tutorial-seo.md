@@ -6,11 +6,14 @@ search: true
 
 ## Introducción
 
-Bienvenido a un nuevo tutorial de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde trabajaremos en el SEO de nuestro canal digital, optimizandolo el posicionamiento en los motores de búsqueda a través de los meta del head. 
+Bienvenido a un nuevo tutorial de Modyo. En este tutorial nos vamos a enfocar en [Modyo Channels](/es/platform/channels) donde trabajaremos en el SEO de tu canal digital, optimizando el posicionamiento en los motores de búsqueda a través del metadata en head. 
 
 ## Requisitos Previos
 
-Para ajecutar el tutorial necesitamos un sitio en Modyo con el Home y un Page, más un Content View para cubrir todas las opciones de contenidos dentro de Modyo.
+- Un sitio en la plataforma
+- Homepage
+- Una [Page](/es/platform/channels/pages)
+- Un [Content View]()
 
 ## Paso 1: Configuración de SEO general
 
@@ -27,6 +30,7 @@ Una vez que se abra el Modal buscamos og:image en Tag Name, el Value lo llenamos
 ## Paso 2: Desarrollado SEO en Templates
 
 Dentro del Templates de nuestro sitio, abrimos el Snippet seo en la sección Generale y nos fijamos que tengamos el siguiente código dentro del archivo:
+
 ```html 
 {{page.meta_tags}}
 ``` 
@@ -37,4 +41,10 @@ asd
 
 ¡Felicidades! Haz finalizado el curso de Creación del Home de Dynamic Bank en Modyo.
 
-Ahora tienes conocimientos de cómo utilizar [Modyo Channels](/es/platform/channels) con todos sus módulos; [Pages](/es/platform/channels/pages), [Navigation](/es/platform/channels/navigation), [Widgets](/es/platform/channels/widgets), [Templates](/es/platform/channels/templates) y algunos detalles dentro de [Site settings](/es/platform/channels/sites.html#configuracion-de-un-sitio). Además, lograste enlazar tu sitio con [Modyo Content](/es/platform/content) que permite generar canales digitales dinámicos conectados a contenidos separados del código del sitio.
+Ahora tienes conocimientos de cómo utilizar: 
+
+- [Pages](/es/platform/channels/pages)
+- [Navigation](/es/platform/channels/navigation)
+- [Widgets](/es/platform/channels/widgets)
+- [Templates](/es/platform/channels/templates)
+- [Modyo Content](/es/platform/content)

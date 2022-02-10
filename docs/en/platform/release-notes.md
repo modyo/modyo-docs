@@ -4,6 +4,85 @@ search: true
 
 # Release Notes
 
+## 9.2
+### 9.2.4 - December 30, 2021
+<Badge text="Core" type="core" vertical="middle"/>
+* Fixed problem that contaminated the cache when performing previews
+
+### 9.2.2 - December 1, 2021
+<Badge text="Core" type="core" vertical="middle"/>
+Fixed issue when allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variable
+
+<Badge text="Content" type="content" vertical="middle"/>
+Fix bug with tag filter with 100 or more tags in admin
+
+### 9.2.1 - November 25, 2021
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed bug with file limit in asset manager
+* Improvements when copying entry from another locale
+* Add category name and slug to Entry drop and content API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fix issue with widget preview
+* Login with access token on the site
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Security enhancements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Improvements to the campaign editor
+
+### 9.2.0 - November 15, 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Security Headers Management
+* New minimal theme
+* Navigation builders
+* Seven stages
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* User Realms
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Team member groups
+* Multiple full admins
+* Landing page “Get started”
+* Froala editor
+
+## 9.1
+### 9.1.35 - December 29, 2021
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fix bug with cache in snippet preview
+* Fix site language validation
+
+### 9.1.34 - November 19, 2021
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed bug with file limit in asset manager
+* Improvements when copying entry from another locale
+* Add category name and slug to Entry drop and content API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Login with access token on the site
+
+### 9.1.33 - November 5, 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Call to discovery service is prevented in OIDC callback
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed bug that prevented filtering entries by more than 100 tags in admin
+
+### 9.1.32 - October 28, 2021
+
+<Badge text="Core" type="core" vertical="middle"/>
+* AppShell OAuth 2.0 provider
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixed bug that affects resetting templates
+* Cache is more granular now that it takes UserAgent into consideration
+
 ### 9.1.31 - October 7, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>

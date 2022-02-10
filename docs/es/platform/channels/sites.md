@@ -1,26 +1,30 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Sitios
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
-Aquí es donde debes operar para crear canales digitales dentro de la plataforma. En este caso, la operación de sitios implica todo el desarrollo, diseño, y flujo de navegación. Si quieres añadir contenido a cada una de ellas, debe ser agregada en la sección [Content](/es/platform/content/).
+Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Widgets](/platform/channels/widgets) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
 
-Al entrar, puedes ver que existen 4 estados:
-
-<img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
+Existen dos estados para cada sitio:
 
 - **Habilitado**: Estado por defecto en el que quedan los sitios recién creados y los que están habilitados para su uso.
-- **Oculto**: Sitios creados y habilitados que no aparecen en el listado de sitios del perfil de los usuarios. Sólo se pueden acceder si se cuenta con la URL del sitio.
-- **Desarrollo**: Sitios disponibles sólo para administradores de Modyo. Los usuarios que no tengan permisos de administrador no podrán ver estos sitios.
 - **Deshabilitado**: Sitios a los que no se puede acceder.
-- **Copiar**: Crea una copia del sitio y todos los elementos publicados del mismo.
 
-Para crear un sitio, solo debes hacer clic en la pestaña **Nuevo**, el cual te permitirá designar el nombre y el host, y posteriormente un template para su apariencia y estructura.
+## Crear un Sitio
 
-Después de ello, puedes verlo en modo "Habilitado", lo que significa que está online para trabajar.
+Para crear un nuevo sitio, sigue estos pasos:
+
+1. Desde el menú lateral, haz click en **Channels**.
+1. Haz click en **+ Nuevo Sitio**.
+1. Escribe el nombre y el host (ruta principal del sitio).
+1. De ser necesario, selecciona a que reino pertenece este sitio.
+1. Haz click en **Crear**.
+
+Al terminar de crear tu sitio, automáticamente será habilitado y serás llevado a la página **Resumen**.
 
 :::warning Atención
 En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
@@ -28,7 +32,7 @@ En el índice de sitios, solo verás los sitios en los cuales eres parte del equ
 
 ## Configuración de un Sitio
 
-La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores, y administradores del sitio. Además, puedes modificar opciones que permitan mejorar la aparición en motores de búsqueda y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
+La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores, y administradores del sitio. Además, puedes modificar opciones que permitan mejorar el SEO y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
@@ -108,7 +112,7 @@ Restricciones permite configurar la privacidad del sitio.
 - Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
 
 
-## SEO
+### SEO
 
 <img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -135,7 +139,7 @@ Al añadir un meta tag a todos los pages a través de la configuración de SEO d
 Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán añadir meta tags para todas las páginas, sin embargo, los developers del sitio podrán añadir y eliminar meta tags en las páginas y modificar sus valores página por página.
 :::
 
-## PWA
+### PWA
 
 Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén armando. Para ello, otorga dos opciones para implementarlos fácilmente.
 
@@ -180,7 +184,7 @@ Si se desactiva el Service Worker, la página seguirá andando sólo en sus func
 Si el código no se personaliza o no se guarda, el sitio no contará con las funciones que estás diseñando.
 :::
 
-## Dominios
+### Dominios
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -262,7 +266,7 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 </tr></table>
 :::
 
-## Stages
+### Stages
 
 Agregar stages en tu sitio te permite trabajar en nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
@@ -272,7 +276,7 @@ Las ventajas principales de tener distintos stages en tus sitios es que te permi
 Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
 :::
 
-### Agregar un nuevo stage
+#### Agregar un nuevo stage
 
 <img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
 
@@ -291,7 +295,7 @@ Al tener más de un stage en tu sitio, la página de **Overview** mostrará los 
 En la barra lateral podrás ver en que stage estas actualmente y al hacer click en el dropdown, desplegara un listado de todos los stages de tu sitio.
 :::
 
-### Sincronizar un stage
+#### Sincronizar un stage
 
 Una vez que hayas terminado tus pruebas en tu stage, asegúrate de sincronizarlos a `main`. En la pantalla de sincronizaciones, podrás ver todos los cambios que se realizaran entre los dos stages seleccionados. Al hacer click en _Ver_
 
@@ -310,11 +314,11 @@ Al hacer click en sincronizar, podrás seleccionar que cambios tomar de un stage
 :::
 
 :::warning Atención
-Recibirás una alerta si intentas sincronizar cambios que todavía no están publicados. 
+Recibirás una alerta si intentas sincronizar cambios que todavía no están publicados.
 :::
 
 
-## Revisión en equipo
+### Revisión en equipo
 
 Puedes revisar y publicar múltiples elementos de un sitio en una sola vista. Para revisar las diferencias de un elemento, selecciónalo del listado izquierdo y las diferencias entre la versión editable y publicada aparecerán en la sección derecha de la vista.
 
@@ -328,7 +332,7 @@ Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los 
 En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar publicación" permitiendo que el elemento pase directamente a la vista de publicación.
 :::
 
-## Miembros del Equipo
+### Miembros del Equipo
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -336,14 +340,14 @@ Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que t
 
 Para ello, el administrador que creó el sitio puede asignar manualmente a los usuarios y los roles predeterminados que habilitan cada una de las funciones.
 
-### Agregar un nuevo miembro
+#### Agregar un nuevo miembro
 Para agregar un nuevo miembro para tu sitio, sigue estos pasos:
 
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en tu sitio.
 1. Expande **Configuración de Sitio** y haz click en **Miembros del Equipo**.
 1. Haz click en el botón **+ Agregar Miembro**.
 1. Busca el usuario que quieres agregar a tu sitio y selecciona un rol.
-1. Haz click en **Añadir**. 
+1. Haz click en **Añadir**.
 
 Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
@@ -378,7 +382,7 @@ Este usuario es distinto al Default Admin. El Site Admin solo puede configurar e
 
 En caso de ser necesario, se pueden borrar a los usuarios del sitio que ya tengan roles anteriores. Para ello, solo se debe hacer clic en el usuario y la acción de Borrar.
 
-## Redirecciones personalizadas
+### Redirecciones personalizadas
 
 Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá tomar una URL de tu sitio y automáticamente redirigir mediante un código 301 o 302 a otra sección del sitio.
 
@@ -408,7 +412,7 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
 
-#### Security headers
+### Security headers
 
 Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
 Esta acción no se puede deshacer. Al ser habilitada, tendrás el control total de los encabezados que desees usar.
@@ -488,7 +492,7 @@ Evita que las páginas se carguen cuando el navegador detecta un ataque de _cros
 * **1**: Habilita XSS _filtering_, quitando las partes inseguras.
 * **1; mode=block**: Habilita XSS _filtering_, impidiendo el _rendering_ de la página.
 
-## Variables del sitio
+### Variables del sitio
 
 Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada con un valor específico para el sitio en particular.
 
@@ -500,7 +504,7 @@ Puedes usar texto plano, HTML, JavaScript, y CSS dentro de las variables globale
 Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup, usa:<span v-pre>`{{vars.Nombre}}`</span>
 :::
 
-### Crear una variable en sitios
+#### Crear una variable en sitios
 
 Para crear una variable en sitios, sigue esto pasos:
 

@@ -34,18 +34,18 @@ Next to each campaign, there is a button where we can perform two actions.
 - **Edit the Campaign**
 - **Delete the Campaign**
 
-::: danger Danger
+:::danger Danger
 If you delete a campaign, there is no way to recover it.
 :::
 
 ### Create a campaign
 
-To make a campaign, we need to click on the**+ New Campaign** button, located at the top of the Admin view.
+To make a campaign, click **+ New Campaign**, located at the top of the Admin view.
 
 This opens a form that you must fill out with the following information:
 
-- **Name**: Name that the campaign will have.
-- **Type**: Format that the campaign will have (Mailing or Notification).
+- **Name**: Name of the campaign.
+- **Type**: Format of the campaign (Mailing or Notification).
 - **Subject**: Text that appears in the subject line that users receive.
 - **Reply to email**: Email address to which people can reply **(Only for mailing campaigns)**
 - **Template**: List of [templates](/en/platform/customers/messaging.html#templates) available for a mailing campaign. If none is selected, you are sent to an empty Message Editor to create your email template. **(Only for mailing campaigns)**
@@ -76,7 +76,7 @@ In addition, you will find a drop-down menu that will take you to four sections:
 
 In the Campaign Status view, you can find campaign statistics.
 
-::: warning Warning
+:::warning Warning
 If you haven't sent the campaign yet, the values will appear at zero.
 :::
 
@@ -112,7 +112,7 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 
 You will also be able to find a button that will allow you to delete the registration submission.
 
-::: danger Danger
+:::danger Danger
 Remember that if you delete the delivery, it is unrecoverable.
 In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is.
 :::
@@ -125,8 +125,7 @@ In the Message Deliveries section, you can find the list of users who have recei
 
 At first glance, you can find a list of all the users who have received a single email or notification, which is called "No Campaign".
 
-“No Campaign” refers to an email or notification that has 
-been sent specifically to a user, on a certain date. They do not fall under the concept of Campaigns as these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to [Management API] (/es/platform/core/api.html). 
+“No Campaign” refers to an email or notification that has been sent specifically to a user, on a certain date. They do not fall under the concept of Campaigns as these messages are personalized and contain information that is not sent to others. To learn more about how these messages work, go to [Management API](/en/platform/core/api.html). 
 
 At first glance, the message is sorted under the following categories.
 
@@ -157,8 +156,8 @@ At first glance, you can find all the email templates available.
 
 Each of the templates is ordered according to their name, in addition to being able to see the last time they were modified.
 
-::: tip Tip
-If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may confuse the message you want to send to your users.
+:::tip Tip
+If you are going to reuse a template, remember to review its content in detail, to avoid temporary errors that may cause confusion in the message you want to send to your users.
 :::
 
 Under each name, there is a button that allows you to edit. If you click on it, this opens the messaging template editor.
@@ -169,7 +168,7 @@ On one side, there is a button that displays a menu with the following options:
 - **Copy**: Makes a copy of the template.
 - **Delete**: Deletes the template
 
-::: tip Tip
+:::tip Tip
 If you want to temporarily change the template when sending a new campaign, it is better to make a copy of the template and work on it, leaving the original unchanged.
 :::
 
@@ -177,18 +176,18 @@ If you want to temporarily change the template when sending a new campaign, it i
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-To make a template, you must first click the**+ New Template** button at the top of the page.
+To make a template, you must first click **+ New Template** button at the top of the page.
 
 This opens the edit view where you must give your template a name.
 
-። :tip Tip
-Remember that this name is what you will need to look for later to send when doing the Campaign. Therefore, you should put some text that will help you identify the template you want to use.
-።:
+:::tip Tip
+Remember that this name is what you will need to look for to send the Campaign. Therefore, you should put some text that will help you identify the template you want to use.
+:::
 
 Under the name is the Template content section, a WYSIWYG editor where you can visually assemble what your email will look like and add the corresponding parameters that allow you to automatically personalize the message.
 
-::: warning Warning
-If you are campaigning, remember to add all legal infomration required by your country's regulations regarding mass mailing in the footer.
+:::warning Warning
+If you are campaigning, remember to add all legal information required by your country's regulations regarding mass mailing in the footer.
 
 To automate the insertion of the Footer, read [Customers Settings](/en/platform/customers/users.html#customers-settings)
 :::
@@ -207,7 +206,7 @@ If you click on the name of the user, you can find the [user profile](/en/platfo
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
-።: danger danger
+:::danger Danger
 Re-enrolling without user authorization can cause legal problems.
 Review the regulations on mass mailing in each country.
-።:
+:::

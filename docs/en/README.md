@@ -1,25 +1,32 @@
 ---
 home: true
-heroImage: /assets/img/welcome.png
-actionText: Get started
-actionLink: /en/platform/
-footer: Copyright © 2008-2021 Modyo SpA
----
 
- <div class="features"> 
- <div class="feature"> 
- <h2> Welcome to Modyo </h2> 
- <p> Modyo helps large companies and financial institutions accelerate their digital transformation. </p> 
- <a href="/es/platform/"> Read more </a> 
- </div> 
- <div class="feature"> 
- <h2> Key Concepts </h2> 
- <p> What are some of the key concepts you need to get started fast? </p> 
- <a href="/es/platform/key-concepts.html"> Read more </a> 
- </div> 
- <div class="feature"> 
- <h2> Widgets </h2> 
- <p> Explore the Modyo Financial Widgets catalog. </p> 
- <a href="/es/widgets/"> Read more </a> 
- </div> 
- </div> 
+title: Modyo Docs
+heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
+footer: Copyright © 2008-2021 Modyo SpA
+tutorials: tutorials
+tutorialsText: Learn the different aspects of the platform at your own pace.
+
+tutorial1Title: Creating and Publishing Content
+tutorial1Url: /en/platform/tutorials/how-to-create-content.html
+tutorial2Title: Creating a Basic Site
+tutorial2Url: /en/platform/tutorials/how-to-create-home.html
+tutorial3Title: Creating a Content View
+tutorial3Url: /en/platform/tutorials/how-to-create-a-custom-view.html
+tutorial4Title: Creating a Private Site
+tutorial4Url: /en/platform/tutorials/how-to-create-private-site.html
+
+DontMiss: Don't miss anything about
+DontMissText: Stay up to date on new releases and know where we’re going.
+
+releaseText: Release Notes
+releaseUrl: /en/platform/release-notes.html
+
+roadmapText: Modyo Roadmap
+roadmapUrl: https://www.modyo.com/roadmap
+
+communityTitle: Need more help?
+communityText: Use our help channels
+
+communityLang: en-us
+---

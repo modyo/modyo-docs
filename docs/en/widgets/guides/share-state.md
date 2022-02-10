@@ -4,59 +4,59 @@ search: true
 
 # Share status between Widgets
 
-All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the status of a Widget. It also serves as a centralized storage for all widget components, with rules that ensure that the status can be changed predictably. In other words **Vuex** helps us share data between different components of the same Widget.
+**Vuex** helps share data between different components of the same Widget. All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the status of a Widget. It also functions as a centralized store for all components, with rules that ensure that the state can be changed predictably.
 
 ### The structure of Vuex
 
 ![vuex](/assets/img/widgets/vuex.png)
 
-- **Status** (in the state code):
+- **State**:
 
-  - It is an object that can contain any type of information: strings, arrays, or other objects.
+  - It is an object that can contain any kind of information: strings, arrays, or other objects.
   - This is the information that we store centrally throughout the app.
 
-- **Mutations** (in the mutations code):
+- **Mutations**:
 
   - They're functions.
   - They are the only functions that can modify the status.
   - They're called by actions.
-  - They can be called in the component to use through a commit or through an action.
+  - They can be called on the component to be used through a `commit` or through an action.
   - They're synchronous.
 
-- **Actions** (in the actions code):
+- **Actions**:
 
   - They're functions.
   - They have business logic.
-  - To change the status they must call mutations via commit.
-  - They can call other actions through dispatch.
-  - The way to use them in the component is through dispatch or by using modules.
+  - To change the state you must call mutations through a `commit`.
+  - They can call other actions through a `dispatch`.
+  - The way to use them in the component is through a `dispatch` or by using modules.
   - They're asynchronous.
 
-- **Getters** (in getters code).
+- **Getters**:
   - They're functions.
-  - They don't change the state, but they do format it so that we can use the information in the way we need.
-  - It would be the closest thing to a computed property in the component.
-  - An example would be a function that filtered the state. It doesn't modify it, but instead gives you a new different object with the filtered data you need.
+  - They don't change the state but they do change the format so we can use that information the way you need it.
+  - It would be very similar to a `computed` property in the component.
+  - An example would be a function that filters the state. It doesn't modify it but it returns you a new different object with the filtered data you need.
 
-:::tip Note
-To learn more about implementing and using Vuex, we recommend reading the [documentation](https://vuex.vuejs.org/guide/) and watching this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) from [VueSchool](https://vueschool.io/)
+:::tip Tip
+To learn more about implementing and using Vuex, see the [documentation](https://vuex.vuejs.org/guide/) and this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) by [VueSchool](https://vueschool.io/)
 :::
 
 ### Persisting status between Widgets and page reloads
 
-The Widgets in the catalog, unlike a SPA (Frontend Monolith), are built under the concept of **Micro Frontends**.
+Catalog Widgets, unlike a SPA (Single-page application), are built under the concept of **Micro Frontends**.
 
-The idea behind our Widgets is to separate a set of features or functionalities into different parts that are owned by independent teams. Each team has a different business or mission area and develops its features from start to finish, has its own git repository, package.json file, etc. As a result, each Widget has a separate construction process and an independent deployment (**CI**). This usually means that each Widget has fast and limited development times.
+The idea behind our Widgets is to separate a set of features or functionalities into different parts that are owned by independent teams. Each team has a different business or mission area and develops its features from start to finish, has its own git repository, package.json file, etc. As a result, each Widget has a separate construction process and an independent deployment (**CI**). This usually means that each Widget has fast development times.
 
 This approach does not give you the ability to communicate directly between Widgets, but this is widely seen as a feature, not an bug. Broadcasting events and receiving data is a scalable Widget design paradigm. Widgets, where possible, should be a reflection of the state.
 
-When it is necessary to persist data (state) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://mi-sitio.com/formulario?step=2&username=Jorge>) and use a function that allows us to obtain the values easily, such as:
+When it is necessary to persist data (state) between Widgets we can make use of the **query params** passed by the URL (e.g. <http://my-site.com/forms?step=2&username=George>) and use a function that allows us to obtain the values easily, such as:
 
 ```js
 /**
 Get the params from an url
 Usage:
-If url is: http://mi-sitio.com/formulario?step=2&username=Jorge
+If url is: http://my-site.com/forms?step=2&username=George
 to get the step value:
 getURLParams("step")
 */
@@ -73,9 +73,9 @@ export default function(sParam) {
 }
 ```
 
-Another alternative to persisting data (state) when reloading the page or changing Widgets is to use **Vuex** in conjunction with **localStorage**. When should you do this? For example, we have a user who is completing an onboarding process that consists of several steps and questions and they mistakenly reload the page. All the progress that the user made up until that moment is lost and they now have to start over, which can mean losing that potential customer.
+Another alternative to persist data (status) when reloading the page or changing the Widget to use **Vuex** in conjunction with **LocalStorage**. For example, a user is completing an onboarding process that consists of several steps and mistakenly reloads the page. All the progress that the user was making up to that point is lost and has to start over, which can mean losing that potential client.
 
-For example
+For example, you can persist the steps in the form as follows:
 
 ```js
 //in our store.js file
@@ -120,4 +120,6 @@ new Vue({
 }).$mount('#brokers-dashboard');
 ```
 
-That's all for **Vuex** and **LocalStorage**. One caveat we should mention is that localStorage is NOT infinite. Many browsers limit it to a few megabytes.
+:::warning Warning
+In a browser, LocalStorage is *not* infinite and can be cleared by any user. Many browsers limit it to less than 10 megabytes by default.
+:::

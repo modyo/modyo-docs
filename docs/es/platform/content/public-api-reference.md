@@ -1,6 +1,5 @@
 ---
 search: true
-sidebarDepth: 1
 ---
 
 # API & SDKs
@@ -22,127 +21,6 @@ Desde la versión 9.0.8 en adelante, se llamarán a los atributos de las entrada
 * Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
 
 Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
-:::
-
-### Acceder a entradas de un espacio
-
-Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
-Total entries: {{ entries | total_entries }}
-```
-### Entrada única
-
-Para desplegar una entrada de cardinalidad single puedes usar el método entry, por ejemplo:
-
-```liquid
-{{ spaces['my-space'].types['homepage'].entry }}
-```
-
-### Filtrar entradas
-
-Si quieres filtrar las entradas, lo puedes hace a través de los siguientes atributos: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-En el caso del filtro `filter_by`, se debe utilizar para atributos meta o custom fields del tipo de contenido, por ejemplo:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro del filtro:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-La selección de entradas siempre retorna un array, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
-{% assign entry = entries.first %}
-```
-
-Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
-<ul>
-  {% for entry in entries %}
-  <li>{{ entry.meta.slug }}</li>
-  {% endfor %}
-</ul>
-{{ entries | pagination_links }}
-```
-
-En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
-
-:::warning Atención
-Ten en cuenta que si tienes más de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
-:::
-
-:::warning Atención
-Para hacer uso de la paginación en un widget personalizado, se debe cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, se debe asegurar de que _JQuery_ está disponible en el sitio y recordar que al hacer uso de los links de paginación, solo cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
-:::
-
-### Ordenar entradas
-
-De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
-```
-
-Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
-Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at`, `slug` y `field`.
-
-Para ordenar por un campo personalizado, debes usar como parámetro el `fields.uid` del campo:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-### Entradas con ubicación
-
-Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
-
-```
-{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
-```
-
-El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
-
-```
-{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
-```
-
-:::tip Tip
-Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
 :::
 
 ## SDK de Javascript
@@ -197,147 +75,6 @@ const modyoAccount = new Client("https://my-account.modyo.com","es");
 Al instanciar un nuevo cliente, el segundo parámetro _locale_ es opcional, de tal forma que se soliciten entradas solo en el idioma solicitado, de lo contrario, se usará el idioma por defecto del espacio.
 :::
 
-### Contenido
-
-El SDK permite acceder tanto a contenido público como privado/segmentado, facilitando la interacción con nuestra API Headless.
-
-#### Cómo obtener contenido público
-
-Podemos consultar por un tipo de contenido en particular y así obtener su esquema
-
-```js
-// Para obtener el tipo `Post` de un espacio llamado `Blog`
-const typePost = modyoAccount.getContentType("blog", "post");
-// `typePost` retornará un objeto con diversa información del tipo, entre ellas, el esquema de ese tipo
-```
-
-Cuando tenemos el tipo que necesitamos podemos ver su esquema, sus atributos o consultar sus entradas:
-
-```js
-// Si queremos ver ese esquema en detalle, podemos ocupar el método `getSchema()`
-typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
-/*
-Eso imprimirá algo como esto:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
-*/
-// Para obtener las entradas de ese tipo
-const entries = typePost.getEntries();
-```
-
-#### Paginación
-
-En general, todos los resultados entregados por el API Headless de Modyo se encuentran paginados. Una consulta `getEntries()` sin filtros asociados trae hasta 20 entradas por cada página. El máximo de entradas por página es de 100, y es configurable mediante el filtro `Pagination` que se describe en la siguiente sección, por ejemplo: `getEntries(f.Pagination(15,1))` que retornará la primera página del filtro `f` donde cada página contiene hasta 15 entradas.
-
-El objeto retornado por `getEntries()` incluye un campo `meta` que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
-
-```json
-
-{
-  "meta": {
-    "total_entries": 4,
-    "per_page": 10,
-    "current_page": 1,
-    "total_pages": 1
-  },
-  "entries": [
-    {
-      "meta": {
-        "uuid": "baf8f3e2-5f15-4406-985c-ae2db0922c5b",
-        "tags": [],
-        "slug": "baf8f3e2-5f15-4406-985c-ae2db0922c5b"
-        "..."
-      },
-      "fields": {
-        "title": "titulo",
-        "slug": "slug",
-        "excerpt": "Excerpt of the entry...",
-        "..."
-      }
-    }
-  ]
-}
-```
-
-#### Filtros
-
-El método `getEntries()` que ocupamos más arriba también puede recibir un objecto de filtros para consultar las entradas.
-Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, `Geohash`, pudiendo consultar los campos `meta` de cada entrada (como la fecha de creación o tags asignados)
-
-**Filtros soportados**:
-
-- **Before, After, LessThan, GreaterThan**: reciben como parámetro el nombre del campo a comparar y el valor con el que se comparará.
-
-- **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `OR` en SQL, Has es equivalente a un `AND`.
-
-- **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`).
-
-- **JSONPath**: recibe el JSONPath [ref](https://goessner.net/articles/JsonPath/) que modela una estructura de respuesta.
-
-- **Pagination**: recibe como parámetros el número de página y el total de entradas por página.
-
-- **Geohash**: recibe como parámetros un campo de ubicación y un geohash [ref](https://www.movable-type.co.uk/scripts/geohash.html) para seleccionar el contenido dentro de una ubicación.
-
-:::warning Atención
-Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
-:::
-
-```js
-// Si queremos obtener un listado de los atributos por los que podemos consultar
-typePost
-  .getSchema()
-  .then(() => console.log("List of attributes:", typePost.getAttrs()));
-```
-
-Para crear un filtro, usamos el método `Filter()`
-
-```js
-const filters = typePost
-  .Filter()
-  .Before("meta.created_at", "2020-05-01")
-  .In("meta.tags", ["tag1", "tag2"])
-  .Pagination(15,1);
-// Ahora lo ocupamos para obtener entradas con estos criterios
-const filteredEntries = typePost.getEntries(filters);
-// ahora resolvemos la promesa
-filteredEntries.then(res => console.log("Filtered entries response: ", res));
-```
-
-### Ordenar
-
-Los resultados de nuestra búsqueda también pueden ordenarse con el método `SortBy()`
-
-```js
-// JSONPath and Sorting are also supported as filters
-const filters = ctype
-  .Filter()
-  .SortBy("meta.created_at", "desc")
-  .JSONPath("$..uuid");
-```
-
-**Nota**: Como se puede ver en el ejemplo, es posible usar en nuestras consultas expresiones `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
-
-#### Contenido privado
-
-Para obtener contenido privado, basta con que el usuario esté con sesión, pasando al método `getContentType()` un tercer argumento en `false` (que indica que no es público)
-
-```js
-// To acces private content (user must be logged in on account)
-const privateTypePost = modyoAccount.getContentType("blog", "post", false);
-```
-
-:::warning Atención
-Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
-:::
-
-### Información de Usuario Final
-
-:::warning Atención
-Es importante que trates esta información sensible con cuidado. Al igual que con Contenido privado, esta información sólo es obtenible si se trabaja desde un navegador que soporte cookies, y el usuario final haya iniciado sesión en la plataforma.
-
-Para obtener información del usuario final, es necesario llamar a la función: `client.getUserInfo()` dicha función retornará un objeto con la información básica
-de dicho usuario.
-:::
-
 ## Referencia del API
 
 ### Estructura de Rutas del API
@@ -374,10 +111,18 @@ Entries JSON:
         "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
         "space": "myspace",
         "name": "Lorem Ipsum dolor",
-        "type_name": "Post",
-        "category": null,
+        "slug": "lorem-ipsum-dolor"
+        "type": "Post",
+        "private": false,
+        "targets": [],
+        "category": "lorem/ipsum",
         "updated_at": "2019-03-18T14:06:59.000-03:00",
         "created_at": "2019-03-18T14:06:59.000-03:00",
+        "published_at": "2021-02-26T13:37:42.000Z",
+        "version_type": "current",
+        "category_name": "Ipsum",
+        "category_slug": "ipsum",
+        "unpublished_at": null,
         "tags": [],
         "locale": "en",
         "available_locales": [
@@ -393,11 +138,19 @@ Entries JSON:
       "meta": {
         "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
         "space": "myspace",
-        "name": "Lorem Ipsum dolor",
-        "type_name": "Post",
-        "category": null,
+        "name": "Lorem Ipsum",
+        "slug": "lorem-ipsum"
+        "type": "Post",
+        "private": false,
+        "targets": [],
+        "category": "lorem",
         "updated_at": "2019-03-18T14:06:59.000-03:00",
         "created_at": "2019-03-18T14:06:59.000-03:00",
+        "published_at": "2021-02-26T13:37:42.000Z",
+        "version_type": "current",
+        "category_name": "Lorem",
+        "category_slug": "lorem",
+        "unpublished_at": null,
         "tags": [],
         "locale": "en",
         "available_locales": [
@@ -426,52 +179,70 @@ Entries JSON Schema:
             "uuid",
             "space",
             "name",
-            "type_name",
+            "type",
             "category",
-            "updated_at",
+            "category_name",
+            "category_slug",
             "created_at",
+            "updated_at",
+            "published_at",
+            "unpublished_at",
             "tags",
             "locale",
-            "available_locales"
+            "available_locales",
+            "targets",
+            "private",
+            "version_type",
+            "slug"
           ],
           "properties": {
             "uuid": {
               "type": "string",
-              "default": "",
               "examples": [
                 "9b0a24a6-d84f-4851-8750-a86244947510"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
             "space": {
               "type": "string",
-              "default": "",
               "examples": [
-                "myspace"
-              ],
-              "pattern": "^(.*)$"
+                "mySpace"
+              ]
             },
             "name": {
               "type": "string",
-              "default": "",
               "examples": [
                 "Lorem Ipsum dolor"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
-            "type_name": {
+            "type": {
+              "type": "string",
+              "examples": [
+                "Lorem Ipsum dolor"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "examples": [
+                "parent-category/my-category"
+              ]
+            },
+            "category_name": {
+              "type": "string",
+              "examples": [
+                "My Category"
+              ]
+            },
+            "category_slug": {
+              "type": "string",
+              "examples": [
+                "my-category"
+              ]
+            },
+            "created_at": {
               "type": "string",
               "default": "",
               "examples": [
-                "Post"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "category": {
-              "type": "null",
-              "default": null,
-              "examples": [
-                null
+                "2019-03-18T14:06:59.000-03:00"
               ]
             },
             "updated_at": {
@@ -479,30 +250,73 @@ Entries JSON Schema:
               "default": "",
               "examples": [
                 "2019-03-18T14:06:59.000-03:00"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
-            "tags": {
-              "type": "array"
-            },
-            "locale": {
+            "published_at": {
               "type": "string",
               "default": "",
               "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ]
+            },
+            "unpublished_at": {
+              "type": "string",
+              "default": "",
+              "examples": [
+                "2019-03-18T14:06:59.000-03:00"
+              ]
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "tag1",
+                  "tag2"
+                ]
+              }
+            },
+            "locale": {
+              "type": "string",
+              "examples": [
                 "en"
-              ],
-              "pattern": "^(.*)$"
+              ]
             },
             "available_locales": {
               "type": "array",
               "items": {
                 "type": "string",
-                "default": "",
                 "examples": [
-                  "en"
-                ],
-                "pattern": "^(.*)$"
+                  "es"
+                ]
               }
+            },
+            "targets": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "target1"
+                ]
+              }
+            },
+            "private": {
+              "type": "boolean",
+              "examples": [
+                false
+              ]
+            },
+            "version_type": {
+              "type": "string",
+              "examples": [
+                "current"
+              ]
+            },
+            "slug": {
+              "type": "string",
+              "examples": [
+                "en-labore"
+              ]
             }
           }
         },
@@ -558,18 +372,24 @@ Entry JSON:
 {
    "meta":{
       "uuid":"9b0a24a6-d84f-4851-8750-a86244947510",
-      "space":"myspace",
-      "name":"Lorem Ipsum dolor",
-      "type_name":"Post",
-      "category":null,
-      "updated_at":"2019-03-18T14:06:59.000-03:00",
+      "space": "myspace",
+      "name": "Lorem Ipsum dolor",
+      "slug": "lorem-ipsum-dolor"
+      "type": "Post",
+      "private": false,
+      "targets": [],
+      "category": "lorem/ipsum",
+      "updated_at": "2019-03-18T14:06:59.000-03:00",
       "created_at": "2019-03-18T14:06:59.000-03:00",
-      "tags":[
-
-      ],
-      "locale":"en",
-      "available_locales":[
-         "en"
+      "published_at": "2021-02-26T13:37:42.000Z",
+      "version_type": "current",
+      "category_name": "Ipsum",
+      "category_slug": "ipsum",
+      "unpublished_at": null,
+      "tags": [],
+      "locale": "en",
+      "available_locales": [
+        "en"
       ]
    },
    "fields":{
@@ -598,93 +418,144 @@ Entry JSON Schema:
         "uuid",
         "space",
         "name",
-        "type_name",
+        "type",
         "category",
-        "updated_at",
+        "category_name",
+        "category_slug",
         "created_at",
+        "updated_at",
+        "published_at",
+        "unpublished_at",
         "tags",
         "locale",
-        "available_locales"
+        "available_locales",
+        "targets",
+        "private",
+        "version_type",
+        "slug"
       ],
       "properties": {
         "uuid": {
-          "$id": "#/properties/meta/properties/uuid",
           "type": "string",
-          "default": "",
           "examples": [
             "9b0a24a6-d84f-4851-8750-a86244947510"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "space": {
-          "$id": "#/properties/meta/properties/space",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "myspace"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "name": {
-          "$id": "#/properties/meta/properties/name",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Lorem Ipsum dolor"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "type_name": {
-          "$id": "#/properties/meta/properties/type_name",
-          "type": "string",
-          "default": "",
-          "examples": [
-            "Post"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "category": {
-          "$id": "#/properties/meta/properties/category",
-          "type": "null",
-          "default": null,
-          "examples": [
-            null
           ]
         },
-        "updated_at": {
-          "$id": "#/properties/meta/properties/updated_at",
+        "space": {
+          "type": "string",
+          "examples": [
+            "mySpace"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "examples": [
+            "Lorem Ipsum dolor"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "examples": [
+            "parent-category/my-category"
+          ]
+        },
+        "category_name": {
+          "type": "string",
+          "examples": [
+            "My Category"
+          ]
+        },
+        "category_slug": {
+          "type": "string",
+          "examples": [
+            "my-category"
+          ]
+        },
+        "created_at": {
           "type": "string",
           "default": "",
           "examples": [
             "2019-03-18T14:06:59.000-03:00"
-          ],
-          "pattern": "^(.*)$"
+          ]
         },
-        "tags": {
-          "$id": "#/properties/meta/properties/tags",
-          "type": "array"
-        },
-        "locale": {
-          "$id": "#/properties/meta/properties/locale",
+        "updated_at": {
           "type": "string",
           "default": "",
           "examples": [
-            "en"
-          ],
-          "pattern": "^(.*)$"
+            "2019-03-18T14:06:59.000-03:00"
+          ]
         },
-        "available_locales": {
-          "$id": "#/properties/meta/properties/available_locales",
+        "published_at": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ]
+        },
+        "unpublished_at": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "2019-03-18T14:06:59.000-03:00"
+          ]
+        },
+        "tags": {
           "type": "array",
           "items": {
-            "$id": "#/properties/meta/properties/available_locales/items",
             "type": "string",
-            "default": "",
             "examples": [
-              "en"
-            ],
-            "pattern": "^(.*)$"
+              "tag1",
+              "tag2"
+            ]
           }
+        },
+        "locale": {
+          "type": "string",
+          "examples": [
+            "en"
+          ]
+        },
+        "available_locales": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "es"
+            ]
+          }
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "target1"
+            ]
+          }
+        },
+        "private": {
+          "type": "boolean",
+          "examples": [
+            false
+          ]
+        },
+        "version_type": {
+          "type": "string",
+          "examples": [
+            "current"
+          ]
+        },
+        "slug": {
+          "type": "string",
+          "examples": [
+            "en-labore"
+          ]
         }
       }
     },
@@ -696,26 +567,48 @@ Entry JSON Schema:
 }
 ```
 
-### Paginación API
+## Ejemplos
 
-Para cualquier recurso de contenido a través de la API, es necesaria hacer una paginación para su correcto funcionamiento.
+### Desplegar Entradas
 
-Para ello, se usa una paginación tipo offset con los parámetros page y per_page en la query string de la URL de entries.
+Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:
 
-Por ejemplo, con `page = 3`, `per_page = 20` se está solicitando que se retorna los próximos 20 ítems saltándose los primeros 40.
+<CodeSwitcher>
+<template v-slot:lq>
 
-Junto con la respuesta se entrega un meta de paginación como por ejemplo:
-
-```javascript
- "meta": {
-    "total_entries": 2,
-    "per_page": 15,
-    "current_page": 1,
-    "total_pages": 1
-    }
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
 ```
 
-#### Entradas
+En el caso de una entrada de cardinalidad single, puedes usar el metodo entry, por ejemplo:
+
+```liquid
+{{ spaces['space_uid'].types['type_uid'].entry }}
+```
+
+</template>
+<template v-slot:js>
+
+```js
+import { Client } from "@modyo/sdk";
+// Para obtener la cuenta correcta, debemos usar la url de la cuenta
+const modyoAccount = new Client("https://my-account.modyo.com","es");
+
+const typePost = modyoAccount.getContentType("space_uid", "type_uid");
+// `typePost` retornará un objeto con diversa información del tipo, entre ellas, el esquema de ese tipo
+
+// Si queremos ver ese esquema en detalle, podemos ocupar el método `getSchema()`
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
+/*
+Eso imprimirá algo como esto:
+> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
+*/
+```
+</template>
+<template v-slot:curl>
 
 Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
 
@@ -724,7 +617,163 @@ Las entradas que podrás ver en sección, corresponden a todo el contenido envia
 - Tags
 - Autor
 
-#### Filtros
+</template>
+</CodeSwitcher>
+
+### Desplegar cantidad total de Entradas
+
+Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries %}
+Total entries: {{ entries | total_entries }}
+```
+
+</template>
+<template v-slot:js>
+
+    
+```js
+import { Client } from "@modyo/sdk";
+const modyoAccount = new Client("https://my-account.modyo.com","es");
+const typePost = modyoAccount.getContentType("space_uid", "type_uid");
+
+typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
+
+// Para obtener las entradas de ese tipo
+const entries = typePost.getEntries();
+
+```
+
+El objeto retornado por getEntries() incluye un campo meta que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
+
+```json
+"meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+```
+
+
+</template>
+<template v-slot:curl>
+    <!-- ... (see above) -->
+</template>
+</CodeSwitcher>
+
+### Filtrar
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+Si quieres filtrar las entradas, lo puedes hace a través de los siguientes atributos: by_uuid, by_slug, by_category, by_type, by_tag, by_lang, filter_by. Todos reciben un array de valores, por lo que es posible filtrar por un valor o varios, y la forma de usarlo es como sigue:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_category: 'news' | by_tag: 'tag1, tag2, tag3' %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}    
+```
+
+En el caso del filtro `filter_by`, se debe utilizar para atributos meta o custom fields del tipo de contenido, por ejemplo:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro del filtro:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+La selección de entradas siempre retorna un array, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
+{% assign entry = entries.first %}
+```
+
+Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
+<ul>
+  {% for entry in entries %}
+  <li>{{ entry.meta.slug }}</li>
+  {% endfor %}
+</ul>
+{{ entries | pagination_links }}
+```
+
+En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
+
+:::warning Atención
+Ten en cuenta que si tienes más de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
+:::
+
+:::warning Atención
+Para hacer uso de la paginación en un widget personalizado, se debe cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, se debe asegurar de que _JQuery_ está disponible en el sitio y recordar que al hacer uso de los links de paginación, solo cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
+:::
+
+</template>
+<template v-slot:js>
+
+El método `getEntries()` que ocupamos más arriba también puede recibir un objecto de filtros para consultar las entradas.
+Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, `Has`, `Geohash`, pudiendo consultar los campos `meta` de cada entrada (como la fecha de creación o tags asignados)
+
+**Filtros soportados**:
+
+- **Before, After, LessThan, GreaterThan**: reciben como parámetro el nombre del campo a comparar y el valor con el que se comparará.
+
+- **In, NotIn, Has**: reciben como parámetro el nombre del campo a comparar y un array de valores con los que se comparará. In es equivalente a un `OR` en SQL, Has es equivalente a un `AND`.
+
+- **SortBy**: recibe como parámetros el campo a ordenar y orden (`asc` o `desc`).
+
+- **JSONPath**: recibe el JSONPath [ref](https://goessner.net/articles/JsonPath/) que modela una estructura de respuesta.
+
+- **Pagination**: recibe como parámetros el número de página y el total de entradas por página.
+
+- **Geohash**: recibe como parámetros un campo de ubicación y un geohash [ref](https://www.movable-type.co.uk/scripts/geohash.html) para seleccionar el contenido dentro de una ubicación.
+
+:::warning Atención
+Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
+:::
+
+```js
+// Si queremos obtener un listado de los atributos por los que podemos consultar
+typePost
+  .getSchema()
+  .then(() => console.log("List of attributes:", typePost.getAttrs()));
+```
+
+Para crear un filtro, usamos el método `Filter()`
+
+```js
+const filters = typePost
+  .Filter()
+  .Before("meta.created_at", "2020-05-01")
+  .In("meta.tags", ["tag1", "tag2"])
+  .Pagination(15,1);
+// Ahora lo ocupamos para obtener entradas con estos criterios
+const filteredEntries = typePost.getEntries(filters);
+// ahora resolvemos la promesa
+filteredEntries.then(res => console.log("Filtered entries response: ", res));
+```
+
+</template>
+<template v-slot:curl>
 
 En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
 
@@ -792,52 +841,78 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 - NIN: equivalente a un sql NOT IN
   `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
-##### Orden
+</template>
+</CodeSwitcher>
+
+### Ordenar
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
+```
+
+Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
+Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at`, `slug` y `field`.
+
+Para ordenar por un campo personalizado, debes usar como parámetro el `fields.uid` del campo:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+</template>
+<template v-slot:js>
+
+Los resultados de nuestra búsqueda también pueden ordenarse con el método `SortBy()`
+
+```js
+// JSONPath and Sorting are also supported as filters
+const filters = ctype
+  .Filter()
+  .SortBy("meta.created_at", "desc")
+  .JSONPath("$..uuid");
+```
+
+**Nota**: Como se puede ver en el ejemplo, es posible usar en nuestras consultas expresiones `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+
+#### Contenido privado
+
+Para obtener contenido privado, basta con que el usuario esté con sesión, pasando al método `getContentType()` un tercer argumento en `false` (que indica que no es público)
+
+```js
+// To acces private content (user must be logged in on account)
+const privateTypePost = modyoAccount.getContentType("blog", "post", false);
+```
+
+:::warning Atención
+Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
+:::
+
+### Información de Usuario Final
+
+:::warning Atención
+Es importante que trates esta información sensible con cuidado. Al igual que con Contenido privado, esta información sólo es obtenible si se trabaja desde un navegador que soporte cookies, y el usuario final haya iniciado sesión en la plataforma.
+
+Para obtener información del usuario final, es necesario llamar a la función: `client.getUserInfo()` dicha función retornará un objeto con la información básica
+de dicho usuario.
+:::
+
+</template>
+<template v-slot:curl>
 
 El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
 
 - `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
 - `order`: ['asc','desc'] (opcional, asc por default)
 
-#### jQuery
-
-La biblioteca JavaScript de jQuery hacen fácil poder implementarlas dentro de Modyo, en torno a las APIs.
-
-Una poderosa característica de JQuery es su funcionalidad AJAX fácil de entender. Te permite traer fácilmente datos de contenido dentro de tu sitio, y también desde otros sitios y servicios.
-
-En esta solicitud AJAX, se está especificando un punto de salida (utilizando el objeto Liquid <span v-pre>{{ site.url }}</span>) e incluyendo opciones para especificar que es un "GET" del tipo 'json'. Finalmente enlaza el "data.promotions" a "vm.promos" para usarlo en la aplicación.
-
-#### API Fetch con JavaScript nativo
-
-La API Fetch provee una interfaz JavaScript simple, para acceder y manipular parte del protocolo HTTP, como solicitudes y repuestas. El método global fetch() es una manera fácil y lógica de traer recursos asincrónicamente a través de una red.
-
-Una solicitud fetch básica es muy simple de realizar. Observa el siguiente código:
-Se está trayendo un archivo JSON desde dentro del sitio utilizando el objeto Liquid <span v-pre> {{ site.url }}</span>. El uso más simple de fetch() requiere un argumento —la ruta del recurso que quieres traer— y devuelve un "promise" que contiene la respuesta (Response object).
-
-Esta es una respuesta HTTP, no el verdadero JSON. Para extraer el cuerpo del JSON de la respuesta, utiliza el método json() al final de esta, para luego enlazar los datos a las promociones (este fetch() es para esta aplicación).
-
-Para información más detallada, visita los webdocs de MDN.
-
-#### Axios
-
-Axios es una biblioteca JavaScript muy popular que los desarrolladores utilizan para realizar solicitudes HTTP que funcionan en todos los navegadores modernos, incluyendo IE8 en adelante.
-
-Está basada en el objeto Promise y te permite escribir asincrónicamente código para realizar solicitudes XHR fácilmente.
-
-Utilizar Axios tiene algunas ventajas sobre la API Fetch nativa:
-
-- Soporta navegadores más antiguos (Fetch necesita un polyfill)
-- Tiene una manera de cancelar una solicitud
-- Tiene una manera de establecer un timeout para una respuesta
-- Viene con protección CSRF incluida
-- Soporta progreso de carga
-- Realiza transformación de datos JSON automáticamente
-
-Para poder usar Axios en Modyo, necesitas agregar el código base del axios.js como un custom snippet e incluirlo en algún lugar donde tus widgets puedan accederlo, como tu theme en JavaScript (localizado en Templates, bajo la pestaña de Archivos).
-
-La API de Modyo provee una interfaz RESTful con respuestas formateadas en un JSON ligero que puede ser utilizado en muchas funcionalidades de tu cuenta.
-
-## Contenido privado
+### Contenido privado
 
 Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido.
 
@@ -883,3 +958,40 @@ Es necesario que la obtención del token de acceso al contenido se haga de forma
 :::
 
 La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin segmentos) como el contenido segmentado que esté restringido a los segmentos a los que pertenece el usuario que solicitó su delivery token.
+
+</template>
+</CodeSwitcher>
+
+### Geolocalización
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
+
+```
+{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
+
+```
+{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
+
+:::tip Tip
+Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
+:::
+
+</template>
+<template v-slot:js>
+
+    <!-- ... (see above) -->
+</template>
+
+<template v-slot:curl>
+
+    <!-- ... (see above) -->
+
+</template>
+</CodeSwitcher>
