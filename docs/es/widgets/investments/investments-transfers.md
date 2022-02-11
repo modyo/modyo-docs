@@ -4,7 +4,7 @@ search: true
 
 # Histórico de transferencias
 
-Modyo ofrece un Widget que presenta todos los datos relevantes sobre las operaciones en tránsito asociadas a la compra y venta de acciones del usuario, para que encuentre rápidamente su información consolidada en la plataforma.
+Presenta todos los datos relevantes sobre las operaciones en tránsito asociadas a la compra y venta de acciones del usuario, para que encuentre rápidamente su información consolidada en la plataforma.
 
 #### Instalación:
 

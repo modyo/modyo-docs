@@ -4,7 +4,7 @@ search: true
 
 # Pagos de Tarjeta de Crédito
 
-La plataforma ofrece un Widget de pago de tarjeta de crédito, con tal de que el cliente pueda realizar la transacción directamente desde su portal de pagos.
+Realiza pagos con tarjeta de crédito, el cliente podrá realizar la transacción directamente desde su portal de pagos.
 
 ### Instalación:
 
