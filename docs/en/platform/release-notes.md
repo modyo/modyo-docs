@@ -5,6 +5,17 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.5 - January 27, 2022
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Content Pages are incorporated
+* Fix problems with preview bar
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Improvements and fixes in Entries editor
+
+<Badge text="Core" type="core" vertical="middle"/>
+* SCIM support is added for admin users
+
 ### 9.2.4 - December 30, 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Fixed problem that contaminated the cache when performing previews
@@ -50,6 +61,14 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+### 9.1.37 - February 5, 2022
+<Badge text="Core" type="core" vertical="middle"/>
+* Fixed enrollment of cards with OneClick API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixed issues with multiline text editor
+* Fix to cache contamination
+
 ### 9.1.36 - January 18, 2022
 
 <Badge text="Channels" type="channels" vertical="middle"/>
