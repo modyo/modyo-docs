@@ -10,7 +10,7 @@ Once you have selected a theme for a new site, you can access each template in t
 
 Once inside the Template Builder, the main menu is hidden to optimize the workspace. In the top bar, on the left, you can find the section name and the current publication status.
 
-![Template Builder](/assets/img/channels/template_builder/template-builder.jpg)
+![Template Builder](/assets/img/channels/template_builder/template-builder.png)
 
 - **Published**: When a published version already exists and its editable version is the same.
 - **Pending Changes**: When there is a published version, but your editable version has changes that are not published yet.
