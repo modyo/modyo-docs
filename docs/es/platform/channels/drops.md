@@ -9,69 +9,77 @@ sidebarDepth: 3
 También conocido como Objetos o Variables Liquid, Modyo cuenta con drops disponibles para distintos contextos dentro de Modyo Platform para mandar a llamar información dinámicamente. Podrás encontrar drops para los contextos de cuenta, content, channels, y customers.
 
 ## Cuenta
+
 Los drops de Cuenta son utilizados principalmente en el contexto de autenticación de cuentas, lo cual significa que pueden ser llamados desde cualquier lugar ya que son considerados de escala global. Los atributos disponibles son:
 
 ### account.url
 
-Despliega la URL de Modyo Platform, incluyendo el protocolo y sub-dominio.
+La URL de Modyo Platform, incluyendo el protocolo y sub-dominio.
+
 #### output
 ```https://test.miModyo.com```
 
 ### account.host
 
-Despliega el nombre del sub-dominio de Modyo Platform. 
+El nombre del sub-dominio de Modyo Platform. 
+
 #### output
 ```test```
 
 ### account.google_key
 
 Si existe autenticación con Google, despliega la llave de la credencial, de lo contrario despliega vacío (void).
+
 #### output
 ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE```
 
-## Content
+## Espacio
 
-Despliega contenido dinámico creado en Content desde cualquier parte de tu sitio. En este objeto tienes acceso a toda información pertinente a las entradas y gestor de archivos. Los atributos disponibles son:
+Despliega contenido dinámico creado en tus espacios desde cualquier parte de tu sitio. En este objeto tienes acceso a toda información pertinente a las entradas, los tipos de contenido, y el gestor de archivos. Los atributos disponibles son:
 
-### space.entries
+### [space.entries](#entrada)
 
-Arreglo de objetos del tipo entry que contiene todas las entries del espacio.
+Arreglo de objetos de entradas que contiene todas las entradas del espacio.
 
-### space.types
+### [space.types](#tipo)
 
-Arreglo de objetos del tipo type que contiene todos los tipos del espacio.
+Arreglo de objetos de tipos de contenido que contiene todos los tipos del espacio.
 
 ### space.name
 
-Nombre del espacio.
+El nombre del espacio.
+
 #### output
 ```Espacio Nuevo```
 
-### type.entries
+## Tipo
 
-Arreglo de objetos del tipo entries que contiene todas las entradas del tipo.
+### [type.entries](#entrada)
 
-### type.fields
+Arreglo de objetos de entradas que contiene todas las entradas del tipo.
 
-Arreglo de objectos del tipo fields que tienen el tipo seleccionado.
+### [type.fields](#campo)
 
-### type.entry
+Arreglo de objectos de los campos dentro del tipo de contenido seleccionado.
 
-El primer objecto del tipo entry que contiene el tipo seleccionado.
+### [type.entry](#entrada)
+
+Objeto de la primera entrada del tipo seleccionado. Esto también es utilizado con entradas de cardinalidad individual.
 
 ### type.name
 
 Nombre del tipo.
+
 #### output
 ```TipoNuevo```
 
-### entry
+## Entrada
 
-Objeto de la entrada. Contiene la información pertinente a esta entrada. También puedes encontrar esta información desde la vista previa en Content o desde la API.
+Obtén toda la información pertinente a las entradas con este drop.
 
 ### entry.space
 
-Retorna el nombre del espacio asociado a la entry
+El nombre del espacio asociado a la entry.
 
 #### output
 ```espacio1```
@@ -127,21 +135,21 @@ URL canónico de la entrada
 #### output
 ```https://test.miModyo.com/entry```
 
-### entry.author
+### [entry.author](#usuario)
 
-Retorna el onjecto user que es autor de la entrada
+El objeto del usuario autor de la entrada
 
-### entry.meta
+### [entry.meta](#meta)
 
 Retorna objeto del metadata de la entrada. Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private
 
-### entry.fields
+### [entry.fields](#campo)
 
-Retorna un array con objetos del tipo fields.
+Array con objetos de los campos de la entrada.
 
-### Field
+## Campo
 
-Objecto del tipo field. Contiene la información pertinente a un field.
+Despliega toda la información de los campos de una entrada.
 
 ### field.name
 
@@ -151,13 +159,13 @@ Nombre del campo personalizado.
 
 ### field.type
 
-Nombre del type asociado al field.
+Nombre del type asociado al campo.
 #### output
 ```Type1```
 
-### Location
+## Ubicación
 
-Objecto del tipo location. Contiene la información pertinente a una location.
+Objecto del tipo ubicación. Contiene la información pertinente a un punto de geolocalización.
 
 ### location.location_street
 
@@ -173,7 +181,7 @@ Latitud del punto de Google Maps.
 
 ### location.longitude
 
-Longitud del punto de Google Maps. //Lo encontré como location.lon en APIs
+Longitud del punto de Google Maps.
 #### output
 ```-70.6003616```
 
@@ -188,31 +196,34 @@ Información del área administrativa del punto de Google Maps, puede incluir da
 #### output
 ```Jalisco```
 
-### category.id
+## Categoría
+Objecto del tipo categoría (Tag). Contiene la información pertinente a las categorías de una entrada.
 
+### category.id
 ID de la categoría. 
+
 #### output
 ```12345```
 
 ### category.slug
 Slug de la categoría.
+
 #### output
-```category-1``
+```category-1```
 
 ### category.name
-
 Nombre de la categoría.
+
 #### output
-```Category 1``
+```Category 1```
 
 ### category.url
-
 URL canónica de la categoría.
+
 #### output
-```/category-1``
+```/category-1```
 
 ### category.children
-
 Array de objectos tipo category con todos los hijos de la categoria.
 
 ### category.parent
