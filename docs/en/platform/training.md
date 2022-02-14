@@ -11,7 +11,7 @@ Training on the Modyo Platform is a key aspect for any user who plays a role wit
 #### Recommendations before starting
 - Understand what [Modyo and its main modules](https://www.modyo.com/platform) are
 - Be clear about the role you play, for example: frontend development, content management, digital marketing, system administration, etc.
-- Set up a [test environment](https://platform.modyo.cloud/onboarding) and put your skills to the test
+- Set up a [test environment](https://platform.modyo.cloud/try) to put everything you've learned into practice
 - Access [platform documentation](/en/platform/core)
 - Access our [Support Center](https://support.modyo.com/hc/en) to report problems and make queries
 
@@ -48,7 +48,7 @@ Access will be granted for the period of one month, during which you will have t
 #### Test environment
 To understand how the Modyo platform works it is very important that you can test what you have learned. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
 
-To create the test account you must log in to the [following link](https://platform.modyo.cloud/onboarding) and complete the form by entering your data and those of the organization.
+To create a trial account you must go to [this link](https://platform.modyo.cloud/try) and complete the form by entering your data and those of your organization.
 
 You will automatically be assigned the account administrator role, granting you privileges to invite other users on your team to participate in it.
 
