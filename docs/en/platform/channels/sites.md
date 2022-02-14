@@ -1,26 +1,30 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Sites
 
 <img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
 
-This is where you need to go to create digital channels within the platform. In this case, the operation of sites involves all the development, design, and navigation flow. If you want to add content to each of them, it must be added in the [Content](/en/platform/content/) section.
+A site is where content created in [Content](/en/platform/content/) and [Widgets](/platform/channels/widgets) are combined to create your custom digital channel. Sites include operations regarding the entire development, design, and navigation flow.
 
-Upon entering, you will see that there are 4 statuses:
-
-<img src="/assets/img/channels/sites/filters-sites.jpg" width="300" />
+There are two states for each site:
 
 - **Enabled**: Default state of functioning online digital channels and newly created Sites.
-- **Hidden**: Sites created that only users with access can see.
-- **Development**: Sites only accessible by backend users who are working on them.
 - **Disabled**: Sites that have been disabled.
-- **Copy**: Creates a copy of the site and all the published elements of it.
 
-To create a site, you just have to click on the **New** tab, which will allow you to designate the name and host, and then select a base template for the site's appearance and structure.
+## Create a Site
 
-After that, you can see it with the status "Enabled", which means that it is online to work.
+To create a new site, follow these steps:
+
+1. From the side menu, click **Channels**.
+1. Click **+ New Site**.
+1. Enter the name and host (the site's path).
+1. If necessary, select which realm this site belongs to.
+1. Click **Create**.
+
+When you finish creating your site, it will automatically be enabled and you will be taken to the **Summary** screen.
 
 :::warning Warning
 In the site index, you will only be able to see sites where you are part of the team with a designated role.
@@ -28,7 +32,7 @@ In the site index, you will only be able to see sites where you are part of the 
 
 ## Site settings
 
-Site settings allow you to open platform options, so that it is viewed differently by visitors, customers, developers, and site administrators. Additionally, you can modify options to improve the appearance in search engines and the visibility of some of the data that the public has access to when they reach the pages.
+Site settings allow you to configure different site options, for example showing different views depending if the user is a visitor, customer, developer, or site administrators. In addition, you can modify options that allow you to improve SEO and the visibility of some of the data that the public has access to when they reach a page.
 
 <img src="/assets/img/channels/sites/config-site.jpg" width="250" />
 
@@ -108,7 +112,7 @@ Restrictions allow you to configure the privacy of your site.
 - If you reach a URL that does not exist within the site, you will receive a 404 response by default, but if you check this option, instead of receiving a 404, you will be redirected to the home page.
 
 
-## SEO
+### SEO
 
 <img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -135,7 +139,7 @@ When you add a meta tag to all pages through your site's SEO settings, it will b
 Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
 :::
 
-## PWA
+### PWA
 
 Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
 
@@ -180,7 +184,7 @@ If the Service Worker is disabled, the page will continue to run only with its b
 If the code is not customized or saved, the site will not have the features you are designing.
 :::
 
-## Domains
+### Domains
 
 <img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -262,7 +266,7 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 </tr></table>
 :::
 
-## Stages
+### Stages
 
 Adding stages to your site allows you to work on new features for your site without modifying what's already published.
 
@@ -272,7 +276,7 @@ The main advantages of having different stages on your sites is that it allows y
 When using stages, custom PWAs, and redirects will be disabled. You can only use these in the `main` stage.
 :::
 
-### Add a new stage
+#### Add a new stage
 
 <img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
 
@@ -291,7 +295,7 @@ When you have more than one stage on your site, the **Overview** page will now d
 In the sidebar you can see which stage you are currently in and when you click on the dropdown, it will display a list of all the stages of your site.
 :::
 
-### Synchronize a stage
+#### Synchronize a stage
 
 Once you've finished your tests on your stage, make sure you sync them to `main`. On the synchronizations screen, you will be able to see all the changes that were made between the two selected stages by clicking on _View_.
 
@@ -314,7 +318,7 @@ You will receive an alert if you try to sync changes that haven't been published
 :::
 
 
-## Team Review
+### Team Review
 
 You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
 
@@ -328,7 +332,7 @@ If you have team review enabled, only the items that are already approved will a
 In case you need to publish an element quickly, administrator users can skip the approval process by using the "Force publish" option, allowing the element to go directly to the published view.
 :::
 
-## Team Members
+### Team Members
 
 <img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
@@ -336,7 +340,7 @@ The Team members section of your Site settings allows you to select eligible use
 
 To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
-### Add a new member
+#### Add a new member
 To add a new member to your site, follow these steps:
 
 1. From the Modyo Platform main menu, expand Channels, and click your site.
@@ -378,7 +382,7 @@ This team member is different from the account-level Default Admin. A site Admin
 
 If necessary, users from the site who already have existing roles can be deleted. To do this, just click the user and the Delete action.
 
-## Custom redirects
+### Custom redirects
 
 Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
@@ -408,19 +412,19 @@ The precedence of locations on Modyo sites is as follows:
 1. Custom redirects
 1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
 
-## Security headers
+### Security headers
 
 Configure HTTP security headers by enabling this module for your site.
 This action cannot be undone. When enabled, you'll have full control over the headers you want to use.
 
-### HTTP Strict Transport Security (HSTS)
+#### HTTP Strict Transport Security (HSTS)
 
 Instructs the browser that your site should be accessed using HTTPS only.
 * **Duration**: Sets how long the browser should remember that your site is only accessed by using HTTPS.
 * **Preload**: Include the preload directive. See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
 * **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
 
-### Referrer-Policy
+#### Referrer-Policy
 
 The `Referer` _header_ contains information about the previous web page that is linked to the resource being requested. You can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
 
@@ -433,17 +437,17 @@ The `Referer` _header_ contains information about the previous web page that is 
 * **strict-origin-when-cross-origin**: Send _referrer_ information to same-origin _requests_. Send the origin only to same protocol security level and don't send _referrer_ information to less secure destinations.
 * **unsafe-url**: Always send _referrer_ information.
 
-### X-Frame-Options
+#### X-Frame-Options
 
 Indicate whether your site can be included in a `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
 * **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
-### X-Content-Type-Options
+#### X-Content-Type-Options
 
 It indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
-### Content-Security-Policy
+#### Content-Security-Policy
 
 Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
@@ -476,11 +480,11 @@ There are several tools to help you design a strong security policy:
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
-### Permissions-Policy
+#### Permissions-Policy
 
 It allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs, like the camera or microphone, and video autoplay. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
-### X-XSS-Protection
+#### X-XSS-Protection
 
 It prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
 
@@ -488,7 +492,7 @@ It prevents pages from loading when the browser detects a _cross-site scripting_
 * **1**: Enable XSS _filtering_, removing the unsafe parts.
 * **1; mode=block**: Enable XSS _filtering_, preventing the _page rendering_.
 
-## Site variables
+### Site variables
 
 Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
 
@@ -500,7 +504,7 @@ You can use plain text, HTML, JavaScript, and CSS within global variables, howev
 To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.Name}}` </span> 
 :::
 
-### Create a variable in sites
+#### Create a variable in sites
 
 To create a variable in sites, follow these steps:
 
