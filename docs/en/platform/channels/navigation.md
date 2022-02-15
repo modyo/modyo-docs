@@ -10,7 +10,7 @@ Navigation is the fastest way to put together a list of elements to give your us
 
 In this section you will find a nested list of elements, which correspond to the items that will appear on the site when using the tag <span v-pre>`{% menu%}`</span> in [Template builder](/en/platform/channels/templates.html).
 
-The menu builder only allows three levels of depth, so you can have a main list and sub items on each of the main items.
+The menu builder only allows items up to three levels deep, you can have a main list and up to two sub-items nested in each of the main items.
 
 At the top of the view, you will find the publication status of the menu:
 
@@ -64,7 +64,7 @@ Your menu is now public but needs to be requested from a template before it can 
 
 For more information on how to create and publish a custom menu, see [Creating Mega Menu](/en/platform/tutorials/how-to-create-a-menu.html)
 
-**Primary Actions**
+**Main Actions**
 
 - **Save**: Save all menu changes.
 - **Send to review**: Changes the menu status to "In review". In this state you can continue making changes, but each change alerts assigned reviewers via email.
