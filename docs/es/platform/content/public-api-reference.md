@@ -610,12 +610,9 @@ Eso imprimirá algo como esto:
 </template>
 <template v-slot:curl>
 
-Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
-
-- Tipo
-- Categoría
-- Tags
-- Autor
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+```
 
 </template>
 </CodeSwitcher>
@@ -662,7 +659,22 @@ El objeto retornado por getEntries() incluye un campo meta que te ayudará a nav
 
 </template>
 <template v-slot:curl>
-    <!-- ... (see above) -->
+    
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+```
+
+La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
+
+```json
+"meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+```
+
 </template>
 </CodeSwitcher>
 
@@ -846,10 +858,10 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 ### Ordenar
 
+De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
+
 <CodeSwitcher isolated:true>
 <template v-slot:lq>
-
-De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
@@ -912,6 +924,49 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 - `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
 - `order`: ['asc','desc'] (opcional, asc por default)
 
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
+```
+
+</template>
+</CodeSwitcher>
+
+### Geolocalización
+
+<CodeSwitcher isolated:true>
+<template v-slot:lq>
+
+Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
+
+```
+{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
+
+```
+{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
+
+:::tip Tip
+Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
+:::
+
+</template>
+<template v-slot:js>
+
+    <!-- ... (see above) -->
+
+</template>
+
+<template v-slot:curl>
+
+    <!-- ... (see above) -->
+
+</template>
+</CodeSwitcher>
+
+
 ### Contenido privado
 
 Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido.
@@ -958,40 +1013,3 @@ Es necesario que la obtención del token de acceso al contenido se haga de forma
 :::
 
 La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin segmentos) como el contenido segmentado que esté restringido a los segmentos a los que pertenece el usuario que solicitó su delivery token.
-
-</template>
-</CodeSwitcher>
-
-### Geolocalización
-
-<CodeSwitcher isolated:true>
-<template v-slot:lq>
-
-Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
-
-```
-{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
-```
-
-El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
-
-```
-{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
-```
-
-:::tip Tip
-Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
-:::
-
-</template>
-<template v-slot:js>
-
-    <!-- ... (see above) -->
-</template>
-
-<template v-slot:curl>
-
-    <!-- ... (see above) -->
-
-</template>
-</CodeSwitcher>
