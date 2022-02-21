@@ -23,7 +23,7 @@ Puedes acceder a la documentación OpenAPI a través de los siguientes URLs:
 ```http
 https://[account_host]/api/admin/docs
 https://[account_host]/api/content/docs
-https://[account_host]/api/profile/docs
+https://[account_host]/api/customers/docs
 ```
 
 Por ejemplo, el detalle de la API pública de Content la encontrarás en la siguiente ruta:

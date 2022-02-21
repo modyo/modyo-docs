@@ -980,11 +980,11 @@ La API de contenido puede recibir el parámetro delivery token de dos formas:
 - Como header: `Delivery-Token`
 - Como parámetro GET: `delivery_token`
 
-El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de segmentos. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`.
+El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de segmentos. Se puede obtener haciendo un request GET a la URL `test.modyo.com/api/realms/{realm_uid}/delivery_token`.
 
 El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
 
-- **iss**: URL base de la API de profile
+- **iss**: URL base de la API de customers
 - **aud**: URL base de la API de contenido
 - **sub**: Nombre del space
 - **exp**: Tiempo de expiración del token
@@ -995,7 +995,7 @@ Por ejemplo:
 
 ```javascript
 {
-  "iss": "http://my-account.modyo.me/api/profile",
+  "iss": "http://my-account.modyo.me/api/customers",
   "aud": "http://my-account.modyo.me/api/content",
   "sub": "account_uuid",
   "exp": 1516242622,
