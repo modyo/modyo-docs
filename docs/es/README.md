@@ -3,7 +3,10 @@ home: true
 
 title: Modyo Docs
 heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
-footer: Copyright © 2008-2022 Modyo SpA
+footer: Copyright © 2008-2021 Modyo SpA
+
+platformText: La base tecnológica sobre la cual operan las aplicaciones
+
 ChannelsTitle: Channels
 ChannelsText: Acelera tu desarrollo construyendo experiencias digitales más rápido integradas a los sistemas de tu negocio.
 ChannelsImg: https://cloud.modyocdn.com/uploads/015ea188-f83e-4af7-8485-4530731ddc7b/original/Channels.png
@@ -49,6 +52,7 @@ FirstSteps5Img: https://cloud.modyocdn.com/uploads/4853c725-b765-4770-add1-d4cd4
 FirstSteps5Url: https://training.modyo.com/
 
 search: Buscar en
+
 
 tutorials: tutoriales
 tutorialsText: Conozce los diferentes aspectos de la plataforma a su propio ritmo.

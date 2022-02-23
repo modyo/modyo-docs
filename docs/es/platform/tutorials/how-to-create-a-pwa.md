@@ -22,6 +22,7 @@ En este tutorial seguiremos usando el sitio de "Dynamic Bank" y vamos a habilita
 
 Para comenzar este tutorial necesitas haber completado el [tutorial de creación de un sitio básico](/es/platform/tutorials/how-to-create-home.html). Al igual que en los tutoriales anteriores debes tener conocimientos sobre HTML, JS, y la plataforma Modyo.
 
+
 ### Código fuente
 Te recomendamos que sigas el ejercicio paso a paso para crear tus propias PWA personalizada, pero si deseas puedes descargar todo el código e imágenes del ejercicio [en este enlace](https://cloud.modyocdn.com/uploads/a4ca197c-af7a-4888-99ce-cf455779dc8f/original/assets.zip).
 
@@ -57,11 +58,12 @@ En la barra lateral selecciona **Channels**, haz click en **Sites**. Abre el sit
 
 En la barra lateral, expande **Configuración del sitio** y selecciona la opción **PWA**.
 
+
 Localiza la primera casilla con el título **Custom PWA Manifest**, toma los valores generados en el archivo _manifest.webmanifest_ y pégalos. Luego actualiza los valores de la propiedad _src_ y reemplázalo por la ruta a las imágenes que acabas de almacenar en tu cuenta de Modyo.
 
 Al final del proceso los valores de tu custom manifest deberían verse así.
 
-``` json
+```json
 {
   "theme_color": "#4C5D99",
   "background_color": "#4C5D99",

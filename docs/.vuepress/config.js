@@ -17,12 +17,12 @@ module.exports = {
   },
   plugins: [
     [
-    'code-switcher',
-        {
-            groups: {
-                default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
-            },
+      'code-switcher',
+      {
+        groups: {
+          default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
         },
+      },
     ],
   ],
   head: [
@@ -36,7 +36,7 @@ module.exports = {
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MW9VKMC');
     `,
-    ],
+    ]
   ],
   themeConfig: {
     logo: "/assets/img/modyo.png",
@@ -59,8 +59,7 @@ module.exports = {
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],
         sidebar: {
-          "/en/platform/": [
-            {
+          "/en/platform/": [{
               title: "First Steps",
               path: "/en/platform/",
               collapsable: true,
@@ -70,7 +69,7 @@ module.exports = {
                 "/en/platform/release-notes",
                 "/en/platform/training",
               ],
-            },    
+            },
             {
               title: "Tutorials",
               path: "/en/platform/tutorials/",
@@ -94,8 +93,16 @@ module.exports = {
                 "/en/platform/core/roles",
                 "/en/platform/core/security",
                 "/en/platform/core/api",
-                "/en/platform/core/identity-providers",
-                "/en/platform/core/webhooks"
+                "/en/platform/core/webhooks",
+                {
+                  title: "Integrations",
+                  path: "/en/platform/core/integrations/",
+                  collapsable: true,
+                  children: [
+                    ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
+                    ["/en/platform/core/integrations/scim", "SCIM Integration with Azure AD"],
+                  ],
+                },
               ],
             },
             {
@@ -143,10 +150,9 @@ module.exports = {
                 "/en/platform/insights/digital-factory",
                 ["/en/platform/insights/data-studio", "Data Studio"],
               ],
-            },            
+            },
           ],
-          "/en/widgets/": [
-            {
+          "/en/widgets/": [{
               title: "Catalog",
               collapsable: true,
               children: [
@@ -164,6 +170,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/en/widgets/retail/summary",
+                "/en/widgets/retail/account-summary",
                 "/en/widgets/retail/accounts",
                 "/en/widgets/retail/credit-cards",
                 "/en/widgets/retail/credit-card-payment",
@@ -173,8 +180,6 @@ module.exports = {
                 "/en/widgets/retail/cash-advance",
                 "/en/widgets/retail/transfer",
                 "/en/widgets/retail/transfers",
-                "/en/widgets/retail/bill-payment",
-                "/en/widgets/retail/payment-summary",
               ],
             },
             {
@@ -182,7 +187,6 @@ module.exports = {
               collapsable: true,
               children: [
                 "/en/widgets/investments/accounts",
-                "/en/widgets/investments/accounts-react",
                 "/en/widgets/investments/general-summary",
                 "/en/widgets/investments/detailed-summary",
                 "/en/widgets/investments/investments-transfers",
@@ -209,32 +213,28 @@ module.exports = {
               children: [
                 "/en/widgets/insurance-retail/summary",
                 "/en/widgets/insurance-retail/quote",
-                "/en/widgets/insurance-retail/detailed-view"
+                "/en/widgets/insurance-retail/detailed-view",
               ],
             },
           ],
-          "/en/brand/": [
-            {
-              title: "Brand Guidelines",
-              collapsable: true,
-              children: [
-                ["/en/brand/", "Introduction"],
-                "/en/brand/logo",
-                "/en/brand/colors",
-                "/en/brand/typography",
-                "/en/brand/illustrations",
-              ],
-            },
-          ],
-          "/en/legal/": [
-            {
-              title: "Legal",
-              collapsable: true,
-              children: [
-                ["/en/legal/", "License Agreement"],                
-              ],
-            },            
-          ],                  
+          "/en/brand/": [{
+            title: "Brand Guidelines",
+            collapsable: true,
+            children: [
+              ["/en/brand/", "Introduction"],
+              "/en/brand/logo",
+              "/en/brand/colors",
+              "/en/brand/typography",
+              "/en/brand/illustrations",
+            ],
+          }, ],
+          "/en/legal/": [{
+            title: "Legal",
+            collapsable: true,
+            children: [
+              ["/en/legal/", "License Agreement"],
+            ],
+          }, ],
         },
       },
       "/es/": {
@@ -248,14 +248,13 @@ module.exports = {
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
         sidebar: {
-          "/es/platform/": [
-            {
+          "/es/platform/": [{
               title: "Primeros Pasos",
               path: "/es/platform/",
               collapsable: true,
               children: [
                 ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
-                ["/es/platform/key-concepts", "Conceptos claves"],    
+                ["/es/platform/key-concepts", "Conceptos claves"],
                 "/es/platform/release-notes",
                 ["/es/platform/training", "Entrenamiento"],
               ],
@@ -267,14 +266,15 @@ module.exports = {
               children: [
                 "/es/platform/tutorials/how-to-create-content",
                 "/es/platform/tutorials/how-to-create-home",
-                "/es/platform/tutorials/how-to-create-a-custom-view",
+                "/es/platform/tutorials/how-to-create-a-content-page",
                 "/es/platform/tutorials/how-to-create-private-site",
                 "/es/platform/tutorials/how-to-create-a-menu",
+                //"/es/platform/tutorials/conect-modyo-saleforce",
                 "/es/platform/tutorials/how-to-create-a-pwa",
               ],
             },
             {
-              title: "Plataforma", 
+              title: "Plataforma",
               path: "/es/platform/core/",
               collapsable: true,
               children: [
@@ -285,8 +285,16 @@ module.exports = {
                 "/es/platform/core/roles",
                 "/es/platform/core/security",
                 "/es/platform/core/api",
-                "/es/platform/core/identity-providers",
-                "/es/platform/core/webhooks"
+                "/es/platform/core/webhooks",
+                {
+                  title: "Integraciones",
+                  path: "/es/platform/core/integrations/",
+                  collapsable: true,
+                  children: [
+                    ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
+                    ["/es/platform/core/integrations/scim", "Integración SCIM con Azure AD"],
+                  ],
+                },
               ],
             },
             {
@@ -334,10 +342,9 @@ module.exports = {
                 "/es/platform/insights/digital-factory",
                 ["/es/platform/insights/data-studio", "Data Studio"],
               ],
-            },          
+            },
           ],
-          "/es/widgets/": [
-            {
+          "/es/widgets/": [{
               title: "Catálogo",
               collapsable: true,
               path: "/es/widgets/",
@@ -356,6 +363,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/widgets/retail/summary",
+                "/es/widgets/retail/account-summary",
                 "/es/widgets/retail/accounts",
                 "/es/widgets/retail/credit-cards",
                 "/es/widgets/retail/credit-card-payment",
@@ -365,8 +373,6 @@ module.exports = {
                 "/es/widgets/retail/cash-advance",
                 "/es/widgets/retail/transfer",
                 "/es/widgets/retail/transfers",
-                "/es/widgets/retail/bill-payment",
-                "/es/widgets/retail/payment-summary",
               ],
             },
             {
@@ -374,7 +380,6 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/widgets/investments/accounts",
-                "/es/widgets/investments/accounts-react",
                 "/es/widgets/investments/general-summary",
                 "/es/widgets/investments/detailed-summary",
                 "/es/widgets/investments/investments-transfers",
@@ -401,47 +406,40 @@ module.exports = {
               children: [
                 "/es/widgets/insurance-retail/summary",
                 "/es/widgets/insurance-retail/quote",
-                "/es/widgets/insurance-retail/detailed-view"
+                "/es/widgets/insurance-retail/detailed-view",
               ],
-            },           
+            },
           ],
-          "/es/services/": [
-            {
-              title: "Servicios de Cloud",
-              collapsable: false,
-              children: [
-                ["/es/services/", "Introducción"],
-                "/es/services/cloud",
-                "/es/services/connect",
-                "/es/services/faq",
-              ],
-            },           
-          ],
-          "/es/brand/": [
-            {
-              title: "Guía de Marca",
-              collapsable: false,
-              children: [
-                ["/es/brand/", "Introducción"],
-                "/es/brand/logo",
-                "/es/brand/colors",
-                "/es/brand/typography",
-                "/es/brand/illustrations",
-              ],
-            },           
-          ],
-          "/es/legal/": [
-            {
-              title: "Legal",
-              collapsable: true,
-              children: [
-                ["/es/legal/", "Acuerdo de Licencia"],                
-              ],
-            },            
-          ],
+          "/es/services/": [{
+            title: "Servicios de Cloud",
+            collapsable: false,
+            children: [
+              ["/es/services/", "Introducción"],
+              "/es/services/cloud",
+              "/es/services/connect",
+              "/es/services/faq",
+            ],
+          }, ],
+          "/es/brand/": [{
+            title: "Guía de Marca",
+            collapsable: false,
+            children: [
+              ["/es/brand/", "Introducción"],
+              "/es/brand/logo",
+              "/es/brand/colors",
+              "/es/brand/typography",
+              "/es/brand/illustrations",
+            ],
+          }, ],
+          "/es/legal/": [{
+            title: "Legal",
+            collapsable: true,
+            children: [
+              ["/es/legal/", "Acuerdo de Licencia"],
+            ],
+          }, ],
         },
       },
-
     },
   },
 };

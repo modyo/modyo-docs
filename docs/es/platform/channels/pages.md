@@ -50,12 +50,12 @@ Para crear una nueva página, sigue estos pasos:
 1. Haz click en **+ Nueva Página**.
 1. Selecciona el tipo de página **(Widget o Content)** que quieres crear.
 1. Llena el Nombre del Layout, la Ruta, de ser necesario selecciona el layout padre, y presiona **Crear**.
-1. Personaliza la página dependiendo del tipo: agregando o editando widgets para Widget Pages o editando el Index y Show para Content Pages.
+1. Personaliza la página dependiendo del tipo: agregando o editando widgets para Página de Widget o editando el Index y Show para Página de Contenido.
 1. Una vez terminado, haz click en **Publicar**.
 
 Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/channels/pages.html#widget-pages)
 
-Para conocer más acerca de content pages, ve [Content Pages](/es/platform/channels/pages.html#content-pages)
+Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es/platform/channels/pages.html#content-pages)
 
 **Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
@@ -83,7 +83,7 @@ En la sección lateral derecha encontrarás tres pestañas:
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
 - Propiedades: Te permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
 
-## Widget Pages
+## Página de widget
 
 Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista: 
 
@@ -151,9 +151,9 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 </tr></table>
 :::
 
-## Content Pages
+## Páginas de Contenido
 
-Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando content pages. 
+Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando páginas de contenido. 
 
 ### Requisitos previos
 
@@ -170,7 +170,7 @@ Para conocer más acerca de como crear una vista de contenido personalizada, vea
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
 :::
 
-Content pages están compuestas por dos secciones **Index** y **Show**. 
+Estas páginas están compuestas por dos secciones **Index** y **Show**. 
 
 ### Index
 
@@ -178,7 +178,7 @@ La página índice que contiene el listado de todas las entradas del tipo de con
 
 #### Edit
 
-- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio al Content Page cuando fue creado. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio a la página cuando fue creado. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
 - **Layout**: La plantilla Layout que va a cargar para el Index.
 - **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
 

@@ -251,7 +251,7 @@ Puedes añadir este snippet de código al Template Builder y luego llamar a este
 <!-- END SEO <-->
 ```
 
-Este snippet es diferente cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las content pages, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
+Este snippet es diferente cuando se está usando una página personalizada, alguna de las páginas por defecto de Modyo, o bien, las páginas de contenido, por lo que haciendo uso de los atributos de cada elemento, puedes definir una buena base de SEO para todas las URLs de tu sitio.
 
 Si es que lo requieres, puedes personalizar este snippet, definiendo qué metas quieres que aparezcan para URLs o tipos específicos. 
 
