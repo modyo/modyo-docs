@@ -180,6 +180,7 @@ module.exports = {
                 "/en/widgets/retail/cash-advance",
                 "/en/widgets/retail/transfer",
                 "/en/widgets/retail/transfers",
+                "/en/widgets/retail/payment-summary",
               ],
             },
             {
@@ -373,6 +374,7 @@ module.exports = {
                 "/es/widgets/retail/cash-advance",
                 "/es/widgets/retail/transfer",
                 "/es/widgets/retail/transfers",
+                "/es/widgets/retail/payment-summary",
               ],
             },
             {
