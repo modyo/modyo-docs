@@ -5,6 +5,32 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.6 - 22 de febrero de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Nuevos correos transaccionales de la plataforma
+* User Info opcional en integración OIDC
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se arregla a drop entry.meta.url
+* Se arregla eliminación de entradas enlazadas
+* Se realizan mejoras en editor multilínea
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Nuevo medio de pago CyberSource
+* Se arregla problema al cambiar realm de un site
+* Se arregla problema con editor de campañas
+* Se arregla problema con cuentas con sitio por defecto sin realm
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se redirigen rutas terminadas en slash para mejorar SEO
+* Se previene reflected XSS en drop de request
+* Se previene contaminación con rutas inválidas
+
 ### 9.2.5 - 27 de enero de 2022
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Se incorporan Content Pages
