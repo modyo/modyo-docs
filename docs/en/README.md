@@ -12,7 +12,7 @@ tutorial1Url: /en/platform/tutorials/how-to-create-content.html
 tutorial2Title: Creating a Basic Site
 tutorial2Url: /en/platform/tutorials/how-to-create-home.html
 tutorial3Title: Creating a Content View
-tutorial3Url: /en/platform/tutorials/how-to-create-a-custom-view.html
+tutorial3Url: /en/platform/tutorials/how-to-create-a-content-page.html
 tutorial4Title: Creating a Private Site
 tutorial4Url: /en/platform/tutorials/how-to-create-private-site.html
 
