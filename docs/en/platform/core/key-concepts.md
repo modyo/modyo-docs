@@ -6,7 +6,7 @@ search: true
 
 ## Team Review
 
-Team Review is a tool that allows you to control the process of publishing items in Modyo, such as entries, widgets, pages, templates, and more. When enabled, each item must go through the required review stages before it can be published.
+Team Review is a tool that allows you to control the process of publishing content in Modyo. When enabled, each item must go through review stages before enabling the publishing process.
 
 This adds a level of supervision and collaboration between the content editor and a team of reviewers.
 
@@ -20,13 +20,18 @@ They will be responsible for approving or rejecting the item, and will ultimatel
 
 Each step of this process takes the item through different states, which are recorded in a history for later audit.
 
+<img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
 This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
 
 The configuration of review rules is done independently for each site or space.
 
+
 ### Configuration
 
-To configure Team Review, go to `Site/Space configuration > Team review`.
+The configuration of review rules is done independently for each site or space.
+
+To configure the tool, you must select a space or site and select the option `Site/Space Settings > Team Review` from the side menu.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -47,7 +52,7 @@ While approval is limited, any user with permissions can comment on the item.
 :::warning Warning
 When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
 
-For these items to follow the new configuration, they need to be rejected and sent into revision again.
+In order for these items to be taken into account in the new configuration, they need to be rejected and sent again for review.
 :::
 
 ### Roles and permissions
