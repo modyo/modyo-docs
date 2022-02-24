@@ -62,7 +62,7 @@ tutorial1Url: /es/platform/tutorials/how-to-create-content.html
 tutorial2Title: Crear un Sitio básico
 tutorial2Url: /es/platform/tutorials/how-to-create-home.html
 tutorial3Title: Crear una Vista de Contenido
-tutorial3Url: /es/platform/tutorials/how-to-create-a-custom-view.html
+tutorial3Url: /es/platform/tutorials/how-to-create-a-content-page.html
 tutorial4Title: Crear un Sitio Privado
 tutorial4Url: /es/platform/tutorials/how-to-create-private-site.html
 
