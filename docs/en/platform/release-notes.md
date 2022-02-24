@@ -5,6 +5,32 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.6 - February 22, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* New transactional emails from the platform
+* Optional User Info for OIDC integration
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fix drop entry.meta.url
+* Fix deletion of referenced entries
+* Improvements to the multiline editor
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* New CyberSource payment method
+* Fix problem when changing realm of a site
+* Fixed issue with campaign editor
+* Fixed problem with accounts with default site and without realm
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Routes finished in slash are redirected to improve SEO
+* Reflected XSS is prevented in request drop
+* Contamination with invalid routes is prevented
+
 ### 9.2.5 - January 27, 2022
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Content Pages are incorporated
