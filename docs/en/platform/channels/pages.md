@@ -50,12 +50,12 @@ To create a new page, follow these steps:
 1. Click on **+ New Page**.
 1. Select the type of page **(Widget or Content)** you want to create.
 1. Fill in the Layout Name, Path, if necessary select the parent layout, and press **Create**.
-1. Customize the page depending on the type: adding or editing widgets for Widget Pages or editing the Index and Show for Content Pages.
+1. Customize the page depending on the type: adding or editing widgets for Widget Page or editing the Index and Show for Content Page.
 1. Once finished, click **Publish**.
 
 To learn more about the types of widgets you can add, see [Widgets](/en/platform/channels/pages.html#widget-pages)
 
-To learn more about content pages, see [Content Pages](/en/platform/channels/pages.html#content-pages)
+To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-pages)
 
 **Main action**: The green button in the upper right. This button can take different forms:
 
@@ -83,7 +83,7 @@ In the right side section you will find three tabs:
 - Edit Widget: allows you to change different properties and filters for each widget.
 - Properties: allows you to modify the name, excerpt, path, parent, privacy, grid layout, and meta tags of the page.
 
-## Widget Pages
+## Widget page
 
 Here you can customize your page using preset widgets from the following list: 
 
@@ -151,9 +151,9 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 </tr></table>
 :::
 
-## Content Pages
+## Content Page
 
-Deploy the [entries](/en/platform/content/entries) of your [content types](/en/platform/content/types) from a single page using content pages.
+Display the [entries](/en/platform/content/entries) of your [content types](/en/platform/content/types) from a single page using content pages.
 
 ### Prerequisites
 
@@ -170,7 +170,7 @@ To learn more about how to create a custom content view, see [Creating a Content
 You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
 :::
 
-Content pages are composed of two sections **Index** and **Show**. 
+These pages are composed of two sections **Index** and **Show**. 
 
 ### Index
 
@@ -178,7 +178,7 @@ The index page will display the list of all entries in the content type. Here yo
 
 #### Edit
 
-- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the Content Page when it was created. If this option is disabled, only **Show** pages will be accessible and if you try to access an index the user will be shown a 404 error.
+- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible and an attempt to access the Index page will show a 404 error.
 - **Layout**: The Layout template that is loaded for the Index.
 - **Custom Meta Tag**: Add custom meta tags to optimize index SEO. This meta tag will only be uploaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
