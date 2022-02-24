@@ -12,7 +12,7 @@ ChannelsText: Acelera tu desarrollo construyendo experiencias digitales más rá
 ChannelsImg: https://cloud.modyocdn.com/uploads/015ea188-f83e-4af7-8485-4530731ddc7b/original/Channels.png
 ChannelsUrl: /es/platform/channels/
 ContentTitle: Content
-ContentText: Crear y gestionar todos los aspectos de tu contenido digital gobernar y audita el contenido en cualquier canal digital, aplicación o destino final..
+ContentText: Crear y gestionar todos los aspectos de tu contenido digital gobernar y audita el contenido en cualquier canal digital, aplicación o destino final.
 ContentImg: https://cloud.modyocdn.com/uploads/30a36af7-7ade-4590-93e0-183028634a1e/original/Content.png
 ContentUrl: /es/platform/content/
 CustomersTitle: Customers
@@ -26,7 +26,7 @@ InsightsUrl: /es/platform/insights/
 FirstStepsTitle: Primeros pasos en
 FirstStepsText: Comience su viaje en nuestra plataforma utilizando los siguientes enlaces
 
-FirstSteps1Title: Bienvenido a modyo
+FirstSteps1Title: Bienvenido a Modyo
 FirstSteps1Text: Descubre por qué Modyo es una plataforma de experiencia digital de última generación.
 FirstSteps1Img: https://cloud.modyocdn.com/uploads/bf1f24c8-2f3b-4acc-9a94-0db8b5fb2009/original/welcome.png
 FirstSteps1Url: /es/platform/#bienvenido-a-modyo
@@ -54,14 +54,14 @@ FirstSteps5Url: https://training.modyo.com/
 search: Buscar en
 
 
-tutorials: tutoriales
+tutorials: Tutoriales
 tutorialsText: Conozce los diferentes aspectos de la plataforma a su propio ritmo.
 
 tutorial1Title: Creación y Publicación de Contenido
 tutorial1Url: /es/platform/tutorials/how-to-create-content.html
 tutorial2Title: Crear un Sitio básico
 tutorial2Url: /es/platform/tutorials/how-to-create-home.html
-tutorial3Title: Crear una Vista de Contenido
+tutorial3Title: Crear una Página de Contenido
 tutorial3Url: /es/platform/tutorials/how-to-create-a-content-page.html
 tutorial4Title: Crear un Sitio Privado
 tutorial4Url: /es/platform/tutorials/how-to-create-private-site.html
