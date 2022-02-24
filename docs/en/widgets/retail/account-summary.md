@@ -2,25 +2,25 @@
 search: true
 ---
 
-# Información General de Cuentas
+# Account Overview
 
-Despliega la actividad de todas tus cuentas y sus transacciones desde un solo lugar. Además puedes graficar las tendencias de las transacciones y mostrar sugerencias en base a estas.
+Display the activity of all your accounts and their transactions from one place. You can also graph transaction trends and show suggestions based on them.
 
-#### Instalación
+#### Installation
 
 ```bash
 modyo-cli get modyo-widgets-retail-accounts-overview
 ```
 
-[Abrir en otra pestaña](https://widgets-es.modyo.com/personas/vista-general-cuentas)
+[Open in another tab](https://widgets.modyo.com/retail/account-overview)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/personas/vista-general-cuentas" width="100%" frameBorder="0"  style="min-height:1376px;overflow:auto;margin-top:20px;margin-bottom:20px;"/>
+<iframe id="widgetFrame" src="https://widgets.modyo.com/retail/account-overview" width="100%" frameborder="0" style="min-height:1376px;overflow:auto;margin-top:20px;margin-bottom:20px;"/>
 
-| Funcionalidad | Descripción |
+| Feature | Description |
 | ------------- | ----------- |
-|Actividad| Muestra las últimas transacciones de todas las cuentas, el presupuesto al día, las tendencias de las cuentas, y los accesos directos. Puedes desglosar la actividad por las siguientes fechas: **1 año, 1 mes, 1 semana, fecha personalizada**|
-|Últimas transacciones| Despliega las transacciones ligadas a esta cuenta. También incluye un buscador por nombre de transferencia y monto. |
-|Tendencias| Visualiza el resumen de todas las cuentas o desaparece una cuenta haciendo click en el ícono del 'ojo'. Aparece un ícono de (=), (+), o (-) dependiendo si existe una tendencia en el balance de la cuenta. Haciendo click en el ícono de (>) lleva a la sección de Detalles de la cuenta.|
-|Insights| Sugiere o informa a los usuarios mostrando Insights dependiendo de diferentes variables del widget. Puedes solo informar o agregar un botón para navegar hacia otro lugar. (E.g. Recibe 3% cashback utilizando nuestras tarjetas Dynamic Card.) |
-|Accesos directos| Ofrece una acción rápida para que los usuarios realicen esta tarea.|
-|Detalles de la cuenta| Muestra las últimas transacciones de esta cuenta como en Actividad. El botón Gastos muestra los gastos de la cuenta desglosados por tipo.|
+|Activity| Shows the latest transactions for all accounts, the current budget, account trends, and shortcuts. You can break down the activity by the following dates: **1 year, 1 month, 1 week, or custom dates**|
+|Latest transactions| Displays the transactions linked to this account. It also includes a search box to filter by transfer name and amount. |
+|Trends| View the summary of all accounts or disappear an account by clicking on the 'eye' icon. A (=), (+), or (-) icon appears depending on whether there is a trend in the account balance. Clicking on the (>) icon takes you to the Account Details section.|
+|Insights| Suggest or inform users by displaying Insights depending on different widget variables. You can display a message or add a button to navigate to another location. (E.g. Receive 3% cashback using our Dynamic Card.) |
+|Shortcuts| Provides a quick action for users to perform this task.|
+|Account details| Displays the latest transactions for this account as in Activity. The Expenses button displays account expenses broken down by type.|
