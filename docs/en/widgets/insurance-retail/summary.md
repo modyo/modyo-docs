@@ -18,9 +18,9 @@ modyo-cli get modyo-widgets-insurance-summary
 
 The features of this widget are as follows:
 
-| Feature           | Description                                           |
-|:------------------------|:------------------------------------------------------|
-|   |  |
+| Feature | Description |
+| ------------- | ----------- |
+|Insurance summary| Displays the summary of all the insurance policies in the account. You can view the following information: <ul> <li> Type of Insurance </li> <li> Policy Number </li> <li> Policy Status </li> <li> Purchase Details </li> <li> Insured capital </li> </ul> |
 
 
 <script>
@@ -57,5 +57,3 @@ The features of this widget are as follows:
       }
     }
   }
-
-</script>
