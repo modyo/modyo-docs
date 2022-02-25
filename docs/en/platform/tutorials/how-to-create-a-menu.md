@@ -297,10 +297,10 @@ To view your menu, follow these steps:
     <!-- -->
     {% else %}
     <li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none">
-        <a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="{{item.classes}} nav-link dropdown-toggle {% for child in second_level %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{ responsive }}" role="menuitem">
+        <a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="{{item.classes}} nav-link dropdown-toggle {% for child in second_level %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{ responsive }}" role="menuitem">
             {{ item.label }} <span class="sr-only">dropdown</span>
         </a>
-        <div class="{{item.classes}} submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }} dropdown-menu" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{responsive}}" aria-expanded="false">
+        <div class="{{item.classes}} submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }} dropdown-menu" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | downcase }}Button{{responsive}}" aria-expanded="false">
             {% for child in second_level %}
             <a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
                 {{ child.label }}
@@ -598,19 +598,11 @@ Modify Snippet code <code>Header</code> where we will add the snippet of <code>m
           data-target="#menu_panel"
         >
           <h2 id="mainmenulabel" class="sr-only">Open Menu</h2>
-          <svg
-            width="2em"
-            height="2em"
-            viewBox="0 0 16 16"
-            class="bi bi-list"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5- 5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
+          <svg viewBox="0 0 100 60" width="30" height="30" style="fill:#384470">
+                        <rect width="100" height="5"></rect>
+                        <rect y="30" width="100" height="5"></rect>
+                        <rect y="60" width="100" height="5"></rect>
+                    </svg>
         </button>
       </div>
     </div>
