@@ -249,7 +249,7 @@ You can add this code snippet to the Template Builder and then call this snippet
 <!-- END SEO <-->
 ```
 
-This snippet is different when you're using a custom page, one of Modyo's default pages, or content pages, so by using the attributes of each element, you can define a good SEO base for all your site's URLs.
+This snippet is different when you are using a custom page, one of Modyo's default pages, or content pages, so by using the attributes of each element, you can define a good SEO base for all the URLs on your site.
 
 If you require it, you can customize this snippet, defining what you want to appear for specific URLs or types. 
 
