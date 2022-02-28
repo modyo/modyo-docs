@@ -77,7 +77,7 @@ module.exports = {
               children: [
                 "/en/platform/tutorials/how-to-create-content",
                 "/en/platform/tutorials/how-to-create-home",
-                "/en/platform/tutorials/how-to-create-a-custom-view",
+                "/en/platform/tutorials/how-to-create-a-content-page",
                 "/en/platform/tutorials/how-to-create-private-site",
                 "/en/platform/tutorials/how-to-create-a-menu",
                 "/en/platform/tutorials/how-to-create-a-pwa",
