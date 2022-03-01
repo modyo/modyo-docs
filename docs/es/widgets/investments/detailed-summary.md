@@ -4,7 +4,7 @@ search: true
 
 # Resumen Detallado
 
-Modyo ofrece un Widget que entrega información en detalle de las inversiones existentes en cada cuenta de inversión, incluyendo las operaciones realizadas por el usuario y las que aún están en curso.
+Entrega información en detalle de las inversiones existentes en cada cuenta de inversión, incluyendo las operaciones realizadas por el usuario y las que aún están en curso.
 
 #### Instalación:
 

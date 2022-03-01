@@ -4,7 +4,7 @@ search: true
 
 # Fondos Mutuos
 
-Modyo ofrece un Widget que muestra la información de los Fondos Mutuos disponibles y las operaciones realizadas por el usuario, además de entregar la posibilidad de realizar transacciones en línea a través de la plataforma.
+Muestra la información de los Fondos Mutuos disponibles y las operaciones realizadas por el usuario, además de entregar la posibilidad de realizar transacciones en línea a través de la plataforma.
 
 #### Instalación:
 

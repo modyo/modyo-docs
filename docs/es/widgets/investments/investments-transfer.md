@@ -4,7 +4,7 @@ search: true
 
 # Transferencia
 
-Este Widget existe para que los clientes puedan transferir fondos entre sus cuentas de inversión y su cuenta corriente inscrita.
+Permite a los clientes transferir fondos entre sus cuentas de inversión y su cuenta corriente inscrita.
 
 #### Instalación:
 
