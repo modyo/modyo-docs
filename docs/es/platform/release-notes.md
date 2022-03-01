@@ -20,7 +20,6 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Nuevo medio de pago CyberSource
 * Se arregla problema al cambiar realm de un site
 * Se arregla problema con editor de campañas
 * Se arregla problema con cuentas con sitio por defecto sin realm
