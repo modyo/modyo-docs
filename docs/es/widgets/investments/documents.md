@@ -4,7 +4,7 @@ search: true
 
 # Documentos
 
-En este Widget el usuario podrá encontrar todos los documentos que necesite con relación a sus inversiones, como cartlas, facturas electrónicas, confirmación y ejecución de órdenes y firma de contratos, además de los certificados respectivos.
+Almacena todos los documentos con relación a las inversiones del cliente, como cartolas, facturas electrónicas, confirmación y ejecución de órdenes, y firma de contratos, además de los certificados respectivos.
 
 #### Instalación:
 
@@ -24,7 +24,7 @@ modyo-cli get modyo-widgets-investments-documents
 | Ejecución de Órdenes (1.985)        | Entrega la información de la ejecución de las órdenes del cliente y que está indicada en la circular 1985 de la SVS.                                                                                                                       |
 | Firma de Contratos Electrónicos     | Permite ver los contratos que se deben firmar, ya sea porque son nuevos o porque existen versiones nuevas o actualizadas de éstos. Permite revisar los contratos en pantalla y proceder a firmarlos directamente con la clave de internet. |
 | Tabla de riesgos por Producto       | Tabla con descripción de productos y su clasificación de riesgo.                                                                                                                                                                           |
-| Certificados Tributarios            | Muestra un listado de certificados tributarios que están en formato PDF, para su visualización, impresión y/o descarga.                                                                                                                    |
+| Certificados Tributarios            | Muestra un listado de certificados tributarios que están en formato PDF, para su visualización, impresión, y/o descarga.                                                                                                                    |
 
 <script>
 

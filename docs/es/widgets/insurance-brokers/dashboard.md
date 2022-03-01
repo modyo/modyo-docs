@@ -4,7 +4,7 @@ search: true
 
 # Dashboard
 
-Este Widget de Modyo permitirá tener una vista general de las cotizaciones, pólizas y renovaciones de tus intermediarios o clientes según el producto que elijas. Ofrece una vista general de los últimos movimientos y facilita la búsqueda de información según la necesidad del usuario.
+Despliega una vista general de las cotizaciones, pólizas, y renovaciones de tus intermediarios o clientes según el producto que elijas. Ofrece una vista general de los últimos movimientos y facilita la búsqueda de información según la necesidad del usuario.
 
 #### Instalación:
 
@@ -18,7 +18,7 @@ modyo-cli get modyo-widgets-insurance-dashboard
 
 | Funcionalidad       | Descripción                                                                                                                                                                                                              |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Buscador            | Facilita la búsqueda de información a través de datos claves de las cotizaciones y las pólizas. Personaliza las opciones o escoje búsquedas según el ID del producto, Nombre del tomador, o números de documento.        |
+| Buscador            | Facilita la búsqueda de información a través de datos claves de las cotizaciones y las pólizas. Personaliza las opciones o escoge búsquedas según el ID del producto, Nombre del tomador, o números de documento.        |
 | Filtro de fecha     | Personaliza el calendario de resultados y optimiza los llamados al servicio de consulta según el interés de consulta de los usuarios o según los periodos de tiempo establecidos por los equipos legales.                |
 | Tabla de resultados | Configura según el dispositivo y la necesidad del negocio los datos clave para mostrar un resumen de la información importante de las cotizaciones, pólizas y renovaciones.                                              |
 | Organizador         | Optimiza espacio personalizando los paginadores de resultados y el filtro de orden para ofrecer una mejor experiencia según el interés del usuario.                                                                      |

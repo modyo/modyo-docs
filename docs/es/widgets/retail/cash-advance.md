@@ -4,9 +4,7 @@ search: true
 
 # Avance en Efectivo
 
-El Widget de Avance en Efectivo permite a cualquier cliente usar la plataforma hacer una simulación de crédito para solicitar un avance de dinero a la institución financiera.
-
-A través del Widget, el cliente puede realizar distintas funciones de acuerdo a las características que necesite para este producto.
+Realiza una simulación de crédito para solicitar un avance de dinero a la institución financiera.
 
 ### Instalación:
 
@@ -24,8 +22,8 @@ En primera vista, el cliente podrá seleccionar las características del Avance 
 |:-----------------|:--------------------------------------------------------------------------------------------|
 | Origen           | Selecciona la tarjeta de la cual se extraerá el monto en efectiva.                          |
 | Destino          | Muestra la cuenta de destino del efectivo que se solicita.                                  |
-| Monto del Avance | Esa sección permite añadir el monto que se solicita en efectivo                             |
-| Cuotas           | El cliente puede seleccionar la cantidad de cuotas en las que se pagará el monto solicitado |
+| Monto del Avance | Permite añadir el monto que se solicita en efectivo.                             |
+| Cuotas           | El cliente puede seleccionar la cantidad de cuotas en las que se pagará el monto solicitado. |
 
 ### Simulación
 
