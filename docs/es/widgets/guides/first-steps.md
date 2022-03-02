@@ -42,10 +42,13 @@ Para cargar nuestro Widget a la plataforma y publicarlo, usaremos el comando `pu
 1. Crea un archivo de variables de entorno `.env` en la raíz del proyecto con las siguientes variables:
 
 ```shell
-MODYO_TOKEN=[siteToken]        //El token para accesar a la API administrativa
 MODYO_ACCOUNT_URL=[accountUrl] //URL de la cuenta dueña del sitio
+MODYO_VERSION=9                //La versión de la plataforma Modyo
+MODYO_TOKEN=[siteToken]        //El token para accesar a la API administrativa
 MODYO_SITE_HOST=[siteHost]     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
 MODYO_WIDGET_NAME=[widgetName] //El nombre del widget
+MODYO_BUILD_COMMAND=build      //El comando para package.json (default: build) 
+MODYO_BUILD_DIRECTORY=dist     //La ruta del widget (default: dist) 
 ```
 
 :::tip Tip

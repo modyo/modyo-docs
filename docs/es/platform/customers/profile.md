@@ -11,7 +11,7 @@ El perfil de usuario es el lugar central donde los usuarios pueden encontrar los
 Muestra el listado de sitios habilitados de la cuenta, de tal forma que el usuario pueda encontrar fácilmente todos los canales digitales asociados a la cuenta.
 
 :::tip Tip
-Puedes esconder esa sección del profile haciendo uso de CSS en la configuración de customers, sección apariencia.
+Puedes esconder esa sección del perfil haciendo uso de CSS en la configuración de customers, sección apariencia.
 :::
 
 ### Notificaciones
@@ -39,20 +39,39 @@ Además, cada usuario puede eliminar definitivamente su cuenta.
 La eliminación de la cuenta de usuario es una acción irreversible y los usuarios que ejecuten esta acción deberán registrarse nuevamente para poder acceder.
 :::
 
-## API de perfil
+## API de customers
 
-Puedes acceder a la API de perfil de usuarios a través de la URL `account_url/api/profile`, donde podrás hacer uso de los endpoints: 
+Puedes acceder a la API de customers en donde podrás obtener y editar la información de reinos y usuarios a través de la URL `account_url/api/customers/docs`. Algunas de las cosas que puedes modificar son: 
 
-* Documentación técnica de la API: `account_url/api/profile/docs`
-* Notificaciones: `account_url/api/profile/notifications`
-* Info del usuario: `account_url/api/profile/me`
+- Notificaciones: `/realms/{realm_uid}/notifications`
+- Información de usuarios: `/realms/{realm_uid}/me`
+- Eventos: `/realms/{realm_uid}/events`
 
 ### Tokens delegados
 
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/identity-providers.html) en tus proveedores de identidad, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+
+``curl -X GET test.miModyo.com/api/realms/miRealm/me``
 
 ```json
-...
+{
+  "avatar": {
+    "id": 100,
+    "file_name": "user_avatar.png",
+    "url_original": "/user_avatar_original.png",
+    "url_small": "/user_avatar_small.png",
+    "url_medium": "/user_avatar_medium.png"
+  },
+  "id": 2332,
+  "external_id": "11111111-1",
+  "name": "Clifton Feil",
+  "first_name": "Clifton",
+  "last_name": "Feil",
+  "second_last_name": "Smith",
+  "email": "test.user@modyo.com",
+  "username": "test.user",
+  ...
+  ...
    "delegated_token":{
       "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
       "access_token":"TOKEN",
@@ -60,3 +79,7 @@ Al habilitar la opción de [**Mostrar información de delegación**](/es/platfor
       "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
    }
 ```
+
+:::tip Tip
+En caso de no tener habilitada la opción **Mostrar información de delegación**, se mostrará null (vacío).
+:::
