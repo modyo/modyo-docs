@@ -858,7 +858,7 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 ### Ordenar
 
-De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
+De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tag` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
 <CodeSwitcher isolated:true>
 <template v-slot:lq>

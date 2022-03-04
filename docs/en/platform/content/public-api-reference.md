@@ -849,7 +849,7 @@ Fields that search multiple items (checkboxes, multiple) can use the following s
 <CodeSwitcher isolated:true>
 <template v-slot:lq>
 
-In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
+In the same way that you can filter by category `by_category`, tags `by_tag` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
