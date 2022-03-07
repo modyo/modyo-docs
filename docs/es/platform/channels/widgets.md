@@ -176,10 +176,6 @@ ARGUMENTS
   push         Push widget to Modyo platform
 ```
 
-:::tip Tip
-Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_ en el directorio raíz del proyecto. Se recomienda la opción de un archivo para evitar la publicación de información delicada en el registro de Github.
-:::
-
 La siguiente lista son las variables de entorno que puedes configurar:
 
 ```bash
@@ -193,8 +189,27 @@ MODYO_BUILD_COMMAND=buildCommand
 MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 ```
 
+#### Variables de entorno
+
+Para facilitar el proceso de subir tus widgets a la plataforma Modyo, puedes hacer uso del archivo de variables de entorno `.env`. Sigue estos pasos para crear tu archivo:
+
+1. Crea un archivo `variables.env` en la raíz de tu proyecto.
+2. Agrega la siguiente información:
+
+```
+MODYO_ACCOUNT_URL=test.miModyo.com
+MODYO_VERSION=9
+MODYO_TOKEN=ak9cb2....a53s
+MODYO_SITE_HOST=miSitio
+MODYO_WIDGET_NAME=miNuevoWidget
+MODYO_BUILD_COMMAND=build
+MODYO_BUILD_DIRECTORY=dist
+```
+
+3. Al hacer uso de modyo-cli dentro de la raíz de tu proyecto, se agregarán los datos del archivo automáticamente.
+
 :::tip Tip
-Las opciones se pueden definir en variables de entorno o dentro de un archivo _.env_. Se recomienda la opción de un archivo para evitar la publicación en el registro de Github porque puede contener información delicada
+Recomendamos utilizar un archivo de variables de entorno para facilitar el uso de modyo-cli y evitar el registro de información sensible.
 :::
 
 ### `modyo-cli autocomplete [SHELL]`
