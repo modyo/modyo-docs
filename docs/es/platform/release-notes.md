@@ -5,6 +5,19 @@ search: true
 # Notas del release
 
 ## 9.2
+
+### 9.2.7 - 10 de marzo de 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Actualizar nombre de categorias no se refleja en entries
+* Atributos del request drop no considera el slug de la entry en content pages
+* Migración IntegrationsToIdps falla por nuevo atributo openidc_userinfo_enabled
+* Cuentas duplicadas en onboarding
+* Direct authentication en Realm con Google lleva a error 404
+* Implementar medio de pago Cybersource 
+* Agregar tags en New Asset modal 
+
+
 ### 9.2.6 - 22 de febrero de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
