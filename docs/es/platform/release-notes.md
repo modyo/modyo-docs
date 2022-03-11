@@ -9,6 +9,7 @@ search: true
 ### 9.2.7 - 10 de marzo de 2022
 <Badge text="Core" type="core" vertical="middle"/>
 
+* Actualizar version liquidjs
 * Actualizar nombre de categorias no se refleja en entries
 * Atributos del request drop no considera el slug de la entry en content pages
 * Migración IntegrationsToIdps falla por nuevo atributo openidc_userinfo_enabled
