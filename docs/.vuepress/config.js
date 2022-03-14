@@ -81,6 +81,10 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-private-site",
                 "/en/platform/tutorials/how-to-create-a-menu",
                 "/en/platform/tutorials/how-to-create-a-pwa",
+                "/en/platform/tutorials/conect-modyo-saleforce",
+                "/en/platform/tutorials/tutorial-optimize-test-ab",
+                "/en/platform/tutorials/google-data-studio-integration",
+                "/en/platform/tutorials/tutorial-optimize-personalizacion",
               ],
             },
             {
@@ -271,8 +275,11 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-a-content-page",
                 "/es/platform/tutorials/how-to-create-private-site",
                 "/es/platform/tutorials/how-to-create-a-menu",
-                //"/es/platform/tutorials/conect-modyo-saleforce",
                 "/es/platform/tutorials/how-to-create-a-pwa",
+                "/es/platform/tutorials/conect-modyo-saleforce",
+                "/es/platform/tutorials/tutorial-optimize-test-ab",
+                "/es/platform/tutorials/google-data-studio-integration",
+                "/es/platform/tutorials/tutorial-optimize-personalizacion",
               ],
             },
             {
