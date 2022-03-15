@@ -1539,7 +1539,24 @@ La URL de callback de OIDC.
 
 ```https://test.miModyo.com/realms/default/auth/openidc/callback```
 
+## Target
+Aca se defininen los metodos asociados a los segmentos (targets)
 
+### target.id
+
+ID del target.
+
+#### output
+
+```323```
+
+### target.name
+
+Nombre del target.
+
+#### output
+
+```Personal autorizado```
 
 
 
