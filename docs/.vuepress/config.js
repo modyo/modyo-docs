@@ -57,7 +57,7 @@ module.exports = {
           /*{ text: "Cloud", link: "/en/services/" },*/
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
-        ],
+        ],                
         sidebar: {
           "/en/platform/": [{
               title: "First Steps",
@@ -79,8 +79,11 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-home",
                 "/en/platform/tutorials/how-to-create-a-content-page",
                 "/en/platform/tutorials/how-to-create-private-site",
+                "/en/platform/tutorials/how-to-create-a-cli-widget",
                 "/en/platform/tutorials/how-to-create-a-menu",
                 "/en/platform/tutorials/how-to-create-a-pwa",
+                "/en/platform/tutorials/tutorial-optimize-test-ab",
+                "/en/platform/tutorials/tutorial-optimize-personalizacion",
               ],
             },
             {
@@ -100,7 +103,9 @@ module.exports = {
                   collapsable: true,
                   children: [
                     ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
-                    ["/en/platform/core/integrations/scim", "SCIM Integration with Azure AD"],
+                    ["/en/platform/core/integrations/scim", "SCIM Provisioning with Microsoft Azure AD"],
+                    ["/en/platform/core/integrations/conect-modyo-saleforce", "Integration with Salesforce"],
+                    ["/en/platform/core/integrations/google-data-studio-integration", "Integration with Google Analytics"],
                   ],
                 },
               ],
@@ -269,9 +274,11 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-home",
                 "/es/platform/tutorials/how-to-create-a-content-page",
                 "/es/platform/tutorials/how-to-create-private-site",
+                "/es/platform/tutorials/how-to-create-a-cli-widget",
                 "/es/platform/tutorials/how-to-create-a-menu",
-                //"/es/platform/tutorials/conect-modyo-saleforce",
                 "/es/platform/tutorials/how-to-create-a-pwa",
+                "/es/platform/tutorials/tutorial-optimize-test-ab",
+                "/es/platform/tutorials/tutorial-optimize-personalizacion",
               ],
             },
             {
@@ -293,7 +300,9 @@ module.exports = {
                   collapsable: true,
                   children: [
                     ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
-                    ["/es/platform/core/integrations/scim", "Integración SCIM con Azure AD"],
+                    ["/es/platform/core/integrations/scim", "Provisionamiento SCIM con Microsoft Azure AD"],
+                    ["/es/platform/core/integrations/conect-modyo-saleforce", "Integracion con Salesforce"],
+                    ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
                   ],
                 },
               ],
