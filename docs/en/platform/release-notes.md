@@ -5,6 +5,20 @@ search: true
 # Release Notes
 
 ## 9.2
+
+### 9.2.7 - March 10, 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Update liquidjs version
+* Update category names are not reflected in entries
+* Attributes of the request drop does not consider the entry slug in content pages
+* IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
+* Duplicate accounts in onboarding
+* Direct authentication in Realm with Google leads to error 404
+* Implement Cybersource payment method 
+* Add tags in New Asset modal 
+
+
 ### 9.2.6 - February 22, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -20,7 +34,6 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* New CyberSource payment method
 * Fix problem when changing realm of a site
 * Fixed issue with campaign editor
 * Fixed problem with accounts with default site and without realm
