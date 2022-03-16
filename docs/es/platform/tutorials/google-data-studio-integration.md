@@ -2,18 +2,18 @@
 search: true
 ---
 
-# Visualización de datos en Data Studio
+# Visualizar datos de Google Analytics en Data Studio
 
 ## Introducción
 
-Una de las cosas más importantes a la hora de tomar decisiones es poder visualizar los datos y la mejor forma es tenerlos en un tablero simple, fácil de compartir, y completamente personalizables.
+Una de las cosas más importantes a la hora de tomar decisiones es poder visualizar los datos y la mejor forma es tenerlos en un tablero simple, fácil de compartir, y completamente personalizable.
 
 Es por eso que recomendamos el uso de Data Studio, la solución de reportes de Google que permite crear visualizaciones personalizadas de datos. 
 
 Hemos creado plantillas de Data Studio que puedes usar como base para conectar directo con los datos de tus Canales Digitales en minutos.
 
 <h3 style="margin-top: 0;padding-top: 0;">Google Analytics + Search Console + Ecommerce</h3>
-Esta plantilla es para los sitios donde tienes instalado Google Search Console y Google Analytics con la funcionalidad de ecommerce habilitada.
+Esta plantilla es para los sitios donde tienes instalado Google Search Console y Google Analytics con la funcionalidad de e-commerce habilitada.
 
 <a href="https://datastudio.google.com/u/0/reporting/1DGfpSFw6KeX9jio2zuclqWd0ccSfUGDt" target="_blank" rel="noopener noreferrer" style="background: #2068d5;color: #fff;padding: 12px 16px;border-radius: 4px;display: inline-block;text-decoration: none;">Abrir plantilla</a>
 
@@ -47,23 +47,23 @@ Si no haz utilizado Data Studio previamente, te mostrará esta página de config
 
 <img src="/assets/img/tutorials/data-studio/2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-Y activa si quieres recibir información adicional para mail.
+Activa si quieres recibir información adicional para email.
 
 <img src="/assets/img/tutorials/data-studio/2-1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
 ## Paso 3: Enlazar Google Analytics
 
-Una vez que hayas terminado el proceso de configuración de cuenta de Google. Vamos nuevamente a los tres puntos y hacemos click en <b>Make a copy</b>.
+Una vez que hayas terminado el proceso de configuración de cuenta de Google. Ve nuevamente a los tres puntos y hacemos click en <b>Make a copy</b>.
 
 <img src="/assets/img/tutorials/data-studio/2-2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-Dentro del primer listado bajamos en el selector y hacemos click en <b>Create data source</b>.
+Dentro del primer listado haz click en el selector y haz click en <b>Create data source</b>.
 
-Para crear la fuente de datos vamos a seleccionar Google Analytics y hacemos click en la cuenta que queremos medir y luego le damos a <b>Connect</b>.
+Para crear la fuente de datos selecciona Google Analytics y haz click en la cuenta que quieres medir y luego a <b>Connect</b>.
 
 <img src="/assets/img/tutorials/data-studio/2-3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-En esta vista podrán ver todas las dimensiones de datos simétricas que se van a conectar al reporte, el siguiente paso es agregarlos al reporte.
+En esta vista se puede ver todas las dimensiones de datos simétricas que se van a conectar al reporte, el siguiente paso es agregarlos al reporte.
 
 <img src="/assets/img/tutorials/data-studio/3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
@@ -74,18 +74,18 @@ Esto te llevará de vuelta a la ventana de <b>Copy Report</b>.
 
 ## Paso 4: Enlazar Search Console
 
-Una vez que tenemos enlazado nuestro reporte con la Cuenta de Analytics, nos toca seleccionar dos campos más <b>Search Console Data (URL)</b> y <b>Search Console Data (SiteL)</b>.
+Una vez que se enlace el reporte con la Cuenta de Analytics, se selecciona dos campos más <b>Search Console Data (URL)</b> y <b>Search Console Data (SiteL)</b>.
 <img src="/assets/img/tutorials/data-studio/2-4.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-Para ellos seguiremos el mismo procedimiento que el anterior, buscamos al final el dropdown <b>Create data source</b>, pero está vez en el listado seleccionamos <b>Search Console</b>.
+Para ellos sigue el mismo procedimiento que el anterior, haz click en el dropdown <b>Create data source</b>, pero está vez en el listado selecciona <b>Search Console</b>.
 
 <img src="/assets/img/tutorials/data-studio/2-5.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-Seguimos el mismo proceso que antes y debes escoger aquí la fuente relacionada al mismo sitio que escogiste para Google Analytics y selecciona <b>URL</b> y <b>Site</b> respectivamente.
+Sigue el mismo proceso que antes y escoge la fuente relacionada al mismo sitio que escogiste para Google Analytics y selecciona <b>URL</b> y <b>Site</b> respectivamente.
 
 ## Paso 5: Copiar el informe con sus datos
 
-Una vez que hayas creado todas las fuentes de datos, ya podrás hacer la copia del reporte, para ello, haz click en el botón <b>Copy report</b>.
+Una vez creado todas las fuentes de datos, podrás hacer la copia del reporte, para ello, haz click en el botón <b>Copy report</b>.
 
 <img src="/assets/img/tutorials/data-studio/5.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
@@ -93,15 +93,15 @@ Lo que abrirá tu nuevo reporte en una nueva ventana.
 
 <img src="/assets/img/tutorials/data-studio/6.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-Para terminar le cambiamos el nombre, haciéndole click sobre el nombre.
+Para terminar cambia el nombre, haciendo click sobre el nombre.
 
 <img src="/assets/img/tutorials/data-studio/7.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
-Y finalmente lo compartimos con el botón <b>Share</b>.
+Y finalmente lo puedes compartir con el botón <b>Share</b>.
 
 <img src="/assets/img/tutorials/data-studio/8.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
 
 
 ## Conclusiones
 
-¡Felicidades! ya tienes tu reporte de data studio y estás listo para evaluar el rendimiento de tus canales digitales.
+¡Felicidades! ya tienes tu reporte de Data Studio y estás listo para evaluar el rendimiento de tus canales digitales.

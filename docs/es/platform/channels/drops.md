@@ -275,7 +275,7 @@ El objecto de tipo category correspondiente a el padre de la categoria.
 
 Array de objectos tipo category con todos los hermanos de la categoria.
 
-## Assets
+## Asset
 
 Objecto del tipo asset. Contiene la información pertinente a un archivo dentro del [gestor de archivos](/es/platform/content/asset-manager).
 
@@ -683,7 +683,7 @@ Booleano para saber si el user agente se esta ocupando a través de una app de M
 
 ## Página
 
-Estos drops son de gran utilidad al momento de querer hacer páginas dinámicas usando Liquid. Desde 
+Estos drops son de gran utilidad al momento de querer hacer páginas dinámicas usando Liquid.
 
 ### [page.grid](#grilla)
 
@@ -741,13 +741,13 @@ La descripción de la página.
 
 ```Este es la descripcion de una página muy cool```
 
-## Menú
+## Menú 
 
 Estos drops obtienen la información asociada a 
 
-### [menu.items](#item)
+### [menu.items](#menu)
 
-Array de objectos de tipo item asociados al menú.
+Array de objectos de tipo menu_item asociados al menú.
 
 ### menu_item.label
 
@@ -1119,7 +1119,7 @@ Array de objectos del tipo widget.
 
 ## Usuario
 
-Usa los drops de user para obtener información de tus usuarios.
+Usa los drops de user para obtener información de tus usuarios del módulo Customers.
 
 ### user.access_token
 
@@ -1336,6 +1336,8 @@ El uuid del usuario.
 
 ## Notificación
 
+Estos drops te permiten obtener información a través de Liquid para las notificaciones del módulo Customers.
+
 ### notification.subject
 
 El subject de la notificación.
@@ -1379,6 +1381,8 @@ Boolean si la notificación fue abierta o no.
 
 ## Formulario
 
+Estos drops te permiten obtener información a través de Liquid para un formulario del módulo Customers.
+
 ### form.slug
 
 El slug del formulario.
@@ -1412,6 +1416,8 @@ Las preguntas del formulario.
 ``` [{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}] ```
 
 ## Pregunta
+
+Estos drops te permiten obtener información a través de Liquid para las preguntas de un formulario del módulo Customers.
 
 ### question.allow_alternatives?
 
@@ -1485,11 +1491,11 @@ El id de la respuesta.
 
 ```5```
 
-### [answer.question](#respuesta)
+### [answer.question](#pregunta)
 
 Objecto del tipo pregunta asociado a la respuesta.
 
-### answer.response
+### [answer.response](#respuesta)
 
 Objecto del tipo response asociado a la respuesta.
 
@@ -1539,12 +1545,13 @@ La URL de callback de OIDC.
 
 ```https://test.miModyo.com/realms/default/auth/openidc/callback```
 
-## Target
-Aca se defininen los metodos asociados a los segmentos (targets)
+## Target 
+
+Estos drops contienen toda la información asociada a los targets (segmentos).
 
 ### target.id
 
-ID del target.
+ID del target (segmento).
 
 #### output
 
@@ -1552,7 +1559,7 @@ ID del target.
 
 ### target.name
 
-Nombre del target.
+Nombre del target (segmento).
 
 #### output
 
