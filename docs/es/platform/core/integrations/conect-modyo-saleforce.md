@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Integracion Salesforce y Modyo
+# Integracion con Salesforce
 
 ## Introducción
 

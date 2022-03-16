@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Visualizar datos de Google Analytics en Data Studio
+# Integración con Google Analytics
 
 ## Introducción
 
