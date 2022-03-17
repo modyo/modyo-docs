@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Create a Widget using the Modyo CLI
+# Create a Widget with Modyo CLI
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. This tutorial focuses on creating a [Widget](/en/platform/channels/widgets.html) from the [Modyo Financial Widget Catalog](/en/widgets/) using the [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli).
+Welcome to a new tutorial in the Modyo training series. This tutorial focuses on creating a [Widget](/en/platform/channels/widgets.html), where you can use [Modyo Financial Widget Catalog](/en/widgets/) using the [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli).
 
-As in the other tutorials, we will use the fictional brand “Dynamic Bank”, which we will introduce below.
+As with the other tutorials we will use the fictitious brand “Dynamic Bank”.
 
 ### Dynamic Bank
 
@@ -16,19 +16,20 @@ Dynamic Bank is the name we use at Modyo for our demos and examples of the platf
 
 <img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
 
-
 ## Prerequisites
 
-Be familiar with:
+You need to have knowledge of:
 
 - HTML
 - CSS
 - JS
 - Modyo's platform
 
+For a more complete overview, it is recommended that before doing this tutorial, you complete the [Creating a Private Site](/en/platform/tutorials/how-to-create-private-site.html) tutorial.
+
 ## Step 1: Install Modyo CLI
 
-Now that we have the base to add the Widget ready, you need to install [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli).
+To add a Widget, you need to install [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli).
 
 [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli) is a command-line tool based on the principles of acceleration and integration with GET and PUSH commands respectively.
 
@@ -38,8 +39,8 @@ They are:
 
 * Git distributed version control system (v 1.7+)
 * Node (v 14+)
-* Un editor de código como por ejemplo Visual Studio Code
-* Npm (v 6.14+)
+* A code editor such as Visual Studio Code
+* Npm (v 6.14+) 
 * Yarn (v 1.22+)
 
 You can use one of the following options in the terminal to perform the installation:
@@ -58,7 +59,7 @@ $ npm i -g @modyo/cli
 
 Once installed, verify that everything is OK by running the command <code>modyo-cli help</code>.
 
-## Step 2: Initialize a Catalog Widget
+## Step 2: Initialize a Widget from the Catalog
 
 After completing the installation process, let's get the [Account Summary](/en/widgets/retail/summary.html) Widget from the [Modyo Financial Widget Catalog](/en/widgets/).
 
@@ -68,22 +69,22 @@ To download the Widget to your local environment we do it with the following com
 modyo-cli get modyo-widgets-retail-summary
 ```
 
-At the end of the process, a view appears like this:
+This will download a widget based on Vue. When it is done, a view like this appears:
 
 <img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;"/>
 
 
-To edit it you need to go to the <code>modyo-widgets-retail-summary</code> folder inside the terminal. 
+To edit it you must navigate to the folder <code>modyo-widgets-retail-summary</code>.
 
 :::tip Tip
-When you build a widget for the first time, make sure to install all dependencies before by running the command <code>npm install</code>. This process could take a while depending on your local internet connection.
+If this is your first time running this widget, be sure to install its dependencies with <code>npm install</code>, the process may take a few minutes depending on a number of reasons.
 :::
 
-To build it locally, use <code>yarn serve</code> or <code>npm serve</code> in your browser.
+To build it locally, use <code>yarn serve</code> or <code>npm run serve</code> in your terminal, the result will look like this in your browser:
 
 <img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;"/>
 
-## Step 3: Style Changes in the Widget
+## Step 3: Modify Widget Styles
 
 Catalog Widgets are designed in Modyo with a simple style. To make changes you need to open the widget folder <code>modyo-widgets-retail-summary</code> in your editor, which in our case is Visual Studio Code.
 
@@ -302,27 +303,26 @@ export default {
 </style>
 ```
 
-> Once you finish giving the widget the look and feel, you're ready to push to Modyo.
+Once you finish giving the widget a look and feel, your site will look like the one in this image and you're ready to push to Modyo's servers.
 
-## Step 4: Send Widget to Site
+## Step 4: Send the Widget to Modyo Platform
 
 To push the Widget to the site in Modyo, you need to generate the configuration in the Modyo CLI so that it knows where the push is going.
 
 Follow these steps to create the configuration file:
 
-1. In the root folder of the widget, create a file <code>.env</code>.
+1. In the root folder of the widget, create a file <code>.env</code>. 
 2. Add the following code and replace **[Account url]** and **[Modyo API Token]** according to your context:
 
 ```
-MODYO_ACCOUNT_URL= [Account url]
-MODYO_SITE_HOST=private-site
+MODYO_ACCOUNT_URL=[URL of your acount ie: http://myaccount.modyo.cloud]
+MODYO_SITE_HOST=[The site where you want to publish ej: private-site ]
 MODYO_VERSION=9
 MODYO_TOKEN= [Modyo API Token]
 MODYO_BUILD_DIRECTORY=dist
 MODYO_WIDGET_NAME=Summary
 
 ```
-
 To get an API token, follow these steps:
 
 1. In the Platform main menu, select **Settings** and click on **API Access**
@@ -369,14 +369,17 @@ Now that you have a token, you can add it to the configuration file <b>.env</b>.
 
 <img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;"/>
 
-Ejecutar <code>npm run build</code>
 
-8. In the terminal, use the command <code>modyo-cli push Summary</code>, this command pushes the widget to your site. You can find it in the Custom Widgets section.
+Run <code>npm run build</code> 
+
+8. In the terminal, use the command <code>modyo-cli push Summary</code>, this command brings the widget to your site. You can find it in the Custom Widgets section.
+
 
 <img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;"/>
 
+
 :::tip Tip
-If you find problems to run the build command, try installing a previous version of postCSS using this line
+If you encounter problems running the build command, try installing a compatible version of PostCSS with this line
 
 <code>npm i -D @fullhuman/postcss-purgecss@3.0.0 postcss@7.0.35</code>
 :::
@@ -406,7 +409,7 @@ Select all pending changes, and click **Publish**. Select **Publish Now**.
 
 Congratulations! You have completed the Private Site course with Modyo CLI Widgets.
 
-Find more information about Modyo:
+Find out more about Modyo:
 - [Modyo Channels](/en/platform/channels) with all its modules:
 - [Pages](/en/platform/channels/pages)
 - [Navigation](/en/platform/channels/navigation)
