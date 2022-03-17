@@ -2,7 +2,7 @@
 search: true
 ---
 
-# SCIM Provisioning with Microsoft Azure AD
+# SCIM provisioning with Microsoft Azure AD
 
 Integrate your groups and users between Modyo and Microsoft Azure Active Directory using the SCIM-compatible API that Modyo provides.
 
