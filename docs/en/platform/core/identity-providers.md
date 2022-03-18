@@ -165,6 +165,7 @@ When performing a specific integration, Modyo allows you to enable certain setti
 | **Activate refresh token (Refresh Token) **                                  | Enables the use of OAuth 2.0 refresh tokens. To refresh your access token, you can use the post endpoint of keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> sending as headers <tt> grant_type: refresh_token, refresh_token: **my-refresh-token**, client_id: **my-client-id** </tt>                                        |
 | **Show delegation information**                               | Enables more information in the [User Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to some other service (e.g. an external API). |
 | **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                             |
+| **Enable User Info** | Enables the User Info service. This allows you to spread the information that is known about the user through the same service. However, the information obtained using the TOKEN ID takes precedence. |
 
 
 ## Azure Active Directory
@@ -200,9 +201,10 @@ The following configuration applies to both Team and Customer user integrations.
 1. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
 1. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 1. Enable optional integration features.
-   |  Option                                      |       Description                                                                                                                                                                                                                 |
-   |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
-   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
-   | **Enable token revocation** | Not supported by Azure AD|
-   | **Show delegation information** | Enable more information in the [User Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when you need the access token issued by the identity provider to gain access to some other service (e.g. an external API). | | **Enable synchronization of claims at login** | Enables synchronization of OpenID Connect claims with custom fields in Modyo. For more information, see [Synchronization of claims](#sincronization-of-claims). |
+   | Option                                | Description                                                  |
+   | ------------------------------------- | ------------------------------------------------------------ |
+   | **Enable refresh token**             | Enables token refresh managed by Modyo. Access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
+   | **Enable logout**        | Enables logout of the provider when logging out of Modyo. This allows you to effectively log out, forcing the user to log back into Azure AD and disabling the SSO experience. |
+   | **Enable token revocation** | Not supported by Azure AD |
+   | **Show delegation information** | Enable more information in the [Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when you need the access token issued by the identity provider to gain access to some other service (e.g. an external API). |
+   | **Enable User Info** | Not supported by Azure AD while there is a web API exposure `scope`. For more information, see [Microsoft's Quickstart: Configure an application to expose a web API](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) |
