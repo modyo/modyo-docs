@@ -90,10 +90,7 @@ module.exports = {
               children: [
                 "/en/platform/core/the-modyo-interface",
                 "/en/platform/core/key-concepts",
-                "/en/platform/core/roles",
-                "/en/platform/core/security",
-                "/en/platform/core/api",
-                "/en/platform/core/webhooks",
+                "/en/platform/core/configuration",
                 {
                   title: "Integrations",
                   path: "/en/platform/core/integrations/",
@@ -103,6 +100,10 @@ module.exports = {
                     ["/en/platform/core/integrations/scim", "SCIM Integration with Azure AD"],
                   ],
                 },
+                "/en/platform/core/webhooks",
+                "/en/platform/core/api",
+                "/en/platform/core/roles",
+                "/en/platform/core/security",
               ],
             },
             {
@@ -284,10 +285,7 @@ module.exports = {
                 "/es/platform/core/key-concepts",
                 /*"/es/platform/core/integration",*/
                 /*"/es/platform/core/installation",*/
-                "/es/platform/core/roles",
-                "/es/platform/core/security",
-                "/es/platform/core/api",
-                "/es/platform/core/webhooks",
+                "/es/platform/core/configuration",
                 {
                   title: "Integraciones",
                   path: "/es/platform/core/integrations/",
@@ -297,6 +295,10 @@ module.exports = {
                     ["/es/platform/core/integrations/scim", "Integración SCIM con Azure AD"],
                   ],
                 },
+                "/es/platform/core/webhooks",
+                "/es/platform/core/api",
+                "/es/platform/core/roles",
+                "/es/platform/core/security",
               ],
             },
             {

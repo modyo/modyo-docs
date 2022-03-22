@@ -35,6 +35,12 @@ modyo-cli get modyo-widgets-retail-consumer-loan ~/Desktop/MyLoanWidget
 cd ~/Desktop/MyLoanWidget && yarn serve
 ```
 
+:::warning Alerta
+Si encuentras problemas para compilar, prueba instalar una version compatible de postCSS con esta linea
+
+`npm i -D @fullhuman/postcss-purgecss@3.0.0 postcss@7.0.351`
+:::
+
 ### Publicar un Widget
 
 Para cargar nuestro Widget a la plataforma y publicarlo, usaremos el comando `push` de `modyo-cli`. Esto se puede hacer de manera local o usando integración continua (recomendado).

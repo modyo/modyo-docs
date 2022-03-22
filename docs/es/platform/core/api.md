@@ -127,7 +127,7 @@ emails	    [...]
 }
 ```
 
-## Llama a la API
+## Llamar a la API
 
 Una vez que conoces el servicio que consultarás de acuerdo a [Explorando la API](/es/platform/core/api.html#explorando-el-api) y un método de [Autenticación](/es/platform/core/api.html#autenticacion)), ya se puede realizar un _request_ a la URL del recurso requerido.
 

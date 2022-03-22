@@ -43,9 +43,9 @@ Dentro de esta sección puedes configurar los siguientes datos:
 - **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
 - **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
-- **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/es/platform/channels/templates.html#vistas-para-contenido).
+- **Idioma**: El idioma en el que estará tu sitio. Existen tres valores para el idioma: Español, Inglés, y Portugués.
 - **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
-- **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
+- **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio. Esta es el horario que determina la hora en lo que engloba un sitio (Pages, Navigation, Plantillas), incluyendo llamadas de Liquid a datos del sitio. Para el horario en Content, es manejado en la Configuración de la Cuenta.
 - **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de google.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
