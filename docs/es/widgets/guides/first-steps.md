@@ -10,12 +10,29 @@ Inicializa y publica un widget localmente utilizando Modyo CLI.
 
 Esta guía fue creada para usuarios que ya tienen conocimiento de los siguientes temas:
 - [Modyo Platform](/es/platform/)
-- [Interfaz de linea de comandos `modyo-cli`](/es/platform/channels/Widgets.md#modyo-cli) instalada y conocer su [documentación](/es/platform/channels/widgets.html#modyo-cli)
 - Tener [acceso a la API administrativa](es/platform/core/api.html#bearer-token)
+
+### Instalar Modyo-CLI
+
+La interface de línea de comandos de Modyo te permite interactuar con la plataforma y nuestro catálogo de widgets desde una terminal. Para instalarla, corre el comando:
+
+<code>Vía yarn</code>
+
+```sh
+$ yarn global add @modyo/cli
+```
+
+<code>Vía npm</code>
+
+```sh
+$ npm i -g @modyo/cli
+```
+
+> Verifica que la instalación fue correcta usando el comando: `modyo-cli help`
 
 ### Inicializar un Widget
 
-La manera mas rápida de inicializar un Widget, es utilizando una de las plantillas de este catálogo como acelerador y modificarlo para tus necesidades.
+La manera mas rápida de inicializar un Widget, es utilizando una de las plantillas de este catálogo como acelerador y modificarlo para tus necesidades. Puedes encontrar el `<nombre-del-Widget` como parte de la documentación del Widget.
 
 1. Usa el comando `get` de `modyo-cli` para descargar los archivos necesarios para el widget:
 
@@ -57,8 +74,16 @@ MODYO_BUILD_COMMAND=build      //El comando para package.json (default: build)
 MODYO_BUILD_DIRECTORY=dist     //La ruta del widget (default: dist) 
 ```
 
+> En caso de no usar un archivo de variables de entorno, también se pueden mandar los datos necesarios directamente desde la línea de comandos. Por ejemplo:
+
+```
+modyo-cli push miWidget -b build -d dist -n miHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
+```
+
 :::tip Tip
-Para saber más acerca de como obtener un token de acceso a la API, vea [API de administración](es/platform/core/api.html)
+Para saber más acerca de como obtener un token de acceso a la API, ve [API de administración](es/platform/core/api.html)
+
+Para saber todas las opciones disponibles para `modyo-cli push`, ve [Modyo-CLI Push](/es/platform/channels/widgets.html#modyo-cli-push-name)
 :::
 
 ![Host](/assets/img/widgets/host.png)

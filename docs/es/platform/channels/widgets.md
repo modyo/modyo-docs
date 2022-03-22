@@ -179,21 +179,21 @@ ARGUMENTS
 La siguiente lista son las variables de entorno que puedes configurar:
 
 ```bash
-MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_ACCOUNT_URL=account-url
 MODYO_VERSION=version
 MODYO_TOKEN=token
-MODYO_ACCOUNT_URL=account-url
 MODYO_SITE_ID=siteId
 MODYO_SITE_HOST=siteHost
 MODYO_BUILD_COMMAND=buildCommand
 MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
 ```
 
 #### Variables de entorno
 
 Para facilitar el proceso de subir tus widgets a la plataforma Modyo, puedes hacer uso del archivo de variables de entorno `.env`. Sigue estos pasos para crear tu archivo:
 
-1. Crea un archivo `variables.env` en la raíz de tu proyecto.
+1. Crea un archivo `.env` en la raíz de tu proyecto.
 2. Agrega la siguiente información:
 
 ```
@@ -313,4 +313,31 @@ OPTIONS
 
 EXAMPLE
   $ modyo-cli push <NAME>
+
+```
+
+#### Variables de entorno
+
+Para hacer push hacia la plataforma, es necesario llenar las opciones requeridas. Para esto, hay dos opciones para le envío: escribir el comando con opciones o usar un archivo `.env`. Funcionan de la misma manera pero se implementan diferente.
+
+##### Archivo de variables de entorno
+
+En el directorio raíz del widget, crea un archivo `.env` que contenga los siguientes datos:
+
+```shell
+MODYO_ACCOUNT_URL=https://test.miModyo.com //URL de la cuenta dueña del sitio
+MODYO_VERSION=9                            //La versión de la plataforma Modyo
+MODYO_TOKEN=ax93...nm3                     //El token para accesar a la API administrativa
+MODYO_SITE_HOST=miHost                     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
+MODYO_WIDGET_NAME=miWidget                 //El nombre del widget
+MODYO_BUILD_COMMAND=build                  //El comando para package.json (default: build) 
+MODYO_BUILD_DIRECTORY=dist                 //La ruta del widget (default: dist) 
+```
+
+##### Opciones
+
+En una terminal con modyo-cli instalado, es posible hacer push a través de la linea de comandos de la siguiente manera:
+
+```
+modyo-cli push miWidget -b build -d dist -n miHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
 ```
