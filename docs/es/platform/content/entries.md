@@ -74,9 +74,13 @@ Una vez que Modyo haya terminado de modificar los campos para las entradas selec
 
 ## Crear una Entrada
 
-Para crear una entrada, se debe hacer click en el botón de la parte superior derecha de la pantalla.
+Para crear una entrada, sigue estos pasos:
 
-En primera instancia, **Modyo** pide el nombre, el slug y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en la [sección Tipos](/es/platform/content/types.html).
+1. En el menú lateral de la Plataforma Modyo, selecciona **Content** y haz click en **Espacios**.
+1. Selecciona tu **Espacio**.
+1. Haz click en **+ Nueva Entrada**.
+
+En primera instancia, **Modyo** pide el nombre, el slug, y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en [Tipos](/es/platform/content/types.html).
 
 :::warning Atención
 Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de la entrada como slug.
@@ -173,7 +177,7 @@ Cuando crees una entrada, la plataforma te asigna un slug de manera aleatoria. S
 
 Este valor debe ser único para las entradas del mismo tipo. En caso de que se guarden dos entradas con el mismo slug, este será modificado al momento de publicar la entrada.
 
-## Contenido Privado
+### Contenido Privado
 
 Si deseas que el contenido sea exclusivo para usuarios que tengan una sesión en la plataforma se debe habilitar está opción.
 
@@ -186,3 +190,52 @@ El contenido segmentado es fundamental para cualquier entidad o empresa que quie
 Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar segmentación y después seleccionar a qué segmento de usuarios al que se dirige la entrada.
 
 Para crear un segmento en específico, revisa la [sección Segmentos](/es/platform/customers/segments.html).
+
+## Consumir externamente
+
+Accesa el contenido creado en el módulo de Content desde cualquier parte usando nuestra API. 
+
+Sigue estos pasos para obtener el uuid de una entrada:
+
+1. En la Plataforma Modyo, en el menú principal, selecciona **Content** y haz click en **Espacios**.
+1. Selecciona tu **Espacio**.
+1. Haz click en **Vista Previa**.
+1. Haz click en **Link de la API**.
+
+Te llevará a una nueva página en donde se usa la API para obtener el contenido de la entrada. El resultado será similar a esto:
+
+URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844`
+
+```json
+{
+  "meta":
+  {
+    "name": "MiNuevaEntrada",
+    "slug": "minuevaentrada",
+    "tags": [],
+    "type": "nuevoTipo",
+    "uuid": "45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
+    "space": "test-space",
+    "author":
+    {},
+    "locale": "es-cl",
+    "private": false,
+    "targets": [],
+    "category": "mycategory",
+    "created_at": "2022-02-24T12:44:24.000-03:00",
+    "updated_at": "2022-02-25T10:06:46.000-03:00",
+    "published_at": "2022-02-25T10:06:46.000-03:00",
+    "version_type": "current",
+    "category_name": "MyCategory",
+    "category_slug": "mycategory",
+    "unpublished_at": null,
+    "available_locales": ["es-cl"]
+  },
+  "fields":
+  {
+    "My items": "..."
+  }
+}
+```
+
+Para saber más acerca de nuestra API y las diferentes acciones que puedes realizar, ve [API de administración](/es/platform/core/api).
