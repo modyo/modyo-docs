@@ -18,13 +18,13 @@ Llama a tus canales de gestión a través de un webhook.
 
 Para crear un webhook, sigue estos pasos:
 
-1. Desde la página de administración, haz click en Configuración, luego selecciona Webhooks.
-2. Haz click en crear Webhook.
+1. Desde la página de administración, haz click en **Configuración**, luego selecciona **Webhooks**.
+2. Haz click en **+ Nuevo Webhook**.
 3. Escribe el nombre y la URL a la cual quieres llamar.
 4. Selecciona los sitios o espacios que quieras que activen el webhook.
 5. Selecciona el tipo de log que activará el webhook.
 6. Agrega los headers necesarios para la llamada. 
-7. Haz click en guardar.
+7. Haz click en **Guardar**.
 
 Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
 

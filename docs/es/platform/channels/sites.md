@@ -9,9 +9,10 @@ sidebarDepth: 3
 
 Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Widgets](/platform/channels/widgets) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
 
-Existen dos estados para cada sitio:
+Existen tres estados para cada sitio:
 
 - **Habilitado**: Estado por defecto en el que quedan los sitios recién creados y los que están habilitados para su uso.
+- **Cambios pendientes**: Aparece cuando hay algo dentro del sitio con cambios pendientes. Un administrador del sitio puede hacer click en **Publicar** te llevará a **Revisar y Publicar** en donde puedes verificar todos los cambios y publicar el sitio.
 - **Deshabilitado**: Sitios a los que no se puede acceder.
 
 ## Crear un Sitio
@@ -43,9 +44,9 @@ Dentro de esta sección puedes configurar los siguientes datos:
 - **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
 - **Descripción**: Una breve descripción de tu sitio que será usada como valor por defecto para el SEO del sitio.
 - **Logo del sitio**: Imagen que se usara en la parte superior izquierda como logo del sitio.
-- **Idioma**: El idioma en el que estará tu sitio. Este valor es importante al momento de usar [contenido en un sitio](/es/platform/channels/templates.html#vistas-para-contenido).
+- **Idioma**: El idioma en el que estará tu sitio. Existen tres valores para el idioma: Español, Inglés, y Portugués.
 - **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
-- **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio.
+- **Zona Horaria**: La zona horaria en que se mostrarán los campos fecha y hora dentro del sitio. Esta es el horario que determina la hora en lo que engloba un sitio (Pages, Navigation, Plantillas), incluyendo llamadas de Liquid a datos del sitio. Para el horario en Content, es manejado en la Configuración de la Cuenta.
 - **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de google.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que aparece en dispositivos móviles al usar el sitio como aplicación.
@@ -121,23 +122,41 @@ El SEO (Search Engine Optimization) es la llave para aparecer en los distintos m
 Las opciones a configurar son:
 
 - **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
-- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca.
-- **Sitemap**: Este archivo permite a los motores de búsqueda indexar mejor el contenido de su sitio. Modyo actualiza automáticamente su archivo de mapa de sitio por defecto, pero también puede modificarlo manualmente para que se centre sólo en una página y un contenido determinados.
-- **Robots.txt**: Este archivo forma parte del Protocolo de Exclusión de Robots (REP), un grupo de normas web que regulan la forma en que los robots rastrean la web, acceden e indexan el contenido y lo sirven a los usuarios. En la práctica, este archivo determina si ciertos agentes de usuario (software de rastreo web) pueden o no rastrear partes de un sitio web. Estas instrucciones de rastreo se especifican "permitiendo" o "prohibiendo" el comportamiento de ciertos (o todos) agentes de usuario. Puede modificar este archivo para proporcionar instrucciones personalizadas a los rastreadores de sitios.
+- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca. Este campo acepta un máximo de 255 caracteres.
+- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y actualizar el archivo sitemap.xml. Deshabilita esta opción para mantener un mapa de sitio personalizado.
+- **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
+- **Actualizar automáticamente el archivo robots.xml para mí**: Permite a Modyo crear y actualizar el archivo robots.txt. Deshabilita esta opción para proporcionar instrucciones personalizadas a los rastreadores de sitios.
+- **Robots.txt**: Este archivo forma parte del Protocolo de Exclusión de Robots (REP), un grupo de normas web que regulan la forma en que los robots rastrean la web, acceden, e indexan el contenido y lo sirven a los usuarios. En la práctica, este archivo determina si ciertos agentes de usuario (software de rastreo web) pueden o no rastrear partes de un sitio web. Estas instrucciones de rastreo se especifican "permitiendo" o "prohibiendo" el comportamiento de ciertos (o todos) agentes de usuario.
 
 :::tip Tip
-Los archivos robots.txt y el sitemap.xml solo son visibles en el sitio, si es que se tiene el custom domain habilitado (dominio personalizado). De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de cuenta, tienen sus valores por defecto y no se pueden personalizar.
+Los archivos robots.txt y sitemap.xml solo son visibles en el sitio si se utilizan dominios personalizados. De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de plataforma, tienen sus valores por defecto, y no se pueden personalizar.
 :::
 
-- **Meta tags**: Te permite configurar meta tags para todos los pages y sus valores por defecto.
-
-:::tip Tip
-Al añadir un meta tag a todos los pages a través de la configuración de SEO del sitio, se añadirá a la versión editable de todas las páginas de tal forma que tendrás que publicar cada página para que los nuevos meta tags tengan efecto en el sitio.
-:::
+- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto.
+- **Replicar meta tag en páginas:** Propaga este meta tag y su valor en todas las páginas del sitio. Al guardar este cambio, es necesario publicar todas las páginas modificadas para que los nuevos meta tags tengan efecto.
 
 :::warning Atención
-Ya que el listado de meta tags es parte de la configuración del sitio, sólo los administradores del sitio podrán añadir meta tags para todas las páginas, sin embargo, los developers del sitio podrán añadir y eliminar meta tags en las páginas y modificar sus valores página por página.
+En configuración del sitio, sólo usuarios con rol de administrador del sitio podrán añadir meta tags. Dentro de un sitio, el rol developers podrá añadir y eliminar meta tags página por página.
 :::
+
+#### SEO En-página vs. Fuera-de-página (On-page vs. Off-page)
+
+También conocido por SEO En-sitio y Fuera-de-sitio, se refieren a las acciones que se pueden tomar dentro o fuera de una página para aumentar la visibilidad de tu sitio para los motores de búsqueda. Para los mejores resultados, recomendamos hacer uso de ambas estrategias para obtener un mejor posicionamiento en los buscadores.
+
+##### SEO en-página
+
+Esta es una pequeña lista de las acciones que puedes tomar para mejorar el SEO en-página:
+
+- Hacer uso de palabras clave en la sección de SEO de la plataforma y en tus páginas
+- Incluir palabras clave como parte de la URL
+- Agregar vínculos a información relevante o a otras partes de tu sitio
+
+##### SEO fuera-de-página
+
+Esta es una pequeña lista de las acciones que puedes tomar para mejorar el SEO fuera-de-página:
+
+- Promocionar el contenido por redes sociales y canales de distribución
+- Fomentar alianzas y cooperación con medios de autoridad en el tema
 
 ### PWA
 
