@@ -610,7 +610,7 @@ Eso imprimirá algo como esto:
 </template>
 <template v-slot:curl>
 
-```curl
+```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
 ```
 
@@ -660,7 +660,7 @@ El objeto retornado por getEntries() incluye un campo meta que te ayudará a nav
 </template>
 <template v-slot:curl>
     
-```curl
+```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
 ```
 
@@ -924,7 +924,7 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 - `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
 - `order`: ['asc','desc'] (opcional, asc por default)
 
-```curl
+```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
 ```
 
