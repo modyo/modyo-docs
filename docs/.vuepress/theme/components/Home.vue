@@ -1,5 +1,12 @@
 <template>
   <main id="test-deployment-01" class="home" aria-labelledby="main-title">
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MW9VKMC');
+    </script>
     <div class=" m-0 p-0">
       <div class="bg-dark">
         <div class="container pb-0 pb-md-5 pt-5 mt-5 bg-hero">
