@@ -36,7 +36,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-K228JLF');
     `,
-    ]
+    ],
+    ["meta", {name:"google-site-verification", content:"mMWuNk0NkjQFiS8L5eRpOKrojv9rIGKvbWo65NHvSb4"}]
   ],
   themeConfig: {
     logo: "/assets/img/modyo.png",
