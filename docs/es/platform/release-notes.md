@@ -5,56 +5,6 @@ search: true
 # Notas del release
 
 ## 9.2
-
-### 9.2.7 - 10 de marzo de 2022
-<Badge text="Core" type="core" vertical="middle"/>
-
-* Actualizar version liquidjs
-* Actualizar nombre de categorias no se refleja en entries
-* Atributos del request drop no considera el slug de la entry en content pages
-* Migración IntegrationsToIdps falla por nuevo atributo openidc_userinfo_enabled
-* Cuentas duplicadas en onboarding
-* Direct authentication en Realm con Google lleva a error 404
-* Implementar medio de pago Cybersource 
-* Agregar tags en New Asset modal 
-
-
-### 9.2.6 - 22 de febrero de 2022
-
-<Badge text="Core" type="core" vertical="middle"/>
-
-* Nuevos correos transaccionales de la plataforma
-* User Info opcional en integración OIDC
-
-<Badge text="Content" type="content" vertical="middle"/>
-
-* Se arregla a drop entry.meta.url
-* Se arregla eliminación de entradas enlazadas
-* Se realizan mejoras en editor multilínea
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-
-* Se arregla problema al cambiar realm de un site
-* Se arregla problema con editor de campañas
-* Se arregla problema con cuentas con sitio por defecto sin realm
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-
-* Se redirigen rutas terminadas en slash para mejorar SEO
-* Se previene reflected XSS en drop de request
-* Se previene contaminación con rutas inválidas
-
-### 9.2.5 - 27 de enero de 2022
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Se incorporan Content Pages
-* Se arreglan problemas con barra de preview
-
-<Badge text="Content" type="content" vertical="middle"/>
-* Mejoras y correcciones en editor de Entries
-
-<Badge text="Core" type="core" vertical="middle"/>
-* Se agrega soporte de SCIM para usuarios administradores
-
 ### 9.2.4 - 30 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arregla problema que contaminaba el caché al realizar previsualizaciones
@@ -100,28 +50,6 @@ Se arregla bug con filtro con 100 o más tags en el admin
 * Editor Froala
 
 ## 9.1
-### 9.1.37 - 5 de febrero del 2022
-<Badge text="Core" type="core" vertical="middle"/>
-* Se arregla inscripción de tarjetas con OneClick API
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Se arreglan problemas con editor de texto multilínea
-* Se arregla problema de contaminación de cache
-
-### 9.1.36 - 18 de enero del 2022
-
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Se agrega opción para especificar status code en redirección de default site
-
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Se previene inyección HTML a través del atributo de nombde de cuenta en formulario de inicio de sesión
-
-<Badge text="Content" type="content" vertical="middle"/>
-* Se arregla problema al filtrar por campo múltiple sin opciones
-
-<Badge text="Core" type="core" vertical="middle"/>
-* Se actualiza bundle de certificados raíz
-
 ### 9.1.35 - 29 de diciembre del 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>

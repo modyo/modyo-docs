@@ -610,12 +610,9 @@ Eso imprimirá algo como esto:
 </template>
 <template v-slot:curl>
 
-Las entradas que podrás ver en sección, corresponden a todo el contenido enviado a través de la API. En ese sentido, se podrán filtrar según:
-
-- Tipo
-- Categoría
-- Tags
-- Autor
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+```
 
 </template>
 </CodeSwitcher>
@@ -662,7 +659,22 @@ El objeto retornado por getEntries() incluye un campo meta que te ayudará a nav
 
 </template>
 <template v-slot:curl>
-    <!-- ... (see above) -->
+    
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+```
+
+La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
+
+```json
+"meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+```
+
 </template>
 </CodeSwitcher>
 
@@ -846,10 +858,10 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 ### Ordenar
 
+De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
+
 <CodeSwitcher isolated:true>
 <template v-slot:lq>
-
-De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
@@ -912,52 +924,9 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 - `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
 - `order`: ['asc','desc'] (opcional, asc por default)
 
-### Contenido privado
-
-Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido.
-
-:::tip Tip
-Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los segmentos automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
-:::
-
-La API de contenido puede recibir el parámetro delivery token de dos formas:
-
-- Como header: `Delivery-Token`
-- Como parámetro GET: `delivery_token`
-
-El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de segmentos. Se puede obtener haciendo un request GET a la URL `account.url/api/profile/delivery_token`.
-
-El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
-
-- **iss**: URL base de la API de profile
-- **aud**: URL base de la API de contenido
-- **sub**: Nombre del space
-- **exp**: Tiempo de expiración del token
-- **access_type**: delivery,
-- **segmentos**: Array de segmentos
-
-Por ejemplo:
-
-```javascript
-{
-  "iss": "http://my-account.modyo.me/api/profile",
-  "aud": "http://my-account.modyo.me/api/content",
-  "sub": "account_uuid",
-  "exp": 1516242622,
-  "access_type": "delivery",
-  "segments": ["segment1", "segment2"]
-}
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
 ```
-
-:::warning Atención
-Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
-:::
-
-:::warning Atención
-Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los segmentos a los que pertenezca el usuario, y dado que los segmentos pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor.
-:::
-
-La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin segmentos) como el contenido segmentado que esté restringido a los segmentos a los que pertenece el usuario que solicitó su delivery token.
 
 </template>
 </CodeSwitcher>
@@ -987,6 +956,7 @@ Para usar los atributos de las entradas, puedes usar la notación con punto o co
 <template v-slot:js>
 
     <!-- ... (see above) -->
+
 </template>
 
 <template v-slot:curl>
@@ -995,3 +965,51 @@ Para usar los atributos de las entradas, puedes usar la notación con punto o co
 
 </template>
 </CodeSwitcher>
+
+
+### Contenido privado
+
+Siempre que uses la API de contenido, puedes acceder al contenido publicado que esté disponible para todos los usuarios (no privado), sin embargo, si quieres acceder al contenido privado, debes añadir un header o bien, un parámetro GET a la URL de request de la API de contenido.
+
+:::tip Tip
+Si usas Liquid para acceder al contenido, los usuarios que inicien sesión y cumplan con los segmentos automáticamente verán el contenido cuando corresponda y no se require ninguna acción extra por parte del desarrollador Front End.
+:::
+
+La API de contenido puede recibir el parámetro delivery token de dos formas:
+
+- Como header: `Delivery-Token`
+- Como parámetro GET: `delivery_token`
+
+El token de acceso al contenido es un token público en formato [JWT](https://tools.ietf.org/html/rfc7519) que comparten todos los usuarios que pertenecen al mismo grupo de segmentos. Se puede obtener haciendo un request GET a la URL `test.modyo.com/api/realms/{realm_uid}/delivery_token`.
+
+El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
+
+- **iss**: URL base de la API de customers
+- **aud**: URL base de la API de contenido
+- **sub**: Nombre del space
+- **exp**: Tiempo de expiración del token
+- **access_type**: delivery,
+- **segmentos**: Array de segmentos
+
+Por ejemplo:
+
+```javascript
+{
+  "iss": "http://my-account.modyo.me/api/customers",
+  "aud": "http://my-account.modyo.me/api/content",
+  "sub": "account_uuid",
+  "exp": 1516242622,
+  "access_type": "delivery",
+  "segments": ["segment1", "segment2"]
+}
+```
+
+:::warning Atención
+Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
+:::
+
+:::warning Atención
+Es necesario que la obtención del token de acceso al contenido se haga de forma dinámica, ya que ese token cambiará de acuerdo a los segmentos a los que pertenezca el usuario, y dado que los segmentos pueden llegar a ser altamente volátiles, no es recomendable almacenar este valor.
+:::
+
+La respuesta de la consulta a la API de contenido con el delivery token, es igual a la respuesta que recibirías sin el delivery token, pero esta contendrá como parte de la respuesta, tanto el contenido privado (sin segmentos) como el contenido segmentado que esté restringido a los segmentos a los que pertenece el usuario que solicitó su delivery token.
