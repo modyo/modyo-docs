@@ -176,25 +176,40 @@ ARGUMENTS
   push         Push widget to Modyo platform
 ```
 
-:::tip Tip
-Options can be set in environment variables or within a _.env_ file in the project root directory. The file method is recommended to prevent logging sensitive information.
-:::
-
 The following list are the environment variables you can configure:
 
 ```bash
-MODYO_BUILD_DIRECTORY=buildDirectoryPath
+MODYO_ACCOUNT_URL=account-url
 MODYO_VERSION=version
 MODYO_TOKEN=token
-MODYO_ACCOUNT_URL=account-url
 MODYO_SITE_ID=siteId
 MODYO_SITE_HOST=siteHost
 MODYO_BUILD_COMMAND=buildCommand
 MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
 ```
 
+#### Environment variables
+
+To facilitate the process of uploading your widgets to the Modyo platform, you can make use of the `.env` environment variables file. Follow these steps to create your file:
+
+1. Create a `.env` file at the root of your project.
+2. Add the following information:
+
+```
+modyo_account_url=test.mimodyo.com
+MODYO_VERSION=9
+modyo_token=AK9CB2... a53s
+modyo_site_host=MySite
+MODYO_WIDGET_NAME=My NewWidget
+Modyo_build_command=Build
+Modyo_Build_Directory=dist
+```
+
+3. When you make use of modyo-cli within the root of your project, the file data will be added automatically.
+
 :::tip Tip
-Options can be set in environment variables or within a _.env_ file. The option of a file is recommended because it avoids logging sensitive information
+We recommend using an environment variable file to make modyo-cli easier to use and avoid logging sensitive information.
 :::
 
 ### `modyo-cli autocomplete [SHELL]`
@@ -265,11 +280,11 @@ EXAMPLE
 >There are some public widget names that can be accessed via this command
 
 ```bash
-  EJEMPLOS
+  EXAMPLES
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
 ```
 
->From this command and on you can continue using the widget like any other vue-cli widget.
+>From this point onwards you can continue using the widget like any other vue-cli widget.
 
 ### `modyo-cli push NAME`
 
@@ -279,23 +294,50 @@ You'll use a name argument to load the widget into the platform and some require
 
 ```bash
 USAGE
-  $ modyo-cli push NAME
+ $modyo-cli push NAME
 
 ARGUMENTS
-  NAME  The name of the widget
+ NAME The name of the widget
 
 OPTIONS
-  -b, --build-command=build-command      [default: build] Build command in package.json
-  -d, --build-directory=build-directory  [default: dist] Build directory path
-  -h, --help                             Output usage information
-  -i, --site-id=site-id                  Id of the site where the widget will be pushed
-  -l, --disable-liquid                   Disable Liquid
-  -n, --site-host=site-host              Host of the site where the widget will be pushed
-  -p, --publish                          Force widget publication
-  -t, --token=token                      (required) Modyo Api token
-  -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
-  -v, --version=8|9                      [default: 9] Version of Modyo platform
+ -b, —build-command=build-command [default: build] Build command in package.json
+ -d, —build-directory=build-directory [default: dist] Build directory path
+ -h, —help Output usage information
+ -i, —site-id=site-id Id of the site where the widget will be pushed
+ -l, —disable-liquid Disable Liquid
+ -n, —site-host=site-host Host of the site where the widget will be pushed
+ -p, —publish Force widget publication
+ -t, —token=token (required) Modyo API token
+ -u, —account-url=account-url (required) URL of your Modyo account ex (” https://account.modyo.com “)
+ -v, —version=8|9 [default: 9] Version of Modyo platform
 
 EXAMPLE
-  $ modyo-cli push <NAME>
+ $modyo-cli push <NAME> 
+
+```
+
+#### Environment variables
+
+To push to the platform, it is necessary to fill in the required options. For this, there are two options for sending: write the command with options or use a `.env` file. They work the same way but are implemented differently.
+
+##### Environment Variable File
+
+In the widget root directory, create a `.env` file containing the following data:
+
+```shell
+MODYO_ACCOUNT_URL= https://test.miModyo.com //URL of the account that owns the site
+MODYO_VERSION=9 //The version of the Modyo platform
+modyo_token=AX93... nm3 //The token for accessing the administrative API
+modyo_site_host=MyHost //The hostname, located within the platform, in the sites section
+modyo_widget_name=MyWidget //The name of the widget
+Modyo_build_command=build //The command for package.json (default: build) 
+modyo_build_directory=Dist //The widget path (default: dist) 
+```
+
+##### Option
+
+In a terminal with modyo-cli installed, it is possible to push through the command line as follows:
+
+```
+modyo-cli push MyWidget -b build -d dist -n myHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
 ```
