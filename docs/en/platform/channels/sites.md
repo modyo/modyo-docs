@@ -9,9 +9,10 @@ sidebarDepth: 3
 
 A site is where content created in [Content](/en/platform/content/) and [Widgets](/platform/channels/widgets) are combined to create your custom digital channel. Sites include operations regarding the entire development, design, and navigation flow.
 
-There are two states for each site:
+There are three states for each site:
 
 - **Enabled**: Default state of functioning online digital channels and newly created Sites.
+- **Pending Changes**: Appears when there is something in the site with pending changes. Site administrators can click **Publish** which will take you to **Review and Publish** where you can verify all changes and publish the site.
 - **Disabled**: Sites that have been disabled.
 
 ## Create a Site
@@ -43,9 +44,9 @@ Within this section you can configure the following data:
 - **Site Name**: The name of your site, this field is used as the default title for SEO purposes (this can be modified).
 - **Description**: A brief description of your site that is used as the default description for the SEO of the site (this can be modified).
 - **Site Logo**: An image that displays in the upper left as your site logo in the Navigation bar.
-- **Language**: The language of your site. This value is important because it impacts [how content appears](/en/platform/channels/templates.html#views-for-content) in your site when consuming it through Modyo Content.
+- **Language**: The language your site will be in. There are three values for the language: Spanish, English, and Portuguese.
 - **[Team Review](/en/platform/core/key-concepts.html)**
-- **Time Zone**: Selects the time zone that your date and time fields use within your site.
+- **Time Zone**: The time zone in which the date and time fields will be displayed within the site. This time will determine the time zone inside a site (Pages, Navigation, Templates), including Liquid calls to site data. Time zones in Content can be handled in the Account Settings.
 - **Google Tag Manager ID**: Allows you to add a Google Tag Manager ID to easily install the scripts you need to use Google's event logging tool.
 - **Favicon**: Image that appears in the address bar.
 - **Apple icon**: Image that appears on mobile devices when using the site as an application.
@@ -121,23 +122,41 @@ SEO (Search Engine Optimization) is the key to appearing in different search eng
 The options listed in this section help improve your SEO across a particular channel:
 
 - **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
-- **Keywords**: Associated words relevant to your site that users search for that appear in the keywords meta tag. Devalued by Google, this field is less relevant today, but may be used by other search engines.
-- **Sitemap**: This file allows search engines to better index the content of your site. Modyo automatically updates your sitemap file by default, but you can also modify it manually so that it focuses only on particular pages and content.
-- **Robots.txt**: This file is part of the robots exclusion protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content, and serve that content up to users. In practice, this file determines whether certain user agents (web-crawling software) can or cannot crawl parts of a website. These crawl instructions are specified by "disallowing" or "allowing" the behavior of certain (or all) user agents. You can modify this file to provide custom instructions to site crawlers.
+- **Keywords**: Words that users search for and that you want the site to use. This field accepts a maximum of 255 characters.
+- **Automatically update the sitemap.xml file for me**: Allows Modyo to create and update the sitemap.xml file. Disable this option to maintain a custom sitemap.
+- **Sitemap**: This XML file allows search engines to index the content of the site.
+- **Automatically update the robots.xml file for me**: Allows Modyo to create and update the robots.txt file. Disable this option to provide personalized instructions to site crawlers.
+- **Robots.txt**: This file is part of the Robot Exclusion Protocol (REP), a group of web standards that regulate how robots crawl the web, access, and index content and serve it to users. In practice, this file determines whether or not certain user agents (web tracking software) can track parts of a website. These tracking instructions are specified by “allowing” or “prohibiting” the behavior of certain (or all) user agents.
 
 :::tip Tip
-The robots.txt and sitemap.xml files are only visible on the site if you have a custom domain enabled. Otherwise, robots.txt and sitemap.xml are only defined at the account level with their default values and cannot be customized.
+The robots.txt and sitemap.xml files are only visible on the site if custom domains are used. Otherwise, robots.txt and sitemap.xml are only at the platform level, have their default values, and cannot be customized.
 :::
 
-- **Meta tags**: Allows you to set up meta tags for all your pages and configure the default values.
-
-:::tip Tip
-When you add a meta tag to all pages through your site's SEO settings, it will be added to the editable version of all pages so you'll have to publish each page for the new meta tags to take effect on your site.
-:::
+- **Custom meta tags**: Allows you to set meta tags and their default values for all pages.
+- **Replicate meta tag on pages:** Propagate this meta tag and its value across all pages of the site. When saving this change, it is necessary to publish all modified pages for the new meta tags to take effect.
 
 :::warning Warning
-Since the meta tags list is part of the site's configuration, only the site's administrators will be able to add meta tags for all pages. However, the site's developers will be able to add or remove meta tags and modify their values page by page.
+In site settings, only users with the site administrator role will be able to add meta tags. Within a site, the developers role will be able to add and remove meta tags page by page.
 :::
+
+#### On-page SEO vs. Off-page
+
+Also known as On-Site and Off-Site SEO, they refer to actions that can be taken on or off a page to increase your site's visibility to search engines. For the best results, we recommend using both strategies to get better search engine rankings.
+
+##### On-page SEO
+
+Here is a short list of actions you can take to improve on-page SEO:
+
+- Make use of keywords in the SEO section of the platform and on your pages
+- Include keywords as part of the URL
+- Add links to relevant information or other parts of your site
+
+##### Off-page SEO
+
+Here is a short list of actions you can take to improve off-page SEO:
+
+- Promote content through social media and distribution channels
+- Foster alliances and cooperation with authoritative mediums on the subject
 
 ### PWA
 
