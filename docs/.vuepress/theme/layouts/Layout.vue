@@ -114,7 +114,7 @@ export default {
 
   beforeMount() {
     let gtmScript = document.createElement('noscript')
-    gtmScript.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MW9VKMC" height="0" width="0" style="display:none;visibility:hidden"></iframe>'
+    gtmScript.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K228JLF" height="0" width="0" style="display:none;visibility:hidden"></iframe>'
     document.body.appendChild(gtmScript)
   },
 
