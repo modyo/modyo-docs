@@ -18,13 +18,13 @@ Call your management channels through webhooks.
 
 To create a webhook, follow these steps:
 
-1. From the administration screen, click Configuration, then select Webhooks.
-2. Click create Webhook.
+1. From the admin page, click **Settings**, then select **Webhooks**.
+2. Click **+ New Webhook**.
 3. Write the name and URL you want to call.
 4. Select the sites or spaces you want to activate the webhook.
 5. Select the log type that will activate the call.
 6. Add the required headers for your call.
-7. Click Save.
+7. Click **Save**.
 
 Note: The webhook is called through a POST call when the selected log type is generated. Once a webhook is created, you can send a test notification with fake information to test that your URL is receiving POST calls from Modyo.
 
