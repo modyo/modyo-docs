@@ -583,7 +583,7 @@ To access the list of entries of a type with the uid `type_uid` and of a space w
 {% endfor %}
 ```
 
-In the case of a unique entry (single cardinality), you can use the method enttry, for example:
+In the case of a single entry, you can use the method entry, for example:
 
 ```liquid
 {{ spaces['space_uid'].types['type_uid'].entry }}
@@ -595,27 +595,24 @@ In the case of a unique entry (single cardinality), you can use the method enttr
 ```js
 import { Client } from "@modyo/sdk";
 // To obtain the correct account, you must use the url of the account
-const modyoAccount = new Client("https://my-account.modyo.com","en");
+const modyoAccount = new Client("https://my-account.modyo.com","es");
 
 const typePost = modyoAccount.getContentType("space_uid", "type_uid");
-// `typePost` will return an object with information of the type like the schema for example
+// `typePost` returns an object with information about the type, i.e. the schema.
 
-// If you want to view the schema in detail, you can use the method `getSchema()`
+// If you want to see the details of the schema, use the `getSchema()` method
 typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
 /*
-This will print something like:
+Which will print something like this:
 > Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {...}, type: "object", required: Array(2), properties: {...}}
 */
 ```
 </template>
 <template v-slot:curl>
 
-The entries you can view in the section, correspond to the content sent through the API. They can be filtered by:
-
-- Type
-- Category
-- Tags
-- Author
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+```
 
 </template>
 </CodeSwitcher>
@@ -662,7 +659,22 @@ The object returned by getEntries() includes a meta field that will help you nav
 
 </template>
 <template v-slot:curl>
-    <!-- ... (see above) -->
+
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+```
+
+The response contains the `meta` object that includes a field that will help you navigate it. The returned object will look something like this:
+
+```json
+"meta": {
+    "total_entries": 4,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  },
+```
+
 </template>
 </CodeSwitcher>
 
@@ -846,10 +858,10 @@ Fields that search multiple items (checkboxes, multiple) can use the following s
 
 ### Order
 
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
+
 <CodeSwitcher isolated:true>
 <template v-slot:lq>
-
-In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
@@ -912,52 +924,9 @@ The order of the results must be specified with the `sort_by` and `order` parame
 - `sort_by`: indicating the name of the attribute (e.g. meta.tags, or fields.name)
 - `order`: ['asc','desc'] (opcional, asc by default)
 
-### Private content
-
-Whenever you use the Content API, you can access published content that is available to all users (not private), however, if you want to access private content, you must add a header or a GET parameter to the Content API request URL.
-
-:::tip Tip
-If you use Liquid to access content, users who sign in and fit with the segment criteria will automatically see the content where appropriate and no extra action is required from the Front End developer.
-:::
-
-The Content API can receive the delivery token parameter in two ways:
-
-- As a header: `Delivery-Token`
-- As a GET parameter: `delivery_token`
-
-The content access token is a public token in [JWT](https://tools.ietf.org/html/rfc7519) format shared by all users belonging to the same segment group. It can be obtained by making a GET request to the URL `account.url/api/profile/delivery_token`.
-
-The content delivery token contains the following attributes:
-
-- **iss**: Base URL of the Profile API
-- **aud**: Base URL of the Content API
-- **sub**: Name of the space
-- **exp**: Token expiration time
-- **access_type**: delivery,
-- **segments**: Array of segments
-
-For example:
-
-```javascript
-{
-  "iss": "http://my-account.modyo.me/api/profile",
-  "aud": "http://my-account.modyo.me/api/content",
-  "sub": "account_uuid",
-  "exp": 1516242622,
-  "access_type": "delivery",
-  "segments": ["segment1", "segment2"]
-}
+```curl
+curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
 ```
-
-:::warning Warning
-In order to access the fetch token URL, you must ensure that you are logged in with a user in the account or at least one site in the account, otherwise you will receive a `404 - Not found` error.
-:::
-
-:::warning Warning
-Obtaining the content access token needs to be done dynamically, as that token will change according to the segments to which the user belongs, and since segments can become highly volatile, it is not recommended to store this value.
-:::
-
-The response of the Content API query with the delivery token is the same as the response you would receive without the delivery token, but this will contain both private content (without segments) and segmented content that is restricted to the segments to which the user requesting your delivery token belongs as part of the response.
 
 </template>
 </CodeSwitcher>
@@ -987,6 +956,7 @@ To use input attributes, you can use dot or square bracket notation, so <span v-
 <template v-slot:js>
 
     <!-- ... (see above) -->
+
 </template>
 
 <template v-slot:curl>
@@ -995,3 +965,51 @@ To use input attributes, you can use dot or square bracket notation, so <span v-
 
 </template>
 </CodeSwitcher>
+
+
+### Private content
+
+Whenever you use the Content API, you can access published content that is available to all users (not private), however, if you want to access private content, you must add a header or a GET parameter to the Content API request URL.
+
+:::tip Tip
+If you use Liquid to access content, users who sign in and fit with the segment criteria will automatically see the content where appropriate and no extra action is required from the Front End developer.
+:::
+
+The Content API can receive the delivery token parameter in two ways:
+
+- As a header: `Delivery-Token`
+- As a GET parameter: `delivery_token`
+
+The Content Access Token is a public token in [JWT](https://tools.ietf.org/html/rfc7519) that is shared by all users belonging to the same segment group. It can be obtained by making a GET request to the URL `test.modyo.com/api/realms/{realm_uid}/delivery_token`.
+
+The content delivery token contains the following attributes:
+
+- **iss**: Base URL of the customers API
+- **aud**: Base URL of the Content API
+- **sub**: Name of the space
+- **exp**: Token expiration time
+- **access_type**: delivery,
+- **segments**: Array of segments
+
+For example:
+
+```javascript
+{
+  "iss": "http://my-account.modyo.me/api/customers",
+  "aud": "http://my-account.modyo.me/api/content",
+  "sub": "account_uuid",
+  "exp": 1516242622,
+  "access_type": "delivery",
+  "segments": ["segment1", "segment2"]
+}
+```
+
+:::warning Warning
+In order to access the fetch token URL, you must ensure that you are logged in with a user in the account or at least one site in the account, otherwise you will receive a `404 - Not found` error.
+:::
+
+:::warning Warning
+Obtaining the content access token needs to be done dynamically, as that token will change according to the segments to which the user belongs, and since segments can become highly volatile, it is not recommended to store this value.
+:::
+
+The response of the Content API query with the delivery token is the same as the response you would receive without the delivery token, but this will contain both private content (without segments) and segmented content that is restricted to the segments to which the user requesting your delivery token belongs as part of the response.
