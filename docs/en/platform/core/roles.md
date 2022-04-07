@@ -2,26 +2,26 @@
 search: true
 ---
 
-# Users and Roles
+# Teams and Groups
 
 ## Team
 
-All internal platform users make up the team, and each team member can have a specific role to play in realizing the full potential of the system. This is where you'll be able to create, edit, and deactivate platform users.
+All internal platform users make up a team, and each team member can have a specific role to play in realizing the full potential of Modyo. This is where you'll be able to create, edit, and deactivate platform users.
 
 ### Create user
 
 To create an internal user, follow these steps:
 
-1. From the main menu, click Settings, then select Device.
+1. From the main menu, click Settings, then select Team.
 1. Click on **+ New Team Member**.
 1. Fill in the first name, last name, username, email, and password.
 1. Click **Save**.
 
-። :tip Tip
+:::tip Tip
 If you want the new member to receive an email with their account details on the platform, click on the “Send password to user email” checkbox.
-።:
+:::
 
-### User Editing
+### Edit user
 
 Within the user editing screen, platform administrators will have access to the following windows:
 
@@ -38,11 +38,11 @@ Groups allow you to streamline access control across Modyo, so you can assign a 
 
 To create a group, go to the “Groups” section of the account settings, give it a name, role, and start adding users to the group. You can modify the name, role, and users that belong to the group once you save the changes.
 
-In addition, you can add or remove a user from existing groups by selecting the "Groups" section in each team member's profile.
+Additionally, you can add or remove a user from existing groups by selecting the "Groups" section in each team member's profile.
 
-። :tip Tip
+:::tip Tip
 Note that if a user already has an associated role in a context (account, space, realm, or site) and you add it to a group with a higher privilege role, the user gets the highest privileged role between the own role and the group's role.
-።:
+:::
 
 ## Roles
 
@@ -52,7 +52,7 @@ Modyo has 11 default roles with different functions by area or application. The 
 
 ### Default Roles
 
-Modyo by default assigns default roles, sorted according to the area of the platform and the context.
+Modyo by default assigns predetermined roles, sorted according to the area of the platform and the context.
 
 The default roles that exist, depending on the given area of the platform:
 
