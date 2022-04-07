@@ -39,20 +39,39 @@ In addition, each user can permanently delete their account.
 Deleting the user account is an irreversible action and users who perform this action will need to register again in order to access it.
 :::
 
-## Profile API
+## Customer APIs
 
-You can access the user profile API through the URL `account_url/api/profile`, where you can make use of the endpoints: 
+You can access the customers API where you can get and edit information about realms and users through the URL `account_url/api/customers/docs`. Some of the things you can modify are: 
 
-* Technical documentation of the API: `account_url/api/profile/docs`
-* Notifications: `account_url/api/profile/notificaciones`
-* User info: `account_url/api/profile/me`
+- Notifications: `/realms/{realm_uid}/notifications`
+- User Information: `/realms/{realm_uid}/me`
+- Events: `/realms/{realm_uid}/events`
 
 ### Delegated tokens
 
-By enabling the [**Show Delegation Information**](/en/platform/core/identity-providers.html) option on your identity providers, API users will receive a JSON with delegated token information similar to this:
+To add a JSON with delegated token information. Enable the [**Show delegation information**](/en/platform/core/identity-providers.html) option on your identity providers. When using the `/realms/{realm_uid}/me` API, you will get something similar to this:
+
+``curl -X GET test.miModyo.com/api/realms/miRealm/me``
 
 ```json
-...
+{
+  "avatar": {
+    "id": 100,
+    "file_name": "user_avatar.png",
+    "url_original": "/user_avatar_original.png",
+    "url_small": "/user_avatar_small.png",
+    "url_medium": "/user_avatar_medium.png"
+  },
+  "id": 2332,
+  "external_id": "11111111-1",
+  "name": "Clifton Feil",
+  "first_name": "Clifton",
+  "last_name": "Feil",
+  "second_last_name": "Smith",
+  "email": "test.user@modyo.com",
+  "username": "test.user",
+  ...
+  ...
    "delegated_token":{
       "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
       "access_token":"TOKEN",
@@ -60,3 +79,7 @@ By enabling the [**Show Delegation Information**](/en/platform/core/identity-pro
       "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
    }
 ```
+
+:::tip Tip
+If you do not have the **Show delegation information** option enabled, null (void) will be displayed.
+:::
