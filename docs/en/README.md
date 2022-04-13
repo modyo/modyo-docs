@@ -3,7 +3,7 @@ home: true
 
 title: Modyo Docs
 heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
-footer: Copyright © 2008-2021 Modyo SpA
+footer: Copyright © 2008-2022 Modyo SpA
 
 platformText: The technological base in which the applications operate
 
@@ -73,10 +73,11 @@ releaseText: Release notes
 releaseUrl: /en/platform/release-notes.html
 
 roadmapText: Modyo Roadmap
-roadmapUrl: https://en.modyo.com/roadmap
+roadmapUrl: https://modyo.com/roadmap
 
 communityTitle: Need more help?
 communityText: Use our help channels
+communityURL: https://www.modyo.com/community
 
 communityLang: en-US
 ---
