@@ -4,95 +4,96 @@ search: true
 
 # Administration API
 
-In addition to the functionality provided by Modyo's Back End, the platform has an administration API. This allows you to externally access different actions such as list, create, and delete items such as forms, layouts, content, custom fields, navigation menus, email campaigns, among others.
+In addition to the features provided by Modyo Platform, it also comes with an administrative API. It allows you, to access different actions such as listing, creating, and deleting elements such as forms, layouts, content, custom fields, navigation menus, email campaigns, among others in an authenticated, external way.
 
-In this way, it is possible to perform administrative tasks consuming the API without having to depend on the Modyo interface, which gives you greater freedom to control the way you work with Modyo.
+In this way, it is possible to carry out administrative tasks by consuming the API and without relying on the Modyo interface, which gives you greater freedom to control your work.
 
-## Exploring the API
+:::danger Danger
+It is important to ensure that the API portal is not publicly exposed to the Internet. Calls to the APIs should be made from a secure environment using appropriate security protocols (HTTPS) and authentication tokens should not be shared.
+:::
 
-To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked and how to use them.
+## General Information
 
-Modyo facilitates this task by arranging the description of its _headless_ API by using Swagger (which in turn implements the OpenAPI specification) in lists of services, grouped according to their function: administrative, public content, and user profile.
+To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked, and how to use them.
 
-Each list of services is automatically displayed in your Modyo account by visiting the corresponding URL with your browser.
+Modyo facilitates this task by describing its _headless_ API using Swagger (also known as the OpenAPI specification) in lists of services grouped according to their role: administrative, public content, and user profile.
+
+You can access the OpenAPI documentation through the following URLs:
+
+```http
+https://[account_host]/api/admin/docs
+https://[account_host]/api/content/docs
+https://[account_host]/api/customers/docs
+```
 
 For example, the public content API details can be found in the following path:
 
 ```http
 https://[account_host]/api/content/docs
 ```
-In this way, the public Swagger documentation of the public content API corresponding to the https://un.modyo.be account is found at https://un.modyo.be/api/content/docs. Likewise, the corresponding documentation for administrative functions and the user profile can be found respectively in:
+Thus, the public Swagger documentation for the Content API for the account https://un.modyo.test can be found at https://un.modyo.test/api/content/docs.
+
+In each page you will find the details of the different resources that Modyo provides and the different operations you can perform on them.
+
+For example, the Administrative API (/api/admin/docs) shows different sections, such as “Locks”, “Layout pages”, “Email templates”, or “Content”. If you focus on the latter, you see that it has a list of operations that it performs on the Modyo Content module, we are going to focus on Spaces:
 
 ```http
-https://[account_host]/api/admin/docs
-https://[account_host]/api/profile/docs
+Content
+
+...
+GET /content/spaces Spaces List
+POST/content/spaces Create a space
+...
 ```
 
-In each documentation view you will find the details of the different resources that Modyo provides and the different operations you can perform on them.
+The list shows for each operation the HTTP method, the route, and the description of what it does.
 
-For example, the Administrative API (/api/admin/docs) displays different sections, such as "Locks", "Layout pages", "Email templates", or "Segments". If we focus on the latter, we can see that this section has a list of operations that we can perform on the segments of the application:
+### Parts of a call
 
-```http
-Segments
+For example, when making a call to `/content/spaces`, you will get a response from the server. The `body` of this `response` is a JSON object that contains an element called “spaces”, which corresponds to an `array` of elements of this type.
 
-GET      /segments                Segments List
-POST     /segments                Create a segment
-PUT      /segments/{id}           Update a segment
-DELETE   /segments/{id}           Delete a Segment
-POST     /segments/apply_filters  Create a temporary segment
-POST     /segments/count_matches  Create a temporary segment, and return the total number of matching users
-```
-The list shows us the HTTP method for each operation, the route and the description of what
-it does.
+It also contains metadata referring to the `response`, which includes data such as the total entries that satisfy this query (`total_entries`), the maximum number of entries or items returned for each `request` (` per_page`), the current "window" of data or current page (`current_page`), and the total pages (`total_pages`). With this you can easily browse the data of a particular service by passing the required parameters.
 
-If we click on any of these methods, like "Segments List", it shows us a description of the parameters that can be used when invoking it (in this case `query`,` sort_by` and `order`), its data types, and a field to enter a test value for each parameter.
+With this data, you can easily traverse the data of a given service by passing the required parameters.
 
-Additionally, you can call the API directly from Swagger filling in the parameters described earlier and then clicking on "Execute". This will invoke the API and deliver the result in the same view.
+Each API also has a list of possible _responses_ that you get by invoking these methods, so that you can properly prepare your application to handle the data.
 
-In our example, the view will invoke the URL `https://[account_host]/api/admin/segments` with GET and will show us the JSON response to this _request_:
+### Example Value
+
+Within the __Response__ section, in **Example Value** you get an example of listing spaces when the answer is 200:     
 
 ```json
 {
-  "segments": [
+  "spaces": [
     {
-      "id": 4,
-      "uuid": "46a80345-6e27-4262-9ea3-7e2f4e9af26a",
-      "name": "Hombres",
-      "filters_summary": "Gender Male",
-      "matches_count": 1234,
-      "created_at": "2018-08-09T16:11:25.000-03:00",
-      "updated_at": "2018-08-09T16:11:25.000-03:00"
-    },
-    {
-      "id": 3,
-      "uuid": "35fe710e-6f01-4f06-bba2-b44fa13d3ee3",
-      "name": "Mujeres",
-      "filters_summary": "Gender Female",
-      "matches_count": 4532,
-      "created_at": "2018-06-04T17:20:39.000-03:00",
-      "updated_at": "2018-06-04T17:20:39.000-03:00"
-    },
-    {
-      "id": 2,
-      "uuid": "cd72f535-6df0-4ebf-b4e3-9649ac02a144",
-      "name": "Segment mobile users",
-      "filters_summary": "Login Device Mobile",
-      "matches_count": 4413,
-      "created_at": "2018-06-04T17:20:21.000-03:00",
-      "updated_at": "2018-06-04T17:20:21.000-03:00"
-    },
-    {
-      "id": 1,
-      "uuid": "6c30c2a6-8db4-4580-8ede-2a913c8a1b6b",
-      "name": "Segment 01",
-      "filters_summary": "Age between 18 and 65",
-      "matches_count": 1023,
-      "created_at": "2018-06-04T17:20:05.000-03:00",
-      "updated_at": "2018-06-04T17:20:05.000-03:00"
+      "id": 10,
+      "name": "My new space",
+      "uid": "my-new-space",
+      "uuid": "3c808ef3-4390-416f-a042-a4829d88fbfd",
+      "default_locale": "en",
+      "locales": [
+        "en",
+        "es-cl",
+        "es-mx"
+      ],
+      "team_review": false,
+      "created_at": "2019-08-22T10:57:36.000-03:00",
+      "content_types_count": 8,
+      "entries_count": 245,
+      "cors_enabled": false,
+      "cors_allow_all": false,
+      "cors_allowed_origins": "",
+      "approvals_quantity": 1,
+      "locked_review": false,
+      "enforced_review": false,
+      "enforce_all_review": false,
+      "enforced_reviewers_attributes": [],
+      "cache_max_age": 300,
+      "cache_enabled": false
     }
   ],
   "meta": {
-    "total_entries": 4,
+    "total_entries": 2,
     "per_page": 10,
     "current_page": 1,
     "total_pages": 1
@@ -100,171 +101,49 @@ In our example, the view will invoke the URL `https://[account_host]/api/admin/s
 }
 ```
 
-As you can see, the `body` of this` response` is a JSON object containing an element called "segments", which corresponds to a list (`array`) of elements of this type.
+### Model
 
-It also contains metadata referring to the `response`, which includes data such as the total entries that satisfy this query (`total_entries`), the maximum number of entries or items returned for each `request` (` per_page`), the current "window" of data or current page (`current_page`) and the total pages (`total_pages`). With this data you can easily browse the data of a particular service just by passing in the required parameters.
-
- Each of the sections also has a list of possible _responses_ that you will get when you invoke the corresponding method, so that you can properly prepare your application to handle the data.
-
-
-Also each of the sections has a list of possible _responses_ that you get by invoking these methods, so that you can properly prepare your application to handle the data.
-
-For the previous example, we can check the _response_ with the list of segments we get when the answer is 200:
-
-```json
-{
-  "segments": [
-    {
-      "id": 0,
-      "uuid": "string",
-      "name": "string",
-      "filters_summary": "string",
-      "matches_count": 0,
-      "created_at": "2019-11-19T20:19:17.152Z",
-      "updated_at": "2019-11-19T20:19:17.152Z"
-    }
-  ]
-}
-```
-
-Each of the sections also has a list of possible `responses` that you will get when you invoke the corresponding method, so that you can properly prepare your application to handle the data `model`.
-
- This will return JSON structure of the answer, the different fields, their data types, example values, set of possible values (where appropriate) and format of the texts (`date-time`,` ipv4`, `email`, etc).
+When you click on **Model**, you will see the JSON structure that makes up the response, the various fields, their data types, example values, set of possible values where applicable, and format of the parameters (`string`, `integer`, `boolean`, etc).
 
 Additionally, possible cases of failure that may occur are shown, in order to control them properly.
 
-For example, if we try to find a resource that does not exist:
+### List of Models
 
-```http
-404            Not found
+At the end of the documentation, you will find a section called “Models” that contains all the models involved in the documentation. These allow you to explore the resources available and their attributes used in APIs.
+
+The following code is a part of the model for **User** object:
+
 ```
-
-Finally, in each of the three catalogs (admin, content and profile), you will find a section
-called "Models", which contains the models involved in the services, and will allow you to better understand the available resources and their attributes.
-
-
-## Using the API
-
-
-### Authentication
-
-To use the Modyo API, it is first necessary to authenticate the user who will be invoking the different services.
-
-Modyo provides 2 possible authentication methods to invoke the API:
-
-* Bearer Token
-* Admin session cookie
-
-We will explain how to use each of these methods below.
-
-#### Bearer Token
-
-The first thing you must do is register your application to consume the API. To do this, you can access the _Settings_/_API access_ section in the administrative menu and click on the **+ New** button.
-
-In the next view you can name your application (in our example we will call it "My application") and a description to distinguish it from other applications. You must also enter a redirection URL and a session logout URL, which will be invoked when a user's session is closed.
-
-![New API Access](/assets/img/platform/new-API-access.png)
-
-When saving the information of your application, Modyo will show you a view where you will see the _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and the _Application ID_ and _Secret_ fields that you can use later.
-
-![New API Access](/assets/img/platform/save-API-access.png)
-
-:::warning Warning
-Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
-:::
-
-With the application already being registered, you only need to assign that application to the user or users who will make use of the API. To do this, you must access the option _Setting_/_Computer_ in the menu and select an existing user or create a new one, which must have an administrative role within the application (for more details refer to [Users and Roles](/en/platform/core/roles.html)).
-
-In the admin user edit view, select _API Access_ and click `+ New API Access`
-
-![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
-
-In the _popup_ shown below, select the name of the application you just created, “My application” in our example, and then click `+ New Access Token`.
-
-![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
-
-:::warning Attention
-You should keep in mind that administrative users can only execute actions through the Modyo administrative API if they have the necessary permissions. For example, an administrator with the role of "Developer" on a site cannot execute the "Publish" action on that site.
-:::
-
-Finally, you will now see that in the “Manage Access Tokens” section, the application (“My application”) will appear, along with a value highlighted in red which corresponds precisely to the _access token_, and which you will then use to perform authenticated _requests_ in Modyo API.
-
-![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
-
-All done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administrative API. For example, if you want to see a list of available roles for administrative users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
-
-```shell
-curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
- 8c280dcc1fcff361aa1120836841b4b82faab23e912148c91766bbf5e452ab56'
-```
-
-The response obtained from the service is an `HTTP 200 OK` and contains the information of the roles in its _response_ in JSON format:
-
-```json
-{
-    "roles": [{
-        "id": 65,
-        "key": "space_writer",
-        "name": "Writer",
-        "context": "space",
-        "read_only": true,
-        "restorable": true,
-        "users_count": 0,
-        "created_at": "2019-07-09T17:15:14.000-03:00"
-    }, {
-        "id": 66,
-        "key": "space_editor",
-        "name": "Editor",
-        "context": "space",
-        "read_only": true,
-        "restorable": true,
-        "users_count": 1,
-        "created_at": "2019-07-09T17:15:14.000-03:00"
-    }],
-    "meta": {
-        "total_entries": 2,
-        "per_page": 10,
-        "current_page": 1,
-        "total_pages": 1
-    }
+User{
+schemas     [...]
+id          string example: 2441309d85324e7793ae
+externalId  string example: 2441309d85324e7793ae
+meta          string example: OrderedMap { "resourceType": "User", "created": "2018-03-27T19:59:26.000Z", "lastModified": "2018-03-27T19:59:26.000Z" }
+userName      string example: Test_User_dfeef4c5-5681-4387-b016-bdf221e82081
+name          string example: OrderedMap { "familyName": "familyName", "givenName": "givenName" }
+active      string
+example:    true
+emails      [...]
 }
 ```
 
-And what happens if someone tries to make a _request_ to the API without having a valid token? If you try to make a call without authenticating or with an invalid token, the system will answer with an `HTTP 401 Unauthorized` error:
+## Calling the API
 
-```shell
-curl  GET https://modyodev.modyo.me:3000/api/admin/roles -v
+Once you know the service you will be querying according to [Exploring the API](/en/platform/core/api.html#exploring-the-api) and a [Authentication](/en/platform/core/api.html#authentication) method, you can make a _request_ to the URL of the requested resource.
 
-> GET /api/admin/roles HTTP/1.1
-> Host: modyodev.modyo.me:3000
-> User-Agent: curl/7.54.0
-> Accept: */*
->
-< HTTP/1.1 401 Unauthorized
-....
-```
-
-#### Admin session cookie
-
-If you are using Modyo from a web browser and are logged in as an administrator, then you will be able to access API URLs from the same browser. You can make _requests_ simply by having the session cookie in the administrative part of the platform.
-
-Remember that you can only access the sections of the API that you are allowed to access in the Modyo interface.
-
-### Invoking services
-
-Once you know the service you'll be querying, according to [Exploring the API](/en/platform/core/api.html#exploring-the-api) and a [Authentication](/en/platform/core/api.html#authentication)), you can make a _request_ to the URL of the required resource.
-
-For example, if you need to get a list of all the email campaigns that were created. According to the documentation in Swagger, you need to call the following URL:
+For this example, we'll get the list of all email campaigns that were created on the platform. According to the documentation in Swagger _ (test.modyo.com/api/admin/docs) _, you need to call the following URL:
 
 ```http request
 GET https://[account_host]/api/admin/messaging/campaigns
 ```
-This service accepts parameters via URL to filter by type (`mailing` and` notification`) using the `type` parameter. You can choose to only include campaigns that have _deliveries_ (parameter` filtered`) or only request a list of attributes that should be included in the _response_ (parameter `only`).
+This service accepts parameters via URL to filter by type (`mailing` and `notification`) using the `type` parameter. It allows you to include only campaigns that have _deliveries_ (`filtered` parameter) or require only a short list of attributes to be included in the _response_ (`only` parameter).
 
-For the following example, we only include campaigns with the type set to `mailing` (` type=mailing`), so that our _request_, after including the necessary authentication headers, is as follows:
+#### Call using cURL
 
-``` shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+For example, if you only want to include campaigns of type `mailing` (`type=mailing`) and an authentication token in the _request_, it would look something like this:
+
+```shell script
+curl -X GET https://test.modyo.com/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 When calling the service, we will get an `HTTP 200 OK` and the _response_ will contain a JSON object that looks as follows:
@@ -321,21 +200,30 @@ When calling the service, we will get an `HTTP 200 OK` and the _response_ will c
 }
 ```
 
-This JSON response corresponds to a list (or collection) of mail campaigns (`campaigns`), and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the name of the campaign (`name`), the last date it was sent (`last_sent`), or whether this campaign was segmented or not (`segments_enabled`).
+#### Call using the Swagger portal
+
+1. Open your API portal in your browser. (e.g. https://un.modyo.test/api/admin/docs)
+2. In Campaigns, expand the **Campaign List** call.
+3. Here you can refine the search parameters of the call. Click **Execute**.
+4. In the **Response** section, you will be able to see the following:
+- How to run the same command using cURL
+- The Request URL
+- The response of the Modyo platform.
+
+The JSON response corresponds to a list (or collection) of mail campaigns (`campaigns`) and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the name of the campaign (`name`), the last date it was sent (`last_sent`), or whether this campaign was targeted or not (`segments_enabled`).
 
 Apart from the list, you can also see an object called `meta` which contains information about the pagination of this resource.
 
 Continuing with the exercise, we can use the data obtained in the previous consultation to obtain more information. For example, we might be interested in the number of times that a particular campaign was executed (Campaign Deliveries) by using the ID of that particular campaign. To do this, you can go back to the "catalog" of services where you will find the following _endpoint_:
 
 ```http request
-GET /messaging/campaigns/{campaign_id}/deliveries Campaign deliveries list
+GET /messaging/campaigns/{campaign_id}/deliveries   Campaign deliveries list
 ```
 
-This way, you could perform a _request_ to see the _campaign deliveries_ information of a campaign called "Test campaign 01" by passing in the `campaign_id` parameter corresponding to the campaign ID (which in this case is `15`):
-
+In this way, a _request_ can be made to view the information specific to the _campaign deliveries_ of the campaign called “Test campaign 01", passing in the `campaign_id` parameter the corresponding campaign ID (in this case it is `15`):
 
 ```shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://test.modyo.com/api/admin/messaging/campaigns/15/deliveries -H 'Authorization: Bearer 8c280c01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 Similar to the previous example, the _response_ will look like this
@@ -362,20 +250,131 @@ Similar to the previous example, the _response_ will look like this
 }
 ```
 
-As you can see, the _response_ is nothing more than a JSON object that contains a list of _deliveries_ of mail campaigns (`deliveries`). In the example, you can verify that the campaign with ID `15` has been executed only once, the execution has already ended successfully (its `status` is` completed`) and was received by 1078 people (`sent_count` attribute).
+The _response_ is a JSON object that contains a list of _deliveries_ of mail campaigns (`deliveries`). In the example, you can verify that the campaign with ID `15` has been executed only once, the execution has already ended successfully (its `status` is` completed`) and was received by 1078 people (`sent_count` attribute).
 
 Following this example, you can use Modyo's extensive catalog of services and build your application in the way that best suits your needs.
 
-### Working with data collections: Pagination
+## Authentication
 
-In the examples shared throughout the previous sections, we could see that the amount of results in many calls is so large that they must be delivered in a parcel form so that they can be used efficiently and in an orderly fashion. We call this organized and limited delivery of results **pagination**.
+To use Modyo API, it is required to authenticate the user who will be invoking the different services.
 
-Imagine that we now want to review the complete list of mails delivered to customers (`message deliveries`) of a particular mail campaign (` campaign`) and a specific campaign delivery (`campaign delivery`). With the data obtained from the _requests_ in the previous sections, we can use the _endpoint_ that lists the _message deliveries_, passing in the corresponding `campaign_id` and` delivery_id` as parameters:
+Modyo provides 2 possible authentication methods to invoke the API:
+
+* Bearer Token
+* Admin session cookie
+
+We will explain how to use each of these methods below.
+
+### Bearer Token
+
+The first thing you need to do is register the application to consume the API. Follow these steps to create a new Bearer Token:
+
+1. From the Modyo platform, in the side menu, expand **Settings** and click **Access to API**.
+2. Click the **+ New API Access** button.
+3. Fill in the name, description, and redirect URI of the access.
+
+![New API Access](/assets/img/platform/new-API-access.png)
+
+When saving the information of your application, Modyo will show you a view where you will see the _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and the _Application ID_ and _Secret_ fields that you can use later.
+
+![New API Access](/assets/img/platform/save-API-access.png)
+
+:::warning Warning
+Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
+:::
+
+4. Once the application is registered, it assigns the application to the users who will make use of the API. To do this, in the side menu, expand **Settings** and click on **Team**.
+5. Select a user with an administrative role within the desired application. 
+
+For more details, see [Users and Roles](/en/platform/core/roles.html)
+
+6. In the admin user edit view, click _API Access_ and select the option **+ New API Access**.
+
+![Team Member API Access 1](/assets/img/platform/team-member-API-access-1.png)
+
+7. In the _popup_ shown below, select the name of the application you just created, and then click **+ New Access Token**.
+
+![Team Member API Access 2](/assets/img/platform/team-member-API-access-2.png)
+
+:::warning Warning
+You should keep in mind that admin users can only execute actions through the Modyo administrative API if they have the necessary permissions. For example, an administrator with the role of "Developer" on a site cannot execute the "Publish" action on that site.
+:::
+
+Finally, you will now see that in the “Manage Access Tokens” section, the application (“My application”) will appear, along with a value highlighted in red which corresponds precisely to the _access token_, and which you will then use to perform authenticated _requests_ in Modyo API.
+
+![Team Member API Access 3](/assets/img/platform/team-member-API-access-3.png)
+
+Well done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administration API. For example, if you want to see a list of available roles for admin users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
+
+```shell
+curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
+ 8c280dcc1fcff361aa1120836841b4b82faab23e912148c91766bbf5e452ab56'
+```
+
+The response obtained from the service is an `HTTP 200 OK` and contains the information of the roles in its _response_ in JSON format:
+
+```json
+{
+    "roles": [{
+        "id": 65,
+        "key": "space_writer",
+        "name": "Writer",
+        "context": "space",
+        "read_only": true,
+        "restorable": true,
+        "users_count": 0,
+        "created_at": "2019-07-09T17:15:14.000-03:00"
+    }, {
+        "id": 66,
+        "key": "space_editor",
+        "name": "Editor",
+        "context": "space",
+        "read_only": true,
+        "restorable": true,
+        "users_count": 1,
+        "created_at": "2019-07-09T17:15:14.000-03:00"
+    }],
+    "meta": {
+        "total_entries": 2,
+        "per_page": 10,
+        "current_page": 1,
+        "total_pages": 1
+    }
+}
+```
+
+#### Unauthenticated requests
+
+What happens if someone tries to make a _request_ to the API without having a valid token? If you try to make a call without authenticating or with an invalid token, the system will respond with an `HTTP 401 Unauthorized` error:
+
+```shell
+curl GET https://test.modyo.com/api/admin/roles -v
+
+> GET /api/admin/HTTP roles/1.1
+> Host: test.modyo.com
+> User-Agent: curl/7.54.0
+> Accept: */*
+>
+< HTTP/1.1 401 Unauthorized
+....
+```
+
+### Admin session cookie
+
+If you are using Modyo from a web browser and are logged in as an administrator, then you will be able to access API URLs from the same browser. You can make _requests_ simply by having the session cookie in your browser.
+
+Remember that you will only be able to access the same sections of the API that you are allowed to access from the Modyo interface.
+
+## Pagination
+
+When it comes to APIs, sometimes the number of results of a query is too high to be human-readable. In order to improve the understanding of this data, you can use **pagination**.
+
+Imagine that we now want to review the complete list of mails delivered to customers (`message deliveries`) of a particular mail campaign (`campaign`) and a specific campaign delivery (`campaign delivery`). With the data obtained from the _requests_ in the previous sections, we can use the _endpoint_ that lists the _message deliveries_, passing in the corresponding `campaign_id` and` delivery_id` as parameters:
 
 ```shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
-Let's analyze the corresponding _response_ of this call below:
+For example, take a look at the _response_ from this call:
 
 ```json
 {
@@ -488,26 +487,26 @@ Let's analyze the corresponding _response_ of this call below:
     }
 }
 ```
-As you can see, the ``message_deliveries`` object within the JSON contains a list of 10 elements, each representing a specific _message delivery_ or delivery of a campaign email to a particular user, and each object has attributes relevant to this concept, such as the customer's name and email or the date it was sent. But where are the other records? This is where the pagination of resources plays a very important role and for this you should pay attention to the `meta` object within the JSON.
+As you can see, the ``message_deliveries`` object within the JSON contains a list of 10 elements, each representing a _message delivery_ or specific delivery of a campaign email to a given user, and each object has attributes relevant to this concept, such as the customer's name and email or the date it was sent. Where are the other records? Resource pagination is an important part of making use of APIs.
 
 The `meta` object contains the information you need to be able to traverse a large number of records, through small groups of records or pages.
 
-The 4 attributes we have are the following:
+The 4 attributes are the following:
 
 * `total_entries`: The total number of items of the requested resource
 * `per_page`: The number of items that will be delivered per page
 * `current_page`: The current data window
 * `total_pages`: The total number of pages or groups of elements that we can request.
 
-In the previous example, apart from having the first 10 records, we already know for the next _requests_ that there are a total of 1078 entries, grouped into 108 pages. If we want to get the second page of this data, for example, we just need to add the `page` parameter with the value set to 2 and call the same URL again. To modify the number of records by page, just add the `per_page` parameter with the desired value.
+In the example above, apart from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to get the second page of this data, you need to add the `page` parameter with a value equal to 2 to the cURL call. To modify the number of records per page, add the `per_page` parameter with the desired value.
 
 For example, let's get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
 
 ```shell script
-curl -X GET https://modyodev.modyo.me:3000/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-What gives us the following response:
+This gives us the following result:
 
 ```json
 {
@@ -541,4 +540,6 @@ What gives us the following response:
 }
 ```
 
-To finish, remember that the API will always return the first page (`current_page: 1`) with resources grouped into pages of 10 elements (` per_page: 10`) by default.
+Finally, the API will always return the first page (`current_page: 1`) of resources grouped by 10-item pages (`per_page: 10`) by default.
+
+To learn more about the different ways to use APIs, see [APIs & SDKs](en/platform/content/public-api-reference).
