@@ -74,40 +74,44 @@ Once Modyo has finished modifying the fields for the selected entries, you will 
 
 ## Create an Entry
 
-To create an entry, click the "+ New" button in the upper right of the screen.
+To create an entry, follow these steps:
 
-In the **New Entry** modal that appears, give your entry a name. You can fill in the "Slug" field, or let it autocomplete based on the entry name. Lastly, select the content type of the entry. Types can be created in the [Types section](/en/platform/content/types.html).
+1. In the side menu of Modyo Platform, select **Content** and click **Space**.
+1. Select your **Space**.
+1. Click **+ New Entry**.
 
-:::warning Attention
+In the next window, **Modyo** asks for the name, slug, and type of post you want to create, which can be created in [Content Types](/en/platform/content/types.html).
+
+:::warning Warning
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
 :::
 
-When you click **Create**, the entry edit view opens and you can fill in your content in the necessary fields based on the type you chose.
+When you click **Create**, the entry edit view opens and you can fill in your content in the required fields based on the content type you chose.
 
 :::tip Tip
-To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to select. (Check [Configure a Space](/es/platform/content/spaces.html #configurar -a-space))
+To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to select. (Check [Configure a Space](/en/platform/content/spaces.html#configure-a-space))
 
-Then, you just need to click on the current language and select the new language you want to use.
+Then, you need to click the language dropdown and select the new language you want to use.
 
-You'll get to a blank version of the entry, where you can press the **Copy from language** button to bring the content from another version of the entry and consequently be able to translate it with more ease.
+You'll get a blank version of the entry, where you can press the **Copy from language** button to bring the content from another version of the entry and consequently be able to translate it.
 :::
 
 ### Publish an Entry
 
-To publish an entry, Modyo assures you a gradual check process in order to certify that the content you are going to offer is correct.
+To publish an entry, Modyo offers a certification process in order to verify that the content you are going to publish is correct.
 
 After you finish writing and editing, click the **Save** button in the top right part of the screen, which will save all of your content.
 
-If you click on it, the button will respond in two ways. If you have Space Manager permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
+If you click on it, the button will respond in two ways. If you have the Space Administrator permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
 
-If the space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
+If the Space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
-To learn more, please go to [Team Review.](/en/platform/core/key-concepts.html)
+To learn more, see [Team Review.](/en/platform/core/key-concepts.html#team-review)
 
 
 ### Unpublish an entry
 
-To unpublish an entry, open it and click on the **Unpublish** button at the top of the screen. This changes the status of the entry to Draft, is no longer published.
+To unpublish an entry, open it and click **Unpublish** at the top of the screen. This changes the status of the entry to Draft, and will no longer be published.
 
 If you want to republish the entry, it must go through the Team Review process again (if enabled).
 
@@ -121,13 +125,12 @@ As a headless platform, Modyo allows you to preview an entry in multiple sites.
 
 If you already have [content views on your sites](/en/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
 
-::: danger Warning
+:::danger Danger
 If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
 :::
 
 :::warning Warning
-Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
-You can only preview the contents on a site if the language corresponds to the language of the site. If the entry is in another language, you will receive a 404 error when you reach the preview.
+You will only be able to preview content on sites that are the same language as the language of the site. If the entry is in another language, when you get to the preview you will encounter a 404 error.
 :::
 
 :::warning Warning
@@ -136,7 +139,7 @@ You can preview the content either as a logged in user or as a user that has not
 
 #### Edit an entry
 
-If you want to edit an entry, just click on the entry's name inside the entry manager.
+If you want to edit an entry, click the entry's name inside the entry manager.
 
 This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
 
@@ -146,23 +149,23 @@ In case the post is published, the changes will be made automatically. If the en
 
 Categories are one of the most useful ways to order your Entries. Applying a category to an entry establishes a relative path in its URL that allows us to access the entry without going through other pages.
 
-To see the Categories, click on the **Categories** section in the main menu on the left. There, we can see all the categories that are already made.
+To see the Categories, click the **Categories** section in the main menu on the left. There, we can see all the categories that are already made.
 
 #### Create a Category
 
 To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
 
-::: tip Tip
-When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, just edit the field.
+:::tip Tip
+When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, click the field to edit it.
 
 If we change the path, remember to change all links in any channel using it.
 :::
 
-::: warning Warning
+:::warning Warning
 If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
 :::
 
-::: danger Danger
+:::danger Danger
 If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments.
 :::
 
@@ -174,7 +177,7 @@ When you create an entry, the platform will randomly assign you a slug. However,
 
 This value must be unique for entries of the same type. If two entries with the same slug are saved, this will be modified at the time of posting the entry.
 
-## Private Content
+### Private Content
 
 If you want the content to be private or exclusive for users who have a current authenticated session within the platform, you must enable this option.
 
@@ -187,3 +190,52 @@ Segmented content is essential for any organization that wants to send specific 
 To do this, it is possible to enable the content to be visible to a particular group of your choice in the Input. To do this, just check the option that Content is private, enable targeting, and then select which user segment the entry is directed to.
 
 To create a specific target, review the [Segments section](/en/platform/customers/segments.html).
+
+## Consume externally
+
+Access the content created in the Content module from anywhere using our API. 
+
+Follow these steps to get the uuid of an entry:
+
+1. On the Modyo Platform, in the main menu, select **Content** and click on **Spaces**.
+1. Select your **Space**.
+1. Click on **Preview**.
+1. Click on **API Link**.
+
+It will take you to a new page where the API is used to get the content of the post. The result will be similar to this:
+
+URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844`
+
+```json
+{
+ “goal”:
+ {
+ “name”: “My New Entry”,
+ “slug”: “my new entry”,
+ “tags”: [],
+ “type”: “NewType”,
+ “uuid”: “45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
+ “space”: “test-space”,
+ “author”:
+ {},
+ “locale”: “en-cl”,
+ “private”: false,
+ “targets”: [],
+ “category”: “mycategory”,
+ “created_at”: “2022-02-24T 12:44:24. 000-03:00 “,
+ “updated_at”: “2022-02-25T 10:06:46. 000-03:00 “,
+ “published_at”: “2022-02-25T 10:06:46. 000-03:00 “,
+ “version_type”: “current”,
+ “category_name”: “myCategory”,
+ “category_slug”: “mycategory”,
+ “unpublished_at”: null,
+ “available_locales”: ["en-cl"]
+ },
+ “fields”:
+ {
+ “My items”: “...”
+ }
+}
+```
+
+To learn more about our API and the different actions you can take, see [Management API] (/en/platform/core/api).
