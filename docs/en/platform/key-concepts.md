@@ -110,8 +110,8 @@ The following definitions correspond to commonly used terms between the differen
 #### Modyo Customers
 
 * [**Campaigns**](/en/platform/customers/messaging.html#campaigns): A defined communication channel with your users which allows you to reach them through emails and notifications.
-* [**Custom field**](/en/platform/customers/users.html#custom-fields): Allows you to add personalized attributes to the users' profile.
-* [**Filters**](/en/platform/customers/targets.html#filters): Basic units that allow you to build segments.
+* [**Custom field**](/en/platform/customers/realms.html#custom-fields): Allows you to add personalized attributes to the users' profile.
+* [**Filters**](/en/platform/customers/segments.html#filters): Basic units that allow you to build segments.
 * [**Form**](/en/platform/customers/forms.html): Allows you to capture data from your users on your sites.
 * [**Messaging**](/en/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
 * [**Segment**](/en/platform/customers/segments.html): Allows you to add and group your users through filter groups with different conditions.
