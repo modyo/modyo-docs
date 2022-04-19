@@ -4,7 +4,7 @@ search: true
 
 # Credit Cards
 
-Modyo offers a widget that allows customers to view their credit card details and operations, and to perform various transactions.
+View your credit card details and transactions, to make transactions on them.
 
 ### Installation:
 
@@ -16,13 +16,13 @@ modyo-cli get modyo-widgets-retail-credit-cards
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/credit-cards" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-| Description                 | Investor Profile Survey                                                                                                                                                                                                                                                        |
+| Features                 | Description                                                                                                                                                                                                                                                        |
 |:------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Credit card summary | Presents a summary of the credit card status with specific information associated with each card balance.<br><br>                                                                    |
-| Credit balance             | Shows the payment options available for the specific card, in addition to indicators of expenditure compared to the amount available.                                                                                                                |
+| Credit card summary | Presents a summary of the credit card status. <br> The specific information associated with balances (available, used, and total quota) is presented numerically and graphically.                                                                    |
+| Credit balance             | Shows the quotas of the specific card by currency type, as well as indicators of expenses compared to the available quota.                                                                                                                |
 | Account statements              | Shows statements with the movements of the last invoiced period for a credit card.                                                                                                                                                          |
 | Recent Activity           | Displays all recent activity that has not yet been invoiced.                                                                                                                                                                                |
-| Pay balance                   | Corresponds to the balance payment functionality.<br><br> This payment can be either total or partial.<br><br> Clicking on the button will take you to the Credit Card Payment widget, where you can make a payment. |
+| Pay balance                   | It corresponds to the debt repayment functionality. This debt payment can be full or partial. Clicking on this button will take you to the Card Payment Widget, where you can select the national or international debt payment option. |
 
 <script>
 
