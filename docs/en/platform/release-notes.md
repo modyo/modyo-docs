@@ -5,6 +5,69 @@ search: true
 # Release Notes
 
 ## 9.2
+
+### 9.2.8 - April 8, 2022
+<Badge text="Core" type="core" vertical="middle"/>
+* Security enhancements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Enhancements in Service Worker experience
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Collections can be referenced using brackets in Liquid SDK
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Fixed problem with sending campaigns
+
+### 9.2.7 - March 10, 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Update liquidjs version
+* Update category names are not reflected in entries
+* Attributes of the request drop does not consider the entry slug in content pages
+* IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
+* Duplicate accounts in onboarding
+* Direct authentication in Realm with Google leads to error 404
+* Implement Cybersource payment method 
+* Add tags in New Asset modal 
+
+
+### 9.2.6 - February 22, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* New transactional emails from the platform
+* Optional User Info for OIDC integration
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fix drop entry.meta.url
+* Fix deletion of referenced entries
+* Improvements to the multiline editor
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fix problem when changing realm of a site
+* Fixed issue with campaign editor
+* Fixed problem with accounts with default site and without realm
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Routes finished in slash are redirected to improve SEO
+* Reflected XSS is prevented in request drop
+* Contamination with invalid routes is prevented
+
+### 9.2.5 - January 27, 2022
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Content Pages are incorporated
+* Fix problems with preview bar
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Improvements and fixes in Entries editor
+
+<Badge text="Core" type="core" vertical="middle"/>
+* SCIM support is added for admin users
+
 ### 9.2.4 - December 30, 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Fixed problem that contaminated the cache when performing previews
@@ -50,6 +113,28 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+### 9.1.37 - February 5, 2022
+<Badge text="Core" type="core" vertical="middle"/>
+* Fixed enrollment of cards with OneClick API
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixed issues with multiline text editor
+* Fix to cache contamination
+
+### 9.1.36 - January 18, 2022
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Added option to specify status code in default site redirection
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* HTML injection through account name attribute is prevented in login form
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixed problem when filtering by multiple field without options
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Root certificate bundle is updated
+
 ### 9.1.35 - December 29, 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>
