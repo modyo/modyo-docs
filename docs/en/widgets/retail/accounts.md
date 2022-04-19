@@ -4,9 +4,9 @@ search: true
 
 # Accounts
 
-With this widget you can see a summary of your bank accounts, download bank statements and see each transaction made in detail during certain periods of time.
+View a summary of bank accounts, draw charts, and see your transactions during certain periods of time in your accounts.
 
-#### Installation:
+### Installation:
 
 ```bash
 modyo-cli get modyo-widgets-retail-accounts
@@ -16,26 +16,26 @@ modyo-cli get modyo-widgets-retail-accounts
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/retail/accounts" width="100%" frameBorder="0" style="min-height:800px;overflow:auto;margin-top:20px;"/>
 
-#### Checking Account
+### Checking Account
 
-| Description               | Investor Profile Survey                                                                                                                                                                                                                                          |
+| Features               | Description                                                                                                                                                                                                                                          |
 |:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Checking Account Summary | Presents the status of the account and, if applicable, the status of the associated credit line.<br><br> The specific information is presented both numerically and graphically.                                                                             |
-| View recent activity     | Presents the latest transactions that have been made within the account, ordered by date.<br><br> Also included is the ability to search within the displayed transactions.                                           |
-| Account Statements         | Displays account statements from previous periods which can be expanded to show the transactions of each selected account statement, sorted by date.<br><br> Clients can also search within the displayed transactions. |
+| Current Account Summary | Displays the status of the account and, if applicable, the status of the associated credit line. <br> The specific information is presented in a numerical and graphical manner.                                                                             |
+| View recent activity     | It presents the most recent transactions that have been made on the account, initially sorted by date. <br> The ability to search within the movements shown is also included.                                           |
+| Account Statements         | Displays maps from previous periods already closed, displaying the movements of each historical chart selected and sorted by date. <br> It also includes the ability to perform searches within the movements shown. |
 
-#### Savings Account
+### Savings Account
 
-| Description           | Investor Profile Survey                                                                                                                                                                                                                                                     |
+| Feature           | Description                                                                                                                                                                                                                                                     |
 |:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Savings Account Summary | Shows the account status similar to what is presented for a checking account, but with the difference that savings accounts have no checks and no associated lines of credit. <br><br>Specific information is presented numerically within lists. |
-| View recent activity | Shows the latest transactions that have been made within the account, sorted by date. <br><br>Also included is the ability to search within the displayed transactions.                                                       |
-| Account Statements     | Displays account statements from previous periods, showing the transactions of each selected account statement, sorted by date.<br><br>Clients can also search within the displayed transactions.            |
+| Savings Account Summary | It shows the status of the account similar to what is presented for a current account, with the difference that for a viewing account there are no checks or associated credit line. <br> The specific information is presented in a numerical and tabular manner. |
+| View recent activity | Displays the last transactions that have been made on the account, initially sorted by date. <br> The ability to search within the displayed entries is also included.                                                       |
+| Account Statements     | Displays maps from previous periods already closed, displaying the movements of each historical chart selected and sorted by date. <br> It also includes the ability to perform searches within the movements shown.            |
 
-#### Line of Credit
+### Line of Credit
 
-| Description           | Investor Profile Survey                                                                                                                                                                                                                                  |
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Feature           | Description                                                                                                                                                                                                                                  |
+|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | View recent activity | Recent activity shows the latest moves that have been made on the account, initially sorted by date. You can also perform searches within the shown movements.                                           |
 | Account Statements     | Account statements display the statements of previous periods that have already ended. They are sorted by date and provide each selected statement's movements. You can also perform searches within the shown movements. |
 | Line of Credit Payment   | This allows customers to pay off a line of credit. They can repay their debt in full or in part by using the available funds in their checking account.                                                     |
