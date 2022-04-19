@@ -16,8 +16,8 @@ modyo-cli get modyo-widgets-insurance-issue-policy
 
 <iframe id="widgetFrame" src="https://widgets.modyo.com/insurance/broker/issue-policy" width="100%" frameBorder="0" style="min-height:762px;overflow:auto;margin-top:20px;"/>
 
-| Description      | Investor Profile Survey                                                                                                                                                                                                             |
+| Features      | Description                                                                                                                                                                                                             |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Save           | Brokers don't always have all the data at hand. This option helps generate draft policies without losing the current policy issuance process.                                                                   |
+| Draft           | It allows you to generate draft policies without losing that issue to help inform intermediaries.                                                                   |
 | Effective Date | Your broker can filter directly by Effective Date and Property type. This saves time by integrating this section with the information collected in the Quote widget. |
-| Summary            | This section presents a summary of the quote before generating it to validate coverage, deductibles, and offers the option of changing the premium percentage selected for the quote.                       |
+| Summary            | Present a summary of the quote before generating it to validate coverages and deductibles. It offers the option to view the percentage of premium increase selected in the quote.                       |
