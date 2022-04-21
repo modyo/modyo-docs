@@ -4,9 +4,7 @@ search: true
 
 # Cash Advance
 
-The Cash Advance widget allows any customer to create a credit simulation to request a cash advance from a financial institution.
-
-Through this widget, customers can select different options according to their requirements of this product.
+Conduct a credit simulation to request a cash advance from the financial institution.
 
 ### Installation:
 
@@ -20,18 +18,18 @@ modyo-cli get modyo-widgets-retail-cash-advance
 
 The customer can select the desired options for their cash advance and payment amount to run the simulation.
 
-| Description    | Investor Profile Survey                                                                                 |
+| Feature    | Description                                                                                 |
 |:-----------------|:--------------------------------------------------------------------------------------------|
 | From           | Displays the destination account of the requested cash.                          |
 | To          | Displays the destination account of the requested cash.                                  |
-| Amount | This section allows you to add the requested amount in cash.                             |
-| Payments           | The customer can select the number of installments in which the requested amount will be paid |
+| Amount | Add the cash amount that is requested.                             |
+| Payments           | The customer can select the amount of installments in which the requested amount will be paid. |
 
 ### Simulation
 
-The client can select the number of payments in which the requested amount will be paid.
+After the selected features, the Widget will show the simulation of the progress and details of the payments that will be made.
 
-| Description           | Investor Profile Survey                                                               |
+| Feature           | Description                                                               |
 |:------------------------|:--------------------------------------------------------------------------|
 | Total advance cost  | Shows the total amount that will be charged to the card.                  |
 | Monthly payment       | Shows the amount of each monthly payment according to the established time period. |
@@ -52,7 +50,7 @@ The client can select the number of payments in which the requested amount will 
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
