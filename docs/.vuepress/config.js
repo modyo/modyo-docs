@@ -169,7 +169,8 @@ module.exports = {
                 ["/en/widgets/guides/share-state", "Shared state"],
                 "/en/widgets/guides/liquid-variables",
                 "/en/widgets/guides/ci-cd",
-                "/en/widgets/guides/repository-pattern"
+                "/en/widgets/guides/repository-pattern",
+                "/en/widgets/guides/storybook",
               ],
             },
             {
@@ -369,7 +370,8 @@ module.exports = {
                 ["/es/widgets/guides/share-state", "Compartir estado"],
                 "/es/widgets/guides/liquid-variables",
                 "/es/widgets/guides/ci-cd",
-                "/es/widgets/guides/repository-pattern"
+                "/es/widgets/guides/repository-pattern",
+                "/es/widgets/guides/storybook",
               ],
             },
             {
