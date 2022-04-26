@@ -27,7 +27,7 @@ All structured content that you publish generates an equivalent JSON file that c
 
 Modyo is designed to facilitate the creation of digital solutions integrated with the central systems of enterprises. With this in mind, we keep our focus on facilitating the development of widgets and their integration with APIs.
 
-The widget generator helps Back and Front End developers work together to create digital experiences connected to APIs. Our governance model allows digital teams to easily preview and publish their work to their digital channels in record time.
+The widget builder helps Back and Front End developers to work together to create digital experiences connected to APIs. Our governance model allows digital teams to easily preview and publish their work to their digital channels in record time.
 
 ### Widgets vs Portlets
 
@@ -55,14 +55,14 @@ APIs enhance our platform and make it easier to build solutions.
 
 
 ### Prepared for the future: PWAs
-Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and the _Service Workers_, fundamental technical enablers when implementing PWAs.
+Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and _Service Workers_, fundamental technical enablers when implementing PWAs.
 
 
-### Security, Governance and Agility
+### Security, Governance, and Agility
 
 Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
 
-Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can monitor your team's capacity within Insights.
+Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can also monitor your team's capacity within Insights.
 
 ### Glossary
 The following definitions correspond to commonly used terms between the different Modyo applications.
@@ -110,7 +110,7 @@ The following definitions correspond to commonly used terms between the differen
 #### Modyo Customers
 
 * [**Campaigns**](/en/platform/customers/messaging.html#campaigns): A defined communication channel with your users which allows you to reach them through emails and notifications.
-* [**Custom field**](/en/platform/customers/users.html#custom-fields): Allows you to add personalized attributes to the users' profile.
+* [**Custom field**](/en/platform/customers/realms.html#custom-fields): Allows you to add personalized attributes to the users' profile.
 * [**Filters**](/en/platform/customers/targets.html#filters): Basic units that allow you to build segments.
 * [**Form**](/en/platform/customers/forms.html): Allows you to capture data from your users on your sites.
 * [**Messaging**](/en/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
