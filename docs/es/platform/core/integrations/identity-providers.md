@@ -31,7 +31,7 @@ Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
 1. Haz click en **Añadir**.
 
-<img src="/assets/img/platform/nuevo-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ## Facebook
 
@@ -44,7 +44,7 @@ Para poder realizar una integración con Facebook, deberás contar con:
 
 Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Para saber más sobre como crear y configurar una aplicación de Facebook, ve su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
 
-<img src="/assets/img/platform/facebook-login-settings.png" width="500px" style="margin-top: 40px;" />
+<img src="/assets/img/platform/facebook-login-settings.png" alt="Facebook for Developer's Client OAuth settings page. " width="500px" style="margin-top: 40px;" />
 
 ## Google
 
@@ -133,11 +133,11 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 
 1. Desde la consola administrativa, por ejemplo [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) haz click en agregar un nuevo realm.
 
-<img src="/assets/img/platform/keycloak-add-realm.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/keycloak-add-realm.png" alt="Keycloak add a new realm button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 2. Haz click en agregar una aplicación cliente. Usa `openid-connect` como **Client Protocol** para la integración con Modyo.
 
-<img src="/assets/img/platform/keycloak-add-client.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/keycloak-add-client.png" alt="Keycloak add a client page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
 4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
@@ -151,7 +151,7 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
-<img src="/assets/img/platform/keycloak-new-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Configuraciones opcionales de la integración
 
@@ -177,7 +177,7 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
 2. En la barra de búsqueda, busca por **Azure Active Directory**, y luego selecciona **App registrations > New registration**.
 
-<img src="/assets/img/platform/aad-registration.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/aad-registration.png" alt="Microsoft Azure's Register an Application page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 3. Completa la siguiente información
    * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
@@ -185,11 +185,11 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
    * **Redirect URI**: Usa la URL relativa a la cuenta `/auth/openidc/callback`.
 4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtiene el **Application ID** y **Directory ID**.
 
-<img src="/assets/img/platform/aad-client.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/aad-client.png" alt="Azure's overview page with Application and Directory IDs." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**.
 
-<img src="/assets/img/platform/aad-secret.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/aad-secret.png" alt="New client secret button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Configuración de la integración
 
