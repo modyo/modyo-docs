@@ -55,7 +55,7 @@ The name of the space
 #### output
 ```Espacio Nuevo```
 
-## Kind
+## Type
 
 ### [type.entries](#entrada)
 
