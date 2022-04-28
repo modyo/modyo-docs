@@ -713,7 +713,7 @@ The title associated with the page.
 
 ```Home```
 
-## page.excerpt
+### page.excerpt
 
 The excerpt associated with the page.
 
@@ -885,7 +885,7 @@ The type of the widget with underscore.
 
 ```content_list_widget```
 
-## widget.uid
+### widget.uid
 
 The uuid of the widget.
 
@@ -970,7 +970,7 @@ The id of the space associated with the widget.
 
 ```4```
 
-## content_list_widget.type_uid
+### content_list_widget.type_uid
 
 The uid of the type associated with the widget.
 
@@ -1483,7 +1483,7 @@ The edit URL of the response.
 
 ```” https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8 “```
 
-## answer.id
+### answer.id
 
 The id of the response.
 
@@ -1519,7 +1519,7 @@ The type of answer.
 
 ```text_answer```
 
-## Kingdom
+## Realm
 
 ### realm.disable_modyo_credentials
 
@@ -1537,7 +1537,7 @@ The oauth2 callback URL.
 
 ```” https://test.miModyo.com/realms/default/auth/oauth2/authorize “```
 
-## realm.oidc_callback_url
+### realm.oidc_callback_url
 
 The OIDC callback URL.
 
