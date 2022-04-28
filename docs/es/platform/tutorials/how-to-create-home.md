@@ -16,7 +16,7 @@ A lo largo de este tutorial usaremos la marca ficticia "Dynamic Bank", la cual t
 
 Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplos de la plataforma. Quisimos crearlo para poder ofrecer una experiencia cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutorial tu sitio debería lucir así:
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" alt="Image with the final result for Dynamic Bank" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
@@ -44,7 +44,7 @@ Para crear tu [sitio](/es/platform/channels/sites), sigue estos pasos:
   - Reino del sitio: **Ninguno**
 4. Haz click en **Crear**.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/new-site.png" alt="Image with Create a Site wizard." style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 <b>!Ya creaste tu primer sitio en Modyo!</b>
 
@@ -86,7 +86,7 @@ En los [Layouts](/es/platform/channels/templates.html#layouts-personalizados), e
 1. Quita `class="container` de la plantilla.
 1. Haz click en **Publicar**.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/main.png" alt="Image with the HTML code for main." style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 ## Paso 4: Cambiar fuente del sitio
 
@@ -279,7 +279,7 @@ footer a:hover {
 
 4. Para agregar nuestro nuevo snippet a la hoja de estilo base del template, haz click en el ícono de copiar al lado de nuestro snippet como muestra la siguiente imagen:
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/copy.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/copy.png" alt="Image with the copy button highlighted." style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 5. Pega en nuestra Hoja de estilo que está en Vistas -> Hojas de Estilo -> `base`.
 
@@ -302,11 +302,11 @@ Para cambiar los archivos, sigue estos pasos:
 
 #### Logo
 
-<img src="https://cloud.modyocdn.com/uploads/b3d572c9-a49a-4b8a-b411-d9b79b9b7b1d/original/dynamicbank-01.svg" style="margin: 30px 0;max-width: 300px;">
+<img src="https://cloud.modyocdn.com/uploads/b3d572c9-a49a-4b8a-b411-d9b79b9b7b1d/original/dynamicbank-01.svg" alt="Dynamic Bank Logo" style="margin: 30px 0;max-width: 300px;">
 
 #### Favicon
 
-<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;">
+<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" alt="Dynamic Bank Favicon" style="margin: 30px 0;max-width: 32px;">
 
 
 ## Paso 7: Hacer cambios de CSS de Bootstrap
@@ -356,7 +356,7 @@ Para crear un nuevo snippet, sigue estos pasos:
 1. Desde **Plantillas**, en el apartado de **Snippets** personalizados, haz click en **+**.
 1. El valor de la ruta es `home_css`. 
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" style="margin: 30px 0;width: 400px;">
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/snippet.png" alt="Add Snippet page." style="margin: 30px 0;width: 400px;">
 
 Para que este snippet haga efecto en nuestro Home tenemos que importar el snippet en la vista de CSS `base` con el siguiente código `{% snippet "home_css" %}` para que el contenido de nuestro snippet aparezca dentro de la hoja de estilos generales de la plantilla.
 
@@ -454,7 +454,7 @@ Para generar un menú, sigue estos pasos:
 
 Lo que se vería reflejado de la siguiente forma:
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" style="margin: 30px 0;max-width: 700px;">
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/navigation.png" alt="Image showing the final result in the Navigation tab." style="margin: 30px 0;max-width: 700px;">
 
 4. Al terminar, haz click en **Guardar** y luego en **Publicar**.
 5. En la pantalla de **Revisar y Publicar**, puedes ver todos los archivos que han sido modificados. Selecciona todos y haz click en **Publicar**.
@@ -466,7 +466,7 @@ Una vez lista la base de la Plantilla, el menú, y la configuración del sitio, 
 1. En el menú principal de tu sitio, haz click en [Pages](/es/platform/channels/pages).
 1. Haz click en **Home**.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/page.png" style="margin: 30px 0;max-width: 300px;">
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/page.png" alt="Page tab" style="margin: 30px 0;max-width: 300px;">
 
 3. Haz click en el widget.
 4. Modifica el Title del widget a **Hero**. 
@@ -593,7 +593,7 @@ En esta linea se asigna el Space y Type que creaste previamente a Entries.
 8. Activa el modo de [vista previa](/es/platform/core/key-concepts.html#modo-vista-previa).
 9. En la venta de vista previa, activa los cambios de Page y Templates.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/preview.png" style="margin: 30px 0;">
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/preview.png" alt="Image showing the preview of everything done so far." style="margin: 30px 0;">
 
 ## Paso 12: Widgets de News
 
@@ -795,7 +795,7 @@ El widget de Dynamic app es un widget personalizado de HTML que no está conecta
 
 El widget de testimonios es un poco más complejo ya que utiliza JS para generar la animación.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" style="max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets.png" alt="Widgets tab" style="max-width: 300px;margin: auto 0;"/>
 
 El Widget Builder es donde puedes crear micro frontends para tus sitios. 
 
@@ -888,11 +888,11 @@ $('.single-item').slick({
 
 > Para poder verlo en el Home tienes que agregarlo como widget <b>Personalizado</b> y buscarlo dentro del listado (en este ejemplo solo tenemos uno).
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" style="max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/cursom_widget.png" alt="Add a custom widget page." style="max-width: 300px;margin: auto 0;"/>
 
 <b>¡Felicidades! Ya tenemos todos los widgets necesarios en el Home</b>
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets_home.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/widgets_home.png" alt="This is how the Home page will look like." style="max-width: 400px;margin: auto 0;"/>
 
 ## Paso 16: Revisar y Publicar
 
@@ -904,7 +904,7 @@ Para realizar una publicación de tu página, sigue estos pasos:
 1. Haz clic en el botón <b>Publicar</b> donde se abrirá un panel con los cambios que hemos realizado.
 1. Agrega todos los archivos y haz click en **Publicar**.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" style="max-width: 700px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-home/review_publish.png" alt="The review and publish page with all your pending changes." style="max-width: 700px;margin: auto 0;"/>
 
 1. Selecciona **Publicar Ahora** y haz click en **Publicar**.
 

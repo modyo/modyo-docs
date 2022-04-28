@@ -42,7 +42,7 @@
           <div class="row">
             <div class="col-12 col-sm-6 col-lg-3 d-flex mb-4">
               <a :href="data.ChannelsUrl" class="card bg-white shadow p-4">
-                <img :src="data.ChannelsImg"
+                <img :src="data.ChannelsImg" :alt="data.ChannelsAlt"
                   style="width: 60px">
                 <h3 class="mt-0 mb-2" style="font-size: 1.5rem;">{{ data.ChannelsTitle }}</h3>
                 <p class="text-muted small mb-0">{{ data.ChannelsText }}</p>
@@ -50,21 +50,21 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3 d-flex mb-4">
               <a :href="data.ContentUrl" class="card bg-white shadow p-4">
-                <img :src="data.ContentImg" style="width: 60px">
+                <img :src="data.ContentImg" :alt="data.ContentAlt" style="width: 60px">
                 <h3 class="mt-0 mb-2" style="font-size: 1.5rem;">{{ data.ContentTitle }}</h3>
                 <p class="text-muted small mb-0">{{ data.ContentText }}</p>
               </a>
             </div>
             <div class="col-12 col-sm-6 col-lg-3 d-flex mb-4">
               <a :href="data.CustomersUrl" class="card bg-white shadow p-4">
-                <img :src="data.CustomersImg" style="width: 60px">
+                <img :src="data.CustomersImg" :alt="data.CustomersAlt" style="width: 60px">
                 <h3 class="mt-0 mb-2" style="font-size: 1.5rem;">{{ data.CustomersTitle }}</h3>
                 <p class="text-muted small mb-0">{{ data.CustomersText }}</p>
               </a>
             </div>
             <div class="col-12 col-sm-6 col-lg-3 d-flex mb-4">
               <a :href="data.InsightsUrl" class="card bg-white shadow p-4">
-                <img :src="data.InsightsImg" style="width: 60px">
+                <img :src="data.InsightsImg" :alt="data.InsightsAlt" style="width: 60px">
                 <h3 class="mt-0 mb-2" style="font-size: 1.5rem;">{{ data.InsightsTitle }}</h3>
                 <p class="text-muted small mb-0">{{ data.InsightsText }}</p>
               </a>
@@ -83,7 +83,7 @@
           <div class="col-12 col-sm-6 col-md-4 d-flex mb-4">
             <a :href="data.FirstSteps1Url" class="card bg-white shadow p-4">
               <div class="d-flex align-items-start">
-                <img :src="data.FirstSteps1Img" style="width: 50px">
+                <img :src="data.FirstSteps1Img" :alt="data.FirstSteps1Alt" style="width: 50px">
                 <div class="ml-2">
                   <h3 class="mt-0 mb-2" style="font-size: 1.3rem;">{{data.FirstSteps1Title}}</h3>
                   <p class="text-muted small mb-0 mt-0">{{data.FirstSteps1Text}}</p>
@@ -95,7 +95,7 @@
           <div class="col-12 col-sm-6 col-md-4 d-flex mb-4">
             <a :href="data.FirstSteps2Url" class="card bg-white shadow p-4">
               <div class="d-flex align-items-start">
-                <img :src="data.FirstSteps2Img" style="width: 50px">
+                <img :src="data.FirstSteps2Img" :alt="data.FirstSteps2Alt" style="width: 50px">
                 <div class="ml-2">
                   <h3 class="mt-0 mb-2" style="font-size: 1.3rem;">{{data.FirstSteps2Title}}</h3>
                   <p class="text-muted small mb-0 mt-0">{{data.FirstSteps2Text}}</p>
@@ -107,7 +107,7 @@
           <div class="col-12 col-sm-6 col-md-4 d-flex mb-4">
             <a :href="data.FirstSteps3Url" class="card bg-white shadow p-4">
               <div class="d-flex align-items-start">
-                <img :src="data.FirstSteps3Img" style="width: 50px">
+                <img :src="data.FirstSteps3Img" :alt="data.FirstSteps3Alt" style="width: 50px">
                 <div class="ml-2">
                   <h3 class="mt-0 mb-2" style="font-size: 1.3rem;">{{data.FirstSteps3Title}}</h3>
                   <p class="text-muted small mb-0 mt-0">{{data.FirstSteps3Text}}</p>
@@ -119,7 +119,7 @@
           <div class="col-12 col-sm-6 col-md-4 d-flex mb-4">
             <a :href="data.FirstSteps4Url" class="card bg-white shadow p-4">
               <div class="d-flex align-items-start">
-                <img :src="data.FirstSteps4Img" style="width: 50px">
+                <img :src="data.FirstSteps4Img" :alt="data.FirstSteps4Alt" style="width: 50px">
                 <div class="ml-2">
                   <h3 class="mt-0 mb-2" style="font-size: 1.3rem;">{{data.FirstSteps4Title}}</h3>
                   <p class="text-muted small mb-0 mt-0">{{data.FirstSteps4Text}}</p>
@@ -131,7 +131,7 @@
           <div class="col-12 col-sm-6 col-md-4 d-flex mb-4">
             <a :href="data.FirstSteps5Url" class="card bg-white shadow p-4">
               <div class="d-flex align-items-start">
-                <img :src="data.FirstSteps5Img" style="width: 50px">
+                <img :src="data.FirstSteps5Img" :alt="data.FirstSteps5Alt" style="width: 50px">
                 <div class="ml-2">
                   <h3 class="mt-0 mb-2" style="font-size: 1.3rem;">{{data.FirstSteps5Title}}</h3>
                   <p class="text-muted small mb-0 mt-0">{{data.FirstSteps5Text}}</p>
