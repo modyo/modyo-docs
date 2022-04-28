@@ -1,5 +1,11 @@
 ---
 search: true
+meta:
+  - name: tags
+    content: welcome
+  - name: type
+    content: concept
+version: 9.2
 ---
 
 # Welcome to Modyo
@@ -8,8 +14,8 @@ Welcome to Modyo's documentation. Here we will cover all the relevant points of 
 
 We have designed Modyo's documentation to be navigated in the form of a guide (from start to finish) or to solve a specific query. The contents within the documentation are linked to each other to facilitate their understanding.
 
-:::tip Past versions
-The documentation on this site applies to the latest version (9.1). To access documentation for previous version (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
+:::tip Previous Versions
+The documentation on this site applies to the latest version ( {{ $frontmatter.version }} ). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf). 
 :::
 
 ### What is Modyo?
