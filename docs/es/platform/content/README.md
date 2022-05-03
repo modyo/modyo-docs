@@ -1,10 +1,15 @@
 ---
 search: true
+title: Modyo Content
+meta:
+  - name: description
+    content: Modyo Content es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+version: 9.2
 ---
 
-# Modyo Content
+# {{ $frontmatter.title }}
 
-**Modyo Content** es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+{{ $frontmatter.meta[0].content }}
 
 <img src="/assets/img/content/header.jpg" alt="Content header image" style="margin: 40px auto; width: 500px; display: block;">
 

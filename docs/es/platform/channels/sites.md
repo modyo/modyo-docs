@@ -410,7 +410,7 @@ En esta vista encontrarás una tabla con todas las redirecciones que existen act
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completando los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guardando los cambios, crearás una nueva entrada de redirección.
 
 :::warning Atención
-La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html), a una vista por defecto o a una [vista personalizada de contenido](/es/platform/channels/templates.html#vistas-para-contenido), verás esas vistas en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
+La tabla de redirecciónes es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
 Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1000 redirecciones.
@@ -427,7 +427,6 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 
 1. [Vistas por defecto (Home, search)](/es/platform/channels/templates.html)
 1. [Páginas](/es/platform/channels/pages.html)
-1. [Vistas personalizadas de contenido](/es/platform/channels/templates.html#vistas-para-contenido)
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
 

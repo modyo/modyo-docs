@@ -1,16 +1,16 @@
 ---
 search: true
+title: Bienvenido a Modyo
 meta:
-  - name: tags
-    content: welcome
-  - name: type
-    content: concept
+  - name: description
+    content: Bienvenido a la documentación de la Modyo. Aquí cubriremos todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas. 
+canonicalUrl: https://docs.modyo.com/es/platform
 version: 9.2
 ---
 
-# Bienvenido a Modyo
+# {{ $frontmatter.title }}
 
-Bienvenido a la documentación de la Modyo. Aquí cubriremos todos los puntos relevantes de la plataforma, como la descripción de las interfaces, dar a conocer buenas prácticas al interactuar con la plataforma, proveer ejemplos de uso, entre otros temas.
+{{ $frontmatter.meta[0].content }}
 
 La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o para resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
 
