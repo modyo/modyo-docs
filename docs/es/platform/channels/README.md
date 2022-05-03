@@ -1,10 +1,15 @@
 ---
 search: true
+title: Modyo Channels
+meta:
+  - name: description
+    content: Modyo Channels es una aplicación que permite la gestión de contenido y aplicaciones Web para múltiples sitios y lenguajes de forma central. 
+version: 9.2
 ---
 
-# Modyo Channels
+# {{ $frontmatter.title }}
 
-**Modyo Channels** es una aplicación que permite la gestión de contenido y aplicaciones Web para múltiples sitios y lenguajes de forma central.
+{{ $frontmatter.meta[0].content }}
 
 <img src="/assets/img/channels/header.jpg" alt="Channels header image" style="margin: 40px auto; width: 400px; display: block;">
 
