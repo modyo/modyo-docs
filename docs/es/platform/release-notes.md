@@ -6,17 +6,40 @@ search: true
 
 ## 9.2
 
+### 9.2.9 - 03 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se controla error 500 a nivel de aplicación al usar verbos HTTP inválidos
+* Se parámetro para tolerancia en segundos para access token (OIDC access token clock skew)
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige problema al publicar árbol de páginas con 3 niveles
+* Se corrige problema con url full de entradas por defecto
+* Se corrige escapado de meta tags rompe interpolación con Liquid
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se incorpora el uso de reCAPTCHA para Realms 
+
+
 ### 9.2.8 - 8 de abril 2022
 <Badge text="Core" type="core" vertical="middle"/>
+
 * Mejoras de seguridad
 
 <Badge text="Channels" type="channels" vertical="middle"/>
+
 * Mejoras en experiencia con Service Worker
 
 <Badge text="Content" type="content" vertical="middle"/>
+
 * Colecciones se pueden referenciar usando brackets en Liquid SDK
 
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Se arregla problema con el envío de campañas
 
 ### 9.2.7 - 10 de marzo de 2022
@@ -29,7 +52,7 @@ search: true
 * Cuentas duplicadas en onboarding
 * Direct authentication en Realm con Google lleva a error 404
 * Implementar medio de pago Cybersource 
-* Agregar tags en New Asset modal 
+* Agregar tags en New Asset modal
 
 
 ### 9.2.6 - 22 de febrero de 2022
