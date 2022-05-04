@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Resumen de pagos <Badge text="Beta" type="warn"/>
+# Resumen de pagos
 
-La plataforma ofrece un widget en donde podrás visualizar todos los pagos de tus cuentas, por default cuenta con una gráfica de actividad de tus pagos previos, una ventana de tus próximos pagos, y tu historial con las boletas de tus pagos. 
+Visualiza todos los pagos de tus cuentas, por default cuenta con una gráfica de actividad de tus pagos previos, una ventana de tus próximos pagos, y tu historial con las boletas de tus pagos. 
 
 ### Instalación:
 
@@ -14,7 +14,7 @@ modyo-cli get modyo-widgets-insurance-summary
 
 [Abrir en nueva tab](https://widgets-es.modyo.com/seguros/personas/resumen)
 
-<iframe id="widgetFrame" src="https://widgets-es.modyo.com/insurance/retail/summary" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
+<iframe id="widgetFrame" src="https://widgets-es.modyo.com/seguros/personas/resumen" width="100%" frameBorder="0" style="min-height:675px;overflow:auto;margin-top:20px;"/>
 
 Las funcionalidades de este widget son las siguientes:
 
@@ -57,3 +57,4 @@ Las funcionalidades de este widget son las siguientes:
       }
     }
   }
+</script>
