@@ -2,9 +2,9 @@
 search: true
 ---
 
-# Payment summary <Badge text="Beta" type="warn"/>
+# Payments Summary
 
-The platform offers a widget where you can view all the payments in your accounts, by default it has a history graph with your previous payments, a section for upcoming payments, and your previous payment slips. 
+View all the payments in your accounts, by default it has a graph of the activity of your previous payments, a window of your next payments, and your history with the slips of your payments. 
 
 ### Installation:
 
@@ -57,3 +57,4 @@ The features of this widget are as follows:
       }
     }
   }
+</script>
