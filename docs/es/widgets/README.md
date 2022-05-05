@@ -1,11 +1,15 @@
 ---
 search: true
+title: Widgets
+meta:
+  - name: description
+    content: Bienvenido al Catálogo de Widgets Financieros de Modyo. Acá encontrarás una completa referencia de todas las experiencias financieras que Modyo entrega como parte de este producto, desde la instalación y desarrollo en tu ambiente local, hasta la descripción de interfaces, parámetros disponibles, y referencia de las principales funcionalidades de cada Widget.
+version: 9.2
 ---
 
-# Introducción
+# {{ $frontmatter.title }}
 
-Bienvenido al **Catálogo de Widgets Financieros de Modyo**. Acá encontrarás una completa referencia de todas las experiencias financieras que Modyo entrega como parte de este producto, desde la instalación y desarrollo en tu ambiente local, hasta la descripción de interfaces, parámetros disponibles, y referencia de las principales funcionalidades de cada Widget.
-
+{{ $frontmatter.meta[0].content }}
 
 ### ¿Qué es un Widget?
 

@@ -1,14 +1,19 @@
 ---
 search: true
+title: Modyo Platform
+meta:
+  - name: description
+    content: Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content, y Customers y en ella encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes. 
+version: 9.2
 ---
 
-# Modyo Platform
+# {{ $frontmatter.title }}
 
-Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content, y Customers y en ella encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes.
+{{ $frontmatter.meta[0].content }}
 
 Modyo Platform presenta la interfaz principal de Modyo desde la cual se tienen acceso a todas las secciones relevantes.
 
-<img src="/assets/img/platform/header.jpg" style="margin: 40px auto; width: 300px; display: block;">
+<img src="/assets/img/platform/header.jpg" alt="Platform header image" style="margin: 40px auto; width: 300px; display: block;">
 
 :::tip Versiones pasadas
 La documentación en este sitio aplica a la última versión (9.1). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf).

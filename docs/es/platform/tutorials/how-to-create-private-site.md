@@ -33,7 +33,7 @@ Conocimientos de:
   - Reino del sitio: **Ninguno**
 4. Haz click en **Crear**.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/new-site.png" alt="Modyo's New Site page." style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 ## Paso 2: Cargar logo y favicon
 
@@ -48,11 +48,11 @@ Para cambiar los archivos, sigue estos pasos:
 
 #### Logo
 
-<img src="https://cloud.modyocdn.com/uploads/b2b35c34-f955-41f6-8ce8-e1e23e21e377/original/DynamicBank_white.svg" style="margin: 30px 0px;max-width: 300px;background: #DDD;padding: 10px;">
+<img src="https://cloud.modyocdn.com/uploads/b2b35c34-f955-41f6-8ce8-e1e23e21e377/original/DynamicBank_white.svg" alt="Dynamic Bank Logo" style="margin: 30px 0px;max-width: 300px;background: #DDD;padding: 10px;">
 
 #### Favicon
 
-<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;">
+<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" alt="Dynamic Bank Favicon" style="margin: 30px 0;max-width: 32px;">
 
 Recuerda guardar los cambios luego de cargar los archivos.
 
@@ -687,7 +687,7 @@ Una vez realizados los pasos anteriores, revisa todo el sitio en modo vista prev
 
 Para realizar una publicación, desde la sección **Resumen**, haz click en el botón <b>Publicar</b> donde se abrirá un panel con los cambios que haz realizado.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" alt="Modyo's Review and Publish page with the changes made during this tutorial." style="max-width: 700px;margin: auto 0;"/>
 
 Selecciona todos los cambios pendientes, y haz click en **Publicar**. Selecciona **Publicar Ahora**.
 

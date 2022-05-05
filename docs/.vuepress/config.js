@@ -20,7 +20,7 @@ module.exports = {
       'code-switcher',
       {
         groups: {
-          default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
+          default: { lq: 'Liquid', js: 'JavaScript', curl: 'shell' },
         },
       },
     ],
@@ -31,13 +31,12 @@ module.exports = {
       {},
       `
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K228JLF');
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MW9VKMC');
     `,
-    ],
-    ["meta", {name:"google-site-verification", content:"mMWuNk0NkjQFiS8L5eRpOKrojv9rIGKvbWo65NHvSb4"}]
+    ]
   ],
   themeConfig: {
     logo: "/assets/img/modyo.png",
@@ -101,9 +100,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   collapsable: true,
                   children: [
                     ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
-                    ["/en/platform/core/integrations/scim", "SCIM Provisioning with Microsoft Azure AD"],
+                    ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
                     ["/en/platform/core/integrations/conect-modyo-saleforce", "Integration with Salesforce"],
                     ["/en/platform/core/integrations/google-data-studio-integration", "Integration with Google Analytics"],
+                    ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)Gestionar sesión privada usando OpenID Connect (OIDC)"],
                   ],
                 },
                 "/en/platform/core/webhooks",
@@ -170,7 +170,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ["/en/widgets/guides/share-state", "Shared state"],
                 "/en/widgets/guides/liquid-variables",
                 "/en/widgets/guides/ci-cd",
-                "/en/widgets/guides/repository-pattern"
+                "/en/widgets/guides/repository-pattern",
+                "/en/widgets/guides/storybook",
               ],
             },
             {
@@ -303,6 +304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     ["/es/platform/core/integrations/scim", "Provisionamiento SCIM con Microsoft Azure AD"],
                     ["/es/platform/core/integrations/conect-modyo-saleforce", "Integracion con Salesforce"],
                     ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
+                    ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                   ],
                 },
                 "/es/platform/core/webhooks",
@@ -370,7 +372,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ["/es/widgets/guides/share-state", "Compartir estado"],
                 "/es/widgets/guides/liquid-variables",
                 "/es/widgets/guides/ci-cd",
-                "/es/widgets/guides/repository-pattern"
+                "/es/widgets/guides/repository-pattern",
+                "/es/widgets/guides/storybook",
               ],
             },
             {

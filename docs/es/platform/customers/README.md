@@ -1,12 +1,17 @@
 ---
 search: true
+title: Modyo Customers
+meta:
+  - name: description
+    content: Modyo Customers es una aplicación que permite habilitar la autenticación de usuarios en los sitios en Modyo, ya sea por medio de su sistema interno de registro de cuentas como de sus integraciones empresariales a sistemas de Single Sign On (SSO). 
+version: 9.2
 ---
 
-# Modyo Customers
+# {{ $frontmatter.title }}
 
-**Modyo Customers** es una aplicación que permite habilitar la autenticación de usuarios en los sitios en Modyo, ya sea por medio de su sistema interno de registro de cuentas como de sus integraciones empresariales a sistemas de Single Sign On (SSO).
+{{ $frontmatter.meta[0].content }}
 
-<img src="/assets/img/customers/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/customers/header.jpg" alt="Customers header image" style="margin: 40px auto; width: 400px; display: block;">
 
 Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Segmentos la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
 

@@ -31,7 +31,7 @@ Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
 1. Haz click en **Añadir**.
 
-<img src="/assets/img/platform/nuevo-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ## Facebook
 
@@ -44,7 +44,7 @@ Para poder realizar una integración con Facebook, deberás contar con:
 
 Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Para saber más sobre como crear y configurar una aplicación de Facebook, ve su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
 
-<img src="/assets/img/platform/facebook-login-settings.png" width="500px" style="margin-top: 40px;" />
+<img src="/assets/img/platform/facebook-login-settings.png" alt="Facebook for Developer's Client OAuth settings page. " width="500px" style="margin-top: 40px;" />
 
 ## Google
 
@@ -133,11 +133,11 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 
 1. Desde la consola administrativa, por ejemplo [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) haz click en agregar un nuevo realm.
 
-<img src="/assets/img/platform/keycloak-add-realm.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/keycloak-add-realm.png" alt="Keycloak add a new realm button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 2. Haz click en agregar una aplicación cliente. Usa `openid-connect` como **Client Protocol** para la integración con Modyo.
 
-<img src="/assets/img/platform/keycloak-add-client.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/keycloak-add-client.png" alt="Keycloak add a client page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
 4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
@@ -151,20 +151,21 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
-<img src="/assets/img/platform/keycloak-new-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Configuraciones opcionales de la integración
 
 Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
 
-|Opción  | Descripción  |
-|:---    |:---          |
-| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak y deshabilitando la experiencia SSO. |
-| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-| **Habilitar revocación de token**                                   | No soportado por Keycloak|
-| **Activar token de actualización (Refresh Token)**                                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint de keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt>                                       |
-| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
-| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                             |
+| Opción                                                              | Descripción                                                                                                                                                                                                                                                                                                                     |
+|:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak y deshabilitando la experiencia SSO.                                                                                                         |
+| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.                                                                                                                   |
+| **Tolerancia en segundos para access token**                        | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token.                                                                                                                                                                                                           |
+| **Habilitar revocación de token**                                   | No soportado por Keycloak                                                                                                                                                                                                                                                                                                       |
+| **Activar token de actualización (Refresh Token)**                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint de keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt> |
+| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
+| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
 
 
 ## Azure Active Directory
@@ -176,7 +177,7 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
 2. En la barra de búsqueda, busca por **Azure Active Directory**, y luego selecciona **App registrations > New registration**.
 
-<img src="/assets/img/platform/aad-registration.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/aad-registration.png" alt="Microsoft Azure's Register an Application page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 3. Completa la siguiente información
    * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
@@ -184,11 +185,11 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
    * **Redirect URI**: Usa la URL relativa a la cuenta `/auth/openidc/callback`.
 4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtiene el **Application ID** y **Directory ID**.
 
-<img src="/assets/img/platform/aad-client.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/aad-client.png" alt="Azure's overview page with Application and Directory IDs." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**.
 
-<img src="/assets/img/platform/aad-secret.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/aad-secret.png" alt="New client secret button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 ### Configuración de la integración
 
