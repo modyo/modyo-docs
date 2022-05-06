@@ -410,7 +410,7 @@ In this view you will find a table with all the redirects that currently exist o
 To create a new redirect, click on the **New** button in the upper right hand corner of the view. By completing the fields **_URL_ Source** and **_URL_ Destination** and redirection code and then saving the changes, you will create a new redirection entry.
 
 :::warning Warning
-The redirect table is the penultimate in precedence, so if there is a URL on the site that points to a [page](/platform/channels/pages.html), a default view, or a [custom content view](/platform/channels/templates.html#content-views), you will see those views instead of being redirected via the custom redirect table.
+The redirect table is the second to last in precedence, if there is a URL on a site that points to a [page](/en/platform/channels/pages.html) or a default view, you'll see that view instead of being redirected through the custom redirect table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
@@ -427,9 +427,8 @@ The precedence of locations on Modyo sites is as follows:
 
 1. [Default views (Home, search)](/en/platform/channels/templates.html)
 1. [Pages](/en/platform/channels/pages.html)
-1. [Custom content views](/en/platform/channels/templates.html#content-views)
 1. Custom redirects
-1. [Site 404 error configuration](/en/platform/channels/sites.html#restrictions)
+1. [Site 404 error configuration](/en/platform/channels/sites.html#privacy)
 
 ### Security headers
 
