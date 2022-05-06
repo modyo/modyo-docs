@@ -1,11 +1,15 @@
 ---
 search: true
+title: Widgets
+meta:
+  - name: description
+    content: Welcome to the Modyo Financial Widget Catalog. Here you will find a complete reference to all the financial experiences that Modyo provides as part of this product, from the installation and development in your local environment, to the description of the interfaces, available parameters, and reference of the main features of each Widget.
+version: 9.2
 ---
 
-# Introduction
+# {{ $frontmatter.title }}
 
-Welcome to the **Modyo Financial Widgets Catalogue**. Here you will find a complete reference to all the financial experiences that Modyo delivers as part of this product, from installation and development in your local environment, to describing interfaces, available parameters, and reference to the main features of each Widget.
-
+{{ $frontmatter.meta[0].content }}
 
 ### What is a Widget?
 
