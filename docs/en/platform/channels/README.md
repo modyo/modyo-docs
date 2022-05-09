@@ -1,12 +1,17 @@
 ---
 search: true
+title: Modyo Channels
+meta:
+  - name: description
+    content: Modyo Channels is the module that allows central management of your content and Web applications for multiple sites and languages. 
+version: 9.2
 ---
 
-# Modyo Channels
+# {{ $frontmatter.title }}
 
-**Modyo Channels** is an application that allows you to manage content distribution and web applications for multiple sites and languages in one place.
+{{ $frontmatter.meta[0].content }}
 
-<img src="/assets/img/channels/header.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/channels/header.jpg" alt="Channels header image" style="margin: 40px auto; width: 400px; display: block;">
 
 **Modyo Channels** provides extensive access to the HTML code of every template, giving developers complete control of every detail of a user's digital experiences, published through an integrated version control system.
 
