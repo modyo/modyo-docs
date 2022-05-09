@@ -4,7 +4,7 @@ search: true
 
 # Credit Card Payments
 
-The platform offers a credit card payment widget, allowing customers to perform the transaction directly from your payment portal.
+Make payments by credit card, the customer will be able to make the transaction directly from their payment portal.
 
 ### Installation:
 
