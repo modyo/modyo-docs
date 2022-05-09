@@ -4,7 +4,7 @@ search: true
 
 # Deposits
 
-The Deposits widget allows the user to easily and quickly upload funds to their investment accounts.
+Allows the user to easily and quickly load funds to their investment accounts.
 
 #### Installation:
 
