@@ -81,7 +81,7 @@ The filters found by default in the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that suits your needs, see [Custom Fields](en/platform/customers/realms.html#custom-fields).
+To create an advanced filter that fits your needs, see [Custom Fields](/en/platform/customers/realms.html#custom-fields).
 
 :::warning Warning
 User segments are updated constantly in the background:
