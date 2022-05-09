@@ -1,18 +1,23 @@
 ---
 search: true
+title: Modyo Content
+meta:
+  - name: description
+    content: Modyo Content is the module that lets you create repositories of dynamic content called spaces. Within a space, you can define both the types of content to be managed and the access rules and roles that the different team members will have.
+version: 9.2
 ---
 
-# Modyo Content
+# {{ $frontmatter.title }}
 
-**Modyo Content** is an application that makes it possible to create dynamic content repositories called spaces. Within a space, you can create content entries based on types that you define and administrators can establish space access configurations and roles for team members.
+{{ $frontmatter.meta[0].content }}
 
-<img src="/assets/img/content/header.jpg" style="margin: 40px auto; width: 500px; display: block;">
+<img src="/assets/img/content/header.jpg" alt="Content header image" style="margin: 40px auto; width: 500px; display: block;">
 
 **Modyo Content** has a Headless architecture that allows content to be consumed via an HTTP API from channels defined in **Modyo Channels** and external systems or applications.
 
 Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
 
-### Main functionalities
+### Main features
 
 - [Spaces](/en/platform/content/spaces.html) for the organization of contents and teams that manage them.
 - [Content types](/en/platform/content/types.html) to define custom structures.
