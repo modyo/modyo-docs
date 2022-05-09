@@ -4,7 +4,7 @@ search: true
 
 # Detailed Summary
 
-Modyo offers a widget that delivers detailed information on existing investments in each investment account, including transactions made by the user and those still in progress.
+Provides detailed information on the existing investments in each investment account, including the transactions made by the user and those that are still in progress.
 
 #### Installation:
 
