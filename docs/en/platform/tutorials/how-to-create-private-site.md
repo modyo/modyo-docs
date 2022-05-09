@@ -33,7 +33,7 @@ Be familiar with:
   - Realm of Site: **None**
 4. Click **Create**.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/new-site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/how-to-create-private-site/new-site.png" alt="Modyo's New Site page." style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
 
 ## Step 2: Upload logo and favicon
 
@@ -48,11 +48,11 @@ To change the files, follow these steps:
 
 #### Logo
 
-<img src="https://cloud.modyocdn.com/uploads/b2b35c34-f955-41f6-8ce8-e1e23e21e377/original/DynamicBank_white.svg" style="margin: 30px 0px;max-width: 300px;background: #DDD;padding: 10px;">
+<img src="https://cloud.modyocdn.com/uploads/b2b35c34-f955-41f6-8ce8-e1e23e21e377/original/DynamicBank_white.svg" alt="Dynamic Bank Logo" style="margin: 30px 0px;max-width: 300px;background: #DDD;padding: 10px;">
 
 #### Favicon
 
-<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" style="margin: 30px 0;max-width: 32px;">
+<img src="https://cloud.modyocdn.com/uploads/7c6b4dd7-5b50-43f3-9ca1-a07a2cbc6412/original/favicon.ico" alt="Dynamic Bank Favicon" style="margin: 30px 0;max-width: 32px;">
 
 Remember to save your changes after uploading the files.
 
@@ -687,7 +687,7 @@ After completing the above steps, review the entire site in preview mode. When y
 
 To make a post, from the **Summary** section, click the button <b>Publish</b> where a panel will open with your changes.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" alt="Modyo's Review and Publish page with the changes made during this tutorial." style="max-width: 700px;margin: auto 0;"/>
 
 Select all pending changes, and click **Publish**. Select **Publish Now**.
 
