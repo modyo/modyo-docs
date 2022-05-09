@@ -1,16 +1,16 @@
 ---
 search: true
+title: Welcome to Modyo
 meta:
-  - name: tags
-    content: welcome
-  - name: type
-    content: concept
+  - name: description
+    content: Welcome to Modyo's documentation. Here we will cover all the relevant points of the platform, such as describing the interfaces, explanation of good practices when interacting with the platform, providing examples, among other topics. 
+canonicalUrl: "https://docs.modyo.com/en/platform"
 version: 9.2
 ---
 
-# Welcome to Modyo
+# {{ $frontmatter.title }}
 
-Welcome to Modyo's documentation. Here we will cover all the relevant points of the platform, such as describing the interfaces, explanation of good practices when interacting with the platform, providing examples, among other topics.
+{{ $frontmatter.meta[0].content }}
 
 We have designed Modyo's documentation to be navigated in the form of a guide (from start to finish) or to solve a specific query. The contents within the documentation are linked to each other to facilitate their understanding.
 
