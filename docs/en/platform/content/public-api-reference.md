@@ -594,23 +594,23 @@ In the case of a single entry, you can use the method entry, for example:
 
 ```js
 import { Client } from "@modyo/sdk";
-// To obtain the correct account, you must use the url of the account
+// To get the correct account, use the url of the account
 const modyoAccount = new Client("https://my-account.modyo.com","es");
 
 const typePost = modyoAccount.getContentType("space_uid", "type_uid");
-// `typePost` returns an object with information about the type, i.e. the schema.
+// `typePost` will return an object with information of the type, such as the schema
 
-// If you want to see the details of the schema, use the `getSchema()` method
+// If you want to see the schema's details, use the `getSchema()` method
 typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
 /*
-Which will print something like this:
+The output will look like:
 > Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {...}, type: "object", required: Array(2), properties: {...}}
 */
 ```
 </template>
 <template v-slot:curl>
 
-```curl
+```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
 ```
 
@@ -660,7 +660,7 @@ The object returned by getEntries() includes a meta field that will help you nav
 </template>
 <template v-slot:curl>
 
-```curl
+```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
 ```
 
@@ -924,7 +924,7 @@ The order of the results must be specified with the `sort_by` and `order` parame
 - `sort_by`: indicating the name of the attribute (e.g. meta.tags, or fields.name)
 - `order`: ['asc','desc'] (opcional, asc by default)
 
-```curl
+```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
 ```
 
