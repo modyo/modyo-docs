@@ -4,50 +4,14 @@ search: true
 
 # Profile survey
 
-In this Widget, each user will be able to complete the Investor Profile survey, in order to receive the best recommendations regarding their movements.
+Take the Investor Profile survey in order to receive the best recommendations for your movements.
 
 [Open in another tab](https://widgets.modyo.com/inversiones/profile-survey)
- <iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/profile-survey" width="100%"  frameBorder="0"  style="overflow:auto;margin-top:20px;"/> 
-Feature
+<iframe id="widgetFrame" src="https://widgets.modyo.com/inversiones/profile-survey" width="100%" frameborder="0" style="overflow:auto;margin-top:20px;"/>
 
-| Description                    | Investor Profile Survey                                                                                                                                                      |
+| Features                    | Description                                                                                                                                                      |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| This enables you to complete the Investor Profile survey, whether it be be for new customers, ones who want to retake it, or if it's required by regulations. | <script>
-
-  export default {
-    mounted() {
-
-      function setIframeHeightCO(id, ht) {
-          var ifrm = document.getElementById(id);
-          if(ifrm) {
-            ifrm.style.height = ht + 4 + "px";
-          }
-      }
-      // iframed document sends its height using postMessage
-      function handleDocHeightMsg(e) {
-          // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
-              // parse data
-              var data = JSON.parse( e.data );
-
-              console.log('data:', data)
-              // check data object
-              if ( data['docHeight'] ) {
-                  setIframeHeightCO( 'widgetFrame', data['docHeight'] );
-              } else {
-                  setIframeHeightCO( 'widgetFrame', 700 );
-              }
-          }
-      }
-
-      // assign message handler
-      if ( window.addEventListener ) {
-          window.addEventListener('message', handleDocHeightMsg, false);
-      }
-    }
-  }
-
-</script> |
+| Investor Profile Survey | Allows you to complete the Investor Profile survey, either for new customers, if the client wants to take it again or because regulations require it. |
 
 <script>
 
@@ -63,7 +27,7 @@ Feature
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
           // check origin
-          if ( e.origin === 'https://widgets.modyo.com' ) {
+          if ( e.origin === 'https://widgets-es.modyo.com' ) {
               // parse data
               var data = JSON.parse( e.data );
 
