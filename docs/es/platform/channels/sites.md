@@ -428,7 +428,7 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. [Vistas por defecto (Home, search)](/es/platform/channels/templates.html)
 1. [Páginas](/es/platform/channels/pages.html)
 1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
+1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#privacidad)
 
 ### Security headers
 
