@@ -8,11 +8,11 @@ La tipografía oficial de Modyo para usar en todos sus formatos y plataformas es
 
 ### Font Styles
 
-<img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" style="margin-left: 0;">
+<img src="https://cloud.modyocdn.com/uploads/50fb48a3-87d4-4280-8c79-3ab08c0e4f14/original/DM_sans.png" alt="font1" style="margin-left: 0;">
 
 ### Ejemplos de uso
 
-<img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" style="margin-left: 0;">
+<img src="https://cloud.modyocdn.com/uploads/a38e002a-cbd6-4ac5-8452-9ab371f8dec2/original/contenido.png" alt="contenido" style="margin-left: 0;">
 <div style="display:flex">
 <div style="margin-right: 36px;">
 <h4>H1</h4>
@@ -34,7 +34,7 @@ Letter-spacing: -1px
 </div>
 </div>
 
-<img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" style="margin-left: 0;">
+<img src="https://cloud.modyocdn.com/uploads/19dcd1fc-cc54-4383-8fd8-0c7cde600a77/original/contenido-1.png" alt="contenido1" style="margin-left: 0;">
 <div style="display:flex">
 <div style="margin-right: 36px;">
 <h4>H2</h4>

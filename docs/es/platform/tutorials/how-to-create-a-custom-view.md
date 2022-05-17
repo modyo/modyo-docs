@@ -12,7 +12,7 @@ El enlace entre Content y Channels, es una de las funcionalidades más important
 
 En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocamos en crear, previsualizar, y publicar una entrada de tipo **Benefits** para la marca ficticia "Dynamic Cine".
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="The final product for this tutorial"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
@@ -116,7 +116,7 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
     Logo
   </td>
   <td>
-    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
+    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;" alt="Dynamic cinema benefit"/>
   </td>
 </tr>
 <tr>
@@ -166,7 +166,7 @@ Para crear una Vista de Contenido, sigue estos pasos:
 1. Dentro de **Vistas de Contenido**, haz click en **+**.
 
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;" alt="Custom view module screen"/>
 
 4. En el modal, ingresa la Ruta **beneficio**, y seleccionamos el Espacio **Bank** y Tipo **Benefits**.
 
@@ -286,11 +286,11 @@ Esta **Vista de Contenido** ahora está conectada al Espacio de **Dynamic Bank**
 
 Ahora que ya tenemos nuestro Espacio y Tipo asociados a un Sitio, podrás activar [Modo vista previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa haz click en el ícono del "ojo" en la barra superior de acciones:
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;" alt="Preview content icon"/>
 
 Dentro del modal hacer click en <b>Vista previa en sitio</b> y seleccionar el sitio **Bank**:
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;" alt="The site preview reveals your changes"/>
 
 Al seleccionarlo, en una nueva pestaña se abrirá la vista previa de la Entrada en el Sitio para visualizar las modificaciones.
 

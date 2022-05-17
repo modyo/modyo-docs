@@ -10,7 +10,7 @@ Para hacer uso de esta herramienta visita **[nuestro Storybook](https://modyo.gi
 
 ### Menu principal
 
-![1](/assets/img/widgets/storybook/mainmenu.png)
+<img src="/assets/img/widgets/storybook/mainmenu.png" alt="Storybook's main menu">
 
 Al seleccionar un componente, se abre un demo en la parte central de la pantalla. En la barra superior, podrás elegir entre las siguientes acciones:
 
@@ -26,7 +26,7 @@ Al seleccionar un componente, se abre un demo en la parte central de la pantalla
 
 ### Keyboard shortcuts
 
-![2](/assets/img/widgets/storybook/shortcuts.png)
+<img src="/assets/img/widgets/storybook/shortcuts.png" alt="Shortcuts available in storybook">
 
 ## Importar a proyecto
 

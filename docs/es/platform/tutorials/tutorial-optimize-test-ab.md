@@ -9,10 +9,10 @@ search: true
 Bienvenido a un nuevo tutorial de Modyo. En este tutorial, nos vamos a enfocar en [Modyo Channels](/es/platform/channels) y Google Optimize para realizar una Prueba A/B en un widget, ya que queremos mejorar la conversión y el equipo ficticio cree que humanizando el banner mejorará, por esto vamos a tener un banner con un mockup de un celular, y otro con una persona.
 
 <code>Test A</code>
-<img src="/assets/img/tutorials/optimize/testa.png" style="max-width: 450px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/testa.png" style="max-width: 450px;margin: auto 0;" alt="Image showing what we will show to Test A users"/>
 
 <code>Test B</code>
-<img src="/assets/img/tutorials/optimize/testb.png" style="max-width: 450px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/testb.png" style="max-width: 450px;margin: auto 0;" alt="Image showing what we will show to Test B users"/>
 
 ## Requisitos Previos
 
@@ -22,11 +22,11 @@ Para ejecutar el tutorial necesitamos un sitio en Modyo con el Home de Dynamic B
 
 Lo primero que se tiene que hacer es crear una cuenta dentro de [Optimize](https://optimize.google.com/) dando click a <b>Crear cuenta</b>.
 
-<img src="/assets/img/tutorials/optimize/crear-cuenta.png" style="max-width: 450px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/crear-cuenta.png" style="max-width: 450px;margin: auto 0;" alt="Create account button"/>
 
 Llena los campos, acepta las condiciones, y pasa al siguiente paso.
 
-<img src="/assets/img/tutorials/optimize/modal-cuenta.png" style="max-width: 450px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/modal-cuenta.png" style="max-width: 450px;margin: auto 0;" alt="The modal that pops up when creating a new account"/>
 
 Luego de completar los pasos, haz click en <b>Crear</b>.
 
@@ -34,7 +34,7 @@ Luego de completar los pasos, haz click en <b>Crear</b>.
 
 Una vez creada la cuenta dentro de Optimize, haz click en empezar para crear la primera experiencia, llena los campos correspondientes, y a selecciona <b>Prueba A/B</b>.
 
-<img src="/assets/img/tutorials/optimize/ab.png" style="max-width: 450px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/ab.png" style="max-width: 450px;margin: auto 0;" alt="Image showing the dialog options when creating a new experience in Google Optimize"/>
 
 Una vez creada la experiencia, crea una variante, en vez del código del widget <b>APP</b> normal,  reemplazalo con el código por el siguiente:
 
@@ -60,11 +60,11 @@ Una vez creada la experiencia, crea una variante, en vez del código del widget 
 
 En el menú de Google Optimize, haz click en <b>Añadir variante</b> la cual llamaremos <code>Cambio imagen</code>.
 
-<img src="/assets/img/tutorials/optimize/ab-variante.png" style="max-width: 750px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/ab-variante.png" style="max-width: 750px;margin: auto 0;" alt="Image showing the add variant button"/>
 
 Haz click en editar para hacer el cambio:
 
-<img src="/assets/img/tutorials/optimize/ab_variante.png" style="max-width: 750px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/ab_variante.png" style="max-width: 750px;margin: auto 0;" alt="Image showing the segmentation for the new variant, split in half for the A/B Test"/>
 
 Cuando se abre el editor vamos al piso del widget de la APP y reemplazamos de la línea 2 (el div container) en adelante por lo siguiente:
 
@@ -85,13 +85,13 @@ Cuando se abre el editor vamos al piso del widget de la APP y reemplazamos de la
   ```
 <b>Guarda</b> y haz click en <b>Hecho</b> para volver a la experiencia.
 
-<img src="/assets/img/tutorials/optimize/50_50.png" style="max-width: 750px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/50_50.png" style="max-width: 750px;margin: auto 0;" alt="Image showing the updated values for the B Test"/>
 
 Se tiene que vincular nuestra cuenta de Google Analytics para la medición y definir los objetivos de la Prueba.
 
 Para definir el Objetivo, se utiliza Google Analytics en el botón de descarga, con Categoría <b>button</b> y la etiqueta <b>CTA APP</b>.
 
-<img src="/assets/img/tutorials/optimize/objetivos.png" style="max-width: 750px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/objetivos.png" style="max-width: 750px;margin: auto 0;" alt="Image showing the objective of the experience"/>
 
 Guarda el objetivo e inicia la prueba.
 
@@ -105,4 +105,4 @@ Al terminar la instalación, inicia la Personalización haciendo click en el bot
 
 ¡Felicidades! Has finalizado el tutorial de Test A/B con Google Optimize y estás listo para realizar Pruebas en tu sitio y mejorar la conversión. Al tener estadísticas de uso, se podrán ver desde el menú de Google Optimize.
 
-<img src="/assets/img/tutorials/optimize/analytics.png" style="max-width: 750px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/optimize/analytics.png" style="max-width: 750px;margin: auto 0;" alt="Image showing the analytics gathered from the A/B Test in Google Optimize"/>

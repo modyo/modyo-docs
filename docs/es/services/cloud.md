@@ -9,7 +9,7 @@ search: true
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel advanced con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
 
 
-<img src="/assets/img/cloud/partner_badge.png" style="margin-top: 40px;" />
+<img src="/assets/img/cloud/partner_badge.png" alt="Partner Badge" style="margin-top: 40px;" />
 
 El año 2019 Modyo fue reconocido por Amazon como el Technology Partner of the Year para Chile y Perú.
 
@@ -18,7 +18,7 @@ Las versiones de Modyo Cloud y Enterprise Cloud operan en una configuración de 
 En el siguiente diagrama se pueden apreciar los componentes principales y su despliegue en modalidad de alta disponibilidad:
 
 
-<img src="/assets/img/cloud/cloud_deployment.png" style="margin-top: 40px;" />
+<img src="/assets/img/cloud/cloud_deployment.png" alt="Cloud Deployment" style="margin-top: 40px;" />
 
 
 
