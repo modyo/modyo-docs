@@ -3,7 +3,7 @@ search: true
 title: Creación de un Site Stage
 meta:
   - name: description
-    content: Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfocará en Modyo Channels donde se creará un nuevo site stage para trabajar en una nueva página para tu sitio sin tocar la rama principal. Al finalizar este tutorial, podrás sincronizar los cambios entre tus ramas y de esta manera trabajar en diferentes componentes en el mismo sitio.
+    content: Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. En este tutorial seguiras los pasos de integración y despliegue (CI/CD) creando un site stage para trabajar en tu sitio sin tocar la rama principal. 
 ---
 
 # {{ $frontmatter.title }}
@@ -43,247 +43,102 @@ Conocimientos de:
 
 5. Haz click en **Crear**.
 
-Al tener stages, el UI cambia un poco para mostrar en que stage se está trabajando.
+Al tener stages, la interfaz cambia para mostrar en que stage se está trabajando.
 
 <img src="/assets/img/tutorials/how-to-create-a-site-stage/stage-UI.png" style="width: 400px;" alt="Create a new Stage modal.">
  
-## Paso 2: Crear entrada con nuevos campos
+## Paso 2: Crear nuevos items en Navegación
 
-Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar contenido de este tipo. Para crear una nueva entrada llamada **Dynamic Cine**, sigue estos pasos:
+Al estar en un stage, todos los cambios que realices quedarán solo en este stage hasta que se integren con otro. El siguiente paso es agregar los items en Navegación, para crearlos sigue estos pasos:
 
-1. En el menú lateral, selecciona **Entradas**.
-1. Haz click en **+ Nueva Entrada**.
-1. Selecciona el tipo **Benefits**.
-1. Llena el nombre **Dynamic Cine** e identificador **dynamic-cine**.
-1. Haz click en **Crear**.
-1. En la pantalla de campos de Entrada, llena los siguientes valores:
+1. En el menú lateral, selecciona **Navegación**.
+1. Haz click en el menú **main**.
+1. Agrega dentro de **Products** un subnivel llamado **Tarjeta de Crédito**.
+1. Agrega dos items dentro de **Tarjeta de Crédito** llamados: **Platino** y **Oro**.
 
+Al terminar, tu menú debe lucir así:
 
-<table>
-<tr><th style="text-align: left;">Field</th> <th style="text-align: left;"></th></tr> 
-<tr>
-  <td>
-    Short description
-  </td>
-  <td>
-    40% de descuento en entradas todos los Viernes.
-  </td>
-</tr>
-<tr>
-  <td>
-    Logo
-  </td>
-  <td>
-    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
-  </td>
-</tr>
-<tr>
-  <td>
-    Cover
-  </td>
-  <td>
-    <img src="https://cloud.modyocdn.com/uploads/c83b4e17-4ff6-44bd-a23e-ef9d2163778d/original/cine.jpeg" style="max-width: 200px;margin: auto 0;"/>
-  </td>
-</tr>
-<tr>
-  <td>
-    Description
-  </td>
-  <td>
-    Disfruta todos los Viernes de un 40% en entradas para la mejor cartelera de Dynamic Cine, aprovecha este beneficios exclusivo para clientes Dynamic Bank pagando con tu Tarjetas de crédito o débito.
-  </td>
-</tr>
-<tr>
-  <td>
-    Commercial terms
-  </td>
-  <td>
-    Beneficio válido para clientes Dynamic Bank al pagar con su Tarjetas de Crédito o Débito en entradas para el día Viernes con un máximo de 8 entradas diarias por cliente titular.
-  </td>
-</tr>
-<tr>
-  <td>
-    Validity
-  </td>
-  <td>
-    Del 1 de Enero al 31 de Diciembre del 2021
-  </td>
-</tr>
-<tr>
-  <td>
-    Location
-  </td>
-  <td>
-    Santiago, Chile
-  </td>
-</tr>
-</table>
+<img src="/assets/img/tutorials/how-to-create-a-site-stage/navegacion.png" style="width: 600px;" alt="After adding the two products, this is how the navigation should look like.">
 
-7. Haz click en **Guardar**.
+> Al hacer click en vista previa, nota que el menú actual solo despliega hasta 2 niveles, por lo cual no es posible ver los niveles Oro y Platino.
 
-## Paso 3: Crear Página de Contenido "Benefits"
+<img src="/assets/img/tutorials/how-to-create-a-site-stage/menu2lvl.png" style="width: 400px;" alt="Our current menu snippet only supports lists of 2 levels maximum.">
 
-Después de crear la entrada con su contenido, ahora tienes que crear una [Página de contenido](/es/platform/channels/pages.html#content-pages) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
+## Paso 3: Generar una nueva plantilla para menús de 3 niveles
 
-Para crear una Página de contenido, sigue estos pasos:
+Se tiene que crear una nueva plantilla que recorra los 3 niveles de profundidad del menú para que se despliegue correctamente en la página. Para crear la plantilla, sigue estos pasos:
 
-1. En el menú lateral, selecciona **Channels**, haz click **Sitios**.
-1. Selecciona tu sitio y haz click en **Pages**.
-1. Haz click en **+ Nueva Página**.
-
-<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;"/>
-
-4. En el modal, selecciona la opción **Página de Contenido**.
-5. Selecciona el espacio el Espacio **Bank** y Tipo **Benefits**. Define el nombre de la página y su ruta.
-6. Presiona crear.
-
-
-Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que viene de ejemplo:
-
-
-``INDEX``
+1. En el menú lateral, selecciona **Plantillas**.
+1. Haz click en **Snippets** y en la sección **Personalizado** haz click en **+**.
+1. Escribe `menu3lvl` como la Ruta.
+1. Pega el siguiente código:  
 
 ```html
-<div class="mb-5" id="benefits">
-	<div class="container">
-		<div class="row">
-			{% for entry in entries %}
-			<div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-				<a class="card shadow-sm w-100 text-decoration-none" href="{{ entry.meta.url }}" >
-					<figure class="m-0">
-						<span class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small">{{ entry.meta.category}}</span>
-						<img aria-hidden="true" src="{{ entry.fields['Cover'].url }}" alt="{{ entry.meta.title }}" class="w-100"/>
-					</figure>
-					<figcaption class="pt-4 px-4 pb-2">
-						<h4 class="h6 text-dark">{{ entry.meta.title }}</h4>
-						<p class="text-muted">{{ entry.fields['Short description'] }}</p>
-					</figcaption>
-				</a>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
-</div>
+{% assign menu = menus['main'] %}
+<ul class="nav navbar-nav" role="menu" aria-label="Main menu {{responsive}}">
+    {% assign items_to_show = menu.items | visible_items %}
+    {% for item in items_to_show %}
+    {% assign active = item.url | active_page: request.url %}
+    {% assign children_to_show = item.child_items | visible_items %}
+    {% if children_to_show.size > 0 %}
+    <li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none">
+        <a target="{{ item.target }}" class="nav-link dropdown-toggle {% for child in children_to_show %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown-{{forloop.index}}-Button{{ responsive }}" role="menuitem">
+            {{ item.label }} <span class="sr-only">dropdown</span>
+        </a>
+        <div class="submenu-{{forloop.index}} dropdown-menu" aria-labelledby="dropdown-{{forloop.index}}-Button{{responsive}}" aria-expanded="false">
+            {% for child in children_to_show %}
+            <a href="{{ child.url }}" target="{{ child.target }}" class="dropdown-item" {% if child.url == request.url %}aria-current="page"{% endif %}>{{ child.label }}</a>
+            {% assign children_to_show = child.child_items | visible_items %}
+            {% if children_to_show.size > 0 %}
+            <ul class="m-0 p-0">
+                {% for grandchild in children_to_show %}
+                <li class="list-unstyled m-0 p-0">
+                    <a href="{{ grandchild.url }}" target="{{ grandchild.target }}" class="dropdown-item small" {% if grandchild.url == request.url %}aria-current="page"{% endif %}><span class="pl-2">{{ grandchild.label }}</span></a>
+                </li>
+                {% endfor%}
+            </ul>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% else %}
+    <li class="nav-item nav-item-{{ item.parameterized_label }} {{ active }}" role="none">
+        <a href="{{ item.url }}" target="{{ item.target }}" class="nav-link" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}">{{ item.label }}</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
 ```
+> Este código recorre los items "hijos" y "nietos" del menú utilizando Liquid. 
 
-``SHOW``
- 
-```html
-<div class="mb-5 mb-md-0 pb-5 pb-md-0" id="hero">
-    <div class="bg-dark mb-5 mb-md-0 pt-5 pb-0 py-md-5">
-        <div class="pattern_hero"></div>
-        <div class="d-flex mb-0 my-md-5 hero_img">
-            <div class="row w-100 justify-content-end no-gutters">
-                <div
-                        class="col-10 col-md-7 wow slideInRight hero_img rounded-left"
-                        style="background-image: url({{ entry.fields['Cover'].url }})"
-                ></div>
-            </div>
-        </div>
-        <div class="hero_txt">
-            <div class="container">
-                <div class="row">
-                    <div
-                            class="ml-3 ml-md-0 bg-info p-5 col-10 col-md-6 rounded text-white wow slideInLeft"
-                    >
-            <span
-                    class="h6 badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm"
-            >{{ entry.meta.category}}</span
-            >
-                        <h1 class="h2 font-weight-bold mb-2">{{ entry.meta.title }}</h1>
-                        <h3 class="h6 font-weight-bold mb-0">
-                            {{ entry.fields['Short description'] }}
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container my-5 py-5">
-    <div class="row justify-content-between">
-        <div class="col-12 col-md-6">
-            <div class="col-7 d-flex-inline shadow-sm rounded px-5 py-4 mb-5">
-                <img
-                        src="{{ entry.fields['Logo'].url }}"
-                        alt="{{ entry.meta.title }}"
-                        class="w-100 my-2"
-                />
-            </div>
-            <div class="mb-4">
-                <h5 class="text-dark">Description</h5>
-                <p class="text-muted">{{ entry.fields.Description }}</p>
-            </div>
-            <div class="mb-4">
-                <h5 class="text-dark">Validity</h5>
-                <p class="text-muted">{{ entry.fields.Validity }}</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-5">
-            <div class="mb-4">
-                <h5 class="text-dark">Where</h5>
-                {{entry.fields['Location'] | static_map: '800x400', 15, 'roadmap','https://cloud.modyocdn.com/uploads/5fc8b46c-1f64-404c-86a0-3db703f76398/original/pin_dynamic.png'}}
-            </div>
-            <div class="mb-4">
-                <h5 class="text-dark">Commercial terms</h5>
-                <p class="text-muted">{{ entry.fields['Commercial terms'] }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="bg-light py-5" id="benefits">
-    <div class="container py-5">
-        <h3 class="text-dark text-center">Related benefits</h3>
-        {% assign relateds = spaces['bank'].types['benefits'].entries | paginated: 5 %}
-        <div class="py-5" id="productos">
-            <div class="row">
-                {% assign count = 0 %} {% for related in relateds %} {% if related.slug != entry.slug and 4 > count %} {% assign count = count | plus: 1 %}
-                <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-                    <a class="card shadow-sm w-100 bg-white text-decoration-none rounded overflow-hidden" href="{{ related.meta.url }}">
-                        <figure class="m-0">
-              <span
-                      class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small"
-              >{{ related.meta.category}}</span
-              >
-                            <img
-                                    aria-hidden="true"
-                                    src="{{ related.fields['Cover'].url }}"
-                                    alt="{{ related.meta.title }}"
-                                    class="w-100"
-                            />
-                        </figure>
-                        <figcaption class="pt-4 px-4 pb-2">
-                            <h4 class="h6 text-dark">{{ related.meta.title }}</h4>
-                            <p class="text-muted">{{ related.fields.Excerpt }}</p>
-                        </figcaption>
-                    </a>
-                </div>
-                {% endif %} {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-<style>
-    .hero_img {
-        height: 350px;
-    }
-    #hero .badge_category {
-        position: absolute;
-        top: 0;
-        transform: translateY(-50%);
-    }
-</style>
-```
+5. Haz click en Guardar. 
+6. En la sección General de Snippets, abre `header`.
+7. Reemplaza la línea 17 para que ahora importe el snippet nuevo:
+`{% snippet "menu3lvl" %}`
+8. Haz click en Guardar. 
+9. Haz click en modo vista previa y activa las casillas para que muestren el contenido en estado borrador. Ahora el menú debe mostrar los 3 niveles correctamente.
 
-Esta **Página de Contenido** ahora está conectada al Espacio de **Dynamic Bank**. Con ella puedes ingresar a los datos de la Entrada desde tu Sitio utilizando Liquid.
+<img src="/assets/img/tutorials/how-to-create-a-site-stage/menu3lvl.png" style="width: 400px;" alt="Our new menu snippet now supports lists of 3 levels.">
 
-Ahora que ya tenemos nuestro Espacio y Tipo asociados a un Sitio, podrás activar [Modo vista previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa haz click en el ícono del "ojo" en la barra superior de acciones:
+## Paso 4: Sincronizar los cambios a la rama principal
 
-<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+Para sincronizar tus cambios hacia la rama principal, sigue estos pasos:
 
+1. En el menú lateral, haz click en **Resumen**.
+1. Haz click en **Publicar**.
+1. Selecciona todos los archivos que se van a publicar y haz click en **Publicar**.
+1. Desde el menú lateral, expande la rama `nueva-feature` y haz click en la rama `main`.
+1. En la pantalla de **Resumen**, haz click en **Sincronizar**.
+1. Selecciona la rama `nueva-feature` para traer los cambios de esta rama. 
+1. Selecciona todos los archivos que quieres sincronizar.
+1. Haz click en **Sincronizar**.
 
 ## Conclusiones
 
-¡Felicidades! Haz finalizado el tercer curso de la serie de tutoriales de Modyo.
+¡Felicidades! Haz finalizado el curso de site stages de Modyo.
 
-En este tutorial realizaste una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregaste una capa intermedia para poder visualizar el trabajo que se desarrolló en [Modyo Content](/es/platform/content), y generaste una Página dinámicas conectada a tu Sitio en [Modyo Channels](/es/platform/channels).
+En este tutorial trabajaste usando integración y despliegue continuo (CI/CD) con site stages. Esta herramienta te permite colaborar de nuevas maneras con tu equipo sin interrumpir el flujo de la rama principal. En este módulo combinaste los siguientes elementos de [Modyo Channels](/es/platform/channels/):
+
+* [Navegación](/es/platform/channels/navigation.html)
+* [Plantillas](/es/platform/channels/templates.html)
+* [Site Stages](/es/platform/channels/sites.html#stages)
+

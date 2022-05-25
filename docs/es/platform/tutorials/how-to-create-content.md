@@ -110,7 +110,7 @@ Crea tu primer [tipo de contenido](/es/platform/content/types.html#tipos-de-cont
  </tr>
 </table>
 
-4. En la ventana de la descripción de tipo de contenido, arrastra los ítems en el siguiente orden.
+4. En la ventana de la descripción de tipo de contenido, arrastra los items en el siguiente orden.
 
 
 ![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
