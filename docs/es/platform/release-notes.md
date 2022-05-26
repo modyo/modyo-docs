@@ -6,6 +6,36 @@ search: true
 
 ## 9.2
 
+### 9.2.11 - 26 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+
+### 9.2.10 - 23 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se agrega reCAPTCHA para usuarios administradores
+* Se corrige error al actualizar el avatar de usuarios importados con información faltante
+* Se agrega expiración de sesión de administradores
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige error al sincronizar content pages migradas en sitios con stages
+* Se excluye el ID de google tag manager al crear un nuevo stage
+ 
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrigen links a documentación en segmentos
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega soporte liquid en campos de texto al crear contenido
+
+
 ### 9.2.9 - 03 de mayo de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
