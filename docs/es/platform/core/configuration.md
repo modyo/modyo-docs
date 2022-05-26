@@ -48,3 +48,7 @@ Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos 
 1. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
 
 > En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
+
+:::warning Atención
+En caso de robo o extravío de un autenticador, un usuario no podrá volver a iniciar sesión por su cuenta. Contacta a tu administrador de Modyo Platform para desvincular manualmente el autenticador a tu usuario. Para más información, ve [Eliminar autenticador para un usuario](/es/platform/core/security.html#eliminar-autenticador-para-un-usuario) 
+:::
