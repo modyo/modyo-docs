@@ -48,4 +48,3 @@ Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos 
 1. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
 
 > En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
-
