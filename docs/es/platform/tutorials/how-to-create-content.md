@@ -62,7 +62,7 @@ Crea tu primer [tipo de contenido](/es/platform/content/types.html#tipos-de-cont
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -188,7 +188,7 @@ Desde el menú principal devuelve a la sección de **Tipos**. Al igual que con e
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -372,7 +372,7 @@ Siguiendo los mismos pasos, crea el tipo para "Benefits" con los campos:
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -699,7 +699,7 @@ Crear el último tipo para los testimoniales, para este tipo vas a necesitar los
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Image
