@@ -166,6 +166,15 @@ Se arregla bug con filtro con 100 o más tags en el admin
 * Editor Froala
 
 ## 9.1
+
+### 9.1.39 - 1 de junio del 2022
+<Badge text="Core" type="core" vertical="middle"/>
+* Se corrigen rutas password y signup que respondían a otras extensiones 
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se agrega opción para deshabilitar sitemap.xml y robots.txt 
+* Se agrega timezone del sitio a site drop 
+
 ### 9.1.37 - 5 de febrero del 2022
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arregla inscripción de tarjetas con OneClick API
