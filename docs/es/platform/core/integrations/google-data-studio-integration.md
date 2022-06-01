@@ -41,31 +41,31 @@ Si es la primera vez que utilizas Data Studio, primero debes hacer esta configur
 
 Para esto selecciona los tres puntos al lado de <b>Share</b> y haz click en <b>Make a Copy</b>.
 
-<img src="/assets/img/tutorials/data-studio/1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Make a Copy button."/>
 
 Si no haz utilizado Data Studio previamente, te mostrará esta página de configuración. Seleccionamos el país, el idioma deseado y aceptamos los Términos y Condiciones.
 
-<img src="/assets/img/tutorials/data-studio/2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Complete your Account Setup window."/>
 
 Activa si quieres recibir información adicional para email.
 
-<img src="/assets/img/tutorials/data-studio/2-1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/2-1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the second step in creating the account setup."/>
 
 ## Paso 3: Enlazar Google Analytics
 
 Una vez que hayas terminado el proceso de configuración de cuenta de Google. Ve nuevamente a los tres puntos y hacemos click en <b>Make a copy</b>.
 
-<img src="/assets/img/tutorials/data-studio/2-2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/2-2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the New Data Source in the Copy this Report window."/>
 
 Dentro del primer listado haz click en el selector y haz click en <b>Create data source</b>.
 
 Para crear la fuente de datos selecciona Google Analytics y haz click en la cuenta que quieres medir y luego a <b>Connect</b>.
 
-<img src="/assets/img/tutorials/data-studio/2-3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/2-3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing Google Analytics highlighted as a connector."/>
 
 En esta vista se puede ver todas las dimensiones de datos simétricas que se van a conectar al reporte, el siguiente paso es agregarlos al reporte.
 
-<img src="/assets/img/tutorials/data-studio/3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the dimensions for the report."/>
 
 No hay necesidad de modificar algo, haz clic en <b>Add to Report</b> para continuar.
 
@@ -75,11 +75,11 @@ Esto te llevará de vuelta a la ventana de <b>Copy Report</b>.
 ## Paso 4: Enlazar Search Console
 
 Una vez que se enlace el reporte con la Cuenta de Analytics, se selecciona dos campos más <b>Search Console Data (URL)</b> y <b>Search Console Data (SiteL)</b>.
-<img src="/assets/img/tutorials/data-studio/2-4.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/2-4.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Search Console Data (URL) highlighted in the Copy this report window."/>
 
 Para ellos sigue el mismo procedimiento que el anterior, haz click en el dropdown <b>Create data source</b>, pero está vez en el listado selecciona <b>Search Console</b>.
 
-<img src="/assets/img/tutorials/data-studio/2-5.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/2-5.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing Search Console highlighted as a connector."/>
 
 Sigue el mismo proceso que antes y escoge la fuente relacionada al mismo sitio que escogiste para Google Analytics y selecciona <b>URL</b> y <b>Site</b> respectivamente.
 
@@ -87,19 +87,19 @@ Sigue el mismo proceso que antes y escoge la fuente relacionada al mismo sitio q
 
 Una vez creado todas las fuentes de datos, podrás hacer la copia del reporte, para ello, haz click en el botón <b>Copy report</b>.
 
-<img src="/assets/img/tutorials/data-studio/5.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/5.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Copy Report button."/>
 
 Lo que abrirá tu nuevo reporte en una nueva ventana.
 
-<img src="/assets/img/tutorials/data-studio/6.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/6.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the created report in a new window."/>
 
 Para terminar cambia el nombre, haciendo click sobre el nombre.
 
-<img src="/assets/img/tutorials/data-studio/7.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/7.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the report's name highlighted."/>
 
 Y finalmente lo puedes compartir con el botón <b>Share</b>.
 
-<img src="/assets/img/tutorials/data-studio/8.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/data-studio/8.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing how you can share the report with others."/>
 
 
 ## Conclusiones
