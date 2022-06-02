@@ -246,7 +246,7 @@ Para visualizar tu menú, sigue estos pasos:
 1. Abre **Snippets**, y selecciona el snippet General `menu`.
 1. Reemplaza el código por el siguiente:
 
->Este código va a tomar el menú que creaste e iterar sobre los ítems encontrados, desplegándolos utilizando una combinación de Liquid y HTML. El código aplica diferente lógica si el ítem se encuentra en primer, segundo, o tercer nivel de profundidad.
+>Este código va a tomar el menú que creaste e iterar sobre los items encontrados, desplegándolos utilizando una combinación de Liquid y HTML. El código aplica diferente lógica si el ítem se encuentra en primer, segundo, o tercer nivel de profundidad.
 
 ```html
 {% assign menu = menus['main'] %} 

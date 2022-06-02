@@ -287,9 +287,9 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 
 ### Stages
 
-Agregar stages en tu sitio te permite trabajar en nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
+Agregar stages en tu sitio te permite integrar y desplegar continuamente (CI/CD) nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán sincronizarse desde el stage `main`.
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse al stage `main`.
 
 :::warning Atención
 Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.

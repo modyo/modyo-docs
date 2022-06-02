@@ -10,7 +10,7 @@ La navegación es la forma más rápida de armar un listado de elementos para en
 
 En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Template builder](/es/platform/channels/templates.html).
 
-El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los ítems principales.
+El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los items principales.
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 
@@ -91,7 +91,7 @@ El siguiente listado describe las variables importantes para el menú:
 - menu: Esta variable toma el menú con identificador `main` dentro de Modyo Platform -> Navegación.
 - items_to_show: Toma los útems de menú que son visibles.
 - active: Utilizado para agregar una clase CSS llamada `active` en caso de que éste ítem sea activado.
-- children_to_show: Si existen hijos del ítem actual, toma los ítems en esta variable y los despliega como segundo nivel en la jerarquía del menú. 
+- children_to_show: Si existen hijos del ítem actual, toma los items en esta variable y los despliega como segundo nivel en la jerarquía del menú. 
 
 Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer click en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera: 
 
@@ -163,7 +163,7 @@ A continuación tenemos un menú que también llama a `main`, pero ahora en form
 
 ### Menu tres niveles
 
-Para poder desplegar un menú de tres niveles, se tiene que agregar otro bucle que considere si los ítems hijos contienen más ítems. Para esto, se asigna la variable `grandchildren` al final del primer bucle y este tiene que iterar sobre los ítems de los hijos (osase los ítems nietos):
+Para poder desplegar un menú de tres niveles, se tiene que agregar otro bucle que considere si los items hijos contienen más items. Para esto, se asigna la variable `grandchildren` al final del primer bucle y este tiene que iterar sobre los items de los hijos (osase los items nietos):
 
 ```html
 {% assign menu = menus['main'] %}
