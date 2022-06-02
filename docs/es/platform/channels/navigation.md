@@ -6,7 +6,7 @@ search: true
 
 La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio. 
 
-![Navigation builder](/assets/img/platform/navigation-builder.png)
+<img src="/assets/img/platform/navigation-builder.png" alt="Navigation builder module screen">
 
 En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Template builder](/es/platform/channels/templates.html).
 

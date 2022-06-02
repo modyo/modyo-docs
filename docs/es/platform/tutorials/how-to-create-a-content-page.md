@@ -12,7 +12,7 @@ El enlace entre Content y Channels, es una de las funcionalidades más important
 
 En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocamos en crear, previsualizar, y publicar una entrada de tipo **Benefits** para la marca ficticia "Dynamic Cine".
 
-<img src="/assets/img/tutorials/how-to-create-content-page/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="The final product after this tutorial"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
 
@@ -173,7 +173,7 @@ Para crear una Página de contenido, sigue estos pasos:
 1. Selecciona tu sitio y haz click en **Pages**.
 1. Haz click en **+ Nueva Página**.
 
-<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;" alt="The content page window"/>
 
 4. En el modal, selecciona la opción **Página de Contenido**.
 5. Selecciona el espacio el Espacio **Bank** y Tipo **Benefits**. Define el nombre de la página y su ruta.
@@ -321,7 +321,7 @@ Esta **Página de Contenido** ahora está conectada al Espacio de **Dynamic Bank
 
 Ahora que ya tenemos nuestro Espacio y Tipo asociados a un Sitio, podrás activar [Modo vista previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa haz click en el ícono del "ojo" en la barra superior de acciones:
 
-<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;" alt="The final product after this tutorial in preview mode"/>
 
 
 ## Conclusiones

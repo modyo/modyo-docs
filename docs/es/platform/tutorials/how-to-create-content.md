@@ -14,7 +14,7 @@ Dynamic Bank es nuestra marca ficticia que creamos para usar en todos nuestros d
 
 Una vez que completes esta serie de tutoriales, tu proyecto debería lucir así:
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Dynamic Bank homepage"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">Ver el diseño en Figma</a>
 
@@ -38,9 +38,9 @@ Para crear tu Espacio, sigue estos pasos:
 4. Haz click en **Crear**.
 
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;" alt="+ New Space button"/>
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="This image shows the Add a new Space screen"/>
 
 ## Paso 2: Crear tipo "Hero"
 
@@ -62,7 +62,7 @@ Crea tu primer [tipo de contenido](/es/platform/content/types.html#tipos-de-cont
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -112,8 +112,7 @@ Crea tu primer [tipo de contenido](/es/platform/content/types.html#tipos-de-cont
 
 4. En la ventana de la descripción de tipo de contenido, arrastra los items en el siguiente orden.
 
-
-![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png" alt="This image shows the new entity type screen for the Hero type">
 
 ## Paso 3: Crear y publicar entrada del Tipo "Hero"
 
@@ -133,7 +132,7 @@ Para crear tu primera [entrada](/es/platform/content/entries) del tipo "Hero", s
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/bank-hero.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/bank-hero.jpg" style="max-width: 200px;margin: auto 0;" alt="The cover page for this entry"/>
   </td>
  </tr>
  <tr>
@@ -172,7 +171,7 @@ Para crear tu primera [entrada](/es/platform/content/entries) del tipo "Hero", s
 
 Al terminar, selecciona **Publicar ahora** y haz click en **[Publicar](/es/platform/content/entries.html#publicar-una-entrada)**.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;" alt="The Publish Options screen"/>
 
 :::tip ¡Muy bien! Ya conseguiste crear tu primer Tipo y Entrada con éxito
 Ahora sigue los siguientes pasos para crear los Tipos y Entradas que necesitarás para futuros tutoriales.
@@ -189,7 +188,7 @@ Desde el menú principal devuelve a la sección de **Tipos**. Al igual que con e
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -241,7 +240,7 @@ Dirigete a **Entradas** y crea las siguientes entradas para el tipo "News":
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_01.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_01.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for news entries"/>
   </td>
  </tr>
  <tr>
@@ -286,7 +285,7 @@ Dirigete a **Entradas** y crea las siguientes entradas para el tipo "News":
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_02.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_02.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for news 2 entries"/>
   </td>
  </tr>
  <tr>
@@ -331,7 +330,7 @@ Dirigete a **Entradas** y crea las siguientes entradas para el tipo "News":
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_03.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_03.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for news 3 entries"/>
   </td>
  </tr>
  <tr>
@@ -373,7 +372,7 @@ Siguiendo los mismos pasos, crea el tipo para "Benefits" con los campos:
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -406,7 +405,7 @@ Las [categorías](/es/platform/content/entries.html#categorias) se utilizan para
 
 > Tu ventana de categorías debe como la siguiente imagen.
 
-![Type](/assets/img/tutorials/how-to-create-dynamicbank-content/categories.png)
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/categories.png" alt="This is how the categories screen should look like after adding the different categories.">
 
 ## Paso 8: Crear y publicar Beneficios
 
@@ -428,7 +427,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/mall.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/mall.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for mall entries">
   </td>
  </tr>
  <tr>
@@ -465,7 +464,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gourmet.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gourmet.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for gourmet entries"/>
   </td>
  </tr>
  <tr>
@@ -502,7 +501,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/plane.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/plane.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for plane entries"/>
   </td>
  </tr>
  <tr>
@@ -539,7 +538,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/kids.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/kids.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for kids entries"/>
   </td>
  </tr>
  <tr>
@@ -576,7 +575,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/pills.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/pills.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for pills entries"/>
   </td>
  </tr>
  <tr>
@@ -613,7 +612,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/cine.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/cine.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for cinema entries"/>
   </td>
  </tr>
  <tr>
@@ -650,7 +649,7 @@ En el menú principal, haz click en **Entradas**. Crea las entradas de los Benef
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gym.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gym.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for gym entries"/>
   </td>
  </tr>
  <tr>
@@ -700,7 +699,7 @@ Crear el último tipo para los testimoniales, para este tipo vas a necesitar los
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Image
@@ -744,7 +743,7 @@ Crea dos entradas con los siguientes campos:
    <b>Image</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/adriana.png" style="max-width: 100px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/adriana.png" style="max-width: 100px;margin: auto 0;" alt="Cover page for testimony entries"/>
   </td>
  </tr>
 </table>
@@ -781,7 +780,7 @@ Crea dos entradas con los siguientes campos:
    <b>Image</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/raul.png" style="max-width: 100px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/raul.png" style="max-width: 100px;margin: auto 0;" alt="Cover page for testimony 2 entries"/>
   </td>
  </tr>
 </table>

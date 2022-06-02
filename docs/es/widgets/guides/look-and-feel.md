@@ -78,7 +78,7 @@ $border-radius: 0.35rem;
 //...
 ```
 
-<img src="/assets/img/widgets/before.png" width="400">
+<img src="/assets/img/widgets/before.png" alt="Image with the CSS before the edits" width="400">
 
 Después
 
@@ -92,7 +92,7 @@ $border-radius: 1.35rem;
 //...
 ```
 
-<img src="/assets/img/widgets/after.png" width="400">
+<img src="/assets/img/widgets/after.png" alt="Image with the CSS after the edits" width="400">
 
 ### Custom
 

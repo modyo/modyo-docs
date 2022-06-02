@@ -42,7 +42,7 @@ Para poder cargar un Widget utilizando **GitHub Actions** necesitamos la _"recet
 
 Para obtener un **token** primero tenemos que crear un **API Access** a nivel de la cuenta dueña del sitio. Vamos a **Settings (1) --> API access (2) --> Nuevo API access (3) --> Crear (4)**.
 
-![1](/assets/img/widgets/ci-cd/1.png)
+<img src="/assets/img/widgets/ci-cd/1.png" alt="Image displaying where to find the API Access button in Modyo Platform ">
 
 Después de crear el API access tenemos que generar un token para el usuario que va a cargar el Widget.
 
@@ -58,11 +58,11 @@ Recomendamos crear un nuevo usuario que tenga permisos y el token para cargar y 
 4. Seleccionamos el Api access que creamos anteriormente
 5. Crear Token
 
-![2](/assets/img/widgets/ci-cd/2.png)
+<img src="/assets/img/widgets/ci-cd/2.png" alt="Image displaying where to find the Generate Access Token button in Modyo Platform ">
 
 Ahora tenemos el **token** podemos usarlo para configurar nuestro repositorio y asi la acción de GitHub tendrá acceso a éste.
 
-![2](/assets/img/widgets/ci-cd/3.png)
+<img src="/assets/img/widgets/ci-cd/3.png" alt="Image displaying your new API Access Token in Modyo Platform">
 
 ::: danger IMPORTANTE
 ¡Nunca deber compartir ni publicar el **TOKEN** o información sensible en el repositorio!

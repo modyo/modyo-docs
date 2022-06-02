@@ -4,7 +4,7 @@ search: true
 
 # Tipos de contenido
 
-![Types](/assets/img/content/types/types.jpg)
+<img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
 
 Los Tipos dentro de Modyo, son herramientas que nos permitirán estructurar plantillas de contenido para insertar dentro del servicio que estés otorgando, con más de 15 tipos de campos.
 
