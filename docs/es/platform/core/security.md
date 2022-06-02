@@ -100,6 +100,17 @@ Cada miembro del equipo podrá activar la autenticación en dos pasos desde su p
 
 Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
 
+#### Eliminar autenticador para un usuario
+
+En caso de extravío o robo del autenticador, no será posible entrar a la cuenta. En este caso, un administrador de Modyo Platform puede auxiliar eliminando el autenticador ligado al usuario siguiendo estos pasos:
+
+1. En el menú lateral, expande **Configuración** y haz click en **Equipo**.
+1. Haga click en el nombre del miembro.
+1. En la barra superior, haga click en el botón de más opciones **...** y selecciona **Eliminar autenticador**.
+
+:::warning Atención
+Si la opción de forzar autenticación está activada, la próxima vez que el usuario intente iniciar sesión tendrá que inicializar el autenticador primero. Al tener un autenticador activo, el usuario debe volver a iniciar sesión.
+:::
 
 ### Reporte de vulnerabilidades
 Si piensas que encontraste una vulnerabilidad de seguridad en Modyo, ayúdanos por favor reportando el problema. Modyo posee canales seguros y confidenciales de reporte de incidencias de seguridad por medio de nuestro [centro de soporte](https://support.modyo.com/hc/es) o del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.
