@@ -29,6 +29,17 @@ Selecciona un valor en esta opción para que la plataforma automáticamente expi
 - 1 hora
 - 1 hora 30 minutos
 - 2 horas
+- 4 horas
+- 8 horas
+- 16 horas
+- 1 días
+- 2 días
+- 3 días
+- 4 días
+- 5 días
+- 6 días
+- 1 semanas
+- 2 semanas
 
 ## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
 
