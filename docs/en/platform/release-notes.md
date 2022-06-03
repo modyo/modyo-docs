@@ -6,6 +6,36 @@ search: true
 
 ## 9.2
 
+### 9.2.11 - May 27, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+
+### 9.2.10 - May 23, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* ReCAPTCHA is added for admin users
+* Fixed bug when updating the avatar of imported users with missing information
+* Admin session expiration is added
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixed error when synchronizing migrated content pages on sites with stages
+* Google tag manager ID is excluded when creating a new stage
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Correct links to documentation in segments
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Liquid support is added in text fields when creating content
+
+
 ### 9.2.9 - May 03, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -136,6 +166,17 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+
+### 9.1.39 - June 1, 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Fixed password and signup paths that responded to other extensions 
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Added option to disable sitemap.xml and robots.txt 
+* Site timezone is added to site drop 
+
 ### 9.1.37 - February 5, 2022
 <Badge text="Core" type="core" vertical="middle"/>
 * Fixed enrollment of cards with OneClick API
