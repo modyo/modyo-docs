@@ -18,7 +18,7 @@ Necesitas tener conocimientos de:
 
 ## Paso 1: Crear sitio en Modyo
 
-Una vez instalado, verifica que todo esté bien ejecutando el comando <code>modyo-cli help</code>.
+Dentro de nuestra cuenta de Modyo lo pimero que vamos a hacer es crear nuestro nuevo sitio, para esto vamos al modulo de <b>Channels</b>, <b>Sites</b> y hacemos click en el botón <b>New Site</b> y llenamos los valores.
 
 <img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;"/>
 
