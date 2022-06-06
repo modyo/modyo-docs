@@ -6,6 +6,21 @@ search: true
 
 ## 9.2
 
+### 9.2.12 - 06 de junio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige enlace de los breadcrumbs conel scope del stage
+* Se corrige el overflow de la columna nombre en el listado de sitios
+* Se mejora la plantilla base del service worker
+* Se mejora la experiencia al generar un manifest para el PWA 
+* Se corrige listado de diferencias sin cambios despues de la creación de un stage
+
+
 ### 9.2.11 - 27 de mayo de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
