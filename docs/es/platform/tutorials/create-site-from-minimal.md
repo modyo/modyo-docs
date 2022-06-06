@@ -520,7 +520,7 @@ Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/avatar.jpg" style="max-width: 300px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/avatars.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
  <tr>
