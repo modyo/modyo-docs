@@ -6,7 +6,7 @@ search: true
 
 ## Introducción
 
-Te damos la bienvenida a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfoca en la creaciíon de un sitio utilizando los componentes ya creados del template Minimal.
+Te damos la bienvenida a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfoca en la creación de un sitio utilizando los componentes ya creados del template Minimal.
 
 ## Requisitos Previos
 
@@ -26,7 +26,7 @@ Una vez instalado, verifica que todo esté bien ejecutando el comando <code>mody
 
 Dentro del Miniaml tenemos algunos ejemplos de código pre hecho para acelerar el desarrollo. 
 
-En este caso utilizaremos el <b>Hero</b> copiando el códico con botón <b>Copy to clipboard</b> y pegando ese código en un widget HTML en el Home que llamaremos Hero.
+En este caso utilizaremos el <b>Hero</b> copiando el código con botón <b>Copy to clipboard</b> y pegando código código en un widget HTML en el Home que llamaremos Hero.
 
 <img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;"/>
 
@@ -34,15 +34,16 @@ Luego apretamos preview para ir viendo nuestro Home y repetimos el proceso con l
 
 <img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;"/>
 
-Y un sitio asi en el preview:
+Y un sitio así en el preview:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;"/>
 
 ## Paso 3: Agregar titulos
 
-Para agregarle titulos a nuestros pisos, vamos a agregar un nuevo widget de html y lo posicionaremos entre los widgets de Hero y Text and image y otro entre los widgets Text and image y Cards.
-
+Para agregar títulos a nuestros pisos, vamos a agregar un nuevo widget de html y lo posicionamos entre los widgets de Hero y Text and image y otro entre los widgets Text and image y Cards.
+ 
 En este nuevo widget pegaremos el siguiente código:
+
 ```html
 <div class="mt-5 pt-5 mb-5 text-center">
 	<h2 class="font-weight-bold">Lorem ipsum dolor sit amet</h2>
@@ -50,12 +51,12 @@ En este nuevo widget pegaremos el siguiente código:
 </div>
 ```
 
-Nuestro testimonial no tendrá titulo pero si debemos separar el piso y para esto le agregamos una clase mt-5 al primer div que tiene el widget.
+Nuestro testimonial no tendrá título pero sí debemos separar el piso y para esto le agregamos una clase mt-5 al primer div que tiene el widget.
 
 ## Paso 4: Crear Space y Types
 
-Ahora que ya tenemos un sitio con cuatro bloques, debemos llenarlo de contenido, para lo que utilizaremos la aplicación de contenidos de Modyo, generando tres Tipo de contenidos Hero, Text and image, Cards y Testimonial.
-
+Ahora que ya tenemos un sitio con cuatro bloques, debemos llenarlo de contenido, para lo que utilizaremos la aplicación de contenidos de Modyo, generando cuatro Tipos de contenidos; Hero, Text and image, Cards y Testimonial.
+ 
 Para esto vamos a ir a la cuenta de Modyo haciendo click en el logo arriba a la izquierda, luego entramos a Content Spaces, y con el botón de la derecha creamos un nuevo Space:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/space.png" style="max-width: 500px;margin: auto 0;"/>
@@ -101,7 +102,7 @@ En el cual vamos a crear cuatro Tipos:
  </tr>
 </table>
 
-Para crear el primero vamos a ir a nuestro space y hacemos click en <b>New Type</b> y seleccionamos lo que tenemos en la tabla de arriba.
+Para crear el primero vamos a ir a nuestro Space y hacemos click en <b>New Type</b> y seleccionamos lo que tenemos en la tabla de arriba.
 
 Y agregamos los campos para cada Type
 
@@ -255,11 +256,11 @@ Y agregamos los campos para cada Type
 
 ## Paso 5: Crear Contenidos
 
-Una vez creados los Types estamos listos para crear el contenido, para esto, dentro del Space hacemos click en el menu lateral <b>Entries</b> y apretamos el botón <b>New Entry</b>, seleccionamos el Type <b>Hero</b> y en Name utilizaremos un texto generico a modo de ejmplo.
-
+Una vez creados los Types estamos listos para crear el contenido, para esto, dentro del Space hacemos click en el menú lateral <b>Entries</b> y apretamos el botón <b>New Entry</b>, seleccionamos el Type <b>Hero</b> y en Name utilizaremos un texto genérico a modo de ejemplo.
+ 
 <img src="/assets/img/tutorials/create-site-from-minimal/new_hero.png" style="max-width: 500px;margin: auto 0;"/>
-
-y llenamos los siguentes campos +
+ 
+y llenamos los siguientes campos +
 
 <table>
  <tr>
@@ -308,7 +309,7 @@ y llenamos los siguentes campos +
  </tr>
 </table>
 
-Luego de tener todos los campos, guardamos, publicamos la entrada y en los puntos al lado del boton para publicar la clonamos la entrada y cambiamos los siguientes campos:
+Luego de tener todos los campos, guardamos, publicamos la entrada y en los puntos al lado del botón para publicar la clonamos la entrada y cambiamos los siguientes campos:
 
 <table>
  <tr>
@@ -335,7 +336,7 @@ Luego de tener todos los campos, guardamos, publicamos la entrada y en los punto
 
 Luego guardamos y publicamos.
 
-Una vez terminados el proceso con los dos Heros de nuestro sitio, vamos a repetir el proceso para los otros types, partiremos con el de <b>Text image block</b> y repetimos con los otros Types.
+Una vez terminado el proceso con los dos Heros de nuestro sitio, vamos a repetir el proceso para los otros types, partiremos con el de <b>Text image block</b> y repetimos con los otros Types.
 
 #### Text image block
 
@@ -444,7 +445,7 @@ Clonamos la entrada y cambiamos los campos:
  </tr>
 </table>
 
-Clonamos la entrada dos veces y cambiamos los campos:
+Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
 
 <table>
  <tr>
@@ -542,7 +543,7 @@ Clonamos la entrada dos veces y cambiamos los campos:
 
 No olvides publicar todas las entradas, y recuerda que seleccionando el checkbox puedes publicar todas al mismo tiempo con las <b>Bulk Actions</b>.
 
-Al finalizar tendremos una vista asi:
+Al finalizar tendremos una vista así:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/entries.png" style="max-width: 600px;margin: auto 0;"/>
 
@@ -658,13 +659,14 @@ Por lo que vamos a reemplazar nuestro código por el siguiente
 	</div>	
 </div>	
 ```
+
 Luego de que previsualizamos nuestros cambios y estamos conformes con el resultado publicamos nuestro Home.
 
 ## Conclusiones
 
-¡Felicidades! Ya tienes tu primer sitio creado directo desd el Minimal y conectado a Content.
-
-Encuentra mas informacion sobre Modyo:
+¡Felicidades! Ya tienes tu primer sitio creado directo desde el Minimal y conectado a Content.
+ 
+Encuentra más información sobre Modyo:
 - [Modyo Channels](/es/platform/channels)
 - [Sitios](/es/platform/sites)
 - [Pages](/es/platform/channels/pages)
