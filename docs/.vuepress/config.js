@@ -75,6 +75,7 @@ module.exports = {
               path: "/en/platform/tutorials/",
               collapsable: true,
               children: [
+                "/en/platform/tutorials/create-site-from-minimal",
                 "/en/platform/tutorials/how-to-create-content",
                 "/en/platform/tutorials/how-to-create-home",
                 "/en/platform/tutorials/how-to-create-a-content-page",
@@ -274,6 +275,7 @@ module.exports = {
               path: "/es/platform/tutorials/",
               collapsable: true,
               children: [
+                "/es/platform/tutorials/create-site-from-minimal",
                 "/es/platform/tutorials/how-to-create-content",
                 "/es/platform/tutorials/how-to-create-home",
                 "/es/platform/tutorials/how-to-create-a-content-page",

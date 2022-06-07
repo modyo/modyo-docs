@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Crear un Sitio con el Template Minimal
+# Crear un sitio utilizando el template minimal
 
 ## Introducción
 
-Te damos la bienvenida a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfoca en la creación de un sitio utilizando los componentes que Modyo ofrece del template Minimal.
+Te damos la bienvenida a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfoca en la creación de un sitio utilizando los componentes ya creados del template Minimal.
 
 ## Requisitos Previos
 
@@ -23,7 +23,7 @@ Dentro de nuestra cuenta de Modyo lo pimero que vamos a hacer es crear nuestro n
 1. Desde el menu lateral, expande <b>Channels</b> y haz click en <b>Sites</b>. 
 2. Haz click en <b>+ New Site</b> y llenamos los valores:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the end result from this tutorial."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;"/>
 
 ## Paso 2: Copiar código de ejemplos en el Home 
 
@@ -31,15 +31,15 @@ Dentro del Minimal tenemos algunos ejemplos de código pre hecho para acelerar e
 
 En este caso utilizaremos el <b>Hero</b> copiando el código con botón <b>Copy to clipboard</b> y pegando código código en un widget HTML en el Home que llamaremos Hero.
 
-<img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the Hero html code."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;"/>
 
-Luego apretamos preview para ir viendo nuestro Home y repetimos el proceso con las los ejemplos de Text and Image block, Cards, y Testimonial, lo que nos dará como resultado 4 widgets de esta manera:
+Luego apretamos preview para ir viendo nuestro Home y repetimos el proceso con las los ejemplos de Text and image block, Cards y Testimonial, lo que nos dará como resultado 4 widgets de esta manera:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the four widgets for our site."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;"/>
 
 Y un sitio así en el preview:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the preview of the site."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;"/>
 
 ## Paso 3: Agregar titulos
 
@@ -58,15 +58,13 @@ Nuestro testimonial no tendrá título pero sí debemos separar el piso y para e
 
 ## Paso 4: Crear Space y Types
 
-Ahora que ya tenemos un sitio con cuatro bloques, debemos llenarlos de contenido, para lo que utilizaremos la aplicación de contenidos de Modyo, generando cuatro Tipos de contenidos; Hero, Text and image, Cards, y Testimonial, siguiendo estos pasos:
+Ahora que ya tenemos un sitio con cuatro bloques, debemos llenarlo de contenido, para lo que utilizaremos la aplicación de contenidos de Modyo, generando cuatro Tipos de contenidos; Hero, Text and image, Cards y Testimonial.
  
-1. Desde el menú lateral, haz click en el logo para regresar al menú principal.
-1. Expande **Content**, y haz click en **Espacios**.
-1. Haz click en **+ Nuevo Espacio** y llena los siguientes valores:
+Para esto vamos a ir a la cuenta de Modyo haciendo click en el logo arriba a la izquierda, luego entramos a Content Spaces, y con el botón de la derecha creamos un nuevo Space:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/space.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the values for the new space."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/space.png" style="max-width: 500px;margin: auto 0;"/>
 
-En el cual vamos a crear cuatro Tipos de contenido:
+En el cual vamos a crear cuatro Tipos:
 
 <table>
  <tr>
@@ -107,13 +105,9 @@ En el cual vamos a crear cuatro Tipos de contenido:
  </tr>
 </table>
 
-Para crear un tipo de contenido, sigue estos pasos:
+Para crear el primero vamos a ir a nuestro Space y hacemos click en <b>New Type</b> y seleccionamos lo que tenemos en la tabla de arriba.
 
-1. Dentro de nuestro Espacio, en el menú lateral, haz click en **Tipos**.
-1. Haz click en <b>+ Nuevo Tipo</b> y llena los valores del Nombre, Identificador, y Cardinalidad.
-1. Repite estos pasos para el resto de los Tipos de contenido.
-
-Luego agregamos los campos para cada Tipo:
+Y agregamos los campos para cada Type
 
 #### Hero 
 
@@ -265,14 +259,11 @@ Luego agregamos los campos para cada Tipo:
 
 ## Paso 5: Crear Contenidos
 
-Una vez creados los Tipos de contenido, estamos listos para crear el contenido.
-
-1. Dentro del Espacio, en el menú lateral, haz click en <b>Entradas</b>.
-1. Haz click en <b>+ Nueva Entrada</b>, selecciona el Tipo <b>Hero</b> y para el nombre utilizaremos un texto genérico a modo de ejemplo.
+Una vez creados los Types estamos listos para crear el contenido, para esto, dentro del Space hacemos click en el menú lateral <b>Entries</b> y apretamos el botón <b>New Entry</b>, seleccionamos el Type <b>Hero</b> y en Name utilizaremos un texto genérico a modo de ejemplo.
  
-<img src="/assets/img/tutorials/create-site-from-minimal/new_hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the New Entry window."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/new_hero.png" style="max-width: 500px;margin: auto 0;"/>
  
-y llenamos los siguientes campos con:
+y llenamos los siguientes campos +
 
 <table>
  <tr>
@@ -292,7 +283,7 @@ y llenamos los siguientes campos con:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/hero_01.jpg" style="max-width: 300px;margin: auto 0;" alt="Hero 01 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/hero_01.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
  <tr>
@@ -321,7 +312,7 @@ y llenamos los siguientes campos con:
  </tr>
 </table>
 
-Luego de tener los campos listos, guardamos, y publicamos la entrada. Ahora clona la entrada utilizando los puntos al lado del botón de publicar y cambiamos los siguientes campos:
+Luego de tener todos los campos, guardamos, publicamos la entrada y en los puntos al lado del botón para publicar la clonamos la entrada y cambiamos los siguientes campos:
 
 <table>
  <tr>
@@ -341,14 +332,14 @@ Luego de tener los campos listos, guardamos, y publicamos la entrada. Ahora clon
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/hero_02.jpg" style="max-width: 300px;margin: auto 0;" alt="Hero 02 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/hero_02.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
 </table>
 
 Luego guardamos y publicamos.
 
-Una vez terminado el proceso con los dos Heros de nuestro sitio, vamos a repetir el proceso para los otros tipos de contenido, partiremos con el de <b>Text image block</b>:
+Una vez terminado el proceso con los dos Heros de nuestro sitio, vamos a repetir el proceso para los otros types, partiremos con el de <b>Text image block</b> y repetimos con los otros Types.
 
 #### Text image block
 
@@ -370,7 +361,7 @@ Una vez terminado el proceso con los dos Heros de nuestro sitio, vamos a repetir
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/img_01.jpg" style="max-width: 300px;margin: auto 0;" alt="Img 01 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/img_01.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
  <tr>
@@ -403,7 +394,7 @@ Clonamos la entrada y cambiamos los campos:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/img_02.jpg" style="max-width: 300px;margin: auto 0;" alt="Img 02 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/img_02.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
 </table>
@@ -428,7 +419,7 @@ Clonamos la entrada y cambiamos los campos:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/card_01.jpg" style="max-width: 300px;margin: auto 0;" alt="Card 01 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/card_01.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
  <tr>
@@ -477,7 +468,7 @@ Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/card_02.jpg" style="max-width: 300px;margin: auto 0;" alt="Card 02 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/card_02.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
 </table>
@@ -499,7 +490,7 @@ Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/card_03.jpg" style="max-width: 300px;margin: auto 0;" alt="Card 03 alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/card_03.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
 </table>
@@ -532,7 +523,7 @@ Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
    Image
   </td>
   <td>
-   <img src="/assets/img/tutorials/create-site-from-minimal/avatars.jpg" style="max-width: 300px;margin: auto 0;" alt="Avatar alt"/>
+   <img src="/assets/img/tutorials/create-site-from-minimal/avatars.jpg" style="max-width: 300px;margin: auto 0;"/>
   </td>
  </tr>
  <tr>
@@ -557,16 +548,13 @@ No olvides publicar todas las entradas, y recuerda que seleccionando el checkbox
 
 Al finalizar tendremos una vista así:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/entries.png" style="max-width: 600px;margin: auto 0;" alt="This image shows the Entries window with all the entries created during this tutorial."/>
+<img src="/assets/img/tutorials/create-site-from-minimal/entries.png" style="max-width: 600px;margin: auto 0;"/>
 
-## Paso 6: Conectar nuestro Sitio con Content
+## Paso 6: Connectar nuestro Sitio con Content
 
-Liquid es un lenguaje para accesar el contenido que haz creado en tus Espacios y desplegarlo en tus Sitios. Para realizar esta conexión, sigue estos pasos:
+Para realizar esta parte vamos a volver a nuestro sitio y hacer llamados con liquid hacia nuestro contenido.
 
-1. Desde el menú lateral, haz click en el logo para regresar al menú principal.
-1. Expande **Channels**, y haz click en **Sitios**.
-1. Selecciona tu sitio y luego haz click en Home.
-1. Haz click en el widget Hero y reemplaza el código:
+Por lo que vamos a reemplazar nuestro código por el siguiente
 
 #### Hero
 
@@ -602,8 +590,6 @@ Liquid es un lenguaje para accesar el contenido que haz creado en tus Espacios y
 </div>
 ```
 
->El código Liquid, denotado por {{ }} o {% %}, manda a llamar las entradas hero realizadas previamente en Content. Luego abre un ciclo en donde despliega los campos del Hero junto con HTML para generar un efecto 'carrusel'.
-
 #### Text and image
 
 ```html
@@ -624,8 +610,6 @@ Liquid es un lenguaje para accesar el contenido que haz creado en tus Espacios y
 	{% endfor %}
 </div>
 ```
-
->Este código manda a llamar las entradas de tipo 'text-image-block', itera sobre ellas utilizando un for y las despliega de forma distinta dependiendo si es texto o imagen usando un if. 
 
 #### Cards
 
@@ -648,9 +632,6 @@ Liquid es un lenguaje para accesar el contenido que haz creado en tus Espacios y
 	{% endfor %}
 </div>
 ```
-
->Este código genera un efecto de Cards, desplegando la información de las entradas creadas previamente. 
-
 #### Testimony
 
 ```html
@@ -682,17 +663,16 @@ Liquid es un lenguaje para accesar el contenido que haz creado en tus Espacios y
 </div>	
 ```
 
-Luego de que previsualizamos nuestros cambios y estamos conformes con el resultado, el siguiente paso será publicar nuestro Home.
+Luego de que previsualizamos nuestros cambios y estamos conformes con el resultado publicamos nuestro Home.
 
 ## Conclusiones
 
-¡Felicidades! Haz creado tu primer sitio creado directo desde la plantilla Minimal y conectado a Content utilizando Liquid.
+¡Felicidades! Haz creado tu primer sitio creado directo desde la plantilla Minimal y conectado a Content.
  
 Encuentra más información sobre Modyo:
 - [Modyo Channels](/es/platform/channels)
 - [Sitios](/es/platform/sites)
 - [Pages](/es/platform/channels/pages)
-- [Liquid](/es/platform/channels/liquid-markup)
 - [Modyo Content](/es/platform/content)
 - [Espacios](/es/platform/content/spaces)
 - [Tipos de contenido](/es/platform/types)
