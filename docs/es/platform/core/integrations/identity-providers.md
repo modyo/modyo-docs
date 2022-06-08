@@ -13,7 +13,7 @@ Actualmente la plataforma es compatible con:
 - [LDAP](#ldap)
 - [SAML](#saml)
 - [OAuth2](#oauth2)
-- [OpenID Connect](#oidc)
+- [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
 - [Azure Active Directory](#azure-active-directory)
 
@@ -108,6 +108,12 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 ## OpenID Connect
 
 OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
+
+Los campos requeridos por Modyo para una integración son:
+
+- **first_name**
+- **username**
+- **email**
 
 :::warning Atención
 Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3, y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
