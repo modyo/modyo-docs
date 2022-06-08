@@ -31,7 +31,7 @@ Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
 1. Haz click en **Añadir**.
 
-<img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
 ## Facebook
 

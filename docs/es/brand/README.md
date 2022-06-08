@@ -8,4 +8,4 @@ Bienvenido a la guía oficial de la marca Modyo. A continuación presentamos los
 
 Si tiene preguntas sobre cómo usar correctamente la marca Modyo, no dude en [contactarnos](https://support.modyo.com/hc/es-cl)
 
-<img src='/assets/img/m.png' style="width:300px;"/>
+<img src='/assets/img/m.png' alt="m" style="width:300px;"/>

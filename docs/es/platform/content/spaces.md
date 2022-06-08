@@ -34,7 +34,7 @@ Más adelante, en la configuración podrás definir otros idiomas secundarios pa
 
 En este caso, la configuración de Espacios sirve para cambiar las características generales, idioma, seguridad, miembros del equipo de trabajo y las reglas de revisión y publicación.
 
-<img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300">
+<img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300" alt="Space setting UI">
 
 ### General
 
@@ -60,11 +60,11 @@ Esta opción es irreversible, por lo que debes estar completamente seguro al eje
 
 Modyo permite el cambio de idiomas y léxicos según el país en que se necesite. El cambio es útil en el caso de que se necesite trabajar con contenido personalizado y usuarios con distintos lenguajes.
 
-<img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600">
+<img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600" alt="The Locales UI">
 
 El idioma por defecto de un espacio se define al momento de crear el espacio y no puede ser modificado, pero en esta sección puedes añadir cuantos idiomas secundarios necesites. Sólo debes seleccionar uno de la lista, añadirlo y guardar los cambios. Luego de añadir un idioma secundario, cuando modifiques una entrada, notarás que aparecerá un selector de idioma junto al título de la página.
 
-<img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
+<img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350" alt="Select a language dropdown inside Entries">
 
 :::tip Tip
 Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes: [API pública](/es/platform/content/public-api-reference.html#filtros), [SDK de Javascript](/es/platform/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/es/platform/content/public-api-reference.html#filtrar-entradas)
@@ -74,7 +74,7 @@ Puedes aprender como seleccionar uno de los idiomas disponibles de una entrada e
 
 El caché es una herramienta que permite reducir la cantidad de requests que llegan a los servidores de aplicación, mejorando el performance y disminuyendo los tiempos de respuesta. En esta sección, puedes habilitar el caché para la API pública de contenido del espacio, permitiendo que el contenido quede cacheado hasta 5 minutos (300 segundos).
 
-<img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600">
+<img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600" alt="An image with the cache options available.">
 
 :::warning Atención
 Debes tener en consideración que al habilitar esta opción, los cambios en tu contenido serán visibles en intervalos del tiempo que elijas en esta opción, por ejemplo, si usas 5 minutos, al publicar el contenido con título "A", y luego publicas el mismo contenido con título "A+1", por 5 minutos verás el contenido con el título "A" hasta que el caché inicial quede invalidado.
@@ -90,7 +90,7 @@ Modyo, como forma de transmisión segura de datos, permite habilitar CORS para q
 
 Para ello, también es necesario especificar el dominio desde dónde será accedida la información. Existe la posibilidad de permitir todos los orígenes pero no es la opción más recomendable.
 
-<img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" alt="An image with the CORS options available.">
 
 Al habilitarse CORS, se producen los siguientes cambios dentro de la API:
 
@@ -115,14 +115,14 @@ Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo s
 
 El contenido que se publica en cada una de las plataformas debe ser de buena calidad y para ello, Modyo usa la Revisión en Equipo para confirmar y corregir los contenidos que se envían a través de la API.
 
-<img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
+<img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600" alt="An image with the Team Review options available.">
 
 
 Para más información sobre cómo configurar esta opción, revisa la sección de [Team Review](/es/platform/core/key-concepts.html)
 
 ### Miembros del Equipo
 
-<img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600">
+<img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600" alt="An image with the Team Members UI.">
 
 Para conformar el grupo de trabajo, en la plataforma puedes seleccionar los miembros que trabajarán en este espacio y que tendrán acceso a la escritura, revisión y/o publicación.
 

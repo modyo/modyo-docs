@@ -10,7 +10,7 @@ Hola, a continuación revisaremos diversos contenidos asociados al uso de la mar
 
 El logotipo de Modyo cuenta con la palabra escrita del nombre de la empresa y un símbolo en color verde, ambos reconocibles al instante. Por esto es tan importante usar el logotipo exactamente como se especifica en estas pautas. [Descargar.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
 
-<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
+<img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" alt="Modyo" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
 
 ### Aplicación en positivo
 
@@ -105,13 +105,13 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 <table>
 <tr>
 <td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/e08b173b-b3eb-4144-a5f3-da55eec550df/original/incorrect_logo_1.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/e08b173b-b3eb-4144-a5f3-da55eec550df/original/incorrect_logo_1.svg" alt="Incorrect 1">
 </td>
 <td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/fd2e39bf-c82d-4a27-ad2b-57d21ece288c/original/incorrect_logo_2.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/fd2e39bf-c82d-4a27-ad2b-57d21ece288c/original/incorrect_logo_2.svg" alt="Incorrect 2">
 </td>
 <td style="width:30%;">
-<img src="https://cloud.modyocdn.com/uploads/c8762be2-b85a-4eff-be55-f80e79274bbf/original/incorrect_logo_3.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/c8762be2-b85a-4eff-be55-f80e79274bbf/original/incorrect_logo_3.svg" alt="Incorrect 3">
 </td>
 </tr>
 <tr>
@@ -127,13 +127,13 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/b07a3a1d-ea57-4a60-93e1-7846c7819938/original/incorrect_logo_4.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/b07a3a1d-ea57-4a60-93e1-7846c7819938/original/incorrect_logo_4.svg" alt="Incorrect 4">
 </td>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/a397d677-b3c1-4a8e-bf7c-353e7c04d298/original/incorrect_logo_5.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/a397d677-b3c1-4a8e-bf7c-353e7c04d298/original/incorrect_logo_5.svg" alt="Incorrect 5">
 </td>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/8003c329-6b87-4dbe-954e-ae68d0867443/original/incorrect_logo_6.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/8003c329-6b87-4dbe-954e-ae68d0867443/original/incorrect_logo_6.svg" alt="Incorrect 6">
 </td>
 </tr>
 <tr>
@@ -149,13 +149,13 @@ Es importante que la apariencia del logotipo se mantenga constante. No debe mali
 </tr>
 <tr>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/e2c52d29-253e-423f-8f4e-f047adf16d36/original/incorrect_logo_7.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/e2c52d29-253e-423f-8f4e-f047adf16d36/original/incorrect_logo_7.svg" alt="Incorrect 7">
 </td>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/29c773ca-ee01-4c67-89ff-c5f31fac39a0/original/incorrect_logo_8.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/29c773ca-ee01-4c67-89ff-c5f31fac39a0/original/incorrect_logo_8.svg" alt="Incorrect 8">
 </td>
 <td>
-<img src="https://cloud.modyocdn.com/uploads/0952f110-6319-41a8-a24d-4f151bcda5af/original/incorrect_logo_9.svg" alt="">
+<img src="https://cloud.modyocdn.com/uploads/0952f110-6319-41a8-a24d-4f151bcda5af/original/incorrect_logo_9.svg" alt="Incorrect 9">
 </td>
 </tr>
 <tr>

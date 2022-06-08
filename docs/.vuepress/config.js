@@ -20,7 +20,7 @@ module.exports = {
       'code-switcher',
       {
         groups: {
-          default: { lq: 'Liquid', js: 'JavaScript', curl: 'shell' },
+          default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
         },
       },
     ],
@@ -78,6 +78,7 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-content",
                 "/en/platform/tutorials/how-to-create-home",
                 "/en/platform/tutorials/how-to-create-a-content-page",
+                "/en/platform/tutorials/how-to-create-a-site-stage",
                 "/en/platform/tutorials/how-to-create-private-site",
                 "/en/platform/tutorials/how-to-create-a-cli-widget",
                 "/en/platform/tutorials/how-to-create-a-menu",
@@ -277,6 +278,7 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-content",
                 "/es/platform/tutorials/how-to-create-home",
                 "/es/platform/tutorials/how-to-create-a-content-page",
+                "/es/platform/tutorials/how-to-create-a-site-stage",
                 "/es/platform/tutorials/how-to-create-private-site",
                 "/es/platform/tutorials/how-to-create-a-cli-widget",
                 "/es/platform/tutorials/how-to-create-a-menu",

@@ -10,7 +10,7 @@ Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
-![Widget Builder](/assets/img/platform/widget-builder.png) 
+<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module"> 
 
 En la barra superior se encuentran las siguientes secciones:
 

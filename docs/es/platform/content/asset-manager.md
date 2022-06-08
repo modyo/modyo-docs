@@ -13,24 +13,24 @@ Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera con
 
 #### Rich Text
 
-<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0" alt="Add image button inside a rich text textbox">
 
 #### Multiline
 
-<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0" alt="Asset manager button inside a multiline box">
 
 #### Selector de Assets
 
-<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0" alt="Asset list button">
 
 La segunda es directamente a través de la herramienta del gestor de archivos que se encuentra en la sección Content.
 
-<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0" alt="Asset manager from the main menu.">
 
 
 ## Acerca de la interfaz
 
-<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" alt="Asset manager UI">
 
 La primera interfaz es una lista de todos los archivos que existen dentro de la plataforma.
 
@@ -38,7 +38,7 @@ En la parte superior derecha de la pantalla puedes ver el porcentaje de espacio 
 
 El listado cuenta con tres tipos de filtros que te serán útiles para encontrar un archivo.
 
-<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0" alt="The three filters inside asset manager">
 
 **Extensiones**: Con este filtro puedes ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma).
 
@@ -51,7 +51,7 @@ Así, aparecerá apenas selecciones el primer elemento (haciendo click en el che
 
 Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
 
-<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0" alt="Apply tags to assets to identify them">
 
 :::
 
@@ -63,7 +63,7 @@ Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predetermi
 
 Para esta vista, las columnas son:
 
-<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0" alt="The available columns when searching for an asset.">
 
 Las que poseen flechas pueden ser ordenadas de manera ascendente y descendente. La opción de ordenamiento  **predeterminada** es la fecha de actualización de los archivos.
 
@@ -84,7 +84,7 @@ Finalmente, en la esquina inferior derecha, puedes encontrar la paginación de t
 
 ## Propiedades de los archivos
 
-<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Edit Asset UI.">
 
 La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
 
@@ -94,7 +94,7 @@ Para acceder a las propiedades de los archivos, se debe hacer click en el nombre
 
 ## Editar un archivo
 
-<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0" alt="The URL and Liquid Tag assigned to the asset.">
 
 En la interfaz de edición de las propiedades del archivo, puedes ver ciertos campos:
 
@@ -126,11 +126,11 @@ Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer 
 
 Si quieres volver a subir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, muestra una nueva ventana donde puedes seleccionar un archivo nuevo.
 
-<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0" alt="Re-upload an image using the reupload button.">
 
 ## Editar una imagen
 
-<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="You can also perform small changes to images using Asset Manager.">
 
 Para facilitar el manejo de imágenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños de manera online.
 
@@ -165,7 +165,7 @@ Esta acción es irreversible. Si este archivo se encuentra vinculado a un conten
 
 ## Subir un archivo
 
-<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Upload Image UI">
 
 Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
