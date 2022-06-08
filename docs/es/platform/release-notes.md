@@ -5,6 +5,137 @@ search: true
 # Notas del release
 
 ## 9.2
+
+### 9.2.12 - 06 de junio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige enlace de los breadcrumbs conel scope del stage
+* Se corrige el overflow de la columna nombre en el listado de sitios
+* Se mejora la plantilla base del service worker
+* Se mejora la experiencia al generar un manifest para el PWA 
+* Se corrige listado de diferencias sin cambios despues de la creación de un stage
+
+
+### 9.2.11 - 27 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+
+### 9.2.10 - 23 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se agrega reCAPTCHA para usuarios administradores
+* Se corrige error al actualizar el avatar de usuarios importados con información faltante
+* Se agrega expiración de sesión de administradores
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige error al sincronizar content pages migradas en sitios con stages
+* Se excluye el ID de google tag manager al crear un nuevo stage
+ 
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrigen links a documentación en segmentos
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega soporte liquid en campos de texto al crear contenido
+
+
+### 9.2.9 - 03 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se controla error 500 a nivel de aplicación al usar verbos HTTP inválidos
+* Se parámetro para tolerancia en segundos para access token (OIDC access token clock skew)
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige problema al publicar árbol de páginas con 3 niveles
+* Se corrige problema con url full de entradas por defecto
+* Se corrige escapado de meta tags rompe interpolación con Liquid
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se incorpora el uso de reCAPTCHA para Realms 
+
+
+### 9.2.8 - 8 de abril 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en experiencia con Service Worker
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Colecciones se pueden referenciar usando brackets en Liquid SDK
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se arregla problema con el envío de campañas
+
+### 9.2.7 - 10 de marzo de 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Actualizar version liquidjs
+* Actualizar nombre de categorias no se refleja en entries
+* Atributos del request drop no considera el slug de la entry en content pages
+* Migración IntegrationsToIdps falla por nuevo atributo openidc_userinfo_enabled
+* Cuentas duplicadas en onboarding
+* Direct authentication en Realm con Google lleva a error 404
+* Implementar medio de pago Cybersource 
+* Agregar tags en New Asset modal
+
+
+### 9.2.6 - 22 de febrero de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Nuevos correos transaccionales de la plataforma
+* User Info opcional en integración OIDC
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se arregla a drop entry.meta.url
+* Se arregla eliminación de entradas enlazadas
+* Se realizan mejoras en editor multilínea
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se arregla problema al cambiar realm de un site
+* Se arregla problema con editor de campañas
+* Se arregla problema con cuentas con sitio por defecto sin realm
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se redirigen rutas terminadas en slash para mejorar SEO
+* Se previene reflected XSS en drop de request
+* Se previene contaminación con rutas inválidas
+
+### 9.2.5 - 27 de enero de 2022
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se incorporan Content Pages
+* Se arreglan problemas con barra de preview
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Mejoras y correcciones en editor de Entries
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se agrega soporte de SCIM para usuarios administradores
+
 ### 9.2.4 - 30 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arregla problema que contaminaba el caché al realizar previsualizaciones
