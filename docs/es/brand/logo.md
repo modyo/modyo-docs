@@ -8,7 +8,7 @@ Hola, a continuación revisaremos diversos contenidos asociados al uso de la mar
 
 ## Logotipo
 
-El logotipo de Modyo cuenta con la palabra escrita del nombre de la empresa y un símbolo en color verde, ambos reconocibles al instante. Por esto es tan importante usar el logotipo exactamente como se especifica en estas pautas. [Descargar.](https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg)
+El logotipo de Modyo cuenta con la palabra escrita del nombre de la empresa y un símbolo en color verde, ambos reconocibles al instante. Por esto es tan importante usar el logotipo exactamente como se especifica en estas pautas. [Descargar.](/assets/img/logo/modyo-logos.zip)
 
 <img src="https://cloud.modyocdn.com/uploads/3e33d46c-1555-4f58-a218-6f2b5d80b4cd/original/modyo.svg" alt="Modyo" style="width:70%; height:auto;margin-left: 0;max-width: 400px;">
 
