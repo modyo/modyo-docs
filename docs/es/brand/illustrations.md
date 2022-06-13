@@ -8,7 +8,7 @@ Las Ilustraciones tienen como objetivo comunicar, transmitir ideas, sensaciones 
 
 Pueden tener diferentes objetivos, ya sea como apoyo de un texto, narrativa de una situación o la simbología de un concepto.
 
-<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/brand/illustrations.jpg" alt="illustration" style="margin: 40px auto; width: 400px; display: block;">
 
 Las ilustraciones están hechas para usarlas sobre fondo blanco y oscuro. Se recomienda usar los tonos especificados en la guía de marca.
 
@@ -21,10 +21,10 @@ Son ilustraciones que cuentan historias y conceptos complejos, los cuales genera
 <table>
 <tr>
 <td style="width: 50%;">
-<img src="/assets/img/brand/ruta.jpg">
+<img src="/assets/img/brand/ruta.jpg" alt="ruta">
 </td>
 <td style="width: 50%;">
-<img src="/assets/img/brand/candado.jpg">
+<img src="/assets/img/brand/candado.jpg" alt="candado">
 </td>
 </tr>
 <tr>
@@ -44,10 +44,10 @@ Los Spot Hero son versiones ligeramente simplificadas de un Hero, tanto visual c
 <table>
 <tr>
 <td style="width: 50%;">
-<img src="/assets/img/brand/pago.png">
+<img src="/assets/img/brand/pago.png" alt="pago">
 </td>
 <td style="width: 50%;">
-<img src="/assets/img/brand/unificado.png">
+<img src="/assets/img/brand/unificado.png" alt="unified">
 </td>
 </tr>
 <tr>
@@ -66,7 +66,7 @@ Los elementos de apoyo son generalmente personajes o cosas que, tal cómo dice s
 
 A diferencia del Hero y el spot Hero, estos elementos no representan una idea específica. Son utilizados generalmente para dirigir la mirada y resaltar el contenido sin quitar protagonismo a lo que se quiere comunicar.
 
-<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" alt="support element" style="margin-left: 0;">
 
 ## Color
 
@@ -105,17 +105,17 @@ El blanco es un color que siempre se utiliza en caras y manos.
 </tr>
 </table>
 
-<img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
+<img src="/assets/img/brand/webinar.png" alt="webinar" style="margin-left: 0;">
 
 De ser necesario, el color se utiliza para reforzar ideas, dirigir la mirada a puntos específicos, demostrar diferencia en ciertos elementos y enfatizar la idea de superposición en uno o más elementos.
 
 <table>
 <tr>
 <td style="width: 50%;">
-<img src="/assets/img/brand/modular.png">
+<img src="/assets/img/brand/modular.png" alt="modular">
 </td>
 <td style="width: 50%;">
-<img src="/assets/img/brand/exito.png">
+<img src="/assets/img/brand/exito.png" alt="exito">
 </td>
 </tr>
 <tr>
@@ -142,24 +142,24 @@ Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la 
 
 #### Horizontal
 
-<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;">
+<img src="/assets/img/brand/horizontal.png" alt="Horizontal" style="margin-left: 0;">
 
 #### Vertical
 
-<img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
+<img src="/assets/img/brand/vertical.png" alt="Vertical" style="margin-left: 0;">
 
 ### Uso indebido de ilustraciones
 
 <table>
 <tr>
 <td style="width:30%;">
-<img src="/assets/img/brand/error6.png">
+<img src="/assets/img/brand/error6.png" alt="error6">
 </td>
 <td style="width:30%;">
-<img src="/assets/img/brand/error2.png">
+<img src="/assets/img/brand/error2.png" alt="error2">
 </td>
 <td style="width:30%;">
-<img src="/assets/img/brand/error3.png">
+<img src="/assets/img/brand/error3.png" alt="error3">
 </td>
 </tr>
 <tr>
@@ -174,13 +174,13 @@ Se debe respetar un margen adecuado de al menos 28 px/1 cm alrededor de toda la 
 </tr>
 <tr>
 <td>
-<img src="/assets/img/brand/error4.png">
+<img src="/assets/img/brand/error4.png" alt="error4">
 </td>
 <td>
-<img src="/assets/img/brand/error1.png">
+<img src="/assets/img/brand/error1.png" alt="error1">
 </td>
 <td>
-<img src="/assets/img/brand/error5.png">
+<img src="/assets/img/brand/error5.png" alt="error5">
 </td>
 </tr>
 <tr>

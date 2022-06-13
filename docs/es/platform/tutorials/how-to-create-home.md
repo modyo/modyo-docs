@@ -62,18 +62,18 @@ Para hacer el cambio a variables css, sigue estos pasos:
 #### Colores:
 
 ```liquid
-{% assign primary = rgba(240, 90, 162, 1) %}
-{% assign secondary = rgba(98, 125, 229, 1) %}
-{% assign light = rgba(250, 250, 250, 1) %}
-{% assign info = rgba(121, 133, 178, 1) %}
-{% assign dark = rgba(56, 68, 112, 1) %}
+{% assign primary = 'rgba(240, 90, 162, 1)' %}
+{% assign secondary = 'rgba(98, 125, 229, 1)' %}
+{% assign light = 'rgba(250, 250, 250, 1)' %}
+{% assign info = 'rgba(121, 133, 178, 1)' %}
+{% assign dark = 'rgba(56, 68, 112, 1)' %}
 ```
 
 #### Botones:
 
 ```liquid
-{% assign button_radius = 100px %}
-{% assign button_font_weight = 600 %}
+{% assign button_radius = '100px' %}
+{% assign button_font_weight = '600' %}
 ```
 
 Para revisar el cambio que acabas de realizar, haz click en ícono de un "ojo" para activar el [modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa).

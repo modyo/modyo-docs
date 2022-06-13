@@ -6,11 +6,11 @@ search: true
 
 La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio. 
 
-![Navigation builder](/assets/img/platform/navigation-builder.png)
+<img src="/assets/img/platform/navigation-builder.png" alt="Navigation builder module screen">
 
 En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Template builder](/es/platform/channels/templates.html).
 
-El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los ítems principales.
+El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los items principales.
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 
@@ -80,4 +80,123 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 - **Privado**: Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
 
+## Ejemplos de Menu
 
+El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explica las partes más importantes de este snippet y como se puede extender a más funcionalidades.
+
+Las primeras lineas encapsuladas por `{{ }}` o `{% %}` pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú. 
+
+El siguiente listado describe las variables importantes para el menú:
+
+- menu: Esta variable toma el menú con identificador `main` dentro de Modyo Platform -> Navegación.
+- items_to_show: Toma los útems de menú que son visibles.
+- active: Utilizado para agregar una clase CSS llamada `active` en caso de que éste ítem sea activado.
+- children_to_show: Si existen hijos del ítem actual, toma los items en esta variable y los despliega como segundo nivel en la jerarquía del menú. 
+
+Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer click en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera: 
+
+`menu`
+
+```html
+{% assign menu = menus['main'] %}
+<ul class="nav navbar-nav" role="menu" aria-label="Main menu {{responsive}}">
+	{% assign items_to_show = menu.items | visible_items %}
+	{% for item in items_to_show %}
+	{% assign active = item.url | active_page: request.url %}
+	{% assign children_to_show = item.child_items | visible_items %}
+	{% if children_to_show.size > 0 %}
+	<li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none">
+		<a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="nav-link dropdown-toggle {% for child in children_to_show %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{ responsive }}" role="menuitem">
+			{{ item.label }} <span class="sr-only">dropdown</span>
+		</a>
+		<div class="submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }} dropdown-menu" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{responsive}}" aria-expanded="false">
+			{% for child in children_to_show %}
+			<a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+				{{ child.label }}
+			</a>
+			{% endfor %}
+		</div>
+		{% else %}
+	<li class="nav-item nav-item-{{ item.parameterized_label }} {{ active }}" role="none">
+		<a target="{{ item.target }}" class="nav-link" rel="{{ item.target | item_rel}}" href="{{ item.url }}" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}">{{ item.label }}</a>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+```
+
+### Menú con forma de lista
+
+A continuación tenemos un menú que también llama a `main`, pero ahora en forma de lista a diferencia del snippet general que utiliza un dropdown:
+
+```html
+{% assign menu = menus['main'] %}
+<ul role="menu" aria-label="Main menu">
+	{% assign items_to_show = menu.items | visible_items %}
+	{% for item in items_to_show %}
+	{% assign children_to_show = item.child_items | visible_items %}
+	<li class="nav-item" role="none">
+		<a href="{{ item.url }}" target="{{ item.target }}" class="nav-link" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }}">{{ item.label }}</a>
+		{% if children_to_show.size > 0 %}
+		<ul>
+			{% for child in children_to_show %}
+			<li class="nav-item" role="none">
+				<a href="{{ child.url }}" target="{{ child.target }}" class="nav-link" {% if child.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ child.label }}">{{ child.label }}</a>
+				{% assign children_to_show = child.child_items | visible_items %}
+				{% if children_to_show.size > 0 %}
+				<ul>
+					{% for grandchild in children_to_show %}
+					<li class="nav-item" role="none">
+						<a href="{{ grandchild.url }}" target="{{ grandchild.target }}" class="nav-link" {% if grandchild.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ grandchild.label }}">{{ grandchild.label }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+```
+
+### Menu tres niveles
+
+Para poder desplegar un menú de tres niveles, se tiene que agregar otro bucle que considere si los items hijos contienen más items. Para esto, se asigna la variable `grandchildren` al final del primer bucle y este tiene que iterar sobre los items de los hijos (osase los items nietos):
+
+```html
+{% assign menu = menus['main'] %}
+<ul class="nav navbar-nav" role="menu" aria-label="Main menu {{responsive}}">
+	{% assign items_to_show = menu.items | visible_items %}
+	{% for item in items_to_show %}
+	{% assign active = item.url | active_page: request.url %}
+	{% assign children_to_show = item.child_items | visible_items %}
+	{% if children_to_show.size > 0 %}
+	<li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none">
+		<a target="{{ item.target }}" class="nav-link dropdown-toggle {% for child in children_to_show %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown-{{forloop.index}}-Button{{ responsive }}" role="menuitem">
+			{{ item.label }} <span class="sr-only">dropdown</span>
+		</a>
+		<div class="submenu-{{forloop.index}} dropdown-menu" aria-labelledby="dropdown-{{forloop.index}}-Button{{responsive}}" aria-expanded="false">
+			{% for child in children_to_show %}
+			<a href="{{ child.url }}" target="{{ child.target }}" class="dropdown-item" {% if child.url == request.url %}aria-current="page"{% endif %}>{{ child.label }}</a>
+			{% assign grandchildren_to_show = child.child_items | visible_items %}
+			{% if grandchildren_to_show.size > 0 %}
+			<ul class="m-0 p-0">
+				{% for grandchild in grandchildren_to_show %}
+				<li class="list-unstyled m-0 p-0">
+					<a href="{{ grandchild.url }}" target="{{ grandchild.target }}" class="dropdown-item small" {% if grandchild.url == request.url %}aria-current="page"{% endif %}><span class="pl-2">{{ grandchild.label }}</span></a>
+				</li>
+				{% endfor%}
+			</ul>
+			{% endif %}
+			{% endfor %}
+		</div>
+		{% else %}
+	<li class="nav-item nav-item-{{ item.parameterized_label }} {{ active }}" role="none">
+		<a href="{{ item.url }}" target="{{ item.target }}" class="nav-link" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}">{{ item.label }}</a>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+```

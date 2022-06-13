@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Crear un Widget con el Modyo CLI
+# Creación de un Widget con el Modyo CLI
 
 ## Introducción
 
@@ -14,7 +14,7 @@ Al igual que en los otros tutoriales usaremos la marca ficticia "Dynamic Bank".
 
 Dynamic Bank es el nombre que le damos en Modyo a todo lo referente a demos y ejemplo de la plataforma. Quisimos crearlo para poder ofrecer una experiencia muy cercana a la realidad de lo que significa realmente trabajar con Modyo. Una vez completado este tutorial tu sitio debería lucir así:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Preview of what the final product will look like"/>
 
 ## Requisitos Previos
 
@@ -71,7 +71,7 @@ modyo-cli get modyo-widgets-retail-summary
 
 Esto desgargará un widget basado en Vue. Al terminar el proceso, aparece una vista así:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;" alt="Screenshot of the terminal output of the previous command"/>
 
 
 Para editarlo debes navegar a la carpeta <code>modyo-widgets-retail-summary</code> dentro de la terminal.
@@ -82,13 +82,13 @@ Si es la primera vez que ejecutas este widget, asegurate de instalar sus depende
 
 Para construirlo de manera local, utiliza <code>yarn serve</code> o <code>npm run serve</code>en tu navegador, el resultado se verá asi en tu navegador:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;" alt="A screenshot of the the widget running in the browser"/>
 
 ## Paso 3: Modificar estilos del Widget
 
 Los Widgets del catálogo se han diseñado en Modyo con un estilo simple. Para hacer cambios debes abrir la carpeta del widget <code>modyo-widgets-retail-summary</code> en tu editor, que en nuestro caso es Visual Studio Code.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;" alt="Image showing Visual Studio UI"/>
 
 Para cambiar los colores de las variables por los de Dynamic Bank, sigue estos pasos:
 
@@ -356,18 +356,18 @@ Para obtener un API token, sigue estos pasos:
  </tr>
 </table>
 
-<img src="/assets/img/tutorials/how-to-create-private-site/token.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/token.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the New application for API Access window"/>
 
 4. Una vez creado el API access, haz click en **Equipo**.
 5. Busca y selecciona tu usuario.
 6. Haz click en el apartado de **Acceso a la API** y haz click en **+ Nuevo Token de Acceso**.
 7. Selecciona **modyo-cli** y haz click en **Crear Token**.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/access_token.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/access_token.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the Generate Access Token window"/>
 
 Ahora que ya tienes un token, puedes agregarlo al archivo <b>.env</b> de configuración.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the generated Access Token"/>
 
 
 Ejecutar <code>npm run build</code>
@@ -375,7 +375,7 @@ Ejecutar <code>npm run build</code>
 8. En la terminal, usa el comando <code>modyo-cli push Summary</code>, este comando lleva el widget al tu sitio. Lo podrás encontrar en el apartado de Widgets Personalizados.
 
 
-<img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;" alt="Image showing that the Widget was uploaded to Modyo Platform successfully"/>
 
 
 :::tip Tip
@@ -388,12 +388,12 @@ Si encuentras problemas para ejecutar el comando de compilacion , prueba instala
 10. Haz click en **Widgets**, tu widget se encontrará listado como un Widget listo para ser publicado. Entra a tu widget y haz click en **Publicar**.
 11. En la ventana de Revisar y Publicar, selecciona tu widget y haz click en **Publicar**. Selecciona la opción de **Publicar Ahora**.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the Generate Access Token window"/>
 
 12. Selecciona **Pages** y haz click en Home.
 13. Borra el Widget de HTML existente y agrega tu Custom Widget.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/home.png" style="max-width: 600px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/home.png" style="max-width: 600px;margin: auto 0;" alt="Image showing your new widget in a page"/>
 
 ## Paso 5: Revisar y Publicar Home, Navigation, y Template
 
@@ -401,7 +401,7 @@ Una vez realizados los pasos anteriores, revisa todo el sitio en modo vista prev
 
 Para realizar una publicación, desde la sección **Resumen**, haz click en el botón <b>Publicar</b> donde se abrirá un panel con los cambios que haz realizado.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;" alt="Image showing the Review & Publish window"/>
 
 Selecciona todos los cambios pendientes, y haz click en **Publicar**. Selecciona **Publicar Ahora**.
 

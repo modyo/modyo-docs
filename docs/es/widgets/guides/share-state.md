@@ -8,7 +8,7 @@ search: true
 
 ### La estructura de Vuex
 
-![vuex](/assets/img/widgets/vuex.png)
+<img src="/assets/img/widgets/vuex.png" alt="Diagram showing the VueX architecture.">
 
 - **Estado** (state):
 

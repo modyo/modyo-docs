@@ -5,7 +5,7 @@ sidebarDepth: 3
 
 # Sitios
 
-<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
+<img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
 Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Widgets](/platform/channels/widgets) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
 
@@ -35,7 +35,7 @@ En el índice de sitios, solo verás los sitios en los cuales eres parte del equ
 
 La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores, y administradores del sitio. Además, puedes modificar opciones que permitan mejorar el SEO y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
 
-<img src="/assets/img/channels/sites/config-site.jpg" width="250" />
+<img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
 ### General
 
@@ -103,7 +103,7 @@ Con esto listo, cuando haya un valor asociado al campo **Identificador de Google
 
 #### Privacidad
 
-<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/restrictions-site.jpg" alt="Public or private privacy settings and their explanations" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 Restricciones permite configurar la privacidad del sitio.
 
@@ -115,7 +115,7 @@ Restricciones permite configurar la privacidad del sitio.
 
 ### SEO
 
-<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/seo-site.jpg" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. Los usuarios dependen de una buena configuración de SEO para llegar al sitio.
 
@@ -162,7 +162,7 @@ Esta es una pequeña lista de las acciones que puedes tomar para mejorar el SEO 
 
 Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén armando. Para ello, otorga dos opciones para implementarlos fácilmente.
 
-<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/pwa-site.jpg" alt="The PWA options you can configure withing a site." width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 #### **Manifiesto**
 
@@ -205,7 +205,7 @@ Si el código no se personaliza o no se guarda, el sitio no contará con las fun
 
 ### Dominios
 
-<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/domains-site.jpg" alt="The domain options you can configure within a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 La sección Dominios te permite saber dónde está públicamente ubicado el sitio, por lo que es esencial que cada uno de los miembros de la plataforma sean informados de los cambios que se realicen aquí.
 
@@ -287,9 +287,9 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 
 ### Stages
 
-Agregar stages en tu sitio te permite trabajar en nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
+Agregar stages en tu sitio te permite integrar y desplegar continuamente (CI/CD) nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán sincronizarse desde el stage `main`.
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse al stage `main`.
 
 :::warning Atención
 Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
@@ -297,7 +297,7 @@ Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitada
 
 #### Agregar un nuevo stage
 
-<img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
+<img src="/assets/img/channels/sites/create-stage.jpg" alt="The create a new stage window." width="300" />
 
 Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 
@@ -318,7 +318,7 @@ En la barra lateral podrás ver en que stage estas actualmente y al hacer click 
 
 Una vez que hayas terminado tus pruebas en tu stage, asegúrate de sincronizarlos a `main`. En la pantalla de sincronizaciones, podrás ver todos los cambios que se realizaran entre los dos stages seleccionados. Al hacer click en _Ver_
 
-<img src="/assets/img/channels/sites/sync-stage.jpg"/>
+<img src="/assets/img/channels/sites/sync-stage.jpg" alt="The sync two stages in a site window."/>
 
 Para sincronizar un stage, sigue estos pasos:
 
@@ -353,7 +353,7 @@ En el caso que necesites publicar rápidamente un elemento, los usuarios adminis
 
 ### Miembros del Equipo
 
-<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada sitio y así tendrán acceso a la escritura, revisión y/o publicación.
 
@@ -428,7 +428,7 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. [Vistas por defecto (Home, search)](/es/platform/channels/templates.html)
 1. [Páginas](/es/platform/channels/pages.html)
 1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#restricciones)
+1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#privacidad)
 
 ### Security headers
 
