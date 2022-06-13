@@ -10,7 +10,7 @@ To use this tool visit **[our Storybook](https://modyo.github.io/financial-commo
 
 ### Main menu
 
-![1](/assets/img/widgets/storybook/mainmenu.png)
+<img src="/assets/img/widgets/storybook/mainmenu.png" alt="Storybook's main menu">
 
 When you select a component, a demo opens in the middle of the screen. In the top bar, you can choose between the following actions:
 
@@ -26,7 +26,7 @@ When you select a component, a demo opens in the middle of the screen. In the to
 
 ### Keyboard shortcuts
 
-![2](/assets/img/widgets/storybook/shortcuts.png)
+<img src="/assets/img/widgets/storybook/shortcuts.png" alt="Shortcuts available in storybook">
 
 ## Import to Project
 
