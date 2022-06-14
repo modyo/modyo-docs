@@ -18,23 +18,23 @@ The first thing we need to do is log into our Salesforce account, where we'll se
 
 Once we log into our account, click <b>Setup</b>.
 
-<img src="/assets/img/tutorials/saleforce/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Salesforce home page UI"/>
 
 The link to <b> Setup </b> is located in the upper right corner of our screen and its icon is a nut:
 
-<img src="/assets/img/tutorials/saleforce/setup.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/setup.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Image with closeup to the Setup button"/>
 
 ## Step 2: Apex Class
 
 The first thing we have to do inside the Setup is in the search engine type <b> Apex Classes </b> to go and generate a new Apex Class, which will be used to create the Authentication Provider. 
 
-<img src="/assets/img/tutorials/saleforce/search_apex.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/search_apex.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;" alt="Image searching for Apex classes in Setup"/>
 
 The Apex class contains the different rules and processes needed to authenticate a user with the custom authentication provider.
 
 To create a new user authentication, click **New** and paste the following code into the Apex class editor.
 
-```
+```java
 global class Modyo_Connector extends Auth.AuthProviderPluginClass {
           // Use this URL for the endpoint that the 
           // authentication provider calls back to for configuration.
@@ -143,7 +143,7 @@ Within these fields, we will have the default fields in Modyo authentication suc
 
 To configure the fields search for <b>Custom Metadata Types</b> and click <b>New Custom Metadata Type</b>.
 
-<img src="/assets/img/tutorials/saleforce/custom_metadata_type.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/custom_metadata_type.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the New Custom Metadata Type UI."/>
 
 Click <b>Save</b> and on the settings of <b>Custom Metadata Types
  </b>, fill in the Custom Fields table with the following:
@@ -221,7 +221,7 @@ Once the Apex Class configuration and Custom Metadata Types are ready, you need 
 
 In order to generate an authenticator, from the Modyo platform, within **Configuration**, click on <b> Access to the API </b>. Generate a new API access in the button on the right above and fill in the fields as follows, where the Callback URL is our Salesforce URL by adding <b> services/AuthCallback/Modyo </b> 
 
-<img src="/assets/img/tutorials/saleforce/api-access.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/saleforce/api-access.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;" alt="Image with New Application for API Access in Modyo Platform"/> 
 
 Then, in **Settings**, <b> Team </b>, click your username. In the section of <b>API access</b> click <b>+ New Access Token</b> and create one with which we already configured <b>SF Dynamic</b> to have an Access Token for your user.
 
@@ -229,7 +229,7 @@ After we have the configuration in Modyo, we return to Salesforce. Within Setup,
 
 To create a new one, click <b>New</b> and within the list we select <b>Modyo_Connector</b>.
 
-<img src="/assets/img/tutorials/saleforce/Auth_Provider.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/Auth_Provider.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;" alt="Authentication Provider Edit in Salesforce"/>
 
 Fill in the following data:
 
@@ -406,7 +406,7 @@ To generate one we are going to search for <b> Named Credentials </b> inside Set
  </tr>
 </table>
 
-<img src="/assets/img/tutorials/saleforce/named_credentials.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/named_credentials.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Named Credentials flow in Salesforce"/>
 
 Click on <b> Save </b>.
 
@@ -1536,7 +1536,7 @@ Enter a name, select the Named Credential you created and at the bottom we paste
   }
 }
 ```
-<img src="/assets/img/tutorials/saleforce/add_an_external_service.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/add_an_external_service.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Add an External Service in Salesforce."/>
 
 Click <b>Save & Next</b>, select all operators and click Next and Done.
 
@@ -1586,11 +1586,11 @@ Then in Modyo Platform, select <b>Customers</b> and click **Realms**. Select you
  </tr>
 </table>
 
-<img src="/assets/img/tutorials/saleforce/custom_field.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/custom_field.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a New Custom Field in Modyo."/>
 
 Click on <b>Create</b>, we activate it in the 3 points and save.
 
-<img src="/assets/img/tutorials/saleforce/activate.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/activate.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image activating the custom field in Modyo."/>
 
 ## Step 8: Creating Flow
 
@@ -1598,17 +1598,17 @@ After the setup to connect Salesforce to Modyo is complete, the flow needs to be
 
 For this, go to Setup -> Flows and click <b>New Flow</b>. Select <b>Autolaunched Flow</b>, and then <b>Freeform</b>.
 
-<img src="/assets/img/tutorials/saleforce/autolaunched.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/autolaunched.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with a New Autolaunched Flow in Salesforce."/>
 
 To get started, go to the <b>Manager</b> tab and create new resources.
 
 Creates a new variable named <b>isPremiumCustomer</b> of the Boolean Type and of default value <b>{! $globalconstant.false}</b>, enable the two fields below and click <b>Done</b>.
 
-<img src="/assets/img/tutorials/saleforce/IsPremiumCustomer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/IsPremiumCustomer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the new variable called IsPremiumCustomer in the New Resource window."/>
 
 Creates a new variable <b>ModyoID</b> of type Text and, like the previous one, enables for input and Available for output.
 
-<img src="/assets/img/tutorials/saleforce/ModyoID.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/ModyoID.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with a new varible called ModyoID in the New Resource window."/>
 
 Then create another variable called <b>DynamicCustomField</b> and unlike the previous ones, in <b>Data Type</b> select <b>Apex-Defined</b>. In <b>Apex Class</b> type <b>ExternalService__DynamicModyo_UserCustomField</b>, enable input and output, and click <b>Done</b>.
 
@@ -1618,13 +1618,13 @@ Repeat the same procedure but changing the name to <b> DynamicUserInput
 
 Once the Variables are created, return to the tab of <b> Elements </b> and add to the flow an <b> Pause </b>, named <b> async pause </b> 8z0 and inside <b> Resume event </b> add <b> {! $flow.currentDateTime} </b> in <b> Base Time </b> inside <b> Define Resume Time </b>.
 
-<img src="/assets/img/tutorials/saleforce/async_pause.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/async_pause.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a new Async Pause in the New Pause window."/>
 
-<img src="/assets/img/tutorials/saleforce/base_time.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/base_time.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Image with the name for the Base Time in the Define Resume Time window."/>
 
 Now the dots have to be joined.
 
-<img src="/assets/img/tutorials/saleforce/flow1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/flow1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Image connecting the Autolaunched Flow to the Async Pause."/>
 
 Add an <b> Decision </b> to the flow, named <b> Is Premium Customer </b>, and fill it with the following fields:
 
@@ -1703,28 +1703,28 @@ Add an <b> Decision </b> to the flow, named <b> Is Premium Customer </b>, and fi
  </tr>
 </table>
 
-<img src="/assets/img/tutorials/saleforce/decision.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/decision.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the Is Premium Customer Decision in the New Decision window in Salesforce."/>
 
 Then connect the dots by activating the pause.
 
-<img src="/assets/img/tutorials/saleforce/pause.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/pause.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image selecting the Pause configuration for this decision."/>
 
 And the result looks something like this:
 
-<img src="/assets/img/tutorials/saleforce/decision_flow.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/decision_flow.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the decision flow result"/>
 
 Now we are going to perform two Assignments depending on the Decision, one for Default Outcome and one for Is Premium Customer with the following attributes:
 
 Default Outcome:
- <img src="/assets/img/tutorials/saleforce/Assign_False.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/> 
+<img src="/assets/img/tutorials/saleforce/Assign_False.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the Assignment Assign True in the Edit Assignment window."/>
 
 Is Premium Customer:
 
-<img src="/assets/img/tutorials/saleforce/Assign_True.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/Assign_True.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the Assignment Assign False in the Edit Assignment window."/>
 
 After creating the Assignments, they are connected as follows:
 
-<img src="/assets/img/tutorials/saleforce/assignment_flow.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/assignment_flow.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the end result after connecting the Assignments."/>
 
 Now that the input is true or false, let's generate a new Assignment with the following fields:
 
@@ -1755,13 +1755,13 @@ Now that the input is true or false, let's generate a new Assignment with the fo
  </tr>
 </table>
 
-<img src="/assets/img/tutorials/saleforce/Assign_User_Input.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/Assign_User_Input.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the Assignment Assign User Input."/>
 
 To end the flow, add a last item <b>Interaction</b>, specifically an <b>Action</b> named <b>Update_Dynamic_User</b>.
 
 In the action finder, click <b> PutUsersByUser_ID </b>:
 
-<img src="/assets/img/tutorials/saleforce/New_Action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/New_Action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image creating a new Action called put Users by User Id."/>
 
 Complete the following information:
 
@@ -1794,7 +1794,7 @@ Complete the following information:
 
 And connect all the dots so that the Flow looks like this:
 
-<img src="/assets/img/tutorials/saleforce/flujo.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/flujo.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the end result after connecting the flows."/>
 
 Finally, save and test that it is working correctly.
 
@@ -1802,15 +1802,15 @@ Finally, save and test that it is working correctly.
 
 Now we need to search <b> Process builder </b> in the search engine,
 
-<img src="/assets/img/tutorials/saleforce/Process_builder.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/Process_builder.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image searching for Process Builder in the Setup window."/>
 
 And generate a new one with the name <b> Change Modyo Customer </b> and in **The process starts when** select <b> A record changes </b>, which looks like this:
 
-<img src="/assets/img/tutorials/saleforce/Modyo_Customer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/Modyo_Customer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the result after adding the processes."/>
 
 Then in Object click <b>Add Object</b>, add a <b>Contact</b>, select <b>when a record is created or edited</b> and click Save.
 
-<img src="/assets/img/tutorials/saleforce/object.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/object.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Choose Object and specify when to start the process window."/>
 
 Then click on <b> Add Criteria </b> and fill in the following fields:
 
@@ -1956,7 +1956,7 @@ In Set Flow Variables add two lines with the following:
  </tr> 
 </table>
 
-<img src="/assets/img/tutorials/saleforce/action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/saleforce/action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the select and define action window."/>
 
 Click on <b> Activate </b>.
 
