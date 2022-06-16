@@ -6,7 +6,7 @@ search: true
 
 Pages are what allow you to create structure for your sites, where you can add unstructured content and customize the routes from which that content is displayed.
 
-![Index of pages](/assets/img/platform/page-index.png)
+<img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 
 To edit a page, you must click on the edit icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) or the page name to go to the edit view.
 
@@ -73,7 +73,7 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 - Force publish: If you are a site administrator, then you have the option to publish pages at any time, including skipping the team review process.
 - Unpublish: If the page is published, then you will see this action and can unpublish the page.
 
-![Page builder](/assets/img/platform/page-builder.png)
+<img src="/assets/img/platform/page-builder.png" alt="The page builder screen">
 
 The central grid is the place where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality by dragging them from the <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7 19v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4V9h2v2H7m4 0V9h2v2h-2m4 0V9h2v2h-2M7 7V5h2v2H7m4 0V5h2v2h-2m4 0V5h2v2h-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> icon.
 
