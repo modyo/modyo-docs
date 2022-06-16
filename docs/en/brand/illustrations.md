@@ -8,7 +8,7 @@ Illustrations aim to communicate, convey ideas and feelings while creating an id
 
 They can have different objectives, either as support of a text, narrative of a situation or the symbolism of a concept.
 
-<img src="/assets/img/brand/illustrations.jpg" style="margin: 40px auto; width: 400px; display: block;">
+<img src="/assets/img/brand/illustrations.jpg" alt="illustration" style="margin: 40px auto; width: 400px; display: block;">
 
 Illustrations are made for use on a dark and white background. It is recommended to use the specified shades in the brand guide.
 
@@ -21,18 +21,18 @@ These are illustrations that tell stories and complex concepts, which are genera
 <table>
 <tr>
 <td style="width: 50%;">
-<img src="/assets/img/brand/ruta.jpg">
+<img src="/assets/img/brand/ruta.jpg" alt="ruta">
 </td>
 <td style="width: 50%;">
-<img src="/assets/img/brand/candado.jpg">
+<img src="/assets/img/brand/candado.jpg" alt="candado">
 </td>
 </tr>
 <tr>
 <td style="width: 50%;">
-A complex concept represented through a metaphor.
+Representación de un concepto complejo a través de la metáfora.
 </td>
 <td style="width: 50%;">
-Representation of a concept using a fantastic scene.
+Representación de un concepto utilizando una escena fantástica.
 </td>
 </tr>
 </table>
@@ -44,18 +44,18 @@ Spot Heroes are slightly simplified versions of a Hero, both visually and metaph
 <table>
 <tr>
 <td style="width: 50%;">
-<img src="/assets/img/brand/pago.png">
+<img src="/assets/img/brand/pago.png" alt="pago">
 </td>
 <td style="width: 50%;">
-<img src="/assets/img/brand/unificado.png">
+<img src="/assets/img/brand/unificado.png" alt="unified">
 </td>
 </tr>
 <tr>
 <td style="width: 50%;">
-With the presence of metaphor.
+Con presencia de metáfora
 </td>
 <td style="width: 50%;">
-No presence of a metaphor.
+Sin presencia de metáfora
 </td>
 </tr>
 </table>
@@ -66,7 +66,7 @@ The supporting elements are generally characters or things that, just as their n
 
 In contrast to the hero and the point hero, these elements do not represent a specific idea. They are generally used to direct the gaze and highlight the content without taking away from what is being communicated.
 
-<img src="/assets/img/brand/support_element.png" style="margin-left: 0;">
+<img src="/assets/img/brand/support_element.png" alt="support element" style="margin-left: 0;">
 
 ## Color
 
@@ -105,25 +105,25 @@ White is a color that is always used on faces and hands.
 </tr>
 </table>
 
-<img src="/assets/img/brand/webinar.png" style="margin-left: 0;">
+<img src="/assets/img/brand/webinar.png" alt="webinar" style="margin-left: 0;">
 
 If necessary, color is used to reinforce ideas, direct the gaze to specific points, demonstrate differences between certain elements, and emphasize the idea of ​​overlap in one or more elements.
 
 <table>
 <tr>
 <td style="width: 50%;">
-<img src="/assets/img/brand/modular.png">
+<img src="/assets/img/brand/modular.png" alt="modular">
 </td>
 <td style="width: 50%;">
-<img src="/assets/img/brand/exito.png">
+<img src="/assets/img/brand/exito.png" alt="exito">
 </td>
 </tr>
 <tr>
 <td style="width: 50%;">
-Use of color to differentiate elements.
+Uso del color para diferenciar elementos.
 </td>
 <td style="width: 50%;">
-Use of color to highlight an element.
+Uso del color para resaltar un elemento.
 </td>
 </tr>
 </table>
@@ -142,56 +142,56 @@ An adequate margin of at least 28 px / 1 cm must be respected around the entire 
 
 #### Horizontal
 
-<img src="/assets/img/brand/horizontal.png" style="margin-left: 0;">
+<img src="/assets/img/brand/horizontal.png" alt="Horizontal" style="margin-left: 0;">
 
 #### Vertical
 
-<img src="/assets/img/brand/vertical.png" style="margin-left: 0;">
+<img src="/assets/img/brand/vertical.png" alt="Vertical" style="margin-left: 0;">
 
 ### Incorrect use of illustrations
 
 <table>
 <tr>
 <td style="width:30%;">
-<img src="/assets/img/brand/error6.png">
+<img src="/assets/img/brand/error6.png" alt="error6">
 </td>
 <td style="width:30%;">
-<img src="/assets/img/brand/error2.png">
+<img src="/assets/img/brand/error2.png" alt="error2">
 </td>
 <td style="width:30%;">
-<img src="/assets/img/brand/error3.png">
+<img src="/assets/img/brand/error3.png" alt="error3">
 </td>
 </tr>
 <tr>
 <td>
-<p class="dont">Do not use the illustrations with opacity less than 100%.</p>
+<p class="dont">No uses las ilustraciones con opacidad menor al 100%.</p>
 </td>
-<td>Illustrations should not be turned or skewed.</p>
+<td>Las ilustraciones no deben ser giradas ni ladeadas.</p>
 </td>
 <td>
-<p class="dont">The colors should not be modified.</p>
+<p class="dont">No modifiques los colores.</p>
 </td>
 </tr>
 <tr>
 <td>
-<img src="/assets/img/brand/error4.png">
+<img src="/assets/img/brand/error4.png" alt="error4">
 </td>
 <td>
-<img src="/assets/img/brand/error1.png">
+<img src="/assets/img/brand/error1.png" alt="error1">
 </td>
 <td>
-<img src="/assets/img/brand/error5.png">
+<img src="/assets/img/brand/error5.png" alt="error5">
 </td>
 </tr>
 <tr>
 <td>
-<p class="dont">Illustrations should not be cut, but if necessary it should be done by the illustrator.</p>
+<p class="dont">No cortes las ilustraciones, pero en caso de ser necesario lo debe hacer la ilustradora.</p>
 </td>
 <td>
-<p class="dont">NNever change the proportion of illustrations.</p>
+<p class="dont">Nunca cambies la proporción de las ilustraciones.</p>
 </td>
 <td>
-<p class="dont">Do not use text over the illustration. Do it below it or with a margin less than 1 cm.</p>
+<p class="dont">No uses texto sobre la ilustración. Hazlo debajo de ella o con un margen menor a 1 cm.</p>
 </td>
 </tr>
 </table>
