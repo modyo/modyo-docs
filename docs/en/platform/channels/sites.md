@@ -5,7 +5,7 @@ sidebarDepth: 3
 
 # Sites
 
-<img src="/assets/img/channels/sites/sites-index.jpg" style="border: 1px solid #EEE;" />
+<img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
 A site is where content created in [Content](/en/platform/content/) and [Widgets](/platform/channels/widgets) are combined to create your custom digital channel. Sites include operations regarding the entire development, design, and navigation flow.
 
@@ -35,7 +35,7 @@ In the site index, you will only be able to see sites where you are part of the 
 
 Site settings allow you to configure different site options, for example showing different views depending if the user is a visitor, customer, developer, or site administrators. In addition, you can modify options that allow you to improve SEO and the visibility of some of the data that the public has access to when they reach a page.
 
-<img src="/assets/img/channels/sites/config-site.jpg" width="250" />
+<img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
 ### General
 
@@ -103,7 +103,7 @@ With this ready, when there's a value associated with the **Google Tag Manager I
 
 #### Privacy
 
-<img src="/assets/img/channels/sites/restrictions-site.jpg" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/restrictions-site.jpg" alt="Public or private privacy settings and their explanations" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 Restrictions allow you to configure the privacy of your site.
 
@@ -115,7 +115,7 @@ Restrictions allow you to configure the privacy of your site.
 
 ### SEO
 
-<img src="/assets/img/channels/sites/seo-site.jpg" width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/seo-site.jpg" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 SEO (Search Engine Optimization) is the key to appearing in different search engines. Users rely on a good SEO setup to get to the site.
 
@@ -162,7 +162,7 @@ Here is a short list of actions you can take to improve off-page SEO:
 
 Modyo provides the ability to implement Progressive Web Applications (PWA) within your digital channels. To do so, you can find two main options to facilitate implementation.
 
-<img src="/assets/img/channels/sites/pwa-site.jpg" width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/pwa-site.jpg" alt="The PWA options you can configure withing a site." width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 #### **Manifest**
 
@@ -205,7 +205,7 @@ If the code is not customized or saved, the site will not have the features you 
 
 ### Domains
 
-<img src="/assets/img/channels/sites/domains-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/domains-site.jpg" alt="The domain options you can configure within a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 The Domains section is where you configure where and how your site is publicly located. It is essential that each member of the platform be aware of any changes made here.
 
@@ -287,9 +287,9 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 
 ### Stages
 
-Adding stages to your site allows you to work on new features for your site without modifying what's already published.
+Adding stages to your site allows you to continuously integrate and deploy (CI/CD) new features for your site without interrupting what is already published.
 
-The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use variables, widgets, and local templates to customize the experience or visualize changes. Upon completion of changes within a stage, they can be synchronized from the `main` stage.
+The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use local variables, widgets, and templates to customize the experience or visualize changes. At the end of the changes within a stage, they can be integrated into the `main` stage.
 
 :::warning Attention
 When using stages, custom PWAs, and redirects will be disabled. You can only use these in the `main` stage.
@@ -297,7 +297,7 @@ When using stages, custom PWAs, and redirects will be disabled. You can only use
 
 #### Add a new stage
 
-<img src="/assets/img/channels/sites/create-stage.jpg" width="300" />
+<img src="/assets/img/channels/sites/create-stage.jpg" alt="The create a new stage window." width="300" />
 
 To add a new stage to your site, follow these steps:
 
@@ -318,7 +318,7 @@ In the sidebar you can see which stage you are currently in and when you click o
 
 Once you've finished your tests on your stage, make sure you sync them to `main`. On the synchronizations screen, you will be able to see all the changes that were made between the two selected stages by clicking on _View_.
 
-<img src="/assets/img/channels/sites/sync-stage.jpg"/>
+<img src="/assets/img/channels/sites/sync-stage.jpg" alt="The sync two stages in a site window."/>
 
 To synchronize a stage, follow these steps:
 
@@ -353,7 +353,7 @@ In case you need to publish an element quickly, administrator users can skip the
 
 ### Team Members
 
-<img src="/assets/img/channels/sites/members-site.jpg" width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role just includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
 
@@ -428,7 +428,7 @@ The precedence of locations on Modyo sites is as follows:
 1. [Default views (Home, search)](/en/platform/channels/templates.html)
 1. [Pages](/en/platform/channels/pages.html)
 1. Custom redirects
-1. [Site 404 error configuration](/en/platform/channels/sites.html#privacy)
+1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
 
 ### Security headers
 
