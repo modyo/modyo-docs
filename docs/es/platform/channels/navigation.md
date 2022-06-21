@@ -47,8 +47,8 @@ Para más información sobre el versionamiento, revisa la sección de [Versionad
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en "ver detalle" para mostrar la información completa de ese registro de actividad.
 
-## Crear un nuevo Menú
-Para crear un nuevo Menú, sigue estos pasos:
+## Crear un Menú
+Para crear un Menú, sigue estos pasos:
 
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en Sitios.
 2. Selecciona el sitio que desees agregar un nuevo menú.
@@ -84,7 +84,7 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 
 El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explica las partes más importantes de este snippet y como se puede extender a más funcionalidades.
 
-Las primeras lineas encapsuladas por `{{ }}` o `{% %}` pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú. 
+Las primeras lineas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú. 
 
 El siguiente listado describe las variables importantes para el menú:
 

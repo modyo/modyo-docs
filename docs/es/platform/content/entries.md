@@ -4,6 +4,8 @@ search: true
 
 # Entradas
 
+Las Entradas son la manera de desplegar el contenido creado en Espacios para todos tus sitios. Estas Entradas se pueden ver desde Sitios creado en Modyo Platform, en el módulo de Channels, o en sitios externos, utilizando nuestra API.
+
 ## Sobre la interfaz
 
 A primera vista, puedes ver una lista que contendrá todos los contenidos que están dentro de la plataforma, generados por todos los usuarios.
