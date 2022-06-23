@@ -1,5 +1,6 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Perfil de usuario
