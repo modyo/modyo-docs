@@ -6,6 +6,27 @@ search: true
 
 ## 9.2
 
+### 9.2.13 - 24 de junio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se previene 404 en setup otp
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige error en la edición inicial de widgets duplicados en una Widget Page
+* Se  Agrega flag para la habilitacion de categorias en path para content pages 
+* Se corrige despliegue de opcion de Targets en Pages
+* Se corrige problema al eliminar de favicon y apple icon de un sitio, el cual afectaba a sus copias
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se corrige filtro sort que fallaba al ordenar entradas por campos de texto
+* Se corrige problema con campo multiline, que quedaba con un caracter al eliminar todo el texto
+* Se corrige error al seleccionar entries en content list, donde solo se agregaban las seleccionadas en la pagina actual
+
+
 ### 9.2.12 - 06 de junio de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
