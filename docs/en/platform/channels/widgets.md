@@ -10,7 +10,7 @@ When entering the **Widgets** section in a site, you can see a list of every cre
 
 In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
-![Widget Builder](/assets/img/platform/widget-builder.png) 
+<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module"> 
 
 Along the **top bar**, on the left, you can see the widget name and current status:
 
