@@ -10,7 +10,7 @@ When the template that is used within the site is already selected, you can acce
 
 Once inside the Template Builder, the main menu is hidden to optimize the workspace. In the top bar, on the left, you can find the section name and the current publication status.
 
-![Template Builder](/assets/img/channels/template_builder/template-builder.png)
+<img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
 
 - **Published**: When a published version already exists and its editable version is the same.
 - **Pending Changes**: When there is a published version, but your editable version has changes that are not published yet.
@@ -25,7 +25,7 @@ On the bar in the upper-right, you will find the latest publication date and the
 You can preview the changes as a user without a session, or with Modyo a session. For this, it's recommended to log in or log out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
 :::
 
-<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700">
+<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon will take you to the [difference view](/en/platform/channels/sites.html#review-and-joint-publication), in which you can compare changes between multiple versions of your templates. 
 
@@ -38,7 +38,7 @@ For more information on versioning, see [versioning](/en/platform/core/key-conce
 
 **Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Deploys a sidebar with a text finder that searches all editable templates. 
 
-<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700">
+<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
 
 **Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Deploys a sidebar with the activity history and comments of the templates. 
 
@@ -132,7 +132,7 @@ Snippets are pieces of code that can be created, modified, and reused. Next to e
 
 You can add custom snippets to the bottom of the platform's snippet list by clicking on the **+** button.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300">
+<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
 
 :::tip Tip
 In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name i.e. **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
@@ -146,7 +146,7 @@ For more information on what Liquid is and how to get the most out of it, see [L
 
 In the work area, under the tabs, you will find a bar with useful elements:
 
-<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700">
+<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
@@ -156,15 +156,15 @@ For more information on the functionality of the Asset Manager, see [Asset Manag
 
 **Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
 
-<img src="/assets/img/channels/template_builder/keywords.jpg" width="400">
+<img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
 **Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
 
-<img src="/assets/img/channels/template_builder/snippets.jpg" width="300">
+<img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
 
 **Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
 
-<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300">
+<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
 :::tip Tip
 If you publish a version, you can see that the changelog disappears, that is because the new editable version does not have any changes.
