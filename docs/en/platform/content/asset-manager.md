@@ -13,24 +13,24 @@ You can access the Asset Manager in one of two ways. The first way is integrated
 
 #### Rich Text
 
-<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0" alt="Add image button inside a rich text textbox">
 
 #### Multiline
 
-<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0" alt="Asset manager button inside a multiline box">
 
 #### Assets Selector
 
-<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0" alt="Asset list button">
 
 The second one is directly through the Asset manager tool found in the Content section.
 
-<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0" alt="Asset manager from the main menu.">
 
 
 ## About the interface
 
-<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" alt="Asset manager UI">
 
 The Asset manager interface displays a list of all the files we have within the platform.
 
@@ -38,7 +38,7 @@ In the upper right part of the screen you can see the percentage of space used c
 
 The list has three different filters for useful file searching.
 
-<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0" alt="The three filters inside asset manager">
 
 **Extensions**: Use this to filter all files of the same type within the platform (the default list displays all uploaded files).
 
@@ -51,7 +51,7 @@ This will appear as soon as you select the first item (by clicking on the checkb
 
 If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've selected.
 
-<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0" alt="Apply tags to assets to identify them">
 
 :::
 
@@ -63,7 +63,7 @@ Modyo displays 30 files at a time, and this value cannot be updated.
 
 Each file listed in the main view shows the following information and attributes:
 
-<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0" alt="The available columns when searching for an asset.">
 
 Attributes with arrows can be sorted by either ascending and descending order. The default sort order **is the file upload date**.
 
@@ -84,7 +84,7 @@ The lower right corner lists the pagination of all your account files.
 
 ## File Properties
 
-<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Edit Asset UI.">
 
 You can upload any file type to the platform, without no filetype exclusions.
 
@@ -94,7 +94,7 @@ To access the properties of a file, click on its name to open a modal where you 
 
 ## Edit a file
 
-<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0">
+<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0" alt="The URL and Liquid Tag assigned to the asset.">
 
 You can find and/or edit the following in the file properties editor:
 
@@ -126,11 +126,11 @@ If you want to close the window and return to the Manager interface, click on th
 
 If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, it will display a new window where you can select a new file.
 
-<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0" alt="Re-upload an image using the reupload button.">
 
 ## Edit an image
 
-<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="You can also perform small changes to images using Asset Manager.">
 
 To facilitate the handling of images within the platform, **Modyo includes an image editor** that allows you to make changes to your images.
 
@@ -165,7 +165,7 @@ This action is irreversible, and any content using this file will display a brok
 
 ## Upload a file
 
-<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0">
+<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Upload Image UI">
 
 There are two ways to upload a file in **Modyo**. The first way is in the context of working with content. This can be either in the Content editor with an asset field, or working in the Template or Widget Builder to load files as necessary. The second way is through the Asset Manager in the Content section.
 
