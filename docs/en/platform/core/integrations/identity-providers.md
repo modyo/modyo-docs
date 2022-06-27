@@ -31,7 +31,7 @@ To add a new identity provider, follow these steps:
 1. Add the information needed for the integration (Name, ID, Secret, etc.).
 1. Click **Add**.
 
-<img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+<img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
 ## Facebook
 
