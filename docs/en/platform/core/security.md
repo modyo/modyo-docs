@@ -100,6 +100,17 @@ Each team member will be able to enable two-step authentication from their profi
 
 By enforcing two-step authentication for team members, the next time a team member logs in, they will be required to set up their two-step authentication device. Once set up, they will need to sign in using their password and the code provided by _Google Authenticator_.
 
+#### Delete Authenticator for a User
+
+If the authenticator is lost or stolen, it will not be possible to access the account. In this case, a Modyo Platform administrator can help by removing the authenticator linked to the user by following these steps:
+
+1. In the side menu, expand **Settings** and click **Teams**.
+1. Click on the member's name.
+1. In the top bar, click on the more options button **... ** and select **Remove authenticator**.
+
+:::warning Warning
+If the option to force authentication is enabled, the next time the user attempts to log in, the user will need to initialize the authenticator first. When you have an active authenticator, the user must log in again.
+:::
 
 ### Vulnerability Report
-If you think you found a security vulnerability in Modyo, please help us by reporting the problem. Modyo has secure and confidential security incident reporting channels through our [support center](https://support.modyo.com/hc/es) or email <a href="mailto:security@modyo.com">security@modyo.com</a>.
+If you think you found a security vulnerability in Modyo, please help us by reporting the problem. Modyo has secure and confidential security incident reporting channels through our [support center](https://support.modyo.com/hc/en-us) or email <a href="mailto:security@modyo.com">security@modyo.com</a>.
