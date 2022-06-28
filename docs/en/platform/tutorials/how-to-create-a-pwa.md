@@ -38,7 +38,7 @@ If you don't have the images, you can use the ones that are included in the base
 
 Visit SimiCart's [PWA Manifest Generator](https://bit.ly/2Zv2H5i) to generate your PWA files automatically and include your application data.
 
-<img src="/assets/img/tutorials/how-to-create-pwa/manifest_data.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-pwa/manifest_data.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="The image for PWA Manifest Generator from SimiCart"/>
 
 In the Icons section, include the high-resolution icon and press the **Generate Manifest** button to automatically generate a manifest file with all the images you'll need.
 
@@ -50,7 +50,7 @@ In the Modyo platform, in the side menu, expand **Content** and click **File Man
 
 Press **+ New Asset** and drag the generated images.
 
-<img src="/assets/img/tutorials/how-to-create-pwa/drag_images.gif" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-pwa/drag_images.gif" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Drag the images to addd them to Modyo Platform"/>
 
 ## Step 3: Enable PWA manifest
 
@@ -153,11 +153,11 @@ To activate the service worker, check the **Enable top level service worker** bo
 
 At this point, your Modyo application already has a functional PWA and when you enter the site you will find a new icon in the navigation bar.
 
-<img src="/assets/img/tutorials/how-to-create-pwa/pwa_installed.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-pwa/pwa_installed.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Your PWA is now installed" />
 
 When you press it, the system will install a local version of your application.
 
-<img src="/assets/img/tutorials/how-to-create-pwa/pwa_install.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-pwa/pwa_install.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Clicking the button will install your application" />
 
 Congratulations! you created a PWA using Modyo.
 
