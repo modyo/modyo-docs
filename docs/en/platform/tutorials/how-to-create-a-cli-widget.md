@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Create a Widget with Modyo CLI
+# Creating a Widget with the Modyo CLI
 
 ## Introduction
 
@@ -14,7 +14,7 @@ As with the other tutorials we will use the fictitious brand “Dynamic Bank”.
 
 Dynamic Bank is the name we use at Modyo for our demos and examples of the platform. We created it so users of the Dynamic demos can get a sense of what it's like to work with the Modyo platform. Once you have completed this tutorial, your site should look like this:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/summary.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Preview of what the final product will look like"/>
 
 ## Prerequisites
 
@@ -71,7 +71,7 @@ modyo-cli get modyo-widgets-retail-summary
 
 This will download a widget based on Vue. When it is done, a view like this appears:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/terminal.png" style="max-width: 400px;margin: auto 0;" alt="Screenshot of the terminal output of the previous command"/>
 
 
 To edit it you must navigate to the folder <code>modyo-widgets-retail-summary</code>.
@@ -82,13 +82,13 @@ If this is your first time running this widget, be sure to install its dependenc
 
 To build it locally, use <code>yarn serve</code> or <code>npm run serve</code> in your terminal, the result will look like this in your browser:
 
-<img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/widget.png" style="max-width: 600px;margin: auto 0;" alt="A screenshot of the the widget running in the browser"/>
 
 ## Step 3: Modify Widget Styles
 
 Catalog Widgets are designed in Modyo with a simple style. To make changes you need to open the widget folder <code>modyo-widgets-retail-summary</code> in your editor, which in our case is Visual Studio Code.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/vscode.png" style="max-width: 600px;margin: auto 0;" alt="Image showing Visual Studio UI"/>
 
 To change the colors of variables to Dynamic Bank, follow these steps:
 
@@ -356,18 +356,18 @@ To get an API token, follow these steps:
  </tr>
 </table>
 
-<img src="/assets/img/tutorials/how-to-create-private-site/token.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/token.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the New application for API Access window"/>
 
 4. Once the API access is created, click **Team**.
 5. Search and select your user.
 6. Click on the **API Access** section and click on **+ New Access Token**.
 7. Select **modyo-cli** and click **Create Token**.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/access_token.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/access_token.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the Generate Access Token window"/>
 
 Now that you have a token, you can add it to the configuration file <b>.env</b>.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/token_gnerated.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the generated Access Token"/>
 
 
 Run <code>npm run build</code> 
@@ -375,7 +375,7 @@ Run <code>npm run build</code>
 8. In the terminal, use the command <code>modyo-cli push Summary</code>, this command brings the widget to your site. You can find it in the Custom Widgets section.
 
 
-<img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/wb.png" style="max-width: 400px;margin: auto 0;" alt="Image showing that the Widget was uploaded to Modyo Platform successfully"/>
 
 
 :::tip Tip
@@ -388,12 +388,12 @@ If you encounter problems running the build command, try installing a compatible
 10. Click **Widgets**, your widget will be listed as a Widget ready to be published. Go to your widget and click **Publish**.
 11. In the Review and Publish window, select your widget and click **Publish**. Select the **Publish Now** option.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/widget_custom.png" style="max-width: 400px;margin: auto 0;" alt="Image showing the Generate Access Token window"/>
 
 12. Select **Pages** and click Home.
 13. Delete the existing HTML Widget and add your Custom Widget.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/home.png" style="max-width: 600px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/home.png" style="max-width: 600px;margin: auto 0;" alt="Image showing your new widget in a page"/>
 
 ## Step 5: Review and Publish Home, Navigation, and Template
 
@@ -401,7 +401,7 @@ After completing the above steps, review the entire site in preview mode. When y
 
 To make a post, from the **Summary** section, click the button <b>Publish</b> where a panel will open with your changes.
 
-<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-private-site/publish.png" style="max-width: 700px;margin: auto 0;" alt="Image showing the Review & Publish window"/>
 
 Select all pending changes, and click **Publish**. Select **Publish Now**.
 
