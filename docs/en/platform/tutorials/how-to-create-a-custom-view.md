@@ -12,7 +12,7 @@ The link between Content and Channels is one of the most important features when
 
 In this tutorial we will continue to use the fictional brand “Dynamic Bank”, but now we focus on creating, previewing, and publishing a **Benefits** entry for the fictional brand “Dynamic Cine”.
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="The final product for this tutorial"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">View Figma design</a>
 
@@ -108,7 +108,7 @@ After you have the type with the new fields, the next step is to publish content
     Short description
   </td>
   <td>
-    40% off tickets on Fridays.
+    40% off every Friday.
   </td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ After you have the type with the new fields, the next step is to publish content
     Logo
   </td>
   <td>
-    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;"/>
+    <img src="https://cloud.modyocdn.com/uploads/90e43e8b-f15e-41c7-9abf-5fa1196079cb/original/Dynamic_cinema.png" style="max-width: 200px;margin: auto 0;" alt="Dynamic cinema benefit"/>
   </td>
 </tr>
 <tr>
@@ -124,7 +124,7 @@ After you have the type with the new fields, the next step is to publish content
     Description
   </td>
   <td>
-    Enjoy 40% off every Friday on your tickets in Dynamic Cine, this offer is exclusive to Dynamic Bank clients paying with their credit or debit cards.
+    Enjoy 40% off your tickets every Friday!
   </td>
 </tr>
 <tr>
@@ -132,7 +132,7 @@ After you have the type with the new fields, the next step is to publish content
     Commercial terms
   </td>
   <td>
-    Valid for Dynamic Bank clients that pay with their credit or debit cards in tickets for every Friday with a maximum of 8 tickets per client.
+    Benefit valid for Dynamic Bank clients.
   </td>
 </tr>
 <tr>
@@ -140,7 +140,7 @@ After you have the type with the new fields, the next step is to publish content
     Validity
   </td>
   <td>
-    January 1st to December 31st, 2021
+    January 1st to December 31st 2021
   </td>
 </tr>
 <tr>
@@ -166,7 +166,7 @@ To create a Content View, follow these steps:
 1. Inside **Content Views**, click **+**.
 
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/custom_view.png" style="max-width: 400px;margin: auto 0;" alt="Custom view module screen"/>
 
 4. In the modal, type **Benefit** as the Path, select the Space **Bank**, and Type **Benefits**.
 
@@ -286,11 +286,11 @@ This **Content View** is now connected to the **Dynamic Bank** Space. With it yo
 
 Now that we have our Space and Type associated with a Site, you can turn on [Site Preview Mode](/en/platform/core/key-concepts.html#preview-mode). To access preview mode click on the “eye” icon in the top action bar:
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_content.png" style="max-width: 400px;margin: auto 0;" alt="Preview content icon"/>
 
 Within the modal click on <b> Preview on site </b> and select the site **Bank**:
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" style="max-width: 400px;margin: auto 0;" alt="The site preview reveals your changes"/>
 
 When you select it, a new tab will open the preview of the Entry on the Site to view the latest changes.
 
