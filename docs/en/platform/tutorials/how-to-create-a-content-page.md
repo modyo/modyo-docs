@@ -12,7 +12,7 @@ The link between Content and Channels is one of the most important features when
 
 In this tutorial we will continue to use the fictional brand “Dynamic Bank”, but now we focus on creating, previewing, and publishing a **Benefits** entry for the fictional brand “Dynamic Cine”.
 
-<img src="/assets/img/tutorials/how-to-create-content-page/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="The final product after this tutorial"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">View Figma design</a>
 
@@ -173,7 +173,7 @@ To create a Content Page, follow these steps:
 1. Select your site and click **Pages**.
 1. Click on **+ New Page**.
 
-<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;" alt="The content page window"/>
 
 4. In the modal, select **Content Page**.
 5. Select the space **Bank** and Type **Benefits**. Type the name of the page and its path.
@@ -321,7 +321,7 @@ This **Content Page** is now connected to the **Dynamic Bank** Space. With it yo
 
 Now that we have our Space and Type associated with a Site, you can turn on [Site Preview Mode](/en/platform/core/key-concepts.html#preview-mode). To access preview mode click on the “eye” icon in the top action bar:
 
-<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;" alt="The final product after this tutorial in preview mode"/>
 
 
 ## Conclusion
