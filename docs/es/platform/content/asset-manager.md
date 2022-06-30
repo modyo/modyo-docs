@@ -10,6 +10,15 @@ Para que no sea necesario utilizar servicios externos, **Modyo** permite subir, 
 
 Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios.
 
+:::tip Tip
+El Gestor de Archivos permite subir extensiones de archivo de todo tipo. El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
+
+- Imágenes: 30 MB
+- Videos: 200 MB
+- Audios: 100 MB
+- CSV: 2 MB
+- Otros: 100 MB
+:::
 
 #### Rich Text
 
@@ -179,11 +188,3 @@ Esta acción abre una nueva ventana que permite subir los archivos de dos manera
 :::warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
-
-Como una manera de resguardar la seguridad de la plataforma Modyo establece un límite de tamaño de los archivos que puedes subir a la plataforma dependiendo de su tipo. Estos son los limites:
-
-- Imágenes: 30 MB
-- Videos: 200 MB
-- Audios: 100 MB
-- CSV: 2 MB
-- Otros: 100 MB

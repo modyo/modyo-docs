@@ -5,9 +5,11 @@ sidebarDepth: 3
 
 # Sitios
 
+Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Channels](/platform/channels/) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
+
 <img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
-Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Widgets](/platform/channels/widgets) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
+
 
 Existen tres estados para cada sitio:
 
