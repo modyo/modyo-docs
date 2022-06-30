@@ -163,10 +163,6 @@ Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
 * Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion)
 
 :::tip Tip
-Para conocer más acerca de como crear una vista de contenido personalizada, vea [Creación de una Vista de Contenido](/es/platform/tutorials/how-to-create-a-custom-view.html).
-:::
-
-:::tip Tip
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
 :::
 
