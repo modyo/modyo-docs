@@ -90,13 +90,22 @@ Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de
 
 Al hacer click en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde puedes rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
-:::tip Tip
-Para traducir una entrada ya escrita a un idioma distinto, deberás tener en cuenta que tu espacio debe estar configurado para los idiomas en los que quieres escribir. (Revisa [Configurar un Espacio](/es/platform/content/spaces.html#configurar-un-espacio))
+## Traducir una Entrada
 
-Después, solo deberás hacer click en el idioma actual y seleccionar el idioma en el que quieres escribirlo.
+Para traducir una entrada existente a un idioma distinto, debes asegurarte que el idioma haya sido agregado a la sección de Localización en la configuración del Espacio. 
 
-Así, llegarás a una versión de la entrada en blanco, donde puedes pulsar el botón **Copiar desde idioma** para traer el contenido de otra versión de la entrada y poder traducirla de manera más fácil.
-:::
+Para traducir una entrada, sigue estos pasos:
+
+1. Desde Modyo Platform, en el menú lateral, expande **Content**, y haz click en **Espacios**.
+1. Haz click en tu **Espacio**.
+1. Expande **Configuración del Espacio** y haz click en **Localización**.
+1. Selecciona el idioma que quieres agregar y haz click en **Añadir Idioma**.
+1. Haz click en **Guardar**.
+1. En el menú lateral, haz click en **Entradas**.
+1. Selecciona la entrada que quieres traducir y selecciona el idioma.
+1. Haz click en el botón de más acciones (...) y selecciona **Copiar desde idioma**.
+
+Para mas información acerca de como agregar otro idioma, ve [Configurar un Espacio](/es/platform/content/spaces.html#localizacion).
 
 ### Publicar una Entrada
 
