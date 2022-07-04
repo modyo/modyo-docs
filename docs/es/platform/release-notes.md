@@ -6,7 +6,7 @@ search: true
 
 ## 9.2
 
-### 9.2.13 - 24 de junio de 2022
+### 9.2.13 - 28 de junio de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
