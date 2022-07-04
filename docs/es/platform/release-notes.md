@@ -6,6 +6,13 @@ search: true
 
 ## 9.2
 
+### 9.2.14 - 04 de julio de 2022
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrige autorizaciones de access tokens en reinos con multiples sitios
+
+
 ### 9.2.13 - 28 de junio de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
