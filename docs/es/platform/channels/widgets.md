@@ -1,5 +1,6 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Widgets
@@ -291,6 +292,10 @@ EXAMPLE
 El comando `push` es el encargado del integrar el widget al sitio seleccionado en la plataforma Modyo.
 
 Utilizarás un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token `site_base id` o `host` para identificar la plataforma Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
+
+:::warning Advertencia
+Por el momento, Modyo CLI sólo ofrece soporte para widgets hechos y compilados con las herramientas incluídas por defecto de Vue. 
+:::
 
 ```bash
 USAGE
