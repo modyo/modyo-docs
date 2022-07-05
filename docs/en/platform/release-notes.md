@@ -6,6 +6,34 @@ search: true
 
 ## 9.2
 
+### 9.2.14 - July 04, 2022
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fix access token authorizations in multi-site realms
+
+
+### 9.2.13 - June 28, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* 404 is prevented in setup otp
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixed bug in the initial edition of duplicate widgets on a Widget Page
+* Added flag for enabling categories in path for content pages 
+* Fixed deployment of Targets option in Pages
+* Fixed problem when removing favicon and apple icon from a site, which affected their copies
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fix sort filter that failed when sorting entries by text fields
+* Fixed problem with multiline field, which was left with one character when deleting all text
+* Corrected error when selecting entries in the content list, where only those selected on the current page were added
+
+
 ### 9.2.12 - June 06, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
