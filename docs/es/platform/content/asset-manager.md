@@ -6,9 +6,7 @@ search: true
 
 Una organización necesita tener una plataforma que les permita organizar los archivos y documentos de contenido que se requieran dentro de la plataforma.
 
-Para que no sea necesario utilizar servicios externos, **Modyo** permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
-
-Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios.
+Modyo permite subir, revisar, y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos. Esta se puede acceder desde tus Espacios, Sitios, o en el menú lateral dentro de Content. 
 
 :::tip Tip
 El Gestor de Archivos permite subir extensiones de archivo de todo tipo. El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:

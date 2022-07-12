@@ -4,11 +4,12 @@ search: true
 
 # Tipos de contenido
 
+
+Los Tipos de Contenido son la base para tus Entradas. Los Tipos definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
+
+A estos Tipos de Contenido se les puede asignar una cardinalidad, una variable que define cuantas Entradas pueden existir para este Tipo. Se pueden agregar idiomas al repositorio y podrás generar Entradas de varios idiomas, resguardadas desde un solo lugar. También puedes crear Usuarios, con varios roles y permisos, logrando una división de trabajo que llamamos Revisión de Equipo.
+
 <img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
-
-Los Tipos de Contenido son herramientas que te permiten estructurar plantillas de contenido para insertar dentro del servicio que estés otorgando, con más de 15 tipos de campos.
-
-Con Tipos de Contenido creas una plantilla para tus Entradas, estableciendo un estilo predeterminado para optimizar tiempos y calidad a la hora de crear tu contenido.
 
 ## Sobre la Interfaz
 
@@ -23,7 +24,7 @@ Para reordenarla, solo debes hacer click en los símbolos que se encuentran a un
 Las categorías por las cuales puedes reordenar son cuatro:
 
 - **Nombre**
-- **UID**
+- **Identificador (UID)**
 - **Fecha de Creación**
 - **Fecha de Actualización**
 
@@ -33,17 +34,16 @@ Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para 
 
 Crea un tipo de contenido que servirá como una base para las entradas futuras.
 
-1. Desde el menú principal, haz click en Contenido, luego selecciona Tipo.
-2. Haz click en nuevo Tipo.
+1. Desde el menú principal, haz click en **Contenido**, luego selecciona **Tipos**.
+2. Haz click en **+ Nuevo Tipo**.
 3. Escribe el nombre e identificador (UID).
 4. Selecciona la cardinalidad del tipo.
+5. Haz click en **Crear**.
 
 :::tip Tip
-Es una buena práctica escribir el formato dentro del UID, por ejemplo, videos, posts, etc. 
+Recomendamos escribir el formato de las entradas dentro del identificador, por ejemplo, videos, posts, etc. De esta manera, cualquier compañero de equipo sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla para sus entradas sin generar una nueva.
 
-Así, cualquier usuario de la plataforma sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla sin tener que generar una nueva.
-
-La cardinalidad single significa que solamente una entrada de ese tipo puede existir. Seleccionar cardinalidad múltiple no te limita en el número de entradas.
+La cardinalidad se refiere al número de entradas que pueden existir para este tipo de contenido. Cardinalidad single significa que solamente una entrada de ese tipo puede existir. Seleccionar cardinalidad múltiple no te limita en el número de entradas.
 :::
 
 En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 

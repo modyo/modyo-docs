@@ -5,9 +5,9 @@ sidebarDepth: 3
 
 # Espacios
 
-Un Espacio es un formato de recursos donde los miembros del equipo pueden definir distintas estructuras llamadas Tipos de Contenido y sus Entradas.
+Un Espacio es un repositorio donde los miembros del equipo pueden definir distintas estructuras llamadas Tipos de Contenido y sus Entradas.
 
-Todos los elementos se pueden usar dentro o fuera de **Modyo** a través de su API pública o en la creación de un Sitio en Channels.
+Todos los elementos se pueden usar dentro o fuera de **Modyo Platform** a través de su API pública o en la creación de un Sitio en el módulo Channels.
 
 Desde Modyo se puede configurar el acceso desde distintos orígenes para que el servicio que consuma la API, pueda interpretarla.
 

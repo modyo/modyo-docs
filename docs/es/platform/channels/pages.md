@@ -4,7 +4,11 @@ search: true
 
 # Pages
 
-Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
+Las Páginas (o pages) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
+
+Puedes crear dos tipos de páginas, de widgets o de contenido. Las páginas de widgets se basan en un esquema modular para que puedas crear tu sitio a la medida usando HTML, JS, y CSS. Podrás arrastrar y acomodar diferentes widgets que ofrecemos o widgets personalizados creados por tu equipo. 
+
+Las páginas de contenido son nuestra solución para conectar los módulos de Content con Channels. Aquí podrás crear el índice que contiene las entradas y la estructura para todas las entradas usando HTML, JS, CSS, y Liquid.
 
 <img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 

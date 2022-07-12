@@ -6,11 +6,11 @@ search: true
 
 La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio. 
 
-<img src="/assets/img/platform/navigation-builder.png" alt="Navigation builder module screen">
+<img src="/assets/img/platform/navigation-builder.png" alt="Navigation module screen">
 
-En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Template builder](/es/platform/channels/templates.html).
+En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Plantillas](/es/platform/channels/templates.html).
 
-El menú builder solo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los items principales.
+Navegación sólo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los items principales. Por defecto al crear un sitio, Modyo incluye una plantilla y un menú básico que puedes modificar a tus necesidades.
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 
@@ -59,10 +59,10 @@ Para crear un Menú, sigue estos pasos:
 7. Una vez terminado, haz click en **Publicar**.
 
 :::tip Tip
-Tu menú en este momento ya es público pero necesita ser llamado desde una plantilla para poder mostrarse. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en las plantilla `base` usando `{% snippet 'shared/general/menu' %}`.
+Tu menú en este momento ya es público pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en la plantilla `base` usando <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
 :::
 
-Para más información de como se crea y publica un menú personalizado, vea [Creación de Mega Menú](/es/platform/tutorials/how-to-create-a-menu.html)
+Para más información de como se crea y publica un menú personalizado, ve [Creación de Mega Menú](/es/platform/tutorials/how-to-create-a-menu.html).
 
 **Acción principal**
 

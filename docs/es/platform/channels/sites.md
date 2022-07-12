@@ -60,7 +60,7 @@ Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar 
 
 #### Google Tag Manager
 
-Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/es/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
+Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ de [Plantillas](/es/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
 
 
 Si tienes el último tema disponible y aún así no cuentas con estos snippets, puedes dirigirte a la sección "Temas" en la parte superior derecha y hacer click en la opción "Cargar templates" de las opciones adicionales arriba a la derecha. Esta opción cargará todos los templates que han sido añadidos al tema, pero no están presentes en la versión que tienes instalada.
@@ -174,7 +174,7 @@ El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/es/platform/channels/templates.html), en el snippet ``head``.
+El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
 
 Se puede crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cada uno de los cambios sin tener que salir de la vista.
 
@@ -183,7 +183,7 @@ Si cambias el manifiesto, recuerda guardarlo con el botón **Guardar** que se en
 :::
 
 :::warning Atención
-Si no personalizas el manifiesto pero agregas la ruta en el Template Builder, este quedará en blanco y no hará ninguna acción.
+Si no personalizas el manifiesto pero agregas la ruta en Plantillas, este quedará en blanco y no hará ninguna acción.
 :::
 
 #### **Service Worker**

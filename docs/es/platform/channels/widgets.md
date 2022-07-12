@@ -5,9 +5,10 @@ sidebarDepth: 3
 
 # Widgets
 
-Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
+Los widgets te permiten crear _micro frontends_ para tus sitios y aplicaciones. Usar Widgets extienden las capacidades de tus sitios y te permite tener mayor control ya que puedes agregar más funcionalidades manteniendo cada widget como una entidad separada de tu sitio.
 
-Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor, tags, o hacer una búsqueda de texto por el nombre del widget.
+Al entrar en la sección Widgets del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor, tags, o hacer una búsqueda de texto por el nombre del widget.
+
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 

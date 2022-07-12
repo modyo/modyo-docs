@@ -4,13 +4,14 @@ search: true
 
 # Plantillas
 
-Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Template Builder, podrás modificar las plantillas base, junto con el JavaScript y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
+Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Plantillas, podrás modificar las plantillas base, junto con el JavaScript, y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
 
-Cuando ya se selecciona la plantilla que se usa dentro del sitio, se puede acceder desde el Template Builder a las distintas páginas para cambiar los códigos según los necesitas.
-
-Una vez dentro del Template Builder, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
+Al crear un Sitio, se llenará con plantillas distintas para generar el tema Minimal y puedas empezar a crear tu canal digital. Si es necesario, también podrás crear Snippets de código HTML, JS, y CSS para extender la funcionalidad de tu sitio.
 
 <img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
+
+Una vez dentro de Plantillas, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
+
 
 - **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
@@ -71,7 +72,7 @@ Modyo cuenta con tres layouts por defecto:
 * **Base**: Todas las páginas excepto el home usan este layout por defecto.
 * **Error**: Las vistas de error usan este layout limpio (404, 401)
 
-Puedes crear nuevos Layouts desde el template builder, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
+Puedes crear nuevos Layouts desde Plantillas, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
 
 Puedes usar como base este código que contiene todo lo necesario para que tus páginas usen todos los elementos necesarios del sitio, como el head, header, footer, service worker, y la configuración de Google Tag Manager, pero ten en cuenta que puedes modifcarlo tanto como quieras:
 
@@ -107,7 +108,7 @@ En la sección de vistas, encontrarás 4 tipos de error disponible para personal
 * **Deshabilitado**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
 * **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#restricciones) decides mostrar el 404 y no redireccionar a la página home.
 * **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#restricciones) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
-* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en el template builder.
+* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
 
@@ -128,7 +129,7 @@ Para conocer a detalle y los parámetros soportados por estos filtros, dirígete
 
 ## Snippets
 
-Los snippets son pedazos de código que pueden ser utilizados una o más veces. Junto a cada snippet personalizado, encontrarás un ícono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
+Los snippets son pedazos de código HTML, JS, o CSS que pueden ser reutilizados en tus sitios. Junto a cada snippet personalizado, encontrarás un ícono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Este código Liquid se debe pegar en donde se quiera llamar a este Snippet.
 
 Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+**.
 
@@ -154,7 +155,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/es/docs/content/asset-manager.html)
 :::
 
-**Atajos de teclado**: Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en el Template Builder.
+**Atajos de teclado**: Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
@@ -187,7 +188,7 @@ El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es u
 
 En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
-Puedes añadir este snippet de código al Template Builder y luego llamar a este snippet desde el head de tu sitio:
+Puedes añadir este snippet de código en Plantillas y luego llamar a este snippet desde el head de tu sitio:
 
 ```html
 <!-- Site SEO -->

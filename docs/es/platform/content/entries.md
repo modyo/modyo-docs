@@ -4,7 +4,11 @@ search: true
 
 # Entradas
 
-Las Entradas son la manera de desplegar el contenido creado en Espacios para todos tus sitios. Estas Entradas se pueden ver desde Sitios creado en Modyo Platform, en el módulo de Channels, o en sitios externos, utilizando nuestra API.
+Las Entradas son la manera de desplegar contenido creado en Espacios para todos tus sitios. Estas Entradas se pueden ver desde Sitios creado en Modyo Platform, en el módulo de Channels, o en sitios externos, utilizando nuestra API.
+
+Entradas es una parte de Modyo Content, el módulo encargado de la creación de repositorios de contenidos dinámicos que llamamos Espacios. En un Espacio, las entradas son separadas por Tipos de Contenido. El Tipo define la estructura básica con sus requerimientos y validaciones para que una Entrada pueda ser publicada.
+
+Además, si se utilizan los módulos de Channels y Customers, se pueden crear sitios con la habilidad de segmentar entradas para solo mostrar estas si pertenecen a un segmento de tus usuarios en el sitio.
 
 ## Sobre la interfaz
 
@@ -92,7 +96,7 @@ Al hacer click en **Crear**, la entrada se creará y serás redirigido a la edic
 
 ## Traducir una Entrada
 
-Para traducir una entrada existente a un idioma distinto, debes asegurarte que el idioma haya sido agregado a la sección de Localización en la configuración del Espacio. 
+Modyo Platform te permite agregar diferentes idiomas en tus Espacios y crear Entradas para ellos. Para traducir una entrada existente a un idioma distinto, debes asegurarte que el idioma haya sido agregado a la sección de Localización en la configuración del Espacio. 
 
 Para traducir una entrada, sigue estos pasos:
 
@@ -105,7 +109,7 @@ Para traducir una entrada, sigue estos pasos:
 1. Selecciona la entrada que quieres traducir y selecciona el idioma.
 1. Haz click en el botón de más acciones (...) y selecciona **Copiar desde idioma**.
 
-Para mas información acerca de como agregar otro idioma, ve [Configurar un Espacio](/es/platform/content/spaces.html#localizacion).
+Para más información acerca de como agregar otro idioma, ve [Configurar un Espacio](/es/platform/content/spaces.html#localizacion).
 
 ### Publicar una Entrada
 
@@ -117,14 +121,22 @@ Si haces click en este, el botón experimentará dos cambios. Si es que tienes p
 
 Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde puedes asignar a revisores en específico quienes pueden publicar.
 
-Para saber más, puedes ver [Revisión en Equipo.](/es/platform/core/key-concepts.html)
+Para saber más acerca de Revisión en Equipo, puedes ver [Revisión en Equipo.](/es/platform/core/key-concepts.html)
 
 
 ### Despublicar una entrada
 
-Para despublicar una entrada, debes acceder al ella y hacer click en el botón **Despublicar** que se encuentra en la parte superior de la pantalla. Con esto, el recurso volverá al estado de Borrador y no se encontrará en estado Publicado.
+Despublicar una entrada o una parte de un sitio te permite pasar a estado de Borrador y será  oculto del público. En el caso que Revisión de Equipo esté activado, tendrá que pasar por el flujo de revisión de nuevo al ser publicado.
 
-Si quieres republicar la entrada, esta volverá a pasar por el proceso de Revisión en Equipo, por lo que si haces un cambio, se volverá a guardar y el usuario con un rol superior deberá aprobarla para ser publicada correctamente.
+Para despublicar contenido, sigue estos pasos:
+
+1. En Modyo Platform, en el menú lateral, haz click en Channels y selecciona Espacios.
+1. Haz click en tu Espacio.
+1. En el menú de Entradas, selecciona tu Entrada.
+1. Expande el menú de Acciones Masivas y haz click en Despublicar.
+
+<img src=”/assets/img/content/despublicar.png” alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
+
 
 ### Eliminar entradas
 

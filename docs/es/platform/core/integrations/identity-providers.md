@@ -123,6 +123,31 @@ Para el correcto funcionamiento de una integración con OpenID Connect, es neces
 La API para obtención de access tokens delegados vía  `/auth/openidc/access_token` está obsoleta y ha sido reemplazada por `/api/profile/me`.
 :::
 
+### Configuración de la integración
+
+1. Accede a **Configuración/Configuración de reino > Proveedores de Identidad > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
+2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://test.example.com/auth/realms/my-realm`.
+3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
+4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
+
+<img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
+### Configuraciones opcionales de la integración
+
+Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
+
+| Opción                                                              | Descripción                                                                                                                                                                                                                                                                                                                     |
+|:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en el Proveedor de Identidad y deshabilitando la experiencia SSO.                                                                                                         |
+| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.                                                                                                                   |
+| **Tolerancia en segundos para access token**                        | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token.                                                                                                                                                                                                           |
+| **Habilitar revocación de token**                                   | Habilita la revocación de access tokens a través de API. Para la revocación, puedes usar el endpoint del proveedor para revokar tokens.                              |
+| **Activar token de actualización (Refresh Token)**                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint del proveedor enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt> |
+| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
+| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
+
+
+
 ### Sincronización de _claims_
 
 Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
@@ -148,30 +173,14 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
 4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta `/auth/openidc/callback` y `/logout*`.
 
-### Configuración de la integración
+### Configurar Keycloak en Modyo Platform
 
-La siguiente configuración es válida tanto para las integraciones de usuarios de Team como de Customer.
+Después de configurar Keycloak, ahora tienes que completar la integración en Modyo Platform. 
 
-1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
+1. Accede a **Configuración/Configuración de reino > Proveedores de Identidad > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
-
-<img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
-### Configuraciones opcionales de la integración
-
-Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
-
-| Opción                                                              | Descripción                                                                                                                                                                                                                                                                                                                     |
-|:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak y deshabilitando la experiencia SSO.                                                                                                         |
-| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.                                                                                                                   |
-| **Tolerancia en segundos para access token**                        | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token.                                                                                                                                                                                                           |
-| **Habilitar revocación de token**                                   | No soportado por Keycloak                                                                                                                                                                                                                                                                                                       |
-| **Activar token de actualización (Refresh Token)**                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint de keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt> |
-| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
-| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
 
 
 ## Azure Active Directory
