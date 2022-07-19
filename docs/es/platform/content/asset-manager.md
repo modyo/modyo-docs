@@ -174,9 +174,9 @@ Esta acción es irreversible. Si este archivo se encuentra vinculado a un conten
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Upload Image UI">
 
-Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
+Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través de la misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
-Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
+Para subir el archivo, haz click en **Subir Archivo**.
 
 Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
 

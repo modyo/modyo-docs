@@ -87,7 +87,7 @@ En la sección lateral derecha encontrarás tres pestañas:
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
 - Propiedades: Te permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
 
-## Página de widget
+## Página de Widget
 
 Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista: 
 
@@ -178,7 +178,7 @@ La página índice que contiene el listado de todas las entradas del tipo de con
 
 #### Edit
 
-- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio a la página cuando fue creado. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio a la página cuando fue creada. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
 - **Layout**: La plantilla Layout que va a cargar para el Index.
 - **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
 
