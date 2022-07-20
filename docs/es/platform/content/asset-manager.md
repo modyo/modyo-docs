@@ -176,7 +176,7 @@ Esta acción es irreversible. Si este archivo se encuentra vinculado a un conten
 
 Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través de la misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
-Para subir el archivo, haz click en **Subir Archivo**.
+Para subir el archivo, haz click en **Añadir**.
 
 Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
 
