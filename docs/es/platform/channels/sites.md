@@ -114,6 +114,19 @@ Restricciones permite configurar la privacidad del sitio.
 - Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
 - Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
 
+#### Zona de Peligro
+
+Estas opciones involucran cierto riesgo para la experiencia del sitio y sus usuarios, proceda con cuidado.
+
+<img src="/assets/img/channels/sites/danger-zone.jpg" alt="The options in the danger zone." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+- Cambiar Realm: Este campo despliega el realm de este sitio. Al cambiar de realm, se perderá toda la configuración de privacidad en tus sitios, páginas, y navegación.
+- Estado del Sitio: Cambia el estado del sitio entre tres diferentes opciones. 
+	* Habilitado permite que el sitio sea editable y visible al público, este es el estado por default de un sitio. 
+	* Editable permite que un sitio sea modificado pero no es visible al público. Usuarios necesitan hacer login a Modyo Platform para entrar al sitio. Robots.txt, PWAs, y el manifiesto son deshabilitados en este estado.
+	* Deshabilitado prohibe tanto la edición como la visibilidad de un sitio.
+- Eliminar Sitio: Esta acción manda a llamar asincrónicamente la eliminación del sitio. No se podrá accesar este sitio al iniciar a eliminar el sitio. Todos los elementos que contiene un sitio como las páginas y los widgets también serán eliminados. 
+
 
 ### SEO
 
