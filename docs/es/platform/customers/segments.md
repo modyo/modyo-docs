@@ -6,7 +6,7 @@ search: true
 
 Segmentos es la función de Modyo ideal para manejar a los usuarios en masa si necesitas que reciban información determinada.
 
-Estos nos permiten agrupar a los usuarios finales en distintos segmentos y así facilitar el envío de correos o notificaciones.
+Estos nos permiten agrupar a los usuarios finales en distintos Segmentos y así facilitar el envío de correos o notificaciones. Esto se logra a través de filtros anidados para lograr la agrupación deseada. Los Segmentos se pueden aplicar a los módulos de Content y Channels para mostrar cierto contenido a tus usuarios.
 
 ### Sobre la interfaz
 

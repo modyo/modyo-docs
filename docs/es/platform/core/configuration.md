@@ -37,18 +37,3 @@ Para personalizar tu usuario, cambiar tu contraseña, y habilitar autenticación
   - Avatar
   - Idioma: Esto cambia el idioma de Modyo Platform (e.g. El nombre de los campos y botones dentro de la plataforma). Los sitios no serán modificados.
 1. Haz click en **Guardar**.
-
-## Habilita autenticación de dos factores
-
-Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos factores.
-
-1. Dentro de la configuración de usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
-1. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
-- Se agregará un campo nuevo con el nombre del dominio, tu nivel de usuario, y tu nombre de usuario. 
-1. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
-
-> En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
-
-:::warning Atención
-En caso de robo o extravío de un autenticador, un usuario no podrá volver a iniciar sesión por su cuenta. Contacta a tu administrador de Modyo Platform para desvincular manualmente el autenticador a tu usuario. Para más información, ve [Eliminar autenticador para un usuario](/es/platform/core/security.html#eliminar-autenticador-para-un-usuario) 
-:::

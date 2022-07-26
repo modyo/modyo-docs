@@ -4,7 +4,11 @@ search: true
 
 # Pages
 
-Las Pages (o páginas) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
+Las Páginas (o pages) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
+
+Puedes crear dos tipos de páginas, de widgets o de contenido. Las páginas de widgets se basan en un esquema modular para que puedas crear tu sitio a la medida usando HTML, JS, y CSS. Podrás arrastrar y acomodar diferentes widgets que ofrecemos o widgets personalizados creados por tu equipo. 
+
+Las páginas de contenido son nuestra solución para conectar los módulos de Content con Channels. Aquí podrás crear el índice que contiene las entradas y la estructura para todas las entradas usando HTML, JS, CSS, y Liquid.
 
 <img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 
@@ -24,7 +28,7 @@ En la barra superior, encuentras distintas acciones e información:
 Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
 :::
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en el ícono de diferencias, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) de la página que te permite seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#acciones-para-el-versionado)
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en el ícono de diferencias, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) de la página que te permite seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#realizar-versionado)
 
 :::tip Tip
 Si tu página está en estado "Borrador" no aparece el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
@@ -83,7 +87,7 @@ En la sección lateral derecha encontrarás tres pestañas:
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
 - Propiedades: Te permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
 
-## Página de widget
+## Página de Widget
 
 Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista: 
 
@@ -163,10 +167,6 @@ Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
 * Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion)
 
 :::tip Tip
-Para conocer más acerca de como crear una vista de contenido personalizada, vea [Creación de una Vista de Contenido](/es/platform/tutorials/how-to-create-a-custom-view.html).
-:::
-
-:::tip Tip
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
 :::
 
@@ -178,7 +178,7 @@ La página índice que contiene el listado de todas las entradas del tipo de con
 
 #### Edit
 
-- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio a la página cuando fue creado. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Habilitar Índice de Entradas**: Deshabilitado por default. La ruta que toma es el nombre que se le dio a la página cuando fue creada. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
 - **Layout**: La plantilla Layout que va a cargar para el Index.
 - **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
 

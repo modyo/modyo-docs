@@ -5,9 +5,11 @@ sidebarDepth: 3
 
 # Sitios
 
+Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Channels](/platform/channels/) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
+
 <img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
-Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Widgets](/platform/channels/widgets) para crear tu canal digital personalizado. Incluyen la operación de todo el desarrollo, diseño, y flujo de navegación.
+
 
 Existen tres estados para cada sitio:
 
@@ -58,7 +60,7 @@ Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar 
 
 #### Google Tag Manager
 
-Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ del [Template builder](/es/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
+Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar de manera automática los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Estos snippets se encuentran en la sección _snippets>general_ de [Plantillas](/es/platform/channels/templates.html) y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
 
 
 Si tienes el último tema disponible y aún así no cuentas con estos snippets, puedes dirigirte a la sección "Temas" en la parte superior derecha y hacer click en la opción "Cargar templates" de las opciones adicionales arriba a la derecha. Esta opción cargará todos los templates que han sido añadidos al tema, pero no están presentes en la versión que tienes instalada.
@@ -111,6 +113,19 @@ Restricciones permite configurar la privacidad del sitio.
 - Si el sitio es privado, solo usuarios con una sesión de Modyo podrán ver el sitio.
 - Si el sitio es privado, pero el home es público, el home se muestra a todos quienes lleguen al Home, pero al navegar a cualquier otra página del sitio, se les solicita que se registren o que inicien sesión.
 - Si se llegas a una URL que no exista dentro del sitio, por defecto te encontrarás con una respuesta 404, pero si marcas esta opción, en vez de recibir un 404, serás redirigido al Home del sitio.
+
+#### Zona de Peligro
+
+Estas opciones involucran cierto riesgo para la experiencia del sitio y sus usuarios, proceda con cuidado.
+
+<img src="/assets/img/channels/sites/danger-zone.jpg" alt="The options in the danger zone." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+- Cambiar Realm: Este campo despliega el realm de este sitio. Al cambiar de realm, se perderá toda la configuración de privacidad en tus sitios, páginas, y navegación.
+- Estado del Sitio: Cambia el estado del sitio entre tres diferentes opciones. 
+	* Habilitado permite que el sitio sea editable y visible al público, este es el estado por default de un sitio. 
+	* Editable permite que un sitio sea modificado pero no es visible al público. Usuarios necesitan hacer login a Modyo Platform para entrar al sitio. Robots.txt, PWAs, y el manifiesto son deshabilitados en este estado.
+	* Deshabilitado prohibe tanto la edición como la visibilidad de un sitio.
+- Eliminar Sitio: Esta acción manda a llamar asincrónicamente la eliminación del sitio. No se podrá accesar este sitio al iniciar a eliminar el sitio. Todos los elementos que contiene un sitio como las páginas y los widgets también serán eliminados. 
 
 
 ### SEO
@@ -172,7 +187,7 @@ El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través del [Template Builder](/es/platform/channels/templates.html), en el snippet ``head``.
+El manifiesto se debe implementar en cada una de las páginas en que se desarrolle el PWA, a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
 
 Se puede crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cada uno de los cambios sin tener que salir de la vista.
 
@@ -181,7 +196,7 @@ Si cambias el manifiesto, recuerda guardarlo con el botón **Guardar** que se en
 :::
 
 :::warning Atención
-Si no personalizas el manifiesto pero agregas la ruta en el Template Builder, este quedará en blanco y no hará ninguna acción.
+Si no personalizas el manifiesto pero agregas la ruta en Plantillas, este quedará en blanco y no hará ninguna acción.
 :::
 
 #### **Service Worker**
