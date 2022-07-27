@@ -6,6 +6,13 @@ search: true
 
 ## 9.2
 
+
+### 9.2.15 - 27 de julio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Se incluye alternative_id en index, export y búsqueda de órdenes de Commerce
+
 ### 9.2.14 - 04 de julio de 2022
 
 <Badge text="Customers" type="customers" vertical="middle"/>
