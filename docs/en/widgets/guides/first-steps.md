@@ -86,7 +86,7 @@ To learn more about obtaining an API access token, see [Management API](en/platf
 To see all the options available for `modyo-cli push`, see [Modyo-cli Push] (/en/platform/channels/widgets.html#modyo-cli-push-name)
 :::
 
-![Host](/assets/img/widgets/host.png)
+<img src="/assets/img/widgets/host.png" alt="Image displaying where to find accountURL and siteHost">
 
 2. Open a terminal in the project and use `push` to send the widget to the platform:
 
@@ -96,7 +96,7 @@ modyo-cli push
 
 Once the loading process is finished, the Widget will be available in the **Widgets** section of the site waiting to be reviewed and published.
 
-![widgets-list](/assets/img/widgets/widgets_list.png)
+<img src="/assets/img/widgets/widgets_list.png" alt="Image displaying your new Widget in Modyo Platform">
 
 If you want automatically publish the Widget when it finishes loading, use the `--publish` option.
 
