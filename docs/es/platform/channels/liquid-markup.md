@@ -2,15 +2,19 @@
 search: true
 ---
 
-# Liquid Markup
+# Lenguaje Liquid
 
-Liquid Markup es un motor de plantillas que está escrito con requerimientos muy específicos:
+Liquid es un lenguaje que usamos en Modyo Platform para desplegar el contenido del módulo Content en tus Sitios. Utilizando Liquid podrás generar una plantilla en tu sitio que despliega la información de tus entradas dinámicamente así como también controlar que mostrar usando control de flujo o iteración.
+
+En Liquid, como en muchos otros lenguajes de programación, se tienen que usar palabras reservadas para desplegar el contenido dinámico. Estas llamadas se ejecutan “justo-a-tiempo” (just-in-time) lo cual te permite hacer “carga diferida” (lazy loading) sólo cuando se necesite.
+
+Liquid está escrito con requerimientos muy específicos:
 
 * Debe tener un marcado bonito y sencillo. Los motores de plantillas que no producen un marcado atractivo no son divertidos de usar.
 * Tiene que ser no evaluable y seguro. Las plantillas Liquid están hechas para que los usuarios puedan editarlas. No quieres ejecutar código en tu servidor que tus usuarios escribieron.
 * No debe tener un estado. Los pasos de compilación y renderizado tienen que estar separados para que el análisis sintáctico y su compilación se pueda hacer solo una vez, y más tarde se pueda renderizar pasando un hash con objetos locales y variables.
 
-### ¿Por qué usamos Liquid?
+### ¿Por qué usar Liquid?
 
 * Deseas permitir que sus usuarios editen la apariencia de su aplicación pero no quieres que ejecuten **código inseguro en tu servidor**.
 * Quieres renderizar tus plantillas directamente desde la base de datos.
@@ -35,31 +39,33 @@ Liquid Markup es un motor de plantillas que está escrito con requerimientos muy
 
 ### ¿Cómo usar Liquid?
 
-Existen dos tipos de marcado (markup) en Liquid: Output y Tag.
+A continuación veremos varios ejemplos de los usos más comúnes al escribir con Liquid.
 
-* El marcado Output (que se puede traducir a texto) está insertado entre
+#### Objetos
 
-```liquid
-{{ matched pairs of curly brackets (ie, braces) }}
-```
+Se denomina objeto a lo que contiene el contenido que Liquid despliega en pantalla. Se puede desplegar objetos or variables usando doble corchete ``{{ }}``, por ejemplo:
 
-* Marcado tag (que no se puede traducir a texto) está insertado entre
+Para desplegar el nombre de la entrada en tu página usa:
 
 ```liquid
-{% matched pairs of curly brackets and percent signs %}
+{{ entry.meta.name }}
 ```
 
-### Output
+#### Tags
 
-Una sentencia Output es un conjunto de llaves dobles que contienen una expresión; cuando la plantilla es renderizada, es reemplazada por el valor de esa expresión.
-
-Aquí tenemos un ejemplo simple de output:
+Con Tags se puede agregar control de flujo e iteración a tus páginas. Se necesita encapsular el lenguaje con corchete y porcentaje {% %} para hacer uso de Tags, por ejemplo:
 
 ```liquid
-Hello {{name}}
-Hello {{user.name}}
-Hello {{ 'tobi' }}
+{% if product.name == "Banca Electrónica" %}
+ ¡Descarga nuestra banca electrónica en tu teléfono celular!
+{% endif %}
 ```
+
+### Drops
+Modyo extiende la funcionalidad de Liquid a través de variables creadas para Modyo Platform llamadas Drops. Actualmente ofrecemos drops de más de 20 categorías diferentes para todos los módulos de la plataforma. 
+
+Para ver más información acerca de como usar Drops, ve [Drops](/es/platform/channels/drops).
+
 
 ## Expresiones y variables
 

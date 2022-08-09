@@ -6,10 +6,17 @@ search: true
 
 Una organización necesita tener una plataforma que les permita organizar los archivos y documentos de contenido que se requieran dentro de la plataforma.
 
-Para que no sea necesario utilizar servicios externos, **Modyo** permite subir, revisar y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos.
+Modyo permite subir, revisar, y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos. Esta se puede acceder desde tus Espacios, Sitios, o en el menú lateral dentro de Content. 
 
-Para acceder a la herramienta, es posible hacerlo de dos maneras. La primera consiste en una integración dentro de los mismos formularios en donde se esté editando un contenido, ya sea en Espacios o Sitios.
+:::tip Tip
+El Gestor de Archivos permite subir extensiones de archivo de todo tipo. El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
 
+- Imágenes: 30 MB
+- Videos: 200 MB
+- Audios: 100 MB
+- CSV: 2 MB
+- Otros: 100 MB
+:::
 
 #### Rich Text
 
@@ -167,9 +174,9 @@ Esta acción es irreversible. Si este archivo se encuentra vinculado a un conten
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Upload Image UI">
 
-Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través del misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
+Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través de la misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
 
-Para subir el archivo, se debe hacer click en el botón **+ Nuevo**, ubicado en la parte superior de la pantalla.
+Para subir el archivo, haz click en **Añadir**.
 
 Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
 
@@ -179,11 +186,3 @@ Esta acción abre una nueva ventana que permite subir los archivos de dos manera
 :::warning Atención
 Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
 :::
-
-Como una manera de resguardar la seguridad de la plataforma Modyo establece un límite de tamaño de los archivos que puedes subir a la plataforma dependiendo de su tipo. Estos son los limites:
-
-- Imágenes: 30 MB
-- Videos: 200 MB
-- Audios: 100 MB
-- CSV: 2 MB
-- Otros: 100 MB

@@ -611,7 +611,7 @@ Eso imprimirá algo como esto:
 <template v-slot:curl>
 
 ```shell
-curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries"
 ```
 
 </template>
@@ -925,7 +925,7 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 - `order`: ['asc','desc'] (opcional, asc por default)
 
 ```shell
-curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
+curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
 ```
 
 </template>
@@ -955,13 +955,13 @@ Para usar los atributos de las entradas, puedes usar la notación con punto o co
 </template>
 <template v-slot:js>
 
-    <!-- ... (see above) -->
+    <!-- ... -->
 
 </template>
 
 <template v-slot:curl>
 
-    <!-- ... (see above) -->
+    <!-- ... -->
 
 </template>
 </CodeSwitcher>

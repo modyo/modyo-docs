@@ -13,7 +13,7 @@ Actualmente la plataforma es compatible con:
 - [LDAP](#ldap)
 - [SAML](#saml)
 - [OAuth2](#oauth2)
-- [OpenID Connect](#oidc)
+- [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
 - [Azure Active Directory](#azure-active-directory)
 
@@ -109,6 +109,12 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 
 OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
 
+Los campos requeridos por Modyo para una integración son:
+
+- **first_name**
+- **username**
+- **email**
+
 :::warning Atención
 Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3, y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
@@ -116,6 +122,29 @@ Para el correcto funcionamiento de una integración con OpenID Connect, es neces
 :::warning Atención
 La API para obtención de access tokens delegados vía  `/auth/openidc/access_token` está obsoleta y ha sido reemplazada por `/api/profile/me`.
 :::
+
+### Configuración de la integración
+
+1. Accede a **Configuración/Configuración de customers > Integraciones > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
+2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
+3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
+4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
+
+<img src="/assets/img/platform/keycloak-new-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
+### Configuraciones opcionales de la integración
+
+Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
+
+|Opción  | Descripción  |
+|:---    |:---          |
+| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Keycloak y deshabilitando la experiencia SSO. |
+| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
+| **Habilitar revocación de token**                                   | No soportado por Keycloak|
+| **Activar token de actualización (Refresh Token)**                                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint de keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt>                                       |
+| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/profile.html#api-de-perfil) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
+| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                             |
+
 
 ### Sincronización de _claims_
 

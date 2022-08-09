@@ -83,9 +83,7 @@ Cuando está activada la opción de revisión en equipo, y luego de guardar los 
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
 
-Al momento de enviar a revisión la barra cambiará de estado:
-
-<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
+Al momento de enviar a revisión la barra cambiará de estado para mostrar que faltan condiciones o no se tiene permiso suficiente.
 
 Al hacer click, verás que en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
 
@@ -110,8 +108,6 @@ Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se e
 ## Versionado
 
 Como mecanismo de respaldo, al momento de publicar un elemento, Modyo genera y mantiene automáticamente un número de versiones que posteriormente pueden ser recuperadas en caso de ser necesario.
-
-Esto es útil cuando, por alguna razón, se realiza un cambio indebido, entonces existe la posibilidad de revertirlo a través de la plataforma.
 
 Este sistema está disponible para Widgets, Pages, Navigation, Plantillas, y Espacios.
 
@@ -163,27 +159,38 @@ Hay elementos (home, navegación, y plantillas) que no pueden ser despublicados.
 
 Este estado aparece cuando se habilita la revisión en equipo y significa que un elemento en este estado está listo para ser publicado. Cualquier cambio que se le haga a un elemento en este estado, llevará al elemento a un estado editable y deberá pasar nuevamente por el proceso de revisión para poder ser publicado.
 
-### Acciones para el versionado
+## Revertir un Cambio
 
-Dentro del versionado tienes dos acciones que te permiten interactuar con los respaldos. Ambas acciones están disponibles en el modal de diferencias.
-
-![Modal de diferencias](/assets/img/platform/differences.png)
-
-Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha.
+Dentro del versionado tienes dos acciones que te permiten interactuar con los respaldos, resetear y rollback. Por defecto el modal de diferencias muestra la versión publicada a la izquierda, y la versión editable a la derecha.
 
 Puedes cambiar qué versiones comparar, cambiando los valores en los selectores de versiones en la parte superior del modal.
 
-Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se reestablece, se llevará la versión de la izquierda a la versión editable, y si se hace rollback, se llevará la versión de la izquierda a la versión publicada.
+<img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
 
-#### Reestablecer
+Sigue estos pasos para revertir a una versión publicada en una Entrada:
 
-En este caso, el respaldo se copiará a la versión editable, por lo que se perderán todos los cambios que se hicieron posteriormente, y así podrás seguir trabajando en cambios potenciales a esa versión para volverla a publicar.
+1. Desde Modyo Platform, expande Content y selecciona Espacios.
+1. Selecciona tu Espacio y después haz click en la Entrada que quieres versionar.
+1. Haz click en **Diferencias**.
+1. En el modal que aparece, selecciona la versión que quieras hacer rollback y después haz click en **Rollback a esta versión**.
+
+Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se resetea, se llevará la versión de la izquierda a la versión editable, y si se hace rollback, se llevará la versión de la izquierda a la versión publicada.
+
+:::tip Tip
+El versionado se puede realizar en los siguientes módulos:
+- En Content: las **Entradas**.
+- En Channels: las **Páginas**, **Navigation**, **Plantillas**, y **Widgets**.
+:::
+
+#### Resetear
+
+En este caso, el respaldo toma el lugar de la versión editable, por lo que se perderán todos los cambios existentes, y así podrás seguir trabajando en cambios potenciales a esa versión para volverla a publicar.
 
 #### Rollback
 
-En este caso, el respaldo se regresa directamente a la versión publicada del elemento, sin tocar la versión editable.
+En este caso, el respaldo se regresa directamente a la versión **publicada** del elemento, sin tocar la versión editable.
 
- Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables, para que se pueda trabajar en resolver los problemas que la versión con errores pudo haber tenido.
+Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables, para que se pueda trabajar en resolver los problemas que la versión con errores pudo haber tenido.
 
 ::: danger Peligro
 Dado que esta es una acción potencialmente peligrosa, sólo los administradores de sitios o espacios tienen el permiso para poder ejecutar esta acción.

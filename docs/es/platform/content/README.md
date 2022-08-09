@@ -3,13 +3,15 @@ search: true
 title: Modyo Content
 meta:
   - name: description
-    content: Modyo Content es una aplicación que permite la creación de repositorios de contenidos dinámicos llamados espacios. Dentro de un espacio se definen tanto los tipos de contenidos a gestionar como las reglas de acceso y roles que los diferentes miembros del equipo tendrán.
+    content: Modyo Content es el módulo encargado de la creación de repositorios de contenidos dinámicos los cuales llamamos Espacios. En un Espacio, se crean las Entradas separadas por Tipos de Contenido. El Tipo define la estructura básica con sus requerimientos y validaciones para que una Entrada pueda ser publicada.
 version: 9.2
 ---
 
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.meta[0].content }}
+
+Además, si se utilizan los módulos de Channels y Customers, se pueden crear sitios con la habilidad de segmentar entradas para solo mostrar estas si pertenecen a un segmento de tus usuarios en el sitio.
 
 <img src="/assets/img/content/header.jpg" alt="Content header image" style="margin: 40px auto; width: 500px; display: block;">
 

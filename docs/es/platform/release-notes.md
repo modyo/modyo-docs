@@ -6,7 +6,6 @@ search: true
 
 ## 9.2
 
-
 ### 9.2.15 - 27 de julio de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>

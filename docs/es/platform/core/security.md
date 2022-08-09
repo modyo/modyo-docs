@@ -4,7 +4,91 @@ search: true
 
 # Seguridad
 
-En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta página que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que Modyo Cloud y Enterprise Cloud, nuestras soluciones hosteadas, proveen un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
+En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta página que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que nuestras soluciones en la nube, Modyo Cloud y Enterprise Cloud, proveen un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
+
+## Política de Contraseñas
+
+Estas son las opciones disponibles para establecer una política de contraseña para Modyo Platform:
+
+- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 8 a 128 caracteres.
+- Requerir por lo menos una letra minúscula (a - z)
+- Requerir por lo menos una letra mayúscula (A - Z)
+- Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
+
+## Política de expiración de sesiones
+
+Selecciona un valor en esta opción para que la plataforma automáticamente expire una sesión al estar inactiva. Podrás seleccionar entre estos valores:
+
+- 5 minutos
+- 10 minutos
+- 15 minutos
+- 20 minutos
+- 25 minutos
+- 30 minutos
+- 45 minutos
+- 1 hora
+- 1 hora 30 minutos
+- 2 horas
+- 4 horas
+- 8 horas
+- 16 horas
+- 1 días
+- 2 días
+- 3 días
+- 4 días
+- 5 días
+- 6 días
+- 1 semanas
+- 2 semanas
+
+## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
+
+Activa Cross-Origin Resource Sharing (CORS) para poder acceder a los recursos de Modyo desde otras páginas web.
+
+Por defecto, los dominios personalizados de tus sitios se incluyen una vez que CORS está habilitado. Para darle acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Los comodines o wildcards no están permitidos en esta sección.
+
+## Token de entrega de contenido (JWT - JSON Web Token)
+
+Esta clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado-2).
+
+:::warning Atención
+Generar una nueva clave forzará a que todas las request de contenido privado pasen por Modyo, dado que los JWT firmados por Modyo con la clave antigua ya no serán válidos.
+:::
+
+La clave o _secret_ tiene un tiempo determinado de duración en segundos que se puede configurar en la caja debajo. Por defecto, la duración es 1 hora (3600 segundos). No es recomendable usar una duración muy pequeña, dado que podría afectar el rendimiento de la plataforma.
+
+## Autenticación de dos pasos (2FA)
+
+La autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica provista por la aplicación Google Authenticator desde sus teléfonos.
+
+Cada miembro del equipo podrá activar la autenticación en dos pasos desde su perfil, pero además, como administrador, puedes forzar la autenticación en dos pasos para todos los miembros del equipo. 
+
+Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
+
+### Habilita autenticación de dos factores para un usuario 
+
+Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos factores.
+
+1. Dentro de la configuración de usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
+2. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
+- Se agregará un campo nuevo con el nombre del dominio, tu nivel de usuario, y tu nombre de usuario. 
+3. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
+
+> En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
+
+### Eliminar autenticador para un usuario
+
+En caso de extravío o robo del autenticador, no será posible entrar a la cuenta. En este caso, un administrador de Modyo Platform puede auxiliar eliminando el autenticador ligado al usuario siguiendo estos pasos:
+
+1. En el menú lateral, expande **Configuración** y haz click en **Equipo**.
+1. Haga click en el nombre del miembro.
+1. En la barra superior, haga click en el botón de más opciones **...** y selecciona **Eliminar autenticador**.
+
+:::warning Atención
+Si la opción de forzar autenticación está activada, la próxima vez que el usuario intente iniciar sesión tendrá que inicializar el autenticador primero. Al tener un autenticador activo, el usuario debe volver a iniciar sesión.
+:::
+
+## Mejores Prácticas
 
 ### Conceptos importantes
 * **Limitar accesos:** Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
@@ -70,47 +154,6 @@ Esta sección te permitirá configurar la política de seguridad de contraseñas
 
 Al guardar esta configuración, los usuarios deberán cumplir con estas condiciones al momento de cambiar su contraseña.
 
-### Compartir recursos en distintos dominios
+## Reportar una vulnerabilidad
 
-En esta sección podremos activar el Cross Origin Resource Sharing (CORS), para poder acceder a los recursos de Modyo desde otras web que no necesariamente sean seguras.
-
-Al habilitarlo, deberás especificar los dominios (separados por coma y sin barra al final) que quieres que se habiliten para que estén compartiendo recursos con tu sitio. Por ejemplo:
-`http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
-
-### Token de entrega de contenido (JWT - JSON Web Token)
-
-Luego de configurar CORS, la plataforma te dará una clave o _secret_ para poder decodificar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado-2).
-
-:::warning Atención
-La clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios. Generar una nueva clave forzará a que todas las request de contenido privado pasen por Modyo, dado que los JWT firmados por Modyo con la clave antigua ya no serán válidos.
-:::
-
-La clave o _secret_ tiene un tiempo determinado de duración en segundos que se puede configurar en la caja debajo. Por defecto, la duración es 1 hora (3600 segundos). No es recomendable usar una duración muy pequeña, dado que podría afectar el _performance_ de la plataforma.
-
-### Autenticación en dos pasos
-
-La autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica provista por la aplicación _Google Authenticator_ desde sus teléfonos.
-
-Puedes descargar la aplicación para tu teléfono en los siguientes links:
-
-* Android: [Google Authenticator en Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
-* iOS: [Google Authenticator en Apple App Store](https://apps.apple.com/us/app/google-authenticator/id388497605)
-
-Cada miembro del equipo podrá activar la autenticación en dos pasos desde su perfil, pero además, como administrador, puedes forzar la autenticación en dos pasos para todos los miembros del equipo. 
-
-Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
-
-#### Eliminar autenticador para un usuario
-
-En caso de extravío o robo del autenticador, no será posible entrar a la cuenta. En este caso, un administrador de Modyo Platform puede auxiliar eliminando el autenticador ligado al usuario siguiendo estos pasos:
-
-1. En el menú lateral, expande **Configuración** y haz click en **Equipo**.
-1. Haga click en el nombre del miembro.
-1. En la barra superior, haga click en el botón de más opciones **...** y selecciona **Eliminar autenticador**.
-
-:::warning Atención
-Si la opción de forzar autenticación está activada, la próxima vez que el usuario intente iniciar sesión tendrá que inicializar el autenticador primero. Al tener un autenticador activo, el usuario debe volver a iniciar sesión.
-:::
-
-### Reporte de vulnerabilidades
 Si piensas que encontraste una vulnerabilidad de seguridad en Modyo, ayúdanos por favor reportando el problema. Modyo posee canales seguros y confidenciales de reporte de incidencias de seguridad por medio de nuestro [centro de soporte](https://support.modyo.com/hc/es) o del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.

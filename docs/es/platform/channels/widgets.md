@@ -1,12 +1,14 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Widgets
 
-Los widgets son los que te permiten crear _micro frontends_ encapsulados para tus sitios y aplicaciones.
+Los widgets te permiten crear _micro frontends_ para tus sitios y aplicaciones. Usar Widgets extienden las capacidades de tus sitios y te permite tener mayor control ya que puedes agregar más funcionalidades manteniendo cada widget como una entidad separada de tu sitio.
 
-Al entrar en la sección **Widgets** del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor, tags, o hacer una búsqueda de texto por el nombre del widget.
+Al entrar en la sección Widgets del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor, tags, o hacer una búsqueda de texto por el nombre del widget.
+
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
@@ -291,6 +293,10 @@ EXAMPLE
 El comando `push` es el encargado del integrar el widget al sitio seleccionado en la plataforma Modyo.
 
 Utilizarás un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token `site_base id` o `host` para identificar la plataforma Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
+
+:::warning Advertencia
+Por el momento, Modyo CLI sólo ofrece soporte para widgets hechos y compilados con las herramientas incluídas por defecto de Vue. 
+:::
 
 ```bash
 USAGE
