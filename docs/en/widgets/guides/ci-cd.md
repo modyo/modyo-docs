@@ -42,7 +42,7 @@ In order to load a Widget using **GitHub Actions** we need the _"recipe"_ **Buil
 
 To get a **token** we first need to create an **API Access** at the site's account level. Navigate to **Settings (1) —> API access (2) —> New API access (3) —> + New API Access (4) **.
 
-![1](/assets/img/widgets/ci-cd/1.png)
+<img src="/assets/img/widgets/ci-cd/1.png" alt="Image displaying where to find the API Access button in Modyo Platform ">
 
 After creating the access API we need to generate a token for the user who will load the Widget.
 
@@ -58,11 +58,11 @@ We recommend creating a new user that has permissions and the token to upload an
 4. Select the Api access we created earlier
 5. + New Access Token
 
-![2](/assets/img/widgets/ci-cd/2.png)
+<img src="/assets/img/widgets/ci-cd/2.png" alt="Image displaying where to find the Generate Access Token button in Modyo Platform ">
 
 We now have the **token** we can use to configure our repository and so the GitHub action will have access to it.
 
-![2](/assets/img/widgets/ci-cd/3.png)
+<img src="/assets/img/widgets/ci-cd/3.png" alt="Image displaying your new API Access Token in Modyo Platform">
 
 :::danger Danger
 You should never share or publish the **TOKEN** or sensitive information in the repository!
