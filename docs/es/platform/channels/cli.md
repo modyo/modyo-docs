@@ -205,6 +205,7 @@ MODYO_ACCOUNT_URL=https://test.miModyo.com //URL de la cuenta dueña del sitio
 MODYO_VERSION=9                            //La versión de la plataforma Modyo
 MODYO_TOKEN=ax93...nm3                     //El token para accesar a la API administrativa
 MODYO_SITE_HOST=miHost                     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
+MODYO_SITE_ID=miStage                      //(Opcional) Esta variable solo se utiliza en el caso de hacer push hacia un stage. Solo se utiliza una variable MODYO_SITE_HOST o MODYO_SITE_ID. El Id se obtiene utilizando nuestra API /api/admin/sites.    
 MODYO_WIDGET_NAME=miWidget                 //El nombre del widget
 MODYO_BUILD_COMMAND=build                  //El comando para package.json (default: build) 
 MODYO_BUILD_DIRECTORY=dist                 //La ruta del widget (default: dist) 
@@ -217,3 +218,61 @@ En una terminal con modyo-cli instalado, es posible hacer push a través de la l
 ```
 modyo-cli push miWidget -b build -d dist -n miHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
 ```
+
+#### Push hacia Stage
+
+Al utilizar nuestra API de administración, también podrás hacer push hacia un stage. Sigue estos pasos para hacer un push hacia tu stage desde Modyo CLI.
+
+1. Haz una llamada a nuestra API de administración */api/admin/sites*, por ejemplo:
+
+``curl -X GET https://test.modyo.com/api/admin/sites`` 
+
+Recibirás un JSON con toda la información relacionada a sitios. Dentro de este JSON, en la información de tu sitio, existe un apartado de *stages* en donde encontrarás el Id necesario para hacer push a este stage, a través de Modyo CLI.
+
+```json
+"meta": [...],
+"sites": [
+    ...,
+    "name": "miHost",
+    "stages": [
+        {
+          "id": 1044,
+          "uuid": "7a5d4b2d-de98-4c7f-8f0d-2c08599a218c",
+          "name": "CLI DEMO",
+          "host": "cli-demo",
+          "stage_name": "main",
+          "created_at": "2019-03-15T11:02:07.000-03:00",
+          "original_stage": "",
+          "base_stage": true
+        },
+        {
+          "id": 2673,
+          "uuid": "951b258b-5c86-4e7b-a21a-8e605e9cf0de",
+          "name": "Test Stage CLI DEMO",
+          "host": "test-cli-demo",
+          "stage_name": "Test",
+          "created_at": "2022-08-10T18:03:19.000-04:00",
+          "original_stage": "main",
+          "base_stage": false
+        }
+    ],
+]
+```
+
+2. Abre tu archivo de variables de entorno `.env`. Se debe borrar la variable MODYO_SITE_HOST ya que usaremos el Id del sitio. Para hacer push hacia un stage, solo se puede usar MODYO_SITE_ID. Agrega el MODYO_SITE_ID de la siguiente manera:
+
+```shell
+MODYO_ACCOUNT_URL=https://test.miModyo.com
+MODYO_VERSION=9
+MODYO_TOKEN=ax93...nm3
+MODYO_WIDGET_NAME=miWidget
+MODYO_BUILD_COMMAND=build
+MODYO_BUILD_DIRECTORY=dist
+MODYO_SITE_ID=2673
+```
+
+3. En tu terminal, haz push a tu stage utilizando Modyo CLI:
+
+``modyo-cli push miWidget``
+
+En caso de querer hacer push a main, se tiene que modificar la variable MODYO_SITE_ID para main o borrar esta variable y usar MODYO_SITE_HOST.
