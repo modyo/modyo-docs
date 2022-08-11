@@ -8,7 +8,7 @@ search: true
 
 La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación.
 
-De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores.
+De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores. Esta herramienta se configura individualmente para cada Sitio y Espacio.
 
 ### Función
 
@@ -22,16 +22,13 @@ Cada paso de este proceso lleva al elemento por distintos estados, que quedan re
 
 <img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios).
-
-La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
-
-
 ### Configuración
 
-La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
+Para activar la revisión de equipo, sigue estos pasos:
 
-Para configurar la herramienta, debes seleccionar un espacio o sitio y seleccionar la opción  `Configuración del sitio/espacio > Revisión en equipo` en el menú lateral.
+1. Desde el menú lateral en Modyo Platform, selecciona un espacio o sitio.
+2. Expande **Configuración del espacio/sitio** y selecciona **Revisión en Equipo**.
+3. Haz click en **Habilita la revisión en equipo**.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
