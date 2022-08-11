@@ -205,7 +205,7 @@ MODYO_ACCOUNT_URL=https://test.miModyo.com //URL de la cuenta dueña del sitio
 MODYO_VERSION=9                            //La versión de la plataforma Modyo
 MODYO_TOKEN=ax93...nm3                     //El token para accesar a la API administrativa
 MODYO_SITE_HOST=miHost                     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
-MODYO_SITE_ID=miStage                      //(Opcional) Esta variable solo se utiliza en el caso de hacer push hacia un stage. El Id se obtiene utilizando nuestra API /api/admin/sites.    
+MODYO_SITE_ID=miStage                      //(Opcional) Esta variable solo se utiliza en el caso de hacer push hacia un stage. Solo se utiliza una variable MODYO_SITE_HOST o MODYO_SITE_ID. El Id se obtiene utilizando nuestra API /api/admin/sites.    
 MODYO_WIDGET_NAME=miWidget                 //El nombre del widget
 MODYO_BUILD_COMMAND=build                  //El comando para package.json (default: build) 
 MODYO_BUILD_DIRECTORY=dist                 //La ruta del widget (default: dist) 
@@ -259,13 +259,12 @@ Recibirás un JSON con toda la información relacionada a sitios. Dentro de este
 ]
 ```
 
-2. Abre tu archivo de variables de entorno `.env` y agrega la información de tu stage:
+2. Abre tu archivo de variables de entorno `.env`. Se debe borrar la variable MODYO_SITE_HOST ya que usaremos el Id del sitio. Para hacer push hacia un stage, solo se puede usar MODYO_SITE_ID. Agrega el MODYO_SITE_ID de la siguiente manera:
 
 ```shell
 MODYO_ACCOUNT_URL=https://test.miModyo.com
 MODYO_VERSION=9
 MODYO_TOKEN=ax93...nm3
-MODYO_SITE_HOST=miHost
 MODYO_WIDGET_NAME=miWidget
 MODYO_BUILD_COMMAND=build
 MODYO_BUILD_DIRECTORY=dist
@@ -276,4 +275,4 @@ MODYO_SITE_ID=2673
 
 ``modyo-cli push miWidget``
 
-En caso de querer hacer push a main, se tiene que borrar la variable MODYO_SITE_ID o alternativamente usar el Id para el stage main.
+En caso de querer hacer push a main, se tiene que modificar la variable MODYO_SITE_ID para main o borrar esta variable y usar MODYO_SITE_HOST.
