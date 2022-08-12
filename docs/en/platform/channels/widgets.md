@@ -1,12 +1,14 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Widgets
 
-Widgets allow you to create encapsulated _micro frontends_ for your sites and applications.
+Widgets allow you to create _micro frontends_ for your sites and applications. Using Widgets extends the capabilities of your sites and allows you to have more control since you can add more functionality by keeping each widget as a separate entity from your site.
 
-When entering the **Widgets** section in a site, you can see a list of every created widget. In the upper bar you can filter the widgets by state, author, tags, or by text search by the name of the widget.
+When you enter the Widgets section of the site, you can see a list of all the widgets that have been created. In the top bar you can filter the list of widgets by status, author, tags, or do a text search by the name of the widget.
+
 
 In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
@@ -292,6 +294,10 @@ The `push` command is responsible for integrating the widget into the selected s
 
 You'll use a name argument to load the widget into the platform and some required indicators such as `site_base id` or `host` token to identify the Modyo platform that hosts the widget and have an additional indicator to avoid the manual process flow of publishing the widget.
 
+:::warning Warning
+At the moment, Modyo CLI only offers support for widgets made and compiled with the tools included in Vue by default.
+:::
+
 ```bash
 USAGE
  $modyo-cli push NAME
@@ -325,13 +331,14 @@ To push to the platform, it is necessary to fill in the required options. For th
 In the widget root directory, create a `.env` file containing the following data:
 
 ```shell
-MODYO_ACCOUNT_URL= https://test.miModyo.com //URL of the account that owns the site
-MODYO_VERSION=9 //The version of the Modyo platform
-modyo_token=AX93... nm3 //The token for accessing the administrative API
-modyo_site_host=MyHost //The hostname, located within the platform, in the sites section
-modyo_widget_name=MyWidget //The name of the widget
-Modyo_build_command=build //The command for package.json (default: build) 
-modyo_build_directory=Dist //The widget path (default: dist) 
+MODYO_ACCOUNT_URL=https://test.miModyo.com   //URL of the account that owns the site
+MODYO_VERSION=9   //The Modyo platform version
+modyo_token=AX93... nm3   //The token to access the administrative API
+modyo_site_host=MyHost   //The hostname, located within the platform, in the sites section
+modyo_site_id=Mistage//(Optional) This variable is only used in the case of pushing to a stage. Only one variable MODYO_SITE_HOST or MODYO_SITE_ID is used. The ID is obtained using our /api/admin/sites API endpoint. 
+modyo_widget_name=MyWidget   //The name of the widget
+modyo_build_command=BUILD   //The command for package.json (default: build) 
+modyo_build_directory=dist   //The path of the widget (default: dist) 
 ```
 
 ##### Option
@@ -341,3 +348,61 @@ In a terminal with modyo-cli installed, it is possible to push through the comma
 ```
 modyo-cli push MyWidget -b build -d dist -n myHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
 ```
+
+#### Push to Stage
+
+By using our administration API, you can also push to a stage. Follow these steps to push to your stage from Modyo CLI.
+
+1. Make a call to our administration API */api/admin/sites*, for example:
+
+``curl -X GET https://test.modyo.com/api/admin/sites `` 
+
+You will receive a JSON with all the information related to sites. Within this JSON, in the information about your site, there is a *stages* section where you will find the Id necessary to push this stage, through Modyo CLI.
+
+```json
+"meta": [...],
+"sites": [
+    ...,
+    "name": "miHost",
+    "stages": [
+        {
+          "id": 1044,
+          "uuid": "7a5d4b2d-de98-4c7f-8f0d-2c08599a218c",
+          "name": "CLI DEMO",
+          "host": "cli-demo",
+          "stage_name": "main",
+          "created_at": "2019-03-15T11:02:07.000-03:00",
+          "original_stage": "",
+          "base_stage": true
+        },
+        {
+          "id": 2673,
+          "uuid": "951b258b-5c86-4e7b-a21a-8e605e9cf0de",
+          "name": "Test Stage CLI DEMO",
+          "host": "test-cli-demo",
+          "stage_name": "Test",
+          "created_at": "2022-08-10T18:03:19.000-04:00",
+          "original_stage": "main",
+          "base_stage": false
+        }
+    ],
+]
+```
+
+2. Open your `.env` environment variable file. The MODYO_SITE_HOST variable should be deleted since we will use the site ID. To push to a stage, you can only use MODYO_SITE_ID. Add the MODYO_SITE_ID as follows:
+
+```shell
+MODYO_ACCOUNT_URL= https://test.miModyo.com
+MODYO_VERSION=9
+modyo_token=AX93... nm3
+modyo_widget_name=MyWidget
+modyo_build_command=Build
+modyo_build_directory=dist
+MODYO_SITE_ID=2673
+```
+
+3. On your terminal, push to your stage using Modyo CLI:
+
+``modyo-cli push MyWidget``
+
+If you want to push to main, you have to modify the MODYO_SITE_ID variable for main or delete this variable and use MODYO_SITE_HOST.
