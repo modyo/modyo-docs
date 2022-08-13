@@ -583,7 +583,7 @@ To access the list of entries of a type with the uid `type_uid` and of a space w
 {% endfor %}
 ```
 
-In the case of a single entry, you can use the method entry, for example:
+In the case of a single cardinality entry, you can use the entry method, for example:
 
 ```liquid
 {{ spaces['space_uid'].types['type_uid'].entry }}
@@ -594,16 +594,16 @@ In the case of a single entry, you can use the method entry, for example:
 
 ```js
 import { Client } from "@modyo/sdk";
-// To get the correct account, use the url of the account
-const modyoAccount = new Client("https://my-account.modyo.com","es");
+// To obtain the correct account, you have to use the url of the account
+const modyoAccount = new Client("https://my-account.modyo.com","en");
 
 const typePost = modyoAccount.getContentType("space_uid", "type_uid");
-// `typePost` will return an object with information of the type, such as the schema
+// `typePost` will return an object with information about the type, like the schema for example
 
-// If you want to see the schema's details, use the `getSchema()` method
+// If we want to see more details about the schema, you can use the `getSchema()` method
 typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
 /*
-The output will look like:
+This will print something like:
 > Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {...}, type: "object", required: Array(2), properties: {...}}
 */
 ```
@@ -611,7 +611,7 @@ The output will look like:
 <template v-slot:curl>
 
 ```shell
-curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries"
 ```
 
 </template>
@@ -925,7 +925,7 @@ The order of the results must be specified with the `sort_by` and `order` parame
 - `order`: ['asc','desc'] (opcional, asc by default)
 
 ```shell
-curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?sort_by=id&order=desc"
+curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
 ```
 
 </template>
@@ -955,13 +955,13 @@ To use input attributes, you can use dot or square bracket notation, so <span v-
 </template>
 <template v-slot:js>
 
-    <!-- ... (see above) -->
+    <!-- ... -->
 
 </template>
 
 <template v-slot:curl>
 
-    <!-- ... (see above) -->
+    <!-- ... -->
 
 </template>
 </CodeSwitcher>
