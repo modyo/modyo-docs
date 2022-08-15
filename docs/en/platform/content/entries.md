@@ -4,6 +4,12 @@ search: true
 
 # Entries
 
+Entries are the way to display content created in Spaces for all your sites. These Entries can be viewed from Sites created in Modyo Platform, in the Channels module, or on external sites, using our API.
+
+Entries are a part of Modyo Content, the module responsible for creating dynamic content repositories that we call Spaces. In a Space, Entries are separated by Content Types. The Type defines the basic structure with its requirements and validations so that an Entry can be published.
+
+In addition, if you use the Channels and Customers modules, you can create sites with the ability to show entries if they belong to a segment of your users in a site.
+
 ## About the interface
 
 The entry list displays every type of non-archived entry within in that space.
@@ -88,13 +94,22 @@ If the name field is empty, the platform defaults the UUID of the entry as a slu
 
 When you click **Create**, the entry edit view opens and you can fill in your content in the required fields based on the content type you chose.
 
-:::tip Tip
-To translate an already written entry into a different language, keep in mind that your space must be configured for the languages you want to select. (Check [Configure a Space](/en/platform/content/spaces.html#configure-a-space))
+## Translate an Entry
 
-Then, you need to click the language dropdown and select the new language you want to use.
+Modyo Platform allows you to add different languages to your Spaces and create Entries for them. To translate an existing entry into a different language, you must ensure that the language has been added to the Localization section in the Space settings. 
 
-You'll get a blank version of the entry, where you can press the **Copy from language** button to bring the content from another version of the entry and consequently be able to translate it.
-:::
+To translate an entry, follow these steps:
+
+1. From Modyo Platform, in the side menu, expand **Content**, and click on**Spaces**.
+1. Click your **Space**.
+1. Expand **Space Settings** and click **Location**.
+1. Select the language you want to add and click **Add Language**.
+1. Click **Save**.
+1. In the side menu, click **Entries**.
+1. Select the entry you want to translate and select the language.
+1. Click on the more actions button (...) and select **Copy from Language**.
+
+For more information about adding another language, see [Setting Up a Space](/en/platform/content/spaces.html#localization).
 
 ### Publish an Entry
 
@@ -106,14 +121,22 @@ If you click on it, the button will respond in two ways. If you have the Space A
 
 If the Space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
-To learn more, see [Team Review.](/en/platform/core/key-concepts.html#team-review)
+To learn more about Team Review, see [Team Review](/en/platform/core/key-concepts.html).
 
 
 ### Unpublish an entry
 
-To unpublish an entry, open it and click **Unpublish** at the top of the screen. This changes the status of the entry to Draft, and will no longer be published.
+Unpublishing an entry or part of a site allows you to go to Draft status and will be hidden from the public. In the event that Team Review is enabled, you will have to go through the review flow again when it is published.
 
-If you want to republish the entry, it must go through the Team Review process again (if enabled).
+To unpublish content, follow these steps:
+
+1. In Modyo Platform, in the side menu, click Channels and select Spaces.
+1. Click your Space.
+1. In the Entries menu, select your Entry.
+1. Expand the Mass Actions menu and click Unpublish.
+
+<img src=”/assets/img/content/despublicar.png” alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
+
 
 ### Delete Entries
 
