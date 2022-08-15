@@ -3,13 +3,15 @@ search: true
 title: Modyo Content
 meta:
   - name: description
-    content: Modyo Content is the module that lets you create repositories of dynamic content called spaces. Within a space, you can define both the types of content to be managed and the access rules and roles that the different team members will have.
+    content: Modyo Content is the module responsible for creating dynamic content repositories which we call Spaces. In a Space, Entries are created separated by Content Types. The Type defines the basic structure with its requirements and validations so that an Entry can be published.
 version: 9.2
 ---
 
 # {{ $frontmatter.title }}
 
 {{ $frontmatter.meta[0].content }}
+
+In addition, if you use the Channels and Customers modules, you can create sites with the ability to show entries if they belong to a segment of your users in a site.
 
 <img src="/assets/img/content/header.jpg" alt="Content header image" style="margin: 40px auto; width: 500px; display: block;">
 
