@@ -6,10 +6,17 @@ search: true
 
 An organization needs to have a platform that allows them to organize and manage their required files and content.
 
-**Modyo** allows you to upload, review and edit files through the Asset Manager tool, without the need to integrate with an external service.
+Modyo allows you to upload, review, and edit files within the same platform, through the Asset Manager tool. This can be accessed from your Spaces, Sites, or in the side menu within Content. 
 
-You can access the Asset Manager in one of two ways. The first way is integrated within the platform tools where you create and edit content, either in Spaces or Sites.
+:::tip Tip
+The Asset Manager allows you to upload file extensions of all kinds. The only requirement is that the files are within the size limits. The limits are:
 
+- Images: 30 MB
+- Videos: 200 MB
+- Audios: 100 MB
+- CSV: 2 MB
+- Others: 100 MB
+:::
 
 #### Rich Text
 
@@ -167,9 +174,9 @@ This action is irreversible, and any content using this file will display a brok
 
 <img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Upload Image UI">
 
-There are two ways to upload a file in **Modyo**. The first way is in the context of working with content. This can be either in the Content editor with an asset field, or working in the Template or Widget Builder to load files as necessary. The second way is through the Asset Manager in the Content section.
+There are two ways to upload a file for use in **Modyo**. One of them is through the same section from which you work and another is through the Asset Manager, which gives you the option of taking any material from the local disk to upload it to the platform.
 
-To upload a file, click on the **+ New** button, located at the top of the screen.
+To upload the file, click **Add**.
 
 This action opens a new window that allows you to upload files in two ways:
 
@@ -179,11 +186,3 @@ This action opens a new window that allows you to upload files in two ways:
 :::warning Warning
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
 :::
-
-As a way to protect the security of the Modyo platform, there is a file size limit, depending on the file type. These limits are:
-
-- Images: 30 MB
-- Videos: 200 MB
-- Audios: 100 MB
-- CSV: 2 MB
-- Others: 100 MB
