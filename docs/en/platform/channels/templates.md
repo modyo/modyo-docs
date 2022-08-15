@@ -4,13 +4,14 @@ search: true
 
 # Templates
 
-One of the most important aspects when creating the site is the base architecture and appearance of the site. In Template Builder, you'll be able to modify the base templates, along with the global JavaScript and CSS to use on your pages and change their structure as required.
+One of the most important aspects when creating the site is the base architecture and appearance of the site. In Templates, you can modify the base templates, along with the global JavaScript, and CSS to use in your pages and change their structure as required.
 
-When the template that is used within the site is already selected, you can access the different pages from the Template Builder to edit code as needed.
-
-Once inside the Template Builder, the main menu is hidden to optimize the workspace. In the top bar, on the left, you can find the section name and the current publication status.
+When creating a Site, it will be filled with different templates to generate the Minimal theme and you can start creating your digital channel. If necessary, you can also create Snippets of HTML, JS, and CSS code to extend the functionality of your site.
 
 <img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
+
+Once inside Templates, you can see that the main menu is hidden to optimize the work area. In the top bar, on the left, you can find the name of the section and the current publication status.
+
 
 - **Published**: When a published version already exists and its editable version is the same.
 - **Pending Changes**: When there is a published version, but your editable version has changes that are not published yet.
@@ -71,7 +72,7 @@ Modyo has three default layouts:
 * **Base**: All pages except the home page use this default layout.
 * **Error**: The error views use this clean layout (404, 401)
 
-You can create new Layouts from the template builder, by clicking on "Add Layout" in the "Views" tab, which will allow you to define a new base structure to use on the pages.
+You can create new Layouts from Templates, by clicking on “Add Layout” in the “Views” tab, which will allow you to define a new base structure to use in the pages.
 
 You can use this code as a base, this contains everything you need to make your pages use all the necessary elements of the site, such as the head, header, footer, service worker, and Google Tag Manager settings, but keep in mind that you can modify it as much as you want:
 
@@ -107,7 +108,7 @@ In the views section, you will find 4 error types available for customization:
 * **Disabled**: You'll see this error if the site you're trying to access has been [disabled](/en/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if you decide to show 404 errors in the [site restrictions](/en/platform/channels/sites.html#restrictions) instead of redirecting to the home page.
 * **Privacy**: You will see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#restrictions) or one of its [pages](/en/platform/channels/pages.html#privacy).
-* **Template**: You'll see this error when the page of the site you're loading has a liquid syntax error. It is unlikely that you will see this view, since from modyo 8.1 onwards we have a functionality that checks the syntax of liquid before you can save and publish changes to the template builder.
+* **Template**: You'll see this error view when the page of the site you're loading has a liquid syntax error. It's unlikely that you'll ever see this view, given that from modyo 8.1 onwards we have a feature that checks the syntax of liquid before we can save and publish changes to Templates.
 
 ## CSS and JavaScript
 
@@ -128,7 +129,7 @@ For more details and the parameters supported by these filters, see [Liquid filt
 
 ## Snippets
 
-Snippets are pieces of code that can be created, modified, and reused. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) that you can use to copy the snippet's reference path. The copied code looks like this: <span v-pre>`{% snippet "snippet-name"%}`</span>.
+Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) to copy its reference path. The code will look similar to this: <span v-pre> `{% snippet “snippet name”%}` </span>. This Liquid code must be pasted where you want to call this Snippet.
 
 You can add custom snippets to the bottom of the platform's snippet list by clicking on the **+** button.
 
@@ -154,7 +155,7 @@ In the work area, under the tabs, you will find a bar with useful elements:
 For more information on the functionality of the Asset Manager, see [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-**Shortcuts helper**: Opens a small pop-up that displays useful keyboard shortcuts for the Template Builder.
+**Keyboard shortcuts**: A small pop-up appears with some of the useful keyboard shortcuts to use in Templates.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
@@ -186,7 +187,7 @@ SEO [(Search Engine Optimization)](/en/platform/channels/sites.html#seo) is one 
 
 In Modyo, we have a way to control the way search engines read your site and content, dynamically adding meta tags depending on the attributes you add to your pages and content.
 
-You can add this code snippet to the Template Builder and then call this snippet from the head of your site:
+You can add this code snippet in Templates and then call this snippet from the head of your site:
 
 ```html
 <!-- Site SEO -->
