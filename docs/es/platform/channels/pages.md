@@ -243,14 +243,26 @@ Si habilitas la privacidad en una página, entonces se requerirá una sesión pa
 
 ## Meta tags
 
-En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
+Los meta tags definen el contenido de una página y los motores de búsqueda dependen de estos para proveer el listado de una búsqueda al usuario. En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las páginas, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
+
+Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates.html#seo).
+
+### Agregar un nuevo meta tag
+
+Para agregar un nuevo meta tag a tu sitio, sigue estos pasos:
+
+1. En Modyo Platform, desde el menú principal, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu Sitio.
+1. Expande **Configuración de sitio** y haz click en **SEO**.
+1. En la sección de Meta tags personalizados, haz click en **+ Nuevo meta tag**.
+
+En la pantalla que aparece tienes la opción de elegir entre diferentes meta tags y asignarles un valor. Este valor puede ser dinámico si se utiliza Liquid. Si activas la opción **Replicar meta tag en páginas**, se creará un meta tag en la sección de Propiedades de todas tus páginas. 
+
+Como parte de la Plantilla `base`, incluimos el Snippet `seo` que contiene la información necesaria para imprimir los valores de los meta tags dependiendo si es un Sitio, una Página, o una Entrada.
 
 :::tip Tip
 Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.
 :::
 
-Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates.html#seo).
+Para más información acerca de como usamos meta tags dinámicos en los sitios, visita [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
 
-:::tip Tip
-Si quieres añadir un meta tag común para todos los pages en una sola acción, dirígete a la [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
-:::
