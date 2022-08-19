@@ -125,8 +125,8 @@ La API para obtención de access tokens delegados vía  `/auth/openidc/access_to
 
 ### Configuración de la integración
 
-1. Accede a **Configuración/Configuración de reino > Proveedores de Identidad > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
-2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://test.example.com/auth/realms/my-realm`.
+1. Accede a **Configuración/Configuración de reino > Reino > Proveedores de Identidad > + Añadir > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
+2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm `my-realm` la URL es `https://test.example.com/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
@@ -153,8 +153,8 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
 
 1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
-2. En **Customers >  Configuración de customers > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
-3. En **Customers > Configuración de customers > Integrations > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
+2. En **Customers > Reinos >  Configuración de reino > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
+3. En **Customers > Reinos > Configuración de reino > Proveedores de identidad > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
 
 ## Keycloak
 
@@ -171,7 +171,7 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 <img src="/assets/img/platform/keycloak-add-client.png" alt="Keycloak add a client page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
-4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs relativas a la cuenta, agregando el realm en caso de estar usando uno `realm/auth/openidc/callback` y `realm/logout*`.
+4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs a la cuenta, agregando `/realms/mi-realm` en caso de estar usando uno. Por ejemplo: `test.modyo.com/realms/mi-realm/auth/openidc/callback` y `test.modyo.com/realms/mi-realm/logout*`.
 
 ### Configurar Keycloak en Modyo Platform
 
@@ -210,7 +210,7 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 
 La siguiente configuración es válida tanto para las integraciones de usuarios de Equipos como de Customer.
 
-1. Desde la plataforma de Modyo, selecciona **Configuración/Configuración de customers** y haz click en **Integrations**
+1. Desde la plataforma de Modyo, selecciona **Configuración/Configuración de reino** y haz click en **Proveedores de indentidad**.
 1. Selecciona **OpenID Connect** y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
 1. En la consola de Azure, selecciona **App registrations** y haz click en **Endpoints** para obtener URLs de **Authorization endpoint** y **Token endpoint**. 
 1. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
