@@ -54,7 +54,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          /*{ text: "Cloud", link: "/en/services/" },*/
+          { text: "Connect", link: "/en/connect/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],                
@@ -255,7 +255,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          /*{ text: "Cloud", link: "/es/services/" },*/
+          //{ text: "Connect", link: "/es/connect/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -433,14 +433,13 @@ module.exports = {
               ],
             },
           ],
-          "/es/services/": [{
-            title: "Servicios de Cloud",
+          "/es/connect/": [{
+            title: "Modyo Connect",
             collapsable: false,
             children: [
-              ["/es/services/", "Introducción"],
-              "/es/services/cloud",
-              "/es/services/connect",
-              "/es/services/faq",
+              ["/es/connect/", "¿Qué es Modyo Connect?"],              
+              "/es/connect/services",
+              "/es/connect/faq",
             ],
           }, ],
           "/es/brand/": [{
@@ -456,7 +455,7 @@ module.exports = {
           }, ],
           "/es/legal/": [{
             title: "Legal",
-            collapsable: true,
+            collapsable: false,
             children: [
               ["/es/legal/", "Acuerdo de Licencia"],
             ],

@@ -4,6 +4,24 @@ search: true
 
 # Preguntas Frecuentes
 
+### ¿Cúanto tarda la habilitación del servicio Modyo Connect?
+La habilitación del servicio de Modyo Connect habitualmente debería fluctuar entre pocos días o un par de semanas, dependenciendo de que tan claro se tengan las definiciones de recursos que se aplicarán inicialmente en el servicio.
+
+La habilitación inicial del servicio supone las tareas más complejas de ejecutar cómo la configuración de la red VPC en AWS, los ambientes productivos y pre-productivos, la configuración de VPN Site2Site, la emisión de certificados TLS, entre otros.
+
+Una vez realizada la habilitación inicial, la incorporación de componentes nuevos debería ser más expedita, dependiendo del componente que se desee activar.
+
+Existen casos en los que el cliente podrá solicitar la activación sólo del ambiente pre-productivo, para proceder con el de producción cuando el desarrollo esté más avanzado. En estos casos se recomeinda que el tiempo de habilitación del ambiente de producción se tenga en cuenta al momento de solicitarlo.
+
+
+### ¿Qué alternativas existen a Modyo Connect?
+Modyo Connect es un servicio optativo que sólo se recomienda a clientes que actualmente no posean la capacidad de desarrolar y exponer de forma segura sus propios sistemas de Single Sign On o APIs de integración.
+
+Como alternativa al servicio, podemos mencionar la implementación propia de cada cliente, sobre sus actuales recursos o los recursos de algún otro proveedor, cómo podría ser el caso de las nubes de Microsfot Azure o Google GCP. 
+
+### ¿Qué tan compatible es Modyo Cloud y Enterprise Cloud con soluciones de integración que no sean Modyo Connect?
+La implementación de las APIs puede realizarse sobre cualquier sistema que permita exponer endpoints en el protocolo HTTP (Rest o )
+
 ### ¿Cómo se integra Modyo Connect a los diferentes sistemas de negocio (CRMs, ERPs, Core Systems, etc)?
 Modyo Connect es un servicio manejado de plataforma de nube. En sí no provee de integración contra ningún sistema externo, pero sí admite el despliegue de contenedores (microservicios)  los cuales serán los responsables de efectuar la integración. Para la creación de ciertos microservicios comunes de integración Modyo pone a disposición de sus clientes Empresariales de plantillas de código Java/Spring Boot las cuales pueden ser usadas como base de trabajo para los equipos de desarrollo.
 
