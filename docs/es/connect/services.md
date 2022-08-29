@@ -66,7 +66,13 @@ El servicio de Modyo Connect contempla todas las herramientas y procesos necesar
 Modyo Connect permite la gestión segura de parámetros secretos mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacen central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
 
 ### Pasos para solicitar
-Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el Centro de Soporte de Modyo. No es recomendado adjuntar en el ticket de los valores secretos de estos parámetros.
+Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el Centro de Soporte de Modyo.
+
+::: danger Confidencialidad de secretos
+Modyo no recomienda adjuntar en el ticket de los valores secretos de estos parámetros.
+
+Para ello, se debe establecer un canal seguro de comunicación con el cliente, que asegure la confidencialidad de los valores a configurar.
+:::
 
 > Debemos definir un canal seguro para transferencia de secretos y contraseñas...
 
