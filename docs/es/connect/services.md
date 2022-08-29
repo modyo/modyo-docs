@@ -62,12 +62,26 @@ El servicio de Modyo Connect contempla todas las herramientas y procesos necesar
 
 
 
-
 ## Gestión de Secretos
-AWS Secret Manager
+Modyo Connect permite la gestión segura de parámetros secretos mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacen central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
+
+### Pasos para solicitar
+Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el Centro de Soporte de Modyo. No es recomendado adjuntar en el ticket de los valores secretos de estos parámetros.
+
+> Debemos definir un canal seguro para transferencia de secretos y contraseñas...
 
 ## Encriptación
-Descanso. AWS KMS
+Modyo utiliza la encriptación manejada de AWS KMS para el cifrado seguro de toda la información en descanso almacenada en repositorios de objetos y volúmenes de datos administrados para el cliente.
+
+Las llaves gestionadas por AWS KMS se generan mediante el estándar de AES 256 y poseen un ciclo de regeneración anual automático, es decir, no se requiere de ningún tipo de acción manual para renovar y actualizar los recursos con las nuevas llaves generadas.
+
+Modyo configura llaves AWS KMS independientes para cada recurso. Por defecto, se delega a AWS la generación y gestión completa de las llaves de cifrado. Si un cliente lo desea, se pueden incorporar al servicio llaves gestionadas de forma externa, mediante el módulo de AWS CloudHSM.
+
+### Pasos para solicitar
+La encriptación en descanso provista por AWS KMS se encuentra activa por defecto en todos los repositorios de objectos de AWS S3 y volúmenes de datos de AWS RDS y OpenSearch. 
+
+En el caso de requerir la incorporación de una llave gestionada de forma externa con AWS CloudHSM, se debe notificar con un ticket de requerimiento en el Centro de Soporte de Modyo, indicando el motivo y cómo planea gestionar la llave externa (implementación, renovaciones, etc).
+
 
 ### Cetificados TLS
 AWS Certificate Manager. Servicio utilizado para la generación y mantención segura de certificados SSL en los recursos de Amazon. Los certificados generados por esta vía requerirán de una validación del dominio por parte del cliente y una vez emitidos Modyo no poseerá acceso a las llaves de éstos, ni podrán ser utilizados en servicios que sean ofrecidos por Amazon.
