@@ -3,7 +3,7 @@ search: true
 ---
 
 # Componentes
-A continuación se detallan los diferentes componentes de Modyo Connect.
+A continuación se detallan los diferentes componentes disponibles dentro de Modyo Connect. Para cada uno se describen su descripción de funcionalidades principales y los pasos requeridos para su activación. 
 
 
 ## Acceso de Desarrollador
@@ -15,7 +15,6 @@ El acceso a desarrollador se debe realizar mediante un ticket de requerimiento e
 - El nombre y correo electrónico del desarrollador
 - Incidar si el desarrollador está autorizado o no para solicitar cambios en el servicio
 
- 
 ::: warning Requerimientos especiales
 La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de Modyo y no podrá tener acceso a los repositorios.
 
@@ -23,15 +22,19 @@ Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente s
 :::
 
 
-
 ## Repositorio de Código
+Los repositorios de código fuente permiten la gestión todos los aspectos del ciclo de vida del código, incluyendo versiones, inspecciones, automatizaciones y flujos de colaboración entre los miembros del equipo de desarrollo con acceso a ellos.
 
-SonarCloud, Github Security, LinterJS
+Los repositorios de código fuente se implementan sobre el servicio de GitHub Enterprise de Modyo. Se utilizan además las soluciones de Github Security para la inspección de dependencias, SonarCloud para Java y Javascript.
 
 ### Pasos para solicitar
 Para solicitar repositorios de código, se debe indicar:
 - req 1
 - req 2
+
+::: warning Control de accesos
+Tal como se crean solicitudes para agregar miembros del equipo de desarrollo a repositorios específicos, será responsabilidad del cliente informar cuando los accesos de un determinado desarrollador hayan cambiado y requieran de alguna actualización en GitHub.
+:::
 
 
 ## Integración Contínua
@@ -92,6 +95,19 @@ En el caso de requerir la incorporación de una llave gestionada de forma extern
 ### Cetificados TLS
 AWS Certificate Manager. Servicio utilizado para la generación y mantención segura de certificados SSL en los recursos de Amazon. Los certificados generados por esta vía requerirán de una validación del dominio por parte del cliente y una vez emitidos Modyo no poseerá acceso a las llaves de éstos, ni podrán ser utilizados en servicios que sean ofrecidos por Amazon.
 
+### Pasos para solicitar
+Para solicitar la emisión de un certificado TLS se debe indicar el o los subdominios a incluir. El solicitante se debe asegurar previamente de contar con acceso al panel de gstión de DNS para el dominio o de contar con el tiempo de la persona que posee el acceso.
+
+Al momento de solicitar, Modyo emitirá un certificado "pendiente de validación" el cual requerá de una validación por medio de registros de DNS.
+
+::: warning Validación de dominios por DNS
+Es importante que los registros creados para la validación de los dominios 
+:::
+
+Modyo no recomienda el uso de cetrificados tipo wildcard (*.dominio.com) dentro de los servicios.
+
+Modyo utiliza la política de cifrado recomendada por AWS, la cual garantiza seguridad, manteniendo cierto grado de compatibilidad con dispositivos antiguos. Si el cliente desea activar cifrados más seguros (disminuyendo la compatibilidad) debe solicitarlo mediante ticket de requerimiento en el Centro de Soporte de Modyo.
+
 
 ## Single Sign On (SSO)
 El servicio de Single Sign On (SSO)
@@ -133,3 +149,5 @@ Servicio utilizado para el envío de correos transaccionales y masivos de la pla
 ## Métricas Aplicativas y Logs
 AWS Cloudwatch. Servicio de monitoreo de nube de Amazon AWS. Cloudwatch entrega métricas de alto valor de cada uno de los servicios entregados por Amazon, incluyendo logs y la capacidad de definir alertas. 
 NewRelic
+
+
