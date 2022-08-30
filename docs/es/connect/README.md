@@ -1,159 +1,153 @@
 ---
 search: true
 ---
+# ¿Qué es Modyo Connect?
+Modyo Connect es un servicio manejado de infraestructura y devops sobre la nube de Amazon AWS exclusivo para clientes de Modyo Enterprise Cloud.
+Modyo Connect está diseñado para organizaciones que requieran implementar una capa segura y escalable de integraciones, que se expongan como APIs hacia los Widgets o Micro Forntends desplegados sobre Modyo.
 
-# Componentes
-A continuación se detallan los diferentes componentes disponibles dentro de Modyo Connect. Para cada uno se describen sus funcionalidades principales y los pasos requeridos para su activación. 
+Modyo Connect permite la configuración de sistemas de Single Sign On, API Gateways, infraestructura de contenedores para microservicios, bases de datos, entre otros servicios pensados para dar cobertura a todo lo requerido en una iniciativa compleja de integración.
 
-::: tip Habilitación de componentes
-Cada componente habilitado podría generar aumentos en los cobros recurrentes de Modyo Connect. Es por ello, que **cada solicitud debe contar con la aprobación** de los usuarios autorizados para solicitar cambios por parte del cliente.
-:::
+El servicio manejado de Modyo Connect se origina frente a la necesidad de contar con una solución . El servicio es completamente opcional y en muchos casos no es requerido ya que el propio cliente cuenta con una arquitectura de APIs y Single Sign On a la cual los desarrollos en Modyo pueden integrarse.
 
 
-## Acceso de Desarrollador
-El desarrollador es el centro de Modyo Connect ya que es él el responsable de implementar el código que hará uso del resto de los componentes del servicio. Una vez habilitado el acceso, el desarrollador podrá interactuar con el Centro de Soporte de Modyo para efectuar las solicitudes deseadas. Además, con el acceso de desarrollador se otorgan los permisos para ingresar a los sistemas de monitoreo y bitácoras.
 
-### Pasos para solicitar
-El acceso a desarrollador se debe realizar mediante un ticket de requerimiento en el Centro de Soporte de Modyo. Se debe indicar:
-- Usuario GitHub del desarrollador (si no posee uno, deberá ser creado previamente)
-- El nombre y correo electrónico del desarrollador
-- Indicar si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio
+> Explicar aquí el tipo de APIs que se requiere para los Widgets.
 
-::: warning Requerimientos especiales y control de acceso
-La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios.
 
-Al ser un usuario de GitHub externo, Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta.
+## Funcionalidades
+El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo y operación productiva de los Widgets y Microservicios desarrollados como complemento a una implementación de Modyo, tales como:
+- Repositorios seguros de códigos fuente
+- Pipelines de automatización para Micro Frontends (Widgets) y Microservicios
+- Plataforma de despliegue de contenedores
+- Ambientes productivos y pre-productivos
+- Gestión de centralizada de bitácoras de logs
+- Gestión de APIs mediante un API Gateway
+- Gestión de Firewall Aplicativo (WAF)
+- Certificados TLS para todos los endpoints definidos
+- Single Sign On (SSO) con OpenID Connect
+- Despliegues "blue green" que minimizan la posibilidad de disrupción
+- Monitoreo contínuo y soporte de infraestructura
+- Alertas en tiempo real
 
-Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando este deba ser removido o modificado, mediante un ticket de requerimiento en el Centro de Soporte de Modyo.
-:::
+El servicio de Modyo Connect se implementa en producción con modalidad de alta disponibilidad y es operado por Site Reliability Engineers (SREs) del Área de Seguridad e Infraestructura de Modyo, con el fin de entregar un servicio con los mismos estándares de calidad, seguridad y niveles de atención con los que cuenta Modyo Cloud y Enterprise Cloud.
 
 
-## Repositorio de Código
-Los repositorios de código fuente permiten la gestión de todos los aspectos del ciclo de vida del código, incluyendo versiones, inspecciones, automatizaciones y flujos de colaboración entre los miembros del equipo de desarrollo con acceso a ellos.
+## Arquitectura
+Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel advanced con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
 
-Los repositorios de código fuente se implementan sobre el servicio de GitHub Enterprise de Modyo. Se utilizan además las soluciones de Github Security para la inspección de dependencias, SonarCloud para Java y Javascript.
 
-### Pasos para solicitar
-Para solicitar repositorios de código, se debe indicar:
-- Tipo de repositorio: Micro Frontend, Microservicio o artefacto intermediario
-- Nombre del repositorio (al nombre elegido por el cliente, Modyo le aplicará un estándar interno de nombrado en el cual se incluyen prefijos y/o sufijos que dependen del tipo de repositorio solicitado)
+<img src="/assets/img/cloud/partner_badge.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-::: warning Control de accesos
-Tal como se crean solicitudes para agregar miembros del equipo de desarrollo a repositorios específicos, será responsabilidad del cliente informar cuando los accesos de un determinado desarrollador hayan cambiado y requieren de alguna actualización en GitHub.
-:::
+En los años 2019 y 2021 Modyo fue reconocido por Amazon AWS como el Technology Partner of the Year para Chile y Perú. Además, Modyo fue la primera empresa en Amércia Latina en participar del programa ISV de AWS.
 
+Al igual que Modyo Cloud y Enterprise Cloud, Modyo Connect opera en una configuración de alta disponibilidad sobre múltiples zonas de disponibilidad y regiones de AWS, utilizando sólo recursos abstractos y contenerizados de la nube evitando con ello la configuración y mantención de máquinas virtuales de cualquier tipo.  
 
-## Integración Contínua
-AWS Codepipeline
-GHA
+El servicio de Modyo Connect se despliega de forma exclusiva en la nube de Amazon AWS, utilizando principalmente la plataforma de contenedores Amazon Elastic Container Services (ECS) en conjunto con herramientas de automatización y control de configuración, siguiendo una arquitectura de referencia como la que se aprecia en el siguiente diagrama:
 
-### Pasos para solicitar
-Se debe crear un requerimiento dentro del portal de Soporte Empresarial de Modyo
+> Diagrama Connect
 
+Los Microservicios se conectan de forma automática a un balanceador de carga interno, en el cual se registran dinámicamente las instancias de éstos desplegados en ECS. Los Microservicios poseen reglas de egreso de tráfico que pueden ser hacia Internet por medio de un NAT Gateway que entrega IPs fijas, o, a través de un enlace VPN IPSec configurado hacia la infraestructura del Cliente para acceder a los servicios de negocio.
 
-## Repositorio de Artefactos
-GHR
-ECR
+Las imágenes de los contenedores son almacenadas de forma segura en el repositorio Amazon Elastic Container Repository (ECR), el cual ejecuta inspecciones de seguridad a los contenedores para detectar vulnerabilidades presentes en las imágenes generadas.
 
-### Pasos para solicitar
-Se debe crear un requerimiento dentro del portal de Soporte Empresarial de Modyo
 
 
 
 
-## Widgets y Microservicios
-La plataforma Modyo se puede extender en funcionalidad por medio del desarrollo de Widgets y Microservicios. Los Widgets se pueden desarrollar usando las herramientas internas de Modyo, como el Widget Builder, o de forma externa mediante el Modyo CLI. 
-Los Widgets desarrollados con el CLI requerirán de un repositorio de código y pipelines de automatización, los cuales generan código que se despliega directamente en la Plataforma Modyo. 
+### Elasticidad Elástica
+Modyo Connect cuenta con grupos de auto escalabilidad para aumentar el número de recursos en la medida que el tráfico y la demanda se incremente. Con cada cliente se definene una capacidad mínima de base y un rango sobre el cual se acciona la elasticidad de los despliegues.
 
-Por su parte, los Microservicios, además de requerir de repositorios y automatizaciones, requerirán de un ambiente de ejecución con contenedores y un API Gateway, el que actuará como barrera de seguridad y puerta de entrada para la funcionalidad presente en ellos.
+### Alta Disponibilidad
+El despliegue multi zona en Amazon AWS garantiza un excelente nivel de redundancia y disponibilidad para hacer frente a las fallas más comunes que usualmente afectan solo a una zona a la vez. En el caso poco probable que exista un fallo a nivel regional del cual Amazon AWS no entregue un tiempo de resolución aceptable se procederá a activar la región alternativa, ubicada en la costa oeste de Estados Unidos  (us-west-1).
 
-El servicio de Modyo Connect contempla todas las herramientas y procesos necesarios para gestionar el ciclo de desarrollo tanto de Widgets como Microservicios.
+Todos los datos críticos contenidos en AWS RDS Aurora y repositorio de objetos AWS S3 son respaldados frecuentemente a la región alternativa, cada 24 horas para el caso de AWS Aurora y en tiempo real para el caso de AWS S3. 
 
+Modyo posee en la región alternativa copias de las configuraciones y recursos necesarios para restablecer la operación a partir de los archivos de respaldos.
 
+### Seguridad
+El despliegue de nube de AWS asegura que cada cliente cuenta con su propia VPC por cada ambiente configurado (producción, certificación, etc...). Dentro de la VPC se despliega sub redes públicas (NAT) y privadas, en donde se despliega los recursos y bases de datos que no son directamente accesibles desde Internet. Adicionalmente, se hace uso de grupos de seguridad y roles AWS IAM para controlar perimetralmente el acceso a los recursos.
 
-## Gestión de Secretos
-Modyo Connect permite la gestión segura de parámetros secretos mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacen central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
 
-### Pasos para solicitar
-Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el Centro de Soporte de Modyo.
+## Operación y Monitoreo
 
-::: danger Confidencialidad de secretos
-Modyo no recomienda adjuntar en el ticket de los valores secretos de estos parámetros.
+### DevOps
+La Plataforma Modyo se encuentra bajo un ciclo de desarrollo muy activo por lo que recibe continuamente mejoras y nuevas funcionalidades. Todas las versiones incluyen un sistema de despliegue que permite realizar actualizaciones de forma relativamente sencilla, sin requerir de downtimes en la mayoría de los casos.
 
-Para ello, se debe establecer un canal seguro de comunicación con el cliente, que asegure la confidencialidad de los valores a configurar.
-:::
+Los sistemas operativos y componentes de software de terceros son actualizados continuamente para garantizar la oportuna corrección de cualquier problema detectado. Se elige, dentro de lo posible, solo versiones estables y probadas de cada componente.
 
-> Debemos definir un canal seguro para transferencia de secretos y contraseñas...
+En el caso de la versión Modyo Enterprise On Premise la actualización de cualquiera de sus componentes se realiza en coordinación con cada cliente.
 
-## Encriptación
-Modyo utiliza la encriptación manejada de AWS KMS para el cifrado seguro de toda la información en descanso almacenada en repositorios de objetos y volúmenes de datos administrados para el cliente.
 
-Las llaves gestionadas por AWS KMS se generan mediante el estándar de AES 256 y poseen un ciclo de regeneración anual automático, es decir, no se requiere de ningún tipo de acción manual para renovar y actualizar los recursos con las nuevas llaves generadas.
+### Site Reliability Engineers (SRE)
+Los servicios manejados de infraestructura se ofrecen desde el Área de Seguridad e Infraestructura de Modyo la cual se compone de ingenieros en el rol de Site Reliability Engineers (SREs), quienes están a cargo de la operación de la infraestructura crítica administrada en la nube. Los SRE son profesionales certificados con experiencia tanto en desarrollo de software, como en operación avanzada de sistemas en ambientes de nube, on premise o híbridos y sus principales responsabilidades principales son:
+- Monitoreo y métricas de rendimiento, disponibilidad y seguridad
+- Respuesta a incidentes
+- Planificación de capacidad
+- Provisión y bajada de servicios
+- Gestión de cambios de infraestructura y seguridad
+- Gestión de repositorios de códigos fuentes
+- Configuraciones de seguridad y reglas de firewall
+- Control de acceso a los ambientes de nube
 
-Modyo configura llaves AWS KMS independientes para cada recurso. Por defecto, se delega a AWS la generación y gestión completa de las llaves de cifrado. Si un cliente lo desea, se pueden incorporar al servicio llaves gestionadas de forma externa, mediante el módulo de AWS CloudHSM.
 
-### Pasos para solicitar
-La encriptación en descanso provista por AWS KMS se encuentra activa por defecto en todos los repositorios de objectos de AWS S3 y volúmenes de datos de AWS RDS y OpenSearch. 
 
-En el caso de requerir la incorporación de una llave gestionada de forma externa con AWS CloudHSM, se debe notificar con un ticket de requerimiento en el Centro de Soporte de Modyo, indicando el motivo y cómo planea gestionar la llave externa (implementación, renovaciones, etc).
+### Redundancia Geográfica
+Las versiones Cloud de la plataforma se configuran de forma redundante entre, al menos, dos Zonas de Amazon AWS. Cada Zona posee servicios independientes de conectividad y poder, pero se encuentran cercanas entre sí para minimizar la latencia entre ellas.
 
+### Respaldos y Recuperación
+Las versiones Modyo Cloud y Modyo Enterprise Cloud son configuradas con una política de respaldos diarios automáticos a nivel de base de datos y repositorios de objetos, los cuales son almacenados en un repositorio privado de Amazon S3. 
 
-### Cetificados TLS
-AWS Certificate Manager. Servicio utilizado para la generación y mantención segura de certificados SSL en los recursos de Amazon. Los certificados generados por esta vía requerirán de una validación del dominio por parte del cliente y una vez emitidos Modyo no poseerá acceso a las llaves de éstos, ni podrán ser utilizados en servicios que sean ofrecidos por Amazon.
+Para el caso de las bases de datos configuradas con Amazon RDS, se utiliza el mecanismo interno de respaldo mediante snapshots los cuales son generados de forma diaria en horario de bajo tráfico y almacenados con una retención de 10 días. 
 
-### Pasos para solicitar
-Para solicitar la emisión de un certificado TLS se debe indicar el o los subdominios a incluir. El solicitante se debe asegurar previamente de contar con acceso al panel de gstión de DNS para el dominio o de contar con el tiempo de la persona que posee el acceso.
+Amazon RDS además ofrece la funcionalidad de _point in time recovery_ para recuperar la base de datos en una hora en específico dentro del backup.
 
-Al momento de solicitar, Modyo emitirá un certificado "pendiente de validación" el cual requerá de una validación por medio de registros de DNS.
+### Alertas 24x7
+En las versiones Cloud de la plataforma, todos los sistemas de monitoreo están configurados para enviar alertas telefónicas y SMS a los ingenieros encargados de la operación. Existe una planificación mensual para que siempre exista un primer, segundo y tercer contacto para realizar tareas de emergencia. 
 
-::: warning Validación de dominios por DNS
-Es importante que los registros creados para la validación de los dominios 
-:::
+### Salud de Servidores y Aplicación
+En las versiones Cloud de la plataforma, se monitorean parámetros comunes como las variaciones de uso memoria RAM, carga en CPU y operaciones I/O en discos y red. Además se monitorea la aplicación completa con un profiler que entrega datos en tiempo real acerca de comportamientos inusuales o errores. 
 
-Modyo no recomienda el uso de cetrificados tipo wildcard (*.dominio.com) dentro de los servicios.
+### Tiempo de Carga
+En las versiones Cloud de la plataforma se monitorea el tiempo de carga las páginas generadas como una métrica de satisfacción de los usuarios que las utilizan. La medición se realiza utilizando el método Apdex. Si los valores del Apdex calculado no son satisfactorios, una alerta es generada automáticamente. 
 
-Modyo utiliza la política de cifrado recomendada por AWS, la cual garantiza seguridad, manteniendo cierto grado de compatibilidad con dispositivos antiguos. Si el cliente desea activar cifrados más seguros (disminuyendo la compatibilidad) debe solicitarlo mediante ticket de requerimiento en el Centro de Soporte de Modyo.
+### Uptime
+En las versiones Cloud de la plataforma se monitorea desde diversas ubicaciones alrededor del mundo la disponibilidad de esta realizando pings permanentes y periódicos. Un fallo en un chequeo de uptime para algún dominio monitoreado genera alertas de máxima prioridad.
 
+Los servicios de Modyo Connect poseen un SLA de uptime independiente del SLA de la plataforma Modyo, ya que opera en una infraestructura diferente y de forma totalmente desacoplada de ésta. El SLA del servicio considera sólo a la infraestructura de nube y no considera bajas o indisponibilidades que sean producto de pasos a producción programados o defectos en el código de los desarrollos realizados.
 
-## Single Sign On (SSO)
-El servicio de Single Sign On (SSO)
 
+## Modelo de Responsabilidad Compartida
+En el servicio Modyo Connect, se pueden identificar distintos actores que interactúan con este servicio, desde arquitectos de soluciones, hasta ingenieros SRE que operan el servicio.
 
-## Repositorio de Objetos
-AWS S3. Repositorio de objetos (object storage) de Amazon AWS. En él se almacenan todos los archivos estáticos de la plataforma los cuales, según los permisos configurados, quedan disponibles directamente en la Web o las Content Delivery Networks (CDNs).
+Desde el punto de vista de los usuarios del servicio, es decir, arquitectos, líderes técnicos y desarrolladores, la responsabilidad contempla desde el diseño de la solución, hasta la ejecución de esta, para que la solución entregada sea resiliente, escalable y segura.
 
-## Balanceo de Carga
-AWS ALB (Application Load Balancer). Servicio de balanceo de carga de Amazon AWS. ALB permite conectarse a los contenedores de una forma limpia y transparente, monitoreando cada uno de ellos y descartando los que posean alguna degradación en su performance. Dependiendo del uso que se les dé los ELB pueden ser públicos o internos. Los balanceadores públicos poseen desplegados además  los certificados SSL y políticas de WAF básicas.
+Desde el punto de vista de los ingenieros SRE que operan el servicio, serán los responsables por la implementación de la infraestructura del servicio ofrecido, la definición de los estándares de seguridad, por la alta disponibilidad del mismo servicio, etc. Todo este servicio se entrega siguiendo el AWS Well Architected Framework.
 
-## Contenedores
-AWS EC2 Container Service (ECS). Servicio de contenedores de Amazon AWS. ECS opera como el scheduler de los contenedores definidos, asegurándose que se respeten los mínimos y máximos definidos para cada elemento y configurando los balanceadores de carga conectados a él. ECS además ofrece un API para realizar despliegues de nuevas versiones de sus contenedores con el mínimo impacto en los sistemas en producción.
 
-## Cache y NoSQL
-AWS Elasticache. Servicio de caché de Amazon AWS, ofrecido en dos grandes variaciones: Memcache y Redis. En el caso de Modyo sólo la versión de Redis es utilizada, principalmente por sus capacidades de configurarse en modalidad de cluster de alta disponibilidad.
+## Activación del Servicio
+El servicio de Modyo Connect se activa como un contrato o anexo separado e independiente del licenciamiento por suscripción de la Plataforma Modyo Cloud o Enterprise Cloud. Para iniciar el servicio de Modyo Connect se deben tener en cuenta las siguientes consideraciones:
+- Número de desarrolladores que deberán tener acceso a los repositorios de código.
+- Número de Widgets que serán desarrollados utilizando el Command Line Interface (CLI) de Modyo y que requerirán usar repositorios de código.
+- Cantidad de ambientes pre productivos que se usarán como parte del flujo (usualmente uno, para certificación).
+- Número de Microservicios que serán desarrollados y que requerirán repositorios independientes.
+- Número de repositorios intermediarios que podrían ser requeridos en caso de construir artefactos compartidos (por ejemplo: paquetes NPM o librerías de Java para Maven o Gradle).
+- Enlaces VPN que deban ser generados para acceder a los servicios de negocio del Cliente.
 
-AWS Elasticsearch. Servicio de indexación de contenido de Amazon AWS, implementado mediante Elasticsearch y con la capacidad de configurarse como cluster de alta disponibilidad. 
+La capacidad de los contenedores utilizados para el despliegue de los servicios se calculará dependiendo del tráfico estimado hacia el sistema en producción, estimación que servirá para establecer el tamaño inicial pero que podrá cambiar en el tiempo dependiendo del consumo real de los servicios. Se deberán considerar criterios de alta disponibilidad multizona para el caso del despliegue en producción.
 
-## Base de Datos
-AWS RDS Aurora. Servicio de bases de datos de Amazon AWS, disponible en varias versiones (Postgres, Oracle, SQL Server, MySQL).  RDS Aurora es compatible con MySQL 5.6, y a diferencia de un despliegue tradicional de MySQL, Aurora implementa un cluster de alta disponibilidad en el que los datos almacenados en él son persistidos en 3 zonas de disponibilidad. 
+### Modyo Resource Unit
+El Modyo Resource Unit (MRU) es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros.
 
-## Firewall Aplicativo
-AWS WAF. Servicio de firewall aplicativo de Amazon AWS. El Amazon WAF puede ser desplegado en la CDN de Amazon (CloudFront) o directamente sobre los ELB del tipo "application ELB" o ALB. El Amazon WAF posee filtros para los ataques Web más comunes (OWASP Top 10), como inyecciones de SQL o scripts, además de ofrecer la capacidad de definir reglas propias. 
+Todos los contenedores incluyen un repositorio, automatización, almacenamiento de imágenes en AWS ECR, monitoreo y consolidación de logs. Además, se incluye monitoreo, centralización de logs, API Gateway, Firewall, dominios personalizados, emisión de certificados TLS.
 
-## Cola de Mensajería
-AWS SQS. Servicio de colas de mensajería de alto performance y duración que permite a las aplicaciones comunicarse de forma asincrónica.
+Los Widgets que se desarrollan en Modyo por medio del Widget Builder (sin CLI) no consumen MRUs.
 
+Los servicios de SSO con RedHat KeyCloak se despliegan sobre contenedores como cualquier otro Microservicio. Al costo de MRU señalado se deberán sumar los de los contenedores usados. El tamaño del contenedor de despliegue de este componente dependerá de las necesidades del cliente.
 
-## Red Privada / VPN
-AWS VPC. Servicio de redes privadas virtuales de Amazon AWS. Modyo configura una VPC por cliente / ambiente, garantizando que todos los elementos configurados para sus clientes se encuentran separados unos de otros.
+Los servicios complementarios que procesan datos, como Redis y Aurora, deberán estar configurados para producción y pre producción. En el caso de producción, éstos se configuran en alta disponibilidad.
 
 
+## Soporte
+Modyo cuenta con un equipo dedicado de operaciones compuesto ingenieros en el rol de Site Reliability Engineers (SREs) los cuáles poseen conocimiento y experiencia en múltiples plataformas tecnológicas de redes, seguridad, nubes, sistemas operativos, automatización y monitoreo de sistemas. Los SREs trabajan en un sistema de turnos on call 24x7. En cada turno siempre existe un ingeniero primario y secundario de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
 
-
-## Envío de Correos
-Servicio utilizado para el envío de correos transaccionales y masivos de la plataforma de forma confiable y escalable. En algunos casos este servicio es ofrecido por Modyo mediante Sendgrid y otros mediante SES.
-
-## Métricas Aplicativas y Logs
-AWS Cloudwatch. Servicio de monitoreo de nube de Amazon AWS. Cloudwatch entrega métricas de alto valor de cada uno de los servicios entregados por Amazon, incluyendo logs y la capacidad de definir alertas. 
-NewRelic
-
-
+El equipo de operaciones de Modyo brinda apoyo de forma transversal a todas las áreas de la empresa en los proyectos e iniciativas que impliquen la preparación, despliegue, monitoreo, seguridad, auditoría y mejoras de rendimiento de sus proyectos e iniciativas tanto en la nube como en los despliegues On Premise de los clientes que posean un contrato de servicios de soporte adicional al incluido como parte de la licencia de software de Modyo.
