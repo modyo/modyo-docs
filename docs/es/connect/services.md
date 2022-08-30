@@ -3,41 +3,48 @@ search: true
 ---
 
 # Componentes
-A continuación se detallan los diferentes componentes disponibles dentro de Modyo Connect. Para cada uno se describen su descripción de funcionalidades principales y los pasos requeridos para su activación. 
+A continuación se detallan los diferentes componentes disponibles dentro de Modyo Connect. Para cada uno se describen sus funcionalidades principales y los pasos requeridos para su activación. 
+
+::: tip Habilitación de componentes
+Cada componente habilitado podría generar aumentos en los cobros recurrentes de Modyo Connect. Es por ello, que **cada solicitud debe contar con la aprobación** de los usuarios autorizados para solicitar cambios por parte del cliente.
+:::
 
 
 ## Acceso de Desarrollador
-El desarrollador es el centro del servicio. Una vez habilitado el acceso de desarrollador, cada miembro del equipo tendrá acceso a los componentes principales del servicio y podrá realizar las solicitudes correspondientes.
+El desarrollador es el centro de Modyo Connect ya que es él el responsable de implementar el código que hará uso del resto de los componentes del servicio. Una vez habilitado el acceso, el desarrollador podrá interactuar con el Centro de Soporte de Modyo para efectuar las solicitudes deseadas. Además, con el acceso de desarrollador se otorgan los permisos para ingresar a los sistemas de monitoreo y bitácoras.
 
 ### Pasos para solicitar
 El acceso a desarrollador se debe realizar mediante un ticket de requerimiento en el Centro de Soporte de Modyo. Se debe indicar:
-- Usuario GitHub del desarrolador (si no posee uno, deberá crearlo)
+- Usuario GitHub del desarrollador (si no posee uno, deberá ser creado previamente)
 - El nombre y correo electrónico del desarrollador
-- Incidar si el desarrollador está autorizado o no para solicitar cambios en el servicio
+- Indicar si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio
 
-::: warning Requerimientos especiales
-La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de Modyo y no podrá tener acceso a los repositorios.
+::: warning Seguridad y control de acceso
+La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios.
 
-Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en sus cuentas.
+Al ser un usuario de GitHub externo, Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta.
+
+Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando este deba ser removido o modificado, mediante un ticket de requerimiento en el Centro de Soporte de Modyo.
 :::
 
 
 ## Repositorio de Código
-Los repositorios de código fuente permiten la gestión todos los aspectos del ciclo de vida del código, incluyendo versiones, inspecciones, automatizaciones y flujos de colaboración entre los miembros del equipo de desarrollo con acceso a ellos.
+Los repositorios de código fuente permiten la gestión de todos los aspectos del ciclo de vida del código, incluyendo versiones, inspecciones, automatizaciones y flujos de colaboración entre los miembros del equipo de desarrollo con acceso a ellos.
 
 Los repositorios de código fuente se implementan sobre el servicio de GitHub Enterprise de Modyo. Se utilizan además las soluciones de Github Security para la inspección de dependencias, SonarCloud para Java y Javascript.
 
 ### Pasos para solicitar
 Para solicitar repositorios de código, se debe indicar:
-- req 1
-- req 2
+- Tipo de repositorio: Micro Frontend, Microservicio o artefacto intermediario
+- Nombre del repositorio (al nombre elegido por el cliente, Modyo le aplicará un estándar interno de nombrado en el cual se incluyen prefijos y/o sufijos que dependen del tipo de repositorio solicitado)
 
-::: warning Control de accesos
-Tal como se crean solicitudes para agregar miembros del equipo de desarrollo a repositorios específicos, será responsabilidad del cliente informar cuando los accesos de un determinado desarrollador hayan cambiado y requieran de alguna actualización en GitHub.
+::: warning Accesos a repositorios
+Tal como se crean solicitudes para agregar miembros del equipo de desarrollo a repositorios específicos, será responsabilidad del cliente informar cuando los accesos de un determinado desarrollador hayan cambiado y requieren de alguna actualización en GitHub.
 :::
 
 
 ## Integración Contínua
+La integración contínua permite la activación de script de automatización directamente sobre el repositorio.
 AWS Codepipeline
 GHA
 
@@ -65,8 +72,16 @@ El servicio de Modyo Connect contempla todas las herramientas y procesos necesar
 
 
 
+
+
+
+
+
+
+
+
 ## Gestión de Secretos
-Modyo Connect permite la gestión segura de parámetros secretos mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacen central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
+Modyo Connect permite la gestión segura de parámetros secretos mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
 
 ### Pasos para solicitar
 Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el Centro de Soporte de Modyo.
@@ -77,7 +92,6 @@ Modyo no recomienda adjuntar en el ticket de los valores secretos de estos pará
 Para ello, se debe establecer un canal seguro de comunicación con el cliente, que asegure la confidencialidad de los valores a configurar.
 :::
 
-> Debemos definir un canal seguro para transferencia de secretos y contraseñas...
 
 ## Encriptación
 Modyo utiliza la encriptación manejada de AWS KMS para el cifrado seguro de toda la información en descanso almacenada en repositorios de objetos y volúmenes de datos administrados para el cliente.
