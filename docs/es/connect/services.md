@@ -70,18 +70,13 @@ Por su parte, los Microservicios, además de requerir de repositorios y automati
 
 El servicio de Modyo Connect contempla todas las herramientas y procesos necesarios para gestionar el ciclo de desarrollo tanto de Widgets como Microservicios.
 
-
-
-
-
-
-
-
-
-
+> Pendiente: Para más detalle de Widgets ir a la sección de recursos (buenas prácticas, uso de artefactos intermediarios, code style, despliegue con Modyo CLI, etc)
+> Pendiente: Para más detalle de Microservicios ir a la sección de recursos (buenas prácticas, uso de logs, artefactos intermediarios, code style, build, swagger, etc)
 
 ## Gestión de Secretos
-Modyo Connect permite la gestión segura de parámetros secretos mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
+Modyo Connect permite la gestión segura de parámetros secretos para la configuración de los microservicios mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
+
+Adicionalmente existe una gestión adicional de secretos en el repositorio de GitHub Empresarial, la que se utiliza de forma interna para compartir detalles de accesos a tokens con los scripts de integración contínua de GitHub Actions. Si se necesita incorporar algún proceso dentro de GitHub Actions que requiera de un parámetro secreto, éste se puede ser solicitado.
 
 ### Pasos para solicitar
 Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el Centro de Soporte de Modyo.
