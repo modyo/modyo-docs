@@ -13,6 +13,17 @@ El servicio manejado de Modyo Connect se origina frente a la necesidad de contar
 
 > Explicar aquí el tipo de APIs que se requiere para los Widgets.
 
+### Site Reliability Engineers (SRE)
+Los servicios manejados de infraestructura se ofrecen desde el Área de Seguridad e Infraestructura de Modyo la cual se compone de ingenieros en el rol de Site Reliability Engineers (SREs), quienes están a cargo de la operación de la infraestructura crítica administrada en la nube. Los SRE son profesionales certificados con experiencia tanto en desarrollo de software, como en operación avanzada de sistemas en ambientes de nube, on premise o híbridos y sus principales responsabilidades principales son:
+- Monitoreo y métricas de rendimiento, disponibilidad y seguridad
+- Respuesta a incidentes
+- Planificación de capacidad
+- Provisión y bajada de servicios
+- Gestión de cambios de infraestructura y seguridad
+- Gestión de repositorios de códigos fuentes
+- Configuraciones de seguridad y reglas de firewall
+- Control de acceso a los ambientes de nube
+
 
 ## Funcionalidades
 El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo y operación productiva de los Widgets y Microservicios desarrollados como complemento a una implementación de Modyo, tales como:
@@ -31,6 +42,18 @@ El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo 
 
 El servicio de Modyo Connect se implementa en producción con modalidad de alta disponibilidad y es operado por Site Reliability Engineers (SREs) del Área de Seguridad e Infraestructura de Modyo, con el fin de entregar un servicio con los mismos estándares de calidad, seguridad y niveles de atención con los que cuenta Modyo Cloud y Enterprise Cloud.
 
+## Componentes
+Modyo Connect cuenta con diferentes componentes, los cuales se agrupan en tres categorías: 
+- [Desarrollo](development.md)
+- [Infraestructura](infrastructure.md)
+- [Monitoreo](monitoring.md)
+
+
+Para activar un componente, se requerirá de un ticket de requerimiento, por lo que recomendamos que antes iniciar el uso del servicio se asegure de contar con una cuenta en [Centor de Soporte de Modyo](https://support.modyo.com). Para dudas sobre cómo activar cuentas en el Centro de Soporte, favor contactar al ejecutivo de cuentas asignado.
+
+::: tip Costos de activación
+La activación de algunos componentes podría tener costos recurrentes asociados. Es por ello, que **cada solicitud que afecte los costos debe contar con la aprobación de los usuarios autorizados por el cliente**.
+:::
 
 ## Arquitectura
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel advanced con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
@@ -53,70 +76,19 @@ Las imágenes de los contenedores son almacenadas de forma segura en el reposito
 
 
 
-
-### Elasticidad Elástica
 Modyo Connect cuenta con grupos de auto escalabilidad para aumentar el número de recursos en la medida que el tráfico y la demanda se incremente. Con cada cliente se definene una capacidad mínima de base y un rango sobre el cual se acciona la elasticidad de los despliegues.
 
-### Alta Disponibilidad
 El despliegue multi zona en Amazon AWS garantiza un excelente nivel de redundancia y disponibilidad para hacer frente a las fallas más comunes que usualmente afectan solo a una zona a la vez. En el caso poco probable que exista un fallo a nivel regional del cual Amazon AWS no entregue un tiempo de resolución aceptable se procederá a activar la región alternativa, ubicada en la costa oeste de Estados Unidos  (us-west-1).
 
 Todos los datos críticos contenidos en AWS RDS Aurora y repositorio de objetos AWS S3 son respaldados frecuentemente a la región alternativa, cada 24 horas para el caso de AWS Aurora y en tiempo real para el caso de AWS S3. 
 
 Modyo posee en la región alternativa copias de las configuraciones y recursos necesarios para restablecer la operación a partir de los archivos de respaldos.
 
-### Seguridad
+## Seguridad
 El despliegue de nube de AWS asegura que cada cliente cuenta con su propia VPC por cada ambiente configurado (producción, certificación, etc...). Dentro de la VPC se despliega sub redes públicas (NAT) y privadas, en donde se despliega los recursos y bases de datos que no son directamente accesibles desde Internet. Adicionalmente, se hace uso de grupos de seguridad y roles AWS IAM para controlar perimetralmente el acceso a los recursos.
 
 
-## Operación y Monitoreo
-
-### DevOps
-La Plataforma Modyo se encuentra bajo un ciclo de desarrollo muy activo por lo que recibe continuamente mejoras y nuevas funcionalidades. Todas las versiones incluyen un sistema de despliegue que permite realizar actualizaciones de forma relativamente sencilla, sin requerir de downtimes en la mayoría de los casos.
-
-Los sistemas operativos y componentes de software de terceros son actualizados continuamente para garantizar la oportuna corrección de cualquier problema detectado. Se elige, dentro de lo posible, solo versiones estables y probadas de cada componente.
-
-En el caso de la versión Modyo Enterprise On Premise la actualización de cualquiera de sus componentes se realiza en coordinación con cada cliente.
-
-
-### Site Reliability Engineers (SRE)
-Los servicios manejados de infraestructura se ofrecen desde el Área de Seguridad e Infraestructura de Modyo la cual se compone de ingenieros en el rol de Site Reliability Engineers (SREs), quienes están a cargo de la operación de la infraestructura crítica administrada en la nube. Los SRE son profesionales certificados con experiencia tanto en desarrollo de software, como en operación avanzada de sistemas en ambientes de nube, on premise o híbridos y sus principales responsabilidades principales son:
-- Monitoreo y métricas de rendimiento, disponibilidad y seguridad
-- Respuesta a incidentes
-- Planificación de capacidad
-- Provisión y bajada de servicios
-- Gestión de cambios de infraestructura y seguridad
-- Gestión de repositorios de códigos fuentes
-- Configuraciones de seguridad y reglas de firewall
-- Control de acceso a los ambientes de nube
-
-
-
-### Redundancia Geográfica
-Las versiones Cloud de la plataforma se configuran de forma redundante entre, al menos, dos Zonas de Amazon AWS. Cada Zona posee servicios independientes de conectividad y poder, pero se encuentran cercanas entre sí para minimizar la latencia entre ellas.
-
-### Respaldos y Recuperación
-Las versiones Modyo Cloud y Modyo Enterprise Cloud son configuradas con una política de respaldos diarios automáticos a nivel de base de datos y repositorios de objetos, los cuales son almacenados en un repositorio privado de Amazon S3. 
-
-Para el caso de las bases de datos configuradas con Amazon RDS, se utiliza el mecanismo interno de respaldo mediante snapshots los cuales son generados de forma diaria en horario de bajo tráfico y almacenados con una retención de 10 días. 
-
-Amazon RDS además ofrece la funcionalidad de _point in time recovery_ para recuperar la base de datos en una hora en específico dentro del backup.
-
-### Alertas 24x7
-En las versiones Cloud de la plataforma, todos los sistemas de monitoreo están configurados para enviar alertas telefónicas y SMS a los ingenieros encargados de la operación. Existe una planificación mensual para que siempre exista un primer, segundo y tercer contacto para realizar tareas de emergencia. 
-
-### Salud de Servidores y Aplicación
-En las versiones Cloud de la plataforma, se monitorean parámetros comunes como las variaciones de uso memoria RAM, carga en CPU y operaciones I/O en discos y red. Además se monitorea la aplicación completa con un profiler que entrega datos en tiempo real acerca de comportamientos inusuales o errores. 
-
-### Tiempo de Carga
-En las versiones Cloud de la plataforma se monitorea el tiempo de carga las páginas generadas como una métrica de satisfacción de los usuarios que las utilizan. La medición se realiza utilizando el método Apdex. Si los valores del Apdex calculado no son satisfactorios, una alerta es generada automáticamente. 
-
-### Uptime
-En las versiones Cloud de la plataforma se monitorea desde diversas ubicaciones alrededor del mundo la disponibilidad de esta realizando pings permanentes y periódicos. Un fallo en un chequeo de uptime para algún dominio monitoreado genera alertas de máxima prioridad.
-
-Los servicios de Modyo Connect poseen un SLA de uptime independiente del SLA de la plataforma Modyo, ya que opera en una infraestructura diferente y de forma totalmente desacoplada de ésta. El SLA del servicio considera sólo a la infraestructura de nube y no considera bajas o indisponibilidades que sean producto de pasos a producción programados o defectos en el código de los desarrollos realizados.
-
-
-## Modelo de Responsabilidad Compartida
+### Modelo de Responsabilidad Compartida
 En el servicio Modyo Connect, se pueden identificar distintos actores que interactúan con este servicio, desde arquitectos de soluciones, hasta ingenieros SRE que operan el servicio.
 
 Desde el punto de vista de los usuarios del servicio, es decir, arquitectos, líderes técnicos y desarrolladores, la responsabilidad contempla desde el diseño de la solución, hasta la ejecución de esta, para que la solución entregada sea resiliente, escalable y segura.
@@ -124,7 +96,7 @@ Desde el punto de vista de los usuarios del servicio, es decir, arquitectos, lí
 Desde el punto de vista de los ingenieros SRE que operan el servicio, serán los responsables por la implementación de la infraestructura del servicio ofrecido, la definición de los estándares de seguridad, por la alta disponibilidad del mismo servicio, etc. Todo este servicio se entrega siguiendo el AWS Well Architected Framework.
 
 
-## Activación del Servicio
+## Activación
 El servicio de Modyo Connect se activa como un contrato o anexo separado e independiente del licenciamiento por suscripción de la Plataforma Modyo Cloud o Enterprise Cloud. Para iniciar el servicio de Modyo Connect se deben tener en cuenta las siguientes consideraciones:
 - Número de desarrolladores que deberán tener acceso a los repositorios de código.
 - Número de Widgets que serán desarrollados utilizando el Command Line Interface (CLI) de Modyo y que requerirán usar repositorios de código.
@@ -135,7 +107,7 @@ El servicio de Modyo Connect se activa como un contrato o anexo separado e indep
 
 La capacidad de los contenedores utilizados para el despliegue de los servicios se calculará dependiendo del tráfico estimado hacia el sistema en producción, estimación que servirá para establecer el tamaño inicial pero que podrá cambiar en el tiempo dependiendo del consumo real de los servicios. Se deberán considerar criterios de alta disponibilidad multizona para el caso del despliegue en producción.
 
-### Modyo Resource Unit
+## Costos
 El Modyo Resource Unit (MRU) es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros.
 
 Todos los contenedores incluyen un repositorio, automatización, almacenamiento de imágenes en AWS ECR, monitoreo y consolidación de logs. Además, se incluye monitoreo, centralización de logs, API Gateway, Firewall, dominios personalizados, emisión de certificados TLS.

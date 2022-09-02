@@ -229,6 +229,18 @@ module.exports = {
               ],
             },
           ],
+          "/en/connect/": [{
+            title: "Modyo Connect",
+            collapsable: false,
+            children: [
+              ["/en/connect/", "What is Modyo Connect?"],              
+              "/en/connect/development",
+              "/en/connect/infrastructure",
+              "/en/connect/monitoring",
+              "/en/connect/faq",
+              "/en/connect/resources",
+            ],
+          }, ],
           "/en/brand/": [{
             title: "Brand Guidelines",
             collapsable: true,
@@ -438,8 +450,11 @@ module.exports = {
             collapsable: false,
             children: [
               ["/es/connect/", "¿Qué es Modyo Connect?"],              
-              "/es/connect/services",
+              "/es/connect/development",
+              "/es/connect/infrastructure",
+              "/es/connect/monitoring",
               "/es/connect/faq",
+              "/es/connect/resources",
             ],
           }, ],
           "/es/brand/": [{
