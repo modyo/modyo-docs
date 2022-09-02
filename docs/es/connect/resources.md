@@ -8,7 +8,12 @@ search: false
 
 ### Buenas Prácticas
 
+
 ### Rendimiento
+
+- Ligthhouse
+- JS no bloqueante
+- Widget asyncs vs sync
 
 
 ### Despliegue con Modyo CLI
@@ -21,6 +26,8 @@ search: false
 
 
 ### Rendimiento
+- Uso de bases de datos: pool de conexiones, índices, locks
+- Bloqueo de requests, timeouts
 
 
 ## 

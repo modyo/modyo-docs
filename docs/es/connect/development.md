@@ -13,11 +13,6 @@ El acceso a desarrollador se debe realizar mediante un ticket de requerimiento e
 - El nombre y correo electrónico del desarrollador
 - Indicar si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio
 
-### Costos y tiempos de activación
-| Componente        | Costo en MRUs        | Tiempos de habilitación (aprox)  |
-| ------------- |:-------------:|:-----:|
-| Acceso de Desarrollador      | 1 MRU | 1-2 días |
-
 
 ### Consideraciones
 - La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios.
@@ -70,3 +65,11 @@ ECR
 ### Pasos para solicitar
 Se debe crear un requerimiento dentro del portal de Soporte Empresarial de Modyo
 
+
+## Costos y tiempos de activación
+| Componente        | Costo en MRUs        | Tiempos de habilitación (aprox)  |
+| ------------- |:-------------:|:-----:|
+|Acceso de Desarrollador|1 MRU|1 día|p
+|Repositorio de Código|1 MRU|1 día|
+|Integración Contínua|1 MRU|1-2 días|
+|Repositorio de Artefactos|1 MRU|1 día|
