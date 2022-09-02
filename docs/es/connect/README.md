@@ -25,7 +25,7 @@ Los servicios manejados de infraestructura se ofrecen desde el Área de Segurida
 - Control de acceso a los ambientes de nube
 
 
-## Funcionalidades
+### Funcionalidades
 El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo y operación productiva de los Widgets y Microservicios desarrollados como complemento a una implementación de Modyo, tales como:
 - Repositorios seguros de códigos fuente
 - Pipelines de automatización para Micro Frontends (Widgets) y Microservicios
@@ -42,7 +42,7 @@ El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo 
 
 El servicio de Modyo Connect se implementa en producción con modalidad de alta disponibilidad y es operado por Site Reliability Engineers (SREs) del Área de Seguridad e Infraestructura de Modyo, con el fin de entregar un servicio con los mismos estándares de calidad, seguridad y niveles de atención con los que cuenta Modyo Cloud y Enterprise Cloud.
 
-## Componentes
+### Componentes
 Modyo Connect cuenta con diferentes componentes, los cuales se agrupan en tres categorías: 
 - [Desarrollo](development.md)
 - [Infraestructura](infrastructure.md)
