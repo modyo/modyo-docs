@@ -2,7 +2,8 @@
 search: true
 ---
 
-# Infrastructure
+# Infrastructura
+Modyo Connect ofrece un completo catálogo de componentes de infraestructura, que permitirán contar con todo lo necesario para poder desplegar aplicativos de negocio e iniciativas de integración basadas en APIs.
 
 ## API Gateway
 
@@ -60,6 +61,9 @@ El servicio de Single Sign On (SSO)
 ## Repositorio de Objetos
 AWS S3. Repositorio de objetos (object storage) de Amazon AWS. En él se almacenan todos los archivos estáticos de la plataforma los cuales, según los permisos configurados, quedan disponibles directamente en la Web o las Content Delivery Networks (CDNs).
 
+## Red de Distribución de Contenidos
+
+
 ## Balanceo de Carga
 AWS ALB (Application Load Balancer). Servicio de balanceo de carga de Amazon AWS. ALB permite conectarse a los contenedores de una forma limpia y transparente, monitoreando cada uno de ellos y descartando los que posean alguna degradación en su performance. Dependiendo del uso que se les dé los ELB pueden ser públicos o internos. Los balanceadores públicos poseen desplegados además  los certificados SSL y políticas de WAF básicas.
 
@@ -86,6 +90,7 @@ AWS VPC. Servicio de redes privadas virtuales de Amazon AWS. Modyo configura una
 
 
 
-
 ## Envío de Correos
-Servicio utilizado para el envío de correos transaccionales y masivos de la plataforma de forma confiable y escalable. En algunos casos este servicio es ofrecido por Modyo mediante Sendgrid y otros mediante SES.
+Para el caso de microserivicos que requieran de hacer uso del envío de correos, Modyo Customers provee un API que puede ser utilizada para tales efectos.
+
+En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo podrá autorizar la proporción de credenciales directas de envío SMTP, previa revisión del caso de uso.

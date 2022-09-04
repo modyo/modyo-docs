@@ -15,7 +15,7 @@ Existen casos en los que el cliente podrá solicitar la activación sólo del am
 
 
 ### ¿Qué alternativas existen a Modyo Connect?
-Modyo Connect es un servicio optativo que sólo se recomienda a clientes que actualmente no posean la capacidad de desarrolar y exponer de forma segura sus propios sistemas de Single Sign On o APIs de integración.
+Modyo Connect es un servicio optativo que sólo se recomienda a clientes que actualmente prefieren externalizar la operación de sus APIs en conjunto con la capacidad de desarrolar y exponer de forma segura sus propios sistemas de Single Sign On o APIs de integración.
 
 Como alternativa al servicio, podemos mencionar la implementación propia de cada cliente, sobre sus actuales recursos o los recursos de algún otro proveedor, cómo podría ser el caso de las nubes de Microsfot Azure o Google GCP. 
 
@@ -44,4 +44,4 @@ Modyo Cloud, Modyo Enterprise Cloud y Modyo Connect son servicios manejados que 
 
 
 ### ¿Qué pasa si deseo desplegar Modyo Enterprise en mi propio AWS?
-En el caso de que un cliente desee utilizar su propia cuenta de Amazon AWS, la licencia de Modyo Enterprise On Premise posee un servicio complementario de soporte de infraestructura el cual puede ser utilizado para realizar configuraciones similares a las descritas en este documento. La diferencia fundamental radica en que bajo esta modalidad los costos generados por la habilitación de los servicios descritos serán facturados directamente en la cuenta del cliente.
+En el caso de que un cliente desee utilizar su propia cuenta de Amazon AWS, la licencia de Modyo Enterprise On Premise posee un servicio complementario de soporte de infraestructura el cual puede ser utilizado para realizar configuraciones similares a las descritas en esta guía. La diferencia fundamental radica en que bajo esta modalidad los costos generados por la habilitación de los servicios descritos serán facturados directamente en la cuenta del cliente y no contempla ninguno de los componentes que no utilizan AWS.

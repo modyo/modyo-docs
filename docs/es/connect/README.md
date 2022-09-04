@@ -10,20 +10,9 @@ Modyo Connect permite la configuración de sistemas de Single Sign On, API Gatew
 El servicio manejado de Modyo Connect se origina frente a la necesidad de contar con una solución . El servicio es completamente opcional y en muchos casos no es requerido ya que el propio cliente cuenta con una arquitectura de APIs y Single Sign On a la cual los desarrollos en Modyo pueden integrarse.
 
 
+<img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-> Explicar aquí el tipo de APIs que se requiere para los Widgets.
-
-### Site Reliability Engineers (SRE)
-Los servicios manejados de infraestructura se ofrecen desde el Área de Seguridad e Infraestructura de Modyo la cual se compone de ingenieros en el rol de Site Reliability Engineers (SREs), quienes están a cargo de la operación de la infraestructura crítica administrada en la nube. Los SRE son profesionales certificados con experiencia tanto en desarrollo de software, como en operación avanzada de sistemas en ambientes de nube, on premise o híbridos y sus principales responsabilidades principales son:
-- Monitoreo y métricas de rendimiento, disponibilidad y seguridad
-- Respuesta a incidentes
-- Planificación de capacidad
-- Provisión y bajada de servicios
-- Gestión de cambios de infraestructura y seguridad
-- Gestión de repositorios de códigos fuentes
-- Configuraciones de seguridad y reglas de firewall
-- Control de acceso a los ambientes de nube
-
+Modyo Connect permite desarrollar y publicar APIs como la que se muetra en la figura, en las que las consultas se realizan directamente por el usuario final desde su navegador Web y no desde la plataforma, evitando con ello que la información sensible transite por ella. Esta arquitectura permite a su vez desacoplar totalmente la presentación de la lógica de negocio, etsableciendo responsabilidades muy definidas en sistemas separados.
 
 ### Funcionalidades
 El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo y operación productiva de los Widgets y Microservicios desarrollados como complemento a una implementación de Modyo, tales como:
@@ -55,6 +44,11 @@ Para activar un componente, se requerirá de un ticket de requerimiento, por lo 
 La activación de algunos componentes podría tener costos recurrentes asociados. Es por ello, que **cada solicitud que afecte los costos debe contar con la aprobación de los usuarios autorizados por el cliente**.
 :::
 
+### Ambientes
+Modyo Connect se despliega considerando un ambiente productivo y un de desarrollo o pre-productivo. Se pueden solicitar ambientes adicionales, pero se debe tener presente que cada ambiente adiciona costos de los MRUs requeridos. Para más detalle sobre los ambientes de desarrollo, favor referirse a la sección de [infraestructura](infrastructure.md).
+
+
+
 ## Arquitectura
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner nivel advanced con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
 
@@ -67,7 +61,8 @@ Al igual que Modyo Cloud y Enterprise Cloud, Modyo Connect opera en una configur
 
 El servicio de Modyo Connect se despliega de forma exclusiva en la nube de Amazon AWS, utilizando principalmente la plataforma de contenedores Amazon Elastic Container Services (ECS) en conjunto con herramientas de automatización y control de configuración, siguiendo una arquitectura de referencia como la que se aprecia en el siguiente diagrama:
 
-> Diagrama Connect
+<img src="/assets/img/infrastructure/architecture.png" alt="Modyo Connect Architecture" style="margin-top: 40px;" />
+
 
 Los Microservicios se conectan de forma automática a un balanceador de carga interno, en el cual se registran dinámicamente las instancias de éstos desplegados en ECS. Los Microservicios poseen reglas de egreso de tráfico que pueden ser hacia Internet por medio de un NAT Gateway que entrega IPs fijas, o, a través de un enlace VPN IPSec configurado hacia la infraestructura del Cliente para acceder a los servicios de negocio.
 
@@ -84,12 +79,30 @@ Todos los datos críticos contenidos en AWS RDS Aurora y repositorio de objetos 
 
 Modyo posee en la región alternativa copias de las configuraciones y recursos necesarios para restablecer la operación a partir de los archivos de respaldos.
 
-## Seguridad
-El despliegue de nube de AWS asegura que cada cliente cuenta con su propia VPC por cada ambiente configurado (producción, certificación, etc...). Dentro de la VPC se despliega sub redes públicas (NAT) y privadas, en donde se despliega los recursos y bases de datos que no son directamente accesibles desde Internet. Adicionalmente, se hace uso de grupos de seguridad y roles AWS IAM para controlar perimetralmente el acceso a los recursos.
 
+## Operación
+Modyo Connect, al igual que Modyo Enterprise Cloud, es un servicio totalmente operado por Modyo, en el cuál las funciones de gestión de configuración y control de la infraestructura son responsabilidad de Modyo por medio de un acuerdo de servicio con cada cliente.
+
+Para ello Modyo cuenta con un equipo dedicado de expertos compuesto por Site Reliability Engineers (SREs), quienes son los responsables de mantener los sistemas en la nube para todos nuestros clientes. Los SRE de Modyo son profesionales certificados en AWS con experiencia tanto en desarrollo de software, como en operación de sistemas críticos en la nube y sus principales responsabilidades principales son:
+- Monitoreo y métricas de rendimiento, disponibilidad y seguridad
+- Respuesta a incidentes
+- Planificación de capacidad
+- Provisión y bajada de servicios
+- Gestión de cambios de infraestructura y seguridad
+- Gestión de repositorios de códigos fuentes
+- Configuraciones de seguridad y reglas de firewall
+- Control de acceso a los ambientes de nube
+
+## Seguridad
+Modyo implementa diversos controles de seguridad, los cuales abarcan tanto al personal como a la ingraestructura. El despliegue de Modyo Enterprise Cloud y Modyo Connect aseguran que cada cliente cuenta con su propia cuenta en modo "single tenant" para desplegar cada uno de sus ambientes productivos y pre-productivos, los cuales se configuran en redes privadas, aisladas entre sí. Cada red privada se configuran con sub-redes para los diferentes roles de infraestructura, restringiendo la comunicación entre ellas mediante el uso de grupos de acceso. 
+
+Cuando un cliente adopata AWS como nube, inmediatamente e. Al ofrecer Modyo Connect como un servicio manejado, esta matriz de resposnabilidad compartida de AWS se transforma, dejando los controles complejos de infraestructura del lado de Modyo y haciendo responsable al cliente sólo por los desarrollos y configuraciones mínimas que se despliegan sobre el servicio. A continuación se describe el modelo de responsabilidad compartida de Modyo.
 
 ### Modelo de Responsabilidad Compartida
 En el servicio Modyo Connect, se pueden identificar distintos actores que interactúan con este servicio, desde arquitectos de soluciones, hasta ingenieros SRE que operan el servicio.
+
+<img src="/assets/img/infrastructure/shared_responsability_model.png" alt="Modyo Shared Responsability Model" style="margin-top: 40px;" />
+
 
 Desde el punto de vista de los usuarios del servicio, es decir, arquitectos, líderes técnicos y desarrolladores, la responsabilidad contempla desde el diseño de la solución, hasta la ejecución de esta, para que la solución entregada sea resiliente, escalable y segura.
 
@@ -107,16 +120,25 @@ El servicio de Modyo Connect se activa como un contrato o anexo separado e indep
 
 La capacidad de los contenedores utilizados para el despliegue de los servicios se calculará dependiendo del tráfico estimado hacia el sistema en producción, estimación que servirá para establecer el tamaño inicial pero que podrá cambiar en el tiempo dependiendo del consumo real de los servicios. Se deberán considerar criterios de alta disponibilidad multizona para el caso del despliegue en producción.
 
-## Costos
-El Modyo Resource Unit (MRU) es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros.
+### Tickes de requerimiento
+La gestión de solicitudes se realiza por medio del centro de soporte de Modyo (https://support.modyo.com), mediante la creación de tickets de requerimientos y completando en las instrucciones que indica el formulario. Una vez creado a cada ticket se le asigna un identificador único y una URL la cual podemos visitar posteriormente para revisar el estado de éste o responder las consultas que el equipo SRE de Modyo pueda tener.La gestión de solicitudes se realiza por medio del centro de soporte de Modyo (https://support.modyo.com/hc-es), mediante la creación de tickets de requerimientos y completando en las instrucciones que indica el formulario. Una vez creado a cada ticket se le asigna un identificador único y una URL la cual podemos visitar posteriormente para revisar el estado de éste o responder las consultas que el equipo SRE de Modyo pueda tener.
 
-Todos los contenedores incluyen un repositorio, automatización, almacenamiento de imágenes en AWS ECR, monitoreo y consolidación de logs. Además, se incluye monitoreo, centralización de logs, API Gateway, Firewall, dominios personalizados, emisión de certificados TLS.
+Los tickets de requerimientos una vez que se ingresan, son revisados antes de ser aceptados y asignados a un SRE. La duración de este proceso dependerá de la demanda y disponibilidad. Se debe indicar en el requerimiento si éste debe tratarse de forma urgente. Dependiendo del contrato de soporte asociado al servicio, cada cliente posee sólo un número limitado y no acumulable de requerimientos que pueden ser tratados de forma urgente en un periodo determinado.
 
-Los Widgets que se desarrollan en Modyo por medio del Widget Builder (sin CLI) no consumen MRUs.
+Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de éstos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que podrán tener acceso a él, mediante el campo CC del formulario de solicitud.
 
-Los servicios de SSO con RedHat KeyCloak se despliegan sobre contenedores como cualquier otro Microservicio. Al costo de MRU señalado se deberán sumar los de los contenedores usados. El tamaño del contenedor de despliegue de este componente dependerá de las necesidades del cliente.
+Los tickets de requerimientos una vez que se ingresan, son revisados antes de ser aceptados y asignados a un SRE. La duración de este proceso dependerá de la demanda y disponibilidad. Se debe indicar en el requerimiento si éste debe tratarse de forma urgente. Dependiendo del contrato de soporte asociado al servicio, cada cliente posee sólo un número limitado y no acumulable de requerimientos que pueden ser tratados de forma urgente en un periodo determinado.
 
-Los servicios complementarios que procesan datos, como Redis y Aurora, deberán estar configurados para producción y pre producción. En el caso de producción, éstos se configuran en alta disponibilidad.
+Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de éstos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que podrán tener acceso a él, mediante el campo CC del formulario de solicitud.
+
+
+### Costos
+Modyo ha definido una unidad de equivalencia llamada Modyo resource Unit (MRU). El MRU es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros.
+
+El valor en dólares norteamericanos de un MRU podría variar dependiendo de los costos de nube.
+
+Los Micro Frotnends (Widgets) que se desarrollan de forma externa y que se mantengan en repostiorios que no provengan de Modyo Connect, no consumirán MRUs.
+
 
 
 ## Soporte
