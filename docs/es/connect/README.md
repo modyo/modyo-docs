@@ -9,7 +9,6 @@ Modyo Connect permite la configuración de sistemas de Single Sign On, API Gatew
 
 El servicio manejado de Modyo Connect se origina frente a la necesidad de contar con una solución . El servicio es completamente opcional y en muchos casos no es requerido ya que el propio cliente cuenta con una arquitectura de APIs y Single Sign On a la cual los desarrollos en Modyo pueden integrarse.
 
-
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
 Modyo Connect permite desarrollar y publicar APIs como la que se muestra en la figura, en las que las consultas se realizan directamente por el usuario final desde su navegador Web y no desde la plataforma, evitando con ello que la información sensible transite por ella. Esta arquitectura permite a su vez desacoplar totalmente la presentación de la lógica de negocio, estableciendo responsabilidades muy definidas en sistemas separados.
