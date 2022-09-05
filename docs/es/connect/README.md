@@ -2,19 +2,20 @@
 search: true
 ---
 # ¿Qué es Modyo Connect?
-Modyo Connect es un servicio manejado de infraestructura y devops sobre la nube de Amazon AWS exclusivo para clientes de Modyo Enterprise Cloud.
-Modyo Connect está diseñado para organizaciones que requieran implementar una capa segura y escalable de integraciones, que se expongan como APIs hacia los Widgets o Micro Frontends desplegados sobre Modyo.
+Modyo Connect es un servicio manejado de infraestructura y devops sobre la nube de Amazon AWS exclusivo para clientes de Modyo Enterprise Cloud. Modyo Connect está diseñado para organizaciones que requieran implementar una capa segura y escalable de APIs de integración, que permitan alimentar datos hacia los Micro Frontends desplegados sobre Modyo.
 
-Modyo Connect permite la configuración de sistemas de Single Sign On, API Gateways, infraestructura de contenedores para microservicios, bases de datos, entre otros servicios pensados para dar cobertura a todo lo requerido en una iniciativa compleja de integración.
+Modyo Connect permite la implementación de servicios como: Single Sign On, API Gateway, infraestructura de contenedores para microservicios, bases de datos, colas de mensajería, repositorios de objetos, entre otros componentes pensados para dar cobertura a todos los requerimientos comunes presentes en una iniciativa compleja de integración.
 
-El servicio manejado de Modyo Connect se origina frente a la necesidad de contar con una solución . El servicio es completamente opcional y en muchos casos no es requerido ya que el propio cliente cuenta con una arquitectura de APIs y Single Sign On a la cual los desarrollos en Modyo pueden integrarse.
+Modyo Connect nace frente a la necesidad de algunos clientes de contar con una capa manejada de servicios de gestión de APIs que se integrara de forma segura a sus sistemas de negocio. El servicio es completamente opcional y, en muchos casos, no es requerido ya que el mismo cliente puede contar con su propia arquitectura de APIs y Single Sign On a la cual los Micro Frontends desarrollados sobre Modyo puedan integrarse.
+
+El siguiente diagrama corresponde a la arquitectura de referencia de implementación de Modyo. Los servicios manejados de Modyo Connect están a la derecha en el diagrama y se encuentran completamente desacoplados de la plataforma, por lo que pueden ser reemplazados por APIs que ya posea el cliente o que sean desarrolladas por un tercero.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-Modyo Connect permite desarrollar y publicar APIs como la que se muestra en la figura, en las que las consultas se realizan directamente por el usuario final desde su navegador Web y no desde la plataforma, evitando con ello que la información sensible transite por ella. Esta arquitectura permite a su vez desacoplar totalmente la presentación de la lógica de negocio, estableciendo responsabilidades muy definidas en sistemas separados.
+Las APIs desarrolladas en Modyo Connect son consumidas directamente por el usuario final desde su navegador Web. La plataforma Modyo no toma parte en la comunicación con el API, evitando con ello que la información sensible transite por ella. Con esta arquitectura se logra desacoplar completamente la presentación de la lógica de negocio, estableciendo responsabilidades delimitadas en sistemas separados, incrementando con ello la modularidad y eficiencia de los desarrollos.
 
 ### Funcionalidades
-El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo y operación productiva de los Widgets y Microservicios desarrollados como complemento a una implementación de Modyo, tales como:
+El servicio manejado de Modyo Connect contempla las siguientes funcionalidades:
 - Repositorios seguros de códigos fuente
 - Pipelines de automatización para Micro Frontends (Widgets) y Microservicios
 - Plataforma de despliegue de contenedores
@@ -28,24 +29,22 @@ El servicio de Modyo Connect entrega toda la infraestructura para el desarrollo 
 - Monitoreo contínuo y soporte de infraestructura
 - Alertas en tiempo real
 
-El servicio de Modyo Connect se implementa en producción con modalidad de alta disponibilidad y es operado por Site Reliability Engineers (SREs) del Área de Seguridad e Infraestructura de Modyo, con el fin de entregar un servicio con los mismos estándares de calidad, seguridad y niveles de atención con los que cuenta Modyo Cloud y Enterprise Cloud.
+Modyo Connect se implementa en modalidad de alta disponibilidad y es operado por un equipo de Site Reliability Engineers (SREs) de Modyo sobre la nube de Amazon AWS. El servicio cuenta con los mismos estándares de calidad, seguridad y operación que los ofrecidos en Modyo Enterprise Cloud.
 
 ### Componentes
-Modyo Connect cuenta con diferentes componentes, los cuales se agrupan en tres categorías: 
+Modyo Connect cuenta con diferentes servicios o componentes, los cuales se agrupan en tres categorías: 
 - [Desarrollo](development.md)
 - [Infraestructura](infrastructure.md)
 - [Monitoreo](monitoring.md)
 
-
-Para activar un componente, se requerirá de un ticket de requerimiento, por lo que recomendamos que antes iniciar el uso del servicio se asegure de contar con una cuenta en [Centro de Soporte de Modyo](https://support.modyo.com). Para dudas sobre cómo activar cuentas en el Centro de Soporte, favor contactar al ejecutivo de cuentas asignado.
+Para activar un componente, se requerirá de un ticket de requerimiento, por lo que recomendamos que antes iniciar el uso del servicio se cuente con un acceso activo en el [Centro de Soporte de Modyo](https://support.modyo.com). Para dudas sobre cómo activar cuentas en el Centro de Soporte, favor contactar al ejecutivo de cuentas asignado.
 
 ::: tip Costos de activación
-La activación de algunos componentes podría tener costos recurrentes asociados. Es por ello, que cada solicitud que afecte los costos debe contar con la aprobación de los usuarios autorizados por el cliente.
+La activación de los componentes podría tener costos recurrentes asociados. Cada solicitud debe contar con la aprobación de los usuarios autorizados por el cliente.
 :::
 
 ### Ambientes
-Modyo Connect se despliega considerando un ambiente productivo y un de desarrollo o pre-productivo. Se pueden solicitar ambientes adicionales, pero se debe tener presente que cada ambiente adiciona costos de los MRUs requeridos. Para más detalle sobre los ambientes de desarrollo, favor referirse a la sección de [infraestructura](infrastructure.md).
-
+Modyo Connect considera un ambiente productivo y uno de desarrollo o pre-productivo. Se pueden solicitar ambientes adicionales, pero se debe considerar que cada ambiente generará costos recurrentes medidos en Modyo Resource Units o MRUs.
 
 ## Arquitectura
 Modyo realiza la operación de sus sistemas críticos en la nube de Amazon AWS. Con más de 10 años de experiencia en esta plataforma, y en calidad de Technology Partner de nivel avanzado con ellos, Modyo cuenta con la experiencia necesaria y personal certificado para garantizar la continuidad, performance y seguridad de sus despliegues.
