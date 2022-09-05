@@ -22,7 +22,7 @@ El acceso a desarrollador se debe realizar mediante un ticket de requerimiento e
 Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando este deba ser removido o modificado, mediante un ticket de requerimiento en el Centro de Soporte de Modyo.
 :::
 
-## Micro Frontends (Widgets)
+## Micro Frontends
 La plataforma Modyo se puede extender en funcionalidad por medio del desarrollo de Widgets y Microservicios. Los Widgets se pueden desarrollar usando las herramientas internas de Modyo, como el Widget Builder, o de forma externa mediante el Modyo CLI. 
 Los Widgets desarrollados con el CLI requerirán de un repositorio de código y pipelines de automatización, los cuales generan código que se despliega directamente en la Plataforma Modyo. 
 

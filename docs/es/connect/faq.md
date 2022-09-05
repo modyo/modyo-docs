@@ -19,7 +19,7 @@ Modyo Connect es un servicio optativo que sólo se recomienda a clientes que act
 
 Como alternativa al servicio, podemos mencionar la implementación propia de cada cliente, sobre sus actuales recursos o los recursos de algún otro proveedor, cómo podría ser el caso de las nubes de Microsfot Azure o Google GCP. 
 
-### ¿Qué tan compatible es Modyo Cloud y Enterprise Cloud con soluciones de integración que no sean Modyo Connect?
+### ¿Qué tan compatible es Modyo con soluciones de integración diferentes a Modyo Connect?
 La implementación de las APIs puede realizarse sobre cualquier sistema que permita exponer endpoints en el protocolo HTTP (Rest o )
 
 ### ¿Cómo se integra Modyo Connect a los diferentes sistemas de negocio (CRMs, ERPs, Core Systems, etc)?

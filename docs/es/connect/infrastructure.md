@@ -94,3 +94,12 @@ AWS VPC. Servicio de redes privadas virtuales de Amazon AWS. Modyo configura una
 Para el caso de microserivicos que requieran de hacer uso del envío de correos, Modyo Customers provee un API que puede ser utilizada para tales efectos.
 
 En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo podrá autorizar la proporción de credenciales directas de envío SMTP, previa revisión del caso de uso.
+
+
+## Costos y tiempos de activación
+| Componente        | Costo en MRUs        | Tiempos de habilitación (aprox)  |
+| ------------- |:-------------:|:-----:|
+|Acceso de Desarrollador|1 MRU|1 día|p
+|Repositorio de Código|1 MRU|1 día|
+|Integración Contínua|1 MRU|1-2 días|
+|Repositorio de Artefactos|1 MRU|1 día|

@@ -5,8 +5,6 @@ search: false
 # Recursos
 
 ## Desarrollo de Micro Frontends
-
-Desarrollo de Micro Frontend
 - Recomendación sobre alcance
 - Recomendaciones sobre frameworks
 - Recomendaciones sobre librerías que podrían ser problemáticas
@@ -17,7 +15,22 @@ Desarrollo de Micro Frontend
 - Recomendaciones para PWA
 - Recomendaciones de Performance y accesibilidad
 
-Desarrollo de Microservicios
+
+### Buenas Prácticas
+- Recomendaciones de buenas prácticas de estructura de proyecto
+- Recomendaciones de codestyle
+
+### Rendimiento
+- Ligthhouse
+- JS no bloqueante
+- Widget asyncs vs sync
+
+
+### Despliegue con Modyo CLI
+- Recomendaciones para el uso de Modyo CLI
+- Recomendacioens de seguridad para tokens de Modyo (ejemplo: GH Secrets)
+
+## Desarrollo de Microservicios
 - Recomendaciones sobre estructura d eproyecto (Yeoman, plantilla)
 - Uso de Modyo Commons
 - Swagger para publicación en API Gateway
@@ -34,22 +47,8 @@ Desarrollo de Microservicios
 - Uso del API administrativa de Modyo
 
 ### Buenas Prácticas
-
-
-### Rendimiento
-
-- Ligthhouse
-- JS no bloqueante
-- Widget asyncs vs sync
-
-
-### Despliegue con Modyo CLI
-
-
-## Desarrollo de Microservicios
-
-### Buenas Prácticas
-
+- Recomendaciones de buenas prácticas de estructura de proyecto
+- Recomendaciones de codestyle
 
 
 ### Rendimiento
@@ -57,4 +56,8 @@ Desarrollo de Microservicios
 - Bloqueo de requests, timeouts
 
 
-## 
+## Estimación de Costos
+- Recomendaciones osbre cómo calcular el tamaño de una implementación de Modyo Connect
+- Consideraciones a tener en cuenta, por tañaño de iniciativa o volumetría en tráfico
+- Consideración de ambientes
+- Adjuntar formato de planilla de estimación descargable
