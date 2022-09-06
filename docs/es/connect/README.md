@@ -92,42 +92,35 @@ Desde el punto de vista de los usuarios del servicio, los arquitectos, líderes 
 
 Desde el punto de vista del equipo de SRE que opera el servicio, ellos serán los responsables por la implementación de la infraestructura del servicio ofrecido, la definición de los estándares y configuraciones de seguridad y la alta disponibilidad del mismo servicio, asegurando que se cumplan los principios del [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/).
 
-
 ## Activación
-El servicio de Modyo Connect se activa como un contrato o anexo separado e independiente del licenciamiento por suscripción de la Plataforma Modyo Cloud o Enterprise Cloud. Para iniciar el servicio de Modyo Connect se deben tener en cuenta las siguientes consideraciones:
-- Número de desarrolladores que deberán tener acceso a los repositorios de código.
-- Número de Widgets que serán desarrollados utilizando el Command Line Interface (CLI) de Modyo y que requerirán usar repositorios de código.
-- Cantidad de ambientes pre productivos que se usarán como parte del flujo (usualmente uno, para certificación).
-- Número de Microservicios que serán desarrollados y que requerirán repositorios independientes.
-- Número de repositorios intermediarios que podrían ser requeridos en caso de construir artefactos compartidos (por ejemplo: paquetes NPM o librerías de Java para Maven o Gradle).
-- Enlaces VPN que deban ser generados para acceder a los servicios de negocio del Cliente.
+El servicio manejado de Modyo Connect se activa como un contrato o anexo separado e independiente del licenciamiento por suscripción de Modyo Enterprise Cloud. Para iniciar el servicio de Modyo Connect se deben tener en cuenta las siguientes consideraciones:
+- Número de desarrolladores que deberán tener acceso a los repositorios de código
+- Número de micro frontends que serán desarrollados utilizando el Command Line Interface (CLI) de Modyo
+- Cantidad de ambientes pre productivos que se usarán como parte del desarrollo
+- Número de microservicios que serán desarrollados 
+- Número de repositorios intermediarios que podrían ser requeridos en caso de construir artefactos compartidos (por ejemplo: paquetes NPM o librerías de Java para Maven o Gradle)
+- Enlaces VPN que deban ser activados para acceder a los servicios de negocio
+- Requerimientos de autenticación por Single Sign On
 
-La capacidad de los contenedores utilizados para el despliegue de los servicios se calculará dependiendo del tráfico estimado hacia el sistema en producción, estimación que servirá para establecer el tamaño inicial pero que podrá cambiar en el tiempo dependiendo del consumo real de los servicios. Se deberán considerar criterios de alta disponibilidad multizona para el caso del despliegue en producción.
+La capacidad de los contenedores utilizados para el despliegue de los servicios se calculará dependiendo del tráfico estimado hacia el sistema en producción, estimación que servirá para establecer el tamaño inicial pero que podrá cambiar en el tiempo dependiendo del consumo real de los servicios. Se deberán considerar criterios de alta disponibilidad y eventual redundancia multi-región para el caso del despliegue en producción.
 
 ### Ticket de requerimiento
-La gestión de solicitudes se realiza por medio del centro de soporte de Modyo (https://support.modyo.com), mediante la creación de tickets de requerimientos y completando las instrucciones que indica el formulario. Una vez creado a cada ticket se le asigna un identificador único y una URL la cual podemos visitar posteriormente para revisar el estado de éste o responder las consultas que el equipo SRE de Modyo pueda tener.La gestión de solicitudes se realiza por medio del centro de soporte de Modyo (https://support.modyo.com/hc-es), mediante la creación de tickets de requerimientos y completando en las instrucciones que indica el formulario. Una vez creado a cada ticket se le asigna un identificador único y una URL la cual podemos visitar posteriormente para revisar el estado de éste o responder las consultas que el equipo SRE de Modyo pueda tener.
+La gestión de solicitudes se realiza por medio del [Centro de Soporte de Modyo](https://support.modyo.com), mediante la creación de tickets de requerimientos y completando las instrucciones que se indicarán en él. Una vez creado el ticket, se le asigna una prioridad, identificador único y una URL que se podrá visitar posteriormente para revisar el estado de la solicitud o responder las consultas que el equipo SRE de Modyo pueda tener.
 
-Los tickets de requerimientos una vez que se ingresan, son revisados antes de ser aceptados y asignados a un SRE. La duración de este proceso dependerá de la demanda y disponibilidad. Se debe indicar en el requerimiento si éste debe tratarse de forma urgente. Dependiendo del contrato de soporte asociado al servicio, cada cliente posee sólo un número limitado y no acumulable de requerimientos que pueden ser tratados de forma urgente en un periodo determinado.
+Los tickets de requerimientos una vez que se ingresan, son revisados antes de ser aceptados y asignados a un SRE. La duración de este proceso dependerá de la demanda y disponibilidad del equipo. Si el ticket debe tratarse de forma urgente, se deben explicar claramente las razones de forma que el equipo pueda replanificar los demás. Dependiendo del contrato de soporte asociado al servicio, cada cliente podría poseer sólo un número limitado y no acumulable de requerimientos que pueden ser tratados de forma urgente durante el mes.
 
-Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de éstos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que podrán tener acceso a él, mediante el campo CC del formulario de solicitud.
+::: tip Consejo
+Modyo recomienda planificar de forma anticipada los tickets de requerimientos para evitar crearlos de forma urgente por esperar al último día. Existen períodos en el mes en dónde se observa más demanda por el servicio que en otros, por lo que la recomendación es tratar de hacer las solicitudes con la mayor antelación posible.
+:::
 
-Los tickets de requerimientos una vez que se ingresan, son revisados antes de ser aceptados y asignados a un SRE. La duración de este proceso dependerá de la demanda y disponibilidad. Se debe indicar en el requerimiento si éste debe tratarse de forma urgente. Dependiendo del contrato de soporte asociado al servicio, cada cliente posee sólo un número limitado y no acumulable de requerimientos que pueden ser tratados de forma urgente en un periodo determinado.
-
-Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de éstos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que podrán tener acceso a él, mediante el campo CC del formulario de solicitud.
-
+Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de éstos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que deberían tener acceso a él, mediante el campo CC del formulario de solicitud.
 
 ### Costos
-Modyo ha definido una unidad de equivalencia llamada Modyo resource Unit (MRU). El MRU es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros.
-
-El valor en dólares norteamericanos de un MRU podría variar dependiendo de los costos de nube.
-
-Los Micro Frontends (Widgets) que se desarrollan de forma externa y que se mantengan en repositorios que no provengan de Modyo Connect, no consumirá MRUs.
-
-
+Modyo ha definido una unidad de equivalencia llamada Modyo resource Unit (MRU). El MRU es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros. **El valor (en dólares norteamericanos) de un MRU podría variar dependiendo de los costos de nube**.
 
 ## Soporte
-Modyo cuenta con un equipo dedicado de operaciones compuesto ingenieros en el rol de Site Reliability Engineers (SREs) los cuáles poseen conocimiento y experiencia en múltiples plataformas tecnológicas de redes, seguridad, nubes, sistemas operativos, automatización y monitoreo de sistemas. Los SREs trabajan en un sistema de turnos on call 24x7. En cada turno siempre existe un ingeniero primario y secundario de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
+El equipo de SREs de Modyo trabaja en un sistema de turnos “on call” 24x7. En cada turno siempre existe un ingenieros primarios y secundarios de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
 
-El equipo de operaciones de Modyo brinda apoyo de forma transversal a todas las áreas de la empresa en los proyectos e iniciativas que impliquen la preparación, despliegue, monitoreo, seguridad, auditoría y mejoras de rendimiento de sus proyectos e iniciativas tanto en la nube como en los despliegues On Premise de los clientes que posean un contrato de servicios de soporte adicional al incluido como parte de la licencia de software de Modyo.
+La activación del soporte se realiza en el [Centro de Soporte de Modyo](https://support.modyo.com) mediante un ticket de incidente. En caso de que el ticket no obtenga una respuesta oportuna, se define con cada cliente un protocolo de escalamiento apropiado.
 
 
