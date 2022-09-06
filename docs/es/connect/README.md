@@ -119,7 +119,7 @@ Para mejorar la gestión de tickets y la forma cómo los clientes acceden al est
 Modyo ha definido una unidad de equivalencia llamada Modyo resource Unit (MRU). El MRU es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros. **El valor (en dólares norteamericanos) de un MRU podría variar dependiendo de los costos de nube**.
 
 ## Soporte
-El equipo de SREs de Modyo trabaja en un sistema de turnos “on call” 24x7. En cada turno siempre existe un ingenieros primarios y secundarios de respaldo, ambos con la posibilidad de escalar internamente a expertos en temas específicos en caso de ser requerido.
+El equipo de SREs de Modyo trabaja en un sistema de turnos “on call” 24x7. En cada turno siempre existen ingenieros primarios y secundarios (de respaldo), con la posibilidad de contactar a los contactos técnicos definidos por el cliente o escalar a expertos internos en temas específicos en caso de ser requerido.
 
 La activación del soporte se realiza en el [Centro de Soporte de Modyo](https://support.modyo.com) mediante un ticket de incidente. En caso de que el ticket no obtenga una respuesta oportuna, se define con cada cliente un protocolo de escalamiento apropiado.
 
