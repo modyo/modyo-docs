@@ -3,73 +3,93 @@ search: true
 ---
 
 # Desarrollo
+>Idea: Herramientas de trabajo
+Los componentes de desarrollo comprenden todos los accesos y herramientas requeridas por un equipo de desarrolladores para colaborar y trabajar de forma segura en iniciativas de micro frontends y microservicios.
 
 ## Acceso de Desarrollador
-El desarrollador es el centro de Modyo Connect ya que es él el responsable de implementar el código que hará uso del resto de los componentes del servicio. Una vez habilitado el acceso, el desarrollador podrá interactuar con el Centro de Soporte de Modyo para efectuar las solicitudes deseadas. Además, con el acceso de desarrollador se otorgan los permisos para ingresar a los sistemas de monitoreo y bitácoras.
+El Acceso de Desarrollador es el punto de inicio para comenzar a utilizar los servicios de Modyo Connect. Una vez habilitado, el desarrollador podrá interactuar con los [repositorios creados](#repositorio-de-codigo) en el sistema de control de versiones y el [Centro de Soporte de Modyo](https://support.modyo.com) para efectuar las activaciones del resto de los servicios. Además, el acceso de desarrollador otorga los permisos para ingresar a los sistemas de nube, métricas, monitoreo y bitácoras.
 
-### Pasos para solicitar
-El acceso a desarrollador se debe realizar mediante un ticket de requerimiento en el Centro de Soporte de Modyo. Se debe indicar:
+### Activación
+La activación del Acceso de Desarrollador se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Usuario GitHub del desarrollador (si no posee uno, deberá ser creado previamente)
 - El nombre y correo electrónico del desarrollador
 - Indicar si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio
 
-
 ### Consideraciones
-- La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios.
-- Los usuarios de GitHub se agregan al repositorio como "externos". Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta.
+- La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios
+- Los usuarios de GitHub se agregan al repositorio como "externos". Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta
 
-::: warning Atención
-Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando este deba ser removido o modificado, mediante un ticket de requerimiento en el Centro de Soporte de Modyo.
+::: warning Importante
+Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando se deba remover de los repositorios autorizados. Esto se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com).
 :::
 
 ## Micro Frontends
 La plataforma Modyo se puede extender en funcionalidad por medio del desarrollo de Widgets y Microservicios. Los Widgets se pueden desarrollar usando las herramientas internas de Modyo, como el Widget Builder, o de forma externa mediante el Modyo CLI. 
 Los Widgets desarrollados con el CLI requerirán de un repositorio de código y pipelines de automatización, los cuales generan código que se despliega directamente en la Plataforma Modyo. 
 
-> Pendiente: Para más detalle de Widgets ir a la sección de recursos (buenas prácticas, uso de artefactos intermediarios, code style, despliegue con Modyo CLI, etc)
-> Pendiente: Para más detalle de Microservicios ir a la sección de recursos (buenas prácticas, uso de logs, artefactos intermediarios, code style, build, swagger, etc)
+::: tip Tip
+Para más información acerca de cómo desarrollar micro frontends te recomendamos [revisar esta guía](resources.md#desarrollo-de-micro-frontends).
+:::
+
+### Activación
+Al estar el código y estructura inicial del proyecto en el ambiente local del desarrollador, la activación no es requerida y sólo será necesaria cuando el código se respalde en un [repositorio de código](#repositorio-de-codigo).
+
 
 ## Microservicios
-Modyo Connect puede ser utilizado para el desarrollo de Microservicios, los cuales se despliegan dentro 
-os Microservicios, además de requerir de repositorios y automatizaciones, requerirán de un ambiente de ejecución con contenedores y un API Gateway, el que actuará como barrera de seguridad y puerta de entrada para la funcionalidad presente en ellos.
+Modyo Connect puede ser utilizado para el desarrollo de Microservicios, los cuales se despliegan dentro los Microservicios, además de requerir de repositorios y automatizaciones, requerirán de un ambiente de ejecución con contenedores y un API Gateway, el que actuará como barrera de seguridad y puerta de entrada para la funcionalidad presente en ellos.
 
+::: tip Tip
+Para más información acerca de cómo desarrollar microservicios te recomendamos [revisar esta guía](resources.md#desarrollo-de-micro-frontends).
+:::
+
+### Activación
+Al estar el código y estructura inicial del proyecto en el ambiente local del desarrollador, la activación no es requerida y sólo será necesaria cuando el código se respalde en un [repositorio de código](#repositorio-de-codigo).
 
 ## Repositorio de Código
 Los repositorios de código fuente permiten la gestión de todos los aspectos del ciclo de vida del código, incluyendo versiones, inspecciones, automatizaciones y flujos de colaboración entre los miembros del equipo de desarrollo con acceso a ellos.
 
 Los repositorios de código fuente se implementan sobre el servicio de GitHub Enterprise de Modyo. Se utilizan además las soluciones de Github Security para la inspección de dependencias, SonarCloud para Java y Javascript.
 
-### Pasos para solicitar
-Para solicitar repositorios de código, se debe indicar:
-- Tipo de repositorio: Micro Frontend, Microservicio o artefacto intermediario
-- Nombre del repositorio (al nombre elegido por el cliente, Modyo le aplicará un estándar interno de nombrado en el cual se incluyen prefijos y/o sufijos que dependen del tipo de repositorio solicitado)
-
-::: warning Accesos a repositorios
-Tal como se crean solicitudes para agregar miembros del equipo de desarrollo a repositorios específicos, será responsabilidad del cliente informar cuando los accesos de un determinado desarrollador hayan cambiado y requieren de alguna actualización en GitHub.
-:::
+### Activación
+La activación de un Repositorio de Código se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
+- Tipo de repositorio: micro frontend, microservicio o artefacto intermediario
+- Nombre del repositorio (al nombre indicado, Modyo le aplicará un estándar interno de nombre en el cual se incorporan prefijos y/o sufijos dependiendo del tipo de repositorio)
 
 
 ## Integración Contínua
-La integración contínua permite la activación de script de automatización directamente sobre el repositorio.
-AWS Codepipeline
-GHA
+La configuración de integración contínua se utiliza para automatizar procesos comunes dentro del ciclo de desarrollo de software. Dentro de estos procesos encontramos principalmente inspección de código, revisión de dependencias, empaquetado de artefactos, despliegues, entre otros.
 
-### Pasos para solicitar
-Se debe crear un requerimiento dentro del portal de Soporte Empresarial de Modyo
+Modyo utiliza los sistemas de integración contínua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a micro frontends, cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
+
+::: warning Atención
+Las integraciones basadas en AWS CodePipeline serán migradas a GitHub Actions durante la primera mitad del 2023.
+:::
+
+### Activación
+La activación de la Integración Contínua sobre un [repositorio](#repositorio-de-codigo) se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
+- Repositorio de código sobre el cual se debe ejecutar la automatización
+- Tipo de automatización que se desea implementar
+- Instrucciones específicas que se deban tener en cuenta al momento de implementar la automatización (Ejemplo: script de builds específico, parámetros especiales, etc).
 
 
 ## Repositorio de Artefactos
-GHR
-ECR
+Los repositorios de artefactos permiten almacenar paquetes de software de forma segura y accesible. Entre sus principales funcionalidades están las de versionar y respaldar los paquetes, además de actuar como fuente única para su distribución. En el caso de las librerías intermediarias, utilizadas en la modularización del código de Java y Javascript, las dependencias son consumidas directamente desde el repositorio de artefactos.
 
-### Pasos para solicitar
-Se debe crear un requerimiento dentro del portal de Soporte Empresarial de Modyo
+Modyo implementa repositorios de artefactos dentro de su GitHub Enterprise y la cuenta de Amazon AWS configurada para el cliente. Para el caso de los repositorios intermediarios, cómo librerías de Java o Javascript se utiliza GitHub Registry. Para el caso de los repositorios de contenedores que serán desplegados en la nube de Amazon, se utiliza AWS Elastic Container Registry.
+
+### Activación
+La activación de un repositorio de artefactos se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
+- Nombre del repositorio de artefacto
+- Tipo de repositorio de artefacto (librería NPM o Maven)
+- Propósito para el cual el repositorio de artefacto será utilizado
 
 
-## Costos y tiempos de activación
+## Costos y Tiempos de Activación
 | Componente        | Costo en MRUs        | Tiempos de habilitación (aprox)  |
 | ------------- |:-------------:|:-----:|
 |Acceso de Desarrollador|1 MRU|1 día|p
 |Repositorio de Código|1 MRU|1 día|
 |Integración Contínua|1 MRU|1-2 días|
 |Repositorio de Artefactos|1 MRU|1 día|
+
+
