@@ -3,21 +3,20 @@ search: true
 ---
 
 # Desarrollo
->Idea: Herramientas de trabajo
 Los componentes de desarrollo comprenden todos los accesos y herramientas requeridas por un equipo de desarrolladores para colaborar y trabajar de forma segura en iniciativas de micro frontends y microservicios.
 
 ## Acceso de Desarrollador
 El Acceso de Desarrollador es el punto de inicio para comenzar a utilizar los servicios de Modyo Connect. Una vez habilitado, el desarrollador podrá interactuar con los [repositorios creados](#repositorio-de-codigo) en el sistema de control de versiones y el [Centro de Soporte de Modyo](https://support.modyo.com) para efectuar las activaciones del resto de los servicios. Además, el acceso de desarrollador otorga los permisos para ingresar a los sistemas de nube, métricas, monitoreo y bitácoras.
+
+Al activar el acceso de desarrollador, se debe tener en cuenta lo siguiente:
+- La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios
+- Los usuarios de GitHub se agregan al repositorio como "externos". Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta
 
 ### Activación
 La activación del Acceso de Desarrollador se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Usuario GitHub del desarrollador (si no posee uno, deberá ser creado previamente)
 - El nombre y correo electrónico del desarrollador
 - Indicar si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio
-
-### Consideraciones
-- La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios
-- Los usuarios de GitHub se agregan al repositorio como "externos". Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta
 
 ::: warning Importante
 Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando se deba remover de los repositorios autorizados. Esto se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com).
@@ -61,7 +60,7 @@ La configuración de integración contínua se utiliza para automatizar procesos
 
 Modyo utiliza los sistemas de integración contínua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a micro frontends, cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
 
-::: warning Atención
+::: warning Importante
 Las integraciones basadas en AWS CodePipeline serán migradas a GitHub Actions durante la primera mitad del 2023.
 :::
 
