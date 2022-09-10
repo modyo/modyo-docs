@@ -14,8 +14,8 @@ El siguiente diagrama corresponde a la arquitectura de referencia de implementac
 
 Las APIs desarrolladas en Modyo Connect son consumidas directamente por el usuario final desde su navegador Web. La plataforma Modyo no toma parte en la comunicación con el API, evitando con ello que la información sensible transite por ella. Con esta arquitectura se logra desacoplar completamente la presentación de la lógica de negocio, estableciendo responsabilidades delimitadas en sistemas separados, incrementando con ello la modularidad y eficiencia de los desarrollos.
 
-### Funcionalidades
-El servicio manejado de Modyo Connect contempla las siguientes funcionalidades:
+### Capacidades
+El servicio manejado de Modyo Connect contempla las siguientes capacidades:
 - Repositorios seguros de códigos fuente
 - Pipelines de automatización para Micro Frontends (Widgets) y Microservicios
 - Plataforma de despliegue de contenedores
@@ -109,14 +109,14 @@ La gestión de solicitudes se realiza por medio del [Centro de Soporte de Modyo]
 
 Los tickets de requerimientos una vez que se ingresan, son revisados antes de ser aceptados y asignados a un SRE. La duración de este proceso dependerá de la demanda y disponibilidad del equipo. Si el ticket debe tratarse de forma urgente, se deben explicar claramente las razones de forma que el equipo pueda replanificar los demás. Dependiendo del contrato de soporte asociado al servicio, cada cliente podría poseer sólo un número limitado y no acumulable de requerimientos que pueden ser tratados de forma urgente durante el mes.
 
-::: tip Consejo
-Modyo recomienda planificar de forma anticipada los tickets de requerimientos para evitar crearlos de forma urgente por esperar al último día. Existen períodos en el mes en dónde se observa más demanda por el servicio que en otros, por lo que la recomendación es tratar de hacer las solicitudes con la mayor antelación posible.
-:::tip
-
 Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de éstos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que deberían tener acceso a él, mediante el campo CC del formulario de solicitud.
 
+::: tip Planificación 
+Modyo recomienda planificar de forma anticipada los tickets de requerimientos para evitar crearlos de forma urgente por esperar al último día. Existen períodos en el mes en dónde se observa más demanda por el servicio que en otros, por lo que la recomendación es tratar de hacer las solicitudes con la mayor antelación posible.
+:::
+
 ### Costos
-Modyo ha definido una unidad de equivalencia llamada Modyo resource Unit (MRU). El MRU es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros. **El valor (en dólares norteamericanos) de un MRU podría variar dependiendo de los costos de nube**.
+Modyo ha definido una unidad de equivalencia llamada Modyo resource Unit (MRU). El MRU es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros. **El valor (en dólares norteamericanos) de un MRU podría variar dependiendo de los costos de nube**. Para más detalle acerca de los valores actualizados de las unidades MRU, favor contactarse con el ejecutivo de cuentas asignado.
 
 ## Soporte
 El equipo de SREs de Modyo trabaja en un sistema de turnos “on call” 24x7. En cada turno siempre existen ingenieros primarios y secundarios (de respaldo), con la posibilidad de contactar a los contactos técnicos definidos por el cliente o escalar a expertos internos en temas específicos en caso de ser requerido.

@@ -3,11 +3,23 @@ search: true
 ---
 
 # Infrastructura
-Modyo Connect ofrece un completo catálogo de componentes de infraestructura, que permitirán contar con todo lo necesario para poder desplegar aplicativos de negocio e iniciativas de integración basadas en APIs.
+Los componentes de infraestructura comprenden todos los elementos requeridos para montar un ambiente seguro y escalable de ejecución para los microservicios desplegados sobre él. Una vez activados los componentes, las tareas comunes del ciclo de desarrollo de microservicio son automatizadas mediante el uso de scripts de [integración contínua](development.md#integracion-continua).
 
 ## API Gateway
 
+
 ## Contenedor
+
+Ejemplo de _Dockerfile_ que incorpora la el agente de monitoreo de NewRelic y asignación del 75% de la memoria RAM disponible a la JVM de Java.
+
+``` docker
+FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.10_9_openj9-0.24.0
+ENV STAGE_NAME certification
+WORKDIR /usr/app
+COPY build/libs/<microservice-name>.jar .
+COPY extras/newrelic/ newrelic/
+CMD java -javaagent:newrelic/newrelic.jar -Dnewrelic.environment=$STAGE_NAME -XX:MaxRAMPercentage=75.0 -XX:MinRAMPercentage=75.0 -XX:InitialRAMPercentage=75.0 -jar -Dhttps.protocols=TLSv1.2 <microservice-name>.jar
+```
 
 ## Gestión de Secretos
 Modyo Connect permite la gestión segura de parámetros secretos para la configuración de los microservicios mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
@@ -96,6 +108,8 @@ Para el caso de microserivicos que requieran de hacer uso del envío de correos,
 En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo podrá autorizar la proporción de credenciales directas de envío SMTP, previa revisión del caso de uso.
 
 
+
+
 ## Costos y tiempos de activación
 | Componente        | Costo en MRUs        | Tiempos de habilitación (aprox)  |
 | ------------- |:-------------:|:-----:|
@@ -103,3 +117,4 @@ En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo podrá
 |Repositorio de Código|1 MRU|1 día|
 |Integración Contínua|1 MRU|1-2 días|
 |Repositorio de Artefactos|1 MRU|1 día|
+
