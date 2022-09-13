@@ -3,23 +3,79 @@ search: true
 ---
 
 # Infrastructura
-Los componentes de infraestructura comprenden todos los elementos requeridos para montar un ambiente seguro y escalable de ejecución para los microservicios desplegados sobre él. Una vez activados los componentes, las tareas comunes del ciclo de desarrollo de microservicio son automatizadas mediante el uso de scripts de [integración contínua](development.md#integracion-continua).
+Los componentes de infraestructura habilitan un ambiente seguro y escalable de ejecución para los microservicios desarrollados sobre Modyo Connect. 
 
 ## API Gateway
+El API Gateway es el punto de entrada para todas las APIs desplegadas dentro de Modyo Connect y se encarga principalmente de autorizar las peticiones entrantes y canalizarlas al microservicio correcto. Además, el API Gateway es capas de realizar funciones de monitoreo, rate limit y caché, para mejorar el rendimiento de las APIs que operan bajo él. Modyo Connect utiliza el [AWS API Gateway](https://aws.amazon.com/api-gateway), el cual es un servicio abstracto operado por Amazon.
+
+La incorporación de endpoints en el API Gateway se realiza utilizando anotaciones especiales de Java dentro del código fuente del microservicio, las cuales al momento del despliegue permiten obtener una definición [Swagger](https://swagger.io) del API que se incorporan de forma dinámica al servicio, tal como se ejemplifica en el siguiente ejemplo:
+
+``` Java
+package com.example.adapters.web;
+
+import com.example.servi.adapters.web.dto.U.adapters.web.dto.Uce.commons.domain.model.usuario.User;
+import com.example.adapters.web.dto.UsersDto;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
+
+@Api(tags = {"Users"})
+@RestController
+@RequiredArgsConstructor
+public class GetUsersController {
+  @ApiOperation(
+      value = "Get Users",
+      nickname = "getUsers",
+      tags = {
+          "Users"
+      },
+      authorizations = {@Authorization(value = "ApiGWLambdaAuthorizer")},
+      response = UsersDto.class)
+  @GetMapping(value = "/users",
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<UsersDto> getUsers(
+      @RequestHeader("Authorization") String accessToken
+  ) {
+
+    return ResponseEntity.ok(service.getUsers());
+
+  }
+}
+```
+
+En el ejemplo anterior se aprecian las diferentes anotaciones que debe contener el servicio. La extracción del Swagger generado para el API Gateway se realiza dentro del pipeline de despliegue, el cual se configua y se ejecuta mediante la activación de [integración continua](#development.md#integracion-continua).
 
 
 ## Contenedor
+El contenedor corresponde al ambiente de ejecución sobre el cual se despliega el microservicio.
 
-Ejemplo de _Dockerfile_ que incorpora la el agente de monitoreo de NewRelic y asignación del 75% de la memoria RAM disponible a la JVM de Java.
+### Imágen de contenedor
+Ejemplo de _Dockerfile_ que asigna el 75% de la memoria RAM disponible a la JVM de Java utilizada por el microservicio.
 
-``` docker
+``` Dockerfile
 FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.10_9_openj9-0.24.0
-ENV STAGE_NAME certification
 WORKDIR /usr/app
 COPY build/libs/<microservice-name>.jar .
-COPY extras/newrelic/ newrelic/
-CMD java -javaagent:newrelic/newrelic.jar -Dnewrelic.environment=$STAGE_NAME -XX:MaxRAMPercentage=75.0 -XX:MinRAMPercentage=75.0 -XX:InitialRAMPercentage=75.0 -jar -Dhttps.protocols=TLSv1.2 <microservice-name>.jar
+CMD java -XX:MaxRAMPercentage=75.0 -XX:MinRAMPercentage=75.0 -XX:InitialRAMPercentage=75.0 -jar -Dhttps.protocols=TLSv1.2 <microservice-name>.jar
 ```
+
+### Tamaño de las instancias
+Dependiendo del tamaño escogido, se consumirán más MRUs en el servicio.
+
+Es importante considerar que en producción, las MRU utilizadas por el componente se multiplican por el factor de redundancia requerido por el cliente, siendo el mínimo de 2 (multi zona).
+
+::: warning Fracciones de vCPUs
+AWS permite la definición de contenedores con fracciones de vCPUs asignadas (ejemplo: 0.25 vCPU o 0.75vCPU. Al ser la JVM de Java un ambiente de ejecución multihilo, Modyo no recomienda el despliegue productivo o pre-productivo utilizando fracciones de vCPU, debido a que esto genera bloqueos de I/O y problemas de rendimiento conocidos. Es por ello que el mínimo será de 1vCPU y el máximo de 4vCPU (limitación de AWS ECS Fargate).
+:::
+
+
 
 ## Gestión de Secretos
 Modyo Connect permite la gestión segura de parámetros secretos para la configuración de los microservicios mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
@@ -67,7 +123,7 @@ Modyo utiliza la política de cifrado recomendada por AWS, la cual garantiza seg
 
 
 ## Single Sign On (SSO)
-El servicio de Single Sign On (SSO)
+El servicio de Single Sign On (SSO) permite realizar llamadas a las APIs que requieran de autenticación, validando a los usuarios contra un sistema de registro nuevo o existente. El SSO se integra a la plataforma Modyo mediante el uso del protocolo [OpenID Connect](https://openid.net/connect).
 
 
 ## Repositorio de Objetos
@@ -101,13 +157,10 @@ AWS SQS. Servicio de colas de mensajería de alto performance y duración que pe
 AWS VPC. Servicio de redes privadas virtuales de Amazon AWS. Modyo configura una VPC por cliente / ambiente, garantizando que todos los elementos configurados para sus clientes se encuentran separados unos de otros.
 
 
-
 ## Envío de Correos
 Para el caso de microserivicos que requieran de hacer uso del envío de correos, Modyo Customers provee un API que puede ser utilizada para tales efectos.
 
 En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo podrá autorizar la proporción de credenciales directas de envío SMTP, previa revisión del caso de uso.
-
-
 
 
 ## Costos y tiempos de activación
@@ -117,4 +170,5 @@ En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo podrá
 |Repositorio de Código|1 MRU|1 día|
 |Integración Contínua|1 MRU|1-2 días|
 |Repositorio de Artefactos|1 MRU|1 día|
+
 
