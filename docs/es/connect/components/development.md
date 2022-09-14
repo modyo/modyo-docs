@@ -3,7 +3,7 @@ search: true
 ---
 
 # Desarrollo
-Los componentes de desarrollo comprenden todos los accesos y herramientas requeridas por un equipo de desarrolladores para colaborar y trabajar de forma segura en iniciativas de micro frontends y microservicios.
+Los componentes de desarrollo comprenden todos los accesos y herramientas requeridas por un equipo de desarrolladores para colaborar y trabajar de forma segura en iniciativas de [micro frontends](../resources/microfrontends.md) y [microservicios](../resources/microservices.md).
 
 ## Acceso de Desarrollador
 El Acceso de Desarrollador es el punto de inicio para comenzar a utilizar los servicios de Modyo Connect. Una vez habilitado, el desarrollador podrá interactuar con los [repositorios creados](#repositorio-de-codigo) en el sistema de control de versiones y el [Centro de Soporte de Modyo](https://support.modyo.com) para efectuar las activaciones del resto de los servicios. Además, el acceso de desarrollador otorga los permisos para ingresar a los sistemas de nube, métricas, monitoreo y bitácoras.
@@ -37,7 +37,7 @@ La activación de un Repositorio de Código se realiza mediante un ticket de req
 ## Integración Contínua
 La configuración de integración contínua se utiliza para automatizar procesos comunes dentro del ciclo de desarrollo de software. Dentro de estos procesos encontramos principalmente inspección de código, revisión de dependencias, empaquetado de artefactos, despliegues, entre otros.
 
-Modyo utiliza los sistemas de integración contínua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a micro frontends, cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
+Modyo utiliza los sistemas de integración contínua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a [micro frontends](../resources/microfrontends.md), cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
 
 ::: warning Importante
 Las integraciones basadas en AWS CodePipeline serán migradas a GitHub Actions durante la primera mitad del 2023.

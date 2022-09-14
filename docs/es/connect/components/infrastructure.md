@@ -3,7 +3,7 @@ search: true
 ---
 
 # Infrastructura
-Los componentes de infraestructura habilitan un ambiente seguro y escalable de ejecución para los microservicios desarrollados sobre Modyo Connect. 
+Los componentes de infraestructura habilitan un ambiente seguro y escalable de ejecución para los [microservicios](../resources/microservices.md) desarrollados sobre Modyo Connect. 
 
 ## API Gateway
 El API Gateway es el punto de entrada para todas las APIs desplegadas dentro de Modyo Connect y se encarga principalmente de autorizar las peticiones entrantes y canalizarlas al microservicio correcto. Además, el API Gateway es capas de realizar funciones de monitoreo, rate limit y caché, para mejorar el rendimiento de las APIs que operan bajo él. Modyo Connect utiliza el [AWS API Gateway](https://aws.amazon.com/api-gateway), el cual es un servicio abstracto operado por Amazon.
@@ -78,7 +78,7 @@ AWS permite la definición de contenedores con fracciones de vCPUs asignadas (ej
 
 
 ## Gestión de Secretos
-Modyo Connect permite la gestión segura de parámetros secretos para la configuración de los microservicios mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
+Modyo Connect permite la gestión segura de parámetros secretos para la configuración de los [microservicios](../resources/microservices.md) mediante el uso de AWS Secret Manager. AWS Secret Manager genera un almacén central y seguro de parámetros que no deben almacenarse en el código fuente, ni ser de público conocimiento para los desarrolladores de Connect, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
 
 Adicionalmente existe una gestión adicional de secretos en el repositorio de GitHub Empresarial, la que se utiliza de forma interna para compartir detalles de accesos a tokens con los scripts de integración contínua de GitHub Actions. Si se necesita incorporar algún proceso dentro de GitHub Actions que requiera de un parámetro secreto, éste se puede ser solicitado.
 
