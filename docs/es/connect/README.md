@@ -34,9 +34,9 @@ Modyo Connect se implementa en modalidad de alta disponibilidad y es operado por
 
 ## Componentes
 Modyo Connect cuenta con diferentes servicios o componentes, los cuales se agrupan en tres categorías: 
-- [Desarrollo](development.md)
-- [Infraestructura](infrastructure.md)
-- [Monitoreo](monitoring.md)
+- [Desarrollo](components/development.md)
+- [Infraestructura](components/infrastructure.md)
+- [Monitoreo](components/monitoring.md)
 
 Para activar un componente, se requerirá de un ticket de requerimiento, por lo que recomendamos que antes iniciar el uso del servicio se cuente con un acceso activo en el [Centro de Soporte de Modyo](https://support.modyo.com). Para dudas sobre cómo activar cuentas en el Centro de Soporte, favor contactar al ejecutivo de cuentas asignado.
 
