@@ -17,7 +17,7 @@ El código y estructura inicial del proyecto en el ambiente local del desarrolla
 - Recomendaciones sobre librerías que podrían ser problemáticas
 - Recomendaciones sobre cómo aislar el Widget dentro de la página (namespace o shadow root)
 - Recomendaciones para desarrollo responsivo
-- Recomendacioens para reuso de componentes, sistema de diseño
+- Recomendaciones para reuso de componentes, sistema de diseño
 - Recomendaciones para llamadas a APIs
 - Recomendaciones para PWA
 - Recomendaciones de Performance y accesibilidad
@@ -25,16 +25,18 @@ El código y estructura inicial del proyecto en el ambiente local del desarrolla
 
 ## Buenas Prácticas
 - Recomendaciones de buenas prácticas de estructura de proyecto
-- Recomendaciones de codestyle
+- Recomendaciones de code style
 
 
 ## Rendimiento
-- Ligthhouse
+- Lighthouse
 - JS no bloqueante
-- Widget asyncs vs sync
+- Widget async vs sync
 
 
 ## Despliegue con Modyo CLI
 - Recomendaciones para el uso de Modyo CLI
 - Recomendacioens de seguridad para tokens de Modyo (ejemplo: GH Secrets)
+
+
 
