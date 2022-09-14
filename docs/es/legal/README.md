@@ -10,6 +10,8 @@ En este Acuerdo, "usted", "su" y "licenciatario" se referirán a usted. Si usted
 
 Este Acuerdo de Modyo se celebra a partir de su primer acceso a CUALQUIER software Modyo (la "Fecha de vigencia") por y entre Modyo B.V. ("Modyo"), una corporación organizada bajo las leyes de los Países Bajos con oficinas en WTC Amsterdam, Torre C-11, Strawinskylaan 1143, Países Bajos (en lo sucesivo denominado "Licenciante") y USTED, (en lo sucesivo denominado "Licenciatario" o "Cliente"). El Otorgante de la licencia y el Licenciatario se denominarán cada uno de ellos como una "Parte" y conjuntamente como las "Partes".
 
+Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator
+
 CONSIDERANDO que el Licenciante y sus Empresas Relacionadas han desarrollado ciertas tecnologías de las que son propietarios y el Licenciante desea otorgar al Licenciatario ciertos derechos para usar tales tecnologías y para proporcionar servicios asociados de mantenimiento, soporte y/o servicios profesionales en relación con las mismas; y
  
 CONSIDERANDO que el Licenciatario desea obtener dichos derechos y recibir dichos servicios, sujeto a los términos y condiciones aquí contenidos;

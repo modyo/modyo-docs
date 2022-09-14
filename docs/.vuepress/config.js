@@ -54,8 +54,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          // { text: "Connect", link: "/en/connect/" },
-          // { text: "Banking", link: "/en/banking/" },
+          /*{ text: "Cloud", link: "/en/services/" },*/
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],                
@@ -136,6 +135,7 @@ module.exports = {
                 "/en/platform/channels/pages",
                 "/en/platform/channels/navigation",
                 "/en/platform/channels/widgets",
+                "/en/platform/channels/cli",
                 "/en/platform/channels/templates",
                 "/en/platform/channels/liquid-markup",
                 "/en/platform/channels/drops",
@@ -230,25 +230,6 @@ module.exports = {
               ],
             },
           ],
-          "/en/banking/": [{
-            title: "Modyo Banking",
-            collapsable: false,
-            children: [
-              ["/en/banking/", "What is Modyo Banking?"]
-            ],
-          }, ],
-          "/en/connect/": [{
-            title: "Modyo Connect",
-            collapsable: false,
-            children: [
-              ["/en/connect/", "What is Modyo Connect?"],              
-              "/en/connect/development",
-              "/en/connect/infrastructure",
-              "/en/connect/monitoring",
-              "/en/connect/faq",
-              "/en/connect/resources",
-            ],
-          }, ],
           "/en/brand/": [{
             title: "Brand Guidelines",
             collapsable: true,
@@ -275,8 +256,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          // { text: "Connect", link: "/es/connect/" },
-          // { text: "Banking", link: "/es/banking/" },
+          /*{ text: "Cloud", link: "/es/services/" },*/
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -359,6 +339,7 @@ module.exports = {
                 "/es/platform/channels/pages",
                 "/es/platform/channels/navigation",
                 "/es/platform/channels/widgets",
+                "/es/platform/channels/cli",
                 "/es/platform/channels/templates",
                 "/es/platform/channels/liquid-markup",
                 "/es/platform/channels/drops",
@@ -454,40 +435,14 @@ module.exports = {
               ],
             },
           ],
-          "/es/banking/": [{
-            title: "Modyo Banking",
+          "/es/services/": [{
+            title: "Servicios de Cloud",
             collapsable: false,
             children: [
-              ["/es/banking/", "¿Qué es Modyo Banking?"]
-            ],
-          }, ],
-          "/es/connect/": [{
-            title: "Modyo Connect",
-            collapsable: false,
-            children: [
-              ["/es/connect/", "¿Qué es Modyo Connect?"],
-              "/es/connect/architecture",
-              "/es/connect/activation",
-              "/es/connect/support",
-            ],
-          },
-          {
-            title: "Componentes",
-            collapsable: true,
-            children: [
-              "/es/connect/components/development",
-              "/es/connect/components/infrastructure",
-              "/es/connect/components/monitoring",
-            ],
-          },
-          {
-            title: "Recursos",
-            collapsable: true,
-            children: [
-              "/es/connect/resources/microfrontends",
-              "/es/connect/resources/microservices",
-              "/es/connect/resources/mrus",
-              "/es/connect/resources/faq",
+              ["/es/services/", "Introducción"],
+              "/es/services/cloud",
+              "/es/services/connect",
+              "/es/services/faq",
             ],
           }, ],
           "/es/brand/": [{
@@ -503,7 +458,7 @@ module.exports = {
           }, ],
           "/es/legal/": [{
             title: "Legal",
-            collapsable: false,
+            collapsable: true,
             children: [
               ["/es/legal/", "Acuerdo de Licencia"],
             ],

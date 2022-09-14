@@ -8,7 +8,7 @@ search: true
 
 La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación.
 
-De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores.
+De esta manera, se agrega un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores. Esta herramienta se configura individualmente para cada Sitio y Espacio.
 
 ### Función
 
@@ -22,16 +22,13 @@ Cada paso de este proceso lleva al elemento por distintos estados, que quedan re
 
 <img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-Esta herramienta está disponible tanto para Channels (sitios) como para Content (espacios).
-
-La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
-
-
 ### Configuración
 
-La configuración de reglas de revisión se realiza de manera independiente para cada sitio o espacio.
+Para activar la revisión de equipo, sigue estos pasos:
 
-Para configurar la herramienta, debes seleccionar un espacio o sitio y seleccionar la opción  `Configuración del sitio/espacio > Revisión en equipo` en el menú lateral.
+1. Desde el menú lateral en Modyo Platform, selecciona un espacio o sitio.
+2. Expande **Configuración del espacio/sitio** y selecciona **Revisión en Equipo**.
+3. Haz click en **Habilita la revisión en equipo**.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -104,6 +101,26 @@ Cuando se habilita la revisión en equipo, en la barra de acciones del elemento,
 Al abrirla, se desplegará un listado cronológico de las acciones que se han efectuado sobre el elemento, con la opción para ver el detalle de la acción, y al fondo de la pestaña, estará la opción para dejar un comentario.
 
 Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se envía una notificación tanto a quien envió a revisión como a los usuarios que están en la lista de revisores.
+
+## Revisión y Publicación Conjunta
+
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver que exactamente cambio al hacer click en el botón **Ver**. 
+
+### Publicar en conjunto
+
+Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
+
+1. En el menú principal de Modyo Platform, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu sitio. 
+1. En la pantalla de Resumen, haz click en **Publicar**.
+1. Aquí podrás ver todos los cambios pendientes, selecciona todo lo que quieres publicar y haz click en **Publicar**.
+
+:::tip Tip
+Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+:::
+
 
 ## Versionado
 

@@ -100,7 +100,7 @@ Al final del proceso los valores de tu custom manifest deberían verse así.
 
 ```
 
-Asegúrate de no introducir errores de sintaxis porque esto afectará el funcionamiento de tu aplicación, si necesitas verificar, puedes copiar el código y pegarlo en [jsonlint.com](www.jsonlint.com) para verificar que no contenga ningún error.
+Asegúrate de no introducir errores de sintaxis porque esto afectará el funcionamiento de tu aplicación, si necesitas verificar, puedes copiar el código y pegarlo en [jsonlint.com](https://www.jsonlint.com) para verificar que no contenga ningún error.
 Una vez actualizados los valores, activa tu manifest marcando la casilla **Enable PWA manifest** y luego el botón **Guardar**.
 
 

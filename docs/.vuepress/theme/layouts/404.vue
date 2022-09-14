@@ -3,7 +3,7 @@
     <div class="theme-default-content">
       <h1>404</h1>
       <blockquote>{{ getMsg() }}</blockquote>
-      <a href="/">Take me home.</a>
+      <router-link to="/">Take me home.</router-link>
     </div>
   </div>
 </template>

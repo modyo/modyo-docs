@@ -27,7 +27,7 @@ export default {
 .badge
   display inline-block
   font-size 16px
-  height 18px
+  height auto
   line-height 20px
   border-radius 3px
   padding 2px 6px
