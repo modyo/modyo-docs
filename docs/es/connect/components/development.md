@@ -22,27 +22,6 @@ La activación del Acceso de Desarrollador se realiza mediante un ticket de requ
 Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando se deba remover de los repositorios autorizados. Esto se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com).
 :::
 
-## Micro Frontends
-La plataforma Modyo se puede extender en funcionalidad por medio del desarrollo de Widgets y Microservicios. Los Widgets se pueden desarrollar usando las herramientas internas de Modyo, como el Widget Builder, o de forma externa mediante el Modyo CLI. 
-Los Widgets desarrollados con el CLI requerirán de un repositorio de código y pipelines de automatización, los cuales generan código que se despliega directamente en la Plataforma Modyo. 
-
-::: tip Tip
-Para más información acerca de cómo desarrollar micro frontends te recomendamos [revisar esta guía](resources.md#desarrollo-de-micro-frontends).
-:::
-
-### Activación
-Al estar el código y estructura inicial del proyecto en el ambiente local del desarrollador, la activación no es requerida y sólo será necesaria cuando el código se respalde en un [repositorio de código](#repositorio-de-codigo).
-
-
-## Microservicios
-Modyo Connect puede ser utilizado para el desarrollo de Microservicios, los cuales se despliegan dentro los Microservicios, además de requerir de repositorios y automatizaciones, requerirán de un ambiente de ejecución con contenedores y un API Gateway, el que actuará como barrera de seguridad y puerta de entrada para la funcionalidad presente en ellos.
-
-::: tip Tip
-Para más información acerca de cómo desarrollar microservicios te recomendamos [revisar esta guía](resources.md#desarrollo-de-micro-frontends).
-:::
-
-### Activación
-Al estar el código y estructura inicial del proyecto en el ambiente local del desarrollador, la activación no es requerida y sólo será necesaria cuando el código se respalde en un [repositorio de código](#repositorio-de-codigo).
 
 ## Repositorio de Código
 Los repositorios de código fuente permiten la gestión de todos los aspectos del ciclo de vida del código, incluyendo versiones, inspecciones, automatizaciones y flujos de colaboración entre los miembros del equipo de desarrollo con acceso a ellos.

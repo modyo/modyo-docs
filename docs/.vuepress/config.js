@@ -54,7 +54,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          //{ text: "Connect", link: "/en/connect/" },
+          // { text: "Connect", link: "/en/connect/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],                
@@ -267,7 +267,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          //{ text: "Connect", link: "/es/connect/" },
+          // { text: "Connect", link: "/es/connect/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -449,12 +449,29 @@ module.exports = {
             title: "Modyo Connect",
             collapsable: false,
             children: [
-              ["/es/connect/", "¿Qué es Modyo Connect?"],              
-              "/es/connect/development",
-              "/es/connect/infrastructure",
-              "/es/connect/monitoring",
-              "/es/connect/faq",
-              "/es/connect/resources",
+              ["/es/connect/", "¿Qué es Modyo Connect?"],
+              "/es/connect/architecture",
+              "/es/connect/activation",
+              "/es/connect/support",
+            ],
+          },
+          {
+            title: "Componentes",
+            collapsable: true,
+            children: [
+              "/es/connect/components/development",
+              "/es/connect/components/infrastructure",
+              "/es/connect/components/monitoring",
+            ],
+          },
+          {
+            title: "Recursos",
+            collapsable: true,
+            children: [
+              "/es/connect/resources/microfrontends",
+              "/es/connect/resources/microservices",
+              "/es/connect/resources/mrus",
+              "/es/connect/resources/faq",
             ],
           }, ],
           "/es/brand/": [{
