@@ -690,10 +690,10 @@ Luego de que previsualizamos nuestros cambios y estamos conformes con el resulta
  
 Encuentra más información sobre Modyo:
 - [Modyo Channels](/es/platform/channels)
-- [Sitios](/es/platform/sites)
+- [Sitios](/es/platform/channels/sites)
 - [Pages](/es/platform/channels/pages)
 - [Liquid](/es/platform/channels/liquid-markup)
 - [Modyo Content](/es/platform/content)
 - [Espacios](/es/platform/content/spaces)
-- [Tipos de contenido](/es/platform/types)
-- [Entradas](/es/platform/types/entries)
+- [Tipos de contenido](/es/platform/content/types)
+- [Entradas](/es/platform/content/entries)

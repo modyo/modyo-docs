@@ -102,6 +102,26 @@ Al abrirla, se desplegará un listado cronológico de las acciones que se han ef
 
 Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se envía una notificación tanto a quien envió a revisión como a los usuarios que están en la lista de revisores.
 
+## Revisión y Publicación Conjunta
+
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver que exactamente cambio al hacer click en el botón **Ver**. 
+
+### Publicar en conjunto
+
+Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
+
+1. En el menú principal de Modyo Platform, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu sitio. 
+1. En la pantalla de Resumen, haz click en **Publicar**.
+1. Aquí podrás ver todos los cambios pendientes, selecciona todo lo que quieres publicar y haz click en **Publicar**.
+
+:::tip Tip
+Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+:::
+
+
 ## Versionado
 
 Como mecanismo de respaldo, al momento de publicar un elemento, Modyo genera y mantiene automáticamente un número de versiones que posteriormente pueden ser recuperadas en caso de ser necesario.
