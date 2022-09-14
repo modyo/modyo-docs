@@ -9,7 +9,7 @@ La plataforma Modyo se puede extender en funcionalidad por medio del desarrollo 
 Los Widgets desarrollados con el CLI requerirán de un repositorio de código y pipelines de automatización, los cuales generan código que se despliega directamente en la Plataforma Modyo. 
 
 ::: tip Repositorio de Código
-El código y estructura inicial del proyecto en el ambiente local del desarrollador debe ser respladado en un [repositorio de código](../components/development.md#repositorio-de-codigo) provisto por el servicio.
+El código y estructura inicial del proyecto en el ambiente local del desarrollador debe ser respaldado en un [repositorio de código](../components/development.md#repositorio-de-codigo) provisto por el servicio.
 :::
 
 - Recomendación sobre alcance
