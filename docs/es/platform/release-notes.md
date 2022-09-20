@@ -6,11 +6,53 @@ search: true
 
 ## 9.2
 
+### 9.2.17 - 20 de septiembre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se arregla la consistencia visual de permisos y roles
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega el identifiador a la búsqueda en el listado de espacios
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrige la exportación de usuarios
+
+
+### 9.2.16 - 23 de agosto de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Se actualiza el framework a la última versión (7.0.2)
+* Se actualiza ruby a la última versión (3.1)
+* Se actualiza dependencias
+* Mejoras del producto
+* Mejoras de seguridad
+* Se agrega opción para deshabilitar las rutas a sitemap.xml y robots.txt
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se arregla la falta jquery.min.js al cargar el widget manager
+* Se arregla inconsistencia de la publicación cuando está habilitado la revisión en equipo
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se corrige un problema al subir un algunos svgs al asset manager
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se extiende al API administrativa de notificaciones para marcar mensajes como leidos
+
+
 ### 9.2.15 - 27 de julio de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Se incluye alternative_id en index, export y búsqueda de órdenes de Commerce
+
 
 ### 9.2.14 - 04 de julio de 2022
 
