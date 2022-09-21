@@ -360,7 +360,7 @@ module.exports = {
                 "/es/platform/channels/pages",
                 "/es/platform/channels/navigation",
                 "/es/platform/channels/widgets",
-                "/en/platform/channels/cli",
+                "/es/platform/channels/cli",
                 "/es/platform/channels/templates",
                 "/es/platform/channels/liquid-markup",
                 "/es/platform/channels/drops",
