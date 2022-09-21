@@ -106,7 +106,7 @@ Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con
 - **Fecha mínima**: La fecha ingresada no puede ser anterior a este valor
 - **Fecha máxima**: La fecha ingresada no puede ser posterior a este valor.
 
-De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas y los archivos.
+De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas.
 
 ### Expresiones Regulares
 

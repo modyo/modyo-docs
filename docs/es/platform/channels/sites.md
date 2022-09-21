@@ -39,6 +39,25 @@ La configuración del sitio te permite abrir las opciones de la plataforma, para
 
 <img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
+## Revisión y Publicación Conjunta
+
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver que exactamente cambio al hacer click en el botón **Ver**. 
+
+### Publicar en conjunto
+
+Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
+
+1. En el menú principal de Modyo Platform, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu sitio. 
+1. En la pantalla de Resumen, haz click en **Publicar**.
+1. Aquí podrás ver todos los cambios pendientes, selecciona todo lo que quieres publicar y haz click en **Publicar**.
+
+:::tip Tip
+Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+:::  
+
 ### General
 
 Dentro de esta sección puedes configurar los siguientes datos:
@@ -179,7 +198,7 @@ Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los can
 
 <img src="/assets/img/channels/sites/pwa-site.jpg" alt="The PWA options you can configure withing a site." width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-#### **Manifiesto**
+#### Manifiesto
 
 El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. En la plataforma, es posible activarlo a través de este checkbox. Con ello, se creará la siguiente ruta:
 
@@ -199,7 +218,7 @@ Si cambias el manifiesto, recuerda guardarlo con el botón **Guardar** que se en
 Si no personalizas el manifiesto pero agregas la ruta en Plantillas, este quedará en blanco y no hará ninguna acción.
 :::
 
-#### **Service Worker**
+#### Service Worker
 
 El Service Worker permite que el canal digital pueda realizar distintas acciones o mantenga ciertos datos conectados dentro del caché para ver una estructura en caso de tener una mala conexión. La plataforma otorga la posibilidad de que este se pueda habilitar a través del siguiente checkbox. Así, se creará la siguiente ruta:
 
@@ -304,7 +323,7 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 
 Agregar stages en tu sitio te permite integrar y desplegar continuamente (CI/CD) nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar unicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse al stage `main`.
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar únicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse a cualquier stage.
 
 :::warning Atención
 Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
@@ -318,15 +337,15 @@ Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 
 1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
 1. Expande **Configuración del sitio**, haz click en **Stages**.
-1. Haz click en **+ Nuevo Stage**
-1. Selecciona cual será la base del stage y escribe el nombre.
+1. Haz click en **+ Nuevo Stage**.
+1. Selecciona cuál será la base del stage y escribe el nombre.
 1. Haz click en **Crear**.
 
 
 :::tip Tip
 Al tener más de un stage en tu sitio, la página de **Overview** mostrará los detalles del stage actual y un botón para sincronizar cambios entre stages.
 
-En la barra lateral podrás ver en que stage estas actualmente y al hacer click en el dropdown, desplegara un listado de todos los stages de tu sitio.
+En la barra lateral podrás ver en qué stage estas actualmente y al hacer click en el dropdown, desplegará un listado de todos los stages de tu sitio.
 :::
 
 #### Sincronizar un stage

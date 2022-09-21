@@ -106,8 +106,8 @@ Luego de haber creado tu nuevo layout, puedes empezar a usarlo yendo a la vista 
 En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
 
 * **Deshabilitado**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
-* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#restricciones) decides mostrar el 404 y no redireccionar a la página home.
-* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#restricciones) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 y no redireccionar a la página home.
+* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
 * **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
@@ -142,7 +142,7 @@ Para que el sistema reconozca el tipo de lenguaje de programación al que perten
 :::tip Tip
 Todos los elementos del Template Builder usan Liquid como motor de plantillas.
 
-Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/docs/channels/liquid-markup.html)
+Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/platform/channels/liquid-markup.html)
 :::
 
 En el área de trabajo, debajo de las pestañas, encontrarás una barra con elementos útiles:
@@ -152,7 +152,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 **Gestor de archivos**: Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
 
 :::tip Tip
-Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Asset Manager](/es/docs/content/asset-manager.html)
+Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
 :::
 
 **Atajos de teclado**: Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
@@ -177,7 +177,7 @@ Las sub-versiones son por cada plantilla, por lo que para algunos puedes observa
 
 :::tip Tip
 Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. 
-Puedes aprender más sobre el [versionado aquí].(/platform/core/key-concepts.html#versionado)
+Puedes aprender más sobre el [versionado aquí](/platform/core/key-concepts.html#versionado).
 :::
 
 Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.

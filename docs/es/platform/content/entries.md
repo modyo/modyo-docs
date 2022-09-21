@@ -78,21 +78,22 @@ Si necesitas recuperar un valor específico de una entrada, puedes hacer uso de 
 
 Una vez que Modyo haya terminado de modificar los campos para las entradas seleccionadas, notarás que todas las entradas ahora están con cambios pendientes y debes publicarlas. Para esto, puedes hacer uso de la acción masiva "Publicar".
 
-## Crear una Entrada
+## Crear y Publicar una Entrada
 
 Para crear una entrada, sigue estos pasos:
 
 1. En el menú lateral de la Plataforma Modyo, selecciona **Content** y haz click en **Espacios**.
-1. Selecciona tu **Espacio**.
-1. Haz click en **+ Nueva Entrada**.
+2. Selecciona tu **Espacio**.
+3. Haz click en **+ Nueva Entrada**.
+4. Selecciona el **Tipo de contenido**, **Nombre**, e **Identificador**. Haz click en **Crear**.
+Al hacer click en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde puedes rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
+5. Haz click en **Guardar** y después haz click en **Publicar**.
 
 En primera instancia, **Modyo** pide el nombre, el slug, y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en [Tipos](/es/platform/content/types.html).
 
 :::warning Atención
 Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de la entrada como slug.
 :::
-
-Al hacer click en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde puedes rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
 
 ## Traducir una Entrada
 
@@ -135,7 +136,7 @@ Para despublicar contenido, sigue estos pasos:
 1. En el menú de Entradas, selecciona tu Entrada.
 1. Expande el menú de Acciones Masivas y haz click en Despublicar.
 
-<img src=”/assets/img/content/despublicar.png” alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
+<img src="/assets/img/content/despublicar.jpg" alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
 
 
 ### Eliminar entradas
@@ -168,15 +169,19 @@ Después de esto, entras a la vista de edición en la que puedes cambiar el cont
 
 En el caso de que la entrada se encuentre publicada, los cambios se harán automáticamente. Si esta se encuentra en proceso de Revisión en Equipo, los revisores deberán actualizar su vista para poder notar los cambios.
 
-### Categorías
+## Categorías
 
-Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la web que permite acceder al recurso sin tener que pasar por otras webs, en el caso de que este se encuentre de manera pública.
+Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la URL que permite acceder al recurso, en el caso de que este se encuentre publicado.
 
 Para ver las Categorías, es necesario que hagas click en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, puedes ver todas las categorías que se encuentran ya hechas.
 
 #### Crear una Categoría
 
 Si quieres crear una categoría, solo debes hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, puedes ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
+
+Para las entradas de estas categorías, se añade el identificador como un prefijo a la URL de la entrada. Por ejemplo:
+
+Una entrada con URL: test.modyo.com/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/travel/visita-chile.
 
 :::tip Tip
 Cuando se ingrese el nombre de la categoría, la ruta se establece predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer click en ella.
@@ -191,6 +196,14 @@ Si se quiere eliminar una categoría, simplemente basta con hacer click en el í
 ::: danger Peligro
 Si se borra la Categoría Padre, se borran también todas las subcategorías asignadas a esta. Y las entradas asociadas a dichas categorías quedan sin categoría asignada.
 :::
+
+### Tags
+
+Los tags te permiten agregar más granularidad a tus Entradas al combinarlo con Liquid en tus páginas de contenido. Al crear Entradas, se puede agregar un tag que aparece tanto en el código fuente como en nuestra API de contenido para que puedas agregar funcionalidad específica a este tag.
+
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" alt="The JSON information that appears when you click the preview site button."/>
+
+Por ejemplo, si está entrada es una entrada destacada, se puede agregar un tag ‘featured’ y agregar funcionalidad a través del módulo Channels.
 
 ### Slug
 

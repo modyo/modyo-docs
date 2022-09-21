@@ -20,7 +20,7 @@ Una vez que completes esta serie de tutoriales, tu proyecto debería lucir así:
 
 ## Requisitos Previos
 
-Solo es necesario tener una cuenta en Modyo y tener acceso a la plataforma. ¿No tienes una cuenta? Puedes solicitar una con el administrador de la plataforma en tu empresa, o solicita una prueba [aquí](https://platform.modyo.cloud/onboarding).
+Solo es necesario tener una cuenta en Modyo y tener acceso a la plataforma. ¿No tienes una cuenta? Puedes solicitar una con el administrador de la plataforma en tu empresa, o solicita una prueba [aquí](https://platform.modyo.cloud/try).
 
 ## Paso 1: Crear un Espacio
 

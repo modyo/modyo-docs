@@ -8,7 +8,7 @@ search: true
 
 Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfocará en [Modyo Channels](/es/platform/channels) donde tu crearás una vista para poder desplegar entradas creadas en [Modyo Content](/es/platform/content).
 
-El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar. En el Tutorial de [Creación de contenido](/es/platform/tutorials/how-to-create-content), creaste el [Espacio](/es/platform/content/space) Bank, el [Tipo de contenido](/es/platform/content/types) Benefits y las [Entradas](/es/platform/content/entries). Ahora utilizarás este Tipo añadiendo los campos necesarios para generar los detalle según el diseño de Figma.
+El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar. En el Tutorial de [Creación de contenido](/es/platform/tutorials/how-to-create-content), creaste el [Espacio](/es/platform/content/spaces) Bank, el [Tipo de contenido](/es/platform/content/types) Benefits y las [Entradas](/es/platform/content/entries). Ahora utilizarás este Tipo añadiendo los campos necesarios para generar los detalle según el diseño de Figma.
 
 En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocamos en crear, previsualizar, y publicar una entrada de tipo **Benefits** para la marca ficticia "Dynamic Cine".
 
@@ -165,7 +165,7 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
 
 ## Paso 3: Crear Página de Contenido "Benefits"
 
-Después de crear la entrada con su contenido, ahora tienes que crear una [Página de contenido](/es/platform/channels/pages.html#content-pages) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
+Después de crear la entrada con su contenido, ahora tienes que crear una [Página de contenido](/es/platform/channels/pages.html#pagina-de-contenido) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
 
 Para crear una Página de contenido, sigue estos pasos:
 
