@@ -8,7 +8,7 @@ search: true
 
 Welcome to a new tutorial in the Modyo training series. This tutorial will focus on [Modyo Channels](/en/platform/channels) where you'll create a custom view to display posts created in [Modyo Content](/en/platform/content).
 
-The link between Content and Channels is one of the most important features when it comes to having dynamic and easy-to-manage sites. In the [Content Creation](/en/platform/tutorials/how-to-create-content) Tutorial, you created the [Space](/en/platform/content/space) Bank, the [Content Type](/en/platform/content/types) Benefits, and the [Entries](/en/platform/content/entries). You will now use this Type by adding the necessary fields to generate the details according to Figma's design.
+The link between Content and Channels is one of the most important functionalities when it comes to having dynamic and easy-to-manage sites. In the [Content Creation] Tutorial(/en/platform/tutorials/how-to-create-content), you created the [Space](/en/platform/Content/Spaces) Bank, the [Content Type](/en/platform/Content/Types) Benefits and the [Entries](/en/platform/Content/Entries). You will now use this Type by adding the necessary fields to generate the details according to the Figma design.
 
 In this tutorial we will continue to use the fictional brand “Dynamic Bank”, but now we focus on creating, previewing, and publishing a **Benefits** entry for the fictional brand “Dynamic Cine”.
 
@@ -165,7 +165,7 @@ After you have the type with the new fields, the next step is to publish content
 
 ## Step 3: Create “Benefits” Content Page
 
-After creating the post with its content, you now need to create a [Content Page](/en/platform/channels/pages.html#content-pages) within your site to generate dynamic pages connected to **Content**.
+After creating the post with its content, you now have to create a [Content Page](/en/platform/channels/pages.html#content-page) within your site in order to generate dynamic pages connected to **Content**.
 
 To create a Content Page, follow these steps:
 
