@@ -100,8 +100,8 @@ At the end of the process, your custom manifest values should look like this.
 
 ```
 
-Make sure you don't enter syntax errors because this will affect how your application works, if you need to verify, you can copy the code and paste it into [jsonlint.com](www.jsonlint.com) to verify that it doesn't contain any errors.
-Once the values have been updated, activate your manifest by checking the**Enable PWA manifest** box and then the **Save** button.
+Having syntax errors will affect the operation of your application. If you need to verify, you can copy the code and paste it into [jsonlint.com](https://www.jsonlint.com) to verify that it doesn't contain any errors.
+Once the values have been updated, activate your manifest by checking the **Enable PWA Manifest** box and then click **Save**.
 
 
 ## Step 4: Activate service worker
