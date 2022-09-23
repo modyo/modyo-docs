@@ -14,13 +14,13 @@ Dynamic Bank is our fictional brand that we built to use in all our demos and tu
 
 Once you complete this tutorial series, your project should look like this:
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Dynamic Bank homepage"/>
 
 <a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=808%3A0&node-id=808%3A1&viewport=694%2C507%2C0.23551106452941895&scaling=min-zoom" target="blank">View the design in Figma</a>
 
 ## Prerequisites
 
-You only need to have a Modyo account and have access to the platform. Don't have an account? You can request one with the platform administrator at your company, or request a trial [here](https://platform.modyo.cloud/onboarding).
+You only need to have an account on Modyo and have access to the platform. Don't have an account? You can request one with the platform administrator at your company, or request a trial [here](https://platform.modyo.cloud/try).
 
 ## Step 1: Create a Space
 
@@ -38,9 +38,9 @@ To create your Space, follow these steps:
 4. Click **Create**.
 
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/new-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 200px;margin: auto 0px 20px 0px;" alt="+ New Space button"/>
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/create-space.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="This image shows the Add a new Space screen"/>
 
 ## Step 2: Create "Hero" Type 
 
@@ -56,13 +56,13 @@ Create your first [content type](/en/platform/content/types.html#content-types) 
 
 <table>
  <tr>
-  <th style="text-align: left">Tipo de campo</th>
-  <th style="text-align: left">Nombre</th>
-  <th style="text-align: left">Valores que permitiremos</th>
+  <th style="text-align: left">Type of field</th>
+  <th style="text-align: left">Name</th>
+  <th style="text-align: left">Values</th>
  </tr>
  <tr>
   <td>
-   Asset
+   Archivo
   </td>
   <td>
    Cover
@@ -110,10 +110,9 @@ Create your first [content type](/en/platform/content/types.html#content-types) 
  </tr>
 </table>
 
-4. In the content type window, drag the items in the following order.
+4. In the content type description window, drag the items in the following order.
 
-
-![Type Hero](/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png)
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/hero.png" alt="This image shows the new entity type screen for the Hero type">
 
 ## Step 3: Create and Post "Hero" Type entry
 
@@ -133,7 +132,7 @@ To create your first [entry](/en/platform/content/entries) of type “Hero”, f
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/bank-hero.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/bank-hero.jpg" style="max-width: 200px;margin: auto 0;" alt="The cover page for this entry"/>
   </td>
  </tr>
  <tr>
@@ -141,7 +140,7 @@ To create your first [entry](/en/platform/content/entries) of type “Hero”, f
    <b>Text</b>
   </td>
   <td>
-   We are with you for everything you need
+   We are with you when you need us
   </td>
  </tr>
  <tr>
@@ -149,7 +148,7 @@ To create your first [entry](/en/platform/content/entries) of type “Hero”, f
    <b>Title Link</b>
   </td>
   <td>
-   Make an account now
+   Become a client
   </td>
  </tr>
  <tr>
@@ -172,7 +171,7 @@ To create your first [entry](/en/platform/content/entries) of type “Hero”, f
 
 When finished, select **Publish Now** and click **[Publish](/en/platform/content/entries.html#publish-an-entry)**.
 
-<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;"/>
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/publish.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0px 30px 0px;" alt="The Publish Options screen"/>
 
 :::tip Very good! You have created your first Type and Entry successfully
 Now follow the steps below to create the Types and Tickets you'll need for future tutorials.
@@ -189,7 +188,7 @@ From the main menu return to the **Types** section. As with the type “Hero”,
  </tr>
  <tr>
   <td>
-   Asset
+   File
   </td>
   <td>
    Cover
@@ -233,7 +232,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Name</b>
   </td>
   <td>
-   Locations
+   Branches
   </td>
  </tr>
  <tr>
@@ -241,7 +240,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_01.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_01.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for news entries"/>
   </td>
  </tr>
  <tr>
@@ -249,7 +248,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Text</b>
   </td>
   <td>
-   Find your closest location and avoid any hassles.
+   Find the branch closest to you.
   </td>
  </tr>
  <tr>
@@ -257,7 +256,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Link</b>
   </td>
   <td>
-   See locations
+   View branches
   </td>
  </tr>
  <tr>
@@ -265,7 +264,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>URL</b>
   </td>
   <td>
-   Destination url or #
+   Destination URL or #
   </td>
  </tr>
 </table>
@@ -286,7 +285,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_02.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_02.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for news 2 entries"/>
   </td>
  </tr>
  <tr>
@@ -294,7 +293,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Text</b>
   </td>
   <td>
-   Everything that you need to know about your mortgage.
+   Find everything about what you need to know for your mortgage.
   </td>
  </tr>
  <tr>
@@ -302,7 +301,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Link</b>
   </td>
   <td>
-   Learn more
+   Know more
   </td>
  </tr>
  <tr>
@@ -323,7 +322,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Name</b>
   </td>
   <td>
-   Gourmet Wednesday
+   Gourmet Wednesdays
   </td>
  </tr>
  <tr>
@@ -331,7 +330,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_03.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/news_03.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for news 3 entries"/>
   </td>
  </tr>
  <tr>
@@ -339,7 +338,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Text</b>
   </td>
   <td>
-   40% off every Wednesday in the best takeout restaurants.
+   40% off every Wednesday.
   </td>
  </tr>
  <tr>
@@ -347,7 +346,7 @@ Go to **Entries** and create the following entries for the “News” type:
    <b>Link</b>
   </td>
   <td>
-   See benefits
+   View benefit
   </td>
  </tr>
  <tr>
@@ -373,7 +372,7 @@ Following the same steps, create the type for “Benefits” with the fields:
  </tr>
  <tr>
   <td>
-   Asset
+   File
   </td>
   <td>
    Cover
@@ -406,7 +405,7 @@ The [categories](/en/platform/content/entries.html#categories) are used to sort 
 
 >Your category window should like the following image.
 
-![Type](/assets/img/tutorials/how-to-create-dynamicbank-content/categories.png)
+<img src="/assets/img/tutorials/how-to-create-dynamicbank-content/categories.png" alt="This is how the categories screen should look like after adding the different categories.">
 
 ## Step 8: Create and Publish Benefits
 
@@ -428,7 +427,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/mall.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/mall.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for mall entries">
   </td>
  </tr>
  <tr>
@@ -436,7 +435,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Excerpt</b>
   </td>
   <td>
-   20% off using your card in Miami.
+   20% off every purchase in Miami.
   </td>
  </tr>
  <tr>
@@ -465,7 +464,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gourmet.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gourmet.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for gourmet entries"/>
   </td>
  </tr>
  <tr>
@@ -473,7 +472,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Excerpt</b>
   </td>
   <td>
-   20% off your total.
+   20% off your bill.
   </td>
  </tr>
  <tr>
@@ -502,7 +501,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/plane.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/plane.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for plane entries"/>
   </td>
  </tr>
  <tr>
@@ -510,7 +509,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Excerpt</b>
   </td>
   <td>
-   30% off in international flights.
+   30% off international flights.
   </td>
  </tr>
  <tr>
@@ -539,7 +538,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/kids.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/kids.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for kids entries"/>
   </td>
  </tr>
  <tr>
@@ -547,7 +546,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Excerpt</b>
   </td>
   <td>
-   2x1 for the entire month.
+   2x1 all month long.
   </td>
  </tr>
  <tr>
@@ -576,7 +575,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/pills.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/pills.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for pills entries"/>
   </td>
  </tr>
  <tr>
@@ -613,7 +612,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/cine.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/cine.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for cinema entries"/>
   </td>
  </tr>
  <tr>
@@ -621,7 +620,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Excerpt</b>
   </td>
   <td>
-   40% off every Friday.
+   40% off your tickets every Friday.
   </td>
  </tr>
  <tr>
@@ -650,7 +649,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Cover</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gym.jpg" style="max-width: 200px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/gym.jpg" style="max-width: 200px;margin: auto 0;" alt="Cover page for gym entries"/>
   </td>
  </tr>
  <tr>
@@ -658,7 +657,7 @@ In the main menu, click **Entries**. Create the Benefits entries with the follow
    <b>Excerpt</b>
   </td>
   <td>
-   20% off in annual plan.
+   20% off the annual plan.
   </td>
  </tr>
  <tr>
@@ -700,7 +699,7 @@ Create the last type for testimonials, for this type you will need the following
  </tr>
  <tr>
   <td>
-   Asset
+   File
   </td>
   <td>
    Image
@@ -720,7 +719,7 @@ Create two entries with the following fields:
    <b>Name</b>
   </td>
   <td>
-   Testimonio Adriana
+   Testimony Adriana
   </td>
  </tr>
  <tr>
@@ -736,7 +735,7 @@ Create two entries with the following fields:
    <b>Testimony</b>
   </td>
   <td>
-   I'm very happy with Dynamic Bank, because they gave me the opportunity to grow my business and now I am developing my next project.
+   I feel very good with Dynamic Bank, because they gave me the opportunity to grow as a business and I already have other projects in mind to keep growing.
   </td>
  </tr>
  <tr>
@@ -744,7 +743,7 @@ Create two entries with the following fields:
    <b>Image</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/adriana.png" style="max-width: 100px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/adriana.png" style="max-width: 100px;margin: auto 0;" alt="Cover page for testimony entries"/>
   </td>
  </tr>
 </table>
@@ -757,7 +756,7 @@ Create two entries with the following fields:
    <b>Name</b>
   </td>
   <td>
-   Testimonio Raúl
+   Testimony Raúl
   </td>
  </tr>
  <tr>
@@ -773,7 +772,7 @@ Create two entries with the following fields:
    <b>Testimony</b>
   </td>
   <td>
-   I contacted Dynamic Bank, obtained my credit and now I am currently soliciting my third. I am truly grateful for their trust in me.
+   I contacted Dynamic Bank, got my credit and I am now soliciting my third. I am truly grateful for trusting in me.
   </td>
  </tr>
  <tr>
@@ -781,7 +780,7 @@ Create two entries with the following fields:
    <b>Image</b>
   </td>
   <td>
-   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/raul.png" style="max-width: 100px;margin: auto 0;"/>
+   <img src="/assets/img/tutorials/how-to-create-dynamicbank-content/raul.png" style="max-width: 100px;margin: auto 0;" alt="Cover page for testimony 2 entries"/>
   </td>
  </tr>
 </table>

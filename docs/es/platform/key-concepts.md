@@ -69,7 +69,7 @@ Las siguientes definiciones corresponden a términos comunmente utulizados entre
 
 #### Generales
 
-* [**CORS**](/es/platform/core/security.html#compartir-recursos-en-distintos-dominios): Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
+* [**CORS**](es/platform/core/security.html#control-de-acceso-http-cross-origin-resource-sharing-cors): Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
 * **Cuenta**: Es el punto de acceso a todas las funcionalidades de Modyo.
 * [**Equipo**](/es/platform/core/roles.html#equipo): Son todos los usuarios que tienen acceso al admin de Modyo y se les puede asignar roles y permisos.
 * [**Integraciones**](/es/platform/core/integrations): Es la forma de delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.
@@ -104,7 +104,6 @@ Las siguientes definiciones corresponden a términos comunmente utulizados entre
 * [**PWA**](/es/platform/channels/sites.html#pwa): Te permite configurar el _serviceworker_ y manifiesto de tu sitio para poder usarlo de forma fuera de linea.
 * [**SEO**](/es/platform/channels/sites.html#seo): Te permite configurar la forma en que tu sitio se ve ante los robots de indexación.
 * [**Templates**](/es/platform/channels/templates.html): Son la base de tu sitio y definen la estructura base de las páginas de tu sitio.
-* [**Vistas de contenido**](/es/platform/channels/templates.html#vistas-para-contenido): Son el punto de encuentro entre tu sitio y las entradas de contenido, que te permiten definir una página base y que todas las entradas del mismo tipo se vean bajo una misma visualización.
 * [**Widget**](/es/platform/channels/widgets.html): Es un paquete de funcionalidad reutilizable que contiene HTML, JavaScript y CSS que se puede usar en distintas páginas.
 
 #### Modyo Customers

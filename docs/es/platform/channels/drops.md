@@ -154,7 +154,7 @@ URL canónico de la entrada
 
 El objeto del usuario autor de la entrada
 
-### [entry.meta](#meta)
+### entry.meta
 
 El objeto del metadata de la entrada. Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private
 
@@ -1427,7 +1427,7 @@ Booleano para verificar si la pregunta acepta alternativas.
 
 ```false```
 
-### [question.alternatives](#alternativas)
+### question.alternatives
 
 Array con objectos del tipo alternativas.
 

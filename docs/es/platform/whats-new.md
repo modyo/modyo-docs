@@ -48,4 +48,4 @@ Modyo ahora usa el editor de texto enriquecido Froala. Este editor de texto te p
 
 ### Páginas de Contenido
 
-Modyo ahora cambia la manera en la que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/channels/templates) hacia la sección de Pages. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Content Pages](/es/channels/pages#content-pages).
+Modyo ahora cambia la manera en la que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/platform/channels/templates.html) hacia la sección de Pages. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Páginas](/es/platform/channels/pages.html).

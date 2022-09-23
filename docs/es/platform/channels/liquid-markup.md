@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Lenguaje Liquid
+# Liquid Markup
 
 Liquid es un lenguaje que usamos en Modyo Platform para desplegar el contenido del módulo Content en tus Sitios. Utilizando Liquid podrás generar una plantilla en tu sitio que despliega la información de tus entradas dinámicamente así como también controlar que mostrar usando control de flujo o iteración.
 
@@ -115,7 +115,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 * `base64_encode` - Retorna el valor Base64-encoded de un string *e.g.* <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 * `capitalize` - Poner palabra en mayúscula en la frase de entrada
 * `ceil` - Redondea hacia arriba un número decimal al próximo entero, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
-* `date` - Da formato a una fecha ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
+* `date` - Da formato a una fecha ([syntax reference](https://shopify.dev/api/liquid/filters#date))
 * `default` - Devuelve la variable dada a menos que sea nula o string vacío, entonces devuelve el valor dado, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 * `divided_by` - División de enteros *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 * `downcase` - Convierte un string de entrada en minúsculas

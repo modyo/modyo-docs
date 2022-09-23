@@ -48,4 +48,4 @@ Modyo now uses the rich text editor Froala. This text editor allows you to devel
 
 ### Content Pages
 
-Modyo now changes the way you use content views. An automatic migration will be performed in Modyo 9.2 to move your content views from [Templates](/en/channels/templates) to the Pages section. You can now create widget or content pages from the same place. To learn more, see [Content Pages](/en/channels/pages#content-pages).
+Modyo now changes the way that you use content views. An automatic migration will be performed starting from Modyo 9.2 to bring your content views in [Templates](/en/platform/channels/templates.html) to the Pages section. You can create widget or content pages from the same place. To learn more, see [Pages](/en/platform/channels/pages.html).

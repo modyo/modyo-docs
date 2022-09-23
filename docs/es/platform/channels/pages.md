@@ -28,7 +28,7 @@ En la barra superior, encuentras distintas acciones e información:
 Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
 :::
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en el ícono de diferencias, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) de la página que te permite seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#realizar-versionado)
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en el ícono de diferencias, irás a la vista de diferencias de la página que te permite seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#revertir-un-cambio)
 
 :::tip Tip
 Si tu página está en estado "Borrador" no aparece el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
@@ -57,15 +57,15 @@ Para crear una nueva página, sigue estos pasos:
 1. Personaliza la página dependiendo del tipo: agregando o editando widgets para Página de Widget o editando el Index y Show para Página de Contenido.
 1. Una vez terminado, haz click en **Publicar**.
 
-Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/channels/pages.html#widget-pages)
+Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/channels/pages.html#pagina-de-widget)
 
-Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es/platform/channels/pages.html#content-pages)
+Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es/platform/channels/pages.html#pagina-de-contenido)
 
 **Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
 - Guardar: Te permite guardar los cambios que has hecho en la página.
 - Enviar a revisión: Si está habilitada la revisión en equipo, entonces si no hay cambios que guardar, esta acción te permitirá enviar a revisión la página y asignar revisores.
-- Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) haciendo uso de esta acción.
+- Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/core/key-concepts) haciendo uso de esta acción.
 
 :::tip Tip
 * Si una página tiene un padre, solo la puedes publicar si es que éste se encuentra publicado.
@@ -155,7 +155,7 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 </tr></table>
 :::
 
-## Páginas de Contenido
+## Página de Contenido
 
 Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando páginas de contenido. 
 
@@ -214,7 +214,7 @@ Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.de
 :::tip Tip
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
 
-Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/liquid-markup.html#drops-de-content)
+Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops.html#entrada).
 :::
 
 #### Propiedades
@@ -243,14 +243,26 @@ Si habilitas la privacidad en una página, entonces se requerirá una sesión pa
 
 ## Meta tags
 
-En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las página, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
+Los meta tags definen el contenido de una página y los motores de búsqueda dependen de estos para proveer el listado de una búsqueda al usuario. En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las páginas, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
+
+Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates.html#seo).
+
+### Agregar un nuevo meta tag
+
+Para agregar un nuevo meta tag a tu sitio, sigue estos pasos:
+
+1. En Modyo Platform, desde el menú principal, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu Sitio.
+1. Expande **Configuración de sitio** y haz click en **SEO**.
+1. En la sección de Meta tags personalizados, haz click en **+ Nuevo meta tag**.
+
+En la pantalla que aparece tienes la opción de elegir entre diferentes meta tags y asignarles un valor. Este valor puede ser dinámico si se utiliza Liquid. Si activas la opción **Replicar meta tag en páginas**, se creará un meta tag en la sección de Propiedades de todas tus páginas. 
+
+Como parte de la Plantilla `base`, incluimos el Snippet `seo` que contiene la información necesaria para imprimir los valores de los meta tags dependiendo si es un Sitio, una Página, o una Entrada.
 
 :::tip Tip
 Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.
 :::
 
-Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates.html#seo).
+Para más información acerca de como usamos meta tags dinámicos en los sitios, visita [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
 
-:::tip Tip
-Si quieres añadir un meta tag común para todos los pages en una sola acción, dirígete a la [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
-:::

@@ -31,7 +31,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 El menú realizado se podrá visualizar en alguna página si y solo si se agrega a una página a través de una plantilla publicada, de lo contrario, el menú nunca se manda a pedir y no aparecerá en la página.
 :::
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este ícono, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones de tu menú.
+**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este ícono, irás a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios que hay entre múltiples versiones de tu menú.
 
 Por defecto, inicias comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, comparas con las versiones de respaldo.
 
@@ -52,7 +52,7 @@ Para crear un Menú, sigue estos pasos:
 
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en Sitios.
 2. Selecciona el sitio que desees agregar un nuevo menú.
-3. Haz click en **Navigation**.
+3. Haz click en **Navegación**.
 4. Haz click en **+ Nuevo Menú**.
 5. Llena el nombre e identificador y haz click en **Crear**.
 6. Personaliza el menú agregando o editando items.
@@ -82,14 +82,14 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 
 ## Ejemplos de Menu
 
-El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explica las partes más importantes de este snippet y como se puede extender a más funcionalidades.
+El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explican las partes más importantes de este snippet y como se puede extender a más funcionalidades.
 
-Las primeras lineas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú. 
+Las primeras líneas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú. 
 
 El siguiente listado describe las variables importantes para el menú:
 
 - menu: Esta variable toma el menú con identificador `main` dentro de Modyo Platform -> Navegación.
-- items_to_show: Toma los útems de menú que son visibles.
+- items_to_show: Toma los ítems de menú que son visibles.
 - active: Utilizado para agregar una clase CSS llamada `active` en caso de que éste ítem sea activado.
 - children_to_show: Si existen hijos del ítem actual, toma los items en esta variable y los despliega como segundo nivel en la jerarquía del menú. 
 
