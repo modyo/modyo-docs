@@ -37,18 +37,3 @@ To customize your username, change your password, and enable two-factor authenti
   - Avatar
   - Language: This changes the language of Modyo Platform (e.g. the name of the fields and buttons within the platform). The sites will not be modified.
 1. Click **Save**.
-
-## Enable two-factor authentication
-
-Neutralize the risk of compromised passwords using two-factor authentication.
-
-1. Within the user settings, in the top menu, select the 3 dots and click on **Configure Authenticator**.
-1. On the screen that appears, scan the code using your mobile device to link your authenticator to Modyo Platform.
-- A new field will be added with the domain name, your user level, and your username. 
-1. Use the number combination that appears on your mobile phone in the password field and click **Save**.
-
-> If you already have two-factor authentication, the button will say **Delete authenticator**.
-
-:::warning Attention
-In the event of theft or loss of an authenticator, a user will not be able to log in again on their own. Contact your Modyo Platform administrator to manually unlink the authenticator from your user. For more information, see [Delete authenticator for a user](/en/platform/core/security.html#delete-authenticator-for-a-user) 
-:::
