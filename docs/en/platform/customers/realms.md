@@ -1,5 +1,6 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Realms
@@ -164,7 +165,7 @@ Here you can set up general aspects of realm, such as:
   - Enable gender
 - **Delete Realm**: Allows complete deletion of realm. This is a background process, so you may not see the realm disappear immediately after executing the action. In order to remove the realm, you'll need to enter the full realm name to confirm the action.
 
-:::danger danger
+:::danger Danger
 By disabling Modyo's credentials in the realm, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
 :::
 
