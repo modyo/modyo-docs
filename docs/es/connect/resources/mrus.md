@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Modyo resource Units (MRUs)
+# Modyo Resource Units (MRUs)
 
 ## Estimación de Costos
 - Recomendaciones osbre cómo calcular el tamaño de una implementación de Modyo Connect

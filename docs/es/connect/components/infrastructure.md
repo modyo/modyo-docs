@@ -126,10 +126,20 @@ Modyo utiliza la política de cifrado recomendada por AWS, la cual garantiza seg
 
 
 ## Single Sign On (SSO)
-El servicio de Single Sign On (SSO)
+El servicio de Single Sign On (SSO) permite integrar la sesión de plataforma Modyo con las llamadas autenticadas que se realizan sobre el API Gateway para acceder a recursos protegidos que no pueden quedar directamente expuestos hacia Internet.
 
-Modyo implementa el servicio de SSO utilizando el software [KeyCloak](https://www.keycloak.org) el cual es un proyecto de código abierto auspiciado por RedHat.
+Modyo Connect implementa el servicio de SSO utilizando la aplicación [KeyCloak](https://www.keycloak.org), el cual es un software de código abierto patrocinado por Red Hat (base del Red Hat SSO). La aplicación de KeyCloak se despliega sobre contenedores en modalidad de cluster de alta disponibilidad. Además, se otorga acceso al repositorio que origina la imagen de KeyCloak, lo que permite tener control sobre las customizaciones de experiencia de usuario y de flujos de autenticación.
 
+### Pasos para solicitar
+Las solicitudes de despliegue de SSO sobre Modyo Connect se realizan mediante un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com). Dentro del ticket, se puede especificar si será requerido el acceso a la administración total de la aplicación, o la creación de reinos de usuarios con configuraciones específicas.
+
+:::warning Personalizaciones de KeyCloak
+Las personalizaciones de experiencia de usuario y flujos de autenticación dentro de KeyCloak son responsabilidad del cliente y no están incluídas como parte del servicio. En caso de requerir apoyo de servicios profesionales en la implementación de una iniciativa de SSO se debe contactar al ejecutivo de cuentas asignado.
+:::
+
+:::danger Responsabilidad Compartida
+Modyo no se hace responsable por las personalizaciones o vulnerabilidades introducidas que provengan de código generado por el cliente. Algunas personalizaciones podrían requerir de modificaciones al momento de actualizar el software base de KeyCloak. Será responsabilidad del cliente efectuarlas de forma oportuna con el fin de disminuir los riesgos asociados a la mantención de versiones no parchadas del componente.
+:::
 
 ## Repositorio de Objetos
 AWS S3. Repositorio de objetos (object storage) de Amazon AWS. En él se almacenan todos los archivos estáticos de la plataforma los cuales, según los permisos configurados, quedan disponibles directamente en la Web o las Content Delivery Networks (CDNs).
