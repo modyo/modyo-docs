@@ -242,12 +242,29 @@ module.exports = {
             title: "Modyo Connect",
             collapsable: false,
             children: [
-              ["/en/connect/", "What is Modyo Connect?"],              
-              "/en/connect/development",
-              "/en/connect/infrastructure",
-              "/en/connect/monitoring",
-              "/en/connect/faq",
-              "/en/connect/resources",
+              ["/en/connect/", "What is Modyo Connect?"],
+              "/en/connect/architecture",
+              "/en/connect/activation",
+              "/en/connect/support",
+            ],
+          },
+          {
+            title: "Componentes",
+            collapsable: true,
+            children: [
+              "/en/connect/components/development",
+              "/en/connect/components/infrastructure",
+              "/en/connect/components/monitoring",
+            ],
+          },
+          {
+            title: "Recursos",
+            collapsable: true,
+            children: [
+              "/en/connect/resources/microfrontends",
+              "/en/connect/resources/microservices",
+              "/en/connect/resources/mrus",
+              "/en/connect/resources/faq",
             ],
           }, ],
           "/en/brand/": [{

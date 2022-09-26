@@ -2,5 +2,4 @@
 search: true
 ---
 
-# Development
-
+# Activation
