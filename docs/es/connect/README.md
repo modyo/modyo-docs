@@ -45,5 +45,5 @@ La activación de los componentes podría tener costos recurrentes asociados. Ca
 :::
 
 ## Ambientes
-Modyo Connect considera ambientes productivos y pre-productivos los cuales son desplegados en redes privadas virtuales totalmente separadas entre sí. Los clientes pueden solicitar hasta dos ambientes pre-productivos por despliegue, pero se deben tener en cuenta que cada ambiente genera costos recurrentes adicionales, medidos en los [Modyo Resource Units o MRUs](#costos) utilizados.
+Modyo Connect considera ambientes productivos y pre-productivos los cuales son desplegados en redes privadas virtuales totalmente separadas entre sí. Los clientes pueden solicitar hasta dos ambientes pre-productivos por despliegue, pero se deben tener en cuenta que cada ambiente genera costos recurrentes adicionales, medidos en los [Modyo Resource Units o MRUs](resources/mrus.md) utilizados.
 
