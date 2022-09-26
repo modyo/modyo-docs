@@ -83,7 +83,7 @@ modyo-cli push MyWidget -b build -d dist -n myHost -v 9 -u "https://test.miModyo
 :::tip Tip
 To learn more about obtaining an API access token, see [Management API](en/platform/core/api.html)
 
-To see all the options available for `modyo-cli push`, see [Modyo-cli Push] (/en/platform/channels/widgets.html#modyo-cli-push-name)
+To see all the options available for `modyo-cli push`, see [Modyo-cli Push](/en/platform/channels/widgets.html#modyo-cli-push-name)
 :::
 
 <img src="/assets/img/widgets/host.png" alt="Image displaying where to find accountURL and siteHost">
