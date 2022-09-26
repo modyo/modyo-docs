@@ -45,5 +45,5 @@ Activation of components may have recurring costs associated with them. Each req
 ::::
 
 ## Environments
-Modyo Connect considers productive and pre-productive environments which are deployed in virtual private networks that are completely separated from each other. Customers can request up to two pre-production environments per deployment, but keep in mind that each environment generates additional recurring costs, measured in the [Modyo Resource Units or MRUs] (#costos) used.
+Modyo Connect considers productive and pre-productive environments which are deployed in virtual private networks that are completely separated from each other. Customers can request up to two pre-production environments per deployment, but keep in mind that each environment generates additional recurring costs, measured in the [Modyo Resource Units or MRUs](#costs) used.
 
