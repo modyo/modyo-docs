@@ -30,7 +30,7 @@ The Modyo Connect managed service includes the following capabilities:
 - Ongoing monitoring and infrastructure support
 - Real-time alerts
 
-Modyo Connect is implemented in high availability mode and is operated by a team of Modyo Site Reliability Engineers (SRes) on the [Amazon AWS](#architecture) cloud. The service has the same quality, security and operational standards as those offered in Modyo Enterprise Cloud.
+Modyo Connect is implemented in high availability mode and is operated by a team of Modyo Site Reliability Engineers (SREs) on the [Amazon AWS](#architecture) cloud. The service has the same quality, security and operational standards as those offered in Modyo Enterprise Cloud.
 
 ## Components
 Modyo Connect has different services or components, which are grouped into three categories: 
