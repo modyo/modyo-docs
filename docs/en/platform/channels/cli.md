@@ -19,22 +19,24 @@ $ yarn global add @modyo/cli #via yarn
 
 > This command will make the command modyo-cli available on the terminal session globally
 
-The available commands are get, push and help
+The available commands are:
 
 - [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
 - [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
+- [`modyo-cli autocomplete [SHELL]`](#modyo-cli-autocomplete-shell)
 - [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
 - [`modyo-cli push NAME`](#modyo-cli-push-name)
 
-### `modyo-cli (-v|--version|version)`
-Print the `modyo-cli` version
+## `modyo-cli (-v|--version|version)`
+Print the `modyo-cli` version.
 
 ```bash
 $ modyo-cli (-v|--version|version)
 modyo-cli/3.0.6 darwin-x64 node-v12.13.1
 ```
 
-### `modyo-cli help [COMMAND]`
+## `modyo-cli help [COMMAND]`
+Shows contextual help depending on the command you type.
 
 ```bash
 USAGE
@@ -60,7 +62,7 @@ MODYO_REGEX_EXCLUDE=regexToExcludeFiles
 MODYO_BUILD_DIRECTORY=buildDirectoryPath
 ```
 
-#### Environment variables
+### Environment variables
 
 To facilitate the process of uploading your widgets to the Modyo platform, you can make use of the `.env` environment variables file. Follow these steps to create your file:
 
@@ -83,7 +85,7 @@ Modyo_Build_Directory=dist
 We recommend using an environment variable file to make modyo-cli easier to use and avoid logging sensitive information.
 :::
 
-### `modyo-cli autocomplete [SHELL]`
+## `modyo-cli autocomplete [SHELL]`
 
 Modyo offers the ability to autocomplete the commands of our CLI if this option is configured.
 
@@ -125,10 +127,9 @@ $ modyo-cli command --<TAB> #Complete option
 
 The Modyo CLI is designed to work based on a micro frontend architecture, which will accelerate the widget creation process.
 
-### `modyo-cli get NAME [DIRECTORY]`
+## `modyo-cli get NAME [DIRECTORY]`
 
-In general, the `get` command is used to obtain a boilerplate widget.
-If you have a token provided by Modyo, the same command can be used to pull any of our premium widgets from our Widget Library.:
+The `get` command is used to obtain a widget template from our [widget catalog](/en/widgets/) using a token provided by Modyo.
 
 ```bash
 USAGE
@@ -155,11 +156,11 @@ EXAMPLE
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
 ```
 
->From this point onwards you can continue using the widget like any other vue-cli widget.
+>From this command and onward, you can continue to use the widget like any other widget in Vue.
 
-### `modyo-cli push NAME`
+## `modyo-cli push NAME`
 
-The `push` command is responsible for integrating the widget into the selected site on the Modyo platform.
+Integrate a widget written in Vue to the selected Modyo Platform site.
 
 You'll use a name argument to load the widget into the platform and some required indicators such as `site_base id` or `host` token to identify the Modyo platform that hosts the widget and have an additional indicator to avoid the manual process flow of publishing the widget.
 
@@ -191,11 +192,11 @@ EXAMPLE
 
 ```
 
-#### Environment variables
+### Environment variables
 
 To push to the platform, it is necessary to fill in the required options. For this, there are two options for sending: write the command with options or use a `.env` file. They work the same way but are implemented differently.
 
-##### Environment Variable File
+#### Environment Variable File
 
 In the widget root directory, create a `.env` file containing the following data:
 
@@ -210,7 +211,7 @@ modyo_build_command=BUILD   //The command for package.json (default: build)
 modyo_build_directory=dist   //The path of the widget (default: dist) 
 ```
 
-##### Option
+#### Option
 
 In a terminal with modyo-cli installed, it is possible to push through the command line as follows:
 
