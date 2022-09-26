@@ -2,28 +2,46 @@
 search: true
 ---
 
-# FAQs
+# Frequently Asked Questions
 
-### How does Modyo Connect integrate with different business systems (CRMs, ERPs, Core Systems, etc)?
-Modyo Connect is a managed cloud platform service. It does not itself provide integration against any external system, but does support the deployment of containers (microservices) which will be responsible for performing the integration. For the creation of certain common integration microservices, Modyo makes available to its Enterprise customers Java/Spring Boot code templates which can be used as a working base for development teams.
+### How long does it take to enable the Modyo Connect service?
+The activation of the Modyo Connect service should usually fluctuate between a few days or a couple of weeks, depending on how clear you are of the resource definitions that will be initially applied to the service.
+
+The initial enablement of the service involves the most complex tasks of executing, such as configuring the VPC network in AWS, productive and pre-productive environments, configuring Site2Site VPN, issuing TLS certificates, among others.
+
+Once the initial activation is done, the addition of new components should be more expeditious, depending on the component you want to activate.
+
+There are cases in which the customer may request the activation of only the pre-production environment, to proceed with the production environment when development is more advanced. In these cases, it is recommended that the time taken to enable the production environment be taken into account when requesting it.
+
+
+### What alternatives are there to Modyo Connect?
+Modyo Connect is an optional service that is only recommended to customers who currently prefer to outsource the operation of their APIs in conjunction with the ability to securely develop and expose their own Single Sign On systems or integration APIs.
+
+As an alternative to the service, we can mention each customer's own implementation, based on their current resources or the resources of some other provider, such as Microsoft Azure or Google GCP clouds. 
+
+### How compatible is Modyo with integration solutions other than Modyo Connect?
+The implementation of the APIs can be carried out on any system that allows you to expose endpoints in the HTTP protocol (Rest o)
+
+### How is Modyo Connect integrated with different business systems (CRMs, ERPs, Core Systems, etc.)?
+Modyo Connect is a managed cloud platform service. In itself, it does not provide integration with any external system, but it does support the deployment of containers (microservices) which will be responsible for carrying out the integration. For the creation of certain common integration microservices, Modyo makes Java/Spring Boot code templates available to its Business customers, which can be used as a working base for development teams.
 
 ### Can my team work with Modyo Connect or is it only reserved for Modyo professionals?
-Modyo Connect is a managed service completely independent of the development services provided by the Modyo Professional Services area. All customers who own the contracted Modyo Connect service will have direct access to development environments and may submit requests to incorporate or remove items in it.
+Modyo Connect is a managed service that is completely independent of the development services provided by the Modyo Professional Services area. All customers who have the contracted Modyo Connect service will be able to directly access the development environments and may submit requests to incorporate or remove elements in it.
 
-### Where does the source code for Widgets and microservices developed for Modyo Connect lie?
-Modyo Connect offers end-to-end DevOps management services, so secure and private custody of Widgets and microservices source code is included as part of the service through a Git repository to which developers enabled to use the service will have access. 
+### Where does the source code for the Widgets and microservices developed for Modyo Connect reside?
+Modyo Connect offers end-to-end DevOps management services, so the secure and private custody of the source code of Widgets and microservices is included as part of the service through a Git repository to which developers enabled to use the service will have access. 
 
-Due to the distributed nature of Git, customers will be able to use their own version control (based on Git) such as GitHub, GitLab, Bitbucket or similar, as long as they place the Modyo Connect Git repository as an additional upstream to which the changes you want to pass to different environments are synchronized.
+Due to the distributed nature of Git, customers will be able to use their own version control (based on Git) such as GitHub, GitLab, Bitbucket or similar, as long as they place the Modyo Connect Git repository as an additional upstream to which the changes they want to pass to the different environments are synchronized.
 
 ### Can I incorporate my own DevOps tools into Modyo Connect?
-Modyo Connect because it is a managed service does not support the incorporation of modifications to the predefined flows by the Modyo SRE team, so it is not possible to incorporate its own tools.
+Modyo Connect, being a managed service, does not support the incorporation of modifications to the flows predefined by the Modyo SRE team, so it is not possible to incorporate its own tools.
 
 ### Can I audit the operation of my services under Modyo Connect?
-Modyo Enterprise Cloud and Modyo Connect support auditing in your operation directly from Amazon AWS. By granting a read-only IAM user, you will be able to access the settings and logs of everything related to the service.
+Modyo Enterprise Cloud and Modyo Connect support auditing of your operation directly from Amazon AWS. By granting an IAM user with read-only capability, you will be able to access the configurations and logs of everything related to the service.
 
-### Are services offered only from Amazon AWS?
-Modyo Cloud, Modyo Enterprise Cloud and Modyo Connect are managed services that are offered with guaranteed levels of availability, service and support. Modyo has chosen to deliver its services exclusively from the Amazon Web Services cloud because of its excellent performance and security levels. 
+### Are the services offered only from Amazon AWS?
+Modyo Cloud, Modyo Enterprise Cloud and Modyo Connect are managed services offered with guaranteed levels of availability, service and support. Modyo has chosen to deliver its services exclusively from the Amazon Web Services cloud because of its excellent levels of performance and security. 
 
 
 ### What if I want to deploy Modyo Enterprise on my own AWS?
-In the event that a customer wants to use their own Amazon AWS account, the Modyo Enterprise On Premise license has an add-on infrastructure support service which can be used to make configurations similar to those described in this document. The fundamental difference is that under this modality the costs generated by enabling the services described will be billed directly into the customer's account.
+In the event that a customer wishes to use their own Amazon AWS account, the Modyo Enterprise On Premise license has a complementary infrastructure support service which can be used to perform configurations similar to those described in this guide. The fundamental difference is that under this modality, the costs generated by enabling the services described will be billed directly to the customer's account and does not include any of the components that do not use AWS.
