@@ -40,9 +40,9 @@ Modyo Connect has different services or components, which are grouped into three
 
 To activate a component, a requirement ticket will be required, so we recommend that before starting to use the service you have active access to the [Modyo Support Center](https://support.modyo.com). For questions about how to activate accounts in the Support Center, please contact the assigned account executive.
 
-::: tip Activation costs
-Activating components could have recurring costs associated. Each request must be approved by the authorized customer users.
-:::
+:::: tip Activation costs 
+Activation of components may have recurring costs associated with them. Each request must have the approval of the customer's authorized users.
+::::
 
 ## Environments
 Modyo Connect considers productive and pre-productive environments which are deployed in virtual private networks that are completely separated from each other. Customers can request up to two pre-production environments per deployment, but keep in mind that each environment generates additional recurring costs, measured in the [Modyo Resource Units or MRUs] (#costos) used.
