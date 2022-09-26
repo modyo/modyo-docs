@@ -29,7 +29,7 @@ On the right, these are the different actions:
 You can preview widgets as a user without a session or with a Modyo session. For this, it's recommended to log in or out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon opens the [differences view](/en/platform/channels/sites.html#review-and-joint-publication) in which you can see the differences between multiple versions of a widget.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: By clicking on this icon, you will go to the [difference view](/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
 
 By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
 
@@ -41,7 +41,7 @@ By default, you see the differences between the published version and the editab
 
 - **Save**: Saves current changes.
 - **Send to review**: Changes the widget status to "In review". You can continue making changes, but each change sends a notification to all assigned reviewers via email.
-- **Publish**: Once reviewers approve the widget, you can go to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes across the site.
+- **Publish**: Takes you to the [joint publication](/en/platform/core/key-concepts.html) view where you can publish your widgets.
 
 **Other main actions**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
 
@@ -132,3 +132,277 @@ To change the way each widget loads, go to the edit view of the page containing 
 :::warning Warning
 Keep in mind that using very heavy widgets synchronously can be the cause of bad performance in your pages, you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
 :::
+
+## Modyo CLI
+
+The Modyo Command Line Interface (CLI) is a command-line tool based on two principles of acceleration and integration, these principles have a get and push command respectively.
+
+### Introduction
+
+First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some predefined front-end architectural decisions, or use to initialize a widget from catalog if you have access.
+
+To install the modyo-cli globally you must use one of these options
+
+```bash
+$ npm i -g @modyo/cli #via npm
+$ yarn global add @modyo/cli #via yarn
+```
+
+> This command will make the command modyo-cli available on the terminal session globally
+
+The available commands are get, push and help
+
+- [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
+- [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
+- [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
+- [`modyo-cli push NAME`](#modyo-cli-push-name)
+
+### `modyo-cli (-v|--version|version)`
+Print the `modyo-cli` version
+
+```bash
+$ modyo-cli (-v|--version|version)
+modyo-cli/3.0.6 darwin-x64 node-v12.13.1
+```
+
+### `modyo-cli help [COMMAND]`
+
+```bash
+USAGE
+  $ modyo-cli help [COMMAND]
+
+ARGUMENTS
+  autocomplete Display autocomplete installation instructions 
+  get          Pull a widget from our catalog into a new directory
+  help         Display help for modyo-cli
+  push         Push widget to Modyo platform
+```
+
+The following list are the environment variables you can configure:
+
+```bash
+MODYO_ACCOUNT_URL=account-url
+MODYO_VERSION=version
+MODYO_TOKEN=token
+MODYO_SITE_ID=siteId
+MODYO_SITE_HOST=siteHost
+MODYO_BUILD_COMMAND=buildCommand
+MODYO_REGEX_EXCLUDE=regexToExcludeFiles
+MODYO_BUILD_DIRECTORY=buildDirectoryPath
+```
+
+#### Environment variables
+
+To facilitate the process of uploading your widgets to the Modyo platform, you can make use of the `.env` environment variables file. Follow these steps to create your file:
+
+1. Create a `.env` file at the root of your project.
+2. Add the following information:
+
+```
+modyo_account_url=test.mimodyo.com
+MODYO_VERSION=9
+modyo_token=AK9CB2... a53s
+modyo_site_host=MySite
+MODYO_WIDGET_NAME=My NewWidget
+Modyo_build_command=Build
+Modyo_Build_Directory=dist
+```
+
+3. When you make use of modyo-cli within the root of your project, the file data will be added automatically.
+
+:::tip Tip
+We recommend using an environment variable file to make modyo-cli easier to use and avoid logging sensitive information.
+:::
+
+### `modyo-cli autocomplete [SHELL]`
+
+Modyo offers the ability to autocomplete the commands of our CLI if this option is configured.
+
+```bash
+USAGE
+  $ modyo-cli autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL       shell type
+
+OPTIONS
+  -r, --refresh-cache   Refresh cache (ignores displaying instructions)
+
+EXAMPLE
+  $ modyo-cli autocomplete
+  $ modyo-cli autocomplete bash
+  $ modyo-cli autocomplete zsh
+  $ modyo-cli autocomplete --refresh-cache
+```
+
+### Instructions for using MODYO-CLI CLI Autocomplete
+
+1. Add autocomplete environment variable for your zsh profile and add it to source
+```bash
+$ printf "eval $(modyo-cli autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc
+```
+
+:::tip Tip
+After the command, you can run `$ compaudit -D` to verify that there are no permission conflicts.
+:::
+
+2. Test that it works correctly, e.g.:
+```bash
+$ modyo-cli <TAB>           #Complete command
+$ modyo-cli command --<TAB> #Complete option
+```
+
+### Get a template for a project
+
+The Modyo CLI is designed to work based on a micro frontend architecture, which will accelerate the widget creation process.
+
+### `modyo-cli get NAME [DIRECTORY]`
+
+In general, the `get` command is used to obtain a boilerplate widget.
+If you have a token provided by Modyo, the same command can be used to pull any of our premium widgets from our Widget Library.:
+
+```bash
+USAGE
+  $ modyo-cli get NAME [DIRECTORY]
+
+ARGUMENTS
+  NAME       The name of the widget
+  DIRECTORY  Name of directory to init
+
+OPTIONS
+  -f, --force        Override folder if exist
+  -h, --help         Output usage information
+  -o, --organization [default: modyo] Github organization
+  -x, --no-install   Don't install packages
+
+EXAMPLE
+  $ modyo-cli get name [directory]
+```
+
+>There are some public widget names that can be accessed via this command
+
+```bash
+  EXAMPLES
+    $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
+```
+
+>From this point onwards you can continue using the widget like any other vue-cli widget.
+
+### `modyo-cli push NAME`
+
+The `push` command is responsible for integrating the widget into the selected site on the Modyo platform.
+
+You'll use a name argument to load the widget into the platform and some required indicators such as `site_base id` or `host` token to identify the Modyo platform that hosts the widget and have an additional indicator to avoid the manual process flow of publishing the widget.
+
+:::warning Warning
+At the moment, Modyo CLI only offers support for widgets made and compiled with the tools included in Vue by default.
+:::
+
+```bash
+USAGE
+ $modyo-cli push NAME
+
+ARGUMENTS
+ NAME The name of the widget
+
+OPTIONS
+ -b, —build-command=build-command [default: build] Build command in package.json
+ -d, —build-directory=build-directory [default: dist] Build directory path
+ -h, —help Output usage information
+ -i, —site-id=site-id Id of the site where the widget will be pushed
+ -l, —disable-liquid Disable Liquid
+ -n, —site-host=site-host Host of the site where the widget will be pushed
+ -p, —publish Force widget publication
+ -t, —token=token (required) Modyo API token
+ -u, —account-url=account-url (required) URL of your Modyo account ex (” https://account.modyo.com “)
+ -v, —version=8|9 [default: 9] Version of Modyo platform
+
+EXAMPLE
+ $modyo-cli push <NAME> 
+
+```
+
+#### Environment variables
+
+To push to the platform, it is necessary to fill in the required options. For this, there are two options for sending: write the command with options or use a `.env` file. They work the same way but are implemented differently.
+
+##### Environment Variable File
+
+In the widget root directory, create a `.env` file containing the following data:
+
+```shell
+MODYO_ACCOUNT_URL=https://test.miModyo.com   //URL of the account that owns the site
+MODYO_VERSION=9   //The Modyo platform version
+modyo_token=AX93... nm3   //The token to access the administrative API
+modyo_site_host=MyHost   //The hostname, located within the platform, in the sites section
+modyo_site_id=Mistage//(Optional) This variable is only used in the case of pushing to a stage. Only one variable MODYO_SITE_HOST or MODYO_SITE_ID is used. The ID is obtained using our /api/admin/sites API endpoint. 
+modyo_widget_name=MyWidget   //The name of the widget
+modyo_build_command=BUILD   //The command for package.json (default: build) 
+modyo_build_directory=dist   //The path of the widget (default: dist) 
+```
+
+##### Option
+
+In a terminal with modyo-cli installed, it is possible to push through the command line as follows:
+
+```
+modyo-cli push MyWidget -b build -d dist -n myHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
+```
+
+#### Push to Stage
+
+By using our administration API, you can also push to a stage. Follow these steps to push to your stage from Modyo CLI.
+
+1. Make a call to our administration API */api/admin/sites*, for example:
+
+``curl -X GET https://test.modyo.com/api/admin/sites `` 
+
+You will receive a JSON with all the information related to sites. Within this JSON, in the information about your site, there is a *stages* section where you will find the Id necessary to push this stage, through Modyo CLI.
+
+```json
+"meta": [...],
+"sites": [
+    ...,
+    "name": "miHost",
+    "stages": [
+        {
+          "id": 1044,
+          "uuid": "7a5d4b2d-de98-4c7f-8f0d-2c08599a218c",
+          "name": "CLI DEMO",
+          "host": "cli-demo",
+          "stage_name": "main",
+          "created_at": "2019-03-15T11:02:07.000-03:00",
+          "original_stage": "",
+          "base_stage": true
+        },
+        {
+          "id": 2673,
+          "uuid": "951b258b-5c86-4e7b-a21a-8e605e9cf0de",
+          "name": "Test Stage CLI DEMO",
+          "host": "test-cli-demo",
+          "stage_name": "Test",
+          "created_at": "2022-08-10T18:03:19.000-04:00",
+          "original_stage": "main",
+          "base_stage": false
+        }
+    ],
+]
+```
+
+2. Open your `.env` environment variable file. The MODYO_SITE_HOST variable should be deleted since we will use the site ID. To push to a stage, you can only use MODYO_SITE_ID. Add the MODYO_SITE_ID as follows:
+
+```shell
+MODYO_ACCOUNT_URL= https://test.miModyo.com
+MODYO_VERSION=9
+modyo_token=AX93... nm3
+modyo_widget_name=MyWidget
+modyo_build_command=Build
+modyo_build_directory=dist
+MODYO_SITE_ID=2673
+```
+
+3. On your terminal, push to your stage using Modyo CLI:
+
+``modyo-cli push MyWidget``
+
+If you want to push to main, you have to modify the MODYO_SITE_ID variable for main or delete this variable and use MODYO_SITE_HOST.
