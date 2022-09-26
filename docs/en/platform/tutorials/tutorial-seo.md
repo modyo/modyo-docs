@@ -41,7 +41,7 @@ Congratulations! You have completed the tutorial on Creating Dynamic Bank Home i
 
 You now have knowledge of how to use: 
 
-- [Pages] (/en/platform/channels/pages)
+- [Pages](/en/platform/channels/pages)
 - [Navigation](/en/platform/channels/navigation)
 - [Widgets](/en/platform/channels/widgets)
 - [Templates] (/en/platform/channels/templates)
