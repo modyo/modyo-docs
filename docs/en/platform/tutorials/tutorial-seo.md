@@ -44,5 +44,5 @@ You now have knowledge of how to use:
 - [Pages](/en/platform/channels/pages)
 - [Navigation](/en/platform/channels/navigation)
 - [Widgets](/en/platform/channels/widgets)
-- [Templates] (/en/platform/channels/templates)
+- [Templates](/en/platform/channels/templates)
 - [Modyo Content](/en/platform/content)
