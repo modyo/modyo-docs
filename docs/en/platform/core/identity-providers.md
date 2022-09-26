@@ -13,7 +13,7 @@ The platform is currently compatible with:
 - [LDAP](#ldap)
 - [SAML](#saml)
 - [OAuth2](#oauth2)
-- [OpenID Connect](#oidc)
+- [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
 - [Azure Active Directory](#azure-active-directory)
 
@@ -109,6 +109,12 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
+The fields required by Modyo for the integration are:
+
+- **first_name**
+- **username**
+- **email**
+
 :::warning Warning
 For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
 :::
@@ -116,6 +122,29 @@ For a correct OpenID Connect integration, it is necessary that the OIDC Provider
 :::warning Warning
 The API for obtaining delegated access tokens via `/auth/openidc/access_token` is deprecated and replaced by `/api/profile/me`.
 :::
+
+### Integration Settings
+
+1. Access **Settings/Customer settings> Integrations> OpenID Connect** and complete **Client ID** and **Secret** with the name of the client and the credentials that appear in the tab **Credentials** of the client in Keycloak.
+2. In Issuer, fill in the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
+3. Click **Launch discovery service**. This will complete most of the settings.
+4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+
+<img src="/assets/img/platform/keycloak-new-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
+### Optional integration settings
+
+When performing a specific integration, Modyo allows you to enable certain settings to control the following session features:
+
+|Option  | Description  |
+|:---    |:---          |
+| **Enable logout**                                      | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again in Keycloak and disabling the SSO experience. |
+| **Enable refresh token**                                         | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.          |
+| **Enable token revocation**                                   | Not supported by Keycloak|
+| **Activate refresh token (Refresh Token) **                                  | Enables the use of OAuth 2.0 refresh tokens. To refresh your access token, you can use the post endpoint of keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> sending as headers <tt> grant_type: refresh_token, refresh_token: **my-refresh-token**, client_id: **my-client-id** </tt>                                        |
+| **Show delegation information**                               | Enables more information in the [User Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to some other service (e.g. an external API). |
+| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                             |
+
 
 ### Synchronization of _claims_
 
