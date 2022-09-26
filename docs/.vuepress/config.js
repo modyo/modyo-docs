@@ -249,7 +249,7 @@ module.exports = {
             ],
           },
           {
-            title: "Componentes",
+            title: "Components",
             collapsable: true,
             children: [
               "/en/connect/components/development",
@@ -258,7 +258,7 @@ module.exports = {
             ],
           },
           {
-            title: "Recursos",
+            title: "Resources",
             collapsable: true,
             children: [
               "/en/connect/resources/microfrontends",
