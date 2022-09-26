@@ -23,7 +23,7 @@ The multi-zone deployment in Amazon AWS ensures an excellent level of redundancy
 ## Operation
 Like Modyo Enterprise Cloud, Modyo Connect is a service fully managed by Modyo, who is responsible for all configuration and control management of the cloud infrastructure. Service availability levels are determined by a service agreement with each customer.
 
-For the delivery of the service, Modyo has a dedicated team of [Site Reliability Engineers (SREs)](https://sre.google) certified in AWS, who are responsible for ensuring the proper operation of cloud systems for all its customers. The main responsibilities of the SRes team are:
+For the delivery of the service, Modyo has a dedicated team of [Site Reliability Engineers (SREs)](https://sre.google) certified in AWS, who are responsible for ensuring the proper operation of cloud systems for all its customers. The main responsibilities of the SREs team are:
 - Monitoring performance, availability and security metrics
 - 24x7 Incident Response
 - Capacity planning
