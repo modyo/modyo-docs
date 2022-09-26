@@ -45,4 +45,4 @@ You now have knowledge of how to use:
 - [Navigation](/en/platform/channels/navigation)
 - [Widgets](/en/platform/channels/widgets)
 - [Templates] (/en/platform/channels/templates)
-- [Modyo Content] (/en/platform/content)
+- [Modyo Content](/en/platform/content)
