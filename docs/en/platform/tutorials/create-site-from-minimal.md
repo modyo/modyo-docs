@@ -35,7 +35,7 @@ In this case we will use the <b>Hero</b> by copying the code with the button <b>
 
 Then we press preview to see our Home and repeat the process with the examples of Text and Image block, Cards, and Testimonial, which will result in 4 widgets like this:
 
- <img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the four widgets for our site."/> 
+<img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the four widgets for our site."/>
 
 And a site like this in the preview:
 
