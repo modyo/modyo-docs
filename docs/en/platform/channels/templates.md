@@ -175,9 +175,9 @@ If you publish a version, you can see that the changelog disappears, that is bec
 Sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. Likewise, if you go back to a previous sub-version of a template, you won't affect the rest of the templates.
 :::
 
-:: :tip Tip
+::: tip Tip
 If a previous version is restored to the editable version, you will be able to access the sub-versions of each template of that version. 
-You can learn more about [versioning here] (/platform/core/key-concepts.html #versionado).
+You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning).
 :::
 
 You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Reset All". If you want these reset changes to show up in the front end, you must publish them.
