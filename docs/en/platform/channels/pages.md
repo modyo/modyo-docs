@@ -65,7 +65,7 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
-- Publish: If the page is approved, you can go to the [joint publication view] (/es/platform/core/key-concepts) using this action.
+- Publish: If the page is approved, you can go to the [joint publication view](/en/platform/core/key-concepts) using this action.
 
 :::tip Tip
 * If a page has a parent page, you can only publish it if the parent page is published.
