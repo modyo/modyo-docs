@@ -14,26 +14,26 @@ You need to have knowledge of:
 
 - HTML
 - CSS
-- Modyo's platform
+- Modyo Platform
 
 ## Step 1: Create site in Modyo
 
 Within our Modyo account, the first thing we're going to do is create our new site: 
 
-1. From the side menu, expand <b>Channels</b> and click on <b>Sites</b>. 
-2. Click on <b>+ New Site</b> and fill in the values:
+1. From the side menu, expand <b>Channels</b> and click <b>Sites</b>. 
+2. Click <b>+ New Site</b> and fill in the values:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the end result from this tutorial."/>
 
-## Step 2: Copy sample code to the Home 
+## Step 2: Copy sample code to Home 
 
 Within Minimal we have some examples of pre-made code to speed up development. 
 
-In this case we will use the <b>Hero</b> by copying the code with the button <b>Copy to clipboard</b> and pasting code code into an HTML widget in the Home that we'll call Hero.
+In this case we will use the <b>Hero</b> by copying the code with the button <b>Copy to clipboard</b> and pasting it into an HTML widget in the Home called Hero.
 
 <img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the Hero html code."/>
 
-Then we press preview to see our Home and repeat the process with the examples of Text and Image block, Cards, and Testimonial, which will result in 4 widgets like this:
+Then we press Preview to see our Home and repeat the process with the examples of Text and Image block, Cards, and Testimonial, which will result in 4 widgets like this:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the four widgets for our site."/>
 
@@ -43,7 +43,7 @@ And a site like this in the preview:
 
 ## Step 3: Add titles
 
-To add titles to our floors, we're going to add a new html widget and position it between the Hero and Text and image widgets and another one between the Text and Image and Cards widgets.
+To add titles to the bottom, we're going to add a new html widget and position it between the Hero and Text and Image widgets and another one between the Text and Image and Cards widgets.
 
 In this new widget we'll paste the following code:
 
@@ -54,11 +54,11 @@ In this new widget we'll paste the following code:
 </div>
 ```
 
-Our testimonial will not have a title but we must separate the floor and for this we add an mt-5 class to the first div that has the widget.
+Our testimonial will not have a title but we must separate the bottom and for this we add an mt-5 class to the first div that has the widget.
 
 ## Step 4: Create Space and Types
 
-Now that we have a site with four blocks, we must fill them with content, for which we will use the Modyo content application, generating four types of content; Hero, Text and image, Cards, and Testimonial, following these steps:
+Now that we have a site with four blocks, we must fill them with content, for which we will use the Modyo content application, generating four types of content; Hero, Text and image, Cards, and Testimonial by following these steps:
 
 1. From the side menu, click on the logo to return to the main menu.
 1. Expand **Content**, and click **Spaces**.
@@ -109,11 +109,11 @@ In which we are going to create four Content Types:
 
 To create a content type, follow these steps:
 
-1. Within our Space, in the side menu, click on **Types**.
-1. Click on <b>+ New Type</b> and fill in the values for Name, Identifier, and Cardinality.
+1. Within our Space, in the side menu, click **Types**.
+1. Click <b>+ New Type</b> and fill in the values for Name, Identifier, and Cardinality.
 1. Repeat these steps for the rest of the Content Types.
 
-Then we added the fields for each Type:
+Then we add the fields for each Type:
 
 #### Hero 
 
@@ -160,8 +160,8 @@ Then we added the fields for each Type:
 
 <table>
  <tr>
-  <th style="text-align: left">Tipo de campo</th>
-  <th style="text-align: left">Nombre</th>
+  <th style="text-align: left">Field Type</th>
+  <th style="text-align: left">Name</th>
  </tr>
  <tr>
   <td>
@@ -185,8 +185,8 @@ Then we added the fields for each Type:
 
 <table>
  <tr>
-  <th style="text-align: left">Tipo de campo</th>
-  <th style="text-align: left">Nombre</th>
+  <th style="text-align: left">Field Type</th>
+  <th style="text-align: left">Name</th>
  </tr>
  <tr>
   <td>
@@ -226,8 +226,8 @@ Then we added the fields for each Type:
 
 <table>
  <tr>
-  <th style="text-align: left">Tipo de campo</th>
-  <th style="text-align: left">Nombre</th>
+  <th style="text-align: left">Field Type</th>
+  <th style="text-align: left">Name</th>
  </tr>
  <tr>
   <td>
@@ -267,8 +267,8 @@ Then we added the fields for each Type:
 
 Once the Content Types are created, we're ready to create the content.
 
-1. Inside Space, in the side menu, click on <b>Entries</b>.
-1. Click on <b> + New Entry </b>, select Type <b> Hero </b> and for the name we'll use generic text as an example.
+1. Inside Space, in the side menu, click <b>Entries</b>.
+1. Click <b> + New Entry </b>, select Type <b> Hero </b> and for the name we'll use generic text as an example.
 
 <img src="/assets/img/tutorials/create-site-from-minimal/new_hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the New Entry window."/>
 
@@ -276,8 +276,8 @@ and fill in the following fields with:
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -321,12 +321,12 @@ and fill in the following fields with:
  </tr>
 </table>
 
-After having the fields ready, we save, and publish the entry. Now clone the entry using the dots next to the publish button and we change the following fields:
+After having the fields ready, we save and publish the entry. Now clone the entry using the dots next to the publish button and we change the following fields:
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -354,8 +354,8 @@ Once we have finished the process with the two Heros on our site, we are going t
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -387,8 +387,8 @@ We cloned the entry and changed the fields:
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -412,8 +412,8 @@ We cloned the entry and changed the fields:
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -461,8 +461,8 @@ Again, we cloned the entries of the type Cards and changed the fields:
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -508,8 +508,8 @@ Again, we cloned the entries of the type Cards and changed the fields:
 
 <table>
  <tr>
-  <th style="text-align: left">Campo</th>
-  <th style="text-align: left">Valor</th>
+  <th style="text-align: left">Field</th>
+  <th style="text-align: left">Value</th>
  </tr>
  <tr>
   <td>
@@ -553,7 +553,7 @@ Again, we cloned the entries of the type Cards and changed the fields:
  </tr>
 </table>
 
-Don't forget to publish all the entries, and remember that by selecting the checkbox you can publish them all at the same time with the <b> Bulk Actions </b>.
+Don't forget to publish all the entries, and remember that by selecting the checkbox you can publish them all at the same time with <b> Bulk Actions </b>.
 
 At the end we will have a view like this:
 
@@ -563,7 +563,7 @@ At the end we will have a view like this:
 
 Liquid is a language for accessing the content you've created in your Spaces and displaying it on your Sites. To make this connection, follow these steps:
 
-1. From the side menu, click on the logo to return to the main menu.
+1. From the side menu, click the logo to return to the main menu.
 1. Expand **Channels**, and click **Sites**.
 1. Select your site and then click Home.
 1. Click on the Hero widget and replace the code:
@@ -602,7 +602,7 @@ Liquid is a language for accessing the content you've created in your Spaces and
 </div>
 ```
 
->The Liquid code, denoted by {{ }} or {% %}, calls for hero entries made previously in Content. Then it opens a cycle where it displays the Hero fields together with HTML to generate a 'carousel' effect.
+>The Liquid code, denoted by {{ }} or {% %}, calls for hero entries made previously in Content. Then it starts a loop where it displays the Hero fields together with HTML to generate a 'carousel' effect.
 
 #### Text and image
 
