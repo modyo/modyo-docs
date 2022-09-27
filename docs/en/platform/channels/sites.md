@@ -5,9 +5,11 @@ sidebarDepth: 3
 
 # Sites
 
+A site is where the content created in [Content] (/es/platform/content/) and [Channels] (/platform/channels/) are displayed to create your custom digital channel. They include the operation of the entire development, design, and navigation flow.
+
 <img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
-A site is where content created in [Content](/en/platform/content/) and [Widgets](/platform/channels/widgets) are combined to create your custom digital channel. Sites include operations regarding the entire development, design, and navigation flow.
+
 
 There are three states for each site:
 
@@ -37,6 +39,25 @@ Site settings allow you to configure different site options, for example showing
 
 <img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
+## Joint Review and Publication
+
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+On the joint review and publication screen, you can see all the pending changes to be published on your site. You have the option to see what exactly changed by clicking on the **View** button. 
+
+### Publish together
+
+To make a joint publication on your site, follow these steps:
+
+1. In the Modyo Platform main menu, expand **Channels**, and click **Sites**.
+1. Click on your site. 
+1. On the Summary screen, click **Publish**.
+1. Here you can see all the pending changes, select everything you want to publish and click **Publish**.
+
+:: :tip Tip
+If you click on Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
+:::  
+
 ### General
 
 Within this section you can configure the following data:
@@ -58,7 +79,7 @@ Deleting is irreversible, be careful when executing this action. When you press 
 
 #### Google Tag Manager
 
-By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of the sites. These snippets can be found in the _snippets>general_ section of the [Template builder](/en/platform/channels/templates.html) and are embedded into both the _head_ snippet and the _home_ and _base_ views.
+By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of sites. These snippets are found in the _snippets>general_ section of [Templates] (/es/platform/channels/templates.html) and are embedded in both the _head_ snippet and the _home_ and _base_ views.
 
 
 If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section in the upper right and click on the "Load templates" option in the "additional options". This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
@@ -112,6 +133,19 @@ Restrictions allow you to configure the privacy of your site.
 - If the privacy level is set to private, but the option "Show home page to public visitors" is checked, then the home page is visible to everyone, while the rest of the site requires users with an active session.
 - If you reach a URL that does not exist within the site, you will receive a 404 response by default, but if you check this option, instead of receiving a 404, you will be redirected to the home page.
 
+#### Danger Zone
+
+These options involve some risk to the site experience and your users, please proceed with caution.
+
+<img src="/assets/img/channels/sites/danger-zone.jpg" alt="The options in the danger zone." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+- Change Realm: This field displays the realm for this site. When you change your realm, all privacy settings on your sites, pages, and navigation will be lost.
+- Site Status: Change the site status between three different options. 
+    * Enabled allows the site to be editable and visible to the public, this is the default state of a site. 
+    * Editable allows a site to be modified but is not visible to the public. Users need to log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
+    * Disabled prohibits both editing and visibility of a site.
+- Delete Site: This action asynchronously calls for the deletion of the site. You will not be able to access this site when you start deleting the site. All the elements contained in a site, such as pages and widgets, will also be removed. 
+
 
 ### SEO
 
@@ -164,7 +198,7 @@ Modyo provides the ability to implement Progressive Web Applications (PWA) withi
 
 <img src="/assets/img/channels/sites/pwa-site.jpg" alt="The PWA options you can configure withing a site." width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-#### **Manifest**
+#### Manifest
 
 The purpose of the manifest is to indicate how you want a browser to display your digital channel. On the platform, it is possible to activate it with the checkbox seen above. This will create the following route:
 
@@ -172,7 +206,7 @@ The purpose of the manifest is to indicate how you want a browser to display you
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each page where the PWA is developed, through the [Template Builder](/en/platform/channels/templates.html), in the snippet ``head``.
+The manifest must be implemented on each of the pages where the PWA is developed, through [Templates] (/es/platform/channels/templates.html), in the ``head`` snippet.
 
 The manifest can be created and modified in the following field, allowing you to add changes without having to leave the view.
 
@@ -180,11 +214,11 @@ The manifest can be created and modified in the following field, allowing you to
 If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
-:::warning Warning
-If you do not customize the manifest but add the route in the Template Builder, it will be blank and will not take any action.
+:: :warning Attention
+If you don't customize the manifest but add the path in Templates, it will be blank and will take no action.
 :::
 
-#### **Service Worker**
+#### Service Worker
 
 The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to show some structure in case of a bad connection. The platform gives you the possibility to enable this through the second checkbox above. Thus, the following route will be created:
 
@@ -289,7 +323,7 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 
 Adding stages to your site allows you to continuously integrate and deploy (CI/CD) new features for your site without interrupting what is already published.
 
-The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use local variables, widgets, and templates to customize the experience or visualize changes. At the end of the changes within a stage, they can be integrated into the `main` stage.
+The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use local variables, widgets, and templates to customize the experience or visualize changes. At the end of the changes within a stage, they can be integrated into any stage.
 
 :::warning Attention
 When using stages, custom PWAs, and redirects will be disabled. You can only use these in the `main` stage.
@@ -303,15 +337,15 @@ To add a new stage to your site, follow these steps:
 
 1. From the side menu, click **Channels**, then select your **Site**.
 1. Expand **Site Settings**, click on **Stages**.
-1. Click on **+ New Stage**
-1. Select what the base of the stage and type the name.
+1. Click **+ New Stage**.
+1. Select what will be the base of the stage and type the name.
 1. Click **Create**.
 
 
 :::tip Tip
 When you have more than one stage on your site, the **Overview** page will now display the details of the current stage and a button to synchronize changes between stages.
 
-In the sidebar you can see which stage you are currently in and when you click on the dropdown, it will display a list of all the stages of your site.
+In the sidebar you can see what stage you are currently in and when you click on the dropdown, it will display a list of all the stages on your site.
 :::
 
 #### Synchronize a stage
@@ -469,7 +503,7 @@ It indicates that _MIME types_ announced in the _header_ `Content-Type` must be 
 
 Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
-Freely specify your content security policy in the text area; for a complete guide on how to write your policy, see [MDN Content Security Policy (CSP)](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+Freely specify your content security policy in the text area; for a complete guide on how to write your policy, see [MDN Content Security Policy (CSP)](https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
 
 :::warning Warning
 A very strict value can interfere with features such as [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html), and [Asset Manager](/en/platform/content/asset-manager.html).
