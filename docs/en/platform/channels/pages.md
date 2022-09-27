@@ -4,7 +4,11 @@ search: true
 
 # Pages
 
-Pages are what allow you to create structure for your sites, where you can add unstructured content and customize the routes from which that content is displayed.
+Pages (or pages) are what allow you to create a structure for your site, where you can add unstructured content and customize the routes where that content is displayed.
+
+You can create two types of pages, widgets or content. The widget pages are based on a modular layout so you can create your custom site using HTML, JS, and CSS. You'll be able to drag and arrange different widgets that we offer or custom widgets created by your team. 
+
+Content pages are our solution for connecting Content modules with Channels. Here you can create the index containing the entries and the structure for all the entries using HTML, JS, CSS, and Liquid.
 
 <img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 
@@ -24,7 +28,7 @@ In the top bar, you can find different actions and information:
 You can preview pages as a user without a session or with a Modyo session. For this, it is advised to log in or out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on the Differences icon will take you to the [differences view](/en/platform/channels/sites.html#review-and-joint-publication) that allows you to select and compare two versions of the same page. This view also allows you to perform a [reset or rollback](/en/platform/core/key-concepts.html#actions-for-versioning) of your page.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on the diff icon will take you to the diff view of the page which allows you to select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#revert-a-change).
 
 :::tip Tip
 If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare with the current editable version. To learn more about differences and backups, review the [versioning](/en/platform/core/key-concepts.html#versioning) section.
@@ -53,15 +57,15 @@ To create a new page, follow these steps:
 1. Customize the page depending on the type: adding or editing widgets for Widget Page or editing the Index and Show for Content Page.
 1. Once finished, click **Publish**.
 
-To learn more about the types of widgets you can add, see [Widgets](/en/platform/channels/pages.html#widget-pages)
+To learn about the types of widgets you can add, see [Widgets] (/es/platform/channels/pages.html #pagina -de-widget)
 
-To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-pages)
+To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page)
 
 **Main action**: The green button in the upper right. This button can take different forms:
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
-- Publish: If the page is approved, and if all the changes have been saved, you can got to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes in across the site.
+- Publish: If the page is approved, you can go to the [joint publication view] (/es/platform/core/key-concepts) using this action.
 
 :::tip Tip
 * If a page has a parent page, you can only publish it if the parent page is published.
@@ -83,7 +87,7 @@ In the right side section you will find three tabs:
 - Edit Widget: allows you to change different properties and filters for each widget.
 - Properties: allows you to modify the name, excerpt, path, parent, privacy, grid layout, and meta tags of the page.
 
-## Widget page
+## Widget Page
 
 Here you can customize your page using preset widgets from the following list: 
 
@@ -163,10 +167,6 @@ In order to display content on a site, you must meet certain conditions:
 * Have entries published in the language of the site. For more information, see [Entries](/en/platform/content/entries.html) and [Locales](/en/platform/content/spaces.html#locales)
 
 :::tip Tip
-To learn more about how to create a custom content view, see [Creating a Content View](/en/platform/tutorials/how-to-create-a-custom-view.html).
-:::
-
-:::tip Tip
 You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
 :::
 
@@ -178,7 +178,7 @@ The index page will display the list of all entries in the content type. Here yo
 
 #### Edit
 
-- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible and an attempt to access the Index page will show a 404 error.
+- **Enable Entry Rate**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible and if an attempt is made to access they will be shown a 404 error.
 - **Layout**: The Layout template that is loaded for the Index.
 - **Custom Meta Tag**: Add custom meta tags to optimize index SEO. This meta tag will only be uploaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
@@ -214,7 +214,7 @@ This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry
 :::tip Tip
 To learn more about how to use Liquid, see [Liquid markup](/en/platform/channels/liquid-markup.html)
 
-To learn which fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/liquid-markup.html#content-drops)
+To learn what fields you can use with the `entry` drop, see [Content Drops] (/es/platform/channels/drops.html #entrada).
 :::
 
 #### Settings
@@ -243,14 +243,26 @@ If you enable the "Private" option on a page, then a user must be logged in with
 
 ## Meta tags
 
-In this section you can add meta tags to pages and modify the value of existing meta tags, to enrich the SEO of the page. With tags added to the page, you can decide whether to use the default value, overwrite the available value for the tag, or remove the tag from the page.
+Meta tags define the content of a page and search engines rely on them to provide the user with a search list. In this section you can add meta tags to pages and modify the value of existing meta tags, to enrich the SEO of the page. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
+
+To access the list of meta tags on the page, you must use the <span v-pre>`{{ page.meta_tags }}`</span> Liquid drop. We recommend that you go through the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
+
+### Add a new meta tag
+
+To add a new meta tag to your site, follow these steps:
+
+1. In Modyo Platform, from the main menu, expand **Channels**, and click on **Sites**.
+1. Click on your Site.
+1. Expand **Site settings** and click **SEO**.
+1. In the Custom Meta Tags section, click **+ New meta tag**.
+
+On the screen that appears, you have the option to choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages. 
+
+As part of the `base` Template, we include the `seo` Snippet which contains the information needed to print the values of the meta tags depending on whether it is a Site, a Page, or a Entry.
 
 :::tip Tip
 Please note that for the meta tags to take effect on your page, you must publish the changes.
 :::
 
-To access the list of meta tags on the page, you must use the <span v-pre>`{{ page.meta_tags }}`</span> Liquid drop. We recommend that you go through the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
+For more information about how we use dynamic meta tags on sites, visit [site settings, SEO section](/en/platform/channels/sites.html#seo).
 
-:::tip Tip
-If you want to add a meta tag to all your pages simultaneously, you can do this in the [SEO section of your site's configuration](/en/platform/channels/sites.html#seo).
-:::
