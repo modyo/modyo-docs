@@ -39,7 +39,7 @@ Then we press preview to see our Home and repeat the process with the examples o
 
 And a site like this in the preview:
 
- <img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the preview of the site."/> 
+<img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the preview of the site."/>
 
 ## Step 3: Add titles
 
