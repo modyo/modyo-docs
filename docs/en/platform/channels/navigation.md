@@ -8,7 +8,7 @@ Navigation is the fastest way to put together a list of elements to give your us
 
 <img src="/assets/img/platform/navigation-builder.png" alt="Navigation module screen">
 
-In this section you find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre> `{% menu%}` </span> in [Templates] (/es/platform/channels/templates.html).
+In this section you find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre>`{% menu%}`</span> in [Templates](/en/platform/channels/templates.html).
 
 Navigation only allows three levels of depth, so you can have a main list and up to two sub-elements nested in each of the main items. By default when creating a site, Modyo includes a template and a basic menu that you can modify to your needs.
 
