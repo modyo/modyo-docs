@@ -53,7 +53,7 @@ To display the name of the post on your page use:
 
 #### Tags
 
-With Tags you can add flow and iteration control to your pages. You need to encapsulate the language with square brackets and percentage {%%} to use Tags, for example:
+With Tags you can add flow and iteration control to your pages. You need to encapsulate the language with square brackets and percentage {% %} to use Tags, for example:
 
 ```Liquid
 {% if product.name == “Electronic Banking”%}
