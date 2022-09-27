@@ -106,7 +106,7 @@ Some fields have validations, to ensure the user meets certain requirements to f
 - **Minimum date**: The date entered cannot be earlier than this value
 - **Maximum date**: The date entered cannot be later than this value.
 
-In the same way that some fields have validations, most have a default value that is preselected at the time of loading the form. The only ones that do not have a default value are nested questions.
+Just as some fields have validations, most have a default value that is pre-selected when the form is loaded. The only ones that don't have a default value are nested questions.
 
 ### Regular Expressions
 
