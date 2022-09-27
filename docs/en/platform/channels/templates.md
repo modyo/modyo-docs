@@ -142,7 +142,7 @@ In order for the system to recognize the programming language type of the snippe
 :::tip Tip
 All elements of the Template Builder use Liquid as a templating engine.
 
-For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup] page (/es/platform/channels/liquid-markup.html)
+For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
