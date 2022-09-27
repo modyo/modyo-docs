@@ -8,7 +8,7 @@ search: true
 
 Team Review is a tool that allows you to control the process of publishing content in Modyo. When enabled, each item must go through review stages before enabling the publishing process.
 
-This adds a level of supervision and collaboration between the content editor and a team of reviewers.
+This adds a level of oversight and collaboration between the content editor and a team of reviewers. This tool is configured individually for each Site and Space.
 
 ### Feature
 
@@ -22,16 +22,13 @@ Each step of this process takes the item through different states, which are rec
 
 <img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-This tool is available for sites (pages, navigation, widgets and templates) as well as spaces (entries).
-
-The configuration of review rules is done independently for each site or space.
-
-
 ### Configuration
 
-The configuration of review rules is done independently for each site or space.
+To activate the team review, follow these steps:
 
-To configure the tool, you must select a space or site and select the option `Site/Space Settings > Team Review` from the side menu.
+1. From the side menu in Modyo Platform, select a space or site.
+2. Expand **Space/Site Settings** and select **Computer Review**.
+3. Click on **Enable team review**.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -83,9 +80,7 @@ When the team review option is enabled, and after saving the changes, you will s
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
 
-When you send the item for revision, the bar will change status:
-
-<img src="/assets/img/platform/missing-conditions-team-review.jpg" width="350px" style="border: 1px solid #EEE;" />
+When you submit for review, the bar will change status to show that conditions are missing or you do not have sufficient permission.
 
 When you click on it, you will be able to see the requirements to publish the item in the right side section.
 
@@ -107,11 +102,29 @@ When this tab is opened, a chronological list of all the actions that have been 
 
 When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision and the users who are on the list of reviewers.
 
+## Joint Review and Publication
+
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+On the joint review and publication screen, you can see all the pending changes to be published on your site. You have the option to see what exactly changed by clicking on the **View** button. 
+
+### Publish together
+
+To make a joint publication on your site, follow these steps:
+
+1. In the Modyo Platform main menu, expand **Channels**, and click **Sites**.
+1. Click on your site. 
+1. On the Summary screen, click **Publish**.
+1. Here you can see all the pending changes, select everything you want to publish and click **Publish**.
+
+:: :tip Tip
+If you click on Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
+:::
+
+
 ## Versions
 
 As a backup mechanism, Modyo automatically generates and stores different versions of an item each time it is published, which can later be retrieved if necessary.
-
-This is useful when, for some reason, an undue change is made, there is the possibility of reverting it through the platform.
 
 This system is available for Widgets, Pages, Navigation, Templates, and Spaces.
 
@@ -163,27 +176,38 @@ There are elements (home, navigation, and templates) that cannot be unpublished.
 
 This status appears when team review is enabled and it means that an item in this status is ready to be published. Any changes made to an item in this state will bring the item to an editable state and must go through the review process again in order to be published.
 
-### Actions for versioning
+## Reversing a Change
 
-Within versioning, you have two actions that allow you to interact with the backups of an item (reset & rollback). Both actions are available in the "differences" pop-up window.
-
-![Difference mode](/assets/img/platform/differences.png)
-
-By default, this pop-up shows you the published version on the left side, and the editable version on the right side.
+Within versioning, you have two actions that allow you to interact with backups, reset and rollback. By default, the difference mode shows the published version on the left, and the editable version on the right.
 
 You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
-When one of the actions is applied, it will always use the version to the left. This means that if you choose to reset an item to a previous version, the code to the left will become the new editable version, and if you choose to perform a rollback, the version to the left will become the new published version.
+<img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+Follow these steps to revert to a version published in a Post:
+
+1. From Modyo Platform, expand Content and select Spaces.
+1. Select your Space and then click on the Entry you want to version.
+1. Click on **Differences**.
+1. In the mode that appears, select the version you want to roll back and then click **Rollback to this version**.
+
+When you apply any of the actions, the version selected on the left is always taken, so that if you reset it, the version on the left will be brought to the editable version, and if you roll back, the version on the left will be brought to the published version.
+
+:: :tip Tip
+Versioning can be done in the following modules:
+- In Content: **Entries**.
+- In Channels: **Pages**, **Navigation**, **Templates**, and **Widgets**.
+:::
 
 #### Reset
 
-In this case, the backup will be copied to the editable version, so all subsequent changes will be lost, so you can continue working on potential changes to that version to republish it.
+In this case, the backup takes the place of the editable version, so all existing changes will be lost, so you can continue working on potential changes to that version to republish it.
 
 #### Rollback
 
-In this case, the backup is returned directly to the published version of the item, without touching the editable version.
+In this case, the backup is returned directly to the **published** version of the element, without touching the editable version.
 
- This is useful when something was released by mistake and you need to revert to one of the stable versions, so that you can work on resolving problems that the buggy version may have had.
+This is useful when something was published by mistake and it is necessary to return to one of the stable versions, so that you can work on resolving the problems that the version with errors may have had.
 
 :::danger Danger
 Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
