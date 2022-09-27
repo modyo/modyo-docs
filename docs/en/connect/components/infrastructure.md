@@ -130,7 +130,7 @@ The Single Sign On (SSO) service allows you to integrate the Modyo platform sess
 
 Modyo Connect implements the SSO service using the [KeyCloak](https://www.keycloak.org) application, which is open source software sponsored by Red Hat (base of Red Hat SSO). The KeyCloak application is deployed on containers in a high-availability cluster mode. In addition, access is granted to the repository that originates the KeyCloak image, allowing you to have control over user experience customizations and authentication flows.
 
-### Steps to apply
+### Activation
 Requests to deploy SSO on Modyo Connect are made through a ticket in the [Modyo Support Center](https://support.modyo.com). Within the ticket, you can specify whether access to the full administration of the application, or the creation of user realms with specific configurations, will be required.
 
 :: :warning KeyCloak customizations
