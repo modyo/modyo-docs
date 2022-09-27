@@ -980,7 +980,7 @@ The Content API can receive the delivery token parameter in two ways:
 - As a header: `Delivery-Token`
 - As a GET parameter: `delivery_token`
 
-The Content Access Token is a public token in [JWT](https://tools.ietf.org/html/rfc7519) that is shared by all users belonging to the same segment group. It can be obtained by making a GET request to the URL `test.modyo.com/api/realms/{realm_uid}/delivery_token`.
+The content access token is a public token in [JWT] format (https://tools.ietf.org/html/rfc7519) shared by all users who belong to the same segment group. It can be obtained by making a GET request to the URL `test.modyo.com/api/customers/realms/ {realm_uid} /delivery_token`.
 
 The content delivery token contains the following attributes:
 
