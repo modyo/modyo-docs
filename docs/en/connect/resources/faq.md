@@ -4,8 +4,8 @@ search: true
 
 # Frequently Asked Questions
 
-### How long does it take to enable the Modyo Connect service?
-The activation of the Modyo Connect service should usually fluctuate between a few days or a couple of weeks, depending on how clear you are of the resource definitions that will be initially applied to the service.
+### How long does it take to enable Modyo Connect?
+The activation of Modyo Connect fluctuate between a few days or a couple of weeks, depending on how clear you are of the resource definitions that will be initially applied to the service.
 
 The initial enablement of the service involves the most complex tasks of executing, such as configuring the VPC network in AWS, productive and pre-productive environments, configuring Site2Site VPN, issuing TLS certificates, among others.
 
@@ -17,7 +17,7 @@ There are cases in which the customer may request the activation of only the pre
 ### What alternatives are there to Modyo Connect?
 Modyo Connect is an optional service that is only recommended to customers who currently prefer to outsource the operation of their APIs in conjunction with the ability to securely develop and expose their own Single Sign On systems or integration APIs.
 
-As an alternative to the service, we can mention each customer's own implementation, based on their current resources or the resources of some other provider, such as Microsoft Azure or Google GCP clouds. 
+As an alternative to the service, we can offer each customer's own implementation, based on their current resources or the resources of some other provider, such as Microsoft Azure or Google GCP clouds. 
 
 ### How compatible is Modyo with integration solutions other than Modyo Connect?
 The implementation of the APIs can be carried out on any system that allows you to expose endpoints in the HTTP protocol (Rest o)
