@@ -78,21 +78,22 @@ If you need to restore a specific value from an entry, you can make use of the "
 
 Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now pending changes and you must publish them. For this, you can use the "Publish" mass action.
 
-## Create an Entry
+## Create and Publish a Post
 
 To create an entry, follow these steps:
 
 1. In the side menu of Modyo Platform, select **Content** and click **Space**.
-1. Select your **Space**.
-1. Click **+ New Entry**.
+2. Select your **Space**.
+3. Click **+ New Entry**.
+4. Select the **Content Type**, **Name**, and **Identifier**. Click **Create**.
+When you click **Create**, the entry edit view opens and you can fill in your content in the required fields based on the content type you chose.
+5. Click **Save** and then click **Publish**.
 
 In the next window, **Modyo** asks for the name, slug, and type of post you want to create, which can be created in [Content Types](/en/platform/content/types.html).
 
 :::warning Warning
 If the name field is empty, the platform defaults the UUID of the entry as a slug.
 :::
-
-When you click **Create**, the entry edit view opens and you can fill in your content in the required fields based on the content type you chose.
 
 ## Translate an Entry
 
@@ -135,7 +136,7 @@ To unpublish content, follow these steps:
 1. In the Entries menu, select your Entry.
 1. Expand the Mass Actions menu and click Unpublish.
 
-<img src=”/assets/img/content/despublicar.png” alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
+<img src="/assets/img/content/despublicar.jpg" alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
 
 
 ### Delete Entries
@@ -168,15 +169,19 @@ This will take you to the edit view where you can change the content and propert
 
 In case the post is published, the changes will be made automatically. If the entry is in the Team Review process, reviewers must update their view in order to see the changes.
 
-### Categories
+## Categories
 
-Categories are one of the most useful ways to order your Entries. Applying a category to an entry establishes a relative path in its URL that allows us to access the entry without going through other pages.
+Categories are one of Modyo's most useful ways to sort your Entries. In this case, every time a Category is used, a path is generated in the URL that allows you to access the resource, if it is published.
 
 To see the Categories, click the **Categories** section in the main menu on the left. There, we can see all the categories that are already made.
 
 #### Create a Category
 
 To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
+
+For entries in these categories, the identifier is added as a prefix to the URL of the entry. For example:
+
+An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
 
 :::tip Tip
 When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, click the field to edit it.
@@ -191,6 +196,14 @@ If you want to delete a category, click the three-point icon at the end of its n
 :::danger Danger
 If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments.
 :::
+
+### Tags
+
+Tags allow you to add more granularity to your Entries by combining it with Liquid on your content pages. When creating Entries, you can add a tag that appears both in the source code and in our content API so that you can add specific functionality to this tag.
+
+<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" alt="The JSON information that appears when you click the preview site button."/>
+
+For example, if this entry is a featured entry, you can add a 'featured' tag and add functionality through the Channels module.
 
 ### Slug
 
@@ -261,4 +274,4 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 }
 ```
 
-To learn more about our API and the different actions you can take, see [Management API] (/en/platform/core/api).
+To learn more about our API and the different actions you can take, see [Management API](/en/platform/core/api).
