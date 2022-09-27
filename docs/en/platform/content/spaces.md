@@ -68,7 +68,7 @@ The default language of a space is defined when first creating a space and canno
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350" alt="Select a language dropdown inside Entries">
 
 ::: tip Tip
-You can learn how to select one of the available languages of an entry in the following sections: [Public API](/platform/content/public-api-reference.html#filters), [Javascript SDK](/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/platform/content/public-api-reference.html#filter-entries)
+You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/platform/content/public-api-reference.html#filters), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries)
 :::
 
 ### Cache
