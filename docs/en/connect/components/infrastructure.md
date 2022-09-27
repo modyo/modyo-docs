@@ -83,7 +83,7 @@ Modyo Connect allows the secure management of secret parameters for the configur
 
 In addition, there is additional secret management in the GitHub Enterprise repository, which is used internally to share details of access to tokens with the GitHub Actions continuous integration scripts. If you need to incorporate a process within GitHub Actions that requires a secret parameter, this can be requested.
 
-### Steps to apply
+### Activation
 To request the configuration of a new secret, a requirement ticket must be created in the Modyo Support Center.
 
 :: danger Secrets Confidentiality
