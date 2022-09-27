@@ -15,7 +15,7 @@ Follow these steps to create a snippet with Liquid variables:
 1. In your site menu, click on **Templates** and select **Snippets**.
 1. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any name.
 
-<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template builder snippets.">   
+<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">   
 
 1. Open the javascript section and paste the code:
 ```js
