@@ -6,7 +6,7 @@ search: true
 Infrastructure components enable a secure and scalable execution environment for [microservices](.. /resources/microservices.md) developed on Modyo Connect. 
 
 ## API Gateway
-The API Gateway is the entry point for all the APIs deployed within Modyo Connect and is mainly responsible for authorizing incoming requests and channeling them to the correct microservice. In addition, the API Gateway is capable of performing monitoring, rate limit and caching functions, to improve the performance of the APIs that operate under it. Modyo Connect uses the [AWS API Gateway](https://aws.amazon.com/api-gateway), which is an abstract service operated by Amazon.
+The API Gateway is the entry point for all the APIs deployed within Modyo Connect and is mainly responsible for authorizing incoming requests and channeling them to the correct microservice. In addition, the API Gateway is capable of performing monitoring, rate limit, and caching functions to improve the performance of the APIs that operate under it. Modyo Connect uses the [AWS API Gateway](https://aws.amazon.com/api-gateway), which is an abstract service operated by Amazon.
 
 The addition of endpoints to the API Gateway is done using special Java annotations within the source code of the microservice, which at the time of deployment allow obtaining a [Swagger](https://swagger.io) definition of the API that are dynamically incorporated into the service, as exemplified in the following example:
 
@@ -48,7 +48,7 @@ public class GetUsersController {
 }
 ```
 
-The previous example shows the different annotations that the service must contain. The extraction of the Swagger generated for the API Gateway is performed within the deployment pipeline, which is configured and executed by activating [continuous integration](development .md#continuous-integration).
+The previous example shows the different annotations that the service must contain. The extraction of the Swagger generated for the API Gateway is performed within the deployment pipeline, which is configured and executed by activating [continuous integration](/development.html#continuous-integration).
 
 
 ## Containers
@@ -73,7 +73,7 @@ AWS ECS Fargate offers a wide variety of configurations, ranging from fractions 
 
 It is important to consider that in production, the MRU used by the component are multiplied by the redundancy factor required by the customer, the minimum being 2 (multi-zone). Pre-production environments are configured without redundancy.
 
-:: warning Fractions of vCPUs
+:::warning Fractions of vCPUs
 AWS allows the definition of containers with fractions of vCPUs allocated (example: 0.25 vCPU or 0.75vCPU). Since the Java JVM is a multithreaded execution environment, Modyo does not recommend productive or pre-productive deployment using fractions of vCPUs, because this causes I/O blockages and known performance problems. That's why the minimum will be 1 vCPU and the maximum will be 4 vCPU (AWS ECS Fargate limitation).
 :::
 
@@ -86,7 +86,7 @@ In addition, there is additional secret management in the GitHub Enterprise repo
 ### Activation
 To request the configuration of a new secret, a requirement ticket must be created in the Modyo Support Center.
 
-:: danger Secrets Confidentiality
+::: danger Secrets Confidentiality
 Modyo does not recommend attaching the secret values of these parameters to the ticket. A secure communication channel with the client must be established, which ensures the confidentiality of the settings to be configured.
 :::
 
@@ -116,7 +116,7 @@ To request the issuance of a TLS certificate, you must indicate the subdomains t
 
 When you request, Modyo will issue a certificate “pending validation” which requires validation through DNS records.
 
-:: warning Domain validation by DNS
+:::warning Domain validation by DNS
 The DNS records used for certificate validation should not be deleted, as they will be used by AWS ACM for renewal. It will be the customer's responsibility to ensure the existence of these records in their DNS system.
 :::
 
@@ -133,7 +133,7 @@ Modyo Connect implements the SSO service using the [KeyCloak](https://www.keyclo
 ### Activation
 Requests to deploy SSO on Modyo Connect are made through a ticket in the [Modyo Support Center](https://support.modyo.com). Within the ticket, you can specify whether access to the full administration of the application, or the creation of user realms with specific configurations, will be required.
 
-:: :warning KeyCloak customizations
+:::warning KeyCloak customizations
 User experience customizations and authentication flows within KeyCloak are the responsibility of the customer and are not included as part of the service. If professional services support is required in the implementation of an SSO initiative, the assigned account executive should be contacted.
 :::
 
