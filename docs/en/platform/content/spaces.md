@@ -41,7 +41,7 @@ In this case, the space configuration helps us to change the general settings, l
 
 Here you can change the name of a space and its UID.
 
-The UID of the space is very important. It determines how you access the space through the  [public API](/en/platform/content/public-api-reference.html#reference-del-api) content, the [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and the [Liquid SDK](platform/content/public-api-reference.html#sdk-de-liquid). 
+The UID of the space is very important. It determines how you access the space through the  [public API](/en/platform/content/public-api-reference.html#reference-del-api) content, the [Javascript SDK](/en/platform/content/public-api-reference.html#javascript-sdk) and the [Liquid SDK](/en/platform/content/public-api-reference.html#liquid-sdk). 
 
 Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
 
