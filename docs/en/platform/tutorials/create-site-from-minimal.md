@@ -110,7 +110,7 @@ In which we are going to create four Content Types:
 To create a content type, follow these steps:
 
 1. Within our Space, in the side menu, click on **Types**.
-1. Click on <b> + New Type </b> and fill in the values for Name, Identifier, and Cardinality.
+1. Click on <b>+ New Type</b> and fill in the values for Name, Identifier, and Cardinality.
 1. Repeat these steps for the rest of the Content Types.
 
 Then we added the fields for each Type:
