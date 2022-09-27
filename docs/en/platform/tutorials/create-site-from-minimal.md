@@ -348,7 +348,7 @@ After having the fields ready, we save, and publish the entry. Now clone the ent
 
 Then we save and publish.
 
-Once we have finished the process with the two Heros on our site, we are going to repeat the process for the other types of content, we will start with the one from <b> Text image block </b>:
+Once we have finished the process with the two Heros on our site, we are going to repeat the process for the other types of content, we will start with the one from <b>Text image block</b>:
 
 #### Text image block
 
