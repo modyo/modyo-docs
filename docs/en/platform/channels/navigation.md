@@ -6,11 +6,11 @@ search: true
 
 Navigation is the fastest way to put together a list of elements to give your users easy access to the key points of your site.
 
-<img src="/assets/img/platform/navigation-builder.png" alt="Navigation builder module screen">
+<img src="/assets/img/platform/navigation-builder.png" alt="Navigation module screen">
 
-In this section you will find a nested list of elements, which correspond to the items that will appear on the site when using the tag <span v-pre>`{% menu%}`</span> in [Template builder](/en/platform/channels/templates.html).
+In this section you find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre> `{% menu%}` </span> in [Templates] (/es/platform/channels/templates.html).
 
-The builder menu only allows three levels of depth, so you can have a main list and up to two sub items nested in each of the main items.
+Navigation only allows three levels of depth, so you can have a main list and up to two sub-elements nested in each of the main items. By default when creating a site, Modyo includes a template and a basic menu that you can modify to your needs.
 
 At the top of the view, you will find the publication status of the menu:
 
@@ -31,7 +31,7 @@ You can preview the changes as a user without a session, or with Modyo a session
 The menu created can be displayed on any page if and only if it is added to a page through a published template, otherwise the menu is never requested and won't appear on the page.
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: By clicking on this icon, you will open the [differences view](/platform/channels/sites.html#review-and-joint-publication), in which you can compare the changes between multiple versions of your menu.
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Clicking on this icon will take you to the [diff-view](/en/platform/core/key-concepts.html#revert-a-change), where you can compare the changes between multiple versions of your menu.
 
 By default you will start comparing the published version with the editable version, but by using the version selectors, you can also compare previous versions as well.
 
@@ -47,8 +47,8 @@ For more information on versioning, check out the [versioning](/en/platform/core
 
 You can add comments by submitting them at the bottom of the sidebar. Next to each activity, you can click on "Show details" to show the complete information of that particular activity log.
 
-## Create a new Menu
-To create a new Menu, follow these steps:
+## Create a Menu
+To create a Menu, follow these steps:
 
 1. From the Modyo Platform main menu, expand Channels and click Sites.
 2. Select the site you want to add a new menu.
@@ -58,11 +58,11 @@ To create a new Menu, follow these steps:
 6. Customize the menu by adding or editing items.
 7. Once finished, click on **Publish**.
 
-:::tip Tip
-Your menu is now public but needs to be requested from a template before it can be displayed. Modyo offers a general  snippet in **Snippets, General, menu** and is called in the `base` template using `{% snippet 'shared/general/menu'%}`.
+:: :tip Tip
+Your menu is currently public but no call is sent. You need to use a template for it to be displayed on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu** and is called in the `base` template using <pre v-pre> `{% snippet 'shared/general/menu'%}` </pre>.
 :::
 
-For more information on how to create and publish a custom menu, see [Creating Mega Menu](/en/platform/tutorials/how-to-create-a-menu.html)
+For more information on how to create and publish a custom menu, see [Creating a Mega Menu] (/es/platform/tutorials/how-to-create-a-menu.html).
 
 **Main Actions**
 
@@ -82,9 +82,9 @@ In the right side section, you will see a bar that changes according to the item
 
 ## Menu examples
 
-The general snippet `menu` can meet the basic needs of a site, by displaying a menu in the form of a dropdown. The following explains the most important parts of this snippet and how it can be extended to more features.
+The general snippet `menu` can meet the basic needs of a site by displaying a menu in the form of a dropdown. The most important parts of this snippet and how it can be extended to more functionality are explained below.
 
-The first lines encapsulated by `{{ }}` or `{% %}` belong to Liquid and are used to assign variables or start a loop to display menu information. 
+The first lines encapsulated by <span v-pre> {{ }} or {% %} </span> belong to Liquid and are used to assign variables or start a loop to display menu information. 
 
 The following list describes the important variables for the menu:
 
