@@ -106,8 +106,8 @@ After you have created your new layout, you can start using it by going to the p
 In the views section, you will find 4 error types available for customization:
 
 * **Disabled**: You'll see this error if the site you're trying to access has been [disabled](/en/platform/channels/sites.html).
-* **404**: You will see this view if you enter a site URL that is not defined and if you decide to show 404 errors in the [site restrictions](/en/platform/channels/sites.html#restrictions) instead of redirecting to the home page.
-* **Privacy**: You will see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#restrictions) or one of its [pages](/en/platform/channels/pages.html#privacy).
+* **404**: You'll see this view if you enter a site URL that isn't defined and if in the [site restrictions] settings (/es/platform/channels/sites.html #privacidad) you decide to display the 404 and not redirect to the home page.
+* **Privacy**: You'll see this error view if you don't have permission to access the [site] (/es/platform/channels/sites.html #privacidad) or one of its [pages] (/es/platform/channels/pages.html #privacidad).
 * **Template**: You'll see this error view when the page of the site you're loading has a liquid syntax error. It's unlikely that you'll ever see this view, given that from modyo 8.1 onwards we have a feature that checks the syntax of liquid before we can save and publish changes to Templates.
 
 ## CSS and JavaScript
@@ -142,7 +142,7 @@ In order for the system to recognize the programming language type of the snippe
 :::tip Tip
 All elements of the Template Builder use Liquid as a templating engine.
 
-For more information on what Liquid is and how to get the most out of it, see [Liquid Markup](/en/platform/channels/liquid-markup.html) page.
+For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup] page (/es/platform/channels/liquid-markup.html)
 :::
 
 In the work area, under the tabs, you will find a bar with useful elements:
@@ -151,8 +151,8 @@ In the work area, under the tabs, you will find a bar with useful elements:
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
-:::tip Tip
-For more information on the functionality of the Asset Manager, see [Asset Manager](/en/platform/content/asset-manager.html).
+:: :tip Tip
+For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
 :::
 
 **Keyboard shortcuts**: A small pop-up appears with some of the useful keyboard shortcuts to use in Templates.
@@ -175,8 +175,9 @@ If you publish a version, you can see that the changelog disappears, that is bec
 Sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. Likewise, if you go back to a previous sub-version of a template, you won't affect the rest of the templates.
 :::
 
-::: tip Tip
-If an earlier version of your templates is restored, you can access the saved states of each template of that restored version. You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning)
+:: :tip Tip
+If a previous version is restored to the editable version, you will be able to access the sub-versions of each template of that version. 
+You can learn more about [versioning here] (/platform/core/key-concepts.html #versionado).
 :::
 
 You can reset all templates to their original version by clicking on the secondary action of the top bar "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Reset All". If you want these reset changes to show up in the front end, you must publish them.
