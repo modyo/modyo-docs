@@ -4,7 +4,91 @@ search: true
 
 # Security
 
-At Modyo, everything about safety is very important to us. That's why we created this page that will guide you through everything you need to secure a Modyo installation. While Modyo Cloud and Enterprise Cloud, our hosted solutions, provide excellent security by default, platform administrators can take additional safety measures to increase the security of their organizations. This guide presents the most important recommendations to achieve this.
+At Modyo, everything related to security is very important to us. That's why we created this page that will guide you through everything you need to ensure a Modyo installation. While our cloud solutions, Modyo Cloud and Enterprise Cloud, provide an excellent level of security by default, platform administrators can take additional protective measures to increase the security of their organizations. This guide presents the most important recommendations for achieving this.
+
+## Password Policy
+
+These are the options available for setting a password policy for Modyo Platform:
+
+- Minimum password length value: This number dictates the minimum number of characters a password must have. A password must be between 8 and 128 characters long.
+- Require at least one lowercase letter (a - z)
+- Require at least one capital letter (A - Z)
+- Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
+
+## Session Expiration Policy
+
+Select a value in this option so that the platform automatically expires a session when it is inactive. You can select from these values:
+
+- 5 minutes
+- 10 minutes
+- 15 minutes
+- 20 minutes
+- 25 minutes
+- 30 minutes
+- 45 minutes
+- 1 hour
+- 1 hour 30 minutes
+- 2 hours
+- 4 hours
+- 8 hours
+- 16 hours
+- 1 days
+- 2 days
+- 3 days
+- 4 days
+- 5 days
+- 6 days
+- 1 weeks
+- 2 weeks
+
+## HTTP access control (Cross-Origin Resource Sharing CORS)
+
+Activate Cross-Origin Resource Sharing (CORS) to be able to access Modyo resources from other websites.
+
+By default, custom domains for your sites are included once CORS is enabled. To give you access to external domains, type them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Wildcards are not allowed in this section.
+
+## Content Delivery Token (JWT - JSON Web Token)
+
+This key or _secret_ is used by Modyo to sign users' JWTs in order to access [private content through the API] (/es/platform/content/public-api-reference.html #contenido -private-2).
+
+:: :warning Attention
+Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
+:::
+
+The key or _secret_ has a specific duration in seconds that can be configured in the box below. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very short duration, as it could affect the performance of the platform.
+
+## Two-Step Authentication (2FA)
+
+Two-step authentication adds an extra layer of security to your account. Every time team members sign in, they'll need to enter both their password and a dynamic key provided by the Google Authenticator app from their phones.
+
+Each team member will be able to enable two-step authentication from their profile, but as an administrator, you can also enforce two-step authentication for all team members.
+
+By enforcing two-step authentication for team members, the next time a team member logs in, they will be required to set up their two-step authentication device. Once set up, they will need to sign in using their password and the code provided by _Google Authenticator_.
+
+### Enable two-factor authentication for a user 
+
+Neutralize the risk of compromised passwords using two-factor authentication.
+
+1. Within the user settings, in the top menu, select the 3 dots and click on **Configure Authenticator**.
+2. On the screen that appears, scan the code using your mobile device to link your authenticator to Modyo Platform.
+- A new field will be added with the domain name, your user level, and your username. 
+3. Use the number combination that appears on your mobile phone in the password field and click **Save**.
+
+> If you already have two-factor authentication, the button will say **Delete authenticator**.
+
+### Delete Authenticator for a User
+
+If the authenticator is lost or stolen, it will not be possible to access the account. In this case, a Modyo Platform administrator can help by removing the authenticator linked to the user by following these steps:
+
+1. In the side menu, expand **Settings** and click **Teams**.
+1. Click on the member's name.
+1. In the top bar, click on the more options button **... ** and select **Remove authenticator**.
+
+:::warning Warning
+If the option to force authentication is enabled, the next time the user attempts to log in, the user will need to initialize the authenticator first. When you have an active authenticator, the user must log in again.
+:::
+
+## Best Practices
 
 ### Important Concepts
 * **Limit access:** Reduce the chances of a malicious actor gaining access to the system.
@@ -70,47 +154,6 @@ This section will allow you to set the password security policy for team members
 
 When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
 
-### Share resources across different domains
+## Report a vulnerability
 
-In this section we can activate Cross Origin Resource Sharing (CORS), so that Modyo resources can be accessed from other websites that are not necessarily secure.
-
-When you enable this option, you will need to specify the domains (separated by comma and no slash at the end) that you want to allow access from to share resources with your site. For example:
-`http://api.mydomain.com, http://mysubdomain.mydomain.com, http://mydomain.com`
-
-### Content Delivery Token (JWT - JSON Web Token)
-
-After configuring CORS, the platform will give you a key or _secret_ to be able to decode users' JWTs in order to access [private content via the API](/en/platform/content/public-api-reference.html#private-content).
-
-:::warning Warning
-The key or _secret_ is used by Modyo to sign users' JWTs. Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
-:::
-
-The key or _secret_ has a specific time duration in seconds that can be configured in the box labeled _Content delivery token TTL_. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very small duration, as this could affect the performance of the platform.
-
-### Two-Step Authentication
-
-Two-step authentication adds an extra layer of security to your account. Each time team members sign in, they'll need to enter both their password and a dynamic key provided by the _Google Authenticator_ app on their phones.
-
-You can download the app for your phone with the following links:
-
-* Android: [Google Authenticator on Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
-* iOS: [Google Authenticator on the Apple App Store](https://apps.apple.com/us/app/google-authenticator/id388497605)
-
-Each team member will be able to enable two-step authentication from their profile, but as an administrator, you can also enforce two-step authentication for all team members.
-
-By enforcing two-step authentication for team members, the next time a team member logs in, they will be required to set up their two-step authentication device. Once set up, they will need to sign in using their password and the code provided by _Google Authenticator_.
-
-#### Delete Authenticator for a User
-
-If the authenticator is lost or stolen, it will not be possible to access the account. In this case, a Modyo Platform administrator can help by removing the authenticator linked to the user by following these steps:
-
-1. In the side menu, expand **Settings** and click **Teams**.
-1. Click on the member's name.
-1. In the top bar, click on the more options button **... ** and select **Remove authenticator**.
-
-:::warning Warning
-If the option to force authentication is enabled, the next time the user attempts to log in, the user will need to initialize the authenticator first. When you have an active authenticator, the user must log in again.
-:::
-
-### Vulnerability Report
 If you think you found a security vulnerability in Modyo, please help us by reporting the problem. Modyo has secure and confidential security incident reporting channels through our [support center](https://support.modyo.com/hc/en-us) or email <a href="mailto:security@modyo.com">security@modyo.com</a>.
