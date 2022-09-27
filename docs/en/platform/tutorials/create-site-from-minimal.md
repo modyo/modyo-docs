@@ -29,7 +29,7 @@ Within our Modyo account, the first thing we're going to do is create our new si
 
 Within Minimal we have some examples of pre-made code to speed up development. 
 
-In this case we will use the <b> Hero </b> by copying the code with the button <b> Copy to clipboard </b> and pasting code code into an HTML widget in the Home that we'll call Hero.
+In this case we will use the <b>Hero</b> by copying the code with the button <b>Copy to clipboard</b> and pasting code code into an HTML widget in the Home that we'll call Hero.
 
  <img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the Hero html code."/> 
 
