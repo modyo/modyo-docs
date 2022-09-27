@@ -2,71 +2,71 @@
 search: true
 ---
 
-# Crear un Sitio con el Template Minimal
+# Create a Site with the Minimal Template
 
-## Introducción
+## Introduction
 
-Te damos la bienvenida a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfoca en la creación de un sitio utilizando los componentes que Modyo ofrece del template Minimal.
+Welcome to a new tutorial from the Modyo training series. This tutorial focuses on creating a site using the components that Modyo offers from the Minimal template.
 
-## Requisitos Previos
+## Prerequisites
 
-Necesitas tener conocimientos de:
+You need to have knowledge of:
 
 - HTML
 - CSS
-- La plataforma Modyo
+- Modyo's platform
 
-## Paso 1: Crear sitio en Modyo
+## Step 1: Create site in Modyo
 
-Dentro de nuestra cuenta de Modyo lo pimero que vamos a hacer es crear nuestro nuevo sitio: 
+Within our Modyo account, the first thing we're going to do is create our new site: 
 
-1. Desde el menu lateral, expande <b>Channels</b> y haz click en <b>Sites</b>. 
-2. Haz click en <b>+ New Site</b> y llenamos los valores:
+1. From the side menu, expand <b> Channels </b> and click on <b> Sites </b>. 
+2. Click on <b> + New Site </b> and fill in the values:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the end result from this tutorial."/>
+ <img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the end result from this tutorial."/> 
 
-## Paso 2: Copiar código de ejemplos en el Home 
+## Step 2: Copy sample code to the Home 
 
-Dentro del Minimal tenemos algunos ejemplos de código pre hecho para acelerar el desarrollo. 
+Within Minimal we have some examples of pre-made code to speed up development. 
 
-En este caso utilizaremos el <b>Hero</b> copiando el código con botón <b>Copy to clipboard</b> y pegando código código en un widget HTML en el Home que llamaremos Hero.
+In this case we will use the <b> Hero </b> by copying the code with the button <b> Copy to clipboard </b> and pasting code code into an HTML widget in the Home that we'll call Hero.
 
-<img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the Hero html code."/>
+ <img src="/assets/img/tutorials/create-site-from-minimal/hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the Hero html code."/> 
 
-Luego apretamos preview para ir viendo nuestro Home y repetimos el proceso con las los ejemplos de Text and Image block, Cards, y Testimonial, lo que nos dará como resultado 4 widgets de esta manera:
+Then we press preview to see our Home and repeat the process with the examples of Text and Image block, Cards, and Testimonial, which will result in 4 widgets like this:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the four widgets for our site."/>
+ <img src="/assets/img/tutorials/create-site-from-minimal/widgets.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the four widgets for our site."/> 
 
-Y un sitio así en el preview:
+And a site like this in the preview:
 
-<img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the preview of the site."/>
+ <img src="/assets/img/tutorials/create-site-from-minimal/site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the preview of the site."/> 
 
-## Paso 3: Agregar titulos
+## Step 3: Add titles
 
-Para agregar títulos a nuestros pisos, vamos a agregar un nuevo widget de html y lo posicionamos entre los widgets de Hero y Text and image y otro entre los widgets Text and image y Cards.
- 
-En este nuevo widget pegaremos el siguiente código:
+To add titles to our floors, we're going to add a new html widget and position it between the Hero and Text and image widgets and another one between the Text and Image and Cards widgets.
+
+In this new widget we'll paste the following code:
 
 ```html
 <div class="mt-5 pt-5 mb-5 text-center">
-	<h2 class="font-weight-bold">Lorem ipsum dolor sit amet</h2>
-	<p>Consectetur adipiscing elit. Integer sapien ante, efficitur in ante vitae, gravida tincidunt mauris.</p>
+    <h2 class="font-weight-bold">Lorem ipsum dolor sit amet</h2>
+    <p>Consectetur adipiscing elit. Integer sapien ante, efficitur in ante vitae, gravida tincidunt mauris.</p>
 </div>
 ```
 
-Nuestro testimonial no tendrá título pero sí debemos separar el piso y para esto le agregamos una clase mt-5 al primer div que tiene el widget.
+Our testimonial will not have a title but we must separate the floor and for this we add an mt-5 class to the first div that has the widget.
 
-## Paso 4: Crear Space y Types
+## Step 4: Create Space and Types
 
-Ahora que ya tenemos un sitio con cuatro bloques, debemos llenarlos de contenido, para lo que utilizaremos la aplicación de contenidos de Modyo, generando cuatro Tipos de contenidos; Hero, Text and image, Cards, y Testimonial, siguiendo estos pasos:
- 
-1. Desde el menú lateral, haz click en el logo para regresar al menú principal.
-1. Expande **Content**, y haz click en **Espacios**.
-1. Haz click en **+ Nuevo Espacio** y llena los siguientes valores:
+Now that we have a site with four blocks, we must fill them with content, for which we will use the Modyo content application, generating four types of content; Hero, Text and image, Cards, and Testimonial, following these steps:
+
+1. From the side menu, click on the logo to return to the main menu.
+1. Expand **Content**, and click **Spaces**.
+1. Click **+ New Space** and fill in the following values:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/space.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the values for the new space."/>
 
-En el cual vamos a crear cuatro Tipos de contenido:
+In which we are going to create four Content Types:
 
 <table>
  <tr>
@@ -107,13 +107,13 @@ En el cual vamos a crear cuatro Tipos de contenido:
  </tr>
 </table>
 
-Para crear un tipo de contenido, sigue estos pasos:
+To create a content type, follow these steps:
 
-1. Dentro de nuestro Espacio, en el menú lateral, haz click en **Tipos**.
-1. Haz click en <b>+ Nuevo Tipo</b> y llena los valores del Nombre, Identificador, y Cardinalidad.
-1. Repite estos pasos para el resto de los Tipos de contenido.
+1. Within our Space, in the side menu, click on **Types**.
+1. Click on <b> + New Type </b> and fill in the values for Name, Identifier, and Cardinality.
+1. Repeat these steps for the rest of the Content Types.
 
-Luego agregamos los campos para cada Tipo:
+Then we added the fields for each Type:
 
 #### Hero 
 
@@ -263,16 +263,16 @@ Luego agregamos los campos para cada Tipo:
  </tr>
 </table>
 
-## Paso 5: Crear Contenidos
+## Step 5: Create Content
 
-Una vez creados los Tipos de contenido, estamos listos para crear el contenido.
+Once the Content Types are created, we're ready to create the content.
 
-1. Dentro del Espacio, en el menú lateral, haz click en <b>Entradas</b>.
-1. Haz click en <b>+ Nueva Entrada</b>, selecciona el Tipo <b>Hero</b> y para el nombre utilizaremos un texto genérico a modo de ejemplo.
- 
+1. Inside Space, in the side menu, click on <b> Entries </b>.
+1. Click on <b> + New Entry </b>, select Type <b> Hero </b> and for the name we'll use generic text as an example.
+
 <img src="/assets/img/tutorials/create-site-from-minimal/new_hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the New Entry window."/>
- 
-y llenamos los siguientes campos con:
+
+and fill in the following fields with:
 
 <table>
  <tr>
@@ -321,7 +321,7 @@ y llenamos los siguientes campos con:
  </tr>
 </table>
 
-Luego de tener los campos listos, guardamos, y publicamos la entrada. Ahora clona la entrada utilizando los puntos al lado del botón de publicar y cambiamos los siguientes campos:
+After having the fields ready, we save, and publish the entry. Now clone the entry using the dots next to the publish button and we change the following fields:
 
 <table>
  <tr>
@@ -346,9 +346,9 @@ Luego de tener los campos listos, guardamos, y publicamos la entrada. Ahora clon
  </tr>
 </table>
 
-Luego guardamos y publicamos.
+Then we save and publish.
 
-Una vez terminado el proceso con los dos Heros de nuestro sitio, vamos a repetir el proceso para los otros tipos de contenido, partiremos con el de <b>Text image block</b>:
+Once we have finished the process with the two Heros on our site, we are going to repeat the process for the other types of content, we will start with the one from <b> Text image block </b>:
 
 #### Text image block
 
@@ -383,7 +383,7 @@ Una vez terminado el proceso con los dos Heros de nuestro sitio, vamos a repetir
  </tr>
 </table>
 
-Clonamos la entrada y cambiamos los campos:
+We cloned the entry and changed the fields:
 
 <table>
  <tr>
@@ -457,7 +457,7 @@ Clonamos la entrada y cambiamos los campos:
  </tr>
 </table>
 
-Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
+Again, we cloned the entries of the type Cards and changed the fields:
 
 <table>
  <tr>
@@ -553,147 +553,147 @@ Nuevamente clonamos las entradas del tipo Cards y cambiamos los campos:
  </tr>
 </table>
 
-No olvides publicar todas las entradas, y recuerda que seleccionando el checkbox puedes publicar todas al mismo tiempo con las <b>Bulk Actions</b>.
+Don't forget to publish all the entries, and remember that by selecting the checkbox you can publish them all at the same time with the <b> Bulk Actions </b>.
 
-Al finalizar tendremos una vista así:
+At the end we will have a view like this:
 
 <img src="/assets/img/tutorials/create-site-from-minimal/entries.png" style="max-width: 600px;margin: auto 0;" alt="This image shows the Entries window with all the entries created during this tutorial."/>
 
-## Paso 6: Conectar nuestro Sitio con Content
+## Step 6: Connect Our Site to Content
 
-Liquid es un lenguaje para accesar el contenido que haz creado en tus Espacios y desplegarlo en tus Sitios. Para realizar esta conexión, sigue estos pasos:
+Liquid is a language for accessing the content you've created in your Spaces and displaying it on your Sites. To make this connection, follow these steps:
 
-1. Desde el menú lateral, haz click en el logo para regresar al menú principal.
-1. Expande **Channels**, y haz click en **Sitios**.
-1. Selecciona tu sitio y luego haz click en Home.
-1. Haz click en el widget Hero y reemplaza el código:
+1. From the side menu, click on the logo to return to the main menu.
+1. Expand **Channels**, and click **Sites**.
+1. Select your site and then click Home.
+1. Click on the Hero widget and replace the code:
 
 #### Hero
 
 ```html
 {% assign entries = spaces['my-space'].types['hero'].entries | paginated: 2 %}
 <div id="exampleHero" class="carousel slide hero_slide" data-ride="carousel">
-	<div class="carousel-inner">
-		{% for entry in entries %}
-		<div class="carousel-item {% if forloop.first %}active{% endif %}">
-			<div class="row align-items-center">
-				<div class="col-6">
-					<h2 class="display-4 font-weight-bold">{{entry.meta['name']}}</h2>
-					<p class="lead">{{entry.fields['description']}}</p>
-					<a class="btn btn-primary" href="{{entry.fields['Button link']}}" role="button">{{entry.fields['Button text']}}</a>
-				</div>
-				<div class="col-6">
-					<a class="carousel-control-prev" href="#exampleHero" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous slide</span>
-					</a>
-					<a class="carousel-control-next" href="#exampleHero" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next slide</span>
-					</a>
-					<figure class="overflow-hidden rounded m-0 my-2">
-						<img src="{{entry.fields['image'].url}}" alt="People working at a table">
-					</figure>
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+    <div class="carousel-inner">
+        {% for entry in entries %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <h2 class="display-4 font-weight-bold">{{entry.meta['name']}}</h2>
+                    <p class="lead">{{entry.fields['description']}}</p>
+                    <a class="btn btn-primary" href="{{entry.fields['Button link']}}" role="button">{{entry.fields['Button text']}}</a>
+                </div>
+                <div class="col-6">
+                    <a class="carousel-control-prev" href="#exampleHero" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous slide</span>
+                    </a>
+                    <a class="carousel-control-next" href="#exampleHero" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next slide</span>
+                    </a>
+                    <figure class="overflow-hidden rounded m-0 my-2">
+                        <img src="{{entry.fields['image'].url}}" alt="People working at a table">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 ```
 
->El código Liquid, denotado por {{ }} o {% %}, manda a llamar las entradas hero realizadas previamente en Content. Luego abre un ciclo en donde despliega los campos del Hero junto con HTML para generar un efecto 'carrusel'.
+>The Liquid code, denoted by {{ }} or {% %}, calls for hero entries made previously in Content. Then it opens a cycle where it displays the Hero fields together with HTML to generate a 'carousel' effect.
 
 #### Text and image
 
 ```html
 {% assign entries = spaces['my-space'].types['text-image-block'].entries | paginated: 2 %}
 <div>
-	{% for entry in entries %}
-	<div class="row d-flex justify-content-center align-items-center mb-4">
-		<div class="col-12 col-md-4 {% if forloop.last %}order-2 order-md-1{% endif %}">	
-			<figure class="m-0">	
-				<img src="{{entry.fields['Image'].url}}" alt="People working" class="rounded shadow">	
-			</figure>	
-		</div>	
-		<div class="col-12 col-md-6 py-3 {% if forloop.first %}order-1 order-md-2{% endif %}">	
-			<h3 class="font-weight-bold">{{entry.meta['name']}}</h3>	
-			<p>{{entry.fields['Description']}}</p>	
-		</div>	
-	</div>
-	{% endfor %}
+    {% for entry in entries %}
+    <div class="row d-flex justify-content-center align-items-center mb-4">
+        <div class="col-12 col-md-4 {% if forloop.last %}order-2 order-md-1{% endif %}">    
+            <figure class="m-0">    
+                <img src="{{entry.fields['Image'].url}}" alt="People working" class="rounded shadow">   
+            </figure>   
+        </div>  
+        <div class="col-12 col-md-6 py-3 {% if forloop.first %}order-1 order-md-2{% endif %}">  
+            <h3 class="font-weight-bold">{{entry.meta['name']}}</h3>    
+            <p>{{entry.fields['Description']}}</p>  
+        </div>  
+    </div>
+    {% endfor %}
 </div>
 ```
 
->Este código manda a llamar las entradas de tipo 'text-image-block', itera sobre ellas utilizando un for y las despliega de forma distinta dependiendo si es texto o imagen usando un if. 
+>This code calls inputs of type 'text-image-block', iterates over them using a for and displays them differently depending on whether they are text or image using an 'if' sentence. 
 
 #### Cards
 
 ```html
 {% assign entries = spaces['my-space'].types['cards'].entries | paginated: 3 %}
 <div class="row">
-	{% for entry in entries %}
-	<div class="col-12 col-md-4">
-		<div class="card border rounded overflow-hidden">
-			<figure class="m-0">
-				<img src="{{entry.fields['Image'].url}}" alt="People working at a table">
-			</figure>
-			<figcaption class="card-body">
-				<h3 class="h5 card-title font-weight-bold">{{entry.meta['name']}}</h3>
-				<p class="card-text">{{entry.fields['Description']}}</p>
-				<a href="{{entry.fields['Button link']}}" class="btn btn-primary">{{entry.fields['Button text']}}</a>
-			</figcaption>
-		</div>
-	</div>
-	{% endfor %}
+    {% for entry in entries %}
+    <div class="col-12 col-md-4">
+        <div class="card border rounded overflow-hidden">
+            <figure class="m-0">
+                <img src="{{entry.fields['Image'].url}}" alt="People working at a table">
+            </figure>
+            <figcaption class="card-body">
+                <h3 class="h5 card-title font-weight-bold">{{entry.meta['name']}}</h3>
+                <p class="card-text">{{entry.fields['Description']}}</p>
+                <a href="{{entry.fields['Button link']}}" class="btn btn-primary">{{entry.fields['Button text']}}</a>
+            </figcaption>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 ```
 
->Este código genera un efecto de Cards, desplegando la información de las entradas creadas previamente. 
+>This code generates a Cards effect, displaying information from previously created entries. 
 
 #### Testimony
 
 ```html
 {% assign testimony = spaces['my-space'].types['testimony'].entry %}
 <div class="quote py-5 mt-5">
-	<div class="d-flex justify-content-center">	
-		<span class="text-primary d-flex justify-content-center align-items-center">	
-			<svg
-					 width="70"
-					 height="70"
-					 viewBox="0 0 30 30"
-					 fill="none"
-					 xmlns="http://www.w3.org/2000/svg"
-					 >	
-				<path d="m29.448298,27.368956l0,-12l-8,0c0,-4.41 3.586,-8 8,-8l0,-4c-6.617,0 -12,5.383 -12,12l0,12l12,0z" fill="currentColor" />	
-				<path d="m12.606922,27.368956l0,-12l-8,0c0,-4.41 3.586,-8 8,-8l0,-4c-6.617,0 -12,5.383 -12,12l0,12l12,0z" fill="currentColor" />	
-			</svg>	
-		</span>	
-	</div>	
-	<div class="pt-4">	
-		<h3 class="text-dark h1 m-0 font-weight-bold text-center">{{testimony.fields.testimony}}</h3>	
-		<hr class="my-5 col-3">	
-		<figure class="mx-auto rounded-circle overflow-hidden border border-light" style="width: 50px;">	
-			<img src="{{testimony.fields['image'].url}}" alt="{{testimony.fields['Name']}} Avatar">
-		</figure>	
-		<h4 class="m-0 text-center">{{testimony.fields['Name']}}</h4>	
-		<small class="d-block text-muted text-center">{{testimony.fields['Subtext']}}</small>	
-	</div>	
-</div>	
+    <div class="d-flex justify-content-center"> 
+        <span class="text-primary d-flex justify-content-center align-items-center">    
+            <svg
+                     width="70"
+                     height="70"
+                     viewBox="0 0 30 30"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     >  
+                <path d="m29.448298,27.368956l0,-12l-8,0c0,-4.41 3.586,-8 8,-8l0,-4c-6.617,0 -12,5.383 -12,12l0,12l12,0z" fill="currentColor" />    
+                <path d="m12.606922,27.368956l0,-12l-8,0c0,-4.41 3.586,-8 8,-8l0,-4c-6.617,0 -12,5.383 -12,12l0,12l12,0z" fill="currentColor" />    
+            </svg>  
+        </span> 
+    </div>  
+    <div class="pt-4">  
+        <h3 class="text-dark h1 m-0 font-weight-bold text-center">{{testimony.fields.testimony}}</h3>   
+        <hr class="my-5 col-3"> 
+        <figure class="mx-auto rounded-circle overflow-hidden border border-light" style="width: 50px;">    
+            <img src="{{testimony.fields['image'].url}}" alt="{{testimony.fields['Name']}} Avatar">
+        </figure>   
+        <h4 class="m-0 text-center">{{testimony.fields['Name']}}</h4>   
+        <small class="d-block text-muted text-center">{{testimony.fields['Subtext']}}</small>   
+    </div>  
+</div>  
 ```
 
-Luego de que previsualizamos nuestros cambios y estamos conformes con el resultado, el siguiente paso será publicar nuestro Home.
+After we preview our changes and are happy with the result, the next step is to publish our Home.
 
-## Conclusiones
+## Conclusion
 
-¡Felicidades! Haz creado tu primer sitio creado directo desde la plantilla Minimal y conectado a Content utilizando Liquid.
- 
-Encuentra más información sobre Modyo:
-- [Modyo Channels](/es/platform/channels)
-- [Sitios](/es/platform/sites)
-- [Pages](/es/platform/channels/pages)
-- [Liquid](/es/platform/channels/liquid-markup)
-- [Modyo Content](/es/platform/content)
-- [Espacios](/es/platform/content/spaces)
-- [Tipos de contenido](/es/platform/types)
-- [Entradas](/es/platform/types/entries)
+Congratulations! You've created your first site created directly from the Minimal template and connected to Content using Liquid.
+
+Find out more about Modyo:
+- [Modyo Channels](/en/platform/channels)
+- [Sites](/en/platform/channels/sites)
+- [Pages](/en/platform/channels/pages)
+- [Liquid](/en/platform/channels/liquid-markup)
+- [Modyo Content](/en/platform/content)
+- [Spaces](/en/platform/content/spaces)
+- [Content Types](/en/platform/content/types)
+- [Entries](/en/platform/content/entries)
