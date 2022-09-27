@@ -98,7 +98,7 @@ The keys managed by AWS KMS are generated using the AES 256 standard and have an
 
 Modyo configures separate AWS KMS keys for each resource. By default, the complete generation and management of the encryption keys is delegated to AWS. If a customer wishes, externally managed keys can be added to the service, using the AWS CloudHSM module.
 
-### Steps to apply
+### Activation
 The at-rest encryption provided by the AWS KMS managed keys is active by default in all AWS S3 object repositories and data volumes in AWS RDS and OpenSearch, so it does not require any activation. 
 
 If you require the addition of an externally managed key, you must use the AWS CloudHSM service, you must notify the Modyo Support Center with a request ticket, stating the reason and how you plan to manage the external key (implementation, renewals, etc.).
