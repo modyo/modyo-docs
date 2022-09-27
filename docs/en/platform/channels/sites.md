@@ -54,7 +54,7 @@ To make a joint publication on your site, follow these steps:
 1. On the Summary screen, click **Publish**.
 1. Here you can see all the pending changes, select everything you want to publish and click **Publish**.
 
-:: :tip Tip
+::: tip Tip
 If you click on Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
 :::  
 
@@ -79,7 +79,7 @@ Deleting is irreversible, be careful when executing this action. When you press 
 
 #### Google Tag Manager
 
-By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of sites. These snippets are found in the _snippets>general_ section of [Templates] (/es/platform/channels/templates.html) and are embedded in both the _head_ snippet and the _home_ and _base_ views.
+By default, the new Modyo themes include the snippets needed to automatically inject Google Tag Manager scripts into both the _head_ and _body_ of sites. These snippets are found in the _snippets>general_ section of [Templates](/en/platform/channels/templates.html) and are embedded in both the _head_ snippet and the _home_ and _base_ views.
 
 
 If you have the latest theme available and still don't have these snippets, you can go to the "Themes" section in the upper right and click on the "Load templates" option in the "additional options". This option will load all the templates that have been added to the theme, but are not present in the version you have installed.
@@ -206,7 +206,7 @@ The purpose of the manifest is to indicate how you want a browser to display you
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages where the PWA is developed, through [Templates] (/es/platform/channels/templates.html), in the ``head`` snippet.
+The manifest must be implemented on each of the pages where the PWA is developed, through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
 
 The manifest can be created and modified in the following field, allowing you to add changes without having to leave the view.
 
