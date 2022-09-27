@@ -62,7 +62,7 @@ To create a Menu, follow these steps:
 Your menu is currently public but no call is sent. You need to use a template for it to be displayed on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu** and is called in the `base` template using <pre v-pre> `{% snippet 'shared/general/menu'%}` </pre>.
 :::
 
-For more information on how to create and publish a custom menu, see [Creating a Mega Menu] (/es/platform/tutorials/how-to-create-a-menu.html).
+For more information on how to create and publish a custom menu, see [Creating a Mega Menu](/en/platform/tutorials/how-to-create-a-menu.html).
 
 **Main Actions**
 
