@@ -15,7 +15,7 @@ These are the options available for setting a password policy for Modyo Platform
 - Require at least one capital letter (A - Z)
 - Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
 
-## Session Expiration Policy
+## Session expiration policy
 
 Select a value in this option so that the platform automatically expires a session when it is inactive. You can select from these values:
 
