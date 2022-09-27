@@ -6,7 +6,7 @@ search: true
 
 Segments is the ideal Modyo feature to manage users in bulk if you need them to receive specific information.
 
-These allow you to group your customers into different segments and facilitate communication through emails or notifications.
+These allow us to group end users into different Segments and thus facilitate the sending of emails or notifications. This is achieved through nested filters to achieve the desired grouping. Segments can be applied to the Content and Channels modules to show certain content to your users.
 
 ### About the interface
 
