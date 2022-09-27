@@ -543,4 +543,4 @@ Lo que entrega un response como el siguiente:
 
 Finalmente, la API siempre retornará la primera página (`current_page: 1`) de recursos agrupados por páginas de 10 elementos (`per_page: 10`) de manera predeterminada.
 
-Para conocer más acerca de las diferentes maneras de hacer uso de APIs, ve [API & SDKs](es/platform/content/public-api-reference).
+Para conocer más acerca de las diferentes maneras de hacer uso de APIs, ve [API & SDKs](/es/platform/content/public-api-reference).

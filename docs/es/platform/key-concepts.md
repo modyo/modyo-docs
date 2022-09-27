@@ -69,7 +69,7 @@ Las siguientes definiciones corresponden a términos comunmente utulizados entre
 
 #### Generales
 
-* [**CORS**](es/platform/core/security.html#control-de-acceso-http-cross-origin-resource-sharing-cors): Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
+* [**CORS**](/es/platform/core/security.html#control-de-acceso-http-cross-origin-resource-sharing-cors): Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
 * **Cuenta**: Es el punto de acceso a todas las funcionalidades de Modyo.
 * [**Equipo**](/es/platform/core/roles.html#equipo): Son todos los usuarios que tienen acceso al admin de Modyo y se les puede asignar roles y permisos.
 * [**Integraciones**](/es/platform/core/integrations): Es la forma de delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.

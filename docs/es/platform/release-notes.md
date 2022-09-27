@@ -603,7 +603,7 @@ Se arregla bug con filtro con 100 o más tags en el admin
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- [Scheduler](es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
+- [Scheduler](/es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
 - Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
 - [Nuevo modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa): Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación.
 - Actualización de la versión de ElasticSearch a 7.4.
