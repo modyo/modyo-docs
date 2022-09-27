@@ -16,7 +16,7 @@ At the top of the view, you will find the publication status of the menu:
 
 - **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
 - **Pending changes**: You will see this status if there is already a published version, but there are pending changes to be published in your editable version.
-- **In review**: You will see this status when [team review](/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **In review**: You will see this status when [team review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
 - **Approved**: This status appears when [Computer Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If it is in this state, your templates can now be published.
 
 On the right side of the upper bar, you will find the latest publication date and the available actions:
