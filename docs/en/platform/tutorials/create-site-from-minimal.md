@@ -267,7 +267,7 @@ Then we added the fields for each Type:
 
 Once the Content Types are created, we're ready to create the content.
 
-1. Inside Space, in the side menu, click on <b> Entries </b>.
+1. Inside Space, in the side menu, click on <b>Entries</b>.
 1. Click on <b> + New Entry </b>, select Type <b> Hero </b> and for the name we'll use generic text as an example.
 
 <img src="/assets/img/tutorials/create-site-from-minimal/new_hero.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the New Entry window."/>
