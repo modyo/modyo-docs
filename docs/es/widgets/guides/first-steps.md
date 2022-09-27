@@ -10,7 +10,7 @@ Inicializa y publica un widget localmente utilizando Modyo CLI.
 
 Esta guía fue creada para usuarios que ya tienen conocimiento de los siguientes temas:
 - [Modyo Platform](/es/platform/)
-- Tener [acceso a la API administrativa](es/platform/core/api.html#bearer-token)
+- Tener [acceso a la API administrativa](/es/platform/core/api.html#bearer-token)
 
 ### Instalar Modyo-CLI
 
@@ -81,7 +81,7 @@ modyo-cli push miWidget -b build -d dist -n miHost -v 9 -u "https://test.miModyo
 ```
 
 :::tip Tip
-Para saber más acerca de como obtener un token de acceso a la API, ve [API de administración](es/platform/core/api.html)
+Para saber más acerca de como obtener un token de acceso a la API, ve [API de administración](/es/platform/core/api.html)
 
 Para saber todas las opciones disponibles para `modyo-cli push`, ve [Modyo-CLI Push](/es/platform/channels/widgets.html#modyo-cli-push-name)
 :::

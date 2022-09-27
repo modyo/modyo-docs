@@ -5,6 +5,213 @@ search: true
 # Notas del release
 
 ## 9.2
+
+### 9.2.17 - 20 de septiembre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se arregla la consistencia visual de permisos y roles
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega el identifiador a la búsqueda en el listado de espacios
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrige la exportación de usuarios
+
+
+### 9.2.16 - 23 de agosto de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Se actualiza el framework a la última versión (7.0.2)
+* Se actualiza ruby a la última versión (3.1)
+* Se actualiza dependencias
+* Mejoras del producto
+* Mejoras de seguridad
+* Se agrega opción para deshabilitar las rutas a sitemap.xml y robots.txt
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se arregla la falta jquery.min.js al cargar el widget manager
+* Se arregla inconsistencia de la publicación cuando está habilitado la revisión en equipo
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se corrige un problema al subir un algunos svgs al asset manager
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se extiende al API administrativa de notificaciones para marcar mensajes como leidos
+
+
+### 9.2.15 - 27 de julio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Se incluye alternative_id en index, export y búsqueda de órdenes de Commerce
+
+
+### 9.2.14 - 04 de julio de 2022
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrige autorizaciones de access tokens en reinos con multiples sitios
+
+
+### 9.2.13 - 28 de junio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se previene 404 en setup otp
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige error en la edición inicial de widgets duplicados en una Widget Page
+* Se  Agrega flag para la habilitacion de categorias en path para content pages 
+* Se corrige despliegue de opcion de Targets en Pages
+* Se corrige problema al eliminar de favicon y apple icon de un sitio, el cual afectaba a sus copias
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se corrige filtro sort que fallaba al ordenar entradas por campos de texto
+* Se corrige problema con campo multiline, que quedaba con un caracter al eliminar todo el texto
+* Se corrige error al seleccionar entries en content list, donde solo se agregaban las seleccionadas en la pagina actual
+
+
+### 9.2.12 - 06 de junio de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige enlace de los breadcrumbs conel scope del stage
+* Se corrige el overflow de la columna nombre en el listado de sitios
+* Se mejora la plantilla base del service worker
+* Se mejora la experiencia al generar un manifest para el PWA 
+* Se corrige listado de diferencias sin cambios despues de la creación de un stage
+
+
+### 9.2.11 - 27 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+
+### 9.2.10 - 23 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se agrega reCAPTCHA para usuarios administradores
+* Se corrige error al actualizar el avatar de usuarios importados con información faltante
+* Se agrega expiración de sesión de administradores
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige error al sincronizar content pages migradas en sitios con stages
+* Se excluye el ID de google tag manager al crear un nuevo stage
+ 
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se corrigen links a documentación en segmentos
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega soporte liquid en campos de texto al crear contenido
+
+
+### 9.2.9 - 03 de mayo de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se controla error 500 a nivel de aplicación al usar verbos HTTP inválidos
+* Se parámetro para tolerancia en segundos para access token (OIDC access token clock skew)
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se corrige problema al publicar árbol de páginas con 3 niveles
+* Se corrige problema con url full de entradas por defecto
+* Se corrige escapado de meta tags rompe interpolación con Liquid
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se incorpora el uso de reCAPTCHA para Realms 
+
+
+### 9.2.8 - 8 de abril 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en experiencia con Service Worker
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Colecciones se pueden referenciar usando brackets en Liquid SDK
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se arregla problema con el envío de campañas
+
+### 9.2.7 - 10 de marzo de 2022
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Actualizar version liquidjs
+* Actualizar nombre de categorias no se refleja en entries
+* Atributos del request drop no considera el slug de la entry en content pages
+* Migración IntegrationsToIdps falla por nuevo atributo openidc_userinfo_enabled
+* Cuentas duplicadas en onboarding
+* Direct authentication en Realm con Google lleva a error 404
+* Implementar medio de pago Cybersource 
+* Agregar tags en New Asset modal
+
+
+### 9.2.6 - 22 de febrero de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Nuevos correos transaccionales de la plataforma
+* User Info opcional en integración OIDC
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se arregla a drop entry.meta.url
+* Se arregla eliminación de entradas enlazadas
+* Se realizan mejoras en editor multilínea
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se arregla problema al cambiar realm de un site
+* Se arregla problema con editor de campañas
+* Se arregla problema con cuentas con sitio por defecto sin realm
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se redirigen rutas terminadas en slash para mejorar SEO
+* Se previene reflected XSS en drop de request
+* Se previene contaminación con rutas inválidas
+
+### 9.2.5 - 27 de enero de 2022
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Se incorporan Content Pages
+* Se arreglan problemas con barra de preview
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Mejoras y correcciones en editor de Entries
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se agrega soporte de SCIM para usuarios administradores
+
 ### 9.2.4 - 30 de diciembre de 2021
 <Badge text="Core" type="core" vertical="middle"/>
 * Se arregla problema que contaminaba el caché al realizar previsualizaciones
@@ -396,7 +603,7 @@ Se arregla bug con filtro con 100 o más tags en el admin
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- [Scheduler](es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
+- [Scheduler](/es/platform/core/key-concepts.html#programado): Programar un cambio en el futuro sin la necesidad de despublicar lo que ya está publicado.
 - Modyo Lite: Accede a una versión de Modyo que incluye el Core y las aplicaciones de Content y Channels.
 - [Nuevo modo vista previa](/es/platform/core/key-concepts.html#modo-vista-previa): Un modo vista previa que te permite visualizar en conjunto contenido, páginas, templates, widgets y navegación.
 - Actualización de la versión de ElasticSearch a 7.4.
