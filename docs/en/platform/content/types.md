@@ -4,11 +4,12 @@ search: true
 
 # Content types
 
+
+Content Types are the basis for your Entries. Types define what fields and validations are required for Inputs, with more than 15 types of fields.
+
+These Content Types can be assigned a cardinality, a variable that defines how many Entries can exist for this Type. Languages can be added to the repository and you can generate multi-language entries, protected from one place. You can also create Users, with various roles and permissions, achieving a division of labor that we call Team Review.
+
 <img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
-
-Types in Modyo are tools that allow us to structure content templates to build entries, with more than 15 types of fields.
-
-With types, you can avoid having to build a piece of content in the same format many times. You can establish a predetermined style that will allow you to optimize time and promote consistency.
 
 ## About the Interface
 
@@ -23,7 +24,7 @@ To reorder it, you just need to click on the symbols on one side of each categor
 There are four categories by which you can reorder:
 
 - **Name**
-- **UID**
+- **Identifier (UID) **
 - **Creation Date**
 - **Updated on** Date
 
@@ -33,17 +34,16 @@ If you want to enter any Type, you must click on its Name to open the correspond
 
 Create a content type which will function as a template to future entries.
 
-1. From the main menu, click Content, then select Type.
-2. Click new Type.
+1. From the main menu, click **Content**, then select **Types**.
+2. Click **+ New Type**.
 3. Type the name and identifier (UID).
 4. Select the type's cardinality.
+5. Click **Create**.
 
-:::tip Tip
-It is considered good practice to write the format of what will be published in the UID, such as videos, posts, etc. 
+:: :tip Tip
+We recommend writing the format of the entries within the identifier, for example, videos, posts, etc. This way, any teammate will know what type of content it is and can use it as a template for their posts without generating a new one.
 
-By doing so, any user of the platform will know what kind of content it is and can use it as a template without having to generate a new one.
-
-Selecting single cardinality means that only one entry of that type can exist. Selecting multiple cardinality won't limit you in the number of entries.
+Cardinality refers to the number of entries that can exist for this type of content. Single Cardinality means that only one such entry can exist. Selecting multiple cardinality doesn't limit you on the number of entries.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
