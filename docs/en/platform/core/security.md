@@ -4,7 +4,7 @@ search: true
 
 # Security
 
-At Modyo, everything related to security is very important to us. That's why we created this page that will guide you through everything you need to ensure a Modyo installation. While our cloud solutions, Modyo Cloud and Enterprise Cloud, provide an excellent level of security by default, platform administrators can take additional protective measures to increase the security of their organizations. This guide presents the most important recommendations for achieving this.
+At Modyo, everything related to security is very important to us. That's why we created this page that will guide you through everything you need to secure a Modyo installation. While our cloud solutions, Modyo Cloud and Enterprise Cloud, provide an excellent level of security by default, platform administrators can take additional protective measures to increase the security of their organizations. This guide presents the most important recommendations for achieving this.
 
 ## Password Policy
 
