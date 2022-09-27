@@ -6,7 +6,7 @@ search: true
 Development components include all the access and tools required by a team of developers to collaborate and work securely on [micro frontends](.. /resources/microfrontends.md) initiatives and [microservices](.. /resources/microservices.md).
 
 ## Developer Access
-Developer Access is the starting point for starting to use Modyo Connect services. Once enabled, the developer will be able to interact with the [created repositories](#repositorio -de-code) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
+Developer Access is the starting point for starting to use Modyo Connect services. Once enabled, the developer will be able to interact with the [created repositories](#code-repository) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
 
 When activating developer access, consider the following:
 - The GitHub account must have active second-factor authentication protection, otherwise it will not comply with Modyo's security policy and will not be able to access the repositories
@@ -18,7 +18,7 @@ Developer Access is activated by means of a request ticket in the [Modyo Support
 - The developer's name and email
 - Indicate whether or not the developer is authorized to request changes to the components of the service
 
-:: warning Important
+:::warning Important
 Once access to a developer has been created, it will be the customer's responsibility to inform when it should be removed from authorized repositories. This is done through a requirement ticket in the [Modyo Support Center](https://support.modyo.com).
 :::
 
@@ -37,14 +37,14 @@ The activation of a Code Repository is done by means of a request ticket in the 
 ## Continuing Integration
 The continuous integration configuration is used to automate common processes within the software development cycle. Among these processes, we mainly find code inspection, dependency review, artifact packaging, deployment, among others.
 
-Modyo uses the continuous integration systems of GitHub Enterprise and Amazon. All activities related to the development cycle such as inspections, revisions or generation of intermediary artifacts are performed on GitHub Actions. All automations referring to [micro frontends](.. /resources/microfrontends.md) are also performed on GitHub Actions, how to deploy to the Modyo platform using the Modyo CLI. Activities related to the generation of container-based artifacts and their deployments on AWS ECS are performed using AWS CodePipeline.
+Modyo uses the continuous integration systems of GitHub Enterprise and Amazon. All activities related to the development cycle such as inspections, revisions or generation of intermediary artifacts are performed on GitHub Actions. All automations referring to [micro frontends](.. /resources/microfrontends.md) are also performed on GitHub Actions, how to deploy to Modyo Platform using the Modyo CLI. Activities related to the generation of container-based artifacts and their deployments on AWS ECS are performed using AWS CodePipeline.
 
-:: warning Important
+:::warning Important
 Integrations based on AWS CodePipeline will be migrated to GitHub Actions during the first half of 2023.
 :::
 
 ### Activation
-The activation of Continuous Integration on a [repository](#repositorio -de-code) is done by means of a request ticket in the [Modyo Support Center](https://support.modyo.com) where you must indicate:
+The activation of Continuous Integration on a [repository](#code-repository) is done by means of a request ticket in the [Modyo Support Center](https://support.modyo.com) where you must indicate:
 - Code repository on which automation should be run
 - Type of automation you want to implement
 - Specific instructions to consider when implementing automation (Example: specific build script, special parameters, etc.).
