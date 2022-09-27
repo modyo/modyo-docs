@@ -9,7 +9,7 @@ A Space is a repository where team members can define different structures calle
 
 All elements can be used inside or outside **Modyo Platform** through its public API or in the creation of a Site in the Channels module.
 
-From Modyo, you can configure access from different sources so that the service that consumes the API can interpret it.
+From Modyo, you can configure access from different origins so that the service that consumes the API can interpret it.
 
 Spaces also allow us to organize content, for better order and easier distribution.
 
