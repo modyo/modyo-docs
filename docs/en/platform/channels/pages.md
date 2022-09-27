@@ -57,7 +57,7 @@ To create a new page, follow these steps:
 1. Customize the page depending on the type: adding or editing widgets for Widget Page or editing the Index and Show for Content Page.
 1. Once finished, click **Publish**.
 
-To learn about the types of widgets you can add, see [Widgets] (/es/platform/channels/pages.html #pagina -de-widget)
+To learn about the types of widgets you can add, see [Widgets](/en/platform/channels/pages.html#widget-page)
 
 To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page)
 
