@@ -57,7 +57,7 @@ The `_theme.scss` file is used for:
 ```
 
 :::tip Tip
-You can find a list of available mixins [here](https://gist.github.com/jCrip/4d76a90a4a5c569d9300e633ea8b52c7) and a detailed explanation [here](https://gist.github.com/anschaef/d7552885c0e1f127cf8830d3bbf6e4b1)
+You can find a list of available mixins [here](https://gist.github.com/jCrip/4d76a90a4a5c569d9300e633ea8b52c7) and a detailed explanation [here](https://luisramirez.dev/como-usar-los-mixins-de-bootstrap-4-con-scss/)
 :::
 
 #### Variables
