@@ -40,7 +40,7 @@ Create a content type which will function as a template to future entries.
 4. Select the type's cardinality.
 5. Click **Create**.
 
-:: :tip Tip
+::: tip Tip
 We recommend writing the format of the entries within the identifier, for example, videos, posts, etc. This way, any teammate will know what type of content it is and can use it as a template for their posts without generating a new one.
 
 Cardinality refers to the number of entries that can exist for this type of content. Single Cardinality means that only one such entry can exist. Selecting multiple cardinality doesn't limit you on the number of entries.
