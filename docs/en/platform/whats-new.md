@@ -14,7 +14,7 @@ In this new platform version, we highlight the following improvements and new fe
 
 ### New Modyo Content application
 
-The Modyo Content application now serves content through its [API and SDKs](/platform/content/public-api-reference.html) as a _headless_ solution, and also serves decoupled content within Modyo Channels through [Liquid](/platform/channels/liquid-markup.html).
+The Modyo Content application now serves content through its [API and SDKs](/en/platform/content/public-api-reference.html) as a _headless_ solution, and also serves decoupled content within Modyo Channels through [Liquid](/platform/channels/liquid-markup.html).
 
 ### Asset Manager
 
