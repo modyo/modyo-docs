@@ -23,7 +23,7 @@ Within our Modyo account, the first thing we're going to do is create our new si
 1. From the side menu, expand <b> Channels </b> and click on <b> Sites </b>. 
 2. Click on <b> + New Site </b> and fill in the values:
 
- <img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the end result from this tutorial."/> 
+<img src="/assets/img/tutorials/create-site-from-minimal/new-site.png" style="max-width: 500px;margin: auto 0;" alt="This image shows the end result from this tutorial."/>
 
 ## Step 2: Copy sample code to the Home 
 
