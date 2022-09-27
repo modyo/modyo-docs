@@ -167,5 +167,5 @@ When you reindex any of your types, the model that was previously reindexed will
 :::
 
 ::: warning Warning
-Note that depending on the [cache settings you have in your space](/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
+Note that depending on the [cache settings you have in your space](/en/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::
