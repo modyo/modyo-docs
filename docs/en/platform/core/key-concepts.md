@@ -117,7 +117,7 @@ To make a joint publication on your site, follow these steps:
 1. On the Summary screen, click **Publish**.
 1. Here you can see all the pending changes, select everything you want to publish and click **Publish**.
 
-:: :tip Tip
+:::tip Tip
 If you click on Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
 :::
 
