@@ -69,7 +69,7 @@ The following definitions correspond to commonly used terms between the differen
 
 #### General
 
-* [**CORS**](/en/platform/core/security.html#share-resources-across-different-domains): Cross Origin Resource Sharing - Allows sharing of resources across different domains.
+* [**CORS**] (es/platform/core/security.html #control -de-acceso-http-cross-origin-resource-sharing-cors): Cross Origin Resource Sharing - Allows you to share resources in different domains.
 * **Account**: This is where you can access all the features that Modyo has to offer.
 * [**Team**](/en/platform/core/roles.html#team): All users who have access to the Modyo admin and can be assigned roles and permissions.
 * [**Integrations**](/en/platform/core/integrations/): This is where you can delegate or federate the authentication process of users or team members.
@@ -104,7 +104,6 @@ The following definitions correspond to commonly used terms between the differen
 * [**PWA**](/en/platform/channels/sites.html#pwa): Allows you to configure the _serviceworker_ and manifest of your site to be able to use it offline.
 * [**SEO**](/en/platform/channels/sites.html#seo): Allows you to configure the way indexing robots see your site.
 * [**Templates**](/en/platform/channels/templates.html): They are the base of your site and define the basic structure of your site's pages.
-* [**Content views**](/en/platform/channels/templates.html#content-views): This is where your site and the content entries meet, allowing you to define a base page so that all the entries of the same type are seen under the same view.
 * [**Widget**](/en/platform/channels/widgets.html): A reusable feature package that contains HTML, JavaScript and CSS that can be used in different pages.
 
 #### Modyo Customers
