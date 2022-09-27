@@ -6,12 +6,53 @@ search: true
 
 ## 9.2
 
+### 9.2.17 - September 20, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Visual consistency of permissions and roles fixed
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* The identifier is added to the search in the space list
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* User export is fixed
+
+
+### 9.2.16 - August 23, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* The framework is updated to the latest version (7.0.2)
+* Ruby is updated to the latest version (3.1)
+* It updates dependencies
+* Product Improvements
+* Security enhancements
+* Added option to disable routes to sitemap.xml and robots.txt
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* The missing jquery.min.js is fixed when loading the widget manager
+* Publication inconsistency is fixed when team review is enabled
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixed a problem when uploading some svgs to the asset manager
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Extends to the Notifications Administrative API to mark messages as read
+
 
 ### 9.2.15 - July 27, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Alternative_id included in Commerce index, export, and order search
+
 
 ### 9.2.14 - July 04, 2022
 
@@ -380,7 +421,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * Resolved a bug that caused the code editor to freeze against liquid-specific syntaxes.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* [New Liquid filters] (/en/platform/channels/liquid-markup.html#standard-filters) are added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256, and base64_encod.
+* [New Liquid filters](/en/platform/channels/liquid-markup.html#standard-filters) are added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256, and base64_encod.
 * Page indexing is improved so that results that contain text of the referenced content can now be found on pages.
 
 ### 9.1.14 - April 1, 2021
@@ -418,7 +459,7 @@ Fix bug with tag filter with 100 or more tags in admin
 - Multiple security enhancements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* [New filters are added to the Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries) of content that allow you to select, filter and [sort] (/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
+* [New filters are added to the Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries) of content that allow you to select, filter and [sort](/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * The language in which forms are displayed is associated according to the language of the partner site and not the language of the account
@@ -615,7 +656,7 @@ Fix bug with tag filter with 100 or more tags in admin
 <Badge text="Content" type="content" vertical="middle"/>
 * [Preview](/en/platform/content/entries.html#preview) mode is changed so that by default it always uses editable templates.
 * New views are added when there are no items created in [entries](/en/platform/content/entries.html), [types](/en/platform/content/types.html), [categories](/en/platform/content/entries.html#categories), and [spaces](/en/platform/content/spaces.html).
-* [Search operator](/es/platform/content/public-api-reference.html #filtros) is added to lookup by location fields.
+* [Search operator](/en/platform/content/public-api-reference.html#filters) is added to lookup by location fields.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * An example is added when creating [content views](/en/platform/channels/templates.html#content-views).
