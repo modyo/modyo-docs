@@ -154,7 +154,7 @@ Canonical URL of the entry
 
 The object of the user who authored the post
 
-### [entry.meta](#meta)
+### entry.meta
 
 The object of the metadata of the entry. This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private
 
@@ -1427,7 +1427,7 @@ Boolean to check if the question accepts alternatives.
 
 ```false```
 
-### [question.alternatives](#alternatives)
+### question.alternatives
 
 Array with objects of the alternative type.
 
