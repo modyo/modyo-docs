@@ -111,7 +111,7 @@ To generate and keep TLS certificates up to date, Modyo Connect uses AWS Certifi
 
 Modyo does not have access to the private keys of certificates issued by AWS ACM, nor can they be used in services offered by Amazon within the account configured for the customer.
 
-### Steps to apply
+### Activation
 To request the issuance of a TLS certificate, you must indicate the subdomains to include. The applicant must first ensure that they have access to the DNS management panel for the domain or that they have the time of the person who has the access.
 
 When you request, Modyo will issue a certificate “pending validation” which requires validation through DNS records.
