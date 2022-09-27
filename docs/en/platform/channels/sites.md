@@ -5,7 +5,7 @@ sidebarDepth: 3
 
 # Sites
 
-A site is where the content created in [Content] (/es/platform/content/) and [Channels] (/platform/channels/) are displayed to create your custom digital channel. They include the operation of the entire development, design, and navigation flow.
+A site is where the content created in [Content](/en/platform/content/) and [Channels](/en/platform/channels/) are displayed to create your custom digital channel. They include the operation of the entire development, design, and navigation flow.
 
 <img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
@@ -214,7 +214,7 @@ The manifest can be created and modified in the following field, allowing you to
 If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
-:: :warning Attention
+::: warning Attention
 If you don't customize the manifest but add the path in Templates, it will be blank and will take no action.
 :::
 
