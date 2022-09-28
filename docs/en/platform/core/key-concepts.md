@@ -26,9 +26,9 @@ Each step of this process takes the item through different states, which are rec
 
 To activate the team review, follow these steps:
 
-1. From the side menu in Modyo Platform, select a space or site.
-2. Expand **Space/Site Settings** and select **Computer Review**.
-3. Click on **Enable team review**.
+1. From the side menu in Modyo Platform, select a Space or Site.
+2. Expand **Space/Site Settings** and select **Team Review**.
+3. Click **Enable team review**.
 
 <img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -80,7 +80,7 @@ When the team review option is enabled, and after saving the changes, you will s
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
 
-When you submit for review, the bar will change status to show that conditions are missing or you do not have sufficient permission.
+When you submit for review, the bar will change status to show that conditions are missing or you do not have the required permissions.
 
 When you click on it, you will be able to see the requirements to publish the item in the right side section.
 
@@ -92,7 +92,7 @@ To the right of each reviewer you can find the status of their revision, showing
 
 Anyone who can access the edit view of the item will see an **Approve** button under the list of reviewers.
 
-Those who have the necessary permission will see it active and can click it to approve the item. Those who do not have permission, will see the button disabled.
+Those who have the necessary permission will see it active and can click on it to approve the item. Those who do not have permission, will see the button disabled.
 
 When an item is approved, the approval of that user will be registered, showing a green check to the right of his name in the list of reviewers.
 
@@ -108,7 +108,7 @@ When a team member has left a comment or an action is performed on the item, a n
 
 On the joint review and publication screen, you can see all the pending changes to be published on your site. You have the option to see what exactly changed by clicking on the **View** button. 
 
-### Publish together
+### Joint Publication
 
 To make a joint publication on your site, follow these steps:
 
@@ -188,12 +188,12 @@ Follow these steps to revert to a version published in a Post:
 
 1. From Modyo Platform, expand Content and select Spaces.
 1. Select your Space and then click on the Entry you want to version.
-1. Click on **Differences**.
-1. In the mode that appears, select the version you want to roll back and then click **Rollback to this version**.
+1. Click **Differences**.
+1. In the window, select the version you want to rollback to and then click **Rollback to this version**.
 
 When you apply any of the actions, the version selected on the left is always taken, so that if you reset it, the version on the left will be brought to the editable version, and if you roll back, the version on the left will be brought to the published version.
 
-:: :tip Tip
+:::tip Tip
 Versioning can be done in the following modules:
 - In Content: **Entries**.
 - In Channels: **Pages**, **Navigation**, **Templates**, and **Widgets**.
@@ -207,7 +207,7 @@ In this case, the backup takes the place of the editable version, so all existin
 
 In this case, the backup is returned directly to the **published** version of the element, without touching the editable version.
 
-This is useful when something was published by mistake and it is necessary to return to one of the stable versions, so that you can work on resolving the problems that the version with errors may have had.
+This is useful when something was published by mistake and it is necessary to return to one of the stable versions, so that you can work on resolving the problems in the version with errors.
 
 :::danger Danger
 Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
