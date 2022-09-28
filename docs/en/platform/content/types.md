@@ -43,7 +43,7 @@ Create a content type which will function as a template to future entries.
 ::: tip Tip
 We recommend writing the format of the entries within the identifier, for example, videos, posts, etc. This way, any teammate will know what type of content it is and can use it as a template for their posts without generating a new one.
 
-Cardinality refers to the number of entries that can exist for this type of content. Single Cardinality means that only one such entry can exist. Selecting multiple cardinality doesn't limit you on the number of entries.
+Cardinality refers to the number of entries that can exist for this type of content. Single Cardinality means that only one such entry can exist. With multiple cardinality there is no limit to the number of entries.
 :::
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
@@ -162,10 +162,10 @@ In this tab, you can see the name of the type, along with its UID. The UID is im
 - **Reindex type**: Allows you to reindex the model if you encountered a problem with your public API.
 - **Cancel reindexation**: If there is already a reindexation in progress, you can cancel the process by clicking on this button.
 
-::: warning Warning
+:::warning Warning
 When you reindex any of your types, the model that was previously reindexed will remain available until the new reindex is complete. At the end of the new reindexation, the old index will be overwritten with the new index.
 :::
 
-::: warning Warning
+:::warning Warning
 Note that depending on the [cache settings you have in your space](/en/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
 :::
