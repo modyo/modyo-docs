@@ -41,11 +41,11 @@ Site settings allow you to configure different site options, for example showing
 
 ## Joint Review and Publication
 
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Differences modal"/>
 
-On the joint review and publication screen, you can see all the pending changes to be published on your site. You have the option to see what exactly changed by clicking on the **View** button. 
+On the joint review and publication screen, you can see all the pending changes to be published on your site. You have the option to see what exactly changed by clicking the **View** button. 
 
-### Publish together
+### Joint Publication
 
 To make a joint publication on your site, follow these steps:
 
@@ -54,9 +54,9 @@ To make a joint publication on your site, follow these steps:
 1. On the Summary screen, click **Publish**.
 1. Here you can see all the pending changes, select everything you want to publish and click **Publish**.
 
-::: tip Tip
-If you click on Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
-:::  
+:::tip Tip
+If you click Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
+:::
 
 ### General
 
@@ -190,7 +190,7 @@ Here is a short list of actions you can take to improve on-page SEO:
 Here is a short list of actions you can take to improve off-page SEO:
 
 - Promote content through social media and distribution channels
-- Foster alliances and cooperation with authoritative mediums on the subject
+- Foster alliances and cooperation with experts on the subject
 
 ### PWA
 
@@ -214,7 +214,7 @@ The manifest can be created and modified in the following field, allowing you to
 If you change the manifest, remember to save it with the **Save** button at the top of the screen so you don't lose the changes.
 :::
 
-::: warning Attention
+:::warning Attention
 If you don't customize the manifest but add the path in Templates, it will be blank and will take no action.
 :::
 
@@ -336,7 +336,7 @@ When using stages, custom PWAs, and redirects will be disabled. You can only use
 To add a new stage to your site, follow these steps:
 
 1. From the side menu, click **Channels**, then select your **Site**.
-1. Expand **Site Settings**, click on **Stages**.
+1. Expand **Site Settings**, click **Stages**.
 1. Click **+ New Stage**.
 1. Select what will be the base of the stage and type the name.
 1. Click **Create**.
@@ -357,7 +357,7 @@ Once you've finished your tests on your stage, make sure you sync them to `main`
 To synchronize a stage, follow these steps:
 
 1. From the side menu, click **Channels**, then select your **Site**.
-1. In **Overview**, in the**Synchronization** section, select the stage you want to synchronize.
+1. In **Overview**, in the **Synchronization** section, select the stage you want to synchronize.
 1. In the window that appears, you will see all the items with differences between the selected stages. Click _View_ to see the details of what changed.
 1. Select the items you want to sync.
 1. Click **Synchronize**.
@@ -375,7 +375,7 @@ You will receive an alert if you try to sync changes that haven't been published
 
 You can review and publish multiple elements of a site in a single view. To review the differences of an element, select it from the left list and the differences between the editable and published version will appear in the right section of the view.
 
-If you want to publish multiple items in one step, you must press the “Publish” button from the pages, navigation, widgets, or templates and you must mark all the items you want to publish in the list and then press the button to publish again.
+If you want to publish multiple items in one step, you must press the "Publish" button from the pages, navigation, widgets, or templates and you must mark all the items you want to publish in the list and then press the button to publish again.
 
 :::warning Warning
 All items that have pending changes to be published will appear in the list, if any item does not appear in the list, it's because it has no changes yet to publish.
@@ -396,7 +396,7 @@ To do this, the administrator who created the site must manually assign team mem
 #### Add a new member
 To add a new member to your site, follow these steps:
 
-1. From the Modyo Platform main menu, expand Channels, and click your site.
+1. From the Modyo Platform main menu, expand Channels, and click your Site.
 1. Expand **Site Settings** and click **Team Members**.
 1. Click the **+ Add Member** button.
 1. Find the user you want to add to your site and select a role.
@@ -417,7 +417,7 @@ The available roles are:
 
 Developers are in charge of the structural development of resources, design and the creation of or integration with content. Everything developers do has to go to review, or be directly published by a higher role.
 
-This user cannot publish, delete, revert to previous versions of resources (Rollback), or change settings.
+This user cannot publish, delete, rollback to previous versions, or change settings.
 
 There is a variation of the Developer role with the name "CLI". In addition to developer permissions, this "Developer CLI" role has the ability to push widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
 
