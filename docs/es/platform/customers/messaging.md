@@ -190,7 +190,7 @@ Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente 
 :::warning Atención
 Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
-Para automatizar la inserción del Footer, lee [Configuración de Customers](/es/platform/customers/realms.html#configuracion-de-customers)
+Para automatizar la inserción del Footer, lee [Configuración de Customers](/es/platform/customers/realms.html#emails)
 :::
 
 Para grabar la plantilla, debes hacer click en el botón **Guardar**, que se encuentra en la parte superior de la página.
