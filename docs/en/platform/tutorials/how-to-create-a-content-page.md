@@ -8,7 +8,7 @@ search: true
 
 Welcome to a new tutorial in the Modyo training series. This tutorial will focus on [Modyo Channels](/en/platform/channels) where you'll create a custom view to display posts created in [Modyo Content](/en/platform/content).
 
-The link between Content and Channels is one of the most important functionalities when it comes to having dynamic and easy-to-manage sites. In the [Content Creation] Tutorial(/en/platform/tutorials/how-to-create-content), you created the [Space](/en/platform/Content/Spaces) Bank, the [Content Type](/en/platform/Content/Types) Benefits and the [Entries](/en/platform/Content/Entries). You will now use this Type by adding the necessary fields to generate the details according to the Figma design.
+The link between Content and Channels is one of the most important functionalities when it comes to having dynamic and easy-to-manage sites. In the [Content Creation](/en/platform/tutorials/how-to-create-content) Tutorial, you created the [Space](en/platform/content/spaces.html) Bank, the [Content Type](/en/platform/content/types.html) Benefits and the [Entries](/en/platform/content/entries.html). You will now use this Type by adding the necessary fields to generate the details according to the Figma design.
 
 In this tutorial we will continue to use the fictional brand “Dynamic Bank”, but now we focus on creating, previewing, and publishing a **Benefits** entry for the fictional brand “Dynamic Cine”.
 
