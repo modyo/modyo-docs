@@ -83,18 +83,18 @@ If you haven't sent the campaign yet, the values will appear at zero.
 If you sent the campaign by mail, you can find the following metrics:
 
 - **Reach**: People who receive the campaign.
-- **Deliveries**: Number of times the campaign has been sent.
+- **Deliveries**: Number of times the campaign has been sent
 - **Sent**: Total number of emails sent.
-- **Open**: Total number of open mails.
-- **Unique openings**: Total number of unique users who opened the campaign.
-- **Clicks**: Number of times in which a link in the campaign has been clicked.
-- **Unique clicks**: Number of unique users who have clicked on a link in the campaign.
-- **Spam**: Number of users whose mail reached the Spam box.
+- **Open**: Total number of opened emails. 
+- **Unique Openings**: The total number of unique users who opened the campaign.
+- **Clicks**: The number of times in which a link in the campaign has been clicked.
+- **Unique clicks**: Total unique clicks from users who clicked on the campaign.
+- **Spam**: Number of users whose email reached the Spam box.
 
 If you sent the campaign as a Notification, these are your metrics:
 
 - **Reach**: People who receive the campaign.
-- **Deliveries**: Number of times the campaign has been sent.
+- **Sent**: Number of times the campaign was sent.
 - **Sent**: Number of notifications sent.
 - **Open**: Number of open notifications.
 
@@ -106,7 +106,7 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 
 - **Date**: Day and time the delivery was made.
 - **Segments**: Segments to which the specific delivery was made.
-- **Scope**: Number of people who received the delivery.
+- **Reach**: Number of people who received the notification.
 - **Sent**: Number of emails/notifications sent.
 - **Status**: State in which the shipment is located. They can be: Completed, Pending, Failed, or Canceled.
 
@@ -189,7 +189,7 @@ Under the name is the Template content section, a WYSIWYG editor where you can v
 :::warning Warning
 If you are campaigning, remember to add all legal information required by your country's regulations regarding mass mailing in the footer.
 
-To automate the insertion of the Footer, read [Customers Settings](/en/platform/customers/users.html#customers-settings)
+To automate the insertion of the Footer, read [Realm Configuration](/en/platform/customers/realms.html#emails)
 :::
 
 To save the template, you must click on the **Save** button, located at the top of the page.
