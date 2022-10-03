@@ -154,8 +154,8 @@ To use the snippet within a page on the Modyo platform, you must copy the Javasc
 
 The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
 
-:::warning Warning
-If you use a Modyo site with a custom domain, you'll need to enable resource source sharing [CORS](/en/platform/core/security.html) in your platform settings.
+:::warning Attention
+If you're using a Modyo site with a custom domain, you'll need to activate the option to share resource sources [CORS](/en/platform/core/security.html) in the platform settings.
 :::
 
 ### Notifications
