@@ -202,7 +202,7 @@ In this section, you will find a list of all users who have unsubscribed from em
 
 To find a user, at the top of the screen there is a search bar where you can enter their name or email.
 
-If you click on the name of the user, you can find the [user profile](/en/platform/customers/users.html#users-tab) with all their platform activities.
+If you click on the name of the user, you can find the [user profile](/en/platform/customers/realms.html#users-tab) with all their platform activities.
 
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
