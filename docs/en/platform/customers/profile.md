@@ -23,7 +23,7 @@ When you click on a notification, its full content will be displayed and it will
 
 ### Profile edit
 
-In this section, each user can modify his own profile data, depending on the [customers configuration](/en/platform/customers/users.html#customer-settings), each user will be able to modify:
+In this section, each user can modify the details of their profile, depending on the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration), each user can modify:
 
 * Name
 * Last name
