@@ -77,7 +77,7 @@ The cache is a tool that allows you to reduce the number of requests that reach 
 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600" alt="An image with the cache options available.">
 
-::: warning Warning
+:::warning Warning
 You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "Example", and then publishing the same content with the title "New Example", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
 :::
 
@@ -135,13 +135,13 @@ To add a user to the space, select the primary button **+ New** in the upper rig
 #### Modify Role ####
 You can modify the role of any of the associated users by clicking on their name. In the modal that appears, select a new role. Press **Save** to confirm the change.
 
-::: warning Warning
+:::warning Warning
 The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member's role cannot be deleted.
 :::
 
 #### Remove Team Members ####
 To remove a member of the team from a space, you can select them using the checkbox to the left of their name, and then clicking on the **Delete** button at the bottom of the list.
 
-::: warning Warning
+:::warning Warning
 The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member cannot be deleted.
 :::

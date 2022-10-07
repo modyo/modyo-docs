@@ -543,4 +543,4 @@ This gives us the following result:
 
 Finally, the API will always return the first page (`current_page: 1`) of resources grouped by 10-item pages (`per_page: 10`) by default.
 
-To learn more about the different ways to use APIs, see [APIs & SDKs](en/platform/content/public-api-reference).
+To learn more about the different ways to use APIs, see [APIs & SDKs](/en/platform/content/public-api-reference).

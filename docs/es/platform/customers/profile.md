@@ -23,7 +23,7 @@ Al hacer click en una notificación, se mostrará el contenido completo de esta 
 
 ### Editar de perfil
 
-En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de customers](/es/platform/customers/realms.html#configuracion-de-customers), cada usuario podrá modificar:
+En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de customers](/es/platform/customers/realms.html#configuracion-de-reino), cada usuario podrá modificar:
 
 * Nombre
 * Apellido

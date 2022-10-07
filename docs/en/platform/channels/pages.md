@@ -12,7 +12,7 @@ Content pages are our solution for connecting Content modules with Channels. Her
 
 <img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 
-To edit a page, you must click on the edit icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) or the page name to go to the edit view.
+To edit a page, you must click the edit icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) or the page name to go to the edit view.
 
 In the edit view, you will see a bar across the top, a central grid in the middle, and a sidebar with tabs.
 
@@ -28,7 +28,7 @@ In the top bar, you can find different actions and information:
 You can preview pages as a user without a session or with a Modyo session. For this, it is advised to log in or out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on the diff icon will take you to the diff view of the page which allows you to select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#revert-a-change).
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on the diff icon will take you to the diff view of the page which allows you to select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#reversing-a-change).
 
 :::tip Tip
 If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare with the current editable version. To learn more about differences and backups, review the [versioning](/en/platform/core/key-concepts.html#versioning) section.
@@ -50,8 +50,8 @@ To create a new page, follow these steps:
 
 1. From the Modyo Platform main menu, select **Channels**, and click **Sites**.
 1. Select the site you want to add a new page.
-1. Click on **Pages**.
-1. Click on **+ New Page**.
+1. Click **Pages**.
+1. Click **+ New Page**.
 1. Select the type of page **(Widget or Content)** you want to create.
 1. Fill in the Layout Name, Path, if necessary select the parent layout, and press **Create**.
 1. Customize the page depending on the type: adding or editing widgets for Widget Page or editing the Index and Show for Content Page.
@@ -178,7 +178,7 @@ The index page will display the list of all entries in the content type. Here yo
 
 #### Edit
 
-- **Enable Entry Rate**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible and if an attempt is made to access they will be shown a 404 error.
+- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible and if attempting to access the user will be shown a 404 error.
 - **Layout**: The Layout template that is loaded for the Index.
 - **Custom Meta Tag**: Add custom meta tags to optimize index SEO. This meta tag will only be uploaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
@@ -251,8 +251,8 @@ To access the list of meta tags on the page, you must use the <span v-pre>`{{ pa
 
 To add a new meta tag to your site, follow these steps:
 
-1. In Modyo Platform, from the main menu, expand **Channels**, and click on **Sites**.
-1. Click on your Site.
+1. In Modyo Platform, from the main menu, expand **Channels**, and click **Sites**.
+1. Click your Site.
 1. Expand **Site settings** and click **SEO**.
 1. In the Custom Meta Tags section, click **+ New meta tag**.
 

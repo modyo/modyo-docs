@@ -17,7 +17,7 @@ Un **Widget** es un componente aislado que empaqueta su propio marcado (`html`),
 
 En otras palabras, un **Widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
 
-Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crear tu galería de [Widgets](https://docs.modyo.com/es/platform/channels/Widgets.html) y las herramientas necesarias para poder desarrollarlas usando [modyo-cli](https://www.npmjs.com/package/@modyo/cli) o [SDK de javascript](https://www.npmjs.com/package/@modyo/sdk).
+Modyo provee la plataforma ideal para desplegar este tipo de aplicaciones y crear tu galería de [Widgets](/es/platform/channels/widgets) y las herramientas necesarias para poder desarrollarlas usando [modyo-cli](https://www.npmjs.com/package/@modyo/cli) o [SDK de javascript](https://www.npmjs.com/package/@modyo/sdk).
 
 Modyo es una plataforma agnóstica en cuanto al uso de frameworks javascript, puedes desplegar aplicaciones hechas en **Vue**, **Angular**, **React**, etc. En el caso de los **Widgets financieros**, nosotros principalmente usamos **Vue** (porque opinamos que la curva de aprendizaje es pequeña, tiene un ecosistema vibrante que gana tracción, entre otras cosas), pero eres libre de escoger otra opción.
 

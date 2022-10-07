@@ -105,7 +105,7 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-Under the hood, a filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
+A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
 
 ### Standard Filters
 
@@ -151,7 +151,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `sort` - Sort array items
 * `split` - Split a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 * `strip_html` - Remove html from the string
-* `strip_newlines` - Remove all new lines (\ n) from the string
+* `strip_newlines` - Remove all new lines (\n) from the string
 * `strip` - Removes all blank spaces at both ends of the string.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiply  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
@@ -309,7 +309,7 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 {% endif %}
 ```
 
-### Case/when
+### Case Statement
 
 If you need to evaluate multiple conditions, you can use the "case" statement:
 
@@ -442,7 +442,7 @@ Both are only useful when combined with something like an "if" statement.
 {% endfor %}
 ```
 
-#### Help Variables
+#### Help variables
 
 During each `for` loop, the following help variables are available for additional style needs:
 

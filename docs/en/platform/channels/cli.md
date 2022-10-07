@@ -8,9 +8,9 @@ The Modyo Command Line Interface (CLI) is a command-line tool based on two princ
 
 ### Introduction
 
-First, you need to install the Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some predefined front-end architectural decisions, or use to initialize a widget from catalog if you have access.
+First, you need to install Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some predefined front-end files, or to initialize a widget from the catalog if you have access.
 
-To install the modyo-cli globally you must use one of these options
+To install modyo-cli globally you must use one of these options
 
 ```bash
 $ npm i -g @modyo/cli #via npm
@@ -160,9 +160,9 @@ EXAMPLE
 
 ## `modyo-cli push NAME`
 
-Integrate a widget written in Vue to the selected Modyo Platform site.
+Integrate a widget written in Vue to the selected Site in Modyo Platform.
 
-You'll use a name argument to load the widget into the platform and some required indicators such as `site_base id` or `host` token to identify the Modyo platform that hosts the widget and have an additional indicator to avoid the manual process flow of publishing the widget.
+You'll use a name argument to load the widget into the platform and some required indicators such as `site_base id` or `host` token to identify the Modyo Platform Site that hosts the widget and have an additional indicator to avoid the manual process flow of publishing the widget.
 
 :::warning Warning
 At the moment, Modyo CLI only offers support for widgets made and compiled with the tools included in Vue by default.
@@ -184,7 +184,7 @@ OPTIONS
  -n, —site-host=site-host Host of the site where the widget will be pushed
  -p, —publish Force widget publication
  -t, —token=token (required) Modyo API token
- -u, —account-url=account-url (required) URL of your Modyo account ex (” https://account.modyo.com “)
+ -u, —account-url=account-url (required) URL of your Modyo account ex ("https://account.modyo.com")
  -v, —version=8|9 [default: 9] Version of Modyo platform
 
 EXAMPLE
@@ -194,18 +194,18 @@ EXAMPLE
 
 ### Environment variables
 
-To push to the platform, it is necessary to fill in the required options. For this, there are two options for sending: write the command with options or use a `.env` file. They work the same way but are implemented differently.
+To push to the platform, it is necessary to fill in the required options. For this, there are two options: write the command with options or use a `.env` file. They work the same way but are implemented differently.
 
 #### Environment Variable File
 
 In the widget root directory, create a `.env` file containing the following data:
 
 ```shell
-MODYO_ACCOUNT_URL=https://test.miModyo.com   //URL of the account that owns the site
+MODYO_ACCOUNT_URL=https://test.myModyo.com   //URL of the account that owns the site
 MODYO_VERSION=9   //The Modyo platform version
 modyo_token=AX93... nm3   //The token to access the administrative API
 modyo_site_host=MyHost   //The hostname, located within the platform, in the sites section
-modyo_site_id=Mistage//(Optional) This variable is only used in the case of pushing to a stage. Only one variable MODYO_SITE_HOST or MODYO_SITE_ID is used. The ID is obtained using our /api/admin/sites API endpoint. 
+modyo_site_id=MyStage//(Optional) This variable is only used in the case of pushing to a stage. Only one variable MODYO_SITE_HOST or MODYO_SITE_ID is used. The ID is obtained using our /api/admin/sites API endpoint. 
 modyo_widget_name=MyWidget   //The name of the widget
 modyo_build_command=BUILD   //The command for package.json (default: build) 
 modyo_build_directory=dist   //The path of the widget (default: dist) 
@@ -227,7 +227,7 @@ By using our administration API, you can also push to a stage. Follow these step
 
 ``curl -X GET https://test.modyo.com/api/admin/sites `` 
 
-You will receive a JSON with all the information related to sites. Within this JSON, in the information about your site, there is a *stages* section where you will find the Id necessary to push this stage, through Modyo CLI.
+You will receive a JSON with all the information related to sites. Within this JSON, in the information about your site, there is a *stages* section where you will find the Id necessary to push to this stage, through Modyo CLI.
 
 ```json
 "meta": [...],
@@ -262,7 +262,7 @@ You will receive a JSON with all the information related to sites. Within this J
 2. Open your `.env` environment variable file. The MODYO_SITE_HOST variable should be deleted since we will use the site ID. To push to a stage, you can only use MODYO_SITE_ID. Add the MODYO_SITE_ID as follows:
 
 ```shell
-MODYO_ACCOUNT_URL= https://test.miModyo.com
+MODYO_ACCOUNT_URL= https://test.myModyo.com
 MODYO_VERSION=9
 modyo_token=AX93... nm3
 modyo_widget_name=MyWidget
@@ -275,4 +275,4 @@ MODYO_SITE_ID=2673
 
 ``modyo-cli push MyWidget``
 
-If you want to push to main, you have to modify the MODYO_SITE_ID variable for main or delete this variable and use MODYO_SITE_HOST.
+If you want to push to main, you have to modify the MODYO_SITE_ID variable for main or delete this variable and use MODYO_SITE_HOST instead.

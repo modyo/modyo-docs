@@ -52,14 +52,14 @@ To create a Menu, follow these steps:
 
 1. From the Modyo Platform main menu, expand Channels and click Sites.
 2. Select the site you want to add a new menu.
-3. Click on **Navigation**.
+3. Click **Navigation**.
 4. Click on **+ New Menu**.
 5. Fill in the name and identifier and click on **Create**.
 6. Customize the menu by adding or editing items.
 7. Once finished, click on **Publish**.
 
 ::: tip Tip
-Your menu is currently public but no call is sent. You need to use a template for it to be displayed on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu** and is called in the `base` template using <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
+Your menu is currently public but it is not being called. You need to use a template to  display the menu on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu** and is called in the `base` template using <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
 :::
 
 For more information on how to create and publish a custom menu, see [Creating a Mega Menu](/en/platform/tutorials/how-to-create-a-menu.html).

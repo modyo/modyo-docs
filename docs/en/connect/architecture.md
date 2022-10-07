@@ -2,7 +2,7 @@
 search: true
 ---
 # Architecture
-Modyo operates its critical systems in the [Amazon AWS](https://aws.amazon.com) cloud. With more than 12 years of experience on this platform, and as an Advanced Technology Partner, Modyo has the necessary experience and certified personnel to ensure the continuity, performance and security of its deployments.
+Modyo operates its critical systems in the [Amazon AWS](https://aws.amazon.com) cloud. With more than 12 years of experience on this platform, and as an Advanced Technology Partner, Modyo has the necessary experience and certified personnel to ensure the continuity, performance, and security of its deployments.
 
 <img src="/assets/img/cloud/partner_badge.png" alt="Partner Badge" style="margin-top: 40px;" />
 

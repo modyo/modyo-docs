@@ -78,7 +78,7 @@ If you need to restore a specific value from an entry, you can make use of the "
 
 Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now pending changes and you must publish them. For this, you can use the "Publish" mass action.
 
-## Create and Publish a Post
+## Create and Publish an Entry
 
 To create an entry, follow these steps:
 
@@ -86,7 +86,7 @@ To create an entry, follow these steps:
 2. Select your **Space**.
 3. Click **+ New Entry**.
 4. Select the **Content Type**, **Name**, and **Identifier**. Click **Create**.
-When you click **Create**, the entry edit view opens and you can fill in your content in the required fields based on the content type you chose.
+When you click **Create**, the Edit Entry view opens and you can fill in your content in the required fields based on the Content Type you chose.
 5. Click **Save** and then click **Publish**.
 
 In the next window, **Modyo** asks for the name, slug, and type of post you want to create, which can be created in [Content Types](/en/platform/content/types.html).
@@ -101,7 +101,7 @@ Modyo Platform allows you to add different languages to your Spaces and create E
 
 To translate an entry, follow these steps:
 
-1. From Modyo Platform, in the side menu, expand **Content**, and click on**Spaces**.
+1. From Modyo Platform, in the side menu, expand **Content**, and click **Spaces**.
 1. Click your **Space**.
 1. Expand **Space Settings** and click **Location**.
 1. Select the language you want to add and click **Add Language**.
@@ -118,7 +118,7 @@ To publish an entry, Modyo offers a certification process in order to verify tha
 
 After you finish writing and editing, click the **Save** button in the top right part of the screen, which will save all of your content.
 
-If you click on it, the button will respond in two ways. If you have the Space Administrator permission, you can publish automatically. If you don't, you can't publish the resource, but rather another user with a higher role will have to do it.
+If you click on it, the button will respond in two ways. If you have the Space Administrator permission, you can publish automatically. If you don't have the required permissions, you will not be able to publish the resource and another user with a higher role must do it.
 
 If the Space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
 
@@ -233,10 +233,10 @@ Access the content created in the Content module from anywhere using our API.
 
 Follow these steps to get the uuid of an entry:
 
-1. On the Modyo Platform, in the main menu, select **Content** and click on **Spaces**.
+1. On the Modyo Platform, in the main menu, select **Content** and click **Spaces**.
 1. Select your **Space**.
-1. Click on **Preview**.
-1. Click on **API Link**.
+1. Click **Preview**.
+1. Click **API Link**.
 
 It will take you to a new page where the API is used to get the content of the post. The result will be similar to this:
 

@@ -46,9 +46,9 @@ Note that if a user already has an associated role in a context (account, space,
 
 To create a group, follow these steps:
 
-1. From Modyo Platform, in the side menu, expand **Settings** and click on **Groups**. 
+1. From Modyo Platform, in the side menu, expand **Settings** and click **Groups**. 
 1. Click **+ New Group**.
-1. Type the name, select the Group Role, and add the users who are part of this Group.
+1. Type the name, select the Group Role, and add the users who are a part of this Group.
 
 The group now appears when you try to add a user as a member of the team. All users who belong to the group will be added with the group role, if a role is also selected for the individual member, the role with the most privileges takes precedence.
 
