@@ -4,6 +4,10 @@ search: true
 
 # Desarrollo de Microservicios
 
+:::warning Página en implementación
+Esta página se encuentra actualmente en implementación. Algunas secciones podrían estar vacías o incompletas y el contenido podría cambiar.
+:::
+
 ## Desarrollo
 Modyo Connect puede ser utilizado para el desarrollo de Microservicios, los cuales se despliegan dentro los Microservicios, además de requerir de repositorios y automatizaciones, requerirán de un ambiente de ejecución con contenedores y un API Gateway, el que actuará como barrera de seguridad y puerta de entrada para la funcionalidad presente en ellos.
 
@@ -11,6 +15,10 @@ Modyo Connect puede ser utilizado para el desarrollo de Microservicios, los cual
 El código y estructura inicial del proyecto en el ambiente local del desarrollador debe ser respaldado en un [repositorio de código](../components/development.md#repositorio-de-codigo) provisto por el servicio.
 :::
 
+
+
+
+## Problemas Conocidos
 - Recomendaciones sobre estructura de proyecto (Yeoman, plantilla)
 - Uso de Modyo Commons
 - Swagger para publicación en API Gateway
@@ -26,6 +34,7 @@ El código y estructura inicial del proyecto en el ambiente local del desarrolla
 - Recomendaciones para workflow y máquinas de estado
 - Uso del API administrativa de Modyo
 
+
 ## Buenas Prácticas
 - Recomendaciones de buenas prácticas de estructura de proyecto
 - Recomendaciones de code style
@@ -34,5 +43,5 @@ El código y estructura inicial del proyecto en el ambiente local del desarrolla
 - Uso de bases de datos: pool de conexiones, índices, locks
 - Bloqueo de requests, timeouts
 
-
+## Observabilidad
 

@@ -12,7 +12,7 @@ Al activar el acceso de desarrollador, se debe tener en cuenta lo siguiente:
 - La cuenta de GitHub debe contar con la protección de segundo factor de autenticación activa, de otro modo no cumplirá con la política de seguridad de Modyo y no podrá tener acceso a los repositorios
 - Los usuarios de GitHub se agregan al repositorio como "externos". Modyo no puede garantizar la seguridad de esta cuenta, por lo que cada cliente será responsable de que sus desarrolladores activen otras medidas de seguridad, como el uso de contraseñas seguras y el control de los tokens existentes en cada cuenta
 
-### Activación
+### Pasos para activar
 La activación del Acceso de Desarrollador se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Usuario GitHub del desarrollador (si no posee uno, deberá ser creado previamente)
 - El nombre y correo electrónico del desarrollador
@@ -28,7 +28,7 @@ Los repositorios de código fuente permiten la gestión de todos los aspectos de
 
 Los repositorios de código fuente se implementan sobre el servicio de GitHub Enterprise de Modyo. Se utilizan además las soluciones de Github Security para la inspección de dependencias, SonarCloud para Java y Javascript.
 
-### Activación
+### Pasos para activar
 La activación de un Repositorio de Código se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Tipo de repositorio: micro frontend, microservicio o artefacto intermediario
 - Nombre del repositorio (al nombre indicado, Modyo le aplicará un estándar interno de nombre en el cual se incorporan prefijos y/o sufijos dependiendo del tipo de repositorio)
@@ -43,7 +43,7 @@ Modyo utiliza los sistemas de integración contínua de GitHub Enterprise y Amaz
 Las integraciones basadas en AWS CodePipeline serán migradas a GitHub Actions durante la primera mitad del 2023.
 :::
 
-### Activación
+### Pasos para activar
 La activación de la Integración Contínua sobre un [repositorio](#repositorio-de-codigo) se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Repositorio de código sobre el cual se debe ejecutar la automatización
 - Tipo de automatización que se desea implementar
@@ -55,19 +55,12 @@ Los repositorios de artefactos permiten almacenar paquetes de software de forma 
 
 Modyo implementa repositorios de artefactos dentro de su GitHub Enterprise y la cuenta de Amazon AWS configurada para el cliente. Para el caso de los repositorios intermediarios, cómo librerías de Java o Javascript se utiliza GitHub Registry. Para el caso de los repositorios de contenedores que serán desplegados en la nube de Amazon, se utiliza AWS Elastic Container Registry.
 
-### Activación
+### Pasos para activar
 La activación de un repositorio de artefactos se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Nombre del repositorio de artefacto
 - Tipo de repositorio de artefacto (librería NPM o Maven)
 - Propósito para el cual el repositorio de artefacto será utilizado
 
 
-## Costos y Tiempos de Activación
-| Componente        | Costo en MRUs        | Tiempos de habilitación (aprox)  |
-| ------------- |:-------------:|:-----:|
-|Acceso de Desarrollador|1 MRU|1 día|p
-|Repositorio de Código|1 MRU|1 día|
-|Integración Contínua|1 MRU|1-2 días|
-|Repositorio de Artefactos|1 MRU|1 día|
 
 
