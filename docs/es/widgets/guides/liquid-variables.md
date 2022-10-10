@@ -11,13 +11,13 @@ Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no 
 
 Sigue estos pasos para crear un snippet con variables de Liquid:
 1. En el menú lateral en la plataforma, expande **Channels** y haz click en **Sitios**.
-1. Haz click en tu sitio.
-1. En el menú de tu sitio, haz click en **Plantillas** y selecciona **Snippets**.
-1. Agrega un nuevo **Snippet Personalizado**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
+2. Haz click en tu sitio.
+3. En el menú de tu sitio, haz click en **Plantillas** y selecciona **Snippets**.
+4. Agrega un nuevo **Snippet Personalizado**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
 
 <img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">   
 
-1. Abre el apartado de javascript y pega el código:
+5. Abre el apartado de javascript y pega el código:
 ```js
    window.liquid = {
      lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL',

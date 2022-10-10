@@ -20,7 +20,7 @@ Para aprovechar al máximo el potencial de Bootstrap usamos **SCSS** como pre-pr
 </div>
 ```
 
-### Estructura de archivos y carga de estilos
+## Estructura de archivos y carga de estilos
 
 En la carpeta "src" del proyecto encontraremos una carpeta llamada "scss" que tiene la siguiente estructura:
 
@@ -34,7 +34,7 @@ En la carpeta "src" del proyecto encontraremos una carpeta llamada "scss" que ti
 │   ├── ...
 ```
 
-### Tema
+## Tema
 
 El archivo `_theme.scss` es usado para:
 
@@ -94,7 +94,7 @@ $border-radius: 1.35rem;
 
 <img src="/assets/img/widgets/after.png" alt="Image with the CSS after the edits" width="400">
 
-### Custom
+## Custom SCSS
 
 En el archivo `custom.scss` importa y ordena a todas las otras hojas de estilos que tienes en la carpeta **scss** junto con la base de Bootstrap:
 
@@ -127,7 +127,7 @@ new Vue({
 El `@import 'bootstrap'` de este archivo **sólo** importa bootstrap.js y no los estilos!
 :::
 
-### Estilos de componentes
+## Estilos de componentes
 
 Algunos de los componentes de los Widgets tienen estilos propios y estos se escriben en el mismo componente (`.vue`). De esta manera podemos definir el alcance de estos estilos a nivel del componente sin afectar otras partes del Widget utilizando el atributo `scoped`.
 
@@ -150,13 +150,13 @@ Algunos de los componentes de los Widgets tienen estilos propios y estos se escr
 </style>
 ```
 
-### PurgeCSS
+## PurgeCSS
 
 Cuando estás construyendo un Widget con Bootstrap (u otro framework de estilos) sólo usarás un pequeño conjunto de éste, y se incluirán muchos estilos CSS no utilizados. Aquí es donde entra en juego **PurgeCSS**. PurgeCSS analiza tu contenido y tus archivos CSS. Luego hace coincidir los selectores utilizados en tus archivos con los de tus archivos de contenido y elimina los selectores no utilizados de tu CSS, lo que da como resultado archivos CSS más pequeños.
 
 Los Widgets utilizan [PurgeCSS](https://purgecss.com/) en conjunto con [PostCSS](https://postcss.org/) como parte del flujo de desarrollo. De esta manera logramos optimizar el tamaño de nuestros Widgets.
 
-### PostCSS 
+## PostCSS 
 
 ¿Qué pasa con los estilos **NO** declarados en el contenido, pero qué **SÍ** son usados en el Widget? A veces nos podemos encontrar con algunos problemas de estilos, por ejemplo cuando usamos el componente modal de Bootstrap y no se carga el estilo del `modal-backdrop` ya que este elemento se crea de manera dinámica al abrir el modal; ó cuando usamos librerías de componentes externos en nuestros Widgets donde los estilos de ese componente no se han cargado y no están en el sitio. Esto pasa porque **PurgeCSS** no sabe donde leer el contenido del componente externo.
 

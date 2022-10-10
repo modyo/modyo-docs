@@ -36,7 +36,7 @@ Las recetas que pueden encontrar son:
 Cada una de éstas esta documentada y explicada en el archivo **README.md**
 :::
 
-### Despliegue de un Widget con GitHub Actions
+## Despliegue de un Widget con GitHub Actions
 
 Para poder cargar un Widget utilizando **GitHub Actions** necesitamos la _"receta"_ **Build and Publish** que hace uso del comando [**PUSH**](/es/platform/channels/widgets.html#modyo-cli-push-name) del **Modyo CLI** y para eso necesitamos un **token** que de autorización para hacerlo.
 

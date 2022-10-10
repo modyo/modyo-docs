@@ -22,7 +22,7 @@ Ventajas del patrón de repositorio:
 - Conocimiento de Vue.js y Vuex
 - Conocimiento de JavaScript
 
-#### 1. Crear una carpeta "repositories" 
+## 1. Crear una carpeta "repositories" 
 
 Crea una carpeta "repositories" dentro de la carpeta "src" del Widget. 
 
@@ -30,7 +30,7 @@ Crea una carpeta "repositories" dentro de la carpeta "src" del Widget.
    cd src && mkdir repositories
    ```
 
-#### 2. Crear una carpeta "clients"
+## 2. Crear una carpeta "clients"
 
 Crea una carpeta de "clients" dentro de la carpeta "repositories". Este directorio va a contener los diferentes Clientes HTTP que se comunican con el repositorio, por ejemplo: **ModyoSDK**, Axios, Vue-resource etc.
 
@@ -38,7 +38,7 @@ Crea una carpeta de "clients" dentro de la carpeta "repositories". Este director
    cd repositories && mkdir clients
    ```
 
-#### 3. Crear una archivo `xxClient.js`: 
+## 3. Crear una archivo `xxClient.js`: 
 
 Éste contiene toda la configuración de la API del cliente incluyendo los métodos CRUD, por ejemplo `ModyoClient.js`.
 
@@ -95,7 +95,7 @@ Para **ApiClient** y utilizando [**Axios**](https://github.com/axios/axios), la 
 Si usas varios Clientes HTTP que comparten información para la configuración de estos, puedes crear un archivo config.js
 :::
 
-#### 4. Crear los Repositorios
+## 4. Crear los Repositorios
 
    En estos archivos están las diferentes operaciones de la API que se harán dentro de una característica particular del Widget. En el código definimos y exportamos las peticiones que se necesitan.
 
@@ -138,7 +138,7 @@ Si usas varios Clientes HTTP que comparten información para la configuración d
    Debes importar el archivo del Cliente HTTP correspondiente en todos los repositorios que lo necesiten. En este ejemplo "ModyoClient"
    :::
 
-#### 5. Crear el archivo "RepositoryFactory.js"
+## 5. Crear el archivo "RepositoryFactory.js"
    Creamos un archivo dentro de la carpeta "repositories" llamado `RepositoryFactory` para exportar todos los diferentes repositorios que hemos creado, de esta manera es más fácil usarlos en cualquier parte del Widget.
 
    ```sh
@@ -179,7 +179,7 @@ Hemos terminado de configurar nuestro Patrón de Repositorios. Si seguiste los p
 └── ...
 ```
 
-### ¿Cómo usar el Patrón de Repositorios con Vue.js?
+## ¿Cómo usar el Patrón de Repositorios con Vue.js?
 
 Para agregar los repositorios creados al store de Vuex para después utilizarlos en los components de Vue, sigue estos pasos:
 
