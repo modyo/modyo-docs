@@ -6,7 +6,7 @@ search: true
 
 Crea un objeto javascript en Snippets para poder hacer uso de Liquid en tus Widgets.
 
-Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a esos drops, para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/liquid-markup.html#drops) (variables) de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
+Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a esos drops, para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/drops) (variables) de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
 
 
 Sigue estos pasos para crear un snippet con variables de Liquid:
@@ -26,18 +26,18 @@ Sigue estos pasos para crear un snippet con variables de Liquid:
      },
    };
 ```
-En este snippet creamos un objecto llamado _liquid_ con scope de `window` que contenga el lenguaje y el request path del sitio. Desde nuestro Widget ahora podemos acceder a estos datos utilizando el objeto creado en el paso anterior. Por ejemplo, si quieres obtener las categorías del sitio desde el Widget, puedes hacerlo con: 
+En este snippet creamos un objecto llamado _liquid_ con scope de `window` que contenga el lenguaje y el request path del sitio. Desde nuestro Widget ahora podemos acceder a estos datos utilizando el objeto creado en el paso anterior. Por ejemplo, si quieres obtener los lenguajes del sitio desde el Widget, puedes hacerlo con: 
 
    ```js
-   const categories = window.liquid.lang;
+   const languages = window.liquid.lang;
    ```
 
 :::warning Atención
 En modo de desarrollo no tendremos acceso a este objeto ya que estamos trabajando localmente, es por eso que la recomendación es asignar valores por defecto al definir estas variables localmente.
 :::
 
-```js
-// Esta línea checa si existe el objeto liquid, si existe el objeto, const lang toma el valor de window.liquid.lang, si no existe el objeto, asigna el valor "es-CL" por defecto
+En el siguiente ejemplo, const lang toma el valor de window.liquid.lang, si no existe el objeto, asigna el valor "es-CL" por defecto:
 
+```js
 const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
 ```
