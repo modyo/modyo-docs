@@ -20,7 +20,7 @@ To take full advantage of Bootstrap's potential, we use **SCSS** as a pre-proces
 </div>
 ```
 
-### File structure and style loading
+## File structure and style loading
 
 In the “src” folder of the project we will find a folder called “scss” that has the following structure:
 
@@ -34,7 +34,7 @@ In the “src” folder of the project we will find a folder called “scss” t
 │   ├── ...
 ```
 
-### Topic
+## Topic
 
 The `_theme.scss` file is used for:
 
@@ -94,7 +94,7 @@ $border-radius: 1.35rem;
 
 <img src="/assets/img/widgets/after.png" alt="Image with the CSS after the edits" width="400">
 
-### Custom
+## Custom SCSS
 
 In the `custom.scss` file import and sort all the other stylesheets you have in the **scss** folder along with the Bootstrap base:
 
@@ -127,7 +127,7 @@ new Vue({
 The `@import 'bootstrap'` of this file **only** imports bootstrap.js and not the styles!
 :::
 
-### Component styles
+## Component styles
 
 Some of the Widgets components have their own styles, and these are written in the same component (`.vue`). This way we can define the scope of these styles at the component level without affecting other parts of the Widget using the `scoped` attribute.
 
@@ -150,13 +150,13 @@ Some of the Widgets components have their own styles, and these are written in t
 </style>
 ```
 
-### PurgeCSS
+## PurgeCSS
 
 When you're building a Widget with Bootstrap (or another styling framework) you'll only use a small set of it, and many unused CSS styles will be included. This is where **PurgeCSS** comes into play. PurgeCSS analyzes your content and CSS files. It then matches the selectors used in your files with those in your content files and removes unused selectors from your CSS, resulting in smaller CSS files.
 
 Widgets use [PurgeCSS](https://purgecss.com/) in conjunction with [PostCSS](https://postcss.org/) as part of the development flow. This way we managed to optimize the size of our Widgets.
 
-### PostCSS 
+## PostCSS 
 
 What about styles **NOT** declared in the content, but that **ARE** used in the Widget? Sometimes styling problems occur, for example when the Bootstrap modal component is used and the `modal-backdrop` style does not load because this element is created dynamically when we open the modal; or when we use external component libraries in our Widgets where the styles of that component have not been loaded and they're not loaded on the site. This happens because **PurgeCSS** does not know where to read the contents of the external component.
 
