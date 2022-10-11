@@ -6,6 +6,33 @@ search: true
 
 ## 9.2
 
+### 9.2.18 - 07 de octubre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Actualización de dependencias
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se agrega vista de listado de pages y la posibilidad de alternar entre la vista tabla y listado.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega a la referencia liquid de un asset un link para su edición.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejoras en el flujo OAuth2
+* Se agrega vista de configuración de clientes OAuth2
+* Se agrega vista de overview con información de acciones e información de un realm
+* Se elimina la importación maiva de usuarios
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Se elimina la vista "Data studio"
+
+
 ### 9.2.17 - 20 de septiembre de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
