@@ -6,6 +6,17 @@ search: true
 
 ## 9.2
 
+### 9.2.19 - 12 de octubre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Actualziación licencia froala
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se revierte flujo OAuth con refresh token.
+
+
 ### 9.2.18 - 07 de octubre de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
