@@ -61,11 +61,11 @@ Por ejemplo, test.modyo.com/miSitio/search o test.modyo.com/miSitio/search.json.
 
 ### Search
 
-La plantilla search se encuentra dentro las vistas que ofrecemos por default bajo la categoría Vistas/Search/show. Esta plantilla tiene todo el código Liquid necesario para realizar consultas en tu sitio, incluyendo la información del módulo Content que esté ligado a este sitio.
+La plantilla search se encuentra dentro las vistas que ofrecemos por defecto bajo la categoría Vistas/Search/show. Esta plantilla tiene todo el código Liquid necesario para realizar consultas en tu sitio, incluyendo la información del módulo Content que esté ligado a este sitio.
 
 <img src="/assets/img/channels/sites/searchshow.jpg" alt="The location on where to find the search  template" width="250" />
 
-Por default, al intentar hacer una consulta, los registros son desplegados en forma de lista con su título, descripción, y una liga hacia su dirección. Al igual que cualquier otra plantilla, esta también se puede modificar y extender sus funcionalidades.
+Por defecto, al intentar hacer una consulta, los registros son desplegados en forma de lista con su título, descripción, y una liga hacia su dirección. Al igual que cualquier otra plantilla, esta también se puede modificar y extender sus funcionalidades.
 
 ### Search.json
 
@@ -174,7 +174,7 @@ Estas opciones involucran cierto riesgo para la experiencia del sitio y sus usua
 
 - Cambiar Realm: Este campo despliega el realm de este sitio. Al cambiar de realm, se perderá toda la configuración de privacidad en tus sitios, páginas, y navegación.
 - Estado del Sitio: Cambia el estado del sitio entre tres diferentes opciones. 
-	* Habilitado permite que el sitio sea editable y visible al público, este es el estado por default de un sitio. 
+	* Habilitado permite que el sitio sea editable y visible al público, este es el estado por defecto de un sitio. 
 	* Editable permite que un sitio sea modificado pero no es visible al público. Usuarios necesitan hacer login a Modyo Platform para entrar al sitio. Robots.txt, PWAs, y el manifiesto son deshabilitados en este estado.
 	* Deshabilitado prohibe tanto la edición como la visibilidad de un sitio.
 - Eliminar Sitio: Esta acción manda a llamar asincrónicamente la eliminación del sitio. No se podrá accesar este sitio al iniciar a eliminar el sitio. Todos los elementos que contiene un sitio como las páginas y los widgets también serán eliminados. 
