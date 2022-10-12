@@ -121,5 +121,5 @@ new Vue({
 ```
 
 :::warning Atención
-En un navegador, localStorage *no es* infinito y cualquier usuario lo puede vaciar. Muchos navegadores lo limitan a menos de 10 megabytes por default.
+En un navegador, localStorage *no es* infinito y cualquier usuario lo puede vaciar. Muchos navegadores lo limitan a menos de 10 megabytes por defecto.
 :::

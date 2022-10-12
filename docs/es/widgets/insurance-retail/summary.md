@@ -4,7 +4,7 @@ search: true
 
 # Resumen de pagos
 
-Visualiza todos los pagos de tus cuentas, por default cuenta con una gráfica de actividad de tus pagos previos, una ventana de tus próximos pagos, y tu historial con las boletas de tus pagos. 
+Visualiza todos los pagos de tus cuentas, por defecto cuenta con una gráfica de actividad de tus pagos previos, una ventana de tus próximos pagos, y tu historial con las boletas de tus pagos. 
 
 ### Instalación:
 

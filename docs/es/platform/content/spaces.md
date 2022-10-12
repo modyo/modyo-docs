@@ -110,7 +110,7 @@ Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-
 Al decidir si usar SSL dentro de la plataforma, también se debe considerar lo siguiente:
 
 - **SSL**: Wildcards no son permitidos.
-- **NO SSL**: Wildcards son permitidos, pero Modyo ahora debe ser secure by default.
+- **NO SSL**: Wildcards son permitidos, pero Modyo ahora debe ser secure por defecto.
 
 ### Revisión en Equipo (Team Review)
 

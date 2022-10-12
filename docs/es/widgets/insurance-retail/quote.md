@@ -19,7 +19,7 @@ modyo-cli get modyo-widgets-insurance-quote
 | Funcionalidad | Descripción |
 | ------------- | ----------- |
 | Resumen del vehículo | Vista en donde se llena los datos del vehículo como la patente, marca, modelo, y año. |
-| Resumen personal | Vista para llenar la información de la que solicita el seguro. Se piden los siguientes datos por default: Nombre, Apellidos, RUT, Fecha de nacimiento, Genero, Correo, Número de teléfono. |
+| Resumen personal | Vista para llenar la información de la que solicita el seguro. Se piden los siguientes datos por defecto: Nombre, Apellidos, RUT, Fecha de nacimiento, Genero, Correo, Número de teléfono. |
 | Resumen de los seguros | Vista de los seguros que cumplen con las especificaciones del carro. Al hacer click en <b>Ver detalles y cobertura</b> se abre una ventana lateral en donde se ve a detalle la cobertura del seguro. Al hacer click en <b>Comprar</b> te llevará a la pantalla de la solicitud del seguro.|
 | Solicitud del seguro | En esta pantalla se piden los datos a fondo del vehículo a asegurar y del dueño como el número de serie del motor, domicilio, contactos de emergencia, etc. | 
 

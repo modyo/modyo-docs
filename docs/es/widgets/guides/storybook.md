@@ -14,7 +14,7 @@ Para hacer uso de esta herramienta visita **[nuestro Storybook](https://modyo.gi
 
 Al seleccionar un componente, se abre un demo en la parte central de la pantalla. En la barra superior, podrás elegir entre las siguientes acciones:
 
-- Canvas: Este es el modo default de storybook, un demo interactivo en donde controlas las propiedades desde la pestaña de **Controles**.
+- Canvas: Este es el modo por defecto de storybook, un demo interactivo en donde controlas las propiedades desde la pestaña de **Controles**.
 - Docs: La documentación técnica del componente seleccionado. Puedes ver la siguiente información de las propiedades: **Nombre, Descripción, Default, Control**. Modificando el valor en **Control** también modifica al canvas en tiempo real.
 - Controles de zoom: Modifica el nivel de zoom del viewport en modo Canvas.
 - Color de fondo: Elige entre los diferentes fondos: Claro, Blanco, y Obscuro.
