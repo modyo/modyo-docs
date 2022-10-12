@@ -6,6 +6,33 @@ search: true
 
 ## 9.2
 
+### 9.2.18 - October 07, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Dependency update
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Page list view and the ability to switch between table and list view are added.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* A link is added to the liquid reference of an asset for editing.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Improvements to the OAuth2 flow
+* OAuth2 client configuration view added
+* Overview view is added with information about actions and information about a realm
+* Bulk user import is eliminated
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* The “Data Studio” view is deleted
+
+
 ### 9.2.17 - September 20, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
