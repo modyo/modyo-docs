@@ -1,6 +1,6 @@
 ---
 search: true
-sidebarDepth: 3
+sidebarDepth: 2
 ---
 
 # Sitios
@@ -33,12 +33,6 @@ Al terminar de crear tu sitio, automáticamente será habilitado y serás llevad
 En el índice de sitios, solo verás los sitios en los cuales eres parte del equipo de trabajo con algún rol.
 :::
 
-## Configuración de un Sitio
-
-La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores, y administradores del sitio. Además, puedes modificar opciones que permitan mejorar el SEO y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
-
-<img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
-
 ## Revisión y Publicación Conjunta
 
 <img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
@@ -57,6 +51,45 @@ Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 :::tip Tip
 Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
 :::  
+
+## Buscador
+ 
+Modyo ofrece una manera de hacer consultas en tus sitios y todo el contenido llamado search. Es una [Plantilla](/es/platform/channels/templates) del cual tienes control total desde como se ve y como funciona. Esto se puede accesar con la URL de tu sitio y anexando search o search.json.
+
+Por ejemplo, test.modyo.com/miSitio/search o test.modyo.com/miSitio/search.json.
+
+
+### Search
+
+La plantilla search se encuentra dentro las vistas que ofrecemos por defecto bajo la categoría Vistas/Search/show. Esta plantilla tiene todo el código Liquid necesario para realizar consultas en tu sitio, incluyendo la información del módulo Content que esté ligado a este sitio.
+
+<img src="/assets/img/channels/sites/searchshow.jpg" alt="The location on where to find the search  template" width="250" />
+
+Por defecto, al intentar hacer una consulta, los registros son desplegados en forma de lista con su título, descripción, y una liga hacia su dirección. Al igual que cualquier otra plantilla, esta también se puede modificar y extender sus funcionalidades.
+
+### Search.json
+
+Si es necesario integrar el buscador, también ofrecemos search.json. Es la API que funciona en el backend de la plantilla y es abierto al público. 
+
+Esta API se puede acceder con la URL de tu sitio, agregando un search.json y tu consulta. (e.g test.modyo.com/miSitio/search.json?query=miConsulta)
+
+Las consultas se pueden personalizar de la siguiente manera:
+
+|  Parámetro       |       Descripción    |
+|------------------|----------------------|
+| **Query** | Con el string **query** puedes realizar consultas a la API. Este buscador realiza consultas en todas las páginas publicadas de tu sitio, y en todas las entradas públicas de los espacios ligados al sitio.   |
+| **Per Page** | Este parámetro de paginación te permite separar el número de registros total en el número de páginas que selecciones.|
+| **Current Page** | Con este parámetro eliges la página que deseas consultar en caso de que más de una página de registros exista para la consulta. |
+
+A continuación se muestra un ejemplo de un resultado JSON al utilizar search.json:
+
+<img src="/assets/img/channels/sites/search-result.jpg" alt="The JSON result when you perform a search using search.json" width="250" />
+
+## Configuración de un Sitio
+
+La configuración del sitio te permite abrir las opciones de la plataforma, para que sea vista de distinta manera por los visitantes, clientes, desarrolladores, y administradores del sitio. Además, puedes modificar opciones que permitan mejorar el SEO y la visión de algunos de los datos a los que tiene acceso el público al llegar a las páginas.
+
+<img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
 ### General
 
