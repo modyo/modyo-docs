@@ -178,7 +178,7 @@ The index page will display the list of all entries in the content type. Here yo
 
 #### Edit
 
-- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible and if attempting to access the user will be shown a 404 error.
+- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible. Users attempting to access will be shown a 404 error.
 - **Layout**: The Layout template that is loaded for the Index.
 - **Custom Meta Tag**: Add custom meta tags to optimize index SEO. This meta tag will only be uploaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
