@@ -6,7 +6,7 @@ search: true
 
 **Vuex** helps share data between different components of the same Widget. All Widgets in the catalog use [Vuex](https://vuex.vuejs.org/) to manage the status of a Widget. It also functions as a centralized store for all components, with rules that ensure that the state can be changed predictably.
 
-### The structure of Vuex
+## The structure of Vuex
 
 <img src="/assets/img/widgets/vuex.png" alt="Diagram showing the VueX architecture.">
 
@@ -42,7 +42,7 @@ search: true
 To learn more about implementing and using Vuex, see the [documentation](https://vuex.vuejs.org/guide/) and this free course: [Vuex for Everyone](https://vueschool.io/courses/vuex-for-everyone) by [VueSchool](https://vueschool.io/)
 :::
 
-### Persisting status between Widgets and page reloads
+## Persisting status between Widgets and page reloads
 
 Catalog Widgets, unlike a SPA (Single-page application), are built under the concept of **Micro Frontends**.
 
@@ -121,5 +121,5 @@ new Vue({
 ```
 
 :::warning Warning
-In a browser, LocalStorage is *not* infinite and can be cleared by any user. Many browsers limit it to less than 10 megabytes by default.
+In a browser, LocalStorage *isn't* infinite and any user can empty it. Many browsers limit it to less than 10 megabytes by default.
 :::
