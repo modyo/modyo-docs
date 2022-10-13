@@ -1,6 +1,6 @@
 ---
 search: true
-sidebarDepth: 3
+sidebarDepth: 2
 ---
 
 # Sites
@@ -33,12 +33,6 @@ When you finish creating your site, it will automatically be enabled and you wil
 In the site index, you will only be able to see sites where you are part of the team with a designated role.
 :::
 
-## Site settings
-
-Site settings allow you to configure different site options, for example showing different views depending if the user is a visitor, customer, developer, or site administrators. In addition, you can modify options that allow you to improve SEO and the visibility of some of the data that the public has access to when they reach a page.
-
-<img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
-
 ## Joint Review and Publication
 
 <img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Differences modal"/>
@@ -50,13 +44,52 @@ On the joint review and publication screen, you can see all the pending changes 
 To make a joint publication on your site, follow these steps:
 
 1. In the Modyo Platform main menu, expand **Channels**, and click **Sites**.
-1. Click on your site. 
+1. Click your site. 
 1. On the Summary screen, click **Publish**.
 1. Here you can see all the pending changes, select everything you want to publish and click **Publish**.
 
 :::tip Tip
 If you click Publish on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
 :::
+
+## Search
+
+Modyo offers a way to query your sites and all its content called search. It's a [Template](/en/platform/channels/templates) that you have full control of how it looks and works. This can be accessed with the URL of your site and by appending search or search.json.
+
+For example, test.modyo.com/mysite/search or test.modyo.com/mysite/search.json.
+
+
+### Search
+
+The search template is located in the views that we offer by default under Views/Search/Show. This template has all the Liquid code needed to make queries on your site, including information from the Content module linked to this site.
+
+<img src="/assets/img/channels/sites/searchshow.jpg" alt="The location on where to find the search  template" width="250" />
+
+By default, when you try to make a query, the records are displayed in a list with their title, description, and a link to their address. Like any other template, this can also be modified and extended.
+
+### Search.json
+
+Search.json can also be used to integrate the data to a 3rd-party search engine. It is the API that works on the backend of the template and is open to the public. 
+
+This API can be accessed with the URL of your site, adding a search.json and your query. (e.g. test.modyo.com/mysite/search.json?query=myquery)
+
+Queries can be customized as follows:
+
+|  Parameter       |       Description    |
+|------------------|----------------------|
+| **Query** | With the string **query** you can make a query to the API. This search engine queries all published pages on your site, and on all public entries in the spaces linked to the site.   |
+| **Per Page** | This pagination parameter allows you to separate the total number of records by the number of pages you select.|
+| **Current Page** | With this parameter you choose the page you want to consult if more than one page of records exists for the query. |
+
+The following is an example of a JSON result using search.json:
+
+<img src="/assets/img/channels/sites/search-result.jpg" alt="The JSON result when you perform a search using search.json" width="250" /> 
+
+## Site settings
+
+Site settings allow you to configure different site options, for example showing different views depending if the user is a visitor, customer, developer, or site administrators. In addition, you can modify options that allow you to improve SEO and the visibility of some of the data that the public has access to when they reach a page.
+
+<img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
 ### General
 
