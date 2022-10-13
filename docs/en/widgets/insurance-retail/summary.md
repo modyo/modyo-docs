@@ -4,7 +4,7 @@ search: true
 
 # Payments Summary
 
-View all the payments in your accounts, by default it has a graph of the activity of your previous payments, a window of your next payments, and your history with the slips of your payments. 
+View all the payments in your accounts, by default it has an activity graph of your previous payments, a window of your next payments, and your history with your payment slips. 
 
 ### Installation:
 
