@@ -4,7 +4,7 @@ search: true
 
 # Payment summary <Badge text="Beta" type="warn"/>
 
-The platform offers a widget where you can view all the payments in your accounts, by default it has a history graph with your previous payments, a section for upcoming payments, and your previous payment slips. 
+The platform offers a widget where you can view all the payments in your accounts. By default, it has an activity graph of your previous payments, a window of your upcoming payments, and your history with your payment slips. 
 
 ### Installation:
 
@@ -20,7 +20,7 @@ The features of this widget are as follows:
 
 | Feature           | Description                                           |
 |:------------------------|:------------------------------------------------------|
-| Activity            |  View payment activity of your accounts using filters from: **6, 9, 12, or 18 months ago** and **next 6 and 9 months**. By default it shows the last and average amount of payments to the account.                                                       |
+| Activity            |  View payment activity to your accounts using filters from: **6, 9, 12, or 18 months ago** and **next 6 and 9 months**. By default, it shows the latest amount and the average of payments to the account.                                                       |
 | Upcoming payments       |  Displays the company name, company type, and payment date for payments in the near future. |
 | Recent payments     | Displays the company name, business type, payment amount, payment date, and proof of payment for the account. |
 
