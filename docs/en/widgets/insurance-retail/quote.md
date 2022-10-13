@@ -19,7 +19,7 @@ modyo-cli get modyo-widgets-insurance-quote
 | Features | Description |
 | ------------- | ----------- |
 | Overview of the vehicle | View where vehicle data such as brand, make, model, and year are filled in. |
-| Personal Summary | View to fill out the information for which you are applying for insurance. The following data is requested by default: First Name, Surname, RUT, Date of Birth, Gender, Email, Telephone Number. |
+| Personal Summary | View to fill out the information for which you are applying for insurance. The following information is requested by default: Name, Surname, RUT, Date of Birth, Gender, Email, Telephone Number. |
 | Overview of insurance | View of the insurance that meets the specifications of the car. Clicking <b> View details and coverage </b> opens a side window where you can see the insurance coverage in detail. Clicking <b> Buy </b> will take you to the insurance application screen.|
 | Insurance Application | This screen asks for the details of the vehicle to be insured and the owner such as the serial number of the engine, address, emergency contacts, etc. | 
 
