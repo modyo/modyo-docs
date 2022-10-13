@@ -14,7 +14,7 @@ To use this tool visit **[our Storybook](https://modyo.github.io/financial-commo
 
 When you select a component, a demo opens in the middle of the screen. In the top bar, you can choose between the following actions:
 
-- Canvas: This is the default mode of storybook, an interactive demo where you control the properties from the **Controls** tab.
+- Canvas: This is the default storybook mode, an interactive demo where you control the properties from the **Controls** tab.
 - Docs: The technical documentation of the selected component. You can see the following property information: **Name, Description, Default, Control**. Modifying the value in **Control** also modifies the canvas in real time.
 - Zoom controls: Modify the zoom level of the viewport in Canvas mode.
 - Background Color: Choose between different backgrounds: Light, White, and Dark.
