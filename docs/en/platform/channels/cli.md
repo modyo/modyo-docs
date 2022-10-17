@@ -6,11 +6,11 @@ search: true
 
 The Modyo Command Line Interface (CLI) is a command-line tool based on two principles of acceleration and integration, these principles have a get and push command respectively.
 
-### Introduction
+## Installation
 
 First, you need to install Modyo CLI globally on your local machine to have the `modyo-cli` command available, this will allow you to initialize a project with some predefined front-end files, or to initialize a widget from the catalog if you have access.
 
-To install modyo-cli globally you must use one of these options
+To install modyo-cli globally, you must use one of these options:
 
 ```bash
 $ npm i -g @modyo/cli #via npm
@@ -21,11 +21,21 @@ $ yarn global add @modyo/cli #via yarn
 
 The available commands are:
 
-- [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
-- [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
-- [`modyo-cli autocomplete [SHELL]`](#modyo-cli-autocomplete-shell)
-- [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
-- [`modyo-cli push NAME`](#modyo-cli-push-name)
+- [modyo-cli (-v|--version|version)](#modyo-cli-version)
+- [modyo-cli help [COMMAND]](#modyo-cli-help-command)
+- [modyo-cli autocomplete [SHELL]](#modyo-cli-autocomplete-shell)
+- [modyo-cli get NAME [DIRECTORY]](#modyo-cli-get-name-directory)
+- [modyo-cli push NAME](#modyo-cli-push-name)
+
+## Widget templates
+
+In our widget catalog, we offer templates that contain the bare minimum for uploading a widget to Modyo Platform. The templates can be found in the following frameworks:
+
+- [Vue](https://github.com/modyo/modyo-widgets-template-vue)
+- [Angular](https://github.com/modyo/modyo-widgets-template-angular)
+- [React](https://github.com/modyo/modyo-widgets-template-react)
+
+You can clone these repositories, modify them to your needs, and use modyo-cli to push to the platform. For more information on how to send widgets to Modyo Platform, see [modyo-cli push NAME](#modyo-cli-push-name).
 
 ## `modyo-cli (-v|--version|version)`
 Print the `modyo-cli` version.
