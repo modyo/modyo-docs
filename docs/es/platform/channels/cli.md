@@ -29,7 +29,7 @@ Los comandos disponibles son:
 
 ## Plantillas de widget
 
-En nuestro catálogo de widgets, ofrecemos plantillas que contienen lo mínimo para subir un widget a Modyo Platform. Las plantillas las puedes encontrar en los siguientes lenguajes:
+En nuestro catálogo de widgets, ofrecemos plantillas que contienen lo mínimo para subir un widget a Modyo Platform. Las plantillas las puedes encontrar en los siguientes frameworks:
 
 - [Vue](https://github.com/modyo/modyo-widgets-template-vue)
 - [Angular](https://github.com/modyo/modyo-widgets-template-angular)
