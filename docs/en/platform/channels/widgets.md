@@ -132,3 +132,155 @@ To change the way each widget loads, go to the edit view of the page containing 
 :::warning Warning
 Keep in mind that using very heavy widgets synchronously can be the cause of bad performance in your pages, you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
 :::
+
+## Use Internationalization (i18n)
+
+With i18n you can configure and add new languages to your widgets.
+
+To handle internationalization in the Widgets in our [widget catalog](/en/widgets/) we use the [**Vue i18n**](https://kazupon.github.io/vue-i18n/) package installed using the  [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n) plugin, you can review its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When you install the plugin, a folder for languages called `locales` and a configuration file called `i18n.js` are created.
+
+``` treeview{3,5-7}
+├── src/
+│   ├── App.vue
+│   ├── i18n.js
+│   ├── main.js
+│   ├── locales/
+│   │   ├── en-US.json
+│   │   └── es-CL.json
+```
+
+:::tip Tip
+To learn more about internationalization and vue-i18n, see [Internationalization with vue-i18n](https://vueschool.io/courses/internationalization-with-vue-i18n) by [VueSchool](https://vueschool.io/)
+:::
+
+### Configuration
+
+In the configuration file we will get the language of the site that we have on the platform. First, the LANG constant is initialized in the `i18n.js` file.
+
+```js{4,11}
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
+
+const LANG = window.liquid ? window.liquid.lang : 'es-CL';
+
+Vue.use(VueI18n);
+
+//... more code
+
+export default new VueI18n({
+  locale: LANG,
+  fallbackLocale: 'es-CL',
+  messages: loadLocaleMessages(),
+});
+```
+
+We have to create the variable `liquid.lang` in Modyo Platform. To create this variable, follow these steps:
+
+1. In your browser, log in to Modyo Platform.
+1. Expand **Channels**, and click **Sites**.
+1. Click **Templates**.
+1. Open the `theme` View in the Views -> Javascript -> theme section.
+1. Paste the following code:
+
+``` js
+window.liquid = {
+ lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL'
+};
+```
+
+This code assigns the language to the `liquid.lang` variable, depending on the value of `@site.language` using Liquid.
+
+### Add a language
+
+To add a new language to the site, we simply create a **JSON** file in the `locales` folder where its name is the code of the language to be added. For example, if we want to add Brazilian Portuguese, add `pt-BR.JSON`:
+
+``` treeview{4}
+├── src/
+│   ├── locales/
+│   │   ├── en-US.json
+│   │   ├── pt-BR.json <-- nuevo idioma
+│   │   └── es-CL.json
+```
+:::warning Warning
+The structure of the language file must be a **json** object:
+:::
+
+### Form validation
+
+The [catalog widgets](/en/widgets/) come with a default form validator called [veeValidate](https://vee-validate.logaretm.com/v4/). In order to locate the error messages that the validator shows us, we need to make a small modification to the **i18n.js** configuration file.
+
+1. We import error messages into the languages we need.
+2. In the **LoadLocaleMessages** function, we add the validator messages in the corresponding language.
+3. Return the modified **messages** object.
+
+```js
+// 1
+import esCL from 'vee-validate/dist/locale/es-CL.json';
+import enUS from 'vee-validate/dist/locale/en-US.json';
+import ptBR from 'vee-validate/dist/locale/pt-BR.json';
+```
+
+```js
+function loadLocaleMessages() {
+  const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
+  const messages = {};
+  locales.keys().forEach((key) => {...});
+  // 2
+  messages['es-CL'] = {
+    ...messages['es-CL'],
+    validations: esCL.messages,
+  };
+  // 2
+  messages['en-US'] = {
+    ...messages['en-US'],
+    validations: enUS.messages,
+  };
+  // 3
+  messages['pt-BR'] = {
+    ...messages['pt-BR'],
+    validations: ptBR.messages,
+  };
+  // 4
+  return messages;
+}
+```
+
+## Using Liquid in Widgets
+
+Create a javascript object in Snippets so you can make use of Liquid in your Widgets.
+
+Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them we'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access the content on it. It also gives us access to [**drops**](/en/platform/channels/drops), context variables that allow us to interact with our views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
+
+
+Follow these steps to create a snippet with Liquid variables:
+1. In the platform's side menu, expand **Channels**, and click **Sites**.
+2. Click on your site.
+3. In your site menu, click **Templates** and select **Snippets**.
+4. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any other name.
+
+<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">   
+
+5. Open the javascript section and paste the code:
+```js
+   window.liquid = {
+     lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL',
+     request: {
+       path: "{{request.path}}",
+     },
+   };
+```
+In this snippet we created an object called _liquid_ with scope `window` that contains the language and the request path of the site. From our Widget we can now access this data using the object created in the previous step. For example, if you want to get the site's languages from the Widget, you can do so with: 
+
+   ```js
+   const languages = window.liquid.lang;
+   ```
+
+:::warning Warning
+In development mode we won't have access to this object since we're working locally, so the recommendation is to assign default values when defining these variables locally.
+:::
+
+In the following example, const lang takes the value of window.liquid.lang, if the object doesn't exist, it assigns the default value “es-CL”:
+
+```js
+const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
+```
