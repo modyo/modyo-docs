@@ -82,7 +82,6 @@ export default {
     padding-left 0
     & > .sidebar-heading
       font-size 1em
-      line-height 1.4
       font-weight normal
       padding-left 2rem
       &:not(.clickable)
