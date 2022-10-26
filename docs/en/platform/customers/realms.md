@@ -272,13 +272,17 @@ The types of **Custom fields** you can add are:
 
 You can drag the **Custom Fields** to sort them. Note that this is the order in which fields will appear in edit views and in the user profile.
 
+:::tip Tip
+You can only create up to 20 custom fields for each Realm.
+:::
+
 All **Custom Fields** have certain standard properties:
 
 - **Must be a unique response**: It implies that the value must be unique for each user, preventing another equal value from being saved.
 - **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In the event that the field is also visible and editable by users, this fields will appear on the registration form and will be required to create new users.
-- **Visible to users**: This means that it will be visible in the profile view.
-    - **User Editable**: This means that it will be visible and can also be modified by the user.
-- **Searchable by Administrators**: This value will be indexed and users can be found when searched from the user index of the Modyo administrator, by the value of that field.
+- **Visible to front end users**: This means that it will be visible in the profile view.
+    - **Editable by front end users**: This means that it will be visible and can also be modified by the user.
+- **Searchable by admins**: This value will be indexed and users can be found when searched from the user index of the Modyo administrator, by the value of that field.
 
 In addition to the above, **Custom fields** can be enabled or disabled. If enabled, then it can be used by administrators and depending on their configuration, it will be available to users. If a **Custom field** is disabled, then it will not appear on any form, but its values will remain saved.
 
