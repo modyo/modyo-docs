@@ -8,15 +8,20 @@ An organization needs to have a platform that allows them to organize and manage
 
 Modyo allows you to upload, review, and edit files within the same platform, through the Asset Manager tool. This can be accessed from your Spaces, Sites, or in the side menu within Content. 
 
-:::tip Tip
-The Asset Manager allows you to upload file extensions of all kinds. The only requirement is that the files are within the size limits. The limits are:
+The File Manager allows you to upload file extensions of all types. The only requirement is that the files are within the size limits. The limits are:
 
-- Images: 30 MB
-- Videos: 200 MB
-- Audios: 100 MB
-- CSV: 2 MB
-- Others: 100 MB
-:::
+- **Images**: 30 MB
+- **Videos**: 200 MB
+- **Audio**: 100 MB
+- **CSV**: 2 MB
+- **Files**: 100 MB
+
+The valid file types are:
+
+- **Images**: "3gp", "aac", "alac", "dsd", "flac", "mp3", "pcm", "wav", "m4a", "ogg", "wma"
+- **Videos**: "av", "avi", "f4v", "flv", "mkv", "mov", "mp4", "mpeg", "webm", "wmv"
+- **Audios**: "apng", "avif", "bmp", "gif", "ico", "jpeg", "jpg", "png", "svg", "tif", "tiff", "webp"
+- **Files**: "7z", "ai", "apk", "css", "csv", "doc", "docx", "fon", "ico", "iso", "jar", "js", "msi", "ods", "odt", "otf", "pdf", "ppt", "pptx", "rar", "rss", "rtf", "scss", "tar", "tex", "ttf", "txt", "vcf", "wdp", "xhtml", "xls", "xlsm", "xlsx", "xml", "zip", "one", "ecf", "pub", "xps", "json"
 
 #### Rich Text
 
@@ -39,11 +44,11 @@ The second one is directly through the Asset manager tool found in the Content s
 
 <img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" alt="Asset manager UI">
 
-The Asset manager interface displays a list of all the files we have within the platform.
+The Asset manager interface displays a list of all the files that exist within the platform.
 
 In the upper right part of the screen you can see the percentage of space used corresponding to the total allocated for the account and the button to upload new files.
 
-The list has three different filters for useful file searching.
+The list has three different filters for browsing files.
 
 <img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0" alt="The three filters inside asset manager">
 
