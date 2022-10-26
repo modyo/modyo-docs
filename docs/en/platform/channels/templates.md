@@ -192,48 +192,31 @@ You can add this code snippet in Templates and then call this snippet from the h
 
 ```html
 <!-- Site SEO -->
-<meta name="keywords" content="{{ site.keywords }}" />
-<meta name="author" content="{{ site.name }}" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords" content="{{ site.keywords }}"/>
+<meta name="author" content="{{ site.name }}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+{{ site.meta_tags }}
+
 {% if page %}
-<!--Layouts SEO -->
+<!-- Page SEO -->
 {{ page.meta_tags }}
-<meta name="description" content="{{ page.excerpt }}" />
-<meta property="og:title" content="{{ page.title }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ page.url }}" />
-<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
-<meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:description" content="{{ page.excerpt }}" />
-{% endif %} 
-{% if entry %}
-<!-- Content SEO -->
-<meta name="description" content="{{ entry.excerpt }}" />
-<meta property="og:title" content="{{ entry.title }}" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="{{site.url}}/{{entry.type_uid}}/{{entry.slug}}" />
-<meta property="og:image" content="{{ entry.covers.first | asset_url : 'original' }} "/>
-<meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:description" content="{{ entry.excerpt }}" />
-{% endif %} 
-{% unless page or entry %}
-<!-- Default SEO -->
-<meta name="description" content="{{ site.description }}" />
-<meta property="og:title" content="{{ site.name }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ request.url }}" />
-<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}" />
-<meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:description" content="{{ site.description }}" />
-{% endunless %}
-<!-- END SEO <-->
+<meta name="description" content="{{ page.excerpt }}"/>
+<meta property="og:title" content="{{ page.title }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ page.url }}"/>
+<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:description" content="{{ page.excerpt }}"/>
+{% endif %}
+<!-- END SEO -->
 ```
 
-This snippet is different when you are using a custom page, one of Modyo's default pages, or content pages, so by using the attributes of each element, you can define a good SEO base for all the URLs on your site.
+This snippet uses Liquid to add meta tags at the Site level. It also adds specific meta tags when the user navigates to a Widget or Content Page.
 
-If you require it, you can customize this snippet, defining what you want to appear for specific URLs or types. 
+If you need it, you can customize this snippet, defining which meta tags you want to add for specific URLs or types. 
 
-For example, in the content section, you can use:
+For example, if you want to use specific meta tags when a user visits an Entry, you can use:
 
 ```html
 ...
@@ -258,3 +241,5 @@ For example, in the content section, you can use:
 ```
 
 In this example, the `posts` and `place` types share the _title_, _excerpt_ and _covers_ attributes, but the place types contain _location_ attributes. In addition, we would need to define a different custom view in our site for each of these separate types.
+
+For more information about Liquid and how to use Liquid Drops to generate dynamic variables, visit [Liquid Markup](/en/platform/channels/liquid-markup).
