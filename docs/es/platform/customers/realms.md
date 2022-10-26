@@ -272,6 +272,10 @@ Los tipos de **Custom fields** que puedes agregar son:
 
 Puedes arrastrar los **Custom fields** para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios.
 
+:::tip Tip
+Solo puedes crear hasta 20 custom fields en cada Reino.
+:::
+
 Todos los **Custom fields** tienen ciertas propiedades estándar:
 
 - **Respuesta única**: Implica que el valor debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
