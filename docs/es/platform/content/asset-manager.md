@@ -8,15 +8,20 @@ Una organización necesita tener una plataforma que les permita organizar los ar
 
 Modyo permite subir, revisar, y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos. Esta se puede acceder desde tus Espacios, Sitios, o en el menú lateral dentro de Content. 
 
-:::tip Tip
 El Gestor de Archivos permite subir extensiones de archivo de todo tipo. El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
 
-- Imágenes: 30 MB
-- Videos: 200 MB
-- Audios: 100 MB
-- CSV: 2 MB
-- Otros: 100 MB
-:::
+- **Imágenes**: 30 MB
+- **Videos**: 200 MB
+- **Audios**: 100 MB
+- **CSV**: 2 MB
+- **Archivos**: 100 MB
+
+Los tipos de archivos permitidos son los siguientes:
+
+- **Imágenes**: "3gp", "aac", "alac", "dsd", "flac", "mp3", "pcm", "wav", "m4a", "ogg", "wma"
+- **Videos**: "av", "avi", "f4v", "flv", "mkv", "mov", "mp4", "mpeg", "webm", "wmv"
+- **Audios**: "apng", "avif", "bmp", "gif", "ico", "jpeg", "jpg", "png", "svg", "tif", "tiff", "webp"
+- **Archivos**: "7z", "ai", "apk", "css", "csv", "doc", "docx", "fon", "ico", "iso", "jar", "js", "msi", "ods", "odt", "otf", "pdf", "ppt", "pptx", "rar", "rss", "rtf", "scss", "tar", "tex", "ttf", "txt", "vcf", "wdp", "xhtml", "xls", "xlsm", "xlsx", "xml", "zip", "one", "ecf", "pub", "xps", "json"
 
 #### Rich Text
 
