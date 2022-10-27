@@ -114,17 +114,38 @@ En la sección de vistas, encontrarás 4 tipos de error disponible para personal
 
 Es posible crear plantillas personalizadas de código CSS y JavaScript haciendo click en los botones **+**, en las secciones de CSS y JavaScript respectivamente, al final de la pestaña Vistas.
 
-Para incluir cualquiera de estas plantilla, existen distintos filtros de Liquid disponibles: `asset_url` para generar la URL de la plantilla, y `stylesheet_tag` y `script_tag` para generar los tags correspondientes, e.g. 
+### Agregar CSS o Javascript
+
+Las vistas personalizadas de CSS y Javascript son la manera en la cual podrás importar tus librerías a Modyo Platform. Sigue estos pasos para crear una vista de CSS o Javascript:
+
+1. En Modyo Platform, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu sitio.
+1. En el menú lateral, haz click en **Plantillas**.
+1. En la sección de Vistas, haz click en el botón **Añadir Hoja de Estilos** (o Javascript).
+1. Agrega la Ruta y haz click en **Añadir**.
+1. Una vez que hayas terminado de editar la Hoja de Estilo o Javascript, se debe incluir en tu Layout de la siguiente manera.
+
+
+Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid disponibles: `asset_url` para definir el tipo de archivo, `stylesheet_tag`, y `script_tag` para generar los tags correspondientes, en el siguiente ejemplo se agrega: 
+
+- Una vista personalizada de CSS con media: screen
+- Una vista personalizada de Javascript con carga asíncrona
 
 ```html
 <head>
-  {{ 'my-css' | asset_url: 'css' }}
-  {{ 'my-css' | asset_url: 'css' | stylesheet_tag }}
-  {{ 'my-js' | asset_url: 'js' | script_tag }}
+  {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
+  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }} 
 </head>
 ```
 
-Para conocer a detalle y los parámetros soportados por estos filtros, dirígete a [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros).
+Una vez que se haya guardado y publicado, se traduce al siguiente código HTML:
+
+```html
+<link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
+<script src='my-js' type='text/javascript' async='async' defer='defer'></script>
+```
+
+Para conocer a detalle y los parámetros soportados por estos filtros, dirígete a [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar).
 
 
 ## Snippets
