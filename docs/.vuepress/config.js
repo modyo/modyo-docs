@@ -106,7 +106,7 @@ module.exports = {
                     ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
                     ["/en/platform/core/integrations/conect-modyo-saleforce", "Integration with Salesforce"],
                     ["/en/platform/core/integrations/google-data-studio-integration", "Integration with Google Analytics"],
-                    ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)Gestionar sesión privada usando OpenID Connect (OIDC)"],
+                    ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)"],
                   ],
                 },
                 "/en/platform/core/webhooks",
