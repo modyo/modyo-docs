@@ -114,17 +114,38 @@ In the views section, you will find 4 error types available for customization:
 
 You can create custom CSS and JavaScript templates by clicking the **+** buttons in the CSS and JavaScript sections respectively at the bottom of the Views tab.
 
-To include any of these templates, different Liquid filters are available: `asset_url` to generate the template URL, and `stylesheet_tag` and `script_tag` to generate the corresponding tags, e.g. 
+### Add CSS or Javascript
+
+Custom CSS and Javascript views are the way in which you can import your libraries to Modyo Platform. Follow these steps to create a CSS or Javascript view:
+
+1. In Modyo Platform, expand **Channels**, and click **Sites**.
+1. Click on your site.
+1. In the side menu, click **Templates**.
+1. In the Views section, click the **Add Style Sheet** (or Javascript) button.
+1. Add the Path and click **Add**.
+1. Once you have finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
+
+
+To include any of these views, there are different Liquid filters available: `asset_url` to define the file type, `stylesheet_tag`, and `script_tag` to generate the corresponding tags, the following example adds: 
+
+- A custom CSS view with media: screen
+- A custom Javascript view with asynchronous loading
 
 ```html
 <head>
-  {{ 'my-css' | asset_url: 'css' }}
-  {{ 'my-css' | asset_url: 'css' | stylesheet_tag }}
-  {{ 'my-js' | asset_url: 'js' | script_tag }}
+  {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
+  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }} 
 </head>
 ```
 
-For more details and the parameters supported by these filters, see [Liquid filters](/en/platform/channels/liquid-markup.html#filters).
+Once saved and published, it is translated into the following HTML code:
+
+```html
+<link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
+<script src='my-js' type='text/javascript' async='async' defer='defer'></script>
+```
+
+To learn more about the parameters supported by these filters, see [Liquid filters](/en/platform/channels/liquid-markup.html#standard-filters).
 
 
 ## Snippets
@@ -151,7 +172,7 @@ In the work area, under the tabs, you will find a bar with useful elements:
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
-::: tip Tip
+:::tip Tip
 For more information on the benefits and features of the Asset Manager, go to [Asset Manager](/en/platform/content/asset-manager.html)
 :::
 
@@ -175,7 +196,7 @@ If you publish a version, you can see that the changelog disappears, that is bec
 Sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. Likewise, if you go back to a previous sub-version of a template, you won't affect the rest of the templates.
 :::
 
-::: tip Tip
+:::tip Tip
 If a previous version is restored to the editable version, you will be able to access the sub-versions of each template of that version. 
 You can learn more about [versioning here](/en/platform/core/key-concepts.html#versioning).
 :::
