@@ -7,6 +7,9 @@
 - Start the development server (`yarn docs:dev`)
 - Load the site at `http://localhost:8080`
 
+For node 17+ and MacOS: 
+export NODE_OPTIONS=--openssl-legacy-provider
+
 ## Structure
 
 All the site it's inside the `/docs` folder, and the main configuration it's in `/docs/.vuepress`, including the public folder (`/docs/.vuepress/public`)
