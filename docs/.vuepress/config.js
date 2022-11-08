@@ -55,7 +55,7 @@ module.exports = {
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
           // { text: "Connect", link: "/en/connect/" },
-          // { text: "Banking", link: "/en/banking/" },
+          // { text: "Dynamic", link: "/en/dynamic/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],                
@@ -231,11 +231,11 @@ module.exports = {
               ],
             },
           ],
-          "/en/banking/": [{
-            title: "Modyo Banking",
+          "/en/dynamic/": [{
+            title: "Modyo Dynamic",
             collapsable: false,
             children: [
-              ["/en/banking/", "What is Modyo Banking?"]
+              ["/en/dynamic/", "What is Modyo Dynamic?"]
             ],
           }, ],
           "/en/connect/": [{
@@ -294,7 +294,7 @@ module.exports = {
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
           // { text: "Connect", link: "/es/connect/" },
-          // { text: "Banking", link: "/es/banking/" },
+          // { text: "Dynamic", link: "/es/dynamic/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -473,11 +473,11 @@ module.exports = {
               ],
             },
           ],
-          "/es/banking/": [{
-            title: "Modyo Banking",
+          "/es/dynamic/": [{
+            title: "Modyo Dynamic",
             collapsable: false,
             children: [
-              ["/es/banking/", "¿Qué es Modyo Banking?"]
+              ["/es/dynamic/", "¿Qué es Modyo Dynamic?"]
             ],
           }, ],
           "/es/connect/": [{
