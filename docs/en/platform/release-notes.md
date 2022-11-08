@@ -6,6 +6,23 @@ search: true
 
 ## 9.2
 
+### 9.2.21 - November 07, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Support for sites with domains without SSL is removed.
+
+
+### 9.2.20 - October 27, 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Maintenance for pre-production environments
+
 ### 9.2.19 - October 12, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
