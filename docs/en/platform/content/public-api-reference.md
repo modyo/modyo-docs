@@ -661,7 +661,7 @@ The object returned by getEntries() includes a meta field that will help you nav
 <template v-slot:curl>
 
 ```shell
-curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
+curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/entries?category_id=25"
 ```
 
 The response contains the `meta` object that includes a field that will help you navigate it. The returned object will look something like this:
