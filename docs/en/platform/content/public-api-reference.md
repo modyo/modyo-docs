@@ -1,5 +1,6 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # APIs & SDKs
@@ -951,17 +952,6 @@ The `dynamic_map` filter accepts an additional attribute to control the visibili
 :::tip Tip
 To use input attributes, you can use dot or square bracket notation, so <span v-pre> `{{ entry.meta.slug }}` </span>, returns the same value as <span v-pre> `{{ entry.meta['slug'] }}` </span>, and if you have a field called `location`, you can use it as <span v-pre> `{{ entry.fields.location }} `</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> 
 :::
-
-</template>
-<template v-slot:js>
-
-    <!-- ... -->
-
-</template>
-
-<template v-slot:curl>
-
-    <!-- ... -->
 
 </template>
 </CodeSwitcher>
