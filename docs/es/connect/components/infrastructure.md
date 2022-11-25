@@ -321,8 +321,6 @@ Los registros de logs del AWS WAF se gestionan por medio de AWS CloudWatch Logs 
 ### Pasos de activación
 El firewall aplicativo de AWS se encuentra activado por defecto. El cliente puede solicitar inclusión de reglas específicas, como el bloqueo de rutas a ciertos rangos de IPs o ajustes en el rate limit de las conexiones entrantes, realizando un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com).
 
-
-
 ## Virtual Private Network (VPC)
 Una VPN (site-to-site o de sitio a sitio) se utiliza principalmente en organizaciones que requieren conectar infraestructura en diferentes ubicaciones geográficas mediante un enlace seguro por el cual se puede transmitir toda clase de información.
 
