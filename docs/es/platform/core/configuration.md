@@ -28,7 +28,7 @@ Estas son las opciones generales de una cuenta en Modyo Platform:
 
 Personaliza tu usuario, cambia tu contraseña, y habilita autenticación de dos factores dentro de tu Perfil.
 
-En Modyo Platform, en tu usuario en la esquina inferior izquierda, haz click en el botón ***...***, y haz click en **Perfil**.
+En Modyo Platform, en tu usuario en la esquina inferior izquierda, haz click en el botón **...**, y haz click en **Perfil**.
 
 En la pantalla de tu Perfil, puedes modificar los siguientes campos:
   - Nombre
