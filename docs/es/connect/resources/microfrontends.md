@@ -19,6 +19,9 @@ El código y estructura inicial del proyecto en el ambiente local del desarrolla
 ## Alcance
 
 
+Caso de librerías o SPAs que requieren hosting en S3 + CDN.
+
+
 ## Frameworks
 
 
