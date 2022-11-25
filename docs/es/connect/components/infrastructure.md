@@ -265,7 +265,7 @@ Dependiendo del nivel de subscripción, algunos clientes podrían tener habilita
 :::
 
 ### Acceso a los datos
-En el caso de clientes que requieran poseer acceso directo a la base de datos, la conexión se debe realizar de forma exclusiva mediante el uso de un enlace [VPN](#virtual-private-network-vpc).
+En el caso de clientes que requieran poseer acceso directo a la base de datos, la conexión se debe realizar de forma exclusiva mediante el uso de un enlace seguro del tipo [VPN](#virtual-private-network-vpc). Modyo no expondrá en ningún caso bases de datos directamente hacia Internet.
 
 ### Pasos de activación
 Para solicitar la creación de una base de datos RDS Aurora en Modyo Connect, se debe realizar un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com) especificando la siguiente información:
@@ -287,34 +287,41 @@ Para solicitar la creación de uno de estos componentes en la nube de AWS, se de
 - Tamaño de instancia de [AWS ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html) o [AWS OpenSearch](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html)
 
 ## Colas de Mensajería
-Las colas de mensajes son una forma de comunicación asíncrona de servicio a servicio que se usa en arquitecturas de microservicios. Los mensajes se almacenan en la cola hasta que se procesan y eliminan. Cada mensaje se procesa sólo una vez, por un solo consumidor. Las colas de mensaje permiten desacoplar procesos llevando las operaciones complejas a un segundo plano.
+Las colas de mensajes son una forma de comunicación asíncrona de servicio a servicio que se usa en arquitecturas de microservicios. Los mensajes se almacenan en la cola hasta que se procesan y eliminan. Cada mensaje se procesa sólo una vez, por un solo consumidor. Las colas de mensajes permiten desacoplar procesos llevando las operaciones complejas a un segundo plano.
 
 Modyo Connect implementa colas de mensajería utilizando [AWS Simple Queue Service (SQS)](https://aws.amazon.com/sqs), el cual es una cola de mensajería completamente manejada que permite microservicios y aplicaciones distribuídas. AWS SQS permite trabajar con dos tipos de colas de mensaje: las tradicionales y las FIFO (First in First out).
 
-AWS SQS. Servicio de colas de mensajería de alto rendimiento y duración que permite a las aplicaciones comunicarse de forma asincrónica.
-
-
 ### Pasos de activación
 Para solicitar la creación de un contenedor en la nube de AWS, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se deberá indicar:
+- Nombre de la cola
+- Tipo: tradicional o FIFO
 
-## Envío de Correos
-Modyo Connect ofrece la posibilidad de utilizar el servicio de correo electrónico saliente. Los microservicios que requieran hacer uso de esta funcionalidad deben utilizar el API que la plataforma Modyo dispone dentro de la aplicación de Customers.
+## Envío de Correos/SMS
+Modyo Connect ofrece la posibilidad de utilizar el servicio de correo electrónico o mensajería SMS saliente. Los microservicios que requieran hacer uso de esta funcionalidad pueden utilizar el API que la plataforma Modyo dispone dentro de la aplicación de Modyo Customers.
 
 Los correos salientes enviados por el API de la plataforma Modyo son encriptados y validados siguiendo estándares modernos de seguridad. Los dominios de envío requieren una validación previa que se realiza a nivel de DNS.
 
-En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo puede autorizar la entrega de credenciales directas de SMTP, previa revisión del caso.
+En los casos dónde no se pueda utilizar el API de Modyo Customers, Modyo puede autorizar la entrega de credenciales directas de SMTP o APIs de envío de SMSs, previa revisión y aprobación en cada caso.
 
 ### Pasos de activación
-Para solicitar la creación de un contenedor en la nube de AWS, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se deberá indicar:
+Para utilizar el API de envío de mensajes de Modyo Customers, se debe solicitar un token válido de acceso al API de la plataforma Modyo al administrador interno de la cuenta.
+
+Para solicitar acceso directo a los servicios de envío de correo directos, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se deberá indicar:
+- Breve descripción del caso de uso 
+- Contactos técnicos y comerciales con los que se definirá la aprobación final
 
 ## Firewall Aplicativo
-AWS WAF. Servicio de firewall aplicativo de Amazon AWS. El Amazon WAF puede ser desplegado en la CDN de Amazon (CloudFront) o directamente sobre los ELB del tipo "application ELB" o ALB. El Amazon WAF posee filtros para los ataques Web más comunes (OWASP Top 10), como inyecciones de SQL o scripts, además de ofrecer la capacidad de definir reglas propias. 
+Un Web Application Firewall (WAF) protege de múltiples ataques al servidor de aplicaciones Web en el backend. La función del WAF es garantizar la seguridad del servidor web mediante el análisis de paquetes de petición HTTP / HTTPS y modelos de tráfico.
+
+Modyo Connect permite la configuración del servicio [AWS WAF](https://aws.amazon.com/waf), el cual posee filtros para los ataques Web más comunes (OWASP Top 10), como inyecciones de SQL o scripts, además de ofrecer la capacidad de definir reglas personalizadas para autorizar o denegar el acceso a rutas por IP y rate limits. 
 
 ### Registros de logs de firewall
-Los registros de logs del firewall se gestionan por medio de AWS CloudWatch Logs.
+Los registros de logs del AWS WAF se gestionan por medio de AWS CloudWatch Logs y pueden ser exportados a sistemas externos mediante el uso de repositorios de AWS S3.
 
 ### Pasos de activación
-El firewall aplicativo de AWS se encuentra siempre activado por defecto. Lo que el cliente puede solicitar realizando un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com) es la inclusión de reglas específicas, como el bloqueo de rutas a ciertos rangos de IPs o ajustes en el rate limit de las conexiones entrantes.
+El firewall aplicativo de AWS se encuentra activado por defecto. El cliente puede solicitar inclusión de reglas específicas, como el bloqueo de rutas a ciertos rangos de IPs o ajustes en el rate limit de las conexiones entrantes, realizando un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com).
+
+
 
 ## Virtual Private Network (VPC)
 Una VPN (site-to-site o de sitio a sitio) se utiliza principalmente en organizaciones que requieren conectar infraestructura en diferentes ubicaciones geográficas mediante un enlace seguro por el cual se puede transmitir toda clase de información.
