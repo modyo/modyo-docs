@@ -24,16 +24,31 @@ Estas son las opciones generales de una cuenta en Modyo Platform:
 * **Logo y favicon de la cuenta**: Personaliza la plataforma subiendo un logo y favicon para todos los usuarios. Esto también será usado en las páginas y sitios por defecto.
 * **API key de Google**: La API key utilizada para conectar la API de Google Maps en los campos de tipo ubicación en el módulo Content.
 
-## Configuración de usuario
+## Configuración de perfil
 
-Para personalizar tu usuario, cambiar tu contraseña, y habilitar autenticación de dos factores, sigue estos pasos: 
+Personaliza tu usuario, cambia tu contraseña, y habilita autenticación de dos factores dentro de tu Perfil.
 
-1. En el menu lateral de Modyo Platform, selecciona los 3 puntos y haz click en **Profile**.
-1. Modifica entre los siguentes campos:
+En Modyo Platform, en tu usuario en la esquina inferior izquierda, haz click en el botón ***...***, y haz click en **Perfil**.
+
+En la pantalla de tu Perfil, puedes modificar los siguientes campos:
   - Nombre
   - Apellido
-  - Nombre de usuario
-  - Email
   - Avatar
   - Idioma: Esto cambia el idioma de Modyo Platform (e.g. El nombre de los campos y botones dentro de la plataforma). Los sitios no serán modificados.
+  - Nombre de usuario
+  - Email
+
+### Cambiar tu contraseña
+
+Para cambiar tu contraseña, sigue estos pasos:
+
+1. Dentro de tu Perfil, en la esquina superior derecha, haz click en **...**, y selecciona **Cambiar mi contraseña**.
+1. Escribe tu contraseña actual y tu nueva contraseña.
+1. Haz click en **Guardar**.
+
+### Configurar tu autenticador (2FA)
+
+1. Dentro de tu Perfil, en la esquina superior derecha, haz click en **...**, y selecciona **Configurar autenticador**.
+1. En la pantalla de Configurar autenticador, usa tu dispositivo móvil para escanear el código QR.
+1. En la app de Google Authenticator, toma el código de seguridad y escríbelo en pantalla.
 1. Haz click en **Guardar**.
