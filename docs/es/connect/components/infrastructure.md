@@ -9,6 +9,24 @@ Los componentes de infraestructura son completamente gestionados por el servicio
 
 A continuación, se detallan los componentes de infraestructura más relevantes dentro del servicio de Modyo Connect.
 
+## Balanceo de Carga
+El balanceo de carga es la manera en que las peticiones de Internet son distribuídas sobre una grupo de servidores. 
+
+Modyo Connect implementa el balanceador de carga [AWS Application Load Balancer(ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) . El AWS ALB se integra de forma nativa con los demás servicios de la nube de AWS, además de ofrecer características únicas de seguridad, como la redirección de rutas y protocolos, [certificados SSL/TLS](#certificados-ssl-tls) y la incorporación de [firewalls aplicativos](#firewall-aplicativo-waf).
+
+### Pasos para activar
+Para solicitar la creación de un balanceador ALB en la nube de AWS, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se debe incluir:
+- Dominio que será apuntado al ALB
+- Descripción del caso de uso, declarando a qué servicio se aplicará
+- Contacto técnico del administrador de DNS para la validación de certificados SSL/TLS y redirecciones
+
+Una vez creado, el balanceador podrá ser utilizado por un servicio dentro de un cluster de [contenedores](#containers).
+
+:::warning Aplicaciones externas
+El balanceador de carga de AWS ALB no puede dirigir tráfico hacia recursos de AWS desplegados fuera de la red privada virtual (VPC) en donde se despliega, por lo que sólo debe ser considerado para usos con recursos internos. 
+:::
+
+
 ## API Gateway
 El API Gateway corresponde al punto de entrada para todas las APIs desplegadas dentro de Modyo Connect y se encarga principalmente de gestionar y autorizar las peticiones entrantes, para canalizarlas al microservicio correcto. El API Gateway es capaz de realizar funciones de monitoreo, gestión de cuotas y caché para mejorar el rendimiento de las APIs que se definen en él. Modyo Connect utiliza el [AWS API Gateway](https://aws.amazon.com/api-gateway), el cual es un servicio abstracto ofrecido por AWS.
 
@@ -102,7 +120,7 @@ AWS ECS Fargate ofrece una [amplia variedad de configuraciones](https://docs.aws
 Es importante considerar que en producción, las MRU utilizadas por el componente se multiplican por el factor de redundancia requerido por el cliente, siendo el mínimo de 2 (multizona). Los ambientes de pre producción se configuran sin redundancia y pueden poseer menos recursos asociados.
 
 ::: warning Fracciones de vCPUs
-AWS permite la definición de contenedores con fracciones de vCPUs asignadas (ejemplo: 0.25 vCPU o 0.75 vCPU). La Java Virtual Machine de Java, al ser un ambiente de ejecución multihilo, no se recomienda el despliegue productivo o pre-productivo utilizando fracciones de vCPU debido a que esto genera bloqueos de I/O en los procesos afectando el rendimiento. Es por ello que el mínimo será de 1 vCPU y el máximo de 16 vCPU.
+AWS permite la definición de contenedores con fracciones de vCPUs asignadas (ejemplo: 0.25 vCPU o 0.75 vCPU). En el caso de aplicaciones que se ejecuten con una Java Virtual Machine (JVM), al ser un ambiente de ejecución multihilo, no se beneficia de un despliegue que utilice fracciones de vCPU. Esto es debido a que genera bloqueos de I/O en los procesos afectando considerablemente su rendimiento. Es por ello que el mínimo aceptado para Modyo Connect será de 1 vCPU y el máximo de 16 vCPU.
 :::
 
 ### Pool de conexiones
@@ -310,7 +328,7 @@ Para solicitar acceso directo a los servicios de envío de correo directos, se d
 - Breve descripción del caso de uso 
 - Contactos técnicos y comerciales con los que se definirá la aprobación final
 
-## Firewall Aplicativo
+## Firewall Aplicativo (WAF)
 Un Web Application Firewall (WAF) protege de múltiples ataques al servidor de aplicaciones Web en el backend. La función del WAF es garantizar la seguridad del servidor web mediante el análisis de paquetes de petición HTTP / HTTPS y modelos de tráfico.
 
 Modyo Connect permite la configuración del servicio [AWS WAF](https://aws.amazon.com/waf), el cual posee filtros para los ataques Web más comunes (OWASP Top 10), como inyecciones de SQL o scripts, además de ofrecer la capacidad de definir reglas personalizadas para autorizar o denegar el acceso a rutas por IP y rate limits. 
