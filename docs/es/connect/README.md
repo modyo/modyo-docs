@@ -6,13 +6,13 @@ Modyo Connect es un servicio manejado de infraestructura y devops sobre la nube 
 
 Modyo Connect permite la implementación de servicios como: Single Sign On, API Gateway, infraestructura de contenedores para [microservicios](resources/microservices.md), bases de datos, colas de mensajería, repositorios de objetos, entre otros componentes pensados para dar cobertura a todos los requerimientos comunes presentes en una iniciativa compleja de integración.
 
-Modyo Connect nace frente a la necesidad de algunos clientes de contar con una capa manejada de servicios de gestión de APIs que se integrara de forma segura a sus sistemas de negocio. El servicio es completamente opcional y, en muchos casos, no es requerido ya que el mismo cliente puede contar con su propia arquitectura de APIs y Single Sign On a la cual los [micro frontends](resources/microfrontends.md) desarrollados sobre Modyo puedan integrarse.
+Modyo Connect nace frente a la necesidad de algunos clientes de contar con una capa manejada de servicios de gestión de APIs que se integrara de forma segura a sus sistemas de negocio. El servicio es completamente opcional y, en muchos casos, no es requerido, ya que el mismo cliente puede contar con su propia arquitectura de APIs y Single Sign On a la cual los [micro frontends](resources/microfrontends.md) desarrollados sobre Modyo puedan integrarse.
 
 El siguiente diagrama corresponde a la arquitectura de referencia de implementación de Modyo. Los servicios manejados de Modyo Connect están a la derecha en el diagrama y se encuentran completamente desacoplados de la plataforma, por lo que pueden ser reemplazados por APIs que ya posea el cliente o que sean desarrolladas por un tercero.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-Las APIs desarrolladas en Modyo Connect son consumidas directamente por el usuario final desde su navegador Web. La plataforma Modyo no toma parte en la comunicación con el API, evitando con ello que la información sensible transite por ella. Con esta arquitectura se logra desacoplar completamente la presentación de la lógica de negocio, estableciendo responsabilidades delimitadas en sistemas separados, incrementando con ello la modularidad y eficiencia de los desarrollos.
+Las APIs desarrolladas en Modyo Connect son consumidas directamente por el usuario final desde su navegador Web. La plataforma Modyo no toma parte en la comunicación con las API, evitando con ello que la información sensible transite por ella. Con esta arquitectura se logra desacoplar completamente la presentación de la lógica de negocio, estableciendo responsabilidades delimitadas en sistemas separados, incrementando con ello la modularidad y eficiencia de los desarrollos.
 
 
 ## Capacidades
@@ -45,5 +45,4 @@ La activación de los componentes podría tener costos recurrentes asociados. Ca
 :::
 
 ## Ambientes
-Modyo Connect considera ambientes productivos y pre-productivos los cuales son desplegados en redes privadas virtuales totalmente separadas entre sí. Los clientes pueden solicitar hasta dos ambientes pre-productivos por despliegue, pero se deben tener en cuenta que cada ambiente genera costos recurrentes adicionales, medidos en los [Modyo Resource Units o MRUs](resources/mrus.md) utilizados.
-
+Modyo Connect considera ambientes productivos y pre-productivos, los cuales son desplegados en redes privadas virtuales totalmente separadas entre sí. Los clientes pueden solicitar hasta dos ambientes pre-productivos por despliegue, pero se deben tener en cuenta que cada ambiente genera costos recurrentes adicionales, medidos en los [Modyo Resource Units o MRUs](resources/mrus.md) utilizados.

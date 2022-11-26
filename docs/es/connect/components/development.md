@@ -34,20 +34,20 @@ La activación de un Repositorio de Código se realiza mediante un ticket de req
 - Nombre del repositorio (al nombre indicado, Modyo le aplicará un estándar interno de nombre en el cual se incorporan prefijos y/o sufijos dependiendo del tipo de repositorio)
 
 
-## Integración Contínua
-La configuración de integración contínua se utiliza para automatizar procesos comunes dentro del ciclo de desarrollo de software. Dentro de estos procesos encontramos principalmente inspección de código, revisión de dependencias, empaquetado de artefactos, despliegues, entre otros.
+## Integración Continua
+La configuración de integración continua se utiliza para automatizar procesos comunes dentro del ciclo de desarrollo de software. Dentro de estos procesos encontramos principalmente inspección de código, revisión de dependencias, empaquetado de artefactos, despliegues, entre otros.
 
-Modyo utiliza los sistemas de integración contínua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a [micro frontends](../resources/microfrontends.md), cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
+Modyo utiliza los sistemas de integración continua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo, cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a [micro frontends](../resources/microfrontends.md), cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
 
 ::: warning Importante
 Las integraciones basadas en AWS CodePipeline serán migradas a GitHub Actions durante la primera mitad del 2023.
 :::
 
 ### Pasos para activar
-La activación de la Integración Contínua sobre un [repositorio](#repositorio-de-codigo) se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
+La activación de la Integración Continua sobre un [repositorio](#repositorio-de-codigo) se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que se debe indicar:
 - Repositorio de código sobre el cual se debe ejecutar la automatización
 - Tipo de automatización que se desea implementar
-- Instrucciones específicas que se deban tener en cuenta al momento de implementar la automatización (Ejemplo: script de builds específico, parámetros especiales, etc).
+- Instrucciones específicas que se deban tener en cuenta al momento de implementar la automatización (Ejemplo: script de builds específico, parámetros especiales, etc.).
 
 
 ## Repositorio de Artefactos
