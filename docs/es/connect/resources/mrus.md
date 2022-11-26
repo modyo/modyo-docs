@@ -12,12 +12,12 @@ Los Widgets que se desarrollan en Modyo por medio del Widget Builder (sin CLI) n
 
 Los servicios de SSO con RedHat KeyCloak se despliegan sobre contenedores como cualquier otro Microservicio. Al costo de MRU señalado se deberán sumar los de los contenedores usados. El tamaño del contenedor de despliegue de este componente dependerá de las necesidades del cliente.
 
-Los servicios complementarios que procesan datos, como Redis y Aurora, deberán estar configurados para producción y pre producción. En el caso de producción, éstos se configuran en alta disponibilidad.
+Los servicios complementarios que procesan datos, como Redis y Aurora, deberán estar configurados para producción y preproducción. En el caso de producción, estos se configuran en alta disponibilidad.
 
 
 ## Estimación de Costos
-- Recomendaciones osbre cómo calcular el tamaño de una implementación de Modyo Connect
-- Consideraciones a tener en cuenta, por tañaño de iniciativa o volumetría en tráfico
+- Recomendaciones sobre cómo calcular el tamaño de una implementación de Modyo Connect
+- Consideraciones a tener en cuenta, por tamaño de iniciativa o volumetría en tráfico
 - Consideración de ambientes
 - Adjuntar formato de planilla de estimación descargable
 
