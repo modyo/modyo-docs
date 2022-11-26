@@ -20,3 +20,7 @@ Los servicios complementarios que procesan datos, como Redis y Aurora, deberán 
 - Consideraciones a tener en cuenta, por tañaño de iniciativa o volumetría en tráfico
 - Consideración de ambientes
 - Adjuntar formato de planilla de estimación descargable
+
+:::tip Costos del servicio
+Para estimar los costos actualizados del uso del servicio y los diferentes componentes, favor contactar un ejecutivo comercial de Modyo.
+:::
