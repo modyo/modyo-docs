@@ -1,5 +1,7 @@
 ---
 search: true
+tags:
+	- 2fa
 ---
 
 # Seguridad
@@ -57,7 +59,7 @@ Generar una nueva clave forzará a que todas las request de contenido privado pa
 
 La clave o _secret_ tiene un tiempo determinado de duración en segundos que se puede configurar en la caja debajo. Por defecto, la duración es 1 hora (3600 segundos). No es recomendable usar una duración muy pequeña, dado que podría afectar el rendimiento de la plataforma.
 
-## Autenticación de dos pasos (2FA)
+## Autenticación de dos pasos 2FA
 
 La autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica provista por la aplicación Google Authenticator desde sus teléfonos.
 
@@ -65,16 +67,22 @@ Cada miembro del equipo podrá activar la autenticación en dos pasos desde su p
 
 Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
 
+:::warning Atención
+En tu dispositivo móvil, la opción **Establecer zona horaria automáticamente** debe permanecer activada al usar autenticación de dos factores.
+:::
+
 ### Habilita autenticación de dos factores para un usuario 
 
 Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos factores.
 
-1. Dentro de la configuración de usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
-2. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
+1. En Modyo Platform, en el menú del usuario, haz click en **Perfil**.
+2. Dentro de la configuración de perfil de un usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
+3. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
 - Se agregará un campo nuevo con el nombre del dominio, tu nivel de usuario, y tu nombre de usuario. 
-3. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
+4. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
 
 > En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
+
 
 ### Eliminar autenticador para un usuario
 
