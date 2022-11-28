@@ -6,7 +6,7 @@ Modyo operates its critical systems in the [Amazon AWS](https://aws.amazon.com) 
 
 <img src="/assets/img/cloud/partner_badge.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-In 2019 and 2021, Modyo was recognized by Amazon AWS as the Technology Partner of the Year for Chile and Peru. In addition, Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
+In 2019 and 2021, Modyo was recognized by Amazon AWS as Technology Partner of the Year for Chile and Peru. In addition, Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
 
 Modyo Connect is offered exclusively in the Amazon AWS cloud and, like Modyo Cloud and Enterprise Cloud, operates in a highly available configuration over multiple availability zones and AWS regions, using abstract and containerized cloud resources, thus avoiding the need to configure and maintain machines virtual of any kind. For the deployment of [microservices](resources/microservices.md), the Amazon Elastic Container Services (ECS) container platform is used in conjunction with automation and configuration control tools, following a reference architecture such as the one shown in the following diagram:
 
@@ -18,7 +18,7 @@ Container images are securely stored in the AWS Elastic Container Repository (EC
 
 Modyo Connect also has self-scaling groups to increase the number of container instances as traffic and demand increase. To this end, a minimum base capacity and an elasticity range of action are defined with each customer according to their particular needs.
 
-The multi-zone deployment in Amazon AWS ensures an excellent level of redundancy and availability to address the most common faults that can usually affect the environment. In the unlikely event that there is a regional fault for which Amazon AWS does not provide an acceptable resolution time, there is an alternative processing region, in which continuous backups of all data are maintained.
+The multi-zone deployment in Amazon AWS guarantees an excellent level of redundancy and availability to cope with the most common failures that can usually affect the environment. In the unlikely event that there is a region-wide failure for which Amazon AWS does not deliver an acceptable resolution time, an alternate processing region is available, in which continuous backups of all data are maintained.
 
 ## Operation
 Like Modyo Enterprise Cloud, Modyo Connect is a service fully managed by Modyo, who is responsible for all configuration and control management of the cloud infrastructure. Service availability levels are determined by a service agreement with each customer.
@@ -34,7 +34,7 @@ For the delivery of the service, Modyo has a dedicated team of [Site Reliability
 - Access control to cloud environments
 
 ## Security
-Modyo implements multiple security controls that cover both staff and infrastructure. Modyo's security controls are aligned with the most demanding industry standards, such as [ISO 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) and [CSA Star](https://cloudsecurityalliance.org/star/). 
+Modyo implements multiple security controls covering both personnel and infrastructure. Modyo's security controls are aligned with the most stringent industry standards, such as [ISO 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) and [CSA Star](https://cloudsecurityalliance.org/star/). 
 
 Modyo Connect is deployed on the same isolated AWS accounts (Single Tenant) as Modyo Enterprise Cloud, which ensure that no infrastructure component is shared between customers. Within each account, isolated virtual private networks are used for each environment within which they are configured with subnets for the different layers of infrastructure, restricting communication between them through security groups. 
 
