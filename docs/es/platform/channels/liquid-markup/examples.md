@@ -6,7 +6,7 @@ search: true
 
 En cualquier parte de Channels (Sitios, Widgets, y Plantillas) puedes usar Liquid para crear contenido dinámico. A continuación, mostraremos varios ejemplos que puedes utilizar para tus casos de uso.
 
-### Desplegar listado de Entradas de un Tipo
+## Desplegar listado de Entradas de un Tipo
 
 En [Páginas de Contenido](/es/platform/channels/pages.html#pagina-de-contenido) puedes generar un listado de todas las Entradas de un Tipo. En este caso, tomamos todas las Entradas del Tipo `producto` en el Espacio `Mi Banco`. La variable `entries`  de la línea 1 obtiene un arreglo del drop [Entrada](/es/platform/channels/drops.html#entrada). Se recorre este arreglo para desplegar por renglón el `meta.uuid` y `meta.title` de cada Entrada. 
 
@@ -28,7 +28,7 @@ En el caso de una entrada de cardinalidad single (en este ejemplo es un aviso de
 Visita nuestro <a href="{{ spaces['mi-banco'].types['privacidad'].entry.url }}">Aviso de Privacidad</a>.
 ```
 
-### Desplegar cantidad total de Entradas
+## Desplegar cantidad total de Entradas
 
 Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de Liquid `entries.size`, por ejemplo:
 
@@ -37,7 +37,7 @@ Para acceder a la cantidad total de entradas que retorna un filtro de contenido,
 <p>Ofrecemos un total de {{ entries.size }} productos para ti!</p>
 ```
 
-### Filtros
+## Filtros
 
 Si quieres filtrar las entradas, lo puedes hacer a través de los siguientes atributos: 
   - **by_uuid**
@@ -50,7 +50,7 @@ Si quieres filtrar las entradas, lo puedes hacer a través de los siguientes atr
 
 Todos los filtros deben recibir un arreglo de Entries y es posible concatenar multiples filtros. 
 
-#### Filtro
+### Filtro
 
 En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`. Después tomamos el resultado y desplegamos todas las Entradas de tipo `news`:
 
@@ -63,7 +63,7 @@ En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `
 {% endfor %}    
 ```
 
-#### Filtro concatenado
+### Filtro concatenado
 
 En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`, que además tengan el tag `campaña`. Después tomamos el resultado y desplegamos las noticias que cumplen todos los criterios:
 
@@ -76,7 +76,7 @@ En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `
 {% endfor %}    
 ```
 
-#### Filter_by
+### Filter_by
 
 En el caso del filtro `filter_by`, se debe utilizar para atributos meta o custom fields del Tipo de Contenido, por ejemplo:
 
@@ -125,7 +125,7 @@ Ten en cuenta que si tienes más de un widget que use la paginación de contenid
 Para hacer uso de la paginación en un widget personalizado, se debe cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, se debe asegurar de que _JQuery_ está disponible en el sitio y recordar que al hacer uso de los links de paginación, solo cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
 :::
 
-### Ordenar
+## Ordenar
 
 De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
@@ -145,7 +145,7 @@ Para ordenar por un campo personalizado, debes usar como parámetro el `fields.u
 {% endfor %}
 ```
 
-### Geolocalización
+## Geolocalización
 
 Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
 

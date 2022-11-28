@@ -509,23 +509,15 @@ Entry JSON Schema:
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:
 
-<CodeSwitcher>
-<template v-slot:curl>
-
 ```shell
 curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries"
 ```
-
-</template>
-</CodeSwitcher>
 
 ### Desplegar cantidad total de Entradas
 
 Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
 
-<CodeSwitcher isolated:true>
-<template v-slot:curl>
-    
+
 ```shell
 curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
 ```
@@ -541,13 +533,7 @@ La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a na
   },
 ```
 
-</template>
-</CodeSwitcher>
-
 ### Filtrar
-
-<CodeSwitcher isolated:true>
-<template v-slot:curl>
 
 En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
 
@@ -615,15 +601,9 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 - NIN: equivalente a un sql NOT IN
   `.../entries?fields.color[nin][]=red&fields.color[nin][]=blue`
 
-</template>
-</CodeSwitcher>
-
 ### Ordenar
 
 De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
-
-<CodeSwitcher isolated:true>
-<template v-slot:curl>
 
 El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
 
@@ -633,10 +613,6 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 ```shell
 curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
 ```
-
-</template>
-</CodeSwitcher>
-
 
 ### Contenido privado
 

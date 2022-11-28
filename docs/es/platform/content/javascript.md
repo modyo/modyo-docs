@@ -24,8 +24,6 @@ const modyoAccount = new Client("https://my-account.modyo.com","es");
 Al tener la instancia de un cliente, el segundo parámetro _locale_ es opcional, de tal forma que se soliciten entradas solo en el idioma solicitado, de lo contrario, se usará el idioma por defecto del Espacio.
 :::
 
-## Ejemplos
-
 ## Desplegar Entradas
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:

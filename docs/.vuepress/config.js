@@ -16,14 +16,6 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      'code-switcher',
-      {
-        groups: {
-          default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
-        },
-      },
-    ],
   ],
   head: [
     [
@@ -124,8 +116,8 @@ module.exports = {
                 "/en/platform/content/types",
                 "/en/platform/content/entries",
                 "/en/platform/content/asset-manager",
-                "/en/platform/content/javascript",
                 "/en/platform/content/public-api-reference",
+                "/en/platform/content/javascript",
               ],
             },
             {
@@ -376,8 +368,8 @@ module.exports = {
                 "/es/platform/content/types",
                 "/es/platform/content/entries",
                 "/es/platform/content/asset-manager",
-                "/es/platform/content/javascript",
                 "/es/platform/content/public-api-reference",
+                "/es/platform/content/javascript",
               ],
             },
             {
