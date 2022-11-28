@@ -6,13 +6,13 @@ search: true
 
 Initialize and publish a widget locally using Modyo CLI.
 
-### Prerequisites
+## Prerequisites
 
 This guide was created for users who are already familiar with the following topics:
 - [Modyo Platform](/en/platform/)
 - Have [access to the administrative API](/en/platform/core/api.html#bearer-token)
 
-### Install Modyo-CLI
+## Install Modyo-CLI
 
 The Modyo command line interface allows you to interact with the platform and our widget catalog from a terminal. To install it, run the command:
 
@@ -30,7 +30,7 @@ $ npm i -g @modyo/cli
 
 > Verify that the installation was successful using the command: `modyo-cli help`
 
-### Initialize a Widget
+## Initialize a Widget
 
 The fastest way to initialize a Widget is to use one of the templates in this catalog as an accelerator and modify it for your needs. You can find the `<widget-name` as part of the Widget documentation.
 
@@ -58,7 +58,7 @@ If you encounter problems compiling, try installing a compatible version of Post
 `npm i -D @fullhuman /postcss-purgecss @3 .0.0 postcss @7 .0.351`
 :::
 
-### Publish a Widget
+## Publish a Widget
 
 To load our Widget to the platform and publish it, we'll use the `modyo-cli` `push` command. This can be done locally or using continuous integration (recommended).
 
