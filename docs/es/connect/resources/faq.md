@@ -44,7 +44,3 @@ Modyo Enterprise Cloud y Modyo Connect admiten la auditoría en su operación de
 
 ### ¿Los servicios se ofrecen solo desde Amazon AWS?
 Modyo Cloud, Modyo Enterprise Cloud y Modyo Connect son servicios manejados que se ofrecen con niveles de disponibilidad, servicio y soporte garantizados. Modyo ha elegido entregar sus servicios de forma exclusiva desde la nube de Amazon Web Services por sus excelentes niveles de desempeño y seguridad. 
-
-
-### ¿Qué pasa si deseo desplegar Modyo Enterprise en mi propio AWS?
-En el caso de que un cliente desee utilizar su propia cuenta de Amazon AWS, la licencia de Modyo Enterprise On Premise posee un servicio complementario de soporte de infraestructura, el cual puede ser utilizado para realizar configuraciones similares a las descritas en esta guía. La diferencia fundamental radica en que bajo esta modalidad los costos generados por la habilitación de los servicios descritos serán facturados directamente en la cuenta del cliente y no contempla ninguno de los componentes que no utilizan AWS.
