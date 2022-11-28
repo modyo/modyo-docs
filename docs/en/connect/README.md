@@ -6,13 +6,13 @@ Modyo Connect is a managed infrastructure and devops service on the Amazon AWS c
 
 Modyo Connect allows the implementation of services such as: Single Sign On, API Gateway, container infrastructure for [microservices](resources/microservices.md), databases, messaging queues, object repositories, among other components designed to cover all the common requirements present in an initiative complex integration.
 
-Modyo Connect was born out of the need of some customers to have a managed layer of API management services that will be securely integrated into their business systems. The service is completely optional and, in many cases, is not required since the same client can have its own API architecture and Single Sign On to which the [micro frontends](resources/microfrontends.md) developed on Modyo can be integrated.
+Modyo Connect was born in response to the need of some customers to have a managed layer of API management services that would securely integrate with their business systems. The service is completely optional and, in many cases, is not required, since the client itself can have its own API and Single Sign On architecture to which the [microfrontends](resources/microfrontends.md) developed on top of Modyo can be integrated.
 
 The following diagram corresponds to the Modyo implementation reference architecture. The managed Modyo Connect services are on the right in the diagram and are completely decoupled from the platform, so they can be replaced by APIs that the customer already has or that are developed by a third party.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-The APIs developed in Modyo Connect are consumed directly by the end user from their Web browser. The Modyo platform does not take part in communicating with the API, thus preventing sensitive information from passing through it. With this architecture, it is possible to completely decouple presentation from business logic, establishing responsibilities delimited to separate systems, thus increasing the modularity and efficiency of developments.
+The APIs developed in Modyo Connect are consumed directly by the end user from their web browser. The Modyo platform does not take part in the communication with the APIs, thus preventing sensitive information from passing through it. With this architecture it is possible to completely decouple the presentation from the business logic, establishing delimited responsibilities in separate systems, thus increasing the modularity and efficiency of the developments.
 
 
 ## Capabilities
@@ -45,5 +45,4 @@ Activation of components may have recurring costs associated with them. Each req
 ::::
 
 ## Environments
-Modyo Connect considers productive and pre-productive environments which are deployed in virtual private networks that are completely separated from each other. Customers can request up to two pre-production environments per deployment, but keep in mind that each environment generates additional recurring costs, measured in the [Modyo Resource Units or MRUs](resources/mrus.md) used.
-
+Modyo Connect considers productive and pre-production environments, which are deployed in virtual private networks totally separate from each other. Customers can request up to two pre-production environments per deployment, but should note that each environment generates additional recurring costs, measured in [Modyo Resource Units or MRUs](resources/mrus.md) used.
