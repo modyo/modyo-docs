@@ -6,7 +6,7 @@ Modyo opera sus sistemas críticos en la nube de [Amazon AWS](https://aws.amazon
 
 <img src="/assets/img/cloud/partner_badge.png" alt="Partner Badge" style="margin-top: 40px;" />
 
-En los años 2019 y 2021 Modyo fue reconocido por Amazon AWS como el Technology Partner of the Year para Chile y Perú. Además, Modyo fue la primera empresa en América Latina en convertirse en Independent Software Vendor (ISV) de AWS.
+En los años 2019 y 2021, Modyo fue reconocido por Amazon AWS como el Technology Partner of the Year para Chile y Perú. Además, Modyo fue la primera empresa en América Latina en convertirse en Independent Software Vendor (ISV) de AWS.
 
 Modyo Connect se ofrece de forma exclusiva en la nube de Amazon AWS y, al igual que Modyo Cloud y Enterprise Cloud, opera en una configuración de alta disponibilidad sobre múltiples zonas de disponibilidad y regiones de AWS, utilizando recursos abstractos y contenerizados de la nube, evitando con ello la necesidad de configurar y mantener máquinas virtuales de cualquier tipo. Para el despliegue de [microservicios](resources/microservices.md) se utiliza la plataforma de contenedores Amazon Elastic Container Services (ECS) en conjunto con herramientas de automatización y control de configuración, siguiendo una arquitectura de referencia como la que se aprecia en el siguiente diagrama:
 
@@ -18,7 +18,7 @@ Las imágenes de los contenedores se almacenan de forma segura en el repositorio
 
 Modyo Connect cuenta además con grupos de auto escalabilidad para aumentar el número de instancias de contenedores en la medida que el tráfico y la demanda se incrementa. Para ello, una capacidad mínima de base y un rango de acción de elasticidad se definen con cada cliente de acuerdo a sus necesidades particulares.
 
-El despliegue multi zona en Amazon AWS garantiza un excelente nivel de redundancia y disponibilidad para hacer frente a las fallas más comunes que usualmente pueden afectar al ambiente. En el caso poco probable que exista un fallo a nivel regional del cual Amazon AWS no entregue un tiempo de resolución aceptable se cuenta con una región de procesamiento alternativa, en la cual se mantienen respaldos contínuos de todos los datos.
+El despliegue multi zona en Amazon AWS garantiza un excelente nivel de redundancia y disponibilidad para hacer frente a las fallas más comunes que usualmente pueden afectar al ambiente. En el caso poco probable que exista un fallo a nivel regional del cual Amazon AWS no entregue un tiempo de resolución aceptable, se cuenta con una región de procesamiento alternativa, en la cual se mantienen respaldos contínuos de todos los datos.
 
 ## Operación
 Al igual que Modyo Enterprise Cloud, Modyo Connect es un servicio totalmente manejado por Modyo, quien es el responsable de toda la gestión de configuración y control de la infraestructura de la nube. Los niveles de disponibilidad del servicio quedan determinados  por medio de un acuerdo de servicio con cada cliente.
@@ -34,7 +34,7 @@ Para la entrega del servicio, Modyo cuenta con un equipo dedicado de [Site Relia
 - Control de acceso a los ambientes de nube
 
 ## Seguridad
-Modyo implementa múltiples controles de seguridad que abarcan tanto al personal como a la infraestructura. Los controles de seguridad de Modyo se encuentran alineados con los estándares más exigentes de la industria, tales cómo son el [ISO 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) y el [CSA Star](https://cloudsecurityalliance.org/star/). 
+Modyo implementa múltiples controles de seguridad que abarcan tanto al personal como a la infraestructura. Los controles de seguridad de Modyo se encuentran alineados con los estándares más exigentes de la industria, tales como son el [ISO 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) y el [CSA Star](https://cloudsecurityalliance.org/star/). 
 
 Modyo Connect se despliega sobre las mismas cuentas de AWS aisladas (Single Tenant) de Modyo Enterprise Cloud, las cuales aseguran que ningún componente de infraestructura se comparte entre clientes. Dentro de cada cuenta, se utilizan redes privadas virtuales aisladas para cada ambiente dentro de las cuales se configuran con subredes para las diferentes capas de infraestructura, restringiendo la comunicación entre ellas mediante grupos de seguridad. 
 
