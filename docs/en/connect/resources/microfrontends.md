@@ -13,7 +13,7 @@ Modyo Platform can be extended in functionality through the development of Widge
 Widgets developed with the CLI will require a code repository and automation pipelines, which generate code that is directly deployed in Modyo Platform. 
 
 ::: tip Code Repository
-The initial code and structure of the project in the developer's local environment must be backed up in a [code repository](.. /components/development.md#code-repository) provided by the service.
+The initial code and structure of the project in the developer's local environment must be backed up in a [code repository](../components/development.md#code-repository) provided by the service.
 :::
 
 ## Scope
