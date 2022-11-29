@@ -70,7 +70,7 @@ public class GetUsersController {
 }
 ```
 
-The generation of the API Gateway definitions is performed within an automated [continuous integration] pipeline (#development.md#continuous-integration), which must be previously defined.
+The generation of the API Gateway definitions is performed within an automated [continuous integration](#development.md#continuous-integration) pipeline, which must be previously defined.
 
 ### Container connectivity
 The API Gateway, being an AWS abstract service, operates outside the [Virtual Private Network (VPC)](https://aws.amazon.com/vpc) of the customer. A private network interface coupled to a [Network Load Balancer (NLB)](https://aws.amazon.com/elasticloadbalancing/network-load-balancer) located inside the VPC is used for integration with the containers, in which the different [containers](#containers) are automatically registered from the [AWS Elastic Container Service (ECS)](https://aws.amazon.com/ecs) container management platform. The NLB takes care of the balancing and health check of the containers registered with it.
@@ -80,7 +80,7 @@ To request the creation of an API Gateway in the AWS cloud, a request ticket mus
 
 As a general rule, each environment has only one shared API Gateway for all the microservices deployed on it. In case authentication is required for API calls using JWT tokens, the API Gateway must be deployed in conjunction with the [Single Sign On (SSO)](#single-sign-on-sso) component. 
 
-:::: tip Authorization of invocations
+::: tip Authorization of invocations
 To perform authorization of invocations to private APIs, the AWS API Gateway establishes communication with the SSO via an [AWS Lambda](https://aws.amazon.com/lambda) routine called [Lambda Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html), which is deployed internally, transparently as part of the service.
 :::
 
@@ -119,7 +119,7 @@ AWS ECS Fargate offers a [wide variety of configurations](https://docs.aws.amazo
 
 It is important to consider that in production, the MRUs used by the component are multiplied by the redundancy factor required by the customer, the minimum being 2 (multi-zone). Pre-production environments are configured without redundancy and may have fewer associated resources.
 
-:::: warning Fractions of vCPUs
+::: warning Fractions of vCPUs
 AWS allows the definition of containers with fractions of vCPUs assigned (example: 0.25 vCPU or 0.75 vCPU). In the case of applications running with a Java Virtual Machine (JVM), being a multithreaded execution environment, it does not benefit from a deployment using vCPU fractions. This is due to the fact that it generates I/O blockages in the processes, affecting their performance considerably. That is why the minimum accepted for Modyo Connect will be 1 vCPU and the maximum 16 vCPU.
 :::
 
@@ -158,7 +158,7 @@ Modyo uses [AWS Key Management System (KMS)](https://aws.amazon.com/kms) managed
 
 The keys managed by AWS KMS are generated using the AES 256 standard and have an automatic annual regeneration cycle, meaning that no manual action is required to renew and update resources with the newly generated keys.
 
-Modyo configures separate AWS KMS keys for each resource. By default, AWS is delegated the complete generation and management of encryption keys. If a customer wishes, externally managed keys can be incorporated into the service via the [AWS CloudHSM] module (https://aws.amazon.com/cloudhsm).
+Modyo configures separate AWS KMS keys for each resource. By default, AWS is delegated the complete generation and management of encryption keys. If a customer wishes, externally managed keys can be incorporated into the service via the [AWS CloudHSM](https://aws.amazon.com/cloudhsm) module.
 
 ### Activation steps
 The at-rest encryption provided by the AWS KMS managed keys is active by default in all AWS S3 object repositories and data volumes in AWS RDS and OpenSearch, so it does not require any activation. 
@@ -183,7 +183,7 @@ To request the issuance of a TLS certificate, the domain(s) or subdomain(s) to b
 
 When you request, Modyo will issue a certificate “pending validation” which requires validation through DNS records.
 
-:::: warning Domain validation by DNS
+::: warning Domain validation by DNS
 DNS records used for certificate validation should not be deleted, as they will be used by AWS ACM for periodic renewal. It will be the customer's responsibility to ensure the existence of these records in their DNS system.
 :::
 
@@ -226,7 +226,7 @@ To request the creation of an object repository in Modyo Connect, a ticket must 
 - Access policy (private or public)
 - Lifecycle policies (automatic deletion after a period of time, permanent, etc.)
 
-:::: tip Access acceleration
+::: tip Access acceleration
 Access to files stored in the AWS S3 object repository can be regionally accelerated by using Modyo Connect's [content-distribution-network](#content-distribution-network).
 :::
 
@@ -331,7 +331,7 @@ To request direct access to the direct mailing services, a request ticket must b
 ## Application Firewall (WAF)
 A Web Application Firewall (WAF) protects the web application server in the backend from multiple attacks. The function of the WAF is to ensure the security of the web server by analyzing HTTP / HTTPS request packets and traffic patterns.
 
-Modyo Connect allows configuration of the [AWS WAF] service (https://aws.amazon.com/waf), which has filters for the most common Web attacks (OWASP Top 10), such as SQL injections or scripts, as well as the ability to define custom rules to allow or deny access to routes by IP and rate limits. 
+Modyo Connect allows configuration of the [AWS WAF](https://aws.amazon.com/waf) service, which has filters for the most common Web attacks (OWASP Top 10), such as SQL injections or scripts, as well as the ability to define custom rules to allow or deny access to routes by IP and rate limits. 
 
 ### Log records
 AWS WAF log records are managed by AWS CloudWatch Logs and can be exported to external systems using AWS S3 repositories.
