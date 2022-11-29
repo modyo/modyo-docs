@@ -3,7 +3,7 @@ search: true
 ---
 
 # Development
-Development components include all the access and tools required by a team of developers to collaborate and work securely on [micro frontends](.. /resources/microfrontends.md) initiatives and [microservices](.. /resources/microservices.md).
+The development components comprise all the access and tools required by a team of developers to securely collaborate and work on [microfrontends](../resources/microfrontends.md) and [microservices](../resources/microservices.md) initiatives.
 
 ## Developer Access
 Developer Access is the starting point for starting to use Modyo Connect services. Once enabled, the developer will be able to interact with the [created repositories](#code-repository) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
