@@ -12,7 +12,7 @@ This page is currently under implementation. Some sections may be empty or incom
 Modyo Connect can be used for the development of Microservices, which are deployed within Microservices, in addition to requiring repositories and automations, will require an execution environment with containers and an API Gateway, which will act as a security barrier and gateway for the functionality present in them.
 
 ::: tip Code Repository
-The initial code and structure of the project in the developer's local environment must be backed up in a [code repository](.. /components/development.md#code-repository) provided by the service.
+The initial code and structure of the project in the developer's local environment must be backed up in a [code repository](../components/development.md#code-repository) provided by the service.
 :::
 
 
