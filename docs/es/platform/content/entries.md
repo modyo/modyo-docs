@@ -149,7 +149,7 @@ Como plataforma headless, Modyo permite hacer una vista previa de un entrada en 
 
 Si ya cuentas con [vistas de contenido en tus sitios](/es/platform/channels/templates.html#vistas-para-contenido), puedes ver el botón **Vista Previa en Sitio**, en el que seleccionas dónde quieres ver cómo se está desarrollando tu recurso.
 
-::: danger Atención
+:::danger Atención
 Si el Espacio no se encuentra asociado a un sitio, sólo puedes ver el código JSON de la entrada que estás desarrollando.
 :::
 
@@ -193,7 +193,7 @@ Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es 
 Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
 :::
 
-::: danger Peligro
+:::danger Peligro
 Si se borra la Categoría Padre, se borran también todas las subcategorías asignadas a esta. Y las entradas asociadas a dichas categorías quedan sin categoría asignada.
 :::
 

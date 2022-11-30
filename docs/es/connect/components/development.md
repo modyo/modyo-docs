@@ -18,7 +18,7 @@ La activación del Acceso de Desarrollador se realiza mediante un ticket de requ
 - El nombre y correo electrónico del desarrollador
 - Indicar si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio
 
-::: warning Importante
+:::warning Importante
 Una vez creado el acceso a un desarrollador, será responsabilidad del cliente informar cuando se deba remover de los repositorios autorizados. Esto se realiza mediante un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com).
 :::
 
@@ -39,7 +39,7 @@ La configuración de integración continua se utiliza para automatizar procesos 
 
 Modyo utiliza los sistemas de integración continua de GitHub Enterprise y Amazon. Todas las actividades relacionadas con el ciclo de desarrollo, cómo inspecciones, revisiones o generación de artefactos intermediarios se realizan sobre GitHub Actions. También se realizan sobre GitHub Actions todas las automatizaciones referidas a [micro frontends](../resources/microfrontends.md), cómo el despliegue a la plataforma Modyo mediante el uso del Modyo CLI. Las actividades relacionadas con la generación de artefactos basados en contenedores y sus despliegues sobre AWS ECS se realizan utilizando AWS CodePipeline.
 
-::: warning Importante
+:::warning Importante
 Las integraciones basadas en AWS CodePipeline serán migradas a GitHub Actions durante la primera mitad del 2023.
 :::
 

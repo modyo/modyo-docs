@@ -21,7 +21,7 @@ Los tickets de requerimientos, una vez que se ingresan, son revisados antes de s
 
 Para mejorar la gestión de tickets y la forma cómo los clientes acceden al estado de estos, el centro de soporte de Modyo pedirá la creación de un usuario y una contraseña para realizar las solicitudes. Es importante que la creación de esta cuenta se realice utilizando el correo electrónico corporativo al cual esté asociado el contrato de servicios de Modyo Enterprise Cloud, de otro modo el equipo SRE no podrá identificar la validez de la solicitud. Además, es conveniente incluir en el ticket a todas las partes involucradas que deberían tener acceso a él, mediante el campo CC del formulario de solicitud.
 
-::: tip Planificación 
+:::tip Planificación 
 Modyo recomienda planificar de forma anticipada los tickets de requerimientos para evitar crearlos de forma urgente por esperar al último día. Existen períodos en el mes en dónde se observa más demanda por el servicio que en otros, por lo que la recomendación es tratar de hacer las solicitudes con la mayor antelación posible.
 :::
 

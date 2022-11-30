@@ -34,7 +34,7 @@ A un costado de cada campaña, se encuentra un botón en el que podremos efectua
 - **Editar la campaña**
 - **Borrar la campaña**
 
-::: danger Peligro
+:::danger Peligro
 Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
 :::
 
@@ -112,7 +112,7 @@ Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la 
 
 También podrás encontrar un botón que te permitirá borrar el envío del registro.
 
-::: danger Peligro
+:::danger Peligro
 Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
 Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
 :::
@@ -207,7 +207,7 @@ Si se hace click en el nombre del usuario, puedes encontrar el [perfil del usuar
 
 Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
 
-::: danger Peligro
+:::danger Peligro
 Hacer una reinscripción sin autorización del usuario puede causar problemas legales.
 Revisa la regulación sobre correos masivos en cada país.
 :::

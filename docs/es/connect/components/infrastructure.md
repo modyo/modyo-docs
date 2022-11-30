@@ -80,7 +80,7 @@ Para solicitar la creación de un API Gateway en la nube de AWS, se debe crear u
 
 Como regla general cada ambiente cuenta con solo un API Gateway compartido para todos los microservicios desplegados sobre él. En caso de requerir autenticación en las llamadas a las APIs mediante tokens JWT, el API Gateway debe desplegarse en conjunto con el componente de [Single Sign On (SSO)](#single-sign-on-sso). 
 
-::: tip Autorización de invocaciones
+:::tip Autorización de invocaciones
 Para efectuar la autorización de las invocaciones hacia APIs privadas, el API Gateway de AWS establece una comunicación con el SSO mediante una rutina [AWS Lambda](https://aws.amazon.com/lambda) denominada [Lambda Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html), la cual se despliega internamente, de forma transparente como parte del servicio.
 :::
 
@@ -119,7 +119,7 @@ AWS ECS Fargate ofrece una [amplia variedad de configuraciones](https://docs.aws
 
 Es importante considerar que en producción, las MRU utilizadas por el componente se multiplican por el factor de redundancia requerido por el cliente, siendo el mínimo de 2 (multizona). Los ambientes de preproducción se configuran sin redundancia y pueden poseer menos recursos asociados.
 
-::: warning Fracciones de vCPUs
+:::warning Fracciones de vCPUs
 AWS permite la definición de contenedores con fracciones de vCPUs asignadas (ejemplo: 0.25 vCPU o 0.75 vCPU). En el caso de aplicaciones que se ejecuten con una Java Virtual Machine (JVM), al ser un ambiente de ejecución multihilo, no se beneficia de un despliegue que utilice fracciones de vCPU. Esto es debido a que genera bloqueos de I/O en los procesos afectando considerablemente su rendimiento. Es por ello que el mínimo aceptado para Modyo Connect será de 1 vCPU y el máximo de 16 vCPU.
 :::
 
@@ -149,7 +149,7 @@ Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de
 - Almacén dónde desea ser creado (GitHub o AWS)
 - Método seguro escogido para la entrega del valor del secreto 
 
-::: danger Confidencialidad de secretos
+:::danger Confidencialidad de secretos
 Modyo no recomienda adjuntar en el ticket de activación los valores de los secretos. Se debe establecer un canal seguro de comunicación con el cliente, que asegure la confidencialidad de los valores a configurar (Ejemplo: correo electrónico encriptado).
 :::
 
@@ -174,7 +174,7 @@ Los certificados SSL/TLS aseguran una encriptación segura para todas las operac
 
 Para generar y mantener actualizados los certificados SSL/TLS, Modyo Connect utiliza AWS Certificate Manager (ACM). Los certificados generados por AWS ACM requerirán de una verificación en el dominio, la cual debe ser realizada por el cliente, incorporando los registros de DNS del tipo CNAME que se indiquen como parte del proceso de generación. Una vez emitido el certificado, el cliente tiene tres días para efectuar la configuración en su DNS, de otro modo el certificado deberá emitirse nuevamente.
 
-::: Seguridad de llaves privadas
+:::Seguridad de llaves privadas
 Modyo no posee acceso a las llaves privadas de los certificados emitidos por AWS ACM, ni podrán ser utilizados fuera de los servicios soportados en la cuenta AWS configurada para el cliente.
 :::
 
@@ -183,7 +183,7 @@ Para solicitar la emisión de un certificado TLS se debe indicar el o los domini
 
 Al momento de solicitar, Modyo emitirá un certificado "pendiente de validación" el cual requiere de una validación por medio de registros de DNS.
 
-::: warning Validación de dominios por DNS
+:::warning Validación de dominios por DNS
 Los registros de DNS utilizados para la validación del certificado no deben ser eliminados, ya que serán utilizados por AWS ACM para su renovación periódica. Será responsabilidad del cliente asegurar la existencia de estos registros en su sistema de DNS.
 :::
 
@@ -215,7 +215,7 @@ El repositorio de objetos permite contar con un almacenamiento de archivos segur
 
 Los permisos de acceso, asociados a cada archivo o generales para el repositorio, se especifican mediante el uso del API del servicio de AWS S3. El cliente es responsable por la asignación de estos permisos.
 
-::: tip Acceso al API de AWS S3
+:::tip Acceso al API de AWS S3
 El acceso al repositorio se realiza mediante el API del servicio AWS S3. Existen múltiples librerías que pueden ser implementadas desde el lado del cliente para acceder al API, así como también aplicaciones de transferencia de archivos compatibles con el protocolo. En caso de que el repositorio sea utilizado dentro de los microservicios desplegados dentro de Modyo Connect, las llaves de API de AWS S3 serán gestionadas como secretos de uso interno.
 :::
 
@@ -226,7 +226,7 @@ Para solicitar la creación de un repositorio de objetos en Modyo Connect se deb
 - Política de acceso (privado o público)
 - Políticas de ciclo de vida (borrado automático después de un periodo de tiempo, permanente, etc.)
 
-::: tip Aceleración en los accesos
+:::tip Aceleración en los accesos
 El acceso a los archivos almacenados en el repositorio de objetos de AWS S3 puede ser acelerado regionalmente mediante el uso de la [red de distribución de contenidos](#red-de-distribución-de-contenidos) de Modyo Connect.
 :::
 
@@ -249,7 +249,7 @@ Las bases de datos relacionales permiten contar con un sistema de almacenamiento
 
 Modyo Connect utiliza el servicio de [AWS RDS Aurora](https://aws.amazon.com/rds/aurora) para implementar las bases de datos. AWS RDS Aurora es compatible con MySQL y a diferencia de un despliegue tradicional de este motor, Aurora se configura como cluster de alta disponibilidad en el cual los datos almacenados se replican simultáneamente en múltiples ubicaciones. 
 
-::: tip Múltiples esquemas
+:::tip Múltiples esquemas
 Dentro de una misma base de datos configurada dentro de Modyo Connect, se pueden definir múltiples esquemas independientes lógicamente entre sí y con diferentes permisos de accesos. Esta configuración permite reutilizar la misma instancia para diferentes propósitos en diferentes microservicios y/o SSO. Es importante considerar que en este tipo de configuración, el cliente será responsable de seleccionar un tamaño apropiado del motor para controlar la concurrencia de acceso de forma efectiva (pools combinados de conexiones).
 :::
 

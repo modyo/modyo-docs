@@ -209,7 +209,7 @@ En este caso, el respaldo se regresa directamente a la versión **publicada** de
 
 Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables, para que se pueda trabajar en resolver los problemas que la versión con errores pudo haber tenido.
 
-::: danger Peligro
+:::danger Peligro
 Dado que esta es una acción potencialmente peligrosa, sólo los administradores de sitios o espacios tienen el permiso para poder ejecutar esta acción.
 :::
 

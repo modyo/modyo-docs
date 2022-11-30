@@ -10,7 +10,7 @@ De esta forma, es posible realizar labores administrativas consumiendo la API y 
 
 :::danger Peligro
 Es importante asegurarse que el portal de APIs no sea expuesto de manera pública a Internet. Las llamadas hacia las APIs deben realizarse desde un ambiente seguro usando los protocolos de seguridad adecuados (HTTPS) y evita compartir los tokens de autenticación.
-:::   
+:::  
 
 ## Información General
 
