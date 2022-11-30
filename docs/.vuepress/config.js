@@ -54,7 +54,7 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          // { text: "Connect", link: "/en/connect/" },
+          { text: "Connect", link: "/en/connect/" },
           // { text: "Dynamic", link: "/en/dynamic/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
@@ -293,7 +293,7 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          // { text: "Connect", link: "/es/connect/" },
+          { text: "Connect", link: "/es/connect/" },
           // { text: "Dynamic", link: "/es/dynamic/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
