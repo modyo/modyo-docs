@@ -9,7 +9,6 @@ Una de las funcionalidades de Modyo para facilitar la interacción de otros sist
 Actualmente la plataforma es compatible con:
 
 - [Google](#google)
-- [LDAP](#ldap)
 - [SAML](#saml)
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
