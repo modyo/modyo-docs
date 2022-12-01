@@ -150,7 +150,7 @@ As a headless platform, Modyo allows you to preview an entry in multiple sites.
 If you already have [content views on your sites](/en/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
 
 :::danger Danger
-If the Space is not associated with a site, you can only see the JSON code of the entry you are developing.
+If the Space is not associated with a site, you can only see the JSON code of the Entry you are developing.
 :::
 
 :::warning Warning
@@ -194,7 +194,7 @@ If you want to delete a category, click the three-point icon at the end of its n
 :::
 
 :::danger Danger
-If you delete a Parent Category, you also delete all its subcategories. Entries associated with these categories will lose their category assignments.
+If the Parent Category is deleted, all subcategories assigned to it are also deleted. And the entries associated with those categories are left without a category assigned to them.
 :::
 
 ### Tags
