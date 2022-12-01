@@ -210,7 +210,7 @@ In this case, the backup is returned directly to the **published** version of th
 This is useful when something was published by mistake and it is necessary to return to one of the stable versions, so that you can work on resolving the problems in the version with errors.
 
 :::danger Danger
-Since this is a potentially dangerous action, only site or space administrators have permission to execute this action.
+This is a potentially dangerous action, only site or space administrators are allowed to perform this action.
 :::
 
 ## Locks
