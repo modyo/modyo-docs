@@ -174,7 +174,7 @@ Los certificados SSL/TLS aseguran una encriptación segura para todas las operac
 
 Para generar y mantener actualizados los certificados SSL/TLS, Modyo Connect utiliza AWS Certificate Manager (ACM). Los certificados generados por AWS ACM requerirán de una verificación en el dominio, la cual debe ser realizada por el cliente, incorporando los registros de DNS del tipo CNAME que se indiquen como parte del proceso de generación. Una vez emitido el certificado, el cliente tiene tres días para efectuar la configuración en su DNS, de otro modo el certificado deberá emitirse nuevamente.
 
-:::Seguridad de llaves privadas
+:::warning Seguridad de llaves privadas
 Modyo no posee acceso a las llaves privadas de los certificados emitidos por AWS ACM, ni podrán ser utilizados fuera de los servicios soportados en la cuenta AWS configurada para el cliente.
 :::
 
