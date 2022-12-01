@@ -6,19 +6,19 @@ search: false
 
 Modyo Dynamic ...
 
-## Dynamic Design System
+### Dynamic Design System
 
 El sistema de diseño de Modyo Dynamic permite componer interfaces orientadas en la industria finciera de uan forma fácil y rápida, tomando ventaja de un catálogo de componentes pre fabricados que resuelven los problemas comunes en la experiencia de usuarios.
 
 El sistema de diseño de Modyo Dynamic se compone de un kit de diseño en Figma y una completalibrería de compoentnes en ReactJS.
 
 
-## Dynamic Widgets
+### Dynamic Widgets
 
 Los Widgets de Modyo Dynamic
 
 
-## Dynamic APIs
+### Dynamic APIs
 
 
 
