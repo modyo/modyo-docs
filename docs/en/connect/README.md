@@ -40,8 +40,8 @@ Modyo Connect has different services or components, which are grouped into three
 
 To activate a component, a requirement ticket will be required, so we recommend that before starting to use the service you have active access to the [Modyo Support Center](https://support.modyo.com). For questions about how to activate accounts in the Support Center, please contact the assigned account executive.
 
-::: tip Activation costs 
-Activation of components may have recurring costs associated with them. Each request must have the approval of the customer's authorized users.
+:::tip Activation costs
+Component activation may have recurring costs associated with it. Each request must be approved by the customer's authorized users.
 :::
 
 ## Environments

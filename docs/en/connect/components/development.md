@@ -19,7 +19,7 @@ Developer Access is activated by means of a request ticket in the [Modyo Support
 - Indicate whether or not the developer is authorized to request changes to the components of the service
 
 :::warning Important
-Once access to a developer has been created, it will be the customer's responsibility to inform when it should be removed from authorized repositories. This is done through a requirement ticket in the [Modyo Support Center](https://support.modyo.com).
+Once developer access has been created, it will be the customer's responsibility to inform when it should be removed from the authorized repositories. This is done by submitting a request ticket to the [Modyo Support Center](https://support.modyo.com).
 :::
 
 
