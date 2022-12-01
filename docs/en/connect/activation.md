@@ -19,10 +19,10 @@ Requests are done through the [Modyo Support Center](https://support.modyo.com),
 
 Requirement tickets, once entered, are reviewed before being accepted and assigned to an SRE. The duration of this process will depend on the demand and availability of the team. If the ticket needs to be handled on an urgent basis, the reasons should be clearly explained so that the team can reschedule others. Depending on the support contract associated with the service, each customer may have only a limited and non-cumulative number of requests that can be handled on an urgent basis during the month.
 
-To improve ticket management and the way customers access ticket status, the Modyo support center will require the creation of a username and password for ticket requests. It is important that this account is created using the corporate email address associated with the Modyo Enterprise Cloud service contract, otherwise the SRE team will not be able to identify the validity of the request. In addition, it is convenient to include in the ticket all the parties involved that should have access to it, through the CC field of the request form.
+To improve ticket management and the way customers access ticket status, the Modyo Support Center will require the creation of a username and password for ticket requests. It is important that this account is created using the corporate email address associated with the Modyo Enterprise Cloud service contract, otherwise the SRE team will not be able to identify the validity of the request. In addition, it is convenient to include all the parties involved that should have access in the ticket, through the CC field of the request form.
 
-::: tip Planning 
-Modyo recommends planning requirement tickets in advance to avoid creating them urgently by waiting until the last day. There are periods in the month when there is more demand for the service, we recommend to make the request as far in advance as possible.
+:::tip Planning
+Modyo recommends to plan the request tickets in advance to avoid creating them in an urgent way by waiting for the last day. There are periods in the month when there is more demand for the service than others, so the recommendation is to try to make requests as far in advance as possible.
 :::
 
 ### Costs
