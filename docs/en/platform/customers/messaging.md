@@ -35,7 +35,7 @@ Next to each campaign, there is a button where we can perform two actions.
 - **Delete the Campaign**
 
 :::danger Danger
-If you delete a campaign, there is no way to recover it.
+If you delete the campaign, there is no way to recover it. It will not be saved in the system
 :::
 
 ### Create a campaign
@@ -113,8 +113,8 @@ At the bottom you can find a table with all the campaign deliveries, which you c
 You will also be able to find a button that will allow you to delete the registration submission.
 
 :::danger Danger
-Remember that if you delete the delivery, it is unrecoverable.
-In addition, if you delete a delivery when the campaign is in the process of sending, this does not mean that email messaging will not reach your users, only that the process will stop at the point where it is.
+Remember that if you delete the mailing, you will not be able to recover the record if you made any changes to it. 
+Also, if you delete when the campaign is in the process of sending, it does not mean that the emails will not reach the users, but that the process will stop at the point where it is.
 :::
 
 If you click on the campaign dates, this takes you to the Message Deliveries section.
@@ -207,6 +207,6 @@ If you click on the name of the user, you can find the [user profile](/en/platfo
 Finally, at the end of each username, you will find a button that allows you to resubscribe them to recieve your campaign messages.
 
 :::danger Danger
-Re-enrolling without user authorization can cause legal problems.
-Review the regulations on mass mailing in each country.
+Unsubscribing without the user's authorization may cause legal problems.
+Check the regulation on mass mailings in each country.
 :::
