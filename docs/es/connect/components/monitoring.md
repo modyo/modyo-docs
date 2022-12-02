@@ -16,9 +16,9 @@ Modyo Connect incluye capacidades de monitoreo en tiempo real del estado de su i
 Modyo Connect es un servicio manejado, por lo que la gran mayoría de estas métricas son gestionadas internamente por nuestros equipos de operaciones. Como parte del servicio, se escala hacia el cliente solo las alertas referidas a sus aplicaciones particulares, como por ejemplo problemas con servicios externos o errores dentro de la aplicación.
 
 
-## Monitoreo Aplicativo
+## Métricas Aplicativas
 
-El monitoreo aplicativo es un tipo de monitoreo “caja blanca” en el cual se instrumentan agentes que reportan el comportamiento de los elementos internos de cada aplicación. El monitoreo aplicativo detecta tiempos de respuesta de servicios como APIs, bases de datos, sistemas de caché, entre otros, otorgando una vista de 360° del estado de la aplicación.
+El monitoreo de las métricas aplicativas es un tipo de monitoreo “caja blanca” en el cual se instrumentan agentes que reportan el comportamiento de los elementos internos de cada aplicación. El monitoreo aplicativo detecta tiempos de respuesta de servicios como APIs, bases de datos, sistemas de caché, entre otros, otorgando una vista de 360° del estado de la aplicación.
 
 
 Modyo Connect implementa su servicio de monitoreo de métricas aplicativas con [NewRelic APM](https://www.newrelic.com). El APM de NewRelic captura métricas de rendimiento en tiempo real y las centraliza en dashboards que pueden ser accedidos desde la Web, dentro de las cuales podemos destacar:
@@ -66,22 +66,18 @@ La variable $STAGE_NAME se usa para notificar a NewRelic la configuración de am
 
 
 :::tip Token de NewRelic
-
 El token de API de NewRelic, usado para importar las métricas al servicio, se inyecta automáticamente como parte de las variables de entorno de los microservicios. 
-
 :::
 
 
 :::warning Usuarios básicos y full en NewRelic
-
 Los accesos otorgados por Modyo Connect son del tipo “basic” y restringidos exclusivamente a los dashboards definidos para cada servicio. Modyo no entrega accesos del tipo “full” a ningún usuario del servicio.
-
 :::
 
 
-## Monitoreo de Infraestructura
+## Métricas de Infraestructura
 
-El monitoreo de infraestructura comprende todos los detalles acerca de las dependencias de nube configuradas para el servicio.
+El monitoreo de las métricas de infraestructura comprende todos los detalles acerca de las dependencias de nube configuradas para el servicio.
 
 
 Modyo Connect implementa el monitoreo de infraestructura mediante el uso de [AWS CloudWatch](https://aws.amazon.com/cloudwatch). 
@@ -99,7 +95,7 @@ Las métricas más relevantes del monitoreo de infraestructura se envían hacia 
 :::
 
 
-## Registro de logs
+## Registro de Logs
 
 El registro o historial de logs se refiere a la grabación secuencial en un archivo o en una base de datos de todos los eventos o acciones que afectan a un proceso particular. De esta forma constituye una evidencia del comportamiento del sistema.
 
@@ -113,8 +109,6 @@ Los registros de AWS CloudWatch Logs se encuentran activos por defecto en toda l
 
 
 :::warning Ofuscación de registros
-
 Será responsabilidad del usuario que genera los logs ofuscar los parámetros y la información sensible que se incluye en los registros.
-
 :::
 
