@@ -3,6 +3,7 @@ search: true
 ---
 
 # Desarrollo
+
 Los componentes de desarrollo comprenden todos los accesos y herramientas requeridas por un equipo de desarrolladores para colaborar y trabajar de forma segura en iniciativas de [micro frontends](../resources/microfrontends.md) y [microservicios](../resources/microservices.md).
 
 ## Acceso de Desarrollador

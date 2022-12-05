@@ -3,19 +3,23 @@ search: true
 ---
 
 # Infrastructura
+
 Los componentes de infraestructura permiten disponibilizar un ambiente de ejecución seguro y escalable para las APIs y [microservicios](../resources/microservices.md) desarrollados sobre Modyo Connect, en la nube de [Amazon AWS](https://aws.amazon.com). 
 
-Los componentes de infraestructura son completamente gestionados por el servicio de Modyo Connect y los usuarios solo se preocupan por el código que se despliega en ellos. Un equipo de expertos de nube de Modyo se encarga de parametrizar, automatizar, monitorear y asegurar la continuidad del servicio según los niveles acordados.
+Los componentes de infraestructura son completamente gestionados por el servicio de Modyo Connect y los usuarios solo se preocupan por el código que se despliega en ellos. Un equipo de expertos de nube de Modyo se encarga de parametrizar, automatizar, monitorear, y asegurar la continuidad del servicio según los niveles acordados.
 
 En la presente guía se detallan los componentes de infraestructura más relevantes dentro del servicio de Modyo Connect.
 
 ## Balanceo de Carga
+
 El balanceo de carga es la manera en que las peticiones de Internet son distribuidas sobre un grupo de servidores. 
 
-Modyo Connect implementa el balanceo de carga mediante [AWS Application Load Balancer(ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html). El AWS ALB se integra de forma nativa con los demás servicios de la nube de AWS, además de ofrecer características únicas de seguridad, como la redirección de rutas y protocolos, [certificados SSL/TLS](#certificados-ssl-tls) y la incorporación de [firewalls aplicativos](#firewall-aplicativo-waf).
+Modyo Connect implementa el balanceo de carga mediante [AWS Application Load Balancer(ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html). El AWS ALB se integra de forma nativa con los demás servicios de la nube de AWS, además de ofrecer características únicas de seguridad, como la redirección de rutas y protocolos, [certificados SSL/TLS](#certificados-ssl-tls), y la incorporación de [firewalls aplicativos](#firewall-aplicativo-waf).
 
 ### Pasos para activar
+
 Para solicitar la creación de un balanceador ALB en la nube de AWS, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se debe incluir:
+
 - Dominio que será apuntado al ALB
 - Descripción del caso de uso, declarando a qué servicio se aplicará
 - Contacto técnico del administrador de DNS para la validación de certificados SSL/TLS y redirecciones
@@ -28,6 +32,7 @@ El balanceador de carga de AWS ALB no puede dirigir tráfico hacia recursos de A
 
 
 ## API Gateway
+
 El API Gateway corresponde al punto de entrada para todas las APIs desplegadas dentro de Modyo Connect y se encarga principalmente de gestionar y autorizar las peticiones entrantes, para canalizarlas al microservicio correcto. El API Gateway es capaz de realizar funciones de monitoreo, gestión de cuotas y caché para mejorar el rendimiento de las APIs que se definen en él. Modyo Connect utiliza el [AWS API Gateway](https://aws.amazon.com/api-gateway), el cual es un servicio abstracto ofrecido por AWS.
 
 La incorporación de endpoints en el API Gateway se realiza utilizando anotaciones especiales dentro del código fuente del microservicio (Java Spring Boot), las cuales al momento del despliegue permiten obtener una definición [Swagger](https://swagger.io) del API la cual se incorporan de forma dinámica al servicio, tal como se muestra en el siguiente ejemplo:
@@ -73,28 +78,33 @@ public class GetUsersController {
 La generación de las definiciones para el API Gateway se realiza dentro de un pipeline automatizado de [integración continua](#development.md#integracion-continua), el cual debe estar previamente definido.
 
 ### Conectividad con los contenedores
+
 El API Gateway, al ser un servicio abstracto de AWS, opera fuera de la [Virtual Private Network (VPC)](https://aws.amazon.com/vpc) del cliente. Para la integración con los contenedores de se utiliza una interfaz de red privada acoplada a un [Network Load Balancer (NLB)](https://aws.amazon.com/elasticloadbalancing/network-load-balancer) ubicado dentro de la VPC, en el cual los diferentes [contenedores](#contenedores) se registran de forma automática desde la plataforma de gestión de contenedores de [AWS Elastic Container Service (ECS)](https://aws.amazon.com/ecs). El NLB se encarga del balanceo y el chequeo de salud de los contenedores registrados en él.
 
 ### Pasos de activación
+
 Para solicitar la creación de un API Gateway en la nube de AWS, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com).
 
 Como regla general cada ambiente cuenta con solo un API Gateway compartido para todos los microservicios desplegados sobre él. En caso de requerir autenticación en las llamadas a las APIs mediante tokens JWT, el API Gateway debe desplegarse en conjunto con el componente de [Single Sign On (SSO)](#single-sign-on-sso). 
 
 :::tip Autorización de invocaciones
-Para efectuar la autorización de las invocaciones hacia APIs privadas, el API Gateway de AWS establece una comunicación con el SSO mediante una rutina [AWS Lambda](https://aws.amazon.com/lambda) denominada [Lambda Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html), la cual se despliega internamente, de forma transparente como parte del servicio.
+Para efectuar la autorización de las invocaciones hacia APIs privadas, el API Gateway de AWS establece una comunicación con el SSO mediante una rutina [AWS Lambda](https://aws.amazon.com/lambda) denominada [Lambda Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html), la cual se despliega internamente y forma transparente como parte del servicio.
 :::
 
 ## Contenedores
+
 Los contenedores corresponden al ambiente de ejecución sobre el cual se ejecutan los microservicios. A diferencia de las máquinas virtuales, se recomienda que los contenedores solo ejecuten un proceso a la vez, el cual se lanza desde una imagen generada por medio de un archivo [Dockerfile](https://docs.docker.com/engine/reference/builder).
 
 Modyo Connect utiliza el servicio de contenedores [serverless](https://aws.amazon.com/serverless) de [AWS ECS Fargate](https://aws.amazon.com/fargate) para ejecutar los contenedores en la nube. Con ECS Fargate no es necesario efectuar ningún tipo de configuración sobre servidores de la plataforma, ya que son gestionados por AWS.
 
 ### Lenguaje y framework de programación
+
 En Modyo Connect los microservicios son desarrollados usando [Spring Boot](https://spring.io/projects/spring-boot) con Java. Esto es debido a la simplicidad de este framework a la hora de realizar proyectos de integración orientado a despliegues en microservicios. Spring Boot no requiere de servidores de aplicaciones tradicionales, ya que define su propio runtime de ejecución. Además, las aplicaciones desarrolladas sobre Spring Boot tienen la capacidad de escalar horizontalmente, posibilitando incrementar de forma dinámica el número de contenedores según sea requerido.
 
 Dentro del contenedor, se trabaja con el runtime de [OpenJDK 11 (J9)](https://www.eclipse.org/openj9), el cual ofrece características únicas de eficiencia y compatibilidad.
 
 ### Imagen de contenedor
+
 Las imágenes de los contenedores se generan en un proceso de integración continua, siguiendo las definiciones provistas por el usuario. Una vez generadas, estas se almacenan de forma segura en el [AWS Elastic Container Registry (ECR)](https://aws.amazon.com/ecr), el cual se integra de forma directa con el servicio de AWS ECS.
 
 A continuación se muestra un ejemplo de definición de contenedor que asigna el 75% de la memoria RAM disponible a la JVM de Java utilizada por el microservicio.
@@ -107,6 +117,7 @@ CMD java -XX:MaxRAMPercentage=75.0 -XX:MinRAMPercentage=75.0 -XX:InitialRAMPerce
 ```
 
 ### Tamaño de las instancias
+
 AWS ECS Fargate ofrece una [amplia variedad de configuraciones](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html), que van desde las fracciones de vCPUs hasta las 16 vCPUs dedicadas para un solo contenedor. Según el número de vCPUs escogido, se activan rangos de memoria RAM dedicados que van desde 1 GB hasta 32 GB. Dependiendo del tamaño escogido de nodo, se consumirá más o menos [MRUs](../resources/mrus.md) en el servicio.
 
 | CPU        |   Memory      |
@@ -124,9 +135,11 @@ AWS permite la definición de contenedores con fracciones de vCPUs asignadas (ej
 :::
 
 ### Pool de conexiones
+
 Existen muchos casos en los cuales se requiere de una [base de datos](#bases-de-datos) conectada a los microservicios. En estos casos se debe asegurar que el tamaño de la base de datos escogida es suficiente para el número de instancias de contenedor consideradas (incluyendo el rango de auto escalabilidad). Las conexiones concurrentes a la base de datos estará determinada por el tamaño de [pool de conexiones](https://www.baeldung.com/java-connection-pooling) definido en cada microservicio.
 
 ### Pasos de activación
+
 Para solicitar la creación de un contenedor en la nube de AWS, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se deberá indicar:
 - Nombre y ubicación del repositorio de código
 - Rama desde la cual se debe realizar el despliegue automático de cada ambiente
@@ -139,12 +152,15 @@ Para más información, favor referirse a la guía de [desarrollo de microservic
 :::
 
 ## Gestión de Secretos
+
 Modyo Connect permite la gestión segura de secretos para el manejo de información sensible en los [microservicios](../resources/microservices.md) mediante el uso de [AWS Secret Manager](https://aws.amazon.com/secrets-manager). AWS Secret Manager genera un almacén centralizado y seguro de parámetros, de forma de que estos no se almacenen en el código ni como variables de entorno en el ambiente, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
 
 Adicionalmente, existe una gestión de secretos en el mismo repositorio de [GitHub Empresarial](https://github.com/enterprise) de Modyo, la que se utiliza de forma interna para compartir detalles de tokens de accesos con los scripts de integración continua de [GitHub Actions](https://github.com/features/actions). Si se requiere incorporar un secreto dentro del proceso de GitHub Action, este puede ser solicitado mediante un ticket de activación.
 
 ### Pasos de activación
+
 Para solicitar la configuración de un nuevo secreto, se debe crear un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com). En el ticket se deberá indicar:
+
 - Nombre del secreto
 - Almacén dónde desea ser creado (GitHub o AWS)
 - Método seguro escogido para la entrega del valor del secreto 
@@ -154,6 +170,7 @@ Modyo no recomienda adjuntar en el ticket de activación los valores de los secr
 :::
 
 ## Encriptación
+
 Modyo utiliza la encriptación manejada de [AWS Key Management System (KMS)](https://aws.amazon.com/kms) para el cifrado seguro de toda la información en descanso almacenada en repositorios de objetos y volúmenes de datos administrados para el cliente.
 
 Las llaves gestionadas por AWS KMS se generan mediante el estándar de AES 256 y poseen un ciclo de regeneración anual automático, es decir, no se requiere de ningún tipo de acción manual para renovar y actualizar los recursos con las nuevas llaves generadas.
@@ -161,6 +178,7 @@ Las llaves gestionadas por AWS KMS se generan mediante el estándar de AES 256 y
 Modyo configura llaves AWS KMS independientes para cada recurso. Por defecto, se delega a AWS la generación y gestión completa de las llaves de cifrado. Si un cliente lo desea, se pueden incorporar al servicio llaves gestionadas de forma externa, mediante el módulo de [AWS CloudHSM](https://aws.amazon.com/cloudhsm).
 
 ### Pasos de activación
+
 La encriptación en descanso provista por las llaves manejadas de AWS KMS se encuentra activa por defecto en todos los repositorios de objetos de AWS S3 y volúmenes de datos de AWS RDS y OpenSearch, por lo que no requiere de ningún tipo de activación. 
 
 En el caso de requerir la incorporación de una llave gestionada de forma externa, se debe utilizar el servicio de AWS CloudHSM, se debe notificar con un ticket de requerimiento en el Centro de Soporte de Modyo, indicando el motivo y cómo planea gestionar la llave externa (implementación, renovaciones, etc.).
@@ -170,6 +188,7 @@ Las llaves gestionadas por el cliente no poseen la capacidad de rotar automátic
 :::
 
 ## Certificados SSL/TLS
+
 Los certificados SSL/TLS aseguran una encriptación segura para todas las operaciones en tránsito desde los endpoints HTTPS del servicio. Los certificados SSL/TLS se pueden activar a nivel del balanceador de carga, la red de distribución de contenido CDN y el API Gateway.
 
 Para generar y mantener actualizados los certificados SSL/TLS, Modyo Connect utiliza AWS Certificate Manager (ACM). Los certificados generados por AWS ACM requerirán de una verificación en el dominio, la cual debe ser realizada por el cliente, incorporando los registros de DNS del tipo CNAME que se indiquen como parte del proceso de generación. Una vez emitido el certificado, el cliente tiene tres días para efectuar la configuración en su DNS, de otro modo el certificado deberá emitirse nuevamente.
@@ -179,6 +198,7 @@ Modyo no posee acceso a las llaves privadas de los certificados emitidos por AWS
 :::
 
 ### Pasos de activación
+
 Para solicitar la emisión de un certificado TLS se debe indicar el o los dominios o subdominios a incluir. El solicitante se debe asegurar previamente de contar con acceso al panel de gestión de DNS para el dominio o de contar con el tiempo de la persona que posee el acceso. Adicionalmente, el cliente podrá seleccionar una [política de seguridad](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) para el certificado.
 
 Al momento de solicitar, Modyo emitirá un certificado "pendiente de validación" el cual requiere de una validación por medio de registros de DNS.
@@ -188,16 +208,19 @@ Los registros de DNS utilizados para la validación del certificado no deben ser
 :::
 
 Consideraciones adicionales:
+
 - Modyo no recomienda el uso de certificados tipo wildcard (*.dominio.com) dentro de los servicios.
 - Modyo utiliza la política de cifrado recomendada por AWS, la cual garantiza seguridad, manteniendo cierto grado de compatibilidad con dispositivos antiguos. Si el cliente desea activar [políticas de cifrado](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) más seguras (arriesgando disminuir la compatibilidad), debe especificarlo en el ticket.
 
 
 ## Single Sign On (SSO)
+
 El servicio de Single Sign On (SSO) permite incorporar la autenticación de usuarios a las iniciativas de desarrollo con Modyo Connect. Los usuarios autenticados podrán compartir su sesión entre la plataforma Modyo y las llamadas al API Gateway, de forma que sea posible acceder a recursos protegidos no disponibles de forma pública hacia Internet.
 
 El servicio de SSO de Modyo Connect se implementa utilizando [KeyCloak](https://www.keycloak.org), aplicación de código abierto patrocinada por [Red Hat](https://www.redhat.com), quienes ofrecen un soporte pagado adicional sobre ella. La aplicación KeyCloak se despliega sobre contenedores en modo cluster de alta disponibilidad con la posibilidad de escalar en caso de que sea requerido. Además, Modyo Connect otorga acceso al repositorio que origina la imagen de contenedor configurada para KeyCloak, lo que permite tener control sobre las personalizaciones tanto de experiencia de usuario, como de flujos no estándares de autenticación.
 
 ### Pasos de activación
+
 Las solicitudes de despliegue de SSO sobre Modyo Connect se realizan mediante un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com). Dentro del ticket, se puede especificar si será requerido el acceso a la administración total de la aplicación, o la creación de reinos de usuarios con configuraciones específicas.
 
 La activación de SSO sobre Modyo Connect requiere de la existencia previa de una [base de datos](#bases-de-datos) debidamente configurada para el servicio.
@@ -211,6 +234,7 @@ Modyo no se hace responsable por las personalizaciones o vulnerabilidades en el 
 :::
 
 ## Repositorio de Objetos
+
 El repositorio de objetos permite contar con un almacenamiento de archivos seguro y escalable en la nube accesible mediante protocolos Web. Modyo Connect implementa el repositorio de objetos utilizando [AWS S3](https://aws.amazon.com/s3).
 
 Los permisos de acceso, asociados a cada archivo o generales para el repositorio, se especifican mediante el uso del API del servicio de AWS S3. El cliente es responsable por la asignación de estos permisos.
@@ -220,6 +244,7 @@ El acceso al repositorio se realiza mediante el API del servicio AWS S3. Existen
 :::
 
 ### Pasos de activación
+
 Para solicitar la creación de un repositorio de objetos en Modyo Connect se debe realizar un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com) especificando la siguiente información:
 - Nombre del repositorio
 - Tipo de almacenamiento (simple o versionado)
@@ -231,11 +256,13 @@ El acceso a los archivos almacenados en el repositorio de objetos de AWS S3 pued
 :::
 
 ## Red de Distribución de Contenidos
+
 La red de distribución de contenidos permite contar con puntos de acercamiento al contenido globalmente distribuidos en centros de datos estratégicamente ubicados alrededor del mundo, disminuyendo con ello las latencias y velocidad de descargas y mejorando con ello la experiencia general de usuario.
 
 Modyo utiliza el servicio de [AWS CloudFront](https://aws.amazon.com/cloudfront) como red global de distribución de contenidos. Las configuraciones de AWS CloudFront permiten definir reglas de caché a nivel de objetos, así como también el procesamiento de funciones para sobrescribir cabeceras en las llamadas y respuestas del servicio.
 
 ### Pasos de activación
+
 Para solicitar la creación de una distribución global de contenidos en Modyo Connect se debe realizar un ticket en el [Centro de Soporte de Modyo](https://support.modyo.com) especificando la siguiente información:
 - Tamaño promedio de objetos en el repositorio
 - TB mensuales proyectados a consumir
@@ -245,6 +272,7 @@ Para solicitar la creación de una distribución global de contenidos en Modyo C
 
 
 ## Bases de Datos
+
 Las bases de datos relacionales permiten contar con un sistema de almacenamiento relacional de información (RDBMS) seguro y escalable para los microservicios desplegados en Modyo Connect.
 
 Modyo Connect utiliza el servicio de [AWS RDS Aurora](https://aws.amazon.com/rds/aurora) para implementar las bases de datos. AWS RDS Aurora es compatible con MySQL y a diferencia de un despliegue tradicional de este motor, Aurora se configura como cluster de alta disponibilidad en el cual los datos almacenados se replican simultáneamente en múltiples ubicaciones. 
@@ -254,6 +282,7 @@ Dentro de una misma base de datos configurada dentro de Modyo Connect, se pueden
 :::
 
 ### Tipos de instancias
+
 Existen diferentes [tipos de instancias](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Performance.html) para desplegar una base de datos de RDS Aurora. Dependiendo del tipo escogido, se podrá lograr una mejor concurrencia en el número de conexiones simultáneas, como se indica en la siguiente tabla:
 
 | Tipo        |   Conexiones Máximas      |
@@ -273,9 +302,11 @@ Para los ambientes pre productivos se recomienda el uso de instancias tipo “t3
 :::
 
 ### Tamaño en disco y IOPS
+
 El tamaño de disco y los IOPS, en el caso de RDS Aurora, se aprovisionan dinámicamente según cómo se acceda a la información. El tamaño de disco parte en 10 GB y se incrementa en bloques similares cuando es requerido de forma transparente para el usuario.
 
 ### Backups y encriptación
+
 Los backups en el servicio se gestionan de forma [automática](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html) mediante snapshots del sistema de almacenamiento, los cuales se generan diariamente y se replican hacia la región de contingencia.
 
 :::tip Global database

@@ -11,7 +11,9 @@ Cada solicitud de componentes deberá considerar una posible variación en el n�
 :::
 
 ## Estimación de costos
+
 Modyo apoya en la estimación de costos de una infraestructura de servicios corriendo sobre Modyo Connect. Para ello, se trabaja directamente con un arquitecto de solución de nuestra área de servicios profesionales, quién para efectuar su análisis incluirá criterios cómo:
+
 - Número de microservicios requeridos
 - Tamaño de las instancias de microservicios, según volumetría estimada de tráfico
 - Requerimientos de autenticación, SSO
@@ -20,5 +22,5 @@ Modyo apoya en la estimación de costos de una infraestructura de servicios corr
 - Enlaces y accesos VPN requeridos
 
 :::tip Apoyo en estimación
-Para solicitar apoyo en estimar los costos del servicio Modyo Connect, favor comunícate con tu ejecutivo de cuentas asignado de Modyo.
+Para solicitar apoyo en estimar los costos del servicio Modyo Connect, favor de comunicarse con tu ejecutivo de cuentas asignado de Modyo.
 :::
