@@ -11,7 +11,9 @@ Each component request must consider a possible variation in the total number of
 :::
 
 ## Cost estimation
+
 Modyo supports the cost estimation of a service infrastructure running on Modyo Connect. To do this, we work directly with a solution architect from our professional services area, who will include criteria such as:
+
 - Number of microservices required
 - Size of microservices instances, according to estimated traffic volume
 - Authentication requirements, SSO
