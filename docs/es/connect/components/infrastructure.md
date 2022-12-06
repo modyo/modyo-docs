@@ -24,7 +24,7 @@ Para solicitar la creación de un balanceador ALB en la nube de AWS, se debe cre
 - Descripción del caso de uso, declarando a qué servicio se aplicará
 - Contacto técnico del administrador de DNS para la validación de certificados SSL/TLS y redirecciones
 
-Una vez creado, el balanceador podrá ser utilizado por un servicio dentro de un cluster de [contenedores](#containers).
+Una vez creado, el balanceador podrá ser utilizado por un servicio dentro de un cluster de [contenedores](#contenedores).
 
 :::warning Aplicaciones externas
 El balanceador de carga de AWS ALB no puede dirigir tráfico hacia recursos de AWS desplegados fuera de la red privada virtual (VPC) en donde se despliega, por lo que solo debe ser considerado para usos con recursos internos. 
@@ -75,7 +75,7 @@ public class GetUsersController {
 }
 ```
 
-La generación de las definiciones para el API Gateway se realiza dentro de un pipeline automatizado de [integración continua](#development.md#integracion-continua), el cual debe estar previamente definido.
+La generación de las definiciones para el API Gateway se realiza dentro de un pipeline automatizado de [integración continua](development.md#integracion-continua), el cual debe estar previamente definido.
 
 ### Conectividad con los contenedores
 
@@ -252,7 +252,7 @@ Para solicitar la creación de un repositorio de objetos en Modyo Connect se deb
 - Políticas de ciclo de vida (borrado automático después de un periodo de tiempo, permanente, etc.)
 
 :::tip Aceleración en los accesos
-El acceso a los archivos almacenados en el repositorio de objetos de AWS S3 puede ser acelerado regionalmente mediante el uso de la [red de distribución de contenidos](#red-de-distribución-de-contenidos) de Modyo Connect.
+El acceso a los archivos almacenados en el repositorio de objetos de AWS S3 puede ser acelerado regionalmente mediante el uso de la [red de distribución de contenidos](#red-de-distribucion-de-contenidos) de Modyo Connect.
 :::
 
 ## Red de Distribución de Contenidos
