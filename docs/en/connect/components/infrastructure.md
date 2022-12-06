@@ -75,7 +75,7 @@ public class GetUsersController {
 }
 ```
 
-The generation of the API Gateway definitions is performed within an automated [continuous integration](#development.md#continuous-integration) pipeline, which must be previously defined.
+The generation of the definitions for the API Gateway is performed within an automated [continuous integration](development.md#continuous-integration) pipeline, which must be previously defined.
 
 ### Container connectivity
 
