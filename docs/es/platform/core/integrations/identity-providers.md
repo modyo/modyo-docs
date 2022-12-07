@@ -17,13 +17,6 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-## Requisitos
-
-Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa con Modyo Platform:
-
-- **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
-- **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
-
 ## Agregar un proveedor de identidad
 
 Para agregar un nuevo proveedor de identidad, sigue estos pasos:
@@ -57,17 +50,23 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
 - **Nombre del servicio**: Nombre del botón que se mostrará en la vista de login.
-- **Emisor**: Identificador de la aplicación del IDP. Algunos servicios es requerido agregar el prefijo `spn`:  
+- **Issuer**: Identificador de la aplicación del IDP. Algunos servicios es requerido agregar el prefijo `spn`:  
 (Por ejemplo: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **URL del proveedor de identidad**: URL de inicio de sesión del proveedor de identidad.
-- **Parámetros de la URL del proveedor de servicio de identidad**: Parametros opcionales para completar el flujo.
-- **Certificado del proveedor de identidad**: Certificado en base64 provisto por el proveedor de identidad.
-- **Firma del certificado del proveedor de identidad**: Fingerprint provisto por el proveedor de identidad.
-- **Formato del identificador de nombre**: Formato en el que se espera el identificador (comunmente el email, como por ejemplo.: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
-- **URL de callback del servicio**: URL provisto por Modyo donde el proveedor de identidad redirige el flujo.
+- **URL de destino de inicio de sesión único de IDP**: URL de inicio de sesión del proveedor de identidad.
+- **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parametros opcionales para completar el flujo.
+- **IDP Cert**: Certificado del proveedor de identidad en formato PEM. Esto tendrá prioridad sobre la opción de huella digital.
+- **Huella dactilar del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad.
+- **Formato del identificador de nombre**: Se utiliza durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Describe el formato del nombre de usuario requerido por esta aplicación. Consulte http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf sección 8.3 para otras opciones. Tenga en cuenta que es posible que el proveedor de identidades no permita todas las opciones. Si no se especifica, el Proveedor puede elegir el formato de identificador de nombre utilizado en la respuesta. (comunmente el email, como por ejemplo.: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
+- **URL del aserción de servicio de consumidor**: URL provisto por Modyo donde el proveedor de identidad redirige el flujo.
    * Admin: `account_url/admin/auth/saml/callback`
    * Realms: para configuraciones con realms usa: `account_url/realms/:uid_del_realm/auth/saml/callback`
 
+### Requisitos
+
+Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre SAML y Modyo Platform:
+
+- **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
+- **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
 
 ## OAuth2
 
