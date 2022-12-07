@@ -8,7 +8,7 @@ Una organización necesita tener una plataforma que les permita organizar los ar
 
 Modyo permite subir, revisar, y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos. Esta se puede acceder desde tus Espacios, Sitios, o en el menú lateral dentro de Content. 
 
-El Gestor de Archivos permite subir extensiones de archivo de todo tipo. El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
+El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
 
 - **Imágenes**: 30 MB
 - **Videos**: 200 MB
