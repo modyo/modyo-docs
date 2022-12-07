@@ -47,6 +47,13 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 
 ## SAML
 
+### Requisitos
+
+Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre SAML y Modyo Platform:
+
+- **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
+- **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
+
 Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
 - **Nombre del servicio**: Nombre del botón que se mostrará en la vista de login.
@@ -60,13 +67,6 @@ Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los sig
 - **URL del aserción de servicio de consumidor**: URL provisto por Modyo donde el proveedor de identidad redirige el flujo.
    * Admin: `account_url/admin/auth/saml/callback`
    * Realms: para configuraciones con realms usa: `account_url/realms/:uid_del_realm/auth/saml/callback`
-
-### Requisitos
-
-Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre SAML y Modyo Platform:
-
-- **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
-- **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
 
 ## OAuth2
 
@@ -87,11 +87,15 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 
 OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
 
+### Mapping
+
 Los campos requeridos por Modyo para una integración son:
 
-- **first_name**
-- **username**
-- **email**
+| Modyo Platform | OIDC |
+|:---|:---|
+| first_name | given_name |
+| username | family_name |
+| email | email |
 
 :::warning Atención
 Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3, y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
