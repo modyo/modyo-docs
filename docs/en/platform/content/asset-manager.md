@@ -8,7 +8,7 @@ An organization needs to have a platform that allows them to organize and manage
 
 Modyo allows you to upload, review, and edit files within the same platform, through the Asset Manager tool. This can be accessed from your Spaces, Sites, or in the side menu within Content. 
 
-The File Manager allows you to upload file extensions of all types. The only requirement is that the files are within the size limits. The limits are:
+The only requirement is that the files must be within the size limits. The limits are:
 
 - **Images**: 30 MB
 - **Videos**: 200 MB
@@ -69,7 +69,7 @@ If you select one or more checkboxes that are on your screen, the button will on
 
 **Search bar**: With the search bar, the manager will show you all files with titles or metadata that match your search terms. This also includes searches for specific file extensions, tags, and the names of users who uploaded a file.
 
-::: tip Tip
+:::tip Tip
 Modyo displays 30 files at a time, and this value cannot be updated.
 :::
 
