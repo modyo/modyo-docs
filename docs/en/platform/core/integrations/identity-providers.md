@@ -17,13 +17,6 @@ The platform is currently compatible with:
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
-## Requirements
-
-The following attributes must be configured from the Identity Provider to ensure a successful connection to Modyo Platform:
-
-- **givenName** or (from version 9.2.22 onwards can also be `givenname`). Corresponds to the user name.
-- **sn** (from version 9.2.22 onwards can also be `surname`). Corresponds to the last name of the user.
-
 ## Add an identity provider
 
 To add a new identity provider, follow these steps:
@@ -54,20 +47,26 @@ In addition to the necessary values, you can configure additional data to contro
 
 ## SAML
 
+### Requirements
+
+The following attributes must be configured from the Identity Provider to ensure a successful connection between SAML and Modyo Platform:
+
+- **givenName** or (from version 9.2.22 onwards can also be `givenname`). Corresponds to the user name.
+- **sn** (from version 9.2.22 onwards can also be `surname`). Corresponds to the last name of the user.
+
 In order to integrate a login with SAML in Modyo, you will need the following information from your identity provider:
 
 - **Service name**: Name of the button to be displayed in the login view.
-- **Sender**: Identifier of the IDP application. Some services are required to add the `spn` prefix:  
+- **Issuer**: IDP application identifier. Some services are required to add the `spn` prefix:  
 (For example: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **Identity provider URL**: Identity provider login URL.
-- **Identity Service Provider URL Parameters**: Optional parameters to complete the flow.
-- **Identity provider certificate**: Base64 certificate provided by the identity provider.
-- **Identity provider certificate signature**: Fingerprint provided by the identity provider.
-- **Name identifier format**: Format in which the identifier is expected (commonly email, such as: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
-- **Service callback URL**: URL provided by Modyo where the identity provider redirects the flow.
+- **IDP single sign-on destination URL**: Identity provider login URL.
+- **SSO IDP runtime parameters of the destination URL**: Optional parameters to complete the flow.
+- **IDP Cert**: Identity Provider Certificate in PEM format. This will take precedence over the fingerprint option.
+- **IDP certificate fingerprint**: The SHA1 fingerprint of the identity provider's public certificate.
+- **Name identifier format**: Used during service provider initiated SSO (SP-initiated SSO). Describes the format of the user name required by this application. See http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf section 8.3 for other options. Note that the Identity Provider may not allow all options. If not specified, the Provider may choose the format of the name identifier used in the response (commonly email, such as: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
+- **Consumer service assertion URL**: URL provided by Modyo where the identity provider redirects the flow.
    * Admin: `account_url/admin/auth/saml/callback`
    * Realms: for settings with realms use: `account_url/realms/:uid_del_realm/auth/saml/callback`.
-
 
 ## OAuth2
 
@@ -88,11 +87,15 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
+### Mapping
+
 The fields required by Modyo for the integration are:
 
-- **first_name**
-- **username**
-- **email**
+| Modyo Platform | OIDC |
+|:---|:---|
+| first_name | given_name |
+| username | family_name |
+| email | email |
 
 :::warning Warning
 For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
