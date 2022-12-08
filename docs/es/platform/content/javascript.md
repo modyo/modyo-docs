@@ -16,7 +16,7 @@ Para poder utilizarlo en tu proyecto primero se tiene que crear un cliente. Para
 
 ```js
 import { Client } from "@modyo/sdk";
-// Para obtener la cuenta correcta, debemos usar la url de la cuenta
+
 const modyoAccount = new Client("https://my-account.modyo.com","es");
 ```
 
@@ -30,19 +30,23 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio d
 
 ```js
 import { Client } from "@modyo/sdk";
-// Para obtener la cuenta correcta, debemos usar la url de la cuenta
+
 const modyoAccount = new Client("https://my-account.modyo.com","es");
 
 const typePost = modyoAccount.getContentType("space_uid", "type_uid");
-// `typePost` retornará un objeto con diversa información del tipo, entre ellas, el esquema de ese tipo
 
-// Si queremos ver ese esquema en detalle, podemos ocupar el método `getSchema()`
 typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
-/*
-Eso imprimirá algo como esto:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
-*/
 ```
+
+:::tip Tip
+`typePost` retornará un objeto con diversa información del tipo, entre ellas, el esquema de ese tipo
+
+Si queremos ver ese esquema en detalle, podemos ocupar el método `getSchema()`
+
+Eso imprimirá algo como esto:
+
+`Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}`
+:::
 
 ## Desplegar cantidad total de Entradas
 
@@ -55,7 +59,7 @@ const typePost = modyoAccount.getContentType("space_uid", "type_uid");
 
 typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
 
-// Para obtener las entradas de ese tipo
+
 const entries = typePost.getEntries();
 
 ```
@@ -94,14 +98,15 @@ Los filtros soportados: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `Not
 Si se pretende filtrar por fecha, es importante que el valor del filtro utilice el estándar ISO-8601.
 :::
 
+Si quieres obtener un listado de los atributos que puedes consultar:
+
 ```js
-// Si queremos obtener un listado de los atributos por los que podemos consultar
 typePost
   .getSchema()
   .then(() => console.log("List of attributes:", typePost.getAttrs()));
 ```
 
-Para crear un filtro, usamos el método `Filter()`
+Para crear un filtro, usamos el método `Filter()`:
 
 ```js
 const filters = typePost
@@ -109,9 +114,9 @@ const filters = typePost
   .Before("meta.created_at", "2020-05-01")
   .In("meta.tags", ["tag1", "tag2"])
   .Pagination(15,1);
-// Ahora lo ocupamos para obtener entradas con estos criterios
+
 const filteredEntries = typePost.getEntries(filters);
-// ahora resolvemos la promesa
+
 filteredEntries.then(res => console.log("Filtered entries response: ", res));
 ```
 
@@ -119,24 +124,28 @@ filteredEntries.then(res => console.log("Filtered entries response: ", res));
 
 De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
-Los resultados de nuestra búsqueda también pueden ordenarse con el método `SortBy()`
+Los resultados de nuestra búsqueda también pueden ordenarse con el método `SortBy()`:
 
 ```js
-// JSONPath and Sorting are also supported as filters
+
 const filters = ctype
   .Filter()
   .SortBy("meta.created_at", "desc")
   .JSONPath("$..uuid");
 ```
 
-**Nota**: Como se puede ver en el ejemplo, es posible usar en nuestras consultas expresiones `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+
+:::tip Tip
+JSONPath y SortBy también pueden ser usados como filtros
+
+Como se puede ver en el ejemplo, es posible usar en nuestras consultas expresiones `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
+:::
 
 ## Obtener Contenido privado
 
 Para obtener contenido privado, basta con que el usuario esté con sesión, pasando al método `getContentType()` un tercer argumento en `false` (que indica que no es público)
 
 ```js
-// To acces private content (user must be logged in on account)
 const privateTypePost = modyoAccount.getContentType("blog", "post", false);
 ```
 
