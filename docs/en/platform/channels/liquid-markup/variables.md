@@ -2,7 +2,7 @@
 search: true
 ---
 
-## Expressions and Variables
+# Expressions and Variables
 
 Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output statements, but also as arguments to some tags or filters.
 
