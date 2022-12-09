@@ -16,14 +16,6 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      'code-switcher',
-      {
-        groups: {
-          default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
-        },
-      },
-    ],
   ],
   head: [
     [
@@ -125,6 +117,7 @@ module.exports = {
                 "/en/platform/content/entries",
                 "/en/platform/content/asset-manager",
                 "/en/platform/content/public-api-reference",
+                "/en/platform/content/javascript",
               ],
             },
             {
@@ -138,7 +131,17 @@ module.exports = {
                 "/en/platform/channels/widgets",
                 "/en/platform/channels/cli",
                 "/en/platform/channels/templates",
-                "/en/platform/channels/liquid-markup",
+                {
+                  title: "Liquid Markup",
+                  path: "/en/platform/channels/liquid-markup/",
+                  collapsable: true,
+                  children: [
+                    "/en/platform/channels/liquid-markup/variables",
+                    "/en/platform/channels/liquid-markup/filters",
+                    "/en/platform/channels/liquid-markup/tags",
+                    "/en/platform/channels/liquid-markup/examples",
+                  ],
+                },
                 "/en/platform/channels/drops",
               ],
             },
@@ -366,6 +369,7 @@ module.exports = {
                 "/es/platform/content/entries",
                 "/es/platform/content/asset-manager",
                 "/es/platform/content/public-api-reference",
+                "/es/platform/content/javascript",
               ],
             },
             {
@@ -379,7 +383,17 @@ module.exports = {
                 "/es/platform/channels/widgets",
                 "/es/platform/channels/cli",
                 "/es/platform/channels/templates",
-                "/es/platform/channels/liquid-markup",
+                {
+                  title: "Liquid Markup",
+                  path: "/es/platform/channels/liquid-markup/",
+                  collapsable: true,
+                  children: [
+                    "/es/platform/channels/liquid-markup/variables",
+                    "/es/platform/channels/liquid-markup/filters",
+                    "/es/platform/channels/liquid-markup/tags",
+                    "/es/platform/channels/liquid-markup/examples",
+                  ],
+                },
                 "/es/platform/channels/drops",
               ],
             },
