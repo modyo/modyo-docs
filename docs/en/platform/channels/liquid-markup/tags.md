@@ -165,7 +165,7 @@ hit 2 or 3
 {% endcase %}
 ```
 
-*Example:*
+*Example: *
 
 ```liquid
 {% case template %}
