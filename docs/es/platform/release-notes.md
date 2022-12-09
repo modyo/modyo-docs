@@ -6,6 +6,22 @@ search: true
 
 ## 9.2
 
+### 9.2.22 - 09 de diciembre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se agrega filtro dinámico de contenido en liquid a través de url parmas
+* Cambia la forma de eliminar un stage, ahora se hace directamente desde las configuraciones del stage.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se elimina los formularios automáticos y la vista de formularios, ahora solo se disponibiliza el snippet del formulario
+
+
 ### 9.2.21 - 07 de noviembre de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
