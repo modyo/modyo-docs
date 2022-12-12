@@ -4,7 +4,7 @@ search: true
 
 # Liquid Markup
 
-Liquid is a language that we use on Modyo Platform to display the content of the Content module on your Sites. Using Liquid you can generate a template on your site that displays the information of your entries dynamically as well as control what to display using flow or iteration control.
+Liquid is a language we use in Modyo Platform to display the content of the [Content](/en/platform/content/) module in [Channels](/en/platform/channels/). Using Liquid you will be able to generate a template on your site that dynamically displays the information of your Entries as well as control what to display using flow control or iteration.
 
 In Liquid, as in many other programming languages, you have to use reserved words to display dynamic content. These calls are executed “just-in-time”, allowing you to do “lazy loading” only when needed.
 
@@ -36,6 +36,15 @@ Liquid is written with very specific requirements:
   {% endfor %}
 </ul>
 ```
+
+:::warning Warning
+From version 9.0.8 onwards, the attributes of the entries will be called according to their meta information or their custom fields, so:
+
+* Fields belonging to the meta-information of the entry that were previously used as <span v-pre>`{{ entry.slug }}`</span> must now be used as <span v-pre>`{{ entry.meta.slug }}`</span> or <span v-pre>`{{ entry.meta['slug'] }}`</span>
+* Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span> must now be used as <span v-pre>`{{ entry.fields.title }}`</span> or <span v-pre>`{{ entry.fields['title'] }}`</span>.
+
+Both forms will be available until Modyo version 9.2.
+:::
 
 ### How to use Liquid?
 
