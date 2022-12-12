@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Ejemplos
+# Examples
 
-En cualquier parte de Channels (Sitios, Widgets, y Plantillas) puedes usar Liquid para crear contenido dinámico. A continuación, mostraremos varios ejemplos que puedes utilizar para tus casos de uso.
+In any part of Channels (Sites, Widgets, and Templates) you can use Liquid to create dynamic content. Below, we will show several examples that you can use for your use cases.
 
-### Desplegar listado de Entradas de un Tipo
+## Display list of Entries of a Type
 
-En [Páginas de Contenido](/es/platform/channels/pages.html#pagina-de-contenido) puedes generar un listado de todas las Entradas de un Tipo. En este caso, tomamos todas las Entradas del Tipo `producto` en el Espacio `Mi Banco`. La variable `entries`  de la línea 1 es un arreglo del drop [Entrada](/es/platform/channels/drops.html#entrada). Se recorre este arreglo para desplegar por renglón el `meta.uuid` y `meta.title` de cada Entrada. 
+In [Content-Pages](/en/platform/channels/pages.html#content-page) you can generate a list of all the Entries of a Type. In this case, we take all the Entries of Type `product` in the `My Bank` Space. The variable `entries` in line 1 gets an array of the drop [Entry](/en/platform/channels/drops.html#entry). This array is traversed to display per line the `meta.uuid` and `meta.title` of each Entry. 
 
 ```liquid
 {% assign entries = spaces['mi-banco'].types['producto'].entries %}
@@ -20,26 +20,26 @@ En [Páginas de Contenido](/es/platform/channels/pages.html#pagina-de-contenido)
 </ul>
 ```
 
-Para poder usar estos ejemplos en tu sitio, debes reemplazar el ID de Espacio y Tipo con tu información. Estos IDs los puedes encontrar como el Identificador de tu Espacio, y el Identificador de tu Tipo.
- 
-En el caso de una entrada de cardinalidad single (como por ejemplo un aviso de privacidad), puedes usar `entry.url` para desplegar el URL de la siguiente manera:
+In order to use these examples on your site, you must replace the Space and Type ID with your information. These IDs can be found as your Space ID, and your Content Type ID.
+
+In the case of a single cardinality entry (in this example it is a privacy notice), you can use `entry` to display the URL as follows:
 
 ```liquid
-Visita nuestro <a href="{{ spaces['mi-banco'].types['privacidad'].entry.url }}">Aviso de Privacidad</a>.
+Visit our <a href="{{ spaces['my-banco'].types['privacy'].entry.url }}">Privacy Policy</a>.
 ```
 
-### Desplegar cantidad total de Entradas
+## Display total number of Entries
 
-Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de Liquid `entries.size`, por ejemplo:
+To access the total number of entries returned by a content filter, you can use Liquid's `entries.size` filter, for example:
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['products'].entries %}
-<p>Ofrecemos un total de {{ entries.size }} productos para ti!</p>
+{% assign entries = spaces['my-bank'].types['products'].entries %}
+<p>We offer a total of {{ entries.size }} products for you!</p>
 ```
 
-### Filtros
+## Filters
 
-Si quieres filtrar las entradas, lo puedes hacer a través de los siguientes atributos: 
+If you want to filter the entries, you can do it through the following attributes: 
   - **by_uuid**
   - **by_slug**
   - **by_category**
@@ -48,37 +48,37 @@ Si quieres filtrar las entradas, lo puedes hacer a través de los siguientes atr
   - **by_lang**
   - **filter_by**
 
-Todos los filtros deben recibir un arreglo de Entries y es posible concatenar multiples filtros. 
+All filters must receive an array of Entries and it is possible to concatenate multiple filters. 
 
-#### Filtro
+### Filter
 
-En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`. Después tomamos el resultado y desplegamos todas las Entradas de tipo `news`:
+In the following example, we filter the Entries of type `post`, with category `news`. Then we take the result and display all the Entries of type `news`:
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['post'].entries | by_category: 'news' %}
-<p>Estas son todas nuestras noticias:</p>
+{% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' %}
+<p>These are all our news:</p>
 <ul>
 {% for entry in entries %}
 <li><a href="entry.url">{{ entry.meta.title }}</a></li>
 {% endfor %}    
 ```
 
-#### Filtro concatenado
+### Concatenated filter
 
-En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`, que además tengan el tag `campaña`. Después tomamos el resultado y desplegamos las noticias que cumplen todos los criterios:
+In the following example, we filter the Entries of type `post`, with category `news`, which also have the tag `campaign`. Then we take the result and display the news that meet all the criteria:
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['post'].entries | by_category: 'news' | by_tag: 'campaña' %}
-<p>Las siguientes noticias son relevantes para ti!</p>
+{% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' | by_tag: 'campaign' %}
+<p>The following news are relevant for you!</p>
 <ul>
 {% for entry in entries %}
 <li><a href="entry.url">{{ entry.meta.title }}</a></li>
 {% endfor %}    
 ```
 
-#### Filter_by
+### Filter_by
 
-En el caso del filtro `filter_by`, se debe utilizar para atributos meta o custom fields del Tipo de Contenido, por ejemplo:
+In the case of the `filter_by` filter, it must be used for meta attributes or custom fields of the Content Type, for example:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name' | sort_by: 'fields.date' , 'desc' | limit 8 %}
@@ -87,7 +87,7 @@ En el caso del filtro `filter_by`, se debe utilizar para atributos meta o custom
 {% endfor %}
 ```
 
-Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro del filtro:
+If you want to negate the value of a filter, you can use `not` inside the filter:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
@@ -96,14 +96,14 @@ Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro 
 {% endfor %}
 ```
 
-La selección de entradas siempre retorna un array, por lo que es necesario iterar sobre el resultado o acceder al primer elemento, en caso de filtrar por un único uuid:
+Selecting entries will always return an array, it is necessary to iterate over the result or accessing the first element, in the case of filtering by a unique uuid:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | by_uuid: 'entry_uuid' %}
 {% assign entry = entries.first %}
 ```
 
-Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los links de paginación con el filtro `pagination_links`, por ejemplo:
+You can paginate the entries using the filter `paginated` and display the pagination links with the filter `pagination_links`, for example:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | paginated: 10 %}
@@ -115,12 +115,51 @@ Puedes paginar las entradas haciendo uso del filtro `paginated` y mostrar los li
 {{ entries | pagination_links }}
 ```
 
-En el caso anterior, se paginará el listado de entradas con 10 elementos por página y al final del listado aparecerán los links de la paginación. Puedes navegar por cada página usando el parámetro GET `page` en la URL, por ejemplo `mi-pagina.com/landing?page=2`.
+In the previous case, the entries will be paginated with 10 elements per page and the pagination links will appear at the end. You can navigate each page using the parameter GET `page` in the URL, for example: `my-page.com/landing?page=2`.
 
-:::warning Atención
-Ten en cuenta que si tienes más de un widget que use la paginación de contenido, al usar los parámetros _GET_ `per_page` y `page` en la URL, todos los widgets con paginación de la página se verán afectados por esos parámetros.
+:::warning Warning
+Keep in mind that if you have more than one widget that uses pagination in the content, using the parameters _GET_ `per_page` and `page` in the URL, every widget with pagination will be affected.
 :::
 
-:::warning Atención
-Para hacer uso de la paginación en un widget personalizado, se debe cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widget personalizados se cargan de forma asíncrona. Junto con el cambio anterior, se debe asegurar de que _JQuery_ está disponible en el sitio y recordar que al hacer uso de los links de paginación, solo cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
+:::warning Warning
+To use pagination in a custom widget, you must change the filter associate to the pagination to <span v-pre>`{{ entries | pagination_links_remote }}`</span>.  This is required because custom widgets are loaded asynchronously. With this and the previous change, you must ensure that _JQuery_ is available in the site and while using pagination links, only the HTML will be modified in the widget, the _JavaScript_ code won't be executed again. 
 :::
+
+## Order
+
+In the same way that you can filter by category `by_category`, tags `by_tags` and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
+```
+
+The possible values for the order are `asc` and `desc`, by default, `desc` is used.
+Possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug`, and `field`.
+
+To sort by a custom field, you must use the field's `fields.uid` as a parameter:
+
+```liquid
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% for entry in entries %}
+  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
+{% endfor %}
+```
+
+## Geolocalization
+
+For entries with location fields you can easily generate maps with the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the `Locations` field with a size of 600x300 px, a level 5 zoom, with a map type 'roadmap' and with a custom icon.
+
+```
+{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
+```
+
+The `dynamic_map` filter accepts an additional attribute to control the visibility of the zoom, drag and full screen controls.
+
+```
+{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
+```
+
+:::tip Tip
+To use input attributes, you can use dot or square bracket notation, so <span v-pre> `{{ entry.meta.slug }}` </span>, returns the same value as <span v-pre> `{{ entry.meta['slug'] }}` </span>, and if you have a field called `location`, you can use it as <span v-pre> `{{ entry.fields.location }} `</span>, or <span v-pre>`{{ entry.fields['location'] }}`</span> 
+:::
+
