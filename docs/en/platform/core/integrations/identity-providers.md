@@ -87,15 +87,14 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
-### Mapping
+### Requirements
 
-The fields required by Modyo for the integration are:
+The following attributes must be configured from the Identity Provider to ensure a successful connection between OpenID Connect and Modyo Platform:
 
-| Modyo Platform | OIDC |
-|:---|:---|
-| first_name | given_name |
-| username | family_name |
-| email | email |
+
+- **given_name**: Corresponds to the user's name.
+- **family_name**: Corresponds to the user's last name.
+- **e-mail**: Corresponds to the user's e-mail address.
 
 :::warning Warning
 For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
