@@ -79,6 +79,7 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-a-pwa",
                 "/en/platform/tutorials/tutorial-optimize-test-ab",
                 "/en/platform/tutorials/tutorial-optimize-personalizacion",
+                "/en/platform/tutorials/conect-modyo-saleforce",
               ],
             },
             {
@@ -96,7 +97,6 @@ module.exports = {
                   children: [
                     ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
                     ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
-                    ["/en/platform/core/integrations/conect-modyo-saleforce", "Integration with Salesforce"],
                     ["/en/platform/core/integrations/google-data-studio-integration", "Integration with Google Analytics"],
                     ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)"],
                   ],
@@ -329,6 +329,7 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-a-pwa",
                 "/es/platform/tutorials/tutorial-optimize-test-ab",
                 "/es/platform/tutorials/tutorial-optimize-personalizacion",
+                "/es/platform/tutorials/conect-modyo-saleforce",
               ],
             },
             {
@@ -348,7 +349,6 @@ module.exports = {
                   children: [
                     ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
                     ["/es/platform/core/integrations/scim", "Provisionamiento SCIM con Microsoft Azure AD"],
-                    ["/es/platform/core/integrations/conect-modyo-saleforce", "Integracion con Salesforce"],
                     ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
                     ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                   ],
