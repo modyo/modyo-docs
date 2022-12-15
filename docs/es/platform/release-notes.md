@@ -328,6 +328,11 @@ Se arregla bug con filtro con 100 o más tags en el admin
 * Editor Froala
 
 ## 9.1
+### 9.1.41 - 15 de diciembre del 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se corrigen migraciones en 9.1 para preparar migraciones desde 8.2
+
 ### 9.1.35 - 29 de diciembre del 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>
