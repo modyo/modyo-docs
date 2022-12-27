@@ -6,6 +6,39 @@ search: true
 
 ## 9.2
 
+### 9.2.22 - 09 de diciembre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se agrega filtro dinámico de contenido en liquid a través de url parmas
+* Cambia la forma de eliminar un stage, ahora se hace directamente desde las configuraciones del stage.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se elimina los formularios automáticos y la vista de formularios, ahora solo se disponibiliza el snippet del formulario
+
+
+### 9.2.21 - 07 de noviembre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se elimina soporte de sitios con dominios sin ssl.
+
+
+### 9.2.20 - 27 de octubre de 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mantención para entornos pre-productivos
+
 ### 9.2.19 - 12 de octubre de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -295,6 +328,11 @@ Se arregla bug con filtro con 100 o más tags en el admin
 * Editor Froala
 
 ## 9.1
+### 9.1.41 - 15 de diciembre del 2022
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Se corrigen migraciones en 9.1 para preparar migraciones desde 8.2
+
 ### 9.1.35 - 29 de diciembre del 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>

@@ -50,7 +50,7 @@ Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 
 :::tip Tip
 Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
-:::  
+::: 
 
 ## Buscador
  

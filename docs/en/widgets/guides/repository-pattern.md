@@ -22,7 +22,7 @@ Advantages of the repository pattern:
 - Experience with Vue.js and Vuex
 - Experience with JavaScript
 
-#### 1. Create a "repositories" folder 
+## 1. Create a "repositories" folder 
 
 Create a "repositories" folder within the "src" folder of the Widget. 
 
@@ -30,7 +30,7 @@ Create a "repositories" folder within the "src" folder of the Widget.
    cd src && mkdir repositories
    ```
 
-#### 2. Create a "clients" folder
+## 2. Create a "clients" folder
 
 Create a "clients" folder within the "repositories" folder. This directory will contain the different HTTP Clients that communicate with the repository, for example: **ModyoSDK**, Axios, Vue-resource, etc.
 
@@ -38,7 +38,7 @@ Create a "clients" folder within the "repositories" folder. This directory will 
    cd repositories && mkdir clients
    ```
 
-#### 3. Create a `XXClient.js` file: 
+## 3. Create a `XXClient.js` file: 
 
 This contains all the client API configuration including CRUD methods, for example `ModyoClient.js`.
 
@@ -95,7 +95,7 @@ For **ApiCustom** and using [**Axios**](https://github.com/axios/axios), the con
 If you use multiple HTTP Clients that share information for their configuration, you can create a config.js file
 :::
 
-#### 4. Create the Repositories
+## 4. Create the Repositories
 
    In these files are the different API operations that will be performed within a particular feature of the Widget. In the code we define and export the requests that are needed.
 
@@ -138,7 +138,7 @@ If you use multiple HTTP Clients that share information for their configuration,
    You must import the corresponding HTTP Client file into all repositories that need it. In this example "ModyoClient"
    :::
 
-#### 5. Create the file "RepositoryFactory.js"
+## 5. Create the file "RepositoryFactory.js"
    We create a file inside the "repositories" folder called `RepositoryFactory` to export all the different repositories we've created, so it's easier to use them anywhere in the Widget.
 
    ```sh
@@ -179,7 +179,7 @@ We've finished setting up our Repository Pattern. If you followed the steps you 
 └── ...
 ```
 
-### How to use the Repository Pattern with Vue.js?
+## How to use the Repository Pattern with Vue.js?
 
 To add the created repositories to the Vuex store for later consumption in Vue components, follow these steps:
 

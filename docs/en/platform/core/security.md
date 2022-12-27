@@ -1,5 +1,7 @@
 ---
 search: true
+tags:
+    - 2fa
 ---
 
 # Security
@@ -57,7 +59,7 @@ Generating a new key will force all requests for private content to go through M
 
 The key or _secret_ has a specific duration in seconds that can be configured in the box below. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very short duration, as it could affect the performance of the platform.
 
-## Two-Step Authentication (2FA)
+## Two-Factor Authentication (2FA)
 
 Two-step authentication adds an extra layer of security to your account. Every time team members sign in, they'll need to enter both their password and a dynamic key provided by the Google Authenticator app from their phones.
 
@@ -65,16 +67,22 @@ Each team member will be able to enable two-step authentication from their profi
 
 By enforcing two-step authentication for team members, the next time a team member logs in, they will be required to set up their two-step authentication device. Once set up, they will need to sign in using their password and the code provided by _Google Authenticator_.
 
+:::warning Warning
+On your mobile device, the **Set time zone automatically** option must remain enabled when using two-factor authentication.
+:::
+
 ### Enable two-factor authentication for a user 
 
 Neutralize the risk of compromised passwords using two-factor authentication.
 
-1. Within the user settings, in the top menu, select the 3 dots and click on **Configure Authenticator**.
-2. On the screen that appears, scan the code using your mobile device to link your authenticator to Modyo Platform.
+1. In Modyo Platform, in the user menu, click **Profile**.
+2. In profile settings, in the top menu, click the 3 dots and click **Configure Authenticator**.
+3. On the screen that appears, scan the code using your mobile device to link your authenticator to Modyo Platform.
 - A new field will be added with the domain name, your user level, and your username. 
-3. Use the number combination that appears on your mobile phone in the password field and click **Save**.
+4. Use the number combination that appears on your mobile phone in the password field and click **Save**.
 
 > If you already have two-factor authentication, the button will say **Delete authenticator**.
+
 
 ### Delete Authenticator for a User
 

@@ -16,14 +16,6 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      'code-switcher',
-      {
-        groups: {
-          default: { lq: 'Liquid', js: 'JavaScript', curl: 'cURL' },
-        },
-      },
-    ],
   ],
   head: [
     [
@@ -54,8 +46,8 @@ module.exports = {
         nav: [
           { text: "Platform", link: "/en/platform/" },
           { text: "Widgets", link: "/en/widgets/" },
-          // { text: "Connect", link: "/en/connect/" },
-          // { text: "Banking", link: "/en/banking/" },
+          { text: "Connect", link: "/en/connect/" },
+          // { text: "Dynamic", link: "/en/dynamic/" },
           { text: "Modyo", link: "https://www.modyo.com" },
           { text: "Support", link: "https://support.modyo.com/hc/en-us" },
         ],                
@@ -87,6 +79,7 @@ module.exports = {
                 "/en/platform/tutorials/how-to-create-a-pwa",
                 "/en/platform/tutorials/tutorial-optimize-test-ab",
                 "/en/platform/tutorials/tutorial-optimize-personalizacion",
+                "/en/platform/tutorials/conect-modyo-saleforce",
               ],
             },
             {
@@ -104,7 +97,6 @@ module.exports = {
                   children: [
                     ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
                     ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
-                    ["/en/platform/core/integrations/conect-modyo-saleforce", "Integration with Salesforce"],
                     ["/en/platform/core/integrations/google-data-studio-integration", "Integration with Google Analytics"],
                     ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)"],
                   ],
@@ -125,6 +117,7 @@ module.exports = {
                 "/en/platform/content/entries",
                 "/en/platform/content/asset-manager",
                 "/en/platform/content/public-api-reference",
+                "/en/platform/content/javascript",
               ],
             },
             {
@@ -138,7 +131,17 @@ module.exports = {
                 "/en/platform/channels/widgets",
                 "/en/platform/channels/cli",
                 "/en/platform/channels/templates",
-                "/en/platform/channels/liquid-markup",
+                {
+                  title: "Liquid Markup",
+                  path: "/en/platform/channels/liquid-markup/",
+                  collapsable: true,
+                  children: [
+                    "/en/platform/channels/liquid-markup/variables",
+                    "/en/platform/channels/liquid-markup/filters",
+                    "/en/platform/channels/liquid-markup/tags",
+                    "/en/platform/channels/liquid-markup/examples",
+                  ],
+                },
                 {
                   title: "Drops",
                   path: "/en/platform/drops/",
@@ -260,11 +263,11 @@ module.exports = {
               ],
             },
           ],
-          "/en/banking/": [{
-            title: "Modyo Banking",
+          "/en/dynamic/": [{
+            title: "Modyo Dynamic",
             collapsable: false,
             children: [
-              ["/en/banking/", "What is Modyo Banking?"]
+              ["/en/dynamic/", "What is Modyo Dynamic?"]
             ],
           }, ],
           "/en/connect/": [{
@@ -322,8 +325,8 @@ module.exports = {
         nav: [
           { text: "Plataforma", link: "/es/platform/" },
           { text: "Widgets", link: "/es/widgets/" },
-          // { text: "Connect", link: "/es/connect/" },
-          // { text: "Banking", link: "/es/banking/" },
+          { text: "Connect", link: "/es/connect/" },
+          // { text: "Dynamic", link: "/es/dynamic/" },
           { text: "Modyo", link: "https://es.modyo.com" },
           { text: "Soporte", link: "https://support.modyo.com/hc/es" },
         ],
@@ -355,6 +358,7 @@ module.exports = {
                 "/es/platform/tutorials/how-to-create-a-pwa",
                 "/es/platform/tutorials/tutorial-optimize-test-ab",
                 "/es/platform/tutorials/tutorial-optimize-personalizacion",
+                "/es/platform/tutorials/conect-modyo-saleforce",
               ],
             },
             {
@@ -374,7 +378,6 @@ module.exports = {
                   children: [
                     ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
                     ["/es/platform/core/integrations/scim", "Provisionamiento SCIM con Microsoft Azure AD"],
-                    ["/es/platform/core/integrations/conect-modyo-saleforce", "Integracion con Salesforce"],
                     ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
                     ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                   ],
@@ -395,6 +398,7 @@ module.exports = {
                 "/es/platform/content/entries",
                 "/es/platform/content/asset-manager",
                 "/es/platform/content/public-api-reference",
+                "/es/platform/content/javascript",
               ],
             },
             {
@@ -408,7 +412,17 @@ module.exports = {
                 "/es/platform/channels/widgets",
                 "/es/platform/channels/cli",
                 "/es/platform/channels/templates",
-                "/es/platform/channels/liquid-markup",
+                {
+                  title: "Liquid Markup",
+                  path: "/es/platform/channels/liquid-markup/",
+                  collapsable: true,
+                  children: [
+                    "/es/platform/channels/liquid-markup/variables",
+                    "/es/platform/channels/liquid-markup/filters",
+                    "/es/platform/channels/liquid-markup/tags",
+                    "/es/platform/channels/liquid-markup/examples",
+                  ],
+                },
                 {
                   title: "Drops",
                   path: "/es/platform/channels/drops/",
@@ -531,11 +545,11 @@ module.exports = {
               ],
             },
           ],
-          "/es/banking/": [{
-            title: "Modyo Banking",
+          "/es/dynamic/": [{
+            title: "Modyo Dynamic",
             collapsable: false,
             children: [
-              ["/es/banking/", "¿Qué es Modyo Banking?"]
+              ["/es/dynamic/", "¿Qué es Modyo Dynamic?"]
             ],
           }, ],
           "/es/connect/": [{

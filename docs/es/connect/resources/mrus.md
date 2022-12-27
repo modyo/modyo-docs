@@ -4,19 +4,23 @@ search: true
 
 # Modyo Resource Units (MRUs)
 
-El Modyo Resource Unit (MRU) es una abstracción para asignar recursos computacionales y consumos de licencias a los elementos configurados como parte del servicio. Los MRU se suman considerando el total de los ambientes y se cobran de forma mensual al cliente. Modyo establece el número de MRUs asignados a cada recurso según un análisis de costo que incluye los costos de AWS, impuestos, costos de hora hombre de gestión, entre otros.
+El Modyo Resource Unit (MRU) es una abstracción para dimensionar el consumo de recursos y licencias en los componentes de Modyo Connect. Los MRU consideran todos los ambientes configurados y se facturan mensualmente. Modyo establece un número de MRUs para cada recurso según un análisis que incluye elementos como los costos de nube, impuestos, operación, licencias asociadas, entre otros.
 
-Todos los contenedores incluyen un repositorio, automatización, almacenamiento de imágenes en AWS ECR, monitoreo y consolidación de logs. Además, se incluye monitoreo, centralización de logs, API Gateway, Firewall, dominios personalizados, emisión de certificados TLS.
+:::warning Costos del servicio
+Cada solicitud de componentes deberá considerar una posible variación en el número total de MRUs facturados. Es por ello que algunas solicitudes requerirán de una aprobación formal por parte del cliente.
+:::
 
-Los Widgets que se desarrollan en Modyo por medio del Widget Builder (sin CLI) no consumen MRUs.
+## Estimación de costos
 
-Los servicios de SSO con RedHat KeyCloak se despliegan sobre contenedores como cualquier otro Microservicio. Al costo de MRU señalado se deberán sumar los de los contenedores usados. El tamaño del contenedor de despliegue de este componente dependerá de las necesidades del cliente.
+Modyo apoya en la estimación de costos de una infraestructura de servicios corriendo sobre Modyo Connect. Para ello, se trabaja directamente con un arquitecto de solución de nuestra área de servicios profesionales, quién para efectuar su análisis incluirá criterios cómo:
 
-Los servicios complementarios que procesan datos, como Redis y Aurora, deberán estar configurados para producción y pre producción. En el caso de producción, éstos se configuran en alta disponibilidad.
+- Número de microservicios requeridos
+- Tamaño de las instancias de microservicios, según volumetría estimada de tráfico
+- Requerimientos de autenticación, SSO
+- Persistencia de datos
+- Ambientes pre-productivos requeridos
+- Enlaces y accesos VPN requeridos
 
-
-## Estimación de Costos
-- Recomendaciones osbre cómo calcular el tamaño de una implementación de Modyo Connect
-- Consideraciones a tener en cuenta, por tañaño de iniciativa o volumetría en tráfico
-- Consideración de ambientes
-- Adjuntar formato de planilla de estimación descargable
+:::tip Apoyo en estimación
+Para solicitar apoyo en estimar los costos del servicio Modyo Connect, favor de comunicarse con tu ejecutivo de cuentas asignado de Modyo.
+:::

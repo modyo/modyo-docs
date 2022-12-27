@@ -86,7 +86,7 @@ Desde la versión 9.0.8 en adelante, los formularios ya no cuentan con preguntas
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
-::: danger Peligro
+:::danger Peligro
 Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.
 :::
 
@@ -234,7 +234,7 @@ Al hacer click en un formulario, llegarás a una vista donde se listan todas las
 
 Puedes exportar las respuestas a un archivo _XLS_ o _CSV_ seleccionándolas en el listado y luego usando las acciones masivas al final del mismo.
 
-::: danger Peligro
+:::danger Peligro
 Puedes eliminar respuestas una por una usando la acción a la derecha de cada respuesta, o haciendo uso de las acciones masivas, seleccionando múltiples respuestas y luego el botón **Borrar** al final de la lista. Ten en cuenta que esta acción es irreversible y una vez que una respuesta ha sido eliminada, no podrá ser recuperada.
 :::
 

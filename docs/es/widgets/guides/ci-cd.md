@@ -64,7 +64,7 @@ Ahora tenemos el **token** podemos usarlo para configurar nuestro repositorio y 
 
 <img src="/assets/img/widgets/ci-cd/3.png" alt="Image displaying your new API Access Token in Modyo Platform">
 
-::: danger IMPORTANTE
+:::danger IMPORTANTE
 ¡Nunca deber compartir ni publicar el **TOKEN** o información sensible en el repositorio!
 Por eso se recomienda utilizar variables de entorno, archivo .env que esta listado en el .gitignore del proyecto, de manera local y hacer uso de los [secrets](https://docs.GitHub.com/actions/reference/encrypted-secrets) en GitHub.
 :::

@@ -8,9 +8,7 @@ Una de las funcionalidades de Modyo para facilitar la interacción de otros sist
 
 Actualmente la plataforma es compatible con:
 
-- [Facebook](#facebook)
 - [Google](#google)
-- [LDAP](#ldap)
 - [SAML](#saml)
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
@@ -18,8 +16,6 @@ Actualmente la plataforma es compatible con:
 - [Azure Active Directory](#azure-active-directory)
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
-
-
 
 ## Agregar un proveedor de identidad
 
@@ -32,19 +28,6 @@ Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 1. Haz click en **Añadir**.
 
 <img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
-
-## Facebook
-
-Para poder realizar una integración con Facebook, deberás contar con:
-
-- API Key
-- Código secreto de aplicación
-- Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
-
-
-Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Para saber más sobre como crear y configurar una aplicación de Facebook, ve su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
-
-<img src="/assets/img/platform/facebook-login-settings.png" alt="Facebook for Developer's Client OAuth settings page. " width="500px" style="margin-top: 40px;" />
 
 ## Google
 
@@ -62,58 +45,56 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 - **Ejemplo de dominio**: Serán los dominios que se muestren como sugerencia al momento de estar iniciando sesión en Google.
 - **Dominios admitidos**: Si el dominio del correo que el usuario ingresó al momento de iniciar sesión en Google no está dentro de este listado, entonces el inicio de sesión no será válido y el usuario será redirigido a la vista de inicio de sesión de Modyo sin una sesión activa.
 
-## LDAP
-
-Para poder integrar un inicio de sesión con LDAP en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
-
-- **Nombre del servicio**: Se mostrará bajo el ícono o logo de inicio de sesión del servicio.
-- **Host**: Dirección en la cual se encuentra disponible el servicio de inicio de sesión LDAP
-- **Puerto**: Puerto con que se debe comunicar Modyo y tu servicio de identificación LDAP.
-- **Base**: Base de búsqueda, compuesta por múltiples objetos separados por comas.
-- **UID**: Nombre del campo que usa el servicio LDAP para identificar a los usuarios como atributo único.
-- **Bind DN**: Credenciales por defecto.
-- **Password**
-- **Método**: Método de autenticación con el servicio de identidad LDAP.
-- **Logo**: No es requerido, pero si quieres que aparezca junto al nombre del servicio, por ejemplo, el logo de tu empresa, puedes subir una imagen en este campo.
-
 ## SAML
+
+### Requisitos
+
+Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre SAML y Modyo Platform:
+
+- **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
+- **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
 
 Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
-- Nombre del servicio
-- Emisor
-- URL de del servicio proveedor de identidad
-- Parámetros de la URL del proveedor de servicio de identidad
-- Certificado del proveedor de identidad
-- Firma del certificado del proveedor de identidad
-- Formato del identificados de nombre
-- URL de callback del servicio: Por defecto esta URL es `account_url/admin/auth/saml/callback`
-- Logo: AL igual que en LDAP, esta imagen se mostrará como logo del servicio junto al nombre del servicio en el formulario de inicio de sesión.
+- **Nombre del servicio**: Nombre del botón que se mostrará en la vista de login.
+- **Issuer**: Identificador de la aplicación del IDP. Algunos servicios es requerido agregar el prefijo `spn`:  
+(Por ejemplo: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
+- **URL de destino de inicio de sesión único de IDP**: URL de inicio de sesión del proveedor de identidad.
+- **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parametros opcionales para completar el flujo.
+- **IDP Cert**: Certificado del proveedor de identidad en formato PEM. Esto tendrá prioridad sobre la opción de huella digital.
+- **Huella dactilar del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad.
+- **Formato del identificador de nombre**: Se utiliza durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Describe el formato del nombre de usuario requerido por esta aplicación. Consulte http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf sección 8.3 para otras opciones. Tenga en cuenta que es posible que el proveedor de identidades no permita todas las opciones. Si no se especifica, el Proveedor puede elegir el formato de identificador de nombre utilizado en la respuesta. (comunmente el email, como por ejemplo.: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
+- **URL del aserción de servicio de consumidor**: URL provisto por Modyo donde el proveedor de identidad redirige el flujo.
+   * Admin: `account_url/admin/auth/saml/callback`
+   * Realms: para configuraciones con realms usa: `account_url/realms/:uid_del_realm/auth/saml/callback`
 
 ## OAuth2
 
 Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
 
-- Nombre del servicio
-- Descripción del servicio
-- URL de autenticación: URL del servicio de autenticación OAuth2
-- ID de cliente
-- Clave (secret)
-- Scope: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
-- Campo para inicio de sesión: Podrás elegir entre usar el correo de los usuarios de Modyo, o su nombre de usuario. Esta opción es útil si tu proveedor de autenticación OAuth2 utiliza, por ejemplo, un campo numérico y no un email como identificador.
-- Placeholder para el inicio de sesión: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo
-- Usar SSL: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
+- **Nombre del servicio**
+- **Descripción del servicio**
+- **URL de autenticación**: URL del servicio de autenticación OAuth2
+- **ID de cliente**
+- **Clave (secret)**
+- **Scope**: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
+- **Campo para inicio de sesión**: Podrás elegir entre usar el correo de los usuarios de Modyo, o su nombre de usuario. Esta opción es útil si tu proveedor de autenticación OAuth2 utiliza, por ejemplo, un campo numérico y no un email como identificador.
+- **Placeholder para el inicio de sesión**: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo
+- **Usar SSL**: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
 
 
 ## OpenID Connect
 
 OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
 
-Los campos requeridos por Modyo para una integración son:
+### Requisitos
 
-- **first_name**
-- **username**
-- **email**
+Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre OpenID Connect y Modyo Platform:
+
+
+- **given_name**: Corresponde al nombre del usuario.
+- **family_name**: Corresponde al apellido del usuario.
+- **email**: Corresponde al correo del usuario.
 
 :::warning Atención
 Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3, y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).

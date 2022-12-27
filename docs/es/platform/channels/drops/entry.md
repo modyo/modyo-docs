@@ -1,5 +1,7 @@
 ---
 search: true
+
+collapsible: true
 ---
 
 # Entrada

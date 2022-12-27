@@ -8,9 +8,7 @@ One of the features Modyo has to facilitate the interaction between other user s
 
 The platform is currently compatible with:
 
-- [Facebook](#facebook)
 - [Google](#google)
-- [LDAP](#ldap)
 - [SAML](#saml)
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
@@ -18,8 +16,6 @@ The platform is currently compatible with:
 - [Azure Active Directory](#azure-active-directory)
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
-
-
 
 ## Add an identity provider
 
@@ -32,19 +28,6 @@ To add a new identity provider, follow these steps:
 1. Click **Add**.
 
 <img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
-
-## Facebook
-
-To be able to integrate with Facebook, you must have:
-
-- API Key
-- Secret application code
-- Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
-
-
-You can obtain these values by creating a Facebook application with permissions to log in. To learn more about creating and configuring a Facebook app, see its [official documentation](https://developers.facebook.com/docs/facebook-login/).
-
-<img src="/assets/img/platform/facebook-login-settings.png" alt="Facebook for Developer's Client OAuth settings page. " width="500px" style="margin-top: 40px;" />
 
 ## Google
 
@@ -62,58 +45,56 @@ In addition to the necessary values, you can configure additional data to contro
 - **Domain example**: These will be the domains that are shown as a suggestion when you are signing in to Google.
 - **Supported domains**: If the email domain that the user uses when signing in with Google is not in this list, then the login will not be valid and the user will be redirected to the Modyo login view without an active session.
 
-## LDAP
-
-In order to integrate a login with LDAP in Modyo, you will need the following information from your identity provider:
-
-- **Service name**: It will be displayed under the service login icon or logo.
-- **Host**: Address in which the LDAP login service is available
-- **Port**: Port with which Modyo and your LDAP identification service should communicate.
-- **Base**: Search base, consisting of multiple objects separated by commas.
-- **UID**: Name of the field used by the LDAP service to identify users as a unique attribute.
-- **Bind DN**: Default credentials.
-- **Password**
-- **Method**: Authentication method with the LDAP identity service.
-- **Logo**: It is not required, but if you want it to appear next to the name of the service (for example, the logo of your company), you can upload an image in this field.
-
 ## SAML
+
+### Requirements
+
+The following attributes must be configured from the Identity Provider to ensure a successful connection between SAML and Modyo Platform:
+
+- **givenName** or (from version 9.2.22 onwards can also be `givenname`). Corresponds to the user name.
+- **sn** (from version 9.2.22 onwards can also be `surname`). Corresponds to the last name of the user.
 
 In order to integrate a login with SAML in Modyo, you will need the following information from your identity provider:
 
-- Service name
-- Issuer
-- URL of the identity provider service
-- Parameters of the identity service provider URL
-- Identity provider certificate
-- Signature of the identity provider certificate
-- Name ID format
-- Service callback URL: By default this URL is `account_url/admin/auth/saml/callback`
-- Logo: As in LDAP, this image will be displayed as a service logo next to the service name in the login form.
+- **Service name**: Name of the button to be displayed in the login view.
+- **Issuer**: IDP application identifier. Some services are required to add the `spn` prefix:  
+(For example: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
+- **IDP single sign-on destination URL**: Identity provider login URL.
+- **SSO IDP runtime parameters of the destination URL**: Optional parameters to complete the flow.
+- **IDP Cert**: Identity Provider Certificate in PEM format. This will take precedence over the fingerprint option.
+- **IDP certificate fingerprint**: The SHA1 fingerprint of the identity provider's public certificate.
+- **Name identifier format**: Used during service provider initiated SSO (SP-initiated SSO). Describes the format of the user name required by this application. See http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf section 8.3 for other options. Note that the Identity Provider may not allow all options. If not specified, the Provider may choose the format of the name identifier used in the response (commonly email, such as: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
+- **Consumer service assertion URL**: URL provided by Modyo where the identity provider redirects the flow.
+   * Admin: `account_url/admin/auth/saml/callback`
+   * Realms: for settings with realms use: `account_url/realms/:uid_del_realm/auth/saml/callback`.
 
 ## OAuth2
 
 In order to integrate a login with OAuth2 in Modyo, you will need the following information from your identity provider:
 
-- Service name
-- Service description
-- Authentication URL: OAuth2 authentication service URL
-- Customer ID
-- Key (secret)
-- Scope: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
-- Field for login: You can choose between using the user's email or username. This option is useful if your OAuth2 authentication provider uses, for example, a numeric field and not an email as an identifier.
-- Placeholder for login: Text that will be displayed in the identification field as a placeholder if the user has not filled in the field
-- Use SSL: Enable this option if your OAuth2 authentication service uses a secure sockets layer (SSL: _Secure Sockets Layer_)
+- **Name of the service**
+- **Service description**
+- **Authentication URL**: URL of OAuth2 authentication service
+- **Client ID**
+- **Secret**
+- **Scope**: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
+- **Login field**: You can choose to use either the Modyo users' email address or their username. This option is useful if your OAuth2 authentication provider uses, for example, a numeric field and not an email as identifier.
+- **Placeholder for login**: Text to be displayed in the identification field as placeholder if the user has not filled in the field.
+- **Use SSL**: Enable this option if your OAuth2 authentication service uses a secure socket layer (SSL: _Secure Sockets Layer_).
 
 
 ## OpenID Connect
 
 OpenID Connect (OIDC) is an authentication layer and framework that works on top of OAuth 2.0. Its standard is controlled by the [OpenID Foundation](https://openid.net/connect/).
 
-The fields required by Modyo for the integration are:
+### Requirements
 
-- **first_name**
-- **username**
-- **email**
+The following attributes must be configured from the Identity Provider to ensure a successful connection between OpenID Connect and Modyo Platform:
+
+
+- **given_name**: Corresponds to the user's name.
+- **family_name**: Corresponds to the user's last name.
+- **e-mail**: Corresponds to the user's e-mail address.
 
 :::warning Warning
 For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).

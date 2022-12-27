@@ -286,7 +286,7 @@ Todos los **Custom fields** tienen ciertas propiedades estándar:
 
 Además de lo anterior, los **Custom fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
 
-::: danger Peligro
+:::danger Peligro
 Cuando un **Custom field** está deshabilitado, puede ser eliminado. Al eliminar un **Custom field**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Custom field**.
 :::
 

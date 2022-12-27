@@ -237,6 +237,12 @@ This snippet uses Liquid to add meta tags at the Site level. It also adds specif
 
 If you need it, you can customize this snippet, defining which meta tags you want to add for specific URLs or types. 
 
+## Examples of SEO
+
+Below we provide a series of examples to improve SEO for different cases.
+
+### Specific Meta Tags for an Entry
+
 For example, if you want to use specific meta tags when a user visits an Entry, you can use:
 
 ```html
@@ -261,6 +267,34 @@ For example, if you want to use specific meta tags when a user visits an Entry, 
 ...
 ```
 
-In this example, the `posts` and `place` types share the _title_, _excerpt_ and _covers_ attributes, but the place types contain _location_ attributes. In addition, we would need to define a different custom view in our site for each of these separate types.
+In this case, the Content Type `posts` and `place` share the attributes _title_, _excerpt_ and _covers_, and differ in the _locations_ object. In addition, the meta data defines a different type of document for each one.
 
-For more information about Liquid and how to use Liquid Drops to generate dynamic variables, visit [Liquid Markup](/en/platform/channels/liquid-markup).
+### Specific Meta Tags for a Category in Content Pages
+
+If you have specific meta tags when you show Entries that belong to a Category, you can copy the following code:
+
+```html
+{% assign category_name = category_path | split: '/' | last | capitalize %}
+
+{% case category_name %}
+  {% when 'Category 1' %}
+     {% assign category_description = 'This is the meta description for Category 1' %}
+  {% when 'Categoría 2' %}
+     {% assign category_description = 'This is the meta description for Category 2' %}
+{% endcase %}
+
+{% if category_path.size > 0 %}
+<!-- Content Page: Index con categoría -->
+<title> {{ category_name }} - {{ site.name }} </title>
+<meta name="description" content="{{ category_description }}"/>
+<meta property="og:title" content="{{ category_name }} - {{ site.name }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ page.url }}/{{ category_path }}">
+<meta property="og:image" content="https://d1dzq2r60kxox4.cloudfront.net/uploads/c82bdfea-3622-4c11-9a20-bea227cbdc60/original/og_image.jpg"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:description" content="{{ category_description }}"/>
+```
+
+In this code, a `category_name` variable is created containing the name of the category taken from the URL, then a `{% if category_path.size > 0%}` is used to append relevant meta data to the category.
+
+Liquid is the way to create dynamic content everywhere in your Site. For more information about Liquid and how to use Liquid Drops, visit [Liquid Markup](/en/platform/channels/liquid-markup).

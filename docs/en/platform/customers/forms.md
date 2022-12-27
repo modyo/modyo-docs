@@ -87,7 +87,7 @@ From version 9.0.8 onwards, you cannot add file-type questions in forms, you won
 You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
 
 :::danger Danger
-If your form is already activated and you already have answers, deleting a question will delete the values of those answers that the users have already sent. This action is irreversible.
+If your form is already activated and you already have answered forms, be very careful when deleting questions from it, because by doing so, you will be deleting the values of those answers that users have already submitted. This action is irreversible.
 :::
 
 ### Field Properties
@@ -235,7 +235,7 @@ Clicking on a form will bring you to a view where all the responses users have s
 You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
 :::danger Danger
-You can delete responses one by one using the action to the right of each response, or by using bulk actions, selecting multiple responses and then clicking **Delete** at the bottom of the list. Note that this action is irreversible and once a response has been deleted, it cannot be recovered.
+You can delete answers one by one using the action to the right of each answer, or by making use of the bulk actions, selecting multiple answers and then the **Delete** button at the end of the list. Note that this action is irreversible and once a reply has been deleted, it cannot be recovered.
 :::
 
 To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
