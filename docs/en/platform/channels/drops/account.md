@@ -1,6 +1,5 @@
 ---
 search: true
-collapsible: true
 ---
 
 # Cuenta

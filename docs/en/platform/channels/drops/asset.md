@@ -201,3 +201,4 @@ La URL del thumbnail del video.
 #### output
 
 ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/C50x50/platon.jpg```
+

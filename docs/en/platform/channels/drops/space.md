@@ -1,6 +1,5 @@
 ---
 search: true
-collapsible: true
 ---
 
 # Espacio
@@ -24,5 +23,4 @@ Arreglo de objetos de tipos de contenido que contiene todos los tipos del espaci
 El nombre del espacio.
 
 #### output
-
 ```Espacio Nuevo```
