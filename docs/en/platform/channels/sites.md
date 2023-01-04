@@ -356,10 +356,15 @@ Modyo has reserved hosts for the sites, so you can't use them as hosts for your 
 
 Adding stages to your site allows you to continuously integrate and deploy (CI/CD) new features for your site without interrupting what is already published.
 
-The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use local variables, widgets, and templates to customize the experience or visualize changes. At the end of the changes within a stage, they can be integrated into any stage.
+The main advantages of having different stages on your sites is that it allows you to develop only for the current stage, without modifying what already exists on the site. These stages can create and use variables, widgets, and local templates to customize the experience or visualize the changes. When changes within a stage are finalized, they can be integrated into any other stage.
 
-:::warning Attention
-When using stages, custom PWAs, and redirects will be disabled. You can only use these in the `main` stage.
+
+
+:::warning Warning
+- Each Site has a maximum of 4 Stages.
+- The changes made in a Stage, will only be reflected in that Stage. This functionality can only be used in Sites.
+- When using stages, PWAs and custom redirects will be disabled. They can only be used on the `main` stage.
+- Stages have a Team Members section separate from the `main` stage. This means that you will have to add members to enable the Team Review functionality. Additionally, you can have the same members with different roles and permissions for each stage. 
 :::
 
 #### Add a new stage
@@ -383,7 +388,7 @@ In the sidebar you can see what stage you are currently in and when you click on
 
 #### Synchronize a stage
 
-Once you've finished your tests on your stage, make sure you sync them to `main`. On the synchronizations screen, you will be able to see all the changes that were made between the two selected stages by clicking on _View_.
+Once you have finished your tests on your stage, make sure that there are no pending changes before synchronizing. In the synchronizations screen, you will see all the changes that will be made between the two selected stages. When you click on _View_, you will see all the changes that will be made between the two selected stages.
 
 <img src="/assets/img/channels/sites/sync-stage.jpg" alt="The sync two stages in a site window."/>
 
@@ -399,8 +404,8 @@ To synchronize a stage, follow these steps:
 When you click on sync, you will be able to select which changes to take from another stage. That is, if you want to sync changes to `main`, you must be in `main` when you click sync.
 :::
 
-:::warning Warning
-You will receive an alert if you try to sync changes that haven't been published yet.
+:::warning Attention
+The platform does not allow to synchronize changes that are not yet published.
 :::
 
 
