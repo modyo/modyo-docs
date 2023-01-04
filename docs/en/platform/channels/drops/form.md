@@ -4,45 +4,45 @@ collapsible: true
 sidebarDepth: 3
 ---
 
-# Formulario (Form)
+# Form
 
-Estos drops te permiten obtener información a través de Liquid para un formulario del módulo Customers.
+These drops allow you to obtain information through Liquid for a form in the Customers module.
 
 ## form.slug
 
-El slug del formulario.
+The slug of the form.
 
 #### output
 
-```el-nuevo-formulario```
+```the-new-form```
 
 ## Alternative
 
 ### alternative.id
 
-El id de la alternativa.
+The id of the alternative.
 
 #### output
 
-```La primera pregunta```
+```The first question```
 
 ### [alternative.question](#question)
 
-Objeto del tipo pregunta.
+Object of the question type.
 
 ## Answer
 
 ### answer.edit_url
 
-La URL de edición de la respuesta.
+The edit URL of the response.
 
 #### output
 
-```"https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8"```
+```” https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8 “```
 
 ### answer.id
 
-El id de la respuesta.
+The id of the response.
 
 #### output
 
@@ -50,27 +50,27 @@ El id de la respuesta.
 
 [answer.question](#question)
 
-Objecto del tipo pregunta asociado a la respuesta.
+Object of the question type associated with the answer.
 
 ### [answer.response](#answer)
 
-Objecto del tipo response asociado a la respuesta.
+Response object associated with the response.
 
 #### output
 
-```La primera pregunta```
+```The first question```
 
 ### answer.text_field
 
-El campo de texto asociado a la respuesta.
+The text field associated with the response.
 
 #### output
 
-```Este es la respuesta en el campo de texto```
+```This is the answer in the text field```
 
 ### answer.type
 
-El tipo de respuesta.
+The type of answer.
 
 #### output
 
@@ -80,35 +80,35 @@ El tipo de respuesta.
 
 ### form_response.description
 
-La descripción del formulario.
+The description of the form.
 
 #### output
 
-```Este formulario es el nuevo formulario de los usurios```
+```This form is the new form for users```
 
 ### form_response.name
 
-El nombre de formulario.
+The form name.
 
 #### output
 
-```el nuevo formulario```
+```the new form```
 
 ### form_response.questions
 
-Las preguntas del formulario.
+The questions on the form.
 
 #### output
 
-``` [{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}] ```
+```[{"title"=>” What is your job title?” , “type"=>"textquestion”, “answer"=>"Software developer"}] ```
 
 ## Question
 
-Estos drops te permiten obtener información a través de Liquid para las preguntas de un formulario del módulo Customers.
+These drops allow you to obtain information through Liquid for questions on a form in the Customers module.
 
 ### question.allow_alternatives?
 
-Booleano para verificar si la pregunta acepta alternativas.
+Boolean to check if the question accepts alternatives.
 
 #### output
 
@@ -116,23 +116,23 @@ Booleano para verificar si la pregunta acepta alternativas.
 
 ### question.alternatives
 
-Array con objectos del tipo alternativas.
+Array with objects of the alternative type.
 
 ### question.allow_alternatives?
 
-Booleano para verificar si la pregunta acepta alternativas.
+Boolean to check if the question accepts alternatives.
 
 #### output
 
 ```false```
 
-### [question.form](#formulario-form)
+### [question.form](#form-form)
 
-Objecto del tipo formulario.
+Object of the form type.
 
 ### question.id
 
-Retorna el id de la pregunta.
+Return the question id.
 
 #### output
 
@@ -140,8 +140,8 @@ Retorna el id de la pregunta.
 
 ### question.label
 
-El label de la pregunta.
+The label of the question.
 
 #### output
 
-```La primera pregunta```
+```The first question```
