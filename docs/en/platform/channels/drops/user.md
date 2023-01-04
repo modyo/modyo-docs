@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Usuario
+# User
 
-Usa los drops de user para obtener información de tus usuarios del módulo Customers.
+Use the user drops to get information about your users from the Customers module.
 
 ## user.access_token
 
-El access token del usuario.
+The user's access token.
 
 ### output
 
@@ -16,7 +16,7 @@ El access token del usuario.
 
 ## user.age
 
-La edad del usuario
+Age of the user
 
 ### output
 
@@ -24,7 +24,7 @@ La edad del usuario
 
 ## [user.avatar](./asset)
 
-Objecto del tipo asset que representa el avatar de usuario.
+Object of type Asset representing the user avatar.
 
 ### output
 
@@ -32,7 +32,7 @@ Objecto del tipo asset que representa el avatar de usuario.
 
 ## user.birth_at
 
-La fecha de nacimiento del usuario.
+The user's date of birth.
 
 ### output
 
@@ -40,7 +40,7 @@ La fecha de nacimiento del usuario.
 
 ## user.change_password_url
 
-La URL de cambio de password.
+The password change URL.
 
 ### output
 
@@ -48,7 +48,7 @@ La URL de cambio de password.
 
 ## user.custom_fields
 
-Hash con los datos de los custom fields del usuario.
+Hash with the user's custom fields data.
 
 ### output
 
@@ -56,7 +56,7 @@ Hash con los datos de los custom fields del usuario.
 
 ## user.email
 
-El correo electrónico del usuario.
+The user's email.
 
 ### output
 
@@ -64,7 +64,7 @@ El correo electrónico del usuario.
 
 ## user.external_access_token
 
-El external access token del usuario, en caso de no tener, despliega vacío (void).
+The user's external access token, returns void if empty.
 
 ### output
 
@@ -72,7 +72,7 @@ El external access token del usuario, en caso de no tener, despliega vacío (voi
 
 ## user.external_user_id
 
-El external user id del usuario en caso de tener uno.
+The external user id of the user if you have one.
 
 ### output
 
@@ -80,7 +80,7 @@ El external user id del usuario en caso de tener uno.
 
 ## user.female_sex_value
 
-El valor por defecto cuando el sexo es femenino.
+The default value when the sex is female.
 
 ### output
 
@@ -88,7 +88,7 @@ El valor por defecto cuando el sexo es femenino.
 
 ## user.first_name
 
-Retorna el primer nombre del usuario.
+Returns the first name of the user.
 
 ### output
 
@@ -96,15 +96,15 @@ Retorna el primer nombre del usuario.
 
 ## user.genders
 
-Los géneros presentes en la plataforma.
+The genders present on the platform.
 
 ### output
 
-```{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}```
+```{{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}```
 
 ## user.generated_password
 
-Boolenano que determina si el password fue generado automáticamente (true) o creado por el usuario (false).
+Boolenan that determines whether the password was automatically generated (true) or created by the user (false).
 
 ### output
 
@@ -112,7 +112,7 @@ Boolenano que determina si el password fue generado automáticamente (true) o cr
 
 ## user.id
 
-El id del usuario.
+The id of the user.
 
 ### output
 
@@ -120,7 +120,7 @@ El id del usuario.
 
 ## user.initials
 
-Las iniciales del nombre de usuario.
+The initials of the username.
 
 ### output
 
@@ -128,15 +128,15 @@ Las iniciales del nombre de usuario.
 
 ## user.last_name
 
-El apellido del usuario.
+The last name of the user.
 
 ### output
 
-```Modyo```
+```Mode```
 
 ## user.male_sex_value
 
-El valor por defecto cuando el sexo es masculino.
+The default value when gender is male.
 
 ### output
 
@@ -144,7 +144,7 @@ El valor por defecto cuando el sexo es masculino.
 
 ## user.member_since
 
-La fecha desde la cual es usuario es miembro del sitio.
+The date since which the user is a member of the site.
 
 ### output
 
@@ -152,7 +152,7 @@ La fecha desde la cual es usuario es miembro del sitio.
 
 ## user.name
 
-El nombre completo del usuario.
+The full name of the user.
 
 ### output
 
@@ -160,11 +160,11 @@ El nombre completo del usuario.
 
 ## [user.notifications](./notification)
 
-Array de objectos del tipo notification.
+An array of objects of the type notification.
 
 ## user.profile_url
 
-La URL del perfil del usuario.
+The URL of the user's profile.
 
 ### output
 
@@ -172,7 +172,7 @@ La URL del perfil del usuario.
 
 ## user.sex
 
-El valor del sexo configurado para el usuario.
+The value of the sex configured for the user.
 
 ### output
 
@@ -181,23 +181,23 @@ El valor del sexo configurado para el usuario.
 
 ## [user.targets](./target)
 
-Array de objectos del tipo target.
+Array of objects of the target type.
 
 ## user.undefined_sex_value
 
-El valor por defecto cuando el sexo es indefinido.
+The default value when gender is undefined.
 
 ### output
 
 ```3```
 
-## [user.unread_notifications](./notificacion)
+## [user.unread_notifications](./notification)
 
-Array de objectos del tipo notificación.
+Array of objects of type notification.
 
 ## user.unread_notifications_count
 
-El conteo de las notificaciones no leídas.
+The count of unread notifications.
 
 ### output
 
@@ -205,7 +205,7 @@ El conteo de las notificaciones no leídas.
 
 ## user.username
 
-El username del usuario.
+The username of the user.
 
 ### output
 
@@ -213,7 +213,7 @@ El username del usuario.
 
 ## user.uuid
 
-El uuid del usuario.
+The user's uuid.
 
 ### output
 
