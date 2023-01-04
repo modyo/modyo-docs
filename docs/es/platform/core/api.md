@@ -613,4 +613,4 @@ Esta consulta obtuvo todos los registros y los despliega en un JSON:
 
 Si quieres conocer los registros de administradores, cambia el tipo de usuario por: `user_type=AdminUser`
 
-Para conocer más acerca de cómo hacer consultas a la información de Content via API, ve nuestra guía y ejemplos en [API](/es/platform/content/public-api-reference).
+Para conocer más acerca de cómo hacer consultas a la información de Content vía API, ve nuestra guía y ejemplos en [API](/es/platform/content/public-api-reference).
