@@ -356,10 +356,15 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 
 Agregar stages en tu sitio te permite integrar y desplegar continuamente (CI/CD) nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar únicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse a cualquier stage.
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar únicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse a cualquier otro.
+
+
 
 :::warning Atención
-Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
+- Cada Sitio tiene un máximo de 4 Stages.
+- Los cambios que se realizen en un Stage, solo se reflejarán en ese Stage. Esta funcionalidad solo se puede usar en Sitios.
+- Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo pueden hacer uso de estas en el stage `main`.
+- Los stages cuentan con una sección de Miembros de Equipos separada del stage `main`. Esto significa que tendrás que agregar a los miembros para habilitar la funcionalidad de Revisión de Equipo. Adicionalmente, podrás tener los mismos miembros con diferentes roles y permisos para cada stage. 
 :::
 
 #### Agregar un nuevo stage
@@ -383,7 +388,7 @@ En la barra lateral podrás ver en qué stage estas actualmente y al hacer click
 
 #### Sincronizar un stage
 
-Una vez que hayas terminado tus pruebas en tu stage, asegúrate de sincronizarlos a `main`. En la pantalla de sincronizaciones, podrás ver todos los cambios que se realizaran entre los dos stages seleccionados. Al hacer click en _Ver_
+Una vez que hayas terminado tus pruebas en tu stage, asegúrate de que no hayan cambios pendientes antes de sincronizar. En la pantalla de sincronizaciones, podrás ver todos los cambios que se realizaran entre los dos stages seleccionados. Al hacer click en _Ver_
 
 <img src="/assets/img/channels/sites/sync-stage.jpg" alt="The sync two stages in a site window."/>
 
@@ -400,7 +405,7 @@ Al hacer click en sincronizar, podrás seleccionar que cambios tomar de un stage
 :::
 
 :::warning Atención
-Recibirás una alerta si intentas sincronizar cambios que todavía no están publicados.
+La plataforma no permite sincronizar cambios que todavía no están publicados.
 :::
 
 
