@@ -214,7 +214,7 @@ This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry
 :::tip Tip
 To learn more about how to use Liquid, see [Liquid markup](/en/platform/channels/liquid-markup.html)
 
-To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html#entry).
+To learn what fields you can use with the `entry` drop, go to [Content Drops](/en/platform/channels/drops/entry).
 :::
 
 #### Settings
