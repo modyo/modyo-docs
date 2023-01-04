@@ -543,4 +543,74 @@ This gives us the following result:
 
 Finally, the API will always return the first page (`current_page: 1`) of resources grouped by 10-item pages (`per_page: 10`) by default.
 
-To learn more about the different ways to use APIs, see [APIs & SDKs](/en/platform/content/public-api-reference).
+## Logs
+
+With the Logs API you can get all the logs that happen inside Modyo Platform, you can choose between User or Administrator logs. If you want to consult the User logs, use:  
+
+```shell script
+curl -X GET https://test.modyo.com/api/admin/logs?user_type=User"   -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+This query gets the following results and displays them as a JSON:
+
+```json
+{
+  "logs": [
+    {
+      "id": 26826,
+      "account_id": 4,
+      "site_id": 0,
+      "space_id": 0,
+      "site_host": "string",
+      "site_name": "string",
+      "user": {
+        "avatar": {
+          "id": 100,
+          "file_name": "user_avatar.png",
+          "url_original": "https://test.modyo.com:3000/assets/avatar/user_avatar_original.png",
+          "url_small": "https://test.modyo.com:3000/assets/avatar/user_avatar_small.png",
+          "url_medium": "https://test.modyo.com:3000/assets/avatar/user_avatar_medium.png"
+        },
+        "id": 344,
+        "name": "Sam Johnson",
+        "first_name": "Johnson",
+        "last_name": "Sam",
+        "email": "sam.johnson@modyo.com",
+        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-..."
+      },
+      "type": "Logs::TargetDeletedLog",
+      "value_1": "string",
+      "value_2": "string",
+      "value_3": "string",
+      "request_ip": "127.0.0.1",
+      "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+      "title": "admin.logs.target_deleted_log.title",
+      "description": "admin.logs.target_deleted_log.description",
+      "loggeable_id": 15,
+      "loggeable_type": "Targets::Target",
+      "log_origin": "admin.loggeable_types.targets.target",
+      "created_at": "2020-02-06T12:20:29.000-03:00",
+      "options": "{\\\"title\\\":\\\"\\\"}",
+      "log_key_user_action": "admin.logs.target_deleted_log.activity",
+      "defaults": {
+        "site_or_account": "<a href=\\\"https://test.modyo.com\\\">My Modyo</a>",
+        "user": "<a href=\\\"https://test.modyo.com/admin/settings/admin_users/830d2b95-e74e-49b0-b5e9-6c6b90d66447\\\">Sam J.</a>",
+        "loggeable": "string",
+        "value_1": "string",
+        "value_2": "string",
+        "value_3": "string"
+      }
+    }
+  ],
+  "meta": {
+    "total_entries": 2,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 1
+  }
+}
+```
+
+If you want to know the administrator records, change the user type to: `user_type=AdminUser`.
+
+To learn more about how to query Content information via API, see our guide and examples at [API](/en/platform/content/public-api-reference).
