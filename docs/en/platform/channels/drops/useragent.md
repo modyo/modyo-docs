@@ -4,32 +4,32 @@ search: true
 
 # User Agent
 
-Usa los drops de user agent para obtener información del agente del navegador web.
+Use the user agent drops to get agent information from the web browser.
 
 ## user_agent.agent
 
-Un string con el tipo de agente que está corriendo.
+A string with the type of agent that is running.
 
 ## user_agent.as_json
 
-Un string en formato JSON con toda la configuración del agente corriendo.
+A string in JSON format with all the agent configuration running.
 
 ## user_agent.browser
 
-Un string con el nombre del navegador para el agente.
+A string with the browser name for the agent.
 
 ## user_agent.browser_version
 
-Un string con la versión del navegador para el agente.
+A string with the browser version for the agent.
 
 ## user_agent.is_modyo_shell
 
-Boolean que determina si el agente está siendo gestionado por una aplicación de Modyo
+Boolean that determines if the agent is being managed by a Modyo application.
 
 ## user_agent.platform
 
-Un string con el sistema operativo del agente.
+A string with the agent's operating system.
 
 ## user_agent.platform_version
 
-Un string con la versión del sistema operativo del agente.
+A string with the agent's operating system version.
