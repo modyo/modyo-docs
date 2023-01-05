@@ -1,26 +1,28 @@
 ---
 search: true
+collapsible: true
 ---
 
-# Espacio
+# Space
 
-Despliega contenido dinámico creado en tus espacios desde cualquier parte de tu sitio. En este objeto tienes acceso a toda información pertinente a las entradas, los tipos de contenido, y el gestor de archivos. Los atributos disponibles son:
+Display dynamic content created in your spaces from anywhere on your site. In this object you have access to all information relevant to the entries, the content types, and the file manager. The available attributes are:
 
 ## [space.categories](./category)
 
-Arreglo de objetos del tipo categoria que contiene todas las categorias del espacio.
+Array of objects of type category containing all categories in the space.
 
 ## [space.entries](./entry)
 
-Arreglo de objetos de entradas que contiene todas las entradas del espacio.
+Array of entry objects containing all entries in the space.
 
 ## [space.types](./type)
 
-Arreglo de objetos de tipos de contenido que contiene todos los tipos del espacio.
+Array of content type objects containing all the types in the space.
 
 ## space.name
 
-El nombre del espacio.
+The name of the space.
 
 #### output
-```Espacio Nuevo```
+
+``` New Space```
