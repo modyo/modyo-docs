@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Campo
+# Field
 
-Despliega toda la información de los campos de una entrada.
+Displays all the information in the fields of an entry.
 
 ## field.name
 
-Nombre del campo personalizado.
+Name of the custom field.
 
 ### output
 
@@ -16,7 +16,7 @@ Nombre del campo personalizado.
 
 ## field.type
 
-Nombre del type asociado al campo.
+Name of the type associated with the field.
 
 ### output
 
