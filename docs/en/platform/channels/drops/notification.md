@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Notificación
+# Notification
 
-Estos drops te permiten obtener información a través de Liquid para las notificaciones del módulo Customers.
+These drops allow you to obtain information through Liquid for notifications in the Customers module.
 
 ## notification.opened
 
-Boolean si la notificación fue abierta o no.
+Boolean if the notification was opened or not.
 
 ### output
 
@@ -16,7 +16,7 @@ Boolean si la notificación fue abierta o no.
 
 ## notification.sent_at
 
-La fecha de envío de la notificación.
+The date the notification was sent.
 
 ### output
 
@@ -24,17 +24,17 @@ La fecha de envío de la notificación.
 
 ## notification.body
 
-El body de la notificación.
+The body of the notification.
 
 ### output
 
 ```sh
-<p>Este es un mensaje de prueba en las campañas via notificaciones</p>
+ <p> This is a test message in campaigns via notifications </p> 
 ```
 
 ## notification.subject
 
-El subject de la notificación.
+The subject of the notification.
 
 ### output
 
@@ -42,9 +42,9 @@ El subject de la notificación.
 
 ## notification.url
 
-La url de la notificación.
+The url of the notification.
 
 ### output
 
-```https://test.miModyo.com/profile?notification_id=65345```
+```https://test.myModyo.com/profile?notification_id=65345```
 
