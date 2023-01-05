@@ -2,25 +2,25 @@
 search: true
 ---
 
-# Tipo de Contenido
+# Content Type
 
-Usa los drops de Content Type para obtener información de tus tipos de contenido del módulo Content.
+Use the Content Type drops to get information about your content types from the Content module.
 
 ## [type.entries](./entry)
 
-Arreglo de objetos de entradas que contiene todas las entradas del tipo.
+An array of input objects containing all entries of the type.
 
 ## [type.fields](./field)
 
-Arreglo de objectos de los campos dentro del tipo de contenido seleccionado.
+Arrangement of objects in fields within the selected content type.
 
 ## [type.entry](./entry)
 
-Objeto de la primera entrada del tipo seleccionado. Esto también es utilizado con entradas de cardinalidad individual.
+Object of the first entry of the selected type. This is also used with individual cardinality entries.
 
 ## type.name
 
-Nombre del tipo.
+Name of the type.
 
 ### output
-```TipoNuevo```
+```NewType```
