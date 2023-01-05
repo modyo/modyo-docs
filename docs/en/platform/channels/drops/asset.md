@@ -6,35 +6,35 @@ sidebarDepth: 3
 
 # Asset
 
-Objecto del tipo asset. Contiene la información pertinente a un archivo dentro del [Gestor de Archivos](/es/platform/content/asset-manager).
+Object of type asset. Contains the information relevant to a file within the [File Manager](/en/platform/content/asset-manager).
 
 ### asset.data_file_name
 
-El nombre del asset.
+The name of the asset.
 
 #### output
 
-```foto.jpg```
+```photo.jpg```
 
 ### asset.description
 
-La descripción del archivo en caso de haberse configurado uno.
+The description of the file if one has been configured.
 
 #### output
 
-```Platón usa esta alegoría para explicar cómo es para el filósofo y maestro guiar a las personas al conocimiento```
+```Plato uses this allegory to explain how it is for the philosopher and teacher to lead people to knowledge```.
 
 ### asset.title
 
-El título asociado al asset.
+The title associated with the asset.
 
 #### output
 
-```Foto```
+```Photo```
 
 ### asset.uuid
 
-El uuid del asset.
+The uuid of the asset.
 
 #### output
 
@@ -42,23 +42,23 @@ El uuid del asset.
 
 ### asset.alt
 
-El alt asociado al asset en caso de haberse configurado uno. 
+The alt associated with the asset if one is configured. 
 
 #### output
 
-```El mito de la caverna de Platon```
+```The Myth of Plato's Cavern```
 
 ### asset.alt_text
 
-El alt asociado al asset en caso de haberse configurado uno. 
+The alt associated with the asset if one is configured. 
 
 #### output
 
-```El mito de la caverna de Platon```
+```The Myth of Plato's Cavern```
 
 ### asset.content_type
 
-El tipo de contenido asociado al asset.
+The content type associated with the asset.
 
 #### output
 
@@ -66,14 +66,14 @@ El tipo de contenido asociado al asset.
 
 ### asset.name
 
-El nombre asignado al asset.
+The name assigned to the asset.
 
 #### output
-```foto.jpg```
+```photo.jpg```
 
 ### asset.size
 
-El tamaño (en bytes) del archivo subido.
+The size (in bytes) of the uploaded file.
 
 #### output
 
@@ -81,7 +81,7 @@ El tamaño (en bytes) del archivo subido.
 
 ### asset.thumbnail_url
 
-La URL del thumbnail del asset.
+The URL of the asset thumbnail.
 
 #### output
 
@@ -89,7 +89,7 @@ La URL del thumbnail del asset.
 
 ### asset.url
 
-La URL donde se encuentra el asset.
+The URL where the asset is located.
 
 #### output
 
@@ -97,23 +97,23 @@ La URL donde se encuentra el asset.
 
 ## Audio
 
-El drop de Audio es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **audio_asset** y reemplazarlo en lugar de asset. 
+The Audio drop is a subclass that inherits the same attributes as Asset. You can use **audio_asset** and replace it instead of asset. 
 
-Se heredan los siguientes atributos de [Asset](./asset):
+The following attributes are inherited from [Asset](./asset):
 
-`.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`
+`.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`.
 
-## Archivo
+## File
 
-El drop de Archivo es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **file_asset** y reemplazarlo en lugar de asset. 
+The File drop is a subclass that inherits the same attributes as Asset. You can use **file_asset** and replace it instead of asset. 
 
-Se heredan los siguientes atributos de [Asset](./asset):
+The following attributes are inherited from [Asset](./asset):
 
-`.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`
+`.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`.
 
 ### file_asset.url
 
-La URL del archivo.
+The URL of the file.
 
 #### output
 
@@ -121,24 +121,24 @@ La URL del archivo.
 
 ### file_asset.thumbnail_url
 
-La URL del thumb del archivo.
+The URL of the file's thumb.
 
 #### output
 
-```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/C50x50/platon.jpg```
+```/Uploads/7B1B3F82-C9F5-4C51-87DC-B93FC9918C9C/C50x50/Platon.JPG```
 
 
 ### file_asset.image_thumbnail_url
 
-La URL del archivo.
+The URL of the file.
 
 #### output
 
-```/uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/C200x200/cave.csv```
+```/Uploads/8of5a204-74E6-4D6B-A319-6F7896C09135/C200x200/Cave.csv```
 
 ### file_asset.is_image?
 
-Booleano para saber si el archivo es imagen.
+Boolean to know if the file is image.
 
 #### output
 
@@ -146,7 +146,7 @@ Booleano para saber si el archivo es imagen.
 
 ### file_asset.is_video?
 
-Booleano para saber si el archivo es video.
+Boolean to find out if the file is video.
 
 #### output
 
@@ -154,14 +154,14 @@ Booleano para saber si el archivo es video.
 
 ### file_asset.is_audio?
 
-Booleano para saber si el archivo es audio.
+Boolean to know if the file is audio.
 
 #### output
 
 ```false```
 
 ### file_asset.is_pdf?
-Booleano para saber si el archivo es un PDF.
+Boolean to see if the file is a PDF.
 
 #### output
 
@@ -169,26 +169,26 @@ Booleano para saber si el archivo es un PDF.
 
 ### file_asset.is_another?
 
-Booleano para saber si el archivo es de otro tipo no especificado.
+Boolean to find out if the file is of another type not specified.
 
 #### output
 
 ```true```
 
 ### file_asset.temp_url
-La URL temporal del archivo.
+The temporary URL of the file.
 
 #### output
 
-```/var/folders/vm/fk9_xg_d7qs8xbxj28csw1000000gp/T/e8ca0956-a576-43c0-9f37-2be39cf9660120210602-6475-1lvfh9t```
+```/var/folders/VM/FK9_XG_D7QS8XBXJ28CSW1000000GP/T/E8CA0956-A576-43C0-9F37-2BE39CF9660120210602-6475-1LVFH9T```
 
 ## Video
 
-El drop de Video es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **video_asset** y reemplazarlo en lugar de asset. 
+The Video drop is a subclass that inherits the same attributes as Asset. You can use **video_asset** and replace it instead of asset. 
 
 ### video_asset.url
 
-La URL del video.
+The URL of the video.
 
 #### output
 
@@ -196,9 +196,8 @@ La URL del video.
 
 ### video_asset.thumbnail_url
 
-La URL del thumbnail del video.
+The URL of the video thumbnail.
 
 #### output
 
 ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/C50x50/platon.jpg```
-
