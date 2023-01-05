@@ -1,44 +1,46 @@
 ---
 search: true
+
+collapsible: true
 ---
 
-# Entrada
+# Entrance
 
-Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes acceso a toda información pertinente a las entradas. Los atributos disponibles son:
+Create dynamic content in your spaces using Tickets. In this object you have access to all information relevant to the entries. The available attributes are:
 
 ## entry.space
 
-El nombre del espacio asociado a la entry.
+The name of the space associated with the entry.
 
 ### output
-```espacio1```
+```space1```
 
 ## entry.category
 
-La ruta de la categoría de esta entrada.
+The path to the category of this entry.
 
 ### output
 ```category-1/category-2```
 
-El espacio de esta entrada.
+The space for this entry.
 
 ## entry.category_name
 
-El nombre de la categoría de esta entrada.
+The category name of this entry.
 
 ### output
 ```category 2```
 
 ## entry.category_slug
 
-El slug de la categoría de esta entrada.
+The slug of the category of this entry.
 
 ### output
 ```category-2```
 
 ## entry.type
 
-El tipo de la entrada.
+The type of the entry.
 
 ### output
 
@@ -46,7 +48,7 @@ El tipo de la entrada.
 
 ## entry.type_uid
 
-El id único del tipo de la entrada.
+The unique id of the entry type.
 
 ### output
 
@@ -54,7 +56,7 @@ El id único del tipo de la entrada.
 
 ## entry.tags
 
-Arreglo de strings de los tags de esta entrada.
+String array of the tags of this entry.
 
 ### output
 
@@ -62,28 +64,28 @@ Arreglo de strings de los tags de esta entrada.
 
 ## entry.account_url
 
-La url de la cuenta
+The url of the account
 
 ### output
 
-```https://test.miModyo.com```
+```https://test.myModyo.com```
 
 ## entry.url
 
-URL canónico de la entrada
+Entry canonical URL
 
 ### output
 
-```https://test.miModyo.com/entry```
+```https://test.myModyo.com/entry```
 
 ## [entry.author](./user)
 
-El objeto del usuario autor de la entrada
+The object of the user who authored the post
 
 ## entry.meta
 
-El objeto del metadata de la entrada. Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private
+The object of the metadata of the entry. This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private
 
 ## [entry.fields](./field)
 
-Array con objetos de los campos de la entrada.
+Array with objects in the input fields.
