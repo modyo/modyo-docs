@@ -4,12 +4,12 @@ search: true
 
 # Target
 
-Estos drops te permiten obtener información de Targets. Los atributos disponibles son:
+These drops allow you to obtain information from Targets. The available attributes are:
 
 ## target.id
 
-Un string con el ID asociado al target.
+A string with the ID associated with the target.
 
 ## target.name
 
-Un string con el nombre asociado al target.
+A string with the name associated with the target.
