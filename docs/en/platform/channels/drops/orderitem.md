@@ -6,24 +6,24 @@ search: true
 
 ## order_item.created_at
 
-Fecha de la creación de la orden.
+Date of order creation.
 
 ## order_item.id
 
-Id del order item.
+Order item ID.
 
 ## order_item.name
 
-Nombre del order item.
+Name of the order item.
 
 ## order_item.price
 
-Precio del order item.
+Order item price.
 
 ## order_item.quantity
 
-Cantidad de items en la orden.
+Number of items in the order.
 
 ## order_item.updated_at
 
-Fecha de última actualización del order item.
+Date of last update of the order item.
