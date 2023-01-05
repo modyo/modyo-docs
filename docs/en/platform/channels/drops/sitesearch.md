@@ -2,18 +2,18 @@
 search: true
 ---
 
-# Navegador de Sitio
+# Site Browser
 
-Estos drops te permiten obtener información del navegador de un sitio.
+These drops allow you to obtain information from a site's browser.
 
 ## sitesearch.have_results
 
-Boolean que determina si la búsqueda tiene resultados.
+Boolean that determines if the search has results.
 
 ## [sitesearch.results](./page)
 
-Objeto de tipo Página que cumplen con los parámetros de búsqueda.
+Page type object that meet the search parameters.
 
 ## sitesearch.have_less_relevant_results
 
-Boolean que determina si hay más resultados que exceden el límite máximo de resultados.
+Boolean that determines if there are more results that exceed the maximum limit of results.
