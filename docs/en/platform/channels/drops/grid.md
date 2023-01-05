@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Grilla
+# Grid
 
-Contiene la definición una Grilla en una Página. 
+Contains the definition of a Grid on a Page. 
 
 ## grid.id
 
-El id del grid.
+The grid id.
 
 ### output
 
@@ -16,7 +16,7 @@ El id del grid.
 
 ## grid.cache_key
 
-La key del cache asociada al grid.
+The cache key associated with the grid.
 
 ### output
 
@@ -24,7 +24,7 @@ La key del cache asociada al grid.
 
 ## grid.resolve_type
 
-El tipo del grid con underscore.
+The guy on the grid with an underscore.
 
 ### output
 
@@ -32,149 +32,149 @@ El tipo del grid con underscore.
 
 ## Full Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [full_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Full Three Column Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [full_three_cols_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [full_three_cols_grid.col1_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [full_three_cols_grid.col2_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [full_three_cols_grid.col3_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_three_cols_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Full Two Col Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [full_two_cols_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [full_two_cols_grid.col1_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [full_two_cols_grid.col2_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 
 ## Side Left Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [side_left_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_grid.side_left_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Side Left One Col Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [side_left_one_col_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_one_col_grid.side_left_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_one_col_grid.full_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Side Left Three Col Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [side_left_three_cols_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_three_cols_grid.side_left_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_three_cols_grid.col1_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_three_cols_grid.col2_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_left_three_cols_grid.col3_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Side Right Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [side_right_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_grid.side_right_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Side Right One Col Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [side_right_one_col_grid.main_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_one_col_grid.side_right_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_one_col_grid.full_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ## Side Right Three Col Grid
 
-Extiende la funcionalidad del drop Grid y adicionalmente contiene los siguientes atributos:
+Extends the functionality of the drop Grid and additionally contains the following attributes:
 
 ### [side_right_three_cols_grid.side_right_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_three_cols_grid.col1_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_three_cols_grid.col2_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
 
 ### [side_right_three_cols_grid.col3_widgets](./widget)
 
-Array de objectos del tipo widget.
+Array of widget type objects.
