@@ -1,14 +1,15 @@
 ---
 search: true
+sidebarDepth: 3
 ---
 
 # Widget
 
-Estos drops obtienen la información relevante a los Widgets.
+These drops get the information relevant to the Widgets.
 
 ### widget.cache_key
 
-La key del cache asociada al widget.
+The cache key associated with the widget.
 
 #### output
 
@@ -16,7 +17,7 @@ La key del cache asociada al widget.
 
 ### widget.created_at
 
-La fecha de creación del widget.
+The creation date of the widget.
 
 #### output
 
@@ -24,7 +25,7 @@ La fecha de creación del widget.
 
 ### widget.id
 
-El ID asociado al widget respectivo.
+The ID associated with the respective widget.
 
 #### output
 
@@ -32,7 +33,7 @@ El ID asociado al widget respectivo.
 
 ### widget.resolve_type
 
-El tipo del widget con underscore.
+The type of the widget with underscore.
 
 #### output
 
@@ -40,7 +41,7 @@ El tipo del widget con underscore.
 
 ### widget.title
 
-El título del widget.
+The title of the widget.
 
 #### output
 
@@ -48,7 +49,7 @@ El título del widget.
 
 ### widget.css_class
 
-La clase de css asociado al widget.
+The css class associated with the widget.
 
 #### output
 
@@ -56,7 +57,7 @@ La clase de css asociado al widget.
 
 ### widget.name
 
-El nombre del widget.
+The name of the widget.
 
 #### output
 
@@ -64,7 +65,7 @@ El nombre del widget.
 
 ### widget.type
 
-El tipo del widget.
+The type of the widget.
 
 #### output
 
@@ -72,7 +73,7 @@ El tipo del widget.
 
 ### widget.use_default_title
 
-Booleano indicando si el widget usa el titulo por defecto.
+Boolean indicating whether the widget uses the default title.
 
 #### output
 
@@ -80,7 +81,7 @@ Booleano indicando si el widget usa el titulo por defecto.
 
 ### widget.wid
 
-El wid del widget.
+The widget wid.
 
 #### output
 
@@ -88,7 +89,7 @@ El wid del widget.
 
 ### widget.width
 
-El ancho configurado en el widget.
+The width set in the widget.
 
 #### output
 
@@ -98,19 +99,19 @@ El ancho configurado en el widget.
 
 ### content_list_widget.context_params
 
-Los parametros de contexto asociado al widget.
+The context parameters associated with the widget.
 
 #### output
 
 ```{:page=>1, :per_page=>10, :account=>#account_object, :user=>nil, :version_type=>:currents}```
 
-### [content_list_widget.entries](#entrada)
+### [content_list_widget.entries](./entry)
 
-Arreglo de Objetos de tipo Entries asociadas al widget.
+Array of objects of type Entries associated to the widget.
 
 ### content_list_widget.show_caption
 
-Booleano si la opción de show caption está activa.
+Boolean if the show caption option is active.
 
 #### output
 
@@ -118,7 +119,7 @@ Booleano si la opción de show caption está activa.
 
 ### content_list_widget.space_id
 
-El id del Espacio asociado al widget.
+The id of the Space associated with the widget.
 
 #### output
 
@@ -126,7 +127,7 @@ El id del Espacio asociado al widget.
 
 ### content_list_widget.type_uid
 
-El uid del type asociado al widget.
+The uid of the type associated to the widget.
 
 #### output
 
@@ -136,7 +137,7 @@ El uid del type asociado al widget.
 
 ### custom_widget.manager_uuid
 
-El uuid del custom widget.
+The uuid of the custom widget.
 
 #### output
 
@@ -144,23 +145,23 @@ El uuid del custom widget.
 
 ### custom_widget.sync
 
-Boolean que determina si la carga es sincrónica (true) o asincrónica (false).
+Boolean that determines whether the load is synchronous (true) or asynchronous (false).
 
 ### custom_widget.css
 
-Un string con el CSS asociado al widget.
+A string with the CSS associated with the widget.
 
 ### custom_widget.html
 
-Un string con el HTML asociado al widget.
+A string with the HTML associated with the widget.
 
 ### custom_widget.js
 
-Un string con el JavaScript asociado al widget.
+A string with the JavaScript associated with the widget.
 
 ### custom_widget.version
 
-La versión hash del custom widget.
+The hashed version of the custom widget.
 
 #### output
 
@@ -170,20 +171,20 @@ La versión hash del custom widget.
 
 ### rich_text_widget.html
 
-El contenido html del widget.
+The html content of the widget.
 
 #### output
 
 ```sh
-<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World&nbsp;<span class=\"fr-emoticon fr-deletable\">😃</span>&nbsp;</span></strong></p>
+<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World <span class=\"fr-emoticon fr-deletable\">😃</span> </span></strong></p>
 ```
 
 ## Text Widget
 
 ### text_widget.html
 
-El html asociado al text widget.
+The html associated with the text widget.
 
 #### output
 
-```Hola mundo```
+```Hello world```
