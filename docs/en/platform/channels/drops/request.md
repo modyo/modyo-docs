@@ -4,28 +4,28 @@ search: true
 
 # Request
 
-Estos drops te permiten obtener información al momento de hacer un request. 
+These drops allow you to obtain information when making a request. 
 
 
 ## request.domain
 
-El dominio del request.
+The domain of the request.
 
 ### output
 
-```miModyo.com```
+```myModyo.com```
 
 ## request.host
 
-El host del request.
+The host of the request.
 
 ### output
 
-```test.miModyo.com```
+```test.myModyo.com```
 
 ## request.protocol
 
-El protocolo asociado al request.
+The protocol associated with the request.
 
 ### output
 
@@ -33,7 +33,7 @@ El protocolo asociado al request.
 
 ## request.user_agent
 
-Los detalles del user agent.
+The details of the user agent.
 
 ### output
 
@@ -41,7 +41,7 @@ Los detalles del user agent.
 
 ## request.comments_url
 
-La comments URL del request.
+The comments URL of the request.
 
 ### output
 
@@ -49,7 +49,7 @@ La comments URL del request.
 
 ## request.interact_url
 
-La interact URL del request.
+The interact URL of the request.
 
 ### output
 
@@ -57,7 +57,7 @@ La interact URL del request.
 
 ## request.is_app_shell?
 
-Booleano para saber si el user agent del request pertenece a una app de Modyo.
+Boolean to find out if the user agent of the request belongs to a Modyo app.
 
 ### output
 
@@ -65,7 +65,7 @@ Booleano para saber si el user agent del request pertenece a una app de Modyo.
 
 ## request.path
 
-El path del request.
+The path of the request.
 
 ### output
 
@@ -73,7 +73,7 @@ El path del request.
 
 ## request.refresh_url
 
-La refresh URL del request
+The refresh URL of the request
 
 ### output
 
@@ -81,7 +81,7 @@ La refresh URL del request
 
 ## request.url
 
-La URL del request.
+The URL of the request.
 
 ### output
 
