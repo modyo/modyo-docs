@@ -2,70 +2,70 @@
 search: true
 ---
 
-# Orden
+# Order
 
-Estos drops te permiten obtener información a través de Liquid para las órdenes del módulo Commerce.ç
+These drops allow you to obtain information through Liquid for orders in the Commerce module.
 
 ## order.created_at
 
-String con la fecha de la creación de la orden.
+String with the date of the order creation.
 
 ## order.current_state
 
-String con el estado de la orden.
+String with the status of the order.
 
 ## order.id
 
-ID de la orden.
+Order ID.
 
 ## [order.order_items](#order_item)
 
-Arreglo de objetos de tipo order_item.
+Array of objects of type order_item.
 
 ## order.payment_info
 
-Hash con la información de pago de la orden.
+Hash with the payment information of the order.
 
 ## order.short_uuid
 
-String con el short uuid de la orden.
+String with the short uuid of the order.
 
 ## order.tax_total
 
-Float con el monto de impuestos pagados de la orden.
+Float with the amount of taxes paid on the order.
 
 ## order.total
 
-Float con el monto total de la orden.
+Float with the total amount of the order.
 
 ## order.updated_at
 
-String con la fecha de última modificación.
+String with the last modification date.
 
 ## order.url
 
-String con el url de la orden.
+String with the url of the order.
 
 ## order.uuid
 
-String con el uuid completo de la orden.
+String with the complete uuid of the order.
 
 ## order.confirmation_code
 
-String con el código de confirmación de la orden.
+String with the order confirmation code.
 
 ## order.customer_email
 
-String con el email del cliente asociado a esta orden.
+String with the customer's email associated to this order.
 
 ## order.customer_name
 
-String con el nombre completo del cliente asociado.
+String with the full name of the associated client.
 
 ## order.order_description
 
-String con la descripción de la orden.
+String with the description of the order.
 
 ## order.reference_id
 
-String con el id de referencia para esta orden.
+String with the reference id for this order.
