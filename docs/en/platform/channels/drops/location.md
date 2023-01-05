@@ -2,13 +2,13 @@
 search: true
 ---
 
-# Ubicación
+# Location
 
-Objecto del tipo ubicación. Contiene la información pertinente a un punto de geolocalización.
+Object of the type location. It contains the information pertinent to a geolocation point.
 
 ## location.location_street
 
-Nombre de la ubicación como aparece en Google Maps.
+Name of the location as it appears in Google Maps.
 
 ### output
 
@@ -16,7 +16,7 @@ Nombre de la ubicación como aparece en Google Maps.
 
 ## location.latitude
 
-Latitud del punto de Google Maps.
+Latitude of the Google Maps point.
 
 ### output
 
@@ -24,7 +24,7 @@ Latitud del punto de Google Maps.
 
 ## location.longitude
 
-Longitud del punto de Google Maps.
+Longitude of the Google Maps point.
 
 ### output
 
