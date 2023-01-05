@@ -1,18 +1,19 @@
 ---
 search: true
+collapsible: true
 ---
 
-# Administrador
+# Administrator
 
-Los administradores de la Cuenta son aquellos usuarios con privilegios de hacer cambios a nivel Cuenta además de los cambios a la configuración de Espacios o Sitios.
+Account administrators are those users with privileges to make changes at the Account level in addition to changes to the Spaces or Sites configuration.
 
 ## [adminuser.avatar](./asset)
 
-Objeto de tipo asset para el avatar del administrador.
+Asset object for the administrator's avatar.
 
 ## adminuser.email
 
-Email del administrador.
+Email of the administrator.
 
 ### output
 
@@ -20,7 +21,7 @@ Email del administrador.
 
 ## adminuser.first_name
 
-Nombre del administrador.
+Name of administrator.
 
 ### output
 
@@ -28,7 +29,7 @@ Nombre del administrador.
 
 ## adminuser.last_name
 
-Apellido del administrador.
+Last name of the administrator.
 
 ### output
 
@@ -36,7 +37,7 @@ Apellido del administrador.
 
 ## adminuser.name
 
-Nombre completo del administrador.
+Full name of the administrator.
 
 ### output
 
