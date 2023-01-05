@@ -2,142 +2,142 @@
 search: true
 ---
 
-# Sitio
+# Site
 
-Los drops de Sitio son utilizados para obtener toda la información de un sitio. Los atributos disponibles son:
+Site drops are used to obtain all the information of a site. The available attributes are:
 
 ## [site.account](./account)
 
-El objeto de tipo Cuenta asociada a este sitio.
+The object of type Account associated with this site.
 
 ## site.apple_touch_icons
 
-String con la liga para el Apple touch icon.
+String with link for Apple touch icon.
 
 ## site.cache_key
 
-El cache key asociado al sitio.
+The cache key associated with the site.
 
 ## site.description
 
-Un string con la descripción del sitio.
+A string with a description of the site.
 
 ## site.favicon_link
 
-Un string con la liga al favicon.
+A string with the link to the favicon.
 
 ## site.host
 
-Un string con el host del sitio.
+A string with the site host.
 
 ## site.keywords
 
-Un string con todos los keywords separados por coma en el sitio.
+A string with all comma separated keywords in the site.
 
 ## site.language
 
-Un string con el lenguaje del sitio.
+A string with the site language.
 
 ## site.login_url
 
-Un string con la URL para hacer login al sitio.
+A string with the URL to login to the site.
 
 ## site.logo
 
-Un string con la ubicación del logo para el sitio.
+A string with the location of the logo for the site.
 
 ## site.logout_url
 
-Un string con la URL del logout del sitio.
+A string with the site logout URL.
 
 ## site.name
 
-Un string con el nombre del sitio.
+A string with the name of the site.
 
 ## site.profile_url
 
-Un string con la liga del perfil para el sitio.
+A string with the profile link for the site.
 
 ## [site.pwa_icon](./asset)
 
-Objeto de tipo Asset que contiene la información del PWA icon.
+Asset object containing the PWA icon information.
 
 ## site.search_url
 
-Un string con la URL para la barra del buscador del sitio.
+A string with the URL for the site's search bar.
 
 ## site.tag_manager_id
 
-Un string con el Google Tag Manager ID del sitio.
+A string with the Google Tag Manager ID of the site.
 
 ## site.tagline
 
-Un string con descripción del tagline del sitio.
+A string with a description of the site tagline.
 
 ## site.use_pwa_manifest
 
-Boolean que determine si el sitio usa PWA manifest.
+Boolean that determines if the site uses PWA manifest.
 
 ## site.uuid
 
-Un string con el UUID del sitio.
+A string with the UUID of the site.
 
 ## site.account_url
 
-Un string con la URL de la cuenta asociada al sitio.
+A string with the URL of the account associated with the site.
 
 ## site.breadcrumb
 
-Un string con la clase CSS del breadcrumb div.
+A string with the CSS class of the breadcrumb div.
 
 ## site.cache_version
 
-Un string con el cache key de esta versión del sitio.
+A string with the cache key of this version of the site.
 
 ## site.csrf_meta_tag
 
-Un string con el meta tag CSRF.
+A string with the CSRF meta tag.
 
 ## site.css_path
 
-Un string con la ubicación del archivo CSS del sitio.
+A string with the location of the site's CSS file.
 
 ## site.current_year
 
-Un string con año en curso del sitio.
+A string with current site year.
 
 ## site.js_path
 
-Un string con la ubicación del archivo JS del sitio.
+A string with the location of the site's JS file.
 
 ## site.login_enabled
 
-Boolean que determina si el sitio usa login.
+Boolean that determines if the site uses login.
 
 ## site.manifest_url
 
-Un string con el URL del manifest para el sitio.
+A string with the URL of the manifest for the site.
 
 ## site.meta_tags
 
-Un string con los meta tags del sitio separados con coma.
+A string with the site's meta tags separated with a comma.
 
 ## site.root_path
 
-Un string con la ubicación raíz del sitio.
+A string with the root location of the site.
 
 ## site.service_worker_enabled
 
-Boolean que determina si el top-level service worker está activado (alias: sw_enabled)
+Boolean that determines whether the top-level service worker is enabled (alias: sw_enabled)
 
 ## site.service_worker_scope
 
-Un string con el scope del service worker del sitio.
+A string with the scope of the site's service worker.
 
 ## site.service_worker_url
 
-Un string con el URL del service worker para el sitio.
+A string with the URL of the service worker for the site.
 
 ## site.url
 
-Un string con el URL asociado al sitio.
+A string with the URL associated with the site.
