@@ -24,7 +24,7 @@ The name associated with the page.
 
 ## [page.parent](./page)
 
-The object of type page that is the parent of the page, if there is no parent, display empty (void).
+The object of type page that is the parent of the page, if there is no parent, displays void.
 
 ## page.url
 
@@ -32,7 +32,7 @@ The URL of the page.
 
 ### output
 
-```https://test.myModyo.com/newsite/```
+```https://test.miModyo.com/newsite/```
 
 ## page.current_path
 
