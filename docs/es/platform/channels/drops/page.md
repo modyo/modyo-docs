@@ -22,7 +22,7 @@ El nombre asociado a la página.
 
 ```Home```
 
-## [page.parent](./pag)
+## [page.parent](./page)
 
 El objecto del tipo página que es padre de la página, de no existir un padre, despliega vacío (void).
 

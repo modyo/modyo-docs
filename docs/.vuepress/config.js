@@ -144,7 +144,7 @@ module.exports = {
                 },
                 {
                   title: "Drops",
-                  path: "/en/platform/drops/",
+                  path: "/en/platform/channels/drops/",
                   collapsable: true,
                   children: [
                     "/en/platform/channels/drops/account",
