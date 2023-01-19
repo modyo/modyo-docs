@@ -6,6 +6,38 @@ search: true
 
 ## 9.2
 
+### 9.2.23 - January 19, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Separation of Logs
+* Fixes "Review" button in Team Review emails
+* The archived item will be visually separated from the others in the status filters.
+* Password and signup routes stop responding to mismatched extensions 
+* Administration accounts that are not accessed within a certain period of time will be disabled.
+* Add format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
+* Modyo backend table view URLs can be shared while maintaining the chosen filters 
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixes bug that prevented approval of user with default user and admin role of a space 
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Add site timezone to site drop
+* Adds liquid drops for answered forms
+* Added drop of liquid for forms answered by users of a realm
+* Corrects duplication stages in site list selector 
+
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Add Zendesk Integration
+* Implement password security policy for kingdoms 
+* Payments are migrated to Realm level
+
+
 ### 9.2.22 - December 9, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
