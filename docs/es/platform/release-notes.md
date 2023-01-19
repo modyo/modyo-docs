@@ -6,6 +6,38 @@ search: true
 
 ## 9.2
 
+### 9.2.23 - 19 de enero de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Separación de Logs
+* Corrige botón "Revisar" en correos de Team Review
+* Se separaran visualmente el item archivado de los demás en los filtros de estados
+* Rutas password y signup dejan de responder a  extensiones que no correspondan 
+* Las cuentas de administración que no se accedan en un tiempo determinado se deshabilitarán
+* Agrega validación de formato para MODYO_PAPERCLIP_FOG_CREDENTIALS
+* Las URLs de vistas de tablas del backend de Modyo se pueden compartir manteniendo los filtros elegidos 
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige error que impedia aprobar a usuario con rol default user y admin de un space 
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega timezone del sitio a site drop
+* Agrega drops de liquid para formularios contestados
+* Se agrega drop de liquid para los formularios contestados por los usuarios de un reino
+* Corrige duplicación stages en el selector en lista de sitios 
+
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Agrega Integración con Zendesk
+* Implementa politica de seguridad de contraseñas para reinos 
+* Se migran los Payments a nivel de Reinos
+
+
 ### 9.2.22 - 09 de diciembre de 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
