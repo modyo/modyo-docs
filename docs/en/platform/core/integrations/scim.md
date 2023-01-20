@@ -79,5 +79,5 @@ For groups, there is no “on demand” provisioning, you have to create a user,
 
 
 ### References
-- To build an Azure AD-compatible SCMI API, follow this guide from Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
+- To build a SCIM API compatible with Azure AD, follow this guide from Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
 - For more information on the APIs that Modyo offers, see [Administration API](https://docs.modyo.com/en/platform/core/api.html).
