@@ -6,6 +6,15 @@ search: true
 
 ## 9.2
 
+### 9.2.24 - 20 de enero de 2023
+
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras de performance al cargar índice de widgets
+* Permite crear un nuevo stage con el mismo nombre de uno que esté en proceso de eliminación
+
+
 ### 9.2.23 - 19 de enero de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
