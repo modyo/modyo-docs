@@ -43,6 +43,21 @@ Selecciona un valor en esta opción para que la plataforma automáticamente expi
 - 1 semanas
 - 2 semanas
 
+## Política de periodo de inactividad de los usuarios
+
+Con esta opción, la plataforma automáticamente cambia el estado de un usuario a inactivo. Transcurrido un tiempo determinado sin interacción con la plataforma, el usuario ya no va a poder iniciar sesión. Podrás seleccionar entre estos valores:
+
+- 30 días
+- 60 días
+- 180 días
+- 360 días
+
+Existe una opción adicional que envía email de activación por desactivación del usuario por inactividad.
+
+:::tip Nota
+Los administradores pueden cambiar el estado de un usuario entre inactivo y activo con la opción "Inicio de sesión desactivado por inactivad". Esta opción la puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con esta opción activada, el usuario estará inactivo, y vice-versa si la opción está desactivada, el usuarió estará activado.
+:::
+
 ## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
 
 Activa Cross-Origin Resource Sharing (CORS) para poder acceder a los recursos de Modyo desde otras páginas web.
