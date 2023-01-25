@@ -6,6 +6,18 @@ search: true
 
 ## 9.2
 
+
+### 9.2.25 - 25 de enero de 2023
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige despublicación de página de contenido cuando no tiene un espacio o tipo asociado
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se acepta parámetro {{order.uuid}} en el campo redirect_url al momento de crear una  orden de Payments
+ 
+
 ### 9.2.24 - 20 de enero de 2023
 
 
