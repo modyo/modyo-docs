@@ -6,6 +6,27 @@ search: true
 
 ## 9.2
 
+
+### 9.2.25 - January 25, 2023
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrects unpublishing of content page when it does not have a space or type associated with it
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* The {{order.uuid}} parameter is accepted in the redirect_url field when creating a Payments order.
+
+
+### 9.2.24 - January 20, 2023
+
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Performance improvements when loading widget indexes
+* Allows you to create a new stage with the same name as one that is in the process of being eliminated.
+
+
 ### 9.2.23 - January 19, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -27,14 +48,14 @@ search: true
 
 * Add site timezone to site drop
 * Adds liquid drops for answered forms
-* Added drop of liquid for forms answered by users of a realm
+* Added liquid drop for forms answered by users of a realm
 * Corrects duplication stages in site list selector 
 
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Add Zendesk Integration
-* Implement password security policy for kingdoms 
+* Implement password security policy for realms 
 * Payments are migrated to Realm level
 
 
