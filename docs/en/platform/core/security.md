@@ -43,6 +43,21 @@ Select a value in this option so that the platform automatically expires a sessi
 - 1 weeks
 - 2 weeks
 
+## User inactivity policy
+
+With this option, the platform automatically changes the status of a user to inactive. After a certain period of time without interaction with the platform, the user will no longer be able to log in. You can choose between these values:
+
+- 30 days
+- 60 days
+- 180 days
+- 360 days
+
+There is an additional checkbox that sends an activation email when the user is deactivated due to inactivity.
+
+:::tip Note
+Administrators can change the status of a user between inactive and active with the "Login disabled by inactivity" checkbox. This can be found when modifying a user in **Team**, **Edit** tab. With the checkbox enabled, the user will be inactive, and vice-versa with the checkbox disabled, the user will be active.
+:::
+
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
 
 Activate Cross-Origin Resource Sharing (CORS) to be able to access Modyo resources from other websites.
