@@ -52,10 +52,10 @@ Con esta opción, la plataforma automáticamente cambia el estado de un usuario 
 - 180 días
 - 360 días
 
-Existe una opción adicional que envía email de activación por desactivación del usuario por inactividad.
+Existe un checkbox adicional que envía email de activación por desactivación del usuario por inactividad.
 
 :::tip Nota
-Los administradores pueden cambiar el estado de un usuario entre inactivo y activo con la opción "Inicio de sesión desactivado por inactivad". Esta opción la puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con esta opción activada, el usuario estará inactivo, y vice-versa si la opción está desactivada, el usuarió estará activado.
+Los administradores pueden cambiar el estado de un usuario entre inactivo y activo con el checkbox "Inicio de sesión desactivado por inactivad". Este lo puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con el checkbox activado, el usuario estará inactivo, y vice-versa con el checkbox desactivado, el usuarió estará activo.
 :::
 
 ## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
