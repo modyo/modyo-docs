@@ -7,7 +7,7 @@ meta:
     content: La documentación de una plataforma de experiencia digital de última generación para crear mejores productos digitales.
 
 heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
-footer: Copyright © 2008-2022 Modyo SpA
+footer: Copyright © 2008-2023 Modyo SpA
 
 platformText: La base tecnológica sobre la cual operan las aplicaciones
 

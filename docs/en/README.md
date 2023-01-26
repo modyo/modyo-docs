@@ -3,7 +3,7 @@ home: true
 
 title: Modyo Docs
 heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
-footer: Copyright © 2008-2022 Modyo SpA
+footer: Copyright © 2008-2023 Modyo SpA
 
 platformText: The technological base in which the applications operate
 
