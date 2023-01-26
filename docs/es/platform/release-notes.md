@@ -1,4 +1,4 @@
----
+ç---
 search: true
 ---
 
@@ -15,7 +15,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Se acepta parámetro {{order.uuid}} en el campo redirect_url al momento de crear una  orden de Payments
+* Se acepta parámetro <span v-pre>{{order.uuid}}</span> en el campo redirect_url al momento de crear una  orden de Payments
  
 
 ### 9.2.24 - 20 de enero de 2023
