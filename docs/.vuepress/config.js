@@ -36,8 +36,8 @@ module.exports = {
     sidebarDepth: 1,
     activeHeaderLinks: false,
     algolia: {
-      apiKey: "d6d3315d4f9b9a8a5f7870a8bd10d187",
-      indexName: "modyo",
+      apiKey: "99dcc8c4afd966e0e2f614f8498897d6",
+      indexName: "dev_docs",
     },
     locales: {
       "/en/": {
