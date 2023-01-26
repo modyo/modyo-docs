@@ -21,7 +21,7 @@ Each user can access their notifications directly from the profile, listing at t
 
 When you click on a notification, its full content will be displayed and it will be marked as read. 
 
-### Profile edit
+### Edit profile
 
 In this section, each user can modify the details of their profile, depending on the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration), each user can modify:
 
