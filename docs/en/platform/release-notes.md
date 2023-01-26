@@ -15,7 +15,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* The {{order.uuid}} parameter is accepted in the redirect_url field when creating a Payments order.
+* The <span v-pre>{{order.uuid}}</span> parameter is accepted in the redirect_url field when creating a Payments order.
 
 
 ### 9.2.24 - January 20, 2023
