@@ -36,7 +36,7 @@ module.exports = {
     sidebarDepth: 1,
     activeHeaderLinks: false,
     search: true,
-    searchMaxSuggestions: 6
+    searchMaxSuggestions: 6,
     locales: {
       "/en/": {
         selectText: "Languages",
