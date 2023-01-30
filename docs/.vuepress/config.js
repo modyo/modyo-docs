@@ -17,10 +17,6 @@ module.exports = {
   },
   plugins: [
   ],
-  themeConfig: {
-    search: true,
-    searchMaxSuggestions: 4
-  },
   head: [
     [
       "script",
@@ -39,6 +35,8 @@ module.exports = {
     docsDir: "docs",
     sidebarDepth: 1,
     activeHeaderLinks: false,
+    search: true,
+    searchMaxSuggestions: 6
     locales: {
       "/en/": {
         selectText: "Languages",
