@@ -17,6 +17,10 @@ module.exports = {
   },
   plugins: [
   ],
+  themeConfig: {
+    search: true,
+    searchMaxSuggestions: 4
+  },
   head: [
     [
       "script",
@@ -35,11 +39,6 @@ module.exports = {
     docsDir: "docs",
     sidebarDepth: 1,
     activeHeaderLinks: false,
-    algolia: {
-      apiKey: '99dcc8c4afd966e0e2f614f8498897d6',
-      indexName: 'dev_docs',
-      appId: '2C0N9ZVWQI',
-    },
     locales: {
       "/en/": {
         selectText: "Languages",
