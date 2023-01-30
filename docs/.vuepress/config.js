@@ -35,8 +35,11 @@ module.exports = {
     docsDir: "docs",
     sidebarDepth: 1,
     activeHeaderLinks: false,
-    search: true,
-    searchMaxSuggestions: 6,
+    algolia: {
+      apiKey: '99dcc8c4afd966e0e2f614f8498897d6',
+      indexName: 'dev_docs',
+      appId: '2C0N9ZVWQI'
+    },
     locales: {
       "/en/": {
         selectText: "Languages",
