@@ -59,14 +59,18 @@ Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los sig
 - **Nombre del servicio**: Nombre del botón que se mostrará en la vista de login.
 - **Issuer**: Identificador de la aplicación del IDP. Algunos servicios es requerido agregar el prefijo `spn`:  
 (Por ejemplo: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **URL de destino de inicio de sesión único de IDP**: URL de inicio de sesión del proveedor de identidad.
+
 - **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parametros opcionales para completar el flujo.
 - **IDP Cert**: Certificado del proveedor de identidad en formato PEM. Esto tendrá prioridad sobre la opción de huella digital.
 - **Huella dactilar del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad.
 - **Formato del identificador de nombre**: Se utiliza durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Describe el formato del nombre de usuario requerido por esta aplicación. Consulte http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf sección 8.3 para otras opciones. Tenga en cuenta que es posible que el proveedor de identidades no permita todas las opciones. Si no se especifica, el Proveedor puede elegir el formato de identificador de nombre utilizado en la respuesta. (comunmente el email, como por ejemplo.: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
+- **URL de Entity ID**: URL provisto por Modyo donde se encuentra el identificador de la aplicación:
+   * Admin: `test.modyo.com/admin/auth/saml/metadata`
+   * Realms: para configuraciones con realms usa: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/metadata`
 - **URL del aserción de servicio de consumidor**: URL provisto por Modyo donde el proveedor de identidad redirige el flujo.
-   * Admin: `account_url/admin/auth/saml/callback`
-   * Realms: para configuraciones con realms usa: `account_url/realms/:uid_del_realm/auth/saml/callback`
+   * Admin: `test.modyo.com/admin/auth/saml/callback`
+   * Realms: para configuraciones con realms usa: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`
+- **(Opcional) URL de destino de inicio de sesión único de IDP**: URL de inicio de sesión del proveedor de identidad.
 
 ## OAuth2
 
