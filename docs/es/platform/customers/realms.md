@@ -60,32 +60,6 @@ Para enviar la contraseña al mail del usuario, solo es necesario marcar el chec
 Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino). Algunos campos especiales, tales como el segundo apellido, avatar, o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Custom Fields**, los que se pueden crear y modificar en la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
 
 
-### Importar usuarios
-
-La segunda opción del selector para agregar nuevos usuarios es la importación desde un archivo CSV. Al hacer click, se abrirá una vista que lista un registro histórico de importaciones previas, en caso de existir. Este listado se puede ordenar por nombre del archivo \*.CSV o por estado de la importación, asimismo a través de la barra de búsqueda sobre la tabla se puede filtrar por el nombre del archivo.
-
-Para realizar una nueva importación, debes hacer click en el botón superior derecho **+ Importar**. Este abrirá un modal el que permitirá seleccionar y subir el archivo \*.CSV que tiene el listado de usuarios y sus atributos. Es importante dejar seleccionada la caja que indica que el archivo contiene encabezados o nombres de columnas en caso de que así sea, o las cabeceras intentarán ser incluídas como un nuevo usuario. Luego procedes a hacer click en el botón **Aceptar**.
-
-A continuación verás la vista principal de importación. A la izquierda, aparecerá una tabla con tres columnas principales, la primera contiene el nombre de la cabecera de la columna importada (en caso de que exista), la segunda algunos ejemplos de los datos que contiene esa columna, y la tercera un selector. Este selector realiza la asignación respectiva del valor importado al atributo del usuario en la plataforma.
-
-En esta vista procederás a asignar cada columna del archivo \*.CSV a un atributo respectivo disponible en la plataforma.
-
-:::tip Tip
-Los atributos mínimos requeridos para la importación son el nombre real del usuario (no confundir con nombre de usuario) y su correo electrónico.
-:::
-
-A la derecha, en una barra lateral, podrás ver configuraciones principales de la importación. Acá puedes definir si el archivo no sigue uno de los estándares comunes de los archivos \*.CSV, puedes fijar la codificación en la que se encuentra el archivo, y también definir separación de los atributos (el cual por defecto es una coma). Un poco más abajo hay un recuadro que indica si ya has seleccionado los atributos principales requeridos para la importación (nombre y correo electrónico). El botón para **Comenzar la importación** sólo se habilitará una vez que hayas incluído dichos campos para ser importados. Finalmente, tendrás a escoger cuatro opciones principales de la importación:
-
-- Activar cuenta de usuario
-- Activar cuenta y enviar correo electrónico (personalizable en [Correos](/es/platform/customers/realms.html#correos))
-- Agregar a usuarios a sitios
-- Actualizar usuarios (en caso de que ya estén registrados en la plataforma)
-
-Finalmente, una vez configurada la importación, al darle click al botón **Comenzar la importación** en la parte superior, regresarás a la vista principal de importación, y el primer registro de la tabla será tu importación en proceso. Ahí podrás ver el avance de la misma, indicado en la columna de **Estado**.
-
-Además, podrás completar una serie de campos personalizados que podrían ser requeridos. Estos se pueden configurar en [Custom Fields](/es/platform/customers/realms.html#custom-fields), que se encuentran en la [sección Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino).
-
-
 ### Ficha de Usuarios
 
 Al hacer click, desde el listado principal, en cada uno de los usuarios, se abrirá la ficha del usuario seleccionado. En ella podrás ver una barra lateral que incluye los siguientes datos:
