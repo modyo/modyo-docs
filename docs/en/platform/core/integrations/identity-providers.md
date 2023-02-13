@@ -59,14 +59,18 @@ In order to integrate a login with SAML in Modyo, you will need the following in
 - **Service name**: Name of the button to be displayed in the login view.
 - **Issuer**: IDP application identifier. Some services are required to add the `spn` prefix:  
 (For example: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **IDP single sign-on destination URL**: Identity provider login URL.
+
 - **SSO IDP runtime parameters of the destination URL**: Optional parameters to complete the flow.
 - **IDP Cert**: Identity Provider Certificate in PEM format. This will take precedence over the fingerprint option.
 - **IDP certificate fingerprint**: The SHA1 fingerprint of the identity provider's public certificate.
 - **Name identifier format**: Used during service provider initiated SSO (SP-initiated SSO). Describes the format of the user name required by this application. See http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf section 8.3 for other options. Note that the Identity Provider may not allow all options. If not specified, the Provider may choose the format of the name identifier used in the response (commonly email, such as: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
+- **Entity ID URL**: URL provided by Modyo where the application identifier is located:
+   * Admin: `test.modyo.com/admin/auth/saml/metadata`.
+   * Realms: for settings with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/metadata`.
 - **Consumer service assertion URL**: URL provided by Modyo where the identity provider redirects the flow.
-   * Admin: `account_url/admin/auth/saml/callback`
-   * Realms: for settings with realms use: `account_url/realms/:uid_del_realm/auth/saml/callback`.
+   * Admin: `test.modyo.com/admin/auth/saml/callback`.
+   * Realms: for settings with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`.
+- **(Optional) IDP single sign-on destination URL**: Identity provider login URL.
 
 ## OAuth2
 
