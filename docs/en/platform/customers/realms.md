@@ -60,32 +60,6 @@ To send the password to the user's email, check the box under the password field
 This user creation view may contain more fields depending on the configuration in the platform, available in the [Realm Settings](/en/platform/customers/realms.html#realm-configuration). Some special fields, such as the second surname, avatar, or date of birth, can be activated in the [Registration Form](/en/platform/customers/realms.html#registration-form). On the other hand, there are also **Custom Fields**, which can be created and modified in [Custom Fields](/en/platform/customers/realms.html#custom-fields).
 
 
-### Import users
-
-The second option in the selector to add new users is to import from a CSV file. Clicking will open a view that lists a historical record of previous imports, if any. This list can be sorted by file name \*.CSV or by import status, and can also be filtered by file name using the search bar above the table.
-
-To perform a new import, you must click on the top right button **+ Import**. This will open a modal that allows you to select and upload the \*.CSV file that has the list of users and their attributes. It is important to leave the box that indicates that the file contains headers or column names selected if so, or the headers will attempt to be included as a new user. Then you proceed to click on the **Accept** button.
-
-Below you will see the main import view. On the left, there is a table with three main columns: the first contains the name of the imported column header (if it exists), the second contains some examples of the data in that column, and the third has a selector. This selector performs the imported value's respective assignment to the user's attribute on the platform.
-
-In this view, you will proceed to assign each column in the \*.CSV file to a respective attribute available on the platform.
-
-:::tip Tip
-The minimum attributes required to import a user are their first name (not to be confused with username) and their email address.
-:::
-
-On the right sidebar, you can see main import settings. Here you can define if the file does not follow one of the common standards for \*.CSV files, you can set the encoding in which the file is located, and also define attribute separation (which defaults to a comma). A little further down is a box indicating whether you have already selected the primary attributes required for the import (name and email). The **Start import** button will only be enabled once you have included those fields to be imported. Finally, you'll have to choose four main import options:
-
-- Activate user account
-- Activate account and send email (customizable in [Emails](/en/platform/customers/realms.html#emails))
-- Add users to sites
-- Update existing users (in case they are already registered on the platform)
-
-Clicking the **Start import** button at the top returns you to the main import view, and the first record in the table will be your import in process. There you can check the progress in the **Status** column.
-
-In addition, you will be able to complete a series of custom fields that may be required. These can be configured in [Custom Fields](/en/platform/customers/realms.html#custom-fields), which are located in the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration).
-
-
 ### Users tab
 
 Clicking any user from the main list opens their profile. In each profile is the following information:
