@@ -50,7 +50,7 @@ You can access the customers API where you can get and edit information about re
 
 ### Delegated tokens
 
-To add a JSON with delegated token information. Enable the [**Show delegation information**](/en/platform/core/identity-providers.html) option on your identity providers. When using the `/realms/{realm_uid}/me` API, you will get something similar to this:
+By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers.html) option in your identity providers, you will get an appended JSON with delegate token information when making use of the `/realms/{realm_uid}/me` API, the result will be similar to this:
 
 ``curl -X GET test.miModyo.com/api/realms/miRealm/me``
 
