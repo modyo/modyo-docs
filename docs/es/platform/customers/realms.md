@@ -42,8 +42,6 @@ En la tabla misma, es posible ordenar los usuarios por sus valores respectivos h
 
 Para agregar un nuevo usuario, se debe hacer click en el botón **+ Nuevo Usuario** en la parte superior derecha de la pantalla.
 
-Se abrirá un selector que muestra las dos formas posibles para crear usuarios en el sistema: manualmente o importándolos desde un archivo \*.CSV. La segunda opción permite importar múltiples usuarios simultáneamente.
-
 Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguientes campos:
 
 - Nombre: **[Requerido]** Nombre legal del usuario.
