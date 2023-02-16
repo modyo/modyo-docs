@@ -8,7 +8,6 @@ Crea un objeto javascript en Snippets para poder hacer uso de Liquid en tus Widg
 
 Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a esos drops, para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/drops) (variables) de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
 
-
 Sigue estos pasos para crear un snippet con variables de Liquid:
 1. En el menú lateral en la plataforma, expande **Channels** y haz click en **Sitios**.
 2. Haz click en tu sitio.

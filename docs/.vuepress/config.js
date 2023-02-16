@@ -35,6 +35,7 @@ module.exports = {
     docsDir: "docs",
     sidebarDepth: 1,
     activeHeaderLinks: false,
+    smoothScroll: true,
     algolia: {
       apiKey: '99dcc8c4afd966e0e2f614f8498897d6',
       indexName: 'dev_docs',
@@ -206,6 +207,7 @@ module.exports = {
                 ["/en/widgets/guides/i18n", "Internationalization"],
                 ["/en/widgets/guides/share-state", "Shared state"],
                 "/en/widgets/guides/liquid-variables",
+                "/en/widgets/guides/local-liquid",
                 "/en/widgets/guides/ci-cd",
                 "/en/widgets/guides/repository-pattern",
                 "/en/widgets/guides/storybook",
@@ -488,6 +490,7 @@ module.exports = {
                 ["/es/widgets/guides/i18n", "Internacionalización"],
                 ["/es/widgets/guides/share-state", "Compartir estado"],
                 "/es/widgets/guides/liquid-variables",
+                "/es/widgets/guides/local-liquid",
                 "/es/widgets/guides/ci-cd",
                 "/es/widgets/guides/repository-pattern",
                 "/es/widgets/guides/storybook",
