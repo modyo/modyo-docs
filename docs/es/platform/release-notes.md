@@ -6,6 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.26 - 20 de febrero de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Agrega selector de acceso a aplicaciones en los grupos de usuarios
+* Se fuerza el cambio de contraseña para nuevos usuarios administradores
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Permite eliminar widgets archivados
+* Corrige problemas ocacionados al archivar un widget
+* Mejoras en SEO de páginas
+* Corrige problemas con el selector de categorias
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega el nuevo campo excerpt a los meta de una entry
+* Corrige problemas al editar un field de tipo richtext
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Envio de email de bienvenida queda opcional en formularios públicos
+* Corrige problemas al editar un segmento
+
 
 ### 9.2.25 - 25 de enero de 2023
 
