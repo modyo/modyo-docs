@@ -381,6 +381,12 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+
+### 9.1.42 - February 13, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Performance enhancements for migrations, to ease the transition from 8.2 to newer versions
+
 ### 9.1.41 - December 15, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
