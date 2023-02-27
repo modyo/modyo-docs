@@ -185,6 +185,7 @@ module.exports = {
                 "/en/platform/customers/segments",
                 "/en/platform/customers/forms",
                 "/en/platform/customers/messaging",
+                "/en/platform/customers/api",
               ],
             },
             {
@@ -466,6 +467,7 @@ module.exports = {
                 "/es/platform/customers/segments",
                 "/es/platform/customers/forms",
                 "/es/platform/customers/messaging",
+                "/es/platform/customers/api",
               ],
             },
             {
