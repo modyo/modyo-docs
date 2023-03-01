@@ -2,30 +2,30 @@
 search: true
 ---
 
-# Liquid en Widgets Locales
+# Liquid in Local Widgets
 
-Utiliza la librería de liquidParser para poder hacer uso de Liquid dentro del desarrollo de tu Widget en tu ambiente local. Al momento de hacer push de tu Widget hacia Modyo Platform, la plataforma reemplazará tus variables liquid locales por las variables de la plataforma.
+Use the liquidParser library to be able to make use of Liquid within the development of your Widget in your local environment. When you push your Widget to the Modyo Platform, the platform will replace your local liquid variables with the platform variables.
 
-Mantén un alto ritmo de desarrollo usando las mismas variables que se utilizan en Modyo Platform dentro de tu ambiente local con el propósito de verificar que el código Liquid sea el correcto sin la necesidad de probarlo directamente en Modyo Platform. 
+Maintain a high pace of development using the same variables that are used in Modyo Platform within your local environment in order to verify that the Liquid code is correct without the need to test it directly in Modyo Platform. 
 
-### Plantillas de widget
+### Widget templates
 
-En nuestro catálogo de widgets, ofrecemos plantillas que contienen lo mínimo para subir un widget a Modyo Platform. Las plantillas las puedes encontrar en los siguientes frameworks:
+In our widget catalog, we offer templates that contain the bare minimum for uploading a widget to Modyo Platform. The templates can be found in the following frameworks:
 
 - [Vue](https://github.com/modyo/modyo-widgets-template-vue)
 - [Angular](https://github.com/modyo/modyo-widgets-template-angular)
 - [React](https://github.com/modyo/modyo-widgets-template-react)
 
->Todas las instrucciones de esta guía usan como base la plantilla de vue.
+>All the steps in this guide use our Vue template as a base.
 
-Sigue estos pasos para agregar nuevas variables liquid a tu widget local:
+Follow these steps to add new liquid variables to your local widget:
 
-## Agregar nuevas variables
+## Add new variables
 
-En el archivo `local-liquid-variables.js` puedes encontrar algunas variables de prueba. 
+In the `local-liquid-variables.js` file you can find some test variables. 
 
-1. Para localizar este archivo abre la siguiente URL https://github.com/modyo/modyo-widgets-template-vue/blob/master/src/liquid/local-liquid-variables.js
-2. El archivo contiene algunas variables, para este ejemplo vamos a utilizar las variables de site.
+1. To locate this file open the following URL https://github.com/modyo/modyo-widgets-template-vue/blob/master/src/liquid/local-liquid-variables.js
+2. The file contains some variables, for this example we are going to use the site variables.
 
 ```js
 export default {
@@ -39,23 +39,23 @@ export default {
 }
 ```
 
-## Importar y utilizar liquidParser
+## Import and use liquidParser
 
-En caso de usar nuestras plantillas de widgets, no es necesario estos pasos ya que la plantilla ya tiene todo listo para que empieces a desarrollar.
+In case you use our widget templates, these steps are not necessary since the template already has everything ready for you to start developing.
 
-1. En la vista App.vue, importamos la librería liquidParser para poder hacer uso del lenguaje liquid en el Widget usando: 
+1. In the App.vue view, we import the liquidParser library to be able to make use of the liquid language in the Widget using: 
 
 ```js
 import liquidParser from './liquid/liquidParser';
 ```
 
-También debemos asegurar que estemos importando como dependencia `liquidjs`, el paquete de Shopify para el lenguaje Liquid en Javascript.
+We must also ensure that we are importing `liquidjs`, the Shopify package for the Liquid language in Javascript, as a dependency.
 
-2. Abre `package.json` y agrega la siguiente dependencia.
+2. Open `package.json` and add the following dependency.
 
-`"liquidjs": "^10.4.0"`
+`"liquidjs":"^10.4.0"`
 
-3. Al momento de exportar tu App (en nuestro caso en `App.vue`), puedes agregar tus variables liquid usando liquidParser.parse(). Dentro del método parse(), puedes hacer uso de cualquier expresión liquid.
+3. When exporting your App (in our case in `App.vue`), you can add your liquid variables using liquidParser.parse(). Inside the parse() method, you can make use of any liquid expression.
 
 ```js
 export default {
@@ -71,7 +71,7 @@ export default {
 }
 ```
 
-4. En tu código HTML, puedes empezar a hacer uso de tus variables usando Liquid. En la plantilla vue, desplegamos un `<h1>` de la siguiente manera:
+4. In your HTML code, you can start making use of your variables using Liquid. In the vue template, we display a `<h1>` as follows:
 
 ```html
 <h1
