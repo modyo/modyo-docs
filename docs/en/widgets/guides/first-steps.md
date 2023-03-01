@@ -104,3 +104,10 @@ If you want automatically publish the Widget when it finishes loading, use the `
 modyo-cli push --publish
 ```
 
+### Widget templates
+
+In our widget catalog, we offer templates that contain the bare minimum for uploading a widget to Modyo Platform. The templates can be found in the following frameworks:
+
+- [Vue](https://github.com/modyo/modyo-widgets-template-vue)
+- [Angular](https://github.com/modyo/modyo-widgets-template-angular)
+- [React](https://github.com/modyo/modyo-widgets-template-react)
