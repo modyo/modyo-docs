@@ -554,7 +554,21 @@ module.exports = {
             children: [
               ["/es/dynamic/", "¿Qué es Modyo Dynamic?"]
             ],
-          }, ],
+          },
+          {
+            title: "Personas",
+            collapsable: true,
+            children: [
+              "/es/dynamic/retail/dashboard",
+              "/es/dynamic/retail/dashboard-payments",
+              "/es/dynamic/retail/pay-debt",
+              "/es/dynamic/retail/loan-application",
+              "/es/dynamic/retail/loan-approval",
+              "/es/dynamic/retail/product-detail",
+              "/es/dynamic/retail/transfer",
+            ],
+          }, 
+        ],
           "/es/connect/": [{
             title: "Modyo Connect",
             collapsable: false,
