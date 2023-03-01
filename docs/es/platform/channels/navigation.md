@@ -75,7 +75,23 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 
 - **Nombre**: Nombre del elemento que aparecerá en el sitio.
 - **Page asociado**: Se puede asociar directamente a una página o a una URL personalizada.
-- **URL**: Si escogiste una URL personalizada en el elemento anterior, acá puedes escribir la URL a la que quieres que apunte este ítem del menú.
+- **URL**: Si escogiste una URL personalizada en el elemento anterior, tienes diferentes opciones para configurar este ítem:
+	- HTTP(s): Apunta a una dirección usando HTTP(s). Ejemplos:
+		- http://www.example.com
+		- https://www.example.com
+	- URL relativa y ancla: Apunta a una dirección relativa a esta página o a una sección ancla. Ejemplos: 
+		- relative-page
+		- /relative-page
+		- #anchor
+	- Teléfonos: Genera una liga con el URI `tel`. Ejemplos:
+		- tel:+569-123-45678
+		- tel:912345678
+	- SMS: Genera una liga con el URI `sms`. Ejemplos:
+		- sms:+569-123-45678
+		- sms:+569-123-45678,9-123-45678
+		- sms:+569-123-45678,9-123-45678?body=hello%20there&param1=a%20value
+	- Email: Genera una liga con el URI `mailto`. Ejemplos:
+		- mailto:info@example.com?subject=subject&cc=cc@example.com
 - **Abrir en pestaña nueva**: Le añade el atributo `target='blank'` al elemento HTML del item del menú, para que al hacerle click, se abra en una pestaña nueva.
 - **Privado**: Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
