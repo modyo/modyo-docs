@@ -565,6 +565,7 @@ module.exports = {
             children: [
               {
                 title: "Banca Retail",
+                path: "/es/dynamic/experiences/retail/",
                 collapsable: true,
                 children: [
                   "/es/dynamic/experiences/retail/dashboard",
@@ -578,10 +579,11 @@ module.exports = {
               },
               {
                 title: "Banca Empresas",
+                path: "/es/dynamic/experiences/business/",
                 collapsable: true,
                 children: [
                   "/es/dynamic/experiences/business/dashboard",
-                  "/es/dynamic/experiences/business/entitlements"
+                  "/es/dynamic/experiences/business/dashboard-payments"
                 ],
               }
             ],
