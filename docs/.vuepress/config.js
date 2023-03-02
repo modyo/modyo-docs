@@ -499,7 +499,7 @@ module.exports = {
               ],
             },
             {
-              title: "Personas",
+              title: "Banca Retail",
               collapsable: true,
               children: [
                 "/es/widgets/retail/summary",
@@ -558,26 +558,47 @@ module.exports = {
               ["/es/dynamic/", "¿Qué es Modyo Dynamic?"]
             ],
           },
-            {
-              title: "Experiencias",
-              path: "/es/dynamic/experiences/",
-              collapsable: true,
-              children: [
-                {
-                  title: "Personas",
-                  collapsable: true,
-                  children: [
-                    "/es/dynamic/experiences/retail/dashboard",
-                    "/es/dynamic/experiences/retail/dashboard-payments",
-                    "/es/dynamic/experiences/retail/pay-debt",
-                    "/es/dynamic/experiences/retail/loan-application",
-                    "/es/dynamic/experiences/retail/loan-approval",
-                    "/es/dynamic/experiences/retail/product-detail",
-                    "/es/dynamic/experiences/retail/transfer",
-                  ],
-                }
-              ],
-            },
+          {
+            title: "Experiencias",
+            path: "/es/dynamic/experiences/",
+            collapsable: true,
+            children: [
+              {
+                title: "Banca Retail",
+                collapsable: true,
+                children: [
+                  "/es/dynamic/experiences/retail/dashboard",
+                  "/es/dynamic/experiences/retail/dashboard-payments",
+                  "/es/dynamic/experiences/retail/pay-debt",
+                  "/es/dynamic/experiences/retail/loan-application",
+                  "/es/dynamic/experiences/retail/loan-approval",
+                  "/es/dynamic/experiences/retail/product-detail",
+                  "/es/dynamic/experiences/retail/transfer",
+                ],
+              },
+              {
+                title: "Banca Empresas",
+                collapsable: true,
+                children: [
+                  "/es/dynamic/experiences/business/dashboard",
+                  "/es/dynamic/experiences/business/entitlements"
+                ],
+              }
+            ],
+          },
+          {
+            title: "Integraciones",
+            path: "/es/dynamic/integrations/",
+            collapsable: true,
+            children: [
+              {
+                title: "Mambu",
+                collapsable: true,
+                children: [
+                ],
+              }
+            ],
+          },
         ],
           "/es/connect/": [{
             title: "Modyo Connect",
@@ -624,6 +645,7 @@ module.exports = {
             collapsable: false,
             children: [
               ["/es/legal/", "Acuerdo de Licencia"],
+              ["/es/legal/dpa"],
             ],
           }, ],
         },
