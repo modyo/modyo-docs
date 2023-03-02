@@ -558,19 +558,26 @@ module.exports = {
               ["/es/dynamic/", "¿Qué es Modyo Dynamic?"]
             ],
           },
-          {
-            title: "Personas",
-            collapsable: true,
-            children: [
-              "/es/dynamic/retail/dashboard",
-              "/es/dynamic/retail/dashboard-payments",
-              "/es/dynamic/retail/pay-debt",
-              "/es/dynamic/retail/loan-application",
-              "/es/dynamic/retail/loan-approval",
-              "/es/dynamic/retail/product-detail",
-              "/es/dynamic/retail/transfer",
-            ],
-          }, 
+            {
+              title: "Experiencias",
+              path: "/es/dynamic/experiences/",
+              collapsable: true,
+              children: [
+                {
+                  title: "Personas",
+                  collapsable: true,
+                  children: [
+                    "/es/dynamic/experiences/retail/dashboard",
+                    "/es/dynamic/experiences/retail/dashboard-payments",
+                    "/es/dynamic/experiences/retail/pay-debt",
+                    "/es/dynamic/experiences/retail/loan-application",
+                    "/es/dynamic/experiences/retail/loan-approval",
+                    "/es/dynamic/experiences/retail/product-detail",
+                    "/es/dynamic/experiences/retail/transfer",
+                  ],
+                }
+              ],
+            },
         ],
           "/es/connect/": [{
             title: "Modyo Connect",
