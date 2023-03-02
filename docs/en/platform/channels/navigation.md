@@ -35,7 +35,7 @@ The menu created can be displayed on any page if and only if it is added to a pa
 
 By default you will start comparing the published version with the editable version, but by using the version selectors, you can also compare previous versions as well.
 
-::: tip Tip
+:::tip Tip
 Every time you publish and replace the current version, the replaced version becomes a "backup" or previous version.
 
 By default, up to 20 backups are saved so that the twenty most recent backups can be compared, restored, and rolled back. 
@@ -58,7 +58,7 @@ To create a Menu, follow these steps:
 6. Customize the menu by adding or editing items.
 7. Once finished, click on **Publish**.
 
-::: tip Tip
+:::tip Tip
 Your menu is currently public but it is not being called. You need to use a template to  display the menu on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu** and is called in the `base` template using <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
 :::
 
@@ -75,7 +75,23 @@ In the right side section, you will see a bar that changes according to the item
 
 - **Name**: Name of the item as it appears on the site.
 - **Associated Layout Page**: Directly associate a page to this menu item with a custom URL.
-- **URL**: If you chose a custom URL in the "Associated Layout Page", you can specify the URL of this menu item.
+- **URL**: If you chose a custom URL in the previous item, you have different options to configure this item:
+    - HTTP(s): Points to an address using HTTP(s). Examples:
+        - http://www.example.com
+        - https://www.example.com
+    - Relative URL and anchor: Points to an address relative to this page or to an anchor section. Examples: 
+        - relative-page
+        - /relative-page
+        - #anchor
+    - Phones: Generates a link with the URI `tel`. Examples:
+        - tel: +569-123-45678
+        - tel:912345678
+    - SMS: Generates a link with the URI `sms`. Examples:
+        - sms:+569-123-45678
+        - sms:+569-123-45678,9-123-45678
+        - sms:+569-123-45678,9-123-45678?body=hello%20there&amp;param1=a%20value
+    - Email: Generates a link with the `mailto` URI. Examples:
+        - mailto:info@example.com?subject=subject&amp;cc=cc@example.com
 - **Open in new tab**: Enable this option to open a the menu item link in a new tab. Adds the `target='blank'` attribute to the menu item's HTML.
 - **Private**: Makes the selected item appear visible only when the user has an active session on the site.
 - **Segments**: If there are segments created, you can also segment this element so that users can see this menu item only when they have an active session and are also within the selected segments.
