@@ -583,7 +583,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                   "/es/dynamic/experiences/business/dashboard",
-                  "/es/dynamic/experiences/business/dashboard-payments"
+                  "/es/dynamic/experiences/business/entitlements"
                 ],
               }
             ],
