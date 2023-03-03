@@ -407,6 +407,11 @@ Se arregla bug con filtro con 100 o más tags en el admin
 
 ## 9.1
 
+### 9.1.43 - 3 de marzo del 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Corrección a migraciones de contenido en 9.1 , para facilitar paso desde 8.2 a versiones más recientres
+
 ### 9.1.42 - 13 de febrero del 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
