@@ -556,7 +556,9 @@ module.exports = {
             collapsable: false,
             children: [
               ["/es/dynamic/", "¿Qué es Modyo Dynamic?"],
-              "/es/dynamic/architecture"
+              "/es/dynamic/architecture",
+              "/es/dynamic/activation",
+              "/es/dynamic/support"
             ],
           },
           {
@@ -564,7 +566,9 @@ module.exports = {
             path: "/es/dynamic/ui/",
             collapsable: true,
             children: [
-              "/es/dynamic/ui/"
+              "/es/dynamic/ui/",
+              "/es/dynamic/ui/design-kit",
+              "/es/dynamic/ui/components"
             ],
           },
           {

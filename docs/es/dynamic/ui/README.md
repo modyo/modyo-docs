@@ -2,9 +2,7 @@
 search: false
 ---
 
-# Design System
+# Sistema de Diseño
 
-## Figma Kit
+## Consideraciones
 
-
-## Components
