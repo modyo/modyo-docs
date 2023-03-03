@@ -555,7 +555,9 @@ module.exports = {
             title: "Modyo Dynamic",
             collapsable: false,
             children: [
-              ["/es/dynamic/", "¿Qué es Modyo Dynamic?"]
+              ["/es/dynamic/", "¿Qué es Modyo Dynamic?"],
+              "/es/dynamic/architecture",
+              "/es/dynamic/design-system"
             ],
           },
           {

@@ -8,12 +8,9 @@ Modyo Dynamic es un conjunto modular de experiencias de usuario e integraciones 
 
 Modyo Dynamic satisface las necesidades de experiencia digital para entidades financieras de todo tipo, con especial enfoque en gerentes de productos, canales digitales y equipos de desarrollo que busquen una solución que los ayude a acelerar la implementación modular y flexible, basadas en estándares abiertos de fácil mantención.
 
-
-## ¿Cómo se utiliza Modyo Dynamic?
-
-Se activa .
-
-
+:::tip Modyo Platform
+Modyo Dynamic requiere de una subscripción activa de Modyo Platform. Los componentes de experiencia digital descritos en esta guía están diseñados para ser desplegados en ella. 
+:::
 
 ## Modelo de subscripción
 
