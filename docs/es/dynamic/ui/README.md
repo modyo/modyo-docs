@@ -2,7 +2,7 @@
 search: false
 ---
 
-# Dynamic UI
+# Design System
 
 ## Figma Kit
 

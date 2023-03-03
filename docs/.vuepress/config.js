@@ -556,12 +556,19 @@ module.exports = {
             collapsable: false,
             children: [
               ["/es/dynamic/", "¿Qué es Modyo Dynamic?"],
-              "/es/dynamic/architecture",
-              "/es/dynamic/design-system"
+              "/es/dynamic/architecture"
             ],
           },
           {
-            title: "Experiencias",
+            title: "Dynamic UI",
+            path: "/es/dynamic/ui/",
+            collapsable: true,
+            children: [
+              "/es/dynamic/ui/"
+            ],
+          },
+          {
+            title: "Dynamic Experiences",
             path: "/es/dynamic/experiences/",
             collapsable: true,
             children: [
@@ -591,16 +598,11 @@ module.exports = {
             ],
           },
           {
-            title: "Integraciones",
+            title: "Dynamic Integrations",
             path: "/es/dynamic/integrations/",
             collapsable: true,
             children: [
-              {
-                title: "Mambu",
-                collapsable: true,
-                children: [
-                ],
-              }
+              "/es/dynamic/integrations/mambu"
             ],
           },
         ],
