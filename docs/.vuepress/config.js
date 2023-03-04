@@ -606,7 +606,9 @@ module.exports = {
             path: "/es/dynamic/integrations/",
             collapsable: true,
             children: [
-              "/es/dynamic/integrations/mambu"
+              "/es/dynamic/integrations/mambu",
+              "/es/dynamic/integrations/jumio",
+              "/es/dynamic/integrations/salesforce"
             ],
           },
         ],

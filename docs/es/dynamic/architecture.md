@@ -4,7 +4,7 @@ search: false
 
 # Arquitectura
 
-COmponentes principales, diagrama.
+Componentes principales, diagrama.
 
 
 
