@@ -12,6 +12,15 @@ Modyo Dynamic satisface las necesidades de experiencia digital para entidades fi
 Modyo Dynamic requiere de una subscripción activa de Modyo Platform. Los componentes de experiencia digital descritos en esta guía están diseñados para ser desplegados en ella. 
 :::
 
+## Componentes
+
+Modyo Dynamic incorpora los siguientes componentes:
+
+<img src="/assets/img/dynamic/dynamic_components.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
+
+
+
+
 ## Modelo de subscripción
 
 
