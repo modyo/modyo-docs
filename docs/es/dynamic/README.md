@@ -19,27 +19,23 @@ Modyo Dynamic incorpora los siguientes componentes:
 <img src="/assets/img/dynamic/dynamic_components.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 
-
-
-## Modelo de subscripción
-
-
-## Modelo de soporte
-
-
-#### Dynamic Design System
+### Dynamic Design System
 
 El sistema de diseño de Modyo Dynamic permite componer interfaces orientadas en la industria financiera de una forma fácil y rápida, tomando ventaja de un catálogo de componentes pre fabricados que resuelven los problemas comunes en la experiencia de usuarios.
 
 El sistema de diseño de Modyo Dynamic se compone de un kit de diseño en Figma y una completa librería de componentes en ReactJS.
 
 
-#### Dynamic Financial Experiences
+### Dynamic Financial Experiences
 
 Los Widgets de Modyo Dynamic
 
 
-#### Dynamic APIs
+### Dynamic Integrations
+
+
+
+
 
 
 
