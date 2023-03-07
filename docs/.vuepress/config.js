@@ -598,6 +598,35 @@ module.exports = {
                   "/es/dynamic/experiences/business/dashboard",
                   "/es/dynamic/experiences/business/entitlements"
                 ],
+              },
+              {
+                title: "Inversiones",
+                path: "/es/dynamic/experiences/investments/",
+                collapsable: true,
+                children: [
+                  "/es/dynamic/experiences/investments/accounts",
+                  "/es/dynamic/experiences/investments/general-summary",
+                  "/es/dynamic/experiences/investments/detailed-summary",
+                  "/es/dynamic/experiences/investments/investments-transfers",
+                  "/es/dynamic/experiences/investments/investments-transfer",
+                  "/es/dynamic/experiences/investments/deposits",
+                  "/es/dynamic/experiences/investments/documents",
+                  "/es/dynamic/experiences/investments/mutual-funds",
+                  "/es/dynamic/experiences/investments/stocks",
+                ],
+              },
+              {
+                title: "Seguros",
+                path: "/es/dynamic/experiences/insurance/",
+                collapsable: true,
+                children: [
+                  "/es/dynamic/experiences/insurance/dashboard",
+                  "/es/dynamic/experiences/insurance/quote",
+                  "/es/dynamic/experiences/insurance/quote2",
+                  "/es/dynamic/experiences/insurance/detailed-view",
+                  "/es/dynamic/experiences/insurance/detailed-view2",
+                  "/es/dynamic/experiences/insurance/issue-policy",
+                ],
               }
             ],
           },
