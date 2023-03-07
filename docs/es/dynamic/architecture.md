@@ -41,19 +41,33 @@ Para más información sobre Modyo Platform y sus funcionalidades, favor referir
 
 - StencilJS
 
-
 ### React
 
 
+### Internacionalización
+
+Localización y manejo de Lenguajes
+
+### Accesibilidad
+
+
+### Patrón de Repositorio
 
 
 ## Microservicios
+Los Microservicios de integración de Modyo Dynamic corresponden a plantillas que pueden ser desplegadas directamente tanto en un ambiente de contenedores o servidor de aplicaciones, como dentro de [Modyo Connect](/es/connect). Las plantillas de Microservicios han sido desarrolladas con las siguientes consideraciones técnicas:
+
+### Arquitectura Héxagonal
+
+
+### Patrón de Repositorio
 
 
 ### SpringBoot
 
 
 ### Modyo Connect
+Modyo Connect es un servicio de infraestructura manejada...
 
 :::tip Modyo Connect
 Para más información sobre Modyo Connect y sus componentes, favor referirse a su [documentación oficial]("/es/connect").
