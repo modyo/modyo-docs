@@ -4,6 +4,10 @@ search: true
 
 # Emitir Póliza
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Simplifica los procesos de emisión de las pólizas reduciendo la cantidad de datos a partir de la integración con el módulo de cotizaciones. Precarga información de forma rápida y personaliza controles de emisión para prevenir fraudes o engaños en copropiedades activas.
 
 #### Instalación:

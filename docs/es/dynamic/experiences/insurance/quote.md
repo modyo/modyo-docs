@@ -4,6 +4,10 @@ search: true
 
 # Cotizador Propiedad
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Crea nuevas cotizaciones personalizadas según las necesidades de tu negocio. Crea validaciones de listas restrictivas, reglas de no cobertura según georeferenciación, y obten los datos necesarios para ahorrar tiempo en las emisiones futuras de pólizas.
 
 #### Instalación:

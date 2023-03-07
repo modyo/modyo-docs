@@ -4,6 +4,12 @@ search: true
 
 # Depósitos
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
+
+
 Permite que el usuario pueda cargar fondos de manera fácil y rápida a sus cuentas de inversión.
 
 #### Instalación:

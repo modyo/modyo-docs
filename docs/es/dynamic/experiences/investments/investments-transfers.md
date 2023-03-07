@@ -4,6 +4,10 @@ search: true
 
 # Histórico de Transferencias
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Presenta todos los datos relevantes sobre las operaciones en tránsito asociadas a la compra y venta de acciones del usuario, para que encuentre rápidamente su información consolidada en la plataforma.
 
 #### Instalación:

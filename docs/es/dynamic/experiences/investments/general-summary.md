@@ -4,6 +4,10 @@ search: true
 
 # Resumen General
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Presenta la información consolidada y la evolución del patrimonio del cliente, ofreciendo la opción de filtrar los datos por cuentas, tipo de inversión, o moneda invertida.
 
 #### Instalación:

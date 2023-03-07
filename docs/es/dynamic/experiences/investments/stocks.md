@@ -4,6 +4,10 @@ search: true
 
 # Acciones
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Encuentra toda la información sobre las acciones disponibles, junto con Información de Mercado, y un módulo para hacer transacciones en línea de manera ágil y simple.
 
 #### Instalación:

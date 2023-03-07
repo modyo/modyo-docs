@@ -4,6 +4,10 @@ search: true
 
 # Documentos
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Almacena todos los documentos con relación a las inversiones del cliente, como cartolas, facturas electrónicas, confirmación y ejecución de órdenes, y firma de contratos, además de los certificados respectivos.
 
 #### Instalación:

@@ -4,6 +4,10 @@ search: true
 
 # Resumen de Pagos
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Visualiza todos los pagos de tus cuentas, por defecto cuenta con una gráfica de actividad de tus pagos previos, una ventana de tus próximos pagos, y tu historial con las boletas de tus pagos. 
 
 ### Instalación:

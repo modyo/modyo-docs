@@ -4,6 +4,10 @@ search: true
 
 # Póliza General
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Centraliza los detalles claves de tus pólizas y genera el seguimiento a todo el proceso de emisión de principio a fin. Facilita el acceso a la información y personaliza cada detalle de acuerdo a la estrategia de tus productos.
 
 #### Instalación

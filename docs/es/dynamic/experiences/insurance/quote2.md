@@ -4,6 +4,10 @@ search: true
 
 # Cotizador Vehículo
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Despliega cotizaciones para asegurar vehículos en donde podrás ver todos los detalles y coberturas del seguro.
 
 #### Instalación:

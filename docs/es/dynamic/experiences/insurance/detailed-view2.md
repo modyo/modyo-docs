@@ -4,6 +4,10 @@ search: true
 
 # Seguro de Vida
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Ve toda la información de tu seguro de vida a detalle. También podrás ver y descargar tus cartolas y pólizas.
 
 #### Instalación

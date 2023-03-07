@@ -4,6 +4,10 @@ search: true
 
 # Encuesta Perfil
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Realiza la encuesta de Perfil de Inversionista, para poder recibir las mejores recomendaciones en sus movimientos.
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/profile-survey)

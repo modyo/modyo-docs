@@ -4,6 +4,10 @@ search: true
 
 # Cuentas
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Muestra el detalle de todas las cuentas de inversión de un usuario con la información relevante en gráficos y números. Además presenta los movimientos realizados junto con las cartolas y extractos.
 
 #### Instalación:

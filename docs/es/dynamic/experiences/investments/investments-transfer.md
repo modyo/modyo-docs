@@ -4,6 +4,10 @@ search: true
 
 # Transferencia
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Permite a los clientes transferir fondos entre sus cuentas de inversión y su cuenta corriente inscrita.
 
 #### Instalación:

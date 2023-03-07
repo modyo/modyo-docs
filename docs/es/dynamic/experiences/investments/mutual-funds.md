@@ -4,6 +4,10 @@ search: true
 
 # Fondos Mutuos
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Muestra la información de los Fondos Mutuos disponibles y las operaciones realizadas por el usuario, además de entregar la posibilidad de realizar transacciones en línea a través de la plataforma.
 
 #### Instalación:

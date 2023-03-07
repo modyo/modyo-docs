@@ -4,6 +4,10 @@ search: true
 
 # Información Personal
 
+:::warning Actualización
+Este componente está en proceso de actualización y pronto podría ser reemplazado. El sistema de diseño utilizado podría no ser compatible con la última versión de Dynamic UI.
+:::
+
 Permite que el usuario pueda revisar y modificar sus datos personales, suscribirse al envío de información a su correo electrónico, y conocer su Perfil de Inversionista.
 
 [Abrir en otra pestaña](https://widgets-es.modyo.com/inversiones/personal-info)
