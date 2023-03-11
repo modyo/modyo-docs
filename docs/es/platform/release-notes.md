@@ -6,6 +6,24 @@ search: true
 
 ## 9.2
 
+### 9.2.27 - 10 de marzo de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se aumenta el periodo de pruebas a 30 días
+* se agrega validación del tiempo de inactividad de un usuario en el backoffice, configurable en la seccion seguridad.
+* se corrige problema con la validacion de contraseñas de administradores
+* Se agrega nuevo filtro para usuarios deshabilitados
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* nuevo minimal con boostrap 5 para nuevos sitios
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega nueva vista de overview de un space
+
 ### 9.2.26 - 20 de febrero de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
