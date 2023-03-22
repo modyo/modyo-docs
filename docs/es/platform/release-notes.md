@@ -6,6 +6,18 @@ search: true
 
 ## 9.2
 
+### 9.2.29 - 22 de marzo de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrige lentitud al cargar ordenes en el index, que se provocaba cuando existe un gran número de estas.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige error al cargar index de entries cuando el author es nulo
+
+
 ### 9.2.27 - 10 de marzo de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
