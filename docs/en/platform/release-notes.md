@@ -6,6 +6,57 @@ search: true
 
 ## 9.2
 
+### 9.2.30 - March 24, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrects update of widgets coming from the CLI
+
+### 9.2.29 - March 22, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Corrects slowness when loading orders in the index, which was caused when there were a large number of them.
+
+### 9.2.28 - March 21, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrects the removal of widgets coming from the CLI
+* Add modal to name a new cloned widget
+* Fixes problem when modifying variables in widgets
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrects administrator permissions in realms
+
+### 9.2.27 - March 10, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Testing period increased to 30 days
+* user inactivity time validation has been added in the backoffice, configurable in the security section.
+* fixes problem with administrator password validation
+* New filter for disabled users has been added.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* new minimal with boostrap 5 for new sites
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* New overview view of a space has been added.
+
 ### 9.2.26 - February 20, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -406,6 +457,11 @@ Fix bug with tag filter with 100 or more tags in admin
 * Froala editor
 
 ## 9.1
+
+### 9.1.43 - March 3, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+* Fixes to content migrations in 9.1, to ease the transition from 8.2 to newer versions
 
 ### 9.1.42 - February 13, 2023
 
