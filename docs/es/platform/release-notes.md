@@ -6,6 +6,16 @@ search: true
 
 ## 9.2
 
+### 9.2.30 - 24 de marzo de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrigge actualización de widgets provenientes desde el CLI
+
 ### 9.2.29 - 22 de marzo de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
