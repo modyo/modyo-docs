@@ -13,10 +13,21 @@ search: true
 * Mejoras de seguridad
 * Corrige lentitud al cargar ordenes en el index, que se provocaba cuando existe un gran número de estas.
 
-<Badge text="Content" type="content" vertical="middle"/>
+### 9.2.28 - 21 de marzo de 2023
 
-* Corrige error al cargar index de entries cuando el author es nulo
+<Badge text="Core" type="core" vertical="middle"/>
 
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige eleminado de widgets provenientes del CLI
+* Agrega modal para nombrar un nuevo widget clonado
+* Corrige porblema al modificar variables en los widgets
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige permisos de administradores en realms
 
 ### 9.2.27 - 10 de marzo de 2023
 
