@@ -408,6 +408,21 @@ Al hacer click en sincronizar, podrás seleccionar que cambios tomar de un stage
 La plataforma no permite sincronizar cambios que todavía no están publicados.
 :::
 
+### Eliminar un Stage
+
+Para eliminar un Stage, sigue estos pasos:
+
+1. Desde el menú lateral, haz click en **Channels**, luego haz click en tu **Sitio**.
+2. En el selector de Sitios, selecciona el Stage que quieres eliminar.
+
+<img src="/assets/img/channels/sites/delete-stage.jpg" alt="Site and stage selector." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+3. Haz click en **Configuración de Sitio**, y selecciona **General**.
+4. En la sección de **Zona de Peligro**, haz click en **Eliminar Stage**.
+
+:::warning Advertencia
+Una alerta aparecerá preguntando por confirmación. Al hacer click en eliminar, la plataforma comenzará un proceso asíncrono y no podrás volver a entrar al Stage. Se eliminará toda la información pertinente al Stage, incluyendo elementos del Sitio como Páginas y Widgets, así como también la configuración de Equipo, Roles, etc.
+:::
 
 ### Revisión en equipo
 
