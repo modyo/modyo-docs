@@ -10,18 +10,17 @@ Modyo allows you to upload, review, and edit files within the same platform, thr
 
 The only requirement is that the files must be within the size limits. The limits are:
 
-- **Images**: 30 MB
-- **Videos**: 200 MB
-- **Audio**: 100 MB
-- **CSV**: 2 MB
-- **Files**: 100 MB
+- **Images**: 2 MB
+- **Videos**: 2 MB
+- **Audios**: 2 MB
+- **Files**: 10 MB
 
 The valid file types are:
 
-- **Images**: "3gp", "aac", "alac", "dsd", "flac", "mp3", "pcm", "wav", "m4a", "ogg", "wma"
-- **Videos**: "av", "avi", "f4v", "flv", "mkv", "mov", "mp4", "mpeg", "webm", "wmv"
-- **Audios**: "apng", "avif", "bmp", "gif", "ico", "jpeg", "jpg", "png", "svg", "tif", "tiff", "webp"
-- **Files**: "7z", "ai", "apk", "css", "csv", "doc", "docx", "fon", "ico", "iso", "jar", "js", "msi", "ods", "odt", "otf", "pdf", "ppt", "pptx", "rar", "rss", "rtf", "scss", "tar", "tex", "ttf", "txt", "vcf", "wdp", "xhtml", "xls", "xlsm", "xlsx", "xml", "zip", "one", "ecf", "pub", "xps", "json"
+- **Images**: apng avif bmp gif ico jpeg jpg png tif tiff webp
+- **Videos**: av avi f4v flv mkv mov mp4 mpeg webm wmv
+- **Audios**: 3gp aac alac dsd flac mp3 pcm wav m4a ogg wma
+- **Files**: 7z ai apk css csv doc docx fon ico iso jar js msi ods odt otf pdf ppt pptx rar rss rtf scss tar tex ttf txt vcf wdp xhtml xls xlsm xlsx xml zip one ecf pub xps json svg woff woff2 ics
 
 #### Rich Text
 
