@@ -6,6 +6,17 @@ search: true
 
 ## 9.2
 
+### 9.2.31 - April 06, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Added password policy when creating new accounts
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fix permanent error in asset manager
+
 ### 9.2.30 - March 24, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -16,12 +27,14 @@ search: true
 
 * Corrects update of widgets coming from the CLI
 
+
 ### 9.2.29 - March 22, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security enhancements
 * Corrects slowness when loading orders in the index, which was caused when there were a large number of them.
+
 
 ### 9.2.28 - March 21, 2023
 
@@ -38,6 +51,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Corrects administrator permissions in realms
+
 
 ### 9.2.27 - March 10, 2023
 
@@ -56,6 +70,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * New overview view of a space has been added.
+
 
 ### 9.2.26 - February 20, 2023
 
