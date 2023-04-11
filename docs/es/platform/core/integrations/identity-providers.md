@@ -86,6 +86,8 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 - **Placeholder para el inicio de sesión**: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo
 - **Usar SSL**: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
 
+Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/realms.html#cliente-oauth).
+
 
 ## OpenID Connect
 

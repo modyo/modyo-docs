@@ -15,7 +15,7 @@ version: 9.2
 
 Con estos endpoints podrás obtener los tokens necesarios para una integración con Modyo y Zendesk.
 
-El único requisito es tener una [Integración con Zendesk](/es/platform/core/integrations/identity-providers.html) lista antes de usar estas APIs.
+El único requisito es tener una integración con Zendesk lista antes de usar estas APIs.
 
 ### Zendesk Token
 

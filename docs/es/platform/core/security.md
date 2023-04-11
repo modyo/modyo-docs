@@ -12,7 +12,7 @@ En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por 
 
 Estas son las opciones disponibles para establecer una política de contraseña para Modyo Platform:
 
-- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 8 a 128 caracteres.
+- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 12 a 128 caracteres.
 - Requerir por lo menos una letra minúscula (a - z)
 - Requerir por lo menos una letra mayúscula (A - Z)
 - Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)

@@ -121,13 +121,14 @@ En esta sección puedes configurar en gran parte la interacción entre usuarios 
 Aquí puedes configurar aspectos generales del realm, como:
 
 - **Nombre**.
-- **Identificador**: Permite modificar la url de las vistas de perfil, inicio de sesión, registro, y recuperación de contraseña del realm.
-- **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este realm.
-- **Modificar el tipo de activación de cuenta de usuarios**:
-  - Directa: Los usuarios que se registren podrán iniciar sesión directamente
-  - Correo de activación: Los usuarios que se registren deberán activar su cuenta mediante un link que se les envía al correo electrónico para poder iniciar sesión.
-  - Moderada: Los usuarios que se registren deberán esperar a que un administrador de Modyo active su cuenta para poder iniciar sesión.
-  - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados, podrán iniciar sesión sin problemas.
+- **Identificador**: Permite modificar la URL de las vistas de perfil, inicio de sesión, registro, y recuperación de contraseña del realm.
+- **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este realm para solo hacer ingreso a través de SSO. Ten a consideración tener habilitado un SSO primero antes de habilitar esta opción.
+- **Activación de la cuenta**:
+  - Directa: Los usuarios que se registren podrán iniciar sesión directamente.
+  - E-mail de activación: Los usuarios que se registren deberán activar su cuenta mediante un link que se les envía al correo electrónico para poder iniciar sesión.
+  - Moderada: Los usuarios que se registren deberán esperar a que un administrador del Reino active su cuenta para poder iniciar sesión.
+  - Deshabilitada: No se pueden registrar nuevos usuarios en el Reino. Los usuarios ya registrados y activados, podrán iniciar sesión sin problemas.
+- **Imagen de Avatar por defecto**: Es la imagen que se despliega en el avatar de todos los usuarios que no tengan una imagen.
 - **Atributos extra del formulario de registro**:
   - Habilitar segundo apellido
   - Hacer que el segundo apellido sea requerido
@@ -135,7 +136,8 @@ Aquí puedes configurar aspectos generales del realm, como:
   - Habilitar avatar de usuario
   - Habilitar fecha de nacimiento
   - Habilitar genero
-- **Eliminar realm**: Permite la eliminación completa del realm. Este es un proceso en segundo plano, por lo que es posible que no veas el realm desaparecer inmediatamente luego de ejecutar la acción. Para poder eliminar el reino, deberás escribir el nombre completo del reino para confirmar la acción.
+  - Habilitar número de teléfono
+- **Eliminar reino**: Permite la eliminación completa del reino. Este es un proceso en segundo plano, por lo que es posible que no veas el reino desaparecer inmediatamente luego de ejecutar la acción. Para poder eliminar el reino, deberás escribir el nombre completo del reino para confirmar la acción.
 
 :::danger Peligro
 Al deshabilitar las credenciales de Modyo del reino, debes asegurarte de tener configurado un proveedor de identidad para este realm, de lo contrario, los usuarios no podrán iniciar sesión.
@@ -143,7 +145,7 @@ Al deshabilitar las credenciales de Modyo del reino, debes asegurarte de tener c
 
 ### Apariencia
 
-Esta sección te permitirá modificar algunos aspectos visuales de las vistas de registro, inicio de sesión, y perfil de los usuarios del reino.
+Esta sección te permitirá modificar el color primario, logo, y agregar CSS personalizado para las vistas de registro, inicio de sesión, y perfil de los usuarios del reino.
 
 #### Color primario
 
@@ -167,20 +169,21 @@ Si tienes problemas con los códigos de teclado cuando estés editando el CSS, p
 
 ### Correos
 
-Modyo permite configurar la dirección de envío y apariencia de los correos que se enviarán a los usuarios del realm.
+Modyo permite configurar la dirección de envío y apariencia de los correos que se enviarán a los usuarios del reino.
 
 Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón **Guardar**.
 
 Lo que permite esta sección es habilitar, deshabilitar y personalizar el envío de los correos automáticos tras interacciones específicas que realizan los usuarios, los correos son los que siguen:
 
 - Correo de activación: Enviado una vez completado un registro de usuario, para que este confirme sus datos.
-- Usuario Importado: Enviado una vez que se importó el usuario.
 - Correo de Bienvenida: Enviado una vez completado un registro de usuario en un sitio específico.
 - Agregado por el Admin: Enviado una vez que el administrador creó el usuario manualmente.
 - Recuperación de Contraseña: Enviado cuando el usuario solicitó recuperar su contraseña.
 - Esperando Confirmación: Enviado una vez que se confirmó y activó el usuario.
 - Confirmación: Enviado una vez que se confirmó el usuario, pero debe esperar activación manual de parte de un administrador.
+- Verificación de actualizaciones de correo: Enviado al momento de hacer cualquier cambio de dirección de correo. 
 - Footer personalizado: Footer personalizado para todos los correos anteriormente descritos.
+
 
 Para habilitar o deshabilitar el envío de estos correos, solo debes hacer click en el botón **Habilitado/Deshabilitado** que se encuentra al costado de cada función y hacer click en el botón **Guardar**.
 
@@ -204,24 +207,46 @@ Para simplificar el ingreso a la plataforma, es posible configurar su entrada y 
 
 Los servicios compatibles con el ingreso a Modyo son:
 
-- Facebook
 - Google
-- LDAP
 - SAML
 - Oauth2
 - OpenID Connect
+- Keycloak
+- Azure Active Directory
 
-Es necesario contar con la correcta configuración del servicio asociado que Modyo pueda conectarse con ellos. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a [Integraciones de la plataforma](/es/platform/core/integrations)
+Es necesario contar con la correcta configuración del servicio asociado que Modyo pueda conectarse con ellos. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a [Proveedores de Identidad](es/platform/core/integrations/identity-providers)
+
+### Integraciones
+
+#### Zendesk
+
+Gestiona Para lograr una integración con Zendesk se necesitan los siguientes datos:
+
+- Nombre de la integración
+- Shared secret de Zendesk
+- URL de la integración: e.g. mysubdomain.zendesk.com
+
+### Cliente OAuth
+
+Usa un cliente de autenticación para enviar los tokens de acceso de tu integración a tus recursos. Se necesitan los siguientes valores:
+
+- Nombre
+- URI de redirección: Es el URI a donde el usuario va a ser redirigido por el servidor de autenticación después de autenticar exitosamente. 
+- URI de cierre de sesión: Es el URI a donde el usuario va a ser redirigido por el servidor de autenticación después de cerrar su sesión.
+- Descripción
+- Confidencial: Existen dos tipos de clientes Oauth, confidencial o públicos. Se necesita la opción confidencial cuando tu aplicación es capaz de autenticar de manera segura con el servidor de autenticación. Clientes públicos comúnmente son aplicaciones que corren en un dispositivo móvil o en un navegador. 
+- Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
+
 
 ### Miembros del equipo
 
-Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada realm y así controlar el acceso a los distintos aspectos del reino.
+Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada reino y así controlar el acceso a los distintos aspectos del reino.
 
-Para añadir un usuario al reino, selecciona el botón primario **+ Agregar Miembro** en la parte superior derecha de la vista, en el modal selecciona a un administrador, y asígnale un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del reino.
+Para añadir un usuario al reino, selecciona el botón primario **+ Agregar Miembro** en la parte superior derecha de la vista, en el modal selecciona a un administrador, y asigna un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del reino.
 
 Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
 
-Si quieres eliminar a un administrador del reino, selecciona usando los checks a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
+Si quieres eliminar a un administrador del reino, selecciona usando los checkbox a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
 
 Los roles disponibles son:
 
@@ -250,11 +275,13 @@ Solo puedes crear hasta 20 custom fields en cada Reino.
 
 Todos los **Custom fields** tienen ciertas propiedades estándar:
 
-- **Respuesta única**: Implica que el valor debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
-- **Requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
-- **Visible para usuarios**: Implica que será visible en la vista del perfil.
-    - **Editable por usuarios**: Implica que será visible y también podrá ser modificado por el usuario.
+- **La respuesta debe ser única**: Implica que el valor debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
+- **Este es un campo requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
+- **Visible para los usuarios de los sitios**: Implica que será visible en la vista del perfil.
+    - **Editable por usuarios de los sitios**: Implica que será visible y también podrá ser modificado por el usuario.
 - **Buscable por administradores**: Implica que este valor estará indexado y los usuarios podrán ser encontrados al ser buscados desde el indice de usuarios del administrador de Modyo, por el valor de ese campo.
+- **Texto de sugerencia**: Es el texto que aparece para ofrecer un ejemplo.
+- **Valor por defecto**
 
 Además de lo anterior, los **Custom fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
 
@@ -265,3 +292,33 @@ Cuando un **Custom field** está deshabilitado, puede ser eliminado. Al eliminar
 :::tip Tip
 Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Segmentos](/es/platform/customers/segments.html) usando los valores de los **Custom fields**, permitiendo segmentar a los usuarios por valores personalizables.
 :::
+
+### Seguridad
+
+#### Política de Contraseña
+
+Estas son las opciones disponibles para establecer una política de contraseña para Modyo Platform:
+
+- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 12 a 128 caracteres.
+- Requerir por lo menos una letra minúscula (a - z)
+- Requerir por lo menos una letra mayúscula (A - Z)
+- Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
+
+#### reCAPTCHA
+
+Estas son las opciones disponibles al habilitar reCAPTCHA en el reino.
+
+- **reCAPTCHA habilitado**: Habilita la protección con reCAPTCHA para el registro de usuarios, envío de formularios, inicio de sesión y recuperación de contraseña.
+- **Clave de sitio**
+- **Secret**
+- **Threshold**
+
+### Configuración de Payment
+
+Estas son las opciones disponibles al tener Payment habilitado en tu reino. 
+
+- **Formato de moneda**: Modifica el tipo de puntuación desplegado. 
+- **Activar el envío de correo electrónico**: Si está seleccionado, el usuario recibirá un correo luego de pagar una orden.
+- **Asunto de correo**: Asunto enviado a todos los usuarios.
+- **Cuerpo del correo**: Cuerpo enviado a todos los usuarios.
+
