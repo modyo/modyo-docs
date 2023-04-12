@@ -4,9 +4,9 @@ search: true
 collapsible: true
 ---
 
-# Entrance
+# Entry
 
-Create dynamic content in your spaces using Tickets. In this object you have access to all information relevant to the entries. The available attributes are:
+Create dynamic content in your spaces using Entries. In this object you have access to all information relevant to the entries. The available attributes are:
 
 ## entry.space
 
