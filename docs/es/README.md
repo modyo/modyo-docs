@@ -60,10 +60,10 @@ FirstSteps4Alt: Un catálogo que ofrece diferentes experiencias financieras a tu
 
 
 FirstSteps5Title: Modyo Training
-FirstSteps5Text: Obtenga la certificación en nuestros programas de capacitación a su propio ritmo.
+FirstSteps5Text: Aprende acerca de Modyo y sus principales características. Revisa nuestros cursos y material de entrenamiento.
 FirstSteps5Img: https://cloud.modyocdn.com/uploads/4853c725-b765-4770-add1-d4cd4184ae10/original/Training.png
-FirstSteps5Url: https://training.modyo.com/
-FirstSteps5Alt: Obtenga la certificación en nuestros programas de capacitación a su propio ritmo.
+FirstSteps5Url: https://help.modyo.com/
+FirstSteps5Alt: Aprende acerca de Modyo y sus principales características. Revisa nuestros cursos y material de entrenamiento.
 
 search: Buscar en
 

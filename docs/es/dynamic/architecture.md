@@ -3,19 +3,25 @@ search: false
 ---
 
 # Arquitectura
+Una arquitectura desacoplada basada en micro frontends y microservicios es una arquitectura de software que se enfoca en la construcción de sistemas modulares, escalables y altamente independientes entre sí.
 
-Modyo Dynamic se implementa sobre tecnologías reconocidas en la industria, que permiten minimizar el vendor lock-in y asegurar la mantenibilidad futura del código, como es el caso de React para experiencias de frontend y Spring Boot para las integraciones de backend.
+En este tipo de arquitectura, los microservicios son pequeñas aplicaciones independientes que realizan una única tarea o función específica. Cada microservicio se ejecuta de manera autónoma y puede comunicarse con otros servicios a través de interfaces de programación de aplicaciones (API) para proporcionar una funcionalidad más compleja.
 
+Por otro lado, los micro frontends son componentes de interfaz de usuario (UI) que se ejecutan de manera independiente en el navegador del usuario. Cada micro frontend está diseñado para representar una parte específica de la interfaz de usuario y puede ser desarrollado, probado y desplegado de manera independiente.
 
-### Integración con Modyo Connect
+La combinación de microservicios y micro frontends permite que cada servicio y componente de UI se desarrollen y desplieguen de manera independiente, lo que significa que se pueden actualizar y escalar de manera independiente sin afectar el resto del sistema. Esto da como resultado una mayor modularidad, flexibilidad y escalabilidad en el diseño de la arquitectura.
+
+Además, la arquitectura desacoplada basada en micro frontends y microservicios también permite una mayor independencia entre los equipos de desarrollo, ya que cada equipo puede centrarse en su servicio o componente de UI específico sin tener que preocuparse por el resto del sistema. Esto facilita la colaboración y acelera el proceso de desarrollo.
+
+### Integración
+#### APIs en Modyo Connect
+
 [Modyo Connect](/es/connect) es un servicio manejado de infraestructura provisto por Modyo sobre el cual se pueden desplegar de forma directa las diferentes plantillas de integración disponibles dentro de Modyo Dynamic, como se muestra en la siguiente figura:
 
 <img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 
-
-
-### Integración directa a las APIs del cliente
+#### APIs pripias del cliente
 Los Micro Frontends disponibles en Modyo Dynamic pueden ser integrados directamente a las APIs de cada cliente, incrementando la flexibilidad de cómo pueden ser utilizados.
 
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
@@ -92,7 +98,13 @@ El patrón de Repositorio tiene varios beneficios, entre ellos:
 En resumen, el patrón de Repositorio es un patrón de diseño de software que se utiliza para separar la lógica de negocio de la capa de acceso a datos en una aplicación, proporcionando una capa de abstracción que simplifica la interacción entre la lógica de negocio y los datos.
 
 ## Microservicios
-Los Microservicios de integración de Modyo Dynamic corresponden a plantillas que pueden ser desplegadas directamente tanto en un ambiente de contenedores o servidor de aplicaciones, como dentro de [Modyo Connect](/es/connect). Las plantillas de Microservicios han sido desarrolladas con las siguientes consideraciones técnicas:
+Los microservicios de integración son una arquitectura de software que se centra en la creación de servicios pequeños, autónomos e independientes que pueden comunicarse entre sí para proporcionar una funcionalidad de integración de sistemas. Estos microservicios se implementan en contenedores y se ejecutan de manera independiente, lo que los hace altamente escalables y flexibles.
+
+Los microservicios de integración permiten a las organizaciones conectar aplicaciones y sistemas heterogéneos de manera más efectiva. En lugar de depender de un sistema monolítico para manejar todas las funciones de integración, los microservicios permiten una mayor modularidad y flexibilidad en el diseño de la arquitectura.
+
+Los microservicios de integración también pueden utilizarse para implementar patrones de integración comunes, como ESB (Enterprise Service Bus), API Gateway, orquestación de servicios, entre otros. Al utilizar microservicios de integración, las organizaciones pueden crear soluciones de integración más escalables, ágiles y adaptables a medida que cambian las necesidades del negocio y las tecnologías evolucionan.
+
+Los microservicios de integración de Modyo Dynamic han sido desarrollados utilizando los principios de arquitectura héxagonal, sobre el framework de desarrollo de Spring Boot y están pensados para ser desplegados primariamente sobre Modyo Connect.
 
 ### Arquitectura Héxagonal
 La arquitectura hexagonal, también conocida como Arquitectura Puertos y Adaptadores, es un patrón de arquitectura de software que se enfoca en la separación de las preocupaciones (SoC, por sus siglas en inglés) y en la independencia del hardware y del software en una aplicación. Esta arquitectura se enfoca en la idea de que las aplicaciones deben estar estructuradas de manera que el núcleo de la lógica de negocio se encuentre en el centro de la arquitectura, con la interfaz de usuario y las capas de infraestructura ubicadas en la periferia.
@@ -110,14 +122,17 @@ La arquitectura hexagonal tiene varios beneficios, entre ellos:
 - Facilita la prueba y la depuración de la lógica de negocio de la aplicación.
 - Mejora la modularidad y la capacidad de reutilización del código.
 
-En resumen, la arquitectura hexagonal es un patrón de arquitectura de software que se enfoca en la separación de las preocupaciones y la independencia del hardware y del software en una aplicación, estructurando la aplicación en tres capas principales: la capa de dominio, la capa de adaptadores de infraestructura y la capa de infraestructura.
-
+Los microservicios de Modyo Dynamic se encuentran desarrollados utilizando los principios de la arquitectura héxagonal.
 
 ### SpringBoot
+Spring Boot es un framework de desarrollo de aplicaciones Java que se basa en el popular framework Spring. Spring Boot se enfoca en simplificar el proceso de desarrollo y configuración de aplicaciones Spring al proporcionar una configuración predeterminada fuera de la caja.
 
+Con Spring Boot, los desarrolladores pueden construir aplicaciones web, microservicios y otros tipos de aplicaciones empresariales de manera rápida y sencilla. Spring Boot hace que el proceso de configuración sea más fácil mediante la autoconfiguración y la eliminación de la necesidad de escribir una gran cantidad de código de configuración repetitivo.
+
+Además, Spring Boot se integra bien con otras tecnologías de la plataforma Java, lo que permite a los desarrolladores crear aplicaciones altamente escalables y eficientes. En resumen, Spring Boot es una herramienta poderosa y popular para el desarrollo de aplicaciones Java modernas.
 
 ### Modyo Connect
-Modyo Connect es un servicio de infraestructura manejada...
+Los microserivicios de Modyo Dynamic han sido diseñados para su despliegue sobre el servicio manejado de infraestructura de [Modyo Connect](/es/connect), sin embargo, pueden ser adaptados para cualquier tipo de infraestructura de nube o física.
 
 :::tip Modyo Connect
 Para más información sobre Modyo Connect y sus componentes, favor referirse a su [documentación oficial]("/es/connect").
