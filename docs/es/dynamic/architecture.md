@@ -9,11 +9,15 @@ En este tipo de arquitectura, los micro frontends son componentes de experiencia
 
 Por otro lado, los microservicios son pequeñas aplicaciones independientes que realizan una única tarea o función específica. Cada microservicio se ejecuta de manera autónoma y puede comunicarse con otros servicios a través de interfaces de programación de aplicaciones (API) para proporcionar una funcionalidad más compleja.
 
+La siguiente figura muestra la arquitectura de referencia de Modyo, en dónde los micro frontends se despliegan dentro de la Plataforma Modyo, mientras que los microservicios lo hacen de forma desacoplada dentro de Modyo Connect (opcional).
+
+<img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
+
+
 La combinación de micro frontends y microservicios permite que cada servicio y componente de experiencia se desarrollen y desplieguen de manera independiente, lo que significa que se pueden actualizar y escalar de manera independiente sin afectar el resto del sistema. Esto da como resultado una mayor modularidad, flexibilidad y escalabilidad en el diseño de la arquitectura.
 
 Además, la arquitectura desacoplada basada en micro frontends y microservicios también permite una mayor independencia entre los equipos de desarrollo, ya que cada equipo puede centrarse en su servicio o componente de UI específico sin tener que preocuparse por el resto del sistema. Esto facilita la colaboración y acelera el proceso de desarrollo.
 
-<img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
 
 ### Integración a Sistemas Core
