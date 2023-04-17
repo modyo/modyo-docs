@@ -5,3 +5,6 @@ Jumio es una empresa de tecnología financiera (fintech) que se especializa en s
 La tecnología de Jumio utiliza la inteligencia artificial para comparar la identidad del usuario con la información de su documento de identidad (como un pasaporte o una licencia de conducir) en tiempo real. Jumio también utiliza la tecnología de reconocimiento óptico de caracteres (OCR) para capturar información de los documentos de identidad y validarla en tiempo real. Esta plataforma permite a las empresas financieras y a otros negocios en línea verificar la identidad de sus clientes de manera rápida y precisa, lo que puede ayudar a prevenir el fraude en línea y aumentar la seguridad de las transacciones financieras.
 
 Las soluciones de Jumio se utilizan en una amplia gama de industrias, como banca, seguros, comercio electrónico, juegos en línea y servicios de redes sociales. La plataforma de Jumio ha ganado varios premios y reconocimientos por su innovación y eficacia en la verificación de identidad en línea.
+
+### Plantillas de Integración
+Modyo posee plantillas de microservicios listas para integrarse a las principales APIs de validación de identidad de Jumio.

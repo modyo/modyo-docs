@@ -6,4 +6,5 @@ La plataforma de Mambu está diseñada para proporcionar una solución completa 
 
 Mambu está diseñado para ser altamente escalable, lo que significa que puede adaptarse fácilmente a las necesidades cambiantes de las empresas financieras a medida que crecen y evolucionan. Además, Mambu es altamente flexible, lo que permite a las empresas financieras personalizar la plataforma para satisfacer sus necesidades específicas.
 
-Modyo posee plantillas de microservicios listas para integrarse al API de Mambu.
+### Plantillas de Integración
+Modyo posee plantillas de microservicios listas para integrarse a las principales APIs de Mambu.
