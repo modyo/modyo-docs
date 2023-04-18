@@ -36,73 +36,79 @@ To create a new user authentication, click **New** and paste the following code 
 
 ```java
 global class Modyo_Connector extends Auth.AuthProviderPluginClass {
-          // Use this URL for the endpoint that the 
+          // Use this URL for the endpoint that the
           // authentication provider calls back to for configuration.
-          public String redirectUrl; 
+          public String redirectUrl;
           private String key;
           private String secret;
-          // Application redirection to the Modyo_Connector website for 
+          // Application redirection to the Modyo_Connector website for
           // authentication and authorization.
-          private String authUrl;  
+          private String authUrl;
           // URI to get the new access token from Modyo using the GET verb.
-          private String accessToken; 
+          private String accessToken;
           // Api name for the custom metadata type created for this auth provider.
-          private String customMetadataTypeApiName; 
+          private String customMetadataTypeApiName;
           // Api URL to access the user in Modyo
-          private String userAPIUrl; 
-          private String userLoginUrl; 
+          private String userAPIUrl;
+          private String userLoginUrl;
           // Version of the user api URL to access data from Modyo
-          private String userAPIVersionUrl; 
+          private String userAPIVersionUrl;
           global String getCustomMetadataType() {
               return 'OAuth_provider__mdt';
-          } 
-          global PageReference initiate(Map<string,string> 
-            authProviderConfiguration, String stateToPropagate) 
-            { 
-                authUrl = authProviderConfiguration.get('Auth_Url__c'); 
+          }
+          global PageReference initiate(Map<string,string>
+            authProviderConfiguration, String stateToPropagate)
+            {
+                authUrl = authProviderConfiguration.get('Auth_Url__c');
                 key = authProviderConfiguration.get('Key__c');
                 redirectUrl = authProviderConfiguration.get('Redirect_Url__c');
-                // Here the developer can build up a request of some sort. 
-                // Ultimately, they return a URL where we will redirect the user. 
-                String url = authUrl + '?response_type=code&client_id='+ key +'&scope=&redirect_uri='+ redirectUrl + '&state=' + stateToPropagate; 
-                return new PageReference(url); 
-            } 
-            global Auth.AuthProviderTokenResponse handleCallback(Map<string,string> 
-            authProviderConfiguration, Auth.AuthProviderCallbackState state ) 
-            { 
-                // Here, the developer will get the callback with actual protocol. 
-                // Their responsibility is to return a new object called 
-                // AuthProviderTokenResponse. 
-                // This will contain an optional accessToken and refreshToken 
-                key = authProviderConfiguration.get('Key__c'); 
-                secret = authProviderConfiguration.get('Secret__c'); 
-                accessToken = authProviderConfiguration.get('Access_Token__c'); 
-                Map<String,String> queryParams = state.queryParameters; 
-                String code = queryParams.get('code'); 
-                String sfdcState = queryParams.get('state'); 
-                return new Auth.AuthProviderTokenResponse('Modyo_Connector', accessToken, 
-                'refreshToken', sfdcState); 
-            } 
-            global Auth.UserData getUserInfo(Map<string,string> 
-            authProviderConfiguration, 
-            Auth.AuthProviderTokenResponse response) 
-            { 
-                //Here the developer is responsible for constructing an 
-                //Auth.UserData object 
-                userAPIUrl = authProviderConfiguration.get('API_User_Url__c'); 
-                userLoginUrl = authProviderConfiguration.get('API_Login_Url__c'); 
-                Http httpProtocol = new Http();
+                // Here the developer can build up a request of some sort.
+                // Ultimately, they return a URL where we will redirect the user.
+                String url = authUrl + '?response_type=code&client_id='+ key +'&scope=&redirect_uri='+ redirectUrl + '&state=' + stateToPropagate;
+                return new PageReference(url);
+            }
+            global Auth.AuthProviderTokenResponse handleCallback(Map<string,string>
+            authProviderConfiguration, Auth.AuthProviderCallbackState state )
+            {
+                // Here, the developer will get the callback with actual protocol.
+                // Their responsibility is to return a new object called
+                // AuthProviderTokenResponse.
+                // This will contain an optional accessToken and refreshToken
+                key = authProviderConfiguration.get('Key__c');
+                secret = authProviderConfiguration.get('Secret__c');
+                accessToken = authProviderConfiguration.get('Access_Token__c');
+                Map<String,String> queryParams = state.queryParameters;
+                String code = queryParams.get('code');
+                String sfdcState = queryParams.get('state');
+                return new Auth.AuthProviderTokenResponse('Modyo_Connector', accessToken,
+                'refreshToken', sfdcState);
+            }
+            global Auth.UserData getUserInfo(Map<string,string>
+            authProviderConfiguration,
+            Auth.AuthProviderTokenResponse response)
+            {
+                //Here the developer is responsible for constructing an
+                //Auth.UserData object
+
+                String token = response.oauthToken;
+                userAPIUrl = authProviderConfiguration.get('API_User_Url__c');
+                userLoginUrl = authProviderConfiguration.get('API_Login_Url__c');
+
                 // Create HTTP request to send.
                 HttpRequest request = new HttpRequest();
+                // Set authorization header
+                request.setHeader('Authorization', 'Bearer ' + token);
                 // Set the endpoint URL.
                 request.setEndPoint(userAPIUrl);
                 // Set the HTTP verb to GET.
                 request.setMethod('GET');
                 // Send the HTTP request and get the response.
                 // The response is in JSON format.
+
+                Http httpProtocol = new Http();
                 HttpResponse res = httpProtocol.send(request);
                 String responseBody = res.getBody();
-                System.debug(responseBody);            
+                System.debug(responseBody);
                 String locale = 'en-us';
                 String userId = getValueFromResponse(responseBody, 'id');
                 String fullName = getValueFromResponse(responseBody, 'name');
@@ -115,22 +121,23 @@ global class Modyo_Connector extends Auth.AuthProviderPluginClass {
                     lastName,
                     fullName,
                     uname,
-                    null, 
+                    null,
                     uname,
                     locale,
                     'Modyo',
                     userLoginUrl,
                     null
                   );
-            }               
-            private String getValueFromResponse(String response, 
-            String json_key) 
-            { 
-                Map<String, Object> result = (Map<String, Object>)JSON.deserializeUntyped(response);               
+            }
+            private String getValueFromResponse(String response,
+            String json_key)
+            {
+                Map<String, Object> result = (Map<String, Object>)JSON.deserializeUntyped(response);
                 String ret = String.valueof(result.get(json_key));
-            return ret; 
-            } 
+            return ret;
+            }
         }
+
 ```
 
 Click Save.
@@ -207,7 +214,7 @@ Click <b>Save</b> and on the settings of <b>Custom Metadata Types
  </tr>
  <tr>
   <td>
-   User_Login_Url
+   API_Login_Url
   </td>
   <td>
    Text(255)    
@@ -300,7 +307,7 @@ Fill in the following data:
  </tr>
  <tr>
   <td style="font-weight: bold;">
-   User_Login_Url   
+   API_Login_Url    
   </td>
   <td>
    [ Modyo Account ]/admin/login
@@ -329,7 +336,7 @@ Fill in the following data:
 
 Named Credentials allow users to authenticate to an external service provider. There are several default options, in order to connect to Modyo, we need to create a custom authentication.
 
-To generate one we are going to search for <b> Named Credentials </b> inside Setup, and click on <b>New Named Credential</b>. We fill in the fields as follows:
+In this case, we need to create a Legacy Named Credential. To generate one search for <b>Named Credentials</b> inside Setup, and click <b>New</b> and select <b>New Legacy</b>. Fill in the fields with the following:
 
 <table>
  <tr>
@@ -410,7 +417,19 @@ To generate one we are going to search for <b> Named Credentials </b> inside Set
 
 Click on <b> Save </b>.
 
-## Step 6: External services
+## Step 6: Remote Site
+
+The URL for Modyo Platform must be added to the Remote Site section. To add the URL, follow these steps:
+
+1. Inside the Setup for Salesforce, click Remote site configuration.
+1. Click New remote site.
+1. Fill out the name, description, and URL. Use the Modyo Platform URL (e.g. test.modyo.com, replace test with the name of your account.)
+1. Click Save.
+
+<img src="/assets/img/tutorials/saleforce/remote_site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Remote Site flow in Salesforce"/>
+
+
+## Step 7: External service
 
 The last step is the definition of the external service within Salesforce. 
 
@@ -420,13 +439,14 @@ To generate the integration, create a new External Service by clicking on the <b
 
 Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b> Service Schema Complete JSON </b> 
 
-```
+
+```json
 {
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Modyo public profile API",
-    "description": "Describe Modyo public profile API methods",
+    "title": "Modyo Admin API",
+    "description": "Describe Modyo Admin API methods",
     "termsOfService": "http://www.modyo.com/terms/",
     "contact": {
       "name": "MODYO API Team"
@@ -435,9 +455,16 @@ Enter a name, select the Named Credential you created and at the bottom we paste
       "name": "MIT"
     }
   },
-  "schemes": [
-    "https"
-  ],
+  "securityDefinitions": {
+    "access_token": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "security": [{
+    "access_token": []
+  }],
   "basePath": "/",
   "consumes": [
     "application/json"
@@ -446,1045 +473,230 @@ Enter a name, select the Named Credential you created and at the bottom we paste
     "application/json; charset=utf-8"
   ],
   "paths": {
-    "/users": {
-      "get": {
-        "summary": "Users List",
-        "tags": [
-          "Users"
-        ],
-        "parameters": [
-          {
-            "name": "query",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "Keywords (searched in mail and name)"
-          },
-          {
-            "name": "active",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "0",
-              "1"
-            ],
-            "description": "Active or inactive users"
-          },
-          {
-            "name": "verified",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "0",
-              "1"
-            ],
-            "description": "Verified or unverified users"
-          },
-          {
-            "name": "page",
-            "description": "Pagination page",
-            "in": "query",
-            "type": "integer",
-            "minimum": 1,
-            "example": 1
-          },
-          {
-            "name": "per_page",
-            "description": "Registers per page",
-            "in": "query",
-            "type": "integer",
-            "minimum": 0,
-            "example": 10
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "users": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/UserList"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/definitions/PaginationMeta"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a User",
-        "tags": [
-          "Users"
-        ],
-        "parameters": [
-          {
-            "name": "user",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/UserInput"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity",
-            "example": "{ \"errors\" : { \"username\" : [ \"has already been taken\" ] } }"
-          }
-        }
-      }
-    },
-    "/users/{user_id}": {
-      "get": {
-        "summary": "Show a User",
-        "tags": [
-          "Users"
-        ],
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "description": "User id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
+    "/account": {
       "put": {
-        "summary": "Update a User",
+        "summary": "Update an Account",
         "tags": [
-          "Users"
+          "Accounts"
         ],
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "description": "User id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "user",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/UserInput"
-            }
+        "parameters": [{
+          "name": "account",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/AccountInput"
           }
-        ],
+        }],
         "responses": {
           "200": {
+            "description": "Successful updated",
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/Account"
             }
           },
-          "404": {
-            "description": "User not found"
-          },
-          "422": {
-            "description": "Unprocessable entity",
-            "example": "{ \"errors\" : { \"username\" : [ \"has already been taken\" ] } }"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a User",
-        "tags": [
-          "Users"
-        ],
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "description": "User id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Delete operation completed successfully",
-            "example": "{}"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      }
-    },
-    "/targets": {
-      "get": {
-        "summary": "Targets List",
-        "tags": [
-          "Targets"
-        ],
-        "parameters": [
-          {
-            "name": "query",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "Query on targets name"
-          },
-          {
-            "name": "only[]",
-            "in": "query",
-            "description": "List of requested targets attributes to include on response",
-            "type": "array",
-            "collectionFormat": "multi",
-            "items": {
-              "type": "string",
-              "required": false,
-              "enum": [
-                "id",
-                "uuid",
-                "name",
-                "filters_summary",
-                "matches_count",
-                "created_at",
-                "updated_at"
-              ]
-            }
-          },
-          {
-            "name": "sort_by",
-            "description": "Sort by an attribute. If blank, results are sorted by created_at",
-            "in": "query",
-            "type": "string",
-            "enum": [
-              "name",
-              "created_at"
-            ]
-          },
-          {
-            "name": "order",
-            "description": "Sort ascendant or descending. If blank, sort by asc",
-            "in": "query",
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ]
-          },
-          {
-            "name": "page",
-            "description": "Pagination page",
-            "in": "query",
-            "type": "integer",
-            "minimum": 1,
-            "example": 1
-          },
-          {
-            "name": "per_page",
-            "description": "Registers per page",
-            "in": "query",
-            "type": "integer",
-            "minimum": 0,
-            "example": 10
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Targets list",
-            "schema": {
-              "properties": {
-                "targets": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/TargetList"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/definitions/PaginationMeta"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a target",
-        "tags": [
-          "Targets"
-        ],
-        "parameters": [
-          {
-            "name": "target",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Target"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created",
-            "schema": {
-              "$ref": "#/definitions/Target"
-            }
-          },
-          "422": {
-            "description": "unprocessable entity"
-          }
-        }
-      }
-    },
-    "/targets/{id}": {
-      "get": {
-        "summary": "Show a target",
-        "tags": [
-          "Targets"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Target id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/Target"
-            }
-          },
-          "404": {
-            "description": "Category not found"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a target",
-        "tags": [
-          "Targets"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "target id",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "target",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Target"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Ok",
-            "schema": {
-              "$ref": "#/definitions/Target"
-            }
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "422": {
-            "description": "unprocessable entity"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a Target",
-        "tags": [
-          "Targets"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "target id",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Target deleted"
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "422": {
-            "description": "Unprocessable entity"
-          }
-        }
-      }
-    },
-    "/token": {
-      "get": {
-        "summary": "Get user token",
-        "tags": [
-          "User Info"
-        ],
-        "responses": {
-          "200": {
-            "description": "User perishable token",
-            "schema": {
-              "properties": {
-                "id": {
-                  "type": "integer",
-                  "example": 202
-                },
-                "token": {
-                  "type": "string",
-                  "example": "isyOzr3g1_cj34dk7VsU"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found"
-          }
-        }
-      }
-    },
-    "/delivery_token": {
-      "get": {
-        "summary": "Delivery token",
-        "tags": [
-          "User Info"
-        ],
-        "responses": {
-          "200": {
-            "description": "Delivery token",
-            "schema": {
-              "properties": {
-                "delivery_token": {
-                  "type": "string",
-                  "example": "eyJhbGciOiJub25lIn0.eyJpc3MiOiJodHRwczovL3N0YXJrLm1vZHlvLm1lOjMwMDAvYXBpL3Byb2ZpbGUvZGVsaXZlcn"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found"
+          "409": {
+            "description": "Conflict"
           }
         }
       }
     }
   },
   "definitions": {
-    "PaginationMeta": {
+    "AccountInput": {
       "properties": {
-        "total_entries": {
+        "favicon_id": {
           "type": "integer",
-          "minimum": 0,
-          "example": 2
+          "description": "Favicon ID"
         },
-        "per_page": {
+        "dismiss_home_steps": {
+          "type": "boolean"
+        },
+        "logo_id": {
           "type": "integer",
-          "minimum": 0,
-          "example": 10
+          "description": "Logo ID"
         },
-        "current_page": {
-          "type": "integer",
-          "minimum": 1,
-          "example": 1
+        "cors_enabled": {
+          "type": "boolean"
         },
-        "total_pages": {
-          "type": "integer",
-          "minimum": 1,
-          "example": 1
-        }
-      }
-    },
-    "Avatar": {
-      "properties": {
-        "file_name": {
+        "cors_allow_all": {
+          "type": "boolean"
+        },
+        "cors_allowed_origins": {
           "type": "string",
-          "example": "user_avatar.png"
+          "description": "By default, site custom domains are included once CORS is enabled. To grant external domains access, input them in a comma-separated list. Wildcards are not allowed.",
+          "example": "http://sub.mydomain.com, http://spa.mydomain.com"
         },
-        "url_original": {
-          "type": "string",
-          "format": "uri",
-          "example": "https://stark.modyo.me:3000/assets/avatar/user_avatar_original.png"
-        },
-        "url_small": {
-          "type": "string",
-          "format": "uri",
-          "example": "https://stark.modyo.me:3000/assets/avatar/user_avatar_small.png"
-        },
-        "url_medium": {
-          "type": "string",
-          "format": "uri",
-          "example": "https://stark.modyo.me:3000/assets/avatar/user_avatar_medium.png"
-        }
-      }
-    },
-    "Membership": {
-      "properties": {
-        "id": {
-          "type": "integer",
-          "example": 412
-        },
-        "site_id": {
-          "type": "integer",
-          "example": 1
-        }
-      }
-    },
-    "TargetList": {
-      "properties": {
-        "id": {
-          "type": "integer",
-          "example": 23
-        },
-        "uuid": {
-          "type": "string",
-          "example": "6c30c2a6-8db4-4580-8ede-2a913c8a1b6b"
-        },
-        "name": {
-          "type": "string",
-          "example": "Adults"
-        },
-        "filters_summary": {
-          "type": "string",
-          "example": "Age between 18 and 65"
-        },
-        "matches_count": {
-          "type": "integer",
-          "example": 2344
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2018-06-04T17:20:05.000-03:00"
-        },
-        "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2018-06-04T17:20:05.000-03:00"
-        }
-      }
-    },
-    "Target": {
-      "properties": {
-        "id": {
-          "type": "integer",
-          "example": 4
-        },
-        "uuid": {
-          "type": "string",
-          "example": "46a80345-6e27-4262-9ea3-7e2f4e9af26a"
-        },
-        "description": {
-          "type": "string",
-          "example": "Male clients"
-        },
-        "name": {
-          "type": "string",
-          "example": "Male"
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2018-06-04T17:20:05.000-03:00"
-        },
-        "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2018-06-04T17:20:05.000-03:00"
-        },
-        "filters": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TargetFilter"
-          }
-        }
-      }
-    },
-    "TargetFilter": {
-      "properties": {
-        "id": {
-          "type": "integer",
-          "example": 12
-        },
-        "type": {
-          "type": "string",
-          "example": "gender_filter",
-          "enum": [
-            "active_filter",
-            "age_filter",
-            "birth_at_filter",
-            "device_filter",
-            "custom_field_filter",
-            "order_rejected_filter",
-            "order_paying_filter",
-            "order_paid_filter",
-            "order_confirming_filter",
-            "order_confirmation_failed_filter",
-            "order_completed_filter",
-            "multiple_values_user_field_filter",
-            "answer_filter",
-            "tag_filter",
-            "register_date_filter",
-            "open_notification_count_filter",
-            "open_notification_filter",
-            "open_email_filter",
-            "open_email_count_filter",
-            "not_opened_email_filter",
-            "login_at_filter",
-            "multiple_log_count_filter",
-            "last_login_filter",
-            "gender_filter",
-            "form_responses_count_filter",
-            "email_spam_report_filter",
-            "email_delivered_filter"
-          ]
-        },
-        "operator": {
-          "type": "string",
-          "example": "lte",
-          "enum": [
-            "lte",
-            "gte",
-            "between",
-            "eq",
-            "after",
-            "before",
-            "first_name",
-            "last_name",
-            "email",
-            "sex",
-            "birth_at"
-          ]
-        },
-        "operator_2": {
-          "type": "string"
-        },
-        "filterable_type": {
-          "type": "string",
-          "example": "Messaging::Campaign",
-          "enum": [
-            "Messaging::Campaign",
-            "Forms::Question",
-            "CustomFields::UserCustomField"
-          ]
-        },
-        "filterable_id": {
-          "type": "integer",
-          "example": 45
-        },
-        "svalue": {
-          "type": "string",
-          "example": "30,65"
-        },
-        "svalue_2": {
-          "type": "string"
-        },
-        "site_id": {
-          "type": "integer",
-          "example": 1
-        },
-        "target_id": {
-          "type": "integer",
-          "example": 4
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2018-06-04T17:20:05.000-03:00"
-        },
-        "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2018-06-04T17:20:05.000-03:00"
-        },
-        "operator_label": {
-          "type": "string",
-          "example": "admin.targets.filters.operators.date.between"
-        },
-        "operator_2_label": {
-          "type": "string"
-        },
-        "filterable": {
-          "type": "object",
-          "example": [
-            "email_opened_log"
-          ]
-        },
-        "filterable_label": {
-          "type": "string",
-          "example": "Email opened"
-        },
-        "selected_filterable_alternatives_value": {
-          "type": "integer",
-          "example": 9
-        },
-        "site_label": {
-          "type": "string"
-        },
-        "svalue_label": {
-          "type": "string",
-          "example": "admin.commons.male"
-        },
-        "selected_filterable_alternatives_label": {
-          "type": "string",
-          "example": "Lastname"
-        },
-        "svalue_2_label": {
-          "type": "string"
-        },
-        "operator_divider": {
-          "type": "string",
-          "example": "admin.targets.filters.operators.divider.and"
-        },
-        "operator_2_divider": {
-          "type": "object"
-        },
-        "label_translated": {
-          "type": "boolean",
-          "example": true,
-          "enum": [
-            true,
-            false
-          ]
-        },
-        "condition_type": {
-          "type": "integer",
-          "example": 0
-        },
-        "condition_type_label": {
-          "type": "string",
-          "example": "All"
-        },
-        "multiple_filterables": {
-          "type": "boolean",
-          "example": true
-        }
-      }
-    },
-    "TargetSummary": {
-      "properties": {
-        "id": {
-          "type": "integer",
-          "example": 4
-        },
-        "name": {
-          "type": "string",
-          "example": "Seniors (65+)"
-        }
-      }
-    },
-    "UserCustomField": {
-      "properties": {
-        "key": {
-          "type": "string",
-          "example": "_ucf_single_line_text_user_custom_field"
-        },
-        "name": {
-          "type": "string",
-          "example": "Single Line Text User Custom Field"
-        },
-        "type": {
-          "type": "string",
-          "example": "string"
-        },
-        "value": {
-          "type": "string",
-          "example": "Single Line Text made by: Clifton"
-        }
-      }
-    },
-    "User": {
-      "properties": {
-        "avatar": {
-          "$ref": "#/definitions/Avatar"
-        },
-        "id": {
-          "type": "integer",
-          "example": 2332
-        },
-        "external_id": {
-          "type": "string",
-          "example": "11111111-1"
-        },
-        "name": {
-          "type": "string",
-          "example": "Clifton Feil"
-        },
-        "first_name": {
-          "type": "string",
-          "example": "Clifton"
-        },
-        "last_name": {
-          "type": "string",
-          "example": "Feil"
-        },
-        "email": {
-          "type": "string",
-          "format": "email",
-          "example": "test.user@modyo.com"
-        },
-        "username": {
-          "type": "string",
-          "example": "test.user"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri",
-          "example": "https://stark.modyo.me:3000/admin/users/283d2baa-c3e1-4a8c-91d7-752aea8937ab"
-        },
-        "sex": {
-          "type": "string",
-          "example": 0,
-          "enum": [
-            0,
-            1,
-            3
-          ]
-        },
-        "birth_at": {
-          "type": "string",
-          "example": "1952-09-04"
-        },
-        "active": {
-          "type": "boolean",
-          "example": true,
-          "enum": [
-            true,
-            false
-          ]
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2019-10-08T16:08:55.000-03:00"
-        },
-        "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2019-10-23T18:30:19.000-03:0"
-        },
-        "last_login_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2019-10-22T20:40:35.000Z"
-        },
-        "targets": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TargetSummary"
-          }
-        },
-        "last_login_ip": {
-          "type": "string",
-          "format": "ipv4",
-          "example": "127.0.0.1"
-        },
-        "memberships": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Membership"
-          }
-        },
-        "custom_fields": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/UserCustomField"
-          }
-        }
-      }
-    },
-    "UserInput": {
-      "properties": {
-        "email": {
-          "type": "string",
-          "format": "email"
-        },
-        "username": {
-          "type": "string"
-        },
-        "first_name": {
-          "type": "string"
-        },
-        "last_name": {
-          "type": "string"
-        },
-        "second_last_name": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string",
-          "format": "password",
-          "description": "Plaintext password, will be encrypted"
-        },
-        "birth_at": {
-          "type": "string",
-          "example": "1978-06-01"
-        },
-        "sex": {
-          "type": "integer",
-          "enum": [
-            0,
-            1,
-            3
-          ],
-          "example": 0,
-          "description": "0: male, 1: female, 3: undefined"
-        },
-        "external_id": {
-          "type": "string"
-        },
-        "tag_list": {
-          "type": "string",
-          "example": "tag01, tag02"
-        },
-        "created_at": {
-          "type": "string",
-          "example": "2019-03-31 10:23:00"
-        },
-        "updated_at": {
-          "type": "string",
-          "example": "2019-06-26 08:24:45"
-        },
-        "login_count": {
+        "delivery_token_expiration": {
           "type": "integer"
         },
-        "failed_login_count": {
-          "type": "integer"
-        },
-        "last_login_at": {
-          "type": "string",
-          "example": "2019-06-26 08:24:45"
-        },
-        "last_login_ip": {
-          "type": "string",
-          "format": "ipv4",
-          "example": "127.0.0.1"
-        },
-        "current_login_at": {
-          "type": "string",
-          "example": "2019-06-26 08:24:45"
-        },
-        "current_login_ip": {
-          "type": "string",
-          "format": "ipv4",
-          "example": "127.0.0.1"
-        },
-        "activate": {
-          "type": "boolean",
-          "example": true,
-          "enum": [
-            true,
-            false
-          ]
-        },
-        "custom_fields": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/UserCustomField"
-          }
+        "name": {
+          "type": "string"
         },
         "time_zone": {
           "type": "string"
         },
-        "locale": {
-          "type": "string",
-          "example": "en"
+        "host": {
+          "type": "string"
         },
-        "send_email": {
-          "type": "boolean",
+        "default_site_id": {
+          "type": "integer"
+        },
+        "default_site_permanent_redirect": {
+          "type": "boolean"
+        },
+        "robots_enabled": {
+          "type": "boolean"
+        },
+        "sitemap_enabled": {
+          "type": "boolean"
+        },
+        "google_key": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "min_length_value": {
+          "type": "integer",
+          "example": 8,
+          "minimum": 8,
+          "maximum": 128
+        },
+        "require_lowercase_enabled": {
+          "type": "boolean"
+        },
+        "require_uppercase_enabled": {
+          "type": "boolean"
+        },
+        "require_symbols_enabled": {
+          "type": "boolean"
+        },
+        "expire_after": {
+          "type": "integer",
+          "example": 300,
           "enum": [
-            true,
-            false
+            300,
+            600,
+            900,
+            1200,
+            1500,
+            1800,
+            2700,
+            3600,
+            5400,
+            7200,
+            14400,
+            28800,
+            57600,
+            86400,
+            172800,
+            259200,
+            345600,
+            432000,
+            518400,
+            604800,
+            1209600
           ],
-          "description": "Send email to created user"
+          "description": "Time in minutes"
+        },
+        "otp_required": {
+          "type": "boolean",
+          "example": false
         }
       }
     },
-    "UserList": {
+    "Account": {
       "properties": {
-        "avatar": {
-          "$ref": "#/definitions/Avatar"
-        },
         "id": {
           "type": "integer",
-          "example": 2332
-        },
-        "uuid": {
-          "type": "string",
-          "example": "5379068f-4bc2-4858-8c37-6f59858e0a5b"
-        },
-        "external_id": {
-          "type": "string",
-          "example": "11111111-1"
-        },
-        "email": {
-          "type": "string",
-          "format": "email",
-          "example": "test.user@modyo.com"
-        },
-        "username": {
-          "type": "string",
-          "example": "test.user"
-        },
-        "first_name": {
-          "type": "string",
-          "example": "Clifton"
-        },
-        "last_name": {
-          "type": "string",
-          "example": "Feil"
+          "example": 1
         },
         "name": {
           "type": "string",
-          "example": "Clifton Feil"
+          "example": "Modyo Cloud"
         },
-        "full_name": {
+        "host": {
           "type": "string",
-          "example": "Clifton Feil"
+          "example": "company"
         },
-        "sex": {
+        "time_zone": {
           "type": "string",
-          "example": 0,
-          "enum": [
-            0,
-            1,
-            3
-          ]
+          "example": "Santiago"
         },
-        "active": {
+        "lang": {
+          "type": "string",
+          "example": "en"
+        },
+        "uuid": {
+          "type": "string",
+          "example": "a24f87bd-3abd-4b9d-973e-3e4e9676c345"
+        },
+        "google_key": {
+          "type": "string",
+          "example": "AIzaSyDmuYmbFpzTdIxHy"
+        },
+        "options": {
+          "type": "string"
+        },
+        "cors_allowed_origins": {
+          "type": "string",
+          "example": "http://sub.mydomain.com, http://spa.mydomain.com"
+        },
+        "delivery_token_private_key": {
+          "type": "string",
+          "description": "Delivery token private key as hexdigest"
+        },
+        "close_scheduled": {
           "type": "boolean",
           "example": true,
           "enum": [
-            true,
-            false
+            false,
+            true
           ]
+        },
+        "cors_enabled": {
+          "type": "boolean",
+          "example": true,
+          "enum": [
+            false,
+            true
+          ]
+        },
+        "cors_allow_all": {
+          "type": "boolean",
+          "example": true,
+          "enum": [
+            false,
+            true
+          ]
+        },
+        "owner_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "status": {
+          "type": "integer",
+          "example": 1
+        },
+        "subscription_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "default_site_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "logo_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "favicon_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "delivery_token_expiration": {
+          "type": "integer",
+          "example": 1
         },
         "created_at": {
           "type": "string",
@@ -1494,53 +706,19 @@ Enter a name, select the Named Credential you created and at the bottom we paste
         "updated_at": {
           "type": "string",
           "format": "date-time",
-          "example": "2019-10-23T18:30:19.000-03:0"
-        },
-        "last_login_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2019-10-22T20:40:35.000Z"
-        },
-        "login_count": {
-          "type": "integer",
-          "example": 3
-        },
-        "custom_fields": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/UserCustomField"
-          }
-        }
-      }
-    },
-    "UserWithCards": {
-      "properties": {
-        "cards": {
-          "type": "array",
-          "items": {
-            "properties": {
-              "card_type": {
-                "type": "string"
-              },
-              "number": {
-                "type": "string"
-              },
-              "site_id": {
-                "type": "integer"
-              }
-            }
-          }
+          "example": "2019-10-08T16:08:55.000-03:00"
         }
       }
     }
   }
 }
 ```
+
 <img src="/assets/img/tutorials/saleforce/add_an_external_service.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Add an External Service in Salesforce."/>
 
 Click <b>Save & Next</b>, select all operators and click Next and Done.
 
-## Step 7: Create User Custom Fields
+## Step 9: Create User Custom Fields
 
 Within <b>Setup</b>, click on <b> Contact </b> to create the fields we'll need.
 
