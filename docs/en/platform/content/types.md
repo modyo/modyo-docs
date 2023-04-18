@@ -40,11 +40,16 @@ Create a content type which will function as a template to future entries.
 4. Select the type's cardinality.
 5. Click **Create**.
 
-::: tip Tip
+:::tip Tip
 We recommend writing the format of the entries within the identifier, for example, videos, posts, etc. This way, any teammate will know what type of content it is and can use it as a template for their posts without generating a new one.
 
 Cardinality refers to the number of entries that can exist for this type of content. Single Cardinality means that only one such entry can exist. With multiple cardinality there is no limit to the number of entries.
 :::
+
+:::warning Warning
+There is a limit of 50 Content Types per Space.
+:::
+
 
 In the creation interface, you can see an empty template at the center of your screen, while on the right side, you can see a table with three tabs.
 
@@ -56,7 +61,7 @@ This interface is where we populate our types with the correct fields we need ba
 
 ## Fields
 
-::: tip Tip
+:::tip Tip
 The field name is important because this name is how you access the field value through Liquid and JavaScript SDKs. To access the value of a field of an entry through Liquid, use the format <span v-pre>`{{entry["field name"]}}`</span>.
 
 For more information go to the [API reference](/en/platform/content/public-api-reference.html)
@@ -70,7 +75,7 @@ When a field is required, at the time of creating or modifying an entry, there m
 
 This field allows you to enter single-line texts. and has the following restrictions:
 
-- **Minimum length**: Allows you to require a minimum text length.
+- **Minimum length**: Allows you to require a minimum integer value.
 - **Maximum length**: Limit the maximum length of the text entered.
 - **Regular expression validation**: Allows you to add a regular expression to validate that the text matches a certain format.
 
@@ -79,7 +84,7 @@ This field allows you to enter single-line texts. and has the following restrict
 
 This field translates into a multi-line text WYSIWYG editor that also allows you to modify its HTML code. This field has the following restrictions:
 
-- **Minimum length**: Allows you to require a minimum text length.
+- **Minimum length**: Allows you to require a minimum integer value.
 - **Maximum length**: Limit the maximum length of the text entered.
 
 ### Dropdown
@@ -90,7 +95,7 @@ This field allows you to add a drop-down list to select only one option.
 
 This field allows you to add a fixed list of items to select only one option.
 
-### Check box
+### Checkbox
 
 This field allows you to add a list from which you can select more than one option or leave it blank.
 
@@ -107,14 +112,14 @@ This field allows you to add a question or statement (True or False).
 This field allows you to add an integer that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
 - **Minimum length**: Allows you to require a minimum integer value.
-- **Maximum length**: Limit a maximum integer value.
+- **Maximum length**: Limit the maximum length of the text entered.
 
 ### Decimal
 
 This field allows you to add a decimal number that must be by default between `-65325` and `+65325`. However, it can be bounded using the restrictions:
 
-- **Minimum length**: Allows you to require a minimum decimal value.
-- **Maximum length**: Limit a maximum decimal value.
+- **Minimum length**: Allows you to require a minimum integer value.
+- **Maximum length**: Limit the maximum length of the text entered.
 
 ### Date
 
