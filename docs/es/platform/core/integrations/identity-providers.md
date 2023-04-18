@@ -184,12 +184,14 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 3. Completa la siguiente información
    * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
    * **Supported account types**: Usa **"Accounts in any organizational directory and personal Microsoft accounts"** para incluir cuentas personales de Microsoft. Puedes encontrar más información al respecto [aquí](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
-   * **Redirect URI**: Usa la URL relativa a la cuenta `/auth/openidc/callback`.
-4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtiene el **Application ID** y **Directory ID**.
+   * **Redirect URI**: Para la cuenta admin usa: `test.modyo.com/admin/auth/openidc/callback`.
+      * Para los realms usa: `test.modyo.com/realms/<nombre-realm>/auth/openidc/callback`.
+      * Substituye `test.modyo.com` por la URL de tu cuenta.
+4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtiene el **Id de aplicación (cliente)** y **Id de directorio (inquilino)**.
 
 <img src="/assets/img/platform/aad-client.png" alt="Azure's overview page with Application and Directory IDs." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**.
+5. Ve a **App registrations > Certificates & secrets** y crea un nuevo secreto con el botón **New client secret**. Es importante copiar el secreto y su valor en un lugar seguro antes de continuar, una vez que salgas de esta ventana, no podrás accesar el valor.
 
 <img src="/assets/img/platform/aad-secret.png" alt="New client secret button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -198,10 +200,11 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 La siguiente configuración es válida tanto para las integraciones de usuarios de Equipos como de Customer.
 
 1. Desde la plataforma de Modyo, selecciona **Configuración/Configuración de reino** y haz click en **Proveedores de indentidad**.
-1. Selecciona **OpenID Connect** y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
-1. En la consola de Azure, selecciona **App registrations** y haz click en **Endpoints** para obtener URLs de **Authorization endpoint** y **Token endpoint**. 
-1. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
-1. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no contar con scopes personalizados.
+1. Selecciona **OpenID Connect** y completa **Client ID**, también llamado Id de aplicación, y **Secret** con las credenciales obtenidas del portal de Azure.
+1. En el portal de Azure, en Información General, haz click en Puntos de Conexión, y copia la URL de **Documento de Metadatos de OpenID Connect**.
+1. Abre la URL en tu navegador, busca **Issuer**, y copia su valor.
+1. En Modyo Platform, pega el valor en Issuer y haz click en **Run Discovery Service**. Al terminar el proceso, todos los URLs requeridos serán llenados automáticamente.
+1. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,profile,email` en caso de que no contar con scopes personalizados.
 1. Habilita características opcionales de la integración.
    |  Opción                                      |       Descripción                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
