@@ -46,6 +46,11 @@ Recomendamos escribir el formato de las entradas dentro del identificador, por e
 La cardinalidad se refiere al número de entradas que pueden existir para este tipo de contenido. Cardinalidad single significa que solamente una entrada de ese tipo puede existir. Seleccionar cardinalidad múltiple no te limita en el número de entradas.
 :::
 
+:::warning Atención
+Hay un límite de 50 Tipos de Contenido dentro de un Espacio.
+:::
+
+
 En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
 
 - **Añadir campos**
