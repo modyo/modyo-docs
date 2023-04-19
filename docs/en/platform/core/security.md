@@ -12,7 +12,7 @@ At Modyo, everything related to security is very important to us. That's why we 
 
 These are the options available for setting a password policy for Modyo Platform:
 
-- Minimum password length value: This number dictates the minimum number of characters a password must have. A password must be between 8 and 128 characters long.
+- Minimum password length value: This number dictates the minimum number of characters a password must have. A password must be between 12 and 128 characters long.
 - Require at least one lowercase letter (a - z)
 - Require at least one capital letter (A - Z)
 - Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
@@ -43,7 +43,7 @@ Select a value in this option so that the platform automatically expires a sessi
 - 1 weeks
 - 2 weeks
 
-## User inactivity policy
+## User inactivity period policy
 
 With this option, the platform automatically changes the status of a user to inactive. After a certain period of time without interaction with the platform, the user will no longer be able to log in. You can choose between these values:
 
@@ -55,7 +55,7 @@ With this option, the platform automatically changes the status of a user to ina
 There is an additional checkbox that sends an activation email when the user is deactivated due to inactivity.
 
 :::tip Note
-Administrators can change the status of a user between inactive and active with the "Login disabled by inactivity" checkbox. This can be found when modifying a user in **Team**, **Edit** tab. With the checkbox enabled, the user will be inactive, and vice-versa with the checkbox disabled, the user will be active.
+Administrators can change the status of a user between inactive and active with the "Login disabled for inactivity" checkbox. This can be found when modifying a user in the **Edit** tab inside **Teams**. With the checkbox enabled, the user will be inactive, and vice-versa with the checkbox disabled, the user will be active.
 :::
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
