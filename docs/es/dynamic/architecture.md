@@ -18,7 +18,7 @@ La combinación de micro frontends y microservicios permite que cada servicio y 
 
 Además, la arquitectura desacoplada basada en micro frontends y microservicios también permite una mayor independencia entre los equipos de desarrollo, ya que cada equipo puede centrarse en su servicio o componente de UI específico sin tener que preocuparse por el resto del sistema. Esto facilita la colaboración y acelera el proceso de desarrollo.
 
-
+Modyo Dynamic se implementa sobre tecnologías reconocidas en la industria, que permiten minimizar el vendor lock-in y asegurar la mantenibilidad futura del código, como es el caso de React para experiencias de frontend y Spring Boot para las integraciones de backend.
 
 ### Integración a Sistemas Core
 La integración hacia los sistemas core del cliente, se puede realizar de dos formas. La primera de ellas mediante [Modyo Connect](/es/connect) y la segunda de forma directa a APIs controladas directamente por el cliente.
@@ -34,9 +34,9 @@ Los Micro Frontends disponibles en Modyo Dynamic pueden ser integrados directame
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 Para ello, existen dos opciones:
+
 - Alterar el código del componente intermediario de comunicación, ajustando las llamadas a APIs y los resultados a la estructura de Modyo Dynamic, siguiendo el [patrón de arquitectura de repositorio](https://martinfowler.com/eaaCatalog/repository.html), pero alterando el origen de los datos.
 - Realizar llamadas a las APIs de forma directa desde los Micro Frontends, eliminando con ello el componente intermediario provisto por Modyo.
-
 
 :::warning APIs de Integración
 Las plantillas de microservicios de integración ofrecidas como parte de la iniciativa, podrán ser desplegadas también dentro de la infraestructura del cliente. Para ello, ciertos ajustes en su código base podrían ser necesarios.
@@ -59,13 +59,13 @@ Los micro frontends de Modyo Dynamic están diseñados para ser desplegados en l
 Para más información sobre la Plataforma Modyo y sus funcionalidades, favor referirse a su [documentación oficial](/es/platform).
 :::
 
-
 ### Web Components
 Los Web Components son una tecnología web que permite la creación de componentes personalizados reutilizables en aplicaciones web. Estos componentes encapsulan HTML, CSS y JavaScript y se pueden utilizar en diferentes proyectos y aplicaciones web.
 
 En los micro frontend de Modyo Dynamic, los web components permiten crear componentes reutilizables y fáciles de mantener. Al utilizar web components en un micro frontend, se pueden separar las funcionalidades y las responsabilidades de cada componente, lo que facilita el desarrollo y el mantenimiento de la aplicación.
 
-Modyo Dynamic utiliza la librería de Web Components de [Stencil JS](https://stenciljs.com).
+Uno de los pilares del Sistema de Diseño de Modyo son los Web Components, o más específicamente, Custom Elements, apegados a estándares, que funcionan como abstracciones de bajo nivel que pueden ser usados en un framework específico.
+Estos son compilados con Stencil JS que nos permite utilizar las definiciones de un sistema de diseño en distintas implementaciones como React, Angular o Vue.
 
 ### React
 ReactJS es una biblioteca de JavaScript de código abierto desarrollada por Facebook que se utiliza para construir interfaces de usuario interactivas y escalables para aplicaciones web y móviles. ReactJS es una de las herramientas más populares para la creación de aplicaciones web modernas.
