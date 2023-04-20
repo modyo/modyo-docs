@@ -17,12 +17,18 @@ La estructura de Modyo Dynamic se compone de tres elementos fundamentales, cada 
 
 <img src="/assets/img/dynamic/dynamic_components.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
+### Dynamic Design System
 
-- **Dynamic Design System:** Sistema de diseño que permite componer interfaces orientadas a la industria financiera de forma rápida y eficiente, tomando ventaja de un catálogo de componentes pre fabricados que resuelven problemas comunes de experiencia de usuarios. 
-- **Dynamic Financial Experiences:** Experiencias de productos financieros digitales listas para ser desplegadas, que permiten además ser modificadas y adaptadas a la realidad de cada cliente.
-- **Dynamic Integrations:** Plantillas de integración, ofrecidas en formato de microservicios, que se integran a APIs relevantes del ecosistema financiero.
+El sistema de diseño de Modyo Dynamic permite componer interfaces orientadas en la industria financiera de una forma fácil y rápida, tomando ventaja de un catálogo de componentes pre fabricados que resuelven los problemas comunes en la experiencia de usuarios.
 
+El sistema de diseño de Modyo Dynamic se compone de un kit de diseño en Figma y una completa implementación de componentes web hechos en ReactJS, distribuido en un paquete listo para ser incluido en cualquier proyecto javascript.
 
+### Dynamic Financial Experiences
+
+Dynamic Financial Experiences son un conjunto de flujos y experiencias de usuarios pre-hechas, personalizables y listas para ser desplegadas.
+Estas interfaces están implementadas como [micro-frontends](/es/connect/resources/microfrontends.html), usando los componentes web de nuestro Dynamic Design System, lo que facilita su personalización y modificación.
+
+### Dynamic Integrations
 
 ### ¿Quieres contribuir?
 Si estás interesado en contribuir a Modyo Dynamic como usuario, hay varias maneras en las que puedes ayudar:
@@ -31,9 +37,4 @@ Si estás interesado en contribuir a Modyo Dynamic como usuario, hay varias mane
 
 Para comunicarte con el equipo, puedes realizarlo mediante nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
 
-
-
-
-
-
-
+Si deseas reportar un problema o sugerir una funcionalidad, puedes comunicarte con nuestro [Centro de Soporte de Modyo](https://support.modyo.com).

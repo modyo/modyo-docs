@@ -1,6 +1,7 @@
 # Dynamic Experiences
 
 El catálogo de Micro Frontends de Modyo Dynamic comprende la implementación como micro frontend de un conjunto de experiencias financieras completas e integradas a un API de referencia. Los Micro Frontends de Dynamic se desarrollarán pensando en los siguientes grupos de experiencias:
+
 - Banca Personal
 - Banca Empresas
 - Banca Corporativa
