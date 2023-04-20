@@ -2,7 +2,6 @@
 search: false
 ---
 # Pay Debt
-**[Repository](https://github.com/modyo-dynamic/modyo-widget-retail-pay-debt)**
 
 El widget Pay Debt muestra la fecha límite y el pago mínimo que se debe realizar de la obligación. También se puede realizar el pago del saldo total o saldo parcial. Cuenta con alternativas de pago en caso que el cliente no pueda realizar el pago
 

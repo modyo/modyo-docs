@@ -3,7 +3,6 @@ search: false
 ---
 
 # Loan Approval
-**[Repository](https://github.com/modyo-dynamic/modyo-widget-retail-loan-approval)**
 
 Este widget permite la aprobación de un crédito de consumo previamente solicitado. Se generan las condiciones del crédito y se puede aceptar o denegar la solicitud ante Mambu, en caso de ser aceptada se valida la identidad a través de un OTP (Mock), se selecciona la cuenta que recibirá el desembolso y termina el proceso del crédito.
 

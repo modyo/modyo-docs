@@ -3,7 +3,6 @@ search: false
 ---
 
 # Transfer
-**[Repository](https://github.com/modyo-dynamic/modyo-widget-retail-transfer)**
 
 Permite realizar transferencias entre las cuentas de depósito activas que tenga un cliente, generando un movimiento de entrada o salida en cada una de las cuentas. También permite compartir el resultado de la transacción exitosa por medio de una imagen o un pdf.
 
