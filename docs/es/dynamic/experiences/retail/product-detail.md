@@ -16,6 +16,9 @@ modyo-cli get modyo-widget-retail-product-detail
 
 El widget está vinculado con el paquete `modyo-service-retail` donde se conecta con el repositorio de productos y transacciones
 
+<img src="/assets/img/dynamic/experiences/retail/product-detail.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
+<!--
 ### Componentes del Design System
 
 - MApp
@@ -38,3 +41,4 @@ El widget está vinculado con el paquete `modyo-service-retail` donde se conecta
 - pay-debt-path
 - payments-path
 - loan-application-path
+-->

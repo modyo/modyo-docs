@@ -12,6 +12,9 @@ modyo-cli get modyo-widget-retail-transfer
 
 El widget está vinculado con el paquete `modyo-service-retail` donde se conecta con el repositorio de productos, transferencias y contactos (Mocked)
 
+<img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
+<!--
 ### Componentes del Design System
 
 - MApp
@@ -35,3 +38,4 @@ El widget está vinculado con el paquete `modyo-service-retail` donde se conecta
 - mock-contacts
 - mock-transfers
 - dashboard-path
+-->

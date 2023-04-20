@@ -11,6 +11,9 @@ modyo-cli get modyo-widget-retail-dashboard-payments
 
 Este widget usa el paquete `modyo-service-retail` para conectarse con el repositorio de productos del tipo `loan`.
 
+<img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
+<!--
 ### Componentes del Design System
 - MApp
 - MButton
@@ -24,3 +27,4 @@ Este widget usa el paquete `modyo-service-retail` para conectarse con el reposit
 - api-path
 - mock-products
 - mock-categories
+-->

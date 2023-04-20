@@ -12,6 +12,8 @@ modyo-cli get modyo-widget-retail-loan-application
 
 El widget está vinculado con el paquete `modyo-service-retail` donde se conecta con el repositorio de Solicitud de crédito
 
+
+<!--
 ### Componentes del Design System
 - MApp
 - ModalContextProvider
@@ -28,3 +30,4 @@ El widget está vinculado con el paquete `modyo-service-retail` donde se conecta
 - api-user-id
 - api-path
 - mock-loans
+-->

@@ -14,6 +14,9 @@ El widget está vinculado con el paquete `modyo-service-retail` donde se conecta
 ### Requisito de despliegue: 
 Enviar el `ID` del producto a pagar en la URL con el siguiente query param: `product_id=8a44adb785bff26e0185c04cff090942`
 
+<img src="/assets/img/dynamic/experiences/retail/pay-debt.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
+<!--
 ### Componentes del Design System
 - MApp
 - MToastContainer
@@ -41,3 +44,4 @@ Enviar el `ID` del producto a pagar en la URL con el siguiente query param: `pro
 - api-path
 - mock-products
 - mock-payment
+-->

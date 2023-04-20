@@ -12,7 +12,9 @@ modyo-cli get modyo-widget-retail-dashboard
 ```
 
 El widget está vinculado con el paquete `modyo-service-retail` donde se conecta con el repositorio de productos, y se conecta con el repositorio de contactos (mocks)
+<img src="/assets/img/dynamic/experiences/retail/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
+<!--
 ### Componentes del Design System
 
 - MApp
@@ -35,3 +37,4 @@ El widget está vinculado con el paquete `modyo-service-retail` donde se conecta
 - mock-contacts
 - mock-products
 - mock-categories
+-->
