@@ -159,7 +159,7 @@ With Spring Boot, developers can quickly and easily build web applications, micr
 In addition, Spring Boot integrates well with other technologies on the Java platform, allowing developers to create highly scalable and efficient applications. In short, Spring Boot is a powerful and popular tool for developing modern Java applications.
 
 ### Modyo Connect
-The Modyo Dynamic microservices have been designed to be deployed on the managed infrastructure service of [Modyo Connect] (/es/connect), however, they can be adapted for any type of cloud or physical infrastructure.
+The Modyo Dynamic microservices have been designed to be deployed on the managed infrastructure service of [Modyo Connect](/en/connect), however, they can be adapted for any type of cloud or physical infrastructure.
 
 :: :type Modyo Connect
 For more information on Modyo Connect and its components, please refer to its [official documentation] (“/es/connect”).
