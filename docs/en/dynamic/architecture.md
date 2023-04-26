@@ -38,7 +38,7 @@ To do this, there are two options:
 - Alter the code of the communication intermediary component, adjusting the API calls and the results to the Modyo Dynamic structure, following the [repository architecture pattern] (https://martinfowler.com/eaaCatalog/repository.html), but altering the source of the data.
 - Make calls to the APIs directly from the Micro Frontends, thus eliminating the intermediary component provided by Modyo.
 
-:: :warning Integration APIs
+:::warning Integration APIs
 The integration microservice templates offered as part of the initiative can also be deployed within the customer's infrastructure. To do this, certain settings in your code base may be necessary.
 :::
 
