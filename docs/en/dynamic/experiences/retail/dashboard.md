@@ -12,7 +12,7 @@ modyo-cli get modyo-widget-retail-dashboard
 ```
 
 The widget is linked to the `modyo-service-retail` package where it connects to the product repository, and connects to the contact repository (mocks)
- <img src="/assets/img/dynamic/experiences/retail/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/dynamic/experiences/retail/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
 
 <! --
 ### Components of the Design System
