@@ -21,7 +21,7 @@ In addition, the decoupled architecture based on micro frontends and microservic
 Modyo Dynamic is implemented on industry-recognized technologies that minimize vendor lock-in and ensure the future maintainability of the code, such as React for frontend experiences and Spring Boot for backend integrations.
 
 ### Integration to Core Systems
-The integration into the customer's core systems can be done in two ways. The first one through [Modyo Connect] (/es/connect) and the second one directly to APIs controlled directly by the customer.
+The integration into the customer's core systems can be done in two ways. The first one through [Modyo Connect] (/en/connect) and the second one directly to APIs controlled directly by the customer.
 
 #### APIs in Modyo Connect
 [Modyo Connect] (/es/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within Modyo Dynamic can be directly deployed, as shown in the following figure:
