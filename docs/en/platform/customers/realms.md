@@ -240,7 +240,7 @@ Use an authentication client to send the access tokens from your integration to 
 
 ### Team members
 
-To organize the work, Modyo allows you to select the members of the team that will work in each kingdom and thus control access to the different aspects of the kingdom.
+To organize the work, Modyo allows you to select the members of the team that will work in each realm and thus control access to the different aspects of the realm.
 
 To add a user to the kingdom, select the primary button **+ Add Member** in the upper right part of the view, in the modal select an administrator, and assign a role, then press **Add** to make that administrator part of the kingdom's work team.
 
