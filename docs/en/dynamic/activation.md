@@ -2,7 +2,7 @@
 
 The activation of Modyo Dynamic is carried out through a subscription agreement complementary to that of the Modyo Platform.
 
-:: :tip Activation
+:::tip Activation
 To request the activation of Modyo Dynamic, please contact your assigned sales or customer executive.
 :::
 
