@@ -66,7 +66,7 @@ Por defecto, los dominios personalizados de tus sitios se incluyen una vez que C
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
-Esta clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado-2).
+Esta clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado).
 
 :::warning Atención
 Generar una nueva clave forzará a que todas las request de contenido privado pasen por Modyo, dado que los JWT firmados por Modyo con la clave antigua ya no serán válidos.
