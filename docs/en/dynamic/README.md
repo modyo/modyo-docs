@@ -37,4 +37,4 @@ If you're interested in contributing to Modyo Dynamic as a user, there are sever
 
 To communicate with the team, you can do so through our [Modyo Support Center](https://support.modyo.com).
 
-If you want to report a problem or suggest a feature, you can contact our [Modyo Support Center] (https://support.modyo.com).
+If you want to report a problem or suggest a feature, you can contact our [Modyo Support Center](https://support.modyo.com).
