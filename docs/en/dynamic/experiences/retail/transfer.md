@@ -12,7 +12,7 @@ modyo-cli get modyo-widget-retail-transfer
 
 The widget is linked to the `modyo-service-retail` package where it connects to the repository of products, transfers and contacts (Mocked)
 
- <img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 <! --
 ### Components of the Design System
