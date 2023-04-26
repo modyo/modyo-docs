@@ -55,7 +55,7 @@ Modyo Dynamic uses a proven and mature architecture based on micro frontends to 
 
 The Modyo Dynamic micro frontends are designed to be deployed on the Modyo Platform and it is not guaranteed that they can be used outside of it.
 
-:::type Modyo Platform
+:::tip Modyo Platform
 For more information about the Modyo Platform and its functionalities, please refer to its [official documentation](/en/platform).
 :::
 
@@ -161,7 +161,7 @@ In addition, Spring Boot integrates well with other technologies on the Java pla
 ### Modyo Connect
 The Modyo Dynamic microservices have been designed to be deployed on the managed infrastructure service of [Modyo Connect](/en/connect), however, they can be adapted for any type of cloud or physical infrastructure.
 
-:::type Modyo Connect
+:::tip Modyo Connect
 For more information on Modyo Connect and its components, please refer to its [official documentation](“/en/connect”).
 :::
 
