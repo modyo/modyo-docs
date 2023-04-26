@@ -306,7 +306,7 @@ These are the options available for setting a password policy for Modyo Platform
 
 #### reCAPTCHA
 
-These are the options available when you enable reCAPTCHA in the kingdom.
+These are the options available when you enable reCAPTCHA in the realm.
 
 - **reCAPTCHA enable**: Enables reCAPTCHA protection for user registration, form submission, login and password recovery.
 - **Site Key**
@@ -315,7 +315,7 @@ These are the options available when you enable reCAPTCHA in the kingdom.
 
 ### Payment settings
 
-These are the options available when you have Payment enabled in your kingdom. 
+These are the options available when you have Payment enabled in your realm. 
 
 - **Currency format**: Modify the type of score displayed. 
 - **Enable email sending**: If selected, the user will receive an email after paying for an order.
