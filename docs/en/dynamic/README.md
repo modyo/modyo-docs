@@ -26,7 +26,7 @@ The Modyo Dynamic design system consists of a Figma design kit and a complete im
 ### Dynamic Financial Experiences
 
 Dynamic Financial Experiences are a set of pre-made, customizable and ready-to-deploy user experiences and flows.
-These interfaces are implemented as [micro-frontends] (/es/connect/resources/microfrontends.html), using the web components of our Dynamic Design System, which makes it easy to customize and modify them.
+These interfaces are implemented as [micro-frontends](/en/connect/resources/microfrontends.html), using the web components of our Dynamic Design System, which makes it easy to customize and modify them.
 
 ### Dynamic Integrations
 
@@ -35,6 +35,6 @@ If you're interested in contributing to Modyo Dynamic as a user, there are sever
 - Use the framework within our test environments and provide feedback on problems and possible improvements that you think we can make
 - Participate in the community by joining our webinars and digital events that we hold on a regular basis
 
-To communicate with the team, you can do so through our [Modyo Support Center] (https://support.modyo.com).
+To communicate with the team, you can do so through our [Modyo Support Center](https://support.modyo.com).
 
 If you want to report a problem or suggest a feature, you can contact our [Modyo Support Center] (https://support.modyo.com).
