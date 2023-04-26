@@ -86,6 +86,8 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 - **Placeholder for login**: Text to be displayed in the identification field as placeholder if the user has not filled in the field.
 - **Use SSL**: Enable this option if your OAuth2 authentication service uses a secure socket layer (SSL: _Secure Sockets Layer_).
 
+To create a OAuth cliente, see [OAuth Client](/en/platform/customers/realms.html#oauth-client).
+
 
 ## OpenID Connect
 
@@ -182,12 +184,14 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 3. Complete the following information
    * **Name**: Use a meaningful name, for example, `modyo-production`.
    * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include personal Microsoft accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
-   * **Redirect URI**: Use the URL related to the `/auth/openidc/callback` account.
-4. Once the application is created, go to **App registrations > modyo-production** and get the **Application ID** and **Directory ID**.
+   * **Redirect URI**: For admin accounts use: `test.modyo.com/admin/auth/openidc/callback`.
+      * For realms use: `test.modyo.com/realms/<realm-name>/auth/openidc/callback`.
+      * Substitute `test.modyo.com` for the URL of your account.
+4. Once the application is created, go to **App registrations > modyo-production** and get the **Application ID (client) ** and **Directory ID (tenant) **.
 
 <img src="/assets/img/platform/aad-client.png" alt="Azure's overview page with Application and Directory IDs." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-5. Go to **App registrations > Certificates & secrets** and create a new secret with the **New client secret** button.
+5. Go to **App registrations > Certificates & secrets** and create a new secret with the **New client secret** button. It's important to copy the secret and its value to a safe place before continuing. Once you leave this window, you won't be able to access the value.
 
 <img src="/assets/img/platform/aad-secret.png" alt="New client secret button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -196,10 +200,11 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 The following configuration applies to both Team and Customer user integrations.
 
 1. From the Modyo platform, select **Settings/Realm Settings** and click **Identity Providers**.
-1. Select **OpenID Connect** and fill out **Client ID** and **Secret** with the credentials obtained from the Azure portal.
-1. In the Azure console, select **App registrations** and click **Endpoints** to get the **Authorization endpoint** and **Token endpoint** URLs. 
-1. Visit the OpenID Connect metadata document and get **Userinfo endpoint** and **End session endpoint**.
-1. Configure **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+1. Select **OpenID Connect** and complete **Client ID**, also called Application ID, and **Secret** with the credentials obtained from the Azure portal.
+1. On the Azure portal, under General Information, click on Connection Points, and copy the URL of **OpenID Connect Metadata Document**.
+1. Open the URL in your browser, search for **Issuer**, and copy its value.
+1. In Modyo Platform, paste the value into Issuer and click on **Run Discovery Service**. At the end of the process, all the required URLs will be filled in automatically.
+1. Configure **Scopes** with the scopes required for the application. Use `openid, profile, email` if you don't have custom scopes.
 1. Enable optional integration features.
    |  Option                                      |       Description                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
