@@ -11,7 +11,7 @@ modyo-cli get modyo-widget-retail-dashboard-payments
 
 This widget uses the `modyo-service-retail` package to connect to the `loan` product repository.
 
- <img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 <! --
 ### Components of the Design System
