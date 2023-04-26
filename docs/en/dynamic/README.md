@@ -15,7 +15,7 @@ Modyo Dynamic requires an active subscription to the [Modyo Platform](/en/platfo
 
 The structure of Modyo Dynamic is made up of three fundamental elements, each of them designed for each phase of implementation of a complete digital financial product. The following figure shows the different components within each Modyo Dynamic element.
 
- <img src="/assets/img/dynamic/dynamic_components.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" /> 
+<img src="/assets/img/dynamic/dynamic_components.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 ### Dynamic Design System
 
