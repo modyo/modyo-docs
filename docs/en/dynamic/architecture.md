@@ -55,8 +55,8 @@ Modyo Dynamic uses a proven and mature architecture based on micro frontends to 
 
 The Modyo Dynamic micro frontends are designed to be deployed on the Modyo Platform and it is not guaranteed that they can be used outside of it.
 
-:: :type Modyo Platform
-For more information about the Modyo Platform and its functionalities, please refer to its [official documentation] (/es/platform).
+:::type Modyo Platform
+For more information about the Modyo Platform and its functionalities, please refer to its [official documentation](/en/platform).
 :::
 
 ### Web Components
