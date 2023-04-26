@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-Welcome to a new tutorial in the Modyo training series. This tutorial focuses on creating a [Widget](/en/platform/channels/widgets.html), where you can use [Modyo Financial Widget Catalog](/en/widgets/) using the [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli).
+Welcome to a new tutorial in the Modyo training series. This tutorial focuses on creating a [Widget](/en/platform/channels/widgets.html), where you can use [Modyo Dynamic](/en/dynamic/) using the [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli).
 
 As with the other tutorials we will use the fictitious brand “Dynamic Bank”.
 

@@ -52,10 +52,10 @@ FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5
 FirstSteps3Url: /es/platform/key-concepts
 FirstSteps3Alt: Una lista de todos los conceptos y términos clave que usamos para la plataforma.
 
-FirstSteps4Title: Widget Catalog
-FirstSteps4Text: Un catálogo que ofrece diferentes experiencias financieras a tus necesidades.
+FirstSteps4Title: Experiencias Financieras
+FirstSteps4Text: Modyo Dynamic catálogo que ofrece diferentes experiencias financieras a tus necesidades.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
-FirstSteps4Url: /es/widgets/
+FirstSteps4Url: /es/dynamic/
 FirstSteps4Alt: Un catálogo que ofrece diferentes experiencias financieras a tus necesidades.
 
 

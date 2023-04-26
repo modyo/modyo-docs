@@ -15,8 +15,7 @@ module.exports = {
       description: "Bienvenido a la documentación oficial de Modyo.",
     },
   },
-  plugins: [
-  ],
+  plugins: [],
   head: [
     [
       "script",
@@ -46,25 +45,24 @@ module.exports = {
         selectText: "Languages",
         label: "English",
         nav: [
-          { text: "Platform", link: "/en/platform/" },
-          { text: "Widgets", link: "/en/widgets/" },
-          { text: "Connect", link: "/en/connect/" },
-          // { text: "Dynamic", link: "/en/dynamic/" },
-          { text: "Modyo", link: "https://www.modyo.com" },
-          { text: "Support", link: "https://support.modyo.com/hc/en-us" },
-        ],                
+          {text: "Platform", link: "/en/platform/"},
+          {text: "Dynamic", link: "/en/dynamic/"},
+          {text: "Connect", link: "/en/connect/"},
+          {text: "Modyo", link: "https://www.modyo.com"},
+          {text: "Support", link: "https://support.modyo.com/hc/en-us"},
+        ],
         sidebar: {
           "/en/platform/": [{
-              title: "First Steps",
-              path: "/en/platform/",
-              collapsable: true,
-              children: [
-                "/en/platform/whats-new",
-                "/en/platform/key-concepts",
-                "/en/platform/release-notes",
-                "/en/platform/training",
-              ],
-            },
+            title: "First Steps",
+            path: "/en/platform/",
+            collapsable: true,
+            children: [
+              "/en/platform/whats-new",
+              "/en/platform/key-concepts",
+              "/en/platform/release-notes",
+              "/en/platform/training",
+            ],
+          },
             {
               title: "Tutorials",
               path: "/en/platform/tutorials/",
@@ -199,81 +197,96 @@ module.exports = {
               ],
             },
           ],
-          "/en/widgets/": [{
-              title: "Catalog",
-              collapsable: true,
-              children: [
-                "/en/widgets/guides/first-steps",
-                "/en/widgets/guides/look-and-feel",
-                ["/en/widgets/guides/i18n", "Internationalization"],
-                ["/en/widgets/guides/share-state", "Shared state"],
-                "/en/widgets/guides/liquid-variables",
-                "/en/widgets/guides/local-liquid",
-                "/en/widgets/guides/ci-cd",
-                "/en/widgets/guides/repository-pattern",
-                "/en/widgets/guides/storybook",
-              ],
-            },
-            {
-              title: "Retail",
-              collapsable: true,
-              children: [
-                "/en/widgets/retail/summary",
-                "/en/widgets/retail/account-summary",
-                "/en/widgets/retail/accounts",
-                "/en/widgets/retail/credit-cards",
-                "/en/widgets/retail/credit-card-payment",
-                "/en/widgets/retail/loans",
-                "/en/widgets/retail/consumer-loan",
-                "/en/widgets/retail/mortgage-loans",
-                "/en/widgets/retail/cash-advance",
-                "/en/widgets/retail/transfer",
-                "/en/widgets/retail/transfers",
-                "/en/widgets/retail/payment-summary",
-              ],
-            },
-            {
-              title: "Investments",
-              collapsable: true,
-              children: [
-                "/en/widgets/investments/accounts",
-                "/en/widgets/investments/general-summary",
-                "/en/widgets/investments/detailed-summary",
-                "/en/widgets/investments/investments-transfers",
-                "/en/widgets/investments/investments-transfer",
-                "/en/widgets/investments/deposits",
-                "/en/widgets/investments/documents",
-                "/en/widgets/investments/mutual-funds",
-                "/en/widgets/investments/stocks",
-              ],
-            },
-            {
-              title: "Insurance Brokers",
-              collapsable: true,
-              children: [
-                "/en/widgets/insurance-brokers/dashboard",
-                "/en/widgets/insurance-brokers/quote",
-                "/en/widgets/insurance-brokers/detailed-view",
-                "/en/widgets/insurance-brokers/issue-policy",
-              ],
-            },
-            {
-              title: "Insurance Retail",
-              collapsable: true,
-              children: [
-                "/en/widgets/insurance-retail/summary",
-                "/en/widgets/insurance-retail/quote",
-                "/en/widgets/insurance-retail/detailed-view",
-              ],
-            },
-          ],
           "/en/dynamic/": [{
             title: "Modyo Dynamic",
             collapsable: false,
             children: [
-              ["/en/dynamic/", "What is Modyo Dynamic?"]
+              ["/en/dynamic/", "What is Modyo Dynamic?"],
+              "/en/dynamic/architecture",
+              "/en/dynamic/activation",
+              "/en/dynamic/support"
             ],
-          }, ],
+          },
+            {
+              title: "Dynamic UI",
+              path: "/en/dynamic/ui/",
+              collapsable: true,
+              children: [
+                "/en/dynamic/ui/",
+                "/en/dynamic/ui/design-kit",
+                "/en/dynamic/ui/components"
+              ],
+            },
+            {
+              title: "Dynamic Experiences",
+              path: "/en/dynamic/experiences/",
+              collapsable: true,
+              children: [
+                {
+                  title: "Retail Banking",
+                  path: "/en/dynamic/experiences/retail/",
+                  collapsable: true,
+                  children: [
+                    "/en/dynamic/experiences/retail/dashboard",
+                    "/en/dynamic/experiences/retail/dashboard-payments",
+                    "/en/dynamic/experiences/retail/pay-debt",
+                    "/en/dynamic/experiences/retail/loan-application",
+                    "/en/dynamic/experiences/retail/loan-approval",
+                    "/en/dynamic/experiences/retail/product-detail",
+                    "/en/dynamic/experiences/retail/transfer",
+                  ],
+                },
+                {
+                  title: "Business Banking",
+                  path: "/en/dynamic/experiences/business/",
+                  collapsable: true,
+                  children: [
+                    "/en/dynamic/experiences/business/dashboard",
+                    "/en/dynamic/experiences/business/entitlements"
+                  ],
+                },
+                {
+                  title: "Wealth Management",
+                  path: "/en/dynamic/experiences/investments/",
+                  collapsable: true,
+                  children: [
+                    "/en/dynamic/experiences/investments/accounts",
+                    "/en/dynamic/experiences/investments/general-summary",
+                    "/en/dynamic/experiences/investments/detailed-summary",
+                    "/en/dynamic/experiences/investments/investments-transfers",
+                    "/en/dynamic/experiences/investments/investments-transfer",
+                    "/en/dynamic/experiences/investments/deposits",
+                    "/en/dynamic/experiences/investments/documents",
+                    "/en/dynamic/experiences/investments/mutual-funds",
+                    "/en/dynamic/experiences/investments/stocks",
+                  ],
+                },
+                {
+                  title: "Insurance",
+                  path: "/en/dynamic/experiences/insurance/",
+                  collapsable: true,
+                  children: [
+                    "/en/dynamic/experiences/insurance/dashboard",
+                    "/en/dynamic/experiences/insurance/quote",
+                    "/en/dynamic/experiences/insurance/quote2",
+                    "/en/dynamic/experiences/insurance/detailed-view",
+                    "/en/dynamic/experiences/insurance/detailed-view2",
+                    "/en/dynamic/experiences/insurance/issue-policy",
+                  ],
+                }
+              ],
+            },
+            {
+              title: "Dynamic Integrations",
+              path: "/en/dynamic/integrations/",
+              collapsable: true,
+              children: [
+                "/en/dynamic/integrations/mambu",
+                "/en/dynamic/integrations/jumio",
+                "/en/dynamic/integrations/salesforce"
+              ],
+            },
+          ],
           "/en/connect/": [{
             title: "Modyo Connect",
             collapsable: false,
@@ -284,25 +297,25 @@ module.exports = {
               "/en/connect/support",
             ],
           },
-          {
-            title: "Components",
-            collapsable: true,
-            children: [
-              "/en/connect/components/development",
-              "/en/connect/components/infrastructure",
-              "/en/connect/components/monitoring",
-            ],
-          },
-          {
-            title: "Resources",
-            collapsable: true,
-            children: [
-              "/en/connect/resources/microfrontends",
-              "/en/connect/resources/microservices",
-              "/en/connect/resources/mrus",
-              "/en/connect/resources/faq",
-            ],
-          }, ],
+            {
+              title: "Components",
+              collapsable: true,
+              children: [
+                "/en/connect/components/development",
+                "/en/connect/components/infrastructure",
+                "/en/connect/components/monitoring",
+              ],
+            },
+            {
+              title: "Resources",
+              collapsable: true,
+              children: [
+                "/en/connect/resources/microfrontends",
+                "/en/connect/resources/microservices",
+                "/en/connect/resources/mrus",
+                "/en/connect/resources/faq",
+              ],
+            },],
           "/en/brand/": [{
             title: "Brand Guidelines",
             collapsable: true,
@@ -313,39 +326,39 @@ module.exports = {
               "/en/brand/typography",
               "/en/brand/illustrations",
             ],
-          }, ],
+          },],
           "/en/legal/": [{
             title: "Legal",
             collapsable: true,
             children: [
               ["/en/legal/", "License Agreement"],
             ],
-          }, ],
+          },],
         },
       },
       "/es/": {
         selectText: "Lenguaje",
         label: "Español",
         nav: [
-          { text: "Plataforma", link: "/es/platform/" },
-          { text: "Widgets", link: "/es/widgets/" },
-          { text: "Connect", link: "/es/connect/" },
+          {text: "Plataforma", link: "/es/platform/"},
+          {text: "Dynamic", link: "/es/dynamic/"},
+          {text: "Connect", link: "/es/connect/"},
           // { text: "Dynamic", link: "/es/dynamic/" },
-          { text: "Modyo", link: "https://es.modyo.com" },
-          { text: "Soporte", link: "https://support.modyo.com/hc/es" },
+          {text: "Modyo", link: "https://es.modyo.com"},
+          {text: "Soporte", link: "https://support.modyo.com/hc/es"},
         ],
         sidebar: {
           "/es/platform/": [{
-              title: "Primeros Pasos",
-              path: "/es/platform/",
-              collapsable: true,
-              children: [
-                ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
-                ["/es/platform/key-concepts", "Conceptos claves"],
-                "/es/platform/release-notes",
-                ["/es/platform/training", "Entrenamiento"],
-              ],
-            },
+            title: "Primeros Pasos",
+            path: "/es/platform/",
+            collapsable: true,
+            children: [
+              ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
+              ["/es/platform/key-concepts", "Conceptos claves"],
+              "/es/platform/release-notes",
+              ["/es/platform/training", "Entrenamiento"],
+            ],
+          },
             {
               title: "Tutoriales",
               path: "/es/platform/tutorials/",
@@ -482,75 +495,6 @@ module.exports = {
               ],
             },
           ],
-          "/es/widgets/": [{
-              title: "Catálogo",
-              collapsable: true,
-              path: "/es/widgets/",
-              children: [
-                "/es/widgets/guides/first-steps",
-                "/es/widgets/guides/look-and-feel",
-                ["/es/widgets/guides/i18n", "Internacionalización"],
-                ["/es/widgets/guides/share-state", "Compartir estado"],
-                "/es/widgets/guides/liquid-variables",
-                "/es/widgets/guides/local-liquid",
-                "/es/widgets/guides/ci-cd",
-                "/es/widgets/guides/repository-pattern",
-                "/es/widgets/guides/storybook",
-              ],
-            },
-            {
-              title: "Banca Retail",
-              collapsable: true,
-              children: [
-                "/es/widgets/retail/summary",
-                "/es/widgets/retail/account-summary",
-                "/es/widgets/retail/accounts",
-                "/es/widgets/retail/credit-cards",
-                "/es/widgets/retail/credit-card-payment",
-                "/es/widgets/retail/loans",
-                "/es/widgets/retail/consumer-loan",
-                "/es/widgets/retail/mortgage-loans",
-                "/es/widgets/retail/cash-advance",
-                "/es/widgets/retail/transfer",
-                "/es/widgets/retail/transfers",
-                "/es/widgets/retail/payment-summary",
-              ],
-            },
-            {
-              title: "Inversiones",
-              collapsable: true,
-              children: [
-                "/es/widgets/investments/accounts",
-                "/es/widgets/investments/general-summary",
-                "/es/widgets/investments/detailed-summary",
-                "/es/widgets/investments/investments-transfers",
-                "/es/widgets/investments/investments-transfer",
-                "/es/widgets/investments/deposits",
-                "/es/widgets/investments/documents",
-                "/es/widgets/investments/mutual-funds",
-                "/es/widgets/investments/stocks",
-              ],
-            },
-            {
-              title: "Seguros Intermediarios",
-              collapsable: true,
-              children: [
-                "/es/widgets/insurance-brokers/dashboard",
-                "/es/widgets/insurance-brokers/quote",
-                "/es/widgets/insurance-brokers/detailed-view",
-                "/es/widgets/insurance-brokers/issue-policy",
-              ],
-            },
-            {
-              title: "Seguros Personas",
-              collapsable: true,
-              children: [
-                "/es/widgets/insurance-retail/summary",
-                "/es/widgets/insurance-retail/quote",
-                "/es/widgets/insurance-retail/detailed-view",
-              ],
-            },
-          ],
           "/es/dynamic/": [{
             title: "Modyo Dynamic",
             collapsable: false,
@@ -561,86 +505,86 @@ module.exports = {
               "/es/dynamic/support"
             ],
           },
-          {
-            title: "Dynamic UI",
-            path: "/es/dynamic/ui/",
-            collapsable: true,
-            children: [
-              "/es/dynamic/ui/",
-              "/es/dynamic/ui/design-kit",
-              "/es/dynamic/ui/components"
-            ],
-          },
-          {
-            title: "Dynamic Experiences",
-            path: "/es/dynamic/experiences/",
-            collapsable: true,
-            children: [
-              {
-                title: "Banca Retail",
-                path: "/es/dynamic/experiences/retail/",
-                collapsable: true,
-                children: [
-                  "/es/dynamic/experiences/retail/dashboard",
-                  "/es/dynamic/experiences/retail/dashboard-payments",
-                  "/es/dynamic/experiences/retail/pay-debt",
-                  "/es/dynamic/experiences/retail/loan-application",
-                  "/es/dynamic/experiences/retail/loan-approval",
-                  "/es/dynamic/experiences/retail/product-detail",
-                  "/es/dynamic/experiences/retail/transfer",
-                ],
-              },
-              {
-                title: "Banca Empresas",
-                path: "/es/dynamic/experiences/business/",
-                collapsable: true,
-                children: [
-                  "/es/dynamic/experiences/business/dashboard",
-                  "/es/dynamic/experiences/business/entitlements"
-                ],
-              },
-              {
-                title: "Inversiones",
-                path: "/es/dynamic/experiences/investments/",
-                collapsable: true,
-                children: [
-                  "/es/dynamic/experiences/investments/accounts",
-                  "/es/dynamic/experiences/investments/general-summary",
-                  "/es/dynamic/experiences/investments/detailed-summary",
-                  "/es/dynamic/experiences/investments/investments-transfers",
-                  "/es/dynamic/experiences/investments/investments-transfer",
-                  "/es/dynamic/experiences/investments/deposits",
-                  "/es/dynamic/experiences/investments/documents",
-                  "/es/dynamic/experiences/investments/mutual-funds",
-                  "/es/dynamic/experiences/investments/stocks",
-                ],
-              },
-              {
-                title: "Seguros",
-                path: "/es/dynamic/experiences/insurance/",
-                collapsable: true,
-                children: [
-                  "/es/dynamic/experiences/insurance/dashboard",
-                  "/es/dynamic/experiences/insurance/quote",
-                  "/es/dynamic/experiences/insurance/quote2",
-                  "/es/dynamic/experiences/insurance/detailed-view",
-                  "/es/dynamic/experiences/insurance/detailed-view2",
-                  "/es/dynamic/experiences/insurance/issue-policy",
-                ],
-              }
-            ],
-          },
-          {
-            title: "Dynamic Integrations",
-            path: "/es/dynamic/integrations/",
-            collapsable: true,
-            children: [
-              "/es/dynamic/integrations/mambu",
-              "/es/dynamic/integrations/jumio",
-              "/es/dynamic/integrations/salesforce"
-            ],
-          },
-        ],
+            {
+              title: "Dynamic UI",
+              path: "/es/dynamic/ui/",
+              collapsable: true,
+              children: [
+                "/es/dynamic/ui/",
+                "/es/dynamic/ui/design-kit",
+                "/es/dynamic/ui/components"
+              ],
+            },
+            {
+              title: "Dynamic Experiences",
+              path: "/es/dynamic/experiences/",
+              collapsable: true,
+              children: [
+                {
+                  title: "Banca Retail",
+                  path: "/es/dynamic/experiences/retail/",
+                  collapsable: true,
+                  children: [
+                    "/es/dynamic/experiences/retail/dashboard",
+                    "/es/dynamic/experiences/retail/dashboard-payments",
+                    "/es/dynamic/experiences/retail/pay-debt",
+                    "/es/dynamic/experiences/retail/loan-application",
+                    "/es/dynamic/experiences/retail/loan-approval",
+                    "/es/dynamic/experiences/retail/product-detail",
+                    "/es/dynamic/experiences/retail/transfer",
+                  ],
+                },
+                {
+                  title: "Banca Empresas",
+                  path: "/es/dynamic/experiences/business/",
+                  collapsable: true,
+                  children: [
+                    "/es/dynamic/experiences/business/dashboard",
+                    "/es/dynamic/experiences/business/entitlements"
+                  ],
+                },
+                {
+                  title: "Inversiones",
+                  path: "/es/dynamic/experiences/investments/",
+                  collapsable: true,
+                  children: [
+                    "/es/dynamic/experiences/investments/accounts",
+                    "/es/dynamic/experiences/investments/general-summary",
+                    "/es/dynamic/experiences/investments/detailed-summary",
+                    "/es/dynamic/experiences/investments/investments-transfers",
+                    "/es/dynamic/experiences/investments/investments-transfer",
+                    "/es/dynamic/experiences/investments/deposits",
+                    "/es/dynamic/experiences/investments/documents",
+                    "/es/dynamic/experiences/investments/mutual-funds",
+                    "/es/dynamic/experiences/investments/stocks",
+                  ],
+                },
+                {
+                  title: "Seguros",
+                  path: "/es/dynamic/experiences/insurance/",
+                  collapsable: true,
+                  children: [
+                    "/es/dynamic/experiences/insurance/dashboard",
+                    "/es/dynamic/experiences/insurance/quote",
+                    "/es/dynamic/experiences/insurance/quote2",
+                    "/es/dynamic/experiences/insurance/detailed-view",
+                    "/es/dynamic/experiences/insurance/detailed-view2",
+                    "/es/dynamic/experiences/insurance/issue-policy",
+                  ],
+                }
+              ],
+            },
+            {
+              title: "Dynamic Integrations",
+              path: "/es/dynamic/integrations/",
+              collapsable: true,
+              children: [
+                "/es/dynamic/integrations/mambu",
+                "/es/dynamic/integrations/jumio",
+                "/es/dynamic/integrations/salesforce"
+              ],
+            },
+          ],
           "/es/connect/": [{
             title: "Modyo Connect",
             collapsable: false,
@@ -651,25 +595,25 @@ module.exports = {
               "/es/connect/support",
             ],
           },
-          {
-            title: "Componentes",
-            collapsable: true,
-            children: [
-              "/es/connect/components/development",
-              "/es/connect/components/infrastructure",
-              "/es/connect/components/monitoring",
-            ],
-          },
-          {
-            title: "Recursos",
-            collapsable: true,
-            children: [
-              "/es/connect/resources/microfrontends",
-              "/es/connect/resources/microservices",
-              "/es/connect/resources/mrus",
-              "/es/connect/resources/faq",
-            ],
-          }, ],
+            {
+              title: "Componentes",
+              collapsable: true,
+              children: [
+                "/es/connect/components/development",
+                "/es/connect/components/infrastructure",
+                "/es/connect/components/monitoring",
+              ],
+            },
+            {
+              title: "Recursos",
+              collapsable: true,
+              children: [
+                "/es/connect/resources/microfrontends",
+                "/es/connect/resources/microservices",
+                "/es/connect/resources/mrus",
+                "/es/connect/resources/faq",
+              ],
+            },],
           "/es/brand/": [{
             title: "Guía de Marca",
             collapsable: false,
@@ -680,7 +624,7 @@ module.exports = {
               "/es/brand/typography",
               "/es/brand/illustrations",
             ],
-          }, ],
+          },],
           "/es/legal/": [{
             title: "Legal",
             collapsable: false,
@@ -688,7 +632,7 @@ module.exports = {
               ["/es/legal/", "Acuerdo de Licencia"],
               ["/es/legal/dpa"],
             ],
-          }, ],
+          },],
         },
       },
     },

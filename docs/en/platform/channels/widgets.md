@@ -207,7 +207,7 @@ The structure of the language file must be a **json** object:
 
 ### Form validation
 
-The [catalog widgets](/en/widgets/) come with a default form validator called [veeValidate](https://vee-validate.logaretm.com/v4/). In order to locate the error messages that the validator shows us, we need to make a small modification to the **i18n.js** configuration file.
+In order to locate the error messages that the validator shows us, we need to make a small modification to the **i18n.js** configuration file.
 
 1. We import error messages into the languages we need.
 2. In the **LoadLocaleMessages** function, we add the validator messages in the corresponding language.

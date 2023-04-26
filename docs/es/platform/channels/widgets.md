@@ -207,7 +207,7 @@ La estructura del archivo de idioma tiene que ser un objeto **json**:
 
 ### Validación de formularios
 
-Los [widgets de catálogo](/es/widgets/) traen por defecto un validador de formularios llamado [VeeValidate](https://vee-validate.logaretm.com/v4/). Para poder localizar los mensajes de error que el validador nos muestra, tenemos que hacer una pequeña modificación al archivo de configuración de **i18n.js**.
+Para poder localizar los mensajes de error que el validador nos muestra, tenemos que hacer una pequeña modificación al archivo de configuración de **i18n.js**.
 
 1. Importamos los mensajes de error en los idiomas que necesitamos.
 2. En la función **loadLocaleMessages**, agregamos los mensajes del validador en el idioma que corresponde.

@@ -41,10 +41,10 @@ FirstSteps3Text: A list of all the definitions and key concepts that we use in t
 FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5c559277/original/Key_concepts.png
 FirstSteps3Url: /en/platform/key-concepts
 
-FirstSteps4Title: Widget Catalogue
-FirstSteps4Text: A catalogue with different financial experiences tailored to your needs.
+FirstSteps4Title: Financial Experiences
+FirstSteps4Text: Modyo Dynamic is a catalogue with different financial experiences tailored to your needs.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
-FirstSteps4Url: /en/widgets/
+FirstSteps4Url: /en/dynamic/
 
 FirstSteps5Title: Modyo Training
 FirstSteps5Text: Obtain your certifications in our training programs at your own pace.
