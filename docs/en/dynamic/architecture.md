@@ -26,12 +26,12 @@ The integration into the customer's core systems can be done in two ways. The fi
 #### APIs in Modyo Connect
 [Modyo Connect](/en/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within Modyo Dynamic can be directly deployed, as shown in the following figure:
 
- <img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" /> 
+<img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 #### Customer Provided APIs
 The Micro Frontends available in Modyo Dynamic can be integrated directly into each client's APIs, increasing the flexibility of how they can be used.
 
- <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" /> 
+<img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 To do this, there are two options:
 
