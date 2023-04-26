@@ -12,6 +12,8 @@ modyo-cli get modyo-widget-retail-loan-approval
 
 El widget está vinculado con el paquete `modyo-service-retail` donde se conecta con el repositorio de Solicitud de crédito
 
+<img src="/assets/img/dynamic/experiences/retail/loan-approval.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
 <!--
 ### Componentes del Design System
 - MApp
