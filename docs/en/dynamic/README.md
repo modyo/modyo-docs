@@ -7,8 +7,8 @@ Modyo Dynamic is a set of user experiences, based on Web components and integrat
 
 Modyo Dynamic covers the common digital experience needs of financial institutions of all types, with a special focus on both product managers and digital channels, and development teams looking for a solution that will help them accelerate implementation in a modular, flexible, reusable and maintainable way.
 
-:: :type Modyo Platform
-Modyo Dynamic requires an active subscription to the [Modyo Platform] (/es/platform). The accelerating components of the digital experience described in this guide are designed to be deployed within it.
+:::type Modyo Platform
+Modyo Dynamic requires an active subscription to the [Modyo Platform](/en/platform). The accelerating components of the digital experience described in this guide are designed to be deployed within it.
 :::
 
 ### Structure
