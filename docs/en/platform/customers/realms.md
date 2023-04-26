@@ -121,13 +121,14 @@ In this section you can largely configure interaction between users and the Mody
 Here you can set up general aspects of realm, such as:
 
 - **Name**.
-- **Identifier**: Allows you to modify the url of the profile views, login, registration, and password recovery of the realm.
-- **Enable/Disable Credencials**: Allows you to disable Modyo credentials in this realm.
-- **Modify user account activation type**:
-  - Direct: Users that register will be able to log in directly
-  - Activation email: Users that register must activate their account using a link sent to the email in order to sign in.
-  - Moderate: Users that register will need to wait for a Modyo administrator to activate their account in order to sign in.
-  - Disabled: Unable to register new users in the realm. Users already registered and activated will be able to log in without problems.
+- **Identifier**: Allows you to modify the URL of the realm's profile, login, registration, and password recovery views.
+- **Enable/disable credentials**: Allows you to deactivate Modyo credentials in this realm to only log in through SSO. Consider having SSO enabled first before enabling this option.
+- **Account Activation**:
+  - Direct: Users who register will be able to log in directly.
+  - Activation e-mail: Users who register must activate their account using a link that is sent to the email in order to log in.
+  - Moderate: Users who register must wait for a Kingdom administrator to activate their account before they can log in.
+  - Disabled: New users cannot be registered in the Realm. Users already registered and activated will be able to log in without problems.
+- **Default Avatar Image**: This is the image that appears in the avatar of all users who do not have an image.
 - **Extra attributes of the registration form**:
   - Enable second last name
   - Make the second last name required
@@ -135,7 +136,8 @@ Here you can set up general aspects of realm, such as:
   - Enable user avatar
   - Enable date of birth
   - Enable gender
-- **Delete Realm**: Allows complete deletion of realm. This is a background process, so you may not see the realm disappear immediately after executing the action. In order to remove the realm, you'll need to enter the full realm name to confirm the action.
+  - Enable phone number
+- **Delete realm**: Allows the complete removal of the realm. This is a background process, so you might not see the realm disappear immediately after you execute the action. In order to delete the realm, you must enter the full name of the realm to confirm the action.
 
 :::danger Danger
 By disabling Modyo's credentials in the realm, you must make sure you have an identity provider set up for this realm, otherwise users will not be able to sign in.
@@ -143,7 +145,7 @@ By disabling Modyo's credentials in the realm, you must make sure you have an id
 
 ### Appearance
 
-This section will allow you to modify some visual aspects of the registration, login, and profile views of users in the realm.
+This section will allow you to modify the primary color, logo, and add custom CSS for the registration, login, and profile views of users in the realm.
 
 #### Primary Color
 
@@ -167,20 +169,21 @@ If you have problems with keyboard codes when you are editing the CSS, you can c
 
 ### Emails
 
-Modyo allows you to configure the sender and appearance of the emails that will be sent to users.
+Modyo allows you to configure the address and appearance of the emails that will be sent to users in the realm.
 
 To adjust the address that will appear as the sender that will send your mail, you just have to enter it in the "Default mail" field and click on the **Save** button.
 
 What this section allows is to enable, disable and customize the sending of automatic emails after specific interactions made by users, the emails are as follows:
 
 - Activation email: Sent once a user registration is completed, so that it confirms your data.
-- Imported User: Sent once the user was imported.
 - Welcome Email: Sent after completing a user registration on a specific site.
 - Added by Admin: Submitted once the administrator created the user manually.
 - Password Recovery: Sent when the user requested to recover their password.
 - Awaiting Confirmation: Sent once the user was confirmed and activated.
 - Confirmation: Sent once the user is confirmed, but you must wait for manual activation from an administrator.
+- Verification of email updates: Sent at the time of making any change of email address. 
 - Custom footer: Custom footer for all the emails described above.
+
 
 To enable or disable the sending of these emails, we just have to click on the **Enabled/Disabled** button next to each function and click on the **Save** button.
 
@@ -204,24 +207,46 @@ To simplify logging into the platform, it is possible to configure your login th
 
 The services compatible with logging into Modyo are:
 
-- Facebook
 - Google
-- LDAP
 - SAML
 - Oauth2
 - OpenID Connect
+- Keycloak
+- Azure Active Directory
 
-It is necessary to have the correct configuration of the associated service that Modyo can connect to them. Make sure all required fields are complete. For more information about integrations, see [Platform Integrations](/en/platform/core/integrations)
+It is necessary to have the correct configuration of the associated service so that Modyo can connect to them. Make sure that all required fields are complete. For more information on integrations, go to [Identity Providers] (es/platform/core/integrations/identity-providers)
+
+### Integrations
+
+#### Zendesk
+
+Manage To achieve an integration with Zendesk, the following data is required:
+
+- Integration name
+- Zendesk Shared Secret
+- Integration URL: e.g. mysubdomain.zendesk.com
+
+### OAuth client
+
+Use an authentication client to send the access tokens from your integration to your resources. The following values are required:
+
+- Name
+- Redirection URI: This is the URI where the user will be redirected by the authentication server after successfully authenticating. 
+- Logout URI: This is the URI where the user will be redirected by the authentication server after closing their session.
+- Description
+- Confidential: There are two types of Oauth clients, confidential or public. The confidential option is needed when your application is able to securely authenticate with the authentication server. Public clients are commonly applications that run on a mobile device or in a browser. 
+- Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
+
 
 ### Team members
 
-To sort the work, Modyo allows you to select the team members who will work on each realm, which controls access to the realm's different aspects.
+To organize the work, Modyo allows you to select the members of the team that will work in each kingdom and thus control access to the different aspects of the kingdom.
 
-To add a user to the realm, click the **+ Add Member** primary button at the top right of the view, in the modal select an admin, and assign them a role, then press **Add** to make that admin part of the realm team.
+To add a user to the kingdom, select the primary button **+ Add Member** in the upper right part of the view, in the modal select an administrator, and assign a role, then press **Add** to make that administrator part of the kingdom's work team.
 
 You can modify the role of any of the associated administrators by clicking on their name. A modal will pop up, where you can select the new role. Tap **Save** to confirm the change.
 
-If you want to remove a realm administrator, select the checks to the left of their name, and then click the button at the bottom of the **Delete** list.
+If you want to remove an administrator from the kingdom, select using the checkboxes to the left of their name, and then clicking on the button at the bottom of the **Delete** list.
 
 The available roles are:
 
@@ -250,11 +275,13 @@ You can only create up to 20 custom fields for each Realm.
 
 All **Custom Fields** have certain standard properties:
 
-- **Must be a unique response**: It implies that the value must be unique for each user, preventing another equal value from being saved.
-- **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. In the event that the field is also visible and editable by users, this fields will appear on the registration form and will be required to create new users.
-- **Visible to front end users**: This means that it will be visible in the profile view.
-    - **Editable by front end users**: This means that it will be visible and can also be modified by the user.
+- **The answer must be unique**: It implies that the value must be unique for each user, preventing another equal value from being saved.
+- **This is a required field**: It implies that this value must be filled in when a user is modified or created, so that a user cannot be modified if this field does not have an associated value. If the field is also visible and editable by users, these fields will appear in the registration form and will be required to create new users.
+- **Visible to site users**: It implies that it will be visible in the profile view.
+    - **Editable by users of the sites**: It implies that it will be visible and can also be modified by the user.
 - **Searchable by admins**: This value will be indexed and users can be found when searched from the user index of the Modyo administrator, by the value of that field.
+- **Suggested Text**: This is the text that appears to provide an example.
+- **Default Value**
 
 In addition to the above, **Custom fields** can be enabled or disabled. If enabled, then it can be used by administrators and depending on their configuration, it will be available to users. If a **Custom field** is disabled, then it will not appear on any form, but its values will remain saved.
 
@@ -265,3 +292,33 @@ When a **Custom field** is disabled, it can now be deleted. By deleting a **Cust
 :::tip Tip
 In addition to being able to save specific values to users, [Segments](/en/platform/customers/segments.html) filters can be created using the values of the **Custom fields**, allowing users to be segmented by customizable values.
 :::
+
+### Security
+
+#### Password Policy
+
+These are the options available for setting a password policy for Modyo Platform:
+
+- Minimum password length value: This number dictates the minimum number of characters a password must have. A password must be between 12 and 128 characters long.
+- Require at least one lowercase letter (a - z)
+- Require at least one capital letter (A - Z)
+- Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
+
+#### reCAPTCHA
+
+These are the options available when you enable reCAPTCHA in the kingdom.
+
+- **reCAPTCHA enable**: Enables reCAPTCHA protection for user registration, form submission, login and password recovery.
+- **Site Key**
+- **Secret**
+- **Threshold**
+
+### Payment settings
+
+These are the options available when you have Payment enabled in your kingdom. 
+
+- **Currency format**: Modify the type of score displayed. 
+- **Enable email sending**: If selected, the user will receive an email after paying for an order.
+- **Email Subject**: Subject sent to all users.
+- **Email body**: Body sent to all users.
+
