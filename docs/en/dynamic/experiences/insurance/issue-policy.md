@@ -4,7 +4,7 @@ search: true
 
 # Issue Policy
 
-:: :warning Update
+:::warning Update
 This component is currently being upgraded and could soon be replaced. The design system used may not be compatible with the latest version of Dynamic UI.
 :::
 
