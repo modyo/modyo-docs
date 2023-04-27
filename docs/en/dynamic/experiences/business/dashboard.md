@@ -10,4 +10,4 @@ It shows data such as available balances, debts and quotas and allows the user t
 
 In addition, it has a side panel with the user's pending tasks, such as configuring roles and permissions, adding team members and upcoming deadlines. 
 
- <img src="/assets/img/dynamic/experiences/business/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/dynamic/experiences/business/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px">
