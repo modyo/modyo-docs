@@ -26,11 +26,11 @@ El sistema de diseño de Modyo Dynamic se compone de un kit de diseño en Figma 
 ### Dynamic Financial Experiences
 
 Dynamic Financial Experiences son un conjunto de flujos y experiencias de usuarios pre-hechas, personalizables y listas para ser desplegadas.
-Estas interfaces están implementadas como [micro-frontends](/es/connect/resources/microfrontends.html), usando los componentes web de nuestro Dynamic Design System, lo que facilita su personalización y modificación.
+Estas interfaces están implementadas como [micro frontends](/es/connect/resources/microfrontends.html), usando los componentes web de nuestro Dynamic Design System, lo que facilita su personalización y modificación.
 
 ### Dynamic Integrations
 
-Dynamic Integrations corresponden plantillas de microservicios y APIs de integración listas para ser usadas en el ecosistema financiero. Actualmente existe soporte para Mambu, Jumio, Docusign y Salesforce. 
+Dynamic Integrations corresponden plantillas de [microservicios](/es/connect/resources/microservices.html) y APIs de integración listas para ser usadas en el ecosistema financiero. Actualmente existe soporte para Mambu, Jumio, Docusign y Salesforce. 
 
 ### ¿Quieres contribuir?
 Si estás interesado en contribuir a Modyo Dynamic como usuario, hay varias maneras en las que puedes ayudar:
