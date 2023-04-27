@@ -30,7 +30,7 @@ These interfaces are implemented as [micro frontends](/en/connect/resources/micr
 
 ### Dynamic Integrations
 
-Dynamic Integrations correspond to [microservices] templates (/es/connect/resources/microservices.html) and integration APIs ready to be used in the financial ecosystem. There is currently support for Mambu, Jumio, Docusign and Salesforce. 
+Dynamic Integrations correspond to [microservices](/en/connect/resources/microservices.html) templates and integration APIs ready to be used in the financial ecosystem. There is currently support for Mambu, Jumio, Docusign and Salesforce. 
 
 ### Do you want to contribute?
 If you're interested in contributing to Modyo Dynamic as a user, there are several ways you can help:
