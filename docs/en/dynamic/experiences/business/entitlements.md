@@ -12,4 +12,4 @@ The list of roles shows the predefined profiles suggested for operating on the b
 
 It is also possible to discard the suggested roles and configure roles from scratch. 
 
- <img src="/assets/img/dynamic/experiences/business/entitlements.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/dynamic/experiences/business/entitlements.jpg" style="border: 1px solid #EEE; margin-top: 40px">
