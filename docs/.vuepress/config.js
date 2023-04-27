@@ -540,7 +540,9 @@ module.exports = {
                   collapsable: true,
                   children: [
                     "/es/dynamic/experiences/business/dashboard",
-                    "/es/dynamic/experiences/business/entitlements"
+                    "/es/dynamic/experiences/business/product-detail",
+                    "/es/dynamic/experiences/business/entitlements",
+                    "/es/dynamic/experiences/business/entitlement-management",
                   ],
                 },
                 {
