@@ -9,7 +9,7 @@ In this type of architecture, micro frontends are user experience components tha
 
 On the other hand, microservices are small independent applications that perform a single specific task or function. Each microservice runs autonomously and can communicate with other services through application programming interfaces (APIs) to provide more complex functionality.
 
-The following figure shows the Modyo reference architecture, where the micro frontends are deployed within the Modyo Platform, while the microservices do so in a decoupled way within Modyo Connect (optional).
+The following figure shows the Modyo reference architecture, where the micro frontends are deployed within the Modyo Platform, while the microservices work decoupled within Modyo Connect (optional).
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
