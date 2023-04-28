@@ -30,3 +30,15 @@ Presenta el listado detallado de permisos y reglas que se pueden configurar para
 - **Realizar pagos, realizar transferencias, realizar inversiones**: si se habilita, presenta el listado detallado de las transacciones monetarias disponibles en el portal para que por cada transacción, se creen las reglas de topes por transacción , montos  y autorizaciones requeridas.
 - **Autorizar transacciones**:  permite establecer si el rol podrá autorizar transacciones monetarias.
 
+## 3. Permisos no transaccionales
+
+- **Solicitar productos**: permite establecer si el rol podrá solicitar la apertura de productos de inversión o de crédito. Ej: certificados de depósito a término, líneas de crédito, sobregiros,etc. 
+- **Consultar productos**: si se habilita, presenta el listado detallado de las cuentas de la empresa para que se visualicen o no, por los miembros de equipo con el rol asignado.
+
+<img src="/assets/img/dynamic/experiences/business/entitlement-management-product-inquiry.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+
+- **Descargar cartolas**: permite establecer si el rol podrá descargar cartolas. 
+- **Generar informes**: permite establecer si el rol podrá descargar información del portal. 
+- **Invitar miembros de equipo**: permite establecer si el rol podrá agregar e invitar nuevos miembros de equipo.
+- **Editar permisos miembros de equipo**: permite establecer si el rol podrá modificar la información y los permisos de los miembros del equipo.
+- **Ver logs de acciones de equipo**: permite establecer si el rol podrá consultar los logs con la información de las acciones que los miembros del equipo han realizado sobre el portal.
