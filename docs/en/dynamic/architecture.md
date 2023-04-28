@@ -14,7 +14,7 @@ The following figure shows the Modyo reference architecture, where the micro fro
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
 
-The combination of micro frontends and microservices allows each service and component of experience to be developed and deployed independently, meaning that they can be upgraded and scaled independently without affecting the rest of the system. This results in greater modularity, flexibility and scalability in the design of the architecture.
+The combination of micro frontends and microservices allows each service and experience component to be developed and deployed independently, meaning that they can be upgraded and scaled independently without affecting the rest of the system. This results in greater modularity, flexibility, and scalability in the design of the architecture.
 
 In addition, the decoupled architecture based on micro frontends and microservices also allows greater independence between development teams, since each team can focus on their specific service or UI component without having to worry about the rest of the system. This makes collaboration easier and accelerates the development process.
 
