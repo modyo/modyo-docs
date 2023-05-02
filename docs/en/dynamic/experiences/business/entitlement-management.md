@@ -13,7 +13,7 @@ It presents the detailed list of permissions and rules that can be configured fo
 <img src="/assets/img/dynamic/experiences/business/entitlement-management.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## 1. Permissions for portal operations:
-- **Operating days and times**: if enabled, it presents a window to configure days and times for accessing the portal. It presents 3 options every day, weekdays, personalized.
+- **Operating days and times**: if enabled, it presents a window to configure days and times for accessing the portal. It has 3 options: every day, weekdays, personalized.
 
 <img src="/assets/img/dynamic/experiences/business/entitlement-management-portal-operation.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
