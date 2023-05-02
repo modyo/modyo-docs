@@ -37,7 +37,7 @@ It presents the detailed list of permissions and rules that can be configured fo
 
 <img src="/assets/img/dynamic/experiences/business/entitlement-management-product-inquiry.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-- **Download cards**: allows you to set if the role will be able to download cards. 
+- **Download statement**: allows you to set if the role will be able to download statements. 
 - **Generate reports**: allows you to establish if the role will be able to download information from the portal. 
 - **Invite team members**: allows you to set if the role can add and invite new team members.
 - **Edit team member permissions**: allows you to set whether the role can modify the information and permissions of the team members.
