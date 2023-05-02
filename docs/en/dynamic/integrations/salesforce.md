@@ -1,4 +1,4 @@
-# SalesForce
+# Salesforce
 
 Salesforce is a customer relationship management (CRM) software platform in the cloud. Founded in 1999, Salesforce is one of the world's largest cloud software companies and offers a wide range of cloud-based business applications, such as sales, marketing, customer service, analytics and process automation.
 
