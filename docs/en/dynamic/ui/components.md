@@ -6,5 +6,5 @@ The Modyo Dynamic Web Components are implemented with Stencil. Stencil is a Web 
 
 With Stencil, developers can create their own custom web components using familiar syntax based on JSX and TypeScript. Stencil compiles these components in a format that can be used in any modern web application, regardless of the framework used.
 
-In addition, Stencil makes it easy to create accessible components and meets web accessibility standards, meaning that the components are easy to use for all users, including those with disabilities.
+In addition, Stencil makes it easy to create accessible components that meets web accessibility standards, meaning that the components are easy to use for all users, including those with disabilities.
 
