@@ -30,3 +30,15 @@ It presents the detailed list of permissions and rules that can be configured fo
 - **Make payments, make transfers, make investments**: if enabled, it presents the detailed list of the monetary transactions available on the portal so that for each transaction, the rules of limits per transaction, amounts and required authorizations are created.
 - **Authorize transactions**: allows you to establish if the role will be able to authorize monetary transactions.
 
+## 3. Non-transactional permissions
+
+- **Request products**: allows you to establish whether the role can request the opening of investment or credit products. E.g.: term certificates of deposit, lines of credit, overdrafts, etc. 
+- **Consult products**: if enabled, it presents the detailed list of the company's accounts so that they can be viewed or not, by team members with the assigned role.
+
+ <img src="/assets/img/dynamic/experiences/business/entitlement-management-product-inquiry.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+
+- **Download cards**: allows you to set if the role will be able to download cards. 
+- **Generate reports**: allows you to establish if the role will be able to download information from the portal. 
+- **Invite team members**: allows you to set if the role can add and invite new team members.
+- **Edit team member permissions**: allows you to set whether the role can modify the information and permissions of the team members.
+- **View logs of team actions**: allows you to establish if the role will be able to view the logs with information about the actions that team members have performed on the portal.
