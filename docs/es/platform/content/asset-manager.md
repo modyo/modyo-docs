@@ -10,9 +10,9 @@ Modyo permite subir, revisar, y editar archivos dentro de la misma plataforma, a
 
 El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
 
-- **Imágenes**: 2 MB
-- **Videos**: 2 MB
-- **Audios**: 2 MB
+- **Imágenes**: 6 MB
+- **Videos**: 10 MB
+- **Audios**: 10 MB
 - **Archivos**: 10 MB
 
 Los tipos de archivos permitidos son los siguientes:
