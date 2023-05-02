@@ -35,7 +35,7 @@ It presents the detailed list of permissions and rules that can be configured fo
 - **Request products**: allows you to establish whether the role can request the opening of investment or credit products. E.g.: term certificates of deposit, lines of credit, overdrafts, etc. 
 - **Consult products**: if enabled, it presents the detailed list of the company's accounts so that they can be viewed or not, by team members with the assigned role.
 
- <img src="/assets/img/dynamic/experiences/business/entitlement-management-product-inquiry.jpg" style="border: 1px solid #EEE; margin-top: 40px"> 
+<img src="/assets/img/dynamic/experiences/business/entitlement-management-product-inquiry.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Download cards**: allows you to set if the role will be able to download cards. 
 - **Generate reports**: allows you to establish if the role will be able to download information from the portal. 
