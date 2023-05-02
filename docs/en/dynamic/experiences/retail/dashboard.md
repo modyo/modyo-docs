@@ -4,8 +4,8 @@ search: false
 
 # Dashboard 
 
-The Personal Banking Dashboard shows an overview of a customer's entire product portfolio, corresponding to savings accounts, checking accounts, credit cards and loans. Showing data such as available balances, debts and quotas. The user can go to the specific detail of the product they want.
-In addition, it has a panel for quick transfers to contacts, which redirects the data to the transfer widget through Query Params.
+The Personal Banking Dashboard shows an overview of a customer's entire product portfolio, including a savings accounts, checking accounts, credit cards and loans. Showing data such as available balances, debts and quotas. The user can go to the specific detail of the product they want.
+In addition, it has a panel for quick transfers to contacts, which redirects the data to the Transfer widget through Query Params.
 
 ```bash
 modyo-cli get modyo-widget-retail-dashboard
