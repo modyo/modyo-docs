@@ -2,7 +2,7 @@
 
 Web Components are a standard web technology that allows the creation of reusable and customizable components for web applications. Web Components consist of three main technologies: Custom Elements, Shadow DOM and HTML Templates.
 
-The Modyo Dynamic Web Components are implemented with Stencil. Stencil is a Web Components compiler that allows the creation of web components using the latest web technologies, including TypeScript, JSX and Virtual DOM. Stencil allows the creation of web components that are highly efficient, customizable and reusable.
+The Modyo Dynamic Web Components are implemented with Stencil. Stencil is a Web Component compiler that allows the creation of web components using the latest web technologies, including TypeScript, JSX and Virtual DOM. Stencil allows the creation of web components that are highly efficient, customizable and reusable.
 
 With Stencil, developers can create their own custom web components using familiar syntax based on JSX and TypeScript. Stencil compiles these components in a format that can be used in any modern web application, regardless of the framework used.
 
