@@ -8,7 +8,7 @@ The list of roles shows the predefined profiles suggested for operating on the b
 
 1. Portal operation (rules associated with access to the portal)
 2. Transactional (rules associated with the operation of transactions involving movements of money)
-3. Non-transactional (rules associated with the operation of transactions that do not involve movements of money)   
+3. Non-transactional (rules associated with the operation of transactions that do not involve movements of currency)   
 
 It is also possible to discard the suggested roles and configure roles from scratch. 
 
