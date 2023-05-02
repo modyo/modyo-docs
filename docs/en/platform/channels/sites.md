@@ -574,14 +574,6 @@ There are several tools to help you design a strong security policy:
 
 It allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs, like the camera or microphone, and video autoplay. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
-#### X-XSS-Protection
-
-It prevents pages from loading when the browser detects a _cross-site scripting_ attack. This protection is not necessary with modern browsers when you implement a strict [Content-Security-Policy](/en/platform/channels/sites.html#content-security-policy), but some security inspectors will expect this _header_ to be present.
-
-* **0**: Disable XSS _filtering_.
-* **1**: Enable XSS _filtering_, removing the unsafe parts.
-* **1; mode=block**: Enable XSS _filtering_, preventing the _page rendering_.
-
 ### Site variables
 
 Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
