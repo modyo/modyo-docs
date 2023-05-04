@@ -6,7 +6,7 @@ search: true
 
 Modyo Dynamic es un conjunto de experiencias de usuario, basado en componentes Web e integraciones, que permiten la aceleración en el desarrollo de soluciones en la banca digital e industria financiera en general, de una forma rápida y eficiente. Entrega a los desarrolladores un framework de trabajo común basado en estándares modernos y abiertos, que puede ser fácilmente adaptado a las necesidades particulares de cada cliente.
 
-Modyo Dynamic abarca las necesidades de experiencia digital comunes para entidades financieras de todo tipo, con especial enfoque tanto en gerentes de productos y canales digitales, como en los equipos de desarrollo que buscan una solución que los ayude a acelerar la implementación de forma modular, flexible, reutilizable, y mantenible.
+Modyo Dynamic abarca las necesidades de experiencia digital comunes para entidades financieras de todo tipo, con especial enfoque tanto en gerentes de productos y canales digitales, como en los equipos de desarrollo que buscan una solución que los ayude a acelerar la implementación de forma modular, flexible, reutilizable y mantenible.
 
 :::tip Modyo Platform
 Modyo Dynamic requiere de una suscripción activa de la [Plataforma Modyo](/es/platform). Los componentes aceleradores de la experiencia digital descritos en esta guía están diseñados para ser desplegados dentro de ella.
@@ -26,13 +26,13 @@ El sistema de diseño de Modyo Dynamic se compone de un kit de diseño en Figma 
 
 ### Dynamic Financial Experiences
 
-Dynamic Financial Experiences son un conjunto de flujos y experiencias de usuarios pre-hechas, personalizables, y listas para ser desplegadas.
+Dynamic Financial Experiences son un conjunto de flujos y experiencias de usuarios pre-hechas, personalizables y listas para ser desplegadas.
 
 Estas interfaces están implementadas como [micro frontends](/es/connect/resources/microfrontends.html), usando los componentes web de nuestro Sistema de Diseño Dynamic, lo que facilita su personalización y modificación.
 
 ### Dynamic Integrations
 
-Dynamic Integrations corresponden plantillas de [microservicios](/es/connect/resources/microservices.html) y APIs de integración listas para ser usadas en el ecosistema financiero. Actualmente existe soporte para Mambu, Jumio, Docusign, y Salesforce. 
+Dynamic Integrations corresponden plantillas de [microservicios](/es/connect/resources/microservices.html) y APIs de integración listas para ser usadas en el ecosistema financiero. Actualmente existe soporte para Mambu, Jumio, Docusign y Salesforce. 
 
 ### ¿Quieres contribuir?
 

@@ -16,9 +16,9 @@ El sistema de diseño es controlado por el área de producto, pero en la definic
 
 El sistema de diseño tiene dos implementaciones, la primera de ellas en Figma, y la segunda en código, siguiendo el modelo de Web Components de Stencil, teniendo siempre como prioridad asegurar la consistencia entre ambas implementaciones. 
 
-El sistema de diseño está basado en estándares reconocidos de industria, con un fuerte foco en generar experiencias de usuario intuitivas, accesibles, omnicanales, y compatibles con dispositivos móviles y de escritorio.
+El sistema de diseño está basado en estándares reconocidos de industria, con un fuerte foco en generar experiencias de usuario intuitivas, accesibles, omnicanales y compatibles con dispositivos móviles y de escritorio.
 
-Además, es un sistema de diseño personalizable, lo que permite que un cliente o partner lo adapte a la imagen corporativa deseada, pudiendo alterar elementos claves como colores, tipografías, e iconografías presentes en él, sin poner en riesgo la integridad de los componentes. Si un cliente o partner desea hacer cambios significativos a los elementos, Modyo ofrece un acceso a los repositorios y plantillas de diseño para que éstas sirvan como punto de inicio en el desarrollo quedando en completo control del partner o cliente.
+Además, es un sistema de diseño personalizable, lo que permite que un cliente o partner lo adapte a la imagen corporativa deseada, pudiendo alterar elementos claves como colores, tipografías e iconografías presentes en él, sin poner en riesgo la integridad de los componentes. Si un cliente o partner desea hacer cambios significativos a los elementos, Modyo ofrece un acceso a los repositorios y plantillas de diseño para que éstas sirvan como punto de inicio en el desarrollo quedando en completo control del partner o cliente.
 
 
 ### Consideraciones

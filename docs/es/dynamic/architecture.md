@@ -6,7 +6,7 @@ search: true
 
 Modyo Dynamic se basa en una arquitectura desacoplada de micro frontends y microservicios construidos de forma modular y que pueden ser desplegados de forma independiente.
 
-En este tipo de arquitectura, los micro frontends son componentes de experiencia de usuario que se ejecutan de manera independiente en el navegador del usuario. Cada micro frontend está diseñado para representar una parte específica de la interfaz de usuario y, al igual que un microservicio, puede ser desarrollado, probado, y desplegado de manera independiente.
+En este tipo de arquitectura, los micro frontends son componentes de experiencia de usuario que se ejecutan de manera independiente en el navegador del usuario. Cada micro frontend está diseñado para representar una parte específica de la interfaz de usuario y, al igual que un microservicio, puede ser desarrollado, probado y desplegado de manera independiente.
 
 Por otro lado, los microservicios son pequeñas aplicaciones independientes que realizan una única tarea o función específica. Cada microservicio se ejecuta de manera autónoma y puede comunicarse con otros servicios a través de interfaces de programación de aplicaciones (API) para proporcionar una funcionalidad más compleja.
 
@@ -15,7 +15,7 @@ La siguiente figura muestra la arquitectura de referencia de Modyo, en dónde lo
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
 
 
-La combinación de micro frontends y microservicios permite que cada servicio y componente de experiencia se desarrollen y desplieguen de manera independiente, lo que significa que se pueden actualizar y escalar de manera independiente sin afectar el resto del sistema. Esto da como resultado una mayor modularidad, flexibilidad, y escalabilidad en el diseño de la arquitectura.
+La combinación de micro frontends y microservicios permite que cada servicio y componente de experiencia se desarrollen y desplieguen de manera independiente, lo que significa que se pueden actualizar y escalar de manera independiente sin afectar el resto del sistema. Esto da como resultado una mayor modularidad, flexibilidad y escalabilidad en el diseño de la arquitectura.
 
 Además, la arquitectura desacoplada basada en micro frontends y microservicios también permite una mayor independencia entre los equipos de desarrollo, ya que cada equipo puede centrarse en su servicio o componente de UI específico sin tener que preocuparse por el resto del sistema. Esto facilita la colaboración y acelera el proceso de desarrollo.
 
@@ -50,7 +50,7 @@ Las plantillas de microservicios de integración ofrecidas como parte de la inic
 
 Una arquitectura basada en micro frontends es una técnica para construir aplicaciones web que consiste en dividir la interfaz de usuario en pequeñas partes modulares e independientes, conocidas como micro frontends. Cada micro frontend es una aplicación web independiente que se enfoca en una parte específica de la experiencia de usuario y se comunica con otros micro frontends a través de API's.
 
-En una arquitectura basada en micro frontends, la interfaz de usuario se compone de múltiples micro frontends que pueden ser desarrollados, probados, y desplegados de manera independiente. Cada micro frontend es responsable de su propia lógica y se comunica con otros micro frontends a través de una API bien definida y documentada.
+En una arquitectura basada en micro frontends, la interfaz de usuario se compone de múltiples micro frontends que pueden ser desarrollados, probados y desplegados de manera independiente. Cada micro frontend es responsable de su propia lógica y se comunica con otros micro frontends a través de una API bien definida y documentada.
 
 La principal ventaja de una arquitectura basada en micro frontends es la capacidad de dividir la aplicación en partes más pequeñas y manejables, lo que facilita la escalabilidad y el mantenimiento. Además, los equipos de desarrollo pueden trabajar en diferentes micro frontends simultáneamente sin afectar a otros componentes, lo que acelera el proceso de desarrollo y mejora la eficiencia del equipo.
 
@@ -66,12 +66,12 @@ Para más información sobre la Plataforma Modyo y sus funcionalidades, favor re
 
 ### Web Components
 
-Los Web Components son una tecnología web que permite la creación de componentes personalizados reutilizables en aplicaciones web. Estos componentes encapsulan HTML, CSS, y JavaScript y se pueden utilizar en diferentes proyectos y aplicaciones web.
+Los Web Components son una tecnología web que permite la creación de componentes personalizados reutilizables en aplicaciones web. Estos componentes encapsulan HTML, CSS y JavaScript y se pueden utilizar en diferentes proyectos y aplicaciones web.
 
 En los micro frontend de Modyo Dynamic, los web components permiten crear componentes reutilizables y fáciles de mantener. Al utilizar web components en un micro frontend, se pueden separar las funcionalidades y las responsabilidades de cada componente, lo que facilita el desarrollo y el mantenimiento de la aplicación.
 
 Uno de los pilares del Sistema de Diseño de Modyo son los Web Components, o más específicamente, Custom Elements, apegados a estándares, que funcionan como abstracciones de bajo nivel que pueden ser usados en un framework específico.
-Estos son compilados con Stencil JS que nos permite utilizar las definiciones de un sistema de diseño en distintas implementaciones como React, Angular, o Vue.
+Estos son compilados con Stencil JS que nos permite utilizar las definiciones de un sistema de diseño en distintas implementaciones como React, Angular o Vue.
 
 ### ReactJS 
 
@@ -96,7 +96,7 @@ Modyo Dynamic utiliza React ya que es una excelente opción para la construcció
 La internacionalización (i18n) en un micro frontend se refiere a la adaptación de la interfaz de usuario de la aplicación a diferentes idiomas y culturas. En otras palabras, la aplicación debe ser capaz de mostrar los textos e imágenes en diferentes idiomas.
 
 Dentro de Modyo Dynamic, la internacionalización se implementa con las siguientes prácticas:
-- Se utiliza una biblioteca de internacionalización que permita la gestión de diferentes idiomas. Algunas opciones populares son react-i18next, ngx-translate, y i18next.
+- Se utiliza una biblioteca de internacionalización que permita la gestión de diferentes idiomas. Algunas opciones populares son react-i18next, ngx-translate y i18next.
 - Se utilizan identificadores de cadenas de texto para identificar los textos de la interfaz de usuario en el código fuente, en lugar de utilizar los textos directamente en el código. Esto permitirá la traducción de los textos a diferentes idiomas sin necesidad de modificar el código fuente.
 - Se crean archivos de traducción para cada idioma que se desee utilizar en la aplicación. Estos archivos deben contener las traducciones de los identificadores de cadenas de texto utilizados en el código fuente.
 - Se implementa la funcionalidad en la aplicación para cambiar el idioma de la interfaz de usuario. Esto puede hacerse utilizando un selector de idioma o una funcionalidad similar.
@@ -123,7 +123,7 @@ El patrón de Repositorio es un patrón de diseño de software que se utiliza pa
 
 En este patrón, el repositorio actúa como una capa de abstracción entre la lógica de negocio y el acceso a datos. El Repositorio proporciona una interfaz para acceder a los datos, y oculta la complejidad de la capa de acceso a datos subyacente. De esta manera, la lógica de negocio puede interactuar con los datos de forma independiente de la capa de acceso a datos.
 
-El Repositorio también es responsable de implementar la lógica necesaria para realizar operaciones de acceso a datos, como la creación, lectura, actualización y eliminación de datos. La capa de acceso a datos subyacente, que puede ser una base de datos, un servicio web, o cualquier otro tipo de almacenamiento de datos, se implementa dentro del repositorio.
+El Repositorio también es responsable de implementar la lógica necesaria para realizar operaciones de acceso a datos, como la creación, lectura, actualización y eliminación de datos. La capa de acceso a datos subyacente, que puede ser una base de datos, un servicio web o cualquier otro tipo de almacenamiento de datos, se implementa dentro del repositorio.
 
 El patrón de Repositorio tiene varios beneficios, entre ellos:
 - Facilita la separación de preocupaciones entre la lógica de negocio y el acceso a datos.
@@ -138,7 +138,7 @@ Los microservicios de integración son una arquitectura de software que se centr
 
 Los microservicios de integración permiten a las organizaciones conectar aplicaciones y sistemas heterogéneos de manera más efectiva. En lugar de depender de un sistema monolítico para manejar todas las funciones de integración, los microservicios permiten una mayor modularidad y flexibilidad en el diseño de la arquitectura.
 
-Los microservicios de integración también pueden utilizarse para implementar patrones de integración comunes, como ESB (Enterprise Service Bus), API Gateway, orquestación de servicios, entre otros. Al utilizar microservicios de integración, las organizaciones pueden crear soluciones de integración más escalables, ágiles, y adaptables a medida que cambian las necesidades del negocio y las tecnologías evolucionan.
+Los microservicios de integración también pueden utilizarse para implementar patrones de integración comunes, como ESB (Enterprise Service Bus), API Gateway, orquestación de servicios, entre otros. Al utilizar microservicios de integración, las organizaciones pueden crear soluciones de integración más escalables, ágiles y adaptables a medida que cambian las necesidades del negocio y las tecnologías evolucionan.
 
 Los microservicios de integración de Modyo Dynamic han sido desarrollados utilizando los principios de arquitectura héxagonal, sobre el framework de desarrollo de Spring Boot y están pensados para ser desplegados primariamente sobre Modyo Connect.
 
@@ -163,7 +163,7 @@ Los microservicios de Modyo Dynamic se encuentran desarrollados utilizando los p
 ### Spring Boot
 Spring Boot es un framework de desarrollo de aplicaciones Java que se basa en el popular framework Spring. Spring Boot se enfoca en simplificar el proceso de desarrollo y configuración de aplicaciones Spring al proporcionar una configuración predeterminada fuera de la caja.
 
-Con Spring Boot, los desarrolladores pueden construir aplicaciones web, microservicios, y otros tipos de aplicaciones empresariales de manera rápida y sencilla. Spring Boot hace que el proceso de configuración sea más fácil mediante la autoconfiguración y la eliminación de la necesidad de escribir una gran cantidad de código de configuración repetitivo.
+Con Spring Boot, los desarrolladores pueden construir aplicaciones web, microservicios y otros tipos de aplicaciones empresariales de manera rápida y sencilla. Spring Boot hace que el proceso de configuración sea más fácil mediante la autoconfiguración y la eliminación de la necesidad de escribir una gran cantidad de código de configuración repetitivo.
 
 Además, Spring Boot se integra bien con otras tecnologías de la plataforma Java, lo que permite a los desarrolladores crear aplicaciones altamente escalables y eficientes. En resumen, Spring Boot es una herramienta poderosa y popular para el desarrollo de aplicaciones Java modernas.
 
