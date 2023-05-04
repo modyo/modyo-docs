@@ -8,7 +8,7 @@ search: true
 This component is currently being upgraded and could soon be replaced. The design system used may not be compatible with the latest version of Dynamic UI.
 :::
 
-Expand quotes to insure vehicles where you can see all the insurance details and coverage.
+Displays quotes to insure vehicles where you can see all the insurance details and coverage.
 
 #### Installation:
 
