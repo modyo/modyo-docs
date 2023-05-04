@@ -1,6 +1,10 @@
+---
+search: true
+---
+
 # Figma Kit
 
-El Figma Kit de Modyo Dynamic es un conjunto de herramientas de diseño que incluye una biblioteca de componentes, estilos y patrones de diseño basados en el sistema de diseño de Modyo Dynamic. Este kit está diseñado para ser utilizado en Figma, una popular herramienta de diseño colaborativo basada en la nube.
+El Figma Kit de Modyo Dynamic es un conjunto de herramientas de diseño que incluye una biblioteca de componentes, estilos y patrones de diseño basados en el sistema de diseño de Modyo Dynamic. Este kit está diseñado para ser utilizado en Figma, una herramienta popular de diseño colaborativo basada en la nube.
 
 El Figma Kit de Modyo Dynamic permite a los diseñadores trabajar de manera más eficiente y consistente al proporcionar una colección de componentes predefinidos que pueden ser reutilizados en diferentes partes de una aplicación web. Además, los estilos y patrones de diseño definidos en el kit garantizan la coherencia visual en toda la aplicación.
 

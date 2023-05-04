@@ -1,3 +1,7 @@
+---
+search: true
+---
+
 # Jumio
 
 Jumio es una empresa de tecnología financiera (fintech) que se especializa en soluciones de verificación de identidad en línea y servicios de autenticación de documentos. Fundada en 2010, Jumio ha desarrollado una plataforma de inteligencia artificial (IA) que permite a las empresas verificar la identidad de sus clientes en línea de manera rápida y precisa.

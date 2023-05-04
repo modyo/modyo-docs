@@ -1,5 +1,5 @@
 ---
-search: false
+search: true
 ---
 
 # Sistema de Diseño
@@ -18,7 +18,7 @@ El sistema de diseño tiene dos implementaciones, la primera de ellas en Figma, 
 
 El sistema de diseño está basado en estándares reconocidos de industria, con un fuerte foco en generar experiencias de usuario intuitivas, accesibles, omnicanales y compatibles con dispositivos móviles y de escritorio.
 
-Además, es un sistema de diseño personalizable, lo que permite que un cliente o partner lo adapte a la imagen corporativa deseada, pudiendo alterar elementos claves como colores, tipografías e iconografías presentes en él, sin poner en riesgo la integridad de los componentes. Si un cliente o partners desea hacer cambios significativos a los elementos, Modyo ofrece un acceso a los repositorios y plantillas de diseño para que éstas sirvan como punto de inicio en el desarrollo quedando en completo control del partner o cliente.
+Además, es un sistema de diseño personalizable, lo que permite que un cliente o partner lo adapte a la imagen corporativa deseada, pudiendo alterar elementos claves como colores, tipografías e iconografías presentes en él, sin poner en riesgo la integridad de los componentes. Si un cliente o partner desea hacer cambios significativos a los elementos, Modyo ofrece un acceso a los repositorios y plantillas de diseño para que éstas sirvan como punto de inicio en el desarrollo quedando en completo control del partner o cliente.
 
 
 ### Consideraciones
@@ -29,7 +29,7 @@ Cuando se utiliza el sistema de diseño de Dynamic UI, es importante tener en cu
 
 - Adaptar el sistema de diseño a las necesidades del proyecto: esto puede incluir la adición de nuevos componentes o la modificación de los existentes.
 
-- Evitar el exceso de uso de componentes prediseñados que puede llevar a una apariencia genérica y poco distintiva para la aplicación web. Es importante utilizar los componentes de manera estratégica y personalizarlos para que se adapten a la marca y necesidades del proyecto.
+- Evitar el uso excesivo de componentes prediseñados que puede llevar a una apariencia genérica y poco distintiva para la aplicación web. Es importante utilizar los componentes de manera estratégica y personalizarlos para que se adapten a la marca y necesidades del proyecto.
 
 - Mantener la consistencia visual: utilizarlo de manera consistente en toda la aplicación web para garantizar una experiencia de usuario coherente.
 
