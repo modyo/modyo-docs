@@ -10,7 +10,7 @@ This component is currently being upgraded and could soon be replaced. The desig
 
 
 
-Allows the user to easily and quickly load funds to their investment accounts.
+Allows the user to easily and quickly transfer funds to their investment accounts.
 
 #### Installation:
 
