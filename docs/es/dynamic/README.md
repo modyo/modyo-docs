@@ -36,8 +36,8 @@ Dynamic Integrations corresponden plantillas de [microservicios](/es/connect/res
 
 ### ¿Quieres contribuir?
 
-Si estás interesado en contribuir a Modyo Dynamic como usuario, hay varias maneras en las que puedes ayudar:
+Si te interesa contribuir a Modyo Dynamic como usuario, hay varias maneras en las que puedes ayudar:
 - Utiliza el framework dentro de nuestros ambientes de prueba y proporciona retroalimentación acerca de problemas y posibles mejoras que crees que podemos realizar.
 - Participa en la comunidad, sumándote a nuestros webinars y eventos digitales que realizamos de forma periódica.
 
-Para comunicarte con el equipo, reportar un problema, o sugerir una funcionalidad puedes realizarlo mediante nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
+Para comunicarte con el equipo, reportar un problema o sugerir una funcionalidad puedes realizarlo mediante nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
