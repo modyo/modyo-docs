@@ -14,7 +14,7 @@ Within Modyo, it works so that all areas that work with initiatives that fall wi
 
 The design system is controlled by the product area, but the other areas of Modyo participate transversely in its definition. There is a committee composed of leaders and experts from different areas who are responsible for approving the modifications and maintaining the conceptual integrity of the initiative.
 
-The design system has two implementations, the first of them in Figma, and the second in code, following the Stencil Web Components model, always having as a priority to ensure consistency between both implementations. 
+The design system has two implementations, the first of them in Figma, and the second in code, following the Stencil Web Components model, always having consistency as a priority between both implementations. 
 
 The design system is based on recognized industry standards, with a strong focus on generating intuitive, accessible, omnichannel user experiences compatible with mobile and desktop devices.
 
