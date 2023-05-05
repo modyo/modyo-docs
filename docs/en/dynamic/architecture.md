@@ -77,7 +77,7 @@ These are compiled with Stencil JS that allows us to use the definitions of a de
 
 ReactJS is an open source JavaScript library developed by Facebook that is used to build interactive and scalable user interfaces for web and mobile applications. ReactJS is one of the most popular tools for building modern web applications.
 
-ReactJS is based on the concept of “components”, which are reusable building blocks for building the user interface of an application. React components can be composed to form complex applications, allowing for the creation of modular, maintainable and scalable user interfaces.
+ReactJS is based on the concept of “components”, which are reusable building blocks for building the user interface of an application. React components can be composed to form complex applications, allowing for the creation of modular, maintainable, and scalable user interfaces.
 
 React uses a declarative programming model in which the developer focuses on defining the structure of the user interface rather than worrying about the details of how the user interface is updated in response to user actions. React automatically updates the user interface when there is a change in data, making application development more efficient and less error-prone.
 
