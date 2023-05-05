@@ -6,6 +6,40 @@ search: true
 
 ## 9.2
 
+### 9.2.33 - 05 de mayo de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejora visibilidad en listado de tags cuando son muy largos
+* Nuevo Getstared
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Ahora los editores de contenido pueden publicar en bulk desde el listado de entradas
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige buscador en listado de páginas en modo lista
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige error al crear un nuevo identity provider del tipo openid especificando claims
+
+
+### 9.2.32 - 21 de abril de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Cambia los tamaños de assets permitidos quedando 6MB para imagenes y 10MB para otro tipo de archivos
+* Corrige problemas al reemplazar imagenes con extensión SVG
+* Corrige problemas al mostrar un logo en SVG
+
+
 ### 9.2.31 - 06 de abril de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -17,6 +51,7 @@ search: true
 
 * corrige error permanente en el asset manager
 
+
 ### 9.2.30 - 24 de marzo de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -25,7 +60,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrigge actualización de widgets provenientes desde el CLI
+* Corrige actualización de widgets provenientes desde el CLI
 
 
 ### 9.2.29 - 22 de marzo de 2023
@@ -46,7 +81,7 @@ search: true
 
 * Corrige eleminado de widgets provenientes del CLI
 * Agrega modal para nombrar un nuevo widget clonado
-* Corrige porblema al modificar variables en los widgets
+* Corrige problema al modificar variables en los widgets
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
