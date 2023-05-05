@@ -8,7 +8,7 @@ search: true
 This component is currently being upgraded and could soon be replaced. The design system used may not be compatible with the latest version of Dynamic UI.
 :::
 
-Simplify policy issuance processes by reducing the amount of data needed by integrating with the Quotes widget. This widget preloads information quickly and allows you to customizes controls and verification checks to prevent fraud or deception in active properties.
+Simplify policy issuance processes by reducing the amount of data needed by integrating it with the Quotes widget. This widget preloads information quickly and allows you to customize controls and verification checks to prevent fraud in active properties.
 
 #### Installation:
 
