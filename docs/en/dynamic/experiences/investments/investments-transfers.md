@@ -22,7 +22,7 @@ modyo-cli get modyo-widgets-investments-transfer-history
 
 | Features           | Description                                                                                                                           |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Operations in Transit | isplays the list of transactions in transit associated with the purchase/sale of shares. Allows the user to cancel transactions in transit. |
+| Operations in Transit | Displays the list of transactions in transit associated with the purchase/sale of shares. Allows the user to cancel transactions in transit. |
 | Cancel Operation      | Displays information about the specific transaction to be cancelled, so that the customer can confirm the cancellation.                                  |
 
 <script>
