@@ -20,7 +20,7 @@ The structure of Modyo Dynamic is made up of three fundamental elements, each of
 
 ### Dynamic Design System
 
-The Modyo Dynamic Design System allows you to compose interfaces aimed at the financial industry in an easy and fast way, taking advantage of a catalog of prefabricated components that solve common problems in the user experience.
+The Modyo Dynamic Design System allows you to compose interfaces aimed at the financial industry in a fast and easy way, taking advantage of a catalog of prefabricated components that solve common problems in the user experience.
 
 The Modyo Dynamic design system consists of a Figma design kit and a complete implementation of web components made in ReactJS, distributed in a package ready to be included in any JavaScript project.
 
