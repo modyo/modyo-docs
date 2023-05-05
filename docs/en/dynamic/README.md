@@ -6,7 +6,7 @@ search: true
 
 Modyo Dynamic is a set of user experiences, based on Web components and integrations, that allow the acceleration in the development of solutions in the digital banking and financial industry in general, in a fast and efficient way. It provides developers with a common working framework based on modern and open standards, which can be easily adapted to the particular needs of each client.
 
-Modyo Dynamic covers the common digital experience needs of financial institutions of all types, with a special focus on both product managers and digital channels, and development teams looking for a solution that will help them accelerate implementation in a modular, flexible, reusable and maintainable way.
+Modyo Dynamic covers the common digital experience needs of financial institutions of all types, with a special focus on both product managers and digital channels, and development teams looking for a solution that will help them accelerate implementation in a modular, flexible, reusable, and maintainable way.
 
 :::tip Modyo Platform
 Modyo Dynamic requires an active subscription to the [Modyo Platform](/en/platform). The accelerating components of the digital experience described in this guide are designed to be deployed within it.
@@ -32,7 +32,7 @@ These interfaces are implemented as [micro frontends] (/es/connect/resources/mic
 
 ### Dynamic Integrations
 
-Dynamic Integrations correspond to [microservices](/en/connect/resources/microservices.html) templates and integration APIs ready to be used in the financial ecosystem. There is currently support for Mambu, Jumio, Docusign and Salesforce. 
+Dynamic Integrations correspond to [microservices](/en/connect/resources/microservices.html) templates and integration APIs ready to be used in the financial ecosystem. There is currently support for Mambu, Jumio, Docusign, and Salesforce. 
 
 ### Do you want to contribute?
 
