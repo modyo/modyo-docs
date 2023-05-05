@@ -56,7 +56,7 @@ The main advantage of an architecture based on micro frontends is the ability to
 
 Another advantage is the ability to reuse micro frontends in different projects and web applications, which reduces development time and cost.
 
-Modyo Dynamic uses a proven and mature architecture based on micro frontends to build web applications that divide the user interface into small modular and independent parts. The micro frontends are offered in the form of code templates that can be downloaded independently. Each template depends on common libraries, such as the design system and the JavaScript frameworks used.
+Modyo Dynamic uses a proven and mature architecture based on micro frontends to build web applications that divide the user interface into small modular and independent parts. The micro frontends are offered in the form of code templates that can be downloaded independently. Each template depends on common libraries, such as the design system, and the JavaScript frameworks used.
 
 The Modyo Dynamic micro frontends are designed to be deployed on the Modyo Platform and it is not guaranteed that they can be used outside of it.
 
