@@ -1,5 +1,5 @@
 ---
-search: false
+search: true
 ---
 
 # Design System
@@ -18,7 +18,7 @@ The design system has two implementations, the first of them in Figma, and the s
 
 The design system is based on recognized industry standards, with a strong focus on generating intuitive, accessible, omnichannel user experiences compatible with mobile and desktop devices.
 
-In addition, it is a customizable design system, which allows a customer or partner to adapt it to the desired corporate image, being able to alter key elements such as colors, fonts and iconographies present in it, without jeopardizing the integrity of the components. If a customer or partners wants to make significant changes to the elements, Modyo offers access to repositories and design templates so that they serve as a starting point in development, leaving the partner or client in complete control.
+In addition, it is a customizable design system, which allows a customer or partner to adapt it to the desired corporate image, being able to alter key elements such as colors, fonts and iconographies present in it, without jeopardizing the integrity of the components. If a customer or partner wants to make significant changes to the elements, Modyo offers access to repositories and design templates so that they serve as a starting point in development, leaving the partner or client in complete control.
 
 
 ### Considerations
@@ -29,7 +29,7 @@ When using the Dynamic UI design system, it's important to consider the followin
 
 - Adapt the design system to the needs of the project: this may include adding new components or modifying existing ones.
 
-- Avoid the excessive use of pre-designed components that can lead to a generic and undistinctive appearance for the web application. It is important to use the components in a strategic way and customize them to fit the brand and needs of the project.
+- Avoid the excessive use of predesigned components that can lead to a generic and undistinctive appearance for the web application. It is important to use the components in a strategic way and customize them to fit the brand and needs of the project.
 
 - Maintain visual consistency: use it consistently throughout the web application to ensure a consistent user experience.
 
