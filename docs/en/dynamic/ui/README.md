@@ -16,14 +16,14 @@ The design system is controlled by the product area, but the other areas of Mody
 
 The design system has two implementations, the first of them in Figma, and the second in code, following the Stencil Web Components model, always having consistency as a priority between both implementations. 
 
-The design system is based on recognized industry standards, with a strong focus on generating intuitive, accessible, omnichannel user experiences compatible with mobile and desktop devices.
+The design system is based on recognized industry standards, with a strong focus on generating intuitive, accessible, omnichannel, user experiences compatible with mobile and desktop devices.
 
 In addition, it is a customizable design system, which allows a customer or partner to adapt it to the desired corporate image, being able to alter key elements such as colors, fonts, and iconographies present in it, without jeopardizing the integrity of the components. If a customer or partner wants to make significant changes to the elements, Modyo offers access to repositories and design templates so that they serve as a starting point in development, leaving the partner or client in complete control.
 
 
 ### Considerations
 
-When using the Dynamic UI design system, it's important to consider the following considerations:
+When using the Dynamic UI design system, it's important to consider the following:
 
 - Understand the limitations and scope of the design system.
 
