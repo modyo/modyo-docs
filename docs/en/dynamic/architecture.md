@@ -3,6 +3,7 @@ search: true
 ---
 
 # Architecture
+
 Modyo Dynamic is based on a decoupled architecture of micro frontends and microservices built in a modular way and that can be deployed independently.
 
 In this type of architecture, micro frontends are user experience components that run independently in the user's browser. Each micro frontend is designed to represent a specific part of the user interface and, like a microservice, can be developed, tested and deployed independently.
@@ -21,14 +22,17 @@ In addition, the decoupled architecture based on micro frontends and microservic
 Modyo Dynamic is implemented on industry-recognized technologies that minimize vendor lock-in and ensure the future maintainability of the code, such as React for frontend experiences and Spring Boot for backend integrations.
 
 ### Integration to Core Systems
+
 The integration into the customer's core systems can be done in two ways. The first one through [Modyo Connect](/en/connect) and the second one directly to APIs controlled directly by the customer.
 
 #### APIs in Modyo Connect
+
 [Modyo Connect](/en/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within Modyo Dynamic can be directly deployed, as shown in the following figure:
 
 <img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 #### Customer Provided APIs
+
 The Micro Frontends available in Modyo Dynamic can be integrated directly into each client's APIs, increasing the flexibility of how they can be used.
 
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
@@ -43,6 +47,7 @@ The integration microservice templates offered as part of the initiative can als
 :::
 
 ## Micro Frontends
+
 An architecture based on micro frontends is a technique for building web applications that consists of dividing the user interface into small modular and independent parts, known as micro frontends. Each micro frontend is an independent web application that focuses on a specific part of the user experience and communicates with other micro frontends through APIs.
 
 In an architecture based on micro frontends, the user interface is composed of multiple micro frontends that can be developed, tested and deployed independently. Each micro frontend is responsible for its own logic and communicates with other micro frontends through a well-defined and documented API.
@@ -51,7 +56,7 @@ The main advantage of an architecture based on micro frontends is the ability to
 
 Another advantage is the ability to reuse micro frontends in different projects and web applications, which reduces development time and cost.
 
-Modyo Dynamic uses a proven and mature architecture based on micro frontends to build web applications that divide the user interface into small modular and independent parts. The micro frontends are available in the form of code templates that can be downloaded independently. Each template depends on common libraries, such as the design system and the Javascript frameworks used.
+Modyo Dynamic uses a proven and mature architecture based on micro frontends to build web applications that divide the user interface into small modular and independent parts. The micro frontends are offered in the form of code templates that can be downloaded independently. Each template depends on common libraries, such as the design system and the JavaScript frameworks used.
 
 The Modyo Dynamic micro frontends are designed to be deployed on the Modyo Platform and it is not guaranteed that they can be used outside of it.
 
@@ -60,6 +65,7 @@ For more information about the Modyo Platform and its functionalities, please re
 :::
 
 ### Web Components
+
 Web Components are a web technology that allows the creation of reusable custom components in web applications. These components encapsulate HTML, CSS and JavaScript and can be used in different projects and web applications.
 
 In the micro frontends of Modyo Dynamic, the web components allow you to create reusable and easy to maintain components. By using web components in a micro frontend, the functionalities and responsibilities of each component can be separated, making it easier to develop and maintain the application.
@@ -67,7 +73,8 @@ In the micro frontends of Modyo Dynamic, the web components allow you to create 
 One of the pillars of the Modyo Design System are the Web Components, or more specifically, Custom Elements, attached to standards, which work as low-level abstractions that can be used in a specific framework.
 These are compiled with Stencil JS that allows us to use the definitions of a design system in different implementations such as React, Angular or Vue.
 
-### React
+### ReactJS 
+
 ReactJS is an open source JavaScript library developed by Facebook that is used to build interactive and scalable user interfaces for web and mobile applications. ReactJS is one of the most popular tools for building modern web applications.
 
 ReactJS is based on the concept of “components”, which are reusable building blocks for building the user interface of an application. React components can be composed to form complex applications, allowing for the creation of modular, maintainable and scalable user interfaces.
@@ -85,6 +92,7 @@ Modyo Dynamic uses React as it is an excellent option for building micro fronten
 
 
 ### Internationalization
+
 Internationalization (i18n) in a micro frontend refers to the adaptation of the application's user interface to different languages and cultures. In other words, the application must be able to display texts and images in different languages.
 
 Within Modyo Dynamic, internationalization is implemented with the following practices:
@@ -98,6 +106,7 @@ By implementing these practices, Modyo Dynamic ensures that the application is e
 
 
 ### Accessibility
+
 Accessibility within the Modyo Dynamic micro frontends is an important aspect to consider to ensure that all people, including those with disabilities, can use and navigate the user interface effectively.
 
 To implement accessibility, the following practices are followed:
@@ -125,7 +134,7 @@ The Repository pattern has several benefits, including:
 Modyo Dynamic's micro frontends use the repository pattern to facilitate communication tasks towards integration APIs, whether implemented with or without Modyo Connect.
 
 ## Microservices
-Integration microservices are a software architecture that focuses on creating small, autonomous and independent services that can communicate with each other to provide system integration functionality. These microservices are implemented in containers and run independently, making them highly scalable and flexible.
+Integration microservices are a software architecture that focuses on creating small, autonomous, and independent services that can communicate with each other to provide system integration functionality. These microservices are implemented in containers and run independently, making them highly scalable and flexible.
 
 Integration microservices allow organizations to connect heterogeneous applications and systems more effectively. Rather than relying on a monolithic system to handle all integration functions, microservices allow for greater modularity and flexibility in the design of the architecture.
 
@@ -151,7 +160,7 @@ The hexagonal architecture has several benefits, including:
 
 Modyo Dynamic's microservices are developed using the principles of hexagonal architecture.
 
-### SpringBoot
+### Spring Boot
 Spring Boot is a Java application development framework that is based on the popular Spring framework. Spring Boot focuses on simplifying the process of developing and configuring Spring applications by providing a default configuration out of the box.
 
 With Spring Boot, developers can quickly and easily build web applications, microservices, and other types of business applications. Spring Boot makes the configuration process easier by self-configuring and eliminating the need to write a large amount of repetitive configuration code.
