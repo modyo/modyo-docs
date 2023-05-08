@@ -6,11 +6,11 @@ search: true
 
 La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, estos principios tienen un comando get y push respectivamente.
 
-### Introduction
+## Instalación
 
 Primero, necesita instalar la CLI de Modyo globalmente en su máquina local para tener disponible el comando `modyo-cli`, esto le permitirá inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas, o usar para inicializar un widget desde catálogo si tiene acceso.
 
-Para instalar el modyo-cli globalmente, debe usar una de estas opciones
+Para instalar el modyo-cli globalmente, debe usar una de estas opciones:
 
 ```bash
 $ npm i -g @modyo/cli #via npm
@@ -21,11 +21,21 @@ $ yarn global add @modyo/cli #via yarn
 
 Los comandos disponibles son:
 
-- [`modyo-cli (-v|--version|version)`](#modyo-cli-version)
-- [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
-- [`modyo-cli autocomplete [SHELL]`](#modyo-cli-autocomplete-shell)
-- [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
-- [`modyo-cli push NAME`](#modyo-cli-push-name)
+- [modyo-cli (-v|--version|version)](#modyo-cli-version)
+- [modyo-cli help [COMMAND]](#modyo-cli-help-command)
+- [modyo-cli autocomplete [SHELL]](#modyo-cli-autocomplete-shell)
+- [modyo-cli get NAME [DIRECTORY]](#modyo-cli-get-name-directory)
+- [modyo-cli push NAME](#modyo-cli-push-name)
+
+## Plantillas de widget
+
+En nuestro catálogo de widgets, ofrecemos plantillas que contienen lo mínimo para subir un widget a Modyo Platform. Las plantillas las puedes encontrar en los siguientes frameworks:
+
+- [Vue](https://github.com/modyo/modyo-widgets-template-vue)
+- [Angular](https://github.com/modyo/modyo-widgets-template-angular)
+- [React](https://github.com/modyo/modyo-widgets-template-react)
+
+Puedes clonar estos repositorios, modificarlos a tus necesidades, y usar modyo-cli para hacer un push hacia la plataforma. Para más información de como enviar widgets a Modyo Platform, ve [modyo-cli push NAME](#modyo-cli-push-name).
 
 ## `modyo-cli (-v|--version|version)`
 Imprime la versión de `modyo-cli`.

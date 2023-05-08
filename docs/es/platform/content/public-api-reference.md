@@ -513,40 +513,6 @@ Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio d
 curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries"
 ```
 
-En el caso de una entrada de cardinalidad single, puedes usar el metodo entry, por ejemplo:
-
-```liquid
-{{ spaces['space_uid'].types['type_uid'].entry }}
-```
-
-</template>
-<template v-slot:js>
-
-```js
-import { Client } from "@modyo/sdk";
-// Para obtener la cuenta correcta, debemos usar la url de la cuenta
-const modyoAccount = new Client("https://my-account.modyo.com","es");
-
-const typePost = modyoAccount.getContentType("space_uid", "type_uid");
-// `typePost` retornará un objeto con diversa información del tipo, entre ellas, el esquema de ese tipo
-
-// Si queremos ver ese esquema en detalle, podemos ocupar el método `getSchema()`
-typePost.getSchema().then(sch => console.log("Content Type JSON Schema:", sch));
-/*
-Eso imprimirá algo como esto:
-> Content Type JSON Schema: {$schema: "http://json-schema.org/draft-07/schema#", definitions: {…}, type: "object", required: Array(2), properties: {…}}
-*/
-```
-</template>
-<template v-slot:curl>
-
-```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries"
-```
-
-</template>
-</CodeSwitcher>
-
 ### Desplegar cantidad total de Entradas
 
 Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
@@ -566,28 +532,6 @@ La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a na
     "total_pages": 1
   },
 ```
-
-
-</template>
-<template v-slot:curl>
-    
-```shell
-curl -X GET "https://test.modyo.com/api/admin/content/spaces/{my_space}/entries?category_id=25"
-```
-
-La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
-
-```json
-"meta": {
-    "total_entries": 4,
-    "per_page": 10,
-    "current_page": 1,
-    "total_pages": 1
-  },
-```
-
-</template>
-</CodeSwitcher>
 
 ### Filtrar
 
@@ -661,65 +605,6 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
-<CodeSwitcher isolated:true>
-<template v-slot:lq>
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
-```
-
-Los valores posibles para el orden son `asc` y `desc`, por defecto, si el parámetro no va, se puede dejar `desc`.
-Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at`, `slug` y `field`.
-
-Para ordenar por un campo personalizado, debes usar como parámetro el `fields.uid` del campo:
-
-```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
-{% for entry in entries %}
-  entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
-{% endfor %}
-```
-
-</template>
-<template v-slot:js>
-
-Los resultados de nuestra búsqueda también pueden ordenarse con el método `SortBy()`
-
-```js
-// JSONPath and Sorting are also supported as filters
-const filters = ctype
-  .Filter()
-  .SortBy("meta.created_at", "desc")
-  .JSONPath("$..uuid");
-```
-
-**Nota**: Como se puede ver en el ejemplo, es posible usar en nuestras consultas expresiones `JSONPath` [JSONPath - XPath for JSON](https://goessner.net/articles/JsonPath/)
-
-#### Contenido privado
-
-Para obtener contenido privado, basta con que el usuario esté con sesión, pasando al método `getContentType()` un tercer argumento en `false` (que indica que no es público)
-
-```js
-// To acces private content (user must be logged in on account)
-const privateTypePost = modyoAccount.getContentType("blog", "post", false);
-```
-
-:::warning Atención
-Es importante que se trate esta información potencialmente sensible con cuidado. Para obtener contenido privado se requiere de cookies y de un usuario final que haya iniciado sesión en Modyo.
-:::
-
-### Información de Usuario Final
-
-:::warning Atención
-Es importante que trates esta información sensible con cuidado. Al igual que con Contenido privado, esta información sólo es obtenible si se trabaja desde un navegador que soporte cookies, y el usuario final haya iniciado sesión en la plataforma.
-
-Para obtener información del usuario final, es necesario llamar a la función: `client.getUserInfo()` dicha función retornará un objeto con la información básica
-de dicho usuario.
-:::
-
-</template>
-<template v-slot:curl>
-
 El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
 
 - `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
@@ -728,45 +613,6 @@ El orden de los resultados se debe especificar con los parámetros `sort_by` y `
 ```shell
 curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
 ```
-
-</template>
-</CodeSwitcher>
-
-### Geolocalización
-
-<CodeSwitcher isolated:true>
-<template v-slot:lq>
-
-Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
-
-```
-{{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
-```
-
-El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
-
-```
-{{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
-```
-
-:::tip Tip
-Para usar los atributos de las entradas, puedes usar la notación con punto o con corchetes, por lo que <span v-pre>`{{ entry.meta.slug }}`</span>, retorna el mismo valor que <span v-pre>`{{ entry.meta['slug'] }}`</span>, y si cuentas con un campo llamado `location`, puedes usarlo tanto como <span v-pre>`{{ entry.fields.location }}`</span>, o bien <span v-pre>`{{ entry.fields['location'] }}`</span>
-:::
-
-</template>
-<template v-slot:js>
-
-    <!-- ... -->
-
-</template>
-
-<template v-slot:curl>
-
-    <!-- ... -->
-
-</template>
-</CodeSwitcher>
-
 
 ### Contenido privado
 

@@ -29,19 +29,6 @@ Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
 <img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
-## Facebook
-
-Para poder realizar una integración con Facebook, deberás contar con:
-
-- API Key
-- Código secreto de aplicación
-- Callback URL `/realms(/:realm_uid)/auth/facebook/callback`
-
-
-Estos valores los podrás obtener creando una aplicación de Facebook con permisos para iniciar sesión. Para saber más sobre como crear y configurar una aplicación de Facebook, ve su [documentación oficial](https://developers.facebook.com/docs/facebook-login/).
-
-<img src="/assets/img/platform/facebook-login-settings.png" alt="Facebook for Developer's Client OAuth settings page. " width="500px" style="margin-top: 40px;" />
-
 ## Google
 
 Para poder integrar el inicio de sesión de Google con Modyo, deberás contar con:
@@ -106,11 +93,14 @@ Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/realms.ht
 
 OpenID Connect (OIDC) es una capa de autenticación y framework que funciona sobre OAuth 2.0. Su estándar está controlado por la [OpenID Foundation](https://openid.net/connect/).
 
-Los campos requeridos por Modyo para una integración son:
+### Requisitos
 
-- **first_name**
-- **username**
-- **email**
+Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre OpenID Connect y Modyo Platform:
+
+
+- **given_name**: Corresponde al nombre del usuario.
+- **family_name**: Corresponde al apellido del usuario.
+- **email**: Corresponde al correo del usuario.
 
 :::warning Atención
 Para el correcto funcionamiento de una integración con OpenID Connect, es necesario que el Provider OIDC tenga un certificado SSL al día, el cliente de Modyo utiliza TLS 1.3, y OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
@@ -210,10 +200,11 @@ Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que 
 La siguiente configuración es válida tanto para las integraciones de usuarios de Equipos como de Customer.
 
 1. Desde la plataforma de Modyo, selecciona **Configuración/Configuración de reino** y haz click en **Proveedores de indentidad**.
-1. Selecciona **OpenID Connect** y completa **Client ID** y **Secret** con las credenciales obtenidas del portal de Azure.
-1. En la consola de Azure, selecciona **App registrations** y haz click en **Endpoints** para obtener URLs de **Authorization endpoint** y **Token endpoint**. 
-1. Visitar el OpenID Connect metadata document y conseguir **Userinfo endpoint** y **End session endpoint**.
-1. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no contar con scopes personalizados.
+1. Selecciona **OpenID Connect** y completa **Client ID**, también llamado Id de aplicación, y **Secret** con las credenciales obtenidas del portal de Azure.
+1. En el portal de Azure, en Información General, haz click en Puntos de Conexión, y copia la URL de **Documento de Metadatos de OpenID Connect**.
+1. Abre la URL en tu navegador, busca **Issuer**, y copia su valor.
+1. En Modyo Platform, pega el valor en Issuer y haz click en **Run Discovery Service**. Al terminar el proceso, todos los URLs requeridos serán llenados automáticamente.
+1. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,profile,email` en caso de que no contar con scopes personalizados.
 1. Habilita características opcionales de la integración.
    |  Opción                                      |       Descripción                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

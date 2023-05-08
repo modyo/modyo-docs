@@ -169,22 +169,6 @@ After configuring Keycloak, you now have to complete the integration in Modyo Pl
 3. Click **Launch discovery service**. This will complete most of the settings.
 4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 
-<img src="/assets/img/platform/keycloak-new-idp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
-### Optional integration settings
-
-When performing a specific integration, Modyo allows you to enable certain settings to control the following session features:
-
-| Option                                     | Description                                                                                                                                                                                                                                                                                                       |
-|:-------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Enable logout**                          | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again in Keycloak and disabling the SSO experience.                                                                                                       |
-| **Enable refresh token**                   | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.                                                                                                                              |
-| **Tolerance in seconds for access token**  | Number in seconds that will be used as a tolerance margin to obtain an access token using the refresh token.                                                                                                                                                                                                      |
-| **Enable token revocation**                | Not supported by Keycloak                                                                                                                                                                                                                                                                                         |
-| **Activate refresh token (Refresh Token)** | Enables the use of OAuth 2.0 refresh tokens. To refresh your access token, you can use the post endpoint of keycloak <tt>/auth/realms/<b>myrealm</b>/protocol/openid-connect/token</tt> sending as headers <tt> grant_type: refresh_token, refresh_token: **my-refresh-token**, client_id: **my-client-id** </tt> |
-| **Show delegation information**            | Enables more information in the [User Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to some other service (e.g. an external API).                                       |
-| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                                                                                                                               |
-
 
 ## Azure Active Directory
 

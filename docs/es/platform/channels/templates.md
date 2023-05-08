@@ -267,4 +267,34 @@ Por ejemplo, si quieres usar meta tags específicas cuando un usuario visita una
 ...
 ```
 
-En este caso, los tipos `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_, y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
+En este caso, los tipos de Entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_, y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
+
+### Meta tags específicos para Categoría en Página de Contenido
+
+En caso de tener meta tags específicas cuando muestras Entradas que pertenecen a una Categoría, puedes copiar el siguiente código:
+
+```html
+{% assign category_name = category_path | split: '/' | last | capitalize %}
+ 
+{% case category_name %}
+  {% when 'Category 1' %}
+     {% assign category_description = 'This is the meta description for Category 1' %}
+  {% when 'Categoría 2' %}
+     {% assign category_description = 'This is the meta description for Category 2' %}
+{% endcase %}
+
+{% if category_path.size > 0 %}
+<!-- Content Page: Index con categoría -->
+<title> {{ category_name }} - {{ site.name }} </title>
+<meta name="description" content="{{ category_description }}"/>
+<meta property="og:title" content="{{ category_name }} - {{ site.name }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ page.url }}/{{ category_path }}">
+<meta property="og:image" content="https://d1dzq2r60kxox4.cloudfront.net/uploads/c82bdfea-3622-4c11-9a20-bea227cbdc60/original/og_image.jpg"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:description" content="{{ category_description }}"/>
+```
+
+En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después se utiliza un `{% if category_path.size > 0 %}` para anexar meta data pertinente a la categoría.
+
+Liquid es la manera para crear contenido dinámico en todas las partes de tu Sitio. Para conocer más información acerca de Liquid y como usar Liquid Drops, visita [Liquid Markup](/es/platform/channels/liquid-markup).

@@ -149,40 +149,60 @@ Para manejar la internacionalización en los Widgets de nuestro [catálogo de wi
 │   │   └── es-CL.json
 ```
 
-La siguiente lista son las variables de entorno que puedes configurar:
-
-```bash
-MODYO_ACCOUNT_URL=account-url
-MODYO_VERSION=version
-MODYO_TOKEN=token
-MODYO_SITE_ID=siteId
-MODYO_SITE_HOST=siteHost
-MODYO_BUILD_COMMAND=buildCommand
-MODYO_REGEX_EXCLUDE=regexToExcludeFiles
-MODYO_BUILD_DIRECTORY=buildDirectoryPath
-```
-
-#### Variables de entorno
-
-Para facilitar el proceso de subir tus widgets a la plataforma Modyo, puedes hacer uso del archivo de variables de entorno `.env`. Sigue estos pasos para crear tu archivo:
-
-1. Crea un archivo `.env` en la raíz de tu proyecto.
-2. Agrega la siguiente información:
-
-```
-MODYO_ACCOUNT_URL=test.miModyo.com
-MODYO_VERSION=9
-MODYO_TOKEN=ak9cb2....a53s
-MODYO_SITE_HOST=miSitio
-MODYO_WIDGET_NAME=miNuevoWidget
-MODYO_BUILD_COMMAND=build
-MODYO_BUILD_DIRECTORY=dist
-```
-
-3. Al hacer uso de modyo-cli dentro de la raíz de tu proyecto, se agregarán los datos del archivo automáticamente.
-
 :::tip Tip
-Recomendamos utilizar un archivo de variables de entorno para facilitar el uso de modyo-cli y evitar el registro de información sensible.
+Para saber más sobre internacionalización y vue-i18n, ver [Internationalization with vue-i18n](https://vueschool.io/courses/internationalization-with-vue-i18n) de [VueSchool](https://vueschool.io/)
+:::
+
+### Configuración
+
+En el archivo de configuración obtendremos el idioma del sitio que tenemos en la plataforma. Primero se inicializa la constante LANG en el archivo `i18n.js`.
+
+```js{4,11}
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
+
+const LANG = window.liquid ? window.liquid.lang : 'es-CL';
+
+Vue.use(VueI18n);
+
+//... more code
+
+export default new VueI18n({
+  locale: LANG,
+  fallbackLocale: 'es-CL',
+  messages: loadLocaleMessages(),
+});
+```
+
+La variable `liquid.lang` la tenemos que crear en Modyo Platform. Para crear esta variable, sigue estos pasos:
+
+1. En tu navegador, inicia sesión en Modyo Platform.
+1. Expande **Channels**, y haz click en **Sitios**.
+1. Haz click en **Plantillas**. 
+1. Abre la Vista `theme` en la sección Vistas -> Javascript -> theme.
+1. Agrega el siguiente código:
+
+``` js
+window.liquid = {
+ lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL'
+};
+```
+
+Este código asigna a la variable `liquid.lang` el lenguaje, dependiendo del valor de `@site.language` usando Liquid.
+
+### Agregar un idioma
+
+Para agregar un idioma nuevo al sitio, simplemente creamos un archivo **JSON** en la carpeta `locales` donde su nombre es el código del idioma a añadir. Por ejemplo, si queremos agregar portugués de Brasil, agrega `pt-BR.json`:
+
+``` treeview{4}
+├── src/
+│   ├── locales/
+│   │   ├── en-US.json
+│   │   ├── pt-BR.json <-- nuevo idioma
+│   │   └── es-CL.json
+```
+:::warning Atención
+La estructura del archivo de idioma tiene que ser un objeto **json**:
 :::
 
 ### Validación de formularios
@@ -261,157 +281,6 @@ En modo de desarrollo no tendremos acceso a este objeto ya que estamos trabajand
 
 En el siguiente ejemplo, const lang toma el valor de window.liquid.lang, si no existe el objeto, asigna el valor "es-CL" por defecto:
 
-### Obtenga una plantilla para un proyecto
-
-La CLI de Modyo está diseñada para funcionar en base a una arquitectura de micro front-end y acelerará el proceso de inicialización de un widget.
-
-### `modyo-cli get NAME [DIRECTORY]`
-
-En general, el comando `get` se usa para obtener una plantilla de widget.
-Si tiene un token proporcionado por Modyo, puede usar el mismo comando para extraer cualquiera de nuestros widgets premium de nuestra Biblioteca de widgets:
-
-```bash
-USAGE
-  $ modyo-cli get NAME [DIRECTORY]
-
-ARGUMENTS
-  NAME       The name of the widget
-  DIRECTORY  Name of directory to init
-
-OPTIONS
-  -f, --force        Override folder if exist
-  -h, --help         Output usage information
-  -o, --organization [default: modyo] Github organization
-  -x, --no-install   Don't install packages
-
-EXAMPLE
-  $ modyo-cli get name [directory]
+```js
+const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
 ```
-
->Hay algunas plantillas de widgets públicos a los que se puede acceder a través de este comando
-
-```bash
-  EJEMPLOS
-    $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
-```
-
->Desde este comando y en adelante, puede continuar utilizando el widget como cualquier otro widget vue-cli.
-
-### `modyo-cli push NAME`
-
-El comando `push` es el encargado del integrar el widget al sitio seleccionado en la plataforma Modyo.
-
-Utilizarás un argumento llamado nombre para cargar el widget en la plataforma y algunos indicadores requeridos como token `site_base id` o `host` para identificar la plataforma Modyo que aloja el widget y tienen un indicador adicional para evitar el flujo de proceso manual de la publicación del widget.
-
-:::warning Advertencia
-Por el momento, Modyo CLI sólo ofrece soporte para widgets hechos y compilados con las herramientas incluídas por defecto de Vue. 
-:::
-
-```bash
-USAGE
-  $ modyo-cli push NAME
-
-ARGUMENTS
-  NAME  The name of the widget
-
-OPTIONS
-  -b, --build-command=build-command      [default: build] Build command in package.json
-  -d, --build-directory=build-directory  [default: dist] Build directory path
-  -h, --help                             Output usage information
-  -i, --site-id=site-id                  Id of the site where the widget will be pushed
-  -l, --disable-liquid                   Disable Liquid
-  -n, --site-host=site-host              Host of the site where the widget will be pushed
-  -p, --publish                          Force widget publication
-  -t, --token=token                      (required) Modyo Api token
-  -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
-  -v, --version=8|9                      [default: 9] Version of Modyo platform
-
-EXAMPLE
-  $ modyo-cli push <NAME>
-
-```
-
-#### Variables de entorno
-
-Para hacer push hacia la plataforma, es necesario llenar las opciones requeridas. Para esto, hay dos opciones para le envío: escribir el comando con opciones o usar un archivo `.env`. Funcionan de la misma manera pero se implementan diferente.
-
-##### Archivo de variables de entorno
-
-En el directorio raíz del widget, crea un archivo `.env` que contenga los siguientes datos:
-
-```shell
-MODYO_ACCOUNT_URL=https://test.miModyo.com //URL de la cuenta dueña del sitio
-MODYO_VERSION=9                            //La versión de la plataforma Modyo
-MODYO_TOKEN=ax93...nm3                     //El token para accesar a la API administrativa
-MODYO_SITE_HOST=miHost                     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
-MODYO_SITE_ID=miStage                      //(Opcional) Esta variable solo se utiliza en el caso de hacer push hacia un stage. Solo se utiliza una variable MODYO_SITE_HOST o MODYO_SITE_ID. El Id se obtiene utilizando nuestra API /api/admin/sites.    
-MODYO_WIDGET_NAME=miWidget                 //El nombre del widget
-MODYO_BUILD_COMMAND=build                  //El comando para package.json (default: build) 
-MODYO_BUILD_DIRECTORY=dist                 //La ruta del widget (default: dist) 
-```
-
-##### Opciones
-
-En una terminal con modyo-cli instalado, es posible hacer push a través de la linea de comandos de la siguiente manera:
-
-```
-modyo-cli push miWidget -b build -d dist -n miHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
-```
-
-#### Push hacia Stage
-
-Al utilizar nuestra API de administración, también podrás hacer push hacia un stage. Sigue estos pasos para hacer un push hacia tu stage desde Modyo CLI.
-
-1. Haz una llamada a nuestra API de administración */api/admin/sites*, por ejemplo:
-
-``curl -X GET https://test.modyo.com/api/admin/sites`` 
-
-Recibirás un JSON con toda la información relacionada a sitios. Dentro de este JSON, en la información de tu sitio, existe un apartado de *stages* en donde encontrarás el Id necesario para hacer push a este stage, a través de Modyo CLI.
-
-```json
-"meta": [...],
-"sites": [
-    ...,
-    "name": "miHost",
-    "stages": [
-        {
-          "id": 1044,
-          "uuid": "7a5d4b2d-de98-4c7f-8f0d-2c08599a218c",
-          "name": "CLI DEMO",
-          "host": "cli-demo",
-          "stage_name": "main",
-          "created_at": "2019-03-15T11:02:07.000-03:00",
-          "original_stage": "",
-          "base_stage": true
-        },
-        {
-          "id": 2673,
-          "uuid": "951b258b-5c86-4e7b-a21a-8e605e9cf0de",
-          "name": "Test Stage CLI DEMO",
-          "host": "test-cli-demo",
-          "stage_name": "Test",
-          "created_at": "2022-08-10T18:03:19.000-04:00",
-          "original_stage": "main",
-          "base_stage": false
-        }
-    ],
-]
-```
-
-2. Abre tu archivo de variables de entorno `.env`. Se debe borrar la variable MODYO_SITE_HOST ya que usaremos el Id del sitio. Para hacer push hacia un stage, solo se puede usar MODYO_SITE_ID. Agrega el MODYO_SITE_ID de la siguiente manera:
-
-```shell
-MODYO_ACCOUNT_URL=https://test.miModyo.com
-MODYO_VERSION=9
-MODYO_TOKEN=ax93...nm3
-MODYO_WIDGET_NAME=miWidget
-MODYO_BUILD_COMMAND=build
-MODYO_BUILD_DIRECTORY=dist
-MODYO_SITE_ID=2673
-```
-
-3. En tu terminal, haz push a tu stage utilizando Modyo CLI:
-
-``modyo-cli push miWidget``
-
-En caso de querer hacer push a main, se tiene que modificar la variable MODYO_SITE_ID para main o borrar esta variable y usar MODYO_SITE_HOST.

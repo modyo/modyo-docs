@@ -6,14 +6,13 @@ search: true
 
 ## Introduction
 
-Welcome to a new tutorial of the Modyo training series. This tutorial focuses on [Modyo Channels](/en/platform/channels), where you'll build the base of a private site.
+Welcome to a new tutorial in the Modyo training series. This tutorial focuses on [Modyo Channels](/en/platform/channels), where you'll build the foundation of a private site.
 
 As in the other tutorials, we will use the fictional brand “Dynamic Bank”, which we will introduce below.
 
 ### Dynamic Bank
 
-Dynamic Bank is the name we use at Modyo for our demos and examples of the platform. We created it so users of the Dynamic demos can get a sense of what it's like to work with the Modyo platform. 
-
+Dynamic Bank is the name of our fictitious brand in Modyo. This experience will be very close to reality of how to work with Modyo. 
 
 ## Prerequisites
 
@@ -24,7 +23,7 @@ Be familiar with:
 - JS
 - Modyo's platform
 
-## Step 1: Create a Site
+## Step 1: Create a Cloud Site
 
 1. From the main menu, select **Channels** and click **Sites**.
 2. Click **+ New Site**.
@@ -93,7 +92,7 @@ button_font_weight = 600
 
 > To review, we are going to save our changes and then use [preview mode](/en/platform/core/key-concepts.html#preview-mode).
 
-## Step 4: Change Site Font
+## Step 4: Change Site Source
 
 In the Theme we are using the [webfontloader](https://github.com/typekit/webfontloader) library to load the typography asynchronously.
 
@@ -110,7 +109,7 @@ for
 families: ['Jost:400,700&display=swap']
 ```
 
-## Step 5: Modify Base Layout
+## Step 5: Modify Layout Base
 
 To make our site look like in the design, we need to modify its HTML structure. The idea is to change the code to one more like an application; with the menu in the sidebar and using 100% of the width of our screen.
 
@@ -681,6 +680,7 @@ To create the menu, follow these steps:
 
 3. Click **Save**.
 
+
 ## Step 9: Review and Publish Home, Navigation, and Template
 
 After completing the above steps, review the entire site in preview mode. When you are satisfied with the result, you must publish your changes to make all changes available to your end users.
@@ -693,7 +693,7 @@ Select all pending changes, and click **Publish**. Select **Publish Now**.
 
 ## Conclusion
 
-Congratulations! You have completed the Private Site tutorial.
+Very good! You have finished the Private Site tutorial.
 
 You now know how to use:
 - [Modyo Channels](/en/platform/channels) with all its modules:
@@ -702,4 +702,4 @@ You now know how to use:
 - [Templates](/en/platform/channels/templates)
 - [Site settings](/en/platform/channels/sites.html#site-settings)
 
-If you want to continue working with this example project, in the [following tutorial](/en/platform/tutorials/how-to-create-a-cli-widget.html), you can add a [Widget](/en/platform/channels/widgets) to it using the [Modyo CLI](/en/platform/channels/widgets.html#modyo-cli)
+If you want to continue working with this sample project, in the [next tutorial](/en/platform/tutorials/how-to-create-a-cli-widget.html) you can add a [Widget](/en/platform/channels/widgets) to it using the [Modyo CLI](/en/platform/tutorials/how-to-create-a-cli-widget.html) 

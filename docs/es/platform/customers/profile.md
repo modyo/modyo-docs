@@ -50,7 +50,7 @@ Puedes acceder a la API de customers en donde podrás obtener y editar la inform
 
 ### Tokens delegados
 
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
 
 ``curl -X GET test.miModyo.com/api/realms/miRealm/me``
 

@@ -2,40 +2,40 @@
 search: true
 ---
 
-# Creación de una Página de Contenido
+# Creating a Content Page
 
-## Introducción
+## Introduction
 
-Bienvenido a un nuevo tutorial de la serie de entrenamiento de Modyo. Este tutorial se enfocará en [Modyo Channels](/es/platform/channels) donde tu crearás una vista para poder desplegar entradas creadas en [Modyo Content](/es/platform/content).
+Welcome to a new tutorial in the Modyo training series. This tutorial will focus on [Modyo Channels](/en/platform/channels) where you'll create a custom view to display posts created in [Modyo Content](/en/platform/content).
 
-El enlace entre Content y Channels, es una de las funcionalidades más importantes a la hora de tener sitios dinámicos y fáciles de administrar. En el Tutorial de [Creación de contenido](/es/platform/tutorials/how-to-create-content), creaste el [Espacio](/es/platform/content/space) Bank, el [Tipo de contenido](/es/platform/content/types) Benefits y las [Entradas](/es/platform/content/entries). Ahora utilizarás este Tipo añadiendo los campos necesarios para generar los detalle según el diseño de Figma.
+The link between Content and Channels is one of the most important functionalities when it comes to having dynamic and easy-to-manage sites. In the [Content Creation](/en/platform/tutorials/how-to-create-content) Tutorial, you created the [Space](/en/platform/content/spaces.html) Bank, the [Content Type](/en/platform/content/types.html) Benefits and the [Entries](/en/platform/content/entries.html). You will now use this Type by adding the necessary fields to generate the details according to the Figma design.
 
-En este tutorial seguiremos usando la marca ficticia "Dynamic Bank", pero ahora nos enfocamos en crear, previsualizar, y publicar una entrada de tipo **Benefits** para la marca ficticia "Dynamic Cine".
+In this tutorial we will continue to use the fictional brand “Dynamic Bank”, but now we focus on creating, previewing, and publishing a **Benefits** entry for the fictional brand “Dynamic Cine”.
 
-<img src="/assets/img/tutorials/how-to-create-content-page/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/beneficios.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="The final product after this tutorial"/>
 
-<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">Ver Figma del diseño</a>
+<a href="https://www.figma.com/proto/jifcy8uqhsHdRzB78Oow6o/PD-Dynamic-Bank?page-id=847%3A8&node-id=847%3A14&viewport=599%2C497%2C0.26033779978752136&scaling=min-zoom" target="blank">View Figma design</a>
 
-## Requisitos Previos
+## Prerequisites
 
-Completado los tutoriales:
+Completed the tutorials:
 
-- [Creación y Publicación de Contenidos](/es/platform/tutorials/how-to-create-content)
-- [Creación de un Sitio Básico](/es/platform/tutorials/how-to-create-home)
+- [Creating and Publishing Content](/en/platform/tutorials/how-to-create-content)
+- [Creating a Basic Site](/en/platform/tutorials/how-to-create-home)
 
-Conocimientos de:
+Be familiar with:
 
 - HTML
 - CSS
 - JS
-- La plataforma Modyo
+- Modyo's platform
 
-## Paso 1: Agregar campos al tipo "Benefits"
+## Step 1: Add fields to the type “Benefits”
 
-1. En la plataforma, haz click en **Content**, selecciona **Espacios**.
-1. Haz click en el Espacio **Bank** y selecciona **Tipos**
-1. Haz click en el tipo **Benefits**.
-1. En la pantalla de tipo de contenido, agrega los siguientes campos:
+1. In the platform, select **Content** and click **Spaces**.
+1. Click the **Bank** Space and select **Types**
+1. Click the **Benefits** type.
+1. In the content type screen, add the following fields:
 
 <table>
 <tr><th style="text-align: left;">Field</th> <th style="text-align: left;">Name</th></tr> 
@@ -89,16 +89,16 @@ Conocimientos de:
 </tr>
 </table>
 
-## Paso 2: Crear entrada con nuevos campos
+## Step 2: Create entry with new fields
 
-Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar contenido de este tipo. Para crear una nueva entrada llamada **Dynamic Cine**, sigue estos pasos:
+After you have the type with the new fields, the next step is to publish content of this type. To create a new entry called **Dynamic Cine**, follow these steps:
 
-1. En el menú lateral, selecciona **Entradas**.
-1. Haz click en **+ Nueva Entrada**.
-1. Selecciona el tipo **Benefits**.
-1. Llena el nombre **Dynamic Cine** e identificador **dynamic-cine**.
-1. Haz click en **Crear**.
-1. En la pantalla de campos de Entrada, llena los siguientes valores:
+1. In the side menu, select **Entries**.
+1. Click **+ New Entry**.
+1. Select the **Benefits** type.
+1. Fill in the **Dynamic Cine** name and **dynamic-cine** identifier.
+1. Click **Create**.
+1. On the Input fields screen, fill in the following values:
 
 
 <table>
@@ -108,7 +108,7 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
     Short description
   </td>
   <td>
-    40% de descuento en entradas todos los Viernes.
+    40% off tickets every Friday.
   </td>
 </tr>
 <tr>
@@ -132,7 +132,7 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
     Description
   </td>
   <td>
-    Disfruta todos los Viernes de un 40% en entradas para la mejor cartelera de Dynamic Cine, aprovecha este beneficios exclusivo para clientes Dynamic Bank pagando con tu Tarjetas de crédito o débito.
+    Enjoy 40% off every Friday in tickets for the best movies in Dynamic Cinema, these benefits are exclusive to Dynamic Bank clients paying with your credit and debit cards.
   </td>
 </tr>
 <tr>
@@ -140,7 +140,7 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
     Commercial terms
   </td>
   <td>
-    Beneficio válido para clientes Dynamic Bank al pagar con su Tarjetas de Crédito o Débito en entradas para el día Viernes con un máximo de 8 entradas diarias por cliente titular.
+    Benefit valid for Dynamic Bank clients by paying with your credit or debit cards in tickets for Friday with a maximum of 9 tickets daily per client.
   </td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
     Validity
   </td>
   <td>
-    Del 1 de Enero al 31 de Diciembre del 2021
+    January 1st to December 31st, 2021
   </td>
 </tr>
 <tr>
@@ -161,55 +161,55 @@ Luego de tener el tipo con los nuevos campos, el siguiente paso es publicar cont
 </tr>
 </table>
 
-7. Haz click en **Guardar**.
+7. Click **Save**.
 
-## Paso 3: Crear Página de Contenido "Benefits"
+## Step 3: Create “Benefits” Content Page
 
-Después de crear la entrada con su contenido, ahora tienes que crear una [Página de contenido](/es/platform/channels/pages.html#content-pages) dentro de tu sitio para así generar páginas dinámicas conectadas a **Content**.
+After creating the post with its content, you now have to create a [Content Page](/en/platform/channels/pages.html#content-page) within your site in order to generate dynamic pages connected to **Content**.
 
-Para crear una Página de contenido, sigue estos pasos:
+To create a Content Page, follow these steps:
 
-1. En el menú lateral, selecciona **Channels**, haz click **Sitios**.
-1. Selecciona tu sitio y haz click en **Pages**.
-1. Haz click en **+ Nueva Página**.
+1. In the side menu, select **Channels**, click **Sites**.
+1. Select your site and click **Pages**.
+1. Click on **+ New Page**.
 
-<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/content-pages.png" style="max-width: 400px;margin: auto 0;" alt="The content page window"/>
 
-4. En el modal, selecciona la opción **Página de Contenido**.
-5. Selecciona el espacio el Espacio **Bank** y Tipo **Benefits**. Define el nombre de la página y su ruta.
-6. Presiona crear.
+4. In the modal, select **Content Page**.
+5. Select the space **Bank** and Type **Benefits**. Type the name of the page and its path.
+6. Click Create.
 
 
-Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que viene de ejemplo:
+To follow the Figma layout, paste the following HTML replacing the code that comes from the example:
 
 
 ``INDEX``
 
 ```html
 <div class="mb-5" id="benefits">
-	<div class="container">
-		<div class="row">
-			{% for entry in entries %}
-			<div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
-				<a class="card shadow-sm w-100 text-decoration-none" href="{{ entry.meta.url }}" >
-					<figure class="m-0">
-						<span class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small">{{ entry.meta.category}}</span>
-						<img aria-hidden="true" src="{{ entry.fields['Cover'].url }}" alt="{{ entry.meta.title }}" class="w-100"/>
-					</figure>
-					<figcaption class="pt-4 px-4 pb-2">
-						<h4 class="h6 text-dark">{{ entry.meta.title }}</h4>
-						<p class="text-muted">{{ entry.fields['Short description'] }}</p>
-					</figcaption>
-				</a>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            {% for entry in entries %}
+            <div class="col-12 col-md-6 col-lg-3 mb-4 pb-2 d-flex">
+                <a class="card shadow-sm w-100 text-decoration-none" href="{{ entry.meta.url }}" >
+                    <figure class="m-0">
+                        <span class="badge_category bg-white text-primary d-inline-block text-uppercase px-3 py-1 rounded-sm small">{{ entry.meta.category}}</span>
+                        <img aria-hidden="true" src="{{ entry.fields['Cover'].url }}" alt="{{ entry.meta.title }}" class="w-100"/>
+                    </figure>
+                    <figcaption class="pt-4 px-4 pb-2">
+                        <h4 class="h6 text-dark">{{ entry.meta.title }}</h4>
+                        <p class="text-muted">{{ entry.fields['Short description'] }}</p>
+                    </figcaption>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 ```
 
 ``SHOW``
- 
+
 ```html
 <div class="mb-5 mb-md-0 pb-5 pb-md-0" id="hero">
     <div class="bg-dark mb-5 mb-md-0 pt-5 pb-0 py-md-5">
@@ -317,15 +317,15 @@ Para seguir el diseño Figma, pega el siguiente HTML remplazando el código que 
 </style>
 ```
 
-Esta **Página de Contenido** ahora está conectada al Espacio de **Dynamic Bank**. Con ella puedes ingresar a los datos de la Entrada desde tu Sitio utilizando Liquid.
+This **Content Page** is now connected to the **Dynamic Bank** Space. With it you can access the Entries' data from your Site using Liquid.
 
-Ahora que ya tenemos nuestro Espacio y Tipo asociados a un Sitio, podrás activar [Modo vista previa en un sitio](/es/platform/content/entries.html#vista-previa). Para acceder al modo vista previa haz click en el ícono del "ojo" en la barra superior de acciones:
+Now that we have our Space and Type associated with a Site, you can turn on [Site Preview Mode](/en/platform/core/key-concepts.html#preview-mode). To access preview mode click on the “eye” icon in the top action bar:
 
-<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;"/>
+<img src="/assets/img/tutorials/how-to-create-content-page/preview_content.png" style="max-width: 400px;margin: auto 0;" alt="The final product after this tutorial in preview mode"/>
 
 
-## Conclusiones
+## Conclusion
 
-¡Felicidades! Haz finalizado el tercer curso de la serie de tutoriales de Modyo.
+Congratulations! You have finished the third course of the Modyo tutorials series.
 
-En este tutorial realizaste una de las principales herramientas que entrega Modyo a la hora de mantener tus canales digitales, agregaste una capa intermedia para poder visualizar el trabajo que se desarrolló en [Modyo Content](/es/platform/content), y generaste una Página dinámicas conectada a tu Sitio en [Modyo Channels](/es/platform/channels).
+In this tutorial, you completed one of Modyo's main tools when it comes to maintaining your digital channels, adding a middle layer to view the work that went into [Modyo Content](/en/platform/content), and generated a Dynamic Page connected to your Site in [Modyo Channels](/en/platform/channels).

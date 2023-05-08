@@ -12,7 +12,7 @@ En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por 
 
 Estas son las opciones disponibles para establecer una política de contraseña para Modyo Platform:
 
-- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 8 a 128 caracteres.
+- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 12 a 128 caracteres.
 - Requerir por lo menos una letra minúscula (a - z)
 - Requerir por lo menos una letra mayúscula (A - Z)
 - Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
@@ -43,6 +43,21 @@ Selecciona un valor en esta opción para que la plataforma automáticamente expi
 - 1 semanas
 - 2 semanas
 
+## Política de periodo de inactividad de los usuarios
+
+Con esta opción, la plataforma automáticamente cambia el estado de un usuario a inactivo. Transcurrido un tiempo determinado sin interacción con la plataforma, el usuario ya no va a poder iniciar sesión. Podrás seleccionar entre estos valores:
+
+- 30 días
+- 60 días
+- 180 días
+- 360 días
+
+Existe un checkbox adicional que envía email de activación por desactivación del usuario por inactividad.
+
+:::tip Nota
+Los administradores pueden cambiar el estado de un usuario entre inactivo y activo con el checkbox "Inicio de sesión desactivado por inactivad". Este lo puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con el checkbox activado, el usuario estará inactivo, y vice-versa con el checkbox desactivado, el usuarió estará activo.
+:::
+
 ## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
 
 Activa Cross-Origin Resource Sharing (CORS) para poder acceder a los recursos de Modyo desde otras páginas web.
@@ -51,7 +66,7 @@ Por defecto, los dominios personalizados de tus sitios se incluyen una vez que C
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
-Esta clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado-2).
+Esta clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado).
 
 :::warning Atención
 Generar una nueva clave forzará a que todas las request de contenido privado pasen por Modyo, dado que los JWT firmados por Modyo con la clave antigua ya no serán válidos.
@@ -59,7 +74,7 @@ Generar una nueva clave forzará a que todas las request de contenido privado pa
 
 La clave o _secret_ tiene un tiempo determinado de duración en segundos que se puede configurar en la caja debajo. Por defecto, la duración es 1 hora (3600 segundos). No es recomendable usar una duración muy pequeña, dado que podría afectar el rendimiento de la plataforma.
 
-## Autenticación de dos pasos (2FA)
+## Autenticación de dos pasos 2FA
 
 La autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica provista por la aplicación Google Authenticator desde sus teléfonos.
 
@@ -67,16 +82,22 @@ Cada miembro del equipo podrá activar la autenticación en dos pasos desde su p
 
 Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
 
+:::warning Atención
+En tu dispositivo móvil, la opción **Establecer zona horaria automáticamente** debe permanecer activada al usar autenticación de dos factores.
+:::
+
 ### Habilita autenticación de dos factores para un usuario 
 
 Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos factores.
 
-1. Dentro de la configuración de usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
-2. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
+1. En Modyo Platform, en el menú del usuario, haz click en **Perfil**.
+2. Dentro de la configuración de perfil de un usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
+3. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
 - Se agregará un campo nuevo con el nombre del dominio, tu nivel de usuario, y tu nombre de usuario. 
-3. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
+4. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
 
 > En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
+
 
 ### Eliminar autenticador para un usuario
 
