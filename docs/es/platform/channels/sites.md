@@ -91,6 +91,25 @@ La configuración del sitio te permite abrir las opciones de la plataforma, para
 
 <img src="/assets/img/channels/sites/config-site.jpg" alt="The settings for your sites" width="250" />
 
+## Revisión y Publicación Conjunta
+
+<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver que exactamente cambio al hacer click en el botón **Ver**. 
+
+### Publicar en conjunto
+
+Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
+
+1. En el menú principal de Modyo Platform, expande **Channels**, y haz click en **Sitios**.
+1. Haz click en tu sitio. 
+1. En la pantalla de Resumen, haz click en **Publicar**.
+1. Aquí podrás ver todos los cambios pendientes, selecciona todo lo que quieres publicar y haz click en **Publicar**.
+
+:::tip Tip
+Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+:::  
+
 ### General
 
 Dentro de esta sección puedes configurar los siguientes datos:
@@ -174,7 +193,7 @@ Estas opciones involucran cierto riesgo para la experiencia del sitio y sus usua
 
 - Cambiar Realm: Este campo despliega el realm de este sitio. Al cambiar de realm, se perderá toda la configuración de privacidad en tus sitios, páginas, y navegación.
 - Estado del Sitio: Cambia el estado del sitio entre tres diferentes opciones. 
-	* Habilitado permite que el sitio sea editable y visible al público, este es el estado por defecto de un sitio. 
+	* Habilitado permite que el sitio sea editable y visible al público, este es el estado por default de un sitio. 
 	* Editable permite que un sitio sea modificado pero no es visible al público. Usuarios necesitan hacer login a Modyo Platform para entrar al sitio. Robots.txt, PWAs, y el manifiesto son deshabilitados en este estado.
 	* Deshabilitado prohibe tanto la edición como la visibilidad de un sitio.
 - Eliminar Sitio: Esta acción manda a llamar asincrónicamente la eliminación del sitio. No se podrá accesar este sitio al iniciar a eliminar el sitio. Todos los elementos que contiene un sitio como las páginas y los widgets también serán eliminados. 
@@ -356,9 +375,7 @@ Modyo cuenta con hosts reservados para los sitios, de tal forma que no podrás u
 
 Agregar stages en tu sitio te permite integrar y desplegar continuamente (CI/CD) nuevas funcionalidades para tu sitio sin modificar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar únicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse a cualquier otro.
-
-
+Las ventajas principales de tener distintos stages en tus sitios es que te permite desarrollar únicamente para el stage actual, sin modificar lo que ya existe en el sitio. Estos stages pueden crear y usar variables, widgets, y plantillas locales para personalizar la experiencia o visualizar los cambios. Al finalizar los cambios dentro de un stage, podrán integrarse a cualquier stage.
 
 :::warning Atención
 - Cada Sitio tiene un máximo de 4 Stages.

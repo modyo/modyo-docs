@@ -86,7 +86,7 @@ Desde la versión 9.0.8 en adelante, los formularios ya no cuentan con preguntas
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
-:::danger Peligro
+::: danger Peligro
 Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.
 :::
 
@@ -155,7 +155,7 @@ Para hacer uso del snippet dentro de una página en la plataforma Modyo, debes c
 Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
 
 :::warning Atención
-Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/es/platform/core/security.html) en la configuración de la plataforma.
+Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/es/platform/core/security.htm) en la configuración de la plataforma.
 :::
 
 ### Notificaciones

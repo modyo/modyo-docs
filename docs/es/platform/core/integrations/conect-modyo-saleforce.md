@@ -336,7 +336,7 @@ Llenamos los siguientes datos:
 
 Las "Named Credentials" permiten a los usuarios autenticar a un proveedor de servicios externo. Hay varias opciones predeterminadas, para conectarnos a Modyo, tenemos que crear una autenticación personalizada.
 
-En este caso, se tiene que crear una credencial heredada. Para generar una vamos a buscar <b>Named Credentials</b> dentro de Setup, y hacemos click en <b>New</b> y seleccionamos <b>New Legacy</b>. Llenamos los campos de la siguiente forma:
+Para generar una vamos a buscar <b>Named Credentials</b> dentro de Setup, y hacemos click en <b>New Named Credential</b>. Llenamos los campos de la siguiente forma:
 
 <table>
  <tr>
@@ -418,18 +418,6 @@ En este caso, se tiene que crear una credencial heredada. Para generar una vamos
 Haz click en <b>Save</b>.
 
 ## Paso 6: Remote Site
-
-Se necesita agregar la URL de Modyo Platform a la sección de Sitios Remotos. Para agregar la URL, sigue estos pasos:
-
-1. Dentro de Setup en Salesforce, haz click en Configuración de sitios remoto.
-1. Haz click en Nuevo sitio remoto.
-1. Llena el nombre, descripción, y URL. Utiliza la URL de Modyo Platform (e.g. test.modyo.com, reemplaza test por el nombre de tu cuenta.)
-1. Haz click en Guardar.
-
-<img src="/assets/img/tutorials/saleforce/remote_site.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Remote Site flow in Salesforce"/>
-
-
-## Paso 7: Servicio externo
 
 El último paso es la definición del servicio externo dentro de Salesforce. 
 
@@ -713,12 +701,11 @@ Escribe un nombre, selecciona el Named Credential que creaste y en la parte infe
   }
 }
 ```
-
 <img src="/assets/img/tutorials/saleforce/add_an_external_service.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Add an External Service in Salesforce."/>
 
 Haz click en <b>Save & Next</b>, selecciona todos lo operadores y haz click en Next y Done.
 
-## Paso 8: Crear Custom Fields de usuarios
+Haz click en <b>Save & Next</b>, selecciona todos lo operadores y haz click en Next y Done.
 
 Dentro de <b>Setup</b>, haz click en <b>Contact</b> para crear los campos que necesitaremos.
 

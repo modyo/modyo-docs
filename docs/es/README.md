@@ -7,7 +7,7 @@ meta:
     content: La documentación de una plataforma de experiencia digital de última generación para crear mejores productos digitales.
 
 heroImage: https://cloud.modyocdn.com/uploads/cec0beb2-6695-495d-9306-f6ea1098b020/original/MP-Channels-and-Content.png
-footer: Copyright © 2008-2023 Modyo SpA
+footer: Copyright © 2008-2022 Modyo SpA
 
 platformText: La base tecnológica sobre la cual operan las aplicaciones
 
@@ -55,15 +55,15 @@ FirstSteps3Alt: Una lista de todos los conceptos y términos clave que usamos pa
 FirstSteps4Title: Experiencias Financieras
 FirstSteps4Text: Modyo Dynamic catálogo que ofrece diferentes experiencias financieras a tus necesidades.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
-FirstSteps4Url: /es/dynamic/
+FirstSteps4Url: /es/widgets/
 FirstSteps4Alt: Un catálogo que ofrece diferentes experiencias financieras a tus necesidades.
 
 
 FirstSteps5Title: Modyo Training
 FirstSteps5Text: Aprende acerca de Modyo y sus principales características. Revisa nuestros cursos y material de entrenamiento.
 FirstSteps5Img: https://cloud.modyocdn.com/uploads/4853c725-b765-4770-add1-d4cd4184ae10/original/Training.png
-FirstSteps5Url: https://help.modyo.com/
-FirstSteps5Alt: Aprende acerca de Modyo y sus principales características. Revisa nuestros cursos y material de entrenamiento.
+FirstSteps5Url: https://training.modyo.com/
+FirstSteps5Alt: Obtenga la certificación en nuestros programas de capacitación a su propio ritmo.
 
 search: Buscar en
 

@@ -10,7 +10,7 @@ De esta forma, es posible realizar labores administrativas consumiendo la API y 
 
 :::danger Peligro
 Es importante asegurarse que el portal de APIs no sea expuesto de manera pública a Internet. Las llamadas hacia las APIs deben realizarse desde un ambiente seguro usando los protocolos de seguridad adecuados (HTTPS) y evita compartir los tokens de autenticación.
-:::  
+:::   
 
 ## Información General
 
@@ -543,74 +543,4 @@ Lo que entrega un response como el siguiente:
 
 Finalmente, la API siempre retornará la primera página (`current_page: 1`) de recursos agrupados por páginas de 10 elementos (`per_page: 10`) de manera predeterminada.
 
-## Registros (Logs)
-
-Con la API de Logs puedes obtener todos los registros que suceden dentro de Modyo Platform, puedes elegir entre logs de Usuarios o Administradores. Si quieres consultar los logs de Usuarios, usa:  
-
-```shell script
-curl -X GET https://test.modyo.com/api/admin/logs?user_type=User"   -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
-```
-
-Esta consulta obtuvo todos los registros y los despliega en un JSON:
-
-```json
-{
-  "logs": [
-    {
-      "id": 26826,
-      "account_id": 4,
-      "site_id": 0,
-      "space_id": 0,
-      "site_host": "string",
-      "site_name": "string",
-      "user": {
-        "avatar": {
-          "id": 100,
-          "file_name": "user_avatar.png",
-          "url_original": "https://test.modyo.com:3000/assets/avatar/user_avatar_original.png",
-          "url_small": "https://test.modyo.com:3000/assets/avatar/user_avatar_small.png",
-          "url_medium": "https://test.modyo.com:3000/assets/avatar/user_avatar_medium.png"
-        },
-        "id": 344,
-        "name": "Sam Johnson",
-        "first_name": "Johnson",
-        "last_name": "Sam",
-        "email": "sam.johnson@modyo.com",
-        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-..."
-      },
-      "type": "Logs::TargetDeletedLog",
-      "value_1": "string",
-      "value_2": "string",
-      "value_3": "string",
-      "request_ip": "127.0.0.1",
-      "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
-      "title": "admin.logs.target_deleted_log.title",
-      "description": "admin.logs.target_deleted_log.description",
-      "loggeable_id": 15,
-      "loggeable_type": "Targets::Target",
-      "log_origin": "admin.loggeable_types.targets.target",
-      "created_at": "2020-02-06T12:20:29.000-03:00",
-      "options": "{\\\"title\\\":\\\"\\\"}",
-      "log_key_user_action": "admin.logs.target_deleted_log.activity",
-      "defaults": {
-        "site_or_account": "<a href=\\\"https://test.modyo.com\\\">My Modyo</a>",
-        "user": "<a href=\\\"https://test.modyo.com/admin/settings/admin_users/830d2b95-e74e-49b0-b5e9-6c6b90d66447\\\">Sam J.</a>",
-        "loggeable": "string",
-        "value_1": "string",
-        "value_2": "string",
-        "value_3": "string"
-      }
-    }
-  ],
-  "meta": {
-    "total_entries": 2,
-    "per_page": 10,
-    "current_page": 1,
-    "total_pages": 1
-  }
-}
-```
-
-Si quieres conocer los registros de administradores, cambia el tipo de usuario por: `user_type=AdminUser`
-
-Para conocer más acerca de cómo hacer consultas a la información de Content vía API, ve nuestra guía y ejemplos en [API](/es/platform/content/public-api-reference).
+Para conocer más acerca de las diferentes maneras de hacer uso de APIs, ve [API & SDKs](/es/platform/content/public-api-reference).

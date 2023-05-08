@@ -2,4 +2,4 @@
 search: true
 ---
 
-# Configuration
+# Storybook
