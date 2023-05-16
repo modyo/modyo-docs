@@ -6,6 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.34 - 16 de mayo de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras en la visualización de tags en el selector cuando los valores son muy largos
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en la búsqueda de sitios, ahora se contemplan las categorías en los links generados a páginas de contenido
+* Corrige error que evitaba despublicar paginas pase a no tener dependencias en un contexto con stages
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega fecha de despublicación a la metadata de un contenido
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problemas de permisos en el acceso a la edición de formularios
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Corrige problemas visuales y de métricas en los gráficos
+* Corrige problemas de acceso a la visualización de gráficos
+
+
 ### 9.2.33 - 05 de mayo de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
