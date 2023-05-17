@@ -420,7 +420,7 @@ To delete a Stage, follow these steps:
 3. Click **Site Settings**, and select **General**.
 4. In the **Danger Zone** section, click **Delete Stage**.
 
-:: :warning Warning
+:::warning Warning
 An alert will appear asking for confirmation. When you click delete, the platform will start an asynchronous process and you will not be able to re-enter the Stage. All information relevant to the Stage will be deleted, including Site elements such as Pages and Widgets, as well as the Team configuration, Roles, etc.
 :::
 
