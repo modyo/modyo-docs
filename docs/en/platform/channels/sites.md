@@ -517,7 +517,7 @@ The precedence of locations on Modyo sites is as follows:
 1. Custom redirects
 1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
 
-:: :warning Conditions for a redirect
+:::warning Conditions for a redirect
 The source route must not exist or be unpublished for the redirection to be successful. If the source is a published page with children, you must unpublish the children first before unpublishing the parent page.
 :::
 
