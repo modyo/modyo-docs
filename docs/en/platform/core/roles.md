@@ -85,7 +85,7 @@ The default roles that exist, depending on the given area of the platform:
 
 The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
 
-#### Roles by kingdom:
+#### Roles by realm:
 
 - **Realm User**: You can add users, create, modify, and send campaigns, forms, and segments for review.
 - **Realm Admin**: You can access all the settings and sections of the kingdom, add and remove users and team members, and you can also delete the kingdom.
