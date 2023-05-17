@@ -517,6 +517,10 @@ La precedencia de ubicaciones en los sitios de Modyo es la siguiente:
 1. Redirecciones personalizadas
 1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#privacidad)
 
+:::warning Condiciones para una redirección
+La ruta origen debe no existir o estar despublicada para que la redirección sea exitosa. En el caso de que el origen sea una página publicada con hijos, se debe despublicar los hijos primero antes de despublicar la página padre.
+:::
+
 ### Security headers
 
 Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
