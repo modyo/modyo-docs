@@ -6,6 +6,65 @@ search: true
 
 ## 9.2
 
+### 9.2.34 - May 16, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Improvements in the display of tags in the selector when the values are very long
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improvements in site search, categories are now considered in links generated to content pages
+* Fix a bug that prevented unpublishing pages from going to have no dependencies in a context with stages
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Add release date to the metadata of a content
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fix permission issues when accessing and editing forms
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Correct visual and metric problems in graphics
+* Corrects problems with accessing the display of graphics
+
+
+### 9.2.33 - May 05, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Improves visibility in the list of tags when they are very long
+* New Getstared
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Content publishers can now publish in bulk from the post list
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Correct search engine in list of pages in list mode
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fix an error when creating a new identity provider of the type openid by specifying claims
+
+
+### 9.2.32 - April 21, 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Change the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
+* Fix problems when replacing images with SVG extension
+* Fix problems when displaying a logo in SVG
+
+
 ### 9.2.31 - April 06, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -17,6 +76,7 @@ search: true
 
 * Fix permanent error in asset manager
 
+
 ### 9.2.30 - March 24, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -25,7 +85,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrects update of widgets coming from the CLI
+* Fix updates for widgets coming from the CLI
 
 
 ### 9.2.29 - March 22, 2023
@@ -46,7 +106,7 @@ search: true
 
 * Corrects the removal of widgets coming from the CLI
 * Add modal to name a new cloned widget
-* Fixes problem when modifying variables in widgets
+* Fix problem when modifying variables in widgets
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
