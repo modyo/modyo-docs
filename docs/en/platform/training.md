@@ -43,7 +43,7 @@ To create the test account, you must go to the [following link](https://platform
 
 You will automatically be assigned the role of account administrator, which will grant you the permissions to invite other users on your team to the platform.
 
-This environment will be available for a limited period of time. Once the deadline has expired, the account will be automatically canceled. If you require an extension of the indicated period, you must request it to the email [success@modyo.com] (mailto: success@modyo.com), indicating the additional time you need.
+This environment will be available for a limited period of time. Once the deadline has expired, the account will be automatically canceled. If you require an extension of the indicated period, you must request it to the email [success@modyo.com](mailto: success@modyo.com), indicating the additional time you need.
 
 ### How to ask for help?
 
