@@ -85,6 +85,10 @@ Los roles predeterminados que existen son, según contexto:
 
 El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
 
+#### Roles por reino:
+
+- **Realm User**: Puede añadir usuarios, crear, modificar, y enviar a revisión campañas, formularios, y segmentos.
+- **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
 
 ### Acceso a las aplicaciones:
 Dado que contamos con roles que permiten acceder a todas las aplicaciones sin restricción alguna, Modyo permite restringir acceso a ciertas aplicaciones mediante la configuración del miembro del equipo, de esta forma, puedes darle a un usuario acceso total (Owner) pero solamente en la aplicación de Channels.

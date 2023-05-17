@@ -250,8 +250,8 @@ Si quieres eliminar a un administrador del reino, selecciona usando los checkbox
 
 Los roles disponibles son:
 
-- **Usuario**: Puede añadir usuarios, crear, modificar, y enviar a revisión campañas, formularios, y segmentos.
-- **Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
+- **Realm User**: Puede añadir usuarios, crear, modificar, y enviar a revisión campañas, formularios, y segmentos.
+- **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
 
 ### Custom fields
 
