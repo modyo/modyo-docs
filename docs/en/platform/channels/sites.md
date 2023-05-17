@@ -415,7 +415,7 @@ To delete a Stage, follow these steps:
 1. From the side menu, click **Channels**, then select your **Site**.
 2. In the Site selector, select the Stage you want to delete.
 
- <img src="/assets/img/channels/sites/delete-stage.jpg" alt="Site and stage selector." width="500" style="margin-top: 40px; border: 1px solid #EEE;" > 
+<img src="/assets/img/channels/sites/delete-stage.jpg" alt="Site and stage selector." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 3. Click **Site Settings**, and select **General**.
 4. In the **Danger Zone** section, click **Delete Stage**.
