@@ -4,7 +4,7 @@ search: true
 
 # Training
 
-Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and it corresponds to driver learning activities to generate the minimum skills necessary to be able to use the Modyo Platform effectively. The training activities include reviewing [Modyo documentation] (/es/platform), [explanatory videos] (https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [Learning Paths] (https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo), among others.
+Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and it corresponds to driver learning activities to generate the minimum skills necessary to be able to use the Modyo Platform effectively. The training activities include reviewing [Modyo documentation](/en/platform), [videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo), among others.
 
 ### Modyo Platform
 
@@ -31,7 +31,7 @@ The [tutorials](/en/platform/tutorials) are the easiest way to get started on th
 We recommend you to perform the tutorials in order, following all the steps presented in them.
 
 #### Learning Paths
-Modyo has different [Learning Paths] (https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo) for customers and business partners. They consist of more dynamic alternatives to learn how to use our tools at your own pace.
+Modyo has different [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo) for customers and business partners. They consist of more dynamic alternatives to learn how to use our tools at your own pace.
 
 Take the courses you need according to your needs according to the role you play, or take them all to become a true Modyo specialist. The only requirement to start our Learning Paths is an environment.
 
