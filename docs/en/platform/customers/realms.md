@@ -250,8 +250,8 @@ If you want to remove an administrator from the realm, select using the checkbox
 
 The available roles are:
 
-- **User**: You can add users, create, modify, and send for review campaigns, forms, and segments.
-- **Admin**: You can access all settings and sections of the realm, add and remove users and team members, as well as delete the realm.
+- **Realm User**: You can add users, create, modify, and send campaigns, forms, and segments for review.
+- **Realm Admin**: You can access all the settings and sections of the realm, add and remove users and team members, and you can also delete the realm.
 
 ### Custom fields
 
