@@ -39,7 +39,7 @@ Take the courses you need according to your needs according to the role you play
 #### Test environment
 To understand how the Modyo Platform works, it is very important that you can have access to all the features we provide. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
 
-To create the test account, you must go to the [next link] (https://platform.modyo.cloud/try) and complete the form by entering your details and those of your organization.
+To create the test account, you must go to the [following link](https://platform.modyo.cloud/try) and complete the form by entering your details and those of your organization.
 
 You will automatically be assigned the role of account administrator, which will grant you the permissions to invite other users on your team to the platform.
 
