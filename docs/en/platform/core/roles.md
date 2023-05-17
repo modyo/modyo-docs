@@ -88,7 +88,7 @@ The most important user will have the role of Default Admin or Administrator wit
 #### Roles by realm:
 
 - **Realm User**: You can add users, create, modify, and send campaigns, forms, and segments for review.
-- **Realm Admin**: You can access all the settings and sections of the kingdom, add and remove users and team members, and you can also delete the kingdom.
+- **Realm Admin**: You can access all the settings and sections of the realm, add and remove users and team members, and you can also delete the realm.
 
 ### Access to applications:
 Since we have roles that allow access to all applications without restriction, Modyo allows you to restrict access to certain applications through the team member settings, so you can give a user full access (Owner) but only in the Channels app.
