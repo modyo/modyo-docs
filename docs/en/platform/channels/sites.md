@@ -408,6 +408,21 @@ When you click on sync, you will be able to select which changes to take from an
 The platform does not allow to synchronize changes that are not yet published.
 :::
 
+### Delete a Stage
+
+To delete a Stage, follow these steps:
+
+1. From the side menu, click **Channels**, then select your **Site**.
+2. In the Site selector, select the Stage you want to delete.
+
+ <img src="/assets/img/channels/sites/delete-stage.jpg" alt="Site and stage selector." width="500" style="margin-top: 40px; border: 1px solid #EEE;" > 
+
+3. Click **Site Settings**, and select **General**.
+4. In the **Danger Zone** section, click **Delete Stage**.
+
+:: :warning Warning
+An alert will appear asking for confirmation. When you click delete, the platform will start an asynchronous process and you will not be able to re-enter the Stage. All information relevant to the Stage will be deleted, including Site elements such as Pages and Widgets, as well as the Team configuration, Roles, etc.
+:::
 
 ### Team Review
 
@@ -501,6 +516,10 @@ The precedence of locations on Modyo sites is as follows:
 1. [Pages](/en/platform/channels/pages.html)
 1. Custom redirects
 1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
+
+:: :warning Conditions for a redirect
+The source route must not exist or be unpublished for the redirection to be successful. If the source is a published page with children, you must unpublish the children first before unpublishing the parent page.
+:::
 
 ### Security headers
 
