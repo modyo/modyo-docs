@@ -48,14 +48,16 @@ Selecciona un valor en esta opción para que la plataforma automáticamente expi
 Con esta opción, la plataforma automáticamente cambia el estado de un usuario a inactivo. Transcurrido un tiempo determinado sin interacción con la plataforma, el usuario ya no va a poder iniciar sesión. Podrás seleccionar entre estos valores:
 
 - 30 días
-- 60 días
+- 90 días
 - 180 días
 - 360 días
+
+>El periodo de inactividad por defecto es de 90 días.
 
 Existe un checkbox adicional que envía email de activación por desactivación del usuario por inactividad.
 
 :::tip Nota
-Los administradores pueden cambiar el estado de un usuario entre inactivo y activo con el checkbox "Inicio de sesión desactivado por inactivad". Este lo puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con el checkbox activado, el usuario estará inactivo, y vice-versa con el checkbox desactivado, el usuarió estará activo.
+Los Owners pueden cambiar el estado de un usuario entre inactivo y activo con el checkbox "Inicio de sesión desactivado por inactivad". Este lo puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con el checkbox activado, el usuario estará inactivo, y vice-versa con el checkbox desactivado, el usuarió estará activo.
 :::
 
 ## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
