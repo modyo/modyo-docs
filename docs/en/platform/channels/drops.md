@@ -32,7 +32,7 @@ Account administrators are those users with privileges to make changes at the Ac
 
 ## Asset
 
-Object of type asset. Contains the information relevant to a file within the [File Manager](/en/platform/content/asset-manager).
+Object of type asset. Contains the information relevant to a file within the [Asset Manager](/en/platform/content/asset-manager).
 
 | Description  | Example  |
 |---|---|
@@ -114,9 +114,9 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 | **entry.tags** String arrangement for the tags in this entry. | ```tag1, tag2``` |
 | **entry.account_url** The account url | ```https://test.miModyo.com``` |
 | **entry.url** Canonical URL of the entry | ```https://test.miModyo.com/entry``` |
-| ** [entry.author] (#usuario) ** The user object author of the entry | ```tag1, tag2``` |
+| **[entry.author](#user)** The user object author of the entry | ```tag1, tag2``` |
 | **entry.meta** The metadata object for the entry.  | This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private |
-| ** [entry.fields] (#campo) ** Array with objects from the fields in the entry. |  |
+| **[entry.fields](#field)** Array with objects from the fields in the entry. |  |
 
 ## Field
 
@@ -141,7 +141,7 @@ These drops allow you to get information through Liquid from a form in the Custo
 | Description  | Example  |
 |---|---|
 | **alternative.id** The id of the alternative.  | ```The first question``` |
-| ** [alternative.question] (#question) ** Question type object.  | |
+| **[alternative.question](#question)** Question type object.  | |
 
 ### Answer
 
@@ -149,8 +149,8 @@ These drops allow you to get information through Liquid from a form in the Custo
 |---|---|
 | **answer.edit_url** The editing URL for the response.  | ```” https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8 “``` |
 | **answer.id** The id of the answer.  | ```5``` |
-| ** [answer.question] (#question) ** Question type object associated with the answer.  |  |
-| ** [answer.response] (#answer) ** Response type object associated with the response.  |  |
+| **[answer.question](#question)** Question type object associated with the answer.  |  |
+| **[answer.response](#answer)** Response type object associated with the response.  |  |
 | **answer.text_field** The text field associated with the answer.  | ```This is the answer in the text field``` |
 | **answer.type** The type of response.  | ```text_answer``` |
 
@@ -171,7 +171,7 @@ These drops allow you to obtain information through Liquid for questions on a fo
 | **question.allow_alternatives? ** Boolean to check if the question accepts alternatives.  | ```false``` |
 | **question.alternatives** Array with alternatives type objects.  | |
 | **question.allow_alternatives? ** Boolean to check if the question accepts alternatives.  | ```false``` |
-| ** [question.form] (#formulario -form) ** Form-type object.  | |
+| **[question.form](#form)** Form-type object.  | |
 | **question.id** Returns the question id.  | ```3``` |
 | **question.label** The label of the question. | ```The first question``` |
 
@@ -192,7 +192,7 @@ Extends the functionality of the drop Grid and additionally contains the followi
 
 | Description  | Example  |
 |---|---|
-| ** [full_grid.main_widgets] (#widget) ** Array of widget-type objects.  |  |
+| **[full_grid.main_widgets](#widget)** Array of widget-type objects.  |  |
 
 ### Full Three Column Grid
 
@@ -200,10 +200,10 @@ Extends the functionality of the drop Grid and additionally contains the followi
 
 | Description  | Example  |
 |---|---|
-| ** [full_three_cols_grid.main_widgets] (#widget) ** Array of widget-type objects.  | |
-| ** [full_three_cols_grid.col1_widgets] (#widget) ** Array of widget-type objects.  | |
-| ** [full_three_cols_grid.col2_widgets] (#widget) ** Array of widget-type objects.  | |
-| ** [full_three_cols_grid.col3_widgets] (#widget) ** Array of widget-type objects.  | |
+| **[full_three_cols_grid.main_widgets](#widget)** Array of widget-type objects.  | |
+| **[full_three_cols_grid.col1_widgets](#widget)** Array of widget-type objects.  | |
+| **[full_three_cols_grid.col2_widgets](#widget)** Array of widget-type objects.  | |
+| **[full_three_cols_grid.col3_widgets](#widget)** Array of widget-type objects.  | |
 | ** [side_right_three_cols_grid.main_widgets] (#widget) ** Array of widget-type objects.  | |
 
 
