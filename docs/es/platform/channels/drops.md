@@ -330,7 +330,7 @@ Estos drops te permiten obtener información a través de Liquid para las notifi
 
 # Orden
 
-Estos drops te permiten obtener información a través de Liquid para las órdenes del módulo Commerce.ç
+Estos drops te permiten obtener información a través de Liquid para las órdenes del módulo Commerce.
 
 ## Notificación
 
