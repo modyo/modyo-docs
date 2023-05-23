@@ -52,7 +52,7 @@ Object of type asset. Contains the information relevant to a file within the [Fi
 
 The Audio drop is a subclass that inherits the same attributes as Asset. **audio_asset** can be used and replaced instead of asset. 
 
-The following attributes are inherited from [Asset] (#asset):
+The following attributes are inherited from [Asset](#asset):
 
 `.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`
 
@@ -60,7 +60,7 @@ The following attributes are inherited from [Asset] (#asset):
 
 The File drop is a subclass that inherits the same attributes as Asset. **file_asset** can be used and replaced instead of asset. 
 
-The following attributes are inherited from [Asset] (#asset):
+The following attributes are inherited from [Asset](#asset):
 
 `.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`
 
