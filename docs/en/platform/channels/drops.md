@@ -24,7 +24,7 @@ Account administrators are those users with privileges to make changes at the Ac
 
 | Description  | Example  |
 |---|---|
-| ** [adminuser.avatar] (#asset) ** Asset type object for the administrator's avatar. |  |
+| **[adminuser.avatar](#asset)** Asset type object for the administrator's avatar. |  |
 |  **adminuser.email** Administrator email.  | ```john.doe@modyo.com ``` |
 | **adminuser.first_name** Name of the administrator.  | ```John``` |
 | **adminuser.last_name** Last name of the administrator. | ```Doe``` |
