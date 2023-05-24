@@ -249,7 +249,7 @@ Extends the functionality of the drop Grid and additionally contains the followi
 | **[side_left_three_cols_grid.col1_widgets](#widget)** Array of widget-type objects.  | |
 | **[side_left_three_cols_grid.col1_widgets](#widget)** Array of widget-type objects.  | |
 | **[side_left_three_cols_grid.col2_widgets](#widget)** Array of widget-type objects.  | |
-| ** [side_left_three_cols_grid.col3_widgets] (#widget) ** Array of widget-type objects.  | |
+| **[side_left_three_cols_grid.col3_widgets](#widget)** Array of widget-type objects.  | |
 
 ### Side Right Grid
 
