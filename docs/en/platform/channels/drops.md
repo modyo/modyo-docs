@@ -585,7 +585,7 @@ These drops get the information relevant to Widgets.
 
 ### Rich Text Widget
 
-| **rich_text_widget.html** The html content of the widget. | ```Hello World 😃``` | <p> <strong> <span style=\"color: rgb(216, 55, 98);\"> &nbsp; <span class=\"fr-emoticon fr-deletable\"> </span> &nbsp; </span> </strong> <x id="1d1d9577-3712-49d2-9ef4-cc174c707425"/> 0
+| **rich_text_widget.html** El contenido html del widget. | ```<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World&nbsp;<span class=\"fr-emoticon fr-deletable\">😃</span>&nbsp;</span></strong></p>``` |
 
 
 ### Text Widget
@@ -598,8 +598,8 @@ These drops get the information relevant to Widgets.
 
 
 
- <style> 
+<style>
 table, th, td {
- border: 1px solid white;
+  border: 1px solid white;
 }
- </style> 
+</style>
