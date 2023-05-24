@@ -386,7 +386,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 | **page.meta_tags** Arrangement of strings with the meta tags associated with the page.  | ```My, Test, Metatag``` |
 | **page.title** The title associated with the page.  | ```Home``` |
 
-## Kingdom
+## Realm
 
 | Description  | Example  |
 |---|---|
