@@ -402,7 +402,7 @@ These drops allow you to obtain information when making a request.
 |---|---|
 | **request.domain** The domain of the request. | ```Mimodyo.com``` |
 | **request.host** The host of the request.  | ```test.mimodyo.com``` |
-| **request.protocl** The protocol associated with the request. | ```https: //``` |
+| **request.protocl** The protocol associated with the request. | ```https://``` |
 | **request.user_agent** The details of the user agent. | ```mozilla/5.0 (macintosh; intel mac os x 10_15_2) applewebkit/537.36 (khtml, like gecko) chrome/96.0.4664.110 safari/537.36``` |
 | **request.comments_url** Comments URL of the request.  | ```https://test.miModyo.com/newsite/requests/123124/comments``` |
 | **request.interact_url** The interact URL of the request. | ```https://test.miModyo.com/newsite/requests``` |
