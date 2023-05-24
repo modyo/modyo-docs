@@ -553,7 +553,7 @@ These drops get the information relevant to Widgets.
 | Description  | Example  |
 |---|---|
 | **widget.cache_key** The cache key associated with the widget.  | ```widgets/content_list_widgets/506-20220215151403000000``` |
-| **widget.created_at** The creation date of the widget.  | ```Tue, 15 Feb 2022 15:14:03 UTC + 00:00 ``` |
+| **widget.created_at** The creation date of the widget.  | ```Tue, 15 Feb 2022 15:14:03 UTC +00:00``` |
 | **widget.id** The ID associated with the respective widget.  | ```506``` |
 | **widget.resolve_type** The type of the widget with underscore.  | ```content_list_widget``` |
 | **widget.title** The title of the widget.  | ```Content list``` |
