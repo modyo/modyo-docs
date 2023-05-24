@@ -430,7 +430,7 @@ Site drops are used to obtain all the information of a site. The available attri
 | **site.logout_url** A string containing the site's logout URL. |  |
 | **site.name** A string with the name of the site. |  |
 | **site.profile_url** A string with the profile link for the site. |  |
-| ** [site.pwa_icon] (#asset) ** Asset type object that contains the PWA icon information. |  |
+| **[site.pwa_icon](#asset)** Asset type object that contains the PWA icon information. |  |
 | **site.search_url** A string with the URL for the site's search bar. |  |
 | **site.tag_manager_id** A string with the Google Tag Manager ID of the site. |  |
 | **site.tagline** A string describing the site's tagline. |  |
@@ -460,7 +460,7 @@ These drops allow you to obtain information from a site's browser.
 | Description  | Example  |
 |---|---|
 | **sitesearch.have_results** Boolean that determines if the search has results. |  |
-| ** [sitesearch.results] (#pagina) ** Page-type object that meets the search parameters.  | |
+| **[sitesearch.results](#page)** Page-type object that meets the search parameters.  | |
 | **sitesearch.have_less_pertint_results** Boolean that determines if there are more results that exceed the maximum result limit.  | |
 
 ## Space
