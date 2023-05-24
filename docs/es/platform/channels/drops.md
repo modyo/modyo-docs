@@ -382,7 +382,7 @@ Estos drops son de gran utilidad al momento de querer hacer páginas dinámicas 
 | **page.description** La descripción de la página.  | ```Este es la descripcion de una página muy cool``` |
 | **page.excerpt** El excerpt asociado a la página.  | ```Este es el excerpt de una página muy cool```
  |
-| **[page.grid](./grilla)** El objecto del tipo grilla asociado a la página. |  |
+| **[page.grid](#grilla)** El objecto del tipo grilla asociado a la página. |  |
 | **page.meta_tags** Arreglo de strings con los meta tags asociados a la página.  | ```My, Test, Metatag``` |
 | **page.title** El título asociado a la página.  | ```Home``` |
 
