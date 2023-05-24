@@ -417,7 +417,7 @@ Site drops are used to obtain all the information of a site. The available attri
 
 | Description  | Example  |
 |---|---|
-| ** [site.account] (#cuenta) ** The Account-type object associated with this site. |  |
+| **[site.account](#account)** The Account-type object associated with this site. |  |
 | **site.apple_touch_icons** String with the link for the Apple touch icon.  | |
 | **site.cache_key** The cache key associated with the site. |  |
 | **site.description** A string with the description of the site.  | |
