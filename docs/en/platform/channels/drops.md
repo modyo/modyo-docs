@@ -147,7 +147,7 @@ These drops allow you to get information through Liquid from a form in the Custo
 
 | Description  | Example  |
 |---|---|
-| **answer.edit_url** The editing URL for the response.  | ```” https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8 “``` |
+| **answer.edit_url** The editing URL for the response.  | ```"https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8"``` |
 | **answer.id** The id of the answer.  | ```5``` |
 | **[answer.question](#question)** Question type object associated with the answer.  |  |
 | **[answer.response](#answer)** Response type object associated with the response.  |  |
