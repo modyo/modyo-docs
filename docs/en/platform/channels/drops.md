@@ -214,7 +214,7 @@ Extends the functionality of the drop Grid and additionally contains the followi
 | Description  | Example  |
 |---|---|
 | **[full_two_cols_grid.main_widgets] (#widget)** Array of widget-type objects.  | |
-| **[full_two_cols_grid.col1_widgets] (#widget) ** Array of widget-type objects.  | |
+| **[full_two_cols_grid.col1_widgets] (#widget)** Array of widget-type objects.  | |
 | ** [full_two_cols_grid.col2_widgets] (#widget) ** Array of widget-type objects.  | |
 
 
