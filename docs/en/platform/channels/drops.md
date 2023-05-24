@@ -490,8 +490,8 @@ Use the Content Type drops to get information about your content types from the 
 | Description  | Example  |
 |---|---|
 | **[type.entries](#entry)** Entry object array containing all entries of the type. |  |
-| ** [type.fields] (#campo) ** Object arrangement of fields within the selected content type.  | |
-| ** [type.entry] (#entrada) ** Object of the first entry of the selected type. This is also used with individual cardinality entries.  | |
+| **[type.fields](#field)** Object array of fields within the selected content type.  | |
+| **[type.entry](#entry)** Object of the first entry of the selected type. This is also used with single cardinality entries.  | |
 | **type.name** Name of the type.  | ```NewType``` |
 
 
@@ -503,7 +503,7 @@ Use the user drops to get information about your users from the Customers module
 |---|---|
 | **user.access_token** The user's access token. | ```Uel7k61VuWhSxX3dJDILB7BtM1I_KQi1wEkV9PtnHLQ``` |
 | **user.age** The user's age  | ```39``` |
-| ** [user.avatar] (#asset) ** Asset type object that represents the user avatar.  | |
+| **[user.avatar](#asset)** Asset type object that represents the user avatar.  | |
 | **type.name** Name of the type.  | ```508``` |
 | **user.birth_at** The user's date of birth.  | ```1982-09-01``` |
 | **user.change_password_url** The password change URL.  | ```https://test.miModyo.com/newsite/password/change``` |
