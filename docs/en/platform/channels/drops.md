@@ -170,7 +170,7 @@ These drops allow you to obtain information through Liquid for questions on a fo
 |---|---|
 | **question.allow_alternatives? ** Boolean to check if the question accepts alternatives.  | ```false``` |
 | **question.alternatives** Array with alternatives type objects.  | |
-| **question.allow_alternatives? ** Boolean to check if the question accepts alternatives.  | ```false``` |
+| **question.allow_alternatives?** Boolean to check if the question accepts alternatives.  | ```false``` |
 | **[question.form](#form)** Form-type object.  | |
 | **question.id** Returns the question id.  | ```3``` |
 | **question.label** The label of the question. | ```The first question``` |
