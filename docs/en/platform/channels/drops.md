@@ -341,7 +341,7 @@ These drops allow you to obtain information through Liquid for notifications in 
 | **order.created_at** String with the date the order was created. |  |
 | **order.current_state** String with the status of the order.  | ```2012-11-16 00:46:40 ``` |
 | **order.id** Order ID.  |  |
-| ** [order.order_items] (#item -de-order) ** Order_item-type object array. |  |
+| **[order.order_items](#order-item)** Array of objects with order_item type. |  |
 | **order.payment_info** Hash with the payment information for the order.  |  |
 | **order.short_uuid** String with the short uuid of the order.  |  |
 | **order.tax_total** Float with the amount of taxes paid for the order.  |  |
@@ -382,7 +382,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 | **page.description** The description of the page.  | ```This is the description of a very cool page``` |
 | **page.excerpt** The excerpt associated with the page.  | ```This is the excerpt of a very cool page```
  |
-| ** [page.grid] (. /grid) ** The grid-type object associated with the page. |  |
+| **[page.grid](#grid)** The grid-type object associated with the page. |  |
 | **page.meta_tags** Arrangement of strings with the meta tags associated with the page.  | ```My, Test, Metatag``` |
 | **page.title** The title associated with the page.  | ```Home``` |
 
