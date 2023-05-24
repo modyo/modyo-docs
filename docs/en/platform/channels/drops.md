@@ -521,12 +521,12 @@ Use the user drops to get information about your users from the Customers module
 | **user.male_sex_value** The default value when the gender is male.  | ```0``` |
 | **user.member_since** The date from which you are a user you have been a member of the site.  | ```2021-11-23 18:25:07 UTC``` |
 | **user.name** The user's full name.  | ```Ivan Modyo Gonzalez``` |
-| ** [user.notifications] (#notificacion) ** Array of notification type objects.  |  |
+| **[user.notifications](#notificacion)** Array of notification type objects.  |  |
 | **user.profile_url** The URL of the user's profile.  | ```https://test.miModyo.com/realms/default/profile``` |
 | **user.sex** The gender value configured for the user. | ```0``` |
-| ** [user.targets] (#target) ** Array of objects of the target type.  |  |
+| **[user.targets](#target)** Array of objects of the target type.  |  |
 | **user.undefined_sex_value** The default value when gender is undefined.  | ```3``` |
-| ** [user.unread_notifications] (#notificacion) ** Array of notification-type objects.  |  |
+| **[user.unread_notifications](#notification)** Array of notification-type objects.  |  |
 | **user.unread_notifications_count** The count of unread notifications.
   | ```2``` |
 | **user.username** The user's username.  | ```ivan@modyo.com``` |
@@ -569,7 +569,7 @@ These drops get the information relevant to Widgets.
 | Description  | Example  |
 |---|---|
 | **content_list_widget.context_params** The context parameters associated with the widget.  | ```{:page=>1, :per_page=>10, :account=>#account_object, :user=>nil, :version_type=>:currents}``` |
-| ** [content_list_widget.entries] (#entrada) ** Array of Entries type Objects associated with the widget.  | |
+| **[content_list_widget.entries](#entry)** Array of Entries type Objects associated with the widget.  | |
 | **content_list_widget.show_caption** Boolean if the show caption option is active. | ```true``` |
 | **content_list_widget.space_id** The ID of the Space associated with the widget. | ```5``` |
 | **content_list_widget.type_uid** The uid of the type associated with the widget. | ```the-new-type``` |
