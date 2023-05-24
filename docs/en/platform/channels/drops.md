@@ -489,7 +489,7 @@ Use the Content Type drops to get information about your content types from the 
 
 | Description  | Example  |
 |---|---|
-| ** [type.entries] (#entrada) ** Entry object array containing all entries of the type. |  |
+| **[type.entries](#entry)** Entry object array containing all entries of the type. |  |
 | ** [type.fields] (#campo) ** Object arrangement of fields within the selected content type.  | |
 | ** [type.entry] (#entrada) ** Object of the first entry of the selected type. This is also used with individual cardinality entries.  | |
 | **type.name** Name of the type.  | ```NewType``` |
