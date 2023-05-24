@@ -469,7 +469,7 @@ Display dynamic content created in your spaces from anywhere on your site. In th
 
 | Description  | Example  |
 |---|---|
-| ** [space.categories] (#categoria) ** An array of objects of the category type that contains all the categories of space. |  |
+| **[space.categories](#category)** An array of objects of the category type that contains all the categories of space. |  |
 | ** [space.entries] (#entrada) ** Page-type object that meets the search parameters.  | |
 | ** [space.types] (#tipo -content) ** Content-type object array that contains all the types of space.  | |
 | **space.name** The name of the space.  | ```New Space``` |
