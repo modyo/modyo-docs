@@ -258,7 +258,7 @@ Extends the functionality of the drop Grid and additionally contains the followi
 | Description  | Example  |
 |---|---|
 | **[side_right_grid.main_widgets](#widget)** Array of widget-type objects.  | |
-| ** [side_right_grid.side_right_widgets] (#widget) ** Array of widget-type objects.  | |
+| **[side_right_grid.side_right_widgets](#widget)** Array of widget-type objects.  | |
 
 ### Side Right One Col Grid
 
@@ -266,9 +266,9 @@ Extends the functionality of the drop Grid and additionally contains the followi
 
 | Description  | Example  |
 |---|---|
-| ** [side_right_one_col_grid.main_widgets] (#widget) ** Array of widget-type objects.  | |
-| ** [side_right_one_col_grid.side_right_widgets] (#widget) ** Array of widget-type objects.  | |
-| ** [side_right_one_col_grid.full_widgets] (#widget) ** Array of widget-type objects.  | |
+| **[side_right_one_col_grid.main_widgets](#widget)** Array of widget-type objects.  | |
+| **[side_right_one_col_grid.side_right_widgets](#widget)** Array of widget-type objects.  | |
+| **[side_right_one_col_grid.full_widgets](#widget)** Array of widget-type objects.  | |
 
 
 ### Side Right Three Col Grid
@@ -277,7 +277,7 @@ Extends the functionality of the drop Grid and additionally contains the followi
 
 | Description  | Example  |
 |---|---|
-| ** [side_right_three_cols_grid.side_right_widgets] (#widget) ** Array of widget-type objects.  | |
+| **[side_right_three_cols_grid.side_right_widgets](#widget)** Array of widget-type objects.  | |
 | ** [side_right_three_cols_grid.col1_widgets] (#widget) ** Array of widget-type objects.  | |
 | ** [side_right_three_cols_grid.col2_widgets] (#widget) ** Array of widget-type objects.  | |
 | ** [side_right_three_cols_grid.col3_widgets] (#widget) ** Array of widget-type objects.  | |
