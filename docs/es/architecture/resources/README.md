@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Recursos
+# Aprende y Participa
 
 ## Modyo Expert
 
