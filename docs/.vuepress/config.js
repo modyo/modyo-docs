@@ -540,14 +540,14 @@ module.exports = {
             ],
           },],
           "/es/architecture/": [{
-            title: "Introducción",
+            title: "Patrones de Arquitectura",
             collapsable: false,
             children: [
-              ["/es/architecture/", "Introducción"]
+              "/es/architecture/",
             ],
           },
             {
-              title: "Patrones de Arquitectura",
+              title: "Patrones",
               collapsable: true,
               children: [
                 "/es/architecture/patterns/public-site",
