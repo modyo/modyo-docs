@@ -7,14 +7,7 @@ search: true
 El sitio privado es uno de los usos más avanzados que se puede realizar sobre la plataforma.
 
 Objetivos:
-- Gobernabilidad central de contenido, con permisos bien definidos
-- Gobernabilidad de presentación, con control de publicación
-- Sistema de diseño
-- Modularidad
-- Rendimiento
-- Accesibilidad
-- SEO
-- Internacionalización
+- ...
 
 ### Uso de múltiples Layouts
 

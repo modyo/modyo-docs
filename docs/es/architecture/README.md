@@ -2,7 +2,9 @@
 search: false
 ---
 
-# Introducción
+# Arquitectura
+
+Los patrones de arquitectura son soluciones reutilizables y estructuradas para problemas comunes en el diseño y desarrollo de sistemas de software. Representan enfoques probados y estandarizados para abordar desafíos específicos en la construcción de aplicaciones, facilitando la creación de diseños robustos, mantenibles y escalables. Estos patrones proporcionan directrices y mejores prácticas para organizar los componentes de un sistema, establecer la comunicación entre ellos y definir las interacciones con el entorno, permitiendo a los desarrolladores aprovechar la experiencia acumulada para construir aplicaciones de calidad.
 
 ## ¿Por qué utilizar Modyo?
 Modyo es una plataforma de desarrollo de frontend por componentes que te

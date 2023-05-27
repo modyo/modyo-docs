@@ -540,10 +540,10 @@ module.exports = {
             ],
           },],
           "/es/architecture/": [{
-            title: "Patrones de Arquitectura",
+            title: "Arquitectura",
             collapsable: false,
             children: [
-              "/es/architecture/",
+              ["/es/architecture/", "Introducción"],
             ],
           },
             {
