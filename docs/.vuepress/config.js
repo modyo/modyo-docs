@@ -555,6 +555,7 @@ module.exports = {
                 "/es/architecture/patterns/hybrid-site",
                 "/es/architecture/patterns/microfrontend",
                 "/es/architecture/patterns/microservice",
+                "/es/architecture/patterns/sso",
                 ["/es/architecture/patterns/pwa", "PWA"],
                 "/es/architecture/patterns/design-system",
                 "/es/architecture/patterns/bff",
