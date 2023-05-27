@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Microservices
+# Microservicio
 
 Los microservicios son un enfoque arquitectónico y organizativo para el desarrollo de software donde el software está compuesto por pequeños servicios independientes que se comunican a través de API bien definidas. Los propietarios de estos servicios son equipos pequeños independientes.
 

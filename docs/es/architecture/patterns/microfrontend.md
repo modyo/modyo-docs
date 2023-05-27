@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Micro Frontends
+# Micro Frontend
 
 El desarrollo de experiencias de usuario modernas puede ser todo un desafío. La heterogeneidad de herramientas y técnicas debe coexistir con la constante evolución natural de la Web. En este escenario, los micro frontends emergen como una técnica que permite incrementar la efectividad y eficiencia de los equipos de desarrollo, al descomponer aplicaciones complejas en partes más pequeñas y manejables.
 

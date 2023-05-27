@@ -2,6 +2,6 @@
 search: true
 ---
 
-# Repository
+# Repositorio
 
 El patrón de repositorio...
