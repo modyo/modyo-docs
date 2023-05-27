@@ -500,7 +500,7 @@ module.exports = {
               "/es/connect/activation",
               "/es/connect/support",
             ],
-          },
+            },
             {
               title: "Componentes",
               collapsable: true,
@@ -539,6 +539,33 @@ module.exports = {
               ["/es/legal/dpa"],
             ],
           },],
+          "/es/architecture/": [{
+            title: "Introducción",
+            collapsable: false,
+            children: [
+              ["/es/architecture/", "Introducción"]
+            ],
+          },
+            {
+              title: "Patrones de Arquitectura",
+              collapsable: true,
+              children: [
+                "/es/architecture/patterns/public-site",
+                "/es/architecture/patterns/private-site",
+                "/es/architecture/patterns/microfrontend",
+                "/es/architecture/patterns/microservice",
+                "/es/architecture/patterns/bff",
+                "/es/architecture/patterns/repository",
+              ],
+            },
+            {
+              title: "Recursos",
+              collapsable: true,
+              children: [
+                "/es/architecture/resources/",
+              ],
+            },
+          ],
         },
       },
     },
