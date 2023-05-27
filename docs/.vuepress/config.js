@@ -552,8 +552,10 @@ module.exports = {
               children: [
                 "/es/architecture/patterns/public-site",
                 "/es/architecture/patterns/private-site",
+                "/es/architecture/patterns/hybrid-site",
                 "/es/architecture/patterns/microfrontend",
                 "/es/architecture/patterns/microservice",
+                ["/es/architecture/patterns/pwa", "PWA"],
                 "/es/architecture/patterns/bff",
                 "/es/architecture/patterns/repository",
               ],
