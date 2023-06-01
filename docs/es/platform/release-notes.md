@@ -6,6 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.35 - 30 de mayo de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrije en sistema de permisos de los grupos de usuarios.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora la referencia de widgets entre stages, ahora no es necesario crear el widget en otros stages mediante la sincronización.
+* Corrije problemas en la búsqueda en los sitios con palabras con tilde.
+* Corrije diferencias en páginas, ahora se muestra la opción de rutas delegadas.
+* Agrega botón de inicio de sesión al previsualizar un widget.
+* Se limita la diferencias de widgets grandes o provenientes desde el CLI. Ahora muestran un mensaje informativo si existen diferencias.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega opción para habilitar/deshabilitar el uso de imágenes SVG
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejora la búsqueda en el listado de ordenes.
+* Mejora en la edición de los medios de pago.
+
+
+
 ### 9.2.34 - 16 de mayo de 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
