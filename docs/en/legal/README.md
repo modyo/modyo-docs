@@ -2,7 +2,7 @@
 search: false
 ---
 
-# Modyo Agreement
+# Modyo Agreement 
 
 To be eligible to register for a Modyo account and use the Modyo Software, you must review and accept the terms of this Agreement (the "Modyo Agreement") by clicking on the "Signup" button or downloading Modyo Software if granted access. PLEASE REVIEW THESE TERMS CAREFULLY. BY ACCEPTING THESE TERMS TO USE THE MODYO SOFTWARE, YOU AGREE TO THESE TERMS AND CONDITIONS WITH MODYO B.V. ("Modyo"). IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU SHOULD NOT CLICK THE "I ACCEPT" BUTTON OR YOU SHOULD NOT USE THE MODYO SOFTWARE.
 
