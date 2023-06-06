@@ -6,6 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.35 - May 30, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Corrects the user group in the permission system.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improves the reference of widgets between stages, now it is not necessary to create the widget in other stages through synchronization.
+* Fixes search problems in sites that have words with tildes.
+* Corrects differences in pages, the option of delegated routes is now displayed.
+* Adds a login button when previewing a widget.
+* The differences between large widgets or widgets from the CLI are limited. Widgets now display an informational message if there are differences.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds option to enable/disable the use of SVG images
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Improves search in the order list.
+* Improvement to editing of payment methods.
+
+
+
 ### 9.2.34 - May 16, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -15,19 +40,19 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Improvements in site search, categories are now considered in links generated to content pages
-* Fix a bug that prevented unpublishing pages from going to have no dependencies in a context with stages
+* Fixes a bug that prevented unpublishing pages from having no dependencies in a stages context
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Add release date to the metadata of a content
+* Adds release date to the metadata of a content
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix permission issues when accessing and editing forms
+* Fixes permission issues when accessing and editing forms
 
 <Badge text="Insights" type="insights" vertical="middle"/>
 
-* Correct visual and metric problems in graphics
+* Corrects visual and metric problems in graphics
 * Corrects problems with accessing the display of graphics
 
 
@@ -45,11 +70,11 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Correct search engine in list of pages in list mode
+* Corrects search engine in list of pages in list mode
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix an error when creating a new identity provider of the type openid by specifying claims
+* Fixes an error when creating a new identity provider of the type openid by specifying claims
 
 
 ### 9.2.32 - April 21, 2023
@@ -60,9 +85,9 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Change the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
-* Fix problems when replacing images with SVG extension
-* Fix problems when displaying a logo in SVG
+* Changes the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
+* Fixes problems when replacing images with SVG extension
+* Fixes problems when displaying a logo in SVG
 
 
 ### 9.2.31 - April 06, 2023
@@ -70,11 +95,11 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security enhancements
-* Added password policy when creating new accounts
+* Adds password policy when creating new accounts
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fix permanent error in asset manager
+* Fixes permanent error in asset manager
 
 
 ### 9.2.30 - March 24, 2023
@@ -85,7 +110,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fix updates for widgets coming from the CLI
+* Fixes updates for widgets coming from the CLI
 
 
 ### 9.2.29 - March 22, 2023
@@ -105,8 +130,8 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Corrects the removal of widgets coming from the CLI
-* Add modal to name a new cloned widget
-* Fix problem when modifying variables in widgets
+* Adds modal to name a new cloned widget
+* Fixes problem when modifying variables in widgets
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -149,7 +174,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Add new excerpt field to the meta of an entry
+* Adds new excerpt field to the meta of an entry
 * Fixes problems when editing a field of type richtext
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -188,7 +213,7 @@ search: true
 * The archived item will be visually separated from the others in the status filters.
 * Password and signup routes stop responding to mismatched extensions 
 * Administration accounts that are not accessed within a certain period of time will be disabled.
-* Add format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
+* Adds format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
 * Modyo backend table view URLs can be shared while maintaining the chosen filters 
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -197,16 +222,16 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Add site timezone to site drop
+* Adds site timezone to site drop
 * Adds liquid drops for answered forms
-* Added liquid drop for forms answered by users of a realm
+* Adds liquid drop for forms answered by users of a realm
 * Corrects duplication stages in site list selector 
 
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Add Zendesk Integration
-* Implement password security policy for realms 
+* Adds Zendesk Integration
+* Implements password security policy for realms 
 * Payments are migrated to Realm level
 
 
@@ -218,7 +243,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Added dynamic filtering of content in liquid through url params
+* Adds dynamic filtering of content in liquid through url params
 * The way to delete a stage has changed, now it is done directly from the stage settings.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -303,10 +328,10 @@ search: true
 
 * The framework is updated to the latest version (7.0.2)
 * Ruby is updated to the latest version (3.1)
-* It updates dependencies
+* Dependencies updates
 * Product Improvements
 * Security enhancements
-* Added option to disable routes to sitemap.xml and robots.txt
+* Adds option to disable routes to sitemap.xml and robots.txt
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -315,7 +340,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fixed a problem when uploading some svgs to the asset manager
+* Fixes a problem when uploading some svgs to the asset manager
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -333,7 +358,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix access token authorizations in multi-site realms
+* Fixes access token authorizations in multi-site realms
 
 
 ### 9.2.13 - June 28, 2022
@@ -345,16 +370,16 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fixed bug in the initial edition of duplicate widgets on a Widget Page
-* Added flag for enabling categories in path for content pages 
-* Fixed deployment of Targets option in Pages
-* Fixed problem when removing favicon and apple icon from a site, which affected their copies
+* Fixes bug in the initial edition of duplicate widgets on a Widget Page
+* Adds flag for enabling categories in path for content pages 
+* Fixes deployment of Targets option in Pages
+* Fixes problem when removing favicon and apple icon from a site, which affected their copies
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fix sort filter that failed when sorting entries by text fields
-* Fixed problem with multiline field, which was left with one character when deleting all text
-* Corrected error when selecting entries in the content list, where only those selected on the current page were added
+* Fixes sort filter that failed when sorting entries by text fields
+* Fixes problem with multiline field, which was left with one character when deleting all text
+* Corrects error when selecting entries in the content list, where only those selected on the current page were added
 
 
 ### 9.2.12 - June 06, 2022
@@ -365,11 +390,11 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fixed the link of the breadcrumbs with the scope of the stage
-* Fix the overflow of the name column in the list of sites
+* Fixes the link of the breadcrumbs with the scope of the stage
+* Fixes the overflow of the name column in the list of sites
 * The service worker base template has been improved
 * Improved experience by generating a manifest for the PWA 
-* Fixed list of unchanged differences after stage creation
+* Fixes list of unchanged differences after stage creation
 
 
 ### 9.2.11 - May 27, 2022
@@ -385,12 +410,12 @@ search: true
 
 * Security enhancements
 * ReCAPTCHA is added for admin users
-* Fixed bug when updating the avatar of imported users with missing information
+* Fixes bug when updating the avatar of imported users with missing information
 * Admin session expiration is added
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fixed error when synchronizing migrated content pages on sites with stages
+* Fixes error when synchronizing migrated content pages on sites with stages
 * Google tag manager ID is excluded when creating a new stage
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -412,13 +437,13 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fix issue when publishing page tree with 3 levels
-* Fix problem with full url of entries by default
-* Fix escaping meta tags breaks interpolation with Liquid
+* Fixes issue when publishing page tree with 3 levels
+* Fixes problem with full url of entries by default
+* Fixes escaping meta tags breaks interpolation with Liquid
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Added reCAPTCHA for Realms
+* Adds reCAPTCHA for Realms
 
 
 ### 9.2.8 - April 8, 2022
@@ -436,19 +461,19 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixed problem with sending campaigns
+* Fixes problem with sending campaigns
 
 ### 9.2.7 - March 10, 2022
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Update liquidjs version
+* Updated liquidjs version
 * Update category names are not reflected in entries
 * Attributes of the request drop does not consider the entry slug in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
 * Direct authentication in Realm with Google leads to error 404
-* Implement Cybersource payment method 
-* Added tags in New Asset modal
+* Implements Cybersource payment method 
+* Adds tags in New Asset modal
 
 
 ### 9.2.6 - February 22, 2022
@@ -460,15 +485,15 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fix drop entry.meta.url
-* Fix deletion of referenced entries
+* Fixes drop entry.meta.url
+* Fixes deletion of referenced entries
 * Improvements to the multiline editor
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix problem when changing realm of a site
+* Fixes problem when changing realm of a site
 * Fixed issue with campaign editor
-* Fixed problem with accounts with default site and without realm
+* Fixes problem in accounts with default site and without realm
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -479,7 +504,7 @@ search: true
 ### 9.2.5 - January 27, 2022
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Content Pages are incorporated
-* Fix problems with preview bar
+* Fixes problems with preview bar
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Improvements and fixes in Entries editor
@@ -489,20 +514,20 @@ search: true
 
 ### 9.2.4 - December 30, 2021
 <Badge text="Core" type="core" vertical="middle"/>
-* Fixed problem that contaminated the cache when performing previews
+* Fixes problem that contaminated the cache when performing previews
 
 ### 9.2.2 - December 1, 2021
 <Badge text="Core" type="core" vertical="middle"/>
-Fixed issue when allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variable
+Fixes issue when allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variable
 
 <Badge text="Content" type="content" vertical="middle"/>
-Fix bug with tag filter with 100 or more tags in admin
+Fixes bug with tag filter with 100 or more tags in admin
 
 ### 9.2.1 - November 25, 2021
 <Badge text="Content" type="content" vertical="middle"/>
-* Fixed bug with file limit in asset manager
+* Fixes bug with file limit in asset manager
 * Improvements when copying entry from another locale
-* Add category name and slug to Entry drop and content API
+* Adds category name and slug to Entry drop and content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Fix issue with widget preview
@@ -520,7 +545,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * Security Headers Management
 * New minimal theme
 * Navigation builders
-* Seven stages
+* Stages de sitios
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * User Realms
@@ -551,15 +576,15 @@ Fix bug with tag filter with 100 or more tags in admin
 ### 9.1.35 - December 29, 2021
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Fix bug with cache in snippet preview
-* Fix site language validation
+* Fixes bug with cache in snippet preview
+* Fixes site language validation
 
 ### 9.1.34 - November 19, 2021
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Fixed bug with file limit in asset manager
 * Improvements when copying entry from another locale
-* Add category name and slug to Entry drop and content API
+* Adds category name and slug to Entry drop and content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Login with access token on the site
@@ -570,7 +595,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * Call to discovery service is prevented in OIDC callback
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Fixed bug that prevented filtering entries by more than 100 tags in admin
+* Fixes bug that prevented filtering entries by more than 100 tags in admin
 
 ### 9.1.32 - October 28, 2021
 
@@ -592,12 +617,12 @@ Fix bug with tag filter with 100 or more tags in admin
 * Enhancements to Security Headers
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Fixed email validation.
+* Fixes email validation.
 
 ### 9.1.29 - September 9, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Fixed error with invalid user access token.
+* Fixes error with invalid user access token.
 
 ### 9.1.28 - September 1, 2021
 
@@ -630,8 +655,8 @@ Fix bug with tag filter with 100 or more tags in admin
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Performance issues fix
-* Fixed issue with widget preview cache and content views.
-* Fixed an error with status code when importing redirects.
+* Fixes issue with widget preview cache and content views.
+* Fixes an error with status code when importing redirects.
 
 ### 9.1.24 - July 14, 2021
 
@@ -639,12 +664,12 @@ Fix bug with tag filter with 100 or more tags in admin
 * Platform jQuery versions are updated.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Fixed issue that prevents saving elements with the limit number of backup versions.
-* Fixed bug when copying pages that use widgets with variables.
+* Fixes issue that prevents saving elements with the limit number of backup versions.
+* Fixes bug when copying pages that use widgets with variables.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Raw emails are allowed to be sent through the messaging API.
-* Se arreglan problemas al exportar respuestas de formularios.
+* Problems are fixed when exporting form responses.
 
 ### 9.1.23 - June 22, 2021
 <Badge text="Core" type="core" vertical="middle"/>
@@ -652,7 +677,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * Newsletter with the latest news.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Fixed issue with time zones in fields of type Date.
+* Fixes issue with time zones in fields of type Date.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Restrictions are removed in email editor.
@@ -700,7 +725,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * Multiple security enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Resolved an issue that caused the “Save” button on the page builder to not work properly.
+* Resolves an issue that caused the “Save” button on the page builder to not work properly.
 * Resolves an error when creating new sites where the “About Us” page was left without a selected layout.
 
 ### 9.1.15 - April 14, 2021
@@ -709,7 +734,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * Multiple bug fixes.
 * A tool for resolving inconsistencies in secondary structure is added to the panel to maintain the order of pages in the site.
 * Resolves an error when uploading very large images to the file manager.
-* Resolved a bug that caused the code editor to freeze against liquid-specific syntaxes.
+* Resolves a bug that caused the code editor to freeze against liquid-specific syntaxes.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * [New Liquid filters](/en/platform/channels/liquid-markup.html#standard-filters) are added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256, and base64_encod.
@@ -736,10 +761,10 @@ Fix bug with tag filter with 100 or more tags in admin
 * Dynamic filters are added by field values in the input index.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Resolved a bug where site copying did not consider templates.
+* Resolves a bug where site copy did not consider templates.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Resolved a bug where the OIDC integration flow redirected to the user's profile and not to the site from which the flow started.
+* Resolves a bug where the OIDC integration flow redirected to the user's profile and not to the site from which the flow started.
 
 ### 9.1.12 - March 19, 2021
 
@@ -762,9 +787,9 @@ Fix bug with tag filter with 100 or more tags in admin
 - Multiple bug fixes.
 - Multiple navigation and usability improvements
 - Multiple security enhancements.
-- Resolve errors caused by standard attributes with specific formats in integration via OIDC
-- Resolved errors that caused the publish/unpublish schedule to run 10 minutes late
-- Resolved a particular case where the HTML view of the rich text editor did not save changes
+- Resolves errors caused by standard attributes with specific formats in integration via OIDC
+- Resolves errors that caused the publish/unpublish schedule to run 10 minutes late
+- Resolves a particular case where the HTML view of the rich text editor did not save changes
 
 ### 9.1.10 - February 23, 2021
 
@@ -774,8 +799,8 @@ Fix bug with tag filter with 100 or more tags in admin
 - Multiple performance enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Added the ability to [filter by slug](/en/platform/content/public-api-reference.html#filter-entries) of entries in the liquid SDK using the `by_slug` filter
-* Added the ability to [unpublish widgets](/en/platform/channels/widgets.html) even if they are being referenced, and all unpublished widgets can be archived (even if referenced on some pages)
+* Adds the ability to [filter by slug](/en/platform/content/public-api-reference.html#filter-entries) of entries in the liquid SDK using the `by_slug` filter
+* Adds the ability to [unpublish widgets](/en/platform/channels/widgets.html) even if they are being referenced, and all unpublished widgets can be archived (even if referenced on some pages)
 
 ### 9.1.9 - February 10, 2021
 
@@ -800,11 +825,11 @@ Fix bug with tag filter with 100 or more tags in admin
 - Multiple security enhancements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Add the option to [bulk edit entries](/en/platform/content/entries.html#bulk-edit).
+* Adds the option to [bulk edit entries](/en/platform/content/entries.html#bulk-edit).
 * Filters are added by author and segment in the entry index.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Added the ability to decide whether you want your widget builder widgets to be [loaded synchronously or asynchronously](/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading).
+* Adds the ability to decide whether you want your widget builder widgets to be [loaded synchronously or asynchronously](/en/platform/channels/widgets.html#synchronous-and-asynchronous-loading).
 
 ### 9.1.6 - December 23, 2020
 
@@ -815,10 +840,10 @@ Fix bug with tag filter with 100 or more tags in admin
 - Multiple security enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Add the option to define [variables in custom widgets](/en/platform/channels/widgets.html#widget-variables).
-* Add the option to define multiple [JavaScripts and CSS](/en/platform/channels/templates.html#css-and-javascript) as site assets.
-* Add the option to create [custom layouts](/en/platform/channels/templates.html#custom-layouts) and then be able to use them on pages.
-* Added the ability to view site search results in json format
+* Adds the option to define [variables in custom widgets](/en/platform/channels/widgets.html#widget-variables).
+* Adds the option to define multiple [JavaScripts and CSS](/en/platform/channels/templates.html#css-and-javascript) as site assets.
+* Adds the option to create [custom layouts](/en/platform/channels/templates.html#custom-layouts) and then be able to use them on pages.
+* Adds the ability to view site search results in json format
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Now you can only delete the forms that are disabled.
@@ -836,7 +861,7 @@ Fix bug with tag filter with 100 or more tags in admin
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * [Total entries filter](/en/platform/content/public-api-reference.html#access-entries-in-a-space) is added after using a content filter.
-* Added the functionality of distinguishing the same instantiated widget multiple times on the same page.
+* Adds the functionality of distinguishing the same instantiated widget multiple times on the same page.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * A new and improved [Segments](/en/platform/customers/segments.html) creation interface is added including the option to use `AND` and `OR` operators.
@@ -851,7 +876,7 @@ Fix bug with tag filter with 100 or more tags in admin
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * [Review and joint publication](/en/platform/channels/sites.html#review-and-joint-publication) is added to Sites.
-* Added the ability to [delegate sub-paths](/en/platform/channels/pages.html#child-routes-delegation) of pages using JavaScript.
+* Adds the ability to [delegate sub-paths](/en/platform/channels/pages.html#child-routes-delegation) of pages using JavaScript.
 
 ### 9.1.3 - October 16, 2020
 
@@ -870,11 +895,11 @@ Fix bug with tag filter with 100 or more tags in admin
 - Multiple security enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Add the drop `page` that considers both the home page and custom pages.
+* Adds the drop `page` that considers both the home page and custom pages.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Added the ability to use templates in already created messaging campaigns.
-* Added the possibility to [delete users](/en/platform/customers/realms.html#additional-options).
+* Adds the ability to use templates in already created messaging campaigns.
+* Adds the possibility to [delete users](/en/platform/customers/realms.html#additional-options).
 
 ### 9.1.1 - September 25, 2020
 
@@ -888,7 +913,7 @@ Fix bug with tag filter with 100 or more tags in admin
 * The ability to delete archived entries is added.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Added the ability to [copy sites](/en/platform/channels/sites.html) and all their published content.
+* Adds the ability to [copy sites](/en/platform/channels/sites.html) and all their published content.
 
 ### 9.1.0 - September 4, 2020
 
@@ -917,7 +942,7 @@ Fix bug with tag filter with 100 or more tags in admin
 
 - Support for session cookies is improved for older browsers.
 
-### 9.0.8 - 15 de Junio del 2020
+### 9.0.8 - June 15, 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -935,11 +960,11 @@ Fix bug with tag filter with 100 or more tags in admin
 <Badge text="Customers" type="customers" vertical="middle"/>
 * File-type questions are deleted in [forms](/en/platform/customers/forms.html#add-field).
 
-### 9.0.7 - 1st June 2020
+### 9.0.7 - June 01, 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Added possibility to integrate google tag manager to sites.
+- Adds possibility to integrate google tag manager to sites.
 - Empty view of [my tasks](/en/platform/core/the-modyo-interface.html) is added.
 - Multiple bug fixes.
 - Multiple navigation and usability improvements
