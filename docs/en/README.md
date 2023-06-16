@@ -49,7 +49,7 @@ FirstSteps4Url: /en/dynamic/
 FirstSteps5Title: Modyo Training
 FirstSteps5Text: Obtain your certifications in our training programs at your own pace.
 FirstSteps5Img: https://cloud.modyocdn.com/uploads/4853c725-b765-4770-add1-d4cd4184ae10/original/Training.png
-FirstSteps5Url: https://training.modyo.com/
+FirstSteps5Url: https://help.modyo.com/
 
 search: Search in
 
