@@ -78,7 +78,7 @@ Esta opción existe porque hay ocasiones en las que es necesario publicar rápid
 
 La sección Mis tareas en Modyo te da una visión general de todos los elementos que requieren tu atención. Te permite acceder a información sobre el tipo de elemento, su autor y cuándo fue actualizado por última vez.
 Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks. 
-<img src=“/assets/img/platform/My-tasks.png” width=“500px” style=“margin-top: 40px; border: 1px solid #EEE;” />
+<img src="/assets/img/platform/core/my-tasks.png"/>
 Para ver y revisar todas las tareas asignadas a ti, sigue estos pasos:
 1. Ve a Inicio.
 2. Haz click en Mis tareas.
