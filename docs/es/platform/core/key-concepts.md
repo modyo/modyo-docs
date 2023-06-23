@@ -37,7 +37,7 @@ Las opciones disponibles son:
 
 - **Habilitar revisión en equipo**: Activa o desactiva por completo la revisión en equipo en este contexto (sitio o espacio).
 - **Número de aprobaciones**: Determina la cantidad de usuarios que deben aprobar el elemento para que esté listo para su publicación. Cuando se alcanza el número requerido de aprobaciones, el estado del elemento cambiará de "Esperando revisión" a "Aprobado".
-- **Restringir la selección de revisores**:  Por defecto, cualquier usuario con los permisos necesarios puede aprobar elementos en espera de revisión. Sin embargo, al habilitar esta opción, solo los revisores seleccionados por el editor podrán llevar a cabo la aprobación.
+- **Restringir la selección de revisores**: Por defecto, cualquier usuario con los permisos necesarios puede aprobar elementos en espera de revisión. Sin embargo, al habilitar esta opción, solo los revisores seleccionados por el editor podrán llevar a cabo la aprobación.
 
 :::tip Tip
 Si bien la aprobación se encuentra limitada, cualquier usuario con permisos puede hacer comentarios sobre el elemento.
@@ -106,7 +106,7 @@ Los usuarios con los permisos necesarios pueden hacer click en el botón **Aprob
 
 Al aprobar el elemento, la aprobación de ese usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores.
 
-l habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, aparece un ícono ( <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> ) para abrir la pestaña de actividad del elemento.
+Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, aparece un ícono ( <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> ) para abrir la pestaña de actividad del elemento.
 
 Al abrir esta pestaña, se muestra una lista cronológica de las acciones realizadas en el elemento, con la opción de ver los detalles de cada acción. Al final de la pestaña, está la opción de dejar un comentario.
 
@@ -128,7 +128,7 @@ Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 1. Aquí podrás ver todos los cambios pendientes. Selecciona todo lo que quieres publicar y haz click en **Publicar**.
 
 :::tip Tip
-Si haces clic en Publicar en un artículo en particular (por ejemplo, publicar una página), se abrirá la ventana de Revisar y Publicar con ese artículo seleccionado para ver los cambios pendientes.
+Si haces click en Publicar en un artículo en particular (por ejemplo, publicar una página), se abrirá la ventana de Revisar y Publicar con ese artículo seleccionado para ver los cambios pendientes.
 :::
 
 
@@ -215,7 +215,7 @@ En este caso, el respaldo toma el lugar de la versión editable, por lo que se p
 
 En este caso, el respaldo se regresa directamente a la versión **publicada** del elemento, sin tocar la versión editable.
 
-Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables.  Permitiendo el resolver los problemas que la versión con errores pudo haber tenido.
+Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables. Permitiendo el resolver los problemas que la versión con errores pudo haber tenido.
 
 :::danger Peligro
 Dado que esta es una acción potencialmente peligrosa, solo los administradores de sitios o espacios tienen el permiso para ejecutar esta acción.
@@ -244,7 +244,7 @@ En este caso, sólo un Administrador podrá tomar el control, activando para sí
 
 :::warning Tomar el control
 
-Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón  **Tomar Control**.
+Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón **Tomar Control**.
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
@@ -270,7 +270,7 @@ La barra de vista previa contiene los siguientes elementos interactivos:
 * **Pestaña para minimizar**: Permite ocultar la barra de previsualización para evitar interferencias con los elementos ubicados en la parte superior del sitio. Una vez minimizada, la pestaña seguirá visible para restaurar la barra en el modo vista previa.
 * **Editar elemento**: Al hacer click, se accedes a la vista de edición del elemento que se está visualizando, ya sea una entrada, una página, un widget o una plantilla predeterminada del sitio.
 * **Compartir link**: Permite copiar un enlace que se puede compartir con otros usuarios. Al abrir el enlace, se accede directamente al modo vista previa con la configuración que se tenía al momento de copiar el enlace. Para acceder al modo vista previa, es necesario tener una sesión iniciada en la cuenta de administradora.
-* **Salir del modo vista previa**:  Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
+* **Salir del modo vista previa**: Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
 
 :::warning Atención
 Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
