@@ -4,208 +4,197 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta de Modyo para quienes quieran hacer campañas en el sitio, permite enviar la información hacia los usuarios finales de una manera masiva dirigida a segmentos determinados.
+Mensajería es una herramienta de Modyo que te permite hacer campañas en el sitio y enviar información a los usuarios finales de manera masiva, dirigida a segmentos específicos.
 
-<img src="/assets/img/customers/messaging/messaging-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/platform/newcampaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
-Modyo permite enviar mensajes a los usuarios de la plataforma a través de dos canales:
+En Modyo, puedes enviar mensajes a los usuarios a través de dos canales:
 
-- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para verlo.
+- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para  ver los mensajes.
 - **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
 
-<img src="/assets/img/customers/messaging/messaging-index-options.jpg" width="400" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/platform/messagedeliveries.png" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## Campañas
 
-A primera vista, estaremos en la sección Campañas, donde podremos ver a través de un administrador todos los mensajes e informaciones que hemos enviado a los usuarios finales.
+En la sección de campañas puedes ver, a través de un administrador, todos los mensajes e información que has enviado a los usuarios finales.
 
-En la parte superior de la pantalla, existe un botón que indica que vemos todos los mensajes que se han enviado en el sistema. Si queremos filtrar por el tipo de mensaje (Correo o Notificación), podemos hacer click para cambiar la vista.
+Da click en el botón **Todos** en la parte superior de la pantalla para filtrar los mensajes según el canal a través del cual fueron enviados.
 
-En la tabla, se encuentran ordenadas las campañas por las siguientes columnas.
+Los mensajes de las campañas se ordenan en las siguientes columnas:
 
-- **Nombre**: Nombre que se le dio a la campaña. También puede contener el Segmento específico al que se le envió.
+- **Nombre**: Nombre que se le dio a la campaña. Puede contener el Segmento específico al que se le envió.
 - **Tipo**: Tipo de mensaje en que se envió la campaña.
-- **Enviados**: Cantidad de envíos en total que se hizo de la campaña. Si la campaña se envió más de una vez, se suma.
-- **Último envío**: Fecha y hora en que se envió por última vez la campaña.
+- **Enviados**: Cantidad total de envíos realizados para la campaña.
+- **Último envío**: Fecha y hora en que se envió la campaña.
 - **Creado el**: Fecha de creación de la campaña.
 
-A un costado de cada campaña, se encuentra un botón en el que podremos efectuar dos acciones. 
+En la fila de cada campaña, hay un botón que permite realizar dos acciones: 
 
 - **Editar la campaña**
 - **Borrar la campaña**
 
 :::danger Peligro
-Si borras la campaña, no hay forma de recuperarla. No quedará grabada en el sistema
+Si borras la campaña, no se puede recuperar y la campaña no quedará registrada en el sistema.
 :::
 
 ### Crear una campaña
 
-Para hacer una campaña, debemos hacer click en el botón **+ Nueva Campaña**, ubicado en la parte superior de la vista del Administrador.
+Da click en el botón **+ Nueva Campaña**, en la parte superior de la vista del Administrador para crear una campaña nueva.
 
-Posteriormente, mostrará un formulario que deberás rellenar con los siguientes datos:
+Rellena los datos solicitados en el formulario:
 
-- **Nombre**: Nombre que tendrá la campaña.
-- **Tipo**: Formato que tendrá la campaña (Correo o Notificación).
-- **Asunto**: Texto que aparecerá en la línea de asunto que se enviará a los usuarios.
-- **Responder a**: Dirección de correo a la cual las personas pueden responder **(Solo para campañas de correo)**
-- **Plantilla**: Lista de [plantillas](/es/platform/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, enviará a una plantilla en blanco. **(Solo para campañas de correo)**
-- **Habilitar segmentación**: Checkbox para seleccionar un segmento para enviar la campaña. Si este se deja en blanco, la campaña se enviará a todos los usuarios.
+- **Nombre**:  Nombre de la campaña.
+- **Tipo**: Elige si se enviará por correo o notificación.
+- **Asunto**: Texto que aparecerá en la línea de asunto del mensaje que se enviará a los usuarios.
+- **Responder a**: Dirección de correo electrónico a la cual las personas pueden responder
+ **(solo para campañas de correo)**.
+- **Plantilla**: Lista de [plantillas](/es/platform/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, Modyo enviará a una plantilla en blanco **(solo para campañas de correo)**.
+- **Habilitar segmentación**: Casilla de verificación para seleccionar un segmento  para enviar la campaña. Si dejas la casilla en blanco, la campaña se enviará a todos los usuarios.
 
-Después de rellenar estos datos, deberás hacer click en el botón **Guardar y Continuar**, ubicado en la parte superior de la pantalla.
+Una vez completes el formulario, haz click en el botón **Guardar y continuar**, en la parte superior de la pantalla.
 
-Ahora, aparecerá un editor WYSIWYG con la plantilla que seleccionaste, la cual podrás editar según tus requerimientos. Para guardar, haz click en el botón en la parte superior de la pantalla.
+Esto abre el editor WYSIWYG con la plantilla que seleccionaste. Edita la plantilla y haz click en el botón **Guardar** para confirmar los cambios y abrir la vista Estado de envío para enviar la campaña. 
 
-Al hacer esto, tu campaña estará guardada y llegarás a la vista de Estado de Envío, donde podrás enviarla.
 
 ### Estado de envío
 
-<img src="/assets/img/customers/messaging/campaign-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
+<img src="/assets/img/platform/send.png" style="border: 1px solid #EEE; margin-top: 40px">
 
-La vista de Estado de Envío, permite no sólo enviar por primera vez una campaña que hayas creado. En esta, también podrás encontrar las estadísticas de la campaña que te permitirán ver el rendimiento del contenido que enviaste.
+En la parte superior de la pantalla, el ícono de **vista previa** te permite visualizar tu campaña antes de enviarla. Da click en el botón **Enviar** para mandar la campaña.
 
-A primera vista, encontrarás en la parte superior de la pantalla el botón de **Vista Previa**, que te permite ver el correo que enviarás.
+El botón contextual te permite realizar estas acciones:
 
-Además, encontrarás un menú desplegable que te conducirá a cuatro secciones:
-
-<img width="300" src="/assets/img/customers/messaging/options-campaign.jpg" style="border: 1px solid #EEE; margin-top: 40px">
-
-- **Editor de Mensajes**: Te permite editar el mensaje antes de enviarlo.
+- **Editor de Mensajes**: Edita tu mensaje antes de enviarlo.
 - **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada.
-- **Editor**: Te permite editar las propiedades de la campaña, incluyendo aspectos técnicos como la dirección de envío y los segmentos a recibir.
-- **Borrar**: Borra toda la campaña.
+- **Editar**: Edita las propiedades de la campaña, aspectos técnicos como la dirección de envío y los segmentos a recibir.
+- **Clonar la campaña**: Copia todo el contenido de una campaña.
+- **Borrar la campaña**: Elimina una campaña.
 
-En la vista superior, podrás encontrar las estadísticas de la campaña.
+<img width="300" src="/assets/img/platform/menu.png" style="border: 1px solid #EEE; margin-top: 40px">
+
+Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto  crea una una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
+
+Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío. 
 
 :::warning Atención
-Si no has enviado aún la campaña, los valores aparecerán en cero.
+Una campaña puede ser reenviada solamente si cancelaste previamente el envío de la campaña cuando estaba en cola o proceso de envío. 
+
+Debes indicar si deseas enviar nuevamente los mensajes a todos los usuarios o solo a aquellos que no los recibieron anteriormente. En este caso, el número de entregas de mensajes puede ser mayor que el alcance total de usuarios de la campaña.
 :::
 
-Si enviaste la campaña por correo, podrás encontrar las siguientes cifras:
+En campañas enviadas por correo puedes visualizar:
 
-- **Alcance**: Personas a las que les llega la campaña.
-- **Envíos**: Nº de veces que se ha enviado la campaña
-- **Enviados**: Nº total de correos enviados.
-- **Abiertos**: Nº total de correos abiertos. 
-- **Abiertos únicos**: Nº total de usuarios los cuales abrieron alguna vez la campaña.
-- **Clicks**: Nº de veces en los cuales se ha hecho click en algún vínculo de la campaña.
-- **Clicks únicos**: Nº de usuarios que han hecho click alguna vez en la campaña.
-- **Spam**: Nº de usuarios a los que su correo llegó a la casilla de Spam.
-
-En cambio, si enviaste la campaña por Notificación, podrás encontrar estas cifras:
+<img src="/assets/img/platform/campaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Alcance**: Personas a las que les llegó la campaña.
-- **Envíos**: Nº de veces que se envió la campaña.
-- **Enviados**: Nº de notificaciones enviadas.
-- **Abiertos**: Nº de notificaciones abiertas.
+- **Enviados**: Número total de correos enviados.
+- **Abiertos**: Número total de correos abiertos.
+- **Abiertos únicos**: Número total de usuarios los cuales abrieron alguna vez la campaña.
+- **Clicks**: Número de veces que se ha hecho click en algún vínculo de la campaña.
+- **Clicks únicos**: Número de usuarios que han hecho click en la campaña.
+- **Spam**: Número de usuarios a los que el correo llegó a la bandeja de spam.
 
+Si enviaste la campaña por notificación puedes visualizar:
 
-Más abajo podrás ver los [Segmentos](/es/platform/customers/segments.html) a los cuales se les llegó la campaña. Si esta sección no aparece, quiere decir que la campaña fue enviada a todos los contactos.
+- **Alcance**: Personas a las que les llegó la campaña.
+- **Enviados**: Número de notificaciones enviadas.
+- **Abiertos**: Número de notificaciones abiertas.
 
-Finalmente podrás encontrar una tabla con todos los envíos de la campaña, la cual podrás ordenar de manera ascendente o descendente según las siguientes columnas:
+Si envías una campaña por [segmentos](/es/platform/customers/segments.html) puedes ver a cuál grupo de usuarios le llegó la campaña. Si esta sección no aparece, es debido a que la campaña fue enviada a todos los contactos.
 
-
-- **Fecha**: Día y hora en que se hizo el envío.
-- **Segmentos**: Segmentos a los cuales se hizo el envío en específico.
-- **Alcance**: Nº de personas que recibieron el envío.
-- **Enviados**: Nº de correos/notificaciones enviadas.
-- **Estado**: Estado en el que se encuentra el envío. Pueden ser: Completado, Pendiente, Fallido o Cancelado.
-
-También podrás encontrar un botón que te permitirá borrar el envío del registro.
-
-:::danger Peligro
-Recuerda que si borras el envío, no podrás recuperar el registro si hiciste algún cambio en este. 
-Además, si borras cuando la campaña se encuentre en proceso de envío, no quiere decir que no llegarán los correos a los usuarios, sino que se detendrá el proceso en el punto en que se encuentra.
+:::warning Atención
+Si no has enviado aún la campaña, los valores de esa campaña aparecerán en cero.
 :::
 
-Si haces clic en los nombres de las campañas, pasarás a la sección Entregas de Mensajes.
+:::danger Peligro
+Cuando borras un envío no puedes recuperar el registro si hiciste algún cambio en él. 
 
-## Entregas de Mensajes
+Borrar una campaña cuando está en proceso de envío, no significa que no llegará a los usuarios, sino que se detiene el proceso en el punto en que se encuentra.
+:::
 
-En la sección Entregas de Mensajes, podrás encontrar la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. 
+Hacer click en el nombre de una campaña te lleva a la sección Entregas de Mensajes.
 
-A primera vista, podrás encontrar una lista de todos los usuarios a los cuales les ha llegado un correo o notificación única, a los cuales se les denomina "Sin Campaña".
+## Entregas de mensajes
 
-"Sin Campaña" refiere a un correo o notificación que ha 
-sido enviado en específico a un usuario, en una fecha determinada. No caen en el concepto de Campañas ya que estos mensajes están personalizados y contienen información que no es enviada a otros. Para saber más del funcionamiento de estos mensajes, acude a [API de Administración](/es/platform/core/api.html). 
+En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. Aquí puedes ver una lista de todos los usuarios que han recibido un correo o notificación única, denominados "Sin Campaña".
 
-En la primera vista, el mensaje se ordena bajo las siguientes categorías.
+"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api.html). 
 
-- **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente si el mensaje fue a través de correo o notificación.
-- **Campaña**: Campaña bajo la cual se envío el mensaje.
-- **Tipo**: Vía por la cual se envío el mensaje. Correo o notificación.
+En la vista inicial los mensajes se ordenan en estas categorías:
+
+- **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente de si fue enviado por correo o notificación.
+- **Campaña**: Campaña bajo la cual el mensaje fue enviado.
+- **Tipo**: Vía por la cual se envió el mensaje, ya sea correo o notificación.
 - **Envío**: Fecha en la cual se inició la campaña.
 - **Enviado**: Fecha en la que se envió el mensaje.
 - **Leído**: Alerta si el usuario leyó o vio el mensaje.
 
-Además, podrás filtrar los datos bajo los siguientes filtros:
+Además, puedes filtrar los datos bajo los siguientes filtros:
 
 - **Tipo de Campaña**: Todos, correo o notificación.
 - **Nombre de la Campaña**: Nombre que se le dio a la campaña en general.
 - **Envío**: Fecha en la cual se envió la campaña.
 
-Por último, puedes ver una barra de búsqueda que te permitirá encontrar por algún término en específico.
+La barra de búsqueda te permite buscar por algún término en específico.
 
 ## Plantillas
 
 <img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer tu mensaje en forma de correo, necesitarás una plantilla para poder añadir los contenidos que desees.
+Para crear tu mensaje en forma de correo, necesitas una plantilla en la cual añadir tu contenido.
 
-Desde esta sección, podrás hacer maquetas de correos de manera fácil para después enviarlas a los usuarios.
+En la sección plantillas puedes hacer maquetas de correos para después enviarlas a los usuarios.
 
-A primera vista, puedes encontrar todas las plantillas de correos que se han hecho.
-
-Cada una de las plantillas estarán ordenadas según su nombre, además de poder ver la última vez que se les hizo alguna modificación.
+Al ingresar a esta sección encuentras todas las plantillas de correos creadas. Las plantillas están ordenada por nombre y puedes ver la última vez que se modificó una plantilla.
 
 :::tip Tip
-Si vas a reutilizar alguna plantilla, recuerda revisar detalladamente su contenido, para evitar errores temporales que puedan confundir el mensaje que le quieres enviar a tus usuarios.
+En caso de reutilizar una plantilla, asegúrate de revisar cuidadosamente su contenido para evitar posibles errores temporales que puedan causar confusión en el mensaje que deseas enviar a tus usuarios.
 :::
 
-Bajo cada nombre, encontrarás un botón que te permitirá editar. Si haces click en él, llegarás al editor donde hiciste tu plantilla.
+Cada plantilla tiene un botón de edición debajo. Haz click en él para acceder al editor donde creaste la plantilla. Haz click en el botón de menú desplegable junto al botón de edición para acceder a estas opciones:
 
-A un costado, se encuentra un botón que despliega un menú con las siguientes opciones:
-
-- **Vista previa**: Muestra el modelo de plantilla de correo que se encuentra guardada.
-- **Copiar**: Puedes hacer una copia de la plantilla.
-- **Borrar**: Se borra la plantilla
+- **Vista previa**: Muestra el modelo de plantilla de correo guardada.
+- **Copiar**: Permite copiar la plantilla.
+- **Borrar**: Borra la plantilla
 
 :::tip Tip
-Si quieres intervenir la plantilla temporalmente y después volver a una nueva, es mejor que hagas una copia y trabajes sobre esta, dejando la original sin cambios.
+Para modificar una plantilla temporalmente y después volver a una nueva, haz una copia de la plantilla y trabaja sobre la copia, dejando la original sin cambios.
 :::
 
 ### Editar plantillas
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para hacer una plantilla, primero debes hacer click en el botón **+ Nueva Plantilla**, que se encuentra en la parte superior de la página.
+Para crear una plantilla, haz click en el botón **+ Nueva Plantilla**, en la parte superior de la página.
 
-Al hacer click, se abrirá la vista de edición donde debes poner escribir el nombre que le darás a la plantilla.
+En la vista de edición designa un nombre a la plantilla.
 
 :::tip Tip
-Recuerda que este nombre es el que después deberás buscar para hacer el envío al hacer la Campaña. Por esto, debes poner un texto que te ayude a identificar bien cuál es la plantilla que quieres usar.
+Al crear una Campaña, el nombre de tu plantilla será utilizado posteriormente para realizar el envío. Elige un texto que te ayude a identificar claramente cuál es la plantilla que quieres usar.
 :::
 
-Más abajo, encontrarás un editor WYSIWYG, que te permitirá armar visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
+El editor WYSIWYG, te permite crear visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
 
 :::warning Atención
-Si haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
+Cuando haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
 Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/realms.html#emails)
 :::
 
-Para grabar la plantilla, debes hacer click en el botón **Guardar**, que se encuentra en la parte superior de la página.
+Para guardar la plantilla, haz clik en el botón **Guardar** en la parte superior de la página.
 
-Si quieres usar la plantilla en un correo, solo tienes que seleccionar el nombre de la plantilla, cuando estés elaborando la campaña.
+Para usar la plantilla en un correo, selecciona el nombre de esa plantilla al elaborando la campaña.
 
 ## Desinscripciones
 
-En esta sección, encontrarás una lista con todos los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
+En esta sección, encuentras una lista de los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
 
-Para encontrar un usuario, en la parte superior de la pantalla existe una barra de búsqueda donde puedes ingresar su nombre o correo electrónico.
+Usa la barra de búsqueda para encontrar un usuario específico. Puedes ingresar su nombre o correo electrónico.
 
-Si se hace click en el nombre del usuario, puedes encontrar el [perfil del usuario](/es/platform/customers/realms.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Cuando haces click en el nombre del usuario, puedes ver el [perfil del usuario](/es/platform/customers/realms.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
 
-Por último, al final de cada nombre de usuario, encontrarás un botón que te permite reinscribirlo a cualquier campaña del sitio.
+Al final de cada nombre de usuario hay un botón que te permite reinscribir al usuario a cualquier campaña del sitio.
 
 :::danger Peligro
 Hacer una reinscripción sin autorización del usuario puede causar problemas legales.
