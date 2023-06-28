@@ -19,7 +19,7 @@ En Modyo, puedes enviar mensajes a los usuarios a través de dos canales:
 
 En la sección de campañas puedes ver, a través de un administrador, todos los mensajes e información que has enviado a los usuarios finales.
 
-Da click en el botón Todos en la parte superior de la pantalla para filtrar los mensajes según el canal a través del cual fueron enviados.
+Da click en el botón **Todos** en la parte superior de la pantalla para filtrar los mensajes según el canal a través del cual fueron enviados.
 
 Los mensajes de las campañas se ordenan en las siguientes columnas:
 
@@ -83,7 +83,7 @@ Una campaña puede ser reenviada solamente si cancelaste previamente el envío d
 Debes indicar si deseas enviar nuevamente los mensajes a todos los usuarios o solo a aquellos que no los recibieron anteriormente. En este caso, el número de entregas de mensajes puede ser mayor que el alcance total de usuarios de la campaña.
 :::
 
-En campañas enviadas por correo visualizar:
+En campañas enviadas por correo puedes visualizar:
 
 <img src="/assets/img/platform/campaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
@@ -101,7 +101,7 @@ Si enviaste la campaña por notificación puedes visualizar:
 - **Enviados**: Número de notificaciones enviadas.
 - **Abiertos**: Número de notificaciones abiertas.
 
-Si envías una campaña por [Segmentos](/es/platform/customers/segments.html) puedes ver también los segmentos a los que les llegó la campaña. Si esta sección no aparece, es porque la campaña fue enviada a todos los contactos.
+Si envías una campaña por [segmentos](/es/platform/customers/segments.html) puedes ver a cuál grupo de usuarios le llegó la campaña. Si esta sección no aparece, es debido a que la campaña fue enviada a todos los contactos.
 
 :::warning Atención
 Si no has enviado aún la campaña, los valores de esa campaña aparecerán en cero.
@@ -124,7 +124,7 @@ En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuale
 En la vista inicial los mensajes se ordenan en estas categorías:
 
 - **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente de si fue enviado por correo o notificación.
-- **Campaña**:  Campaña bajo la cual el mensaje fue enviado.
+- **Campaña**: Campaña bajo la cual el mensaje fue enviado.
 - **Tipo**: Vía por la cual se envió el mensaje, ya sea correo o notificación.
 - **Envío**: Fecha en la cual se inició la campaña.
 - **Enviado**: Fecha en la que se envió el mensaje.
@@ -136,7 +136,7 @@ Además, puedes filtrar los datos bajo los siguientes filtros:
 - **Nombre de la Campaña**: Nombre que se le dio a la campaña en general.
 - **Envío**: Fecha en la cual se envió la campaña.
 
-La  barra de búsqueda te permite buscar por algún término en específico.
+La barra de búsqueda te permite buscar por algún término en específico.
 
 ## Plantillas
 
@@ -152,7 +152,7 @@ Al ingresar a esta sección encuentras todas las plantillas de correos creadas. 
 En caso de reutilizar una plantilla, asegúrate de revisar cuidadosamente su contenido para evitar posibles errores temporales que puedan causar confusión en el mensaje que deseas enviar a tus usuarios.
 :::
 
-Cada plantilla tiene un botón de edición debajo. Haz clic en él para acceder al editor donde creaste la plantilla. Haz clic en el botón de menú desplegable junto al botón de edición para acceder a estas opciones:
+Cada plantilla tiene un botón de edición debajo. Haz click en él para acceder al editor donde creaste la plantilla. Haz click en el botón de menú desplegable junto al botón de edición para acceder a estas opciones:
 
 - **Vista previa**: Muestra el modelo de plantilla de correo guardada.
 - **Copiar**: Permite copiar la plantilla.
@@ -166,7 +166,7 @@ Para modificar una plantilla temporalmente y después volver a una nueva, haz un
 
 <img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
-Para crear una plantilla, haz click en el botón **+ Nueva Plantilla**,en la parte superior de la página. 
+Para crear una plantilla, haz click en el botón **+ Nueva Plantilla**, en la parte superior de la página.
 
 En la vista de edición designa un nombre a la plantilla.
 
@@ -182,7 +182,7 @@ Cuando haces una campaña, recuerda agregar en el footer toda la información le
 Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/realms.html#emails)
 :::
 
-Para guardar la plantilla, haz clic en el botón **Guardar** en la parte superior de la página.
+Para guardar la plantilla, haz clik en el botón **Guardar** en la parte superior de la página.
 
 Para usar la plantilla en un correo, selecciona el nombre de esa plantilla al elaborando la campaña.
 
