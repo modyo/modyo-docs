@@ -23,7 +23,7 @@ Da click en el botón **Todos** en la parte superior de la pantalla para filtrar
 
 Los mensajes de las campañas se ordenan en las siguientes columnas:
 
-- **Nombre**: Nombre que se le dio a la campaña. Puede contener el Segmento específico al que se le envió.
+- **Nombre**: Nombre que se le dio a la campaña. Puede contener el segmento específico al que se le envió.
 - **Tipo**: Tipo de mensaje en que se envió la campaña.
 - **Enviados**: Cantidad total de envíos realizados para la campaña.
 - **Último envío**: Fecha y hora en que se envió la campaña.
@@ -75,7 +75,7 @@ El botón contextual te permite realizar estas acciones:
 
 Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto  crea una una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
 
-Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío. 
+Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío.
 
 :::warning Atención
 Una campaña puede ser reenviada solamente si cancelaste previamente el envío de la campaña cuando estaba en cola o proceso de envío. 
@@ -182,7 +182,7 @@ Cuando haces una campaña, recuerda agregar en el footer toda la información le
 Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/realms.html#emails)
 :::
 
-Para guardar la plantilla, haz clik en el botón **Guardar** en la parte superior de la página.
+Para guardar la plantilla, haz click en el botón **Guardar** en la parte superior de la página.
 
 Para usar la plantilla en un correo, selecciona el nombre de esa plantilla al elaborando la campaña.
 
