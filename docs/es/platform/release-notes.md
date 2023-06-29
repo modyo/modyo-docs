@@ -6,6 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.36 - 19 de junio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad.
+* Agrega valdiacióon de permisoos administradores a los endpoints de la doocumentación swagger del API.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema de diferencias vacias despues de sincronizar stages.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige problema de listado de spaces repetidos para usuarios en un grupo de permisos.
+* Corrige problema de publicacion de páginas cuando provienen de la sincronización de stages.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se valida correctamente el campo defaul email sender en las configuraciones del reino, ahora tampoco puede estar vacío. 
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Corrige valor inicial del filtro de fecha, ahora muestra corresctamente el rango seleccionado.
+
+  
+
 ### 9.2.35 - 30 de mayo de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
