@@ -75,7 +75,7 @@ The contextual button allows you to perform these actions:
 
 Once you've sent a campaign, you can't send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
 
-You can cancel sending a campaign when the campaign is in a queue or in the process of being sent.
+You can cancel a campaign when it is in queue or while it is being sent.
 
 :: :warning Attention
 A campaign can be resent only if you previously canceled sending the campaign when it was in the queue or in the process of sending. 
