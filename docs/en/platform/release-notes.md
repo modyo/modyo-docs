@@ -19,7 +19,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Fixes the problem of listing repeated spaces for users in a permission group.
-* Fix the problem of publishing pages when they come from the synchronization of stages.
+* Corrects the problem of publishing pages when they come from stage synchronization.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
