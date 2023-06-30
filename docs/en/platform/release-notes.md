@@ -6,6 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.36 - June 19, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements.
+* Add administrator permission validation to the endpoints of the API's swagger documentation.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fix the problem of empty differences after synchronizing stages.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixes the problem of listing repeated spaces for users in a permission group.
+* Fix the problem of publishing pages when they come from the synchronization of stages.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* The defaul email sender field in the realm settings is successfully validated, now it can't be empty either. 
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Corrects the initial value of the date filter, now it shows the selected range correctly.
+
+
+
 ### 9.2.35 - May 30, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -582,7 +607,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 ### 9.1.34 - November 19, 2021
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Fixed bug with file limit in asset manager
+* Fixes bug with file limit in asset manager
 * Improvements when copying entry from another locale
 * Adds category name and slug to Entry drop and content API
 
