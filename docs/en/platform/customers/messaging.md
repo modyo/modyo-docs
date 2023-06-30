@@ -44,7 +44,7 @@ Click the**+ New Campaign** button at the top of the Manager view to create a ne
 
 Fill in the information requested in the form:
 
-- **Name**: Name of the campaign.
+- **Name**: Campaign name.
 - **Type**: Choose if it will be sent by mail or notification.
 - **Subject**: Text that will appear in the subject line of the message that will be sent to users.
 - **Reply to**: Email address that people can reply to
