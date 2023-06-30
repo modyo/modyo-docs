@@ -26,7 +26,7 @@ The campaign messages are ordered in the following columns:
 - **Name**: Name given to the campaign. It can contain the specific segment it was sent to.
 - **Type**: Type of message in which the campaign was sent.
 - **Sended**: Total number of shipments made for the campaign.
-- **Last shipment**: Date and time the campaign was sent.
+- **Last sent**: Date and time the campaign was sent.
 - **Created on**: Campaign creation date.
 
 In the row of each campaign, there is a button that allows you to perform two actions: 
