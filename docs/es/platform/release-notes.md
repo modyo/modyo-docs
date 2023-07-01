@@ -6,6 +6,23 @@ search: true
 
 ## 9.2
 
+### 9.2.37 - 30 de junio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad.
+* Mejoras en la configuración de politicas de expiración e inactividad.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega configuración de nuevos headers de seguridad, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema al leer una notificacion en el profile, ahora se marca correctamente como leido.
+* Agrega nuevo parametro (redirect_to) en la url de login de un sitio para rederigir a una vista en particular o a algún sitio dentro de la organización.
+* Se modifica las campañas de correo, se reemplaza los multiples envios por el clonado de campaña para nuevos envios para mayor simplicidad en su gestión.
+
+
 ### 9.2.36 - 19 de junio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
