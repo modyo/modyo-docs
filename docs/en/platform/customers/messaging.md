@@ -98,7 +98,7 @@ In campaigns sent by email, you can view:
 If you sent the campaign by notification, you can view:
 
 - **Reach**: People who receive the campaign.
-- **Sended**: Number of notifications sent.
+- **Sent**: Number of notifications sent.
 - **Open**: Number of open notifications.
 
 If you send a campaign through [segments] (/es/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
