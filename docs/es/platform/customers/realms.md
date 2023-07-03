@@ -22,7 +22,7 @@ En la parte superior de la tabla tienes filtros para encontrar grupos de usuario
 - **Estado**: Usuarios activos e inactivos.
 - **Verificación**: Usuarios que han confirmado sus datos en la plataforma.
 - **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments.html) específico.
-- **Etiquetas**:  Usuarios asignados etiquetas específica en la plataforma.
+- **Etiquetas**: Usuarios asignados etiquetas específica en la plataforma.
 - **Búsqueda**: Filtra usuarios por nombre, apellido email y nombre de usuario.
 
 
@@ -34,7 +34,7 @@ Junto al botón de **Aplicar**, está el botón **Guardar como Segmento**. Este 
 En la tabla puedes también ordenar los usuarios por sus valores respectivos, para ello haz click en las cabeceras de las siguientes columnas:
 - **Nombre**: Nombre del usuario
 - **Fecha de registro**: Fecha de inscripción en la base de datos de usuarios
-- **Ultimo ingreso**: Fecha más reciente de ingreso a la plataforma
+- **Último ingreso**: Fecha más reciente de ingreso a la plataforma
 - **Sesiones**: Número de logins hechos en la plataforma
 
 Para ejecutar acciones masivas, marca la casilla junto al nombre de uno o más usuarios y da click en el botón **Bulk Actions** debajo del listado de usuarios. Luego, selecciona una de las siguientes opciones:
@@ -226,7 +226,7 @@ Para habilitar o deshabilitar el envío de un correo, haz click en el botón Hab
 
 #### Personalizar correos
 
-Asegúrate de incluir los códigos personalizables en cada correo, ya que estos códigos permiten que la plataforma incluya la información aleatoria del usuario al momento del envío.
+Puedes introducir códigos personalizables en cada correo, estos códigos permiten que la plataforma incluya la información del usuario en el campo designado, al momento del envío.
 
 :::danger Peligro
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
@@ -238,7 +238,7 @@ Cada vez que hagas un cambio en el código, debes hacer click en el botón **Gua
 
 ### Proveedores de identidad
 
-Para  facilitar el acceso a la plataforma, puedes configurar el inicio de sesión y el registro a través de servicios estándar.
+Para facilitar el acceso a la plataforma, puedes configurar el inicio de sesión y el registro a través de servicios estándar.
 
 Los servicios compatibles con el ingreso a Modyo son:
 
@@ -288,7 +288,7 @@ Puedes elegir entre dos roles:
 - **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
 
-Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **borrar** en la parte inferior. 
+Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior. 
 
 ### Custom fields
 
@@ -347,9 +347,8 @@ Las opciones disponibles para establecer una política de contraseña en la plat
 
 #### reCAPTCHA
 
-Las opciones disponibles al habilitar reCAPTCHA en el reino, son:
+Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 
-- **reCAPTCHA habilitado**: Activa la protección con reCAPTCHA para el registro de usuarios, envío de formularios, inicio de sesión y recuperación de contraseña.
 - **Clave de sitio**
 - **Secreto**
 - **Umbral**
