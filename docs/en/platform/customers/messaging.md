@@ -21,7 +21,7 @@ In the campaigns section, you can see, through an administrator, all the message
 
 Click the**All** button at the top of the screen to filter messages based on the channel through which they were sent.
 
-The campaign messages are ordered in the following columns:
+Campaign messages are ordered in the following columns:
 
 - **Name**: Name given to the campaign. It can contain the specific segment it was sent to.
 - **Type**: Type of message in which the campaign was sent.
