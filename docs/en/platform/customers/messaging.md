@@ -29,7 +29,7 @@ Campaign messages are ordered in the following columns:
 - **Last sent**: Date and time the campaign was sent.
 - **Created on**: Campaign creation date.
 
-In the row of each campaign, there is a button that allows you to perform two actions: 
+In each row of the campaign, there is a button that allows you to perform two actions: 
 
 - **Edit the Campaign**
 - **Delete the Campaign**
