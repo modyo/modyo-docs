@@ -14,7 +14,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Add configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+* Adds configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
