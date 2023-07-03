@@ -40,7 +40,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* The defaul email sender field in the realm settings is successfully validated, now it can't be empty either. 
+* The default email sender field in the realm settings is now correctly validated, also, it cannot be empty. 
 
 <Badge text="Insights" type="insights" vertical="middle"/>
 
