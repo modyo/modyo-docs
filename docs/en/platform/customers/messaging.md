@@ -130,7 +130,7 @@ In the initial view, the messages are ordered in these categories:
 - **Sent**: Date the message was sent.
 - **Read**: Alert if the user read or saw the message.
 
-In addition, you can filter the data under the following filters:
+In addition, you can filter the data using the following filters:
 
 - **Campaign Type**: All, mail or notification.
 - **Campaign Name**: Name given to the campaign in general.
