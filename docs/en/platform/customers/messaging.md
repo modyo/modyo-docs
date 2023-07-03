@@ -194,7 +194,7 @@ Use the search bar to find a specific user. You can enter their name or email.
 
 When you click on the user's name, you can see the [user's profile] (/es/platform/customers/realms.html #ficha -users) with all the activities they have done on the platform.
 
-At the end of each username there is a button that allows you to re-enroll the user to any campaign on the site.
+At the end of each username, there is a button that allows you to re-enroll the user to any campaign on the site.
 
 :::danger Danger
 Resubscribing a user without the user's authorization may cause legal problems.
