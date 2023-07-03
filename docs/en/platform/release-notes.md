@@ -6,6 +6,23 @@ search: true
 
 ## 9.2
 
+### 9.2.37 - June 30, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements.
+* Improvements in the configuration of expiration and inactivity policies.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Add configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrects problem when reading a notification in the profile, it is now correctly marked as read.
+* Add a new parameter (redirect_to) to the login URL of a site to redirect to a particular view or to a site within the organization.
+* Email campaigns are modified; for new mailings, multiple mailings are replaced by campaign cloning, to simplify management.
+
+
 ### 9.2.36 - June 19, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -491,7 +508,7 @@ search: true
 ### 9.2.7 - March 10, 2022
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Updated liquidjs version
+* Updated liquidJS version
 * Update category names are not reflected in entries
 * Attributes of the request drop does not consider the entry slug in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
@@ -570,7 +587,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 * Security Headers Management
 * New minimal theme
 * Navigation builders
-* Stages de sitios
+* Site stages
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * User Realms
