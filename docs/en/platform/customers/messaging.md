@@ -69,7 +69,7 @@ The contextual button allows you to perform these actions:
 - **Send test**: Send a test email with the campaign to a specific address.
 - **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the segments to receive.
 - **Clone the campaign**: Copies all the content of a campaign.
-- **Delete the campaign**: Delete a campaign.
+- **Delete campaign**: Deletes a campaign.
 
  <img width="300" src="/assets/img/platform/menu.png" style="border: 1px solid #EEE; margin-top: 40px"> 
 
