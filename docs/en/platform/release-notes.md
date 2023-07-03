@@ -31,7 +31,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fix the problem of empty differences after synchronizing stages.
+* Corrects the problem of empty differences after synchronizing stages.
 
 <Badge text="Content" type="content" vertical="middle"/>
 
