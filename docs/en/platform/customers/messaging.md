@@ -13,7 +13,7 @@ In Modyo, you can send messages to users through two channels:
 - **Emails**: Send campaigns to the email addresses registered in user profiles. It is not necessary to be logged into the platform to view the messages.
 - **Notifications**: Send notifications through Modyo's internal messaging system. To see a notification, users must enter the platform.
 
- <img src="/assets/img/platform/messagedeliveries.png" width="400" style="border: 1px solid #EEE; margin-top: 40px"> 
+ <img src="/assets/img/platform/messagedeliveries.png" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## Campaigns
 
