@@ -117,7 +117,7 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 ## Message deliveries
 
-In the Message Deliveries section, you can find the list of users who have received a message from the platform. Here you can see a list of all users who have received a single email or notification, called “No Campaign”.
+In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
 
 “No Campaign” refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API] (/es/platform/core/api.html). 
 
