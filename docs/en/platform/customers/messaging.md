@@ -71,7 +71,7 @@ The contextual button allows you to perform these actions:
 - **Clone the campaign**: Copies all the content of a campaign.
 - **Delete campaign**: Deletes a campaign.
 
- <img width="300" src="/assets/img/platform/menu.png" style="border: 1px solid #EEE; margin-top: 40px"> 
+ <img width="300" src="/assets/img/platform/menu.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 Once you've sent a campaign, you can't send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
 
