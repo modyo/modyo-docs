@@ -6,7 +6,7 @@ search: true
 
 Messaging is a Modyo tool that allows you to create campaigns in the site and send information to end users in bulk, aimed at specific segments.
 
- <img src="/assets/img/platform/newcampaign.png" style="border: 1px solid #EEE; margin-top: 40px"> 
+ <img src="/assets/img/platform/newcampaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 In Modyo, you can send messages to users through two channels:
 
