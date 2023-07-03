@@ -192,7 +192,7 @@ In this section, you will find a list of users who have unsubscribed from email 
 
 Use the search bar to find a specific user. You can enter their name or email.
 
-When you click on the user's name, you can see the [user's profile] (/es/platform/customers/realms.html #ficha -users) with all the activities they have done on the platform.
+When you click on the user's name, you can see the [user's profile] (/es/platform/customers/realms.html #ficha -users) and all the activities they have performed on the platform.
 
 At the end of each username, there is a button that allows you to re-enroll the user to any campaign on the site.
 
