@@ -143,7 +143,7 @@ Aquí puedes configurar aspectos generales del reino, como:
 - **Atributos extra del formulario de registro**:
   - Habilitar segundo apellido
   - Requerir segundo apellido
-  - Habilitar confirmación de correo electrónico: Habilita un campo adicional de correo electrónico que el usuario debe rellenar y que debe coincidir con el campo primario de correo electrónico. 
+  - Habilitar confirmación de correo electrónico: Habilita un campo adicional de correo electrónico que el usuario debe rellenar y que debe coincidir con el campo primario de correo electrónico.
   - Habilitar avatar de usuario
   - Habilitar fecha de nacimiento
   - Habilitar género
@@ -184,7 +184,7 @@ Si tienes problemas con los códigos de teclado al editar el CSS, haz click en e
 
 ## Redireccionar Login ##
 
-En Modyo puedes personalizar la página de login a la que acceden tus usuarios una vez que ingresen a tu sitio. 
+En Modyo puedes personalizar la página de login a la que acceden tus usuarios una vez que ingresen a tu sitio.
 
 Para redireccionar el login sigue estos pasos:
 1. Haz click en Canales en el menú lateral.
@@ -194,8 +194,8 @@ Para redireccionar el login sigue estos pasos:
 5. En la plantilla header busca la línea que contiene la información de login.
 6. Redirecciona a la página deseada utilizando este código: 
 `login?redirect_to=/tu-pagina` donde "/tu-pagina" es la URL de la página a la que deseas redirigir el login.
-7. Haz click en **Guardar**
-8. Haz click en **Publicar**
+7. Haz click en **Guardar**.
+8. Haz click en **Publicar**.
 
 :::tip Tip
 Modyo está programado para que la información de login se encuentre en el encabezado del sitio. Si tu sitio está programado de manera diferente, utiliza el ícono de lupa para encontrar el término login en tus plantillas. 
@@ -307,7 +307,7 @@ Los tipos de campos personalizados que puedes agregar son:
 Puedes reorganizar los campos personalizados arrastrándolos. Recuerda que el orden en el que los ordenes será el mismo en el que aparecerán en las vistas de edición y en el perfil de los usuarios.
 
 :::tip Tip
-Puedes crear un máximo de 20 campos personalizados en cada reino. 
+Puedes crear un máximo de 20 campos personalizados en cada reino.
 :::
 
 Los campos personalizados tienen propiedades estándar que debes tener en cuenta:
