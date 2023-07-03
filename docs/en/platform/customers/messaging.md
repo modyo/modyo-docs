@@ -78,7 +78,7 @@ Once you've sent a campaign, you can't send it again. If you want to send the sa
 You can cancel a campaign when it is in queue or while it is being sent.
 
 :: :warning Attention
-A campaign can be resent only if you previously canceled sending the campaign when it was in the queue or in the process of sending. 
+A campaign can be resent only if you previously canceled sending the campaign when it was in queue or being sent. 
 
 You must indicate whether you want to send messages again to all users or only to those who did not receive them before. In this case, the number of message deliveries may be greater than the total reach of users of the campaign.
 ::
