@@ -197,6 +197,6 @@ When you click on the user's name, you can see the [user's profile] (/es/platfor
 At the end of each username there is a button that allows you to re-enroll the user to any campaign on the site.
 
 :::danger Danger
-Unsubscribing without the user's authorization may cause legal problems.
-Check your regulation on mass mailings for each country.
+Resubscribing a user without the user's authorization may cause legal problems.
+Check the regulations on mass mailings for each country.
 :::
