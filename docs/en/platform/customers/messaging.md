@@ -85,7 +85,7 @@ You must indicate whether you want to send messages again to all users or only t
 
 In campaigns sent by email, you can view:
 
- <img src="/assets/img/platform/campaign.png" style="border: 1px solid #EEE; margin-top: 40px"> 
+ <img src="/assets/img/platform/campaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Reach**: People who receive the campaign.
 - **Send**: Total number of emails sent.
