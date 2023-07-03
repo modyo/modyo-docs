@@ -59,7 +59,7 @@ This opens the WYSIWYG editor with the template you selected. Edit the template 
 
 ### Campaign Status
 
- <img src="/assets/img/platform/send.png" style="border: 1px solid #EEE; margin-top: 40px"> 
+ <img src="/assets/img/platform/send.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 At the top of the screen, the**preview** icon allows you to view your campaign before sending it. Click the **Send** button to send the campaign.
 
