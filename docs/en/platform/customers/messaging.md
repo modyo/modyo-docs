@@ -90,7 +90,7 @@ In campaigns sent by email, you can view:
 - **Reach**: People who receive the campaign.
 - **Send**: Total number of emails sent.
 - **Open**: Total number of emails opened.
-- **Single openings**: Total number of users who ever opened the campaign.
+- **Unique opens**: Total number of users who opened the campaign.
 - **Clicks**: Number of times a link in the campaign has been clicked.
 - **Unique Clicks**: Number of users who have clicked on the campaign.
 - **Spam**: Number of users whose email reached the spam folder.
