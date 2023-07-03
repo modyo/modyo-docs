@@ -27,7 +27,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
-* Add administrator permission validation to the endpoints of the API's swagger documentation.
+* Adds validation of administrator permissions to the Swagger API documentation endpoints.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
