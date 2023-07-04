@@ -182,7 +182,7 @@ There are elements (home, navigation, and templates) that cannot be unpublished.
 
 #### Approved
 
-This status appears when team review is enabled and it means that an item in this status is ready to be published. Any changes made to an item in this state will bring the item to an editable state and must go through the review process again in order to be published.
+This state appears when team review is enabled, it signifies  that an item in this state is ready to be published. Any changes made to an item in this state will bring the item to an editable state. It must go through the review process again in order to be published.
 
 ## Reversing a Change
 
