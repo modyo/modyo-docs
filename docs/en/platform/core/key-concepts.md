@@ -90,7 +90,7 @@ When the team review option is activated and the changes are saved, the main gre
 
 <img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
 
-When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permission.
+When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permissions.
 
 When you click, the right side section will indicate the requirements to publish the item.
 
