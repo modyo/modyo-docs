@@ -134,7 +134,7 @@ If you click Publish on a specific article (for example, publish a page), the Re
 
 ## Versions
 
-As a backup mechanism, Modyo automatically generates and stores different versions of an item each time it is published, which can later be retrieved if necessary.
+As a backup mechanism, Modyo automatically generates and stores different versions of an item each time it is published, these versions can be recovered if needed.
 
 This system is available for Widgets, Pages, Navigation, Templates, and Spaces.
 
