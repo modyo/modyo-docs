@@ -110,7 +110,7 @@ When you enable team review, in the item's action bar, to the left of the main g
 
 When you open this tab, a chronological list of the actions performed on the item is displayed, with the option to view the details of each action. At the bottom of the tab, there is the option to leave a comment.
 
-When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision and the users who are on the list of reviewers.
+When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision, and the users who are on the list of reviewers.
 
 ## Joint Review and Publication
 
