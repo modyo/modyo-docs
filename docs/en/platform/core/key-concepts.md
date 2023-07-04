@@ -166,7 +166,7 @@ This value can be modified using environment variables and is applicable to all 
 
 #### Scheduled
 
-When you schedule a publication, the editable version goes into a scheduled state. When the time comes for publication, that programmed version takes the place of the version that is currently published. This way, you can schedule a change in the future to the elements, and continue working on the editable version.
+When you schedule a publication, the editable version goes into a scheduled state. When the time comes for publication, that scheduled version replaces the currently published version. This way, you can schedule a change in the future for the items and continue working on the editable version.
 
 :: :warning Attention
 Modyo only allows you to have a programmed version of each element. If you schedule a second modification to the element, you overwrite the previous schedule.
