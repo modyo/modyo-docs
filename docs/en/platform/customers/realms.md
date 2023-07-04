@@ -69,7 +69,7 @@ Some special fields, such as second surname, avatar or date of birth, can be act
 
 ### Users tab
 
-Click on the side menu below the action column to view the details of a specific user or to deactivate the user. Select the view option to open that user's file. In the file you can see:
+Click on the side menu below the action column to view the details of a specific user or to deactivate the user. Select the view option to open that user's file. In the file, you can see:
 
 - **Profile**: General user information.
 - **Activity**: Log of user activity on the site.
