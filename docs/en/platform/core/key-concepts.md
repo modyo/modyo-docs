@@ -15,7 +15,7 @@ Team Review adds a level of oversight and collaboration between the content edit
 
 When an editor or developer considers that the item they are working on is ready, they can send it for review.
 
-This task can be performed by users enabled by default or by a computer selected by the editor.
+This task can be performed by users enabled by default or by a team selected by the editor.
 
 These reviewers are responsible for approving or rejecting the item, and determining if it is ready for publication.
 
