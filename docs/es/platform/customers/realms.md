@@ -5,205 +5,240 @@ sidebarDepth: 3
 
 # Reinos
 
-Los reinos son una agrupación de usuarios con características similares que están gobernados por una misma configuración. Los realms son especialmente útiles cuando cuentas con distintas agrupaciones para sitios de una misma cuenta que no están directamente relacionados, o también, para tener un sitio de pruebas con usuarios de prueba sin afectar la agrupación de usuarios productivos.
+Los reinos son una agrupación de usuarios con características similares que están sujetos a una misma configuración. Los reinos son especialmente útiles cuando tienes varias agrupaciones de sitios en una cuenta que no están directamente relacionados entre sí, o para tener un sitio de pruebas con usuarios de prueba sin afectar a los usuarios productivos.
 
-Cada realm tiene su propia configuración de inicio de sesión, registro, integraciones, formularios, segmentos, y mensajería. Debes tener en consideración que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese realm y no tendrá efecto sobre usuarios de otro realm.
+Cada reino tiene su propia configuración para el inicio de sesión, registro, integraciones, formularios, segmentos y mensajería. Ten en cuenta que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese reino y no afectará a los usuarios de otros reinos.
 
 ## Usuarios
 
-A través de la sección Usuarios, podrás ver y modificar a los usuarios externos del sistema. Dichos usuarios son los registrados dentro de la plataforma quienes inician su sesión en los sitios de Modyo, responden formularios o pueden recibir campañas de correo.
+En la sección usuarios, puedes ver y modificar los usuarios externos del sistema. Estos usuarios son aquellos que se registran en la plataforma y acceden a los sitios de Modyo, responden formularios o pueden recibir campañas de correo.
 
 ### Sobre la interfaz
 
-En la vista principal, podrás ver una tabla con todos los usuarios registrados dentro de la plataforma, paginada en caso de tener más de 30 registros.
+En la vista principal encuentras una tabla con todos los usuarios registrados en la plataforma, paginada en caso de tener más de 30 registros.
 
-En la parte superior de la tabla, encontrarás filtros que te permitirán encontrar un grupo de usuarios de mejor manera. Los filtros disponibles son los que siguen:
+En la parte superior de la tabla tienes filtros para encontrar grupos de usuarios rápidamente. Los filtros disponibles son:
 
-- Estado: Ver los usuarios activos e inactivos.
-- Verificación: Ver los usuarios que tienen confirmados sus datos en la plataforma.
-- Segmentos: Usuarios que se encuentran dentro de un determinado [Segmento](/es/platform/customers/segments.html)
-- Filtros avanzados: Usuarios que tengan un dato o acción en específico dentro de la plataforma.
-- Búsqueda: Filtra usuarios por nombre, apellido, email y username.
+- **Estado**: Usuarios activos e inactivos.
+- **Verificación**: Usuarios que han confirmado sus datos en la plataforma.
+- **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments.html) específico.
+- **Etiquetas**: Usuarios asignados etiquetas específica en la plataforma.
+- **Búsqueda**: Filtra usuarios por nombre, apellido email y nombre de usuario.
 
-La opción de Filtros Avanzados abrirá un modal el cual te permitirá filtrar a los usuarios por atributos más específicos, tales como su edad, o Custom Fields. Al agregar un nuevo filtro avanzado, aparecerá automáticamente el número de coincidencias en la parte inferior izquierda del modal, al lado del botón para limpiar los filtros. Si quieres visualizar el listado de estos usuarios filtrados, solo debes hacer click en el botón **Aplicar**.
+
 
 :::tip Tip
 Junto al botón de **Aplicar**, está el botón **Guardar como Segmento**. Este guardará los filtros que aplicaste en un nuevo Segmento, al cual deberás darle un título y una descripción. Posteriormente lo podrás encontrar en la sección [Segmentos](/es/platform/customers/segments.html)
 :::
 
-En la tabla misma, es posible ordenar los usuarios por sus valores respectivos haciendo click en las cabeceras de cada una de las siguientes columnas:
-- Nombre: Nombre del usuario
-- Fecha de registro: Fecha de inscripción en la base de datos de usuarios
-- Ultimo ingreso: Fecha de último ingreso a la plataforma
-- Sesiones: Cantidad de logins hechos dentro de la plataforma
+En la tabla puedes también ordenar los usuarios por sus valores respectivos, para ello haz click en las cabeceras de las siguientes columnas:
+- **Nombre**: Nombre del usuario
+- **Fecha de registro**: Fecha de inscripción en la base de datos de usuarios
+- **Último ingreso**: Fecha más reciente de ingreso a la plataforma
+- **Sesiones**: Número de logins hechos en la plataforma
 
+Para ejecutar acciones masivas, marca la casilla junto al nombre de uno o más usuarios y da click en el botón **Bulk Actions** debajo del listado de usuarios. Luego, selecciona una de las siguientes opciones:
+- **Desactivar**: Desactivar usuarios
+- **Activar**: Activar usuarios
+- **Exportar**: Exportar la lista de usuarios en formato Excel o CSV
+- **Agregar o eliminar etiquetas**: Crea nuevas etiquetas y asigna o elimina etiquetas existentes de los usuarios seleccionados.
 
 ### Añadir un usuario
 
-Para agregar un nuevo usuario, se debe hacer click en el botón **+ Nuevo Usuario** en la parte superior derecha de la pantalla.
+Para agregar un nuevo usuario, haz click en el botón **+ Nuevo Usuario** en la parte superior derecha de la pantalla y completa los siguientes campos:
 
 Al seleccionar añadir un usuario, la plataforma te pedirá completar los siguientes campos:
 
-- Nombre: **[Requerido]** Nombre legal del usuario.
-- Apellido: Apellido del usuario.
-- Apellido materno: Apellido materno del usuario.
-- Nombre del usuario: **[Requerido]** Nombre dentro de la plataforma
-- Email: **[Requerido]** Correo electrónico del usuario
-- Contraseña: **[Requerido]** Password para que el usuario ingrese a la plataforma. El password no puede tener menos de 8 caracteres.
-- Confirmación de la contraseña: **[Requerido]** Repetición de la contraseña dada por el administrador.
-- Tags: Etiquetas que sirvan para identificar al usuario.
+- **Nombre**: **[Requerido]** Nombre legal del usuario.
+- **Apellido**: Apellido del usuario.
+- **Apellido materno**: Apellido materno del usuario.
+- **Nombre del usuario**: **[Requerido]** Nombre dentro de la plataforma.
+- **Email**: **[Requerido]** Correo electrónico del usuario.
+- **Contraseña**: **[Requerido]** Contraseña que usará el usuario para acceder a la plataforma, debe contener al menos 8 caracteres.
+- **Confirmación de la contraseña**: **[Requerido]** Repetición de la contraseña ingresada en el campo previo.
+- **Tag**s: Etiquetas para identificar al usuario.
 
 :::tip Tip
-Para enviar la contraseña al mail del usuario, solo es necesario marcar el checkbox que se encuentra bajo el campo email. Al guardar, se enviará un correo al usuario creado con su contraseña, que podrá cambiar al ingresar a la plataforma.
+Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico. Al guardar, la plataforma le envía un correo al nuevo usuario con su contraseña. El usuario puede cambiar la contraseña una vez que acceda a la plataforma.
 :::
 
-Esta vista de creación de usuarios puede contener más campos dependiendo de la configuración en la plataforma, disponible en la sección [Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino). Algunos campos especiales, tales como el segundo apellido, avatar, o la fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Por otro lado, también existen **Custom Fields**, los que se pueden crear y modificar en la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
+La vista de creación de usuarios puede contener más campos según su configuración en la plataforma.  En la sección [Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino) puedes modificar los campos del formulario de nuevos usuarios.
+
+Algunos campos especiales, como segundo apellido, avatar o fecha de nacimiento, se pueden activar en la sección [Formulario de registro](/es/platform/customers/realms.html#formulario-de-registro). Puedes, además, crear y modificar campos personalizados en la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
 
 
 ### Ficha de Usuarios
 
-Al hacer click, desde el listado principal, en cada uno de los usuarios, se abrirá la ficha del usuario seleccionado. En ella podrás ver una barra lateral que incluye los siguientes datos:
+Da click en el menú lateral debajo de la columna de acciones para ver los detalles de un usuario específico o para desactivar al usuario. Selecciona la opción ver para abrir la ficha de ese usuario. En la ficha puedes ver:
 
-- Perfil (los datos generales del usuario)
-- Actividad (dentro del sitio)
-- Respuestas a formularios (que han sido enviados por el usuario)
-- Notas (por si se quiere tomar en cuenta algo especial del usuario)
+- **Perfil**: Datos generales del usuario.
+- **Actividad**: Bitácora de la actividad del usuario en el sitio.
+- **Respuestas a formularios**: Información recopilada de formularios enviados al usuario.
+- **Notas**: Espacio para registrar información adicional del usuario, en caso de requerirse.
+- **Dispositivos**: Dispositivos y fechas desde los cuales el usuario ha ingresado al sitio.
+
 
 #### Perfil
-En esta seccion se encuentran los datos generales del usuario:
+En esta sección puedes ver los datos generales del usuario:
 
-- Avatar del usuario (Si es que se ha subido)
-- Estado dentro de la plataforma: Si es que se encuentra activo o inactivo.
-- Fecha de registro en la plataforma
-- Último ingreso a la plataforma
-- Cantidad de sesiones hechas en la plataforma
-- Estado de verificación de usuario
-- Segmentos en los que se encuentra incluído (si hay disponibles)
+- Avatar del usuario: Solamente si se ha cargado previamente.
+- Estado dentro de la plataforma: Activo o inactivo.
+- Fecha de registro en la plataforma.
+- Último ingreso a la plataforma.
+- Número de inicio de sesiones en la plataforma.
+- Estado de verificación de usuario.
+- Segmentos en los que se encuentra incluido (si están disponibles).
 
 #### Actividad
 
-En esta sección podrás ver un registro de todas las acciones que el usuario ha realizado dentro de la plataforma.
+En esta sección puedes ver un registro de todas las acciones que el usuario ha realizado dentro de la plataforma.
 
 :::tip Tip
-Cabe notar que esta sección trata de las interacciones principales que realiza este usuario dentro de la plataforma. Estos registros no pueden ser borrados ni editados.
+Esta sección muestra las principales interacciones que ha tenido el usuario en la plataforma. Estos registros no se pueden borrar ni editar.
 :::
 
 #### Respuestas a formularios
 
-Esta sección te muestra todos los formularios que ha rellenado el usuario dentro de la plataforma. Al hacer click sobre alguno de ellos, te lleva a ver las respuestas del usuario en dicho formulario. Si quieres saber más al respecto de los formularios, entra a la sección [Formularios](/es/platform/customers/forms.html).
+Esta sección te muestra todos los formularios que el usuario ha rellenado en la plataforma. Hacer click sobre un formulario te lleva a ver las respuestas del usuario en ese formulario. Para conocer más de los formularios, entra a la sección [Formularios](/es/platform/customers/forms.html).
 
 #### Notas
 
-En esta sección se pueden agregar notas personalizadas sobre los usuarios, sólo administradores pueden agregarlas, verlas y eliminarlas.
+En esta sección se pueden agregar notas personalizadas sobre los usuarios. Solo los administradores pueden agregar, ver y eliminar notas.
 
 #### Dispositivos
 
-En esta sección podrás ver todos los dispositivos que tienen una sesión activa. Aquí uh administrador podra cerrar la sesión del usuario remotamente. 
+En esta sección puedes ver todos los dispositivos del usuario que tienen una sesión activa. Un administrador puede cerrar la sesión del usuario remotamente. 
 
 #### Opciones adicionales
 
-En la sección superior derecha encontrarás opciones adicionales con las que podrás desactivar y eliminar usuarios:
+En el menú de la sección superior derecha puedes también ejecutar estas acciones:
 
-* **Editar**: Abre el modal de edición de usuario. Para añadir mas campos al formulario puedes ir a [Custom Fields](/es/platform/customers/realms.html#custom-fields).
-* **Desactivar**: Puedes desactivar usuarios y asi impedir que puedan iniciar sesión.
-* **Eliminar**: Una vez que un usuario está desactivado, podrás eliminar ese usuario. Esta acción la pueden ejecutar los miembros del equipo que sean administradores de la cuenta y también cada usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
+* **Editar**: Abre el modal de edición de usuario. Para agregar más campos al formulario ve a [Custom Fields](/es/platform/customers/realms.html#custom-fields).
+* **Desactivar**: Desactiva un usuario e impide que puedan iniciar sesión.
+* **Eliminar**: Una vez que un usuario esté desactivado, puedes eliminar al usuario. Es necesario ser administrador para eliminar a un usuario. También, el usuario mismo puede eliminar su cuenta desde las opciones adicionales de su perfil.
 
 :::tip Tip
-Al modificar un usuario, puede que cambie el listado de Segmentos a los que pertenece.
+Modificar un usuario puede resultar en que se modifique el listado de segmentos a los que pertenece ese usuario.
 :::
 
 ## Configuración de reino
 
-En esta sección puedes configurar en gran parte la interacción entre usuarios y la plataforma de Modyo. Algunas configuraciones son enfocadas en la experiencia visual para el usuario, como selección colores o plantillas de correos, mientras que otras son enfocadas al registro, control de acceso, y personalización de los mismos. En particular esta segunda parte es esencial para el correcto funcionamiento de la plataforma, por lo que es importante ser precavido al momento de modificar configuraciones en esta sección.
+En la sección de Configuración de reino, puedes personalizar la interacción entre los usuarios y la plataforma de Modyo.
+
+Aquí encuentras opciones tanto para la experiencia visual del usuario, como la selección de colores y plantillas de correos, así como configuraciones relacionadas con el registro, control de acceso y personalización. Es importante tener precaución al realizar modificaciones en esta sección, ya que pueden afectar el correcto funcionamiento de la plataforma.
 
 ### General
 
-Aquí puedes configurar aspectos generales del realm, como:
+Aquí puedes configurar aspectos generales del reino, como:
 
-- **Nombre**.
-- **Identificador**: Permite modificar la URL de las vistas de perfil, inicio de sesión, registro, y recuperación de contraseña del realm.
-- **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este realm para solo hacer ingreso a través de SSO. Ten a consideración tener habilitado un SSO primero antes de habilitar esta opción.
+- **Nombre**
+- **Identificador**: Permite modificar la URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
+- **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este reino y permitir únicamente el acceso a través de SSO. Antes de habilitar esta opción, asegúrate de tener configurado un proveedor de identidad SSO.
 - **Activación de la cuenta**:
-  - Directa: Los usuarios que se registren podrán iniciar sesión directamente.
-  - E-mail de activación: Los usuarios que se registren deberán activar su cuenta mediante un link que se les envía al correo electrónico para poder iniciar sesión.
-  - Moderada: Los usuarios que se registren deberán esperar a que un administrador del Reino active su cuenta para poder iniciar sesión.
-  - Deshabilitada: No se pueden registrar nuevos usuarios en el Reino. Los usuarios ya registrados y activados, podrán iniciar sesión sin problemas.
-- **Imagen de Avatar por defecto**: Es la imagen que se despliega en el avatar de todos los usuarios que no tengan una imagen.
+  - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
+  - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
+  - Moderada: Los usuarios que se registren deberán esperar a que un administrador del reino active su cuenta para poder iniciar sesión.
+  - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados aún pueden iniciar sesión.
+- **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
 - **Atributos extra del formulario de registro**:
   - Habilitar segundo apellido
-  - Hacer que el segundo apellido sea requerido
-  - Habilitar confirmación de correo electrónico: Habilita un campo extra de correo electrónico que el usuario debe rellenar y debe coincidir con el campo primario de correo electrónico para que el usuario se pueda registrar.
+  - Requerir segundo apellido
+  - Habilitar confirmación de correo electrónico: Habilita un campo adicional de correo electrónico que el usuario debe rellenar y que debe coincidir con el campo primario de correo electrónico.
   - Habilitar avatar de usuario
   - Habilitar fecha de nacimiento
-  - Habilitar genero
+  - Habilitar género
   - Habilitar número de teléfono
-- **Eliminar reino**: Permite la eliminación completa del reino. Este es un proceso en segundo plano, por lo que es posible que no veas el reino desaparecer inmediatamente luego de ejecutar la acción. Para poder eliminar el reino, deberás escribir el nombre completo del reino para confirmar la acción.
+- **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
 
 :::danger Peligro
-Al deshabilitar las credenciales de Modyo del reino, debes asegurarte de tener configurado un proveedor de identidad para este realm, de lo contrario, los usuarios no podrán iniciar sesión.
+Al desactivar las credenciales de Modyo en el reino, asegúrate de haber configurado un proveedor de identidad para este reino. De lo contrario, los usuarios no podrán iniciar sesión.
 :::
 
 ### Apariencia
 
-Esta sección te permitirá modificar el color primario, logo, y agregar CSS personalizado para las vistas de registro, inicio de sesión, y perfil de los usuarios del reino.
+En esta sección puedes modificar el color primario y el logo, además de agregar CSS personalizado para las vistas de registro, inicio de sesión y perfil de los usuarios del reino.
 
 #### Color primario
 
-El color primario es el que se muestra en los principales botones del manejo de la sesión, tales como el ingreso, registro, modificaciones de contraseña u otros atributos. Para modificarlo solo debes ingresar el Código HEX del color que quieras y hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
+El color primario es el que se muestra en los principales botones del manejo de la sesión, como el ingreso, registro, modificaciones de contraseña y otros atributos. Para modificarlo, ingresa el código HEX del color deseado y haz click en el botón **Guardar** ubicado en la parte superior de la pantalla.
 
 #### Mostrar el logo de la cuenta
 
-Esta opción permite mostrar el logo configurado para la cuenta en las vistas de sesión, el cual se desplegará sobre los formularios respectivos de dichas vistas. Para cambiar el logo, debes acceder a la [Interfaz de Modyo](/es/platform/core/the-modyo-interface.html).
+Esta opción te permite mostrar el logo configurado para la cuenta, en las vistas de sesión. El logo se desplegará sobre los formularios respectivos de estas vistas. Para cambiar el logo, accede a la [Interfaz de Modyo](/es/platform/core/the-modyo-interface.html).
 
 #### CSS personalizado
 
-Si quieres tener un CSS personalizado que se ajuste a tus necesidades en las vistas de sesión, solo debes pegar el código en el editor que se encuentra en la ventana y hacer click en el botón **Guardar**.
+Si deseas tener una hoja de estilos CSS personalizada que se adapte a tus necesidades en las vistas de sesión, sigue estos pasos:
+1. Copia el código CSS que deseas utilizar.
+2. Abre el editor que se encuentra en la ventana.
+3. Pega el código CSS en el editor.
+4. Haz clic en el botón **Guardar** para guardar los cambios.
 
-Es común tener vinculados archivos en el código CSS. Si deseas agregar alguno, haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager.html), que te permitirá subir los archivos que necesites.
+Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager.html) para subir archivos vinculados en el código CSS.
 
-Toma en cuenta que el editor no pegará automáticamente el vínculo, sino que después de subir el archivo, tienes que hacer click en el botón de pegado, que se encuentra en la parte lateral de cada archivo y que dará el vínculo a este dentro de la página. Con esta dirección, puedes pegarla en el código CSS para poder usarla.
+Es importante tener en cuenta que el editor no genera automáticamente el enlace del archivo después de subirlo. Después de cargar el archivo, haz click en el botón de pegado que se encuentra en el lateral de cada archivo para generar su enlace. Luego, copia este enlace y pégalo en el código CSS.
 
 :::tip Tip
-Si tienes problemas con los códigos de teclado cuando estés editando el CSS, puedes hacer click en el ícono de teclado que se encuentra sobre el editor. Este desplegará una serie de atajos de botones que te permitirán manejar fácilmente la edición.
+Si tienes problemas con los códigos de teclado al editar el CSS, haz click en el ícono de teclado sobre el editor. Esto despliega una serie de atajos de botones que facilitan la edición.
+:::
+
+## Redireccionar Login ##
+
+En Modyo puedes personalizar la página de login a la que acceden tus usuarios una vez que ingresen a tu sitio.
+
+Para redireccionar el login sigue estos pasos:
+1. Haz click en Canales en el menú lateral.
+2. Selecciona Sitios.
+3. Elige el sitio en él que deseas trabajar.
+4. En el menú lateral, haz click en Plantillas.
+5. En la plantilla header busca la línea que contiene la información de login.
+6. Redirecciona a la página deseada utilizando este código: 
+`login?redirect_to=/tu-pagina` donde "/tu-pagina" es la URL de la página a la que deseas redirigir el login.
+7. Haz click en **Guardar**.
+8. Haz click en **Publicar**.
+
+:::tip Tip
+Modyo está programado para que la información de login se encuentre en el encabezado del sitio. Si tu sitio está programado de manera diferente, utiliza el ícono de lupa para encontrar el término login en tus plantillas. 
+:::
+
+:::warning Atención
+La dirección de login tiene que ser una página dentro de tu misma cuenta. No puedes redireccionar el login a una URL externa.
 :::
 
 ### Correos
 
-Modyo permite configurar la dirección de envío y apariencia de los correos que se enviarán a los usuarios del reino.
+Modyo permite configurar la dirección de envío y la apariencia de los correos que envías a los usuarios del reino.
 
-Para ajustar la dirección que aparecerá como el remitente que enviará tu mail, solo debes ingresarla en el campo "Correo por defecto" y hacer click en el botón **Guardar**.
+Para ajustar la dirección del remitente que envía tu correo, ingresa la dirección en el campo **"Correo por defecto"** y haz click en el botón **Guardar**.
 
-Lo que permite esta sección es habilitar, deshabilitar y personalizar el envío de los correos automáticos tras interacciones específicas que realizan los usuarios, los correos son los que siguen:
+Aquí puedes también habilitar, deshabilitar y personalizar el envío de los correos automáticos en respuesta a acciones específicas realizadas por los usuarios. Las opciones son: 
 
-- Correo de activación: Enviado una vez completado un registro de usuario, para que este confirme sus datos.
-- Correo de Bienvenida: Enviado una vez completado un registro de usuario en un sitio específico.
-- Agregado por el Admin: Enviado una vez que el administrador creó el usuario manualmente.
-- Recuperación de Contraseña: Enviado cuando el usuario solicitó recuperar su contraseña.
-- Esperando Confirmación: Enviado una vez que se confirmó y activó el usuario.
-- Confirmación: Enviado una vez que se confirmó el usuario, pero debe esperar activación manual de parte de un administrador.
-- Verificación de actualizaciones de correo: Enviado al momento de hacer cualquier cambio de dirección de correo. 
-- Footer personalizado: Footer personalizado para todos los correos anteriormente descritos.
+- **Correo de activación**: Se envía una vez que un usuario ha completado su registro, para que confirme sus datos.
+- **Correo de Bienvenida**: Se envía cuando un usuario se ha registrado en un sitio específico.
+- **Agregado por el Admin**: Enviado cuando un administrador crea un usuario manualmente.
+- **Recuperación de Contraseña**: Se envía cuando un usuario solicita recuperar su contraseña.
+- **Esperando Confirmación**: Se envía cuando el usuario ha sido confirmado y activado.
+- **Confirmación**: Se envía cuando el usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
+- **Verificación de actualizaciones de correo**: Enviado al momento de hacer un cambio en la dirección de correo.
+- **Footer personalizado**: Permite personalizar el pie de página de todos los correos mencionados anteriormente.
 
-
-Para habilitar o deshabilitar el envío de estos correos, solo debes hacer click en el botón **Habilitado/Deshabilitado** que se encuentra al costado de cada función y hacer click en el botón **Guardar**.
+Para habilitar o deshabilitar el envío de un correo, haz click en el botón Habilitado/Deshabilitado junto a cada función y da click en el botón **Guardar**.
 
 #### Personalizar correos
 
-Los estilos de los correos de la plataforma que envía también pueden ser personalizados. Para ello, debes tener el código HTML que quieres incluir en ellos.
-
-Al hacer click para habilitar cada uno de los correos, mostrará un editor por defecto en el cual puedes pegar el código.
+Puedes introducir códigos personalizables en cada correo, estos códigos permiten que la plataforma incluya la información del usuario en el campo designado, al momento del envío.
 
 :::danger Peligro
 Es fundamental que cada correo incluya los códigos personalizables que permiten que la plataforma incluya la data aleatoria del usuario que solicita el envío.
 
-Para ello, debes insertar en el código los atributos que se encuentran bajo el editor, y que puedes copiar y pegar fácilmente para ubicarlos en la parte que necesites.
+Para ello, inserta en el código los atributos que están debajo del editor, y pégalo en la parte correspondiente del código.
 :::
 
-Cada vez que se haga un cambio en el código, se debe hacer click en el botón **Guardar** que se encuentra en la parte superior de la pantalla.
+Cada vez que hagas un cambio en el código, debes hacer click en el botón **Guardar** ubicado en la parte superior de la pantalla.
 
 ### Proveedores de identidad
 
-Para simplificar el ingreso a la plataforma, es posible configurar su entrada y registro a través de ciertos servicios estándar.
+Para facilitar el acceso a la plataforma, puedes configurar el inicio de sesión y el registro a través de servicios estándar.
 
 Los servicios compatibles con el ingreso a Modyo son:
 
@@ -214,13 +249,13 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Keycloak
 - Azure Active Directory
 
-Es necesario contar con la correcta configuración del servicio asociado que Modyo pueda conectarse con ellos. Asegúrate de que todos los campos requeridos estén completos. Para más información de las integraciones, dirígete a [Proveedores de Identidad](es/platform/core/integrations/identity-providers)
+Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos. Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](es/platform/core/integrations/identity-providers)
 
 ### Integraciones
 
 #### Zendesk
 
-Gestiona Para lograr una integración con Zendesk se necesitan los siguientes datos:
+Para integrar con Zendesk necesitas estos datos:
 
 - Nombre de la integración
 - Shared secret de Zendesk
@@ -228,97 +263,102 @@ Gestiona Para lograr una integración con Zendesk se necesitan los siguientes da
 
 ### Cliente OAuth
 
-Usa un cliente de autenticación para enviar los tokens de acceso de tu integración a tus recursos. Se necesitan los siguientes valores:
+Utiliza un cliente de autenticación para enviar los tokens de acceso de tu integración a tus recursos. Necesitas los siguientes valores:
 
 - Nombre
-- URI de redirección: Es el URI a donde el usuario va a ser redirigido por el servidor de autenticación después de autenticar exitosamente. 
-- URI de cierre de sesión: Es el URI a donde el usuario va a ser redirigido por el servidor de autenticación después de cerrar su sesión.
+- URI de redirección: el URI al que el servidor de autenticación redirigirá al usuario después de una autenticación exitosa. 
+- URI de cierre de sesión: URI al que el servidor de autenticación redirigirá al usuario después de cerrar la sesión.
 - Descripción
-- Confidencial: Existen dos tipos de clientes Oauth, confidencial o públicos. Se necesita la opción confidencial cuando tu aplicación es capaz de autenticar de manera segura con el servidor de autenticación. Clientes públicos comúnmente son aplicaciones que corren en un dispositivo móvil o en un navegador. 
-- Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
-
+- Confidencial: Existen dos tipos de clientes Oauth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores. 
+- Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
 
 ### Miembros del equipo
 
-Para ordenar el trabajo, Modyo permite seleccionar los miembros del equipo que trabajarán en cada reino y así controlar el acceso a los distintos aspectos del reino.
+Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
 
-Para añadir un usuario al reino, selecciona el botón primario **+ Agregar Miembro** en la parte superior derecha de la vista, en el modal selecciona a un administrador, y asigna un rol, luego presiona **Añadir** para que ese administrador sea parte del equipo de trabajo del reino.
+Para añadir un miembro al reino, sigue estos pasos:
+1. Haz click en el botón **+ Agregar miembro** en la parte superior derecha.
+2. En el modal, selecciona a un usuario y asigna un rol.
+3. Haz click en *Agregar**.
 
-Puedes modificar el rol de alguno de los administradores asociados haciendo click en su nombre. Se levantará un modal, donde puedes seleccionar el nuevo rol. Presiona **Guardar** para confirmar el cambio.
+Para modificar el rol de un miembro del equipo, haz click en su nombre en el modal, asigna al usuario el rol deseado y da click en **Actualizar**.
 
-Si quieres eliminar a un administrador del reino, selecciona usando los checkbox a la izquierda de su nombre, y luego haciendo click en el botón al final de la lista **Borrar**.
+Puedes elegir entre dos roles:
 
-Los roles disponibles son:
+- **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
 
-- **Realm User**: Puede añadir usuarios, crear, modificar, y enviar a revisión campañas, formularios, y segmentos.
-- **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
+Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior. 
 
 ### Custom fields
 
-Desde aquí se pueden crear campos personalizados que ayuden a identificar el perfil del usuario. Por lo mismo, es indispensable que estos estén identificados de manera correcta para su mejor uso.
+En esta sección, puedes crear campos personalizados para distinguir el perfil del usuario. Es importante que estos campos estén correctamente identificados para su mejor uso.
 
-Los tipos de **Custom fields** que puedes agregar son:
+Los tipos de campos personalizados que puedes agregar son:
 
-- Checkbox
+- Casilla
 - Fecha
-- Dropdown (Lista Desplegable)
+- Lista Desplegable
 - Párrafo
 - Número
 - Elección
 - Texto simple
 
-Puedes arrastrar los **Custom fields** para ordenarlos. Ten en cuenta que este es el orden en el que aparecerán los campos en las vistas de edición y en el perfil de los usuarios.
+Puedes reorganizar los campos personalizados arrastrándolos. Recuerda que el orden en el que los ordenes será el mismo en el que aparecerán en las vistas de edición y en el perfil de los usuarios.
 
 :::tip Tip
-Solo puedes crear hasta 20 custom fields en cada Reino.
+Puedes crear un máximo de 20 campos personalizados en cada reino.
 :::
 
-Todos los **Custom fields** tienen ciertas propiedades estándar:
+Los campos personalizados tienen propiedades estándar que debes tener en cuenta:
 
-- **La respuesta debe ser única**: Implica que el valor debe ser único para cada usuario, impidiendo que se guarde otro valor igual.
-- **Este es un campo requerido**: Implica que este valor debe ser rellenado cuando se modifica o crea un usuario, de tal forma que no se podrá modificar un usuario si este campo no tiene un valor asociado. En caso de que el campo además, sea visible y editable por los usuarios, este campos aparecerá en el formulario de registro y será requerido para crear nuevos usuarios.
-- **Visible para los usuarios de los sitios**: Implica que será visible en la vista del perfil.
-    - **Editable por usuarios de los sitios**: Implica que será visible y también podrá ser modificado por el usuario.
-- **Buscable por administradores**: Implica que este valor estará indexado y los usuarios podrán ser encontrados al ser buscados desde el indice de usuarios del administrador de Modyo, por el valor de ese campo.
-- **Texto de sugerencia**: Es el texto que aparece para ofrecer un ejemplo.
-- **Valor por defecto**
+- **Debe ser una respuesta única**: El valor debe ser único para cada usuario, evitando duplicados.
+- **Este es un campo requerido**: Debe completarse al modificar o crear un usuario. Si el campo es visible y editable para los usuarios, se mostrará en el formulario de registro y será obligatorio para crear nuevos usuarios.
+- **Visible para los usuarios de los sitios**: Será visible en el perfil del usuario.
+    - **Editable por usuarios de los sitios**: Los usuarios podrán ver y modificar el valor.
+- **Buscable por administradores**: El valor estará indexado y los administradores podrán realizar búsquedas de usuarios en el índice de usuarios del administrador de Modyo, por el valor de este campo.
+- **Texto de sugerencia**: Proporciona un ejemplo o guía para el campo.
+- **Valor por defecto**.
 
-Además de lo anterior, los **Custom fields** pueden estar habilitados o deshabilitados. Si está habilitado, entonces se podrá usar por administradores y dependiendo de su configuración, estará disponible para los usuarios. Si un **Custom field** se encuentra deshabilitado, entonces no aparecerá en ningún formulario, pero sus valores se mantendrán guardados.
+Los campos personalizables pueden estar habilitados o deshabilitados. Si están habilitados, un administrador puede usarlos y, dependiendo de su configuración, pueden también estar disponibles para los usuarios. 
+
+Cuando un campo personalizable está deshabilitado, no aparece en ningún formulario, sin embargo, sus valores se mantienen guardados.
 
 :::danger Peligro
-Cuando un **Custom field** está deshabilitado, puede ser eliminado. Al eliminar un **Custom field**, estarás eliminando para siempre todos los valores que los usuarios tenían para ese **Custom field**.
+Cuando un campo personalizable está deshabilitado, puede ser eliminado. 
+
+Al eliminar un campo personalizable, eliminas permanentemente todos los valores de usuarios asociados a ese campo.
 :::
 
 :::tip Tip
-Aparte de poder guardar valores específicos en los usuarios, se pueden crear filtros de [Segmentos](/es/platform/customers/segments.html) usando los valores de los **Custom fields**, permitiendo segmentar a los usuarios por valores personalizables.
+Además de guardar valores específicos en los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments.html) segmentos, lo que te permite segmentar a los usuarios según sus valores personalizados.
 :::
 
 ### Seguridad
 
 #### Política de Contraseña
 
-Estas son las opciones disponibles para establecer una política de contraseña para Modyo Platform:
+Las opciones disponibles para establecer una política de contraseña en la plataforma Modyo, son:
 
-- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 12 a 128 caracteres.
+- Valor mínimo de longitud de contraseña:  Establece el número mínimo de caracteres que una contraseña debe tener, entre 12 y 128 caracteres.
 - Requerir por lo menos una letra minúscula (a - z)
 - Requerir por lo menos una letra mayúscula (A - Z)
 - Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
 
 #### reCAPTCHA
 
-Estas son las opciones disponibles al habilitar reCAPTCHA en el reino.
+Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 
-- **reCAPTCHA habilitado**: Habilita la protección con reCAPTCHA para el registro de usuarios, envío de formularios, inicio de sesión y recuperación de contraseña.
 - **Clave de sitio**
-- **Secret**
-- **Threshold**
+- **Secreto**
+- **Umbral**
 
-### Configuración de Payment
+### Configuración de Pago
 
-Estas son las opciones disponibles al tener Payment habilitado en tu reino. 
+Las opciones disponibles al tener pago habilitado en tu reino, son: 
 
 - **Formato de moneda**: Modifica el tipo de puntuación desplegado. 
-- **Activar el envío de correo electrónico**: Si está seleccionado, el usuario recibirá un correo luego de pagar una orden.
+- **Activar envío de correo electrónico**:  Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
 - **Asunto de correo**: Asunto enviado a todos los usuarios.
-- **Cuerpo del correo**: Cuerpo enviado a todos los usuarios.
+- **Cuerpo del correo**: Contenido del mensaje enviado a todos los usuarios.
 
