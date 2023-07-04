@@ -270,7 +270,7 @@ The preview bar contains the following interactive elements:
 * **Minimize Tab**: Allows you to hide the preview bar to avoid interference with the elements located at the top of the site. Once minimized, the tab will still be visible to restore the bar in preview mode.
 * **Edit item**: When you click, you access the editing view of the element being viewed, whether it is a post, a page, a widget, or a default site template.
 * **Share link**: Allows you to copy a link that can be shared with other users. When you open the link, you directly access the preview mode with the settings you had when copying the link. To access the preview mode, you must be logged in to the administrator account.
-* **Exit preview mode**: Close preview mode, removing the bar and keeping the tab at the current URL of the site.
+* **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current URL of the site.
 
 :::warning Warning
 Changing the content selector of the preview bar will have no effect on the content you're using via the JavaScript SDK or Content API. It will only have an effect on content that is used through Liquid SDK.
