@@ -100,7 +100,7 @@ If a reviewer's review is required, `(required)` will appear next to their name 
 
 To the right of each reviewer is their review status. A yellow circle is shown if you have not reviewed it, and a green check if you have approved the item.
 
-All users who have access to the item's editing view will see a **Approve button** below the list of reviewers.
+All users who have access to the item's editing view will see an **Approve button** below the list of reviewers.
 
 Users with the necessary permissions can click the **Approve button** to approve the item. Those who don't have the permissions will see the button disabled.
 
