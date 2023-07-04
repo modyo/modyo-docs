@@ -102,7 +102,7 @@ To the right of each reviewer is the status of their review. A yellow circle is 
 
 All users who have access to the item's editing view will see a **Approve button** below the list of reviewers.
 
-Users with the necessary permissions can click the **Approve button** to approve the item. Those who don't have the permissions see the disabled button.
+Users with the necessary permissions can click the **Approve button** to approve the item. Those who don't have the permissions will see the button disabled.
 
 When the item is approved, that user's approval is recorded and a green check is displayed next to their name in the list of reviewers.
 
