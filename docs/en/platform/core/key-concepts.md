@@ -209,7 +209,7 @@ Versioning can be done in the following modules:
 
 #### Reset
 
-In this case, the backup takes the place of the editable version, so all existing changes will be lost, so you can continue working on potential changes to that version to republish it.
+In this case, the backup takes the place of the editable version; therefore, all existing changes will be lost, and you can continue working on potential changes to that version to republish it.
 
 #### Rollback
 
