@@ -283,7 +283,7 @@ Modyo offers the functionality to define global variables, which can be used eve
 :: :tip Tip
 You can use plain text, HTML, JavaScript, and CSS inside global variables; however, you cannot use Liquid code within them. Please note that the content has a maximum of 65,535 characters.
 
-To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre>`{{vars.Name}}`</span> 
+To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre>`{{vars.Name}}`</span>
 :::
 
 ### Create a global variable
