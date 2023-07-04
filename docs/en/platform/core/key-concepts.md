@@ -302,6 +302,6 @@ When using global variables, the variables defined at the lowest level will alwa
 :::
 
 :::danger Danger
-Global variables do not have a publishing, versioning, or team review workflow. Only account and site administrators can modify them, be careful when making changes to these settings, as they will be immediately reflected wherever they are being used.
+Global variables do not have a publishing, versioning, or team review workflow. Only account and site administrators can modify them. Be careful when making changes to these settings, as they will be immediately reflected wherever they are being used.
 This does not apply to variables defined in widgets because widgets and pages do have a publishing flow.
 :::
