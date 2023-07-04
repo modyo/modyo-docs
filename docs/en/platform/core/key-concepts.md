@@ -197,7 +197,7 @@ Follow these steps to revert to a version published in a Post:
 1. From Modyo Platform, expand Content and select Spaces.
 1. Select your Space and then click on the Entry you want to version.
 1. Click on **Differences**.
-1. In the modal that appears, select the version you want to rollback to and then click on **Rollback to this version**.
+1. In the modal that appears, select the version you want to rollback to, and then click on **Rollback to this version**.
 
 When you apply any of the actions, the version selected on the left is always taken, so that if you reset it, the version on the left will be brought to the editable version, and if you roll back, the version on the left will be brought to the published version.
 
