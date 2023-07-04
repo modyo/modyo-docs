@@ -237,7 +237,7 @@ Locks are deployed in different ways within the platform. In [Content](/en/platf
 
 If a second person tries to make a change, a message will appear indicating that the item already has changes and that what they are trying to modify is obsolete.
 
-In other sections, such as [Customers](/en/platform/customers/) and Settings, Locks will not allow users to view resources simultaneously. So, if an item is being edited, another user will not be able to access the work view.
+In other sections, such as [Customers](/en/platform/customers/) and Settings, Locks will not allow users to view resources simultaneously. Therefore, if an item is being edited, another user will not be able to access the work view.
 
 In this case, only an Administrator will be able to take control, activating for himself the edition, and discarding the unsaved changes made by the user working on the item.
 
