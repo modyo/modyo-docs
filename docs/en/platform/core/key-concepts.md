@@ -248,7 +248,7 @@ If an Administrator wants to take control of a view, he must click on the item i
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
-When the Administrator takes control, the user who is using the resource receives a message preventing them from continuing to make changes, so any changes that the user is making must be saved and backed up offline.
+When the Administrator takes control, the user who is using the resource receives a message preventing them from continuing to make changes. Therefore, any changes that the user is making must be saved and backed up offline.
 
 After taking control, the Administrator has only two hours to make unsaved changes. After that time, the resource is once again released, and can be taken by any other user.
 ::
