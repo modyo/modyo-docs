@@ -147,7 +147,7 @@ This version is the one that goes through the team review process when it is act
 
 #### Published
 
-This version saves the content visible on the site and is available to all users.
+This version stores the visible content on the site and is available to all users.
 In this state, internal resources such as Widgets and Templates can now be used when creating any site or page.
 The published version does not necessarily have the same content as the editable version, except at the exact time of publication, as it may contain changes that are still under testing or review.
 
