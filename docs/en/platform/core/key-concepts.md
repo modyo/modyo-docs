@@ -273,7 +273,7 @@ The preview bar contains the following interactive elements:
 * **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current URL of the site.
 
 :::warning Warning
-Changing the content selector of the preview bar will have no effect on the content you're using via the JavaScript SDK or Content API. It will only have an effect on content that is used through Liquid SDK.
+Changing the content selector in the preview bar will have no effect on the content you're using via the JavaScript SDK or Content API. It will only have an effect on content that is used through Liquid SDK.
 :::
 
 ## Global variables
