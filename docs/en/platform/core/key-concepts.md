@@ -98,7 +98,7 @@ If a reviewer's review is required, `(required)` will appear next to their name 
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
-To the right of each reviewer is the status of their review. A yellow circle is shown if you have not reviewed it, and a green check if you have approved the item.
+To the right of each reviewer is their review status. A yellow circle is shown if you have not reviewed it, and a green check if you have approved the item.
 
 All users who have access to the item's editing view will see a **Approve button** below the list of reviewers.
 
