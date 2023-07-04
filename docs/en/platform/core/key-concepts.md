@@ -186,7 +186,7 @@ This status appears when team review is enabled and it means that an item in thi
 
 ## Reversing a Change
 
-Within versioning, there are two actions that allow you to interact with the backups: reset and rollback. By default, the difference mode shows the published version on the left, and the editable version on the right.
+Within versioning, there are two actions that allow you to interact with the backups: reset and rollback. By default, the difference modal shows the published version on the left, and the editable version on the right.
 
 You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
 
