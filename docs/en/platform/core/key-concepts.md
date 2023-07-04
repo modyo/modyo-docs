@@ -104,7 +104,7 @@ All users who have access to the item's editing view will see a **Approve button
 
 Users with the necessary permissions can click the **Approve button** to approve the item. Those who don't have the permissions will see the button disabled.
 
-When the item is approved, that user's approval is recorded and a green check is displayed next to their name in the list of reviewers.
+When the item is approved, the user's approval is recorded and a green check is displayed next to their name in the reviewers list.
 
 When you enable team review, in the item's action bar, to the left of the main green button and to the right of the difference button, an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) appears to open the item's activity tab.
 
