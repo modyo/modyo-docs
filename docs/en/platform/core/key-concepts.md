@@ -70,7 +70,7 @@ Users with the highest level, in addition to performing all of the above actions
 :::warning Warning
 Site or space administrators always have the ability to skip the team review flow.
 
-For them, the “Submit for Review” and “Review” buttons have an option in the drop-down menu called “Force Approval”, that allows them to see the item in the publication view.
+For them, the “Submit for Review” and “Review” buttons have an option in the drop-down menu called “Force Approval”, that allows them to see the item in publication view.
 
 This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
