@@ -122,7 +122,7 @@ On the review and joint publication screen, you can see all the pending changes 
 
 To make a joint publication on your site, follow these steps:
 
-1. In the Modyo Platform main menu, expand **Channels**, and click **Sites**.
+1. In the Modyo Platform main menu, expand **Channels**, and click on **Sites**.
 1. Click your site. 
 1. On the Summary screen, click **Publish**.
 1. Here you can see all the pending changes. Select everything you want to publish and click **Publish**.
