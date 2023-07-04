@@ -75,7 +75,7 @@ Click on the side menu below the action column to view the details of a specific
 - **Activity**: Log of user activity on the site.
 - **Responses to forms**: Information collected from forms sent to the user.
 - **Notes**: Space to record additional user information, if required.
-- **Devices**: Devices and dates from which the user accessed the site.
+- **Devices**: Devices and dates that the user accessed the site.
 
 
 #### Profile
