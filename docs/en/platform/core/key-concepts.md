@@ -188,7 +188,7 @@ This status appears when team review is enabled and it means that an item in thi
 
 Within versioning, there are two actions that allow you to interact with the backups: reset and rollback. By default, the difference modal shows the published version on the left, and the editable version on the right.
 
-You can change which versions to compare by changing the values in the version selectors at the top of the pop-up window.
+You can change which versions to compare by changing the values in the version selectors at the top of the modal.
 
 <img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
 
