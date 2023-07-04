@@ -213,7 +213,7 @@ In this case, the backup takes the place of the editable version; therefore, all
 
 #### Rollback
 
-In this case, the backup is returned directly to the **published** version of the element, without touching the editable version.
+In this case, the backup is returned directly to the **published** version of the element, without affecting the editable version.
 
 This is useful when something was published by mistake, and it is necessary to revert to one of the stable versions. Allowing the resolution of problems that the version with errors may have had.
 
