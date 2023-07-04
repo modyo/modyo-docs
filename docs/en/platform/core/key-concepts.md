@@ -78,7 +78,7 @@ This option exists because there are times when you need to publish quickly, so 
 
 The My Tasks section in Modyo gives you an overview of all the items that require your attention. It allows you to access information about the type of item, its author, and when it was last updated.
 Once an item has been marked for review, the assigned user can review and approve it in the My Tasks section. 
- <img src="/assets/img/platform/core/my-tasks.png"/> 
+<img src="/assets/img/platform/core/my-tasks.png"/> 
 To view and review all of the tasks assigned to you, follow these steps:
 1. Go to Home.
 2. Click on My Tasks.
