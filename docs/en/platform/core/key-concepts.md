@@ -244,7 +244,7 @@ In this case, only an Administrator will be able to take control, activating for
 
 :::warning Take control
 
-If an Administrator wants to take control of a view, he must click on the item in use and, in the next screen, click on the **Take Control** button.
+If an Administrator wants to take control of a view, they must click on the item in use and, in the next screen, click on the **Take Control** button.
 
 <img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
