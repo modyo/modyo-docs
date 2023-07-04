@@ -94,7 +94,7 @@ When submitting for review, the bar changes status to indicate if conditions are
 
 When you click, the right side section will indicate the requirements to publish the item.
 
-If a reviewer's review is required, `(required)` will appear next to their name in the reviewers list.
+If a reviewer's review is required, `(required)` will appear next to their name in the reviewer's list.
 
 <img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
