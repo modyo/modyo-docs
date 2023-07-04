@@ -223,7 +223,7 @@ Because this is a potentially dangerous action, only site or space administrator
 
 ## Locks
 
-Locks is a Modyo feature that allows you to modify a resource in a secure way, avoiding concurrency problems that may occur when another user is working on it simultaneously. This way, Modyo avoids losing work or overwriting documents.
+Locks is a Modyo feature that allows you to modify a resource securely, avoiding concurrency problems that may occur when another user is working on it simultaneously. This way, Modyo prevents loss of work, or overwrite of documents.
 
 <img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
 
