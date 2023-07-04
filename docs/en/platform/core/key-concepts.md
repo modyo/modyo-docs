@@ -172,7 +172,7 @@ When you schedule a publication, the editable version goes into a scheduled stat
 Modyo only allows you to have a programmed version of each element. If you schedule a second modification to the element, you overwrite the previous schedule.
 ::
 
-In addition to scheduling the publication, you can also schedule the unpublication. When the time comes, the version that is published will become a backup, leaving the item in question without a published version.
+In addition to scheduling the publication, you can also schedule unpublishing. When the time comes, the currently published version will become a backup, leaving the item in question without a published version.
 
 :: :warning Attention
 When the scheduled actions are executed, Modyo may take a few minutes to complete them. Modyo will send you an email notification when the action is complete.
