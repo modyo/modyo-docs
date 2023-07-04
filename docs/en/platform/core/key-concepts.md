@@ -45,7 +45,7 @@ While approval is limited, any user with permissions can comment on the item.
 
 - **Force review**: This option allows you to select a list of users, of whom at least one approval is required before the item can change to “Approved” status. This is independent of the number of approvals configured earlier. Even if an item has the required number of approvals, it will remain in the “Awaiting Approval” state if no user on the list has approved it.
 
-- **Require all**: This option extends the previous restriction to all selected users. In this case, approval will be required from all users on the list before the item can change to “Approved” status.
+- **Require all**: This option extends the previous restrictions to all selected users. In this case, approval will be required from all users on the list before the item can change to “Approved” status.
 
 :::warning Warning
 When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
