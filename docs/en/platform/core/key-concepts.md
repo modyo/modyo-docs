@@ -92,7 +92,7 @@ When the team review option is activated and the changes are saved, the main gre
 
 When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permissions.
 
-When you click, the right side section will indicate the requirements for publishing the item.
+When you click on it, the right side section will indicate the requirements for publishing the item.
 
 If a reviewer's review is required, `(required)` will appear next to their name in the list of reviewers.
 
