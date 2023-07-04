@@ -36,7 +36,7 @@ To activate the team review, follow these steps:
 The available options are:
 
 - **Enable Team Review**: Enables or disables Team Review within the current site or space.
-- **Number of Approvals**: Determines the number of users who must approve the item to be ready for publication. When the required number of approvals is reached, the item's status will change from “Awaiting Review” to “Approved”.
+- **Number of Approvals**: Determines the number of users required to approve the item before it is ready for publication. Once the required number of approvals is reached, the item's status will change from “Awaiting Review” to “Approved”.
 - **Restrict the selection of reviewers**: By default, any user with the necessary permissions can approve items awaiting review. However, by enabling this option, only the reviewers selected by the editor will be able to carry out the approval.
 
 :::tip Tip
