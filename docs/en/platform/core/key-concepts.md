@@ -156,7 +156,7 @@ The published version does not necessarily have the same content as the editable
 Backups are previously published versions of the items. Every time an item is published, Modyo saves the previously published version as a backup.
 
 
-If you want to review a specific version of an item, you can access the “Differences between versions” to see the changes made and revert them if necessary.
+If you want to review a specific version of an item, you can access the “Differences between versions” to see the changes that have been made, and revert them if necessary.
 
 :: :warning Attention
 By default, Modyo saves the last 20 published versions `(MAX_BACKUPS)` of each item. When you make the twenty-first publication, the backup of the first publication of the item will be deleted.
