@@ -31,7 +31,7 @@ At the top of the table you have filters to quickly find groups of users. The av
 Next to the **Apply** button, there is the **Save as Segment** button. This saves the filters you applied in a new Segment. Give your new segment a title and description. Afterwards you can find it in the [Segments](/en/platform/customers/segments.html) section.
 :::
 
-In the table you can also sort the users by their respective values, to do so click on the headers of the following columns:
+In the table you can also sort users by their respective values; to do so click on the headers of the following columns:
 - **Name**: Name of the user
 - **Registration Date**: Date of registration in the user database
 - **Last input**: Most recent date of entry to the platform
