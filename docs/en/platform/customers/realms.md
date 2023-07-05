@@ -296,7 +296,7 @@ In this section, you can create custom fields to distinguish the user's profile.
 
 The types of custom fields you can add are:
 
-- Casilla
+- Checkbox
 - Date
 - Drop-down list
 - Paragraph
