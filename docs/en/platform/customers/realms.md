@@ -274,7 +274,7 @@ Use an authentication client to send your integration's access tokens to your re
 
 ### Team members
 
-Modyo allows you to select the team members that work in each kingdom and thus control access to the different aspects of the kingdom.
+Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
 
 To add a member to the realms, follow these steps:
 1. Click the**+ Add Member** button at the top right.
