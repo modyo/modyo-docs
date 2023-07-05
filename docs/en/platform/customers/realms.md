@@ -34,7 +34,7 @@ Next to the **Apply** button, there is the **Save as Segment** button. This save
 In the table you can also sort users by their respective values; to do so click on the headers of the following columns:
 - **Name**: User's name
 - **Registration Date**: Date of registration in the user database
-- **Last login**: Most recent date of entry to the platform
+- **Last login**: Most recent date when the user accessed the platform.
 - **Sessions**: Number of logins made to the platform
 
 To execute mass actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users. Then, select one of the following options:
