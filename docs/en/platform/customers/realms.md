@@ -11,7 +11,7 @@ Each kingdom has its own settings for login, registration, integrations, forms, 
 
 ## Users
 
-In the Users section, you can view and modify the system's external users. These users are those who register on the platform and access Modyo sites, answer forms, or can receive email campaigns.
+In the Users section, you can view and modify the system's external users. These are users who register on the platform and access Modyo sites, answer forms, or can receive email campaigns.
 
 ### About the interface
 
