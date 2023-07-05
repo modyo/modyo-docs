@@ -62,7 +62,7 @@ When you select "Add User", the platform will ask you to complete the following 
 To send the password to the user's email, check the box below the email field. When saving, the platform sends an email to the new user with their password. The user can change the password once they access the platform.
 ::
 
-The user creation view can contain more fields depending on your configuration on the platform. In the [Realm Configuration] section (/es/platform/customers/realms.html #configuracion -of-kingdom) you can modify the fields of the new user form.
+The user creation view can contain more fields depending on their configuration in the platform. In the [Realm Configuration] section (/es/platform/customers/realms.html #configuracion -of-kingdom) you can modify the fields of the new user form.
 
 Some special fields, such as second surname, avatar or date of birth, can be activated in the [Registration Form] section (/es/platform/customers/realms.html #formulario -de-registration). You can also create and modify custom fields in the [Custom Fields] section (/es/platform/customers/realms.html #custom -fields).
 
