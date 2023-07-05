@@ -209,7 +209,7 @@ The login address must be a page within your account. You cannot redirect the lo
 
 Modyo allows you to configure the sending address and the appearance of the emails you send to users in the kingdom.
 
-To adjust the address of the sender who sends your email, enter the address in the **"Default Email"** field and click the **Save** button.
+To adjust the sender's address of your email, enter the address in the **"Default Email"** field and click the **Save** button.
 
 Here you can also enable, disable and customize the sending of automatic emails in response to specific actions carried out by users. The options are: 
 
