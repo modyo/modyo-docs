@@ -148,7 +148,7 @@ Here you can set up general aspects of the kingdom, such as:
   - Enable date of birth
   - Enable gender
   - Enable phone number
-- **Delete kingdom**: Delete the kingdom. This process takes place in the background and you might not see the kingdom disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the kingdom.
+- **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
 
 :: :danger Danger
 When deactivating Modyo credentials in the realm, make sure that you have set up an identity provider for this realm. Otherwise, users won't be able to log in.
