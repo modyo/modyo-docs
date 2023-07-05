@@ -5,7 +5,7 @@ sidebarDepth: 3
 
 # Realms
 
-Kingdoms are a group of users with similar characteristics that are subject to the same configuration. Realms are especially useful when you have several groupings of sites in an account that aren't directly related to each other, or to have a test site with test users without affecting productive users.
+Realms are a group of users with similar characteristics that are subject to the same configuration. Realms are especially useful when you have several groupings of sites in an account that aren't directly related to each other, or to have a test site with test users without affecting productive users.
 
 Each realm has its own settings for login, registration, integrations, forms, segments, and messaging. Keep in mind that creating any of these items in a realm will only affect users in that realm and will not affect users in other realms.
 
