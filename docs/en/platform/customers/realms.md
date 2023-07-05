@@ -276,7 +276,7 @@ Use an authentication client to send your integration's access tokens to your re
 
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
 
-To add a member to the realms, follow these steps:
+To add a member to a realm, follow these steps:
 1. Click the**+ Add Member** button at the top right.
 2. In the modal, select a user and assign a role.
 3. Click on *Add**.
