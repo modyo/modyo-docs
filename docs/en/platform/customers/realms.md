@@ -219,7 +219,7 @@ Here you can also enable, disable and customize the sending of automatic emails 
 - **Password Recovery**: Sent when a user requests to recover their password.
 - **Awaiting Confirmation**: Sent when the user has been confirmed and activated.
 - **Confirmation**: Sent when the user has been confirmed, but requires manual activation by an administrator.
-- **Checking for email updates**: Sent when making a change to the email address.
+- **Email Update Verification**: Sent when making a change to the email address.
 - **Custom footer**: Allows you to customize the footer of all the emails mentioned above.
 
 To enable or disable sending an email, click the Enabled/Disabled button next to each function and click the **Save** button.
