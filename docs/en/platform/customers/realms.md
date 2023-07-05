@@ -285,7 +285,7 @@ To modify the role of a team member, click on their name in the mode, assign the
 
 You can choose between two roles:
 
-- **Realm User**: You can add users, create, modify, and review campaigns, forms, and segments.
+- **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
 - **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the kingdom.
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom. 
