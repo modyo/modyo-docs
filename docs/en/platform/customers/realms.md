@@ -288,7 +288,7 @@ You can choose between two roles:
 - **Realm User**: You can add users, create, modify, and review campaigns, forms, and segments.
 - **Realm Admin**: You have access to all the settings and sections of the kingdom, you can add and remove users and team members. You can also delete the kingdom.
 
-To remove an administrator from the kingdom, check the box to the left of their name and click the **Delete** button at the bottom. 
+To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom. 
 
 ### Custom fields
 
