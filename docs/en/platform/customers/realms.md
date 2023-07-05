@@ -132,7 +132,7 @@ Here you will find options for both the visual user experience, such as the sele
 Here you can set up general aspects of the realms, such as:
 
 - **Name**
-- **Identifier**: Allows you to modify the URL of the kingdom's profile, login, registration, and password recovery views.
+- **Identifier**: Allows you to modify the URL of the realm's profile, login, registration, and password recovery views.
 - **Enable/Disable Credentials**: Allows you to deactivate Modyo credentials in this realm and only allow access through SSO. Before you enable this option, make sure that you have an SSO identity provider configured.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
