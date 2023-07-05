@@ -32,7 +32,7 @@ Next to the **Apply** button, there is the **Save as Segment** button. This save
 :::
 
 In the table you can also sort users by their respective values; to do so click on the headers of the following columns:
-- **Name**: Name of the user
+- **Name**: User name
 - **Registration Date**: Date of registration in the user database
 - **Last input**: Most recent date of entry to the platform
 - **Sessions**: Number of logins made to the platform
