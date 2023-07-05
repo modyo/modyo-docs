@@ -249,7 +249,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Keycloak
 - Azure Active Directory
 
-Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos. Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](es/platform/core/integrations/identity-providers)
+Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos. Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers.html)
 
 ### Integraciones
 
