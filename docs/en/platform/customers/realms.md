@@ -207,7 +207,7 @@ The login address must be a page within your account. You cannot redirect the lo
 
 ### Emails
 
-Modyo allows you to configure the sending address and the appearance of the emails you send to users in the kingdom.
+Modyo allows you to configure the sender address and the appearance of the emails you send to users within the realm.
 
 To adjust the sender's address of your email, enter the address in the **"Default Email"** field and click the **Save** button.
 
