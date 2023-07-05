@@ -141,7 +141,7 @@ Here you can set up general aspects of the kingdom, such as:
   - Disabled: New users cannot be registered in the kingdom. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Additional attributes for the registration form**:
-  - Enable second last name
+  - Enable second surname
   - Require second surname
   - Enable email confirmation: Enables an additional email field that the user must fill in and that must match the primary email field.
   - Enable user avatar
