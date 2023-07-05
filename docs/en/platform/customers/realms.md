@@ -313,7 +313,7 @@ You can create a maximum of 20 custom fields in each kingdom.
 Custom fields have standard properties that you should consider:
 
 - **Must be a unique answer**: The value must be unique for each user, avoiding duplicates.
-- **This is a required field**: Must be completed when modifying or creating a user. If the field is visible and editable to users, it will be shown in the registration form and will be mandatory to create new users.
+- **This is a required field**: Must be completed when modifying or creating a user. If the field is visible and editable to users, it will be shown in the registration form and will be mandatory when creating new users.
 - **Visible to users of the sites**: It will be visible in the user's profile.
     - **Editable by site users**: Users will be able to view and modify the value.
 - **Searchable by administrators**: The value will be indexed and administrators will be able to search for users in the Modyo administrator user index, by the value of this field.
