@@ -137,7 +137,7 @@ Here you can set up general aspects of the kingdom, such as:
 - **Account Activation**:
   - Direct: Users who register can log in directly.
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
-  - Moderate: Users who register must wait for a kingdom administrator to activate their account before they can log in.
+  - Moderated: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the kingdom. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Additional attributes for the registration form**:
