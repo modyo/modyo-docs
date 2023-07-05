@@ -101,7 +101,7 @@ If you sent the campaign by notification, you can view:
 - **Sent**: Number of notifications sent.
 - **Opens**: Number of notifications opened.
 
-If you send a campaign through [segments] (/es/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
+If you send a campaign through [segments] (/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
 
 :: :warning Attention
 If you haven't yet sent the campaign, the values for that campaign will appear be zero.
