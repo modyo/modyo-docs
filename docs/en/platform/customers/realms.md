@@ -156,7 +156,7 @@ When deactivating Modyo credentials in the realm, make sure that you have set up
 
 ### Appearance
 
-In this section you can modify the primary color and the logo, in addition to adding custom CSS for the registration, login and profile views of users of the kingdom.
+In this section you can modify the primary color and the logo, in addition to adding custom CSS for the registration, login and profile views of users of the realm.
 
 #### Primary Color
 
