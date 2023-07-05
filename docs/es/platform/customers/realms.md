@@ -234,7 +234,7 @@ Usa un cliente de autenticación para enviar los tokens de acceso de tu integrac
 - URI de redirección: Es el URI a donde el usuario va a ser redirigido por el servidor de autenticación después de autenticar exitosamente. 
 - URI de cierre de sesión: Es el URI a donde el usuario va a ser redirigido por el servidor de autenticación después de cerrar su sesión.
 - Descripción
-- Confidencial: Existen dos tipos de clientes Oauth, confidencial o públicos. Se necesita la opción confidencial cuando tu aplicación es capaz de autenticar de manera segura con el servidor de autenticación. Clientes públicos comúnmente son aplicaciones que corren en un dispositivo móvil o en un navegador. 
+- Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Se necesita la opción confidencial cuando tu aplicación es capaz de autenticar de manera segura con el servidor de autenticación. Clientes públicos comúnmente son aplicaciones que corren en un dispositivo móvil o en un navegador. 
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
 
 
