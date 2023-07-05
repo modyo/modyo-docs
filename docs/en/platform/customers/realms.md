@@ -322,7 +322,7 @@ Custom fields have standard properties that you should consider:
 
 Customizable fields can be enabled or disabled. If they are enabled, an administrator can use them and, depending on their configuration, they may also be available to users. 
 
-When a customizable field is disabled, it doesn't appear on any form, however, its values are kept saved.
+When a customizable field is disabled, it doesn't appear on any form, however, its values are still saved.
 
 :: :danger Danger
 When a customizable field is disabled, it can be deleted. 
