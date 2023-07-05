@@ -975,7 +975,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * [Global variables](/en/platform/core/key-concepts.html#global-variables): Reuse cross-site snippets.
-* [Improvements to SEO](/en/platform/channels/pages.html#meta-tags): Customize the meta-tags for your pages from an easy-to-use interface.
+* [SEO Improvements](/en/platform/channels/pages.html#meta-tags): Customize the meta-tags for your pages from an easy-to-use interface.
 * Added the ability to import [custom redirects](/en/platform/channels/sites.html#custom-redirects) from the site.
 
 ### 9.0.9 - August 12, 2020
