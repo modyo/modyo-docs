@@ -281,7 +281,7 @@ Cambiar el selector de contenido de la barra de previsualización no tendrá efe
 Modyo ofrece la funcionalidad de definir variables globales, las cuales pueden ser utilizadas en todos los sitios donde se utilice Liquid. Esto permite compartir, por ejemplo, un _snippet_ de código entre diferentes sitios.
 
 :::tip Tip
-Puedes usar texto plano, HTML, JavaScript, y CSS dentro de las variables globales; sin embargo no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
+Puedes usar texto plano, HTML, JavaScript y CSS dentro de las variables globales; sin embargo, no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
 
 Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup (entradas, widgets, plantillas), usa:<span v-pre>`{{vars.Nombre}}`</span>
 :::
