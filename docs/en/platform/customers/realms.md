@@ -281,7 +281,7 @@ To add a member to the kingdom, follow these steps:
 2. In the modal, select a user and assign a role.
 3. Click on *Add**.
 
-To modify the role of a team member, click on their name in the mode, assign the user the desired role and click **Update**.
+To modify the role of a team member, click on their name in the modal, assign the user the desired role and click **Update**.
 
 You can choose between two roles:
 
