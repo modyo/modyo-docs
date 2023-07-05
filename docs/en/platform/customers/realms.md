@@ -355,7 +355,7 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 
 ### Payment Setup
 
-The options available when you have payment enabled in your kingdom are: 
+The options available when you have payment enabled in your realms are: 
 
 - **Currency format**: Modify the type of score displayed. 
 - **Activate email sending**: When this option is selected, the user receives an email when paying for an order.
