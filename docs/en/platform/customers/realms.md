@@ -81,7 +81,7 @@ Click on the side menu below the action column to view the details of a specific
 #### Profile
 In this section you can see general user data:
 
-- User avatar: Only if it has been previously loaded.
+- User avatar: Only if it's been previously loaded.
 - Status within the platform: Active or inactive.
 - Date of registration on the platform.
 - Last login to the platform.
