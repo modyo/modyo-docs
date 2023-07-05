@@ -338,7 +338,7 @@ In addition to saving specific values to users, you can use the values of the cu
 
 #### Password Policy
 
-The options available to set a password policy on the Modyo platform are:
+The available options for setting a password policy in the Modyo platform are:
 
 - Minimum password length value: Sets the minimum number of characters a password must have, between 12 and 128 characters.
 - Require at least one lowercase letter (a - z)
