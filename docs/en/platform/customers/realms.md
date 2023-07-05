@@ -269,7 +269,7 @@ Use an authentication client to send your integration's access tokens to your re
 - Redirection URI: The URI to which the authentication server will redirect the user after successful authentication. 
 - Logout URI: URI to which the authentication server will redirect the user after closing the session.
 - Description
-- Confidential: There are two types of Oauth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers. 
+- Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers. 
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
 
 ### Team members
