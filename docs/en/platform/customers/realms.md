@@ -15,7 +15,7 @@ In the Users section, you can view and modify the system's external users. These
 
 ### About the interface
 
-In the main view you will find a table with all the users registered on the platform, paginated if you have more than 30 records.
+In the main view, you will find a table with all the registered users on the platform, paginated if you have more than 30 records.
 
 At the top of the table you have filters to quickly find groups of users. The available filters are:
 
