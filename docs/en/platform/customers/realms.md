@@ -304,7 +304,7 @@ The types of custom fields you can add are:
 - Choice
 - Simple Text Line
 
-You can rearrange the custom fields by dragging them. Remember that the order in which the orders will be the same as the order in which they will appear in the editing views and in the user profile.
+You can rearrange the custom fields by dragging them.  Remember that the order in which you arrange them will be the same order in which they appear in the editing views and in the user profiles.
 
 :: :tip Tip
 You can create a maximum of 20 custom fields in each realms.
