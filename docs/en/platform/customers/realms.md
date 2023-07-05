@@ -129,7 +129,7 @@ Here you will find options for both the visual user experience, such as the sele
 
 ### General
 
-Here you can set up general aspects of the kingdom, such as:
+Here you can set up general aspects of the realms, such as:
 
 - **Name**
 - **Identifier**: Allows you to modify the URL of the kingdom's profile, login, registration, and password recovery views.
