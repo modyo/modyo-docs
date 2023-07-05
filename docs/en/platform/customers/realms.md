@@ -45,7 +45,7 @@ To execute mass actions, check the box next to the name of one or more users and
 
 ### Add a user
 
-To add a new user, click the**+ New User** button at the top right of the screen and complete the following fields:
+To add a new user, click the**+ New User** button at the top right of the screen and fill in the following fields:
 
 When you select "Add User", the platform will ask you to complete the following fields:
 
