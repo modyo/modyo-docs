@@ -40,7 +40,7 @@ In the table you can also sort the users by their respective values, to do so cl
 To execute mass actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users. Then, select one of the following options:
 - **Deactivate**: Deactivate users
 - **Activate**: Activate users
-- **Export**: Export the list of users in Excel or CSV format
+- **Export**: Exports the list of users in Excel or CSV format
 - **Add or remove tags**: Create new tags and assign or remove existing tags from selected users.
 
 ### Add a user
