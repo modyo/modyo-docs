@@ -508,7 +508,7 @@ search: true
 ### 9.2.7 - March 10, 2022
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Updated liquidJS version
+* Update LiquidJS version
 * Update category names are not reflected in entries
 * Attributes of the request drop does not consider the entry slug in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
