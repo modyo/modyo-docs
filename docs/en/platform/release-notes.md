@@ -14,7 +14,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fixes problems accessing the security headers edition
+* Fixes issues with accessing security header editing.
 * Add the viewer role to team members. This role can even see items to be synchronized or in a release.
 
 <Badge text="Content" type="content" vertical="middle"/>
