@@ -623,7 +623,7 @@ Using variables allows you to reuse HTML, JS, CSS, or text code across different
 
 :: :tip Tip In global variables, you can use plain text, HTML, JavaScript and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
 
-To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.Name}}` </span> 
+To get the value of the variable anywhere that accepts Liquid markup, use:<span v-pre> `{{vars.Name}}` </span>
 :::
 
 #### Create a variable in sites
