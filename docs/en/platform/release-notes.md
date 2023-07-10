@@ -10,7 +10,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
-* Improves the information shown in the activity logs
+* Improves information shown in the activity logs
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
