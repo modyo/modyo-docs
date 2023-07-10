@@ -639,6 +639,6 @@ To create a variable on sites, follow these steps:
 
 :: :warning AttentionWhen using variables, Modyo follows a hierarchy of preference where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
 
-That's why it's important to use caution when defining variables in widgets or on the site, especially if you use the same name as the variables defined at the account level.
+Therefore, it's important to use caution when defining variables in widgets or on the site, especially if you use the same name as the variables defined at the account level.
 
 :::
