@@ -523,27 +523,26 @@ La ruta origen debe no existir o estar despublicada para que la redirección sea
 
 ### Security headers
 
-Configura los encabezados de seguridad HTTP habilitando este módulo para tu sitio.
-Esta acción no se puede deshacer. Al ser habilitada, tendrás el control total de los encabezados que desees usar.
+Habilita este módulo para tu sitio para configurar los encabezados de seguridad HTTP. Ten en cuenta que esta acción no se puede deshacer. Una vez habilitado, tendrás control total sobre los encabezados que deseas utilizar.
 
 #### HTTP Strict Transport Security (HSTS)
 
-Indica al navegador que el sitio se debe acceder usando solo HTTPS.
-* **Duración**: Establece cuánto tiempo debe recordar el navegador que solo se accede al sitio mediante HTTPS.
-* **Precarga**: Incluye la directiva de precarga. Para más información consulta [HSTS Preload List Submission](https://hstspreload.org/).
-* **Incluir subdominios**: Utiliza la regla HSTS también para todos los subdominios del sitio.
+Indica al navegador que solo puede acceder al sitio mediante HTTPS.
+* **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
+* **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
+* **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
 
 #### Referrer-Policy
 
-El _header_ `Referer` contiene información de la página web anterior desde al cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
+El _header_ `Referer` contiene información de la página web anterior desde la cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
 
-* **no-referrer**: No se envía información de _referrer_.
+* **no-referrer**: No envía información de _referrer_.
 * **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
-* **origin**: Envía solo el dominio de origen y elimina las rutas y _query string_ .
-* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen y elimina las rutas y _query string_ para otros destinos.
+* **origin**: Envía solo el dominio de origen, elimina las rutas y _query string_.
+* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen. Elimina las rutas y _query string_ para otros destinos.
 * **same-origin**: Envía información de _referrer_ solo para _requests_ del mismo origen.
 * **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
-* **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros .
+* **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros.
 * **unsafe-url**: Envía siempre la información de _referrer_.
 
 #### X-Frame-Options
@@ -556,23 +555,23 @@ Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `obje
 
 Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type` para evitar _MIME type sniffing_.
 
-#### Content-Security-Policy
+#### Content-Security-Policy (CSP)
 
 Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
 
-Especifica libremente tu política de seguridad de contenido en el área de texto; para obtener una guía completa sobre cómo escribir su política, consulta [Content Security Policy (CSP) de la MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
+Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html), y [Asset Manager](/es/platform/content/asset-manager.html).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html) y [Asset Manager](/es/platform/content/asset-manager.html).
 :::
 
-Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se cargan de fuentes confiables y requiera que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
+Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
-La política debe incluir una directiva `default-src 'self'`, que es _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
+La política debe incluir una directiva `default-src 'self'`, que sirve de _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
 
 * **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
 
@@ -584,37 +583,64 @@ Si tienes el nonce presente en tu política, puedes agregar a la lista permitida
 </script>
 ```
 
-Hay varias herramientas para ayudarte a diseñar una política de seguridad sólida:
+Estas herramientas te pueden ayudar a diseñar una política de seguridad sólida:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
 #### Permissions-Policy
 
-Permite o niega el uso de funciones y APIs del navegador para el sitio, por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos. Para obtener una lista completa de las funciones compatibles con los navegadores, consulte [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+Permite o niega el uso de funciones y APIs del navegador para el sitio; por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos.
+
+Para obtener una lista completa de las funciones compatibles con los navegadores, consulta la [Feature Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+
+#### Cross Origin Embedder Policy (COEP)
+
+Configura la inserción de recursos de origen cruzado en el documento. Por ejemplo, si tu documento tiene un encabezado COEP con un valor de require-corp o credentialless, solo puedes acceder a ciertas funciones, como objetos SharedArrayBuffer o Performance.now(), con temporizadores sin restricciones.
+
+Para mas información, consulta la [Cross-Origin-Embedder-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
+
+#### Cross Origin Opener Policy (COOP)
+
+Te permite garantizar que un documento de nivel superior no comparta un grupo de contexto de navegación con documentos de origen cruzado.
+
+COOP aisla el procesamiento de tu documento, por lo que atacantes potenciales no podrán acceder a tu objeto global si lo abren en un popup, lo que previene un conjunto de ataques de origen cruzado.
+
+Para mas información, revisa la [Cross-Origin-Opener-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+
+#### Cross Origin Resource Policy
+
+Transmite el deseo de bloquear las solicitudes de origen cruzado/sitio cruzado sin-cors al recurso especificado por parte del navegador.
+
+Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
+
 
 ### Variables del sitio
 
-Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, puedes crear variables específicas para un sitio o sobreescribir el valor de una variable global ya creada con un valor específico para el sitio en particular.
+Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
 
-Usando variables te permite reutilizar código HTML, JS, CSS, o texto a través de distintos sitios, widgets, o plantillas. Si tienes código que usas repetitivamente en diferentes partes de tu cuenta, puedes asignar este valor a una variable y de esta manera simplificar tus procesos. Al editar el valor de la variable, esto se verá reflejado en todos lados donde se use la variable actualmente.
+Usar variables te permite reutilizar código HTML, JS, CSS o texto a través de distintos sitios, widgets o plantillas. Si tienes código que se repite en varias partes de tu cuenta, puedes asignar ese valor a una variable para simplificar tus procesos y en caso de que edites el valor de la variable, el cambio se verá reflejado en todos los lugares donde esté en uso la variable.
 
 :::tip Tip
-Puedes usar texto plano, HTML, JavaScript y CSS dentro de las variables globales; sin embargo, no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
+En las variables globales puedes utilizar texto plano, HTML, JavaScript y CSS. Sin embargo, es importante tener en cuenta que no puedes utilizar código Liquid dentro de estas variables. Asimismo, es importante recordar que el contenido de las variables globales tiene un límite máximo de 65.535 caracteres.
 
 Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup, usa:<span v-pre>`{{vars.Nombre}}`</span>
 :::
 
 #### Crear una variable en sitios
 
-Para crear una variable en sitios, sigue esto pasos:
+Para crear una variable en sitios, sigue estos pasos:
 
-1. Desde el menú lateral principal, haz click en **Channels**, luego selecciona tu **Sitio**.
-1. Dentro de **Configuración del sitio**, haz click en **Variables del Sitio**.
-1. Aquí podrás ver el listado de todas las variables globales y las variables del sitio, su información general, y un botón para copiar su código en Liquid markup. Haz click en **+ Nueva Variable**.
-1. Llena el **Nombre** y **Valor** de la variable.
+1. Desde el menú lateral principal, haz click en **Channels**.
+1. Selecciona tu **Sitio**.
+1. En **Configuración del sitio**, haz click en **Variables del Sitio**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup. 
+1. Haz click en **+ Nueva Variable**.
+1. Completa los campos **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.
 
 :::warning Atención
-Cuando usas variables, siempre se tomará como preferencia las variables definidas en el nivel más bajo, quedando primero las variables definidas en el widget, luego las definidas en el sitio, y por último las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en widgets o el sitio con el mismo nombre que las variables de la cuenta.
+Al utilizar variables, Modyo sigue una jerarquía de preferencia donde las variables definidas en el nivel más bajo tienen prioridad. Las variables definidas en el widget tendrán precedencia sobre las variables definidas en el sitio, y a su vez, las variables definidas en el sitio tendrán precedencia sobre las variables definidas a nivel de cuenta.
+
+Por esto, es importante tener precaución al definir variables en widgets o en el sitio, especialmente si utilizas el mismo nombre que las variables definidas a nivel de cuenta.
+
 :::
