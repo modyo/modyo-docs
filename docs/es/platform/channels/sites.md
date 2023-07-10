@@ -527,7 +527,7 @@ Habilita este módulo para tu sitio para configurar los encabezados de seguridad
 
 #### HTTP Strict Transport Security (HSTS)
 
-dica al navegador que solo puede acceder al sitio mediante HTTPS.
+Indica al navegador que solo puede acceder al sitio mediante HTTPS.
 * **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
 * **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
 * **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
@@ -608,7 +608,7 @@ COOP aisla el procesamiento de tu documento, por lo que atacantes potenciales no
 
 Para mas información, revisa la [Cross-Origin-Opener-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
-#### Cross Origin Origin Resource Policy
+#### Cross Origin Resource Policy
 
 Transmite el deseo de bloquear las solicitudes de origen cruzado/sitio cruzado sin-cors al recurso especificado por parte del navegador.
 
