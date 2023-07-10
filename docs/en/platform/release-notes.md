@@ -6,11 +6,31 @@ search: true
 
 ## 9.2
 
+### 9.2.38 - July 7, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements.
+* Improves the information shown in the activity logs
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fix problems accessing the security headers edition
+* Add the viewer role to team members. This role can even see items to be synchronized or in a release.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Add the viewer role to team members.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Add configuration for a post-login home page. After a successful login to the kingdom, you will be redirected to this page.
+
+
 ### 9.2.37 - June 30, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
-* Improvements in the configuration of expiration and inactivity policies.
+* Improvements to the configuration of expiration and inactivity policies.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -36,7 +56,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Fixes the issue of duplicate space listings for users in a permission group.
-* Corrects the problem of publishing pages when they come from stage synchronization.
+* Corrects problem of publishing pages when they come from stage synchronization.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -58,7 +78,7 @@ search: true
 
 * Improves the reference of widgets between stages, now it is not necessary to create the widget in other stages through synchronization.
 * Fixes search problems in sites that have words with tildes.
-* Corrects differences in pages, the option of delegated routes is now displayed.
+* Corrects differences in pages, option of delegated routes is now displayed.
 * Adds a login button when previewing a widget.
 * The differences between large widgets or widgets from the CLI are limited. Widgets now display an informational message if there are differences.
 
@@ -86,7 +106,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Adds release date to the metadata of a content
+* Adds release date to metadata of content
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -103,7 +123,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security enhancements
-* Improves visibility in the list of tags when they are very long
+* Improves visibility in tags lists when they are very long
 * New Getstared
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -116,7 +136,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixes an error when creating a new identity provider of the type openid by specifying claims
+* Fixed error when creating a new openid type identity provider by specifying claims
 
 
 ### 9.2.32 - April 21, 2023
@@ -127,7 +147,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Changes the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
+* Changes the allowed asset sizes to 6MB for images and 10MB for other types of files
 * Fixes problems when replacing images with SVG extension
 * Fixes problems when displaying a logo in SVG
 
@@ -186,9 +206,9 @@ search: true
 
 * Security enhancements
 * Testing period increased to 30 days
-* user inactivity time validation has been added in the backoffice, configurable in the security section.
+* user inactivity time validation has been added in backoffice, configurable in the security section.
 * fixes problem with administrator password validation
-* New filter for disabled users has been added.
+* New filter for disabled user been added.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -209,7 +229,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Allows to delete archived widgets
+* Allows deletion of archived widgets
 * Corrects problems caused when archiving a widget
 * On-page SEO improvements
 * Fixes problems with category selector
@@ -250,7 +270,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security enhancements
-* Separation of Logs
+* Logs separation
 * Fixes "Review" button in Team Review emails
 * The archived item will be visually separated from the others in the status filters.
 * Password and signup routes stop responding to mismatched extensions 
@@ -277,7 +297,7 @@ search: true
 * Payments are migrated to Realm level
 
 
-### 9.2.22 - December 9, 2022
+### 9.2.22 - December 09, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -357,7 +377,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* The identifier is added to the search in the space list
+* Identifier added to search in the space list
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -452,7 +472,7 @@ search: true
 
 * Security enhancements
 * ReCAPTCHA is added for admin users
-* Fixes bug when updating the avatar of imported users with missing information
+* Fixes bug when updating avatar of imported users with missing information
 * Admin session expiration is added
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -539,7 +559,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Routes finished in slash are redirected to improve SEO
+* Routes ending in slash are redirected, to improve SEO
 * Reflected XSS is prevented in request drop
 * Contamination with invalid routes is prevented
 
@@ -552,7 +572,7 @@ search: true
 * Improvements and fixes in Entries editor
 
 <Badge text="Core" type="core" vertical="middle"/>
-* SCIM support is added for admin users
+* SCIM support added for admin users
 
 ### 9.2.4 - December 30, 2021
 <Badge text="Core" type="core" vertical="middle"/>
@@ -888,7 +908,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 * Adds the ability to view site search results in json format
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* Now you can only delete the forms that are disabled.
+* Now, you can only delete forms that are disabled.
 
 ### 9.1.5 - December 1, 2020
 
@@ -906,7 +926,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 * Adds the functionality of distinguishing the same instantiated widget multiple times on the same page.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
-* A new and improved [Segments](/en/platform/customers/segments.html) creation interface is added including the option to use `AND` and `OR` operators.
+* A new and improved [Segments](/en/platform/customers/segments.html) creation interface added, including the option to use `AND` and `OR` operators.
 
 ### 9.1.4 - November 10, 2020
 
@@ -917,7 +937,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 - Multiple security enhancements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* [Review and joint publication](/en/platform/channels/sites.html#review-and-joint-publication) is added to Sites.
+* [Review and joint publication](/en/platform/channels/sites.html#review-and-joint-publication) added to Sites.
 * Adds the ability to [delegate sub-paths](/en/platform/channels/pages.html#child-routes-delegation) of pages using JavaScript.
 
 ### 9.1.3 - October 16, 2020
@@ -952,7 +972,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 - Multiple security enhancements.
 
 <Badge text="Content" type="content" vertical="middle"/>
-* The ability to delete archived entries is added.
+* Added ability to delete archived entries.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Adds the ability to [copy sites](/en/platform/channels/sites.html) and all their published content.
@@ -963,9 +983,9 @@ Fixes bug with tag filter with 100 or more tags in admin
 
 - [Scheduler](en/platform/core/key-concepts.html#scheduled): Schedule a change in the future without the need to unpublish what is already published.
 - Modyo Lite: Access a version of Modyo that includes Core and Content and Channels apps.
-- [New Preview Mode](/en/platform/core/key-concepts.html#preview-mode): A preview mode that allows you to view content, pages, templates, widgets and navigation together.
-- Upgrade the ElasticSearch version to 7.4.
-- Upgrading the MySQL version to version 5.7 (adds support for emojis).
+- [New Preview Mode](/en/platform/core/key-concepts.html#preview-mode): Preview mode that allows you to view content, pages, templates, widgets, and navigation together.
+- Upgrade ElasticSearch version to 7.4.
+- MySQL version upgraded to version 5.7 (adds support for emojis).
 - Multiple bug fixes.
 - Multiple navigation and usability improvements
 - Multiple security enhancements.
@@ -982,13 +1002,13 @@ Fixes bug with tag filter with 100 or more tags in admin
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Support for session cookies is improved for older browsers.
+- Support for session cookies improved for older browsers.
 
 ### 9.0.8 - June 15, 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- Security enhancements are added to file upload endpoints.
+- Security enhancements added to file upload endpoints.
 - Multiple bug fixes.
 - Multiple navigation and usability improvements
 
@@ -997,7 +1017,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Code sample is added when creating new [content views](/en/platform/channels/templates.html#content-views).
-* An attribute selector of the entry is added to content views.
+* Attribute selector of an entry added to content views.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * File-type questions are deleted in [forms](/en/platform/customers/forms.html#add-field).
@@ -1018,7 +1038,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * An example is added when creating [content views](/en/platform/channels/templates.html#content-views).
-* The files [manifest.json and serviceworker.js](/en/platform/channels/sites.html#pwa) are released, while privacy files [robots.txt and sitemap.xml](/en/platform/channels/sites.html#seo) is enforced.
+* The files [manifest.json and serviceworker.js](/en/platform/channels/sites.html#pwa) are released, while privacy files [robots.txt and sitemap.xml](/en/platform/channels/sites.html#seo) are enforced.
 * Improvements to the usability and concepts of [themes](/en/platform/channels/templates.html#themes) in the template builder
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -1029,7 +1049,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Support for FOG is added with Azure and Google Cloud as a Modyo installation base.
-- Added integration with [Google Authenticator](/en/platform/core/security.html#two-step-authentication) for second factor of team member authentication.
+- Added integration with [Google Authenticator](/en/platform/core/security.html#two-step-authentication) for second factor authentication for team members.
 - Added [password policies](/en/platform/core/security.html#password-policy) for team members.
 - Multiple bug fixes.
 - Multiple navigation and usability improvements
@@ -1039,15 +1059,15 @@ Fixes bug with tag filter with 100 or more tags in admin
 * The possibility to [delete spaces](/en/platform/content/spaces.html#general) is added.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* [Redirect table](/en/platform/channels/sites.html#custom-redirects) is added that will allow you to reuse old urls with good SEO and redirect them to the new site URLs.
-* The content where you search on pages is improved.
+* [Redirect table](/en/platform/channels/sites.html#custom-redirects) added, allows you to reuse old urls with good SEO and redirect them to the new site URLs.
+* Content where you search on pages is improved.
 * Snippets are added for [enable PWA](/en/platform/channels/sites.html#pwa) in site default JavaScript when the property is enabled.
-* The possibility of integrating google tag manager to sites is added.
+* Added option of integrating google tag manager to sites.
 * Only sites where you have permissions as a team member will be seen.
-* The possibility of [delete sites](/en/platform/channels/sites.html#general) is added.
+* Added option to [delete sites](/en/platform/channels/sites.html#general).
 
 <Badge text="Insights" type="insights" vertical="middle"/>
-* [Reports in insights](/en/platform/insights/data-studio.html) view is added .
+* [Reports in insights](/en/platform/insights/data-studio.html) view added.
 
 ### 9.0.5 - March 19, 2020
 
@@ -1078,12 +1098,12 @@ Fixes bug with tag filter with 100 or more tags in admin
 - Multiple navigation and usability improvements
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Obtaining the content delivery token through the [JavaScript SDK](/en/platform/content/public-api-reference.html#private-content).
+* Obtaining content delivery token through the [JavaScript SDK](/en/platform/content/public-api-reference.html#private-content).
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Customizing the reaction of a site when a url does not exist, [showing a 404 error or redirecting to home](/en/platform/channels/sites.html#restrictions).
+* Customized site reaction when a url does not exist, [showing a 404 error or redirecting to home](/en/platform/channels/sites.html#restrictions).
 
-### 9.0.2 - February 4, 2020
+### 9.0.2 - February 04, 2020
 
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -1120,7 +1140,7 @@ Fixes bug with tag filter with 100 or more tags in admin
 
 <Badge text="Content" type="content" vertical="middle"/>
 * New [content application](/en/platform/content/), with all headless content.
-* New [asset manager](/en/platform/content/asset-manager.html) that allows to have all the files of an account in one place.
+* New [asset manager](/en/platform/content/asset-manager.html) enables having all the files of an account in one place.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * New minimal theme 2020 cleaner and easier to adapt.
