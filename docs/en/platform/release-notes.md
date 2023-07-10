@@ -23,7 +23,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Add configuration for a post-login home page. After a successful login to the kingdom, you will be redirected to this page.
+* Adds configuration for a post-login home page. After successfully logging into the Realm, you will be redirected to this page.
 
 
 ### 9.2.37 - June 30, 2023
