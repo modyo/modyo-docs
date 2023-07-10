@@ -590,7 +590,7 @@ These tools can help you design a strong security policy:
 
 #### Permissions-Policy
 
-It allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and the automatic playback of videos.
+Allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and the automatic playback of videos.
 
 For a full list of browser-compatible features, see the [MDN Feature Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
