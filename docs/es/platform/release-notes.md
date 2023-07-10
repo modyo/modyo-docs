@@ -6,6 +6,26 @@ search: true
 
 ## 9.2
 
+### 9.2.38 - 07 de julio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad.
+* Mejora la información mostrada en los logs de actividades
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problemas de acceso a la edición de headers de seguridad
+* Agrega el rol viewer a los miembros del equipo. Este rol incluso puede ver elementos a sicronizar o en un release.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega el rol viewer a los miembros del equipo.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Agrega configuración de una página inicial post-login. Luego de un inicio de sesión exitoso en el reino se redirigirá a esta página.
+
+
 ### 9.2.37 - 30 de junio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
