@@ -610,7 +610,7 @@ For more information, review the [MDN Cross-Origin-Opener-Policy] (https://devel
 
 #### Cross Origin Resource Policy
 
-It conveys the desire to block cross-origin/cross-site requests without cors to the specified resource by the browser.
+Conveys the desire to block cross-origin/cross-site requests without cors to the specified resource by the browser.
 
 For more information, see the [MDN Cross-Origin-Resource-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
