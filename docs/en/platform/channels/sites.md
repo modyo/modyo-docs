@@ -621,7 +621,7 @@ Modyo has [global variables] (/es/platform/core/key-concepts.html #variables -gl
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes and if you edit the value of the variable, the change will be reflected everywhere the variable is in use.
 
-:: :tip TipIn global variables, you can use plain text, HTML, JavaScript and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
+:: :tip Tip In global variables, you can use plain text, HTML, JavaScript and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
 
 To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.Name}}` </span> 
 :::
