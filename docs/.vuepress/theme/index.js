@@ -27,7 +27,19 @@ module.exports = (options, ctx) => {
       ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/search',
       '@vuepress/plugin-nprogress',
-      '@vuepress/last-updated',
+      [
+        '@vuepress/last-updated',
+        {
+          transformer: (timestamp, lang) => {
+            return new Date(timestamp).toLocaleDateString();
+          }
+        }
+      ],
+      [
+        'sitemap', {
+          hostname: 'http://docs.modyo.com'
+        },
+      ],
       ['container', {
         type: 'tip',
         defaultTitle: {
