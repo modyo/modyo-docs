@@ -6,6 +6,15 @@ search: true
 
 ## 9.2
 
+### 9.2.39 - 11 de julio de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se solicita ingresar password antes de eliminar una cuenta de usuario
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Se corrige error en el flujo OAuth2
+
 ### 9.2.38 - 07 de julio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
