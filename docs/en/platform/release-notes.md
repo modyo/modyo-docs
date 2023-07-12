@@ -493,7 +493,7 @@ search: true
 
 * Links to documentation in segments are corrected
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 
 * Liquid support is added in text fields when creating content
 
