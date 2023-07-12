@@ -386,7 +386,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Identifier added to search in the space list
+* The identifier is added to the search in the list of spaces
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
