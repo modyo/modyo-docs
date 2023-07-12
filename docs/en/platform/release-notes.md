@@ -78,7 +78,7 @@ search: true
 
 
 ### 9.2.35 - May 30, 2023
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Correct the permission system for user groups.
