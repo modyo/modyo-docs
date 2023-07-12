@@ -93,7 +93,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/>
 
-* Add option to enable/disable the use of SVG images
+* Adds option to enable/disable the use of SVG images
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
