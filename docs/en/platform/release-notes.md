@@ -179,7 +179,7 @@ search: true
 
 * Security enhancements
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fixes updating widgets coming from the CLI
 
