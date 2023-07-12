@@ -234,7 +234,7 @@ search: true
 
 * Security improvements
 * Add application access selector to user groups
-* Forced password change for new administrator users
+* Password change is forced for new administrator users
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -502,13 +502,13 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
+* Security improvements
 * Error 500 is controlled at the application level when using invalid HTTP verbs
 * The parameter for tolerance in seconds for access token (OIDC access token clock skew)
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fixes issue when publishing page tree with 3 levels
+* Fixed problem when publishing page tree with 3 levels
 * Fixed problem with full URL of entries by default
 * It fixes escaped meta tags, breaks interpolation with Liquid
 
