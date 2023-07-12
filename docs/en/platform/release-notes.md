@@ -67,7 +67,7 @@ search: true
 * Fixes the problem of listing repeated spaces for users in a permission group.
 * Fixes problem of publishing pages when they come from the synchronization of stages.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * The default email sender field in the realm settings is successfully validated, now it can't be empty either. 
 
