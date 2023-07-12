@@ -26,7 +26,7 @@ search: true
 * Fixes problems accessing the security headers edition
 * Add the viewer role to team members. This role can even see items to be synchronized or in a release.
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Add the viewer role to team members.
 
