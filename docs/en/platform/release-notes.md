@@ -500,7 +500,7 @@ search: true
 
 ### 9.2.9 - May 03, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Error 500 is controlled at the application level when using invalid HTTP verbs
