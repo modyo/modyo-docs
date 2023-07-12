@@ -577,10 +577,10 @@ search: true
 * Content Pages are incorporated
 * Problems with the preview bar are fixed
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * Improvements and fixes in the Entries editor
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * SCIM support for administrator users added
 
 ### 9.2.4 - December 30, 2021
