@@ -285,7 +285,7 @@ search: true
 * Password and signup paths stop responding to extensions that don't match 
 * Management accounts that are not accessed within a certain amount of time will be disabled
 * Adds format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
-* The URLs of table views from the Modyo backend can be shared while maintaining the chosen filters 
+* URLs of table views from the Modyo backend can be shared while maintaining the chosen filters 
 
  <Badge text="Content" type="content" vertical="middle"/>
 
