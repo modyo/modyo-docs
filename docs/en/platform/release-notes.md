@@ -729,7 +729,7 @@ search: true
 
 ### 9.1.24 - July 14, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Platform jQuery versions are updated.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
