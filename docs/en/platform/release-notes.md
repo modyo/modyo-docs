@@ -593,9 +593,9 @@ search: true
  <Badge text="Content" type="content" vertical="middle"/> Bug fixed with filter with 100 or more tags in the admin
 
 ### 9.2.1 - November 25, 2021
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 * Fixes bug with file limit in asset manager
-* Improvements when copying entry from another locale
+* Improvements when copying entries from another locale
 * Adds category name and slug to Entry drop and content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
