@@ -384,7 +384,7 @@ search: true
 * Security improvements
 * The visual consistency of permissions and roles is fixed
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * The identifier is added to the search in the list of spaces
 
