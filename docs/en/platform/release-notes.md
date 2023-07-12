@@ -62,7 +62,7 @@ search: true
 
 * Fix the problem of empty differences after synchronizing stages.
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 
 * Fixes the problem of listing repeated spaces for users in a permission group.
 * Fixes problem of publishing pages when they come from the synchronization of stages.
