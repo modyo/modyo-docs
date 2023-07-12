@@ -806,7 +806,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * An error when uploading very large images to the file manager is resolved.
 * A bug that caused the code editor to freeze due to liquid-specific syntaxes has been resolved.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * [new Liquid filters] (/es/platform/channels/liquid-markup.html #filtros -standard) are added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256 and base64_encod to be used.
 * Page indexing has been improved so that you can now find results that contain text from the content referenced on the pages.
 
