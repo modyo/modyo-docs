@@ -639,7 +639,7 @@ search: true
 
 ### 9.1.41 - December 15, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Fixed migrations in 9.1 to prepare for migrations from 8.2
 
 ### 9.1.35 - December 29, 2021
