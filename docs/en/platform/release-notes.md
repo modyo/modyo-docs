@@ -815,7 +815,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bug fixes.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * A bug in which control of locks was lost in the template builder was resolved.
 
 ### 9.1.13 - March 25, 2021
