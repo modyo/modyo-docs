@@ -158,7 +158,7 @@ search: true
 
 * Change the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
 * Fix problems when replacing images with SVG extension
-* Fix problems when displaying a logo in SVG
+* Fixes problems when displaying a logo in SVG
 
 
 ### 9.2.31 - April 6, 2023
