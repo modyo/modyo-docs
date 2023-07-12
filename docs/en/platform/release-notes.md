@@ -535,7 +535,7 @@ search: true
 * Problem with sending campaigns is fixed
 
 ### 9.2.7 - March 10, 2022
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Update LiquidJS version
 * Updating category names is not reflected in entries
