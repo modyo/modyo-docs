@@ -354,7 +354,7 @@ search: true
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
+* Security improvements
 * Updating dependencies
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
@@ -463,7 +463,7 @@ search: true
 
 * Fixes the link of the breadcrumbs with the scope of the stage
 * Fixes the overflow of the name column in the list of sites
-* The service worker base template has been improved
+* The base template of the service worker is improved
 * The experience is improved when generating a manifest for the PWA 
 * The list of unchanged differences after the creation of a stage is corrected
 
@@ -528,7 +528,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Collections can be referenced using brackets in Liquid SDK
+* Collections can be referenced using brackets in the Liquid SDK
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
