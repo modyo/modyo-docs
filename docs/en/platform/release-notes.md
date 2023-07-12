@@ -181,7 +181,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Fix updating widgets coming from the CLI
+* Fixes updating widgets coming from the CLI
 
 
 ### 9.2.29 - March 22, 2023
