@@ -588,7 +588,7 @@ search: true
 * Fixed an issue that contaminated the cache when previewing
 
 ### 9.2.2 - December 1, 2021
- <Badge text="Core" type="core" vertical="middle"/> Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variable is fixed
+<Badge text="Core" type="core" vertical="middle"/>Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variable is fixed
 
  <Badge text="Content" type="content" vertical="middle"/> Bug fixed with filter with 100 or more tags in the admin
 
