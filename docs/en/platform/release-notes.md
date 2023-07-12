@@ -699,7 +699,7 @@ search: true
 * Multiple enhancements to Security Headers.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Additional liquid tags are allowed.
+* Additional Liquid tags are allowed.
 
 ### 9.1.27 - August 27, 2021
 
