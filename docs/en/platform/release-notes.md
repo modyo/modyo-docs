@@ -613,7 +613,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Security Headers Management
 * New minimal theme
-* Navigation builders
+* Navigation Builders
 * Site stages
 
 <Badge text="Customers" type="customers" vertical="middle"/>
