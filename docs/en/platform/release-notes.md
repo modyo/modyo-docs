@@ -575,7 +575,7 @@ search: true
 ### 9.2.5 - January 27, 2022
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Content Pages are incorporated
-* Fixes problems with preview bar
+* Problems with the preview bar are fixed
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Improvements and fixes in Entries editor
