@@ -293,7 +293,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Add site timezone to site drop
+* Adds site timezone to site drop
 * Add liquid drops for answered forms
 * Liquid drop is added for forms answered by users in a kingdom
 * Fix stages duplication in the selector in the site list 
