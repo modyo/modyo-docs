@@ -60,7 +60,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Corrects the problem of empty differences after synchronizing stages.
+* Fix the problem of empty differences after synchronizing stages.
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
@@ -308,7 +308,7 @@ search: true
 
 ### 9.2.22 - December 09, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security enhancements
 
