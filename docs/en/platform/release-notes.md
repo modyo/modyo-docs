@@ -62,7 +62,7 @@ search: true
 
 * Corrects the problem of empty differences after synchronizing stages.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Fixes the problem of listing repeated spaces for users in a permission group.
 * Fix the problem of publishing pages when they come from the synchronization of stages.
@@ -141,7 +141,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Corrects search engine in list of pages in list mode
+* Correct search engine in list of pages in list mode
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
@@ -281,7 +281,7 @@ search: true
 * Security improvements
 * Logs separation
 * Fix “Review” button in Team Review emails
-* The archived item will be visually separated from the others in the status filters.
+* The archived item will be visually separated from the others in the state filters
 * Password and signup paths stop responding to extensions that don't match 
 * Management accounts that are not accessed within a certain amount of time will be disabled
 * Add format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
