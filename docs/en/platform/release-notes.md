@@ -121,7 +121,7 @@ search: true
 
 * Fix permission problems when accessing and editing forms
 
- <Badge text="Insights" type="insights" vertical="middle"/>
+<Badge text="Insights" type="insights" vertical="middle"/>
 
 * Fixes visual and metric issues in the graphs
 * Fix problems accessing the display of graphics
