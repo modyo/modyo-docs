@@ -258,7 +258,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fix unpublishing a content page when it doesn't have an associated space or type
+* Fixes unpublishing a content page when it doesn't have an associated space or type
 
  <Badge text="Customers" type="customers" vertical="middle"/>
 
