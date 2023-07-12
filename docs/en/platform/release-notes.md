@@ -800,7 +800,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.15 - April 14, 2021
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
 * A tool for resolving inconsistencies in secondary structure is added to the panel to maintain the order of the pages of the site.
 * An error when uploading very large images to the file manager is resolved.
