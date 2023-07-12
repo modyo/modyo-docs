@@ -746,7 +746,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * Multiple security improvements.
 * Newsletter with news.
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * The problem with the time zone of fields of type Date is fixed.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
