@@ -630,7 +630,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.43 - March 3, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Correction to content migrations in 9.1, to facilitate the transition from 8.2 to newer versions
 
 ### 9.1.42 - February 13, 2023
