@@ -214,7 +214,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
-* Testing period increased to 30 days
+* The trial period is increased to 30 days
 * validation of a user's downtime is added to the backoffice, configurable in the security section.
 * fixes problem with administrator password validation
 * New filter for disabled user been added.
