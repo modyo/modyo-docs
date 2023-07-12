@@ -194,7 +194,7 @@ search: true
 
 ### 9.2.28 - March 21, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 
