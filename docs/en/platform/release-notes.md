@@ -542,7 +542,7 @@ search: true
 * Attributes of the request drop do not consider the slug of the entry in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
-* Direct authentication in Realm with Google leads to 404 error
+* Direct authentication in Realm with Google leads to error 404
 * Implement Cybersource payment method 
 * Add tags in New Asset modal
 
