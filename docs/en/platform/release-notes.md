@@ -170,7 +170,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Fix permanent error in the asset manager
+* Fixes permanent error in the asset manager
 
 
 ### 9.2.30 - March 24, 2023
