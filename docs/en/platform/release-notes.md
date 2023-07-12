@@ -129,7 +129,7 @@ search: true
 
 ### 9.2.33 - May 5, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Improves visibility in the list of tags when they are very long
