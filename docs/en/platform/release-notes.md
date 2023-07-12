@@ -241,7 +241,7 @@ search: true
 * Allows you to delete archived widgets
 * Fix problems when archiving a widget
 * Page SEO improvements
-* Fix problems with the category selector
+* Fixes problems with the category selector
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
