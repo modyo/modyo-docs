@@ -135,7 +135,7 @@ search: true
 * Improves visibility in the list of tags when they are very long
 * New Getstared
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Content publishers can now publish in bulk from the list of entries
 
@@ -522,7 +522,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Service Worker experience improvements
 
