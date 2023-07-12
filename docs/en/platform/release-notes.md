@@ -840,7 +840,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 
 - Multiple bugs resolved.
-- Multiple navigation and usability improvements
+- Multiple navigation and usability improvements.
 - Multiple security enhancements.
 
 <Badge text="Content" type="content" vertical="middle"/>
