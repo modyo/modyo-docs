@@ -526,7 +526,7 @@ search: true
 
 * Service Worker experience improvements
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Collections can be referenced using brackets in the Liquid SDK
 
