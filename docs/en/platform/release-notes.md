@@ -284,7 +284,7 @@ search: true
 * The archived item will be visually separated from the others in the state filters
 * Password and signup paths stop responding to extensions that don't match 
 * Management accounts that are not accessed within a certain amount of time will be disabled
-* Add format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
+* Adds format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
 * The URLs of table views from the Modyo backend can be shared while maintaining the chosen filters 
 
  <Badge text="Content" type="content" vertical="middle"/>
