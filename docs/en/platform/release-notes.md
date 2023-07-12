@@ -789,7 +789,7 @@ search: true
 
 ### 9.1.16 - April 23, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bug fixes.
 * Multiple security enhancements.
 
