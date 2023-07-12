@@ -413,7 +413,7 @@ search: true
 
 * Fixes a problem when uploading some svgs to the asset manager
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Extends to the Notifications Management API to mark messages as read
 
@@ -425,7 +425,7 @@ search: true
 * Alternative_id is included in Index, Export, and Commerce Order Search
 
 
-### 9.2.14 - July 04, 2022
+### 9.2.14 - July 4, 2022
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
@@ -434,7 +434,7 @@ search: true
 
 ### 9.2.13 - June 28, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 * 404 is prevented in setup otp
