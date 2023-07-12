@@ -794,32 +794,32 @@ search: true
 * Multiple security improvements.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* Resolves an issue that caused the “Save” button on the page builder to not work properly.
-* Resolves an error when creating new sites where the “About Us” page was left without a selected layout.
+* An error that caused the page builder's “Save” button to not work properly has been resolved.
+* An error was resolved when creating new sites where the “About Us” page was left without a selected layout.
 
 ### 9.1.15 - April 14, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
-* Multiple bug fixes.
-* A tool for resolving inconsistencies in secondary structure is added to the panel to maintain the order of pages in the site.
-* Resolves an error when uploading very large images to the file manager.
-* Resolves a bug that caused the code editor to freeze against liquid-specific syntaxes.
+ <Badge text="Core" type="core" vertical="middle"/> 
+* Multiple bugs resolved.
+* A tool for resolving inconsistencies in secondary structure is added to the panel to maintain the order of the pages of the site.
+* An error when uploading very large images to the file manager is resolved.
+* A bug that caused the code editor to freeze due to liquid-specific syntaxes has been resolved.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
-* [New Liquid filters](/en/platform/channels/liquid-markup.html#standard-filters) are added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256, and base64_encod.
-* Page indexing is improved so that results that contain text of the referenced content can now be found on pages.
+ <Badge text="Channels" type="channels" vertical="middle"/> 
+* [new Liquid filters] (/es/platform/channels/liquid-markup.html #filtros -standard) are added that allow algorithms such as md5, sha1, sha256, hmac_sha1, hmac_sha256 and base64_encod to be used.
+* Page indexing has been improved so that you can now find results that contain text from the content referenced on the pages.
 
 ### 9.1.14 - April 1, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple bug fixes.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Resolves a bug where control of locks was lost in the template builder.
+ <Badge text="Channels" type="channels" vertical="middle"/> 
+* A bug in which control of locks was lost in the template builder was resolved.
 
 ### 9.1.13 - March 25, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 - Multiple bug fixes.
 - Multiple navigation and usability improvements
