@@ -512,7 +512,7 @@ search: true
 * Fixed problem with full URL of entries by default
 * Fixes escaped meta tags, breaks interpolation with Liquid
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * The use of reCAPTCHA for Realms is incorporated 
 
