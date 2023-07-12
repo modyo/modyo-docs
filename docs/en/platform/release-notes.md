@@ -760,8 +760,8 @@ search: true
 
 ### 9.1.21 - May 28, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
-* Fixed security issues
+ <Badge text="Core" type="core" vertical="middle"/> 
+* Security issues fixed
 
 ### 9.1.20 - May 27, 2021
 
