@@ -594,7 +594,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 <Badge text="Content" type="content" vertical="middle"/>Bug fixed with filter with 100 or more tags in the admin
 
 ### 9.2.1 - November 25, 2021
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * Asset Manager bug with file limit fixed
 * Improvements when copying entries from another locale
 * Category name and slug are added in the Entry drop and in the content API
