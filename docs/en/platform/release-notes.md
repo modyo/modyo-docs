@@ -379,7 +379,7 @@ search: true
 
 ### 9.2.17 - September 20, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * The visual consistency of permissions and roles is fixed
