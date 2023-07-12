@@ -748,8 +748,8 @@ search: true
  <Badge text="Content" type="content" vertical="middle"/> 
 * The problem with the time zone of fields of type Date is fixed.
 
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Restrictions are removed in email editor.
+ <Badge text="Customers" type="customers" vertical="middle"/> 
+* Restrictions in the email editor are removed.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Pages can now be deleted.
