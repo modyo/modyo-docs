@@ -401,7 +401,7 @@ search: true
 * Ruby is updated to the latest version (3.1)
 * Dependencies are updated
 * Product improvements
-* Security enhancements
+* Security improvements
 * Option to disable paths to sitemap.xml and robots.txt added
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
