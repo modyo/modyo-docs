@@ -150,7 +150,7 @@ search: true
 
 ### 9.2.32 - April 21, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 
