@@ -216,7 +216,7 @@ search: true
 * Security improvements
 * The trial period is increased to 30 days
 * validation of a user's downtime is added to the backoffice, configurable in the security section.
-* fixes problem with administrator password validation
+* Fixed problem with validating administrator passwords
 * New filter for disabled user been added.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
