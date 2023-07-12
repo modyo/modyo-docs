@@ -734,7 +734,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * An issue preventing items from being saved with the limited number of backup versions is fixed.
-* An error is fixed when copying pages that use widgets with variables.
+* Fixes bug when copying pages that use widgets with variables.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Raw emails are allowed to be sent through the messaging API.
