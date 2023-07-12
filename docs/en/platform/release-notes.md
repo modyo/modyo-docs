@@ -530,7 +530,7 @@ search: true
 
 * Collections can be referenced using brackets in the Liquid SDK
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Problem with sending campaigns is fixed
 
