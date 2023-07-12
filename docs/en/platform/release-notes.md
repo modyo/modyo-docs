@@ -577,8 +577,8 @@ search: true
 * Content Pages are incorporated
 * Problems with the preview bar are fixed
 
-<Badge text="Content" type="content" vertical="middle"/>
-* Improvements and fixes in Entries editor
+ <Badge text="Content" type="content" vertical="middle"/> 
+* Improvements and fixes in the Entries editor
 
  <Badge text="Core" type="core" vertical="middle"/> 
 * SCIM support for administrator users added
