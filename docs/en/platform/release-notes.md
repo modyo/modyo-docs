@@ -168,7 +168,7 @@ search: true
 * Security improvements
 * Password policies are added when creating new accounts
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 
 * Fixes permanent error in the asset manager
 
