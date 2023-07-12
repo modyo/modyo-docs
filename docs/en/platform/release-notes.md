@@ -145,7 +145,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Fix error when creating a new identity provider of the openid type specifying claims
+* Fixes error when creating a new identity provider of the openid type specifying claims
 
 
 ### 9.2.32 - April 21, 2023
