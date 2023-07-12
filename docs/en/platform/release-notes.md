@@ -127,7 +127,7 @@ search: true
 * Fix problems accessing the display of graphics
 
 
-### 9.2.33 - May 5, 2023
+### 9.2.33 - May 05, 2023
 
  <Badge text="Core" type="core" vertical="middle"/>
 
