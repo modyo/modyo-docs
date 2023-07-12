@@ -97,7 +97,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Improve the search in the list of orders.
+* Improves search in the list of orders.
 * Improvement in the edition of payment methods.
 
 
