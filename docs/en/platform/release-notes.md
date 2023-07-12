@@ -312,7 +312,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Dynamic content filtering is added in Liquid through URL parmas
 * The way you delete a stage changes, now it's done directly from the stage settings.
