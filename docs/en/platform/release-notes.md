@@ -743,9 +743,9 @@ search: true
 ### 9.1.23 - June 22, 2021
  <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple security improvements.
-* Newsletter with the latest news.
+* Newsletter with news.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 * Fixes issue with time zones in fields of type Date.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
