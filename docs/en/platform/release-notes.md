@@ -123,7 +123,7 @@ search: true
 
  <Badge text="Insights" type="insights" vertical="middle"/>
 
-* Fix visual and metric issues in the graphs
+* Fixes visual and metric issues in the graphs
 * Fix problems accessing the display of graphics
 
 
