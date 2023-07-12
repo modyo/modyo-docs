@@ -717,7 +717,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Redirect expired sessions are fixed.
-* Parent-child page order bug fixed.
+* Bug that prevented reversing parent-child page order has been fixed.
 
 
 ### 9.1.25 - August 9, 2021
