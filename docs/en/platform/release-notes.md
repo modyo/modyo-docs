@@ -542,7 +542,7 @@ search: true
 * Attributes of the request drop do not consider the slug of the entry in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
-* Direct authentication in Realm with Google leads to error 404
+* Direct authentication in Realm with Google leads to 404 error
 * Implement Cybersource payment method 
 * Add tags in New Asset modal
 
@@ -554,11 +554,11 @@ search: true
 * New transactional emails from the platform
 * Optional User Info in OIDC integration
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
-* Fixes drop entry.meta.url
+* Drop entry.meta.url is fixed
 * Fixes deletion of referenced entries
-* Improvements to the multiline editor
+* Improvements are made to the multiline editor
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
