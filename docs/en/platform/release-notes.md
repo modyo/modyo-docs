@@ -510,7 +510,7 @@ search: true
 
 * Fixed problem when publishing page tree with 3 levels
 * Fixed problem with full URL of entries by default
-* It fixes escaped meta tags, breaks interpolation with Liquid
+* Fixes escaped meta tags, breaks interpolation with Liquid
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
