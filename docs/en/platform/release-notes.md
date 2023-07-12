@@ -139,7 +139,7 @@ search: true
 
 * Content publishers can now publish in bulk from the list of entries
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Correct search engine in list of pages in list mode
 
