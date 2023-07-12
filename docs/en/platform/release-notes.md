@@ -829,8 +829,8 @@ search: true
  <Badge text="Content" type="content" vertical="middle"/> 
 * Dynamic filters are added for field values in the entry index.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Resolves a bug where site copy did not consider templates.
+ <Badge text="Channels" type="channels" vertical="middle"/> 
+* A bug where copying sites did not consider templates has been resolved.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Resolves a bug where the OIDC integration flow redirected to the user's profile and not to the site from which the flow started.
