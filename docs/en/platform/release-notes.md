@@ -58,7 +58,7 @@ search: true
 * Security improvements.
 * Add administrator permission validation to the endpoints of the API's swagger documentation.
 
- <Badge text="Channels" type="channels" vertical="middle"/>
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fixes the problem of empty differences after synchronizing stages.
 
