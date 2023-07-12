@@ -839,7 +839,7 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-- Multiple bug fixes.
+- Multiple bugs resolved.
 - Multiple navigation and usability improvements
 - Multiple security enhancements.
 
