@@ -459,7 +459,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * The link between the breadcrumbs with the scope of the stage is corrected
 * The overflow of the name column in the list of sites is corrected
@@ -484,7 +484,7 @@ search: true
 * Fixed error when updating the avatar of imported users with missing information
 * Administrator session expiration added
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Error fixed when synchronizing migrated content pages on sites with stages
 * The google tag manager ID is excluded when creating a new stage
