@@ -53,7 +53,7 @@ search: true
 
 
 ### 9.2.36 - June 19, 2023
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements.
 * Add administrator permission validation to the endpoints of the API's swagger documentation.
@@ -462,7 +462,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * The link between the breadcrumbs with the scope of the stage is corrected
-* Fixes the overflow of the name column in the list of sites
+* The overflow of the name column in the list of sites is corrected
 * The base template of the service worker is improved
 * The experience is improved when generating a manifest for the PWA 
 * The list of unchanged differences after the creation of a stage is corrected
