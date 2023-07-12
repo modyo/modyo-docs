@@ -260,7 +260,7 @@ search: true
 
 * Fix unpublishing a content page when it doesn't have an associated space or type
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Parameter accepted <span v-pre> {{order.uuid}} </span> in the redirect_url field when creating a Payments order
 
