@@ -299,7 +299,7 @@ search: true
 * Fix stages duplication in the selector in the site list 
 
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Add Zendesk Integration
 * Implement password security policy for kingdoms 
