@@ -704,7 +704,7 @@ search: true
 ### 9.1.27 - August 27, 2021
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Double creation of access tokens fixed.
+* Double sending is fixed when creating access tokens.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Reset page error fixed.
