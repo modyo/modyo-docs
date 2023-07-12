@@ -794,7 +794,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * Multiple bugs resolved.
 * Multiple security improvements.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * An error that caused the page builder's “Save” button to not work properly has been resolved.
 * An error was resolved when creating new sites where the “About Us” page was left without a selected layout.
 
