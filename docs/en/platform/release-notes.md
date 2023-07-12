@@ -448,7 +448,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Fixes sort filter that failed when sorting entries by text fields
+* Sort filter that failed when sorting entries by text fields is fixed
 * Fixed problem with multiline field, which was left with one character when all text was deleted
 * Error corrected when selecting entries in the content list, where only those selected were added to the current page
 
