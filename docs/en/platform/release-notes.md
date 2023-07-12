@@ -365,7 +365,7 @@ search: true
 
 * A link is added to the liquid reference of an asset for editing.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Improvements to the OAuth2 flow
 * OAuth2 client configuration view added
