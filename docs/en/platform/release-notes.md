@@ -219,7 +219,7 @@ search: true
 * Fixed problem with validating administrator passwords
 * New filter added for disabled users
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * new minimal with Boostrap 5 for new sites
 
