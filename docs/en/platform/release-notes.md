@@ -32,7 +32,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Adds configuration for a post-login home page. After successfully logging into the Realm, you will be redirected to this page.
+* Add configuration for a post-login home page. After a successful login to the kingdom, you will be redirected to this page.
 
 
 ### 9.2.37 - June 30, 2023
@@ -270,7 +270,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Performance improvements when loading widget indexes
+* Performance improvements when loading widget index
 * Allows you to create a new stage with the same name as one that is in the process of being eliminated.
 
 
@@ -379,7 +379,7 @@ search: true
 
 ### 9.2.17 - September 20, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 * The visual consistency of permissions and roles is fixed
