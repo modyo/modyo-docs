@@ -470,7 +470,7 @@ search: true
 
 ### 9.2.11 - May 27, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 
