@@ -646,7 +646,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Bug fixed with cache in snippet preview
-* Fixes site language validation
+* Site language validation is fixed
 
 ### 9.1.34 - November 19, 2021
 
