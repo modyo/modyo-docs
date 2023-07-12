@@ -248,7 +248,7 @@ search: true
 * Add the new excerpt field to the meta of an entry
 * Fixes problems when editing a richtext field
 
- <Badge text="Customers" type="customers" vertical="middle"/>
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Sending welcome emails is optional on public forms
 * Fixes problems when editing a segment
