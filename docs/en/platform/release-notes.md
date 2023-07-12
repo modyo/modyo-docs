@@ -268,7 +268,7 @@ search: true
 ### 9.2.24 - January 20, 2023
 
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Performance improvements when loading widget index
 * Allows you to create a new stage with the same name as one that is in the process of being deleted
