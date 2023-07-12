@@ -291,7 +291,7 @@ search: true
 
 * Fix error that prevented approving users with the default user and admin roles in a space 
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Add site timezone to site drop
 * Add liquid drops for answered forms
@@ -314,7 +314,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Adds dynamic filtering of content in liquid through url params
+* Dynamic content filtering is added in Liquid through URL parmas
 * The way you delete a stage changes, now it's done directly from the stage settings.
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
@@ -352,7 +352,7 @@ search: true
 
 ### 9.2.18 - October 07, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 * Updating dependencies
