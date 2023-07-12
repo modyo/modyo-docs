@@ -518,7 +518,7 @@ search: true
 
 
 ### 9.2.8 - April 8, 2022
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 
