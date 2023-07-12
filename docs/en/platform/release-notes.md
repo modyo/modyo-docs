@@ -317,7 +317,7 @@ search: true
 * Dynamic content filtering is added in Liquid through URL parmas
 * The way you delete a stage changes, now it's done directly from the stage settings.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * The automatic forms and the form view are removed, now only the form snippet is available
 
