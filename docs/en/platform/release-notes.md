@@ -345,7 +345,7 @@ search: true
 
 * Forala license update
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * OAuth flow is reversed with refresh token.
 
