@@ -832,8 +832,8 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * A bug where copying sites did not consider templates has been resolved.
 
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Resolves a bug where the OIDC integration flow redirected to the user's profile and not to the site from which the flow started.
+ <Badge text="Customers" type="customers" vertical="middle"/> 
+* A bug was resolved in which the integration flow with OIDC redirected to the user's profile and not to the site from where the flow started.
 
 ### 9.1.12 - March 19, 2021
 
