@@ -772,12 +772,12 @@ search: true
 ### 9.1.19 - May 19, 2021
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Multiple bug fixes.
+* Multiple bugs resolved.
 
 ### 9.1.18 - May 18, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple security enhancements.
+* Multiple security improvements.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Page tree is reimplemented
