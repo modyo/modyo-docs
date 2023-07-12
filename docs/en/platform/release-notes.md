@@ -409,7 +409,7 @@ search: true
 * The jquery.min.js fault when loading the widget manager is fixed
 * Publishing inconsistency is fixed when team review is enabled
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * A problem when uploading some svgs to the asset manager is fixed
 
