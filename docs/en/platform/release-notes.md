@@ -733,7 +733,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
  <Badge text="Core" type="core" vertical="middle"/> 
 * jQuery versions of the platform are updated.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * An issue preventing items from being saved with the limited number of backup versions is fixed.
 * An error is fixed when copying pages that use widgets with variables.
 
