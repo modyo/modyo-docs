@@ -610,7 +610,7 @@ search: true
 
 ### 9.2.0 - November 15, 2021
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Security Headers Management
 * New minimal theme
 * Navigation Builders
