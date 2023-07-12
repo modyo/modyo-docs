@@ -41,7 +41,7 @@ search: true
 * Security improvements.
 * Improvements in the configuration of expiration and inactivity policies.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Add configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
 
