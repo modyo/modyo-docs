@@ -580,11 +580,11 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 * Improvements and fixes in Entries editor
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * SCIM support for administrator users added
 
 ### 9.2.4 - December 30, 2021
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Fixes problem that contaminated the cache when performing previews
 
 ### 9.2.2 - December 1, 2021
