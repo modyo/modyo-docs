@@ -554,7 +554,7 @@ search: true
 * New transactional emails from the platform
 * Optional User Info in OIDC integration
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 
 * Drop entry.meta.url is fixed
 * Deleting linked entries is fixed
