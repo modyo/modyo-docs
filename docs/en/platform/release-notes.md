@@ -691,7 +691,7 @@ search: true
 ### 9.1.29 - September 9, 2021
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Fixes error with invalid user access token.
+* Error with invalid user access token is fixed.
 
 ### 9.1.28 - September 1, 2021
 
