@@ -427,7 +427,7 @@ search: true
 
 ### 9.2.14 - July 4, 2022
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Access token authorizations are fixed in multi-site kingdoms
 
