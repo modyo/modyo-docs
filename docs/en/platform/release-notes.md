@@ -549,7 +549,7 @@ search: true
 
 ### 9.2.6 - February 22, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * New transactional emails from the platform
 * Optional User Info in OIDC integration
