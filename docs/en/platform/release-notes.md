@@ -742,7 +742,7 @@ search: true
 
 ### 9.1.23 - June 22, 2021
  <Badge text="Core" type="core" vertical="middle"/> 
-* Multiple security enhancements.
+* Multiple security improvements.
 * Newsletter with the latest news.
 
 <Badge text="Content" type="content" vertical="middle"/>
