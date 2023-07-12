@@ -661,9 +661,9 @@ search: true
 ### 9.1.33 - November 5, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Call to discovery service is prevented in OIDC callback
+* Discovery service call is prevented in OIDC callback
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 * Fixes bug that prevented filtering entries by more than 100 tags in admin
 
 ### 9.1.32 - October 28, 2021
