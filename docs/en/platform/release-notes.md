@@ -722,7 +722,7 @@ search: true
 
 ### 9.1.25 - August 9, 2021
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Performance issues fix
 * Fixes issue with widget preview cache and content views.
 * Fixes an error with status code when importing redirects.
