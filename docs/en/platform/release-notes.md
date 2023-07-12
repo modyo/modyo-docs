@@ -258,7 +258,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrects unpublishing of content page when it does not have a space or type associated with it
+* Fix unpublishing a content page when it doesn't have an associated space or type
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
@@ -518,7 +518,7 @@ search: true
 
 
 ### 9.2.8 - April 8, 2022
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 
