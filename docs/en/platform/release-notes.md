@@ -752,7 +752,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
  <Badge text="Customers" type="customers" vertical="middle"/> 
 * Restrictions in the email editor are removed.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Pages can now be deleted.
 
 ### 9.1.22 - June 10, 2021
