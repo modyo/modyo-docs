@@ -230,7 +230,7 @@ search: true
 
 ### 9.2.26 - February 20, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Add application access selector to user groups
