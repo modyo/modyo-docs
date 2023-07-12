@@ -560,7 +560,7 @@ search: true
 * Deleting linked entries is fixed
 * Improvements are made to the multiline editor
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Problem when changing a site's realm is fixed
 * Problem fixed with campaign editor
