@@ -420,7 +420,7 @@ search: true
 
 ### 9.2.15 - July 27, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Alternative_id is included in Index, Export, and Commerce Order Search
 
