@@ -685,12 +685,12 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Improvements to Transverse Security Headers
 
-<Badge text="Customers" type="customers" vertical="middle"/>
-* Fixes email validation.
+ <Badge text="Customers" type="customers" vertical="middle"/> 
+* Email validation is fixed.
 
 ### 9.1.29 - September 9, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Fixes error with invalid user access token.
 
 ### 9.1.28 - September 1, 2021
