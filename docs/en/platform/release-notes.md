@@ -143,7 +143,7 @@ search: true
 
 * Correct search engine in list of pages in list mode
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Fixes error when creating a new identity provider of the openid type specifying claims
 
