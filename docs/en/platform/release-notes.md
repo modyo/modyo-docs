@@ -723,8 +723,8 @@ search: true
 ### 9.1.25 - August 9, 2021
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* Performance issues fix
-* Fixes issue with widget preview cache and content views.
+* Performance issues fixed
+* Problem with widget preview caching and content views is fixed.
 * Fixes an error with status code when importing redirects.
 
 ### 9.1.24 - July 14, 2021
