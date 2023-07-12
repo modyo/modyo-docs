@@ -287,7 +287,7 @@ search: true
 * Add format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
 * The URLs of table views from the Modyo backend can be shared while maintaining the chosen filters 
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Fix error that prevented approving users with the default user and admin roles in a space 
 
