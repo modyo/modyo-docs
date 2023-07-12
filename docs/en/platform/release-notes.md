@@ -605,7 +605,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 * Security improvements
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 * Improvements to the campaign editor
 
 ### 9.2.0 - November 15, 2021
@@ -617,7 +617,7 @@ search: true
 * Site stages
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
-* User Realms
+* User kingdoms
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Team member groups
