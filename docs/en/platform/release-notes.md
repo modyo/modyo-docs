@@ -707,8 +707,8 @@ search: true
 * Double sending is fixed when creating access tokens.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* Reset page error fixed.
-* Prevention of cookies creation in public sites.
+* Error with page reset is fixed.
+* The generation of cookies for public sites is prevented.
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Bulk unpublishing, archiving, and deleting of entries issue fixed
