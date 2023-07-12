@@ -623,7 +623,7 @@ search: true
 * Team member groups
 * Multiple full admins
 * “Get started” landing page
-* Froala editor
+* Publisher: Froala
 
 ## 9.1
 
