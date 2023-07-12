@@ -276,7 +276,7 @@ search: true
 
 ### 9.2.23 - January 19, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Log Separation
