@@ -11,7 +11,7 @@ search: true
 
 * You are asked to enter a password before deleting a user account
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Error fixed in the OAuth2 flow
 
