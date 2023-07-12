@@ -156,7 +156,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Changes the allowed asset sizes to 6MB for images and 10MB for other types of files
+* Change the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
 * Fix problems when replacing images with SVG extension
 * Fix problems when displaying a logo in SVG
 
