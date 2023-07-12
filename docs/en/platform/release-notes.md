@@ -16,7 +16,7 @@ search: true
 * Error fixed in the OAuth2 flow
 
 ### 9.2.38 - July 7, 2023
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements.
 * Improves the information shown in the activity logs
@@ -221,7 +221,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* new minimal with boostrap 5 for new sites
+* new minimal with Boostrap 5 for new sites
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
@@ -246,7 +246,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Adds new excerpt field to the meta of an entry
-* Fixes problems when editing a field of type richtext
+* Fix problems when editing a richtext field
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
@@ -357,7 +357,7 @@ search: true
 * Security enhancements
 * Updating dependencies
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Page list view and the possibility to switch between table and list view are added.
 
