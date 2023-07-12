@@ -443,7 +443,7 @@ search: true
 
 * Bug fixed in the initial editing of duplicate widgets on a Widget Page
 * Flag added for enabling categories in path for content pages 
-* The deployment of the Targets option in Pages is fixed
+* Fixed deployment of Targets option in Pages
 * Corrects problem when deleting favicon and apple icons from a site, which affected their copies
 
  <Badge text="Content" type="content" vertical="middle"/>
