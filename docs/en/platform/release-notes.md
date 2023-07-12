@@ -620,7 +620,7 @@ search: true
 * User kingdoms
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Team member groups
+* Team Member Groups
 * Multiple full admins
 * “Get started” landing page
 * Publisher: Froala
