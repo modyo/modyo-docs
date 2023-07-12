@@ -6,50 +6,59 @@ search: true
 
 ## 9.2
 
+### 9.2.39 - July 11, 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* You are asked to enter a password before deleting a user account
+
+ <Badge text="Core" type="core" vertical="middle"/> 
+
+* Error fixed in the OAuth2 flow
+
 ### 9.2.38 - July 07, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
-* Improves information shown in the activity logs
+* Improves the information shown in the activity logs
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Fixes issues with accessing security header editing.
+* Fix problems accessing the security headers edition
 * Adds viewer role to team members. This role permits viewing of items to be synchronized or included in a release.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Add the viewer role to team members.
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Adds configuration for a post-login home page. After successfully logging into the Realm, you will be redirected to this page.
 
 
 ### 9.2.37 - June 30, 2023
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements.
-* Improvements to the configuration of expiration and inactivity policies.
+* Improvements in the configuration of expiration and inactivity policies.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Adds configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrects problem when reading a notification in the profile, it is now correctly marked as read.
-* Adds a new parameter (redirect_to) to the login URL of a site to redirect to a specific view or to a site within the organization.
-* Email campaigns are modified; for new mailings, multiple mailings are replaced by campaign cloning, to simplify management.
+* Corrects problem when reading a notification in the profile, now it is correctly marked as read.
+* Add a new parameter (redirect_to) to the login URL of a site to redirect to a particular view or to a site within the organization.
+* Email campaigns are modified, multiple mailings are replaced by campaign cloning for new mailings for greater simplicity in their management.
 
 
 ### 9.2.36 - June 19, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
-* Adds validation of administrator permissions to the Swagger API documentation endpoints.
+* Add administrator permission validation to the endpoints of the API's swagger documentation.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Corrects the problem of empty differences after synchronizing stages.
 
@@ -60,9 +69,9 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* The default email sender field in the realm settings is now correctly validated, also, it cannot be empty. 
+* The defaul email sender field in the realm settings is successfully validated, now it can't be empty either. 
 
-<Badge text="Insights" type="insights" vertical="middle"/>
+ <Badge text="Insights" type="insights" vertical="middle"/> 
 
 * Corrects the initial value of the date filter, it now shows the selected range correctly.
 
@@ -71,24 +80,24 @@ search: true
 ### 9.2.35 - May 30, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
-* Corrects the user group in the permission system.
+* Security improvements
+* Correct the permission system for user groups.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Improves the reference of widgets between stages, now it is not necessary to create the widget in other stages through synchronization.
+* Improves the widget reference between stages, now it is not necessary to create the widget in other stages through synchronization.
 * Fixes search problems in sites that have words with tildes.
-* Corrects differences in pages, option of delegated routes is now displayed.
+* Correct differences in pages, the delegated paths option is now displayed.
 * Adds a login button when previewing a widget.
-* The differences between large widgets or widgets from the CLI are limited. Widgets now display an informational message if there are differences.
+* The differences between large widgets or widgets coming from the CLI are limited. They now show an informational message if there are differences.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Adds option to enable/disable the use of SVG images
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Improves search in the order list.
+* Improve the search in the list of orders.
 * Improvement to editing of payment methods.
 
 
@@ -97,71 +106,71 @@ search: true
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Improvements in the display of tags in the selector when the values are very long
+* Improvements in the display of tags in the selector when the values are too long
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Improvements in site search, categories are now considered in links generated to content pages
-* Fixes a bug that prevented unpublishing pages from having no dependencies in a stages context
+* Improvements in site search, categories are now considered in the links generated to content pages
+* Fix bug that prevented unpublishing pages without having dependencies in a context with stages
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
-* Adds release date to metadata of content
+* Add unpublication date to the metadata of a content
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Fixes permission issues when accessing and editing forms
+* Fix permission problems when accessing and editing forms
 
-<Badge text="Insights" type="insights" vertical="middle"/>
+ <Badge text="Insights" type="insights" vertical="middle"/> 
 
 * Corrects visual and metric problems in graphics
-* Corrects problems with accessing the display of graphics
+* Fix problems accessing the display of graphics
 
 
-### 9.2.33 - May 05, 2023
+### 9.2.33 - May 5, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
-* Improves visibility in tags lists when they are very long
+* Security improvements
+* Improves visibility in the list of tags when they are very long
 * New Getstared
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
-* Content publishers can now publish in bulk from the post list
+* Content publishers can now publish in bulk from the list of entries
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Corrects search engine in list of pages in list mode
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixed error when creating a new openid type identity provider by specifying claims
+* Fix error when creating a new identity provider of the openid type specifying claims
 
 
 ### 9.2.32 - April 21, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
+* Security improvements
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Changes the allowed asset sizes to 6MB for images and 10MB for other types of files
-* Fixes problems when replacing images with SVG extension
-* Fixes problems when displaying a logo in SVG
+* Fix problems when replacing images with SVG extension
+* Fix problems when displaying a logo in SVG
 
 
-### 9.2.31 - April 06, 2023
+### 9.2.31 - April 6, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
-* Adds password policy when creating new accounts
+* Security improvements
+* Password policies are added when creating new accounts
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fixes permanent error in asset manager
+* Fix permanent error in the asset manager
 
 
 ### 9.2.30 - March 24, 2023
@@ -179,34 +188,34 @@ search: true
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
-* Corrects slowness when loading orders in the index, which was caused when there were a large number of them.
+* Security improvements
+* Corrects slow loading of orders into the index, which was caused when there are a large number of orders.
 
 
 ### 9.2.28 - March 21, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
+* Security improvements
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Corrects the removal of widgets coming from the CLI
-* Adds modal to name a new cloned widget
+* Fix the delete of widgets coming from the CLI
+* Add modal to name a new cloned widget
 * Fixes problem when modifying variables in widgets
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrects administrator permissions in realms
+* Fix administrator permissions in Realms
 
 
 ### 9.2.27 - March 10, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security enhancements
 * Testing period increased to 30 days
-* user inactivity time validation has been added in backoffice, configurable in the security section.
+* validation of a user's downtime is added to the backoffice, configurable in the security section.
 * fixes problem with administrator password validation
 * New filter for disabled user been added.
 
@@ -216,33 +225,33 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* New overview view of a space has been added.
+* New overview view of a space is added
 
 
 ### 9.2.26 - February 20, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
-* Adds application access selector to user groups
+* Security improvements
+* Add application access selector to user groups
 * Forced password change for new administrator users
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Allows deletion of archived widgets
-* Corrects problems caused when archiving a widget
-* On-page SEO improvements
-* Fixes problems with category selector
+* Fix problems when archiving a widget
+* Page SEO improvements
+* Fix problems with the category selector
 
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Adds new excerpt field to the meta of an entry
 * Fixes problems when editing a field of type richtext
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Sending a welcome email is optional on public forms.
-* Corrects problems when editing a segment
+* Fix problems when editing a segment
 
 
 ### 9.2.25 - January 25, 2023
@@ -251,15 +260,15 @@ search: true
 
 * Corrects unpublishing of content page when it does not have a space or type associated with it
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* The <span v-pre>{{order.uuid}}</span> parameter is accepted in the redirect_url field when creating a Payments order.
+* Parameter accepted <span v-pre> {{order.uuid}} </span> in the redirect_url field when creating a Payments order
 
 
 ### 9.2.24 - January 20, 2023
 
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Performance improvements when loading widget indexes
 * Allows you to create a new stage with the same name as one that is in the process of being eliminated.
@@ -267,34 +276,34 @@ search: true
 
 ### 9.2.23 - January 19, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
+* Security improvements
 * Logs separation
-* Fixes "Review" button in Team Review emails
+* Fix “Review” button in Team Review emails
 * The archived item will be visually separated from the others in the status filters.
-* Password and signup routes stop responding to mismatched extensions 
-* Administration accounts that are not accessed within a certain period of time will be disabled.
-* Adds format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
-* Modyo backend table view URLs can be shared while maintaining the chosen filters 
+* Password and signup paths stop responding to extensions that don't match 
+* Management accounts that are not accessed within a certain amount of time will be disabled
+* Add format validation for MODYO_PAPERCLIP_FOG_CREDENTIALS
+* The URLs of table views from the Modyo backend can be shared while maintaining the chosen filters 
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Fixes bug that prevented approval of user with default user and admin role of a space 
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Adds site timezone to site drop
+* Add site timezone to site drop
 * Adds liquid drops for answered forms
-* Adds liquid drop for forms answered by users of a realm
-* Corrects duplication stages in site list selector 
+* Liquid drop is added for forms answered by users in a kingdom
+* Fix stages duplication in the selector in the site list 
 
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Adds Zendesk Integration
 * Implements password security policy for realms 
-* Payments are migrated to Realm level
+* Payments are migrated at the Kingdom level
 
 
 ### 9.2.22 - December 09, 2022
@@ -303,30 +312,30 @@ search: true
 
 * Security enhancements
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Adds dynamic filtering of content in liquid through url params
-* The way to delete a stage has changed, now it is done directly from the stage settings.
+* The way you delete a stage changes, now it's done directly from the stage settings.
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Automatic forms and form view are removed, now only the form snippet is available.
+* The automatic forms and the form view are removed, now only the form snippet is available
 
 
 ### 9.2.21 - November 07, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
+* Security improvements
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Support for sites with domains without SSL is removed.
 
 
 ### 9.2.20 - October 27, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Maintenance for pre-production environments
 
@@ -336,7 +345,7 @@ search: true
 
 * Froala license update
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * OAuth flow is reversed with refresh token.
 
@@ -346,11 +355,11 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security enhancements
-* Dependency update
+* Updating dependencies
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Page list view and the ability to switch between table and list view are added.
+* Page list view and the possibility to switch between table and list view are added.
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -360,26 +369,26 @@ search: true
 
 * Improvements to the OAuth2 flow
 * OAuth2 client configuration view added
-* Overview view is added with information about actions and information about a realm
-* Bulk user import is eliminated
+* Overview view is added with action information and information from a realm
+* Mass importing of users is eliminated
 
-<Badge text="Insights" type="insights" vertical="middle"/>
+ <Badge text="Insights" type="insights" vertical="middle"/> 
 
-* The “Data Studio” view is deleted
+* The 'Data Studio' view is deleted
 
 
 ### 9.2.17 - September 20, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
-* Visual consistency of permissions and roles fixed
+* Security improvements
+* The visual consistency of permissions and roles is fixed
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Identifier added to search in the space list
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * User export is fixed
 
@@ -390,78 +399,78 @@ search: true
 
 * The framework is updated to the latest version (7.0.2)
 * Ruby is updated to the latest version (3.1)
-* Dependencies updates
-* Product Improvements
+* Dependencies are updated
+* Product improvements
 * Security enhancements
-* Adds option to disable routes to sitemap.xml and robots.txt
+* Option to disable paths to sitemap.xml and robots.txt added
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* The missing jquery.min.js is fixed when loading the widget manager
+* The jquery.min.js fault when loading the widget manager is fixed
 * Publication inconsistency is fixed when team review is enabled
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Fixes a problem when uploading some svgs to the asset manager
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Extends to the Notifications Administrative API to mark messages as read
+* Extends to the Notifications Management API to mark messages as read
 
 
 ### 9.2.15 - July 27, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Alternative_id included in Commerce index, export, and order search
+* Alternative_id is included in Index, Export, and Commerce Order Search
 
 
 ### 9.2.14 - July 04, 2022
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Fixes access token authorizations in multi-site realms
+* Access token authorizations are fixed in multi-site kingdoms
 
 
 ### 9.2.13 - June 28, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
+* Security improvements
 * 404 is prevented in setup otp
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Fixes bug in the initial edition of duplicate widgets on a Widget Page
+* Bug fixed in the initial editing of duplicate widgets on a Widget Page
 * Adds flag for enabling categories in path for content pages 
-* Fixes deployment of Targets option in Pages
-* Fixes problem when removing favicon and apple icon from a site, which affected their copies
+* The deployment of the Targets option in Pages is fixed
+* Corrects problem when deleting favicon and apple icons from a site, which affected their copies
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Fixes sort filter that failed when sorting entries by text fields
-* Fixes problem with multiline field, which was left with one character when deleting all text
-* Corrects error when selecting entries in the content list, where only those selected on the current page were added
+* Fixed problem with multiline field, which was left with one character when all text was deleted
+* Error corrected when selecting entries in the content list, where only those selected were added to the current page
 
 
-### 9.2.12 - June 06, 2022
+### 9.2.12 - June 6, 2022
 
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security enhancements
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Fixes the link of the breadcrumbs with the scope of the stage
 * Fixes the overflow of the name column in the list of sites
 * The service worker base template has been improved
-* Improved experience by generating a manifest for the PWA 
-* Fixes list of unchanged differences after stage creation
+* The experience is improved when generating a manifest for the PWA 
+* The list of unchanged differences after the creation of a stage is corrected
 
 
 ### 9.2.11 - May 27, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security enhancements
 
@@ -470,42 +479,42 @@ search: true
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security enhancements
+* Security improvements
 * ReCAPTCHA is added for admin users
-* Fixes bug when updating avatar of imported users with missing information
-* Admin session expiration is added
+* An error is fixed when updating the avatar of imported users with missing information
+* Administrator session expiration added
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Fixes error when synchronizing migrated content pages on sites with stages
-* Google tag manager ID is excluded when creating a new stage
+* The google tag manager ID is excluded when creating a new stage
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Correct links to documentation in segments
+* Links to documentation in segments are corrected
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Liquid support is added in text fields when creating content
 
 
 ### 9.2.9 - May 03, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security enhancements
-* Application level error 500 is handled when using invalid HTTP verbs
-* Parameter for tolerance in seconds for access token (OIDC access token clock skew)
+* Error 500 is controlled at the application level when using invalid HTTP verbs
+* The parameter for tolerance in seconds for access token (OIDC access token clock skew)
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fixes issue when publishing page tree with 3 levels
-* Fixes problem with full url of entries by default
-* Fixes escaping meta tags breaks interpolation with Liquid
+* Fixed problem with full URL of entries by default
+* It fixes escaped meta tags, breaks interpolation with Liquid
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Adds reCAPTCHA for Realms
+* The use of reCAPTCHA for Realms is incorporated 
 
 
 ### 9.2.8 - April 8, 2022
@@ -513,24 +522,24 @@ search: true
 
 * Security enhancements
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Enhancements in Service Worker experience
+* Service Worker experience improvements
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Collections can be referenced using brackets in Liquid SDK
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixes problem with sending campaigns
+* Problem with sending campaigns is fixed
 
 ### 9.2.7 - March 10, 2022
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Update LiquidJS version
 * Update category names are not reflected in entries
-* Attributes of the request drop does not consider the entry slug in content pages
+* Attributes of the request drop do not consider the slug of the entry in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
 * Direct authentication in Realm with Google leads to error 404
