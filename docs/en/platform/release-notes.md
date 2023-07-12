@@ -88,7 +88,7 @@ search: true
 * Improves the widget reference between stages, now it is not necessary to create the widget in other stages through synchronization.
 * Fixes search problems in sites that have words with tildes.
 * Correct differences in pages, the delegated paths option is now displayed.
-* Adds a login button when previewing a widget.
+* Add login button when previewing a widget.
 * The differences between large widgets or widgets coming from the CLI are limited. They now show an informational message if there are differences.
 
  <Badge text="Content" type="content" vertical="middle"/> 
