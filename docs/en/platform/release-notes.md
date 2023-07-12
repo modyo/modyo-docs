@@ -36,7 +36,7 @@ search: true
 
 
 ### 9.2.37 - June 30, 2023
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
 * Improvements in the configuration of expiration and inactivity policies.
@@ -71,7 +71,7 @@ search: true
 
 * The defaul email sender field in the realm settings is successfully validated, now it can't be empty either. 
 
- <Badge text="Insights" type="insights" vertical="middle"/> 
+ <Badge text="Insights" type="insights" vertical="middle"/>
 
 * Corrects the initial value of the date filter, now it shows the selected range correctly.
 
