@@ -361,7 +361,7 @@ search: true
 
 * Page list view and the possibility to switch between table and list view are added.
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 
 * A link is added to the liquid reference of an asset for editing.
 
