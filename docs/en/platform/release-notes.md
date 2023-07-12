@@ -194,7 +194,7 @@ search: true
 
 ### 9.2.28 - March 21, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 
@@ -486,7 +486,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Fixes error when synchronizing migrated content pages on sites with stages
+* Error fixed when synchronizing migrated content pages on sites with stages
 * The google tag manager ID is excluded when creating a new stage
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
