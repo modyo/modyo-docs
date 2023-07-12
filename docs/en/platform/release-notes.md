@@ -644,7 +644,7 @@ search: true
 
 ### 9.1.35 - December 29, 2021
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Fixes bug with cache in snippet preview
 * Fixes site language validation
 
