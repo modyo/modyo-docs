@@ -91,7 +91,7 @@ search: true
 * Add login button when previewing a widget.
 * The differences between large widgets or widgets coming from the CLI are limited. They now show an informational message if there are differences.
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Add option to enable/disable the use of SVG images
 
