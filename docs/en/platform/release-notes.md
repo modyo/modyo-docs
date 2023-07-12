@@ -404,7 +404,7 @@ search: true
 * Security improvements
 * Option to disable paths to sitemap.xml and robots.txt added
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * The jquery.min.js fault when loading the widget manager is fixed
 * Publishing inconsistency is fixed when team review is enabled
