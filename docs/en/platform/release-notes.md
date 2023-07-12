@@ -217,7 +217,7 @@ search: true
 * The trial period is increased to 30 days
 * validation of a user's downtime is added to the backoffice, configurable in the security section.
 * Fixed problem with validating administrator passwords
-* New filter for disabled user been added.
+* New filter added for disabled users
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
@@ -361,7 +361,7 @@ search: true
 
 * Page list view and the possibility to switch between table and list view are added.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * A link is added to the liquid reference of an asset for editing.
 
