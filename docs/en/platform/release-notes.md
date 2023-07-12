@@ -204,7 +204,7 @@ search: true
 * Add modal to name a new cloned widget
 * Fix problem when modifying variables in widgets
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Fix administrator permissions in Realms
 
@@ -538,7 +538,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 
 * Update LiquidJS version
-* Update category names are not reflected in entries
+* Updating category names is not reflected in entries
 * Attributes of the request drop do not consider the slug of the entry in content pages
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
