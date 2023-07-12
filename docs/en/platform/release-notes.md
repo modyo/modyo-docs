@@ -664,11 +664,11 @@ search: true
 * Discovery service call is prevented in OIDC callback
 
  <Badge text="Content" type="content" vertical="middle"/> 
-* Fixes bug that prevented filtering entries by more than 100 tags in admin
+* Bug that prevented filtering entries by more than 100 tags in the admin has been fixed
 
 ### 9.1.32 - October 28, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * AppShell OAuth 2.0 provider
 
 <Badge text="Channels" type="channels" vertical="middle"/>
