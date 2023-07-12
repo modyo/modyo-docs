@@ -794,7 +794,7 @@ search: true
 * Multiple security improvements.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* An error that caused the page builder's “Save” button to not work properly has been resolved.
+* Resolves an issue that caused the “Save” button on the page builder to not work properly.
 * Resolves an error when creating new sites where the “About Us” page was left without a selected layout.
 
 ### 9.1.15 - April 14, 2021
