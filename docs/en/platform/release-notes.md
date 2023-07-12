@@ -696,7 +696,7 @@ search: true
 ### 9.1.28 - September 1, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Multiple improvements to Security Headers.
+* Multiple enhancements to Security Headers.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Additional liquid tags are allowed.
