@@ -446,7 +446,7 @@ search: true
 * The deployment of the Targets option in Pages is fixed
 * Corrects problem when deleting favicon and apple icons from a site, which affected their copies
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Sort filter that failed when sorting entries by text fields is fixed
 * Fixed problem with multiline field, which was left with one character when all text was deleted
