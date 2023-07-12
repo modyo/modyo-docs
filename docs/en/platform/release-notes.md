@@ -741,7 +741,7 @@ search: true
 * Problems when exporting form responses are fixed.
 
 ### 9.1.23 - June 22, 2021
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple security enhancements.
 * Newsletter with the latest news.
 
