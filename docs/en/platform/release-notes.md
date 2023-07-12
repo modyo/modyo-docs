@@ -45,7 +45,7 @@ search: true
 
 * Add configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Corrects problem when reading a notification in the profile, now it is correctly marked as read.
 * Add a new parameter (redirect_to) to the login URL of a site to redirect to a particular view or to a site within the organization.
@@ -530,7 +530,7 @@ search: true
 
 * Collections can be referenced using brackets in the Liquid SDK
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Problem with sending campaigns is fixed
 
