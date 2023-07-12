@@ -73,7 +73,7 @@ search: true
 
  <Badge text="Insights" type="insights" vertical="middle"/> 
 
-* Corrects the initial value of the date filter, it now shows the selected range correctly.
+* Corrects the initial value of the date filter, now it shows the selected range correctly.
 
 
 
@@ -302,7 +302,7 @@ search: true
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Adds Zendesk Integration
-* Implements password security policy for realms 
+* Implement password security policy for kingdoms 
 * Payments are migrated at the Kingdom level
 
 
