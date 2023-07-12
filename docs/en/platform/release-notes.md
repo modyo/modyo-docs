@@ -78,7 +78,7 @@ search: true
 
 
 ### 9.2.35 - May 30, 2023
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 * Correct the permission system for user groups.
@@ -168,7 +168,7 @@ search: true
 * Security improvements
 * Password policies are added when creating new accounts
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 
 * Fix permanent error in the asset manager
 
