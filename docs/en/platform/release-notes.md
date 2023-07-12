@@ -562,7 +562,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Problem when changing a site's realm is fixed
+* Fixes problem when changing realm of a site
 * Fixed issue with campaign editor
 * Fixes problem in accounts with default site and without realm
 
