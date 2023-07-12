@@ -71,7 +71,7 @@ search: true
 
 * The defaul email sender field in the realm settings is successfully validated, now it can't be empty either. 
 
- <Badge text="Insights" type="insights" vertical="middle"/>
+ <Badge text="Insights" type="insights" vertical="middle"/> 
 
 * Corrects the initial value of the date filter, now it shows the selected range correctly.
 
