@@ -749,7 +749,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
  <Badge text="Content" type="content" vertical="middle"/> 
 * The problem with the time zone of fields of type Date is fixed.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Restrictions in the email editor are removed.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
