@@ -67,7 +67,7 @@ search: true
 * Fixes the problem of listing repeated spaces for users in a permission group.
 * Fix the problem of publishing pages when they come from the synchronization of stages.
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * The defaul email sender field in the realm settings is successfully validated, now it can't be empty either. 
 
@@ -179,7 +179,7 @@ search: true
 
 * Security enhancements
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Fix updating widgets coming from the CLI
 
