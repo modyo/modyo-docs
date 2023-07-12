@@ -289,7 +289,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Fixes bug that prevented approval of user with default user and admin role of a space 
+* Fix error that prevented approving users with the default user and admin roles in a space 
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -457,7 +457,7 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
+* Security improvements
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
