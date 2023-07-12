@@ -289,9 +289,9 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/>
 
-* Fix error that prevented approving users with the default user and admin roles in a space 
+* Fixes error that prevented approving users with the default user and admin roles in a space 
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Adds site timezone to site drop
 * Add liquid drops for answered forms
