@@ -821,9 +821,9 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-- Multiple bug fixes.
-- Multiple navigation and usability improvements
-- Multiple security enhancements.
+- Multiple bugs resolved.
+- Multiple navigation and usability improvements.
+- Multiple security improvements.
 - Multiple JS libraries with vulnerabilities are updated
 
 <Badge text="Content" type="content" vertical="middle"/>
