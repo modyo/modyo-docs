@@ -83,7 +83,7 @@ search: true
 * Security improvements
 * Correct the permission system for user groups.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Improves the widget reference between stages, now it is not necessary to create the widget in other stages through synchronization.
 * Fix problems when searching on sites with tilded words.
