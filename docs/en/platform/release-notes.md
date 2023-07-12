@@ -223,7 +223,7 @@ search: true
 
 * new minimal with Boostrap 5 for new sites
 
- <Badge text="Content" type="content" vertical="middle"/>
+<Badge text="Content" type="content" vertical="middle"/>
 
 * New overview view of a space is added
 
