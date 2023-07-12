@@ -186,7 +186,7 @@ search: true
 
 ### 9.2.29 - March 22, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Corrects slow loading of orders into the index, which was caused when there are a large number of orders.
