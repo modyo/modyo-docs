@@ -413,7 +413,7 @@ search: true
 
 * A problem when uploading some svgs to the asset manager is fixed
 
- <Badge text="Customers" type="customers" vertical="middle"/>
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Extends to the Notifications Management API to mark messages as read
 
