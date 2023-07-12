@@ -98,7 +98,7 @@ search: true
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Improve the search in the list of orders.
-* Improvement to editing of payment methods.
+* Improvement in the edition of payment methods.
 
 
 
@@ -472,7 +472,7 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
+* Security improvements
 
 
 ### 9.2.10 - May 23, 2022
