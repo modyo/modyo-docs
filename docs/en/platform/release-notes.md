@@ -407,7 +407,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * The jquery.min.js fault when loading the widget manager is fixed
-* Publication inconsistency is fixed when team review is enabled
+* Publishing inconsistency is fixed when team review is enabled
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
@@ -455,7 +455,7 @@ search: true
 
 ### 9.2.12 - June 6, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security enhancements
 
