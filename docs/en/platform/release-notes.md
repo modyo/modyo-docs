@@ -683,9 +683,9 @@ search: true
 ### 9.1.30 - September 24, 2021
 
 <Badge text="Core" type="core" vertical="middle"/>
-* Enhancements to Security Headers
+* Improvements to Transverse Security Headers
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 * Fixes email validation.
 
 ### 9.1.29 - September 9, 2021
