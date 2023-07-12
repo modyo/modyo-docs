@@ -250,7 +250,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Sending a welcome email is optional on public forms.
+* Sending welcome emails is optional on public forms
 * Fix problems when editing a segment
 
 
