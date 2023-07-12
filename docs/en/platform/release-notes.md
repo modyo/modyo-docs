@@ -827,7 +827,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 - Multiple security improvements.
 - Multiple JS libraries with vulnerabilities are updated
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * Dynamic filters are added for field values in the entry index.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
