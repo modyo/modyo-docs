@@ -95,7 +95,7 @@ search: true
 
 * Adds option to enable/disable the use of SVG images
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Improve the search in the list of orders.
 * Improvement to editing of payment methods.
