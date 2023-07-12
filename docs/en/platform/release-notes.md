@@ -653,7 +653,7 @@ search: true
  <Badge text="Content" type="content" vertical="middle"/> 
 * Asset Manager bug with file limit fixed
 * Improvements when copying entries from another locale
-* Adds category name and slug to Entry drop and content API
+* Category name and slug are added in the Entry drop and in the content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Login with access token on the site
