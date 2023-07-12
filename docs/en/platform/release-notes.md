@@ -243,7 +243,7 @@ search: true
 * Page SEO improvements
 * Fixes problems with the category selector
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 
 * Add the new excerpt field to the meta of an entry
 * Fixes problems when editing a richtext field
