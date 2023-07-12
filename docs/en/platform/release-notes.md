@@ -617,7 +617,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * Navigation Builders
 * Site stages
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 * User kingdoms
 
  <Badge text="Core" type="core" vertical="middle"/> 
