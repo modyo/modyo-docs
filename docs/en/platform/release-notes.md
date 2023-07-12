@@ -656,7 +656,7 @@ search: true
 * Category name and slug are added in the Entry drop and in the content API
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* Login with access token on the site
+* Logging in with access token is allowed on the site
 
 ### 9.1.33 - November 5, 2021
 
