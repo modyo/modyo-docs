@@ -710,7 +710,7 @@ search: true
 * Error with page reset is fixed.
 * The generation of cookies for public sites is prevented.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 * Bulk unpublishing, archiving, and deleting of entries issue fixed
 
 ### 9.1.26 - August 11, 2021
