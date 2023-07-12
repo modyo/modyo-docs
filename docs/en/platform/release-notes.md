@@ -671,8 +671,8 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 * AppShell OAuth 2.0 provider
 
-<Badge text="Channels" type="channels" vertical="middle"/>
-* Fixed bug that affects resetting templates
+ <Badge text="Channels" type="channels" vertical="middle"/> 
+* Bug affecting template resetting is fixed
 * Cache is more granular now that it takes UserAgent into consideration
 
 ### 9.1.31 - October 7, 2021
