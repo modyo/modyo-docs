@@ -830,7 +830,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
  <Badge text="Content" type="content" vertical="middle"/> 
 * Dynamic filters are added for field values in the entry index.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * A bug where copying sites did not consider templates has been resolved.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
