@@ -388,7 +388,7 @@ search: true
 
 * The identifier is added to the search in the list of spaces
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * User export is fixed
 
