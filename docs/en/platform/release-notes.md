@@ -154,7 +154,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Content" type="content" vertical="middle"/> 
+ <Badge text="Content" type="content" vertical="middle"/>
 
 * Change the allowed asset sizes, leaving 6MB for images and 10MB for other types of files
 * Fix problems when replacing images with SVG extension
