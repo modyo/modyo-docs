@@ -602,7 +602,7 @@ search: true
 * Widget preview repaired
 * Logging in with access token is allowed on the site
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Security enhancements
 
 <Badge text="Customers" type="customers" vertical="middle"/>
@@ -622,7 +622,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Team member groups
 * Multiple full admins
-* Landing page “Get started”
+* “Get started” landing page
 * Froala editor
 
 ## 9.1
