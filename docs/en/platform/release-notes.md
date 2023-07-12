@@ -64,7 +64,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fixes the issue of duplicate space listings for users in a permission group.
+* Fixes the problem of listing repeated spaces for users in a permission group.
 * Fix the problem of publishing pages when they come from the synchronization of stages.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
