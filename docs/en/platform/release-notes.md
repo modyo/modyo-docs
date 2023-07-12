@@ -459,7 +459,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Channels" type="channels" vertical="middle"/>
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * The link between the breadcrumbs with the scope of the stage is corrected
 * The overflow of the name column in the list of sites is corrected
