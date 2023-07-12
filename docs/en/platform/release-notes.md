@@ -629,13 +629,13 @@ search: true
 
 ### 9.1.43 - March 3, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Fixes to content migrations in 9.1, to ease the transition from 8.2 to newer versions
 
 ### 9.1.42 - February 13, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
-* Performance enhancements for migrations, to ease the transition from 8.2 to newer versions
+ <Badge text="Core" type="core" vertical="middle"/> 
+* Performance improvements for migrations, to facilitate the transition from 8.2 to newer versions
 
 ### 9.1.41 - December 15, 2022
 
