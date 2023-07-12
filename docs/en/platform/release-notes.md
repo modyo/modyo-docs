@@ -730,9 +730,9 @@ search: true
 ### 9.1.24 - July 14, 2021
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Platform jQuery versions are updated.
+* jQuery versions of the platform are updated.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Fixes issue that prevents saving elements with the limit number of backup versions.
 * Fixes bug when copying pages that use widgets with variables.
 
