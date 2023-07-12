@@ -279,7 +279,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
-* Logs separation
+* Log Separation
 * Fix “Review” button in Team Review emails
 * The archived item will be visually separated from the others in the state filters
 * Password and signup paths stop responding to extensions that don't match 
@@ -310,7 +310,7 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-* Security enhancements
+* Security improvements
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
@@ -395,7 +395,7 @@ search: true
 
 ### 9.2.16 - August 23, 2022
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * The framework is updated to the latest version (7.0.2)
 * Ruby is updated to the latest version (3.1)
