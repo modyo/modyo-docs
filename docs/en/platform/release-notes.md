@@ -756,7 +756,7 @@ search: true
 
 ### 9.1.22 - June 10, 2021
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* Route restrictions are removed for site redirects
+* Route restrictions for site redirects are removed
 
 ### 9.1.21 - May 28, 2021
 
