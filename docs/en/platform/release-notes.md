@@ -453,7 +453,7 @@ search: true
 * Error corrected when selecting entries in the content list, where only those selected were added to the current page
 
 
-### 9.2.12 - June 6, 2022
+### 9.2.12 - June 06, 2022
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
