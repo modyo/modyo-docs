@@ -841,9 +841,9 @@ search: true
 
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
-- Multiple security enhancements.
+- Multiple security improvements.
 
-<Badge text="Content" type="content" vertical="middle"/>
+ <Badge text="Content" type="content" vertical="middle"/> 
 * [New filters are added to the Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries) of content that allow you to select, filter and [sort](/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
