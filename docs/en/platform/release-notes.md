@@ -733,8 +733,8 @@ search: true
 * jQuery versions of the platform are updated.
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
-* Fixes issue that prevents saving elements with the limit number of backup versions.
-* Fixes bug when copying pages that use widgets with variables.
+* An issue preventing items from being saved with the limited number of backup versions is fixed.
+* An error is fixed when copying pages that use widgets with variables.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Raw emails are allowed to be sent through the messaging API.
