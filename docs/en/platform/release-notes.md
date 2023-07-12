@@ -616,7 +616,7 @@ search: true
 * Navigation Builders
 * Site stages
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 * User Realms
 
 <Badge text="Core" type="core" vertical="middle"/>
