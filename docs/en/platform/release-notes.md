@@ -568,9 +568,9 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Routes ending in slash are redirected, to improve SEO
+* Paths ending in Slash are redirected to improve SEO
 * Reflected XSS is prevented in drop of request
-* Contamination with invalid routes is prevented
+* Contamination is prevented with invalid routes
 
 ### 9.2.5 - January 27, 2022
 <Badge text="Channels" type="channels" vertical="middle"/>
