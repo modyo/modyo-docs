@@ -844,7 +844,7 @@ search: true
 - Multiple security improvements.
 
  <Badge text="Content" type="content" vertical="middle"/> 
-* [New filters are added to the Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries) of content that allow you to select, filter and [sort](/en/platform/content/public-api-reference.html#order-entries) by custom fields of the content type.
+* [new filters to the Liquid SDK] (/es/platform/content/public-api-reference.html #filtrar -entries) are added for content that allow you to select, filter and [sort] (/es/platform/content/public-api-reference.html #ordenar -entries) by custom fields of the content type.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * The language in which forms are displayed is associated according to the language of the partner site and not the language of the account
