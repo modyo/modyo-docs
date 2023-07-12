@@ -481,7 +481,7 @@ search: true
 
 * Security improvements
 * reCAPTCHA is added for administrator users
-* An error is fixed when updating the avatar of imported users with missing information
+* Fixed error when updating the avatar of imported users with missing information
 * Administrator session expiration added
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
