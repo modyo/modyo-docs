@@ -141,7 +141,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Correct search engine in list of pages in list mode
+* Corrects search engine in list of pages in list mode
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
