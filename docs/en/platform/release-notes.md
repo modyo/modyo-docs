@@ -117,7 +117,7 @@ search: true
 
 * Add unpublication date to the metadata of a content
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Fix permission problems when accessing and editing forms
 
