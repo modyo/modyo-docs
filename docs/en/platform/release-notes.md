@@ -21,7 +21,7 @@ search: true
 * Security improvements.
 * Improves the information shown in the activity logs
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fixes problems accessing the security headers edition
 * Add the viewer role to team members. This role can even see items to be synchronized or in a release.
