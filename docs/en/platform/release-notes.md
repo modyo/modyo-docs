@@ -245,7 +245,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Adds new excerpt field to the meta of an entry
+* Add the new excerpt field to the meta of an entry
 * Fix problems when editing a richtext field
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
