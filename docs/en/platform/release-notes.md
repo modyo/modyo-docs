@@ -606,7 +606,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 <Badge text="Core" type="core" vertical="middle"/>
 * Security improvements
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 * Improvements to the campaign editor
 
 ### 9.2.0 - November 15, 2021
