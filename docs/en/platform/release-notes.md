@@ -93,7 +93,7 @@ search: true
 
  <Badge text="Content" type="content" vertical="middle"/> 
 
-* Adds option to enable/disable the use of SVG images
+* Add option to enable/disable the use of SVG images
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
@@ -104,7 +104,7 @@ search: true
 
 ### 9.2.34 - May 16, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Improvements in the display of tags in the selector when the values are too long
 
