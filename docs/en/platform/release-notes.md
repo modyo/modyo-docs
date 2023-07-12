@@ -619,7 +619,7 @@ search: true
  <Badge text="Customers" type="customers" vertical="middle"/> 
 * User kingdoms
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Team member groups
 * Multiple full admins
 * “Get started” landing page
