@@ -573,7 +573,7 @@ search: true
 * Contamination is prevented with invalid routes
 
 ### 9.2.5 - January 27, 2022
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Content Pages are incorporated
 * Problems with the preview bar are fixed
 
