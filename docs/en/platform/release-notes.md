@@ -711,7 +711,7 @@ search: true
 * The generation of cookies for public sites is prevented.
 
  <Badge text="Content" type="content" vertical="middle"/> 
-* Bulk unpublishing, archiving, and deleting of entries issue fixed
+* Problems are fixed with mass actions of unpublishing, archiving, and deleting entries.
 
 ### 9.1.26 - August 11, 2021
 
