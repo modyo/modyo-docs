@@ -202,7 +202,7 @@ search: true
 
 * Fix the delete of widgets coming from the CLI
 * Add modal to name a new cloned widget
-* Fix problem when modifying variables in widgets
+* Fixes problem when modifying variables in widgets
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
