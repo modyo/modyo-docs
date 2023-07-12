@@ -725,7 +725,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Performance issues fixed
 * Problem with widget preview caching and content views is fixed.
-* Fixes an error with status code when importing redirects.
+* Error with status code when importing redirects is fixed.
 
 ### 9.1.24 - July 14, 2021
 
