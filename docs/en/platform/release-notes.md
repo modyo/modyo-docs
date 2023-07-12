@@ -279,7 +279,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
-* Logs separation
+* Log Separation
 * Fix “Review” button in Team Review emails
 * The archived item will be visually separated from the others in the state filters
 * Password and signup paths stop responding to extensions that don't match 
@@ -512,7 +512,7 @@ search: true
 * Fixed problem with full URL of entries by default
 * It fixes escaped meta tags, breaks interpolation with Liquid
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * The use of reCAPTCHA for Realms is incorporated 
 
