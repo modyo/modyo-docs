@@ -655,7 +655,7 @@ search: true
 * Improvements when copying entries from another locale
 * Category name and slug are added in the Entry drop and in the content API
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Login with access token on the site
 
 ### 9.1.33 - November 5, 2021
