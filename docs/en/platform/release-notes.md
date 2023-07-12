@@ -673,7 +673,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * Bug affecting template resetting is fixed
-* Cache is more granular now that it takes UserAgent into consideration
+* More granular cache now considered by the UserAgent
 
 ### 9.1.31 - October 7, 2021
 
