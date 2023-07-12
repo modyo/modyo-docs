@@ -108,7 +108,7 @@ search: true
 
 * Improvements in the display of tags in the selector when the values are too long
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Improvements in site search, categories are now considered in the links generated to content pages
 * Fix bug that prevented unpublishing pages without having dependencies in a context with stages
