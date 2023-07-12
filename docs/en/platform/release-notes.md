@@ -30,7 +30,7 @@ search: true
 
 * Add the viewer role to team members.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Add configuration for a post-login home page. After a successful login to the kingdom, you will be redirected to this page.
 
