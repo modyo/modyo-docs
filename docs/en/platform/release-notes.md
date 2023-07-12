@@ -204,7 +204,7 @@ search: true
 * Add modal to name a new cloned widget
 * Fixes problem when modifying variables in widgets
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * Fixes administrator permissions in Realms
 
@@ -477,7 +477,7 @@ search: true
 
 ### 9.2.10 - May 23, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * reCAPTCHA is added for administrator users
