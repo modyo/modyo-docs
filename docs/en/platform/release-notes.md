@@ -785,7 +785,7 @@ search: true
 ### 9.1.17 - May 5, 2021
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Performance Improvements
+* Performance improvements
 
 ### 9.1.16 - April 23, 2021
 
