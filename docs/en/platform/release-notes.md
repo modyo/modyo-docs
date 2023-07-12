@@ -83,7 +83,7 @@ search: true
 * Security improvements
 * Correct the permission system for user groups.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Improves the widget reference between stages, now it is not necessary to create the widget in other stages through synchronization.
 * Fixes search problems in sites that have words with tildes.
@@ -461,7 +461,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Fixes the link of the breadcrumbs with the scope of the stage
+* The link between the breadcrumbs with the scope of the stage is corrected
 * Fixes the overflow of the name column in the list of sites
 * The base template of the service worker is improved
 * The experience is improved when generating a manifest for the PWA 
