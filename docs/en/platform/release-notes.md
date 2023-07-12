@@ -352,7 +352,7 @@ search: true
 
 ### 9.2.18 - October 07, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Updating dependencies
