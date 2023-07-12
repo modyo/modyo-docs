@@ -161,7 +161,7 @@ search: true
 * Fixes problems when displaying a logo in SVG
 
 
-### 9.2.31 - April 6, 2023
+### 9.2.31 - April 06, 2023
 
 <Badge text="Core" type="core" vertical="middle"/>
 
