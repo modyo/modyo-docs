@@ -739,7 +739,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Sending raw emails through the messaging API is allowed.
-* Problems when exporting form responses are fixed.
+* Problems when exporting form responses have been fixed.
 
 ### 9.1.23 - June 22, 2021
 <Badge text="Core" type="core" vertical="middle"/>
