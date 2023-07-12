@@ -86,7 +86,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Improves the widget reference between stages, now it is not necessary to create the widget in other stages through synchronization.
-* Fixes search problems in sites that have words with tildes.
+* Fix problems when searching on sites with tilded words.
 * Correct differences in pages, the delegated paths option is now displayed.
 * Add login button when previewing a widget.
 * The differences between large widgets or widgets coming from the CLI are limited. They now show an informational message if there are differences.
