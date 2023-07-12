@@ -442,7 +442,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Bug fixed in the initial editing of duplicate widgets on a Widget Page
-* Adds flag for enabling categories in path for content pages 
+* Flag added for enabling categories in path for content pages 
 * The deployment of the Targets option in Pages is fixed
 * Corrects problem when deleting favicon and apple icons from a site, which affected their copies
 
