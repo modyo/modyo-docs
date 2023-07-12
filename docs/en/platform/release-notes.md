@@ -53,7 +53,7 @@ search: true
 
 
 ### 9.2.36 - June 19, 2023
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
 * Add administrator permission validation to the endpoints of the API's swagger documentation.
