@@ -296,7 +296,7 @@ search: true
 * Adds site timezone to site drop
 * Add liquid drops for answered forms
 * Liquid drop is added for forms answered by users in a kingdom
-* Fix stages duplication in the selector in the site list 
+* Fixes stages duplication in the selector in the site list 
 
 
  <Badge text="Customers" type="customers" vertical="middle"/>
