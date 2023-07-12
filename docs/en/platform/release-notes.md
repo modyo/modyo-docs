@@ -439,7 +439,7 @@ search: true
 * Security improvements
 * 404 is prevented in setup otp
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Bug fixed in the initial editing of duplicate widgets on a Widget Page
 * Flag added for enabling categories in path for content pages 
