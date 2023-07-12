@@ -343,7 +343,7 @@ search: true
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Forala license update
+* Froala license update
 
  <Badge text="Customers" type="customers" vertical="middle"/>
 
