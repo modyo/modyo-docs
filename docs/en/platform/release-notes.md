@@ -543,7 +543,7 @@ search: true
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
 * Direct authentication in Realm with Google leads to error 404
-* Implements Cybersource payment method 
+* Implement Cybersource payment method 
 * Adds tags in New Asset modal
 
 
