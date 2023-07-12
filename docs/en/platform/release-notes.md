@@ -833,7 +833,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
  <Badge text="Channels" type="channels" vertical="middle"/> 
 * A bug where copying sites did not consider templates has been resolved.
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 * A bug was resolved in which the integration flow with OIDC redirected to the user's profile and not to the site from where the flow started.
 
 ### 9.1.12 - March 19, 2021
