@@ -489,7 +489,7 @@ search: true
 * Error fixed when synchronizing migrated content pages on sites with stages
 * The google tag manager ID is excluded when creating a new stage
 
- <Badge text="Customers" type="customers" vertical="middle"/> 
+ <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Links to documentation in segments are corrected
 
