@@ -43,7 +43,7 @@ search: true
 
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
-* Adds configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+* Add configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -480,7 +480,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
-* ReCAPTCHA is added for admin users
+* reCAPTCHA is added for administrator users
 * An error is fixed when updating the avatar of imported users with missing information
 * Administrator session expiration added
 
