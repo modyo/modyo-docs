@@ -345,7 +345,7 @@ search: true
 
 * Froala license update
 
- <Badge text="Customers" type="customers" vertical="middle"/>
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * OAuth flow is reversed with refresh token.
 
@@ -522,7 +522,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Channels" type="channels" vertical="middle"/>
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Service Worker experience improvements
 
