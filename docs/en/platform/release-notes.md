@@ -560,9 +560,9 @@ search: true
 * Deleting linked entries is fixed
 * Improvements are made to the multiline editor
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+ <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Fixes problem when changing realm of a site
+* Problem when changing a site's realm is fixed
 * Fixed issue with campaign editor
 * Fixes problem in accounts with default site and without realm
 
