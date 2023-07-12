@@ -425,7 +425,7 @@ search: true
 * Alternative_id is included in Index, Export, and Commerce Order Search
 
 
-### 9.2.14 - July 4, 2022
+### 9.2.14 - July 04, 2022
 
  <Badge text="Customers" type="customers" vertical="middle"/>
 
