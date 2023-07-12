@@ -15,7 +15,7 @@ search: true
 
 * Error fixed in the OAuth2 flow
 
-### 9.2.38 - July 07, 2023
+### 9.2.38 - July 7, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
@@ -65,7 +65,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Fixes the issue of duplicate space listings for users in a permission group.
-* Corrects problem of publishing pages when they come from stage synchronization.
+* Fix the problem of publishing pages when they come from the synchronization of stages.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
