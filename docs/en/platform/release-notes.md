@@ -562,14 +562,14 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Fixes problem when changing realm of a site
-* Fixed issue with campaign editor
-* Fixes problem in accounts with default site and without realm
+* Problem when changing a site's realm is fixed
+* Problem fixed with campaign editor
+* Problem fixed with accounts with default site without realm
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Routes ending in slash are redirected, to improve SEO
-* Reflected XSS is prevented in request drop
+* Reflected XSS is prevented in drop of request
 * Contamination with invalid routes is prevented
 
 ### 9.2.5 - January 27, 2022
