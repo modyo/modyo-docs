@@ -756,7 +756,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * Pages can now be deleted.
 
 ### 9.1.22 - June 10, 2021
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Route restrictions for site redirects are removed
 
 ### 9.1.21 - May 28, 2021
