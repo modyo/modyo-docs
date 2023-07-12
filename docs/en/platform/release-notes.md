@@ -771,7 +771,7 @@ search: true
 
 ### 9.1.19 - May 19, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 * Multiple bug fixes.
 
 ### 9.1.18 - May 18, 2021
