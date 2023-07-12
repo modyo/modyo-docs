@@ -677,8 +677,8 @@ search: true
 
 ### 9.1.31 - October 7, 2021
 
-<Badge text="Core" type="core" vertical="middle"/>
-* SAML response validation is fixed for Azure AD
+ <Badge text="Core" type="core" vertical="middle"/> 
+* SAML response validation for Azure AD is repaired
 
 ### 9.1.30 - September 24, 2021
 
