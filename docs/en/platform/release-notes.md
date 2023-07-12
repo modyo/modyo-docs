@@ -206,7 +206,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* Fix administrator permissions in Realms
+* Fixes administrator permissions in Realms
 
 
 ### 9.2.27 - March 10, 2023
