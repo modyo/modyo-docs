@@ -357,7 +357,7 @@ search: true
 * Security improvements
 * Updating dependencies
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Page list view and the possibility to switch between table and list view are added.
 
