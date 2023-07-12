@@ -7,7 +7,7 @@ search: true
 ## 9.2
 
 ### 9.2.39 - July 11, 2023
- <Badge text="Customers" type="customers" vertical="middle"/> 
+<Badge text="Customers" type="customers" vertical="middle"/>
 
 * You are asked to enter a password before deleting a user account
 
