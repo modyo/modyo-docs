@@ -335,7 +335,7 @@ search: true
 
 ### 9.2.20 - October 27, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Maintenance for pre-production environments
 
