@@ -651,8 +651,8 @@ search: true
 ### 9.1.34 - November 19, 2021
 
  <Badge text="Content" type="content" vertical="middle"/> 
-* Fixes bug with file limit in asset manager
-* Improvements when copying entry from another locale
+* Asset Manager bug with file limit fixed
+* Improvements when copying entries from another locale
 * Adds category name and slug to Entry drop and content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
