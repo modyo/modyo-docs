@@ -557,7 +557,7 @@ search: true
  <Badge text="Content" type="content" vertical="middle"/> 
 
 * Drop entry.meta.url is fixed
-* Fixes deletion of referenced entries
+* Deleting linked entries is fixed
 * Improvements are made to the multiline editor
 
 <Badge text="Customers" type="customers" vertical="middle"/>
