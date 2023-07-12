@@ -506,7 +506,7 @@ search: true
 * Error 500 is controlled at the application level when using invalid HTTP verbs
 * The parameter for tolerance in seconds for access token (OIDC access token clock skew)
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fixed problem when publishing page tree with 3 levels
 * Fixed problem with full URL of entries by default
