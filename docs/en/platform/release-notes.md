@@ -16,7 +16,7 @@ search: true
 * Error fixed in the OAuth2 flow
 
 ### 9.2.38 - July 07, 2023
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements.
 * Improves the information shown in the activity logs
@@ -163,7 +163,7 @@ search: true
 
 ### 9.2.31 - April 6, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Password policies are added when creating new accounts
