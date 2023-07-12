@@ -603,7 +603,7 @@ search: true
 * Logging in with access token is allowed on the site
 
  <Badge text="Core" type="core" vertical="middle"/> 
-* Security enhancements
+* Security improvements
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Improvements to the campaign editor
