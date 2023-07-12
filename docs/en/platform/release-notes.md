@@ -236,7 +236,7 @@ search: true
 * Add application access selector to user groups
 * Password change is forced for new administrator users
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 
 * Allows you to delete archived widgets
 * Fixes problems when archiving a widget
