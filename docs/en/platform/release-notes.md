@@ -198,7 +198,7 @@ search: true
 
 * Security improvements
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+ <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fix the delete of widgets coming from the CLI
 * Add modal to name a new cloned widget
