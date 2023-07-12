@@ -584,7 +584,7 @@ search: true
 * SCIM support for administrator users added
 
 ### 9.2.4 - December 30, 2021
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Fixed an issue that contaminated the cache when previewing
 
 ### 9.2.2 - December 1, 2021
