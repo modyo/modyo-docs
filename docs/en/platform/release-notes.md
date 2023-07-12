@@ -779,7 +779,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple security improvements.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Page tree is reimplemented
 
 ### 9.1.17 - May 5, 2021
