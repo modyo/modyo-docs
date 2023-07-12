@@ -251,7 +251,7 @@ search: true
  <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Sending welcome emails is optional on public forms
-* Fix problems when editing a segment
+* Fixes problems when editing a segment
 
 
 ### 9.2.25 - January 25, 2023
