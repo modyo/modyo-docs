@@ -123,7 +123,7 @@ search: true
 
  <Badge text="Insights" type="insights" vertical="middle"/> 
 
-* Corrects visual and metric problems in graphics
+* Fix visual and metric issues in the graphs
 * Fix problems accessing the display of graphics
 
 
@@ -186,7 +186,7 @@ search: true
 
 ### 9.2.29 - March 22, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 * Corrects slow loading of orders into the index, which was caused when there are a large number of orders.
@@ -343,7 +343,7 @@ search: true
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Froala license update
+* Forala license update
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
