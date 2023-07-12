@@ -397,7 +397,7 @@ search: true
 
  <Badge text="Core" type="core" vertical="middle"/> 
 
-* The framework is updated to the latest version (7.0.2)
+* Framework updated to the latest version (7.0.2)
 * Ruby is updated to the latest version (3.1)
 * Dependencies are updated
 * Product improvements
