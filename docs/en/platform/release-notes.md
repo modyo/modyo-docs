@@ -372,7 +372,7 @@ search: true
 * Overview view is added with action information and information from a realm
 * Mass importing of users is eliminated
 
- <Badge text="Insights" type="insights" vertical="middle"/> 
+ <Badge text="Insights" type="insights" vertical="middle"/>
 
 * The 'Data Studio' view is deleted
 
