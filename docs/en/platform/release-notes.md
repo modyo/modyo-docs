@@ -599,7 +599,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * Improvements when copying entries from another locale
 * Category name and slug are added in the Entry drop and in the content API
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Widget preview repaired
 * Logging in with access token is allowed on the site
 
