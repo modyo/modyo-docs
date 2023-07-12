@@ -706,7 +706,7 @@ search: true
  <Badge text="Core" type="core" vertical="middle"/> 
 * Double sending is fixed when creating access tokens.
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+ <Badge text="Channels" type="channels" vertical="middle"/> 
 * Reset page error fixed.
 * Prevention of cookies creation in public sites.
 
