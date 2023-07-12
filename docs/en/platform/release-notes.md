@@ -746,7 +746,7 @@ search: true
 * Newsletter with news.
 
  <Badge text="Content" type="content" vertical="middle"/> 
-* Fixes issue with time zones in fields of type Date.
+* The problem with the time zone of fields of type Date is fixed.
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Restrictions are removed in email editor.
