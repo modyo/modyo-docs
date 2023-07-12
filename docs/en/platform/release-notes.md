@@ -211,7 +211,7 @@ search: true
 
 ### 9.2.27 - March 10, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+ <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * The trial period is increased to 30 days
