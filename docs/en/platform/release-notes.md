@@ -163,7 +163,7 @@ search: true
 
 ### 9.2.31 - April 6, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 * Password policies are added when creating new accounts
@@ -271,7 +271,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Performance improvements when loading widget index
-* Allows you to create a new stage with the same name as one that is in the process of being eliminated.
+* Allows you to create a new stage with the same name as one that is in the process of being deleted
 
 
 ### 9.2.23 - January 19, 2023
