@@ -239,7 +239,7 @@ search: true
  <Badge text="Channels" type="channels" vertical="middle"/> 
 
 * Allows you to delete archived widgets
-* Fix problems when archiving a widget
+* Fixes problems when archiving a widget
 * Page SEO improvements
 * Fixes problems with the category selector
 
