@@ -455,7 +455,7 @@ search: true
 
 ### 9.2.12 - June 06, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 
