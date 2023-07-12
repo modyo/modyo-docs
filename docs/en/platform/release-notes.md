@@ -603,7 +603,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 * Widget preview repaired
 * Logging in with access token is allowed on the site
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Security improvements
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
