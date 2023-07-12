@@ -599,8 +599,8 @@ search: true
 * Adds category name and slug to Entry drop and content API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Fix issue with widget preview
-* Login with access token on the site
+* Widget preview repaired
+* Logging in with access token is allowed on the site
 
 <Badge text="Core" type="core" vertical="middle"/>
 * Security enhancements
