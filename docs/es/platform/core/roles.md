@@ -6,93 +6,108 @@ search: true
 
 ## Equipo
 
-Todos los usuarios internos de la plataforma conforman el equipo y cada miembro de este puede tener un rol específico que cumplir para aprovechar todo el potencial del sistema. Aquí es donde podrás crear, editar, y desactivar a los usuarios de la plataforma.
+Todos los usuarios internos de la plataforma conforman el equipo y cada miembro puede tener un rol específico para aprovechar al máximo el sistema. 
+
+En esta sección puedes crear, editar y desactivar a los usuarios de la plataforma.
 
 ### Crear usuario
 
 Para crear un usuario interno, sigue estos pasos:
 
-1. Desde el menú principal, haz click en Configuración, luego selecciona Equipo.
+1. Desde el menú principal, haz click en **Configuración**.
+1. Selecciona **Equipo**.
 1. Haz click en **+ Nuevo Miembro del Equipo**.
-1. Llena el nombre, apellido, nombre de usuario, email, y contraseña.
+1. Completa los campos de nombre, apellido, nombre de usuario, correo electrónico y contraseña.
 1. Haz click en **Guardar**.
 
 :::tip Tip
-Si quieres que el nuevo miembro reciba un correo con los datos de su cuenta en la plataforma, haz click en el checkbox "Enviar contraseña al correo electrónico de usuario".
+Si deseas que el nuevo miembro reciba un correo electrónico con los datos de su cuenta en la plataforma, marca la casilla "Enviar contraseña al correo electrónico del usuario".
 :::
 
 ### Editar usuario
 
-Dentro de la pantalla de edición de usuario, los administradores de la plataforma tendrán acceso a las siguientes ventanas:
+Dentro de la pantalla de edición de usuario, los administradores de la plataforma tienen acceso a las siguientes ventanas:
 
-- Actividad: El historial de todas las acciones realizadas por este usuario.
-- Acceso: Los permisos otorgados para este usuario a los distintos módulos en Modyo. Aquí también podrás seleccionar el rol del usuario.
-- Acceso a la API: Genera nuevo tokens de acceso para usar nuestras APIs. Debes generar un token por cada sitio.
-- Editar: Modifica los datos del usuario como nombre, email, y contraseña.
-- Grupos: Listado de todos los grupos a los cuales pertenece este usuario.
-- Dispositivos: Listado de todos los dispositivos en donde el usuario tiene una sesión activa. Se despliegan datos como: navegador, sistema operativo, último ingreso, y dirección IP. Aquí podrás cerrar la sesión remotamente para cada dispositivo.
+- Actividad: Muestra el historial de todas las acciones realizadas por el usuario.
+- Acceso: Muestra los permisos otorgados al usuario en los distintos módulos en Modyo. Aquí también puedes seleccionar el rol del usuario.
+- Acceso a la API: Genera nuevo tokens de acceso para usar tus APIs. Debes generar un token para cada sitio.
+- Editar: Modifica los datos del usuario como nombre, correo electrónico y contraseña.
+- Grupos: Muestra una lista de todos los grupos a los que pertenece el usuario.
+- Dispositivos: Muestra un listado de todos los dispositivos en los que el usuario tiene una sesión activa.  Despliega datos como navegador, sistema operativo, último inicio de sesión y dirección IP. Aquí, además, puedes cerrar la sesión de forma remota para cada dispositivo.
 
 ## Grupos
 
-Los grupos te permiten agilizar el control de acceso a los distintos contextos de Modyo, de tal manera que puedes asignar un rol predeterminado a un contexto (cuenta, espacios, realms, o sitios) a múltiples usuarios a la vez y luego añadir ese grupo de usuario a distintos contextos, permitiendo que todos los usuarios obtengan el rol del grupo en el contexto asociado.
+Los grupos te permiten agilizar el control de acceso a los distintos contextos de Modyo. Puedes asignar un rol predeterminado a un contexto (cuenta, espacio, reino o sitio) para múltiples usuarios al mismo tiempo y luego ese grupo de usuarios a diferentes contextos. Esto permite que todos los usuarios obtengan el rol del grupo en el contexto correspondiente.
 
-Además, desde la sección de "Grupos" del perfil de cada miembro del equipo, puedes añadir o remover al usuario de los grupos existentes.
+Además, desde la sección "Grupos" en el perfil de cada miembro del equipo, puedes agregar o eliminar al usuario de un grupo existente.
 
 :::tip Tip
-Debes tener en consideración que si un usuario ya tiene un rol asociado en un contexto (cuenta, espacio, realm o sitio) y lo añades a un grupo con un rol de mayor nivel de privilegios, el usuario obtendrá el rol de mayor privilegios entre el rol propio y el del grupo.
+Todos los usuarios que pertenecen a un grupo tendrán el rol del grupo. En caso de asignarle individualmente un rol particular a un miembro del equipo, el rol con más privilegios toma precedencia.
 :::
 
 ### Crear un grupo
 
 Para crear un grupo, sigue estos pasos:
 
-1. Desde Modyo Platform, en el menú lateral, expande **Configuración** y haz click en **Grupos**. 
+1. Desde Modyo Platformhaz click en **Configuración** 
+1. Daz click en **Grupos**. 
 1. Haz click en **+ Nuevo Grupo**.
-1. Escribe el nombre, selecciona el Rol de grupo, y agrega a los usuarios que forman parte de este Grupo.
+1. Escribe el nombre del grupo y selecciona el **Rol del Grupo**.
+1. Selecciona del menú desplegable debajo de **Agregar Usuarios**, los usuarios que formarán parte de este grupo.
+1. Da click en **Crear**.
 
-Ahora el grupo aparece al intentar agregar un usuario como miembro del equipo. Todos los usuarios que pertenecen al grupo serán agregados con el rol del grupo, si también se selecciona un rol para el miembro individualmente, el rol con más privilegios toma precedencia.
+Una vez creado un grupo, lo puedes ver en el panel de Grupos. Además, al editar un usuario podrás agregarlo o, si ya es parte de ese grupo, eliminarlo. 
+
 
 ## Roles
 
-Los roles se pueden aplicar en los distintos módulos para personalizar la experiencia de tu equipo de trabajo. Aplicar un rol es específico a ese módulo. Por ejemplo, podrás seleccionar quienes son los administradores de un espacio, quienes pueden interactuar con el CLI en algún sitio, etc. 
+Puedes aplicar roles en los distintos módulos para personalizar la experiencia de tu equipo de trabajo. Cada rol se aplica de manera específica a un módulo en particular. Por ejemplo, puedes seleccionar a los administradores de un espacio o a los miembros que pueden interactuar con el CLI en algún sitio.
 
-Modyo tiene 10 roles predeterminados con distintas funciones por contexto que te permitirán distribuir y controlar quien tiene acceso a que secciones de cada contexto de la plataforma.
+Modyo tiene 10 roles predeterminados con diferentes funciones para cada contexto, lo que te permite distribuir y controlar el acceso a las distintas secciones de cada contexto de la plataforma.
 
 ### Roles predeterminados
 
-Modyo asigna por defecto roles predeterminados, ordenados según el contexto o sección en la que se ocupan.
+Modyo asigna roles predeterminados según el contexto o sección en la que se utilizan.
 
-Los roles predeterminados que existen son, según contexto:
+Los roles predeterminados que existen, según contexto, son:
 
 #### Roles por cuenta:
 
-- **Default user**: Tiene todos los permisos existentes, menos la edición de la configuración de cada contexto. Debe ser invitado a cada contexto para poder acceder a sus funcionalidades.
-- **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones. A nivel cuenta de Modyo Platform, solo puede ver variables globales y actividad.
+- **Default user**: Tiene todos los permisos existentes,  excepto la edición de la configuración de cada contexto. Debe ser invitado a cada contexto para poder acceder a sus funcionalidades.
+- **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones. A nivel de cuenta de Modyo Platform, solo puede ver variables globales y actividad.
 - **Owner**: Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
 
 #### Roles por sitio:
 
-- **Site developer**: Sólo puede editar recursos (no puede publicar, eliminar, hacer rollback, ni editar la configuración).
-- **Site developer CLI**: Mismos permisos de Site developer y también puede interactuar con modyo-cli 
-- **Site reviewer**: Es un site admin pero sin edición de la configuración del sitio.
+- **Site viewer**: Puede ver entradas, ver diferencias entre versiones y puede dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Sin embargo, este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma. 
+- **Site developer**: Solamente puede editar recursos. No puede publicar, eliminar, hacer rollback o editar la configuración.
+- **Site developer CLI**: Tiene los mismos permisos que Site developer; en adición, puede interactuar con modyo-cli.
+- **Site reviewer**:  Tiene todos los permisos del rol de site admin, excepto los permisos para editar la configuración del sitio.
 - **Site admin**: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
 
 #### Roles por espacio:
 
-- **Space writer**: Sólo puede editar contenido (no puede publicar, eliminar, hacer rollback, ni editar la configuración).
-- **Space editor**: Es un space admin pero sin edición de la configuración del space, no tiene permisos sobre los assets ni puede crear tipos.
-- **Space admin**: Tiene todos los permisos a nivel de un space, pero no puede crear nuevos espacios, puede crear y eliminar assets.
+- **Space viewer**: Este rol permite ver el contenido de un espacio, ver diferencias entre versiones y dejar comentarios. Su acceso está limitado a la visualización y participación mediante comentarios, no puede realizar modificaciones en el contenido o realizar acciones que afecten la configuración.
+- **Space writer**: Este rol solo puede editar el contenido en un espacio. No tiene permisos para publicar, eliminar, realizar rollback o editar la configuración.
+- **Space editor**: Tiene todos los permisos de un space admin, excepto permisos para editar la configuración del espacio. No tiene permisos sobre los assets y no puede crear tipos.
+- **Space admin**: Este rol tiene todos los permisos a nivel de un espacio, pero no puede crear nuevos espacios. Puede crear y eliminar assets.
 
-El usuario más importante tendrá el rol de Default Admin o Administrador, quien tendrá todas las funciones habilitadas para manejar la plataforma y los sitios.
+El usuario más importante tendrá el rol de Default Admin o Administrador. Este rol tiene todas las funciones habilitadas para gestionar la plataforma y los sitios.
 
 #### Roles por reino:
 
-- **Realm User**: Puede añadir usuarios, crear, modificar, y enviar a revisión campañas, formularios, y segmentos.
-- **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino, añadir y eliminar usuarios y miembros del equipo, como también puede eliminar el reino.
+- **Realm User**: PEste rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
 
 ### Acceso a las aplicaciones:
-Dado que contamos con roles que permiten acceder a todas las aplicaciones sin restricción alguna, Modyo permite restringir acceso a ciertas aplicaciones mediante la configuración del miembro del equipo, de esta forma, puedes darle a un usuario acceso total (Owner) pero solamente en la aplicación de Channels.
+Modyo tiene roles que permiten acceder a todas las aplicaciones sin restricción alguna; por ello, Modyo permite restringir el acceso a ciertas aplicaciones configurando los roles de los miembros del equipo. De esta manera, es posible otorgar a un usuario un acceso total (Owner) solo en la aplicación de Channels, mientras restringe su acceso a otras aplicaciones.
 
 ### Asignar un rol por cuenta
 
-Para asignar un rol en el contexto de cuenta, debes ir a la sección de Equipo y hacer clic en el perfil del usuario que se quiere cambiar. Después ingresar a la pestaña Rol y seleccionar el rol que se desee asignar al usuario.
+Para asignar un rol en el contexto de cuenta, sigue estos pasos: 
+
+1. Ve a la sección "Equipo" en la plataforma Modyo.
+2. Haz click en el perfil del usuario al que deseas cambiar el rol.
+3. Ingresa a la pestaña "Acceso".
+4. Selecciona el rol que deseas asignar al usuario y en qué espacio.
+5. Da click en el botón **Guardar** para confirmar los cambios.  
