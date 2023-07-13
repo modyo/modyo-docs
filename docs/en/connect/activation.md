@@ -24,7 +24,7 @@ Requirement tickets, once entered, are reviewed before being accepted and assign
 
 To improve ticket management and the way customers access ticket status, Modyo Support Center will require the creation of a username and password for ticket requests. It is important that this account is created using the corporate email address associated with the Modyo Enterprise Cloud service contract, otherwise the SRE team will not be able to identify the validity of the request. In addition, it is convenient to include in the ticket all the parties involved that should have access to it, through the CC field of the request form.
 
-:::Planning tip 
+:::tip Planning 
 Modyo recommends planning in advance for the tickets of requirements. There are periods in the month when there is more demand for the service than others, so the recommendation is to try to make requests as far in advance as possible.
 :::
 
