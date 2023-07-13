@@ -150,7 +150,7 @@ When you enter this section, you will find all the email templates created. The 
 
 :: :tip Tip
 If you reuse a template, be sure to carefully review its content to avoid possible temporary errors that could cause confusion in the message you want to send to your users.
-::
+:::
 
 Each template has an edit button underneath. Click on it to access the editor where you created the template. Click the drop-down menu button next to the edit button to access these options:
 
