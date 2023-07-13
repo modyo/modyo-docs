@@ -152,7 +152,7 @@ Here you can set up general aspects of the realms, such as:
 
 :: :danger Danger
 When deactivating Modyo credentials in the realm, make sure that you have set up an identity provider for this realm. Otherwise, users won't be able to log in.
-::
+:::
 
 ### Appearance
 
