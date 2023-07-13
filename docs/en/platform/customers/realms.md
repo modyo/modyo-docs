@@ -119,7 +119,7 @@ In the menu in the upper right section, you can also execute these actions:
 
 :: :tip Tip
 Modifying a user may result in the list of segments that user belongs to being modified.
-::
+:::
 
 ## Realm Configuration
 
