@@ -103,7 +103,7 @@ If you sent the campaign by notification, you can view:
 
 If you send a campaign through [segments] (/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
 
-:: :warning Attention
+:::warning Attention
 If you haven't yet sent the campaign, the values for that campaign will appear be zero.
 :::
 
