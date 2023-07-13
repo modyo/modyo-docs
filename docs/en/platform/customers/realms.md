@@ -328,7 +328,7 @@ When a customizable field is disabled, it doesn't appear on any form, however, i
 When a customizable field is disabled, it can be deleted. 
 
 Deleting a customizable field permanently deletes all user values associated with that field.
-::
+:::
 
 :: :tip Tip
 In addition to saving specific values to users, you can use the values of the customizable fields to create filters of [segments] (/en/platform/customers/segments.html) segments, allowing you to segment users based on their custom values.
