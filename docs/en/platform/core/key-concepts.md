@@ -217,7 +217,7 @@ In this case, the backup is returned directly to the **published** version of th
 
 This is useful when something was published by mistake, and it is necessary to revert to one of the stable versions. Allowing the resolution of problems that the version with errors may have had.
 
-:: :danger Danger
+:::danger Danger
 Because this is a potentially dangerous action, only site or space administrators have permission to perform this action.
 :::
 
@@ -280,7 +280,7 @@ Changing the content selector in the preview bar will have no effect on the cont
 
 Modyo offers the functionality to define global variables, which can be used everywhere Liquid is used. This allows you to share, for example, a _snippet_ of code between different sites.
 
-:: :tip Tip
+:::tip Tip
 You can use plain text, HTML, JavaScript, and CSS inside global variables; however, you can't use Liquid code inside them. You should keep in mind that the content has a maximum of 65,535 characters.
 
 To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre>`{{vars.Name}}`</span>

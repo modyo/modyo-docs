@@ -150,7 +150,7 @@ Here you can set up general aspects of the realms, such as:
   - Enable phone number
 - **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
 
-:: :danger Danger
+:::danger Danger
 When deactivating Modyo credentials in the realm, make sure that you have set up an identity provider for this realm. Otherwise, users won't be able to log in.
 :::
 
@@ -306,7 +306,7 @@ The types of custom fields you can add are:
 
 You can rearrange the custom fields by dragging them.  Remember that the order in which you arrange them will be the same order in which they appear in the editing views and in the user profiles.
 
-:: :tip Tip
+:::tip Tip
 You can create a maximum of 20 custom fields in each realms.
 :::
 
