@@ -7,7 +7,7 @@ search: true
 
 Los Tipos de contenido son la base para tus Entradas. Los Tipos definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
 
-A los Tipos de Contenido se les puede asignar una cardinalidad. Esta variable indica  cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
+A los Tipos de Contenido se les puede asignar una cardinalidad. Esta variable indica cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
 
 <img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
 
@@ -63,7 +63,7 @@ Esta interfaz te permite crear cada uno de los tipos y darles el formato necesar
 ## Campos
 
 :::tip Tip
-El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS.  Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
+El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
 
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference.html)
 :::
@@ -95,7 +95,7 @@ Este campo te permite agregar una lista desplegable donde solo se puede seleccio
 
 Utiliza este campo para agregar una lista fija de elementos para seleccionar solo una opción.
 
-### Casilla
+### Checkbox
 
 Este campo te permite agregar una lista de la cual puedes seleccionar más de una opción o dejar en blanco.
 
@@ -116,7 +116,7 @@ Este campo te permite agregar un número entero.  Por defecto, el valor debe est
 
 ### Decimal
 
-Utiliza este campo para ingresar un número decimal.  El número debe ser, forzosamente, entre `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+Utiliza este campo para ingresar un número decimal. El número debe ser, obligatoriamente, entre `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
 
 - **Largo mínimo**: Permite establecer un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
