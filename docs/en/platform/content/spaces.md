@@ -67,7 +67,7 @@ The default language of a space is defined when first creating a space and canno
 
 <img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350" alt="Select a language dropdown inside Entries">
 
-::: tip Tip
+:::tip Tip
 You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/platform/content/public-api-reference.html#filters), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries)
 :::
 
@@ -78,10 +78,10 @@ The cache is a tool that allows you to reduce the number of requests that reach 
 <img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600" alt="An image with the cache options available.">
 
 :::warning Warning
-You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "Example", and then publishing the same content with the title "New Example", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
+You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "A", and then publishing the same content with the title "A+1", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
 :::
 
-::: tip Tip
+:::tip Tip
 To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have a scenario of high demand or concurrence, with frequent, high-volume requests being made to your content in this space.
 :::
 
