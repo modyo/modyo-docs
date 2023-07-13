@@ -129,7 +129,7 @@ To make a joint publication on your site, follow these steps:
 
 :: :tip Tip
 If you click Publish on a specific article (for example, publish a page), the Review and Publish window will open with the selected item to review the pending changes.
-::
+:::
 
 
 ## Versions
