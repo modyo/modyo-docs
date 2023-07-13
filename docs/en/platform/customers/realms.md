@@ -201,7 +201,7 @@ To redirect the login follow these steps:
 Modyo is programmed so that the login information is in the header of the site. If your site is programmed differently, use the magnifying glass icon to find the term login in your templates. 
 :::
 
-:: :warning Attention
+:::warning Attention
 The login address must be a page within your account. You cannot redirect the login to an external URL.
 :::
 
