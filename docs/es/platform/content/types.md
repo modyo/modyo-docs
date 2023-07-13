@@ -45,7 +45,7 @@ Para crear un nuevo tipo de contenido que servirá como base para tus entradas, 
 :::tip Tip
 Recomendamos escribir el formato de las entradas dentro del identificador, por ejemplo, videos, posts, etc. De esta manera, cualquier miembro del equipo sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla para sus entradas sin necesidad de crear una nueva.
 
-La cardinalidad se refiere al número de entradas que pueden existir para ese tipo de contenido. Si seleccionas "cardinalidad single", solo se permite una entrada de ese tipo. Si eliges "cardinalidad múltiple", no hay límite en el número de entradas permitidas.
+La cardinalidad se refiere al número de entradas que pueden existir para ese tipo de contenido. Si seleccionas "cardinalidad individual", solo se permite una entrada de ese tipo. Si eliges "cardinalidad múltiple", no hay límite en el número de entradas permitidas.
 :::
 
 :::warning Atención
