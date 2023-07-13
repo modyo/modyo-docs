@@ -36,7 +36,7 @@ In each row of the campaign, there is a button that allows you to perform two ac
 
 :: :danger Danger
 If you delete the campaign, it cannot be recovered and the campaign will not be registered in the system.
-::
+:::
 
 ### Create a campaign
 
