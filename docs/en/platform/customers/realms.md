@@ -308,7 +308,7 @@ You can rearrange the custom fields by dragging them.  Remember that the order i
 
 :: :tip Tip
 You can create a maximum of 20 custom fields in each realms.
-::
+:::
 
 Custom fields have standard properties that you should consider:
 
