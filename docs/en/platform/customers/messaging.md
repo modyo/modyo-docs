@@ -160,7 +160,7 @@ Each template has an edit button underneath. Click on it to access the editor wh
 
 :: :tip Tip
 To modify a template temporarily and then return to a new one, make a copy of the template and work on the copy, leaving the original one unchanged.
-::
+:::
 
 ### Edit Templates
 
