@@ -93,7 +93,7 @@ In this section you can see general user data:
 
 In this section you can see a record of all the actions that the user has performed within the platform.
 
-:: :tip Tip
+:::tip Tip
 This section shows the main interactions that the user has had on the platform. These records cannot be deleted or edited.
 :::
 
