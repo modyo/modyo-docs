@@ -36,9 +36,9 @@ module.exports = {
     activeHeaderLinks: false,
     smoothScroll: true,
     algolia: {
-      apiKey: '99dcc8c4afd966e0e2f614f8498897d6',
-      indexName: 'dev_docs',
-      appId: '2C0N9ZVWQI'
+      apiKey: '0830ca92d68cf8e7626a6eaa2d2e083b',
+      indexName: 'csd_test_index_001',
+      appId: 'TEEU706UKD'
     },
     locales: {
       "/en/": {
