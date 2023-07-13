@@ -170,7 +170,7 @@ To create a template, click the**+ New Template** button at the top of the page.
 
 In the editing view, designate a name for the template.
 
-:: :tip Tip
+:::tip Tip
 When creating a Campaign, the name of your template will be used later for deliveries. Choose text that helps you clearly identify which template you want to use.
 :::
 
