@@ -172,7 +172,7 @@ In the editing view, designate a name for the template.
 
 :: :tip Tip
 When creating a Campaign, the name of your template will be used later for deliveries. Choose text that helps you clearly identify which template you want to use.
-::
+:::
 
 The WYSIWYG editor allows you to visually create what your email will look like and add the corresponding parameters that allow you to automatically customize the message.
 
