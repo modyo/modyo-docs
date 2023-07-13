@@ -117,7 +117,7 @@ In the menu in the upper right section, you can also execute these actions:
 * **Deactivate**: Deactivates a user and prevents them from logging in.
 * **Delete**: Once a user is deactivated, you can delete the user. You must be an administrator to delete a user. Also, the user can delete their account from the additional options in their profile.
 
-:: :tip Tip
+:::tip Tip
 Modifying a user may result in the list of segments that user belongs to being modified.
 :::
 
