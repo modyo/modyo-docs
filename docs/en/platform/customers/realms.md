@@ -178,7 +178,7 @@ Click the [File Manager] icon (/en/platform/content/asset-manager.html) to uploa
 
 It's important to note that the editor doesn't automatically generate the link to the file after uploading it. After uploading the file, click the paste button on the side of each file to generate its link. Then, copy this link and paste it into the CSS code.
 
-:: :tip Tip
+:::tip Tip
 If you have problems with the keyboard codes when editing the CSS, click the keyboard icon above the editor. This displays a series of button shortcuts that make editing easier.
 :::
 
