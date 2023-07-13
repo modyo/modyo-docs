@@ -280,7 +280,7 @@ Changing the content selector in the preview bar will have no effect on the cont
 
 Modyo offers the functionality to define global variables, which can be used everywhere Liquid is used. This allows you to share, for example, a _snippet_ of code between different sites.
 
-:: :tip Tip
+:::tip Tip
 You can use plain text, HTML, JavaScript, and CSS inside global variables; however, you can't use Liquid code inside them. You should keep in mind that the content has a maximum of 65,535 characters.
 
 To get the value of the variable anywhere that accepts Liquid markup (inputs, widgets, templates), use: <span v-pre>`{{vars.Name}}`</span>
