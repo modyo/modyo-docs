@@ -107,7 +107,7 @@ If you send a campaign through [segments] (/en/platform/customers/segments.html)
 If you haven't yet sent the campaign, the values for that campaign will appear be zero.
 :::
 
-:: :danger Danger
+:::danger Danger
 When you delete a delivery, you can not recover the record if you made any changes to it. 
 
 Deleting a campaign when it is in the process of being sent does not mean that it will not reach users, but that the process is stopped at the point where it currently is.
