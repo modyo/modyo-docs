@@ -174,7 +174,7 @@ Modyo only allows for one scheduled version of each item. If you schedule a seco
 
 In addition to scheduling the publication, you can also schedule unpublishing. When the time comes, the currently published version will become a backup, leaving the item in question without a published version.
 
-:: :warning Attention
+:::warning Attention
 When the scheduled actions are executed, Modyo may take a few minutes to complete them. Modyo will send you an email notification when the action is complete.
 :::
 
