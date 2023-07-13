@@ -219,7 +219,7 @@ This is useful when something was published by mistake, and it is necessary to r
 
 :: :danger Danger
 Because this is a potentially dangerous action, only site or space administrators have permission to perform this action.
-::
+:::
 
 ## Locks
 
