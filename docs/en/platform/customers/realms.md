@@ -180,7 +180,7 @@ It's important to note that the editor doesn't automatically generate the link t
 
 :: :tip Tip
 If you have problems with the keyboard codes when editing the CSS, click the keyboard icon above the editor. This displays a series of button shortcuts that make editing easier.
-::
+:::
 
 ## Redirect Login ##
 
