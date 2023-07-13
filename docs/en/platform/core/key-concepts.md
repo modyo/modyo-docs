@@ -170,7 +170,7 @@ When you schedule a publication, the editable version goes into a scheduled stat
 
 :: :warning Attention
 Modyo only allows for one scheduled version of each item. If you schedule a second modification to the item, you will overwrite the previous scheduling.
-::
+:::
 
 In addition to scheduling the publication, you can also schedule unpublishing. When the time comes, the currently published version will become a backup, leaving the item in question without a published version.
 
