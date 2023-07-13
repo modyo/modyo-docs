@@ -203,7 +203,7 @@ Modyo is programmed so that the login information is in the header of the site. 
 
 :: :warning Attention
 The login address must be a page within your account. You cannot redirect the login to an external URL.
-::
+:::
 
 ### Emails
 
