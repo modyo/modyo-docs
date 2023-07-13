@@ -148,7 +148,7 @@ In the templates section, you can make email mockups and then send them to users
 
 When you enter this section, you will find all the email templates created. The templates are ordered by name, and you can see the last time a template was modified.
 
-:: :tip Tip
+:::tip Tip
 If you reuse a template, be sure to carefully review its content to avoid possible temporary errors that could cause confusion in the message you want to send to your users.
 :::
 
