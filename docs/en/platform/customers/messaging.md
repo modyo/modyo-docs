@@ -176,7 +176,7 @@ When creating a Campaign, the name of your template will be used later for deliv
 
 The WYSIWYG editor allows you to visually create what your email will look like and add the corresponding parameters that allow you to automatically customize the message.
 
-:: :warning Attention
+:::warning Attention
 When you create a campaign, remember to add in the footer all the legal information required by your country's regulation, regarding mass mailings.
 
 To automate Footer insertion, read [Realms Configuration](/en/platform/customers/realms.html#emails)
