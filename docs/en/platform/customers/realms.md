@@ -232,7 +232,7 @@ You can include customizable codes in each email, these codes allow the platform
 It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the sending.
 
 To do this, insert the attributes that are below the editor into the code and paste it in the corresponding part of the code.
-::
+:::
 
 Every time you make a change to the code, you must click on the**Save** button located at the top of the screen.
 
