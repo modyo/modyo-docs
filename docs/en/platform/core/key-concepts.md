@@ -51,7 +51,7 @@ While approval is limited, any user with permissions can comment on the item.
 When you make changes to the team review settings, items that were already waiting for revision will still be governed by the rules before the changes.
 
 For those items to adjust to the new configuration, they need to be rejected and sent again for review.
-::
+:::
 
 ### Roles and permissions
 
