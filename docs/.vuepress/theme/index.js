@@ -28,14 +28,6 @@ module.exports = (options, ctx) => {
       '@vuepress/search',
       '@vuepress/plugin-nprogress',
       [
-        '@vuepress/last-updated',
-        {
-          transformer: (timestamp, lang) => {
-            return new Date(timestamp).toLocaleDateString();
-          }
-        }
-      ],
-      [
         'sitemap', {
           hostname: 'http://docs.modyo.com'
         },
