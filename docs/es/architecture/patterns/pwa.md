@@ -10,7 +10,7 @@ Las PWAs ofrecen diversas ventajas. Por un lado, pueden ser instaladas en el dis
 
 Otras características clave de las PWAs incluyen notificaciones push, acceso al hardware del dispositivo (como la cámara o el GPS), capacidad de respuesta y adaptabilidad a diferentes tamaños de pantalla, y actualizaciones automáticas para garantizar que los usuarios siempre tengan la versión más reciente de la aplicación.
 
-## AppShell Nativo
+### AppShell Nativo
 
 Los AppShells permiten empaquetar una PWA para ser distribuída en los mercados de aplicaciones de los diferentes proveedores. En escencia, el AppShell implementa internamente un WebView que se encarga de presentar la experiencia al usuario.
 
@@ -22,7 +22,7 @@ La tecnología de WebView difiere de forma significativa a los navegadores nativ
 
  
 
-## Limitaciones de las PWA en iOS
+### Limitaciones de las PWA en iOS
 
 Las principales razones por las que las PWA pueden tener limitaciones en iOS son:
 
@@ -35,7 +35,7 @@ Es importante destacar que Apple ha estado mejorando gradualmente el soporte de 
 
 A pesar de estas limitaciones, muchas PWA siguen siendo funcionales y útiles en iOS, aunque algunas características pueden no estar disponibles o pueden tener un rendimiento ligeramente inferior en comparación con otras plataformas. Siempre es recomendable realizar pruebas y evaluar la compatibilidad específica de la PWA en los dispositivos y navegadores de destino para garantizar una experiencia óptima.
 
-## Trusted Web Activities
+### Trusted Web Activities
 Trusted Web Activities (TWA) es una tecnología desarrollada por Google que permite empaquetar una Progressive Web App (PWA) dentro de una aplicación nativa en Android. Con TWA, puedes utilizar la interfaz de usuario nativa de Android, como la barra de navegación y la barra de estado, para mostrar y ejecutar una PWA, brindando una experiencia similar a la de una aplicación nativa.
 
 La principal ventaja de utilizar TWA es que puedes aprovechar las ventajas de las PWAs, como la capacidad de actualización instantánea y la compatibilidad multiplataforma, mientras brindas una apariencia y una experiencia de usuario nativas en Android. Al utilizar TWA, los usuarios pueden instalar la PWA desde la tienda de aplicaciones de Android y acceder a ella desde el lanzador de aplicaciones como si fuera una aplicación nativa.
