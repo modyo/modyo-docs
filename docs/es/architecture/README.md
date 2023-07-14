@@ -8,21 +8,7 @@ Los patrones de arquitectura son soluciones reutilizables y estructuradas para p
 
 La presente guía busca explorar en detalle los patrones más relevantes en el trabajo con la plataforma Mdoyo.
 
-## ¿Por qué utilizar Modyo?
-Modyo es una plataforma de desarrollo de frontend por componentes que te
 
-## Todo en un solo lugar
-Modyo ofrece todas las capacidades que necesitas para lanzar y evolucionar productos digitales en un solo lugar. Gestiona contenidos, aplicaciones y usuarios, de forma centralizada y escalable, para disminuir tus tiempos de salida al mercado.
+### ¿Qué son los patrones de arquitectura?
 
-## Modular y desacoplado
-La arquitectura modular y desacoplada de Modyo permite evitar los monolitos en todo nivel. Si bien las arquitecturas monolíticas son útiles en ciertos escenarios, para productos digitales de rápida evolución demuestran ser altamente inefectivas debido a sus altos costes de mantención.
-
-## Ágil y flexible
-Modyo trabaja bien con los demás productos del ecosistema. 
-
-Despliega tus cambios modularmente, con la posibilidad de previsualizarlos en vivo y usando las capacidades modulares de la plataforma Modyo en combinación con los stages de desarrollo virtuales.
-
-
-## Constante evolución
-
-La plataforma Mdoyo se encuentra en costante evolución. Apoyamos a todos nuestros clientes a estar siempre al día con las últimas versiones, asegurando que siempre cuenten con la mejor tecnología y estándares que podemos ofreceles.
+Los patrones de arquitectura son soluciones probadas y recomendadas para problemas comunes en el diseño y desarrollo de software. Estos patrones establecen una estructura y un conjunto de reglas para organizar y relacionar los componentes de un sistema, lo que facilita el desarrollo, la mantenibilidad y la escalabilidad del software. Al utilizar patrones de arquitectura, los desarrolladores pueden aprovechar las mejores prácticas establecidas y obtener un enfoque estructurado para construir aplicaciones de alta calidad. Estos patrones abordan preocupaciones como la separación de responsabilidades, la modularidad, la reutilización de código y la gestión de datos, entre otros aspectos fundamentales en el desarrollo de software. Al seguir estos patrones, los equipos de desarrollo pueden crear sistemas robustos, flexibles y fáciles de mantener.

@@ -544,6 +544,7 @@ module.exports = {
             collapsable: false,
             children: [
               ["/es/architecture/", "Introducción"],
+              ["/es/architecture/why-modyo", "¿Por qué Modyo?"],
             ],
           },
             {
@@ -570,6 +571,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/architecture/resources/",
+                "/es/architecture/resources/web-performance",
               ],
             },
           ],

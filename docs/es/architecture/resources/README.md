@@ -4,6 +4,14 @@ search: true
 
 # Aprende y Participa
 
+
+## Learning Paths
+
+## Comunidad
+
+## Documentación Oficial
+
+
 ## Modyo Expert
 
 Modyo Expert es un servicio de consultoría y acompañamiento que cubre todas las etapas del producto digital desarrollado
@@ -16,11 +24,3 @@ seguridad y rendimiento, por lo que podrán guiarte en asegurar el cumplimiento,
 como no funcionales.
 
 Pide más información sobre nuestros servicios de Modyo Expert comunicándote con tu ejecutivo comercial asignado.
-
-## Learning Paths
-
-## Webinars
-
-## Comunidad
-
-## Documentación Oficial
