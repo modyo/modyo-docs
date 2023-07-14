@@ -8,6 +8,7 @@ search: true
 
 ### 9.2.40 - 14 de julio de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Mejoras en la validación de formulario anónimo
 
 <Badge text="Core" type="core" vertical="middle"/>
