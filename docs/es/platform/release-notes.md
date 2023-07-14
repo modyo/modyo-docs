@@ -73,7 +73,7 @@ search: true
 
 <Badge text="Insights" type="insights" vertical="middle"/>
 
-* Corrige valor inicial del filtro de fecha, ahora muestra corresctamente el rango seleccionado.
+* Corrige valor inicial del filtro de fecha, ahora muestra correctamente el rango seleccionado.
 
   
 
