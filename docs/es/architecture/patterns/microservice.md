@@ -4,12 +4,12 @@ search: true
 
 # Microservicio
 
-Los microservicios son un enfoque arquitectónico y organizativo para el desarrollo de software donde el software está
-compuesto por pequeños servicios independientes que se comunican a través de API bien definidas. Los propietarios de
-estos servicios son equipos pequeños independientes.
+La arquitectura de microservicios es un enfoque tanto organizativo como técnico para el desarrollo de software, en el
+cual se compone el software por medio de pequeños servicios independientes que interactúan a través de interfaces de
+programación de aplicaciones (APIs) bien definidas. Dichos servicios están a cargo de equipos pequeños e independientes.
 
-Las arquitecturas de microservicios hacen que las aplicaciones sean más fáciles de escalar y más rápidas de desarrollar.
-Esto permite la innovación y acelera el tiempo de comercialización de las nuevas características.
+Este enfoque arquitectónico permite que las aplicaciones sean más escalables y su desarrollo sea más rápido, fomentando
+la innovación y acortando el tiempo necesario para lanzar nuevas funcionalidades al mercado.
 
 :::tip Microservicios en AWS
 Las definiciones de esta guía se adaptaron desde la Web de [Amazon AWS](https://aws.amazon.com). Para más información
@@ -155,6 +155,9 @@ En estos casos se deberán tener presentes las siguientes consideraciones:
 - **Workflows y máquina de estado:** Se recomienda el uso
   de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos.
   Tecnologías de workflows también pueden ser integradas a Spring Boot para este propósito.
+- **Arquitectura hexagonal:** Patrón de diseño de software que separa la lógica de negocio de una aplicación de sus
+  servicios externos, permitiendo un desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio de la
+  aplicación.
 - **API de Modyo:** Recomendamos usar el API administrativa de la plataforma Modyo para tareas comunes, como el envío de
   mensajes a usuarios o la integración al contenido administrado.
 

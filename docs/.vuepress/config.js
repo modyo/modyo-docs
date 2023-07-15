@@ -575,6 +575,7 @@ module.exports = {
               children: [
                 "/es/architecture/resources/",
                 "/es/architecture/resources/web-performance",
+                "/es/architecture/resources/ddd",
               ],
             },
           ],
