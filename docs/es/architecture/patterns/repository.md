@@ -11,14 +11,18 @@ memoria que se cargan desde la base de datos.
 
 El patrón de repositorio tiene tres propósitos principales:
 
-- **Separar la lógica de la aplicación de la lógica de la base de datos:** Esto permite que el código de la aplicación se
-escriba y mantenga de manera más eficiente, ya que no necesita contener mucha lógica para la manipulación de la base de
-datos.
+- **Separar la lógica de la aplicación de la lógica de la base de datos:** Esto permite que el código de la aplicación
+  se
+  escriba y mantenga de manera más eficiente, ya que no necesita contener mucha lógica para la manipulación de la base
+  de
+  datos.
 - **Permitir pruebas más fáciles:** Al usar el patrón de repositorio, puedes intercambiar el repositorio real con una
-implementación ficticia para realizar pruebas sin afectar a la base de datos real.
-- **Proporcionar una interfaz coherente para el acceso a datos:** Independientemente de dónde se almacenen los datos o cómo
-estén implementadas las operaciones de la base de datos, la aplicación siempre interactúa con un repositorio a través de
-una interfaz coherente.
+  implementación ficticia para realizar pruebas sin afectar a la base de datos real.
+- **Proporcionar una interfaz coherente para el acceso a datos:** Independientemente de dónde se almacenen los datos o
+  cómo
+  estén implementadas las operaciones de la base de datos, la aplicación siempre interactúa con un repositorio a través
+  de
+  una interfaz coherente.
 
 Una desventaja potencial del patrón de repositorio es que puede agregar una capa adicional de complejidad a tu código.
 Sin embargo, en muchos casos, los beneficios de la separación de preocupaciones, la mejora en las pruebas y la
@@ -30,3 +34,7 @@ necesidades y las características de tu aplicación antes de decidir utilizarlo
 
 ### ¿Cómo se implementa el patrón de repositorio con Modyo?
 
+El patrón de repositorio en Modyo puede aplicarse tanto a micro frontends como a microservicios. Esto se lleva a cabo
+mediante la implementación de repositorios intermedios a través de [Modyo Connect](/es/connect). Desde estos repositorios, se pueden
+generar componentes versionados que quedan disponibles en un sistema de registro de artefactos. Desde allí, pueden ser
+invocados según se necesiten en distintos contextos.

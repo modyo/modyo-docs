@@ -574,6 +574,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/architecture/resources/",
+                "/es/architecture/resources/code-reuse",
                 "/es/architecture/resources/web-performance",
                 "/es/architecture/resources/ddd",
               ],

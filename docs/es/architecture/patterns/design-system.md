@@ -19,6 +19,31 @@ producto, al proporcionar una base común de elementos y directrices que todos p
 coherencia visual y de interacción en todas las aplicaciones y contribuye a construir una identidad de marca sólida y
 reconocible.
 
+Los sistema de diseño puede incluir hojas de estilo, tipografías, iconos, librerías javascript o, incluso, componentes
+web. Dependiendo de los artefactos que informan este sistema de diseño, podemos distinguir dos implementaciones
+posibles:
+
+#### Sistema de diseño tipo librería
+En el caso de un sitio público, este es el tipo de sistema de diseño más recomendado, como recomendamos en la sección
+“Uso de widgets en sitios públicos” de este documento.
+Para implementar este tipo de sistema de diseño, lo ideal es cargar las dependencias en Modyo, usando los templates
+para guardar las hojas de estilo, librerías de javascript y los binarios cómo assets.
+En el caso de las librerías javascript y hojas de estilo, para ponerlas a disposición en el sitio, hay que agregarlas
+a una vista para que puedan ser consumidas, idealmente el layout del sitio.
+Es importante recordar que hay que actualizar las referencias de imágenes o tipografías que se hagan en esos
+archivos. La mejor forma de hacerlo es usando un helper de Liquid que permitirá mantener actualizada la URL si se
+edita o cambia la imagen o tipografía.
+
+#### Sistema de diseño que incluye componentes
+Si el sistema de diseño incluye componentes, la mejor opción es externalizar el desarrollo y usar el CLI de Modyo
+para empujar los widgets a la plataforma.
+El externalizar el desarrollo, nos permite consumir el sistema de diseño como paquete desde un registro público o
+privado.
+
+Snippets, con CSS, HTML, parametrizables. Widgets con liquid y HTML
+
+### ¿Cómo se implementa un sistema de diseño con Modyo?
+
 En Modyo existen diferentes formas de implementar sistemas de diseño, dependiendo del caso de uso.
 
 
