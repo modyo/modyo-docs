@@ -34,4 +34,4 @@ jobs:
         with:
           run: |
             echo "running Script"
-            docker run -it --env-file=.env -e "CONFIG=$(cat config.json | jq -r tostring)" algolia/docsearch-scraper
+            docker run -it  -e "CONFIG=$(cat $HOME/config.json | jq -r tostring)" algolia/docsearch-scraper
