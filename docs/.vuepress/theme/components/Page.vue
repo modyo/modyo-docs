@@ -36,6 +36,8 @@ export default {
   background #FFF
   a
     font-weight 400
+  li
+    padding-bottom 0.3rem
   .theme-default-content 
     img
       margin-top 30px

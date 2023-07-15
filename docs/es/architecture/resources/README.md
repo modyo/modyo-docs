@@ -4,13 +4,11 @@ search: true
 
 # Aprende y Participa
 
-
 ## Learning Paths
 
 ## Comunidad
 
 ## Documentación Oficial
-
 
 ## Modyo Expert
 
