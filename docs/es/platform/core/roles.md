@@ -49,7 +49,7 @@ Todos los usuarios que pertenecen a un grupo tendrán el rol del grupo. En caso 
 
 Para crear un grupo, sigue estos pasos:
 
-1. Desde Modyo Platformhaz click en **Configuración** 
+1. Desde Modyo Platfor haz click en **Configuración** 
 1. Daz click en **Grupos**. 
 1. Haz click en **+ Nuevo Grupo**.
 1. Escribe el nombre del grupo y selecciona el **Rol del Grupo**.
@@ -96,7 +96,7 @@ El usuario más importante tendrá el rol de Default Admin o Administrador. Este
 
 #### Roles por reino:
 
-- **Realm User**: PEste rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm User**: Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
 
 ### Acceso a las aplicaciones:
