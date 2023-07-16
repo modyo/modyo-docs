@@ -4,14 +4,27 @@ search: false
 
 # Arquitectura
 
-Los patrones de arquitectura son soluciones reutilizables y estructuradas para problemas comunes en el diseño y
-desarrollo de sistemas de software. Representan enfoques probados y estandarizados para abordar desafíos específicos en
-la construcción de aplicaciones, facilitando la creación de diseños robustos, mantenibles y escalables. Estos patrones
-proporcionan directrices y mejores prácticas para organizar los componentes de un sistema, establecer la comunicación
-entre ellos y definir las interacciones con el entorno, permitiendo a los desarrolladores aprovechar la experiencia
-acumulada para construir aplicaciones de calidad.
+En la era digital actual, el desarrollo web ha tomado un papel central en la creación de soluciones de software. Sin
+embargo, con la creciente complejidad y escala de las aplicaciones web modernas, se hace cada vez más necesario adoptar
+patrones de arquitectura de software efectivos y eficientes para garantizar la escalabilidad, la mantenibilidad y la
+eficacia de nuestras soluciones.
 
-La presente guía busca explorar en detalle los patrones más relevantes en el trabajo con la plataforma Mdoyo.
+La presente guía se propone explorar los diversos patrones de arquitectura de software que están modelando la forma en
+que desarrollamos y entendemos las aplicaciones web. Desde la arquitectura modular orientado a componentes, hasta los
+enfoques más contemporáneos como la arquitectura basada en micro frontends, microservicios y el Domain-Driven Design,
+abordaremos cada uno de estos patrones en detalle, desglosando sus principios, ventajas, desventajas y escenarios de uso
+ideales, además de abordar su implementación con Modyo.
+
+El objetivo es proporcionar una guía sólida y un recurso de referencia para los desarrolladores web, los arquitectos de
+software y todas las partes interesadas que buscan hacer frente a los retos del desarrollo web moderno, y aprovechar al
+máximo los patrones de arquitectura de software para construir aplicaciones robustas, escalables y orientadas al futuro.
+
+:::tip Enfoque de Alto Nivel
+Esta guía contiene patrones de alto nivel y está pensada para arquitectos de software y líderes técnicos. Para una
+revisión de patrones de programación más específicos de programación recomendamos el
+libro [“Design Patterns: Elements of Reusable Object-Oriented Software”](https://en.wikipedia.org/wiki/Design_Patterns)
+de Erich Gamma, Ralph Johnson, Richard Helm y John Vlissides.
+:::
 
 ### ¿Qué son los patrones de arquitectura?
 
