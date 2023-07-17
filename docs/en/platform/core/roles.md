@@ -17,7 +17,7 @@ To create an internal user, follow these steps:
 1. From the main menu, click on **Settings**.
 1. Select **Team**.
 1. Click on **+ New Team Member**.
-1. Complete the first name, last name, username, email, and password fields.
+1. Fill in the first name, last name, username, email, and password fields.
 1. Click **Save**.
 
 :: :tip Tip
