@@ -18,7 +18,7 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 - **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
 - **Approved**: When [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If you're in this state, your templates are ready to be published.
 
-On the bar in the upper-right, you will find the latest publication date and the available actions:
+At the top right, you can find the last publication date and the available actions:
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Clicking on this icon opens a new tab with the template preview mode, in which you can see, as if they were published, all the changes you have in your templates.
 
@@ -166,7 +166,7 @@ All elements of the Template Builder use Liquid as a template engine.
 For more information on what Liquid is and how to get the best out of it, check out the [Liquid Markup] page (/es/platform/channels/liquid-markup.html)
 ::
 
-In the work area, under the tabs, you will find a bar with useful elements:
+In the work area, below the tabs, you'll find a bar with useful items:
 
  <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates"> 
 
