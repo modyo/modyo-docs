@@ -170,7 +170,7 @@ In the work area, below the tabs, you'll find a bar with useful items:
 
  <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates"> 
 
-**Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
+**File Manager**: A mode is created where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
 :: :tip Tip
 For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
