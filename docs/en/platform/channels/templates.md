@@ -77,7 +77,7 @@ You can create new Layouts from Templates, by clicking on “Add Layout” in th
 You can use this code as a base, which contains everything necessary for your pages to use all the necessary elements of the site, such as the head, header, footer, service worker, and the Google Tag Manager configuration, but keep in mind that you can modify it as much as you want:
 
 ```liquid
-{% HTML5%}
+{% HTML5 %}
  <head> 
  {% snippet 'shared/general/head'%}
  </head> 
