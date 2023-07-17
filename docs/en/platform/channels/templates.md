@@ -58,7 +58,7 @@ At the bottom of the sidebar, you see a text box where you can type a comment. N
 
 In the main work area, there are two sections:
 
-- The central work area.
+- The work area.
 - The template selection area.
 
 Each template you click on the right sidebar, opens a text editor in the middle area. If you open multiple templates, they are opened as tabs in the workspace.
@@ -138,7 +138,7 @@ To include any of these views, there are different Liquid filters available: `as
 </head>
 ```
 
-Once saved and published, it is translated into the following HTML code:
+Once it has been saved and published, it is translated to the following HTML code:
 
 ```html
 <link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
