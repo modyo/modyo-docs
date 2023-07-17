@@ -9,7 +9,7 @@ version: 9.2
 
 # {{$frontmatter.title}}
 
-{{$frontmatter.meta[0].content}}
+{{ $frontmatter.meta[0].content}}
 
 Modyo Platform presents the main Modyo interface from which you can access all the relevant sections.
 
