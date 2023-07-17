@@ -11,7 +11,7 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-Modyo Platform shows the main Modyo interface, from which you have access to all relevant sections.
+Modyo Platform presents the main Modyo interface from which you can access all the relevant sections.
 
 <img src="/assets/img/platform/header.jpg" alt="Platform header image" style="margin: 40px auto; width: 300px; display: block;">
 
@@ -24,7 +24,7 @@ The documentation on this site applies to the latest version (9.1). To access do
 - [Team Review] (/es/platform/core/key-concepts.html)
 - [Integrations](/en/platform/core/integrations)
 - [Users and administrative roles](/en/platform/core/roles.html)
-- [Security](/en/platform/core/security.html)
+- [Security] (/es/platform/core/security.html)
 - [Management API] (/es/platform/core/api.html)
 
 
