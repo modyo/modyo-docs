@@ -107,7 +107,7 @@ In the views section, you'll find 4 types of errors available to customize:
 
 * **Disabled**: You'll see this error view if the site you're trying to access has been [disabled] (/es/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if, in the configuration of [site restrictions] (/es/platform/channels/sites.html #privacidad), you decide to show the 404 and not redirect to the home page.
-* **Privacy**: You'll see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#privacy) or one of its [pages](/en/platform/channels/pages.html#privacy).
+* **Privacy**: You'll see this error view if you don't have permission to access the [site] (/es/platform/channels/sites.html #privacidad) or one of its [pages] (/es/platform/channels/pages.html #privacidad).
 * **Template**: You'll see this error view when the page on the site you're loading has a liquid syntax error. It is unlikely that you will ever see this view, since from modyo 8.1 onwards we have a functionality that checks the liquid syntax before being able to save and publish changes to Templates.
 
 ## CSS and JavaScript
@@ -122,7 +122,7 @@ Custom CSS and Javascript views are the way in which you can import your librari
 1. Click on your site.
 1. In the side menu, click **Templates**.
 1. In the Views section, click the **Add Style Sheet** (or Javascript) button.
-1. Add the Path and click **Add**.
+1. Add the Route and click **Add**.
 1. Once you've finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
 
 
