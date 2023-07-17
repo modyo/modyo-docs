@@ -94,8 +94,8 @@ You can use this code as a base, which contains everything necessary for your pa
  <script> {% snippet “shared/serviceworker/register_js”%} </script> 
 {% snippet 'shared/general/footer'%}
 
-{% endbody%}
-{% endHTML5%}
+{% endbody %}
+{% endHTML5 %}
 ```
 
 Once you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
