@@ -6,7 +6,7 @@ search: true
 
 For any company or institution, it is important to know what is happening in its ecosystem, so having a generalized view of both the activity of its end users and the work team is essential to implement any strategy.
 
- <img src="/assets/img/insights/header.jpg" alt="Insights header image" style="margin: 40px auto; width: 500px; display: block;"> 
+<img src="/assets/img/insights/header.jpg" alt="Insights header image" style="margin: 40px auto; width: 500px; display: block;">
 
 **Modyo Insights** is a section specialized in representing statistical data about both the users of your sites and the team that creates the content and the digital channels.
 
