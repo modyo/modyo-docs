@@ -23,7 +23,7 @@ The documentation on this site applies to the latest version (9.1). To access th
 
 - [Team Review] (/en/platform/core/key-concepts.html)
 - [Integrations] (/en/platform/core/integrations)
-- [Users and Administration Roles] (/es/platform/core/roles.html)
+- [Users and Administration Roles] (/en/platform/core/roles.html)
 - [Security] (/en/platform/core/security.html)
 - [Management API] (/en/platform/core/api.html)
 
