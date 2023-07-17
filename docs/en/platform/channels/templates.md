@@ -181,7 +181,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
 **Snippets**: A list with all the snippets is displayed, along with the option to copy your reference code.
 
- <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets"> 
+ <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
 
 **Changes**: A list of all the times and states in which you have done the “Save” action in this version. By clicking on any of the sub-versions, you change the content of the template you are working on to that sub-version.
 
