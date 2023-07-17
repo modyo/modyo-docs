@@ -130,7 +130,7 @@ Use this field to add a date picker. Limit the selectable dates by applying the 
 
 Use this field to select a geographical address, based on the fields in Google Maps. If you don't have a Google API key, you can manually enter the location's name, latitude, longitude, and political divisions. These administrative divisions are not standard and vary from country to country. In the case of Chile, the divisions are: Region, Province, Commune and City.
 
-:: :warning Attention
+:::warning Attention
 To ensure that location maps work properly with the Google API key configured in your account, the key must have permissions to access:
 
 * JavaScript Maps API
