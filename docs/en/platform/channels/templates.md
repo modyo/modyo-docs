@@ -52,7 +52,7 @@ At the bottom of the sidebar, you see a text box where you can type a comment. N
 **Main Action**
 
 - **Save**: Save all changes to all templates.
-- **Send for Review**: Change the status of templates to “Waiting for Review”. In this state you can continue to make changes, but each change will be notified via email to the assigned reviewers.
+- **Submit for review**: Change the status of the templates to “Awaiting review”. In this state, you can continue to make changes, but each change will be notified via email to the assigned reviewers.
 - **Reject**: Returns to the “In Editing” state, notifying reviewers that the item was rejected.
 - **Publish**: Once the templates have been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -y-and-joint-publication) and publish your templates.
 
@@ -126,7 +126,7 @@ Custom CSS and Javascript views are the way in which you can import your librari
 1. Once you've finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
 
 
-To include any of these views, there are different Liquid filters available: `asset_url` to define the file type, `stylesheet_tag`, and `script_tag` to generate the corresponding tags, the following example adds: 
+To include any of these views, there are different Liquid filters available: `asset_url` to define the type of file, `stylesheet_tag`, and `script_tag` to generate the corresponding tags, in the following example it is added: 
 
 - A custom view of CSS with media: screen
 - A custom Javascript view with asynchronous loading
