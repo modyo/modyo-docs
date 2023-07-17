@@ -20,7 +20,7 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 
 On the bar in the upper-right, you will find the latest publication date and the available actions:
 
-**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking this icon opens a new tab with the template preview mode, in which you will see how it looks as if they were published, with all the changes you have in your templates.
+**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Clicking on this icon opens a new tab with the template preview mode, in which you can see, as if they were published, all the changes you have in your templates.
 
 :::warning Attention
 You can preview the changes as a user without a session, or with Modyo a session. For this, it's recommended to log in or log out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
@@ -77,25 +77,25 @@ You can create new Layouts from Templates, by clicking on “Add Layout” in th
 You can use this code as a base, this contains everything you need to make your pages use all the necessary elements of the site, such as the head, header, footer, service worker, and Google Tag Manager settings, but keep in mind that you can modify it as much as you want:
 
 ```liquid
-{% html5 %}
-<head>
-  {% snippet 'shared/general/head' %}
-</head>
+{% HTML5%}
+ <head> 
+ {% snippet 'shared/general/head'%}
+ </head> 
 
-{% body %}
-{% snippet 'shared/general/body_tag_manager' %}
-{% snippet 'shared/general/header' %}
+{% body%}
+{% snippet 'shared/general/body_tag_manager'%}
+{% snippet 'shared/general/header'%}
 
-{{ site.breadcrumb }}
-<div id="main-layout">
-{{ content_for_layout }}
-</div>
+{{site.breadcrumb}}
+ <div id="main-layout"> 
+{{content_for_layout}}
+ </div> 
 
-<script>{% snippet "shared/serviceworker/register_js" %}</script>
-{% snippet 'shared/general/footer' %}
+ <script> {% snippet “shared/serviceworker/register_js”%} </script> 
+{% snippet 'shared/general/footer'%}
 
-{% endbody %}
-{% endhtml5 %}
+{% endbody%}
+{% endHTML5%}
 ```
 
 After you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
@@ -192,9 +192,9 @@ For more information on the benefits and features of the Asset Manager, go to [A
 If you publish a version, you can see that the changelog disappears, that is because the new editable version does not have any changes.
 :::
 
-:::tip Tip
-Sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. Likewise, if you go back to a previous sub-version of a template, you won't affect the rest of the templates.
-:::
+:: :tip Tip
+The sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. In the same way, if you go back to a previous sub-version of a template, it doesn't affect the rest of the templates.
+::
 
 :::tip Tip
 If a previous version is restored to the editable version, you will be able to access the sub-versions of each template of that version. 
