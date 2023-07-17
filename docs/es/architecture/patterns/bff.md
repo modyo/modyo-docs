@@ -23,7 +23,7 @@ Beneficios del patrón Backend for Frontend:
 
 - **Adaptabilidad:** Permite adaptar la lógica y las capacidades del backend a cada cliente o interfaz de usuario,
   optimizando así la experiencia del usuario.
-  Independencia del frontend:** Permite a los equipos de frontend y backend trabajar de forma más independiente, ya que
+- **Independencia del frontend:** Permite a los equipos de frontend y backend trabajar de forma más independiente, ya que
   pueden evolucionar y realizar cambios en su lógica sin afectar a los otros componentes.
 - **Mejora del rendimiento:** Al tener un backend específico para cada interfaz de usuario, se pueden optimizar las
   consultas y respuestas de datos para satisfacer las necesidades particulares de cada cliente, mejorando así el
