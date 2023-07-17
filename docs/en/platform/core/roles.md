@@ -22,7 +22,7 @@ To create an internal user, follow these steps:
 
 :: :tip Tip
 If you want the new member to receive an email with their account details on the platform, check the box “Send password to the user's email”.
-::
+:::
 
 ### Edit user
 
