@@ -14,7 +14,7 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 
 
 - **Published**: When a published version already exists and its editable version is the same.
-- **Pending Changes**: When there is a published version, but your editable version has changes that are not published yet.
+- **Pending changes**: When there is a published version, but there are changes pending publication in your editable version.
 - **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
 - **Approved**: When [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If you're in this state, your templates are ready to be published.
 
@@ -68,7 +68,7 @@ The template bar on the right has two tabs: views and snippets.
 ## Custom Layouts
 
 Modyo has three default layouts:
-* **Home**: Used exclusively on the home page of the site.
+* **Home**: Used exclusively on the site's home page.
 * **Base**: All pages except the home page use this default layout.
 * **Error**: The error views use this clean layout (404, 401)
 
@@ -156,9 +156,9 @@ You can add custom snippets to the bottom of the platform's snippet list by clic
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
 
-:::tip Tip
-In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name i.e. **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
-:::
+:: :tip Tip
+For the system to recognize the type of programming language to which the snippet belongs, the ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
+::
 
 :: :tip Tip
 All elements of the Template Builder use Liquid as a template engine.
