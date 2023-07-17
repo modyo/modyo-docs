@@ -16,7 +16,7 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 - **Published**: When a published version already exists and its editable version is the same.
 - **Pending changes**: When there is a published version, but there are changes pending publication in your editable version.
 - **In review**: When [team review] (/es/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
-- **Approved**: When [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If you're in this state, your templates are ready to be published.
+- **Approbed**: When [team review] (/es/platform/core/key-concepts.html) is enabled and if the item review conditions were met. If you're in this state, your templates are ready to be published.
 
 At the top right, you can find the last publication date and the available actions:
 
@@ -103,7 +103,7 @@ After you have created your new layout, you can start using it by going to the p
 
 ## Errors in Views
 
-In the views section, you will find 4 error types available for customization:
+In the views section, you'll find 4 types of errors available to customize:
 
 * **Disabled**: You'll see this error view if the site you're trying to access has been [disabled] (/es/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if, in the configuration of [site restrictions] (/es/platform/channels/sites.html #privacidad), you decide to show the 404 and not redirect to the home page.
