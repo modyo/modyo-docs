@@ -4,7 +4,7 @@ search: true
 
 # Templates
 
-One of the most important aspects when creating the site is the base architecture and appearance of the site. In Templates, you can modify the base templates, along with the global JavaScript, and CSS to use in your pages and change their structure as required.
+One of the most important aspects when creating the site is the base architecture and appearance of the site. In Templates, you can modify the base templates, along with the JavaScript, and global CSS to use on your pages and change their structure as needed.
 
 When creating a Site, it will be filled with different templates to generate the Minimal theme and you can start creating your digital channel. If necessary, you can also create Snippets of HTML, JS, and CSS code to extend the functionality of your site.
 
