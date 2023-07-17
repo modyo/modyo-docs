@@ -173,7 +173,7 @@ In the work area, below the tabs, you'll find a bar with useful items:
 
 :: :tip Tip
 For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
-::
+:::
 
 **Keyboard Shortcuts**: A small pop-up is shown with some of the useful keyboard shortcuts to use in Templates.
 
