@@ -43,7 +43,7 @@ For more information on versioning, see [versioning](/en/platform/core/key-conce
 
 **Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Deploys a sidebar with the activity history and comments of the templates. 
 
-You can add new comments at the bottom of the sidebar. Next to each activity, you can also click on **see detail** to show the complete information of an activity log.
+At the bottom of the sidebar, you see a text box where you can type a comment. Next to each activity, you can click on **see detail** to show the full information of that activity log.
 
 **More actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>:
 
@@ -106,7 +106,7 @@ After you have created your new layout, you can start using it by going to the p
 In the views section, you will find 4 error types available for customization:
 
 * **Disabled**: You'll see this error if the site you're trying to access has been [disabled](/en/platform/channels/sites.html).
-* **404**: You'll see this view if you enter a site URL that isn't defined and if in the [site restrictions](/en/platform/channels/sites.html#privacy) settings you decide to display the 404 and not redirect to the home page.
+* **404**: You will see this view if you enter a site URL that is not defined and if, in the configuration of [site restrictions] (/es/platform/channels/sites.html #privacidad), you decide to show the 404 and not redirect to the home page.
 * **Privacy**: You'll see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#privacy) or one of its [pages](/en/platform/channels/pages.html#privacy).
 * **Template**: You'll see this error view when the page of the site you're loading has a liquid syntax error. It's unlikely that you'll ever see this view, given that from modyo 8.1 onwards we have a feature that checks the syntax of liquid before we can save and publish changes to Templates.
 
