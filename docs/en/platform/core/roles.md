@@ -74,7 +74,7 @@ The default roles that exist, depending on the context, are:
 #### Account-level roles:
 
 - **Default user**: Has all existing permissions, except for editing the configuration of each context. Must be invited to each context in order to access its functionalities.
-- **Default admin**: You have all the existing permissions, but you must be invited to each context in order to access its functions. At the Modyo Platform account level, you can only view global variables and activity.
+- **Default admin**: Has all the existing permissions, but must be invited to each context in order to access its functions. At the Modyo Platform account level, this role can only view global variables and activity.
 - **Owner**: You have all existing permissions and can access all contexts without needing to be invited to them.
 
 #### Site-level roles:
