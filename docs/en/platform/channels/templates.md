@@ -24,7 +24,7 @@ At the top right, you can find the last publication date and the available actio
 
 :: :warning Attention
 You can preview the changes as a user without a session or a user with a Modyo session. For this, it is advisable to start or close the Modyo session on the site before entering preview mode, since if you log in or out in preview mode, you may encounter security errors such as _x-frame-options_ or _mixed-content_, depending on the configuration of custom domains and SSL of the site
-::
+:::
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
 
