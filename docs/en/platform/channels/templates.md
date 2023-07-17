@@ -67,7 +67,7 @@ The template bar on the right has two tabs: views and snippets.
 
 ## Custom layouts
 
-Modyo has three default layouts:
+Modyo has three default layouts: 
 * **Home**: Used exclusively on the site's home page.
 * **Base**: All pages except the home page use this layout by default.
 * **Error**: Error views use this clean layout (404, 401)
@@ -154,7 +154,7 @@ Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. N
 
 You can add custom snippets at the bottom of the platform's list of snippets, by clicking on the**+** button.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
+ <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window"> 
 
 :: :tip Tip
 For the system to recognize the type of programming language to which the snippet belongs, the ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
@@ -180,7 +180,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
  <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module"> 
 
-**Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
+**Snippets**: A list with all the snippets is displayed, along with the option to copy your reference code.
 
  <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets"> 
 
