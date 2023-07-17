@@ -51,7 +51,7 @@ At the bottom of the sidebar, you see a text box where you can type a comment. N
 
 **Main Action**
 
-- **Save**: Saves all changes to all templates.
+- **Save**: Save all changes to all templates.
 - **Send for Review**: Change the status of templates to “Waiting for Review”. In this state you can continue to make changes, but each change will be notified via email to the assigned reviewers.
 - **Reject**: Returns to the “In Editing” state, notifying reviewers that the item was rejected.
 - **Publish**: Once the templates have been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -y-and-joint-publication) and publish your templates.
