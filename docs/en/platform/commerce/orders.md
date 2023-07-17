@@ -4,10 +4,10 @@ search: true
 
 # Orders
 
-Here you can see the complete list of all orders made through the site. This allows you to arrange your orders and see if it is working correctly.
+Here you can see the full list of all orders placed through the site. This way, you'll be able to organize your orders and see if it's working properly.
 
 The filters that can be applied are:
 
 - Date
-- Order status
-- Payment methods
+- Order Status
+- Means of payment
