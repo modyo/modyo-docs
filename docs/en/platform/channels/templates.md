@@ -185,7 +185,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
 **Changes**: A list of all the times and states in which you have done the “Save” action in this version. By clicking on any of the sub-versions, you change the content of the template you are working on to that sub-version.
 
- <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template"> 
+<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
 :: :tip Tip
 If you publish a version, you will see that the list of changes disappears, this is because the new editable version has not had any changes.
