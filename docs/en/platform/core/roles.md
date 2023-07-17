@@ -87,7 +87,7 @@ The default roles that exist, depending on the context, are:
 
 #### Space-level roles:
 
-- **Space viewer**: This role allows you to view the contents of a space, see differences between versions, and leave comments. Your access is limited to viewing and participating through comments, you cannot make changes to the content or take actions that affect the configuration.
+- **Space viewer**: This role allows you to view the contents of a space, see differences between versions, and leave comments. Access is limited to viewing and participating through comments, you cannot make changes to the content or take actions that affect the configuration.
 - **Space writer**: This role can only edit content in a space. You don't have permission to publish, delete, rollback, or edit the configuration.
 - **Space editor**: You have all the permissions of a space admin, except for permissions to edit space settings. You don't have permissions to assets and you can't create types.
 - **Space admin**: This role has all the permissions at the space level, but it cannot create new spaces. You can create and delete assets.
