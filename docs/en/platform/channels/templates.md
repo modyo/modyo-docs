@@ -118,7 +118,7 @@ You can create custom CSS and JavaScript templates by clicking the **+** buttons
 
 Custom CSS and Javascript views are the way in which you can import your libraries to Modyo Platform. Follow these steps to create a CSS or Javascript view:
 
-1. In Modyo Platform, expand **Channels**, and click **Sites**.
+1. On Modyo Platform, expand **Channels**, and click **Sites**.
 1. Click on your site.
 1. In the side menu, click **Templates**.
 1. In the Views section, click the **Add Style Sheet** (or Javascript) button.
@@ -168,7 +168,7 @@ For more information on what Liquid is and how to get the most out of it, check 
 
 In the work area, under the tabs, you will find a bar with useful elements:
 
-<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
+ <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates"> 
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
