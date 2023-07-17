@@ -4,6 +4,10 @@ search: true
 
 # Sitio Privado
 
+:::warning Contenido en Progreso
+La siguiente página se encuentra en proceso de mejora. Los contenidos podrían estar incompletos o desactualziados.
+:::
+
 El sitio privado es uno de los usos más avanzados que se puede realizar sobre la plataforma.
 
 Objetivos:

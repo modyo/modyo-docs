@@ -4,6 +4,10 @@ search: true
 
 # ¿Por qué utilizar Modyo?
 
+:::warning Contenido en Progreso
+La siguiente página se encuentra en proceso de mejora. Los contenidos podrían estar incompletos o desactualziados.
+:::
+
 Modyo es una plataforma de experiencia digital que permite crear, gestionar y personalizar sitios web y aplicaciones de
 manera intuitiva y eficiente. Con un enfoque en la facilidad de uso y la flexibilidad, Modyo proporciona herramientas
 para la creación de contenido, la personalización de la apariencia y funcionalidad, y la gestión centralizada de

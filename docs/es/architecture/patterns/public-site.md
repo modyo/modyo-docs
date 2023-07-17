@@ -4,6 +4,10 @@ search: true
 
 # Sitio Público
 
+:::warning Contenido en Progreso
+La siguiente página se encuentra en proceso de mejora. Los contenidos podrían estar incompletos o desactualziados.
+:::
+
 El sitio público es uno de los patrones más comunes en el desarrollo con Modyo.
 
 Objetivos:

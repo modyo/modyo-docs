@@ -32,68 +32,46 @@ ligeras. Los servicios se crean para las capacidades empresariales y cada servic
 que se ejecutan de forma independiente, cada servicio se puede actualizar, implementar, y escalar para satisfacer la
 demanda de funciones específicas de una aplicación.
 
-## Características
+### Características
 
-### Autónomos
-
-Cada servicio componente en una arquitectura de microservicios se puede desarrollar, implementar, operar, y escalar sin
+- **Autónomos:** Cada servicio componente en una arquitectura de microservicios se puede desarrollar, implementar, operar, y escalar sin
 afectar el funcionamiento de otros servicios. Los servicios no necesitan compartir ninguno de sus códigos o
 implementaciones con otros servicios. Cualquier comunicación entre componentes individuales ocurre a través de API bien
 definidas.
-
-### Especializados
-
-Cada servicio está diseñado para un conjunto de capacidades y se enfoca en resolver un problema específico. Si los
+- **Especializados:** Cada servicio está diseñado para un conjunto de capacidades y se enfoca en resolver un problema específico. Si los
 desarrolladores aportan más código a un servicio a lo largo del tiempo y el servicio se vuelve más complejo, se puede
 dividir en servicios más pequeños.
 
-## Beneficios
+### Beneficios
 
-### Agilidad
-
-Los microservicios fomentan una organización de equipos pequeños e independientes que se apropian de los servicios. Los
+- **Agilidad:** Los microservicios fomentan una organización de equipos pequeños e independientes que se apropian de los servicios. Los
 equipos actúan en un contexto pequeño, bien comprendido, y están facultados para trabajar de forma más independiente y
 más rápida. Esto acorta los tiempos del ciclo de desarrollo. Usted se beneficia significativamente del aumento de
 rendimiento de la organización.
-
-### Escalado flexible
-
-Los microservicios permiten que cada servicio se escale de forma independiente para satisfacer la demanda de la
+- **Escalado flexible:** Los microservicios permiten que cada servicio se escale de forma independiente para satisfacer la demanda de la
 característica de la aplicación que respalda. Esto permite a los equipos adecuarse a las necesidades de la
 infraestructura, medir con precisión el costo de una característica, y mantener la disponibilidad si un servicio
 experimenta un aumento en la demanda.
-
-### Implementación sencilla
-
-Los microservicios permiten la integración y entrega continua, lo que facilita probar nuevas ideas y revertirlas si algo
+- **Implementación sencilla:** Los microservicios permiten la integración y entrega continua, lo que facilita probar nuevas ideas y revertirlas si algo
 no funciona. El bajo costo de los errores permite experimentar, facilita la actualización del código, y acelera el
 tiempo de comercialización de las nuevas características.
-
-### Libertad tecnológica
-
-Las arquitecturas de microservicios no siguen un enfoque de "diseño único". Los equipos tienen la libertad de elegir la
+- **Libertad tecnológica:** Las arquitecturas de microservicios no siguen un enfoque de "diseño único". Los equipos tienen la libertad de elegir la
 mejor herramienta para resolver sus problemas específicos. Como consecuencia, los equipos que crean microservicios
 pueden elegir la mejor herramienta para cada trabajo.
-
-### Código reutilizable
-
-La división del software en módulos pequeños y bien definidos les permite a los equipos usar funciones para diferentes
+- **Código reutilizable:** La división del software en módulos pequeños y bien definidos les permite a los equipos usar funciones para diferentes
 propósitos. Un servicio escrito para una determinada función se puede usar como un componente básico para otra
 característica. Esto permite que una aplicación arranque por sí sola, ya que los desarrolladores pueden crear nuevas
 capacidades sin tener que escribir código desde cero.
-
-### Resistencia
-
-La independencia del servicio aumenta la resistencia de una aplicación a los errores. En una arquitectura monolítica, un
+- **Resistencia:** La independencia del servicio aumenta la resistencia de una aplicación a los errores. En una arquitectura monolítica, un
 error en un solo componente, puede provocar un error en toda la aplicación. Con los microservicios, si hay un error en
 todo el servicio, las aplicaciones lo manejan degradando la funcionalidad sin bloquear toda la aplicación.
 
-## Desarrollo
+### Desarrollo
 
 Modyo Connect permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma
-de [contenedores](../components/infrastructure.md#contenedores). Para ello, se debe contar con
-un [repositorio de código](../components/development.md#repositorio-de-codigo) y sus procesos
-de [integración continua](../components/development.md#integracion-continua) activos.
+de [contenedores](/es/connect/components/infrastructure.md#contenedores). Para ello, se debe contar con
+un [repositorio de código](/es/connect/components/development.md#repositorio-de-codigo) y sus procesos
+de [integración continua](/es/connect/components/development.md#integracion-continua) activos.
 
 Los microservicios desarrollados en Modyo Connect tienen la capacidad de escalar horizontalmente incrementando
 automáticamente el número de instancias cuando es requerido y reemplazando aquellas que presenten algún tipo de

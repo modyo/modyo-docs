@@ -565,6 +565,8 @@ module.exports = {
                 "/es/architecture/patterns/ssg",
                 "/es/architecture/patterns/spa",
                 "/es/architecture/patterns/repository",
+                "/es/architecture/patterns/code-reuse",
+                "/es/architecture/patterns/ddd",
                 "/es/architecture/patterns/accessibility",
                 "/es/architecture/patterns/internationalization",
               ],
@@ -574,9 +576,7 @@ module.exports = {
               collapsable: true,
               children: [
                 "/es/architecture/resources/",
-                "/es/architecture/resources/code-reuse",
                 "/es/architecture/resources/web-performance",
-                "/es/architecture/resources/ddd",
               ],
             },
           ],
