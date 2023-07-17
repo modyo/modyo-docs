@@ -152,7 +152,7 @@ To learn more about the parameters supported by these filters, see [Liquid filte
 
 Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> ) to copy your reference path. The code will look something like this: <span v-pre> `{% snippet “snippet-name”%}` </span> . This Liquid code must be pasted wherever you want to call this Snippet.
 
-You can add custom snippets to the bottom of the platform's snippet list by clicking on the **+** button.
+You can add custom snippets at the bottom of the platform's list of snippets, by clicking on the**+** button.
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
 
