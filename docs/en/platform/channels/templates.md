@@ -49,7 +49,7 @@ At the bottom of the sidebar, you see a text box where you can type a comment. N
 
 - **Restore all**: Restore templates to their original values.
 
-**Main Actions**
+**Main Action**
 
 - **Save**: Saves all changes to all templates.
 - **Send for Review**: Change the status of templates to “Waiting for Review”. In this state you can continue to make changes, but each change will be notified via email to the assigned reviewers.
@@ -150,7 +150,7 @@ To learn more about the parameters supported by these filters, see [Liquid filte
 
 ## Snippets
 
-Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) to copy its reference path. The code will look similar to this: <span v-pre> `{% snippet “snippet name”%}` </span>. This Liquid code must be pasted where you want to call this Snippet.
+Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> ) to copy your reference path. The code will look something like this: <span v-pre> `{% snippet “snippet-name”%}` </span> . This Liquid code must be pasted wherever you want to call this Snippet.
 
 You can add custom snippets to the bottom of the platform's snippet list by clicking on the **+** button.
 
@@ -188,9 +188,9 @@ For more information on the benefits and features of File Manager, go to [File M
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
-:::tip Tip
-If you publish a version, you can see that the changelog disappears, that is because the new editable version does not have any changes.
-:::
+:: :tip Tip
+If you publish a version, you can see that the list of changes disappears, this is because the new editable version has not had any changes.
+::
 
 :: :tip Tip
 The sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. In the same way, if you go back to a previous sub-version of a template, it doesn't affect the rest of the templates.
