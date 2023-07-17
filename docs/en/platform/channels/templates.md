@@ -65,7 +65,7 @@ Each template you click on the right sidebar, opens a text editor in the middle 
 
 The template bar on the right has two tabs: views and snippets.
 
-## Custom Layouts
+## Custom layouts
 
 Modyo has three default layouts:
 * **Home**: Used exclusively on the site's home page.
