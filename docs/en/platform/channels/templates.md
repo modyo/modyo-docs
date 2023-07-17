@@ -132,10 +132,10 @@ To include any of these views, there are different Liquid filters available: `as
 - A custom Javascript view with asynchronous loading
 
 ```html
-<head>
-  {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
-  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }} 
-</head>
+ <head> 
+ {{'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style'}}
+ {{'my-js' | asset_url: 'js' | script_tag: async: 'async', defer: 'defer'}} 
+ </head> 
 ```
 
 Once it has been saved and published, it is translated to the following HTML code:
@@ -145,7 +145,7 @@ Once it has been saved and published, it is translated to the following HTML cod
  <script src='my-js' type='text/javascript' async='async' defer='defer'> </script> 
 ```
 
-To learn more about the parameters supported by these filters, see [Liquid filters](/en/platform/channels/liquid-markup.html#standard-filters).
+To learn more about the parameters supported by these filters, go to [Liquid filters] (/es/platform/channels/liquid-markup.html #filtros -standard).
 
 
 ## Snippets
