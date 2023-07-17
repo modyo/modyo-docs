@@ -69,7 +69,7 @@ The template bar on the right has two tabs: views and snippets.
 
 Modyo has three default layouts:
 * **Home**: Used exclusively on the site's home page.
-* **Base**: All pages except the home page use this default layout.
+* **Base**: All pages except the home page use this layout by default.
 * **Error**: Error views use this clean layout (404, 401)
 
 You can create new Layouts from Templates, by clicking on “Add Layout” in the “Views” tab, which will allow you to define a new base structure to use in the pages.
