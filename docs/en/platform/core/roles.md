@@ -82,8 +82,8 @@ The default roles that exist, depending on the context, are:
 - **Site viewer**: Can view entries, see differences between versions, and you can leave comments. Can also access the sync view and see the changes pending syncing. However, this role is not authorized to take any action that involves a change to the platform. 
 - **Site developer**: Can only edit resources. Cannot publish, delete, rollback, or edit the configuration.
 - **Site developer CLI**: Has the same permissions as Site developer; in addition, can interact with modyo-cli.
-- **Site reviewer**: You have all the permissions of the site admin role, except the permissions to edit the site settings.
-- **Site admin**: You have all the permissions at the level of a site, but you cannot create new sites.
+- **Site reviewer**: Has all the permissions of the site admin role, except the permissions to edit the site settings.
+- **Site admin**: Has all the permissions at the level of a site, but cannot create new sites.
 
 #### Space-level roles:
 
