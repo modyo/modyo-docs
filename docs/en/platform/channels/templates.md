@@ -172,9 +172,9 @@ In the work area, under the tabs, you will find a bar with useful elements:
 
 **Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
 
-:::tip Tip
-For more information on the benefits and features of the Asset Manager, go to [Asset Manager](/en/platform/content/asset-manager.html)
-:::
+:: :tip Tip
+For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
+::
 
 **Keyboard shortcuts**: A small pop-up appears with some of the useful keyboard shortcuts to use in Templates.
 
