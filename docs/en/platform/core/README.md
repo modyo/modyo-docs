@@ -7,7 +7,7 @@ meta:
 version: 9.2
 ---
 
-# {{$frontmatter.title}}
+# {{ $frontmatter.title }}
 
 {{ $frontmatter.meta[0].content }}
 
