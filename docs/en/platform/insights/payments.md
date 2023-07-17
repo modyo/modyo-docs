@@ -20,4 +20,4 @@ This graphic allows us to compare the use of the different types of payment meth
 
 ### Orders by Current Status
 
-Finally, we can see the effectiveness of the movements of our e-commerce, with the status of the orders of the last time, showing the amount of movements in pending payment status, paid, rejected, canceled, pending confirmation, failures and completed.
+Finally, you can see the effectiveness of the movements of an e-commerce, with the status of the orders of the last time, showing the number of movements in the pending payment status, paid, rejected, canceled, awaiting confirmation, failed and completed.
