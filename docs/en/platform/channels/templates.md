@@ -89,7 +89,7 @@ You can use this code as a base, which contains everything necessary for your pa
 {{ site.breadcrumb }}
  <div id="main-layout"> 
 {{ content_for_layout }}
- </div> 
+ </div>
 
  <script> {% snippet “shared/serviceworker/register_js” %} </script> 
 {% snippet 'shared/general/footer' %}
