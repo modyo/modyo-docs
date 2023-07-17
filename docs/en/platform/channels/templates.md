@@ -86,7 +86,7 @@ You can use this code as a base, which contains everything necessary for your pa
 {% snippet 'shared/general/body_tag_manager'%}
 {% snippet 'shared/general/header'%}
 
-{{site.breadcrumb}}
+{{ site.breadcrumb }}
  <div id="main-layout"> 
 {{content_for_layout}}
  </div> 
