@@ -15,7 +15,7 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 
 - **Published**: When a published version already exists and its editable version is the same.
 - **Pending changes**: When there is a published version, but there are changes pending publication in your editable version.
-- **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
+- **In review**: When [team review] (/es/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
 - **Approved**: When [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If you're in this state, your templates are ready to be published.
 
 At the top right, you can find the last publication date and the available actions:
@@ -70,7 +70,7 @@ The template bar on the right has two tabs: views and snippets.
 Modyo has three default layouts:
 * **Home**: Used exclusively on the site's home page.
 * **Base**: All pages except the home page use this default layout.
-* **Error**: The error views use this clean layout (404, 401)
+* **Error**: Error views use this clean layout (404, 401)
 
 You can create new Layouts from Templates, by clicking on “Add Layout” in the “Views” tab, which will allow you to define a new base structure to use in the pages.
 
