@@ -61,7 +61,7 @@ In the main workspace, you can see two sections:
 - The work area.
 - The template selection area.
 
-Each template you click on the right sidebar, opens a text editor in the middle area. If you open multiple templates, they are opened as tabs in the workspace.
+Each template that you click on in the right sidebar opens in the central area with a text editor. If you open multiple templates, they are open as tabs in the workspace.
 
 The template bar on the right has two tabs: views and snippets.
 
