@@ -9,7 +9,7 @@ version: 9.2
 
 # {{$frontmatter.title}}
 
-{{ $frontmatter.meta[0].content }}
+{{$frontmatter.meta [0] .content}}
 
 Modyo Platform presents the main Modyo interface from which you can access all the relevant sections.
 
@@ -21,7 +21,7 @@ The documentation on this site applies to the latest version (9.1). To access th
 
 ### Main functionalities
 
-- [Team Review] (/es/platform/core/key-concepts.html)
+- [Team Review] (/en/platform/core/key-concepts.html)
 - [Integrations] (/en/platform/core/integrations)
 - [Users and Administration Roles] (/es/platform/core/roles.html)
 - [Security] (/es/platform/core/security.html)
