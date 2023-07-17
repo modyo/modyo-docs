@@ -154,7 +154,7 @@ Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. N
 
 You can add custom snippets at the bottom of the platform's list of snippets, by clicking on the**+** button.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
+ <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window"> 
 
 :: :tip Tip
 For the system to recognize the type of programming language to which the snippet belongs, the ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
@@ -184,7 +184,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
  <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets"> 
 
-**Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
+**Changes**: A list of all the times and states in which you have done the “Save” action in this version. By clicking on any of the sub-versions, you change the content of the template you are working on to that sub-version.
 
  <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template"> 
 
