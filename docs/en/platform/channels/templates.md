@@ -78,8 +78,7 @@ You can use this code as a base, which contains everything necessary for your pa
 
 ```liquid
 {% HTML5 %}
-<head>
- {% snippet 'shared/general/head' %}
+<head>{% snippet 'shared/general/head' %}
 </head>
 
 {% body %}
