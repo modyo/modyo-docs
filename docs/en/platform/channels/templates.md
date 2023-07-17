@@ -83,16 +83,16 @@ You can use this code as a base, which contains everything necessary for your pa
  </head> 
 
 {% body%}
-{% snippet 'shared/general/body_tag_manager'%}
-{% snippet 'shared/general/header'%}
+{% snippet 'shared/general/body_tag_manager' %}
+{% snippet 'shared/general/header' %}
 
 {{ site.breadcrumb }}
  <div id="main-layout"> 
 {{ content_for_layout }}
  </div> 
 
- <script> {% snippet “shared/serviceworker/register_js”%} </script> 
-{% snippet 'shared/general/footer'%}
+ <script> {% snippet “shared/serviceworker/register_js” %} </script> 
+{% snippet 'shared/general/footer' %}
 
 {% endbody %}
 {% endHTML5 %}
