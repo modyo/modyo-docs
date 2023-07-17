@@ -182,14 +182,13 @@ Estas opciones involucran cierto riesgo para la experiencia del sitio y sus usua
 
 ### SEO
 
-<img src="/assets/img/channels/sites/seo-site.jpg" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+<img src="/assets/img/channels/sites/seo.png" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 El SEO (Search Engine Optimization) es la llave para aparecer en los distintos motores de búsqueda. Los usuarios dependen de una buena configuración de SEO para llegar al sitio.
 
 Las opciones a configurar son:
 
 - **Tagline**: Descripción que aparece en los motores de búsqueda, bajo el nombre del sitio
-- **Palabras claves**: Palabras que buscan los usuarios y que quieres que el sitio aparezca. Este campo acepta un máximo de 255 caracteres.
 - **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y actualizar el archivo sitemap.xml. Deshabilita esta opción para mantener un mapa de sitio personalizado.
 - **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
 - **Actualizar automáticamente el archivo robots.xml para mí**: Permite a Modyo crear y actualizar el archivo robots.txt. Deshabilita esta opción para proporcionar instrucciones personalizadas a los rastreadores de sitios.
