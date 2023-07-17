@@ -85,7 +85,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Se valida correctamente el campo defaul email sender en las configuraciones del reino, ahora tampoco puede estar vacío.
+* Se valida correctamente el campo default email sender en las configuraciones del reino, ahora tampoco puede estar vacío.
 
 <Badge text="Insights" type="insights" vertical="middle"/>
 
