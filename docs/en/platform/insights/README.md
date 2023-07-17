@@ -10,7 +10,7 @@ For any company or institution, it is important to know what is happening in its
 
 **Modyo Insights** is a section specialized in representing statistical data about both the users of your sites and the team that creates the content and the digital channels.
 
-Each area of **Modyo Insights** has three main sections:
+Each view of **Modyo Insights** has three main sections:
 
 - General Accountants
 - Comparative chart
