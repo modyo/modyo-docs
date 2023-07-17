@@ -19,13 +19,13 @@ Modyo Platform shows the main Modyo interface, from which you have access to all
 The documentation on this site applies to the latest version (9.1). To access documentation for previous version (8.2) [click here](/assets/pdf/Modyo82Docs.pdf).
 :::
 
-### Main features
+### Main functionalities
 
-- [Team review](/en/platform/core/key-concepts.html)
+- [Team Review] (/es/platform/core/key-concepts.html)
 - [Integrations](/en/platform/core/integrations)
 - [Users and administrative roles](/en/platform/core/roles.html)
 - [Security](/en/platform/core/security.html)
-- [Administration API](/en/platform/core/api.html)
+- [Management API] (/es/platform/core/api.html)
 
 
 ### Reserved words
