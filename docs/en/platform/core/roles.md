@@ -6,93 +6,108 @@ search: true
 
 ## Team
 
-All internal platform users make up a team, and each team member can have a specific role to play in realizing the full potential of Modyo. This is where you'll be able to create, edit, and deactivate platform users.
+All the internal users of the platform make up the team and each member can have a specific role to make the most of the system. 
+
+In this section you can create, edit and deactivate users of the platform.
 
 ### Create user
 
 To create an internal user, follow these steps:
 
-1. From the main menu, click Settings, then select Team.
+1. From the main menu, click on **Settings**.
+1. Select **Team**.
 1. Click on **+ New Team Member**.
-1. Fill in the first name, last name, username, email, and password.
+1. Complete the first name, last name, username, email, and password fields.
 1. Click **Save**.
 
-:::tip Tip
-If you want the new member to receive an email with their account details on the platform, click on the “Send password to user email” checkbox.
-:::
+:: :tip Tip
+If you want the new member to receive an email with their account details on the platform, check the box “Send password to the user's email”.
+::
 
 ### Edit user
 
-Within the user editing screen, platform administrators will have access to the following windows:
+Within the user edit screen, platform administrators have access to the following windows:
 
-- Activity: The history of all actions performed by this user.
-- Access: The permissions granted for this user to the various modules in Modyo. Here you can also select the user's role.
-- API Access: Generate new access tokens to use our APIs. You must generate a token for each site.
+- Activity: Shows the history of all actions performed by the user.
+- Access: Shows the permissions granted to the user in the different Modyo modules. Here you can also select the user's role.
+- API access: Generate new access tokens to use your APIs. You must generate a token for each site.
 - Edit: Modify user data such as name, email, and password.
-- Groups: List of all groups to which this user belongs.
-- Devices: List of all devices where the user has an active session. Data such as: browser, operating system, last login, and IP address are displayed. Here you can remotely log out for each device.
+- Groups: Shows a list of all the groups to which the user belongs.
+- Devices: Shows a list of all devices where the user has an active session. It displays data such as browser, operating system, last login and IP address. Here, in addition, you can remotely log out for each device.
 
 ## Groups
 
-Groups allow you to streamline access control across Modyo, so you can assign a default role to a context (account, spaces, realms, or sites) to multiple users at once and then add that user group to different contexts, allowing all users to get the group's role in the associated context.
+Groups allow you to streamline access control to the different Modyo contexts. You can assign a default role to a context (account, space, kingdom, or site) for multiple users at the same time and then that group of users to different contexts. This allows all users to obtain the group role in the corresponding context.
 
-Additionally, you can add or remove a user from existing groups by selecting the "Groups" section in each team member's profile.
+In addition, from the “Groups” section in each team member's profile, you can add or remove the user from an existing group.
 
-:::tip Tip
-Note that if a user already has an associated role in a context (account, space, realm, or site) and you add it to a group with a higher privilege role, the user gets the highest privileged role between the own role and the group's role.
-:::
+:: :tip Tip
+All users who belong to a group will have the group role. In the case of individually assigning a particular role to a team member, the role with the most privileges takes precedence.
+::
 
 ### Create a group
 
 To create a group, follow these steps:
 
-1. From Modyo Platform, in the side menu, expand **Settings** and click **Groups**. 
+1. From Modyo Platform click on **Configuration** 
+1. Click on **Groups**. 
 1. Click **+ New Group**.
-1. Type the name, select the Group Role, and add the users who are a part of this Group.
+1. Type the name of the group and select the**Group Role**.
+1. Select from the drop-down menu under **Add Users**, the users that will be part of this group.
+1. Click **Create**.
 
-The group now appears when you try to add a user as a member of the team. All users who belong to the group will be added with the group role, if a role is also selected for the individual member, the role with the most privileges takes precedence.
+Once a group is created, you can view it in the Groups panel. In addition, when editing a user, you can add them or, if they are already part of that group, delete them. 
+
 
 ## Roles
 
-The roles can be applied in the different modules to customize the experience of your work team. Applying a role is specific to that module. For example, you can select who are the administrators of a space, who can interact with the CLI somewhere, and so on. 
+You can apply roles in the different modules to customize the experience of your work team. Each role applies in a specific way to a particular module. For example, you can select the administrators of a space or the members who can interact with the CLI somewhere.
 
-Modyo has 10 default roles with different functions per context that will allow you to distribute and control who has access to which sections of each context of the platform.
+Modyo has 10 default roles with different functions for each context, allowing you to distribute and control access to the different sections of each context of the platform.
 
 ### Default Roles
 
-Modyo by default assigns predetermined roles, sorted according to the area of the platform and the context.
+Modyo assigns default roles depending on the context or section in which they are used.
 
-The default roles that exist, depending on the given area of the platform:
+The default roles that exist, depending on the context, are:
 
 #### Account-level roles:
 
-- **Default user**: You have all existing permissions, except editing the configuration of each context. You must be invited to each context in order to access its functionalities.
+- **Default user**: You have all existing permissions, except for editing the configuration of each context. You must be invited to each context in order to access its functionalities.
 - **Default admin**: You have all the existing permissions, but you must be invited to each context in order to access its functions. At the Modyo Platform account level, you can only view global variables and activity.
 - **Owner**: You have all existing permissions and can access all contexts without needing to be invited to them.
 
 #### Site-level roles:
 
-- **Site developer**: You can only edit resources (you cannot publish, delete, roll back, or edit the configuration).
-- **Site developer CLI**: Same permissions as Site developer and can also interact with modyo-cli 
-- **Site reviewer**: A site admin, but without the ability to edit the site configuration.
+- **Site viewer**: You can view entries, see differences between versions, and you can leave comments. You can also access the sync view and see the changes pending syncing. However, this role is not authorized to take any action that involves a change to the platform. 
+- **Site developer**: You can only edit resources. You cannot publish, delete, rollback, or edit the configuration.
+- **Site developer CLI**: You have the same permissions as Site developer; in addition, you can interact with modyo-cli.
+- **Site reviewer**: You have all the permissions of the site admin role, except the permissions to edit the site settings.
 - **Site admin**: You have all the permissions at the level of a site, but you cannot create new sites.
 
 #### Space-level roles:
 
-- **Space writer**: You can only edit content (you cannot publish, delete, roll back, or edit settings).
-- **Space editor**: A space admin, but without the ability to edit the space configuration. This role does not have asset permissions, nor can it create types.
-- **Space admin**: You have all the permissions at the level of a space, you can create and delete assets, but you cannot create new spaces.
+- **Space viewer**: This role allows you to view the contents of a space, see differences between versions, and leave comments. Your access is limited to viewing and participating through comments, you cannot make changes to the content or take actions that affect the configuration.
+- **Space writer**: This role can only edit content in a space. You don't have permission to publish, delete, rollback, or edit the configuration.
+- **Space editor**: You have all the permissions of a space admin, except for permissions to edit space settings. You don't have permissions to assets and you can't create types.
+- **Space admin**: This role has all the permissions at the space level, but it cannot create new spaces. You can create and delete assets.
 
-The most important user will have the role of Default Admin or Administrator with all permissions and functions enabled to manage the platform and sites.
+The most important user will have the Default Admin or Administrator role. This role has all the features enabled to manage the platform and sites.
 
 #### Roles by realm:
 
-- **Realm User**: You can add users, create, modify, and send campaigns, forms, and segments for review.
-- **Realm Admin**: You can access all the settings and sections of the realm, add and remove users and team members, and you can also delete the realm.
+- **Realm User**: This role can add users, create, modify, and submit campaigns, forms, and segments for review.
+- **Realm Admin**: You can access all the settings and sections of the kingdom. In addition, you can add and remove users and team members, as well as delete the kingdom.
 
 ### Access to applications:
-Since we have roles that allow access to all applications without restriction, Modyo allows you to restrict access to certain applications through the team member settings, so you can give a user full access (Owner) but only in the Channels app.
+Modyo has roles that allow access to all applications without any restrictions; therefore, Modyo allows you to restrict access to certain applications by configuring the roles of team members. In this way, it is possible to grant a user full access (Owner) only to the Channels application, while restricting their access to other applications.
 
 ### Assign one role per account
 
-To assign a role at the account level, you must go to the Team section and click on the profile of the user, then switch to the Role tab and select the role you want to assign to the user.
+To assign a role in the account context, follow these steps: 
+
+1. Go to the “Team” section on the Modyo platform.
+2. Click on the profile of the user you want to change the role to.
+3. Go to the “Access” tab.
+4. Select the role you want to assign to the user and in what space.
+5. Click the**Save** button to confirm the changes.  
