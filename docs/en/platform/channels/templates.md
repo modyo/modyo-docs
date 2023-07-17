@@ -144,7 +144,7 @@ Once it has been saved and published, it is translated to the following HTML cod
  <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-To learn more about the parameters supported by these filters, go to [Liquid filters] (/es/platform/channels/liquid-markup.html #filtros -standard).
+To learn more about the parameters supported by these filters, go to [Liquid filters] (/en/platform/channels/liquid-markup.html #filtros -standard).
 
 
 ## Snippets
@@ -156,8 +156,8 @@ You can add custom snippets at the bottom of the platform's list of snippets, by
  <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window"> 
 
 :: :tip Tip
-For the system to recognize the type of programming language to which the snippet belongs, the ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
-::
+For the system to recognize the type of programming language to which the snippet belongs, an ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
+:::
 
 :: :tip Tip
 All elements of the Template Builder use Liquid as a template engine.
@@ -177,7 +177,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
 **Keyboard Shortcuts**: A small pop-up is shown with some of the useful keyboard shortcuts to use in Templates.
 
- <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module"> 
+<img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
 **Snippets**: A list with all the snippets is displayed, along with the option to copy your reference code.
 
