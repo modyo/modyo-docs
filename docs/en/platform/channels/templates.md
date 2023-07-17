@@ -8,7 +8,7 @@ One of the most important aspects when creating the site is the base architectur
 
 When creating a Site, it will be filled with different templates to generate the Minimal theme and you can start creating your digital channel. If necessary, you can also create Snippets of HTML, JS, and CSS code to extend the functionality of your site.
 
-<img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
+ <img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu"> 
 
 Once inside Templates, you can see that the main menu is hidden to optimize the work area. In the top bar, on the left, you can find the name of the section and the current publication status.
 
