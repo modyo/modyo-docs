@@ -98,7 +98,7 @@ You can use this code as a base, which contains everything necessary for your pa
 {% endHTML5%}
 ```
 
-After you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
+Once you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
 
 
 ## Errors in Views
