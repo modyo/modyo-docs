@@ -91,7 +91,7 @@ You can use this code as a base, which contains everything necessary for your pa
 {{ content_for_layout }}
 </div>
 
-<script>{% snippet “shared/serviceworker/register_js” %}</script> 
+<script>{% snippet “shared/serviceworker/register_js” %}</script>
 {% snippet 'shared/general/footer' %}
 
 {% endbody %}
