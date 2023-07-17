@@ -140,8 +140,8 @@ To include any of these views, there are different Liquid filters available: `as
 Once it has been saved and published, it is translated to the following HTML code:
 
 ```html
- <link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' /> 
- <script src='my-js' type='text/javascript' async='async' defer='defer'></script> 
+<link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
+ <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
 To learn more about the parameters supported by these filters, go to [Liquid filters] (/es/platform/channels/liquid-markup.html #filtros -standard).
