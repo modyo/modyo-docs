@@ -78,20 +78,20 @@ You can use this code as a base, which contains everything necessary for your pa
 
 ```liquid
 {% HTML5 %}
- <head> 
+<head>
  {% snippet 'shared/general/head' %}
- </head> 
+</head>
 
 {% body %}
 {% snippet 'shared/general/body_tag_manager' %}
 {% snippet 'shared/general/header' %}
 
 {{ site.breadcrumb }}
- <div id="main-layout"> 
+<div id="main-layout">
 {{ content_for_layout }}
- </div>
+</div>
 
- <script> {% snippet “shared/serviceworker/register_js” %} </script> 
+<script>{% snippet “shared/serviceworker/register_js” %}</script> 
 {% snippet 'shared/general/footer' %}
 
 {% endbody %}
