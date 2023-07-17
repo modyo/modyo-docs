@@ -112,7 +112,7 @@ In the views section, you will find 4 error types available for customization:
 
 ## CSS and JavaScript
 
-You can create custom CSS and JavaScript templates by clicking the **+** buttons in the CSS and JavaScript sections respectively at the bottom of the Views tab.
+It is possible to create custom CSS and JavaScript code templates by clicking on the**+** buttons, in the CSS and JavaScript sections respectively, at the bottom of the Views tab.
 
 ### Add CSS or Javascript
 
