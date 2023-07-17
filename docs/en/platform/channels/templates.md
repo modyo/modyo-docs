@@ -182,7 +182,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
 **Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
 
-<img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
+ <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets"> 
 
 **Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
 
