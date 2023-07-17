@@ -184,7 +184,7 @@ In this tab, you can see the name and UID of the type. The UID is important, as 
 - **Reindex**: Allows you to re-index the model in case of problems with the public API.
 - **Cancel reindexing**: If a reindexing is in progress, you can cancel the process by clicking this button. 
 
-:: :warning Attention
+:::warning Attention
 When you reindex one of your types, the previously indexed model will remain available until the new indexing is complete. Once the reindexing is complete, the old index will be overwritten with the new index.
 :::
 
