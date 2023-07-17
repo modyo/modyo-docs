@@ -22,15 +22,15 @@ At the top right, you can find the last publication date and the available actio
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Clicking on this icon opens a new tab with the template preview mode, in which you can see, as if they were published, all the changes you have in your templates.
 
-:::warning Attention
-You can preview the changes as a user without a session, or with Modyo a session. For this, it's recommended to log in or log out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
-:::
+:: :warning Attention
+You can preview the changes as a user without a session or a user with a Modyo session. For this, it is advisable to start or close the Modyo session on the site before entering preview mode, since if you log in or out in preview mode, you may encounter security errors such as _x-frame-options_ or _mixed-content_, depending on the configuration of custom domains and SSL of the site
+::
 
  <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window"> 
 
 **Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon will take you to the [difference view](/en/platform/channels/sites.html#review-and-joint-publication), in which you can compare changes between multiple versions of your templates. 
 
-By default, you start by comparing the published version to the editable version. Using the version selectors, you can also compare with backup versions.
+By default, you start by comparing the published version with the editable version, but by making use of the version selectors, you can also compare with the backup versions.
 
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, so that the twenty most recent backups can be compared, restored, and rolled back. 
@@ -105,7 +105,7 @@ After you have created your new layout, you can start using it by going to the p
 
 In the views section, you will find 4 error types available for customization:
 
-* **Disabled**: You'll see this error if the site you're trying to access has been [disabled](/en/platform/channels/sites.html).
+* **Disabled**: You'll see this error view if the site you're trying to access has been [disabled] (/es/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if, in the configuration of [site restrictions] (/es/platform/channels/sites.html #privacidad), you decide to show the 404 and not redirect to the home page.
 * **Privacy**: You'll see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#privacy) or one of its [pages](/en/platform/channels/pages.html#privacy).
 * **Template**: You'll see this error view when the page on the site you're loading has a liquid syntax error. It is unlikely that you will ever see this view, since from modyo 8.1 onwards we have a functionality that checks the liquid syntax before being able to save and publish changes to Templates.
@@ -123,7 +123,7 @@ Custom CSS and Javascript views are the way in which you can import your librari
 1. In the side menu, click **Templates**.
 1. In the Views section, click the **Add Style Sheet** (or Javascript) button.
 1. Add the Path and click **Add**.
-1. Once you have finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
+1. Once you've finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
 
 
 To include any of these views, there are different Liquid filters available: `asset_url` to define the file type, `stylesheet_tag`, and `script_tag` to generate the corresponding tags, the following example adds: 
