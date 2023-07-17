@@ -82,7 +82,7 @@ You can use this code as a base, which contains everything necessary for your pa
  {% snippet 'shared/general/head' %}
  </head> 
 
-{% body%}
+{% body %}
 {% snippet 'shared/general/body_tag_manager' %}
 {% snippet 'shared/general/header' %}
 
