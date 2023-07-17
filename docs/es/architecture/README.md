@@ -26,7 +26,7 @@ libro [“Design Patterns: Elements of Reusable Object-Oriented Software”](htt
 de Erich Gamma, Ralph Johnson, Richard Helm y John Vlissides.
 :::
 
-### ¿Qué son los patrones de arquitectura?
+## Patrones de Arquitectura
 
 Los patrones de arquitectura son soluciones probadas y recomendadas para problemas comunes en el diseño y desarrollo de
 software. Estos patrones establecen una estructura y un conjunto de reglas para organizar y relacionar los componentes
