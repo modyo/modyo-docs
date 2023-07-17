@@ -104,7 +104,7 @@ Once you have created your new layout, you can start using it by going to the pa
 
 In the views section, you'll find 4 types of errors available to customize:
 
-* **Disabled**: You'll see this error view if the site you're trying to access has been [disabled] (/es/platform/channels/sites.html).
+* **Disabled**: You'll see this error view if the site you're trying to access has been [disabled] (/en/platform/channels/sites.html).
 * **404**: You will see this view if you enter a site URL that is not defined and if, in the configuration of [site restrictions] (/en/platform/channels/sites.html #privacidad), you decide to show the 404 and not redirect to the home page.
 * **Privacy**: You'll see this error view if you don't have permission to access the [site] (/es/platform/channels/sites.html #privacidad) or one of its [pages] (/es/platform/channels/pages.html #privacidad).
 * **Template**: You'll see this error view when the page on the site you're loading has a liquid syntax error. It is unlikely that you will ever see this view, since from modyo 8.1 onwards we have a functionality that checks the liquid syntax before being able to save and publish changes to Templates.
