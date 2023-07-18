@@ -26,8 +26,7 @@ Los Layouts son una excelente forma para diferenciar contextos dentro de un siti
 
 ### Uso de Ambientes Previos
 
-El uso de ambientes (físicos) previos para el trabajo con sitios puede ser válido dependiendo del nivel de
-desacoplamiento de los MFEs y el Layout en el cual se despliegan.
+El uso de ambientes (físicos) previos para el trabajo con sitios puede ser válido dependiendo del nivel de desacoplamiento de los MFEs y el Layout en el cual se despliegan.
 
 ### Uso de Team Review
 
