@@ -182,14 +182,13 @@ These options involve some risk to the site experience and your users, please pr
 
 ### SEO
 
-<img src="/assets/img/channels/sites/seo-site.jpg" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+ <img src="/assets/img/channels/sites/seo.png" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" > 
 
 SEO (Search Engine Optimization) is the key to appearing in different search engines. Users rely on a good SEO setup to get to the site.
 
 The options listed in this section help improve your SEO across a particular channel:
 
 - **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
-- **Keywords**: Words that users search for and that you want the site to use. This field accepts a maximum of 255 characters.
 - **Automatically update the sitemap.xml file for me**: Allows Modyo to create and update the sitemap.xml file. Disable this option to maintain a custom sitemap.
 - **Sitemap**: This XML file allows search engines to index the content of the site.
 - **Automatically update the robots.xml file for me**: Allows Modyo to create and update the robots.txt file. Disable this option to provide personalized instructions to site crawlers.
@@ -206,7 +205,7 @@ The robots.txt and sitemap.xml files are only visible on the site if custom doma
 In site settings, only users with the site administrator role will be able to add meta tags. Within a site, the developers role will be able to add and remove meta tags page by page.
 :::
 
-#### On-page SEO vs. Off-page
+#### On-page SEO vs. Off-page SEO
 
 Also known as On-Site and Off-Site SEO, they refer to actions that can be taken on or off a page to increase your site's visibility to search engines. For the best results, we recommend using both strategies to get better search engine rankings.
 
@@ -278,7 +277,7 @@ The Domains section is where you configure where and how your site is publicly l
 
 The options you configure here are:
 
-- **Host**: This name designates where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
+- **Host**: Where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
 - **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
 - **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
 - **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
@@ -405,7 +404,7 @@ When you click on sync, you will be able to select which changes to take from an
 :::
 
 :::warning Attention
-The platform does not allow to synchronize changes that are not yet published.
+The platform does not allow synchronization of changes that are not yet published.
 :::
 
 ### Delete a Stage
@@ -442,7 +441,7 @@ In case you need to publish an element quickly, administrator users can skip the
 
 <img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role just includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
+The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
 
 To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
