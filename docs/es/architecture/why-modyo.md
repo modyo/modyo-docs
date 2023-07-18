@@ -4,7 +4,7 @@ search: true
 
 # ¿Por qué utilizar Modyo?
 
-[Modyo](https://www.modyo.com) es una plataforma de desarrollo por componentes que permite crear, gestionar y personalizar sitios y aplicaciones web de manera intuitiva y eficiente. Con un enfoque en la facilidad de uso y la flexibilidad, Modyo proporciona herramientas para la creación de contenido, la personalización de la apariencia y funcionalidad, y la gestión centralizada de múltiples sitios. Con capacidades de escalabilidad y gestión de activos digitales, Modyo brinda a las empresas la capacidad de crear experiencias digitales de alta calidad y adaptarse a las necesidades cambiantes del negocio. Hay varias razones por las que alguien podría considerar utilizar Modyo como plataforma de experiencia digital. Algunos de los beneficios y ventajas de utilizar Modyo son los siguientes:
+[Modyo](https://www.modyo.com) es una plataforma de desarrollo por componentes que permite crear, gestionar y personalizar sitios web y aplicaciones de manera intuitiva y eficiente. Con un enfoque en la facilidad de uso y la flexibilidad, Modyo proporciona herramientas para la creación de contenido, la personalización de la apariencia y funcionalidad, y la gestión centralizada de múltiples sitios. Con capacidades de escalabilidad y gestión de activos digitales, Modyo brinda a las empresas la capacidad de crear experiencias digitales de alta calidad y adaptarse a las necesidades cambiantes del negocio. Existen varias razones por las que alguien podría considerar utilizar Modyo como plataforma de experiencia digital. Algunos de los beneficios y ventajas de utilizar Modyo son los siguientes:
 
 ## Todo en un solo lugar
 
