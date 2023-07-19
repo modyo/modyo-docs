@@ -6,6 +6,22 @@ search: true
 
 ## 9.2
 
+### 9.2.40 - 14 de julio de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejoras en la validación de formulario anónimo
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Actualización de dependencias
+* Corregir migraciones para permitir que cliente migre a version actual
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Permitir publicar y despublicar entradas a pesar de que existan referencias nulas en versiones anteriores
+
+
 ### 9.2.39 - 11 de julio de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -69,13 +85,13 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Se valida correctamente el campo defaul email sender en las configuraciones del reino, ahora tampoco puede estar vacío. 
+* Se valida correctamente el campo default email sender en las configuraciones del reino, ahora tampoco puede estar vacío.
 
 <Badge text="Insights" type="insights" vertical="middle"/>
 
 * Corrige valor inicial del filtro de fecha, ahora muestra correctamente el rango seleccionado.
 
-  
+
 
 ### 9.2.35 - 30 de mayo de 2023
 <Badge text="Core" type="core" vertical="middle"/>
@@ -263,7 +279,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Se acepta parámetro <span v-pre>{{order.uuid}}</span> en el campo redirect_url al momento de crear una  orden de Payments
- 
+
 
 ### 9.2.24 - 20 de enero de 2023
 
@@ -282,27 +298,27 @@ search: true
 * Separación de Logs
 * Corrige botón "Revisar" en correos de Team Review
 * Se separaran visualmente el item archivado de los demás en los filtros de estados
-* Rutas password y signup dejan de responder a  extensiones que no correspondan 
+* Rutas password y signup dejan de responder a extensiones que no correspondan
 * Las cuentas de administración que no se accedan en un tiempo determinado se deshabilitarán
 * Agrega validación de formato para MODYO_PAPERCLIP_FOG_CREDENTIALS
-* Las URLs de vistas de tablas del backend de Modyo se pueden compartir manteniendo los filtros elegidos 
+* Las URLs de vistas de tablas del backend de Modyo se pueden compartir manteniendo los filtros elegidos
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Corrige error que impedia aprobar a usuario con rol default user y admin de un space 
+* Corrige error que impedia aprobar a usuario con rol default user y admin de un space
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Agrega timezone del sitio a site drop
 * Agrega drops de liquid para formularios contestados
 * Se agrega drop de liquid para los formularios contestados por los usuarios de un reino
-* Corrige duplicación stages en el selector en lista de sitios 
+* Corrige duplicación stages en el selector en lista de sitios
 
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Agrega Integración con Zendesk
-* Implementa politica de seguridad de contraseñas para reinos 
+* Implementa politica de seguridad de contraseñas para reinos
 * Se migran los Payments a nivel de Reinos
 
 
@@ -464,7 +480,7 @@ search: true
 * Se corrige enlace de los breadcrumbs conel scope del stage
 * Se corrige el overflow de la columna nombre en el listado de sitios
 * Se mejora la plantilla base del service worker
-* Se mejora la experiencia al generar un manifest para el PWA 
+* Se mejora la experiencia al generar un manifest para el PWA
 * Se corrige listado de diferencias sin cambios despues de la creación de un stage
 
 
@@ -488,7 +504,7 @@ search: true
 
 * Se corrige error al sincronizar content pages migradas en sitios con stages
 * Se excluye el ID de google tag manager al crear un nuevo stage
- 
+
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Se corrigen links a documentación en segmentos
@@ -514,7 +530,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Se incorpora el uso de reCAPTCHA para Realms 
+* Se incorpora el uso de reCAPTCHA para Realms
 
 
 ### 9.2.8 - 8 de abril 2022
