@@ -27,7 +27,7 @@ Modyo cuenta con los siguientes módulos principales, los que irás conociendo e
 - [**Modyo Insights:**](/es/platform/insights) Aplicación especializada en la representación de datos estadísticos tanto de los usuarios de tus sitios, como del equipo de trabajo que crea el contenido y los canales digitales.
 
 #### Tutoriales
-Los [tutoriales](/es/platform/tutorials) son la forma más fácil de iniciarte en la Plataforma Modyo. Sólo se requiere de un [ambiente de pruebas](/es/platform/training.html#ambiente-de-pruebas) y algo de tiempo para ir paso por paso aprendiendo los conceptos fundamentales.
+Los [tutoriales](https://help.modyo.com/es/collections/4032221-tutoriales) son la forma más fácil de iniciarte en la Plataforma Modyo. Sólo se requiere de un [ambiente de pruebas](/es/platform/training.html#ambiente-de-pruebas) y algo de tiempo para ir paso por paso aprendiendo los conceptos fundamentales.
 Te recomendamos realizar los tutoriales en orden, siguiendo todos los pasos que se presentan en ellos.
 
 #### Learning Paths
