@@ -298,7 +298,7 @@ search: true
 * Separación de Logs
 * Corrige botón "Revisar" en correos de Team Review
 * Se separaran visualmente el item archivado de los demás en los filtros de estados
-* Rutas password y signup dejan de responder a  extensiones que no correspondan
+* Rutas password y signup dejan de responder a extensiones que no correspondan
 * Las cuentas de administración que no se accedan en un tiempo determinado se deshabilitarán
 * Agrega validación de formato para MODYO_PAPERCLIP_FOG_CREDENTIALS
 * Las URLs de vistas de tablas del backend de Modyo se pueden compartir manteniendo los filtros elegidos
