@@ -48,7 +48,7 @@ We recommend writing the format of the entries within the identifier, for exampl
 Cardinality refers to the number of entries that can exist for that type of content. If you select “individual cardinality”, only one such entry is allowed. If you choose “multiple cardinality”, there is no limit to the number of entries allowed.::
 
 :::warning Attention
-Please note that there is a limit of 50 Content Types per Space.::
+Please note that there is a limit of 50 Content Types per Space.:::
 
 In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs: 
 
