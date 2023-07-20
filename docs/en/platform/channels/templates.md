@@ -193,7 +193,7 @@ If you publish a version, you will see that the list of changes disappears, this
 
 :: :tip Tip
 The sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. In the same way, if you go back to a previous sub-version of a template, it doesn't affect the rest of the templates.
-::
+:::
 
 :::tip Tip
 If a previous version is restored to the editable version, you will be able to access the sub-versions of each template of that version. 
