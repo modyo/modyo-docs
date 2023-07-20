@@ -43,7 +43,7 @@ In addition, from the “Groups” section in each team member's profile, you ca
 
 :: :tip Tip
 All users who belong to a group will have the group role. In the case of individually assigning a particular role to a team member, the role with the most privileges takes precedence.
-::
+:::
 
 ### Create a group
 
