@@ -191,7 +191,7 @@ For more information on the benefits and features of File Manager, go to [File M
 If you publish a version, you will see that the list of changes disappears, this is because the new editable version has not had any changes.
 :::
 
-:: :tip Tip
+:::tip Tip
 The sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. In the same way, if you go back to a previous sub-version of a template, it doesn't affect the rest of the templates.
 :::
 
