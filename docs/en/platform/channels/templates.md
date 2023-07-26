@@ -32,7 +32,7 @@ You can preview the changes as a user without a session or a user with a Modyo s
 
 By default, you start by comparing the published version with the editable version, but by making use of the version selectors, you can also compare with the backup versions.
 
-:: :tip Tip
+:::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, so that the twenty most recent backups can be compared, restored, and rolled back. 
 For more information on versioning, see [versioning] (/en/platform/core/key-concepts.html #versions).
 :::
