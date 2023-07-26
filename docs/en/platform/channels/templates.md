@@ -22,7 +22,7 @@ At the top right, you can find the last publication date and the available actio
 
 **Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Clicking on this icon opens a new tab with the template preview mode, in which you can see, as if they were published, all the changes you have in your templates.
 
-:: :warning Attention
+:::warning Attention
 You can preview the changes as a user without a session or a user with a Modyo session. For this, it is advisable to start or close the Modyo session on the site before entering preview mode, since if you log in or out in preview mode, you may encounter security errors such as _x-frame-options_ or _mixed-content_, depending on the configuration of custom domains and SSL of the site
 :::
 
