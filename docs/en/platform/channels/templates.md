@@ -155,7 +155,7 @@ You can add custom snippets at the bottom of the platform's list of snippets, by
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
 
-:: :tip Tip
+:::tip Tip
 For the system to recognize the type of programming language to which the snippet belongs, an ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
 :::
 
