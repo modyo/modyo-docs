@@ -171,7 +171,7 @@ In the work area, below the tabs, you'll find a bar with useful items:
 
 **File Manager**: A modal is shown where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
-:: :tip Tip
+:::tip Tip
 For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
 :::
 
