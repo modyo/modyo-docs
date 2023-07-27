@@ -18,7 +18,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Mejoras en las campañas de correo
-* Mejora comportamiento de la URL post login de los reinos, ahora la url queda como redirección por defecto y por una opción se puede forzar a llegar siempre a esa URL
+* Mejora comportamiento de la URL post login de los reinos, ahora la URL queda como redirección por defecto y por una opción se puede forzar a llegar siempre a esa URL
 * Agrega FPay como medio de pago soportado
 * Mejoras en segmentos
   
