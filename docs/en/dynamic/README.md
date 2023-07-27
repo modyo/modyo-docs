@@ -40,4 +40,4 @@ If you're interested in contributing to Modyo Dynamic as a user, there are sever
 - Use the framework within our test environments and provide feedback on problems and possible improvements that you think we can make.
 - Participate in the community by joining our webinars and digital events that we hold on a regular basis.
 
-To contact the team, report a problem or suggest a feature, you can do so through our [Modyo Support Center] (https://support.modyo.com).
+To contact the team, report a problem, or suggest a feature, you can do so through our [Modyo Support Center] (https://support.modyo.com).
