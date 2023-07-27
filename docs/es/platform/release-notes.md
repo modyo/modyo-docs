@@ -9,16 +9,16 @@ search: true
 ### 9.2.41 - 26 de julio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Mejoras de seguridad.
+* Mejoras de seguridad
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige problemas al mostrar el preview de un sitio publico sin reino y con un custom domain configurado
+* Corrige problemas al mostrar el preview de un sitio público sin reino y con un custom domain configurado
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Mejoras en las campañas de correo
-* Mejora comportamiento de la url post login de los reinos, ahora la url queda como redirección por defecto y por una opción se puede forzar a llegar siempre a esa url.
+* Mejora comportamiento de la URL post login de los reinos, ahora la url queda como redirección por defecto y por una opción se puede forzar a llegar siempre a esa URL
 * Agrega FPay como medio de pago soportado
 * Mejoras en segmentos
   
