@@ -18,7 +18,9 @@ Esta sección muestra un resumen de los elementos principales del reino, incluye
 - Formularios 
 - Campañas
 
-Además, proporciona un registro cronológico de todas las actividades realizadas en el reino.
+Proporciona, además, un registro cronológico de todas las actividades realizadas en el reino.
+
+Al lado derecho de la pantalla encuentras algunas de las configuraciones más importantes del reino, como los sitios en los cuales se usa el reino, proveedores de identidad e identificadores. 
 
 ## Usuarios
 
