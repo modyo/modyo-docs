@@ -9,6 +9,19 @@ Los reinos son una agrupación de usuarios con características similares que es
 
 Cada reino tiene su propia configuración para el inicio de sesión, registro, integraciones, formularios, segmentos y mensajería. Ten en cuenta que al crear alguno de estos elementos en un reino, solo afectará a los usuarios de ese reino y no afectará a los usuarios de otros reinos.
 
+## Resumen
+
+Esta sección muestra un resumen de los elementos principales del reino, incluyendo la cantidad de:
+
+- Usuarios
+- Segmentos
+- Formularios 
+- Campañas
+
+Proporciona, además, un registro cronológico de todas las actividades realizadas en el reino.
+
+Al lado derecho de la pantalla encuentras algunas de las configuraciones más importantes del reino, como los sitios en los cuales se usa el reino, proveedores de identidad e identificadores. 
+
 ## Usuarios
 
 En la sección usuarios, puedes ver y modificar los usuarios externos del sistema. Estos usuarios son aquellos que se registran en la plataforma y acceden a los sitios de Modyo, responden formularios o pueden recibir campañas de correo.
