@@ -36,7 +36,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Allow posts to be published and unpublished even if there are null references in previous versions
+* Allows posts to be published and unpublished even if there are null references in previous versions
 
 
 ### 9.2.39 - July 11, 2023
