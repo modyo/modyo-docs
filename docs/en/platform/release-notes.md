@@ -32,7 +32,7 @@ search: true
 
 * Security improvements
 * Updating dependencies
-* Correct migrations to allow the customer to migrate to the current version
+* Corrects migrations to allow the customer to migrate to the current version
 
 <Badge text="Content" type="content" vertical="middle"/>
 
