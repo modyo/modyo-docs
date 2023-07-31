@@ -335,7 +335,7 @@ search: true
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
 * Adds Zendesk Integration
-* Implement password security policy for kingdoms
+* Implements password security policy for kingdoms
 * Payments are migrated at the Kingdom level
 
 
