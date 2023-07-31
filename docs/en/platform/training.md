@@ -27,8 +27,8 @@ Modyo has the following main modules, which you will know in your training proce
 - [**Modyo Insights:**](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
 
 #### Tutorials
-The [tutorials](/en/platform/tutorials) are the easiest way to get started on the Modyo Platform. It only takes a [test environment](/en/platform/training.html#test-environment) and some time to go step by step learning the fundamental concepts.
-We recommend you to perform the tutorials in order, following all the steps presented in them.
+The [tutorials] (https://help.modyo.com/es/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. You only need a [testing environment] (/en/platform/training.html #ambiente -de-tests) and some time to learn the fundamental concepts step by step.
+We recommend that you do the tutorials in order, following all the steps presented in them.
 
 #### Learning Paths
 Modyo has different [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo) for customers and business partners. They consist of more dynamic alternatives to learn how to use our tools at your own pace.
