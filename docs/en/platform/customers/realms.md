@@ -264,7 +264,7 @@ The services compatible with Modyo login are:
 - Keycloak
 - Azure Active Directory
 
-You must have the correct configuration of the associated service so that Modyo can connect to it. Make sure you complete all the required fields. For more information on integrations, see the [Identity Providers] section (/es/platform/core/integrations/identity-providers.html)
+You must have the correct configuration of the associated service so that Modyo can connect to it. Make sure you complete all the required fields. For more information on integrations, see the [Identity Providers] section (/en/platform/core/integrations/identity-providers.html)
 
 ### Integrations
 
