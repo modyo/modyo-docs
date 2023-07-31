@@ -497,7 +497,7 @@ search: true
 * The link between the breadcrumbs with the scope of the stage is corrected
 * The overflow of the name column in the list of sites is corrected
 * The base template of the service worker is improved
-* The experience is improved when generating a manifest for the PWA
+* Improved experience when generating a manifest for the PWA
 * The list of unchanged differences after the creation of a stage is corrected
 
 
