@@ -547,7 +547,7 @@ search: true
 
  <Badge text="Customers" type="customers" vertical="middle"/> 
 
-* The use of reCAPTCHA for Realms is incorporated
+* The use of reCAPTCHA for realms is incorporated
 
 
 ### 9.2.8 - April 8, 2022
